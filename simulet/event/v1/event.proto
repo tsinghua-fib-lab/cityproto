@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package simulet.event.v1;
+package simulet.proto.event.v1;
 
 message Report {
   string name = 1;

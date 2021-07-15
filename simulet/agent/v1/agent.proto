@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package simulet.proto.agent.v1;
+
+import "simulet/trip/v1/trip.proto";
+
+enum AgentType {
+  UNKNOWN = 0;
+  PERSON = 1;
+  PRIVATE_CAR = 2;
+  BUS = 3;
+  TAXI = 4;
+}
+
+message Agent {
+  uint64 id = 1;
+  AgentType type = 2;
+  repeated trip.v1.Trip trips = 3;
+}

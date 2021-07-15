@@ -1,0 +1,242 @@
+syntax = "proto3";
+
+package simulet.proto.road.v1;
+
+enum LaneType {
+  SHOULDER = 0;
+  BORDER = 1;
+  DRIVING = 2;
+  STOP = 3;
+  NONE = 4;
+  RESTRICTED = 5;
+  PARKING = 6;
+  MEDIAN = 7;
+  BIKING = 8;
+  SIDEWALK = 9;
+  CURB = 10;
+  EXIT = 11;
+  ENTRY = 12;
+  ONRAMP = 13;
+  OFFRAMP = 14;
+  CONNECTINGRAMP = 15;
+  BIDIRECTIONAL = 16;
+  SPECIAL1 = 17;
+  SPECIAL2 = 18;
+  SPECIAL3 = 19;
+  ROADWORKS = 20;
+  TRAM = 21;
+  RAIL = 22;
+  BUS = 23;
+  TAXI = 24;
+  HOV = 25;
+}
+
+enum RoadType {
+  MOTORWAY = 0;
+  MOTORWAY_LINK = 1;
+  TRUNK = 2;
+  TRUNK_LINK = 3;
+  PRIMARY = 4;
+  PRIMARY_LINK = 5;
+  SECONDARY = 6;
+  SECONDARY_LINK = 7;
+  TERTIARY = 8;
+  TERTIARY_LINK = 9;
+  RESIDENTIAL = 10;
+  PEDESTRIAN = 11;
+  CROSSING = 12;
+  UNCLASSIFIED = 13;
+}
+
+// TODO(gongyu): ??
+enum ContactPoint {
+  START = 0;
+  END = 1;
+}
+
+enum Direction {
+  POSITIVE = 0;
+  NEGATIVE = 1;
+}
+
+enum RoadLinkType {
+  ROAD = 0;
+  JUNCTION = 1;
+}
+
+// TODO(gongyu): ??
+enum RoadTurn {
+  STRAIGHT = 0;
+  LEFT = 1;
+  RIGHT = 2;
+  TURN_AROUND = 3;
+  STRAIGHT_LEFT = 4;
+  STRAIGHT_RIGHT = 5;
+}
+
+message RoadLinkElement {
+  string element_id = 1;
+  string element_type = 2;
+  string contact_point = 3;
+  string element_dir = 4;
+  float element_s = 5;
+}
+
+// TODO(gongyu): may be wrong
+message RoadLink {
+  RoadLinkElement predecessor = 1;
+  RoadLinkElement successor = 2;
+}
+
+message LaneOffset {
+  float s = 1;
+  float a = 2;
+  float b = 3;
+  float c = 4;
+  float d = 5;
+}
+
+message LaneGeometry {
+  float s = 1;
+  float a = 2;
+  float b = 3;
+  float c = 4;
+  float d = 5;
+}
+
+message LaneSpeed {
+  float s_offset = 1;
+  float max = 2;
+}
+
+message LaneLink {
+  uint32 predecessor = 1;
+  uint32 successor = 2;
+}
+
+message Lane {
+  uint32 id = 1;
+  LaneType type = 2;
+  // TODO(gongyu): enum
+  string geometry_type = 3;
+  repeated LaneGeometry geometrys = 4;
+  repeated LaneSpeed speeds = 5;
+  LaneLink link = 6;
+}
+
+message LaneSection {
+  bool single_side = 1;
+  float s = 2;
+  uint32 left_count = 3;
+  uint32 right_count = 4;
+  map<uint32, Lane> lane = 5;
+}
+
+// TODO(gongyu): why RoadLanes
+message RoadLane {
+  repeated LaneOffset lane_offsets = 1;
+  repeated LaneSection lane_sections = 2;
+}
+
+enum GeometryType {
+  LINE = 0;
+  ARC = 1;
+  SPIRAL = 2;
+  POLY3 = 3;
+  PARAMPOLY3 = 4;
+}
+
+enum PRange {
+  ARCLENGTH = 0;
+  NORMALIZED = 1;
+}
+
+// TODO(gongyu): different geometry type should be defined separately
+message RoadGeometry {
+  GeometryType type = 1;
+  PRange p_range = 2;
+  float s = 3;
+  float x = 4;
+  float y = 5;
+  float hdg = 6;
+  float length = 7;
+  float a = 8;
+  float b = 9;
+  float c = 10;
+  float d = 11;
+  float aV = 12;
+  float bV = 13;
+  float cV = 14;
+  float dV = 15;
+}
+
+message Road {
+  uint64 id = 1;
+  uint64 junction = 2;
+  string name = 3;
+  float length = 4;
+  string rule = 5;
+  string turn = 6;
+  RoadType type = 7;
+  RoadLink link = 8;
+  RoadLane lane = 9;
+  repeated RoadGeometry geometrys = 10;
+}
+
+// TODO(gongyu): junction should be separated from road
+
+// TODO(gongyu): repeated with RoadLInkElement
+message JunctionPS {
+  float element_s = 1;
+  string element_id = 2;
+  string element_dir = 3;
+}
+
+message JunctionLaneLink {
+  uint32 from = 1;
+  uint32 to = 2;
+}
+
+message JunctionConnection {
+  string id = 1;
+  bool is_virtual = 2;
+  string incoming_road = 3;
+  string connection_road = 4;
+  // TODO(gongyu)?? enum ContactPoint
+  string contact_point = 5;
+  JunctionPS predecessor = 6;
+  JunctionPS successor = 7;
+  repeated JunctionLaneLink lane_links = 8;
+}
+
+// TODO(gongyu): ??
+message JunctionPriority {
+  string high = 1;
+  string low = 2;
+}
+
+message Junction {
+  string name = 1;
+  uint64 id = 2;
+  // there should be a type, not is_virtual
+  bool is_virtual = 3;
+  repeated JunctionConnection connections = 4;
+  repeated JunctionPriority priorities = 5;
+}
+
+// TODO(gongyu): should separate
+message Poi {
+  float x = 1;
+  float y = 2;
+  uint64 id = 3;
+  uint64 road = 4;
+  uint64 incoming_road = 5;
+  uint64 outgoing_road = 6;
+  string name = 7;
+}
+
+// TODO(gongyu): should re define
+message Aoi {
+  uint64 id = 1;
+  repeated uint64 gates = 2;
+}
