@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package simulet.proto.geo.v1;
+
+message LongLatPosition {
+  float Longitude = 1;
+  float Latitude = 2;
+}
+
+message CoordinatePosition {
+  float x = 1;
+  float y = 2;
+}
+
+message StreetPosition {
+  uint64 road_id = 1;
+  float s = 2;
+  uint32  lane_id = 3;
+  uint64 junction_id = 4; // need optional
+}
+
+// station, building gate, etc..
+message AreaPosition {
+  uint64 poi_id = 1;
+}
+
+message NavigateRoute {
+  repeated StreetPosition nodes = 1;
+}

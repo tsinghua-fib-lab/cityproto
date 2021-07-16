@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package simulet.proto.agent.v1;
 
-import "simulet/trip/v1/trip.proto";
+import "simulet/journal/v1/journal.proto";
 
 enum AgentType {
   UNKNOWN = 0;
@@ -15,5 +15,5 @@ enum AgentType {
 message Agent {
   uint64 id = 1;
   AgentType type = 2;
-  repeated trip.v1.Trip trips = 3;
+  repeated journal.v1.ODPair scheduls = 3;
 }
