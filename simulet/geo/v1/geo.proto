@@ -2,6 +2,15 @@ syntax = "proto3";
 
 package simulet.proto.geo.v1;
 
+/** There are three kind of positions:
+ *  1. LongLatPosition: 
+ *      longitude and latitude in decimal format, like longitute 120.234256 and latitude 40.2321782
+ *  2. CoordinatePosition
+ *      coordinate position is in local x/y reference in meters
+ *  3. MapPosition
+ *       map position is described with poi or road/s-distance/lane info
+*/
+
 message LongLatPosition {
   float Longitude = 1;
   float Latitude = 2;
@@ -22,6 +31,13 @@ message StreetPosition {
 // station, building gate, etc..
 message AreaPosition {
   uint64 poi_id = 1;
+}
+
+message MapPosition {
+  oneof position {
+    StreetPosition  street_positon = 1;
+    AreaPosition  area_position = 2;
+  }
 }
 
 message NavigateRoute {

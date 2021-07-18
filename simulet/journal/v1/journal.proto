@@ -16,17 +16,10 @@ enum TripMethod {
   BY_BUS = 4;
 }
 
-message TripNode {
-  oneof position {
-    geo.v1.StreetPosition street_positon = 1;
-    geo.v1.AreaPosition area_position = 2;
-  }
-}
-
 message Trip {
   TripMethod method = 1;
-  TripNode start = 2;
-  TripNode end = 3;
+  geo.v1.MapPosition start = 2;
+  geo.v1.MapPosition end = 3;
   geo.v1.NavigateRoute plan_route = 4;  // only need for walking and driving
 }
 

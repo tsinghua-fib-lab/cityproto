@@ -3,17 +3,32 @@ syntax = "proto3";
 package simulet.proto.agent.v1;
 
 import "simulet/journal/v1/journal.proto";
-
-enum AgentType {
-  UNKNOWN = 0;
-  PERSON = 1;
-  PRIVATE_CAR = 2;
-  BUS = 3;
-  TAXI = 4;
-}
+import "simulet/geo/v1/geo.proto";
 
 message Agent {
+  enum Type {
+    UNKNOWN = 0;
+    PERSON = 1;
+    PRIVATE_CAR = 2;
+    BUS = 3;
+    TAXI = 4;
+  }
+  
   uint64 id = 1;
-  AgentType type = 2;
+  Type type = 2;
   repeated journal.v1.ODPair scheduls = 3;
+}
+
+message MotionParameter {
+  float max_speed_in_ms = 1;  // ms: meters per second
+  float max_acceleration_in_mss = 2;  // mss: ms per second, positive
+  float max_drag_acceleration_in_mss = 3; // mss: ms per second, should be negative
+  float lane_change_prepare_distance_in_m = 4;  // m: meters
+}
+
+message MotionStatus {
+  geo.v1.MapPosition location = 1;
+  float direction_in_tangent = 2;   // north is zero
+  float speed_in_ms = 3;
+  float acceleration_in_mss = 4;
 }
