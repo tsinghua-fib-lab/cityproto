@@ -1,0 +1,159 @@
+syntax = "proto3";
+
+package simulet.proto.map.v1;
+
+option go_package = "mapv1";
+
+import "simulet/geo/v1/geo.proto";
+
+message Header {
+  // the map name
+  string name = 1;
+
+  // when to create the map
+  string date = 2;
+
+  // map range
+  float north = 3;
+  float south = 4;
+  float east = 5;
+  float west = 6;
+
+  // PROJ.4 setting, MUST contains offset x and offset y to do back projection!
+  string projection = 7;
+}
+
+// polyline for lane shape
+message Polyline {
+  repeated geo.v1.CoordinatePosition nodes = 1;
+}
+
+enum LaneType {
+  // reserved
+  LANE_TYPE_NONE = 0;
+  // for vehicle only
+  LANE_TYPE_DRIVING = 1;
+  // for pedestrian only
+  LANE_TYPE_WALKING = 2;
+}
+
+enum LaneTurn {
+  LANE_TURN_STRAIGHT = 0;
+  LANE_TURN_LEFT = 1;
+  LANE_TURN_RIGHT = 2;
+  LANE_TURN_AROUND = 3;
+}
+
+// link relation between two lanes
+// Vehicle / pedestrian can move to Lane(Id=${to}.id, s=${to}.s)
+// at Lane(Id=${from}.id, s=${from}.s),
+// that is,
+// the streetposition ${from} and ${to} are at the same postion in space.
+message LaneLink {
+  geo.v1.StreetPosition from = 1;
+  geo.v1.StreetPosition to = 2;
+}
+
+// overlap relation between two lanes
+// Lane(Id=${self}.id) and Lane(Id=${other}.id) conflict at the same postion in
+// space.
+message LaneOverlap {
+  geo.v1.StreetPosition self = 1;
+  geo.v1.StreetPosition other = 2;
+}
+
+message Lane {
+  // self id
+  uint32 id = 1;
+
+  LaneType type = 2;
+  LaneTurn turn = 3;
+
+  // way priority, higher lane has priority
+  int32 priority = 5;
+
+  // speed limit (m/s)
+  float max_speed = 4;
+
+  // the length of center line (meters)
+  float length = 6;
+  // TODO(zhangjun): width ?
+
+  // center line as vehicle / pedestrian trajectory
+  Polyline center_line = 7;
+  // lane left border line
+  Polyline left_border_line = 8;
+  // lane right border line
+  Polyline right_border_line = 9;
+
+  // Lanes can drive / walk from
+  repeated LaneLink predecessor = 10;
+  // Lanes can drive / walk to
+  repeated LaneLink successor = 11;
+  // left neighbor lane id (sorted by the distance to the lane,
+  // the closer is in the front)
+  repeated uint32 left_lane_id = 12;
+  // right neighbor lane id (sorted by the distance to the lane)
+  repeated uint32 right_lane_id = 13;
+
+  // parent road id or junction id
+  uint32 parent_id = 14;
+
+  // reversed for DIRECTED walking lane
+  uint32 reverse_lane_id = 15;
+
+  // Lanes conflicting with the lane
+  repeated LaneOverlap overlap = 16;
+}
+
+message Road {
+  uint32 id = 1;
+  // All lanes in the road
+  repeated uint32 lane_id = 2;
+  // All pois at the road
+  repeated uint32 poi_id = 3;
+}
+
+message Junction {
+  uint32 id = 1;
+  // All lanes in the junction
+  repeated uint32 lane_id = 2;
+  // TODO(zhangjun): signal <-> lane ?
+}
+
+enum PoiType {
+  POI_TYPE_NONE = 0;
+  POI_TYPE_BUS_STATION = 1;
+}
+
+message Poi {
+  uint32 id = 1;
+  PoiType type = 2;
+
+  // poi street position at driving roadnet
+  geo.v1.StreetPosition driving_postion = 3;
+
+  // poi street position at walking roadnet
+  geo.v1.StreetPosition walking_postion = 4;
+}
+
+message Aoi {
+  uint32 id = 1;
+
+  // All pois in the aoi
+  repeated uint32 poi_id = 2;
+
+  // All gate poi of the aoi (a part of ${poi_id})
+  repeated uint32 gate_poi_id = 3;
+
+  // TODO(zhangjun): Aoi range ?
+}
+
+message Map {
+  Header header = 1;
+  map<uint32, Lane> lane = 2;
+  map<uint32, Road> road = 3;
+  map<uint32, Junction> junction = 4;
+  map<uint32, Poi> poi = 5;
+  map<uint32, Aoi> aoi = 6;
+}

@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package simulet.proto.road.v1;
 
+option deprecated = true;
+
 enum LaneType {
   SHOULDER = 0;
   BORDER = 1;

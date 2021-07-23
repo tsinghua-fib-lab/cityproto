@@ -14,7 +14,7 @@ message Agent {
     TAXI = 4;
   }
   
-  uint64 id = 1;
+  uint32 id = 1;
   Type type = 2;
   repeated journal.v1.ODPair scheduls = 3;
 }
