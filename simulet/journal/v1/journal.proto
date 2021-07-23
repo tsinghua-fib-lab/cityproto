@@ -27,8 +27,8 @@ message Trip {
 message ODPair {
   geo.v1.AreaPosition origin = 1;
   geo.v1.AreaPosition destination = 2;
-  uint64 departure_time = 3;
-  uint64 arrival_time = 4;  // need optional
-  uint64 agent_id = 5;
+  uint32 departure_time = 3;
+  uint32 arrival_time = 4;  // need optional
+  uint32 agent_id = 5;
   repeated Trip trips = 6;
 }
