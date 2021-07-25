@@ -44,16 +44,6 @@ enum LaneTurn {
   LANE_TURN_AROUND = 3;
 }
 
-// link relation between two lanes
-// Vehicle / pedestrian can move to Lane(Id=${to}.id, s=${to}.s)
-// at Lane(Id=${from}.id, s=${from}.s),
-// that is,
-// the streetposition ${from} and ${to} are at the same postion in space.
-message LaneLink {
-  geo.v1.StreetPosition from = 1;
-  geo.v1.StreetPosition to = 2;
-}
-
 // overlap relation between two lanes
 // Lane(Id=${self}.id) and Lane(Id=${other}.id) conflict at the same postion in
 // space.
@@ -87,9 +77,9 @@ message Lane {
   Polyline right_border_line = 9;
 
   // Lanes can drive / walk from
-  repeated LaneLink predecessor = 10;
+  repeated uint32 predecessor_id = 10;
   // Lanes can drive / walk to
-  repeated LaneLink successor = 11;
+  repeated uint32 successor_id = 11;
   // left neighbor lane id (sorted by the distance to the lane,
   // the closer is in the front)
   repeated uint32 left_lane_id = 12;
