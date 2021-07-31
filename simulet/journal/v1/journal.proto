@@ -8,16 +8,16 @@ import "simulet/geo/v1/geo.proto";
 // each ODPair is completed by single or multiple trips
 // each agent schedules is composed of multiple ODPairs
 
-enum TripMethod {
-  UNKNOWN = 0;
-  WALKING = 1;
-  DRIVING = 2;
-  BY_CAR = 3;
-  BY_BUS = 4;
+enum TripType {
+  TRIP_TYPE_UNKNOWN = 0;
+  TRIP_TYPE_WALKING = 1;
+  TRIP_TYPE_DRIVING = 2;
+  TRIP_TYPE_BY_CAR = 3;
+  TRIP_TYPE_BY_BUS = 4;
 }
 
 message Trip {
-  TripMethod method = 1;
+  TripType type = 1;
   geo.v1.MapPosition start = 2;
   geo.v1.MapPosition end = 3;
   geo.v1.NavigateRoute plan_route = 4;  // only need for walking and driving

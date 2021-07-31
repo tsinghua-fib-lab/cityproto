@@ -5,17 +5,17 @@ package simulet.proto.agent.v1;
 import "simulet/journal/v1/journal.proto";
 import "simulet/geo/v1/geo.proto";
 
+enum AgentType {
+  AGENT_TYPE_UNKNOWN = 0;
+  AGENT_TYPE_PERSON = 1;
+  AGENT_TYPE_PRIVATE_CAR = 2;
+  AGENT_TYPE_BUS = 3;
+  AGENT_TYPE_TAXI = 4;
+}
+
 message Agent {
-  enum Type {
-    UNKNOWN = 0;
-    PERSON = 1;
-    PRIVATE_CAR = 2;
-    BUS = 3;
-    TAXI = 4;
-  }
-  
   uint32 id = 1;
-  Type type = 2;
+  AgentType type = 2;
   repeated journal.v1.ODPair schedules = 3;
 }
 
