@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package simulet.proto.map_runtime.v1;
+
+enum LaneAccessType {
+  LANE_ACCESS_TYPE_UNKNOWN = 0;
+  // agent can pass
+  LANE_ACCESS_TYPE_NORMAL = 1;
+  // agent cannot pass for a period of time
+  LANE_ACCESS_TYPE_RED = 2;
+  // agent is forbidden to pass, needs to detour
+  LANE_ACCESS_TYPE_NO_ENTRY = 3;
+}
+
+// app -> simulet, used to set lane access attributes
+message LaneAccessSetting {
+  uint32 lane_id = 1;
+  LaneAccessType type = 2;
+}
+
+// app -> simulet, used to set junction phase
+message JunctionAccessSetting {
+  uint32 junction_id = 1;
+  // make sure that the lanes are all in the junction
+  repeated LaneAccessType lane_access_setting = 2;
+}
+
+message LaneAccess {
+  uint32 lane_id = 1;
+  LaneAccessType type = 2;
+  // suggested speed m/s when type == LANE_ACCESS_TYPE_NORMAL
+  float entry_speed = 3;
+}
+
+// simulet -> simulet, used to synchronize the map runtime
+message MapAccess {
+  repeated LaneAccess lane_access = 1;
+}

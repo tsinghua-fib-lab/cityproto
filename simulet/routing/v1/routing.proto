@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package simulet.proto.routing.v1;
+
+import "simulet/geo/v1/geo.proto";
+
+enum RoutingType {
+  ROUTING_TYPE_UNKNOWN = 0;
+  ROUTING_TYPE_DRIVING = 1;
+  ROUTING_TYPE_WALKING = 2;
+  ROUTING_TYPE_BY_BUS = 3;
+}
+
+// used to track one routing <request, response> pair
+message RoutingHeader {
+  uint32 agent_id = 1;
+  // self-increasing id for the agent
+  uint32 agent_request_id = 2;
+}
+
+// simulet -> routing app
+message RoutingRequest {
+  RoutingHeader header = 1;
+  RoutingType type = 2;
+  // all the waypoint the agent wants to pass
+  repeated geo.v1.MapPosition waypoint = 3;
+}
+
+// routing app -> simulet
+message RoutingResponse {
+  // copy from request
+  RoutingHeader header = 1;
+  // waypoint[i] -> waypoint[i+1] for i=0...len(waypoint)-2
+  repeated geo.v1.NavigateRoute route = 2;
+}

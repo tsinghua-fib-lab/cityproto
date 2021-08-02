@@ -29,6 +29,7 @@ message Polyline {
 }
 
 enum LaneType {
+  // TODO(zhangjun): NONE->INVALID
   // reserved
   LANE_TYPE_NONE = 0;
   // for vehicle only
@@ -38,6 +39,7 @@ enum LaneType {
 }
 
 enum LaneTurn {
+  // TODO(zhangjun): add LANE_TURN_INVALID = 0;
   LANE_TURN_STRAIGHT = 0;
   LANE_TURN_LEFT = 1;
   LANE_TURN_RIGHT = 2;
@@ -112,6 +114,7 @@ message Junction {
 }
 
 enum PoiType {
+  // TODO(zhangjun): NONE->INVALID
   POI_TYPE_NONE = 0;
   POI_TYPE_BUS_STATION = 1;
 }
