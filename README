@@ -1,3 +1,7 @@
 STYLE:
 1. https://developers.google.com/protocol-buffers/docs/style
 2. https://github.com/uber/prototool/blob/dev/style/README.md
+
+关于enum: prefer uber的style
+1. 独立定义enum，不嵌入message
+2. enum的item名称加enum name作为前缀
