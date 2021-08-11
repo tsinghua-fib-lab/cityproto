@@ -47,7 +47,7 @@ enum LaneTurn {
 }
 
 // overlap relation between two lanes
-// Lane(Id=${self}.id) and Lane(Id=${other}.id) conflict at the same postion in
+// Lane(Id=${self}.id) and Lane(Id=${other}.id) conflict at the same position in
 // space.
 message LaneOverlap {
   geo.v1.StreetPosition self = 1;
@@ -79,14 +79,14 @@ message Lane {
   Polyline right_border_line = 9;
 
   // Lanes can drive / walk from
-  repeated uint32 predecessor_id = 10;
+  repeated uint32 predecessor_ids = 10;
   // Lanes can drive / walk to
-  repeated uint32 successor_id = 11;
+  repeated uint32 successor_ids = 11;
   // left neighbor lane id (sorted by the distance to the lane,
   // the closer is in the front)
-  repeated uint32 left_lane_id = 12;
+  repeated uint32 left_lane_ids = 12;
   // right neighbor lane id (sorted by the distance to the lane)
-  repeated uint32 right_lane_id = 13;
+  repeated uint32 right_lane_ids = 13;
 
   // parent road id or junction id
   uint32 parent_id = 14;
@@ -95,21 +95,21 @@ message Lane {
   uint32 reverse_lane_id = 15;
 
   // Lanes conflicting with the lane
-  repeated LaneOverlap overlap = 16;
+  repeated LaneOverlap overlaps = 16;
 }
 
 message Road {
   uint32 id = 1;
   // All lanes in the road
-  repeated uint32 lane_id = 2;
+  repeated uint32 lane_ids = 2;
   // All pois at the road
-  repeated uint32 poi_id = 3;
+  repeated uint32 poi_ids = 3;
 }
 
 message Junction {
   uint32 id = 1;
   // All lanes in the junction
-  repeated uint32 lane_id = 2;
+  repeated uint32 lane_ids = 2;
   // TODO(zhangjun): signal <-> lane ?
 }
 
@@ -124,29 +124,29 @@ message Poi {
   PoiType type = 2;
 
   // poi street position at driving roadnet
-  geo.v1.StreetPosition driving_postion = 3;
+  geo.v1.StreetPosition driving_position = 3;
 
   // poi street position at walking roadnet
-  geo.v1.StreetPosition walking_postion = 4;
+  geo.v1.StreetPosition walking_position = 4;
 }
 
 message Aoi {
   uint32 id = 1;
 
   // All pois in the aoi
-  repeated uint32 poi_id = 2;
+  repeated uint32 poi_ids = 2;
 
   // All gate poi of the aoi (a part of ${poi_id})
-  repeated uint32 gate_poi_id = 3;
+  repeated uint32 gate_poi_ids = 3;
 
   // TODO(zhangjun): Aoi range ?
 }
 
 message Map {
   Header header = 1;
-  map<uint32, Lane> lane = 2;
-  map<uint32, Road> road = 3;
-  map<uint32, Junction> junction = 4;
-  map<uint32, Poi> poi = 5;
-  map<uint32, Aoi> aoi = 6;
+  map<uint32, Lane> lanes = 2;
+  map<uint32, Road> roads = 3;
+  map<uint32, Junction> junctions = 4;
+  map<uint32, Poi> pois = 5;
+  map<uint32, Aoi> aois = 6;
 }
