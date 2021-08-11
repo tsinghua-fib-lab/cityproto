@@ -35,7 +35,7 @@ message AreaPosition {
 
 message MapPosition {
   oneof position {
-    StreetPosition street_positon = 1;
+    StreetPosition street_position = 1;
     AreaPosition area_position = 2;
   }
 }
