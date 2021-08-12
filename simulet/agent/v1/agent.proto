@@ -2,8 +2,23 @@ syntax = "proto3";
 
 package simulet.proto.agent.v1;
 
-import "simulet/journal/v1/journal.proto";
 import "simulet/geo/v1/geo.proto";
+
+message MotionParameter {
+  // unit: m/s
+  float max_speed = 1;
+  // unit: m/s^2, positive
+  float max_acceleration = 2;
+  // unit: m/s^2, negative
+  float max_braking_acceleration = 3;
+    // unit: m/s^2, positive, usual_acceleration < max_acceleration
+  float usual_acceleration = 4;
+  // unit: m/s^2, negative
+  // usual_braking_acceleration > max_braking_acceleration
+  float usual_braking_acceleration = 5;
+  // unit: m, the default length required to complete lane changing
+  float lane_change_length = 6;
+}
 
 enum AgentType {
   AGENT_TYPE_UNKNOWN = 0;
@@ -13,22 +28,68 @@ enum AgentType {
   AGENT_TYPE_TAXI = 4;
 }
 
+message AgentAttribute {
+  float length = 1;
+  float width = 2;
+}
+
+// static agent variables
 message Agent {
   uint32 id = 1;
   AgentType type = 2;
-  repeated journal.v1.ODPair schedules = 3;
+  AgentAttribute attribute = 3;
+  MotionParameter motion_parameter = 4;
+  // where the agent should be put (init)
+  geo.v1.MapPosition home = 5;
 }
 
-message MotionParameter {
-  float max_speed_in_ms = 1;  // ms: meters per second
-  float max_acceleration_in_mss = 2;  // mss: ms per second, positive
-  float max_drag_acceleration_in_mss = 3; // mss: ms per second, should be negative
-  float lane_change_prepare_distance_in_m = 4;  // m: meters
+message LaneChangeExtension {
+  // to describe the location where the agent maps to the target lane
+  geo.v1.StreetPosition shadow_location = 1;
+  // unit: m, the length required to complete lane changing
+  float total_length = 2;
+  // unit: m, the length completed
+  float completed_length = 3;
 }
 
-message MotionStatus {
+message Motion {
   geo.v1.MapPosition location = 1;
-  float direction_in_tangent = 2;   // north is zero
-  float speed_in_ms = 3;
-  float acceleration_in_mss = 4;
+  // unit: rad in xy coordinate system
+  // because (x, y) can be converted to (latitude, longitude),
+  // north is zero
+  float direction = 2;   // north is zero
+  // unit: m
+  float speed = 3;
+  // not null if changing lane, 
+  optional LaneChangeExtension lane_change = 4;
+}
+
+enum AgentStatus {
+  AGENT_STATUS_UNKNOWN = 0;
+  AGENT_STATUS_IDLE = 1;
+  AGENT_STATUS_RUNNING = 2;
+  AGENT_STATUS_WAITING_FOR_TIME = 3;
+  AGENT_STATUS_WAITING_FOR_ROUTE = 4;
+  // ready for leaving poi
+  AGENT_STATUS_READY_FOR_LEAVING = 5;
+}
+
+// TODO(zhangjun): enum VehicleLight {LEFT, RIGHT, BRAKING, ...}
+
+message AgentRuntime {
+  AgentStatus status = 1;
+  Motion motion = 2;
+}
+
+enum DrivingDirection {
+  DRIVING_DIRECTION_UNKNOWN = 0;
+  DRIVING_DIRECTION_STRAIGHT = 1;
+  DRIVING_DIRECTION_LEFT = 2;
+  DRIVING_DIRECTION_RIGHT = 3;
+}
+
+message DrivingAction {
+  float acceleration = 1;
+  DrivingDirection direction = 2;
+  float lane_change_length = 3;
 }

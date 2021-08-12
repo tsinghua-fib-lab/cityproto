@@ -6,6 +6,8 @@ option go_package = "mapv1";
 
 import "simulet/geo/v1/geo.proto";
 
+// TODO(zhangjun): Use pluralized names for repeated fields.
+
 message Header {
   // the map name
   string name = 1;

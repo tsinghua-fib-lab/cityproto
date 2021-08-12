@@ -11,25 +11,54 @@ enum RoutingType {
   ROUTING_TYPE_BY_BUS = 3;
 }
 
-// used to track one routing <request, response> pair
-message RoutingHeader {
+// simulet -> routing app
+message RoutingRequest {
   uint32 agent_id = 1;
   // self-increasing id for the agent
   uint32 agent_request_id = 2;
+  RoutingType type = 3;
+  // the postion the agent wants to go
+  geo.v1.MapPosition end = 4;
 }
 
-// simulet -> routing app
-message RoutingRequest {
-  RoutingHeader header = 1;
-  RoutingType type = 2;
-  // all the waypoint the agent wants to pass
-  repeated geo.v1.MapPosition waypoint = 3;
+enum TripType {
+  TRIP_TYPE_UNKNOWN = 0;
+  TRIP_TYPE_DRIVING = 1;
+  TRIP_TYPE_WALKING = 2;
+  TRIP_TYPE_BY_BUS = 3;
+  TRIP_TYPE_BY_TAXI = 4;
+}
+
+message DrivingTripBody {
+  geo.v1.NavigateRoute route = 1;
+}
+
+message WalkingTripBody {
+  geo.v1.NavigateRoute route = 1;
+}
+
+message BusTripBody {
+  // TODO(zhangjun): not implemented
+}
+
+message TaxiTripBody {
+  // TODO(zhangjun): not implemented
+}
+
+// one part of route, which contains only ONE mode of travel
+message Trip {
+  TripType type = 1;
+  oneof trip_body {
+    DrivingTripBody driving = 2;
+    WalkingTripBody walking = 3;
+    BusTripBody by_bus = 4;
+    TaxiTripBody by_taxi = 5;
+  }
 }
 
 // routing app -> simulet
 message RoutingResponse {
-  // copy from request
-  RoutingHeader header = 1;
-  // waypoint[i] -> waypoint[i+1] for i=0...len(waypoint)-2
-  repeated geo.v1.NavigateRoute route = 2;
+  // request
+  RoutingRequest request = 1;
+  repeated Trip trips = 2;
 }

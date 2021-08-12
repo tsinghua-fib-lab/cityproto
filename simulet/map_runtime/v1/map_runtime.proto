@@ -22,7 +22,7 @@ message LaneAccessSetting {
 message JunctionAccessSetting {
   uint32 junction_id = 1;
   // make sure that the lanes are all in the junction
-  repeated LaneAccessType lane_access_setting = 2;
+  repeated LaneAccessSetting lanes = 2;
 }
 
 message LaneAccess {
@@ -34,5 +34,5 @@ message LaneAccess {
 
 // simulet -> simulet, used to synchronize the map runtime
 message MapAccess {
-  repeated LaneAccess lane_access = 1;
+  repeated LaneAccess lane_accesses = 1;
 }
