@@ -16,6 +16,7 @@ message LongLatPosition {
   float latitude = 2;
 }
 
+// attention that (x, y) <-> (lat, lon)
 message CoordinatePosition {
   float x = 1;
   float y = 2;

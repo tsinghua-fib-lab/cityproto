@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package simulet.proto.journey.v1;
+
+import "simulet/geo/v1/geo.proto";
+
+// that is, the preference of journey
+enum JourneyMode {
+  JOURNEY_MODE_UNKNOWN = 0;
+
+  // specify the mode of journey
+
+  JOURNEY_MODE_WALK_ONLY = 1;
+  JOURNEY_MODE_DRIVE_ONLY = 2;
+  JOURNEY_MODE_TAXI_ONLY = 3;
+  JOURNEY_MODE_BUS_ONLY = 4;
+
+  // choose the best from all modes that meet the time limit
+
+  JOURNEY_MODE_COST_FIRST = 5;
+  JOURNEY_MODE_TIME_FIRST = 6;
+}
+
+// Journey is a travel to somewhere with time limit and mode limit
+message Journey {
+  JourneyMode mode = 1;
+  geo.v1.MapPosition end = 2;
+  // unit: second
+  optional float departure_time = 3;
+  // unit: second
+  optional float arrival_time = 4;
+}
+
+// Schedule is composed of multiple journeys for the agent (agent input)
+message Schedule {
+  uint32 agent_id = 1;
+  repeated Journey journeys = 2;
+}
