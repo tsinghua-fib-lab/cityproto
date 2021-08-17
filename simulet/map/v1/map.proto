@@ -6,8 +6,6 @@ option go_package = "mapv1";
 
 import "simulet/geo/v1/geo.proto";
 
-// TODO(zhangjun): Use pluralized names for repeated fields.
-
 message Header {
   // the map name
   string name = 1;
@@ -31,9 +29,8 @@ message Polyline {
 }
 
 enum LaneType {
-  // TODO(zhangjun): NONE->INVALID
   // reserved
-  LANE_TYPE_NONE = 0;
+  LANE_TYPE_INVALID = 0;
   // for vehicle only
   LANE_TYPE_DRIVING = 1;
   // for pedestrian only
@@ -41,11 +38,11 @@ enum LaneType {
 }
 
 enum LaneTurn {
-  // TODO(zhangjun): add LANE_TURN_INVALID = 0;
-  LANE_TURN_STRAIGHT = 0;
-  LANE_TURN_LEFT = 1;
-  LANE_TURN_RIGHT = 2;
-  LANE_TURN_AROUND = 3;
+  LANE_TURN_INVALID = 0;
+  LANE_TURN_STRAIGHT = 1;
+  LANE_TURN_LEFT = 2;
+  LANE_TURN_RIGHT = 3;
+  LANE_TURN_AROUND = 4;
 }
 
 // overlap relation between two lanes
@@ -116,9 +113,9 @@ message Junction {
 }
 
 enum PoiType {
-  // TODO(zhangjun): NONE->INVALID
-  POI_TYPE_NONE = 0;
+  POI_TYPE_INVALID = 0;
   POI_TYPE_BUS_STATION = 1;
+  POI_TYPE_OTHER = 2;
 }
 
 message Poi {
