@@ -17,8 +17,9 @@ message RoutingRequest {
   // self-increasing id for the agent
   uint32 agent_request_id = 2;
   RoutingType type = 3;
+  geo.v1.MapPosition start = 4;
   // the postion the agent wants to go
-  geo.v1.MapPosition end = 4;
+  geo.v1.MapPosition end = 5;
 }
 
 enum TripType {
