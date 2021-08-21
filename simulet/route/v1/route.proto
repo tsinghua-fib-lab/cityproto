@@ -1,25 +1,14 @@
 syntax = "proto3";
 
-package simulet.proto.routing.v1;
+package simulet.proto.route.v1;
 
 import "simulet/geo/v1/geo.proto";
 
-enum RoutingType {
-  ROUTING_TYPE_UNKNOWN = 0;
-  ROUTING_TYPE_DRIVING = 1;
-  ROUTING_TYPE_WALKING = 2;
-  ROUTING_TYPE_BY_BUS = 3;
-}
-
-// simulet -> routing app
-message RoutingRequest {
-  uint32 agent_id = 1;
-  // self-increasing id for the agent
-  uint32 agent_request_id = 2;
-  RoutingType type = 3;
-  geo.v1.MapPosition start = 4;
-  // the postion the agent wants to go
-  geo.v1.MapPosition end = 5;
+enum RouteType {
+  ROUTE_TYPE_UNKNOWN = 0;
+  ROUTE_TYPE_DRIVING = 1;
+  ROUTE_TYPE_WALKING = 2;
+  ROUTE_TYPE_BY_BUS = 3;
 }
 
 enum TripType {
@@ -30,12 +19,18 @@ enum TripType {
   TRIP_TYPE_BY_TAXI = 4;
 }
 
+// lanes in the same road/junction
+// which means that the agent can choose one of them to pass
+message LaneSet {
+  repeated uint32 lanes = 1;
+}
+
 message DrivingTripBody {
-  geo.v1.NavigateRoute route = 1;
+  repeated LaneSet route = 1;
 }
 
 message WalkingTripBody {
-  geo.v1.NavigateRoute route = 1;
+  simulet.proto.geo.v1.NavigateRoute route = 1;
 }
 
 message BusTripBody {
@@ -55,11 +50,4 @@ message Trip {
     BusTripBody by_bus = 4;
     TaxiTripBody by_taxi = 5;
   }
-}
-
-// routing app -> simulet
-message RoutingResponse {
-  // request
-  RoutingRequest request = 1;
-  repeated Trip trips = 2;
 }

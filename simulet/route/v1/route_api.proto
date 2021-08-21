@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package simulet.proto.route.v1;
+
+import "simulet/geo/v1/geo.proto";
+import "simulet/route/v1/route.proto";
+
+service RouteAPI {
+  // Get route by type/start/end
+  rpc GetRoute(RouteRequest) returns (RouteResponse);
+  // TODO(zhangjun): rpc SetAccess(LaneAccess) returns;
+}
+
+// simulet -> routing app
+message RouteRequest {
+  uint32 agent_id = 1;
+  // self-increasing id for the agent
+  uint32 agent_request_id = 2;
+  RouteType type = 3;
+  simulet.proto.geo.v1.MapPosition start = 4;
+  // the postion the agent wants to go
+  simulet.proto.geo.v1.MapPosition end = 5;
+}
+
+// routing app -> simulet
+message RouteResponse {
+  // request
+  RouteRequest request = 1;
+  repeated simulet.proto.route.v1.Trip trips = 2;
+}
