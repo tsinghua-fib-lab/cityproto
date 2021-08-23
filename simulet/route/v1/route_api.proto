@@ -20,6 +20,8 @@ message RouteRequest {
   simulet.proto.geo.v1.MapPosition start = 4;
   // the postion the agent wants to go
   simulet.proto.geo.v1.MapPosition end = 5;
+  // map access etcd revision
+  int64 access_revision = 6;
 }
 
 // routing app -> simulet
