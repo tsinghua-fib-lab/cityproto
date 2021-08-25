@@ -8,7 +8,7 @@ import "simulet/route/v1/route.proto";
 service RouteAPI {
   // Get route by type/start/end
   rpc GetRoute(RouteRequest) returns (RouteResponse);
-  // TODO(zhangjun): rpc SetAccess(LaneAccess) returns;
+  rpc GetRouteByBatch(RouteBatchRequest) returns (RouteBatchResponse);
 }
 
 // simulet -> routing app
@@ -29,4 +29,12 @@ message RouteResponse {
   // request
   RouteRequest request = 1;
   repeated simulet.proto.route.v1.Trip trips = 2;
+}
+
+message RouteBatchRequest {
+  repeated RouteRequest requests = 1;
+}
+
+message RouteBatchResponse {
+  repeated RouteResponse responses = 1;
 }
