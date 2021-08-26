@@ -4,12 +4,14 @@ package simulet.proto.map_runtime.v1;
 
 enum LaneAccessType {
   LANE_ACCESS_TYPE_UNKNOWN = 0;
-  // agent can pass
-  LANE_ACCESS_TYPE_NORMAL = 1;
-  // agent cannot pass for a period of time
-  LANE_ACCESS_TYPE_RED = 2;
-  // agent is forbidden to pass, needs to detour
-  LANE_ACCESS_TYPE_NO_ENTRY = 3;
+  // there is no any restriction like traffic light and traffic control
+  LANE_ACCESS_TYPE_UNRESTRICTED = 1;
+  // green traffic light
+  LANE_ACCESS_TYPE_GREEN_LIGHT = 2;
+  // red traffic light
+  LANE_ACCESS_TYPE_RED_LIGHT = 3;
+  // agent is forbidden to pass
+  LANE_ACCESS_TYPE_NO_ENTRY = 4;
 }
 
 // app -> simulet, used to set lane access attributes
