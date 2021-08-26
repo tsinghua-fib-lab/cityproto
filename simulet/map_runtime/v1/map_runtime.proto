@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package simulet.proto.map_runtime.v1;
 
+import "simulet/agent/v1/agent.proto";
+
 // The access status of lane
 enum LaneAccessType {
   LANE_ACCESS_TYPE_UNKNOWN = 0;
@@ -36,15 +38,12 @@ message JunctionAccessSetting {
   repeated LaneAccessSetting lanes = 2;
 }
 
-message LaneAgentMotion {
-  float s = 1;
-  float speed = 2;
-}
-
 message LaneRuntime {
   uint32 lane_id = 1;
   LaneAccessType type = 2;
-  optional LaneAgentMotion first_agent_motion = 3;
+  // track the first agent's position and speed
+  // to guide the agent's action who will enter the lane
+  optional agent.v1.SimpleMotionInLane first_agent_motion = 3;
 }
 
 // simulet -> simulet, used to synchronize the map runtime
