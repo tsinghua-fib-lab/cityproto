@@ -2,15 +2,24 @@ syntax = "proto3";
 
 package simulet.proto.map_runtime.v1;
 
+// The access status of lane
 enum LaneAccessType {
   LANE_ACCESS_TYPE_UNKNOWN = 0;
   // there is no any restriction like traffic light and traffic control
+  // any type of lanes can use the type
+  // e.g. lane in general road, lane in junction without traffic light
   LANE_ACCESS_TYPE_UNRESTRICTED = 1;
   // green traffic light
+  // lane controlled by traffic light and the light is green
+  // only lane in JUNCTION can use the type
   LANE_ACCESS_TYPE_GREEN_LIGHT = 2;
   // red traffic light
+  // lane controlled by traffic light and the light is red / yellow
+  // only lane in JUNCTION can use the type
   LANE_ACCESS_TYPE_RED_LIGHT = 3;
   // agent is forbidden to pass
+  // any type of lanes can use the type
+  // e.g. lane closed by police, lane under construction, accident in lane, etc.
   LANE_ACCESS_TYPE_NO_ENTRY = 4;
 }
 
@@ -27,14 +36,18 @@ message JunctionAccessSetting {
   repeated LaneAccessSetting lanes = 2;
 }
 
-message LaneAccess {
+message LaneAgentMotion {
+  float s = 1;
+  float speed = 2;
+}
+
+message LaneRuntime {
   uint32 lane_id = 1;
   LaneAccessType type = 2;
-  // suggested speed m/s when type == LANE_ACCESS_TYPE_NORMAL
-  float entry_speed = 3;
+  optional LaneAgentMotion first_agent_motion = 3;
 }
 
 // simulet -> simulet, used to synchronize the map runtime
-message MapAccess {
-  repeated LaneAccess lane_accesses = 1;
+message MapRuntime {
+  repeated LaneRuntime lanes = 1;
 }
