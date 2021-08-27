@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+option go_package = "sidecar/model/proto/simulet/geo/v1";
+
 package simulet.proto.geo.v1;
 
 /** There are three kind of positions:
