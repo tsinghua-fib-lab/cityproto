@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package simulet.proto.geo.v1;
 
+option go_package = "proto/geov1";
+
 /** There are three kind of positions:
  *  1. LongLatPosition: 
  *      longitude and latitude in decimal format, like longitute 120.234256 and latitude 40.2321782
