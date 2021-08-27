@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-option go_package = "sidecar/model/proto/simulet/route/v1";
-
 package simulet.proto.route.v1;
+
+option go_package = "proto/routev1";
 
 import "simulet/geo/v1/geo.proto";
 import "simulet/route/v1/route.proto";
