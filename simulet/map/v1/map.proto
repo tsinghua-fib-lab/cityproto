@@ -68,7 +68,7 @@ message Lane {
 
   // the length of center line (meters)
   float length = 6;
-  // TODO(zhangjun): width ?
+  float width = 17;
 
   // center line as vehicle / pedestrian trajectory
   Polyline center_line = 7;
