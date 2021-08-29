@@ -51,6 +51,7 @@ enum LaneTurn {
 message LaneOverlap {
   geo.v1.StreetPosition self = 1;
   geo.v1.StreetPosition other = 2;
+  bool self_first = 3;
 }
 
 message Lane {
@@ -61,7 +62,8 @@ message Lane {
   LaneTurn turn = 3;
 
   // way priority, higher lane has priority
-  int32 priority = 5;
+  // TODO(zhangjun): after all related code is changed, delete it
+  int32 priority = 5 [deprecated = true];
 
   // speed limit (m/s)
   float max_speed = 4;
