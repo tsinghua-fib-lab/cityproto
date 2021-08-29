@@ -17,4 +17,5 @@ message ListCachedRoutesRequest {
 
 message ListCachedRoutesResponse {
   repeated simulet.proto.route.v1.RouteResponse routes = 1;
+  bool has_more = 2;
 }
