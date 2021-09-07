@@ -61,10 +61,6 @@ message Lane {
   LaneType type = 2;
   LaneTurn turn = 3;
 
-  // way priority, higher lane has priority
-  // TODO(zhangjun): after all related code is changed, delete it
-  int32 priority = 5 [deprecated = true];
-
   // speed limit (m/s)
   double max_speed = 4;
 
