@@ -6,18 +6,18 @@ import "simulet/geo/v1/geo.proto";
 
 message MotionParameter {
   // unit: m/s
-  float max_speed = 1;
+  double max_speed = 1;
   // unit: m/s^2, positive
-  float max_acceleration = 2;
+  double max_acceleration = 2;
   // unit: m/s^2, negative
-  float max_braking_acceleration = 3;
+  double max_braking_acceleration = 3;
     // unit: m/s^2, positive, usual_acceleration < max_acceleration
-  float usual_acceleration = 4;
+  double usual_acceleration = 4;
   // unit: m/s^2, negative
   // usual_braking_acceleration > max_braking_acceleration
-  float usual_braking_acceleration = 5;
+  double usual_braking_acceleration = 5;
   // unit: m, the default length required to complete lane changing
-  float lane_change_length = 6;
+  double lane_change_length = 6;
 }
 
 enum AgentType {
@@ -29,8 +29,8 @@ enum AgentType {
 }
 
 message AgentAttribute {
-  float length = 1;
-  float width = 2;
+  double length = 1;
+  double width = 2;
 }
 
 // static agent variables
@@ -47,9 +47,9 @@ message LaneChangeExtension {
   // to describe the location where the agent maps to the target lane
   geo.v1.StreetPosition shadow_location = 1;
   // unit: m, the length required to complete lane changing
-  float total_length = 2;
+  double total_length = 2;
   // unit: m, the length completed
-  float completed_length = 3;
+  double completed_length = 3;
 }
 
 message Motion {
@@ -57,9 +57,9 @@ message Motion {
   // unit: rad in xy coordinate system
   // because (x, y) can be converted to (latitude, longitude),
   // north is zero
-  float direction = 2;   // north is zero
+  double direction = 2;   // north is zero
   // unit: m
-  float speed = 3;
+  double speed = 3;
   // not null if changing lane, 
   optional LaneChangeExtension lane_change = 4;
 }
@@ -89,13 +89,13 @@ enum DrivingDirection {
 }
 
 message DrivingAction {
-  float acceleration = 1;
+  double acceleration = 1;
   DrivingDirection direction = 2;
-  float lane_change_length = 3;
+  double lane_change_length = 3;
 }
 
 // used in LaneRuntime to track agent's position and speed in the lane
 message SimpleMotionInLane {
-  float s = 1;
-  float speed = 2;
+  double s = 1;
+  double speed = 2;
 }

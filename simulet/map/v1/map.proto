@@ -14,10 +14,10 @@ message Header {
   string date = 2;
 
   // map range
-  float north = 3;
-  float south = 4;
-  float east = 5;
-  float west = 6;
+  double north = 3;
+  double south = 4;
+  double east = 5;
+  double west = 6;
 
   // PROJ.4 setting, MUST contains offset x and offset y to do back projection!
   string projection = 7;
@@ -66,11 +66,11 @@ message Lane {
   int32 priority = 5 [deprecated = true];
 
   // speed limit (m/s)
-  float max_speed = 4;
+  double max_speed = 4;
 
   // the length of center line (meters)
-  float length = 6;
-  float width = 17;
+  double length = 6;
+  double width = 17;
 
   // center line as vehicle / pedestrian trajectory
   Polyline center_line = 7;

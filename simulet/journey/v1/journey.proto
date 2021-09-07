@@ -26,9 +26,9 @@ message Journey {
   JourneyMode mode = 1;
   geo.v1.MapPosition end = 2;
   // unit: second
-  optional float departure_time = 3;
+  optional double departure_time = 3;
   // unit: second
-  optional float arrival_time = 4;
+  optional double arrival_time = 4;
 }
 
 // Schedule is composed of multiple journeys for the agent (agent input)
