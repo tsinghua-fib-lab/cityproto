@@ -23,6 +23,8 @@ enum TripType {
 
 // lanes in the same road/junction
 // which means that the agent can choose one of them to pass
+// hint: the agent should pass the end of one lane in lanes
+// (except the last lane)
 message LaneSet {
   repeated uint32 lanes = 1;
 }
