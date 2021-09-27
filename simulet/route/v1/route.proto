@@ -21,16 +21,29 @@ enum TripType {
   TRIP_TYPE_BY_TAXI = 4;
 }
 
-// lanes in the same road/junction
-// which means that the agent can choose one of them to pass
-// hint: the agent should pass the end of one lane in lanes
-// (except the last lane)
-message LaneSet {
-  repeated uint32 lanes = 1;
+// describe how the vehicle goes into the next lane from the current lane
+enum NextLaneType {
+  NEXT_LANE_TYPE_UNKNOWN = 0;
+  // the next lane is the successor of the current lane
+  NEXT_LANE_TYPE_FORWARD = 1;
+  // the next lane is the left neighbor of the current lane
+  NEXT_LANE_TYPE_LEFT = 2;
+  // the next lane is the right neighbor of the current lane
+  NEXT_LANE_TYPE_RIGHT = 3;
+  // the current lane is the last one, no next lane
+  NEXT_LANE_TYPE_LAST = 4;
 }
 
+message RouteSegment {
+  uint32 lane_id = 1;
+  NextLaneType next_lane_type = 2;
+}
+
+// lanes sequence
+// hint: the agent should pass the end of one lane in lanes
+// (except the last lane or the lane whose next lane is its neighbor)
 message DrivingTripBody {
-  repeated LaneSet route = 1;
+  repeated RouteSegment route = 1;
 }
 
 message WalkingTripBody {
