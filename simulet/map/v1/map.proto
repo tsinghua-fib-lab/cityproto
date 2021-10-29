@@ -98,6 +98,7 @@ message Lane {
 message Road {
   uint32 id = 1;
   // All lanes in the road
+  // lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺序给出的
   repeated uint32 lane_ids = 2;
   // All pois at the road
   repeated uint32 poi_ids = 3;
