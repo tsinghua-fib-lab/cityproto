@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package output.proto.statistics.v1;
+
+enum RoadLevel {
+  // 通畅
+  ROAD_LEVEL_CLEAR = 0;
+  // 基本畅通
+  ROAD_LEVEL_LIGHT_LOAD = 1;
+  // 轻度拥堵
+  ROAD_LEVEL_MEDIUM_LOAD = 2;
+  // 中度拥堵
+  ROAD_LEVEL_HEAVY_LOAD = 3;
+  // 严重拥堵
+  ROAD_LEVEL_OVERLOAD = 4;
+}
+
+message Road {
+  uint32 id = 1;
+  // https://wenku.baidu.com/view/0fea81160b4e767f5acfcead.html
+  // 瞬时交通平均速度等级
+  // 按照从当前时刻到X分钟前的窗口内的道路瞬时平均速度的平均计算
+  RoadLevel level = 2;
+}
+
+// Kafka内消息用Statistics序列化/反序列化
+message Statistics {
+  int32 step = 1;
+  float time = 2;
+  repeated Road roads = 3;
+}
