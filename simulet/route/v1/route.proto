@@ -6,6 +6,11 @@ option go_package = "proto/routev1";
 
 import "simulet/geo/v1/geo.proto";
 
+// Journey用以描述采用一种特定交通方式从一点出发到达另一点的路径。
+// 一般来说，多个Journey是一个Trip的“实现”。
+// 例如：Trip(从清华乘地铁到天安门):
+// Journey(步行到地铁站)->Journey(地铁)->Journey(步行到天安门)
+
 enum RouteType {
   ROUTE_TYPE_UNKNOWN = 0;
   ROUTE_TYPE_DRIVING = 1;
@@ -13,12 +18,12 @@ enum RouteType {
   ROUTE_TYPE_BY_BUS = 3;
 }
 
-enum TripType {
-  TRIP_TYPE_UNKNOWN = 0;
-  TRIP_TYPE_DRIVING = 1;
-  TRIP_TYPE_WALKING = 2;
-  TRIP_TYPE_BY_BUS = 3;
-  TRIP_TYPE_BY_TAXI = 4;
+enum JourneyType {
+  JOURNEY_TYPE_UNKNOWN = 0;
+  JOURNEY_TYPE_DRIVING = 1;
+  JOURNEY_TYPE_WALKING = 2;
+  JOURNEY_TYPE_BY_BUS = 3;
+  JOURNEY_TYPE_BY_TAXI = 4;
 }
 
 // describe how the vehicle goes into the next lane from the current lane
@@ -42,29 +47,29 @@ message RouteSegment {
 // lanes sequence
 // hint: the agent should pass the end of one lane in lanes
 // (except the last lane or the lane whose next lane is its neighbor)
-message DrivingTripBody {
+message DrivingJourneyBody {
   repeated RouteSegment route = 1;
 }
 
-message WalkingTripBody {
+message WalkingJourneyBody {
   simulet.proto.geo.v1.NavigateRoute route = 1;
 }
 
-message BusTripBody {
+message BusJourneyBody {
   // TODO(zhangjun): not implemented
 }
 
-message TaxiTripBody {
+message TaxiJourneyBody {
   // TODO(zhangjun): not implemented
 }
 
 // one part of route, which contains only ONE mode of travel
-message Trip {
-  TripType type = 1;
-  oneof trip_body {
-    DrivingTripBody driving = 2;
-    WalkingTripBody walking = 3;
-    BusTripBody by_bus = 4;
-    TaxiTripBody by_taxi = 5;
+message Journey {
+  JourneyType type = 1;
+  oneof journey_body {
+    DrivingJourneyBody driving = 2;
+    WalkingJourneyBody walking = 3;
+    BusJourneyBody by_bus = 4;
+    TaxiJourneyBody by_taxi = 5;
   }
 }
