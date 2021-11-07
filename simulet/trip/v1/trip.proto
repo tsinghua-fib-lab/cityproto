@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package simulet.proto.trip.v1;
+
+import "simulet/geo/v1/geo.proto";
+
+// Trip用以描述从当前点到下一点的一次出行，可以包含多种出行方式（乘车、步行等），
+// 并且可以指定主要的交通方式TripMode。
+// 一个Trip在经过路径规划后，将转化为多个journey，并按照journey进行模拟。
+
+// that is, the preference of trip
+enum TripMode {
+  TRIP_MODE_UNKNOWN = 0;
+
+  // specify the mode of trip
+
+  TRIP_MODE_WALK_ONLY = 1;
+  TRIP_MODE_DRIVE_ONLY = 2;
+  TRIP_MODE_TAXI_ONLY = 3;
+  TRIP_MODE_BUS_ONLY = 4;
+
+  // choose the best from all modes that meet the time limit
+
+  TRIP_MODE_COST_FIRST = 5;
+  TRIP_MODE_TIME_FIRST = 6;
+}
+
+// Trip is a travel to somewhere with time limit and mode limit
+message Trip {
+  TripMode mode = 1;
+  geo.v1.MapPosition end = 2;
+  // unit: second
+  optional double departure_time = 3;
+  // unit: second
+  optional double arrival_time = 4;
+}
+
+// Schedule is composed of multiple trips for the agent (agent input)
+message Schedule {
+  uint32 agent_id = 1;
+  repeated Trip trips = 2;
+}

@@ -31,7 +31,7 @@ message RouteResponse {
   uint32 agent_id = 1;
   // self-increasing id for the agent
   uint32 agent_request_id = 2;
-  repeated simulet.proto.route.v1.Trip trips = 3;
+  repeated simulet.proto.route.v1.Journey journeys = 3;
 }
 
 message RouteBatchRequest {
