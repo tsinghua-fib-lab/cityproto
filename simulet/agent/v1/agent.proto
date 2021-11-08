@@ -93,9 +93,3 @@ message DrivingAction {
   DrivingDirection direction = 2;
   double lane_change_length = 3;
 }
-
-// used in LaneRuntime to track agent's position and speed in the lane
-message SimpleMotionInLane {
-  double s = 1;
-  double speed = 2;
-}

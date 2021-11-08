@@ -41,16 +41,3 @@ message JunctionAccessSetting {
 message BatchAccessSetting {
   repeated LaneAccessSetting lanes = 1;
 }
-
-message LaneRuntime {
-  uint32 lane_id = 1;
-  LaneAccessType type = 2;
-  // track the first agent's position and speed
-  // to guide the agent's action who will enter the lane
-  optional agent.v1.SimpleMotionInLane first_agent_motion = 3;
-}
-
-// simulet -> simulet, used to synchronize the map runtime
-message MapRuntime {
-  repeated LaneRuntime lanes = 1;
-}
