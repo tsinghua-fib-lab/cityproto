@@ -31,6 +31,8 @@ message MotionParameter {
   float usual_braking_acceleration = 5;
   // unit: m, the default length required to complete lane changing
   float lane_change_length = 6;
+  // 单位：米，本车距离前车的最小距离
+  float min_gap = 7;
 }
 
 // 智能体模板
@@ -63,9 +65,7 @@ message LaneChangeExtension {
 // 智能体运动状态
 message Motion {
   geo.v1.MapPosition location = 1;
-  // unit: rad in xy coordinate system
-  // because (x, y) can be converted to (latitude, longitude),
-  // north is zero
+  // 单位：xy坐标系下的弧度rad，xy坐标分别对应纬度、经度，因此正北对应direction=0
   float direction = 2;
   // unit: m
   float speed = 3;
