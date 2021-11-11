@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package wolong.routing.v1;
+
+import "wolong/geo/v1/geo.proto";
+import "wolong/routing/v1/routing.proto";
+
+service RoutingService {
+  // Get route by type/start/end
+  rpc GetRoute(GetRouteRequest) returns (GetRouteResponse);
+  rpc GetRouteByBatch(GetRouteByBatchRequest) returns (GetRouteByBatchResponse);
+}
+
+// simulet -> routing app
+message GetRouteRequest {
+  uint32 agent_id = 1;
+  // self-increasing id for the agent
+  uint32 agent_request_id = 2;
+  wolong.routing.v1.RouteType type = 3;
+  wolong.geo.v1.MapPosition start = 4;
+  // the postion the agent wants to go
+  wolong.geo.v1.MapPosition end = 5;
+  // map access etcd revision
+  int64 access_revision = 6;
+}
+
+// routing app -> simulet
+message GetRouteResponse {
+  uint32 agent_id = 1;
+  // self-increasing id for the agent
+  uint32 agent_request_id = 2;
+  repeated wolong.routing.v1.Journey journeys = 3;
+}
+
+message GetRouteByBatchRequest {
+  repeated GetRouteRequest requests = 1;
+}
+
+message GetRouteByBatchResponse {
+  repeated GetRouteResponse responses = 1;
+}

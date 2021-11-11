@@ -1,0 +1,91 @@
+syntax = "proto3";
+
+package wolong.agent.v1;
+
+import "wolong/geo/v1/geo.proto";
+import "wolong/trip/v1/trip.proto";
+
+// 本文件描述智能体agent的属性与状态
+// 注意：本文件不用于描述智能体模拟过程中的数据结构
+
+enum AgentType {
+  AGENT_TYPE_UNSPECIFIED = 0;
+  AGENT_TYPE_PERSON = 1;
+  AGENT_TYPE_PRIVATE_CAR = 2;
+  AGENT_TYPE_BUS = 3;
+  AGENT_TYPE_TAXI = 4;
+}
+
+// 智能体运动学属性
+message MotionParameter {
+  // unit: m/s
+  float max_speed = 1;
+  // unit: m/s^2, positive
+  float max_acceleration = 2;
+  // unit: m/s^2, negative
+  float max_braking_acceleration = 3;
+    // unit: m/s^2, positive, usual_acceleration < max_acceleration
+  float usual_acceleration = 4;
+  // unit: m/s^2, negative
+  // usual_braking_acceleration > max_braking_acceleration
+  float usual_braking_acceleration = 5;
+  // unit: m, the default length required to complete lane changing
+  float lane_change_length = 6;
+}
+
+// 智能体模板
+message AgentTemplate {
+  AgentType type = 1;
+  float length = 2;
+  float width = 3;
+  MotionParameter motion_parameter = 4;
+}
+
+// 智能体状态
+// TODO(张钧): 需要想想智能体在抽象的层面应该有哪些状态
+// 例如：空闲、吃饭、工作、学习、在路上？？？
+enum AgentStatus {
+  AGENT_STATUS_UNSPECIFIED = 0;
+  AGENT_STATUS_IDLE = 1;
+  AGENT_STATUS_RUNNING = 2;
+}
+
+// 针对变道行为的运动状态扩展
+message LaneChangeExtension {
+  // to describe the location where the agent maps to the target lane
+  geo.v1.LanePosition shadow_location = 1;
+  // unit: m, the length required to complete lane changing
+  float total_length = 2;
+  // unit: m, the length completed
+  float completed_length = 3;
+}
+
+// 智能体运动状态
+message Motion {
+  geo.v1.MapPosition location = 1;
+  // unit: rad in xy coordinate system
+  // because (x, y) can be converted to (latitude, longitude),
+  // north is zero
+  float direction = 2;
+  // unit: m
+  float speed = 3;
+  // not null if changing lane
+  optional LaneChangeExtension lane_change = 4;
+}
+
+// 智能体
+message Agent {
+  uint32 id = 1;
+  // 模板，在模拟器中应实现为通过template id进行索引
+  AgentTemplate template = 2;
+  // 初始位置
+  geo.v1.MapPosition home = 3;
+  // 初始日程
+  trip.v1.Schedule schedule = 4;
+  // 状态
+  AgentStatus status = 5;
+  // 运动状态
+  optional Motion motion = 6;
+}
+
+// TODO(zhangjun): enum VehicleLight {LEFT, RIGHT, BRAKING, ...}
