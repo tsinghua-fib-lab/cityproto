@@ -12,6 +12,8 @@ message Vehicle {
   uint32 lane_id = 2;
   geo.v1.LongLatPosition position = 3;
   float speed = 4;
+  // 单位：xy坐标系下的弧度rad，xy坐标分别对应纬度、经度，因此正北对应direction=0
+  float direction = 5;
 }
 
 // Kafka内消息用World序列化/反序列化
