@@ -1,0 +1,155 @@
+syntax = "proto3";
+
+package wolong.map.v1;
+
+import "wolong/geo/v1/geo.proto";
+
+// 本文件描述地图的数据结构定义
+
+// 折线，用于定义车道等的形状
+message Polyline {
+  repeated geo.v1.XYPosition nodes = 1;
+}
+
+// TODO(张钧): 地图是否需要一个ID，还是直接使用对应的col name作为id
+// 地图元信息
+message Header {
+  // 地图名称
+  string name = 1;
+
+  // 地图创建时间
+  string date = 2;
+
+  // 地图边界的xy坐标
+  double north = 3;
+  double south = 4;
+  double east = 5;
+  double west = 6;
+
+  // PROJ.4 投影字符串，用以支持xy坐标到其他坐标系的转换
+  string projection = 7;
+}
+
+enum LaneType {
+  LANE_TYPE_UNSPECIFIED = 0;
+  // 行车
+  LANE_TYPE_DRIVING = 1;
+  // 步行
+  LANE_TYPE_WALKING = 2;
+}
+
+enum LaneTurn {
+  LANE_TURN_UNSPECIFIED = 0;
+  // 直行
+  LANE_TURN_STRAIGHT = 1;
+  // 左转
+  LANE_TURN_LEFT = 2;
+  // 右转
+  LANE_TURN_RIGHT = 3;
+  // 掉头
+  LANE_TURN_AROUND = 4;
+}
+
+// 两个lane的冲突区域
+message LaneOverlap {
+  // 冲突点在本车道上的坐标
+  geo.v1.LanePosition self = 1;
+  // 冲突点在冲突车道上的坐标
+  geo.v1.LanePosition other = 2;
+  // 本车道是否有优先通行权
+  bool self_first = 3;
+}
+
+message Lane {
+  // self id
+  uint32 id = 1;
+
+  LaneType type = 2;
+  LaneTurn turn = 3;
+
+  // speed limit (m/s)
+  float max_speed = 4;
+
+  // the length of center line (meters)
+  float length = 5;
+  float width = 6;
+
+  // ATTENTION: 折线采样点不保证在多个折线之间保持一致
+
+  // center line as vehicle / pedestrian trajectory
+  Polyline center_line = 7;
+  // lane left border line
+  Polyline left_border_line = 8;
+  // lane right border line
+  Polyline right_border_line = 9;
+
+  // Lanes can drive / walk from
+  repeated uint32 predecessor_ids = 10;
+  // Lanes can drive / walk to
+  repeated uint32 successor_ids = 11;
+  // left neighbor lane id (sorted by the distance to the lane,
+  // the closer is in the front)
+  repeated uint32 left_lane_ids = 12;
+  // right neighbor lane id (sorted by the distance to the lane)
+  repeated uint32 right_lane_ids = 13;
+
+  // parent road id or junction id
+  uint32 parent_id = 14;
+
+  // Lanes conflicting with the lane
+  repeated LaneOverlap overlaps = 15;
+}
+
+message Road {
+  uint32 id = 1;
+  // 属于该道路Road的所有车道/人行道等lane
+  // lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺序给出的
+  repeated uint32 lane_ids = 2;
+  // 属于该道路Road的所有POI
+  repeated uint32 poi_ids = 3;
+}
+
+message Junction {
+  uint32 id = 1;
+  // All lanes in the junction
+  repeated uint32 lane_ids = 2;
+}
+
+enum PoiType {
+  POI_TYPE_UNSPECIFIED = 0;
+  POI_TYPE_BUS_STATION = 1;
+  POI_TYPE_OTHER = 2;
+}
+
+message Poi {
+  uint32 id = 1;
+  PoiType type = 2;
+
+  // POI与行车路网的连接点
+  geo.v1.LanePosition driving_position = 3;
+
+  // POI与步行路网的连接点
+  geo.v1.LanePosition walking_position = 4;
+}
+
+message Aoi {
+  uint32 id = 1;
+
+  // All pois in the aoi
+  repeated uint32 poi_ids = 2;
+
+  // All gate poi of the aoi (a part of ${poi_id})
+  repeated uint32 gate_poi_ids = 3;
+
+  // TODO(zhangjun): Aoi range ?
+}
+
+// 地图，对应一个地图pb文件或一个地图mongodb collection
+message Map {
+  Header header = 1;
+  repeated Lane lanes = 2;
+  repeated Road roads = 3;
+  repeated Junction junctions = 4;
+  repeated Poi pois = 5;
+  repeated Aoi aois = 6;
+}

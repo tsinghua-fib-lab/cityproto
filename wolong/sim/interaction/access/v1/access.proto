@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package wolong.sim.interaction.access.v1;
+
+// 本文件描述模拟器限行接口
+
+// The access status of lane
+enum LaneAccessType {
+  LANE_ACCESS_TYPE_UNSPECIFIED = 0;
+  // there is no any restriction like traffic light and traffic control
+  // any type of lanes can use the type
+  // e.g. lane in general road, lane in junction without traffic light
+  LANE_ACCESS_TYPE_UNRESTRICTED = 1;
+  // agent is forbidden to pass
+  // any type of lanes can use the type
+  // e.g. lane closed by police, lane under construction, accident in lane, etc.
+  LANE_ACCESS_TYPE_NO_ENTRY = 2;
+}
+
+// app -> simulet, used to set lane access attributes
+message LaneAccessSetting {
+  uint32 lane_id = 1;
+  LaneAccessType type = 2;
+}
+
+message BatchAccessSetting {
+  repeated LaneAccessSetting lanes = 1;
+}

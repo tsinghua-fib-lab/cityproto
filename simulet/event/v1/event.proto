@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-package simulet.proto.event.v1;
-
-message Report {
-  string name = 1;
-  bool finished = 2;
-  string number = 3;
-}

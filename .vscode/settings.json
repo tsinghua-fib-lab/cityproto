@@ -1,3 +1,17 @@
 {
-    "editor.tabSize": 2
+    "editor.tabSize": 2,
+    "files.autoSave": "onFocusChange",
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 80,
+    "editor.formatOnSave": true,
+    "todohighlight.keywordsPattern": "TODO:? ?\\([^ ]+?\\):",
+    "todohighlight.defaultStyle": {
+        "color": "#fff",
+        "backgroundColor": "#fdbc3e",
+        "overviewRulerColor": "#fdbc3e",
+    },
+    "cSpell.words": [
+        "wolong"
+    ],
+    "files.insertFinalNewline": true
 }
