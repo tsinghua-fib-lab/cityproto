@@ -35,8 +35,8 @@ message MotionParameter {
   float min_gap = 7;
 }
 
-// 智能体模板
-message AgentTemplate {
+// 智能体属性
+message AgentAttribute {
   AgentType type = 1;
   float length = 2;
   float width = 3;
@@ -76,8 +76,8 @@ message Motion {
 // 智能体
 message Agent {
   uint32 id = 1;
-  // 模板，在模拟器中应实现为通过template id进行索引
-  AgentTemplate template = 2;
+  // 参数
+  AgentAttribute attribute = 2;
   // 初始位置
   geo.v1.MapPosition home = 3;
   // 初始日程
@@ -87,5 +87,3 @@ message Agent {
   // 运动状态
   optional Motion motion = 6;
 }
-
-// TODO(zhangjun): enum VehicleLight {LEFT, RIGHT, BRAKING, ...}
