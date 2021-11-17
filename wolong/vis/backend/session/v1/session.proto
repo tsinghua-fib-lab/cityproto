@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package wolong.vis.backend.session.v1;
+
+// 本文件描述可视化后端的会话相关内容
+
+// 会话元数据
+message SessionMetadata {
+  // 帧数量
+  uint32 frame_count = 1;
+  // 每帧时间
+  uint32 duration_pre_frame = 2;
+}

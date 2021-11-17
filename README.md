@@ -10,6 +10,7 @@ proto文件仓库。
 - `wolong.routing`: 技术，路径规划
 - `wolong.sim`: 技术，模拟器
 - `wolong.trip`: 通用，出行与日程
+- `wolong.vis`: 业务，可视化
 
 ## STYLE
 

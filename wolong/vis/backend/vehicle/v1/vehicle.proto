@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package wolong.vis.backend.vehicle.v1;
+
+import "wolong/geo/v1/geo.proto";
+
+// 可视化后端向前端输出的车辆信息。
+
+message Vehicle {
+  string id = 1;
+  geo.v1.LongLatPosition position = 2;
+  float direction = 3;
+  string lane_id = 4;
+}
+
+message VehicleFrame {
+  uint32 step = 1;
+  repeated Vehicle frame = 2;
+}

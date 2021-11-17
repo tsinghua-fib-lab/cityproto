@@ -1,0 +1,57 @@
+syntax = "proto3";
+
+package wolong.vis.backend.vehicle.v1;
+
+import "wolong/geo/v1/geo.proto";
+import "wolong/vis/backend/session/v1/session.proto";
+import "wolong/vis/backend/vehicle/v1/vehicle.proto";
+
+// 定义可视化后端车辆流数据接口
+
+service VehicleStreamService {
+  // 加载
+  rpc Acquire(AcquireRequest) returns (AcquireResponse);
+  // 拉取
+  rpc Fetch(FetchRequest) returns (stream FetchResponse);
+  // 释放
+  rpc Release(ReleaseRequest) returns (ReleaseResponse);
+}
+
+message AcquireRequest {
+  string sim_name = 1;
+  uint32 start_frame = 2;
+}
+
+message AcquireResponse {
+  uint32 status = 1;
+  string session_id = 2;
+  session.v1.SessionMetadata metadata = 3;
+}
+
+message Filter {
+  geo.v1.LongLatRectArea filter = 1;
+  // exclude_all = true，过滤所有车辆。
+  bool exclude_all = 2;
+  // do_not_exclude_vehicle_ids，不对列表内的车辆ID进行过滤。
+  repeated string do_not_exclude_vehicle_ids = 3;
+}
+
+// 从第step帧开始拉取最大chuck_size_max数量的帧，应用Filter进行过滤
+message FetchRequest {
+  string session_id = 1;
+  uint32 step = 2;
+  uint32 chuck_size_max = 3;
+  Filter filter = 4;
+}
+
+message FetchResponse {
+  VehicleFrame frame = 1;
+}
+
+message ReleaseRequest {
+  string session_id = 1;
+}
+
+message ReleaseResponse {
+
+}
