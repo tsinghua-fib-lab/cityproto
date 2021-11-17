@@ -9,6 +9,8 @@ package wolong.geo.v1;
 //   按米计算的平面x/y坐标
 // 3. MapPosition
 //   地图坐标（例如：POI、车道+距离s）
+// 4. LongLatRectArea
+//   经纬度矩形区域
 
 message LongLatPosition {
   double longitude = 1;
@@ -36,4 +38,11 @@ message MapPosition {
     LanePosition lane_position = 1;
     PoiPosition poi_position = 2;
   }
+}
+
+message LongLatRectArea {
+  // ne为区域东北角经纬度
+  LongLatPosition ne = 1;
+  // sw为区域西南角经纬度
+  LongLatPosition sw = 2;
 }
