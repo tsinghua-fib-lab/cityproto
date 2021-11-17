@@ -16,31 +16,26 @@ enum AgentType {
   AGENT_TYPE_TAXI = 4;
 }
 
-// 智能体运动学属性
-message MotionParameter {
-  // unit: m/s
-  float max_speed = 1;
-  // unit: m/s^2, positive
-  float max_acceleration = 2;
-  // unit: m/s^2, negative
-  float max_braking_acceleration = 3;
-    // unit: m/s^2, positive, usual_acceleration < max_acceleration
-  float usual_acceleration = 4;
-  // unit: m/s^2, negative
-  // usual_braking_acceleration > max_braking_acceleration
-  float usual_braking_acceleration = 5;
-  // unit: m, the default length required to complete lane changing
-  float lane_change_length = 6;
-  // 单位：米，本车距离前车的最小距离
-  float min_gap = 7;
-}
-
 // 智能体属性
 message AgentAttribute {
   AgentType type = 1;
   float length = 2;
   float width = 3;
-  MotionParameter motion_parameter = 4;
+  // unit: m/s
+  float max_speed = 4;
+  // unit: m/s^2, positive
+  float max_acceleration = 5;
+  // unit: m/s^2, negative
+  float max_braking_acceleration = 6;
+    // unit: m/s^2, positive, usual_acceleration < max_acceleration
+  float usual_acceleration = 7;
+  // unit: m/s^2, negative
+  // usual_braking_acceleration > max_braking_acceleration
+  float usual_braking_acceleration = 8;
+  // unit: m, the default length required to complete lane changing
+  float lane_change_length = 9;
+  // 单位：米，本车距离前车的最小距离
+  float min_gap = 10;
 }
 
 // 智能体状态
