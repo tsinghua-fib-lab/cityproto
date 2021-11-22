@@ -3,8 +3,8 @@ syntax = "proto3";
 package wolong.vis.backend.vehicle.v1;
 
 import "wolong/geo/v1/geo.proto";
+import "wolong/sim/output/world/v1/world.proto";
 import "wolong/vis/backend/session/v1/session.proto";
-import "wolong/vis/backend/vehicle/v1/vehicle.proto";
 
 // 定义可视化后端车辆流数据接口
 
@@ -45,7 +45,7 @@ message FetchRequest {
 }
 
 message FetchResponse {
-  VehicleFrame frame = 1;
+  sim.output.world.v1.World frame = 1;
 }
 
 message ReleaseRequest {
