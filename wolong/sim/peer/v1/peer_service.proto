@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package wolong.sim.peer.v1;
+
+import "wolong/sim/peer/v1/peer.proto";
+import "wolong/agent/v1/agent.proto";
+import "wolong/trip/v1/trip.proto";
+import "wolong/routing/v1/routing_service.proto";
+
+service PeerChatService {
+  rpc PeerChat(stream PeerChatRequest) returns (PeerChatResponse);
+}
+
+// 需要插入到其他节点的车辆信息
+message PeerChatRequest {
+  wolong.sim.peer.v1.VehicleRuntime runtime = 1;
+  wolong.agent.v1.Agent agent = 2;
+  wolong.trip.v1.Schedule schedule = 3;
+  wolong.routing.v1.GetRouteResponse route = 4;
+}
+
+// 各个lane的环境信息
+message PeerChatResponse {
+  uint32 lane_id = 1;
+  wolong.sim.peer.v1.FirstVehicleInfo first_v_info = 2;
+}
