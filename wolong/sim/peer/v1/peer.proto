@@ -1,17 +1,18 @@
 syntax = "proto3";
 
 package wolong.sim.peer.v1;
+
 import "wolong/agent/v1/agent.proto";
+import "wolong/routing/v1/routing_service.proto";
 
 // 本文件描述分布式节点之间额外定义的的通信数据
 enum VehicleStatus {
   VEHICLE_STATUS_UNSPECIFIED = 0;
-  VEHICLE_STATUS_UNKNOWN = 1;
-  VEHICLE_STATUS_IDLE = 2;
-  VEHICLE_STATUS_RUNNING = 3;
-  VEHICLE_STATUS_WAITING_FOR_TIME = 4;
-  VEHICLE_STATUS_WAITING_FOR_ROUTE = 5;
-  VEHICLE_STATUS_READY_FOR_LEAVING = 6;
+  VEHICLE_STATUS_IDLE = 1;
+  VEHICLE_STATUS_RUNNING = 2;
+  VEHICLE_STATUS_WAITING_FOR_TIME = 3;
+  VEHICLE_STATUS_WAITING_FOR_ROUTE = 4;
+  VEHICLE_STATUS_READY_FOR_LEAVING = 5;
 }
 
 message VehicleMotion {
@@ -23,10 +24,11 @@ message VehicleMotion {
 message VehicleRuntime {
   VehicleStatus status = 1;
   VehicleMotion motion = 2;
+  wolong.routing.v1.GetRouteResponse route = 3;
 }
 
-message FirstVehicleInfo {
-  float v = 1;
-  float s = 2;
+message FirstVehicle {
+  float s = 1;
+  float speed = 2;
   wolong.agent.v1.AgentAttribute attribute = 3;
 }
