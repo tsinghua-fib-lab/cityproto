@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package wolong.sim.interaction.agent.v1;
+
+import "wolong/geo/v1/geo.proto";
+
+message Destination {
+  wolong.geo.v1.MapPosition map_position = 1;
+  wolong.geo.v1.LongLatPosition longlat_position = 2;
+}
