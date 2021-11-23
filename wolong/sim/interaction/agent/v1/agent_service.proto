@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package wolong.sim.interaction.agent.v1;
+
+import "wolong/sim/interaction/agent/v1/agent.proto";
+import "wolong/agent/v1/agent.proto";
+import "wolong/trip/v1/trip.proto";
+
+service AgentService {
+  // 获取agent信息 传入agentid 返回当前trip的剩余距离、当前agent的所有trip的目的地信息
+  rpc GetAgent(GetAgentRequest) returns (GetAgentResponse);
+  // 新增agent 传入agent初始位置、目的地表、属性（自动填充） 返回agentid
+  rpc AddAgent(AddAgentRequest) returns (AddAgentResponse);
+  // 修改agent的schedule 传入agentid、目的地表
+  rpc SetSchedule(SetScheduleRequest) returns (SetScheduleResponse);
+}
+
+message GetAgentRequest {
+  uint32 agent_id = 1;
+}
+
+message GetAgentResponse {
+  float distance = 1;
+  repeated wolong.sim.interaction.agent.v1.Destination schedule = 2;
+}
+
+message AddAgentRequest {
+  wolong.agent.v1.Agent agent = 1;
+}
+
+message AddAgentResponse {
+  uint32 agent_id = 1;
+}
+
+message SetScheduleRequest {
+  uint32 agent_id = 1;
+  wolong.trip.v1.Schedule schedule = 2;
+}
+
+message SetScheduleResponse {
+}
