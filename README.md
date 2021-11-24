@@ -16,6 +16,10 @@ proto文件仓库。
 
 以[buf](https://github.com/bufbuild/buf)作为linter，按buf的要求作为标准。
 
+另外，为避免二义性，所有不在完全相同命名空间下的跨文件引用均需要写出完成包名。
+
+在相同命名空间下的，不要引入包名（主要是针对`xxx.proto`与`xxx_service.proto`）。
+
 参考：
 1. https://developers.google.com/protocol-buffers/docs/style
 2. https://github.com/uber/prototool/blob/dev/style/README.md

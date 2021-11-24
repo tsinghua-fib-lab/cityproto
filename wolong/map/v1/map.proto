@@ -8,7 +8,7 @@ import "wolong/geo/v1/geo.proto";
 
 // 折线，用于定义车道等的形状
 message Polyline {
-  repeated geo.v1.XYPosition nodes = 1;
+  repeated wolong.geo.v1.XYPosition nodes = 1;
 }
 
 // TODO(张钧): 地图是否需要一个ID，还是直接使用对应的col name作为id
@@ -53,9 +53,9 @@ enum LaneTurn {
 // 两个lane的冲突区域
 message LaneOverlap {
   // 冲突点在本车道上的坐标
-  geo.v1.LanePosition self = 1;
+  wolong.geo.v1.LanePosition self = 1;
   // 冲突点在冲突车道上的坐标
-  geo.v1.LanePosition other = 2;
+  wolong.geo.v1.LanePosition other = 2;
   // 本车道是否有优先通行权
   bool self_first = 3;
 }
@@ -126,10 +126,10 @@ message Poi {
   PoiType type = 2;
 
   // POI与行车路网的连接点
-  geo.v1.LanePosition driving_position = 3;
+  wolong.geo.v1.LanePosition driving_position = 3;
 
   // POI与步行路网的连接点
-  geo.v1.LanePosition walking_position = 4;
+  wolong.geo.v1.LanePosition walking_position = 4;
 }
 
 message Aoi {
