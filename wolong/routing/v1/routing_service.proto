@@ -16,10 +16,10 @@ message GetRouteRequest {
   uint32 agent_id = 1;
   // self-increasing id for the agent
   uint32 agent_request_id = 2;
-  wolong.routing.v1.RouteType type = 3;
-  wolong.geo.v1.MapPosition start = 4;
+  RouteType type = 3;
+  wolong.geo.v1.Position start = 4;
   // the postion the agent wants to go
-  wolong.geo.v1.MapPosition end = 5;
+  wolong.geo.v1.Position end = 5;
   // map access etcd revision
   int64 access_revision = 6;
 }
@@ -29,7 +29,7 @@ message GetRouteResponse {
   uint32 agent_id = 1;
   // self-increasing id for the agent
   uint32 agent_request_id = 2;
-  repeated wolong.routing.v1.Journey journeys = 3;
+  repeated Journey journeys = 3;
 }
 
 message GetRouteByBatchRequest {

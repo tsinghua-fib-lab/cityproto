@@ -29,7 +29,7 @@ enum TripMode {
 message Trip {
   TripMode mode = 1;
   // 目的地
-  geo.v1.MapPosition end = 2;
+  wolong.geo.v1.Position end = 2;
   // 期望的出发时间（单位: 秒）
   optional float departure_time = 3;
   // 期望的到达时间（单位: 秒）

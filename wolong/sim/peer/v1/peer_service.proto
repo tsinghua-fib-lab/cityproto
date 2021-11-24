@@ -2,8 +2,8 @@ syntax = "proto3";
 
 package wolong.sim.peer.v1;
 
-import "wolong/sim/peer/v1/peer.proto";
 import "wolong/agent/v1/agent.proto";
+import "wolong/sim/peer/v1/peer.proto";
 
 service PeerChatService {
   rpc Write(stream WriteRequest) returns (WriteResponse);
@@ -12,11 +12,12 @@ service PeerChatService {
 
 // 需要插入到其他节点的车辆信息
 message WriteRequest {
-  wolong.sim.peer.v1.VehicleRuntime runtime = 1;
+  VehicleRuntime runtime = 1;
   wolong.agent.v1.Agent agent = 2;
 }
 
-message WriteResponse {}
+message WriteResponse {
+}
 
 message ReadRequest {
   uint32 node_id = 1;
@@ -25,5 +26,5 @@ message ReadRequest {
 // 各个lane的环境信息
 message ReadResponse {
   uint32 lane_id = 1;
-  wolong.sim.peer.v1.FirstVehicle first_vehicle = 2;
+  FirstVehicle first_vehicle = 2;
 }

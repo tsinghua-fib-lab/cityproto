@@ -50,7 +50,7 @@ enum AgentStatus {
 // 针对变道行为的运动状态扩展
 message LaneChangeExtension {
   // to describe the location where the agent maps to the target lane
-  geo.v1.LanePosition shadow_location = 1;
+  wolong.geo.v1.LanePosition shadow_location = 1;
   // unit: m, the length required to complete lane changing
   float total_length = 2;
   // unit: m, the length completed
@@ -59,7 +59,7 @@ message LaneChangeExtension {
 
 // 智能体运动状态
 message Motion {
-  geo.v1.MapPosition location = 1;
+  wolong.geo.v1.Position location = 1;
   // 单位：xy坐标系下的弧度rad，xy坐标分别对应纬度、经度，因此正北对应direction=0
   float direction = 2;
   // unit: m
@@ -74,9 +74,9 @@ message Agent {
   // 参数
   AgentAttribute attribute = 2;
   // 初始位置
-  geo.v1.MapPosition home = 3;
+  wolong.geo.v1.Position home = 3;
   // 初始日程
-  trip.v1.Schedule schedule = 4;
+  wolong.trip.v1.Schedule schedule = 4;
   // 状态
   AgentStatus status = 5;
   // 运动状态
