@@ -9,6 +9,8 @@ import "wolong/agent/v1/agent.proto";
 message Vehicle {
   uint32 id = 1;
   wolong.agent.v1.Motion motion = 2;
+  // 可选的描述字符串，可用于调试时输出额外信息
+  optional string description = 3;
 }
 
 // Kafka内消息用World序列化/反序列化
