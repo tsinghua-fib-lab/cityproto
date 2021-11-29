@@ -83,9 +83,9 @@ message Lane {
   // lane right border line
   Polyline right_border_line = 9;
 
-  // Lanes can drive / walk from
+  // Lanes can drive / walk from，对于Junction内的车道至多1个前驱
   repeated uint32 predecessor_ids = 10;
-  // Lanes can drive / walk to
+  // Lanes can drive / walk to，对于Junction内的车道至多1个后继
   repeated uint32 successor_ids = 11;
   // left neighbor lane id (sorted by the distance to the lane,
   // the closer is in the front)
