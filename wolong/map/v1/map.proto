@@ -96,7 +96,7 @@ message Lane {
   // parent road id or junction id
   uint32 parent_id = 14;
 
-  // Lanes conflicting with the lane
+  // 车道之间的冲突点（仅在Junction内有效），保证按照self_s从小到大排序
   repeated LaneOverlap overlaps = 15;
 }
 
