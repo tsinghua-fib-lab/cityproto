@@ -10,5 +10,4 @@ message StepRequest {
   uint32 step = 1;
 }
 
-message StepResponse {
-}
+message StepResponse {}

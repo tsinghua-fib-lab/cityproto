@@ -16,8 +16,7 @@ message WriteRequest {
   wolong.agent.v1.Agent agent = 2;
 }
 
-message WriteResponse {
-}
+message WriteResponse {}
 
 message ReadRequest {
   uint32 node_id = 1;

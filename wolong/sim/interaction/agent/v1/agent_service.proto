@@ -7,7 +7,7 @@ import "wolong/geo/v1/geo.proto";
 import "wolong/trip/v1/trip.proto";
 
 service AgentService {
-  // 获取agent信息 传入agentid 返回当前trip的剩余距离、当前agent的所有trip的目的地信息
+  // 获取agent信息：传入agentid，返回当前trip的剩余距离、当前agent的所有trip的目的地信息
   rpc GetAgent(GetAgentRequest) returns (GetAgentResponse);
   // 新增agent 传入agent初始位置、目的地表、属性（自动填充） 返回agentid
   rpc AddAgent(AddAgentRequest) returns (AddAgentResponse);
@@ -38,5 +38,4 @@ message SetScheduleRequest {
   wolong.trip.v1.Schedule schedule = 2;
 }
 
-message SetScheduleResponse {
-}
+message SetScheduleResponse {}
