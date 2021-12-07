@@ -60,6 +60,19 @@ message LaneOverlap {
   bool self_first = 3;
 }
 
+enum LaneConnectionType {
+  LANE_CONNECTION_TYPE_UNSPECIFIED = 0;
+  // 连接处为道路开头
+  LANE_CONNECTION_TYPE_HEAD = 1;
+  // 连接处为道路结尾
+  LANE_CONNECTION_TYPE_TAIL = 2;
+}
+
+message LaneConnection {
+  uint32 id = 1;
+  LaneConnectionType type = 2;
+}
+
 message Lane {
   // self id
   uint32 id = 1;
@@ -83,10 +96,16 @@ message Lane {
   // lane right border line
   Polyline right_border_line = 9;
 
-  // Lanes can drive / walk from，对于Junction内的车道至多1个前驱
-  repeated uint32 predecessor_ids = 10;
-  // Lanes can drive / walk to，对于Junction内的车道至多1个后继
-  repeated uint32 successor_ids = 11;
+  // Lanes can drive / walk from
+  // 对于Junction内的车道至多1个前驱
+  // 对于LANE_TYPE_DRIVING，连接类型必为LANE_CONNECTION_TYPE_TAIL
+  // 对于LANE_TYPE_WALKING连接类型两种都有可能
+  repeated LaneConnection predecessors = 10;
+  // Lanes can drive / walk to
+  // 对于Junction内的车道至多1个后继
+  // 对于LANE_TYPE_DRIVING，连接类型必为LANE_CONNECTION_TYPE_HEAD
+  // 对于LANE_TYPE_WALKING连接类型两种都有可能
+  repeated LaneConnection successors = 11;
   // left neighbor lane id (sorted by the distance to the lane,
   // the closer is in the front)
   repeated uint32 left_lane_ids = 12;
@@ -124,23 +143,20 @@ enum PoiType {
 message Poi {
   uint32 id = 1;
   PoiType type = 2;
-
   // POI与行车路网的连接点
-  wolong.geo.v1.LanePosition driving_position = 3;
-
+  optional wolong.geo.v1.LanePosition driving_position = 3;
   // POI与步行路网的连接点
-  wolong.geo.v1.LanePosition walking_position = 4;
+  optional wolong.geo.v1.LanePosition walking_position = 4;
+  // POI原始位置
+  wolong.geo.v1.XYPosition position = 5;
 }
 
 message Aoi {
   uint32 id = 1;
-
   // All pois in the aoi
   repeated uint32 poi_ids = 2;
-
   // All gate poi of the aoi (a part of ${poi_id})
   repeated uint32 gate_poi_ids = 3;
-
   // TODO(zhangjun): Aoi range ?
 }
 

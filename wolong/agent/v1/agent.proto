@@ -27,7 +27,7 @@ message AgentAttribute {
   float max_acceleration = 5;
   // unit: m/s^2, negative
   float max_braking_acceleration = 6;
-    // unit: m/s^2, positive, usual_acceleration < max_acceleration
+  // unit: m/s^2, positive, usual_acceleration < max_acceleration
   float usual_acceleration = 7;
   // unit: m/s^2, negative
   // usual_braking_acceleration > max_braking_acceleration

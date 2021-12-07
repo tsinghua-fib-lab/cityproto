@@ -52,6 +52,4 @@ message ReleaseRequest {
   string session_id = 1;
 }
 
-message ReleaseResponse {
-
-}
+message ReleaseResponse {}
