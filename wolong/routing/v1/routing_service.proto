@@ -12,15 +12,15 @@ service RoutingService {
 
 // simulet -> routing app
 message GetRouteRequest {
-  RouteType type = 3;
-  wolong.geo.v1.Position start = 4;
+  RouteType type = 1;
+  wolong.geo.v1.Position start = 2;
   // the postion the agent wants to go
-  wolong.geo.v1.Position end = 5;
+  wolong.geo.v1.Position end = 3;
   // map access etcd revision
-  int64 access_revision = 6;
+  int64 access_revision = 4;
 }
 
 // routing app -> simulet
 message GetRouteResponse {
-  repeated Journey journeys = 3;
+  repeated Journey journeys = 1;
 }
