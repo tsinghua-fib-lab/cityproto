@@ -8,14 +8,10 @@ import "wolong/routing/v1/routing.proto";
 service RoutingService {
   // Get route by type/start/end
   rpc GetRoute(GetRouteRequest) returns (GetRouteResponse);
-  rpc GetRouteByBatch(GetRouteByBatchRequest) returns (GetRouteByBatchResponse);
 }
 
 // simulet -> routing app
 message GetRouteRequest {
-  uint32 agent_id = 1;
-  // self-increasing id for the agent
-  uint32 agent_request_id = 2;
   RouteType type = 3;
   wolong.geo.v1.Position start = 4;
   // the postion the agent wants to go
@@ -26,16 +22,5 @@ message GetRouteRequest {
 
 // routing app -> simulet
 message GetRouteResponse {
-  uint32 agent_id = 1;
-  // self-increasing id for the agent
-  uint32 agent_request_id = 2;
   repeated Journey journeys = 3;
-}
-
-message GetRouteByBatchRequest {
-  repeated GetRouteRequest requests = 1;
-}
-
-message GetRouteByBatchResponse {
-  repeated GetRouteResponse responses = 1;
 }
