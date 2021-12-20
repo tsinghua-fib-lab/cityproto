@@ -1,0 +1,14 @@
+version: v1
+managed:
+  enabled: true
+  go_package_prefix:
+    default: git.tsingroc.com/sim/protos
+plugins:
+  - name: go
+    out: gen/proto/go
+    opt: paths=import
+  - name: go-grpc
+    out: gen/proto/go
+    opt:
+      - paths=import
+      - require_unimplemented_servers=false

@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package wolong.sim.output.world.v1;
+package wolong.sim.output.v1;
 
 import "wolong/agent/v1/agent.proto";
 
@@ -13,10 +13,26 @@ message Vehicle {
   optional string description = 3;
 }
 
-// Kafka内消息用World序列化/反序列化
+// S3内消息用World序列化/反序列化
 message World {
   // step==-1代表消息结束
   int32 step = 1;
   float time = 2;
   repeated Vehicle vehicles = 3;
+}
+
+// kafka内消息用S3Path序列化/反序列化
+message S3Path {
+  int32 step = 1;
+  // s3中bucket名
+  string bucket = 2;
+  // 本步World消息s3中的存储路径
+  string path = 3;
+}
+
+message Output {
+  oneof output {
+    World world = 1;
+    S3Path s3path = 2;
+  }
 }
