@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package wolong.sim.forward.v1;
+
+import "wolong/sim/output/v1/output.proto";
+
+service ForwardService {
+  rpc Forward(ForwardRequest) returns (ForwardResponse) {}
+}
+
+message ForwardRequest {
+  wolong.sim.output.v1.World world = 1;
+}
+
+message ForwardResponse {
+}

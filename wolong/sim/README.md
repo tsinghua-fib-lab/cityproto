@@ -8,3 +8,4 @@
 - control: 控制层
 - output: 对外输出
 - peer: 分布式
+- forward: 输出转发
