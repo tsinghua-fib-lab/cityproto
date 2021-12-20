@@ -13,12 +13,20 @@ message Vehicle {
   optional string description = 3;
 }
 
+message Person {
+  uint32 id = 1;
+  wolong.agent.v1.Motion motion = 2;
+  // 可选的描述字符串，可用于调试时输出额外信息
+  optional string description = 3;
+}
+
 // S3内消息用World序列化/反序列化
 message World {
   // step==-1代表消息结束
   int32 step = 1;
   float time = 2;
   repeated Vehicle vehicles = 3;
+  repeated Person people = 4;
 }
 
 // kafka内消息用S3Path序列化/反序列化
