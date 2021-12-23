@@ -4,6 +4,8 @@ package wolong.sim.output.v1;
 
 import "wolong/agent/v1/agent.proto";
 
+import "wolong/traffic_light/v1/traffic_light.proto";
+
 // 本文件描述模拟器每帧对外输出的原始数据
 
 message Vehicle {
@@ -20,6 +22,14 @@ message Person {
   optional string description = 3;
 }
 
+message TrafficLightState {
+  // 精确到车道
+  uint32 laneid = 1;
+  wolong.traffic_light.v1.LightState state = 2;
+  // 可选的描述字符串，可用于调试时输出额外信息
+  optional string description = 3;
+}
+
 // S3内消息用World序列化/反序列化
 message World {
   // step==-1代表消息结束
@@ -27,6 +37,7 @@ message World {
   float time = 2;
   repeated Vehicle vehicles = 3;
   repeated Person people = 4;
+  repeated TrafficLightState traffic_lights = 5;
 }
 
 // kafka内消息用S3Path序列化/反序列化

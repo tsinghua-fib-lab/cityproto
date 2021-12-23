@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package wolong.sim.output.v1;
+
+import "wolong/traffic_light/v1/traffic_light.proto";
+
+service TrafficLightService {
+  rpc GetTrafficLight(GetTrafficLightRequest) returns (GetTrafficLightResponse);
+  rpc SetTrafficLight(SetTrafficLightRequest) returns (SetTrafficLightResponse);
+}
+
+message GetTrafficLightRequest {
+  // 信号等相关的接口精确到junction。junction id > 300000000
+  uint32 junction_id = 1;
+}
+
+message GetTrafficLightResponse {
+  wolong.traffic_light.v1.TrafficLight traffic_light = 1;
+  // 表示当前路口处的红绿灯处于哪一个相位
+  uint32 phase_index = 2;
+  // 当前相位的剩余时间
+  float time_remaining = 3;
+}
+
+message SetTrafficLightRequest {
+  wolong.traffic_light.v1.TrafficLight traffic_light = 1;
+  // 表示当前路口处的红绿灯处于哪一个相位
+  uint32 phase_index = 2;
+  // 当前相位的剩余时间
+  float time_remaining = 3;
+}
+
+message SetTrafficLightResponse {}
