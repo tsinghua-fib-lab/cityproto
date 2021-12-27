@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package wolong.sim.output.v1;
+package wolong.sim.interaction.traffic_light.v1;
 
 import "wolong/traffic_light/v1/traffic_light.proto";
 
