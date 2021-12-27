@@ -35,7 +35,7 @@ message AddAgentResponse {
 
 message SetScheduleRequest {
   uint32 agent_id = 1;
-  wolong.trip.v1.Schedule schedule = 2;
+  repeated wolong.trip.v1.Schedule schedules = 2;
 }
 
 message SetScheduleResponse {}
