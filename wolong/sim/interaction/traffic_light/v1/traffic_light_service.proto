@@ -24,10 +24,21 @@ message GetTrafficLightResponse {
 
 message SetTrafficLightRequest {
   wolong.traffic_light.v1.TrafficLight traffic_light = 1;
-  // 表示当前路口处的红绿灯处于哪一个相位
+  // 指定当前路口处的红绿灯的相位
   uint32 phase_index = 2;
   // 当前相位的剩余时间
   float time_remaining = 3;
 }
 
 message SetTrafficLightResponse {}
+
+message SetTrafficLightPhaseRequest {
+  // 需要改变相位的路口编号
+  uint32 junction_id = 1;
+  // 指定当前路口红绿灯的相位
+  uint32 phase_index = 2;
+  // 当前相位的剩余时间
+  float time_remaining = 3;
+}
+
+message SetTrafficLightPhaseResponse {}
