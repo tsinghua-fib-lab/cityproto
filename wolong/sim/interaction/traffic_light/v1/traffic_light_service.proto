@@ -7,6 +7,8 @@ import "wolong/traffic_light/v1/traffic_light.proto";
 service TrafficLightService {
   rpc GetTrafficLight(GetTrafficLightRequest) returns (GetTrafficLightResponse);
   rpc SetTrafficLight(SetTrafficLightRequest) returns (SetTrafficLightResponse);
+  rpc SetTrafficLightPhase(SetTrafficLightPhaseRequest)
+      returns (SetTrafficLightPhaseResponse);
 }
 
 message GetTrafficLightRequest {
