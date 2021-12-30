@@ -63,7 +63,9 @@ message WalkingJourneyBody {
 }
 
 message BusJourneyBody {
-  // TODO(zhangjun): not implemented
+  uint32 line_id = 1;
+  uint32 start_station_id = 2;
+  uint32 end_station_id = 3;
 }
 
 message TaxiJourneyBody {
