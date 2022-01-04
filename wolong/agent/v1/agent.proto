@@ -42,6 +42,7 @@ message AgentAttribute {
 message BusAttribute {
   // 公交线路ID
   uint32 line_id = 1;
+  uint32 capacity = 2;
 }
 
 // 自行车附加属性
