@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package wolong.thing.v1;
+
+import "wolong/geo/v1/geo.proto";
+
+// 本文件描述初始化时各类物体的状态和分布
+
+enum ThingType {
+  THING_TYPE_UNSPECIFIED = 0;
+  THING_TYPE_BIKE = 1;
+}
+
+message Thing {
+  uint32 id = 1;
+  ThingType type = 2;
+  wolong.geo.v1.Position position = 3;
+}
