@@ -18,15 +18,16 @@ enum TripMode {
 
   // 指定出行方式
 
-  TRIP_MODE_WALK_ONLY = 1;
-  TRIP_MODE_DRIVE_ONLY = 2;
-  TRIP_MODE_TAXI_ONLY = 3;
-  TRIP_MODE_BUS_ONLY = 4;
+  TRIP_MODE_WALK_ONLY = 1;   // 仅步行
+  TRIP_MODE_DRIVE_ONLY = 2;  // 仅开车
+  TRIP_MODE_TAXI_ONLY = 3;   // 仅乘坐出租车
+  TRIP_MODE_BUS_WALK = 4;    // 乘坐公交车（含站点间步行换乘）
+  TRIP_MODE_BIKE_WALK = 5;   // 当有自行车时选择骑自行车
 
   // 按某种评估指标从所有出行方式中选择
 
-  TRIP_MODE_COST_FIRST = 5;
-  TRIP_MODE_TIME_FIRST = 6;
+  TRIP_MODE_COST_FIRST = 6;
+  TRIP_MODE_TIME_FIRST = 7;
 }
 
 message Trip {
