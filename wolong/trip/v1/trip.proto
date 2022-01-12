@@ -47,8 +47,8 @@ message Trip {
 
 message Schedule {
   repeated Trip trips = 1;
-  // 循环次数，-1表示无限循环，0表示不循环，>0表示循环几次
-  int32 loop_count = 2;
+  // trips的执行次数，0表示无限循环，大于0表示执行几次
+  uint32 loop_count = 2;
   oneof departure {
     // 期望的出发时间（单位: 秒）
     float departure_time = 3;
