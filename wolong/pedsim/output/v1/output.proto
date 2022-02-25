@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package wolong.pedsim.output.v1;
+
+// 本文件描述行人模拟部分向s3以及Kafka输出数据的格式
+
+message Person {
+  uint32 id = 1;
+  double x = 2;
+  double y = 3;
+}
+
+message People { repeated Person people = 1; }
+
+message S3Path {
+  int32 step = 1;
+  // s3中bucket名
+  string bucket = 2;
+  // 本步World消息s3中的存储路径
+  string path = 3;
+}
+
+message Output {
+  oneof output {
+    People people = 1;
+    S3Path s3path = 2;
+  }
+}
