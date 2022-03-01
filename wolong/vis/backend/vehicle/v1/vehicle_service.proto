@@ -4,6 +4,7 @@ package wolong.vis.backend.vehicle.v1;
 
 import "wolong/geo/v1/geo.proto";
 import "wolong/sim/output/v1/output.proto";
+import "wolong/pedsim/output/v1/output.proto";
 import "wolong/vis/backend/session/v1/session.proto";
 
 // 定义可视化后端车辆流数据接口
@@ -42,10 +43,18 @@ message FetchRequest {
   uint32 step = 2;
   uint32 chuck_size_max = 3;
   Filter filter = 4;
+  string poi_name_pedsim = 5;
+}
+
+message PedsimFrame {
+  string pedsim_name = 1;
+  wolong.pedsim.output.v1.People people = 2;
 }
 
 message FetchResponse {
   sim.output.v1.World frame = 1;
+  PedsimFrame pedsim_frame = 2;
+  string statistics_json = 3;
 }
 
 message ReleaseRequest {
