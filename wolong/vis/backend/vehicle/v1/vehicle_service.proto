@@ -52,9 +52,17 @@ message PedsimFrame {
 }
 
 message FetchResponse {
+  // 车辆、路口、室外行人
   sim.output.v1.World frame = 1;
+
+  // 室内行人
   PedsimFrame pedsim_frame = 2;
+
+  // 统计数据
   string statistics_json = 3;
+
+  // 自定义帧信息
+  string frame_info_json = 4;
 }
 
 message ReleaseRequest {
