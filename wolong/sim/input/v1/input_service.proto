@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package wolong.sim.input.v1;
+
+import "wolong/agent/v2/agent.proto";
+import "wolong/map/v2/map.proto";
+import "wolong/sim/input/v1/config.proto";
+import "wolong/thing/v2/thing.proto";
+import "wolong/traffic_light/v2/traffic_light.proto";
+
+service InputService {
+  rpc Init(InitRequest) returns (InitResponse) {}
+}
+message InitRequest {}
+
+message InitResponse {
+  // 日志配置
+  Log log = 1;
+  // 控制配置
+  Control control = 2;
+  // 模拟器gRPC监听地址
+  string sim_address = 3;
+
+  // 数据
+  // 地图
+  wolong.map.v2.Map map = 4;
+  // 车辆
+  wolong.agent.v2.Agents vehicles = 5;
+  // 行人
+  wolong.agent.v2.Agents persons = 6;
+  // 信控
+  wolong.traffic_light.v2.TrafficLights traffic_lights = 7;
+  // 物品
+  wolong.thing.v2.Things things = 8;
+}

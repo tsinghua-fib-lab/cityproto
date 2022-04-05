@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package wolong.thing.v2;
+
+import "wolong/geo/v2/geo.proto";
+
+// 本文件描述初始化时各类物体的状态和分布
+
+enum ThingType {
+  THING_TYPE_UNSPECIFIED = 0;
+  THING_TYPE_BIKE = 1;
+}
+
+message Thing {
+  int32 id = 1;
+  ThingType type = 2;
+  // 约定：包含LanePosition或AoiPosition中的一种
+  wolong.geo.v2.Position position = 3;
+}
+
+// 物品集合，对应一个物品pb文件或一个物品mongodb collection
+message Things { repeated Thing things = 1; }

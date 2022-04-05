@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+package wolong.geo.v2;
+
+// 本文件描述地理坐标体系，包含三种坐标分类:
+// 1. LongLatPosition
+//   经纬度坐标, 经度 longitute 120.234256 纬度 latitude 40.2321782
+// 2. XYPosition
+//   按米计算的平面x/y坐标
+// 3. AoiPosition, LanePosition
+//   地图坐标（例如：AOI、车道+距离s）
+// 上述三种坐标分类以Position作为导出坐标。
+//
+// 其他：
+// 4. LongLatRectArea
+//   经纬度矩形区域
+
+message LongLatPosition {
+  double longitude = 1;
+  double latitude = 2;
+}
+
+// 注意： (x, y) <-> (lat, lon)
+message XYPosition {
+  double x = 1;
+  double y = 2;
+}
+
+message LanePosition {
+  int32 lane_id = 1;
+  // s是车道上的点到车道起点的距离
+  double s = 2;
+}
+
+message AoiPosition { int32 aoi_id = 1; }
+
+// 坐标，如果多种坐标同时存在，两两之间必须满足映射关系，同时逻辑坐标是必须提供的
+message Position {
+  // 地图逻辑坐标（必须提供其中之一）
+  optional LanePosition lane_position = 1;
+  optional AoiPosition aoi_position = 2;
+  // WGS84经纬度坐标
+  optional LongLatPosition longlat_position = 3;
+  // XY坐标
+  optional XYPosition xy_position = 4;
+}
+
+message LongLatRectArea {
+  // ne为区域东北角经纬度
+  LongLatPosition ne = 1;
+  // sw为区域西南角经纬度
+  LongLatPosition sw = 2;
+}

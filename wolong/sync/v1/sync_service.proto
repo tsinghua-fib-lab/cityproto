@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package wolong.sync.v1;
+
+service SyncService {
+  // 步进
+  rpc Step(StepRequest) returns (StepResponse);
+}
+
+message StepRequest {
+  // 组件名，需要在同步器启动参数列表中
+  string name = 1;
+  // 步进的步数，当step为-1时表示关闭请求，初始化时需要进行一次step=1的同步
+  int32 step = 2;
+}
+
+message StepResponse {
+  //服务是否关闭
+  bool close = 1;
+}

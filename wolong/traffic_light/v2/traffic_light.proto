@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package wolong.traffic_light.v2;
+
+// 本文件描述交通灯
+
+enum LightState {
+  LIGHT_STATE_UNSPECIFIED = 0;
+  LIGHT_STATE_RED = 1;
+  LIGHT_STATE_GREEN = 2;
+  LIGHT_STATE_YELLOW = 3;
+}
+
+message Phase {
+  double duration = 1;
+  // 描述该相位下每个lane的灯控情况，lane与Junction.lane_ids一一对应
+  repeated LightState states = 2;
+}
+
+message TrafficLight {
+  int32 junction_id = 1;
+  // 相位循环的一个循环周期
+  repeated Phase phases = 2;
+}
+
+// 信控集合，对应一个信控pb文件或一个信控mongodb collection
+message TrafficLights { repeated TrafficLight traffic_lights = 1; }

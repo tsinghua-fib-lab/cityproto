@@ -1,0 +1,57 @@
+syntax = "proto3";
+
+package wolong.sim.interaction.traffic_light.v2;
+
+import "wolong/traffic_light/v2/traffic_light.proto";
+
+service TrafficLightService {
+  rpc GetTrafficLight(GetTrafficLightRequest) returns (GetTrafficLightResponse);
+  rpc SetTrafficLight(SetTrafficLightRequest) returns (SetTrafficLightResponse);
+  rpc SetTrafficLightPhase(SetTrafficLightPhaseRequest)
+      returns (SetTrafficLightPhaseResponse);
+  rpc SetTrafficLightStatus(SetTrafficLightStatusRequest)
+      returns (SetTrafficLightStatusResponse);
+}
+
+message GetTrafficLightRequest {
+  // 信号等相关的接口精确到junction
+  int32 junction_id = 1;
+}
+
+message GetTrafficLightResponse {
+  wolong.traffic_light.v2.TrafficLight traffic_light = 1;
+  // 表示当前路口处的红绿灯处于哪一个相位
+  int32 phase_index = 2;
+  // 当前相位的剩余时间
+  double time_remaining = 3;
+}
+
+message SetTrafficLightRequest {
+  wolong.traffic_light.v2.TrafficLight traffic_light = 1;
+  // 指定当前路口处的红绿灯的相位
+  int32 phase_index = 2;
+  // 当前相位的剩余时间
+  double time_remaining = 3;
+}
+
+message SetTrafficLightResponse {}
+
+message SetTrafficLightPhaseRequest {
+  // 需要改变相位的路口编号
+  int32 junction_id = 1;
+  // 指定当前路口红绿灯的相位
+  int32 phase_index = 2;
+  // 当前相位的剩余时间
+  double time_remaining = 3;
+}
+
+message SetTrafficLightPhaseResponse {}
+
+message SetTrafficLightStatusRequest {
+  // 需要改变状态的路口编号
+  int32 junction_id = 1;
+  // 当前路口红绿灯状态，true为通，false为断
+  bool ok = 2;
+}
+
+message SetTrafficLightStatusResponse {}

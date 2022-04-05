@@ -1,0 +1,85 @@
+syntax = "proto3";
+
+package wolong.trip.v2;
+
+import "wolong/geo/v2/geo.proto";
+
+// 本文件描述Trip与Schedule，从“计划”的性质上描述交通情况。
+
+// Trip用以描述从当前点到下一点的一次出行，可以包含多种出行方式（乘车、步行等），
+// 并且可以指定主要的交通方式TripMode。
+// 一个Trip在经过路径规划后，将转化为多个journey，并按照journey进行模拟。
+
+// Schedule包含一组Trip，可以额外指定这一组Trip应该要循环几次
+
+// 出行偏好
+enum TripMode {
+  TRIP_MODE_UNSPECIFIED = 0;
+
+  // 指定出行方式
+
+  TRIP_MODE_WALK_ONLY = 1;  // 仅步行
+  TRIP_MODE_DRIVE_ONLY = 2; // 仅开车
+  TRIP_MODE_TAXI_ONLY = 3;  // 仅乘坐出租车
+  TRIP_MODE_BUS_WALK = 4;   // 乘坐公交车（含站点间步行换乘）
+  TRIP_MODE_BIKE_WALK = 5;  // 当有自行车时选择骑自行车
+
+  // 按某种评估指标从所有出行方式中选择
+
+  TRIP_MODE_COST_FIRST = 6;
+  TRIP_MODE_TIME_FIRST = 7;
+}
+
+message Trip {
+  TripMode mode = 1;
+  // 目的地
+  wolong.geo.v2.Position end = 2;
+
+  // 优先级：
+  // departure_time（绝对时间）-> wait_time（相对时间）->
+  // arrival_time（预计时间）
+
+  // 如果二者都为空则等价于wait_time=0
+  // 期望的出发时间（单位: 秒）
+  optional double departure_time = 3;
+  // 期望的等待时间（单位：秒）
+  optional double wait_time = 4;
+  // 期望的到达时间（单位: 秒）
+  // TODO(张钧): 支持设置期望到达时间（要求导航系统能返回预计出行用时）
+  // optional double arrival_time = 5;
+}
+
+message Schedule {
+  repeated Trip trips = 1;
+  // trips的执行次数，0表示无限循环，大于0表示执行几次
+  int32 loop_count = 2;
+
+  // 优先级：
+  // departure_time（绝对时间）-> wait_time（相对时间）->
+  // arrival_time（预计时间）
+
+  // 期望的出发时间（单位: 秒）
+  optional double departure_time = 3;
+  // 期望的等待时间（单位：秒）
+  optional double wait_time = 4;
+  // 期望的到达时间（单位: 秒）
+  // TODO(张钧): 支持设置期望到达时间（要求导航系统能返回预计出行用时）
+  // optional double arrival_time = 5;
+
+  // 如果二者都为空则等价于wait_time=0
+  // 关于出发时间的说明如下：
+  // 1. Schedule的开始时刻是 departure_time 或者 参考时刻+wait_time，
+  //    参考时刻定义为上一Schedule的结束时刻(即它最后一个Trip的结束时刻)，
+  //    或者当它为第一个Schedule时定义为Agent更新Schedule后的首次Update
+  //    时刻(当有准确时间要求时建议直接指定departure_time)
+  // 2. Trip的开始时刻是 departure_time 或者 参考时刻+wait_time，参考
+  //    时刻定义为上一Trip的结束时刻，或者当它为第一个Trip时定义为所属的
+  //    Schedule的开始时刻
+  // 3. Agent的实际运行时刻取决于Trip的开始时刻，例如它的首次运行是第一
+  //    个Schedule中第一个Trip的开始时刻
+  // FAQ
+  // Q1: 同时指定Schedule和第一个Trip的departure_time会怎样？
+  // A1: 参照(2)，只看Trip的departure_time
+  // Q2: Schedule和第一个Trip同时指定wait_time=10会怎样？
+  // A2: 参照(2)，等待时间为10+10=20
+}
