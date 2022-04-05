@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+package wolong.sim.input.v1;
+
+message Log { string level = 1; }
+
+message MongoPath {
+  string db = 1;
+  string col = 2;
+}
+
+message Mongo {
+  string uri = 1;
+  MongoPath map = 2;
+  optional MongoPath traffic_light = 3;
+  optional MongoPath vehicle = 4;
+  optional MongoPath person = 5;
+  optional MongoPath thing = 6;
+}
+
+message ControlStep {
+  int32 start = 1;
+  int32 total = 2;
+  double interval = 3;
+}
+
+message ControlThread {
+  int32 worker = 1;
+  int32 block_size = 2;
+}
+
+message Control {
+  string job = 1;
+  ControlStep step = 2;
+  ControlThread thread = 3;
+  int32 random_seed = 4;
+}
+
+message OutputObjectStorage {
+  string uri = 1;
+  string access_key = 2;
+  string secret_key = 3;
+  string bucket = 4;
+  bool secure = 5;
+}
+
+message Output { OutputObjectStorage object_storage = 1; }
+
+message Config {
+  Log log = 1;
+  Mongo mongo = 2;
+  Control control = 3;
+  Output output = 4;
+}

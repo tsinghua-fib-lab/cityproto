@@ -5,7 +5,7 @@ package wolong.pedsim.output.v1;
 // 本文件描述行人模拟部分向s3以及Kafka输出数据的格式
 
 message Person {
-  uint32 id = 1;
+  int32 id = 1;
   double x = 2;
   double y = 3;
 }

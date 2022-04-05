@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package wolong.sidecar.v1;
+
+service SidecarService {
+  // 通知模拟器初始化已完成
+  rpc NotifyInitReady(NotifyInitReadyRequest) returns (NotifyInitReadyResponse);
+  // 通知prepare阶段已结束
+  rpc NotifyStepReady(NotifyStepReadyRequest) returns (NotifyStepReadyResponse);
+}
+
+message NotifyInitReadyRequest {}
+
+message NotifyInitReadyResponse {}
+
+message NotifyStepReadyRequest {}
+
+message NotifyStepReadyResponse {}

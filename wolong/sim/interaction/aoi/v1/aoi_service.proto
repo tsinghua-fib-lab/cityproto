@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package wolong.sim.interaction.aoi.v1;
+
+service AoiService {
+  rpc GetAoiInflow(GetAoiInflowRequest) returns (GetAoiInflowResponse);
+}
+
+message GetAoiInflowRequest { uint32 aoi_id = 1; }
+
+message GetAoiInflowResponse { uint32 people_inflow = 1; }

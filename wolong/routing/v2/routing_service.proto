@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package wolong.routing.v2;
+
+import "wolong/geo/v2/geo.proto";
+import "wolong/routing/v2/routing.proto";
+
+service RoutingService {
+  // Get route by type/start/end
+  rpc GetRoute(GetRouteRequest) returns (GetRouteResponse);
+}
+
+// simulet -> routing app
+message GetRouteRequest {
+  RouteType type = 1;
+  // 约定：包含LanePosition或AoiPosition中的一种
+  wolong.geo.v2.Position start = 2;
+  // 约定：包含LanePosition或AoiPosition中的一种
+  wolong.geo.v2.Position end = 3;
+}
+
+// routing app -> simulet
+message GetRouteResponse { repeated Journey journeys = 1; }
