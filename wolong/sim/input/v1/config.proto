@@ -34,6 +34,7 @@ message Control {
   ControlStep step = 2;
   ControlThread thread = 3;
   int32 random_seed = 4;
+  bool vehicle_reroute = 5;
 }
 
 message OutputObjectStorage {
