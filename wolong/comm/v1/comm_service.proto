@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package wolong.comm.v1;
+
+service GatewayService {
+  rpc SetGatewayStatus(SetGatewayStatusRequest)
+      returns (SetGatewayStatusResponse);
+}
+
+// 给定要改变状态的gateway id 与对应状态改变
+message SetGatewayStatusRequest {
+  int32 id = 1;
+  bool status = 2;
+}
+
+message SetGatewayStatusResponse {}
