@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+package wolong.sim.output.v2;
+
+import "wolong/agent/v2/agent.proto";
+
+import "wolong/traffic_light/v2/traffic_light.proto";
+
+// 本文件描述模拟器每帧对外输出的原始数据
+
+message Vehicle {
+  int32 id = 1;
+  wolong.agent.v2.Motion motion = 2;
+}
+
+message Person {
+  int32 id = 1;
+  wolong.agent.v2.Motion motion = 2;
+}
+
+message TrafficLight {
+  // 精确到车道
+  int32 laneid = 1;
+  wolong.traffic_light.v2.LightState state = 2;
+}
+
+enum RoadLevel {
+  ROAD_LEVEL_UNSPECIFIED = 0;
+  // 通畅
+  ROAD_LEVEL_CLEAR = 1;
+  // 基本畅通
+  ROAD_LEVEL_LIGHT_LOAD = 2;
+  // 轻度拥堵
+  ROAD_LEVEL_MEDIUM_LOAD = 3;
+  // 中度拥堵
+  ROAD_LEVEL_HEAVY_LOAD = 4;
+  // 严重拥堵
+  ROAD_LEVEL_OVERLOAD = 5;
+}
+
+message Road {
+  int32 id = 1;
+  // https://wenku.baidu.com/view/0fea81160b4e767f5acfcead.html
+  // 瞬时交通平均速度等级
+  // 按照从当前时刻到X分钟前的窗口内的道路瞬时平均速度的平均计算
+  RoadLevel level = 2;
+}
+
+message Aoi {
+  int32 id = 1;
+  // aoi人口数量
+  int32 num_agents = 2;
+}
