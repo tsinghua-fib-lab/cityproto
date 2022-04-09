@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package wolong.sim.output.v2;
+
+import "wolong/sim/output/v2/output.proto";
+
+service OutputService {
+  rpc Output(OutputRequest) returns (OutputResponse) {}
+}
+
+message OutputRequest {   
+  // （可选）step==-1代表消息结束
+  int32 step = 1;
+  double time = 2;
+  repeated Vehicle vehicles = 3;
+  repeated Person persons = 4;
+  repeated TrafficLight traffic_lights = 5;
+  repeated Road roads = 6;
+  repeated Aoi aois = 7;
+}
+
+message OutputResponse {}
