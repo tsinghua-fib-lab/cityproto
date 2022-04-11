@@ -19,7 +19,7 @@ message GetTrafficStatusResponse {
 }
 
 message RestrictLaneRequest {
-  repeated int32 lane_id = 1;
+  repeated int32 lane_ids = 1;
 }
 
 message RestrictLaneResponse {}

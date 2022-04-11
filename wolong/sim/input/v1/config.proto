@@ -30,22 +30,24 @@ message ControlThread {
 }
 
 message Control {
-  string job = 1;
-  ControlStep step = 2;
-  ControlThread thread = 3;
-  int32 random_seed = 4;
-  bool vehicle_reroute = 5;
+  ControlStep step = 1;
+  ControlThread thread = 2;
+  int32 random_seed = 3;
+  bool vehicle_reroute = 4;
 }
 
-message OutputObjectStorage {
-  string uri = 1;
-  string access_key = 2;
-  string secret_key = 3;
-  string bucket = 4;
-  bool secure = 5;
-}
+message OutputPostgreSql { string uri = 1; }
 
-message Output { OutputObjectStorage object_storage = 1; }
+// 输出的目标（数据库、对象存储、...）
+message OutputTarget { optional OutputPostgreSql sql = 1; }
+
+message Output {
+  OutputTarget vehicle = 2;
+  OutputTarget person = 3;
+  OutputTarget traffic_light = 4;
+  OutputTarget road = 5;
+  OutputTarget aoi = 6;
+}
 
 message Config {
   Log log = 1;

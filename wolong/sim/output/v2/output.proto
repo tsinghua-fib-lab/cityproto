@@ -20,7 +20,7 @@ message Person {
 
 message TrafficLight {
   // 精确到车道
-  int32 laneid = 1;
+  int32 lane_id = 1;
   wolong.traffic_light.v2.LightState state = 2;
 }
 
