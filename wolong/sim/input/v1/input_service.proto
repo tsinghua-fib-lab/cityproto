@@ -13,6 +13,15 @@ service InputService {
 }
 message InitRequest {}
 
+// 是否输出各类数据
+message OutputSwitch {
+  bool vehicle = 1;
+  bool person = 2;
+  bool traffic_light = 3;
+  bool road = 4;
+  bool aoi = 5;
+}
+
 message InitResponse {
   // 日志配置
   Log log = 1;
@@ -32,4 +41,6 @@ message InitResponse {
   wolong.traffic_light.v2.TrafficLights traffic_lights = 7;
   // 物品
   wolong.thing.v2.Things things = 8;
+  // 输出配置
+  OutputSwitch output_switch = 9;
 }
