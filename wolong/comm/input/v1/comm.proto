@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package wolong.comm.v1;
+package wolong.comm.input.v1;
 
 // 本文件描述通信部分拓扑结构
 // 三种节点类型
