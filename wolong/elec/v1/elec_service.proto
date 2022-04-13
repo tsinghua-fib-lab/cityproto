@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package wolong.elec.v1;
+
+service ElecService {
+  rpc Destroy(DestroyRequest) returns (DestroyResponse) {}
+}
+
+enum TransformerType {
+  //将电网的变压器按照电压分为550KV,220KV,110KV,10KV四级
+  TRANSFORMER_TYPE_UNSPECIFIED = 0;
+  TRANSFORMER_TYPE_550 = 1;
+  TRANSFORMER_TYPE_220 = 2;
+  TRANSFORMER_TYPE_110 = 3;
+  TRANSFORMER_TYPE_10 = 4;
+}
+
+message DestroyRequest {
+  int32 id = 2;                         //变压器id
+  TransformerType transformer_type = 1; //变压器电压类型
+}
+
+message DestroyResponse {}
