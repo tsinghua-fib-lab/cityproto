@@ -1,0 +1,10 @@
+stages:
+  - test
+
+buf-lint:
+  image: registry.tsingroc.com/general/dev:latest
+  stage: test
+  only:
+    - master
+  script:
+    - buf lint
