@@ -40,3 +40,6 @@ message Facility {
   // 在其它关联的网络中如水网使用时，可使用外部id
   optional int32 foreign_id = 5;
 }
+
+//设施集合
+message Facilities { repeated Facility facilities = 1; }
