@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package wolong.elec.v1;
+
+import "wolong/geo/v2/geo.proto";
+
+enum FacilityState {
+  FACILITY_STATE_UNSPECIFIED = 0;
+  FACILITY_STATE_STATE_DESTROYED = 1;
+  FACILITY_STATE_STATE_FLAT = 2;
+}
+
+enum FacilityType {
+  //电网相关的基础设施分类
+  FACILITY_TYPE_UNSPECIFIED = 0;
+  FACILITY_TYPE_POWER_STATION = 1;   //发电站
+  FACILITY_TYPE_TRANSFORMER_500 = 2; //不同电压的变压器
+  FACILITY_TYPE_TRANSFORMER_220 = 3;
+  FACILITY_TYPE_TRANSFORMER_110 = 4;
+  FACILITY_TYPE_TRANSFORMER_10 = 5;
+  //通信基站
+  FACILITY_TYPE_BASE_STATION = 6;
+  //网关
+  FACILITY_TYPE_GATEWAY = 7;
+  //水泵
+  FACILITY_TYPE_PUMP = 8;
+  //交通灯
+  FACILITY_TYPE_TRAFFIC_LIGHT = 9;
+}
+//设施id安装对应枚举类型进行编码，N亿作为编码前缀，N代表对应枚举类型的数字
+//例如发电站，一号发电站id为100000001
+
+message Facility {
+  int32 id = 1;
+  wolong.geo.v2.LongLatPosition pos = 2;
+  FacilityType type = 3;
+  // 当前节点的邻居节点的id
+  repeated int32 relation = 4;
+
+  // 在其它关联的网络中如水网使用时，可使用外部id
+  optional int32 foreign_id = 5;
+}
