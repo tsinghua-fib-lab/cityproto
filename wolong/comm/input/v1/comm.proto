@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package wolong.comm.input.v1;
 
+import "wolong/geo/v2/geo.proto";
+
 // 本文件描述通信部分拓扑结构
 // 三种节点类型
 enum NodeType {
@@ -10,6 +12,8 @@ enum NodeType {
   NODE_TYPE_GATEWAY = 2;
   NODE_TYPE_BASE_STATION = 3;
 }
+
+message FreqRange { repeated int32 freq = 1; }
 
 message TreeNode {
   int32 id = 1;
@@ -20,4 +24,10 @@ message TreeNode {
   repeated int32 children_id = 4;
   //节点的开关状态
   bool status = 5;
+  // 节点经纬度位置
+  optional wolong.geo.v2.LongLatPosition position = 6;
+  // 基站频段id
+  optional int32 freq_range_id = 7;
+  // 基站频率范围[]
+  optional FreqRange freq_range = 8;
 }
