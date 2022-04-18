@@ -6,8 +6,8 @@ import "wolong/geo/v2/geo.proto";
 
 enum FacilityState {
   FACILITY_STATE_UNSPECIFIED = 0;
-  FACILITY_STATE_STATE_DESTROYED = 1;
-  FACILITY_STATE_STATE_FLAT = 2;
+  FACILITY_STATE_STATE_RUINED = 1;
+  FACILITY_STATE_STATE_STOPPED = 2;
 }
 
 enum FacilityType {
