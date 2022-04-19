@@ -7,6 +7,7 @@ import "wolong/map/v2/map.proto";
 import "wolong/sim/input/v1/config.proto";
 import "wolong/thing/v2/thing.proto";
 import "wolong/traffic_light/v2/traffic_light.proto";
+import "wolong/comm/input/v1/comm.proto";
 
 service InputService {
   rpc Init(InitRequest) returns (InitResponse) {}
@@ -39,8 +40,10 @@ message InitResponse {
   wolong.agent.v2.Agents persons = 6;
   // 信控
   wolong.traffic_light.v2.TrafficLights traffic_lights = 7;
+  // 通信基站
+  wolong.comm.input.v1.TreeNodes base_stations = 8;
   // 物品
-  wolong.thing.v2.Things things = 8;
+  wolong.thing.v2.Things things = 9;
   // 输出配置
-  OutputSwitch output_switch = 9;
+  OutputSwitch output_switch = 10;
 }

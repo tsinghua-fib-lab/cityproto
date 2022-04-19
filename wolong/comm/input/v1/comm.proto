@@ -29,3 +29,5 @@ message TreeNode {
   // 基站频段id
   optional int32 freq_range_id = 7;
 }
+
+message TreeNodes { repeated TreeNode tree_nodes = 1; }

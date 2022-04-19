@@ -16,6 +16,7 @@ message Mongo {
   optional MongoPath vehicle = 4;
   optional MongoPath person = 5;
   optional MongoPath thing = 6;
+  optional MongoPath base_station = 7;
 }
 
 message ControlStep {
