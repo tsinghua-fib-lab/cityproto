@@ -25,9 +25,7 @@ message TreeNode {
   //节点的开关状态
   bool status = 5;
   // 节点经纬度位置
-  optional wolong.geo.v2.LongLatPosition position = 6;
+  optional wolong.geo.v2.Position position = 6;
   // 基站频段id
   optional int32 freq_range_id = 7;
-  // 基站频率范围[]
-  optional FreqRange freq_range = 8;
 }
