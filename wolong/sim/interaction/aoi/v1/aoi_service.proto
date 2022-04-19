@@ -6,6 +6,6 @@ service AoiService {
   rpc GetAoiInflow(GetAoiInflowRequest) returns (GetAoiInflowResponse);
 }
 
-message GetAoiInflowRequest { uint32 aoi_id = 1; }
+message GetAoiInflowRequest { int32 aoi_id = 1; }
 
-message GetAoiInflowResponse { uint32 people_inflow = 1; }
+message GetAoiInflowResponse { int32 people_inflow = 1; }
