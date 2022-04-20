@@ -26,6 +26,8 @@ enum FacilityType {
   FACILITY_TYPE_PUMP = 8;
   //交通灯
   FACILITY_TYPE_TRAFFIC_LIGHT = 9;
+  // AOI
+  FACILITY_TYPE_AOI = 10;
 }
 //设施id安装对应枚举类型进行编码，N亿作为编码前缀，N代表对应枚举类型的数字
 //例如发电站，一号发电站id为100000001
