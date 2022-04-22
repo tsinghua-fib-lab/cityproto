@@ -150,7 +150,9 @@ message Aoi {
 
   // Aoi原始位置（如果只有一个值，则为Aoi所在的点，否则为Aoi多边形的边界）
   repeated wolong.geo.v2.XYPosition positions = 5;
+  // Aoi与行车路网连接时在自身边界上的连接点, 与driving_positions按索引一一对应
   repeated wolong.geo.v2.XYPosition driving_gates = 6;
+  // Aoi与步行路网连接时在自身边界上的连接点, 与walking_positions按索引一一对应
   repeated wolong.geo.v2.XYPosition walking_gates = 7;
 }
 
