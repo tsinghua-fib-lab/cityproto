@@ -34,9 +34,7 @@ message InitResponse {
   // 数据
   // 地图
   wolong.map.v2.Map map = 4;
-  // 车辆
-  wolong.agent.v2.Agents vehicles = 5;
-  // 行人
+  // 人
   wolong.agent.v2.Agents persons = 6;
   // 信控
   wolong.traffic_light.v2.TrafficLights traffic_lights = 7;

@@ -13,7 +13,6 @@ message Mongo {
   string uri = 1;
   MongoPath map = 2;
   optional MongoPath traffic_light = 3;
-  optional MongoPath vehicle = 4;
   optional MongoPath person = 5;
   optional MongoPath thing = 6;
   optional MongoPath base_station = 7;
