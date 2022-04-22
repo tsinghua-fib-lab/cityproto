@@ -141,10 +141,13 @@ enum AoiType {
 message Aoi {
   int32 id = 1;
   AoiType type = 2;
-  // Aoi与行车路网的连接点（必须不为空）
+  // Aoi与行车路网的连接点
   repeated wolong.geo.v2.LanePosition driving_positions = 3;
-  // Aoi与步行路网的连接点（必须不为空）
+  // Aoi与步行路网的连接点
   repeated wolong.geo.v2.LanePosition walking_positions = 4;
+  // 要求aoi与路网至少有1个连接点(driving_positions或walking_positions至少一个不为空)
+  // 若type==AOI_TYPE_BUS_STATION, 要求driving_positions和walking_positions均为长度为1的array
+
   // Aoi原始位置（如果只有一个值，则为Aoi所在的点，否则为Aoi多边形的边界）
   repeated wolong.geo.v2.XYPosition positions = 5;
   repeated wolong.geo.v2.XYPosition driving_gates = 6;
