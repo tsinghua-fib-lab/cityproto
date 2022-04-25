@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package wolong.elec.interaction.v1;
+
+service ElecService {
+  rpc SetStatus(SetStatusRequest) returns (SetStatusResponse) {}
+}
+
+message SetStatusRequest {
+  int32 id = 1;    //设施id
+  bool status = 2; // True 表示恢复，False表示摧毁
+}
+
+message SetStatusResponse {}
