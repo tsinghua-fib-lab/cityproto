@@ -51,9 +51,3 @@ message Aoi {
   // aoi人口数量
   int32 num_agents = 2;
 }
-
-//核心网节点id与状态
-message CommNode {
-  int32 id = 1;
-  bool status = 2;
-}
