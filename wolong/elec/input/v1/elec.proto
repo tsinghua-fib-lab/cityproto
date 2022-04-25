@@ -1,14 +1,8 @@
 syntax = "proto3";
 
-package wolong.elec.v1;
+package wolong.elec.input.v1;
 
 import "wolong/geo/v2/geo.proto";
-
-enum FacilityState {
-  FACILITY_STATE_UNSPECIFIED = 0;
-  FACILITY_STATE_STATE_RUINED = 1;
-  FACILITY_STATE_STATE_STOPPED = 2;
-}
 
 enum FacilityType {
   //电网相关的基础设施分类
