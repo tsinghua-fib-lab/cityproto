@@ -5,13 +5,16 @@ proto 文件仓库。
 ## 内容
 
 - `wolong.agent`: 智能体
+- `wolong.comm`: 通信
+- `wolong.elec`: 电网
 - `wolong.geo`: 坐标体系
 - `wolong.map`: 地图
 - `wolong.routing`: 路径规划
 - `wolong.sim`: 模拟器
-- `wolong.trip`: 出行与日程
-- `wolong.vis`: 可视化
 - `wolong.sync`: 全局同步器
+- `wolong.thing`: 物体
+- `wolong.traffic_light`: 信控
+- `wolong.trip`: 出行与日程
 
 ## STYLE
 

@@ -3,25 +3,25 @@ syntax = "proto3";
 package wolong.sim.interaction.agent.v2;
 
 import "wolong/agent/v2/agent.proto";
-import "wolong/geo/v2/geo.proto";
+// import "wolong/geo/v2/geo.proto";
 import "wolong/trip/v2/trip.proto";
 
 service AgentService {
   // 获取agent信息：传入agentid，返回当前trip的剩余距离、当前agent的所有trip的目的地信息
-  rpc GetAgent(GetAgentRequest) returns (GetAgentResponse);
+  // rpc GetAgent(GetAgentRequest) returns (GetAgentResponse);
   // 新增agent 传入agent初始位置、目的地表、属性 返回agentid
   rpc AddAgent(AddAgentRequest) returns (AddAgentResponse);
   // 修改agent的schedule 传入agentid、目的地表
   rpc SetSchedule(SetScheduleRequest) returns (SetScheduleResponse);
 }
 
-message GetAgentRequest { int32 agent_id = 1; }
+// message GetAgentRequest { int32 agent_id = 1; }
 
-message GetAgentResponse {
-  double distance = 1;
-  // 约定：Position要求必须包含经纬度坐标，并提供尽可能多的信息
-  repeated wolong.geo.v2.Position schedule = 2;
-}
+// message GetAgentResponse {
+//   double distance = 1;
+//   // 约定：Position要求必须包含经纬度坐标，并提供尽可能多的信息
+//   repeated wolong.geo.v2.Position schedule = 2;
+// }
 
 message AddAgentRequest {
   // 约定：agent中不设置id

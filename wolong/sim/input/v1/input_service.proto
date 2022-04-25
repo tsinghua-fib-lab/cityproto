@@ -39,7 +39,7 @@ message InitResponse {
   // 信控
   wolong.traffic_light.v2.TrafficLights traffic_lights = 7;
   // 通信基站
-  wolong.comm.input.v1.TreeNodes base_stations = 8;
+  wolong.comm.input.v1.Nodes base_stations = 8;
   // 物品
   wolong.thing.v2.Things things = 9;
   // 输出配置
