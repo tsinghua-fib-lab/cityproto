@@ -16,6 +16,8 @@ message OutputRequest {
   repeated TrafficLight traffic_lights = 4;
   repeated Road roads = 5;
   repeated Aoi aois = 6;
+  repeated CommNode comm_nodes = 7;
+
 }
 
 message OutputResponse {}
