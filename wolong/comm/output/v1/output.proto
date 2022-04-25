@@ -1,0 +1,72 @@
+syntax = "proto3";
+
+package wolong.comm.output.v1;
+
+import "wolong/geo/v2/geo.proto";
+
+enum NodePowerStatus {
+  NODE_POWER_STATUS_UNSPECIFIED = 0;
+  // 正常供电
+  NODE_POWER_STATUS_OK = 1;
+  // 电池供电
+  NODE_POWER_STATUS_BATTERY = 2;
+  // 停电
+  NODE_POWER_STATUS_FAILURE = 3;
+}
+
+// 设备状态
+message Node {
+  int32 id = 1;
+  NodePowerStatus status = 2;
+  // 电池剩余可用时间（单位：秒）（仅当状态为“电池供电”时启用）
+  optional double battery_remaining_time = 3;
+}
+
+// 基站状态
+message BaseStation {
+  int32 id = 1;
+  // 基站流量（单位：Bytes）
+  double flow = 2;
+  // 基站用户数
+  int32 num_agents = 3;
+}
+
+// 信号情况
+message Signal {
+  // 信号采样点位置，主要使用经纬度部分
+  wolong.geo.v2.Position position = 1;
+  // 信号强度
+  double strength = 2;
+}
+
+enum PersonStatus {
+  PERSON_STATUS_UNSPECIFIED = 0;
+  // 需求被满足
+  PERSON_STATUS_OK = 1;
+  // 需求不满足
+  PERSON_STATUS_UNSTATISFIED = 2;
+  // 无法连接到基站
+  PERSON_STATUS_OUTAGE = 3;
+}
+
+// 人（可见的，交通模拟或室内模拟正在计算位置变动的）
+message Person {
+  int32 id = 1;
+  // 通信需求速率（单位：Bytes/s）
+  double demand_rate = 2;
+  // 通信真实速率（单位：Bytes/s）
+  double actual_rate = 3;
+  PersonStatus status = 4;
+  // 信号强度
+  double strength = 5;
+  // 连接基站
+  int32 base_station_id = 6;
+  // 频段分配
+  repeated int32 freq_range_ids = 7;
+}
+
+message Aoi {
+  int32 id = 1;
+  // 通信需求
+  double demand_satisfaction_ratio = 2;
+}

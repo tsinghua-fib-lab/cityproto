@@ -16,6 +16,9 @@ message OutputRequest {
   repeated TrafficLight traffic_lights = 4;
   repeated Road roads = 5;
   repeated Aoi aois = 6;
+  // 限行的lane ID列表（含road/junction lane），后端按需处理为road ID列表等
+  repeated int32 restricted_lane_ids = 7;
+  // TODO(张钧): 各种浮窗数据：需求满足人数、事故数、......
 }
 
 message OutputResponse {}

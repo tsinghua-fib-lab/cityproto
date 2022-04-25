@@ -28,7 +28,7 @@ enum FacilityType {
 
 message Facility {
   int32 id = 1;
-  wolong.geo.v2.LongLatPosition pos = 2;
+  wolong.geo.v2.LongLatPosition position = 2;
   FacilityType type = 3;
   // 当前节点的邻居节点的id
   repeated int32 relation = 4;

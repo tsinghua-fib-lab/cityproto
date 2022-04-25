@@ -13,21 +13,17 @@ enum NodeType {
   NODE_TYPE_BASE_STATION = 3;
 }
 
-message FreqRange { repeated int32 freq = 1; }
-
-message TreeNode {
+message Node {
   int32 id = 1;
   NodeType type = 2;
-  //父节点
+  // 父节点
   int32 parent_id = 3;
   // 子节点
-  repeated int32 children_id = 4;
-  //节点的开关状态
-  bool status = 5;
+  repeated int32 children_ids = 4;
   // 节点经纬度位置
   optional wolong.geo.v2.Position position = 6;
   // 基站频段id
   optional int32 freq_range_id = 7;
 }
 
-message TreeNodes { repeated TreeNode tree_nodes = 1; }
+message Nodes { repeated Node nodes = 1; }
