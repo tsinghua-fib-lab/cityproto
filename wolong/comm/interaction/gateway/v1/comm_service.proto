@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package wolong.sim.interaction.comm.v1;
+package wolong.comm.interaction.gateway.v1;
 
 service GatewayService {
   rpc SetGatewayStatus(SetGatewayStatusRequest)
