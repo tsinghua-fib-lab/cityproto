@@ -21,6 +21,7 @@ message OutputSwitch {
   bool traffic_light = 3;
   bool road = 4;
   bool aoi = 5;
+  bool restricted_lane = 6;
 }
 
 message InitResponse {

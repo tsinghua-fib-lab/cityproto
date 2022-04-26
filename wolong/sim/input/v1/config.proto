@@ -47,6 +47,7 @@ message Output {
   OutputTarget traffic_light = 4;
   OutputTarget road = 5;
   OutputTarget aoi = 6;
+  OutputTarget restricted_lane = 7;
 }
 
 message Config {
