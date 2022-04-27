@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package wolong.water.output.v1;
+
+import "wolong/water/output/v1/output.proto";
+
+service OutputService { rpc Output(OutputRequest) returns (OutputResponse); }
+
+message OutputRequest {
+  int32 step = 1;
+  // 宏观道路水深
+  repeated Road roads = 2;
+  // 微观道路点位水深
+  repeated DetailedRoad detailed_roads = 3;
+  // 排水节点
+  repeated Node drainage_nodes = 4;
+  // 排水的边
+  repeated Link drainage_links = 5;
+  // 供水节点
+  repeated Node supply_nodes = 6;
+  // 供水的边
+  repeated Link supply_links = 7;
+  // AOI相关的数据
+  repeated Aoi aois = 8;
+}
+
+message OutputResponse {}
