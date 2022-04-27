@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package wolong.elec.input.v1;
+
+import "wolong/elec/input/v1/input.proto";
+
+service InputService {
+  rpc Init(InitRequest) returns (InitResponse) {}
+}
+
+message InitRequest {}
+
+message InitResponse { wolong.elec.input.v1.Facilities facilities = 1; }
