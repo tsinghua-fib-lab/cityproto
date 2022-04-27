@@ -34,7 +34,11 @@ message Facility {
   repeated int32 relation = 4;
 
   // 在其它关联的网络中如水网使用时，可使用外部id
+  // 对于负载，该值表示其在对应模拟中的id
   optional int32 foreign_id = 5;
+
+  // 对于电力设施，该值表示所在aoi id
+  optional int32 aoi_id = 6;
 }
 
 //设施集合

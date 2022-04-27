@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package wolong.water.input.v1;
+
+message RainPeriod {
+  // 起始时间点，单位为秒，但必须整分钟
+  int32 start = 1;
+  // 降雨量：单位mm
+  double rainfall = 2;
+}
+
+// 全天降雨情况，在数据库中体现为一条数据
+message Rain { repeated RainPeriod rains = 1; }

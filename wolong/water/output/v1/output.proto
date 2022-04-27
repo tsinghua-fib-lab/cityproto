@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+package wolong.water.output.v1;
+
+import "wolong/geo/v2/geo.proto";
+
+// 宏观道路水深
+message Road {
+  int32 id = 1;
+  double depth = 2;
+}
+
+// 微观水深点
+message RoadFlood {
+  wolong.geo.v2.LongLatPosition position = 1;
+  double depth = 2;
+}
+
+message DetailedRoad {
+  int32 id = 1;
+  repeated RoadFlood depths = 2;
+}
+
+// 节点状态
+message Node {
+  int32 id = 1;
+  // 水头，单位：米
+  double head = 2;
+}
+
+enum LinkType {
+  LINK_TYPE_UNSPECIFIED = 0;
+  LINK_TYPE_PIPE = 1;
+  LINK_TYPE_PUMP = 2;
+}
+
+// 边的状态
+message Link {
+  // id为去除前缀后的数字，如水泵要加上相关的前缀
+  int32 id = 1;
+  LinkType type = 2;
+  // 流量
+  // 排水网，单位：m3/s
+  // 供水网，单位：L/s
+  double flow = 3;
+  bool ok = 4;
+}
+
+message Aoi {
+  int32 id = 1;
+  // 用水需求满足比例
+  double demand_satisfaction_ratio = 2;
+}
