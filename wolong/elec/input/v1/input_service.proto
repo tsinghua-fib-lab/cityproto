@@ -10,4 +10,4 @@ service InputService {
 
 message InitRequest {}
 
-message InitResponse { wolong.elec.input.v1.Facilities facilities = 1; }
+message InitResponse { Facilities facilities = 1; }

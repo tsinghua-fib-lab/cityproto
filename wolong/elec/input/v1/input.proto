@@ -26,6 +26,11 @@ enum FacilityType {
 //设施id安装对应枚举类型进行编码，N亿作为编码前缀，N代表对应枚举类型的数字
 //例如发电站，一号发电站id为100000001
 
+message RepairStation {
+  int32 aoi_id = 1;
+  wolong.geo.v2.LongLatPosition position = 2;
+}
+
 message Facility {
   int32 id = 1;
   wolong.geo.v2.LongLatPosition position = 2;
@@ -41,5 +46,8 @@ message Facility {
   optional int32 aoi_id = 6;
 }
 
-//设施集合
-message Facilities { repeated Facility facilities = 1; }
+// 设施集合，对应于mongodb一个collection
+message Facilities {
+  repeated Facility facilities = 1;
+  repeated RepairStation repair_stations = 2;
+}
