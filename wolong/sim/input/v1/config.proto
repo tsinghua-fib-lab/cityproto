@@ -29,11 +29,19 @@ message ControlThread {
   int32 block_size = 2;
 }
 
+message ControlOutput {
+  double min_longitude = 1;
+  double min_latitude = 2;
+  double max_longitude = 3;
+  double max_latitude = 4;
+}
+
 message Control {
   ControlStep step = 1;
   ControlThread thread = 2;
-  int32 random_seed = 3;
-  bool vehicle_reroute = 4;
+  ControlOutput vehicle_output_range = 3;
+  int32 random_seed = 4;
+  bool vehicle_reroute = 5;
 }
 
 message OutputPostgreSql { string uri = 1; }
@@ -42,6 +50,7 @@ message OutputPostgreSql { string uri = 1; }
 message OutputTarget { optional OutputPostgreSql sql = 1; }
 
 message Output {
+  OutputTarget special_vehicle = 1;
   OutputTarget vehicle = 2;
   OutputTarget person = 3;
   OutputTarget traffic_light = 4;
