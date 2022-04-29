@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package wolong.water.input.v1;
+
+import "wolong/water/input/v1/water.proto";
+
+service InputService {
+  rpc Init(InitRequest) returns (InitResponse) {}
+}
+
+message InitRequest {}
+
+message InitResponse { Rain rain = 1; }
