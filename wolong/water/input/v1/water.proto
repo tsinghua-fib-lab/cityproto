@@ -3,7 +3,7 @@ syntax = "proto3";
 package wolong.water.input.v1;
 
 message RainPeriod {
-  // 起始时间点，单位为秒，但必须整分钟
+  // 起始时间点，单位为秒，但必须整小时
   int32 start = 1;
   // 降雨量：单位mm
   double rainfall = 2;
