@@ -23,7 +23,9 @@ message DetailedRoad {
 
 // 节点状态
 message Node {
-  int32 id = 1;
+  // Node分两种, junction和outfall, outfall的id将以"_out"后缀
+  // 但输出不关心NodeType, 不需用type字段显示记录
+  string id = 1;
   // 水头，单位：米
   double head = 2;
 }
@@ -36,8 +38,8 @@ enum LinkType {
 
 // 边的状态
 message Link {
-  // id为去除前缀后的数字，如水泵要加上相关的前缀
-  int32 id = 1;
+  // type为LINK_TYPE_PUMP的id将以"Pump_"前缀
+  string id = 1;
   LinkType type = 2;
   // 流量
   // 排水网，单位：m3/s
