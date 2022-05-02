@@ -10,4 +10,8 @@ service InputService {
 
 message InitRequest {}
 
-message InitResponse { Facilities facilities = 1; }
+message InitResponse {
+  Facilities facilities = 1;
+  // 模拟器gRPC监听地址
+  string address = 2;
+}
