@@ -44,6 +44,9 @@ message Facility {
 
   // 对于电力设施，该值表示所在aoi id
   optional int32 aoi_id = 6;
+
+  // 对于10kv变压器组，该值表示变压器组中变压器的数量
+  optional int32 num_transformer = 7;
 }
 
 // 设施集合，对应于mongodb一个collection
