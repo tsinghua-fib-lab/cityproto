@@ -2,20 +2,17 @@ syntax = "proto3";
 
 package wolong.sim.input.v1;
 
-message Log { string level = 1; }
+import "wolong/config/v1/config.proto";
 
-message MongoPath {
-  string db = 1;
-  string col = 2;
-}
+message Log { string level = 1; }
 
 message Mongo {
   string uri = 1;
-  MongoPath map = 2;
-  optional MongoPath traffic_light = 3;
-  optional MongoPath person = 5;
-  optional MongoPath thing = 6;
-  optional MongoPath base_station = 7;
+  wolong.config.v1.MongoPath map = 2;
+  optional wolong.config.v1.MongoPath traffic_light = 3;
+  wolong.config.v1.MongoPath person = 5;
+  optional wolong.config.v1.MongoPath thing = 6;
+  optional wolong.config.v1.MongoPath base_station = 7;
 }
 
 message ControlStep {
@@ -39,24 +36,25 @@ message ControlOutput {
 message Control {
   ControlStep step = 1;
   ControlThread thread = 2;
-  ControlOutput vehicle_output_range = 3;
+  ControlOutput agent_output_range = 3;
   int32 random_seed = 4;
   bool vehicle_reroute = 5;
 }
 
-message OutputPostgreSql { string uri = 1; }
-
-// 输出的目标（数据库、对象存储、...）
-message OutputTarget { optional OutputPostgreSql sql = 1; }
+// 是否输出各类数据
+message OutputSwitch {
+  bool vehicle = 1;
+  bool person = 2;
+  bool traffic_light = 3;
+  bool road = 4;
+  bool aoi = 5;
+  bool restricted_lane = 6;
+}
 
 message Output {
-  OutputTarget special_vehicle = 1;
-  OutputTarget vehicle = 2;
-  OutputTarget person = 3;
-  OutputTarget traffic_light = 4;
-  OutputTarget road = 5;
-  OutputTarget aoi = 6;
-  OutputTarget restricted_lane = 7;
+  // 统一的输出目标
+  wolong.config.v1.OutputTarget target = 1;
+  OutputSwitch switch = 2;
 }
 
 message Config {

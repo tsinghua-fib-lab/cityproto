@@ -6,6 +6,7 @@ proto 文件仓库。
 
 - `wolong.agent`: 智能体
 - `wolong.comm`: 通信
+- `wolong.config`: 配置文件基本组件
 - `wolong.elec`: 电网
 - `wolong.geo`: 坐标体系
 - `wolong.map`: 地图

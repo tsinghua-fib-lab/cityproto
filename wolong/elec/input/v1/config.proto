@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package wolong.elec.input.v1;
+
+import "wolong/config/v1/config.proto";
+
+message Mongo {
+  string uri = 1;
+  wolong.config.v1.MongoPath map = 2;
+  wolong.config.v1.MongoPath facilities = 3;
+}
+
+message ControlStep {
+  int32 start = 1;
+  int32 total = 2;
+}
+
+message Control { ControlStep step = 1; }
+
+// 是否输出各类数据
+message OutputSwitch {
+  // 电网节点状态
+  bool node = 1;
+  bool aoi = 2;
+}
+
+message Output {
+  wolong.config.v1.OutputTarget target = 1;
+  OutputSwitch switch = 2;
+}
+
+message Config {
+  Mongo mongo = 1;
+  Control control = 2;
+  Output output = 3;
+}

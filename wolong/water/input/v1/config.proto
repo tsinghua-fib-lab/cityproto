@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package wolong.water.input.v1;
+
+import "wolong/config/v1/config.proto";
+
+message Mongo {
+  string uri = 1;
+  wolong.config.v1.MongoPath map = 2;
+  wolong.config.v1.MongoPath rain = 3;
+}
+
+message ControlStep {
+  int32 start = 1;
+  int32 total = 2;
+  double interval = 3;
+}
+
+message Control { ControlStep step = 1; }
+
+// 是否输出各类数据
+message OutputSwitch {
+  bool road = 1;
+  bool drainage = 2;
+  bool supply = 3;
+  bool aoi = 4;
+}
+
+message Output {
+  // 统一的输出目标
+  wolong.config.v1.OutputTarget target = 1;
+  OutputSwitch switch = 2;
+}
+
+message Config {
+  Mongo mongo = 1;
+  Control control = 2;
+  Output output = 3;
+}

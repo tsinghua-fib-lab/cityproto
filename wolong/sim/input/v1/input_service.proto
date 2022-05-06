@@ -12,17 +12,8 @@ import "wolong/comm/input/v1/comm.proto";
 service InputService {
   rpc Init(InitRequest) returns (InitResponse) {}
 }
-message InitRequest {}
 
-// 是否输出各类数据
-message OutputSwitch {
-  bool vehicle = 1;
-  bool person = 2;
-  bool traffic_light = 3;
-  bool road = 4;
-  bool aoi = 5;
-  bool restricted_lane = 6;
-}
+message InitRequest {}
 
 message InitResponse {
   // 日志配置
