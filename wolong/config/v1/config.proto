@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package wolong.config.v1;
+
+message MongoPath {
+  string db = 1;
+  string col = 2;
+}
+
+// 输出的目标（数据库、对象存储、...）
+// 目前只使用PostgreSQL
+message OutputTarget { string sql = 1; }
