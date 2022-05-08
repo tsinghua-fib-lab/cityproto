@@ -39,6 +39,8 @@ enum RoadLevel {
   ROAD_LEVEL_HEAVY_LOAD = 4;
   // 严重拥堵
   ROAD_LEVEL_OVERLOAD = 5;
+  // 限行
+  ROAD_LEVEL_RESTRICTED = 6;
 }
 
 message Road {
