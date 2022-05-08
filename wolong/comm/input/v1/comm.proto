@@ -21,9 +21,19 @@ message Node {
   // 子节点
   repeated int32 children_ids = 4;
   // 节点经纬度位置
-  optional wolong.geo.v2.Position position = 6;
+  optional wolong.geo.v2.Position position = 5;
+  // 节点所在aoi
+  optional int32 aoi_id = 6;
   // 基站频段id
   optional int32 freq_range_id = 7;
 }
 
-message Nodes { repeated Node nodes = 1; }
+message RepairStation {
+  int32 aoi_id = 1;
+  wolong.geo.v2.Position position = 2;
+}
+
+message Nodes { 
+  repeated Node nodes = 1; 
+  repeated RepairStation repair_stations = 2;
+}
