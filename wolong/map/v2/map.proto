@@ -156,8 +156,8 @@ message Aoi {
   // Aoi与步行路网连接时在自身边界上的连接点, 与walking_positions按索引一一对应
   repeated wolong.geo.v2.XYPosition walking_gates = 7;
 
-  // Aoi面积
-  double area = 8;
+  // Aoi面积, 若是Poi则无此字段
+  optional double area = 8;
 }
 
 // 地图，对应一个地图pb文件或一个地图mongodb collection
