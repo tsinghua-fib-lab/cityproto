@@ -29,8 +29,9 @@ message Node {
 }
 
 message RepairStation {
-  int32 aoi_id = 1;
-  wolong.geo.v2.Position position = 2;
+  int32 id = 1;
+  int32 aoi_id = 2;
+  wolong.geo.v2.Position position = 3;
 }
 
 message Nodes { 
