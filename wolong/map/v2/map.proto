@@ -146,7 +146,8 @@ message Aoi {
   // Aoi与步行路网的连接点
   repeated wolong.geo.v2.LanePosition walking_positions = 4;
   // 要求aoi与路网至少有1个连接点(driving_positions或walking_positions至少一个不为空)
-  // 若type==AOI_TYPE_BUS_STATION, 要求driving_positions和walking_positions均为长度为1的array
+  // 若type==AOI_TYPE_BUS_STATION,
+  // 要求driving_positions和walking_positions均为长度为1的array
 
   // Aoi原始位置（如果只有一个值，则为Aoi所在的点，否则为Aoi多边形的边界）
   repeated wolong.geo.v2.XYPosition positions = 5;
@@ -154,6 +155,9 @@ message Aoi {
   repeated wolong.geo.v2.XYPosition driving_gates = 6;
   // Aoi与步行路网连接时在自身边界上的连接点, 与walking_positions按索引一一对应
   repeated wolong.geo.v2.XYPosition walking_gates = 7;
+
+  // Aoi面积
+  double area = 8;
 }
 
 // 地图，对应一个地图pb文件或一个地图mongodb collection
