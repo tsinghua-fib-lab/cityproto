@@ -13,6 +13,12 @@ enum NodeType {
   NODE_TYPE_BASE_STATION = 3;
 }
 
+enum BaseStationType {
+  BASE_STATION_TYPE_UNSPECIFIED = 0;
+  BASE_STATION_TYPE_INDOOR = 1;
+  BASE_STATION_TYPE_OUTDOOR = 2;
+}
+
 message Node {
   int32 id = 1;
   NodeType type = 2;
@@ -26,15 +32,25 @@ message Node {
   optional int32 aoi_id = 6;
   // 基站频段id
   optional int32 freq_range_id = 7;
+  // 室内外基站类型
+  optional BaseStationType base_station_type = 8;
 }
 
+// 抢修站
 message RepairStation {
   int32 id = 1;
   int32 aoi_id = 2;
   wolong.geo.v2.Position position = 3;
 }
 
+// 水泵
+message Pump {
+  int32 id = 1;
+  wolong.geo.v2.Position position = 2;
+}
+
 message Nodes { 
   repeated Node nodes = 1; 
   repeated RepairStation repair_stations = 2;
+  repeated Pump pumps = 3;
 }
