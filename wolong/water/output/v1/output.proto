@@ -50,6 +50,6 @@ message Link {
 
 message Aoi {
   int32 id = 1;
-  // 用水需求满足比例
-  double demand_satisfaction_ratio = 2;
+  // 用水不需求满足比例
+  double unsatisfied_demand_ratio = 2;
 }

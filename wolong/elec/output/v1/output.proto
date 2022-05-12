@@ -4,6 +4,6 @@ package wolong.elec.output.v1;
 
 message Aoi {
   int32 id = 1;
-  // 用电需求满足比例（没电0%/有电100%）
-  double demand_satisfaction_ratio = 2;
+  // 用电需求不满足比例（没电100%/有电0）
+  double unsatisfied_demand_ratio = 2;
 }
