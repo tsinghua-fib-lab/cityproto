@@ -14,6 +14,8 @@ message Vehicle {
   // [可空] 额外的标签（例如：抢修车类型->电网）
   // 主要用于标记特殊的车辆（如抢修车），便于后续处理程序分发到不同的数据库中
   map<string, string> labels = 3;
+  // 标记车辆是否因道路限行堵在路上
+  bool is_stuck = 4;
 }
 
 message Person {
