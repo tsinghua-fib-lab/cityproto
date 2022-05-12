@@ -49,8 +49,15 @@ message Pump {
   wolong.geo.v2.Position position = 2;
 }
 
-message Nodes { 
-  repeated Node nodes = 1; 
+// 终端通信需求
+message CommDemand {
+  int32 id = 1;
+  repeated double demands = 2;
+}
+
+message Nodes {
+  repeated Node nodes = 1;
   repeated RepairStation repair_stations = 2;
   repeated Pump pumps = 3;
+  repeated CommDemand comm_demands = 4;
 }
