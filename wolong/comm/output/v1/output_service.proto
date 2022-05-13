@@ -12,7 +12,7 @@ message OutputRequest {
   repeated Node nodes = 2;
   repeated BaseStation base_stations = 3;
   // 未能满足通信需求的用户数
-  int32 num_unstatisfied_agents = 4;
+  int32 num_unsatisfied_agents = 4;
   // 通信中断的用户数
   int32 num_outage_agents = 5;
   // 信号强度热力图（100m网格形式呈现）
