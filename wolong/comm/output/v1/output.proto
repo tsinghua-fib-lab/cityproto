@@ -44,7 +44,7 @@ enum PersonStatus {
   // 需求被满足
   PERSON_STATUS_OK = 1;
   // 需求不满足
-  PERSON_STATUS_UNSTATISFIED = 2;
+  PERSON_STATUS_UNSATISFIED = 2;
   // 无法连接到基站
   PERSON_STATUS_OUTAGE = 3;
 }
