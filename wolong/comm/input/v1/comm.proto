@@ -59,8 +59,5 @@ message Nodes {
   repeated Node nodes = 1;
   repeated RepairStation repair_stations = 2;
   repeated Pump pumps = 3;
-}
-
-message CommDemands {
-  repeated CommDemand comm_demands = 1;
+  repeated CommDemand comm_demands = 4;
 }
