@@ -22,6 +22,8 @@ message OutputRequest {
   repeated Link supply_links = 7;
   // AOI相关的数据
   repeated Aoi aois = 8;
+  // 排水负载指标
+  double drainage_metric = 9;
 }
 
 message OutputResponse {}
