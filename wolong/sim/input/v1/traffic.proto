@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package wolong.sim.input.v1;
+import "wolong/geo/v2/geo.proto";
+
+message TrafficPoliceStation {
+  int32 aoi_id = 1;
+  wolong.geo.v2.Position position = 2;
+}
+
+message TrafficPoliceStations {
+  repeated TrafficPoliceStation traffic_police_stations = 1;
+}
