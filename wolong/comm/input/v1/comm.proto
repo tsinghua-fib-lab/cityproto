@@ -63,5 +63,4 @@ message Nodes {
 
 message CommDemands {
   repeated CommDemand comm_demands = 1;
-  repeated double max_demands = 2;
 }
