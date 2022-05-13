@@ -38,5 +38,5 @@ message InitResponse {
   // 交警局
   TrafficPoliceStations traffic_police_stations = 10;
   // 输出配置
-  OutputSwitch output_switch = 10;
+  OutputSwitch output_switch = 11;
 }
