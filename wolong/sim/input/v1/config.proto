@@ -13,7 +13,7 @@ message Mongo {
   wolong.config.v1.MongoPath person = 5;
   optional wolong.config.v1.MongoPath thing = 6;
   optional wolong.config.v1.MongoPath base_station = 7;
-  optional wolong.config.v1.MongoPath traffic_police_station = 8;
+  wolong.config.v1.MongoPath traffic_police_station = 8;
 }
 
 message ControlStep {
