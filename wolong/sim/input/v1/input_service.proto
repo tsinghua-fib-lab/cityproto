@@ -33,6 +33,8 @@ message InitResponse {
   wolong.traffic_light.v2.TrafficLights traffic_lights = 7;
   // 通信基站
   wolong.comm.input.v1.Nodes base_stations = 8;
+  // 通信用户需求
+  wolong.comm.input.v1.CommDemands comm_demands = 12;
   // 物品
   wolong.thing.v2.Things things = 9;
   // 交警局
