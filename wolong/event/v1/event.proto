@@ -43,6 +43,9 @@ enum EventType {
   EVENT_TYPE_COMM_OVERLOAD_BASE_STATION = 11;
 }
 
-message Event { EventType type = 1; }
+message Event {
+  EventType type = 1;
+  int32 level = 2;
+}
 
 message Events { repeated Event events = 1; }
