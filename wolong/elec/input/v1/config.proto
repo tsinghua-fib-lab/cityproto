@@ -22,6 +22,7 @@ message OutputSwitch {
   // 电网节点状态
   bool node = 1;
   bool aoi = 2;
+  bool event = 3;
 }
 
 message Output {
