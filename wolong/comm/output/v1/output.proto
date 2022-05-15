@@ -65,6 +65,12 @@ message Person {
   repeated int32 freq_range_ids = 7;
 }
 
+message Demand {
+  int32 id = 1;
+  // 通信需求（10分钟粒度，单位：Bytes）
+  double comm_demand = 2;
+}
+
 message Aoi {
   int32 id = 1;
   // 通信需求
