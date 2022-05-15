@@ -14,6 +14,7 @@ message Mongo {
   optional wolong.config.v1.MongoPath thing = 6;
   optional wolong.config.v1.MongoPath base_station = 7;
   wolong.config.v1.MongoPath traffic_police_station = 8;
+  optional wolong.config.v1.MongoPath comm_demand = 9;
 }
 
 message ControlStep {
