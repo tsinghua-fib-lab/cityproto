@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+package wolong.event.v1;
+
+enum EventType {
+  EVENT_TYPE_UNSPECIFIED = 0;
+
+  // 环境
+
+  // 特大暴雨
+  EVENT_TYPE_HEAVY_RAIN = 1;
+  // 军事打击
+  EVENT_TYPE_MILITARY_STRIKE = 2;
+
+  // 交通
+
+  // 交通拥堵
+  EVENT_TYPE_TRAFFIC_CONGESTION = 3;
+  // 道路限行
+  EVENT_TYPE_TRAFFIC_LANE_RESTRICTION = 4;
+  // 信控失效
+  EVENT_TYPE_TRAFFIC_BAD_LIGHT = 5;
+
+  // 电网
+
+  // 变压器损坏（被摧毁）
+  EVENT_TYPE_ELEC_RUINED_TRANSFORMER = 6;
+
+  // 水网
+
+  // 水泵损坏（被摧毁）
+  EVENT_TYPE_WATER_RUINED_PUMP = 7;
+  // 水泵停电（变压器停电影响）
+  EVENT_TYPE_WATER_STOPPED_PUMP = 8;
+
+  // 通信
+
+  // 基站损坏
+  EVENT_TYPE_COMM_RUINED_BASE_STATION = 9;
+  // 基站停电
+  EVENT_TYPE_COMM_STOPPED_BASE_STATION = 10;
+  // 基站过载
+  EVENT_TYPE_COMM_OVERLOAD_BASE_STATION = 11;
+}
+
+message Event { EventType type = 1; }
+
+message Events { repeated Event events = 1; }
