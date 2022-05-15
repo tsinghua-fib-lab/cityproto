@@ -51,6 +51,7 @@ message OutputSwitch {
   bool road = 4;
   bool aoi = 5;
   bool restricted_lane = 6;
+  bool event = 7;
 }
 
 message Output {
