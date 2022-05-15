@@ -2,7 +2,6 @@ syntax = "proto3";
 
 package wolong.comm.output.v1;
 
-import "wolong/geo/v2/geo.proto";
 
 enum NodePowerStatus {
   NODE_POWER_STATUS_UNSPECIFIED = 0;
@@ -35,10 +34,10 @@ message BaseStation {
 
 // 信号情况
 message Signal {
-  // 信号采样点位置，主要使用经纬度部分
-  wolong.geo.v2.Position position = 1;
+  int32 num_rows = 1;
+  int32 num_columns = 2;
   // 信号强度
-  double strength = 2;
+  repeated double strength = 3;
 }
 
 enum PersonStatus {
@@ -72,6 +71,9 @@ message Demand {
   // 通信需求（10分钟粒度，单位：Bytes）
   double comm_demand = 2;
 }
+
+
+
 
 message Aoi {
   int32 id = 1;
