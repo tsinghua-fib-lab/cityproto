@@ -24,6 +24,7 @@ message OutputSwitch {
   bool drainage = 2;
   bool supply = 3;
   bool aoi = 4;
+  bool event = 5;
 }
 
 message Output {
