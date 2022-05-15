@@ -77,4 +77,10 @@ message Aoi {
   double demand_satisfaction_ratio = 2;
   // 通信需求总量
   double demand_sum = 3;
+  // 通信中断人数
+  int32 outage_num = 4;
+  // 通信满足人数
+  int32 satisfaction_num = 5;
+  // 有通信需求的人数
+  int32 active_user_num = 6;
 }
