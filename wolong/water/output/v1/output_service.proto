@@ -3,6 +3,7 @@ syntax = "proto3";
 package wolong.water.output.v1;
 
 import "wolong/water/output/v1/output.proto";
+import "wolong/event/v1/event.proto";
 
 service OutputService { rpc Output(OutputRequest) returns (OutputResponse); }
 
@@ -24,6 +25,7 @@ message OutputRequest {
   repeated Aoi aois = 8;
   // 排水负载指标
   double drainage_metric = 9;
+  wolong.event.v1.Events events = 10;
 }
 
 message OutputResponse {}

@@ -3,6 +3,7 @@ syntax = "proto3";
 package wolong.comm.output.v1;
 
 import "wolong/comm/output/v1/output.proto";
+import "wolong/event/v1/event.proto";
 
 service OutputService { rpc Output(OutputRequest) returns (OutputResponse); }
 
@@ -22,6 +23,7 @@ message OutputRequest {
   repeated Person persons = 7;
   // AOI相关的数据
   repeated Aoi aois = 8;
+  wolong.event.v1.Events events = 9;
 }
 
 message OutputResponse {}
