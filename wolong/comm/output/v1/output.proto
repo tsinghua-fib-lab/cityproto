@@ -75,4 +75,6 @@ message Aoi {
   int32 id = 1;
   // 通信需求
   double demand_satisfaction_ratio = 2;
+  // 通信需求总量
+  double demand_sum = 3;
 }
