@@ -29,6 +29,8 @@ message BaseStation {
   double flow = 2;
   // 基站用户数
   int32 num_agents = 3;
+  // 基站是否过载
+  bool overload = 4;
 }
 
 // 信号情况
