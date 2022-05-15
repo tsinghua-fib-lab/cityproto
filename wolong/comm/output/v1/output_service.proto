@@ -17,7 +17,7 @@ message OutputRequest {
   // 通信中断的用户数
   int32 num_outage_agents = 5;
   // 信号强度热力图（100m网格形式呈现）
-  repeated Signal signal_heatmap = 6;
+  Signal signal_heatmap = 6;
   // TODO(张钧): 基站和人的连接怎么表示？
   // 人相关的数据
   repeated Person persons = 7;
