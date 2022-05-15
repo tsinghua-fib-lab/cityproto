@@ -3,7 +3,7 @@ syntax = "proto3";
 package wolong.elec.output.v1;
 
 import "wolong/elec/output/v1/output.proto";
-
+import "wolong/event/v1/event.proto";
 service OutputService { rpc Output(OutputRequest) returns (OutputResponse); }
 
 // 电网各节点状态信息，输出到数据库中
@@ -21,6 +21,8 @@ message OutputRequest {
   repeated int32 stopped_ids = 3;
   // AOI相关的数据
   repeated Aoi aois = 4;
+  // 事件数据
+  wolong.event.v1.Events events = 5;
 }
 
 message OutputResponse {}
