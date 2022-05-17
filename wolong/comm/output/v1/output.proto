@@ -2,7 +2,6 @@ syntax = "proto3";
 
 package wolong.comm.output.v1;
 
-
 enum NodePowerStatus {
   NODE_POWER_STATUS_UNSPECIFIED = 0;
   // 正常供电
@@ -65,15 +64,6 @@ message Person {
   // 频段分配
   repeated int32 freq_range_ids = 7;
 }
-
-message Demand {
-  int32 id = 1;
-  // 通信需求（10分钟粒度，单位：Bytes）
-  double comm_demand = 2;
-}
-
-
-
 
 message Aoi {
   int32 id = 1;
