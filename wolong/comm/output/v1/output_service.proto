@@ -24,8 +24,6 @@ message OutputRequest {
   // AOI相关的数据
   repeated Aoi aois = 8;
   wolong.event.v1.Events events = 9;
-  // 人的通信需求
-  repeated Demand demands = 10;
 }
 
 message OutputResponse {}
