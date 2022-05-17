@@ -16,12 +16,14 @@ enum FacilityType {
   FACILITY_TYPE_BASE_STATION = 6;
   //网关
   FACILITY_TYPE_GATEWAY = 7;
-  //水泵
-  FACILITY_TYPE_PUMP = 8;
+  //排水水泵
+  FACILITY_TYPE_DRAINAGE_PUMP = 8;
   //交通灯
   FACILITY_TYPE_TRAFFIC_LIGHT = 9;
   // AOI
   FACILITY_TYPE_AOI = 10;
+  //供水水泵
+  FACILITY_TYPE_SUPPLY_PUMP = 11;
 }
 //设施id安装对应枚举类型进行编码，N亿作为编码前缀，N代表对应枚举类型的数字
 //例如发电站，一号发电站id为100000001
