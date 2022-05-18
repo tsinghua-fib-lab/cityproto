@@ -23,10 +23,7 @@ message ControlStep {
   double interval = 3;
 }
 
-message ControlThread {
-  int32 worker = 1;
-  int32 block_size = 2;
-}
+message ControlThread { int32 worker = 1; }
 
 message ControlOutput {
   double min_longitude = 1;
@@ -39,8 +36,12 @@ message Control {
   ControlStep step = 1;
   ControlThread thread = 2;
   ControlOutput agent_output_range = 3;
-  int32 random_seed = 4;
+  // 启动车辆通过路口重新导航机制
   bool vehicle_reroute = 5;
+  // 启动通信模拟
+  bool enable_comm = 6;
+  // 启动室内模拟
+  bool enable_indoor = 7;
 }
 
 // 是否输出各类数据
@@ -52,6 +53,7 @@ message OutputSwitch {
   bool aoi = 5;
   bool restricted_lane = 6;
   bool event = 7;
+  bool comm = 8;
 }
 
 message Output {
