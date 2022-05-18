@@ -1,7 +1,6 @@
 syntax = "proto3";
 
 package wolong.comm.output.v1;
-
 import "wolong/comm/output/v1/output.proto";
 import "wolong/event/v1/event.proto";
 
@@ -12,18 +11,16 @@ message OutputRequest {
   // 设备状态
   repeated Node nodes = 2;
   repeated BaseStation base_stations = 3;
-  // 未能满足通信需求的用户数
-  int32 num_unsatisfied_agents = 4;
-  // 通信中断的用户数
-  int32 num_outage_agents = 5;
   // 信号强度热力图（100m网格形式呈现）
-  Signal signal_heatmap = 6;
+  Signal signal_heatmap = 4;
   // TODO(张钧): 基站和人的连接怎么表示？
   // 人相关的数据
-  repeated Person persons = 7;
+  repeated Person persons = 5;
   // AOI相关的数据
-  repeated Aoi aois = 8;
-  wolong.event.v1.Events events = 9;
+  repeated Aoi aois = 6;
+  wolong.event.v1.Events events = 7;
+  // 统计值
+  Statistics statistics = 8;
 }
 
 message OutputResponse {}
