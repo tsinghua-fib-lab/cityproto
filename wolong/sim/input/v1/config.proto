@@ -36,7 +36,7 @@ message Control {
   ControlStep step = 1;
   ControlThread thread = 2;
   // 微观区域范围
-  ControlOutput micro_area_range = 3;
+  ControlOutput microscopic_range = 3;
   // 启动车辆通过路口重新导航机制
   bool vehicle_reroute = 5;
   // 启动通信模拟
