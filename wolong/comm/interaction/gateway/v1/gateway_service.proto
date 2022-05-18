@@ -3,14 +3,24 @@ syntax = "proto3";
 package wolong.comm.interaction.gateway.v1;
 
 service GatewayService {
-  rpc SetGatewayStatus(SetGatewayStatusRequest)
-      returns (SetGatewayStatusResponse);
+  rpc SetGatewayPowerStatus(SetGatewayPowerStatusRequest)
+      returns (SetGatewayPowerStatusResponse);
+  rpc SetGatewayRuinStatus(SetGatewayRuinStatusRequest)
+      returns (SetGatewayRuinStatusResponse);
 }
 
-// 给定要改变状态的gateway id 与对应状态改变
-message SetGatewayStatusRequest {
+// 断电或恢复状态，True为修复，False为断电
+message SetGatewayPowerStatusRequest {
   int32 id = 1;
   bool status = 2;
 }
 
-message SetGatewayStatusResponse {}
+message SetGatewayPowerStatusResponse {}
+
+// 摧毁或恢复状态，True为修复，False为摧毁
+message SetGatewayRuinStatusRequest {
+  int32 id = 1;
+  bool status = 2;
+}
+
+message SetGatewayRuinStatusResponse {}

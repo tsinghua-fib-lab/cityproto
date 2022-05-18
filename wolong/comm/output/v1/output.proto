@@ -2,41 +2,59 @@ syntax = "proto3";
 
 package wolong.comm.output.v1;
 
-enum NodePowerStatus {
-  NODE_POWER_STATUS_UNSPECIFIED = 0;
+enum NodeStatus {
+  NODE_STATUS_UNSPECIFIED = 0;
   // 正常供电
-  NODE_POWER_STATUS_OK = 1;
+  NODE_STATUS_OK = 1;
   // 电池供电
-  NODE_POWER_STATUS_BATTERY = 2;
+  NODE_STATUS_BATTERY = 2;
   // 停电
-  NODE_POWER_STATUS_FAILURE = 3;
+  NODE_STATUS_FAILURE = 3;
+  // 损坏
+  NODE_STATUS_RUINED = 4;
 }
 
 // 设备状态
 message Node {
   int32 id = 1;
-  NodePowerStatus status = 2;
-  // 电池剩余可用时间（单位：秒）（仅当状态为“电池供电”时启用）
+  NodeStatus status = 2;
+  // 电池剩余可用时间（单位：秒）（仅当gateway状态为“电池供电”时启用）
   optional double battery_remaining_time = 3;
 }
 
 // 基站状态
 message BaseStation {
   int32 id = 1;
-  // 基站流量（单位：Bytes）
-  double flow = 2;
+  // 基站需求流量（单位：Bytes）
+  double demand_flow = 2;
+  // 基站真实流量（单位：Bytes）
+  double actual_flow = 3;
   // 基站用户数
-  int32 num_agents = 3;
+  int32 num_agents = 4;
   // 基站是否过载
-  bool overload = 4;
+  bool overload = 5;
+  // 不满足通信需求用户数
+  int32 unsatisfied_num = 6;
+  // 满足通信需求用户数
+  int32 satisfied_num = 7;
+  // 通信中断用户数
+  int32 outage_num = 8;
+  // 有通信需求人数
+  int32 active_num = 9;
+  // 基站发射功率
+  double transmit_power = 10;
 }
 
 // 信号情况
 message Signal {
   int32 num_rows = 1;
   int32 num_columns = 2;
-  // 信号强度
+  // 信号强度（单位：dBm）
   repeated double strength = 3;
+  // 基站ID
+  repeated int32 base_station_id = 4;
+  // 基站频段
+  repeated int32 freq_range_id = 5;
 }
 
 enum PersonStatus {
@@ -57,24 +75,55 @@ message Person {
   // 通信真实速率（单位：Bytes/s）
   double actual_rate = 3;
   PersonStatus status = 4;
-  // 信号强度
+  // 信号强度（单位：dBm）
   double strength = 5;
   // 连接基站
   int32 base_station_id = 6;
-  // 频段分配
+  // 信道分配
   repeated int32 freq_range_ids = 7;
+  // 接收发射功率（单位：dBm）
+  double received_power = 8;
 }
 
 message Aoi {
   int32 id = 1;
-  // 通信需求
-  double demand_satisfaction_ratio = 2;
-  // 通信需求总量
-  double demand_sum = 3;
+  // 通信需求总量（单位：Bytes）
+  double demand_flow = 2;
+  // 通信真实总量（单位：Bytes）
+  double actual_flow = 3;
   // 通信中断人数
   int32 outage_num = 4;
   // 通信满足人数
-  int32 satisfaction_num = 5;
+  int32 satisfied_num = 5;
+  // 通信不满足人数
+  int32 unsatisfied_num = 6;
   // 有通信需求的人数
-  int32 active_user_num = 6;
+  int32 active_user_num = 7;
+}
+
+message Statistics {
+  // 满足通信需求用户数
+  int32 num_satisfied_agents = 1;
+  // 未能满足通信需求的用户数
+  int32 num_unsatisfied_agents = 2;
+  // 通信中断的用户数
+  int32 num_outage_agents = 3;
+  // 有通信需求的用户数
+  int32 num_active = 4;
+  // 需求总流量
+  double demand_flow = 5;
+  // 真实总流量
+  double actual_flow = 6;
+  // 总基站数
+  double num_base_station = 7;
+  // 正常基站数
+  double num_base_station_ok = 8;
+  // 损坏基站数
+  double num_base_station_ruined = 9;
+  // 断电基站数
+  double num_base_station_stopped = 10;
+  // 过载基站数
+  double num_base_staion_overloaded = 11;
+  // 正使用蓄电池机制gateway数
+  double num_gateway_battery = 12;
 }
