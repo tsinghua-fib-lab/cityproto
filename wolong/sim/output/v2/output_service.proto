@@ -22,6 +22,9 @@ message OutputRequest {
   repeated int32 restricted_lane_ids = 8;
   // TODO(张钧): 各种浮窗数据：需求满足人数、事故数、......
   wolong.event.v1.Events events = 9;
+  int32 num_vehicle_on_lane = 10;
+  double vehicle_average_speed = 11;
+  int32 num_traffic_light_failure = 12;
 }
 
 message OutputResponse {}
