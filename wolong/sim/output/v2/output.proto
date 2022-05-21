@@ -57,5 +57,4 @@ message Aoi {
   int32 id = 1;
   // aoi人口数量
   int32 num_agents = 2;
-  // TODO(张钧): 交通需求满足情况热力图？？？
 }
