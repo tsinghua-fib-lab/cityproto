@@ -24,6 +24,8 @@ message OutputRequest {
   int32 num_vehicle_on_lane = 10;
   double vehicle_average_speed = 11;
   int32 num_traffic_light_failure = 12;
+  // 交通灯失效的junction ID列表
+  repeated int32 bad_traffic_light_ids = 13;
 }
 
 message OutputResponse {}
