@@ -23,6 +23,17 @@ message OutputRequest {
   repeated Aoi aois = 4;
   // 事件数据
   wolong.event.v1.Events events = 5;
+  // 居民用电需求不满足比例
+  double resident_unsatisfied_ratio = 6;
+  // 居民总用电需求,MW
+  double resident_demand = 7;
+  // aoi用电需求不满足比例
+  double aoi_unsatisfied_ratio = 8;
+  // 不满足用电的aoi数量,个数
+  int32 aoi_unsatisfied_num =9;
+  // aoi总用电需求,MW
+  double aoi_demand = 10;
+
 }
 
 message OutputResponse {}

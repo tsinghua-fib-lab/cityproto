@@ -6,4 +6,6 @@ message Aoi {
   int32 id = 1;
   // 用电需求不满足比例（没电100%/有电0）
   double unsatisfied_demand_ratio = 2;
+  // 用电需求不满足人数 （没电就是aoi里的人都不满足）
+  int32 unsatisfied_demand_num = 3;
 }
