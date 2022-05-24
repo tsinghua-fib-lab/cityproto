@@ -25,7 +25,12 @@ message OutputRequest {
   repeated Aoi aois = 8;
   // 排水负载指标
   double drainage_metric = 9;
+  // 水网模拟的各种事件
   wolong.event.v1.Events events = 10;
+  // 排水网指标
+  DrainageMetrics drainage_metrics = 11;
+  // 供水网指标
+  SupplyMetrics supply_metrics = 12;
 }
 
 message OutputResponse {}
