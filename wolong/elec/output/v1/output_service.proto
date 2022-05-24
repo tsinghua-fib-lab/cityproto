@@ -33,7 +33,8 @@ message OutputRequest {
   int32 aoi_unsatisfied_num =9;
   // aoi总用电需求,MW
   double aoi_demand = 10;
-
+  // 各类变压器当前的平均承受功率，单位为MW
+  AveragePower average_powers = 11;
 }
 
 message OutputResponse {}
