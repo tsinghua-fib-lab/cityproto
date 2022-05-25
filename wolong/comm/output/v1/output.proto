@@ -57,14 +57,24 @@ message Signal {
   repeated int32 freq_range_id = 5;
 }
 
-enum PersonStatus {
-  PERSON_STATUS_UNSPECIFIED = 0;
-  // 需求被满足
-  PERSON_STATUS_OK = 1;
-  // 需求不满足
-  PERSON_STATUS_UNSATISFIED = 2;
+// 用户连接基站状态
+enum PersonConnectStatus {
+  PERSON_CONNECT_STATUS_UNSPECIFIED = 0;
+  // 可以连接到基站
+  PERSON_CONNECT_STATUS_OK = 1;
   // 无法连接到基站
-  PERSON_STATUS_OUTAGE = 3;
+  PERSON_CONNECT_STATUS_OUTAGE = 2;
+}
+
+// 用户需求满足状态
+enum PersonDemandStatus {
+  PERSON_DEMAND_STATUS_UNSPECIFIED = 0;
+  // 需求被满足
+  PERSON_DEMAND_STATUS_SATISFIED = 1;
+  // 需求不满足
+  PERSON_DEMAND_STATUS_UNSATISFIED = 2;
+  // 没有需求
+  PERSON_DEMAND_STATUS_NO = 3;
 }
 
 // 人（可见的，交通模拟或室内模拟正在计算位置变动的）
@@ -74,7 +84,8 @@ message Person {
   double demand_rate = 2;
   // 通信真实速率（单位：Bytes/s）
   double actual_rate = 3;
-  PersonStatus status = 4;
+  PersonConnectStatus connect_status = 4;
+  PersonDemandStatus demand_status = 9;
   // 信号强度（单位：dBm）
   double strength = 5;
   // 连接基站
@@ -109,21 +120,33 @@ message Statistics {
   // 通信中断的用户数
   int32 num_outage_agents = 3;
   // 有通信需求的用户数
-  int32 num_active = 4;
-  // 需求总流量
+  int32 num_active_agents = 4;
+  // 需求总流量（单位：Bytes）
   double demand_flow = 5;
-  // 真实总流量
+  // 真实总流量（单位：Bytes）
   double actual_flow = 6;
   // 总基站数
-  double num_base_station = 7;
+  int32 num_base_station = 7;
   // 正常基站数
-  double num_base_station_ok = 8;
+  int32 num_ok_base_station = 8;
   // 损坏基站数
-  double num_base_station_ruined = 9;
+  int32 num_ruined_base_station = 9;
   // 断电基站数
-  double num_base_station_stopped = 10;
+  int32 num_stopped_base_station = 10;
   // 过载基站数
-  double num_base_staion_overloaded = 11;
-  // 正使用蓄电池机制gateway数
-  double num_gateway_battery = 12;
+  int32 num_overloaded_base_staion = 11;
+  // 总网关数
+  int32 num_gateway = 12;
+  // 正常网关数
+  int32 num_ok_gateway = 13;
+  // 损坏网关数
+  int32 num_ruined_gateway = 14;
+  // 断电网关数
+  int32 num_stopped_gateway = 15;
+  // 过载网关数
+  int32 num_overloaded_gateway = 16;
+  // 直流电网关数
+  int32 num_battery_gateway = 17;
+  // 基站耗电量(单位：kW·h)
+  double power_consumption = 18;
 }

@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package wolong.comm.interaction.demand.v1;
+
+service DemandService {
+  rpc SetDemandStatus(SetDemandStatusRequest) returns (SetDemandStatusResponse);
+}
+
+// 设置用户通信需求激增
+// 用户通信需求激增公式：
+// result=demand*multiple_times*exp(-power_times*(current_time-start_time))
+// demand: 用户正常通信需求
+// current_time: 当前时间, start_time: 开始激增时间
+message SetDemandStatusRequest {
+  double multiple_times = 1;
+  double power_times = 2;
+}
+
+message SetDemandStatusResponse {}

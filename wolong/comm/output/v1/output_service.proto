@@ -11,8 +11,10 @@ message OutputRequest {
   // 设备状态
   repeated Node nodes = 2;
   repeated BaseStation base_stations = 3;
-  // 信号强度热力图（100m网格形式呈现）
+  // 五环区域信号强度热力图（500m网格形式呈现）
   Signal signal_heatmap = 4;
+  // 国贸区域信号强度热力图（50m网格形式呈现）
+  Signal small_signal_heatmap = 9;
   // TODO(张钧): 基站和人的连接怎么表示？
   // 人相关的数据
   repeated Person persons = 5;
