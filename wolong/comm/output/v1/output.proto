@@ -134,7 +134,7 @@ message Statistics {
   // 断电基站数
   int32 num_stopped_base_station = 10;
   // 过载基站数
-  int32 num_overloaded_base_staion = 11;
+  int32 num_overloaded_base_station = 11;
   // 总网关数
   int32 num_gateway = 12;
   // 正常网关数
