@@ -22,8 +22,9 @@ message OutputRequest {
   repeated int32 restricted_lane_ids = 8;
   wolong.event.v1.Events events = 9;
   int32 num_vehicle_on_lane = 10;
+  int32 num_person_out_of_aoi = 14;
+  int32 num_person_in_aoi = 15;
   double vehicle_average_speed = 11;
-  int32 num_traffic_light_failure = 12;
   // 交通灯失效的junction ID列表
   repeated int32 bad_traffic_light_ids = 13;
 }
