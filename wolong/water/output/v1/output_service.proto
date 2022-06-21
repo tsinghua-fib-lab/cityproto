@@ -21,7 +21,7 @@ message OutputRequest {
   repeated Node supply_nodes = 6;
   // 供水的边
   repeated Link supply_links = 7;
-  // AOI相关的数据
+  // AOI粒度的供水指标
   repeated Aoi aois = 8;
   // 排水负载指标
   double drainage_metric = 9;

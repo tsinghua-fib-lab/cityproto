@@ -50,8 +50,10 @@ message Link {
 
 message Aoi {
   int32 id = 1;
-  // 用水需求不满足人数
-  int32 unsatisfied_num = 2;
+  int32 unsatisfied_num = 2;    // AOI用水需求不满足人数
+  double unsatisfied_ratio = 3; // AOI用水需求不满足比例
+  double demand = 4;            // AOI用水需求量 m3/s
+  double supply = 5;            // AOI供水量 m3/s
 }
 
 // 排水基础信息
