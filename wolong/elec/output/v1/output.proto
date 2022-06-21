@@ -8,6 +8,10 @@ message Aoi {
   double unsatisfied_demand_ratio = 2;
   // 用电需求不满足人数 （没电就是aoi里的人都不满足）
   int32 unsatisfied_demand_num = 3;
+  // 该aoi当前时刻的用电需求,单位为KW
+  double demand = 4;
+  // 电力系统向该aoi供应的电力,单位为KW
+  double supply = 5;
 }
 
 message AveragePower {
