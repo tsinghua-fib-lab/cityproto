@@ -51,6 +51,10 @@ message Road {
   // 瞬时交通平均速度等级
   // 按照从当前时刻到X分钟前的窗口内的道路瞬时平均速度的平均计算
   RoadLevel level = 2;
+  // 瞬时平均速度
+  double average_speed = 3;
+  // 当前车辆数
+  int32 num_vehicles = 4;
 }
 
 message Aoi {
