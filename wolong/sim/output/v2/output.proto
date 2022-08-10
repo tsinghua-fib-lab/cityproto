@@ -16,11 +16,19 @@ message Vehicle {
   map<string, string> labels = 3;
   // 标记车辆是否因道路限行堵在路上
   bool is_stuck = 4;
+  // 当前活动名
+  // 如果在路上，为“去”+trip activity
+  // 完成该trip但下一个未开始，为trip activity
+  optional string activity = 5;
 }
 
 message Person {
   int32 id = 1;
   wolong.agent.v2.Motion motion = 2;
+  // 当前活动名
+  // 如果在路上，为“去”+trip activity
+  // 完成该trip但下一个未开始，为trip activity
+  optional string activity = 3;
 }
 
 message TrafficLight {
