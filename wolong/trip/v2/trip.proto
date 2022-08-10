@@ -47,6 +47,9 @@ message Trip {
   // 期望的到达时间（单位: 秒）
   // TODO(张钧): 支持设置期望到达时间（要求导航系统能返回预计出行用时）
   // optional double arrival_time = 5;
+
+  // 本次出行目的地的活动名
+  optional string activity = 6;
 }
 
 message Schedule {
