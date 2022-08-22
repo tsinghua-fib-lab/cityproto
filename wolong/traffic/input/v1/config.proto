@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package wolong.sim.input.v1;
+package wolong.traffic.input.v1;
 
 import "wolong/config/v1/config.proto";
 
@@ -13,8 +13,6 @@ message Mongo {
   wolong.config.v1.MongoPath person = 5;
   optional wolong.config.v1.MongoPath thing = 6;
   optional wolong.config.v1.MongoPath traffic_police_station = 8;
-  optional wolong.config.v1.MongoPath base_station = 7;
-  optional wolong.config.v1.MongoPath comm_demand = 9;
 }
 
 message ControlStep {
@@ -22,8 +20,6 @@ message ControlStep {
   int32 total = 2;
   double interval = 3;
 }
-
-message ControlThread { int32 worker = 1; }
 
 message ControlOutput {
   double min_longitude = 1;
@@ -34,33 +30,18 @@ message ControlOutput {
 
 message Control {
   ControlStep step = 1;
-  ControlThread thread = 2;
   // 微观区域范围
   ControlOutput microscopic_range = 3;
   // 启动车辆通过路口重新导航机制
   bool vehicle_reroute = 5;
-  // 启动通信模拟
-  bool enable_comm = 6;
   // 启动室内模拟
   bool enable_indoor = 7;
-}
-
-// 是否输出各类数据
-message OutputSwitch {
-  bool vehicle = 1;
-  bool person = 2;
-  bool traffic_light = 3;
-  bool road = 4;
-  bool aoi = 5;
-  bool restricted_lane = 6;
-  bool event = 7;
-  bool comm = 8;
 }
 
 message Output {
   // 统一的输出目标
   wolong.config.v1.OutputTarget target = 1;
-  OutputSwitch switch = 2;
+  bool enable = 2;
 }
 
 message Config {

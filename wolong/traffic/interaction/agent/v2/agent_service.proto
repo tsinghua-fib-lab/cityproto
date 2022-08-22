@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package wolong.sim.interaction.agent.v2;
+package wolong.traffic.interaction.agent.v2;
 
 import "wolong/agent/v2/agent.proto";
 // import "wolong/geo/v2/geo.proto";

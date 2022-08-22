@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package wolong.traffic.interaction.aoi.v1;
+
+service AoiService {
+  rpc GetAoiInflow(GetAoiInflowRequest) returns (GetAoiInflowResponse);
+  rpc GetAoiHeadCount(GetAoiHeadCountRequest) returns (GetAoiHeadCountResponse);
+}
+
+message GetAoiInflowRequest { int32 aoi_id = 1; }
+
+message GetAoiInflowResponse { int32 people_inflow = 1; }
+
+message GetAoiHeadCountRequest { int32 aoi_id = 1; }
+
+message GetAoiHeadCountResponse { int32 head_count = 1; }
