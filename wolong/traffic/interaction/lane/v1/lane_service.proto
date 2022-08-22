@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package wolong.sim.interaction.lane.v1;
+package wolong.traffic.interaction.lane.v1;
 
 service LaneService {
   rpc GetTrafficStatus(GetTrafficStatusRequest)
@@ -8,9 +8,7 @@ service LaneService {
   rpc SetMaxSpeed(SetMaxSpeedRequest) returns (SetMaxSpeedResponse);
 }
 
-message GetTrafficStatusRequest {
-  int32 lane_id = 1;
-}
+message GetTrafficStatusRequest { int32 lane_id = 1; }
 
 message GetTrafficStatusResponse {
   double average_speed = 1;

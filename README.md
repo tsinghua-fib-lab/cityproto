@@ -12,7 +12,7 @@ proto 文件仓库。
 - `wolong.geo`: 坐标体系
 - `wolong.map`: 地图
 - `wolong.routing`: 路径规划
-- `wolong.sim`: 模拟器
+- `wolong.traffic`: 交通
 - `wolong.sync`: 全局同步器
 - `wolong.thing`: 物体
 - `wolong.traffic_light`: 信控
@@ -28,8 +28,8 @@ proto 文件仓库。
 
 参考：
 
-1. https://developers.google.com/protocol-buffers/docs/style
-2. https://github.com/uber/prototool/blob/dev/style/README.md
+1. <https://developers.google.com/protocol-buffers/docs/style>
+2. <https://github.com/uber/prototool/blob/dev/style/README.md>
 
 关于 enum: prefer uber 的 style
 

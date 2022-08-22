@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package wolong.sim.input.v1;
+package wolong.traffic.input.v1;
 import "wolong/geo/v2/geo.proto";
 
 message TrafficPoliceStation {
