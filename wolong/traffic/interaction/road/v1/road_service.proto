@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package wolong.traffic.interaction.road.v1;
+
+import "wolong/traffic/interaction/road/v1/road.proto";
+
+service RoadService {
+  rpc GetRoadState(GetRoadStateRequest) returns (GetRoadStateResponse);
+}
+
+message GetRoadStateRequest {}
+
+message GetRoadStateResponse { repeated State states = 1; }
