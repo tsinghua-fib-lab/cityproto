@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package wolong.traffic.interaction.road.v1;
+
+enum RoadLevel {
+  ROAD_LEVEL_UNSPECIFIED = 0;
+  ROAD_LEVEL_CLEAR = 1;
+  ROAD_LEVEL_LIGHT_LOAD = 2;
+  ROAD_LEVEL_MEDIUM_LOAD = 3;
+  ROAD_LEVEL_HEAVY_LOAD = 4;
+  ROAD_LEVEL_OVERLOAD = 5;
+  ROAD_LEVEL_RESTRICTED = 6;
+}
+
+enum InterruptionReason {
+  INTERRUPTION_REASON_UNSPECIFIED = 0;
+  INTERRUPTION_REASON_RUINED = 1;
+  INTERRUPTION_REASON_CONGESTION = 2;
+}
+
+message State {
+  int32 id = 1;
+  RoadLevel level = 2;
+  InterruptionReason reason = 3;
+}
