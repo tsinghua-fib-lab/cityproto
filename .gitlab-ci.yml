@@ -2,7 +2,7 @@ stages:
   - test
 
 buf-lint:
-  image: registry.tsingroc.com/general/dev:latest
+  image: registry.fiblab.net/general/dev:latest
   stage: test
   script:
     - buf lint
