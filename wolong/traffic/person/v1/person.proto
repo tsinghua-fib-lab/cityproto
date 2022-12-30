@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package wolong.traffic.person.v1;
+
+import "wolong/traffic/person/v1/vehicle.proto";
+
+message Persons { repeated Vehicle vehicles = 1; }
