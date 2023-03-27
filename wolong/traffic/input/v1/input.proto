@@ -4,9 +4,10 @@ package wolong.traffic.input.v1;
 
 import "wolong/agent/v2/agent.proto";
 import "wolong/map/v2/map.proto";
+import "wolong/routing/v2/routing.proto";
 import "wolong/thing/v2/thing.proto";
-import "wolong/traffic_light/v2/traffic_light.proto";
 import "wolong/traffic/input/v1/traffic.proto";
+import "wolong/traffic_light/v2/traffic_light.proto";
 
 message Input {
   // 数据
@@ -20,4 +21,8 @@ message Input {
   wolong.thing.v2.Things things = 9;
   // 交警局
   TrafficPoliceStations traffic_police_stations = 10;
+  // 公交线路
+  wolong.routing.v2.BusLines bus_lines = 11;
+  // 导航预计算结果
+  wolong.routing.v2.Routes routes = 12;
 }
