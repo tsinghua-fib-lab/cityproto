@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package wolong.event.v1;
+
+import "wolong/event/v1/event.proto";
+
+service EventService {
+  // Publish event
+  rpc Publish(PublishRequest) returns (PublishResponse) {}
+}
+
+message PublishRequest {
+  EventType event_type = 1;
+}
+
+message PublishResponse {}
