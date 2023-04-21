@@ -46,6 +46,9 @@ enum EventType {
 message Event {
   EventType type = 1;
   int32 level = 2;
+  int32 step = 3;
 }
 
-message Events { repeated Event events = 1; }
+message Events {
+  repeated Event events = 1;
+}

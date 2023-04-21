@@ -5,12 +5,20 @@ package wolong.event.v1;
 import "wolong/event/v1/event.proto";
 
 service EventService {
-  // Publish event
+  // 发布事件
   rpc Publish(PublishRequest) returns (PublishResponse) {}
+  // 从事件中心拉取事件
+  rpc Pull(PullRequest) returns (PullResponse) {}
 }
 
 message PublishRequest {
-  EventType event_type = 1;
+  Event event = 1;
 }
 
 message PublishResponse {}
+
+message PullRequest {}
+
+message PullResponse {
+  repeated Event events = 1;
+}
