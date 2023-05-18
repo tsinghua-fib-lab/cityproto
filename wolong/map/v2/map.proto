@@ -89,9 +89,9 @@ message Lane {
   // 车道中心线（车辆/行车轨迹线）
   Polyline center_line = 7;
   // 车道左边界线
-  Polyline left_border_line = 8;
+  Polyline left_border_line = 8; // 弃用
   // 车道右边界线
-  Polyline right_border_line = 9;
+  Polyline right_border_line = 9; // 弃用
 
   // Lanes can drive / walk from
   // 对于Junction内的车道至多1个前驱

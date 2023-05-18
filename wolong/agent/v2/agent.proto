@@ -18,7 +18,7 @@ enum AgentType {
 
 // 智能体属性（通用）
 message AgentAttribute {
-  AgentType type = 1;
+  AgentType type = 1; // 弃用
   double length = 2;
   double width = 3;
   // 单位: m/s
