@@ -17,3 +17,9 @@ message Lane {
   double average_speed = 3;
   double power = 4;
 }
+
+// 导出项
+message Emission {
+    repeated Vehicle vehicles = 1;
+    repeated Lane lanes = 2;
+}
