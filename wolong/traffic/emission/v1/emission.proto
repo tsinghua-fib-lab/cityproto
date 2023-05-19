@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package wolong.traffic.emission.v1;
+
+message Vehicle {
+  int32 id = 1;
+  int32 parent_id = 2;
+  double lng = 3;
+  double lat = 4;
+  double speed = 5;
+  double power = 6; // 能量（单位: MJ）
+}
+
+message Lane {
+  int32 id = 1;
+  int32 num_vehicles = 2;
+  double average_speed = 3;
+  double power = 4;
+}
