@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package wolong.cognition.input.v1;
+
+// 社交网络连接关系
+message Edge {
+  int32 source = 1;
+  int32 target = 2;
+}
+
+message Edges {
+  repeated Edge edges = 1;
+}

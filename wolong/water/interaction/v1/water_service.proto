@@ -8,6 +8,9 @@ service WaterService {
   rpc SetPumpNetworkStatus(SetPumpNetworkStatusRequest)
       returns (SetPumpNetworkStatusResponse) {}
   rpc SetPumpStatus(SetPumpStatusRequest) returns (SetPumpStatusResponse) {}
+  rpc GetPumpStatus(GetPumpStatusRequest) returns (GetPumpStatusResponse) {}
+  rpc GetNoWaterAOI(GetNoWaterAOIRequest) returns (GetNoWaterAOIResponse) {}
+  rpc GetRuinInfo(GetRuinInfoRequest) returns (GetRuinInfoResponse) {};
 }
 
 enum WaterFacilityType {
@@ -50,3 +53,25 @@ message SetPumpStatusRequest {
 }
 
 message SetPumpStatusResponse {}
+
+message GetPumpStatusRequest { int32 flag = 1; }
+
+message GetPumpStatusResponse { map<int32, int32> pump_status = 1; }
+
+message GetNoWaterAOIRequest { int32 flag = 1; }
+
+message GetNoWaterAOIResponse { repeated int32 aoi = 1; }
+
+message GetRuinInfoRequest {}
+
+message RuinInfo {
+  int32 num = 1;    // 损坏数量
+  double ratio = 2; // 损坏占比
+}
+
+message GetRuinInfoResponse {
+  // 三级损伤信息
+  RuinInfo one = 1;
+  RuinInfo two = 2;
+  RuinInfo three = 3;
+}

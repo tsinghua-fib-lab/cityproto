@@ -3,11 +3,32 @@ syntax = "proto3";
 package wolong.traffic.interaction.road.v1;
 
 import "wolong/traffic/interaction/road/v1/road.proto";
+import "wolong/event/v1/event.proto";
 
 service RoadService {
   rpc GetRoadState(GetRoadStateRequest) returns (GetRoadStateResponse);
+  rpc GetRuinInfo(GetRuinInfoRequest) returns (GetRuinInfoResponse);
+  rpc GetEvents(GetEventsRequest) returns (GetEventsResponse);
 }
 
 message GetRoadStateRequest {}
 
 message GetRoadStateResponse { repeated State states = 1; }
+
+message GetRuinInfoRequest {}
+
+message RuinInfo {
+  int32 num = 1;    // 损坏数量
+  double ratio = 2; // 损坏占比
+}
+
+message GetRuinInfoResponse {
+  // 三级级损伤信息
+  RuinInfo one = 1;
+  RuinInfo two = 2;
+  RuinInfo three = 3;
+}
+
+message GetEventsRequest {}
+
+message GetEventsResponse { wolong.event.v1.Events events = 1; }

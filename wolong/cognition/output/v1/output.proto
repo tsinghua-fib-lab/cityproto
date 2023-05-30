@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+package wolong.cognition.output.v1;
+
+// 社交网络节点状态
+message Node {
+  int32 id = 1;
+  double status = 3;
+}
+
+// 一次认知影响的过程
+message Influence {
+  int32 source_id = 1;
+  int32 target_id = 2;
+  double strength = 3;
+}
+
+// 热力图数据
+message Heatmap {
+  int32 num_rows = 1;
+  int32 num_columns = 2;
+  repeated double strength = 3;
+}
+
+// 统计数据
+message Stat {
+  repeated int32 crowd_cnts = 1;
+  repeated double crowd_ratios = 2;
+  repeated int32 key_nodes = 3;
+}
+
+// 用户发布内容
+message Content {
+  int32 id = 1;
+  string text = 2;
+}
+
+// 社交网络节点静态属性
+message NodeMeta {
+  int32 id = 1;
+  double lng = 2;
+  double lat = 3;
+  int32 level = 4;
+}
+
+message NodesMeta {
+  repeated NodeMeta nodes = 1;
+}
+
+// 群体信息
+message Group {
+  int32 id = 1;
+  int32 size = 2;
+  repeated int32 changes = 3;
+}

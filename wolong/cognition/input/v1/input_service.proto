@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package wolong.cognition.input.v1;
+
+import "wolong/agent/v2/agent.proto";
+import "wolong/cognition/input/v1/config.proto";
+import "wolong/cognition/input/v1/input.proto";
+import "wolong/map/v2/map.proto";
+
+service InputService {
+  rpc Init(InitRequest) returns (InitResponse);
+}
+
+message InitRequest {}
+
+message InitResponse {
+  // 模拟器gRPC监听地址
+  string address = 1;
+  Control control = 2;
+
+  // 地图
+  wolong.map.v2.Map map = 3;
+  // 人
+  wolong.agent.v2.Agents persons = 4;
+  // 社交网络连接关系
+  Edges edges = 5;
+}

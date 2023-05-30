@@ -1,0 +1,99 @@
+syntax = "proto3";
+
+package wolong.wargame.v1;
+
+import "wolong/wargame/v1/wargame.proto";
+
+service WarGameService {
+  // 地图选点
+  rpc PickPoints(PickPointsRequest) returns (PickPointsResponse);
+  // 获取当前轮选点
+  rpc GetPickPoints(GetPickPointsRequest) returns (GetPickPointsResponse);
+  // 指定防守方条令
+  rpc GiveDefenseOrder(GiveDefenseOrderRequest) returns (GiveDefenseOrderResponse);
+  // 分值权重设定
+  rpc SetScoreWeight(SetScoreWeightRequest) returns (SetScoreWeightResponse);
+  // 打击历史获取
+  rpc GetHitHistory(GetHitHistoryRequest) returns (GetHitHistoryResponse);
+  // 推荐选点获取
+  rpc GetRecoPoints(GetRecoPointsRequest) returns (GetRecoPointsResponse);
+  // 当前步与状态获取
+  rpc GetStep(GetStepRequest) returns (GetStepResponse);
+  // 人口损伤人数和aoi的id获取
+  rpc GetCasualties(GetCasualtiesRequest) returns (GetCasualtiesResponse);
+}
+
+message PickPointsRequest {
+  Camp camp = 1;
+  repeated Point points = 2;
+}
+message PickPointsResponse {}
+
+message GetPickPointsRequest {
+  Camp camp = 1;
+}
+
+message GetPickPointsResponse {
+  repeated Point points = 1;
+}
+
+message SetScoreWeightRequest {
+  double money = 1;
+  double population_loss = 2;
+  double elec_power = 3;
+  double elec_distory_1 = 4;
+  double water_distory_1 = 5;
+  double bs_distory_1 = 6;
+  double traffic_distory_1 = 7;
+  double elec_distory_2 = 8;
+  double water_distory_2 = 9;
+  double bs_distory_2 = 10;
+  double traffic_distory_2 = 11;
+  double elec_distory_3 = 12;
+  double water_distory_3 = 13;
+  double bs_distory_3 = 14;
+  double traffic_distory_3 = 15;
+  double defense_success = 16;
+}
+
+message SetScoreWeightResponse {}
+
+message GiveDefenseOrderRequest {
+  double weight_radius = 1;
+  double weight_550 = 2;
+  double weight_220 = 3;
+  double weight_110 = 4;
+  double prob_threshold = 5;
+}
+message GiveDefenseOrderResponse {}
+
+message GetHitHistoryRequest {}
+
+message GetHitHistoryResponse {
+  repeated HitHistory histories = 1;
+}
+
+message GetRecoPointsRequest {
+  Camp camp = 1;
+  RecoAlgoType type = 2;
+}
+
+message GetRecoPointsResponse {
+  repeated RecoPoint points = 1;
+}
+
+message GetStepRequest {}
+
+message GetStepResponse {
+  int32 step = 1;
+  bool red_pick_ready = 2;
+  bool blue_pick_ready = 3;
+  int32 round = 4;
+  bool is_game_started = 5;
+}
+
+message GetCasualtiesRequest {}
+
+message GetCasualtiesResponse {
+  repeated Casualty casualties = 1;
+}
