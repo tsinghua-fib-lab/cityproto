@@ -7,7 +7,7 @@ import "wolong/geo/v2/geo.proto";
 enum FacilityType {
   //电网相关的基础设施分类
   FACILITY_TYPE_UNSPECIFIED = 0;
-  FACILITY_TYPE_POWER_STATION = 1;   //发电站
+  FACILITY_TYPE_POWER_STATION = 1; //发电站
   FACILITY_TYPE_TRANSFORMER_500 = 2; //不同电压的变压器
   FACILITY_TYPE_TRANSFORMER_220 = 3;
   FACILITY_TYPE_TRANSFORMER_110 = 4;
@@ -27,6 +27,7 @@ enum FacilityType {
 }
 //设施id安装对应枚举类型进行编码，N亿作为编码前缀，N代表对应枚举类型的数字
 //例如发电站，一号发电站id为100000001
+
 
 message RepairStation {
   int32 aoi_id = 1;

@@ -17,6 +17,8 @@ service AgentService {
   // 获取特定区域内的车辆xinxi
   rpc GetVehiclesByLongLatArea(GetVehiclesByLongLatAreaRequest)
       returns (GetVehiclesByLongLatAreaResponse);
+  // 获取车辆统计信息
+  rpc GetVehicleStat(GetVehicleStatRequest) returns (GetVehicleStatResponse);
 }
 
 // message GetAgentRequest { int32 agent_id = 1; }
@@ -48,4 +50,11 @@ message GetVehiclesByLongLatAreaRequest {
 message GetVehiclesByLongLatAreaResponse {
   int32 step = 1;
   repeated Vehicle vehicles = 2;
+}
+
+message GetVehicleStatRequest {}
+
+message GetVehicleStatResponse {
+  double average_speed = 1;
+  int32 num_vehicle_on_lane = 2;
 }

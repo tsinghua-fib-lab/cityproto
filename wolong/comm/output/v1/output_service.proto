@@ -1,10 +1,13 @@
 syntax = "proto3";
 
 package wolong.comm.output.v1;
+
 import "wolong/comm/output/v1/output.proto";
 import "wolong/event/v1/event.proto";
 
-service OutputService { rpc Output(OutputRequest) returns (OutputResponse); }
+service OutputService {
+  rpc Output(OutputRequest) returns (OutputResponse);
+}
 
 message OutputRequest {
   int32 step = 1;

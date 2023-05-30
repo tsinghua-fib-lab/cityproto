@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package wolong.cognition.output.v1;
+
+import "wolong/cognition/output/v1/output.proto";
+
+service OutputService {
+  rpc Output(OutputRequest) returns (OutputResponse);
+}
+
+message OutputRequest {
+  int32 step = 1;
+  // 社交网络节点状态数据
+  repeated Node nodes = 2;
+  // 认知传播数据
+  repeated Influence influences = 3;
+  // 热力图
+  Heatmap heatmap = 4;
+  // 统计数据
+  Stat stat = 5;
+  // 用户发布内容
+  repeated Content contents = 6;
+  // 群体间信息传播
+  repeated Influence group_influences = 7;
+  // 群体信息
+  repeated Group groups = 8;
+}
+
+message OutputResponse {}

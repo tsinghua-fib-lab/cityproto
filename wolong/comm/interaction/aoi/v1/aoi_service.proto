@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package wolong.comm.interaction.aoi.v1;
+
+service AoiService {
+  rpc GetBadAoiID(GetBadAoiIDRequest) returns (GetBadAoiIDResponse);
+}
+
+message GetBadAoiIDRequest {}
+
+message GetBadAoiIDResponse { repeated int32 ids = 1; }

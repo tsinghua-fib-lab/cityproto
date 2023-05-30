@@ -1,0 +1,74 @@
+syntax = "proto3";
+
+package wolong.wargame.v1;
+
+import "wolong/geo/v2/geo.proto";
+
+enum RedWeaponType {
+  RED_WEAPON_TYPE_UNSPECIFIED = 0;
+  RED_WEAPON_TYPE_AGM_158 = 1;
+  RED_WEAPON_TYPE_AGM_183 = 2;
+  RED_WEAPON_TYPE_AGM_88 = 3;
+  RED_WEAPON_TYPE_UGM_109 = 4;
+  RED_WEAPON_TYPE_AGM_142 = 5;
+}
+
+enum BlueWeaponType {
+  BLUE_WEAPON_TYPE_UNSPECIFIED = 0;
+  BLUE_WEAPON_TYPE_HQ_9 = 1;
+  BLUE_WEAPON_TYPE_HQ_12 = 2;
+  BLUE_WEAPON_TYPE_HQ_16 = 3;
+  BLUE_WEAPON_TYPE_HQ_22 = 4;
+}
+
+enum Camp {
+  CAMP_UNSPECIFIED = 0;
+  CAMP_RED = 1;
+  CAMP_BLUE = 2;
+}
+
+enum RecoType {
+  RECO_TYPE_UNSPECIFIED = 0;
+  RECO_TYPE_MISSILE = 1;
+  RECO_TYPE_ELEC = 2;
+}
+
+message RecoPoint {
+  wolong.geo.v2.LongLatPosition pos = 1;
+  RecoType type = 2;
+}
+
+message Weapon {
+  optional RedWeaponType red_type = 2;
+  optional BlueWeaponType blue_type = 3;
+  int32 num = 4;
+}
+
+message Point {
+  Weapon weapon = 1;
+  wolong.geo.v2.LongLatPosition pos = 2;
+  double radius = 3;
+}
+
+message Hit {
+  Point attack = 1;
+  repeated Point defenses = 2;
+  bool result = 3;
+  int32 arrive = 4;
+}
+
+message HitHistory {
+  repeated Hit hits = 1;
+}
+
+enum RecoAlgoType {
+  RECO_ALGO_TYPE_UNSPECIFIED = 0;
+  RECO_ALGO_TYPE_MAX_DESTORY = 1;
+  RECO_ALGO_TYPE_RANDOM = 2;
+  RECO_ALGO_TYPE_MIN_DESTORY = 3;
+}
+
+message Casualty {
+  int32 aoi_id = 1;
+  int32 num = 2;
+}
