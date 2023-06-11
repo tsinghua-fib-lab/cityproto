@@ -33,21 +33,25 @@ enum Reason {
 
 message Action {
   double acc = 1;
-  bool enable_lane_change = 2;
-  double lane_change_length = 3;
+  bool start_lc = 2;
+  double lc_length = 3;
   Reason reason = 4;
   int32 related_id = 5;
 }
 
+message VehicleRuntime {
+  BaseRuntime base = 1;
+  BaseRuntimeOnRoad base_on_road = 2;
+  Action action = 3;
+  double distance_to_end = 4;
+  int32 shadow_lane_id = 5;
+  double shadow_s = 6;
+  double lc_total_length = 7;
+  double lc_completed_length = 8;
+  bool is_lc = 9;
+}
+
 message Vehicle {
   int32 id = 1;
-  BaseRuntime base = 2;
-  BaseRuntimeOnRoad base_on_road = 3;
-  Action action = 4;
-  double distance_to_end = 5;
-  int32 shadow_lane_id = 6;
-  double shadow_s = 7;
-  double lane_change_total_length = 8;
-  double lane_change_completed_length = 9;
-  bool is_lane_changing = 10;
+  repeated VehicleRuntime history = 2;
 }
