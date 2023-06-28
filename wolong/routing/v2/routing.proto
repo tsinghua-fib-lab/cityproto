@@ -104,6 +104,7 @@ message Route {
   int32 start_aoi_id = 2;
   int32 end_aoi_id = 3;
   repeated int32 path = 4;
+  RouteType type = 5;
 }
 
 // 导航预计算结果集合，对应一个导航预计算结果pb文件或一个导航预计算结果mongodb collection
