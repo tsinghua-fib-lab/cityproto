@@ -19,7 +19,7 @@ message GetRouteRequest {
   wolong.geo.v2.Position end = 3;
   // 发送导航请求的agent id（目前仅在行车导航中使用）
   int32 agent_id = 4;
-  // 发送导航请求的时间步（目前仅在行车导航中使用）
+  // 发送导航请求的时间步（目前仅在行车导航中使用）将step视为时间（s）
   int32 step = 5;
 }
 

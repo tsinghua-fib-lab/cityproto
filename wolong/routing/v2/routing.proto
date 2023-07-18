@@ -115,7 +115,8 @@ message Routes {
 // 预计算道路拥堵信息
 message Congest {
   int32 id = 1;
-  repeated double vels = 2;
+  // 道路所有时间片的速度
+  repeated double speed = 2;
 }
 
 // 预计算道路拥堵信息集合，对应一个预计算道路拥堵信息pb文件或一个预计算道路拥堵信息mongodb collection
