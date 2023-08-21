@@ -3,6 +3,7 @@ syntax = "proto3";
 package wolong.trip.v2;
 
 import "wolong/geo/v2/geo.proto";
+import "wolong/routing/v2/routing.proto";
 
 // 本文件描述Trip与Schedule，从“计划”的性质上描述交通情况。
 
@@ -45,11 +46,12 @@ message Trip {
   // 期望的等待时间（单位：秒）
   optional double wait_time = 4;
   // 期望的到达时间（单位: 秒）
-  // TODO(张钧): 支持设置期望到达时间（要求导航系统能返回预计出行用时）
-  // optional double arrival_time = 5;
 
   // 本次出行目的地的活动名
   optional string activity = 6;
+
+  // 预计算的导航结果
+  repeated wolong.routing.v2.Journey routes = 7;
 }
 
 message Schedule {
@@ -65,9 +67,6 @@ message Schedule {
   optional double departure_time = 3;
   // 期望的等待时间（单位：秒）
   optional double wait_time = 4;
-  // 期望的到达时间（单位: 秒）
-  // TODO(张钧): 支持设置期望到达时间（要求导航系统能返回预计出行用时）
-  // optional double arrival_time = 5;
 
   // 如果二者都为空则等价于wait_time=0
   // 关于出发时间的说明如下：
