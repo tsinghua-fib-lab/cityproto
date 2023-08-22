@@ -88,7 +88,6 @@ message Journey {
   optional WalkingJourneyBody walking = 3;
   optional BusJourneyBody by_bus = 4;
   // optional TaxiJourneyBody by_taxi = 5;
-  optional DrivingRoadJourneyBody driving_road = 6;
 }
 
 // 公交线路
