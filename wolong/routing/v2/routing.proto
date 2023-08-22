@@ -43,15 +43,12 @@ message DrivingRouteSegment {
 // 车道序列
 // 约定：智能体必须通过所有车道的末端（除了最后一个车道以及要求变道的车道）
 message DrivingJourneyBody {
-  // want to be deprecated
+  // deprecated: 导航算法可以提供或忽略该字段
   repeated DrivingRouteSegment route = 1 [ deprecated = true ];
   // 从起点到终点的道路序列
   // 采用道路序列的原因是主动变道对车道级的导航需要频繁修改
-  // 优先使用road_ids，如果road_ids为空，则使用route
+  // 优先使用road_ids，如果road_ids为空，则使用route（也可以直接忽略route）
   repeated int32 road_ids = 2;
-  // 兼容性字段，如果为true，则route字段无效
-  // 是否采用only_road_ids模式，在routing程序启动时设置
-  bool only_road_ids = 3;
 }
 
 // 行人前进的方向与Lane的正方向（s增大的方向）的关系
