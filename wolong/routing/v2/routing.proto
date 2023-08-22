@@ -43,7 +43,15 @@ message DrivingRouteSegment {
 // 车道序列
 // 约定：智能体必须通过所有车道的末端（除了最后一个车道以及要求变道的车道）
 message DrivingJourneyBody {
-  repeated DrivingRouteSegment route = 1;
+  // want to be deprecated
+  repeated DrivingRouteSegment route = 1 [ deprecated = true ];
+  // 从起点到终点的道路序列
+  // 采用道路序列的原因是主动变道对车道级的导航需要频繁修改
+  // 优先使用road_ids，如果road_ids为空，则使用route
+  repeated int32 road_ids = 2;
+  // 兼容性字段，如果为true，则route字段无效
+  // 是否采用only_road_ids模式，在routing程序启动时设置
+  bool only_road_ids = 3;
 }
 
 // 行人前进的方向与Lane的正方向（s增大的方向）的关系
@@ -60,9 +68,7 @@ message WalkingRouteSegment {
   MovingDirection moving_direction = 2;
 }
 
-message WalkingJourneyBody {
-  repeated WalkingRouteSegment route = 1;
-}
+message WalkingJourneyBody { repeated WalkingRouteSegment route = 1; }
 
 message BusJourneyBody {
   int32 line_id = 1;
@@ -82,6 +88,7 @@ message Journey {
   optional WalkingJourneyBody walking = 3;
   optional BusJourneyBody by_bus = 4;
   // optional TaxiJourneyBody by_taxi = 5;
+  optional DrivingRoadJourneyBody driving_road = 6;
 }
 
 // 公交线路
@@ -94,9 +101,7 @@ message BusLine {
 }
 
 // 公交线路集合，对应一个公交线路pb文件或一个公交线路mongodb collection
-message BusLines {
-  repeated BusLine lines = 1;
-}
+message BusLines { repeated BusLine lines = 1; }
 
 // 导航预计算结果
 message Route {
@@ -107,10 +112,9 @@ message Route {
   RouteType type = 5;
 }
 
-// 导航预计算结果集合，对应一个导航预计算结果pb文件或一个导航预计算结果mongodb collection
-message Routes {
-  repeated Route routes = 1;
-}
+// 导航预计算结果集合，对应一个导航预计算结果pb文件或一个导航预计算结果mongodb
+// collection
+message Routes { repeated Route routes = 1; }
 
 // 预计算路况信息
 message RoadStatus {
@@ -119,7 +123,6 @@ message RoadStatus {
   repeated double speed = 2;
 }
 
-// 预计算道路路况信息集合，对应一个预计算道路况信息pb文件或一个预计算路况信息mongodb collection
-message RoadStatuses {
-  repeated RoadStatus road_statuses = 1;
-}
+// 预计算道路路况信息集合，对应一个预计算道路况信息pb文件或一个预计算路况信息mongodb
+// collection
+message RoadStatuses { repeated RoadStatus road_statuses = 1; }
