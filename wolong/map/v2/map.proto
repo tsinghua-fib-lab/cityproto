@@ -139,6 +139,8 @@ message JunctionLaneGroup {
   double out_angle = 4;
   // 该车道组包含的车道
   repeated int32 lane_ids = 5;
+  // 该车道组的转向属性
+  LaneTurn turn = 6;
 }
 
 message Junction {
