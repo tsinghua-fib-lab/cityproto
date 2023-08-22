@@ -125,10 +125,28 @@ message Road {
   repeated int32 lane_ids = 2;
 }
 
+// 车道组，用于描述路口内的车道组合
+// 具有相同入口道路和出口道路的车道组成一个车道组
+// 车道组是信控处理、路口通行的基本单元
+message JunctionLaneGroup {
+  // 该车道组的入口道路
+  int32 in_road_id = 1;
+  // 该车道组的入口角度（弧度制）
+  double in_angle = 2;
+  // 该车道组的出口道路
+  int32 out_road_id = 3;
+  // 该车道组的出口角度（弧度制）
+  double out_angle = 4;
+  // 该车道组包含的车道
+  repeated int32 lane_ids = 5;
+}
+
 message Junction {
   int32 id = 1;
   // 属于该路口Junction的所有车道/人行道等lane
   repeated int32 lane_ids = 2;
+  // 属于该路口Junction的所有行车车道组
+  repeated JunctionLaneGroup driving_lane_groups = 3;
 }
 
 // TODO(张钧): 参照腾讯地图的分类与模拟任务的需要进行丰富
