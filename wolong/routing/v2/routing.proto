@@ -49,6 +49,8 @@ message DrivingJourneyBody {
   // 采用道路序列的原因是主动变道对车道级的导航需要频繁修改
   // 优先使用road_ids，如果road_ids为空，则使用route（也可以直接忽略route）
   repeated int32 road_ids = 2;
+  // 从起点到终点预计的时间(estimation time of arrival)
+  optional double eta = 3;
 }
 
 // 行人前进的方向与Lane的正方向（s增大的方向）的关系
