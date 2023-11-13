@@ -3,8 +3,17 @@ syntax = "proto3";
 package wolong.sync.v1;
 
 service SyncService {
+  // 获取内嵌etcd的端口
+  rpc GetEtcd(GetEtcdRequest) returns (GetEtcdResponse);
   // 步进
   rpc Step(StepRequest) returns (StepResponse);
+}
+
+message GetEtcdRequest {}
+
+message GetEtcdResponse {
+  // etcd的端口
+  int32 port = 1;
 }
 
 message StepRequest {
