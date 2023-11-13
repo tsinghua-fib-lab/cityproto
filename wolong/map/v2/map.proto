@@ -7,7 +7,9 @@ import "wolong/geo/v2/geo.proto";
 // 本文件描述地图的数据结构定义
 
 // 折线，用于定义车道等的形状
-message Polyline { repeated wolong.geo.v2.XYPosition nodes = 1; }
+message Polyline {
+  repeated wolong.geo.v2.XYPosition nodes = 1;
+}
 
 // 地图元信息
 message Header {
@@ -89,9 +91,9 @@ message Lane {
   // 车道中心线（车辆/行车轨迹线）
   Polyline center_line = 7;
   // 车道左边界线
-  Polyline left_border_line = 8; // 弃用
+  Polyline left_border_line = 8;  // 弃用
   // 车道右边界线
-  Polyline right_border_line = 9; // 弃用
+  Polyline right_border_line = 9;  // 弃用
 
   // Lanes can drive / walk from
   // 对于Junction内的车道至多1个前驱
@@ -118,11 +120,26 @@ message Lane {
   repeated int32 aoi_ids = 16;
 }
 
+message NextRoadLane {
+  // 下一条路的id
+  int32 road_id = 1;
+  // 我们假定能去往对应道路的车道id范围是连续的，用[a,b]表示
+  int32 lane_id_a = 2;
+  int32 lane_id_b = 3;
+}
+
+message NextRoadLanePlan {
+  // 记录去往目标next_road的可行lane集合
+  repeated NextRoadLane next_road_lanes = 1;
+}
+
 message Road {
   int32 id = 1;
   // 属于该道路Road的所有车道/人行道等lane
   // lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺序给出的
   repeated int32 lane_ids = 2;
+  // 对于包含动态车道的道路，需要通过这一项来指定所有的候选方案
+  repeated NextRoadLanePlan next_road_lane_plans = 3;
 }
 
 // 车道组，用于描述路口内的车道组合
