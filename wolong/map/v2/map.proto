@@ -168,7 +168,7 @@ message Junction {
   repeated JunctionLaneGroup driving_lane_groups = 3;
 }
 
-// TODO(张钧): 参照腾讯地图的分类与模拟任务的需要进行丰富
+// TODO(张钧): 参照常见用地类型进行分类
 enum AoiType {
   AOI_TYPE_UNSPECIFIED = 0;
   AOI_TYPE_BUS_STATION = 1;
@@ -195,6 +195,22 @@ message Aoi {
 
   // Aoi面积, 若是Poi则无此字段
   optional double area = 8;
+
+  // Aoi包含的Poi
+  repeated int32 poi_ids = 9;
+}
+
+message Poi {
+  // Poi id(从7_0000_0000开始)
+  int32 id = 1;
+  // Poi名称
+  string name = 2;
+  // Poi分类编码
+  string category = 3;
+  // Poi原始位置
+  wolong.geo.v2.XYPosition position = 4;
+  // Poi所属的Aoi
+  int32 aoi_id = 5;
 }
 
 // 地图，对应一个地图pb文件或一个地图mongodb collection
@@ -204,4 +220,5 @@ message Map {
   repeated Road roads = 3;
   repeated Junction junctions = 4;
   repeated Aoi aois = 5;
+  repeated Poi pois = 6;
 }
