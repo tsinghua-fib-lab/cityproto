@@ -175,9 +175,28 @@ enum AoiType {
   AOI_TYPE_OTHER = 2;
 }
 
+// 土地利用类型，参照国标GB/T 21010—2007
+// http://www.gscloud.cn/static/cases/%E3%80%8A%E5%9C%9F%E5%9C%B0%E5%88%A9%E7%94%A8%E7%8E%B0%E7%8A%B6%E5%88%86%E7%B1%BB%E3%80%8B%E5%9B%BD%E5%AE%B6%E6%A0%87%E5%87%86gb_t21010-2007(1).pdf
+enum LaneUseType {
+  LANE_USE_TYPE_UNSPECIFIED = 0;
+  // 商服用地
+  LANE_USE_TYPE_COMMERCIAL = 5;
+  // 工矿仓储用地
+  LANE_USE_TYPE_INDUSTRIAL = 6;
+  // 住宅用地
+  LANE_USE_TYPE_RESIDENTIAL = 7;
+  // 公共管理与公共服务用地
+  LANE_USE_TYPE_PUBLIC = 8;
+  // 交通运输用地
+  LANE_USE_TYPE_TRANSPORTATION = 10;
+  // 其他土地
+  LANE_USE_TYPE_OTHER = 12;
+}
+
 message Aoi {
   int32 id = 1;
   AoiType type = 2;
+
   // Aoi与行车路网的连接点
   repeated wolong.geo.v2.LanePosition driving_positions = 3;
   // Aoi与步行路网的连接点
@@ -195,6 +214,7 @@ message Aoi {
 
   // Aoi面积, 若是Poi则无此字段
   optional double area = 8;
+  // 土地利用分类，若是Poi则无此字段
 
   // Aoi包含的Poi
   repeated int32 poi_ids = 9;
