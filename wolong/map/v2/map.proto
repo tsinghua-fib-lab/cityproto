@@ -215,6 +215,7 @@ message Aoi {
   // Aoi面积, 若是Poi则无此字段
   optional double area = 8;
   // 土地利用分类，若是Poi则无此字段
+  optional LaneUseType lane_use = 10;
 
   // Aoi包含的Poi
   repeated int32 poi_ids = 9;
