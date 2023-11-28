@@ -19,38 +19,15 @@ enum JourneyType {
   JOURNEY_TYPE_DRIVING = 1;
   JOURNEY_TYPE_WALKING = 2;
   JOURNEY_TYPE_BY_BUS = 3;
-  // JOURNEY_TYPE_BY_TAXI = 4;
 }
 
-// 描述车辆如何从当前车道进入下一车道
-enum NextLaneType {
-  NEXT_LANE_TYPE_UNSPECIFIED = 0;
-  // 直行进入下一车道（下一车道是当前车道的后继）
-  NEXT_LANE_TYPE_FORWARD = 1;
-  // 向左变道进入下一车道
-  NEXT_LANE_TYPE_LEFT = 2;
-  // 向右变道进入下一车道
-  NEXT_LANE_TYPE_RIGHT = 3;
-  // 当前车道是最后一个车道
-  NEXT_LANE_TYPE_LAST = 4;
-}
-
-message DrivingRouteSegment {
-  int32 lane_id = 1;
-  NextLaneType next_lane_type = 2;
-}
-
-// 车道序列
-// 约定：智能体必须通过所有车道的末端（除了最后一个车道以及要求变道的车道）
 message DrivingJourneyBody {
-  // deprecated: 导航算法可以提供或忽略该字段
-  repeated DrivingRouteSegment route = 1 [ deprecated = true ];
   // 从起点到终点的道路序列
   // 采用道路序列的原因是主动变道对车道级的导航需要频繁修改
   // 优先使用road_ids，如果road_ids为空，则使用route（也可以直接忽略route）
   repeated int32 road_ids = 2;
   // 从起点到终点预计的时间(estimation time of arrival)
-  optional double eta = 3;
+  double eta = 3;
 }
 
 // 行人前进的方向与Lane的正方向（s增大的方向）的关系
@@ -67,16 +44,16 @@ message WalkingRouteSegment {
   MovingDirection moving_direction = 2;
 }
 
-message WalkingJourneyBody { repeated WalkingRouteSegment route = 1; }
+message WalkingJourneyBody {
+  repeated WalkingRouteSegment route = 1;
+  // 从起点到终点预计的时间(estimation time of arrival)
+  double eta = 2;
+}
 
 message BusJourneyBody {
   int32 line_id = 1;
   int32 start_station_id = 2;
   int32 end_station_id = 3;
-}
-
-message TaxiJourneyBody {
-  // TODO(zhangjun): not implemented
 }
 
 // 路径规划结果的一部分，含且仅含采用一种交通出行方式的完整出行序列
@@ -100,19 +77,6 @@ message BusLine {
 
 // 公交线路集合，对应一个公交线路pb文件或一个公交线路mongodb collection
 message BusLines { repeated BusLine lines = 1; }
-
-// 导航预计算结果
-message Route {
-  int32 agent_id = 1;
-  int32 start_aoi_id = 2;
-  int32 end_aoi_id = 3;
-  repeated int32 path = 4;
-  RouteType type = 5;
-}
-
-// 导航预计算结果集合，对应一个导航预计算结果pb文件或一个导航预计算结果mongodb
-// collection
-message Routes { repeated Route routes = 1; }
 
 // 预计算路况信息
 message RoadStatus {

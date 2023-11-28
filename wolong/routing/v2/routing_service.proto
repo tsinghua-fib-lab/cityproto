@@ -4,10 +4,15 @@ package wolong.routing.v2;
 
 import "wolong/geo/v2/geo.proto";
 import "wolong/routing/v2/routing.proto";
+import "wolong/routing/v2/cost.proto";
 
 service RoutingService {
   // Get route by type/start/end
   rpc GetRoute(GetRouteRequest) returns (GetRouteResponse);
+  // 设置行车导航道路通行成本
+  rpc SetDrivingCosts(SetDrivingCostsRequest) returns (SetDrivingCostsResponse);
+  // 获取行车导航道路通行成本
+  rpc GetDrivingCosts(GetDrivingCostsRequest) returns (GetDrivingCostsResponse);
 }
 
 // simulet -> routing app
@@ -24,6 +29,21 @@ message GetRouteRequest {
 }
 
 // routing app -> simulet
-message GetRouteResponse {
-  repeated Journey journeys = 1;
+message GetRouteResponse { repeated Journey journeys = 1; }
+
+message SetDrivingCostsRequest {
+  // 道路通行成本
+  repeated Cost costs = 1;
+}
+
+message SetDrivingCostsResponse {}
+
+message GetDrivingCostsRequest {
+  // 道路通行成本（按照给定的id和time进行查询）
+  repeated Cost costs = 1;
+}
+
+message GetDrivingCostsResponse {
+  // 道路通行成本（补全cost后的结果）
+  repeated Cost costs = 1;
 }
