@@ -23,8 +23,6 @@ message Input {
   TrafficPoliceStations traffic_police_stations = 10;
   // 公交线路
   wolong.routing.v2.BusLines bus_lines = 11;
-  // 导航预计算结果
-  wolong.routing.v2.Routes routes = 12;
   // 导航预置路况
   wolong.routing.v2.RoadStatuses road_statuses = 13;
 }

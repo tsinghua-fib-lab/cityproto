@@ -2,9 +2,9 @@ syntax = "proto3";
 
 package wolong.traffic.interaction.agent.v2;
 
-import "wolong/agent/v2/agent.proto";
+// // import "wolong/agent/v2/agent.proto";
 
 message Vehicle {
   int32 id = 1;
-  wolong.agent.v2.Motion motion = 2;
+// //   wolong.agent.v2.Motion motion = 2;
 }
