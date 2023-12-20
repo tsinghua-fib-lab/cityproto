@@ -6,14 +6,17 @@ import "wolong/traffic/interaction/road/v1/road.proto";
 import "wolong/event/v1/event.proto";
 
 service RoadService {
-  rpc GetRoadState(GetRoadStateRequest) returns (GetRoadStateResponse);
+  rpc GetRoad(GetRoadRequest) returns (GetRoadResponse);
   rpc GetRuinInfo(GetRuinInfoRequest) returns (GetRuinInfoResponse);
   rpc GetEvents(GetEventsRequest) returns (GetEventsResponse);
 }
 
-message GetRoadStateRequest {}
+message GetRoadRequest {
+  // 查询的道路ID列表，为空代表查询所有道路
+  repeated int32 road_ids = 1;
+}
 
-message GetRoadStateResponse { repeated State states = 1; }
+message GetRoadResponse { repeated State states = 1; }
 
 message GetRuinInfoRequest {}
 
