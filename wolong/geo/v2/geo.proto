@@ -32,7 +32,10 @@ message LanePosition {
   double s = 2;
 }
 
-message AoiPosition { int32 aoi_id = 1; }
+message AoiPosition {
+  int32 aoi_id = 1;
+  optional int32 poi_id = 2;
+}
 
 // 坐标，如果多种坐标同时存在，两两之间必须满足映射关系，同时逻辑坐标是必须提供的
 message Position {

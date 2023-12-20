@@ -21,6 +21,7 @@ enum InterruptionReason {
 
 message State {
   int32 id = 1;
+  double average_speed = 4;
   RoadLevel level = 2;
   InterruptionReason reason = 3;
 }
