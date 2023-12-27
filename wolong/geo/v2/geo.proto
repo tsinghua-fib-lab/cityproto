@@ -34,6 +34,7 @@ message LanePosition {
 
 message AoiPosition {
   int32 aoi_id = 1;
+  // poi_id需要是aoi_id的子poi，否则该值无效
   optional int32 poi_id = 2;
 }
 

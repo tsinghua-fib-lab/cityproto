@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package wolong.social.v1;
+
+import "wolong/social/v1/message.proto";
+
+service SocialService {
+  // 发送消息
+  rpc Send(SendRequest) returns (SendResponse);
+  // 接收消息，并清空该用户的消息队列
+  rpc Receive(ReceiveRequest) returns (stream ReceiveResponse);
+}
+
+message SendRequest { repeated Message messages = 1; }
+
+message SendResponse {}
+
+message ReceiveRequest {
+  // 消息接收者ID（即为自身ID）
+  int32 id = 1;
+}
+
+message ReceiveResponse { repeated Message messages = 1; }
