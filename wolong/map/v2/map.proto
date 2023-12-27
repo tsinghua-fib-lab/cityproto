@@ -232,6 +232,8 @@ message Poi {
   wolong.geo.v2.XYPosition position = 4;
   // Poi所属的Aoi
   int32 aoi_id = 5;
+  // Poi的容量（能同时容纳的人数），若无则表示无人数限制
+  optional int32 capacity = 6;
 }
 
 // 地图，对应一个地图pb文件或一个地图mongodb collection
