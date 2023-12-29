@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package city.elec.input.v1;
+
+import "city/elec/input/v1/config.proto";
+import "city/elec/input/v1/input.proto";
+import "city/map/v2/map.proto";
+
+service InputService {
+  rpc Init(InitRequest) returns (InitResponse) {}
+}
+
+message InitRequest {}
+
+message InitResponse {
+  // 模拟器gRPC监听地址
+  string address = 2;
+  Control control = 3;
+
+  Facilities facilities = 1;
+  city.map.v2.Map map = 4;
+}

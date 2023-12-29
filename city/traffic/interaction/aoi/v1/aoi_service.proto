@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package city.traffic.interaction.aoi.v1;
+
+import "city/traffic/interaction/aoi/v1/aoi.proto";
+
+service AoiService {
+  rpc GetAoi(GetAoiRequest) returns (GetAoiResponse);
+}
+
+message GetAoiRequest {
+  repeated int32 aoi_ids = 1;
+}
+
+message GetAoiResponse {
+  repeated State states = 1;
+}

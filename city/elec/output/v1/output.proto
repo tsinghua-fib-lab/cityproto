@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package city.elec.output.v1;
+
+message Aoi {
+  int32 id = 1;
+  // 用电需求不满足比例（没电100%/有电0）
+  double unsatisfied_demand_ratio = 2;
+  // 用电需求不满足人数 （没电就是aoi里的人都不满足）
+  int32 unsatisfied_demand_num = 3;
+  // 该aoi当前时刻的用电需求,单位为KW
+  double demand = 4;
+  // 电力系统向该aoi供应的电力,单位为KW
+  double supply = 5;
+}
+
+message AveragePower {
+  // 当前各类变压器的平均承受功率，单位为MW
+  double transformer_500 = 1;
+  double transformer_220 = 2;
+  double transformer_110 = 3;
+  double transformer_10 = 4;
+}

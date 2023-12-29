@@ -1,0 +1,56 @@
+syntax = "proto3";
+
+package city.comm.interaction.gateway.v1;
+
+import "city/comm/interaction/gateway/v1/gateway.proto";
+import "city/event/v1/event.proto";
+
+service GatewayService {
+  rpc SetGatewayPowerStatus(SetGatewayPowerStatusRequest) returns (SetGatewayPowerStatusResponse);
+  rpc SetGatewayRuinStatus(SetGatewayRuinStatusRequest) returns (SetGatewayRuinStatusResponse);
+  rpc GetAllStatus(GetAllStatusRequest) returns (GetAllStatusResponse);
+  rpc GetRuinInfo(GetRuinInfoRequest) returns (GetRuinInfoResponse);
+  rpc GetEvents(GetEventsRequest) returns (GetEventsResponse);
+}
+
+// 断电或恢复状态，True为修复，False为断电
+message SetGatewayPowerStatusRequest {
+  int32 id = 1;
+  bool status = 2;
+}
+
+message SetGatewayPowerStatusResponse {}
+
+// 摧毁或恢复状态，True为修复，False为摧毁
+message SetGatewayRuinStatusRequest {
+  int32 id = 1;
+  bool status = 2;
+}
+
+message SetGatewayRuinStatusResponse {}
+
+message GetAllStatusRequest {}
+
+message GetAllStatusResponse {
+  repeated Station stations = 1;
+}
+
+message GetRuinInfoRequest {}
+
+message RuinInfo {
+  int32 num = 1; // 损坏数量
+  double ratio = 2; // 损坏占比
+}
+
+message GetRuinInfoResponse {
+  // 三级级损伤信息
+  RuinInfo one = 1;
+  RuinInfo two = 2;
+  RuinInfo three = 3;
+}
+
+message GetEventsRequest {}
+
+message GetEventsResponse {
+  city.event.v1.Events events = 1;
+}
