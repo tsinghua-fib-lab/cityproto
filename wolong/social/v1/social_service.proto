@@ -8,7 +8,7 @@ service SocialService {
   // 发送消息
   rpc Send(SendRequest) returns (SendResponse);
   // 接收消息，并清空该用户的消息队列
-  rpc Receive(ReceiveRequest) returns (stream ReceiveResponse);
+  rpc Receive(ReceiveRequest) returns (ReceiveResponse);
 }
 
 message SendRequest { repeated Message messages = 1; }
