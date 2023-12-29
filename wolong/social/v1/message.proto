@@ -11,5 +11,5 @@ message Message {
   string message = 3;
   // 消息发出时间（秒），如无则为当前模拟时间
   // 对于接收到的消息，该字段总是存在
-  optional int64 timestamp = 4;
+  optional double t = 4;
 }
