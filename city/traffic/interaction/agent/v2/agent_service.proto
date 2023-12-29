@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+package city.traffic.interaction.agent.v2;
+
+import "city/agent/v2/agent.proto";
+import "city/geo/v2/geo.proto";
+import "city/traffic/interaction/agent/v2/agent.proto";
+import "city/trip/v2/trip.proto";
+
+service AgentService {
+  // 获取agent信息
+  rpc GetAgent(GetAgentRequest) returns (GetAgentResponse);
+  // 新增agent 传入agent初始位置、目的地表、属性 返回agentid
+  rpc AddAgent(AddAgentRequest) returns (AddAgentResponse);
+  // 修改agent的schedule 传入agentid、目的地表
+  rpc SetSchedule(SetScheduleRequest) returns (SetScheduleResponse);
+  // 获取特定区域内的车辆xinxi
+  rpc GetAgentsByLongLatArea(GetAgentsByLongLatAreaRequest) returns (GetAgentsByLongLatAreaResponse);
+}
+
+message GetAgentRequest {
+  int32 agent_id = 1;
+}
+
+message GetAgentResponse {
+  city.agent.v2.Agent base = 1;
+  AgentRuntime runtime = 2;
+}
+
+message AddAgentRequest {
+  // 约定：agent中不设置id
+  city.agent.v2.Agent agent = 1;
+}
+
+message AddAgentResponse {
+  int32 agent_id = 1;
+}
+
+message SetScheduleRequest {
+  int32 agent_id = 1;
+  repeated city.trip.v2.Schedule schedules = 2;
+}
+
+message SetScheduleResponse {}
+
+message GetAgentsByLongLatAreaRequest {
+  city.geo.v2.LongLatRectArea area = 1;
+}
+
+message GetAgentsByLongLatAreaResponse {
+  int32 step = 1;
+  repeated AgentRuntime agents = 2;
+}

@@ -1,0 +1,104 @@
+syntax = "proto3";
+
+package city.water.output.v1;
+
+import "city/geo/v2/geo.proto";
+
+// 宏观道路水深
+message Road {
+  int32 id = 1;
+  double depth = 2;
+}
+
+// 微观水深点
+message RoadFlood {
+  city.geo.v2.LongLatPosition position = 1;
+  double depth = 2;
+}
+
+message DetailedRoad {
+  int32 id = 1;
+  repeated RoadFlood depths = 2;
+}
+
+// 节点状态
+message Node {
+  // Node分两种, junction和outfall, outfall的id将以"_out"后缀
+  // 但输出不关心NodeType, 不需用type字段显示记录
+  string id = 1;
+  // 水头，单位：米
+  double head = 2;
+}
+
+enum LinkType {
+  LINK_TYPE_UNSPECIFIED = 0;
+  LINK_TYPE_PIPE = 1;
+  LINK_TYPE_PUMP = 2;
+}
+
+// 边的状态
+message Link {
+  // type为LINK_TYPE_PUMP的id将以"Pump_"前缀
+  string id = 1;
+  LinkType type = 2;
+  // 流量
+  // 排水网，单位：m3/s
+  // 供水网，单位：L/s
+  double flow = 3;
+  bool ok = 4;
+}
+
+message Aoi {
+  int32 id = 1;
+  int32 unsatisfied_num = 2; // AOI用水需求不满足人数
+  double unsatisfied_ratio = 3; // AOI用水需求不满足比例
+  double demand = 4; // AOI用水需求量 m3/s
+  double supply = 5; // AOI供水量 m3/s
+}
+
+// 排水基础信息
+message DrainageBasicInfo {
+  double average_power = 1; // 排水泵平均功率 kW
+  double undrained_volume = 2; // 待排水量 m3
+  double drained_volume = 3; // 已排水量 m3
+  double average_flow = 4; // 平均流量 m3/s
+  double flooded_volume = 5; // 积水水量 m3
+}
+
+// 供水基础信息
+message SupplyBasicInfo {
+  double average_power = 1; // 供水泵平均功率 kW
+  double average_flow = 2; // 平均流量 m3/s
+}
+
+// 供水需求及满足情况
+message SupplyDemandStatistics {
+  double persons_demand = 1; // 居民总用水需求 m3/s
+  int32 unsatisfied_persons = 2; // 居民需求不满足人数
+  double unsatisfied_persons_ratio = 3; // 居民需求不满足比例
+  double aois_demand = 4; // AOI总用水需求 m3/s
+  int32 unsatisfied_aois = 5; // AOI需求不满足个数
+  double unsatisfied_aois_ratio = 6; // AOI需求不满足比例
+}
+
+// 水泵损坏情况
+message FailureStatistics {
+  int32 failure_num = 1;
+  int32 normal_num = 2;
+  double failure_ratio = 3;
+}
+
+// 排水指标
+message DrainageMetrics {
+  DrainageBasicInfo drainage_basic_info = 1;
+  double load_ratio = 2; // 负载
+  FailureStatistics failure_statistics = 3;
+}
+
+// 供水指标
+message SupplyMetrics {
+  SupplyBasicInfo supply_basic_info = 1;
+  SupplyDemandStatistics supply_demand_statistics = 2;
+  double load_ratio = 3; // 负载
+  FailureStatistics failure_statistics = 4;
+}

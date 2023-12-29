@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package city.comm.output.v1;
+
+import "city/comm/output/v1/output.proto";
+import "city/event/v1/event.proto";
+
+service OutputService {
+  rpc Output(OutputRequest) returns (OutputResponse);
+}
+
+message OutputRequest {
+  int32 step = 1;
+  // 设备状态
+  repeated Node nodes = 2;
+  repeated BaseStation base_stations = 3;
+  // 五环区域信号强度热力图（500m网格形式呈现）
+  Signal signal_heatmap = 4;
+  // 国贸区域信号强度热力图（50m网格形式呈现）
+  Signal small_signal_heatmap = 9;
+  // TODO(张钧): 基站和人的连接怎么表示？
+  // 人相关的数据
+  repeated Person persons = 5;
+  // AOI相关的数据
+  repeated Aoi aois = 6;
+  city.event.v1.Events events = 7;
+  // 统计值
+  Statistics statistics = 8;
+}
+
+message OutputResponse {}

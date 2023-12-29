@@ -1,1 +1,5 @@
-gen/
+build/
+*.egg-info/
+test*
+*.pyc
+__pycache__/

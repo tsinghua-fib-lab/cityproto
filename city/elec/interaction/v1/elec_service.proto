@@ -1,0 +1,69 @@
+syntax = "proto3";
+
+package city.elec.interaction.v1;
+
+service ElecService {
+  rpc SetStatus(SetStatusRequest) returns (SetStatusResponse);
+  rpc GetPower(GetPowerRequest) returns (GetPowerResponse);
+  rpc GetPowerStatus(GetPowerStatusRequest) returns (GetPowerStatusResponse);
+  rpc GetNoPowerAOI(GetNoPowerAOIRequest) returns (GetNoPowerAOIResponse);
+  rpc GetRuinInfo(GetRuinInfoRequest) returns (GetRuinInfoResponse);
+  rpc GetEdgeStatus(GetEdgeStatusRequest) returns (GetEdgeStatusResponse);
+}
+
+message SetStatusRequest {
+  // 设施id
+  int32 id = 1;
+  // True 表示恢复，False表示摧毁
+  bool status = 2;
+}
+
+message SetStatusResponse {}
+
+message GetPowerRequest {
+  // 设备id
+  int32 id = 1;
+}
+
+message GetPowerResponse {
+  // 功率
+  double power = 1;
+}
+
+message GetPowerStatusRequest {
+  int32 flag = 1;
+}
+
+message GetPowerStatusResponse {
+  map<int32, double> power_status = 1;
+}
+
+message GetNoPowerAOIRequest {
+  int32 flag = 1;
+}
+
+message GetNoPowerAOIResponse {
+  repeated int32 aoi = 1;
+}
+
+message GetRuinInfoRequest {}
+
+message RuinInfo {
+  int32 num = 1; // 损坏数量
+  double ratio = 2; // 损坏占比
+}
+
+message GetRuinInfoResponse {
+  // 三级损伤信息
+  RuinInfo one = 1;
+  RuinInfo two = 2;
+  RuinInfo three = 3;
+}
+
+message GetEdgeStatusRequest {}
+
+message GetEdgeStatusResponse {
+  repeated string reason1 = 1;
+  repeated string reason2 = 2;
+  repeated string reason3 = 3;
+}

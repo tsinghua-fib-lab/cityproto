@@ -1,0 +1,26 @@
+version: v1
+managed:
+  enabled: true
+  go_package_prefix:
+    default: git.fiblab.net/sim/protos/go
+# https://buf.build/plugins
+plugins:
+  - plugin: buf.build/protocolbuffers/go
+    out: go
+    opt: 
+      - paths=source_relative
+  - plugin: buf.build/connectrpc/go
+    out: go
+    opt: 
+      - paths=source_relative
+  - plugin: buf.build/community/pseudomuto-doc
+    out: doc
+  # python3 -m pip install protobuf
+  - plugin: buf.build/protocolbuffers/python:v24.4
+    out: pycityproto
+  # python3 -m pip install types-protobuf
+  - plugin: buf.build/protocolbuffers/pyi:v24.4
+    out: pycityproto
+  # python3 -m pip install grpcio
+  - plugin: buf.build/grpc/python:v1.60.0
+    out: pycityproto

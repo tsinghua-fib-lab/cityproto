@@ -1,0 +1,58 @@
+syntax = "proto3";
+
+package city.elec.input.v1;
+
+import "city/geo/v2/geo.proto";
+
+enum FacilityType {
+  //电网相关的基础设施分类
+  FACILITY_TYPE_UNSPECIFIED = 0;
+  FACILITY_TYPE_POWER_STATION = 1; //发电站
+  FACILITY_TYPE_TRANSFORMER_500 = 2; //不同电压的变压器
+  FACILITY_TYPE_TRANSFORMER_220 = 3;
+  FACILITY_TYPE_TRANSFORMER_110 = 4;
+  FACILITY_TYPE_TRANSFORMER_10 = 5;
+  //通信基站
+  FACILITY_TYPE_BASE_STATION = 6;
+  //网关
+  FACILITY_TYPE_GATEWAY = 7;
+  //排水水泵
+  FACILITY_TYPE_DRAINAGE_PUMP = 8;
+  //交通灯
+  FACILITY_TYPE_TRAFFIC_LIGHT = 9;
+  // AOI
+  FACILITY_TYPE_AOI = 10;
+  //供水水泵
+  FACILITY_TYPE_SUPPLY_PUMP = 11;
+}
+//设施id安装对应枚举类型进行编码，N亿作为编码前缀，N代表对应枚举类型的数字
+//例如发电站，一号发电站id为100000001
+
+message RepairStation {
+  int32 aoi_id = 1;
+  city.geo.v2.LongLatPosition position = 2;
+}
+
+message Facility {
+  int32 id = 1;
+  city.geo.v2.LongLatPosition position = 2;
+  FacilityType type = 3;
+  // 当前节点的邻居节点的id
+  repeated int32 relation = 4;
+
+  // 在其它关联的网络中如水网使用时，可使用外部id
+  // 对于负载，该值表示其在对应模拟中的id
+  optional int32 foreign_id = 5;
+
+  // 对于电力设施，该值表示所在aoi id
+  optional int32 aoi_id = 6;
+
+  // 对于10kv变压器组，该值表示变压器组中变压器的数量
+  optional int32 num_transformer = 7;
+}
+
+// 设施集合，对应于mongodb一个collection
+message Facilities {
+  repeated Facility facilities = 1;
+  repeated RepairStation repair_stations = 2;
+}

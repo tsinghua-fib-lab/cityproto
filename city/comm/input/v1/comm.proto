@@ -1,0 +1,66 @@
+syntax = "proto3";
+
+package city.comm.input.v1;
+
+import "city/geo/v2/geo.proto";
+
+// 本文件描述通信部分拓扑结构
+// 三种节点类型
+enum NodeType {
+  NODE_TYPE_UNSPECIFIED = 0;
+  NODE_TYPE_INTERNET = 1;
+  NODE_TYPE_GATEWAY = 2;
+  NODE_TYPE_BASE_STATION = 3;
+}
+
+enum BaseStationType {
+  BASE_STATION_TYPE_UNSPECIFIED = 0;
+  BASE_STATION_TYPE_INDOOR = 1;
+  BASE_STATION_TYPE_OUTDOOR = 2;
+}
+
+message Node {
+  int32 id = 1;
+  NodeType type = 2;
+  // 父节点
+  int32 parent_id = 3;
+  // 子节点
+  repeated int32 children_ids = 4;
+  // 节点经纬度位置
+  optional city.geo.v2.Position position = 5;
+  // 节点所在aoi
+  optional int32 aoi_id = 6;
+  // 基站频段id
+  optional int32 freq_range_id = 7;
+  // 室内外基站类型
+  optional BaseStationType base_station_type = 8;
+}
+
+// 抢修站
+message RepairStation {
+  int32 id = 1;
+  int32 aoi_id = 2;
+  city.geo.v2.Position position = 3;
+}
+
+// 水泵
+message Pump {
+  int32 id = 1;
+  city.geo.v2.Position position = 2;
+}
+
+// 终端通信需求
+message CommDemand {
+  int32 id = 1;
+  repeated double demands = 2;
+}
+
+message Nodes {
+  repeated Node nodes = 1;
+  repeated RepairStation repair_stations = 2;
+  repeated Pump pumps = 3;
+}
+
+message CommDemands {
+  repeated CommDemand comm_demands = 1;
+}

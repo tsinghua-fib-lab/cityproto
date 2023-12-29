@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package city.traffic.interaction.road.v1;
+
+import "city/event/v1/event.proto";
+import "city/traffic/interaction/road/v1/road.proto";
+
+service RoadService {
+  rpc GetRoad(GetRoadRequest) returns (GetRoadResponse);
+  rpc GetRuinInfo(GetRuinInfoRequest) returns (GetRuinInfoResponse);
+  rpc GetEvents(GetEventsRequest) returns (GetEventsResponse);
+}
+
+message GetRoadRequest {
+  // 查询的道路ID列表，为空代表查询所有道路
+  repeated int32 road_ids = 1;
+}
+
+message GetRoadResponse {
+  repeated State states = 1;
+}
+
+message GetRuinInfoRequest {}
+
+message RuinInfo {
+  int32 num = 1; // 损坏数量
+  double ratio = 2; // 损坏占比
+}
+
+message GetRuinInfoResponse {
+  // 三级级损伤信息
+  RuinInfo one = 1;
+  RuinInfo two = 2;
+  RuinInfo three = 3;
+}
+
+message GetEventsRequest {}
+
+message GetEventsResponse {
+  city.event.v1.Events events = 1;
+}
