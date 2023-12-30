@@ -5,7 +5,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Reason(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-    __slots__ = ()
+    __slots__ = []
     REASON_UNSPECIFIED: _ClassVar[Reason]
     REASON_RUIN: _ClassVar[Reason]
     REASON_CASCADE: _ClassVar[Reason]
@@ -14,7 +14,7 @@ REASON_RUIN: Reason
 REASON_CASCADE: Reason
 
 class Station(_message.Message):
-    __slots__ = ('id', 'status', 'reason')
+    __slots__ = ['id', 'status', 'reason']
     ID_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
     REASON_FIELD_NUMBER: _ClassVar[int]

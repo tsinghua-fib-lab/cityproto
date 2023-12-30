@@ -26,11 +26,16 @@ const (
 type TripMode int32
 
 const (
+	// 未指定出行方式
 	TripMode_TRIP_MODE_UNSPECIFIED TripMode = 0
-	TripMode_TRIP_MODE_WALK_ONLY   TripMode = 1 // 仅步行
-	TripMode_TRIP_MODE_DRIVE_ONLY  TripMode = 2 // 仅开车
-	TripMode_TRIP_MODE_BUS_WALK    TripMode = 4 // 乘坐公交车（含站点间步行换乘）
-	TripMode_TRIP_MODE_BIKE_WALK   TripMode = 5 // 当有自行车时选择骑自行车
+	// 仅步行
+	TripMode_TRIP_MODE_WALK_ONLY TripMode = 1
+	// 仅开车
+	TripMode_TRIP_MODE_DRIVE_ONLY TripMode = 2
+	// 乘坐公交车（含站点间步行换乘）
+	TripMode_TRIP_MODE_BUS_WALK TripMode = 4
+	// 当有自行车时选择骑自行车，否则步行
+	TripMode_TRIP_MODE_BIKE_WALK TripMode = 5
 )
 
 // Enum value maps for TripMode.
@@ -78,19 +83,20 @@ func (TripMode) EnumDescriptor() ([]byte, []int) {
 	return file_city_trip_v2_trip_proto_rawDescGZIP(), []int{0}
 }
 
+// 出行
 type Trip struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Mode TripMode `protobuf:"varint,1,opt,name=mode,proto3,enum=city.trip.v2.TripMode" json:"mode,omitempty" yaml:"mode" bson:"mode" db:"mode"`
+	// 出行方式
+	Mode TripMode `protobuf:"varint,1,opt,name=mode,proto3,enum=city.trip.v2.TripMode" json:"mode,omitempty" db:"mode" yaml:"mode" bson:"mode"`
 	// 目的地
-	End *v2.Position `protobuf:"bytes,2,opt,name=end,proto3" json:"end,omitempty" bson:"end" db:"end" yaml:"end"`
-	// 如果二者都为空则等价于wait_time=0
+	End *v2.Position `protobuf:"bytes,2,opt,name=end,proto3" json:"end,omitempty" yaml:"end" bson:"end" db:"end"`
 	// 期望的出发时间（单位: 秒）
 	DepartureTime *float64 `protobuf:"fixed64,3,opt,name=departure_time,json=departureTime,proto3,oneof" json:"departure_time,omitempty" yaml:"departure_time" bson:"departure_time" db:"departure_time"`
-	// 期望的等待时间（单位：秒）
-	WaitTime *float64 `protobuf:"fixed64,4,opt,name=wait_time,json=waitTime,proto3,oneof" json:"wait_time,omitempty" db:"wait_time" yaml:"wait_time" bson:"wait_time"`
+	// 期望的等待时间（单位：秒），如果departure_time为空则wait_time默认为0
+	WaitTime *float64 `protobuf:"fixed64,4,opt,name=wait_time,json=waitTime,proto3,oneof" json:"wait_time,omitempty" yaml:"wait_time" bson:"wait_time" db:"wait_time"`
 	// 期望的到达时间（单位: 秒）
 	ArrivalTime *float64 `protobuf:"fixed64,5,opt,name=arrival_time,json=arrivalTime,proto3,oneof" json:"arrival_time,omitempty" yaml:"arrival_time" bson:"arrival_time" db:"arrival_time"`
 	// 本次出行目的地的活动名
@@ -180,17 +186,35 @@ func (x *Trip) GetRoutes() []*v21.Journey {
 	return nil
 }
 
+// 时刻表
+// 关于出发时间的说明如下：
+//  1. Schedule的开始时刻是 departure_time 或者 参考时刻+wait_time，
+//     参考时刻定义为上一Schedule的结束时刻(即它最后一个Trip的结束时刻)，
+//     或者当它为第一个Schedule时定义为Agent更新Schedule后的首次Update
+//     时刻(当有准确时间要求时建议直接指定departure_time)
+//  2. Trip的开始时刻是 departure_time 或者 参考时刻+wait_time，参考
+//     时刻定义为上一Trip的结束时刻，或者当它为第一个Trip时定义为所属的
+//     Schedule的开始时刻
+//  3. Agent的实际运行时刻取决于Trip的开始时刻，例如它的首次运行是第一
+//     个Schedule中第一个Trip的开始时刻
+//
+// FAQ
+// Q1: 同时指定Schedule和第一个Trip的departure_time会怎样？
+// A1: 参照(2)，只看Trip的departure_time
+// Q2: Schedule和第一个Trip同时指定wait_time=10会怎样？
+// A2: 参照(2)，等待时间为10+10=20
 type Schedule struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Trips []*Trip `protobuf:"bytes,1,rep,name=trips,proto3" json:"trips,omitempty" db:"trips" yaml:"trips" bson:"trips"`
+	// 出行列表
+	Trips []*Trip `protobuf:"bytes,1,rep,name=trips,proto3" json:"trips,omitempty" yaml:"trips" bson:"trips" db:"trips"`
 	// trips的执行次数，0表示无限循环，大于0表示执行几次
 	LoopCount int32 `protobuf:"varint,2,opt,name=loop_count,json=loopCount,proto3" json:"loop_count,omitempty" yaml:"loop_count" bson:"loop_count" db:"loop_count"`
 	// 期望的出发时间（单位: 秒）
 	DepartureTime *float64 `protobuf:"fixed64,3,opt,name=departure_time,json=departureTime,proto3,oneof" json:"departure_time,omitempty" yaml:"departure_time" bson:"departure_time" db:"departure_time"`
-	// 期望的等待时间（单位：秒）
+	// 期望的等待时间（单位：秒），如果departure_time为空则wait_time默认为0
 	WaitTime *float64 `protobuf:"fixed64,4,opt,name=wait_time,json=waitTime,proto3,oneof" json:"wait_time,omitempty" yaml:"wait_time" bson:"wait_time" db:"wait_time"`
 }
 

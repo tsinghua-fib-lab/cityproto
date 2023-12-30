@@ -4,17 +4,27 @@ package city.traffic.interaction.agent.v2;
 
 import "city/geo/v2/geo.proto";
 
+// Agent（人）的运行时状态
 enum Status {
+  // 未指定
   STATUS_UNSPECIFIED = 0;
-  STATUS_SLEEP = 1; // 没有移动行为
-  STATUS_DRIVING = 2; // 开车
-  STATUS_WALKING = 3; // 步行
-  STATUS_CROWD = 4; // 室内行人
-  STATUS_PASSENGER = 5; // 乘客
-  STATUS_WAIT_ROUTE = 6; // 等待路径规划
+  // 没有移动行为
+  STATUS_SLEEP = 1;
+  // 开车
+  STATUS_DRIVING = 2;
+  // 步行
+  STATUS_WALKING = 3;
+  // 室内行人
+  STATUS_CROWD = 4;
+  // 乘客
+  STATUS_PASSENGER = 5;
+  // 等待路径规划
+  STATUS_WAIT_ROUTE = 6;
 }
 
+// Agent（人）的运行时状态
 message AgentRuntime {
+  // ID
   int32 id = 1;
   // 状态
   Status status = 2;

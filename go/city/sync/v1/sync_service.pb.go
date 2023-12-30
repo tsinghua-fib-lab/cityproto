@@ -20,6 +20,7 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+// 获取内嵌etcd的端口请求
 type GetEtcdRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -58,6 +59,7 @@ func (*GetEtcdRequest) Descriptor() ([]byte, []int) {
 	return file_city_sync_v1_sync_service_proto_rawDescGZIP(), []int{0}
 }
 
+// 获取内嵌etcd的端口响应
 type GetEtcdResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -106,6 +108,7 @@ func (x *GetEtcdResponse) GetPort() int32 {
 	return 0
 }
 
+// 步进请求
 type StepRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -163,6 +166,7 @@ func (x *StepRequest) GetStep() int32 {
 	return 0
 }
 
+// 步进响应
 type StepResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

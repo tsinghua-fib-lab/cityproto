@@ -20,6 +20,7 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+// 消息
 type Message struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

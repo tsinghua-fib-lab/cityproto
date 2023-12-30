@@ -5,13 +5,13 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Optional as _Op
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class GetBadAoiIDRequest(_message.Message):
-    __slots__ = ()
+    __slots__ = []
 
     def __init__(self) -> None:
         ...
 
 class GetBadAoiIDResponse(_message.Message):
-    __slots__ = ('ids',)
+    __slots__ = ['ids']
     IDS_FIELD_NUMBER: _ClassVar[int]
     ids: _containers.RepeatedScalarFieldContainer[int]
 

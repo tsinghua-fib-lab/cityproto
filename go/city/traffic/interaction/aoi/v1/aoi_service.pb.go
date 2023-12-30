@@ -20,11 +20,13 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+// 获取AOI信息请求
 type GetAoiRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
+	// 指定AOI ID列表，如果为空，则返回所有AOI信息
 	AoiIds []int32 `protobuf:"varint,1,rep,packed,name=aoi_ids,json=aoiIds,proto3" json:"aoi_ids,omitempty"`
 }
 
@@ -67,11 +69,13 @@ func (x *GetAoiRequest) GetAoiIds() []int32 {
 	return nil
 }
 
+// 获取AOI信息响应
 type GetAoiResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
+	// AOI信息列表
 	States []*State `protobuf:"bytes,1,rep,name=states,proto3" json:"states,omitempty"`
 }
 

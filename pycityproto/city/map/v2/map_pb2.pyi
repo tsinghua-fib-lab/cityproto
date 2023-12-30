@@ -7,13 +7,13 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class LaneType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-    __slots__ = ()
+    __slots__ = []
     LANE_TYPE_UNSPECIFIED: _ClassVar[LaneType]
     LANE_TYPE_DRIVING: _ClassVar[LaneType]
     LANE_TYPE_WALKING: _ClassVar[LaneType]
 
 class LaneTurn(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-    __slots__ = ()
+    __slots__ = []
     LANE_TURN_UNSPECIFIED: _ClassVar[LaneTurn]
     LANE_TURN_STRAIGHT: _ClassVar[LaneTurn]
     LANE_TURN_LEFT: _ClassVar[LaneTurn]
@@ -21,19 +21,19 @@ class LaneTurn(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     LANE_TURN_AROUND: _ClassVar[LaneTurn]
 
 class LaneConnectionType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-    __slots__ = ()
+    __slots__ = []
     LANE_CONNECTION_TYPE_UNSPECIFIED: _ClassVar[LaneConnectionType]
     LANE_CONNECTION_TYPE_HEAD: _ClassVar[LaneConnectionType]
     LANE_CONNECTION_TYPE_TAIL: _ClassVar[LaneConnectionType]
 
 class AoiType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-    __slots__ = ()
+    __slots__ = []
     AOI_TYPE_UNSPECIFIED: _ClassVar[AoiType]
     AOI_TYPE_BUS_STATION: _ClassVar[AoiType]
     AOI_TYPE_OTHER: _ClassVar[AoiType]
 
 class LandUseType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-    __slots__ = ()
+    __slots__ = []
     LAND_USE_TYPE_UNSPECIFIED: _ClassVar[LandUseType]
     LAND_USE_TYPE_COMMERCIAL: _ClassVar[LandUseType]
     LAND_USE_TYPE_INDUSTRIAL: _ClassVar[LandUseType]
@@ -64,7 +64,7 @@ LAND_USE_TYPE_TRANSPORTATION: LandUseType
 LAND_USE_TYPE_OTHER: LandUseType
 
 class Polyline(_message.Message):
-    __slots__ = ('nodes',)
+    __slots__ = ['nodes']
     NODES_FIELD_NUMBER: _ClassVar[int]
     nodes: _containers.RepeatedCompositeFieldContainer[_geo_pb2.XYPosition]
 
@@ -72,7 +72,7 @@ class Polyline(_message.Message):
         ...
 
 class Header(_message.Message):
-    __slots__ = ('name', 'date', 'north', 'south', 'east', 'west', 'projection')
+    __slots__ = ['name', 'date', 'north', 'south', 'east', 'west', 'projection']
     NAME_FIELD_NUMBER: _ClassVar[int]
     DATE_FIELD_NUMBER: _ClassVar[int]
     NORTH_FIELD_NUMBER: _ClassVar[int]
@@ -92,7 +92,7 @@ class Header(_message.Message):
         ...
 
 class LaneOverlap(_message.Message):
-    __slots__ = ('self', 'other', 'self_first')
+    __slots__ = ['self', 'other', 'self_first']
     SELF_FIELD_NUMBER: _ClassVar[int]
     OTHER_FIELD_NUMBER: _ClassVar[int]
     SELF_FIRST_FIELD_NUMBER: _ClassVar[int]
@@ -104,7 +104,7 @@ class LaneOverlap(_message.Message):
         ...
 
 class LaneConnection(_message.Message):
-    __slots__ = ('id', 'type')
+    __slots__ = ['id', 'type']
     ID_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
     id: int
@@ -114,7 +114,7 @@ class LaneConnection(_message.Message):
         ...
 
 class Lane(_message.Message):
-    __slots__ = ('id', 'type', 'turn', 'max_speed', 'length', 'width', 'center_line', 'left_border_line', 'right_border_line', 'predecessors', 'successors', 'left_lane_ids', 'right_lane_ids', 'parent_id', 'overlaps', 'aoi_ids')
+    __slots__ = ['id', 'type', 'turn', 'max_speed', 'length', 'width', 'center_line', 'left_border_line', 'right_border_line', 'predecessors', 'successors', 'left_lane_ids', 'right_lane_ids', 'parent_id', 'overlaps', 'aoi_ids']
     ID_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
     TURN_FIELD_NUMBER: _ClassVar[int]
@@ -152,7 +152,7 @@ class Lane(_message.Message):
         ...
 
 class NextRoadLane(_message.Message):
-    __slots__ = ('road_id', 'lane_id_a', 'lane_id_b')
+    __slots__ = ['road_id', 'lane_id_a', 'lane_id_b']
     ROAD_ID_FIELD_NUMBER: _ClassVar[int]
     LANE_ID_A_FIELD_NUMBER: _ClassVar[int]
     LANE_ID_B_FIELD_NUMBER: _ClassVar[int]
@@ -164,7 +164,7 @@ class NextRoadLane(_message.Message):
         ...
 
 class NextRoadLanePlan(_message.Message):
-    __slots__ = ('next_road_lanes',)
+    __slots__ = ['next_road_lanes']
     NEXT_ROAD_LANES_FIELD_NUMBER: _ClassVar[int]
     next_road_lanes: _containers.RepeatedCompositeFieldContainer[NextRoadLane]
 
@@ -172,7 +172,7 @@ class NextRoadLanePlan(_message.Message):
         ...
 
 class Road(_message.Message):
-    __slots__ = ('id', 'lane_ids', 'next_road_lane_plans')
+    __slots__ = ['id', 'lane_ids', 'next_road_lane_plans']
     ID_FIELD_NUMBER: _ClassVar[int]
     LANE_IDS_FIELD_NUMBER: _ClassVar[int]
     NEXT_ROAD_LANE_PLANS_FIELD_NUMBER: _ClassVar[int]
@@ -184,7 +184,7 @@ class Road(_message.Message):
         ...
 
 class JunctionLaneGroup(_message.Message):
-    __slots__ = ('in_road_id', 'in_angle', 'out_road_id', 'out_angle', 'lane_ids', 'turn')
+    __slots__ = ['in_road_id', 'in_angle', 'out_road_id', 'out_angle', 'lane_ids', 'turn']
     IN_ROAD_ID_FIELD_NUMBER: _ClassVar[int]
     IN_ANGLE_FIELD_NUMBER: _ClassVar[int]
     OUT_ROAD_ID_FIELD_NUMBER: _ClassVar[int]
@@ -202,7 +202,7 @@ class JunctionLaneGroup(_message.Message):
         ...
 
 class Junction(_message.Message):
-    __slots__ = ('id', 'lane_ids', 'driving_lane_groups')
+    __slots__ = ['id', 'lane_ids', 'driving_lane_groups']
     ID_FIELD_NUMBER: _ClassVar[int]
     LANE_IDS_FIELD_NUMBER: _ClassVar[int]
     DRIVING_LANE_GROUPS_FIELD_NUMBER: _ClassVar[int]
@@ -214,7 +214,7 @@ class Junction(_message.Message):
         ...
 
 class Aoi(_message.Message):
-    __slots__ = ('id', 'type', 'driving_positions', 'walking_positions', 'positions', 'driving_gates', 'walking_gates', 'area', 'land_use', 'poi_ids')
+    __slots__ = ['id', 'type', 'driving_positions', 'walking_positions', 'positions', 'driving_gates', 'walking_gates', 'area', 'land_use', 'poi_ids']
     ID_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
     DRIVING_POSITIONS_FIELD_NUMBER: _ClassVar[int]
@@ -240,25 +240,27 @@ class Aoi(_message.Message):
         ...
 
 class Poi(_message.Message):
-    __slots__ = ('id', 'name', 'category', 'position', 'aoi_id', 'capacity')
+    __slots__ = ['id', 'name', 'category', 'position', 'aoi_id', 'capacity', 'functions']
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     CATEGORY_FIELD_NUMBER: _ClassVar[int]
     POSITION_FIELD_NUMBER: _ClassVar[int]
     AOI_ID_FIELD_NUMBER: _ClassVar[int]
     CAPACITY_FIELD_NUMBER: _ClassVar[int]
+    FUNCTIONS_FIELD_NUMBER: _ClassVar[int]
     id: int
     name: str
     category: str
     position: _geo_pb2.XYPosition
     aoi_id: int
     capacity: int
+    functions: _containers.RepeatedScalarFieldContainer[str]
 
-    def __init__(self, id: _Optional[int]=..., name: _Optional[str]=..., category: _Optional[str]=..., position: _Optional[_Union[_geo_pb2.XYPosition, _Mapping]]=..., aoi_id: _Optional[int]=..., capacity: _Optional[int]=...) -> None:
+    def __init__(self, id: _Optional[int]=..., name: _Optional[str]=..., category: _Optional[str]=..., position: _Optional[_Union[_geo_pb2.XYPosition, _Mapping]]=..., aoi_id: _Optional[int]=..., capacity: _Optional[int]=..., functions: _Optional[_Iterable[str]]=...) -> None:
         ...
 
 class Map(_message.Message):
-    __slots__ = ('header', 'lanes', 'roads', 'junctions', 'aois', 'pois')
+    __slots__ = ['header', 'lanes', 'roads', 'junctions', 'aois', 'pois']
     HEADER_FIELD_NUMBER: _ClassVar[int]
     LANES_FIELD_NUMBER: _ClassVar[int]
     ROADS_FIELD_NUMBER: _ClassVar[int]

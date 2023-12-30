@@ -6,21 +6,21 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class RouteType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-    __slots__ = ()
+    __slots__ = []
     ROUTE_TYPE_UNSPECIFIED: _ClassVar[RouteType]
     ROUTE_TYPE_DRIVING: _ClassVar[RouteType]
     ROUTE_TYPE_WALKING: _ClassVar[RouteType]
     ROUTE_TYPE_BY_BUS: _ClassVar[RouteType]
 
 class JourneyType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-    __slots__ = ()
+    __slots__ = []
     JOURNEY_TYPE_UNSPECIFIED: _ClassVar[JourneyType]
     JOURNEY_TYPE_DRIVING: _ClassVar[JourneyType]
     JOURNEY_TYPE_WALKING: _ClassVar[JourneyType]
     JOURNEY_TYPE_BY_BUS: _ClassVar[JourneyType]
 
 class MovingDirection(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-    __slots__ = ()
+    __slots__ = []
     MOVING_DIRECTION_UNSPECIFIED: _ClassVar[MovingDirection]
     MOVING_DIRECTION_FORWARD: _ClassVar[MovingDirection]
     MOVING_DIRECTION_BACKWARD: _ClassVar[MovingDirection]
@@ -37,7 +37,7 @@ MOVING_DIRECTION_FORWARD: MovingDirection
 MOVING_DIRECTION_BACKWARD: MovingDirection
 
 class DrivingJourneyBody(_message.Message):
-    __slots__ = ('road_ids', 'eta')
+    __slots__ = ['road_ids', 'eta']
     ROAD_IDS_FIELD_NUMBER: _ClassVar[int]
     ETA_FIELD_NUMBER: _ClassVar[int]
     road_ids: _containers.RepeatedScalarFieldContainer[int]
@@ -47,7 +47,7 @@ class DrivingJourneyBody(_message.Message):
         ...
 
 class WalkingRouteSegment(_message.Message):
-    __slots__ = ('lane_id', 'moving_direction')
+    __slots__ = ['lane_id', 'moving_direction']
     LANE_ID_FIELD_NUMBER: _ClassVar[int]
     MOVING_DIRECTION_FIELD_NUMBER: _ClassVar[int]
     lane_id: int
@@ -57,7 +57,7 @@ class WalkingRouteSegment(_message.Message):
         ...
 
 class WalkingJourneyBody(_message.Message):
-    __slots__ = ('route', 'eta')
+    __slots__ = ['route', 'eta']
     ROUTE_FIELD_NUMBER: _ClassVar[int]
     ETA_FIELD_NUMBER: _ClassVar[int]
     route: _containers.RepeatedCompositeFieldContainer[WalkingRouteSegment]
@@ -67,7 +67,7 @@ class WalkingJourneyBody(_message.Message):
         ...
 
 class BusJourneyBody(_message.Message):
-    __slots__ = ('line_id', 'start_station_id', 'end_station_id')
+    __slots__ = ['line_id', 'start_station_id', 'end_station_id']
     LINE_ID_FIELD_NUMBER: _ClassVar[int]
     START_STATION_ID_FIELD_NUMBER: _ClassVar[int]
     END_STATION_ID_FIELD_NUMBER: _ClassVar[int]
@@ -79,7 +79,7 @@ class BusJourneyBody(_message.Message):
         ...
 
 class Journey(_message.Message):
-    __slots__ = ('type', 'driving', 'walking', 'by_bus')
+    __slots__ = ['type', 'driving', 'walking', 'by_bus']
     TYPE_FIELD_NUMBER: _ClassVar[int]
     DRIVING_FIELD_NUMBER: _ClassVar[int]
     WALKING_FIELD_NUMBER: _ClassVar[int]
@@ -93,7 +93,7 @@ class Journey(_message.Message):
         ...
 
 class BusLine(_message.Message):
-    __slots__ = ('line_id', 'stops', 'distances', 'interval', 'count')
+    __slots__ = ['line_id', 'stops', 'distances', 'interval', 'count']
     LINE_ID_FIELD_NUMBER: _ClassVar[int]
     STOPS_FIELD_NUMBER: _ClassVar[int]
     DISTANCES_FIELD_NUMBER: _ClassVar[int]
@@ -109,7 +109,7 @@ class BusLine(_message.Message):
         ...
 
 class BusLines(_message.Message):
-    __slots__ = ('lines',)
+    __slots__ = ['lines']
     LINES_FIELD_NUMBER: _ClassVar[int]
     lines: _containers.RepeatedCompositeFieldContainer[BusLine]
 
@@ -117,7 +117,7 @@ class BusLines(_message.Message):
         ...
 
 class RoadStatus(_message.Message):
-    __slots__ = ('id', 'speed')
+    __slots__ = ['id', 'speed']
     ID_FIELD_NUMBER: _ClassVar[int]
     SPEED_FIELD_NUMBER: _ClassVar[int]
     id: int
@@ -127,7 +127,7 @@ class RoadStatus(_message.Message):
         ...
 
 class RoadStatuses(_message.Message):
-    __slots__ = ('road_statuses',)
+    __slots__ = ['road_statuses']
     ROAD_STATUSES_FIELD_NUMBER: _ClassVar[int]
     road_statuses: _containers.RepeatedCompositeFieldContainer[RoadStatus]
 

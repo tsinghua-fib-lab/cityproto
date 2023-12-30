@@ -17,7 +17,8 @@ class AoiServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
 
     def GetAoi(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """获取AOI信息
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')

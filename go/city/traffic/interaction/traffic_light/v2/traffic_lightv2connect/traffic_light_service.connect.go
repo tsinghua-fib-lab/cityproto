@@ -59,9 +59,13 @@ var (
 // TrafficLightServiceClient is a client for the
 // city.traffic.interaction.traffic_light.v2.TrafficLightService service.
 type TrafficLightServiceClient interface {
+	// 获取路口的红绿灯信息
 	GetTrafficLight(context.Context, *connect.Request[v2.GetTrafficLightRequest]) (*connect.Response[v2.GetTrafficLightResponse], error)
+	// 设置路口的红绿灯信息
 	SetTrafficLight(context.Context, *connect.Request[v2.SetTrafficLightRequest]) (*connect.Response[v2.SetTrafficLightResponse], error)
+	// 设置路口的红绿灯相位
 	SetTrafficLightPhase(context.Context, *connect.Request[v2.SetTrafficLightPhaseRequest]) (*connect.Response[v2.SetTrafficLightPhaseResponse], error)
+	// 设置路口的红绿灯状态
 	SetTrafficLightStatus(context.Context, *connect.Request[v2.SetTrafficLightStatusRequest]) (*connect.Response[v2.SetTrafficLightStatusResponse], error)
 }
 
@@ -138,9 +142,13 @@ func (c *trafficLightServiceClient) SetTrafficLightStatus(ctx context.Context, r
 // TrafficLightServiceHandler is an implementation of the
 // city.traffic.interaction.traffic_light.v2.TrafficLightService service.
 type TrafficLightServiceHandler interface {
+	// 获取路口的红绿灯信息
 	GetTrafficLight(context.Context, *connect.Request[v2.GetTrafficLightRequest]) (*connect.Response[v2.GetTrafficLightResponse], error)
+	// 设置路口的红绿灯信息
 	SetTrafficLight(context.Context, *connect.Request[v2.SetTrafficLightRequest]) (*connect.Response[v2.SetTrafficLightResponse], error)
+	// 设置路口的红绿灯相位
 	SetTrafficLightPhase(context.Context, *connect.Request[v2.SetTrafficLightPhaseRequest]) (*connect.Response[v2.SetTrafficLightPhaseResponse], error)
+	// 设置路口的红绿灯状态
 	SetTrafficLightStatus(context.Context, *connect.Request[v2.SetTrafficLightStatusRequest]) (*connect.Response[v2.SetTrafficLightStatusResponse], error)
 }
 

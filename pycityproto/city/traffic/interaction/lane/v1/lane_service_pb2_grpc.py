@@ -18,7 +18,7 @@ class LaneServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
 
     def SetMaxV(self, request, context):
-        """设置Lane的最大速度
+        """设置Lane的最大速度（限速）
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

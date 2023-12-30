@@ -7,13 +7,13 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class InitRequest(_message.Message):
-    __slots__ = ()
+    __slots__ = []
 
     def __init__(self) -> None:
         ...
 
 class InitResponse(_message.Message):
-    __slots__ = ('address', 'control', 'facilities', 'map')
+    __slots__ = ['address', 'control', 'facilities', 'map']
     ADDRESS_FIELD_NUMBER: _ClassVar[int]
     CONTROL_FIELD_NUMBER: _ClassVar[int]
     FACILITIES_FIELD_NUMBER: _ClassVar[int]

@@ -6,7 +6,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class WaterFacilityType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-    __slots__ = ()
+    __slots__ = []
     WATER_FACILITY_TYPE_UNSPECIFIED: _ClassVar[WaterFacilityType]
     WATER_FACILITY_TYPE_SUPPLY: _ClassVar[WaterFacilityType]
     WATER_FACILITY_TYPE_DRAINAGE: _ClassVar[WaterFacilityType]
@@ -15,7 +15,7 @@ WATER_FACILITY_TYPE_SUPPLY: WaterFacilityType
 WATER_FACILITY_TYPE_DRAINAGE: WaterFacilityType
 
 class SetPumpPowerStatusRequest(_message.Message):
-    __slots__ = ('id', 'status', 'type')
+    __slots__ = ['id', 'status', 'type']
     ID_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
@@ -27,13 +27,13 @@ class SetPumpPowerStatusRequest(_message.Message):
         ...
 
 class SetPumpPowerStatusResponse(_message.Message):
-    __slots__ = ()
+    __slots__ = []
 
     def __init__(self) -> None:
         ...
 
 class SetPumpNetworkStatusRequest(_message.Message):
-    __slots__ = ('id', 'status', 'type')
+    __slots__ = ['id', 'status', 'type']
     ID_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
@@ -45,13 +45,13 @@ class SetPumpNetworkStatusRequest(_message.Message):
         ...
 
 class SetPumpNetworkStatusResponse(_message.Message):
-    __slots__ = ()
+    __slots__ = []
 
     def __init__(self) -> None:
         ...
 
 class SetPumpStatusRequest(_message.Message):
-    __slots__ = ('id', 'status', 'type')
+    __slots__ = ['id', 'status', 'type']
     ID_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
@@ -63,13 +63,13 @@ class SetPumpStatusRequest(_message.Message):
         ...
 
 class SetPumpStatusResponse(_message.Message):
-    __slots__ = ()
+    __slots__ = []
 
     def __init__(self) -> None:
         ...
 
 class GetPumpStatusRequest(_message.Message):
-    __slots__ = ('flag',)
+    __slots__ = ['flag']
     FLAG_FIELD_NUMBER: _ClassVar[int]
     flag: int
 
@@ -77,10 +77,10 @@ class GetPumpStatusRequest(_message.Message):
         ...
 
 class GetPumpStatusResponse(_message.Message):
-    __slots__ = ('pump_status',)
+    __slots__ = ['pump_status']
 
     class PumpStatusEntry(_message.Message):
-        __slots__ = ('key', 'value')
+        __slots__ = ['key', 'value']
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: int
@@ -95,7 +95,7 @@ class GetPumpStatusResponse(_message.Message):
         ...
 
 class GetNoWaterAOIRequest(_message.Message):
-    __slots__ = ('flag',)
+    __slots__ = ['flag']
     FLAG_FIELD_NUMBER: _ClassVar[int]
     flag: int
 
@@ -103,7 +103,7 @@ class GetNoWaterAOIRequest(_message.Message):
         ...
 
 class GetNoWaterAOIResponse(_message.Message):
-    __slots__ = ('aoi',)
+    __slots__ = ['aoi']
     AOI_FIELD_NUMBER: _ClassVar[int]
     aoi: _containers.RepeatedScalarFieldContainer[int]
 
@@ -111,13 +111,13 @@ class GetNoWaterAOIResponse(_message.Message):
         ...
 
 class GetRuinInfoRequest(_message.Message):
-    __slots__ = ()
+    __slots__ = []
 
     def __init__(self) -> None:
         ...
 
 class RuinInfo(_message.Message):
-    __slots__ = ('num', 'ratio')
+    __slots__ = ['num', 'ratio']
     NUM_FIELD_NUMBER: _ClassVar[int]
     RATIO_FIELD_NUMBER: _ClassVar[int]
     num: int
@@ -127,7 +127,7 @@ class RuinInfo(_message.Message):
         ...
 
 class GetRuinInfoResponse(_message.Message):
-    __slots__ = ('one', 'two', 'three')
+    __slots__ = ['one', 'two', 'three']
     ONE_FIELD_NUMBER: _ClassVar[int]
     TWO_FIELD_NUMBER: _ClassVar[int]
     THREE_FIELD_NUMBER: _ClassVar[int]

@@ -20,12 +20,15 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+// MongoDB配置
 type MongoPath struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Db  string `protobuf:"bytes,1,opt,name=db,proto3" json:"db,omitempty"`
+	// 数据库名
+	Db string `protobuf:"bytes,1,opt,name=db,proto3" json:"db,omitempty"`
+	// 集合名
 	Col string `protobuf:"bytes,2,opt,name=col,proto3" json:"col,omitempty"`
 }
 
@@ -75,8 +78,7 @@ func (x *MongoPath) GetCol() string {
 	return ""
 }
 
-// 输出的目标（数据库、对象存储、...）
-// 目前只使用PostgreSQL
+// 输出目标PostgreSQL
 type OutputTarget struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

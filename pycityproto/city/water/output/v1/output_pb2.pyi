@@ -7,7 +7,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class LinkType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-    __slots__ = ()
+    __slots__ = []
     LINK_TYPE_UNSPECIFIED: _ClassVar[LinkType]
     LINK_TYPE_PIPE: _ClassVar[LinkType]
     LINK_TYPE_PUMP: _ClassVar[LinkType]
@@ -16,7 +16,7 @@ LINK_TYPE_PIPE: LinkType
 LINK_TYPE_PUMP: LinkType
 
 class Road(_message.Message):
-    __slots__ = ('id', 'depth')
+    __slots__ = ['id', 'depth']
     ID_FIELD_NUMBER: _ClassVar[int]
     DEPTH_FIELD_NUMBER: _ClassVar[int]
     id: int
@@ -26,7 +26,7 @@ class Road(_message.Message):
         ...
 
 class RoadFlood(_message.Message):
-    __slots__ = ('position', 'depth')
+    __slots__ = ['position', 'depth']
     POSITION_FIELD_NUMBER: _ClassVar[int]
     DEPTH_FIELD_NUMBER: _ClassVar[int]
     position: _geo_pb2.LongLatPosition
@@ -36,7 +36,7 @@ class RoadFlood(_message.Message):
         ...
 
 class DetailedRoad(_message.Message):
-    __slots__ = ('id', 'depths')
+    __slots__ = ['id', 'depths']
     ID_FIELD_NUMBER: _ClassVar[int]
     DEPTHS_FIELD_NUMBER: _ClassVar[int]
     id: int
@@ -46,7 +46,7 @@ class DetailedRoad(_message.Message):
         ...
 
 class Node(_message.Message):
-    __slots__ = ('id', 'head')
+    __slots__ = ['id', 'head']
     ID_FIELD_NUMBER: _ClassVar[int]
     HEAD_FIELD_NUMBER: _ClassVar[int]
     id: str
@@ -56,7 +56,7 @@ class Node(_message.Message):
         ...
 
 class Link(_message.Message):
-    __slots__ = ('id', 'type', 'flow', 'ok')
+    __slots__ = ['id', 'type', 'flow', 'ok']
     ID_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
     FLOW_FIELD_NUMBER: _ClassVar[int]
@@ -70,7 +70,7 @@ class Link(_message.Message):
         ...
 
 class Aoi(_message.Message):
-    __slots__ = ('id', 'unsatisfied_num', 'unsatisfied_ratio', 'demand', 'supply')
+    __slots__ = ['id', 'unsatisfied_num', 'unsatisfied_ratio', 'demand', 'supply']
     ID_FIELD_NUMBER: _ClassVar[int]
     UNSATISFIED_NUM_FIELD_NUMBER: _ClassVar[int]
     UNSATISFIED_RATIO_FIELD_NUMBER: _ClassVar[int]
@@ -86,7 +86,7 @@ class Aoi(_message.Message):
         ...
 
 class DrainageBasicInfo(_message.Message):
-    __slots__ = ('average_power', 'undrained_volume', 'drained_volume', 'average_flow', 'flooded_volume')
+    __slots__ = ['average_power', 'undrained_volume', 'drained_volume', 'average_flow', 'flooded_volume']
     AVERAGE_POWER_FIELD_NUMBER: _ClassVar[int]
     UNDRAINED_VOLUME_FIELD_NUMBER: _ClassVar[int]
     DRAINED_VOLUME_FIELD_NUMBER: _ClassVar[int]
@@ -102,7 +102,7 @@ class DrainageBasicInfo(_message.Message):
         ...
 
 class SupplyBasicInfo(_message.Message):
-    __slots__ = ('average_power', 'average_flow')
+    __slots__ = ['average_power', 'average_flow']
     AVERAGE_POWER_FIELD_NUMBER: _ClassVar[int]
     AVERAGE_FLOW_FIELD_NUMBER: _ClassVar[int]
     average_power: float
@@ -112,7 +112,7 @@ class SupplyBasicInfo(_message.Message):
         ...
 
 class SupplyDemandStatistics(_message.Message):
-    __slots__ = ('persons_demand', 'unsatisfied_persons', 'unsatisfied_persons_ratio', 'aois_demand', 'unsatisfied_aois', 'unsatisfied_aois_ratio')
+    __slots__ = ['persons_demand', 'unsatisfied_persons', 'unsatisfied_persons_ratio', 'aois_demand', 'unsatisfied_aois', 'unsatisfied_aois_ratio']
     PERSONS_DEMAND_FIELD_NUMBER: _ClassVar[int]
     UNSATISFIED_PERSONS_FIELD_NUMBER: _ClassVar[int]
     UNSATISFIED_PERSONS_RATIO_FIELD_NUMBER: _ClassVar[int]
@@ -130,7 +130,7 @@ class SupplyDemandStatistics(_message.Message):
         ...
 
 class FailureStatistics(_message.Message):
-    __slots__ = ('failure_num', 'normal_num', 'failure_ratio')
+    __slots__ = ['failure_num', 'normal_num', 'failure_ratio']
     FAILURE_NUM_FIELD_NUMBER: _ClassVar[int]
     NORMAL_NUM_FIELD_NUMBER: _ClassVar[int]
     FAILURE_RATIO_FIELD_NUMBER: _ClassVar[int]
@@ -142,7 +142,7 @@ class FailureStatistics(_message.Message):
         ...
 
 class DrainageMetrics(_message.Message):
-    __slots__ = ('drainage_basic_info', 'load_ratio', 'failure_statistics')
+    __slots__ = ['drainage_basic_info', 'load_ratio', 'failure_statistics']
     DRAINAGE_BASIC_INFO_FIELD_NUMBER: _ClassVar[int]
     LOAD_RATIO_FIELD_NUMBER: _ClassVar[int]
     FAILURE_STATISTICS_FIELD_NUMBER: _ClassVar[int]
@@ -154,7 +154,7 @@ class DrainageMetrics(_message.Message):
         ...
 
 class SupplyMetrics(_message.Message):
-    __slots__ = ('supply_basic_info', 'supply_demand_statistics', 'load_ratio', 'failure_statistics')
+    __slots__ = ['supply_basic_info', 'supply_demand_statistics', 'load_ratio', 'failure_statistics']
     SUPPLY_BASIC_INFO_FIELD_NUMBER: _ClassVar[int]
     SUPPLY_DEMAND_STATISTICS_FIELD_NUMBER: _ClassVar[int]
     LOAD_RATIO_FIELD_NUMBER: _ClassVar[int]

@@ -6,6 +6,7 @@ variables:
 stages:
   - test
   - build
+  - deploy
 
 buf-lint:
   image: registry.fiblab.net/general/dev:latest
@@ -26,4 +27,31 @@ release-pypi:
       TWINE_PASSWORD=${CI_JOB_TOKEN} TWINE_USERNAME=gitlab-ci-token \
       python3 -m twine upload --repository-url \
       ${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/pypi dist/*
+
+build-docker-image:
+  # default image of runner with tag dind
+  # image: docker:dind
+  tags:
+    - dind
+  stage: build
+  rules:
+    - if: $CI_COMMIT_TAG =~ $VERSION_REGEX
+  script:
+    - docker login -u ${CI_REGISTRY_USER} -p ${CI_REGISTRY_PASSWORD} ${CI_REGISTRY}
+    - docker build -t ${CI_REGISTRY_IMAGE}:${CI_COMMIT_SHORT_SHA} -t ${CI_REGISTRY_IMAGE}:latest .
+    - docker push ${CI_REGISTRY_IMAGE}:${CI_COMMIT_SHORT_SHA}
+    - docker push ${CI_REGISTRY_IMAGE}:latest
+
+kubernetes-deploy:
+  stage: deploy
+  image:
+    name: bitnami/kubectl:latest
+    entrypoint: [""]
+  rules:
+    - if: $CI_COMMIT_TAG =~ $VERSION_REGEX
+  script:
+    - kubectl config get-contexts
+    - kubectl config use-context sim/kubernetes-agent:huawei
+    - kubectl apply -f manifest.yaml
+    - kubectl rollout restart deployment/protos-doc-frontend --namespace web
 

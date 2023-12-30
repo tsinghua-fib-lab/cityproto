@@ -41,7 +41,7 @@ class AgentServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def GetAgentsByLongLatArea(self, request, context):
-        """获取特定区域内的车辆xinxi
+        """获取特定区域内的agent
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

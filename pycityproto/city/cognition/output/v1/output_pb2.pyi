@@ -5,7 +5,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Node(_message.Message):
-    __slots__ = ('id', 'status')
+    __slots__ = ['id', 'status']
     ID_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
     id: int
@@ -15,7 +15,7 @@ class Node(_message.Message):
         ...
 
 class Influence(_message.Message):
-    __slots__ = ('source_id', 'target_id', 'strength')
+    __slots__ = ['source_id', 'target_id', 'strength']
     SOURCE_ID_FIELD_NUMBER: _ClassVar[int]
     TARGET_ID_FIELD_NUMBER: _ClassVar[int]
     STRENGTH_FIELD_NUMBER: _ClassVar[int]
@@ -27,7 +27,7 @@ class Influence(_message.Message):
         ...
 
 class Heatmap(_message.Message):
-    __slots__ = ('num_rows', 'num_columns', 'strength')
+    __slots__ = ['num_rows', 'num_columns', 'strength']
     NUM_ROWS_FIELD_NUMBER: _ClassVar[int]
     NUM_COLUMNS_FIELD_NUMBER: _ClassVar[int]
     STRENGTH_FIELD_NUMBER: _ClassVar[int]
@@ -39,7 +39,7 @@ class Heatmap(_message.Message):
         ...
 
 class Stat(_message.Message):
-    __slots__ = ('crowd_cnts', 'crowd_ratios', 'key_nodes')
+    __slots__ = ['crowd_cnts', 'crowd_ratios', 'key_nodes']
     CROWD_CNTS_FIELD_NUMBER: _ClassVar[int]
     CROWD_RATIOS_FIELD_NUMBER: _ClassVar[int]
     KEY_NODES_FIELD_NUMBER: _ClassVar[int]
@@ -51,7 +51,7 @@ class Stat(_message.Message):
         ...
 
 class Content(_message.Message):
-    __slots__ = ('id', 'text')
+    __slots__ = ['id', 'text']
     ID_FIELD_NUMBER: _ClassVar[int]
     TEXT_FIELD_NUMBER: _ClassVar[int]
     id: int
@@ -61,7 +61,7 @@ class Content(_message.Message):
         ...
 
 class NodeMeta(_message.Message):
-    __slots__ = ('id', 'lng', 'lat', 'level')
+    __slots__ = ['id', 'lng', 'lat', 'level']
     ID_FIELD_NUMBER: _ClassVar[int]
     LNG_FIELD_NUMBER: _ClassVar[int]
     LAT_FIELD_NUMBER: _ClassVar[int]
@@ -75,7 +75,7 @@ class NodeMeta(_message.Message):
         ...
 
 class NodesMeta(_message.Message):
-    __slots__ = ('nodes',)
+    __slots__ = ['nodes']
     NODES_FIELD_NUMBER: _ClassVar[int]
     nodes: _containers.RepeatedCompositeFieldContainer[NodeMeta]
 
@@ -83,7 +83,7 @@ class NodesMeta(_message.Message):
         ...
 
 class Group(_message.Message):
-    __slots__ = ('id', 'size', 'changes')
+    __slots__ = ['id', 'size', 'changes']
     ID_FIELD_NUMBER: _ClassVar[int]
     SIZE_FIELD_NUMBER: _ClassVar[int]
     CHANGES_FIELD_NUMBER: _ClassVar[int]

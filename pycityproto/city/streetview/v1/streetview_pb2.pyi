@@ -6,7 +6,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class StreetViewImage(_message.Message):
-    __slots__ = ('heading', 'object')
+    __slots__ = ['heading', 'object']
     HEADING_FIELD_NUMBER: _ClassVar[int]
     OBJECT_FIELD_NUMBER: _ClassVar[int]
     heading: float
@@ -16,7 +16,7 @@ class StreetViewImage(_message.Message):
         ...
 
 class StreetView(_message.Message):
-    __slots__ = ('lnglat', 'images')
+    __slots__ = ['lnglat', 'images']
     LNGLAT_FIELD_NUMBER: _ClassVar[int]
     IMAGES_FIELD_NUMBER: _ClassVar[int]
     lnglat: _geo_pb2.LongLatPosition
@@ -26,7 +26,7 @@ class StreetView(_message.Message):
         ...
 
 class StreetViews(_message.Message):
-    __slots__ = ('street_views',)
+    __slots__ = ['street_views']
     STREET_VIEWS_FIELD_NUMBER: _ClassVar[int]
     street_views: _containers.RepeatedCompositeFieldContainer[StreetView]
 

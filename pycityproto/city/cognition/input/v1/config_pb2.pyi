@@ -5,7 +5,7 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Mongo(_message.Message):
-    __slots__ = ('uri', 'map', 'agents', 'edges')
+    __slots__ = ['uri', 'map', 'agents', 'edges']
     URI_FIELD_NUMBER: _ClassVar[int]
     MAP_FIELD_NUMBER: _ClassVar[int]
     AGENTS_FIELD_NUMBER: _ClassVar[int]
@@ -19,7 +19,7 @@ class Mongo(_message.Message):
         ...
 
 class ControlStep(_message.Message):
-    __slots__ = ('start', 'total', 'interval')
+    __slots__ = ['start', 'total', 'interval']
     START_FIELD_NUMBER: _ClassVar[int]
     TOTAL_FIELD_NUMBER: _ClassVar[int]
     INTERVAL_FIELD_NUMBER: _ClassVar[int]
@@ -31,7 +31,7 @@ class ControlStep(_message.Message):
         ...
 
 class Control(_message.Message):
-    __slots__ = ('step',)
+    __slots__ = ['step']
     STEP_FIELD_NUMBER: _ClassVar[int]
     step: ControlStep
 
@@ -39,7 +39,7 @@ class Control(_message.Message):
         ...
 
 class OutputSwitch(_message.Message):
-    __slots__ = ('common',)
+    __slots__ = ['common']
     COMMON_FIELD_NUMBER: _ClassVar[int]
     common: bool
 
@@ -47,7 +47,7 @@ class OutputSwitch(_message.Message):
         ...
 
 class Output(_message.Message):
-    __slots__ = ('target', 'switch')
+    __slots__ = ['target', 'switch']
     TARGET_FIELD_NUMBER: _ClassVar[int]
     SWITCH_FIELD_NUMBER: _ClassVar[int]
     target: _config_pb2.OutputTarget
@@ -57,7 +57,7 @@ class Output(_message.Message):
         ...
 
 class Config(_message.Message):
-    __slots__ = ('mongo', 'control', 'output')
+    __slots__ = ['mongo', 'control', 'output']
     MONGO_FIELD_NUMBER: _ClassVar[int]
     CONTROL_FIELD_NUMBER: _ClassVar[int]
     OUTPUT_FIELD_NUMBER: _ClassVar[int]

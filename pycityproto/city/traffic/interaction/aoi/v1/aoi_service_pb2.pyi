@@ -6,7 +6,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class GetAoiRequest(_message.Message):
-    __slots__ = ('aoi_ids',)
+    __slots__ = ['aoi_ids']
     AOI_IDS_FIELD_NUMBER: _ClassVar[int]
     aoi_ids: _containers.RepeatedScalarFieldContainer[int]
 
@@ -14,7 +14,7 @@ class GetAoiRequest(_message.Message):
         ...
 
 class GetAoiResponse(_message.Message):
-    __slots__ = ('states',)
+    __slots__ = ['states']
     STATES_FIELD_NUMBER: _ClassVar[int]
     states: _containers.RepeatedCompositeFieldContainer[_aoi_pb2.State]
 

@@ -21,16 +21,24 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+// Agent（人）的运行时状态
 type Status int32
 
 const (
+	// 未指定
 	Status_STATUS_UNSPECIFIED Status = 0
-	Status_STATUS_SLEEP       Status = 1 // 没有移动行为
-	Status_STATUS_DRIVING     Status = 2 // 开车
-	Status_STATUS_WALKING     Status = 3 // 步行
-	Status_STATUS_CROWD       Status = 4 // 室内行人
-	Status_STATUS_PASSENGER   Status = 5 // 乘客
-	Status_STATUS_WAIT_ROUTE  Status = 6 // 等待路径规划
+	// 没有移动行为
+	Status_STATUS_SLEEP Status = 1
+	// 开车
+	Status_STATUS_DRIVING Status = 2
+	// 步行
+	Status_STATUS_WALKING Status = 3
+	// 室内行人
+	Status_STATUS_CROWD Status = 4
+	// 乘客
+	Status_STATUS_PASSENGER Status = 5
+	// 等待路径规划
+	Status_STATUS_WAIT_ROUTE Status = 6
 )
 
 // Enum value maps for Status.
@@ -82,11 +90,13 @@ func (Status) EnumDescriptor() ([]byte, []int) {
 	return file_city_traffic_interaction_agent_v2_agent_proto_rawDescGZIP(), []int{0}
 }
 
+// Agent（人）的运行时状态
 type AgentRuntime struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
+	// ID
 	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
 	// 状态
 	Status Status `protobuf:"varint,2,opt,name=status,proto3,enum=city.traffic.interaction.agent.v2.Status" json:"status,omitempty"`

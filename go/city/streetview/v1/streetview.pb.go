@@ -21,6 +21,7 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+// 街景图片描述
 type StreetViewImage struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -78,12 +79,13 @@ func (x *StreetViewImage) GetObject() string {
 	return ""
 }
 
+// 街景图片元数据
 type StreetView struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// 位置信息
+	// WGS84经纬度位置
 	Lnglat *v2.LongLatPosition `protobuf:"bytes,1,opt,name=lnglat,proto3" json:"lnglat,omitempty"`
 	// 该位置的不同朝向街景图列表
 	Images []*StreetViewImage `protobuf:"bytes,2,rep,name=images,proto3" json:"images,omitempty"`

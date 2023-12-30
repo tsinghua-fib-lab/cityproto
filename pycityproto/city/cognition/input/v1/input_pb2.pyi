@@ -5,7 +5,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Edge(_message.Message):
-    __slots__ = ('source', 'target')
+    __slots__ = ['source', 'target']
     SOURCE_FIELD_NUMBER: _ClassVar[int]
     TARGET_FIELD_NUMBER: _ClassVar[int]
     source: int
@@ -15,7 +15,7 @@ class Edge(_message.Message):
         ...
 
 class Edges(_message.Message):
-    __slots__ = ('edges',)
+    __slots__ = ['edges']
     EDGES_FIELD_NUMBER: _ClassVar[int]
     edges: _containers.RepeatedCompositeFieldContainer[Edge]
 

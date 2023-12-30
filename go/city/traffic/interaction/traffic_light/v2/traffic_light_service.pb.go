@@ -21,6 +21,7 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+// 获取路口的红绿灯信息请求
 type GetTrafficLightRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -69,11 +70,13 @@ func (x *GetTrafficLightRequest) GetJunctionId() int32 {
 	return 0
 }
 
+// 获取路口的红绿灯信息响应
 type GetTrafficLightResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
+	// 当前路口处的红绿灯
 	TrafficLight *v2.TrafficLight `protobuf:"bytes,1,opt,name=traffic_light,json=trafficLight,proto3" json:"traffic_light,omitempty"`
 	// 表示当前路口处的红绿灯处于哪一个相位
 	PhaseIndex int32 `protobuf:"varint,2,opt,name=phase_index,json=phaseIndex,proto3" json:"phase_index,omitempty"`
@@ -134,11 +137,13 @@ func (x *GetTrafficLightResponse) GetTimeRemaining() float64 {
 	return 0
 }
 
+// 设置路口的红绿灯信息请求
 type SetTrafficLightRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
+	// 需要改变的红绿灯（含路口编号）
 	TrafficLight *v2.TrafficLight `protobuf:"bytes,1,opt,name=traffic_light,json=trafficLight,proto3" json:"traffic_light,omitempty"`
 	// 指定当前路口处的红绿灯的相位
 	PhaseIndex int32 `protobuf:"varint,2,opt,name=phase_index,json=phaseIndex,proto3" json:"phase_index,omitempty"`
@@ -199,6 +204,7 @@ func (x *SetTrafficLightRequest) GetTimeRemaining() float64 {
 	return 0
 }
 
+// 设置路口的红绿灯信息响应
 type SetTrafficLightResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -237,6 +243,7 @@ func (*SetTrafficLightResponse) Descriptor() ([]byte, []int) {
 	return file_city_traffic_interaction_traffic_light_v2_traffic_light_service_proto_rawDescGZIP(), []int{3}
 }
 
+// 设置路口的红绿灯相位请求
 type SetTrafficLightPhaseRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -303,6 +310,7 @@ func (x *SetTrafficLightPhaseRequest) GetTimeRemaining() float64 {
 	return 0
 }
 
+// 设置路口的红绿灯相位响应
 type SetTrafficLightPhaseResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -341,6 +349,7 @@ func (*SetTrafficLightPhaseResponse) Descriptor() ([]byte, []int) {
 	return file_city_traffic_interaction_traffic_light_v2_traffic_light_service_proto_rawDescGZIP(), []int{5}
 }
 
+// 设置路口的红绿灯状态请求
 type SetTrafficLightStatusRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -398,6 +407,7 @@ func (x *SetTrafficLightStatusRequest) GetOk() bool {
 	return false
 }
 
+// 设置路口的红绿灯状态响应
 type SetTrafficLightStatusResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

@@ -6,17 +6,21 @@ import "city/event/v1/event.proto";
 import "city/traffic/interaction/road/v1/road.proto";
 
 service RoadService {
+  // 查询道路信息
   rpc GetRoad(GetRoadRequest) returns (GetRoadResponse);
   rpc GetRuinInfo(GetRuinInfoRequest) returns (GetRuinInfoResponse);
   rpc GetEvents(GetEventsRequest) returns (GetEventsResponse);
 }
 
+// 查询道路信息请求
 message GetRoadRequest {
-  // 查询的道路ID列表，为空代表查询所有道路
+  // 指定查询的道路ID列表，为空代表查询所有道路
   repeated int32 road_ids = 1;
 }
 
+// 查询道路信息响应
 message GetRoadResponse {
+  // 道路信息列表
   repeated State states = 1;
 }
 

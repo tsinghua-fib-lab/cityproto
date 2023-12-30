@@ -6,7 +6,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class PickPointsRequest(_message.Message):
-    __slots__ = ('camp', 'points')
+    __slots__ = ['camp', 'points']
     CAMP_FIELD_NUMBER: _ClassVar[int]
     POINTS_FIELD_NUMBER: _ClassVar[int]
     camp: _wargame_pb2.Camp
@@ -16,13 +16,13 @@ class PickPointsRequest(_message.Message):
         ...
 
 class PickPointsResponse(_message.Message):
-    __slots__ = ()
+    __slots__ = []
 
     def __init__(self) -> None:
         ...
 
 class GetPickPointsRequest(_message.Message):
-    __slots__ = ('camp',)
+    __slots__ = ['camp']
     CAMP_FIELD_NUMBER: _ClassVar[int]
     camp: _wargame_pb2.Camp
 
@@ -30,7 +30,7 @@ class GetPickPointsRequest(_message.Message):
         ...
 
 class GetPickPointsResponse(_message.Message):
-    __slots__ = ('points',)
+    __slots__ = ['points']
     POINTS_FIELD_NUMBER: _ClassVar[int]
     points: _containers.RepeatedCompositeFieldContainer[_wargame_pb2.Point]
 
@@ -38,7 +38,7 @@ class GetPickPointsResponse(_message.Message):
         ...
 
 class SetScoreWeightRequest(_message.Message):
-    __slots__ = ('money', 'population_loss', 'elec_power', 'elec_distory_1', 'water_distory_1', 'bs_distory_1', 'traffic_distory_1', 'elec_distory_2', 'water_distory_2', 'bs_distory_2', 'traffic_distory_2', 'elec_distory_3', 'water_distory_3', 'bs_distory_3', 'traffic_distory_3', 'defense_success')
+    __slots__ = ['money', 'population_loss', 'elec_power', 'elec_distory_1', 'water_distory_1', 'bs_distory_1', 'traffic_distory_1', 'elec_distory_2', 'water_distory_2', 'bs_distory_2', 'traffic_distory_2', 'elec_distory_3', 'water_distory_3', 'bs_distory_3', 'traffic_distory_3', 'defense_success']
     MONEY_FIELD_NUMBER: _ClassVar[int]
     POPULATION_LOSS_FIELD_NUMBER: _ClassVar[int]
     ELEC_POWER_FIELD_NUMBER: _ClassVar[int]
@@ -76,13 +76,13 @@ class SetScoreWeightRequest(_message.Message):
         ...
 
 class SetScoreWeightResponse(_message.Message):
-    __slots__ = ()
+    __slots__ = []
 
     def __init__(self) -> None:
         ...
 
 class GiveDefenseOrderRequest(_message.Message):
-    __slots__ = ('weight_radius', 'weight_550', 'weight_220', 'weight_110', 'prob_threshold')
+    __slots__ = ['weight_radius', 'weight_550', 'weight_220', 'weight_110', 'prob_threshold']
     WEIGHT_RADIUS_FIELD_NUMBER: _ClassVar[int]
     WEIGHT_550_FIELD_NUMBER: _ClassVar[int]
     WEIGHT_220_FIELD_NUMBER: _ClassVar[int]
@@ -98,19 +98,19 @@ class GiveDefenseOrderRequest(_message.Message):
         ...
 
 class GiveDefenseOrderResponse(_message.Message):
-    __slots__ = ()
+    __slots__ = []
 
     def __init__(self) -> None:
         ...
 
 class GetHitHistoryRequest(_message.Message):
-    __slots__ = ()
+    __slots__ = []
 
     def __init__(self) -> None:
         ...
 
 class GetHitHistoryResponse(_message.Message):
-    __slots__ = ('histories',)
+    __slots__ = ['histories']
     HISTORIES_FIELD_NUMBER: _ClassVar[int]
     histories: _containers.RepeatedCompositeFieldContainer[_wargame_pb2.HitHistory]
 
@@ -118,7 +118,7 @@ class GetHitHistoryResponse(_message.Message):
         ...
 
 class GetRecoPointsRequest(_message.Message):
-    __slots__ = ('camp', 'type')
+    __slots__ = ['camp', 'type']
     CAMP_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
     camp: _wargame_pb2.Camp
@@ -128,7 +128,7 @@ class GetRecoPointsRequest(_message.Message):
         ...
 
 class GetRecoPointsResponse(_message.Message):
-    __slots__ = ('points',)
+    __slots__ = ['points']
     POINTS_FIELD_NUMBER: _ClassVar[int]
     points: _containers.RepeatedCompositeFieldContainer[_wargame_pb2.RecoPoint]
 
@@ -136,13 +136,13 @@ class GetRecoPointsResponse(_message.Message):
         ...
 
 class GetStepRequest(_message.Message):
-    __slots__ = ()
+    __slots__ = []
 
     def __init__(self) -> None:
         ...
 
 class GetStepResponse(_message.Message):
-    __slots__ = ('step', 'red_pick_ready', 'blue_pick_ready', 'round', 'is_game_started')
+    __slots__ = ['step', 'red_pick_ready', 'blue_pick_ready', 'round', 'is_game_started']
     STEP_FIELD_NUMBER: _ClassVar[int]
     RED_PICK_READY_FIELD_NUMBER: _ClassVar[int]
     BLUE_PICK_READY_FIELD_NUMBER: _ClassVar[int]
@@ -158,13 +158,13 @@ class GetStepResponse(_message.Message):
         ...
 
 class GetCasualtiesRequest(_message.Message):
-    __slots__ = ()
+    __slots__ = []
 
     def __init__(self) -> None:
         ...
 
 class GetCasualtiesResponse(_message.Message):
-    __slots__ = ('casualties',)
+    __slots__ = ['casualties']
     CASUALTIES_FIELD_NUMBER: _ClassVar[int]
     casualties: _containers.RepeatedCompositeFieldContainer[_wargame_pb2.Casualty]
 

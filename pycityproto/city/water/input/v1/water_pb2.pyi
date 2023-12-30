@@ -5,7 +5,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class RainPeriod(_message.Message):
-    __slots__ = ('start', 'rainfall')
+    __slots__ = ['start', 'rainfall']
     START_FIELD_NUMBER: _ClassVar[int]
     RAINFALL_FIELD_NUMBER: _ClassVar[int]
     start: int
@@ -15,7 +15,7 @@ class RainPeriod(_message.Message):
         ...
 
 class Rain(_message.Message):
-    __slots__ = ('rains',)
+    __slots__ = ['rains']
     RAINS_FIELD_NUMBER: _ClassVar[int]
     rains: _containers.RepeatedCompositeFieldContainer[RainPeriod]
 

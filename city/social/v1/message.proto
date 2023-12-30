@@ -2,6 +2,7 @@ syntax = "proto3";
 
 package city.social.v1;
 
+// 消息
 message Message {
   // 消息发送者ID
   int32 from = 1;

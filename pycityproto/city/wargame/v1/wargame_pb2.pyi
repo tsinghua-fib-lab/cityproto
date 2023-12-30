@@ -7,7 +7,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class RedWeaponType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-    __slots__ = ()
+    __slots__ = []
     RED_WEAPON_TYPE_UNSPECIFIED: _ClassVar[RedWeaponType]
     RED_WEAPON_TYPE_AGM_158: _ClassVar[RedWeaponType]
     RED_WEAPON_TYPE_AGM_183: _ClassVar[RedWeaponType]
@@ -16,7 +16,7 @@ class RedWeaponType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     RED_WEAPON_TYPE_AGM_142: _ClassVar[RedWeaponType]
 
 class BlueWeaponType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-    __slots__ = ()
+    __slots__ = []
     BLUE_WEAPON_TYPE_UNSPECIFIED: _ClassVar[BlueWeaponType]
     BLUE_WEAPON_TYPE_HQ_9: _ClassVar[BlueWeaponType]
     BLUE_WEAPON_TYPE_HQ_12: _ClassVar[BlueWeaponType]
@@ -24,19 +24,19 @@ class BlueWeaponType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     BLUE_WEAPON_TYPE_HQ_22: _ClassVar[BlueWeaponType]
 
 class Camp(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-    __slots__ = ()
+    __slots__ = []
     CAMP_UNSPECIFIED: _ClassVar[Camp]
     CAMP_RED: _ClassVar[Camp]
     CAMP_BLUE: _ClassVar[Camp]
 
 class RecoType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-    __slots__ = ()
+    __slots__ = []
     RECO_TYPE_UNSPECIFIED: _ClassVar[RecoType]
     RECO_TYPE_MISSILE: _ClassVar[RecoType]
     RECO_TYPE_ELEC: _ClassVar[RecoType]
 
 class RecoAlgoType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-    __slots__ = ()
+    __slots__ = []
     RECO_ALGO_TYPE_UNSPECIFIED: _ClassVar[RecoAlgoType]
     RECO_ALGO_TYPE_MAX_DESTORY: _ClassVar[RecoAlgoType]
     RECO_ALGO_TYPE_RANDOM: _ClassVar[RecoAlgoType]
@@ -64,7 +64,7 @@ RECO_ALGO_TYPE_RANDOM: RecoAlgoType
 RECO_ALGO_TYPE_MIN_DESTORY: RecoAlgoType
 
 class RecoPoint(_message.Message):
-    __slots__ = ('pos', 'type')
+    __slots__ = ['pos', 'type']
     POS_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
     pos: _geo_pb2.LongLatPosition
@@ -74,7 +74,7 @@ class RecoPoint(_message.Message):
         ...
 
 class Weapon(_message.Message):
-    __slots__ = ('red_type', 'blue_type', 'num')
+    __slots__ = ['red_type', 'blue_type', 'num']
     RED_TYPE_FIELD_NUMBER: _ClassVar[int]
     BLUE_TYPE_FIELD_NUMBER: _ClassVar[int]
     NUM_FIELD_NUMBER: _ClassVar[int]
@@ -86,7 +86,7 @@ class Weapon(_message.Message):
         ...
 
 class Point(_message.Message):
-    __slots__ = ('weapon', 'pos', 'radius')
+    __slots__ = ['weapon', 'pos', 'radius']
     WEAPON_FIELD_NUMBER: _ClassVar[int]
     POS_FIELD_NUMBER: _ClassVar[int]
     RADIUS_FIELD_NUMBER: _ClassVar[int]
@@ -98,7 +98,7 @@ class Point(_message.Message):
         ...
 
 class Hit(_message.Message):
-    __slots__ = ('attack', 'defenses', 'result', 'arrive')
+    __slots__ = ['attack', 'defenses', 'result', 'arrive']
     ATTACK_FIELD_NUMBER: _ClassVar[int]
     DEFENSES_FIELD_NUMBER: _ClassVar[int]
     RESULT_FIELD_NUMBER: _ClassVar[int]
@@ -112,7 +112,7 @@ class Hit(_message.Message):
         ...
 
 class HitHistory(_message.Message):
-    __slots__ = ('hits',)
+    __slots__ = ['hits']
     HITS_FIELD_NUMBER: _ClassVar[int]
     hits: _containers.RepeatedCompositeFieldContainer[Hit]
 
@@ -120,7 +120,7 @@ class HitHistory(_message.Message):
         ...
 
 class Casualty(_message.Message):
-    __slots__ = ('aoi_id', 'num')
+    __slots__ = ['aoi_id', 'num']
     AOI_ID_FIELD_NUMBER: _ClassVar[int]
     NUM_FIELD_NUMBER: _ClassVar[int]
     aoi_id: int

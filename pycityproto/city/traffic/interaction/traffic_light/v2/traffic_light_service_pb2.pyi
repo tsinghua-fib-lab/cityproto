@@ -5,7 +5,7 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class GetTrafficLightRequest(_message.Message):
-    __slots__ = ('junction_id',)
+    __slots__ = ['junction_id']
     JUNCTION_ID_FIELD_NUMBER: _ClassVar[int]
     junction_id: int
 
@@ -13,7 +13,7 @@ class GetTrafficLightRequest(_message.Message):
         ...
 
 class GetTrafficLightResponse(_message.Message):
-    __slots__ = ('traffic_light', 'phase_index', 'time_remaining')
+    __slots__ = ['traffic_light', 'phase_index', 'time_remaining']
     TRAFFIC_LIGHT_FIELD_NUMBER: _ClassVar[int]
     PHASE_INDEX_FIELD_NUMBER: _ClassVar[int]
     TIME_REMAINING_FIELD_NUMBER: _ClassVar[int]
@@ -25,7 +25,7 @@ class GetTrafficLightResponse(_message.Message):
         ...
 
 class SetTrafficLightRequest(_message.Message):
-    __slots__ = ('traffic_light', 'phase_index', 'time_remaining')
+    __slots__ = ['traffic_light', 'phase_index', 'time_remaining']
     TRAFFIC_LIGHT_FIELD_NUMBER: _ClassVar[int]
     PHASE_INDEX_FIELD_NUMBER: _ClassVar[int]
     TIME_REMAINING_FIELD_NUMBER: _ClassVar[int]
@@ -37,13 +37,13 @@ class SetTrafficLightRequest(_message.Message):
         ...
 
 class SetTrafficLightResponse(_message.Message):
-    __slots__ = ()
+    __slots__ = []
 
     def __init__(self) -> None:
         ...
 
 class SetTrafficLightPhaseRequest(_message.Message):
-    __slots__ = ('junction_id', 'phase_index', 'time_remaining')
+    __slots__ = ['junction_id', 'phase_index', 'time_remaining']
     JUNCTION_ID_FIELD_NUMBER: _ClassVar[int]
     PHASE_INDEX_FIELD_NUMBER: _ClassVar[int]
     TIME_REMAINING_FIELD_NUMBER: _ClassVar[int]
@@ -55,13 +55,13 @@ class SetTrafficLightPhaseRequest(_message.Message):
         ...
 
 class SetTrafficLightPhaseResponse(_message.Message):
-    __slots__ = ()
+    __slots__ = []
 
     def __init__(self) -> None:
         ...
 
 class SetTrafficLightStatusRequest(_message.Message):
-    __slots__ = ('junction_id', 'ok')
+    __slots__ = ['junction_id', 'ok']
     JUNCTION_ID_FIELD_NUMBER: _ClassVar[int]
     OK_FIELD_NUMBER: _ClassVar[int]
     junction_id: int
@@ -71,7 +71,7 @@ class SetTrafficLightStatusRequest(_message.Message):
         ...
 
 class SetTrafficLightStatusResponse(_message.Message):
-    __slots__ = ()
+    __slots__ = []
 
     def __init__(self) -> None:
         ...

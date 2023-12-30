@@ -21,16 +21,24 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+// 道路拥堵情况
 type RoadLevel int32
 
 const (
+	// 未指定
 	RoadLevel_ROAD_LEVEL_UNSPECIFIED RoadLevel = 0
-	RoadLevel_ROAD_LEVEL_CLEAR       RoadLevel = 1
-	RoadLevel_ROAD_LEVEL_LIGHT_LOAD  RoadLevel = 2
+	// 畅通
+	RoadLevel_ROAD_LEVEL_CLEAR RoadLevel = 1
+	// 轻度拥堵
+	RoadLevel_ROAD_LEVEL_LIGHT_LOAD RoadLevel = 2
+	// 中度拥堵
 	RoadLevel_ROAD_LEVEL_MEDIUM_LOAD RoadLevel = 3
-	RoadLevel_ROAD_LEVEL_HEAVY_LOAD  RoadLevel = 4
-	RoadLevel_ROAD_LEVEL_OVERLOAD    RoadLevel = 5
-	RoadLevel_ROAD_LEVEL_RESTRICTED  RoadLevel = 6
+	// 重度拥堵
+	RoadLevel_ROAD_LEVEL_HEAVY_LOAD RoadLevel = 4
+	// 极端拥堵
+	RoadLevel_ROAD_LEVEL_OVERLOAD RoadLevel = 5
+	// 限行
+	RoadLevel_ROAD_LEVEL_RESTRICTED RoadLevel = 6
 )
 
 // Enum value maps for RoadLevel.
@@ -134,6 +142,7 @@ func (InterruptionReason) EnumDescriptor() ([]byte, []int) {
 	return file_city_traffic_interaction_road_v1_road_proto_rawDescGZIP(), []int{1}
 }
 
+// 道路状态
 type State struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

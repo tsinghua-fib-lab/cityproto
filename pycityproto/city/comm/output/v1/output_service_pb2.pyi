@@ -7,7 +7,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class OutputRequest(_message.Message):
-    __slots__ = ('step', 'nodes', 'base_stations', 'signal_heatmap', 'small_signal_heatmap', 'persons', 'aois', 'events', 'statistics')
+    __slots__ = ['step', 'nodes', 'base_stations', 'signal_heatmap', 'small_signal_heatmap', 'persons', 'aois', 'events', 'statistics']
     STEP_FIELD_NUMBER: _ClassVar[int]
     NODES_FIELD_NUMBER: _ClassVar[int]
     BASE_STATIONS_FIELD_NUMBER: _ClassVar[int]
@@ -31,7 +31,7 @@ class OutputRequest(_message.Message):
         ...
 
 class OutputResponse(_message.Message):
-    __slots__ = ()
+    __slots__ = []
 
     def __init__(self) -> None:
         ...

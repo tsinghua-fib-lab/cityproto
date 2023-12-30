@@ -51,6 +51,7 @@ var (
 
 // RoadServiceClient is a client for the city.traffic.interaction.road.v1.RoadService service.
 type RoadServiceClient interface {
+	// 查询道路信息
 	GetRoad(context.Context, *connect.Request[v1.GetRoadRequest]) (*connect.Response[v1.GetRoadResponse], error)
 	GetRuinInfo(context.Context, *connect.Request[v1.GetRuinInfoRequest]) (*connect.Response[v1.GetRuinInfoResponse], error)
 	GetEvents(context.Context, *connect.Request[v1.GetEventsRequest]) (*connect.Response[v1.GetEventsResponse], error)
@@ -112,6 +113,7 @@ func (c *roadServiceClient) GetEvents(ctx context.Context, req *connect.Request[
 // RoadServiceHandler is an implementation of the city.traffic.interaction.road.v1.RoadService
 // service.
 type RoadServiceHandler interface {
+	// 查询道路信息
 	GetRoad(context.Context, *connect.Request[v1.GetRoadRequest]) (*connect.Response[v1.GetRoadResponse], error)
 	GetRuinInfo(context.Context, *connect.Request[v1.GetRuinInfoRequest]) (*connect.Response[v1.GetRuinInfoResponse], error)
 	GetEvents(context.Context, *connect.Request[v1.GetEventsRequest]) (*connect.Response[v1.GetEventsResponse], error)

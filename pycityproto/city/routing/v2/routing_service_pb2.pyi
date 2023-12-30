@@ -8,7 +8,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class GetRouteRequest(_message.Message):
-    __slots__ = ('type', 'start', 'end', 'agent_id', 'time')
+    __slots__ = ['type', 'start', 'end', 'agent_id', 'time']
     TYPE_FIELD_NUMBER: _ClassVar[int]
     START_FIELD_NUMBER: _ClassVar[int]
     END_FIELD_NUMBER: _ClassVar[int]
@@ -24,7 +24,7 @@ class GetRouteRequest(_message.Message):
         ...
 
 class GetRouteResponse(_message.Message):
-    __slots__ = ('journeys',)
+    __slots__ = ['journeys']
     JOURNEYS_FIELD_NUMBER: _ClassVar[int]
     journeys: _containers.RepeatedCompositeFieldContainer[_routing_pb2.Journey]
 
@@ -32,7 +32,7 @@ class GetRouteResponse(_message.Message):
         ...
 
 class SetDrivingCostsRequest(_message.Message):
-    __slots__ = ('costs',)
+    __slots__ = ['costs']
     COSTS_FIELD_NUMBER: _ClassVar[int]
     costs: _containers.RepeatedCompositeFieldContainer[_cost_pb2.Cost]
 
@@ -40,13 +40,13 @@ class SetDrivingCostsRequest(_message.Message):
         ...
 
 class SetDrivingCostsResponse(_message.Message):
-    __slots__ = ()
+    __slots__ = []
 
     def __init__(self) -> None:
         ...
 
 class GetDrivingCostsRequest(_message.Message):
-    __slots__ = ('costs',)
+    __slots__ = ['costs']
     COSTS_FIELD_NUMBER: _ClassVar[int]
     costs: _containers.RepeatedCompositeFieldContainer[_cost_pb2.Cost]
 
@@ -54,7 +54,7 @@ class GetDrivingCostsRequest(_message.Message):
         ...
 
 class GetDrivingCostsResponse(_message.Message):
-    __slots__ = ('costs',)
+    __slots__ = ['costs']
     COSTS_FIELD_NUMBER: _ClassVar[int]
     costs: _containers.RepeatedCompositeFieldContainer[_cost_pb2.Cost]
 

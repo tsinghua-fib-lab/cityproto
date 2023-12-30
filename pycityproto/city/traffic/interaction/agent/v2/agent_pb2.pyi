@@ -6,7 +6,7 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-    __slots__ = ()
+    __slots__ = []
     STATUS_UNSPECIFIED: _ClassVar[Status]
     STATUS_SLEEP: _ClassVar[Status]
     STATUS_DRIVING: _ClassVar[Status]
@@ -23,7 +23,7 @@ STATUS_PASSENGER: Status
 STATUS_WAIT_ROUTE: Status
 
 class AgentRuntime(_message.Message):
-    __slots__ = ('id', 'status', 'position', 'v', 'direction', 'activity')
+    __slots__ = ['id', 'status', 'position', 'v', 'direction', 'activity']
     ID_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
     POSITION_FIELD_NUMBER: _ClassVar[int]

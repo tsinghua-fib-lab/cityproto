@@ -6,7 +6,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class SetMaxVRequest(_message.Message):
-    __slots__ = ('lane_id', 'max_v')
+    __slots__ = ['lane_id', 'max_v']
     LANE_ID_FIELD_NUMBER: _ClassVar[int]
     MAX_V_FIELD_NUMBER: _ClassVar[int]
     lane_id: int
@@ -16,13 +16,13 @@ class SetMaxVRequest(_message.Message):
         ...
 
 class SetMaxVResponse(_message.Message):
-    __slots__ = ()
+    __slots__ = []
 
     def __init__(self) -> None:
         ...
 
 class GetLaneRequest(_message.Message):
-    __slots__ = ('lane_ids',)
+    __slots__ = ['lane_ids']
     LANE_IDS_FIELD_NUMBER: _ClassVar[int]
     lane_ids: _containers.RepeatedScalarFieldContainer[int]
 
@@ -30,7 +30,7 @@ class GetLaneRequest(_message.Message):
         ...
 
 class GetLaneResponse(_message.Message):
-    __slots__ = ('states',)
+    __slots__ = ['states']
     STATES_FIELD_NUMBER: _ClassVar[int]
     states: _containers.RepeatedCompositeFieldContainer[_lane_pb2.State]
 

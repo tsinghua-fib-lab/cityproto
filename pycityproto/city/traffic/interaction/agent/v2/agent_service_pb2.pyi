@@ -9,7 +9,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class GetAgentRequest(_message.Message):
-    __slots__ = ('agent_id',)
+    __slots__ = ['agent_id']
     AGENT_ID_FIELD_NUMBER: _ClassVar[int]
     agent_id: int
 
@@ -17,7 +17,7 @@ class GetAgentRequest(_message.Message):
         ...
 
 class GetAgentResponse(_message.Message):
-    __slots__ = ('base', 'runtime')
+    __slots__ = ['base', 'runtime']
     BASE_FIELD_NUMBER: _ClassVar[int]
     RUNTIME_FIELD_NUMBER: _ClassVar[int]
     base: _agent_pb2.Agent
@@ -27,7 +27,7 @@ class GetAgentResponse(_message.Message):
         ...
 
 class AddAgentRequest(_message.Message):
-    __slots__ = ('agent',)
+    __slots__ = ['agent']
     AGENT_FIELD_NUMBER: _ClassVar[int]
     agent: _agent_pb2.Agent
 
@@ -35,7 +35,7 @@ class AddAgentRequest(_message.Message):
         ...
 
 class AddAgentResponse(_message.Message):
-    __slots__ = ('agent_id',)
+    __slots__ = ['agent_id']
     AGENT_ID_FIELD_NUMBER: _ClassVar[int]
     agent_id: int
 
@@ -43,7 +43,7 @@ class AddAgentResponse(_message.Message):
         ...
 
 class SetScheduleRequest(_message.Message):
-    __slots__ = ('agent_id', 'schedules')
+    __slots__ = ['agent_id', 'schedules']
     AGENT_ID_FIELD_NUMBER: _ClassVar[int]
     SCHEDULES_FIELD_NUMBER: _ClassVar[int]
     agent_id: int
@@ -53,13 +53,13 @@ class SetScheduleRequest(_message.Message):
         ...
 
 class SetScheduleResponse(_message.Message):
-    __slots__ = ()
+    __slots__ = []
 
     def __init__(self) -> None:
         ...
 
 class GetAgentsByLongLatAreaRequest(_message.Message):
-    __slots__ = ('area',)
+    __slots__ = ['area']
     AREA_FIELD_NUMBER: _ClassVar[int]
     area: _geo_pb2.LongLatRectArea
 
@@ -67,7 +67,7 @@ class GetAgentsByLongLatAreaRequest(_message.Message):
         ...
 
 class GetAgentsByLongLatAreaResponse(_message.Message):
-    __slots__ = ('step', 'agents')
+    __slots__ = ['step', 'agents']
     STEP_FIELD_NUMBER: _ClassVar[int]
     AGENTS_FIELD_NUMBER: _ClassVar[int]
     step: int

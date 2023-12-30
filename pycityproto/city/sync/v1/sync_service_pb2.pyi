@@ -4,13 +4,13 @@ from typing import ClassVar as _ClassVar, Optional as _Optional
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class GetEtcdRequest(_message.Message):
-    __slots__ = ()
+    __slots__ = []
 
     def __init__(self) -> None:
         ...
 
 class GetEtcdResponse(_message.Message):
-    __slots__ = ('port',)
+    __slots__ = ['port']
     PORT_FIELD_NUMBER: _ClassVar[int]
     port: int
 
@@ -18,7 +18,7 @@ class GetEtcdResponse(_message.Message):
         ...
 
 class StepRequest(_message.Message):
-    __slots__ = ('name', 'step')
+    __slots__ = ['name', 'step']
     NAME_FIELD_NUMBER: _ClassVar[int]
     STEP_FIELD_NUMBER: _ClassVar[int]
     name: str
@@ -28,7 +28,7 @@ class StepRequest(_message.Message):
         ...
 
 class StepResponse(_message.Message):
-    __slots__ = ('close',)
+    __slots__ = ['close']
     CLOSE_FIELD_NUMBER: _ClassVar[int]
     close: bool
 

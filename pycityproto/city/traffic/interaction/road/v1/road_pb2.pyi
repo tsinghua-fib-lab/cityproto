@@ -7,7 +7,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class RoadLevel(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-    __slots__ = ()
+    __slots__ = []
     ROAD_LEVEL_UNSPECIFIED: _ClassVar[RoadLevel]
     ROAD_LEVEL_CLEAR: _ClassVar[RoadLevel]
     ROAD_LEVEL_LIGHT_LOAD: _ClassVar[RoadLevel]
@@ -17,7 +17,7 @@ class RoadLevel(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     ROAD_LEVEL_RESTRICTED: _ClassVar[RoadLevel]
 
 class InterruptionReason(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-    __slots__ = ()
+    __slots__ = []
     INTERRUPTION_REASON_UNSPECIFIED: _ClassVar[InterruptionReason]
     INTERRUPTION_REASON_RUINED: _ClassVar[InterruptionReason]
     INTERRUPTION_REASON_CASCADE: _ClassVar[InterruptionReason]
@@ -35,7 +35,7 @@ INTERRUPTION_REASON_CASCADE: InterruptionReason
 INTERRUPTION_REASON_CONGESTION: InterruptionReason
 
 class State(_message.Message):
-    __slots__ = ('id', 'avg_v', 'level', 'reason', 'lanes')
+    __slots__ = ['id', 'avg_v', 'level', 'reason', 'lanes']
     ID_FIELD_NUMBER: _ClassVar[int]
     AVG_V_FIELD_NUMBER: _ClassVar[int]
     LEVEL_FIELD_NUMBER: _ClassVar[int]

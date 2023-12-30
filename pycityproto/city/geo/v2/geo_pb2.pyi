@@ -4,7 +4,7 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class LongLatPosition(_message.Message):
-    __slots__ = ('longitude', 'latitude')
+    __slots__ = ['longitude', 'latitude']
     LONGITUDE_FIELD_NUMBER: _ClassVar[int]
     LATITUDE_FIELD_NUMBER: _ClassVar[int]
     longitude: float
@@ -14,7 +14,7 @@ class LongLatPosition(_message.Message):
         ...
 
 class XYPosition(_message.Message):
-    __slots__ = ('x', 'y')
+    __slots__ = ['x', 'y']
     X_FIELD_NUMBER: _ClassVar[int]
     Y_FIELD_NUMBER: _ClassVar[int]
     x: float
@@ -24,7 +24,7 @@ class XYPosition(_message.Message):
         ...
 
 class LanePosition(_message.Message):
-    __slots__ = ('lane_id', 's')
+    __slots__ = ['lane_id', 's']
     LANE_ID_FIELD_NUMBER: _ClassVar[int]
     S_FIELD_NUMBER: _ClassVar[int]
     lane_id: int
@@ -34,7 +34,7 @@ class LanePosition(_message.Message):
         ...
 
 class AoiPosition(_message.Message):
-    __slots__ = ('aoi_id', 'poi_id')
+    __slots__ = ['aoi_id', 'poi_id']
     AOI_ID_FIELD_NUMBER: _ClassVar[int]
     POI_ID_FIELD_NUMBER: _ClassVar[int]
     aoi_id: int
@@ -44,7 +44,7 @@ class AoiPosition(_message.Message):
         ...
 
 class Position(_message.Message):
-    __slots__ = ('lane_position', 'aoi_position', 'longlat_position', 'xy_position')
+    __slots__ = ['lane_position', 'aoi_position', 'longlat_position', 'xy_position']
     LANE_POSITION_FIELD_NUMBER: _ClassVar[int]
     AOI_POSITION_FIELD_NUMBER: _ClassVar[int]
     LONGLAT_POSITION_FIELD_NUMBER: _ClassVar[int]
@@ -58,7 +58,7 @@ class Position(_message.Message):
         ...
 
 class LongLatRectArea(_message.Message):
-    __slots__ = ('ne', 'sw')
+    __slots__ = ['ne', 'sw']
     NE_FIELD_NUMBER: _ClassVar[int]
     SW_FIELD_NUMBER: _ClassVar[int]
     ne: LongLatPosition

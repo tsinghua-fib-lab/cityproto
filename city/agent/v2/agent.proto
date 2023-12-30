@@ -9,17 +9,23 @@ import "city/trip/v2/trip.proto";
 // 注意：本文件不用于描述智能体模拟过程中的数据结构
 
 enum AgentType {
+  // 未指定
   AGENT_TYPE_UNSPECIFIED = 0;
+  // 人
   AGENT_TYPE_PERSON = 1;
+  // 私家车
   AGENT_TYPE_PRIVATE_CAR = 2;
+  // 公交车
   AGENT_TYPE_BUS = 3;
-  AGENT_TYPE_TAXI = 4;
 }
 
 // 智能体属性（通用）
 message AgentAttribute {
-  AgentType type = 1; // 弃用
+  // 智能体类型
+  AgentType type = 1;
+  // 单位: m，长度
   double length = 2;
+  // 单位: m，宽度
   double width = 3;
   // 单位: m/s
   double max_speed = 4;
@@ -45,6 +51,7 @@ message VehicleAttribute {
 message BusAttribute {
   // 公交线路ID
   int32 line_id = 1;
+  // 公交车容量
   int32 capacity = 2;
 }
 
@@ -53,6 +60,7 @@ message BikeAttribute {}
 
 // 智能体
 message Agent {
+  // 智能体ID
   int32 id = 1;
   // 参数
   AgentAttribute attribute = 2;

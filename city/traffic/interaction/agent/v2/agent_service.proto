@@ -14,40 +14,57 @@ service AgentService {
   rpc AddAgent(AddAgentRequest) returns (AddAgentResponse);
   // 修改agent的schedule 传入agentid、目的地表
   rpc SetSchedule(SetScheduleRequest) returns (SetScheduleResponse);
-  // 获取特定区域内的车辆xinxi
+  // 获取特定区域内的agent
   rpc GetAgentsByLongLatArea(GetAgentsByLongLatAreaRequest) returns (GetAgentsByLongLatAreaResponse);
 }
 
+// 获取agent信息请求
 message GetAgentRequest {
+  // agent id
   int32 agent_id = 1;
 }
 
+// 获取agent信息响应
 message GetAgentResponse {
+  // agent静态信息
   city.agent.v2.Agent base = 1;
+  // agent运行时信息
   AgentRuntime runtime = 2;
 }
 
+// 新增agent请求
 message AddAgentRequest {
   // 约定：agent中不设置id
   city.agent.v2.Agent agent = 1;
 }
 
+// 新增agent响应
 message AddAgentResponse {
+  // 新增的agent分配得到的ID
   int32 agent_id = 1;
 }
 
+// 修改agent的schedule请求
 message SetScheduleRequest {
+  // agent id
   int32 agent_id = 1;
+  // 新的schedule（覆盖原有的schedule）
   repeated city.trip.v2.Schedule schedules = 2;
 }
 
+// 修改agent的schedule响应
 message SetScheduleResponse {}
 
+// 获取特定区域内的agent请求
 message GetAgentsByLongLatAreaRequest {
+  // 经纬度范围
   city.geo.v2.LongLatRectArea area = 1;
 }
 
+// 获取特定区域内的agent响应
 message GetAgentsByLongLatAreaResponse {
+  // 当前模拟步数
   int32 step = 1;
+  // 区域内的agent的运行时信息
   repeated AgentRuntime agents = 2;
 }

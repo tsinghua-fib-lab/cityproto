@@ -6,7 +6,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class State(_message.Message):
-    __slots__ = ('id', 'persons', 'avg_v', 'restriction')
+    __slots__ = ['id', 'persons', 'avg_v', 'restriction']
     ID_FIELD_NUMBER: _ClassVar[int]
     PERSONS_FIELD_NUMBER: _ClassVar[int]
     AVG_V_FIELD_NUMBER: _ClassVar[int]

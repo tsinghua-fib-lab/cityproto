@@ -2,13 +2,15 @@ syntax = "proto3";
 
 package city.config.v1;
 
+// MongoDB配置
 message MongoPath {
+  // 数据库名
   string db = 1;
+  // 集合名
   string col = 2;
 }
 
-// 输出的目标（数据库、对象存储、...）
-// 目前只使用PostgreSQL
+// 输出目标PostgreSQL
 message OutputTarget {
   string sql = 1;
 }

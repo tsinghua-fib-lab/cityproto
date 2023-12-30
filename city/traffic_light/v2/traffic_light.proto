@@ -4,20 +4,29 @@ package city.traffic_light.v2;
 
 // 本文件描述交通灯
 
+// 交通灯的状态
 enum LightState {
+  // 未指定
   LIGHT_STATE_UNSPECIFIED = 0;
+  // 红灯
   LIGHT_STATE_RED = 1;
+  // 绿灯
   LIGHT_STATE_GREEN = 2;
+  // 黄灯
   LIGHT_STATE_YELLOW = 3;
 }
 
+// 交通灯相位
 message Phase {
+  // 相位持续时间，单位秒
   double duration = 1;
   // 描述该相位下每个lane的灯控情况，lane与Junction.lane_ids一一对应
   repeated LightState states = 2;
 }
 
+// 交通灯
 message TrafficLight {
+  // 所在路口id
   int32 junction_id = 1;
   // 相位循环的一个循环周期
   repeated Phase phases = 2;

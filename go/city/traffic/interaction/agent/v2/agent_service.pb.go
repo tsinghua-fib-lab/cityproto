@@ -23,11 +23,13 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+// 获取agent信息请求
 type GetAgentRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
+	// agent id
 	AgentId int32 `protobuf:"varint,1,opt,name=agent_id,json=agentId,proto3" json:"agent_id,omitempty"`
 }
 
@@ -70,12 +72,15 @@ func (x *GetAgentRequest) GetAgentId() int32 {
 	return 0
 }
 
+// 获取agent信息响应
 type GetAgentResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Base    *v2.Agent     `protobuf:"bytes,1,opt,name=base,proto3" json:"base,omitempty"`
+	// agent静态信息
+	Base *v2.Agent `protobuf:"bytes,1,opt,name=base,proto3" json:"base,omitempty"`
+	// agent运行时信息
 	Runtime *AgentRuntime `protobuf:"bytes,2,opt,name=runtime,proto3" json:"runtime,omitempty"`
 }
 
@@ -125,6 +130,7 @@ func (x *GetAgentResponse) GetRuntime() *AgentRuntime {
 	return nil
 }
 
+// 新增agent请求
 type AddAgentRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -173,11 +179,13 @@ func (x *AddAgentRequest) GetAgent() *v2.Agent {
 	return nil
 }
 
+// 新增agent响应
 type AddAgentResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
+	// 新增的agent分配得到的ID
 	AgentId int32 `protobuf:"varint,1,opt,name=agent_id,json=agentId,proto3" json:"agent_id,omitempty"`
 }
 
@@ -220,12 +228,15 @@ func (x *AddAgentResponse) GetAgentId() int32 {
 	return 0
 }
 
+// 修改agent的schedule请求
 type SetScheduleRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	AgentId   int32           `protobuf:"varint,1,opt,name=agent_id,json=agentId,proto3" json:"agent_id,omitempty"`
+	// agent id
+	AgentId int32 `protobuf:"varint,1,opt,name=agent_id,json=agentId,proto3" json:"agent_id,omitempty"`
+	// 新的schedule（覆盖原有的schedule）
 	Schedules []*v21.Schedule `protobuf:"bytes,2,rep,name=schedules,proto3" json:"schedules,omitempty"`
 }
 
@@ -275,6 +286,7 @@ func (x *SetScheduleRequest) GetSchedules() []*v21.Schedule {
 	return nil
 }
 
+// 修改agent的schedule响应
 type SetScheduleResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -313,11 +325,13 @@ func (*SetScheduleResponse) Descriptor() ([]byte, []int) {
 	return file_city_traffic_interaction_agent_v2_agent_service_proto_rawDescGZIP(), []int{5}
 }
 
+// 获取特定区域内的agent请求
 type GetAgentsByLongLatAreaRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
+	// 经纬度范围
 	Area *v22.LongLatRectArea `protobuf:"bytes,1,opt,name=area,proto3" json:"area,omitempty"`
 }
 
@@ -360,12 +374,15 @@ func (x *GetAgentsByLongLatAreaRequest) GetArea() *v22.LongLatRectArea {
 	return nil
 }
 
+// 获取特定区域内的agent响应
 type GetAgentsByLongLatAreaResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Step   int32           `protobuf:"varint,1,opt,name=step,proto3" json:"step,omitempty"`
+	// 当前模拟步数
+	Step int32 `protobuf:"varint,1,opt,name=step,proto3" json:"step,omitempty"`
+	// 区域内的agent的运行时信息
 	Agents []*AgentRuntime `protobuf:"bytes,2,rep,name=agents,proto3" json:"agents,omitempty"`
 }
 

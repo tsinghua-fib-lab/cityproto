@@ -8,20 +8,18 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class AgentType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-    __slots__ = ()
+    __slots__ = []
     AGENT_TYPE_UNSPECIFIED: _ClassVar[AgentType]
     AGENT_TYPE_PERSON: _ClassVar[AgentType]
     AGENT_TYPE_PRIVATE_CAR: _ClassVar[AgentType]
     AGENT_TYPE_BUS: _ClassVar[AgentType]
-    AGENT_TYPE_TAXI: _ClassVar[AgentType]
 AGENT_TYPE_UNSPECIFIED: AgentType
 AGENT_TYPE_PERSON: AgentType
 AGENT_TYPE_PRIVATE_CAR: AgentType
 AGENT_TYPE_BUS: AgentType
-AGENT_TYPE_TAXI: AgentType
 
 class AgentAttribute(_message.Message):
-    __slots__ = ('type', 'length', 'width', 'max_speed', 'max_acceleration', 'max_braking_acceleration', 'usual_acceleration', 'usual_braking_acceleration')
+    __slots__ = ['type', 'length', 'width', 'max_speed', 'max_acceleration', 'max_braking_acceleration', 'usual_acceleration', 'usual_braking_acceleration']
     TYPE_FIELD_NUMBER: _ClassVar[int]
     LENGTH_FIELD_NUMBER: _ClassVar[int]
     WIDTH_FIELD_NUMBER: _ClassVar[int]
@@ -43,7 +41,7 @@ class AgentAttribute(_message.Message):
         ...
 
 class VehicleAttribute(_message.Message):
-    __slots__ = ('lane_change_length', 'min_gap')
+    __slots__ = ['lane_change_length', 'min_gap']
     LANE_CHANGE_LENGTH_FIELD_NUMBER: _ClassVar[int]
     MIN_GAP_FIELD_NUMBER: _ClassVar[int]
     lane_change_length: float
@@ -53,7 +51,7 @@ class VehicleAttribute(_message.Message):
         ...
 
 class BusAttribute(_message.Message):
-    __slots__ = ('line_id', 'capacity')
+    __slots__ = ['line_id', 'capacity']
     LINE_ID_FIELD_NUMBER: _ClassVar[int]
     CAPACITY_FIELD_NUMBER: _ClassVar[int]
     line_id: int
@@ -63,16 +61,16 @@ class BusAttribute(_message.Message):
         ...
 
 class BikeAttribute(_message.Message):
-    __slots__ = ()
+    __slots__ = []
 
     def __init__(self) -> None:
         ...
 
 class Agent(_message.Message):
-    __slots__ = ('id', 'attribute', 'home', 'schedules', 'vehicle_attribute', 'bus_attribute', 'bike_attribute', 'labels')
+    __slots__ = ['id', 'attribute', 'home', 'schedules', 'vehicle_attribute', 'bus_attribute', 'bike_attribute', 'labels']
 
     class LabelsEntry(_message.Message):
-        __slots__ = ('key', 'value')
+        __slots__ = ['key', 'value']
         KEY_FIELD_NUMBER: _ClassVar[int]
         VALUE_FIELD_NUMBER: _ClassVar[int]
         key: str
@@ -101,7 +99,7 @@ class Agent(_message.Message):
         ...
 
 class Agents(_message.Message):
-    __slots__ = ('agents',)
+    __slots__ = ['agents']
     AGENTS_FIELD_NUMBER: _ClassVar[int]
     agents: _containers.RepeatedCompositeFieldContainer[Agent]
 

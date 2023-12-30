@@ -19,7 +19,7 @@ class RoutingServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
 
     def GetRoute(self, request, context):
-        """Get route by type/start/end
+        """获取导航路线
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

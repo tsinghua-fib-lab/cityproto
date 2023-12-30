@@ -21,6 +21,7 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+// AOI状态
 type State struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

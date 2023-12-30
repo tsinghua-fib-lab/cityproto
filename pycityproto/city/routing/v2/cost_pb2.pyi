@@ -4,7 +4,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Cost(_message.Message):
-    __slots__ = ('id', 'cost', 'time')
+    __slots__ = ['id', 'cost', 'time']
     ID_FIELD_NUMBER: _ClassVar[int]
     COST_FIELD_NUMBER: _ClassVar[int]
     TIME_FIELD_NUMBER: _ClassVar[int]

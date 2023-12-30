@@ -12,7 +12,11 @@
   },
   "cSpell.words": [
     "city",
+    "cityproto",
+    "fiblab",
+    "letsencrypt",
     "protocolbuffers",
+    "protos",
     "pseudomuto"
   ],
   "files.insertFinalNewline": true

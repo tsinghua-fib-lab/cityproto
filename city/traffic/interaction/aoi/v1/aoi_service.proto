@@ -5,13 +5,18 @@ package city.traffic.interaction.aoi.v1;
 import "city/traffic/interaction/aoi/v1/aoi.proto";
 
 service AoiService {
+  // 获取AOI信息
   rpc GetAoi(GetAoiRequest) returns (GetAoiResponse);
 }
 
+// 获取AOI信息请求
 message GetAoiRequest {
+  // 指定AOI ID列表，如果为空，则返回所有AOI信息
   repeated int32 aoi_ids = 1;
 }
 
+// 获取AOI信息响应
 message GetAoiResponse {
+  // AOI信息列表
   repeated State states = 1;
 }

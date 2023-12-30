@@ -6,7 +6,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Optional as _Op
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class NodeStatus(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-    __slots__ = ()
+    __slots__ = []
     NODE_STATUS_UNSPECIFIED: _ClassVar[NodeStatus]
     NODE_STATUS_OK: _ClassVar[NodeStatus]
     NODE_STATUS_BATTERY: _ClassVar[NodeStatus]
@@ -14,13 +14,13 @@ class NodeStatus(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     NODE_STATUS_RUINED: _ClassVar[NodeStatus]
 
 class PersonConnectStatus(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-    __slots__ = ()
+    __slots__ = []
     PERSON_CONNECT_STATUS_UNSPECIFIED: _ClassVar[PersonConnectStatus]
     PERSON_CONNECT_STATUS_OK: _ClassVar[PersonConnectStatus]
     PERSON_CONNECT_STATUS_OUTAGE: _ClassVar[PersonConnectStatus]
 
 class PersonDemandStatus(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-    __slots__ = ()
+    __slots__ = []
     PERSON_DEMAND_STATUS_UNSPECIFIED: _ClassVar[PersonDemandStatus]
     PERSON_DEMAND_STATUS_SATISFIED: _ClassVar[PersonDemandStatus]
     PERSON_DEMAND_STATUS_UNSATISFIED: _ClassVar[PersonDemandStatus]
@@ -39,7 +39,7 @@ PERSON_DEMAND_STATUS_UNSATISFIED: PersonDemandStatus
 PERSON_DEMAND_STATUS_NO: PersonDemandStatus
 
 class Node(_message.Message):
-    __slots__ = ('id', 'status', 'battery_remaining_time')
+    __slots__ = ['id', 'status', 'battery_remaining_time']
     ID_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
     BATTERY_REMAINING_TIME_FIELD_NUMBER: _ClassVar[int]
@@ -51,7 +51,7 @@ class Node(_message.Message):
         ...
 
 class BaseStation(_message.Message):
-    __slots__ = ('id', 'demand_flow', 'actual_flow', 'num_agents', 'overload', 'unsatisfied_num', 'satisfied_num', 'outage_num', 'active_num', 'transmit_power')
+    __slots__ = ['id', 'demand_flow', 'actual_flow', 'num_agents', 'overload', 'unsatisfied_num', 'satisfied_num', 'outage_num', 'active_num', 'transmit_power']
     ID_FIELD_NUMBER: _ClassVar[int]
     DEMAND_FLOW_FIELD_NUMBER: _ClassVar[int]
     ACTUAL_FLOW_FIELD_NUMBER: _ClassVar[int]
@@ -77,7 +77,7 @@ class BaseStation(_message.Message):
         ...
 
 class Signal(_message.Message):
-    __slots__ = ('num_rows', 'num_columns', 'strength', 'base_station_id', 'freq_range_id')
+    __slots__ = ['num_rows', 'num_columns', 'strength', 'base_station_id', 'freq_range_id']
     NUM_ROWS_FIELD_NUMBER: _ClassVar[int]
     NUM_COLUMNS_FIELD_NUMBER: _ClassVar[int]
     STRENGTH_FIELD_NUMBER: _ClassVar[int]
@@ -93,7 +93,7 @@ class Signal(_message.Message):
         ...
 
 class Person(_message.Message):
-    __slots__ = ('id', 'demand_rate', 'actual_rate', 'connect_status', 'demand_status', 'strength', 'base_station_id', 'freq_range_ids', 'received_power')
+    __slots__ = ['id', 'demand_rate', 'actual_rate', 'connect_status', 'demand_status', 'strength', 'base_station_id', 'freq_range_ids', 'received_power']
     ID_FIELD_NUMBER: _ClassVar[int]
     DEMAND_RATE_FIELD_NUMBER: _ClassVar[int]
     ACTUAL_RATE_FIELD_NUMBER: _ClassVar[int]
@@ -117,7 +117,7 @@ class Person(_message.Message):
         ...
 
 class Aoi(_message.Message):
-    __slots__ = ('id', 'demand_flow', 'actual_flow', 'outage_num', 'satisfied_num', 'unsatisfied_num', 'active_user_num')
+    __slots__ = ['id', 'demand_flow', 'actual_flow', 'outage_num', 'satisfied_num', 'unsatisfied_num', 'active_user_num']
     ID_FIELD_NUMBER: _ClassVar[int]
     DEMAND_FLOW_FIELD_NUMBER: _ClassVar[int]
     ACTUAL_FLOW_FIELD_NUMBER: _ClassVar[int]
@@ -137,7 +137,7 @@ class Aoi(_message.Message):
         ...
 
 class Statistics(_message.Message):
-    __slots__ = ('num_satisfied_agents', 'num_unsatisfied_agents', 'num_outage_agents', 'num_active_agents', 'demand_flow', 'actual_flow', 'num_base_station', 'num_ok_base_station', 'num_ruined_base_station', 'num_stopped_base_station', 'num_overloaded_base_station', 'num_gateway', 'num_ok_gateway', 'num_ruined_gateway', 'num_stopped_gateway', 'num_overloaded_gateway', 'num_battery_gateway', 'power_consumption')
+    __slots__ = ['num_satisfied_agents', 'num_unsatisfied_agents', 'num_outage_agents', 'num_active_agents', 'demand_flow', 'actual_flow', 'num_base_station', 'num_ok_base_station', 'num_ruined_base_station', 'num_stopped_base_station', 'num_overloaded_base_station', 'num_gateway', 'num_ok_gateway', 'num_ruined_gateway', 'num_stopped_gateway', 'num_overloaded_gateway', 'num_battery_gateway', 'power_consumption']
     NUM_SATISFIED_AGENTS_FIELD_NUMBER: _ClassVar[int]
     NUM_UNSATISFIED_AGENTS_FIELD_NUMBER: _ClassVar[int]
     NUM_OUTAGE_AGENTS_FIELD_NUMBER: _ClassVar[int]

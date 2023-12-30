@@ -4,6 +4,7 @@ package city.traffic.interaction.lane.v1;
 
 import "city/traffic/interaction/agent/v2/agent.proto";
 
+// Lane状态
 message State {
   // Lane ID
   int32 id = 1;

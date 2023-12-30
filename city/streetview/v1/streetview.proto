@@ -4,6 +4,7 @@ package city.streetview.v1;
 
 import "city/geo/v2/geo.proto";
 
+// 街景图片描述
 message StreetViewImage {
   // 朝向，单位度，0-360，0为正北，90为正东，180为正南，270为正西
   double heading = 1;
@@ -11,8 +12,9 @@ message StreetViewImage {
   string object = 2;
 }
 
+// 街景图片元数据
 message StreetView {
-  // 位置信息
+  // WGS84经纬度位置
   city.geo.v2.LongLatPosition lnglat = 1;
   // 该位置的不同朝向街景图列表
   repeated StreetViewImage images = 2;

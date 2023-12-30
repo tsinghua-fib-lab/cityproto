@@ -20,11 +20,13 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+// 发送消息请求
 type SendRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
+	// 待发送的消息
 	Messages []*Message `protobuf:"bytes,1,rep,name=messages,proto3" json:"messages,omitempty"`
 }
 
@@ -67,6 +69,7 @@ func (x *SendRequest) GetMessages() []*Message {
 	return nil
 }
 
+// 发送消息响应
 type SendResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -105,6 +108,7 @@ func (*SendResponse) Descriptor() ([]byte, []int) {
 	return file_city_social_v1_social_service_proto_rawDescGZIP(), []int{1}
 }
 
+// 接收消息请求
 type ReceiveRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -153,11 +157,13 @@ func (x *ReceiveRequest) GetId() int32 {
 	return 0
 }
 
+// 接收消息响应
 type ReceiveResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
+	// 接收到的消息
 	Messages []*Message `protobuf:"bytes,1,rep,name=messages,proto3" json:"messages,omitempty"`
 }
 

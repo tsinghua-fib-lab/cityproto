@@ -4,7 +4,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class SetDemandStatusRequest(_message.Message):
-    __slots__ = ('multiple_times', 'power_times')
+    __slots__ = ['multiple_times', 'power_times']
     MULTIPLE_TIMES_FIELD_NUMBER: _ClassVar[int]
     POWER_TIMES_FIELD_NUMBER: _ClassVar[int]
     multiple_times: float
@@ -14,7 +14,7 @@ class SetDemandStatusRequest(_message.Message):
         ...
 
 class SetDemandStatusResponse(_message.Message):
-    __slots__ = ()
+    __slots__ = []
 
     def __init__(self) -> None:
         ...

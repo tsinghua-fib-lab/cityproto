@@ -11,17 +11,23 @@ service SocialService {
   rpc Receive(ReceiveRequest) returns (ReceiveResponse);
 }
 
+// 发送消息请求
 message SendRequest {
+  // 待发送的消息
   repeated Message messages = 1;
 }
 
+// 发送消息响应
 message SendResponse {}
 
+// 接收消息请求
 message ReceiveRequest {
   // 消息接收者ID（即为自身ID）
   int32 id = 1;
 }
 
+// 接收消息响应
 message ReceiveResponse {
+  // 接收到的消息
   repeated Message messages = 1;
 }

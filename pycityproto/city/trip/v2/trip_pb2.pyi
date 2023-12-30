@@ -8,7 +8,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class TripMode(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-    __slots__ = ()
+    __slots__ = []
     TRIP_MODE_UNSPECIFIED: _ClassVar[TripMode]
     TRIP_MODE_WALK_ONLY: _ClassVar[TripMode]
     TRIP_MODE_DRIVE_ONLY: _ClassVar[TripMode]
@@ -21,7 +21,7 @@ TRIP_MODE_BUS_WALK: TripMode
 TRIP_MODE_BIKE_WALK: TripMode
 
 class Trip(_message.Message):
-    __slots__ = ('mode', 'end', 'departure_time', 'wait_time', 'arrival_time', 'activity', 'routes')
+    __slots__ = ['mode', 'end', 'departure_time', 'wait_time', 'arrival_time', 'activity', 'routes']
     MODE_FIELD_NUMBER: _ClassVar[int]
     END_FIELD_NUMBER: _ClassVar[int]
     DEPARTURE_TIME_FIELD_NUMBER: _ClassVar[int]
@@ -41,7 +41,7 @@ class Trip(_message.Message):
         ...
 
 class Schedule(_message.Message):
-    __slots__ = ('trips', 'loop_count', 'departure_time', 'wait_time')
+    __slots__ = ['trips', 'loop_count', 'departure_time', 'wait_time']
     TRIPS_FIELD_NUMBER: _ClassVar[int]
     LOOP_COUNT_FIELD_NUMBER: _ClassVar[int]
     DEPARTURE_TIME_FIELD_NUMBER: _ClassVar[int]

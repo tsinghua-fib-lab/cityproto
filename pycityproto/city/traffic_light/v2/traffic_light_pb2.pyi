@@ -6,7 +6,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class LightState(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-    __slots__ = ()
+    __slots__ = []
     LIGHT_STATE_UNSPECIFIED: _ClassVar[LightState]
     LIGHT_STATE_RED: _ClassVar[LightState]
     LIGHT_STATE_GREEN: _ClassVar[LightState]
@@ -17,7 +17,7 @@ LIGHT_STATE_GREEN: LightState
 LIGHT_STATE_YELLOW: LightState
 
 class Phase(_message.Message):
-    __slots__ = ('duration', 'states')
+    __slots__ = ['duration', 'states']
     DURATION_FIELD_NUMBER: _ClassVar[int]
     STATES_FIELD_NUMBER: _ClassVar[int]
     duration: float
@@ -27,7 +27,7 @@ class Phase(_message.Message):
         ...
 
 class TrafficLight(_message.Message):
-    __slots__ = ('junction_id', 'phases')
+    __slots__ = ['junction_id', 'phases']
     JUNCTION_ID_FIELD_NUMBER: _ClassVar[int]
     PHASES_FIELD_NUMBER: _ClassVar[int]
     junction_id: int
@@ -37,7 +37,7 @@ class TrafficLight(_message.Message):
         ...
 
 class TrafficLights(_message.Message):
-    __slots__ = ('traffic_lights',)
+    __slots__ = ['traffic_lights']
     TRAFFIC_LIGHTS_FIELD_NUMBER: _ClassVar[int]
     traffic_lights: _containers.RepeatedCompositeFieldContainer[TrafficLight]
 

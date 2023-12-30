@@ -5,23 +5,31 @@ package city.traffic.interaction.lane.v1;
 import "city/traffic/interaction/lane/v1/lane.proto";
 
 service LaneService {
-  // 设置Lane的最大速度
+  // 设置Lane的最大速度（限速）
   rpc SetMaxV(SetMaxVRequest) returns (SetMaxVResponse);
   // 获取Lane的信息
   rpc GetLane(GetLaneRequest) returns (GetLaneResponse);
 }
 
+// 设置Lane的最大速度（限速）请求
 message SetMaxVRequest {
+  // Lane id
   int32 lane_id = 1;
+  // 最大速度（限速），单位：m/s
   double max_v = 2;
 }
 
+// 设置Lane的最大速度（限速）响应
 message SetMaxVResponse {}
 
+// 获取Lane的信息请求
 message GetLaneRequest {
+  // 指定的Lane id列表，如果为空，则返回所有Lane的信息
   repeated int32 lane_ids = 1;
 }
 
+// 获取Lane的信息响应
 message GetLaneResponse {
+  // Lane的信息
   repeated State states = 1;
 }

@@ -20,13 +20,18 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+// 交通灯的状态
 type LightState int32
 
 const (
+	// 未指定
 	LightState_LIGHT_STATE_UNSPECIFIED LightState = 0
-	LightState_LIGHT_STATE_RED         LightState = 1
-	LightState_LIGHT_STATE_GREEN       LightState = 2
-	LightState_LIGHT_STATE_YELLOW      LightState = 3
+	// 红灯
+	LightState_LIGHT_STATE_RED LightState = 1
+	// 绿灯
+	LightState_LIGHT_STATE_GREEN LightState = 2
+	// 黄灯
+	LightState_LIGHT_STATE_YELLOW LightState = 3
 )
 
 // Enum value maps for LightState.
@@ -72,12 +77,14 @@ func (LightState) EnumDescriptor() ([]byte, []int) {
 	return file_city_traffic_light_v2_traffic_light_proto_rawDescGZIP(), []int{0}
 }
 
+// 交通灯相位
 type Phase struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Duration float64 `protobuf:"fixed64,1,opt,name=duration,proto3" json:"duration,omitempty" bson:"duration" db:"duration" yaml:"duration"`
+	// 相位持续时间，单位秒
+	Duration float64 `protobuf:"fixed64,1,opt,name=duration,proto3" json:"duration,omitempty" yaml:"duration" bson:"duration" db:"duration"`
 	// 描述该相位下每个lane的灯控情况，lane与Junction.lane_ids一一对应
 	States []LightState `protobuf:"varint,2,rep,packed,name=states,proto3,enum=city.traffic_light.v2.LightState" json:"states,omitempty" yaml:"states" bson:"states" db:"states"`
 }
@@ -128,11 +135,13 @@ func (x *Phase) GetStates() []LightState {
 	return nil
 }
 
+// 交通灯
 type TrafficLight struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
+	// 所在路口id
 	JunctionId int32 `protobuf:"varint,1,opt,name=junction_id,json=junctionId,proto3" json:"junction_id,omitempty" yaml:"junction_id" bson:"junction_id" db:"junction_id"`
 	// 相位循环的一个循环周期
 	Phases []*Phase `protobuf:"bytes,2,rep,name=phases,proto3" json:"phases,omitempty" db:"phases" yaml:"phases" bson:"phases"`
@@ -190,7 +199,7 @@ type TrafficLights struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	TrafficLights []*TrafficLight `protobuf:"bytes,1,rep,name=traffic_lights,json=trafficLights,proto3" json:"traffic_lights,omitempty" yaml:"traffic_lights" bson:"traffic_lights" db:"traffic_lights"`
+	TrafficLights []*TrafficLight `protobuf:"bytes,1,rep,name=traffic_lights,json=trafficLights,proto3" json:"traffic_lights,omitempty" bson:"traffic_lights" db:"traffic_lights" yaml:"traffic_lights"`
 }
 
 func (x *TrafficLights) Reset() {

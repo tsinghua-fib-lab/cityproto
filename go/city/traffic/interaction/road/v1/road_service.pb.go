@@ -21,12 +21,13 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+// 查询道路信息请求
 type GetRoadRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// 查询的道路ID列表，为空代表查询所有道路
+	// 指定查询的道路ID列表，为空代表查询所有道路
 	RoadIds []int32 `protobuf:"varint,1,rep,packed,name=road_ids,json=roadIds,proto3" json:"road_ids,omitempty"`
 }
 
@@ -69,11 +70,13 @@ func (x *GetRoadRequest) GetRoadIds() []int32 {
 	return nil
 }
 
+// 查询道路信息响应
 type GetRoadResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
+	// 道路信息列表
 	States []*State `protobuf:"bytes,1,rep,name=states,proto3" json:"states,omitempty"`
 }
 

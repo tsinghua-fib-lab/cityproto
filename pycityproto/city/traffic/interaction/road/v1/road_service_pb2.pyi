@@ -7,7 +7,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class GetRoadRequest(_message.Message):
-    __slots__ = ('road_ids',)
+    __slots__ = ['road_ids']
     ROAD_IDS_FIELD_NUMBER: _ClassVar[int]
     road_ids: _containers.RepeatedScalarFieldContainer[int]
 
@@ -15,7 +15,7 @@ class GetRoadRequest(_message.Message):
         ...
 
 class GetRoadResponse(_message.Message):
-    __slots__ = ('states',)
+    __slots__ = ['states']
     STATES_FIELD_NUMBER: _ClassVar[int]
     states: _containers.RepeatedCompositeFieldContainer[_road_pb2.State]
 
@@ -23,13 +23,13 @@ class GetRoadResponse(_message.Message):
         ...
 
 class GetRuinInfoRequest(_message.Message):
-    __slots__ = ()
+    __slots__ = []
 
     def __init__(self) -> None:
         ...
 
 class RuinInfo(_message.Message):
-    __slots__ = ('num', 'ratio')
+    __slots__ = ['num', 'ratio']
     NUM_FIELD_NUMBER: _ClassVar[int]
     RATIO_FIELD_NUMBER: _ClassVar[int]
     num: int
@@ -39,7 +39,7 @@ class RuinInfo(_message.Message):
         ...
 
 class GetRuinInfoResponse(_message.Message):
-    __slots__ = ('one', 'two', 'three')
+    __slots__ = ['one', 'two', 'three']
     ONE_FIELD_NUMBER: _ClassVar[int]
     TWO_FIELD_NUMBER: _ClassVar[int]
     THREE_FIELD_NUMBER: _ClassVar[int]
@@ -51,13 +51,13 @@ class GetRuinInfoResponse(_message.Message):
         ...
 
 class GetEventsRequest(_message.Message):
-    __slots__ = ()
+    __slots__ = []
 
     def __init__(self) -> None:
         ...
 
 class GetEventsResponse(_message.Message):
-    __slots__ = ('events',)
+    __slots__ = ['events']
     EVENTS_FIELD_NUMBER: _ClassVar[int]
     events: _event_pb2.Events
 

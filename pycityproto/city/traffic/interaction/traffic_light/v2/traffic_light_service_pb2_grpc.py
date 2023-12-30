@@ -20,25 +20,29 @@ class TrafficLightServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
 
     def GetTrafficLight(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """获取路口的红绿灯信息
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def SetTrafficLight(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """设置路口的红绿灯信息
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def SetTrafficLightPhase(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """设置路口的红绿灯相位
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def SetTrafficLightStatus(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """设置路口的红绿灯状态
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')

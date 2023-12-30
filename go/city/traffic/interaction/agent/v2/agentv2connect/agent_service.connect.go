@@ -62,7 +62,7 @@ type AgentServiceClient interface {
 	AddAgent(context.Context, *connect.Request[v2.AddAgentRequest]) (*connect.Response[v2.AddAgentResponse], error)
 	// 修改agent的schedule 传入agentid、目的地表
 	SetSchedule(context.Context, *connect.Request[v2.SetScheduleRequest]) (*connect.Response[v2.SetScheduleResponse], error)
-	// 获取特定区域内的车辆xinxi
+	// 获取特定区域内的agent
 	GetAgentsByLongLatArea(context.Context, *connect.Request[v2.GetAgentsByLongLatAreaRequest]) (*connect.Response[v2.GetAgentsByLongLatAreaResponse], error)
 }
 
@@ -141,7 +141,7 @@ type AgentServiceHandler interface {
 	AddAgent(context.Context, *connect.Request[v2.AddAgentRequest]) (*connect.Response[v2.AddAgentResponse], error)
 	// 修改agent的schedule 传入agentid、目的地表
 	SetSchedule(context.Context, *connect.Request[v2.SetScheduleRequest]) (*connect.Response[v2.SetScheduleResponse], error)
-	// 获取特定区域内的车辆xinxi
+	// 获取特定区域内的agent
 	GetAgentsByLongLatArea(context.Context, *connect.Request[v2.GetAgentsByLongLatAreaRequest]) (*connect.Response[v2.GetAgentsByLongLatAreaResponse], error)
 }
 

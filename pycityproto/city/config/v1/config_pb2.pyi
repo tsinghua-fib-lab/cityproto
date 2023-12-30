@@ -4,7 +4,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class MongoPath(_message.Message):
-    __slots__ = ('db', 'col')
+    __slots__ = ['db', 'col']
     DB_FIELD_NUMBER: _ClassVar[int]
     COL_FIELD_NUMBER: _ClassVar[int]
     db: str
@@ -14,7 +14,7 @@ class MongoPath(_message.Message):
         ...
 
 class OutputTarget(_message.Message):
-    __slots__ = ('sql',)
+    __slots__ = ['sql']
     SQL_FIELD_NUMBER: _ClassVar[int]
     sql: str
 

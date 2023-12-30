@@ -9,13 +9,16 @@ service SyncService {
   rpc Step(StepRequest) returns (StepResponse);
 }
 
+// 获取内嵌etcd的端口请求
 message GetEtcdRequest {}
 
+// 获取内嵌etcd的端口响应
 message GetEtcdResponse {
   // etcd的端口
   int32 port = 1;
 }
 
+// 步进请求
 message StepRequest {
   // 组件名，需要在同步器启动参数列表中
   string name = 1;
@@ -23,6 +26,7 @@ message StepRequest {
   int32 step = 2;
 }
 
+// 步进响应
 message StepResponse {
   //服务是否关闭
   bool close = 1;

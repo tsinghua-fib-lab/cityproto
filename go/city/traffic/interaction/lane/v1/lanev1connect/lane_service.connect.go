@@ -48,7 +48,7 @@ var (
 
 // LaneServiceClient is a client for the city.traffic.interaction.lane.v1.LaneService service.
 type LaneServiceClient interface {
-	// 设置Lane的最大速度
+	// 设置Lane的最大速度（限速）
 	SetMaxV(context.Context, *connect.Request[v1.SetMaxVRequest]) (*connect.Response[v1.SetMaxVResponse], error)
 	// 获取Lane的信息
 	GetLane(context.Context, *connect.Request[v1.GetLaneRequest]) (*connect.Response[v1.GetLaneResponse], error)
@@ -98,7 +98,7 @@ func (c *laneServiceClient) GetLane(ctx context.Context, req *connect.Request[v1
 // LaneServiceHandler is an implementation of the city.traffic.interaction.lane.v1.LaneService
 // service.
 type LaneServiceHandler interface {
-	// 设置Lane的最大速度
+	// 设置Lane的最大速度（限速）
 	SetMaxV(context.Context, *connect.Request[v1.SetMaxVRequest]) (*connect.Response[v1.SetMaxVResponse], error)
 	// 获取Lane的信息
 	GetLane(context.Context, *connect.Request[v1.GetLaneRequest]) (*connect.Response[v1.GetLaneResponse], error)

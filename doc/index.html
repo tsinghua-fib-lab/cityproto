@@ -1896,7 +1896,7 @@
 
       
         <h3 id="city.geo.v2.AoiPosition">AoiPosition</h3>
-        <p></p>
+        <p>地图坐标（AOI）</p>
 
         
           <table class="field-table">
@@ -1909,14 +1909,14 @@
                   <td>aoi_id</td>
                   <td><a href="#int32">int32</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>AOI ID </p></td>
                 </tr>
               
                 <tr>
                   <td>poi_id</td>
                   <td><a href="#int32">int32</a></td>
                   <td>optional</td>
-                  <td><p>poi_id需要是aoi_id的子poi，否则该值无效 </p></td>
+                  <td><p>POI ID，需要是aoi_id的子poi，否则该值无效 </p></td>
                 </tr>
               
             </tbody>
@@ -1927,7 +1927,7 @@
         
       
         <h3 id="city.geo.v2.LanePosition">LanePosition</h3>
-        <p></p>
+        <p>地图坐标（车道+距离s）</p>
 
         
           <table class="field-table">
@@ -1940,7 +1940,7 @@
                   <td>lane_id</td>
                   <td><a href="#int32">int32</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>车道id </p></td>
                 </tr>
               
                 <tr>
@@ -1958,7 +1958,7 @@
         
       
         <h3 id="city.geo.v2.LongLatPosition">LongLatPosition</h3>
-        <p></p>
+        <p>WGS84经纬度坐标</p>
 
         
           <table class="field-table">
@@ -1971,14 +1971,14 @@
                   <td>longitude</td>
                   <td><a href="#double">double</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>经度 </p></td>
                 </tr>
               
                 <tr>
                   <td>latitude</td>
                   <td><a href="#double">double</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>纬度 </p></td>
                 </tr>
               
             </tbody>
@@ -1989,7 +1989,7 @@
         
       
         <h3 id="city.geo.v2.LongLatRectArea">LongLatRectArea</h3>
-        <p></p>
+        <p>经纬度矩形区域</p>
 
         
           <table class="field-table">
@@ -2033,14 +2033,14 @@
                   <td>lane_position</td>
                   <td><a href="#city.geo.v2.LanePosition">LanePosition</a></td>
                   <td>optional</td>
-                  <td><p>地图逻辑坐标（必须提供其中之一） </p></td>
+                  <td><p>地图坐标AOI（必须提供其中之一） </p></td>
                 </tr>
               
                 <tr>
                   <td>aoi_position</td>
                   <td><a href="#city.geo.v2.AoiPosition">AoiPosition</a></td>
                   <td>optional</td>
-                  <td><p> </p></td>
+                  <td><p>地图坐标Lane&#43;S（必须提供其中之一） </p></td>
                 </tr>
               
                 <tr>
@@ -2065,7 +2065,7 @@
         
       
         <h3 id="city.geo.v2.XYPosition">XYPosition</h3>
-        <p>注意： (x, y) <-> (lat, lon)</p>
+        <p>XY坐标</p>
 
         
           <table class="field-table">
@@ -2078,14 +2078,14 @@
                   <td>x</td>
                   <td><a href="#double">double</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>x坐标，单位米，对应经度 </p></td>
                 </tr>
               
                 <tr>
                   <td>y</td>
                   <td><a href="#double">double</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>y坐标，单位米，对应纬度 </p></td>
                 </tr>
               
             </tbody>
@@ -2161,14 +2161,14 @@
                   <td>line_id</td>
                   <td><a href="#int32">int32</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>线路ID </p></td>
                 </tr>
               
                 <tr>
                   <td>stops</td>
                   <td><a href="#int32">int32</a></td>
                   <td>repeated</td>
-                  <td><p> </p></td>
+                  <td><p>停靠站点AOI ID列表 </p></td>
                 </tr>
               
                 <tr>
@@ -2224,7 +2224,7 @@
         
       
         <h3 id="city.routing.v2.DrivingJourneyBody">DrivingJourneyBody</h3>
-        <p></p>
+        <p>驾车出行方式的路径规划结果</p>
 
         
           <table class="field-table">
@@ -2270,28 +2270,28 @@
                   <td>type</td>
                   <td><a href="#city.routing.v2.JourneyType">JourneyType</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>出行方式 </p></td>
                 </tr>
               
                 <tr>
                   <td>driving</td>
                   <td><a href="#city.routing.v2.DrivingJourneyBody">DrivingJourneyBody</a></td>
                   <td>optional</td>
-                  <td><p> </p></td>
+                  <td><p>驾车 </p></td>
                 </tr>
               
                 <tr>
                   <td>walking</td>
                   <td><a href="#city.routing.v2.WalkingJourneyBody">WalkingJourneyBody</a></td>
                   <td>optional</td>
-                  <td><p> </p></td>
+                  <td><p>步行 </p></td>
                 </tr>
               
                 <tr>
                   <td>by_bus</td>
                   <td><a href="#city.routing.v2.BusJourneyBody">BusJourneyBody</a></td>
                   <td>optional</td>
-                  <td><p>optional TaxiJourneyBody by_taxi = 5; </p></td>
+                  <td><p>公交 </p></td>
                 </tr>
               
             </tbody>
@@ -2315,14 +2315,14 @@
                   <td>id</td>
                   <td><a href="#int32">int32</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>车道ID </p></td>
                 </tr>
               
                 <tr>
                   <td>speed</td>
                   <td><a href="#double">double</a></td>
                   <td>repeated</td>
-                  <td><p>道路所有时间片的速度 </p></td>
+                  <td><p>车道在各个时间片（每个5min）的速度 </p></td>
                 </tr>
               
             </tbody>
@@ -2357,7 +2357,7 @@
         
       
         <h3 id="city.routing.v2.WalkingJourneyBody">WalkingJourneyBody</h3>
-        <p></p>
+        <p>步行出行方式的路径规划结果</p>
 
         
           <table class="field-table">
@@ -2370,7 +2370,7 @@
                   <td>route</td>
                   <td><a href="#city.routing.v2.WalkingRouteSegment">WalkingRouteSegment</a></td>
                   <td>repeated</td>
-                  <td><p> </p></td>
+                  <td><p>从起点到终点的（Lane&#43;方向）序列 </p></td>
                 </tr>
               
                 <tr>
@@ -2388,7 +2388,7 @@
         
       
         <h3 id="city.routing.v2.WalkingRouteSegment">WalkingRouteSegment</h3>
-        <p></p>
+        <p>步行出行方式的路径规划结果中的一段</p>
 
         
           <table class="field-table">
@@ -2401,14 +2401,14 @@
                   <td>lane_id</td>
                   <td><a href="#int32">int32</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>Lane ID </p></td>
                 </tr>
               
                 <tr>
                   <td>moving_direction</td>
                   <td><a href="#city.routing.v2.MovingDirection">MovingDirection</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>移动方向 </p></td>
                 </tr>
               
             </tbody>
@@ -2421,7 +2421,7 @@
 
       
         <h3 id="city.routing.v2.JourneyType">JourneyType</h3>
-        <p></p>
+        <p>移动方式</p><p>Journey用以描述采用一种特定交通方式从一点出发到达另一点的路径。</p><p>一般来说，多个Journey是一个Trip的“实现”。</p><p>例如：Trip(从清华乘地铁到天安门):</p><p>Journey(步行到地铁站)->Journey(地铁)->Journey(步行到天安门)</p>
         <table class="enum-table">
           <thead>
             <tr><td>Name</td><td>Number</td><td>Description</td></tr>
@@ -2431,32 +2431,32 @@
               <tr>
                 <td>JOURNEY_TYPE_UNSPECIFIED</td>
                 <td>0</td>
-                <td><p></p></td>
+                <td><p>未指定</p></td>
               </tr>
             
               <tr>
                 <td>JOURNEY_TYPE_DRIVING</td>
                 <td>1</td>
-                <td><p></p></td>
+                <td><p>驾车</p></td>
               </tr>
             
               <tr>
                 <td>JOURNEY_TYPE_WALKING</td>
                 <td>2</td>
-                <td><p></p></td>
+                <td><p>步行</p></td>
               </tr>
             
               <tr>
                 <td>JOURNEY_TYPE_BY_BUS</td>
                 <td>3</td>
-                <td><p></p></td>
+                <td><p>公交</p></td>
               </tr>
             
           </tbody>
         </table>
       
         <h3 id="city.routing.v2.MovingDirection">MovingDirection</h3>
-        <p>行人前进的方向与Lane的正方向（s增大的方向）的关系</p>
+        <p>步行移动方向</p><p>行人前进的方向与Lane的正方向（s增大的方向）的关系</p>
         <table class="enum-table">
           <thead>
             <tr><td>Name</td><td>Number</td><td>Description</td></tr>
@@ -2466,7 +2466,7 @@
               <tr>
                 <td>MOVING_DIRECTION_UNSPECIFIED</td>
                 <td>0</td>
-                <td><p></p></td>
+                <td><p>未指定</p></td>
               </tr>
             
               <tr>
@@ -2485,7 +2485,7 @@
         </table>
       
         <h3 id="city.routing.v2.RouteType">RouteType</h3>
-        <p></p>
+        <p>导航请求类型</p>
         <table class="enum-table">
           <thead>
             <tr><td>Name</td><td>Number</td><td>Description</td></tr>
@@ -2495,25 +2495,25 @@
               <tr>
                 <td>ROUTE_TYPE_UNSPECIFIED</td>
                 <td>0</td>
-                <td><p></p></td>
+                <td><p>未指定</p></td>
               </tr>
             
               <tr>
                 <td>ROUTE_TYPE_DRIVING</td>
                 <td>1</td>
-                <td><p></p></td>
+                <td><p>驾车</p></td>
               </tr>
             
               <tr>
                 <td>ROUTE_TYPE_WALKING</td>
                 <td>2</td>
-                <td><p></p></td>
+                <td><p>步行</p></td>
               </tr>
             
               <tr>
                 <td>ROUTE_TYPE_BY_BUS</td>
                 <td>3</td>
-                <td><p></p></td>
+                <td><p>公交</p></td>
               </tr>
             
           </tbody>
@@ -2532,7 +2532,7 @@
 
       
         <h3 id="city.trip.v2.Schedule">Schedule</h3>
-        <p></p>
+        <p>时刻表</p><p>关于出发时间的说明如下：</p><p>1. Schedule的开始时刻是 departure_time 或者 参考时刻+wait_time，</p><p>参考时刻定义为上一Schedule的结束时刻(即它最后一个Trip的结束时刻)，</p><p>或者当它为第一个Schedule时定义为Agent更新Schedule后的首次Update</p><p>时刻(当有准确时间要求时建议直接指定departure_time)</p><p>2. Trip的开始时刻是 departure_time 或者 参考时刻+wait_time，参考</p><p>时刻定义为上一Trip的结束时刻，或者当它为第一个Trip时定义为所属的</p><p>Schedule的开始时刻</p><p>3. Agent的实际运行时刻取决于Trip的开始时刻，例如它的首次运行是第一</p><p>个Schedule中第一个Trip的开始时刻</p><p>FAQ</p><p>Q1: 同时指定Schedule和第一个Trip的departure_time会怎样？</p><p>A1: 参照(2)，只看Trip的departure_time</p><p>Q2: Schedule和第一个Trip同时指定wait_time=10会怎样？</p><p>A2: 参照(2)，等待时间为10+10=20</p>
 
         
           <table class="field-table">
@@ -2545,7 +2545,7 @@
                   <td>trips</td>
                   <td><a href="#city.trip.v2.Trip">Trip</a></td>
                   <td>repeated</td>
-                  <td><p> </p></td>
+                  <td><p>出行列表 </p></td>
                 </tr>
               
                 <tr>
@@ -2566,7 +2566,7 @@
                   <td>wait_time</td>
                   <td><a href="#double">double</a></td>
                   <td>optional</td>
-                  <td><p>期望的等待时间（单位：秒） </p></td>
+                  <td><p>期望的等待时间（单位：秒），如果departure_time为空则wait_time默认为0 </p></td>
                 </tr>
               
             </tbody>
@@ -2577,7 +2577,7 @@
         
       
         <h3 id="city.trip.v2.Trip">Trip</h3>
-        <p></p>
+        <p>出行</p>
 
         
           <table class="field-table">
@@ -2590,7 +2590,7 @@
                   <td>mode</td>
                   <td><a href="#city.trip.v2.TripMode">TripMode</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>出行方式 </p></td>
                 </tr>
               
                 <tr>
@@ -2604,15 +2604,14 @@
                   <td>departure_time</td>
                   <td><a href="#double">double</a></td>
                   <td>optional</td>
-                  <td><p>如果二者都为空则等价于wait_time=0
-期望的出发时间（单位: 秒） </p></td>
+                  <td><p>期望的出发时间（单位: 秒） </p></td>
                 </tr>
               
                 <tr>
                   <td>wait_time</td>
                   <td><a href="#double">double</a></td>
                   <td>optional</td>
-                  <td><p>期望的等待时间（单位：秒） </p></td>
+                  <td><p>期望的等待时间（单位：秒），如果departure_time为空则wait_time默认为0 </p></td>
                 </tr>
               
                 <tr>
@@ -2656,7 +2655,7 @@
               <tr>
                 <td>TRIP_MODE_UNSPECIFIED</td>
                 <td>0</td>
-                <td><p></p></td>
+                <td><p>未指定出行方式</p></td>
               </tr>
             
               <tr>
@@ -2680,7 +2679,7 @@
               <tr>
                 <td>TRIP_MODE_BIKE_WALK</td>
                 <td>5</td>
-                <td><p>当有自行车时选择骑自行车</p></td>
+                <td><p>当有自行车时选择骑自行车，否则步行</p></td>
               </tr>
             
           </tbody>
@@ -2712,7 +2711,7 @@
                   <td>id</td>
                   <td><a href="#int32">int32</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>智能体ID </p></td>
                 </tr>
               
                 <tr>
@@ -2816,21 +2815,21 @@
                   <td>type</td>
                   <td><a href="#city.agent.v2.AgentType">AgentType</a></td>
                   <td></td>
-                  <td><p>弃用 </p></td>
+                  <td><p>智能体类型 </p></td>
                 </tr>
               
                 <tr>
                   <td>length</td>
                   <td><a href="#double">double</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>单位: m，长度 </p></td>
                 </tr>
               
                 <tr>
                   <td>width</td>
                   <td><a href="#double">double</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>单位: m，宽度 </p></td>
                 </tr>
               
                 <tr>
@@ -2927,7 +2926,7 @@
                   <td>capacity</td>
                   <td><a href="#int32">int32</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>公交车容量 </p></td>
                 </tr>
               
             </tbody>
@@ -2981,31 +2980,25 @@
               <tr>
                 <td>AGENT_TYPE_UNSPECIFIED</td>
                 <td>0</td>
-                <td><p></p></td>
+                <td><p>未指定</p></td>
               </tr>
             
               <tr>
                 <td>AGENT_TYPE_PERSON</td>
                 <td>1</td>
-                <td><p></p></td>
+                <td><p>人</p></td>
               </tr>
             
               <tr>
                 <td>AGENT_TYPE_PRIVATE_CAR</td>
                 <td>2</td>
-                <td><p></p></td>
+                <td><p>私家车</p></td>
               </tr>
             
               <tr>
                 <td>AGENT_TYPE_BUS</td>
                 <td>3</td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>AGENT_TYPE_TAXI</td>
-                <td>4</td>
-                <td><p></p></td>
+                <td><p>公交车</p></td>
               </tr>
             
           </tbody>
@@ -3024,7 +3017,7 @@
 
       
         <h3 id="city.config.v1.MongoPath">MongoPath</h3>
-        <p></p>
+        <p>MongoDB配置</p>
 
         
           <table class="field-table">
@@ -3037,14 +3030,14 @@
                   <td>db</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>数据库名 </p></td>
                 </tr>
               
                 <tr>
                   <td>col</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>集合名 </p></td>
                 </tr>
               
             </tbody>
@@ -3055,7 +3048,7 @@
         
       
         <h3 id="city.config.v1.OutputTarget">OutputTarget</h3>
-        <p>输出的目标（数据库、对象存储、...）</p><p>目前只使用PostgreSQL</p>
+        <p>输出目标PostgreSQL</p>
 
         
           <table class="field-table">
@@ -3376,7 +3369,7 @@
 
       
         <h3 id="city.map.v2.Aoi">Aoi</h3>
-        <p></p>
+        <p>Aoi，用于描述地图上的区域</p>
 
         
           <table class="field-table">
@@ -3389,14 +3382,14 @@
                   <td>id</td>
                   <td><a href="#int32">int32</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>Aoi ID（从5_0000_0000开始） </p></td>
                 </tr>
               
                 <tr>
                   <td>type</td>
                   <td><a href="#city.map.v2.AoiType">AoiType</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p><strong>Deprecated.</strong> Aoi名称 </p></td>
                 </tr>
               
                 <tr>
@@ -3410,11 +3403,7 @@
                   <td>walking_positions</td>
                   <td><a href="#city.geo.v2.LanePosition">city.geo.v2.LanePosition</a></td>
                   <td>repeated</td>
-                  <td><p>Aoi与步行路网的连接点
-
-要求aoi与路网至少有1个连接点(driving_positions或walking_positions至少一个不为空)
-若type==AOI_TYPE_BUS_STATION,
-要求driving_positions和walking_positions均为长度为1的array </p></td>
+                  <td><p>Aoi与步行路网的连接点 </p></td>
                 </tr>
               
                 <tr>
@@ -3463,6 +3452,27 @@
           </table>
 
           
+            
+            
+            <h4>Fields with deprecated option</h4>
+            <table>
+              <thead>
+                <tr>
+                  <td>Name</td>
+                  <td>Option</td>
+                </tr>
+              </thead>
+              <tbody>
+              
+                <tr>
+                  <td>type</td>
+                  <td><p>true</p></td>
+                </tr>
+              
+              </tbody>
+            </table>
+            
+          
 
         
       
@@ -3494,28 +3504,28 @@
                   <td>north</td>
                   <td><a href="#double">double</a></td>
                   <td></td>
-                  <td><p>地图边界的xy坐标 </p></td>
+                  <td><p>最大纬度对应的y坐标 </p></td>
                 </tr>
               
                 <tr>
                   <td>south</td>
                   <td><a href="#double">double</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>最小纬度对应的y坐标 </p></td>
                 </tr>
               
                 <tr>
                   <td>east</td>
                   <td><a href="#double">double</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>最大经度对应的x坐标 </p></td>
                 </tr>
               
                 <tr>
                   <td>west</td>
                   <td><a href="#double">double</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>最小经度对应的x坐标 </p></td>
                 </tr>
               
                 <tr>
@@ -3533,7 +3543,7 @@
         
       
         <h3 id="city.map.v2.Junction">Junction</h3>
-        <p></p>
+        <p>Junction，用于描述路口</p>
 
         
           <table class="field-table">
@@ -3546,7 +3556,7 @@
                   <td>id</td>
                   <td><a href="#int32">int32</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>路口id（从3_0000_0000开始） </p></td>
                 </tr>
               
                 <tr>
@@ -3630,7 +3640,7 @@
         
       
         <h3 id="city.map.v2.Lane">Lane</h3>
-        <p></p>
+        <p>Lane，用于描述道路上的车道、人行道等</p>
 
         
           <table class="field-table">
@@ -3643,21 +3653,21 @@
                   <td>id</td>
                   <td><a href="#int32">int32</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>车道id（从0开始） </p></td>
                 </tr>
               
                 <tr>
                   <td>type</td>
                   <td><a href="#city.map.v2.LaneType">LaneType</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>车道类型 </p></td>
                 </tr>
               
                 <tr>
                   <td>turn</td>
                   <td><a href="#city.map.v2.LaneTurn">LaneTurn</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>车道转向 </p></td>
                 </tr>
               
                 <tr>
@@ -3678,7 +3688,7 @@
                   <td>width</td>
                   <td><a href="#double">double</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>车道宽度（单位：米） </p></td>
                 </tr>
               
                 <tr>
@@ -3692,7 +3702,7 @@
                   <td>left_border_line</td>
                   <td><a href="#city.map.v2.Polyline">Polyline</a></td>
                   <td></td>
-                  <td><p>车道左边界线
+                  <td><p><strong>Deprecated.</strong> 车道左边界线
 
 弃用 </p></td>
                 </tr>
@@ -3701,7 +3711,7 @@
                   <td>right_border_line</td>
                   <td><a href="#city.map.v2.Polyline">Polyline</a></td>
                   <td></td>
-                  <td><p>车道右边界线
+                  <td><p><strong>Deprecated.</strong> 车道右边界线
 
 弃用 </p></td>
                 </tr>
@@ -3765,11 +3775,37 @@
           </table>
 
           
+            
+            
+            <h4>Fields with deprecated option</h4>
+            <table>
+              <thead>
+                <tr>
+                  <td>Name</td>
+                  <td>Option</td>
+                </tr>
+              </thead>
+              <tbody>
+              
+                <tr>
+                  <td>left_border_line</td>
+                  <td><p>true</p></td>
+                </tr>
+              
+                <tr>
+                  <td>right_border_line</td>
+                  <td><p>true</p></td>
+                </tr>
+              
+              </tbody>
+            </table>
+            
+          
 
         
       
         <h3 id="city.map.v2.LaneConnection">LaneConnection</h3>
-        <p></p>
+        <p>车道连接信息</p>
 
         
           <table class="field-table">
@@ -3789,7 +3825,7 @@
                   <td>type</td>
                   <td><a href="#city.map.v2.LaneConnectionType">LaneConnectionType</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>连接类型 </p></td>
                 </tr>
               
             </tbody>
@@ -3959,7 +3995,7 @@
         
       
         <h3 id="city.map.v2.Poi">Poi</h3>
-        <p></p>
+        <p>Poi，用于描述地图上的兴趣点</p>
 
         
           <table class="field-table">
@@ -4010,6 +4046,13 @@
                   <td><p>Poi的容量（能同时容纳的人数），若无则表示无人数限制 </p></td>
                 </tr>
               
+                <tr>
+                  <td>functions</td>
+                  <td><a href="#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p>Poi所能提供的功能 </p></td>
+                </tr>
+              
             </tbody>
           </table>
 
@@ -4031,7 +4074,7 @@
                   <td>nodes</td>
                   <td><a href="#city.geo.v2.XYPosition">city.geo.v2.XYPosition</a></td>
                   <td>repeated</td>
-                  <td><p> </p></td>
+                  <td><p>折线上的点 </p></td>
                 </tr>
               
             </tbody>
@@ -4042,7 +4085,7 @@
         
       
         <h3 id="city.map.v2.Road">Road</h3>
-        <p></p>
+        <p>Road，用于描述道路</p>
 
         
           <table class="field-table">
@@ -4055,7 +4098,7 @@
                   <td>id</td>
                   <td><a href="#int32">int32</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>道路id（从2_0000_0000开始） </p></td>
                 </tr>
               
                 <tr>
@@ -4083,7 +4126,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
 
       
         <h3 id="city.map.v2.AoiType">AoiType</h3>
-        <p>TODO(张钧): 参照常见用地类型进行分类</p>
+        <p>TODO(张钧): 移除该项，重新设计公交地铁系统</p>
         <table class="enum-table">
           <thead>
             <tr><td>Name</td><td>Number</td><td>Description</td></tr>
@@ -4093,19 +4136,19 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
               <tr>
                 <td>AOI_TYPE_UNSPECIFIED</td>
                 <td>0</td>
-                <td><p></p></td>
+                <td><p>未指定</p></td>
               </tr>
             
               <tr>
                 <td>AOI_TYPE_BUS_STATION</td>
                 <td>1</td>
-                <td><p></p></td>
+                <td><p>公交站点</p></td>
               </tr>
             
               <tr>
                 <td>AOI_TYPE_OTHER</td>
                 <td>2</td>
-                <td><p></p></td>
+                <td><p>其他</p></td>
               </tr>
             
           </tbody>
@@ -4122,7 +4165,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
               <tr>
                 <td>LAND_USE_TYPE_UNSPECIFIED</td>
                 <td>0</td>
-                <td><p></p></td>
+                <td><p>未指定</p></td>
               </tr>
             
               <tr>
@@ -4165,7 +4208,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
         </table>
       
         <h3 id="city.map.v2.LaneConnectionType">LaneConnectionType</h3>
-        <p></p>
+        <p>车道连接类型</p>
         <table class="enum-table">
           <thead>
             <tr><td>Name</td><td>Number</td><td>Description</td></tr>
@@ -4175,7 +4218,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
               <tr>
                 <td>LANE_CONNECTION_TYPE_UNSPECIFIED</td>
                 <td>0</td>
-                <td><p></p></td>
+                <td><p>未指定</p></td>
               </tr>
             
               <tr>
@@ -4194,7 +4237,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
         </table>
       
         <h3 id="city.map.v2.LaneTurn">LaneTurn</h3>
-        <p></p>
+        <p>车道转向</p>
         <table class="enum-table">
           <thead>
             <tr><td>Name</td><td>Number</td><td>Description</td></tr>
@@ -4204,7 +4247,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
               <tr>
                 <td>LANE_TURN_UNSPECIFIED</td>
                 <td>0</td>
-                <td><p></p></td>
+                <td><p>未指定</p></td>
               </tr>
             
               <tr>
@@ -4235,7 +4278,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
         </table>
       
         <h3 id="city.map.v2.LaneType">LaneType</h3>
-        <p></p>
+        <p>车道类型</p>
         <table class="enum-table">
           <thead>
             <tr><td>Name</td><td>Number</td><td>Description</td></tr>
@@ -4245,7 +4288,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
               <tr>
                 <td>LANE_TYPE_UNSPECIFIED</td>
                 <td>0</td>
-                <td><p></p></td>
+                <td><p>未指定</p></td>
               </tr>
             
               <tr>
@@ -7721,7 +7764,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
 
       
         <h3 id="city.routing.v2.Cost">Cost</h3>
-        <p></p>
+        <p>路径成本设置</p>
 
         
           <table class="field-table">
@@ -7775,7 +7818,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
 
       
         <h3 id="city.routing.v2.GetDrivingCostsRequest">GetDrivingCostsRequest</h3>
-        <p></p>
+        <p>获取行车导航道路通行成本请求</p>
 
         
           <table class="field-table">
@@ -7799,7 +7842,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
         
       
         <h3 id="city.routing.v2.GetDrivingCostsResponse">GetDrivingCostsResponse</h3>
-        <p></p>
+        <p>获取行车导航道路通行成本响应</p>
 
         
           <table class="field-table">
@@ -7823,7 +7866,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
         
       
         <h3 id="city.routing.v2.GetRouteRequest">GetRouteRequest</h3>
-        <p>simulet -> routing app</p>
+        <p>获取导航路线请求</p>
 
         
           <table class="field-table">
@@ -7836,28 +7879,28 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
                   <td>type</td>
                   <td><a href="#city.routing.v2.RouteType">RouteType</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>导航类型 </p></td>
                 </tr>
               
                 <tr>
                   <td>start</td>
                   <td><a href="#city.geo.v2.Position">city.geo.v2.Position</a></td>
                   <td></td>
-                  <td><p>约定：包含LanePosition或AoiPosition中的一种 </p></td>
+                  <td><p>起点，约定：包含LanePosition或AoiPosition中的一种 </p></td>
                 </tr>
               
                 <tr>
                   <td>end</td>
                   <td><a href="#city.geo.v2.Position">city.geo.v2.Position</a></td>
                   <td></td>
-                  <td><p>约定：包含LanePosition或AoiPosition中的一种 </p></td>
+                  <td><p>起点，约定：包含LanePosition或AoiPosition中的一种 </p></td>
                 </tr>
               
                 <tr>
                   <td>agent_id</td>
                   <td><a href="#int32">int32</a></td>
                   <td></td>
-                  <td><p>发送导航请求的agent id（目前仅在行车导航中使用） </p></td>
+                  <td><p><strong>Deprecated.</strong> 发送导航请求的agent id（目前仅在行车导航中使用） </p></td>
                 </tr>
               
                 <tr>
@@ -7871,11 +7914,32 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
           </table>
 
           
+            
+            
+            <h4>Fields with deprecated option</h4>
+            <table>
+              <thead>
+                <tr>
+                  <td>Name</td>
+                  <td>Option</td>
+                </tr>
+              </thead>
+              <tbody>
+              
+                <tr>
+                  <td>agent_id</td>
+                  <td><p>true</p></td>
+                </tr>
+              
+              </tbody>
+            </table>
+            
+          
 
         
       
         <h3 id="city.routing.v2.GetRouteResponse">GetRouteResponse</h3>
-        <p>routing app -> simulet</p>
+        <p>获取导航路线响应</p>
 
         
           <table class="field-table">
@@ -7899,7 +7963,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
         
       
         <h3 id="city.routing.v2.SetDrivingCostsRequest">SetDrivingCostsRequest</h3>
-        <p></p>
+        <p>设置行车导航道路通行成本请求</p>
 
         
           <table class="field-table">
@@ -7923,7 +7987,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
         
       
         <h3 id="city.routing.v2.SetDrivingCostsResponse">SetDrivingCostsResponse</h3>
-        <p></p>
+        <p>设置行车导航道路通行成本响应</p>
 
         
 
@@ -7947,7 +8011,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
                 <td>GetRoute</td>
                 <td><a href="#city.routing.v2.GetRouteRequest">GetRouteRequest</a></td>
                 <td><a href="#city.routing.v2.GetRouteResponse">GetRouteResponse</a></td>
-                <td><p>Get route by type/start/end</p></td>
+                <td><p>获取导航路线</p></td>
               </tr>
             
               <tr>
@@ -7977,7 +8041,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
 
       
         <h3 id="city.social.v1.Message">Message</h3>
-        <p></p>
+        <p>消息</p>
 
         
           <table class="field-table">
@@ -8037,7 +8101,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
 
       
         <h3 id="city.social.v1.ReceiveRequest">ReceiveRequest</h3>
-        <p></p>
+        <p>接收消息请求</p>
 
         
           <table class="field-table">
@@ -8061,7 +8125,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
         
       
         <h3 id="city.social.v1.ReceiveResponse">ReceiveResponse</h3>
-        <p></p>
+        <p>接收消息响应</p>
 
         
           <table class="field-table">
@@ -8074,7 +8138,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
                   <td>messages</td>
                   <td><a href="#city.social.v1.Message">Message</a></td>
                   <td>repeated</td>
-                  <td><p> </p></td>
+                  <td><p>接收到的消息 </p></td>
                 </tr>
               
             </tbody>
@@ -8085,7 +8149,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
         
       
         <h3 id="city.social.v1.SendRequest">SendRequest</h3>
-        <p></p>
+        <p>发送消息请求</p>
 
         
           <table class="field-table">
@@ -8098,7 +8162,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
                   <td>messages</td>
                   <td><a href="#city.social.v1.Message">Message</a></td>
                   <td>repeated</td>
-                  <td><p> </p></td>
+                  <td><p>待发送的消息 </p></td>
                 </tr>
               
             </tbody>
@@ -8109,7 +8173,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
         
       
         <h3 id="city.social.v1.SendResponse">SendResponse</h3>
-        <p></p>
+        <p>发送消息响应</p>
 
         
 
@@ -8156,7 +8220,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
 
       
         <h3 id="city.streetview.v1.StreetView">StreetView</h3>
-        <p></p>
+        <p>街景图片元数据</p>
 
         
           <table class="field-table">
@@ -8169,7 +8233,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
                   <td>lnglat</td>
                   <td><a href="#city.geo.v2.LongLatPosition">city.geo.v2.LongLatPosition</a></td>
                   <td></td>
-                  <td><p>位置信息 </p></td>
+                  <td><p>WGS84经纬度位置 </p></td>
                 </tr>
               
                 <tr>
@@ -8187,7 +8251,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
         
       
         <h3 id="city.streetview.v1.StreetViewImage">StreetViewImage</h3>
-        <p></p>
+        <p>街景图片描述</p>
 
         
           <table class="field-table">
@@ -8256,14 +8320,14 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
 
       
         <h3 id="city.sync.v1.GetEtcdRequest">GetEtcdRequest</h3>
-        <p></p>
+        <p>获取内嵌etcd的端口请求</p>
 
         
 
         
       
         <h3 id="city.sync.v1.GetEtcdResponse">GetEtcdResponse</h3>
-        <p></p>
+        <p>获取内嵌etcd的端口响应</p>
 
         
           <table class="field-table">
@@ -8287,7 +8351,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
         
       
         <h3 id="city.sync.v1.StepRequest">StepRequest</h3>
-        <p></p>
+        <p>步进请求</p>
 
         
           <table class="field-table">
@@ -8318,7 +8382,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
         
       
         <h3 id="city.sync.v1.StepResponse">StepResponse</h3>
-        <p></p>
+        <p>步进响应</p>
 
         
           <table class="field-table">
@@ -8382,7 +8446,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
 
       
         <h3 id="city.traffic.interaction.agent.v2.AgentRuntime">AgentRuntime</h3>
-        <p></p>
+        <p>Agent（人）的运行时状态</p>
 
         
           <table class="field-table">
@@ -8395,7 +8459,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
                   <td>id</td>
                   <td><a href="#int32">int32</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>ID </p></td>
                 </tr>
               
                 <tr>
@@ -8443,7 +8507,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
 
       
         <h3 id="city.traffic.interaction.agent.v2.Status">Status</h3>
-        <p></p>
+        <p>Agent（人）的运行时状态</p>
         <table class="enum-table">
           <thead>
             <tr><td>Name</td><td>Number</td><td>Description</td></tr>
@@ -8453,7 +8517,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
               <tr>
                 <td>STATUS_UNSPECIFIED</td>
                 <td>0</td>
-                <td><p></p></td>
+                <td><p>未指定</p></td>
               </tr>
             
               <tr>
@@ -8508,7 +8572,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
 
       
         <h3 id="city.traffic.interaction.agent.v2.AddAgentRequest">AddAgentRequest</h3>
-        <p></p>
+        <p>新增agent请求</p>
 
         
           <table class="field-table">
@@ -8532,7 +8596,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
         
       
         <h3 id="city.traffic.interaction.agent.v2.AddAgentResponse">AddAgentResponse</h3>
-        <p></p>
+        <p>新增agent响应</p>
 
         
           <table class="field-table">
@@ -8545,7 +8609,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
                   <td>agent_id</td>
                   <td><a href="#int32">int32</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>新增的agent分配得到的ID </p></td>
                 </tr>
               
             </tbody>
@@ -8556,7 +8620,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
         
       
         <h3 id="city.traffic.interaction.agent.v2.GetAgentRequest">GetAgentRequest</h3>
-        <p></p>
+        <p>获取agent信息请求</p>
 
         
           <table class="field-table">
@@ -8569,7 +8633,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
                   <td>agent_id</td>
                   <td><a href="#int32">int32</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>agent id </p></td>
                 </tr>
               
             </tbody>
@@ -8580,7 +8644,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
         
       
         <h3 id="city.traffic.interaction.agent.v2.GetAgentResponse">GetAgentResponse</h3>
-        <p></p>
+        <p>获取agent信息响应</p>
 
         
           <table class="field-table">
@@ -8593,14 +8657,14 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
                   <td>base</td>
                   <td><a href="#city.agent.v2.Agent">city.agent.v2.Agent</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>agent静态信息 </p></td>
                 </tr>
               
                 <tr>
                   <td>runtime</td>
                   <td><a href="#city.traffic.interaction.agent.v2.AgentRuntime">AgentRuntime</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>agent运行时信息 </p></td>
                 </tr>
               
             </tbody>
@@ -8611,7 +8675,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
         
       
         <h3 id="city.traffic.interaction.agent.v2.GetAgentsByLongLatAreaRequest">GetAgentsByLongLatAreaRequest</h3>
-        <p></p>
+        <p>获取特定区域内的agent请求</p>
 
         
           <table class="field-table">
@@ -8624,7 +8688,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
                   <td>area</td>
                   <td><a href="#city.geo.v2.LongLatRectArea">city.geo.v2.LongLatRectArea</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>经纬度范围 </p></td>
                 </tr>
               
             </tbody>
@@ -8635,7 +8699,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
         
       
         <h3 id="city.traffic.interaction.agent.v2.GetAgentsByLongLatAreaResponse">GetAgentsByLongLatAreaResponse</h3>
-        <p></p>
+        <p>获取特定区域内的agent响应</p>
 
         
           <table class="field-table">
@@ -8648,14 +8712,14 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
                   <td>step</td>
                   <td><a href="#int32">int32</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>当前模拟步数 </p></td>
                 </tr>
               
                 <tr>
                   <td>agents</td>
                   <td><a href="#city.traffic.interaction.agent.v2.AgentRuntime">AgentRuntime</a></td>
                   <td>repeated</td>
-                  <td><p> </p></td>
+                  <td><p>区域内的agent的运行时信息 </p></td>
                 </tr>
               
             </tbody>
@@ -8666,7 +8730,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
         
       
         <h3 id="city.traffic.interaction.agent.v2.SetScheduleRequest">SetScheduleRequest</h3>
-        <p></p>
+        <p>修改agent的schedule请求</p>
 
         
           <table class="field-table">
@@ -8679,14 +8743,14 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
                   <td>agent_id</td>
                   <td><a href="#int32">int32</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>agent id </p></td>
                 </tr>
               
                 <tr>
                   <td>schedules</td>
                   <td><a href="#city.trip.v2.Schedule">city.trip.v2.Schedule</a></td>
                   <td>repeated</td>
-                  <td><p> </p></td>
+                  <td><p>新的schedule（覆盖原有的schedule） </p></td>
                 </tr>
               
             </tbody>
@@ -8697,7 +8761,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
         
       
         <h3 id="city.traffic.interaction.agent.v2.SetScheduleResponse">SetScheduleResponse</h3>
-        <p></p>
+        <p>修改agent的schedule响应</p>
 
         
 
@@ -8742,7 +8806,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
                 <td>GetAgentsByLongLatArea</td>
                 <td><a href="#city.traffic.interaction.agent.v2.GetAgentsByLongLatAreaRequest">GetAgentsByLongLatAreaRequest</a></td>
                 <td><a href="#city.traffic.interaction.agent.v2.GetAgentsByLongLatAreaResponse">GetAgentsByLongLatAreaResponse</a></td>
-                <td><p>获取特定区域内的车辆xinxi</p></td>
+                <td><p>获取特定区域内的agent</p></td>
               </tr>
             
           </tbody>
@@ -8758,7 +8822,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
 
       
         <h3 id="city.traffic.interaction.aoi.v1.State">State</h3>
-        <p></p>
+        <p>AOI状态</p>
 
         
           <table class="field-table">
@@ -8803,7 +8867,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
 
       
         <h3 id="city.traffic.interaction.aoi.v1.GetAoiRequest">GetAoiRequest</h3>
-        <p></p>
+        <p>获取AOI信息请求</p>
 
         
           <table class="field-table">
@@ -8816,7 +8880,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
                   <td>aoi_ids</td>
                   <td><a href="#int32">int32</a></td>
                   <td>repeated</td>
-                  <td><p> </p></td>
+                  <td><p>指定AOI ID列表，如果为空，则返回所有AOI信息 </p></td>
                 </tr>
               
             </tbody>
@@ -8827,7 +8891,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
         
       
         <h3 id="city.traffic.interaction.aoi.v1.GetAoiResponse">GetAoiResponse</h3>
-        <p></p>
+        <p>获取AOI信息响应</p>
 
         
           <table class="field-table">
@@ -8840,7 +8904,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
                   <td>states</td>
                   <td><a href="#city.traffic.interaction.aoi.v1.State">State</a></td>
                   <td>repeated</td>
-                  <td><p> </p></td>
+                  <td><p>AOI信息列表 </p></td>
                 </tr>
               
             </tbody>
@@ -8868,7 +8932,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
                 <td>GetAoi</td>
                 <td><a href="#city.traffic.interaction.aoi.v1.GetAoiRequest">GetAoiRequest</a></td>
                 <td><a href="#city.traffic.interaction.aoi.v1.GetAoiResponse">GetAoiResponse</a></td>
-                <td><p></p></td>
+                <td><p>获取AOI信息</p></td>
               </tr>
             
           </tbody>
@@ -8884,7 +8948,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
 
       
         <h3 id="city.traffic.interaction.lane.v1.State">State</h3>
-        <p></p>
+        <p>Lane状态</p>
 
         
           <table class="field-table">
@@ -8943,7 +9007,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
 
       
         <h3 id="city.traffic.interaction.lane.v1.GetLaneRequest">GetLaneRequest</h3>
-        <p></p>
+        <p>获取Lane的信息请求</p>
 
         
           <table class="field-table">
@@ -8956,7 +9020,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
                   <td>lane_ids</td>
                   <td><a href="#int32">int32</a></td>
                   <td>repeated</td>
-                  <td><p> </p></td>
+                  <td><p>指定的Lane id列表，如果为空，则返回所有Lane的信息 </p></td>
                 </tr>
               
             </tbody>
@@ -8967,7 +9031,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
         
       
         <h3 id="city.traffic.interaction.lane.v1.GetLaneResponse">GetLaneResponse</h3>
-        <p></p>
+        <p>获取Lane的信息响应</p>
 
         
           <table class="field-table">
@@ -8980,7 +9044,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
                   <td>states</td>
                   <td><a href="#city.traffic.interaction.lane.v1.State">State</a></td>
                   <td>repeated</td>
-                  <td><p> </p></td>
+                  <td><p>Lane的信息 </p></td>
                 </tr>
               
             </tbody>
@@ -8991,7 +9055,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
         
       
         <h3 id="city.traffic.interaction.lane.v1.SetMaxVRequest">SetMaxVRequest</h3>
-        <p></p>
+        <p>设置Lane的最大速度（限速）请求</p>
 
         
           <table class="field-table">
@@ -9004,14 +9068,14 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
                   <td>lane_id</td>
                   <td><a href="#int32">int32</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>Lane id </p></td>
                 </tr>
               
                 <tr>
                   <td>max_v</td>
                   <td><a href="#double">double</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>最大速度（限速），单位：m/s </p></td>
                 </tr>
               
             </tbody>
@@ -9022,7 +9086,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
         
       
         <h3 id="city.traffic.interaction.lane.v1.SetMaxVResponse">SetMaxVResponse</h3>
-        <p></p>
+        <p>设置Lane的最大速度（限速）响应</p>
 
         
 
@@ -9046,7 +9110,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
                 <td>SetMaxV</td>
                 <td><a href="#city.traffic.interaction.lane.v1.SetMaxVRequest">SetMaxVRequest</a></td>
                 <td><a href="#city.traffic.interaction.lane.v1.SetMaxVResponse">SetMaxVResponse</a></td>
-                <td><p>设置Lane的最大速度</p></td>
+                <td><p>设置Lane的最大速度（限速）</p></td>
               </tr>
             
               <tr>
@@ -9069,7 +9133,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
 
       
         <h3 id="city.traffic.interaction.road.v1.State">State</h3>
-        <p></p>
+        <p>道路状态</p>
 
         
           <table class="field-table">
@@ -9158,7 +9222,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
         </table>
       
         <h3 id="city.traffic.interaction.road.v1.RoadLevel">RoadLevel</h3>
-        <p></p>
+        <p>道路拥堵情况</p>
         <table class="enum-table">
           <thead>
             <tr><td>Name</td><td>Number</td><td>Description</td></tr>
@@ -9168,43 +9232,43 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
               <tr>
                 <td>ROAD_LEVEL_UNSPECIFIED</td>
                 <td>0</td>
-                <td><p></p></td>
+                <td><p>未指定</p></td>
               </tr>
             
               <tr>
                 <td>ROAD_LEVEL_CLEAR</td>
                 <td>1</td>
-                <td><p></p></td>
+                <td><p>畅通</p></td>
               </tr>
             
               <tr>
                 <td>ROAD_LEVEL_LIGHT_LOAD</td>
                 <td>2</td>
-                <td><p></p></td>
+                <td><p>轻度拥堵</p></td>
               </tr>
             
               <tr>
                 <td>ROAD_LEVEL_MEDIUM_LOAD</td>
                 <td>3</td>
-                <td><p></p></td>
+                <td><p>中度拥堵</p></td>
               </tr>
             
               <tr>
                 <td>ROAD_LEVEL_HEAVY_LOAD</td>
                 <td>4</td>
-                <td><p></p></td>
+                <td><p>重度拥堵</p></td>
               </tr>
             
               <tr>
                 <td>ROAD_LEVEL_OVERLOAD</td>
                 <td>5</td>
-                <td><p></p></td>
+                <td><p>极端拥堵</p></td>
               </tr>
             
               <tr>
                 <td>ROAD_LEVEL_RESTRICTED</td>
                 <td>6</td>
-                <td><p></p></td>
+                <td><p>限行</p></td>
               </tr>
             
           </tbody>
@@ -9254,7 +9318,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
         
       
         <h3 id="city.traffic.interaction.road.v1.GetRoadRequest">GetRoadRequest</h3>
-        <p></p>
+        <p>查询道路信息请求</p>
 
         
           <table class="field-table">
@@ -9267,7 +9331,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
                   <td>road_ids</td>
                   <td><a href="#int32">int32</a></td>
                   <td>repeated</td>
-                  <td><p>查询的道路ID列表，为空代表查询所有道路 </p></td>
+                  <td><p>指定查询的道路ID列表，为空代表查询所有道路 </p></td>
                 </tr>
               
             </tbody>
@@ -9278,7 +9342,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
         
       
         <h3 id="city.traffic.interaction.road.v1.GetRoadResponse">GetRoadResponse</h3>
-        <p></p>
+        <p>查询道路信息响应</p>
 
         
           <table class="field-table">
@@ -9291,7 +9355,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
                   <td>states</td>
                   <td><a href="#city.traffic.interaction.road.v1.State">State</a></td>
                   <td>repeated</td>
-                  <td><p> </p></td>
+                  <td><p>道路信息列表 </p></td>
                 </tr>
               
             </tbody>
@@ -9395,7 +9459,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
                 <td>GetRoad</td>
                 <td><a href="#city.traffic.interaction.road.v1.GetRoadRequest">GetRoadRequest</a></td>
                 <td><a href="#city.traffic.interaction.road.v1.GetRoadResponse">GetRoadResponse</a></td>
-                <td><p></p></td>
+                <td><p>查询道路信息</p></td>
               </tr>
             
               <tr>
@@ -9425,7 +9489,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
 
       
         <h3 id="city.traffic_light.v2.Phase">Phase</h3>
-        <p></p>
+        <p>交通灯相位</p>
 
         
           <table class="field-table">
@@ -9438,7 +9502,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
                   <td>duration</td>
                   <td><a href="#double">double</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>相位持续时间，单位秒 </p></td>
                 </tr>
               
                 <tr>
@@ -9456,7 +9520,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
         
       
         <h3 id="city.traffic_light.v2.TrafficLight">TrafficLight</h3>
-        <p></p>
+        <p>交通灯</p>
 
         
           <table class="field-table">
@@ -9469,7 +9533,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
                   <td>junction_id</td>
                   <td><a href="#int32">int32</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>所在路口id </p></td>
                 </tr>
               
                 <tr>
@@ -9513,7 +9577,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
 
       
         <h3 id="city.traffic_light.v2.LightState">LightState</h3>
-        <p></p>
+        <p>交通灯的状态</p>
         <table class="enum-table">
           <thead>
             <tr><td>Name</td><td>Number</td><td>Description</td></tr>
@@ -9523,25 +9587,25 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
               <tr>
                 <td>LIGHT_STATE_UNSPECIFIED</td>
                 <td>0</td>
-                <td><p></p></td>
+                <td><p>未指定</p></td>
               </tr>
             
               <tr>
                 <td>LIGHT_STATE_RED</td>
                 <td>1</td>
-                <td><p></p></td>
+                <td><p>红灯</p></td>
               </tr>
             
               <tr>
                 <td>LIGHT_STATE_GREEN</td>
                 <td>2</td>
-                <td><p></p></td>
+                <td><p>绿灯</p></td>
               </tr>
             
               <tr>
                 <td>LIGHT_STATE_YELLOW</td>
                 <td>3</td>
-                <td><p></p></td>
+                <td><p>黄灯</p></td>
               </tr>
             
           </tbody>
@@ -9560,7 +9624,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
 
       
         <h3 id="city.traffic.interaction.traffic_light.v2.GetTrafficLightRequest">GetTrafficLightRequest</h3>
-        <p></p>
+        <p>获取路口的红绿灯信息请求</p>
 
         
           <table class="field-table">
@@ -9584,7 +9648,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
         
       
         <h3 id="city.traffic.interaction.traffic_light.v2.GetTrafficLightResponse">GetTrafficLightResponse</h3>
-        <p></p>
+        <p>获取路口的红绿灯信息响应</p>
 
         
           <table class="field-table">
@@ -9597,7 +9661,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
                   <td>traffic_light</td>
                   <td><a href="#city.traffic_light.v2.TrafficLight">city.traffic_light.v2.TrafficLight</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>当前路口处的红绿灯 </p></td>
                 </tr>
               
                 <tr>
@@ -9622,7 +9686,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
         
       
         <h3 id="city.traffic.interaction.traffic_light.v2.SetTrafficLightPhaseRequest">SetTrafficLightPhaseRequest</h3>
-        <p></p>
+        <p>设置路口的红绿灯相位请求</p>
 
         
           <table class="field-table">
@@ -9660,14 +9724,14 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
         
       
         <h3 id="city.traffic.interaction.traffic_light.v2.SetTrafficLightPhaseResponse">SetTrafficLightPhaseResponse</h3>
-        <p></p>
+        <p>设置路口的红绿灯相位响应</p>
 
         
 
         
       
         <h3 id="city.traffic.interaction.traffic_light.v2.SetTrafficLightRequest">SetTrafficLightRequest</h3>
-        <p></p>
+        <p>设置路口的红绿灯信息请求</p>
 
         
           <table class="field-table">
@@ -9680,7 +9744,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
                   <td>traffic_light</td>
                   <td><a href="#city.traffic_light.v2.TrafficLight">city.traffic_light.v2.TrafficLight</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>需要改变的红绿灯（含路口编号） </p></td>
                 </tr>
               
                 <tr>
@@ -9705,14 +9769,14 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
         
       
         <h3 id="city.traffic.interaction.traffic_light.v2.SetTrafficLightResponse">SetTrafficLightResponse</h3>
-        <p></p>
+        <p>设置路口的红绿灯信息响应</p>
 
         
 
         
       
         <h3 id="city.traffic.interaction.traffic_light.v2.SetTrafficLightStatusRequest">SetTrafficLightStatusRequest</h3>
-        <p></p>
+        <p>设置路口的红绿灯状态请求</p>
 
         
           <table class="field-table">
@@ -9743,7 +9807,7 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
         
       
         <h3 id="city.traffic.interaction.traffic_light.v2.SetTrafficLightStatusResponse">SetTrafficLightStatusResponse</h3>
-        <p></p>
+        <p>设置路口的红绿灯状态响应</p>
 
         
 
@@ -9767,28 +9831,28 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
                 <td>GetTrafficLight</td>
                 <td><a href="#city.traffic.interaction.traffic_light.v2.GetTrafficLightRequest">GetTrafficLightRequest</a></td>
                 <td><a href="#city.traffic.interaction.traffic_light.v2.GetTrafficLightResponse">GetTrafficLightResponse</a></td>
-                <td><p></p></td>
+                <td><p>获取路口的红绿灯信息</p></td>
               </tr>
             
               <tr>
                 <td>SetTrafficLight</td>
                 <td><a href="#city.traffic.interaction.traffic_light.v2.SetTrafficLightRequest">SetTrafficLightRequest</a></td>
                 <td><a href="#city.traffic.interaction.traffic_light.v2.SetTrafficLightResponse">SetTrafficLightResponse</a></td>
-                <td><p></p></td>
+                <td><p>设置路口的红绿灯信息</p></td>
               </tr>
             
               <tr>
                 <td>SetTrafficLightPhase</td>
                 <td><a href="#city.traffic.interaction.traffic_light.v2.SetTrafficLightPhaseRequest">SetTrafficLightPhaseRequest</a></td>
                 <td><a href="#city.traffic.interaction.traffic_light.v2.SetTrafficLightPhaseResponse">SetTrafficLightPhaseResponse</a></td>
-                <td><p></p></td>
+                <td><p>设置路口的红绿灯相位</p></td>
               </tr>
             
               <tr>
                 <td>SetTrafficLightStatus</td>
                 <td><a href="#city.traffic.interaction.traffic_light.v2.SetTrafficLightStatusRequest">SetTrafficLightStatusRequest</a></td>
                 <td><a href="#city.traffic.interaction.traffic_light.v2.SetTrafficLightStatusResponse">SetTrafficLightStatusResponse</a></td>
-                <td><p></p></td>
+                <td><p>设置路口的红绿灯状态</p></td>
               </tr>
             
           </tbody>

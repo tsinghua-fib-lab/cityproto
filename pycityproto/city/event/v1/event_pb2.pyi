@@ -6,7 +6,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class EventType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-    __slots__ = ()
+    __slots__ = []
     EVENT_TYPE_UNSPECIFIED: _ClassVar[EventType]
     EVENT_TYPE_HEAVY_RAIN: _ClassVar[EventType]
     EVENT_TYPE_MILITARY_STRIKE: _ClassVar[EventType]
@@ -33,7 +33,7 @@ EVENT_TYPE_COMM_STOPPED_BASE_STATION: EventType
 EVENT_TYPE_COMM_OVERLOAD_BASE_STATION: EventType
 
 class Event(_message.Message):
-    __slots__ = ('type', 'level', 'step')
+    __slots__ = ['type', 'level', 'step']
     TYPE_FIELD_NUMBER: _ClassVar[int]
     LEVEL_FIELD_NUMBER: _ClassVar[int]
     STEP_FIELD_NUMBER: _ClassVar[int]
@@ -45,7 +45,7 @@ class Event(_message.Message):
         ...
 
 class Events(_message.Message):
-    __slots__ = ('events',)
+    __slots__ = ['events']
     EVENTS_FIELD_NUMBER: _ClassVar[int]
     events: _containers.RepeatedCompositeFieldContainer[Event]
 

@@ -7,7 +7,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class FacilityType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-    __slots__ = ()
+    __slots__ = []
     FACILITY_TYPE_UNSPECIFIED: _ClassVar[FacilityType]
     FACILITY_TYPE_POWER_STATION: _ClassVar[FacilityType]
     FACILITY_TYPE_TRANSFORMER_500: _ClassVar[FacilityType]
@@ -34,7 +34,7 @@ FACILITY_TYPE_AOI: FacilityType
 FACILITY_TYPE_SUPPLY_PUMP: FacilityType
 
 class RepairStation(_message.Message):
-    __slots__ = ('aoi_id', 'position')
+    __slots__ = ['aoi_id', 'position']
     AOI_ID_FIELD_NUMBER: _ClassVar[int]
     POSITION_FIELD_NUMBER: _ClassVar[int]
     aoi_id: int
@@ -44,7 +44,7 @@ class RepairStation(_message.Message):
         ...
 
 class Facility(_message.Message):
-    __slots__ = ('id', 'position', 'type', 'relation', 'foreign_id', 'aoi_id', 'num_transformer')
+    __slots__ = ['id', 'position', 'type', 'relation', 'foreign_id', 'aoi_id', 'num_transformer']
     ID_FIELD_NUMBER: _ClassVar[int]
     POSITION_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
@@ -64,7 +64,7 @@ class Facility(_message.Message):
         ...
 
 class Facilities(_message.Message):
-    __slots__ = ('facilities', 'repair_stations')
+    __slots__ = ['facilities', 'repair_stations']
     FACILITIES_FIELD_NUMBER: _ClassVar[int]
     REPAIR_STATIONS_FIELD_NUMBER: _ClassVar[int]
     facilities: _containers.RepeatedCompositeFieldContainer[Facility]

@@ -20,13 +20,18 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+// 导航请求类型
 type RouteType int32
 
 const (
+	// 未指定
 	RouteType_ROUTE_TYPE_UNSPECIFIED RouteType = 0
-	RouteType_ROUTE_TYPE_DRIVING     RouteType = 1
-	RouteType_ROUTE_TYPE_WALKING     RouteType = 2
-	RouteType_ROUTE_TYPE_BY_BUS      RouteType = 3
+	// 驾车
+	RouteType_ROUTE_TYPE_DRIVING RouteType = 1
+	// 步行
+	RouteType_ROUTE_TYPE_WALKING RouteType = 2
+	// 公交
+	RouteType_ROUTE_TYPE_BY_BUS RouteType = 3
 )
 
 // Enum value maps for RouteType.
@@ -72,13 +77,22 @@ func (RouteType) EnumDescriptor() ([]byte, []int) {
 	return file_city_routing_v2_routing_proto_rawDescGZIP(), []int{0}
 }
 
+// 移动方式
+// Journey用以描述采用一种特定交通方式从一点出发到达另一点的路径。
+// 一般来说，多个Journey是一个Trip的“实现”。
+// 例如：Trip(从清华乘地铁到天安门):
+// Journey(步行到地铁站)->Journey(地铁)->Journey(步行到天安门)
 type JourneyType int32
 
 const (
+	// 未指定
 	JourneyType_JOURNEY_TYPE_UNSPECIFIED JourneyType = 0
-	JourneyType_JOURNEY_TYPE_DRIVING     JourneyType = 1
-	JourneyType_JOURNEY_TYPE_WALKING     JourneyType = 2
-	JourneyType_JOURNEY_TYPE_BY_BUS      JourneyType = 3
+	// 驾车
+	JourneyType_JOURNEY_TYPE_DRIVING JourneyType = 1
+	// 步行
+	JourneyType_JOURNEY_TYPE_WALKING JourneyType = 2
+	// 公交
+	JourneyType_JOURNEY_TYPE_BY_BUS JourneyType = 3
 )
 
 // Enum value maps for JourneyType.
@@ -124,10 +138,12 @@ func (JourneyType) EnumDescriptor() ([]byte, []int) {
 	return file_city_routing_v2_routing_proto_rawDescGZIP(), []int{1}
 }
 
+// 步行移动方向
 // 行人前进的方向与Lane的正方向（s增大的方向）的关系
 type MovingDirection int32
 
 const (
+	// 未指定
 	MovingDirection_MOVING_DIRECTION_UNSPECIFIED MovingDirection = 0
 	// 与正方向同向
 	MovingDirection_MOVING_DIRECTION_FORWARD MovingDirection = 1
@@ -176,6 +192,7 @@ func (MovingDirection) EnumDescriptor() ([]byte, []int) {
 	return file_city_routing_v2_routing_proto_rawDescGZIP(), []int{2}
 }
 
+// 驾车出行方式的路径规划结果
 type DrivingJourneyBody struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -235,13 +252,16 @@ func (x *DrivingJourneyBody) GetEta() float64 {
 	return 0
 }
 
+// 步行出行方式的路径规划结果中的一段
 type WalkingRouteSegment struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	LaneId          int32           `protobuf:"varint,1,opt,name=lane_id,json=laneId,proto3" json:"lane_id,omitempty" yaml:"lane_id" bson:"lane_id" db:"lane_id"`
-	MovingDirection MovingDirection `protobuf:"varint,2,opt,name=moving_direction,json=movingDirection,proto3,enum=city.routing.v2.MovingDirection" json:"moving_direction,omitempty" yaml:"moving_direction" bson:"moving_direction" db:"moving_direction"`
+	// Lane ID
+	LaneId int32 `protobuf:"varint,1,opt,name=lane_id,json=laneId,proto3" json:"lane_id,omitempty" bson:"lane_id" db:"lane_id" yaml:"lane_id"`
+	// 移动方向
+	MovingDirection MovingDirection `protobuf:"varint,2,opt,name=moving_direction,json=movingDirection,proto3,enum=city.routing.v2.MovingDirection" json:"moving_direction,omitempty" db:"moving_direction" yaml:"moving_direction" bson:"moving_direction"`
 }
 
 func (x *WalkingRouteSegment) Reset() {
@@ -290,14 +310,16 @@ func (x *WalkingRouteSegment) GetMovingDirection() MovingDirection {
 	return MovingDirection_MOVING_DIRECTION_UNSPECIFIED
 }
 
+// 步行出行方式的路径规划结果
 type WalkingJourneyBody struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
+	// 从起点到终点的（Lane+方向）序列
 	Route []*WalkingRouteSegment `protobuf:"bytes,1,rep,name=route,proto3" json:"route,omitempty" yaml:"route" bson:"route" db:"route"`
 	// 从起点到终点预计的时间(estimation time of arrival)
-	Eta float64 `protobuf:"fixed64,2,opt,name=eta,proto3" json:"eta,omitempty" db:"eta" yaml:"eta" bson:"eta"`
+	Eta float64 `protobuf:"fixed64,2,opt,name=eta,proto3" json:"eta,omitempty" yaml:"eta" bson:"eta" db:"eta"`
 }
 
 func (x *WalkingJourneyBody) Reset() {
@@ -415,10 +437,14 @@ type Journey struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Type    JourneyType         `protobuf:"varint,1,opt,name=type,proto3,enum=city.routing.v2.JourneyType" json:"type,omitempty" yaml:"type" bson:"type" db:"type"`
-	Driving *DrivingJourneyBody `protobuf:"bytes,2,opt,name=driving,proto3,oneof" json:"driving,omitempty" bson:"driving" db:"driving" yaml:"driving"`
+	// 出行方式
+	Type JourneyType `protobuf:"varint,1,opt,name=type,proto3,enum=city.routing.v2.JourneyType" json:"type,omitempty" yaml:"type" bson:"type" db:"type"`
+	// 驾车
+	Driving *DrivingJourneyBody `protobuf:"bytes,2,opt,name=driving,proto3,oneof" json:"driving,omitempty" yaml:"driving" bson:"driving" db:"driving"`
+	// 步行
 	Walking *WalkingJourneyBody `protobuf:"bytes,3,opt,name=walking,proto3,oneof" json:"walking,omitempty" yaml:"walking" bson:"walking" db:"walking"`
-	ByBus   *BusJourneyBody     `protobuf:"bytes,4,opt,name=by_bus,json=byBus,proto3,oneof" json:"by_bus,omitempty" yaml:"by_bus" bson:"by_bus" db:"by_bus"` // optional TaxiJourneyBody by_taxi = 5;
+	// 公交
+	ByBus *BusJourneyBody `protobuf:"bytes,4,opt,name=by_bus,json=byBus,proto3,oneof" json:"by_bus,omitempty" yaml:"by_bus" bson:"by_bus" db:"by_bus"`
 }
 
 func (x *Journey) Reset() {
@@ -487,7 +513,9 @@ type BusLine struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	LineId    int32     `protobuf:"varint,1,opt,name=line_id,json=lineId,proto3" json:"line_id,omitempty" db:"line_id" yaml:"line_id" bson:"line_id"`
+	// 线路ID
+	LineId int32 `protobuf:"varint,1,opt,name=line_id,json=lineId,proto3" json:"line_id,omitempty" db:"line_id" yaml:"line_id" bson:"line_id"`
+	// 停靠站点AOI ID列表
 	Stops     []int32   `protobuf:"varint,2,rep,packed,name=stops,proto3" json:"stops,omitempty" yaml:"stops" bson:"stops" db:"stops"`
 	Distances []float64 `protobuf:"fixed64,3,rep,packed,name=distances,proto3" json:"distances,omitempty" bson:"distances" db:"distances" yaml:"distances"`
 	Interval  int32     `protobuf:"varint,4,opt,name=interval,proto3" json:"interval,omitempty" yaml:"interval" bson:"interval" db:"interval"`
@@ -615,9 +643,10 @@ type RoadStatus struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
+	// 车道ID
 	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
-	// 道路所有时间片的速度
-	Speed []float64 `protobuf:"fixed64,2,rep,packed,name=speed,proto3" json:"speed,omitempty" yaml:"speed" bson:"speed" db:"speed"`
+	// 车道在各个时间片（每个5min）的速度
+	Speed []float64 `protobuf:"fixed64,2,rep,packed,name=speed,proto3" json:"speed,omitempty" db:"speed" yaml:"speed" bson:"speed"`
 }
 
 func (x *RoadStatus) Reset() {
@@ -673,7 +702,7 @@ type RoadStatuses struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	RoadStatuses []*RoadStatus `protobuf:"bytes,1,rep,name=road_statuses,json=roadStatuses,proto3" json:"road_statuses,omitempty" db:"road_statuses" yaml:"road_statuses" bson:"road_statuses"`
+	RoadStatuses []*RoadStatus `protobuf:"bytes,1,rep,name=road_statuses,json=roadStatuses,proto3" json:"road_statuses,omitempty" yaml:"road_statuses" bson:"road_statuses" db:"road_statuses"`
 }
 
 func (x *RoadStatuses) Reset() {

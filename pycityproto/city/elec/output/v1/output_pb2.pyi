@@ -4,7 +4,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Aoi(_message.Message):
-    __slots__ = ('id', 'unsatisfied_demand_ratio', 'unsatisfied_demand_num', 'demand', 'supply')
+    __slots__ = ['id', 'unsatisfied_demand_ratio', 'unsatisfied_demand_num', 'demand', 'supply']
     ID_FIELD_NUMBER: _ClassVar[int]
     UNSATISFIED_DEMAND_RATIO_FIELD_NUMBER: _ClassVar[int]
     UNSATISFIED_DEMAND_NUM_FIELD_NUMBER: _ClassVar[int]
@@ -20,7 +20,7 @@ class Aoi(_message.Message):
         ...
 
 class AveragePower(_message.Message):
-    __slots__ = ('transformer_500', 'transformer_220', 'transformer_110', 'transformer_10')
+    __slots__ = ['transformer_500', 'transformer_220', 'transformer_110', 'transformer_10']
     TRANSFORMER_500_FIELD_NUMBER: _ClassVar[int]
     TRANSFORMER_220_FIELD_NUMBER: _ClassVar[int]
     TRANSFORMER_110_FIELD_NUMBER: _ClassVar[int]

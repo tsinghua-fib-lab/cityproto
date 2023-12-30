@@ -7,14 +7,14 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class NodeType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-    __slots__ = ()
+    __slots__ = []
     NODE_TYPE_UNSPECIFIED: _ClassVar[NodeType]
     NODE_TYPE_INTERNET: _ClassVar[NodeType]
     NODE_TYPE_GATEWAY: _ClassVar[NodeType]
     NODE_TYPE_BASE_STATION: _ClassVar[NodeType]
 
 class BaseStationType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-    __slots__ = ()
+    __slots__ = []
     BASE_STATION_TYPE_UNSPECIFIED: _ClassVar[BaseStationType]
     BASE_STATION_TYPE_INDOOR: _ClassVar[BaseStationType]
     BASE_STATION_TYPE_OUTDOOR: _ClassVar[BaseStationType]
@@ -27,7 +27,7 @@ BASE_STATION_TYPE_INDOOR: BaseStationType
 BASE_STATION_TYPE_OUTDOOR: BaseStationType
 
 class Node(_message.Message):
-    __slots__ = ('id', 'type', 'parent_id', 'children_ids', 'position', 'aoi_id', 'freq_range_id', 'base_station_type')
+    __slots__ = ['id', 'type', 'parent_id', 'children_ids', 'position', 'aoi_id', 'freq_range_id', 'base_station_type']
     ID_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
     PARENT_ID_FIELD_NUMBER: _ClassVar[int]
@@ -49,7 +49,7 @@ class Node(_message.Message):
         ...
 
 class RepairStation(_message.Message):
-    __slots__ = ('id', 'aoi_id', 'position')
+    __slots__ = ['id', 'aoi_id', 'position']
     ID_FIELD_NUMBER: _ClassVar[int]
     AOI_ID_FIELD_NUMBER: _ClassVar[int]
     POSITION_FIELD_NUMBER: _ClassVar[int]
@@ -61,7 +61,7 @@ class RepairStation(_message.Message):
         ...
 
 class Pump(_message.Message):
-    __slots__ = ('id', 'position')
+    __slots__ = ['id', 'position']
     ID_FIELD_NUMBER: _ClassVar[int]
     POSITION_FIELD_NUMBER: _ClassVar[int]
     id: int
@@ -71,7 +71,7 @@ class Pump(_message.Message):
         ...
 
 class CommDemand(_message.Message):
-    __slots__ = ('id', 'demands')
+    __slots__ = ['id', 'demands']
     ID_FIELD_NUMBER: _ClassVar[int]
     DEMANDS_FIELD_NUMBER: _ClassVar[int]
     id: int
@@ -81,7 +81,7 @@ class CommDemand(_message.Message):
         ...
 
 class Nodes(_message.Message):
-    __slots__ = ('nodes', 'repair_stations', 'pumps')
+    __slots__ = ['nodes', 'repair_stations', 'pumps']
     NODES_FIELD_NUMBER: _ClassVar[int]
     REPAIR_STATIONS_FIELD_NUMBER: _ClassVar[int]
     PUMPS_FIELD_NUMBER: _ClassVar[int]
@@ -93,7 +93,7 @@ class Nodes(_message.Message):
         ...
 
 class CommDemands(_message.Message):
-    __slots__ = ('comm_demands',)
+    __slots__ = ['comm_demands']
     COMM_DEMANDS_FIELD_NUMBER: _ClassVar[int]
     comm_demands: _containers.RepeatedCompositeFieldContainer[CommDemand]
 

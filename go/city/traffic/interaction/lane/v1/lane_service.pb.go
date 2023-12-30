@@ -20,13 +20,16 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+// 设置Lane的最大速度（限速）请求
 type SetMaxVRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	LaneId int32   `protobuf:"varint,1,opt,name=lane_id,json=laneId,proto3" json:"lane_id,omitempty"`
-	MaxV   float64 `protobuf:"fixed64,2,opt,name=max_v,json=maxV,proto3" json:"max_v,omitempty"`
+	// Lane id
+	LaneId int32 `protobuf:"varint,1,opt,name=lane_id,json=laneId,proto3" json:"lane_id,omitempty"`
+	// 最大速度（限速），单位：m/s
+	MaxV float64 `protobuf:"fixed64,2,opt,name=max_v,json=maxV,proto3" json:"max_v,omitempty"`
 }
 
 func (x *SetMaxVRequest) Reset() {
@@ -75,6 +78,7 @@ func (x *SetMaxVRequest) GetMaxV() float64 {
 	return 0
 }
 
+// 设置Lane的最大速度（限速）响应
 type SetMaxVResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -113,11 +117,13 @@ func (*SetMaxVResponse) Descriptor() ([]byte, []int) {
 	return file_city_traffic_interaction_lane_v1_lane_service_proto_rawDescGZIP(), []int{1}
 }
 
+// 获取Lane的信息请求
 type GetLaneRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
+	// 指定的Lane id列表，如果为空，则返回所有Lane的信息
 	LaneIds []int32 `protobuf:"varint,1,rep,packed,name=lane_ids,json=laneIds,proto3" json:"lane_ids,omitempty"`
 }
 
@@ -160,11 +166,13 @@ func (x *GetLaneRequest) GetLaneIds() []int32 {
 	return nil
 }
 
+// 获取Lane的信息响应
 type GetLaneResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
+	// Lane的信息
 	States []*State `protobuf:"bytes,1,rep,name=states,proto3" json:"states,omitempty"`
 }
 
