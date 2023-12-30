@@ -22,7 +22,7 @@ spec:
         - name: docker-pull
       containers:
         - name: protos-doc-frontend
-          image: registry.fiblab.net/sim/pywolong:latest
+          image: registry.fiblab.net/sim/protos:latest
           imagePullPolicy: Always
           ports:
             - name: http
