@@ -66,8 +66,6 @@ kind: Ingress
 metadata:
   name: protos-doc-frontend
   namespace: web
-  annotations:
-    cert-manager.io/cluster-issuer: letsencrypt
 spec:
   ingressClassName: nginx
   rules:
@@ -84,4 +82,4 @@ spec:
   tls:
     - hosts:
         - cityproto.sim.fiblab.net
-      secretName: cityproto.sim.fiblab.net-tls
+      secretName: fiblab-tls
