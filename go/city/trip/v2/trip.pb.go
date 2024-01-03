@@ -98,7 +98,7 @@ type Trip struct {
 	// 期望的等待时间（单位：秒），如果departure_time为空则wait_time默认为0
 	WaitTime *float64 `protobuf:"fixed64,4,opt,name=wait_time,json=waitTime,proto3,oneof" json:"wait_time,omitempty" yaml:"wait_time" bson:"wait_time" db:"wait_time"`
 	// 期望的到达时间（单位: 秒）
-	ArrivalTime *float64 `protobuf:"fixed64,5,opt,name=arrival_time,json=arrivalTime,proto3,oneof" json:"arrival_time,omitempty" yaml:"arrival_time" bson:"arrival_time" db:"arrival_time"`
+	ArrivalTime *float64 `protobuf:"fixed64,5,opt,name=arrival_time,json=arrivalTime,proto3,oneof" json:"arrival_time,omitempty" db:"arrival_time" yaml:"arrival_time" bson:"arrival_time"`
 	// 本次出行目的地的活动名
 	Activity *string `protobuf:"bytes,6,opt,name=activity,proto3,oneof" json:"activity,omitempty" yaml:"activity" bson:"activity" db:"activity"`
 	// 预计算的导航结果

@@ -1196,11 +1196,19 @@
             <ul>
               
                 <li>
-                  <a href="#city.sync.v1.GetEtcdRequest"><span class="badge">M</span>GetEtcdRequest</a>
+                  <a href="#city.sync.v1.GetURLRequest"><span class="badge">M</span>GetURLRequest</a>
                 </li>
               
                 <li>
-                  <a href="#city.sync.v1.GetEtcdResponse"><span class="badge">M</span>GetEtcdResponse</a>
+                  <a href="#city.sync.v1.GetURLResponse"><span class="badge">M</span>GetURLResponse</a>
+                </li>
+              
+                <li>
+                  <a href="#city.sync.v1.SetURLRequest"><span class="badge">M</span>SetURLRequest</a>
+                </li>
+              
+                <li>
+                  <a href="#city.sync.v1.SetURLResponse"><span class="badge">M</span>SetURLResponse</a>
                 </li>
               
                 <li>
@@ -8319,15 +8327,8 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
       <p></p>
 
       
-        <h3 id="city.sync.v1.GetEtcdRequest">GetEtcdRequest</h3>
-        <p>获取内嵌etcd的端口请求</p>
-
-        
-
-        
-      
-        <h3 id="city.sync.v1.GetEtcdResponse">GetEtcdResponse</h3>
-        <p>获取内嵌etcd的端口响应</p>
+        <h3 id="city.sync.v1.GetURLRequest">GetURLRequest</h3>
+        <p>获取程序URL请求</p>
 
         
           <table class="field-table">
@@ -8337,16 +8338,78 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
             <tbody>
               
                 <tr>
-                  <td>port</td>
-                  <td><a href="#int32">int32</a></td>
+                  <td>name</td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
-                  <td><p>etcd的端口 </p></td>
+                  <td><p>组件名，需要在同步器启动参数列表中 </p></td>
                 </tr>
               
             </tbody>
           </table>
 
           
+
+        
+      
+        <h3 id="city.sync.v1.GetURLResponse">GetURLResponse</h3>
+        <p>获取程序URL响应</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>url</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>程序URL </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="city.sync.v1.SetURLRequest">SetURLRequest</h3>
+        <p>注册程序URL请求</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>name</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>组件名，需要在同步器启动参数列表中 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>url</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>程序URL </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="city.sync.v1.SetURLResponse">SetURLResponse</h3>
+        <p>注册程序URL响应</p>
+
+        
 
         
       
@@ -8420,10 +8483,17 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
           <tbody>
             
               <tr>
-                <td>GetEtcd</td>
-                <td><a href="#city.sync.v1.GetEtcdRequest">GetEtcdRequest</a></td>
-                <td><a href="#city.sync.v1.GetEtcdResponse">GetEtcdResponse</a></td>
-                <td><p>获取内嵌etcd的端口</p></td>
+                <td>SetURL</td>
+                <td><a href="#city.sync.v1.SetURLRequest">SetURLRequest</a></td>
+                <td><a href="#city.sync.v1.SetURLResponse">SetURLResponse</a></td>
+                <td><p>注册程序URL</p></td>
+              </tr>
+            
+              <tr>
+                <td>GetURL</td>
+                <td><a href="#city.sync.v1.GetURLRequest">GetURLRequest</a></td>
+                <td><a href="#city.sync.v1.GetURLResponse">GetURLResponse</a></td>
+                <td><p>获取程序URL</p></td>
               </tr>
             
               <tr>
