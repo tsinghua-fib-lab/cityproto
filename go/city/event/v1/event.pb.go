@@ -114,7 +114,7 @@ type Event struct {
 
 	Type  EventType `protobuf:"varint,1,opt,name=type,proto3,enum=city.event.v1.EventType" json:"type,omitempty" yaml:"type" bson:"type" db:"type"`
 	Level int32     `protobuf:"varint,2,opt,name=level,proto3" json:"level,omitempty" yaml:"level" bson:"level" db:"level"`
-	Step  int32     `protobuf:"varint,3,opt,name=step,proto3" json:"step,omitempty" db:"step" yaml:"step" bson:"step"`
+	Step  int32     `protobuf:"varint,3,opt,name=step,proto3" json:"step,omitempty" yaml:"step" bson:"step" db:"step"`
 }
 
 func (x *Event) Reset() {
@@ -175,7 +175,7 @@ type Events struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Events []*Event `protobuf:"bytes,1,rep,name=events,proto3" json:"events,omitempty" yaml:"events" bson:"events" db:"events"`
+	Events []*Event `protobuf:"bytes,1,rep,name=events,proto3" json:"events,omitempty" bson:"events" db:"events" yaml:"events"`
 }
 
 func (x *Events) Reset() {

@@ -33,23 +33,28 @@ const (
 // reflection-formatted method names, remove the leading slash and convert the remaining slash to a
 // period.
 const (
-	// SyncServiceGetEtcdProcedure is the fully-qualified name of the SyncService's GetEtcd RPC.
-	SyncServiceGetEtcdProcedure = "/city.sync.v1.SyncService/GetEtcd"
+	// SyncServiceSetURLProcedure is the fully-qualified name of the SyncService's SetURL RPC.
+	SyncServiceSetURLProcedure = "/city.sync.v1.SyncService/SetURL"
+	// SyncServiceGetURLProcedure is the fully-qualified name of the SyncService's GetURL RPC.
+	SyncServiceGetURLProcedure = "/city.sync.v1.SyncService/GetURL"
 	// SyncServiceStepProcedure is the fully-qualified name of the SyncService's Step RPC.
 	SyncServiceStepProcedure = "/city.sync.v1.SyncService/Step"
 )
 
 // These variables are the protoreflect.Descriptor objects for the RPCs defined in this package.
 var (
-	syncServiceServiceDescriptor       = v1.File_city_sync_v1_sync_service_proto.Services().ByName("SyncService")
-	syncServiceGetEtcdMethodDescriptor = syncServiceServiceDescriptor.Methods().ByName("GetEtcd")
-	syncServiceStepMethodDescriptor    = syncServiceServiceDescriptor.Methods().ByName("Step")
+	syncServiceServiceDescriptor      = v1.File_city_sync_v1_sync_service_proto.Services().ByName("SyncService")
+	syncServiceSetURLMethodDescriptor = syncServiceServiceDescriptor.Methods().ByName("SetURL")
+	syncServiceGetURLMethodDescriptor = syncServiceServiceDescriptor.Methods().ByName("GetURL")
+	syncServiceStepMethodDescriptor   = syncServiceServiceDescriptor.Methods().ByName("Step")
 )
 
 // SyncServiceClient is a client for the city.sync.v1.SyncService service.
 type SyncServiceClient interface {
-	// 获取内嵌etcd的端口
-	GetEtcd(context.Context, *connect.Request[v1.GetEtcdRequest]) (*connect.Response[v1.GetEtcdResponse], error)
+	// 注册程序URL
+	SetURL(context.Context, *connect.Request[v1.SetURLRequest]) (*connect.Response[v1.SetURLResponse], error)
+	// 获取程序URL
+	GetURL(context.Context, *connect.Request[v1.GetURLRequest]) (*connect.Response[v1.GetURLResponse], error)
 	// 步进
 	Step(context.Context, *connect.Request[v1.StepRequest]) (*connect.Response[v1.StepResponse], error)
 }
@@ -64,10 +69,16 @@ type SyncServiceClient interface {
 func NewSyncServiceClient(httpClient connect.HTTPClient, baseURL string, opts ...connect.ClientOption) SyncServiceClient {
 	baseURL = strings.TrimRight(baseURL, "/")
 	return &syncServiceClient{
-		getEtcd: connect.NewClient[v1.GetEtcdRequest, v1.GetEtcdResponse](
+		setURL: connect.NewClient[v1.SetURLRequest, v1.SetURLResponse](
 			httpClient,
-			baseURL+SyncServiceGetEtcdProcedure,
-			connect.WithSchema(syncServiceGetEtcdMethodDescriptor),
+			baseURL+SyncServiceSetURLProcedure,
+			connect.WithSchema(syncServiceSetURLMethodDescriptor),
+			connect.WithClientOptions(opts...),
+		),
+		getURL: connect.NewClient[v1.GetURLRequest, v1.GetURLResponse](
+			httpClient,
+			baseURL+SyncServiceGetURLProcedure,
+			connect.WithSchema(syncServiceGetURLMethodDescriptor),
 			connect.WithClientOptions(opts...),
 		),
 		step: connect.NewClient[v1.StepRequest, v1.StepResponse](
@@ -81,13 +92,19 @@ func NewSyncServiceClient(httpClient connect.HTTPClient, baseURL string, opts ..
 
 // syncServiceClient implements SyncServiceClient.
 type syncServiceClient struct {
-	getEtcd *connect.Client[v1.GetEtcdRequest, v1.GetEtcdResponse]
-	step    *connect.Client[v1.StepRequest, v1.StepResponse]
+	setURL *connect.Client[v1.SetURLRequest, v1.SetURLResponse]
+	getURL *connect.Client[v1.GetURLRequest, v1.GetURLResponse]
+	step   *connect.Client[v1.StepRequest, v1.StepResponse]
 }
 
-// GetEtcd calls city.sync.v1.SyncService.GetEtcd.
-func (c *syncServiceClient) GetEtcd(ctx context.Context, req *connect.Request[v1.GetEtcdRequest]) (*connect.Response[v1.GetEtcdResponse], error) {
-	return c.getEtcd.CallUnary(ctx, req)
+// SetURL calls city.sync.v1.SyncService.SetURL.
+func (c *syncServiceClient) SetURL(ctx context.Context, req *connect.Request[v1.SetURLRequest]) (*connect.Response[v1.SetURLResponse], error) {
+	return c.setURL.CallUnary(ctx, req)
+}
+
+// GetURL calls city.sync.v1.SyncService.GetURL.
+func (c *syncServiceClient) GetURL(ctx context.Context, req *connect.Request[v1.GetURLRequest]) (*connect.Response[v1.GetURLResponse], error) {
+	return c.getURL.CallUnary(ctx, req)
 }
 
 // Step calls city.sync.v1.SyncService.Step.
@@ -97,8 +114,10 @@ func (c *syncServiceClient) Step(ctx context.Context, req *connect.Request[v1.St
 
 // SyncServiceHandler is an implementation of the city.sync.v1.SyncService service.
 type SyncServiceHandler interface {
-	// 获取内嵌etcd的端口
-	GetEtcd(context.Context, *connect.Request[v1.GetEtcdRequest]) (*connect.Response[v1.GetEtcdResponse], error)
+	// 注册程序URL
+	SetURL(context.Context, *connect.Request[v1.SetURLRequest]) (*connect.Response[v1.SetURLResponse], error)
+	// 获取程序URL
+	GetURL(context.Context, *connect.Request[v1.GetURLRequest]) (*connect.Response[v1.GetURLResponse], error)
 	// 步进
 	Step(context.Context, *connect.Request[v1.StepRequest]) (*connect.Response[v1.StepResponse], error)
 }
@@ -109,10 +128,16 @@ type SyncServiceHandler interface {
 // By default, handlers support the Connect, gRPC, and gRPC-Web protocols with the binary Protobuf
 // and JSON codecs. They also support gzip compression.
 func NewSyncServiceHandler(svc SyncServiceHandler, opts ...connect.HandlerOption) (string, http.Handler) {
-	syncServiceGetEtcdHandler := connect.NewUnaryHandler(
-		SyncServiceGetEtcdProcedure,
-		svc.GetEtcd,
-		connect.WithSchema(syncServiceGetEtcdMethodDescriptor),
+	syncServiceSetURLHandler := connect.NewUnaryHandler(
+		SyncServiceSetURLProcedure,
+		svc.SetURL,
+		connect.WithSchema(syncServiceSetURLMethodDescriptor),
+		connect.WithHandlerOptions(opts...),
+	)
+	syncServiceGetURLHandler := connect.NewUnaryHandler(
+		SyncServiceGetURLProcedure,
+		svc.GetURL,
+		connect.WithSchema(syncServiceGetURLMethodDescriptor),
 		connect.WithHandlerOptions(opts...),
 	)
 	syncServiceStepHandler := connect.NewUnaryHandler(
@@ -123,8 +148,10 @@ func NewSyncServiceHandler(svc SyncServiceHandler, opts ...connect.HandlerOption
 	)
 	return "/city.sync.v1.SyncService/", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		switch r.URL.Path {
-		case SyncServiceGetEtcdProcedure:
-			syncServiceGetEtcdHandler.ServeHTTP(w, r)
+		case SyncServiceSetURLProcedure:
+			syncServiceSetURLHandler.ServeHTTP(w, r)
+		case SyncServiceGetURLProcedure:
+			syncServiceGetURLHandler.ServeHTTP(w, r)
 		case SyncServiceStepProcedure:
 			syncServiceStepHandler.ServeHTTP(w, r)
 		default:
@@ -136,8 +163,12 @@ func NewSyncServiceHandler(svc SyncServiceHandler, opts ...connect.HandlerOption
 // UnimplementedSyncServiceHandler returns CodeUnimplemented from all methods.
 type UnimplementedSyncServiceHandler struct{}
 
-func (UnimplementedSyncServiceHandler) GetEtcd(context.Context, *connect.Request[v1.GetEtcdRequest]) (*connect.Response[v1.GetEtcdResponse], error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.sync.v1.SyncService.GetEtcd is not implemented"))
+func (UnimplementedSyncServiceHandler) SetURL(context.Context, *connect.Request[v1.SetURLRequest]) (*connect.Response[v1.SetURLResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.sync.v1.SyncService.SetURL is not implemented"))
+}
+
+func (UnimplementedSyncServiceHandler) GetURL(context.Context, *connect.Request[v1.GetURLRequest]) (*connect.Response[v1.GetURLResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.sync.v1.SyncService.GetURL is not implemented"))
 }
 
 func (UnimplementedSyncServiceHandler) Step(context.Context, *connect.Request[v1.StepRequest]) (*connect.Response[v1.StepResponse], error) {

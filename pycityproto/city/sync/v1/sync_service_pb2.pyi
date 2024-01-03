@@ -3,18 +3,36 @@ from google.protobuf import message as _message
 from typing import ClassVar as _ClassVar, Optional as _Optional
 DESCRIPTOR: _descriptor.FileDescriptor
 
-class GetEtcdRequest(_message.Message):
+class SetURLRequest(_message.Message):
+    __slots__ = ['name', 'url']
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    URL_FIELD_NUMBER: _ClassVar[int]
+    name: str
+    url: str
+
+    def __init__(self, name: _Optional[str]=..., url: _Optional[str]=...) -> None:
+        ...
+
+class SetURLResponse(_message.Message):
     __slots__ = []
 
     def __init__(self) -> None:
         ...
 
-class GetEtcdResponse(_message.Message):
-    __slots__ = ['port']
-    PORT_FIELD_NUMBER: _ClassVar[int]
-    port: int
+class GetURLRequest(_message.Message):
+    __slots__ = ['name']
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    name: str
 
-    def __init__(self, port: _Optional[int]=...) -> None:
+    def __init__(self, name: _Optional[str]=...) -> None:
+        ...
+
+class GetURLResponse(_message.Message):
+    __slots__ = ['url']
+    URL_FIELD_NUMBER: _ClassVar[int]
+    url: str
+
+    def __init__(self, url: _Optional[str]=...) -> None:
         ...
 
 class StepRequest(_message.Message):

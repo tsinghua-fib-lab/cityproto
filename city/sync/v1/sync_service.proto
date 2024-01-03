@@ -3,19 +3,35 @@ syntax = "proto3";
 package city.sync.v1;
 
 service SyncService {
-  // 获取内嵌etcd的端口
-  rpc GetEtcd(GetEtcdRequest) returns (GetEtcdResponse);
+  // 注册程序URL
+  rpc SetURL(SetURLRequest) returns (SetURLResponse);
+  // 获取程序URL
+  rpc GetURL(GetURLRequest) returns (GetURLResponse);
   // 步进
   rpc Step(StepRequest) returns (StepResponse);
 }
 
-// 获取内嵌etcd的端口请求
-message GetEtcdRequest {}
+// 注册程序URL请求
+message SetURLRequest {
+  // 组件名，需要在同步器启动参数列表中
+  string name = 1;
+  // 程序URL
+  string url = 2;
+}
 
-// 获取内嵌etcd的端口响应
-message GetEtcdResponse {
-  // etcd的端口
-  int32 port = 1;
+// 注册程序URL响应
+message SetURLResponse {}
+
+// 获取程序URL请求
+message GetURLRequest {
+  // 组件名，需要在同步器启动参数列表中
+  string name = 1;
+}
+
+// 获取程序URL响应
+message GetURLResponse {
+  // 程序URL
+  string url = 1;
 }
 
 // 步进请求

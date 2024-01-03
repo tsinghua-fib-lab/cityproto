@@ -144,7 +144,7 @@ type TrafficLight struct {
 	// 所在路口id
 	JunctionId int32 `protobuf:"varint,1,opt,name=junction_id,json=junctionId,proto3" json:"junction_id,omitempty" yaml:"junction_id" bson:"junction_id" db:"junction_id"`
 	// 相位循环的一个循环周期
-	Phases []*Phase `protobuf:"bytes,2,rep,name=phases,proto3" json:"phases,omitempty" db:"phases" yaml:"phases" bson:"phases"`
+	Phases []*Phase `protobuf:"bytes,2,rep,name=phases,proto3" json:"phases,omitempty" yaml:"phases" bson:"phases" db:"phases"`
 }
 
 func (x *TrafficLight) Reset() {
@@ -199,7 +199,7 @@ type TrafficLights struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	TrafficLights []*TrafficLight `protobuf:"bytes,1,rep,name=traffic_lights,json=trafficLights,proto3" json:"traffic_lights,omitempty" bson:"traffic_lights" db:"traffic_lights" yaml:"traffic_lights"`
+	TrafficLights []*TrafficLight `protobuf:"bytes,1,rep,name=traffic_lights,json=trafficLights,proto3" json:"traffic_lights,omitempty" db:"traffic_lights" yaml:"traffic_lights" bson:"traffic_lights"`
 }
 
 func (x *TrafficLights) Reset() {
