@@ -1,0 +1,121 @@
+syntax = "proto3";
+
+package city.economy.v1;
+
+import "city/economy/v1/economy.proto";
+
+// 组织经济情况接口
+service OrgService {
+  // 批量查询组织的经济情况（员工、岗位、资金、货物）
+  rpc GetOrg(GetOrgRequest) returns (GetOrgResponse) {}
+  // 批量修改组织的资金
+  rpc UpdateOrgMoney(UpdateOrgMoneyRequest) returns (UpdateOrgMoneyResponse) {}
+  // 批量修改组织的货物
+  rpc UpdateOrgGoods(UpdateOrgGoodsRequest) returns (UpdateOrgGoodsResponse) {}
+  // 批量修改组织的员工
+  rpc UpdateOrgEmployee(UpdateOrgEmployeeRequest) returns (UpdateOrgEmployeeResponse) {}
+  // 批量修改组织的岗位
+  rpc UpdateOrgJob(UpdateOrgJobRequest) returns (UpdateOrgJobResponse) {}
+}
+
+// 批量查询组织的经济情况请求
+message GetOrgRequest {
+  // 待查询的组织的ID列表（为空时查询所有组织）
+  repeated int32 org_ids = 1;
+}
+
+// 批量查询组织的经济情况响应
+message GetOrgResponse {
+  // 组织的经济情况
+  repeated Org orgs = 1;
+}
+
+// 批量修改组织的资金请求
+message UpdateOrgMoneyRequest {
+  // 待修改的组织资金变动
+  repeated UpdateOrgMoneyRequestItem items = 1;
+}
+
+// 组织资金变动
+message UpdateOrgMoneyRequestItem {
+  // 待修改的组织
+  int32 org_id = 1;
+  // 正数表示增加，负数表示减少
+  double money = 2;
+}
+
+// 批量修改组织的资金响应
+message UpdateOrgMoneyResponse {
+  // 修改后的组织的经济情况
+  repeated Org orgs = 1;
+}
+
+// 批量修改组织的货物请求
+message UpdateOrgGoodsRequest {
+  // 待修改的组织货物变动
+  repeated UpdateOrgGoodsRequestItem items = 1;
+}
+
+// 组织货物变动
+message UpdateOrgGoodsRequestItem {
+  // 待修改的组织
+  int32 org_id = 1;
+  // 货物变动
+  // 按照(type, name)相等来判断是否为同一种货物
+  // 货物数量为增量，正数表示增加，负数表示减少
+  // price如果未设定则沿用原来的价格，否则使用新的价格
+  repeated Goods goods = 2;
+}
+
+// 批量修改组织的货物响应
+message UpdateOrgGoodsResponse {
+  // 修改后的组织的经济情况
+  repeated Org orgs = 1;
+}
+
+// 批量修改组织的员工请求
+message UpdateOrgEmployeeRequest {
+  // 待修改的组织员工变动
+  repeated UpdateOrgEmployeeRequestItem items = 1;
+}
+
+// 组织员工变动
+message UpdateOrgEmployeeRequestItem {
+  // 待修改的组织
+  int32 org_id = 1;
+  // 新增的员工
+  repeated Employee adds = 2;
+  // 删除的员工
+  repeated int32 dels = 3;
+  // 修改薪水的员工
+  repeated Employee updates = 4;
+}
+
+// 批量修改组织的员工响应
+message UpdateOrgEmployeeResponse {
+  // 修改后的组织的经济情况
+  repeated Org orgs = 1;
+}
+
+// 批量修改组织的岗位请求
+message UpdateOrgJobRequest {
+  // 待修改的组织岗位变动
+  repeated UpdateOrgJobRequestItem items = 1;
+}
+
+// 组织岗位变动
+message UpdateOrgJobRequestItem {
+  // 待修改的组织
+  int32 org_id = 1;
+  // 岗位变动
+  // 按照name相等来判断是否为同一种岗位
+  // 岗位数量为增量，正数表示增加，负数表示减少
+  // salary如果未设定则沿用原来的薪水，否则使用新的薪水
+  repeated Job jobs = 2;
+}
+
+// 批量修改组织的岗位响应
+message UpdateOrgJobResponse {
+  // 修改后的组织的经济情况
+  repeated Org orgs = 1;
+}

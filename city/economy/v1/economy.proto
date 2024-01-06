@@ -1,0 +1,76 @@
+syntax = "proto3";
+
+package city.economy.v1;
+
+// 经济模拟
+// 资金与货物都允许以负数形式存在，表示欠款或欠货
+
+// 个人（与Agent一一对应，
+// 没有绑定到city.economy.v1.Person的Agent将无法参与经济模拟）
+message Person {
+  // 与agent id一致
+  int32 id = 1;
+  // 起始资金
+  double money = 2;
+  // 所在组织ID（初始化时不提供，由组织中的员工列表设定）
+  optional int32 org_id = 3;
+}
+
+// 员工
+message Employee {
+  // 员工ID
+  int32 person_id = 1;
+  // 薪水
+  double salary = 2;
+}
+
+// 岗位
+message Job {
+  // 岗位名称
+  string name = 1;
+  // 岗位所需员工数量
+  int32 employee_count = 2;
+  // 岗位薪水
+  optional double salary = 3;
+}
+
+// 货物
+message Goods {
+  // 货物类型
+  string type = 1;
+  // 货物名称
+  string name = 2;
+  // 货物数量
+  int32 count = 3;
+  // 货物价格（允许暂未定价）
+  optional double price = 4;
+}
+
+// 组织，具有员工、货物、资金等属性
+message Org {
+  // 组织ID
+  int32 id = 1;
+  // 组织所在的POI ID
+  int32 poi_id = 2;
+  // 员工列表（初始化时由Orgs列表提供，单向绑定到person上）
+  repeated Employee employees = 3;
+  // 岗位列表
+  repeated Job jobs = 4;
+  // 资金
+  double money = 5;
+  // 货物
+  repeated Goods goods = 6;
+  // 功能列表
+  // buy: 购买货物
+  // apply: 申请岗位
+  // ...
+  repeated string functions = 7;
+}
+
+// 组织列表，对应MongoDB中的集合
+message Economy {
+  // 人
+  repeated Person persons = 1;
+  // 组织列表
+  repeated Org orgs = 2;
+}

@@ -2,6 +2,7 @@ from . import agent
 from . import cognition
 from . import comm
 from . import config
+from . import economy
 from . import elec
 from . import event
 from . import geo
@@ -10,7 +11,6 @@ from . import routing
 from . import social
 from . import streetview
 from . import sync
-from . import traffic
 from . import traffic_light
 from . import trip
 from . import wargame

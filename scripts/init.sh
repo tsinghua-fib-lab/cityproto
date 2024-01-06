@@ -13,9 +13,13 @@ rm -r pycityproto/ || true
 buf generate --include-imports --path city
 buf generate --template buf.gen.tag.yaml --include-imports \
     --path city/agent/v2 \
+    --path city/comm/input/v1 \
+    --path city/economy/v1 \
+    --path city/elec/input/v1 \
     --path city/event/v1 \
     --path city/map/v2 \
     --path city/routing/v2 \
-    --path city/traffic_light/v2
+    --path city/traffic_light/v2 \
+    --path city/water/input/v1
 protol --create-package --in-place --python-out pycityproto/ \
     protoc --proto-path=./ $(find . -name "*.proto")

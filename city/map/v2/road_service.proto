@@ -1,0 +1,84 @@
+syntax = "proto3";
+
+package city.map.v2;
+
+import "city/event/v1/event.proto";
+import "city/map/v2/lane_service.proto";
+
+service RoadService {
+  // 查询道路信息
+  rpc GetRoad(GetRoadRequest) returns (GetRoadResponse);
+  rpc GetRuinInfo(GetRuinInfoRequest) returns (GetRuinInfoResponse);
+  rpc GetEvents(GetEventsRequest) returns (GetEventsResponse);
+}
+
+// 查询道路信息请求
+message GetRoadRequest {
+  // 指定查询的道路ID列表，为空代表查询所有道路
+  repeated int32 road_ids = 1;
+}
+
+// 查询道路信息响应
+message GetRoadResponse {
+  // 道路信息列表
+  repeated RoadState states = 1;
+}
+
+message GetRuinInfoRequest {}
+
+message RuinInfo {
+  int32 num = 1; // 损坏数量
+  double ratio = 2; // 损坏占比
+}
+
+message GetRuinInfoResponse {
+  // 三级级损伤信息
+  RuinInfo one = 1;
+  RuinInfo two = 2;
+  RuinInfo three = 3;
+}
+
+message GetEventsRequest {}
+
+message GetEventsResponse {
+  city.event.v1.Events events = 1;
+}
+
+// 道路拥堵情况
+enum RoadLevel {
+  // 未指定
+  ROAD_LEVEL_UNSPECIFIED = 0;
+  // 畅通
+  ROAD_LEVEL_CLEAR = 1;
+  // 轻度拥堵
+  ROAD_LEVEL_LIGHT_LOAD = 2;
+  // 中度拥堵
+  ROAD_LEVEL_MEDIUM_LOAD = 3;
+  // 重度拥堵
+  ROAD_LEVEL_HEAVY_LOAD = 4;
+  // 极端拥堵
+  ROAD_LEVEL_OVERLOAD = 5;
+  // 限行
+  ROAD_LEVEL_RESTRICTED = 6;
+}
+
+enum InterruptionReason {
+  INTERRUPTION_REASON_UNSPECIFIED = 0;
+  INTERRUPTION_REASON_RUINED = 1;
+  INTERRUPTION_REASON_CASCADE = 2;
+  INTERRUPTION_REASON_CONGESTION = 3;
+}
+
+// 道路状态
+message RoadState {
+  // 道路ID
+  int32 id = 1;
+  // 道路平均速度（m/s）
+  double avg_v = 4;
+  // 道路拥堵情况
+  RoadLevel level = 2;
+  // 道路中断原因
+  InterruptionReason reason = 3;
+  // 车道情况
+  repeated LaneState lanes = 5;
+}

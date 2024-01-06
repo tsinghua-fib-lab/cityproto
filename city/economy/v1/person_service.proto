@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+package city.economy.v1;
+
+import "city/economy/v1/economy.proto";
+
+// 个人经济情况接口
+service PersonService {
+  // 批量查询人的经济情况（资金、雇佣关系）
+  rpc GetPerson(GetPersonRequest) returns (GetPersonResponse) {}
+  // 批量修改人的资金
+  rpc UpdatePersonMoney(UpdatePersonMoneyRequest) returns (UpdatePersonMoneyResponse) {}
+}
+
+// 批量查询人的经济情况请求
+message GetPersonRequest {
+  // 待查询的人的ID列表（为空时查询所有人）
+  repeated int32 person_ids = 1;
+}
+
+// 批量查询组织的经济情况响应
+message GetPersonResponse {
+  // 人的经济情况
+  repeated Person persons = 1;
+}
+
+// 批量修改人的资金请求
+message UpdatePersonMoneyRequest {
+  // 待修改的人员资金变动
+  repeated UpdatePersonMoneyRequestItem items = 1;
+}
+
+// 人员资金变动
+message UpdatePersonMoneyRequestItem {
+  // 待修改的人员id
+  int32 person_id = 1;
+  // 资金变动（正数表示增加，负数表示减少）
+  double money = 2;
+}
+
+// 批量修改人的资金响应
+message UpdatePersonMoneyResponse {
+  // 修改后的人的经济情况
+  repeated Person persons = 1;
+}
