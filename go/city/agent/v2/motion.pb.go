@@ -97,7 +97,7 @@ type AgentMotion struct {
 	unknownFields protoimpl.UnknownFields
 
 	// ID
-	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" bson:"id" db:"id" yaml:"id"`
+	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
 	// 状态
 	Status Status `protobuf:"varint,2,opt,name=status,proto3,enum=city.agent.v2.Status" json:"status,omitempty" yaml:"status" bson:"status" db:"status"`
 	// 位置（包含逻辑位置、XY位置、经纬度位置）
@@ -107,7 +107,7 @@ type AgentMotion struct {
 	// 方向角（atan2计算得到的弧度）
 	Direction float64 `protobuf:"fixed64,5,opt,name=direction,proto3" json:"direction,omitempty" yaml:"direction" bson:"direction" db:"direction"`
 	// 活动描述
-	Activity string `protobuf:"bytes,6,opt,name=activity,proto3" json:"activity,omitempty" db:"activity" yaml:"activity" bson:"activity"`
+	Activity string `protobuf:"bytes,6,opt,name=activity,proto3" json:"activity,omitempty" bson:"activity" db:"activity" yaml:"activity"`
 }
 
 func (x *AgentMotion) Reset() {

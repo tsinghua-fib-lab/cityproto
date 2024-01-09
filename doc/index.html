@@ -1280,11 +1280,11 @@
             <ul>
               
                 <li>
-                  <a href="#city.event.v2.Event"><span class="badge">M</span>Event</a>
+                  <a href="#city.event.v2.Entity"><span class="badge">M</span>Entity</a>
                 </li>
               
                 <li>
-                  <a href="#city.event.v2.Subject"><span class="badge">M</span>Subject</a>
+                  <a href="#city.event.v2.Event"><span class="badge">M</span>Event</a>
                 </li>
               
               
@@ -9187,6 +9187,37 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
       <p></p>
 
       
+        <h3 id="city.event.v2.Entity">Entity</h3>
+        <p>主语</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>type</td>
+                  <td><a href="#city.event.v2.EntityType">EntityType</a></td>
+                  <td></td>
+                  <td><p>实体类型 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>id</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p>实体ID </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
         <h3 id="city.event.v2.Event">Event</h3>
         <p>模拟器中的事件</p><p>包含主题、主语（Who）、谓词（内容）、地点（Where）、时间（When）</p>
 
@@ -9213,7 +9244,7 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
               
                 <tr>
                   <td>subject</td>
-                  <td><a href="#city.event.v2.Subject">Subject</a></td>
+                  <td><a href="#city.event.v2.Entity">Entity</a></td>
                   <td></td>
                   <td><p>主语 </p></td>
                 </tr>
@@ -9237,37 +9268,6 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
                   <td><a href="#double">double</a></td>
                   <td></td>
                   <td><p>时间 </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-
-          
-
-        
-      
-        <h3 id="city.event.v2.Subject">Subject</h3>
-        <p>主语</p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>entity_type</td>
-                  <td><a href="#city.event.v2.EntityType">EntityType</a></td>
-                  <td></td>
-                  <td><p>实体类型 </p></td>
-                </tr>
-              
-                <tr>
-                  <td>id</td>
-                  <td><a href="#int32">int32</a></td>
-                  <td></td>
-                  <td><p>实体ID </p></td>
                 </tr>
               
             </tbody>

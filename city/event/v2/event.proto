@@ -25,9 +25,9 @@ enum EntityType {
 }
 
 // 主语
-message Subject {
+message Entity {
   // 实体类型
-  EntityType entity_type = 1;
+  EntityType type = 1;
   // 实体ID
   int32 id = 2;
 }
@@ -40,7 +40,7 @@ message Event {
   // ID
   int32 id = 2;
   // 主语
-  Subject subject = 3;
+  Entity subject = 3;
   // 谓词
   string content = 4;
   // 地点

@@ -28,11 +28,11 @@ type GetRouteRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 导航类型
-	Type RouteType `protobuf:"varint,1,opt,name=type,proto3,enum=city.routing.v2.RouteType" json:"type,omitempty" yaml:"type" bson:"type" db:"type"`
+	Type RouteType `protobuf:"varint,1,opt,name=type,proto3,enum=city.routing.v2.RouteType" json:"type,omitempty" db:"type" yaml:"type" bson:"type"`
 	// 起点，约定：包含LanePosition或AoiPosition中的一种
 	Start *v2.Position `protobuf:"bytes,2,opt,name=start,proto3" json:"start,omitempty" yaml:"start" bson:"start" db:"start"`
 	// 起点，约定：包含LanePosition或AoiPosition中的一种
-	End *v2.Position `protobuf:"bytes,3,opt,name=end,proto3" json:"end,omitempty" bson:"end" db:"end" yaml:"end"`
+	End *v2.Position `protobuf:"bytes,3,opt,name=end,proto3" json:"end,omitempty" yaml:"end" bson:"end" db:"end"`
 	// 发送导航请求的agent id（目前仅在行车导航中使用）
 	//
 	// Deprecated: Marked as deprecated in city/routing/v2/routing_service.proto.
@@ -164,7 +164,7 @@ type SetDrivingCostsRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 道路通行成本
-	Costs []*Cost `protobuf:"bytes,1,rep,name=costs,proto3" json:"costs,omitempty" bson:"costs" db:"costs" yaml:"costs"`
+	Costs []*Cost `protobuf:"bytes,1,rep,name=costs,proto3" json:"costs,omitempty" yaml:"costs" bson:"costs" db:"costs"`
 }
 
 func (x *SetDrivingCostsRequest) Reset() {
@@ -301,7 +301,7 @@ type GetDrivingCostsResponse struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 道路通行成本（补全cost后的结果）
-	Costs []*Cost `protobuf:"bytes,1,rep,name=costs,proto3" json:"costs,omitempty" db:"costs" yaml:"costs" bson:"costs"`
+	Costs []*Cost `protobuf:"bytes,1,rep,name=costs,proto3" json:"costs,omitempty" yaml:"costs" bson:"costs" db:"costs"`
 }
 
 func (x *GetDrivingCostsResponse) Reset() {

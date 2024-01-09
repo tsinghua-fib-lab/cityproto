@@ -24,14 +24,14 @@ ENTITY_TYPE_POI: EntityType
 ENTITY_TYPE_PERSON: EntityType
 ENTITY_TYPE_ORG: EntityType
 
-class Subject(_message.Message):
-    __slots__ = ['entity_type', 'id']
-    ENTITY_TYPE_FIELD_NUMBER: _ClassVar[int]
+class Entity(_message.Message):
+    __slots__ = ['type', 'id']
+    TYPE_FIELD_NUMBER: _ClassVar[int]
     ID_FIELD_NUMBER: _ClassVar[int]
-    entity_type: EntityType
+    type: EntityType
     id: int
 
-    def __init__(self, entity_type: _Optional[_Union[EntityType, str]]=..., id: _Optional[int]=...) -> None:
+    def __init__(self, type: _Optional[_Union[EntityType, str]]=..., id: _Optional[int]=...) -> None:
         ...
 
 class Event(_message.Message):
@@ -44,10 +44,10 @@ class Event(_message.Message):
     T_FIELD_NUMBER: _ClassVar[int]
     topic: str
     id: int
-    subject: Subject
+    subject: Entity
     content: str
     position: _geo_pb2.Position
     t: float
 
-    def __init__(self, topic: _Optional[str]=..., id: _Optional[int]=..., subject: _Optional[_Union[Subject, _Mapping]]=..., content: _Optional[str]=..., position: _Optional[_Union[_geo_pb2.Position, _Mapping]]=..., t: _Optional[float]=...) -> None:
+    def __init__(self, topic: _Optional[str]=..., id: _Optional[int]=..., subject: _Optional[_Union[Entity, _Mapping]]=..., content: _Optional[str]=..., position: _Optional[_Union[_geo_pb2.Position, _Mapping]]=..., t: _Optional[float]=...) -> None:
         ...

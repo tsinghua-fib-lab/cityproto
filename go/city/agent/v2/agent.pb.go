@@ -85,11 +85,11 @@ type AgentAttribute struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 智能体类型
-	Type AgentType `protobuf:"varint,1,opt,name=type,proto3,enum=city.agent.v2.AgentType" json:"type,omitempty" yaml:"type" bson:"type" db:"type"`
+	Type AgentType `protobuf:"varint,1,opt,name=type,proto3,enum=city.agent.v2.AgentType" json:"type,omitempty" bson:"type" db:"type" yaml:"type"`
 	// 单位: m，长度
 	Length float64 `protobuf:"fixed64,2,opt,name=length,proto3" json:"length,omitempty" yaml:"length" bson:"length" db:"length"`
 	// 单位: m，宽度
-	Width float64 `protobuf:"fixed64,3,opt,name=width,proto3" json:"width,omitempty" db:"width" yaml:"width" bson:"width"`
+	Width float64 `protobuf:"fixed64,3,opt,name=width,proto3" json:"width,omitempty" yaml:"width" bson:"width" db:"width"`
 	// 单位: m/s
 	MaxSpeed float64 `protobuf:"fixed64,4,opt,name=max_speed,json=maxSpeed,proto3" json:"max_speed,omitempty" yaml:"max_speed" bson:"max_speed" db:"max_speed"`
 	// 单位: m/s^2, 最大加速度（正值）
@@ -354,9 +354,9 @@ type Agent struct {
 	// 智能体ID
 	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
 	// 参数
-	Attribute *AgentAttribute `protobuf:"bytes,2,opt,name=attribute,proto3" json:"attribute,omitempty" yaml:"attribute" bson:"attribute" db:"attribute"`
+	Attribute *AgentAttribute `protobuf:"bytes,2,opt,name=attribute,proto3" json:"attribute,omitempty" bson:"attribute" db:"attribute" yaml:"attribute"`
 	// 初始位置
-	Home *v2.Position `protobuf:"bytes,3,opt,name=home,proto3" json:"home,omitempty" bson:"home" db:"home" yaml:"home"`
+	Home *v2.Position `protobuf:"bytes,3,opt,name=home,proto3" json:"home,omitempty" yaml:"home" bson:"home" db:"home"`
 	// 初始日程
 	Schedules []*v21.Schedule `protobuf:"bytes,4,rep,name=schedules,proto3" json:"schedules,omitempty" yaml:"schedules" bson:"schedules" db:"schedules"`
 	// 车辆附加属性
@@ -364,9 +364,9 @@ type Agent struct {
 	// 公交车附加属性
 	BusAttribute *BusAttribute `protobuf:"bytes,8,opt,name=bus_attribute,json=busAttribute,proto3,oneof" json:"bus_attribute,omitempty" yaml:"bus_attribute" bson:"bus_attribute" db:"bus_attribute"`
 	// 自行车附加属性
-	BikeAttribute *BikeAttribute `protobuf:"bytes,9,opt,name=bike_attribute,json=bikeAttribute,proto3,oneof" json:"bike_attribute,omitempty" db:"bike_attribute" yaml:"bike_attribute" bson:"bike_attribute"`
+	BikeAttribute *BikeAttribute `protobuf:"bytes,9,opt,name=bike_attribute,json=bikeAttribute,proto3,oneof" json:"bike_attribute,omitempty" yaml:"bike_attribute" bson:"bike_attribute" db:"bike_attribute"`
 	// [可空] 额外的标签（例如：抢修车类型->电网）
-	Labels map[string]string `protobuf:"bytes,10,rep,name=labels,proto3" json:"labels,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3" yaml:"labels" bson:"labels" db:"labels"`
+	Labels map[string]string `protobuf:"bytes,10,rep,name=labels,proto3" json:"labels,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3" bson:"labels" db:"labels" yaml:"labels"`
 }
 
 func (x *Agent) Reset() {
