@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package city.event.v2;
+
+import "city/event/v2/event.proto";
+
+service EventService {
+  // 按照topic查询事件
+  rpc GetEventsByTopic(GetEventsByTopicRequest) returns (GetEventsByTopicResponse);
+  // 确认事件已被处理
+  rpc ResolveEvents(ResolveEventsRequest) returns (ResolveEventsResponse);
+}
+
+// 按照topic查询事件请求
+message GetEventsByTopicRequest {
+  // 主题
+  string topic = 1;
+}
+
+// 按照topic查询事件响应
+message GetEventsByTopicResponse {
+  // 事件列表
+  repeated Event events = 1;
+}
+
+// 确认事件已被处理请求
+message ResolveEventsRequest {
+  // 事件列表
+  repeated Event events = 1;
+}
+
+// 确认事件已被处理响应
+message ResolveEventsResponse {}

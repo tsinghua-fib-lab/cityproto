@@ -283,7 +283,7 @@ type RuinInfo struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Num   int32   `protobuf:"varint,1,opt,name=num,proto3" json:"num,omitempty" yaml:"num" bson:"num" db:"num"`            // 损坏数量
+	Num   int32   `protobuf:"varint,1,opt,name=num,proto3" json:"num,omitempty" bson:"num" db:"num" yaml:"num"`            // 损坏数量
 	Ratio float64 `protobuf:"fixed64,2,opt,name=ratio,proto3" json:"ratio,omitempty" yaml:"ratio" bson:"ratio" db:"ratio"` // 损坏占比
 }
 
@@ -339,8 +339,8 @@ type GetRuinInfoResponse struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 三级级损伤信息
-	One   *RuinInfo `protobuf:"bytes,1,opt,name=one,proto3" json:"one,omitempty" db:"one" yaml:"one" bson:"one"`
-	Two   *RuinInfo `protobuf:"bytes,2,opt,name=two,proto3" json:"two,omitempty" yaml:"two" bson:"two" db:"two"`
+	One   *RuinInfo `protobuf:"bytes,1,opt,name=one,proto3" json:"one,omitempty" bson:"one" db:"one" yaml:"one"`
+	Two   *RuinInfo `protobuf:"bytes,2,opt,name=two,proto3" json:"two,omitempty" db:"two" yaml:"two" bson:"two"`
 	Three *RuinInfo `protobuf:"bytes,3,opt,name=three,proto3" json:"three,omitempty" yaml:"three" bson:"three" db:"three"`
 }
 

@@ -27,7 +27,7 @@ type LongLatPosition struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 经度
-	Longitude float64 `protobuf:"fixed64,1,opt,name=longitude,proto3" json:"longitude,omitempty" yaml:"longitude" bson:"longitude" db:"longitude"`
+	Longitude float64 `protobuf:"fixed64,1,opt,name=longitude,proto3" json:"longitude,omitempty" db:"longitude" yaml:"longitude" bson:"longitude"`
 	// 纬度
 	Latitude float64 `protobuf:"fixed64,2,opt,name=latitude,proto3" json:"latitude,omitempty" bson:"latitude" db:"latitude" yaml:"latitude"`
 }
@@ -87,7 +87,7 @@ type XYPosition struct {
 	// x坐标，单位米，对应经度
 	X float64 `protobuf:"fixed64,1,opt,name=x,proto3" json:"x,omitempty" yaml:"x" bson:"x" db:"x"`
 	// y坐标，单位米，对应纬度
-	Y float64 `protobuf:"fixed64,2,opt,name=y,proto3" json:"y,omitempty" db:"y" yaml:"y" bson:"y"`
+	Y float64 `protobuf:"fixed64,2,opt,name=y,proto3" json:"y,omitempty" bson:"y" db:"y" yaml:"y"`
 }
 
 func (x *XYPosition) Reset() {
@@ -143,7 +143,7 @@ type LanePosition struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 车道id
-	LaneId int32 `protobuf:"varint,1,opt,name=lane_id,json=laneId,proto3" json:"lane_id,omitempty" bson:"lane_id" db:"lane_id" yaml:"lane_id"`
+	LaneId int32 `protobuf:"varint,1,opt,name=lane_id,json=laneId,proto3" json:"lane_id,omitempty" yaml:"lane_id" bson:"lane_id" db:"lane_id"`
 	// s是车道上的点到车道起点的距离
 	S float64 `protobuf:"fixed64,2,opt,name=s,proto3" json:"s,omitempty" yaml:"s" bson:"s" db:"s"`
 }
@@ -261,7 +261,7 @@ type Position struct {
 	// 地图坐标AOI（必须提供其中之一）
 	LanePosition *LanePosition `protobuf:"bytes,1,opt,name=lane_position,json=lanePosition,proto3,oneof" json:"lane_position,omitempty" yaml:"lane_position" bson:"lane_position" db:"lane_position"`
 	// 地图坐标Lane+S（必须提供其中之一）
-	AoiPosition *AoiPosition `protobuf:"bytes,2,opt,name=aoi_position,json=aoiPosition,proto3,oneof" json:"aoi_position,omitempty" bson:"aoi_position" db:"aoi_position" yaml:"aoi_position"`
+	AoiPosition *AoiPosition `protobuf:"bytes,2,opt,name=aoi_position,json=aoiPosition,proto3,oneof" json:"aoi_position,omitempty" yaml:"aoi_position" bson:"aoi_position" db:"aoi_position"`
 	// WGS84经纬度坐标
 	LonglatPosition *LongLatPosition `protobuf:"bytes,3,opt,name=longlat_position,json=longlatPosition,proto3,oneof" json:"longlat_position,omitempty" yaml:"longlat_position" bson:"longlat_position" db:"longlat_position"`
 	// XY坐标
@@ -337,7 +337,7 @@ type LongLatRectArea struct {
 	// ne为区域东北角经纬度
 	Ne *LongLatPosition `protobuf:"bytes,1,opt,name=ne,proto3" json:"ne,omitempty" yaml:"ne" bson:"ne" db:"ne"`
 	// sw为区域西南角经纬度
-	Sw *LongLatPosition `protobuf:"bytes,2,opt,name=sw,proto3" json:"sw,omitempty" bson:"sw" db:"sw" yaml:"sw"`
+	Sw *LongLatPosition `protobuf:"bytes,2,opt,name=sw,proto3" json:"sw,omitempty" yaml:"sw" bson:"sw" db:"sw"`
 }
 
 func (x *LongLatRectArea) Reset() {

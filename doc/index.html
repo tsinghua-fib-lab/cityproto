@@ -1276,6 +1276,60 @@
         
           
           <li>
+            <a href="#city%2fevent%2fv2%2fevent.proto">city/event/v2/event.proto</a>
+            <ul>
+              
+                <li>
+                  <a href="#city.event.v2.Event"><span class="badge">M</span>Event</a>
+                </li>
+              
+                <li>
+                  <a href="#city.event.v2.Subject"><span class="badge">M</span>Subject</a>
+                </li>
+              
+              
+                <li>
+                  <a href="#city.event.v2.EntityType"><span class="badge">E</span>EntityType</a>
+                </li>
+              
+              
+              
+            </ul>
+          </li>
+        
+          
+          <li>
+            <a href="#city%2fevent%2fv2%2fevent_service.proto">city/event/v2/event_service.proto</a>
+            <ul>
+              
+                <li>
+                  <a href="#city.event.v2.GetEventsByTopicRequest"><span class="badge">M</span>GetEventsByTopicRequest</a>
+                </li>
+              
+                <li>
+                  <a href="#city.event.v2.GetEventsByTopicResponse"><span class="badge">M</span>GetEventsByTopicResponse</a>
+                </li>
+              
+                <li>
+                  <a href="#city.event.v2.ResolveEventsRequest"><span class="badge">M</span>ResolveEventsRequest</a>
+                </li>
+              
+                <li>
+                  <a href="#city.event.v2.ResolveEventsResponse"><span class="badge">M</span>ResolveEventsResponse</a>
+                </li>
+              
+              
+              
+              
+                <li>
+                  <a href="#city.event.v2.EventService"><span class="badge">S</span>EventService</a>
+                </li>
+              
+            </ul>
+          </li>
+        
+          
+          <li>
             <a href="#city%2fmap%2fv2%2faoi_service.proto">city/map/v2/aoi_service.proto</a>
             <ul>
               
@@ -9119,6 +9173,288 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
                 <td><a href="#city.event.v1.PullRequest">PullRequest</a></td>
                 <td><a href="#city.event.v1.PullResponse">PullResponse</a></td>
                 <td><p>从事件中心拉取事件</p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+
+        
+    
+      
+      <div class="file-heading">
+        <h2 id="city/event/v2/event.proto">city/event/v2/event.proto</h2><a href="#title">Top</a>
+      </div>
+      <p></p>
+
+      
+        <h3 id="city.event.v2.Event">Event</h3>
+        <p>模拟器中的事件</p><p>包含主题、主语（Who）、谓词（内容）、地点（Where）、时间（When）</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>topic</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>主题 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>id</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p>ID </p></td>
+                </tr>
+              
+                <tr>
+                  <td>subject</td>
+                  <td><a href="#city.event.v2.Subject">Subject</a></td>
+                  <td></td>
+                  <td><p>主语 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>content</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>谓词 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>position</td>
+                  <td><a href="#city.geo.v2.Position">city.geo.v2.Position</a></td>
+                  <td></td>
+                  <td><p>地点 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>t</td>
+                  <td><a href="#double">double</a></td>
+                  <td></td>
+                  <td><p>时间 </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="city.event.v2.Subject">Subject</h3>
+        <p>主语</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>entity_type</td>
+                  <td><a href="#city.event.v2.EntityType">EntityType</a></td>
+                  <td></td>
+                  <td><p>实体类型 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>id</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p>实体ID </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+
+      
+        <h3 id="city.event.v2.EntityType">EntityType</h3>
+        <p>实体类型</p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>ENTITY_TYPE_UNSPECIFIED</td>
+                <td>0</td>
+                <td><p>未指定</p></td>
+              </tr>
+            
+              <tr>
+                <td>ENTITY_TYPE_LANE</td>
+                <td>1</td>
+                <td><p>Lane</p></td>
+              </tr>
+            
+              <tr>
+                <td>ENTITY_TYPE_ROAD</td>
+                <td>2</td>
+                <td><p>Road</p></td>
+              </tr>
+            
+              <tr>
+                <td>ENTITY_TYPE_JUNCTION</td>
+                <td>3</td>
+                <td><p>Junction</p></td>
+              </tr>
+            
+              <tr>
+                <td>ENTITY_TYPE_AOI</td>
+                <td>4</td>
+                <td><p>AOI</p></td>
+              </tr>
+            
+              <tr>
+                <td>ENTITY_TYPE_POI</td>
+                <td>5</td>
+                <td><p>POI</p></td>
+              </tr>
+            
+              <tr>
+                <td>ENTITY_TYPE_PERSON</td>
+                <td>6</td>
+                <td><p>人</p></td>
+              </tr>
+            
+              <tr>
+                <td>ENTITY_TYPE_ORG</td>
+                <td>7</td>
+                <td><p>组织</p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+      
+
+      
+
+      
+    
+      
+      <div class="file-heading">
+        <h2 id="city/event/v2/event_service.proto">city/event/v2/event_service.proto</h2><a href="#title">Top</a>
+      </div>
+      <p></p>
+
+      
+        <h3 id="city.event.v2.GetEventsByTopicRequest">GetEventsByTopicRequest</h3>
+        <p>按照topic查询事件请求</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>topic</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>主题 </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="city.event.v2.GetEventsByTopicResponse">GetEventsByTopicResponse</h3>
+        <p>按照topic查询事件响应</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>events</td>
+                  <td><a href="#city.event.v2.Event">Event</a></td>
+                  <td>repeated</td>
+                  <td><p>事件列表 </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="city.event.v2.ResolveEventsRequest">ResolveEventsRequest</h3>
+        <p>确认事件已被处理请求</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>events</td>
+                  <td><a href="#city.event.v2.Event">Event</a></td>
+                  <td>repeated</td>
+                  <td><p>事件列表 </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="city.event.v2.ResolveEventsResponse">ResolveEventsResponse</h3>
+        <p>确认事件已被处理响应</p>
+
+        
+
+        
+      
+
+      
+
+      
+
+      
+        <h3 id="city.event.v2.EventService">EventService</h3>
+        <p></p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Method Name</td><td>Request Type</td><td>Response Type</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>GetEventsByTopic</td>
+                <td><a href="#city.event.v2.GetEventsByTopicRequest">GetEventsByTopicRequest</a></td>
+                <td><a href="#city.event.v2.GetEventsByTopicResponse">GetEventsByTopicResponse</a></td>
+                <td><p>按照topic查询事件</p></td>
+              </tr>
+            
+              <tr>
+                <td>ResolveEvents</td>
+                <td><a href="#city.event.v2.ResolveEventsRequest">ResolveEventsRequest</a></td>
+                <td><a href="#city.event.v2.ResolveEventsResponse">ResolveEventsResponse</a></td>
+                <td><p>确认事件已被处理</p></td>
               </tr>
             
           </tbody>

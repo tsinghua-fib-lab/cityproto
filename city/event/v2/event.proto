@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+package city.event.v2;
+
+import "city/geo/v2/geo.proto";
+
+// 实体类型
+enum EntityType {
+  // 未指定
+  ENTITY_TYPE_UNSPECIFIED = 0;
+  // Lane
+  ENTITY_TYPE_LANE = 1;
+  // Road
+  ENTITY_TYPE_ROAD = 2;
+  // Junction
+  ENTITY_TYPE_JUNCTION = 3;
+  // AOI
+  ENTITY_TYPE_AOI = 4;
+  // POI
+  ENTITY_TYPE_POI = 5;
+  // 人
+  ENTITY_TYPE_PERSON = 6;
+  // 组织
+  ENTITY_TYPE_ORG = 7;
+}
+
+// 主语
+message Subject {
+  // 实体类型
+  EntityType entity_type = 1;
+  // 实体ID
+  int32 id = 2;
+}
+
+// 模拟器中的事件
+// 包含主题、主语（Who）、谓词（内容）、地点（Where）、时间（When）
+message Event {
+  // 主题
+  string topic = 1;
+  // ID
+  int32 id = 2;
+  // 主语
+  Subject subject = 3;
+  // 谓词
+  string content = 4;
+  // 地点
+  city.geo.v2.Position position = 5;
+  // 时间
+  double t = 6;
+}

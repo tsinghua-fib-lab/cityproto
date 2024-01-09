@@ -174,7 +174,7 @@ type GetLaneResponse struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Lane的信息
-	States []*LaneState `protobuf:"bytes,1,rep,name=states,proto3" json:"states,omitempty" db:"states" yaml:"states" bson:"states"`
+	States []*LaneState `protobuf:"bytes,1,rep,name=states,proto3" json:"states,omitempty" yaml:"states" bson:"states" db:"states"`
 }
 
 func (x *GetLaneResponse) Reset() {

@@ -135,7 +135,7 @@ type GetAoiResponse struct {
 	unknownFields protoimpl.UnknownFields
 
 	// AOI信息列表
-	States []*AoiState `protobuf:"bytes,1,rep,name=states,proto3" json:"states,omitempty" yaml:"states" bson:"states" db:"states"`
+	States []*AoiState `protobuf:"bytes,1,rep,name=states,proto3" json:"states,omitempty" bson:"states" db:"states" yaml:"states"`
 }
 
 func (x *GetAoiResponse) Reset() {

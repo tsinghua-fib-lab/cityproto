@@ -5,6 +5,7 @@ package city.agent.v2;
 import "city/geo/v2/geo.proto";
 import "city/trip/v2/trip.proto";
 
+// TODO: 将 agent 替换为 person
 // 本文件描述智能体agent的属性与状态
 // 注意：本文件不用于描述智能体模拟过程中的数据结构
 

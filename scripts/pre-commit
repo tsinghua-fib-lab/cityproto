@@ -1,0 +1,12 @@
+#!/bin/sh
+
+set -e
+
+echo "Running pre-commit hook"
+
+set -x
+
+buf lint
+buf format -w
+./scripts/gen_sdk.sh
+git add go/ doc/ pycityproto/
