@@ -26,9 +26,9 @@ type Mongo struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Uri        string        `protobuf:"bytes,1,opt,name=uri,proto3" json:"uri,omitempty" db:"uri" yaml:"uri" bson:"uri"`
+	Uri        string        `protobuf:"bytes,1,opt,name=uri,proto3" json:"uri,omitempty" yaml:"uri" bson:"uri" db:"uri"`
 	Map        *v1.MongoPath `protobuf:"bytes,2,opt,name=map,proto3" json:"map,omitempty" yaml:"map" bson:"map" db:"map"`
-	Facilities *v1.MongoPath `protobuf:"bytes,3,opt,name=facilities,proto3" json:"facilities,omitempty" yaml:"facilities" bson:"facilities" db:"facilities"`
+	Facilities *v1.MongoPath `protobuf:"bytes,3,opt,name=facilities,proto3" json:"facilities,omitempty" db:"facilities" yaml:"facilities" bson:"facilities"`
 }
 
 func (x *Mongo) Reset() {
@@ -312,8 +312,8 @@ type Config struct {
 	unknownFields protoimpl.UnknownFields
 
 	Mongo   *Mongo   `protobuf:"bytes,1,opt,name=mongo,proto3" json:"mongo,omitempty" yaml:"mongo" bson:"mongo" db:"mongo"`
-	Control *Control `protobuf:"bytes,2,opt,name=control,proto3" json:"control,omitempty" db:"control" yaml:"control" bson:"control"`
-	Output  *Output  `protobuf:"bytes,3,opt,name=output,proto3" json:"output,omitempty" yaml:"output" bson:"output" db:"output"`
+	Control *Control `protobuf:"bytes,2,opt,name=control,proto3" json:"control,omitempty" yaml:"control" bson:"control" db:"control"`
+	Output  *Output  `protobuf:"bytes,3,opt,name=output,proto3" json:"output,omitempty" db:"output" yaml:"output" bson:"output"`
 }
 
 func (x *Config) Reset() {

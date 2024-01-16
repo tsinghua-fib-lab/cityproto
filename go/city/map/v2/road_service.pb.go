@@ -284,7 +284,7 @@ type RuinInfo struct {
 	unknownFields protoimpl.UnknownFields
 
 	Num   int32   `protobuf:"varint,1,opt,name=num,proto3" json:"num,omitempty" yaml:"num" bson:"num" db:"num"`            // 损坏数量
-	Ratio float64 `protobuf:"fixed64,2,opt,name=ratio,proto3" json:"ratio,omitempty" yaml:"ratio" bson:"ratio" db:"ratio"` // 损坏占比
+	Ratio float64 `protobuf:"fixed64,2,opt,name=ratio,proto3" json:"ratio,omitempty" db:"ratio" yaml:"ratio" bson:"ratio"` // 损坏占比
 }
 
 func (x *RuinInfo) Reset() {
@@ -339,8 +339,8 @@ type GetRuinInfoResponse struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 三级级损伤信息
-	One   *RuinInfo `protobuf:"bytes,1,opt,name=one,proto3" json:"one,omitempty" yaml:"one" bson:"one" db:"one"`
-	Two   *RuinInfo `protobuf:"bytes,2,opt,name=two,proto3" json:"two,omitempty" yaml:"two" bson:"two" db:"two"`
+	One   *RuinInfo `protobuf:"bytes,1,opt,name=one,proto3" json:"one,omitempty" db:"one" yaml:"one" bson:"one"`
+	Two   *RuinInfo `protobuf:"bytes,2,opt,name=two,proto3" json:"two,omitempty" db:"two" yaml:"two" bson:"two"`
 	Three *RuinInfo `protobuf:"bytes,3,opt,name=three,proto3" json:"three,omitempty" yaml:"three" bson:"three" db:"three"`
 }
 
@@ -489,9 +489,9 @@ type RoadState struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 道路ID
-	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" db:"id" yaml:"id" bson:"id"`
+	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" bson:"id" db:"id" yaml:"id"`
 	// 道路平均速度（m/s）
-	AvgV float64 `protobuf:"fixed64,4,opt,name=avg_v,json=avgV,proto3" json:"avg_v,omitempty" yaml:"avg_v" bson:"avg_v" db:"avg_v"`
+	AvgV float64 `protobuf:"fixed64,4,opt,name=avg_v,json=avgV,proto3" json:"avg_v,omitempty" db:"avg_v" yaml:"avg_v" bson:"avg_v"`
 	// 道路拥堵情况
 	Level RoadLevel `protobuf:"varint,2,opt,name=level,proto3,enum=city.map.v2.RoadLevel" json:"level,omitempty" yaml:"level" bson:"level" db:"level"`
 	// 道路中断原因

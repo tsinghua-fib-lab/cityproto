@@ -28,9 +28,9 @@ type AoiState struct {
 	unknownFields protoimpl.UnknownFields
 
 	// AOI ID
-	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
+	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" bson:"id" db:"id" yaml:"id"`
 	// AOI内的人
-	Persons []*v2.AgentMotion `protobuf:"bytes,2,rep,name=persons,proto3" json:"persons,omitempty" db:"persons" yaml:"persons" bson:"persons"`
+	Persons []*v2.AgentMotion `protobuf:"bytes,2,rep,name=persons,proto3" json:"persons,omitempty" yaml:"persons" bson:"persons" db:"persons"`
 }
 
 func (x *AoiState) Reset() {

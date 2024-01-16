@@ -28,15 +28,15 @@ type GetRouteRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 导航类型
-	Type RouteType `protobuf:"varint,1,opt,name=type,proto3,enum=city.routing.v2.RouteType" json:"type,omitempty" db:"type" yaml:"type" bson:"type"`
+	Type RouteType `protobuf:"varint,1,opt,name=type,proto3,enum=city.routing.v2.RouteType" json:"type,omitempty" yaml:"type" bson:"type" db:"type"`
 	// 起点，约定：包含LanePosition或AoiPosition中的一种
-	Start *v2.Position `protobuf:"bytes,2,opt,name=start,proto3" json:"start,omitempty" db:"start" yaml:"start" bson:"start"`
+	Start *v2.Position `protobuf:"bytes,2,opt,name=start,proto3" json:"start,omitempty" yaml:"start" bson:"start" db:"start"`
 	// 起点，约定：包含LanePosition或AoiPosition中的一种
-	End *v2.Position `protobuf:"bytes,3,opt,name=end,proto3" json:"end,omitempty" bson:"end" db:"end" yaml:"end"`
+	End *v2.Position `protobuf:"bytes,3,opt,name=end,proto3" json:"end,omitempty" yaml:"end" bson:"end" db:"end"`
 	// 发送导航请求的agent id（目前仅在行车导航中使用）
 	//
 	// Deprecated: Marked as deprecated in city/routing/v2/routing_service.proto.
-	AgentId int32 `protobuf:"varint,4,opt,name=agent_id,json=agentId,proto3" json:"agent_id,omitempty" db:"agent_id" yaml:"agent_id" bson:"agent_id"`
+	AgentId int32 `protobuf:"varint,4,opt,name=agent_id,json=agentId,proto3" json:"agent_id,omitempty" bson:"agent_id" db:"agent_id" yaml:"agent_id"`
 	// 发送导航请求的时间（目前仅在行车导航中使用）
 	Time float64 `protobuf:"fixed64,5,opt,name=time,proto3" json:"time,omitempty" yaml:"time" bson:"time" db:"time"`
 }
@@ -115,7 +115,7 @@ type GetRouteResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Journeys []*Journey `protobuf:"bytes,1,rep,name=journeys,proto3" json:"journeys,omitempty" yaml:"journeys" bson:"journeys" db:"journeys"`
+	Journeys []*Journey `protobuf:"bytes,1,rep,name=journeys,proto3" json:"journeys,omitempty" bson:"journeys" db:"journeys" yaml:"journeys"`
 }
 
 func (x *GetRouteResponse) Reset() {
@@ -252,7 +252,7 @@ type GetDrivingCostsRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 道路通行成本（按照给定的id和time进行查询）
-	Costs []*Cost `protobuf:"bytes,1,rep,name=costs,proto3" json:"costs,omitempty" yaml:"costs" bson:"costs" db:"costs"`
+	Costs []*Cost `protobuf:"bytes,1,rep,name=costs,proto3" json:"costs,omitempty" db:"costs" yaml:"costs" bson:"costs"`
 }
 
 func (x *GetDrivingCostsRequest) Reset() {
