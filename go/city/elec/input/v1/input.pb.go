@@ -165,8 +165,8 @@ type Facility struct {
 	unknownFields protoimpl.UnknownFields
 
 	Id       int32               `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
-	Position *v2.LongLatPosition `protobuf:"bytes,2,opt,name=position,proto3" json:"position,omitempty" yaml:"position" bson:"position" db:"position"`
-	Type     FacilityType        `protobuf:"varint,3,opt,name=type,proto3,enum=city.elec.input.v1.FacilityType" json:"type,omitempty" yaml:"type" bson:"type" db:"type"`
+	Position *v2.LongLatPosition `protobuf:"bytes,2,opt,name=position,proto3" json:"position,omitempty" bson:"position" db:"position" yaml:"position"`
+	Type     FacilityType        `protobuf:"varint,3,opt,name=type,proto3,enum=city.elec.input.v1.FacilityType" json:"type,omitempty" db:"type" yaml:"type" bson:"type"`
 	// 当前节点的邻居节点的id
 	Relation []int32 `protobuf:"varint,4,rep,packed,name=relation,proto3" json:"relation,omitempty" yaml:"relation" bson:"relation" db:"relation"`
 	// 在其它关联的网络中如水网使用时，可使用外部id
@@ -266,7 +266,7 @@ type Facilities struct {
 	unknownFields protoimpl.UnknownFields
 
 	Facilities     []*Facility      `protobuf:"bytes,1,rep,name=facilities,proto3" json:"facilities,omitempty" yaml:"facilities" bson:"facilities" db:"facilities"`
-	RepairStations []*RepairStation `protobuf:"bytes,2,rep,name=repair_stations,json=repairStations,proto3" json:"repair_stations,omitempty" yaml:"repair_stations" bson:"repair_stations" db:"repair_stations"`
+	RepairStations []*RepairStation `protobuf:"bytes,2,rep,name=repair_stations,json=repairStations,proto3" json:"repair_stations,omitempty" db:"repair_stations" yaml:"repair_stations" bson:"repair_stations"`
 }
 
 func (x *Facilities) Reset() {

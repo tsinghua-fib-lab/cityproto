@@ -144,7 +144,7 @@ type Control struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Step *ControlStep `protobuf:"bytes,1,opt,name=step,proto3" json:"step,omitempty" db:"step" yaml:"step" bson:"step"`
+	Step *ControlStep `protobuf:"bytes,1,opt,name=step,proto3" json:"step,omitempty" yaml:"step" bson:"step" db:"step"`
 }
 
 func (x *Control) Reset() {
@@ -194,8 +194,8 @@ type OutputSwitch struct {
 
 	// 电网节点状态
 	Node  bool `protobuf:"varint,1,opt,name=node,proto3" json:"node,omitempty" yaml:"node" bson:"node" db:"node"`
-	Aoi   bool `protobuf:"varint,2,opt,name=aoi,proto3" json:"aoi,omitempty" yaml:"aoi" bson:"aoi" db:"aoi"`
-	Event bool `protobuf:"varint,3,opt,name=event,proto3" json:"event,omitempty" bson:"event" db:"event" yaml:"event"`
+	Aoi   bool `protobuf:"varint,2,opt,name=aoi,proto3" json:"aoi,omitempty" bson:"aoi" db:"aoi" yaml:"aoi"`
+	Event bool `protobuf:"varint,3,opt,name=event,proto3" json:"event,omitempty" yaml:"event" bson:"event" db:"event"`
 }
 
 func (x *OutputSwitch) Reset() {
@@ -256,7 +256,7 @@ type Output struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Target *v1.OutputTarget `protobuf:"bytes,1,opt,name=target,proto3" json:"target,omitempty" yaml:"target" bson:"target" db:"target"`
+	Target *v1.OutputTarget `protobuf:"bytes,1,opt,name=target,proto3" json:"target,omitempty" db:"target" yaml:"target" bson:"target"`
 	Switch *OutputSwitch    `protobuf:"bytes,2,opt,name=switch,proto3" json:"switch,omitempty" yaml:"switch" bson:"switch" db:"switch"`
 }
 
@@ -311,8 +311,8 @@ type Config struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Mongo   *Mongo   `protobuf:"bytes,1,opt,name=mongo,proto3" json:"mongo,omitempty" yaml:"mongo" bson:"mongo" db:"mongo"`
-	Control *Control `protobuf:"bytes,2,opt,name=control,proto3" json:"control,omitempty" db:"control" yaml:"control" bson:"control"`
+	Mongo   *Mongo   `protobuf:"bytes,1,opt,name=mongo,proto3" json:"mongo,omitempty" db:"mongo" yaml:"mongo" bson:"mongo"`
+	Control *Control `protobuf:"bytes,2,opt,name=control,proto3" json:"control,omitempty" yaml:"control" bson:"control" db:"control"`
 	Output  *Output  `protobuf:"bytes,3,opt,name=output,proto3" json:"output,omitempty" yaml:"output" bson:"output" db:"output"`
 }
 

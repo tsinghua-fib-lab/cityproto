@@ -97,17 +97,17 @@ type PersonMotion struct {
 	unknownFields protoimpl.UnknownFields
 
 	// ID
-	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
+	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" db:"id" yaml:"id" bson:"id"`
 	// 状态
 	Status Status `protobuf:"varint,2,opt,name=status,proto3,enum=city.person.v1.Status" json:"status,omitempty" bson:"status" db:"status" yaml:"status"`
 	// 位置（包含逻辑位置、XY位置、经纬度位置）
-	Position *v2.Position `protobuf:"bytes,3,opt,name=position,proto3" json:"position,omitempty" db:"position" yaml:"position" bson:"position"`
+	Position *v2.Position `protobuf:"bytes,3,opt,name=position,proto3" json:"position,omitempty" yaml:"position" bson:"position" db:"position"`
 	// 速度
-	V float64 `protobuf:"fixed64,4,opt,name=v,proto3" json:"v,omitempty" db:"v" yaml:"v" bson:"v"`
+	V float64 `protobuf:"fixed64,4,opt,name=v,proto3" json:"v,omitempty" yaml:"v" bson:"v" db:"v"`
 	// 方向角（atan2计算得到的弧度）
 	Direction float64 `protobuf:"fixed64,5,opt,name=direction,proto3" json:"direction,omitempty" yaml:"direction" bson:"direction" db:"direction"`
 	// 活动描述
-	Activity string `protobuf:"bytes,6,opt,name=activity,proto3" json:"activity,omitempty" yaml:"activity" bson:"activity" db:"activity"`
+	Activity string `protobuf:"bytes,6,opt,name=activity,proto3" json:"activity,omitempty" bson:"activity" db:"activity" yaml:"activity"`
 }
 
 func (x *PersonMotion) Reset() {

@@ -84,7 +84,7 @@ type Phase struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 相位持续时间，单位秒
-	Duration float64 `protobuf:"fixed64,1,opt,name=duration,proto3" json:"duration,omitempty" db:"duration" yaml:"duration" bson:"duration"`
+	Duration float64 `protobuf:"fixed64,1,opt,name=duration,proto3" json:"duration,omitempty" yaml:"duration" bson:"duration" db:"duration"`
 	// 描述该相位下每个lane的灯控情况，lane与Junction.lane_ids一一对应
 	States []LightState `protobuf:"varint,2,rep,packed,name=states,proto3,enum=city.traffic_light.v2.LightState" json:"states,omitempty" yaml:"states" bson:"states" db:"states"`
 }

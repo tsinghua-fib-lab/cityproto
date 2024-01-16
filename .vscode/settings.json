@@ -11,13 +11,18 @@
     "overviewRulerColor": "#fdbc3e",
   },
   "cSpell.words": [
+    "bufbuild",
     "city",
     "cityproto",
+    "connectrpc",
     "fiblab",
+    "grpcio",
     "letsencrypt",
+    "protobuf",
     "protocolbuffers",
     "protos",
-    "pseudomuto"
+    "pseudomuto",
+    "pycityproto"
   ],
   "files.insertFinalNewline": true
 }

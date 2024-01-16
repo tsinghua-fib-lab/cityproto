@@ -304,7 +304,7 @@ type Pump struct {
 	unknownFields protoimpl.UnknownFields
 
 	Id       int32        `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
-	Position *v2.Position `protobuf:"bytes,2,opt,name=position,proto3" json:"position,omitempty" db:"position" yaml:"position" bson:"position"`
+	Position *v2.Position `protobuf:"bytes,2,opt,name=position,proto3" json:"position,omitempty" yaml:"position" bson:"position" db:"position"`
 }
 
 func (x *Pump) Reset() {
@@ -359,7 +359,7 @@ type CommDemand struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Id      int32     `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" bson:"id" db:"id" yaml:"id"`
+	Id      int32     `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
 	Demands []float64 `protobuf:"fixed64,2,rep,packed,name=demands,proto3" json:"demands,omitempty" yaml:"demands" bson:"demands" db:"demands"`
 }
 
@@ -416,7 +416,7 @@ type Nodes struct {
 
 	Nodes          []*Node          `protobuf:"bytes,1,rep,name=nodes,proto3" json:"nodes,omitempty" yaml:"nodes" bson:"nodes" db:"nodes"`
 	RepairStations []*RepairStation `protobuf:"bytes,2,rep,name=repair_stations,json=repairStations,proto3" json:"repair_stations,omitempty" yaml:"repair_stations" bson:"repair_stations" db:"repair_stations"`
-	Pumps          []*Pump          `protobuf:"bytes,3,rep,name=pumps,proto3" json:"pumps,omitempty" db:"pumps" yaml:"pumps" bson:"pumps"`
+	Pumps          []*Pump          `protobuf:"bytes,3,rep,name=pumps,proto3" json:"pumps,omitempty" yaml:"pumps" bson:"pumps" db:"pumps"`
 }
 
 func (x *Nodes) Reset() {
@@ -477,7 +477,7 @@ type CommDemands struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	CommDemands []*CommDemand `protobuf:"bytes,1,rep,name=comm_demands,json=commDemands,proto3" json:"comm_demands,omitempty" bson:"comm_demands" db:"comm_demands" yaml:"comm_demands"`
+	CommDemands []*CommDemand `protobuf:"bytes,1,rep,name=comm_demands,json=commDemands,proto3" json:"comm_demands,omitempty" db:"comm_demands" yaml:"comm_demands" bson:"comm_demands"`
 }
 
 func (x *CommDemands) Reset() {

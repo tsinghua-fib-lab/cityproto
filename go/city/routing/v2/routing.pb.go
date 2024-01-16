@@ -317,7 +317,7 @@ type WalkingJourneyBody struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 从起点到终点的（Lane+方向）序列
-	Route []*WalkingRouteSegment `protobuf:"bytes,1,rep,name=route,proto3" json:"route,omitempty" bson:"route" db:"route" yaml:"route"`
+	Route []*WalkingRouteSegment `protobuf:"bytes,1,rep,name=route,proto3" json:"route,omitempty" yaml:"route" bson:"route" db:"route"`
 	// 从起点到终点预计的时间(estimation time of arrival)
 	Eta float64 `protobuf:"fixed64,2,opt,name=eta,proto3" json:"eta,omitempty" yaml:"eta" bson:"eta" db:"eta"`
 }
@@ -444,7 +444,7 @@ type Journey struct {
 	// 步行
 	Walking *WalkingJourneyBody `protobuf:"bytes,3,opt,name=walking,proto3,oneof" json:"walking,omitempty" yaml:"walking" bson:"walking" db:"walking"`
 	// 公交
-	ByBus *BusJourneyBody `protobuf:"bytes,4,opt,name=by_bus,json=byBus,proto3,oneof" json:"by_bus,omitempty" bson:"by_bus" db:"by_bus" yaml:"by_bus"`
+	ByBus *BusJourneyBody `protobuf:"bytes,4,opt,name=by_bus,json=byBus,proto3,oneof" json:"by_bus,omitempty" db:"by_bus" yaml:"by_bus" bson:"by_bus"`
 }
 
 func (x *Journey) Reset() {
@@ -702,7 +702,7 @@ type RoadStatuses struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	RoadStatuses []*RoadStatus `protobuf:"bytes,1,rep,name=road_statuses,json=roadStatuses,proto3" json:"road_statuses,omitempty" yaml:"road_statuses" bson:"road_statuses" db:"road_statuses"`
+	RoadStatuses []*RoadStatus `protobuf:"bytes,1,rep,name=road_statuses,json=roadStatuses,proto3" json:"road_statuses,omitempty" db:"road_statuses" yaml:"road_statuses" bson:"road_statuses"`
 }
 
 func (x *RoadStatuses) Reset() {

@@ -440,7 +440,7 @@ type GetEventsResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Events *v1.Events `protobuf:"bytes,1,opt,name=events,proto3" json:"events,omitempty" yaml:"events" bson:"events" db:"events"`
+	Events *v1.Events `protobuf:"bytes,1,opt,name=events,proto3" json:"events,omitempty" db:"events" yaml:"events" bson:"events"`
 }
 
 func (x *GetEventsResponse) Reset() {
@@ -489,7 +489,7 @@ type RoadState struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 道路ID
-	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
+	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" bson:"id" db:"id" yaml:"id"`
 	// 道路平均速度（m/s）
 	AvgV float64 `protobuf:"fixed64,4,opt,name=avg_v,json=avgV,proto3" json:"avg_v,omitempty" yaml:"avg_v" bson:"avg_v" db:"avg_v"`
 	// 道路拥堵情况

@@ -29,7 +29,7 @@ type GetPersonRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// person id
-	PersonId int32 `protobuf:"varint,1,opt,name=person_id,json=personId,proto3" json:"person_id,omitempty"`
+	PersonId int32 `protobuf:"varint,1,opt,name=person_id,json=personId,proto3" json:"person_id,omitempty" yaml:"person_id" bson:"person_id" db:"person_id"`
 }
 
 func (x *GetPersonRequest) Reset() {
@@ -78,9 +78,9 @@ type GetPersonResponse struct {
 	unknownFields protoimpl.UnknownFields
 
 	// person信息
-	Base *Person `protobuf:"bytes,1,opt,name=base,proto3" json:"base,omitempty"`
+	Base *Person `protobuf:"bytes,1,opt,name=base,proto3" json:"base,omitempty" yaml:"base" bson:"base" db:"base"`
 	// person运动信息
-	Motion *PersonMotion `protobuf:"bytes,2,opt,name=motion,proto3" json:"motion,omitempty"`
+	Motion *PersonMotion `protobuf:"bytes,2,opt,name=motion,proto3" json:"motion,omitempty" yaml:"motion" bson:"motion" db:"motion"`
 }
 
 func (x *GetPersonResponse) Reset() {
@@ -136,7 +136,7 @@ type AddPersonRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 约定：person中不设置id
-	Person *Person `protobuf:"bytes,1,opt,name=person,proto3" json:"person,omitempty"`
+	Person *Person `protobuf:"bytes,1,opt,name=person,proto3" json:"person,omitempty" yaml:"person" bson:"person" db:"person"`
 }
 
 func (x *AddPersonRequest) Reset() {
@@ -185,7 +185,7 @@ type AddPersonResponse struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 新增的person分配得到的ID
-	PersonId int32 `protobuf:"varint,1,opt,name=person_id,json=personId,proto3" json:"person_id,omitempty"`
+	PersonId int32 `protobuf:"varint,1,opt,name=person_id,json=personId,proto3" json:"person_id,omitempty" yaml:"person_id" bson:"person_id" db:"person_id"`
 }
 
 func (x *AddPersonResponse) Reset() {
@@ -234,9 +234,9 @@ type SetScheduleRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// person id
-	PersonId int32 `protobuf:"varint,1,opt,name=person_id,json=personId,proto3" json:"person_id,omitempty"`
+	PersonId int32 `protobuf:"varint,1,opt,name=person_id,json=personId,proto3" json:"person_id,omitempty" yaml:"person_id" bson:"person_id" db:"person_id"`
 	// 新的schedule（覆盖原有的schedule）
-	Schedules []*v2.Schedule `protobuf:"bytes,2,rep,name=schedules,proto3" json:"schedules,omitempty"`
+	Schedules []*v2.Schedule `protobuf:"bytes,2,rep,name=schedules,proto3" json:"schedules,omitempty" bson:"schedules" db:"schedules" yaml:"schedules"`
 }
 
 func (x *SetScheduleRequest) Reset() {
@@ -331,7 +331,7 @@ type GetPersonsByLongLatAreaRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 经纬度范围
-	Area *v21.LongLatRectArea `protobuf:"bytes,1,opt,name=area,proto3" json:"area,omitempty"`
+	Area *v21.LongLatRectArea `protobuf:"bytes,1,opt,name=area,proto3" json:"area,omitempty" yaml:"area" bson:"area" db:"area"`
 }
 
 func (x *GetPersonsByLongLatAreaRequest) Reset() {
@@ -380,9 +380,9 @@ type GetPersonsByLongLatAreaResponse struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 当前模拟步数
-	Step int32 `protobuf:"varint,1,opt,name=step,proto3" json:"step,omitempty"`
+	Step int32 `protobuf:"varint,1,opt,name=step,proto3" json:"step,omitempty" yaml:"step" bson:"step" db:"step"`
 	// 区域内的person的运动信息
-	Motions []*PersonMotion `protobuf:"bytes,2,rep,name=motions,proto3" json:"motions,omitempty"`
+	Motions []*PersonMotion `protobuf:"bytes,2,rep,name=motions,proto3" json:"motions,omitempty" yaml:"motions" bson:"motions" db:"motions"`
 }
 
 func (x *GetPersonsByLongLatAreaResponse) Reset() {
