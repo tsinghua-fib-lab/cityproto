@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { GetLaneRequest, GetLaneResponse, SetLaneMaxVRequest, SetLaneMaxVResponse } from "./lane_service_pb.js";
+import { GetLaneByLongLatBBoxRequest, GetLaneByLongLatBBoxResponse, GetLaneRequest, GetLaneResponse, SetLaneMaxVRequest, SetLaneMaxVResponse } from "./lane_service_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -32,6 +32,17 @@ export const LaneService = {
       name: "GetLane",
       I: GetLaneRequest,
       O: GetLaneResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * 获取特定区域内的Lane的信息
+     *
+     * @generated from rpc city.map.v2.LaneService.GetLaneByLongLatBBox
+     */
+    getLaneByLongLatBBox: {
+      name: "GetLaneByLongLatBBox",
+      I: GetLaneByLongLatBBoxRequest,
+      O: GetLaneByLongLatBBoxResponse,
       kind: MethodKind.Unary,
     },
   }

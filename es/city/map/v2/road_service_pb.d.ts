@@ -5,6 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
+import type { LongLatBBox } from "../../geo/v2/geo_pb.js";
 import type { Events } from "../../event/v1/event_pb.js";
 import type { LaneState } from "./lane_service_pb.js";
 
@@ -102,6 +103,20 @@ export declare class GetRoadRequest extends Message<GetRoadRequest> {
    */
   roadIds: number[];
 
+  /**
+   * 是否要排除车道信息
+   *
+   * @generated from field: bool exclude_lanes = 2;
+   */
+  excludeLanes: boolean;
+
+  /**
+   * 是否要排除车道上的人的信息（仅在包含车道信息时有效）
+   *
+   * @generated from field: bool exclude_person = 3;
+   */
+  excludePerson: boolean;
+
   constructor(data?: PartialMessage<GetRoadRequest>);
 
   static readonly runtime: typeof proto3;
@@ -143,6 +158,76 @@ export declare class GetRoadResponse extends Message<GetRoadResponse> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetRoadResponse;
 
   static equals(a: GetRoadResponse | PlainMessage<GetRoadResponse> | undefined, b: GetRoadResponse | PlainMessage<GetRoadResponse> | undefined): boolean;
+}
+
+/**
+ * 查询特定区域内的道路信息请求
+ *
+ * @generated from message city.map.v2.GetRoadByLongLatBBoxRequest
+ */
+export declare class GetRoadByLongLatBBoxRequest extends Message<GetRoadByLongLatBBoxRequest> {
+  /**
+   * 经纬度范围
+   *
+   * @generated from field: city.geo.v2.LongLatBBox bound = 1;
+   */
+  bound?: LongLatBBox;
+
+  /**
+   * 是否要排除车道信息
+   *
+   * @generated from field: bool exclude_lanes = 2;
+   */
+  excludeLanes: boolean;
+
+  /**
+   * 是否要排除车道上的人的信息（仅在包含车道信息时有效）
+   *
+   * @generated from field: bool exclude_person = 3;
+   */
+  excludePerson: boolean;
+
+  constructor(data?: PartialMessage<GetRoadByLongLatBBoxRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.map.v2.GetRoadByLongLatBBoxRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetRoadByLongLatBBoxRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetRoadByLongLatBBoxRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetRoadByLongLatBBoxRequest;
+
+  static equals(a: GetRoadByLongLatBBoxRequest | PlainMessage<GetRoadByLongLatBBoxRequest> | undefined, b: GetRoadByLongLatBBoxRequest | PlainMessage<GetRoadByLongLatBBoxRequest> | undefined): boolean;
+}
+
+/**
+ * 查询特定区域内的道路信息响应
+ *
+ * @generated from message city.map.v2.GetRoadByLongLatBBoxResponse
+ */
+export declare class GetRoadByLongLatBBoxResponse extends Message<GetRoadByLongLatBBoxResponse> {
+  /**
+   * 道路信息列表
+   *
+   * @generated from field: repeated city.map.v2.RoadState states = 1;
+   */
+  states: RoadState[];
+
+  constructor(data?: PartialMessage<GetRoadByLongLatBBoxResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.map.v2.GetRoadByLongLatBBoxResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetRoadByLongLatBBoxResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetRoadByLongLatBBoxResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetRoadByLongLatBBoxResponse;
+
+  static equals(a: GetRoadByLongLatBBoxResponse | PlainMessage<GetRoadByLongLatBBoxResponse> | undefined, b: GetRoadByLongLatBBoxResponse | PlainMessage<GetRoadByLongLatBBoxResponse> | undefined): boolean;
 }
 
 /**

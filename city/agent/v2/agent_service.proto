@@ -66,7 +66,7 @@ message SetScheduleResponse {}
 // 获取特定区域内的agent请求
 message GetAgentsByLongLatAreaRequest {
   // 经纬度范围
-  city.geo.v2.LongLatRectArea area = 1;
+  city.geo.v2.LongLatBBox area = 1;
 }
 
 // 获取特定区域内的agent响应

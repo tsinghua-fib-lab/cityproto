@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { GetEventsRequest, GetEventsResponse, GetRoadRequest, GetRoadResponse, GetRuinInfoRequest, GetRuinInfoResponse } from "./road_service_pb.js";
+import { GetEventsRequest, GetEventsResponse, GetRoadByLongLatBBoxRequest, GetRoadByLongLatBBoxResponse, GetRoadRequest, GetRoadResponse, GetRuinInfoRequest, GetRuinInfoResponse } from "./road_service_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -21,6 +21,17 @@ export const RoadService = {
       name: "GetRoad",
       I: GetRoadRequest,
       O: GetRoadResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * 查询特定区域内的道路信息
+     *
+     * @generated from rpc city.map.v2.RoadService.GetRoadByLongLatBBox
+     */
+    getRoadByLongLatBBox: {
+      name: "GetRoadByLongLatBBox",
+      I: GetRoadByLongLatBBoxRequest,
+      O: GetRoadByLongLatBBoxResponse,
       kind: MethodKind.Unary,
     },
     /**

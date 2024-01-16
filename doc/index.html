@@ -187,11 +187,11 @@
                 </li>
               
                 <li>
-                  <a href="#city.geo.v2.LongLatPosition"><span class="badge">M</span>LongLatPosition</a>
+                  <a href="#city.geo.v2.LongLatBBox"><span class="badge">M</span>LongLatBBox</a>
                 </li>
               
                 <li>
-                  <a href="#city.geo.v2.LongLatRectArea"><span class="badge">M</span>LongLatRectArea</a>
+                  <a href="#city.geo.v2.LongLatPosition"><span class="badge">M</span>LongLatPosition</a>
                 </li>
               
                 <li>
@@ -1376,8 +1376,43 @@
         
           
           <li>
+            <a href="#city%2ftraffic_light%2fv2%2ftraffic_light.proto">city/traffic_light/v2/traffic_light.proto</a>
+            <ul>
+              
+                <li>
+                  <a href="#city.traffic_light.v2.Phase"><span class="badge">M</span>Phase</a>
+                </li>
+              
+                <li>
+                  <a href="#city.traffic_light.v2.TrafficLight"><span class="badge">M</span>TrafficLight</a>
+                </li>
+              
+                <li>
+                  <a href="#city.traffic_light.v2.TrafficLights"><span class="badge">M</span>TrafficLights</a>
+                </li>
+              
+              
+                <li>
+                  <a href="#city.traffic_light.v2.LightState"><span class="badge">E</span>LightState</a>
+                </li>
+              
+              
+              
+            </ul>
+          </li>
+        
+          
+          <li>
             <a href="#city%2fmap%2fv2%2flane_service.proto">city/map/v2/lane_service.proto</a>
             <ul>
+              
+                <li>
+                  <a href="#city.map.v2.GetLaneByLongLatBBoxRequest"><span class="badge">M</span>GetLaneByLongLatBBoxRequest</a>
+                </li>
+              
+                <li>
+                  <a href="#city.map.v2.GetLaneByLongLatBBoxResponse"><span class="badge">M</span>GetLaneByLongLatBBoxResponse</a>
+                </li>
               
                 <li>
                   <a href="#city.map.v2.GetLaneRequest"><span class="badge">M</span>GetLaneRequest</a>
@@ -1420,6 +1455,14 @@
               
                 <li>
                   <a href="#city.map.v2.GetEventsResponse"><span class="badge">M</span>GetEventsResponse</a>
+                </li>
+              
+                <li>
+                  <a href="#city.map.v2.GetRoadByLongLatBBoxRequest"><span class="badge">M</span>GetRoadByLongLatBBoxRequest</a>
+                </li>
+              
+                <li>
+                  <a href="#city.map.v2.GetRoadByLongLatBBoxResponse"><span class="badge">M</span>GetRoadByLongLatBBoxResponse</a>
                 </li>
               
                 <li>
@@ -1517,19 +1560,19 @@
                 </li>
               
                 <li>
+                  <a href="#city.person.v1.GetPersonByLongLatBBoxRequest"><span class="badge">M</span>GetPersonByLongLatBBoxRequest</a>
+                </li>
+              
+                <li>
+                  <a href="#city.person.v1.GetPersonByLongLatBBoxResponse"><span class="badge">M</span>GetPersonByLongLatBBoxResponse</a>
+                </li>
+              
+                <li>
                   <a href="#city.person.v1.GetPersonRequest"><span class="badge">M</span>GetPersonRequest</a>
                 </li>
               
                 <li>
                   <a href="#city.person.v1.GetPersonResponse"><span class="badge">M</span>GetPersonResponse</a>
-                </li>
-              
-                <li>
-                  <a href="#city.person.v1.GetPersonsByLongLatAreaRequest"><span class="badge">M</span>GetPersonsByLongLatAreaRequest</a>
-                </li>
-              
-                <li>
-                  <a href="#city.person.v1.GetPersonsByLongLatAreaResponse"><span class="badge">M</span>GetPersonsByLongLatAreaResponse</a>
                 </li>
               
                 <li>
@@ -1731,33 +1774,6 @@
                 <li>
                   <a href="#city.sync.v1.SyncService"><span class="badge">S</span>SyncService</a>
                 </li>
-              
-            </ul>
-          </li>
-        
-          
-          <li>
-            <a href="#city%2ftraffic_light%2fv2%2ftraffic_light.proto">city/traffic_light/v2/traffic_light.proto</a>
-            <ul>
-              
-                <li>
-                  <a href="#city.traffic_light.v2.Phase"><span class="badge">M</span>Phase</a>
-                </li>
-              
-                <li>
-                  <a href="#city.traffic_light.v2.TrafficLight"><span class="badge">M</span>TrafficLight</a>
-                </li>
-              
-                <li>
-                  <a href="#city.traffic_light.v2.TrafficLights"><span class="badge">M</span>TrafficLights</a>
-                </li>
-              
-              
-                <li>
-                  <a href="#city.traffic_light.v2.LightState"><span class="badge">E</span>LightState</a>
-                </li>
-              
-              
               
             </ul>
           </li>
@@ -2255,6 +2271,44 @@
 
         
       
+        <h3 id="city.geo.v2.LongLatBBox">LongLatBBox</h3>
+        <p>经纬度矩形区域</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>min_longitude</td>
+                  <td><a href="#double">double</a></td>
+                  <td></td>
+                  <td><p>最小经度 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>min_latitude</td>
+                  <td><a href="#double">double</a></td>
+                  <td></td>
+                  <td><p>最小纬度 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>max_longitude</td>
+                  <td><a href="#double">double</a></td>
+                  <td></td>
+                  <td><p>最大经度 </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
         <h3 id="city.geo.v2.LongLatPosition">LongLatPosition</h3>
         <p>WGS84经纬度坐标</p>
 
@@ -2277,37 +2331,6 @@
                   <td><a href="#double">double</a></td>
                   <td></td>
                   <td><p>纬度 </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-
-          
-
-        
-      
-        <h3 id="city.geo.v2.LongLatRectArea">LongLatRectArea</h3>
-        <p>经纬度矩形区域</p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>ne</td>
-                  <td><a href="#city.geo.v2.LongLatPosition">LongLatPosition</a></td>
-                  <td></td>
-                  <td><p>ne为区域东北角经纬度 </p></td>
-                </tr>
-              
-                <tr>
-                  <td>sw</td>
-                  <td><a href="#city.geo.v2.LongLatPosition">LongLatPosition</a></td>
-                  <td></td>
-                  <td><p>sw为区域西南角经纬度 </p></td>
                 </tr>
               
             </tbody>
@@ -3555,7 +3578,7 @@
               
                 <tr>
                   <td>area</td>
-                  <td><a href="#city.geo.v2.LongLatRectArea">city.geo.v2.LongLatRectArea</a></td>
+                  <td><a href="#city.geo.v2.LongLatBBox">city.geo.v2.LongLatBBox</a></td>
                   <td></td>
                   <td><p>经纬度范围 </p></td>
                 </tr>
@@ -9866,10 +9889,200 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
     
       
       <div class="file-heading">
+        <h2 id="city/traffic_light/v2/traffic_light.proto">city/traffic_light/v2/traffic_light.proto</h2><a href="#title">Top</a>
+      </div>
+      <p></p>
+
+      
+        <h3 id="city.traffic_light.v2.Phase">Phase</h3>
+        <p>交通灯相位</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>duration</td>
+                  <td><a href="#double">double</a></td>
+                  <td></td>
+                  <td><p>相位持续时间，单位秒 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>states</td>
+                  <td><a href="#city.traffic_light.v2.LightState">LightState</a></td>
+                  <td>repeated</td>
+                  <td><p>描述该相位下每个lane的灯控情况，lane与Junction.lane_ids一一对应 </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="city.traffic_light.v2.TrafficLight">TrafficLight</h3>
+        <p>交通灯</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>junction_id</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p>所在路口id </p></td>
+                </tr>
+              
+                <tr>
+                  <td>phases</td>
+                  <td><a href="#city.traffic_light.v2.Phase">Phase</a></td>
+                  <td>repeated</td>
+                  <td><p>相位循环的一个循环周期 </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="city.traffic_light.v2.TrafficLights">TrafficLights</h3>
+        <p>信控集合，对应一个信控pb文件或一个信控mongodb collection</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>traffic_lights</td>
+                  <td><a href="#city.traffic_light.v2.TrafficLight">TrafficLight</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+
+      
+        <h3 id="city.traffic_light.v2.LightState">LightState</h3>
+        <p>交通灯的状态</p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>LIGHT_STATE_UNSPECIFIED</td>
+                <td>0</td>
+                <td><p>未指定</p></td>
+              </tr>
+            
+              <tr>
+                <td>LIGHT_STATE_RED</td>
+                <td>1</td>
+                <td><p>红灯</p></td>
+              </tr>
+            
+              <tr>
+                <td>LIGHT_STATE_GREEN</td>
+                <td>2</td>
+                <td><p>绿灯</p></td>
+              </tr>
+            
+              <tr>
+                <td>LIGHT_STATE_YELLOW</td>
+                <td>3</td>
+                <td><p>黄灯</p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+      
+
+      
+
+      
+    
+      
+      <div class="file-heading">
         <h2 id="city/map/v2/lane_service.proto">city/map/v2/lane_service.proto</h2><a href="#title">Top</a>
       </div>
       <p></p>
 
+      
+        <h3 id="city.map.v2.GetLaneByLongLatBBoxRequest">GetLaneByLongLatBBoxRequest</h3>
+        <p>获取特定区域内的Lane的信息请求</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>bound</td>
+                  <td><a href="#city.geo.v2.LongLatBBox">city.geo.v2.LongLatBBox</a></td>
+                  <td></td>
+                  <td><p>经纬度范围 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>exclude_person</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p>是否要排除车道上的人的信息 </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="city.map.v2.GetLaneByLongLatBBoxResponse">GetLaneByLongLatBBoxResponse</h3>
+        <p>获取特定区域内的Lane的信息响应</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>states</td>
+                  <td><a href="#city.map.v2.LaneState">LaneState</a></td>
+                  <td>repeated</td>
+                  <td><p>Lane的信息 </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
       
         <h3 id="city.map.v2.GetLaneRequest">GetLaneRequest</h3>
         <p>获取Lane的信息请求</p>
@@ -9886,6 +10099,13 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
                   <td><a href="#int32">int32</a></td>
                   <td>repeated</td>
                   <td><p>指定的Lane id列表，如果为空，则返回所有Lane的信息 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>exclude_person</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p>是否要排除车道上的人的信息 </p></td>
                 </tr>
               
             </tbody>
@@ -9955,6 +10175,13 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
                   <td><a href="#bool">bool</a></td>
                   <td></td>
                   <td><p>是否限行 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>light_state</td>
+                  <td><a href="#city.traffic_light.v2.LightState">city.traffic_light.v2.LightState</a></td>
+                  <td></td>
+                  <td><p>交通灯状态 </p></td>
                 </tr>
               
             </tbody>
@@ -10030,6 +10257,13 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
                 <td><p>获取Lane的信息</p></td>
               </tr>
             
+              <tr>
+                <td>GetLaneByLongLatBBox</td>
+                <td><a href="#city.map.v2.GetLaneByLongLatBBoxRequest">GetLaneByLongLatBBoxRequest</a></td>
+                <td><a href="#city.map.v2.GetLaneByLongLatBBoxResponse">GetLaneByLongLatBBoxResponse</a></td>
+                <td><p>获取特定区域内的Lane的信息</p></td>
+              </tr>
+            
           </tbody>
         </table>
 
@@ -10073,6 +10307,68 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
 
         
       
+        <h3 id="city.map.v2.GetRoadByLongLatBBoxRequest">GetRoadByLongLatBBoxRequest</h3>
+        <p>查询特定区域内的道路信息请求</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>bound</td>
+                  <td><a href="#city.geo.v2.LongLatBBox">city.geo.v2.LongLatBBox</a></td>
+                  <td></td>
+                  <td><p>经纬度范围 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>exclude_lanes</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p>是否要排除车道信息 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>exclude_person</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p>是否要排除车道上的人的信息（仅在包含车道信息时有效） </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="city.map.v2.GetRoadByLongLatBBoxResponse">GetRoadByLongLatBBoxResponse</h3>
+        <p>查询特定区域内的道路信息响应</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>states</td>
+                  <td><a href="#city.map.v2.RoadState">RoadState</a></td>
+                  <td>repeated</td>
+                  <td><p>道路信息列表 </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
         <h3 id="city.map.v2.GetRoadRequest">GetRoadRequest</h3>
         <p>查询道路信息请求</p>
 
@@ -10088,6 +10384,20 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
                   <td><a href="#int32">int32</a></td>
                   <td>repeated</td>
                   <td><p>指定查询的道路ID列表，为空代表查询所有道路 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>exclude_lanes</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p>是否要排除车道信息 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>exclude_person</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p>是否要排除车道上的人的信息（仅在包含车道信息时有效） </p></td>
                 </tr>
               
             </tbody>
@@ -10356,6 +10666,13 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
                 <td><a href="#city.map.v2.GetRoadRequest">GetRoadRequest</a></td>
                 <td><a href="#city.map.v2.GetRoadResponse">GetRoadResponse</a></td>
                 <td><p>查询道路信息</p></td>
+              </tr>
+            
+              <tr>
+                <td>GetRoadByLongLatBBox</td>
+                <td><a href="#city.map.v2.GetRoadByLongLatBBoxRequest">GetRoadByLongLatBBoxRequest</a></td>
+                <td><a href="#city.map.v2.GetRoadByLongLatBBoxResponse">GetRoadByLongLatBBoxResponse</a></td>
+                <td><p>查询特定区域内的道路信息</p></td>
               </tr>
             
               <tr>
@@ -10709,6 +11026,54 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
 
         
       
+        <h3 id="city.person.v1.GetPersonByLongLatBBoxRequest">GetPersonByLongLatBBoxRequest</h3>
+        <p>获取特定区域内的person请求</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>bound</td>
+                  <td><a href="#city.geo.v2.LongLatBBox">city.geo.v2.LongLatBBox</a></td>
+                  <td></td>
+                  <td><p>经纬度范围 </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="city.person.v1.GetPersonByLongLatBBoxResponse">GetPersonByLongLatBBoxResponse</h3>
+        <p>获取特定区域内的person响应</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>motions</td>
+                  <td><a href="#city.person.v1.PersonMotion">PersonMotion</a></td>
+                  <td>repeated</td>
+                  <td><p>区域内的person的运动信息 </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
         <h3 id="city.person.v1.GetPersonRequest">GetPersonRequest</h3>
         <p>获取person信息请求</p>
 
@@ -10755,61 +11120,6 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
                   <td><a href="#city.person.v1.PersonMotion">PersonMotion</a></td>
                   <td></td>
                   <td><p>person运动信息 </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-
-          
-
-        
-      
-        <h3 id="city.person.v1.GetPersonsByLongLatAreaRequest">GetPersonsByLongLatAreaRequest</h3>
-        <p>获取特定区域内的person请求</p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>area</td>
-                  <td><a href="#city.geo.v2.LongLatRectArea">city.geo.v2.LongLatRectArea</a></td>
-                  <td></td>
-                  <td><p>经纬度范围 </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-
-          
-
-        
-      
-        <h3 id="city.person.v1.GetPersonsByLongLatAreaResponse">GetPersonsByLongLatAreaResponse</h3>
-        <p>获取特定区域内的person响应</p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>step</td>
-                  <td><a href="#int32">int32</a></td>
-                  <td></td>
-                  <td><p>当前模拟步数 </p></td>
-                </tr>
-              
-                <tr>
-                  <td>motions</td>
-                  <td><a href="#city.person.v1.PersonMotion">PersonMotion</a></td>
-                  <td>repeated</td>
-                  <td><p>区域内的person的运动信息 </p></td>
                 </tr>
               
             </tbody>
@@ -10893,9 +11203,9 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
               </tr>
             
               <tr>
-                <td>GetPersonsByLongLatArea</td>
-                <td><a href="#city.person.v1.GetPersonsByLongLatAreaRequest">GetPersonsByLongLatAreaRequest</a></td>
-                <td><a href="#city.person.v1.GetPersonsByLongLatAreaResponse">GetPersonsByLongLatAreaResponse</a></td>
+                <td>GetPersonByLongLatBBox</td>
+                <td><a href="#city.person.v1.GetPersonByLongLatBBoxRequest">GetPersonByLongLatBBoxRequest</a></td>
+                <td><a href="#city.person.v1.GetPersonByLongLatBBoxResponse">GetPersonByLongLatBBoxResponse</a></td>
                 <td><p>获取特定区域内的person</p></td>
               </tr>
             
@@ -11666,141 +11976,6 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
         </table>
 
         
-    
-      
-      <div class="file-heading">
-        <h2 id="city/traffic_light/v2/traffic_light.proto">city/traffic_light/v2/traffic_light.proto</h2><a href="#title">Top</a>
-      </div>
-      <p></p>
-
-      
-        <h3 id="city.traffic_light.v2.Phase">Phase</h3>
-        <p>交通灯相位</p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>duration</td>
-                  <td><a href="#double">double</a></td>
-                  <td></td>
-                  <td><p>相位持续时间，单位秒 </p></td>
-                </tr>
-              
-                <tr>
-                  <td>states</td>
-                  <td><a href="#city.traffic_light.v2.LightState">LightState</a></td>
-                  <td>repeated</td>
-                  <td><p>描述该相位下每个lane的灯控情况，lane与Junction.lane_ids一一对应 </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-
-          
-
-        
-      
-        <h3 id="city.traffic_light.v2.TrafficLight">TrafficLight</h3>
-        <p>交通灯</p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>junction_id</td>
-                  <td><a href="#int32">int32</a></td>
-                  <td></td>
-                  <td><p>所在路口id </p></td>
-                </tr>
-              
-                <tr>
-                  <td>phases</td>
-                  <td><a href="#city.traffic_light.v2.Phase">Phase</a></td>
-                  <td>repeated</td>
-                  <td><p>相位循环的一个循环周期 </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-
-          
-
-        
-      
-        <h3 id="city.traffic_light.v2.TrafficLights">TrafficLights</h3>
-        <p>信控集合，对应一个信控pb文件或一个信控mongodb collection</p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>traffic_lights</td>
-                  <td><a href="#city.traffic_light.v2.TrafficLight">TrafficLight</a></td>
-                  <td>repeated</td>
-                  <td><p> </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-
-          
-
-        
-      
-
-      
-        <h3 id="city.traffic_light.v2.LightState">LightState</h3>
-        <p>交通灯的状态</p>
-        <table class="enum-table">
-          <thead>
-            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td>LIGHT_STATE_UNSPECIFIED</td>
-                <td>0</td>
-                <td><p>未指定</p></td>
-              </tr>
-            
-              <tr>
-                <td>LIGHT_STATE_RED</td>
-                <td>1</td>
-                <td><p>红灯</p></td>
-              </tr>
-            
-              <tr>
-                <td>LIGHT_STATE_GREEN</td>
-                <td>2</td>
-                <td><p>绿灯</p></td>
-              </tr>
-            
-              <tr>
-                <td>LIGHT_STATE_YELLOW</td>
-                <td>3</td>
-                <td><p>黄灯</p></td>
-              </tr>
-            
-          </tbody>
-        </table>
-      
-
-      
-
-      
     
       
       <div class="file-heading">

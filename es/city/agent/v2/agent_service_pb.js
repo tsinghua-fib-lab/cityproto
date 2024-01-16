@@ -7,7 +7,7 @@ import { proto3 } from "@bufbuild/protobuf";
 import { Agent } from "./agent_pb.js";
 import { AgentMotion } from "./motion_pb.js";
 import { Schedule } from "../../trip/v2/trip_pb.js";
-import { LongLatRectArea } from "../../geo/v2/geo_pb.js";
+import { LongLatBBox } from "../../geo/v2/geo_pb.js";
 
 /**
  * 获取agent信息请求
@@ -89,7 +89,7 @@ export const SetScheduleResponse = proto3.makeMessageType(
 export const GetAgentsByLongLatAreaRequest = proto3.makeMessageType(
   "city.agent.v2.GetAgentsByLongLatAreaRequest",
   () => [
-    { no: 1, name: "area", kind: "message", T: LongLatRectArea },
+    { no: 1, name: "area", kind: "message", T: LongLatBBox },
   ],
 );
 

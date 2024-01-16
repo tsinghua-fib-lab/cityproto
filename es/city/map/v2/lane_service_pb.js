@@ -4,7 +4,9 @@
 // @ts-nocheck
 
 import { proto3 } from "@bufbuild/protobuf";
+import { LongLatBBox } from "../../geo/v2/geo_pb.js";
 import { PersonMotion } from "../../person/v1/motion_pb.js";
+import { LightState } from "../../traffic_light/v2/traffic_light_pb.js";
 
 /**
  * 设置Lane的最大速度（限速）请求
@@ -38,6 +40,7 @@ export const GetLaneRequest = proto3.makeMessageType(
   "city.map.v2.GetLaneRequest",
   () => [
     { no: 1, name: "lane_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 2, name: "exclude_person", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 
@@ -48,6 +51,31 @@ export const GetLaneRequest = proto3.makeMessageType(
  */
 export const GetLaneResponse = proto3.makeMessageType(
   "city.map.v2.GetLaneResponse",
+  () => [
+    { no: 1, name: "states", kind: "message", T: LaneState, repeated: true },
+  ],
+);
+
+/**
+ * 获取特定区域内的Lane的信息请求
+ *
+ * @generated from message city.map.v2.GetLaneByLongLatBBoxRequest
+ */
+export const GetLaneByLongLatBBoxRequest = proto3.makeMessageType(
+  "city.map.v2.GetLaneByLongLatBBoxRequest",
+  () => [
+    { no: 1, name: "bound", kind: "message", T: LongLatBBox },
+    { no: 2, name: "exclude_person", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ],
+);
+
+/**
+ * 获取特定区域内的Lane的信息响应
+ *
+ * @generated from message city.map.v2.GetLaneByLongLatBBoxResponse
+ */
+export const GetLaneByLongLatBBoxResponse = proto3.makeMessageType(
+  "city.map.v2.GetLaneByLongLatBBoxResponse",
   () => [
     { no: 1, name: "states", kind: "message", T: LaneState, repeated: true },
   ],
@@ -65,6 +93,7 @@ export const LaneState = proto3.makeMessageType(
     { no: 2, name: "persons", kind: "message", T: PersonMotion, repeated: true },
     { no: 3, name: "avg_v", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
     { no: 4, name: "restriction", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 5, name: "light_state", kind: "enum", T: proto3.getEnumType(LightState) },
   ],
 );
 

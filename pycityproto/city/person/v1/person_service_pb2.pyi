@@ -58,20 +58,18 @@ class SetScheduleResponse(_message.Message):
     def __init__(self) -> None:
         ...
 
-class GetPersonsByLongLatAreaRequest(_message.Message):
-    __slots__ = ['area']
-    AREA_FIELD_NUMBER: _ClassVar[int]
-    area: _geo_pb2.LongLatRectArea
+class GetPersonByLongLatBBoxRequest(_message.Message):
+    __slots__ = ['bound']
+    BOUND_FIELD_NUMBER: _ClassVar[int]
+    bound: _geo_pb2.LongLatBBox
 
-    def __init__(self, area: _Optional[_Union[_geo_pb2.LongLatRectArea, _Mapping]]=...) -> None:
+    def __init__(self, bound: _Optional[_Union[_geo_pb2.LongLatBBox, _Mapping]]=...) -> None:
         ...
 
-class GetPersonsByLongLatAreaResponse(_message.Message):
-    __slots__ = ['step', 'motions']
-    STEP_FIELD_NUMBER: _ClassVar[int]
+class GetPersonByLongLatBBoxResponse(_message.Message):
+    __slots__ = ['motions']
     MOTIONS_FIELD_NUMBER: _ClassVar[int]
-    step: int
     motions: _containers.RepeatedCompositeFieldContainer[_motion_pb2.PersonMotion]
 
-    def __init__(self, step: _Optional[int]=..., motions: _Optional[_Iterable[_Union[_motion_pb2.PersonMotion, _Mapping]]]=...) -> None:
+    def __init__(self, motions: _Optional[_Iterable[_Union[_motion_pb2.PersonMotion, _Mapping]]]=...) -> None:
         ...

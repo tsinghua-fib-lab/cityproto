@@ -35,6 +35,9 @@ const (
 const (
 	// RoadServiceGetRoadProcedure is the fully-qualified name of the RoadService's GetRoad RPC.
 	RoadServiceGetRoadProcedure = "/city.map.v2.RoadService/GetRoad"
+	// RoadServiceGetRoadByLongLatBBoxProcedure is the fully-qualified name of the RoadService's
+	// GetRoadByLongLatBBox RPC.
+	RoadServiceGetRoadByLongLatBBoxProcedure = "/city.map.v2.RoadService/GetRoadByLongLatBBox"
 	// RoadServiceGetRuinInfoProcedure is the fully-qualified name of the RoadService's GetRuinInfo RPC.
 	RoadServiceGetRuinInfoProcedure = "/city.map.v2.RoadService/GetRuinInfo"
 	// RoadServiceGetEventsProcedure is the fully-qualified name of the RoadService's GetEvents RPC.
@@ -43,16 +46,19 @@ const (
 
 // These variables are the protoreflect.Descriptor objects for the RPCs defined in this package.
 var (
-	roadServiceServiceDescriptor           = v2.File_city_map_v2_road_service_proto.Services().ByName("RoadService")
-	roadServiceGetRoadMethodDescriptor     = roadServiceServiceDescriptor.Methods().ByName("GetRoad")
-	roadServiceGetRuinInfoMethodDescriptor = roadServiceServiceDescriptor.Methods().ByName("GetRuinInfo")
-	roadServiceGetEventsMethodDescriptor   = roadServiceServiceDescriptor.Methods().ByName("GetEvents")
+	roadServiceServiceDescriptor                    = v2.File_city_map_v2_road_service_proto.Services().ByName("RoadService")
+	roadServiceGetRoadMethodDescriptor              = roadServiceServiceDescriptor.Methods().ByName("GetRoad")
+	roadServiceGetRoadByLongLatBBoxMethodDescriptor = roadServiceServiceDescriptor.Methods().ByName("GetRoadByLongLatBBox")
+	roadServiceGetRuinInfoMethodDescriptor          = roadServiceServiceDescriptor.Methods().ByName("GetRuinInfo")
+	roadServiceGetEventsMethodDescriptor            = roadServiceServiceDescriptor.Methods().ByName("GetEvents")
 )
 
 // RoadServiceClient is a client for the city.map.v2.RoadService service.
 type RoadServiceClient interface {
 	// 查询道路信息
 	GetRoad(context.Context, *connect.Request[v2.GetRoadRequest]) (*connect.Response[v2.GetRoadResponse], error)
+	// 查询特定区域内的道路信息
+	GetRoadByLongLatBBox(context.Context, *connect.Request[v2.GetRoadByLongLatBBoxRequest]) (*connect.Response[v2.GetRoadByLongLatBBoxResponse], error)
 	GetRuinInfo(context.Context, *connect.Request[v2.GetRuinInfoRequest]) (*connect.Response[v2.GetRuinInfoResponse], error)
 	GetEvents(context.Context, *connect.Request[v2.GetEventsRequest]) (*connect.Response[v2.GetEventsResponse], error)
 }
@@ -73,6 +79,12 @@ func NewRoadServiceClient(httpClient connect.HTTPClient, baseURL string, opts ..
 			connect.WithSchema(roadServiceGetRoadMethodDescriptor),
 			connect.WithClientOptions(opts...),
 		),
+		getRoadByLongLatBBox: connect.NewClient[v2.GetRoadByLongLatBBoxRequest, v2.GetRoadByLongLatBBoxResponse](
+			httpClient,
+			baseURL+RoadServiceGetRoadByLongLatBBoxProcedure,
+			connect.WithSchema(roadServiceGetRoadByLongLatBBoxMethodDescriptor),
+			connect.WithClientOptions(opts...),
+		),
 		getRuinInfo: connect.NewClient[v2.GetRuinInfoRequest, v2.GetRuinInfoResponse](
 			httpClient,
 			baseURL+RoadServiceGetRuinInfoProcedure,
@@ -90,14 +102,20 @@ func NewRoadServiceClient(httpClient connect.HTTPClient, baseURL string, opts ..
 
 // roadServiceClient implements RoadServiceClient.
 type roadServiceClient struct {
-	getRoad     *connect.Client[v2.GetRoadRequest, v2.GetRoadResponse]
-	getRuinInfo *connect.Client[v2.GetRuinInfoRequest, v2.GetRuinInfoResponse]
-	getEvents   *connect.Client[v2.GetEventsRequest, v2.GetEventsResponse]
+	getRoad              *connect.Client[v2.GetRoadRequest, v2.GetRoadResponse]
+	getRoadByLongLatBBox *connect.Client[v2.GetRoadByLongLatBBoxRequest, v2.GetRoadByLongLatBBoxResponse]
+	getRuinInfo          *connect.Client[v2.GetRuinInfoRequest, v2.GetRuinInfoResponse]
+	getEvents            *connect.Client[v2.GetEventsRequest, v2.GetEventsResponse]
 }
 
 // GetRoad calls city.map.v2.RoadService.GetRoad.
 func (c *roadServiceClient) GetRoad(ctx context.Context, req *connect.Request[v2.GetRoadRequest]) (*connect.Response[v2.GetRoadResponse], error) {
 	return c.getRoad.CallUnary(ctx, req)
+}
+
+// GetRoadByLongLatBBox calls city.map.v2.RoadService.GetRoadByLongLatBBox.
+func (c *roadServiceClient) GetRoadByLongLatBBox(ctx context.Context, req *connect.Request[v2.GetRoadByLongLatBBoxRequest]) (*connect.Response[v2.GetRoadByLongLatBBoxResponse], error) {
+	return c.getRoadByLongLatBBox.CallUnary(ctx, req)
 }
 
 // GetRuinInfo calls city.map.v2.RoadService.GetRuinInfo.
@@ -114,6 +132,8 @@ func (c *roadServiceClient) GetEvents(ctx context.Context, req *connect.Request[
 type RoadServiceHandler interface {
 	// 查询道路信息
 	GetRoad(context.Context, *connect.Request[v2.GetRoadRequest]) (*connect.Response[v2.GetRoadResponse], error)
+	// 查询特定区域内的道路信息
+	GetRoadByLongLatBBox(context.Context, *connect.Request[v2.GetRoadByLongLatBBoxRequest]) (*connect.Response[v2.GetRoadByLongLatBBoxResponse], error)
 	GetRuinInfo(context.Context, *connect.Request[v2.GetRuinInfoRequest]) (*connect.Response[v2.GetRuinInfoResponse], error)
 	GetEvents(context.Context, *connect.Request[v2.GetEventsRequest]) (*connect.Response[v2.GetEventsResponse], error)
 }
@@ -128,6 +148,12 @@ func NewRoadServiceHandler(svc RoadServiceHandler, opts ...connect.HandlerOption
 		RoadServiceGetRoadProcedure,
 		svc.GetRoad,
 		connect.WithSchema(roadServiceGetRoadMethodDescriptor),
+		connect.WithHandlerOptions(opts...),
+	)
+	roadServiceGetRoadByLongLatBBoxHandler := connect.NewUnaryHandler(
+		RoadServiceGetRoadByLongLatBBoxProcedure,
+		svc.GetRoadByLongLatBBox,
+		connect.WithSchema(roadServiceGetRoadByLongLatBBoxMethodDescriptor),
 		connect.WithHandlerOptions(opts...),
 	)
 	roadServiceGetRuinInfoHandler := connect.NewUnaryHandler(
@@ -146,6 +172,8 @@ func NewRoadServiceHandler(svc RoadServiceHandler, opts ...connect.HandlerOption
 		switch r.URL.Path {
 		case RoadServiceGetRoadProcedure:
 			roadServiceGetRoadHandler.ServeHTTP(w, r)
+		case RoadServiceGetRoadByLongLatBBoxProcedure:
+			roadServiceGetRoadByLongLatBBoxHandler.ServeHTTP(w, r)
 		case RoadServiceGetRuinInfoProcedure:
 			roadServiceGetRuinInfoHandler.ServeHTTP(w, r)
 		case RoadServiceGetEventsProcedure:
@@ -161,6 +189,10 @@ type UnimplementedRoadServiceHandler struct{}
 
 func (UnimplementedRoadServiceHandler) GetRoad(context.Context, *connect.Request[v2.GetRoadRequest]) (*connect.Response[v2.GetRoadResponse], error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.map.v2.RoadService.GetRoad is not implemented"))
+}
+
+func (UnimplementedRoadServiceHandler) GetRoadByLongLatBBox(context.Context, *connect.Request[v2.GetRoadByLongLatBBoxRequest]) (*connect.Response[v2.GetRoadByLongLatBBoxResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.map.v2.RoadService.GetRoadByLongLatBBox is not implemented"))
 }
 
 func (UnimplementedRoadServiceHandler) GetRuinInfo(context.Context, *connect.Request[v2.GetRuinInfoRequest]) (*connect.Response[v2.GetRuinInfoResponse], error) {

@@ -40,18 +40,18 @@ const (
 	// PersonServiceSetScheduleProcedure is the fully-qualified name of the PersonService's SetSchedule
 	// RPC.
 	PersonServiceSetScheduleProcedure = "/city.person.v1.PersonService/SetSchedule"
-	// PersonServiceGetPersonsByLongLatAreaProcedure is the fully-qualified name of the PersonService's
-	// GetPersonsByLongLatArea RPC.
-	PersonServiceGetPersonsByLongLatAreaProcedure = "/city.person.v1.PersonService/GetPersonsByLongLatArea"
+	// PersonServiceGetPersonByLongLatBBoxProcedure is the fully-qualified name of the PersonService's
+	// GetPersonByLongLatBBox RPC.
+	PersonServiceGetPersonByLongLatBBoxProcedure = "/city.person.v1.PersonService/GetPersonByLongLatBBox"
 )
 
 // These variables are the protoreflect.Descriptor objects for the RPCs defined in this package.
 var (
-	personServiceServiceDescriptor                       = v1.File_city_person_v1_person_service_proto.Services().ByName("PersonService")
-	personServiceGetPersonMethodDescriptor               = personServiceServiceDescriptor.Methods().ByName("GetPerson")
-	personServiceAddPersonMethodDescriptor               = personServiceServiceDescriptor.Methods().ByName("AddPerson")
-	personServiceSetScheduleMethodDescriptor             = personServiceServiceDescriptor.Methods().ByName("SetSchedule")
-	personServiceGetPersonsByLongLatAreaMethodDescriptor = personServiceServiceDescriptor.Methods().ByName("GetPersonsByLongLatArea")
+	personServiceServiceDescriptor                      = v1.File_city_person_v1_person_service_proto.Services().ByName("PersonService")
+	personServiceGetPersonMethodDescriptor              = personServiceServiceDescriptor.Methods().ByName("GetPerson")
+	personServiceAddPersonMethodDescriptor              = personServiceServiceDescriptor.Methods().ByName("AddPerson")
+	personServiceSetScheduleMethodDescriptor            = personServiceServiceDescriptor.Methods().ByName("SetSchedule")
+	personServiceGetPersonByLongLatBBoxMethodDescriptor = personServiceServiceDescriptor.Methods().ByName("GetPersonByLongLatBBox")
 )
 
 // PersonServiceClient is a client for the city.person.v1.PersonService service.
@@ -63,7 +63,7 @@ type PersonServiceClient interface {
 	// 修改person的schedule 传入personid、目的地表
 	SetSchedule(context.Context, *connect.Request[v1.SetScheduleRequest]) (*connect.Response[v1.SetScheduleResponse], error)
 	// 获取特定区域内的person
-	GetPersonsByLongLatArea(context.Context, *connect.Request[v1.GetPersonsByLongLatAreaRequest]) (*connect.Response[v1.GetPersonsByLongLatAreaResponse], error)
+	GetPersonByLongLatBBox(context.Context, *connect.Request[v1.GetPersonByLongLatBBoxRequest]) (*connect.Response[v1.GetPersonByLongLatBBoxResponse], error)
 }
 
 // NewPersonServiceClient constructs a client for the city.person.v1.PersonService service. By
@@ -94,10 +94,10 @@ func NewPersonServiceClient(httpClient connect.HTTPClient, baseURL string, opts 
 			connect.WithSchema(personServiceSetScheduleMethodDescriptor),
 			connect.WithClientOptions(opts...),
 		),
-		getPersonsByLongLatArea: connect.NewClient[v1.GetPersonsByLongLatAreaRequest, v1.GetPersonsByLongLatAreaResponse](
+		getPersonByLongLatBBox: connect.NewClient[v1.GetPersonByLongLatBBoxRequest, v1.GetPersonByLongLatBBoxResponse](
 			httpClient,
-			baseURL+PersonServiceGetPersonsByLongLatAreaProcedure,
-			connect.WithSchema(personServiceGetPersonsByLongLatAreaMethodDescriptor),
+			baseURL+PersonServiceGetPersonByLongLatBBoxProcedure,
+			connect.WithSchema(personServiceGetPersonByLongLatBBoxMethodDescriptor),
 			connect.WithClientOptions(opts...),
 		),
 	}
@@ -105,10 +105,10 @@ func NewPersonServiceClient(httpClient connect.HTTPClient, baseURL string, opts 
 
 // personServiceClient implements PersonServiceClient.
 type personServiceClient struct {
-	getPerson               *connect.Client[v1.GetPersonRequest, v1.GetPersonResponse]
-	addPerson               *connect.Client[v1.AddPersonRequest, v1.AddPersonResponse]
-	setSchedule             *connect.Client[v1.SetScheduleRequest, v1.SetScheduleResponse]
-	getPersonsByLongLatArea *connect.Client[v1.GetPersonsByLongLatAreaRequest, v1.GetPersonsByLongLatAreaResponse]
+	getPerson              *connect.Client[v1.GetPersonRequest, v1.GetPersonResponse]
+	addPerson              *connect.Client[v1.AddPersonRequest, v1.AddPersonResponse]
+	setSchedule            *connect.Client[v1.SetScheduleRequest, v1.SetScheduleResponse]
+	getPersonByLongLatBBox *connect.Client[v1.GetPersonByLongLatBBoxRequest, v1.GetPersonByLongLatBBoxResponse]
 }
 
 // GetPerson calls city.person.v1.PersonService.GetPerson.
@@ -126,9 +126,9 @@ func (c *personServiceClient) SetSchedule(ctx context.Context, req *connect.Requ
 	return c.setSchedule.CallUnary(ctx, req)
 }
 
-// GetPersonsByLongLatArea calls city.person.v1.PersonService.GetPersonsByLongLatArea.
-func (c *personServiceClient) GetPersonsByLongLatArea(ctx context.Context, req *connect.Request[v1.GetPersonsByLongLatAreaRequest]) (*connect.Response[v1.GetPersonsByLongLatAreaResponse], error) {
-	return c.getPersonsByLongLatArea.CallUnary(ctx, req)
+// GetPersonByLongLatBBox calls city.person.v1.PersonService.GetPersonByLongLatBBox.
+func (c *personServiceClient) GetPersonByLongLatBBox(ctx context.Context, req *connect.Request[v1.GetPersonByLongLatBBoxRequest]) (*connect.Response[v1.GetPersonByLongLatBBoxResponse], error) {
+	return c.getPersonByLongLatBBox.CallUnary(ctx, req)
 }
 
 // PersonServiceHandler is an implementation of the city.person.v1.PersonService service.
@@ -140,7 +140,7 @@ type PersonServiceHandler interface {
 	// 修改person的schedule 传入personid、目的地表
 	SetSchedule(context.Context, *connect.Request[v1.SetScheduleRequest]) (*connect.Response[v1.SetScheduleResponse], error)
 	// 获取特定区域内的person
-	GetPersonsByLongLatArea(context.Context, *connect.Request[v1.GetPersonsByLongLatAreaRequest]) (*connect.Response[v1.GetPersonsByLongLatAreaResponse], error)
+	GetPersonByLongLatBBox(context.Context, *connect.Request[v1.GetPersonByLongLatBBoxRequest]) (*connect.Response[v1.GetPersonByLongLatBBoxResponse], error)
 }
 
 // NewPersonServiceHandler builds an HTTP handler from the service implementation. It returns the
@@ -167,10 +167,10 @@ func NewPersonServiceHandler(svc PersonServiceHandler, opts ...connect.HandlerOp
 		connect.WithSchema(personServiceSetScheduleMethodDescriptor),
 		connect.WithHandlerOptions(opts...),
 	)
-	personServiceGetPersonsByLongLatAreaHandler := connect.NewUnaryHandler(
-		PersonServiceGetPersonsByLongLatAreaProcedure,
-		svc.GetPersonsByLongLatArea,
-		connect.WithSchema(personServiceGetPersonsByLongLatAreaMethodDescriptor),
+	personServiceGetPersonByLongLatBBoxHandler := connect.NewUnaryHandler(
+		PersonServiceGetPersonByLongLatBBoxProcedure,
+		svc.GetPersonByLongLatBBox,
+		connect.WithSchema(personServiceGetPersonByLongLatBBoxMethodDescriptor),
 		connect.WithHandlerOptions(opts...),
 	)
 	return "/city.person.v1.PersonService/", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
@@ -181,8 +181,8 @@ func NewPersonServiceHandler(svc PersonServiceHandler, opts ...connect.HandlerOp
 			personServiceAddPersonHandler.ServeHTTP(w, r)
 		case PersonServiceSetScheduleProcedure:
 			personServiceSetScheduleHandler.ServeHTTP(w, r)
-		case PersonServiceGetPersonsByLongLatAreaProcedure:
-			personServiceGetPersonsByLongLatAreaHandler.ServeHTTP(w, r)
+		case PersonServiceGetPersonByLongLatBBoxProcedure:
+			personServiceGetPersonByLongLatBBoxHandler.ServeHTTP(w, r)
 		default:
 			http.NotFound(w, r)
 		}
@@ -204,6 +204,6 @@ func (UnimplementedPersonServiceHandler) SetSchedule(context.Context, *connect.R
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.person.v1.PersonService.SetSchedule is not implemented"))
 }
 
-func (UnimplementedPersonServiceHandler) GetPersonsByLongLatArea(context.Context, *connect.Request[v1.GetPersonsByLongLatAreaRequest]) (*connect.Response[v1.GetPersonsByLongLatAreaResponse], error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.person.v1.PersonService.GetPersonsByLongLatArea is not implemented"))
+func (UnimplementedPersonServiceHandler) GetPersonByLongLatBBox(context.Context, *connect.Request[v1.GetPersonByLongLatBBoxRequest]) (*connect.Response[v1.GetPersonByLongLatBBoxResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.person.v1.PersonService.GetPersonByLongLatBBox is not implemented"))
 }

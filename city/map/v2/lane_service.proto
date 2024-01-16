@@ -2,13 +2,17 @@ syntax = "proto3";
 
 package city.map.v2;
 
+import "city/geo/v2/geo.proto";
 import "city/person/v1/motion.proto";
+import "city/traffic_light/v2/traffic_light.proto";
 
 service LaneService {
   // 设置Lane的最大速度（限速）
   rpc SetLaneMaxV(SetLaneMaxVRequest) returns (SetLaneMaxVResponse);
   // 获取Lane的信息
   rpc GetLane(GetLaneRequest) returns (GetLaneResponse);
+  // 获取特定区域内的Lane的信息
+  rpc GetLaneByLongLatBBox(GetLaneByLongLatBBoxRequest) returns (GetLaneByLongLatBBoxResponse);
 }
 
 // 设置Lane的最大速度（限速）请求
@@ -26,10 +30,26 @@ message SetLaneMaxVResponse {}
 message GetLaneRequest {
   // 指定的Lane id列表，如果为空，则返回所有Lane的信息
   repeated int32 lane_ids = 1;
+  // 是否要排除车道上的人的信息
+  bool exclude_person = 2;
 }
 
 // 获取Lane的信息响应
 message GetLaneResponse {
+  // Lane的信息
+  repeated LaneState states = 1;
+}
+
+// 获取特定区域内的Lane的信息请求
+message GetLaneByLongLatBBoxRequest {
+  // 经纬度范围
+  city.geo.v2.LongLatBBox bound = 1;
+  // 是否要排除车道上的人的信息
+  bool exclude_person = 2;
+}
+
+// 获取特定区域内的Lane的信息响应
+message GetLaneByLongLatBBoxResponse {
   // Lane的信息
   repeated LaneState states = 1;
 }
@@ -44,4 +64,6 @@ message LaneState {
   double avg_v = 3;
   // 是否限行
   bool restriction = 4;
+  // 交通灯状态
+  city.traffic_light.v2.LightState light_state = 5;
 }

@@ -37,13 +37,17 @@ const (
 	LaneServiceSetLaneMaxVProcedure = "/city.map.v2.LaneService/SetLaneMaxV"
 	// LaneServiceGetLaneProcedure is the fully-qualified name of the LaneService's GetLane RPC.
 	LaneServiceGetLaneProcedure = "/city.map.v2.LaneService/GetLane"
+	// LaneServiceGetLaneByLongLatBBoxProcedure is the fully-qualified name of the LaneService's
+	// GetLaneByLongLatBBox RPC.
+	LaneServiceGetLaneByLongLatBBoxProcedure = "/city.map.v2.LaneService/GetLaneByLongLatBBox"
 )
 
 // These variables are the protoreflect.Descriptor objects for the RPCs defined in this package.
 var (
-	laneServiceServiceDescriptor           = v2.File_city_map_v2_lane_service_proto.Services().ByName("LaneService")
-	laneServiceSetLaneMaxVMethodDescriptor = laneServiceServiceDescriptor.Methods().ByName("SetLaneMaxV")
-	laneServiceGetLaneMethodDescriptor     = laneServiceServiceDescriptor.Methods().ByName("GetLane")
+	laneServiceServiceDescriptor                    = v2.File_city_map_v2_lane_service_proto.Services().ByName("LaneService")
+	laneServiceSetLaneMaxVMethodDescriptor          = laneServiceServiceDescriptor.Methods().ByName("SetLaneMaxV")
+	laneServiceGetLaneMethodDescriptor              = laneServiceServiceDescriptor.Methods().ByName("GetLane")
+	laneServiceGetLaneByLongLatBBoxMethodDescriptor = laneServiceServiceDescriptor.Methods().ByName("GetLaneByLongLatBBox")
 )
 
 // LaneServiceClient is a client for the city.map.v2.LaneService service.
@@ -52,6 +56,8 @@ type LaneServiceClient interface {
 	SetLaneMaxV(context.Context, *connect.Request[v2.SetLaneMaxVRequest]) (*connect.Response[v2.SetLaneMaxVResponse], error)
 	// 获取Lane的信息
 	GetLane(context.Context, *connect.Request[v2.GetLaneRequest]) (*connect.Response[v2.GetLaneResponse], error)
+	// 获取特定区域内的Lane的信息
+	GetLaneByLongLatBBox(context.Context, *connect.Request[v2.GetLaneByLongLatBBoxRequest]) (*connect.Response[v2.GetLaneByLongLatBBoxResponse], error)
 }
 
 // NewLaneServiceClient constructs a client for the city.map.v2.LaneService service. By default, it
@@ -76,13 +82,20 @@ func NewLaneServiceClient(httpClient connect.HTTPClient, baseURL string, opts ..
 			connect.WithSchema(laneServiceGetLaneMethodDescriptor),
 			connect.WithClientOptions(opts...),
 		),
+		getLaneByLongLatBBox: connect.NewClient[v2.GetLaneByLongLatBBoxRequest, v2.GetLaneByLongLatBBoxResponse](
+			httpClient,
+			baseURL+LaneServiceGetLaneByLongLatBBoxProcedure,
+			connect.WithSchema(laneServiceGetLaneByLongLatBBoxMethodDescriptor),
+			connect.WithClientOptions(opts...),
+		),
 	}
 }
 
 // laneServiceClient implements LaneServiceClient.
 type laneServiceClient struct {
-	setLaneMaxV *connect.Client[v2.SetLaneMaxVRequest, v2.SetLaneMaxVResponse]
-	getLane     *connect.Client[v2.GetLaneRequest, v2.GetLaneResponse]
+	setLaneMaxV          *connect.Client[v2.SetLaneMaxVRequest, v2.SetLaneMaxVResponse]
+	getLane              *connect.Client[v2.GetLaneRequest, v2.GetLaneResponse]
+	getLaneByLongLatBBox *connect.Client[v2.GetLaneByLongLatBBoxRequest, v2.GetLaneByLongLatBBoxResponse]
 }
 
 // SetLaneMaxV calls city.map.v2.LaneService.SetLaneMaxV.
@@ -95,12 +108,19 @@ func (c *laneServiceClient) GetLane(ctx context.Context, req *connect.Request[v2
 	return c.getLane.CallUnary(ctx, req)
 }
 
+// GetLaneByLongLatBBox calls city.map.v2.LaneService.GetLaneByLongLatBBox.
+func (c *laneServiceClient) GetLaneByLongLatBBox(ctx context.Context, req *connect.Request[v2.GetLaneByLongLatBBoxRequest]) (*connect.Response[v2.GetLaneByLongLatBBoxResponse], error) {
+	return c.getLaneByLongLatBBox.CallUnary(ctx, req)
+}
+
 // LaneServiceHandler is an implementation of the city.map.v2.LaneService service.
 type LaneServiceHandler interface {
 	// 设置Lane的最大速度（限速）
 	SetLaneMaxV(context.Context, *connect.Request[v2.SetLaneMaxVRequest]) (*connect.Response[v2.SetLaneMaxVResponse], error)
 	// 获取Lane的信息
 	GetLane(context.Context, *connect.Request[v2.GetLaneRequest]) (*connect.Response[v2.GetLaneResponse], error)
+	// 获取特定区域内的Lane的信息
+	GetLaneByLongLatBBox(context.Context, *connect.Request[v2.GetLaneByLongLatBBoxRequest]) (*connect.Response[v2.GetLaneByLongLatBBoxResponse], error)
 }
 
 // NewLaneServiceHandler builds an HTTP handler from the service implementation. It returns the path
@@ -121,12 +141,20 @@ func NewLaneServiceHandler(svc LaneServiceHandler, opts ...connect.HandlerOption
 		connect.WithSchema(laneServiceGetLaneMethodDescriptor),
 		connect.WithHandlerOptions(opts...),
 	)
+	laneServiceGetLaneByLongLatBBoxHandler := connect.NewUnaryHandler(
+		LaneServiceGetLaneByLongLatBBoxProcedure,
+		svc.GetLaneByLongLatBBox,
+		connect.WithSchema(laneServiceGetLaneByLongLatBBoxMethodDescriptor),
+		connect.WithHandlerOptions(opts...),
+	)
 	return "/city.map.v2.LaneService/", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		switch r.URL.Path {
 		case LaneServiceSetLaneMaxVProcedure:
 			laneServiceSetLaneMaxVHandler.ServeHTTP(w, r)
 		case LaneServiceGetLaneProcedure:
 			laneServiceGetLaneHandler.ServeHTTP(w, r)
+		case LaneServiceGetLaneByLongLatBBoxProcedure:
+			laneServiceGetLaneByLongLatBBoxHandler.ServeHTTP(w, r)
 		default:
 			http.NotFound(w, r)
 		}
@@ -142,4 +170,8 @@ func (UnimplementedLaneServiceHandler) SetLaneMaxV(context.Context, *connect.Req
 
 func (UnimplementedLaneServiceHandler) GetLane(context.Context, *connect.Request[v2.GetLaneRequest]) (*connect.Response[v2.GetLaneResponse], error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.map.v2.LaneService.GetLane is not implemented"))
+}
+
+func (UnimplementedLaneServiceHandler) GetLaneByLongLatBBox(context.Context, *connect.Request[v2.GetLaneByLongLatBBoxRequest]) (*connect.Response[v2.GetLaneByLongLatBBoxResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.map.v2.LaneService.GetLaneByLongLatBBox is not implemented"))
 }

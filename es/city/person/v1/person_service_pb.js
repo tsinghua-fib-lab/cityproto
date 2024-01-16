@@ -7,7 +7,7 @@ import { proto3 } from "@bufbuild/protobuf";
 import { Person } from "./person_pb.js";
 import { PersonMotion } from "./motion_pb.js";
 import { Schedule } from "../../trip/v2/trip_pb.js";
-import { LongLatRectArea } from "../../geo/v2/geo_pb.js";
+import { LongLatBBox } from "../../geo/v2/geo_pb.js";
 
 /**
  * 获取person信息请求
@@ -84,25 +84,24 @@ export const SetScheduleResponse = proto3.makeMessageType(
 /**
  * 获取特定区域内的person请求
  *
- * @generated from message city.person.v1.GetPersonsByLongLatAreaRequest
+ * @generated from message city.person.v1.GetPersonByLongLatBBoxRequest
  */
-export const GetPersonsByLongLatAreaRequest = proto3.makeMessageType(
-  "city.person.v1.GetPersonsByLongLatAreaRequest",
+export const GetPersonByLongLatBBoxRequest = proto3.makeMessageType(
+  "city.person.v1.GetPersonByLongLatBBoxRequest",
   () => [
-    { no: 1, name: "area", kind: "message", T: LongLatRectArea },
+    { no: 1, name: "bound", kind: "message", T: LongLatBBox },
   ],
 );
 
 /**
  * 获取特定区域内的person响应
  *
- * @generated from message city.person.v1.GetPersonsByLongLatAreaResponse
+ * @generated from message city.person.v1.GetPersonByLongLatBBoxResponse
  */
-export const GetPersonsByLongLatAreaResponse = proto3.makeMessageType(
-  "city.person.v1.GetPersonsByLongLatAreaResponse",
+export const GetPersonByLongLatBBoxResponse = proto3.makeMessageType(
+  "city.person.v1.GetPersonByLongLatBBoxResponse",
   () => [
-    { no: 1, name: "step", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 2, name: "motions", kind: "message", T: PersonMotion, repeated: true },
+    { no: 1, name: "motions", kind: "message", T: PersonMotion, repeated: true },
   ],
 );
 

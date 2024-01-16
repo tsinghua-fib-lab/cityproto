@@ -8,7 +8,7 @@ import { Message, proto3 } from "@bufbuild/protobuf";
 import type { Person } from "./person_pb.js";
 import type { PersonMotion } from "./motion_pb.js";
 import type { Schedule } from "../../trip/v2/trip_pb.js";
-import type { LongLatRectArea } from "../../geo/v2/geo_pb.js";
+import type { LongLatBBox } from "../../geo/v2/geo_pb.js";
 
 /**
  * 获取person信息请求
@@ -188,63 +188,56 @@ export declare class SetScheduleResponse extends Message<SetScheduleResponse> {
 /**
  * 获取特定区域内的person请求
  *
- * @generated from message city.person.v1.GetPersonsByLongLatAreaRequest
+ * @generated from message city.person.v1.GetPersonByLongLatBBoxRequest
  */
-export declare class GetPersonsByLongLatAreaRequest extends Message<GetPersonsByLongLatAreaRequest> {
+export declare class GetPersonByLongLatBBoxRequest extends Message<GetPersonByLongLatBBoxRequest> {
   /**
    * 经纬度范围
    *
-   * @generated from field: city.geo.v2.LongLatRectArea area = 1;
+   * @generated from field: city.geo.v2.LongLatBBox bound = 1;
    */
-  area?: LongLatRectArea;
+  bound?: LongLatBBox;
 
-  constructor(data?: PartialMessage<GetPersonsByLongLatAreaRequest>);
+  constructor(data?: PartialMessage<GetPersonByLongLatBBoxRequest>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "city.person.v1.GetPersonsByLongLatAreaRequest";
+  static readonly typeName = "city.person.v1.GetPersonByLongLatBBoxRequest";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetPersonsByLongLatAreaRequest;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetPersonByLongLatBBoxRequest;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetPersonsByLongLatAreaRequest;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetPersonByLongLatBBoxRequest;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetPersonsByLongLatAreaRequest;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetPersonByLongLatBBoxRequest;
 
-  static equals(a: GetPersonsByLongLatAreaRequest | PlainMessage<GetPersonsByLongLatAreaRequest> | undefined, b: GetPersonsByLongLatAreaRequest | PlainMessage<GetPersonsByLongLatAreaRequest> | undefined): boolean;
+  static equals(a: GetPersonByLongLatBBoxRequest | PlainMessage<GetPersonByLongLatBBoxRequest> | undefined, b: GetPersonByLongLatBBoxRequest | PlainMessage<GetPersonByLongLatBBoxRequest> | undefined): boolean;
 }
 
 /**
  * 获取特定区域内的person响应
  *
- * @generated from message city.person.v1.GetPersonsByLongLatAreaResponse
+ * @generated from message city.person.v1.GetPersonByLongLatBBoxResponse
  */
-export declare class GetPersonsByLongLatAreaResponse extends Message<GetPersonsByLongLatAreaResponse> {
-  /**
-   * 当前模拟步数
-   *
-   * @generated from field: int32 step = 1;
-   */
-  step: number;
-
+export declare class GetPersonByLongLatBBoxResponse extends Message<GetPersonByLongLatBBoxResponse> {
   /**
    * 区域内的person的运动信息
    *
-   * @generated from field: repeated city.person.v1.PersonMotion motions = 2;
+   * @generated from field: repeated city.person.v1.PersonMotion motions = 1;
    */
   motions: PersonMotion[];
 
-  constructor(data?: PartialMessage<GetPersonsByLongLatAreaResponse>);
+  constructor(data?: PartialMessage<GetPersonByLongLatBBoxResponse>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "city.person.v1.GetPersonsByLongLatAreaResponse";
+  static readonly typeName = "city.person.v1.GetPersonByLongLatBBoxResponse";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetPersonsByLongLatAreaResponse;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetPersonByLongLatBBoxResponse;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetPersonsByLongLatAreaResponse;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetPersonByLongLatBBoxResponse;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetPersonsByLongLatAreaResponse;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetPersonByLongLatBBoxResponse;
 
-  static equals(a: GetPersonsByLongLatAreaResponse | PlainMessage<GetPersonsByLongLatAreaResponse> | undefined, b: GetPersonsByLongLatAreaResponse | PlainMessage<GetPersonsByLongLatAreaResponse> | undefined): boolean;
+  static equals(a: GetPersonByLongLatBBoxResponse | PlainMessage<GetPersonByLongLatBBoxResponse> | undefined, b: GetPersonByLongLatBBoxResponse | PlainMessage<GetPersonByLongLatBBoxResponse> | undefined): boolean;
 }
 

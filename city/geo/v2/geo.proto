@@ -60,9 +60,11 @@ message Position {
 }
 
 // 经纬度矩形区域
-message LongLatRectArea {
-  // ne为区域东北角经纬度
-  LongLatPosition ne = 1;
-  // sw为区域西南角经纬度
-  LongLatPosition sw = 2;
+message LongLatBBox {
+  // 最小经度
+  double min_longitude = 1;
+  // 最小纬度
+  double min_latitude = 2;
+  // 最大经度
+  double max_longitude = 3;
 }

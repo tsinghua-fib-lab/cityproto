@@ -8,7 +8,7 @@ import { Message, proto3 } from "@bufbuild/protobuf";
 import type { Agent } from "./agent_pb.js";
 import type { AgentMotion } from "./motion_pb.js";
 import type { Schedule } from "../../trip/v2/trip_pb.js";
-import type { LongLatRectArea } from "../../geo/v2/geo_pb.js";
+import type { LongLatBBox } from "../../geo/v2/geo_pb.js";
 
 /**
  * 获取agent信息请求
@@ -194,9 +194,9 @@ export declare class GetAgentsByLongLatAreaRequest extends Message<GetAgentsByLo
   /**
    * 经纬度范围
    *
-   * @generated from field: city.geo.v2.LongLatRectArea area = 1;
+   * @generated from field: city.geo.v2.LongLatBBox area = 1;
    */
-  area?: LongLatRectArea;
+  area?: LongLatBBox;
 
   constructor(data?: PartialMessage<GetAgentsByLongLatAreaRequest>);
 

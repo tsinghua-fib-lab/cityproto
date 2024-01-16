@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AddPersonRequest, AddPersonResponse, GetPersonRequest, GetPersonResponse, GetPersonsByLongLatAreaRequest, GetPersonsByLongLatAreaResponse, SetScheduleRequest, SetScheduleResponse } from "./person_service_pb.js";
+import { AddPersonRequest, AddPersonResponse, GetPersonByLongLatBBoxRequest, GetPersonByLongLatBBoxResponse, GetPersonRequest, GetPersonResponse, SetScheduleRequest, SetScheduleResponse } from "./person_service_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -48,12 +48,12 @@ export const PersonService = {
     /**
      * 获取特定区域内的person
      *
-     * @generated from rpc city.person.v1.PersonService.GetPersonsByLongLatArea
+     * @generated from rpc city.person.v1.PersonService.GetPersonByLongLatBBox
      */
-    getPersonsByLongLatArea: {
-      name: "GetPersonsByLongLatArea",
-      I: GetPersonsByLongLatAreaRequest,
-      O: GetPersonsByLongLatAreaResponse,
+    getPersonByLongLatBBox: {
+      name: "GetPersonByLongLatBBox",
+      I: GetPersonByLongLatBBoxRequest,
+      O: GetPersonByLongLatBBoxResponse,
       kind: MethodKind.Unary,
     },
   }

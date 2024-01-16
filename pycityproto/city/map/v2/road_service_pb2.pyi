@@ -1,4 +1,5 @@
 from city.event.v1 import event_pb2 as _event_pb2
+from city.geo.v2 import geo_pb2 as _geo_pb2
 from city.map.v2 import lane_service_pb2 as _lane_service_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
@@ -36,14 +37,38 @@ INTERRUPTION_REASON_CASCADE: InterruptionReason
 INTERRUPTION_REASON_CONGESTION: InterruptionReason
 
 class GetRoadRequest(_message.Message):
-    __slots__ = ['road_ids']
+    __slots__ = ['road_ids', 'exclude_lanes', 'exclude_person']
     ROAD_IDS_FIELD_NUMBER: _ClassVar[int]
+    EXCLUDE_LANES_FIELD_NUMBER: _ClassVar[int]
+    EXCLUDE_PERSON_FIELD_NUMBER: _ClassVar[int]
     road_ids: _containers.RepeatedScalarFieldContainer[int]
+    exclude_lanes: bool
+    exclude_person: bool
 
-    def __init__(self, road_ids: _Optional[_Iterable[int]]=...) -> None:
+    def __init__(self, road_ids: _Optional[_Iterable[int]]=..., exclude_lanes: bool=..., exclude_person: bool=...) -> None:
         ...
 
 class GetRoadResponse(_message.Message):
+    __slots__ = ['states']
+    STATES_FIELD_NUMBER: _ClassVar[int]
+    states: _containers.RepeatedCompositeFieldContainer[RoadState]
+
+    def __init__(self, states: _Optional[_Iterable[_Union[RoadState, _Mapping]]]=...) -> None:
+        ...
+
+class GetRoadByLongLatBBoxRequest(_message.Message):
+    __slots__ = ['bound', 'exclude_lanes', 'exclude_person']
+    BOUND_FIELD_NUMBER: _ClassVar[int]
+    EXCLUDE_LANES_FIELD_NUMBER: _ClassVar[int]
+    EXCLUDE_PERSON_FIELD_NUMBER: _ClassVar[int]
+    bound: _geo_pb2.LongLatBBox
+    exclude_lanes: bool
+    exclude_person: bool
+
+    def __init__(self, bound: _Optional[_Union[_geo_pb2.LongLatBBox, _Mapping]]=..., exclude_lanes: bool=..., exclude_person: bool=...) -> None:
+        ...
+
+class GetRoadByLongLatBBoxResponse(_message.Message):
     __slots__ = ['states']
     STATES_FIELD_NUMBER: _ClassVar[int]
     states: _containers.RepeatedCompositeFieldContainer[RoadState]

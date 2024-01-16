@@ -75,13 +75,14 @@ export const Position = proto3.makeMessageType(
 /**
  * 经纬度矩形区域
  *
- * @generated from message city.geo.v2.LongLatRectArea
+ * @generated from message city.geo.v2.LongLatBBox
  */
-export const LongLatRectArea = proto3.makeMessageType(
-  "city.geo.v2.LongLatRectArea",
+export const LongLatBBox = proto3.makeMessageType(
+  "city.geo.v2.LongLatBBox",
   () => [
-    { no: 1, name: "ne", kind: "message", T: LongLatPosition },
-    { no: 2, name: "sw", kind: "message", T: LongLatPosition },
+    { no: 1, name: "min_longitude", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 2, name: "min_latitude", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 3, name: "max_longitude", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
   ],
 );
 

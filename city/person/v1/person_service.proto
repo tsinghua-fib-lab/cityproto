@@ -15,7 +15,7 @@ service PersonService {
   // 修改person的schedule 传入personid、目的地表
   rpc SetSchedule(SetScheduleRequest) returns (SetScheduleResponse);
   // 获取特定区域内的person
-  rpc GetPersonsByLongLatArea(GetPersonsByLongLatAreaRequest) returns (GetPersonsByLongLatAreaResponse);
+  rpc GetPersonByLongLatBBox(GetPersonByLongLatBBoxRequest) returns (GetPersonByLongLatBBoxResponse);
 }
 
 // 获取person信息请求
@@ -56,15 +56,13 @@ message SetScheduleRequest {
 message SetScheduleResponse {}
 
 // 获取特定区域内的person请求
-message GetPersonsByLongLatAreaRequest {
+message GetPersonByLongLatBBoxRequest {
   // 经纬度范围
-  city.geo.v2.LongLatRectArea area = 1;
+  city.geo.v2.LongLatBBox bound = 1;
 }
 
 // 获取特定区域内的person响应
-message GetPersonsByLongLatAreaResponse {
-  // 当前模拟步数
-  int32 step = 1;
+message GetPersonByLongLatBBoxResponse {
   // 区域内的person的运动信息
-  repeated PersonMotion motions = 2;
+  repeated PersonMotion motions = 1;
 }

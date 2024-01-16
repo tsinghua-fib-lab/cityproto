@@ -5,7 +5,9 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
+import type { LongLatBBox } from "../../geo/v2/geo_pb.js";
 import type { PersonMotion } from "../../person/v1/motion_pb.js";
+import type { LightState } from "../../traffic_light/v2/traffic_light_pb.js";
 
 /**
  * 设置Lane的最大速度（限速）请求
@@ -76,6 +78,13 @@ export declare class GetLaneRequest extends Message<GetLaneRequest> {
    */
   laneIds: number[];
 
+  /**
+   * 是否要排除车道上的人的信息
+   *
+   * @generated from field: bool exclude_person = 2;
+   */
+  excludePerson: boolean;
+
   constructor(data?: PartialMessage<GetLaneRequest>);
 
   static readonly runtime: typeof proto3;
@@ -120,6 +129,69 @@ export declare class GetLaneResponse extends Message<GetLaneResponse> {
 }
 
 /**
+ * 获取特定区域内的Lane的信息请求
+ *
+ * @generated from message city.map.v2.GetLaneByLongLatBBoxRequest
+ */
+export declare class GetLaneByLongLatBBoxRequest extends Message<GetLaneByLongLatBBoxRequest> {
+  /**
+   * 经纬度范围
+   *
+   * @generated from field: city.geo.v2.LongLatBBox bound = 1;
+   */
+  bound?: LongLatBBox;
+
+  /**
+   * 是否要排除车道上的人的信息
+   *
+   * @generated from field: bool exclude_person = 2;
+   */
+  excludePerson: boolean;
+
+  constructor(data?: PartialMessage<GetLaneByLongLatBBoxRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.map.v2.GetLaneByLongLatBBoxRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetLaneByLongLatBBoxRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetLaneByLongLatBBoxRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetLaneByLongLatBBoxRequest;
+
+  static equals(a: GetLaneByLongLatBBoxRequest | PlainMessage<GetLaneByLongLatBBoxRequest> | undefined, b: GetLaneByLongLatBBoxRequest | PlainMessage<GetLaneByLongLatBBoxRequest> | undefined): boolean;
+}
+
+/**
+ * 获取特定区域内的Lane的信息响应
+ *
+ * @generated from message city.map.v2.GetLaneByLongLatBBoxResponse
+ */
+export declare class GetLaneByLongLatBBoxResponse extends Message<GetLaneByLongLatBBoxResponse> {
+  /**
+   * Lane的信息
+   *
+   * @generated from field: repeated city.map.v2.LaneState states = 1;
+   */
+  states: LaneState[];
+
+  constructor(data?: PartialMessage<GetLaneByLongLatBBoxResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.map.v2.GetLaneByLongLatBBoxResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetLaneByLongLatBBoxResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetLaneByLongLatBBoxResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetLaneByLongLatBBoxResponse;
+
+  static equals(a: GetLaneByLongLatBBoxResponse | PlainMessage<GetLaneByLongLatBBoxResponse> | undefined, b: GetLaneByLongLatBBoxResponse | PlainMessage<GetLaneByLongLatBBoxResponse> | undefined): boolean;
+}
+
+/**
  * Lane状态
  *
  * @generated from message city.map.v2.LaneState
@@ -152,6 +224,13 @@ export declare class LaneState extends Message<LaneState> {
    * @generated from field: bool restriction = 4;
    */
   restriction: boolean;
+
+  /**
+   * 交通灯状态
+   *
+   * @generated from field: city.traffic_light.v2.LightState light_state = 5;
+   */
+  lightState: LightState;
 
   constructor(data?: PartialMessage<LaneState>);
 

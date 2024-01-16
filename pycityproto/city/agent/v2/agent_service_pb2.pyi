@@ -61,9 +61,9 @@ class SetScheduleResponse(_message.Message):
 class GetAgentsByLongLatAreaRequest(_message.Message):
     __slots__ = ['area']
     AREA_FIELD_NUMBER: _ClassVar[int]
-    area: _geo_pb2.LongLatRectArea
+    area: _geo_pb2.LongLatBBox
 
-    def __init__(self, area: _Optional[_Union[_geo_pb2.LongLatRectArea, _Mapping]]=...) -> None:
+    def __init__(self, area: _Optional[_Union[_geo_pb2.LongLatBBox, _Mapping]]=...) -> None:
         ...
 
 class GetAgentsByLongLatAreaResponse(_message.Message):

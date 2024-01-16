@@ -232,7 +232,7 @@ type UpdatePersonMoneyResponse struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 修改后的人的经济情况
-	Persons []*Person `protobuf:"bytes,1,rep,name=persons,proto3" json:"persons,omitempty" db:"persons" yaml:"persons" bson:"persons"`
+	Persons []*Person `protobuf:"bytes,1,rep,name=persons,proto3" json:"persons,omitempty" yaml:"persons" bson:"persons" db:"persons"`
 }
 
 func (x *UpdatePersonMoneyResponse) Reset() {

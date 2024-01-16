@@ -198,35 +198,42 @@ export declare class Position extends Message<Position> {
 /**
  * 经纬度矩形区域
  *
- * @generated from message city.geo.v2.LongLatRectArea
+ * @generated from message city.geo.v2.LongLatBBox
  */
-export declare class LongLatRectArea extends Message<LongLatRectArea> {
+export declare class LongLatBBox extends Message<LongLatBBox> {
   /**
-   * ne为区域东北角经纬度
+   * 最小经度
    *
-   * @generated from field: city.geo.v2.LongLatPosition ne = 1;
+   * @generated from field: double min_longitude = 1;
    */
-  ne?: LongLatPosition;
+  minLongitude: number;
 
   /**
-   * sw为区域西南角经纬度
+   * 最小纬度
    *
-   * @generated from field: city.geo.v2.LongLatPosition sw = 2;
+   * @generated from field: double min_latitude = 2;
    */
-  sw?: LongLatPosition;
+  minLatitude: number;
 
-  constructor(data?: PartialMessage<LongLatRectArea>);
+  /**
+   * 最大经度
+   *
+   * @generated from field: double max_longitude = 3;
+   */
+  maxLongitude: number;
+
+  constructor(data?: PartialMessage<LongLatBBox>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "city.geo.v2.LongLatRectArea";
+  static readonly typeName = "city.geo.v2.LongLatBBox";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LongLatRectArea;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LongLatBBox;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LongLatRectArea;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LongLatBBox;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LongLatRectArea;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LongLatBBox;
 
-  static equals(a: LongLatRectArea | PlainMessage<LongLatRectArea> | undefined, b: LongLatRectArea | PlainMessage<LongLatRectArea> | undefined): boolean;
+  static equals(a: LongLatBBox | PlainMessage<LongLatBBox> | undefined, b: LongLatBBox | PlainMessage<LongLatBBox> | undefined): boolean;
 }
 

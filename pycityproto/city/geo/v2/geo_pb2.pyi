@@ -57,12 +57,14 @@ class Position(_message.Message):
     def __init__(self, lane_position: _Optional[_Union[LanePosition, _Mapping]]=..., aoi_position: _Optional[_Union[AoiPosition, _Mapping]]=..., longlat_position: _Optional[_Union[LongLatPosition, _Mapping]]=..., xy_position: _Optional[_Union[XYPosition, _Mapping]]=...) -> None:
         ...
 
-class LongLatRectArea(_message.Message):
-    __slots__ = ['ne', 'sw']
-    NE_FIELD_NUMBER: _ClassVar[int]
-    SW_FIELD_NUMBER: _ClassVar[int]
-    ne: LongLatPosition
-    sw: LongLatPosition
+class LongLatBBox(_message.Message):
+    __slots__ = ['min_longitude', 'min_latitude', 'max_longitude']
+    MIN_LONGITUDE_FIELD_NUMBER: _ClassVar[int]
+    MIN_LATITUDE_FIELD_NUMBER: _ClassVar[int]
+    MAX_LONGITUDE_FIELD_NUMBER: _ClassVar[int]
+    min_longitude: float
+    min_latitude: float
+    max_longitude: float
 
-    def __init__(self, ne: _Optional[_Union[LongLatPosition, _Mapping]]=..., sw: _Optional[_Union[LongLatPosition, _Mapping]]=...) -> None:
+    def __init__(self, min_longitude: _Optional[float]=..., min_latitude: _Optional[float]=..., max_longitude: _Optional[float]=...) -> None:
         ...
