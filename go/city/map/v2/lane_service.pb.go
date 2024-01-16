@@ -28,9 +28,9 @@ type SetLaneMaxVRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Lane id
-	LaneId int32 `protobuf:"varint,1,opt,name=lane_id,json=laneId,proto3" json:"lane_id,omitempty" db:"lane_id" yaml:"lane_id" bson:"lane_id"`
+	LaneId int32 `protobuf:"varint,1,opt,name=lane_id,json=laneId,proto3" json:"lane_id,omitempty" yaml:"lane_id" bson:"lane_id" db:"lane_id"`
 	// 最大速度（限速），单位：m/s
-	MaxV float64 `protobuf:"fixed64,2,opt,name=max_v,json=maxV,proto3" json:"max_v,omitempty" bson:"max_v" db:"max_v" yaml:"max_v"`
+	MaxV float64 `protobuf:"fixed64,2,opt,name=max_v,json=maxV,proto3" json:"max_v,omitempty" db:"max_v" yaml:"max_v" bson:"max_v"`
 }
 
 func (x *SetLaneMaxVRequest) Reset() {
@@ -125,7 +125,7 @@ type GetLaneRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 指定的Lane id列表，如果为空，则返回所有Lane的信息
-	LaneIds []int32 `protobuf:"varint,1,rep,packed,name=lane_ids,json=laneIds,proto3" json:"lane_ids,omitempty" yaml:"lane_ids" bson:"lane_ids" db:"lane_ids"`
+	LaneIds []int32 `protobuf:"varint,1,rep,packed,name=lane_ids,json=laneIds,proto3" json:"lane_ids,omitempty" bson:"lane_ids" db:"lane_ids" yaml:"lane_ids"`
 }
 
 func (x *GetLaneRequest) Reset() {
@@ -174,7 +174,7 @@ type GetLaneResponse struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Lane的信息
-	States []*LaneState `protobuf:"bytes,1,rep,name=states,proto3" json:"states,omitempty" bson:"states" db:"states" yaml:"states"`
+	States []*LaneState `protobuf:"bytes,1,rep,name=states,proto3" json:"states,omitempty" db:"states" yaml:"states" bson:"states"`
 }
 
 func (x *GetLaneResponse) Reset() {
@@ -223,13 +223,13 @@ type LaneState struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Lane ID
-	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" bson:"id" db:"id" yaml:"id"`
+	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
 	// Lane上的人/车
 	Persons []*v2.AgentMotion `protobuf:"bytes,2,rep,name=persons,proto3" json:"persons,omitempty" yaml:"persons" bson:"persons" db:"persons"`
 	// 平均速度（m/s）
 	AvgV float64 `protobuf:"fixed64,3,opt,name=avg_v,json=avgV,proto3" json:"avg_v,omitempty" yaml:"avg_v" bson:"avg_v" db:"avg_v"`
 	// 是否限行
-	Restriction bool `protobuf:"varint,4,opt,name=restriction,proto3" json:"restriction,omitempty" yaml:"restriction" bson:"restriction" db:"restriction"`
+	Restriction bool `protobuf:"varint,4,opt,name=restriction,proto3" json:"restriction,omitempty" bson:"restriction" db:"restriction" yaml:"restriction"`
 }
 
 func (x *LaneState) Reset() {

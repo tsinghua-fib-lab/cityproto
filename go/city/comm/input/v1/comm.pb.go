@@ -129,7 +129,7 @@ type Node struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Id   int32    `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
+	Id   int32    `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" db:"id" yaml:"id" bson:"id"`
 	Type NodeType `protobuf:"varint,2,opt,name=type,proto3,enum=city.comm.input.v1.NodeType" json:"type,omitempty" yaml:"type" bson:"type" db:"type"`
 	// 父节点
 	ParentId int32 `protobuf:"varint,3,opt,name=parent_id,json=parentId,proto3" json:"parent_id,omitempty" yaml:"parent_id" bson:"parent_id" db:"parent_id"`
@@ -138,7 +138,7 @@ type Node struct {
 	// 节点经纬度位置
 	Position *v2.Position `protobuf:"bytes,5,opt,name=position,proto3,oneof" json:"position,omitempty" yaml:"position" bson:"position" db:"position"`
 	// 节点所在aoi
-	AoiId *int32 `protobuf:"varint,6,opt,name=aoi_id,json=aoiId,proto3,oneof" json:"aoi_id,omitempty" bson:"aoi_id" db:"aoi_id" yaml:"aoi_id"`
+	AoiId *int32 `protobuf:"varint,6,opt,name=aoi_id,json=aoiId,proto3,oneof" json:"aoi_id,omitempty" yaml:"aoi_id" bson:"aoi_id" db:"aoi_id"`
 	// 基站频段id
 	FreqRangeId *int32 `protobuf:"varint,7,opt,name=freq_range_id,json=freqRangeId,proto3,oneof" json:"freq_range_id,omitempty" yaml:"freq_range_id" bson:"freq_range_id" db:"freq_range_id"`
 	// 室内外基站类型
@@ -239,7 +239,7 @@ type RepairStation struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Id       int32        `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" db:"id" yaml:"id" bson:"id"`
+	Id       int32        `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" bson:"id" db:"id" yaml:"id"`
 	AoiId    int32        `protobuf:"varint,2,opt,name=aoi_id,json=aoiId,proto3" json:"aoi_id,omitempty" yaml:"aoi_id" bson:"aoi_id" db:"aoi_id"`
 	Position *v2.Position `protobuf:"bytes,3,opt,name=position,proto3" json:"position,omitempty" yaml:"position" bson:"position" db:"position"`
 }
@@ -359,8 +359,8 @@ type CommDemand struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Id      int32     `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" bson:"id" db:"id" yaml:"id"`
-	Demands []float64 `protobuf:"fixed64,2,rep,packed,name=demands,proto3" json:"demands,omitempty" yaml:"demands" bson:"demands" db:"demands"`
+	Id      int32     `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
+	Demands []float64 `protobuf:"fixed64,2,rep,packed,name=demands,proto3" json:"demands,omitempty" bson:"demands" db:"demands" yaml:"demands"`
 }
 
 func (x *CommDemand) Reset() {

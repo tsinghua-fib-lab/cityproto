@@ -125,7 +125,7 @@ type UpdatePersonMoneyRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 待修改的人员资金变动
-	Items []*UpdatePersonMoneyRequestItem `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty" bson:"items" db:"items" yaml:"items"`
+	Items []*UpdatePersonMoneyRequestItem `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty" yaml:"items" bson:"items" db:"items"`
 }
 
 func (x *UpdatePersonMoneyRequest) Reset() {
