@@ -16,6 +16,7 @@ export const AgentService = {
      * 获取agent信息
      *
      * @generated from rpc city.agent.v2.AgentService.GetAgent
+     * @deprecated
      */
     getAgent: {
       name: "GetAgent",
@@ -27,6 +28,7 @@ export const AgentService = {
      * 新增agent 传入agent初始位置、目的地表、属性 返回agentid
      *
      * @generated from rpc city.agent.v2.AgentService.AddAgent
+     * @deprecated
      */
     addAgent: {
       name: "AddAgent",
@@ -38,6 +40,7 @@ export const AgentService = {
      * 修改agent的schedule 传入agentid、目的地表
      *
      * @generated from rpc city.agent.v2.AgentService.SetSchedule
+     * @deprecated
      */
     setSchedule: {
       name: "SetSchedule",
@@ -49,6 +52,7 @@ export const AgentService = {
      * 获取特定区域内的agent
      *
      * @generated from rpc city.agent.v2.AgentService.GetAgentsByLongLatArea
+     * @deprecated
      */
     getAgentsByLongLatArea: {
       name: "GetAgentsByLongLatArea",

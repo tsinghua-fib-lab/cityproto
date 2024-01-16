@@ -67,6 +67,7 @@ export declare enum Status {
  * Agent（人）的运动状态
  *
  * @generated from message city.agent.v2.AgentMotion
+ * @deprecated
  */
 export declare class AgentMotion extends Message<AgentMotion> {
   /**

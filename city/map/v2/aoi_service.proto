@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package city.map.v2;
 
-import "city/agent/v2/motion.proto";
+import "city/person/v1/motion.proto";
 
 service AoiService {
   // 获取AOI信息
@@ -14,7 +14,7 @@ message AoiState {
   // AOI ID
   int32 id = 1;
   // AOI内的人
-  repeated city.agent.v2.AgentMotion persons = 2;
+  repeated city.person.v1.PersonMotion persons = 2;
 }
 
 // 获取AOI信息请求

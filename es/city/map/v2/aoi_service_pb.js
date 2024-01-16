@@ -4,7 +4,7 @@
 // @ts-nocheck
 
 import { proto3 } from "@bufbuild/protobuf";
-import { AgentMotion } from "../../agent/v2/motion_pb.js";
+import { PersonMotion } from "../../person/v1/motion_pb.js";
 
 /**
  * AOI状态
@@ -15,7 +15,7 @@ export const AoiState = proto3.makeMessageType(
   "city.map.v2.AoiState",
   () => [
     { no: 1, name: "id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 2, name: "persons", kind: "message", T: AgentMotion, repeated: true },
+    { no: 2, name: "persons", kind: "message", T: PersonMotion, repeated: true },
   ],
 );
 

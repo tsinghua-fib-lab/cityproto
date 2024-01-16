@@ -19,7 +19,6 @@ export const GetRouteRequest = proto3.makeMessageType(
     { no: 1, name: "type", kind: "enum", T: proto3.getEnumType(RouteType) },
     { no: 2, name: "start", kind: "message", T: Position },
     { no: 3, name: "end", kind: "message", T: Position },
-    { no: 4, name: "agent_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 5, name: "time", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
   ],
 );

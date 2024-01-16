@@ -46,12 +46,12 @@ export const Trip = proto3.makeMessageType(
  * 关于出发时间的说明如下：
  * 1. Schedule的开始时刻是 departure_time 或者 参考时刻+wait_time，
  *    参考时刻定义为上一Schedule的结束时刻(即它最后一个Trip的结束时刻)，
- *    或者当它为第一个Schedule时定义为Agent更新Schedule后的首次Update
+ *    或者当它为第一个Schedule时定义为Person更新Schedule后的首次Update
  *    时刻(当有准确时间要求时建议直接指定departure_time)
  * 2. Trip的开始时刻是 departure_time 或者 参考时刻+wait_time，参考
  *    时刻定义为上一Trip的结束时刻，或者当它为第一个Trip时定义为所属的
  *    Schedule的开始时刻
- * 3. Agent的实际运行时刻取决于Trip的开始时刻，例如它的首次运行是第一
+ * 3. Person的实际运行时刻取决于Trip的开始时刻，例如它的首次运行是第一
  *    个Schedule中第一个Trip的开始时刻
  * FAQ
  * Q1: 同时指定Schedule和第一个Trip的departure_time会怎样？

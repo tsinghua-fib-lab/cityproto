@@ -45,6 +45,7 @@ export declare enum AgentType {
  * 智能体属性（通用）
  *
  * @generated from message city.agent.v2.AgentAttribute
+ * @deprecated
  */
 export declare class AgentAttribute extends Message<AgentAttribute> {
   /**
@@ -213,6 +214,7 @@ export declare class BikeAttribute extends Message<BikeAttribute> {
  * 智能体
  *
  * @generated from message city.agent.v2.Agent
+ * @deprecated
  */
 export declare class Agent extends Message<Agent> {
   /**
@@ -290,6 +292,7 @@ export declare class Agent extends Message<Agent> {
  * 智能体集合，对应一个智能体pb文件或一个智能体mongodb collection
  *
  * @generated from message city.agent.v2.Agents
+ * @deprecated
  */
 export declare class Agents extends Message<Agents> {
   /**

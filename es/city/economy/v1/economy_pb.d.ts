@@ -7,14 +7,14 @@ import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialM
 import { Message, proto3 } from "@bufbuild/protobuf";
 
 /**
- * 个人（与Agent一一对应，
- * 没有绑定到city.economy.v1.Person的Agent将无法参与经济模拟）
+ * 个人（与Person一一对应，
+ * 没有绑定到city.economy.v1.Person的Person将无法参与经济模拟）
  *
  * @generated from message city.economy.v1.Person
  */
 export declare class Person extends Message<Person> {
   /**
-   * 与agent id一致
+   * 与person id一致
    *
    * @generated from field: int32 id = 1;
    */

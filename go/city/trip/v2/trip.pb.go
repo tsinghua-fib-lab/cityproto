@@ -98,11 +98,11 @@ type Trip struct {
 	// 期望的等待时间（单位：秒），如果departure_time为空则wait_time默认为0
 	WaitTime *float64 `protobuf:"fixed64,4,opt,name=wait_time,json=waitTime,proto3,oneof" json:"wait_time,omitempty" yaml:"wait_time" bson:"wait_time" db:"wait_time"`
 	// 期望的到达时间（单位: 秒）
-	ArrivalTime *float64 `protobuf:"fixed64,5,opt,name=arrival_time,json=arrivalTime,proto3,oneof" json:"arrival_time,omitempty" bson:"arrival_time" db:"arrival_time" yaml:"arrival_time"`
+	ArrivalTime *float64 `protobuf:"fixed64,5,opt,name=arrival_time,json=arrivalTime,proto3,oneof" json:"arrival_time,omitempty" yaml:"arrival_time" bson:"arrival_time" db:"arrival_time"`
 	// 本次出行目的地的活动名
-	Activity *string `protobuf:"bytes,6,opt,name=activity,proto3,oneof" json:"activity,omitempty" bson:"activity" db:"activity" yaml:"activity"`
+	Activity *string `protobuf:"bytes,6,opt,name=activity,proto3,oneof" json:"activity,omitempty" yaml:"activity" bson:"activity" db:"activity"`
 	// 预计算的导航结果
-	Routes []*v21.Journey `protobuf:"bytes,7,rep,name=routes,proto3" json:"routes,omitempty" bson:"routes" db:"routes" yaml:"routes"`
+	Routes []*v21.Journey `protobuf:"bytes,7,rep,name=routes,proto3" json:"routes,omitempty" yaml:"routes" bson:"routes" db:"routes"`
 }
 
 func (x *Trip) Reset() {
@@ -190,12 +190,12 @@ func (x *Trip) GetRoutes() []*v21.Journey {
 // 关于出发时间的说明如下：
 //  1. Schedule的开始时刻是 departure_time 或者 参考时刻+wait_time，
 //     参考时刻定义为上一Schedule的结束时刻(即它最后一个Trip的结束时刻)，
-//     或者当它为第一个Schedule时定义为Agent更新Schedule后的首次Update
+//     或者当它为第一个Schedule时定义为Person更新Schedule后的首次Update
 //     时刻(当有准确时间要求时建议直接指定departure_time)
 //  2. Trip的开始时刻是 departure_time 或者 参考时刻+wait_time，参考
 //     时刻定义为上一Trip的结束时刻，或者当它为第一个Trip时定义为所属的
 //     Schedule的开始时刻
-//  3. Agent的实际运行时刻取决于Trip的开始时刻，例如它的首次运行是第一
+//  3. Person的实际运行时刻取决于Trip的开始时刻，例如它的首次运行是第一
 //     个Schedule中第一个Trip的开始时刻
 //
 // FAQ
@@ -209,7 +209,7 @@ type Schedule struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 出行列表
-	Trips []*Trip `protobuf:"bytes,1,rep,name=trips,proto3" json:"trips,omitempty" yaml:"trips" bson:"trips" db:"trips"`
+	Trips []*Trip `protobuf:"bytes,1,rep,name=trips,proto3" json:"trips,omitempty" bson:"trips" db:"trips" yaml:"trips"`
 	// trips的执行次数，0表示无限循环，大于0表示执行几次
 	LoopCount int32 `protobuf:"varint,2,opt,name=loop_count,json=loopCount,proto3" json:"loop_count,omitempty" bson:"loop_count" db:"loop_count" yaml:"loop_count"`
 	// 期望的出发时间（单位: 秒）

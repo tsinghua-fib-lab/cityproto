@@ -1,0 +1,70 @@
+syntax = "proto3";
+
+package city.person.v1;
+
+import "city/geo/v2/geo.proto";
+import "city/person/v1/motion.proto";
+import "city/person/v1/person.proto";
+import "city/trip/v2/trip.proto";
+
+service PersonService {
+  // 获取person信息
+  rpc GetPerson(GetPersonRequest) returns (GetPersonResponse);
+  // 新增person 传入person初始位置、目的地表、属性 返回personid
+  rpc AddPerson(AddPersonRequest) returns (AddPersonResponse);
+  // 修改person的schedule 传入personid、目的地表
+  rpc SetSchedule(SetScheduleRequest) returns (SetScheduleResponse);
+  // 获取特定区域内的person
+  rpc GetPersonsByLongLatArea(GetPersonsByLongLatAreaRequest) returns (GetPersonsByLongLatAreaResponse);
+}
+
+// 获取person信息请求
+message GetPersonRequest {
+  // person id
+  int32 person_id = 1;
+}
+
+// 获取person信息响应
+message GetPersonResponse {
+  // person信息
+  Person base = 1;
+  // person运动信息
+  PersonMotion motion = 2;
+}
+
+// 新增person请求
+message AddPersonRequest {
+  // 约定：person中不设置id
+  Person person = 1;
+}
+
+// 新增person响应
+message AddPersonResponse {
+  // 新增的person分配得到的ID
+  int32 person_id = 1;
+}
+
+// 修改person的schedule请求
+message SetScheduleRequest {
+  // person id
+  int32 person_id = 1;
+  // 新的schedule（覆盖原有的schedule）
+  repeated city.trip.v2.Schedule schedules = 2;
+}
+
+// 修改person的schedule响应
+message SetScheduleResponse {}
+
+// 获取特定区域内的person请求
+message GetPersonsByLongLatAreaRequest {
+  // 经纬度范围
+  city.geo.v2.LongLatRectArea area = 1;
+}
+
+// 获取特定区域内的person响应
+message GetPersonsByLongLatAreaResponse {
+  // 当前模拟步数
+  int32 step = 1;
+  // 区域内的person的运动信息
+  repeated PersonMotion motions = 2;
+}

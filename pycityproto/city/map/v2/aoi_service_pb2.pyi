@@ -1,4 +1,4 @@
-from city.agent.v2 import motion_pb2 as _motion_pb2
+from city.person.v1 import motion_pb2 as _motion_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
@@ -10,9 +10,9 @@ class AoiState(_message.Message):
     ID_FIELD_NUMBER: _ClassVar[int]
     PERSONS_FIELD_NUMBER: _ClassVar[int]
     id: int
-    persons: _containers.RepeatedCompositeFieldContainer[_motion_pb2.AgentMotion]
+    persons: _containers.RepeatedCompositeFieldContainer[_motion_pb2.PersonMotion]
 
-    def __init__(self, id: _Optional[int]=..., persons: _Optional[_Iterable[_Union[_motion_pb2.AgentMotion, _Mapping]]]=...) -> None:
+    def __init__(self, id: _Optional[int]=..., persons: _Optional[_Iterable[_Union[_motion_pb2.PersonMotion, _Mapping]]]=...) -> None:
         ...
 
 class GetAoiRequest(_message.Message):

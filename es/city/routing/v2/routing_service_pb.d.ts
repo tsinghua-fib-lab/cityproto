@@ -37,14 +37,6 @@ export declare class GetRouteRequest extends Message<GetRouteRequest> {
   end?: Position;
 
   /**
-   * 发送导航请求的agent id（目前仅在行车导航中使用）
-   *
-   * @generated from field: int32 agent_id = 4 [deprecated = true];
-   * @deprecated
-   */
-  agentId: number;
-
-  /**
    * 发送导航请求的时间（目前仅在行车导航中使用）
    *
    * @generated from field: double time = 5;

@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package city.map.v2;
 
-import "city/agent/v2/motion.proto";
+import "city/person/v1/motion.proto";
 
 service LaneService {
   // 设置Lane的最大速度（限速）
@@ -39,7 +39,7 @@ message LaneState {
   // Lane ID
   int32 id = 1;
   // Lane上的人/车
-  repeated city.agent.v2.AgentMotion persons = 2;
+  repeated city.person.v1.PersonMotion persons = 2;
   // 平均速度（m/s）
   double avg_v = 3;
   // 是否限行

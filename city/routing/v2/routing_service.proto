@@ -23,8 +23,6 @@ message GetRouteRequest {
   city.geo.v2.Position start = 2;
   // 起点，约定：包含LanePosition或AoiPosition中的一种
   city.geo.v2.Position end = 3;
-  // 发送导航请求的agent id（目前仅在行车导航中使用）
-  int32 agent_id = 4 [deprecated = true];
   // 发送导航请求的时间（目前仅在行车导航中使用）
   double time = 5;
 }

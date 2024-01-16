@@ -8,19 +8,17 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class GetRouteRequest(_message.Message):
-    __slots__ = ['type', 'start', 'end', 'agent_id', 'time']
+    __slots__ = ['type', 'start', 'end', 'time']
     TYPE_FIELD_NUMBER: _ClassVar[int]
     START_FIELD_NUMBER: _ClassVar[int]
     END_FIELD_NUMBER: _ClassVar[int]
-    AGENT_ID_FIELD_NUMBER: _ClassVar[int]
     TIME_FIELD_NUMBER: _ClassVar[int]
     type: _routing_pb2.RouteType
     start: _geo_pb2.Position
     end: _geo_pb2.Position
-    agent_id: int
     time: float
 
-    def __init__(self, type: _Optional[_Union[_routing_pb2.RouteType, str]]=..., start: _Optional[_Union[_geo_pb2.Position, _Mapping]]=..., end: _Optional[_Union[_geo_pb2.Position, _Mapping]]=..., agent_id: _Optional[int]=..., time: _Optional[float]=...) -> None:
+    def __init__(self, type: _Optional[_Union[_routing_pb2.RouteType, str]]=..., start: _Optional[_Union[_geo_pb2.Position, _Mapping]]=..., end: _Optional[_Union[_geo_pb2.Position, _Mapping]]=..., time: _Optional[float]=...) -> None:
         ...
 
 class GetRouteResponse(_message.Message):

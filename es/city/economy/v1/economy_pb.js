@@ -6,8 +6,8 @@
 import { proto3 } from "@bufbuild/protobuf";
 
 /**
- * 个人（与Agent一一对应，
- * 没有绑定到city.economy.v1.Person的Agent将无法参与经济模拟）
+ * 个人（与Person一一对应，
+ * 没有绑定到city.economy.v1.Person的Person将无法参与经济模拟）
  *
  * @generated from message city.economy.v1.Person
  */
