@@ -27,9 +27,9 @@ type Cost struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 目标拓扑元素（只支持道路Road）
-	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
+	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" db:"id" yaml:"id" bson:"id"`
 	// 路径成本（单位：秒）
-	Cost float64 `protobuf:"fixed64,2,opt,name=cost,proto3" json:"cost,omitempty" yaml:"cost" bson:"cost" db:"cost"`
+	Cost float64 `protobuf:"fixed64,2,opt,name=cost,proto3" json:"cost,omitempty" bson:"cost" db:"cost" yaml:"cost"`
 	// 设置的时间（单位：秒）
 	// 即设置几点几分的道路通行成本为cost
 	// 为空表示设置全天通行成本均为cost

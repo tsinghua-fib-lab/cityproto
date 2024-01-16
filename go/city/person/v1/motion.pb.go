@@ -101,7 +101,7 @@ type PersonMotion struct {
 	// 状态
 	Status Status `protobuf:"varint,2,opt,name=status,proto3,enum=city.person.v1.Status" json:"status,omitempty" bson:"status" db:"status" yaml:"status"`
 	// 位置（包含逻辑位置、XY位置、经纬度位置）
-	Position *v2.Position `protobuf:"bytes,3,opt,name=position,proto3" json:"position,omitempty" db:"position" yaml:"position" bson:"position"`
+	Position *v2.Position `protobuf:"bytes,3,opt,name=position,proto3" json:"position,omitempty" yaml:"position" bson:"position" db:"position"`
 	// 速度
 	V float64 `protobuf:"fixed64,4,opt,name=v,proto3" json:"v,omitempty" bson:"v" db:"v" yaml:"v"`
 	// 方向角（atan2计算得到的弧度）

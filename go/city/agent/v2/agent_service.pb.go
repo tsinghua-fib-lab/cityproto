@@ -29,7 +29,7 @@ type GetAgentRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// agent id
-	AgentId int32 `protobuf:"varint,1,opt,name=agent_id,json=agentId,proto3" json:"agent_id,omitempty" bson:"agent_id" db:"agent_id" yaml:"agent_id"`
+	AgentId int32 `protobuf:"varint,1,opt,name=agent_id,json=agentId,proto3" json:"agent_id,omitempty" yaml:"agent_id" bson:"agent_id" db:"agent_id"`
 }
 
 func (x *GetAgentRequest) Reset() {
@@ -234,7 +234,7 @@ type SetScheduleRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// agent id
-	AgentId int32 `protobuf:"varint,1,opt,name=agent_id,json=agentId,proto3" json:"agent_id,omitempty" yaml:"agent_id" bson:"agent_id" db:"agent_id"`
+	AgentId int32 `protobuf:"varint,1,opt,name=agent_id,json=agentId,proto3" json:"agent_id,omitempty" bson:"agent_id" db:"agent_id" yaml:"agent_id"`
 	// 新的schedule（覆盖原有的schedule）
 	Schedules []*v2.Schedule `protobuf:"bytes,2,rep,name=schedules,proto3" json:"schedules,omitempty" yaml:"schedules" bson:"schedules" db:"schedules"`
 }

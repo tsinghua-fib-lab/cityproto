@@ -106,9 +106,9 @@ export declare class GetRoadRequest extends Message<GetRoadRequest> {
   /**
    * 是否要排除车道信息
    *
-   * @generated from field: bool exclude_lanes = 2;
+   * @generated from field: bool exclude_lane = 2;
    */
-  excludeLanes: boolean;
+  excludeLane: boolean;
 
   /**
    * 是否要排除车道上的人的信息（仅在包含车道信息时有效）
@@ -176,9 +176,9 @@ export declare class GetRoadByLongLatBBoxRequest extends Message<GetRoadByLongLa
   /**
    * 是否要排除车道信息
    *
-   * @generated from field: bool exclude_lanes = 2;
+   * @generated from field: bool exclude_lane = 2;
    */
-  excludeLanes: boolean;
+  excludeLane: boolean;
 
   /**
    * 是否要排除车道上的人的信息（仅在包含车道信息时有效）

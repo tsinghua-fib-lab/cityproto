@@ -37,15 +37,15 @@ INTERRUPTION_REASON_CASCADE: InterruptionReason
 INTERRUPTION_REASON_CONGESTION: InterruptionReason
 
 class GetRoadRequest(_message.Message):
-    __slots__ = ['road_ids', 'exclude_lanes', 'exclude_person']
+    __slots__ = ['road_ids', 'exclude_lane', 'exclude_person']
     ROAD_IDS_FIELD_NUMBER: _ClassVar[int]
-    EXCLUDE_LANES_FIELD_NUMBER: _ClassVar[int]
+    EXCLUDE_LANE_FIELD_NUMBER: _ClassVar[int]
     EXCLUDE_PERSON_FIELD_NUMBER: _ClassVar[int]
     road_ids: _containers.RepeatedScalarFieldContainer[int]
-    exclude_lanes: bool
+    exclude_lane: bool
     exclude_person: bool
 
-    def __init__(self, road_ids: _Optional[_Iterable[int]]=..., exclude_lanes: bool=..., exclude_person: bool=...) -> None:
+    def __init__(self, road_ids: _Optional[_Iterable[int]]=..., exclude_lane: bool=..., exclude_person: bool=...) -> None:
         ...
 
 class GetRoadResponse(_message.Message):
@@ -57,15 +57,15 @@ class GetRoadResponse(_message.Message):
         ...
 
 class GetRoadByLongLatBBoxRequest(_message.Message):
-    __slots__ = ['bound', 'exclude_lanes', 'exclude_person']
+    __slots__ = ['bound', 'exclude_lane', 'exclude_person']
     BOUND_FIELD_NUMBER: _ClassVar[int]
-    EXCLUDE_LANES_FIELD_NUMBER: _ClassVar[int]
+    EXCLUDE_LANE_FIELD_NUMBER: _ClassVar[int]
     EXCLUDE_PERSON_FIELD_NUMBER: _ClassVar[int]
     bound: _geo_pb2.LongLatBBox
-    exclude_lanes: bool
+    exclude_lane: bool
     exclude_person: bool
 
-    def __init__(self, bound: _Optional[_Union[_geo_pb2.LongLatBBox, _Mapping]]=..., exclude_lanes: bool=..., exclude_person: bool=...) -> None:
+    def __init__(self, bound: _Optional[_Union[_geo_pb2.LongLatBBox, _Mapping]]=..., exclude_lane: bool=..., exclude_person: bool=...) -> None:
         ...
 
 class GetRoadByLongLatBBoxResponse(_message.Message):

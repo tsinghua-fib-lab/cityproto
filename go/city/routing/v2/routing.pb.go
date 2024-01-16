@@ -201,7 +201,7 @@ type DrivingJourneyBody struct {
 	// 从起点到终点的道路序列
 	// 采用道路序列的原因是主动变道对车道级的导航需要频繁修改
 	// 优先使用road_ids，如果road_ids为空，则使用route（也可以直接忽略route）
-	RoadIds []int32 `protobuf:"varint,2,rep,packed,name=road_ids,json=roadIds,proto3" json:"road_ids,omitempty" db:"road_ids" yaml:"road_ids" bson:"road_ids"`
+	RoadIds []int32 `protobuf:"varint,2,rep,packed,name=road_ids,json=roadIds,proto3" json:"road_ids,omitempty" yaml:"road_ids" bson:"road_ids" db:"road_ids"`
 	// 从起点到终点预计的时间(estimation time of arrival)
 	Eta float64 `protobuf:"fixed64,3,opt,name=eta,proto3" json:"eta,omitempty" yaml:"eta" bson:"eta" db:"eta"`
 }
@@ -374,8 +374,8 @@ type BusJourneyBody struct {
 	unknownFields protoimpl.UnknownFields
 
 	LineId         int32 `protobuf:"varint,1,opt,name=line_id,json=lineId,proto3" json:"line_id,omitempty" yaml:"line_id" bson:"line_id" db:"line_id"`
-	StartStationId int32 `protobuf:"varint,2,opt,name=start_station_id,json=startStationId,proto3" json:"start_station_id,omitempty" yaml:"start_station_id" bson:"start_station_id" db:"start_station_id"`
-	EndStationId   int32 `protobuf:"varint,3,opt,name=end_station_id,json=endStationId,proto3" json:"end_station_id,omitempty" yaml:"end_station_id" bson:"end_station_id" db:"end_station_id"`
+	StartStationId int32 `protobuf:"varint,2,opt,name=start_station_id,json=startStationId,proto3" json:"start_station_id,omitempty" bson:"start_station_id" db:"start_station_id" yaml:"start_station_id"`
+	EndStationId   int32 `protobuf:"varint,3,opt,name=end_station_id,json=endStationId,proto3" json:"end_station_id,omitempty" db:"end_station_id" yaml:"end_station_id" bson:"end_station_id"`
 }
 
 func (x *BusJourneyBody) Reset() {
@@ -442,7 +442,7 @@ type Journey struct {
 	// 驾车
 	Driving *DrivingJourneyBody `protobuf:"bytes,2,opt,name=driving,proto3,oneof" json:"driving,omitempty" yaml:"driving" bson:"driving" db:"driving"`
 	// 步行
-	Walking *WalkingJourneyBody `protobuf:"bytes,3,opt,name=walking,proto3,oneof" json:"walking,omitempty" bson:"walking" db:"walking" yaml:"walking"`
+	Walking *WalkingJourneyBody `protobuf:"bytes,3,opt,name=walking,proto3,oneof" json:"walking,omitempty" yaml:"walking" bson:"walking" db:"walking"`
 	// 公交
 	ByBus *BusJourneyBody `protobuf:"bytes,4,opt,name=by_bus,json=byBus,proto3,oneof" json:"by_bus,omitempty" yaml:"by_bus" bson:"by_bus" db:"by_bus"`
 }
@@ -514,11 +514,11 @@ type BusLine struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 线路ID
-	LineId int32 `protobuf:"varint,1,opt,name=line_id,json=lineId,proto3" json:"line_id,omitempty" bson:"line_id" db:"line_id" yaml:"line_id"`
+	LineId int32 `protobuf:"varint,1,opt,name=line_id,json=lineId,proto3" json:"line_id,omitempty" yaml:"line_id" bson:"line_id" db:"line_id"`
 	// 停靠站点AOI ID列表
-	Stops     []int32   `protobuf:"varint,2,rep,packed,name=stops,proto3" json:"stops,omitempty" yaml:"stops" bson:"stops" db:"stops"`
-	Distances []float64 `protobuf:"fixed64,3,rep,packed,name=distances,proto3" json:"distances,omitempty" db:"distances" yaml:"distances" bson:"distances"`
-	Interval  int32     `protobuf:"varint,4,opt,name=interval,proto3" json:"interval,omitempty" bson:"interval" db:"interval" yaml:"interval"`
+	Stops     []int32   `protobuf:"varint,2,rep,packed,name=stops,proto3" json:"stops,omitempty" bson:"stops" db:"stops" yaml:"stops"`
+	Distances []float64 `protobuf:"fixed64,3,rep,packed,name=distances,proto3" json:"distances,omitempty" yaml:"distances" bson:"distances" db:"distances"`
+	Interval  int32     `protobuf:"varint,4,opt,name=interval,proto3" json:"interval,omitempty" yaml:"interval" bson:"interval" db:"interval"`
 	Count     int32     `protobuf:"varint,5,opt,name=count,proto3" json:"count,omitempty" yaml:"count" bson:"count" db:"count"`
 }
 
@@ -646,7 +646,7 @@ type RoadStatus struct {
 	// 车道ID
 	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
 	// 车道在各个时间片（每个5min）的速度
-	Speed []float64 `protobuf:"fixed64,2,rep,packed,name=speed,proto3" json:"speed,omitempty" bson:"speed" db:"speed" yaml:"speed"`
+	Speed []float64 `protobuf:"fixed64,2,rep,packed,name=speed,proto3" json:"speed,omitempty" yaml:"speed" bson:"speed" db:"speed"`
 }
 
 func (x *RoadStatus) Reset() {

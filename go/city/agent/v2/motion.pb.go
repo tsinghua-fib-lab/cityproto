@@ -99,9 +99,9 @@ type AgentMotion struct {
 	unknownFields protoimpl.UnknownFields
 
 	// ID
-	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" bson:"id" db:"id" yaml:"id"`
+	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
 	// 状态
-	Status Status `protobuf:"varint,2,opt,name=status,proto3,enum=city.agent.v2.Status" json:"status,omitempty" yaml:"status" bson:"status" db:"status"`
+	Status Status `protobuf:"varint,2,opt,name=status,proto3,enum=city.agent.v2.Status" json:"status,omitempty" bson:"status" db:"status" yaml:"status"`
 	// 位置（包含逻辑位置、XY位置、经纬度位置）
 	Position *v2.Position `protobuf:"bytes,3,opt,name=position,proto3" json:"position,omitempty" yaml:"position" bson:"position" db:"position"`
 	// 速度

@@ -48,7 +48,7 @@ export const GetRoadRequest = proto3.makeMessageType(
   "city.map.v2.GetRoadRequest",
   () => [
     { no: 1, name: "road_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
-    { no: 2, name: "exclude_lanes", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 2, name: "exclude_lane", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 3, name: "exclude_person", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
@@ -74,7 +74,7 @@ export const GetRoadByLongLatBBoxRequest = proto3.makeMessageType(
   "city.map.v2.GetRoadByLongLatBBoxRequest",
   () => [
     { no: 1, name: "bound", kind: "message", T: LongLatBBox },
-    { no: 2, name: "exclude_lanes", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 2, name: "exclude_lane", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 3, name: "exclude_person", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );

@@ -21,7 +21,7 @@ message GetRoadRequest {
   // 指定查询的道路ID列表，为空代表查询所有道路
   repeated int32 road_ids = 1;
   // 是否要排除车道信息
-  bool exclude_lanes = 2;
+  bool exclude_lane = 2;
   // 是否要排除车道上的人的信息（仅在包含车道信息时有效）
   bool exclude_person = 3;
 }
@@ -37,7 +37,7 @@ message GetRoadByLongLatBBoxRequest {
   // 经纬度范围
   city.geo.v2.LongLatBBox bound = 1;
   // 是否要排除车道信息
-  bool exclude_lanes = 2;
+  bool exclude_lane = 2;
   // 是否要排除车道上的人的信息（仅在包含车道信息时有效）
   bool exclude_person = 3;
 }

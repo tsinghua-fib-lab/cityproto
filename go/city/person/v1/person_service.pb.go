@@ -236,7 +236,7 @@ type SetScheduleRequest struct {
 	// person id
 	PersonId int32 `protobuf:"varint,1,opt,name=person_id,json=personId,proto3" json:"person_id,omitempty" yaml:"person_id" bson:"person_id" db:"person_id"`
 	// 新的schedule（覆盖原有的schedule）
-	Schedules []*v2.Schedule `protobuf:"bytes,2,rep,name=schedules,proto3" json:"schedules,omitempty" bson:"schedules" db:"schedules" yaml:"schedules"`
+	Schedules []*v2.Schedule `protobuf:"bytes,2,rep,name=schedules,proto3" json:"schedules,omitempty" yaml:"schedules" bson:"schedules" db:"schedules"`
 }
 
 func (x *SetScheduleRequest) Reset() {
