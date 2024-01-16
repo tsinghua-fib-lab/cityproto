@@ -29,7 +29,7 @@ type LongLatPosition struct {
 	// 经度
 	Longitude float64 `protobuf:"fixed64,1,opt,name=longitude,proto3" json:"longitude,omitempty" yaml:"longitude" bson:"longitude" db:"longitude"`
 	// 纬度
-	Latitude float64 `protobuf:"fixed64,2,opt,name=latitude,proto3" json:"latitude,omitempty" db:"latitude" yaml:"latitude" bson:"latitude"`
+	Latitude float64 `protobuf:"fixed64,2,opt,name=latitude,proto3" json:"latitude,omitempty" yaml:"latitude" bson:"latitude" db:"latitude"`
 }
 
 func (x *LongLatPosition) Reset() {
@@ -87,7 +87,7 @@ type XYPosition struct {
 	// x坐标，单位米，对应经度
 	X float64 `protobuf:"fixed64,1,opt,name=x,proto3" json:"x,omitempty" yaml:"x" bson:"x" db:"x"`
 	// y坐标，单位米，对应纬度
-	Y float64 `protobuf:"fixed64,2,opt,name=y,proto3" json:"y,omitempty" yaml:"y" bson:"y" db:"y"`
+	Y float64 `protobuf:"fixed64,2,opt,name=y,proto3" json:"y,omitempty" db:"y" yaml:"y" bson:"y"`
 }
 
 func (x *XYPosition) Reset() {
@@ -259,7 +259,7 @@ type Position struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 地图坐标AOI（必须提供其中之一）
-	LanePosition *LanePosition `protobuf:"bytes,1,opt,name=lane_position,json=lanePosition,proto3,oneof" json:"lane_position,omitempty" db:"lane_position" yaml:"lane_position" bson:"lane_position"`
+	LanePosition *LanePosition `protobuf:"bytes,1,opt,name=lane_position,json=lanePosition,proto3,oneof" json:"lane_position,omitempty" yaml:"lane_position" bson:"lane_position" db:"lane_position"`
 	// 地图坐标Lane+S（必须提供其中之一）
 	AoiPosition *AoiPosition `protobuf:"bytes,2,opt,name=aoi_position,json=aoiPosition,proto3,oneof" json:"aoi_position,omitempty" yaml:"aoi_position" bson:"aoi_position" db:"aoi_position"`
 	// WGS84经纬度坐标
@@ -335,7 +335,7 @@ type LongLatRectArea struct {
 	unknownFields protoimpl.UnknownFields
 
 	// ne为区域东北角经纬度
-	Ne *LongLatPosition `protobuf:"bytes,1,opt,name=ne,proto3" json:"ne,omitempty" bson:"ne" db:"ne" yaml:"ne"`
+	Ne *LongLatPosition `protobuf:"bytes,1,opt,name=ne,proto3" json:"ne,omitempty" yaml:"ne" bson:"ne" db:"ne"`
 	// sw为区域西南角经纬度
 	Sw *LongLatPosition `protobuf:"bytes,2,opt,name=sw,proto3" json:"sw,omitempty" yaml:"sw" bson:"sw" db:"sw"`
 }

@@ -438,13 +438,13 @@ type Journey struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 出行方式
-	Type JourneyType `protobuf:"varint,1,opt,name=type,proto3,enum=city.routing.v2.JourneyType" json:"type,omitempty" yaml:"type" bson:"type" db:"type"`
+	Type JourneyType `protobuf:"varint,1,opt,name=type,proto3,enum=city.routing.v2.JourneyType" json:"type,omitempty" bson:"type" db:"type" yaml:"type"`
 	// 驾车
 	Driving *DrivingJourneyBody `protobuf:"bytes,2,opt,name=driving,proto3,oneof" json:"driving,omitempty" bson:"driving" db:"driving" yaml:"driving"`
 	// 步行
-	Walking *WalkingJourneyBody `protobuf:"bytes,3,opt,name=walking,proto3,oneof" json:"walking,omitempty" yaml:"walking" bson:"walking" db:"walking"`
+	Walking *WalkingJourneyBody `protobuf:"bytes,3,opt,name=walking,proto3,oneof" json:"walking,omitempty" db:"walking" yaml:"walking" bson:"walking"`
 	// 公交
-	ByBus *BusJourneyBody `protobuf:"bytes,4,opt,name=by_bus,json=byBus,proto3,oneof" json:"by_bus,omitempty" db:"by_bus" yaml:"by_bus" bson:"by_bus"`
+	ByBus *BusJourneyBody `protobuf:"bytes,4,opt,name=by_bus,json=byBus,proto3,oneof" json:"by_bus,omitempty" yaml:"by_bus" bson:"by_bus" db:"by_bus"`
 }
 
 func (x *Journey) Reset() {
@@ -517,7 +517,7 @@ type BusLine struct {
 	LineId int32 `protobuf:"varint,1,opt,name=line_id,json=lineId,proto3" json:"line_id,omitempty" yaml:"line_id" bson:"line_id" db:"line_id"`
 	// 停靠站点AOI ID列表
 	Stops     []int32   `protobuf:"varint,2,rep,packed,name=stops,proto3" json:"stops,omitempty" yaml:"stops" bson:"stops" db:"stops"`
-	Distances []float64 `protobuf:"fixed64,3,rep,packed,name=distances,proto3" json:"distances,omitempty" yaml:"distances" bson:"distances" db:"distances"`
+	Distances []float64 `protobuf:"fixed64,3,rep,packed,name=distances,proto3" json:"distances,omitempty" bson:"distances" db:"distances" yaml:"distances"`
 	Interval  int32     `protobuf:"varint,4,opt,name=interval,proto3" json:"interval,omitempty" yaml:"interval" bson:"interval" db:"interval"`
 	Count     int32     `protobuf:"varint,5,opt,name=count,proto3" json:"count,omitempty" yaml:"count" bson:"count" db:"count"`
 }
@@ -702,7 +702,7 @@ type RoadStatuses struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	RoadStatuses []*RoadStatus `protobuf:"bytes,1,rep,name=road_statuses,json=roadStatuses,proto3" json:"road_statuses,omitempty" db:"road_statuses" yaml:"road_statuses" bson:"road_statuses"`
+	RoadStatuses []*RoadStatus `protobuf:"bytes,1,rep,name=road_statuses,json=roadStatuses,proto3" json:"road_statuses,omitempty" yaml:"road_statuses" bson:"road_statuses" db:"road_statuses"`
 }
 
 func (x *RoadStatuses) Reset() {

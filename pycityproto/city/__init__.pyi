@@ -8,6 +8,7 @@ from . import event
 from . import geo
 from . import map
 from . import person
+from . import ping
 from . import routing
 from . import social
 from . import streetview

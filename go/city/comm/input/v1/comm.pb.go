@@ -138,11 +138,11 @@ type Node struct {
 	// 节点经纬度位置
 	Position *v2.Position `protobuf:"bytes,5,opt,name=position,proto3,oneof" json:"position,omitempty" yaml:"position" bson:"position" db:"position"`
 	// 节点所在aoi
-	AoiId *int32 `protobuf:"varint,6,opt,name=aoi_id,json=aoiId,proto3,oneof" json:"aoi_id,omitempty" yaml:"aoi_id" bson:"aoi_id" db:"aoi_id"`
+	AoiId *int32 `protobuf:"varint,6,opt,name=aoi_id,json=aoiId,proto3,oneof" json:"aoi_id,omitempty" db:"aoi_id" yaml:"aoi_id" bson:"aoi_id"`
 	// 基站频段id
 	FreqRangeId *int32 `protobuf:"varint,7,opt,name=freq_range_id,json=freqRangeId,proto3,oneof" json:"freq_range_id,omitempty" yaml:"freq_range_id" bson:"freq_range_id" db:"freq_range_id"`
 	// 室内外基站类型
-	BaseStationType *BaseStationType `protobuf:"varint,8,opt,name=base_station_type,json=baseStationType,proto3,enum=city.comm.input.v1.BaseStationType,oneof" json:"base_station_type,omitempty" yaml:"base_station_type" bson:"base_station_type" db:"base_station_type"`
+	BaseStationType *BaseStationType `protobuf:"varint,8,opt,name=base_station_type,json=baseStationType,proto3,enum=city.comm.input.v1.BaseStationType,oneof" json:"base_station_type,omitempty" db:"base_station_type" yaml:"base_station_type" bson:"base_station_type"`
 }
 
 func (x *Node) Reset() {
@@ -304,7 +304,7 @@ type Pump struct {
 	unknownFields protoimpl.UnknownFields
 
 	Id       int32        `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
-	Position *v2.Position `protobuf:"bytes,2,opt,name=position,proto3" json:"position,omitempty" yaml:"position" bson:"position" db:"position"`
+	Position *v2.Position `protobuf:"bytes,2,opt,name=position,proto3" json:"position,omitempty" bson:"position" db:"position" yaml:"position"`
 }
 
 func (x *Pump) Reset() {
@@ -414,8 +414,8 @@ type Nodes struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Nodes          []*Node          `protobuf:"bytes,1,rep,name=nodes,proto3" json:"nodes,omitempty" yaml:"nodes" bson:"nodes" db:"nodes"`
-	RepairStations []*RepairStation `protobuf:"bytes,2,rep,name=repair_stations,json=repairStations,proto3" json:"repair_stations,omitempty" yaml:"repair_stations" bson:"repair_stations" db:"repair_stations"`
+	Nodes          []*Node          `protobuf:"bytes,1,rep,name=nodes,proto3" json:"nodes,omitempty" bson:"nodes" db:"nodes" yaml:"nodes"`
+	RepairStations []*RepairStation `protobuf:"bytes,2,rep,name=repair_stations,json=repairStations,proto3" json:"repair_stations,omitempty" db:"repair_stations" yaml:"repair_stations" bson:"repair_stations"`
 	Pumps          []*Pump          `protobuf:"bytes,3,rep,name=pumps,proto3" json:"pumps,omitempty" yaml:"pumps" bson:"pumps" db:"pumps"`
 }
 
@@ -477,7 +477,7 @@ type CommDemands struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	CommDemands []*CommDemand `protobuf:"bytes,1,rep,name=comm_demands,json=commDemands,proto3" json:"comm_demands,omitempty" db:"comm_demands" yaml:"comm_demands" bson:"comm_demands"`
+	CommDemands []*CommDemand `protobuf:"bytes,1,rep,name=comm_demands,json=commDemands,proto3" json:"comm_demands,omitempty" yaml:"comm_demands" bson:"comm_demands" db:"comm_demands"`
 }
 
 func (x *CommDemands) Reset() {

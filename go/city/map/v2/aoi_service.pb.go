@@ -86,7 +86,7 @@ type GetAoiRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 指定AOI ID列表，如果为空，则返回所有AOI信息
-	AoiIds []int32 `protobuf:"varint,1,rep,packed,name=aoi_ids,json=aoiIds,proto3" json:"aoi_ids,omitempty" yaml:"aoi_ids" bson:"aoi_ids" db:"aoi_ids"`
+	AoiIds []int32 `protobuf:"varint,1,rep,packed,name=aoi_ids,json=aoiIds,proto3" json:"aoi_ids,omitempty" db:"aoi_ids" yaml:"aoi_ids" bson:"aoi_ids"`
 }
 
 func (x *GetAoiRequest) Reset() {
@@ -135,7 +135,7 @@ type GetAoiResponse struct {
 	unknownFields protoimpl.UnknownFields
 
 	// AOI信息列表
-	States []*AoiState `protobuf:"bytes,1,rep,name=states,proto3" json:"states,omitempty" yaml:"states" bson:"states" db:"states"`
+	States []*AoiState `protobuf:"bytes,1,rep,name=states,proto3" json:"states,omitempty" db:"states" yaml:"states" bson:"states"`
 }
 
 func (x *GetAoiResponse) Reset() {

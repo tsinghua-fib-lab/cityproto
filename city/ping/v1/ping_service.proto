@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package city.ping.v1;
+
+service PingService {
+  // 连接测试
+  rpc Ping(PingRequest) returns (PingResponse);
+}
+
+// 连接测试请求
+message PingRequest {}
+
+// 连接测试响应
+message PingResponse {}

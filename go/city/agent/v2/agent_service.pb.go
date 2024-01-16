@@ -29,7 +29,7 @@ type GetAgentRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// agent id
-	AgentId int32 `protobuf:"varint,1,opt,name=agent_id,json=agentId,proto3" json:"agent_id,omitempty" yaml:"agent_id" bson:"agent_id" db:"agent_id"`
+	AgentId int32 `protobuf:"varint,1,opt,name=agent_id,json=agentId,proto3" json:"agent_id,omitempty" db:"agent_id" yaml:"agent_id" bson:"agent_id"`
 }
 
 func (x *GetAgentRequest) Reset() {
@@ -331,7 +331,7 @@ type GetAgentsByLongLatAreaRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 经纬度范围
-	Area *v21.LongLatRectArea `protobuf:"bytes,1,opt,name=area,proto3" json:"area,omitempty" yaml:"area" bson:"area" db:"area"`
+	Area *v21.LongLatRectArea `protobuf:"bytes,1,opt,name=area,proto3" json:"area,omitempty" bson:"area" db:"area" yaml:"area"`
 }
 
 func (x *GetAgentsByLongLatAreaRequest) Reset() {
