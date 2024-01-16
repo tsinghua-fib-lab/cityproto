@@ -42,13 +42,13 @@ class GetLaneResponse(_message.Message):
         ...
 
 class GetLaneByLongLatBBoxRequest(_message.Message):
-    __slots__ = ['bound', 'exclude_person']
-    BOUND_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ['bbox', 'exclude_person']
+    BBOX_FIELD_NUMBER: _ClassVar[int]
     EXCLUDE_PERSON_FIELD_NUMBER: _ClassVar[int]
-    bound: _geo_pb2.LongLatBBox
+    bbox: _geo_pb2.LongLatBBox
     exclude_person: bool
 
-    def __init__(self, bound: _Optional[_Union[_geo_pb2.LongLatBBox, _Mapping]]=..., exclude_person: bool=...) -> None:
+    def __init__(self, bbox: _Optional[_Union[_geo_pb2.LongLatBBox, _Mapping]]=..., exclude_person: bool=...) -> None:
         ...
 
 class GetLaneByLongLatBBoxResponse(_message.Message):

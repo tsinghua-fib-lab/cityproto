@@ -5,7 +5,7 @@
 
 import { proto3 } from "@bufbuild/protobuf";
 import { Person } from "./person_pb.js";
-import { PersonMotion } from "./motion_pb.js";
+import { PersonMotion, Status } from "./motion_pb.js";
 import { Schedule } from "../../trip/v2/trip_pb.js";
 import { LongLatBBox } from "../../geo/v2/geo_pb.js";
 
@@ -89,7 +89,8 @@ export const SetScheduleResponse = proto3.makeMessageType(
 export const GetPersonByLongLatBBoxRequest = proto3.makeMessageType(
   "city.person.v1.GetPersonByLongLatBBoxRequest",
   () => [
-    { no: 1, name: "bound", kind: "message", T: LongLatBBox },
+    { no: 1, name: "bbox", kind: "message", T: LongLatBBox },
+    { no: 2, name: "exclude_statuses", kind: "enum", T: proto3.getEnumType(Status), repeated: true },
   ],
 );
 

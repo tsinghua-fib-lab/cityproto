@@ -30,11 +30,11 @@ type GetRouteRequest struct {
 	// 导航类型
 	Type RouteType `protobuf:"varint,1,opt,name=type,proto3,enum=city.routing.v2.RouteType" json:"type,omitempty" yaml:"type" bson:"type" db:"type"`
 	// 起点，约定：包含LanePosition或AoiPosition中的一种
-	Start *v2.Position `protobuf:"bytes,2,opt,name=start,proto3" json:"start,omitempty" yaml:"start" bson:"start" db:"start"`
+	Start *v2.Position `protobuf:"bytes,2,opt,name=start,proto3" json:"start,omitempty" db:"start" yaml:"start" bson:"start"`
 	// 起点，约定：包含LanePosition或AoiPosition中的一种
-	End *v2.Position `protobuf:"bytes,3,opt,name=end,proto3" json:"end,omitempty" db:"end" yaml:"end" bson:"end"`
+	End *v2.Position `protobuf:"bytes,3,opt,name=end,proto3" json:"end,omitempty" yaml:"end" bson:"end" db:"end"`
 	// 发送导航请求的时间（目前仅在行车导航中使用）
-	Time float64 `protobuf:"fixed64,5,opt,name=time,proto3" json:"time,omitempty" bson:"time" db:"time" yaml:"time"`
+	Time float64 `protobuf:"fixed64,5,opt,name=time,proto3" json:"time,omitempty" yaml:"time" bson:"time" db:"time"`
 }
 
 func (x *GetRouteRequest) Reset() {
@@ -152,7 +152,7 @@ type SetDrivingCostsRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 道路通行成本
-	Costs []*Cost `protobuf:"bytes,1,rep,name=costs,proto3" json:"costs,omitempty" yaml:"costs" bson:"costs" db:"costs"`
+	Costs []*Cost `protobuf:"bytes,1,rep,name=costs,proto3" json:"costs,omitempty" bson:"costs" db:"costs" yaml:"costs"`
 }
 
 func (x *SetDrivingCostsRequest) Reset() {
@@ -240,7 +240,7 @@ type GetDrivingCostsRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 道路通行成本（按照给定的id和time进行查询）
-	Costs []*Cost `protobuf:"bytes,1,rep,name=costs,proto3" json:"costs,omitempty" bson:"costs" db:"costs" yaml:"costs"`
+	Costs []*Cost `protobuf:"bytes,1,rep,name=costs,proto3" json:"costs,omitempty" yaml:"costs" bson:"costs" db:"costs"`
 }
 
 func (x *GetDrivingCostsRequest) Reset() {

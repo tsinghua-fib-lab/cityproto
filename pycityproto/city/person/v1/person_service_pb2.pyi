@@ -59,11 +59,13 @@ class SetScheduleResponse(_message.Message):
         ...
 
 class GetPersonByLongLatBBoxRequest(_message.Message):
-    __slots__ = ['bound']
-    BOUND_FIELD_NUMBER: _ClassVar[int]
-    bound: _geo_pb2.LongLatBBox
+    __slots__ = ['bbox', 'exclude_statuses']
+    BBOX_FIELD_NUMBER: _ClassVar[int]
+    EXCLUDE_STATUSES_FIELD_NUMBER: _ClassVar[int]
+    bbox: _geo_pb2.LongLatBBox
+    exclude_statuses: _containers.RepeatedScalarFieldContainer[_motion_pb2.Status]
 
-    def __init__(self, bound: _Optional[_Union[_geo_pb2.LongLatBBox, _Mapping]]=...) -> None:
+    def __init__(self, bbox: _Optional[_Union[_geo_pb2.LongLatBBox, _Mapping]]=..., exclude_statuses: _Optional[_Iterable[_Union[_motion_pb2.Status, str]]]=...) -> None:
         ...
 
 class GetPersonByLongLatBBoxResponse(_message.Message):

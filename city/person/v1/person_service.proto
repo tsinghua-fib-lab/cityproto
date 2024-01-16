@@ -58,7 +58,9 @@ message SetScheduleResponse {}
 // 获取特定区域内的person请求
 message GetPersonByLongLatBBoxRequest {
   // 经纬度范围
-  city.geo.v2.LongLatBBox bound = 1;
+  city.geo.v2.LongLatBBox bbox = 1;
+  // 过滤人的状态（状态为列表内的值的人不返回）
+  repeated Status exclude_statuses = 2;
 }
 
 // 获取特定区域内的person响应

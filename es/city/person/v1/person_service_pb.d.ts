@@ -6,7 +6,7 @@
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
 import type { Person } from "./person_pb.js";
-import type { PersonMotion } from "./motion_pb.js";
+import type { PersonMotion, Status } from "./motion_pb.js";
 import type { Schedule } from "../../trip/v2/trip_pb.js";
 import type { LongLatBBox } from "../../geo/v2/geo_pb.js";
 
@@ -194,9 +194,16 @@ export declare class GetPersonByLongLatBBoxRequest extends Message<GetPersonByLo
   /**
    * 经纬度范围
    *
-   * @generated from field: city.geo.v2.LongLatBBox bound = 1;
+   * @generated from field: city.geo.v2.LongLatBBox bbox = 1;
    */
-  bound?: LongLatBBox;
+  bbox?: LongLatBBox;
+
+  /**
+   * 过滤人的状态（状态为列表内的值的人不返回）
+   *
+   * @generated from field: repeated city.person.v1.Status exclude_statuses = 2;
+   */
+  excludeStatuses: Status[];
 
   constructor(data?: PartialMessage<GetPersonByLongLatBBoxRequest>);
 

@@ -137,9 +137,9 @@ export declare class GetLaneByLongLatBBoxRequest extends Message<GetLaneByLongLa
   /**
    * 经纬度范围
    *
-   * @generated from field: city.geo.v2.LongLatBBox bound = 1;
+   * @generated from field: city.geo.v2.LongLatBBox bbox = 1;
    */
-  bound?: LongLatBBox;
+  bbox?: LongLatBBox;
 
   /**
    * 是否要排除车道上的人的信息

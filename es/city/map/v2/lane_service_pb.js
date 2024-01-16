@@ -64,7 +64,7 @@ export const GetLaneResponse = proto3.makeMessageType(
 export const GetLaneByLongLatBBoxRequest = proto3.makeMessageType(
   "city.map.v2.GetLaneByLongLatBBoxRequest",
   () => [
-    { no: 1, name: "bound", kind: "message", T: LongLatBBox },
+    { no: 1, name: "bbox", kind: "message", T: LongLatBBox },
     { no: 2, name: "exclude_person", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );

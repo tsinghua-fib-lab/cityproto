@@ -10039,7 +10039,7 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
             <tbody>
               
                 <tr>
-                  <td>bound</td>
+                  <td>bbox</td>
                   <td><a href="#city.geo.v2.LongLatBBox">city.geo.v2.LongLatBBox</a></td>
                   <td></td>
                   <td><p>经纬度范围 </p></td>
@@ -10967,10 +10967,17 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
             <tbody>
               
                 <tr>
-                  <td>bound</td>
+                  <td>bbox</td>
                   <td><a href="#city.geo.v2.LongLatBBox">city.geo.v2.LongLatBBox</a></td>
                   <td></td>
                   <td><p>经纬度范围 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>exclude_statuses</td>
+                  <td><a href="#city.person.v1.Status">Status</a></td>
+                  <td>repeated</td>
+                  <td><p>过滤人的状态（状态为列表内的值的人不返回） </p></td>
                 </tr>
               
             </tbody>

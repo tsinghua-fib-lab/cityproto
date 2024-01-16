@@ -43,7 +43,7 @@ message GetLaneResponse {
 // 获取特定区域内的Lane的信息请求
 message GetLaneByLongLatBBoxRequest {
   // 经纬度范围
-  city.geo.v2.LongLatBBox bound = 1;
+  city.geo.v2.LongLatBBox bbox = 1;
   // 是否要排除车道上的人的信息
   bool exclude_person = 2;
 }
