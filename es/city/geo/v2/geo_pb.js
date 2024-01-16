@@ -83,6 +83,7 @@ export const LongLatBBox = proto3.makeMessageType(
     { no: 1, name: "min_longitude", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
     { no: 2, name: "min_latitude", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
     { no: 3, name: "max_longitude", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 4, name: "max_latitude", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
   ],
 );
 

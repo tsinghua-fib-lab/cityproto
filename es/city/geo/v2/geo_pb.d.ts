@@ -222,6 +222,13 @@ export declare class LongLatBBox extends Message<LongLatBBox> {
    */
   maxLongitude: number;
 
+  /**
+   * 最大纬度
+   *
+   * @generated from field: double max_latitude = 4;
+   */
+  maxLatitude: number;
+
   constructor(data?: PartialMessage<LongLatBBox>);
 
   static readonly runtime: typeof proto3;

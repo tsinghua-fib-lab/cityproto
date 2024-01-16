@@ -67,4 +67,6 @@ message LongLatBBox {
   double min_latitude = 2;
   // 最大经度
   double max_longitude = 3;
+  // 最大纬度
+  double max_latitude = 4;
 }

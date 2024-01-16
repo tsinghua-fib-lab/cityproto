@@ -58,13 +58,15 @@ class Position(_message.Message):
         ...
 
 class LongLatBBox(_message.Message):
-    __slots__ = ['min_longitude', 'min_latitude', 'max_longitude']
+    __slots__ = ['min_longitude', 'min_latitude', 'max_longitude', 'max_latitude']
     MIN_LONGITUDE_FIELD_NUMBER: _ClassVar[int]
     MIN_LATITUDE_FIELD_NUMBER: _ClassVar[int]
     MAX_LONGITUDE_FIELD_NUMBER: _ClassVar[int]
+    MAX_LATITUDE_FIELD_NUMBER: _ClassVar[int]
     min_longitude: float
     min_latitude: float
     max_longitude: float
+    max_latitude: float
 
-    def __init__(self, min_longitude: _Optional[float]=..., min_latitude: _Optional[float]=..., max_longitude: _Optional[float]=...) -> None:
+    def __init__(self, min_longitude: _Optional[float]=..., min_latitude: _Optional[float]=..., max_longitude: _Optional[float]=..., max_latitude: _Optional[float]=...) -> None:
         ...

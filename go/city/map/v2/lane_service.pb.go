@@ -30,7 +30,7 @@ type SetLaneMaxVRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Lane id
-	LaneId int32 `protobuf:"varint,1,opt,name=lane_id,json=laneId,proto3" json:"lane_id,omitempty" yaml:"lane_id" bson:"lane_id" db:"lane_id"`
+	LaneId int32 `protobuf:"varint,1,opt,name=lane_id,json=laneId,proto3" json:"lane_id,omitempty" db:"lane_id" yaml:"lane_id" bson:"lane_id"`
 	// 最大速度（限速），单位：m/s
 	MaxV float64 `protobuf:"fixed64,2,opt,name=max_v,json=maxV,proto3" json:"max_v,omitempty" yaml:"max_v" bson:"max_v" db:"max_v"`
 }
@@ -127,7 +127,7 @@ type GetLaneRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 指定的Lane id列表，如果为空，则返回所有Lane的信息
-	LaneIds []int32 `protobuf:"varint,1,rep,packed,name=lane_ids,json=laneIds,proto3" json:"lane_ids,omitempty" db:"lane_ids" yaml:"lane_ids" bson:"lane_ids"`
+	LaneIds []int32 `protobuf:"varint,1,rep,packed,name=lane_ids,json=laneIds,proto3" json:"lane_ids,omitempty" yaml:"lane_ids" bson:"lane_ids" db:"lane_ids"`
 	// 是否要排除车道上的人的信息
 	ExcludePerson bool `protobuf:"varint,2,opt,name=exclude_person,json=excludePerson,proto3" json:"exclude_person,omitempty" bson:"exclude_person" db:"exclude_person" yaml:"exclude_person"`
 }
@@ -234,7 +234,7 @@ type GetLaneByLongLatBBoxRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 经纬度范围
-	Bound *v2.LongLatBBox `protobuf:"bytes,1,opt,name=bound,proto3" json:"bound,omitempty" yaml:"bound" bson:"bound" db:"bound"`
+	Bound *v2.LongLatBBox `protobuf:"bytes,1,opt,name=bound,proto3" json:"bound,omitempty" db:"bound" yaml:"bound" bson:"bound"`
 	// 是否要排除车道上的人的信息
 	ExcludePerson bool `protobuf:"varint,2,opt,name=exclude_person,json=excludePerson,proto3" json:"exclude_person,omitempty" yaml:"exclude_person" bson:"exclude_person" db:"exclude_person"`
 }
@@ -292,7 +292,7 @@ type GetLaneByLongLatBBoxResponse struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Lane的信息
-	States []*LaneState `protobuf:"bytes,1,rep,name=states,proto3" json:"states,omitempty" db:"states" yaml:"states" bson:"states"`
+	States []*LaneState `protobuf:"bytes,1,rep,name=states,proto3" json:"states,omitempty" yaml:"states" bson:"states" db:"states"`
 }
 
 func (x *GetLaneByLongLatBBoxResponse) Reset() {
@@ -343,13 +343,13 @@ type LaneState struct {
 	// Lane ID
 	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
 	// Lane上的人/车
-	Persons []*v1.PersonMotion `protobuf:"bytes,2,rep,name=persons,proto3" json:"persons,omitempty" bson:"persons" db:"persons" yaml:"persons"`
+	Persons []*v1.PersonMotion `protobuf:"bytes,2,rep,name=persons,proto3" json:"persons,omitempty" yaml:"persons" bson:"persons" db:"persons"`
 	// 平均速度（m/s）
-	AvgV float64 `protobuf:"fixed64,3,opt,name=avg_v,json=avgV,proto3" json:"avg_v,omitempty" yaml:"avg_v" bson:"avg_v" db:"avg_v"`
+	AvgV float64 `protobuf:"fixed64,3,opt,name=avg_v,json=avgV,proto3" json:"avg_v,omitempty" db:"avg_v" yaml:"avg_v" bson:"avg_v"`
 	// 是否限行
 	Restriction bool `protobuf:"varint,4,opt,name=restriction,proto3" json:"restriction,omitempty" bson:"restriction" db:"restriction" yaml:"restriction"`
 	// 交通灯状态
-	LightState v21.LightState `protobuf:"varint,5,opt,name=light_state,json=lightState,proto3,enum=city.traffic_light.v2.LightState" json:"light_state,omitempty" db:"light_state" yaml:"light_state" bson:"light_state"`
+	LightState v21.LightState `protobuf:"varint,5,opt,name=light_state,json=lightState,proto3,enum=city.traffic_light.v2.LightState" json:"light_state,omitempty" yaml:"light_state" bson:"light_state" db:"light_state"`
 }
 
 func (x *LaneState) Reset() {

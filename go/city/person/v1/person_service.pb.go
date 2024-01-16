@@ -78,9 +78,9 @@ type GetPersonResponse struct {
 	unknownFields protoimpl.UnknownFields
 
 	// person信息
-	Base *Person `protobuf:"bytes,1,opt,name=base,proto3" json:"base,omitempty" db:"base" yaml:"base" bson:"base"`
+	Base *Person `protobuf:"bytes,1,opt,name=base,proto3" json:"base,omitempty" yaml:"base" bson:"base" db:"base"`
 	// person运动信息
-	Motion *PersonMotion `protobuf:"bytes,2,opt,name=motion,proto3" json:"motion,omitempty" bson:"motion" db:"motion" yaml:"motion"`
+	Motion *PersonMotion `protobuf:"bytes,2,opt,name=motion,proto3" json:"motion,omitempty" yaml:"motion" bson:"motion" db:"motion"`
 }
 
 func (x *GetPersonResponse) Reset() {
@@ -236,7 +236,7 @@ type SetScheduleRequest struct {
 	// person id
 	PersonId int32 `protobuf:"varint,1,opt,name=person_id,json=personId,proto3" json:"person_id,omitempty" yaml:"person_id" bson:"person_id" db:"person_id"`
 	// 新的schedule（覆盖原有的schedule）
-	Schedules []*v2.Schedule `protobuf:"bytes,2,rep,name=schedules,proto3" json:"schedules,omitempty" yaml:"schedules" bson:"schedules" db:"schedules"`
+	Schedules []*v2.Schedule `protobuf:"bytes,2,rep,name=schedules,proto3" json:"schedules,omitempty" bson:"schedules" db:"schedules" yaml:"schedules"`
 }
 
 func (x *SetScheduleRequest) Reset() {

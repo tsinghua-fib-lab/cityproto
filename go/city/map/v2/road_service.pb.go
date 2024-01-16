@@ -150,9 +150,9 @@ type GetRoadRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 指定查询的道路ID列表，为空代表查询所有道路
-	RoadIds []int32 `protobuf:"varint,1,rep,packed,name=road_ids,json=roadIds,proto3" json:"road_ids,omitempty" yaml:"road_ids" bson:"road_ids" db:"road_ids"`
+	RoadIds []int32 `protobuf:"varint,1,rep,packed,name=road_ids,json=roadIds,proto3" json:"road_ids,omitempty" db:"road_ids" yaml:"road_ids" bson:"road_ids"`
 	// 是否要排除车道信息
-	ExcludeLanes bool `protobuf:"varint,2,opt,name=exclude_lanes,json=excludeLanes,proto3" json:"exclude_lanes,omitempty" yaml:"exclude_lanes" bson:"exclude_lanes" db:"exclude_lanes"`
+	ExcludeLanes bool `protobuf:"varint,2,opt,name=exclude_lanes,json=excludeLanes,proto3" json:"exclude_lanes,omitempty" db:"exclude_lanes" yaml:"exclude_lanes" bson:"exclude_lanes"`
 	// 是否要排除车道上的人的信息（仅在包含车道信息时有效）
 	ExcludePerson bool `protobuf:"varint,3,opt,name=exclude_person,json=excludePerson,proto3" json:"exclude_person,omitempty" yaml:"exclude_person" bson:"exclude_person" db:"exclude_person"`
 }
@@ -266,7 +266,7 @@ type GetRoadByLongLatBBoxRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 经纬度范围
-	Bound *v2.LongLatBBox `protobuf:"bytes,1,opt,name=bound,proto3" json:"bound,omitempty" db:"bound" yaml:"bound" bson:"bound"`
+	Bound *v2.LongLatBBox `protobuf:"bytes,1,opt,name=bound,proto3" json:"bound,omitempty" bson:"bound" db:"bound" yaml:"bound"`
 	// 是否要排除车道信息
 	ExcludeLanes bool `protobuf:"varint,2,opt,name=exclude_lanes,json=excludeLanes,proto3" json:"exclude_lanes,omitempty" yaml:"exclude_lanes" bson:"exclude_lanes" db:"exclude_lanes"`
 	// 是否要排除车道上的人的信息（仅在包含车道信息时有效）
@@ -333,7 +333,7 @@ type GetRoadByLongLatBBoxResponse struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 道路信息列表
-	States []*RoadState `protobuf:"bytes,1,rep,name=states,proto3" json:"states,omitempty" bson:"states" db:"states" yaml:"states"`
+	States []*RoadState `protobuf:"bytes,1,rep,name=states,proto3" json:"states,omitempty" db:"states" yaml:"states" bson:"states"`
 }
 
 func (x *GetRoadByLongLatBBoxResponse) Reset() {
@@ -418,7 +418,7 @@ type RuinInfo struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Num   int32   `protobuf:"varint,1,opt,name=num,proto3" json:"num,omitempty" yaml:"num" bson:"num" db:"num"`            // 损坏数量
+	Num   int32   `protobuf:"varint,1,opt,name=num,proto3" json:"num,omitempty" db:"num" yaml:"num" bson:"num"`            // 损坏数量
 	Ratio float64 `protobuf:"fixed64,2,opt,name=ratio,proto3" json:"ratio,omitempty" yaml:"ratio" bson:"ratio" db:"ratio"` // 损坏占比
 }
 
@@ -475,8 +475,8 @@ type GetRuinInfoResponse struct {
 
 	// 三级级损伤信息
 	One   *RuinInfo `protobuf:"bytes,1,opt,name=one,proto3" json:"one,omitempty" yaml:"one" bson:"one" db:"one"`
-	Two   *RuinInfo `protobuf:"bytes,2,opt,name=two,proto3" json:"two,omitempty" bson:"two" db:"two" yaml:"two"`
-	Three *RuinInfo `protobuf:"bytes,3,opt,name=three,proto3" json:"three,omitempty" yaml:"three" bson:"three" db:"three"`
+	Two   *RuinInfo `protobuf:"bytes,2,opt,name=two,proto3" json:"two,omitempty" db:"two" yaml:"two" bson:"two"`
+	Three *RuinInfo `protobuf:"bytes,3,opt,name=three,proto3" json:"three,omitempty" db:"three" yaml:"three" bson:"three"`
 }
 
 func (x *GetRuinInfoResponse) Reset() {
@@ -575,7 +575,7 @@ type GetEventsResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Events *v1.Events `protobuf:"bytes,1,opt,name=events,proto3" json:"events,omitempty" db:"events" yaml:"events" bson:"events"`
+	Events *v1.Events `protobuf:"bytes,1,opt,name=events,proto3" json:"events,omitempty" yaml:"events" bson:"events" db:"events"`
 }
 
 func (x *GetEventsResponse) Reset() {
@@ -624,13 +624,13 @@ type RoadState struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 道路ID
-	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
+	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" bson:"id" db:"id" yaml:"id"`
 	// 道路平均速度（m/s）
 	AvgV float64 `protobuf:"fixed64,4,opt,name=avg_v,json=avgV,proto3" json:"avg_v,omitempty" yaml:"avg_v" bson:"avg_v" db:"avg_v"`
 	// 道路拥堵情况
-	Level RoadLevel `protobuf:"varint,2,opt,name=level,proto3,enum=city.map.v2.RoadLevel" json:"level,omitempty" db:"level" yaml:"level" bson:"level"`
+	Level RoadLevel `protobuf:"varint,2,opt,name=level,proto3,enum=city.map.v2.RoadLevel" json:"level,omitempty" yaml:"level" bson:"level" db:"level"`
 	// 道路中断原因
-	Reason InterruptionReason `protobuf:"varint,3,opt,name=reason,proto3,enum=city.map.v2.InterruptionReason" json:"reason,omitempty" yaml:"reason" bson:"reason" db:"reason"`
+	Reason InterruptionReason `protobuf:"varint,3,opt,name=reason,proto3,enum=city.map.v2.InterruptionReason" json:"reason,omitempty" db:"reason" yaml:"reason" bson:"reason"`
 	// 车道情况
 	Lanes []*LaneState `protobuf:"bytes,5,rep,name=lanes,proto3" json:"lanes,omitempty" yaml:"lanes" bson:"lanes" db:"lanes"`
 }
