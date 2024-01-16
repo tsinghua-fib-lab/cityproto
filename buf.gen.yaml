@@ -7,11 +7,11 @@ managed:
 plugins:
   - plugin: buf.build/protocolbuffers/go
     out: go
-    opt: 
+    opt:
       - paths=source_relative
   - plugin: buf.build/connectrpc/go
     out: go
-    opt: 
+    opt:
       - paths=source_relative
   - plugin: buf.build/community/pseudomuto-doc
     out: doc
@@ -24,3 +24,7 @@ plugins:
   # python3 -m pip install grpcio
   - plugin: buf.build/grpc/python:v1.60.0
     out: pycityproto
+  - plugin: buf.build/bufbuild/es:v1.6.0
+    out: es
+  - plugin: buf.build/connectrpc/es:v1.2.1
+    out: es

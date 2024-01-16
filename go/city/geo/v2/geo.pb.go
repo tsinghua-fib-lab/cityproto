@@ -87,7 +87,7 @@ type XYPosition struct {
 	// x坐标，单位米，对应经度
 	X float64 `protobuf:"fixed64,1,opt,name=x,proto3" json:"x,omitempty" yaml:"x" bson:"x" db:"x"`
 	// y坐标，单位米，对应纬度
-	Y float64 `protobuf:"fixed64,2,opt,name=y,proto3" json:"y,omitempty" yaml:"y" bson:"y" db:"y"`
+	Y float64 `protobuf:"fixed64,2,opt,name=y,proto3" json:"y,omitempty" db:"y" yaml:"y" bson:"y"`
 }
 
 func (x *XYPosition) Reset() {
@@ -201,9 +201,9 @@ type AoiPosition struct {
 	unknownFields protoimpl.UnknownFields
 
 	// AOI ID
-	AoiId int32 `protobuf:"varint,1,opt,name=aoi_id,json=aoiId,proto3" json:"aoi_id,omitempty" db:"aoi_id" yaml:"aoi_id" bson:"aoi_id"`
+	AoiId int32 `protobuf:"varint,1,opt,name=aoi_id,json=aoiId,proto3" json:"aoi_id,omitempty" bson:"aoi_id" db:"aoi_id" yaml:"aoi_id"`
 	// POI ID，需要是aoi_id的子poi，否则该值无效
-	PoiId *int32 `protobuf:"varint,2,opt,name=poi_id,json=poiId,proto3,oneof" json:"poi_id,omitempty" bson:"poi_id" db:"poi_id" yaml:"poi_id"`
+	PoiId *int32 `protobuf:"varint,2,opt,name=poi_id,json=poiId,proto3,oneof" json:"poi_id,omitempty" db:"poi_id" yaml:"poi_id" bson:"poi_id"`
 }
 
 func (x *AoiPosition) Reset() {
@@ -265,7 +265,7 @@ type Position struct {
 	// WGS84经纬度坐标
 	LonglatPosition *LongLatPosition `protobuf:"bytes,3,opt,name=longlat_position,json=longlatPosition,proto3,oneof" json:"longlat_position,omitempty" yaml:"longlat_position" bson:"longlat_position" db:"longlat_position"`
 	// XY坐标
-	XyPosition *XYPosition `protobuf:"bytes,4,opt,name=xy_position,json=xyPosition,proto3,oneof" json:"xy_position,omitempty" bson:"xy_position" db:"xy_position" yaml:"xy_position"`
+	XyPosition *XYPosition `protobuf:"bytes,4,opt,name=xy_position,json=xyPosition,proto3,oneof" json:"xy_position,omitempty" yaml:"xy_position" bson:"xy_position" db:"xy_position"`
 }
 
 func (x *Position) Reset() {
@@ -335,7 +335,7 @@ type LongLatRectArea struct {
 	unknownFields protoimpl.UnknownFields
 
 	// ne为区域东北角经纬度
-	Ne *LongLatPosition `protobuf:"bytes,1,opt,name=ne,proto3" json:"ne,omitempty" bson:"ne" db:"ne" yaml:"ne"`
+	Ne *LongLatPosition `protobuf:"bytes,1,opt,name=ne,proto3" json:"ne,omitempty" yaml:"ne" bson:"ne" db:"ne"`
 	// sw为区域西南角经纬度
 	Sw *LongLatPosition `protobuf:"bytes,2,opt,name=sw,proto3" json:"sw,omitempty" yaml:"sw" bson:"sw" db:"sw"`
 }

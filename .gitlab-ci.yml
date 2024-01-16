@@ -42,6 +42,14 @@ build-docker-image:
     - docker push ${CI_REGISTRY_IMAGE}:${CI_COMMIT_SHORT_SHA}
     - docker push ${CI_REGISTRY_IMAGE}:latest
 
+publish-npm:
+  image: registry.fiblab.net/general/dev:latest
+  stage: build
+  script:
+    - echo "@fiblab:registry=https://${CI_SERVER_HOST}/api/v4/projects/${CI_PROJECT_ID}/packages/npm/" > .npmrc
+    - echo "//${CI_SERVER_HOST}/api/v4/projects/${CI_PROJECT_ID}/packages/npm/:_authToken=${CI_JOB_TOKEN}" >> .npmrc
+    - npm publish
+
 kubernetes-deploy:
   stage: deploy
   image:
@@ -54,4 +62,3 @@ kubernetes-deploy:
     - kubectl config use-context sim/kubernetes-agent:huawei
     - kubectl apply -f manifest.yaml
     - kubectl rollout restart deployment/protos-doc-frontend --namespace web
-

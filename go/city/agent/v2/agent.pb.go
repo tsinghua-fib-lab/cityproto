@@ -85,11 +85,11 @@ type AgentAttribute struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 智能体类型
-	Type AgentType `protobuf:"varint,1,opt,name=type,proto3,enum=city.agent.v2.AgentType" json:"type,omitempty" bson:"type" db:"type" yaml:"type"`
+	Type AgentType `protobuf:"varint,1,opt,name=type,proto3,enum=city.agent.v2.AgentType" json:"type,omitempty" db:"type" yaml:"type" bson:"type"`
 	// 单位: m，长度
 	Length float64 `protobuf:"fixed64,2,opt,name=length,proto3" json:"length,omitempty" yaml:"length" bson:"length" db:"length"`
 	// 单位: m，宽度
-	Width float64 `protobuf:"fixed64,3,opt,name=width,proto3" json:"width,omitempty" yaml:"width" bson:"width" db:"width"`
+	Width float64 `protobuf:"fixed64,3,opt,name=width,proto3" json:"width,omitempty" bson:"width" db:"width" yaml:"width"`
 	// 单位: m/s
 	MaxSpeed float64 `protobuf:"fixed64,4,opt,name=max_speed,json=maxSpeed,proto3" json:"max_speed,omitempty" yaml:"max_speed" bson:"max_speed" db:"max_speed"`
 	// 单位: m/s^2, 最大加速度（正值）
@@ -197,7 +197,7 @@ type VehicleAttribute struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 单位: m, 完成变道所需路程
-	LaneChangeLength float64 `protobuf:"fixed64,1,opt,name=lane_change_length,json=laneChangeLength,proto3" json:"lane_change_length,omitempty" yaml:"lane_change_length" bson:"lane_change_length" db:"lane_change_length"`
+	LaneChangeLength float64 `protobuf:"fixed64,1,opt,name=lane_change_length,json=laneChangeLength,proto3" json:"lane_change_length,omitempty" db:"lane_change_length" yaml:"lane_change_length" bson:"lane_change_length"`
 	// 单位：米，本车距离前车的最小距离
 	MinGap float64 `protobuf:"fixed64,2,opt,name=min_gap,json=minGap,proto3" json:"min_gap,omitempty" yaml:"min_gap" bson:"min_gap" db:"min_gap"`
 }
@@ -255,7 +255,7 @@ type BusAttribute struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 公交线路ID
-	LineId int32 `protobuf:"varint,1,opt,name=line_id,json=lineId,proto3" json:"line_id,omitempty" bson:"line_id" db:"line_id" yaml:"line_id"`
+	LineId int32 `protobuf:"varint,1,opt,name=line_id,json=lineId,proto3" json:"line_id,omitempty" yaml:"line_id" bson:"line_id" db:"line_id"`
 	// 公交车容量
 	Capacity int32 `protobuf:"varint,2,opt,name=capacity,proto3" json:"capacity,omitempty" yaml:"capacity" bson:"capacity" db:"capacity"`
 }
@@ -354,7 +354,7 @@ type Agent struct {
 	// 智能体ID
 	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
 	// 参数
-	Attribute *AgentAttribute `protobuf:"bytes,2,opt,name=attribute,proto3" json:"attribute,omitempty" bson:"attribute" db:"attribute" yaml:"attribute"`
+	Attribute *AgentAttribute `protobuf:"bytes,2,opt,name=attribute,proto3" json:"attribute,omitempty" yaml:"attribute" bson:"attribute" db:"attribute"`
 	// 初始位置
 	Home *v2.Position `protobuf:"bytes,3,opt,name=home,proto3" json:"home,omitempty" yaml:"home" bson:"home" db:"home"`
 	// 初始日程
@@ -362,7 +362,7 @@ type Agent struct {
 	// 车辆附加属性
 	VehicleAttribute *VehicleAttribute `protobuf:"bytes,7,opt,name=vehicle_attribute,json=vehicleAttribute,proto3,oneof" json:"vehicle_attribute,omitempty" yaml:"vehicle_attribute" bson:"vehicle_attribute" db:"vehicle_attribute"`
 	// 公交车附加属性
-	BusAttribute *BusAttribute `protobuf:"bytes,8,opt,name=bus_attribute,json=busAttribute,proto3,oneof" json:"bus_attribute,omitempty" yaml:"bus_attribute" bson:"bus_attribute" db:"bus_attribute"`
+	BusAttribute *BusAttribute `protobuf:"bytes,8,opt,name=bus_attribute,json=busAttribute,proto3,oneof" json:"bus_attribute,omitempty" db:"bus_attribute" yaml:"bus_attribute" bson:"bus_attribute"`
 	// 自行车附加属性
 	BikeAttribute *BikeAttribute `protobuf:"bytes,9,opt,name=bike_attribute,json=bikeAttribute,proto3,oneof" json:"bike_attribute,omitempty" yaml:"bike_attribute" bson:"bike_attribute" db:"bike_attribute"`
 	// [可空] 额外的标签（例如：抢修车类型->电网）
@@ -463,7 +463,7 @@ type Agents struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Agents []*Agent `protobuf:"bytes,1,rep,name=agents,proto3" json:"agents,omitempty" yaml:"agents" bson:"agents" db:"agents"`
+	Agents []*Agent `protobuf:"bytes,1,rep,name=agents,proto3" json:"agents,omitempty" db:"agents" yaml:"agents" bson:"agents"`
 }
 
 func (x *Agents) Reset() {

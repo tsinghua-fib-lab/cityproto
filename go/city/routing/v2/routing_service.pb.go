@@ -30,13 +30,13 @@ type GetRouteRequest struct {
 	// 导航类型
 	Type RouteType `protobuf:"varint,1,opt,name=type,proto3,enum=city.routing.v2.RouteType" json:"type,omitempty" db:"type" yaml:"type" bson:"type"`
 	// 起点，约定：包含LanePosition或AoiPosition中的一种
-	Start *v2.Position `protobuf:"bytes,2,opt,name=start,proto3" json:"start,omitempty" yaml:"start" bson:"start" db:"start"`
+	Start *v2.Position `protobuf:"bytes,2,opt,name=start,proto3" json:"start,omitempty" db:"start" yaml:"start" bson:"start"`
 	// 起点，约定：包含LanePosition或AoiPosition中的一种
-	End *v2.Position `protobuf:"bytes,3,opt,name=end,proto3" json:"end,omitempty" yaml:"end" bson:"end" db:"end"`
+	End *v2.Position `protobuf:"bytes,3,opt,name=end,proto3" json:"end,omitempty" bson:"end" db:"end" yaml:"end"`
 	// 发送导航请求的agent id（目前仅在行车导航中使用）
 	//
 	// Deprecated: Marked as deprecated in city/routing/v2/routing_service.proto.
-	AgentId int32 `protobuf:"varint,4,opt,name=agent_id,json=agentId,proto3" json:"agent_id,omitempty" yaml:"agent_id" bson:"agent_id" db:"agent_id"`
+	AgentId int32 `protobuf:"varint,4,opt,name=agent_id,json=agentId,proto3" json:"agent_id,omitempty" db:"agent_id" yaml:"agent_id" bson:"agent_id"`
 	// 发送导航请求的时间（目前仅在行车导航中使用）
 	Time float64 `protobuf:"fixed64,5,opt,name=time,proto3" json:"time,omitempty" yaml:"time" bson:"time" db:"time"`
 }
@@ -115,7 +115,7 @@ type GetRouteResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Journeys []*Journey `protobuf:"bytes,1,rep,name=journeys,proto3" json:"journeys,omitempty" bson:"journeys" db:"journeys" yaml:"journeys"`
+	Journeys []*Journey `protobuf:"bytes,1,rep,name=journeys,proto3" json:"journeys,omitempty" yaml:"journeys" bson:"journeys" db:"journeys"`
 }
 
 func (x *GetRouteResponse) Reset() {

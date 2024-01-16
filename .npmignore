@@ -1,0 +1,13 @@
+.git/
+.gitignore
+.gitlab-ci.yml
+.vscode/
+buf.gen.yaml
+buf.yaml
+doc/
+go.mod
+go.sum
+go/
+pyproject.toml
+pycityproto/
+scripts/

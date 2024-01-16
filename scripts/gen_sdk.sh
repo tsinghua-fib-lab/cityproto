@@ -10,6 +10,7 @@ cd ${PROJECT_DIR}
 rm -r doc/ || true
 rm -r go/ || true
 rm -r pycityproto/ || true
+rm -r es/ || true
 buf generate --include-imports --path city
 buf generate --template buf.gen.tag.yaml --include-imports \
     --path city/agent/v2 \
