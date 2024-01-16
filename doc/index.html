@@ -1330,6 +1330,25 @@
         
           
           <li>
+            <a href="#city%2fperson%2fv1%2fmotion.proto">city/person/v1/motion.proto</a>
+            <ul>
+              
+                <li>
+                  <a href="#city.person.v1.PersonMotion"><span class="badge">M</span>PersonMotion</a>
+                </li>
+              
+              
+                <li>
+                  <a href="#city.person.v1.Status"><span class="badge">E</span>Status</a>
+                </li>
+              
+              
+              
+            </ul>
+          </li>
+        
+          
+          <li>
             <a href="#city%2fmap%2fv2%2faoi_service.proto">city/map/v2/aoi_service.proto</a>
             <ul>
               
@@ -1440,6 +1459,92 @@
               
                 <li>
                   <a href="#city.map.v2.RoadService"><span class="badge">S</span>RoadService</a>
+                </li>
+              
+            </ul>
+          </li>
+        
+          
+          <li>
+            <a href="#city%2fperson%2fv1%2fperson.proto">city/person/v1/person.proto</a>
+            <ul>
+              
+                <li>
+                  <a href="#city.person.v1.BikeAttribute"><span class="badge">M</span>BikeAttribute</a>
+                </li>
+              
+                <li>
+                  <a href="#city.person.v1.BusAttribute"><span class="badge">M</span>BusAttribute</a>
+                </li>
+              
+                <li>
+                  <a href="#city.person.v1.Person"><span class="badge">M</span>Person</a>
+                </li>
+              
+                <li>
+                  <a href="#city.person.v1.Person.LabelsEntry"><span class="badge">M</span>Person.LabelsEntry</a>
+                </li>
+              
+                <li>
+                  <a href="#city.person.v1.PersonAttribute"><span class="badge">M</span>PersonAttribute</a>
+                </li>
+              
+                <li>
+                  <a href="#city.person.v1.Persons"><span class="badge">M</span>Persons</a>
+                </li>
+              
+                <li>
+                  <a href="#city.person.v1.VehicleAttribute"><span class="badge">M</span>VehicleAttribute</a>
+                </li>
+              
+              
+              
+              
+            </ul>
+          </li>
+        
+          
+          <li>
+            <a href="#city%2fperson%2fv1%2fperson_service.proto">city/person/v1/person_service.proto</a>
+            <ul>
+              
+                <li>
+                  <a href="#city.person.v1.AddPersonRequest"><span class="badge">M</span>AddPersonRequest</a>
+                </li>
+              
+                <li>
+                  <a href="#city.person.v1.AddPersonResponse"><span class="badge">M</span>AddPersonResponse</a>
+                </li>
+              
+                <li>
+                  <a href="#city.person.v1.GetPersonRequest"><span class="badge">M</span>GetPersonRequest</a>
+                </li>
+              
+                <li>
+                  <a href="#city.person.v1.GetPersonResponse"><span class="badge">M</span>GetPersonResponse</a>
+                </li>
+              
+                <li>
+                  <a href="#city.person.v1.GetPersonsByLongLatAreaRequest"><span class="badge">M</span>GetPersonsByLongLatAreaRequest</a>
+                </li>
+              
+                <li>
+                  <a href="#city.person.v1.GetPersonsByLongLatAreaResponse"><span class="badge">M</span>GetPersonsByLongLatAreaResponse</a>
+                </li>
+              
+                <li>
+                  <a href="#city.person.v1.SetScheduleRequest"><span class="badge">M</span>SetScheduleRequest</a>
+                </li>
+              
+                <li>
+                  <a href="#city.person.v1.SetScheduleResponse"><span class="badge">M</span>SetScheduleResponse</a>
+                </li>
+              
+              
+              
+              
+                <li>
+                  <a href="#city.person.v1.PersonService"><span class="badge">S</span>PersonService</a>
                 </li>
               
             </ul>
@@ -2702,7 +2807,7 @@
 
       
         <h3 id="city.trip.v2.Schedule">Schedule</h3>
-        <p>时刻表</p><p>关于出发时间的说明如下：</p><p>1. Schedule的开始时刻是 departure_time 或者 参考时刻+wait_time，</p><p>参考时刻定义为上一Schedule的结束时刻(即它最后一个Trip的结束时刻)，</p><p>或者当它为第一个Schedule时定义为Agent更新Schedule后的首次Update</p><p>时刻(当有准确时间要求时建议直接指定departure_time)</p><p>2. Trip的开始时刻是 departure_time 或者 参考时刻+wait_time，参考</p><p>时刻定义为上一Trip的结束时刻，或者当它为第一个Trip时定义为所属的</p><p>Schedule的开始时刻</p><p>3. Agent的实际运行时刻取决于Trip的开始时刻，例如它的首次运行是第一</p><p>个Schedule中第一个Trip的开始时刻</p><p>FAQ</p><p>Q1: 同时指定Schedule和第一个Trip的departure_time会怎样？</p><p>A1: 参照(2)，只看Trip的departure_time</p><p>Q2: Schedule和第一个Trip同时指定wait_time=10会怎样？</p><p>A2: 参照(2)，等待时间为10+10=20</p>
+        <p>时刻表</p><p>关于出发时间的说明如下：</p><p>1. Schedule的开始时刻是 departure_time 或者 参考时刻+wait_time，</p><p>参考时刻定义为上一Schedule的结束时刻(即它最后一个Trip的结束时刻)，</p><p>或者当它为第一个Schedule时定义为Person更新Schedule后的首次Update</p><p>时刻(当有准确时间要求时建议直接指定departure_time)</p><p>2. Trip的开始时刻是 departure_time 或者 参考时刻+wait_time，参考</p><p>时刻定义为上一Trip的结束时刻，或者当它为第一个Trip时定义为所属的</p><p>Schedule的开始时刻</p><p>3. Person的实际运行时刻取决于Trip的开始时刻，例如它的首次运行是第一</p><p>个Schedule中第一个Trip的开始时刻</p><p>FAQ</p><p>Q1: 同时指定Schedule和第一个Trip的departure_time会怎样？</p><p>A1: 参照(2)，只看Trip的departure_time</p><p>Q2: Schedule和第一个Trip同时指定wait_time=10会怎样？</p><p>A2: 参照(2)，等待时间为10+10=20</p>
 
         
           <table class="field-table">
@@ -3553,6 +3658,42 @@
           </tbody>
         </table>
 
+        
+          
+          
+          <h4>Methods with deprecated option</h4>
+          <table>
+            <thead>
+              <tr>
+                <td>Method Name</td>
+                <td>Option</td>
+              </tr>
+            </thead>
+            <tbody>
+            
+              <tr>
+                <td>GetAgent</td>
+                <td><p>true</p></td>
+              </tr>
+            
+              <tr>
+                <td>AddAgent</td>
+                <td><p>true</p></td>
+              </tr>
+            
+              <tr>
+                <td>SetSchedule</td>
+                <td><p>true</p></td>
+              </tr>
+            
+              <tr>
+                <td>GetAgentsByLongLatArea</td>
+                <td><p>true</p></td>
+              </tr>
+            
+            </tbody>
+          </table>
+          
         
     
       
@@ -7250,7 +7391,7 @@ apply: 申请岗位
         
       
         <h3 id="city.economy.v1.Person">Person</h3>
-        <p>个人（与Agent一一对应，</p><p>没有绑定到city.economy.v1.Person的Agent将无法参与经济模拟）</p>
+        <p>个人（与Person一一对应，</p><p>没有绑定到city.economy.v1.Person的Person将无法参与经济模拟）</p>
 
         
           <table class="field-table">
@@ -7263,7 +7404,7 @@ apply: 申请岗位
                   <td>id</td>
                   <td><a href="#int32">int32</a></td>
                   <td></td>
-                  <td><p>与agent id一致 </p></td>
+                  <td><p>与person id一致 </p></td>
                 </tr>
               
                 <tr>
@@ -9464,6 +9605,132 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
     
       
       <div class="file-heading">
+        <h2 id="city/person/v1/motion.proto">city/person/v1/motion.proto</h2><a href="#title">Top</a>
+      </div>
+      <p></p>
+
+      
+        <h3 id="city.person.v1.PersonMotion">PersonMotion</h3>
+        <p>Person（人）的运动状态</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>id</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p>ID </p></td>
+                </tr>
+              
+                <tr>
+                  <td>status</td>
+                  <td><a href="#city.person.v1.Status">Status</a></td>
+                  <td></td>
+                  <td><p>状态 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>position</td>
+                  <td><a href="#city.geo.v2.Position">city.geo.v2.Position</a></td>
+                  <td></td>
+                  <td><p>位置（包含逻辑位置、XY位置、经纬度位置） </p></td>
+                </tr>
+              
+                <tr>
+                  <td>v</td>
+                  <td><a href="#double">double</a></td>
+                  <td></td>
+                  <td><p>速度 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>direction</td>
+                  <td><a href="#double">double</a></td>
+                  <td></td>
+                  <td><p>方向角（atan2计算得到的弧度） </p></td>
+                </tr>
+              
+                <tr>
+                  <td>activity</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>活动描述 </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+
+      
+        <h3 id="city.person.v1.Status">Status</h3>
+        <p>Person（人）的运行时状态</p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>STATUS_UNSPECIFIED</td>
+                <td>0</td>
+                <td><p>未指定</p></td>
+              </tr>
+            
+              <tr>
+                <td>STATUS_SLEEP</td>
+                <td>1</td>
+                <td><p>没有移动行为</p></td>
+              </tr>
+            
+              <tr>
+                <td>STATUS_DRIVING</td>
+                <td>2</td>
+                <td><p>开车</p></td>
+              </tr>
+            
+              <tr>
+                <td>STATUS_WALKING</td>
+                <td>3</td>
+                <td><p>步行</p></td>
+              </tr>
+            
+              <tr>
+                <td>STATUS_CROWD</td>
+                <td>4</td>
+                <td><p>室内行人</p></td>
+              </tr>
+            
+              <tr>
+                <td>STATUS_PASSENGER</td>
+                <td>5</td>
+                <td><p>乘客</p></td>
+              </tr>
+            
+              <tr>
+                <td>STATUS_WAIT_ROUTE</td>
+                <td>6</td>
+                <td><p>等待路径规划</p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+      
+
+      
+
+      
+    
+      
+      <div class="file-heading">
         <h2 id="city/map/v2/aoi_service.proto">city/map/v2/aoi_service.proto</h2><a href="#title">Top</a>
       </div>
       <p></p>
@@ -9488,7 +9755,7 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
               
                 <tr>
                   <td>persons</td>
-                  <td><a href="#city.agent.v2.AgentMotion">city.agent.v2.AgentMotion</a></td>
+                  <td><a href="#city.person.v1.PersonMotion">city.person.v1.PersonMotion</a></td>
                   <td>repeated</td>
                   <td><p>AOI内的人 </p></td>
                 </tr>
@@ -9648,7 +9915,7 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
               
                 <tr>
                   <td>persons</td>
-                  <td><a href="#city.agent.v2.AgentMotion">city.agent.v2.AgentMotion</a></td>
+                  <td><a href="#city.person.v1.PersonMotion">city.person.v1.PersonMotion</a></td>
                   <td>repeated</td>
                   <td><p>Lane上的人/车 </p></td>
                 </tr>
@@ -10089,6 +10356,533 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
     
       
       <div class="file-heading">
+        <h2 id="city/person/v1/person.proto">city/person/v1/person.proto</h2><a href="#title">Top</a>
+      </div>
+      <p></p>
+
+      
+        <h3 id="city.person.v1.BikeAttribute">BikeAttribute</h3>
+        <p>自行车附加属性</p>
+
+        
+
+        
+      
+        <h3 id="city.person.v1.BusAttribute">BusAttribute</h3>
+        <p>公交车附加属性</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>line_id</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p>公交线路ID </p></td>
+                </tr>
+              
+                <tr>
+                  <td>capacity</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p>公交车容量 </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="city.person.v1.Person">Person</h3>
+        <p>智能体</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>id</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p>智能体ID </p></td>
+                </tr>
+              
+                <tr>
+                  <td>attribute</td>
+                  <td><a href="#city.person.v1.PersonAttribute">PersonAttribute</a></td>
+                  <td></td>
+                  <td><p>参数 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>home</td>
+                  <td><a href="#city.geo.v2.Position">city.geo.v2.Position</a></td>
+                  <td></td>
+                  <td><p>初始位置 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>schedules</td>
+                  <td><a href="#city.trip.v2.Schedule">city.trip.v2.Schedule</a></td>
+                  <td>repeated</td>
+                  <td><p>初始日程 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>vehicle_attribute</td>
+                  <td><a href="#city.person.v1.VehicleAttribute">VehicleAttribute</a></td>
+                  <td>optional</td>
+                  <td><p>车辆附加属性 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>bus_attribute</td>
+                  <td><a href="#city.person.v1.BusAttribute">BusAttribute</a></td>
+                  <td>optional</td>
+                  <td><p>公交车附加属性 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>bike_attribute</td>
+                  <td><a href="#city.person.v1.BikeAttribute">BikeAttribute</a></td>
+                  <td>optional</td>
+                  <td><p>自行车附加属性 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>labels</td>
+                  <td><a href="#city.person.v1.Person.LabelsEntry">Person.LabelsEntry</a></td>
+                  <td>repeated</td>
+                  <td><p>[可空] 额外的标签（例如：抢修车类型-&gt;电网） </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="city.person.v1.Person.LabelsEntry">Person.LabelsEntry</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>key</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>value</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="city.person.v1.PersonAttribute">PersonAttribute</h3>
+        <p>智能体属性（通用）</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>length</td>
+                  <td><a href="#double">double</a></td>
+                  <td></td>
+                  <td><p>单位: m，长度 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>width</td>
+                  <td><a href="#double">double</a></td>
+                  <td></td>
+                  <td><p>单位: m，宽度 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>max_speed</td>
+                  <td><a href="#double">double</a></td>
+                  <td></td>
+                  <td><p>单位: m/s </p></td>
+                </tr>
+              
+                <tr>
+                  <td>max_acceleration</td>
+                  <td><a href="#double">double</a></td>
+                  <td></td>
+                  <td><p>单位: m/s^2, 最大加速度（正值） </p></td>
+                </tr>
+              
+                <tr>
+                  <td>max_braking_acceleration</td>
+                  <td><a href="#double">double</a></td>
+                  <td></td>
+                  <td><p>单位: m/s^2, 最大减速度（负值） </p></td>
+                </tr>
+              
+                <tr>
+                  <td>usual_acceleration</td>
+                  <td><a href="#double">double</a></td>
+                  <td></td>
+                  <td><p>单位: m/s^2, 一般加速度（正值），要求小于最大加速度 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>usual_braking_acceleration</td>
+                  <td><a href="#double">double</a></td>
+                  <td></td>
+                  <td><p>单位: m/s^2, 一般减速度（负值），要求大于最大减速度 </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="city.person.v1.Persons">Persons</h3>
+        <p>智能体集合，对应一个智能体pb文件或一个智能体mongodb collection</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>persons</td>
+                  <td><a href="#city.person.v1.Person">Person</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="city.person.v1.VehicleAttribute">VehicleAttribute</h3>
+        <p>车辆附加属性</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>lane_change_length</td>
+                  <td><a href="#double">double</a></td>
+                  <td></td>
+                  <td><p>单位: m, 完成变道所需路程 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>min_gap</td>
+                  <td><a href="#double">double</a></td>
+                  <td></td>
+                  <td><p>单位：米，本车距离前车的最小距离 </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+
+      
+
+      
+
+      
+    
+      
+      <div class="file-heading">
+        <h2 id="city/person/v1/person_service.proto">city/person/v1/person_service.proto</h2><a href="#title">Top</a>
+      </div>
+      <p></p>
+
+      
+        <h3 id="city.person.v1.AddPersonRequest">AddPersonRequest</h3>
+        <p>新增person请求</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>person</td>
+                  <td><a href="#city.person.v1.Person">Person</a></td>
+                  <td></td>
+                  <td><p>约定：person中不设置id </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="city.person.v1.AddPersonResponse">AddPersonResponse</h3>
+        <p>新增person响应</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>person_id</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p>新增的person分配得到的ID </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="city.person.v1.GetPersonRequest">GetPersonRequest</h3>
+        <p>获取person信息请求</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>person_id</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p>person id </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="city.person.v1.GetPersonResponse">GetPersonResponse</h3>
+        <p>获取person信息响应</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>base</td>
+                  <td><a href="#city.person.v1.Person">Person</a></td>
+                  <td></td>
+                  <td><p>person信息 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>motion</td>
+                  <td><a href="#city.person.v1.PersonMotion">PersonMotion</a></td>
+                  <td></td>
+                  <td><p>person运动信息 </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="city.person.v1.GetPersonsByLongLatAreaRequest">GetPersonsByLongLatAreaRequest</h3>
+        <p>获取特定区域内的person请求</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>area</td>
+                  <td><a href="#city.geo.v2.LongLatRectArea">city.geo.v2.LongLatRectArea</a></td>
+                  <td></td>
+                  <td><p>经纬度范围 </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="city.person.v1.GetPersonsByLongLatAreaResponse">GetPersonsByLongLatAreaResponse</h3>
+        <p>获取特定区域内的person响应</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>step</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p>当前模拟步数 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>motions</td>
+                  <td><a href="#city.person.v1.PersonMotion">PersonMotion</a></td>
+                  <td>repeated</td>
+                  <td><p>区域内的person的运动信息 </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="city.person.v1.SetScheduleRequest">SetScheduleRequest</h3>
+        <p>修改person的schedule请求</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>person_id</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p>person id </p></td>
+                </tr>
+              
+                <tr>
+                  <td>schedules</td>
+                  <td><a href="#city.trip.v2.Schedule">city.trip.v2.Schedule</a></td>
+                  <td>repeated</td>
+                  <td><p>新的schedule（覆盖原有的schedule） </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="city.person.v1.SetScheduleResponse">SetScheduleResponse</h3>
+        <p>修改person的schedule响应</p>
+
+        
+
+        
+      
+
+      
+
+      
+
+      
+        <h3 id="city.person.v1.PersonService">PersonService</h3>
+        <p></p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Method Name</td><td>Request Type</td><td>Response Type</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>GetPerson</td>
+                <td><a href="#city.person.v1.GetPersonRequest">GetPersonRequest</a></td>
+                <td><a href="#city.person.v1.GetPersonResponse">GetPersonResponse</a></td>
+                <td><p>获取person信息</p></td>
+              </tr>
+            
+              <tr>
+                <td>AddPerson</td>
+                <td><a href="#city.person.v1.AddPersonRequest">AddPersonRequest</a></td>
+                <td><a href="#city.person.v1.AddPersonResponse">AddPersonResponse</a></td>
+                <td><p>新增person 传入person初始位置、目的地表、属性 返回personid</p></td>
+              </tr>
+            
+              <tr>
+                <td>SetSchedule</td>
+                <td><a href="#city.person.v1.SetScheduleRequest">SetScheduleRequest</a></td>
+                <td><a href="#city.person.v1.SetScheduleResponse">SetScheduleResponse</a></td>
+                <td><p>修改person的schedule 传入personid、目的地表</p></td>
+              </tr>
+            
+              <tr>
+                <td>GetPersonsByLongLatArea</td>
+                <td><a href="#city.person.v1.GetPersonsByLongLatAreaRequest">GetPersonsByLongLatAreaRequest</a></td>
+                <td><a href="#city.person.v1.GetPersonsByLongLatAreaResponse">GetPersonsByLongLatAreaResponse</a></td>
+                <td><p>获取特定区域内的person</p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+
+        
+    
+      
+      <div class="file-heading">
         <h2 id="city/routing/v2/cost.proto">city/routing/v2/cost.proto</h2><a href="#title">Top</a>
       </div>
       <p></p>
@@ -10228,13 +11022,6 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
                 </tr>
               
                 <tr>
-                  <td>agent_id</td>
-                  <td><a href="#int32">int32</a></td>
-                  <td></td>
-                  <td><p><strong>Deprecated.</strong> 发送导航请求的agent id（目前仅在行车导航中使用） </p></td>
-                </tr>
-              
-                <tr>
                   <td>time</td>
                   <td><a href="#double">double</a></td>
                   <td></td>
@@ -10244,27 +11031,6 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
             </tbody>
           </table>
 
-          
-            
-            
-            <h4>Fields with deprecated option</h4>
-            <table>
-              <thead>
-                <tr>
-                  <td>Name</td>
-                  <td>Option</td>
-                </tr>
-              </thead>
-              <tbody>
-              
-                <tr>
-                  <td>agent_id</td>
-                  <td><p>true</p></td>
-                </tr>
-              
-              </tbody>
-            </table>
-            
           
 
         

@@ -33,7 +33,7 @@ type Cost struct {
 	// 设置的时间（单位：秒）
 	// 即设置几点几分的道路通行成本为cost
 	// 为空表示设置全天通行成本均为cost
-	Time *float64 `protobuf:"fixed64,3,opt,name=time,proto3,oneof" json:"time,omitempty" db:"time" yaml:"time" bson:"time"`
+	Time *float64 `protobuf:"fixed64,3,opt,name=time,proto3,oneof" json:"time,omitempty" yaml:"time" bson:"time" db:"time"`
 }
 
 func (x *Cost) Reset() {

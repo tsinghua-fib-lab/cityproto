@@ -24,6 +24,7 @@ export const AgentType = proto3.makeEnum(
  * 智能体属性（通用）
  *
  * @generated from message city.agent.v2.AgentAttribute
+ * @deprecated
  */
 export const AgentAttribute = proto3.makeMessageType(
   "city.agent.v2.AgentAttribute",
@@ -79,6 +80,7 @@ export const BikeAttribute = proto3.makeMessageType(
  * 智能体
  *
  * @generated from message city.agent.v2.Agent
+ * @deprecated
  */
 export const Agent = proto3.makeMessageType(
   "city.agent.v2.Agent",
@@ -98,6 +100,7 @@ export const Agent = proto3.makeMessageType(
  * 智能体集合，对应一个智能体pb文件或一个智能体mongodb collection
  *
  * @generated from message city.agent.v2.Agents
+ * @deprecated
  */
 export const Agents = proto3.makeMessageType(
   "city.agent.v2.Agents",

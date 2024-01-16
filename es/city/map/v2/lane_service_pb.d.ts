@@ -5,7 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { AgentMotion } from "../../agent/v2/motion_pb.js";
+import type { PersonMotion } from "../../person/v1/motion_pb.js";
 
 /**
  * 设置Lane的最大速度（限速）请求
@@ -135,9 +135,9 @@ export declare class LaneState extends Message<LaneState> {
   /**
    * Lane上的人/车
    *
-   * @generated from field: repeated city.agent.v2.AgentMotion persons = 2;
+   * @generated from field: repeated city.person.v1.PersonMotion persons = 2;
    */
-  persons: AgentMotion[];
+  persons: PersonMotion[];
 
   /**
    * 平均速度（m/s）

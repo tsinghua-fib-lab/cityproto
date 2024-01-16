@@ -9,13 +9,21 @@ import "city/trip/v2/trip.proto";
 
 service AgentService {
   // 获取agent信息
-  rpc GetAgent(GetAgentRequest) returns (GetAgentResponse);
+  rpc GetAgent(GetAgentRequest) returns (GetAgentResponse) {
+    option deprecated = true;
+  }
   // 新增agent 传入agent初始位置、目的地表、属性 返回agentid
-  rpc AddAgent(AddAgentRequest) returns (AddAgentResponse);
+  rpc AddAgent(AddAgentRequest) returns (AddAgentResponse) {
+    option deprecated = true;
+  }
   // 修改agent的schedule 传入agentid、目的地表
-  rpc SetSchedule(SetScheduleRequest) returns (SetScheduleResponse);
+  rpc SetSchedule(SetScheduleRequest) returns (SetScheduleResponse) {
+    option deprecated = true;
+  }
   // 获取特定区域内的agent
-  rpc GetAgentsByLongLatArea(GetAgentsByLongLatAreaRequest) returns (GetAgentsByLongLatAreaResponse);
+  rpc GetAgentsByLongLatArea(GetAgentsByLongLatAreaRequest) returns (GetAgentsByLongLatAreaResponse) {
+    option deprecated = true;
+  }
 }
 
 // 获取agent信息请求

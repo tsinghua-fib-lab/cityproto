@@ -57,12 +57,20 @@ var (
 // AgentServiceClient is a client for the city.agent.v2.AgentService service.
 type AgentServiceClient interface {
 	// 获取agent信息
+	//
+	// Deprecated: do not use.
 	GetAgent(context.Context, *connect.Request[v2.GetAgentRequest]) (*connect.Response[v2.GetAgentResponse], error)
 	// 新增agent 传入agent初始位置、目的地表、属性 返回agentid
+	//
+	// Deprecated: do not use.
 	AddAgent(context.Context, *connect.Request[v2.AddAgentRequest]) (*connect.Response[v2.AddAgentResponse], error)
 	// 修改agent的schedule 传入agentid、目的地表
+	//
+	// Deprecated: do not use.
 	SetSchedule(context.Context, *connect.Request[v2.SetScheduleRequest]) (*connect.Response[v2.SetScheduleResponse], error)
 	// 获取特定区域内的agent
+	//
+	// Deprecated: do not use.
 	GetAgentsByLongLatArea(context.Context, *connect.Request[v2.GetAgentsByLongLatAreaRequest]) (*connect.Response[v2.GetAgentsByLongLatAreaResponse], error)
 }
 
@@ -112,21 +120,29 @@ type agentServiceClient struct {
 }
 
 // GetAgent calls city.agent.v2.AgentService.GetAgent.
+//
+// Deprecated: do not use.
 func (c *agentServiceClient) GetAgent(ctx context.Context, req *connect.Request[v2.GetAgentRequest]) (*connect.Response[v2.GetAgentResponse], error) {
 	return c.getAgent.CallUnary(ctx, req)
 }
 
 // AddAgent calls city.agent.v2.AgentService.AddAgent.
+//
+// Deprecated: do not use.
 func (c *agentServiceClient) AddAgent(ctx context.Context, req *connect.Request[v2.AddAgentRequest]) (*connect.Response[v2.AddAgentResponse], error) {
 	return c.addAgent.CallUnary(ctx, req)
 }
 
 // SetSchedule calls city.agent.v2.AgentService.SetSchedule.
+//
+// Deprecated: do not use.
 func (c *agentServiceClient) SetSchedule(ctx context.Context, req *connect.Request[v2.SetScheduleRequest]) (*connect.Response[v2.SetScheduleResponse], error) {
 	return c.setSchedule.CallUnary(ctx, req)
 }
 
 // GetAgentsByLongLatArea calls city.agent.v2.AgentService.GetAgentsByLongLatArea.
+//
+// Deprecated: do not use.
 func (c *agentServiceClient) GetAgentsByLongLatArea(ctx context.Context, req *connect.Request[v2.GetAgentsByLongLatAreaRequest]) (*connect.Response[v2.GetAgentsByLongLatAreaResponse], error) {
 	return c.getAgentsByLongLatArea.CallUnary(ctx, req)
 }
@@ -134,12 +150,20 @@ func (c *agentServiceClient) GetAgentsByLongLatArea(ctx context.Context, req *co
 // AgentServiceHandler is an implementation of the city.agent.v2.AgentService service.
 type AgentServiceHandler interface {
 	// 获取agent信息
+	//
+	// Deprecated: do not use.
 	GetAgent(context.Context, *connect.Request[v2.GetAgentRequest]) (*connect.Response[v2.GetAgentResponse], error)
 	// 新增agent 传入agent初始位置、目的地表、属性 返回agentid
+	//
+	// Deprecated: do not use.
 	AddAgent(context.Context, *connect.Request[v2.AddAgentRequest]) (*connect.Response[v2.AddAgentResponse], error)
 	// 修改agent的schedule 传入agentid、目的地表
+	//
+	// Deprecated: do not use.
 	SetSchedule(context.Context, *connect.Request[v2.SetScheduleRequest]) (*connect.Response[v2.SetScheduleResponse], error)
 	// 获取特定区域内的agent
+	//
+	// Deprecated: do not use.
 	GetAgentsByLongLatArea(context.Context, *connect.Request[v2.GetAgentsByLongLatAreaRequest]) (*connect.Response[v2.GetAgentsByLongLatAreaResponse], error)
 }
 

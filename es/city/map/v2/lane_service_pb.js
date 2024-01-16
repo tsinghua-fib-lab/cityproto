@@ -4,7 +4,7 @@
 // @ts-nocheck
 
 import { proto3 } from "@bufbuild/protobuf";
-import { AgentMotion } from "../../agent/v2/motion_pb.js";
+import { PersonMotion } from "../../person/v1/motion_pb.js";
 
 /**
  * 设置Lane的最大速度（限速）请求
@@ -62,7 +62,7 @@ export const LaneState = proto3.makeMessageType(
   "city.map.v2.LaneState",
   () => [
     { no: 1, name: "id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 2, name: "persons", kind: "message", T: AgentMotion, repeated: true },
+    { no: 2, name: "persons", kind: "message", T: PersonMotion, repeated: true },
     { no: 3, name: "avg_v", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
     { no: 4, name: "restriction", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],

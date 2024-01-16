@@ -28,6 +28,7 @@ export const Status = proto3.makeEnum(
  * Agent（人）的运动状态
  *
  * @generated from message city.agent.v2.AgentMotion
+ * @deprecated
  */
 export const AgentMotion = proto3.makeMessageType(
   "city.agent.v2.AgentMotion",

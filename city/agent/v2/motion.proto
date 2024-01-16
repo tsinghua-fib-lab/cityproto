@@ -24,6 +24,7 @@ enum Status {
 
 // Agent（人）的运动状态
 message AgentMotion {
+  option deprecated = true;
   // ID
   int32 id = 1;
   // 状态

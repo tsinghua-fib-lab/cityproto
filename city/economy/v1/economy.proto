@@ -5,10 +5,10 @@ package city.economy.v1;
 // 经济模拟
 // 资金与货物都允许以负数形式存在，表示欠款或欠货
 
-// 个人（与Agent一一对应，
-// 没有绑定到city.economy.v1.Person的Agent将无法参与经济模拟）
+// 个人（与Person一一对应，
+// 没有绑定到city.economy.v1.Person的Person将无法参与经济模拟）
 message Person {
-  // 与agent id一致
+  // 与person id一致
   int32 id = 1;
   // 起始资金
   double money = 2;

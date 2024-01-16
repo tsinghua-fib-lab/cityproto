@@ -129,7 +129,7 @@ type Node struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Id   int32    `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" db:"id" yaml:"id" bson:"id"`
+	Id   int32    `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
 	Type NodeType `protobuf:"varint,2,opt,name=type,proto3,enum=city.comm.input.v1.NodeType" json:"type,omitempty" yaml:"type" bson:"type" db:"type"`
 	// 父节点
 	ParentId int32 `protobuf:"varint,3,opt,name=parent_id,json=parentId,proto3" json:"parent_id,omitempty" yaml:"parent_id" bson:"parent_id" db:"parent_id"`
@@ -239,7 +239,7 @@ type RepairStation struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Id       int32        `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" bson:"id" db:"id" yaml:"id"`
+	Id       int32        `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
 	AoiId    int32        `protobuf:"varint,2,opt,name=aoi_id,json=aoiId,proto3" json:"aoi_id,omitempty" yaml:"aoi_id" bson:"aoi_id" db:"aoi_id"`
 	Position *v2.Position `protobuf:"bytes,3,opt,name=position,proto3" json:"position,omitempty" yaml:"position" bson:"position" db:"position"`
 }
@@ -304,7 +304,7 @@ type Pump struct {
 	unknownFields protoimpl.UnknownFields
 
 	Id       int32        `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
-	Position *v2.Position `protobuf:"bytes,2,opt,name=position,proto3" json:"position,omitempty" yaml:"position" bson:"position" db:"position"`
+	Position *v2.Position `protobuf:"bytes,2,opt,name=position,proto3" json:"position,omitempty" db:"position" yaml:"position" bson:"position"`
 }
 
 func (x *Pump) Reset() {
@@ -359,8 +359,8 @@ type CommDemand struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Id      int32     `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
-	Demands []float64 `protobuf:"fixed64,2,rep,packed,name=demands,proto3" json:"demands,omitempty" bson:"demands" db:"demands" yaml:"demands"`
+	Id      int32     `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" bson:"id" db:"id" yaml:"id"`
+	Demands []float64 `protobuf:"fixed64,2,rep,packed,name=demands,proto3" json:"demands,omitempty" yaml:"demands" bson:"demands" db:"demands"`
 }
 
 func (x *CommDemand) Reset() {
@@ -416,7 +416,7 @@ type Nodes struct {
 
 	Nodes          []*Node          `protobuf:"bytes,1,rep,name=nodes,proto3" json:"nodes,omitempty" yaml:"nodes" bson:"nodes" db:"nodes"`
 	RepairStations []*RepairStation `protobuf:"bytes,2,rep,name=repair_stations,json=repairStations,proto3" json:"repair_stations,omitempty" yaml:"repair_stations" bson:"repair_stations" db:"repair_stations"`
-	Pumps          []*Pump          `protobuf:"bytes,3,rep,name=pumps,proto3" json:"pumps,omitempty" yaml:"pumps" bson:"pumps" db:"pumps"`
+	Pumps          []*Pump          `protobuf:"bytes,3,rep,name=pumps,proto3" json:"pumps,omitempty" db:"pumps" yaml:"pumps" bson:"pumps"`
 }
 
 func (x *Nodes) Reset() {
@@ -477,7 +477,7 @@ type CommDemands struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	CommDemands []*CommDemand `protobuf:"bytes,1,rep,name=comm_demands,json=commDemands,proto3" json:"comm_demands,omitempty" yaml:"comm_demands" bson:"comm_demands" db:"comm_demands"`
+	CommDemands []*CommDemand `protobuf:"bytes,1,rep,name=comm_demands,json=commDemands,proto3" json:"comm_demands,omitempty" bson:"comm_demands" db:"comm_demands" yaml:"comm_demands"`
 }
 
 func (x *CommDemands) Reset() {
