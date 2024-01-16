@@ -27,9 +27,9 @@ type LongLatPosition struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 经度
-	Longitude float64 `protobuf:"fixed64,1,opt,name=longitude,proto3" json:"longitude,omitempty" yaml:"longitude" bson:"longitude" db:"longitude"`
+	Longitude float64 `protobuf:"fixed64,1,opt,name=longitude,proto3" json:"longitude,omitempty" bson:"longitude" db:"longitude" yaml:"longitude"`
 	// 纬度
-	Latitude float64 `protobuf:"fixed64,2,opt,name=latitude,proto3" json:"latitude,omitempty" db:"latitude" yaml:"latitude" bson:"latitude"`
+	Latitude float64 `protobuf:"fixed64,2,opt,name=latitude,proto3" json:"latitude,omitempty" yaml:"latitude" bson:"latitude" db:"latitude"`
 }
 
 func (x *LongLatPosition) Reset() {
@@ -201,7 +201,7 @@ type AoiPosition struct {
 	unknownFields protoimpl.UnknownFields
 
 	// AOI ID
-	AoiId int32 `protobuf:"varint,1,opt,name=aoi_id,json=aoiId,proto3" json:"aoi_id,omitempty" bson:"aoi_id" db:"aoi_id" yaml:"aoi_id"`
+	AoiId int32 `protobuf:"varint,1,opt,name=aoi_id,json=aoiId,proto3" json:"aoi_id,omitempty" yaml:"aoi_id" bson:"aoi_id" db:"aoi_id"`
 	// POI ID，需要是aoi_id的子poi，否则该值无效
 	PoiId *int32 `protobuf:"varint,2,opt,name=poi_id,json=poiId,proto3,oneof" json:"poi_id,omitempty" yaml:"poi_id" bson:"poi_id" db:"poi_id"`
 }
@@ -259,13 +259,13 @@ type Position struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 地图坐标AOI（必须提供其中之一）
-	LanePosition *LanePosition `protobuf:"bytes,1,opt,name=lane_position,json=lanePosition,proto3,oneof" json:"lane_position,omitempty" yaml:"lane_position" bson:"lane_position" db:"lane_position"`
+	LanePosition *LanePosition `protobuf:"bytes,1,opt,name=lane_position,json=lanePosition,proto3,oneof" json:"lane_position,omitempty" db:"lane_position" yaml:"lane_position" bson:"lane_position"`
 	// 地图坐标Lane+S（必须提供其中之一）
 	AoiPosition *AoiPosition `protobuf:"bytes,2,opt,name=aoi_position,json=aoiPosition,proto3,oneof" json:"aoi_position,omitempty" yaml:"aoi_position" bson:"aoi_position" db:"aoi_position"`
 	// WGS84经纬度坐标
-	LonglatPosition *LongLatPosition `protobuf:"bytes,3,opt,name=longlat_position,json=longlatPosition,proto3,oneof" json:"longlat_position,omitempty" bson:"longlat_position" db:"longlat_position" yaml:"longlat_position"`
+	LonglatPosition *LongLatPosition `protobuf:"bytes,3,opt,name=longlat_position,json=longlatPosition,proto3,oneof" json:"longlat_position,omitempty" yaml:"longlat_position" bson:"longlat_position" db:"longlat_position"`
 	// XY坐标
-	XyPosition *XYPosition `protobuf:"bytes,4,opt,name=xy_position,json=xyPosition,proto3,oneof" json:"xy_position,omitempty" yaml:"xy_position" bson:"xy_position" db:"xy_position"`
+	XyPosition *XYPosition `protobuf:"bytes,4,opt,name=xy_position,json=xyPosition,proto3,oneof" json:"xy_position,omitempty" bson:"xy_position" db:"xy_position" yaml:"xy_position"`
 }
 
 func (x *Position) Reset() {

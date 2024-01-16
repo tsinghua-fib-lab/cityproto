@@ -211,7 +211,7 @@ type Schedule struct {
 	// 出行列表
 	Trips []*Trip `protobuf:"bytes,1,rep,name=trips,proto3" json:"trips,omitempty" yaml:"trips" bson:"trips" db:"trips"`
 	// trips的执行次数，0表示无限循环，大于0表示执行几次
-	LoopCount int32 `protobuf:"varint,2,opt,name=loop_count,json=loopCount,proto3" json:"loop_count,omitempty" bson:"loop_count" db:"loop_count" yaml:"loop_count"`
+	LoopCount int32 `protobuf:"varint,2,opt,name=loop_count,json=loopCount,proto3" json:"loop_count,omitempty" yaml:"loop_count" bson:"loop_count" db:"loop_count"`
 	// 期望的出发时间（单位: 秒）
 	DepartureTime *float64 `protobuf:"fixed64,3,opt,name=departure_time,json=departureTime,proto3,oneof" json:"departure_time,omitempty" yaml:"departure_time" bson:"departure_time" db:"departure_time"`
 	// 期望的等待时间（单位：秒），如果departure_time为空则wait_time默认为0

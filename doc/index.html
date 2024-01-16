@@ -401,6 +401,29 @@
         
           
           <li>
+            <a href="#city%2fclock%2fv1%2fclock_service.proto">city/clock/v1/clock_service.proto</a>
+            <ul>
+              
+                <li>
+                  <a href="#city.clock.v1.NowRequest"><span class="badge">M</span>NowRequest</a>
+                </li>
+              
+                <li>
+                  <a href="#city.clock.v1.NowResponse"><span class="badge">M</span>NowResponse</a>
+                </li>
+              
+              
+              
+              
+                <li>
+                  <a href="#city.clock.v1.ClockService"><span class="badge">S</span>ClockService</a>
+                </li>
+              
+            </ul>
+          </li>
+        
+          
+          <li>
             <a href="#city%2fconfig%2fv1%2fconfig.proto">city/config/v1/config.proto</a>
             <ul>
               
@@ -3739,6 +3762,70 @@
             </tbody>
           </table>
           
+        
+    
+      
+      <div class="file-heading">
+        <h2 id="city/clock/v1/clock_service.proto">city/clock/v1/clock_service.proto</h2><a href="#title">Top</a>
+      </div>
+      <p></p>
+
+      
+        <h3 id="city.clock.v1.NowRequest">NowRequest</h3>
+        <p>获取当前的模拟时间请求</p>
+
+        
+
+        
+      
+        <h3 id="city.clock.v1.NowResponse">NowResponse</h3>
+        <p>获取当前的模拟时间响应</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>t</td>
+                  <td><a href="#double">double</a></td>
+                  <td></td>
+                  <td><p>当前的模拟时间，单位为秒 </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+
+      
+
+      
+
+      
+        <h3 id="city.clock.v1.ClockService">ClockService</h3>
+        <p></p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Method Name</td><td>Request Type</td><td>Response Type</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>Now</td>
+                <td><a href="#city.clock.v1.NowRequest">NowRequest</a></td>
+                <td><a href="#city.clock.v1.NowResponse">NowResponse</a></td>
+                <td><p>获取当前的模拟时间</p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+
         
     
       

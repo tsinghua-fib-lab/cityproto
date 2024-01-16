@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package city.clock.v1;
+
+service ClockService {
+  // 获取当前的模拟时间
+  rpc Now(NowRequest) returns (NowResponse);
+}
+
+// 获取当前的模拟时间请求
+message NowRequest {}
+
+// 获取当前的模拟时间响应
+message NowResponse {
+  // 当前的模拟时间，单位为秒
+  double t = 1;
+}

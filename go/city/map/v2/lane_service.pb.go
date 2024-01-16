@@ -30,7 +30,7 @@ type SetLaneMaxVRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Lane id
-	LaneId int32 `protobuf:"varint,1,opt,name=lane_id,json=laneId,proto3" json:"lane_id,omitempty" bson:"lane_id" db:"lane_id" yaml:"lane_id"`
+	LaneId int32 `protobuf:"varint,1,opt,name=lane_id,json=laneId,proto3" json:"lane_id,omitempty" yaml:"lane_id" bson:"lane_id" db:"lane_id"`
 	// 最大速度（限速），单位：m/s
 	MaxV float64 `protobuf:"fixed64,2,opt,name=max_v,json=maxV,proto3" json:"max_v,omitempty" yaml:"max_v" bson:"max_v" db:"max_v"`
 }
@@ -236,7 +236,7 @@ type GetLaneByLongLatBBoxRequest struct {
 	// 经纬度范围
 	Bbox *v2.LongLatBBox `protobuf:"bytes,1,opt,name=bbox,proto3" json:"bbox,omitempty" yaml:"bbox" bson:"bbox" db:"bbox"`
 	// 是否要排除车道上的人的信息
-	ExcludePerson bool `protobuf:"varint,2,opt,name=exclude_person,json=excludePerson,proto3" json:"exclude_person,omitempty" db:"exclude_person" yaml:"exclude_person" bson:"exclude_person"`
+	ExcludePerson bool `protobuf:"varint,2,opt,name=exclude_person,json=excludePerson,proto3" json:"exclude_person,omitempty" yaml:"exclude_person" bson:"exclude_person" db:"exclude_person"`
 }
 
 func (x *GetLaneByLongLatBBoxRequest) Reset() {
@@ -341,11 +341,11 @@ type LaneState struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Lane ID
-	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" db:"id" yaml:"id" bson:"id"`
+	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
 	// Lane上的人/车
-	Persons []*v1.PersonMotion `protobuf:"bytes,2,rep,name=persons,proto3" json:"persons,omitempty" db:"persons" yaml:"persons" bson:"persons"`
+	Persons []*v1.PersonMotion `protobuf:"bytes,2,rep,name=persons,proto3" json:"persons,omitempty" yaml:"persons" bson:"persons" db:"persons"`
 	// 平均速度（m/s）
-	AvgV float64 `protobuf:"fixed64,3,opt,name=avg_v,json=avgV,proto3" json:"avg_v,omitempty" db:"avg_v" yaml:"avg_v" bson:"avg_v"`
+	AvgV float64 `protobuf:"fixed64,3,opt,name=avg_v,json=avgV,proto3" json:"avg_v,omitempty" yaml:"avg_v" bson:"avg_v" db:"avg_v"`
 	// 是否限行
 	Restriction bool `protobuf:"varint,4,opt,name=restriction,proto3" json:"restriction,omitempty" yaml:"restriction" bson:"restriction" db:"restriction"`
 	// 交通灯状态

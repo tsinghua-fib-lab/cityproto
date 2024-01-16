@@ -80,7 +80,7 @@ type GetPersonResponse struct {
 	// person信息
 	Base *Person `protobuf:"bytes,1,opt,name=base,proto3" json:"base,omitempty" yaml:"base" bson:"base" db:"base"`
 	// person运动信息
-	Motion *PersonMotion `protobuf:"bytes,2,opt,name=motion,proto3" json:"motion,omitempty" yaml:"motion" bson:"motion" db:"motion"`
+	Motion *PersonMotion `protobuf:"bytes,2,opt,name=motion,proto3" json:"motion,omitempty" db:"motion" yaml:"motion" bson:"motion"`
 }
 
 func (x *GetPersonResponse) Reset() {
@@ -136,7 +136,7 @@ type AddPersonRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 约定：person中不设置id
-	Person *Person `protobuf:"bytes,1,opt,name=person,proto3" json:"person,omitempty" yaml:"person" bson:"person" db:"person"`
+	Person *Person `protobuf:"bytes,1,opt,name=person,proto3" json:"person,omitempty" db:"person" yaml:"person" bson:"person"`
 }
 
 func (x *AddPersonRequest) Reset() {
@@ -234,9 +234,9 @@ type SetScheduleRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// person id
-	PersonId int32 `protobuf:"varint,1,opt,name=person_id,json=personId,proto3" json:"person_id,omitempty" yaml:"person_id" bson:"person_id" db:"person_id"`
+	PersonId int32 `protobuf:"varint,1,opt,name=person_id,json=personId,proto3" json:"person_id,omitempty" db:"person_id" yaml:"person_id" bson:"person_id"`
 	// 新的schedule（覆盖原有的schedule）
-	Schedules []*v2.Schedule `protobuf:"bytes,2,rep,name=schedules,proto3" json:"schedules,omitempty" db:"schedules" yaml:"schedules" bson:"schedules"`
+	Schedules []*v2.Schedule `protobuf:"bytes,2,rep,name=schedules,proto3" json:"schedules,omitempty" bson:"schedules" db:"schedules" yaml:"schedules"`
 }
 
 func (x *SetScheduleRequest) Reset() {
@@ -331,7 +331,7 @@ type GetPersonByLongLatBBoxRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 经纬度范围
-	Bbox *v21.LongLatBBox `protobuf:"bytes,1,opt,name=bbox,proto3" json:"bbox,omitempty" bson:"bbox" db:"bbox" yaml:"bbox"`
+	Bbox *v21.LongLatBBox `protobuf:"bytes,1,opt,name=bbox,proto3" json:"bbox,omitempty" yaml:"bbox" bson:"bbox" db:"bbox"`
 	// 过滤人的状态（状态为列表内的值的人不返回）
 	ExcludeStatuses []Status `protobuf:"varint,2,rep,packed,name=exclude_statuses,json=excludeStatuses,proto3,enum=city.person.v1.Status" json:"exclude_statuses,omitempty" yaml:"exclude_statuses" bson:"exclude_statuses" db:"exclude_statuses"`
 }
@@ -389,7 +389,7 @@ type GetPersonByLongLatBBoxResponse struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 区域内的person的运动信息
-	Motions []*PersonMotion `protobuf:"bytes,1,rep,name=motions,proto3" json:"motions,omitempty" bson:"motions" db:"motions" yaml:"motions"`
+	Motions []*PersonMotion `protobuf:"bytes,1,rep,name=motions,proto3" json:"motions,omitempty" yaml:"motions" bson:"motions" db:"motions"`
 }
 
 func (x *GetPersonByLongLatBBoxResponse) Reset() {
