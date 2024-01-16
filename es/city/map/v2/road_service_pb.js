@@ -4,7 +4,6 @@
 // @ts-nocheck
 
 import { proto3 } from "@bufbuild/protobuf";
-import { LongLatBBox } from "../../geo/v2/geo_pb.js";
 import { Events } from "../../event/v1/event_pb.js";
 import { LaneState } from "./lane_service_pb.js";
 
@@ -60,32 +59,6 @@ export const GetRoadRequest = proto3.makeMessageType(
  */
 export const GetRoadResponse = proto3.makeMessageType(
   "city.map.v2.GetRoadResponse",
-  () => [
-    { no: 1, name: "states", kind: "message", T: RoadState, repeated: true },
-  ],
-);
-
-/**
- * 查询特定区域内的道路信息请求
- *
- * @generated from message city.map.v2.GetRoadByLongLatBBoxRequest
- */
-export const GetRoadByLongLatBBoxRequest = proto3.makeMessageType(
-  "city.map.v2.GetRoadByLongLatBBoxRequest",
-  () => [
-    { no: 1, name: "bound", kind: "message", T: LongLatBBox },
-    { no: 2, name: "exclude_lane", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
-    { no: 3, name: "exclude_person", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
-  ],
-);
-
-/**
- * 查询特定区域内的道路信息响应
- *
- * @generated from message city.map.v2.GetRoadByLongLatBBoxResponse
- */
-export const GetRoadByLongLatBBoxResponse = proto3.makeMessageType(
-  "city.map.v2.GetRoadByLongLatBBoxResponse",
   () => [
     { no: 1, name: "states", kind: "message", T: RoadState, repeated: true },
   ],

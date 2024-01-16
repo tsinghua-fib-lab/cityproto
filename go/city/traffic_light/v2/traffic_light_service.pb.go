@@ -27,7 +27,7 @@ type GetTrafficLightRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 信号等相关的接口精确到junction
-	JunctionId int32 `protobuf:"varint,1,opt,name=junction_id,json=junctionId,proto3" json:"junction_id,omitempty" yaml:"junction_id" bson:"junction_id" db:"junction_id"`
+	JunctionId int32 `protobuf:"varint,1,opt,name=junction_id,json=junctionId,proto3" json:"junction_id,omitempty" bson:"junction_id" db:"junction_id" yaml:"junction_id"`
 }
 
 func (x *GetTrafficLightRequest) Reset() {
@@ -78,9 +78,9 @@ type GetTrafficLightResponse struct {
 	// 当前路口处的红绿灯
 	TrafficLight *TrafficLight `protobuf:"bytes,1,opt,name=traffic_light,json=trafficLight,proto3" json:"traffic_light,omitempty" yaml:"traffic_light" bson:"traffic_light" db:"traffic_light"`
 	// 表示当前路口处的红绿灯处于哪一个相位
-	PhaseIndex int32 `protobuf:"varint,2,opt,name=phase_index,json=phaseIndex,proto3" json:"phase_index,omitempty" bson:"phase_index" db:"phase_index" yaml:"phase_index"`
+	PhaseIndex int32 `protobuf:"varint,2,opt,name=phase_index,json=phaseIndex,proto3" json:"phase_index,omitempty" yaml:"phase_index" bson:"phase_index" db:"phase_index"`
 	// 当前相位的剩余时间
-	TimeRemaining float64 `protobuf:"fixed64,3,opt,name=time_remaining,json=timeRemaining,proto3" json:"time_remaining,omitempty" db:"time_remaining" yaml:"time_remaining" bson:"time_remaining"`
+	TimeRemaining float64 `protobuf:"fixed64,3,opt,name=time_remaining,json=timeRemaining,proto3" json:"time_remaining,omitempty" yaml:"time_remaining" bson:"time_remaining" db:"time_remaining"`
 }
 
 func (x *GetTrafficLightResponse) Reset() {
@@ -145,7 +145,7 @@ type SetTrafficLightRequest struct {
 	// 需要改变的红绿灯（含路口编号）
 	TrafficLight *TrafficLight `protobuf:"bytes,1,opt,name=traffic_light,json=trafficLight,proto3" json:"traffic_light,omitempty" yaml:"traffic_light" bson:"traffic_light" db:"traffic_light"`
 	// 指定当前路口处的红绿灯的相位
-	PhaseIndex int32 `protobuf:"varint,2,opt,name=phase_index,json=phaseIndex,proto3" json:"phase_index,omitempty" db:"phase_index" yaml:"phase_index" bson:"phase_index"`
+	PhaseIndex int32 `protobuf:"varint,2,opt,name=phase_index,json=phaseIndex,proto3" json:"phase_index,omitempty" yaml:"phase_index" bson:"phase_index" db:"phase_index"`
 	// 当前相位的剩余时间
 	TimeRemaining float64 `protobuf:"fixed64,3,opt,name=time_remaining,json=timeRemaining,proto3" json:"time_remaining,omitempty" db:"time_remaining" yaml:"time_remaining" bson:"time_remaining"`
 }
@@ -251,9 +251,9 @@ type SetTrafficLightPhaseRequest struct {
 	// 需要改变相位的路口编号
 	JunctionId int32 `protobuf:"varint,1,opt,name=junction_id,json=junctionId,proto3" json:"junction_id,omitempty" yaml:"junction_id" bson:"junction_id" db:"junction_id"`
 	// 指定当前路口红绿灯的相位
-	PhaseIndex int32 `protobuf:"varint,2,opt,name=phase_index,json=phaseIndex,proto3" json:"phase_index,omitempty" bson:"phase_index" db:"phase_index" yaml:"phase_index"`
+	PhaseIndex int32 `protobuf:"varint,2,opt,name=phase_index,json=phaseIndex,proto3" json:"phase_index,omitempty" yaml:"phase_index" bson:"phase_index" db:"phase_index"`
 	// 当前相位的剩余时间
-	TimeRemaining float64 `protobuf:"fixed64,3,opt,name=time_remaining,json=timeRemaining,proto3" json:"time_remaining,omitempty" bson:"time_remaining" db:"time_remaining" yaml:"time_remaining"`
+	TimeRemaining float64 `protobuf:"fixed64,3,opt,name=time_remaining,json=timeRemaining,proto3" json:"time_remaining,omitempty" yaml:"time_remaining" bson:"time_remaining" db:"time_remaining"`
 }
 
 func (x *SetTrafficLightPhaseRequest) Reset() {

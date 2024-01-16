@@ -1458,14 +1458,6 @@
                 </li>
               
                 <li>
-                  <a href="#city.map.v2.GetRoadByLongLatBBoxRequest"><span class="badge">M</span>GetRoadByLongLatBBoxRequest</a>
-                </li>
-              
-                <li>
-                  <a href="#city.map.v2.GetRoadByLongLatBBoxResponse"><span class="badge">M</span>GetRoadByLongLatBBoxResponse</a>
-                </li>
-              
-                <li>
                   <a href="#city.map.v2.GetRoadRequest"><span class="badge">M</span>GetRoadRequest</a>
                 </li>
               
@@ -10314,68 +10306,6 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
 
         
       
-        <h3 id="city.map.v2.GetRoadByLongLatBBoxRequest">GetRoadByLongLatBBoxRequest</h3>
-        <p>查询特定区域内的道路信息请求</p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>bound</td>
-                  <td><a href="#city.geo.v2.LongLatBBox">city.geo.v2.LongLatBBox</a></td>
-                  <td></td>
-                  <td><p>经纬度范围 </p></td>
-                </tr>
-              
-                <tr>
-                  <td>exclude_lane</td>
-                  <td><a href="#bool">bool</a></td>
-                  <td></td>
-                  <td><p>是否要排除车道信息 </p></td>
-                </tr>
-              
-                <tr>
-                  <td>exclude_person</td>
-                  <td><a href="#bool">bool</a></td>
-                  <td></td>
-                  <td><p>是否要排除车道上的人的信息（仅在包含车道信息时有效） </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-
-          
-
-        
-      
-        <h3 id="city.map.v2.GetRoadByLongLatBBoxResponse">GetRoadByLongLatBBoxResponse</h3>
-        <p>查询特定区域内的道路信息响应</p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>states</td>
-                  <td><a href="#city.map.v2.RoadState">RoadState</a></td>
-                  <td>repeated</td>
-                  <td><p>道路信息列表 </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-
-          
-
-        
-      
         <h3 id="city.map.v2.GetRoadRequest">GetRoadRequest</h3>
         <p>查询道路信息请求</p>
 
@@ -10673,13 +10603,6 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
                 <td><a href="#city.map.v2.GetRoadRequest">GetRoadRequest</a></td>
                 <td><a href="#city.map.v2.GetRoadResponse">GetRoadResponse</a></td>
                 <td><p>查询道路信息</p></td>
-              </tr>
-            
-              <tr>
-                <td>GetRoadByLongLatBBox</td>
-                <td><a href="#city.map.v2.GetRoadByLongLatBBoxRequest">GetRoadByLongLatBBoxRequest</a></td>
-                <td><a href="#city.map.v2.GetRoadByLongLatBBoxResponse">GetRoadByLongLatBBoxResponse</a></td>
-                <td><p>查询特定区域内的道路信息</p></td>
               </tr>
             
               <tr>

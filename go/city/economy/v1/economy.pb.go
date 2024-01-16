@@ -32,7 +32,7 @@ type Person struct {
 	// 起始资金
 	Money float64 `protobuf:"fixed64,2,opt,name=money,proto3" json:"money,omitempty" yaml:"money" bson:"money" db:"money"`
 	// 所在组织ID（初始化时不提供，由组织中的员工列表设定）
-	OrgId *int32 `protobuf:"varint,3,opt,name=org_id,json=orgId,proto3,oneof" json:"org_id,omitempty" yaml:"org_id" bson:"org_id" db:"org_id"`
+	OrgId *int32 `protobuf:"varint,3,opt,name=org_id,json=orgId,proto3,oneof" json:"org_id,omitempty" bson:"org_id" db:"org_id" yaml:"org_id"`
 }
 
 func (x *Person) Reset() {
@@ -153,7 +153,7 @@ type Job struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 岗位名称
-	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty" yaml:"name" bson:"name" db:"name"`
+	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty" bson:"name" db:"name" yaml:"name"`
 	// 岗位所需员工数量
 	EmployeeCount int32 `protobuf:"varint,2,opt,name=employee_count,json=employeeCount,proto3" json:"employee_count,omitempty" yaml:"employee_count" bson:"employee_count" db:"employee_count"`
 	// 岗位薪水
@@ -220,13 +220,13 @@ type Goods struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 货物类型
-	Type string `protobuf:"bytes,1,opt,name=type,proto3" json:"type,omitempty" db:"type" yaml:"type" bson:"type"`
+	Type string `protobuf:"bytes,1,opt,name=type,proto3" json:"type,omitempty" yaml:"type" bson:"type" db:"type"`
 	// 货物名称
 	Name string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty" yaml:"name" bson:"name" db:"name"`
 	// 货物数量
-	Count int32 `protobuf:"varint,3,opt,name=count,proto3" json:"count,omitempty" db:"count" yaml:"count" bson:"count"`
+	Count int32 `protobuf:"varint,3,opt,name=count,proto3" json:"count,omitempty" yaml:"count" bson:"count" db:"count"`
 	// 货物价格（允许暂未定价）
-	Price *float64 `protobuf:"fixed64,4,opt,name=price,proto3,oneof" json:"price,omitempty" db:"price" yaml:"price" bson:"price"`
+	Price *float64 `protobuf:"fixed64,4,opt,name=price,proto3,oneof" json:"price,omitempty" yaml:"price" bson:"price" db:"price"`
 }
 
 func (x *Goods) Reset() {
@@ -298,7 +298,7 @@ type Org struct {
 	// 组织ID
 	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
 	// 组织所在的POI ID
-	PoiId int32 `protobuf:"varint,2,opt,name=poi_id,json=poiId,proto3" json:"poi_id,omitempty" bson:"poi_id" db:"poi_id" yaml:"poi_id"`
+	PoiId int32 `protobuf:"varint,2,opt,name=poi_id,json=poiId,proto3" json:"poi_id,omitempty" yaml:"poi_id" bson:"poi_id" db:"poi_id"`
 	// 员工列表（初始化时由Orgs列表提供，单向绑定到person上）
 	Employees []*Employee `protobuf:"bytes,3,rep,name=employees,proto3" json:"employees,omitempty" yaml:"employees" bson:"employees" db:"employees"`
 	// 岗位列表

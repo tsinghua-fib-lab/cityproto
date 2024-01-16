@@ -78,7 +78,7 @@ type GetPersonResponse struct {
 	unknownFields protoimpl.UnknownFields
 
 	// person信息
-	Base *Person `protobuf:"bytes,1,opt,name=base,proto3" json:"base,omitempty" yaml:"base" bson:"base" db:"base"`
+	Base *Person `protobuf:"bytes,1,opt,name=base,proto3" json:"base,omitempty" db:"base" yaml:"base" bson:"base"`
 	// person运动信息
 	Motion *PersonMotion `protobuf:"bytes,2,opt,name=motion,proto3" json:"motion,omitempty" yaml:"motion" bson:"motion" db:"motion"`
 }

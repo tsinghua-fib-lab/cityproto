@@ -3,14 +3,11 @@ syntax = "proto3";
 package city.map.v2;
 
 import "city/event/v1/event.proto";
-import "city/geo/v2/geo.proto";
 import "city/map/v2/lane_service.proto";
 
 service RoadService {
   // 查询道路信息
   rpc GetRoad(GetRoadRequest) returns (GetRoadResponse);
-  // 查询特定区域内的道路信息
-  rpc GetRoadByLongLatBBox(GetRoadByLongLatBBoxRequest) returns (GetRoadByLongLatBBoxResponse);
 
   rpc GetRuinInfo(GetRuinInfoRequest) returns (GetRuinInfoResponse);
   rpc GetEvents(GetEventsRequest) returns (GetEventsResponse);
@@ -28,22 +25,6 @@ message GetRoadRequest {
 
 // 查询道路信息响应
 message GetRoadResponse {
-  // 道路信息列表
-  repeated RoadState states = 1;
-}
-
-// 查询特定区域内的道路信息请求
-message GetRoadByLongLatBBoxRequest {
-  // 经纬度范围
-  city.geo.v2.LongLatBBox bound = 1;
-  // 是否要排除车道信息
-  bool exclude_lane = 2;
-  // 是否要排除车道上的人的信息（仅在包含车道信息时有效）
-  bool exclude_person = 3;
-}
-
-// 查询特定区域内的道路信息响应
-message GetRoadByLongLatBBoxResponse {
   // 道路信息列表
   repeated RoadState states = 1;
 }

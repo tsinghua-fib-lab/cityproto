@@ -28,7 +28,7 @@ type RainPeriod struct {
 	// 起始时间点，单位为秒，但必须整小时
 	Start int32 `protobuf:"varint,1,opt,name=start,proto3" json:"start,omitempty" yaml:"start" bson:"start" db:"start"`
 	// 降雨量：单位mm
-	Rainfall float64 `protobuf:"fixed64,2,opt,name=rainfall,proto3" json:"rainfall,omitempty" yaml:"rainfall" bson:"rainfall" db:"rainfall"`
+	Rainfall float64 `protobuf:"fixed64,2,opt,name=rainfall,proto3" json:"rainfall,omitempty" bson:"rainfall" db:"rainfall" yaml:"rainfall"`
 }
 
 func (x *RainPeriod) Reset() {
