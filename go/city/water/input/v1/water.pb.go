@@ -83,7 +83,7 @@ type Rain struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Rains []*RainPeriod `protobuf:"bytes,1,rep,name=rains,proto3" json:"rains,omitempty" bson:"rains" db:"rains" yaml:"rains"`
+	Rains []*RainPeriod `protobuf:"bytes,1,rep,name=rains,proto3" json:"rains,omitempty" yaml:"rains" bson:"rains" db:"rains"`
 }
 
 func (x *Rain) Reset() {

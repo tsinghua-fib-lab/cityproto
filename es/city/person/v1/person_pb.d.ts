@@ -9,6 +9,146 @@ import type { Position } from "../../geo/v2/geo_pb.js";
 import type { Schedule } from "../../trip/v2/trip_pb.js";
 
 /**
+ * 智能体教育等级
+ *
+ * @generated from enum city.person.v1.Education
+ */
+export declare enum Education {
+  /**
+   * 未指定
+   *
+   * @generated from enum value: EDUCATION_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * 博士
+   *
+   * @generated from enum value: EDUCATION_DOCTOR = 1;
+   */
+  DOCTOR = 1,
+
+  /**
+   * 硕士
+   *
+   * @generated from enum value: EDUCATION_MASTER = 2;
+   */
+  MASTER = 2,
+
+  /**
+   * 本科
+   *
+   * @generated from enum value: EDUCATION_BACHELOR = 3;
+   */
+  BACHELOR = 3,
+
+  /**
+   * 高中
+   *
+   * @generated from enum value: EDUCATION_HIGH_SCHOOL = 4;
+   */
+  HIGH_SCHOOL = 4,
+
+  /**
+   * 初中
+   *
+   * @generated from enum value: EDUCATION_JUNIOR_HIGH_SCHOOL = 5;
+   */
+  JUNIOR_HIGH_SCHOOL = 5,
+
+  /**
+   * 小学
+   *
+   * @generated from enum value: EDUCATION_PRIMARY_SCHOOL = 6;
+   */
+  PRIMARY_SCHOOL = 6,
+
+  /**
+   * 大专
+   *
+   * @generated from enum value: EDUCATION_COLLEGE = 7;
+   */
+  COLLEGE = 7,
+}
+
+/**
+ * 智能体性别
+ *
+ * @generated from enum city.person.v1.Gender
+ */
+export declare enum Gender {
+  /**
+   * 未指定
+   *
+   * @generated from enum value: GENDER_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * 男性
+   *
+   * @generated from enum value: GENDER_MALE = 1;
+   */
+  MALE = 1,
+
+  /**
+   * 女性
+   *
+   * @generated from enum value: GENDER_FEMALE = 2;
+   */
+  FEMALE = 2,
+}
+
+/**
+ * 智能体消费水平
+ *
+ * @generated from enum city.person.v1.Consumption
+ */
+export declare enum Consumption {
+  /**
+   * 未指定
+   *
+   * @generated from enum value: CONSUMPTION_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * 低
+   *
+   * @generated from enum value: CONSUMPTION_LOW = 1;
+   */
+  LOW = 1,
+
+  /**
+   * 较低
+   *
+   * @generated from enum value: CONSUMPTION_RELATIVELY_LOW = 2;
+   */
+  RELATIVELY_LOW = 2,
+
+  /**
+   * 中等
+   *
+   * @generated from enum value: CONSUMPTION_MEDIUM = 3;
+   */
+  MEDIUM = 3,
+
+  /**
+   * 较高
+   *
+   * @generated from enum value: CONSUMPTION_RELATIVELY_HIGH = 4;
+   */
+  RELATIVELY_HIGH = 4,
+
+  /**
+   * 高
+   *
+   * @generated from enum value: CONSUMPTION_HIGH = 5;
+   */
+  HIGH = 5,
+}
+
+/**
  * 智能体属性（通用）
  *
  * @generated from message city.person.v1.PersonAttribute
@@ -170,6 +310,49 @@ export declare class BikeAttribute extends Message<BikeAttribute> {
 }
 
 /**
+ * 智能体简介
+ *
+ * @generated from message city.person.v1.PersonProfile
+ */
+export declare class PersonProfile extends Message<PersonProfile> {
+  /**
+   * 年龄
+   *
+   * @generated from field: int32 age = 1;
+   */
+  age: number;
+
+  /**
+   * @generated from field: city.person.v1.Education education = 2;
+   */
+  education: Education;
+
+  /**
+   * @generated from field: city.person.v1.Gender gender = 3;
+   */
+  gender: Gender;
+
+  /**
+   * @generated from field: city.person.v1.Consumption consumption = 4;
+   */
+  consumption: Consumption;
+
+  constructor(data?: PartialMessage<PersonProfile>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.person.v1.PersonProfile";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PersonProfile;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PersonProfile;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PersonProfile;
+
+  static equals(a: PersonProfile | PlainMessage<PersonProfile> | undefined, b: PersonProfile | PlainMessage<PersonProfile> | undefined): boolean;
+}
+
+/**
  * 智能体
  *
  * @generated from message city.person.v1.Person
@@ -230,6 +413,13 @@ export declare class Person extends Message<Person> {
    * @generated from field: map<string, string> labels = 10;
    */
   labels: { [key: string]: string };
+
+  /**
+   * [可空] 智能体简介
+   *
+   * @generated from field: optional city.person.v1.PersonProfile profile = 11;
+   */
+  profile?: PersonProfile;
 
   constructor(data?: PartialMessage<Person>);
 

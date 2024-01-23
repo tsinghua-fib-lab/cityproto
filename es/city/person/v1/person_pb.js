@@ -8,6 +8,56 @@ import { Position } from "../../geo/v2/geo_pb.js";
 import { Schedule } from "../../trip/v2/trip_pb.js";
 
 /**
+ * 智能体教育等级
+ *
+ * @generated from enum city.person.v1.Education
+ */
+export const Education = proto3.makeEnum(
+  "city.person.v1.Education",
+  [
+    {no: 0, name: "EDUCATION_UNSPECIFIED", localName: "UNSPECIFIED"},
+    {no: 1, name: "EDUCATION_DOCTOR", localName: "DOCTOR"},
+    {no: 2, name: "EDUCATION_MASTER", localName: "MASTER"},
+    {no: 3, name: "EDUCATION_BACHELOR", localName: "BACHELOR"},
+    {no: 4, name: "EDUCATION_HIGH_SCHOOL", localName: "HIGH_SCHOOL"},
+    {no: 5, name: "EDUCATION_JUNIOR_HIGH_SCHOOL", localName: "JUNIOR_HIGH_SCHOOL"},
+    {no: 6, name: "EDUCATION_PRIMARY_SCHOOL", localName: "PRIMARY_SCHOOL"},
+    {no: 7, name: "EDUCATION_COLLEGE", localName: "COLLEGE"},
+  ],
+);
+
+/**
+ * 智能体性别
+ *
+ * @generated from enum city.person.v1.Gender
+ */
+export const Gender = proto3.makeEnum(
+  "city.person.v1.Gender",
+  [
+    {no: 0, name: "GENDER_UNSPECIFIED", localName: "UNSPECIFIED"},
+    {no: 1, name: "GENDER_MALE", localName: "MALE"},
+    {no: 2, name: "GENDER_FEMALE", localName: "FEMALE"},
+  ],
+);
+
+/**
+ * 智能体消费水平
+ *
+ * @generated from enum city.person.v1.Consumption
+ */
+export const Consumption = proto3.makeEnum(
+  "city.person.v1.Consumption",
+  [
+    {no: 0, name: "CONSUMPTION_UNSPECIFIED", localName: "UNSPECIFIED"},
+    {no: 1, name: "CONSUMPTION_LOW", localName: "LOW"},
+    {no: 2, name: "CONSUMPTION_RELATIVELY_LOW", localName: "RELATIVELY_LOW"},
+    {no: 3, name: "CONSUMPTION_MEDIUM", localName: "MEDIUM"},
+    {no: 4, name: "CONSUMPTION_RELATIVELY_HIGH", localName: "RELATIVELY_HIGH"},
+    {no: 5, name: "CONSUMPTION_HIGH", localName: "HIGH"},
+  ],
+);
+
+/**
  * 智能体属性（通用）
  *
  * @generated from message city.person.v1.PersonAttribute
@@ -62,6 +112,21 @@ export const BikeAttribute = proto3.makeMessageType(
 );
 
 /**
+ * 智能体简介
+ *
+ * @generated from message city.person.v1.PersonProfile
+ */
+export const PersonProfile = proto3.makeMessageType(
+  "city.person.v1.PersonProfile",
+  () => [
+    { no: 1, name: "age", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "education", kind: "enum", T: proto3.getEnumType(Education) },
+    { no: 3, name: "gender", kind: "enum", T: proto3.getEnumType(Gender) },
+    { no: 4, name: "consumption", kind: "enum", T: proto3.getEnumType(Consumption) },
+  ],
+);
+
+/**
  * 智能体
  *
  * @generated from message city.person.v1.Person
@@ -77,6 +142,7 @@ export const Person = proto3.makeMessageType(
     { no: 8, name: "bus_attribute", kind: "message", T: BusAttribute, opt: true },
     { no: 9, name: "bike_attribute", kind: "message", T: BikeAttribute, opt: true },
     { no: 10, name: "labels", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 9 /* ScalarType.STRING */} },
+    { no: 11, name: "profile", kind: "message", T: PersonProfile, opt: true },
   ],
 );
 
