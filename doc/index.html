@@ -1548,6 +1548,10 @@
                 </li>
               
                 <li>
+                  <a href="#city.person.v1.PersonProfile"><span class="badge">M</span>PersonProfile</a>
+                </li>
+              
+                <li>
                   <a href="#city.person.v1.Persons"><span class="badge">M</span>Persons</a>
                 </li>
               
@@ -1555,6 +1559,18 @@
                   <a href="#city.person.v1.VehicleAttribute"><span class="badge">M</span>VehicleAttribute</a>
                 </li>
               
+              
+                <li>
+                  <a href="#city.person.v1.Consumption"><span class="badge">E</span>Consumption</a>
+                </li>
+              
+                <li>
+                  <a href="#city.person.v1.Education"><span class="badge">E</span>Education</a>
+                </li>
+              
+                <li>
+                  <a href="#city.person.v1.Gender"><span class="badge">E</span>Gender</a>
+                </li>
               
               
               
@@ -10822,6 +10838,13 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
                   <td><p>[可空] 额外的标签（例如：抢修车类型-&gt;电网） </p></td>
                 </tr>
               
+                <tr>
+                  <td>profile</td>
+                  <td><a href="#city.person.v1.PersonProfile">PersonProfile</a></td>
+                  <td>optional</td>
+                  <td><p>[可空] 智能体简介 </p></td>
+                </tr>
+              
             </tbody>
           </table>
 
@@ -10926,6 +10949,51 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
 
         
       
+        <h3 id="city.person.v1.PersonProfile">PersonProfile</h3>
+        <p>智能体简介</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>age</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p>年龄 </p></td>
+                </tr>
+              
+                <tr>
+                  <td>education</td>
+                  <td><a href="#city.person.v1.Education">Education</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>gender</td>
+                  <td><a href="#city.person.v1.Gender">Gender</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>consumption</td>
+                  <td><a href="#city.person.v1.Consumption">Consumption</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
         <h3 id="city.person.v1.Persons">Persons</h3>
         <p>智能体集合，对应一个智能体pb文件或一个智能体mongodb collection</p>
 
@@ -10982,6 +11050,141 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
         
       
 
+      
+        <h3 id="city.person.v1.Consumption">Consumption</h3>
+        <p>智能体消费水平</p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>CONSUMPTION_UNSPECIFIED</td>
+                <td>0</td>
+                <td><p>未指定</p></td>
+              </tr>
+            
+              <tr>
+                <td>CONSUMPTION_LOW</td>
+                <td>1</td>
+                <td><p>低</p></td>
+              </tr>
+            
+              <tr>
+                <td>CONSUMPTION_RELATIVELY_LOW</td>
+                <td>2</td>
+                <td><p>较低</p></td>
+              </tr>
+            
+              <tr>
+                <td>CONSUMPTION_MEDIUM</td>
+                <td>3</td>
+                <td><p>中等</p></td>
+              </tr>
+            
+              <tr>
+                <td>CONSUMPTION_RELATIVELY_HIGH</td>
+                <td>4</td>
+                <td><p>较高</p></td>
+              </tr>
+            
+              <tr>
+                <td>CONSUMPTION_HIGH</td>
+                <td>5</td>
+                <td><p>高</p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+      
+        <h3 id="city.person.v1.Education">Education</h3>
+        <p>智能体教育等级</p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>EDUCATION_UNSPECIFIED</td>
+                <td>0</td>
+                <td><p>未指定</p></td>
+              </tr>
+            
+              <tr>
+                <td>EDUCATION_DOCTOR</td>
+                <td>1</td>
+                <td><p>博士</p></td>
+              </tr>
+            
+              <tr>
+                <td>EDUCATION_MASTER</td>
+                <td>2</td>
+                <td><p>硕士</p></td>
+              </tr>
+            
+              <tr>
+                <td>EDUCATION_BACHELOR</td>
+                <td>3</td>
+                <td><p>本科</p></td>
+              </tr>
+            
+              <tr>
+                <td>EDUCATION_HIGH_SCHOOL</td>
+                <td>4</td>
+                <td><p>高中</p></td>
+              </tr>
+            
+              <tr>
+                <td>EDUCATION_JUNIOR_HIGH_SCHOOL</td>
+                <td>5</td>
+                <td><p>初中</p></td>
+              </tr>
+            
+              <tr>
+                <td>EDUCATION_PRIMARY_SCHOOL</td>
+                <td>6</td>
+                <td><p>小学</p></td>
+              </tr>
+            
+              <tr>
+                <td>EDUCATION_COLLEGE</td>
+                <td>7</td>
+                <td><p>大专</p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+      
+        <h3 id="city.person.v1.Gender">Gender</h3>
+        <p>智能体性别</p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>GENDER_UNSPECIFIED</td>
+                <td>0</td>
+                <td><p>未指定</p></td>
+              </tr>
+            
+              <tr>
+                <td>GENDER_MALE</td>
+                <td>1</td>
+                <td><p>男性</p></td>
+              </tr>
+            
+              <tr>
+                <td>GENDER_FEMALE</td>
+                <td>2</td>
+                <td><p>女性</p></td>
+              </tr>
+            
+          </tbody>
+        </table>
       
 
       

@@ -1,10 +1,54 @@
 from city.geo.v2 import geo_pb2 as _geo_pb2
 from city.trip.v2 import trip_pb2 as _trip_pb2
 from google.protobuf.internal import containers as _containers
+from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
+
+class Education(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+    __slots__ = []
+    EDUCATION_UNSPECIFIED: _ClassVar[Education]
+    EDUCATION_DOCTOR: _ClassVar[Education]
+    EDUCATION_MASTER: _ClassVar[Education]
+    EDUCATION_BACHELOR: _ClassVar[Education]
+    EDUCATION_HIGH_SCHOOL: _ClassVar[Education]
+    EDUCATION_JUNIOR_HIGH_SCHOOL: _ClassVar[Education]
+    EDUCATION_PRIMARY_SCHOOL: _ClassVar[Education]
+    EDUCATION_COLLEGE: _ClassVar[Education]
+
+class Gender(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+    __slots__ = []
+    GENDER_UNSPECIFIED: _ClassVar[Gender]
+    GENDER_MALE: _ClassVar[Gender]
+    GENDER_FEMALE: _ClassVar[Gender]
+
+class Consumption(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+    __slots__ = []
+    CONSUMPTION_UNSPECIFIED: _ClassVar[Consumption]
+    CONSUMPTION_LOW: _ClassVar[Consumption]
+    CONSUMPTION_RELATIVELY_LOW: _ClassVar[Consumption]
+    CONSUMPTION_MEDIUM: _ClassVar[Consumption]
+    CONSUMPTION_RELATIVELY_HIGH: _ClassVar[Consumption]
+    CONSUMPTION_HIGH: _ClassVar[Consumption]
+EDUCATION_UNSPECIFIED: Education
+EDUCATION_DOCTOR: Education
+EDUCATION_MASTER: Education
+EDUCATION_BACHELOR: Education
+EDUCATION_HIGH_SCHOOL: Education
+EDUCATION_JUNIOR_HIGH_SCHOOL: Education
+EDUCATION_PRIMARY_SCHOOL: Education
+EDUCATION_COLLEGE: Education
+GENDER_UNSPECIFIED: Gender
+GENDER_MALE: Gender
+GENDER_FEMALE: Gender
+CONSUMPTION_UNSPECIFIED: Consumption
+CONSUMPTION_LOW: Consumption
+CONSUMPTION_RELATIVELY_LOW: Consumption
+CONSUMPTION_MEDIUM: Consumption
+CONSUMPTION_RELATIVELY_HIGH: Consumption
+CONSUMPTION_HIGH: Consumption
 
 class PersonAttribute(_message.Message):
     __slots__ = ['length', 'width', 'max_speed', 'max_acceleration', 'max_braking_acceleration', 'usual_acceleration', 'usual_braking_acceleration']
@@ -52,8 +96,22 @@ class BikeAttribute(_message.Message):
     def __init__(self) -> None:
         ...
 
+class PersonProfile(_message.Message):
+    __slots__ = ['age', 'education', 'gender', 'consumption']
+    AGE_FIELD_NUMBER: _ClassVar[int]
+    EDUCATION_FIELD_NUMBER: _ClassVar[int]
+    GENDER_FIELD_NUMBER: _ClassVar[int]
+    CONSUMPTION_FIELD_NUMBER: _ClassVar[int]
+    age: int
+    education: Education
+    gender: Gender
+    consumption: Consumption
+
+    def __init__(self, age: _Optional[int]=..., education: _Optional[_Union[Education, str]]=..., gender: _Optional[_Union[Gender, str]]=..., consumption: _Optional[_Union[Consumption, str]]=...) -> None:
+        ...
+
 class Person(_message.Message):
-    __slots__ = ['id', 'attribute', 'home', 'schedules', 'vehicle_attribute', 'bus_attribute', 'bike_attribute', 'labels']
+    __slots__ = ['id', 'attribute', 'home', 'schedules', 'vehicle_attribute', 'bus_attribute', 'bike_attribute', 'labels', 'profile']
 
     class LabelsEntry(_message.Message):
         __slots__ = ['key', 'value']
@@ -72,6 +130,7 @@ class Person(_message.Message):
     BUS_ATTRIBUTE_FIELD_NUMBER: _ClassVar[int]
     BIKE_ATTRIBUTE_FIELD_NUMBER: _ClassVar[int]
     LABELS_FIELD_NUMBER: _ClassVar[int]
+    PROFILE_FIELD_NUMBER: _ClassVar[int]
     id: int
     attribute: PersonAttribute
     home: _geo_pb2.Position
@@ -80,8 +139,9 @@ class Person(_message.Message):
     bus_attribute: BusAttribute
     bike_attribute: BikeAttribute
     labels: _containers.ScalarMap[str, str]
+    profile: PersonProfile
 
-    def __init__(self, id: _Optional[int]=..., attribute: _Optional[_Union[PersonAttribute, _Mapping]]=..., home: _Optional[_Union[_geo_pb2.Position, _Mapping]]=..., schedules: _Optional[_Iterable[_Union[_trip_pb2.Schedule, _Mapping]]]=..., vehicle_attribute: _Optional[_Union[VehicleAttribute, _Mapping]]=..., bus_attribute: _Optional[_Union[BusAttribute, _Mapping]]=..., bike_attribute: _Optional[_Union[BikeAttribute, _Mapping]]=..., labels: _Optional[_Mapping[str, str]]=...) -> None:
+    def __init__(self, id: _Optional[int]=..., attribute: _Optional[_Union[PersonAttribute, _Mapping]]=..., home: _Optional[_Union[_geo_pb2.Position, _Mapping]]=..., schedules: _Optional[_Iterable[_Union[_trip_pb2.Schedule, _Mapping]]]=..., vehicle_attribute: _Optional[_Union[VehicleAttribute, _Mapping]]=..., bus_attribute: _Optional[_Union[BusAttribute, _Mapping]]=..., bike_attribute: _Optional[_Union[BikeAttribute, _Mapping]]=..., labels: _Optional[_Mapping[str, str]]=..., profile: _Optional[_Union[PersonProfile, _Mapping]]=...) -> None:
         ...
 
 class Persons(_message.Message):
