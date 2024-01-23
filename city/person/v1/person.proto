@@ -45,6 +45,61 @@ message BusAttribute {
 // 自行车附加属性
 message BikeAttribute {}
 
+// 智能体教育等级
+enum Education {
+  // 未指定
+  EDUCATION_UNSPECIFIED = 0;
+  // 博士
+  EDUCATION_DOCTOR = 1;
+  // 硕士
+  EDUCATION_MASTER = 2;
+  // 本科
+  EDUCATION_BACHELOR = 3;
+  // 高中
+  EDUCATION_HIGH_SCHOOL = 4;
+  // 初中
+  EDUCATION_JUNIOR_HIGH_SCHOOL = 5;
+  // 小学
+  EDUCATION_PRIMARY_SCHOOL = 6;
+  // 大专
+  EDUCATION_COLLEGE = 7;
+}
+
+// 智能体性别
+enum Gender {
+  // 未指定
+  GENDER_UNSPECIFIED = 0;
+  // 男性
+  GENDER_MALE = 1;
+  // 女性
+  GENDER_FEMALE = 2;
+}
+
+// 智能体消费水平
+enum Consumption {
+  // 未指定
+  CONSUMPTION_UNSPECIFIED = 0;
+  // 低
+  CONSUMPTION_LOW = 1;
+  // 较低
+  CONSUMPTION_RELATIVELY_LOW = 2;
+  // 中等
+  CONSUMPTION_MEDIUM = 3;
+  // 较高
+  CONSUMPTION_RELATIVELY_HIGH = 4;
+  // 高
+  CONSUMPTION_HIGH = 5;
+}
+
+// 智能体简介
+message PersonProfile {
+  // 年龄
+  int32 age = 1;
+  Education education = 2;
+  Gender gender = 3;
+  Consumption consumption = 4;
+}
+
 // 智能体
 message Person {
   // 智能体ID
@@ -63,9 +118,9 @@ message Person {
   optional BikeAttribute bike_attribute = 9;
   // [可空] 额外的标签（例如：抢修车类型->电网）
   map<string, string> labels = 10;
+  // [可空] 智能体简介
+  optional PersonProfile profile = 11;
 }
 
 // 智能体集合，对应一个智能体pb文件或一个智能体mongodb collection
-message Persons {
-  repeated Person persons = 1;
-}
+message Persons { repeated Person persons = 1; }
