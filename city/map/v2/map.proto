@@ -109,9 +109,9 @@ message Lane {
   // 车道中心线（车辆/行车轨迹线）
   Polyline center_line = 7;
   // 车道左边界线
-  Polyline left_border_line = 8 [deprecated = true]; // 弃用
+  Polyline left_border_line = 8 [ deprecated = true ]; // 弃用
   // 车道右边界线
-  Polyline right_border_line = 9 [deprecated = true]; // 弃用
+  Polyline right_border_line = 9 [ deprecated = true ]; // 弃用
 
   // Lanes can drive / walk from
   // 对于Junction内的车道至多1个前驱
@@ -155,6 +155,8 @@ message NextRoadLanePlan {
 message Road {
   // 道路id（从2_0000_0000开始）
   int32 id = 1;
+  // 道路名字
+  string name = 4;
   // 属于该道路Road的所有车道/人行道等lane
   // lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺序给出的
   repeated int32 lane_ids = 2;
@@ -223,8 +225,10 @@ enum LandUseType {
 message Aoi {
   // Aoi ID（从5_0000_0000开始）
   int32 id = 1;
-  // Aoi名称
-  AoiType type = 2 [deprecated = true];
+  // Aoi名字
+  string name = 11;
+  // Aoi类型
+  AoiType type = 2 [ deprecated = true ];
 
   // Aoi与行车路网的连接点
   repeated city.geo.v2.LanePosition driving_positions = 3;
