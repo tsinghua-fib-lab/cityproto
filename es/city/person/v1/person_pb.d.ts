@@ -323,16 +323,22 @@ export declare class PersonProfile extends Message<PersonProfile> {
   age: number;
 
   /**
+   * 教育水平
+   *
    * @generated from field: city.person.v1.Education education = 2;
    */
   education: Education;
 
   /**
+   * 性别
+   *
    * @generated from field: city.person.v1.Gender gender = 3;
    */
   gender: Gender;
 
   /**
+   * 消费水平
+   *
    * @generated from field: city.person.v1.Consumption consumption = 4;
    */
   consumption: Consumption;

@@ -30,9 +30,9 @@ type Person struct {
 	// 与person id一致
 	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
 	// 起始资金
-	Money float64 `protobuf:"fixed64,2,opt,name=money,proto3" json:"money,omitempty" yaml:"money" bson:"money" db:"money"`
+	Money float64 `protobuf:"fixed64,2,opt,name=money,proto3" json:"money,omitempty" bson:"money" db:"money" yaml:"money"`
 	// 所在组织ID（初始化时不提供，由组织中的员工列表设定）
-	OrgId *int32 `protobuf:"varint,3,opt,name=org_id,json=orgId,proto3,oneof" json:"org_id,omitempty" yaml:"org_id" bson:"org_id" db:"org_id"`
+	OrgId *int32 `protobuf:"varint,3,opt,name=org_id,json=orgId,proto3,oneof" json:"org_id,omitempty" db:"org_id" yaml:"org_id" bson:"org_id"`
 }
 
 func (x *Person) Reset() {
@@ -153,7 +153,7 @@ type Job struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 岗位名称
-	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty" db:"name" yaml:"name" bson:"name"`
+	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty" yaml:"name" bson:"name" db:"name"`
 	// 岗位所需员工数量
 	EmployeeCount int32 `protobuf:"varint,2,opt,name=employee_count,json=employeeCount,proto3" json:"employee_count,omitempty" yaml:"employee_count" bson:"employee_count" db:"employee_count"`
 	// 岗位薪水
@@ -226,7 +226,7 @@ type Goods struct {
 	// 货物数量
 	Count int32 `protobuf:"varint,3,opt,name=count,proto3" json:"count,omitempty" yaml:"count" bson:"count" db:"count"`
 	// 货物价格（允许暂未定价）
-	Price *float64 `protobuf:"fixed64,4,opt,name=price,proto3,oneof" json:"price,omitempty" bson:"price" db:"price" yaml:"price"`
+	Price *float64 `protobuf:"fixed64,4,opt,name=price,proto3,oneof" json:"price,omitempty" yaml:"price" bson:"price" db:"price"`
 }
 
 func (x *Goods) Reset() {
@@ -302,9 +302,9 @@ type Org struct {
 	// 员工列表（初始化时由Orgs列表提供，单向绑定到person上）
 	Employees []*Employee `protobuf:"bytes,3,rep,name=employees,proto3" json:"employees,omitempty" yaml:"employees" bson:"employees" db:"employees"`
 	// 岗位列表
-	Jobs []*Job `protobuf:"bytes,4,rep,name=jobs,proto3" json:"jobs,omitempty" bson:"jobs" db:"jobs" yaml:"jobs"`
+	Jobs []*Job `protobuf:"bytes,4,rep,name=jobs,proto3" json:"jobs,omitempty" db:"jobs" yaml:"jobs" bson:"jobs"`
 	// 资金
-	Money float64 `protobuf:"fixed64,5,opt,name=money,proto3" json:"money,omitempty" yaml:"money" bson:"money" db:"money"`
+	Money float64 `protobuf:"fixed64,5,opt,name=money,proto3" json:"money,omitempty" db:"money" yaml:"money" bson:"money"`
 	// 货物
 	Goods []*Goods `protobuf:"bytes,6,rep,name=goods,proto3" json:"goods,omitempty" yaml:"goods" bson:"goods" db:"goods"`
 	// 功能列表

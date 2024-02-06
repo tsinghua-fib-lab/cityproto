@@ -198,6 +198,7 @@ export const Road = proto3.makeMessageType(
   "city.map.v2.Road",
   () => [
     { no: 1, name: "id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "lane_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
     { no: 3, name: "next_road_lane_plans", kind: "message", T: NextRoadLanePlan, repeated: true },
   ],
@@ -245,6 +246,7 @@ export const Aoi = proto3.makeMessageType(
   "city.map.v2.Aoi",
   () => [
     { no: 1, name: "id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 11, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "type", kind: "enum", T: proto3.getEnumType(AoiType) },
     { no: 3, name: "driving_positions", kind: "message", T: LanePosition, repeated: true },
     { no: 4, name: "walking_positions", kind: "message", T: LanePosition, repeated: true },

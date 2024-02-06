@@ -203,7 +203,7 @@ type DrivingJourneyBody struct {
 	// 优先使用road_ids，如果road_ids为空，则使用route（也可以直接忽略route）
 	RoadIds []int32 `protobuf:"varint,2,rep,packed,name=road_ids,json=roadIds,proto3" json:"road_ids,omitempty" yaml:"road_ids" bson:"road_ids" db:"road_ids"`
 	// 从起点到终点预计的时间(estimation time of arrival)
-	Eta float64 `protobuf:"fixed64,3,opt,name=eta,proto3" json:"eta,omitempty" yaml:"eta" bson:"eta" db:"eta"`
+	Eta float64 `protobuf:"fixed64,3,opt,name=eta,proto3" json:"eta,omitempty" bson:"eta" db:"eta" yaml:"eta"`
 }
 
 func (x *DrivingJourneyBody) Reset() {
@@ -319,7 +319,7 @@ type WalkingJourneyBody struct {
 	// 从起点到终点的（Lane+方向）序列
 	Route []*WalkingRouteSegment `protobuf:"bytes,1,rep,name=route,proto3" json:"route,omitempty" yaml:"route" bson:"route" db:"route"`
 	// 从起点到终点预计的时间(estimation time of arrival)
-	Eta float64 `protobuf:"fixed64,2,opt,name=eta,proto3" json:"eta,omitempty" bson:"eta" db:"eta" yaml:"eta"`
+	Eta float64 `protobuf:"fixed64,2,opt,name=eta,proto3" json:"eta,omitempty" yaml:"eta" bson:"eta" db:"eta"`
 }
 
 func (x *WalkingJourneyBody) Reset() {
@@ -373,8 +373,8 @@ type BusJourneyBody struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	LineId         int32 `protobuf:"varint,1,opt,name=line_id,json=lineId,proto3" json:"line_id,omitempty" yaml:"line_id" bson:"line_id" db:"line_id"`
-	StartStationId int32 `protobuf:"varint,2,opt,name=start_station_id,json=startStationId,proto3" json:"start_station_id,omitempty" yaml:"start_station_id" bson:"start_station_id" db:"start_station_id"`
+	LineId         int32 `protobuf:"varint,1,opt,name=line_id,json=lineId,proto3" json:"line_id,omitempty" db:"line_id" yaml:"line_id" bson:"line_id"`
+	StartStationId int32 `protobuf:"varint,2,opt,name=start_station_id,json=startStationId,proto3" json:"start_station_id,omitempty" db:"start_station_id" yaml:"start_station_id" bson:"start_station_id"`
 	EndStationId   int32 `protobuf:"varint,3,opt,name=end_station_id,json=endStationId,proto3" json:"end_station_id,omitempty" yaml:"end_station_id" bson:"end_station_id" db:"end_station_id"`
 }
 
@@ -438,9 +438,9 @@ type Journey struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 出行方式
-	Type JourneyType `protobuf:"varint,1,opt,name=type,proto3,enum=city.routing.v2.JourneyType" json:"type,omitempty" bson:"type" db:"type" yaml:"type"`
+	Type JourneyType `protobuf:"varint,1,opt,name=type,proto3,enum=city.routing.v2.JourneyType" json:"type,omitempty" yaml:"type" bson:"type" db:"type"`
 	// 驾车
-	Driving *DrivingJourneyBody `protobuf:"bytes,2,opt,name=driving,proto3,oneof" json:"driving,omitempty" db:"driving" yaml:"driving" bson:"driving"`
+	Driving *DrivingJourneyBody `protobuf:"bytes,2,opt,name=driving,proto3,oneof" json:"driving,omitempty" bson:"driving" db:"driving" yaml:"driving"`
 	// 步行
 	Walking *WalkingJourneyBody `protobuf:"bytes,3,opt,name=walking,proto3,oneof" json:"walking,omitempty" yaml:"walking" bson:"walking" db:"walking"`
 	// 公交
@@ -517,8 +517,8 @@ type BusLine struct {
 	LineId int32 `protobuf:"varint,1,opt,name=line_id,json=lineId,proto3" json:"line_id,omitempty" yaml:"line_id" bson:"line_id" db:"line_id"`
 	// 停靠站点AOI ID列表
 	Stops     []int32   `protobuf:"varint,2,rep,packed,name=stops,proto3" json:"stops,omitempty" yaml:"stops" bson:"stops" db:"stops"`
-	Distances []float64 `protobuf:"fixed64,3,rep,packed,name=distances,proto3" json:"distances,omitempty" bson:"distances" db:"distances" yaml:"distances"`
-	Interval  int32     `protobuf:"varint,4,opt,name=interval,proto3" json:"interval,omitempty" bson:"interval" db:"interval" yaml:"interval"`
+	Distances []float64 `protobuf:"fixed64,3,rep,packed,name=distances,proto3" json:"distances,omitempty" db:"distances" yaml:"distances" bson:"distances"`
+	Interval  int32     `protobuf:"varint,4,opt,name=interval,proto3" json:"interval,omitempty" yaml:"interval" bson:"interval" db:"interval"`
 	Count     int32     `protobuf:"varint,5,opt,name=count,proto3" json:"count,omitempty" yaml:"count" bson:"count" db:"count"`
 }
 
@@ -595,7 +595,7 @@ type BusLines struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Lines []*BusLine `protobuf:"bytes,1,rep,name=lines,proto3" json:"lines,omitempty" yaml:"lines" bson:"lines" db:"lines"`
+	Lines []*BusLine `protobuf:"bytes,1,rep,name=lines,proto3" json:"lines,omitempty" db:"lines" yaml:"lines" bson:"lines"`
 }
 
 func (x *BusLines) Reset() {
@@ -702,7 +702,7 @@ type RoadStatuses struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	RoadStatuses []*RoadStatus `protobuf:"bytes,1,rep,name=road_statuses,json=roadStatuses,proto3" json:"road_statuses,omitempty" yaml:"road_statuses" bson:"road_statuses" db:"road_statuses"`
+	RoadStatuses []*RoadStatus `protobuf:"bytes,1,rep,name=road_statuses,json=roadStatuses,proto3" json:"road_statuses,omitempty" db:"road_statuses" yaml:"road_statuses" bson:"road_statuses"`
 }
 
 func (x *RoadStatuses) Reset() {

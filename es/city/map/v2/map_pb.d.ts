@@ -588,6 +588,13 @@ export declare class Road extends Message<Road> {
   id: number;
 
   /**
+   * 道路名字
+   *
+   * @generated from field: string name = 4;
+   */
+  name: string;
+
+  /**
    * 属于该道路Road的所有车道/人行道等lane
    * lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺序给出的
    *
@@ -738,7 +745,14 @@ export declare class Aoi extends Message<Aoi> {
   id: number;
 
   /**
-   * Aoi名称
+   * Aoi名字
+   *
+   * @generated from field: string name = 11;
+   */
+  name: string;
+
+  /**
+   * Aoi类型
    *
    * @generated from field: city.map.v2.AoiType type = 2 [deprecated = true];
    * @deprecated
