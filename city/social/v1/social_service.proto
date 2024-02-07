@@ -6,28 +6,37 @@ import "city/social/v1/message.proto";
 
 service SocialService {
   // 发送消息
+  // Send message
   rpc Send(SendRequest) returns (SendResponse);
   // 接收消息，并清空该用户的消息队列
+  // Receive messages and clear the user's message queue
   rpc Receive(ReceiveRequest) returns (ReceiveResponse);
 }
 
 // 发送消息请求
+// Request for sendding message
 message SendRequest {
   // 待发送的消息
+  // Messages to send
   repeated Message messages = 1;
 }
 
 // 发送消息响应
+// Response of sendding message
 message SendResponse {}
 
 // 接收消息请求
+// Request for receiving message
 message ReceiveRequest {
   // 消息接收者ID（即为自身ID）
+  // Message receiver ID (i.e. self.ID)
   int32 id = 1;
 }
 
 // 接收消息响应
+// Response of receiving messages
 message ReceiveResponse {
   // 接收到的消息
+  // Received messages
   repeated Message messages = 1;
 }

@@ -8,62 +8,83 @@ import "city/traffic_light/v2/traffic_light.proto";
 
 service LaneService {
   // 设置Lane的最大速度（限速）
+  // Set Lane's maximum speed (speed limit)
   rpc SetLaneMaxV(SetLaneMaxVRequest) returns (SetLaneMaxVResponse);
   // 获取Lane的信息
+  // Get Lane information
   rpc GetLane(GetLaneRequest) returns (GetLaneResponse);
   // 获取特定区域内的Lane的信息
+  // Get Lane information in a specific region
   rpc GetLaneByLongLatBBox(GetLaneByLongLatBBoxRequest) returns (GetLaneByLongLatBBoxResponse);
 }
 
 // 设置Lane的最大速度（限速）请求
+// Request for setting lane's maximum speed (speed limit)
 message SetLaneMaxVRequest {
   // Lane id
   int32 lane_id = 1;
   // 最大速度（限速），单位：m/s
+  // Maximum speed (speed limit), unit: m/s
   double max_v = 2;
 }
 
 // 设置Lane的最大速度（限速）响应
+// Response of setting lane's maximum speed (speed limit) 
 message SetLaneMaxVResponse {}
 
 // 获取Lane的信息请求
+// Request for getting lane information
 message GetLaneRequest {
   // 指定的Lane id列表，如果为空，则返回所有Lane的信息
+  // List of targeted lane IDs, if empty, returns all information of lanes
   repeated int32 lane_ids = 1;
   // 是否要排除车道上的人的信息
+  // Whether to exclude information of person on the lane
   bool exclude_person = 2;
 }
 
 // 获取Lane的信息响应
+// Response of getting lane information
 message GetLaneResponse {
   // Lane的信息
+  // Lane information
   repeated LaneState states = 1;
 }
 
 // 获取特定区域内的Lane的信息请求
+// Request for getting lane information in a specific region
 message GetLaneByLongLatBBoxRequest {
   // 经纬度范围
+  // latitude and longitude bounding box
   city.geo.v2.LongLatBBox bbox = 1;
   // 是否要排除车道上的人的信息
+  // Whether to exclude information of person on the lane
   bool exclude_person = 2;
 }
 
 // 获取特定区域内的Lane的信息响应
+// Response of getting lane information in a specific region
 message GetLaneByLongLatBBoxResponse {
   // Lane的信息
+  // Lane information
   repeated LaneState states = 1;
 }
 
 // Lane状态
+// Lane state
 message LaneState {
   // Lane ID
   int32 id = 1;
   // Lane上的人/车
+  // person/vehicle on the lane
   repeated city.person.v1.PersonMotion persons = 2;
   // 平均速度（m/s）
+  // average speed (m/s)
   double avg_v = 3;
   // 是否限行
+  // whether restricted
   bool restriction = 4;
   // 交通灯状态
+  // traffic light state
   city.traffic_light.v2.LightState light_state = 5;
 }

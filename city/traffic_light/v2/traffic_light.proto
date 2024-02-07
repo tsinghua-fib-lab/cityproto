@@ -3,36 +3,49 @@ syntax = "proto3";
 package city.traffic_light.v2;
 
 // 本文件描述交通灯
+// This file describes traffic lights
 
 // 交通灯的状态
+// traffic light state
 enum LightState {
   // 未指定
+  // unspecified
   LIGHT_STATE_UNSPECIFIED = 0;
   // 红灯
+  // red light
   LIGHT_STATE_RED = 1;
   // 绿灯
+  // green light
   LIGHT_STATE_GREEN = 2;
   // 黄灯
+  // yellow light
   LIGHT_STATE_YELLOW = 3;
 }
 
 // 交通灯相位
+// traffic light phase
 message Phase {
   // 相位持续时间，单位秒
+  // Phase duration in seconds
   double duration = 1;
   // 描述该相位下每个lane的灯控情况，lane与Junction.lane_ids一一对应
+  // The lighting control situation of each lane in this phase, and the lane corresponds one-to-one with junction.lane_ids
   repeated LightState states = 2;
 }
 
 // 交通灯
+// traffic light
 message TrafficLight {
   // 所在路口id
+  // ID of the junction where the traffic light is at
   int32 junction_id = 1;
   // 相位循环的一个循环周期
+  // One cycle of phase cycling
   repeated Phase phases = 2;
 }
 
 // 信控集合，对应一个信控pb文件或一个信控mongodb collection
+// Traffic light set, corresponding to one traffic light PB file or one traffic light mongodb collection
 message TrafficLights {
   repeated TrafficLight traffic_lights = 1;
 }

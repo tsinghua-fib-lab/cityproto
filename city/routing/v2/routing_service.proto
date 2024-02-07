@@ -8,47 +8,63 @@ import "city/routing/v2/routing.proto";
 
 service RoutingService {
   // 获取导航路线
+  // Get routing path
   rpc GetRoute(GetRouteRequest) returns (GetRouteResponse);
   // 设置行车导航道路通行成本
+  // Set traveling cost of driving routing 
   rpc SetDrivingCosts(SetDrivingCostsRequest) returns (SetDrivingCostsResponse);
   // 获取行车导航道路通行成本
+  // Get traveling cost of driving routing
   rpc GetDrivingCosts(GetDrivingCostsRequest) returns (GetDrivingCostsResponse);
 }
 
 // 获取导航路线请求
+// Request for getting routing path
 message GetRouteRequest {
   // 导航类型
+  // routing type
   RouteType type = 1;
   // 起点，约定：包含LanePosition或AoiPosition中的一种
+  // Starting point, convention: as LanePosition or AoiPosition
   city.geo.v2.Position start = 2;
-  // 起点，约定：包含LanePosition或AoiPosition中的一种
+  // 终点，约定：包含LanePosition或AoiPosition中的一种
+  // Ending point, convention: as LanePosition or AoiPosition
   city.geo.v2.Position end = 3;
   // 发送导航请求的时间（目前仅在行车导航中使用）
+  // The time to send routing request (currently only used in driving routing)
   double time = 5;
 }
 
 // 获取导航路线响应
+// Response of getting routing path
 message GetRouteResponse {
   repeated Journey journeys = 1;
 }
 
 // 设置行车导航道路通行成本请求
+// Request for setting driving routing travelling cost
 message SetDrivingCostsRequest {
   // 道路通行成本
+  // travelling cost
   repeated Cost costs = 1;
 }
 
 // 设置行车导航道路通行成本响应
+// Response of setting driving routing travelling cost
 message SetDrivingCostsResponse {}
 
 // 获取行车导航道路通行成本请求
+// Request for getting driving routing travelling cost
 message GetDrivingCostsRequest {
   // 道路通行成本（按照给定的id和time进行查询）
+  // travelling cost (query via the given ID and time)
   repeated Cost costs = 1;
 }
 
 // 获取行车导航道路通行成本响应
+// Response of getting driving routing travelling cost
 message GetDrivingCostsResponse {
   // 道路通行成本（补全cost后的结果）
+  // travelling cost (results after completing the cost)
   repeated Cost costs = 1;
 }

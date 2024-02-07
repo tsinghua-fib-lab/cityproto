@@ -4,14 +4,18 @@ package city.clock.v1;
 
 service ClockService {
   // 获取当前的模拟时间
+  // get current simulation clock
   rpc Now(NowRequest) returns (NowResponse);
 }
 
 // 获取当前的模拟时间请求
+// request of getting current simulation clock
 message NowRequest {}
 
 // 获取当前的模拟时间响应
+// response of getting current simulation clock
 message NowResponse {
   // 当前的模拟时间，单位为秒
+  // current simulation clock, in seconds
   double t = 1;
 }

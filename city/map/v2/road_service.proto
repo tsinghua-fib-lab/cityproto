@@ -7,6 +7,7 @@ import "city/map/v2/lane_service.proto";
 
 service RoadService {
   // 查询道路信息
+  // Get road information
   rpc GetRoad(GetRoadRequest) returns (GetRoadResponse);
 
   rpc GetRuinInfo(GetRuinInfoRequest) returns (GetRuinInfoResponse);
@@ -14,30 +15,37 @@ service RoadService {
 }
 
 // 查询道路信息请求
+// Request for getting road information
 message GetRoadRequest {
   // 指定查询的道路ID列表，为空代表查询所有道路
+  // List of targeted road IDs. If empty, it means querying all roads.
   repeated int32 road_ids = 1;
   // 是否要排除车道信息
+  // Whether to exclude lane information
   bool exclude_lane = 2;
   // 是否要排除车道上的人的信息（仅在包含车道信息时有效）
+  // Whether to exclude information about person in the lane (only valid when lane information is included)
   bool exclude_person = 3;
 }
 
 // 查询道路信息响应
+// Response of getting road information
 message GetRoadResponse {
   // 道路信息列表
+  // List of road information
   repeated RoadState states = 1;
 }
 
 message GetRuinInfoRequest {}
 
 message RuinInfo {
-  int32 num = 1; // 损坏数量
-  double ratio = 2; // 损坏占比
+  int32 num = 1; // 损坏数量。Ruined number
+  double ratio = 2; // 损坏占比。Ruined ratio
 }
 
 message GetRuinInfoResponse {
-  // 三级级损伤信息
+  // 三级损伤信息
+  // Three-level ruin information
   RuinInfo one = 1;
   RuinInfo two = 2;
   RuinInfo three = 3;
@@ -50,23 +58,33 @@ message GetEventsResponse {
 }
 
 // 道路拥堵情况
+// road congestion level
 enum RoadLevel {
   // 未指定
+  // unspecified
   ROAD_LEVEL_UNSPECIFIED = 0;
   // 畅通
+  // clear
   ROAD_LEVEL_CLEAR = 1;
   // 轻度拥堵
+  // light load
   ROAD_LEVEL_LIGHT_LOAD = 2;
   // 中度拥堵
+  // medium load
   ROAD_LEVEL_MEDIUM_LOAD = 3;
   // 重度拥堵
+  // heavy load
   ROAD_LEVEL_HEAVY_LOAD = 4;
   // 极端拥堵
+  // overload
   ROAD_LEVEL_OVERLOAD = 5;
   // 限行
+  // restricted
   ROAD_LEVEL_RESTRICTED = 6;
 }
 
+// 道路中断原因
+// road interruption reason
 enum InterruptionReason {
   INTERRUPTION_REASON_UNSPECIFIED = 0;
   INTERRUPTION_REASON_RUINED = 1;
@@ -75,15 +93,21 @@ enum InterruptionReason {
 }
 
 // 道路状态
+// road state
 message RoadState {
   // 道路ID
+  // road ID
   int32 id = 1;
   // 道路平均速度（m/s）
+  // road average speed (m/s)
   double avg_v = 4;
   // 道路拥堵情况
+  // road congestion level
   RoadLevel level = 2;
   // 道路中断原因
+  // road interruption reason
   InterruptionReason reason = 3;
   // 车道情况
+  // lane state
   repeated LaneState lanes = 5;
 }
