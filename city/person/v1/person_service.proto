@@ -9,62 +9,82 @@ import "city/trip/v2/trip.proto";
 
 service PersonService {
   // 获取person信息
+  // Get person information
   rpc GetPerson(GetPersonRequest) returns (GetPersonResponse);
   // 新增person 传入person初始位置、目的地表、属性 返回personid
+  // Add a new person. Input person's initial location, destination table, and attributes, return personid
   rpc AddPerson(AddPersonRequest) returns (AddPersonResponse);
   // 修改person的schedule 传入personid、目的地表
+  // Set person's schedule. Input personid and destination table
   rpc SetSchedule(SetScheduleRequest) returns (SetScheduleResponse);
   // 获取特定区域内的person
+  // Get persons in a specific region
   rpc GetPersonByLongLatBBox(GetPersonByLongLatBBoxRequest) returns (GetPersonByLongLatBBoxResponse);
 }
 
 // 获取person信息请求
+// Request for getting person information
 message GetPersonRequest {
   // person id
   int32 person_id = 1;
 }
 
 // 获取person信息响应
+// Response of getting person information
 message GetPersonResponse {
   // person信息
+  // person information
   Person base = 1;
   // person运动信息
+  // person motion information
   PersonMotion motion = 2;
 }
 
 // 新增person请求
+// Request for adding a new person
 message AddPersonRequest {
   // 约定：person中不设置id
+  // Convention: personid is not set here 
   Person person = 1;
 }
 
 // 新增person响应
+// Response of adding a new person
 message AddPersonResponse {
   // 新增的person分配得到的ID
+  // The ID assigned to the newly added person
   int32 person_id = 1;
 }
 
 // 修改person的schedule请求
+// Request for setting person schedule
 message SetScheduleRequest {
   // person id
   int32 person_id = 1;
   // 新的schedule（覆盖原有的schedule）
+  // New schedule (overwrites the original schedule)
   repeated city.trip.v2.Schedule schedules = 2;
 }
 
 // 修改person的schedule响应
+// Response of setting person schedule
 message SetScheduleResponse {}
 
 // 获取特定区域内的person请求
+// Request for getting persons in region
 message GetPersonByLongLatBBoxRequest {
   // 经纬度范围
+  // longitude and latitude bounding box
   city.geo.v2.LongLatBBox bbox = 1;
   // 过滤人的状态（状态为列表内的值的人不返回）
+  // Filter person's status (person whose status is in the list will not be returned)
   repeated Status exclude_statuses = 2;
 }
 
 // 获取特定区域内的person响应
+// Response of getting persons in region
 message GetPersonByLongLatBBoxResponse {
   // 区域内的person的运动信息
+  // motion status of persons in the region
   repeated PersonMotion motions = 1;
 }

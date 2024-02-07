@@ -3,14 +3,20 @@ syntax = "proto3";
 package city.social.v1;
 
 // 消息
+// message
 message Message {
   // 消息发送者ID
+  // message sender ID
   int32 from = 1;
   // 消息接收者ID
+  // message receiver ID
   int32 to = 2;
   // 消息内容
+  // message content
   string message = 3;
   // 消息发出时间（秒），如无则为当前模拟时间
+  // Message sending time (in seconds), if none, it is the current simulation time
   // 对于接收到的消息，该字段总是存在
+  // For received messages, this field always exists
   optional double t = 4;
 }
