@@ -8,6 +8,7 @@ import { Message, proto3 } from "@bufbuild/protobuf";
 
 /**
  * 导航请求类型
+ * routing type
  *
  * @generated from enum city.routing.v2.RouteType
  */
@@ -43,16 +44,22 @@ export declare enum RouteType {
 
 /**
  * 移动方式
+ * travelling mode
  * Journey用以描述采用一种特定交通方式从一点出发到达另一点的路径。
+ * Journey is used to describe the path from one point to another using one specific travelling mode
  * 一般来说，多个Journey是一个Trip的“实现”。
+ * Generally, multiple Journeys are used to "implement" a Trip
  * 例如：Trip(从清华乘地铁到天安门):
+ * For example: Trip (taking the subway from Tsinghua to Tiananmen Square):
  * Journey(步行到地铁站)->Journey(地铁)->Journey(步行到天安门)
+ * Journey (walking to subway station) -> Journey (subway) -> Journey (walking to Tiananmen Square)
  *
  * @generated from enum city.routing.v2.JourneyType
  */
 export declare enum JourneyType {
   /**
    * 未指定
+   * unspecified
    *
    * @generated from enum value: JOURNEY_TYPE_UNSPECIFIED = 0;
    */
@@ -60,6 +67,7 @@ export declare enum JourneyType {
 
   /**
    * 驾车
+   * driving
    *
    * @generated from enum value: JOURNEY_TYPE_DRIVING = 1;
    */
@@ -67,6 +75,7 @@ export declare enum JourneyType {
 
   /**
    * 步行
+   * walking
    *
    * @generated from enum value: JOURNEY_TYPE_WALKING = 2;
    */
@@ -74,6 +83,7 @@ export declare enum JourneyType {
 
   /**
    * 公交
+   * taking bus
    *
    * @generated from enum value: JOURNEY_TYPE_BY_BUS = 3;
    */
@@ -82,13 +92,16 @@ export declare enum JourneyType {
 
 /**
  * 步行移动方向
+ * Walking direction
  * 行人前进的方向与Lane的正方向（s增大的方向）的关系
+ * The relationship between the direction of pedestrian movement and the positive direction of Lane (the direction where s increases)
  *
  * @generated from enum city.routing.v2.MovingDirection
  */
 export declare enum MovingDirection {
   /**
    * 未指定
+   * unspecified
    *
    * @generated from enum value: MOVING_DIRECTION_UNSPECIFIED = 0;
    */
@@ -96,6 +109,7 @@ export declare enum MovingDirection {
 
   /**
    * 与正方向同向
+   * In the same direction as the positive lane direction
    *
    * @generated from enum value: MOVING_DIRECTION_FORWARD = 1;
    */
@@ -103,6 +117,7 @@ export declare enum MovingDirection {
 
   /**
    * 与正方向反向
+   * In the opposite direction as the positive lane direction
    *
    * @generated from enum value: MOVING_DIRECTION_BACKWARD = 2;
    */
@@ -111,14 +126,18 @@ export declare enum MovingDirection {
 
 /**
  * 驾车出行方式的路径规划结果
+ * Routing results for driving journey
  *
  * @generated from message city.routing.v2.DrivingJourneyBody
  */
 export declare class DrivingJourneyBody extends Message<DrivingJourneyBody> {
   /**
    * 从起点到终点的道路序列
+   * Road sequence from origin to destination
    * 采用道路序列的原因是主动变道对车道级的导航需要频繁修改
+   * The reason for using road sequences is that active lane changing requires frequent modifications to lane level navigation
    * 优先使用road_ids，如果road_ids为空，则使用route（也可以直接忽略route）
+   * Prioritize using road_ids. If road_ids is empty, use route (or simply ignore route)
    *
    * @generated from field: repeated int32 road_ids = 2;
    */
@@ -126,6 +145,7 @@ export declare class DrivingJourneyBody extends Message<DrivingJourneyBody> {
 
   /**
    * 从起点到终点预计的时间(estimation time of arrival)
+   * estimation time of arrival
    *
    * @generated from field: double eta = 3;
    */
@@ -148,6 +168,7 @@ export declare class DrivingJourneyBody extends Message<DrivingJourneyBody> {
 
 /**
  * 步行出行方式的路径规划结果中的一段
+ * A segment in the routing results of walking journey
  *
  * @generated from message city.routing.v2.WalkingRouteSegment
  */
@@ -161,6 +182,7 @@ export declare class WalkingRouteSegment extends Message<WalkingRouteSegment> {
 
   /**
    * 移动方向
+   * moving direction
    *
    * @generated from field: city.routing.v2.MovingDirection moving_direction = 2;
    */
@@ -183,12 +205,14 @@ export declare class WalkingRouteSegment extends Message<WalkingRouteSegment> {
 
 /**
  * 步行出行方式的路径规划结果
+ * Routing results of walking journey
  *
  * @generated from message city.routing.v2.WalkingJourneyBody
  */
 export declare class WalkingJourneyBody extends Message<WalkingJourneyBody> {
   /**
    * 从起点到终点的（Lane+方向）序列
+   * The (Lane+direction) sequence from the origin to destination
    *
    * @generated from field: repeated city.routing.v2.WalkingRouteSegment route = 1;
    */
@@ -196,6 +220,7 @@ export declare class WalkingJourneyBody extends Message<WalkingJourneyBody> {
 
   /**
    * 从起点到终点预计的时间(estimation time of arrival)
+   * estimation time of arrival
    *
    * @generated from field: double eta = 2;
    */
@@ -252,12 +277,14 @@ export declare class BusJourneyBody extends Message<BusJourneyBody> {
 
 /**
  * 路径规划结果的一部分，含且仅含采用一种交通出行方式的完整出行序列
+ * Part of the routing results, including a complete travel sequence using exactly one travelling mode
  *
  * @generated from message city.routing.v2.Journey
  */
 export declare class Journey extends Message<Journey> {
   /**
    * 出行方式
+   * journey travelling mode
    *
    * @generated from field: city.routing.v2.JourneyType type = 1;
    */
@@ -265,6 +292,7 @@ export declare class Journey extends Message<Journey> {
 
   /**
    * 驾车
+   * Routing results for driving journey
    *
    * @generated from field: optional city.routing.v2.DrivingJourneyBody driving = 2;
    */
@@ -272,6 +300,7 @@ export declare class Journey extends Message<Journey> {
 
   /**
    * 步行
+   * Routing results of walking journey
    *
    * @generated from field: optional city.routing.v2.WalkingJourneyBody walking = 3;
    */
@@ -279,6 +308,7 @@ export declare class Journey extends Message<Journey> {
 
   /**
    * 公交
+   * Routing results of bus journey
    *
    * @generated from field: optional city.routing.v2.BusJourneyBody by_bus = 4;
    */
@@ -301,12 +331,14 @@ export declare class Journey extends Message<Journey> {
 
 /**
  * 公交线路
+ * Bus line
  *
  * @generated from message city.routing.v2.BusLine
  */
 export declare class BusLine extends Message<BusLine> {
   /**
    * 线路ID
+   * bus line ID
    *
    * @generated from field: int32 line_id = 1;
    */
@@ -314,6 +346,7 @@ export declare class BusLine extends Message<BusLine> {
 
   /**
    * 停靠站点AOI ID列表
+   * List of the AOI IDs of bus stations
    *
    * @generated from field: repeated int32 stops = 2;
    */
@@ -351,6 +384,7 @@ export declare class BusLine extends Message<BusLine> {
 
 /**
  * 公交线路集合，对应一个公交线路pb文件或一个公交线路mongodb collection
+ * Bus lines collection, corresponding to a bus line PB file or a bus line mongodb collection
  *
  * @generated from message city.routing.v2.BusLines
  */
@@ -377,12 +411,14 @@ export declare class BusLines extends Message<BusLines> {
 
 /**
  * 预计算路况信息
+ * Pre calculate road condition information
  *
  * @generated from message city.routing.v2.RoadStatus
  */
 export declare class RoadStatus extends Message<RoadStatus> {
   /**
    * 车道ID
+   * Lane ID
    *
    * @generated from field: int32 id = 1;
    */
@@ -390,6 +426,7 @@ export declare class RoadStatus extends Message<RoadStatus> {
 
   /**
    * 车道在各个时间片（每个5min）的速度
+   * The speed of the lane at each time slot (5 minutes each)
    *
    * @generated from field: repeated double speed = 2;
    */
@@ -411,8 +448,8 @@ export declare class RoadStatus extends Message<RoadStatus> {
 }
 
 /**
- * 预计算道路路况信息集合，对应一个预计算道路况信息pb文件或一个预计算路况信息mongodb
- * collection
+ * 预计算道路路况信息集合，对应一个预计算道路况信息pb文件或一个预计算路况信息mongodb collection
+ * Pre calculated road condition information set, corresponding to a pre calculated road condition information PB file or a pre calculated road condition information mongodb collection
  *
  * @generated from message city.routing.v2.RoadStatuses
  */

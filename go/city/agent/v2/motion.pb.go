@@ -103,7 +103,7 @@ type AgentMotion struct {
 	// 状态
 	Status Status `protobuf:"varint,2,opt,name=status,proto3,enum=city.agent.v2.Status" json:"status,omitempty" yaml:"status" bson:"status" db:"status"`
 	// 位置（包含逻辑位置、XY位置、经纬度位置）
-	Position *v2.Position `protobuf:"bytes,3,opt,name=position,proto3" json:"position,omitempty" yaml:"position" bson:"position" db:"position"`
+	Position *v2.Position `protobuf:"bytes,3,opt,name=position,proto3" json:"position,omitempty" db:"position" yaml:"position" bson:"position"`
 	// 速度
 	V float64 `protobuf:"fixed64,4,opt,name=v,proto3" json:"v,omitempty" yaml:"v" bson:"v" db:"v"`
 	// 方向角（atan2计算得到的弧度）

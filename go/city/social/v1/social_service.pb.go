@@ -21,12 +21,14 @@ const (
 )
 
 // 发送消息请求
+// Request for sendding message
 type SendRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
 	// 待发送的消息
+	// Messages to send
 	Messages []*Message `protobuf:"bytes,1,rep,name=messages,proto3" json:"messages,omitempty"`
 }
 
@@ -70,6 +72,7 @@ func (x *SendRequest) GetMessages() []*Message {
 }
 
 // 发送消息响应
+// Response of sendding message
 type SendResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -109,12 +112,14 @@ func (*SendResponse) Descriptor() ([]byte, []int) {
 }
 
 // 接收消息请求
+// Request for receiving message
 type ReceiveRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
 	// 消息接收者ID（即为自身ID）
+	// Message receiver ID (i.e. self.ID)
 	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
 }
 
@@ -158,12 +163,14 @@ func (x *ReceiveRequest) GetId() int32 {
 }
 
 // 接收消息响应
+// Response of receiving messages
 type ReceiveResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
 	// 接收到的消息
+	// Received messages
 	Messages []*Message `protobuf:"bytes,1,rep,name=messages,proto3" json:"messages,omitempty"`
 }
 

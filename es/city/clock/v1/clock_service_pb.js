@@ -7,6 +7,7 @@ import { proto3 } from "@bufbuild/protobuf";
 
 /**
  * 获取当前的模拟时间请求
+ * request of getting current simulation clock
  *
  * @generated from message city.clock.v1.NowRequest
  */
@@ -17,6 +18,7 @@ export const NowRequest = proto3.makeMessageType(
 
 /**
  * 获取当前的模拟时间响应
+ * response of getting current simulation clock
  *
  * @generated from message city.clock.v1.NowResponse
  */

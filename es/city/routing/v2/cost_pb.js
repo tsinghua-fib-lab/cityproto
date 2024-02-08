@@ -7,6 +7,7 @@ import { proto3 } from "@bufbuild/protobuf";
 
 /**
  * 路径成本设置
+ * Route cost settings
  *
  * @generated from message city.routing.v2.Cost
  */

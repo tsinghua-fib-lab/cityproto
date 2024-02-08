@@ -20,6 +20,7 @@ class RoadServiceServicer(object):
 
     def GetRoad(self, request, context):
         """查询道路信息
+        Get road information
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

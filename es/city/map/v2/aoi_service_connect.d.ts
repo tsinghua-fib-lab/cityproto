@@ -14,6 +14,7 @@ export declare const AoiService: {
   readonly methods: {
     /**
      * 获取AOI信息
+     * Get AOI information
      *
      * @generated from rpc city.map.v2.AoiService.GetAoi
      */

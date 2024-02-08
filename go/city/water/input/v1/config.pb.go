@@ -27,7 +27,7 @@ type Mongo struct {
 	unknownFields protoimpl.UnknownFields
 
 	Uri  string        `protobuf:"bytes,1,opt,name=uri,proto3" json:"uri,omitempty" yaml:"uri" bson:"uri" db:"uri"`
-	Map  *v1.MongoPath `protobuf:"bytes,2,opt,name=map,proto3" json:"map,omitempty" bson:"map" db:"map" yaml:"map"`
+	Map  *v1.MongoPath `protobuf:"bytes,2,opt,name=map,proto3" json:"map,omitempty" yaml:"map" bson:"map" db:"map"`
 	Rain *v1.MongoPath `protobuf:"bytes,3,opt,name=rain,proto3" json:"rain,omitempty" yaml:"rain" bson:"rain" db:"rain"`
 }
 
@@ -201,7 +201,7 @@ type OutputSwitch struct {
 	unknownFields protoimpl.UnknownFields
 
 	Road     bool `protobuf:"varint,1,opt,name=road,proto3" json:"road,omitempty" yaml:"road" bson:"road" db:"road"`
-	Drainage bool `protobuf:"varint,2,opt,name=drainage,proto3" json:"drainage,omitempty" bson:"drainage" db:"drainage" yaml:"drainage"`
+	Drainage bool `protobuf:"varint,2,opt,name=drainage,proto3" json:"drainage,omitempty" yaml:"drainage" bson:"drainage" db:"drainage"`
 	Supply   bool `protobuf:"varint,3,opt,name=supply,proto3" json:"supply,omitempty" yaml:"supply" bson:"supply" db:"supply"`
 	Aoi      bool `protobuf:"varint,4,opt,name=aoi,proto3" json:"aoi,omitempty" yaml:"aoi" bson:"aoi" db:"aoi"`
 	Event    bool `protobuf:"varint,5,opt,name=event,proto3" json:"event,omitempty" yaml:"event" bson:"event" db:"event"`

@@ -20,6 +20,7 @@ class LaneServiceServicer(object):
 
     def SetLaneMaxV(self, request, context):
         """设置Lane的最大速度（限速）
+        Set Lane's maximum speed (speed limit)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -27,6 +28,7 @@ class LaneServiceServicer(object):
 
     def GetLane(self, request, context):
         """获取Lane的信息
+        Get Lane information
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -34,6 +36,7 @@ class LaneServiceServicer(object):
 
     def GetLaneByLongLatBBox(self, request, context):
         """获取特定区域内的Lane的信息
+        Get Lane information in a specific region
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

@@ -21,6 +21,7 @@ const (
 )
 
 // 获取当前的模拟时间请求
+// request of getting current simulation clock
 type NowRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -60,12 +61,14 @@ func (*NowRequest) Descriptor() ([]byte, []int) {
 }
 
 // 获取当前的模拟时间响应
+// response of getting current simulation clock
 type NowResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
 	// 当前的模拟时间，单位为秒
+	// current simulation clock, in seconds
 	T float64 `protobuf:"fixed64,1,opt,name=t,proto3" json:"t,omitempty"`
 }
 

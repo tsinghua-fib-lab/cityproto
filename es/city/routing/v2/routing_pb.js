@@ -7,6 +7,7 @@ import { proto3 } from "@bufbuild/protobuf";
 
 /**
  * 导航请求类型
+ * routing type
  *
  * @generated from enum city.routing.v2.RouteType
  */
@@ -22,10 +23,15 @@ export const RouteType = proto3.makeEnum(
 
 /**
  * 移动方式
+ * travelling mode
  * Journey用以描述采用一种特定交通方式从一点出发到达另一点的路径。
+ * Journey is used to describe the path from one point to another using one specific travelling mode
  * 一般来说，多个Journey是一个Trip的“实现”。
+ * Generally, multiple Journeys are used to "implement" a Trip
  * 例如：Trip(从清华乘地铁到天安门):
+ * For example: Trip (taking the subway from Tsinghua to Tiananmen Square):
  * Journey(步行到地铁站)->Journey(地铁)->Journey(步行到天安门)
+ * Journey (walking to subway station) -> Journey (subway) -> Journey (walking to Tiananmen Square)
  *
  * @generated from enum city.routing.v2.JourneyType
  */
@@ -41,7 +47,9 @@ export const JourneyType = proto3.makeEnum(
 
 /**
  * 步行移动方向
+ * Walking direction
  * 行人前进的方向与Lane的正方向（s增大的方向）的关系
+ * The relationship between the direction of pedestrian movement and the positive direction of Lane (the direction where s increases)
  *
  * @generated from enum city.routing.v2.MovingDirection
  */
@@ -56,6 +64,7 @@ export const MovingDirection = proto3.makeEnum(
 
 /**
  * 驾车出行方式的路径规划结果
+ * Routing results for driving journey
  *
  * @generated from message city.routing.v2.DrivingJourneyBody
  */
@@ -69,6 +78,7 @@ export const DrivingJourneyBody = proto3.makeMessageType(
 
 /**
  * 步行出行方式的路径规划结果中的一段
+ * A segment in the routing results of walking journey
  *
  * @generated from message city.routing.v2.WalkingRouteSegment
  */
@@ -82,6 +92,7 @@ export const WalkingRouteSegment = proto3.makeMessageType(
 
 /**
  * 步行出行方式的路径规划结果
+ * Routing results of walking journey
  *
  * @generated from message city.routing.v2.WalkingJourneyBody
  */
@@ -107,6 +118,7 @@ export const BusJourneyBody = proto3.makeMessageType(
 
 /**
  * 路径规划结果的一部分，含且仅含采用一种交通出行方式的完整出行序列
+ * Part of the routing results, including a complete travel sequence using exactly one travelling mode
  *
  * @generated from message city.routing.v2.Journey
  */
@@ -122,6 +134,7 @@ export const Journey = proto3.makeMessageType(
 
 /**
  * 公交线路
+ * Bus line
  *
  * @generated from message city.routing.v2.BusLine
  */
@@ -138,6 +151,7 @@ export const BusLine = proto3.makeMessageType(
 
 /**
  * 公交线路集合，对应一个公交线路pb文件或一个公交线路mongodb collection
+ * Bus lines collection, corresponding to a bus line PB file or a bus line mongodb collection
  *
  * @generated from message city.routing.v2.BusLines
  */
@@ -150,6 +164,7 @@ export const BusLines = proto3.makeMessageType(
 
 /**
  * 预计算路况信息
+ * Pre calculate road condition information
  *
  * @generated from message city.routing.v2.RoadStatus
  */
@@ -162,8 +177,8 @@ export const RoadStatus = proto3.makeMessageType(
 );
 
 /**
- * 预计算道路路况信息集合，对应一个预计算道路况信息pb文件或一个预计算路况信息mongodb
- * collection
+ * 预计算道路路况信息集合，对应一个预计算道路况信息pb文件或一个预计算路况信息mongodb collection
+ * Pre calculated road condition information set, corresponding to a pre calculated road condition information PB file or a pre calculated road condition information mongodb collection
  *
  * @generated from message city.routing.v2.RoadStatuses
  */

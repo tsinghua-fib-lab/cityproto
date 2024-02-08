@@ -11,6 +11,7 @@ import type { LightState } from "../../traffic_light/v2/traffic_light_pb.js";
 
 /**
  * 设置Lane的最大速度（限速）请求
+ * Request for setting lane's maximum speed (speed limit)
  *
  * @generated from message city.map.v2.SetLaneMaxVRequest
  */
@@ -24,6 +25,7 @@ export declare class SetLaneMaxVRequest extends Message<SetLaneMaxVRequest> {
 
   /**
    * 最大速度（限速），单位：m/s
+   * Maximum speed (speed limit), unit: m/s
    *
    * @generated from field: double max_v = 2;
    */
@@ -46,6 +48,7 @@ export declare class SetLaneMaxVRequest extends Message<SetLaneMaxVRequest> {
 
 /**
  * 设置Lane的最大速度（限速）响应
+ * Response of setting lane's maximum speed (speed limit)
  *
  * @generated from message city.map.v2.SetLaneMaxVResponse
  */
@@ -67,12 +70,14 @@ export declare class SetLaneMaxVResponse extends Message<SetLaneMaxVResponse> {
 
 /**
  * 获取Lane的信息请求
+ * Request for getting lane information
  *
  * @generated from message city.map.v2.GetLaneRequest
  */
 export declare class GetLaneRequest extends Message<GetLaneRequest> {
   /**
    * 指定的Lane id列表，如果为空，则返回所有Lane的信息
+   * List of targeted lane IDs, if empty, returns all information of lanes
    *
    * @generated from field: repeated int32 lane_ids = 1;
    */
@@ -80,6 +85,7 @@ export declare class GetLaneRequest extends Message<GetLaneRequest> {
 
   /**
    * 是否要排除车道上的人的信息
+   * Whether to exclude information of person on the lane
    *
    * @generated from field: bool exclude_person = 2;
    */
@@ -102,12 +108,14 @@ export declare class GetLaneRequest extends Message<GetLaneRequest> {
 
 /**
  * 获取Lane的信息响应
+ * Response of getting lane information
  *
  * @generated from message city.map.v2.GetLaneResponse
  */
 export declare class GetLaneResponse extends Message<GetLaneResponse> {
   /**
    * Lane的信息
+   * Lane information
    *
    * @generated from field: repeated city.map.v2.LaneState states = 1;
    */
@@ -130,12 +138,14 @@ export declare class GetLaneResponse extends Message<GetLaneResponse> {
 
 /**
  * 获取特定区域内的Lane的信息请求
+ * Request for getting lane information in a specific region
  *
  * @generated from message city.map.v2.GetLaneByLongLatBBoxRequest
  */
 export declare class GetLaneByLongLatBBoxRequest extends Message<GetLaneByLongLatBBoxRequest> {
   /**
    * 经纬度范围
+   * latitude and longitude bounding box
    *
    * @generated from field: city.geo.v2.LongLatBBox bbox = 1;
    */
@@ -143,6 +153,7 @@ export declare class GetLaneByLongLatBBoxRequest extends Message<GetLaneByLongLa
 
   /**
    * 是否要排除车道上的人的信息
+   * Whether to exclude information of person on the lane
    *
    * @generated from field: bool exclude_person = 2;
    */
@@ -165,12 +176,14 @@ export declare class GetLaneByLongLatBBoxRequest extends Message<GetLaneByLongLa
 
 /**
  * 获取特定区域内的Lane的信息响应
+ * Response of getting lane information in a specific region
  *
  * @generated from message city.map.v2.GetLaneByLongLatBBoxResponse
  */
 export declare class GetLaneByLongLatBBoxResponse extends Message<GetLaneByLongLatBBoxResponse> {
   /**
    * Lane的信息
+   * Lane information
    *
    * @generated from field: repeated city.map.v2.LaneState states = 1;
    */
@@ -193,6 +206,7 @@ export declare class GetLaneByLongLatBBoxResponse extends Message<GetLaneByLongL
 
 /**
  * Lane状态
+ * Lane state
  *
  * @generated from message city.map.v2.LaneState
  */
@@ -206,6 +220,7 @@ export declare class LaneState extends Message<LaneState> {
 
   /**
    * Lane上的人/车
+   * person/vehicle on the lane
    *
    * @generated from field: repeated city.person.v1.PersonMotion persons = 2;
    */
@@ -213,6 +228,7 @@ export declare class LaneState extends Message<LaneState> {
 
   /**
    * 平均速度（m/s）
+   * average speed (m/s)
    *
    * @generated from field: double avg_v = 3;
    */
@@ -220,6 +236,7 @@ export declare class LaneState extends Message<LaneState> {
 
   /**
    * 是否限行
+   * whether restricted
    *
    * @generated from field: bool restriction = 4;
    */
@@ -227,6 +244,7 @@ export declare class LaneState extends Message<LaneState> {
 
   /**
    * 交通灯状态
+   * traffic light state
    *
    * @generated from field: city.traffic_light.v2.LightState light_state = 5;
    */

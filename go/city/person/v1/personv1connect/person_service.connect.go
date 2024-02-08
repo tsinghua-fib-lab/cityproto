@@ -57,12 +57,16 @@ var (
 // PersonServiceClient is a client for the city.person.v1.PersonService service.
 type PersonServiceClient interface {
 	// 获取person信息
+	// Get person information
 	GetPerson(context.Context, *connect.Request[v1.GetPersonRequest]) (*connect.Response[v1.GetPersonResponse], error)
 	// 新增person 传入person初始位置、目的地表、属性 返回personid
+	// Add a new person. Input person's initial location, destination table, and attributes, return personid
 	AddPerson(context.Context, *connect.Request[v1.AddPersonRequest]) (*connect.Response[v1.AddPersonResponse], error)
 	// 修改person的schedule 传入personid、目的地表
+	// Set person's schedule. Input personid and destination table
 	SetSchedule(context.Context, *connect.Request[v1.SetScheduleRequest]) (*connect.Response[v1.SetScheduleResponse], error)
 	// 获取特定区域内的person
+	// Get persons in a specific region
 	GetPersonByLongLatBBox(context.Context, *connect.Request[v1.GetPersonByLongLatBBoxRequest]) (*connect.Response[v1.GetPersonByLongLatBBoxResponse], error)
 }
 
@@ -134,12 +138,16 @@ func (c *personServiceClient) GetPersonByLongLatBBox(ctx context.Context, req *c
 // PersonServiceHandler is an implementation of the city.person.v1.PersonService service.
 type PersonServiceHandler interface {
 	// 获取person信息
+	// Get person information
 	GetPerson(context.Context, *connect.Request[v1.GetPersonRequest]) (*connect.Response[v1.GetPersonResponse], error)
 	// 新增person 传入person初始位置、目的地表、属性 返回personid
+	// Add a new person. Input person's initial location, destination table, and attributes, return personid
 	AddPerson(context.Context, *connect.Request[v1.AddPersonRequest]) (*connect.Response[v1.AddPersonResponse], error)
 	// 修改person的schedule 传入personid、目的地表
+	// Set person's schedule. Input personid and destination table
 	SetSchedule(context.Context, *connect.Request[v1.SetScheduleRequest]) (*connect.Response[v1.SetScheduleResponse], error)
 	// 获取特定区域内的person
+	// Get persons in a specific region
 	GetPersonByLongLatBBox(context.Context, *connect.Request[v1.GetPersonByLongLatBBoxRequest]) (*connect.Response[v1.GetPersonByLongLatBBoxResponse], error)
 }
 

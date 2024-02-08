@@ -10,6 +10,7 @@ import { Cost } from "./cost_pb.js";
 
 /**
  * 获取导航路线请求
+ * Request for getting routing path
  *
  * @generated from message city.routing.v2.GetRouteRequest
  */
@@ -25,6 +26,7 @@ export const GetRouteRequest = proto3.makeMessageType(
 
 /**
  * 获取导航路线响应
+ * Response of getting routing path
  *
  * @generated from message city.routing.v2.GetRouteResponse
  */
@@ -37,6 +39,7 @@ export const GetRouteResponse = proto3.makeMessageType(
 
 /**
  * 设置行车导航道路通行成本请求
+ * Request for setting driving routing travelling cost
  *
  * @generated from message city.routing.v2.SetDrivingCostsRequest
  */
@@ -49,6 +52,7 @@ export const SetDrivingCostsRequest = proto3.makeMessageType(
 
 /**
  * 设置行车导航道路通行成本响应
+ * Response of setting driving routing travelling cost
  *
  * @generated from message city.routing.v2.SetDrivingCostsResponse
  */
@@ -59,6 +63,7 @@ export const SetDrivingCostsResponse = proto3.makeMessageType(
 
 /**
  * 获取行车导航道路通行成本请求
+ * Request for getting driving routing travelling cost
  *
  * @generated from message city.routing.v2.GetDrivingCostsRequest
  */
@@ -71,6 +76,7 @@ export const GetDrivingCostsRequest = proto3.makeMessageType(
 
 /**
  * 获取行车导航道路通行成本响应
+ * Response of getting driving routing travelling cost
  *
  * @generated from message city.routing.v2.GetDrivingCostsResponse
  */

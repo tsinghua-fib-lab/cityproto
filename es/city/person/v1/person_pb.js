@@ -9,6 +9,7 @@ import { Schedule } from "../../trip/v2/trip_pb.js";
 
 /**
  * 智能体教育等级
+ * Agent education level
  *
  * @generated from enum city.person.v1.Education
  */
@@ -28,6 +29,7 @@ export const Education = proto3.makeEnum(
 
 /**
  * 智能体性别
+ * agent gender
  *
  * @generated from enum city.person.v1.Gender
  */
@@ -42,6 +44,7 @@ export const Gender = proto3.makeEnum(
 
 /**
  * 智能体消费水平
+ * agent consumption level
  *
  * @generated from enum city.person.v1.Consumption
  */
@@ -59,6 +62,7 @@ export const Consumption = proto3.makeEnum(
 
 /**
  * 智能体属性（通用）
+ * Agent properties (general)
  *
  * @generated from message city.person.v1.PersonAttribute
  */
@@ -77,6 +81,7 @@ export const PersonAttribute = proto3.makeMessageType(
 
 /**
  * 车辆附加属性
+ * Vehicle additional attributes
  *
  * @generated from message city.person.v1.VehicleAttribute
  */
@@ -90,6 +95,7 @@ export const VehicleAttribute = proto3.makeMessageType(
 
 /**
  * 公交车附加属性
+ * Bus additional attributes
  *
  * @generated from message city.person.v1.BusAttribute
  */
@@ -103,6 +109,7 @@ export const BusAttribute = proto3.makeMessageType(
 
 /**
  * 自行车附加属性
+ * Bike additional attributes
  *
  * @generated from message city.person.v1.BikeAttribute
  */
@@ -113,6 +120,7 @@ export const BikeAttribute = proto3.makeMessageType(
 
 /**
  * 智能体简介
+ * agent profile
  *
  * @generated from message city.person.v1.PersonProfile
  */
@@ -128,6 +136,7 @@ export const PersonProfile = proto3.makeMessageType(
 
 /**
  * 智能体
+ * agent
  *
  * @generated from message city.person.v1.Person
  */
@@ -148,6 +157,7 @@ export const Person = proto3.makeMessageType(
 
 /**
  * 智能体集合，对应一个智能体pb文件或一个智能体mongodb collection
+ * Agent collection, corresponding to an agent pb file or an agent mongodb collection
  *
  * @generated from message city.person.v1.Persons
  */

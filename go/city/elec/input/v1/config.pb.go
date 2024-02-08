@@ -27,7 +27,7 @@ type Mongo struct {
 	unknownFields protoimpl.UnknownFields
 
 	Uri        string        `protobuf:"bytes,1,opt,name=uri,proto3" json:"uri,omitempty" yaml:"uri" bson:"uri" db:"uri"`
-	Map        *v1.MongoPath `protobuf:"bytes,2,opt,name=map,proto3" json:"map,omitempty" db:"map" yaml:"map" bson:"map"`
+	Map        *v1.MongoPath `protobuf:"bytes,2,opt,name=map,proto3" json:"map,omitempty" yaml:"map" bson:"map" db:"map"`
 	Facilities *v1.MongoPath `protobuf:"bytes,3,opt,name=facilities,proto3" json:"facilities,omitempty" yaml:"facilities" bson:"facilities" db:"facilities"`
 }
 
@@ -89,7 +89,7 @@ type ControlStep struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Start int32 `protobuf:"varint,1,opt,name=start,proto3" json:"start,omitempty" yaml:"start" bson:"start" db:"start"`
+	Start int32 `protobuf:"varint,1,opt,name=start,proto3" json:"start,omitempty" db:"start" yaml:"start" bson:"start"`
 	Total int32 `protobuf:"varint,2,opt,name=total,proto3" json:"total,omitempty" yaml:"total" bson:"total" db:"total"`
 }
 
@@ -257,7 +257,7 @@ type Output struct {
 	unknownFields protoimpl.UnknownFields
 
 	Target *v1.OutputTarget `protobuf:"bytes,1,opt,name=target,proto3" json:"target,omitempty" yaml:"target" bson:"target" db:"target"`
-	Switch *OutputSwitch    `protobuf:"bytes,2,opt,name=switch,proto3" json:"switch,omitempty" yaml:"switch" bson:"switch" db:"switch"`
+	Switch *OutputSwitch    `protobuf:"bytes,2,opt,name=switch,proto3" json:"switch,omitempty" db:"switch" yaml:"switch" bson:"switch"`
 }
 
 func (x *Output) Reset() {

@@ -18,6 +18,7 @@ class AoiServiceServicer(object):
 
     def GetAoi(self, request, context):
         """获取AOI信息
+        Get AOI information
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

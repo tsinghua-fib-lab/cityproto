@@ -14,6 +14,7 @@ export const RoutingService = {
   methods: {
     /**
      * 获取导航路线
+     * Get routing path
      *
      * @generated from rpc city.routing.v2.RoutingService.GetRoute
      */
@@ -25,6 +26,7 @@ export const RoutingService = {
     },
     /**
      * 设置行车导航道路通行成本
+     * Set traveling cost of driving routing
      *
      * @generated from rpc city.routing.v2.RoutingService.SetDrivingCosts
      */
@@ -36,6 +38,7 @@ export const RoutingService = {
     },
     /**
      * 获取行车导航道路通行成本
+     * Get traveling cost of driving routing
      *
      * @generated from rpc city.routing.v2.RoutingService.GetDrivingCosts
      */

@@ -8,12 +8,14 @@ import { Message, proto3 } from "@bufbuild/protobuf";
 
 /**
  * 路径成本设置
+ * Route cost settings
  *
  * @generated from message city.routing.v2.Cost
  */
 export declare class Cost extends Message<Cost> {
   /**
    * 目标拓扑元素（只支持道路Road）
+   * Target topology element (only supports roads)
    *
    * @generated from field: int32 id = 1;
    */
@@ -21,6 +23,7 @@ export declare class Cost extends Message<Cost> {
 
   /**
    * 路径成本（单位：秒）
+   * Path cost (in seconds)
    *
    * @generated from field: double cost = 2;
    */
@@ -28,8 +31,11 @@ export declare class Cost extends Message<Cost> {
 
   /**
    * 设置的时间（单位：秒）
+   * Set time (in seconds)
    * 即设置几点几分的道路通行成本为cost
+   * That is, set the cost as the value at what time
    * 为空表示设置全天通行成本均为cost
+   * If empty, it means that the all-day cost is set to the value.
    *
    * @generated from field: optional double time = 3;
    */

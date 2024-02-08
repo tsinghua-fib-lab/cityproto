@@ -22,19 +22,24 @@ const (
 )
 
 // 获取导航路线请求
+// Request for getting routing path
 type GetRouteRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
 	// 导航类型
-	Type RouteType `protobuf:"varint,1,opt,name=type,proto3,enum=city.routing.v2.RouteType" json:"type,omitempty" yaml:"type" bson:"type" db:"type"`
+	// routing type
+	Type RouteType `protobuf:"varint,1,opt,name=type,proto3,enum=city.routing.v2.RouteType" json:"type,omitempty" bson:"type" db:"type" yaml:"type"`
 	// 起点，约定：包含LanePosition或AoiPosition中的一种
+	// Starting point, convention: as LanePosition or AoiPosition
 	Start *v2.Position `protobuf:"bytes,2,opt,name=start,proto3" json:"start,omitempty" yaml:"start" bson:"start" db:"start"`
-	// 起点，约定：包含LanePosition或AoiPosition中的一种
+	// 终点，约定：包含LanePosition或AoiPosition中的一种
+	// Ending point, convention: as LanePosition or AoiPosition
 	End *v2.Position `protobuf:"bytes,3,opt,name=end,proto3" json:"end,omitempty" yaml:"end" bson:"end" db:"end"`
 	// 发送导航请求的时间（目前仅在行车导航中使用）
-	Time float64 `protobuf:"fixed64,5,opt,name=time,proto3" json:"time,omitempty" yaml:"time" bson:"time" db:"time"`
+	// The time to send routing request (currently only used in driving routing)
+	Time float64 `protobuf:"fixed64,5,opt,name=time,proto3" json:"time,omitempty" db:"time" yaml:"time" bson:"time"`
 }
 
 func (x *GetRouteRequest) Reset() {
@@ -98,12 +103,13 @@ func (x *GetRouteRequest) GetTime() float64 {
 }
 
 // 获取导航路线响应
+// Response of getting routing path
 type GetRouteResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Journeys []*Journey `protobuf:"bytes,1,rep,name=journeys,proto3" json:"journeys,omitempty" bson:"journeys" db:"journeys" yaml:"journeys"`
+	Journeys []*Journey `protobuf:"bytes,1,rep,name=journeys,proto3" json:"journeys,omitempty" yaml:"journeys" bson:"journeys" db:"journeys"`
 }
 
 func (x *GetRouteResponse) Reset() {
@@ -146,13 +152,15 @@ func (x *GetRouteResponse) GetJourneys() []*Journey {
 }
 
 // 设置行车导航道路通行成本请求
+// Request for setting driving routing travelling cost
 type SetDrivingCostsRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
 	// 道路通行成本
-	Costs []*Cost `protobuf:"bytes,1,rep,name=costs,proto3" json:"costs,omitempty" yaml:"costs" bson:"costs" db:"costs"`
+	// travelling cost
+	Costs []*Cost `protobuf:"bytes,1,rep,name=costs,proto3" json:"costs,omitempty" db:"costs" yaml:"costs" bson:"costs"`
 }
 
 func (x *SetDrivingCostsRequest) Reset() {
@@ -195,6 +203,7 @@ func (x *SetDrivingCostsRequest) GetCosts() []*Cost {
 }
 
 // 设置行车导航道路通行成本响应
+// Response of setting driving routing travelling cost
 type SetDrivingCostsResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -234,13 +243,15 @@ func (*SetDrivingCostsResponse) Descriptor() ([]byte, []int) {
 }
 
 // 获取行车导航道路通行成本请求
+// Request for getting driving routing travelling cost
 type GetDrivingCostsRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
 	// 道路通行成本（按照给定的id和time进行查询）
-	Costs []*Cost `protobuf:"bytes,1,rep,name=costs,proto3" json:"costs,omitempty" yaml:"costs" bson:"costs" db:"costs"`
+	// travelling cost (query via the given ID and time)
+	Costs []*Cost `protobuf:"bytes,1,rep,name=costs,proto3" json:"costs,omitempty" bson:"costs" db:"costs" yaml:"costs"`
 }
 
 func (x *GetDrivingCostsRequest) Reset() {
@@ -283,12 +294,14 @@ func (x *GetDrivingCostsRequest) GetCosts() []*Cost {
 }
 
 // 获取行车导航道路通行成本响应
+// Response of getting driving routing travelling cost
 type GetDrivingCostsResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
 	// 道路通行成本（补全cost后的结果）
+	// travelling cost (results after completing the cost)
 	Costs []*Cost `protobuf:"bytes,1,rep,name=costs,proto3" json:"costs,omitempty" yaml:"costs" bson:"costs" db:"costs"`
 }
 

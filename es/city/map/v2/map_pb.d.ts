@@ -9,12 +9,14 @@ import type { LanePosition, XYPosition } from "../../geo/v2/geo_pb.js";
 
 /**
  * 车道类型
+ * Lane type
  *
  * @generated from enum city.map.v2.LaneType
  */
 export declare enum LaneType {
   /**
    * 未指定
+   * unspecified
    *
    * @generated from enum value: LANE_TYPE_UNSPECIFIED = 0;
    */
@@ -22,6 +24,7 @@ export declare enum LaneType {
 
   /**
    * 行车
+   * driving
    *
    * @generated from enum value: LANE_TYPE_DRIVING = 1;
    */
@@ -29,6 +32,7 @@ export declare enum LaneType {
 
   /**
    * 步行
+   * walking
    *
    * @generated from enum value: LANE_TYPE_WALKING = 2;
    */
@@ -37,12 +41,14 @@ export declare enum LaneType {
 
 /**
  * 车道转向
+ * lane turn type
  *
  * @generated from enum city.map.v2.LaneTurn
  */
 export declare enum LaneTurn {
   /**
    * 未指定
+   * unspecified
    *
    * @generated from enum value: LANE_TURN_UNSPECIFIED = 0;
    */
@@ -50,6 +56,7 @@ export declare enum LaneTurn {
 
   /**
    * 直行
+   * go straight
    *
    * @generated from enum value: LANE_TURN_STRAIGHT = 1;
    */
@@ -57,6 +64,7 @@ export declare enum LaneTurn {
 
   /**
    * 左转
+   * turn left
    *
    * @generated from enum value: LANE_TURN_LEFT = 2;
    */
@@ -64,6 +72,7 @@ export declare enum LaneTurn {
 
   /**
    * 右转
+   * turn right
    *
    * @generated from enum value: LANE_TURN_RIGHT = 3;
    */
@@ -71,6 +80,7 @@ export declare enum LaneTurn {
 
   /**
    * 掉头
+   * turn around
    *
    * @generated from enum value: LANE_TURN_AROUND = 4;
    */
@@ -79,12 +89,14 @@ export declare enum LaneTurn {
 
 /**
  * 车道连接类型
+ * Lane connection type
  *
  * @generated from enum city.map.v2.LaneConnectionType
  */
 export declare enum LaneConnectionType {
   /**
    * 未指定
+   * unspecified
    *
    * @generated from enum value: LANE_CONNECTION_TYPE_UNSPECIFIED = 0;
    */
@@ -92,6 +104,7 @@ export declare enum LaneConnectionType {
 
   /**
    * 连接处为道路开头
+   * The connection is at the lane head
    *
    * @generated from enum value: LANE_CONNECTION_TYPE_HEAD = 1;
    */
@@ -99,6 +112,7 @@ export declare enum LaneConnectionType {
 
   /**
    * 连接处为道路结尾
+   * The connection is at the lane tail
    *
    * @generated from enum value: LANE_CONNECTION_TYPE_TAIL = 2;
    */
@@ -113,6 +127,7 @@ export declare enum LaneConnectionType {
 export declare enum AoiType {
   /**
    * 未指定
+   * unspecified
    *
    * @generated from enum value: AOI_TYPE_UNSPECIFIED = 0;
    */
@@ -120,6 +135,7 @@ export declare enum AoiType {
 
   /**
    * 公交站点
+   * bus station
    *
    * @generated from enum value: AOI_TYPE_BUS_STATION = 1;
    */
@@ -127,6 +143,7 @@ export declare enum AoiType {
 
   /**
    * 其他
+   * other
    *
    * @generated from enum value: AOI_TYPE_OTHER = 2;
    */
@@ -135,6 +152,7 @@ export declare enum AoiType {
 
 /**
  * 土地利用类型，参照国标GB/T 21010—2007
+ * Land use type, refer to the national standard GB/T 21010-2007
  * http://www.gscloud.cn/static/cases/%E3%80%8A%E5%9C%9F%E5%9C%B0%E5%88%A9%E7%94%A8%E7%8E%B0%E7%8A%B6%E5%88%86%E7%B1%BB%E3%80%8B%E5%9B%BD%E5%AE%B6%E6%A0%87%E5%87%86gb_t21010-2007(1).pdf
  *
  * @generated from enum city.map.v2.LandUseType
@@ -142,6 +160,7 @@ export declare enum AoiType {
 export declare enum LandUseType {
   /**
    * 未指定
+   * unspecified
    *
    * @generated from enum value: LAND_USE_TYPE_UNSPECIFIED = 0;
    */
@@ -149,6 +168,7 @@ export declare enum LandUseType {
 
   /**
    * 商服用地
+   * commercial land
    *
    * @generated from enum value: LAND_USE_TYPE_COMMERCIAL = 5;
    */
@@ -156,6 +176,7 @@ export declare enum LandUseType {
 
   /**
    * 工矿仓储用地
+   * Industrial and storage land
    *
    * @generated from enum value: LAND_USE_TYPE_INDUSTRIAL = 6;
    */
@@ -163,6 +184,7 @@ export declare enum LandUseType {
 
   /**
    * 住宅用地
+   * residential land
    *
    * @generated from enum value: LAND_USE_TYPE_RESIDENTIAL = 7;
    */
@@ -170,6 +192,7 @@ export declare enum LandUseType {
 
   /**
    * 公共管理与公共服务用地
+   * Public management and public service land
    *
    * @generated from enum value: LAND_USE_TYPE_PUBLIC = 8;
    */
@@ -177,6 +200,7 @@ export declare enum LandUseType {
 
   /**
    * 交通运输用地
+   * transportation land
    *
    * @generated from enum value: LAND_USE_TYPE_TRANSPORTATION = 10;
    */
@@ -184,6 +208,7 @@ export declare enum LandUseType {
 
   /**
    * 其他土地
+   * other land
    *
    * @generated from enum value: LAND_USE_TYPE_OTHER = 12;
    */
@@ -192,12 +217,14 @@ export declare enum LandUseType {
 
 /**
  * 折线，用于定义车道等的形状
+ * Polyline, used to define the shape of lanes, etc.
  *
  * @generated from message city.map.v2.Polyline
  */
 export declare class Polyline extends Message<Polyline> {
   /**
    * 折线上的点
+   * Points of the polyline
    *
    * @generated from field: repeated city.geo.v2.XYPosition nodes = 1;
    */
@@ -220,12 +247,14 @@ export declare class Polyline extends Message<Polyline> {
 
 /**
  * 地图元信息
+ * Map meta information
  *
  * @generated from message city.map.v2.Header
  */
 export declare class Header extends Message<Header> {
   /**
    * 地图名称
+   * Map name
    *
    * @generated from field: string name = 1;
    */
@@ -233,6 +262,7 @@ export declare class Header extends Message<Header> {
 
   /**
    * 地图创建时间
+   * Map creation time
    *
    * @generated from field: string date = 2;
    */
@@ -240,6 +270,7 @@ export declare class Header extends Message<Header> {
 
   /**
    * 最大纬度对应的y坐标
+   * y coordinate corresponding to the maximum latitude
    *
    * @generated from field: double north = 3;
    */
@@ -247,6 +278,7 @@ export declare class Header extends Message<Header> {
 
   /**
    * 最小纬度对应的y坐标
+   * y coordinate corresponding to the minimum latitude
    *
    * @generated from field: double south = 4;
    */
@@ -254,6 +286,7 @@ export declare class Header extends Message<Header> {
 
   /**
    * 最大经度对应的x坐标
+   * x coordinate corresponding to the maximum longitude
    *
    * @generated from field: double east = 5;
    */
@@ -261,6 +294,7 @@ export declare class Header extends Message<Header> {
 
   /**
    * 最小经度对应的x坐标
+   * x coordinate corresponding to the minimum longitude
    *
    * @generated from field: double west = 6;
    */
@@ -268,6 +302,7 @@ export declare class Header extends Message<Header> {
 
   /**
    * PROJ.4 投影字符串，用以支持xy坐标到其他坐标系的转换
+   * PROJ.4 projection string to support the conversion of xy coordinates to other coordinate systems
    *
    * @generated from field: string projection = 7;
    */
@@ -290,12 +325,14 @@ export declare class Header extends Message<Header> {
 
 /**
  * 两个lane的冲突区域
+ * Conflict area between two lanes
  *
  * @generated from message city.map.v2.LaneOverlap
  */
 export declare class LaneOverlap extends Message<LaneOverlap> {
   /**
    * 冲突点在本车道上的坐标
+   * Coordinates of the conflict point on this lane
    *
    * @generated from field: city.geo.v2.LanePosition self = 1;
    */
@@ -303,6 +340,7 @@ export declare class LaneOverlap extends Message<LaneOverlap> {
 
   /**
    * 冲突点在冲突车道上的坐标
+   * Coordinates of the conflict point on the conflicted lane
    *
    * @generated from field: city.geo.v2.LanePosition other = 2;
    */
@@ -310,6 +348,7 @@ export declare class LaneOverlap extends Message<LaneOverlap> {
 
   /**
    * 本车道是否有优先通行权
+   * Whether this lane has priority
    *
    * @generated from field: bool self_first = 3;
    */
@@ -332,12 +371,14 @@ export declare class LaneOverlap extends Message<LaneOverlap> {
 
 /**
  * 车道连接信息
+ * Lane connection information
  *
  * @generated from message city.map.v2.LaneConnection
  */
 export declare class LaneConnection extends Message<LaneConnection> {
   /**
    * 所连接的车道Lane的ID
+   * ID of the connected lane
    *
    * @generated from field: int32 id = 1;
    */
@@ -345,6 +386,7 @@ export declare class LaneConnection extends Message<LaneConnection> {
 
   /**
    * 连接类型
+   * Connection type
    *
    * @generated from field: city.map.v2.LaneConnectionType type = 2;
    */
@@ -367,12 +409,14 @@ export declare class LaneConnection extends Message<LaneConnection> {
 
 /**
  * Lane，用于描述道路上的车道、人行道等
+ * Lane, used to describe lanes, sidewalks, etc. on the road
  *
  * @generated from message city.map.v2.Lane
  */
 export declare class Lane extends Message<Lane> {
   /**
    * 车道id（从0开始）
+   * lane id (starts from 0)
    *
    * @generated from field: int32 id = 1;
    */
@@ -380,6 +424,7 @@ export declare class Lane extends Message<Lane> {
 
   /**
    * 车道类型
+   * lane type
    *
    * @generated from field: city.map.v2.LaneType type = 2;
    */
@@ -387,6 +432,7 @@ export declare class Lane extends Message<Lane> {
 
   /**
    * 车道转向
+   * lane turn type
    *
    * @generated from field: city.map.v2.LaneTurn turn = 3;
    */
@@ -394,6 +440,7 @@ export declare class Lane extends Message<Lane> {
 
   /**
    * 限速 (m/s)
+   * max speed (m/s)
    *
    * @generated from field: double max_speed = 4;
    */
@@ -401,6 +448,7 @@ export declare class Lane extends Message<Lane> {
 
   /**
    * 中心线长度（单位：米）
+   * centerline length (in meters)
    *
    * @generated from field: double length = 5;
    */
@@ -408,6 +456,7 @@ export declare class Lane extends Message<Lane> {
 
   /**
    * 车道宽度（单位：米）
+   * lane width (in meters)
    *
    * @generated from field: double width = 6;
    */
@@ -415,6 +464,7 @@ export declare class Lane extends Message<Lane> {
 
   /**
    * 车道中心线（车辆/行车轨迹线）
+   * Lane center line (vehicle/driving line)
    *
    * @generated from field: city.map.v2.Polyline center_line = 7;
    */
@@ -422,8 +472,9 @@ export declare class Lane extends Message<Lane> {
 
   /**
    * 车道左边界线
+   * Lane left boundary line
    *
-   * 弃用
+   * 弃用 deprecated
    *
    * @generated from field: city.map.v2.Polyline left_border_line = 8 [deprecated = true];
    * @deprecated
@@ -432,8 +483,9 @@ export declare class Lane extends Message<Lane> {
 
   /**
    * 车道右边界线
+   * Lane right boundary line
    *
-   * 弃用
+   * 弃用 deprecated
    *
    * @generated from field: city.map.v2.Polyline right_border_line = 9 [deprecated = true];
    * @deprecated
@@ -443,8 +495,11 @@ export declare class Lane extends Message<Lane> {
   /**
    * Lanes can drive / walk from
    * 对于Junction内的车道至多1个前驱
+   * For lanes within junction, there is at most 1 predecessor
    * 对于LANE_TYPE_DRIVING，连接类型必为LANE_CONNECTION_TYPE_TAIL
-   * 对于LANE_TYPE_WALKING连接类型两种都有可能
+   * For LANE_TYPE_DRIVING, the connection type must be LANE_CONNECTION_TYPE_TAIL
+   * 对于LANE_TYPE_WALKING连接类型，两种都有可能
+   * For LANE_TYPE_WALKING, both connection types are possible
    *
    * @generated from field: repeated city.map.v2.LaneConnection predecessors = 10;
    */
@@ -453,8 +508,11 @@ export declare class Lane extends Message<Lane> {
   /**
    * Lanes can drive / walk to
    * 对于Junction内的车道至多1个后继
+   * For lanes within junction, there is at most 1 successor
    * 对于LANE_TYPE_DRIVING，连接类型必为LANE_CONNECTION_TYPE_HEAD
-   * 对于LANE_TYPE_WALKING连接类型两种都有可能
+   * For LANE_TYPE_DRIVING, the connection type must be LANE_CONNECTION_TYPE_HEAD
+   * 对于LANE_TYPE_WALKING连接类型，两种都有可能
+   * For LANE_TYPE_WALKING, both connection types are possible
    *
    * @generated from field: repeated city.map.v2.LaneConnection successors = 11;
    */
@@ -462,6 +520,7 @@ export declare class Lane extends Message<Lane> {
 
   /**
    * 左侧相邻车道（按从近到远排列）
+   * Adjacent lanes on the left (arranged from nearest to far)
    *
    * @generated from field: repeated int32 left_lane_ids = 12;
    */
@@ -469,6 +528,7 @@ export declare class Lane extends Message<Lane> {
 
   /**
    * 右侧相邻车道（按从近到远排列）
+   * Adjacent lanes on the right (arranged from nearest to far)
    *
    * @generated from field: repeated int32 right_lane_ids = 13;
    */
@@ -476,6 +536,7 @@ export declare class Lane extends Message<Lane> {
 
   /**
    * 所属的道路road id或路口junction id
+   * The road id or junction id it belongs to
    *
    * @generated from field: int32 parent_id = 14;
    */
@@ -483,6 +544,7 @@ export declare class Lane extends Message<Lane> {
 
   /**
    * 车道之间的冲突点（仅在Junction内有效），保证按照self_s从小到大排序
+   * Conflict points between lanes (valid only within Junction), guaranteed to be sorted from small to large according to self_s
    *
    * @generated from field: repeated city.map.v2.LaneOverlap overlaps = 15;
    */
@@ -490,6 +552,7 @@ export declare class Lane extends Message<Lane> {
 
   /**
    * 连接到该车道的所有AOI
+   * All AOIs connected to this lane
    *
    * @generated from field: repeated int32 aoi_ids = 16;
    */
@@ -516,6 +579,7 @@ export declare class Lane extends Message<Lane> {
 export declare class NextRoadLane extends Message<NextRoadLane> {
   /**
    * 下一条路的id
+   * ID of the next road
    *
    * @generated from field: int32 road_id = 1;
    */
@@ -523,6 +587,7 @@ export declare class NextRoadLane extends Message<NextRoadLane> {
 
   /**
    * 我们假定能去往对应道路的车道id范围是连续的，用[a,b]表示
+   * We assume that the range of lane IDs of the next road is continuous, represented by [a, b]
    *
    * @generated from field: int32 lane_id_a = 2;
    */
@@ -554,6 +619,7 @@ export declare class NextRoadLane extends Message<NextRoadLane> {
 export declare class NextRoadLanePlan extends Message<NextRoadLanePlan> {
   /**
    * 记录去往目标next_road的可行lane集合
+   * set of feasible lanes for going to the next_road
    *
    * @generated from field: repeated city.map.v2.NextRoadLane next_road_lanes = 1;
    */
@@ -576,12 +642,14 @@ export declare class NextRoadLanePlan extends Message<NextRoadLanePlan> {
 
 /**
  * Road，用于描述道路
+ * Road, describing roads
  *
  * @generated from message city.map.v2.Road
  */
 export declare class Road extends Message<Road> {
   /**
    * 道路id（从2_0000_0000开始）
+   * Road ID (starting from 2_0000_0000)
    *
    * @generated from field: int32 id = 1;
    */
@@ -589,6 +657,7 @@ export declare class Road extends Message<Road> {
 
   /**
    * 道路名字
+   * road name
    *
    * @generated from field: string name = 4;
    */
@@ -596,7 +665,9 @@ export declare class Road extends Message<Road> {
 
   /**
    * 属于该道路Road的所有车道/人行道等lane
+   * All lanes/sidewalks belonging to the road
    * lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺序给出的
+   * lane_ids are given in order from the leftmost lane to the rightmost lane (viewed from the forward direction)
    *
    * @generated from field: repeated int32 lane_ids = 2;
    */
@@ -604,6 +675,7 @@ export declare class Road extends Message<Road> {
 
   /**
    * 对于包含动态车道的道路，需要通过这一项来指定所有的候选方案
+   * For roads containing dynamic lanes, this is required to specify all candidates
    *
    * @generated from field: repeated city.map.v2.NextRoadLanePlan next_road_lane_plans = 3;
    */
@@ -626,14 +698,18 @@ export declare class Road extends Message<Road> {
 
 /**
  * 车道组，用于描述路口内的车道组合
+ * Lane group, describing the combination of lanes within an intersection
  * 具有相同入口道路和出口道路的车道组成一个车道组
+ * Lanes with the same entrance and exit roads form a lane group
  * 车道组是信控处理、路口通行的基本单元
+ * Lane group is the basic unit for signal control and traffic in the junction.
  *
  * @generated from message city.map.v2.JunctionLaneGroup
  */
 export declare class JunctionLaneGroup extends Message<JunctionLaneGroup> {
   /**
    * 该车道组的入口道路
+   * The entrance road to this lane group
    *
    * @generated from field: int32 in_road_id = 1;
    */
@@ -641,6 +717,7 @@ export declare class JunctionLaneGroup extends Message<JunctionLaneGroup> {
 
   /**
    * 该车道组的入口角度（弧度制）
+   * The entrance angle of this lane group (in radians)
    *
    * @generated from field: double in_angle = 2;
    */
@@ -648,6 +725,7 @@ export declare class JunctionLaneGroup extends Message<JunctionLaneGroup> {
 
   /**
    * 该车道组的出口道路
+   * The exit road for this lane group
    *
    * @generated from field: int32 out_road_id = 3;
    */
@@ -655,6 +733,7 @@ export declare class JunctionLaneGroup extends Message<JunctionLaneGroup> {
 
   /**
    * 该车道组的出口角度（弧度制）
+   * The exit angle of this lane group (in radians)
    *
    * @generated from field: double out_angle = 4;
    */
@@ -662,6 +741,7 @@ export declare class JunctionLaneGroup extends Message<JunctionLaneGroup> {
 
   /**
    * 该车道组包含的车道
+   * Lanes in the group
    *
    * @generated from field: repeated int32 lane_ids = 5;
    */
@@ -669,6 +749,7 @@ export declare class JunctionLaneGroup extends Message<JunctionLaneGroup> {
 
   /**
    * 该车道组的转向属性
+   * The turn type of this lane group
    *
    * @generated from field: city.map.v2.LaneTurn turn = 6;
    */
@@ -691,12 +772,14 @@ export declare class JunctionLaneGroup extends Message<JunctionLaneGroup> {
 
 /**
  * Junction，用于描述路口
+ * Junction, describing road intersections
  *
  * @generated from message city.map.v2.Junction
  */
 export declare class Junction extends Message<Junction> {
   /**
    * 路口id（从3_0000_0000开始）
+   * Junction id (starting from 3_0000_0000)
    *
    * @generated from field: int32 id = 1;
    */
@@ -704,6 +787,7 @@ export declare class Junction extends Message<Junction> {
 
   /**
    * 属于该路口Junction的所有车道/人行道等lane
+   * All driving/walking lanes belonging to this junction.
    *
    * @generated from field: repeated int32 lane_ids = 2;
    */
@@ -711,6 +795,7 @@ export declare class Junction extends Message<Junction> {
 
   /**
    * 属于该路口Junction的所有行车车道组
+   * All driving lane groups belonging to this junction
    *
    * @generated from field: repeated city.map.v2.JunctionLaneGroup driving_lane_groups = 3;
    */
@@ -733,12 +818,14 @@ export declare class Junction extends Message<Junction> {
 
 /**
  * Aoi，用于描述地图上的区域
+ * Aoi, describing a region on the map
  *
  * @generated from message city.map.v2.Aoi
  */
 export declare class Aoi extends Message<Aoi> {
   /**
    * Aoi ID（从5_0000_0000开始）
+   * Aoi ID (starting from 5_0000_0000)
    *
    * @generated from field: int32 id = 1;
    */
@@ -746,6 +833,7 @@ export declare class Aoi extends Message<Aoi> {
 
   /**
    * Aoi名字
+   * Aoi name
    *
    * @generated from field: string name = 11;
    */
@@ -753,6 +841,7 @@ export declare class Aoi extends Message<Aoi> {
 
   /**
    * Aoi类型
+   * Aoi type
    *
    * @generated from field: city.map.v2.AoiType type = 2 [deprecated = true];
    * @deprecated
@@ -761,6 +850,7 @@ export declare class Aoi extends Message<Aoi> {
 
   /**
    * Aoi与行车路网的连接点
+   * Connection point between Aoi and driving lanes
    *
    * @generated from field: repeated city.geo.v2.LanePosition driving_positions = 3;
    */
@@ -768,6 +858,7 @@ export declare class Aoi extends Message<Aoi> {
 
   /**
    * Aoi与步行路网的连接点
+   * Connection point between Aoi and walking lanes
    *
    * @generated from field: repeated city.geo.v2.LanePosition walking_positions = 4;
    */
@@ -775,6 +866,7 @@ export declare class Aoi extends Message<Aoi> {
 
   /**
    * Aoi原始位置（如果只有一个值，则为Aoi所在的点，否则为Aoi多边形的边界）
+   * Aoi original position (if there is only one value, it is the point where Aoi is located, otherwise it is the boundary of the Aoi polygon)
    *
    * @generated from field: repeated city.geo.v2.XYPosition positions = 5;
    */
@@ -782,6 +874,7 @@ export declare class Aoi extends Message<Aoi> {
 
   /**
    * Aoi与行车路网连接时在自身边界上的连接点, 与driving_positions按索引一一对应
+   * The connection point on its own boundary when Aoi is connected to the driving lanes corresponds one-to-one with driving_positions by index.
    *
    * @generated from field: repeated city.geo.v2.XYPosition driving_gates = 6;
    */
@@ -789,6 +882,7 @@ export declare class Aoi extends Message<Aoi> {
 
   /**
    * Aoi与步行路网连接时在自身边界上的连接点, 与walking_positions按索引一一对应
+   * The connection point on its own boundary when Aoi is connected to the walking lanes corresponds one-to-one with walking_positions by index.
    *
    * @generated from field: repeated city.geo.v2.XYPosition walking_gates = 7;
    */
@@ -796,6 +890,7 @@ export declare class Aoi extends Message<Aoi> {
 
   /**
    * Aoi面积, 若是Poi则无此字段
+   * Aoi area, if it is Poi, there is no such field
    *
    * @generated from field: optional double area = 8;
    */
@@ -803,6 +898,7 @@ export declare class Aoi extends Message<Aoi> {
 
   /**
    * 土地利用分类，若是Poi则无此字段
+   * Land use type, if it is Poi, there is no such field
    *
    * @generated from field: optional city.map.v2.LandUseType land_use = 10;
    */
@@ -810,6 +906,7 @@ export declare class Aoi extends Message<Aoi> {
 
   /**
    * Aoi包含的Poi
+   * Pois contained in Aoi
    *
    * @generated from field: repeated int32 poi_ids = 9;
    */
@@ -832,12 +929,14 @@ export declare class Aoi extends Message<Aoi> {
 
 /**
  * Poi，用于描述地图上的兴趣点
+ * Poi, describing points of interest on the map
  *
  * @generated from message city.map.v2.Poi
  */
 export declare class Poi extends Message<Poi> {
   /**
    * Poi id(从7_0000_0000开始)
+   * Poi id (starting from 7_0000_0000)
    *
    * @generated from field: int32 id = 1;
    */
@@ -845,6 +944,7 @@ export declare class Poi extends Message<Poi> {
 
   /**
    * Poi名称
+   * Poi name
    *
    * @generated from field: string name = 2;
    */
@@ -852,6 +952,7 @@ export declare class Poi extends Message<Poi> {
 
   /**
    * Poi分类编码
+   * Poi category code
    *
    * @generated from field: string category = 3;
    */
@@ -859,6 +960,7 @@ export declare class Poi extends Message<Poi> {
 
   /**
    * Poi原始位置
+   * Poi original position
    *
    * @generated from field: city.geo.v2.XYPosition position = 4;
    */
@@ -866,6 +968,7 @@ export declare class Poi extends Message<Poi> {
 
   /**
    * Poi所属的Aoi
+   * Aoi to which the Poi belongs
    *
    * @generated from field: int32 aoi_id = 5;
    */
@@ -873,6 +976,7 @@ export declare class Poi extends Message<Poi> {
 
   /**
    * Poi的容量（能同时容纳的人数），若无则表示无人数限制
+   * The capacity of Poi (the number of people it can accommodate at the same time), if none, it means there is no limit on the number of people
    *
    * @generated from field: optional int32 capacity = 6;
    */
@@ -880,6 +984,7 @@ export declare class Poi extends Message<Poi> {
 
   /**
    * Poi所能提供的功能
+   * The functions the Poi can offer
    *
    * @generated from field: repeated string functions = 7;
    */
@@ -902,6 +1007,7 @@ export declare class Poi extends Message<Poi> {
 
 /**
  * 地图，对应一个地图pb文件或一个地图mongodb collection
+ * Map, corresponding to a map pb file or a map MongoDB collection
  *
  * @generated from message city.map.v2.Map
  */

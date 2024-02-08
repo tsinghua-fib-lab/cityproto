@@ -14,6 +14,7 @@ export declare const TrafficLightService: {
   readonly methods: {
     /**
      * 获取路口的红绿灯信息
+     * Get traffic light information
      *
      * @generated from rpc city.traffic_light.v2.TrafficLightService.GetTrafficLight
      */
@@ -25,6 +26,7 @@ export declare const TrafficLightService: {
     },
     /**
      * 设置路口的红绿灯信息
+     * Set traffic light information
      *
      * @generated from rpc city.traffic_light.v2.TrafficLightService.SetTrafficLight
      */
@@ -36,6 +38,7 @@ export declare const TrafficLightService: {
     },
     /**
      * 设置路口的红绿灯相位
+     * Set traffic light phase
      *
      * @generated from rpc city.traffic_light.v2.TrafficLightService.SetTrafficLightPhase
      */
@@ -47,6 +50,7 @@ export declare const TrafficLightService: {
     },
     /**
      * 设置路口的红绿灯状态
+     * Set traffic light status
      *
      * @generated from rpc city.traffic_light.v2.TrafficLightService.SetTrafficLightStatus
      */

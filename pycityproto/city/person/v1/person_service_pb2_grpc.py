@@ -21,6 +21,7 @@ class PersonServiceServicer(object):
 
     def GetPerson(self, request, context):
         """获取person信息
+        Get person information
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -28,6 +29,7 @@ class PersonServiceServicer(object):
 
     def AddPerson(self, request, context):
         """新增person 传入person初始位置、目的地表、属性 返回personid
+        Add a new person. Input person's initial location, destination table, and attributes, return personid
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -35,6 +37,7 @@ class PersonServiceServicer(object):
 
     def SetSchedule(self, request, context):
         """修改person的schedule 传入personid、目的地表
+        Set person's schedule. Input personid and destination table
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -42,6 +45,7 @@ class PersonServiceServicer(object):
 
     def GetPersonByLongLatBBox(self, request, context):
         """获取特定区域内的person
+        Get persons in a specific region
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

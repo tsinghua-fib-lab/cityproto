@@ -11,6 +11,7 @@ import { LongLatBBox } from "../../geo/v2/geo_pb.js";
 
 /**
  * 获取person信息请求
+ * Request for getting person information
  *
  * @generated from message city.person.v1.GetPersonRequest
  */
@@ -23,6 +24,7 @@ export const GetPersonRequest = proto3.makeMessageType(
 
 /**
  * 获取person信息响应
+ * Response of getting person information
  *
  * @generated from message city.person.v1.GetPersonResponse
  */
@@ -36,6 +38,7 @@ export const GetPersonResponse = proto3.makeMessageType(
 
 /**
  * 新增person请求
+ * Request for adding a new person
  *
  * @generated from message city.person.v1.AddPersonRequest
  */
@@ -48,6 +51,7 @@ export const AddPersonRequest = proto3.makeMessageType(
 
 /**
  * 新增person响应
+ * Response of adding a new person
  *
  * @generated from message city.person.v1.AddPersonResponse
  */
@@ -60,6 +64,7 @@ export const AddPersonResponse = proto3.makeMessageType(
 
 /**
  * 修改person的schedule请求
+ * Request for setting person schedule
  *
  * @generated from message city.person.v1.SetScheduleRequest
  */
@@ -73,6 +78,7 @@ export const SetScheduleRequest = proto3.makeMessageType(
 
 /**
  * 修改person的schedule响应
+ * Response of setting person schedule
  *
  * @generated from message city.person.v1.SetScheduleResponse
  */
@@ -83,6 +89,7 @@ export const SetScheduleResponse = proto3.makeMessageType(
 
 /**
  * 获取特定区域内的person请求
+ * Request for getting persons in region
  *
  * @generated from message city.person.v1.GetPersonByLongLatBBoxRequest
  */
@@ -96,6 +103,7 @@ export const GetPersonByLongLatBBoxRequest = proto3.makeMessageType(
 
 /**
  * 获取特定区域内的person响应
+ * Response of getting persons in region
  *
  * @generated from message city.person.v1.GetPersonByLongLatBBoxResponse
  */

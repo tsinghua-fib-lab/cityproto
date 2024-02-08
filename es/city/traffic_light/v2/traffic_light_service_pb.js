@@ -8,6 +8,7 @@ import { TrafficLight } from "./traffic_light_pb.js";
 
 /**
  * 获取路口的红绿灯信息请求
+ * Reqeust for getting traffic light information
  *
  * @generated from message city.traffic_light.v2.GetTrafficLightRequest
  */
@@ -20,6 +21,7 @@ export const GetTrafficLightRequest = proto3.makeMessageType(
 
 /**
  * 获取路口的红绿灯信息响应
+ * Response of getting traffic light information
  *
  * @generated from message city.traffic_light.v2.GetTrafficLightResponse
  */
@@ -34,6 +36,7 @@ export const GetTrafficLightResponse = proto3.makeMessageType(
 
 /**
  * 设置路口的红绿灯信息请求
+ * Request for setting traffic light information
  *
  * @generated from message city.traffic_light.v2.SetTrafficLightRequest
  */
@@ -48,6 +51,7 @@ export const SetTrafficLightRequest = proto3.makeMessageType(
 
 /**
  * 设置路口的红绿灯信息响应
+ * Response of setting traffic light information
  *
  * @generated from message city.traffic_light.v2.SetTrafficLightResponse
  */
@@ -58,6 +62,7 @@ export const SetTrafficLightResponse = proto3.makeMessageType(
 
 /**
  * 设置路口的红绿灯相位请求
+ * Request for setting traffic light phase
  *
  * @generated from message city.traffic_light.v2.SetTrafficLightPhaseRequest
  */
@@ -72,6 +77,7 @@ export const SetTrafficLightPhaseRequest = proto3.makeMessageType(
 
 /**
  * 设置路口的红绿灯相位响应
+ * Response of setting traffic light phase
  *
  * @generated from message city.traffic_light.v2.SetTrafficLightPhaseResponse
  */
@@ -82,6 +88,7 @@ export const SetTrafficLightPhaseResponse = proto3.makeMessageType(
 
 /**
  * 设置路口的红绿灯状态请求
+ * Request for setting traffic light status
  *
  * @generated from message city.traffic_light.v2.SetTrafficLightStatusRequest
  */
@@ -95,6 +102,7 @@ export const SetTrafficLightStatusRequest = proto3.makeMessageType(
 
 /**
  * 设置路口的红绿灯状态响应
+ * Response of setting traffic light status
  *
  * @generated from message city.traffic_light.v2.SetTrafficLightStatusResponse
  */

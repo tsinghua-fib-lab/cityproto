@@ -46,6 +46,7 @@ var (
 // ClockServiceClient is a client for the city.clock.v1.ClockService service.
 type ClockServiceClient interface {
 	// 获取当前的模拟时间
+	// get current simulation clock
 	Now(context.Context, *connect.Request[v1.NowRequest]) (*connect.Response[v1.NowResponse], error)
 }
 
@@ -81,6 +82,7 @@ func (c *clockServiceClient) Now(ctx context.Context, req *connect.Request[v1.No
 // ClockServiceHandler is an implementation of the city.clock.v1.ClockService service.
 type ClockServiceHandler interface {
 	// 获取当前的模拟时间
+	// get current simulation clock
 	Now(context.Context, *connect.Request[v1.NowRequest]) (*connect.Response[v1.NowResponse], error)
 }
 

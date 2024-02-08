@@ -14,6 +14,7 @@ export const LaneService = {
   methods: {
     /**
      * 设置Lane的最大速度（限速）
+     * Set Lane's maximum speed (speed limit)
      *
      * @generated from rpc city.map.v2.LaneService.SetLaneMaxV
      */
@@ -25,6 +26,7 @@ export const LaneService = {
     },
     /**
      * 获取Lane的信息
+     * Get Lane information
      *
      * @generated from rpc city.map.v2.LaneService.GetLane
      */
@@ -36,6 +38,7 @@ export const LaneService = {
     },
     /**
      * 获取特定区域内的Lane的信息
+     * Get Lane information in a specific region
      *
      * @generated from rpc city.map.v2.LaneService.GetLaneByLongLatBBox
      */

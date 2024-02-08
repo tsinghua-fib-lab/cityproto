@@ -21,6 +21,7 @@ class TrafficLightServiceServicer(object):
 
     def GetTrafficLight(self, request, context):
         """获取路口的红绿灯信息
+        Get traffic light information
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -28,6 +29,7 @@ class TrafficLightServiceServicer(object):
 
     def SetTrafficLight(self, request, context):
         """设置路口的红绿灯信息
+        Set traffic light information
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -35,6 +37,7 @@ class TrafficLightServiceServicer(object):
 
     def SetTrafficLightPhase(self, request, context):
         """设置路口的红绿灯相位
+        Set traffic light phase
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -42,6 +45,7 @@ class TrafficLightServiceServicer(object):
 
     def SetTrafficLightStatus(self, request, context):
         """设置路口的红绿灯状态
+        Set traffic light status
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

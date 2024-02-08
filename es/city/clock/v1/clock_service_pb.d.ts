@@ -8,6 +8,7 @@ import { Message, proto3 } from "@bufbuild/protobuf";
 
 /**
  * 获取当前的模拟时间请求
+ * request of getting current simulation clock
  *
  * @generated from message city.clock.v1.NowRequest
  */
@@ -29,12 +30,14 @@ export declare class NowRequest extends Message<NowRequest> {
 
 /**
  * 获取当前的模拟时间响应
+ * response of getting current simulation clock
  *
  * @generated from message city.clock.v1.NowResponse
  */
 export declare class NowResponse extends Message<NowResponse> {
   /**
    * 当前的模拟时间，单位为秒
+   * current simulation clock, in seconds
    *
    * @generated from field: double t = 1;
    */

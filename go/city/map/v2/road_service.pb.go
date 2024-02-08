@@ -22,22 +22,30 @@ const (
 )
 
 // 道路拥堵情况
+// road congestion level
 type RoadLevel int32
 
 const (
 	// 未指定
+	// unspecified
 	RoadLevel_ROAD_LEVEL_UNSPECIFIED RoadLevel = 0
 	// 畅通
+	// clear
 	RoadLevel_ROAD_LEVEL_CLEAR RoadLevel = 1
 	// 轻度拥堵
+	// light load
 	RoadLevel_ROAD_LEVEL_LIGHT_LOAD RoadLevel = 2
 	// 中度拥堵
+	// medium load
 	RoadLevel_ROAD_LEVEL_MEDIUM_LOAD RoadLevel = 3
 	// 重度拥堵
+	// heavy load
 	RoadLevel_ROAD_LEVEL_HEAVY_LOAD RoadLevel = 4
 	// 极端拥堵
+	// overload
 	RoadLevel_ROAD_LEVEL_OVERLOAD RoadLevel = 5
 	// 限行
+	// restricted
 	RoadLevel_ROAD_LEVEL_RESTRICTED RoadLevel = 6
 )
 
@@ -90,6 +98,8 @@ func (RoadLevel) EnumDescriptor() ([]byte, []int) {
 	return file_city_map_v2_road_service_proto_rawDescGZIP(), []int{0}
 }
 
+// 道路中断原因
+// road interruption reason
 type InterruptionReason int32
 
 const (
@@ -143,17 +153,21 @@ func (InterruptionReason) EnumDescriptor() ([]byte, []int) {
 }
 
 // 查询道路信息请求
+// Request for getting road information
 type GetRoadRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
 	// 指定查询的道路ID列表，为空代表查询所有道路
-	RoadIds []int32 `protobuf:"varint,1,rep,packed,name=road_ids,json=roadIds,proto3" json:"road_ids,omitempty" yaml:"road_ids" bson:"road_ids" db:"road_ids"`
+	// List of targeted road IDs. If empty, it means querying all roads.
+	RoadIds []int32 `protobuf:"varint,1,rep,packed,name=road_ids,json=roadIds,proto3" json:"road_ids,omitempty" db:"road_ids" yaml:"road_ids" bson:"road_ids"`
 	// 是否要排除车道信息
+	// Whether to exclude lane information
 	ExcludeLane bool `protobuf:"varint,2,opt,name=exclude_lane,json=excludeLane,proto3" json:"exclude_lane,omitempty" yaml:"exclude_lane" bson:"exclude_lane" db:"exclude_lane"`
 	// 是否要排除车道上的人的信息（仅在包含车道信息时有效）
-	ExcludePerson bool `protobuf:"varint,3,opt,name=exclude_person,json=excludePerson,proto3" json:"exclude_person,omitempty" bson:"exclude_person" db:"exclude_person" yaml:"exclude_person"`
+	// Whether to exclude information about person in the lane (only valid when lane information is included)
+	ExcludePerson bool `protobuf:"varint,3,opt,name=exclude_person,json=excludePerson,proto3" json:"exclude_person,omitempty" yaml:"exclude_person" bson:"exclude_person" db:"exclude_person"`
 }
 
 func (x *GetRoadRequest) Reset() {
@@ -210,12 +224,14 @@ func (x *GetRoadRequest) GetExcludePerson() bool {
 }
 
 // 查询道路信息响应
+// Response of getting road information
 type GetRoadResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
 	// 道路信息列表
+	// List of road information
 	States []*RoadState `protobuf:"bytes,1,rep,name=states,proto3" json:"states,omitempty" yaml:"states" bson:"states" db:"states"`
 }
 
@@ -301,8 +317,8 @@ type RuinInfo struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Num   int32   `protobuf:"varint,1,opt,name=num,proto3" json:"num,omitempty" db:"num" yaml:"num" bson:"num"`            // 损坏数量
-	Ratio float64 `protobuf:"fixed64,2,opt,name=ratio,proto3" json:"ratio,omitempty" yaml:"ratio" bson:"ratio" db:"ratio"` // 损坏占比
+	Num   int32   `protobuf:"varint,1,opt,name=num,proto3" json:"num,omitempty" yaml:"num" bson:"num" db:"num"`            // 损坏数量。Ruined number
+	Ratio float64 `protobuf:"fixed64,2,opt,name=ratio,proto3" json:"ratio,omitempty" bson:"ratio" db:"ratio" yaml:"ratio"` // 损坏占比。Ruined ratio
 }
 
 func (x *RuinInfo) Reset() {
@@ -356,10 +372,11 @@ type GetRuinInfoResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	// 三级级损伤信息
+	// 三级损伤信息
+	// Three-level ruin information
 	One   *RuinInfo `protobuf:"bytes,1,opt,name=one,proto3" json:"one,omitempty" yaml:"one" bson:"one" db:"one"`
 	Two   *RuinInfo `protobuf:"bytes,2,opt,name=two,proto3" json:"two,omitempty" yaml:"two" bson:"two" db:"two"`
-	Three *RuinInfo `protobuf:"bytes,3,opt,name=three,proto3" json:"three,omitempty" yaml:"three" bson:"three" db:"three"`
+	Three *RuinInfo `protobuf:"bytes,3,opt,name=three,proto3" json:"three,omitempty" bson:"three" db:"three" yaml:"three"`
 }
 
 func (x *GetRuinInfoResponse) Reset() {
@@ -458,7 +475,7 @@ type GetEventsResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Events *v1.Events `protobuf:"bytes,1,opt,name=events,proto3" json:"events,omitempty" db:"events" yaml:"events" bson:"events"`
+	Events *v1.Events `protobuf:"bytes,1,opt,name=events,proto3" json:"events,omitempty" yaml:"events" bson:"events" db:"events"`
 }
 
 func (x *GetEventsResponse) Reset() {
@@ -501,21 +518,27 @@ func (x *GetEventsResponse) GetEvents() *v1.Events {
 }
 
 // 道路状态
+// road state
 type RoadState struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
 	// 道路ID
-	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
+	// road ID
+	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" bson:"id" db:"id" yaml:"id"`
 	// 道路平均速度（m/s）
+	// road average speed (m/s)
 	AvgV float64 `protobuf:"fixed64,4,opt,name=avg_v,json=avgV,proto3" json:"avg_v,omitempty" yaml:"avg_v" bson:"avg_v" db:"avg_v"`
 	// 道路拥堵情况
+	// road congestion level
 	Level RoadLevel `protobuf:"varint,2,opt,name=level,proto3,enum=city.map.v2.RoadLevel" json:"level,omitempty" yaml:"level" bson:"level" db:"level"`
 	// 道路中断原因
-	Reason InterruptionReason `protobuf:"varint,3,opt,name=reason,proto3,enum=city.map.v2.InterruptionReason" json:"reason,omitempty" db:"reason" yaml:"reason" bson:"reason"`
+	// road interruption reason
+	Reason InterruptionReason `protobuf:"varint,3,opt,name=reason,proto3,enum=city.map.v2.InterruptionReason" json:"reason,omitempty" yaml:"reason" bson:"reason" db:"reason"`
 	// 车道情况
-	Lanes []*LaneState `protobuf:"bytes,5,rep,name=lanes,proto3" json:"lanes,omitempty" yaml:"lanes" bson:"lanes" db:"lanes"`
+	// lane state
+	Lanes []*LaneState `protobuf:"bytes,5,rep,name=lanes,proto3" json:"lanes,omitempty" db:"lanes" yaml:"lanes" bson:"lanes"`
 }
 
 func (x *RoadState) Reset() {

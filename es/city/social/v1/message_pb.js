@@ -7,6 +7,7 @@ import { proto3 } from "@bufbuild/protobuf";
 
 /**
  * 消息
+ * message
  *
  * @generated from message city.social.v1.Message
  */

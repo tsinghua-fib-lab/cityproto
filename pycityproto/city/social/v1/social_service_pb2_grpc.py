@@ -19,6 +19,7 @@ class SocialServiceServicer(object):
 
     def Send(self, request, context):
         """发送消息
+        Send message
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -26,6 +27,7 @@ class SocialServiceServicer(object):
 
     def Receive(self, request, context):
         """接收消息，并清空该用户的消息队列
+        Receive messages and clear the user's message queue
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

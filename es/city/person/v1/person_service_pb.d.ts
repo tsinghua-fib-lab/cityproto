@@ -12,6 +12,7 @@ import type { LongLatBBox } from "../../geo/v2/geo_pb.js";
 
 /**
  * 获取person信息请求
+ * Request for getting person information
  *
  * @generated from message city.person.v1.GetPersonRequest
  */
@@ -40,12 +41,14 @@ export declare class GetPersonRequest extends Message<GetPersonRequest> {
 
 /**
  * 获取person信息响应
+ * Response of getting person information
  *
  * @generated from message city.person.v1.GetPersonResponse
  */
 export declare class GetPersonResponse extends Message<GetPersonResponse> {
   /**
    * person信息
+   * person information
    *
    * @generated from field: city.person.v1.Person base = 1;
    */
@@ -53,6 +56,7 @@ export declare class GetPersonResponse extends Message<GetPersonResponse> {
 
   /**
    * person运动信息
+   * person motion information
    *
    * @generated from field: city.person.v1.PersonMotion motion = 2;
    */
@@ -75,12 +79,14 @@ export declare class GetPersonResponse extends Message<GetPersonResponse> {
 
 /**
  * 新增person请求
+ * Request for adding a new person
  *
  * @generated from message city.person.v1.AddPersonRequest
  */
 export declare class AddPersonRequest extends Message<AddPersonRequest> {
   /**
    * 约定：person中不设置id
+   * Convention: personid is not set here
    *
    * @generated from field: city.person.v1.Person person = 1;
    */
@@ -103,12 +109,14 @@ export declare class AddPersonRequest extends Message<AddPersonRequest> {
 
 /**
  * 新增person响应
+ * Response of adding a new person
  *
  * @generated from message city.person.v1.AddPersonResponse
  */
 export declare class AddPersonResponse extends Message<AddPersonResponse> {
   /**
    * 新增的person分配得到的ID
+   * The ID assigned to the newly added person
    *
    * @generated from field: int32 person_id = 1;
    */
@@ -131,6 +139,7 @@ export declare class AddPersonResponse extends Message<AddPersonResponse> {
 
 /**
  * 修改person的schedule请求
+ * Request for setting person schedule
  *
  * @generated from message city.person.v1.SetScheduleRequest
  */
@@ -144,6 +153,7 @@ export declare class SetScheduleRequest extends Message<SetScheduleRequest> {
 
   /**
    * 新的schedule（覆盖原有的schedule）
+   * New schedule (overwrites the original schedule)
    *
    * @generated from field: repeated city.trip.v2.Schedule schedules = 2;
    */
@@ -166,6 +176,7 @@ export declare class SetScheduleRequest extends Message<SetScheduleRequest> {
 
 /**
  * 修改person的schedule响应
+ * Response of setting person schedule
  *
  * @generated from message city.person.v1.SetScheduleResponse
  */
@@ -187,12 +198,14 @@ export declare class SetScheduleResponse extends Message<SetScheduleResponse> {
 
 /**
  * 获取特定区域内的person请求
+ * Request for getting persons in region
  *
  * @generated from message city.person.v1.GetPersonByLongLatBBoxRequest
  */
 export declare class GetPersonByLongLatBBoxRequest extends Message<GetPersonByLongLatBBoxRequest> {
   /**
    * 经纬度范围
+   * longitude and latitude bounding box
    *
    * @generated from field: city.geo.v2.LongLatBBox bbox = 1;
    */
@@ -200,6 +213,7 @@ export declare class GetPersonByLongLatBBoxRequest extends Message<GetPersonByLo
 
   /**
    * 过滤人的状态（状态为列表内的值的人不返回）
+   * Filter person's status (person whose status is in the list will not be returned)
    *
    * @generated from field: repeated city.person.v1.Status exclude_statuses = 2;
    */
@@ -222,12 +236,14 @@ export declare class GetPersonByLongLatBBoxRequest extends Message<GetPersonByLo
 
 /**
  * 获取特定区域内的person响应
+ * Response of getting persons in region
  *
  * @generated from message city.person.v1.GetPersonByLongLatBBoxResponse
  */
 export declare class GetPersonByLongLatBBoxResponse extends Message<GetPersonByLongLatBBoxResponse> {
   /**
    * 区域内的person的运动信息
+   * motion status of persons in the region
    *
    * @generated from field: repeated city.person.v1.PersonMotion motions = 1;
    */

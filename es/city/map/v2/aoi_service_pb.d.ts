@@ -9,6 +9,7 @@ import type { PersonMotion } from "../../person/v1/motion_pb.js";
 
 /**
  * AOI状态
+ * AOI state
  *
  * @generated from message city.map.v2.AoiState
  */
@@ -22,6 +23,7 @@ export declare class AoiState extends Message<AoiState> {
 
   /**
    * AOI内的人
+   * Persons in AOI
    *
    * @generated from field: repeated city.person.v1.PersonMotion persons = 2;
    */
@@ -44,12 +46,14 @@ export declare class AoiState extends Message<AoiState> {
 
 /**
  * 获取AOI信息请求
+ * Request for getting AOI information
  *
  * @generated from message city.map.v2.GetAoiRequest
  */
 export declare class GetAoiRequest extends Message<GetAoiRequest> {
   /**
    * 指定AOI ID列表，如果为空，则返回所有AOI信息
+   * List of targeted AOI IDs, if empty, returns all information of AOIs
    *
    * @generated from field: repeated int32 aoi_ids = 1;
    */
@@ -72,12 +76,14 @@ export declare class GetAoiRequest extends Message<GetAoiRequest> {
 
 /**
  * 获取AOI信息响应
+ * Response for getting AOI information
  *
  * @generated from message city.map.v2.GetAoiResponse
  */
 export declare class GetAoiResponse extends Message<GetAoiResponse> {
   /**
    * AOI信息列表
+   * Lis of AOIs information
    *
    * @generated from field: repeated city.map.v2.AoiState states = 1;
    */

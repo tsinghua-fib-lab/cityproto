@@ -18,6 +18,7 @@ class ClockServiceServicer(object):
 
     def Now(self, request, context):
         """获取当前的模拟时间
+        get current simulation clock
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

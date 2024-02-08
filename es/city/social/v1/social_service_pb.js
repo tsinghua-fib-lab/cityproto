@@ -8,6 +8,7 @@ import { Message } from "./message_pb.js";
 
 /**
  * 发送消息请求
+ * Request for sendding message
  *
  * @generated from message city.social.v1.SendRequest
  */
@@ -20,6 +21,7 @@ export const SendRequest = proto3.makeMessageType(
 
 /**
  * 发送消息响应
+ * Response of sendding message
  *
  * @generated from message city.social.v1.SendResponse
  */
@@ -30,6 +32,7 @@ export const SendResponse = proto3.makeMessageType(
 
 /**
  * 接收消息请求
+ * Request for receiving message
  *
  * @generated from message city.social.v1.ReceiveRequest
  */
@@ -42,6 +45,7 @@ export const ReceiveRequest = proto3.makeMessageType(
 
 /**
  * 接收消息响应
+ * Response of receiving messages
  *
  * @generated from message city.social.v1.ReceiveResponse
  */

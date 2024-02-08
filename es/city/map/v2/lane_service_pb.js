@@ -10,6 +10,7 @@ import { LightState } from "../../traffic_light/v2/traffic_light_pb.js";
 
 /**
  * 设置Lane的最大速度（限速）请求
+ * Request for setting lane's maximum speed (speed limit)
  *
  * @generated from message city.map.v2.SetLaneMaxVRequest
  */
@@ -23,6 +24,7 @@ export const SetLaneMaxVRequest = proto3.makeMessageType(
 
 /**
  * 设置Lane的最大速度（限速）响应
+ * Response of setting lane's maximum speed (speed limit)
  *
  * @generated from message city.map.v2.SetLaneMaxVResponse
  */
@@ -33,6 +35,7 @@ export const SetLaneMaxVResponse = proto3.makeMessageType(
 
 /**
  * 获取Lane的信息请求
+ * Request for getting lane information
  *
  * @generated from message city.map.v2.GetLaneRequest
  */
@@ -46,6 +49,7 @@ export const GetLaneRequest = proto3.makeMessageType(
 
 /**
  * 获取Lane的信息响应
+ * Response of getting lane information
  *
  * @generated from message city.map.v2.GetLaneResponse
  */
@@ -58,6 +62,7 @@ export const GetLaneResponse = proto3.makeMessageType(
 
 /**
  * 获取特定区域内的Lane的信息请求
+ * Request for getting lane information in a specific region
  *
  * @generated from message city.map.v2.GetLaneByLongLatBBoxRequest
  */
@@ -71,6 +76,7 @@ export const GetLaneByLongLatBBoxRequest = proto3.makeMessageType(
 
 /**
  * 获取特定区域内的Lane的信息响应
+ * Response of getting lane information in a specific region
  *
  * @generated from message city.map.v2.GetLaneByLongLatBBoxResponse
  */
@@ -83,6 +89,7 @@ export const GetLaneByLongLatBBoxResponse = proto3.makeMessageType(
 
 /**
  * Lane状态
+ * Lane state
  *
  * @generated from message city.map.v2.LaneState
  */

@@ -8,12 +8,14 @@ import { Message as Message$1, proto3 } from "@bufbuild/protobuf";
 
 /**
  * 消息
+ * message
  *
  * @generated from message city.social.v1.Message
  */
 export declare class Message extends Message$1<Message> {
   /**
    * 消息发送者ID
+   * message sender ID
    *
    * @generated from field: int32 from = 1;
    */
@@ -21,6 +23,7 @@ export declare class Message extends Message$1<Message> {
 
   /**
    * 消息接收者ID
+   * message receiver ID
    *
    * @generated from field: int32 to = 2;
    */
@@ -28,6 +31,7 @@ export declare class Message extends Message$1<Message> {
 
   /**
    * 消息内容
+   * message content
    *
    * @generated from field: string message = 3;
    */
@@ -35,7 +39,9 @@ export declare class Message extends Message$1<Message> {
 
   /**
    * 消息发出时间（秒），如无则为当前模拟时间
+   * Message sending time (in seconds), if none, it is the current simulation time
    * 对于接收到的消息，该字段总是存在
+   * For received messages, this field always exists
    *
    * @generated from field: optional double t = 4;
    */

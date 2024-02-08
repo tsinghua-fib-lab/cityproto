@@ -49,8 +49,10 @@ var (
 // SocialServiceClient is a client for the city.social.v1.SocialService service.
 type SocialServiceClient interface {
 	// 发送消息
+	// Send message
 	Send(context.Context, *connect.Request[v1.SendRequest]) (*connect.Response[v1.SendResponse], error)
 	// 接收消息，并清空该用户的消息队列
+	// Receive messages and clear the user's message queue
 	Receive(context.Context, *connect.Request[v1.ReceiveRequest]) (*connect.Response[v1.ReceiveResponse], error)
 }
 
@@ -98,8 +100,10 @@ func (c *socialServiceClient) Receive(ctx context.Context, req *connect.Request[
 // SocialServiceHandler is an implementation of the city.social.v1.SocialService service.
 type SocialServiceHandler interface {
 	// 发送消息
+	// Send message
 	Send(context.Context, *connect.Request[v1.SendRequest]) (*connect.Response[v1.SendResponse], error)
 	// 接收消息，并清空该用户的消息队列
+	// Receive messages and clear the user's message queue
 	Receive(context.Context, *connect.Request[v1.ReceiveRequest]) (*connect.Response[v1.ReceiveResponse], error)
 }
 

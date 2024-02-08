@@ -2241,7 +2241,7 @@
 
       
         <h3 id="city.geo.v2.AoiPosition">AoiPosition</h3>
-        <p>地图坐标（AOI）</p>
+        <p>地图坐标（AOI）</p><p>Map coordinates (AOI)</p>
 
         
           <table class="field-table">
@@ -2261,7 +2261,8 @@
                   <td>poi_id</td>
                   <td><a href="#int32">int32</a></td>
                   <td>optional</td>
-                  <td><p>POI ID，需要是aoi_id的子poi，否则该值无效 </p></td>
+                  <td><p>POI ID，需要是aoi_id的子poi，否则该值无效
+POI ID, needs to be a sub-poi of aoi_id, otherwise the value is invalid </p></td>
                 </tr>
               
             </tbody>
@@ -2272,7 +2273,7 @@
         
       
         <h3 id="city.geo.v2.LanePosition">LanePosition</h3>
-        <p>地图坐标（车道+距离s）</p>
+        <p>地图坐标（车道+距离s）</p><p>Map coordinates (lane ID + distance s)</p>
 
         
           <table class="field-table">
@@ -2285,14 +2286,16 @@
                   <td>lane_id</td>
                   <td><a href="#int32">int32</a></td>
                   <td></td>
-                  <td><p>车道id </p></td>
+                  <td><p>车道id
+Lane ID </p></td>
                 </tr>
               
                 <tr>
                   <td>s</td>
                   <td><a href="#double">double</a></td>
                   <td></td>
-                  <td><p>s是车道上的点到车道起点的距离 </p></td>
+                  <td><p>s是车道上的点到车道起点的距离
+s is the distance from the point on the lane to the starting point of the lane </p></td>
                 </tr>
               
             </tbody>
@@ -2303,7 +2306,7 @@
         
       
         <h3 id="city.geo.v2.LongLatBBox">LongLatBBox</h3>
-        <p>经纬度矩形区域</p>
+        <p>经纬度矩形区域</p><p>latitude and longitude rectangular area</p>
 
         
           <table class="field-table">
@@ -2316,28 +2319,32 @@
                   <td>min_longitude</td>
                   <td><a href="#double">double</a></td>
                   <td></td>
-                  <td><p>最小经度 </p></td>
+                  <td><p>最小经度
+minimum longitude </p></td>
                 </tr>
               
                 <tr>
                   <td>min_latitude</td>
                   <td><a href="#double">double</a></td>
                   <td></td>
-                  <td><p>最小纬度 </p></td>
+                  <td><p>最小纬度
+minimum latitude </p></td>
                 </tr>
               
                 <tr>
                   <td>max_longitude</td>
                   <td><a href="#double">double</a></td>
                   <td></td>
-                  <td><p>最大经度 </p></td>
+                  <td><p>最大经度
+maximu longitude </p></td>
                 </tr>
               
                 <tr>
                   <td>max_latitude</td>
                   <td><a href="#double">double</a></td>
                   <td></td>
-                  <td><p>最大纬度 </p></td>
+                  <td><p>最大纬度
+minimum longitude </p></td>
                 </tr>
               
             </tbody>
@@ -2348,7 +2355,7 @@
         
       
         <h3 id="city.geo.v2.LongLatPosition">LongLatPosition</h3>
-        <p>WGS84经纬度坐标</p>
+        <p>WGS84经纬度坐标</p><p>WGS84 longitute and latitude coordinates</p>
 
         
           <table class="field-table">
@@ -2361,14 +2368,16 @@
                   <td>longitude</td>
                   <td><a href="#double">double</a></td>
                   <td></td>
-                  <td><p>经度 </p></td>
+                  <td><p>经度
+longitude </p></td>
                 </tr>
               
                 <tr>
                   <td>latitude</td>
                   <td><a href="#double">double</a></td>
                   <td></td>
-                  <td><p>纬度 </p></td>
+                  <td><p>纬度
+latitude </p></td>
                 </tr>
               
             </tbody>
@@ -2379,7 +2388,7 @@
         
       
         <h3 id="city.geo.v2.Position">Position</h3>
-        <p>坐标，如果多种坐标同时存在，两两之间必须满足映射关系，同时逻辑坐标是必须提供的</p>
+        <p>坐标，如果多种坐标同时存在，两两之间必须满足映射关系，同时逻辑坐标是必须提供的</p><p>Coordinates, if multiple coordinates exist at the same time, the mapping relationship between them must be satisfied, and logical coordinates must be provided.</p>
 
         
           <table class="field-table">
@@ -2392,28 +2401,32 @@
                   <td>lane_position</td>
                   <td><a href="#city.geo.v2.LanePosition">LanePosition</a></td>
                   <td>optional</td>
-                  <td><p>地图坐标AOI（必须提供其中之一） </p></td>
+                  <td><p>地图坐标AOI（必须提供其中之一）
+Map coordinates AOI (one of these must be provided) </p></td>
                 </tr>
               
                 <tr>
                   <td>aoi_position</td>
                   <td><a href="#city.geo.v2.AoiPosition">AoiPosition</a></td>
                   <td>optional</td>
-                  <td><p>地图坐标Lane&#43;S（必须提供其中之一） </p></td>
+                  <td><p>地图坐标Lane&#43;S（必须提供其中之一）
+Map coordinates Lane&#43;S (one of these must be provided) </p></td>
                 </tr>
               
                 <tr>
                   <td>longlat_position</td>
                   <td><a href="#city.geo.v2.LongLatPosition">LongLatPosition</a></td>
                   <td>optional</td>
-                  <td><p>WGS84经纬度坐标 </p></td>
+                  <td><p>WGS84经纬度坐标
+WGS84 longitute and latitude coordinates </p></td>
                 </tr>
               
                 <tr>
                   <td>xy_position</td>
                   <td><a href="#city.geo.v2.XYPosition">XYPosition</a></td>
                   <td>optional</td>
-                  <td><p>XY坐标 </p></td>
+                  <td><p>XY坐标
+XY coordinates </p></td>
                 </tr>
               
             </tbody>
@@ -2424,7 +2437,7 @@
         
       
         <h3 id="city.geo.v2.XYPosition">XYPosition</h3>
-        <p>XY坐标</p>
+        <p>XY坐标</p><p>XY coordinates</p>
 
         
           <table class="field-table">
@@ -2437,14 +2450,16 @@
                   <td>x</td>
                   <td><a href="#double">double</a></td>
                   <td></td>
-                  <td><p>x坐标，单位米，对应经度 </p></td>
+                  <td><p>x坐标，单位米，对应经度
+x coordinate, in meters, corresponding to longitude </p></td>
                 </tr>
               
                 <tr>
                   <td>y</td>
                   <td><a href="#double">double</a></td>
                   <td></td>
-                  <td><p>y坐标，单位米，对应纬度 </p></td>
+                  <td><p>y坐标，单位米，对应纬度
+y coordinate, in meters, corresponding to latitude </p></td>
                 </tr>
               
             </tbody>
@@ -2507,7 +2522,7 @@
         
       
         <h3 id="city.routing.v2.BusLine">BusLine</h3>
-        <p>公交线路</p>
+        <p>公交线路</p><p>Bus line</p>
 
         
           <table class="field-table">
@@ -2520,14 +2535,16 @@
                   <td>line_id</td>
                   <td><a href="#int32">int32</a></td>
                   <td></td>
-                  <td><p>线路ID </p></td>
+                  <td><p>线路ID
+bus line ID </p></td>
                 </tr>
               
                 <tr>
                   <td>stops</td>
                   <td><a href="#int32">int32</a></td>
                   <td>repeated</td>
-                  <td><p>停靠站点AOI ID列表 </p></td>
+                  <td><p>停靠站点AOI ID列表
+List of the AOI IDs of bus stations </p></td>
                 </tr>
               
                 <tr>
@@ -2559,7 +2576,7 @@
         
       
         <h3 id="city.routing.v2.BusLines">BusLines</h3>
-        <p>公交线路集合，对应一个公交线路pb文件或一个公交线路mongodb collection</p>
+        <p>公交线路集合，对应一个公交线路pb文件或一个公交线路mongodb collection</p><p>Bus lines collection, corresponding to a bus line PB file or a bus line mongodb collection</p>
 
         
           <table class="field-table">
@@ -2583,7 +2600,7 @@
         
       
         <h3 id="city.routing.v2.DrivingJourneyBody">DrivingJourneyBody</h3>
-        <p>驾车出行方式的路径规划结果</p>
+        <p>驾车出行方式的路径规划结果</p><p>Routing results for driving journey</p>
 
         
           <table class="field-table">
@@ -2597,15 +2614,19 @@
                   <td><a href="#int32">int32</a></td>
                   <td>repeated</td>
                   <td><p>从起点到终点的道路序列
+Road sequence from origin to destination
 采用道路序列的原因是主动变道对车道级的导航需要频繁修改
-优先使用road_ids，如果road_ids为空，则使用route（也可以直接忽略route） </p></td>
+The reason for using road sequences is that active lane changing requires frequent modifications to lane level navigation
+优先使用road_ids，如果road_ids为空，则使用route（也可以直接忽略route）
+Prioritize using road_ids. If road_ids is empty, use route (or simply ignore route) </p></td>
                 </tr>
               
                 <tr>
                   <td>eta</td>
                   <td><a href="#double">double</a></td>
                   <td></td>
-                  <td><p>从起点到终点预计的时间(estimation time of arrival) </p></td>
+                  <td><p>从起点到终点预计的时间(estimation time of arrival)
+estimation time of arrival </p></td>
                 </tr>
               
             </tbody>
@@ -2616,7 +2637,7 @@
         
       
         <h3 id="city.routing.v2.Journey">Journey</h3>
-        <p>路径规划结果的一部分，含且仅含采用一种交通出行方式的完整出行序列</p>
+        <p>路径规划结果的一部分，含且仅含采用一种交通出行方式的完整出行序列</p><p>Part of the routing results, including a complete travel sequence using exactly one travelling mode</p>
 
         
           <table class="field-table">
@@ -2629,28 +2650,32 @@
                   <td>type</td>
                   <td><a href="#city.routing.v2.JourneyType">JourneyType</a></td>
                   <td></td>
-                  <td><p>出行方式 </p></td>
+                  <td><p>出行方式
+journey travelling mode </p></td>
                 </tr>
               
                 <tr>
                   <td>driving</td>
                   <td><a href="#city.routing.v2.DrivingJourneyBody">DrivingJourneyBody</a></td>
                   <td>optional</td>
-                  <td><p>驾车 </p></td>
+                  <td><p>驾车
+Routing results for driving journey </p></td>
                 </tr>
               
                 <tr>
                   <td>walking</td>
                   <td><a href="#city.routing.v2.WalkingJourneyBody">WalkingJourneyBody</a></td>
                   <td>optional</td>
-                  <td><p>步行 </p></td>
+                  <td><p>步行
+Routing results of walking journey </p></td>
                 </tr>
               
                 <tr>
                   <td>by_bus</td>
                   <td><a href="#city.routing.v2.BusJourneyBody">BusJourneyBody</a></td>
                   <td>optional</td>
-                  <td><p>公交 </p></td>
+                  <td><p>公交
+Routing results of bus journey </p></td>
                 </tr>
               
             </tbody>
@@ -2661,7 +2686,7 @@
         
       
         <h3 id="city.routing.v2.RoadStatus">RoadStatus</h3>
-        <p>预计算路况信息</p>
+        <p>预计算路况信息</p><p>Pre calculate road condition information</p>
 
         
           <table class="field-table">
@@ -2674,14 +2699,16 @@
                   <td>id</td>
                   <td><a href="#int32">int32</a></td>
                   <td></td>
-                  <td><p>车道ID </p></td>
+                  <td><p>车道ID
+Lane ID </p></td>
                 </tr>
               
                 <tr>
                   <td>speed</td>
                   <td><a href="#double">double</a></td>
                   <td>repeated</td>
-                  <td><p>车道在各个时间片（每个5min）的速度 </p></td>
+                  <td><p>车道在各个时间片（每个5min）的速度
+The speed of the lane at each time slot (5 minutes each) </p></td>
                 </tr>
               
             </tbody>
@@ -2692,7 +2719,7 @@
         
       
         <h3 id="city.routing.v2.RoadStatuses">RoadStatuses</h3>
-        <p>预计算道路路况信息集合，对应一个预计算道路况信息pb文件或一个预计算路况信息mongodb</p><p>collection</p>
+        <p>预计算道路路况信息集合，对应一个预计算道路况信息pb文件或一个预计算路况信息mongodb collection</p><p>Pre calculated road condition information set, corresponding to a pre calculated road condition information PB file or a pre calculated road condition information mongodb collection</p>
 
         
           <table class="field-table">
@@ -2716,7 +2743,7 @@
         
       
         <h3 id="city.routing.v2.WalkingJourneyBody">WalkingJourneyBody</h3>
-        <p>步行出行方式的路径规划结果</p>
+        <p>步行出行方式的路径规划结果</p><p>Routing results of walking journey</p>
 
         
           <table class="field-table">
@@ -2729,14 +2756,16 @@
                   <td>route</td>
                   <td><a href="#city.routing.v2.WalkingRouteSegment">WalkingRouteSegment</a></td>
                   <td>repeated</td>
-                  <td><p>从起点到终点的（Lane&#43;方向）序列 </p></td>
+                  <td><p>从起点到终点的（Lane&#43;方向）序列
+The (Lane&#43;direction) sequence from the origin to destination </p></td>
                 </tr>
               
                 <tr>
                   <td>eta</td>
                   <td><a href="#double">double</a></td>
                   <td></td>
-                  <td><p>从起点到终点预计的时间(estimation time of arrival) </p></td>
+                  <td><p>从起点到终点预计的时间(estimation time of arrival)
+estimation time of arrival </p></td>
                 </tr>
               
             </tbody>
@@ -2747,7 +2776,7 @@
         
       
         <h3 id="city.routing.v2.WalkingRouteSegment">WalkingRouteSegment</h3>
-        <p>步行出行方式的路径规划结果中的一段</p>
+        <p>步行出行方式的路径规划结果中的一段</p><p>A segment in the routing results of walking journey</p>
 
         
           <table class="field-table">
@@ -2767,7 +2796,8 @@
                   <td>moving_direction</td>
                   <td><a href="#city.routing.v2.MovingDirection">MovingDirection</a></td>
                   <td></td>
-                  <td><p>移动方向 </p></td>
+                  <td><p>移动方向
+moving direction </p></td>
                 </tr>
               
             </tbody>
@@ -2780,7 +2810,7 @@
 
       
         <h3 id="city.routing.v2.JourneyType">JourneyType</h3>
-        <p>移动方式</p><p>Journey用以描述采用一种特定交通方式从一点出发到达另一点的路径。</p><p>一般来说，多个Journey是一个Trip的“实现”。</p><p>例如：Trip(从清华乘地铁到天安门):</p><p>Journey(步行到地铁站)->Journey(地铁)->Journey(步行到天安门)</p>
+        <p>移动方式</p><p>travelling mode</p><p>Journey用以描述采用一种特定交通方式从一点出发到达另一点的路径。</p><p>Journey is used to describe the path from one point to another using one specific travelling mode</p><p>一般来说，多个Journey是一个Trip的“实现”。</p><p>Generally, multiple Journeys are used to "implement" a Trip</p><p>例如：Trip(从清华乘地铁到天安门):</p><p>For example: Trip (taking the subway from Tsinghua to Tiananmen Square):</p><p>Journey(步行到地铁站)->Journey(地铁)->Journey(步行到天安门)</p><p>Journey (walking to subway station) -> Journey (subway) -> Journey (walking to Tiananmen Square)</p>
         <table class="enum-table">
           <thead>
             <tr><td>Name</td><td>Number</td><td>Description</td></tr>
@@ -2790,32 +2820,36 @@
               <tr>
                 <td>JOURNEY_TYPE_UNSPECIFIED</td>
                 <td>0</td>
-                <td><p>未指定</p></td>
+                <td><p>未指定
+unspecified</p></td>
               </tr>
             
               <tr>
                 <td>JOURNEY_TYPE_DRIVING</td>
                 <td>1</td>
-                <td><p>驾车</p></td>
+                <td><p>驾车
+driving</p></td>
               </tr>
             
               <tr>
                 <td>JOURNEY_TYPE_WALKING</td>
                 <td>2</td>
-                <td><p>步行</p></td>
+                <td><p>步行
+walking</p></td>
               </tr>
             
               <tr>
                 <td>JOURNEY_TYPE_BY_BUS</td>
                 <td>3</td>
-                <td><p>公交</p></td>
+                <td><p>公交
+taking bus</p></td>
               </tr>
             
           </tbody>
         </table>
       
         <h3 id="city.routing.v2.MovingDirection">MovingDirection</h3>
-        <p>步行移动方向</p><p>行人前进的方向与Lane的正方向（s增大的方向）的关系</p>
+        <p>步行移动方向</p><p>Walking direction</p><p>行人前进的方向与Lane的正方向（s增大的方向）的关系</p><p>The relationship between the direction of pedestrian movement and the positive direction of Lane (the direction where s increases)</p>
         <table class="enum-table">
           <thead>
             <tr><td>Name</td><td>Number</td><td>Description</td></tr>
@@ -2825,26 +2859,29 @@
               <tr>
                 <td>MOVING_DIRECTION_UNSPECIFIED</td>
                 <td>0</td>
-                <td><p>未指定</p></td>
+                <td><p>未指定
+unspecified</p></td>
               </tr>
             
               <tr>
                 <td>MOVING_DIRECTION_FORWARD</td>
                 <td>1</td>
-                <td><p>与正方向同向</p></td>
+                <td><p>与正方向同向
+In the same direction as the positive lane direction</p></td>
               </tr>
             
               <tr>
                 <td>MOVING_DIRECTION_BACKWARD</td>
                 <td>2</td>
-                <td><p>与正方向反向</p></td>
+                <td><p>与正方向反向
+In the opposite direction as the positive lane direction</p></td>
               </tr>
             
           </tbody>
         </table>
       
         <h3 id="city.routing.v2.RouteType">RouteType</h3>
-        <p>导航请求类型</p>
+        <p>导航请求类型</p><p>routing type</p>
         <table class="enum-table">
           <thead>
             <tr><td>Name</td><td>Number</td><td>Description</td></tr>
@@ -2891,7 +2928,7 @@
 
       
         <h3 id="city.trip.v2.Schedule">Schedule</h3>
-        <p>时刻表</p><p>关于出发时间的说明如下：</p><p>1. Schedule的开始时刻是 departure_time 或者 参考时刻+wait_time，</p><p>参考时刻定义为上一Schedule的结束时刻(即它最后一个Trip的结束时刻)，</p><p>或者当它为第一个Schedule时定义为Person更新Schedule后的首次Update</p><p>时刻(当有准确时间要求时建议直接指定departure_time)</p><p>2. Trip的开始时刻是 departure_time 或者 参考时刻+wait_time，参考</p><p>时刻定义为上一Trip的结束时刻，或者当它为第一个Trip时定义为所属的</p><p>Schedule的开始时刻</p><p>3. Person的实际运行时刻取决于Trip的开始时刻，例如它的首次运行是第一</p><p>个Schedule中第一个Trip的开始时刻</p><p>FAQ</p><p>Q1: 同时指定Schedule和第一个Trip的departure_time会怎样？</p><p>A1: 参照(2)，只看Trip的departure_time</p><p>Q2: Schedule和第一个Trip同时指定wait_time=10会怎样？</p><p>A2: 参照(2)，等待时间为10+10=20</p>
+        <p>时刻表</p><p>Schedule</p><p>关于出发时间的说明如下：</p><p>The explanation about the departure time is as follows:</p><p>1. Schedule的开始时刻是 departure_time 或者 参考时刻+wait_time，</p><p>1. The start time of the Schedule is either departure_time or reference time+wait_time,</p><p>参考时刻定义为上一Schedule的结束时刻(即它最后一个Trip的结束时刻)，</p><p>The reference time is defined as the end time of the previous Schedule (i.e. the end time of its last Trip),</p><p>或者当它为第一个Schedule时定义为Person更新Schedule后的首次Update</p><p>Alternatively, when it is the first Schedule, it can be defined as the first Update time after Person updates the Schedule</p><p>时刻(当有准确时间要求时建议直接指定departure_time)</p><p>(it is recommended to specify departuretime directly when there is an accurate time requirement)</p><p>2. Trip的开始时刻是 departure_time 或者 参考时刻+wait_time，参考</p><p>2. The start time of the Trip is either departure_time or reference time+wait_time,</p><p>时刻定义为上一Trip的结束时刻，或者当它为第一个Trip时定义为所属的</p><p>The reference time is defined as the end time of the previous Trip, or when it is the first Trip,</p><p>Schedule的开始时刻</p><p>it is defined as the start time of the Schedule to which it belongs</p><p>3. Person的实际运行时刻取决于Trip的开始时刻，例如它的首次运行是第一</p><p>3. The actual running time of a Person depends on the start time of the Trip,</p><p>个Schedule中第一个Trip的开始时刻</p><p>for example, its first run is the start time of the first Trip in the first Schedule</p><p>FAQ</p><p>Q1: 同时指定Schedule和第一个Trip的departure_time会怎样？</p><p>Q1: What would happen if both the Schedule and the departuretime of the first Trip were specified simultaneously?</p><p>A1: 参照(2)，只看Trip的departure_time</p><p>A1: Referring to (2), only depend on the departuretime of Trip</p><p>Q2: Schedule和第一个Trip同时指定wait_time=10会怎样？</p><p>Q2: What would happen if both the Schedule and the first Trip were specified with wait_time=10 at the same time?</p><p>A2: 参照(2)，等待时间为10+10=20</p><p>A2: Referring to (2), the waiting time is 10+10=20</p>
 
         
           <table class="field-table">
@@ -2904,28 +2941,32 @@
                   <td>trips</td>
                   <td><a href="#city.trip.v2.Trip">Trip</a></td>
                   <td>repeated</td>
-                  <td><p>出行列表 </p></td>
+                  <td><p>出行列表
+List of trips </p></td>
                 </tr>
               
                 <tr>
                   <td>loop_count</td>
                   <td><a href="#int32">int32</a></td>
                   <td></td>
-                  <td><p>trips的执行次数，0表示无限循环，大于0表示执行几次 </p></td>
+                  <td><p>trips的执行次数，0表示无限循环，大于0表示执行几次
+The number of times trips are executed, where 0 represents infinite loops and greater than 0 represents how many times they are executed </p></td>
                 </tr>
               
                 <tr>
                   <td>departure_time</td>
                   <td><a href="#double">double</a></td>
                   <td>optional</td>
-                  <td><p>期望的出发时间（单位: 秒） </p></td>
+                  <td><p>期望的出发时间（单位: 秒）
+Expected departure time (in seconds) </p></td>
                 </tr>
               
                 <tr>
                   <td>wait_time</td>
                   <td><a href="#double">double</a></td>
                   <td>optional</td>
-                  <td><p>期望的等待时间（单位：秒），如果departure_time为空则wait_time默认为0 </p></td>
+                  <td><p>期望的等待时间（单位：秒），如果departure_time为空则wait_time默认为0
+Expected waiting time (in seconds), if departure_time is empty, wait_time defaults to 0 </p></td>
                 </tr>
               
             </tbody>
@@ -2936,7 +2977,7 @@
         
       
         <h3 id="city.trip.v2.Trip">Trip</h3>
-        <p>出行</p>
+        <p>出行</p><p>Trip</p>
 
         
           <table class="field-table">
@@ -2949,49 +2990,56 @@
                   <td>mode</td>
                   <td><a href="#city.trip.v2.TripMode">TripMode</a></td>
                   <td></td>
-                  <td><p>出行方式 </p></td>
+                  <td><p>出行方式
+trip mode </p></td>
                 </tr>
               
                 <tr>
                   <td>end</td>
                   <td><a href="#city.geo.v2.Position">city.geo.v2.Position</a></td>
                   <td></td>
-                  <td><p>目的地 </p></td>
+                  <td><p>目的地
+destination </p></td>
                 </tr>
               
                 <tr>
                   <td>departure_time</td>
                   <td><a href="#double">double</a></td>
                   <td>optional</td>
-                  <td><p>期望的出发时间（单位: 秒） </p></td>
+                  <td><p>期望的出发时间（单位: 秒）
+Expected departure time (in seconds) </p></td>
                 </tr>
               
                 <tr>
                   <td>wait_time</td>
                   <td><a href="#double">double</a></td>
                   <td>optional</td>
-                  <td><p>期望的等待时间（单位：秒），如果departure_time为空则wait_time默认为0 </p></td>
+                  <td><p>期望的等待时间（单位：秒），如果departure_time为空则wait_time默认为0
+The expected waiting time (in seconds), if departure_time is empty, wait_time defaults to 0 </p></td>
                 </tr>
               
                 <tr>
                   <td>arrival_time</td>
                   <td><a href="#double">double</a></td>
                   <td>optional</td>
-                  <td><p>期望的到达时间（单位: 秒） </p></td>
+                  <td><p>期望的到达时间（单位: 秒）
+Expected arrival time (in seconds) </p></td>
                 </tr>
               
                 <tr>
                   <td>activity</td>
                   <td><a href="#string">string</a></td>
                   <td>optional</td>
-                  <td><p>本次出行目的地的活动名 </p></td>
+                  <td><p>本次出行目的地的活动名
+The activity name of the destination for this trip </p></td>
                 </tr>
               
                 <tr>
                   <td>routes</td>
                   <td><a href="#city.routing.v2.Journey">city.routing.v2.Journey</a></td>
                   <td>repeated</td>
-                  <td><p>预计算的导航结果 </p></td>
+                  <td><p>预计算的导航结果
+Pre calculated routing results </p></td>
                 </tr>
               
             </tbody>
@@ -3004,7 +3052,7 @@
 
       
         <h3 id="city.trip.v2.TripMode">TripMode</h3>
-        <p>出行偏好</p>
+        <p>出行偏好</p><p>Preferred trip travel mode</p>
         <table class="enum-table">
           <thead>
             <tr><td>Name</td><td>Number</td><td>Description</td></tr>
@@ -3014,31 +3062,36 @@
               <tr>
                 <td>TRIP_MODE_UNSPECIFIED</td>
                 <td>0</td>
-                <td><p>未指定出行方式</p></td>
+                <td><p>未指定出行方式
+unspecified</p></td>
               </tr>
             
               <tr>
                 <td>TRIP_MODE_WALK_ONLY</td>
                 <td>1</td>
-                <td><p>仅步行</p></td>
+                <td><p>仅步行
+walking only</p></td>
               </tr>
             
               <tr>
                 <td>TRIP_MODE_DRIVE_ONLY</td>
                 <td>2</td>
-                <td><p>仅开车</p></td>
+                <td><p>仅开车
+driving only</p></td>
               </tr>
             
               <tr>
                 <td>TRIP_MODE_BUS_WALK</td>
                 <td>4</td>
-                <td><p>乘坐公交车（含站点间步行换乘）</p></td>
+                <td><p>乘坐公交车（含站点间步行换乘）
+taking bus with walking to transit bus line between stations</p></td>
               </tr>
             
               <tr>
                 <td>TRIP_MODE_BIKE_WALK</td>
                 <td>5</td>
-                <td><p>当有自行车时选择骑自行车，否则步行</p></td>
+                <td><p>当有自行车时选择骑自行车，否则步行
+Riding bikes if avaible, otherwise walking</p></td>
               </tr>
             
           </tbody>
@@ -3788,14 +3841,14 @@
 
       
         <h3 id="city.clock.v1.NowRequest">NowRequest</h3>
-        <p>获取当前的模拟时间请求</p>
+        <p>获取当前的模拟时间请求</p><p>request of getting current simulation clock</p>
 
         
 
         
       
         <h3 id="city.clock.v1.NowResponse">NowResponse</h3>
-        <p>获取当前的模拟时间响应</p>
+        <p>获取当前的模拟时间响应</p><p>response of getting current simulation clock</p>
 
         
           <table class="field-table">
@@ -3808,7 +3861,8 @@
                   <td>t</td>
                   <td><a href="#double">double</a></td>
                   <td></td>
-                  <td><p>当前的模拟时间，单位为秒 </p></td>
+                  <td><p>当前的模拟时间，单位为秒
+current simulation clock, in seconds </p></td>
                 </tr>
               
             </tbody>
@@ -3836,7 +3890,8 @@
                 <td>Now</td>
                 <td><a href="#city.clock.v1.NowRequest">NowRequest</a></td>
                 <td><a href="#city.clock.v1.NowResponse">NowResponse</a></td>
-                <td><p>获取当前的模拟时间</p></td>
+                <td><p>获取当前的模拟时间
+get current simulation clock</p></td>
               </tr>
             
           </tbody>
@@ -4204,7 +4259,7 @@
 
       
         <h3 id="city.map.v2.Aoi">Aoi</h3>
-        <p>Aoi，用于描述地图上的区域</p>
+        <p>Aoi，用于描述地图上的区域</p><p>Aoi, describing a region on the map</p>
 
         
           <table class="field-table">
@@ -4217,77 +4272,88 @@
                   <td>id</td>
                   <td><a href="#int32">int32</a></td>
                   <td></td>
-                  <td><p>Aoi ID（从5_0000_0000开始） </p></td>
+                  <td><p>Aoi ID（从5_0000_0000开始）
+Aoi ID (starting from 5_0000_0000) </p></td>
                 </tr>
               
                 <tr>
                   <td>name</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
-                  <td><p>Aoi名字 </p></td>
+                  <td><p>Aoi名字
+Aoi name </p></td>
                 </tr>
               
                 <tr>
                   <td>type</td>
                   <td><a href="#city.map.v2.AoiType">AoiType</a></td>
                   <td></td>
-                  <td><p><strong>Deprecated.</strong> Aoi类型 </p></td>
+                  <td><p><strong>Deprecated.</strong> Aoi类型
+Aoi type </p></td>
                 </tr>
               
                 <tr>
                   <td>driving_positions</td>
                   <td><a href="#city.geo.v2.LanePosition">city.geo.v2.LanePosition</a></td>
                   <td>repeated</td>
-                  <td><p>Aoi与行车路网的连接点 </p></td>
+                  <td><p>Aoi与行车路网的连接点
+Connection point between Aoi and driving lanes </p></td>
                 </tr>
               
                 <tr>
                   <td>walking_positions</td>
                   <td><a href="#city.geo.v2.LanePosition">city.geo.v2.LanePosition</a></td>
                   <td>repeated</td>
-                  <td><p>Aoi与步行路网的连接点 </p></td>
+                  <td><p>Aoi与步行路网的连接点
+Connection point between Aoi and walking lanes </p></td>
                 </tr>
               
                 <tr>
                   <td>positions</td>
                   <td><a href="#city.geo.v2.XYPosition">city.geo.v2.XYPosition</a></td>
                   <td>repeated</td>
-                  <td><p>Aoi原始位置（如果只有一个值，则为Aoi所在的点，否则为Aoi多边形的边界） </p></td>
+                  <td><p>Aoi原始位置（如果只有一个值，则为Aoi所在的点，否则为Aoi多边形的边界）
+Aoi original position (if there is only one value, it is the point where Aoi is located, otherwise it is the boundary of the Aoi polygon) </p></td>
                 </tr>
               
                 <tr>
                   <td>driving_gates</td>
                   <td><a href="#city.geo.v2.XYPosition">city.geo.v2.XYPosition</a></td>
                   <td>repeated</td>
-                  <td><p>Aoi与行车路网连接时在自身边界上的连接点, 与driving_positions按索引一一对应 </p></td>
+                  <td><p>Aoi与行车路网连接时在自身边界上的连接点, 与driving_positions按索引一一对应
+The connection point on its own boundary when Aoi is connected to the driving lanes corresponds one-to-one with driving_positions by index. </p></td>
                 </tr>
               
                 <tr>
                   <td>walking_gates</td>
                   <td><a href="#city.geo.v2.XYPosition">city.geo.v2.XYPosition</a></td>
                   <td>repeated</td>
-                  <td><p>Aoi与步行路网连接时在自身边界上的连接点, 与walking_positions按索引一一对应 </p></td>
+                  <td><p>Aoi与步行路网连接时在自身边界上的连接点, 与walking_positions按索引一一对应
+The connection point on its own boundary when Aoi is connected to the walking lanes corresponds one-to-one with walking_positions by index. </p></td>
                 </tr>
               
                 <tr>
                   <td>area</td>
                   <td><a href="#double">double</a></td>
                   <td>optional</td>
-                  <td><p>Aoi面积, 若是Poi则无此字段 </p></td>
+                  <td><p>Aoi面积, 若是Poi则无此字段
+Aoi area, if it is Poi, there is no such field </p></td>
                 </tr>
               
                 <tr>
                   <td>land_use</td>
                   <td><a href="#city.map.v2.LandUseType">LandUseType</a></td>
                   <td>optional</td>
-                  <td><p>土地利用分类，若是Poi则无此字段 </p></td>
+                  <td><p>土地利用分类，若是Poi则无此字段
+Land use type, if it is Poi, there is no such field </p></td>
                 </tr>
               
                 <tr>
                   <td>poi_ids</td>
                   <td><a href="#int32">int32</a></td>
                   <td>repeated</td>
-                  <td><p>Aoi包含的Poi </p></td>
+                  <td><p>Aoi包含的Poi
+Pois contained in Aoi </p></td>
                 </tr>
               
             </tbody>
@@ -4319,7 +4385,7 @@
         
       
         <h3 id="city.map.v2.Header">Header</h3>
-        <p>地图元信息</p>
+        <p>地图元信息</p><p>Map meta information</p>
 
         
           <table class="field-table">
@@ -4332,49 +4398,56 @@
                   <td>name</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
-                  <td><p>地图名称 </p></td>
+                  <td><p>地图名称
+Map name </p></td>
                 </tr>
               
                 <tr>
                   <td>date</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
-                  <td><p>地图创建时间 </p></td>
+                  <td><p>地图创建时间
+Map creation time </p></td>
                 </tr>
               
                 <tr>
                   <td>north</td>
                   <td><a href="#double">double</a></td>
                   <td></td>
-                  <td><p>最大纬度对应的y坐标 </p></td>
+                  <td><p>最大纬度对应的y坐标
+y coordinate corresponding to the maximum latitude </p></td>
                 </tr>
               
                 <tr>
                   <td>south</td>
                   <td><a href="#double">double</a></td>
                   <td></td>
-                  <td><p>最小纬度对应的y坐标 </p></td>
+                  <td><p>最小纬度对应的y坐标
+y coordinate corresponding to the minimum latitude </p></td>
                 </tr>
               
                 <tr>
                   <td>east</td>
                   <td><a href="#double">double</a></td>
                   <td></td>
-                  <td><p>最大经度对应的x坐标 </p></td>
+                  <td><p>最大经度对应的x坐标
+x coordinate corresponding to the maximum longitude </p></td>
                 </tr>
               
                 <tr>
                   <td>west</td>
                   <td><a href="#double">double</a></td>
                   <td></td>
-                  <td><p>最小经度对应的x坐标 </p></td>
+                  <td><p>最小经度对应的x坐标
+x coordinate corresponding to the minimum longitude </p></td>
                 </tr>
               
                 <tr>
                   <td>projection</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
-                  <td><p>PROJ.4 投影字符串，用以支持xy坐标到其他坐标系的转换 </p></td>
+                  <td><p>PROJ.4 投影字符串，用以支持xy坐标到其他坐标系的转换
+PROJ.4 projection string to support the conversion of xy coordinates to other coordinate systems </p></td>
                 </tr>
               
             </tbody>
@@ -4385,7 +4458,7 @@
         
       
         <h3 id="city.map.v2.Junction">Junction</h3>
-        <p>Junction，用于描述路口</p>
+        <p>Junction，用于描述路口</p><p>Junction, describing road intersections</p>
 
         
           <table class="field-table">
@@ -4398,21 +4471,24 @@
                   <td>id</td>
                   <td><a href="#int32">int32</a></td>
                   <td></td>
-                  <td><p>路口id（从3_0000_0000开始） </p></td>
+                  <td><p>路口id（从3_0000_0000开始）
+Junction id (starting from 3_0000_0000) </p></td>
                 </tr>
               
                 <tr>
                   <td>lane_ids</td>
                   <td><a href="#int32">int32</a></td>
                   <td>repeated</td>
-                  <td><p>属于该路口Junction的所有车道/人行道等lane </p></td>
+                  <td><p>属于该路口Junction的所有车道/人行道等lane
+All driving/walking lanes belonging to this junction. </p></td>
                 </tr>
               
                 <tr>
                   <td>driving_lane_groups</td>
                   <td><a href="#city.map.v2.JunctionLaneGroup">JunctionLaneGroup</a></td>
                   <td>repeated</td>
-                  <td><p>属于该路口Junction的所有行车车道组 </p></td>
+                  <td><p>属于该路口Junction的所有行车车道组
+All driving lane groups belonging to this junction </p></td>
                 </tr>
               
             </tbody>
@@ -4423,7 +4499,7 @@
         
       
         <h3 id="city.map.v2.JunctionLaneGroup">JunctionLaneGroup</h3>
-        <p>车道组，用于描述路口内的车道组合</p><p>具有相同入口道路和出口道路的车道组成一个车道组</p><p>车道组是信控处理、路口通行的基本单元</p>
+        <p>车道组，用于描述路口内的车道组合</p><p>Lane group, describing the combination of lanes within an intersection</p><p>具有相同入口道路和出口道路的车道组成一个车道组</p><p>Lanes with the same entrance and exit roads form a lane group</p><p>车道组是信控处理、路口通行的基本单元</p><p>Lane group is the basic unit for signal control and traffic in the junction.</p>
 
         
           <table class="field-table">
@@ -4436,42 +4512,48 @@
                   <td>in_road_id</td>
                   <td><a href="#int32">int32</a></td>
                   <td></td>
-                  <td><p>该车道组的入口道路 </p></td>
+                  <td><p>该车道组的入口道路
+The entrance road to this lane group </p></td>
                 </tr>
               
                 <tr>
                   <td>in_angle</td>
                   <td><a href="#double">double</a></td>
                   <td></td>
-                  <td><p>该车道组的入口角度（弧度制） </p></td>
+                  <td><p>该车道组的入口角度（弧度制）
+The entrance angle of this lane group (in radians) </p></td>
                 </tr>
               
                 <tr>
                   <td>out_road_id</td>
                   <td><a href="#int32">int32</a></td>
                   <td></td>
-                  <td><p>该车道组的出口道路 </p></td>
+                  <td><p>该车道组的出口道路
+The exit road for this lane group </p></td>
                 </tr>
               
                 <tr>
                   <td>out_angle</td>
                   <td><a href="#double">double</a></td>
                   <td></td>
-                  <td><p>该车道组的出口角度（弧度制） </p></td>
+                  <td><p>该车道组的出口角度（弧度制）
+The exit angle of this lane group (in radians) </p></td>
                 </tr>
               
                 <tr>
                   <td>lane_ids</td>
                   <td><a href="#int32">int32</a></td>
                   <td>repeated</td>
-                  <td><p>该车道组包含的车道 </p></td>
+                  <td><p>该车道组包含的车道
+Lanes in the group </p></td>
                 </tr>
               
                 <tr>
                   <td>turn</td>
                   <td><a href="#city.map.v2.LaneTurn">LaneTurn</a></td>
                   <td></td>
-                  <td><p>该车道组的转向属性 </p></td>
+                  <td><p>该车道组的转向属性
+The turn type of this lane group </p></td>
                 </tr>
               
             </tbody>
@@ -4482,7 +4564,7 @@
         
       
         <h3 id="city.map.v2.Lane">Lane</h3>
-        <p>Lane，用于描述道路上的车道、人行道等</p>
+        <p>Lane，用于描述道路上的车道、人行道等</p><p>Lane, used to describe lanes, sidewalks, etc. on the road</p>
 
         
           <table class="field-table">
@@ -4495,49 +4577,56 @@
                   <td>id</td>
                   <td><a href="#int32">int32</a></td>
                   <td></td>
-                  <td><p>车道id（从0开始） </p></td>
+                  <td><p>车道id（从0开始）
+lane id (starts from 0) </p></td>
                 </tr>
               
                 <tr>
                   <td>type</td>
                   <td><a href="#city.map.v2.LaneType">LaneType</a></td>
                   <td></td>
-                  <td><p>车道类型 </p></td>
+                  <td><p>车道类型
+lane type </p></td>
                 </tr>
               
                 <tr>
                   <td>turn</td>
                   <td><a href="#city.map.v2.LaneTurn">LaneTurn</a></td>
                   <td></td>
-                  <td><p>车道转向 </p></td>
+                  <td><p>车道转向
+lane turn type </p></td>
                 </tr>
               
                 <tr>
                   <td>max_speed</td>
                   <td><a href="#double">double</a></td>
                   <td></td>
-                  <td><p>限速 (m/s) </p></td>
+                  <td><p>限速 (m/s)
+max speed (m/s) </p></td>
                 </tr>
               
                 <tr>
                   <td>length</td>
                   <td><a href="#double">double</a></td>
                   <td></td>
-                  <td><p>中心线长度（单位：米） </p></td>
+                  <td><p>中心线长度（单位：米）
+centerline length (in meters) </p></td>
                 </tr>
               
                 <tr>
                   <td>width</td>
                   <td><a href="#double">double</a></td>
                   <td></td>
-                  <td><p>车道宽度（单位：米） </p></td>
+                  <td><p>车道宽度（单位：米）
+lane width (in meters) </p></td>
                 </tr>
               
                 <tr>
                   <td>center_line</td>
                   <td><a href="#city.map.v2.Polyline">Polyline</a></td>
                   <td></td>
-                  <td><p>车道中心线（车辆/行车轨迹线） </p></td>
+                  <td><p>车道中心线（车辆/行车轨迹线）
+Lane center line (vehicle/driving line) </p></td>
                 </tr>
               
                 <tr>
@@ -4545,8 +4634,9 @@
                   <td><a href="#city.map.v2.Polyline">Polyline</a></td>
                   <td></td>
                   <td><p><strong>Deprecated.</strong> 车道左边界线
+Lane left boundary line
 
-弃用 </p></td>
+弃用 deprecated </p></td>
                 </tr>
               
                 <tr>
@@ -4554,8 +4644,9 @@
                   <td><a href="#city.map.v2.Polyline">Polyline</a></td>
                   <td></td>
                   <td><p><strong>Deprecated.</strong> 车道右边界线
+Lane right boundary line
 
-弃用 </p></td>
+弃用 deprecated </p></td>
                 </tr>
               
                 <tr>
@@ -4564,8 +4655,11 @@
                   <td>repeated</td>
                   <td><p>Lanes can drive / walk from
 对于Junction内的车道至多1个前驱
+For lanes within junction, there is at most 1 predecessor
 对于LANE_TYPE_DRIVING，连接类型必为LANE_CONNECTION_TYPE_TAIL
-对于LANE_TYPE_WALKING连接类型两种都有可能 </p></td>
+For LANE_TYPE_DRIVING, the connection type must be LANE_CONNECTION_TYPE_TAIL
+对于LANE_TYPE_WALKING连接类型，两种都有可能
+For LANE_TYPE_WALKING, both connection types are possible </p></td>
                 </tr>
               
                 <tr>
@@ -4574,43 +4668,51 @@
                   <td>repeated</td>
                   <td><p>Lanes can drive / walk to
 对于Junction内的车道至多1个后继
+For lanes within junction, there is at most 1 successor
 对于LANE_TYPE_DRIVING，连接类型必为LANE_CONNECTION_TYPE_HEAD
-对于LANE_TYPE_WALKING连接类型两种都有可能 </p></td>
+For LANE_TYPE_DRIVING, the connection type must be LANE_CONNECTION_TYPE_HEAD
+对于LANE_TYPE_WALKING连接类型，两种都有可能
+For LANE_TYPE_WALKING, both connection types are possible </p></td>
                 </tr>
               
                 <tr>
                   <td>left_lane_ids</td>
                   <td><a href="#int32">int32</a></td>
                   <td>repeated</td>
-                  <td><p>左侧相邻车道（按从近到远排列） </p></td>
+                  <td><p>左侧相邻车道（按从近到远排列）
+Adjacent lanes on the left (arranged from nearest to far) </p></td>
                 </tr>
               
                 <tr>
                   <td>right_lane_ids</td>
                   <td><a href="#int32">int32</a></td>
                   <td>repeated</td>
-                  <td><p>右侧相邻车道（按从近到远排列） </p></td>
+                  <td><p>右侧相邻车道（按从近到远排列）
+Adjacent lanes on the right (arranged from nearest to far) </p></td>
                 </tr>
               
                 <tr>
                   <td>parent_id</td>
                   <td><a href="#int32">int32</a></td>
                   <td></td>
-                  <td><p>所属的道路road id或路口junction id </p></td>
+                  <td><p>所属的道路road id或路口junction id
+The road id or junction id it belongs to </p></td>
                 </tr>
               
                 <tr>
                   <td>overlaps</td>
                   <td><a href="#city.map.v2.LaneOverlap">LaneOverlap</a></td>
                   <td>repeated</td>
-                  <td><p>车道之间的冲突点（仅在Junction内有效），保证按照self_s从小到大排序 </p></td>
+                  <td><p>车道之间的冲突点（仅在Junction内有效），保证按照self_s从小到大排序
+Conflict points between lanes (valid only within Junction), guaranteed to be sorted from small to large according to self_s </p></td>
                 </tr>
               
                 <tr>
                   <td>aoi_ids</td>
                   <td><a href="#int32">int32</a></td>
                   <td>repeated</td>
-                  <td><p>连接到该车道的所有AOI </p></td>
+                  <td><p>连接到该车道的所有AOI
+All AOIs connected to this lane </p></td>
                 </tr>
               
             </tbody>
@@ -4647,7 +4749,7 @@
         
       
         <h3 id="city.map.v2.LaneConnection">LaneConnection</h3>
-        <p>车道连接信息</p>
+        <p>车道连接信息</p><p>Lane connection information</p>
 
         
           <table class="field-table">
@@ -4660,14 +4762,16 @@
                   <td>id</td>
                   <td><a href="#int32">int32</a></td>
                   <td></td>
-                  <td><p>所连接的车道Lane的ID </p></td>
+                  <td><p>所连接的车道Lane的ID
+ID of the connected lane </p></td>
                 </tr>
               
                 <tr>
                   <td>type</td>
                   <td><a href="#city.map.v2.LaneConnectionType">LaneConnectionType</a></td>
                   <td></td>
-                  <td><p>连接类型 </p></td>
+                  <td><p>连接类型
+Connection type </p></td>
                 </tr>
               
             </tbody>
@@ -4678,7 +4782,7 @@
         
       
         <h3 id="city.map.v2.LaneOverlap">LaneOverlap</h3>
-        <p>两个lane的冲突区域</p>
+        <p>两个lane的冲突区域</p><p>Conflict area between two lanes</p>
 
         
           <table class="field-table">
@@ -4691,21 +4795,24 @@
                   <td>self</td>
                   <td><a href="#city.geo.v2.LanePosition">city.geo.v2.LanePosition</a></td>
                   <td></td>
-                  <td><p>冲突点在本车道上的坐标 </p></td>
+                  <td><p>冲突点在本车道上的坐标
+Coordinates of the conflict point on this lane </p></td>
                 </tr>
               
                 <tr>
                   <td>other</td>
                   <td><a href="#city.geo.v2.LanePosition">city.geo.v2.LanePosition</a></td>
                   <td></td>
-                  <td><p>冲突点在冲突车道上的坐标 </p></td>
+                  <td><p>冲突点在冲突车道上的坐标
+Coordinates of the conflict point on the conflicted lane </p></td>
                 </tr>
               
                 <tr>
                   <td>self_first</td>
                   <td><a href="#bool">bool</a></td>
                   <td></td>
-                  <td><p>本车道是否有优先通行权 </p></td>
+                  <td><p>本车道是否有优先通行权
+Whether this lane has priority </p></td>
                 </tr>
               
             </tbody>
@@ -4716,7 +4823,7 @@
         
       
         <h3 id="city.map.v2.Map">Map</h3>
-        <p>地图，对应一个地图pb文件或一个地图mongodb collection</p>
+        <p>地图，对应一个地图pb文件或一个地图mongodb collection</p><p>Map, corresponding to a map pb file or a map MongoDB collection</p>
 
         
           <table class="field-table">
@@ -4788,14 +4895,16 @@
                   <td>road_id</td>
                   <td><a href="#int32">int32</a></td>
                   <td></td>
-                  <td><p>下一条路的id </p></td>
+                  <td><p>下一条路的id
+ID of the next road </p></td>
                 </tr>
               
                 <tr>
                   <td>lane_id_a</td>
                   <td><a href="#int32">int32</a></td>
                   <td></td>
-                  <td><p>我们假定能去往对应道路的车道id范围是连续的，用[a,b]表示 </p></td>
+                  <td><p>我们假定能去往对应道路的车道id范围是连续的，用[a,b]表示
+We assume that the range of lane IDs of the next road is continuous, represented by [a, b] </p></td>
                 </tr>
               
                 <tr>
@@ -4826,7 +4935,8 @@
                   <td>next_road_lanes</td>
                   <td><a href="#city.map.v2.NextRoadLane">NextRoadLane</a></td>
                   <td>repeated</td>
-                  <td><p>记录去往目标next_road的可行lane集合 </p></td>
+                  <td><p>记录去往目标next_road的可行lane集合
+set of feasible lanes for going to the next_road </p></td>
                 </tr>
               
             </tbody>
@@ -4837,7 +4947,7 @@
         
       
         <h3 id="city.map.v2.Poi">Poi</h3>
-        <p>Poi，用于描述地图上的兴趣点</p>
+        <p>Poi，用于描述地图上的兴趣点</p><p>Poi, describing points of interest on the map</p>
 
         
           <table class="field-table">
@@ -4850,49 +4960,56 @@
                   <td>id</td>
                   <td><a href="#int32">int32</a></td>
                   <td></td>
-                  <td><p>Poi id(从7_0000_0000开始) </p></td>
+                  <td><p>Poi id(从7_0000_0000开始)
+Poi id (starting from 7_0000_0000) </p></td>
                 </tr>
               
                 <tr>
                   <td>name</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
-                  <td><p>Poi名称 </p></td>
+                  <td><p>Poi名称
+Poi name </p></td>
                 </tr>
               
                 <tr>
                   <td>category</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
-                  <td><p>Poi分类编码 </p></td>
+                  <td><p>Poi分类编码
+Poi category code </p></td>
                 </tr>
               
                 <tr>
                   <td>position</td>
                   <td><a href="#city.geo.v2.XYPosition">city.geo.v2.XYPosition</a></td>
                   <td></td>
-                  <td><p>Poi原始位置 </p></td>
+                  <td><p>Poi原始位置
+Poi original position </p></td>
                 </tr>
               
                 <tr>
                   <td>aoi_id</td>
                   <td><a href="#int32">int32</a></td>
                   <td></td>
-                  <td><p>Poi所属的Aoi </p></td>
+                  <td><p>Poi所属的Aoi
+Aoi to which the Poi belongs </p></td>
                 </tr>
               
                 <tr>
                   <td>capacity</td>
                   <td><a href="#int32">int32</a></td>
                   <td>optional</td>
-                  <td><p>Poi的容量（能同时容纳的人数），若无则表示无人数限制 </p></td>
+                  <td><p>Poi的容量（能同时容纳的人数），若无则表示无人数限制
+The capacity of Poi (the number of people it can accommodate at the same time), if none, it means there is no limit on the number of people </p></td>
                 </tr>
               
                 <tr>
                   <td>functions</td>
                   <td><a href="#string">string</a></td>
                   <td>repeated</td>
-                  <td><p>Poi所能提供的功能 </p></td>
+                  <td><p>Poi所能提供的功能
+The functions the Poi can offer </p></td>
                 </tr>
               
             </tbody>
@@ -4903,7 +5020,7 @@
         
       
         <h3 id="city.map.v2.Polyline">Polyline</h3>
-        <p>折线，用于定义车道等的形状</p>
+        <p>折线，用于定义车道等的形状</p><p>Polyline, used to define the shape of lanes, etc.</p>
 
         
           <table class="field-table">
@@ -4916,7 +5033,8 @@
                   <td>nodes</td>
                   <td><a href="#city.geo.v2.XYPosition">city.geo.v2.XYPosition</a></td>
                   <td>repeated</td>
-                  <td><p>折线上的点 </p></td>
+                  <td><p>折线上的点
+Points of the polyline </p></td>
                 </tr>
               
             </tbody>
@@ -4927,7 +5045,7 @@
         
       
         <h3 id="city.map.v2.Road">Road</h3>
-        <p>Road，用于描述道路</p>
+        <p>Road，用于描述道路</p><p>Road, describing roads</p>
 
         
           <table class="field-table">
@@ -4940,14 +5058,16 @@
                   <td>id</td>
                   <td><a href="#int32">int32</a></td>
                   <td></td>
-                  <td><p>道路id（从2_0000_0000开始） </p></td>
+                  <td><p>道路id（从2_0000_0000开始）
+Road ID (starting from 2_0000_0000) </p></td>
                 </tr>
               
                 <tr>
                   <td>name</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
-                  <td><p>道路名字 </p></td>
+                  <td><p>道路名字
+road name </p></td>
                 </tr>
               
                 <tr>
@@ -4955,14 +5075,17 @@
                   <td><a href="#int32">int32</a></td>
                   <td>repeated</td>
                   <td><p>属于该道路Road的所有车道/人行道等lane
-lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺序给出的 </p></td>
+All lanes/sidewalks belonging to the road
+lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺序给出的
+lane_ids are given in order from the leftmost lane to the rightmost lane (viewed from the forward direction) </p></td>
                 </tr>
               
                 <tr>
                   <td>next_road_lane_plans</td>
                   <td><a href="#city.map.v2.NextRoadLanePlan">NextRoadLanePlan</a></td>
                   <td>repeated</td>
-                  <td><p>对于包含动态车道的道路，需要通过这一项来指定所有的候选方案 </p></td>
+                  <td><p>对于包含动态车道的道路，需要通过这一项来指定所有的候选方案
+For roads containing dynamic lanes, this is required to specify all candidates </p></td>
                 </tr>
               
             </tbody>
@@ -4985,26 +5108,29 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
               <tr>
                 <td>AOI_TYPE_UNSPECIFIED</td>
                 <td>0</td>
-                <td><p>未指定</p></td>
+                <td><p>未指定
+unspecified</p></td>
               </tr>
             
               <tr>
                 <td>AOI_TYPE_BUS_STATION</td>
                 <td>1</td>
-                <td><p>公交站点</p></td>
+                <td><p>公交站点
+bus station</p></td>
               </tr>
             
               <tr>
                 <td>AOI_TYPE_OTHER</td>
                 <td>2</td>
-                <td><p>其他</p></td>
+                <td><p>其他
+other</p></td>
               </tr>
             
           </tbody>
         </table>
       
         <h3 id="city.map.v2.LandUseType">LandUseType</h3>
-        <p>土地利用类型，参照国标GB/T 21010—2007</p><p>http://www.gscloud.cn/static/cases/%E3%80%8A%E5%9C%9F%E5%9C%B0%E5%88%A9%E7%94%A8%E7%8E%B0%E7%8A%B6%E5%88%86%E7%B1%BB%E3%80%8B%E5%9B%BD%E5%AE%B6%E6%A0%87%E5%87%86gb_t21010-2007(1).pdf</p>
+        <p>土地利用类型，参照国标GB/T 21010—2007</p><p>Land use type, refer to the national standard GB/T 21010-2007</p><p>http://www.gscloud.cn/static/cases/%E3%80%8A%E5%9C%9F%E5%9C%B0%E5%88%A9%E7%94%A8%E7%8E%B0%E7%8A%B6%E5%88%86%E7%B1%BB%E3%80%8B%E5%9B%BD%E5%AE%B6%E6%A0%87%E5%87%86gb_t21010-2007(1).pdf</p>
         <table class="enum-table">
           <thead>
             <tr><td>Name</td><td>Number</td><td>Description</td></tr>
@@ -5014,50 +5140,57 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
               <tr>
                 <td>LAND_USE_TYPE_UNSPECIFIED</td>
                 <td>0</td>
-                <td><p>未指定</p></td>
+                <td><p>未指定
+unspecified</p></td>
               </tr>
             
               <tr>
                 <td>LAND_USE_TYPE_COMMERCIAL</td>
                 <td>5</td>
-                <td><p>商服用地</p></td>
+                <td><p>商服用地
+commercial land</p></td>
               </tr>
             
               <tr>
                 <td>LAND_USE_TYPE_INDUSTRIAL</td>
                 <td>6</td>
-                <td><p>工矿仓储用地</p></td>
+                <td><p>工矿仓储用地
+Industrial and storage land</p></td>
               </tr>
             
               <tr>
                 <td>LAND_USE_TYPE_RESIDENTIAL</td>
                 <td>7</td>
-                <td><p>住宅用地</p></td>
+                <td><p>住宅用地
+residential land</p></td>
               </tr>
             
               <tr>
                 <td>LAND_USE_TYPE_PUBLIC</td>
                 <td>8</td>
-                <td><p>公共管理与公共服务用地</p></td>
+                <td><p>公共管理与公共服务用地
+Public management and public service land</p></td>
               </tr>
             
               <tr>
                 <td>LAND_USE_TYPE_TRANSPORTATION</td>
                 <td>10</td>
-                <td><p>交通运输用地</p></td>
+                <td><p>交通运输用地
+transportation land</p></td>
               </tr>
             
               <tr>
                 <td>LAND_USE_TYPE_OTHER</td>
                 <td>12</td>
-                <td><p>其他土地</p></td>
+                <td><p>其他土地
+other land</p></td>
               </tr>
             
           </tbody>
         </table>
       
         <h3 id="city.map.v2.LaneConnectionType">LaneConnectionType</h3>
-        <p>车道连接类型</p>
+        <p>车道连接类型</p><p>Lane connection type</p>
         <table class="enum-table">
           <thead>
             <tr><td>Name</td><td>Number</td><td>Description</td></tr>
@@ -5067,26 +5200,29 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
               <tr>
                 <td>LANE_CONNECTION_TYPE_UNSPECIFIED</td>
                 <td>0</td>
-                <td><p>未指定</p></td>
+                <td><p>未指定
+unspecified</p></td>
               </tr>
             
               <tr>
                 <td>LANE_CONNECTION_TYPE_HEAD</td>
                 <td>1</td>
-                <td><p>连接处为道路开头</p></td>
+                <td><p>连接处为道路开头
+The connection is at the lane head</p></td>
               </tr>
             
               <tr>
                 <td>LANE_CONNECTION_TYPE_TAIL</td>
                 <td>2</td>
-                <td><p>连接处为道路结尾</p></td>
+                <td><p>连接处为道路结尾
+The connection is at the lane tail</p></td>
               </tr>
             
           </tbody>
         </table>
       
         <h3 id="city.map.v2.LaneTurn">LaneTurn</h3>
-        <p>车道转向</p>
+        <p>车道转向</p><p>lane turn type</p>
         <table class="enum-table">
           <thead>
             <tr><td>Name</td><td>Number</td><td>Description</td></tr>
@@ -5096,38 +5232,43 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
               <tr>
                 <td>LANE_TURN_UNSPECIFIED</td>
                 <td>0</td>
-                <td><p>未指定</p></td>
+                <td><p>未指定
+unspecified</p></td>
               </tr>
             
               <tr>
                 <td>LANE_TURN_STRAIGHT</td>
                 <td>1</td>
-                <td><p>直行</p></td>
+                <td><p>直行
+go straight</p></td>
               </tr>
             
               <tr>
                 <td>LANE_TURN_LEFT</td>
                 <td>2</td>
-                <td><p>左转</p></td>
+                <td><p>左转
+turn left</p></td>
               </tr>
             
               <tr>
                 <td>LANE_TURN_RIGHT</td>
                 <td>3</td>
-                <td><p>右转</p></td>
+                <td><p>右转
+turn right</p></td>
               </tr>
             
               <tr>
                 <td>LANE_TURN_AROUND</td>
                 <td>4</td>
-                <td><p>掉头</p></td>
+                <td><p>掉头
+turn around</p></td>
               </tr>
             
           </tbody>
         </table>
       
         <h3 id="city.map.v2.LaneType">LaneType</h3>
-        <p>车道类型</p>
+        <p>车道类型</p><p>Lane type</p>
         <table class="enum-table">
           <thead>
             <tr><td>Name</td><td>Number</td><td>Description</td></tr>
@@ -5137,19 +5278,22 @@ lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺�
               <tr>
                 <td>LANE_TYPE_UNSPECIFIED</td>
                 <td>0</td>
-                <td><p>未指定</p></td>
+                <td><p>未指定
+unspecified</p></td>
               </tr>
             
               <tr>
                 <td>LANE_TYPE_DRIVING</td>
                 <td>1</td>
-                <td><p>行车</p></td>
+                <td><p>行车
+driving</p></td>
               </tr>
             
               <tr>
                 <td>LANE_TYPE_WALKING</td>
                 <td>2</td>
-                <td><p>步行</p></td>
+                <td><p>步行
+walking</p></td>
               </tr>
             
           </tbody>
@@ -9773,7 +9917,7 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
 
       
         <h3 id="city.person.v1.PersonMotion">PersonMotion</h3>
-        <p>Person（人）的运动状态</p>
+        <p>Person（人）的运动状态</p><p>Person's motion state</p>
 
         
           <table class="field-table">
@@ -9793,35 +9937,39 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
                   <td>status</td>
                   <td><a href="#city.person.v1.Status">Status</a></td>
                   <td></td>
-                  <td><p>状态 </p></td>
+                  <td><p>状态
+status </p></td>
                 </tr>
               
                 <tr>
                   <td>position</td>
                   <td><a href="#city.geo.v2.Position">city.geo.v2.Position</a></td>
                   <td></td>
-                  <td><p>位置（包含逻辑位置、XY位置、经纬度位置） </p></td>
+                  <td><p>位置（包含逻辑位置、XY位置、经纬度位置）
+Position (including logical position, XY position, longitude and latitude position) </p></td>
                 </tr>
               
                 <tr>
                   <td>v</td>
                   <td><a href="#double">double</a></td>
                   <td></td>
-                  <td><p>速度 </p></td>
+                  <td><p>speed </p></td>
                 </tr>
               
                 <tr>
                   <td>direction</td>
                   <td><a href="#double">double</a></td>
                   <td></td>
-                  <td><p>方向角（atan2计算得到的弧度） </p></td>
+                  <td><p>方向角（atan2计算得到的弧度）
+Direction angle (radians calculated by atan2) </p></td>
                 </tr>
               
                 <tr>
                   <td>activity</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
-                  <td><p>活动描述 </p></td>
+                  <td><p>活动描述
+activity descriptions </p></td>
                 </tr>
               
             </tbody>
@@ -9834,7 +9982,7 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
 
       
         <h3 id="city.person.v1.Status">Status</h3>
-        <p>Person（人）的运行时状态</p>
+        <p>Person（人）的运行时状态</p><p>Person's runtime state</p>
         <table class="enum-table">
           <thead>
             <tr><td>Name</td><td>Number</td><td>Description</td></tr>
@@ -9844,43 +9992,50 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
               <tr>
                 <td>STATUS_UNSPECIFIED</td>
                 <td>0</td>
-                <td><p>未指定</p></td>
+                <td><p>未指定
+unspecified</p></td>
               </tr>
             
               <tr>
                 <td>STATUS_SLEEP</td>
                 <td>1</td>
-                <td><p>没有移动行为</p></td>
+                <td><p>没有移动行为
+no mobility behaviors</p></td>
               </tr>
             
               <tr>
                 <td>STATUS_DRIVING</td>
                 <td>2</td>
-                <td><p>开车</p></td>
+                <td><p>开车
+driving</p></td>
               </tr>
             
               <tr>
                 <td>STATUS_WALKING</td>
                 <td>3</td>
-                <td><p>步行</p></td>
+                <td><p>步行
+walking</p></td>
               </tr>
             
               <tr>
                 <td>STATUS_CROWD</td>
                 <td>4</td>
-                <td><p>室内行人</p></td>
+                <td><p>室内行人
+indoor pedestrian</p></td>
               </tr>
             
               <tr>
                 <td>STATUS_PASSENGER</td>
                 <td>5</td>
-                <td><p>乘客</p></td>
+                <td><p>乘客
+vehicle passenger</p></td>
               </tr>
             
               <tr>
                 <td>STATUS_WAIT_ROUTE</td>
                 <td>6</td>
-                <td><p>等待路径规划</p></td>
+                <td><p>等待路径规划
+wait for path routing</p></td>
               </tr>
             
           </tbody>
@@ -9899,7 +10054,7 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
 
       
         <h3 id="city.map.v2.AoiState">AoiState</h3>
-        <p>AOI状态</p>
+        <p>AOI状态</p><p>AOI state</p>
 
         
           <table class="field-table">
@@ -9919,7 +10074,8 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
                   <td>persons</td>
                   <td><a href="#city.person.v1.PersonMotion">city.person.v1.PersonMotion</a></td>
                   <td>repeated</td>
-                  <td><p>AOI内的人 </p></td>
+                  <td><p>AOI内的人
+Persons in AOI </p></td>
                 </tr>
               
             </tbody>
@@ -9930,7 +10086,7 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
         
       
         <h3 id="city.map.v2.GetAoiRequest">GetAoiRequest</h3>
-        <p>获取AOI信息请求</p>
+        <p>获取AOI信息请求</p><p>Request for getting AOI information</p>
 
         
           <table class="field-table">
@@ -9943,7 +10099,8 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
                   <td>aoi_ids</td>
                   <td><a href="#int32">int32</a></td>
                   <td>repeated</td>
-                  <td><p>指定AOI ID列表，如果为空，则返回所有AOI信息 </p></td>
+                  <td><p>指定AOI ID列表，如果为空，则返回所有AOI信息
+List of targeted AOI IDs, if empty, returns all information of AOIs </p></td>
                 </tr>
               
             </tbody>
@@ -9954,7 +10111,7 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
         
       
         <h3 id="city.map.v2.GetAoiResponse">GetAoiResponse</h3>
-        <p>获取AOI信息响应</p>
+        <p>获取AOI信息响应</p><p>Response for getting AOI information</p>
 
         
           <table class="field-table">
@@ -9967,7 +10124,8 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
                   <td>states</td>
                   <td><a href="#city.map.v2.AoiState">AoiState</a></td>
                   <td>repeated</td>
-                  <td><p>AOI信息列表 </p></td>
+                  <td><p>AOI信息列表
+Lis of AOIs information </p></td>
                 </tr>
               
             </tbody>
@@ -9995,7 +10153,8 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
                 <td>GetAoi</td>
                 <td><a href="#city.map.v2.GetAoiRequest">GetAoiRequest</a></td>
                 <td><a href="#city.map.v2.GetAoiResponse">GetAoiResponse</a></td>
-                <td><p>获取AOI信息</p></td>
+                <td><p>获取AOI信息
+Get AOI information</p></td>
               </tr>
             
           </tbody>
@@ -10011,7 +10170,7 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
 
       
         <h3 id="city.traffic_light.v2.Phase">Phase</h3>
-        <p>交通灯相位</p>
+        <p>交通灯相位</p><p>traffic light phase</p>
 
         
           <table class="field-table">
@@ -10024,14 +10183,16 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
                   <td>duration</td>
                   <td><a href="#double">double</a></td>
                   <td></td>
-                  <td><p>相位持续时间，单位秒 </p></td>
+                  <td><p>相位持续时间，单位秒
+Phase duration in seconds </p></td>
                 </tr>
               
                 <tr>
                   <td>states</td>
                   <td><a href="#city.traffic_light.v2.LightState">LightState</a></td>
                   <td>repeated</td>
-                  <td><p>描述该相位下每个lane的灯控情况，lane与Junction.lane_ids一一对应 </p></td>
+                  <td><p>描述该相位下每个lane的灯控情况，lane与Junction.lane_ids一一对应
+The lighting control situation of each lane in this phase, and the lane corresponds one-to-one with junction.lane_ids </p></td>
                 </tr>
               
             </tbody>
@@ -10042,7 +10203,7 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
         
       
         <h3 id="city.traffic_light.v2.TrafficLight">TrafficLight</h3>
-        <p>交通灯</p>
+        <p>交通灯</p><p>traffic light</p>
 
         
           <table class="field-table">
@@ -10055,14 +10216,16 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
                   <td>junction_id</td>
                   <td><a href="#int32">int32</a></td>
                   <td></td>
-                  <td><p>所在路口id </p></td>
+                  <td><p>所在路口id
+ID of the junction where the traffic light is at </p></td>
                 </tr>
               
                 <tr>
                   <td>phases</td>
                   <td><a href="#city.traffic_light.v2.Phase">Phase</a></td>
                   <td>repeated</td>
-                  <td><p>相位循环的一个循环周期 </p></td>
+                  <td><p>相位循环的一个循环周期
+One cycle of phase cycling </p></td>
                 </tr>
               
             </tbody>
@@ -10073,7 +10236,7 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
         
       
         <h3 id="city.traffic_light.v2.TrafficLights">TrafficLights</h3>
-        <p>信控集合，对应一个信控pb文件或一个信控mongodb collection</p>
+        <p>信控集合，对应一个信控pb文件或一个信控mongodb collection</p><p>Traffic light set, corresponding to one traffic light PB file or one traffic light mongodb collection</p>
 
         
           <table class="field-table">
@@ -10099,7 +10262,7 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
 
       
         <h3 id="city.traffic_light.v2.LightState">LightState</h3>
-        <p>交通灯的状态</p>
+        <p>交通灯的状态</p><p>traffic light state</p>
         <table class="enum-table">
           <thead>
             <tr><td>Name</td><td>Number</td><td>Description</td></tr>
@@ -10109,25 +10272,29 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
               <tr>
                 <td>LIGHT_STATE_UNSPECIFIED</td>
                 <td>0</td>
-                <td><p>未指定</p></td>
+                <td><p>未指定
+unspecified</p></td>
               </tr>
             
               <tr>
                 <td>LIGHT_STATE_RED</td>
                 <td>1</td>
-                <td><p>红灯</p></td>
+                <td><p>红灯
+red light</p></td>
               </tr>
             
               <tr>
                 <td>LIGHT_STATE_GREEN</td>
                 <td>2</td>
-                <td><p>绿灯</p></td>
+                <td><p>绿灯
+green light</p></td>
               </tr>
             
               <tr>
                 <td>LIGHT_STATE_YELLOW</td>
                 <td>3</td>
-                <td><p>黄灯</p></td>
+                <td><p>黄灯
+yellow light</p></td>
               </tr>
             
           </tbody>
@@ -10146,7 +10313,7 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
 
       
         <h3 id="city.map.v2.GetLaneByLongLatBBoxRequest">GetLaneByLongLatBBoxRequest</h3>
-        <p>获取特定区域内的Lane的信息请求</p>
+        <p>获取特定区域内的Lane的信息请求</p><p>Request for getting lane information in a specific region</p>
 
         
           <table class="field-table">
@@ -10159,14 +10326,16 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
                   <td>bbox</td>
                   <td><a href="#city.geo.v2.LongLatBBox">city.geo.v2.LongLatBBox</a></td>
                   <td></td>
-                  <td><p>经纬度范围 </p></td>
+                  <td><p>经纬度范围
+latitude and longitude bounding box </p></td>
                 </tr>
               
                 <tr>
                   <td>exclude_person</td>
                   <td><a href="#bool">bool</a></td>
                   <td></td>
-                  <td><p>是否要排除车道上的人的信息 </p></td>
+                  <td><p>是否要排除车道上的人的信息
+Whether to exclude information of person on the lane </p></td>
                 </tr>
               
             </tbody>
@@ -10177,7 +10346,7 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
         
       
         <h3 id="city.map.v2.GetLaneByLongLatBBoxResponse">GetLaneByLongLatBBoxResponse</h3>
-        <p>获取特定区域内的Lane的信息响应</p>
+        <p>获取特定区域内的Lane的信息响应</p><p>Response of getting lane information in a specific region</p>
 
         
           <table class="field-table">
@@ -10190,7 +10359,8 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
                   <td>states</td>
                   <td><a href="#city.map.v2.LaneState">LaneState</a></td>
                   <td>repeated</td>
-                  <td><p>Lane的信息 </p></td>
+                  <td><p>Lane的信息
+Lane information </p></td>
                 </tr>
               
             </tbody>
@@ -10201,7 +10371,7 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
         
       
         <h3 id="city.map.v2.GetLaneRequest">GetLaneRequest</h3>
-        <p>获取Lane的信息请求</p>
+        <p>获取Lane的信息请求</p><p>Request for getting lane information</p>
 
         
           <table class="field-table">
@@ -10214,14 +10384,16 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
                   <td>lane_ids</td>
                   <td><a href="#int32">int32</a></td>
                   <td>repeated</td>
-                  <td><p>指定的Lane id列表，如果为空，则返回所有Lane的信息 </p></td>
+                  <td><p>指定的Lane id列表，如果为空，则返回所有Lane的信息
+List of targeted lane IDs, if empty, returns all information of lanes </p></td>
                 </tr>
               
                 <tr>
                   <td>exclude_person</td>
                   <td><a href="#bool">bool</a></td>
                   <td></td>
-                  <td><p>是否要排除车道上的人的信息 </p></td>
+                  <td><p>是否要排除车道上的人的信息
+Whether to exclude information of person on the lane </p></td>
                 </tr>
               
             </tbody>
@@ -10232,7 +10404,7 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
         
       
         <h3 id="city.map.v2.GetLaneResponse">GetLaneResponse</h3>
-        <p>获取Lane的信息响应</p>
+        <p>获取Lane的信息响应</p><p>Response of getting lane information</p>
 
         
           <table class="field-table">
@@ -10245,7 +10417,8 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
                   <td>states</td>
                   <td><a href="#city.map.v2.LaneState">LaneState</a></td>
                   <td>repeated</td>
-                  <td><p>Lane的信息 </p></td>
+                  <td><p>Lane的信息
+Lane information </p></td>
                 </tr>
               
             </tbody>
@@ -10256,7 +10429,7 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
         
       
         <h3 id="city.map.v2.LaneState">LaneState</h3>
-        <p>Lane状态</p>
+        <p>Lane状态</p><p>Lane state</p>
 
         
           <table class="field-table">
@@ -10276,28 +10449,32 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
                   <td>persons</td>
                   <td><a href="#city.person.v1.PersonMotion">city.person.v1.PersonMotion</a></td>
                   <td>repeated</td>
-                  <td><p>Lane上的人/车 </p></td>
+                  <td><p>Lane上的人/车
+person/vehicle on the lane </p></td>
                 </tr>
               
                 <tr>
                   <td>avg_v</td>
                   <td><a href="#double">double</a></td>
                   <td></td>
-                  <td><p>平均速度（m/s） </p></td>
+                  <td><p>平均速度（m/s）
+average speed (m/s) </p></td>
                 </tr>
               
                 <tr>
                   <td>restriction</td>
                   <td><a href="#bool">bool</a></td>
                   <td></td>
-                  <td><p>是否限行 </p></td>
+                  <td><p>是否限行
+whether restricted </p></td>
                 </tr>
               
                 <tr>
                   <td>light_state</td>
                   <td><a href="#city.traffic_light.v2.LightState">city.traffic_light.v2.LightState</a></td>
                   <td></td>
-                  <td><p>交通灯状态 </p></td>
+                  <td><p>交通灯状态
+traffic light state </p></td>
                 </tr>
               
             </tbody>
@@ -10308,7 +10485,7 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
         
       
         <h3 id="city.map.v2.SetLaneMaxVRequest">SetLaneMaxVRequest</h3>
-        <p>设置Lane的最大速度（限速）请求</p>
+        <p>设置Lane的最大速度（限速）请求</p><p>Request for setting lane's maximum speed (speed limit)</p>
 
         
           <table class="field-table">
@@ -10328,7 +10505,8 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
                   <td>max_v</td>
                   <td><a href="#double">double</a></td>
                   <td></td>
-                  <td><p>最大速度（限速），单位：m/s </p></td>
+                  <td><p>最大速度（限速），单位：m/s
+Maximum speed (speed limit), unit: m/s </p></td>
                 </tr>
               
             </tbody>
@@ -10339,7 +10517,7 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
         
       
         <h3 id="city.map.v2.SetLaneMaxVResponse">SetLaneMaxVResponse</h3>
-        <p>设置Lane的最大速度（限速）响应</p>
+        <p>设置Lane的最大速度（限速）响应</p><p>Response of setting lane's maximum speed (speed limit)</p>
 
         
 
@@ -10363,21 +10541,24 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
                 <td>SetLaneMaxV</td>
                 <td><a href="#city.map.v2.SetLaneMaxVRequest">SetLaneMaxVRequest</a></td>
                 <td><a href="#city.map.v2.SetLaneMaxVResponse">SetLaneMaxVResponse</a></td>
-                <td><p>设置Lane的最大速度（限速）</p></td>
+                <td><p>设置Lane的最大速度（限速）
+Set Lane&#39;s maximum speed (speed limit)</p></td>
               </tr>
             
               <tr>
                 <td>GetLane</td>
                 <td><a href="#city.map.v2.GetLaneRequest">GetLaneRequest</a></td>
                 <td><a href="#city.map.v2.GetLaneResponse">GetLaneResponse</a></td>
-                <td><p>获取Lane的信息</p></td>
+                <td><p>获取Lane的信息
+Get Lane information</p></td>
               </tr>
             
               <tr>
                 <td>GetLaneByLongLatBBox</td>
                 <td><a href="#city.map.v2.GetLaneByLongLatBBoxRequest">GetLaneByLongLatBBoxRequest</a></td>
                 <td><a href="#city.map.v2.GetLaneByLongLatBBoxResponse">GetLaneByLongLatBBoxResponse</a></td>
-                <td><p>获取特定区域内的Lane的信息</p></td>
+                <td><p>获取特定区域内的Lane的信息
+Get Lane information in a specific region</p></td>
               </tr>
             
           </tbody>
@@ -10424,7 +10605,7 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
         
       
         <h3 id="city.map.v2.GetRoadRequest">GetRoadRequest</h3>
-        <p>查询道路信息请求</p>
+        <p>查询道路信息请求</p><p>Request for getting road information</p>
 
         
           <table class="field-table">
@@ -10437,21 +10618,24 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
                   <td>road_ids</td>
                   <td><a href="#int32">int32</a></td>
                   <td>repeated</td>
-                  <td><p>指定查询的道路ID列表，为空代表查询所有道路 </p></td>
+                  <td><p>指定查询的道路ID列表，为空代表查询所有道路
+List of targeted road IDs. If empty, it means querying all roads. </p></td>
                 </tr>
               
                 <tr>
                   <td>exclude_lane</td>
                   <td><a href="#bool">bool</a></td>
                   <td></td>
-                  <td><p>是否要排除车道信息 </p></td>
+                  <td><p>是否要排除车道信息
+Whether to exclude lane information </p></td>
                 </tr>
               
                 <tr>
                   <td>exclude_person</td>
                   <td><a href="#bool">bool</a></td>
                   <td></td>
-                  <td><p>是否要排除车道上的人的信息（仅在包含车道信息时有效） </p></td>
+                  <td><p>是否要排除车道上的人的信息（仅在包含车道信息时有效）
+Whether to exclude information about person in the lane (only valid when lane information is included) </p></td>
                 </tr>
               
             </tbody>
@@ -10462,7 +10646,7 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
         
       
         <h3 id="city.map.v2.GetRoadResponse">GetRoadResponse</h3>
-        <p>查询道路信息响应</p>
+        <p>查询道路信息响应</p><p>Response of getting road information</p>
 
         
           <table class="field-table">
@@ -10475,7 +10659,8 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
                   <td>states</td>
                   <td><a href="#city.map.v2.RoadState">RoadState</a></td>
                   <td>repeated</td>
-                  <td><p>道路信息列表 </p></td>
+                  <td><p>道路信息列表
+List of road information </p></td>
                 </tr>
               
             </tbody>
@@ -10506,7 +10691,8 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
                   <td>one</td>
                   <td><a href="#city.map.v2.RuinInfo">RuinInfo</a></td>
                   <td></td>
-                  <td><p>三级级损伤信息 </p></td>
+                  <td><p>三级损伤信息
+Three-level ruin information </p></td>
                 </tr>
               
                 <tr>
@@ -10531,7 +10717,7 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
         
       
         <h3 id="city.map.v2.RoadState">RoadState</h3>
-        <p>道路状态</p>
+        <p>道路状态</p><p>road state</p>
 
         
           <table class="field-table">
@@ -10544,35 +10730,40 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
                   <td>id</td>
                   <td><a href="#int32">int32</a></td>
                   <td></td>
-                  <td><p>道路ID </p></td>
+                  <td><p>道路ID
+road ID </p></td>
                 </tr>
               
                 <tr>
                   <td>avg_v</td>
                   <td><a href="#double">double</a></td>
                   <td></td>
-                  <td><p>道路平均速度（m/s） </p></td>
+                  <td><p>道路平均速度（m/s）
+road average speed (m/s) </p></td>
                 </tr>
               
                 <tr>
                   <td>level</td>
                   <td><a href="#city.map.v2.RoadLevel">RoadLevel</a></td>
                   <td></td>
-                  <td><p>道路拥堵情况 </p></td>
+                  <td><p>道路拥堵情况
+road congestion level </p></td>
                 </tr>
               
                 <tr>
                   <td>reason</td>
                   <td><a href="#city.map.v2.InterruptionReason">InterruptionReason</a></td>
                   <td></td>
-                  <td><p>道路中断原因 </p></td>
+                  <td><p>道路中断原因
+road interruption reason </p></td>
                 </tr>
               
                 <tr>
                   <td>lanes</td>
                   <td><a href="#city.map.v2.LaneState">LaneState</a></td>
                   <td>repeated</td>
-                  <td><p>车道情况 </p></td>
+                  <td><p>车道情况
+lane state </p></td>
                 </tr>
               
             </tbody>
@@ -10596,14 +10787,14 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
                   <td>num</td>
                   <td><a href="#int32">int32</a></td>
                   <td></td>
-                  <td><p>损坏数量 </p></td>
+                  <td><p>损坏数量。Ruined number </p></td>
                 </tr>
               
                 <tr>
                   <td>ratio</td>
                   <td><a href="#double">double</a></td>
                   <td></td>
-                  <td><p>损坏占比 </p></td>
+                  <td><p>损坏占比。Ruined ratio </p></td>
                 </tr>
               
             </tbody>
@@ -10616,7 +10807,7 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
 
       
         <h3 id="city.map.v2.InterruptionReason">InterruptionReason</h3>
-        <p></p>
+        <p>道路中断原因</p><p>road interruption reason</p>
         <table class="enum-table">
           <thead>
             <tr><td>Name</td><td>Number</td><td>Description</td></tr>
@@ -10651,7 +10842,7 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
         </table>
       
         <h3 id="city.map.v2.RoadLevel">RoadLevel</h3>
-        <p>道路拥堵情况</p>
+        <p>道路拥堵情况</p><p>road congestion level</p>
         <table class="enum-table">
           <thead>
             <tr><td>Name</td><td>Number</td><td>Description</td></tr>
@@ -10661,43 +10852,50 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
               <tr>
                 <td>ROAD_LEVEL_UNSPECIFIED</td>
                 <td>0</td>
-                <td><p>未指定</p></td>
+                <td><p>未指定
+unspecified</p></td>
               </tr>
             
               <tr>
                 <td>ROAD_LEVEL_CLEAR</td>
                 <td>1</td>
-                <td><p>畅通</p></td>
+                <td><p>畅通
+clear</p></td>
               </tr>
             
               <tr>
                 <td>ROAD_LEVEL_LIGHT_LOAD</td>
                 <td>2</td>
-                <td><p>轻度拥堵</p></td>
+                <td><p>轻度拥堵
+light load</p></td>
               </tr>
             
               <tr>
                 <td>ROAD_LEVEL_MEDIUM_LOAD</td>
                 <td>3</td>
-                <td><p>中度拥堵</p></td>
+                <td><p>中度拥堵
+medium load</p></td>
               </tr>
             
               <tr>
                 <td>ROAD_LEVEL_HEAVY_LOAD</td>
                 <td>4</td>
-                <td><p>重度拥堵</p></td>
+                <td><p>重度拥堵
+heavy load</p></td>
               </tr>
             
               <tr>
                 <td>ROAD_LEVEL_OVERLOAD</td>
                 <td>5</td>
-                <td><p>极端拥堵</p></td>
+                <td><p>极端拥堵
+overload</p></td>
               </tr>
             
               <tr>
                 <td>ROAD_LEVEL_RESTRICTED</td>
                 <td>6</td>
-                <td><p>限行</p></td>
+                <td><p>限行
+restricted</p></td>
               </tr>
             
           </tbody>
@@ -10719,7 +10917,8 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
                 <td>GetRoad</td>
                 <td><a href="#city.map.v2.GetRoadRequest">GetRoadRequest</a></td>
                 <td><a href="#city.map.v2.GetRoadResponse">GetRoadResponse</a></td>
-                <td><p>查询道路信息</p></td>
+                <td><p>查询道路信息
+Get road information</p></td>
               </tr>
             
               <tr>
@@ -10749,14 +10948,14 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
 
       
         <h3 id="city.person.v1.BikeAttribute">BikeAttribute</h3>
-        <p>自行车附加属性</p>
+        <p>自行车附加属性</p><p>Bike additional attributes</p>
 
         
 
         
       
         <h3 id="city.person.v1.BusAttribute">BusAttribute</h3>
-        <p>公交车附加属性</p>
+        <p>公交车附加属性</p><p>Bus additional attributes</p>
 
         
           <table class="field-table">
@@ -10769,14 +10968,16 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
                   <td>line_id</td>
                   <td><a href="#int32">int32</a></td>
                   <td></td>
-                  <td><p>公交线路ID </p></td>
+                  <td><p>公交线路ID
+bus line ID </p></td>
                 </tr>
               
                 <tr>
                   <td>capacity</td>
                   <td><a href="#int32">int32</a></td>
                   <td></td>
-                  <td><p>公交车容量 </p></td>
+                  <td><p>公交车容量
+bus capacity </p></td>
                 </tr>
               
             </tbody>
@@ -10787,7 +10988,7 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
         
       
         <h3 id="city.person.v1.Person">Person</h3>
-        <p>智能体</p>
+        <p>智能体</p><p>agent</p>
 
         
           <table class="field-table">
@@ -10800,63 +11001,72 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
                   <td>id</td>
                   <td><a href="#int32">int32</a></td>
                   <td></td>
-                  <td><p>智能体ID </p></td>
+                  <td><p>智能体ID
+agent ID </p></td>
                 </tr>
               
                 <tr>
                   <td>attribute</td>
                   <td><a href="#city.person.v1.PersonAttribute">PersonAttribute</a></td>
                   <td></td>
-                  <td><p>参数 </p></td>
+                  <td><p>参数
+attribute </p></td>
                 </tr>
               
                 <tr>
                   <td>home</td>
                   <td><a href="#city.geo.v2.Position">city.geo.v2.Position</a></td>
                   <td></td>
-                  <td><p>初始位置 </p></td>
+                  <td><p>初始位置
+initial position </p></td>
                 </tr>
               
                 <tr>
                   <td>schedules</td>
                   <td><a href="#city.trip.v2.Schedule">city.trip.v2.Schedule</a></td>
                   <td>repeated</td>
-                  <td><p>初始日程 </p></td>
+                  <td><p>初始日程
+initial schedules </p></td>
                 </tr>
               
                 <tr>
                   <td>vehicle_attribute</td>
                   <td><a href="#city.person.v1.VehicleAttribute">VehicleAttribute</a></td>
                   <td>optional</td>
-                  <td><p>车辆附加属性 </p></td>
+                  <td><p>车辆附加属性
+vehicle addtional attribute </p></td>
                 </tr>
               
                 <tr>
                   <td>bus_attribute</td>
                   <td><a href="#city.person.v1.BusAttribute">BusAttribute</a></td>
                   <td>optional</td>
-                  <td><p>公交车附加属性 </p></td>
+                  <td><p>公交车附加属性
+bus additional attribute </p></td>
                 </tr>
               
                 <tr>
                   <td>bike_attribute</td>
                   <td><a href="#city.person.v1.BikeAttribute">BikeAttribute</a></td>
                   <td>optional</td>
-                  <td><p>自行车附加属性 </p></td>
+                  <td><p>自行车附加属性
+bike addition attribute </p></td>
                 </tr>
               
                 <tr>
                   <td>labels</td>
                   <td><a href="#city.person.v1.Person.LabelsEntry">Person.LabelsEntry</a></td>
                   <td>repeated</td>
-                  <td><p>[可空] 额外的标签（例如：抢修车类型-&gt;电网） </p></td>
+                  <td><p>[可空] 额外的标签（例如：抢修车类型-&gt;电网）
+[can be empty] additional tags (e.g. repair vehicle type -&gt; power grid) </p></td>
                 </tr>
               
                 <tr>
                   <td>profile</td>
                   <td><a href="#city.person.v1.PersonProfile">PersonProfile</a></td>
                   <td>optional</td>
-                  <td><p>[可空] 智能体简介 </p></td>
+                  <td><p>[可空] 智能体简介
+[can be empty] agent profile </p></td>
                 </tr>
               
             </tbody>
@@ -10898,7 +11108,7 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
         
       
         <h3 id="city.person.v1.PersonAttribute">PersonAttribute</h3>
-        <p>智能体属性（通用）</p>
+        <p>智能体属性（通用）</p><p>Agent properties (general)</p>
 
         
           <table class="field-table">
@@ -10911,49 +11121,56 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
                   <td>length</td>
                   <td><a href="#double">double</a></td>
                   <td></td>
-                  <td><p>单位: m，长度 </p></td>
+                  <td><p>单位: m，长度
+length: m </p></td>
                 </tr>
               
                 <tr>
                   <td>width</td>
                   <td><a href="#double">double</a></td>
                   <td></td>
-                  <td><p>单位: m，宽度 </p></td>
+                  <td><p>单位: m，宽度
+width: m </p></td>
                 </tr>
               
                 <tr>
                   <td>max_speed</td>
                   <td><a href="#double">double</a></td>
                   <td></td>
-                  <td><p>单位: m/s </p></td>
+                  <td><p>单位: m/s
+max speed: m/s </p></td>
                 </tr>
               
                 <tr>
                   <td>max_acceleration</td>
                   <td><a href="#double">double</a></td>
                   <td></td>
-                  <td><p>单位: m/s^2, 最大加速度（正值） </p></td>
+                  <td><p>单位: m/s^2, 最大加速度（正值）
+max accelaration: m/s^2 (positive value) </p></td>
                 </tr>
               
                 <tr>
                   <td>max_braking_acceleration</td>
                   <td><a href="#double">double</a></td>
                   <td></td>
-                  <td><p>单位: m/s^2, 最大减速度（负值） </p></td>
+                  <td><p>单位: m/s^2, 最大减速度（负值）
+max deceleration: m/s^2 (negative value) </p></td>
                 </tr>
               
                 <tr>
                   <td>usual_acceleration</td>
                   <td><a href="#double">double</a></td>
                   <td></td>
-                  <td><p>单位: m/s^2, 一般加速度（正值），要求小于最大加速度 </p></td>
+                  <td><p>单位: m/s^2, 一般加速度（正值），要求小于最大加速度
+usual acceleration: m/s^2 (positive value), required to be less than the max acceleration </p></td>
                 </tr>
               
                 <tr>
                   <td>usual_braking_acceleration</td>
                   <td><a href="#double">double</a></td>
                   <td></td>
-                  <td><p>单位: m/s^2, 一般减速度（负值），要求大于最大减速度 </p></td>
+                  <td><p>单位: m/s^2, 一般减速度（负值），要求大于最大减速度
+usual deceleration: m/s^2 (negative value), required to be greater than the max deceleration </p></td>
                 </tr>
               
             </tbody>
@@ -10964,7 +11181,7 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
         
       
         <h3 id="city.person.v1.PersonProfile">PersonProfile</h3>
-        <p>智能体简介</p>
+        <p>智能体简介</p><p>agent profile</p>
 
         
           <table class="field-table">
@@ -10977,28 +11194,32 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
                   <td>age</td>
                   <td><a href="#int32">int32</a></td>
                   <td></td>
-                  <td><p>年龄 </p></td>
+                  <td><p>年龄
+age </p></td>
                 </tr>
               
                 <tr>
                   <td>education</td>
                   <td><a href="#city.person.v1.Education">Education</a></td>
                   <td></td>
-                  <td><p>教育水平 </p></td>
+                  <td><p>教育水平
+education level </p></td>
                 </tr>
               
                 <tr>
                   <td>gender</td>
                   <td><a href="#city.person.v1.Gender">Gender</a></td>
                   <td></td>
-                  <td><p>性别 </p></td>
+                  <td><p>性别
+gender </p></td>
                 </tr>
               
                 <tr>
                   <td>consumption</td>
                   <td><a href="#city.person.v1.Consumption">Consumption</a></td>
                   <td></td>
-                  <td><p>消费水平 </p></td>
+                  <td><p>消费水平
+consumption level </p></td>
                 </tr>
               
             </tbody>
@@ -11009,7 +11230,7 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
         
       
         <h3 id="city.person.v1.Persons">Persons</h3>
-        <p>智能体集合，对应一个智能体pb文件或一个智能体mongodb collection</p>
+        <p>智能体集合，对应一个智能体pb文件或一个智能体mongodb collection</p><p>Agent collection, corresponding to an agent pb file or an agent mongodb collection</p>
 
         
           <table class="field-table">
@@ -11033,7 +11254,7 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
         
       
         <h3 id="city.person.v1.VehicleAttribute">VehicleAttribute</h3>
-        <p>车辆附加属性</p>
+        <p>车辆附加属性</p><p>Vehicle additional attributes</p>
 
         
           <table class="field-table">
@@ -11046,14 +11267,16 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
                   <td>lane_change_length</td>
                   <td><a href="#double">double</a></td>
                   <td></td>
-                  <td><p>单位: m, 完成变道所需路程 </p></td>
+                  <td><p>单位: m, 完成变道所需路程
+Distance required to complete lane change: m </p></td>
                 </tr>
               
                 <tr>
                   <td>min_gap</td>
                   <td><a href="#double">double</a></td>
                   <td></td>
-                  <td><p>单位：米，本车距离前车的最小距离 </p></td>
+                  <td><p>单位：米，本车距离前车的最小距离
+The minimum distance between the vehicle and the vehicle in front: m </p></td>
                 </tr>
               
             </tbody>
@@ -11066,7 +11289,7 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
 
       
         <h3 id="city.person.v1.Consumption">Consumption</h3>
-        <p>智能体消费水平</p>
+        <p>智能体消费水平</p><p>agent consumption level</p>
         <table class="enum-table">
           <thead>
             <tr><td>Name</td><td>Number</td><td>Description</td></tr>
@@ -11076,44 +11299,50 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
               <tr>
                 <td>CONSUMPTION_UNSPECIFIED</td>
                 <td>0</td>
-                <td><p>未指定</p></td>
+                <td><p>未指定
+unspecified</p></td>
               </tr>
             
               <tr>
                 <td>CONSUMPTION_LOW</td>
                 <td>1</td>
-                <td><p>低</p></td>
+                <td><p>低
+low</p></td>
               </tr>
             
               <tr>
                 <td>CONSUMPTION_RELATIVELY_LOW</td>
                 <td>2</td>
-                <td><p>较低</p></td>
+                <td><p>较低
+relatively low</p></td>
               </tr>
             
               <tr>
                 <td>CONSUMPTION_MEDIUM</td>
                 <td>3</td>
-                <td><p>中等</p></td>
+                <td><p>中等
+medium</p></td>
               </tr>
             
               <tr>
                 <td>CONSUMPTION_RELATIVELY_HIGH</td>
                 <td>4</td>
-                <td><p>较高</p></td>
+                <td><p>较高
+relatively high</p></td>
               </tr>
             
               <tr>
                 <td>CONSUMPTION_HIGH</td>
                 <td>5</td>
-                <td><p>高</p></td>
+                <td><p>高
+high</p></td>
               </tr>
             
           </tbody>
         </table>
       
         <h3 id="city.person.v1.Education">Education</h3>
-        <p>智能体教育等级</p>
+        <p>智能体教育等级</p><p>Agent education level</p>
         <table class="enum-table">
           <thead>
             <tr><td>Name</td><td>Number</td><td>Description</td></tr>
@@ -11123,56 +11352,64 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
               <tr>
                 <td>EDUCATION_UNSPECIFIED</td>
                 <td>0</td>
-                <td><p>未指定</p></td>
+                <td><p>未指定
+unspecified</p></td>
               </tr>
             
               <tr>
                 <td>EDUCATION_DOCTOR</td>
                 <td>1</td>
-                <td><p>博士</p></td>
+                <td><p>博士
+doctor</p></td>
               </tr>
             
               <tr>
                 <td>EDUCATION_MASTER</td>
                 <td>2</td>
-                <td><p>硕士</p></td>
+                <td><p>硕士
+master</p></td>
               </tr>
             
               <tr>
                 <td>EDUCATION_BACHELOR</td>
                 <td>3</td>
-                <td><p>本科</p></td>
+                <td><p>本科
+bachelor</p></td>
               </tr>
             
               <tr>
                 <td>EDUCATION_HIGH_SCHOOL</td>
                 <td>4</td>
-                <td><p>高中</p></td>
+                <td><p>高中
+high school</p></td>
               </tr>
             
               <tr>
                 <td>EDUCATION_JUNIOR_HIGH_SCHOOL</td>
                 <td>5</td>
-                <td><p>初中</p></td>
+                <td><p>初中
+junior high school</p></td>
               </tr>
             
               <tr>
                 <td>EDUCATION_PRIMARY_SCHOOL</td>
                 <td>6</td>
-                <td><p>小学</p></td>
+                <td><p>小学
+primary school</p></td>
               </tr>
             
               <tr>
                 <td>EDUCATION_COLLEGE</td>
                 <td>7</td>
-                <td><p>大专</p></td>
+                <td><p>大专
+college</p></td>
               </tr>
             
           </tbody>
         </table>
       
         <h3 id="city.person.v1.Gender">Gender</h3>
-        <p>智能体性别</p>
+        <p>智能体性别</p><p>agent gender</p>
         <table class="enum-table">
           <thead>
             <tr><td>Name</td><td>Number</td><td>Description</td></tr>
@@ -11182,19 +11419,22 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
               <tr>
                 <td>GENDER_UNSPECIFIED</td>
                 <td>0</td>
-                <td><p>未指定</p></td>
+                <td><p>未指定
+unspecified</p></td>
               </tr>
             
               <tr>
                 <td>GENDER_MALE</td>
                 <td>1</td>
-                <td><p>男性</p></td>
+                <td><p>男性
+male</p></td>
               </tr>
             
               <tr>
                 <td>GENDER_FEMALE</td>
                 <td>2</td>
-                <td><p>女性</p></td>
+                <td><p>女性
+female</p></td>
               </tr>
             
           </tbody>
@@ -11213,7 +11453,7 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
 
       
         <h3 id="city.person.v1.AddPersonRequest">AddPersonRequest</h3>
-        <p>新增person请求</p>
+        <p>新增person请求</p><p>Request for adding a new person</p>
 
         
           <table class="field-table">
@@ -11226,7 +11466,8 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
                   <td>person</td>
                   <td><a href="#city.person.v1.Person">Person</a></td>
                   <td></td>
-                  <td><p>约定：person中不设置id </p></td>
+                  <td><p>约定：person中不设置id
+Convention: personid is not set here </p></td>
                 </tr>
               
             </tbody>
@@ -11237,7 +11478,7 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
         
       
         <h3 id="city.person.v1.AddPersonResponse">AddPersonResponse</h3>
-        <p>新增person响应</p>
+        <p>新增person响应</p><p>Response of adding a new person</p>
 
         
           <table class="field-table">
@@ -11250,7 +11491,8 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
                   <td>person_id</td>
                   <td><a href="#int32">int32</a></td>
                   <td></td>
-                  <td><p>新增的person分配得到的ID </p></td>
+                  <td><p>新增的person分配得到的ID
+The ID assigned to the newly added person </p></td>
                 </tr>
               
             </tbody>
@@ -11261,7 +11503,7 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
         
       
         <h3 id="city.person.v1.GetPersonByLongLatBBoxRequest">GetPersonByLongLatBBoxRequest</h3>
-        <p>获取特定区域内的person请求</p>
+        <p>获取特定区域内的person请求</p><p>Request for getting persons in region</p>
 
         
           <table class="field-table">
@@ -11274,14 +11516,16 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
                   <td>bbox</td>
                   <td><a href="#city.geo.v2.LongLatBBox">city.geo.v2.LongLatBBox</a></td>
                   <td></td>
-                  <td><p>经纬度范围 </p></td>
+                  <td><p>经纬度范围
+longitude and latitude bounding box </p></td>
                 </tr>
               
                 <tr>
                   <td>exclude_statuses</td>
                   <td><a href="#city.person.v1.Status">Status</a></td>
                   <td>repeated</td>
-                  <td><p>过滤人的状态（状态为列表内的值的人不返回） </p></td>
+                  <td><p>过滤人的状态（状态为列表内的值的人不返回）
+Filter person&#39;s status (person whose status is in the list will not be returned) </p></td>
                 </tr>
               
             </tbody>
@@ -11292,7 +11536,7 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
         
       
         <h3 id="city.person.v1.GetPersonByLongLatBBoxResponse">GetPersonByLongLatBBoxResponse</h3>
-        <p>获取特定区域内的person响应</p>
+        <p>获取特定区域内的person响应</p><p>Response of getting persons in region</p>
 
         
           <table class="field-table">
@@ -11305,7 +11549,8 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
                   <td>motions</td>
                   <td><a href="#city.person.v1.PersonMotion">PersonMotion</a></td>
                   <td>repeated</td>
-                  <td><p>区域内的person的运动信息 </p></td>
+                  <td><p>区域内的person的运动信息
+motion status of persons in the region </p></td>
                 </tr>
               
             </tbody>
@@ -11316,7 +11561,7 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
         
       
         <h3 id="city.person.v1.GetPersonRequest">GetPersonRequest</h3>
-        <p>获取person信息请求</p>
+        <p>获取person信息请求</p><p>Request for getting person information</p>
 
         
           <table class="field-table">
@@ -11340,7 +11585,7 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
         
       
         <h3 id="city.person.v1.GetPersonResponse">GetPersonResponse</h3>
-        <p>获取person信息响应</p>
+        <p>获取person信息响应</p><p>Response of getting person information</p>
 
         
           <table class="field-table">
@@ -11353,14 +11598,16 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
                   <td>base</td>
                   <td><a href="#city.person.v1.Person">Person</a></td>
                   <td></td>
-                  <td><p>person信息 </p></td>
+                  <td><p>person信息
+person information </p></td>
                 </tr>
               
                 <tr>
                   <td>motion</td>
                   <td><a href="#city.person.v1.PersonMotion">PersonMotion</a></td>
                   <td></td>
-                  <td><p>person运动信息 </p></td>
+                  <td><p>person运动信息
+person motion information </p></td>
                 </tr>
               
             </tbody>
@@ -11371,7 +11618,7 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
         
       
         <h3 id="city.person.v1.SetScheduleRequest">SetScheduleRequest</h3>
-        <p>修改person的schedule请求</p>
+        <p>修改person的schedule请求</p><p>Request for setting person schedule</p>
 
         
           <table class="field-table">
@@ -11391,7 +11638,8 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
                   <td>schedules</td>
                   <td><a href="#city.trip.v2.Schedule">city.trip.v2.Schedule</a></td>
                   <td>repeated</td>
-                  <td><p>新的schedule（覆盖原有的schedule） </p></td>
+                  <td><p>新的schedule（覆盖原有的schedule）
+New schedule (overwrites the original schedule) </p></td>
                 </tr>
               
             </tbody>
@@ -11402,7 +11650,7 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
         
       
         <h3 id="city.person.v1.SetScheduleResponse">SetScheduleResponse</h3>
-        <p>修改person的schedule响应</p>
+        <p>修改person的schedule响应</p><p>Response of setting person schedule</p>
 
         
 
@@ -11426,28 +11674,32 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
                 <td>GetPerson</td>
                 <td><a href="#city.person.v1.GetPersonRequest">GetPersonRequest</a></td>
                 <td><a href="#city.person.v1.GetPersonResponse">GetPersonResponse</a></td>
-                <td><p>获取person信息</p></td>
+                <td><p>获取person信息
+Get person information</p></td>
               </tr>
             
               <tr>
                 <td>AddPerson</td>
                 <td><a href="#city.person.v1.AddPersonRequest">AddPersonRequest</a></td>
                 <td><a href="#city.person.v1.AddPersonResponse">AddPersonResponse</a></td>
-                <td><p>新增person 传入person初始位置、目的地表、属性 返回personid</p></td>
+                <td><p>新增person 传入person初始位置、目的地表、属性 返回personid
+Add a new person. Input person&#39;s initial location, destination table, and attributes, return personid</p></td>
               </tr>
             
               <tr>
                 <td>SetSchedule</td>
                 <td><a href="#city.person.v1.SetScheduleRequest">SetScheduleRequest</a></td>
                 <td><a href="#city.person.v1.SetScheduleResponse">SetScheduleResponse</a></td>
-                <td><p>修改person的schedule 传入personid、目的地表</p></td>
+                <td><p>修改person的schedule 传入personid、目的地表
+Set person&#39;s schedule. Input personid and destination table</p></td>
               </tr>
             
               <tr>
                 <td>GetPersonByLongLatBBox</td>
                 <td><a href="#city.person.v1.GetPersonByLongLatBBoxRequest">GetPersonByLongLatBBoxRequest</a></td>
                 <td><a href="#city.person.v1.GetPersonByLongLatBBoxResponse">GetPersonByLongLatBBoxResponse</a></td>
-                <td><p>获取特定区域内的person</p></td>
+                <td><p>获取特定区域内的person
+Get persons in a specific region</p></td>
               </tr>
             
           </tbody>
@@ -11510,7 +11762,7 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
 
       
         <h3 id="city.routing.v2.Cost">Cost</h3>
-        <p>路径成本设置</p>
+        <p>路径成本设置</p><p>Route cost settings</p>
 
         
           <table class="field-table">
@@ -11523,14 +11775,16 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
                   <td>id</td>
                   <td><a href="#int32">int32</a></td>
                   <td></td>
-                  <td><p>目标拓扑元素（只支持道路Road） </p></td>
+                  <td><p>目标拓扑元素（只支持道路Road）
+Target topology element (only supports roads) </p></td>
                 </tr>
               
                 <tr>
                   <td>cost</td>
                   <td><a href="#double">double</a></td>
                   <td></td>
-                  <td><p>路径成本（单位：秒） </p></td>
+                  <td><p>路径成本（单位：秒）
+Path cost (in seconds) </p></td>
                 </tr>
               
                 <tr>
@@ -11538,8 +11792,11 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
                   <td><a href="#double">double</a></td>
                   <td>optional</td>
                   <td><p>设置的时间（单位：秒）
+Set time (in seconds)
 即设置几点几分的道路通行成本为cost
-为空表示设置全天通行成本均为cost </p></td>
+That is, set the cost as the value at what time
+为空表示设置全天通行成本均为cost
+If empty, it means that the all-day cost is set to the value. </p></td>
                 </tr>
               
             </tbody>
@@ -11564,7 +11821,7 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
 
       
         <h3 id="city.routing.v2.GetDrivingCostsRequest">GetDrivingCostsRequest</h3>
-        <p>获取行车导航道路通行成本请求</p>
+        <p>获取行车导航道路通行成本请求</p><p>Request for getting driving routing travelling cost</p>
 
         
           <table class="field-table">
@@ -11577,7 +11834,8 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
                   <td>costs</td>
                   <td><a href="#city.routing.v2.Cost">Cost</a></td>
                   <td>repeated</td>
-                  <td><p>道路通行成本（按照给定的id和time进行查询） </p></td>
+                  <td><p>道路通行成本（按照给定的id和time进行查询）
+travelling cost (query via the given ID and time) </p></td>
                 </tr>
               
             </tbody>
@@ -11588,7 +11846,7 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
         
       
         <h3 id="city.routing.v2.GetDrivingCostsResponse">GetDrivingCostsResponse</h3>
-        <p>获取行车导航道路通行成本响应</p>
+        <p>获取行车导航道路通行成本响应</p><p>Response of getting driving routing travelling cost</p>
 
         
           <table class="field-table">
@@ -11601,7 +11859,8 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
                   <td>costs</td>
                   <td><a href="#city.routing.v2.Cost">Cost</a></td>
                   <td>repeated</td>
-                  <td><p>道路通行成本（补全cost后的结果） </p></td>
+                  <td><p>道路通行成本（补全cost后的结果）
+travelling cost (results after completing the cost) </p></td>
                 </tr>
               
             </tbody>
@@ -11612,7 +11871,7 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
         
       
         <h3 id="city.routing.v2.GetRouteRequest">GetRouteRequest</h3>
-        <p>获取导航路线请求</p>
+        <p>获取导航路线请求</p><p>Request for getting routing path</p>
 
         
           <table class="field-table">
@@ -11625,28 +11884,32 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
                   <td>type</td>
                   <td><a href="#city.routing.v2.RouteType">RouteType</a></td>
                   <td></td>
-                  <td><p>导航类型 </p></td>
+                  <td><p>导航类型
+routing type </p></td>
                 </tr>
               
                 <tr>
                   <td>start</td>
                   <td><a href="#city.geo.v2.Position">city.geo.v2.Position</a></td>
                   <td></td>
-                  <td><p>起点，约定：包含LanePosition或AoiPosition中的一种 </p></td>
+                  <td><p>起点，约定：包含LanePosition或AoiPosition中的一种
+Starting point, convention: as LanePosition or AoiPosition </p></td>
                 </tr>
               
                 <tr>
                   <td>end</td>
                   <td><a href="#city.geo.v2.Position">city.geo.v2.Position</a></td>
                   <td></td>
-                  <td><p>起点，约定：包含LanePosition或AoiPosition中的一种 </p></td>
+                  <td><p>终点，约定：包含LanePosition或AoiPosition中的一种
+Ending point, convention: as LanePosition or AoiPosition </p></td>
                 </tr>
               
                 <tr>
                   <td>time</td>
                   <td><a href="#double">double</a></td>
                   <td></td>
-                  <td><p>发送导航请求的时间（目前仅在行车导航中使用） </p></td>
+                  <td><p>发送导航请求的时间（目前仅在行车导航中使用）
+The time to send routing request (currently only used in driving routing) </p></td>
                 </tr>
               
             </tbody>
@@ -11657,7 +11920,7 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
         
       
         <h3 id="city.routing.v2.GetRouteResponse">GetRouteResponse</h3>
-        <p>获取导航路线响应</p>
+        <p>获取导航路线响应</p><p>Response of getting routing path</p>
 
         
           <table class="field-table">
@@ -11681,7 +11944,7 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
         
       
         <h3 id="city.routing.v2.SetDrivingCostsRequest">SetDrivingCostsRequest</h3>
-        <p>设置行车导航道路通行成本请求</p>
+        <p>设置行车导航道路通行成本请求</p><p>Request for setting driving routing travelling cost</p>
 
         
           <table class="field-table">
@@ -11694,7 +11957,8 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
                   <td>costs</td>
                   <td><a href="#city.routing.v2.Cost">Cost</a></td>
                   <td>repeated</td>
-                  <td><p>道路通行成本 </p></td>
+                  <td><p>道路通行成本
+travelling cost </p></td>
                 </tr>
               
             </tbody>
@@ -11705,7 +11969,7 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
         
       
         <h3 id="city.routing.v2.SetDrivingCostsResponse">SetDrivingCostsResponse</h3>
-        <p>设置行车导航道路通行成本响应</p>
+        <p>设置行车导航道路通行成本响应</p><p>Response of setting driving routing travelling cost</p>
 
         
 
@@ -11729,21 +11993,24 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
                 <td>GetRoute</td>
                 <td><a href="#city.routing.v2.GetRouteRequest">GetRouteRequest</a></td>
                 <td><a href="#city.routing.v2.GetRouteResponse">GetRouteResponse</a></td>
-                <td><p>获取导航路线</p></td>
+                <td><p>获取导航路线
+Get routing path</p></td>
               </tr>
             
               <tr>
                 <td>SetDrivingCosts</td>
                 <td><a href="#city.routing.v2.SetDrivingCostsRequest">SetDrivingCostsRequest</a></td>
                 <td><a href="#city.routing.v2.SetDrivingCostsResponse">SetDrivingCostsResponse</a></td>
-                <td><p>设置行车导航道路通行成本</p></td>
+                <td><p>设置行车导航道路通行成本
+Set traveling cost of driving routing</p></td>
               </tr>
             
               <tr>
                 <td>GetDrivingCosts</td>
                 <td><a href="#city.routing.v2.GetDrivingCostsRequest">GetDrivingCostsRequest</a></td>
                 <td><a href="#city.routing.v2.GetDrivingCostsResponse">GetDrivingCostsResponse</a></td>
-                <td><p>获取行车导航道路通行成本</p></td>
+                <td><p>获取行车导航道路通行成本
+Get traveling cost of driving routing</p></td>
               </tr>
             
           </tbody>
@@ -11759,7 +12026,7 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
 
       
         <h3 id="city.social.v1.Message">Message</h3>
-        <p>消息</p>
+        <p>消息</p><p>message</p>
 
         
           <table class="field-table">
@@ -11772,21 +12039,24 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
                   <td>from</td>
                   <td><a href="#int32">int32</a></td>
                   <td></td>
-                  <td><p>消息发送者ID </p></td>
+                  <td><p>消息发送者ID
+message sender ID </p></td>
                 </tr>
               
                 <tr>
                   <td>to</td>
                   <td><a href="#int32">int32</a></td>
                   <td></td>
-                  <td><p>消息接收者ID </p></td>
+                  <td><p>消息接收者ID
+message receiver ID </p></td>
                 </tr>
               
                 <tr>
                   <td>message</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
-                  <td><p>消息内容 </p></td>
+                  <td><p>消息内容
+message content </p></td>
                 </tr>
               
                 <tr>
@@ -11794,7 +12064,9 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
                   <td><a href="#double">double</a></td>
                   <td>optional</td>
                   <td><p>消息发出时间（秒），如无则为当前模拟时间
-对于接收到的消息，该字段总是存在 </p></td>
+Message sending time (in seconds), if none, it is the current simulation time
+对于接收到的消息，该字段总是存在
+For received messages, this field always exists </p></td>
                 </tr>
               
             </tbody>
@@ -11819,7 +12091,7 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
 
       
         <h3 id="city.social.v1.ReceiveRequest">ReceiveRequest</h3>
-        <p>接收消息请求</p>
+        <p>接收消息请求</p><p>Request for receiving message</p>
 
         
           <table class="field-table">
@@ -11832,7 +12104,8 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
                   <td>id</td>
                   <td><a href="#int32">int32</a></td>
                   <td></td>
-                  <td><p>消息接收者ID（即为自身ID） </p></td>
+                  <td><p>消息接收者ID（即为自身ID）
+Message receiver ID (i.e. self.ID) </p></td>
                 </tr>
               
             </tbody>
@@ -11843,7 +12116,7 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
         
       
         <h3 id="city.social.v1.ReceiveResponse">ReceiveResponse</h3>
-        <p>接收消息响应</p>
+        <p>接收消息响应</p><p>Response of receiving messages</p>
 
         
           <table class="field-table">
@@ -11856,7 +12129,8 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
                   <td>messages</td>
                   <td><a href="#city.social.v1.Message">Message</a></td>
                   <td>repeated</td>
-                  <td><p>接收到的消息 </p></td>
+                  <td><p>接收到的消息
+Received messages </p></td>
                 </tr>
               
             </tbody>
@@ -11867,7 +12141,7 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
         
       
         <h3 id="city.social.v1.SendRequest">SendRequest</h3>
-        <p>发送消息请求</p>
+        <p>发送消息请求</p><p>Request for sendding message</p>
 
         
           <table class="field-table">
@@ -11880,7 +12154,8 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
                   <td>messages</td>
                   <td><a href="#city.social.v1.Message">Message</a></td>
                   <td>repeated</td>
-                  <td><p>待发送的消息 </p></td>
+                  <td><p>待发送的消息
+Messages to send </p></td>
                 </tr>
               
             </tbody>
@@ -11891,7 +12166,7 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
         
       
         <h3 id="city.social.v1.SendResponse">SendResponse</h3>
-        <p>发送消息响应</p>
+        <p>发送消息响应</p><p>Response of sendding message</p>
 
         
 
@@ -11915,14 +12190,16 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
                 <td>Send</td>
                 <td><a href="#city.social.v1.SendRequest">SendRequest</a></td>
                 <td><a href="#city.social.v1.SendResponse">SendResponse</a></td>
-                <td><p>发送消息</p></td>
+                <td><p>发送消息
+Send message</p></td>
               </tr>
             
               <tr>
                 <td>Receive</td>
                 <td><a href="#city.social.v1.ReceiveRequest">ReceiveRequest</a></td>
                 <td><a href="#city.social.v1.ReceiveResponse">ReceiveResponse</a></td>
-                <td><p>接收消息，并清空该用户的消息队列</p></td>
+                <td><p>接收消息，并清空该用户的消息队列
+Receive messages and clear the user&#39;s message queue</p></td>
               </tr>
             
           </tbody>
@@ -12226,7 +12503,7 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
 
       
         <h3 id="city.traffic_light.v2.GetTrafficLightRequest">GetTrafficLightRequest</h3>
-        <p>获取路口的红绿灯信息请求</p>
+        <p>获取路口的红绿灯信息请求</p><p>Reqeust for getting traffic light information</p>
 
         
           <table class="field-table">
@@ -12239,7 +12516,8 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
                   <td>junction_id</td>
                   <td><a href="#int32">int32</a></td>
                   <td></td>
-                  <td><p>信号等相关的接口精确到junction </p></td>
+                  <td><p>信号等相关的接口精确到junction
+The interfaces related to signals are precise to junction </p></td>
                 </tr>
               
             </tbody>
@@ -12250,7 +12528,7 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
         
       
         <h3 id="city.traffic_light.v2.GetTrafficLightResponse">GetTrafficLightResponse</h3>
-        <p>获取路口的红绿灯信息响应</p>
+        <p>获取路口的红绿灯信息响应</p><p>Response of getting traffic light information</p>
 
         
           <table class="field-table">
@@ -12263,21 +12541,24 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
                   <td>traffic_light</td>
                   <td><a href="#city.traffic_light.v2.TrafficLight">TrafficLight</a></td>
                   <td></td>
-                  <td><p>当前路口处的红绿灯 </p></td>
+                  <td><p>当前路口处的红绿灯
+The traffic light at the junction </p></td>
                 </tr>
               
                 <tr>
                   <td>phase_index</td>
                   <td><a href="#int32">int32</a></td>
                   <td></td>
-                  <td><p>表示当前路口处的红绿灯处于哪一个相位 </p></td>
+                  <td><p>表示当前路口处的红绿灯处于哪一个相位
+Which phase the traffic light is currently in </p></td>
                 </tr>
               
                 <tr>
                   <td>time_remaining</td>
                   <td><a href="#double">double</a></td>
                   <td></td>
-                  <td><p>当前相位的剩余时间 </p></td>
+                  <td><p>当前相位的剩余时间
+The remaining time of the current phase </p></td>
                 </tr>
               
             </tbody>
@@ -12288,7 +12569,7 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
         
       
         <h3 id="city.traffic_light.v2.SetTrafficLightPhaseRequest">SetTrafficLightPhaseRequest</h3>
-        <p>设置路口的红绿灯相位请求</p>
+        <p>设置路口的红绿灯相位请求</p><p>Request for setting traffic light phase</p>
 
         
           <table class="field-table">
@@ -12301,21 +12582,24 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
                   <td>junction_id</td>
                   <td><a href="#int32">int32</a></td>
                   <td></td>
-                  <td><p>需要改变相位的路口编号 </p></td>
+                  <td><p>需要改变相位的路口编号
+The target junction ID </p></td>
                 </tr>
               
                 <tr>
                   <td>phase_index</td>
                   <td><a href="#int32">int32</a></td>
                   <td></td>
-                  <td><p>指定当前路口红绿灯的相位 </p></td>
+                  <td><p>指定当前路口红绿灯的相位
+Specify the traffic light phase </p></td>
                 </tr>
               
                 <tr>
                   <td>time_remaining</td>
                   <td><a href="#double">double</a></td>
                   <td></td>
-                  <td><p>当前相位的剩余时间 </p></td>
+                  <td><p>当前相位的剩余时间
+The remaining time of the current phase </p></td>
                 </tr>
               
             </tbody>
@@ -12326,14 +12610,14 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
         
       
         <h3 id="city.traffic_light.v2.SetTrafficLightPhaseResponse">SetTrafficLightPhaseResponse</h3>
-        <p>设置路口的红绿灯相位响应</p>
+        <p>设置路口的红绿灯相位响应</p><p>Response of setting traffic light phase</p>
 
         
 
         
       
         <h3 id="city.traffic_light.v2.SetTrafficLightRequest">SetTrafficLightRequest</h3>
-        <p>设置路口的红绿灯信息请求</p>
+        <p>设置路口的红绿灯信息请求</p><p>Request for setting traffic light information</p>
 
         
           <table class="field-table">
@@ -12346,21 +12630,24 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
                   <td>traffic_light</td>
                   <td><a href="#city.traffic_light.v2.TrafficLight">TrafficLight</a></td>
                   <td></td>
-                  <td><p>需要改变的红绿灯（含路口编号） </p></td>
+                  <td><p>需要改变的红绿灯（含路口编号）
+The target traffic light (including junction ID) </p></td>
                 </tr>
               
                 <tr>
                   <td>phase_index</td>
                   <td><a href="#int32">int32</a></td>
                   <td></td>
-                  <td><p>指定当前路口处的红绿灯的相位 </p></td>
+                  <td><p>指定当前路口处的红绿灯的相位
+Specify the phase of the traffic light </p></td>
                 </tr>
               
                 <tr>
                   <td>time_remaining</td>
                   <td><a href="#double">double</a></td>
                   <td></td>
-                  <td><p>当前相位的剩余时间 </p></td>
+                  <td><p>当前相位的剩余时间
+The remaining time of the current phase </p></td>
                 </tr>
               
             </tbody>
@@ -12371,14 +12658,14 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
         
       
         <h3 id="city.traffic_light.v2.SetTrafficLightResponse">SetTrafficLightResponse</h3>
-        <p>设置路口的红绿灯信息响应</p>
+        <p>设置路口的红绿灯信息响应</p><p>Response of setting traffic light information</p>
 
         
 
         
       
         <h3 id="city.traffic_light.v2.SetTrafficLightStatusRequest">SetTrafficLightStatusRequest</h3>
-        <p>设置路口的红绿灯状态请求</p>
+        <p>设置路口的红绿灯状态请求</p><p>Request for setting traffic light status</p>
 
         
           <table class="field-table">
@@ -12391,14 +12678,16 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
                   <td>junction_id</td>
                   <td><a href="#int32">int32</a></td>
                   <td></td>
-                  <td><p>需要改变状态的路口编号 </p></td>
+                  <td><p>需要改变状态的路口编号
+The target junction ID </p></td>
                 </tr>
               
                 <tr>
                   <td>ok</td>
                   <td><a href="#bool">bool</a></td>
                   <td></td>
-                  <td><p>当前路口红绿灯状态，true为通，false为断 </p></td>
+                  <td><p>当前路口红绿灯状态，true为通，false为断
+The current traffic light status at the junction, true is on, false is off </p></td>
                 </tr>
               
             </tbody>
@@ -12409,7 +12698,7 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
         
       
         <h3 id="city.traffic_light.v2.SetTrafficLightStatusResponse">SetTrafficLightStatusResponse</h3>
-        <p>设置路口的红绿灯状态响应</p>
+        <p>设置路口的红绿灯状态响应</p><p>Response of setting traffic light status</p>
 
         
 
@@ -12433,28 +12722,32 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
                 <td>GetTrafficLight</td>
                 <td><a href="#city.traffic_light.v2.GetTrafficLightRequest">GetTrafficLightRequest</a></td>
                 <td><a href="#city.traffic_light.v2.GetTrafficLightResponse">GetTrafficLightResponse</a></td>
-                <td><p>获取路口的红绿灯信息</p></td>
+                <td><p>获取路口的红绿灯信息
+Get traffic light information</p></td>
               </tr>
             
               <tr>
                 <td>SetTrafficLight</td>
                 <td><a href="#city.traffic_light.v2.SetTrafficLightRequest">SetTrafficLightRequest</a></td>
                 <td><a href="#city.traffic_light.v2.SetTrafficLightResponse">SetTrafficLightResponse</a></td>
-                <td><p>设置路口的红绿灯信息</p></td>
+                <td><p>设置路口的红绿灯信息
+Set traffic light information</p></td>
               </tr>
             
               <tr>
                 <td>SetTrafficLightPhase</td>
                 <td><a href="#city.traffic_light.v2.SetTrafficLightPhaseRequest">SetTrafficLightPhaseRequest</a></td>
                 <td><a href="#city.traffic_light.v2.SetTrafficLightPhaseResponse">SetTrafficLightPhaseResponse</a></td>
-                <td><p>设置路口的红绿灯相位</p></td>
+                <td><p>设置路口的红绿灯相位
+Set traffic light phase</p></td>
               </tr>
             
               <tr>
                 <td>SetTrafficLightStatus</td>
                 <td><a href="#city.traffic_light.v2.SetTrafficLightStatusRequest">SetTrafficLightStatusRequest</a></td>
                 <td><a href="#city.traffic_light.v2.SetTrafficLightStatusResponse">SetTrafficLightStatusResponse</a></td>
-                <td><p>设置路口的红绿灯状态</p></td>
+                <td><p>设置路口的红绿灯状态
+Set traffic light status</p></td>
               </tr>
             
           </tbody>

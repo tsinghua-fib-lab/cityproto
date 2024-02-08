@@ -10,12 +10,14 @@ import type { LaneState } from "./lane_service_pb.js";
 
 /**
  * 道路拥堵情况
+ * road congestion level
  *
  * @generated from enum city.map.v2.RoadLevel
  */
 export declare enum RoadLevel {
   /**
    * 未指定
+   * unspecified
    *
    * @generated from enum value: ROAD_LEVEL_UNSPECIFIED = 0;
    */
@@ -23,6 +25,7 @@ export declare enum RoadLevel {
 
   /**
    * 畅通
+   * clear
    *
    * @generated from enum value: ROAD_LEVEL_CLEAR = 1;
    */
@@ -30,6 +33,7 @@ export declare enum RoadLevel {
 
   /**
    * 轻度拥堵
+   * light load
    *
    * @generated from enum value: ROAD_LEVEL_LIGHT_LOAD = 2;
    */
@@ -37,6 +41,7 @@ export declare enum RoadLevel {
 
   /**
    * 中度拥堵
+   * medium load
    *
    * @generated from enum value: ROAD_LEVEL_MEDIUM_LOAD = 3;
    */
@@ -44,6 +49,7 @@ export declare enum RoadLevel {
 
   /**
    * 重度拥堵
+   * heavy load
    *
    * @generated from enum value: ROAD_LEVEL_HEAVY_LOAD = 4;
    */
@@ -51,6 +57,7 @@ export declare enum RoadLevel {
 
   /**
    * 极端拥堵
+   * overload
    *
    * @generated from enum value: ROAD_LEVEL_OVERLOAD = 5;
    */
@@ -58,6 +65,7 @@ export declare enum RoadLevel {
 
   /**
    * 限行
+   * restricted
    *
    * @generated from enum value: ROAD_LEVEL_RESTRICTED = 6;
    */
@@ -65,6 +73,9 @@ export declare enum RoadLevel {
 }
 
 /**
+ * 道路中断原因
+ * road interruption reason
+ *
  * @generated from enum city.map.v2.InterruptionReason
  */
 export declare enum InterruptionReason {
@@ -91,12 +102,14 @@ export declare enum InterruptionReason {
 
 /**
  * 查询道路信息请求
+ * Request for getting road information
  *
  * @generated from message city.map.v2.GetRoadRequest
  */
 export declare class GetRoadRequest extends Message<GetRoadRequest> {
   /**
    * 指定查询的道路ID列表，为空代表查询所有道路
+   * List of targeted road IDs. If empty, it means querying all roads.
    *
    * @generated from field: repeated int32 road_ids = 1;
    */
@@ -104,6 +117,7 @@ export declare class GetRoadRequest extends Message<GetRoadRequest> {
 
   /**
    * 是否要排除车道信息
+   * Whether to exclude lane information
    *
    * @generated from field: bool exclude_lane = 2;
    */
@@ -111,6 +125,7 @@ export declare class GetRoadRequest extends Message<GetRoadRequest> {
 
   /**
    * 是否要排除车道上的人的信息（仅在包含车道信息时有效）
+   * Whether to exclude information about person in the lane (only valid when lane information is included)
    *
    * @generated from field: bool exclude_person = 3;
    */
@@ -133,12 +148,14 @@ export declare class GetRoadRequest extends Message<GetRoadRequest> {
 
 /**
  * 查询道路信息响应
+ * Response of getting road information
  *
  * @generated from message city.map.v2.GetRoadResponse
  */
 export declare class GetRoadResponse extends Message<GetRoadResponse> {
   /**
    * 道路信息列表
+   * List of road information
    *
    * @generated from field: repeated city.map.v2.RoadState states = 1;
    */
@@ -183,14 +200,14 @@ export declare class GetRuinInfoRequest extends Message<GetRuinInfoRequest> {
  */
 export declare class RuinInfo extends Message<RuinInfo> {
   /**
-   * 损坏数量
+   * 损坏数量。Ruined number
    *
    * @generated from field: int32 num = 1;
    */
   num: number;
 
   /**
-   * 损坏占比
+   * 损坏占比。Ruined ratio
    *
    * @generated from field: double ratio = 2;
    */
@@ -216,7 +233,8 @@ export declare class RuinInfo extends Message<RuinInfo> {
  */
 export declare class GetRuinInfoResponse extends Message<GetRuinInfoResponse> {
   /**
-   * 三级级损伤信息
+   * 三级损伤信息
+   * Three-level ruin information
    *
    * @generated from field: city.map.v2.RuinInfo one = 1;
    */
@@ -292,12 +310,14 @@ export declare class GetEventsResponse extends Message<GetEventsResponse> {
 
 /**
  * 道路状态
+ * road state
  *
  * @generated from message city.map.v2.RoadState
  */
 export declare class RoadState extends Message<RoadState> {
   /**
    * 道路ID
+   * road ID
    *
    * @generated from field: int32 id = 1;
    */
@@ -305,6 +325,7 @@ export declare class RoadState extends Message<RoadState> {
 
   /**
    * 道路平均速度（m/s）
+   * road average speed (m/s)
    *
    * @generated from field: double avg_v = 4;
    */
@@ -312,6 +333,7 @@ export declare class RoadState extends Message<RoadState> {
 
   /**
    * 道路拥堵情况
+   * road congestion level
    *
    * @generated from field: city.map.v2.RoadLevel level = 2;
    */
@@ -319,6 +341,7 @@ export declare class RoadState extends Message<RoadState> {
 
   /**
    * 道路中断原因
+   * road interruption reason
    *
    * @generated from field: city.map.v2.InterruptionReason reason = 3;
    */
@@ -326,6 +349,7 @@ export declare class RoadState extends Message<RoadState> {
 
   /**
    * 车道情况
+   * lane state
    *
    * @generated from field: repeated city.map.v2.LaneState lanes = 5;
    */

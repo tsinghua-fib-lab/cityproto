@@ -20,6 +20,7 @@ class RoutingServiceServicer(object):
 
     def GetRoute(self, request, context):
         """获取导航路线
+        Get routing path
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -27,6 +28,7 @@ class RoutingServiceServicer(object):
 
     def SetDrivingCosts(self, request, context):
         """设置行车导航道路通行成本
+        Set traveling cost of driving routing
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -34,6 +36,7 @@ class RoutingServiceServicer(object):
 
     def GetDrivingCosts(self, request, context):
         """获取行车导航道路通行成本
+        Get traveling cost of driving routing
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

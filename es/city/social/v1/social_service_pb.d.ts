@@ -9,12 +9,14 @@ import type { Message as Message$1 } from "./message_pb.js";
 
 /**
  * 发送消息请求
+ * Request for sendding message
  *
  * @generated from message city.social.v1.SendRequest
  */
 export declare class SendRequest extends Message<SendRequest> {
   /**
    * 待发送的消息
+   * Messages to send
    *
    * @generated from field: repeated city.social.v1.Message messages = 1;
    */
@@ -37,6 +39,7 @@ export declare class SendRequest extends Message<SendRequest> {
 
 /**
  * 发送消息响应
+ * Response of sendding message
  *
  * @generated from message city.social.v1.SendResponse
  */
@@ -58,12 +61,14 @@ export declare class SendResponse extends Message<SendResponse> {
 
 /**
  * 接收消息请求
+ * Request for receiving message
  *
  * @generated from message city.social.v1.ReceiveRequest
  */
 export declare class ReceiveRequest extends Message<ReceiveRequest> {
   /**
    * 消息接收者ID（即为自身ID）
+   * Message receiver ID (i.e. self.ID)
    *
    * @generated from field: int32 id = 1;
    */
@@ -86,12 +91,14 @@ export declare class ReceiveRequest extends Message<ReceiveRequest> {
 
 /**
  * 接收消息响应
+ * Response of receiving messages
  *
  * @generated from message city.social.v1.ReceiveResponse
  */
 export declare class ReceiveResponse extends Message<ReceiveResponse> {
   /**
    * 接收到的消息
+   * Received messages
    *
    * @generated from field: repeated city.social.v1.Message messages = 1;
    */

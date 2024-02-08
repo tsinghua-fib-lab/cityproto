@@ -7,6 +7,7 @@ import { proto3 } from "@bufbuild/protobuf";
 
 /**
  * 交通灯的状态
+ * traffic light state
  *
  * @generated from enum city.traffic_light.v2.LightState
  */
@@ -22,6 +23,7 @@ export const LightState = proto3.makeEnum(
 
 /**
  * 交通灯相位
+ * traffic light phase
  *
  * @generated from message city.traffic_light.v2.Phase
  */
@@ -35,6 +37,7 @@ export const Phase = proto3.makeMessageType(
 
 /**
  * 交通灯
+ * traffic light
  *
  * @generated from message city.traffic_light.v2.TrafficLight
  */
@@ -48,6 +51,7 @@ export const TrafficLight = proto3.makeMessageType(
 
 /**
  * 信控集合，对应一个信控pb文件或一个信控mongodb collection
+ * Traffic light set, corresponding to one traffic light PB file or one traffic light mongodb collection
  *
  * @generated from message city.traffic_light.v2.TrafficLights
  */

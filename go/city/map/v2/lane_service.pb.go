@@ -24,6 +24,7 @@ const (
 )
 
 // 设置Lane的最大速度（限速）请求
+// Request for setting lane's maximum speed (speed limit)
 type SetLaneMaxVRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -32,7 +33,8 @@ type SetLaneMaxVRequest struct {
 	// Lane id
 	LaneId int32 `protobuf:"varint,1,opt,name=lane_id,json=laneId,proto3" json:"lane_id,omitempty" yaml:"lane_id" bson:"lane_id" db:"lane_id"`
 	// 最大速度（限速），单位：m/s
-	MaxV float64 `protobuf:"fixed64,2,opt,name=max_v,json=maxV,proto3" json:"max_v,omitempty" db:"max_v" yaml:"max_v" bson:"max_v"`
+	// Maximum speed (speed limit), unit: m/s
+	MaxV float64 `protobuf:"fixed64,2,opt,name=max_v,json=maxV,proto3" json:"max_v,omitempty" yaml:"max_v" bson:"max_v" db:"max_v"`
 }
 
 func (x *SetLaneMaxVRequest) Reset() {
@@ -82,6 +84,7 @@ func (x *SetLaneMaxVRequest) GetMaxV() float64 {
 }
 
 // 设置Lane的最大速度（限速）响应
+// Response of setting lane's maximum speed (speed limit)
 type SetLaneMaxVResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -121,15 +124,18 @@ func (*SetLaneMaxVResponse) Descriptor() ([]byte, []int) {
 }
 
 // 获取Lane的信息请求
+// Request for getting lane information
 type GetLaneRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
 	// 指定的Lane id列表，如果为空，则返回所有Lane的信息
-	LaneIds []int32 `protobuf:"varint,1,rep,packed,name=lane_ids,json=laneIds,proto3" json:"lane_ids,omitempty" db:"lane_ids" yaml:"lane_ids" bson:"lane_ids"`
+	// List of targeted lane IDs, if empty, returns all information of lanes
+	LaneIds []int32 `protobuf:"varint,1,rep,packed,name=lane_ids,json=laneIds,proto3" json:"lane_ids,omitempty" yaml:"lane_ids" bson:"lane_ids" db:"lane_ids"`
 	// 是否要排除车道上的人的信息
-	ExcludePerson bool `protobuf:"varint,2,opt,name=exclude_person,json=excludePerson,proto3" json:"exclude_person,omitempty" db:"exclude_person" yaml:"exclude_person" bson:"exclude_person"`
+	// Whether to exclude information of person on the lane
+	ExcludePerson bool `protobuf:"varint,2,opt,name=exclude_person,json=excludePerson,proto3" json:"exclude_person,omitempty" yaml:"exclude_person" bson:"exclude_person" db:"exclude_person"`
 }
 
 func (x *GetLaneRequest) Reset() {
@@ -179,12 +185,14 @@ func (x *GetLaneRequest) GetExcludePerson() bool {
 }
 
 // 获取Lane的信息响应
+// Response of getting lane information
 type GetLaneResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
 	// Lane的信息
+	// Lane information
 	States []*LaneState `protobuf:"bytes,1,rep,name=states,proto3" json:"states,omitempty" yaml:"states" bson:"states" db:"states"`
 }
 
@@ -228,14 +236,17 @@ func (x *GetLaneResponse) GetStates() []*LaneState {
 }
 
 // 获取特定区域内的Lane的信息请求
+// Request for getting lane information in a specific region
 type GetLaneByLongLatBBoxRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
 	// 经纬度范围
-	Bbox *v2.LongLatBBox `protobuf:"bytes,1,opt,name=bbox,proto3" json:"bbox,omitempty" yaml:"bbox" bson:"bbox" db:"bbox"`
+	// latitude and longitude bounding box
+	Bbox *v2.LongLatBBox `protobuf:"bytes,1,opt,name=bbox,proto3" json:"bbox,omitempty" db:"bbox" yaml:"bbox" bson:"bbox"`
 	// 是否要排除车道上的人的信息
+	// Whether to exclude information of person on the lane
 	ExcludePerson bool `protobuf:"varint,2,opt,name=exclude_person,json=excludePerson,proto3" json:"exclude_person,omitempty" yaml:"exclude_person" bson:"exclude_person" db:"exclude_person"`
 }
 
@@ -286,12 +297,14 @@ func (x *GetLaneByLongLatBBoxRequest) GetExcludePerson() bool {
 }
 
 // 获取特定区域内的Lane的信息响应
+// Response of getting lane information in a specific region
 type GetLaneByLongLatBBoxResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
 	// Lane的信息
+	// Lane information
 	States []*LaneState `protobuf:"bytes,1,rep,name=states,proto3" json:"states,omitempty" yaml:"states" bson:"states" db:"states"`
 }
 
@@ -335,6 +348,7 @@ func (x *GetLaneByLongLatBBoxResponse) GetStates() []*LaneState {
 }
 
 // Lane状态
+// Lane state
 type LaneState struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -343,12 +357,16 @@ type LaneState struct {
 	// Lane ID
 	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
 	// Lane上的人/车
-	Persons []*v1.PersonMotion `protobuf:"bytes,2,rep,name=persons,proto3" json:"persons,omitempty" yaml:"persons" bson:"persons" db:"persons"`
+	// person/vehicle on the lane
+	Persons []*v1.PersonMotion `protobuf:"bytes,2,rep,name=persons,proto3" json:"persons,omitempty" db:"persons" yaml:"persons" bson:"persons"`
 	// 平均速度（m/s）
+	// average speed (m/s)
 	AvgV float64 `protobuf:"fixed64,3,opt,name=avg_v,json=avgV,proto3" json:"avg_v,omitempty" yaml:"avg_v" bson:"avg_v" db:"avg_v"`
 	// 是否限行
+	// whether restricted
 	Restriction bool `protobuf:"varint,4,opt,name=restriction,proto3" json:"restriction,omitempty" yaml:"restriction" bson:"restriction" db:"restriction"`
 	// 交通灯状态
+	// traffic light state
 	LightState v21.LightState `protobuf:"varint,5,opt,name=light_state,json=lightState,proto3,enum=city.traffic_light.v2.LightState" json:"light_state,omitempty" yaml:"light_state" bson:"light_state" db:"light_state"`
 }
 

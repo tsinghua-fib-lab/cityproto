@@ -14,6 +14,7 @@ export const PersonService = {
   methods: {
     /**
      * 获取person信息
+     * Get person information
      *
      * @generated from rpc city.person.v1.PersonService.GetPerson
      */
@@ -25,6 +26,7 @@ export const PersonService = {
     },
     /**
      * 新增person 传入person初始位置、目的地表、属性 返回personid
+     * Add a new person. Input person's initial location, destination table, and attributes, return personid
      *
      * @generated from rpc city.person.v1.PersonService.AddPerson
      */
@@ -36,6 +38,7 @@ export const PersonService = {
     },
     /**
      * 修改person的schedule 传入personid、目的地表
+     * Set person's schedule. Input personid and destination table
      *
      * @generated from rpc city.person.v1.PersonService.SetSchedule
      */
@@ -47,6 +50,7 @@ export const PersonService = {
     },
     /**
      * 获取特定区域内的person
+     * Get persons in a specific region
      *
      * @generated from rpc city.person.v1.PersonService.GetPersonByLongLatBBox
      */

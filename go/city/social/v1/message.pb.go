@@ -21,19 +21,25 @@ const (
 )
 
 // 消息
+// message
 type Message struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
 	// 消息发送者ID
+	// message sender ID
 	From int32 `protobuf:"varint,1,opt,name=from,proto3" json:"from,omitempty"`
 	// 消息接收者ID
+	// message receiver ID
 	To int32 `protobuf:"varint,2,opt,name=to,proto3" json:"to,omitempty"`
 	// 消息内容
+	// message content
 	Message string `protobuf:"bytes,3,opt,name=message,proto3" json:"message,omitempty"`
 	// 消息发出时间（秒），如无则为当前模拟时间
+	// Message sending time (in seconds), if none, it is the current simulation time
 	// 对于接收到的消息，该字段总是存在
+	// For received messages, this field always exists
 	T *float64 `protobuf:"fixed64,4,opt,name=t,proto3,oneof" json:"t,omitempty"`
 }
 

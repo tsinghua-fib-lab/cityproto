@@ -21,16 +21,21 @@ const (
 )
 
 // 交通灯的状态
+// traffic light state
 type LightState int32
 
 const (
 	// 未指定
+	// unspecified
 	LightState_LIGHT_STATE_UNSPECIFIED LightState = 0
 	// 红灯
+	// red light
 	LightState_LIGHT_STATE_RED LightState = 1
 	// 绿灯
+	// green light
 	LightState_LIGHT_STATE_GREEN LightState = 2
 	// 黄灯
+	// yellow light
 	LightState_LIGHT_STATE_YELLOW LightState = 3
 )
 
@@ -78,15 +83,18 @@ func (LightState) EnumDescriptor() ([]byte, []int) {
 }
 
 // 交通灯相位
+// traffic light phase
 type Phase struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
 	// 相位持续时间，单位秒
+	// Phase duration in seconds
 	Duration float64 `protobuf:"fixed64,1,opt,name=duration,proto3" json:"duration,omitempty" yaml:"duration" bson:"duration" db:"duration"`
 	// 描述该相位下每个lane的灯控情况，lane与Junction.lane_ids一一对应
-	States []LightState `protobuf:"varint,2,rep,packed,name=states,proto3,enum=city.traffic_light.v2.LightState" json:"states,omitempty" bson:"states" db:"states" yaml:"states"`
+	// The lighting control situation of each lane in this phase, and the lane corresponds one-to-one with junction.lane_ids
+	States []LightState `protobuf:"varint,2,rep,packed,name=states,proto3,enum=city.traffic_light.v2.LightState" json:"states,omitempty" yaml:"states" bson:"states" db:"states"`
 }
 
 func (x *Phase) Reset() {
@@ -136,14 +144,17 @@ func (x *Phase) GetStates() []LightState {
 }
 
 // 交通灯
+// traffic light
 type TrafficLight struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
 	// 所在路口id
+	// ID of the junction where the traffic light is at
 	JunctionId int32 `protobuf:"varint,1,opt,name=junction_id,json=junctionId,proto3" json:"junction_id,omitempty" yaml:"junction_id" bson:"junction_id" db:"junction_id"`
 	// 相位循环的一个循环周期
+	// One cycle of phase cycling
 	Phases []*Phase `protobuf:"bytes,2,rep,name=phases,proto3" json:"phases,omitempty" yaml:"phases" bson:"phases" db:"phases"`
 }
 
@@ -194,6 +205,7 @@ func (x *TrafficLight) GetPhases() []*Phase {
 }
 
 // 信控集合，对应一个信控pb文件或一个信控mongodb collection
+// Traffic light set, corresponding to one traffic light PB file or one traffic light mongodb collection
 type TrafficLights struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

@@ -10,12 +10,14 @@ import type { Schedule } from "../../trip/v2/trip_pb.js";
 
 /**
  * 智能体教育等级
+ * Agent education level
  *
  * @generated from enum city.person.v1.Education
  */
 export declare enum Education {
   /**
    * 未指定
+   * unspecified
    *
    * @generated from enum value: EDUCATION_UNSPECIFIED = 0;
    */
@@ -23,6 +25,7 @@ export declare enum Education {
 
   /**
    * 博士
+   * doctor
    *
    * @generated from enum value: EDUCATION_DOCTOR = 1;
    */
@@ -30,6 +33,7 @@ export declare enum Education {
 
   /**
    * 硕士
+   * master
    *
    * @generated from enum value: EDUCATION_MASTER = 2;
    */
@@ -37,6 +41,7 @@ export declare enum Education {
 
   /**
    * 本科
+   * bachelor
    *
    * @generated from enum value: EDUCATION_BACHELOR = 3;
    */
@@ -44,6 +49,7 @@ export declare enum Education {
 
   /**
    * 高中
+   * high school
    *
    * @generated from enum value: EDUCATION_HIGH_SCHOOL = 4;
    */
@@ -51,6 +57,7 @@ export declare enum Education {
 
   /**
    * 初中
+   * junior high school
    *
    * @generated from enum value: EDUCATION_JUNIOR_HIGH_SCHOOL = 5;
    */
@@ -58,6 +65,7 @@ export declare enum Education {
 
   /**
    * 小学
+   * primary school
    *
    * @generated from enum value: EDUCATION_PRIMARY_SCHOOL = 6;
    */
@@ -65,6 +73,7 @@ export declare enum Education {
 
   /**
    * 大专
+   * college
    *
    * @generated from enum value: EDUCATION_COLLEGE = 7;
    */
@@ -73,12 +82,14 @@ export declare enum Education {
 
 /**
  * 智能体性别
+ * agent gender
  *
  * @generated from enum city.person.v1.Gender
  */
 export declare enum Gender {
   /**
    * 未指定
+   * unspecified
    *
    * @generated from enum value: GENDER_UNSPECIFIED = 0;
    */
@@ -86,6 +97,7 @@ export declare enum Gender {
 
   /**
    * 男性
+   * male
    *
    * @generated from enum value: GENDER_MALE = 1;
    */
@@ -93,6 +105,7 @@ export declare enum Gender {
 
   /**
    * 女性
+   * female
    *
    * @generated from enum value: GENDER_FEMALE = 2;
    */
@@ -101,12 +114,14 @@ export declare enum Gender {
 
 /**
  * 智能体消费水平
+ * agent consumption level
  *
  * @generated from enum city.person.v1.Consumption
  */
 export declare enum Consumption {
   /**
    * 未指定
+   * unspecified
    *
    * @generated from enum value: CONSUMPTION_UNSPECIFIED = 0;
    */
@@ -114,6 +129,7 @@ export declare enum Consumption {
 
   /**
    * 低
+   * low
    *
    * @generated from enum value: CONSUMPTION_LOW = 1;
    */
@@ -121,6 +137,7 @@ export declare enum Consumption {
 
   /**
    * 较低
+   * relatively low
    *
    * @generated from enum value: CONSUMPTION_RELATIVELY_LOW = 2;
    */
@@ -128,6 +145,7 @@ export declare enum Consumption {
 
   /**
    * 中等
+   * medium
    *
    * @generated from enum value: CONSUMPTION_MEDIUM = 3;
    */
@@ -135,6 +153,7 @@ export declare enum Consumption {
 
   /**
    * 较高
+   * relatively high
    *
    * @generated from enum value: CONSUMPTION_RELATIVELY_HIGH = 4;
    */
@@ -142,6 +161,7 @@ export declare enum Consumption {
 
   /**
    * 高
+   * high
    *
    * @generated from enum value: CONSUMPTION_HIGH = 5;
    */
@@ -150,12 +170,14 @@ export declare enum Consumption {
 
 /**
  * 智能体属性（通用）
+ * Agent properties (general)
  *
  * @generated from message city.person.v1.PersonAttribute
  */
 export declare class PersonAttribute extends Message<PersonAttribute> {
   /**
    * 单位: m，长度
+   * length: m
    *
    * @generated from field: double length = 2;
    */
@@ -163,6 +185,7 @@ export declare class PersonAttribute extends Message<PersonAttribute> {
 
   /**
    * 单位: m，宽度
+   * width: m
    *
    * @generated from field: double width = 3;
    */
@@ -170,6 +193,7 @@ export declare class PersonAttribute extends Message<PersonAttribute> {
 
   /**
    * 单位: m/s
+   * max speed: m/s
    *
    * @generated from field: double max_speed = 4;
    */
@@ -177,6 +201,7 @@ export declare class PersonAttribute extends Message<PersonAttribute> {
 
   /**
    * 单位: m/s^2, 最大加速度（正值）
+   * max accelaration: m/s^2 (positive value)
    *
    * @generated from field: double max_acceleration = 5;
    */
@@ -184,6 +209,7 @@ export declare class PersonAttribute extends Message<PersonAttribute> {
 
   /**
    * 单位: m/s^2, 最大减速度（负值）
+   * max deceleration: m/s^2 (negative value)
    *
    * @generated from field: double max_braking_acceleration = 6;
    */
@@ -191,6 +217,7 @@ export declare class PersonAttribute extends Message<PersonAttribute> {
 
   /**
    * 单位: m/s^2, 一般加速度（正值），要求小于最大加速度
+   * usual acceleration: m/s^2 (positive value), required to be less than the max acceleration
    *
    * @generated from field: double usual_acceleration = 7;
    */
@@ -198,6 +225,7 @@ export declare class PersonAttribute extends Message<PersonAttribute> {
 
   /**
    * 单位: m/s^2, 一般减速度（负值），要求大于最大减速度
+   * usual deceleration: m/s^2 (negative value), required to be greater than the max deceleration
    *
    * @generated from field: double usual_braking_acceleration = 8;
    */
@@ -220,12 +248,14 @@ export declare class PersonAttribute extends Message<PersonAttribute> {
 
 /**
  * 车辆附加属性
+ * Vehicle additional attributes
  *
  * @generated from message city.person.v1.VehicleAttribute
  */
 export declare class VehicleAttribute extends Message<VehicleAttribute> {
   /**
    * 单位: m, 完成变道所需路程
+   * Distance required to complete lane change: m
    *
    * @generated from field: double lane_change_length = 1;
    */
@@ -233,6 +263,7 @@ export declare class VehicleAttribute extends Message<VehicleAttribute> {
 
   /**
    * 单位：米，本车距离前车的最小距离
+   * The minimum distance between the vehicle and the vehicle in front: m
    *
    * @generated from field: double min_gap = 2;
    */
@@ -255,12 +286,14 @@ export declare class VehicleAttribute extends Message<VehicleAttribute> {
 
 /**
  * 公交车附加属性
+ * Bus additional attributes
  *
  * @generated from message city.person.v1.BusAttribute
  */
 export declare class BusAttribute extends Message<BusAttribute> {
   /**
    * 公交线路ID
+   * bus line ID
    *
    * @generated from field: int32 line_id = 1;
    */
@@ -268,6 +301,7 @@ export declare class BusAttribute extends Message<BusAttribute> {
 
   /**
    * 公交车容量
+   * bus capacity
    *
    * @generated from field: int32 capacity = 2;
    */
@@ -290,6 +324,7 @@ export declare class BusAttribute extends Message<BusAttribute> {
 
 /**
  * 自行车附加属性
+ * Bike additional attributes
  *
  * @generated from message city.person.v1.BikeAttribute
  */
@@ -311,12 +346,14 @@ export declare class BikeAttribute extends Message<BikeAttribute> {
 
 /**
  * 智能体简介
+ * agent profile
  *
  * @generated from message city.person.v1.PersonProfile
  */
 export declare class PersonProfile extends Message<PersonProfile> {
   /**
    * 年龄
+   * age
    *
    * @generated from field: int32 age = 1;
    */
@@ -324,6 +361,7 @@ export declare class PersonProfile extends Message<PersonProfile> {
 
   /**
    * 教育水平
+   * education level
    *
    * @generated from field: city.person.v1.Education education = 2;
    */
@@ -331,6 +369,7 @@ export declare class PersonProfile extends Message<PersonProfile> {
 
   /**
    * 性别
+   * gender
    *
    * @generated from field: city.person.v1.Gender gender = 3;
    */
@@ -338,6 +377,7 @@ export declare class PersonProfile extends Message<PersonProfile> {
 
   /**
    * 消费水平
+   * consumption level
    *
    * @generated from field: city.person.v1.Consumption consumption = 4;
    */
@@ -360,12 +400,14 @@ export declare class PersonProfile extends Message<PersonProfile> {
 
 /**
  * 智能体
+ * agent
  *
  * @generated from message city.person.v1.Person
  */
 export declare class Person extends Message<Person> {
   /**
    * 智能体ID
+   * agent ID
    *
    * @generated from field: int32 id = 1;
    */
@@ -373,6 +415,7 @@ export declare class Person extends Message<Person> {
 
   /**
    * 参数
+   * attribute
    *
    * @generated from field: city.person.v1.PersonAttribute attribute = 2;
    */
@@ -380,6 +423,7 @@ export declare class Person extends Message<Person> {
 
   /**
    * 初始位置
+   * initial position
    *
    * @generated from field: city.geo.v2.Position home = 3;
    */
@@ -387,6 +431,7 @@ export declare class Person extends Message<Person> {
 
   /**
    * 初始日程
+   * initial schedules
    *
    * @generated from field: repeated city.trip.v2.Schedule schedules = 4;
    */
@@ -394,6 +439,7 @@ export declare class Person extends Message<Person> {
 
   /**
    * 车辆附加属性
+   * vehicle addtional attribute
    *
    * @generated from field: optional city.person.v1.VehicleAttribute vehicle_attribute = 7;
    */
@@ -401,6 +447,7 @@ export declare class Person extends Message<Person> {
 
   /**
    * 公交车附加属性
+   * bus additional attribute
    *
    * @generated from field: optional city.person.v1.BusAttribute bus_attribute = 8;
    */
@@ -408,6 +455,7 @@ export declare class Person extends Message<Person> {
 
   /**
    * 自行车附加属性
+   * bike addition attribute
    *
    * @generated from field: optional city.person.v1.BikeAttribute bike_attribute = 9;
    */
@@ -415,6 +463,7 @@ export declare class Person extends Message<Person> {
 
   /**
    * [可空] 额外的标签（例如：抢修车类型->电网）
+   * [can be empty] additional tags (e.g. repair vehicle type -> power grid)
    *
    * @generated from field: map<string, string> labels = 10;
    */
@@ -422,6 +471,7 @@ export declare class Person extends Message<Person> {
 
   /**
    * [可空] 智能体简介
+   * [can be empty] agent profile
    *
    * @generated from field: optional city.person.v1.PersonProfile profile = 11;
    */
@@ -444,6 +494,7 @@ export declare class Person extends Message<Person> {
 
 /**
  * 智能体集合，对应一个智能体pb文件或一个智能体mongodb collection
+ * Agent collection, corresponding to an agent pb file or an agent mongodb collection
  *
  * @generated from message city.person.v1.Persons
  */

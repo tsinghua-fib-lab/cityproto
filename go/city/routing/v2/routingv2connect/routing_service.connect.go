@@ -54,10 +54,13 @@ var (
 // RoutingServiceClient is a client for the city.routing.v2.RoutingService service.
 type RoutingServiceClient interface {
 	// 获取导航路线
+	// Get routing path
 	GetRoute(context.Context, *connect.Request[v2.GetRouteRequest]) (*connect.Response[v2.GetRouteResponse], error)
 	// 设置行车导航道路通行成本
+	// Set traveling cost of driving routing
 	SetDrivingCosts(context.Context, *connect.Request[v2.SetDrivingCostsRequest]) (*connect.Response[v2.SetDrivingCostsResponse], error)
 	// 获取行车导航道路通行成本
+	// Get traveling cost of driving routing
 	GetDrivingCosts(context.Context, *connect.Request[v2.GetDrivingCostsRequest]) (*connect.Response[v2.GetDrivingCostsResponse], error)
 }
 
@@ -117,10 +120,13 @@ func (c *routingServiceClient) GetDrivingCosts(ctx context.Context, req *connect
 // RoutingServiceHandler is an implementation of the city.routing.v2.RoutingService service.
 type RoutingServiceHandler interface {
 	// 获取导航路线
+	// Get routing path
 	GetRoute(context.Context, *connect.Request[v2.GetRouteRequest]) (*connect.Response[v2.GetRouteResponse], error)
 	// 设置行车导航道路通行成本
+	// Set traveling cost of driving routing
 	SetDrivingCosts(context.Context, *connect.Request[v2.SetDrivingCostsRequest]) (*connect.Response[v2.SetDrivingCostsResponse], error)
 	// 获取行车导航道路通行成本
+	// Get traveling cost of driving routing
 	GetDrivingCosts(context.Context, *connect.Request[v2.GetDrivingCostsRequest]) (*connect.Response[v2.GetDrivingCostsResponse], error)
 }
 

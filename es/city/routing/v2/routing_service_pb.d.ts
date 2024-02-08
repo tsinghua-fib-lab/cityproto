@@ -11,12 +11,14 @@ import type { Cost } from "./cost_pb.js";
 
 /**
  * 获取导航路线请求
+ * Request for getting routing path
  *
  * @generated from message city.routing.v2.GetRouteRequest
  */
 export declare class GetRouteRequest extends Message<GetRouteRequest> {
   /**
    * 导航类型
+   * routing type
    *
    * @generated from field: city.routing.v2.RouteType type = 1;
    */
@@ -24,13 +26,15 @@ export declare class GetRouteRequest extends Message<GetRouteRequest> {
 
   /**
    * 起点，约定：包含LanePosition或AoiPosition中的一种
+   * Starting point, convention: as LanePosition or AoiPosition
    *
    * @generated from field: city.geo.v2.Position start = 2;
    */
   start?: Position;
 
   /**
-   * 起点，约定：包含LanePosition或AoiPosition中的一种
+   * 终点，约定：包含LanePosition或AoiPosition中的一种
+   * Ending point, convention: as LanePosition or AoiPosition
    *
    * @generated from field: city.geo.v2.Position end = 3;
    */
@@ -38,6 +42,7 @@ export declare class GetRouteRequest extends Message<GetRouteRequest> {
 
   /**
    * 发送导航请求的时间（目前仅在行车导航中使用）
+   * The time to send routing request (currently only used in driving routing)
    *
    * @generated from field: double time = 5;
    */
@@ -60,6 +65,7 @@ export declare class GetRouteRequest extends Message<GetRouteRequest> {
 
 /**
  * 获取导航路线响应
+ * Response of getting routing path
  *
  * @generated from message city.routing.v2.GetRouteResponse
  */
@@ -86,12 +92,14 @@ export declare class GetRouteResponse extends Message<GetRouteResponse> {
 
 /**
  * 设置行车导航道路通行成本请求
+ * Request for setting driving routing travelling cost
  *
  * @generated from message city.routing.v2.SetDrivingCostsRequest
  */
 export declare class SetDrivingCostsRequest extends Message<SetDrivingCostsRequest> {
   /**
    * 道路通行成本
+   * travelling cost
    *
    * @generated from field: repeated city.routing.v2.Cost costs = 1;
    */
@@ -114,6 +122,7 @@ export declare class SetDrivingCostsRequest extends Message<SetDrivingCostsReque
 
 /**
  * 设置行车导航道路通行成本响应
+ * Response of setting driving routing travelling cost
  *
  * @generated from message city.routing.v2.SetDrivingCostsResponse
  */
@@ -135,12 +144,14 @@ export declare class SetDrivingCostsResponse extends Message<SetDrivingCostsResp
 
 /**
  * 获取行车导航道路通行成本请求
+ * Request for getting driving routing travelling cost
  *
  * @generated from message city.routing.v2.GetDrivingCostsRequest
  */
 export declare class GetDrivingCostsRequest extends Message<GetDrivingCostsRequest> {
   /**
    * 道路通行成本（按照给定的id和time进行查询）
+   * travelling cost (query via the given ID and time)
    *
    * @generated from field: repeated city.routing.v2.Cost costs = 1;
    */
@@ -163,12 +174,14 @@ export declare class GetDrivingCostsRequest extends Message<GetDrivingCostsReque
 
 /**
  * 获取行车导航道路通行成本响应
+ * Response of getting driving routing travelling cost
  *
  * @generated from message city.routing.v2.GetDrivingCostsResponse
  */
 export declare class GetDrivingCostsResponse extends Message<GetDrivingCostsResponse> {
   /**
    * 道路通行成本（补全cost后的结果）
+   * travelling cost (results after completing the cost)
    *
    * @generated from field: repeated city.routing.v2.Cost costs = 1;
    */

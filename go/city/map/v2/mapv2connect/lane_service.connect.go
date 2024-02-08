@@ -53,10 +53,13 @@ var (
 // LaneServiceClient is a client for the city.map.v2.LaneService service.
 type LaneServiceClient interface {
 	// 设置Lane的最大速度（限速）
+	// Set Lane's maximum speed (speed limit)
 	SetLaneMaxV(context.Context, *connect.Request[v2.SetLaneMaxVRequest]) (*connect.Response[v2.SetLaneMaxVResponse], error)
 	// 获取Lane的信息
+	// Get Lane information
 	GetLane(context.Context, *connect.Request[v2.GetLaneRequest]) (*connect.Response[v2.GetLaneResponse], error)
 	// 获取特定区域内的Lane的信息
+	// Get Lane information in a specific region
 	GetLaneByLongLatBBox(context.Context, *connect.Request[v2.GetLaneByLongLatBBoxRequest]) (*connect.Response[v2.GetLaneByLongLatBBoxResponse], error)
 }
 
@@ -116,10 +119,13 @@ func (c *laneServiceClient) GetLaneByLongLatBBox(ctx context.Context, req *conne
 // LaneServiceHandler is an implementation of the city.map.v2.LaneService service.
 type LaneServiceHandler interface {
 	// 设置Lane的最大速度（限速）
+	// Set Lane's maximum speed (speed limit)
 	SetLaneMaxV(context.Context, *connect.Request[v2.SetLaneMaxVRequest]) (*connect.Response[v2.SetLaneMaxVResponse], error)
 	// 获取Lane的信息
+	// Get Lane information
 	GetLane(context.Context, *connect.Request[v2.GetLaneRequest]) (*connect.Response[v2.GetLaneResponse], error)
 	// 获取特定区域内的Lane的信息
+	// Get Lane information in a specific region
 	GetLaneByLongLatBBox(context.Context, *connect.Request[v2.GetLaneByLongLatBBoxRequest]) (*connect.Response[v2.GetLaneByLongLatBBoxResponse], error)
 }
 

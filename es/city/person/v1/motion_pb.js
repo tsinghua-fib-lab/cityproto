@@ -8,6 +8,7 @@ import { Position } from "../../geo/v2/geo_pb.js";
 
 /**
  * Person（人）的运行时状态
+ * Person's runtime state
  *
  * @generated from enum city.person.v1.Status
  */
@@ -26,6 +27,7 @@ export const Status = proto3.makeEnum(
 
 /**
  * Person（人）的运动状态
+ * Person's motion state
  *
  * @generated from message city.person.v1.PersonMotion
  */

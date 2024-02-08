@@ -14,6 +14,7 @@ export const ClockService = {
   methods: {
     /**
      * 获取当前的模拟时间
+     * get current simulation clock
      *
      * @generated from rpc city.clock.v1.ClockService.Now
      */

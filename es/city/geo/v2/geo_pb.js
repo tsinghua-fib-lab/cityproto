@@ -7,6 +7,7 @@ import { proto3 } from "@bufbuild/protobuf";
 
 /**
  * WGS84经纬度坐标
+ * WGS84 longitute and latitude coordinates
  *
  * @generated from message city.geo.v2.LongLatPosition
  */
@@ -20,6 +21,7 @@ export const LongLatPosition = proto3.makeMessageType(
 
 /**
  * XY坐标
+ * XY coordinates
  *
  * @generated from message city.geo.v2.XYPosition
  */
@@ -33,6 +35,7 @@ export const XYPosition = proto3.makeMessageType(
 
 /**
  * 地图坐标（车道+距离s）
+ * Map coordinates (lane ID + distance s)
  *
  * @generated from message city.geo.v2.LanePosition
  */
@@ -46,6 +49,7 @@ export const LanePosition = proto3.makeMessageType(
 
 /**
  * 地图坐标（AOI）
+ * Map coordinates (AOI)
  *
  * @generated from message city.geo.v2.AoiPosition
  */
@@ -59,6 +63,7 @@ export const AoiPosition = proto3.makeMessageType(
 
 /**
  * 坐标，如果多种坐标同时存在，两两之间必须满足映射关系，同时逻辑坐标是必须提供的
+ * Coordinates, if multiple coordinates exist at the same time, the mapping relationship between them must be satisfied, and logical coordinates must be provided.
  *
  * @generated from message city.geo.v2.Position
  */
@@ -74,6 +79,7 @@ export const Position = proto3.makeMessageType(
 
 /**
  * 经纬度矩形区域
+ * latitude and longitude rectangular area
  *
  * @generated from message city.geo.v2.LongLatBBox
  */

@@ -8,6 +8,7 @@ import { LanePosition, XYPosition } from "../../geo/v2/geo_pb.js";
 
 /**
  * 车道类型
+ * Lane type
  *
  * @generated from enum city.map.v2.LaneType
  */
@@ -22,6 +23,7 @@ export const LaneType = proto3.makeEnum(
 
 /**
  * 车道转向
+ * lane turn type
  *
  * @generated from enum city.map.v2.LaneTurn
  */
@@ -38,6 +40,7 @@ export const LaneTurn = proto3.makeEnum(
 
 /**
  * 车道连接类型
+ * Lane connection type
  *
  * @generated from enum city.map.v2.LaneConnectionType
  */
@@ -66,6 +69,7 @@ export const AoiType = proto3.makeEnum(
 
 /**
  * 土地利用类型，参照国标GB/T 21010—2007
+ * Land use type, refer to the national standard GB/T 21010-2007
  * http://www.gscloud.cn/static/cases/%E3%80%8A%E5%9C%9F%E5%9C%B0%E5%88%A9%E7%94%A8%E7%8E%B0%E7%8A%B6%E5%88%86%E7%B1%BB%E3%80%8B%E5%9B%BD%E5%AE%B6%E6%A0%87%E5%87%86gb_t21010-2007(1).pdf
  *
  * @generated from enum city.map.v2.LandUseType
@@ -85,6 +89,7 @@ export const LandUseType = proto3.makeEnum(
 
 /**
  * 折线，用于定义车道等的形状
+ * Polyline, used to define the shape of lanes, etc.
  *
  * @generated from message city.map.v2.Polyline
  */
@@ -97,6 +102,7 @@ export const Polyline = proto3.makeMessageType(
 
 /**
  * 地图元信息
+ * Map meta information
  *
  * @generated from message city.map.v2.Header
  */
@@ -115,6 +121,7 @@ export const Header = proto3.makeMessageType(
 
 /**
  * 两个lane的冲突区域
+ * Conflict area between two lanes
  *
  * @generated from message city.map.v2.LaneOverlap
  */
@@ -129,6 +136,7 @@ export const LaneOverlap = proto3.makeMessageType(
 
 /**
  * 车道连接信息
+ * Lane connection information
  *
  * @generated from message city.map.v2.LaneConnection
  */
@@ -142,6 +150,7 @@ export const LaneConnection = proto3.makeMessageType(
 
 /**
  * Lane，用于描述道路上的车道、人行道等
+ * Lane, used to describe lanes, sidewalks, etc. on the road
  *
  * @generated from message city.map.v2.Lane
  */
@@ -191,6 +200,7 @@ export const NextRoadLanePlan = proto3.makeMessageType(
 
 /**
  * Road，用于描述道路
+ * Road, describing roads
  *
  * @generated from message city.map.v2.Road
  */
@@ -206,8 +216,11 @@ export const Road = proto3.makeMessageType(
 
 /**
  * 车道组，用于描述路口内的车道组合
+ * Lane group, describing the combination of lanes within an intersection
  * 具有相同入口道路和出口道路的车道组成一个车道组
+ * Lanes with the same entrance and exit roads form a lane group
  * 车道组是信控处理、路口通行的基本单元
+ * Lane group is the basic unit for signal control and traffic in the junction.
  *
  * @generated from message city.map.v2.JunctionLaneGroup
  */
@@ -225,6 +238,7 @@ export const JunctionLaneGroup = proto3.makeMessageType(
 
 /**
  * Junction，用于描述路口
+ * Junction, describing road intersections
  *
  * @generated from message city.map.v2.Junction
  */
@@ -239,6 +253,7 @@ export const Junction = proto3.makeMessageType(
 
 /**
  * Aoi，用于描述地图上的区域
+ * Aoi, describing a region on the map
  *
  * @generated from message city.map.v2.Aoi
  */
@@ -261,6 +276,7 @@ export const Aoi = proto3.makeMessageType(
 
 /**
  * Poi，用于描述地图上的兴趣点
+ * Poi, describing points of interest on the map
  *
  * @generated from message city.map.v2.Poi
  */
@@ -279,6 +295,7 @@ export const Poi = proto3.makeMessageType(
 
 /**
  * 地图，对应一个地图pb文件或一个地图mongodb collection
+ * Map, corresponding to a map pb file or a map MongoDB collection
  *
  * @generated from message city.map.v2.Map
  */

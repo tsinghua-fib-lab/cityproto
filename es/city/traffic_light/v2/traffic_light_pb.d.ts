@@ -8,12 +8,14 @@ import { Message, proto3 } from "@bufbuild/protobuf";
 
 /**
  * 交通灯的状态
+ * traffic light state
  *
  * @generated from enum city.traffic_light.v2.LightState
  */
 export declare enum LightState {
   /**
    * 未指定
+   * unspecified
    *
    * @generated from enum value: LIGHT_STATE_UNSPECIFIED = 0;
    */
@@ -21,6 +23,7 @@ export declare enum LightState {
 
   /**
    * 红灯
+   * red light
    *
    * @generated from enum value: LIGHT_STATE_RED = 1;
    */
@@ -28,6 +31,7 @@ export declare enum LightState {
 
   /**
    * 绿灯
+   * green light
    *
    * @generated from enum value: LIGHT_STATE_GREEN = 2;
    */
@@ -35,6 +39,7 @@ export declare enum LightState {
 
   /**
    * 黄灯
+   * yellow light
    *
    * @generated from enum value: LIGHT_STATE_YELLOW = 3;
    */
@@ -43,12 +48,14 @@ export declare enum LightState {
 
 /**
  * 交通灯相位
+ * traffic light phase
  *
  * @generated from message city.traffic_light.v2.Phase
  */
 export declare class Phase extends Message<Phase> {
   /**
    * 相位持续时间，单位秒
+   * Phase duration in seconds
    *
    * @generated from field: double duration = 1;
    */
@@ -56,6 +63,7 @@ export declare class Phase extends Message<Phase> {
 
   /**
    * 描述该相位下每个lane的灯控情况，lane与Junction.lane_ids一一对应
+   * The lighting control situation of each lane in this phase, and the lane corresponds one-to-one with junction.lane_ids
    *
    * @generated from field: repeated city.traffic_light.v2.LightState states = 2;
    */
@@ -78,12 +86,14 @@ export declare class Phase extends Message<Phase> {
 
 /**
  * 交通灯
+ * traffic light
  *
  * @generated from message city.traffic_light.v2.TrafficLight
  */
 export declare class TrafficLight extends Message<TrafficLight> {
   /**
    * 所在路口id
+   * ID of the junction where the traffic light is at
    *
    * @generated from field: int32 junction_id = 1;
    */
@@ -91,6 +101,7 @@ export declare class TrafficLight extends Message<TrafficLight> {
 
   /**
    * 相位循环的一个循环周期
+   * One cycle of phase cycling
    *
    * @generated from field: repeated city.traffic_light.v2.Phase phases = 2;
    */
@@ -113,6 +124,7 @@ export declare class TrafficLight extends Message<TrafficLight> {
 
 /**
  * 信控集合，对应一个信控pb文件或一个信控mongodb collection
+ * Traffic light set, corresponding to one traffic light PB file or one traffic light mongodb collection
  *
  * @generated from message city.traffic_light.v2.TrafficLights
  */

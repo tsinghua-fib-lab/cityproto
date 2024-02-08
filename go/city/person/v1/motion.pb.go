@@ -22,22 +22,30 @@ const (
 )
 
 // Person（人）的运行时状态
+// Person's runtime state
 type Status int32
 
 const (
 	// 未指定
+	// unspecified
 	Status_STATUS_UNSPECIFIED Status = 0
 	// 没有移动行为
+	// no mobility behaviors
 	Status_STATUS_SLEEP Status = 1
 	// 开车
+	// driving
 	Status_STATUS_DRIVING Status = 2
 	// 步行
+	// walking
 	Status_STATUS_WALKING Status = 3
 	// 室内行人
+	// indoor pedestrian
 	Status_STATUS_CROWD Status = 4
 	// 乘客
+	// vehicle passenger
 	Status_STATUS_PASSENGER Status = 5
 	// 等待路径规划
+	// wait for path routing
 	Status_STATUS_WAIT_ROUTE Status = 6
 )
 
@@ -91,6 +99,7 @@ func (Status) EnumDescriptor() ([]byte, []int) {
 }
 
 // Person（人）的运动状态
+// Person's motion state
 type PersonMotion struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -99,15 +108,19 @@ type PersonMotion struct {
 	// ID
 	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
 	// 状态
-	Status Status `protobuf:"varint,2,opt,name=status,proto3,enum=city.person.v1.Status" json:"status,omitempty" yaml:"status" bson:"status" db:"status"`
+	// status
+	Status Status `protobuf:"varint,2,opt,name=status,proto3,enum=city.person.v1.Status" json:"status,omitempty" db:"status" yaml:"status" bson:"status"`
 	// 位置（包含逻辑位置、XY位置、经纬度位置）
+	// Position (including logical position, XY position, longitude and latitude position)
 	Position *v2.Position `protobuf:"bytes,3,opt,name=position,proto3" json:"position,omitempty" yaml:"position" bson:"position" db:"position"`
-	// 速度
+	// speed
 	V float64 `protobuf:"fixed64,4,opt,name=v,proto3" json:"v,omitempty" yaml:"v" bson:"v" db:"v"`
 	// 方向角（atan2计算得到的弧度）
+	// Direction angle (radians calculated by atan2)
 	Direction float64 `protobuf:"fixed64,5,opt,name=direction,proto3" json:"direction,omitempty" yaml:"direction" bson:"direction" db:"direction"`
 	// 活动描述
-	Activity string `protobuf:"bytes,6,opt,name=activity,proto3" json:"activity,omitempty" yaml:"activity" bson:"activity" db:"activity"`
+	// activity descriptions
+	Activity string `protobuf:"bytes,6,opt,name=activity,proto3" json:"activity,omitempty" bson:"activity" db:"activity" yaml:"activity"`
 }
 
 func (x *PersonMotion) Reset() {

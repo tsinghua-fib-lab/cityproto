@@ -8,12 +8,14 @@ import { Message, proto3 } from "@bufbuild/protobuf";
 
 /**
  * WGS84经纬度坐标
+ * WGS84 longitute and latitude coordinates
  *
  * @generated from message city.geo.v2.LongLatPosition
  */
 export declare class LongLatPosition extends Message<LongLatPosition> {
   /**
    * 经度
+   * longitude
    *
    * @generated from field: double longitude = 1;
    */
@@ -21,6 +23,7 @@ export declare class LongLatPosition extends Message<LongLatPosition> {
 
   /**
    * 纬度
+   * latitude
    *
    * @generated from field: double latitude = 2;
    */
@@ -43,12 +46,14 @@ export declare class LongLatPosition extends Message<LongLatPosition> {
 
 /**
  * XY坐标
+ * XY coordinates
  *
  * @generated from message city.geo.v2.XYPosition
  */
 export declare class XYPosition extends Message<XYPosition> {
   /**
    * x坐标，单位米，对应经度
+   * x coordinate, in meters, corresponding to longitude
    *
    * @generated from field: double x = 1;
    */
@@ -56,6 +61,7 @@ export declare class XYPosition extends Message<XYPosition> {
 
   /**
    * y坐标，单位米，对应纬度
+   * y coordinate, in meters, corresponding to latitude
    *
    * @generated from field: double y = 2;
    */
@@ -78,12 +84,14 @@ export declare class XYPosition extends Message<XYPosition> {
 
 /**
  * 地图坐标（车道+距离s）
+ * Map coordinates (lane ID + distance s)
  *
  * @generated from message city.geo.v2.LanePosition
  */
 export declare class LanePosition extends Message<LanePosition> {
   /**
    * 车道id
+   * Lane ID
    *
    * @generated from field: int32 lane_id = 1;
    */
@@ -91,6 +99,7 @@ export declare class LanePosition extends Message<LanePosition> {
 
   /**
    * s是车道上的点到车道起点的距离
+   * s is the distance from the point on the lane to the starting point of the lane
    *
    * @generated from field: double s = 2;
    */
@@ -113,6 +122,7 @@ export declare class LanePosition extends Message<LanePosition> {
 
 /**
  * 地图坐标（AOI）
+ * Map coordinates (AOI)
  *
  * @generated from message city.geo.v2.AoiPosition
  */
@@ -126,6 +136,7 @@ export declare class AoiPosition extends Message<AoiPosition> {
 
   /**
    * POI ID，需要是aoi_id的子poi，否则该值无效
+   * POI ID, needs to be a sub-poi of aoi_id, otherwise the value is invalid
    *
    * @generated from field: optional int32 poi_id = 2;
    */
@@ -148,12 +159,14 @@ export declare class AoiPosition extends Message<AoiPosition> {
 
 /**
  * 坐标，如果多种坐标同时存在，两两之间必须满足映射关系，同时逻辑坐标是必须提供的
+ * Coordinates, if multiple coordinates exist at the same time, the mapping relationship between them must be satisfied, and logical coordinates must be provided.
  *
  * @generated from message city.geo.v2.Position
  */
 export declare class Position extends Message<Position> {
   /**
    * 地图坐标AOI（必须提供其中之一）
+   * Map coordinates AOI (one of these must be provided)
    *
    * @generated from field: optional city.geo.v2.LanePosition lane_position = 1;
    */
@@ -161,6 +174,7 @@ export declare class Position extends Message<Position> {
 
   /**
    * 地图坐标Lane+S（必须提供其中之一）
+   * Map coordinates Lane+S (one of these must be provided)
    *
    * @generated from field: optional city.geo.v2.AoiPosition aoi_position = 2;
    */
@@ -168,6 +182,7 @@ export declare class Position extends Message<Position> {
 
   /**
    * WGS84经纬度坐标
+   * WGS84 longitute and latitude coordinates
    *
    * @generated from field: optional city.geo.v2.LongLatPosition longlat_position = 3;
    */
@@ -175,6 +190,7 @@ export declare class Position extends Message<Position> {
 
   /**
    * XY坐标
+   * XY coordinates
    *
    * @generated from field: optional city.geo.v2.XYPosition xy_position = 4;
    */
@@ -197,12 +213,14 @@ export declare class Position extends Message<Position> {
 
 /**
  * 经纬度矩形区域
+ * latitude and longitude rectangular area
  *
  * @generated from message city.geo.v2.LongLatBBox
  */
 export declare class LongLatBBox extends Message<LongLatBBox> {
   /**
    * 最小经度
+   * minimum longitude
    *
    * @generated from field: double min_longitude = 1;
    */
@@ -210,6 +228,7 @@ export declare class LongLatBBox extends Message<LongLatBBox> {
 
   /**
    * 最小纬度
+   * minimum latitude
    *
    * @generated from field: double min_latitude = 2;
    */
@@ -217,6 +236,7 @@ export declare class LongLatBBox extends Message<LongLatBBox> {
 
   /**
    * 最大经度
+   * maximu longitude
    *
    * @generated from field: double max_longitude = 3;
    */
@@ -224,6 +244,7 @@ export declare class LongLatBBox extends Message<LongLatBBox> {
 
   /**
    * 最大纬度
+   * minimum longitude
    *
    * @generated from field: double max_latitude = 4;
    */

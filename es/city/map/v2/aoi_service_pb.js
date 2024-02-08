@@ -8,6 +8,7 @@ import { PersonMotion } from "../../person/v1/motion_pb.js";
 
 /**
  * AOI状态
+ * AOI state
  *
  * @generated from message city.map.v2.AoiState
  */
@@ -21,6 +22,7 @@ export const AoiState = proto3.makeMessageType(
 
 /**
  * 获取AOI信息请求
+ * Request for getting AOI information
  *
  * @generated from message city.map.v2.GetAoiRequest
  */
@@ -33,6 +35,7 @@ export const GetAoiRequest = proto3.makeMessageType(
 
 /**
  * 获取AOI信息响应
+ * Response for getting AOI information
  *
  * @generated from message city.map.v2.GetAoiResponse
  */

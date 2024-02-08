@@ -9,6 +9,7 @@ import { LaneState } from "./lane_service_pb.js";
 
 /**
  * 道路拥堵情况
+ * road congestion level
  *
  * @generated from enum city.map.v2.RoadLevel
  */
@@ -26,6 +27,9 @@ export const RoadLevel = proto3.makeEnum(
 );
 
 /**
+ * 道路中断原因
+ * road interruption reason
+ *
  * @generated from enum city.map.v2.InterruptionReason
  */
 export const InterruptionReason = proto3.makeEnum(
@@ -40,6 +44,7 @@ export const InterruptionReason = proto3.makeEnum(
 
 /**
  * 查询道路信息请求
+ * Request for getting road information
  *
  * @generated from message city.map.v2.GetRoadRequest
  */
@@ -54,6 +59,7 @@ export const GetRoadRequest = proto3.makeMessageType(
 
 /**
  * 查询道路信息响应
+ * Response of getting road information
  *
  * @generated from message city.map.v2.GetRoadResponse
  */
@@ -115,6 +121,7 @@ export const GetEventsResponse = proto3.makeMessageType(
 
 /**
  * 道路状态
+ * road state
  *
  * @generated from message city.map.v2.RoadState
  */

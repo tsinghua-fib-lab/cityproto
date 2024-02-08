@@ -14,6 +14,7 @@ export const RoadService = {
   methods: {
     /**
      * 查询道路信息
+     * Get road information
      *
      * @generated from rpc city.map.v2.RoadService.GetRoad
      */

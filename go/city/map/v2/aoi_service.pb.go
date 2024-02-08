@@ -22,6 +22,7 @@ const (
 )
 
 // AOI状态
+// AOI state
 type AoiState struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -30,6 +31,7 @@ type AoiState struct {
 	// AOI ID
 	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
 	// AOI内的人
+	// Persons in AOI
 	Persons []*v1.PersonMotion `protobuf:"bytes,2,rep,name=persons,proto3" json:"persons,omitempty" yaml:"persons" bson:"persons" db:"persons"`
 }
 
@@ -80,12 +82,14 @@ func (x *AoiState) GetPersons() []*v1.PersonMotion {
 }
 
 // 获取AOI信息请求
+// Request for getting AOI information
 type GetAoiRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
 	// 指定AOI ID列表，如果为空，则返回所有AOI信息
+	// List of targeted AOI IDs, if empty, returns all information of AOIs
 	AoiIds []int32 `protobuf:"varint,1,rep,packed,name=aoi_ids,json=aoiIds,proto3" json:"aoi_ids,omitempty" yaml:"aoi_ids" bson:"aoi_ids" db:"aoi_ids"`
 }
 
@@ -129,12 +133,14 @@ func (x *GetAoiRequest) GetAoiIds() []int32 {
 }
 
 // 获取AOI信息响应
+// Response for getting AOI information
 type GetAoiResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
 	// AOI信息列表
+	// Lis of AOIs information
 	States []*AoiState `protobuf:"bytes,1,rep,name=states,proto3" json:"states,omitempty" yaml:"states" bson:"states" db:"states"`
 }
 

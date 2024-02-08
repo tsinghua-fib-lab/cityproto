@@ -14,6 +14,7 @@ export const SocialService = {
   methods: {
     /**
      * 发送消息
+     * Send message
      *
      * @generated from rpc city.social.v1.SocialService.Send
      */
@@ -25,6 +26,7 @@ export const SocialService = {
     },
     /**
      * 接收消息，并清空该用户的消息队列
+     * Receive messages and clear the user's message queue
      *
      * @generated from rpc city.social.v1.SocialService.Receive
      */

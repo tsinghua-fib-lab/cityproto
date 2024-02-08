@@ -23,18 +23,24 @@ const (
 )
 
 // 出行偏好
+// Preferred trip travel mode
 type TripMode int32
 
 const (
 	// 未指定出行方式
+	// unspecified
 	TripMode_TRIP_MODE_UNSPECIFIED TripMode = 0
 	// 仅步行
+	// walking only
 	TripMode_TRIP_MODE_WALK_ONLY TripMode = 1
 	// 仅开车
+	// driving only
 	TripMode_TRIP_MODE_DRIVE_ONLY TripMode = 2
 	// 乘坐公交车（含站点间步行换乘）
+	// taking bus with walking to transit bus line between stations
 	TripMode_TRIP_MODE_BUS_WALK TripMode = 4
 	// 当有自行车时选择骑自行车，否则步行
+	// Riding bikes if avaible, otherwise walking
 	TripMode_TRIP_MODE_BIKE_WALK TripMode = 5
 )
 
@@ -84,24 +90,32 @@ func (TripMode) EnumDescriptor() ([]byte, []int) {
 }
 
 // 出行
+// Trip
 type Trip struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
 	// 出行方式
+	// trip mode
 	Mode TripMode `protobuf:"varint,1,opt,name=mode,proto3,enum=city.trip.v2.TripMode" json:"mode,omitempty" yaml:"mode" bson:"mode" db:"mode"`
 	// 目的地
+	// destination
 	End *v2.Position `protobuf:"bytes,2,opt,name=end,proto3" json:"end,omitempty" yaml:"end" bson:"end" db:"end"`
 	// 期望的出发时间（单位: 秒）
+	// Expected departure time (in seconds)
 	DepartureTime *float64 `protobuf:"fixed64,3,opt,name=departure_time,json=departureTime,proto3,oneof" json:"departure_time,omitempty" yaml:"departure_time" bson:"departure_time" db:"departure_time"`
 	// 期望的等待时间（单位：秒），如果departure_time为空则wait_time默认为0
-	WaitTime *float64 `protobuf:"fixed64,4,opt,name=wait_time,json=waitTime,proto3,oneof" json:"wait_time,omitempty" bson:"wait_time" db:"wait_time" yaml:"wait_time"`
+	// The expected waiting time (in seconds), if departure_time is empty, wait_time defaults to 0
+	WaitTime *float64 `protobuf:"fixed64,4,opt,name=wait_time,json=waitTime,proto3,oneof" json:"wait_time,omitempty" yaml:"wait_time" bson:"wait_time" db:"wait_time"`
 	// 期望的到达时间（单位: 秒）
+	// Expected arrival time (in seconds)
 	ArrivalTime *float64 `protobuf:"fixed64,5,opt,name=arrival_time,json=arrivalTime,proto3,oneof" json:"arrival_time,omitempty" yaml:"arrival_time" bson:"arrival_time" db:"arrival_time"`
 	// 本次出行目的地的活动名
-	Activity *string `protobuf:"bytes,6,opt,name=activity,proto3,oneof" json:"activity,omitempty" yaml:"activity" bson:"activity" db:"activity"`
+	// The activity name of the destination for this trip
+	Activity *string `protobuf:"bytes,6,opt,name=activity,proto3,oneof" json:"activity,omitempty" bson:"activity" db:"activity" yaml:"activity"`
 	// 预计算的导航结果
+	// Pre calculated routing results
 	Routes []*v21.Journey `protobuf:"bytes,7,rep,name=routes,proto3" json:"routes,omitempty" yaml:"routes" bson:"routes" db:"routes"`
 }
 
@@ -187,34 +201,53 @@ func (x *Trip) GetRoutes() []*v21.Journey {
 }
 
 // 时刻表
+// Schedule
 // 关于出发时间的说明如下：
+// The explanation about the departure time is as follows:
 //  1. Schedule的开始时刻是 departure_time 或者 参考时刻+wait_time，
+//  1. The start time of the Schedule is either departure_time or reference time+wait_time,
 //     参考时刻定义为上一Schedule的结束时刻(即它最后一个Trip的结束时刻)，
+//     The reference time is defined as the end time of the previous Schedule (i.e. the end time of its last Trip),
 //     或者当它为第一个Schedule时定义为Person更新Schedule后的首次Update
+//     Alternatively, when it is the first Schedule, it can be defined as the first Update time after Person updates the Schedule
 //     时刻(当有准确时间要求时建议直接指定departure_time)
+//     (it is recommended to specify departuretime directly when there is an accurate time requirement)
 //  2. Trip的开始时刻是 departure_time 或者 参考时刻+wait_time，参考
+//  2. The start time of the Trip is either departure_time or reference time+wait_time,
 //     时刻定义为上一Trip的结束时刻，或者当它为第一个Trip时定义为所属的
+//     The reference time is defined as the end time of the previous Trip, or when it is the first Trip,
 //     Schedule的开始时刻
+//     it is defined as the start time of the Schedule to which it belongs
 //  3. Person的实际运行时刻取决于Trip的开始时刻，例如它的首次运行是第一
+//  3. The actual running time of a Person depends on the start time of the Trip,
 //     个Schedule中第一个Trip的开始时刻
+//     for example, its first run is the start time of the first Trip in the first Schedule
 //
 // FAQ
 // Q1: 同时指定Schedule和第一个Trip的departure_time会怎样？
+// Q1: What would happen if both the Schedule and the departuretime of the first Trip were specified simultaneously?
 // A1: 参照(2)，只看Trip的departure_time
+// A1: Referring to (2), only depend on the departuretime of Trip
 // Q2: Schedule和第一个Trip同时指定wait_time=10会怎样？
+// Q2: What would happen if both the Schedule and the first Trip were specified with wait_time=10 at the same time?
 // A2: 参照(2)，等待时间为10+10=20
+// A2: Referring to (2), the waiting time is 10+10=20
 type Schedule struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
 	// 出行列表
-	Trips []*Trip `protobuf:"bytes,1,rep,name=trips,proto3" json:"trips,omitempty" yaml:"trips" bson:"trips" db:"trips"`
+	// List of trips
+	Trips []*Trip `protobuf:"bytes,1,rep,name=trips,proto3" json:"trips,omitempty" db:"trips" yaml:"trips" bson:"trips"`
 	// trips的执行次数，0表示无限循环，大于0表示执行几次
-	LoopCount int32 `protobuf:"varint,2,opt,name=loop_count,json=loopCount,proto3" json:"loop_count,omitempty" yaml:"loop_count" bson:"loop_count" db:"loop_count"`
+	// The number of times trips are executed, where 0 represents infinite loops and greater than 0 represents how many times they are executed
+	LoopCount int32 `protobuf:"varint,2,opt,name=loop_count,json=loopCount,proto3" json:"loop_count,omitempty" bson:"loop_count" db:"loop_count" yaml:"loop_count"`
 	// 期望的出发时间（单位: 秒）
+	// Expected departure time (in seconds)
 	DepartureTime *float64 `protobuf:"fixed64,3,opt,name=departure_time,json=departureTime,proto3,oneof" json:"departure_time,omitempty" yaml:"departure_time" bson:"departure_time" db:"departure_time"`
 	// 期望的等待时间（单位：秒），如果departure_time为空则wait_time默认为0
+	// Expected waiting time (in seconds), if departure_time is empty, wait_time defaults to 0
 	WaitTime *float64 `protobuf:"fixed64,4,opt,name=wait_time,json=waitTime,proto3,oneof" json:"wait_time,omitempty" yaml:"wait_time" bson:"wait_time" db:"wait_time"`
 }
 

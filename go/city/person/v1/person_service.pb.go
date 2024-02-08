@@ -23,6 +23,7 @@ const (
 )
 
 // 获取person信息请求
+// Request for getting person information
 type GetPersonRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -72,14 +73,17 @@ func (x *GetPersonRequest) GetPersonId() int32 {
 }
 
 // 获取person信息响应
+// Response of getting person information
 type GetPersonResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
 	// person信息
+	// person information
 	Base *Person `protobuf:"bytes,1,opt,name=base,proto3" json:"base,omitempty" yaml:"base" bson:"base" db:"base"`
 	// person运动信息
+	// person motion information
 	Motion *PersonMotion `protobuf:"bytes,2,opt,name=motion,proto3" json:"motion,omitempty" yaml:"motion" bson:"motion" db:"motion"`
 }
 
@@ -130,12 +134,14 @@ func (x *GetPersonResponse) GetMotion() *PersonMotion {
 }
 
 // 新增person请求
+// Request for adding a new person
 type AddPersonRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
 	// 约定：person中不设置id
+	// Convention: personid is not set here
 	Person *Person `protobuf:"bytes,1,opt,name=person,proto3" json:"person,omitempty" yaml:"person" bson:"person" db:"person"`
 }
 
@@ -179,12 +185,14 @@ func (x *AddPersonRequest) GetPerson() *Person {
 }
 
 // 新增person响应
+// Response of adding a new person
 type AddPersonResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
 	// 新增的person分配得到的ID
+	// The ID assigned to the newly added person
 	PersonId int32 `protobuf:"varint,1,opt,name=person_id,json=personId,proto3" json:"person_id,omitempty" yaml:"person_id" bson:"person_id" db:"person_id"`
 }
 
@@ -228,14 +236,16 @@ func (x *AddPersonResponse) GetPersonId() int32 {
 }
 
 // 修改person的schedule请求
+// Request for setting person schedule
 type SetScheduleRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
 	// person id
-	PersonId int32 `protobuf:"varint,1,opt,name=person_id,json=personId,proto3" json:"person_id,omitempty" yaml:"person_id" bson:"person_id" db:"person_id"`
+	PersonId int32 `protobuf:"varint,1,opt,name=person_id,json=personId,proto3" json:"person_id,omitempty" db:"person_id" yaml:"person_id" bson:"person_id"`
 	// 新的schedule（覆盖原有的schedule）
+	// New schedule (overwrites the original schedule)
 	Schedules []*v2.Schedule `protobuf:"bytes,2,rep,name=schedules,proto3" json:"schedules,omitempty" bson:"schedules" db:"schedules" yaml:"schedules"`
 }
 
@@ -286,6 +296,7 @@ func (x *SetScheduleRequest) GetSchedules() []*v2.Schedule {
 }
 
 // 修改person的schedule响应
+// Response of setting person schedule
 type SetScheduleResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -325,15 +336,18 @@ func (*SetScheduleResponse) Descriptor() ([]byte, []int) {
 }
 
 // 获取特定区域内的person请求
+// Request for getting persons in region
 type GetPersonByLongLatBBoxRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
 	// 经纬度范围
-	Bbox *v21.LongLatBBox `protobuf:"bytes,1,opt,name=bbox,proto3" json:"bbox,omitempty" yaml:"bbox" bson:"bbox" db:"bbox"`
+	// longitude and latitude bounding box
+	Bbox *v21.LongLatBBox `protobuf:"bytes,1,opt,name=bbox,proto3" json:"bbox,omitempty" bson:"bbox" db:"bbox" yaml:"bbox"`
 	// 过滤人的状态（状态为列表内的值的人不返回）
-	ExcludeStatuses []Status `protobuf:"varint,2,rep,packed,name=exclude_statuses,json=excludeStatuses,proto3,enum=city.person.v1.Status" json:"exclude_statuses,omitempty" yaml:"exclude_statuses" bson:"exclude_statuses" db:"exclude_statuses"`
+	// Filter person's status (person whose status is in the list will not be returned)
+	ExcludeStatuses []Status `protobuf:"varint,2,rep,packed,name=exclude_statuses,json=excludeStatuses,proto3,enum=city.person.v1.Status" json:"exclude_statuses,omitempty" db:"exclude_statuses" yaml:"exclude_statuses" bson:"exclude_statuses"`
 }
 
 func (x *GetPersonByLongLatBBoxRequest) Reset() {
@@ -383,13 +397,15 @@ func (x *GetPersonByLongLatBBoxRequest) GetExcludeStatuses() []Status {
 }
 
 // 获取特定区域内的person响应
+// Response of getting persons in region
 type GetPersonByLongLatBBoxResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
 	// 区域内的person的运动信息
-	Motions []*PersonMotion `protobuf:"bytes,1,rep,name=motions,proto3" json:"motions,omitempty" bson:"motions" db:"motions" yaml:"motions"`
+	// motion status of persons in the region
+	Motions []*PersonMotion `protobuf:"bytes,1,rep,name=motions,proto3" json:"motions,omitempty" yaml:"motions" bson:"motions" db:"motions"`
 }
 
 func (x *GetPersonByLongLatBBoxResponse) Reset() {

@@ -9,12 +9,14 @@ import type { TrafficLight } from "./traffic_light_pb.js";
 
 /**
  * 获取路口的红绿灯信息请求
+ * Reqeust for getting traffic light information
  *
  * @generated from message city.traffic_light.v2.GetTrafficLightRequest
  */
 export declare class GetTrafficLightRequest extends Message<GetTrafficLightRequest> {
   /**
    * 信号等相关的接口精确到junction
+   * The interfaces related to signals are precise to junction
    *
    * @generated from field: int32 junction_id = 1;
    */
@@ -37,12 +39,14 @@ export declare class GetTrafficLightRequest extends Message<GetTrafficLightReque
 
 /**
  * 获取路口的红绿灯信息响应
+ * Response of getting traffic light information
  *
  * @generated from message city.traffic_light.v2.GetTrafficLightResponse
  */
 export declare class GetTrafficLightResponse extends Message<GetTrafficLightResponse> {
   /**
    * 当前路口处的红绿灯
+   * The traffic light at the junction
    *
    * @generated from field: city.traffic_light.v2.TrafficLight traffic_light = 1;
    */
@@ -50,6 +54,7 @@ export declare class GetTrafficLightResponse extends Message<GetTrafficLightResp
 
   /**
    * 表示当前路口处的红绿灯处于哪一个相位
+   * Which phase the traffic light is currently in
    *
    * @generated from field: int32 phase_index = 2;
    */
@@ -57,6 +62,7 @@ export declare class GetTrafficLightResponse extends Message<GetTrafficLightResp
 
   /**
    * 当前相位的剩余时间
+   * The remaining time of the current phase
    *
    * @generated from field: double time_remaining = 3;
    */
@@ -79,12 +85,14 @@ export declare class GetTrafficLightResponse extends Message<GetTrafficLightResp
 
 /**
  * 设置路口的红绿灯信息请求
+ * Request for setting traffic light information
  *
  * @generated from message city.traffic_light.v2.SetTrafficLightRequest
  */
 export declare class SetTrafficLightRequest extends Message<SetTrafficLightRequest> {
   /**
    * 需要改变的红绿灯（含路口编号）
+   * The target traffic light (including junction ID)
    *
    * @generated from field: city.traffic_light.v2.TrafficLight traffic_light = 1;
    */
@@ -92,6 +100,7 @@ export declare class SetTrafficLightRequest extends Message<SetTrafficLightReque
 
   /**
    * 指定当前路口处的红绿灯的相位
+   * Specify the phase of the traffic light
    *
    * @generated from field: int32 phase_index = 2;
    */
@@ -99,6 +108,7 @@ export declare class SetTrafficLightRequest extends Message<SetTrafficLightReque
 
   /**
    * 当前相位的剩余时间
+   * The remaining time of the current phase
    *
    * @generated from field: double time_remaining = 3;
    */
@@ -121,6 +131,7 @@ export declare class SetTrafficLightRequest extends Message<SetTrafficLightReque
 
 /**
  * 设置路口的红绿灯信息响应
+ * Response of setting traffic light information
  *
  * @generated from message city.traffic_light.v2.SetTrafficLightResponse
  */
@@ -142,12 +153,14 @@ export declare class SetTrafficLightResponse extends Message<SetTrafficLightResp
 
 /**
  * 设置路口的红绿灯相位请求
+ * Request for setting traffic light phase
  *
  * @generated from message city.traffic_light.v2.SetTrafficLightPhaseRequest
  */
 export declare class SetTrafficLightPhaseRequest extends Message<SetTrafficLightPhaseRequest> {
   /**
    * 需要改变相位的路口编号
+   * The target junction ID
    *
    * @generated from field: int32 junction_id = 1;
    */
@@ -155,6 +168,7 @@ export declare class SetTrafficLightPhaseRequest extends Message<SetTrafficLight
 
   /**
    * 指定当前路口红绿灯的相位
+   * Specify the traffic light phase
    *
    * @generated from field: int32 phase_index = 2;
    */
@@ -162,6 +176,7 @@ export declare class SetTrafficLightPhaseRequest extends Message<SetTrafficLight
 
   /**
    * 当前相位的剩余时间
+   * The remaining time of the current phase
    *
    * @generated from field: double time_remaining = 3;
    */
@@ -184,6 +199,7 @@ export declare class SetTrafficLightPhaseRequest extends Message<SetTrafficLight
 
 /**
  * 设置路口的红绿灯相位响应
+ * Response of setting traffic light phase
  *
  * @generated from message city.traffic_light.v2.SetTrafficLightPhaseResponse
  */
@@ -205,12 +221,14 @@ export declare class SetTrafficLightPhaseResponse extends Message<SetTrafficLigh
 
 /**
  * 设置路口的红绿灯状态请求
+ * Request for setting traffic light status
  *
  * @generated from message city.traffic_light.v2.SetTrafficLightStatusRequest
  */
 export declare class SetTrafficLightStatusRequest extends Message<SetTrafficLightStatusRequest> {
   /**
    * 需要改变状态的路口编号
+   * The target junction ID
    *
    * @generated from field: int32 junction_id = 1;
    */
@@ -218,6 +236,7 @@ export declare class SetTrafficLightStatusRequest extends Message<SetTrafficLigh
 
   /**
    * 当前路口红绿灯状态，true为通，false为断
+   * The current traffic light status at the junction, true is on, false is off
    *
    * @generated from field: bool ok = 2;
    */
@@ -240,6 +259,7 @@ export declare class SetTrafficLightStatusRequest extends Message<SetTrafficLigh
 
 /**
  * 设置路口的红绿灯状态响应
+ * Response of setting traffic light status
  *
  * @generated from message city.traffic_light.v2.SetTrafficLightStatusResponse
  */

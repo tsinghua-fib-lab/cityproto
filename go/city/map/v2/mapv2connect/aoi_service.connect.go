@@ -46,6 +46,7 @@ var (
 // AoiServiceClient is a client for the city.map.v2.AoiService service.
 type AoiServiceClient interface {
 	// 获取AOI信息
+	// Get AOI information
 	GetAoi(context.Context, *connect.Request[v2.GetAoiRequest]) (*connect.Response[v2.GetAoiResponse], error)
 }
 
@@ -81,6 +82,7 @@ func (c *aoiServiceClient) GetAoi(ctx context.Context, req *connect.Request[v2.G
 // AoiServiceHandler is an implementation of the city.map.v2.AoiService service.
 type AoiServiceHandler interface {
 	// 获取AOI信息
+	// Get AOI information
 	GetAoi(context.Context, *connect.Request[v2.GetAoiRequest]) (*connect.Response[v2.GetAoiResponse], error)
 }
 
