@@ -110,7 +110,7 @@ type RepairStation struct {
 	unknownFields protoimpl.UnknownFields
 
 	AoiId    int32               `protobuf:"varint,1,opt,name=aoi_id,json=aoiId,proto3" json:"aoi_id,omitempty" bson:"aoi_id" db:"aoi_id" yaml:"aoi_id"`
-	Position *v2.LongLatPosition `protobuf:"bytes,2,opt,name=position,proto3" json:"position,omitempty" db:"position" yaml:"position" bson:"position"`
+	Position *v2.LongLatPosition `protobuf:"bytes,2,opt,name=position,proto3" json:"position,omitempty" yaml:"position" bson:"position" db:"position"`
 }
 
 func (x *RepairStation) Reset() {
@@ -165,7 +165,7 @@ type Facility struct {
 	unknownFields protoimpl.UnknownFields
 
 	Id       int32               `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
-	Position *v2.LongLatPosition `protobuf:"bytes,2,opt,name=position,proto3" json:"position,omitempty" bson:"position" db:"position" yaml:"position"`
+	Position *v2.LongLatPosition `protobuf:"bytes,2,opt,name=position,proto3" json:"position,omitempty" yaml:"position" bson:"position" db:"position"`
 	Type     FacilityType        `protobuf:"varint,3,opt,name=type,proto3,enum=city.elec.input.v1.FacilityType" json:"type,omitempty" yaml:"type" bson:"type" db:"type"`
 	// 当前节点的邻居节点的id
 	Relation []int32 `protobuf:"varint,4,rep,packed,name=relation,proto3" json:"relation,omitempty" yaml:"relation" bson:"relation" db:"relation"`
@@ -265,7 +265,7 @@ type Facilities struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Facilities     []*Facility      `protobuf:"bytes,1,rep,name=facilities,proto3" json:"facilities,omitempty" yaml:"facilities" bson:"facilities" db:"facilities"`
+	Facilities     []*Facility      `protobuf:"bytes,1,rep,name=facilities,proto3" json:"facilities,omitempty" bson:"facilities" db:"facilities" yaml:"facilities"`
 	RepairStations []*RepairStation `protobuf:"bytes,2,rep,name=repair_stations,json=repairStations,proto3" json:"repair_stations,omitempty" yaml:"repair_stations" bson:"repair_stations" db:"repair_stations"`
 }
 

@@ -44,7 +44,7 @@ message GetPersonResponse {
 // Request for adding a new person
 message AddPersonRequest {
   // 约定：person中不设置id
-  // Convention: personid is not set here 
+  // Convention: personid is not set here
   Person person = 1;
 }
 

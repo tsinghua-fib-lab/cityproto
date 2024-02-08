@@ -11,7 +11,7 @@ service RoutingService {
   // Get routing path
   rpc GetRoute(GetRouteRequest) returns (GetRouteResponse);
   // 设置行车导航道路通行成本
-  // Set traveling cost of driving routing 
+  // Set traveling cost of driving routing
   rpc SetDrivingCosts(SetDrivingCostsRequest) returns (SetDrivingCostsResponse);
   // 获取行车导航道路通行成本
   // Get traveling cost of driving routing

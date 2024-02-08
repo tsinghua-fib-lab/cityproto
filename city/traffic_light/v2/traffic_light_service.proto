@@ -81,7 +81,7 @@ message SetTrafficLightPhaseResponse {}
 // Request for setting traffic light status
 message SetTrafficLightStatusRequest {
   // 需要改变状态的路口编号
-  // The target junction ID 
+  // The target junction ID
   int32 junction_id = 1;
   // 当前路口红绿灯状态，true为通，false为断
   // The current traffic light status at the junction, true is on, false is off

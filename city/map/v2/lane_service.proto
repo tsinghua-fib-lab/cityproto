@@ -29,7 +29,7 @@ message SetLaneMaxVRequest {
 }
 
 // 设置Lane的最大速度（限速）响应
-// Response of setting lane's maximum speed (speed limit) 
+// Response of setting lane's maximum speed (speed limit)
 message SetLaneMaxVResponse {}
 
 // 获取Lane的信息请求

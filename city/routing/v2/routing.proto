@@ -128,7 +128,7 @@ message BusLine {
   // bus line ID
   int32 line_id = 1;
   // 停靠站点AOI ID列表
-  // List of the AOI IDs of bus stations 
+  // List of the AOI IDs of bus stations
   repeated int32 stops = 2;
   repeated double distances = 3;
   int32 interval = 4;

@@ -8,8 +8,13 @@ enabled = true
 
 [project]
 name = "pycityproto"
+authors = [
+    {name = "Jun Zhang", email = "zhangjun990222@gmail.com"},
+]
 description = "City Proto Generated Python SDK"
+keywords = ["city", "proto", "protobuf"]
 readme = "README.md"
+license = {file = "LICENSE"}
 dynamic = ["version"]
 requires-python = ">=3.8"
 dependencies = [
@@ -22,6 +27,12 @@ classifiers = [
   "Programming Language :: Python :: 3",
   "Operating System :: OS Independent",
 ]
+
+[project.urls]
+Homepage = "https://github.com/tsinghua-fib-lab/cityproto"
+Documentation = "https://cityproto.sim.fiblab.net/"
+Repository = "https://github.com/tsinghua-fib-lab/cityproto.git"
+Issues = "https://github.com/tsinghua-fib-lab/cityproto/issues"
 
 [tool.setuptools.packages.find]
 where = ["."]

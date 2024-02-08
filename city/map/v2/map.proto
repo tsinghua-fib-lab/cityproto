@@ -152,10 +152,10 @@ message Lane {
   Polyline center_line = 7;
   // 车道左边界线
   // Lane left boundary line
-  Polyline left_border_line = 8 [ deprecated = true ]; // 弃用 deprecated
+  Polyline left_border_line = 8 [deprecated = true]; // 弃用 deprecated
   // 车道右边界线
-    // Lane right boundary line
-  Polyline right_border_line = 9 [ deprecated = true ]; // 弃用 deprecated
+  // Lane right boundary line
+  Polyline right_border_line = 9 [deprecated = true]; // 弃用 deprecated
 
   // Lanes can drive / walk from
   // 对于Junction内的车道至多1个前驱
@@ -320,7 +320,7 @@ message Aoi {
   string name = 11;
   // Aoi类型
   // Aoi type
-  AoiType type = 2 [ deprecated = true ];
+  AoiType type = 2 [deprecated = true];
 
   // Aoi与行车路网的连接点
   // Connection point between Aoi and driving lanes

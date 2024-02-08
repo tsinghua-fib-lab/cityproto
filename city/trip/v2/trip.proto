@@ -99,7 +99,7 @@ message Trip {
 //    Schedule的开始时刻
 //    it is defined as the start time of the Schedule to which it belongs
 // 3. Person的实际运行时刻取决于Trip的开始时刻，例如它的首次运行是第一
-// 3. The actual running time of a Person depends on the start time of the Trip, 
+// 3. The actual running time of a Person depends on the start time of the Trip,
 //    个Schedule中第一个Trip的开始时刻
 //    for example, its first run is the start time of the first Trip in the first Schedule
 // FAQ

@@ -40,7 +40,7 @@ message PersonAttribute {
 // Vehicle additional attributes
 message VehicleAttribute {
   // 单位: m, 完成变道所需路程
-  // Distance required to complete lane change: m   
+  // Distance required to complete lane change: m
   double lane_change_length = 1;
   // 单位：米，本车距离前车的最小距离
   // The minimum distance between the vehicle and the vehicle in front: m
@@ -179,4 +179,6 @@ message Person {
 
 // 智能体集合，对应一个智能体pb文件或一个智能体mongodb collection
 // Agent collection, corresponding to an agent pb file or an agent mongodb collection
-message Persons { repeated Person persons = 1; }
+message Persons {
+  repeated Person persons = 1;
+}
