@@ -110,7 +110,7 @@ npm config set -- '//git.fiblab.net/api/v4/projects/26/packages/npm/:_authToken'
 
 然后，使用`npm install`命令安装SDK：
 ```bash
-npm install @fiblab/protos
+npm install @fiblab/cityproto
 ```
 
 #### Yarn
@@ -123,7 +123,7 @@ yarn config set -- '//git.fiblab.net/api/v4/projects/26/packages/npm/:_authToken
 
 然后，使用`npm install`命令安装SDK：
 ```bash
-yarn add @fiblab/protos
+yarn add @fiblab/cityproto
 ```
 
 
