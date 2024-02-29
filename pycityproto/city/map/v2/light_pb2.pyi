@@ -26,6 +26,14 @@ class Phase(_message.Message):
     def __init__(self, duration: _Optional[float]=..., states: _Optional[_Iterable[_Union[LightState, str]]]=...) -> None:
         ...
 
+class AvailablePhase(_message.Message):
+    __slots__ = ['states']
+    STATES_FIELD_NUMBER: _ClassVar[int]
+    states: _containers.RepeatedScalarFieldContainer[LightState]
+
+    def __init__(self, states: _Optional[_Iterable[_Union[LightState, str]]]=...) -> None:
+        ...
+
 class TrafficLight(_message.Message):
     __slots__ = ['junction_id', 'phases']
     JUNCTION_ID_FIELD_NUMBER: _ClassVar[int]
@@ -34,12 +42,4 @@ class TrafficLight(_message.Message):
     phases: _containers.RepeatedCompositeFieldContainer[Phase]
 
     def __init__(self, junction_id: _Optional[int]=..., phases: _Optional[_Iterable[_Union[Phase, _Mapping]]]=...) -> None:
-        ...
-
-class TrafficLights(_message.Message):
-    __slots__ = ['traffic_lights']
-    TRAFFIC_LIGHTS_FIELD_NUMBER: _ClassVar[int]
-    traffic_lights: _containers.RepeatedCompositeFieldContainer[TrafficLight]
-
-    def __init__(self, traffic_lights: _Optional[_Iterable[_Union[TrafficLight, _Mapping]]]=...) -> None:
         ...

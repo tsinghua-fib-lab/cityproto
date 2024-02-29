@@ -6,7 +6,7 @@
 import { proto3 } from "@bufbuild/protobuf";
 import { LongLatBBox } from "../../geo/v2/geo_pb.js";
 import { PersonMotion } from "../../person/v1/motion_pb.js";
-import { LightState } from "../../traffic_light/v2/traffic_light_pb.js";
+import { LightState } from "./light_pb.js";
 
 /**
  * 设置Lane的最大速度（限速）请求

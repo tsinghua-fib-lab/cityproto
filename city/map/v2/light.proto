@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package city.traffic_light.v2;
+package city.map.v2;
 
 // 本文件描述交通灯
 // This file describes traffic lights
@@ -29,10 +29,17 @@ message Phase {
   // Phase duration in seconds
   double duration = 1;
   // 描述该相位下每个lane的灯控情况，lane与Junction.lane_ids一一对应
-  // The lighting control situation of each lane in this phase, and the lane corresponds one-to-one with junction.lane_ids
+  // The lighting control situation of each lane in this phase, and the lane
+  // corresponds one-to-one with junction.lane_ids
   repeated LightState states = 2;
 }
-
+message AvailablePhase {
+  // 描述最大压力信控的可行相位，由每个lane的灯控情况组成，lane与Junction.lane_ids一一对应
+  // Describes the feasible phase for max pressure algorithm, consisting of the
+  // lighting control situation for each lane in the junction, nd the lane
+  // corresponds one-to-one with junction.lane_ids
+  repeated LightState states = 1;
+}
 // 交通灯
 // traffic light
 message TrafficLight {
@@ -42,10 +49,4 @@ message TrafficLight {
   // 相位循环的一个循环周期
   // One cycle of phase cycling
   repeated Phase phases = 2;
-}
-
-// 信控集合，对应一个信控pb文件或一个信控mongodb collection
-// Traffic light set, corresponding to one traffic light PB file or one traffic light mongodb collection
-message TrafficLights {
-  repeated TrafficLight traffic_lights = 1;
 }

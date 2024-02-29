@@ -5,6 +5,7 @@
 
 import { proto3 } from "@bufbuild/protobuf";
 import { LanePosition, XYPosition } from "../../geo/v2/geo_pb.js";
+import { AvailablePhase, TrafficLight } from "./light_pb.js";
 
 /**
  * 车道类型
@@ -248,6 +249,8 @@ export const Junction = proto3.makeMessageType(
     { no: 1, name: "id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 2, name: "lane_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
     { no: 3, name: "driving_lane_groups", kind: "message", T: JunctionLaneGroup, repeated: true },
+    { no: 4, name: "phases", kind: "message", T: AvailablePhase, repeated: true },
+    { no: 5, name: "fixed_program", kind: "message", T: TrafficLight, opt: true },
   ],
 );
 
@@ -270,6 +273,7 @@ export const Aoi = proto3.makeMessageType(
     { no: 7, name: "walking_gates", kind: "message", T: XYPosition, repeated: true },
     { no: 8, name: "area", kind: "scalar", T: 1 /* ScalarType.DOUBLE */, opt: true },
     { no: 10, name: "land_use", kind: "enum", T: proto3.getEnumType(LandUseType), opt: true },
+    { no: 12, name: "urban_land_use", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
     { no: 9, name: "poi_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
   ],
 );

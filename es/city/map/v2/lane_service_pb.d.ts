@@ -7,7 +7,7 @@ import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialM
 import { Message, proto3 } from "@bufbuild/protobuf";
 import type { LongLatBBox } from "../../geo/v2/geo_pb.js";
 import type { PersonMotion } from "../../person/v1/motion_pb.js";
-import type { LightState } from "../../traffic_light/v2/traffic_light_pb.js";
+import type { LightState } from "./light_pb.js";
 
 /**
  * 设置Lane的最大速度（限速）请求
@@ -246,7 +246,7 @@ export declare class LaneState extends Message<LaneState> {
    * 交通灯状态
    * traffic light state
    *
-   * @generated from field: city.traffic_light.v2.LightState light_state = 5;
+   * @generated from field: city.map.v2.LightState light_state = 5;
    */
   lightState: LightState;
 

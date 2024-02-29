@@ -4,7 +4,7 @@ package city.map.v2;
 
 import "city/geo/v2/geo.proto";
 import "city/person/v1/motion.proto";
-import "city/traffic_light/v2/traffic_light.proto";
+import "city/map/v2/light.proto";
 
 service LaneService {
   // 设置Lane的最大速度（限速）
@@ -86,5 +86,5 @@ message LaneState {
   bool restriction = 4;
   // 交通灯状态
   // traffic light state
-  city.traffic_light.v2.LightState light_state = 5;
+  LightState light_state = 5;
 }

@@ -1,4 +1,4 @@
-from city.traffic_light.v2 import traffic_light_pb2 as _traffic_light_pb2
+from city.map.v2 import light_pb2 as _light_pb2
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Optional, Union as _Union
@@ -17,11 +17,11 @@ class GetTrafficLightResponse(_message.Message):
     TRAFFIC_LIGHT_FIELD_NUMBER: _ClassVar[int]
     PHASE_INDEX_FIELD_NUMBER: _ClassVar[int]
     TIME_REMAINING_FIELD_NUMBER: _ClassVar[int]
-    traffic_light: _traffic_light_pb2.TrafficLight
+    traffic_light: _light_pb2.TrafficLight
     phase_index: int
     time_remaining: float
 
-    def __init__(self, traffic_light: _Optional[_Union[_traffic_light_pb2.TrafficLight, _Mapping]]=..., phase_index: _Optional[int]=..., time_remaining: _Optional[float]=...) -> None:
+    def __init__(self, traffic_light: _Optional[_Union[_light_pb2.TrafficLight, _Mapping]]=..., phase_index: _Optional[int]=..., time_remaining: _Optional[float]=...) -> None:
         ...
 
 class SetTrafficLightRequest(_message.Message):
@@ -29,11 +29,11 @@ class SetTrafficLightRequest(_message.Message):
     TRAFFIC_LIGHT_FIELD_NUMBER: _ClassVar[int]
     PHASE_INDEX_FIELD_NUMBER: _ClassVar[int]
     TIME_REMAINING_FIELD_NUMBER: _ClassVar[int]
-    traffic_light: _traffic_light_pb2.TrafficLight
+    traffic_light: _light_pb2.TrafficLight
     phase_index: int
     time_remaining: float
 
-    def __init__(self, traffic_light: _Optional[_Union[_traffic_light_pb2.TrafficLight, _Mapping]]=..., phase_index: _Optional[int]=..., time_remaining: _Optional[float]=...) -> None:
+    def __init__(self, traffic_light: _Optional[_Union[_light_pb2.TrafficLight, _Mapping]]=..., phase_index: _Optional[int]=..., time_remaining: _Optional[float]=...) -> None:
         ...
 
 class SetTrafficLightResponse(_message.Message):

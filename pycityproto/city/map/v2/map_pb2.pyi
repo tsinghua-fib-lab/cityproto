@@ -1,4 +1,5 @@
 from city.geo.v2 import geo_pb2 as _geo_pb2
+from city.map.v2 import light_pb2 as _light_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -204,19 +205,23 @@ class JunctionLaneGroup(_message.Message):
         ...
 
 class Junction(_message.Message):
-    __slots__ = ['id', 'lane_ids', 'driving_lane_groups']
+    __slots__ = ['id', 'lane_ids', 'driving_lane_groups', 'phases', 'fixed_program']
     ID_FIELD_NUMBER: _ClassVar[int]
     LANE_IDS_FIELD_NUMBER: _ClassVar[int]
     DRIVING_LANE_GROUPS_FIELD_NUMBER: _ClassVar[int]
+    PHASES_FIELD_NUMBER: _ClassVar[int]
+    FIXED_PROGRAM_FIELD_NUMBER: _ClassVar[int]
     id: int
     lane_ids: _containers.RepeatedScalarFieldContainer[int]
     driving_lane_groups: _containers.RepeatedCompositeFieldContainer[JunctionLaneGroup]
+    phases: _containers.RepeatedCompositeFieldContainer[_light_pb2.AvailablePhase]
+    fixed_program: _light_pb2.TrafficLight
 
-    def __init__(self, id: _Optional[int]=..., lane_ids: _Optional[_Iterable[int]]=..., driving_lane_groups: _Optional[_Iterable[_Union[JunctionLaneGroup, _Mapping]]]=...) -> None:
+    def __init__(self, id: _Optional[int]=..., lane_ids: _Optional[_Iterable[int]]=..., driving_lane_groups: _Optional[_Iterable[_Union[JunctionLaneGroup, _Mapping]]]=..., phases: _Optional[_Iterable[_Union[_light_pb2.AvailablePhase, _Mapping]]]=..., fixed_program: _Optional[_Union[_light_pb2.TrafficLight, _Mapping]]=...) -> None:
         ...
 
 class Aoi(_message.Message):
-    __slots__ = ['id', 'name', 'type', 'driving_positions', 'walking_positions', 'positions', 'driving_gates', 'walking_gates', 'area', 'land_use', 'poi_ids']
+    __slots__ = ['id', 'name', 'type', 'driving_positions', 'walking_positions', 'positions', 'driving_gates', 'walking_gates', 'area', 'land_use', 'urban_land_use', 'poi_ids']
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
@@ -227,6 +232,7 @@ class Aoi(_message.Message):
     WALKING_GATES_FIELD_NUMBER: _ClassVar[int]
     AREA_FIELD_NUMBER: _ClassVar[int]
     LAND_USE_FIELD_NUMBER: _ClassVar[int]
+    URBAN_LAND_USE_FIELD_NUMBER: _ClassVar[int]
     POI_IDS_FIELD_NUMBER: _ClassVar[int]
     id: int
     name: str
@@ -238,9 +244,10 @@ class Aoi(_message.Message):
     walking_gates: _containers.RepeatedCompositeFieldContainer[_geo_pb2.XYPosition]
     area: float
     land_use: LandUseType
+    urban_land_use: str
     poi_ids: _containers.RepeatedScalarFieldContainer[int]
 
-    def __init__(self, id: _Optional[int]=..., name: _Optional[str]=..., type: _Optional[_Union[AoiType, str]]=..., driving_positions: _Optional[_Iterable[_Union[_geo_pb2.LanePosition, _Mapping]]]=..., walking_positions: _Optional[_Iterable[_Union[_geo_pb2.LanePosition, _Mapping]]]=..., positions: _Optional[_Iterable[_Union[_geo_pb2.XYPosition, _Mapping]]]=..., driving_gates: _Optional[_Iterable[_Union[_geo_pb2.XYPosition, _Mapping]]]=..., walking_gates: _Optional[_Iterable[_Union[_geo_pb2.XYPosition, _Mapping]]]=..., area: _Optional[float]=..., land_use: _Optional[_Union[LandUseType, str]]=..., poi_ids: _Optional[_Iterable[int]]=...) -> None:
+    def __init__(self, id: _Optional[int]=..., name: _Optional[str]=..., type: _Optional[_Union[AoiType, str]]=..., driving_positions: _Optional[_Iterable[_Union[_geo_pb2.LanePosition, _Mapping]]]=..., walking_positions: _Optional[_Iterable[_Union[_geo_pb2.LanePosition, _Mapping]]]=..., positions: _Optional[_Iterable[_Union[_geo_pb2.XYPosition, _Mapping]]]=..., driving_gates: _Optional[_Iterable[_Union[_geo_pb2.XYPosition, _Mapping]]]=..., walking_gates: _Optional[_Iterable[_Union[_geo_pb2.XYPosition, _Mapping]]]=..., area: _Optional[float]=..., land_use: _Optional[_Union[LandUseType, str]]=..., urban_land_use: _Optional[str]=..., poi_ids: _Optional[_Iterable[int]]=...) -> None:
         ...
 
 class Poi(_message.Message):
