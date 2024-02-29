@@ -14,7 +14,6 @@ from . import routing
 from . import social
 from . import streetview
 from . import sync
-from . import traffic_light
 from . import trip
 from . import wargame
 from . import water

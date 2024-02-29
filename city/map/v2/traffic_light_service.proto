@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package city.traffic_light.v2;
+package city.map.v2;
 
-import "city/traffic_light/v2/traffic_light.proto";
+import "city/map/v2/light.proto";
 
 service TrafficLightService {
   // 获取路口的红绿灯信息

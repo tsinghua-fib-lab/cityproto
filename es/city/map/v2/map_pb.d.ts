@@ -6,6 +6,7 @@
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
 import type { LanePosition, XYPosition } from "../../geo/v2/geo_pb.js";
+import type { AvailablePhase, TrafficLight } from "./light_pb.js";
 
 /**
  * 车道类型
@@ -801,6 +802,22 @@ export declare class Junction extends Message<Junction> {
    */
   drivingLaneGroups: JunctionLaneGroup[];
 
+  /**
+   * 所有可用信号灯相位
+   * All available phases for max pressure algorithm
+   *
+   * @generated from field: repeated city.map.v2.AvailablePhase phases = 4;
+   */
+  phases: AvailablePhase[];
+
+  /**
+   * 默认固定相位信号灯
+   * Default fixed phases traffic light
+   *
+   * @generated from field: optional city.map.v2.TrafficLight fixed_program = 5;
+   */
+  fixedProgram?: TrafficLight;
+
   constructor(data?: PartialMessage<Junction>);
 
   static readonly runtime: typeof proto3;
@@ -900,9 +917,20 @@ export declare class Aoi extends Message<Aoi> {
    * 土地利用分类，若是Poi则无此字段
    * Land use type, if it is Poi, there is no such field
    *
-   * @generated from field: optional city.map.v2.LandUseType land_use = 10;
+   * 弃用 deprecated
+   *
+   * @generated from field: optional city.map.v2.LandUseType land_use = 10 [deprecated = true];
+   * @deprecated
    */
   landUse?: LandUseType;
+
+  /**
+   * 城市建设用地分类，参照执行标准GB 50137-2011（https://www.planning.org.cn/law/uploads/2013/1383993139.pdf）
+   * Urban Land use type, , refer to the national standard GB 50137-2011
+   *
+   * @generated from field: optional string urban_land_use = 12;
+   */
+  urbanLandUse?: string;
 
   /**
    * Aoi包含的Poi

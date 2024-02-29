@@ -109,7 +109,7 @@ type PersonMotion struct {
 	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
 	// 状态
 	// status
-	Status Status `protobuf:"varint,2,opt,name=status,proto3,enum=city.person.v1.Status" json:"status,omitempty" yaml:"status" bson:"status" db:"status"`
+	Status Status `protobuf:"varint,2,opt,name=status,proto3,enum=city.person.v1.Status" json:"status,omitempty" bson:"status" db:"status" yaml:"status"`
 	// 位置（包含逻辑位置、XY位置、经纬度位置）
 	// Position (including logical position, XY position, longitude and latitude position)
 	Position *v2.Position `protobuf:"bytes,3,opt,name=position,proto3" json:"position,omitempty" yaml:"position" bson:"position" db:"position"`
