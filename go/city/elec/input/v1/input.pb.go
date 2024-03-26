@@ -171,11 +171,11 @@ type Facility struct {
 	Relation []int32 `protobuf:"varint,4,rep,packed,name=relation,proto3" json:"relation,omitempty" yaml:"relation" bson:"relation" db:"relation"`
 	// 在其它关联的网络中如水网使用时，可使用外部id
 	// 对于负载，该值表示其在对应模拟中的id
-	ForeignId *int32 `protobuf:"varint,5,opt,name=foreign_id,json=foreignId,proto3,oneof" json:"foreign_id,omitempty" bson:"foreign_id" db:"foreign_id" yaml:"foreign_id"`
+	ForeignId *int32 `protobuf:"varint,5,opt,name=foreign_id,json=foreignId,proto3,oneof" json:"foreign_id,omitempty" yaml:"foreign_id" bson:"foreign_id" db:"foreign_id"`
 	// 对于电力设施，该值表示所在aoi id
-	AoiId *int32 `protobuf:"varint,6,opt,name=aoi_id,json=aoiId,proto3,oneof" json:"aoi_id,omitempty" bson:"aoi_id" db:"aoi_id" yaml:"aoi_id"`
+	AoiId *int32 `protobuf:"varint,6,opt,name=aoi_id,json=aoiId,proto3,oneof" json:"aoi_id,omitempty" yaml:"aoi_id" bson:"aoi_id" db:"aoi_id"`
 	// 对于10kv变压器组，该值表示变压器组中变压器的数量
-	NumTransformer *int32 `protobuf:"varint,7,opt,name=num_transformer,json=numTransformer,proto3,oneof" json:"num_transformer,omitempty" db:"num_transformer" yaml:"num_transformer" bson:"num_transformer"`
+	NumTransformer *int32 `protobuf:"varint,7,opt,name=num_transformer,json=numTransformer,proto3,oneof" json:"num_transformer,omitempty" yaml:"num_transformer" bson:"num_transformer" db:"num_transformer"`
 }
 
 func (x *Facility) Reset() {
@@ -265,7 +265,7 @@ type Facilities struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Facilities     []*Facility      `protobuf:"bytes,1,rep,name=facilities,proto3" json:"facilities,omitempty" db:"facilities" yaml:"facilities" bson:"facilities"`
+	Facilities     []*Facility      `protobuf:"bytes,1,rep,name=facilities,proto3" json:"facilities,omitempty" yaml:"facilities" bson:"facilities" db:"facilities"`
 	RepairStations []*RepairStation `protobuf:"bytes,2,rep,name=repair_stations,json=repairStations,proto3" json:"repair_stations,omitempty" db:"repair_stations" yaml:"repair_stations" bson:"repair_stations"`
 }
 

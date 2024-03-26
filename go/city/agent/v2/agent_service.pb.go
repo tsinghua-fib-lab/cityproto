@@ -80,7 +80,7 @@ type GetAgentResponse struct {
 	// agent信息
 	Base *Agent `protobuf:"bytes,1,opt,name=base,proto3" json:"base,omitempty" bson:"base" db:"base" yaml:"base"`
 	// agent运动信息
-	Motion *AgentMotion `protobuf:"bytes,2,opt,name=motion,proto3" json:"motion,omitempty" db:"motion" yaml:"motion" bson:"motion"`
+	Motion *AgentMotion `protobuf:"bytes,2,opt,name=motion,proto3" json:"motion,omitempty" yaml:"motion" bson:"motion" db:"motion"`
 }
 
 func (x *GetAgentResponse) Reset() {
@@ -136,7 +136,7 @@ type AddAgentRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 约定：agent中不设置id
-	Agent *Agent `protobuf:"bytes,1,opt,name=agent,proto3" json:"agent,omitempty" yaml:"agent" bson:"agent" db:"agent"`
+	Agent *Agent `protobuf:"bytes,1,opt,name=agent,proto3" json:"agent,omitempty" db:"agent" yaml:"agent" bson:"agent"`
 }
 
 func (x *AddAgentRequest) Reset() {

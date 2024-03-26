@@ -3,8 +3,8 @@ syntax = "proto3";
 package city.map.v2;
 
 import "city/geo/v2/geo.proto";
-import "city/person/v1/motion.proto";
 import "city/map/v2/light.proto";
+import "city/person/v1/motion.proto";
 
 service LaneService {
   // 设置Lane的最大速度（限速）

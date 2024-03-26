@@ -40,6 +40,7 @@ message AvailablePhase {
   // corresponds one-to-one with junction.lane_ids
   repeated LightState states = 1;
 }
+
 // 交通灯
 // traffic light
 message TrafficLight {

@@ -32,10 +32,10 @@ type LongLatPosition struct {
 	Longitude float64 `protobuf:"fixed64,1,opt,name=longitude,proto3" json:"longitude,omitempty" db:"longitude" yaml:"longitude" bson:"longitude"`
 	// 纬度
 	// latitude
-	Latitude float64 `protobuf:"fixed64,2,opt,name=latitude,proto3" json:"latitude,omitempty" yaml:"latitude" bson:"latitude" db:"latitude"`
+	Latitude float64 `protobuf:"fixed64,2,opt,name=latitude,proto3" json:"latitude,omitempty" db:"latitude" yaml:"latitude" bson:"latitude"`
 	// 高程（单位：米）
 	// elevation (unit: meters)
-	Z *float64 `protobuf:"fixed64,3,opt,name=z,proto3,oneof" json:"z,omitempty" yaml:"z" bson:"z" db:"z"`
+	Z *float64 `protobuf:"fixed64,3,opt,name=z,proto3,oneof" json:"z,omitempty" db:"z" yaml:"z" bson:"z"`
 }
 
 func (x *LongLatPosition) Reset() {
@@ -100,7 +100,7 @@ type XYPosition struct {
 
 	// x坐标，单位米，对应经度
 	// x coordinate, in meters, corresponding to longitude
-	X float64 `protobuf:"fixed64,1,opt,name=x,proto3" json:"x,omitempty" bson:"x" db:"x" yaml:"x"`
+	X float64 `protobuf:"fixed64,1,opt,name=x,proto3" json:"x,omitempty" db:"x" yaml:"x" bson:"x"`
 	// y坐标，单位米，对应纬度
 	// y coordinate, in meters, corresponding to latitude
 	Y float64 `protobuf:"fixed64,2,opt,name=y,proto3" json:"y,omitempty" yaml:"y" bson:"y" db:"y"`
@@ -301,7 +301,7 @@ type Position struct {
 	LonglatPosition *LongLatPosition `protobuf:"bytes,3,opt,name=longlat_position,json=longlatPosition,proto3,oneof" json:"longlat_position,omitempty" yaml:"longlat_position" bson:"longlat_position" db:"longlat_position"`
 	// XY坐标
 	// XY coordinates
-	XyPosition *XYPosition `protobuf:"bytes,4,opt,name=xy_position,json=xyPosition,proto3,oneof" json:"xy_position,omitempty" yaml:"xy_position" bson:"xy_position" db:"xy_position"`
+	XyPosition *XYPosition `protobuf:"bytes,4,opt,name=xy_position,json=xyPosition,proto3,oneof" json:"xy_position,omitempty" db:"xy_position" yaml:"xy_position" bson:"xy_position"`
 }
 
 func (x *Position) Reset() {
