@@ -29,6 +29,14 @@ export declare class LongLatPosition extends Message<LongLatPosition> {
    */
   latitude: number;
 
+  /**
+   * 高程（单位：米）
+   * elevation (unit: meters)
+   *
+   * @generated from field: optional double z = 3;
+   */
+  z?: number;
+
   constructor(data?: PartialMessage<LongLatPosition>);
 
   static readonly runtime: typeof proto3;
@@ -66,6 +74,14 @@ export declare class XYPosition extends Message<XYPosition> {
    * @generated from field: double y = 2;
    */
   y: number;
+
+  /**
+   * z坐标，单位米，对应高程
+   * z coordinate, in meters, corresponding to elevation
+   *
+   * @generated from field: optional double z = 3;
+   */
+  z?: number;
 
   constructor(data?: PartialMessage<XYPosition>);
 

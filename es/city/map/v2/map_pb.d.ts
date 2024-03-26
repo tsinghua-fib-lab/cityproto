@@ -926,7 +926,7 @@ export declare class Aoi extends Message<Aoi> {
 
   /**
    * 城市建设用地分类，参照执行标准GB 50137-2011（https://www.planning.org.cn/law/uploads/2013/1383993139.pdf）
-   * Urban Land use type, , refer to the national standard GB 50137-2011
+   * Urban Land use type, refer to the national standard GB 50137-2011
    *
    * @generated from field: optional string urban_land_use = 12;
    */

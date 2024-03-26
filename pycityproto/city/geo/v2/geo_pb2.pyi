@@ -4,23 +4,27 @@ from typing import ClassVar as _ClassVar, Mapping as _Mapping, Optional as _Opti
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class LongLatPosition(_message.Message):
-    __slots__ = ['longitude', 'latitude']
+    __slots__ = ['longitude', 'latitude', 'z']
     LONGITUDE_FIELD_NUMBER: _ClassVar[int]
     LATITUDE_FIELD_NUMBER: _ClassVar[int]
+    Z_FIELD_NUMBER: _ClassVar[int]
     longitude: float
     latitude: float
+    z: float
 
-    def __init__(self, longitude: _Optional[float]=..., latitude: _Optional[float]=...) -> None:
+    def __init__(self, longitude: _Optional[float]=..., latitude: _Optional[float]=..., z: _Optional[float]=...) -> None:
         ...
 
 class XYPosition(_message.Message):
-    __slots__ = ['x', 'y']
+    __slots__ = ['x', 'y', 'z']
     X_FIELD_NUMBER: _ClassVar[int]
     Y_FIELD_NUMBER: _ClassVar[int]
+    Z_FIELD_NUMBER: _ClassVar[int]
     x: float
     y: float
+    z: float
 
-    def __init__(self, x: _Optional[float]=..., y: _Optional[float]=...) -> None:
+    def __init__(self, x: _Optional[float]=..., y: _Optional[float]=..., z: _Optional[float]=...) -> None:
         ...
 
 class LanePosition(_message.Message):

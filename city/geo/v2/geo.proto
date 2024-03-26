@@ -6,10 +6,11 @@ package city.geo.v2;
 // This file describes the geographical coordinate system, including three coordinate classifications:
 // 1. LongLatPosition
 //   经纬度坐标, 经度 longitute 120.234256 纬度 latitude 40.2321782
+//              高程（单位：米） z 100.0
 //   Latitude and longitude coordinates, longitute 120.234256 latitude 40.2321782
 // 2. XYPosition
-//   按米计算的平面x/y坐标
-//   Plane x/y coordinates in meters
+//   按米计算的平面x/y/z坐标
+//   Plane x/y/z coordinates in meters
 // 3. AoiPosition, LanePosition
 //   地图坐标（例如：AOI、车道+距离s）
 //   Map coordinates (for example: AOI, lane + distance s)
@@ -31,6 +32,9 @@ message LongLatPosition {
   // 纬度
   // latitude
   double latitude = 2;
+  // 高程（单位：米）
+  // elevation (unit: meters)
+  optional double z = 3;
 }
 
 // XY坐标
@@ -42,6 +46,9 @@ message XYPosition {
   // y坐标，单位米，对应纬度
   // y coordinate, in meters, corresponding to latitude
   double y = 2;
+  // z坐标，单位米，对应高程
+  // z coordinate, in meters, corresponding to elevation
+  optional double z = 3;
 }
 
 // 地图坐标（车道+距离s）

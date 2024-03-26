@@ -16,6 +16,7 @@ export const LongLatPosition = proto3.makeMessageType(
   () => [
     { no: 1, name: "longitude", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
     { no: 2, name: "latitude", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 3, name: "z", kind: "scalar", T: 1 /* ScalarType.DOUBLE */, opt: true },
   ],
 );
 
@@ -30,6 +31,7 @@ export const XYPosition = proto3.makeMessageType(
   () => [
     { no: 1, name: "x", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
     { no: 2, name: "y", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 3, name: "z", kind: "scalar", T: 1 /* ScalarType.DOUBLE */, opt: true },
   ],
 );
 
