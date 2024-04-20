@@ -71,13 +71,15 @@ class PersonAttribute(_message.Message):
         ...
 
 class VehicleAttribute(_message.Message):
-    __slots__ = ['lane_change_length', 'min_gap']
+    __slots__ = ['lane_change_length', 'min_gap', 'model']
     LANE_CHANGE_LENGTH_FIELD_NUMBER: _ClassVar[int]
     MIN_GAP_FIELD_NUMBER: _ClassVar[int]
+    MODEL_FIELD_NUMBER: _ClassVar[int]
     lane_change_length: float
     min_gap: float
+    model: str
 
-    def __init__(self, lane_change_length: _Optional[float]=..., min_gap: _Optional[float]=...) -> None:
+    def __init__(self, lane_change_length: _Optional[float]=..., min_gap: _Optional[float]=..., model: _Optional[str]=...) -> None:
         ...
 
 class BusAttribute(_message.Message):
@@ -90,10 +92,20 @@ class BusAttribute(_message.Message):
     def __init__(self, line_id: _Optional[int]=..., capacity: _Optional[int]=...) -> None:
         ...
 
-class BikeAttribute(_message.Message):
-    __slots__ = []
+class PedestrianAttribute(_message.Message):
+    __slots__ = ['speed']
+    SPEED_FIELD_NUMBER: _ClassVar[int]
+    speed: float
 
-    def __init__(self) -> None:
+    def __init__(self, speed: _Optional[float]=...) -> None:
+        ...
+
+class BikeAttribute(_message.Message):
+    __slots__ = ['speed']
+    SPEED_FIELD_NUMBER: _ClassVar[int]
+    speed: float
+
+    def __init__(self, speed: _Optional[float]=...) -> None:
         ...
 
 class PersonProfile(_message.Message):
@@ -111,7 +123,7 @@ class PersonProfile(_message.Message):
         ...
 
 class Person(_message.Message):
-    __slots__ = ['id', 'attribute', 'home', 'schedules', 'vehicle_attribute', 'bus_attribute', 'bike_attribute', 'labels', 'profile']
+    __slots__ = ['id', 'attribute', 'home', 'schedules', 'vehicle_attribute', 'bus_attribute', 'pedestrian_attribute', 'bike_attribute', 'labels', 'profile']
 
     class LabelsEntry(_message.Message):
         __slots__ = ['key', 'value']
@@ -128,6 +140,7 @@ class Person(_message.Message):
     SCHEDULES_FIELD_NUMBER: _ClassVar[int]
     VEHICLE_ATTRIBUTE_FIELD_NUMBER: _ClassVar[int]
     BUS_ATTRIBUTE_FIELD_NUMBER: _ClassVar[int]
+    PEDESTRIAN_ATTRIBUTE_FIELD_NUMBER: _ClassVar[int]
     BIKE_ATTRIBUTE_FIELD_NUMBER: _ClassVar[int]
     LABELS_FIELD_NUMBER: _ClassVar[int]
     PROFILE_FIELD_NUMBER: _ClassVar[int]
@@ -137,11 +150,12 @@ class Person(_message.Message):
     schedules: _containers.RepeatedCompositeFieldContainer[_trip_pb2.Schedule]
     vehicle_attribute: VehicleAttribute
     bus_attribute: BusAttribute
+    pedestrian_attribute: PedestrianAttribute
     bike_attribute: BikeAttribute
     labels: _containers.ScalarMap[str, str]
     profile: PersonProfile
 
-    def __init__(self, id: _Optional[int]=..., attribute: _Optional[_Union[PersonAttribute, _Mapping]]=..., home: _Optional[_Union[_geo_pb2.Position, _Mapping]]=..., schedules: _Optional[_Iterable[_Union[_trip_pb2.Schedule, _Mapping]]]=..., vehicle_attribute: _Optional[_Union[VehicleAttribute, _Mapping]]=..., bus_attribute: _Optional[_Union[BusAttribute, _Mapping]]=..., bike_attribute: _Optional[_Union[BikeAttribute, _Mapping]]=..., labels: _Optional[_Mapping[str, str]]=..., profile: _Optional[_Union[PersonProfile, _Mapping]]=...) -> None:
+    def __init__(self, id: _Optional[int]=..., attribute: _Optional[_Union[PersonAttribute, _Mapping]]=..., home: _Optional[_Union[_geo_pb2.Position, _Mapping]]=..., schedules: _Optional[_Iterable[_Union[_trip_pb2.Schedule, _Mapping]]]=..., vehicle_attribute: _Optional[_Union[VehicleAttribute, _Mapping]]=..., bus_attribute: _Optional[_Union[BusAttribute, _Mapping]]=..., pedestrian_attribute: _Optional[_Union[PedestrianAttribute, _Mapping]]=..., bike_attribute: _Optional[_Union[BikeAttribute, _Mapping]]=..., labels: _Optional[_Mapping[str, str]]=..., profile: _Optional[_Union[PersonProfile, _Mapping]]=...) -> None:
         ...
 
 class Persons(_message.Message):

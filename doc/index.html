@@ -1583,6 +1583,10 @@
                 </li>
               
                 <li>
+                  <a href="#city.person.v1.PedestrianAttribute"><span class="badge">M</span>PedestrianAttribute</a>
+                </li>
+              
+                <li>
                   <a href="#city.person.v1.Person"><span class="badge">M</span>Person</a>
                 </li>
               
@@ -11262,6 +11266,24 @@ Set traffic light status</p></td>
         <p>自行车附加属性</p><p>Bike additional attributes</p>
 
         
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>speed</td>
+                  <td><a href="#double">double</a></td>
+                  <td></td>
+                  <td><p>单位: m/s
+speed: m/s </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
 
         
       
@@ -11289,6 +11311,31 @@ bus line ID </p></td>
                   <td></td>
                   <td><p>公交车容量
 bus capacity </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="city.person.v1.PedestrianAttribute">PedestrianAttribute</h3>
+        <p>行人附加属性</p><p>Pedestrian additional attributes</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>speed</td>
+                  <td><a href="#double">double</a></td>
+                  <td></td>
+                  <td><p>单位: m/s
+speed: m/s </p></td>
                 </tr>
               
             </tbody>
@@ -11354,6 +11401,14 @@ vehicle addtional attribute </p></td>
                   <td>optional</td>
                   <td><p>公交车附加属性
 bus additional attribute </p></td>
+                </tr>
+              
+                <tr>
+                  <td>pedestrian_attribute</td>
+                  <td><a href="#city.person.v1.PedestrianAttribute">PedestrianAttribute</a></td>
+                  <td>optional</td>
+                  <td><p>行人附加属性
+pedestrian additional attribute </p></td>
                 </tr>
               
                 <tr>
@@ -11588,6 +11643,14 @@ Distance required to complete lane change: m </p></td>
                   <td></td>
                   <td><p>单位：米，本车距离前车的最小距离
 The minimum distance between the vehicle and the vehicle in front: m </p></td>
+                </tr>
+              
+                <tr>
+                  <td>model</td>
+                  <td><a href="#string">string</a></td>
+                  <td>optional</td>
+                  <td><p>车辆模型标签
+Vehicle model tag </p></td>
                 </tr>
               
             </tbody>

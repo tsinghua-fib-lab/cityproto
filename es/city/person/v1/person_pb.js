@@ -90,6 +90,7 @@ export const VehicleAttribute = proto3.makeMessageType(
   () => [
     { no: 1, name: "lane_change_length", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
     { no: 2, name: "min_gap", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 3, name: "model", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
   ],
 );
 
@@ -108,6 +109,19 @@ export const BusAttribute = proto3.makeMessageType(
 );
 
 /**
+ * 行人附加属性
+ * Pedestrian additional attributes
+ *
+ * @generated from message city.person.v1.PedestrianAttribute
+ */
+export const PedestrianAttribute = proto3.makeMessageType(
+  "city.person.v1.PedestrianAttribute",
+  () => [
+    { no: 1, name: "speed", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+  ],
+);
+
+/**
  * 自行车附加属性
  * Bike additional attributes
  *
@@ -115,7 +129,9 @@ export const BusAttribute = proto3.makeMessageType(
  */
 export const BikeAttribute = proto3.makeMessageType(
   "city.person.v1.BikeAttribute",
-  [],
+  () => [
+    { no: 1, name: "speed", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+  ],
 );
 
 /**
@@ -149,6 +165,7 @@ export const Person = proto3.makeMessageType(
     { no: 4, name: "schedules", kind: "message", T: Schedule, repeated: true },
     { no: 7, name: "vehicle_attribute", kind: "message", T: VehicleAttribute, opt: true },
     { no: 8, name: "bus_attribute", kind: "message", T: BusAttribute, opt: true },
+    { no: 12, name: "pedestrian_attribute", kind: "message", T: PedestrianAttribute, opt: true },
     { no: 9, name: "bike_attribute", kind: "message", T: BikeAttribute, opt: true },
     { no: 10, name: "labels", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 9 /* ScalarType.STRING */} },
     { no: 11, name: "profile", kind: "message", T: PersonProfile, opt: true },

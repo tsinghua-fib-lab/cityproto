@@ -29,10 +29,10 @@ type Cost struct {
 
 	// 目标拓扑元素（只支持道路Road）
 	// Target topology element (only supports roads)
-	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" db:"id" yaml:"id" bson:"id"`
+	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
 	// 路径成本（单位：秒）
 	// Path cost (in seconds)
-	Cost float64 `protobuf:"fixed64,2,opt,name=cost,proto3" json:"cost,omitempty" db:"cost" yaml:"cost" bson:"cost"`
+	Cost float64 `protobuf:"fixed64,2,opt,name=cost,proto3" json:"cost,omitempty" yaml:"cost" bson:"cost" db:"cost"`
 	// 设置的时间（单位：秒）
 	// Set time (in seconds)
 	// 即设置几点几分的道路通行成本为cost

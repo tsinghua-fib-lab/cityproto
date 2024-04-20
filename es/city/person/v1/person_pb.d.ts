@@ -269,6 +269,14 @@ export declare class VehicleAttribute extends Message<VehicleAttribute> {
    */
   minGap: number;
 
+  /**
+   * 车辆模型标签
+   * Vehicle model tag
+   *
+   * @generated from field: optional string model = 3;
+   */
+  model?: string;
+
   constructor(data?: PartialMessage<VehicleAttribute>);
 
   static readonly runtime: typeof proto3;
@@ -323,12 +331,50 @@ export declare class BusAttribute extends Message<BusAttribute> {
 }
 
 /**
+ * 行人附加属性
+ * Pedestrian additional attributes
+ *
+ * @generated from message city.person.v1.PedestrianAttribute
+ */
+export declare class PedestrianAttribute extends Message<PedestrianAttribute> {
+  /**
+   * 单位: m/s
+   * speed: m/s
+   *
+   * @generated from field: double speed = 1;
+   */
+  speed: number;
+
+  constructor(data?: PartialMessage<PedestrianAttribute>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.person.v1.PedestrianAttribute";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PedestrianAttribute;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PedestrianAttribute;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PedestrianAttribute;
+
+  static equals(a: PedestrianAttribute | PlainMessage<PedestrianAttribute> | undefined, b: PedestrianAttribute | PlainMessage<PedestrianAttribute> | undefined): boolean;
+}
+
+/**
  * 自行车附加属性
  * Bike additional attributes
  *
  * @generated from message city.person.v1.BikeAttribute
  */
 export declare class BikeAttribute extends Message<BikeAttribute> {
+  /**
+   * 单位: m/s
+   * speed: m/s
+   *
+   * @generated from field: double speed = 1;
+   */
+  speed: number;
+
   constructor(data?: PartialMessage<BikeAttribute>);
 
   static readonly runtime: typeof proto3;
@@ -452,6 +498,14 @@ export declare class Person extends Message<Person> {
    * @generated from field: optional city.person.v1.BusAttribute bus_attribute = 8;
    */
   busAttribute?: BusAttribute;
+
+  /**
+   * 行人附加属性
+   * pedestrian additional attribute
+   *
+   * @generated from field: optional city.person.v1.PedestrianAttribute pedestrian_attribute = 12;
+   */
+  pedestrianAttribute?: PedestrianAttribute;
 
   /**
    * 自行车附加属性

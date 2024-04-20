@@ -45,6 +45,9 @@ message VehicleAttribute {
   // 单位：米，本车距离前车的最小距离
   // The minimum distance between the vehicle and the vehicle in front: m
   double min_gap = 2;
+  // 车辆模型标签
+  // Vehicle model tag
+  optional string model = 3;
 }
 
 // 公交车附加属性
@@ -58,9 +61,21 @@ message BusAttribute {
   int32 capacity = 2;
 }
 
+// 行人附加属性
+// Pedestrian additional attributes
+message PedestrianAttribute {
+  // 单位: m/s
+  // speed: m/s
+  double speed = 1;
+}
+
 // 自行车附加属性
 // Bike additional attributes
-message BikeAttribute {}
+message BikeAttribute {
+  // 单位: m/s
+  // speed: m/s
+  double speed = 1;
+}
 
 // 智能体教育等级
 // Agent education level
@@ -166,6 +181,9 @@ message Person {
   // 公交车附加属性
   // bus additional attribute
   optional BusAttribute bus_attribute = 8;
+  // 行人附加属性
+  // pedestrian additional attribute
+  optional PedestrianAttribute pedestrian_attribute = 12;
   // 自行车附加属性
   // bike addition attribute
   optional BikeAttribute bike_attribute = 9;
