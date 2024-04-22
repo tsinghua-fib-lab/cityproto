@@ -30,7 +30,7 @@ type GetPersonRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// person id
-	PersonId int32 `protobuf:"varint,1,opt,name=person_id,json=personId,proto3" json:"person_id,omitempty" yaml:"person_id" bson:"person_id" db:"person_id"`
+	PersonId int32 `protobuf:"varint,1,opt,name=person_id,json=personId,proto3" json:"person_id,omitempty" bson:"person_id" db:"person_id" yaml:"person_id"`
 }
 
 func (x *GetPersonRequest) Reset() {
@@ -81,10 +81,10 @@ type GetPersonResponse struct {
 
 	// person信息
 	// person information
-	Base *Person `protobuf:"bytes,1,opt,name=base,proto3" json:"base,omitempty" db:"base" yaml:"base" bson:"base"`
+	Base *Person `protobuf:"bytes,1,opt,name=base,proto3" json:"base,omitempty" yaml:"base" bson:"base" db:"base"`
 	// person运动信息
 	// person motion information
-	Motion *PersonMotion `protobuf:"bytes,2,opt,name=motion,proto3" json:"motion,omitempty" yaml:"motion" bson:"motion" db:"motion"`
+	Motion *PersonMotion `protobuf:"bytes,2,opt,name=motion,proto3" json:"motion,omitempty" db:"motion" yaml:"motion" bson:"motion"`
 }
 
 func (x *GetPersonResponse) Reset() {
@@ -193,7 +193,7 @@ type AddPersonResponse struct {
 
 	// 新增的person分配得到的ID
 	// The ID assigned to the newly added person
-	PersonId int32 `protobuf:"varint,1,opt,name=person_id,json=personId,proto3" json:"person_id,omitempty" yaml:"person_id" bson:"person_id" db:"person_id"`
+	PersonId int32 `protobuf:"varint,1,opt,name=person_id,json=personId,proto3" json:"person_id,omitempty" db:"person_id" yaml:"person_id" bson:"person_id"`
 }
 
 func (x *AddPersonResponse) Reset() {
@@ -405,7 +405,7 @@ type GetPersonByLongLatBBoxResponse struct {
 
 	// 区域内的person的运动信息
 	// motion status of persons in the region
-	Motions []*PersonMotion `protobuf:"bytes,1,rep,name=motions,proto3" json:"motions,omitempty" yaml:"motions" bson:"motions" db:"motions"`
+	Motions []*PersonMotion `protobuf:"bytes,1,rep,name=motions,proto3" json:"motions,omitempty" db:"motions" yaml:"motions" bson:"motions"`
 }
 
 func (x *GetPersonByLongLatBBoxResponse) Reset() {

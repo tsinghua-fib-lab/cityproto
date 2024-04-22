@@ -83,29 +83,35 @@ class VehicleAttribute(_message.Message):
         ...
 
 class BusAttribute(_message.Message):
-    __slots__ = ['line_id', 'capacity']
+    __slots__ = ['line_id', 'capacity', 'model']
     LINE_ID_FIELD_NUMBER: _ClassVar[int]
     CAPACITY_FIELD_NUMBER: _ClassVar[int]
+    MODEL_FIELD_NUMBER: _ClassVar[int]
     line_id: int
     capacity: int
+    model: str
 
-    def __init__(self, line_id: _Optional[int]=..., capacity: _Optional[int]=...) -> None:
+    def __init__(self, line_id: _Optional[int]=..., capacity: _Optional[int]=..., model: _Optional[str]=...) -> None:
         ...
 
 class PedestrianAttribute(_message.Message):
-    __slots__ = ['speed']
+    __slots__ = ['speed', 'model']
     SPEED_FIELD_NUMBER: _ClassVar[int]
+    MODEL_FIELD_NUMBER: _ClassVar[int]
     speed: float
+    model: str
 
-    def __init__(self, speed: _Optional[float]=...) -> None:
+    def __init__(self, speed: _Optional[float]=..., model: _Optional[str]=...) -> None:
         ...
 
 class BikeAttribute(_message.Message):
-    __slots__ = ['speed']
+    __slots__ = ['speed', 'model']
     SPEED_FIELD_NUMBER: _ClassVar[int]
+    MODEL_FIELD_NUMBER: _ClassVar[int]
     speed: float
+    model: str
 
-    def __init__(self, speed: _Optional[float]=...) -> None:
+    def __init__(self, speed: _Optional[float]=..., model: _Optional[str]=...) -> None:
         ...
 
 class PersonProfile(_message.Message):

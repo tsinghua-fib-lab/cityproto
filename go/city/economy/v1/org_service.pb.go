@@ -27,7 +27,7 @@ type GetOrgRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 待查询的组织的ID列表（为空时查询所有组织）
-	OrgIds []int32 `protobuf:"varint,1,rep,packed,name=org_ids,json=orgIds,proto3" json:"org_ids,omitempty" db:"org_ids" yaml:"org_ids" bson:"org_ids"`
+	OrgIds []int32 `protobuf:"varint,1,rep,packed,name=org_ids,json=orgIds,proto3" json:"org_ids,omitempty" yaml:"org_ids" bson:"org_ids" db:"org_ids"`
 }
 
 func (x *GetOrgRequest) Reset() {
@@ -76,7 +76,7 @@ type GetOrgResponse struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 组织的经济情况
-	Orgs []*Org `protobuf:"bytes,1,rep,name=orgs,proto3" json:"orgs,omitempty" db:"orgs" yaml:"orgs" bson:"orgs"`
+	Orgs []*Org `protobuf:"bytes,1,rep,name=orgs,proto3" json:"orgs,omitempty" bson:"orgs" db:"orgs" yaml:"orgs"`
 }
 
 func (x *GetOrgResponse) Reset() {
@@ -174,9 +174,9 @@ type UpdateOrgMoneyRequestItem struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 待修改的组织
-	OrgId int32 `protobuf:"varint,1,opt,name=org_id,json=orgId,proto3" json:"org_id,omitempty" db:"org_id" yaml:"org_id" bson:"org_id"`
+	OrgId int32 `protobuf:"varint,1,opt,name=org_id,json=orgId,proto3" json:"org_id,omitempty" yaml:"org_id" bson:"org_id" db:"org_id"`
 	// 正数表示增加，负数表示减少
-	Money float64 `protobuf:"fixed64,2,opt,name=money,proto3" json:"money,omitempty" db:"money" yaml:"money" bson:"money"`
+	Money float64 `protobuf:"fixed64,2,opt,name=money,proto3" json:"money,omitempty" yaml:"money" bson:"money" db:"money"`
 }
 
 func (x *UpdateOrgMoneyRequestItem) Reset() {
@@ -281,7 +281,7 @@ type UpdateOrgGoodsRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 待修改的组织货物变动
-	Items []*UpdateOrgGoodsRequestItem `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty" bson:"items" db:"items" yaml:"items"`
+	Items []*UpdateOrgGoodsRequestItem `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty" yaml:"items" bson:"items" db:"items"`
 }
 
 func (x *UpdateOrgGoodsRequest) Reset() {
@@ -391,7 +391,7 @@ type UpdateOrgGoodsResponse struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 修改后的组织的经济情况
-	Orgs []*Org `protobuf:"bytes,1,rep,name=orgs,proto3" json:"orgs,omitempty" yaml:"orgs" bson:"orgs" db:"orgs"`
+	Orgs []*Org `protobuf:"bytes,1,rep,name=orgs,proto3" json:"orgs,omitempty" db:"orgs" yaml:"orgs" bson:"orgs"`
 }
 
 func (x *UpdateOrgGoodsResponse) Reset() {

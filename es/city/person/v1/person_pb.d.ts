@@ -315,6 +315,14 @@ export declare class BusAttribute extends Message<BusAttribute> {
    */
   capacity: number;
 
+  /**
+   * 公交车模型标签
+   * bus model tag
+   *
+   * @generated from field: optional string model = 3;
+   */
+  model?: string;
+
   constructor(data?: PartialMessage<BusAttribute>);
 
   static readonly runtime: typeof proto3;
@@ -345,6 +353,14 @@ export declare class PedestrianAttribute extends Message<PedestrianAttribute> {
    */
   speed: number;
 
+  /**
+   * 行人模型标签
+   * Pedestrian model tag
+   *
+   * @generated from field: optional string model = 2;
+   */
+  model?: string;
+
   constructor(data?: PartialMessage<PedestrianAttribute>);
 
   static readonly runtime: typeof proto3;
@@ -374,6 +390,14 @@ export declare class BikeAttribute extends Message<BikeAttribute> {
    * @generated from field: double speed = 1;
    */
   speed: number;
+
+  /**
+   * 自行车模型标签
+   * Bike model tag
+   *
+   * @generated from field: optional string model = 2;
+   */
+  model?: string;
 
   constructor(data?: PartialMessage<BikeAttribute>);
 

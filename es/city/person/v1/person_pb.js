@@ -105,6 +105,7 @@ export const BusAttribute = proto3.makeMessageType(
   () => [
     { no: 1, name: "line_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 2, name: "capacity", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "model", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
   ],
 );
 
@@ -118,6 +119,7 @@ export const PedestrianAttribute = proto3.makeMessageType(
   "city.person.v1.PedestrianAttribute",
   () => [
     { no: 1, name: "speed", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 2, name: "model", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
   ],
 );
 
@@ -131,6 +133,7 @@ export const BikeAttribute = proto3.makeMessageType(
   "city.person.v1.BikeAttribute",
   () => [
     { no: 1, name: "speed", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 2, name: "model", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
   ],
 );
 
