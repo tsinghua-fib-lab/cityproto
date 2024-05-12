@@ -8,6 +8,7 @@ PROJECT_DIR="$(dirname "${SCRIPT_DIR}")"
 # generate protobuf related .go files
 cd ${PROJECT_DIR}
 rm -r doc/ || true
+rm -r cpp/ || true
 rm -r go/ || true
 rm -r pycityproto/ || true
 rm -r es/ || true
@@ -23,4 +24,4 @@ buf generate --template buf.gen.tag.yaml --include-imports \
     --path city/person/v1 \
     --path city/water/input/v1
 protol --create-package --in-place --python-out pycityproto/ \
-    protoc --proto-path=./ $(find . -name "*.proto")
+    protoc --proto-path=./ $(find ./city -name "*.proto")

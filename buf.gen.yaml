@@ -5,6 +5,10 @@ managed:
     default: git.fiblab.net/sim/protos/go
 # https://buf.build/plugins
 plugins:
+  - plugin: buf.build/protocolbuffers/cpp:v24.4
+    out: cpp
+  - plugin: buf.build/grpc/cpp:v1.59.3
+    out: cpp
   - plugin: buf.build/protocolbuffers/go
     out: go
     opt:
