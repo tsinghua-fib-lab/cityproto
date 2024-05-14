@@ -4,611 +4,519 @@
 #include "city/wargame/v1/wargame_service.pb.h"
 
 #include <algorithm>
-#include "google/protobuf/io/coded_stream.h"
-#include "google/protobuf/extension_set.h"
-#include "google/protobuf/wire_format_lite.h"
-#include "google/protobuf/descriptor.h"
-#include "google/protobuf/generated_message_reflection.h"
-#include "google/protobuf/reflection_ops.h"
-#include "google/protobuf/wire_format.h"
-#include "google/protobuf/generated_message_tctable_impl.h"
-// @@protoc_insertion_point(includes)
 
-// Must be included last.
-#include "google/protobuf/port_def.inc"
+#include <google/protobuf/io/coded_stream.h>
+#include <google/protobuf/extension_set.h>
+#include <google/protobuf/wire_format_lite.h>
+#include <google/protobuf/descriptor.h>
+#include <google/protobuf/generated_message_reflection.h>
+#include <google/protobuf/reflection_ops.h>
+#include <google/protobuf/wire_format.h>
+// @@protoc_insertion_point(includes)
+#include <google/protobuf/port_def.inc>
+
 PROTOBUF_PRAGMA_INIT_SEG
-namespace _pb = ::google::protobuf;
-namespace _pbi = ::google::protobuf::internal;
-namespace _fl = ::google::protobuf::internal::field_layout;
+
+namespace _pb = ::PROTOBUF_NAMESPACE_ID;
+namespace _pbi = _pb::internal;
+
 namespace city {
 namespace wargame {
 namespace v1 {
-        template <typename>
-PROTOBUF_CONSTEXPR PickPointsRequest::PickPointsRequest(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_.points_)*/ {},
-      /*decltype(_impl_.camp_)*/ 0,
-      /*decltype(_impl_._cached_size_)*/ {},
-    } {}
+PROTOBUF_CONSTEXPR PickPointsRequest::PickPointsRequest(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.points_)*/{}
+  , /*decltype(_impl_.camp_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct PickPointsRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR PickPointsRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR PickPointsRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~PickPointsRequestDefaultTypeInternal() {}
   union {
     PickPointsRequest _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PickPointsRequestDefaultTypeInternal _PickPointsRequest_default_instance_;
-      template <typename>
-PROTOBUF_CONSTEXPR PickPointsResponse::PickPointsResponse(::_pbi::ConstantInitialized) {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PickPointsRequestDefaultTypeInternal _PickPointsRequest_default_instance_;
+PROTOBUF_CONSTEXPR PickPointsResponse::PickPointsResponse(
+    ::_pbi::ConstantInitialized) {}
 struct PickPointsResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR PickPointsResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR PickPointsResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~PickPointsResponseDefaultTypeInternal() {}
   union {
     PickPointsResponse _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PickPointsResponseDefaultTypeInternal _PickPointsResponse_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR GetPickPointsRequest::GetPickPointsRequest(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_.camp_)*/ 0,
-      /*decltype(_impl_._cached_size_)*/ {},
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PickPointsResponseDefaultTypeInternal _PickPointsResponse_default_instance_;
+PROTOBUF_CONSTEXPR GetPickPointsRequest::GetPickPointsRequest(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.camp_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct GetPickPointsRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR GetPickPointsRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR GetPickPointsRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~GetPickPointsRequestDefaultTypeInternal() {}
   union {
     GetPickPointsRequest _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetPickPointsRequestDefaultTypeInternal _GetPickPointsRequest_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR GetPickPointsResponse::GetPickPointsResponse(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_.points_)*/ {},
-      /*decltype(_impl_._cached_size_)*/ {},
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetPickPointsRequestDefaultTypeInternal _GetPickPointsRequest_default_instance_;
+PROTOBUF_CONSTEXPR GetPickPointsResponse::GetPickPointsResponse(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.points_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct GetPickPointsResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR GetPickPointsResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR GetPickPointsResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~GetPickPointsResponseDefaultTypeInternal() {}
   union {
     GetPickPointsResponse _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetPickPointsResponseDefaultTypeInternal _GetPickPointsResponse_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR SetScoreWeightRequest::SetScoreWeightRequest(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_.money_)*/ 0,
-      /*decltype(_impl_.population_loss_)*/ 0,
-      /*decltype(_impl_.elec_power_)*/ 0,
-      /*decltype(_impl_.elec_distory_1_)*/ 0,
-      /*decltype(_impl_.water_distory_1_)*/ 0,
-      /*decltype(_impl_.bs_distory_1_)*/ 0,
-      /*decltype(_impl_.traffic_distory_1_)*/ 0,
-      /*decltype(_impl_.elec_distory_2_)*/ 0,
-      /*decltype(_impl_.water_distory_2_)*/ 0,
-      /*decltype(_impl_.bs_distory_2_)*/ 0,
-      /*decltype(_impl_.traffic_distory_2_)*/ 0,
-      /*decltype(_impl_.elec_distory_3_)*/ 0,
-      /*decltype(_impl_.water_distory_3_)*/ 0,
-      /*decltype(_impl_.bs_distory_3_)*/ 0,
-      /*decltype(_impl_.traffic_distory_3_)*/ 0,
-      /*decltype(_impl_.defense_success_)*/ 0,
-      /*decltype(_impl_._cached_size_)*/ {},
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetPickPointsResponseDefaultTypeInternal _GetPickPointsResponse_default_instance_;
+PROTOBUF_CONSTEXPR SetScoreWeightRequest::SetScoreWeightRequest(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.money_)*/0
+  , /*decltype(_impl_.population_loss_)*/0
+  , /*decltype(_impl_.elec_power_)*/0
+  , /*decltype(_impl_.elec_distory_1_)*/0
+  , /*decltype(_impl_.water_distory_1_)*/0
+  , /*decltype(_impl_.bs_distory_1_)*/0
+  , /*decltype(_impl_.traffic_distory_1_)*/0
+  , /*decltype(_impl_.elec_distory_2_)*/0
+  , /*decltype(_impl_.water_distory_2_)*/0
+  , /*decltype(_impl_.bs_distory_2_)*/0
+  , /*decltype(_impl_.traffic_distory_2_)*/0
+  , /*decltype(_impl_.elec_distory_3_)*/0
+  , /*decltype(_impl_.water_distory_3_)*/0
+  , /*decltype(_impl_.bs_distory_3_)*/0
+  , /*decltype(_impl_.traffic_distory_3_)*/0
+  , /*decltype(_impl_.defense_success_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct SetScoreWeightRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR SetScoreWeightRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR SetScoreWeightRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~SetScoreWeightRequestDefaultTypeInternal() {}
   union {
     SetScoreWeightRequest _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SetScoreWeightRequestDefaultTypeInternal _SetScoreWeightRequest_default_instance_;
-      template <typename>
-PROTOBUF_CONSTEXPR SetScoreWeightResponse::SetScoreWeightResponse(::_pbi::ConstantInitialized) {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SetScoreWeightRequestDefaultTypeInternal _SetScoreWeightRequest_default_instance_;
+PROTOBUF_CONSTEXPR SetScoreWeightResponse::SetScoreWeightResponse(
+    ::_pbi::ConstantInitialized) {}
 struct SetScoreWeightResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR SetScoreWeightResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR SetScoreWeightResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~SetScoreWeightResponseDefaultTypeInternal() {}
   union {
     SetScoreWeightResponse _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SetScoreWeightResponseDefaultTypeInternal _SetScoreWeightResponse_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR GiveDefenseOrderRequest::GiveDefenseOrderRequest(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_.weight_radius_)*/ 0,
-      /*decltype(_impl_.weight_550_)*/ 0,
-      /*decltype(_impl_.weight_220_)*/ 0,
-      /*decltype(_impl_.weight_110_)*/ 0,
-      /*decltype(_impl_.prob_threshold_)*/ 0,
-      /*decltype(_impl_._cached_size_)*/ {},
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SetScoreWeightResponseDefaultTypeInternal _SetScoreWeightResponse_default_instance_;
+PROTOBUF_CONSTEXPR GiveDefenseOrderRequest::GiveDefenseOrderRequest(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.weight_radius_)*/0
+  , /*decltype(_impl_.weight_550_)*/0
+  , /*decltype(_impl_.weight_220_)*/0
+  , /*decltype(_impl_.weight_110_)*/0
+  , /*decltype(_impl_.prob_threshold_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct GiveDefenseOrderRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR GiveDefenseOrderRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR GiveDefenseOrderRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~GiveDefenseOrderRequestDefaultTypeInternal() {}
   union {
     GiveDefenseOrderRequest _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GiveDefenseOrderRequestDefaultTypeInternal _GiveDefenseOrderRequest_default_instance_;
-      template <typename>
-PROTOBUF_CONSTEXPR GiveDefenseOrderResponse::GiveDefenseOrderResponse(::_pbi::ConstantInitialized) {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GiveDefenseOrderRequestDefaultTypeInternal _GiveDefenseOrderRequest_default_instance_;
+PROTOBUF_CONSTEXPR GiveDefenseOrderResponse::GiveDefenseOrderResponse(
+    ::_pbi::ConstantInitialized) {}
 struct GiveDefenseOrderResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR GiveDefenseOrderResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR GiveDefenseOrderResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~GiveDefenseOrderResponseDefaultTypeInternal() {}
   union {
     GiveDefenseOrderResponse _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GiveDefenseOrderResponseDefaultTypeInternal _GiveDefenseOrderResponse_default_instance_;
-      template <typename>
-PROTOBUF_CONSTEXPR GetHitHistoryRequest::GetHitHistoryRequest(::_pbi::ConstantInitialized) {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GiveDefenseOrderResponseDefaultTypeInternal _GiveDefenseOrderResponse_default_instance_;
+PROTOBUF_CONSTEXPR GetHitHistoryRequest::GetHitHistoryRequest(
+    ::_pbi::ConstantInitialized) {}
 struct GetHitHistoryRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR GetHitHistoryRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR GetHitHistoryRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~GetHitHistoryRequestDefaultTypeInternal() {}
   union {
     GetHitHistoryRequest _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetHitHistoryRequestDefaultTypeInternal _GetHitHistoryRequest_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR GetHitHistoryResponse::GetHitHistoryResponse(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_.histories_)*/ {},
-      /*decltype(_impl_._cached_size_)*/ {},
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetHitHistoryRequestDefaultTypeInternal _GetHitHistoryRequest_default_instance_;
+PROTOBUF_CONSTEXPR GetHitHistoryResponse::GetHitHistoryResponse(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.histories_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct GetHitHistoryResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR GetHitHistoryResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR GetHitHistoryResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~GetHitHistoryResponseDefaultTypeInternal() {}
   union {
     GetHitHistoryResponse _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetHitHistoryResponseDefaultTypeInternal _GetHitHistoryResponse_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR GetRecoPointsRequest::GetRecoPointsRequest(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_.camp_)*/ 0,
-      /*decltype(_impl_.type_)*/ 0,
-      /*decltype(_impl_._cached_size_)*/ {},
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetHitHistoryResponseDefaultTypeInternal _GetHitHistoryResponse_default_instance_;
+PROTOBUF_CONSTEXPR GetRecoPointsRequest::GetRecoPointsRequest(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.camp_)*/0
+  , /*decltype(_impl_.type_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct GetRecoPointsRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR GetRecoPointsRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR GetRecoPointsRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~GetRecoPointsRequestDefaultTypeInternal() {}
   union {
     GetRecoPointsRequest _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetRecoPointsRequestDefaultTypeInternal _GetRecoPointsRequest_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR GetRecoPointsResponse::GetRecoPointsResponse(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_.points_)*/ {},
-      /*decltype(_impl_._cached_size_)*/ {},
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetRecoPointsRequestDefaultTypeInternal _GetRecoPointsRequest_default_instance_;
+PROTOBUF_CONSTEXPR GetRecoPointsResponse::GetRecoPointsResponse(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.points_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct GetRecoPointsResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR GetRecoPointsResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR GetRecoPointsResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~GetRecoPointsResponseDefaultTypeInternal() {}
   union {
     GetRecoPointsResponse _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetRecoPointsResponseDefaultTypeInternal _GetRecoPointsResponse_default_instance_;
-      template <typename>
-PROTOBUF_CONSTEXPR GetStepRequest::GetStepRequest(::_pbi::ConstantInitialized) {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetRecoPointsResponseDefaultTypeInternal _GetRecoPointsResponse_default_instance_;
+PROTOBUF_CONSTEXPR GetStepRequest::GetStepRequest(
+    ::_pbi::ConstantInitialized) {}
 struct GetStepRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR GetStepRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR GetStepRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~GetStepRequestDefaultTypeInternal() {}
   union {
     GetStepRequest _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetStepRequestDefaultTypeInternal _GetStepRequest_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR GetStepResponse::GetStepResponse(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_.step_)*/ 0,
-      /*decltype(_impl_.red_pick_ready_)*/ false,
-      /*decltype(_impl_.blue_pick_ready_)*/ false,
-      /*decltype(_impl_.is_game_started_)*/ false,
-      /*decltype(_impl_.round_)*/ 0,
-      /*decltype(_impl_._cached_size_)*/ {},
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetStepRequestDefaultTypeInternal _GetStepRequest_default_instance_;
+PROTOBUF_CONSTEXPR GetStepResponse::GetStepResponse(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.step_)*/0
+  , /*decltype(_impl_.red_pick_ready_)*/false
+  , /*decltype(_impl_.blue_pick_ready_)*/false
+  , /*decltype(_impl_.is_game_started_)*/false
+  , /*decltype(_impl_.round_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct GetStepResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR GetStepResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR GetStepResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~GetStepResponseDefaultTypeInternal() {}
   union {
     GetStepResponse _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetStepResponseDefaultTypeInternal _GetStepResponse_default_instance_;
-      template <typename>
-PROTOBUF_CONSTEXPR GetCasualtiesRequest::GetCasualtiesRequest(::_pbi::ConstantInitialized) {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetStepResponseDefaultTypeInternal _GetStepResponse_default_instance_;
+PROTOBUF_CONSTEXPR GetCasualtiesRequest::GetCasualtiesRequest(
+    ::_pbi::ConstantInitialized) {}
 struct GetCasualtiesRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR GetCasualtiesRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR GetCasualtiesRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~GetCasualtiesRequestDefaultTypeInternal() {}
   union {
     GetCasualtiesRequest _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetCasualtiesRequestDefaultTypeInternal _GetCasualtiesRequest_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR GetCasualtiesResponse::GetCasualtiesResponse(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_.casualties_)*/ {},
-      /*decltype(_impl_._cached_size_)*/ {},
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetCasualtiesRequestDefaultTypeInternal _GetCasualtiesRequest_default_instance_;
+PROTOBUF_CONSTEXPR GetCasualtiesResponse::GetCasualtiesResponse(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.casualties_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct GetCasualtiesResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR GetCasualtiesResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR GetCasualtiesResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~GetCasualtiesResponseDefaultTypeInternal() {}
   union {
     GetCasualtiesResponse _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetCasualtiesResponseDefaultTypeInternal _GetCasualtiesResponse_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetCasualtiesResponseDefaultTypeInternal _GetCasualtiesResponse_default_instance_;
 }  // namespace v1
 }  // namespace wargame
 }  // namespace city
 static ::_pb::Metadata file_level_metadata_city_2fwargame_2fv1_2fwargame_5fservice_2eproto[16];
-static constexpr const ::_pb::EnumDescriptor**
-    file_level_enum_descriptors_city_2fwargame_2fv1_2fwargame_5fservice_2eproto = nullptr;
-static constexpr const ::_pb::ServiceDescriptor**
-    file_level_service_descriptors_city_2fwargame_2fv1_2fwargame_5fservice_2eproto = nullptr;
-const ::uint32_t TableStruct_city_2fwargame_2fv1_2fwargame_5fservice_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
-    protodesc_cold) = {
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::PickPointsRequest, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::PickPointsRequest, _impl_.camp_),
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::PickPointsRequest, _impl_.points_),
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::PickPointsResponse, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::GetPickPointsRequest, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::GetPickPointsRequest, _impl_.camp_),
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::GetPickPointsResponse, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::GetPickPointsResponse, _impl_.points_),
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::SetScoreWeightRequest, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::SetScoreWeightRequest, _impl_.money_),
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::SetScoreWeightRequest, _impl_.population_loss_),
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::SetScoreWeightRequest, _impl_.elec_power_),
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::SetScoreWeightRequest, _impl_.elec_distory_1_),
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::SetScoreWeightRequest, _impl_.water_distory_1_),
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::SetScoreWeightRequest, _impl_.bs_distory_1_),
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::SetScoreWeightRequest, _impl_.traffic_distory_1_),
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::SetScoreWeightRequest, _impl_.elec_distory_2_),
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::SetScoreWeightRequest, _impl_.water_distory_2_),
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::SetScoreWeightRequest, _impl_.bs_distory_2_),
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::SetScoreWeightRequest, _impl_.traffic_distory_2_),
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::SetScoreWeightRequest, _impl_.elec_distory_3_),
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::SetScoreWeightRequest, _impl_.water_distory_3_),
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::SetScoreWeightRequest, _impl_.bs_distory_3_),
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::SetScoreWeightRequest, _impl_.traffic_distory_3_),
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::SetScoreWeightRequest, _impl_.defense_success_),
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::SetScoreWeightResponse, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::GiveDefenseOrderRequest, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::GiveDefenseOrderRequest, _impl_.weight_radius_),
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::GiveDefenseOrderRequest, _impl_.weight_550_),
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::GiveDefenseOrderRequest, _impl_.weight_220_),
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::GiveDefenseOrderRequest, _impl_.weight_110_),
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::GiveDefenseOrderRequest, _impl_.prob_threshold_),
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::GiveDefenseOrderResponse, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::GetHitHistoryRequest, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::GetHitHistoryResponse, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::GetHitHistoryResponse, _impl_.histories_),
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::GetRecoPointsRequest, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::GetRecoPointsRequest, _impl_.camp_),
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::GetRecoPointsRequest, _impl_.type_),
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::GetRecoPointsResponse, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::GetRecoPointsResponse, _impl_.points_),
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::GetStepRequest, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::GetStepResponse, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::GetStepResponse, _impl_.step_),
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::GetStepResponse, _impl_.red_pick_ready_),
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::GetStepResponse, _impl_.blue_pick_ready_),
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::GetStepResponse, _impl_.round_),
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::GetStepResponse, _impl_.is_game_started_),
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::GetCasualtiesRequest, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::GetCasualtiesResponse, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::GetCasualtiesResponse, _impl_.casualties_),
-};
+static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_city_2fwargame_2fv1_2fwargame_5fservice_2eproto = nullptr;
+static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_city_2fwargame_2fv1_2fwargame_5fservice_2eproto = nullptr;
 
-static const ::_pbi::MigrationSchema
-    schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-        {0, -1, -1, sizeof(::city::wargame::v1::PickPointsRequest)},
-        {10, -1, -1, sizeof(::city::wargame::v1::PickPointsResponse)},
-        {18, -1, -1, sizeof(::city::wargame::v1::GetPickPointsRequest)},
-        {27, -1, -1, sizeof(::city::wargame::v1::GetPickPointsResponse)},
-        {36, -1, -1, sizeof(::city::wargame::v1::SetScoreWeightRequest)},
-        {60, -1, -1, sizeof(::city::wargame::v1::SetScoreWeightResponse)},
-        {68, -1, -1, sizeof(::city::wargame::v1::GiveDefenseOrderRequest)},
-        {81, -1, -1, sizeof(::city::wargame::v1::GiveDefenseOrderResponse)},
-        {89, -1, -1, sizeof(::city::wargame::v1::GetHitHistoryRequest)},
-        {97, -1, -1, sizeof(::city::wargame::v1::GetHitHistoryResponse)},
-        {106, -1, -1, sizeof(::city::wargame::v1::GetRecoPointsRequest)},
-        {116, -1, -1, sizeof(::city::wargame::v1::GetRecoPointsResponse)},
-        {125, -1, -1, sizeof(::city::wargame::v1::GetStepRequest)},
-        {133, -1, -1, sizeof(::city::wargame::v1::GetStepResponse)},
-        {146, -1, -1, sizeof(::city::wargame::v1::GetCasualtiesRequest)},
-        {154, -1, -1, sizeof(::city::wargame::v1::GetCasualtiesResponse)},
+const uint32_t TableStruct_city_2fwargame_2fv1_2fwargame_5fservice_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::PickPointsRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::PickPointsRequest, _impl_.camp_),
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::PickPointsRequest, _impl_.points_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::PickPointsResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::GetPickPointsRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::GetPickPointsRequest, _impl_.camp_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::GetPickPointsResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::GetPickPointsResponse, _impl_.points_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::SetScoreWeightRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::SetScoreWeightRequest, _impl_.money_),
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::SetScoreWeightRequest, _impl_.population_loss_),
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::SetScoreWeightRequest, _impl_.elec_power_),
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::SetScoreWeightRequest, _impl_.elec_distory_1_),
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::SetScoreWeightRequest, _impl_.water_distory_1_),
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::SetScoreWeightRequest, _impl_.bs_distory_1_),
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::SetScoreWeightRequest, _impl_.traffic_distory_1_),
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::SetScoreWeightRequest, _impl_.elec_distory_2_),
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::SetScoreWeightRequest, _impl_.water_distory_2_),
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::SetScoreWeightRequest, _impl_.bs_distory_2_),
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::SetScoreWeightRequest, _impl_.traffic_distory_2_),
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::SetScoreWeightRequest, _impl_.elec_distory_3_),
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::SetScoreWeightRequest, _impl_.water_distory_3_),
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::SetScoreWeightRequest, _impl_.bs_distory_3_),
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::SetScoreWeightRequest, _impl_.traffic_distory_3_),
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::SetScoreWeightRequest, _impl_.defense_success_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::SetScoreWeightResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::GiveDefenseOrderRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::GiveDefenseOrderRequest, _impl_.weight_radius_),
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::GiveDefenseOrderRequest, _impl_.weight_550_),
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::GiveDefenseOrderRequest, _impl_.weight_220_),
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::GiveDefenseOrderRequest, _impl_.weight_110_),
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::GiveDefenseOrderRequest, _impl_.prob_threshold_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::GiveDefenseOrderResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::GetHitHistoryRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::GetHitHistoryResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::GetHitHistoryResponse, _impl_.histories_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::GetRecoPointsRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::GetRecoPointsRequest, _impl_.camp_),
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::GetRecoPointsRequest, _impl_.type_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::GetRecoPointsResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::GetRecoPointsResponse, _impl_.points_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::GetStepRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::GetStepResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::GetStepResponse, _impl_.step_),
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::GetStepResponse, _impl_.red_pick_ready_),
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::GetStepResponse, _impl_.blue_pick_ready_),
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::GetStepResponse, _impl_.round_),
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::GetStepResponse, _impl_.is_game_started_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::GetCasualtiesRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::GetCasualtiesResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::GetCasualtiesResponse, _impl_.casualties_),
+};
+static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  { 0, -1, -1, sizeof(::city::wargame::v1::PickPointsRequest)},
+  { 8, -1, -1, sizeof(::city::wargame::v1::PickPointsResponse)},
+  { 14, -1, -1, sizeof(::city::wargame::v1::GetPickPointsRequest)},
+  { 21, -1, -1, sizeof(::city::wargame::v1::GetPickPointsResponse)},
+  { 28, -1, -1, sizeof(::city::wargame::v1::SetScoreWeightRequest)},
+  { 50, -1, -1, sizeof(::city::wargame::v1::SetScoreWeightResponse)},
+  { 56, -1, -1, sizeof(::city::wargame::v1::GiveDefenseOrderRequest)},
+  { 67, -1, -1, sizeof(::city::wargame::v1::GiveDefenseOrderResponse)},
+  { 73, -1, -1, sizeof(::city::wargame::v1::GetHitHistoryRequest)},
+  { 79, -1, -1, sizeof(::city::wargame::v1::GetHitHistoryResponse)},
+  { 86, -1, -1, sizeof(::city::wargame::v1::GetRecoPointsRequest)},
+  { 94, -1, -1, sizeof(::city::wargame::v1::GetRecoPointsResponse)},
+  { 101, -1, -1, sizeof(::city::wargame::v1::GetStepRequest)},
+  { 107, -1, -1, sizeof(::city::wargame::v1::GetStepResponse)},
+  { 118, -1, -1, sizeof(::city::wargame::v1::GetCasualtiesRequest)},
+  { 124, -1, -1, sizeof(::city::wargame::v1::GetCasualtiesResponse)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
-    &::city::wargame::v1::_PickPointsRequest_default_instance_._instance,
-    &::city::wargame::v1::_PickPointsResponse_default_instance_._instance,
-    &::city::wargame::v1::_GetPickPointsRequest_default_instance_._instance,
-    &::city::wargame::v1::_GetPickPointsResponse_default_instance_._instance,
-    &::city::wargame::v1::_SetScoreWeightRequest_default_instance_._instance,
-    &::city::wargame::v1::_SetScoreWeightResponse_default_instance_._instance,
-    &::city::wargame::v1::_GiveDefenseOrderRequest_default_instance_._instance,
-    &::city::wargame::v1::_GiveDefenseOrderResponse_default_instance_._instance,
-    &::city::wargame::v1::_GetHitHistoryRequest_default_instance_._instance,
-    &::city::wargame::v1::_GetHitHistoryResponse_default_instance_._instance,
-    &::city::wargame::v1::_GetRecoPointsRequest_default_instance_._instance,
-    &::city::wargame::v1::_GetRecoPointsResponse_default_instance_._instance,
-    &::city::wargame::v1::_GetStepRequest_default_instance_._instance,
-    &::city::wargame::v1::_GetStepResponse_default_instance_._instance,
-    &::city::wargame::v1::_GetCasualtiesRequest_default_instance_._instance,
-    &::city::wargame::v1::_GetCasualtiesResponse_default_instance_._instance,
-};
-const char descriptor_table_protodef_city_2fwargame_2fv1_2fwargame_5fservice_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-    "\n%city/wargame/v1/wargame_service.proto\022"
-    "\017city.wargame.v1\032\035city/wargame/v1/wargam"
-    "e.proto\"n\n\021PickPointsRequest\022)\n\004camp\030\001 \001"
-    "(\0162\025.city.wargame.v1.CampR\004camp\022.\n\006point"
-    "s\030\002 \003(\0132\026.city.wargame.v1.PointR\006points\""
-    "\024\n\022PickPointsResponse\"A\n\024GetPickPointsRe"
-    "quest\022)\n\004camp\030\001 \001(\0162\025.city.wargame.v1.Ca"
-    "mpR\004camp\"G\n\025GetPickPointsResponse\022.\n\006poi"
-    "nts\030\001 \003(\0132\026.city.wargame.v1.PointR\006point"
-    "s\"\362\004\n\025SetScoreWeightRequest\022\024\n\005money\030\001 \001"
-    "(\001R\005money\022\'\n\017population_loss\030\002 \001(\001R\016popu"
-    "lationLoss\022\035\n\nelec_power\030\003 \001(\001R\telecPowe"
-    "r\022$\n\016elec_distory_1\030\004 \001(\001R\014elecDistory1\022"
-    "&\n\017water_distory_1\030\005 \001(\001R\rwaterDistory1\022"
-    " \n\014bs_distory_1\030\006 \001(\001R\nbsDistory1\022*\n\021tra"
-    "ffic_distory_1\030\007 \001(\001R\017trafficDistory1\022$\n"
-    "\016elec_distory_2\030\010 \001(\001R\014elecDistory2\022&\n\017w"
-    "ater_distory_2\030\t \001(\001R\rwaterDistory2\022 \n\014b"
-    "s_distory_2\030\n \001(\001R\nbsDistory2\022*\n\021traffic"
-    "_distory_2\030\013 \001(\001R\017trafficDistory2\022$\n\016ele"
-    "c_distory_3\030\014 \001(\001R\014elecDistory3\022&\n\017water"
-    "_distory_3\030\r \001(\001R\rwaterDistory3\022 \n\014bs_di"
-    "story_3\030\016 \001(\001R\nbsDistory3\022*\n\021traffic_dis"
-    "tory_3\030\017 \001(\001R\017trafficDistory3\022\'\n\017defense"
-    "_success\030\020 \001(\001R\016defenseSuccess\"\030\n\026SetSco"
-    "reWeightResponse\"\302\001\n\027GiveDefenseOrderReq"
-    "uest\022#\n\rweight_radius\030\001 \001(\001R\014weightRadiu"
-    "s\022\035\n\nweight_550\030\002 \001(\001R\tweight550\022\035\n\nweig"
-    "ht_220\030\003 \001(\001R\tweight220\022\035\n\nweight_110\030\004 "
-    "\001(\001R\tweight110\022%\n\016prob_threshold\030\005 \001(\001R\r"
-    "probThreshold\"\032\n\030GiveDefenseOrderRespons"
-    "e\"\026\n\024GetHitHistoryRequest\"R\n\025GetHitHisto"
-    "ryResponse\0229\n\thistories\030\001 \003(\0132\033.city.war"
-    "game.v1.HitHistoryR\thistories\"t\n\024GetReco"
-    "PointsRequest\022)\n\004camp\030\001 \001(\0162\025.city.warga"
-    "me.v1.CampR\004camp\0221\n\004type\030\002 \001(\0162\035.city.wa"
-    "rgame.v1.RecoAlgoTypeR\004type\"K\n\025GetRecoPo"
-    "intsResponse\0222\n\006points\030\001 \003(\0132\032.city.warg"
-    "ame.v1.RecoPointR\006points\"\020\n\016GetStepReque"
-    "st\"\261\001\n\017GetStepResponse\022\022\n\004step\030\001 \001(\005R\004st"
-    "ep\022$\n\016red_pick_ready\030\002 \001(\010R\014redPickReady"
-    "\022&\n\017blue_pick_ready\030\003 \001(\010R\rbluePickReady"
-    "\022\024\n\005round\030\004 \001(\005R\005round\022&\n\017is_game_starte"
-    "d\030\005 \001(\010R\risGameStarted\"\026\n\024GetCasualtiesR"
-    "equest\"R\n\025GetCasualtiesResponse\0229\n\ncasua"
-    "lties\030\001 \003(\0132\031.city.wargame.v1.CasualtyR\n"
-    "casualties2\201\006\n\016WarGameService\022U\n\nPickPoi"
-    "nts\022\".city.wargame.v1.PickPointsRequest\032"
-    "#.city.wargame.v1.PickPointsResponse\022^\n\r"
-    "GetPickPoints\022%.city.wargame.v1.GetPickP"
-    "ointsRequest\032&.city.wargame.v1.GetPickPo"
-    "intsResponse\022g\n\020GiveDefenseOrder\022(.city."
-    "wargame.v1.GiveDefenseOrderRequest\032).cit"
-    "y.wargame.v1.GiveDefenseOrderResponse\022a\n"
-    "\016SetScoreWeight\022&.city.wargame.v1.SetSco"
-    "reWeightRequest\032\'.city.wargame.v1.SetSco"
-    "reWeightResponse\022^\n\rGetHitHistory\022%.city"
-    ".wargame.v1.GetHitHistoryRequest\032&.city."
-    "wargame.v1.GetHitHistoryResponse\022^\n\rGetR"
-    "ecoPoints\022%.city.wargame.v1.GetRecoPoint"
-    "sRequest\032&.city.wargame.v1.GetRecoPoints"
-    "Response\022L\n\007GetStep\022\037.city.wargame.v1.Ge"
-    "tStepRequest\032 .city.wargame.v1.GetStepRe"
-    "sponse\022^\n\rGetCasualties\022%.city.wargame.v"
-    "1.GetCasualtiesRequest\032&.city.wargame.v1"
-    ".GetCasualtiesResponseB\300\001\n\023com.city.warg"
-    "ame.v1B\023WargameServiceProtoP\001Z6git.fibla"
-    "b.net/sim/protos/go/city/wargame/v1;warg"
-    "amev1\242\002\003CWX\252\002\017City.Wargame.V1\312\002\017City\\War"
-    "game\\V1\342\002\033City\\Wargame\\V1\\GPBMetadata\352\002\021"
-    "City::Wargame::V1b\006proto3"
-};
-static const ::_pbi::DescriptorTable* const descriptor_table_city_2fwargame_2fv1_2fwargame_5fservice_2eproto_deps[1] =
-    {
-        &::descriptor_table_city_2fwargame_2fv1_2fwargame_2eproto,
-};
-static ::absl::once_flag descriptor_table_city_2fwargame_2fv1_2fwargame_5fservice_2eproto_once;
-const ::_pbi::DescriptorTable descriptor_table_city_2fwargame_2fv1_2fwargame_5fservice_2eproto = {
-    false,
-    false,
-    2825,
-    descriptor_table_protodef_city_2fwargame_2fv1_2fwargame_5fservice_2eproto,
-    "city/wargame/v1/wargame_service.proto",
-    &descriptor_table_city_2fwargame_2fv1_2fwargame_5fservice_2eproto_once,
-    descriptor_table_city_2fwargame_2fv1_2fwargame_5fservice_2eproto_deps,
-    1,
-    16,
-    schemas,
-    file_default_instances,
-    TableStruct_city_2fwargame_2fv1_2fwargame_5fservice_2eproto::offsets,
-    file_level_metadata_city_2fwargame_2fv1_2fwargame_5fservice_2eproto,
-    file_level_enum_descriptors_city_2fwargame_2fv1_2fwargame_5fservice_2eproto,
-    file_level_service_descriptors_city_2fwargame_2fv1_2fwargame_5fservice_2eproto,
+  &::city::wargame::v1::_PickPointsRequest_default_instance_._instance,
+  &::city::wargame::v1::_PickPointsResponse_default_instance_._instance,
+  &::city::wargame::v1::_GetPickPointsRequest_default_instance_._instance,
+  &::city::wargame::v1::_GetPickPointsResponse_default_instance_._instance,
+  &::city::wargame::v1::_SetScoreWeightRequest_default_instance_._instance,
+  &::city::wargame::v1::_SetScoreWeightResponse_default_instance_._instance,
+  &::city::wargame::v1::_GiveDefenseOrderRequest_default_instance_._instance,
+  &::city::wargame::v1::_GiveDefenseOrderResponse_default_instance_._instance,
+  &::city::wargame::v1::_GetHitHistoryRequest_default_instance_._instance,
+  &::city::wargame::v1::_GetHitHistoryResponse_default_instance_._instance,
+  &::city::wargame::v1::_GetRecoPointsRequest_default_instance_._instance,
+  &::city::wargame::v1::_GetRecoPointsResponse_default_instance_._instance,
+  &::city::wargame::v1::_GetStepRequest_default_instance_._instance,
+  &::city::wargame::v1::_GetStepResponse_default_instance_._instance,
+  &::city::wargame::v1::_GetCasualtiesRequest_default_instance_._instance,
+  &::city::wargame::v1::_GetCasualtiesResponse_default_instance_._instance,
 };
 
-// This function exists to be marked as weak.
-// It can significantly speed up compilation by breaking up LLVM's SCC
-// in the .pb.cc translation units. Large translation units see a
-// reduction of more than 35% of walltime for optimized builds. Without
-// the weak attribute all the messages in the file, including all the
-// vtables and everything they use become part of the same SCC through
-// a cycle like:
-// GetMetadata -> descriptor table -> default instances ->
-//   vtables -> GetMetadata
-// By adding a weak function here we break the connection from the
-// individual vtables back into the descriptor table.
+const char descriptor_table_protodef_city_2fwargame_2fv1_2fwargame_5fservice_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
+  "\n%city/wargame/v1/wargame_service.proto\022"
+  "\017city.wargame.v1\032\035city/wargame/v1/wargam"
+  "e.proto\"n\n\021PickPointsRequest\022)\n\004camp\030\001 \001"
+  "(\0162\025.city.wargame.v1.CampR\004camp\022.\n\006point"
+  "s\030\002 \003(\0132\026.city.wargame.v1.PointR\006points\""
+  "\024\n\022PickPointsResponse\"A\n\024GetPickPointsRe"
+  "quest\022)\n\004camp\030\001 \001(\0162\025.city.wargame.v1.Ca"
+  "mpR\004camp\"G\n\025GetPickPointsResponse\022.\n\006poi"
+  "nts\030\001 \003(\0132\026.city.wargame.v1.PointR\006point"
+  "s\"\362\004\n\025SetScoreWeightRequest\022\024\n\005money\030\001 \001"
+  "(\001R\005money\022\'\n\017population_loss\030\002 \001(\001R\016popu"
+  "lationLoss\022\035\n\nelec_power\030\003 \001(\001R\telecPowe"
+  "r\022$\n\016elec_distory_1\030\004 \001(\001R\014elecDistory1\022"
+  "&\n\017water_distory_1\030\005 \001(\001R\rwaterDistory1\022"
+  " \n\014bs_distory_1\030\006 \001(\001R\nbsDistory1\022*\n\021tra"
+  "ffic_distory_1\030\007 \001(\001R\017trafficDistory1\022$\n"
+  "\016elec_distory_2\030\010 \001(\001R\014elecDistory2\022&\n\017w"
+  "ater_distory_2\030\t \001(\001R\rwaterDistory2\022 \n\014b"
+  "s_distory_2\030\n \001(\001R\nbsDistory2\022*\n\021traffic"
+  "_distory_2\030\013 \001(\001R\017trafficDistory2\022$\n\016ele"
+  "c_distory_3\030\014 \001(\001R\014elecDistory3\022&\n\017water"
+  "_distory_3\030\r \001(\001R\rwaterDistory3\022 \n\014bs_di"
+  "story_3\030\016 \001(\001R\nbsDistory3\022*\n\021traffic_dis"
+  "tory_3\030\017 \001(\001R\017trafficDistory3\022\'\n\017defense"
+  "_success\030\020 \001(\001R\016defenseSuccess\"\030\n\026SetSco"
+  "reWeightResponse\"\302\001\n\027GiveDefenseOrderReq"
+  "uest\022#\n\rweight_radius\030\001 \001(\001R\014weightRadiu"
+  "s\022\035\n\nweight_550\030\002 \001(\001R\tweight550\022\035\n\nweig"
+  "ht_220\030\003 \001(\001R\tweight220\022\035\n\nweight_110\030\004 "
+  "\001(\001R\tweight110\022%\n\016prob_threshold\030\005 \001(\001R\r"
+  "probThreshold\"\032\n\030GiveDefenseOrderRespons"
+  "e\"\026\n\024GetHitHistoryRequest\"R\n\025GetHitHisto"
+  "ryResponse\0229\n\thistories\030\001 \003(\0132\033.city.war"
+  "game.v1.HitHistoryR\thistories\"t\n\024GetReco"
+  "PointsRequest\022)\n\004camp\030\001 \001(\0162\025.city.warga"
+  "me.v1.CampR\004camp\0221\n\004type\030\002 \001(\0162\035.city.wa"
+  "rgame.v1.RecoAlgoTypeR\004type\"K\n\025GetRecoPo"
+  "intsResponse\0222\n\006points\030\001 \003(\0132\032.city.warg"
+  "ame.v1.RecoPointR\006points\"\020\n\016GetStepReque"
+  "st\"\261\001\n\017GetStepResponse\022\022\n\004step\030\001 \001(\005R\004st"
+  "ep\022$\n\016red_pick_ready\030\002 \001(\010R\014redPickReady"
+  "\022&\n\017blue_pick_ready\030\003 \001(\010R\rbluePickReady"
+  "\022\024\n\005round\030\004 \001(\005R\005round\022&\n\017is_game_starte"
+  "d\030\005 \001(\010R\risGameStarted\"\026\n\024GetCasualtiesR"
+  "equest\"R\n\025GetCasualtiesResponse\0229\n\ncasua"
+  "lties\030\001 \003(\0132\031.city.wargame.v1.CasualtyR\n"
+  "casualties2\201\006\n\016WarGameService\022U\n\nPickPoi"
+  "nts\022\".city.wargame.v1.PickPointsRequest\032"
+  "#.city.wargame.v1.PickPointsResponse\022^\n\r"
+  "GetPickPoints\022%.city.wargame.v1.GetPickP"
+  "ointsRequest\032&.city.wargame.v1.GetPickPo"
+  "intsResponse\022g\n\020GiveDefenseOrder\022(.city."
+  "wargame.v1.GiveDefenseOrderRequest\032).cit"
+  "y.wargame.v1.GiveDefenseOrderResponse\022a\n"
+  "\016SetScoreWeight\022&.city.wargame.v1.SetSco"
+  "reWeightRequest\032\'.city.wargame.v1.SetSco"
+  "reWeightResponse\022^\n\rGetHitHistory\022%.city"
+  ".wargame.v1.GetHitHistoryRequest\032&.city."
+  "wargame.v1.GetHitHistoryResponse\022^\n\rGetR"
+  "ecoPoints\022%.city.wargame.v1.GetRecoPoint"
+  "sRequest\032&.city.wargame.v1.GetRecoPoints"
+  "Response\022L\n\007GetStep\022\037.city.wargame.v1.Ge"
+  "tStepRequest\032 .city.wargame.v1.GetStepRe"
+  "sponse\022^\n\rGetCasualties\022%.city.wargame.v"
+  "1.GetCasualtiesRequest\032&.city.wargame.v1"
+  ".GetCasualtiesResponseB\300\001\n\023com.city.warg"
+  "ame.v1B\023WargameServiceProtoP\001Z6git.fibla"
+  "b.net/sim/protos/go/city/wargame/v1;warg"
+  "amev1\242\002\003CWX\252\002\017City.Wargame.V1\312\002\017City\\War"
+  "game\\V1\342\002\033City\\Wargame\\V1\\GPBMetadata\352\002\021"
+  "City::Wargame::V1b\006proto3"
+  ;
+static const ::_pbi::DescriptorTable* const descriptor_table_city_2fwargame_2fv1_2fwargame_5fservice_2eproto_deps[1] = {
+  &::descriptor_table_city_2fwargame_2fv1_2fwargame_2eproto,
+};
+static ::_pbi::once_flag descriptor_table_city_2fwargame_2fv1_2fwargame_5fservice_2eproto_once;
+const ::_pbi::DescriptorTable descriptor_table_city_2fwargame_2fv1_2fwargame_5fservice_2eproto = {
+    false, false, 2825, descriptor_table_protodef_city_2fwargame_2fv1_2fwargame_5fservice_2eproto,
+    "city/wargame/v1/wargame_service.proto",
+    &descriptor_table_city_2fwargame_2fv1_2fwargame_5fservice_2eproto_once, descriptor_table_city_2fwargame_2fv1_2fwargame_5fservice_2eproto_deps, 1, 16,
+    schemas, file_default_instances, TableStruct_city_2fwargame_2fv1_2fwargame_5fservice_2eproto::offsets,
+    file_level_metadata_city_2fwargame_2fv1_2fwargame_5fservice_2eproto, file_level_enum_descriptors_city_2fwargame_2fv1_2fwargame_5fservice_2eproto,
+    file_level_service_descriptors_city_2fwargame_2fv1_2fwargame_5fservice_2eproto,
+};
 PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_city_2fwargame_2fv1_2fwargame_5fservice_2eproto_getter() {
   return &descriptor_table_city_2fwargame_2fv1_2fwargame_5fservice_2eproto;
 }
+
 // Force running AddDescriptors() at dynamic initialization time.
-PROTOBUF_ATTRIBUTE_INIT_PRIORITY2
-static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_city_2fwargame_2fv1_2fwargame_5fservice_2eproto(&descriptor_table_city_2fwargame_2fv1_2fwargame_5fservice_2eproto);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_city_2fwargame_2fv1_2fwargame_5fservice_2eproto(&descriptor_table_city_2fwargame_2fv1_2fwargame_5fservice_2eproto);
 namespace city {
 namespace wargame {
 namespace v1 {
+
 // ===================================================================
 
 class PickPointsRequest::_Internal {
@@ -616,176 +524,191 @@ class PickPointsRequest::_Internal {
 };
 
 void PickPointsRequest::clear_points() {
-  _internal_mutable_points()->Clear();
+  _impl_.points_.Clear();
 }
-PickPointsRequest::PickPointsRequest(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+PickPointsRequest::PickPointsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.wargame.v1.PickPointsRequest)
 }
-PickPointsRequest::PickPointsRequest(const PickPointsRequest& from) : ::google::protobuf::Message() {
-  PickPointsRequest* const _this = this;
-  (void)_this;
+PickPointsRequest::PickPointsRequest(const PickPointsRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  PickPointsRequest* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.points_){from._impl_.points_},
-      decltype(_impl_.camp_){},
-      /*decltype(_impl_._cached_size_)*/ {},
-  };
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
-  _this->_impl_.camp_ = from._impl_.camp_;
+      decltype(_impl_.points_){from._impl_.points_}
+    , decltype(_impl_.camp_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
 
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.camp_ = from._impl_.camp_;
   // @@protoc_insertion_point(copy_constructor:city.wargame.v1.PickPointsRequest)
 }
-inline void PickPointsRequest::SharedCtor(::_pb::Arena* arena) {
+
+inline void PickPointsRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.points_){arena},
-      decltype(_impl_.camp_){0},
-      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.points_){arena}
+    , decltype(_impl_.camp_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 PickPointsRequest::~PickPointsRequest() {
   // @@protoc_insertion_point(destructor:city.wargame.v1.PickPointsRequest)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void PickPointsRequest::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.points_.~RepeatedPtrField();
 }
+
 void PickPointsRequest::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void PickPointsRequest::Clear() {
+void PickPointsRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.wargame.v1.PickPointsRequest)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _internal_mutable_points()->Clear();
+  _impl_.points_.Clear();
   _impl_.camp_ = 0;
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* PickPointsRequest::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* PickPointsRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // .city.wargame.v1.Camp camp = 1 [json_name = "camp"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_set_camp(static_cast<::city::wargame::v1::Camp>(val));
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated .city.wargame.v1.Point points = 2 [json_name = "points"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_points(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<1, 2, 1, 0, 2> PickPointsRequest::_table_ = {
-  {
-    0,  // no _has_bits_
-    0, // no _extensions_
-    2, 8,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967292,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    2,  // num_field_entries
-    1,  // num_aux_entries
-    offsetof(decltype(_table_), aux_entries),
-    &_PickPointsRequest_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    // repeated .city.wargame.v1.Point points = 2 [json_name = "points"];
-    {::_pbi::TcParser::FastMtR1,
-     {18, 63, 0, PROTOBUF_FIELD_OFFSET(PickPointsRequest, _impl_.points_)}},
-    // .city.wargame.v1.Camp camp = 1 [json_name = "camp"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(PickPointsRequest, _impl_.camp_), 63>(),
-     {8, 63, 0, PROTOBUF_FIELD_OFFSET(PickPointsRequest, _impl_.camp_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // .city.wargame.v1.Camp camp = 1 [json_name = "camp"];
-    {PROTOBUF_FIELD_OFFSET(PickPointsRequest, _impl_.camp_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kOpenEnum)},
-    // repeated .city.wargame.v1.Point points = 2 [json_name = "points"];
-    {PROTOBUF_FIELD_OFFSET(PickPointsRequest, _impl_.points_), 0, 0,
-    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
-  }}, {{
-    {::_pbi::TcParser::GetTable<::city::wargame::v1::Point>()},
-  }}, {{
-  }},
-};
-
-::uint8_t* PickPointsRequest::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* PickPointsRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.wargame.v1.PickPointsRequest)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // .city.wargame.v1.Camp camp = 1 [json_name = "camp"];
   if (this->_internal_camp() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteEnumToArray(
-        1, this->_internal_camp(), target);
+      1, this->_internal_camp(), target);
   }
 
   // repeated .city.wargame.v1.Point points = 2 [json_name = "points"];
   for (unsigned i = 0,
       n = static_cast<unsigned>(this->_internal_points_size()); i < n; i++) {
-    const auto& repfield = this->_internal_points().Get(i);
-    target = ::google::protobuf::internal::WireFormatLite::
+    const auto& repfield = this->_internal_points(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
         InternalWriteMessage(2, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.wargame.v1.PickPointsRequest)
   return target;
 }
 
-::size_t PickPointsRequest::ByteSizeLong() const {
+size_t PickPointsRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.wargame.v1.PickPointsRequest)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // repeated .city.wargame.v1.Point points = 2 [json_name = "points"];
   total_size += 1UL * this->_internal_points_size();
-  for (const auto& msg : this->_internal_points()) {
+  for (const auto& msg : this->_impl_.points_) {
     total_size +=
-      ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
+
   // .city.wargame.v1.Camp camp = 1 [json_name = "camp"];
   if (this->_internal_camp() != 0) {
     total_size += 1 +
-                  ::_pbi::WireFormatLite::EnumSize(this->_internal_camp());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_camp());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData PickPointsRequest::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData PickPointsRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     PickPointsRequest::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*PickPointsRequest::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*PickPointsRequest::GetClassData() const { return &_class_data_; }
 
 
-void PickPointsRequest::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void PickPointsRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<PickPointsRequest*>(&to_msg);
   auto& from = static_cast<const PickPointsRequest&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.wargame.v1.PickPointsRequest)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  _this->_internal_mutable_points()->MergeFrom(from._internal_points());
+  _this->_impl_.points_.MergeFrom(from._impl_.points_);
   if (from._internal_camp() != 0) {
     _this->_internal_set_camp(from._internal_camp());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void PickPointsRequest::CopyFrom(const PickPointsRequest& from) {
@@ -795,7 +718,7 @@ void PickPointsRequest::CopyFrom(const PickPointsRequest& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool PickPointsRequest::IsInitialized() const {
+bool PickPointsRequest::IsInitialized() const {
   return true;
 }
 
@@ -806,38 +729,39 @@ void PickPointsRequest::InternalSwap(PickPointsRequest* other) {
   swap(_impl_.camp_, other->_impl_.camp_);
 }
 
-::google::protobuf::Metadata PickPointsRequest::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata PickPointsRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fwargame_2fv1_2fwargame_5fservice_2eproto_getter, &descriptor_table_city_2fwargame_2fv1_2fwargame_5fservice_2eproto_once,
       file_level_metadata_city_2fwargame_2fv1_2fwargame_5fservice_2eproto[0]);
 }
+
 // ===================================================================
 
 class PickPointsResponse::_Internal {
  public:
 };
 
-PickPointsResponse::PickPointsResponse(::google::protobuf::Arena* arena)
-    : ::google::protobuf::internal::ZeroFieldsBase(arena) {
+PickPointsResponse::PickPointsResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
   // @@protoc_insertion_point(arena_constructor:city.wargame.v1.PickPointsResponse)
 }
-PickPointsResponse::PickPointsResponse(const PickPointsResponse& from) : ::google::protobuf::internal::ZeroFieldsBase() {
-  PickPointsResponse* const _this = this;
-  (void)_this;
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
-
+PickPointsResponse::PickPointsResponse(const PickPointsResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
+  PickPointsResponse* const _this = this; (void)_this;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:city.wargame.v1.PickPointsResponse)
 }
 
 
 
 
-const ::google::protobuf::Message::ClassData PickPointsResponse::_class_data_ = {
-    ::google::protobuf::internal::ZeroFieldsBase::CopyImpl,
-    ::google::protobuf::internal::ZeroFieldsBase::MergeImpl,
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData PickPointsResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
 };
-const ::google::protobuf::Message::ClassData*PickPointsResponse::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*PickPointsResponse::GetClassData() const { return &_class_data_; }
 
 
 
@@ -845,153 +769,168 @@ const ::google::protobuf::Message::ClassData*PickPointsResponse::GetClassData() 
 
 
 
-::google::protobuf::Metadata PickPointsResponse::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata PickPointsResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fwargame_2fv1_2fwargame_5fservice_2eproto_getter, &descriptor_table_city_2fwargame_2fv1_2fwargame_5fservice_2eproto_once,
       file_level_metadata_city_2fwargame_2fv1_2fwargame_5fservice_2eproto[1]);
 }
+
 // ===================================================================
 
 class GetPickPointsRequest::_Internal {
  public:
 };
 
-GetPickPointsRequest::GetPickPointsRequest(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+GetPickPointsRequest::GetPickPointsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.wargame.v1.GetPickPointsRequest)
 }
 GetPickPointsRequest::GetPickPointsRequest(const GetPickPointsRequest& from)
-    : ::google::protobuf::Message(), _impl_(from._impl_) {
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  GetPickPointsRequest* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.camp_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.camp_ = from._impl_.camp_;
   // @@protoc_insertion_point(copy_constructor:city.wargame.v1.GetPickPointsRequest)
 }
-inline void GetPickPointsRequest::SharedCtor(::_pb::Arena* arena) {
+
+inline void GetPickPointsRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.camp_){0},
-      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.camp_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 GetPickPointsRequest::~GetPickPointsRequest() {
   // @@protoc_insertion_point(destructor:city.wargame.v1.GetPickPointsRequest)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void GetPickPointsRequest::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
+
 void GetPickPointsRequest::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void GetPickPointsRequest::Clear() {
+void GetPickPointsRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.wargame.v1.GetPickPointsRequest)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   _impl_.camp_ = 0;
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* GetPickPointsRequest::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* GetPickPointsRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // .city.wargame.v1.Camp camp = 1 [json_name = "camp"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_set_camp(static_cast<::city::wargame::v1::Camp>(val));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<0, 1, 0, 0, 2> GetPickPointsRequest::_table_ = {
-  {
-    0,  // no _has_bits_
-    0, // no _extensions_
-    1, 0,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967294,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    1,  // num_field_entries
-    0,  // num_aux_entries
-    offsetof(decltype(_table_), field_names),  // no aux_entries
-    &_GetPickPointsRequest_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    // .city.wargame.v1.Camp camp = 1 [json_name = "camp"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(GetPickPointsRequest, _impl_.camp_), 63>(),
-     {8, 63, 0, PROTOBUF_FIELD_OFFSET(GetPickPointsRequest, _impl_.camp_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // .city.wargame.v1.Camp camp = 1 [json_name = "camp"];
-    {PROTOBUF_FIELD_OFFSET(GetPickPointsRequest, _impl_.camp_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kOpenEnum)},
-  }},
-  // no aux_entries
-  {{
-  }},
-};
-
-::uint8_t* GetPickPointsRequest::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* GetPickPointsRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.wargame.v1.GetPickPointsRequest)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // .city.wargame.v1.Camp camp = 1 [json_name = "camp"];
   if (this->_internal_camp() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteEnumToArray(
-        1, this->_internal_camp(), target);
+      1, this->_internal_camp(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.wargame.v1.GetPickPointsRequest)
   return target;
 }
 
-::size_t GetPickPointsRequest::ByteSizeLong() const {
+size_t GetPickPointsRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.wargame.v1.GetPickPointsRequest)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // .city.wargame.v1.Camp camp = 1 [json_name = "camp"];
   if (this->_internal_camp() != 0) {
     total_size += 1 +
-                  ::_pbi::WireFormatLite::EnumSize(this->_internal_camp());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_camp());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData GetPickPointsRequest::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetPickPointsRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     GetPickPointsRequest::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*GetPickPointsRequest::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetPickPointsRequest::GetClassData() const { return &_class_data_; }
 
 
-void GetPickPointsRequest::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void GetPickPointsRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<GetPickPointsRequest*>(&to_msg);
   auto& from = static_cast<const GetPickPointsRequest&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.wargame.v1.GetPickPointsRequest)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_camp() != 0) {
     _this->_internal_set_camp(from._internal_camp());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void GetPickPointsRequest::CopyFrom(const GetPickPointsRequest& from) {
@@ -1001,7 +940,7 @@ void GetPickPointsRequest::CopyFrom(const GetPickPointsRequest& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool GetPickPointsRequest::IsInitialized() const {
+bool GetPickPointsRequest::IsInitialized() const {
   return true;
 }
 
@@ -1011,11 +950,12 @@ void GetPickPointsRequest::InternalSwap(GetPickPointsRequest* other) {
   swap(_impl_.camp_, other->_impl_.camp_);
 }
 
-::google::protobuf::Metadata GetPickPointsRequest::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata GetPickPointsRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fwargame_2fv1_2fwargame_5fservice_2eproto_getter, &descriptor_table_city_2fwargame_2fv1_2fwargame_5fservice_2eproto_once,
       file_level_metadata_city_2fwargame_2fv1_2fwargame_5fservice_2eproto[2]);
 }
+
 // ===================================================================
 
 class GetPickPointsResponse::_Internal {
@@ -1023,150 +963,162 @@ class GetPickPointsResponse::_Internal {
 };
 
 void GetPickPointsResponse::clear_points() {
-  _internal_mutable_points()->Clear();
+  _impl_.points_.Clear();
 }
-GetPickPointsResponse::GetPickPointsResponse(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+GetPickPointsResponse::GetPickPointsResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.wargame.v1.GetPickPointsResponse)
 }
-GetPickPointsResponse::GetPickPointsResponse(const GetPickPointsResponse& from) : ::google::protobuf::Message() {
-  GetPickPointsResponse* const _this = this;
-  (void)_this;
+GetPickPointsResponse::GetPickPointsResponse(const GetPickPointsResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  GetPickPointsResponse* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.points_){from._impl_.points_},
-      /*decltype(_impl_._cached_size_)*/ {},
-  };
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+      decltype(_impl_.points_){from._impl_.points_}
+    , /*decltype(_impl_._cached_size_)*/{}};
 
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:city.wargame.v1.GetPickPointsResponse)
 }
-inline void GetPickPointsResponse::SharedCtor(::_pb::Arena* arena) {
+
+inline void GetPickPointsResponse::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.points_){arena},
-      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.points_){arena}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 GetPickPointsResponse::~GetPickPointsResponse() {
   // @@protoc_insertion_point(destructor:city.wargame.v1.GetPickPointsResponse)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void GetPickPointsResponse::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.points_.~RepeatedPtrField();
 }
+
 void GetPickPointsResponse::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void GetPickPointsResponse::Clear() {
+void GetPickPointsResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.wargame.v1.GetPickPointsResponse)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _internal_mutable_points()->Clear();
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _impl_.points_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* GetPickPointsResponse::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* GetPickPointsResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // repeated .city.wargame.v1.Point points = 1 [json_name = "points"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_points(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<0, 1, 1, 0, 2> GetPickPointsResponse::_table_ = {
-  {
-    0,  // no _has_bits_
-    0, // no _extensions_
-    1, 0,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967294,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    1,  // num_field_entries
-    1,  // num_aux_entries
-    offsetof(decltype(_table_), aux_entries),
-    &_GetPickPointsResponse_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    // repeated .city.wargame.v1.Point points = 1 [json_name = "points"];
-    {::_pbi::TcParser::FastMtR1,
-     {10, 63, 0, PROTOBUF_FIELD_OFFSET(GetPickPointsResponse, _impl_.points_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // repeated .city.wargame.v1.Point points = 1 [json_name = "points"];
-    {PROTOBUF_FIELD_OFFSET(GetPickPointsResponse, _impl_.points_), 0, 0,
-    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
-  }}, {{
-    {::_pbi::TcParser::GetTable<::city::wargame::v1::Point>()},
-  }}, {{
-  }},
-};
-
-::uint8_t* GetPickPointsResponse::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* GetPickPointsResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.wargame.v1.GetPickPointsResponse)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // repeated .city.wargame.v1.Point points = 1 [json_name = "points"];
   for (unsigned i = 0,
       n = static_cast<unsigned>(this->_internal_points_size()); i < n; i++) {
-    const auto& repfield = this->_internal_points().Get(i);
-    target = ::google::protobuf::internal::WireFormatLite::
+    const auto& repfield = this->_internal_points(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
         InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.wargame.v1.GetPickPointsResponse)
   return target;
 }
 
-::size_t GetPickPointsResponse::ByteSizeLong() const {
+size_t GetPickPointsResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.wargame.v1.GetPickPointsResponse)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // repeated .city.wargame.v1.Point points = 1 [json_name = "points"];
   total_size += 1UL * this->_internal_points_size();
-  for (const auto& msg : this->_internal_points()) {
+  for (const auto& msg : this->_impl_.points_) {
     total_size +=
-      ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
+
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData GetPickPointsResponse::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetPickPointsResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     GetPickPointsResponse::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*GetPickPointsResponse::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetPickPointsResponse::GetClassData() const { return &_class_data_; }
 
 
-void GetPickPointsResponse::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void GetPickPointsResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<GetPickPointsResponse*>(&to_msg);
   auto& from = static_cast<const GetPickPointsResponse&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.wargame.v1.GetPickPointsResponse)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  _this->_internal_mutable_points()->MergeFrom(from._internal_points());
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.points_.MergeFrom(from._impl_.points_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void GetPickPointsResponse::CopyFrom(const GetPickPointsResponse& from) {
@@ -1176,7 +1128,7 @@ void GetPickPointsResponse::CopyFrom(const GetPickPointsResponse& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool GetPickPointsResponse::IsInitialized() const {
+bool GetPickPointsResponse::IsInitialized() const {
   return true;
 }
 
@@ -1186,724 +1138,721 @@ void GetPickPointsResponse::InternalSwap(GetPickPointsResponse* other) {
   _impl_.points_.InternalSwap(&other->_impl_.points_);
 }
 
-::google::protobuf::Metadata GetPickPointsResponse::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata GetPickPointsResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fwargame_2fv1_2fwargame_5fservice_2eproto_getter, &descriptor_table_city_2fwargame_2fv1_2fwargame_5fservice_2eproto_once,
       file_level_metadata_city_2fwargame_2fv1_2fwargame_5fservice_2eproto[3]);
 }
+
 // ===================================================================
 
 class SetScoreWeightRequest::_Internal {
  public:
 };
 
-SetScoreWeightRequest::SetScoreWeightRequest(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+SetScoreWeightRequest::SetScoreWeightRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.wargame.v1.SetScoreWeightRequest)
 }
 SetScoreWeightRequest::SetScoreWeightRequest(const SetScoreWeightRequest& from)
-    : ::google::protobuf::Message(), _impl_(from._impl_) {
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  SetScoreWeightRequest* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.money_){}
+    , decltype(_impl_.population_loss_){}
+    , decltype(_impl_.elec_power_){}
+    , decltype(_impl_.elec_distory_1_){}
+    , decltype(_impl_.water_distory_1_){}
+    , decltype(_impl_.bs_distory_1_){}
+    , decltype(_impl_.traffic_distory_1_){}
+    , decltype(_impl_.elec_distory_2_){}
+    , decltype(_impl_.water_distory_2_){}
+    , decltype(_impl_.bs_distory_2_){}
+    , decltype(_impl_.traffic_distory_2_){}
+    , decltype(_impl_.elec_distory_3_){}
+    , decltype(_impl_.water_distory_3_){}
+    , decltype(_impl_.bs_distory_3_){}
+    , decltype(_impl_.traffic_distory_3_){}
+    , decltype(_impl_.defense_success_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&_impl_.money_, &from._impl_.money_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.defense_success_) -
+    reinterpret_cast<char*>(&_impl_.money_)) + sizeof(_impl_.defense_success_));
   // @@protoc_insertion_point(copy_constructor:city.wargame.v1.SetScoreWeightRequest)
 }
-inline void SetScoreWeightRequest::SharedCtor(::_pb::Arena* arena) {
+
+inline void SetScoreWeightRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.money_){0},
-      decltype(_impl_.population_loss_){0},
-      decltype(_impl_.elec_power_){0},
-      decltype(_impl_.elec_distory_1_){0},
-      decltype(_impl_.water_distory_1_){0},
-      decltype(_impl_.bs_distory_1_){0},
-      decltype(_impl_.traffic_distory_1_){0},
-      decltype(_impl_.elec_distory_2_){0},
-      decltype(_impl_.water_distory_2_){0},
-      decltype(_impl_.bs_distory_2_){0},
-      decltype(_impl_.traffic_distory_2_){0},
-      decltype(_impl_.elec_distory_3_){0},
-      decltype(_impl_.water_distory_3_){0},
-      decltype(_impl_.bs_distory_3_){0},
-      decltype(_impl_.traffic_distory_3_){0},
-      decltype(_impl_.defense_success_){0},
-      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.money_){0}
+    , decltype(_impl_.population_loss_){0}
+    , decltype(_impl_.elec_power_){0}
+    , decltype(_impl_.elec_distory_1_){0}
+    , decltype(_impl_.water_distory_1_){0}
+    , decltype(_impl_.bs_distory_1_){0}
+    , decltype(_impl_.traffic_distory_1_){0}
+    , decltype(_impl_.elec_distory_2_){0}
+    , decltype(_impl_.water_distory_2_){0}
+    , decltype(_impl_.bs_distory_2_){0}
+    , decltype(_impl_.traffic_distory_2_){0}
+    , decltype(_impl_.elec_distory_3_){0}
+    , decltype(_impl_.water_distory_3_){0}
+    , decltype(_impl_.bs_distory_3_){0}
+    , decltype(_impl_.traffic_distory_3_){0}
+    , decltype(_impl_.defense_success_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 SetScoreWeightRequest::~SetScoreWeightRequest() {
   // @@protoc_insertion_point(destructor:city.wargame.v1.SetScoreWeightRequest)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void SetScoreWeightRequest::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
+
 void SetScoreWeightRequest::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void SetScoreWeightRequest::Clear() {
+void SetScoreWeightRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.wargame.v1.SetScoreWeightRequest)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&_impl_.money_, 0, static_cast<::size_t>(
+  ::memset(&_impl_.money_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_impl_.defense_success_) -
       reinterpret_cast<char*>(&_impl_.money_)) + sizeof(_impl_.defense_success_));
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* SetScoreWeightRequest::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* SetScoreWeightRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // double money = 1 [json_name = "money"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 9)) {
+          _impl_.money_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // double population_loss = 2 [json_name = "populationLoss"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 17)) {
+          _impl_.population_loss_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // double elec_power = 3 [json_name = "elecPower"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 25)) {
+          _impl_.elec_power_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // double elec_distory_1 = 4 [json_name = "elecDistory1"];
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 33)) {
+          _impl_.elec_distory_1_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // double water_distory_1 = 5 [json_name = "waterDistory1"];
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 41)) {
+          _impl_.water_distory_1_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // double bs_distory_1 = 6 [json_name = "bsDistory1"];
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 49)) {
+          _impl_.bs_distory_1_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // double traffic_distory_1 = 7 [json_name = "trafficDistory1"];
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 57)) {
+          _impl_.traffic_distory_1_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // double elec_distory_2 = 8 [json_name = "elecDistory2"];
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 65)) {
+          _impl_.elec_distory_2_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // double water_distory_2 = 9 [json_name = "waterDistory2"];
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 73)) {
+          _impl_.water_distory_2_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // double bs_distory_2 = 10 [json_name = "bsDistory2"];
+      case 10:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 81)) {
+          _impl_.bs_distory_2_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // double traffic_distory_2 = 11 [json_name = "trafficDistory2"];
+      case 11:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 89)) {
+          _impl_.traffic_distory_2_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // double elec_distory_3 = 12 [json_name = "elecDistory3"];
+      case 12:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 97)) {
+          _impl_.elec_distory_3_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // double water_distory_3 = 13 [json_name = "waterDistory3"];
+      case 13:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 105)) {
+          _impl_.water_distory_3_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // double bs_distory_3 = 14 [json_name = "bsDistory3"];
+      case 14:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 113)) {
+          _impl_.bs_distory_3_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // double traffic_distory_3 = 15 [json_name = "trafficDistory3"];
+      case 15:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 121)) {
+          _impl_.traffic_distory_3_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // double defense_success = 16 [json_name = "defenseSuccess"];
+      case 16:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 129)) {
+          _impl_.defense_success_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<4, 16, 0, 0, 2> SetScoreWeightRequest::_table_ = {
-  {
-    0,  // no _has_bits_
-    0, // no _extensions_
-    16, 120,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294901760,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    16,  // num_field_entries
-    0,  // num_aux_entries
-    offsetof(decltype(_table_), field_names),  // no aux_entries
-    &_SetScoreWeightRequest_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    // double defense_success = 16 [json_name = "defenseSuccess"];
-    {::_pbi::TcParser::FastF64S2,
-     {385, 63, 0, PROTOBUF_FIELD_OFFSET(SetScoreWeightRequest, _impl_.defense_success_)}},
-    // double money = 1 [json_name = "money"];
-    {::_pbi::TcParser::FastF64S1,
-     {9, 63, 0, PROTOBUF_FIELD_OFFSET(SetScoreWeightRequest, _impl_.money_)}},
-    // double population_loss = 2 [json_name = "populationLoss"];
-    {::_pbi::TcParser::FastF64S1,
-     {17, 63, 0, PROTOBUF_FIELD_OFFSET(SetScoreWeightRequest, _impl_.population_loss_)}},
-    // double elec_power = 3 [json_name = "elecPower"];
-    {::_pbi::TcParser::FastF64S1,
-     {25, 63, 0, PROTOBUF_FIELD_OFFSET(SetScoreWeightRequest, _impl_.elec_power_)}},
-    // double elec_distory_1 = 4 [json_name = "elecDistory1"];
-    {::_pbi::TcParser::FastF64S1,
-     {33, 63, 0, PROTOBUF_FIELD_OFFSET(SetScoreWeightRequest, _impl_.elec_distory_1_)}},
-    // double water_distory_1 = 5 [json_name = "waterDistory1"];
-    {::_pbi::TcParser::FastF64S1,
-     {41, 63, 0, PROTOBUF_FIELD_OFFSET(SetScoreWeightRequest, _impl_.water_distory_1_)}},
-    // double bs_distory_1 = 6 [json_name = "bsDistory1"];
-    {::_pbi::TcParser::FastF64S1,
-     {49, 63, 0, PROTOBUF_FIELD_OFFSET(SetScoreWeightRequest, _impl_.bs_distory_1_)}},
-    // double traffic_distory_1 = 7 [json_name = "trafficDistory1"];
-    {::_pbi::TcParser::FastF64S1,
-     {57, 63, 0, PROTOBUF_FIELD_OFFSET(SetScoreWeightRequest, _impl_.traffic_distory_1_)}},
-    // double elec_distory_2 = 8 [json_name = "elecDistory2"];
-    {::_pbi::TcParser::FastF64S1,
-     {65, 63, 0, PROTOBUF_FIELD_OFFSET(SetScoreWeightRequest, _impl_.elec_distory_2_)}},
-    // double water_distory_2 = 9 [json_name = "waterDistory2"];
-    {::_pbi::TcParser::FastF64S1,
-     {73, 63, 0, PROTOBUF_FIELD_OFFSET(SetScoreWeightRequest, _impl_.water_distory_2_)}},
-    // double bs_distory_2 = 10 [json_name = "bsDistory2"];
-    {::_pbi::TcParser::FastF64S1,
-     {81, 63, 0, PROTOBUF_FIELD_OFFSET(SetScoreWeightRequest, _impl_.bs_distory_2_)}},
-    // double traffic_distory_2 = 11 [json_name = "trafficDistory2"];
-    {::_pbi::TcParser::FastF64S1,
-     {89, 63, 0, PROTOBUF_FIELD_OFFSET(SetScoreWeightRequest, _impl_.traffic_distory_2_)}},
-    // double elec_distory_3 = 12 [json_name = "elecDistory3"];
-    {::_pbi::TcParser::FastF64S1,
-     {97, 63, 0, PROTOBUF_FIELD_OFFSET(SetScoreWeightRequest, _impl_.elec_distory_3_)}},
-    // double water_distory_3 = 13 [json_name = "waterDistory3"];
-    {::_pbi::TcParser::FastF64S1,
-     {105, 63, 0, PROTOBUF_FIELD_OFFSET(SetScoreWeightRequest, _impl_.water_distory_3_)}},
-    // double bs_distory_3 = 14 [json_name = "bsDistory3"];
-    {::_pbi::TcParser::FastF64S1,
-     {113, 63, 0, PROTOBUF_FIELD_OFFSET(SetScoreWeightRequest, _impl_.bs_distory_3_)}},
-    // double traffic_distory_3 = 15 [json_name = "trafficDistory3"];
-    {::_pbi::TcParser::FastF64S1,
-     {121, 63, 0, PROTOBUF_FIELD_OFFSET(SetScoreWeightRequest, _impl_.traffic_distory_3_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // double money = 1 [json_name = "money"];
-    {PROTOBUF_FIELD_OFFSET(SetScoreWeightRequest, _impl_.money_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-    // double population_loss = 2 [json_name = "populationLoss"];
-    {PROTOBUF_FIELD_OFFSET(SetScoreWeightRequest, _impl_.population_loss_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-    // double elec_power = 3 [json_name = "elecPower"];
-    {PROTOBUF_FIELD_OFFSET(SetScoreWeightRequest, _impl_.elec_power_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-    // double elec_distory_1 = 4 [json_name = "elecDistory1"];
-    {PROTOBUF_FIELD_OFFSET(SetScoreWeightRequest, _impl_.elec_distory_1_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-    // double water_distory_1 = 5 [json_name = "waterDistory1"];
-    {PROTOBUF_FIELD_OFFSET(SetScoreWeightRequest, _impl_.water_distory_1_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-    // double bs_distory_1 = 6 [json_name = "bsDistory1"];
-    {PROTOBUF_FIELD_OFFSET(SetScoreWeightRequest, _impl_.bs_distory_1_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-    // double traffic_distory_1 = 7 [json_name = "trafficDistory1"];
-    {PROTOBUF_FIELD_OFFSET(SetScoreWeightRequest, _impl_.traffic_distory_1_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-    // double elec_distory_2 = 8 [json_name = "elecDistory2"];
-    {PROTOBUF_FIELD_OFFSET(SetScoreWeightRequest, _impl_.elec_distory_2_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-    // double water_distory_2 = 9 [json_name = "waterDistory2"];
-    {PROTOBUF_FIELD_OFFSET(SetScoreWeightRequest, _impl_.water_distory_2_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-    // double bs_distory_2 = 10 [json_name = "bsDistory2"];
-    {PROTOBUF_FIELD_OFFSET(SetScoreWeightRequest, _impl_.bs_distory_2_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-    // double traffic_distory_2 = 11 [json_name = "trafficDistory2"];
-    {PROTOBUF_FIELD_OFFSET(SetScoreWeightRequest, _impl_.traffic_distory_2_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-    // double elec_distory_3 = 12 [json_name = "elecDistory3"];
-    {PROTOBUF_FIELD_OFFSET(SetScoreWeightRequest, _impl_.elec_distory_3_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-    // double water_distory_3 = 13 [json_name = "waterDistory3"];
-    {PROTOBUF_FIELD_OFFSET(SetScoreWeightRequest, _impl_.water_distory_3_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-    // double bs_distory_3 = 14 [json_name = "bsDistory3"];
-    {PROTOBUF_FIELD_OFFSET(SetScoreWeightRequest, _impl_.bs_distory_3_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-    // double traffic_distory_3 = 15 [json_name = "trafficDistory3"];
-    {PROTOBUF_FIELD_OFFSET(SetScoreWeightRequest, _impl_.traffic_distory_3_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-    // double defense_success = 16 [json_name = "defenseSuccess"];
-    {PROTOBUF_FIELD_OFFSET(SetScoreWeightRequest, _impl_.defense_success_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-  }},
-  // no aux_entries
-  {{
-  }},
-};
-
-::uint8_t* SetScoreWeightRequest::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* SetScoreWeightRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.wargame.v1.SetScoreWeightRequest)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // double money = 1 [json_name = "money"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_money = this->_internal_money();
-  ::uint64_t raw_money;
+  uint64_t raw_money;
   memcpy(&raw_money, &tmp_money, sizeof(tmp_money));
   if (raw_money != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        1, this->_internal_money(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(1, this->_internal_money(), target);
   }
 
   // double population_loss = 2 [json_name = "populationLoss"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_population_loss = this->_internal_population_loss();
-  ::uint64_t raw_population_loss;
+  uint64_t raw_population_loss;
   memcpy(&raw_population_loss, &tmp_population_loss, sizeof(tmp_population_loss));
   if (raw_population_loss != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        2, this->_internal_population_loss(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(2, this->_internal_population_loss(), target);
   }
 
   // double elec_power = 3 [json_name = "elecPower"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_elec_power = this->_internal_elec_power();
-  ::uint64_t raw_elec_power;
+  uint64_t raw_elec_power;
   memcpy(&raw_elec_power, &tmp_elec_power, sizeof(tmp_elec_power));
   if (raw_elec_power != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        3, this->_internal_elec_power(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(3, this->_internal_elec_power(), target);
   }
 
   // double elec_distory_1 = 4 [json_name = "elecDistory1"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_elec_distory_1 = this->_internal_elec_distory_1();
-  ::uint64_t raw_elec_distory_1;
+  uint64_t raw_elec_distory_1;
   memcpy(&raw_elec_distory_1, &tmp_elec_distory_1, sizeof(tmp_elec_distory_1));
   if (raw_elec_distory_1 != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        4, this->_internal_elec_distory_1(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(4, this->_internal_elec_distory_1(), target);
   }
 
   // double water_distory_1 = 5 [json_name = "waterDistory1"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_water_distory_1 = this->_internal_water_distory_1();
-  ::uint64_t raw_water_distory_1;
+  uint64_t raw_water_distory_1;
   memcpy(&raw_water_distory_1, &tmp_water_distory_1, sizeof(tmp_water_distory_1));
   if (raw_water_distory_1 != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        5, this->_internal_water_distory_1(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(5, this->_internal_water_distory_1(), target);
   }
 
   // double bs_distory_1 = 6 [json_name = "bsDistory1"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_bs_distory_1 = this->_internal_bs_distory_1();
-  ::uint64_t raw_bs_distory_1;
+  uint64_t raw_bs_distory_1;
   memcpy(&raw_bs_distory_1, &tmp_bs_distory_1, sizeof(tmp_bs_distory_1));
   if (raw_bs_distory_1 != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        6, this->_internal_bs_distory_1(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(6, this->_internal_bs_distory_1(), target);
   }
 
   // double traffic_distory_1 = 7 [json_name = "trafficDistory1"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_traffic_distory_1 = this->_internal_traffic_distory_1();
-  ::uint64_t raw_traffic_distory_1;
+  uint64_t raw_traffic_distory_1;
   memcpy(&raw_traffic_distory_1, &tmp_traffic_distory_1, sizeof(tmp_traffic_distory_1));
   if (raw_traffic_distory_1 != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        7, this->_internal_traffic_distory_1(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(7, this->_internal_traffic_distory_1(), target);
   }
 
   // double elec_distory_2 = 8 [json_name = "elecDistory2"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_elec_distory_2 = this->_internal_elec_distory_2();
-  ::uint64_t raw_elec_distory_2;
+  uint64_t raw_elec_distory_2;
   memcpy(&raw_elec_distory_2, &tmp_elec_distory_2, sizeof(tmp_elec_distory_2));
   if (raw_elec_distory_2 != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        8, this->_internal_elec_distory_2(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(8, this->_internal_elec_distory_2(), target);
   }
 
   // double water_distory_2 = 9 [json_name = "waterDistory2"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_water_distory_2 = this->_internal_water_distory_2();
-  ::uint64_t raw_water_distory_2;
+  uint64_t raw_water_distory_2;
   memcpy(&raw_water_distory_2, &tmp_water_distory_2, sizeof(tmp_water_distory_2));
   if (raw_water_distory_2 != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        9, this->_internal_water_distory_2(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(9, this->_internal_water_distory_2(), target);
   }
 
   // double bs_distory_2 = 10 [json_name = "bsDistory2"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_bs_distory_2 = this->_internal_bs_distory_2();
-  ::uint64_t raw_bs_distory_2;
+  uint64_t raw_bs_distory_2;
   memcpy(&raw_bs_distory_2, &tmp_bs_distory_2, sizeof(tmp_bs_distory_2));
   if (raw_bs_distory_2 != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        10, this->_internal_bs_distory_2(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(10, this->_internal_bs_distory_2(), target);
   }
 
   // double traffic_distory_2 = 11 [json_name = "trafficDistory2"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_traffic_distory_2 = this->_internal_traffic_distory_2();
-  ::uint64_t raw_traffic_distory_2;
+  uint64_t raw_traffic_distory_2;
   memcpy(&raw_traffic_distory_2, &tmp_traffic_distory_2, sizeof(tmp_traffic_distory_2));
   if (raw_traffic_distory_2 != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        11, this->_internal_traffic_distory_2(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(11, this->_internal_traffic_distory_2(), target);
   }
 
   // double elec_distory_3 = 12 [json_name = "elecDistory3"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_elec_distory_3 = this->_internal_elec_distory_3();
-  ::uint64_t raw_elec_distory_3;
+  uint64_t raw_elec_distory_3;
   memcpy(&raw_elec_distory_3, &tmp_elec_distory_3, sizeof(tmp_elec_distory_3));
   if (raw_elec_distory_3 != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        12, this->_internal_elec_distory_3(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(12, this->_internal_elec_distory_3(), target);
   }
 
   // double water_distory_3 = 13 [json_name = "waterDistory3"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_water_distory_3 = this->_internal_water_distory_3();
-  ::uint64_t raw_water_distory_3;
+  uint64_t raw_water_distory_3;
   memcpy(&raw_water_distory_3, &tmp_water_distory_3, sizeof(tmp_water_distory_3));
   if (raw_water_distory_3 != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        13, this->_internal_water_distory_3(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(13, this->_internal_water_distory_3(), target);
   }
 
   // double bs_distory_3 = 14 [json_name = "bsDistory3"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_bs_distory_3 = this->_internal_bs_distory_3();
-  ::uint64_t raw_bs_distory_3;
+  uint64_t raw_bs_distory_3;
   memcpy(&raw_bs_distory_3, &tmp_bs_distory_3, sizeof(tmp_bs_distory_3));
   if (raw_bs_distory_3 != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        14, this->_internal_bs_distory_3(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(14, this->_internal_bs_distory_3(), target);
   }
 
   // double traffic_distory_3 = 15 [json_name = "trafficDistory3"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_traffic_distory_3 = this->_internal_traffic_distory_3();
-  ::uint64_t raw_traffic_distory_3;
+  uint64_t raw_traffic_distory_3;
   memcpy(&raw_traffic_distory_3, &tmp_traffic_distory_3, sizeof(tmp_traffic_distory_3));
   if (raw_traffic_distory_3 != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        15, this->_internal_traffic_distory_3(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(15, this->_internal_traffic_distory_3(), target);
   }
 
   // double defense_success = 16 [json_name = "defenseSuccess"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_defense_success = this->_internal_defense_success();
-  ::uint64_t raw_defense_success;
+  uint64_t raw_defense_success;
   memcpy(&raw_defense_success, &tmp_defense_success, sizeof(tmp_defense_success));
   if (raw_defense_success != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        16, this->_internal_defense_success(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(16, this->_internal_defense_success(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.wargame.v1.SetScoreWeightRequest)
   return target;
 }
 
-::size_t SetScoreWeightRequest::ByteSizeLong() const {
+size_t SetScoreWeightRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.wargame.v1.SetScoreWeightRequest)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // double money = 1 [json_name = "money"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_money = this->_internal_money();
-  ::uint64_t raw_money;
+  uint64_t raw_money;
   memcpy(&raw_money, &tmp_money, sizeof(tmp_money));
   if (raw_money != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   // double population_loss = 2 [json_name = "populationLoss"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_population_loss = this->_internal_population_loss();
-  ::uint64_t raw_population_loss;
+  uint64_t raw_population_loss;
   memcpy(&raw_population_loss, &tmp_population_loss, sizeof(tmp_population_loss));
   if (raw_population_loss != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   // double elec_power = 3 [json_name = "elecPower"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_elec_power = this->_internal_elec_power();
-  ::uint64_t raw_elec_power;
+  uint64_t raw_elec_power;
   memcpy(&raw_elec_power, &tmp_elec_power, sizeof(tmp_elec_power));
   if (raw_elec_power != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   // double elec_distory_1 = 4 [json_name = "elecDistory1"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_elec_distory_1 = this->_internal_elec_distory_1();
-  ::uint64_t raw_elec_distory_1;
+  uint64_t raw_elec_distory_1;
   memcpy(&raw_elec_distory_1, &tmp_elec_distory_1, sizeof(tmp_elec_distory_1));
   if (raw_elec_distory_1 != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   // double water_distory_1 = 5 [json_name = "waterDistory1"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_water_distory_1 = this->_internal_water_distory_1();
-  ::uint64_t raw_water_distory_1;
+  uint64_t raw_water_distory_1;
   memcpy(&raw_water_distory_1, &tmp_water_distory_1, sizeof(tmp_water_distory_1));
   if (raw_water_distory_1 != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   // double bs_distory_1 = 6 [json_name = "bsDistory1"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_bs_distory_1 = this->_internal_bs_distory_1();
-  ::uint64_t raw_bs_distory_1;
+  uint64_t raw_bs_distory_1;
   memcpy(&raw_bs_distory_1, &tmp_bs_distory_1, sizeof(tmp_bs_distory_1));
   if (raw_bs_distory_1 != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   // double traffic_distory_1 = 7 [json_name = "trafficDistory1"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_traffic_distory_1 = this->_internal_traffic_distory_1();
-  ::uint64_t raw_traffic_distory_1;
+  uint64_t raw_traffic_distory_1;
   memcpy(&raw_traffic_distory_1, &tmp_traffic_distory_1, sizeof(tmp_traffic_distory_1));
   if (raw_traffic_distory_1 != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   // double elec_distory_2 = 8 [json_name = "elecDistory2"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_elec_distory_2 = this->_internal_elec_distory_2();
-  ::uint64_t raw_elec_distory_2;
+  uint64_t raw_elec_distory_2;
   memcpy(&raw_elec_distory_2, &tmp_elec_distory_2, sizeof(tmp_elec_distory_2));
   if (raw_elec_distory_2 != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   // double water_distory_2 = 9 [json_name = "waterDistory2"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_water_distory_2 = this->_internal_water_distory_2();
-  ::uint64_t raw_water_distory_2;
+  uint64_t raw_water_distory_2;
   memcpy(&raw_water_distory_2, &tmp_water_distory_2, sizeof(tmp_water_distory_2));
   if (raw_water_distory_2 != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   // double bs_distory_2 = 10 [json_name = "bsDistory2"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_bs_distory_2 = this->_internal_bs_distory_2();
-  ::uint64_t raw_bs_distory_2;
+  uint64_t raw_bs_distory_2;
   memcpy(&raw_bs_distory_2, &tmp_bs_distory_2, sizeof(tmp_bs_distory_2));
   if (raw_bs_distory_2 != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   // double traffic_distory_2 = 11 [json_name = "trafficDistory2"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_traffic_distory_2 = this->_internal_traffic_distory_2();
-  ::uint64_t raw_traffic_distory_2;
+  uint64_t raw_traffic_distory_2;
   memcpy(&raw_traffic_distory_2, &tmp_traffic_distory_2, sizeof(tmp_traffic_distory_2));
   if (raw_traffic_distory_2 != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   // double elec_distory_3 = 12 [json_name = "elecDistory3"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_elec_distory_3 = this->_internal_elec_distory_3();
-  ::uint64_t raw_elec_distory_3;
+  uint64_t raw_elec_distory_3;
   memcpy(&raw_elec_distory_3, &tmp_elec_distory_3, sizeof(tmp_elec_distory_3));
   if (raw_elec_distory_3 != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   // double water_distory_3 = 13 [json_name = "waterDistory3"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_water_distory_3 = this->_internal_water_distory_3();
-  ::uint64_t raw_water_distory_3;
+  uint64_t raw_water_distory_3;
   memcpy(&raw_water_distory_3, &tmp_water_distory_3, sizeof(tmp_water_distory_3));
   if (raw_water_distory_3 != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   // double bs_distory_3 = 14 [json_name = "bsDistory3"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_bs_distory_3 = this->_internal_bs_distory_3();
-  ::uint64_t raw_bs_distory_3;
+  uint64_t raw_bs_distory_3;
   memcpy(&raw_bs_distory_3, &tmp_bs_distory_3, sizeof(tmp_bs_distory_3));
   if (raw_bs_distory_3 != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   // double traffic_distory_3 = 15 [json_name = "trafficDistory3"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_traffic_distory_3 = this->_internal_traffic_distory_3();
-  ::uint64_t raw_traffic_distory_3;
+  uint64_t raw_traffic_distory_3;
   memcpy(&raw_traffic_distory_3, &tmp_traffic_distory_3, sizeof(tmp_traffic_distory_3));
   if (raw_traffic_distory_3 != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   // double defense_success = 16 [json_name = "defenseSuccess"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_defense_success = this->_internal_defense_success();
-  ::uint64_t raw_defense_success;
+  uint64_t raw_defense_success;
   memcpy(&raw_defense_success, &tmp_defense_success, sizeof(tmp_defense_success));
   if (raw_defense_success != 0) {
-    total_size += 10;
+    total_size += 2 + 8;
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData SetScoreWeightRequest::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData SetScoreWeightRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     SetScoreWeightRequest::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*SetScoreWeightRequest::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SetScoreWeightRequest::GetClassData() const { return &_class_data_; }
 
 
-void SetScoreWeightRequest::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void SetScoreWeightRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<SetScoreWeightRequest*>(&to_msg);
   auto& from = static_cast<const SetScoreWeightRequest&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.wargame.v1.SetScoreWeightRequest)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_money = from._internal_money();
-  ::uint64_t raw_money;
+  uint64_t raw_money;
   memcpy(&raw_money, &tmp_money, sizeof(tmp_money));
   if (raw_money != 0) {
     _this->_internal_set_money(from._internal_money());
   }
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_population_loss = from._internal_population_loss();
-  ::uint64_t raw_population_loss;
+  uint64_t raw_population_loss;
   memcpy(&raw_population_loss, &tmp_population_loss, sizeof(tmp_population_loss));
   if (raw_population_loss != 0) {
     _this->_internal_set_population_loss(from._internal_population_loss());
   }
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_elec_power = from._internal_elec_power();
-  ::uint64_t raw_elec_power;
+  uint64_t raw_elec_power;
   memcpy(&raw_elec_power, &tmp_elec_power, sizeof(tmp_elec_power));
   if (raw_elec_power != 0) {
     _this->_internal_set_elec_power(from._internal_elec_power());
   }
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_elec_distory_1 = from._internal_elec_distory_1();
-  ::uint64_t raw_elec_distory_1;
+  uint64_t raw_elec_distory_1;
   memcpy(&raw_elec_distory_1, &tmp_elec_distory_1, sizeof(tmp_elec_distory_1));
   if (raw_elec_distory_1 != 0) {
     _this->_internal_set_elec_distory_1(from._internal_elec_distory_1());
   }
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_water_distory_1 = from._internal_water_distory_1();
-  ::uint64_t raw_water_distory_1;
+  uint64_t raw_water_distory_1;
   memcpy(&raw_water_distory_1, &tmp_water_distory_1, sizeof(tmp_water_distory_1));
   if (raw_water_distory_1 != 0) {
     _this->_internal_set_water_distory_1(from._internal_water_distory_1());
   }
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_bs_distory_1 = from._internal_bs_distory_1();
-  ::uint64_t raw_bs_distory_1;
+  uint64_t raw_bs_distory_1;
   memcpy(&raw_bs_distory_1, &tmp_bs_distory_1, sizeof(tmp_bs_distory_1));
   if (raw_bs_distory_1 != 0) {
     _this->_internal_set_bs_distory_1(from._internal_bs_distory_1());
   }
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_traffic_distory_1 = from._internal_traffic_distory_1();
-  ::uint64_t raw_traffic_distory_1;
+  uint64_t raw_traffic_distory_1;
   memcpy(&raw_traffic_distory_1, &tmp_traffic_distory_1, sizeof(tmp_traffic_distory_1));
   if (raw_traffic_distory_1 != 0) {
     _this->_internal_set_traffic_distory_1(from._internal_traffic_distory_1());
   }
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_elec_distory_2 = from._internal_elec_distory_2();
-  ::uint64_t raw_elec_distory_2;
+  uint64_t raw_elec_distory_2;
   memcpy(&raw_elec_distory_2, &tmp_elec_distory_2, sizeof(tmp_elec_distory_2));
   if (raw_elec_distory_2 != 0) {
     _this->_internal_set_elec_distory_2(from._internal_elec_distory_2());
   }
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_water_distory_2 = from._internal_water_distory_2();
-  ::uint64_t raw_water_distory_2;
+  uint64_t raw_water_distory_2;
   memcpy(&raw_water_distory_2, &tmp_water_distory_2, sizeof(tmp_water_distory_2));
   if (raw_water_distory_2 != 0) {
     _this->_internal_set_water_distory_2(from._internal_water_distory_2());
   }
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_bs_distory_2 = from._internal_bs_distory_2();
-  ::uint64_t raw_bs_distory_2;
+  uint64_t raw_bs_distory_2;
   memcpy(&raw_bs_distory_2, &tmp_bs_distory_2, sizeof(tmp_bs_distory_2));
   if (raw_bs_distory_2 != 0) {
     _this->_internal_set_bs_distory_2(from._internal_bs_distory_2());
   }
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_traffic_distory_2 = from._internal_traffic_distory_2();
-  ::uint64_t raw_traffic_distory_2;
+  uint64_t raw_traffic_distory_2;
   memcpy(&raw_traffic_distory_2, &tmp_traffic_distory_2, sizeof(tmp_traffic_distory_2));
   if (raw_traffic_distory_2 != 0) {
     _this->_internal_set_traffic_distory_2(from._internal_traffic_distory_2());
   }
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_elec_distory_3 = from._internal_elec_distory_3();
-  ::uint64_t raw_elec_distory_3;
+  uint64_t raw_elec_distory_3;
   memcpy(&raw_elec_distory_3, &tmp_elec_distory_3, sizeof(tmp_elec_distory_3));
   if (raw_elec_distory_3 != 0) {
     _this->_internal_set_elec_distory_3(from._internal_elec_distory_3());
   }
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_water_distory_3 = from._internal_water_distory_3();
-  ::uint64_t raw_water_distory_3;
+  uint64_t raw_water_distory_3;
   memcpy(&raw_water_distory_3, &tmp_water_distory_3, sizeof(tmp_water_distory_3));
   if (raw_water_distory_3 != 0) {
     _this->_internal_set_water_distory_3(from._internal_water_distory_3());
   }
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_bs_distory_3 = from._internal_bs_distory_3();
-  ::uint64_t raw_bs_distory_3;
+  uint64_t raw_bs_distory_3;
   memcpy(&raw_bs_distory_3, &tmp_bs_distory_3, sizeof(tmp_bs_distory_3));
   if (raw_bs_distory_3 != 0) {
     _this->_internal_set_bs_distory_3(from._internal_bs_distory_3());
   }
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_traffic_distory_3 = from._internal_traffic_distory_3();
-  ::uint64_t raw_traffic_distory_3;
+  uint64_t raw_traffic_distory_3;
   memcpy(&raw_traffic_distory_3, &tmp_traffic_distory_3, sizeof(tmp_traffic_distory_3));
   if (raw_traffic_distory_3 != 0) {
     _this->_internal_set_traffic_distory_3(from._internal_traffic_distory_3());
   }
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_defense_success = from._internal_defense_success();
-  ::uint64_t raw_defense_success;
+  uint64_t raw_defense_success;
   memcpy(&raw_defense_success, &tmp_defense_success, sizeof(tmp_defense_success));
   if (raw_defense_success != 0) {
     _this->_internal_set_defense_success(from._internal_defense_success());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void SetScoreWeightRequest::CopyFrom(const SetScoreWeightRequest& from) {
@@ -1913,14 +1862,14 @@ void SetScoreWeightRequest::CopyFrom(const SetScoreWeightRequest& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool SetScoreWeightRequest::IsInitialized() const {
+bool SetScoreWeightRequest::IsInitialized() const {
   return true;
 }
 
 void SetScoreWeightRequest::InternalSwap(SetScoreWeightRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::google::protobuf::internal::memswap<
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(SetScoreWeightRequest, _impl_.defense_success_)
       + sizeof(SetScoreWeightRequest::_impl_.defense_success_)
       - PROTOBUF_FIELD_OFFSET(SetScoreWeightRequest, _impl_.money_)>(
@@ -1928,38 +1877,39 @@ void SetScoreWeightRequest::InternalSwap(SetScoreWeightRequest* other) {
           reinterpret_cast<char*>(&other->_impl_.money_));
 }
 
-::google::protobuf::Metadata SetScoreWeightRequest::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata SetScoreWeightRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fwargame_2fv1_2fwargame_5fservice_2eproto_getter, &descriptor_table_city_2fwargame_2fv1_2fwargame_5fservice_2eproto_once,
       file_level_metadata_city_2fwargame_2fv1_2fwargame_5fservice_2eproto[4]);
 }
+
 // ===================================================================
 
 class SetScoreWeightResponse::_Internal {
  public:
 };
 
-SetScoreWeightResponse::SetScoreWeightResponse(::google::protobuf::Arena* arena)
-    : ::google::protobuf::internal::ZeroFieldsBase(arena) {
+SetScoreWeightResponse::SetScoreWeightResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
   // @@protoc_insertion_point(arena_constructor:city.wargame.v1.SetScoreWeightResponse)
 }
-SetScoreWeightResponse::SetScoreWeightResponse(const SetScoreWeightResponse& from) : ::google::protobuf::internal::ZeroFieldsBase() {
-  SetScoreWeightResponse* const _this = this;
-  (void)_this;
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
-
+SetScoreWeightResponse::SetScoreWeightResponse(const SetScoreWeightResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
+  SetScoreWeightResponse* const _this = this; (void)_this;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:city.wargame.v1.SetScoreWeightResponse)
 }
 
 
 
 
-const ::google::protobuf::Message::ClassData SetScoreWeightResponse::_class_data_ = {
-    ::google::protobuf::internal::ZeroFieldsBase::CopyImpl,
-    ::google::protobuf::internal::ZeroFieldsBase::MergeImpl,
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData SetScoreWeightResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
 };
-const ::google::protobuf::Message::ClassData*SetScoreWeightResponse::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SetScoreWeightResponse::GetClassData() const { return &_class_data_; }
 
 
 
@@ -1967,320 +1917,325 @@ const ::google::protobuf::Message::ClassData*SetScoreWeightResponse::GetClassDat
 
 
 
-::google::protobuf::Metadata SetScoreWeightResponse::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata SetScoreWeightResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fwargame_2fv1_2fwargame_5fservice_2eproto_getter, &descriptor_table_city_2fwargame_2fv1_2fwargame_5fservice_2eproto_once,
       file_level_metadata_city_2fwargame_2fv1_2fwargame_5fservice_2eproto[5]);
 }
+
 // ===================================================================
 
 class GiveDefenseOrderRequest::_Internal {
  public:
 };
 
-GiveDefenseOrderRequest::GiveDefenseOrderRequest(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+GiveDefenseOrderRequest::GiveDefenseOrderRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.wargame.v1.GiveDefenseOrderRequest)
 }
 GiveDefenseOrderRequest::GiveDefenseOrderRequest(const GiveDefenseOrderRequest& from)
-    : ::google::protobuf::Message(), _impl_(from._impl_) {
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  GiveDefenseOrderRequest* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.weight_radius_){}
+    , decltype(_impl_.weight_550_){}
+    , decltype(_impl_.weight_220_){}
+    , decltype(_impl_.weight_110_){}
+    , decltype(_impl_.prob_threshold_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&_impl_.weight_radius_, &from._impl_.weight_radius_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.prob_threshold_) -
+    reinterpret_cast<char*>(&_impl_.weight_radius_)) + sizeof(_impl_.prob_threshold_));
   // @@protoc_insertion_point(copy_constructor:city.wargame.v1.GiveDefenseOrderRequest)
 }
-inline void GiveDefenseOrderRequest::SharedCtor(::_pb::Arena* arena) {
+
+inline void GiveDefenseOrderRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.weight_radius_){0},
-      decltype(_impl_.weight_550_){0},
-      decltype(_impl_.weight_220_){0},
-      decltype(_impl_.weight_110_){0},
-      decltype(_impl_.prob_threshold_){0},
-      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.weight_radius_){0}
+    , decltype(_impl_.weight_550_){0}
+    , decltype(_impl_.weight_220_){0}
+    , decltype(_impl_.weight_110_){0}
+    , decltype(_impl_.prob_threshold_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 GiveDefenseOrderRequest::~GiveDefenseOrderRequest() {
   // @@protoc_insertion_point(destructor:city.wargame.v1.GiveDefenseOrderRequest)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void GiveDefenseOrderRequest::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
+
 void GiveDefenseOrderRequest::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void GiveDefenseOrderRequest::Clear() {
+void GiveDefenseOrderRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.wargame.v1.GiveDefenseOrderRequest)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&_impl_.weight_radius_, 0, static_cast<::size_t>(
+  ::memset(&_impl_.weight_radius_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_impl_.prob_threshold_) -
       reinterpret_cast<char*>(&_impl_.weight_radius_)) + sizeof(_impl_.prob_threshold_));
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* GiveDefenseOrderRequest::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* GiveDefenseOrderRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // double weight_radius = 1 [json_name = "weightRadius"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 9)) {
+          _impl_.weight_radius_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // double weight_550 = 2 [json_name = "weight550"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 17)) {
+          _impl_.weight_550_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // double weight_220 = 3 [json_name = "weight220"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 25)) {
+          _impl_.weight_220_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // double weight_110 = 4 [json_name = "weight110"];
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 33)) {
+          _impl_.weight_110_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // double prob_threshold = 5 [json_name = "probThreshold"];
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 41)) {
+          _impl_.prob_threshold_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<3, 5, 0, 0, 2> GiveDefenseOrderRequest::_table_ = {
-  {
-    0,  // no _has_bits_
-    0, // no _extensions_
-    5, 56,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967264,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    5,  // num_field_entries
-    0,  // num_aux_entries
-    offsetof(decltype(_table_), field_names),  // no aux_entries
-    &_GiveDefenseOrderRequest_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    {::_pbi::TcParser::MiniParse, {}},
-    // double weight_radius = 1 [json_name = "weightRadius"];
-    {::_pbi::TcParser::FastF64S1,
-     {9, 63, 0, PROTOBUF_FIELD_OFFSET(GiveDefenseOrderRequest, _impl_.weight_radius_)}},
-    // double weight_550 = 2 [json_name = "weight550"];
-    {::_pbi::TcParser::FastF64S1,
-     {17, 63, 0, PROTOBUF_FIELD_OFFSET(GiveDefenseOrderRequest, _impl_.weight_550_)}},
-    // double weight_220 = 3 [json_name = "weight220"];
-    {::_pbi::TcParser::FastF64S1,
-     {25, 63, 0, PROTOBUF_FIELD_OFFSET(GiveDefenseOrderRequest, _impl_.weight_220_)}},
-    // double weight_110 = 4 [json_name = "weight110"];
-    {::_pbi::TcParser::FastF64S1,
-     {33, 63, 0, PROTOBUF_FIELD_OFFSET(GiveDefenseOrderRequest, _impl_.weight_110_)}},
-    // double prob_threshold = 5 [json_name = "probThreshold"];
-    {::_pbi::TcParser::FastF64S1,
-     {41, 63, 0, PROTOBUF_FIELD_OFFSET(GiveDefenseOrderRequest, _impl_.prob_threshold_)}},
-    {::_pbi::TcParser::MiniParse, {}},
-    {::_pbi::TcParser::MiniParse, {}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // double weight_radius = 1 [json_name = "weightRadius"];
-    {PROTOBUF_FIELD_OFFSET(GiveDefenseOrderRequest, _impl_.weight_radius_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-    // double weight_550 = 2 [json_name = "weight550"];
-    {PROTOBUF_FIELD_OFFSET(GiveDefenseOrderRequest, _impl_.weight_550_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-    // double weight_220 = 3 [json_name = "weight220"];
-    {PROTOBUF_FIELD_OFFSET(GiveDefenseOrderRequest, _impl_.weight_220_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-    // double weight_110 = 4 [json_name = "weight110"];
-    {PROTOBUF_FIELD_OFFSET(GiveDefenseOrderRequest, _impl_.weight_110_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-    // double prob_threshold = 5 [json_name = "probThreshold"];
-    {PROTOBUF_FIELD_OFFSET(GiveDefenseOrderRequest, _impl_.prob_threshold_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-  }},
-  // no aux_entries
-  {{
-  }},
-};
-
-::uint8_t* GiveDefenseOrderRequest::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* GiveDefenseOrderRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.wargame.v1.GiveDefenseOrderRequest)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // double weight_radius = 1 [json_name = "weightRadius"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_weight_radius = this->_internal_weight_radius();
-  ::uint64_t raw_weight_radius;
+  uint64_t raw_weight_radius;
   memcpy(&raw_weight_radius, &tmp_weight_radius, sizeof(tmp_weight_radius));
   if (raw_weight_radius != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        1, this->_internal_weight_radius(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(1, this->_internal_weight_radius(), target);
   }
 
   // double weight_550 = 2 [json_name = "weight550"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_weight_550 = this->_internal_weight_550();
-  ::uint64_t raw_weight_550;
+  uint64_t raw_weight_550;
   memcpy(&raw_weight_550, &tmp_weight_550, sizeof(tmp_weight_550));
   if (raw_weight_550 != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        2, this->_internal_weight_550(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(2, this->_internal_weight_550(), target);
   }
 
   // double weight_220 = 3 [json_name = "weight220"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_weight_220 = this->_internal_weight_220();
-  ::uint64_t raw_weight_220;
+  uint64_t raw_weight_220;
   memcpy(&raw_weight_220, &tmp_weight_220, sizeof(tmp_weight_220));
   if (raw_weight_220 != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        3, this->_internal_weight_220(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(3, this->_internal_weight_220(), target);
   }
 
   // double weight_110 = 4 [json_name = "weight110"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_weight_110 = this->_internal_weight_110();
-  ::uint64_t raw_weight_110;
+  uint64_t raw_weight_110;
   memcpy(&raw_weight_110, &tmp_weight_110, sizeof(tmp_weight_110));
   if (raw_weight_110 != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        4, this->_internal_weight_110(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(4, this->_internal_weight_110(), target);
   }
 
   // double prob_threshold = 5 [json_name = "probThreshold"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_prob_threshold = this->_internal_prob_threshold();
-  ::uint64_t raw_prob_threshold;
+  uint64_t raw_prob_threshold;
   memcpy(&raw_prob_threshold, &tmp_prob_threshold, sizeof(tmp_prob_threshold));
   if (raw_prob_threshold != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        5, this->_internal_prob_threshold(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(5, this->_internal_prob_threshold(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.wargame.v1.GiveDefenseOrderRequest)
   return target;
 }
 
-::size_t GiveDefenseOrderRequest::ByteSizeLong() const {
+size_t GiveDefenseOrderRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.wargame.v1.GiveDefenseOrderRequest)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // double weight_radius = 1 [json_name = "weightRadius"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_weight_radius = this->_internal_weight_radius();
-  ::uint64_t raw_weight_radius;
+  uint64_t raw_weight_radius;
   memcpy(&raw_weight_radius, &tmp_weight_radius, sizeof(tmp_weight_radius));
   if (raw_weight_radius != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   // double weight_550 = 2 [json_name = "weight550"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_weight_550 = this->_internal_weight_550();
-  ::uint64_t raw_weight_550;
+  uint64_t raw_weight_550;
   memcpy(&raw_weight_550, &tmp_weight_550, sizeof(tmp_weight_550));
   if (raw_weight_550 != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   // double weight_220 = 3 [json_name = "weight220"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_weight_220 = this->_internal_weight_220();
-  ::uint64_t raw_weight_220;
+  uint64_t raw_weight_220;
   memcpy(&raw_weight_220, &tmp_weight_220, sizeof(tmp_weight_220));
   if (raw_weight_220 != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   // double weight_110 = 4 [json_name = "weight110"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_weight_110 = this->_internal_weight_110();
-  ::uint64_t raw_weight_110;
+  uint64_t raw_weight_110;
   memcpy(&raw_weight_110, &tmp_weight_110, sizeof(tmp_weight_110));
   if (raw_weight_110 != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   // double prob_threshold = 5 [json_name = "probThreshold"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_prob_threshold = this->_internal_prob_threshold();
-  ::uint64_t raw_prob_threshold;
+  uint64_t raw_prob_threshold;
   memcpy(&raw_prob_threshold, &tmp_prob_threshold, sizeof(tmp_prob_threshold));
   if (raw_prob_threshold != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData GiveDefenseOrderRequest::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GiveDefenseOrderRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     GiveDefenseOrderRequest::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*GiveDefenseOrderRequest::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GiveDefenseOrderRequest::GetClassData() const { return &_class_data_; }
 
 
-void GiveDefenseOrderRequest::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void GiveDefenseOrderRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<GiveDefenseOrderRequest*>(&to_msg);
   auto& from = static_cast<const GiveDefenseOrderRequest&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.wargame.v1.GiveDefenseOrderRequest)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_weight_radius = from._internal_weight_radius();
-  ::uint64_t raw_weight_radius;
+  uint64_t raw_weight_radius;
   memcpy(&raw_weight_radius, &tmp_weight_radius, sizeof(tmp_weight_radius));
   if (raw_weight_radius != 0) {
     _this->_internal_set_weight_radius(from._internal_weight_radius());
   }
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_weight_550 = from._internal_weight_550();
-  ::uint64_t raw_weight_550;
+  uint64_t raw_weight_550;
   memcpy(&raw_weight_550, &tmp_weight_550, sizeof(tmp_weight_550));
   if (raw_weight_550 != 0) {
     _this->_internal_set_weight_550(from._internal_weight_550());
   }
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_weight_220 = from._internal_weight_220();
-  ::uint64_t raw_weight_220;
+  uint64_t raw_weight_220;
   memcpy(&raw_weight_220, &tmp_weight_220, sizeof(tmp_weight_220));
   if (raw_weight_220 != 0) {
     _this->_internal_set_weight_220(from._internal_weight_220());
   }
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_weight_110 = from._internal_weight_110();
-  ::uint64_t raw_weight_110;
+  uint64_t raw_weight_110;
   memcpy(&raw_weight_110, &tmp_weight_110, sizeof(tmp_weight_110));
   if (raw_weight_110 != 0) {
     _this->_internal_set_weight_110(from._internal_weight_110());
   }
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_prob_threshold = from._internal_prob_threshold();
-  ::uint64_t raw_prob_threshold;
+  uint64_t raw_prob_threshold;
   memcpy(&raw_prob_threshold, &tmp_prob_threshold, sizeof(tmp_prob_threshold));
   if (raw_prob_threshold != 0) {
     _this->_internal_set_prob_threshold(from._internal_prob_threshold());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void GiveDefenseOrderRequest::CopyFrom(const GiveDefenseOrderRequest& from) {
@@ -2290,14 +2245,14 @@ void GiveDefenseOrderRequest::CopyFrom(const GiveDefenseOrderRequest& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool GiveDefenseOrderRequest::IsInitialized() const {
+bool GiveDefenseOrderRequest::IsInitialized() const {
   return true;
 }
 
 void GiveDefenseOrderRequest::InternalSwap(GiveDefenseOrderRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::google::protobuf::internal::memswap<
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(GiveDefenseOrderRequest, _impl_.prob_threshold_)
       + sizeof(GiveDefenseOrderRequest::_impl_.prob_threshold_)
       - PROTOBUF_FIELD_OFFSET(GiveDefenseOrderRequest, _impl_.weight_radius_)>(
@@ -2305,38 +2260,39 @@ void GiveDefenseOrderRequest::InternalSwap(GiveDefenseOrderRequest* other) {
           reinterpret_cast<char*>(&other->_impl_.weight_radius_));
 }
 
-::google::protobuf::Metadata GiveDefenseOrderRequest::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata GiveDefenseOrderRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fwargame_2fv1_2fwargame_5fservice_2eproto_getter, &descriptor_table_city_2fwargame_2fv1_2fwargame_5fservice_2eproto_once,
       file_level_metadata_city_2fwargame_2fv1_2fwargame_5fservice_2eproto[6]);
 }
+
 // ===================================================================
 
 class GiveDefenseOrderResponse::_Internal {
  public:
 };
 
-GiveDefenseOrderResponse::GiveDefenseOrderResponse(::google::protobuf::Arena* arena)
-    : ::google::protobuf::internal::ZeroFieldsBase(arena) {
+GiveDefenseOrderResponse::GiveDefenseOrderResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
   // @@protoc_insertion_point(arena_constructor:city.wargame.v1.GiveDefenseOrderResponse)
 }
-GiveDefenseOrderResponse::GiveDefenseOrderResponse(const GiveDefenseOrderResponse& from) : ::google::protobuf::internal::ZeroFieldsBase() {
-  GiveDefenseOrderResponse* const _this = this;
-  (void)_this;
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
-
+GiveDefenseOrderResponse::GiveDefenseOrderResponse(const GiveDefenseOrderResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
+  GiveDefenseOrderResponse* const _this = this; (void)_this;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:city.wargame.v1.GiveDefenseOrderResponse)
 }
 
 
 
 
-const ::google::protobuf::Message::ClassData GiveDefenseOrderResponse::_class_data_ = {
-    ::google::protobuf::internal::ZeroFieldsBase::CopyImpl,
-    ::google::protobuf::internal::ZeroFieldsBase::MergeImpl,
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GiveDefenseOrderResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
 };
-const ::google::protobuf::Message::ClassData*GiveDefenseOrderResponse::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GiveDefenseOrderResponse::GetClassData() const { return &_class_data_; }
 
 
 
@@ -2344,38 +2300,39 @@ const ::google::protobuf::Message::ClassData*GiveDefenseOrderResponse::GetClassD
 
 
 
-::google::protobuf::Metadata GiveDefenseOrderResponse::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata GiveDefenseOrderResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fwargame_2fv1_2fwargame_5fservice_2eproto_getter, &descriptor_table_city_2fwargame_2fv1_2fwargame_5fservice_2eproto_once,
       file_level_metadata_city_2fwargame_2fv1_2fwargame_5fservice_2eproto[7]);
 }
+
 // ===================================================================
 
 class GetHitHistoryRequest::_Internal {
  public:
 };
 
-GetHitHistoryRequest::GetHitHistoryRequest(::google::protobuf::Arena* arena)
-    : ::google::protobuf::internal::ZeroFieldsBase(arena) {
+GetHitHistoryRequest::GetHitHistoryRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
   // @@protoc_insertion_point(arena_constructor:city.wargame.v1.GetHitHistoryRequest)
 }
-GetHitHistoryRequest::GetHitHistoryRequest(const GetHitHistoryRequest& from) : ::google::protobuf::internal::ZeroFieldsBase() {
-  GetHitHistoryRequest* const _this = this;
-  (void)_this;
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
-
+GetHitHistoryRequest::GetHitHistoryRequest(const GetHitHistoryRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
+  GetHitHistoryRequest* const _this = this; (void)_this;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:city.wargame.v1.GetHitHistoryRequest)
 }
 
 
 
 
-const ::google::protobuf::Message::ClassData GetHitHistoryRequest::_class_data_ = {
-    ::google::protobuf::internal::ZeroFieldsBase::CopyImpl,
-    ::google::protobuf::internal::ZeroFieldsBase::MergeImpl,
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetHitHistoryRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
 };
-const ::google::protobuf::Message::ClassData*GetHitHistoryRequest::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetHitHistoryRequest::GetClassData() const { return &_class_data_; }
 
 
 
@@ -2383,11 +2340,12 @@ const ::google::protobuf::Message::ClassData*GetHitHistoryRequest::GetClassData(
 
 
 
-::google::protobuf::Metadata GetHitHistoryRequest::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata GetHitHistoryRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fwargame_2fv1_2fwargame_5fservice_2eproto_getter, &descriptor_table_city_2fwargame_2fv1_2fwargame_5fservice_2eproto_once,
       file_level_metadata_city_2fwargame_2fv1_2fwargame_5fservice_2eproto[8]);
 }
+
 // ===================================================================
 
 class GetHitHistoryResponse::_Internal {
@@ -2395,150 +2353,162 @@ class GetHitHistoryResponse::_Internal {
 };
 
 void GetHitHistoryResponse::clear_histories() {
-  _internal_mutable_histories()->Clear();
+  _impl_.histories_.Clear();
 }
-GetHitHistoryResponse::GetHitHistoryResponse(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+GetHitHistoryResponse::GetHitHistoryResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.wargame.v1.GetHitHistoryResponse)
 }
-GetHitHistoryResponse::GetHitHistoryResponse(const GetHitHistoryResponse& from) : ::google::protobuf::Message() {
-  GetHitHistoryResponse* const _this = this;
-  (void)_this;
+GetHitHistoryResponse::GetHitHistoryResponse(const GetHitHistoryResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  GetHitHistoryResponse* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.histories_){from._impl_.histories_},
-      /*decltype(_impl_._cached_size_)*/ {},
-  };
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+      decltype(_impl_.histories_){from._impl_.histories_}
+    , /*decltype(_impl_._cached_size_)*/{}};
 
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:city.wargame.v1.GetHitHistoryResponse)
 }
-inline void GetHitHistoryResponse::SharedCtor(::_pb::Arena* arena) {
+
+inline void GetHitHistoryResponse::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.histories_){arena},
-      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.histories_){arena}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 GetHitHistoryResponse::~GetHitHistoryResponse() {
   // @@protoc_insertion_point(destructor:city.wargame.v1.GetHitHistoryResponse)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void GetHitHistoryResponse::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.histories_.~RepeatedPtrField();
 }
+
 void GetHitHistoryResponse::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void GetHitHistoryResponse::Clear() {
+void GetHitHistoryResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.wargame.v1.GetHitHistoryResponse)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _internal_mutable_histories()->Clear();
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _impl_.histories_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* GetHitHistoryResponse::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* GetHitHistoryResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // repeated .city.wargame.v1.HitHistory histories = 1 [json_name = "histories"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_histories(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<0, 1, 1, 0, 2> GetHitHistoryResponse::_table_ = {
-  {
-    0,  // no _has_bits_
-    0, // no _extensions_
-    1, 0,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967294,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    1,  // num_field_entries
-    1,  // num_aux_entries
-    offsetof(decltype(_table_), aux_entries),
-    &_GetHitHistoryResponse_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    // repeated .city.wargame.v1.HitHistory histories = 1 [json_name = "histories"];
-    {::_pbi::TcParser::FastMtR1,
-     {10, 63, 0, PROTOBUF_FIELD_OFFSET(GetHitHistoryResponse, _impl_.histories_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // repeated .city.wargame.v1.HitHistory histories = 1 [json_name = "histories"];
-    {PROTOBUF_FIELD_OFFSET(GetHitHistoryResponse, _impl_.histories_), 0, 0,
-    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
-  }}, {{
-    {::_pbi::TcParser::GetTable<::city::wargame::v1::HitHistory>()},
-  }}, {{
-  }},
-};
-
-::uint8_t* GetHitHistoryResponse::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* GetHitHistoryResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.wargame.v1.GetHitHistoryResponse)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // repeated .city.wargame.v1.HitHistory histories = 1 [json_name = "histories"];
   for (unsigned i = 0,
       n = static_cast<unsigned>(this->_internal_histories_size()); i < n; i++) {
-    const auto& repfield = this->_internal_histories().Get(i);
-    target = ::google::protobuf::internal::WireFormatLite::
+    const auto& repfield = this->_internal_histories(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
         InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.wargame.v1.GetHitHistoryResponse)
   return target;
 }
 
-::size_t GetHitHistoryResponse::ByteSizeLong() const {
+size_t GetHitHistoryResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.wargame.v1.GetHitHistoryResponse)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // repeated .city.wargame.v1.HitHistory histories = 1 [json_name = "histories"];
   total_size += 1UL * this->_internal_histories_size();
-  for (const auto& msg : this->_internal_histories()) {
+  for (const auto& msg : this->_impl_.histories_) {
     total_size +=
-      ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
+
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData GetHitHistoryResponse::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetHitHistoryResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     GetHitHistoryResponse::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*GetHitHistoryResponse::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetHitHistoryResponse::GetClassData() const { return &_class_data_; }
 
 
-void GetHitHistoryResponse::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void GetHitHistoryResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<GetHitHistoryResponse*>(&to_msg);
   auto& from = static_cast<const GetHitHistoryResponse&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.wargame.v1.GetHitHistoryResponse)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  _this->_internal_mutable_histories()->MergeFrom(from._internal_histories());
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.histories_.MergeFrom(from._impl_.histories_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void GetHitHistoryResponse::CopyFrom(const GetHitHistoryResponse& from) {
@@ -2548,7 +2518,7 @@ void GetHitHistoryResponse::CopyFrom(const GetHitHistoryResponse& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool GetHitHistoryResponse::IsInitialized() const {
+bool GetHitHistoryResponse::IsInitialized() const {
   return true;
 }
 
@@ -2558,169 +2528,190 @@ void GetHitHistoryResponse::InternalSwap(GetHitHistoryResponse* other) {
   _impl_.histories_.InternalSwap(&other->_impl_.histories_);
 }
 
-::google::protobuf::Metadata GetHitHistoryResponse::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata GetHitHistoryResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fwargame_2fv1_2fwargame_5fservice_2eproto_getter, &descriptor_table_city_2fwargame_2fv1_2fwargame_5fservice_2eproto_once,
       file_level_metadata_city_2fwargame_2fv1_2fwargame_5fservice_2eproto[9]);
 }
+
 // ===================================================================
 
 class GetRecoPointsRequest::_Internal {
  public:
 };
 
-GetRecoPointsRequest::GetRecoPointsRequest(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+GetRecoPointsRequest::GetRecoPointsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.wargame.v1.GetRecoPointsRequest)
 }
 GetRecoPointsRequest::GetRecoPointsRequest(const GetRecoPointsRequest& from)
-    : ::google::protobuf::Message(), _impl_(from._impl_) {
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  GetRecoPointsRequest* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.camp_){}
+    , decltype(_impl_.type_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&_impl_.camp_, &from._impl_.camp_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.type_) -
+    reinterpret_cast<char*>(&_impl_.camp_)) + sizeof(_impl_.type_));
   // @@protoc_insertion_point(copy_constructor:city.wargame.v1.GetRecoPointsRequest)
 }
-inline void GetRecoPointsRequest::SharedCtor(::_pb::Arena* arena) {
+
+inline void GetRecoPointsRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.camp_){0},
-      decltype(_impl_.type_){0},
-      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.camp_){0}
+    , decltype(_impl_.type_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 GetRecoPointsRequest::~GetRecoPointsRequest() {
   // @@protoc_insertion_point(destructor:city.wargame.v1.GetRecoPointsRequest)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void GetRecoPointsRequest::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
+
 void GetRecoPointsRequest::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void GetRecoPointsRequest::Clear() {
+void GetRecoPointsRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.wargame.v1.GetRecoPointsRequest)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&_impl_.camp_, 0, static_cast<::size_t>(
+  ::memset(&_impl_.camp_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_impl_.type_) -
       reinterpret_cast<char*>(&_impl_.camp_)) + sizeof(_impl_.type_));
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* GetRecoPointsRequest::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* GetRecoPointsRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // .city.wargame.v1.Camp camp = 1 [json_name = "camp"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_set_camp(static_cast<::city::wargame::v1::Camp>(val));
+        } else
+          goto handle_unusual;
+        continue;
+      // .city.wargame.v1.RecoAlgoType type = 2 [json_name = "type"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_set_type(static_cast<::city::wargame::v1::RecoAlgoType>(val));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<1, 2, 0, 0, 2> GetRecoPointsRequest::_table_ = {
-  {
-    0,  // no _has_bits_
-    0, // no _extensions_
-    2, 8,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967292,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    2,  // num_field_entries
-    0,  // num_aux_entries
-    offsetof(decltype(_table_), field_names),  // no aux_entries
-    &_GetRecoPointsRequest_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    // .city.wargame.v1.RecoAlgoType type = 2 [json_name = "type"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(GetRecoPointsRequest, _impl_.type_), 63>(),
-     {16, 63, 0, PROTOBUF_FIELD_OFFSET(GetRecoPointsRequest, _impl_.type_)}},
-    // .city.wargame.v1.Camp camp = 1 [json_name = "camp"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(GetRecoPointsRequest, _impl_.camp_), 63>(),
-     {8, 63, 0, PROTOBUF_FIELD_OFFSET(GetRecoPointsRequest, _impl_.camp_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // .city.wargame.v1.Camp camp = 1 [json_name = "camp"];
-    {PROTOBUF_FIELD_OFFSET(GetRecoPointsRequest, _impl_.camp_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kOpenEnum)},
-    // .city.wargame.v1.RecoAlgoType type = 2 [json_name = "type"];
-    {PROTOBUF_FIELD_OFFSET(GetRecoPointsRequest, _impl_.type_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kOpenEnum)},
-  }},
-  // no aux_entries
-  {{
-  }},
-};
-
-::uint8_t* GetRecoPointsRequest::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* GetRecoPointsRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.wargame.v1.GetRecoPointsRequest)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // .city.wargame.v1.Camp camp = 1 [json_name = "camp"];
   if (this->_internal_camp() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteEnumToArray(
-        1, this->_internal_camp(), target);
+      1, this->_internal_camp(), target);
   }
 
   // .city.wargame.v1.RecoAlgoType type = 2 [json_name = "type"];
   if (this->_internal_type() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteEnumToArray(
-        2, this->_internal_type(), target);
+      2, this->_internal_type(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.wargame.v1.GetRecoPointsRequest)
   return target;
 }
 
-::size_t GetRecoPointsRequest::ByteSizeLong() const {
+size_t GetRecoPointsRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.wargame.v1.GetRecoPointsRequest)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // .city.wargame.v1.Camp camp = 1 [json_name = "camp"];
   if (this->_internal_camp() != 0) {
     total_size += 1 +
-                  ::_pbi::WireFormatLite::EnumSize(this->_internal_camp());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_camp());
   }
 
   // .city.wargame.v1.RecoAlgoType type = 2 [json_name = "type"];
   if (this->_internal_type() != 0) {
     total_size += 1 +
-                  ::_pbi::WireFormatLite::EnumSize(this->_internal_type());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_type());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData GetRecoPointsRequest::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetRecoPointsRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     GetRecoPointsRequest::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*GetRecoPointsRequest::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetRecoPointsRequest::GetClassData() const { return &_class_data_; }
 
 
-void GetRecoPointsRequest::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void GetRecoPointsRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<GetRecoPointsRequest*>(&to_msg);
   auto& from = static_cast<const GetRecoPointsRequest&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.wargame.v1.GetRecoPointsRequest)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_camp() != 0) {
@@ -2729,7 +2720,7 @@ void GetRecoPointsRequest::MergeImpl(::google::protobuf::Message& to_msg, const 
   if (from._internal_type() != 0) {
     _this->_internal_set_type(from._internal_type());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void GetRecoPointsRequest::CopyFrom(const GetRecoPointsRequest& from) {
@@ -2739,14 +2730,14 @@ void GetRecoPointsRequest::CopyFrom(const GetRecoPointsRequest& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool GetRecoPointsRequest::IsInitialized() const {
+bool GetRecoPointsRequest::IsInitialized() const {
   return true;
 }
 
 void GetRecoPointsRequest::InternalSwap(GetRecoPointsRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::google::protobuf::internal::memswap<
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(GetRecoPointsRequest, _impl_.type_)
       + sizeof(GetRecoPointsRequest::_impl_.type_)
       - PROTOBUF_FIELD_OFFSET(GetRecoPointsRequest, _impl_.camp_)>(
@@ -2754,11 +2745,12 @@ void GetRecoPointsRequest::InternalSwap(GetRecoPointsRequest* other) {
           reinterpret_cast<char*>(&other->_impl_.camp_));
 }
 
-::google::protobuf::Metadata GetRecoPointsRequest::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata GetRecoPointsRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fwargame_2fv1_2fwargame_5fservice_2eproto_getter, &descriptor_table_city_2fwargame_2fv1_2fwargame_5fservice_2eproto_once,
       file_level_metadata_city_2fwargame_2fv1_2fwargame_5fservice_2eproto[10]);
 }
+
 // ===================================================================
 
 class GetRecoPointsResponse::_Internal {
@@ -2766,150 +2758,162 @@ class GetRecoPointsResponse::_Internal {
 };
 
 void GetRecoPointsResponse::clear_points() {
-  _internal_mutable_points()->Clear();
+  _impl_.points_.Clear();
 }
-GetRecoPointsResponse::GetRecoPointsResponse(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+GetRecoPointsResponse::GetRecoPointsResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.wargame.v1.GetRecoPointsResponse)
 }
-GetRecoPointsResponse::GetRecoPointsResponse(const GetRecoPointsResponse& from) : ::google::protobuf::Message() {
-  GetRecoPointsResponse* const _this = this;
-  (void)_this;
+GetRecoPointsResponse::GetRecoPointsResponse(const GetRecoPointsResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  GetRecoPointsResponse* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.points_){from._impl_.points_},
-      /*decltype(_impl_._cached_size_)*/ {},
-  };
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+      decltype(_impl_.points_){from._impl_.points_}
+    , /*decltype(_impl_._cached_size_)*/{}};
 
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:city.wargame.v1.GetRecoPointsResponse)
 }
-inline void GetRecoPointsResponse::SharedCtor(::_pb::Arena* arena) {
+
+inline void GetRecoPointsResponse::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.points_){arena},
-      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.points_){arena}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 GetRecoPointsResponse::~GetRecoPointsResponse() {
   // @@protoc_insertion_point(destructor:city.wargame.v1.GetRecoPointsResponse)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void GetRecoPointsResponse::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.points_.~RepeatedPtrField();
 }
+
 void GetRecoPointsResponse::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void GetRecoPointsResponse::Clear() {
+void GetRecoPointsResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.wargame.v1.GetRecoPointsResponse)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _internal_mutable_points()->Clear();
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _impl_.points_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* GetRecoPointsResponse::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* GetRecoPointsResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // repeated .city.wargame.v1.RecoPoint points = 1 [json_name = "points"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_points(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<0, 1, 1, 0, 2> GetRecoPointsResponse::_table_ = {
-  {
-    0,  // no _has_bits_
-    0, // no _extensions_
-    1, 0,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967294,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    1,  // num_field_entries
-    1,  // num_aux_entries
-    offsetof(decltype(_table_), aux_entries),
-    &_GetRecoPointsResponse_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    // repeated .city.wargame.v1.RecoPoint points = 1 [json_name = "points"];
-    {::_pbi::TcParser::FastMtR1,
-     {10, 63, 0, PROTOBUF_FIELD_OFFSET(GetRecoPointsResponse, _impl_.points_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // repeated .city.wargame.v1.RecoPoint points = 1 [json_name = "points"];
-    {PROTOBUF_FIELD_OFFSET(GetRecoPointsResponse, _impl_.points_), 0, 0,
-    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
-  }}, {{
-    {::_pbi::TcParser::GetTable<::city::wargame::v1::RecoPoint>()},
-  }}, {{
-  }},
-};
-
-::uint8_t* GetRecoPointsResponse::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* GetRecoPointsResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.wargame.v1.GetRecoPointsResponse)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // repeated .city.wargame.v1.RecoPoint points = 1 [json_name = "points"];
   for (unsigned i = 0,
       n = static_cast<unsigned>(this->_internal_points_size()); i < n; i++) {
-    const auto& repfield = this->_internal_points().Get(i);
-    target = ::google::protobuf::internal::WireFormatLite::
+    const auto& repfield = this->_internal_points(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
         InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.wargame.v1.GetRecoPointsResponse)
   return target;
 }
 
-::size_t GetRecoPointsResponse::ByteSizeLong() const {
+size_t GetRecoPointsResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.wargame.v1.GetRecoPointsResponse)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // repeated .city.wargame.v1.RecoPoint points = 1 [json_name = "points"];
   total_size += 1UL * this->_internal_points_size();
-  for (const auto& msg : this->_internal_points()) {
+  for (const auto& msg : this->_impl_.points_) {
     total_size +=
-      ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
+
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData GetRecoPointsResponse::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetRecoPointsResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     GetRecoPointsResponse::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*GetRecoPointsResponse::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetRecoPointsResponse::GetClassData() const { return &_class_data_; }
 
 
-void GetRecoPointsResponse::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void GetRecoPointsResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<GetRecoPointsResponse*>(&to_msg);
   auto& from = static_cast<const GetRecoPointsResponse&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.wargame.v1.GetRecoPointsResponse)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  _this->_internal_mutable_points()->MergeFrom(from._internal_points());
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.points_.MergeFrom(from._impl_.points_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void GetRecoPointsResponse::CopyFrom(const GetRecoPointsResponse& from) {
@@ -2919,7 +2923,7 @@ void GetRecoPointsResponse::CopyFrom(const GetRecoPointsResponse& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool GetRecoPointsResponse::IsInitialized() const {
+bool GetRecoPointsResponse::IsInitialized() const {
   return true;
 }
 
@@ -2929,38 +2933,39 @@ void GetRecoPointsResponse::InternalSwap(GetRecoPointsResponse* other) {
   _impl_.points_.InternalSwap(&other->_impl_.points_);
 }
 
-::google::protobuf::Metadata GetRecoPointsResponse::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata GetRecoPointsResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fwargame_2fv1_2fwargame_5fservice_2eproto_getter, &descriptor_table_city_2fwargame_2fv1_2fwargame_5fservice_2eproto_once,
       file_level_metadata_city_2fwargame_2fv1_2fwargame_5fservice_2eproto[11]);
 }
+
 // ===================================================================
 
 class GetStepRequest::_Internal {
  public:
 };
 
-GetStepRequest::GetStepRequest(::google::protobuf::Arena* arena)
-    : ::google::protobuf::internal::ZeroFieldsBase(arena) {
+GetStepRequest::GetStepRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
   // @@protoc_insertion_point(arena_constructor:city.wargame.v1.GetStepRequest)
 }
-GetStepRequest::GetStepRequest(const GetStepRequest& from) : ::google::protobuf::internal::ZeroFieldsBase() {
-  GetStepRequest* const _this = this;
-  (void)_this;
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
-
+GetStepRequest::GetStepRequest(const GetStepRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
+  GetStepRequest* const _this = this; (void)_this;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:city.wargame.v1.GetStepRequest)
 }
 
 
 
 
-const ::google::protobuf::Message::ClassData GetStepRequest::_class_data_ = {
-    ::google::protobuf::internal::ZeroFieldsBase::CopyImpl,
-    ::google::protobuf::internal::ZeroFieldsBase::MergeImpl,
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetStepRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
 };
-const ::google::protobuf::Message::ClassData*GetStepRequest::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetStepRequest::GetClassData() const { return &_class_data_; }
 
 
 
@@ -2968,229 +2973,247 @@ const ::google::protobuf::Message::ClassData*GetStepRequest::GetClassData() cons
 
 
 
-::google::protobuf::Metadata GetStepRequest::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata GetStepRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fwargame_2fv1_2fwargame_5fservice_2eproto_getter, &descriptor_table_city_2fwargame_2fv1_2fwargame_5fservice_2eproto_once,
       file_level_metadata_city_2fwargame_2fv1_2fwargame_5fservice_2eproto[12]);
 }
+
 // ===================================================================
 
 class GetStepResponse::_Internal {
  public:
 };
 
-GetStepResponse::GetStepResponse(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+GetStepResponse::GetStepResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.wargame.v1.GetStepResponse)
 }
 GetStepResponse::GetStepResponse(const GetStepResponse& from)
-    : ::google::protobuf::Message(), _impl_(from._impl_) {
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  GetStepResponse* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.step_){}
+    , decltype(_impl_.red_pick_ready_){}
+    , decltype(_impl_.blue_pick_ready_){}
+    , decltype(_impl_.is_game_started_){}
+    , decltype(_impl_.round_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&_impl_.step_, &from._impl_.step_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.round_) -
+    reinterpret_cast<char*>(&_impl_.step_)) + sizeof(_impl_.round_));
   // @@protoc_insertion_point(copy_constructor:city.wargame.v1.GetStepResponse)
 }
-inline void GetStepResponse::SharedCtor(::_pb::Arena* arena) {
+
+inline void GetStepResponse::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.step_){0},
-      decltype(_impl_.red_pick_ready_){false},
-      decltype(_impl_.blue_pick_ready_){false},
-      decltype(_impl_.is_game_started_){false},
-      decltype(_impl_.round_){0},
-      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.step_){0}
+    , decltype(_impl_.red_pick_ready_){false}
+    , decltype(_impl_.blue_pick_ready_){false}
+    , decltype(_impl_.is_game_started_){false}
+    , decltype(_impl_.round_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 GetStepResponse::~GetStepResponse() {
   // @@protoc_insertion_point(destructor:city.wargame.v1.GetStepResponse)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void GetStepResponse::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
+
 void GetStepResponse::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void GetStepResponse::Clear() {
+void GetStepResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.wargame.v1.GetStepResponse)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&_impl_.step_, 0, static_cast<::size_t>(
+  ::memset(&_impl_.step_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_impl_.round_) -
       reinterpret_cast<char*>(&_impl_.step_)) + sizeof(_impl_.round_));
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* GetStepResponse::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* GetStepResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 step = 1 [json_name = "step"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.step_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // bool red_pick_ready = 2 [json_name = "redPickReady"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _impl_.red_pick_ready_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // bool blue_pick_ready = 3 [json_name = "bluePickReady"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+          _impl_.blue_pick_ready_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 round = 4 [json_name = "round"];
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
+          _impl_.round_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // bool is_game_started = 5 [json_name = "isGameStarted"];
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
+          _impl_.is_game_started_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<3, 5, 0, 0, 2> GetStepResponse::_table_ = {
-  {
-    0,  // no _has_bits_
-    0, // no _extensions_
-    5, 56,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967264,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    5,  // num_field_entries
-    0,  // num_aux_entries
-    offsetof(decltype(_table_), field_names),  // no aux_entries
-    &_GetStepResponse_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    {::_pbi::TcParser::MiniParse, {}},
-    // int32 step = 1 [json_name = "step"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(GetStepResponse, _impl_.step_), 63>(),
-     {8, 63, 0, PROTOBUF_FIELD_OFFSET(GetStepResponse, _impl_.step_)}},
-    // bool red_pick_ready = 2 [json_name = "redPickReady"];
-    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(GetStepResponse, _impl_.red_pick_ready_), 63>(),
-     {16, 63, 0, PROTOBUF_FIELD_OFFSET(GetStepResponse, _impl_.red_pick_ready_)}},
-    // bool blue_pick_ready = 3 [json_name = "bluePickReady"];
-    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(GetStepResponse, _impl_.blue_pick_ready_), 63>(),
-     {24, 63, 0, PROTOBUF_FIELD_OFFSET(GetStepResponse, _impl_.blue_pick_ready_)}},
-    // int32 round = 4 [json_name = "round"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(GetStepResponse, _impl_.round_), 63>(),
-     {32, 63, 0, PROTOBUF_FIELD_OFFSET(GetStepResponse, _impl_.round_)}},
-    // bool is_game_started = 5 [json_name = "isGameStarted"];
-    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(GetStepResponse, _impl_.is_game_started_), 63>(),
-     {40, 63, 0, PROTOBUF_FIELD_OFFSET(GetStepResponse, _impl_.is_game_started_)}},
-    {::_pbi::TcParser::MiniParse, {}},
-    {::_pbi::TcParser::MiniParse, {}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // int32 step = 1 [json_name = "step"];
-    {PROTOBUF_FIELD_OFFSET(GetStepResponse, _impl_.step_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-    // bool red_pick_ready = 2 [json_name = "redPickReady"];
-    {PROTOBUF_FIELD_OFFSET(GetStepResponse, _impl_.red_pick_ready_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kBool)},
-    // bool blue_pick_ready = 3 [json_name = "bluePickReady"];
-    {PROTOBUF_FIELD_OFFSET(GetStepResponse, _impl_.blue_pick_ready_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kBool)},
-    // int32 round = 4 [json_name = "round"];
-    {PROTOBUF_FIELD_OFFSET(GetStepResponse, _impl_.round_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-    // bool is_game_started = 5 [json_name = "isGameStarted"];
-    {PROTOBUF_FIELD_OFFSET(GetStepResponse, _impl_.is_game_started_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kBool)},
-  }},
-  // no aux_entries
-  {{
-  }},
-};
-
-::uint8_t* GetStepResponse::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* GetStepResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.wargame.v1.GetStepResponse)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // int32 step = 1 [json_name = "step"];
   if (this->_internal_step() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<1>(
-            stream, this->_internal_step(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_step(), target);
   }
 
   // bool red_pick_ready = 2 [json_name = "redPickReady"];
   if (this->_internal_red_pick_ready() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(
-        2, this->_internal_red_pick_ready(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(2, this->_internal_red_pick_ready(), target);
   }
 
   // bool blue_pick_ready = 3 [json_name = "bluePickReady"];
   if (this->_internal_blue_pick_ready() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(
-        3, this->_internal_blue_pick_ready(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(3, this->_internal_blue_pick_ready(), target);
   }
 
   // int32 round = 4 [json_name = "round"];
   if (this->_internal_round() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<4>(
-            stream, this->_internal_round(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(4, this->_internal_round(), target);
   }
 
   // bool is_game_started = 5 [json_name = "isGameStarted"];
   if (this->_internal_is_game_started() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(
-        5, this->_internal_is_game_started(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(5, this->_internal_is_game_started(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.wargame.v1.GetStepResponse)
   return target;
 }
 
-::size_t GetStepResponse::ByteSizeLong() const {
+size_t GetStepResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.wargame.v1.GetStepResponse)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // int32 step = 1 [json_name = "step"];
   if (this->_internal_step() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_step());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_step());
   }
 
   // bool red_pick_ready = 2 [json_name = "redPickReady"];
   if (this->_internal_red_pick_ready() != 0) {
-    total_size += 2;
+    total_size += 1 + 1;
   }
 
   // bool blue_pick_ready = 3 [json_name = "bluePickReady"];
   if (this->_internal_blue_pick_ready() != 0) {
-    total_size += 2;
+    total_size += 1 + 1;
   }
 
   // bool is_game_started = 5 [json_name = "isGameStarted"];
   if (this->_internal_is_game_started() != 0) {
-    total_size += 2;
+    total_size += 1 + 1;
   }
 
   // int32 round = 4 [json_name = "round"];
   if (this->_internal_round() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_round());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_round());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData GetStepResponse::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetStepResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     GetStepResponse::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*GetStepResponse::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetStepResponse::GetClassData() const { return &_class_data_; }
 
 
-void GetStepResponse::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void GetStepResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<GetStepResponse*>(&to_msg);
   auto& from = static_cast<const GetStepResponse&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.wargame.v1.GetStepResponse)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_step() != 0) {
@@ -3208,7 +3231,7 @@ void GetStepResponse::MergeImpl(::google::protobuf::Message& to_msg, const ::goo
   if (from._internal_round() != 0) {
     _this->_internal_set_round(from._internal_round());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void GetStepResponse::CopyFrom(const GetStepResponse& from) {
@@ -3218,14 +3241,14 @@ void GetStepResponse::CopyFrom(const GetStepResponse& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool GetStepResponse::IsInitialized() const {
+bool GetStepResponse::IsInitialized() const {
   return true;
 }
 
 void GetStepResponse::InternalSwap(GetStepResponse* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::google::protobuf::internal::memswap<
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(GetStepResponse, _impl_.round_)
       + sizeof(GetStepResponse::_impl_.round_)
       - PROTOBUF_FIELD_OFFSET(GetStepResponse, _impl_.step_)>(
@@ -3233,38 +3256,39 @@ void GetStepResponse::InternalSwap(GetStepResponse* other) {
           reinterpret_cast<char*>(&other->_impl_.step_));
 }
 
-::google::protobuf::Metadata GetStepResponse::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata GetStepResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fwargame_2fv1_2fwargame_5fservice_2eproto_getter, &descriptor_table_city_2fwargame_2fv1_2fwargame_5fservice_2eproto_once,
       file_level_metadata_city_2fwargame_2fv1_2fwargame_5fservice_2eproto[13]);
 }
+
 // ===================================================================
 
 class GetCasualtiesRequest::_Internal {
  public:
 };
 
-GetCasualtiesRequest::GetCasualtiesRequest(::google::protobuf::Arena* arena)
-    : ::google::protobuf::internal::ZeroFieldsBase(arena) {
+GetCasualtiesRequest::GetCasualtiesRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
   // @@protoc_insertion_point(arena_constructor:city.wargame.v1.GetCasualtiesRequest)
 }
-GetCasualtiesRequest::GetCasualtiesRequest(const GetCasualtiesRequest& from) : ::google::protobuf::internal::ZeroFieldsBase() {
-  GetCasualtiesRequest* const _this = this;
-  (void)_this;
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
-
+GetCasualtiesRequest::GetCasualtiesRequest(const GetCasualtiesRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
+  GetCasualtiesRequest* const _this = this; (void)_this;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:city.wargame.v1.GetCasualtiesRequest)
 }
 
 
 
 
-const ::google::protobuf::Message::ClassData GetCasualtiesRequest::_class_data_ = {
-    ::google::protobuf::internal::ZeroFieldsBase::CopyImpl,
-    ::google::protobuf::internal::ZeroFieldsBase::MergeImpl,
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetCasualtiesRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
 };
-const ::google::protobuf::Message::ClassData*GetCasualtiesRequest::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetCasualtiesRequest::GetClassData() const { return &_class_data_; }
 
 
 
@@ -3272,11 +3296,12 @@ const ::google::protobuf::Message::ClassData*GetCasualtiesRequest::GetClassData(
 
 
 
-::google::protobuf::Metadata GetCasualtiesRequest::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata GetCasualtiesRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fwargame_2fv1_2fwargame_5fservice_2eproto_getter, &descriptor_table_city_2fwargame_2fv1_2fwargame_5fservice_2eproto_once,
       file_level_metadata_city_2fwargame_2fv1_2fwargame_5fservice_2eproto[14]);
 }
+
 // ===================================================================
 
 class GetCasualtiesResponse::_Internal {
@@ -3284,150 +3309,162 @@ class GetCasualtiesResponse::_Internal {
 };
 
 void GetCasualtiesResponse::clear_casualties() {
-  _internal_mutable_casualties()->Clear();
+  _impl_.casualties_.Clear();
 }
-GetCasualtiesResponse::GetCasualtiesResponse(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+GetCasualtiesResponse::GetCasualtiesResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.wargame.v1.GetCasualtiesResponse)
 }
-GetCasualtiesResponse::GetCasualtiesResponse(const GetCasualtiesResponse& from) : ::google::protobuf::Message() {
-  GetCasualtiesResponse* const _this = this;
-  (void)_this;
+GetCasualtiesResponse::GetCasualtiesResponse(const GetCasualtiesResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  GetCasualtiesResponse* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.casualties_){from._impl_.casualties_},
-      /*decltype(_impl_._cached_size_)*/ {},
-  };
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+      decltype(_impl_.casualties_){from._impl_.casualties_}
+    , /*decltype(_impl_._cached_size_)*/{}};
 
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:city.wargame.v1.GetCasualtiesResponse)
 }
-inline void GetCasualtiesResponse::SharedCtor(::_pb::Arena* arena) {
+
+inline void GetCasualtiesResponse::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.casualties_){arena},
-      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.casualties_){arena}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 GetCasualtiesResponse::~GetCasualtiesResponse() {
   // @@protoc_insertion_point(destructor:city.wargame.v1.GetCasualtiesResponse)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void GetCasualtiesResponse::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.casualties_.~RepeatedPtrField();
 }
+
 void GetCasualtiesResponse::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void GetCasualtiesResponse::Clear() {
+void GetCasualtiesResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.wargame.v1.GetCasualtiesResponse)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _internal_mutable_casualties()->Clear();
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _impl_.casualties_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* GetCasualtiesResponse::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* GetCasualtiesResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // repeated .city.wargame.v1.Casualty casualties = 1 [json_name = "casualties"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_casualties(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<0, 1, 1, 0, 2> GetCasualtiesResponse::_table_ = {
-  {
-    0,  // no _has_bits_
-    0, // no _extensions_
-    1, 0,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967294,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    1,  // num_field_entries
-    1,  // num_aux_entries
-    offsetof(decltype(_table_), aux_entries),
-    &_GetCasualtiesResponse_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    // repeated .city.wargame.v1.Casualty casualties = 1 [json_name = "casualties"];
-    {::_pbi::TcParser::FastMtR1,
-     {10, 63, 0, PROTOBUF_FIELD_OFFSET(GetCasualtiesResponse, _impl_.casualties_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // repeated .city.wargame.v1.Casualty casualties = 1 [json_name = "casualties"];
-    {PROTOBUF_FIELD_OFFSET(GetCasualtiesResponse, _impl_.casualties_), 0, 0,
-    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
-  }}, {{
-    {::_pbi::TcParser::GetTable<::city::wargame::v1::Casualty>()},
-  }}, {{
-  }},
-};
-
-::uint8_t* GetCasualtiesResponse::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* GetCasualtiesResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.wargame.v1.GetCasualtiesResponse)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // repeated .city.wargame.v1.Casualty casualties = 1 [json_name = "casualties"];
   for (unsigned i = 0,
       n = static_cast<unsigned>(this->_internal_casualties_size()); i < n; i++) {
-    const auto& repfield = this->_internal_casualties().Get(i);
-    target = ::google::protobuf::internal::WireFormatLite::
+    const auto& repfield = this->_internal_casualties(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
         InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.wargame.v1.GetCasualtiesResponse)
   return target;
 }
 
-::size_t GetCasualtiesResponse::ByteSizeLong() const {
+size_t GetCasualtiesResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.wargame.v1.GetCasualtiesResponse)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // repeated .city.wargame.v1.Casualty casualties = 1 [json_name = "casualties"];
   total_size += 1UL * this->_internal_casualties_size();
-  for (const auto& msg : this->_internal_casualties()) {
+  for (const auto& msg : this->_impl_.casualties_) {
     total_size +=
-      ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
+
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData GetCasualtiesResponse::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetCasualtiesResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     GetCasualtiesResponse::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*GetCasualtiesResponse::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetCasualtiesResponse::GetClassData() const { return &_class_data_; }
 
 
-void GetCasualtiesResponse::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void GetCasualtiesResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<GetCasualtiesResponse*>(&to_msg);
   auto& from = static_cast<const GetCasualtiesResponse&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.wargame.v1.GetCasualtiesResponse)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  _this->_internal_mutable_casualties()->MergeFrom(from._internal_casualties());
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.casualties_.MergeFrom(from._impl_.casualties_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void GetCasualtiesResponse::CopyFrom(const GetCasualtiesResponse& from) {
@@ -3437,7 +3474,7 @@ void GetCasualtiesResponse::CopyFrom(const GetCasualtiesResponse& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool GetCasualtiesResponse::IsInitialized() const {
+bool GetCasualtiesResponse::IsInitialized() const {
   return true;
 }
 
@@ -3447,18 +3484,82 @@ void GetCasualtiesResponse::InternalSwap(GetCasualtiesResponse* other) {
   _impl_.casualties_.InternalSwap(&other->_impl_.casualties_);
 }
 
-::google::protobuf::Metadata GetCasualtiesResponse::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata GetCasualtiesResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fwargame_2fv1_2fwargame_5fservice_2eproto_getter, &descriptor_table_city_2fwargame_2fv1_2fwargame_5fservice_2eproto_once,
       file_level_metadata_city_2fwargame_2fv1_2fwargame_5fservice_2eproto[15]);
 }
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace v1
 }  // namespace wargame
 }  // namespace city
-namespace google {
-namespace protobuf {
-}  // namespace protobuf
-}  // namespace google
+PROTOBUF_NAMESPACE_OPEN
+template<> PROTOBUF_NOINLINE ::city::wargame::v1::PickPointsRequest*
+Arena::CreateMaybeMessage< ::city::wargame::v1::PickPointsRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::wargame::v1::PickPointsRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::wargame::v1::PickPointsResponse*
+Arena::CreateMaybeMessage< ::city::wargame::v1::PickPointsResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::wargame::v1::PickPointsResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::wargame::v1::GetPickPointsRequest*
+Arena::CreateMaybeMessage< ::city::wargame::v1::GetPickPointsRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::wargame::v1::GetPickPointsRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::wargame::v1::GetPickPointsResponse*
+Arena::CreateMaybeMessage< ::city::wargame::v1::GetPickPointsResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::wargame::v1::GetPickPointsResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::wargame::v1::SetScoreWeightRequest*
+Arena::CreateMaybeMessage< ::city::wargame::v1::SetScoreWeightRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::wargame::v1::SetScoreWeightRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::wargame::v1::SetScoreWeightResponse*
+Arena::CreateMaybeMessage< ::city::wargame::v1::SetScoreWeightResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::wargame::v1::SetScoreWeightResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::wargame::v1::GiveDefenseOrderRequest*
+Arena::CreateMaybeMessage< ::city::wargame::v1::GiveDefenseOrderRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::wargame::v1::GiveDefenseOrderRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::wargame::v1::GiveDefenseOrderResponse*
+Arena::CreateMaybeMessage< ::city::wargame::v1::GiveDefenseOrderResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::wargame::v1::GiveDefenseOrderResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::wargame::v1::GetHitHistoryRequest*
+Arena::CreateMaybeMessage< ::city::wargame::v1::GetHitHistoryRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::wargame::v1::GetHitHistoryRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::wargame::v1::GetHitHistoryResponse*
+Arena::CreateMaybeMessage< ::city::wargame::v1::GetHitHistoryResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::wargame::v1::GetHitHistoryResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::wargame::v1::GetRecoPointsRequest*
+Arena::CreateMaybeMessage< ::city::wargame::v1::GetRecoPointsRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::wargame::v1::GetRecoPointsRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::wargame::v1::GetRecoPointsResponse*
+Arena::CreateMaybeMessage< ::city::wargame::v1::GetRecoPointsResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::wargame::v1::GetRecoPointsResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::wargame::v1::GetStepRequest*
+Arena::CreateMaybeMessage< ::city::wargame::v1::GetStepRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::wargame::v1::GetStepRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::wargame::v1::GetStepResponse*
+Arena::CreateMaybeMessage< ::city::wargame::v1::GetStepResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::wargame::v1::GetStepResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::wargame::v1::GetCasualtiesRequest*
+Arena::CreateMaybeMessage< ::city::wargame::v1::GetCasualtiesRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::wargame::v1::GetCasualtiesRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::wargame::v1::GetCasualtiesResponse*
+Arena::CreateMaybeMessage< ::city::wargame::v1::GetCasualtiesResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::wargame::v1::GetCasualtiesResponse >(arena);
+}
+PROTOBUF_NAMESPACE_CLOSE
+
 // @@protoc_insertion_point(global_scope)
-#include "google/protobuf/port_undef.inc"
+#include <google/protobuf/port_undef.inc>

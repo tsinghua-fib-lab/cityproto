@@ -4,425 +4,402 @@
 #include "city/elec/output/v1/output.pb.h"
 
 #include <algorithm>
-#include "google/protobuf/io/coded_stream.h"
-#include "google/protobuf/extension_set.h"
-#include "google/protobuf/wire_format_lite.h"
-#include "google/protobuf/descriptor.h"
-#include "google/protobuf/generated_message_reflection.h"
-#include "google/protobuf/reflection_ops.h"
-#include "google/protobuf/wire_format.h"
-#include "google/protobuf/generated_message_tctable_impl.h"
-// @@protoc_insertion_point(includes)
 
-// Must be included last.
-#include "google/protobuf/port_def.inc"
+#include <google/protobuf/io/coded_stream.h>
+#include <google/protobuf/extension_set.h>
+#include <google/protobuf/wire_format_lite.h>
+#include <google/protobuf/descriptor.h>
+#include <google/protobuf/generated_message_reflection.h>
+#include <google/protobuf/reflection_ops.h>
+#include <google/protobuf/wire_format.h>
+// @@protoc_insertion_point(includes)
+#include <google/protobuf/port_def.inc>
+
 PROTOBUF_PRAGMA_INIT_SEG
-namespace _pb = ::google::protobuf;
-namespace _pbi = ::google::protobuf::internal;
-namespace _fl = ::google::protobuf::internal::field_layout;
+
+namespace _pb = ::PROTOBUF_NAMESPACE_ID;
+namespace _pbi = _pb::internal;
+
 namespace city {
 namespace elec {
 namespace output {
 namespace v1 {
-        template <typename>
-PROTOBUF_CONSTEXPR Aoi::Aoi(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_.unsatisfied_demand_ratio_)*/ 0,
-      /*decltype(_impl_.id_)*/ 0,
-      /*decltype(_impl_.unsatisfied_demand_num_)*/ 0,
-      /*decltype(_impl_.demand_)*/ 0,
-      /*decltype(_impl_.supply_)*/ 0,
-      /*decltype(_impl_._cached_size_)*/ {},
-    } {}
+PROTOBUF_CONSTEXPR Aoi::Aoi(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.unsatisfied_demand_ratio_)*/0
+  , /*decltype(_impl_.id_)*/0
+  , /*decltype(_impl_.unsatisfied_demand_num_)*/0
+  , /*decltype(_impl_.demand_)*/0
+  , /*decltype(_impl_.supply_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct AoiDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR AoiDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR AoiDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~AoiDefaultTypeInternal() {}
   union {
     Aoi _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 AoiDefaultTypeInternal _Aoi_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR AveragePower::AveragePower(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_.transformer_500_)*/ 0,
-      /*decltype(_impl_.transformer_220_)*/ 0,
-      /*decltype(_impl_.transformer_110_)*/ 0,
-      /*decltype(_impl_.transformer_10_)*/ 0,
-      /*decltype(_impl_._cached_size_)*/ {},
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 AoiDefaultTypeInternal _Aoi_default_instance_;
+PROTOBUF_CONSTEXPR AveragePower::AveragePower(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.transformer_500_)*/0
+  , /*decltype(_impl_.transformer_220_)*/0
+  , /*decltype(_impl_.transformer_110_)*/0
+  , /*decltype(_impl_.transformer_10_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct AveragePowerDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR AveragePowerDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR AveragePowerDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~AveragePowerDefaultTypeInternal() {}
   union {
     AveragePower _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 AveragePowerDefaultTypeInternal _AveragePower_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 AveragePowerDefaultTypeInternal _AveragePower_default_instance_;
 }  // namespace v1
 }  // namespace output
 }  // namespace elec
 }  // namespace city
 static ::_pb::Metadata file_level_metadata_city_2felec_2foutput_2fv1_2foutput_2eproto[2];
-static constexpr const ::_pb::EnumDescriptor**
-    file_level_enum_descriptors_city_2felec_2foutput_2fv1_2foutput_2eproto = nullptr;
-static constexpr const ::_pb::ServiceDescriptor**
-    file_level_service_descriptors_city_2felec_2foutput_2fv1_2foutput_2eproto = nullptr;
-const ::uint32_t TableStruct_city_2felec_2foutput_2fv1_2foutput_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
-    protodesc_cold) = {
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::elec::output::v1::Aoi, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::elec::output::v1::Aoi, _impl_.id_),
-    PROTOBUF_FIELD_OFFSET(::city::elec::output::v1::Aoi, _impl_.unsatisfied_demand_ratio_),
-    PROTOBUF_FIELD_OFFSET(::city::elec::output::v1::Aoi, _impl_.unsatisfied_demand_num_),
-    PROTOBUF_FIELD_OFFSET(::city::elec::output::v1::Aoi, _impl_.demand_),
-    PROTOBUF_FIELD_OFFSET(::city::elec::output::v1::Aoi, _impl_.supply_),
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::elec::output::v1::AveragePower, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::elec::output::v1::AveragePower, _impl_.transformer_500_),
-    PROTOBUF_FIELD_OFFSET(::city::elec::output::v1::AveragePower, _impl_.transformer_220_),
-    PROTOBUF_FIELD_OFFSET(::city::elec::output::v1::AveragePower, _impl_.transformer_110_),
-    PROTOBUF_FIELD_OFFSET(::city::elec::output::v1::AveragePower, _impl_.transformer_10_),
-};
+static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_city_2felec_2foutput_2fv1_2foutput_2eproto = nullptr;
+static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_city_2felec_2foutput_2fv1_2foutput_2eproto = nullptr;
 
-static const ::_pbi::MigrationSchema
-    schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-        {0, -1, -1, sizeof(::city::elec::output::v1::Aoi)},
-        {13, -1, -1, sizeof(::city::elec::output::v1::AveragePower)},
+const uint32_t TableStruct_city_2felec_2foutput_2fv1_2foutput_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::elec::output::v1::Aoi, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::elec::output::v1::Aoi, _impl_.id_),
+  PROTOBUF_FIELD_OFFSET(::city::elec::output::v1::Aoi, _impl_.unsatisfied_demand_ratio_),
+  PROTOBUF_FIELD_OFFSET(::city::elec::output::v1::Aoi, _impl_.unsatisfied_demand_num_),
+  PROTOBUF_FIELD_OFFSET(::city::elec::output::v1::Aoi, _impl_.demand_),
+  PROTOBUF_FIELD_OFFSET(::city::elec::output::v1::Aoi, _impl_.supply_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::elec::output::v1::AveragePower, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::elec::output::v1::AveragePower, _impl_.transformer_500_),
+  PROTOBUF_FIELD_OFFSET(::city::elec::output::v1::AveragePower, _impl_.transformer_220_),
+  PROTOBUF_FIELD_OFFSET(::city::elec::output::v1::AveragePower, _impl_.transformer_110_),
+  PROTOBUF_FIELD_OFFSET(::city::elec::output::v1::AveragePower, _impl_.transformer_10_),
+};
+static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  { 0, -1, -1, sizeof(::city::elec::output::v1::Aoi)},
+  { 11, -1, -1, sizeof(::city::elec::output::v1::AveragePower)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
-    &::city::elec::output::v1::_Aoi_default_instance_._instance,
-    &::city::elec::output::v1::_AveragePower_default_instance_._instance,
-};
-const char descriptor_table_protodef_city_2felec_2foutput_2fv1_2foutput_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-    "\n city/elec/output/v1/output.proto\022\023city"
-    ".elec.output.v1\"\265\001\n\003Aoi\022\016\n\002id\030\001 \001(\005R\002id\022"
-    "8\n\030unsatisfied_demand_ratio\030\002 \001(\001R\026unsat"
-    "isfiedDemandRatio\0224\n\026unsatisfied_demand_"
-    "num\030\003 \001(\005R\024unsatisfiedDemandNum\022\026\n\006deman"
-    "d\030\004 \001(\001R\006demand\022\026\n\006supply\030\005 \001(\001R\006supply\""
-    "\260\001\n\014AveragePower\022\'\n\017transformer_500\030\001 \001("
-    "\001R\016transformer500\022\'\n\017transformer_220\030\002 \001"
-    "(\001R\016transformer220\022\'\n\017transformer_110\030\003 "
-    "\001(\001R\016transformer110\022%\n\016transformer_10\030\004 "
-    "\001(\001R\rtransformer10B\320\001\n\027com.city.elec.out"
-    "put.v1B\013OutputProtoP\001Z9git.fiblab.net/si"
-    "m/protos/go/city/elec/output/v1;outputv1"
-    "\242\002\003CEO\252\002\023City.Elec.Output.V1\312\002\023City\\Elec"
-    "\\Output\\V1\342\002\037City\\Elec\\Output\\V1\\GPBMeta"
-    "data\352\002\026City::Elec::Output::V1b\006proto3"
-};
-static ::absl::once_flag descriptor_table_city_2felec_2foutput_2fv1_2foutput_2eproto_once;
-const ::_pbi::DescriptorTable descriptor_table_city_2felec_2foutput_2fv1_2foutput_2eproto = {
-    false,
-    false,
-    637,
-    descriptor_table_protodef_city_2felec_2foutput_2fv1_2foutput_2eproto,
-    "city/elec/output/v1/output.proto",
-    &descriptor_table_city_2felec_2foutput_2fv1_2foutput_2eproto_once,
-    nullptr,
-    0,
-    2,
-    schemas,
-    file_default_instances,
-    TableStruct_city_2felec_2foutput_2fv1_2foutput_2eproto::offsets,
-    file_level_metadata_city_2felec_2foutput_2fv1_2foutput_2eproto,
-    file_level_enum_descriptors_city_2felec_2foutput_2fv1_2foutput_2eproto,
-    file_level_service_descriptors_city_2felec_2foutput_2fv1_2foutput_2eproto,
+  &::city::elec::output::v1::_Aoi_default_instance_._instance,
+  &::city::elec::output::v1::_AveragePower_default_instance_._instance,
 };
 
-// This function exists to be marked as weak.
-// It can significantly speed up compilation by breaking up LLVM's SCC
-// in the .pb.cc translation units. Large translation units see a
-// reduction of more than 35% of walltime for optimized builds. Without
-// the weak attribute all the messages in the file, including all the
-// vtables and everything they use become part of the same SCC through
-// a cycle like:
-// GetMetadata -> descriptor table -> default instances ->
-//   vtables -> GetMetadata
-// By adding a weak function here we break the connection from the
-// individual vtables back into the descriptor table.
+const char descriptor_table_protodef_city_2felec_2foutput_2fv1_2foutput_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
+  "\n city/elec/output/v1/output.proto\022\023city"
+  ".elec.output.v1\"\265\001\n\003Aoi\022\016\n\002id\030\001 \001(\005R\002id\022"
+  "8\n\030unsatisfied_demand_ratio\030\002 \001(\001R\026unsat"
+  "isfiedDemandRatio\0224\n\026unsatisfied_demand_"
+  "num\030\003 \001(\005R\024unsatisfiedDemandNum\022\026\n\006deman"
+  "d\030\004 \001(\001R\006demand\022\026\n\006supply\030\005 \001(\001R\006supply\""
+  "\260\001\n\014AveragePower\022\'\n\017transformer_500\030\001 \001("
+  "\001R\016transformer500\022\'\n\017transformer_220\030\002 \001"
+  "(\001R\016transformer220\022\'\n\017transformer_110\030\003 "
+  "\001(\001R\016transformer110\022%\n\016transformer_10\030\004 "
+  "\001(\001R\rtransformer10B\320\001\n\027com.city.elec.out"
+  "put.v1B\013OutputProtoP\001Z9git.fiblab.net/si"
+  "m/protos/go/city/elec/output/v1;outputv1"
+  "\242\002\003CEO\252\002\023City.Elec.Output.V1\312\002\023City\\Elec"
+  "\\Output\\V1\342\002\037City\\Elec\\Output\\V1\\GPBMeta"
+  "data\352\002\026City::Elec::Output::V1b\006proto3"
+  ;
+static ::_pbi::once_flag descriptor_table_city_2felec_2foutput_2fv1_2foutput_2eproto_once;
+const ::_pbi::DescriptorTable descriptor_table_city_2felec_2foutput_2fv1_2foutput_2eproto = {
+    false, false, 637, descriptor_table_protodef_city_2felec_2foutput_2fv1_2foutput_2eproto,
+    "city/elec/output/v1/output.proto",
+    &descriptor_table_city_2felec_2foutput_2fv1_2foutput_2eproto_once, nullptr, 0, 2,
+    schemas, file_default_instances, TableStruct_city_2felec_2foutput_2fv1_2foutput_2eproto::offsets,
+    file_level_metadata_city_2felec_2foutput_2fv1_2foutput_2eproto, file_level_enum_descriptors_city_2felec_2foutput_2fv1_2foutput_2eproto,
+    file_level_service_descriptors_city_2felec_2foutput_2fv1_2foutput_2eproto,
+};
 PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_city_2felec_2foutput_2fv1_2foutput_2eproto_getter() {
   return &descriptor_table_city_2felec_2foutput_2fv1_2foutput_2eproto;
 }
+
 // Force running AddDescriptors() at dynamic initialization time.
-PROTOBUF_ATTRIBUTE_INIT_PRIORITY2
-static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_city_2felec_2foutput_2fv1_2foutput_2eproto(&descriptor_table_city_2felec_2foutput_2fv1_2foutput_2eproto);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_city_2felec_2foutput_2fv1_2foutput_2eproto(&descriptor_table_city_2felec_2foutput_2fv1_2foutput_2eproto);
 namespace city {
 namespace elec {
 namespace output {
 namespace v1 {
+
 // ===================================================================
 
 class Aoi::_Internal {
  public:
 };
 
-Aoi::Aoi(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+Aoi::Aoi(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.elec.output.v1.Aoi)
 }
 Aoi::Aoi(const Aoi& from)
-    : ::google::protobuf::Message(), _impl_(from._impl_) {
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  Aoi* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.unsatisfied_demand_ratio_){}
+    , decltype(_impl_.id_){}
+    , decltype(_impl_.unsatisfied_demand_num_){}
+    , decltype(_impl_.demand_){}
+    , decltype(_impl_.supply_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&_impl_.unsatisfied_demand_ratio_, &from._impl_.unsatisfied_demand_ratio_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.supply_) -
+    reinterpret_cast<char*>(&_impl_.unsatisfied_demand_ratio_)) + sizeof(_impl_.supply_));
   // @@protoc_insertion_point(copy_constructor:city.elec.output.v1.Aoi)
 }
-inline void Aoi::SharedCtor(::_pb::Arena* arena) {
+
+inline void Aoi::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.unsatisfied_demand_ratio_){0},
-      decltype(_impl_.id_){0},
-      decltype(_impl_.unsatisfied_demand_num_){0},
-      decltype(_impl_.demand_){0},
-      decltype(_impl_.supply_){0},
-      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.unsatisfied_demand_ratio_){0}
+    , decltype(_impl_.id_){0}
+    , decltype(_impl_.unsatisfied_demand_num_){0}
+    , decltype(_impl_.demand_){0}
+    , decltype(_impl_.supply_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 Aoi::~Aoi() {
   // @@protoc_insertion_point(destructor:city.elec.output.v1.Aoi)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void Aoi::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
+
 void Aoi::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void Aoi::Clear() {
+void Aoi::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.elec.output.v1.Aoi)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&_impl_.unsatisfied_demand_ratio_, 0, static_cast<::size_t>(
+  ::memset(&_impl_.unsatisfied_demand_ratio_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_impl_.supply_) -
       reinterpret_cast<char*>(&_impl_.unsatisfied_demand_ratio_)) + sizeof(_impl_.supply_));
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* Aoi::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* Aoi::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 id = 1 [json_name = "id"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // double unsatisfied_demand_ratio = 2 [json_name = "unsatisfiedDemandRatio"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 17)) {
+          _impl_.unsatisfied_demand_ratio_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 unsatisfied_demand_num = 3 [json_name = "unsatisfiedDemandNum"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+          _impl_.unsatisfied_demand_num_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // double demand = 4 [json_name = "demand"];
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 33)) {
+          _impl_.demand_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // double supply = 5 [json_name = "supply"];
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 41)) {
+          _impl_.supply_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<3, 5, 0, 0, 2> Aoi::_table_ = {
-  {
-    0,  // no _has_bits_
-    0, // no _extensions_
-    5, 56,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967264,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    5,  // num_field_entries
-    0,  // num_aux_entries
-    offsetof(decltype(_table_), field_names),  // no aux_entries
-    &_Aoi_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    {::_pbi::TcParser::MiniParse, {}},
-    // int32 id = 1 [json_name = "id"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(Aoi, _impl_.id_), 63>(),
-     {8, 63, 0, PROTOBUF_FIELD_OFFSET(Aoi, _impl_.id_)}},
-    // double unsatisfied_demand_ratio = 2 [json_name = "unsatisfiedDemandRatio"];
-    {::_pbi::TcParser::FastF64S1,
-     {17, 63, 0, PROTOBUF_FIELD_OFFSET(Aoi, _impl_.unsatisfied_demand_ratio_)}},
-    // int32 unsatisfied_demand_num = 3 [json_name = "unsatisfiedDemandNum"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(Aoi, _impl_.unsatisfied_demand_num_), 63>(),
-     {24, 63, 0, PROTOBUF_FIELD_OFFSET(Aoi, _impl_.unsatisfied_demand_num_)}},
-    // double demand = 4 [json_name = "demand"];
-    {::_pbi::TcParser::FastF64S1,
-     {33, 63, 0, PROTOBUF_FIELD_OFFSET(Aoi, _impl_.demand_)}},
-    // double supply = 5 [json_name = "supply"];
-    {::_pbi::TcParser::FastF64S1,
-     {41, 63, 0, PROTOBUF_FIELD_OFFSET(Aoi, _impl_.supply_)}},
-    {::_pbi::TcParser::MiniParse, {}},
-    {::_pbi::TcParser::MiniParse, {}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // int32 id = 1 [json_name = "id"];
-    {PROTOBUF_FIELD_OFFSET(Aoi, _impl_.id_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-    // double unsatisfied_demand_ratio = 2 [json_name = "unsatisfiedDemandRatio"];
-    {PROTOBUF_FIELD_OFFSET(Aoi, _impl_.unsatisfied_demand_ratio_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-    // int32 unsatisfied_demand_num = 3 [json_name = "unsatisfiedDemandNum"];
-    {PROTOBUF_FIELD_OFFSET(Aoi, _impl_.unsatisfied_demand_num_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-    // double demand = 4 [json_name = "demand"];
-    {PROTOBUF_FIELD_OFFSET(Aoi, _impl_.demand_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-    // double supply = 5 [json_name = "supply"];
-    {PROTOBUF_FIELD_OFFSET(Aoi, _impl_.supply_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-  }},
-  // no aux_entries
-  {{
-  }},
-};
-
-::uint8_t* Aoi::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* Aoi::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.elec.output.v1.Aoi)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // int32 id = 1 [json_name = "id"];
   if (this->_internal_id() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<1>(
-            stream, this->_internal_id(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_id(), target);
   }
 
   // double unsatisfied_demand_ratio = 2 [json_name = "unsatisfiedDemandRatio"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_unsatisfied_demand_ratio = this->_internal_unsatisfied_demand_ratio();
-  ::uint64_t raw_unsatisfied_demand_ratio;
+  uint64_t raw_unsatisfied_demand_ratio;
   memcpy(&raw_unsatisfied_demand_ratio, &tmp_unsatisfied_demand_ratio, sizeof(tmp_unsatisfied_demand_ratio));
   if (raw_unsatisfied_demand_ratio != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        2, this->_internal_unsatisfied_demand_ratio(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(2, this->_internal_unsatisfied_demand_ratio(), target);
   }
 
   // int32 unsatisfied_demand_num = 3 [json_name = "unsatisfiedDemandNum"];
   if (this->_internal_unsatisfied_demand_num() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<3>(
-            stream, this->_internal_unsatisfied_demand_num(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(3, this->_internal_unsatisfied_demand_num(), target);
   }
 
   // double demand = 4 [json_name = "demand"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_demand = this->_internal_demand();
-  ::uint64_t raw_demand;
+  uint64_t raw_demand;
   memcpy(&raw_demand, &tmp_demand, sizeof(tmp_demand));
   if (raw_demand != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        4, this->_internal_demand(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(4, this->_internal_demand(), target);
   }
 
   // double supply = 5 [json_name = "supply"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_supply = this->_internal_supply();
-  ::uint64_t raw_supply;
+  uint64_t raw_supply;
   memcpy(&raw_supply, &tmp_supply, sizeof(tmp_supply));
   if (raw_supply != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        5, this->_internal_supply(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(5, this->_internal_supply(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.elec.output.v1.Aoi)
   return target;
 }
 
-::size_t Aoi::ByteSizeLong() const {
+size_t Aoi::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.elec.output.v1.Aoi)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // double unsatisfied_demand_ratio = 2 [json_name = "unsatisfiedDemandRatio"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_unsatisfied_demand_ratio = this->_internal_unsatisfied_demand_ratio();
-  ::uint64_t raw_unsatisfied_demand_ratio;
+  uint64_t raw_unsatisfied_demand_ratio;
   memcpy(&raw_unsatisfied_demand_ratio, &tmp_unsatisfied_demand_ratio, sizeof(tmp_unsatisfied_demand_ratio));
   if (raw_unsatisfied_demand_ratio != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   // int32 id = 1 [json_name = "id"];
   if (this->_internal_id() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_id());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_id());
   }
 
   // int32 unsatisfied_demand_num = 3 [json_name = "unsatisfiedDemandNum"];
   if (this->_internal_unsatisfied_demand_num() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_unsatisfied_demand_num());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_unsatisfied_demand_num());
   }
 
   // double demand = 4 [json_name = "demand"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_demand = this->_internal_demand();
-  ::uint64_t raw_demand;
+  uint64_t raw_demand;
   memcpy(&raw_demand, &tmp_demand, sizeof(tmp_demand));
   if (raw_demand != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   // double supply = 5 [json_name = "supply"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_supply = this->_internal_supply();
-  ::uint64_t raw_supply;
+  uint64_t raw_supply;
   memcpy(&raw_supply, &tmp_supply, sizeof(tmp_supply));
   if (raw_supply != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData Aoi::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Aoi::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     Aoi::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*Aoi::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Aoi::GetClassData() const { return &_class_data_; }
 
 
-void Aoi::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void Aoi::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<Aoi*>(&to_msg);
   auto& from = static_cast<const Aoi&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.elec.output.v1.Aoi)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_unsatisfied_demand_ratio = from._internal_unsatisfied_demand_ratio();
-  ::uint64_t raw_unsatisfied_demand_ratio;
+  uint64_t raw_unsatisfied_demand_ratio;
   memcpy(&raw_unsatisfied_demand_ratio, &tmp_unsatisfied_demand_ratio, sizeof(tmp_unsatisfied_demand_ratio));
   if (raw_unsatisfied_demand_ratio != 0) {
     _this->_internal_set_unsatisfied_demand_ratio(from._internal_unsatisfied_demand_ratio());
@@ -433,23 +410,21 @@ void Aoi::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobu
   if (from._internal_unsatisfied_demand_num() != 0) {
     _this->_internal_set_unsatisfied_demand_num(from._internal_unsatisfied_demand_num());
   }
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_demand = from._internal_demand();
-  ::uint64_t raw_demand;
+  uint64_t raw_demand;
   memcpy(&raw_demand, &tmp_demand, sizeof(tmp_demand));
   if (raw_demand != 0) {
     _this->_internal_set_demand(from._internal_demand());
   }
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_supply = from._internal_supply();
-  ::uint64_t raw_supply;
+  uint64_t raw_supply;
   memcpy(&raw_supply, &tmp_supply, sizeof(tmp_supply));
   if (raw_supply != 0) {
     _this->_internal_set_supply(from._internal_supply());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void Aoi::CopyFrom(const Aoi& from) {
@@ -459,14 +434,14 @@ void Aoi::CopyFrom(const Aoi& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool Aoi::IsInitialized() const {
+bool Aoi::IsInitialized() const {
   return true;
 }
 
 void Aoi::InternalSwap(Aoi* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::google::protobuf::internal::memswap<
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(Aoi, _impl_.supply_)
       + sizeof(Aoi::_impl_.supply_)
       - PROTOBUF_FIELD_OFFSET(Aoi, _impl_.unsatisfied_demand_ratio_)>(
@@ -474,280 +449,289 @@ void Aoi::InternalSwap(Aoi* other) {
           reinterpret_cast<char*>(&other->_impl_.unsatisfied_demand_ratio_));
 }
 
-::google::protobuf::Metadata Aoi::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata Aoi::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2felec_2foutput_2fv1_2foutput_2eproto_getter, &descriptor_table_city_2felec_2foutput_2fv1_2foutput_2eproto_once,
       file_level_metadata_city_2felec_2foutput_2fv1_2foutput_2eproto[0]);
 }
+
 // ===================================================================
 
 class AveragePower::_Internal {
  public:
 };
 
-AveragePower::AveragePower(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+AveragePower::AveragePower(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.elec.output.v1.AveragePower)
 }
 AveragePower::AveragePower(const AveragePower& from)
-    : ::google::protobuf::Message(), _impl_(from._impl_) {
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  AveragePower* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.transformer_500_){}
+    , decltype(_impl_.transformer_220_){}
+    , decltype(_impl_.transformer_110_){}
+    , decltype(_impl_.transformer_10_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&_impl_.transformer_500_, &from._impl_.transformer_500_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.transformer_10_) -
+    reinterpret_cast<char*>(&_impl_.transformer_500_)) + sizeof(_impl_.transformer_10_));
   // @@protoc_insertion_point(copy_constructor:city.elec.output.v1.AveragePower)
 }
-inline void AveragePower::SharedCtor(::_pb::Arena* arena) {
+
+inline void AveragePower::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.transformer_500_){0},
-      decltype(_impl_.transformer_220_){0},
-      decltype(_impl_.transformer_110_){0},
-      decltype(_impl_.transformer_10_){0},
-      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.transformer_500_){0}
+    , decltype(_impl_.transformer_220_){0}
+    , decltype(_impl_.transformer_110_){0}
+    , decltype(_impl_.transformer_10_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 AveragePower::~AveragePower() {
   // @@protoc_insertion_point(destructor:city.elec.output.v1.AveragePower)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void AveragePower::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
+
 void AveragePower::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void AveragePower::Clear() {
+void AveragePower::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.elec.output.v1.AveragePower)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&_impl_.transformer_500_, 0, static_cast<::size_t>(
+  ::memset(&_impl_.transformer_500_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_impl_.transformer_10_) -
       reinterpret_cast<char*>(&_impl_.transformer_500_)) + sizeof(_impl_.transformer_10_));
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* AveragePower::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* AveragePower::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // double transformer_500 = 1 [json_name = "transformer500"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 9)) {
+          _impl_.transformer_500_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // double transformer_220 = 2 [json_name = "transformer220"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 17)) {
+          _impl_.transformer_220_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // double transformer_110 = 3 [json_name = "transformer110"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 25)) {
+          _impl_.transformer_110_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // double transformer_10 = 4 [json_name = "transformer10"];
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 33)) {
+          _impl_.transformer_10_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<2, 4, 0, 0, 2> AveragePower::_table_ = {
-  {
-    0,  // no _has_bits_
-    0, // no _extensions_
-    4, 24,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967280,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    4,  // num_field_entries
-    0,  // num_aux_entries
-    offsetof(decltype(_table_), field_names),  // no aux_entries
-    &_AveragePower_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    // double transformer_10 = 4 [json_name = "transformer10"];
-    {::_pbi::TcParser::FastF64S1,
-     {33, 63, 0, PROTOBUF_FIELD_OFFSET(AveragePower, _impl_.transformer_10_)}},
-    // double transformer_500 = 1 [json_name = "transformer500"];
-    {::_pbi::TcParser::FastF64S1,
-     {9, 63, 0, PROTOBUF_FIELD_OFFSET(AveragePower, _impl_.transformer_500_)}},
-    // double transformer_220 = 2 [json_name = "transformer220"];
-    {::_pbi::TcParser::FastF64S1,
-     {17, 63, 0, PROTOBUF_FIELD_OFFSET(AveragePower, _impl_.transformer_220_)}},
-    // double transformer_110 = 3 [json_name = "transformer110"];
-    {::_pbi::TcParser::FastF64S1,
-     {25, 63, 0, PROTOBUF_FIELD_OFFSET(AveragePower, _impl_.transformer_110_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // double transformer_500 = 1 [json_name = "transformer500"];
-    {PROTOBUF_FIELD_OFFSET(AveragePower, _impl_.transformer_500_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-    // double transformer_220 = 2 [json_name = "transformer220"];
-    {PROTOBUF_FIELD_OFFSET(AveragePower, _impl_.transformer_220_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-    // double transformer_110 = 3 [json_name = "transformer110"];
-    {PROTOBUF_FIELD_OFFSET(AveragePower, _impl_.transformer_110_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-    // double transformer_10 = 4 [json_name = "transformer10"];
-    {PROTOBUF_FIELD_OFFSET(AveragePower, _impl_.transformer_10_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-  }},
-  // no aux_entries
-  {{
-  }},
-};
-
-::uint8_t* AveragePower::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* AveragePower::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.elec.output.v1.AveragePower)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // double transformer_500 = 1 [json_name = "transformer500"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_transformer_500 = this->_internal_transformer_500();
-  ::uint64_t raw_transformer_500;
+  uint64_t raw_transformer_500;
   memcpy(&raw_transformer_500, &tmp_transformer_500, sizeof(tmp_transformer_500));
   if (raw_transformer_500 != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        1, this->_internal_transformer_500(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(1, this->_internal_transformer_500(), target);
   }
 
   // double transformer_220 = 2 [json_name = "transformer220"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_transformer_220 = this->_internal_transformer_220();
-  ::uint64_t raw_transformer_220;
+  uint64_t raw_transformer_220;
   memcpy(&raw_transformer_220, &tmp_transformer_220, sizeof(tmp_transformer_220));
   if (raw_transformer_220 != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        2, this->_internal_transformer_220(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(2, this->_internal_transformer_220(), target);
   }
 
   // double transformer_110 = 3 [json_name = "transformer110"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_transformer_110 = this->_internal_transformer_110();
-  ::uint64_t raw_transformer_110;
+  uint64_t raw_transformer_110;
   memcpy(&raw_transformer_110, &tmp_transformer_110, sizeof(tmp_transformer_110));
   if (raw_transformer_110 != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        3, this->_internal_transformer_110(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(3, this->_internal_transformer_110(), target);
   }
 
   // double transformer_10 = 4 [json_name = "transformer10"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_transformer_10 = this->_internal_transformer_10();
-  ::uint64_t raw_transformer_10;
+  uint64_t raw_transformer_10;
   memcpy(&raw_transformer_10, &tmp_transformer_10, sizeof(tmp_transformer_10));
   if (raw_transformer_10 != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        4, this->_internal_transformer_10(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(4, this->_internal_transformer_10(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.elec.output.v1.AveragePower)
   return target;
 }
 
-::size_t AveragePower::ByteSizeLong() const {
+size_t AveragePower::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.elec.output.v1.AveragePower)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // double transformer_500 = 1 [json_name = "transformer500"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_transformer_500 = this->_internal_transformer_500();
-  ::uint64_t raw_transformer_500;
+  uint64_t raw_transformer_500;
   memcpy(&raw_transformer_500, &tmp_transformer_500, sizeof(tmp_transformer_500));
   if (raw_transformer_500 != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   // double transformer_220 = 2 [json_name = "transformer220"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_transformer_220 = this->_internal_transformer_220();
-  ::uint64_t raw_transformer_220;
+  uint64_t raw_transformer_220;
   memcpy(&raw_transformer_220, &tmp_transformer_220, sizeof(tmp_transformer_220));
   if (raw_transformer_220 != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   // double transformer_110 = 3 [json_name = "transformer110"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_transformer_110 = this->_internal_transformer_110();
-  ::uint64_t raw_transformer_110;
+  uint64_t raw_transformer_110;
   memcpy(&raw_transformer_110, &tmp_transformer_110, sizeof(tmp_transformer_110));
   if (raw_transformer_110 != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   // double transformer_10 = 4 [json_name = "transformer10"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_transformer_10 = this->_internal_transformer_10();
-  ::uint64_t raw_transformer_10;
+  uint64_t raw_transformer_10;
   memcpy(&raw_transformer_10, &tmp_transformer_10, sizeof(tmp_transformer_10));
   if (raw_transformer_10 != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData AveragePower::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData AveragePower::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     AveragePower::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*AveragePower::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*AveragePower::GetClassData() const { return &_class_data_; }
 
 
-void AveragePower::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void AveragePower::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<AveragePower*>(&to_msg);
   auto& from = static_cast<const AveragePower&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.elec.output.v1.AveragePower)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_transformer_500 = from._internal_transformer_500();
-  ::uint64_t raw_transformer_500;
+  uint64_t raw_transformer_500;
   memcpy(&raw_transformer_500, &tmp_transformer_500, sizeof(tmp_transformer_500));
   if (raw_transformer_500 != 0) {
     _this->_internal_set_transformer_500(from._internal_transformer_500());
   }
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_transformer_220 = from._internal_transformer_220();
-  ::uint64_t raw_transformer_220;
+  uint64_t raw_transformer_220;
   memcpy(&raw_transformer_220, &tmp_transformer_220, sizeof(tmp_transformer_220));
   if (raw_transformer_220 != 0) {
     _this->_internal_set_transformer_220(from._internal_transformer_220());
   }
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_transformer_110 = from._internal_transformer_110();
-  ::uint64_t raw_transformer_110;
+  uint64_t raw_transformer_110;
   memcpy(&raw_transformer_110, &tmp_transformer_110, sizeof(tmp_transformer_110));
   if (raw_transformer_110 != 0) {
     _this->_internal_set_transformer_110(from._internal_transformer_110());
   }
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_transformer_10 = from._internal_transformer_10();
-  ::uint64_t raw_transformer_10;
+  uint64_t raw_transformer_10;
   memcpy(&raw_transformer_10, &tmp_transformer_10, sizeof(tmp_transformer_10));
   if (raw_transformer_10 != 0) {
     _this->_internal_set_transformer_10(from._internal_transformer_10());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void AveragePower::CopyFrom(const AveragePower& from) {
@@ -757,14 +741,14 @@ void AveragePower::CopyFrom(const AveragePower& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool AveragePower::IsInitialized() const {
+bool AveragePower::IsInitialized() const {
   return true;
 }
 
 void AveragePower::InternalSwap(AveragePower* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::google::protobuf::internal::memswap<
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(AveragePower, _impl_.transformer_10_)
       + sizeof(AveragePower::_impl_.transformer_10_)
       - PROTOBUF_FIELD_OFFSET(AveragePower, _impl_.transformer_500_)>(
@@ -772,19 +756,27 @@ void AveragePower::InternalSwap(AveragePower* other) {
           reinterpret_cast<char*>(&other->_impl_.transformer_500_));
 }
 
-::google::protobuf::Metadata AveragePower::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata AveragePower::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2felec_2foutput_2fv1_2foutput_2eproto_getter, &descriptor_table_city_2felec_2foutput_2fv1_2foutput_2eproto_once,
       file_level_metadata_city_2felec_2foutput_2fv1_2foutput_2eproto[1]);
 }
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace v1
 }  // namespace output
 }  // namespace elec
 }  // namespace city
-namespace google {
-namespace protobuf {
-}  // namespace protobuf
-}  // namespace google
+PROTOBUF_NAMESPACE_OPEN
+template<> PROTOBUF_NOINLINE ::city::elec::output::v1::Aoi*
+Arena::CreateMaybeMessage< ::city::elec::output::v1::Aoi >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::elec::output::v1::Aoi >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::elec::output::v1::AveragePower*
+Arena::CreateMaybeMessage< ::city::elec::output::v1::AveragePower >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::elec::output::v1::AveragePower >(arena);
+}
+PROTOBUF_NAMESPACE_CLOSE
+
 // @@protoc_insertion_point(global_scope)
-#include "google/protobuf/port_undef.inc"
+#include <google/protobuf/port_undef.inc>

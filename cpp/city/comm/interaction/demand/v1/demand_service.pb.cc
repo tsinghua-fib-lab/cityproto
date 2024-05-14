@@ -4,353 +4,332 @@
 #include "city/comm/interaction/demand/v1/demand_service.pb.h"
 
 #include <algorithm>
-#include "google/protobuf/io/coded_stream.h"
-#include "google/protobuf/extension_set.h"
-#include "google/protobuf/wire_format_lite.h"
-#include "google/protobuf/descriptor.h"
-#include "google/protobuf/generated_message_reflection.h"
-#include "google/protobuf/reflection_ops.h"
-#include "google/protobuf/wire_format.h"
-#include "google/protobuf/generated_message_tctable_impl.h"
-// @@protoc_insertion_point(includes)
 
-// Must be included last.
-#include "google/protobuf/port_def.inc"
+#include <google/protobuf/io/coded_stream.h>
+#include <google/protobuf/extension_set.h>
+#include <google/protobuf/wire_format_lite.h>
+#include <google/protobuf/descriptor.h>
+#include <google/protobuf/generated_message_reflection.h>
+#include <google/protobuf/reflection_ops.h>
+#include <google/protobuf/wire_format.h>
+// @@protoc_insertion_point(includes)
+#include <google/protobuf/port_def.inc>
+
 PROTOBUF_PRAGMA_INIT_SEG
-namespace _pb = ::google::protobuf;
-namespace _pbi = ::google::protobuf::internal;
-namespace _fl = ::google::protobuf::internal::field_layout;
+
+namespace _pb = ::PROTOBUF_NAMESPACE_ID;
+namespace _pbi = _pb::internal;
+
 namespace city {
 namespace comm {
 namespace interaction {
 namespace demand {
 namespace v1 {
-        template <typename>
-PROTOBUF_CONSTEXPR SetDemandStatusRequest::SetDemandStatusRequest(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_.multiple_times_)*/ 0,
-      /*decltype(_impl_.power_times_)*/ 0,
-      /*decltype(_impl_._cached_size_)*/ {},
-    } {}
+PROTOBUF_CONSTEXPR SetDemandStatusRequest::SetDemandStatusRequest(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.multiple_times_)*/0
+  , /*decltype(_impl_.power_times_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct SetDemandStatusRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR SetDemandStatusRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR SetDemandStatusRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~SetDemandStatusRequestDefaultTypeInternal() {}
   union {
     SetDemandStatusRequest _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SetDemandStatusRequestDefaultTypeInternal _SetDemandStatusRequest_default_instance_;
-      template <typename>
-PROTOBUF_CONSTEXPR SetDemandStatusResponse::SetDemandStatusResponse(::_pbi::ConstantInitialized) {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SetDemandStatusRequestDefaultTypeInternal _SetDemandStatusRequest_default_instance_;
+PROTOBUF_CONSTEXPR SetDemandStatusResponse::SetDemandStatusResponse(
+    ::_pbi::ConstantInitialized) {}
 struct SetDemandStatusResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR SetDemandStatusResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR SetDemandStatusResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~SetDemandStatusResponseDefaultTypeInternal() {}
   union {
     SetDemandStatusResponse _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SetDemandStatusResponseDefaultTypeInternal _SetDemandStatusResponse_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SetDemandStatusResponseDefaultTypeInternal _SetDemandStatusResponse_default_instance_;
 }  // namespace v1
 }  // namespace demand
 }  // namespace interaction
 }  // namespace comm
 }  // namespace city
 static ::_pb::Metadata file_level_metadata_city_2fcomm_2finteraction_2fdemand_2fv1_2fdemand_5fservice_2eproto[2];
-static constexpr const ::_pb::EnumDescriptor**
-    file_level_enum_descriptors_city_2fcomm_2finteraction_2fdemand_2fv1_2fdemand_5fservice_2eproto = nullptr;
-static constexpr const ::_pb::ServiceDescriptor**
-    file_level_service_descriptors_city_2fcomm_2finteraction_2fdemand_2fv1_2fdemand_5fservice_2eproto = nullptr;
-const ::uint32_t TableStruct_city_2fcomm_2finteraction_2fdemand_2fv1_2fdemand_5fservice_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
-    protodesc_cold) = {
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::comm::interaction::demand::v1::SetDemandStatusRequest, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::comm::interaction::demand::v1::SetDemandStatusRequest, _impl_.multiple_times_),
-    PROTOBUF_FIELD_OFFSET(::city::comm::interaction::demand::v1::SetDemandStatusRequest, _impl_.power_times_),
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::comm::interaction::demand::v1::SetDemandStatusResponse, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-};
+static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_city_2fcomm_2finteraction_2fdemand_2fv1_2fdemand_5fservice_2eproto = nullptr;
+static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_city_2fcomm_2finteraction_2fdemand_2fv1_2fdemand_5fservice_2eproto = nullptr;
 
-static const ::_pbi::MigrationSchema
-    schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-        {0, -1, -1, sizeof(::city::comm::interaction::demand::v1::SetDemandStatusRequest)},
-        {10, -1, -1, sizeof(::city::comm::interaction::demand::v1::SetDemandStatusResponse)},
+const uint32_t TableStruct_city_2fcomm_2finteraction_2fdemand_2fv1_2fdemand_5fservice_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::comm::interaction::demand::v1::SetDemandStatusRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::comm::interaction::demand::v1::SetDemandStatusRequest, _impl_.multiple_times_),
+  PROTOBUF_FIELD_OFFSET(::city::comm::interaction::demand::v1::SetDemandStatusRequest, _impl_.power_times_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::comm::interaction::demand::v1::SetDemandStatusResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+};
+static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  { 0, -1, -1, sizeof(::city::comm::interaction::demand::v1::SetDemandStatusRequest)},
+  { 8, -1, -1, sizeof(::city::comm::interaction::demand::v1::SetDemandStatusResponse)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
-    &::city::comm::interaction::demand::v1::_SetDemandStatusRequest_default_instance_._instance,
-    &::city::comm::interaction::demand::v1::_SetDemandStatusResponse_default_instance_._instance,
-};
-const char descriptor_table_protodef_city_2fcomm_2finteraction_2fdemand_2fv1_2fdemand_5fservice_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-    "\n4city/comm/interaction/demand/v1/demand"
-    "_service.proto\022\037city.comm.interaction.de"
-    "mand.v1\"`\n\026SetDemandStatusRequest\022%\n\016mul"
-    "tiple_times\030\001 \001(\001R\rmultipleTimes\022\037\n\013powe"
-    "r_times\030\002 \001(\001R\npowerTimes\"\031\n\027SetDemandSt"
-    "atusResponse2\226\001\n\rDemandService\022\204\001\n\017SetDe"
-    "mandStatus\0227.city.comm.interaction.deman"
-    "d.v1.SetDemandStatusRequest\0328.city.comm."
-    "interaction.demand.v1.SetDemandStatusRes"
-    "ponseB\241\002\n#com.city.comm.interaction.dema"
-    "nd.v1B\022DemandServiceProtoP\001ZEgit.fiblab."
-    "net/sim/protos/go/city/comm/interaction/"
-    "demand/v1;demandv1\242\002\004CCID\252\002\037City.Comm.In"
-    "teraction.Demand.V1\312\002\037City\\Comm\\Interact"
-    "ion\\Demand\\V1\342\002+City\\Comm\\Interaction\\De"
-    "mand\\V1\\GPBMetadata\352\002#City::Comm::Intera"
-    "ction::Demand::V1b\006proto3"
-};
-static ::absl::once_flag descriptor_table_city_2fcomm_2finteraction_2fdemand_2fv1_2fdemand_5fservice_2eproto_once;
-const ::_pbi::DescriptorTable descriptor_table_city_2fcomm_2finteraction_2fdemand_2fv1_2fdemand_5fservice_2eproto = {
-    false,
-    false,
-    665,
-    descriptor_table_protodef_city_2fcomm_2finteraction_2fdemand_2fv1_2fdemand_5fservice_2eproto,
-    "city/comm/interaction/demand/v1/demand_service.proto",
-    &descriptor_table_city_2fcomm_2finteraction_2fdemand_2fv1_2fdemand_5fservice_2eproto_once,
-    nullptr,
-    0,
-    2,
-    schemas,
-    file_default_instances,
-    TableStruct_city_2fcomm_2finteraction_2fdemand_2fv1_2fdemand_5fservice_2eproto::offsets,
-    file_level_metadata_city_2fcomm_2finteraction_2fdemand_2fv1_2fdemand_5fservice_2eproto,
-    file_level_enum_descriptors_city_2fcomm_2finteraction_2fdemand_2fv1_2fdemand_5fservice_2eproto,
-    file_level_service_descriptors_city_2fcomm_2finteraction_2fdemand_2fv1_2fdemand_5fservice_2eproto,
+  &::city::comm::interaction::demand::v1::_SetDemandStatusRequest_default_instance_._instance,
+  &::city::comm::interaction::demand::v1::_SetDemandStatusResponse_default_instance_._instance,
 };
 
-// This function exists to be marked as weak.
-// It can significantly speed up compilation by breaking up LLVM's SCC
-// in the .pb.cc translation units. Large translation units see a
-// reduction of more than 35% of walltime for optimized builds. Without
-// the weak attribute all the messages in the file, including all the
-// vtables and everything they use become part of the same SCC through
-// a cycle like:
-// GetMetadata -> descriptor table -> default instances ->
-//   vtables -> GetMetadata
-// By adding a weak function here we break the connection from the
-// individual vtables back into the descriptor table.
+const char descriptor_table_protodef_city_2fcomm_2finteraction_2fdemand_2fv1_2fdemand_5fservice_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
+  "\n4city/comm/interaction/demand/v1/demand"
+  "_service.proto\022\037city.comm.interaction.de"
+  "mand.v1\"`\n\026SetDemandStatusRequest\022%\n\016mul"
+  "tiple_times\030\001 \001(\001R\rmultipleTimes\022\037\n\013powe"
+  "r_times\030\002 \001(\001R\npowerTimes\"\031\n\027SetDemandSt"
+  "atusResponse2\226\001\n\rDemandService\022\204\001\n\017SetDe"
+  "mandStatus\0227.city.comm.interaction.deman"
+  "d.v1.SetDemandStatusRequest\0328.city.comm."
+  "interaction.demand.v1.SetDemandStatusRes"
+  "ponseB\241\002\n#com.city.comm.interaction.dema"
+  "nd.v1B\022DemandServiceProtoP\001ZEgit.fiblab."
+  "net/sim/protos/go/city/comm/interaction/"
+  "demand/v1;demandv1\242\002\004CCID\252\002\037City.Comm.In"
+  "teraction.Demand.V1\312\002\037City\\Comm\\Interact"
+  "ion\\Demand\\V1\342\002+City\\Comm\\Interaction\\De"
+  "mand\\V1\\GPBMetadata\352\002#City::Comm::Intera"
+  "ction::Demand::V1b\006proto3"
+  ;
+static ::_pbi::once_flag descriptor_table_city_2fcomm_2finteraction_2fdemand_2fv1_2fdemand_5fservice_2eproto_once;
+const ::_pbi::DescriptorTable descriptor_table_city_2fcomm_2finteraction_2fdemand_2fv1_2fdemand_5fservice_2eproto = {
+    false, false, 665, descriptor_table_protodef_city_2fcomm_2finteraction_2fdemand_2fv1_2fdemand_5fservice_2eproto,
+    "city/comm/interaction/demand/v1/demand_service.proto",
+    &descriptor_table_city_2fcomm_2finteraction_2fdemand_2fv1_2fdemand_5fservice_2eproto_once, nullptr, 0, 2,
+    schemas, file_default_instances, TableStruct_city_2fcomm_2finteraction_2fdemand_2fv1_2fdemand_5fservice_2eproto::offsets,
+    file_level_metadata_city_2fcomm_2finteraction_2fdemand_2fv1_2fdemand_5fservice_2eproto, file_level_enum_descriptors_city_2fcomm_2finteraction_2fdemand_2fv1_2fdemand_5fservice_2eproto,
+    file_level_service_descriptors_city_2fcomm_2finteraction_2fdemand_2fv1_2fdemand_5fservice_2eproto,
+};
 PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_city_2fcomm_2finteraction_2fdemand_2fv1_2fdemand_5fservice_2eproto_getter() {
   return &descriptor_table_city_2fcomm_2finteraction_2fdemand_2fv1_2fdemand_5fservice_2eproto;
 }
+
 // Force running AddDescriptors() at dynamic initialization time.
-PROTOBUF_ATTRIBUTE_INIT_PRIORITY2
-static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_city_2fcomm_2finteraction_2fdemand_2fv1_2fdemand_5fservice_2eproto(&descriptor_table_city_2fcomm_2finteraction_2fdemand_2fv1_2fdemand_5fservice_2eproto);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_city_2fcomm_2finteraction_2fdemand_2fv1_2fdemand_5fservice_2eproto(&descriptor_table_city_2fcomm_2finteraction_2fdemand_2fv1_2fdemand_5fservice_2eproto);
 namespace city {
 namespace comm {
 namespace interaction {
 namespace demand {
 namespace v1 {
+
 // ===================================================================
 
 class SetDemandStatusRequest::_Internal {
  public:
 };
 
-SetDemandStatusRequest::SetDemandStatusRequest(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+SetDemandStatusRequest::SetDemandStatusRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.comm.interaction.demand.v1.SetDemandStatusRequest)
 }
 SetDemandStatusRequest::SetDemandStatusRequest(const SetDemandStatusRequest& from)
-    : ::google::protobuf::Message(), _impl_(from._impl_) {
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  SetDemandStatusRequest* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.multiple_times_){}
+    , decltype(_impl_.power_times_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&_impl_.multiple_times_, &from._impl_.multiple_times_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.power_times_) -
+    reinterpret_cast<char*>(&_impl_.multiple_times_)) + sizeof(_impl_.power_times_));
   // @@protoc_insertion_point(copy_constructor:city.comm.interaction.demand.v1.SetDemandStatusRequest)
 }
-inline void SetDemandStatusRequest::SharedCtor(::_pb::Arena* arena) {
+
+inline void SetDemandStatusRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.multiple_times_){0},
-      decltype(_impl_.power_times_){0},
-      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.multiple_times_){0}
+    , decltype(_impl_.power_times_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 SetDemandStatusRequest::~SetDemandStatusRequest() {
   // @@protoc_insertion_point(destructor:city.comm.interaction.demand.v1.SetDemandStatusRequest)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void SetDemandStatusRequest::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
+
 void SetDemandStatusRequest::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void SetDemandStatusRequest::Clear() {
+void SetDemandStatusRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.comm.interaction.demand.v1.SetDemandStatusRequest)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&_impl_.multiple_times_, 0, static_cast<::size_t>(
+  ::memset(&_impl_.multiple_times_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_impl_.power_times_) -
       reinterpret_cast<char*>(&_impl_.multiple_times_)) + sizeof(_impl_.power_times_));
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* SetDemandStatusRequest::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* SetDemandStatusRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // double multiple_times = 1 [json_name = "multipleTimes"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 9)) {
+          _impl_.multiple_times_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // double power_times = 2 [json_name = "powerTimes"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 17)) {
+          _impl_.power_times_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<1, 2, 0, 0, 2> SetDemandStatusRequest::_table_ = {
-  {
-    0,  // no _has_bits_
-    0, // no _extensions_
-    2, 8,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967292,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    2,  // num_field_entries
-    0,  // num_aux_entries
-    offsetof(decltype(_table_), field_names),  // no aux_entries
-    &_SetDemandStatusRequest_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    // double power_times = 2 [json_name = "powerTimes"];
-    {::_pbi::TcParser::FastF64S1,
-     {17, 63, 0, PROTOBUF_FIELD_OFFSET(SetDemandStatusRequest, _impl_.power_times_)}},
-    // double multiple_times = 1 [json_name = "multipleTimes"];
-    {::_pbi::TcParser::FastF64S1,
-     {9, 63, 0, PROTOBUF_FIELD_OFFSET(SetDemandStatusRequest, _impl_.multiple_times_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // double multiple_times = 1 [json_name = "multipleTimes"];
-    {PROTOBUF_FIELD_OFFSET(SetDemandStatusRequest, _impl_.multiple_times_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-    // double power_times = 2 [json_name = "powerTimes"];
-    {PROTOBUF_FIELD_OFFSET(SetDemandStatusRequest, _impl_.power_times_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-  }},
-  // no aux_entries
-  {{
-  }},
-};
-
-::uint8_t* SetDemandStatusRequest::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* SetDemandStatusRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.comm.interaction.demand.v1.SetDemandStatusRequest)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // double multiple_times = 1 [json_name = "multipleTimes"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_multiple_times = this->_internal_multiple_times();
-  ::uint64_t raw_multiple_times;
+  uint64_t raw_multiple_times;
   memcpy(&raw_multiple_times, &tmp_multiple_times, sizeof(tmp_multiple_times));
   if (raw_multiple_times != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        1, this->_internal_multiple_times(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(1, this->_internal_multiple_times(), target);
   }
 
   // double power_times = 2 [json_name = "powerTimes"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_power_times = this->_internal_power_times();
-  ::uint64_t raw_power_times;
+  uint64_t raw_power_times;
   memcpy(&raw_power_times, &tmp_power_times, sizeof(tmp_power_times));
   if (raw_power_times != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        2, this->_internal_power_times(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(2, this->_internal_power_times(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.comm.interaction.demand.v1.SetDemandStatusRequest)
   return target;
 }
 
-::size_t SetDemandStatusRequest::ByteSizeLong() const {
+size_t SetDemandStatusRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.comm.interaction.demand.v1.SetDemandStatusRequest)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // double multiple_times = 1 [json_name = "multipleTimes"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_multiple_times = this->_internal_multiple_times();
-  ::uint64_t raw_multiple_times;
+  uint64_t raw_multiple_times;
   memcpy(&raw_multiple_times, &tmp_multiple_times, sizeof(tmp_multiple_times));
   if (raw_multiple_times != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   // double power_times = 2 [json_name = "powerTimes"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_power_times = this->_internal_power_times();
-  ::uint64_t raw_power_times;
+  uint64_t raw_power_times;
   memcpy(&raw_power_times, &tmp_power_times, sizeof(tmp_power_times));
   if (raw_power_times != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData SetDemandStatusRequest::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData SetDemandStatusRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     SetDemandStatusRequest::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*SetDemandStatusRequest::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SetDemandStatusRequest::GetClassData() const { return &_class_data_; }
 
 
-void SetDemandStatusRequest::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void SetDemandStatusRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<SetDemandStatusRequest*>(&to_msg);
   auto& from = static_cast<const SetDemandStatusRequest&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.comm.interaction.demand.v1.SetDemandStatusRequest)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_multiple_times = from._internal_multiple_times();
-  ::uint64_t raw_multiple_times;
+  uint64_t raw_multiple_times;
   memcpy(&raw_multiple_times, &tmp_multiple_times, sizeof(tmp_multiple_times));
   if (raw_multiple_times != 0) {
     _this->_internal_set_multiple_times(from._internal_multiple_times());
   }
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_power_times = from._internal_power_times();
-  ::uint64_t raw_power_times;
+  uint64_t raw_power_times;
   memcpy(&raw_power_times, &tmp_power_times, sizeof(tmp_power_times));
   if (raw_power_times != 0) {
     _this->_internal_set_power_times(from._internal_power_times());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void SetDemandStatusRequest::CopyFrom(const SetDemandStatusRequest& from) {
@@ -360,14 +339,14 @@ void SetDemandStatusRequest::CopyFrom(const SetDemandStatusRequest& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool SetDemandStatusRequest::IsInitialized() const {
+bool SetDemandStatusRequest::IsInitialized() const {
   return true;
 }
 
 void SetDemandStatusRequest::InternalSwap(SetDemandStatusRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::google::protobuf::internal::memswap<
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(SetDemandStatusRequest, _impl_.power_times_)
       + sizeof(SetDemandStatusRequest::_impl_.power_times_)
       - PROTOBUF_FIELD_OFFSET(SetDemandStatusRequest, _impl_.multiple_times_)>(
@@ -375,38 +354,39 @@ void SetDemandStatusRequest::InternalSwap(SetDemandStatusRequest* other) {
           reinterpret_cast<char*>(&other->_impl_.multiple_times_));
 }
 
-::google::protobuf::Metadata SetDemandStatusRequest::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata SetDemandStatusRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fcomm_2finteraction_2fdemand_2fv1_2fdemand_5fservice_2eproto_getter, &descriptor_table_city_2fcomm_2finteraction_2fdemand_2fv1_2fdemand_5fservice_2eproto_once,
       file_level_metadata_city_2fcomm_2finteraction_2fdemand_2fv1_2fdemand_5fservice_2eproto[0]);
 }
+
 // ===================================================================
 
 class SetDemandStatusResponse::_Internal {
  public:
 };
 
-SetDemandStatusResponse::SetDemandStatusResponse(::google::protobuf::Arena* arena)
-    : ::google::protobuf::internal::ZeroFieldsBase(arena) {
+SetDemandStatusResponse::SetDemandStatusResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
   // @@protoc_insertion_point(arena_constructor:city.comm.interaction.demand.v1.SetDemandStatusResponse)
 }
-SetDemandStatusResponse::SetDemandStatusResponse(const SetDemandStatusResponse& from) : ::google::protobuf::internal::ZeroFieldsBase() {
-  SetDemandStatusResponse* const _this = this;
-  (void)_this;
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
-
+SetDemandStatusResponse::SetDemandStatusResponse(const SetDemandStatusResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
+  SetDemandStatusResponse* const _this = this; (void)_this;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:city.comm.interaction.demand.v1.SetDemandStatusResponse)
 }
 
 
 
 
-const ::google::protobuf::Message::ClassData SetDemandStatusResponse::_class_data_ = {
-    ::google::protobuf::internal::ZeroFieldsBase::CopyImpl,
-    ::google::protobuf::internal::ZeroFieldsBase::MergeImpl,
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData SetDemandStatusResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
 };
-const ::google::protobuf::Message::ClassData*SetDemandStatusResponse::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SetDemandStatusResponse::GetClassData() const { return &_class_data_; }
 
 
 
@@ -414,20 +394,28 @@ const ::google::protobuf::Message::ClassData*SetDemandStatusResponse::GetClassDa
 
 
 
-::google::protobuf::Metadata SetDemandStatusResponse::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata SetDemandStatusResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fcomm_2finteraction_2fdemand_2fv1_2fdemand_5fservice_2eproto_getter, &descriptor_table_city_2fcomm_2finteraction_2fdemand_2fv1_2fdemand_5fservice_2eproto_once,
       file_level_metadata_city_2fcomm_2finteraction_2fdemand_2fv1_2fdemand_5fservice_2eproto[1]);
 }
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace v1
 }  // namespace demand
 }  // namespace interaction
 }  // namespace comm
 }  // namespace city
-namespace google {
-namespace protobuf {
-}  // namespace protobuf
-}  // namespace google
+PROTOBUF_NAMESPACE_OPEN
+template<> PROTOBUF_NOINLINE ::city::comm::interaction::demand::v1::SetDemandStatusRequest*
+Arena::CreateMaybeMessage< ::city::comm::interaction::demand::v1::SetDemandStatusRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::comm::interaction::demand::v1::SetDemandStatusRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::comm::interaction::demand::v1::SetDemandStatusResponse*
+Arena::CreateMaybeMessage< ::city::comm::interaction::demand::v1::SetDemandStatusResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::comm::interaction::demand::v1::SetDemandStatusResponse >(arena);
+}
+PROTOBUF_NAMESPACE_CLOSE
+
 // @@protoc_insertion_point(global_scope)
-#include "google/protobuf/port_undef.inc"
+#include <google/protobuf/port_undef.inc>

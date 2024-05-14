@@ -4,169 +4,138 @@
 #include "city/clock/v1/clock_service.pb.h"
 
 #include <algorithm>
-#include "google/protobuf/io/coded_stream.h"
-#include "google/protobuf/extension_set.h"
-#include "google/protobuf/wire_format_lite.h"
-#include "google/protobuf/descriptor.h"
-#include "google/protobuf/generated_message_reflection.h"
-#include "google/protobuf/reflection_ops.h"
-#include "google/protobuf/wire_format.h"
-#include "google/protobuf/generated_message_tctable_impl.h"
-// @@protoc_insertion_point(includes)
 
-// Must be included last.
-#include "google/protobuf/port_def.inc"
+#include <google/protobuf/io/coded_stream.h>
+#include <google/protobuf/extension_set.h>
+#include <google/protobuf/wire_format_lite.h>
+#include <google/protobuf/descriptor.h>
+#include <google/protobuf/generated_message_reflection.h>
+#include <google/protobuf/reflection_ops.h>
+#include <google/protobuf/wire_format.h>
+// @@protoc_insertion_point(includes)
+#include <google/protobuf/port_def.inc>
+
 PROTOBUF_PRAGMA_INIT_SEG
-namespace _pb = ::google::protobuf;
-namespace _pbi = ::google::protobuf::internal;
-namespace _fl = ::google::protobuf::internal::field_layout;
+
+namespace _pb = ::PROTOBUF_NAMESPACE_ID;
+namespace _pbi = _pb::internal;
+
 namespace city {
 namespace clock {
 namespace v1 {
-      template <typename>
-PROTOBUF_CONSTEXPR NowRequest::NowRequest(::_pbi::ConstantInitialized) {}
+PROTOBUF_CONSTEXPR NowRequest::NowRequest(
+    ::_pbi::ConstantInitialized) {}
 struct NowRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR NowRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR NowRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~NowRequestDefaultTypeInternal() {}
   union {
     NowRequest _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 NowRequestDefaultTypeInternal _NowRequest_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR NowResponse::NowResponse(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_.t_)*/ 0,
-      /*decltype(_impl_._cached_size_)*/ {},
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 NowRequestDefaultTypeInternal _NowRequest_default_instance_;
+PROTOBUF_CONSTEXPR NowResponse::NowResponse(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.t_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct NowResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR NowResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR NowResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~NowResponseDefaultTypeInternal() {}
   union {
     NowResponse _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 NowResponseDefaultTypeInternal _NowResponse_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 NowResponseDefaultTypeInternal _NowResponse_default_instance_;
 }  // namespace v1
 }  // namespace clock
 }  // namespace city
 static ::_pb::Metadata file_level_metadata_city_2fclock_2fv1_2fclock_5fservice_2eproto[2];
-static constexpr const ::_pb::EnumDescriptor**
-    file_level_enum_descriptors_city_2fclock_2fv1_2fclock_5fservice_2eproto = nullptr;
-static constexpr const ::_pb::ServiceDescriptor**
-    file_level_service_descriptors_city_2fclock_2fv1_2fclock_5fservice_2eproto = nullptr;
-const ::uint32_t TableStruct_city_2fclock_2fv1_2fclock_5fservice_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
-    protodesc_cold) = {
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::clock::v1::NowRequest, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::clock::v1::NowResponse, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::clock::v1::NowResponse, _impl_.t_),
-};
+static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_city_2fclock_2fv1_2fclock_5fservice_2eproto = nullptr;
+static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_city_2fclock_2fv1_2fclock_5fservice_2eproto = nullptr;
 
-static const ::_pbi::MigrationSchema
-    schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-        {0, -1, -1, sizeof(::city::clock::v1::NowRequest)},
-        {8, -1, -1, sizeof(::city::clock::v1::NowResponse)},
+const uint32_t TableStruct_city_2fclock_2fv1_2fclock_5fservice_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::clock::v1::NowRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::clock::v1::NowResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::clock::v1::NowResponse, _impl_.t_),
+};
+static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  { 0, -1, -1, sizeof(::city::clock::v1::NowRequest)},
+  { 6, -1, -1, sizeof(::city::clock::v1::NowResponse)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
-    &::city::clock::v1::_NowRequest_default_instance_._instance,
-    &::city::clock::v1::_NowResponse_default_instance_._instance,
-};
-const char descriptor_table_protodef_city_2fclock_2fv1_2fclock_5fservice_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-    "\n!city/clock/v1/clock_service.proto\022\rcit"
-    "y.clock.v1\"\014\n\nNowRequest\"\033\n\013NowResponse\022"
-    "\014\n\001t\030\001 \001(\001R\001t2L\n\014ClockService\022<\n\003Now\022\031.c"
-    "ity.clock.v1.NowRequest\032\032.city.clock.v1."
-    "NowResponseB\260\001\n\021com.city.clock.v1B\021Clock"
-    "ServiceProtoP\001Z2git.fiblab.net/sim/proto"
-    "s/go/city/clock/v1;clockv1\242\002\003CCX\252\002\rCity."
-    "Clock.V1\312\002\rCity\\Clock\\V1\342\002\031City\\Clock\\V1"
-    "\\GPBMetadata\352\002\017City::Clock::V1b\006proto3"
-};
-static ::absl::once_flag descriptor_table_city_2fclock_2fv1_2fclock_5fservice_2eproto_once;
-const ::_pbi::DescriptorTable descriptor_table_city_2fclock_2fv1_2fclock_5fservice_2eproto = {
-    false,
-    false,
-    358,
-    descriptor_table_protodef_city_2fclock_2fv1_2fclock_5fservice_2eproto,
-    "city/clock/v1/clock_service.proto",
-    &descriptor_table_city_2fclock_2fv1_2fclock_5fservice_2eproto_once,
-    nullptr,
-    0,
-    2,
-    schemas,
-    file_default_instances,
-    TableStruct_city_2fclock_2fv1_2fclock_5fservice_2eproto::offsets,
-    file_level_metadata_city_2fclock_2fv1_2fclock_5fservice_2eproto,
-    file_level_enum_descriptors_city_2fclock_2fv1_2fclock_5fservice_2eproto,
-    file_level_service_descriptors_city_2fclock_2fv1_2fclock_5fservice_2eproto,
+  &::city::clock::v1::_NowRequest_default_instance_._instance,
+  &::city::clock::v1::_NowResponse_default_instance_._instance,
 };
 
-// This function exists to be marked as weak.
-// It can significantly speed up compilation by breaking up LLVM's SCC
-// in the .pb.cc translation units. Large translation units see a
-// reduction of more than 35% of walltime for optimized builds. Without
-// the weak attribute all the messages in the file, including all the
-// vtables and everything they use become part of the same SCC through
-// a cycle like:
-// GetMetadata -> descriptor table -> default instances ->
-//   vtables -> GetMetadata
-// By adding a weak function here we break the connection from the
-// individual vtables back into the descriptor table.
+const char descriptor_table_protodef_city_2fclock_2fv1_2fclock_5fservice_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
+  "\n!city/clock/v1/clock_service.proto\022\rcit"
+  "y.clock.v1\"\014\n\nNowRequest\"\033\n\013NowResponse\022"
+  "\014\n\001t\030\001 \001(\001R\001t2L\n\014ClockService\022<\n\003Now\022\031.c"
+  "ity.clock.v1.NowRequest\032\032.city.clock.v1."
+  "NowResponseB\260\001\n\021com.city.clock.v1B\021Clock"
+  "ServiceProtoP\001Z2git.fiblab.net/sim/proto"
+  "s/go/city/clock/v1;clockv1\242\002\003CCX\252\002\rCity."
+  "Clock.V1\312\002\rCity\\Clock\\V1\342\002\031City\\Clock\\V1"
+  "\\GPBMetadata\352\002\017City::Clock::V1b\006proto3"
+  ;
+static ::_pbi::once_flag descriptor_table_city_2fclock_2fv1_2fclock_5fservice_2eproto_once;
+const ::_pbi::DescriptorTable descriptor_table_city_2fclock_2fv1_2fclock_5fservice_2eproto = {
+    false, false, 358, descriptor_table_protodef_city_2fclock_2fv1_2fclock_5fservice_2eproto,
+    "city/clock/v1/clock_service.proto",
+    &descriptor_table_city_2fclock_2fv1_2fclock_5fservice_2eproto_once, nullptr, 0, 2,
+    schemas, file_default_instances, TableStruct_city_2fclock_2fv1_2fclock_5fservice_2eproto::offsets,
+    file_level_metadata_city_2fclock_2fv1_2fclock_5fservice_2eproto, file_level_enum_descriptors_city_2fclock_2fv1_2fclock_5fservice_2eproto,
+    file_level_service_descriptors_city_2fclock_2fv1_2fclock_5fservice_2eproto,
+};
 PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_city_2fclock_2fv1_2fclock_5fservice_2eproto_getter() {
   return &descriptor_table_city_2fclock_2fv1_2fclock_5fservice_2eproto;
 }
+
 // Force running AddDescriptors() at dynamic initialization time.
-PROTOBUF_ATTRIBUTE_INIT_PRIORITY2
-static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_city_2fclock_2fv1_2fclock_5fservice_2eproto(&descriptor_table_city_2fclock_2fv1_2fclock_5fservice_2eproto);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_city_2fclock_2fv1_2fclock_5fservice_2eproto(&descriptor_table_city_2fclock_2fv1_2fclock_5fservice_2eproto);
 namespace city {
 namespace clock {
 namespace v1 {
+
 // ===================================================================
 
 class NowRequest::_Internal {
  public:
 };
 
-NowRequest::NowRequest(::google::protobuf::Arena* arena)
-    : ::google::protobuf::internal::ZeroFieldsBase(arena) {
+NowRequest::NowRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
   // @@protoc_insertion_point(arena_constructor:city.clock.v1.NowRequest)
 }
-NowRequest::NowRequest(const NowRequest& from) : ::google::protobuf::internal::ZeroFieldsBase() {
-  NowRequest* const _this = this;
-  (void)_this;
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
-
+NowRequest::NowRequest(const NowRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
+  NowRequest* const _this = this; (void)_this;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:city.clock.v1.NowRequest)
 }
 
 
 
 
-const ::google::protobuf::Message::ClassData NowRequest::_class_data_ = {
-    ::google::protobuf::internal::ZeroFieldsBase::CopyImpl,
-    ::google::protobuf::internal::ZeroFieldsBase::MergeImpl,
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData NowRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
 };
-const ::google::protobuf::Message::ClassData*NowRequest::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*NowRequest::GetClassData() const { return &_class_data_; }
 
 
 
@@ -174,167 +143,177 @@ const ::google::protobuf::Message::ClassData*NowRequest::GetClassData() const { 
 
 
 
-::google::protobuf::Metadata NowRequest::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata NowRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fclock_2fv1_2fclock_5fservice_2eproto_getter, &descriptor_table_city_2fclock_2fv1_2fclock_5fservice_2eproto_once,
       file_level_metadata_city_2fclock_2fv1_2fclock_5fservice_2eproto[0]);
 }
+
 // ===================================================================
 
 class NowResponse::_Internal {
  public:
 };
 
-NowResponse::NowResponse(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+NowResponse::NowResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.clock.v1.NowResponse)
 }
 NowResponse::NowResponse(const NowResponse& from)
-    : ::google::protobuf::Message(), _impl_(from._impl_) {
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  NowResponse* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.t_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.t_ = from._impl_.t_;
   // @@protoc_insertion_point(copy_constructor:city.clock.v1.NowResponse)
 }
-inline void NowResponse::SharedCtor(::_pb::Arena* arena) {
+
+inline void NowResponse::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.t_){0},
-      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.t_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 NowResponse::~NowResponse() {
   // @@protoc_insertion_point(destructor:city.clock.v1.NowResponse)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void NowResponse::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
+
 void NowResponse::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void NowResponse::Clear() {
+void NowResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.clock.v1.NowResponse)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   _impl_.t_ = 0;
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* NowResponse::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* NowResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // double t = 1 [json_name = "t"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 9)) {
+          _impl_.t_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<0, 1, 0, 0, 2> NowResponse::_table_ = {
-  {
-    0,  // no _has_bits_
-    0, // no _extensions_
-    1, 0,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967294,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    1,  // num_field_entries
-    0,  // num_aux_entries
-    offsetof(decltype(_table_), field_names),  // no aux_entries
-    &_NowResponse_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    // double t = 1 [json_name = "t"];
-    {::_pbi::TcParser::FastF64S1,
-     {9, 63, 0, PROTOBUF_FIELD_OFFSET(NowResponse, _impl_.t_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // double t = 1 [json_name = "t"];
-    {PROTOBUF_FIELD_OFFSET(NowResponse, _impl_.t_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-  }},
-  // no aux_entries
-  {{
-  }},
-};
-
-::uint8_t* NowResponse::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* NowResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.clock.v1.NowResponse)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // double t = 1 [json_name = "t"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_t = this->_internal_t();
-  ::uint64_t raw_t;
+  uint64_t raw_t;
   memcpy(&raw_t, &tmp_t, sizeof(tmp_t));
   if (raw_t != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        1, this->_internal_t(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(1, this->_internal_t(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.clock.v1.NowResponse)
   return target;
 }
 
-::size_t NowResponse::ByteSizeLong() const {
+size_t NowResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.clock.v1.NowResponse)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // double t = 1 [json_name = "t"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_t = this->_internal_t();
-  ::uint64_t raw_t;
+  uint64_t raw_t;
   memcpy(&raw_t, &tmp_t, sizeof(tmp_t));
   if (raw_t != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData NowResponse::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData NowResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     NowResponse::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*NowResponse::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*NowResponse::GetClassData() const { return &_class_data_; }
 
 
-void NowResponse::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void NowResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<NowResponse*>(&to_msg);
   auto& from = static_cast<const NowResponse&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.clock.v1.NowResponse)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_t = from._internal_t();
-  ::uint64_t raw_t;
+  uint64_t raw_t;
   memcpy(&raw_t, &tmp_t, sizeof(tmp_t));
   if (raw_t != 0) {
     _this->_internal_set_t(from._internal_t());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void NowResponse::CopyFrom(const NowResponse& from) {
@@ -344,28 +323,36 @@ void NowResponse::CopyFrom(const NowResponse& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool NowResponse::IsInitialized() const {
+bool NowResponse::IsInitialized() const {
   return true;
 }
 
 void NowResponse::InternalSwap(NowResponse* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-        swap(_impl_.t_, other->_impl_.t_);
+  swap(_impl_.t_, other->_impl_.t_);
 }
 
-::google::protobuf::Metadata NowResponse::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata NowResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fclock_2fv1_2fclock_5fservice_2eproto_getter, &descriptor_table_city_2fclock_2fv1_2fclock_5fservice_2eproto_once,
       file_level_metadata_city_2fclock_2fv1_2fclock_5fservice_2eproto[1]);
 }
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace v1
 }  // namespace clock
 }  // namespace city
-namespace google {
-namespace protobuf {
-}  // namespace protobuf
-}  // namespace google
+PROTOBUF_NAMESPACE_OPEN
+template<> PROTOBUF_NOINLINE ::city::clock::v1::NowRequest*
+Arena::CreateMaybeMessage< ::city::clock::v1::NowRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::clock::v1::NowRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::clock::v1::NowResponse*
+Arena::CreateMaybeMessage< ::city::clock::v1::NowResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::clock::v1::NowResponse >(arena);
+}
+PROTOBUF_NAMESPACE_CLOSE
+
 // @@protoc_insertion_point(global_scope)
-#include "google/protobuf/port_undef.inc"
+#include <google/protobuf/port_undef.inc>

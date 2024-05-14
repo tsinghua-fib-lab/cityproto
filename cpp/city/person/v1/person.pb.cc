@@ -4,480 +4,401 @@
 #include "city/person/v1/person.pb.h"
 
 #include <algorithm>
-#include "google/protobuf/io/coded_stream.h"
-#include "google/protobuf/extension_set.h"
-#include "google/protobuf/wire_format_lite.h"
-#include "google/protobuf/descriptor.h"
-#include "google/protobuf/generated_message_reflection.h"
-#include "google/protobuf/reflection_ops.h"
-#include "google/protobuf/wire_format.h"
-#include "google/protobuf/generated_message_tctable_impl.h"
-// @@protoc_insertion_point(includes)
 
-// Must be included last.
-#include "google/protobuf/port_def.inc"
+#include <google/protobuf/io/coded_stream.h>
+#include <google/protobuf/extension_set.h>
+#include <google/protobuf/wire_format_lite.h>
+#include <google/protobuf/descriptor.h>
+#include <google/protobuf/generated_message_reflection.h>
+#include <google/protobuf/reflection_ops.h>
+#include <google/protobuf/wire_format.h>
+// @@protoc_insertion_point(includes)
+#include <google/protobuf/port_def.inc>
+
 PROTOBUF_PRAGMA_INIT_SEG
-namespace _pb = ::google::protobuf;
-namespace _pbi = ::google::protobuf::internal;
-namespace _fl = ::google::protobuf::internal::field_layout;
+
+namespace _pb = ::PROTOBUF_NAMESPACE_ID;
+namespace _pbi = _pb::internal;
+
 namespace city {
 namespace person {
 namespace v1 {
-        template <typename>
-PROTOBUF_CONSTEXPR PersonAttribute::PersonAttribute(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_.length_)*/ 0,
-      /*decltype(_impl_.width_)*/ 0,
-      /*decltype(_impl_.max_speed_)*/ 0,
-      /*decltype(_impl_.max_acceleration_)*/ 0,
-      /*decltype(_impl_.max_braking_acceleration_)*/ 0,
-      /*decltype(_impl_.usual_acceleration_)*/ 0,
-      /*decltype(_impl_.usual_braking_acceleration_)*/ 0,
-      /*decltype(_impl_._cached_size_)*/ {},
-    } {}
+PROTOBUF_CONSTEXPR PersonAttribute::PersonAttribute(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.length_)*/0
+  , /*decltype(_impl_.width_)*/0
+  , /*decltype(_impl_.max_speed_)*/0
+  , /*decltype(_impl_.max_acceleration_)*/0
+  , /*decltype(_impl_.max_braking_acceleration_)*/0
+  , /*decltype(_impl_.usual_acceleration_)*/0
+  , /*decltype(_impl_.usual_braking_acceleration_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct PersonAttributeDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR PersonAttributeDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR PersonAttributeDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~PersonAttributeDefaultTypeInternal() {}
   union {
     PersonAttribute _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PersonAttributeDefaultTypeInternal _PersonAttribute_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR VehicleAttribute::VehicleAttribute(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_._has_bits_)*/ {},
-      /*decltype(_impl_._cached_size_)*/ {},
-      /*decltype(_impl_.model_)*/ {
-          &::_pbi::fixed_address_empty_string,
-          ::_pbi::ConstantInitialized{},
-      },
-      /*decltype(_impl_.lane_change_length_)*/ 0,
-      /*decltype(_impl_.min_gap_)*/ 0,
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PersonAttributeDefaultTypeInternal _PersonAttribute_default_instance_;
+PROTOBUF_CONSTEXPR VehicleAttribute::VehicleAttribute(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_._has_bits_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}
+  , /*decltype(_impl_.model_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.lane_change_length_)*/0
+  , /*decltype(_impl_.min_gap_)*/0} {}
 struct VehicleAttributeDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR VehicleAttributeDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR VehicleAttributeDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~VehicleAttributeDefaultTypeInternal() {}
   union {
     VehicleAttribute _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 VehicleAttributeDefaultTypeInternal _VehicleAttribute_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR BusAttribute::BusAttribute(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_._has_bits_)*/ {},
-      /*decltype(_impl_._cached_size_)*/ {},
-      /*decltype(_impl_.model_)*/ {
-          &::_pbi::fixed_address_empty_string,
-          ::_pbi::ConstantInitialized{},
-      },
-      /*decltype(_impl_.line_id_)*/ 0,
-      /*decltype(_impl_.capacity_)*/ 0,
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 VehicleAttributeDefaultTypeInternal _VehicleAttribute_default_instance_;
+PROTOBUF_CONSTEXPR BusAttribute::BusAttribute(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_._has_bits_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}
+  , /*decltype(_impl_.model_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.line_id_)*/0
+  , /*decltype(_impl_.capacity_)*/0} {}
 struct BusAttributeDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR BusAttributeDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR BusAttributeDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~BusAttributeDefaultTypeInternal() {}
   union {
     BusAttribute _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BusAttributeDefaultTypeInternal _BusAttribute_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR PedestrianAttribute::PedestrianAttribute(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_._has_bits_)*/ {},
-      /*decltype(_impl_._cached_size_)*/ {},
-      /*decltype(_impl_.model_)*/ {
-          &::_pbi::fixed_address_empty_string,
-          ::_pbi::ConstantInitialized{},
-      },
-      /*decltype(_impl_.speed_)*/ 0,
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BusAttributeDefaultTypeInternal _BusAttribute_default_instance_;
+PROTOBUF_CONSTEXPR PedestrianAttribute::PedestrianAttribute(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_._has_bits_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}
+  , /*decltype(_impl_.model_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.speed_)*/0} {}
 struct PedestrianAttributeDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR PedestrianAttributeDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR PedestrianAttributeDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~PedestrianAttributeDefaultTypeInternal() {}
   union {
     PedestrianAttribute _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PedestrianAttributeDefaultTypeInternal _PedestrianAttribute_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR BikeAttribute::BikeAttribute(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_._has_bits_)*/ {},
-      /*decltype(_impl_._cached_size_)*/ {},
-      /*decltype(_impl_.model_)*/ {
-          &::_pbi::fixed_address_empty_string,
-          ::_pbi::ConstantInitialized{},
-      },
-      /*decltype(_impl_.speed_)*/ 0,
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PedestrianAttributeDefaultTypeInternal _PedestrianAttribute_default_instance_;
+PROTOBUF_CONSTEXPR BikeAttribute::BikeAttribute(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_._has_bits_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}
+  , /*decltype(_impl_.model_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.speed_)*/0} {}
 struct BikeAttributeDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR BikeAttributeDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR BikeAttributeDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~BikeAttributeDefaultTypeInternal() {}
   union {
     BikeAttribute _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BikeAttributeDefaultTypeInternal _BikeAttribute_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR PersonProfile::PersonProfile(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_.age_)*/ 0,
-      /*decltype(_impl_.education_)*/ 0,
-      /*decltype(_impl_.gender_)*/ 0,
-      /*decltype(_impl_.consumption_)*/ 0,
-      /*decltype(_impl_._cached_size_)*/ {},
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BikeAttributeDefaultTypeInternal _BikeAttribute_default_instance_;
+PROTOBUF_CONSTEXPR PersonProfile::PersonProfile(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.age_)*/0
+  , /*decltype(_impl_.education_)*/0
+  , /*decltype(_impl_.gender_)*/0
+  , /*decltype(_impl_.consumption_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct PersonProfileDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR PersonProfileDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR PersonProfileDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~PersonProfileDefaultTypeInternal() {}
   union {
     PersonProfile _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PersonProfileDefaultTypeInternal _PersonProfile_default_instance_;
-      template <typename>
-PROTOBUF_CONSTEXPR Person_LabelsEntry_DoNotUse::Person_LabelsEntry_DoNotUse(::_pbi::ConstantInitialized) {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PersonProfileDefaultTypeInternal _PersonProfile_default_instance_;
+PROTOBUF_CONSTEXPR Person_LabelsEntry_DoNotUse::Person_LabelsEntry_DoNotUse(
+    ::_pbi::ConstantInitialized) {}
 struct Person_LabelsEntry_DoNotUseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR Person_LabelsEntry_DoNotUseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR Person_LabelsEntry_DoNotUseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~Person_LabelsEntry_DoNotUseDefaultTypeInternal() {}
   union {
     Person_LabelsEntry_DoNotUse _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 Person_LabelsEntry_DoNotUseDefaultTypeInternal _Person_LabelsEntry_DoNotUse_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR Person::Person(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_._has_bits_)*/ {},
-      /*decltype(_impl_._cached_size_)*/ {},
-      /*decltype(_impl_.schedules_)*/ {},
-      /* decltype(_impl_.labels_) */ {},
-      /*decltype(_impl_.attribute_)*/ nullptr,
-      /*decltype(_impl_.home_)*/ nullptr,
-      /*decltype(_impl_.vehicle_attribute_)*/ nullptr,
-      /*decltype(_impl_.bus_attribute_)*/ nullptr,
-      /*decltype(_impl_.bike_attribute_)*/ nullptr,
-      /*decltype(_impl_.profile_)*/ nullptr,
-      /*decltype(_impl_.pedestrian_attribute_)*/ nullptr,
-      /*decltype(_impl_.id_)*/ 0,
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 Person_LabelsEntry_DoNotUseDefaultTypeInternal _Person_LabelsEntry_DoNotUse_default_instance_;
+PROTOBUF_CONSTEXPR Person::Person(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_._has_bits_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}
+  , /*decltype(_impl_.schedules_)*/{}
+  , /*decltype(_impl_.labels_)*/{::_pbi::ConstantInitialized()}
+  , /*decltype(_impl_.attribute_)*/nullptr
+  , /*decltype(_impl_.home_)*/nullptr
+  , /*decltype(_impl_.vehicle_attribute_)*/nullptr
+  , /*decltype(_impl_.bus_attribute_)*/nullptr
+  , /*decltype(_impl_.bike_attribute_)*/nullptr
+  , /*decltype(_impl_.profile_)*/nullptr
+  , /*decltype(_impl_.pedestrian_attribute_)*/nullptr
+  , /*decltype(_impl_.id_)*/0} {}
 struct PersonDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR PersonDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR PersonDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~PersonDefaultTypeInternal() {}
   union {
     Person _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PersonDefaultTypeInternal _Person_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR Persons::Persons(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_.persons_)*/ {},
-      /*decltype(_impl_._cached_size_)*/ {},
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PersonDefaultTypeInternal _Person_default_instance_;
+PROTOBUF_CONSTEXPR Persons::Persons(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.persons_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct PersonsDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR PersonsDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR PersonsDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~PersonsDefaultTypeInternal() {}
   union {
     Persons _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PersonsDefaultTypeInternal _Persons_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PersonsDefaultTypeInternal _Persons_default_instance_;
 }  // namespace v1
 }  // namespace person
 }  // namespace city
 static ::_pb::Metadata file_level_metadata_city_2fperson_2fv1_2fperson_2eproto[9];
 static const ::_pb::EnumDescriptor* file_level_enum_descriptors_city_2fperson_2fv1_2fperson_2eproto[3];
-static constexpr const ::_pb::ServiceDescriptor**
-    file_level_service_descriptors_city_2fperson_2fv1_2fperson_2eproto = nullptr;
-const ::uint32_t TableStruct_city_2fperson_2fv1_2fperson_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
-    protodesc_cold) = {
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::person::v1::PersonAttribute, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::person::v1::PersonAttribute, _impl_.length_),
-    PROTOBUF_FIELD_OFFSET(::city::person::v1::PersonAttribute, _impl_.width_),
-    PROTOBUF_FIELD_OFFSET(::city::person::v1::PersonAttribute, _impl_.max_speed_),
-    PROTOBUF_FIELD_OFFSET(::city::person::v1::PersonAttribute, _impl_.max_acceleration_),
-    PROTOBUF_FIELD_OFFSET(::city::person::v1::PersonAttribute, _impl_.max_braking_acceleration_),
-    PROTOBUF_FIELD_OFFSET(::city::person::v1::PersonAttribute, _impl_.usual_acceleration_),
-    PROTOBUF_FIELD_OFFSET(::city::person::v1::PersonAttribute, _impl_.usual_braking_acceleration_),
-    PROTOBUF_FIELD_OFFSET(::city::person::v1::VehicleAttribute, _impl_._has_bits_),
-    PROTOBUF_FIELD_OFFSET(::city::person::v1::VehicleAttribute, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::person::v1::VehicleAttribute, _impl_.lane_change_length_),
-    PROTOBUF_FIELD_OFFSET(::city::person::v1::VehicleAttribute, _impl_.min_gap_),
-    PROTOBUF_FIELD_OFFSET(::city::person::v1::VehicleAttribute, _impl_.model_),
-    ~0u,
-    ~0u,
-    0,
-    PROTOBUF_FIELD_OFFSET(::city::person::v1::BusAttribute, _impl_._has_bits_),
-    PROTOBUF_FIELD_OFFSET(::city::person::v1::BusAttribute, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::person::v1::BusAttribute, _impl_.line_id_),
-    PROTOBUF_FIELD_OFFSET(::city::person::v1::BusAttribute, _impl_.capacity_),
-    PROTOBUF_FIELD_OFFSET(::city::person::v1::BusAttribute, _impl_.model_),
-    ~0u,
-    ~0u,
-    0,
-    PROTOBUF_FIELD_OFFSET(::city::person::v1::PedestrianAttribute, _impl_._has_bits_),
-    PROTOBUF_FIELD_OFFSET(::city::person::v1::PedestrianAttribute, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::person::v1::PedestrianAttribute, _impl_.speed_),
-    PROTOBUF_FIELD_OFFSET(::city::person::v1::PedestrianAttribute, _impl_.model_),
-    ~0u,
-    0,
-    PROTOBUF_FIELD_OFFSET(::city::person::v1::BikeAttribute, _impl_._has_bits_),
-    PROTOBUF_FIELD_OFFSET(::city::person::v1::BikeAttribute, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::person::v1::BikeAttribute, _impl_.speed_),
-    PROTOBUF_FIELD_OFFSET(::city::person::v1::BikeAttribute, _impl_.model_),
-    ~0u,
-    0,
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::person::v1::PersonProfile, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::person::v1::PersonProfile, _impl_.age_),
-    PROTOBUF_FIELD_OFFSET(::city::person::v1::PersonProfile, _impl_.education_),
-    PROTOBUF_FIELD_OFFSET(::city::person::v1::PersonProfile, _impl_.gender_),
-    PROTOBUF_FIELD_OFFSET(::city::person::v1::PersonProfile, _impl_.consumption_),
-    PROTOBUF_FIELD_OFFSET(::city::person::v1::Person_LabelsEntry_DoNotUse, _has_bits_),
-    PROTOBUF_FIELD_OFFSET(::city::person::v1::Person_LabelsEntry_DoNotUse, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::person::v1::Person_LabelsEntry_DoNotUse, key_),
-    PROTOBUF_FIELD_OFFSET(::city::person::v1::Person_LabelsEntry_DoNotUse, value_),
-    0,
-    1,
-    PROTOBUF_FIELD_OFFSET(::city::person::v1::Person, _impl_._has_bits_),
-    PROTOBUF_FIELD_OFFSET(::city::person::v1::Person, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::person::v1::Person, _impl_.id_),
-    PROTOBUF_FIELD_OFFSET(::city::person::v1::Person, _impl_.attribute_),
-    PROTOBUF_FIELD_OFFSET(::city::person::v1::Person, _impl_.home_),
-    PROTOBUF_FIELD_OFFSET(::city::person::v1::Person, _impl_.schedules_),
-    PROTOBUF_FIELD_OFFSET(::city::person::v1::Person, _impl_.vehicle_attribute_),
-    PROTOBUF_FIELD_OFFSET(::city::person::v1::Person, _impl_.bus_attribute_),
-    PROTOBUF_FIELD_OFFSET(::city::person::v1::Person, _impl_.pedestrian_attribute_),
-    PROTOBUF_FIELD_OFFSET(::city::person::v1::Person, _impl_.bike_attribute_),
-    PROTOBUF_FIELD_OFFSET(::city::person::v1::Person, _impl_.labels_),
-    PROTOBUF_FIELD_OFFSET(::city::person::v1::Person, _impl_.profile_),
-    ~0u,
-    0,
-    1,
-    ~0u,
-    2,
-    3,
-    6,
-    4,
-    ~0u,
-    5,
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::person::v1::Persons, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::person::v1::Persons, _impl_.persons_),
-};
+static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_city_2fperson_2fv1_2fperson_2eproto = nullptr;
 
-static const ::_pbi::MigrationSchema
-    schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-        {0, -1, -1, sizeof(::city::person::v1::PersonAttribute)},
-        {15, 26, -1, sizeof(::city::person::v1::VehicleAttribute)},
-        {29, 40, -1, sizeof(::city::person::v1::BusAttribute)},
-        {43, 53, -1, sizeof(::city::person::v1::PedestrianAttribute)},
-        {55, 65, -1, sizeof(::city::person::v1::BikeAttribute)},
-        {67, -1, -1, sizeof(::city::person::v1::PersonProfile)},
-        {79, 89, -1, sizeof(::city::person::v1::Person_LabelsEntry_DoNotUse)},
-        {91, 109, -1, sizeof(::city::person::v1::Person)},
-        {119, -1, -1, sizeof(::city::person::v1::Persons)},
+const uint32_t TableStruct_city_2fperson_2fv1_2fperson_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::person::v1::PersonAttribute, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::person::v1::PersonAttribute, _impl_.length_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v1::PersonAttribute, _impl_.width_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v1::PersonAttribute, _impl_.max_speed_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v1::PersonAttribute, _impl_.max_acceleration_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v1::PersonAttribute, _impl_.max_braking_acceleration_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v1::PersonAttribute, _impl_.usual_acceleration_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v1::PersonAttribute, _impl_.usual_braking_acceleration_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v1::VehicleAttribute, _impl_._has_bits_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v1::VehicleAttribute, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::person::v1::VehicleAttribute, _impl_.lane_change_length_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v1::VehicleAttribute, _impl_.min_gap_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v1::VehicleAttribute, _impl_.model_),
+  ~0u,
+  ~0u,
+  0,
+  PROTOBUF_FIELD_OFFSET(::city::person::v1::BusAttribute, _impl_._has_bits_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v1::BusAttribute, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::person::v1::BusAttribute, _impl_.line_id_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v1::BusAttribute, _impl_.capacity_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v1::BusAttribute, _impl_.model_),
+  ~0u,
+  ~0u,
+  0,
+  PROTOBUF_FIELD_OFFSET(::city::person::v1::PedestrianAttribute, _impl_._has_bits_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v1::PedestrianAttribute, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::person::v1::PedestrianAttribute, _impl_.speed_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v1::PedestrianAttribute, _impl_.model_),
+  ~0u,
+  0,
+  PROTOBUF_FIELD_OFFSET(::city::person::v1::BikeAttribute, _impl_._has_bits_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v1::BikeAttribute, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::person::v1::BikeAttribute, _impl_.speed_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v1::BikeAttribute, _impl_.model_),
+  ~0u,
+  0,
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::person::v1::PersonProfile, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::person::v1::PersonProfile, _impl_.age_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v1::PersonProfile, _impl_.education_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v1::PersonProfile, _impl_.gender_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v1::PersonProfile, _impl_.consumption_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v1::Person_LabelsEntry_DoNotUse, _has_bits_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v1::Person_LabelsEntry_DoNotUse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::person::v1::Person_LabelsEntry_DoNotUse, key_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v1::Person_LabelsEntry_DoNotUse, value_),
+  0,
+  1,
+  PROTOBUF_FIELD_OFFSET(::city::person::v1::Person, _impl_._has_bits_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v1::Person, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::person::v1::Person, _impl_.id_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v1::Person, _impl_.attribute_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v1::Person, _impl_.home_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v1::Person, _impl_.schedules_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v1::Person, _impl_.vehicle_attribute_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v1::Person, _impl_.bus_attribute_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v1::Person, _impl_.pedestrian_attribute_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v1::Person, _impl_.bike_attribute_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v1::Person, _impl_.labels_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v1::Person, _impl_.profile_),
+  ~0u,
+  ~0u,
+  ~0u,
+  ~0u,
+  0,
+  1,
+  4,
+  2,
+  ~0u,
+  3,
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::person::v1::Persons, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::person::v1::Persons, _impl_.persons_),
+};
+static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  { 0, -1, -1, sizeof(::city::person::v1::PersonAttribute)},
+  { 13, 22, -1, sizeof(::city::person::v1::VehicleAttribute)},
+  { 25, 34, -1, sizeof(::city::person::v1::BusAttribute)},
+  { 37, 45, -1, sizeof(::city::person::v1::PedestrianAttribute)},
+  { 47, 55, -1, sizeof(::city::person::v1::BikeAttribute)},
+  { 57, -1, -1, sizeof(::city::person::v1::PersonProfile)},
+  { 67, 75, -1, sizeof(::city::person::v1::Person_LabelsEntry_DoNotUse)},
+  { 77, 93, -1, sizeof(::city::person::v1::Person)},
+  { 103, -1, -1, sizeof(::city::person::v1::Persons)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
-    &::city::person::v1::_PersonAttribute_default_instance_._instance,
-    &::city::person::v1::_VehicleAttribute_default_instance_._instance,
-    &::city::person::v1::_BusAttribute_default_instance_._instance,
-    &::city::person::v1::_PedestrianAttribute_default_instance_._instance,
-    &::city::person::v1::_BikeAttribute_default_instance_._instance,
-    &::city::person::v1::_PersonProfile_default_instance_._instance,
-    &::city::person::v1::_Person_LabelsEntry_DoNotUse_default_instance_._instance,
-    &::city::person::v1::_Person_default_instance_._instance,
-    &::city::person::v1::_Persons_default_instance_._instance,
-};
-const char descriptor_table_protodef_city_2fperson_2fv1_2fperson_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-    "\n\033city/person/v1/person.proto\022\016city.pers"
-    "on.v1\032\025city/geo/v2/geo.proto\032\027city/trip/"
-    "v2/trip.proto\"\256\002\n\017PersonAttribute\022\026\n\006len"
-    "gth\030\002 \001(\001R\006length\022\024\n\005width\030\003 \001(\001R\005width\022"
-    "\033\n\tmax_speed\030\004 \001(\001R\010maxSpeed\022)\n\020max_acce"
-    "leration\030\005 \001(\001R\017maxAcceleration\0228\n\030max_b"
-    "raking_acceleration\030\006 \001(\001R\026maxBrakingAcc"
-    "eleration\022-\n\022usual_acceleration\030\007 \001(\001R\021u"
-    "sualAcceleration\022<\n\032usual_braking_accele"
-    "ration\030\010 \001(\001R\030usualBrakingAcceleration\"~"
-    "\n\020VehicleAttribute\022,\n\022lane_change_length"
-    "\030\001 \001(\001R\020laneChangeLength\022\027\n\007min_gap\030\002 \001("
-    "\001R\006minGap\022\031\n\005model\030\003 \001(\tH\000R\005model\210\001\001B\010\n\006"
-    "_model\"h\n\014BusAttribute\022\027\n\007line_id\030\001 \001(\005R"
-    "\006lineId\022\032\n\010capacity\030\002 \001(\005R\010capacity\022\031\n\005m"
-    "odel\030\003 \001(\tH\000R\005model\210\001\001B\010\n\006_model\"P\n\023Pede"
-    "strianAttribute\022\024\n\005speed\030\001 \001(\001R\005speed\022\031\n"
-    "\005model\030\002 \001(\tH\000R\005model\210\001\001B\010\n\006_model\"J\n\rBi"
-    "keAttribute\022\024\n\005speed\030\001 \001(\001R\005speed\022\031\n\005mod"
-    "el\030\002 \001(\tH\000R\005model\210\001\001B\010\n\006_model\"\311\001\n\rPerso"
-    "nProfile\022\020\n\003age\030\001 \001(\005R\003age\0227\n\teducation\030"
-    "\002 \001(\0162\031.city.person.v1.EducationR\teducat"
-    "ion\022.\n\006gender\030\003 \001(\0162\026.city.person.v1.Gen"
-    "derR\006gender\022=\n\013consumption\030\004 \001(\0162\033.city."
-    "person.v1.ConsumptionR\013consumption\"\221\006\n\006P"
-    "erson\022\016\n\002id\030\001 \001(\005R\002id\022=\n\tattribute\030\002 \001(\013"
-    "2\037.city.person.v1.PersonAttributeR\tattri"
-    "bute\022)\n\004home\030\003 \001(\0132\025.city.geo.v2.Positio"
-    "nR\004home\0224\n\tschedules\030\004 \003(\0132\026.city.trip.v"
-    "2.ScheduleR\tschedules\022R\n\021vehicle_attribu"
-    "te\030\007 \001(\0132 .city.person.v1.VehicleAttribu"
-    "teH\000R\020vehicleAttribute\210\001\001\022F\n\rbus_attribu"
-    "te\030\010 \001(\0132\034.city.person.v1.BusAttributeH\001"
-    "R\014busAttribute\210\001\001\022[\n\024pedestrian_attribut"
-    "e\030\014 \001(\0132#.city.person.v1.PedestrianAttri"
-    "buteH\002R\023pedestrianAttribute\210\001\001\022I\n\016bike_a"
-    "ttribute\030\t \001(\0132\035.city.person.v1.BikeAttr"
-    "ibuteH\003R\rbikeAttribute\210\001\001\022:\n\006labels\030\n \003("
-    "\0132\".city.person.v1.Person.LabelsEntryR\006l"
-    "abels\022<\n\007profile\030\013 \001(\0132\035.city.person.v1."
-    "PersonProfileH\004R\007profile\210\001\001\0329\n\013LabelsEnt"
-    "ry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005val"
-    "ue:\0028\001B\024\n\022_vehicle_attributeB\020\n\016_bus_att"
-    "ributeB\027\n\025_pedestrian_attributeB\021\n\017_bike"
-    "_attributeB\n\n\010_profile\";\n\007Persons\0220\n\007per"
-    "sons\030\001 \003(\0132\026.city.person.v1.PersonR\007pers"
-    "ons*\334\001\n\tEducation\022\031\n\025EDUCATION_UNSPECIFI"
-    "ED\020\000\022\024\n\020EDUCATION_DOCTOR\020\001\022\024\n\020EDUCATION_"
-    "MASTER\020\002\022\026\n\022EDUCATION_BACHELOR\020\003\022\031\n\025EDUC"
-    "ATION_HIGH_SCHOOL\020\004\022 \n\034EDUCATION_JUNIOR_"
-    "HIGH_SCHOOL\020\005\022\034\n\030EDUCATION_PRIMARY_SCHOO"
-    "L\020\006\022\025\n\021EDUCATION_COLLEGE\020\007*D\n\006Gender\022\026\n\022"
-    "GENDER_UNSPECIFIED\020\000\022\017\n\013GENDER_MALE\020\001\022\021\n"
-    "\rGENDER_FEMALE\020\002*\256\001\n\013Consumption\022\033\n\027CONS"
-    "UMPTION_UNSPECIFIED\020\000\022\023\n\017CONSUMPTION_LOW"
-    "\020\001\022\036\n\032CONSUMPTION_RELATIVELY_LOW\020\002\022\026\n\022CO"
-    "NSUMPTION_MEDIUM\020\003\022\037\n\033CONSUMPTION_RELATI"
-    "VELY_HIGH\020\004\022\024\n\020CONSUMPTION_HIGH\020\005B\261\001\n\022co"
-    "m.city.person.v1B\013PersonProtoP\001Z4git.fib"
-    "lab.net/sim/protos/go/city/person/v1;per"
-    "sonv1\242\002\003CPX\252\002\016City.Person.V1\312\002\016City\\Pers"
-    "on\\V1\342\002\032City\\Person\\V1\\GPBMetadata\352\002\020Cit"
-    "y::Person::V1b\006proto3"
-};
-static const ::_pbi::DescriptorTable* const descriptor_table_city_2fperson_2fv1_2fperson_2eproto_deps[2] =
-    {
-        &::descriptor_table_city_2fgeo_2fv2_2fgeo_2eproto,
-        &::descriptor_table_city_2ftrip_2fv2_2ftrip_2eproto,
-};
-static ::absl::once_flag descriptor_table_city_2fperson_2fv1_2fperson_2eproto_once;
-const ::_pbi::DescriptorTable descriptor_table_city_2fperson_2fv1_2fperson_2eproto = {
-    false,
-    false,
-    2501,
-    descriptor_table_protodef_city_2fperson_2fv1_2fperson_2eproto,
-    "city/person/v1/person.proto",
-    &descriptor_table_city_2fperson_2fv1_2fperson_2eproto_once,
-    descriptor_table_city_2fperson_2fv1_2fperson_2eproto_deps,
-    2,
-    9,
-    schemas,
-    file_default_instances,
-    TableStruct_city_2fperson_2fv1_2fperson_2eproto::offsets,
-    file_level_metadata_city_2fperson_2fv1_2fperson_2eproto,
-    file_level_enum_descriptors_city_2fperson_2fv1_2fperson_2eproto,
-    file_level_service_descriptors_city_2fperson_2fv1_2fperson_2eproto,
+  &::city::person::v1::_PersonAttribute_default_instance_._instance,
+  &::city::person::v1::_VehicleAttribute_default_instance_._instance,
+  &::city::person::v1::_BusAttribute_default_instance_._instance,
+  &::city::person::v1::_PedestrianAttribute_default_instance_._instance,
+  &::city::person::v1::_BikeAttribute_default_instance_._instance,
+  &::city::person::v1::_PersonProfile_default_instance_._instance,
+  &::city::person::v1::_Person_LabelsEntry_DoNotUse_default_instance_._instance,
+  &::city::person::v1::_Person_default_instance_._instance,
+  &::city::person::v1::_Persons_default_instance_._instance,
 };
 
-// This function exists to be marked as weak.
-// It can significantly speed up compilation by breaking up LLVM's SCC
-// in the .pb.cc translation units. Large translation units see a
-// reduction of more than 35% of walltime for optimized builds. Without
-// the weak attribute all the messages in the file, including all the
-// vtables and everything they use become part of the same SCC through
-// a cycle like:
-// GetMetadata -> descriptor table -> default instances ->
-//   vtables -> GetMetadata
-// By adding a weak function here we break the connection from the
-// individual vtables back into the descriptor table.
+const char descriptor_table_protodef_city_2fperson_2fv1_2fperson_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
+  "\n\033city/person/v1/person.proto\022\016city.pers"
+  "on.v1\032\025city/geo/v2/geo.proto\032\027city/trip/"
+  "v2/trip.proto\"\256\002\n\017PersonAttribute\022\026\n\006len"
+  "gth\030\002 \001(\001R\006length\022\024\n\005width\030\003 \001(\001R\005width\022"
+  "\033\n\tmax_speed\030\004 \001(\001R\010maxSpeed\022)\n\020max_acce"
+  "leration\030\005 \001(\001R\017maxAcceleration\0228\n\030max_b"
+  "raking_acceleration\030\006 \001(\001R\026maxBrakingAcc"
+  "eleration\022-\n\022usual_acceleration\030\007 \001(\001R\021u"
+  "sualAcceleration\022<\n\032usual_braking_accele"
+  "ration\030\010 \001(\001R\030usualBrakingAcceleration\"~"
+  "\n\020VehicleAttribute\022,\n\022lane_change_length"
+  "\030\001 \001(\001R\020laneChangeLength\022\027\n\007min_gap\030\002 \001("
+  "\001R\006minGap\022\031\n\005model\030\003 \001(\tH\000R\005model\210\001\001B\010\n\006"
+  "_model\"h\n\014BusAttribute\022\027\n\007line_id\030\001 \001(\005R"
+  "\006lineId\022\032\n\010capacity\030\002 \001(\005R\010capacity\022\031\n\005m"
+  "odel\030\003 \001(\tH\000R\005model\210\001\001B\010\n\006_model\"P\n\023Pede"
+  "strianAttribute\022\024\n\005speed\030\001 \001(\001R\005speed\022\031\n"
+  "\005model\030\002 \001(\tH\000R\005model\210\001\001B\010\n\006_model\"J\n\rBi"
+  "keAttribute\022\024\n\005speed\030\001 \001(\001R\005speed\022\031\n\005mod"
+  "el\030\002 \001(\tH\000R\005model\210\001\001B\010\n\006_model\"\311\001\n\rPerso"
+  "nProfile\022\020\n\003age\030\001 \001(\005R\003age\0227\n\teducation\030"
+  "\002 \001(\0162\031.city.person.v1.EducationR\teducat"
+  "ion\022.\n\006gender\030\003 \001(\0162\026.city.person.v1.Gen"
+  "derR\006gender\022=\n\013consumption\030\004 \001(\0162\033.city."
+  "person.v1.ConsumptionR\013consumption\"\221\006\n\006P"
+  "erson\022\016\n\002id\030\001 \001(\005R\002id\022=\n\tattribute\030\002 \001(\013"
+  "2\037.city.person.v1.PersonAttributeR\tattri"
+  "bute\022)\n\004home\030\003 \001(\0132\025.city.geo.v2.Positio"
+  "nR\004home\0224\n\tschedules\030\004 \003(\0132\026.city.trip.v"
+  "2.ScheduleR\tschedules\022R\n\021vehicle_attribu"
+  "te\030\007 \001(\0132 .city.person.v1.VehicleAttribu"
+  "teH\000R\020vehicleAttribute\210\001\001\022F\n\rbus_attribu"
+  "te\030\010 \001(\0132\034.city.person.v1.BusAttributeH\001"
+  "R\014busAttribute\210\001\001\022[\n\024pedestrian_attribut"
+  "e\030\014 \001(\0132#.city.person.v1.PedestrianAttri"
+  "buteH\002R\023pedestrianAttribute\210\001\001\022I\n\016bike_a"
+  "ttribute\030\t \001(\0132\035.city.person.v1.BikeAttr"
+  "ibuteH\003R\rbikeAttribute\210\001\001\022:\n\006labels\030\n \003("
+  "\0132\".city.person.v1.Person.LabelsEntryR\006l"
+  "abels\022<\n\007profile\030\013 \001(\0132\035.city.person.v1."
+  "PersonProfileH\004R\007profile\210\001\001\0329\n\013LabelsEnt"
+  "ry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005val"
+  "ue:\0028\001B\024\n\022_vehicle_attributeB\020\n\016_bus_att"
+  "ributeB\027\n\025_pedestrian_attributeB\021\n\017_bike"
+  "_attributeB\n\n\010_profile\";\n\007Persons\0220\n\007per"
+  "sons\030\001 \003(\0132\026.city.person.v1.PersonR\007pers"
+  "ons*\334\001\n\tEducation\022\031\n\025EDUCATION_UNSPECIFI"
+  "ED\020\000\022\024\n\020EDUCATION_DOCTOR\020\001\022\024\n\020EDUCATION_"
+  "MASTER\020\002\022\026\n\022EDUCATION_BACHELOR\020\003\022\031\n\025EDUC"
+  "ATION_HIGH_SCHOOL\020\004\022 \n\034EDUCATION_JUNIOR_"
+  "HIGH_SCHOOL\020\005\022\034\n\030EDUCATION_PRIMARY_SCHOO"
+  "L\020\006\022\025\n\021EDUCATION_COLLEGE\020\007*D\n\006Gender\022\026\n\022"
+  "GENDER_UNSPECIFIED\020\000\022\017\n\013GENDER_MALE\020\001\022\021\n"
+  "\rGENDER_FEMALE\020\002*\256\001\n\013Consumption\022\033\n\027CONS"
+  "UMPTION_UNSPECIFIED\020\000\022\023\n\017CONSUMPTION_LOW"
+  "\020\001\022\036\n\032CONSUMPTION_RELATIVELY_LOW\020\002\022\026\n\022CO"
+  "NSUMPTION_MEDIUM\020\003\022\037\n\033CONSUMPTION_RELATI"
+  "VELY_HIGH\020\004\022\024\n\020CONSUMPTION_HIGH\020\005B\261\001\n\022co"
+  "m.city.person.v1B\013PersonProtoP\001Z4git.fib"
+  "lab.net/sim/protos/go/city/person/v1;per"
+  "sonv1\242\002\003CPX\252\002\016City.Person.V1\312\002\016City\\Pers"
+  "on\\V1\342\002\032City\\Person\\V1\\GPBMetadata\352\002\020Cit"
+  "y::Person::V1b\006proto3"
+  ;
+static const ::_pbi::DescriptorTable* const descriptor_table_city_2fperson_2fv1_2fperson_2eproto_deps[2] = {
+  &::descriptor_table_city_2fgeo_2fv2_2fgeo_2eproto,
+  &::descriptor_table_city_2ftrip_2fv2_2ftrip_2eproto,
+};
+static ::_pbi::once_flag descriptor_table_city_2fperson_2fv1_2fperson_2eproto_once;
+const ::_pbi::DescriptorTable descriptor_table_city_2fperson_2fv1_2fperson_2eproto = {
+    false, false, 2501, descriptor_table_protodef_city_2fperson_2fv1_2fperson_2eproto,
+    "city/person/v1/person.proto",
+    &descriptor_table_city_2fperson_2fv1_2fperson_2eproto_once, descriptor_table_city_2fperson_2fv1_2fperson_2eproto_deps, 2, 9,
+    schemas, file_default_instances, TableStruct_city_2fperson_2fv1_2fperson_2eproto::offsets,
+    file_level_metadata_city_2fperson_2fv1_2fperson_2eproto, file_level_enum_descriptors_city_2fperson_2fv1_2fperson_2eproto,
+    file_level_service_descriptors_city_2fperson_2fv1_2fperson_2eproto,
+};
 PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_city_2fperson_2fv1_2fperson_2eproto_getter() {
   return &descriptor_table_city_2fperson_2fv1_2fperson_2eproto;
 }
+
 // Force running AddDescriptors() at dynamic initialization time.
-PROTOBUF_ATTRIBUTE_INIT_PRIORITY2
-static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_city_2fperson_2fv1_2fperson_2eproto(&descriptor_table_city_2fperson_2fv1_2fperson_2eproto);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_city_2fperson_2fv1_2fperson_2eproto(&descriptor_table_city_2fperson_2fv1_2fperson_2eproto);
 namespace city {
 namespace person {
 namespace v1 {
-const ::google::protobuf::EnumDescriptor* Education_descriptor() {
-  ::google::protobuf::internal::AssignDescriptors(&descriptor_table_city_2fperson_2fv1_2fperson_2eproto);
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* Education_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_city_2fperson_2fv1_2fperson_2eproto);
   return file_level_enum_descriptors_city_2fperson_2fv1_2fperson_2eproto[0];
 }
 bool Education_IsValid(int value) {
@@ -495,8 +416,9 @@ bool Education_IsValid(int value) {
       return false;
   }
 }
-const ::google::protobuf::EnumDescriptor* Gender_descriptor() {
-  ::google::protobuf::internal::AssignDescriptors(&descriptor_table_city_2fperson_2fv1_2fperson_2eproto);
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* Gender_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_city_2fperson_2fv1_2fperson_2eproto);
   return file_level_enum_descriptors_city_2fperson_2fv1_2fperson_2eproto[1];
 }
 bool Gender_IsValid(int value) {
@@ -509,8 +431,9 @@ bool Gender_IsValid(int value) {
       return false;
   }
 }
-const ::google::protobuf::EnumDescriptor* Consumption_descriptor() {
-  ::google::protobuf::internal::AssignDescriptors(&descriptor_table_city_2fperson_2fv1_2fperson_2eproto);
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* Consumption_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_city_2fperson_2fv1_2fperson_2eproto);
   return file_level_enum_descriptors_city_2fperson_2fv1_2fperson_2eproto[2];
 }
 bool Consumption_IsValid(int value) {
@@ -526,387 +449,393 @@ bool Consumption_IsValid(int value) {
       return false;
   }
 }
+
+
 // ===================================================================
 
 class PersonAttribute::_Internal {
  public:
 };
 
-PersonAttribute::PersonAttribute(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+PersonAttribute::PersonAttribute(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.person.v1.PersonAttribute)
 }
 PersonAttribute::PersonAttribute(const PersonAttribute& from)
-    : ::google::protobuf::Message(), _impl_(from._impl_) {
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  PersonAttribute* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.length_){}
+    , decltype(_impl_.width_){}
+    , decltype(_impl_.max_speed_){}
+    , decltype(_impl_.max_acceleration_){}
+    , decltype(_impl_.max_braking_acceleration_){}
+    , decltype(_impl_.usual_acceleration_){}
+    , decltype(_impl_.usual_braking_acceleration_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&_impl_.length_, &from._impl_.length_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.usual_braking_acceleration_) -
+    reinterpret_cast<char*>(&_impl_.length_)) + sizeof(_impl_.usual_braking_acceleration_));
   // @@protoc_insertion_point(copy_constructor:city.person.v1.PersonAttribute)
 }
-inline void PersonAttribute::SharedCtor(::_pb::Arena* arena) {
+
+inline void PersonAttribute::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.length_){0},
-      decltype(_impl_.width_){0},
-      decltype(_impl_.max_speed_){0},
-      decltype(_impl_.max_acceleration_){0},
-      decltype(_impl_.max_braking_acceleration_){0},
-      decltype(_impl_.usual_acceleration_){0},
-      decltype(_impl_.usual_braking_acceleration_){0},
-      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.length_){0}
+    , decltype(_impl_.width_){0}
+    , decltype(_impl_.max_speed_){0}
+    , decltype(_impl_.max_acceleration_){0}
+    , decltype(_impl_.max_braking_acceleration_){0}
+    , decltype(_impl_.usual_acceleration_){0}
+    , decltype(_impl_.usual_braking_acceleration_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 PersonAttribute::~PersonAttribute() {
   // @@protoc_insertion_point(destructor:city.person.v1.PersonAttribute)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void PersonAttribute::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
+
 void PersonAttribute::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void PersonAttribute::Clear() {
+void PersonAttribute::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.person.v1.PersonAttribute)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&_impl_.length_, 0, static_cast<::size_t>(
+  ::memset(&_impl_.length_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_impl_.usual_braking_acceleration_) -
       reinterpret_cast<char*>(&_impl_.length_)) + sizeof(_impl_.usual_braking_acceleration_));
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* PersonAttribute::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* PersonAttribute::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // double length = 2 [json_name = "length"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 17)) {
+          _impl_.length_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // double width = 3 [json_name = "width"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 25)) {
+          _impl_.width_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // double max_speed = 4 [json_name = "maxSpeed"];
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 33)) {
+          _impl_.max_speed_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // double max_acceleration = 5 [json_name = "maxAcceleration"];
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 41)) {
+          _impl_.max_acceleration_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // double max_braking_acceleration = 6 [json_name = "maxBrakingAcceleration"];
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 49)) {
+          _impl_.max_braking_acceleration_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // double usual_acceleration = 7 [json_name = "usualAcceleration"];
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 57)) {
+          _impl_.usual_acceleration_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // double usual_braking_acceleration = 8 [json_name = "usualBrakingAcceleration"];
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 65)) {
+          _impl_.usual_braking_acceleration_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<3, 7, 0, 0, 2> PersonAttribute::_table_ = {
-  {
-    0,  // no _has_bits_
-    0, // no _extensions_
-    8, 56,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967041,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    7,  // num_field_entries
-    0,  // num_aux_entries
-    offsetof(decltype(_table_), field_names),  // no aux_entries
-    &_PersonAttribute_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    // double usual_braking_acceleration = 8 [json_name = "usualBrakingAcceleration"];
-    {::_pbi::TcParser::FastF64S1,
-     {65, 63, 0, PROTOBUF_FIELD_OFFSET(PersonAttribute, _impl_.usual_braking_acceleration_)}},
-    {::_pbi::TcParser::MiniParse, {}},
-    // double length = 2 [json_name = "length"];
-    {::_pbi::TcParser::FastF64S1,
-     {17, 63, 0, PROTOBUF_FIELD_OFFSET(PersonAttribute, _impl_.length_)}},
-    // double width = 3 [json_name = "width"];
-    {::_pbi::TcParser::FastF64S1,
-     {25, 63, 0, PROTOBUF_FIELD_OFFSET(PersonAttribute, _impl_.width_)}},
-    // double max_speed = 4 [json_name = "maxSpeed"];
-    {::_pbi::TcParser::FastF64S1,
-     {33, 63, 0, PROTOBUF_FIELD_OFFSET(PersonAttribute, _impl_.max_speed_)}},
-    // double max_acceleration = 5 [json_name = "maxAcceleration"];
-    {::_pbi::TcParser::FastF64S1,
-     {41, 63, 0, PROTOBUF_FIELD_OFFSET(PersonAttribute, _impl_.max_acceleration_)}},
-    // double max_braking_acceleration = 6 [json_name = "maxBrakingAcceleration"];
-    {::_pbi::TcParser::FastF64S1,
-     {49, 63, 0, PROTOBUF_FIELD_OFFSET(PersonAttribute, _impl_.max_braking_acceleration_)}},
-    // double usual_acceleration = 7 [json_name = "usualAcceleration"];
-    {::_pbi::TcParser::FastF64S1,
-     {57, 63, 0, PROTOBUF_FIELD_OFFSET(PersonAttribute, _impl_.usual_acceleration_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // double length = 2 [json_name = "length"];
-    {PROTOBUF_FIELD_OFFSET(PersonAttribute, _impl_.length_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-    // double width = 3 [json_name = "width"];
-    {PROTOBUF_FIELD_OFFSET(PersonAttribute, _impl_.width_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-    // double max_speed = 4 [json_name = "maxSpeed"];
-    {PROTOBUF_FIELD_OFFSET(PersonAttribute, _impl_.max_speed_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-    // double max_acceleration = 5 [json_name = "maxAcceleration"];
-    {PROTOBUF_FIELD_OFFSET(PersonAttribute, _impl_.max_acceleration_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-    // double max_braking_acceleration = 6 [json_name = "maxBrakingAcceleration"];
-    {PROTOBUF_FIELD_OFFSET(PersonAttribute, _impl_.max_braking_acceleration_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-    // double usual_acceleration = 7 [json_name = "usualAcceleration"];
-    {PROTOBUF_FIELD_OFFSET(PersonAttribute, _impl_.usual_acceleration_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-    // double usual_braking_acceleration = 8 [json_name = "usualBrakingAcceleration"];
-    {PROTOBUF_FIELD_OFFSET(PersonAttribute, _impl_.usual_braking_acceleration_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-  }},
-  // no aux_entries
-  {{
-  }},
-};
-
-::uint8_t* PersonAttribute::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* PersonAttribute::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.person.v1.PersonAttribute)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // double length = 2 [json_name = "length"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_length = this->_internal_length();
-  ::uint64_t raw_length;
+  uint64_t raw_length;
   memcpy(&raw_length, &tmp_length, sizeof(tmp_length));
   if (raw_length != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        2, this->_internal_length(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(2, this->_internal_length(), target);
   }
 
   // double width = 3 [json_name = "width"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_width = this->_internal_width();
-  ::uint64_t raw_width;
+  uint64_t raw_width;
   memcpy(&raw_width, &tmp_width, sizeof(tmp_width));
   if (raw_width != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        3, this->_internal_width(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(3, this->_internal_width(), target);
   }
 
   // double max_speed = 4 [json_name = "maxSpeed"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_max_speed = this->_internal_max_speed();
-  ::uint64_t raw_max_speed;
+  uint64_t raw_max_speed;
   memcpy(&raw_max_speed, &tmp_max_speed, sizeof(tmp_max_speed));
   if (raw_max_speed != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        4, this->_internal_max_speed(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(4, this->_internal_max_speed(), target);
   }
 
   // double max_acceleration = 5 [json_name = "maxAcceleration"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_max_acceleration = this->_internal_max_acceleration();
-  ::uint64_t raw_max_acceleration;
+  uint64_t raw_max_acceleration;
   memcpy(&raw_max_acceleration, &tmp_max_acceleration, sizeof(tmp_max_acceleration));
   if (raw_max_acceleration != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        5, this->_internal_max_acceleration(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(5, this->_internal_max_acceleration(), target);
   }
 
   // double max_braking_acceleration = 6 [json_name = "maxBrakingAcceleration"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_max_braking_acceleration = this->_internal_max_braking_acceleration();
-  ::uint64_t raw_max_braking_acceleration;
+  uint64_t raw_max_braking_acceleration;
   memcpy(&raw_max_braking_acceleration, &tmp_max_braking_acceleration, sizeof(tmp_max_braking_acceleration));
   if (raw_max_braking_acceleration != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        6, this->_internal_max_braking_acceleration(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(6, this->_internal_max_braking_acceleration(), target);
   }
 
   // double usual_acceleration = 7 [json_name = "usualAcceleration"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_usual_acceleration = this->_internal_usual_acceleration();
-  ::uint64_t raw_usual_acceleration;
+  uint64_t raw_usual_acceleration;
   memcpy(&raw_usual_acceleration, &tmp_usual_acceleration, sizeof(tmp_usual_acceleration));
   if (raw_usual_acceleration != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        7, this->_internal_usual_acceleration(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(7, this->_internal_usual_acceleration(), target);
   }
 
   // double usual_braking_acceleration = 8 [json_name = "usualBrakingAcceleration"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_usual_braking_acceleration = this->_internal_usual_braking_acceleration();
-  ::uint64_t raw_usual_braking_acceleration;
+  uint64_t raw_usual_braking_acceleration;
   memcpy(&raw_usual_braking_acceleration, &tmp_usual_braking_acceleration, sizeof(tmp_usual_braking_acceleration));
   if (raw_usual_braking_acceleration != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        8, this->_internal_usual_braking_acceleration(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(8, this->_internal_usual_braking_acceleration(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.person.v1.PersonAttribute)
   return target;
 }
 
-::size_t PersonAttribute::ByteSizeLong() const {
+size_t PersonAttribute::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.person.v1.PersonAttribute)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // double length = 2 [json_name = "length"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_length = this->_internal_length();
-  ::uint64_t raw_length;
+  uint64_t raw_length;
   memcpy(&raw_length, &tmp_length, sizeof(tmp_length));
   if (raw_length != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   // double width = 3 [json_name = "width"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_width = this->_internal_width();
-  ::uint64_t raw_width;
+  uint64_t raw_width;
   memcpy(&raw_width, &tmp_width, sizeof(tmp_width));
   if (raw_width != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   // double max_speed = 4 [json_name = "maxSpeed"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_max_speed = this->_internal_max_speed();
-  ::uint64_t raw_max_speed;
+  uint64_t raw_max_speed;
   memcpy(&raw_max_speed, &tmp_max_speed, sizeof(tmp_max_speed));
   if (raw_max_speed != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   // double max_acceleration = 5 [json_name = "maxAcceleration"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_max_acceleration = this->_internal_max_acceleration();
-  ::uint64_t raw_max_acceleration;
+  uint64_t raw_max_acceleration;
   memcpy(&raw_max_acceleration, &tmp_max_acceleration, sizeof(tmp_max_acceleration));
   if (raw_max_acceleration != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   // double max_braking_acceleration = 6 [json_name = "maxBrakingAcceleration"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_max_braking_acceleration = this->_internal_max_braking_acceleration();
-  ::uint64_t raw_max_braking_acceleration;
+  uint64_t raw_max_braking_acceleration;
   memcpy(&raw_max_braking_acceleration, &tmp_max_braking_acceleration, sizeof(tmp_max_braking_acceleration));
   if (raw_max_braking_acceleration != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   // double usual_acceleration = 7 [json_name = "usualAcceleration"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_usual_acceleration = this->_internal_usual_acceleration();
-  ::uint64_t raw_usual_acceleration;
+  uint64_t raw_usual_acceleration;
   memcpy(&raw_usual_acceleration, &tmp_usual_acceleration, sizeof(tmp_usual_acceleration));
   if (raw_usual_acceleration != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   // double usual_braking_acceleration = 8 [json_name = "usualBrakingAcceleration"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_usual_braking_acceleration = this->_internal_usual_braking_acceleration();
-  ::uint64_t raw_usual_braking_acceleration;
+  uint64_t raw_usual_braking_acceleration;
   memcpy(&raw_usual_braking_acceleration, &tmp_usual_braking_acceleration, sizeof(tmp_usual_braking_acceleration));
   if (raw_usual_braking_acceleration != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData PersonAttribute::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData PersonAttribute::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     PersonAttribute::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*PersonAttribute::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*PersonAttribute::GetClassData() const { return &_class_data_; }
 
 
-void PersonAttribute::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void PersonAttribute::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<PersonAttribute*>(&to_msg);
   auto& from = static_cast<const PersonAttribute&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.person.v1.PersonAttribute)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_length = from._internal_length();
-  ::uint64_t raw_length;
+  uint64_t raw_length;
   memcpy(&raw_length, &tmp_length, sizeof(tmp_length));
   if (raw_length != 0) {
     _this->_internal_set_length(from._internal_length());
   }
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_width = from._internal_width();
-  ::uint64_t raw_width;
+  uint64_t raw_width;
   memcpy(&raw_width, &tmp_width, sizeof(tmp_width));
   if (raw_width != 0) {
     _this->_internal_set_width(from._internal_width());
   }
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_max_speed = from._internal_max_speed();
-  ::uint64_t raw_max_speed;
+  uint64_t raw_max_speed;
   memcpy(&raw_max_speed, &tmp_max_speed, sizeof(tmp_max_speed));
   if (raw_max_speed != 0) {
     _this->_internal_set_max_speed(from._internal_max_speed());
   }
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_max_acceleration = from._internal_max_acceleration();
-  ::uint64_t raw_max_acceleration;
+  uint64_t raw_max_acceleration;
   memcpy(&raw_max_acceleration, &tmp_max_acceleration, sizeof(tmp_max_acceleration));
   if (raw_max_acceleration != 0) {
     _this->_internal_set_max_acceleration(from._internal_max_acceleration());
   }
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_max_braking_acceleration = from._internal_max_braking_acceleration();
-  ::uint64_t raw_max_braking_acceleration;
+  uint64_t raw_max_braking_acceleration;
   memcpy(&raw_max_braking_acceleration, &tmp_max_braking_acceleration, sizeof(tmp_max_braking_acceleration));
   if (raw_max_braking_acceleration != 0) {
     _this->_internal_set_max_braking_acceleration(from._internal_max_braking_acceleration());
   }
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_usual_acceleration = from._internal_usual_acceleration();
-  ::uint64_t raw_usual_acceleration;
+  uint64_t raw_usual_acceleration;
   memcpy(&raw_usual_acceleration, &tmp_usual_acceleration, sizeof(tmp_usual_acceleration));
   if (raw_usual_acceleration != 0) {
     _this->_internal_set_usual_acceleration(from._internal_usual_acceleration());
   }
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_usual_braking_acceleration = from._internal_usual_braking_acceleration();
-  ::uint64_t raw_usual_braking_acceleration;
+  uint64_t raw_usual_braking_acceleration;
   memcpy(&raw_usual_braking_acceleration, &tmp_usual_braking_acceleration, sizeof(tmp_usual_braking_acceleration));
   if (raw_usual_braking_acceleration != 0) {
     _this->_internal_set_usual_braking_acceleration(from._internal_usual_braking_acceleration());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void PersonAttribute::CopyFrom(const PersonAttribute& from) {
@@ -916,14 +845,14 @@ void PersonAttribute::CopyFrom(const PersonAttribute& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool PersonAttribute::IsInitialized() const {
+bool PersonAttribute::IsInitialized() const {
   return true;
 }
 
 void PersonAttribute::InternalSwap(PersonAttribute* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::google::protobuf::internal::memswap<
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(PersonAttribute, _impl_.usual_braking_acceleration_)
       + sizeof(PersonAttribute::_impl_.usual_braking_acceleration_)
       - PROTOBUF_FIELD_OFFSET(PersonAttribute, _impl_.length_)>(
@@ -931,83 +860,91 @@ void PersonAttribute::InternalSwap(PersonAttribute* other) {
           reinterpret_cast<char*>(&other->_impl_.length_));
 }
 
-::google::protobuf::Metadata PersonAttribute::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata PersonAttribute::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fperson_2fv1_2fperson_2eproto_getter, &descriptor_table_city_2fperson_2fv1_2fperson_2eproto_once,
       file_level_metadata_city_2fperson_2fv1_2fperson_2eproto[0]);
 }
+
 // ===================================================================
 
 class VehicleAttribute::_Internal {
  public:
   using HasBits = decltype(std::declval<VehicleAttribute>()._impl_._has_bits_);
-  static constexpr ::int32_t kHasBitsOffset =
-    8 * PROTOBUF_FIELD_OFFSET(VehicleAttribute, _impl_._has_bits_);
   static void set_has_model(HasBits* has_bits) {
     (*has_bits)[0] |= 1u;
   }
 };
 
-VehicleAttribute::VehicleAttribute(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+VehicleAttribute::VehicleAttribute(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.person.v1.VehicleAttribute)
 }
-VehicleAttribute::VehicleAttribute(const VehicleAttribute& from) : ::google::protobuf::Message() {
-  VehicleAttribute* const _this = this;
-  (void)_this;
+VehicleAttribute::VehicleAttribute(const VehicleAttribute& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  VehicleAttribute* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){from._impl_._has_bits_},
-      /*decltype(_impl_._cached_size_)*/ {},
-      decltype(_impl_.model_){},
-      decltype(_impl_.lane_change_length_){},
-      decltype(_impl_.min_gap_){},
-  };
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+      decltype(_impl_._has_bits_){from._impl_._has_bits_}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.model_){}
+    , decltype(_impl_.lane_change_length_){}
+    , decltype(_impl_.min_gap_){}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   _impl_.model_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        _impl_.model_.Set("", GetArenaForAllocation());
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
-    _this->_impl_.model_.Set(from._internal_model(), _this->GetArenaForAllocation());
+    _impl_.model_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (from._internal_has_model()) {
+    _this->_impl_.model_.Set(from._internal_model(), 
+      _this->GetArenaForAllocation());
   }
   ::memcpy(&_impl_.lane_change_length_, &from._impl_.lane_change_length_,
-    static_cast<::size_t>(reinterpret_cast<char*>(&_impl_.min_gap_) -
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.min_gap_) -
     reinterpret_cast<char*>(&_impl_.lane_change_length_)) + sizeof(_impl_.min_gap_));
-
   // @@protoc_insertion_point(copy_constructor:city.person.v1.VehicleAttribute)
 }
-inline void VehicleAttribute::SharedCtor(::_pb::Arena* arena) {
+
+inline void VehicleAttribute::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){},
-      /*decltype(_impl_._cached_size_)*/ {},
-      decltype(_impl_.model_){},
-      decltype(_impl_.lane_change_length_){0},
-      decltype(_impl_.min_gap_){0},
+      decltype(_impl_._has_bits_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.model_){}
+    , decltype(_impl_.lane_change_length_){0}
+    , decltype(_impl_.min_gap_){0}
   };
   _impl_.model_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        _impl_.model_.Set("", GetArenaForAllocation());
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.model_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
+
 VehicleAttribute::~VehicleAttribute() {
   // @@protoc_insertion_point(destructor:city.person.v1.VehicleAttribute)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void VehicleAttribute::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.model_.Destroy();
 }
+
 void VehicleAttribute::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void VehicleAttribute::Clear() {
+void VehicleAttribute::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.person.v1.VehicleAttribute)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1015,188 +952,184 @@ PROTOBUF_NOINLINE void VehicleAttribute::Clear() {
   if (cached_has_bits & 0x00000001u) {
     _impl_.model_.ClearNonDefaultToEmpty();
   }
-  ::memset(&_impl_.lane_change_length_, 0, static_cast<::size_t>(
+  ::memset(&_impl_.lane_change_length_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_impl_.min_gap_) -
       reinterpret_cast<char*>(&_impl_.lane_change_length_)) + sizeof(_impl_.min_gap_));
   _impl_._has_bits_.Clear();
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* VehicleAttribute::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* VehicleAttribute::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  _Internal::HasBits has_bits{};
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // double lane_change_length = 1 [json_name = "laneChangeLength"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 9)) {
+          _impl_.lane_change_length_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // double min_gap = 2 [json_name = "minGap"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 17)) {
+          _impl_.min_gap_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional string model = 3 [json_name = "model"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+          auto str = _internal_mutable_model();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "city.person.v1.VehicleAttribute.model"));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  _impl_._has_bits_.Or(has_bits);
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<2, 3, 0, 45, 2> VehicleAttribute::_table_ = {
-  {
-    PROTOBUF_FIELD_OFFSET(VehicleAttribute, _impl_._has_bits_),
-    0, // no _extensions_
-    3, 24,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967288,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    3,  // num_field_entries
-    0,  // num_aux_entries
-    offsetof(decltype(_table_), field_names),  // no aux_entries
-    &_VehicleAttribute_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    {::_pbi::TcParser::MiniParse, {}},
-    // double lane_change_length = 1 [json_name = "laneChangeLength"];
-    {::_pbi::TcParser::FastF64S1,
-     {9, 63, 0, PROTOBUF_FIELD_OFFSET(VehicleAttribute, _impl_.lane_change_length_)}},
-    // double min_gap = 2 [json_name = "minGap"];
-    {::_pbi::TcParser::FastF64S1,
-     {17, 63, 0, PROTOBUF_FIELD_OFFSET(VehicleAttribute, _impl_.min_gap_)}},
-    // optional string model = 3 [json_name = "model"];
-    {::_pbi::TcParser::FastUS1,
-     {26, 0, 0, PROTOBUF_FIELD_OFFSET(VehicleAttribute, _impl_.model_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // double lane_change_length = 1 [json_name = "laneChangeLength"];
-    {PROTOBUF_FIELD_OFFSET(VehicleAttribute, _impl_.lane_change_length_), -1, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-    // double min_gap = 2 [json_name = "minGap"];
-    {PROTOBUF_FIELD_OFFSET(VehicleAttribute, _impl_.min_gap_), -1, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-    // optional string model = 3 [json_name = "model"];
-    {PROTOBUF_FIELD_OFFSET(VehicleAttribute, _impl_.model_), _Internal::kHasBitsOffset + 0, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-  }},
-  // no aux_entries
-  {{
-    "\37\0\0\5\0\0\0\0"
-    "city.person.v1.VehicleAttribute"
-    "model"
-  }},
-};
-
-::uint8_t* VehicleAttribute::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* VehicleAttribute::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.person.v1.VehicleAttribute)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // double lane_change_length = 1 [json_name = "laneChangeLength"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_lane_change_length = this->_internal_lane_change_length();
-  ::uint64_t raw_lane_change_length;
+  uint64_t raw_lane_change_length;
   memcpy(&raw_lane_change_length, &tmp_lane_change_length, sizeof(tmp_lane_change_length));
   if (raw_lane_change_length != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        1, this->_internal_lane_change_length(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(1, this->_internal_lane_change_length(), target);
   }
 
   // double min_gap = 2 [json_name = "minGap"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_min_gap = this->_internal_min_gap();
-  ::uint64_t raw_min_gap;
+  uint64_t raw_min_gap;
   memcpy(&raw_min_gap, &tmp_min_gap, sizeof(tmp_min_gap));
   if (raw_min_gap != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        2, this->_internal_min_gap(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(2, this->_internal_min_gap(), target);
   }
 
-  cached_has_bits = _impl_._has_bits_[0];
   // optional string model = 3 [json_name = "model"];
-  if (cached_has_bits & 0x00000001u) {
-    const std::string& _s = this->_internal_model();
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "city.person.v1.VehicleAttribute.model");
-    target = stream->WriteStringMaybeAliased(3, _s, target);
+  if (_internal_has_model()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_model().data(), static_cast<int>(this->_internal_model().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "city.person.v1.VehicleAttribute.model");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_model(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.person.v1.VehicleAttribute)
   return target;
 }
 
-::size_t VehicleAttribute::ByteSizeLong() const {
+size_t VehicleAttribute::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.person.v1.VehicleAttribute)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // optional string model = 3 [json_name = "model"];
   cached_has_bits = _impl_._has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
-    total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
-                                    this->_internal_model());
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_model());
   }
 
   // double lane_change_length = 1 [json_name = "laneChangeLength"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_lane_change_length = this->_internal_lane_change_length();
-  ::uint64_t raw_lane_change_length;
+  uint64_t raw_lane_change_length;
   memcpy(&raw_lane_change_length, &tmp_lane_change_length, sizeof(tmp_lane_change_length));
   if (raw_lane_change_length != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   // double min_gap = 2 [json_name = "minGap"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_min_gap = this->_internal_min_gap();
-  ::uint64_t raw_min_gap;
+  uint64_t raw_min_gap;
   memcpy(&raw_min_gap, &tmp_min_gap, sizeof(tmp_min_gap));
   if (raw_min_gap != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData VehicleAttribute::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData VehicleAttribute::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     VehicleAttribute::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*VehicleAttribute::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*VehicleAttribute::GetClassData() const { return &_class_data_; }
 
 
-void VehicleAttribute::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void VehicleAttribute::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<VehicleAttribute*>(&to_msg);
   auto& from = static_cast<const VehicleAttribute&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.person.v1.VehicleAttribute)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+  if (from._internal_has_model()) {
     _this->_internal_set_model(from._internal_model());
   }
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_lane_change_length = from._internal_lane_change_length();
-  ::uint64_t raw_lane_change_length;
+  uint64_t raw_lane_change_length;
   memcpy(&raw_lane_change_length, &tmp_lane_change_length, sizeof(tmp_lane_change_length));
   if (raw_lane_change_length != 0) {
     _this->_internal_set_lane_change_length(from._internal_lane_change_length());
   }
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_min_gap = from._internal_min_gap();
-  ::uint64_t raw_min_gap;
+  uint64_t raw_min_gap;
   memcpy(&raw_min_gap, &tmp_min_gap, sizeof(tmp_min_gap));
   if (raw_min_gap != 0) {
     _this->_internal_set_min_gap(from._internal_min_gap());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void VehicleAttribute::CopyFrom(const VehicleAttribute& from) {
@@ -1206,7 +1139,7 @@ void VehicleAttribute::CopyFrom(const VehicleAttribute& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool VehicleAttribute::IsInitialized() const {
+bool VehicleAttribute::IsInitialized() const {
   return true;
 }
 
@@ -1216,9 +1149,11 @@ void VehicleAttribute::InternalSwap(VehicleAttribute* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.model_, lhs_arena,
-                                       &other->_impl_.model_, rhs_arena);
-  ::google::protobuf::internal::memswap<
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.model_, lhs_arena,
+      &other->_impl_.model_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(VehicleAttribute, _impl_.min_gap_)
       + sizeof(VehicleAttribute::_impl_.min_gap_)
       - PROTOBUF_FIELD_OFFSET(VehicleAttribute, _impl_.lane_change_length_)>(
@@ -1226,83 +1161,91 @@ void VehicleAttribute::InternalSwap(VehicleAttribute* other) {
           reinterpret_cast<char*>(&other->_impl_.lane_change_length_));
 }
 
-::google::protobuf::Metadata VehicleAttribute::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata VehicleAttribute::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fperson_2fv1_2fperson_2eproto_getter, &descriptor_table_city_2fperson_2fv1_2fperson_2eproto_once,
       file_level_metadata_city_2fperson_2fv1_2fperson_2eproto[1]);
 }
+
 // ===================================================================
 
 class BusAttribute::_Internal {
  public:
   using HasBits = decltype(std::declval<BusAttribute>()._impl_._has_bits_);
-  static constexpr ::int32_t kHasBitsOffset =
-    8 * PROTOBUF_FIELD_OFFSET(BusAttribute, _impl_._has_bits_);
   static void set_has_model(HasBits* has_bits) {
     (*has_bits)[0] |= 1u;
   }
 };
 
-BusAttribute::BusAttribute(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+BusAttribute::BusAttribute(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.person.v1.BusAttribute)
 }
-BusAttribute::BusAttribute(const BusAttribute& from) : ::google::protobuf::Message() {
-  BusAttribute* const _this = this;
-  (void)_this;
+BusAttribute::BusAttribute(const BusAttribute& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  BusAttribute* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){from._impl_._has_bits_},
-      /*decltype(_impl_._cached_size_)*/ {},
-      decltype(_impl_.model_){},
-      decltype(_impl_.line_id_){},
-      decltype(_impl_.capacity_){},
-  };
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+      decltype(_impl_._has_bits_){from._impl_._has_bits_}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.model_){}
+    , decltype(_impl_.line_id_){}
+    , decltype(_impl_.capacity_){}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   _impl_.model_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        _impl_.model_.Set("", GetArenaForAllocation());
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
-    _this->_impl_.model_.Set(from._internal_model(), _this->GetArenaForAllocation());
+    _impl_.model_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (from._internal_has_model()) {
+    _this->_impl_.model_.Set(from._internal_model(), 
+      _this->GetArenaForAllocation());
   }
   ::memcpy(&_impl_.line_id_, &from._impl_.line_id_,
-    static_cast<::size_t>(reinterpret_cast<char*>(&_impl_.capacity_) -
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.capacity_) -
     reinterpret_cast<char*>(&_impl_.line_id_)) + sizeof(_impl_.capacity_));
-
   // @@protoc_insertion_point(copy_constructor:city.person.v1.BusAttribute)
 }
-inline void BusAttribute::SharedCtor(::_pb::Arena* arena) {
+
+inline void BusAttribute::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){},
-      /*decltype(_impl_._cached_size_)*/ {},
-      decltype(_impl_.model_){},
-      decltype(_impl_.line_id_){0},
-      decltype(_impl_.capacity_){0},
+      decltype(_impl_._has_bits_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.model_){}
+    , decltype(_impl_.line_id_){0}
+    , decltype(_impl_.capacity_){0}
   };
   _impl_.model_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        _impl_.model_.Set("", GetArenaForAllocation());
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.model_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
+
 BusAttribute::~BusAttribute() {
   // @@protoc_insertion_point(destructor:city.person.v1.BusAttribute)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void BusAttribute::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.model_.Destroy();
 }
+
 void BusAttribute::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void BusAttribute::Clear() {
+void BusAttribute::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.person.v1.BusAttribute)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1310,151 +1253,151 @@ PROTOBUF_NOINLINE void BusAttribute::Clear() {
   if (cached_has_bits & 0x00000001u) {
     _impl_.model_.ClearNonDefaultToEmpty();
   }
-  ::memset(&_impl_.line_id_, 0, static_cast<::size_t>(
+  ::memset(&_impl_.line_id_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_impl_.capacity_) -
       reinterpret_cast<char*>(&_impl_.line_id_)) + sizeof(_impl_.capacity_));
   _impl_._has_bits_.Clear();
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* BusAttribute::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* BusAttribute::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  _Internal::HasBits has_bits{};
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 line_id = 1 [json_name = "lineId"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.line_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 capacity = 2 [json_name = "capacity"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _impl_.capacity_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional string model = 3 [json_name = "model"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+          auto str = _internal_mutable_model();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "city.person.v1.BusAttribute.model"));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  _impl_._has_bits_.Or(has_bits);
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<2, 3, 0, 41, 2> BusAttribute::_table_ = {
-  {
-    PROTOBUF_FIELD_OFFSET(BusAttribute, _impl_._has_bits_),
-    0, // no _extensions_
-    3, 24,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967288,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    3,  // num_field_entries
-    0,  // num_aux_entries
-    offsetof(decltype(_table_), field_names),  // no aux_entries
-    &_BusAttribute_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    {::_pbi::TcParser::MiniParse, {}},
-    // int32 line_id = 1 [json_name = "lineId"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(BusAttribute, _impl_.line_id_), 63>(),
-     {8, 63, 0, PROTOBUF_FIELD_OFFSET(BusAttribute, _impl_.line_id_)}},
-    // int32 capacity = 2 [json_name = "capacity"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(BusAttribute, _impl_.capacity_), 63>(),
-     {16, 63, 0, PROTOBUF_FIELD_OFFSET(BusAttribute, _impl_.capacity_)}},
-    // optional string model = 3 [json_name = "model"];
-    {::_pbi::TcParser::FastUS1,
-     {26, 0, 0, PROTOBUF_FIELD_OFFSET(BusAttribute, _impl_.model_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // int32 line_id = 1 [json_name = "lineId"];
-    {PROTOBUF_FIELD_OFFSET(BusAttribute, _impl_.line_id_), -1, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-    // int32 capacity = 2 [json_name = "capacity"];
-    {PROTOBUF_FIELD_OFFSET(BusAttribute, _impl_.capacity_), -1, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-    // optional string model = 3 [json_name = "model"];
-    {PROTOBUF_FIELD_OFFSET(BusAttribute, _impl_.model_), _Internal::kHasBitsOffset + 0, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-  }},
-  // no aux_entries
-  {{
-    "\33\0\0\5\0\0\0\0"
-    "city.person.v1.BusAttribute"
-    "model"
-  }},
-};
-
-::uint8_t* BusAttribute::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* BusAttribute::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.person.v1.BusAttribute)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // int32 line_id = 1 [json_name = "lineId"];
   if (this->_internal_line_id() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<1>(
-            stream, this->_internal_line_id(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_line_id(), target);
   }
 
   // int32 capacity = 2 [json_name = "capacity"];
   if (this->_internal_capacity() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<2>(
-            stream, this->_internal_capacity(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(2, this->_internal_capacity(), target);
   }
 
-  cached_has_bits = _impl_._has_bits_[0];
   // optional string model = 3 [json_name = "model"];
-  if (cached_has_bits & 0x00000001u) {
-    const std::string& _s = this->_internal_model();
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "city.person.v1.BusAttribute.model");
-    target = stream->WriteStringMaybeAliased(3, _s, target);
+  if (_internal_has_model()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_model().data(), static_cast<int>(this->_internal_model().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "city.person.v1.BusAttribute.model");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_model(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.person.v1.BusAttribute)
   return target;
 }
 
-::size_t BusAttribute::ByteSizeLong() const {
+size_t BusAttribute::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.person.v1.BusAttribute)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // optional string model = 3 [json_name = "model"];
   cached_has_bits = _impl_._has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
-    total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
-                                    this->_internal_model());
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_model());
   }
 
   // int32 line_id = 1 [json_name = "lineId"];
   if (this->_internal_line_id() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_line_id());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_line_id());
   }
 
   // int32 capacity = 2 [json_name = "capacity"];
   if (this->_internal_capacity() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_capacity());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_capacity());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData BusAttribute::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BusAttribute::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     BusAttribute::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*BusAttribute::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BusAttribute::GetClassData() const { return &_class_data_; }
 
 
-void BusAttribute::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void BusAttribute::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<BusAttribute*>(&to_msg);
   auto& from = static_cast<const BusAttribute&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.person.v1.BusAttribute)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+  if (from._internal_has_model()) {
     _this->_internal_set_model(from._internal_model());
   }
   if (from._internal_line_id() != 0) {
@@ -1463,7 +1406,7 @@ void BusAttribute::MergeImpl(::google::protobuf::Message& to_msg, const ::google
   if (from._internal_capacity() != 0) {
     _this->_internal_set_capacity(from._internal_capacity());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void BusAttribute::CopyFrom(const BusAttribute& from) {
@@ -1473,7 +1416,7 @@ void BusAttribute::CopyFrom(const BusAttribute& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool BusAttribute::IsInitialized() const {
+bool BusAttribute::IsInitialized() const {
   return true;
 }
 
@@ -1483,9 +1426,11 @@ void BusAttribute::InternalSwap(BusAttribute* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.model_, lhs_arena,
-                                       &other->_impl_.model_, rhs_arena);
-  ::google::protobuf::internal::memswap<
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.model_, lhs_arena,
+      &other->_impl_.model_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(BusAttribute, _impl_.capacity_)
       + sizeof(BusAttribute::_impl_.capacity_)
       - PROTOBUF_FIELD_OFFSET(BusAttribute, _impl_.line_id_)>(
@@ -1493,79 +1438,87 @@ void BusAttribute::InternalSwap(BusAttribute* other) {
           reinterpret_cast<char*>(&other->_impl_.line_id_));
 }
 
-::google::protobuf::Metadata BusAttribute::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata BusAttribute::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fperson_2fv1_2fperson_2eproto_getter, &descriptor_table_city_2fperson_2fv1_2fperson_2eproto_once,
       file_level_metadata_city_2fperson_2fv1_2fperson_2eproto[2]);
 }
+
 // ===================================================================
 
 class PedestrianAttribute::_Internal {
  public:
   using HasBits = decltype(std::declval<PedestrianAttribute>()._impl_._has_bits_);
-  static constexpr ::int32_t kHasBitsOffset =
-    8 * PROTOBUF_FIELD_OFFSET(PedestrianAttribute, _impl_._has_bits_);
   static void set_has_model(HasBits* has_bits) {
     (*has_bits)[0] |= 1u;
   }
 };
 
-PedestrianAttribute::PedestrianAttribute(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+PedestrianAttribute::PedestrianAttribute(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.person.v1.PedestrianAttribute)
 }
-PedestrianAttribute::PedestrianAttribute(const PedestrianAttribute& from) : ::google::protobuf::Message() {
-  PedestrianAttribute* const _this = this;
-  (void)_this;
+PedestrianAttribute::PedestrianAttribute(const PedestrianAttribute& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  PedestrianAttribute* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){from._impl_._has_bits_},
-      /*decltype(_impl_._cached_size_)*/ {},
-      decltype(_impl_.model_){},
-      decltype(_impl_.speed_){},
-  };
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+      decltype(_impl_._has_bits_){from._impl_._has_bits_}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.model_){}
+    , decltype(_impl_.speed_){}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   _impl_.model_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        _impl_.model_.Set("", GetArenaForAllocation());
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
-    _this->_impl_.model_.Set(from._internal_model(), _this->GetArenaForAllocation());
+    _impl_.model_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (from._internal_has_model()) {
+    _this->_impl_.model_.Set(from._internal_model(), 
+      _this->GetArenaForAllocation());
   }
   _this->_impl_.speed_ = from._impl_.speed_;
-
   // @@protoc_insertion_point(copy_constructor:city.person.v1.PedestrianAttribute)
 }
-inline void PedestrianAttribute::SharedCtor(::_pb::Arena* arena) {
+
+inline void PedestrianAttribute::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){},
-      /*decltype(_impl_._cached_size_)*/ {},
-      decltype(_impl_.model_){},
-      decltype(_impl_.speed_){0},
+      decltype(_impl_._has_bits_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.model_){}
+    , decltype(_impl_.speed_){0}
   };
   _impl_.model_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        _impl_.model_.Set("", GetArenaForAllocation());
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.model_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
+
 PedestrianAttribute::~PedestrianAttribute() {
   // @@protoc_insertion_point(destructor:city.person.v1.PedestrianAttribute)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void PedestrianAttribute::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.model_.Destroy();
 }
+
 void PedestrianAttribute::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void PedestrianAttribute::Clear() {
+void PedestrianAttribute::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.person.v1.PedestrianAttribute)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1575,147 +1528,146 @@ PROTOBUF_NOINLINE void PedestrianAttribute::Clear() {
   }
   _impl_.speed_ = 0;
   _impl_._has_bits_.Clear();
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* PedestrianAttribute::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* PedestrianAttribute::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  _Internal::HasBits has_bits{};
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // double speed = 1 [json_name = "speed"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 9)) {
+          _impl_.speed_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional string model = 2 [json_name = "model"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_model();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "city.person.v1.PedestrianAttribute.model"));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  _impl_._has_bits_.Or(has_bits);
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<1, 2, 0, 48, 2> PedestrianAttribute::_table_ = {
-  {
-    PROTOBUF_FIELD_OFFSET(PedestrianAttribute, _impl_._has_bits_),
-    0, // no _extensions_
-    2, 8,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967292,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    2,  // num_field_entries
-    0,  // num_aux_entries
-    offsetof(decltype(_table_), field_names),  // no aux_entries
-    &_PedestrianAttribute_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    // optional string model = 2 [json_name = "model"];
-    {::_pbi::TcParser::FastUS1,
-     {18, 0, 0, PROTOBUF_FIELD_OFFSET(PedestrianAttribute, _impl_.model_)}},
-    // double speed = 1 [json_name = "speed"];
-    {::_pbi::TcParser::FastF64S1,
-     {9, 63, 0, PROTOBUF_FIELD_OFFSET(PedestrianAttribute, _impl_.speed_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // double speed = 1 [json_name = "speed"];
-    {PROTOBUF_FIELD_OFFSET(PedestrianAttribute, _impl_.speed_), -1, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-    // optional string model = 2 [json_name = "model"];
-    {PROTOBUF_FIELD_OFFSET(PedestrianAttribute, _impl_.model_), _Internal::kHasBitsOffset + 0, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-  }},
-  // no aux_entries
-  {{
-    "\42\0\5\0\0\0\0\0"
-    "city.person.v1.PedestrianAttribute"
-    "model"
-  }},
-};
-
-::uint8_t* PedestrianAttribute::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* PedestrianAttribute::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.person.v1.PedestrianAttribute)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // double speed = 1 [json_name = "speed"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_speed = this->_internal_speed();
-  ::uint64_t raw_speed;
+  uint64_t raw_speed;
   memcpy(&raw_speed, &tmp_speed, sizeof(tmp_speed));
   if (raw_speed != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        1, this->_internal_speed(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(1, this->_internal_speed(), target);
   }
 
-  cached_has_bits = _impl_._has_bits_[0];
   // optional string model = 2 [json_name = "model"];
-  if (cached_has_bits & 0x00000001u) {
-    const std::string& _s = this->_internal_model();
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "city.person.v1.PedestrianAttribute.model");
-    target = stream->WriteStringMaybeAliased(2, _s, target);
+  if (_internal_has_model()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_model().data(), static_cast<int>(this->_internal_model().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "city.person.v1.PedestrianAttribute.model");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_model(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.person.v1.PedestrianAttribute)
   return target;
 }
 
-::size_t PedestrianAttribute::ByteSizeLong() const {
+size_t PedestrianAttribute::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.person.v1.PedestrianAttribute)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // optional string model = 2 [json_name = "model"];
   cached_has_bits = _impl_._has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
-    total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
-                                    this->_internal_model());
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_model());
   }
 
   // double speed = 1 [json_name = "speed"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_speed = this->_internal_speed();
-  ::uint64_t raw_speed;
+  uint64_t raw_speed;
   memcpy(&raw_speed, &tmp_speed, sizeof(tmp_speed));
   if (raw_speed != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData PedestrianAttribute::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData PedestrianAttribute::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     PedestrianAttribute::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*PedestrianAttribute::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*PedestrianAttribute::GetClassData() const { return &_class_data_; }
 
 
-void PedestrianAttribute::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void PedestrianAttribute::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<PedestrianAttribute*>(&to_msg);
   auto& from = static_cast<const PedestrianAttribute&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.person.v1.PedestrianAttribute)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+  if (from._internal_has_model()) {
     _this->_internal_set_model(from._internal_model());
   }
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_speed = from._internal_speed();
-  ::uint64_t raw_speed;
+  uint64_t raw_speed;
   memcpy(&raw_speed, &tmp_speed, sizeof(tmp_speed));
   if (raw_speed != 0) {
     _this->_internal_set_speed(from._internal_speed());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void PedestrianAttribute::CopyFrom(const PedestrianAttribute& from) {
@@ -1725,7 +1677,7 @@ void PedestrianAttribute::CopyFrom(const PedestrianAttribute& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool PedestrianAttribute::IsInitialized() const {
+bool PedestrianAttribute::IsInitialized() const {
   return true;
 }
 
@@ -1735,84 +1687,94 @@ void PedestrianAttribute::InternalSwap(PedestrianAttribute* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.model_, lhs_arena,
-                                       &other->_impl_.model_, rhs_arena);
-        swap(_impl_.speed_, other->_impl_.speed_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.model_, lhs_arena,
+      &other->_impl_.model_, rhs_arena
+  );
+  swap(_impl_.speed_, other->_impl_.speed_);
 }
 
-::google::protobuf::Metadata PedestrianAttribute::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata PedestrianAttribute::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fperson_2fv1_2fperson_2eproto_getter, &descriptor_table_city_2fperson_2fv1_2fperson_2eproto_once,
       file_level_metadata_city_2fperson_2fv1_2fperson_2eproto[3]);
 }
+
 // ===================================================================
 
 class BikeAttribute::_Internal {
  public:
   using HasBits = decltype(std::declval<BikeAttribute>()._impl_._has_bits_);
-  static constexpr ::int32_t kHasBitsOffset =
-    8 * PROTOBUF_FIELD_OFFSET(BikeAttribute, _impl_._has_bits_);
   static void set_has_model(HasBits* has_bits) {
     (*has_bits)[0] |= 1u;
   }
 };
 
-BikeAttribute::BikeAttribute(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+BikeAttribute::BikeAttribute(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.person.v1.BikeAttribute)
 }
-BikeAttribute::BikeAttribute(const BikeAttribute& from) : ::google::protobuf::Message() {
-  BikeAttribute* const _this = this;
-  (void)_this;
+BikeAttribute::BikeAttribute(const BikeAttribute& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  BikeAttribute* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){from._impl_._has_bits_},
-      /*decltype(_impl_._cached_size_)*/ {},
-      decltype(_impl_.model_){},
-      decltype(_impl_.speed_){},
-  };
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+      decltype(_impl_._has_bits_){from._impl_._has_bits_}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.model_){}
+    , decltype(_impl_.speed_){}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   _impl_.model_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        _impl_.model_.Set("", GetArenaForAllocation());
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
-    _this->_impl_.model_.Set(from._internal_model(), _this->GetArenaForAllocation());
+    _impl_.model_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (from._internal_has_model()) {
+    _this->_impl_.model_.Set(from._internal_model(), 
+      _this->GetArenaForAllocation());
   }
   _this->_impl_.speed_ = from._impl_.speed_;
-
   // @@protoc_insertion_point(copy_constructor:city.person.v1.BikeAttribute)
 }
-inline void BikeAttribute::SharedCtor(::_pb::Arena* arena) {
+
+inline void BikeAttribute::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){},
-      /*decltype(_impl_._cached_size_)*/ {},
-      decltype(_impl_.model_){},
-      decltype(_impl_.speed_){0},
+      decltype(_impl_._has_bits_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.model_){}
+    , decltype(_impl_.speed_){0}
   };
   _impl_.model_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        _impl_.model_.Set("", GetArenaForAllocation());
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.model_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
+
 BikeAttribute::~BikeAttribute() {
   // @@protoc_insertion_point(destructor:city.person.v1.BikeAttribute)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void BikeAttribute::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.model_.Destroy();
 }
+
 void BikeAttribute::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void BikeAttribute::Clear() {
+void BikeAttribute::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.person.v1.BikeAttribute)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1822,147 +1784,146 @@ PROTOBUF_NOINLINE void BikeAttribute::Clear() {
   }
   _impl_.speed_ = 0;
   _impl_._has_bits_.Clear();
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* BikeAttribute::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* BikeAttribute::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  _Internal::HasBits has_bits{};
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // double speed = 1 [json_name = "speed"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 9)) {
+          _impl_.speed_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional string model = 2 [json_name = "model"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_model();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "city.person.v1.BikeAttribute.model"));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  _impl_._has_bits_.Or(has_bits);
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<1, 2, 0, 42, 2> BikeAttribute::_table_ = {
-  {
-    PROTOBUF_FIELD_OFFSET(BikeAttribute, _impl_._has_bits_),
-    0, // no _extensions_
-    2, 8,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967292,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    2,  // num_field_entries
-    0,  // num_aux_entries
-    offsetof(decltype(_table_), field_names),  // no aux_entries
-    &_BikeAttribute_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    // optional string model = 2 [json_name = "model"];
-    {::_pbi::TcParser::FastUS1,
-     {18, 0, 0, PROTOBUF_FIELD_OFFSET(BikeAttribute, _impl_.model_)}},
-    // double speed = 1 [json_name = "speed"];
-    {::_pbi::TcParser::FastF64S1,
-     {9, 63, 0, PROTOBUF_FIELD_OFFSET(BikeAttribute, _impl_.speed_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // double speed = 1 [json_name = "speed"];
-    {PROTOBUF_FIELD_OFFSET(BikeAttribute, _impl_.speed_), -1, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-    // optional string model = 2 [json_name = "model"];
-    {PROTOBUF_FIELD_OFFSET(BikeAttribute, _impl_.model_), _Internal::kHasBitsOffset + 0, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-  }},
-  // no aux_entries
-  {{
-    "\34\0\5\0\0\0\0\0"
-    "city.person.v1.BikeAttribute"
-    "model"
-  }},
-};
-
-::uint8_t* BikeAttribute::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* BikeAttribute::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.person.v1.BikeAttribute)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // double speed = 1 [json_name = "speed"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_speed = this->_internal_speed();
-  ::uint64_t raw_speed;
+  uint64_t raw_speed;
   memcpy(&raw_speed, &tmp_speed, sizeof(tmp_speed));
   if (raw_speed != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        1, this->_internal_speed(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(1, this->_internal_speed(), target);
   }
 
-  cached_has_bits = _impl_._has_bits_[0];
   // optional string model = 2 [json_name = "model"];
-  if (cached_has_bits & 0x00000001u) {
-    const std::string& _s = this->_internal_model();
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "city.person.v1.BikeAttribute.model");
-    target = stream->WriteStringMaybeAliased(2, _s, target);
+  if (_internal_has_model()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_model().data(), static_cast<int>(this->_internal_model().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "city.person.v1.BikeAttribute.model");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_model(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.person.v1.BikeAttribute)
   return target;
 }
 
-::size_t BikeAttribute::ByteSizeLong() const {
+size_t BikeAttribute::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.person.v1.BikeAttribute)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // optional string model = 2 [json_name = "model"];
   cached_has_bits = _impl_._has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
-    total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
-                                    this->_internal_model());
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_model());
   }
 
   // double speed = 1 [json_name = "speed"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_speed = this->_internal_speed();
-  ::uint64_t raw_speed;
+  uint64_t raw_speed;
   memcpy(&raw_speed, &tmp_speed, sizeof(tmp_speed));
   if (raw_speed != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData BikeAttribute::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BikeAttribute::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     BikeAttribute::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*BikeAttribute::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BikeAttribute::GetClassData() const { return &_class_data_; }
 
 
-void BikeAttribute::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void BikeAttribute::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<BikeAttribute*>(&to_msg);
   auto& from = static_cast<const BikeAttribute&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.person.v1.BikeAttribute)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+  if (from._internal_has_model()) {
     _this->_internal_set_model(from._internal_model());
   }
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_speed = from._internal_speed();
-  ::uint64_t raw_speed;
+  uint64_t raw_speed;
   memcpy(&raw_speed, &tmp_speed, sizeof(tmp_speed));
   if (raw_speed != 0) {
     _this->_internal_set_speed(from._internal_speed());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void BikeAttribute::CopyFrom(const BikeAttribute& from) {
@@ -1972,7 +1933,7 @@ void BikeAttribute::CopyFrom(const BikeAttribute& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool BikeAttribute::IsInitialized() const {
+bool BikeAttribute::IsInitialized() const {
   return true;
 }
 
@@ -1982,214 +1943,242 @@ void BikeAttribute::InternalSwap(BikeAttribute* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.model_, lhs_arena,
-                                       &other->_impl_.model_, rhs_arena);
-        swap(_impl_.speed_, other->_impl_.speed_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.model_, lhs_arena,
+      &other->_impl_.model_, rhs_arena
+  );
+  swap(_impl_.speed_, other->_impl_.speed_);
 }
 
-::google::protobuf::Metadata BikeAttribute::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata BikeAttribute::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fperson_2fv1_2fperson_2eproto_getter, &descriptor_table_city_2fperson_2fv1_2fperson_2eproto_once,
       file_level_metadata_city_2fperson_2fv1_2fperson_2eproto[4]);
 }
+
 // ===================================================================
 
 class PersonProfile::_Internal {
  public:
 };
 
-PersonProfile::PersonProfile(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+PersonProfile::PersonProfile(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.person.v1.PersonProfile)
 }
 PersonProfile::PersonProfile(const PersonProfile& from)
-    : ::google::protobuf::Message(), _impl_(from._impl_) {
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  PersonProfile* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.age_){}
+    , decltype(_impl_.education_){}
+    , decltype(_impl_.gender_){}
+    , decltype(_impl_.consumption_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&_impl_.age_, &from._impl_.age_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.consumption_) -
+    reinterpret_cast<char*>(&_impl_.age_)) + sizeof(_impl_.consumption_));
   // @@protoc_insertion_point(copy_constructor:city.person.v1.PersonProfile)
 }
-inline void PersonProfile::SharedCtor(::_pb::Arena* arena) {
+
+inline void PersonProfile::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.age_){0},
-      decltype(_impl_.education_){0},
-      decltype(_impl_.gender_){0},
-      decltype(_impl_.consumption_){0},
-      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.age_){0}
+    , decltype(_impl_.education_){0}
+    , decltype(_impl_.gender_){0}
+    , decltype(_impl_.consumption_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 PersonProfile::~PersonProfile() {
   // @@protoc_insertion_point(destructor:city.person.v1.PersonProfile)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void PersonProfile::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
+
 void PersonProfile::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void PersonProfile::Clear() {
+void PersonProfile::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.person.v1.PersonProfile)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&_impl_.age_, 0, static_cast<::size_t>(
+  ::memset(&_impl_.age_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_impl_.consumption_) -
       reinterpret_cast<char*>(&_impl_.age_)) + sizeof(_impl_.consumption_));
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* PersonProfile::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* PersonProfile::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 age = 1 [json_name = "age"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.age_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .city.person.v1.Education education = 2 [json_name = "education"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_set_education(static_cast<::city::person::v1::Education>(val));
+        } else
+          goto handle_unusual;
+        continue;
+      // .city.person.v1.Gender gender = 3 [json_name = "gender"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_set_gender(static_cast<::city::person::v1::Gender>(val));
+        } else
+          goto handle_unusual;
+        continue;
+      // .city.person.v1.Consumption consumption = 4 [json_name = "consumption"];
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_set_consumption(static_cast<::city::person::v1::Consumption>(val));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<2, 4, 0, 0, 2> PersonProfile::_table_ = {
-  {
-    0,  // no _has_bits_
-    0, // no _extensions_
-    4, 24,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967280,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    4,  // num_field_entries
-    0,  // num_aux_entries
-    offsetof(decltype(_table_), field_names),  // no aux_entries
-    &_PersonProfile_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    // .city.person.v1.Consumption consumption = 4 [json_name = "consumption"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(PersonProfile, _impl_.consumption_), 63>(),
-     {32, 63, 0, PROTOBUF_FIELD_OFFSET(PersonProfile, _impl_.consumption_)}},
-    // int32 age = 1 [json_name = "age"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(PersonProfile, _impl_.age_), 63>(),
-     {8, 63, 0, PROTOBUF_FIELD_OFFSET(PersonProfile, _impl_.age_)}},
-    // .city.person.v1.Education education = 2 [json_name = "education"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(PersonProfile, _impl_.education_), 63>(),
-     {16, 63, 0, PROTOBUF_FIELD_OFFSET(PersonProfile, _impl_.education_)}},
-    // .city.person.v1.Gender gender = 3 [json_name = "gender"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(PersonProfile, _impl_.gender_), 63>(),
-     {24, 63, 0, PROTOBUF_FIELD_OFFSET(PersonProfile, _impl_.gender_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // int32 age = 1 [json_name = "age"];
-    {PROTOBUF_FIELD_OFFSET(PersonProfile, _impl_.age_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-    // .city.person.v1.Education education = 2 [json_name = "education"];
-    {PROTOBUF_FIELD_OFFSET(PersonProfile, _impl_.education_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kOpenEnum)},
-    // .city.person.v1.Gender gender = 3 [json_name = "gender"];
-    {PROTOBUF_FIELD_OFFSET(PersonProfile, _impl_.gender_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kOpenEnum)},
-    // .city.person.v1.Consumption consumption = 4 [json_name = "consumption"];
-    {PROTOBUF_FIELD_OFFSET(PersonProfile, _impl_.consumption_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kOpenEnum)},
-  }},
-  // no aux_entries
-  {{
-  }},
-};
-
-::uint8_t* PersonProfile::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* PersonProfile::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.person.v1.PersonProfile)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // int32 age = 1 [json_name = "age"];
   if (this->_internal_age() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<1>(
-            stream, this->_internal_age(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_age(), target);
   }
 
   // .city.person.v1.Education education = 2 [json_name = "education"];
   if (this->_internal_education() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteEnumToArray(
-        2, this->_internal_education(), target);
+      2, this->_internal_education(), target);
   }
 
   // .city.person.v1.Gender gender = 3 [json_name = "gender"];
   if (this->_internal_gender() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteEnumToArray(
-        3, this->_internal_gender(), target);
+      3, this->_internal_gender(), target);
   }
 
   // .city.person.v1.Consumption consumption = 4 [json_name = "consumption"];
   if (this->_internal_consumption() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteEnumToArray(
-        4, this->_internal_consumption(), target);
+      4, this->_internal_consumption(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.person.v1.PersonProfile)
   return target;
 }
 
-::size_t PersonProfile::ByteSizeLong() const {
+size_t PersonProfile::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.person.v1.PersonProfile)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // int32 age = 1 [json_name = "age"];
   if (this->_internal_age() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_age());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_age());
   }
 
   // .city.person.v1.Education education = 2 [json_name = "education"];
   if (this->_internal_education() != 0) {
     total_size += 1 +
-                  ::_pbi::WireFormatLite::EnumSize(this->_internal_education());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_education());
   }
 
   // .city.person.v1.Gender gender = 3 [json_name = "gender"];
   if (this->_internal_gender() != 0) {
     total_size += 1 +
-                  ::_pbi::WireFormatLite::EnumSize(this->_internal_gender());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_gender());
   }
 
   // .city.person.v1.Consumption consumption = 4 [json_name = "consumption"];
   if (this->_internal_consumption() != 0) {
     total_size += 1 +
-                  ::_pbi::WireFormatLite::EnumSize(this->_internal_consumption());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_consumption());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData PersonProfile::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData PersonProfile::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     PersonProfile::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*PersonProfile::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*PersonProfile::GetClassData() const { return &_class_data_; }
 
 
-void PersonProfile::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void PersonProfile::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<PersonProfile*>(&to_msg);
   auto& from = static_cast<const PersonProfile&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.person.v1.PersonProfile)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_age() != 0) {
@@ -2204,7 +2193,7 @@ void PersonProfile::MergeImpl(::google::protobuf::Message& to_msg, const ::googl
   if (from._internal_consumption() != 0) {
     _this->_internal_set_consumption(from._internal_consumption());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void PersonProfile::CopyFrom(const PersonProfile& from) {
@@ -2214,14 +2203,14 @@ void PersonProfile::CopyFrom(const PersonProfile& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool PersonProfile::IsInitialized() const {
+bool PersonProfile::IsInitialized() const {
   return true;
 }
 
 void PersonProfile::InternalSwap(PersonProfile* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::google::protobuf::internal::memswap<
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(PersonProfile, _impl_.consumption_)
       + sizeof(PersonProfile::_impl_.consumption_)
       - PROTOBUF_FIELD_OFFSET(PersonProfile, _impl_.age_)>(
@@ -2229,164 +2218,179 @@ void PersonProfile::InternalSwap(PersonProfile* other) {
           reinterpret_cast<char*>(&other->_impl_.age_));
 }
 
-::google::protobuf::Metadata PersonProfile::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata PersonProfile::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fperson_2fv1_2fperson_2eproto_getter, &descriptor_table_city_2fperson_2fv1_2fperson_2eproto_once,
       file_level_metadata_city_2fperson_2fv1_2fperson_2eproto[5]);
 }
+
 // ===================================================================
 
 Person_LabelsEntry_DoNotUse::Person_LabelsEntry_DoNotUse() {}
-Person_LabelsEntry_DoNotUse::Person_LabelsEntry_DoNotUse(::google::protobuf::Arena* arena)
+Person_LabelsEntry_DoNotUse::Person_LabelsEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
     : SuperType(arena) {}
 void Person_LabelsEntry_DoNotUse::MergeFrom(const Person_LabelsEntry_DoNotUse& other) {
   MergeFromInternal(other);
 }
-::google::protobuf::Metadata Person_LabelsEntry_DoNotUse::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata Person_LabelsEntry_DoNotUse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fperson_2fv1_2fperson_2eproto_getter, &descriptor_table_city_2fperson_2fv1_2fperson_2eproto_once,
       file_level_metadata_city_2fperson_2fv1_2fperson_2eproto[6]);
 }
+
 // ===================================================================
 
 class Person::_Internal {
  public:
   using HasBits = decltype(std::declval<Person>()._impl_._has_bits_);
-  static constexpr ::int32_t kHasBitsOffset =
-    8 * PROTOBUF_FIELD_OFFSET(Person, _impl_._has_bits_);
   static const ::city::person::v1::PersonAttribute& attribute(const Person* msg);
-  static void set_has_attribute(HasBits* has_bits) {
-    (*has_bits)[0] |= 1u;
-  }
   static const ::city::geo::v2::Position& home(const Person* msg);
-  static void set_has_home(HasBits* has_bits) {
-    (*has_bits)[0] |= 2u;
-  }
   static const ::city::person::v1::VehicleAttribute& vehicle_attribute(const Person* msg);
   static void set_has_vehicle_attribute(HasBits* has_bits) {
-    (*has_bits)[0] |= 4u;
+    (*has_bits)[0] |= 1u;
   }
   static const ::city::person::v1::BusAttribute& bus_attribute(const Person* msg);
   static void set_has_bus_attribute(HasBits* has_bits) {
-    (*has_bits)[0] |= 8u;
+    (*has_bits)[0] |= 2u;
   }
   static const ::city::person::v1::PedestrianAttribute& pedestrian_attribute(const Person* msg);
   static void set_has_pedestrian_attribute(HasBits* has_bits) {
-    (*has_bits)[0] |= 64u;
+    (*has_bits)[0] |= 16u;
   }
   static const ::city::person::v1::BikeAttribute& bike_attribute(const Person* msg);
   static void set_has_bike_attribute(HasBits* has_bits) {
-    (*has_bits)[0] |= 16u;
+    (*has_bits)[0] |= 4u;
   }
   static const ::city::person::v1::PersonProfile& profile(const Person* msg);
   static void set_has_profile(HasBits* has_bits) {
-    (*has_bits)[0] |= 32u;
+    (*has_bits)[0] |= 8u;
   }
 };
 
-const ::city::person::v1::PersonAttribute& Person::_Internal::attribute(const Person* msg) {
+const ::city::person::v1::PersonAttribute&
+Person::_Internal::attribute(const Person* msg) {
   return *msg->_impl_.attribute_;
 }
-const ::city::geo::v2::Position& Person::_Internal::home(const Person* msg) {
+const ::city::geo::v2::Position&
+Person::_Internal::home(const Person* msg) {
   return *msg->_impl_.home_;
 }
-const ::city::person::v1::VehicleAttribute& Person::_Internal::vehicle_attribute(const Person* msg) {
+const ::city::person::v1::VehicleAttribute&
+Person::_Internal::vehicle_attribute(const Person* msg) {
   return *msg->_impl_.vehicle_attribute_;
 }
-const ::city::person::v1::BusAttribute& Person::_Internal::bus_attribute(const Person* msg) {
+const ::city::person::v1::BusAttribute&
+Person::_Internal::bus_attribute(const Person* msg) {
   return *msg->_impl_.bus_attribute_;
 }
-const ::city::person::v1::PedestrianAttribute& Person::_Internal::pedestrian_attribute(const Person* msg) {
+const ::city::person::v1::PedestrianAttribute&
+Person::_Internal::pedestrian_attribute(const Person* msg) {
   return *msg->_impl_.pedestrian_attribute_;
 }
-const ::city::person::v1::BikeAttribute& Person::_Internal::bike_attribute(const Person* msg) {
+const ::city::person::v1::BikeAttribute&
+Person::_Internal::bike_attribute(const Person* msg) {
   return *msg->_impl_.bike_attribute_;
 }
-const ::city::person::v1::PersonProfile& Person::_Internal::profile(const Person* msg) {
+const ::city::person::v1::PersonProfile&
+Person::_Internal::profile(const Person* msg) {
   return *msg->_impl_.profile_;
 }
 void Person::clear_home() {
-  if (_impl_.home_ != nullptr) _impl_.home_->Clear();
-  _impl_._has_bits_[0] &= ~0x00000002u;
+  if (GetArenaForAllocation() == nullptr && _impl_.home_ != nullptr) {
+    delete _impl_.home_;
+  }
+  _impl_.home_ = nullptr;
 }
 void Person::clear_schedules() {
-  _internal_mutable_schedules()->Clear();
+  _impl_.schedules_.Clear();
 }
-Person::Person(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+Person::Person(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  if (arena != nullptr && !is_message_owned) {
+    arena->OwnCustomDestructor(this, &Person::ArenaDtor);
+  }
   // @@protoc_insertion_point(arena_constructor:city.person.v1.Person)
 }
-Person::Person(const Person& from) : ::google::protobuf::Message() {
-  Person* const _this = this;
-  (void)_this;
+Person::Person(const Person& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  Person* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){from._impl_._has_bits_},
-      /*decltype(_impl_._cached_size_)*/ {},
-      decltype(_impl_.schedules_){from._impl_.schedules_},
-      /* decltype(_impl_.labels_) */ {},
-      decltype(_impl_.attribute_){nullptr},
-      decltype(_impl_.home_){nullptr},
-      decltype(_impl_.vehicle_attribute_){nullptr},
-      decltype(_impl_.bus_attribute_){nullptr},
-      decltype(_impl_.bike_attribute_){nullptr},
-      decltype(_impl_.profile_){nullptr},
-      decltype(_impl_.pedestrian_attribute_){nullptr},
-      decltype(_impl_.id_){},
-  };
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+      decltype(_impl_._has_bits_){from._impl_._has_bits_}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.schedules_){from._impl_.schedules_}
+    , /*decltype(_impl_.labels_)*/{}
+    , decltype(_impl_.attribute_){nullptr}
+    , decltype(_impl_.home_){nullptr}
+    , decltype(_impl_.vehicle_attribute_){nullptr}
+    , decltype(_impl_.bus_attribute_){nullptr}
+    , decltype(_impl_.bike_attribute_){nullptr}
+    , decltype(_impl_.profile_){nullptr}
+    , decltype(_impl_.pedestrian_attribute_){nullptr}
+    , decltype(_impl_.id_){}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   _this->_impl_.labels_.MergeFrom(from._impl_.labels_);
-  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+  if (from._internal_has_attribute()) {
     _this->_impl_.attribute_ = new ::city::person::v1::PersonAttribute(*from._impl_.attribute_);
   }
-  if ((from._impl_._has_bits_[0] & 0x00000002u) != 0) {
+  if (from._internal_has_home()) {
     _this->_impl_.home_ = new ::city::geo::v2::Position(*from._impl_.home_);
   }
-  if ((from._impl_._has_bits_[0] & 0x00000004u) != 0) {
+  if (from._internal_has_vehicle_attribute()) {
     _this->_impl_.vehicle_attribute_ = new ::city::person::v1::VehicleAttribute(*from._impl_.vehicle_attribute_);
   }
-  if ((from._impl_._has_bits_[0] & 0x00000008u) != 0) {
+  if (from._internal_has_bus_attribute()) {
     _this->_impl_.bus_attribute_ = new ::city::person::v1::BusAttribute(*from._impl_.bus_attribute_);
   }
-  if ((from._impl_._has_bits_[0] & 0x00000010u) != 0) {
+  if (from._internal_has_bike_attribute()) {
     _this->_impl_.bike_attribute_ = new ::city::person::v1::BikeAttribute(*from._impl_.bike_attribute_);
   }
-  if ((from._impl_._has_bits_[0] & 0x00000020u) != 0) {
+  if (from._internal_has_profile()) {
     _this->_impl_.profile_ = new ::city::person::v1::PersonProfile(*from._impl_.profile_);
   }
-  if ((from._impl_._has_bits_[0] & 0x00000040u) != 0) {
+  if (from._internal_has_pedestrian_attribute()) {
     _this->_impl_.pedestrian_attribute_ = new ::city::person::v1::PedestrianAttribute(*from._impl_.pedestrian_attribute_);
   }
   _this->_impl_.id_ = from._impl_.id_;
-
   // @@protoc_insertion_point(copy_constructor:city.person.v1.Person)
 }
-inline void Person::SharedCtor(::_pb::Arena* arena) {
+
+inline void Person::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){},
-      /*decltype(_impl_._cached_size_)*/ {},
-      decltype(_impl_.schedules_){arena},
-      /* decltype(_impl_.labels_) */ {::google::protobuf::internal::ArenaInitialized(), arena},
-      decltype(_impl_.attribute_){nullptr},
-      decltype(_impl_.home_){nullptr},
-      decltype(_impl_.vehicle_attribute_){nullptr},
-      decltype(_impl_.bus_attribute_){nullptr},
-      decltype(_impl_.bike_attribute_){nullptr},
-      decltype(_impl_.profile_){nullptr},
-      decltype(_impl_.pedestrian_attribute_){nullptr},
-      decltype(_impl_.id_){0},
+      decltype(_impl_._has_bits_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.schedules_){arena}
+    , /*decltype(_impl_.labels_)*/{::_pbi::ArenaInitialized(), arena}
+    , decltype(_impl_.attribute_){nullptr}
+    , decltype(_impl_.home_){nullptr}
+    , decltype(_impl_.vehicle_attribute_){nullptr}
+    , decltype(_impl_.bus_attribute_){nullptr}
+    , decltype(_impl_.bike_attribute_){nullptr}
+    , decltype(_impl_.profile_){nullptr}
+    , decltype(_impl_.pedestrian_attribute_){nullptr}
+    , decltype(_impl_.id_){0}
   };
 }
+
 Person::~Person() {
   // @@protoc_insertion_point(destructor:city.person.v1.Person)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    ArenaDtor(this);
+    return;
+  }
   SharedDtor();
 }
+
 inline void Person::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.schedules_.~RepeatedPtrField();
+  _impl_.labels_.Destruct();
   _impl_.labels_.~MapField();
   if (this != internal_default_instance()) delete _impl_.attribute_;
   if (this != internal_default_instance()) delete _impl_.home_;
@@ -2396,185 +2400,202 @@ inline void Person::SharedDtor() {
   if (this != internal_default_instance()) delete _impl_.profile_;
   if (this != internal_default_instance()) delete _impl_.pedestrian_attribute_;
 }
+
+void Person::ArenaDtor(void* object) {
+  Person* _this = reinterpret_cast< Person* >(object);
+  _this->_impl_.labels_.Destruct();
+}
 void Person::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void Person::Clear() {
+void Person::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.person.v1.Person)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _internal_mutable_schedules()->Clear();
+  _impl_.schedules_.Clear();
   _impl_.labels_.Clear();
+  if (GetArenaForAllocation() == nullptr && _impl_.attribute_ != nullptr) {
+    delete _impl_.attribute_;
+  }
+  _impl_.attribute_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.home_ != nullptr) {
+    delete _impl_.home_;
+  }
+  _impl_.home_ = nullptr;
   cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x0000007fu) {
+  if (cached_has_bits & 0x0000001fu) {
     if (cached_has_bits & 0x00000001u) {
-      ABSL_DCHECK(_impl_.attribute_ != nullptr);
-      _impl_.attribute_->Clear();
-    }
-    if (cached_has_bits & 0x00000002u) {
-      ABSL_DCHECK(_impl_.home_ != nullptr);
-      _impl_.home_->Clear();
-    }
-    if (cached_has_bits & 0x00000004u) {
-      ABSL_DCHECK(_impl_.vehicle_attribute_ != nullptr);
+      GOOGLE_DCHECK(_impl_.vehicle_attribute_ != nullptr);
       _impl_.vehicle_attribute_->Clear();
     }
-    if (cached_has_bits & 0x00000008u) {
-      ABSL_DCHECK(_impl_.bus_attribute_ != nullptr);
+    if (cached_has_bits & 0x00000002u) {
+      GOOGLE_DCHECK(_impl_.bus_attribute_ != nullptr);
       _impl_.bus_attribute_->Clear();
     }
-    if (cached_has_bits & 0x00000010u) {
-      ABSL_DCHECK(_impl_.bike_attribute_ != nullptr);
+    if (cached_has_bits & 0x00000004u) {
+      GOOGLE_DCHECK(_impl_.bike_attribute_ != nullptr);
       _impl_.bike_attribute_->Clear();
     }
-    if (cached_has_bits & 0x00000020u) {
-      ABSL_DCHECK(_impl_.profile_ != nullptr);
+    if (cached_has_bits & 0x00000008u) {
+      GOOGLE_DCHECK(_impl_.profile_ != nullptr);
       _impl_.profile_->Clear();
     }
-    if (cached_has_bits & 0x00000040u) {
-      ABSL_DCHECK(_impl_.pedestrian_attribute_ != nullptr);
+    if (cached_has_bits & 0x00000010u) {
+      GOOGLE_DCHECK(_impl_.pedestrian_attribute_ != nullptr);
       _impl_.pedestrian_attribute_->Clear();
     }
   }
   _impl_.id_ = 0;
   _impl_._has_bits_.Clear();
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* Person::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* Person::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  _Internal::HasBits has_bits{};
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 id = 1 [json_name = "id"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .city.person.v1.PersonAttribute attribute = 2 [json_name = "attribute"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr = ctx->ParseMessage(_internal_mutable_attribute(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .city.geo.v2.Position home = 3 [json_name = "home"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+          ptr = ctx->ParseMessage(_internal_mutable_home(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated .city.trip.v2.Schedule schedules = 4 [json_name = "schedules"];
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_schedules(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<34>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      // optional .city.person.v1.VehicleAttribute vehicle_attribute = 7 [json_name = "vehicleAttribute"];
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 58)) {
+          ptr = ctx->ParseMessage(_internal_mutable_vehicle_attribute(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional .city.person.v1.BusAttribute bus_attribute = 8 [json_name = "busAttribute"];
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 66)) {
+          ptr = ctx->ParseMessage(_internal_mutable_bus_attribute(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional .city.person.v1.BikeAttribute bike_attribute = 9 [json_name = "bikeAttribute"];
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 74)) {
+          ptr = ctx->ParseMessage(_internal_mutable_bike_attribute(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // map<string, string> labels = 10 [json_name = "labels"];
+      case 10:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 82)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(&_impl_.labels_, ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<82>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      // optional .city.person.v1.PersonProfile profile = 11 [json_name = "profile"];
+      case 11:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 90)) {
+          ptr = ctx->ParseMessage(_internal_mutable_profile(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional .city.person.v1.PedestrianAttribute pedestrian_attribute = 12 [json_name = "pedestrianAttribute"];
+      case 12:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 98)) {
+          ptr = ctx->ParseMessage(_internal_mutable_pedestrian_attribute(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  _impl_._has_bits_.Or(has_bits);
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<4, 10, 9, 44, 2> Person::_table_ = {
-  {
-    PROTOBUF_FIELD_OFFSET(Person, _impl_._has_bits_),
-    0, // no _extensions_
-    12, 120,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294963248,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    10,  // num_field_entries
-    9,  // num_aux_entries
-    offsetof(decltype(_table_), aux_entries),
-    &_Person_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    {::_pbi::TcParser::MiniParse, {}},
-    // int32 id = 1 [json_name = "id"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(Person, _impl_.id_), 63>(),
-     {8, 63, 0, PROTOBUF_FIELD_OFFSET(Person, _impl_.id_)}},
-    // .city.person.v1.PersonAttribute attribute = 2 [json_name = "attribute"];
-    {::_pbi::TcParser::FastMtS1,
-     {18, 0, 0, PROTOBUF_FIELD_OFFSET(Person, _impl_.attribute_)}},
-    // .city.geo.v2.Position home = 3 [json_name = "home"];
-    {::_pbi::TcParser::FastMtS1,
-     {26, 1, 1, PROTOBUF_FIELD_OFFSET(Person, _impl_.home_)}},
-    // repeated .city.trip.v2.Schedule schedules = 4 [json_name = "schedules"];
-    {::_pbi::TcParser::FastMtR1,
-     {34, 63, 2, PROTOBUF_FIELD_OFFSET(Person, _impl_.schedules_)}},
-    {::_pbi::TcParser::MiniParse, {}},
-    {::_pbi::TcParser::MiniParse, {}},
-    // optional .city.person.v1.VehicleAttribute vehicle_attribute = 7 [json_name = "vehicleAttribute"];
-    {::_pbi::TcParser::FastMtS1,
-     {58, 2, 3, PROTOBUF_FIELD_OFFSET(Person, _impl_.vehicle_attribute_)}},
-    // optional .city.person.v1.BusAttribute bus_attribute = 8 [json_name = "busAttribute"];
-    {::_pbi::TcParser::FastMtS1,
-     {66, 3, 4, PROTOBUF_FIELD_OFFSET(Person, _impl_.bus_attribute_)}},
-    // optional .city.person.v1.BikeAttribute bike_attribute = 9 [json_name = "bikeAttribute"];
-    {::_pbi::TcParser::FastMtS1,
-     {74, 4, 5, PROTOBUF_FIELD_OFFSET(Person, _impl_.bike_attribute_)}},
-    {::_pbi::TcParser::MiniParse, {}},
-    // optional .city.person.v1.PersonProfile profile = 11 [json_name = "profile"];
-    {::_pbi::TcParser::FastMtS1,
-     {90, 5, 7, PROTOBUF_FIELD_OFFSET(Person, _impl_.profile_)}},
-    // optional .city.person.v1.PedestrianAttribute pedestrian_attribute = 12 [json_name = "pedestrianAttribute"];
-    {::_pbi::TcParser::FastMtS1,
-     {98, 6, 8, PROTOBUF_FIELD_OFFSET(Person, _impl_.pedestrian_attribute_)}},
-    {::_pbi::TcParser::MiniParse, {}},
-    {::_pbi::TcParser::MiniParse, {}},
-    {::_pbi::TcParser::MiniParse, {}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // int32 id = 1 [json_name = "id"];
-    {PROTOBUF_FIELD_OFFSET(Person, _impl_.id_), -1, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-    // .city.person.v1.PersonAttribute attribute = 2 [json_name = "attribute"];
-    {PROTOBUF_FIELD_OFFSET(Person, _impl_.attribute_), _Internal::kHasBitsOffset + 0, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
-    // .city.geo.v2.Position home = 3 [json_name = "home"];
-    {PROTOBUF_FIELD_OFFSET(Person, _impl_.home_), _Internal::kHasBitsOffset + 1, 1,
-    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
-    // repeated .city.trip.v2.Schedule schedules = 4 [json_name = "schedules"];
-    {PROTOBUF_FIELD_OFFSET(Person, _impl_.schedules_), -1, 2,
-    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
-    // optional .city.person.v1.VehicleAttribute vehicle_attribute = 7 [json_name = "vehicleAttribute"];
-    {PROTOBUF_FIELD_OFFSET(Person, _impl_.vehicle_attribute_), _Internal::kHasBitsOffset + 2, 3,
-    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
-    // optional .city.person.v1.BusAttribute bus_attribute = 8 [json_name = "busAttribute"];
-    {PROTOBUF_FIELD_OFFSET(Person, _impl_.bus_attribute_), _Internal::kHasBitsOffset + 3, 4,
-    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
-    // optional .city.person.v1.BikeAttribute bike_attribute = 9 [json_name = "bikeAttribute"];
-    {PROTOBUF_FIELD_OFFSET(Person, _impl_.bike_attribute_), _Internal::kHasBitsOffset + 4, 5,
-    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
-    // map<string, string> labels = 10 [json_name = "labels"];
-    {PROTOBUF_FIELD_OFFSET(Person, _impl_.labels_), -1, 6,
-    (0 | ::_fl::kFcRepeated | ::_fl::kMap)},
-    // optional .city.person.v1.PersonProfile profile = 11 [json_name = "profile"];
-    {PROTOBUF_FIELD_OFFSET(Person, _impl_.profile_), _Internal::kHasBitsOffset + 5, 7,
-    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
-    // optional .city.person.v1.PedestrianAttribute pedestrian_attribute = 12 [json_name = "pedestrianAttribute"];
-    {PROTOBUF_FIELD_OFFSET(Person, _impl_.pedestrian_attribute_), _Internal::kHasBitsOffset + 6, 8,
-    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
-  }}, {{
-    {::_pbi::TcParser::GetTable<::city::person::v1::PersonAttribute>()},
-    {::_pbi::TcParser::GetTable<::city::geo::v2::Position>()},
-    {::_pbi::TcParser::GetTable<::city::trip::v2::Schedule>()},
-    {::_pbi::TcParser::GetTable<::city::person::v1::VehicleAttribute>()},
-    {::_pbi::TcParser::GetTable<::city::person::v1::BusAttribute>()},
-    {::_pbi::TcParser::GetTable<::city::person::v1::BikeAttribute>()},
-    {::_pbi::TcParser::GetMapAuxInfo<decltype(Person()._impl_.labels_)>(1, 0, 0)},
-    {::_pbi::TcParser::GetTable<::city::person::v1::PersonProfile>()},
-    {::_pbi::TcParser::GetTable<::city::person::v1::PedestrianAttribute>()},
-  }}, {{
-    "\25\0\0\0\0\0\0\0\6\0\0\0\0\0\0\0"
-    "city.person.v1.Person"
-    "labels"
-  }},
-};
-
-::uint8_t* Person::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* Person::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.person.v1.Person)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // int32 id = 1 [json_name = "id"];
   if (this->_internal_id() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<1>(
-            stream, this->_internal_id(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_id(), target);
   }
 
-  cached_has_bits = _impl_._has_bits_[0];
   // .city.person.v1.PersonAttribute attribute = 2 [json_name = "attribute"];
-  if (cached_has_bits & 0x00000001u) {
-    target = ::google::protobuf::internal::WireFormatLite::
+  if (this->_internal_has_attribute()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(2, _Internal::attribute(this),
         _Internal::attribute(this).GetCachedSize(), target, stream);
   }
 
   // .city.geo.v2.Position home = 3 [json_name = "home"];
-  if (cached_has_bits & 0x00000002u) {
-    target = ::google::protobuf::internal::WireFormatLite::
+  if (this->_internal_has_home()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(3, _Internal::home(this),
         _Internal::home(this).GetCachedSize(), target, stream);
   }
@@ -2582,210 +2603,212 @@ const ::_pbi::TcParseTable<4, 10, 9, 44, 2> Person::_table_ = {
   // repeated .city.trip.v2.Schedule schedules = 4 [json_name = "schedules"];
   for (unsigned i = 0,
       n = static_cast<unsigned>(this->_internal_schedules_size()); i < n; i++) {
-    const auto& repfield = this->_internal_schedules().Get(i);
-    target = ::google::protobuf::internal::WireFormatLite::
+    const auto& repfield = this->_internal_schedules(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
         InternalWriteMessage(4, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   // optional .city.person.v1.VehicleAttribute vehicle_attribute = 7 [json_name = "vehicleAttribute"];
-  if (cached_has_bits & 0x00000004u) {
-    target = ::google::protobuf::internal::WireFormatLite::
+  if (_internal_has_vehicle_attribute()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(7, _Internal::vehicle_attribute(this),
         _Internal::vehicle_attribute(this).GetCachedSize(), target, stream);
   }
 
   // optional .city.person.v1.BusAttribute bus_attribute = 8 [json_name = "busAttribute"];
-  if (cached_has_bits & 0x00000008u) {
-    target = ::google::protobuf::internal::WireFormatLite::
+  if (_internal_has_bus_attribute()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(8, _Internal::bus_attribute(this),
         _Internal::bus_attribute(this).GetCachedSize(), target, stream);
   }
 
   // optional .city.person.v1.BikeAttribute bike_attribute = 9 [json_name = "bikeAttribute"];
-  if (cached_has_bits & 0x00000010u) {
-    target = ::google::protobuf::internal::WireFormatLite::
+  if (_internal_has_bike_attribute()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(9, _Internal::bike_attribute(this),
         _Internal::bike_attribute(this).GetCachedSize(), target, stream);
   }
 
   // map<string, string> labels = 10 [json_name = "labels"];
-  if (!_internal_labels().empty()) {
-    using MapType = ::google::protobuf::Map<std::string, std::string>;
+  if (!this->_internal_labels().empty()) {
+    using MapType = ::_pb::Map<std::string, std::string>;
     using WireHelper = Person_LabelsEntry_DoNotUse::Funcs;
-    const auto& field = _internal_labels();
+    const auto& map_field = this->_internal_labels();
+    auto check_utf8 = [](const MapType::value_type& entry) {
+      (void)entry;
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+        entry.first.data(), static_cast<int>(entry.first.length()),
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+        "city.person.v1.Person.LabelsEntry.key");
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+        entry.second.data(), static_cast<int>(entry.second.length()),
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+        "city.person.v1.Person.LabelsEntry.value");
+    };
 
-    if (stream->IsSerializationDeterministic() && field.size() > 1) {
-      for (const auto& entry : ::google::protobuf::internal::MapSorterPtr<MapType>(field)) {
-        target = WireHelper::InternalSerialize(
-            10, entry.first, entry.second, target, stream);
-        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            entry.first.data(), static_cast<int>(entry.first.length()),
- ::google::protobuf::internal::WireFormatLite::SERIALIZE, "city.person.v1.Person.labels");
-        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            entry.second.data(), static_cast<int>(entry.second.length()),
- ::google::protobuf::internal::WireFormatLite::SERIALIZE, "city.person.v1.Person.labels");
+    if (stream->IsSerializationDeterministic() && map_field.size() > 1) {
+      for (const auto& entry : ::_pbi::MapSorterPtr<MapType>(map_field)) {
+        target = WireHelper::InternalSerialize(10, entry.first, entry.second, target, stream);
+        check_utf8(entry);
       }
     } else {
-      for (const auto& entry : field) {
-        target = WireHelper::InternalSerialize(
-            10, entry.first, entry.second, target, stream);
-        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            entry.first.data(), static_cast<int>(entry.first.length()),
- ::google::protobuf::internal::WireFormatLite::SERIALIZE, "city.person.v1.Person.labels");
-        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            entry.second.data(), static_cast<int>(entry.second.length()),
- ::google::protobuf::internal::WireFormatLite::SERIALIZE, "city.person.v1.Person.labels");
+      for (const auto& entry : map_field) {
+        target = WireHelper::InternalSerialize(10, entry.first, entry.second, target, stream);
+        check_utf8(entry);
       }
     }
   }
 
   // optional .city.person.v1.PersonProfile profile = 11 [json_name = "profile"];
-  if (cached_has_bits & 0x00000020u) {
-    target = ::google::protobuf::internal::WireFormatLite::
+  if (_internal_has_profile()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(11, _Internal::profile(this),
         _Internal::profile(this).GetCachedSize(), target, stream);
   }
 
   // optional .city.person.v1.PedestrianAttribute pedestrian_attribute = 12 [json_name = "pedestrianAttribute"];
-  if (cached_has_bits & 0x00000040u) {
-    target = ::google::protobuf::internal::WireFormatLite::
+  if (_internal_has_pedestrian_attribute()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(12, _Internal::pedestrian_attribute(this),
         _Internal::pedestrian_attribute(this).GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.person.v1.Person)
   return target;
 }
 
-::size_t Person::ByteSizeLong() const {
+size_t Person::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.person.v1.Person)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // repeated .city.trip.v2.Schedule schedules = 4 [json_name = "schedules"];
   total_size += 1UL * this->_internal_schedules_size();
-  for (const auto& msg : this->_internal_schedules()) {
+  for (const auto& msg : this->_impl_.schedules_) {
     total_size +=
-      ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
+
   // map<string, string> labels = 10 [json_name = "labels"];
-  total_size += 1 * ::google::protobuf::internal::FromIntSize(_internal_labels_size());
-  for (const auto& entry : _internal_labels()) {
-    total_size += Person_LabelsEntry_DoNotUse::Funcs::ByteSizeLong(entry.first, entry.second);
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(this->_internal_labels_size());
+  for (::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_iterator
+      it = this->_internal_labels().begin();
+      it != this->_internal_labels().end(); ++it) {
+    total_size += Person_LabelsEntry_DoNotUse::Funcs::ByteSizeLong(it->first, it->second);
   }
+
+  // .city.person.v1.PersonAttribute attribute = 2 [json_name = "attribute"];
+  if (this->_internal_has_attribute()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.attribute_);
+  }
+
+  // .city.geo.v2.Position home = 3 [json_name = "home"];
+  if (this->_internal_has_home()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.home_);
+  }
+
   cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x0000007fu) {
-    // .city.person.v1.PersonAttribute attribute = 2 [json_name = "attribute"];
+  if (cached_has_bits & 0x0000001fu) {
+    // optional .city.person.v1.VehicleAttribute vehicle_attribute = 7 [json_name = "vehicleAttribute"];
     if (cached_has_bits & 0x00000001u) {
       total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          *_impl_.attribute_);
-    }
-
-    // .city.geo.v2.Position home = 3 [json_name = "home"];
-    if (cached_has_bits & 0x00000002u) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          *_impl_.home_);
-    }
-
-    // optional .city.person.v1.VehicleAttribute vehicle_attribute = 7 [json_name = "vehicleAttribute"];
-    if (cached_has_bits & 0x00000004u) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *_impl_.vehicle_attribute_);
     }
 
     // optional .city.person.v1.BusAttribute bus_attribute = 8 [json_name = "busAttribute"];
-    if (cached_has_bits & 0x00000008u) {
+    if (cached_has_bits & 0x00000002u) {
       total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *_impl_.bus_attribute_);
     }
 
     // optional .city.person.v1.BikeAttribute bike_attribute = 9 [json_name = "bikeAttribute"];
-    if (cached_has_bits & 0x00000010u) {
+    if (cached_has_bits & 0x00000004u) {
       total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *_impl_.bike_attribute_);
     }
 
     // optional .city.person.v1.PersonProfile profile = 11 [json_name = "profile"];
-    if (cached_has_bits & 0x00000020u) {
+    if (cached_has_bits & 0x00000008u) {
       total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *_impl_.profile_);
     }
 
     // optional .city.person.v1.PedestrianAttribute pedestrian_attribute = 12 [json_name = "pedestrianAttribute"];
-    if (cached_has_bits & 0x00000040u) {
+    if (cached_has_bits & 0x00000010u) {
       total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *_impl_.pedestrian_attribute_);
     }
 
   }
   // int32 id = 1 [json_name = "id"];
   if (this->_internal_id() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_id());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_id());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData Person::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Person::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     Person::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*Person::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Person::GetClassData() const { return &_class_data_; }
 
 
-void Person::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void Person::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<Person*>(&to_msg);
   auto& from = static_cast<const Person&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.person.v1.Person)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  _this->_internal_mutable_schedules()->MergeFrom(from._internal_schedules());
+  _this->_impl_.schedules_.MergeFrom(from._impl_.schedules_);
   _this->_impl_.labels_.MergeFrom(from._impl_.labels_);
+  if (from._internal_has_attribute()) {
+    _this->_internal_mutable_attribute()->::city::person::v1::PersonAttribute::MergeFrom(
+        from._internal_attribute());
+  }
+  if (from._internal_has_home()) {
+    _this->_internal_mutable_home()->::city::geo::v2::Position::MergeFrom(
+        from._internal_home());
+  }
   cached_has_bits = from._impl_._has_bits_[0];
-  if (cached_has_bits & 0x0000007fu) {
+  if (cached_has_bits & 0x0000001fu) {
     if (cached_has_bits & 0x00000001u) {
-      _this->_internal_mutable_attribute()->::city::person::v1::PersonAttribute::MergeFrom(
-          from._internal_attribute());
-    }
-    if (cached_has_bits & 0x00000002u) {
-      _this->_internal_mutable_home()->::city::geo::v2::Position::MergeFrom(
-          from._internal_home());
-    }
-    if (cached_has_bits & 0x00000004u) {
       _this->_internal_mutable_vehicle_attribute()->::city::person::v1::VehicleAttribute::MergeFrom(
           from._internal_vehicle_attribute());
     }
-    if (cached_has_bits & 0x00000008u) {
+    if (cached_has_bits & 0x00000002u) {
       _this->_internal_mutable_bus_attribute()->::city::person::v1::BusAttribute::MergeFrom(
           from._internal_bus_attribute());
     }
-    if (cached_has_bits & 0x00000010u) {
+    if (cached_has_bits & 0x00000004u) {
       _this->_internal_mutable_bike_attribute()->::city::person::v1::BikeAttribute::MergeFrom(
           from._internal_bike_attribute());
     }
-    if (cached_has_bits & 0x00000020u) {
+    if (cached_has_bits & 0x00000008u) {
       _this->_internal_mutable_profile()->::city::person::v1::PersonProfile::MergeFrom(
           from._internal_profile());
     }
-    if (cached_has_bits & 0x00000040u) {
+    if (cached_has_bits & 0x00000010u) {
       _this->_internal_mutable_pedestrian_attribute()->::city::person::v1::PedestrianAttribute::MergeFrom(
           from._internal_pedestrian_attribute());
     }
@@ -2793,7 +2816,7 @@ void Person::MergeImpl(::google::protobuf::Message& to_msg, const ::google::prot
   if (from._internal_id() != 0) {
     _this->_internal_set_id(from._internal_id());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void Person::CopyFrom(const Person& from) {
@@ -2803,7 +2826,7 @@ void Person::CopyFrom(const Person& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool Person::IsInitialized() const {
+bool Person::IsInitialized() const {
   return true;
 }
 
@@ -2813,7 +2836,7 @@ void Person::InternalSwap(Person* other) {
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
   _impl_.schedules_.InternalSwap(&other->_impl_.schedules_);
   _impl_.labels_.InternalSwap(&other->_impl_.labels_);
-  ::google::protobuf::internal::memswap<
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(Person, _impl_.id_)
       + sizeof(Person::_impl_.id_)
       - PROTOBUF_FIELD_OFFSET(Person, _impl_.attribute_)>(
@@ -2821,159 +2844,172 @@ void Person::InternalSwap(Person* other) {
           reinterpret_cast<char*>(&other->_impl_.attribute_));
 }
 
-::google::protobuf::Metadata Person::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata Person::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fperson_2fv1_2fperson_2eproto_getter, &descriptor_table_city_2fperson_2fv1_2fperson_2eproto_once,
       file_level_metadata_city_2fperson_2fv1_2fperson_2eproto[7]);
 }
+
 // ===================================================================
 
 class Persons::_Internal {
  public:
 };
 
-Persons::Persons(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+Persons::Persons(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.person.v1.Persons)
 }
-Persons::Persons(const Persons& from) : ::google::protobuf::Message() {
-  Persons* const _this = this;
-  (void)_this;
+Persons::Persons(const Persons& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  Persons* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.persons_){from._impl_.persons_},
-      /*decltype(_impl_._cached_size_)*/ {},
-  };
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+      decltype(_impl_.persons_){from._impl_.persons_}
+    , /*decltype(_impl_._cached_size_)*/{}};
 
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:city.person.v1.Persons)
 }
-inline void Persons::SharedCtor(::_pb::Arena* arena) {
+
+inline void Persons::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.persons_){arena},
-      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.persons_){arena}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 Persons::~Persons() {
   // @@protoc_insertion_point(destructor:city.person.v1.Persons)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void Persons::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.persons_.~RepeatedPtrField();
 }
+
 void Persons::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void Persons::Clear() {
+void Persons::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.person.v1.Persons)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _internal_mutable_persons()->Clear();
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _impl_.persons_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* Persons::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* Persons::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // repeated .city.person.v1.Person persons = 1 [json_name = "persons"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_persons(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<0, 1, 1, 0, 2> Persons::_table_ = {
-  {
-    0,  // no _has_bits_
-    0, // no _extensions_
-    1, 0,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967294,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    1,  // num_field_entries
-    1,  // num_aux_entries
-    offsetof(decltype(_table_), aux_entries),
-    &_Persons_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    // repeated .city.person.v1.Person persons = 1 [json_name = "persons"];
-    {::_pbi::TcParser::FastMtR1,
-     {10, 63, 0, PROTOBUF_FIELD_OFFSET(Persons, _impl_.persons_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // repeated .city.person.v1.Person persons = 1 [json_name = "persons"];
-    {PROTOBUF_FIELD_OFFSET(Persons, _impl_.persons_), 0, 0,
-    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
-  }}, {{
-    {::_pbi::TcParser::GetTable<::city::person::v1::Person>()},
-  }}, {{
-  }},
-};
-
-::uint8_t* Persons::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* Persons::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.person.v1.Persons)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // repeated .city.person.v1.Person persons = 1 [json_name = "persons"];
   for (unsigned i = 0,
       n = static_cast<unsigned>(this->_internal_persons_size()); i < n; i++) {
-    const auto& repfield = this->_internal_persons().Get(i);
-    target = ::google::protobuf::internal::WireFormatLite::
+    const auto& repfield = this->_internal_persons(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
         InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.person.v1.Persons)
   return target;
 }
 
-::size_t Persons::ByteSizeLong() const {
+size_t Persons::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.person.v1.Persons)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // repeated .city.person.v1.Person persons = 1 [json_name = "persons"];
   total_size += 1UL * this->_internal_persons_size();
-  for (const auto& msg : this->_internal_persons()) {
+  for (const auto& msg : this->_impl_.persons_) {
     total_size +=
-      ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
+
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData Persons::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Persons::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     Persons::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*Persons::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Persons::GetClassData() const { return &_class_data_; }
 
 
-void Persons::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void Persons::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<Persons*>(&to_msg);
   auto& from = static_cast<const Persons&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.person.v1.Persons)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  _this->_internal_mutable_persons()->MergeFrom(from._internal_persons());
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.persons_.MergeFrom(from._impl_.persons_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void Persons::CopyFrom(const Persons& from) {
@@ -2983,7 +3019,7 @@ void Persons::CopyFrom(const Persons& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool Persons::IsInitialized() const {
+bool Persons::IsInitialized() const {
   return true;
 }
 
@@ -2993,18 +3029,54 @@ void Persons::InternalSwap(Persons* other) {
   _impl_.persons_.InternalSwap(&other->_impl_.persons_);
 }
 
-::google::protobuf::Metadata Persons::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata Persons::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fperson_2fv1_2fperson_2eproto_getter, &descriptor_table_city_2fperson_2fv1_2fperson_2eproto_once,
       file_level_metadata_city_2fperson_2fv1_2fperson_2eproto[8]);
 }
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace v1
 }  // namespace person
 }  // namespace city
-namespace google {
-namespace protobuf {
-}  // namespace protobuf
-}  // namespace google
+PROTOBUF_NAMESPACE_OPEN
+template<> PROTOBUF_NOINLINE ::city::person::v1::PersonAttribute*
+Arena::CreateMaybeMessage< ::city::person::v1::PersonAttribute >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::person::v1::PersonAttribute >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::person::v1::VehicleAttribute*
+Arena::CreateMaybeMessage< ::city::person::v1::VehicleAttribute >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::person::v1::VehicleAttribute >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::person::v1::BusAttribute*
+Arena::CreateMaybeMessage< ::city::person::v1::BusAttribute >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::person::v1::BusAttribute >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::person::v1::PedestrianAttribute*
+Arena::CreateMaybeMessage< ::city::person::v1::PedestrianAttribute >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::person::v1::PedestrianAttribute >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::person::v1::BikeAttribute*
+Arena::CreateMaybeMessage< ::city::person::v1::BikeAttribute >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::person::v1::BikeAttribute >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::person::v1::PersonProfile*
+Arena::CreateMaybeMessage< ::city::person::v1::PersonProfile >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::person::v1::PersonProfile >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::person::v1::Person_LabelsEntry_DoNotUse*
+Arena::CreateMaybeMessage< ::city::person::v1::Person_LabelsEntry_DoNotUse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::person::v1::Person_LabelsEntry_DoNotUse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::person::v1::Person*
+Arena::CreateMaybeMessage< ::city::person::v1::Person >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::person::v1::Person >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::person::v1::Persons*
+Arena::CreateMaybeMessage< ::city::person::v1::Persons >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::person::v1::Persons >(arena);
+}
+PROTOBUF_NAMESPACE_CLOSE
+
 // @@protoc_insertion_point(global_scope)
-#include "google/protobuf/port_undef.inc"
+#include <google/protobuf/port_undef.inc>

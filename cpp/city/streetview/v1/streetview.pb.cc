@@ -4,398 +4,360 @@
 #include "city/streetview/v1/streetview.pb.h"
 
 #include <algorithm>
-#include "google/protobuf/io/coded_stream.h"
-#include "google/protobuf/extension_set.h"
-#include "google/protobuf/wire_format_lite.h"
-#include "google/protobuf/descriptor.h"
-#include "google/protobuf/generated_message_reflection.h"
-#include "google/protobuf/reflection_ops.h"
-#include "google/protobuf/wire_format.h"
-#include "google/protobuf/generated_message_tctable_impl.h"
-// @@protoc_insertion_point(includes)
 
-// Must be included last.
-#include "google/protobuf/port_def.inc"
+#include <google/protobuf/io/coded_stream.h>
+#include <google/protobuf/extension_set.h>
+#include <google/protobuf/wire_format_lite.h>
+#include <google/protobuf/descriptor.h>
+#include <google/protobuf/generated_message_reflection.h>
+#include <google/protobuf/reflection_ops.h>
+#include <google/protobuf/wire_format.h>
+// @@protoc_insertion_point(includes)
+#include <google/protobuf/port_def.inc>
+
 PROTOBUF_PRAGMA_INIT_SEG
-namespace _pb = ::google::protobuf;
-namespace _pbi = ::google::protobuf::internal;
-namespace _fl = ::google::protobuf::internal::field_layout;
+
+namespace _pb = ::PROTOBUF_NAMESPACE_ID;
+namespace _pbi = _pb::internal;
+
 namespace city {
 namespace streetview {
 namespace v1 {
-        template <typename>
-PROTOBUF_CONSTEXPR StreetViewImage::StreetViewImage(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_.object_)*/ {
-          &::_pbi::fixed_address_empty_string,
-          ::_pbi::ConstantInitialized{},
-      },
-      /*decltype(_impl_.heading_)*/ 0,
-      /*decltype(_impl_._cached_size_)*/ {},
-    } {}
+PROTOBUF_CONSTEXPR StreetViewImage::StreetViewImage(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.object_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.heading_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct StreetViewImageDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR StreetViewImageDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR StreetViewImageDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~StreetViewImageDefaultTypeInternal() {}
   union {
     StreetViewImage _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 StreetViewImageDefaultTypeInternal _StreetViewImage_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR StreetView::StreetView(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_._has_bits_)*/ {},
-      /*decltype(_impl_._cached_size_)*/ {},
-      /*decltype(_impl_.images_)*/ {},
-      /*decltype(_impl_.lnglat_)*/ nullptr,
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 StreetViewImageDefaultTypeInternal _StreetViewImage_default_instance_;
+PROTOBUF_CONSTEXPR StreetView::StreetView(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.images_)*/{}
+  , /*decltype(_impl_.lnglat_)*/nullptr
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct StreetViewDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR StreetViewDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR StreetViewDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~StreetViewDefaultTypeInternal() {}
   union {
     StreetView _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 StreetViewDefaultTypeInternal _StreetView_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR StreetViews::StreetViews(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_.street_views_)*/ {},
-      /*decltype(_impl_._cached_size_)*/ {},
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 StreetViewDefaultTypeInternal _StreetView_default_instance_;
+PROTOBUF_CONSTEXPR StreetViews::StreetViews(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.street_views_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct StreetViewsDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR StreetViewsDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR StreetViewsDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~StreetViewsDefaultTypeInternal() {}
   union {
     StreetViews _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 StreetViewsDefaultTypeInternal _StreetViews_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 StreetViewsDefaultTypeInternal _StreetViews_default_instance_;
 }  // namespace v1
 }  // namespace streetview
 }  // namespace city
 static ::_pb::Metadata file_level_metadata_city_2fstreetview_2fv1_2fstreetview_2eproto[3];
-static constexpr const ::_pb::EnumDescriptor**
-    file_level_enum_descriptors_city_2fstreetview_2fv1_2fstreetview_2eproto = nullptr;
-static constexpr const ::_pb::ServiceDescriptor**
-    file_level_service_descriptors_city_2fstreetview_2fv1_2fstreetview_2eproto = nullptr;
-const ::uint32_t TableStruct_city_2fstreetview_2fv1_2fstreetview_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
-    protodesc_cold) = {
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::streetview::v1::StreetViewImage, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::streetview::v1::StreetViewImage, _impl_.heading_),
-    PROTOBUF_FIELD_OFFSET(::city::streetview::v1::StreetViewImage, _impl_.object_),
-    PROTOBUF_FIELD_OFFSET(::city::streetview::v1::StreetView, _impl_._has_bits_),
-    PROTOBUF_FIELD_OFFSET(::city::streetview::v1::StreetView, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::streetview::v1::StreetView, _impl_.lnglat_),
-    PROTOBUF_FIELD_OFFSET(::city::streetview::v1::StreetView, _impl_.images_),
-    0,
-    ~0u,
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::streetview::v1::StreetViews, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::streetview::v1::StreetViews, _impl_.street_views_),
-};
+static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_city_2fstreetview_2fv1_2fstreetview_2eproto = nullptr;
+static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_city_2fstreetview_2fv1_2fstreetview_2eproto = nullptr;
 
-static const ::_pbi::MigrationSchema
-    schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-        {0, -1, -1, sizeof(::city::streetview::v1::StreetViewImage)},
-        {10, 20, -1, sizeof(::city::streetview::v1::StreetView)},
-        {22, -1, -1, sizeof(::city::streetview::v1::StreetViews)},
+const uint32_t TableStruct_city_2fstreetview_2fv1_2fstreetview_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::streetview::v1::StreetViewImage, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::streetview::v1::StreetViewImage, _impl_.heading_),
+  PROTOBUF_FIELD_OFFSET(::city::streetview::v1::StreetViewImage, _impl_.object_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::streetview::v1::StreetView, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::streetview::v1::StreetView, _impl_.lnglat_),
+  PROTOBUF_FIELD_OFFSET(::city::streetview::v1::StreetView, _impl_.images_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::streetview::v1::StreetViews, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::streetview::v1::StreetViews, _impl_.street_views_),
+};
+static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  { 0, -1, -1, sizeof(::city::streetview::v1::StreetViewImage)},
+  { 8, -1, -1, sizeof(::city::streetview::v1::StreetView)},
+  { 16, -1, -1, sizeof(::city::streetview::v1::StreetViews)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
-    &::city::streetview::v1::_StreetViewImage_default_instance_._instance,
-    &::city::streetview::v1::_StreetView_default_instance_._instance,
-    &::city::streetview::v1::_StreetViews_default_instance_._instance,
-};
-const char descriptor_table_protodef_city_2fstreetview_2fv1_2fstreetview_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-    "\n#city/streetview/v1/streetview.proto\022\022c"
-    "ity.streetview.v1\032\025city/geo/v2/geo.proto"
-    "\"C\n\017StreetViewImage\022\030\n\007heading\030\001 \001(\001R\007he"
-    "ading\022\026\n\006object\030\002 \001(\tR\006object\"\177\n\nStreetV"
-    "iew\0224\n\006lnglat\030\001 \001(\0132\034.city.geo.v2.LongLa"
-    "tPositionR\006lnglat\022;\n\006images\030\002 \003(\0132#.city"
-    ".streetview.v1.StreetViewImageR\006images\"P"
-    "\n\013StreetViews\022A\n\014street_views\030\001 \003(\0132\036.ci"
-    "ty.streetview.v1.StreetViewR\013streetViews"
-    "B\321\001\n\026com.city.streetview.v1B\017StreetviewP"
-    "rotoP\001Z<git.fiblab.net/sim/protos/go/cit"
-    "y/streetview/v1;streetviewv1\242\002\003CSX\252\002\022Cit"
-    "y.Streetview.V1\312\002\022City\\Streetview\\V1\342\002\036C"
-    "ity\\Streetview\\V1\\GPBMetadata\352\002\024City::St"
-    "reetview::V1b\006proto3"
-};
-static const ::_pbi::DescriptorTable* const descriptor_table_city_2fstreetview_2fv1_2fstreetview_2eproto_deps[1] =
-    {
-        &::descriptor_table_city_2fgeo_2fv2_2fgeo_2eproto,
-};
-static ::absl::once_flag descriptor_table_city_2fstreetview_2fv1_2fstreetview_2eproto_once;
-const ::_pbi::DescriptorTable descriptor_table_city_2fstreetview_2fv1_2fstreetview_2eproto = {
-    false,
-    false,
-    580,
-    descriptor_table_protodef_city_2fstreetview_2fv1_2fstreetview_2eproto,
-    "city/streetview/v1/streetview.proto",
-    &descriptor_table_city_2fstreetview_2fv1_2fstreetview_2eproto_once,
-    descriptor_table_city_2fstreetview_2fv1_2fstreetview_2eproto_deps,
-    1,
-    3,
-    schemas,
-    file_default_instances,
-    TableStruct_city_2fstreetview_2fv1_2fstreetview_2eproto::offsets,
-    file_level_metadata_city_2fstreetview_2fv1_2fstreetview_2eproto,
-    file_level_enum_descriptors_city_2fstreetview_2fv1_2fstreetview_2eproto,
-    file_level_service_descriptors_city_2fstreetview_2fv1_2fstreetview_2eproto,
+  &::city::streetview::v1::_StreetViewImage_default_instance_._instance,
+  &::city::streetview::v1::_StreetView_default_instance_._instance,
+  &::city::streetview::v1::_StreetViews_default_instance_._instance,
 };
 
-// This function exists to be marked as weak.
-// It can significantly speed up compilation by breaking up LLVM's SCC
-// in the .pb.cc translation units. Large translation units see a
-// reduction of more than 35% of walltime for optimized builds. Without
-// the weak attribute all the messages in the file, including all the
-// vtables and everything they use become part of the same SCC through
-// a cycle like:
-// GetMetadata -> descriptor table -> default instances ->
-//   vtables -> GetMetadata
-// By adding a weak function here we break the connection from the
-// individual vtables back into the descriptor table.
+const char descriptor_table_protodef_city_2fstreetview_2fv1_2fstreetview_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
+  "\n#city/streetview/v1/streetview.proto\022\022c"
+  "ity.streetview.v1\032\025city/geo/v2/geo.proto"
+  "\"C\n\017StreetViewImage\022\030\n\007heading\030\001 \001(\001R\007he"
+  "ading\022\026\n\006object\030\002 \001(\tR\006object\"\177\n\nStreetV"
+  "iew\0224\n\006lnglat\030\001 \001(\0132\034.city.geo.v2.LongLa"
+  "tPositionR\006lnglat\022;\n\006images\030\002 \003(\0132#.city"
+  ".streetview.v1.StreetViewImageR\006images\"P"
+  "\n\013StreetViews\022A\n\014street_views\030\001 \003(\0132\036.ci"
+  "ty.streetview.v1.StreetViewR\013streetViews"
+  "B\321\001\n\026com.city.streetview.v1B\017StreetviewP"
+  "rotoP\001Z<git.fiblab.net/sim/protos/go/cit"
+  "y/streetview/v1;streetviewv1\242\002\003CSX\252\002\022Cit"
+  "y.Streetview.V1\312\002\022City\\Streetview\\V1\342\002\036C"
+  "ity\\Streetview\\V1\\GPBMetadata\352\002\024City::St"
+  "reetview::V1b\006proto3"
+  ;
+static const ::_pbi::DescriptorTable* const descriptor_table_city_2fstreetview_2fv1_2fstreetview_2eproto_deps[1] = {
+  &::descriptor_table_city_2fgeo_2fv2_2fgeo_2eproto,
+};
+static ::_pbi::once_flag descriptor_table_city_2fstreetview_2fv1_2fstreetview_2eproto_once;
+const ::_pbi::DescriptorTable descriptor_table_city_2fstreetview_2fv1_2fstreetview_2eproto = {
+    false, false, 580, descriptor_table_protodef_city_2fstreetview_2fv1_2fstreetview_2eproto,
+    "city/streetview/v1/streetview.proto",
+    &descriptor_table_city_2fstreetview_2fv1_2fstreetview_2eproto_once, descriptor_table_city_2fstreetview_2fv1_2fstreetview_2eproto_deps, 1, 3,
+    schemas, file_default_instances, TableStruct_city_2fstreetview_2fv1_2fstreetview_2eproto::offsets,
+    file_level_metadata_city_2fstreetview_2fv1_2fstreetview_2eproto, file_level_enum_descriptors_city_2fstreetview_2fv1_2fstreetview_2eproto,
+    file_level_service_descriptors_city_2fstreetview_2fv1_2fstreetview_2eproto,
+};
 PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_city_2fstreetview_2fv1_2fstreetview_2eproto_getter() {
   return &descriptor_table_city_2fstreetview_2fv1_2fstreetview_2eproto;
 }
+
 // Force running AddDescriptors() at dynamic initialization time.
-PROTOBUF_ATTRIBUTE_INIT_PRIORITY2
-static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_city_2fstreetview_2fv1_2fstreetview_2eproto(&descriptor_table_city_2fstreetview_2fv1_2fstreetview_2eproto);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_city_2fstreetview_2fv1_2fstreetview_2eproto(&descriptor_table_city_2fstreetview_2fv1_2fstreetview_2eproto);
 namespace city {
 namespace streetview {
 namespace v1 {
+
 // ===================================================================
 
 class StreetViewImage::_Internal {
  public:
 };
 
-StreetViewImage::StreetViewImage(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+StreetViewImage::StreetViewImage(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.streetview.v1.StreetViewImage)
 }
-StreetViewImage::StreetViewImage(const StreetViewImage& from) : ::google::protobuf::Message() {
-  StreetViewImage* const _this = this;
-  (void)_this;
+StreetViewImage::StreetViewImage(const StreetViewImage& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  StreetViewImage* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.object_){},
-      decltype(_impl_.heading_){},
-      /*decltype(_impl_._cached_size_)*/ {},
-  };
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+      decltype(_impl_.object_){}
+    , decltype(_impl_.heading_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   _impl_.object_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        _impl_.object_.Set("", GetArenaForAllocation());
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.object_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_object().empty()) {
-    _this->_impl_.object_.Set(from._internal_object(), _this->GetArenaForAllocation());
+    _this->_impl_.object_.Set(from._internal_object(), 
+      _this->GetArenaForAllocation());
   }
   _this->_impl_.heading_ = from._impl_.heading_;
-
   // @@protoc_insertion_point(copy_constructor:city.streetview.v1.StreetViewImage)
 }
-inline void StreetViewImage::SharedCtor(::_pb::Arena* arena) {
+
+inline void StreetViewImage::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.object_){},
-      decltype(_impl_.heading_){0},
-      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.object_){}
+    , decltype(_impl_.heading_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
   _impl_.object_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        _impl_.object_.Set("", GetArenaForAllocation());
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.object_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
+
 StreetViewImage::~StreetViewImage() {
   // @@protoc_insertion_point(destructor:city.streetview.v1.StreetViewImage)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void StreetViewImage::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.object_.Destroy();
 }
+
 void StreetViewImage::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void StreetViewImage::Clear() {
+void StreetViewImage::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.streetview.v1.StreetViewImage)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   _impl_.object_.ClearToEmpty();
   _impl_.heading_ = 0;
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* StreetViewImage::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* StreetViewImage::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // double heading = 1 [json_name = "heading"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 9)) {
+          _impl_.heading_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // string object = 2 [json_name = "object"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_object();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "city.streetview.v1.StreetViewImage.object"));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<1, 2, 0, 49, 2> StreetViewImage::_table_ = {
-  {
-    0,  // no _has_bits_
-    0, // no _extensions_
-    2, 8,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967292,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    2,  // num_field_entries
-    0,  // num_aux_entries
-    offsetof(decltype(_table_), field_names),  // no aux_entries
-    &_StreetViewImage_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    // string object = 2 [json_name = "object"];
-    {::_pbi::TcParser::FastUS1,
-     {18, 63, 0, PROTOBUF_FIELD_OFFSET(StreetViewImage, _impl_.object_)}},
-    // double heading = 1 [json_name = "heading"];
-    {::_pbi::TcParser::FastF64S1,
-     {9, 63, 0, PROTOBUF_FIELD_OFFSET(StreetViewImage, _impl_.heading_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // double heading = 1 [json_name = "heading"];
-    {PROTOBUF_FIELD_OFFSET(StreetViewImage, _impl_.heading_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-    // string object = 2 [json_name = "object"];
-    {PROTOBUF_FIELD_OFFSET(StreetViewImage, _impl_.object_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kUtf8String | ::_fl::kRepAString)},
-  }},
-  // no aux_entries
-  {{
-    "\42\0\6\0\0\0\0\0"
-    "city.streetview.v1.StreetViewImage"
-    "object"
-  }},
-};
-
-::uint8_t* StreetViewImage::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* StreetViewImage::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.streetview.v1.StreetViewImage)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // double heading = 1 [json_name = "heading"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_heading = this->_internal_heading();
-  ::uint64_t raw_heading;
+  uint64_t raw_heading;
   memcpy(&raw_heading, &tmp_heading, sizeof(tmp_heading));
   if (raw_heading != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        1, this->_internal_heading(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(1, this->_internal_heading(), target);
   }
 
   // string object = 2 [json_name = "object"];
   if (!this->_internal_object().empty()) {
-    const std::string& _s = this->_internal_object();
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "city.streetview.v1.StreetViewImage.object");
-    target = stream->WriteStringMaybeAliased(2, _s, target);
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_object().data(), static_cast<int>(this->_internal_object().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "city.streetview.v1.StreetViewImage.object");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_object(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.streetview.v1.StreetViewImage)
   return target;
 }
 
-::size_t StreetViewImage::ByteSizeLong() const {
+size_t StreetViewImage::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.streetview.v1.StreetViewImage)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // string object = 2 [json_name = "object"];
   if (!this->_internal_object().empty()) {
-    total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
-                                    this->_internal_object());
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_object());
   }
 
   // double heading = 1 [json_name = "heading"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_heading = this->_internal_heading();
-  ::uint64_t raw_heading;
+  uint64_t raw_heading;
   memcpy(&raw_heading, &tmp_heading, sizeof(tmp_heading));
   if (raw_heading != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData StreetViewImage::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData StreetViewImage::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     StreetViewImage::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*StreetViewImage::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*StreetViewImage::GetClassData() const { return &_class_data_; }
 
 
-void StreetViewImage::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void StreetViewImage::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<StreetViewImage*>(&to_msg);
   auto& from = static_cast<const StreetViewImage&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.streetview.v1.StreetViewImage)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_object().empty()) {
     _this->_internal_set_object(from._internal_object());
   }
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_heading = from._internal_heading();
-  ::uint64_t raw_heading;
+  uint64_t raw_heading;
   memcpy(&raw_heading, &tmp_heading, sizeof(tmp_heading));
   if (raw_heading != 0) {
     _this->_internal_set_heading(from._internal_heading());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void StreetViewImage::CopyFrom(const StreetViewImage& from) {
@@ -405,7 +367,7 @@ void StreetViewImage::CopyFrom(const StreetViewImage& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool StreetViewImage::IsInitialized() const {
+bool StreetViewImage::IsInitialized() const {
   return true;
 }
 
@@ -414,152 +376,160 @@ void StreetViewImage::InternalSwap(StreetViewImage* other) {
   auto* lhs_arena = GetArenaForAllocation();
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.object_, lhs_arena,
-                                       &other->_impl_.object_, rhs_arena);
-        swap(_impl_.heading_, other->_impl_.heading_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.object_, lhs_arena,
+      &other->_impl_.object_, rhs_arena
+  );
+  swap(_impl_.heading_, other->_impl_.heading_);
 }
 
-::google::protobuf::Metadata StreetViewImage::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata StreetViewImage::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fstreetview_2fv1_2fstreetview_2eproto_getter, &descriptor_table_city_2fstreetview_2fv1_2fstreetview_2eproto_once,
       file_level_metadata_city_2fstreetview_2fv1_2fstreetview_2eproto[0]);
 }
+
 // ===================================================================
 
 class StreetView::_Internal {
  public:
-  using HasBits = decltype(std::declval<StreetView>()._impl_._has_bits_);
-  static constexpr ::int32_t kHasBitsOffset =
-    8 * PROTOBUF_FIELD_OFFSET(StreetView, _impl_._has_bits_);
   static const ::city::geo::v2::LongLatPosition& lnglat(const StreetView* msg);
-  static void set_has_lnglat(HasBits* has_bits) {
-    (*has_bits)[0] |= 1u;
-  }
 };
 
-const ::city::geo::v2::LongLatPosition& StreetView::_Internal::lnglat(const StreetView* msg) {
+const ::city::geo::v2::LongLatPosition&
+StreetView::_Internal::lnglat(const StreetView* msg) {
   return *msg->_impl_.lnglat_;
 }
 void StreetView::clear_lnglat() {
-  if (_impl_.lnglat_ != nullptr) _impl_.lnglat_->Clear();
-  _impl_._has_bits_[0] &= ~0x00000001u;
+  if (GetArenaForAllocation() == nullptr && _impl_.lnglat_ != nullptr) {
+    delete _impl_.lnglat_;
+  }
+  _impl_.lnglat_ = nullptr;
 }
-StreetView::StreetView(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+StreetView::StreetView(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.streetview.v1.StreetView)
 }
-StreetView::StreetView(const StreetView& from) : ::google::protobuf::Message() {
-  StreetView* const _this = this;
-  (void)_this;
+StreetView::StreetView(const StreetView& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  StreetView* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){from._impl_._has_bits_},
-      /*decltype(_impl_._cached_size_)*/ {},
-      decltype(_impl_.images_){from._impl_.images_},
-      decltype(_impl_.lnglat_){nullptr},
-  };
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
-  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+      decltype(_impl_.images_){from._impl_.images_}
+    , decltype(_impl_.lnglat_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  if (from._internal_has_lnglat()) {
     _this->_impl_.lnglat_ = new ::city::geo::v2::LongLatPosition(*from._impl_.lnglat_);
   }
-
   // @@protoc_insertion_point(copy_constructor:city.streetview.v1.StreetView)
 }
-inline void StreetView::SharedCtor(::_pb::Arena* arena) {
+
+inline void StreetView::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){},
-      /*decltype(_impl_._cached_size_)*/ {},
-      decltype(_impl_.images_){arena},
-      decltype(_impl_.lnglat_){nullptr},
+      decltype(_impl_.images_){arena}
+    , decltype(_impl_.lnglat_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 StreetView::~StreetView() {
   // @@protoc_insertion_point(destructor:city.streetview.v1.StreetView)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void StreetView::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.images_.~RepeatedPtrField();
   if (this != internal_default_instance()) delete _impl_.lnglat_;
 }
+
 void StreetView::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void StreetView::Clear() {
+void StreetView::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.streetview.v1.StreetView)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _internal_mutable_images()->Clear();
-  cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000001u) {
-    ABSL_DCHECK(_impl_.lnglat_ != nullptr);
-    _impl_.lnglat_->Clear();
+  _impl_.images_.Clear();
+  if (GetArenaForAllocation() == nullptr && _impl_.lnglat_ != nullptr) {
+    delete _impl_.lnglat_;
   }
-  _impl_._has_bits_.Clear();
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _impl_.lnglat_ = nullptr;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* StreetView::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* StreetView::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // .city.geo.v2.LongLatPosition lnglat = 1 [json_name = "lnglat"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_lnglat(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated .city.streetview.v1.StreetViewImage images = 2 [json_name = "images"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_images(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<1, 2, 2, 0, 2> StreetView::_table_ = {
-  {
-    PROTOBUF_FIELD_OFFSET(StreetView, _impl_._has_bits_),
-    0, // no _extensions_
-    2, 8,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967292,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    2,  // num_field_entries
-    2,  // num_aux_entries
-    offsetof(decltype(_table_), aux_entries),
-    &_StreetView_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    // repeated .city.streetview.v1.StreetViewImage images = 2 [json_name = "images"];
-    {::_pbi::TcParser::FastMtR1,
-     {18, 63, 1, PROTOBUF_FIELD_OFFSET(StreetView, _impl_.images_)}},
-    // .city.geo.v2.LongLatPosition lnglat = 1 [json_name = "lnglat"];
-    {::_pbi::TcParser::FastMtS1,
-     {10, 0, 0, PROTOBUF_FIELD_OFFSET(StreetView, _impl_.lnglat_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // .city.geo.v2.LongLatPosition lnglat = 1 [json_name = "lnglat"];
-    {PROTOBUF_FIELD_OFFSET(StreetView, _impl_.lnglat_), _Internal::kHasBitsOffset + 0, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
-    // repeated .city.streetview.v1.StreetViewImage images = 2 [json_name = "images"];
-    {PROTOBUF_FIELD_OFFSET(StreetView, _impl_.images_), -1, 1,
-    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
-  }}, {{
-    {::_pbi::TcParser::GetTable<::city::geo::v2::LongLatPosition>()},
-    {::_pbi::TcParser::GetTable<::city::streetview::v1::StreetViewImage>()},
-  }}, {{
-  }},
-};
-
-::uint8_t* StreetView::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* StreetView::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.streetview.v1.StreetView)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
-  cached_has_bits = _impl_._has_bits_[0];
   // .city.geo.v2.LongLatPosition lnglat = 1 [json_name = "lnglat"];
-  if (cached_has_bits & 0x00000001u) {
-    target = ::google::protobuf::internal::WireFormatLite::
+  if (this->_internal_has_lnglat()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(1, _Internal::lnglat(this),
         _Internal::lnglat(this).GetCachedSize(), target, stream);
   }
@@ -567,66 +537,65 @@ const ::_pbi::TcParseTable<1, 2, 2, 0, 2> StreetView::_table_ = {
   // repeated .city.streetview.v1.StreetViewImage images = 2 [json_name = "images"];
   for (unsigned i = 0,
       n = static_cast<unsigned>(this->_internal_images_size()); i < n; i++) {
-    const auto& repfield = this->_internal_images().Get(i);
-    target = ::google::protobuf::internal::WireFormatLite::
+    const auto& repfield = this->_internal_images(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
         InternalWriteMessage(2, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.streetview.v1.StreetView)
   return target;
 }
 
-::size_t StreetView::ByteSizeLong() const {
+size_t StreetView::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.streetview.v1.StreetView)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // repeated .city.streetview.v1.StreetViewImage images = 2 [json_name = "images"];
   total_size += 1UL * this->_internal_images_size();
-  for (const auto& msg : this->_internal_images()) {
+  for (const auto& msg : this->_impl_.images_) {
     total_size +=
-      ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
+
   // .city.geo.v2.LongLatPosition lnglat = 1 [json_name = "lnglat"];
-  cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000001u) {
+  if (this->_internal_has_lnglat()) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *_impl_.lnglat_);
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData StreetView::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData StreetView::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     StreetView::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*StreetView::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*StreetView::GetClassData() const { return &_class_data_; }
 
 
-void StreetView::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void StreetView::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<StreetView*>(&to_msg);
   auto& from = static_cast<const StreetView&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.streetview.v1.StreetView)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  _this->_internal_mutable_images()->MergeFrom(from._internal_images());
-  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+  _this->_impl_.images_.MergeFrom(from._impl_.images_);
+  if (from._internal_has_lnglat()) {
     _this->_internal_mutable_lnglat()->::city::geo::v2::LongLatPosition::MergeFrom(
         from._internal_lnglat());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void StreetView::CopyFrom(const StreetView& from) {
@@ -636,171 +605,183 @@ void StreetView::CopyFrom(const StreetView& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool StreetView::IsInitialized() const {
+bool StreetView::IsInitialized() const {
   return true;
 }
 
 void StreetView::InternalSwap(StreetView* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
   _impl_.images_.InternalSwap(&other->_impl_.images_);
   swap(_impl_.lnglat_, other->_impl_.lnglat_);
 }
 
-::google::protobuf::Metadata StreetView::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata StreetView::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fstreetview_2fv1_2fstreetview_2eproto_getter, &descriptor_table_city_2fstreetview_2fv1_2fstreetview_2eproto_once,
       file_level_metadata_city_2fstreetview_2fv1_2fstreetview_2eproto[1]);
 }
+
 // ===================================================================
 
 class StreetViews::_Internal {
  public:
 };
 
-StreetViews::StreetViews(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+StreetViews::StreetViews(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.streetview.v1.StreetViews)
 }
-StreetViews::StreetViews(const StreetViews& from) : ::google::protobuf::Message() {
-  StreetViews* const _this = this;
-  (void)_this;
+StreetViews::StreetViews(const StreetViews& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  StreetViews* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.street_views_){from._impl_.street_views_},
-      /*decltype(_impl_._cached_size_)*/ {},
-  };
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+      decltype(_impl_.street_views_){from._impl_.street_views_}
+    , /*decltype(_impl_._cached_size_)*/{}};
 
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:city.streetview.v1.StreetViews)
 }
-inline void StreetViews::SharedCtor(::_pb::Arena* arena) {
+
+inline void StreetViews::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.street_views_){arena},
-      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.street_views_){arena}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 StreetViews::~StreetViews() {
   // @@protoc_insertion_point(destructor:city.streetview.v1.StreetViews)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void StreetViews::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.street_views_.~RepeatedPtrField();
 }
+
 void StreetViews::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void StreetViews::Clear() {
+void StreetViews::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.streetview.v1.StreetViews)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _internal_mutable_street_views()->Clear();
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _impl_.street_views_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* StreetViews::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* StreetViews::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // repeated .city.streetview.v1.StreetView street_views = 1 [json_name = "streetViews"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_street_views(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<0, 1, 1, 0, 2> StreetViews::_table_ = {
-  {
-    0,  // no _has_bits_
-    0, // no _extensions_
-    1, 0,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967294,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    1,  // num_field_entries
-    1,  // num_aux_entries
-    offsetof(decltype(_table_), aux_entries),
-    &_StreetViews_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    // repeated .city.streetview.v1.StreetView street_views = 1 [json_name = "streetViews"];
-    {::_pbi::TcParser::FastMtR1,
-     {10, 63, 0, PROTOBUF_FIELD_OFFSET(StreetViews, _impl_.street_views_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // repeated .city.streetview.v1.StreetView street_views = 1 [json_name = "streetViews"];
-    {PROTOBUF_FIELD_OFFSET(StreetViews, _impl_.street_views_), 0, 0,
-    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
-  }}, {{
-    {::_pbi::TcParser::GetTable<::city::streetview::v1::StreetView>()},
-  }}, {{
-  }},
-};
-
-::uint8_t* StreetViews::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* StreetViews::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.streetview.v1.StreetViews)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // repeated .city.streetview.v1.StreetView street_views = 1 [json_name = "streetViews"];
   for (unsigned i = 0,
       n = static_cast<unsigned>(this->_internal_street_views_size()); i < n; i++) {
-    const auto& repfield = this->_internal_street_views().Get(i);
-    target = ::google::protobuf::internal::WireFormatLite::
+    const auto& repfield = this->_internal_street_views(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
         InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.streetview.v1.StreetViews)
   return target;
 }
 
-::size_t StreetViews::ByteSizeLong() const {
+size_t StreetViews::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.streetview.v1.StreetViews)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // repeated .city.streetview.v1.StreetView street_views = 1 [json_name = "streetViews"];
   total_size += 1UL * this->_internal_street_views_size();
-  for (const auto& msg : this->_internal_street_views()) {
+  for (const auto& msg : this->_impl_.street_views_) {
     total_size +=
-      ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
+
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData StreetViews::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData StreetViews::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     StreetViews::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*StreetViews::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*StreetViews::GetClassData() const { return &_class_data_; }
 
 
-void StreetViews::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void StreetViews::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<StreetViews*>(&to_msg);
   auto& from = static_cast<const StreetViews&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.streetview.v1.StreetViews)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  _this->_internal_mutable_street_views()->MergeFrom(from._internal_street_views());
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.street_views_.MergeFrom(from._impl_.street_views_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void StreetViews::CopyFrom(const StreetViews& from) {
@@ -810,7 +791,7 @@ void StreetViews::CopyFrom(const StreetViews& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool StreetViews::IsInitialized() const {
+bool StreetViews::IsInitialized() const {
   return true;
 }
 
@@ -820,18 +801,30 @@ void StreetViews::InternalSwap(StreetViews* other) {
   _impl_.street_views_.InternalSwap(&other->_impl_.street_views_);
 }
 
-::google::protobuf::Metadata StreetViews::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata StreetViews::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fstreetview_2fv1_2fstreetview_2eproto_getter, &descriptor_table_city_2fstreetview_2fv1_2fstreetview_2eproto_once,
       file_level_metadata_city_2fstreetview_2fv1_2fstreetview_2eproto[2]);
 }
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace v1
 }  // namespace streetview
 }  // namespace city
-namespace google {
-namespace protobuf {
-}  // namespace protobuf
-}  // namespace google
+PROTOBUF_NAMESPACE_OPEN
+template<> PROTOBUF_NOINLINE ::city::streetview::v1::StreetViewImage*
+Arena::CreateMaybeMessage< ::city::streetview::v1::StreetViewImage >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::streetview::v1::StreetViewImage >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::streetview::v1::StreetView*
+Arena::CreateMaybeMessage< ::city::streetview::v1::StreetView >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::streetview::v1::StreetView >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::streetview::v1::StreetViews*
+Arena::CreateMaybeMessage< ::city::streetview::v1::StreetViews >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::streetview::v1::StreetViews >(arena);
+}
+PROTOBUF_NAMESPACE_CLOSE
+
 // @@protoc_insertion_point(global_scope)
-#include "google/protobuf/port_undef.inc"
+#include <google/protobuf/port_undef.inc>

@@ -4,325 +4,259 @@
 #include "city/wargame/v1/wargame.pb.h"
 
 #include <algorithm>
-#include "google/protobuf/io/coded_stream.h"
-#include "google/protobuf/extension_set.h"
-#include "google/protobuf/wire_format_lite.h"
-#include "google/protobuf/descriptor.h"
-#include "google/protobuf/generated_message_reflection.h"
-#include "google/protobuf/reflection_ops.h"
-#include "google/protobuf/wire_format.h"
-#include "google/protobuf/generated_message_tctable_impl.h"
-// @@protoc_insertion_point(includes)
 
-// Must be included last.
-#include "google/protobuf/port_def.inc"
+#include <google/protobuf/io/coded_stream.h>
+#include <google/protobuf/extension_set.h>
+#include <google/protobuf/wire_format_lite.h>
+#include <google/protobuf/descriptor.h>
+#include <google/protobuf/generated_message_reflection.h>
+#include <google/protobuf/reflection_ops.h>
+#include <google/protobuf/wire_format.h>
+// @@protoc_insertion_point(includes)
+#include <google/protobuf/port_def.inc>
+
 PROTOBUF_PRAGMA_INIT_SEG
-namespace _pb = ::google::protobuf;
-namespace _pbi = ::google::protobuf::internal;
-namespace _fl = ::google::protobuf::internal::field_layout;
+
+namespace _pb = ::PROTOBUF_NAMESPACE_ID;
+namespace _pbi = _pb::internal;
+
 namespace city {
 namespace wargame {
 namespace v1 {
-        template <typename>
-PROTOBUF_CONSTEXPR RecoPoint::RecoPoint(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_._has_bits_)*/ {},
-      /*decltype(_impl_._cached_size_)*/ {},
-      /*decltype(_impl_.pos_)*/ nullptr,
-      /*decltype(_impl_.type_)*/ 0,
-    } {}
+PROTOBUF_CONSTEXPR RecoPoint::RecoPoint(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.pos_)*/nullptr
+  , /*decltype(_impl_.type_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct RecoPointDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR RecoPointDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR RecoPointDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~RecoPointDefaultTypeInternal() {}
   union {
     RecoPoint _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 RecoPointDefaultTypeInternal _RecoPoint_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR Weapon::Weapon(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_._has_bits_)*/ {},
-      /*decltype(_impl_._cached_size_)*/ {},
-      /*decltype(_impl_.red_type_)*/ 0,
-      /*decltype(_impl_.blue_type_)*/ 0,
-      /*decltype(_impl_.num_)*/ 0,
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 RecoPointDefaultTypeInternal _RecoPoint_default_instance_;
+PROTOBUF_CONSTEXPR Weapon::Weapon(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_._has_bits_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}
+  , /*decltype(_impl_.red_type_)*/0
+  , /*decltype(_impl_.blue_type_)*/0
+  , /*decltype(_impl_.num_)*/0} {}
 struct WeaponDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR WeaponDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR WeaponDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~WeaponDefaultTypeInternal() {}
   union {
     Weapon _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 WeaponDefaultTypeInternal _Weapon_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR Point::Point(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_._has_bits_)*/ {},
-      /*decltype(_impl_._cached_size_)*/ {},
-      /*decltype(_impl_.weapon_)*/ nullptr,
-      /*decltype(_impl_.pos_)*/ nullptr,
-      /*decltype(_impl_.radius_)*/ 0,
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 WeaponDefaultTypeInternal _Weapon_default_instance_;
+PROTOBUF_CONSTEXPR Point::Point(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.weapon_)*/nullptr
+  , /*decltype(_impl_.pos_)*/nullptr
+  , /*decltype(_impl_.radius_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct PointDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR PointDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR PointDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~PointDefaultTypeInternal() {}
   union {
     Point _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PointDefaultTypeInternal _Point_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR Hit::Hit(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_._has_bits_)*/ {},
-      /*decltype(_impl_._cached_size_)*/ {},
-      /*decltype(_impl_.defenses_)*/ {},
-      /*decltype(_impl_.attack_)*/ nullptr,
-      /*decltype(_impl_.result_)*/ false,
-      /*decltype(_impl_.arrive_)*/ 0,
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PointDefaultTypeInternal _Point_default_instance_;
+PROTOBUF_CONSTEXPR Hit::Hit(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.defenses_)*/{}
+  , /*decltype(_impl_.attack_)*/nullptr
+  , /*decltype(_impl_.result_)*/false
+  , /*decltype(_impl_.arrive_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct HitDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR HitDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR HitDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~HitDefaultTypeInternal() {}
   union {
     Hit _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 HitDefaultTypeInternal _Hit_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR HitHistory::HitHistory(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_.hits_)*/ {},
-      /*decltype(_impl_._cached_size_)*/ {},
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 HitDefaultTypeInternal _Hit_default_instance_;
+PROTOBUF_CONSTEXPR HitHistory::HitHistory(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.hits_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct HitHistoryDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR HitHistoryDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR HitHistoryDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~HitHistoryDefaultTypeInternal() {}
   union {
     HitHistory _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 HitHistoryDefaultTypeInternal _HitHistory_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR Casualty::Casualty(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_.aoi_id_)*/ 0,
-      /*decltype(_impl_.num_)*/ 0,
-      /*decltype(_impl_._cached_size_)*/ {},
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 HitHistoryDefaultTypeInternal _HitHistory_default_instance_;
+PROTOBUF_CONSTEXPR Casualty::Casualty(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.aoi_id_)*/0
+  , /*decltype(_impl_.num_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct CasualtyDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR CasualtyDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR CasualtyDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~CasualtyDefaultTypeInternal() {}
   union {
     Casualty _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CasualtyDefaultTypeInternal _Casualty_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CasualtyDefaultTypeInternal _Casualty_default_instance_;
 }  // namespace v1
 }  // namespace wargame
 }  // namespace city
 static ::_pb::Metadata file_level_metadata_city_2fwargame_2fv1_2fwargame_2eproto[6];
 static const ::_pb::EnumDescriptor* file_level_enum_descriptors_city_2fwargame_2fv1_2fwargame_2eproto[5];
-static constexpr const ::_pb::ServiceDescriptor**
-    file_level_service_descriptors_city_2fwargame_2fv1_2fwargame_2eproto = nullptr;
-const ::uint32_t TableStruct_city_2fwargame_2fv1_2fwargame_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
-    protodesc_cold) = {
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::RecoPoint, _impl_._has_bits_),
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::RecoPoint, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::RecoPoint, _impl_.pos_),
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::RecoPoint, _impl_.type_),
-    0,
-    ~0u,
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::Weapon, _impl_._has_bits_),
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::Weapon, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::Weapon, _impl_.red_type_),
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::Weapon, _impl_.blue_type_),
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::Weapon, _impl_.num_),
-    0,
-    1,
-    ~0u,
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::Point, _impl_._has_bits_),
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::Point, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::Point, _impl_.weapon_),
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::Point, _impl_.pos_),
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::Point, _impl_.radius_),
-    0,
-    1,
-    ~0u,
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::Hit, _impl_._has_bits_),
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::Hit, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::Hit, _impl_.attack_),
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::Hit, _impl_.defenses_),
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::Hit, _impl_.result_),
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::Hit, _impl_.arrive_),
-    0,
-    ~0u,
-    ~0u,
-    ~0u,
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::HitHistory, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::HitHistory, _impl_.hits_),
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::Casualty, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::Casualty, _impl_.aoi_id_),
-    PROTOBUF_FIELD_OFFSET(::city::wargame::v1::Casualty, _impl_.num_),
-};
+static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_city_2fwargame_2fv1_2fwargame_2eproto = nullptr;
 
-static const ::_pbi::MigrationSchema
-    schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-        {0, 10, -1, sizeof(::city::wargame::v1::RecoPoint)},
-        {12, 23, -1, sizeof(::city::wargame::v1::Weapon)},
-        {26, 37, -1, sizeof(::city::wargame::v1::Point)},
-        {40, 52, -1, sizeof(::city::wargame::v1::Hit)},
-        {56, -1, -1, sizeof(::city::wargame::v1::HitHistory)},
-        {65, -1, -1, sizeof(::city::wargame::v1::Casualty)},
+const uint32_t TableStruct_city_2fwargame_2fv1_2fwargame_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::RecoPoint, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::RecoPoint, _impl_.pos_),
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::RecoPoint, _impl_.type_),
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::Weapon, _impl_._has_bits_),
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::Weapon, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::Weapon, _impl_.red_type_),
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::Weapon, _impl_.blue_type_),
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::Weapon, _impl_.num_),
+  0,
+  1,
+  ~0u,
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::Point, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::Point, _impl_.weapon_),
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::Point, _impl_.pos_),
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::Point, _impl_.radius_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::Hit, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::Hit, _impl_.attack_),
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::Hit, _impl_.defenses_),
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::Hit, _impl_.result_),
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::Hit, _impl_.arrive_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::HitHistory, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::HitHistory, _impl_.hits_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::Casualty, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::Casualty, _impl_.aoi_id_),
+  PROTOBUF_FIELD_OFFSET(::city::wargame::v1::Casualty, _impl_.num_),
+};
+static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  { 0, -1, -1, sizeof(::city::wargame::v1::RecoPoint)},
+  { 8, 17, -1, sizeof(::city::wargame::v1::Weapon)},
+  { 20, -1, -1, sizeof(::city::wargame::v1::Point)},
+  { 29, -1, -1, sizeof(::city::wargame::v1::Hit)},
+  { 39, -1, -1, sizeof(::city::wargame::v1::HitHistory)},
+  { 46, -1, -1, sizeof(::city::wargame::v1::Casualty)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
-    &::city::wargame::v1::_RecoPoint_default_instance_._instance,
-    &::city::wargame::v1::_Weapon_default_instance_._instance,
-    &::city::wargame::v1::_Point_default_instance_._instance,
-    &::city::wargame::v1::_Hit_default_instance_._instance,
-    &::city::wargame::v1::_HitHistory_default_instance_._instance,
-    &::city::wargame::v1::_Casualty_default_instance_._instance,
-};
-const char descriptor_table_protodef_city_2fwargame_2fv1_2fwargame_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-    "\n\035city/wargame/v1/wargame.proto\022\017city.wa"
-    "rgame.v1\032\025city/geo/v2/geo.proto\"j\n\tRecoP"
-    "oint\022.\n\003pos\030\001 \001(\0132\034.city.geo.v2.LongLatP"
-    "ositionR\003pos\022-\n\004type\030\002 \001(\0162\031.city.wargam"
-    "e.v1.RecoTypeR\004type\"\270\001\n\006Weapon\022>\n\010red_ty"
-    "pe\030\002 \001(\0162\036.city.wargame.v1.RedWeaponType"
-    "H\000R\007redType\210\001\001\022A\n\tblue_type\030\003 \001(\0162\037.city"
-    ".wargame.v1.BlueWeaponTypeH\001R\010blueType\210\001"
-    "\001\022\020\n\003num\030\004 \001(\005R\003numB\013\n\t_red_typeB\014\n\n_blu"
-    "e_type\"\200\001\n\005Point\022/\n\006weapon\030\001 \001(\0132\027.city."
-    "wargame.v1.WeaponR\006weapon\022.\n\003pos\030\002 \001(\0132\034"
-    ".city.geo.v2.LongLatPositionR\003pos\022\026\n\006rad"
-    "ius\030\003 \001(\001R\006radius\"\231\001\n\003Hit\022.\n\006attack\030\001 \001("
-    "\0132\026.city.wargame.v1.PointR\006attack\0222\n\010def"
-    "enses\030\002 \003(\0132\026.city.wargame.v1.PointR\010def"
-    "enses\022\026\n\006result\030\003 \001(\010R\006result\022\026\n\006arrive\030"
-    "\004 \001(\005R\006arrive\"6\n\nHitHistory\022(\n\004hits\030\001 \003("
-    "\0132\024.city.wargame.v1.HitR\004hits\"3\n\010Casualt"
-    "y\022\025\n\006aoi_id\030\001 \001(\005R\005aoiId\022\020\n\003num\030\002 \001(\005R\003n"
-    "um*\300\001\n\rRedWeaponType\022\037\n\033RED_WEAPON_TYPE_"
-    "UNSPECIFIED\020\000\022\033\n\027RED_WEAPON_TYPE_AGM_158"
-    "\020\001\022\033\n\027RED_WEAPON_TYPE_AGM_183\020\002\022\032\n\026RED_W"
-    "EAPON_TYPE_AGM_88\020\003\022\033\n\027RED_WEAPON_TYPE_U"
-    "GM_109\020\004\022\033\n\027RED_WEAPON_TYPE_AGM_142\020\005*\241\001"
-    "\n\016BlueWeaponType\022 \n\034BLUE_WEAPON_TYPE_UNS"
-    "PECIFIED\020\000\022\031\n\025BLUE_WEAPON_TYPE_HQ_9\020\001\022\032\n"
-    "\026BLUE_WEAPON_TYPE_HQ_12\020\002\022\032\n\026BLUE_WEAPON"
-    "_TYPE_HQ_16\020\003\022\032\n\026BLUE_WEAPON_TYPE_HQ_22\020"
-    "\004*9\n\004Camp\022\024\n\020CAMP_UNSPECIFIED\020\000\022\014\n\010CAMP_"
-    "RED\020\001\022\r\n\tCAMP_BLUE\020\002*P\n\010RecoType\022\031\n\025RECO"
-    "_TYPE_UNSPECIFIED\020\000\022\025\n\021RECO_TYPE_MISSILE"
-    "\020\001\022\022\n\016RECO_TYPE_ELEC\020\002*\211\001\n\014RecoAlgoType\022"
-    "\036\n\032RECO_ALGO_TYPE_UNSPECIFIED\020\000\022\036\n\032RECO_"
-    "ALGO_TYPE_MAX_DESTORY\020\001\022\031\n\025RECO_ALGO_TYP"
-    "E_RANDOM\020\002\022\036\n\032RECO_ALGO_TYPE_MIN_DESTORY"
-    "\020\003B\271\001\n\023com.city.wargame.v1B\014WargameProto"
-    "P\001Z6git.fiblab.net/sim/protos/go/city/wa"
-    "rgame/v1;wargamev1\242\002\003CWX\252\002\017City.Wargame."
-    "V1\312\002\017City\\Wargame\\V1\342\002\033City\\Wargame\\V1\\G"
-    "PBMetadata\352\002\021City::Wargame::V1b\006proto3"
-};
-static const ::_pbi::DescriptorTable* const descriptor_table_city_2fwargame_2fv1_2fwargame_2eproto_deps[1] =
-    {
-        &::descriptor_table_city_2fgeo_2fv2_2fgeo_2eproto,
-};
-static ::absl::once_flag descriptor_table_city_2fwargame_2fv1_2fwargame_2eproto_once;
-const ::_pbi::DescriptorTable descriptor_table_city_2fwargame_2fv1_2fwargame_2eproto = {
-    false,
-    false,
-    1598,
-    descriptor_table_protodef_city_2fwargame_2fv1_2fwargame_2eproto,
-    "city/wargame/v1/wargame.proto",
-    &descriptor_table_city_2fwargame_2fv1_2fwargame_2eproto_once,
-    descriptor_table_city_2fwargame_2fv1_2fwargame_2eproto_deps,
-    1,
-    6,
-    schemas,
-    file_default_instances,
-    TableStruct_city_2fwargame_2fv1_2fwargame_2eproto::offsets,
-    file_level_metadata_city_2fwargame_2fv1_2fwargame_2eproto,
-    file_level_enum_descriptors_city_2fwargame_2fv1_2fwargame_2eproto,
-    file_level_service_descriptors_city_2fwargame_2fv1_2fwargame_2eproto,
+  &::city::wargame::v1::_RecoPoint_default_instance_._instance,
+  &::city::wargame::v1::_Weapon_default_instance_._instance,
+  &::city::wargame::v1::_Point_default_instance_._instance,
+  &::city::wargame::v1::_Hit_default_instance_._instance,
+  &::city::wargame::v1::_HitHistory_default_instance_._instance,
+  &::city::wargame::v1::_Casualty_default_instance_._instance,
 };
 
-// This function exists to be marked as weak.
-// It can significantly speed up compilation by breaking up LLVM's SCC
-// in the .pb.cc translation units. Large translation units see a
-// reduction of more than 35% of walltime for optimized builds. Without
-// the weak attribute all the messages in the file, including all the
-// vtables and everything they use become part of the same SCC through
-// a cycle like:
-// GetMetadata -> descriptor table -> default instances ->
-//   vtables -> GetMetadata
-// By adding a weak function here we break the connection from the
-// individual vtables back into the descriptor table.
+const char descriptor_table_protodef_city_2fwargame_2fv1_2fwargame_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
+  "\n\035city/wargame/v1/wargame.proto\022\017city.wa"
+  "rgame.v1\032\025city/geo/v2/geo.proto\"j\n\tRecoP"
+  "oint\022.\n\003pos\030\001 \001(\0132\034.city.geo.v2.LongLatP"
+  "ositionR\003pos\022-\n\004type\030\002 \001(\0162\031.city.wargam"
+  "e.v1.RecoTypeR\004type\"\270\001\n\006Weapon\022>\n\010red_ty"
+  "pe\030\002 \001(\0162\036.city.wargame.v1.RedWeaponType"
+  "H\000R\007redType\210\001\001\022A\n\tblue_type\030\003 \001(\0162\037.city"
+  ".wargame.v1.BlueWeaponTypeH\001R\010blueType\210\001"
+  "\001\022\020\n\003num\030\004 \001(\005R\003numB\013\n\t_red_typeB\014\n\n_blu"
+  "e_type\"\200\001\n\005Point\022/\n\006weapon\030\001 \001(\0132\027.city."
+  "wargame.v1.WeaponR\006weapon\022.\n\003pos\030\002 \001(\0132\034"
+  ".city.geo.v2.LongLatPositionR\003pos\022\026\n\006rad"
+  "ius\030\003 \001(\001R\006radius\"\231\001\n\003Hit\022.\n\006attack\030\001 \001("
+  "\0132\026.city.wargame.v1.PointR\006attack\0222\n\010def"
+  "enses\030\002 \003(\0132\026.city.wargame.v1.PointR\010def"
+  "enses\022\026\n\006result\030\003 \001(\010R\006result\022\026\n\006arrive\030"
+  "\004 \001(\005R\006arrive\"6\n\nHitHistory\022(\n\004hits\030\001 \003("
+  "\0132\024.city.wargame.v1.HitR\004hits\"3\n\010Casualt"
+  "y\022\025\n\006aoi_id\030\001 \001(\005R\005aoiId\022\020\n\003num\030\002 \001(\005R\003n"
+  "um*\300\001\n\rRedWeaponType\022\037\n\033RED_WEAPON_TYPE_"
+  "UNSPECIFIED\020\000\022\033\n\027RED_WEAPON_TYPE_AGM_158"
+  "\020\001\022\033\n\027RED_WEAPON_TYPE_AGM_183\020\002\022\032\n\026RED_W"
+  "EAPON_TYPE_AGM_88\020\003\022\033\n\027RED_WEAPON_TYPE_U"
+  "GM_109\020\004\022\033\n\027RED_WEAPON_TYPE_AGM_142\020\005*\241\001"
+  "\n\016BlueWeaponType\022 \n\034BLUE_WEAPON_TYPE_UNS"
+  "PECIFIED\020\000\022\031\n\025BLUE_WEAPON_TYPE_HQ_9\020\001\022\032\n"
+  "\026BLUE_WEAPON_TYPE_HQ_12\020\002\022\032\n\026BLUE_WEAPON"
+  "_TYPE_HQ_16\020\003\022\032\n\026BLUE_WEAPON_TYPE_HQ_22\020"
+  "\004*9\n\004Camp\022\024\n\020CAMP_UNSPECIFIED\020\000\022\014\n\010CAMP_"
+  "RED\020\001\022\r\n\tCAMP_BLUE\020\002*P\n\010RecoType\022\031\n\025RECO"
+  "_TYPE_UNSPECIFIED\020\000\022\025\n\021RECO_TYPE_MISSILE"
+  "\020\001\022\022\n\016RECO_TYPE_ELEC\020\002*\211\001\n\014RecoAlgoType\022"
+  "\036\n\032RECO_ALGO_TYPE_UNSPECIFIED\020\000\022\036\n\032RECO_"
+  "ALGO_TYPE_MAX_DESTORY\020\001\022\031\n\025RECO_ALGO_TYP"
+  "E_RANDOM\020\002\022\036\n\032RECO_ALGO_TYPE_MIN_DESTORY"
+  "\020\003B\271\001\n\023com.city.wargame.v1B\014WargameProto"
+  "P\001Z6git.fiblab.net/sim/protos/go/city/wa"
+  "rgame/v1;wargamev1\242\002\003CWX\252\002\017City.Wargame."
+  "V1\312\002\017City\\Wargame\\V1\342\002\033City\\Wargame\\V1\\G"
+  "PBMetadata\352\002\021City::Wargame::V1b\006proto3"
+  ;
+static const ::_pbi::DescriptorTable* const descriptor_table_city_2fwargame_2fv1_2fwargame_2eproto_deps[1] = {
+  &::descriptor_table_city_2fgeo_2fv2_2fgeo_2eproto,
+};
+static ::_pbi::once_flag descriptor_table_city_2fwargame_2fv1_2fwargame_2eproto_once;
+const ::_pbi::DescriptorTable descriptor_table_city_2fwargame_2fv1_2fwargame_2eproto = {
+    false, false, 1598, descriptor_table_protodef_city_2fwargame_2fv1_2fwargame_2eproto,
+    "city/wargame/v1/wargame.proto",
+    &descriptor_table_city_2fwargame_2fv1_2fwargame_2eproto_once, descriptor_table_city_2fwargame_2fv1_2fwargame_2eproto_deps, 1, 6,
+    schemas, file_default_instances, TableStruct_city_2fwargame_2fv1_2fwargame_2eproto::offsets,
+    file_level_metadata_city_2fwargame_2fv1_2fwargame_2eproto, file_level_enum_descriptors_city_2fwargame_2fv1_2fwargame_2eproto,
+    file_level_service_descriptors_city_2fwargame_2fv1_2fwargame_2eproto,
+};
 PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_city_2fwargame_2fv1_2fwargame_2eproto_getter() {
   return &descriptor_table_city_2fwargame_2fv1_2fwargame_2eproto;
 }
+
 // Force running AddDescriptors() at dynamic initialization time.
-PROTOBUF_ATTRIBUTE_INIT_PRIORITY2
-static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_city_2fwargame_2fv1_2fwargame_2eproto(&descriptor_table_city_2fwargame_2fv1_2fwargame_2eproto);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_city_2fwargame_2fv1_2fwargame_2eproto(&descriptor_table_city_2fwargame_2fv1_2fwargame_2eproto);
 namespace city {
 namespace wargame {
 namespace v1 {
-const ::google::protobuf::EnumDescriptor* RedWeaponType_descriptor() {
-  ::google::protobuf::internal::AssignDescriptors(&descriptor_table_city_2fwargame_2fv1_2fwargame_2eproto);
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* RedWeaponType_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_city_2fwargame_2fv1_2fwargame_2eproto);
   return file_level_enum_descriptors_city_2fwargame_2fv1_2fwargame_2eproto[0];
 }
 bool RedWeaponType_IsValid(int value) {
@@ -338,8 +272,9 @@ bool RedWeaponType_IsValid(int value) {
       return false;
   }
 }
-const ::google::protobuf::EnumDescriptor* BlueWeaponType_descriptor() {
-  ::google::protobuf::internal::AssignDescriptors(&descriptor_table_city_2fwargame_2fv1_2fwargame_2eproto);
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* BlueWeaponType_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_city_2fwargame_2fv1_2fwargame_2eproto);
   return file_level_enum_descriptors_city_2fwargame_2fv1_2fwargame_2eproto[1];
 }
 bool BlueWeaponType_IsValid(int value) {
@@ -354,8 +289,9 @@ bool BlueWeaponType_IsValid(int value) {
       return false;
   }
 }
-const ::google::protobuf::EnumDescriptor* Camp_descriptor() {
-  ::google::protobuf::internal::AssignDescriptors(&descriptor_table_city_2fwargame_2fv1_2fwargame_2eproto);
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* Camp_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_city_2fwargame_2fv1_2fwargame_2eproto);
   return file_level_enum_descriptors_city_2fwargame_2fv1_2fwargame_2eproto[2];
 }
 bool Camp_IsValid(int value) {
@@ -368,8 +304,9 @@ bool Camp_IsValid(int value) {
       return false;
   }
 }
-const ::google::protobuf::EnumDescriptor* RecoType_descriptor() {
-  ::google::protobuf::internal::AssignDescriptors(&descriptor_table_city_2fwargame_2fv1_2fwargame_2eproto);
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* RecoType_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_city_2fwargame_2fv1_2fwargame_2eproto);
   return file_level_enum_descriptors_city_2fwargame_2fv1_2fwargame_2eproto[3];
 }
 bool RecoType_IsValid(int value) {
@@ -382,8 +319,9 @@ bool RecoType_IsValid(int value) {
       return false;
   }
 }
-const ::google::protobuf::EnumDescriptor* RecoAlgoType_descriptor() {
-  ::google::protobuf::internal::AssignDescriptors(&descriptor_table_city_2fwargame_2fv1_2fwargame_2eproto);
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* RecoAlgoType_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_city_2fwargame_2fv1_2fwargame_2eproto);
   return file_level_enum_descriptors_city_2fwargame_2fv1_2fwargame_2eproto[4];
 }
 bool RecoAlgoType_IsValid(int value) {
@@ -397,141 +335,145 @@ bool RecoAlgoType_IsValid(int value) {
       return false;
   }
 }
+
+
 // ===================================================================
 
 class RecoPoint::_Internal {
  public:
-  using HasBits = decltype(std::declval<RecoPoint>()._impl_._has_bits_);
-  static constexpr ::int32_t kHasBitsOffset =
-    8 * PROTOBUF_FIELD_OFFSET(RecoPoint, _impl_._has_bits_);
   static const ::city::geo::v2::LongLatPosition& pos(const RecoPoint* msg);
-  static void set_has_pos(HasBits* has_bits) {
-    (*has_bits)[0] |= 1u;
-  }
 };
 
-const ::city::geo::v2::LongLatPosition& RecoPoint::_Internal::pos(const RecoPoint* msg) {
+const ::city::geo::v2::LongLatPosition&
+RecoPoint::_Internal::pos(const RecoPoint* msg) {
   return *msg->_impl_.pos_;
 }
 void RecoPoint::clear_pos() {
-  if (_impl_.pos_ != nullptr) _impl_.pos_->Clear();
-  _impl_._has_bits_[0] &= ~0x00000001u;
+  if (GetArenaForAllocation() == nullptr && _impl_.pos_ != nullptr) {
+    delete _impl_.pos_;
+  }
+  _impl_.pos_ = nullptr;
 }
-RecoPoint::RecoPoint(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+RecoPoint::RecoPoint(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.wargame.v1.RecoPoint)
 }
-RecoPoint::RecoPoint(const RecoPoint& from) : ::google::protobuf::Message() {
-  RecoPoint* const _this = this;
-  (void)_this;
+RecoPoint::RecoPoint(const RecoPoint& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  RecoPoint* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){from._impl_._has_bits_},
-      /*decltype(_impl_._cached_size_)*/ {},
-      decltype(_impl_.pos_){nullptr},
-      decltype(_impl_.type_){},
-  };
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
-  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+      decltype(_impl_.pos_){nullptr}
+    , decltype(_impl_.type_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  if (from._internal_has_pos()) {
     _this->_impl_.pos_ = new ::city::geo::v2::LongLatPosition(*from._impl_.pos_);
   }
   _this->_impl_.type_ = from._impl_.type_;
-
   // @@protoc_insertion_point(copy_constructor:city.wargame.v1.RecoPoint)
 }
-inline void RecoPoint::SharedCtor(::_pb::Arena* arena) {
+
+inline void RecoPoint::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){},
-      /*decltype(_impl_._cached_size_)*/ {},
-      decltype(_impl_.pos_){nullptr},
-      decltype(_impl_.type_){0},
+      decltype(_impl_.pos_){nullptr}
+    , decltype(_impl_.type_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 RecoPoint::~RecoPoint() {
   // @@protoc_insertion_point(destructor:city.wargame.v1.RecoPoint)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void RecoPoint::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete _impl_.pos_;
 }
+
 void RecoPoint::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void RecoPoint::Clear() {
+void RecoPoint::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.wargame.v1.RecoPoint)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000001u) {
-    ABSL_DCHECK(_impl_.pos_ != nullptr);
-    _impl_.pos_->Clear();
+  if (GetArenaForAllocation() == nullptr && _impl_.pos_ != nullptr) {
+    delete _impl_.pos_;
   }
+  _impl_.pos_ = nullptr;
   _impl_.type_ = 0;
-  _impl_._has_bits_.Clear();
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* RecoPoint::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* RecoPoint::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // .city.geo.v2.LongLatPosition pos = 1 [json_name = "pos"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_pos(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .city.wargame.v1.RecoType type = 2 [json_name = "type"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_set_type(static_cast<::city::wargame::v1::RecoType>(val));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<1, 2, 1, 0, 2> RecoPoint::_table_ = {
-  {
-    PROTOBUF_FIELD_OFFSET(RecoPoint, _impl_._has_bits_),
-    0, // no _extensions_
-    2, 8,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967292,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    2,  // num_field_entries
-    1,  // num_aux_entries
-    offsetof(decltype(_table_), aux_entries),
-    &_RecoPoint_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    // .city.wargame.v1.RecoType type = 2 [json_name = "type"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(RecoPoint, _impl_.type_), 63>(),
-     {16, 63, 0, PROTOBUF_FIELD_OFFSET(RecoPoint, _impl_.type_)}},
-    // .city.geo.v2.LongLatPosition pos = 1 [json_name = "pos"];
-    {::_pbi::TcParser::FastMtS1,
-     {10, 0, 0, PROTOBUF_FIELD_OFFSET(RecoPoint, _impl_.pos_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // .city.geo.v2.LongLatPosition pos = 1 [json_name = "pos"];
-    {PROTOBUF_FIELD_OFFSET(RecoPoint, _impl_.pos_), _Internal::kHasBitsOffset + 0, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
-    // .city.wargame.v1.RecoType type = 2 [json_name = "type"];
-    {PROTOBUF_FIELD_OFFSET(RecoPoint, _impl_.type_), -1, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kOpenEnum)},
-  }}, {{
-    {::_pbi::TcParser::GetTable<::city::geo::v2::LongLatPosition>()},
-  }}, {{
-  }},
-};
-
-::uint8_t* RecoPoint::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* RecoPoint::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.wargame.v1.RecoPoint)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
-  cached_has_bits = _impl_._has_bits_[0];
   // .city.geo.v2.LongLatPosition pos = 1 [json_name = "pos"];
-  if (cached_has_bits & 0x00000001u) {
-    target = ::google::protobuf::internal::WireFormatLite::
+  if (this->_internal_has_pos()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(1, _Internal::pos(this),
         _Internal::pos(this).GetCachedSize(), target, stream);
   }
@@ -540,66 +482,64 @@ const ::_pbi::TcParseTable<1, 2, 1, 0, 2> RecoPoint::_table_ = {
   if (this->_internal_type() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteEnumToArray(
-        2, this->_internal_type(), target);
+      2, this->_internal_type(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.wargame.v1.RecoPoint)
   return target;
 }
 
-::size_t RecoPoint::ByteSizeLong() const {
+size_t RecoPoint::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.wargame.v1.RecoPoint)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // .city.geo.v2.LongLatPosition pos = 1 [json_name = "pos"];
-  cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000001u) {
+  if (this->_internal_has_pos()) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *_impl_.pos_);
   }
 
   // .city.wargame.v1.RecoType type = 2 [json_name = "type"];
   if (this->_internal_type() != 0) {
     total_size += 1 +
-                  ::_pbi::WireFormatLite::EnumSize(this->_internal_type());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_type());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData RecoPoint::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData RecoPoint::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     RecoPoint::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*RecoPoint::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*RecoPoint::GetClassData() const { return &_class_data_; }
 
 
-void RecoPoint::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void RecoPoint::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<RecoPoint*>(&to_msg);
   auto& from = static_cast<const RecoPoint&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.wargame.v1.RecoPoint)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+  if (from._internal_has_pos()) {
     _this->_internal_mutable_pos()->::city::geo::v2::LongLatPosition::MergeFrom(
         from._internal_pos());
   }
   if (from._internal_type() != 0) {
     _this->_internal_set_type(from._internal_type());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void RecoPoint::CopyFrom(const RecoPoint& from) {
@@ -609,15 +549,14 @@ void RecoPoint::CopyFrom(const RecoPoint& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool RecoPoint::IsInitialized() const {
+bool RecoPoint::IsInitialized() const {
   return true;
 }
 
 void RecoPoint::InternalSwap(RecoPoint* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
-  ::google::protobuf::internal::memswap<
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(RecoPoint, _impl_.type_)
       + sizeof(RecoPoint::_impl_.type_)
       - PROTOBUF_FIELD_OFFSET(RecoPoint, _impl_.pos_)>(
@@ -625,18 +564,17 @@ void RecoPoint::InternalSwap(RecoPoint* other) {
           reinterpret_cast<char*>(&other->_impl_.pos_));
 }
 
-::google::protobuf::Metadata RecoPoint::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata RecoPoint::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fwargame_2fv1_2fwargame_2eproto_getter, &descriptor_table_city_2fwargame_2fv1_2fwargame_2eproto_once,
       file_level_metadata_city_2fwargame_2fv1_2fwargame_2eproto[0]);
 }
+
 // ===================================================================
 
 class Weapon::_Internal {
  public:
   using HasBits = decltype(std::declval<Weapon>()._impl_._has_bits_);
-  static constexpr ::int32_t kHasBitsOffset =
-    8 * PROTOBUF_FIELD_OFFSET(Weapon, _impl_._has_bits_);
   static void set_has_red_type(HasBits* has_bits) {
     (*has_bits)[0] |= 1u;
   }
@@ -645,149 +583,172 @@ class Weapon::_Internal {
   }
 };
 
-Weapon::Weapon(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+Weapon::Weapon(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.wargame.v1.Weapon)
 }
 Weapon::Weapon(const Weapon& from)
-    : ::google::protobuf::Message(), _impl_(from._impl_) {
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  Weapon* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){from._impl_._has_bits_}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.red_type_){}
+    , decltype(_impl_.blue_type_){}
+    , decltype(_impl_.num_){}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&_impl_.red_type_, &from._impl_.red_type_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.num_) -
+    reinterpret_cast<char*>(&_impl_.red_type_)) + sizeof(_impl_.num_));
   // @@protoc_insertion_point(copy_constructor:city.wargame.v1.Weapon)
 }
-inline void Weapon::SharedCtor(::_pb::Arena* arena) {
+
+inline void Weapon::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){},
-      /*decltype(_impl_._cached_size_)*/ {},
-      decltype(_impl_.red_type_){0},
-      decltype(_impl_.blue_type_){0},
-      decltype(_impl_.num_){0},
+      decltype(_impl_._has_bits_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.red_type_){0}
+    , decltype(_impl_.blue_type_){0}
+    , decltype(_impl_.num_){0}
   };
 }
+
 Weapon::~Weapon() {
   // @@protoc_insertion_point(destructor:city.wargame.v1.Weapon)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void Weapon::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
+
 void Weapon::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void Weapon::Clear() {
+void Weapon::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.wargame.v1.Weapon)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   cached_has_bits = _impl_._has_bits_[0];
   if (cached_has_bits & 0x00000003u) {
-    ::memset(&_impl_.red_type_, 0, static_cast<::size_t>(
+    ::memset(&_impl_.red_type_, 0, static_cast<size_t>(
         reinterpret_cast<char*>(&_impl_.blue_type_) -
         reinterpret_cast<char*>(&_impl_.red_type_)) + sizeof(_impl_.blue_type_));
   }
   _impl_.num_ = 0;
   _impl_._has_bits_.Clear();
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* Weapon::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* Weapon::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  _Internal::HasBits has_bits{};
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // optional .city.wargame.v1.RedWeaponType red_type = 2 [json_name = "redType"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_set_red_type(static_cast<::city::wargame::v1::RedWeaponType>(val));
+        } else
+          goto handle_unusual;
+        continue;
+      // optional .city.wargame.v1.BlueWeaponType blue_type = 3 [json_name = "blueType"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_set_blue_type(static_cast<::city::wargame::v1::BlueWeaponType>(val));
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 num = 4 [json_name = "num"];
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
+          _impl_.num_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  _impl_._has_bits_.Or(has_bits);
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<2, 3, 0, 0, 2> Weapon::_table_ = {
-  {
-    PROTOBUF_FIELD_OFFSET(Weapon, _impl_._has_bits_),
-    0, // no _extensions_
-    4, 24,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967281,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    3,  // num_field_entries
-    0,  // num_aux_entries
-    offsetof(decltype(_table_), field_names),  // no aux_entries
-    &_Weapon_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    // int32 num = 4 [json_name = "num"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(Weapon, _impl_.num_), 63>(),
-     {32, 63, 0, PROTOBUF_FIELD_OFFSET(Weapon, _impl_.num_)}},
-    {::_pbi::TcParser::MiniParse, {}},
-    // optional .city.wargame.v1.RedWeaponType red_type = 2 [json_name = "redType"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(Weapon, _impl_.red_type_), 0>(),
-     {16, 0, 0, PROTOBUF_FIELD_OFFSET(Weapon, _impl_.red_type_)}},
-    // optional .city.wargame.v1.BlueWeaponType blue_type = 3 [json_name = "blueType"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(Weapon, _impl_.blue_type_), 1>(),
-     {24, 1, 0, PROTOBUF_FIELD_OFFSET(Weapon, _impl_.blue_type_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // optional .city.wargame.v1.RedWeaponType red_type = 2 [json_name = "redType"];
-    {PROTOBUF_FIELD_OFFSET(Weapon, _impl_.red_type_), _Internal::kHasBitsOffset + 0, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kOpenEnum)},
-    // optional .city.wargame.v1.BlueWeaponType blue_type = 3 [json_name = "blueType"];
-    {PROTOBUF_FIELD_OFFSET(Weapon, _impl_.blue_type_), _Internal::kHasBitsOffset + 1, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kOpenEnum)},
-    // int32 num = 4 [json_name = "num"];
-    {PROTOBUF_FIELD_OFFSET(Weapon, _impl_.num_), -1, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-  }},
-  // no aux_entries
-  {{
-  }},
-};
-
-::uint8_t* Weapon::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* Weapon::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.wargame.v1.Weapon)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
-  cached_has_bits = _impl_._has_bits_[0];
   // optional .city.wargame.v1.RedWeaponType red_type = 2 [json_name = "redType"];
-  if (cached_has_bits & 0x00000001u) {
+  if (_internal_has_red_type()) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteEnumToArray(
-        2, this->_internal_red_type(), target);
+      2, this->_internal_red_type(), target);
   }
 
   // optional .city.wargame.v1.BlueWeaponType blue_type = 3 [json_name = "blueType"];
-  if (cached_has_bits & 0x00000002u) {
+  if (_internal_has_blue_type()) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteEnumToArray(
-        3, this->_internal_blue_type(), target);
+      3, this->_internal_blue_type(), target);
   }
 
   // int32 num = 4 [json_name = "num"];
   if (this->_internal_num() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<4>(
-            stream, this->_internal_num(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(4, this->_internal_num(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.wargame.v1.Weapon)
   return target;
 }
 
-::size_t Weapon::ByteSizeLong() const {
+size_t Weapon::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.wargame.v1.Weapon)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -796,38 +757,37 @@ const ::_pbi::TcParseTable<2, 3, 0, 0, 2> Weapon::_table_ = {
     // optional .city.wargame.v1.RedWeaponType red_type = 2 [json_name = "redType"];
     if (cached_has_bits & 0x00000001u) {
       total_size += 1 +
-                    ::_pbi::WireFormatLite::EnumSize(this->_internal_red_type());
+        ::_pbi::WireFormatLite::EnumSize(this->_internal_red_type());
     }
 
     // optional .city.wargame.v1.BlueWeaponType blue_type = 3 [json_name = "blueType"];
     if (cached_has_bits & 0x00000002u) {
       total_size += 1 +
-                    ::_pbi::WireFormatLite::EnumSize(this->_internal_blue_type());
+        ::_pbi::WireFormatLite::EnumSize(this->_internal_blue_type());
     }
 
   }
   // int32 num = 4 [json_name = "num"];
   if (this->_internal_num() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_num());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_num());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData Weapon::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Weapon::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     Weapon::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*Weapon::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Weapon::GetClassData() const { return &_class_data_; }
 
 
-void Weapon::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void Weapon::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<Weapon*>(&to_msg);
   auto& from = static_cast<const Weapon&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.wargame.v1.Weapon)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._impl_._has_bits_[0];
@@ -843,7 +803,7 @@ void Weapon::MergeImpl(::google::protobuf::Message& to_msg, const ::google::prot
   if (from._internal_num() != 0) {
     _this->_internal_set_num(from._internal_num());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void Weapon::CopyFrom(const Weapon& from) {
@@ -853,7 +813,7 @@ void Weapon::CopyFrom(const Weapon& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool Weapon::IsInitialized() const {
+bool Weapon::IsInitialized() const {
   return true;
 }
 
@@ -861,7 +821,7 @@ void Weapon::InternalSwap(Weapon* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
-  ::google::protobuf::internal::memswap<
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(Weapon, _impl_.num_)
       + sizeof(Weapon::_impl_.num_)
       - PROTOBUF_FIELD_OFFSET(Weapon, _impl_.red_type_)>(
@@ -869,278 +829,265 @@ void Weapon::InternalSwap(Weapon* other) {
           reinterpret_cast<char*>(&other->_impl_.red_type_));
 }
 
-::google::protobuf::Metadata Weapon::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata Weapon::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fwargame_2fv1_2fwargame_2eproto_getter, &descriptor_table_city_2fwargame_2fv1_2fwargame_2eproto_once,
       file_level_metadata_city_2fwargame_2fv1_2fwargame_2eproto[1]);
 }
+
 // ===================================================================
 
 class Point::_Internal {
  public:
-  using HasBits = decltype(std::declval<Point>()._impl_._has_bits_);
-  static constexpr ::int32_t kHasBitsOffset =
-    8 * PROTOBUF_FIELD_OFFSET(Point, _impl_._has_bits_);
   static const ::city::wargame::v1::Weapon& weapon(const Point* msg);
-  static void set_has_weapon(HasBits* has_bits) {
-    (*has_bits)[0] |= 1u;
-  }
   static const ::city::geo::v2::LongLatPosition& pos(const Point* msg);
-  static void set_has_pos(HasBits* has_bits) {
-    (*has_bits)[0] |= 2u;
-  }
 };
 
-const ::city::wargame::v1::Weapon& Point::_Internal::weapon(const Point* msg) {
+const ::city::wargame::v1::Weapon&
+Point::_Internal::weapon(const Point* msg) {
   return *msg->_impl_.weapon_;
 }
-const ::city::geo::v2::LongLatPosition& Point::_Internal::pos(const Point* msg) {
+const ::city::geo::v2::LongLatPosition&
+Point::_Internal::pos(const Point* msg) {
   return *msg->_impl_.pos_;
 }
 void Point::clear_pos() {
-  if (_impl_.pos_ != nullptr) _impl_.pos_->Clear();
-  _impl_._has_bits_[0] &= ~0x00000002u;
+  if (GetArenaForAllocation() == nullptr && _impl_.pos_ != nullptr) {
+    delete _impl_.pos_;
+  }
+  _impl_.pos_ = nullptr;
 }
-Point::Point(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+Point::Point(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.wargame.v1.Point)
 }
-Point::Point(const Point& from) : ::google::protobuf::Message() {
-  Point* const _this = this;
-  (void)_this;
+Point::Point(const Point& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  Point* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){from._impl_._has_bits_},
-      /*decltype(_impl_._cached_size_)*/ {},
-      decltype(_impl_.weapon_){nullptr},
-      decltype(_impl_.pos_){nullptr},
-      decltype(_impl_.radius_){},
-  };
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
-  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+      decltype(_impl_.weapon_){nullptr}
+    , decltype(_impl_.pos_){nullptr}
+    , decltype(_impl_.radius_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  if (from._internal_has_weapon()) {
     _this->_impl_.weapon_ = new ::city::wargame::v1::Weapon(*from._impl_.weapon_);
   }
-  if ((from._impl_._has_bits_[0] & 0x00000002u) != 0) {
+  if (from._internal_has_pos()) {
     _this->_impl_.pos_ = new ::city::geo::v2::LongLatPosition(*from._impl_.pos_);
   }
   _this->_impl_.radius_ = from._impl_.radius_;
-
   // @@protoc_insertion_point(copy_constructor:city.wargame.v1.Point)
 }
-inline void Point::SharedCtor(::_pb::Arena* arena) {
+
+inline void Point::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){},
-      /*decltype(_impl_._cached_size_)*/ {},
-      decltype(_impl_.weapon_){nullptr},
-      decltype(_impl_.pos_){nullptr},
-      decltype(_impl_.radius_){0},
+      decltype(_impl_.weapon_){nullptr}
+    , decltype(_impl_.pos_){nullptr}
+    , decltype(_impl_.radius_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 Point::~Point() {
   // @@protoc_insertion_point(destructor:city.wargame.v1.Point)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void Point::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete _impl_.weapon_;
   if (this != internal_default_instance()) delete _impl_.pos_;
 }
+
 void Point::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void Point::Clear() {
+void Point::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.wargame.v1.Point)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000003u) {
-    if (cached_has_bits & 0x00000001u) {
-      ABSL_DCHECK(_impl_.weapon_ != nullptr);
-      _impl_.weapon_->Clear();
-    }
-    if (cached_has_bits & 0x00000002u) {
-      ABSL_DCHECK(_impl_.pos_ != nullptr);
-      _impl_.pos_->Clear();
-    }
+  if (GetArenaForAllocation() == nullptr && _impl_.weapon_ != nullptr) {
+    delete _impl_.weapon_;
   }
+  _impl_.weapon_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.pos_ != nullptr) {
+    delete _impl_.pos_;
+  }
+  _impl_.pos_ = nullptr;
   _impl_.radius_ = 0;
-  _impl_._has_bits_.Clear();
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* Point::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* Point::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // .city.wargame.v1.Weapon weapon = 1 [json_name = "weapon"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_weapon(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .city.geo.v2.LongLatPosition pos = 2 [json_name = "pos"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr = ctx->ParseMessage(_internal_mutable_pos(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // double radius = 3 [json_name = "radius"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 25)) {
+          _impl_.radius_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<2, 3, 2, 0, 2> Point::_table_ = {
-  {
-    PROTOBUF_FIELD_OFFSET(Point, _impl_._has_bits_),
-    0, // no _extensions_
-    3, 24,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967288,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    3,  // num_field_entries
-    2,  // num_aux_entries
-    offsetof(decltype(_table_), aux_entries),
-    &_Point_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    {::_pbi::TcParser::MiniParse, {}},
-    // .city.wargame.v1.Weapon weapon = 1 [json_name = "weapon"];
-    {::_pbi::TcParser::FastMtS1,
-     {10, 0, 0, PROTOBUF_FIELD_OFFSET(Point, _impl_.weapon_)}},
-    // .city.geo.v2.LongLatPosition pos = 2 [json_name = "pos"];
-    {::_pbi::TcParser::FastMtS1,
-     {18, 1, 1, PROTOBUF_FIELD_OFFSET(Point, _impl_.pos_)}},
-    // double radius = 3 [json_name = "radius"];
-    {::_pbi::TcParser::FastF64S1,
-     {25, 63, 0, PROTOBUF_FIELD_OFFSET(Point, _impl_.radius_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // .city.wargame.v1.Weapon weapon = 1 [json_name = "weapon"];
-    {PROTOBUF_FIELD_OFFSET(Point, _impl_.weapon_), _Internal::kHasBitsOffset + 0, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
-    // .city.geo.v2.LongLatPosition pos = 2 [json_name = "pos"];
-    {PROTOBUF_FIELD_OFFSET(Point, _impl_.pos_), _Internal::kHasBitsOffset + 1, 1,
-    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
-    // double radius = 3 [json_name = "radius"];
-    {PROTOBUF_FIELD_OFFSET(Point, _impl_.radius_), -1, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-  }}, {{
-    {::_pbi::TcParser::GetTable<::city::wargame::v1::Weapon>()},
-    {::_pbi::TcParser::GetTable<::city::geo::v2::LongLatPosition>()},
-  }}, {{
-  }},
-};
-
-::uint8_t* Point::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* Point::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.wargame.v1.Point)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
-  cached_has_bits = _impl_._has_bits_[0];
   // .city.wargame.v1.Weapon weapon = 1 [json_name = "weapon"];
-  if (cached_has_bits & 0x00000001u) {
-    target = ::google::protobuf::internal::WireFormatLite::
+  if (this->_internal_has_weapon()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(1, _Internal::weapon(this),
         _Internal::weapon(this).GetCachedSize(), target, stream);
   }
 
   // .city.geo.v2.LongLatPosition pos = 2 [json_name = "pos"];
-  if (cached_has_bits & 0x00000002u) {
-    target = ::google::protobuf::internal::WireFormatLite::
+  if (this->_internal_has_pos()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(2, _Internal::pos(this),
         _Internal::pos(this).GetCachedSize(), target, stream);
   }
 
   // double radius = 3 [json_name = "radius"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_radius = this->_internal_radius();
-  ::uint64_t raw_radius;
+  uint64_t raw_radius;
   memcpy(&raw_radius, &tmp_radius, sizeof(tmp_radius));
   if (raw_radius != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        3, this->_internal_radius(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(3, this->_internal_radius(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.wargame.v1.Point)
   return target;
 }
 
-::size_t Point::ByteSizeLong() const {
+size_t Point::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.wargame.v1.Point)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000003u) {
-    // .city.wargame.v1.Weapon weapon = 1 [json_name = "weapon"];
-    if (cached_has_bits & 0x00000001u) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          *_impl_.weapon_);
-    }
-
-    // .city.geo.v2.LongLatPosition pos = 2 [json_name = "pos"];
-    if (cached_has_bits & 0x00000002u) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          *_impl_.pos_);
-    }
-
+  // .city.wargame.v1.Weapon weapon = 1 [json_name = "weapon"];
+  if (this->_internal_has_weapon()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.weapon_);
   }
+
+  // .city.geo.v2.LongLatPosition pos = 2 [json_name = "pos"];
+  if (this->_internal_has_pos()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.pos_);
+  }
+
   // double radius = 3 [json_name = "radius"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_radius = this->_internal_radius();
-  ::uint64_t raw_radius;
+  uint64_t raw_radius;
   memcpy(&raw_radius, &tmp_radius, sizeof(tmp_radius));
   if (raw_radius != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData Point::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Point::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     Point::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*Point::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Point::GetClassData() const { return &_class_data_; }
 
 
-void Point::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void Point::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<Point*>(&to_msg);
   auto& from = static_cast<const Point&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.wargame.v1.Point)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  cached_has_bits = from._impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000003u) {
-    if (cached_has_bits & 0x00000001u) {
-      _this->_internal_mutable_weapon()->::city::wargame::v1::Weapon::MergeFrom(
-          from._internal_weapon());
-    }
-    if (cached_has_bits & 0x00000002u) {
-      _this->_internal_mutable_pos()->::city::geo::v2::LongLatPosition::MergeFrom(
-          from._internal_pos());
-    }
+  if (from._internal_has_weapon()) {
+    _this->_internal_mutable_weapon()->::city::wargame::v1::Weapon::MergeFrom(
+        from._internal_weapon());
   }
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  if (from._internal_has_pos()) {
+    _this->_internal_mutable_pos()->::city::geo::v2::LongLatPosition::MergeFrom(
+        from._internal_pos());
+  }
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_radius = from._internal_radius();
-  ::uint64_t raw_radius;
+  uint64_t raw_radius;
   memcpy(&raw_radius, &tmp_radius, sizeof(tmp_radius));
   if (raw_radius != 0) {
     _this->_internal_set_radius(from._internal_radius());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void Point::CopyFrom(const Point& from) {
@@ -1150,15 +1097,14 @@ void Point::CopyFrom(const Point& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool Point::IsInitialized() const {
+bool Point::IsInitialized() const {
   return true;
 }
 
 void Point::InternalSwap(Point* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
-  ::google::protobuf::internal::memswap<
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(Point, _impl_.radius_)
       + sizeof(Point::_impl_.radius_)
       - PROTOBUF_FIELD_OFFSET(Point, _impl_.weapon_)>(
@@ -1166,165 +1112,173 @@ void Point::InternalSwap(Point* other) {
           reinterpret_cast<char*>(&other->_impl_.weapon_));
 }
 
-::google::protobuf::Metadata Point::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata Point::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fwargame_2fv1_2fwargame_2eproto_getter, &descriptor_table_city_2fwargame_2fv1_2fwargame_2eproto_once,
       file_level_metadata_city_2fwargame_2fv1_2fwargame_2eproto[2]);
 }
+
 // ===================================================================
 
 class Hit::_Internal {
  public:
-  using HasBits = decltype(std::declval<Hit>()._impl_._has_bits_);
-  static constexpr ::int32_t kHasBitsOffset =
-    8 * PROTOBUF_FIELD_OFFSET(Hit, _impl_._has_bits_);
   static const ::city::wargame::v1::Point& attack(const Hit* msg);
-  static void set_has_attack(HasBits* has_bits) {
-    (*has_bits)[0] |= 1u;
-  }
 };
 
-const ::city::wargame::v1::Point& Hit::_Internal::attack(const Hit* msg) {
+const ::city::wargame::v1::Point&
+Hit::_Internal::attack(const Hit* msg) {
   return *msg->_impl_.attack_;
 }
-Hit::Hit(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+Hit::Hit(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.wargame.v1.Hit)
 }
-Hit::Hit(const Hit& from) : ::google::protobuf::Message() {
-  Hit* const _this = this;
-  (void)_this;
+Hit::Hit(const Hit& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  Hit* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){from._impl_._has_bits_},
-      /*decltype(_impl_._cached_size_)*/ {},
-      decltype(_impl_.defenses_){from._impl_.defenses_},
-      decltype(_impl_.attack_){nullptr},
-      decltype(_impl_.result_){},
-      decltype(_impl_.arrive_){},
-  };
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
-  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+      decltype(_impl_.defenses_){from._impl_.defenses_}
+    , decltype(_impl_.attack_){nullptr}
+    , decltype(_impl_.result_){}
+    , decltype(_impl_.arrive_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  if (from._internal_has_attack()) {
     _this->_impl_.attack_ = new ::city::wargame::v1::Point(*from._impl_.attack_);
   }
   ::memcpy(&_impl_.result_, &from._impl_.result_,
-    static_cast<::size_t>(reinterpret_cast<char*>(&_impl_.arrive_) -
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.arrive_) -
     reinterpret_cast<char*>(&_impl_.result_)) + sizeof(_impl_.arrive_));
-
   // @@protoc_insertion_point(copy_constructor:city.wargame.v1.Hit)
 }
-inline void Hit::SharedCtor(::_pb::Arena* arena) {
+
+inline void Hit::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){},
-      /*decltype(_impl_._cached_size_)*/ {},
-      decltype(_impl_.defenses_){arena},
-      decltype(_impl_.attack_){nullptr},
-      decltype(_impl_.result_){false},
-      decltype(_impl_.arrive_){0},
+      decltype(_impl_.defenses_){arena}
+    , decltype(_impl_.attack_){nullptr}
+    , decltype(_impl_.result_){false}
+    , decltype(_impl_.arrive_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 Hit::~Hit() {
   // @@protoc_insertion_point(destructor:city.wargame.v1.Hit)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void Hit::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.defenses_.~RepeatedPtrField();
   if (this != internal_default_instance()) delete _impl_.attack_;
 }
+
 void Hit::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void Hit::Clear() {
+void Hit::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.wargame.v1.Hit)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _internal_mutable_defenses()->Clear();
-  cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000001u) {
-    ABSL_DCHECK(_impl_.attack_ != nullptr);
-    _impl_.attack_->Clear();
+  _impl_.defenses_.Clear();
+  if (GetArenaForAllocation() == nullptr && _impl_.attack_ != nullptr) {
+    delete _impl_.attack_;
   }
-  ::memset(&_impl_.result_, 0, static_cast<::size_t>(
+  _impl_.attack_ = nullptr;
+  ::memset(&_impl_.result_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_impl_.arrive_) -
       reinterpret_cast<char*>(&_impl_.result_)) + sizeof(_impl_.arrive_));
-  _impl_._has_bits_.Clear();
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* Hit::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* Hit::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // .city.wargame.v1.Point attack = 1 [json_name = "attack"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_attack(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated .city.wargame.v1.Point defenses = 2 [json_name = "defenses"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_defenses(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      // bool result = 3 [json_name = "result"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+          _impl_.result_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 arrive = 4 [json_name = "arrive"];
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
+          _impl_.arrive_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<2, 4, 2, 0, 2> Hit::_table_ = {
-  {
-    PROTOBUF_FIELD_OFFSET(Hit, _impl_._has_bits_),
-    0, // no _extensions_
-    4, 24,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967280,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    4,  // num_field_entries
-    2,  // num_aux_entries
-    offsetof(decltype(_table_), aux_entries),
-    &_Hit_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    // int32 arrive = 4 [json_name = "arrive"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(Hit, _impl_.arrive_), 63>(),
-     {32, 63, 0, PROTOBUF_FIELD_OFFSET(Hit, _impl_.arrive_)}},
-    // .city.wargame.v1.Point attack = 1 [json_name = "attack"];
-    {::_pbi::TcParser::FastMtS1,
-     {10, 0, 0, PROTOBUF_FIELD_OFFSET(Hit, _impl_.attack_)}},
-    // repeated .city.wargame.v1.Point defenses = 2 [json_name = "defenses"];
-    {::_pbi::TcParser::FastMtR1,
-     {18, 63, 1, PROTOBUF_FIELD_OFFSET(Hit, _impl_.defenses_)}},
-    // bool result = 3 [json_name = "result"];
-    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(Hit, _impl_.result_), 63>(),
-     {24, 63, 0, PROTOBUF_FIELD_OFFSET(Hit, _impl_.result_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // .city.wargame.v1.Point attack = 1 [json_name = "attack"];
-    {PROTOBUF_FIELD_OFFSET(Hit, _impl_.attack_), _Internal::kHasBitsOffset + 0, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
-    // repeated .city.wargame.v1.Point defenses = 2 [json_name = "defenses"];
-    {PROTOBUF_FIELD_OFFSET(Hit, _impl_.defenses_), -1, 1,
-    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
-    // bool result = 3 [json_name = "result"];
-    {PROTOBUF_FIELD_OFFSET(Hit, _impl_.result_), -1, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kBool)},
-    // int32 arrive = 4 [json_name = "arrive"];
-    {PROTOBUF_FIELD_OFFSET(Hit, _impl_.arrive_), -1, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-  }}, {{
-    {::_pbi::TcParser::GetTable<::city::wargame::v1::Point>()},
-    {::_pbi::TcParser::GetTable<::city::wargame::v1::Point>()},
-  }}, {{
-  }},
-};
-
-::uint8_t* Hit::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* Hit::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.wargame.v1.Hit)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
-  cached_has_bits = _impl_._has_bits_[0];
   // .city.wargame.v1.Point attack = 1 [json_name = "attack"];
-  if (cached_has_bits & 0x00000001u) {
-    target = ::google::protobuf::internal::WireFormatLite::
+  if (this->_internal_has_attack()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(1, _Internal::attack(this),
         _Internal::attack(this).GetCachedSize(), target, stream);
   }
@@ -1332,87 +1286,83 @@ const ::_pbi::TcParseTable<2, 4, 2, 0, 2> Hit::_table_ = {
   // repeated .city.wargame.v1.Point defenses = 2 [json_name = "defenses"];
   for (unsigned i = 0,
       n = static_cast<unsigned>(this->_internal_defenses_size()); i < n; i++) {
-    const auto& repfield = this->_internal_defenses().Get(i);
-    target = ::google::protobuf::internal::WireFormatLite::
+    const auto& repfield = this->_internal_defenses(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
         InternalWriteMessage(2, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   // bool result = 3 [json_name = "result"];
   if (this->_internal_result() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(
-        3, this->_internal_result(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(3, this->_internal_result(), target);
   }
 
   // int32 arrive = 4 [json_name = "arrive"];
   if (this->_internal_arrive() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<4>(
-            stream, this->_internal_arrive(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(4, this->_internal_arrive(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.wargame.v1.Hit)
   return target;
 }
 
-::size_t Hit::ByteSizeLong() const {
+size_t Hit::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.wargame.v1.Hit)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // repeated .city.wargame.v1.Point defenses = 2 [json_name = "defenses"];
   total_size += 1UL * this->_internal_defenses_size();
-  for (const auto& msg : this->_internal_defenses()) {
+  for (const auto& msg : this->_impl_.defenses_) {
     total_size +=
-      ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
+
   // .city.wargame.v1.Point attack = 1 [json_name = "attack"];
-  cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000001u) {
+  if (this->_internal_has_attack()) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *_impl_.attack_);
   }
 
   // bool result = 3 [json_name = "result"];
   if (this->_internal_result() != 0) {
-    total_size += 2;
+    total_size += 1 + 1;
   }
 
   // int32 arrive = 4 [json_name = "arrive"];
   if (this->_internal_arrive() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_arrive());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_arrive());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData Hit::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Hit::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     Hit::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*Hit::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Hit::GetClassData() const { return &_class_data_; }
 
 
-void Hit::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void Hit::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<Hit*>(&to_msg);
   auto& from = static_cast<const Hit&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.wargame.v1.Hit)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  _this->_internal_mutable_defenses()->MergeFrom(from._internal_defenses());
-  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+  _this->_impl_.defenses_.MergeFrom(from._impl_.defenses_);
+  if (from._internal_has_attack()) {
     _this->_internal_mutable_attack()->::city::wargame::v1::Point::MergeFrom(
         from._internal_attack());
   }
@@ -1422,7 +1372,7 @@ void Hit::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobu
   if (from._internal_arrive() != 0) {
     _this->_internal_set_arrive(from._internal_arrive());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void Hit::CopyFrom(const Hit& from) {
@@ -1432,16 +1382,15 @@ void Hit::CopyFrom(const Hit& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool Hit::IsInitialized() const {
+bool Hit::IsInitialized() const {
   return true;
 }
 
 void Hit::InternalSwap(Hit* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
   _impl_.defenses_.InternalSwap(&other->_impl_.defenses_);
-  ::google::protobuf::internal::memswap<
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(Hit, _impl_.arrive_)
       + sizeof(Hit::_impl_.arrive_)
       - PROTOBUF_FIELD_OFFSET(Hit, _impl_.attack_)>(
@@ -1449,159 +1398,172 @@ void Hit::InternalSwap(Hit* other) {
           reinterpret_cast<char*>(&other->_impl_.attack_));
 }
 
-::google::protobuf::Metadata Hit::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata Hit::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fwargame_2fv1_2fwargame_2eproto_getter, &descriptor_table_city_2fwargame_2fv1_2fwargame_2eproto_once,
       file_level_metadata_city_2fwargame_2fv1_2fwargame_2eproto[3]);
 }
+
 // ===================================================================
 
 class HitHistory::_Internal {
  public:
 };
 
-HitHistory::HitHistory(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+HitHistory::HitHistory(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.wargame.v1.HitHistory)
 }
-HitHistory::HitHistory(const HitHistory& from) : ::google::protobuf::Message() {
-  HitHistory* const _this = this;
-  (void)_this;
+HitHistory::HitHistory(const HitHistory& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  HitHistory* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.hits_){from._impl_.hits_},
-      /*decltype(_impl_._cached_size_)*/ {},
-  };
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+      decltype(_impl_.hits_){from._impl_.hits_}
+    , /*decltype(_impl_._cached_size_)*/{}};
 
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:city.wargame.v1.HitHistory)
 }
-inline void HitHistory::SharedCtor(::_pb::Arena* arena) {
+
+inline void HitHistory::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.hits_){arena},
-      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.hits_){arena}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 HitHistory::~HitHistory() {
   // @@protoc_insertion_point(destructor:city.wargame.v1.HitHistory)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void HitHistory::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.hits_.~RepeatedPtrField();
 }
+
 void HitHistory::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void HitHistory::Clear() {
+void HitHistory::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.wargame.v1.HitHistory)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _internal_mutable_hits()->Clear();
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _impl_.hits_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* HitHistory::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* HitHistory::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // repeated .city.wargame.v1.Hit hits = 1 [json_name = "hits"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_hits(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<0, 1, 1, 0, 2> HitHistory::_table_ = {
-  {
-    0,  // no _has_bits_
-    0, // no _extensions_
-    1, 0,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967294,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    1,  // num_field_entries
-    1,  // num_aux_entries
-    offsetof(decltype(_table_), aux_entries),
-    &_HitHistory_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    // repeated .city.wargame.v1.Hit hits = 1 [json_name = "hits"];
-    {::_pbi::TcParser::FastMtR1,
-     {10, 63, 0, PROTOBUF_FIELD_OFFSET(HitHistory, _impl_.hits_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // repeated .city.wargame.v1.Hit hits = 1 [json_name = "hits"];
-    {PROTOBUF_FIELD_OFFSET(HitHistory, _impl_.hits_), 0, 0,
-    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
-  }}, {{
-    {::_pbi::TcParser::GetTable<::city::wargame::v1::Hit>()},
-  }}, {{
-  }},
-};
-
-::uint8_t* HitHistory::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* HitHistory::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.wargame.v1.HitHistory)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // repeated .city.wargame.v1.Hit hits = 1 [json_name = "hits"];
   for (unsigned i = 0,
       n = static_cast<unsigned>(this->_internal_hits_size()); i < n; i++) {
-    const auto& repfield = this->_internal_hits().Get(i);
-    target = ::google::protobuf::internal::WireFormatLite::
+    const auto& repfield = this->_internal_hits(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
         InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.wargame.v1.HitHistory)
   return target;
 }
 
-::size_t HitHistory::ByteSizeLong() const {
+size_t HitHistory::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.wargame.v1.HitHistory)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // repeated .city.wargame.v1.Hit hits = 1 [json_name = "hits"];
   total_size += 1UL * this->_internal_hits_size();
-  for (const auto& msg : this->_internal_hits()) {
+  for (const auto& msg : this->_impl_.hits_) {
     total_size +=
-      ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
+
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData HitHistory::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData HitHistory::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     HitHistory::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*HitHistory::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*HitHistory::GetClassData() const { return &_class_data_; }
 
 
-void HitHistory::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void HitHistory::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<HitHistory*>(&to_msg);
   auto& from = static_cast<const HitHistory&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.wargame.v1.HitHistory)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  _this->_internal_mutable_hits()->MergeFrom(from._internal_hits());
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.hits_.MergeFrom(from._impl_.hits_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void HitHistory::CopyFrom(const HitHistory& from) {
@@ -1611,7 +1573,7 @@ void HitHistory::CopyFrom(const HitHistory& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool HitHistory::IsInitialized() const {
+bool HitHistory::IsInitialized() const {
   return true;
 }
 
@@ -1621,169 +1583,184 @@ void HitHistory::InternalSwap(HitHistory* other) {
   _impl_.hits_.InternalSwap(&other->_impl_.hits_);
 }
 
-::google::protobuf::Metadata HitHistory::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata HitHistory::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fwargame_2fv1_2fwargame_2eproto_getter, &descriptor_table_city_2fwargame_2fv1_2fwargame_2eproto_once,
       file_level_metadata_city_2fwargame_2fv1_2fwargame_2eproto[4]);
 }
+
 // ===================================================================
 
 class Casualty::_Internal {
  public:
 };
 
-Casualty::Casualty(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+Casualty::Casualty(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.wargame.v1.Casualty)
 }
 Casualty::Casualty(const Casualty& from)
-    : ::google::protobuf::Message(), _impl_(from._impl_) {
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  Casualty* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.aoi_id_){}
+    , decltype(_impl_.num_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&_impl_.aoi_id_, &from._impl_.aoi_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.num_) -
+    reinterpret_cast<char*>(&_impl_.aoi_id_)) + sizeof(_impl_.num_));
   // @@protoc_insertion_point(copy_constructor:city.wargame.v1.Casualty)
 }
-inline void Casualty::SharedCtor(::_pb::Arena* arena) {
+
+inline void Casualty::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.aoi_id_){0},
-      decltype(_impl_.num_){0},
-      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.aoi_id_){0}
+    , decltype(_impl_.num_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 Casualty::~Casualty() {
   // @@protoc_insertion_point(destructor:city.wargame.v1.Casualty)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void Casualty::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
+
 void Casualty::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void Casualty::Clear() {
+void Casualty::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.wargame.v1.Casualty)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&_impl_.aoi_id_, 0, static_cast<::size_t>(
+  ::memset(&_impl_.aoi_id_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_impl_.num_) -
       reinterpret_cast<char*>(&_impl_.aoi_id_)) + sizeof(_impl_.num_));
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* Casualty::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* Casualty::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 aoi_id = 1 [json_name = "aoiId"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.aoi_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 num = 2 [json_name = "num"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _impl_.num_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<1, 2, 0, 0, 2> Casualty::_table_ = {
-  {
-    0,  // no _has_bits_
-    0, // no _extensions_
-    2, 8,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967292,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    2,  // num_field_entries
-    0,  // num_aux_entries
-    offsetof(decltype(_table_), field_names),  // no aux_entries
-    &_Casualty_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    // int32 num = 2 [json_name = "num"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(Casualty, _impl_.num_), 63>(),
-     {16, 63, 0, PROTOBUF_FIELD_OFFSET(Casualty, _impl_.num_)}},
-    // int32 aoi_id = 1 [json_name = "aoiId"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(Casualty, _impl_.aoi_id_), 63>(),
-     {8, 63, 0, PROTOBUF_FIELD_OFFSET(Casualty, _impl_.aoi_id_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // int32 aoi_id = 1 [json_name = "aoiId"];
-    {PROTOBUF_FIELD_OFFSET(Casualty, _impl_.aoi_id_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-    // int32 num = 2 [json_name = "num"];
-    {PROTOBUF_FIELD_OFFSET(Casualty, _impl_.num_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-  }},
-  // no aux_entries
-  {{
-  }},
-};
-
-::uint8_t* Casualty::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* Casualty::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.wargame.v1.Casualty)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // int32 aoi_id = 1 [json_name = "aoiId"];
   if (this->_internal_aoi_id() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<1>(
-            stream, this->_internal_aoi_id(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_aoi_id(), target);
   }
 
   // int32 num = 2 [json_name = "num"];
   if (this->_internal_num() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<2>(
-            stream, this->_internal_num(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(2, this->_internal_num(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.wargame.v1.Casualty)
   return target;
 }
 
-::size_t Casualty::ByteSizeLong() const {
+size_t Casualty::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.wargame.v1.Casualty)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // int32 aoi_id = 1 [json_name = "aoiId"];
   if (this->_internal_aoi_id() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_aoi_id());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_aoi_id());
   }
 
   // int32 num = 2 [json_name = "num"];
   if (this->_internal_num() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_num());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_num());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData Casualty::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Casualty::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     Casualty::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*Casualty::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Casualty::GetClassData() const { return &_class_data_; }
 
 
-void Casualty::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void Casualty::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<Casualty*>(&to_msg);
   auto& from = static_cast<const Casualty&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.wargame.v1.Casualty)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_aoi_id() != 0) {
@@ -1792,7 +1769,7 @@ void Casualty::MergeImpl(::google::protobuf::Message& to_msg, const ::google::pr
   if (from._internal_num() != 0) {
     _this->_internal_set_num(from._internal_num());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void Casualty::CopyFrom(const Casualty& from) {
@@ -1802,14 +1779,14 @@ void Casualty::CopyFrom(const Casualty& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool Casualty::IsInitialized() const {
+bool Casualty::IsInitialized() const {
   return true;
 }
 
 void Casualty::InternalSwap(Casualty* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::google::protobuf::internal::memswap<
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(Casualty, _impl_.num_)
       + sizeof(Casualty::_impl_.num_)
       - PROTOBUF_FIELD_OFFSET(Casualty, _impl_.aoi_id_)>(
@@ -1817,18 +1794,42 @@ void Casualty::InternalSwap(Casualty* other) {
           reinterpret_cast<char*>(&other->_impl_.aoi_id_));
 }
 
-::google::protobuf::Metadata Casualty::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata Casualty::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fwargame_2fv1_2fwargame_2eproto_getter, &descriptor_table_city_2fwargame_2fv1_2fwargame_2eproto_once,
       file_level_metadata_city_2fwargame_2fv1_2fwargame_2eproto[5]);
 }
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace v1
 }  // namespace wargame
 }  // namespace city
-namespace google {
-namespace protobuf {
-}  // namespace protobuf
-}  // namespace google
+PROTOBUF_NAMESPACE_OPEN
+template<> PROTOBUF_NOINLINE ::city::wargame::v1::RecoPoint*
+Arena::CreateMaybeMessage< ::city::wargame::v1::RecoPoint >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::wargame::v1::RecoPoint >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::wargame::v1::Weapon*
+Arena::CreateMaybeMessage< ::city::wargame::v1::Weapon >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::wargame::v1::Weapon >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::wargame::v1::Point*
+Arena::CreateMaybeMessage< ::city::wargame::v1::Point >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::wargame::v1::Point >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::wargame::v1::Hit*
+Arena::CreateMaybeMessage< ::city::wargame::v1::Hit >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::wargame::v1::Hit >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::wargame::v1::HitHistory*
+Arena::CreateMaybeMessage< ::city::wargame::v1::HitHistory >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::wargame::v1::HitHistory >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::wargame::v1::Casualty*
+Arena::CreateMaybeMessage< ::city::wargame::v1::Casualty >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::wargame::v1::Casualty >(arena);
+}
+PROTOBUF_NAMESPACE_CLOSE
+
 // @@protoc_insertion_point(global_scope)
-#include "google/protobuf/port_undef.inc"
+#include <google/protobuf/port_undef.inc>

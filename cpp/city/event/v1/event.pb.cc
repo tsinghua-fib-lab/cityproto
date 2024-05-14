@@ -4,164 +4,131 @@
 #include "city/event/v1/event.pb.h"
 
 #include <algorithm>
-#include "google/protobuf/io/coded_stream.h"
-#include "google/protobuf/extension_set.h"
-#include "google/protobuf/wire_format_lite.h"
-#include "google/protobuf/descriptor.h"
-#include "google/protobuf/generated_message_reflection.h"
-#include "google/protobuf/reflection_ops.h"
-#include "google/protobuf/wire_format.h"
-#include "google/protobuf/generated_message_tctable_impl.h"
-// @@protoc_insertion_point(includes)
 
-// Must be included last.
-#include "google/protobuf/port_def.inc"
+#include <google/protobuf/io/coded_stream.h>
+#include <google/protobuf/extension_set.h>
+#include <google/protobuf/wire_format_lite.h>
+#include <google/protobuf/descriptor.h>
+#include <google/protobuf/generated_message_reflection.h>
+#include <google/protobuf/reflection_ops.h>
+#include <google/protobuf/wire_format.h>
+// @@protoc_insertion_point(includes)
+#include <google/protobuf/port_def.inc>
+
 PROTOBUF_PRAGMA_INIT_SEG
-namespace _pb = ::google::protobuf;
-namespace _pbi = ::google::protobuf::internal;
-namespace _fl = ::google::protobuf::internal::field_layout;
+
+namespace _pb = ::PROTOBUF_NAMESPACE_ID;
+namespace _pbi = _pb::internal;
+
 namespace city {
 namespace event {
 namespace v1 {
-        template <typename>
-PROTOBUF_CONSTEXPR Event::Event(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_.type_)*/ 0,
-      /*decltype(_impl_.level_)*/ 0,
-      /*decltype(_impl_.step_)*/ 0,
-      /*decltype(_impl_._cached_size_)*/ {},
-    } {}
+PROTOBUF_CONSTEXPR Event::Event(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.type_)*/0
+  , /*decltype(_impl_.level_)*/0
+  , /*decltype(_impl_.step_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct EventDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR EventDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR EventDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~EventDefaultTypeInternal() {}
   union {
     Event _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 EventDefaultTypeInternal _Event_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR Events::Events(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_.events_)*/ {},
-      /*decltype(_impl_._cached_size_)*/ {},
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 EventDefaultTypeInternal _Event_default_instance_;
+PROTOBUF_CONSTEXPR Events::Events(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.events_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct EventsDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR EventsDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR EventsDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~EventsDefaultTypeInternal() {}
   union {
     Events _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 EventsDefaultTypeInternal _Events_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 EventsDefaultTypeInternal _Events_default_instance_;
 }  // namespace v1
 }  // namespace event
 }  // namespace city
 static ::_pb::Metadata file_level_metadata_city_2fevent_2fv1_2fevent_2eproto[2];
 static const ::_pb::EnumDescriptor* file_level_enum_descriptors_city_2fevent_2fv1_2fevent_2eproto[1];
-static constexpr const ::_pb::ServiceDescriptor**
-    file_level_service_descriptors_city_2fevent_2fv1_2fevent_2eproto = nullptr;
-const ::uint32_t TableStruct_city_2fevent_2fv1_2fevent_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
-    protodesc_cold) = {
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::event::v1::Event, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::event::v1::Event, _impl_.type_),
-    PROTOBUF_FIELD_OFFSET(::city::event::v1::Event, _impl_.level_),
-    PROTOBUF_FIELD_OFFSET(::city::event::v1::Event, _impl_.step_),
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::event::v1::Events, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::event::v1::Events, _impl_.events_),
-};
+static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_city_2fevent_2fv1_2fevent_2eproto = nullptr;
 
-static const ::_pbi::MigrationSchema
-    schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-        {0, -1, -1, sizeof(::city::event::v1::Event)},
-        {11, -1, -1, sizeof(::city::event::v1::Events)},
+const uint32_t TableStruct_city_2fevent_2fv1_2fevent_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::event::v1::Event, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::event::v1::Event, _impl_.type_),
+  PROTOBUF_FIELD_OFFSET(::city::event::v1::Event, _impl_.level_),
+  PROTOBUF_FIELD_OFFSET(::city::event::v1::Event, _impl_.step_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::event::v1::Events, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::event::v1::Events, _impl_.events_),
+};
+static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  { 0, -1, -1, sizeof(::city::event::v1::Event)},
+  { 9, -1, -1, sizeof(::city::event::v1::Events)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
-    &::city::event::v1::_Event_default_instance_._instance,
-    &::city::event::v1::_Events_default_instance_._instance,
-};
-const char descriptor_table_protodef_city_2fevent_2fv1_2fevent_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-    "\n\031city/event/v1/event.proto\022\rcity.event."
-    "v1\"_\n\005Event\022,\n\004type\030\001 \001(\0162\030.city.event.v"
-    "1.EventTypeR\004type\022\024\n\005level\030\002 \001(\005R\005level\022"
-    "\022\n\004step\030\003 \001(\005R\004step\"6\n\006Events\022,\n\006events\030"
-    "\001 \003(\0132\024.city.event.v1.EventR\006events*\273\003\n\t"
-    "EventType\022\032\n\026EVENT_TYPE_UNSPECIFIED\020\000\022\031\n"
-    "\025EVENT_TYPE_HEAVY_RAIN\020\001\022\036\n\032EVENT_TYPE_M"
-    "ILITARY_STRIKE\020\002\022!\n\035EVENT_TYPE_TRAFFIC_C"
-    "ONGESTION\020\003\022\'\n#EVENT_TYPE_TRAFFIC_LANE_R"
-    "ESTRICTION\020\004\022 \n\034EVENT_TYPE_TRAFFIC_BAD_L"
-    "IGHT\020\005\022&\n\"EVENT_TYPE_ELEC_RUINED_TRANSFO"
-    "RMER\020\006\022 \n\034EVENT_TYPE_WATER_RUINED_PUMP\020\007"
-    "\022!\n\035EVENT_TYPE_WATER_STOPPED_PUMP\020\010\022\'\n#E"
-    "VENT_TYPE_COMM_RUINED_BASE_STATION\020\t\022(\n$"
-    "EVENT_TYPE_COMM_STOPPED_BASE_STATION\020\n\022)"
-    "\n%EVENT_TYPE_COMM_OVERLOAD_BASE_STATION\020"
-    "\013B\251\001\n\021com.city.event.v1B\nEventProtoP\001Z2g"
-    "it.fiblab.net/sim/protos/go/city/event/v"
-    "1;eventv1\242\002\003CEX\252\002\rCity.Event.V1\312\002\rCity\\E"
-    "vent\\V1\342\002\031City\\Event\\V1\\GPBMetadata\352\002\017Ci"
-    "ty::Event::V1b\006proto3"
-};
-static ::absl::once_flag descriptor_table_city_2fevent_2fv1_2fevent_2eproto_once;
-const ::_pbi::DescriptorTable descriptor_table_city_2fevent_2fv1_2fevent_2eproto = {
-    false,
-    false,
-    821,
-    descriptor_table_protodef_city_2fevent_2fv1_2fevent_2eproto,
-    "city/event/v1/event.proto",
-    &descriptor_table_city_2fevent_2fv1_2fevent_2eproto_once,
-    nullptr,
-    0,
-    2,
-    schemas,
-    file_default_instances,
-    TableStruct_city_2fevent_2fv1_2fevent_2eproto::offsets,
-    file_level_metadata_city_2fevent_2fv1_2fevent_2eproto,
-    file_level_enum_descriptors_city_2fevent_2fv1_2fevent_2eproto,
-    file_level_service_descriptors_city_2fevent_2fv1_2fevent_2eproto,
+  &::city::event::v1::_Event_default_instance_._instance,
+  &::city::event::v1::_Events_default_instance_._instance,
 };
 
-// This function exists to be marked as weak.
-// It can significantly speed up compilation by breaking up LLVM's SCC
-// in the .pb.cc translation units. Large translation units see a
-// reduction of more than 35% of walltime for optimized builds. Without
-// the weak attribute all the messages in the file, including all the
-// vtables and everything they use become part of the same SCC through
-// a cycle like:
-// GetMetadata -> descriptor table -> default instances ->
-//   vtables -> GetMetadata
-// By adding a weak function here we break the connection from the
-// individual vtables back into the descriptor table.
+const char descriptor_table_protodef_city_2fevent_2fv1_2fevent_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
+  "\n\031city/event/v1/event.proto\022\rcity.event."
+  "v1\"_\n\005Event\022,\n\004type\030\001 \001(\0162\030.city.event.v"
+  "1.EventTypeR\004type\022\024\n\005level\030\002 \001(\005R\005level\022"
+  "\022\n\004step\030\003 \001(\005R\004step\"6\n\006Events\022,\n\006events\030"
+  "\001 \003(\0132\024.city.event.v1.EventR\006events*\273\003\n\t"
+  "EventType\022\032\n\026EVENT_TYPE_UNSPECIFIED\020\000\022\031\n"
+  "\025EVENT_TYPE_HEAVY_RAIN\020\001\022\036\n\032EVENT_TYPE_M"
+  "ILITARY_STRIKE\020\002\022!\n\035EVENT_TYPE_TRAFFIC_C"
+  "ONGESTION\020\003\022\'\n#EVENT_TYPE_TRAFFIC_LANE_R"
+  "ESTRICTION\020\004\022 \n\034EVENT_TYPE_TRAFFIC_BAD_L"
+  "IGHT\020\005\022&\n\"EVENT_TYPE_ELEC_RUINED_TRANSFO"
+  "RMER\020\006\022 \n\034EVENT_TYPE_WATER_RUINED_PUMP\020\007"
+  "\022!\n\035EVENT_TYPE_WATER_STOPPED_PUMP\020\010\022\'\n#E"
+  "VENT_TYPE_COMM_RUINED_BASE_STATION\020\t\022(\n$"
+  "EVENT_TYPE_COMM_STOPPED_BASE_STATION\020\n\022)"
+  "\n%EVENT_TYPE_COMM_OVERLOAD_BASE_STATION\020"
+  "\013B\251\001\n\021com.city.event.v1B\nEventProtoP\001Z2g"
+  "it.fiblab.net/sim/protos/go/city/event/v"
+  "1;eventv1\242\002\003CEX\252\002\rCity.Event.V1\312\002\rCity\\E"
+  "vent\\V1\342\002\031City\\Event\\V1\\GPBMetadata\352\002\017Ci"
+  "ty::Event::V1b\006proto3"
+  ;
+static ::_pbi::once_flag descriptor_table_city_2fevent_2fv1_2fevent_2eproto_once;
+const ::_pbi::DescriptorTable descriptor_table_city_2fevent_2fv1_2fevent_2eproto = {
+    false, false, 821, descriptor_table_protodef_city_2fevent_2fv1_2fevent_2eproto,
+    "city/event/v1/event.proto",
+    &descriptor_table_city_2fevent_2fv1_2fevent_2eproto_once, nullptr, 0, 2,
+    schemas, file_default_instances, TableStruct_city_2fevent_2fv1_2fevent_2eproto::offsets,
+    file_level_metadata_city_2fevent_2fv1_2fevent_2eproto, file_level_enum_descriptors_city_2fevent_2fv1_2fevent_2eproto,
+    file_level_service_descriptors_city_2fevent_2fv1_2fevent_2eproto,
+};
 PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_city_2fevent_2fv1_2fevent_2eproto_getter() {
   return &descriptor_table_city_2fevent_2fv1_2fevent_2eproto;
 }
+
 // Force running AddDescriptors() at dynamic initialization time.
-PROTOBUF_ATTRIBUTE_INIT_PRIORITY2
-static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_city_2fevent_2fv1_2fevent_2eproto(&descriptor_table_city_2fevent_2fv1_2fevent_2eproto);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_city_2fevent_2fv1_2fevent_2eproto(&descriptor_table_city_2fevent_2fv1_2fevent_2eproto);
 namespace city {
 namespace event {
 namespace v1 {
-const ::google::protobuf::EnumDescriptor* EventType_descriptor() {
-  ::google::protobuf::internal::AssignDescriptors(&descriptor_table_city_2fevent_2fv1_2fevent_2eproto);
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* EventType_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_city_2fevent_2fv1_2fevent_2eproto);
   return file_level_enum_descriptors_city_2fevent_2fv1_2fevent_2eproto[0];
 }
 bool EventType_IsValid(int value) {
@@ -183,185 +150,204 @@ bool EventType_IsValid(int value) {
       return false;
   }
 }
+
+
 // ===================================================================
 
 class Event::_Internal {
  public:
 };
 
-Event::Event(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+Event::Event(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.event.v1.Event)
 }
 Event::Event(const Event& from)
-    : ::google::protobuf::Message(), _impl_(from._impl_) {
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  Event* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.type_){}
+    , decltype(_impl_.level_){}
+    , decltype(_impl_.step_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&_impl_.type_, &from._impl_.type_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.step_) -
+    reinterpret_cast<char*>(&_impl_.type_)) + sizeof(_impl_.step_));
   // @@protoc_insertion_point(copy_constructor:city.event.v1.Event)
 }
-inline void Event::SharedCtor(::_pb::Arena* arena) {
+
+inline void Event::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.type_){0},
-      decltype(_impl_.level_){0},
-      decltype(_impl_.step_){0},
-      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.type_){0}
+    , decltype(_impl_.level_){0}
+    , decltype(_impl_.step_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 Event::~Event() {
   // @@protoc_insertion_point(destructor:city.event.v1.Event)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void Event::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
+
 void Event::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void Event::Clear() {
+void Event::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.event.v1.Event)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&_impl_.type_, 0, static_cast<::size_t>(
+  ::memset(&_impl_.type_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_impl_.step_) -
       reinterpret_cast<char*>(&_impl_.type_)) + sizeof(_impl_.step_));
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* Event::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* Event::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // .city.event.v1.EventType type = 1 [json_name = "type"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_set_type(static_cast<::city::event::v1::EventType>(val));
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 level = 2 [json_name = "level"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _impl_.level_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 step = 3 [json_name = "step"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+          _impl_.step_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<2, 3, 0, 0, 2> Event::_table_ = {
-  {
-    0,  // no _has_bits_
-    0, // no _extensions_
-    3, 24,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967288,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    3,  // num_field_entries
-    0,  // num_aux_entries
-    offsetof(decltype(_table_), field_names),  // no aux_entries
-    &_Event_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    {::_pbi::TcParser::MiniParse, {}},
-    // .city.event.v1.EventType type = 1 [json_name = "type"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(Event, _impl_.type_), 63>(),
-     {8, 63, 0, PROTOBUF_FIELD_OFFSET(Event, _impl_.type_)}},
-    // int32 level = 2 [json_name = "level"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(Event, _impl_.level_), 63>(),
-     {16, 63, 0, PROTOBUF_FIELD_OFFSET(Event, _impl_.level_)}},
-    // int32 step = 3 [json_name = "step"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(Event, _impl_.step_), 63>(),
-     {24, 63, 0, PROTOBUF_FIELD_OFFSET(Event, _impl_.step_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // .city.event.v1.EventType type = 1 [json_name = "type"];
-    {PROTOBUF_FIELD_OFFSET(Event, _impl_.type_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kOpenEnum)},
-    // int32 level = 2 [json_name = "level"];
-    {PROTOBUF_FIELD_OFFSET(Event, _impl_.level_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-    // int32 step = 3 [json_name = "step"];
-    {PROTOBUF_FIELD_OFFSET(Event, _impl_.step_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-  }},
-  // no aux_entries
-  {{
-  }},
-};
-
-::uint8_t* Event::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* Event::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.event.v1.Event)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // .city.event.v1.EventType type = 1 [json_name = "type"];
   if (this->_internal_type() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteEnumToArray(
-        1, this->_internal_type(), target);
+      1, this->_internal_type(), target);
   }
 
   // int32 level = 2 [json_name = "level"];
   if (this->_internal_level() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<2>(
-            stream, this->_internal_level(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(2, this->_internal_level(), target);
   }
 
   // int32 step = 3 [json_name = "step"];
   if (this->_internal_step() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<3>(
-            stream, this->_internal_step(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(3, this->_internal_step(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.event.v1.Event)
   return target;
 }
 
-::size_t Event::ByteSizeLong() const {
+size_t Event::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.event.v1.Event)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // .city.event.v1.EventType type = 1 [json_name = "type"];
   if (this->_internal_type() != 0) {
     total_size += 1 +
-                  ::_pbi::WireFormatLite::EnumSize(this->_internal_type());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_type());
   }
 
   // int32 level = 2 [json_name = "level"];
   if (this->_internal_level() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_level());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_level());
   }
 
   // int32 step = 3 [json_name = "step"];
   if (this->_internal_step() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_step());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_step());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData Event::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Event::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     Event::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*Event::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Event::GetClassData() const { return &_class_data_; }
 
 
-void Event::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void Event::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<Event*>(&to_msg);
   auto& from = static_cast<const Event&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.event.v1.Event)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_type() != 0) {
@@ -373,7 +359,7 @@ void Event::MergeImpl(::google::protobuf::Message& to_msg, const ::google::proto
   if (from._internal_step() != 0) {
     _this->_internal_set_step(from._internal_step());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void Event::CopyFrom(const Event& from) {
@@ -383,14 +369,14 @@ void Event::CopyFrom(const Event& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool Event::IsInitialized() const {
+bool Event::IsInitialized() const {
   return true;
 }
 
 void Event::InternalSwap(Event* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::google::protobuf::internal::memswap<
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(Event, _impl_.step_)
       + sizeof(Event::_impl_.step_)
       - PROTOBUF_FIELD_OFFSET(Event, _impl_.type_)>(
@@ -398,159 +384,172 @@ void Event::InternalSwap(Event* other) {
           reinterpret_cast<char*>(&other->_impl_.type_));
 }
 
-::google::protobuf::Metadata Event::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata Event::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fevent_2fv1_2fevent_2eproto_getter, &descriptor_table_city_2fevent_2fv1_2fevent_2eproto_once,
       file_level_metadata_city_2fevent_2fv1_2fevent_2eproto[0]);
 }
+
 // ===================================================================
 
 class Events::_Internal {
  public:
 };
 
-Events::Events(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+Events::Events(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.event.v1.Events)
 }
-Events::Events(const Events& from) : ::google::protobuf::Message() {
-  Events* const _this = this;
-  (void)_this;
+Events::Events(const Events& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  Events* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.events_){from._impl_.events_},
-      /*decltype(_impl_._cached_size_)*/ {},
-  };
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+      decltype(_impl_.events_){from._impl_.events_}
+    , /*decltype(_impl_._cached_size_)*/{}};
 
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:city.event.v1.Events)
 }
-inline void Events::SharedCtor(::_pb::Arena* arena) {
+
+inline void Events::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.events_){arena},
-      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.events_){arena}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 Events::~Events() {
   // @@protoc_insertion_point(destructor:city.event.v1.Events)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void Events::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.events_.~RepeatedPtrField();
 }
+
 void Events::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void Events::Clear() {
+void Events::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.event.v1.Events)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _internal_mutable_events()->Clear();
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _impl_.events_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* Events::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* Events::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // repeated .city.event.v1.Event events = 1 [json_name = "events"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_events(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<0, 1, 1, 0, 2> Events::_table_ = {
-  {
-    0,  // no _has_bits_
-    0, // no _extensions_
-    1, 0,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967294,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    1,  // num_field_entries
-    1,  // num_aux_entries
-    offsetof(decltype(_table_), aux_entries),
-    &_Events_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    // repeated .city.event.v1.Event events = 1 [json_name = "events"];
-    {::_pbi::TcParser::FastMtR1,
-     {10, 63, 0, PROTOBUF_FIELD_OFFSET(Events, _impl_.events_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // repeated .city.event.v1.Event events = 1 [json_name = "events"];
-    {PROTOBUF_FIELD_OFFSET(Events, _impl_.events_), 0, 0,
-    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
-  }}, {{
-    {::_pbi::TcParser::GetTable<::city::event::v1::Event>()},
-  }}, {{
-  }},
-};
-
-::uint8_t* Events::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* Events::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.event.v1.Events)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // repeated .city.event.v1.Event events = 1 [json_name = "events"];
   for (unsigned i = 0,
       n = static_cast<unsigned>(this->_internal_events_size()); i < n; i++) {
-    const auto& repfield = this->_internal_events().Get(i);
-    target = ::google::protobuf::internal::WireFormatLite::
+    const auto& repfield = this->_internal_events(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
         InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.event.v1.Events)
   return target;
 }
 
-::size_t Events::ByteSizeLong() const {
+size_t Events::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.event.v1.Events)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // repeated .city.event.v1.Event events = 1 [json_name = "events"];
   total_size += 1UL * this->_internal_events_size();
-  for (const auto& msg : this->_internal_events()) {
+  for (const auto& msg : this->_impl_.events_) {
     total_size +=
-      ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
+
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData Events::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Events::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     Events::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*Events::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Events::GetClassData() const { return &_class_data_; }
 
 
-void Events::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void Events::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<Events*>(&to_msg);
   auto& from = static_cast<const Events&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.event.v1.Events)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  _this->_internal_mutable_events()->MergeFrom(from._internal_events());
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.events_.MergeFrom(from._impl_.events_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void Events::CopyFrom(const Events& from) {
@@ -560,7 +559,7 @@ void Events::CopyFrom(const Events& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool Events::IsInitialized() const {
+bool Events::IsInitialized() const {
   return true;
 }
 
@@ -570,18 +569,26 @@ void Events::InternalSwap(Events* other) {
   _impl_.events_.InternalSwap(&other->_impl_.events_);
 }
 
-::google::protobuf::Metadata Events::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata Events::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fevent_2fv1_2fevent_2eproto_getter, &descriptor_table_city_2fevent_2fv1_2fevent_2eproto_once,
       file_level_metadata_city_2fevent_2fv1_2fevent_2eproto[1]);
 }
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace v1
 }  // namespace event
 }  // namespace city
-namespace google {
-namespace protobuf {
-}  // namespace protobuf
-}  // namespace google
+PROTOBUF_NAMESPACE_OPEN
+template<> PROTOBUF_NOINLINE ::city::event::v1::Event*
+Arena::CreateMaybeMessage< ::city::event::v1::Event >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::event::v1::Event >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::event::v1::Events*
+Arena::CreateMaybeMessage< ::city::event::v1::Events >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::event::v1::Events >(arena);
+}
+PROTOBUF_NAMESPACE_CLOSE
+
 // @@protoc_insertion_point(global_scope)
-#include "google/protobuf/port_undef.inc"
+#include <google/protobuf/port_undef.inc>

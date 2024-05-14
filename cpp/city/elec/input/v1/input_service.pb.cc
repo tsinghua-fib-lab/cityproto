@@ -4,200 +4,160 @@
 #include "city/elec/input/v1/input_service.pb.h"
 
 #include <algorithm>
-#include "google/protobuf/io/coded_stream.h"
-#include "google/protobuf/extension_set.h"
-#include "google/protobuf/wire_format_lite.h"
-#include "google/protobuf/descriptor.h"
-#include "google/protobuf/generated_message_reflection.h"
-#include "google/protobuf/reflection_ops.h"
-#include "google/protobuf/wire_format.h"
-#include "google/protobuf/generated_message_tctable_impl.h"
-// @@protoc_insertion_point(includes)
 
-// Must be included last.
-#include "google/protobuf/port_def.inc"
+#include <google/protobuf/io/coded_stream.h>
+#include <google/protobuf/extension_set.h>
+#include <google/protobuf/wire_format_lite.h>
+#include <google/protobuf/descriptor.h>
+#include <google/protobuf/generated_message_reflection.h>
+#include <google/protobuf/reflection_ops.h>
+#include <google/protobuf/wire_format.h>
+// @@protoc_insertion_point(includes)
+#include <google/protobuf/port_def.inc>
+
 PROTOBUF_PRAGMA_INIT_SEG
-namespace _pb = ::google::protobuf;
-namespace _pbi = ::google::protobuf::internal;
-namespace _fl = ::google::protobuf::internal::field_layout;
+
+namespace _pb = ::PROTOBUF_NAMESPACE_ID;
+namespace _pbi = _pb::internal;
+
 namespace city {
 namespace elec {
 namespace input {
 namespace v1 {
-      template <typename>
-PROTOBUF_CONSTEXPR InitRequest::InitRequest(::_pbi::ConstantInitialized) {}
+PROTOBUF_CONSTEXPR InitRequest::InitRequest(
+    ::_pbi::ConstantInitialized) {}
 struct InitRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR InitRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR InitRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~InitRequestDefaultTypeInternal() {}
   union {
     InitRequest _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 InitRequestDefaultTypeInternal _InitRequest_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR InitResponse::InitResponse(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_._has_bits_)*/ {},
-      /*decltype(_impl_._cached_size_)*/ {},
-      /*decltype(_impl_.address_)*/ {
-          &::_pbi::fixed_address_empty_string,
-          ::_pbi::ConstantInitialized{},
-      },
-      /*decltype(_impl_.facilities_)*/ nullptr,
-      /*decltype(_impl_.control_)*/ nullptr,
-      /*decltype(_impl_.map_)*/ nullptr,
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 InitRequestDefaultTypeInternal _InitRequest_default_instance_;
+PROTOBUF_CONSTEXPR InitResponse::InitResponse(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.address_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.facilities_)*/nullptr
+  , /*decltype(_impl_.control_)*/nullptr
+  , /*decltype(_impl_.map_)*/nullptr
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct InitResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR InitResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR InitResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~InitResponseDefaultTypeInternal() {}
   union {
     InitResponse _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 InitResponseDefaultTypeInternal _InitResponse_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 InitResponseDefaultTypeInternal _InitResponse_default_instance_;
 }  // namespace v1
 }  // namespace input
 }  // namespace elec
 }  // namespace city
 static ::_pb::Metadata file_level_metadata_city_2felec_2finput_2fv1_2finput_5fservice_2eproto[2];
-static constexpr const ::_pb::EnumDescriptor**
-    file_level_enum_descriptors_city_2felec_2finput_2fv1_2finput_5fservice_2eproto = nullptr;
-static constexpr const ::_pb::ServiceDescriptor**
-    file_level_service_descriptors_city_2felec_2finput_2fv1_2finput_5fservice_2eproto = nullptr;
-const ::uint32_t TableStruct_city_2felec_2finput_2fv1_2finput_5fservice_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
-    protodesc_cold) = {
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::elec::input::v1::InitRequest, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::elec::input::v1::InitResponse, _impl_._has_bits_),
-    PROTOBUF_FIELD_OFFSET(::city::elec::input::v1::InitResponse, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::elec::input::v1::InitResponse, _impl_.address_),
-    PROTOBUF_FIELD_OFFSET(::city::elec::input::v1::InitResponse, _impl_.control_),
-    PROTOBUF_FIELD_OFFSET(::city::elec::input::v1::InitResponse, _impl_.facilities_),
-    PROTOBUF_FIELD_OFFSET(::city::elec::input::v1::InitResponse, _impl_.map_),
-    ~0u,
-    1,
-    0,
-    2,
-};
+static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_city_2felec_2finput_2fv1_2finput_5fservice_2eproto = nullptr;
+static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_city_2felec_2finput_2fv1_2finput_5fservice_2eproto = nullptr;
 
-static const ::_pbi::MigrationSchema
-    schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-        {0, -1, -1, sizeof(::city::elec::input::v1::InitRequest)},
-        {8, 20, -1, sizeof(::city::elec::input::v1::InitResponse)},
+const uint32_t TableStruct_city_2felec_2finput_2fv1_2finput_5fservice_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::elec::input::v1::InitRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::elec::input::v1::InitResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::elec::input::v1::InitResponse, _impl_.address_),
+  PROTOBUF_FIELD_OFFSET(::city::elec::input::v1::InitResponse, _impl_.control_),
+  PROTOBUF_FIELD_OFFSET(::city::elec::input::v1::InitResponse, _impl_.facilities_),
+  PROTOBUF_FIELD_OFFSET(::city::elec::input::v1::InitResponse, _impl_.map_),
+};
+static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  { 0, -1, -1, sizeof(::city::elec::input::v1::InitRequest)},
+  { 6, -1, -1, sizeof(::city::elec::input::v1::InitResponse)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
-    &::city::elec::input::v1::_InitRequest_default_instance_._instance,
-    &::city::elec::input::v1::_InitResponse_default_instance_._instance,
-};
-const char descriptor_table_protodef_city_2felec_2finput_2fv1_2finput_5fservice_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-    "\n&city/elec/input/v1/input_service.proto"
-    "\022\022city.elec.input.v1\032\037city/elec/input/v1"
-    "/config.proto\032\036city/elec/input/v1/input."
-    "proto\032\025city/map/v2/map.proto\"\r\n\013InitRequ"
-    "est\"\303\001\n\014InitResponse\022\030\n\007address\030\002 \001(\tR\007a"
-    "ddress\0225\n\007control\030\003 \001(\0132\033.city.elec.inpu"
-    "t.v1.ControlR\007control\022>\n\nfacilities\030\001 \001("
-    "\0132\036.city.elec.input.v1.FacilitiesR\nfacil"
-    "ities\022\"\n\003map\030\004 \001(\0132\020.city.map.v2.MapR\003ma"
-    "p2[\n\014InputService\022K\n\004Init\022\037.city.elec.in"
-    "put.v1.InitRequest\032 .city.elec.input.v1."
-    "InitResponse\"\000B\317\001\n\026com.city.elec.input.v"
-    "1B\021InputServiceProtoP\001Z7git.fiblab.net/s"
-    "im/protos/go/city/elec/input/v1;inputv1\242"
-    "\002\003CEI\252\002\022City.Elec.Input.V1\312\002\022City\\Elec\\I"
-    "nput\\V1\342\002\036City\\Elec\\Input\\V1\\GPBMetadata"
-    "\352\002\025City::Elec::Input::V1b\006proto3"
-};
-static const ::_pbi::DescriptorTable* const descriptor_table_city_2felec_2finput_2fv1_2finput_5fservice_2eproto_deps[3] =
-    {
-        &::descriptor_table_city_2felec_2finput_2fv1_2fconfig_2eproto,
-        &::descriptor_table_city_2felec_2finput_2fv1_2finput_2eproto,
-        &::descriptor_table_city_2fmap_2fv2_2fmap_2eproto,
-};
-static ::absl::once_flag descriptor_table_city_2felec_2finput_2fv1_2finput_5fservice_2eproto_once;
-const ::_pbi::DescriptorTable descriptor_table_city_2felec_2finput_2fv1_2finput_5fservice_2eproto = {
-    false,
-    false,
-    672,
-    descriptor_table_protodef_city_2felec_2finput_2fv1_2finput_5fservice_2eproto,
-    "city/elec/input/v1/input_service.proto",
-    &descriptor_table_city_2felec_2finput_2fv1_2finput_5fservice_2eproto_once,
-    descriptor_table_city_2felec_2finput_2fv1_2finput_5fservice_2eproto_deps,
-    3,
-    2,
-    schemas,
-    file_default_instances,
-    TableStruct_city_2felec_2finput_2fv1_2finput_5fservice_2eproto::offsets,
-    file_level_metadata_city_2felec_2finput_2fv1_2finput_5fservice_2eproto,
-    file_level_enum_descriptors_city_2felec_2finput_2fv1_2finput_5fservice_2eproto,
-    file_level_service_descriptors_city_2felec_2finput_2fv1_2finput_5fservice_2eproto,
+  &::city::elec::input::v1::_InitRequest_default_instance_._instance,
+  &::city::elec::input::v1::_InitResponse_default_instance_._instance,
 };
 
-// This function exists to be marked as weak.
-// It can significantly speed up compilation by breaking up LLVM's SCC
-// in the .pb.cc translation units. Large translation units see a
-// reduction of more than 35% of walltime for optimized builds. Without
-// the weak attribute all the messages in the file, including all the
-// vtables and everything they use become part of the same SCC through
-// a cycle like:
-// GetMetadata -> descriptor table -> default instances ->
-//   vtables -> GetMetadata
-// By adding a weak function here we break the connection from the
-// individual vtables back into the descriptor table.
+const char descriptor_table_protodef_city_2felec_2finput_2fv1_2finput_5fservice_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
+  "\n&city/elec/input/v1/input_service.proto"
+  "\022\022city.elec.input.v1\032\037city/elec/input/v1"
+  "/config.proto\032\036city/elec/input/v1/input."
+  "proto\032\025city/map/v2/map.proto\"\r\n\013InitRequ"
+  "est\"\303\001\n\014InitResponse\022\030\n\007address\030\002 \001(\tR\007a"
+  "ddress\0225\n\007control\030\003 \001(\0132\033.city.elec.inpu"
+  "t.v1.ControlR\007control\022>\n\nfacilities\030\001 \001("
+  "\0132\036.city.elec.input.v1.FacilitiesR\nfacil"
+  "ities\022\"\n\003map\030\004 \001(\0132\020.city.map.v2.MapR\003ma"
+  "p2[\n\014InputService\022K\n\004Init\022\037.city.elec.in"
+  "put.v1.InitRequest\032 .city.elec.input.v1."
+  "InitResponse\"\000B\317\001\n\026com.city.elec.input.v"
+  "1B\021InputServiceProtoP\001Z7git.fiblab.net/s"
+  "im/protos/go/city/elec/input/v1;inputv1\242"
+  "\002\003CEI\252\002\022City.Elec.Input.V1\312\002\022City\\Elec\\I"
+  "nput\\V1\342\002\036City\\Elec\\Input\\V1\\GPBMetadata"
+  "\352\002\025City::Elec::Input::V1b\006proto3"
+  ;
+static const ::_pbi::DescriptorTable* const descriptor_table_city_2felec_2finput_2fv1_2finput_5fservice_2eproto_deps[3] = {
+  &::descriptor_table_city_2felec_2finput_2fv1_2fconfig_2eproto,
+  &::descriptor_table_city_2felec_2finput_2fv1_2finput_2eproto,
+  &::descriptor_table_city_2fmap_2fv2_2fmap_2eproto,
+};
+static ::_pbi::once_flag descriptor_table_city_2felec_2finput_2fv1_2finput_5fservice_2eproto_once;
+const ::_pbi::DescriptorTable descriptor_table_city_2felec_2finput_2fv1_2finput_5fservice_2eproto = {
+    false, false, 672, descriptor_table_protodef_city_2felec_2finput_2fv1_2finput_5fservice_2eproto,
+    "city/elec/input/v1/input_service.proto",
+    &descriptor_table_city_2felec_2finput_2fv1_2finput_5fservice_2eproto_once, descriptor_table_city_2felec_2finput_2fv1_2finput_5fservice_2eproto_deps, 3, 2,
+    schemas, file_default_instances, TableStruct_city_2felec_2finput_2fv1_2finput_5fservice_2eproto::offsets,
+    file_level_metadata_city_2felec_2finput_2fv1_2finput_5fservice_2eproto, file_level_enum_descriptors_city_2felec_2finput_2fv1_2finput_5fservice_2eproto,
+    file_level_service_descriptors_city_2felec_2finput_2fv1_2finput_5fservice_2eproto,
+};
 PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_city_2felec_2finput_2fv1_2finput_5fservice_2eproto_getter() {
   return &descriptor_table_city_2felec_2finput_2fv1_2finput_5fservice_2eproto;
 }
+
 // Force running AddDescriptors() at dynamic initialization time.
-PROTOBUF_ATTRIBUTE_INIT_PRIORITY2
-static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_city_2felec_2finput_2fv1_2finput_5fservice_2eproto(&descriptor_table_city_2felec_2finput_2fv1_2finput_5fservice_2eproto);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_city_2felec_2finput_2fv1_2finput_5fservice_2eproto(&descriptor_table_city_2felec_2finput_2fv1_2finput_5fservice_2eproto);
 namespace city {
 namespace elec {
 namespace input {
 namespace v1 {
+
 // ===================================================================
 
 class InitRequest::_Internal {
  public:
 };
 
-InitRequest::InitRequest(::google::protobuf::Arena* arena)
-    : ::google::protobuf::internal::ZeroFieldsBase(arena) {
+InitRequest::InitRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
   // @@protoc_insertion_point(arena_constructor:city.elec.input.v1.InitRequest)
 }
-InitRequest::InitRequest(const InitRequest& from) : ::google::protobuf::internal::ZeroFieldsBase() {
-  InitRequest* const _this = this;
-  (void)_this;
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
-
+InitRequest::InitRequest(const InitRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
+  InitRequest* const _this = this; (void)_this;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:city.elec.input.v1.InitRequest)
 }
 
 
 
 
-const ::google::protobuf::Message::ClassData InitRequest::_class_data_ = {
-    ::google::protobuf::internal::ZeroFieldsBase::CopyImpl,
-    ::google::protobuf::internal::ZeroFieldsBase::MergeImpl,
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData InitRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
 };
-const ::google::protobuf::Message::ClassData*InitRequest::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*InitRequest::GetClassData() const { return &_class_data_; }
 
 
 
@@ -205,328 +165,326 @@ const ::google::protobuf::Message::ClassData*InitRequest::GetClassData() const {
 
 
 
-::google::protobuf::Metadata InitRequest::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata InitRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2felec_2finput_2fv1_2finput_5fservice_2eproto_getter, &descriptor_table_city_2felec_2finput_2fv1_2finput_5fservice_2eproto_once,
       file_level_metadata_city_2felec_2finput_2fv1_2finput_5fservice_2eproto[0]);
 }
+
 // ===================================================================
 
 class InitResponse::_Internal {
  public:
-  using HasBits = decltype(std::declval<InitResponse>()._impl_._has_bits_);
-  static constexpr ::int32_t kHasBitsOffset =
-    8 * PROTOBUF_FIELD_OFFSET(InitResponse, _impl_._has_bits_);
   static const ::city::elec::input::v1::Control& control(const InitResponse* msg);
-  static void set_has_control(HasBits* has_bits) {
-    (*has_bits)[0] |= 2u;
-  }
   static const ::city::elec::input::v1::Facilities& facilities(const InitResponse* msg);
-  static void set_has_facilities(HasBits* has_bits) {
-    (*has_bits)[0] |= 1u;
-  }
   static const ::city::map::v2::Map& map(const InitResponse* msg);
-  static void set_has_map(HasBits* has_bits) {
-    (*has_bits)[0] |= 4u;
-  }
 };
 
-const ::city::elec::input::v1::Control& InitResponse::_Internal::control(const InitResponse* msg) {
+const ::city::elec::input::v1::Control&
+InitResponse::_Internal::control(const InitResponse* msg) {
   return *msg->_impl_.control_;
 }
-const ::city::elec::input::v1::Facilities& InitResponse::_Internal::facilities(const InitResponse* msg) {
+const ::city::elec::input::v1::Facilities&
+InitResponse::_Internal::facilities(const InitResponse* msg) {
   return *msg->_impl_.facilities_;
 }
-const ::city::map::v2::Map& InitResponse::_Internal::map(const InitResponse* msg) {
+const ::city::map::v2::Map&
+InitResponse::_Internal::map(const InitResponse* msg) {
   return *msg->_impl_.map_;
 }
 void InitResponse::clear_control() {
-  if (_impl_.control_ != nullptr) _impl_.control_->Clear();
-  _impl_._has_bits_[0] &= ~0x00000002u;
+  if (GetArenaForAllocation() == nullptr && _impl_.control_ != nullptr) {
+    delete _impl_.control_;
+  }
+  _impl_.control_ = nullptr;
 }
 void InitResponse::clear_facilities() {
-  if (_impl_.facilities_ != nullptr) _impl_.facilities_->Clear();
-  _impl_._has_bits_[0] &= ~0x00000001u;
+  if (GetArenaForAllocation() == nullptr && _impl_.facilities_ != nullptr) {
+    delete _impl_.facilities_;
+  }
+  _impl_.facilities_ = nullptr;
 }
 void InitResponse::clear_map() {
-  if (_impl_.map_ != nullptr) _impl_.map_->Clear();
-  _impl_._has_bits_[0] &= ~0x00000004u;
+  if (GetArenaForAllocation() == nullptr && _impl_.map_ != nullptr) {
+    delete _impl_.map_;
+  }
+  _impl_.map_ = nullptr;
 }
-InitResponse::InitResponse(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+InitResponse::InitResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.elec.input.v1.InitResponse)
 }
-InitResponse::InitResponse(const InitResponse& from) : ::google::protobuf::Message() {
-  InitResponse* const _this = this;
-  (void)_this;
+InitResponse::InitResponse(const InitResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  InitResponse* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){from._impl_._has_bits_},
-      /*decltype(_impl_._cached_size_)*/ {},
-      decltype(_impl_.address_){},
-      decltype(_impl_.facilities_){nullptr},
-      decltype(_impl_.control_){nullptr},
-      decltype(_impl_.map_){nullptr},
-  };
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+      decltype(_impl_.address_){}
+    , decltype(_impl_.facilities_){nullptr}
+    , decltype(_impl_.control_){nullptr}
+    , decltype(_impl_.map_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   _impl_.address_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        _impl_.address_.Set("", GetArenaForAllocation());
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.address_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_address().empty()) {
-    _this->_impl_.address_.Set(from._internal_address(), _this->GetArenaForAllocation());
+    _this->_impl_.address_.Set(from._internal_address(), 
+      _this->GetArenaForAllocation());
   }
-  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+  if (from._internal_has_facilities()) {
     _this->_impl_.facilities_ = new ::city::elec::input::v1::Facilities(*from._impl_.facilities_);
   }
-  if ((from._impl_._has_bits_[0] & 0x00000002u) != 0) {
+  if (from._internal_has_control()) {
     _this->_impl_.control_ = new ::city::elec::input::v1::Control(*from._impl_.control_);
   }
-  if ((from._impl_._has_bits_[0] & 0x00000004u) != 0) {
+  if (from._internal_has_map()) {
     _this->_impl_.map_ = new ::city::map::v2::Map(*from._impl_.map_);
   }
-
   // @@protoc_insertion_point(copy_constructor:city.elec.input.v1.InitResponse)
 }
-inline void InitResponse::SharedCtor(::_pb::Arena* arena) {
+
+inline void InitResponse::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){},
-      /*decltype(_impl_._cached_size_)*/ {},
-      decltype(_impl_.address_){},
-      decltype(_impl_.facilities_){nullptr},
-      decltype(_impl_.control_){nullptr},
-      decltype(_impl_.map_){nullptr},
+      decltype(_impl_.address_){}
+    , decltype(_impl_.facilities_){nullptr}
+    , decltype(_impl_.control_){nullptr}
+    , decltype(_impl_.map_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
   _impl_.address_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        _impl_.address_.Set("", GetArenaForAllocation());
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.address_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
+
 InitResponse::~InitResponse() {
   // @@protoc_insertion_point(destructor:city.elec.input.v1.InitResponse)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void InitResponse::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.address_.Destroy();
   if (this != internal_default_instance()) delete _impl_.facilities_;
   if (this != internal_default_instance()) delete _impl_.control_;
   if (this != internal_default_instance()) delete _impl_.map_;
 }
+
 void InitResponse::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void InitResponse::Clear() {
+void InitResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.elec.input.v1.InitResponse)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   _impl_.address_.ClearToEmpty();
-  cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000007u) {
-    if (cached_has_bits & 0x00000001u) {
-      ABSL_DCHECK(_impl_.facilities_ != nullptr);
-      _impl_.facilities_->Clear();
-    }
-    if (cached_has_bits & 0x00000002u) {
-      ABSL_DCHECK(_impl_.control_ != nullptr);
-      _impl_.control_->Clear();
-    }
-    if (cached_has_bits & 0x00000004u) {
-      ABSL_DCHECK(_impl_.map_ != nullptr);
-      _impl_.map_->Clear();
-    }
+  if (GetArenaForAllocation() == nullptr && _impl_.facilities_ != nullptr) {
+    delete _impl_.facilities_;
   }
-  _impl_._has_bits_.Clear();
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _impl_.facilities_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.control_ != nullptr) {
+    delete _impl_.control_;
+  }
+  _impl_.control_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.map_ != nullptr) {
+    delete _impl_.map_;
+  }
+  _impl_.map_ = nullptr;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* InitResponse::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* InitResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // .city.elec.input.v1.Facilities facilities = 1 [json_name = "facilities"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_facilities(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // string address = 2 [json_name = "address"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_address();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "city.elec.input.v1.InitResponse.address"));
+        } else
+          goto handle_unusual;
+        continue;
+      // .city.elec.input.v1.Control control = 3 [json_name = "control"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+          ptr = ctx->ParseMessage(_internal_mutable_control(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .city.map.v2.Map map = 4 [json_name = "map"];
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
+          ptr = ctx->ParseMessage(_internal_mutable_map(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<2, 4, 3, 47, 2> InitResponse::_table_ = {
-  {
-    PROTOBUF_FIELD_OFFSET(InitResponse, _impl_._has_bits_),
-    0, // no _extensions_
-    4, 24,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967280,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    4,  // num_field_entries
-    3,  // num_aux_entries
-    offsetof(decltype(_table_), aux_entries),
-    &_InitResponse_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    // .city.map.v2.Map map = 4 [json_name = "map"];
-    {::_pbi::TcParser::FastMtS1,
-     {34, 2, 2, PROTOBUF_FIELD_OFFSET(InitResponse, _impl_.map_)}},
-    // .city.elec.input.v1.Facilities facilities = 1 [json_name = "facilities"];
-    {::_pbi::TcParser::FastMtS1,
-     {10, 0, 0, PROTOBUF_FIELD_OFFSET(InitResponse, _impl_.facilities_)}},
-    // string address = 2 [json_name = "address"];
-    {::_pbi::TcParser::FastUS1,
-     {18, 63, 0, PROTOBUF_FIELD_OFFSET(InitResponse, _impl_.address_)}},
-    // .city.elec.input.v1.Control control = 3 [json_name = "control"];
-    {::_pbi::TcParser::FastMtS1,
-     {26, 1, 1, PROTOBUF_FIELD_OFFSET(InitResponse, _impl_.control_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // .city.elec.input.v1.Facilities facilities = 1 [json_name = "facilities"];
-    {PROTOBUF_FIELD_OFFSET(InitResponse, _impl_.facilities_), _Internal::kHasBitsOffset + 0, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
-    // string address = 2 [json_name = "address"];
-    {PROTOBUF_FIELD_OFFSET(InitResponse, _impl_.address_), -1, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // .city.elec.input.v1.Control control = 3 [json_name = "control"];
-    {PROTOBUF_FIELD_OFFSET(InitResponse, _impl_.control_), _Internal::kHasBitsOffset + 1, 1,
-    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
-    // .city.map.v2.Map map = 4 [json_name = "map"];
-    {PROTOBUF_FIELD_OFFSET(InitResponse, _impl_.map_), _Internal::kHasBitsOffset + 2, 2,
-    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
-  }}, {{
-    {::_pbi::TcParser::GetTable<::city::elec::input::v1::Facilities>()},
-    {::_pbi::TcParser::GetTable<::city::elec::input::v1::Control>()},
-    {::_pbi::TcParser::GetTable<::city::map::v2::Map>()},
-  }}, {{
-    "\37\0\7\0\0\0\0\0"
-    "city.elec.input.v1.InitResponse"
-    "address"
-  }},
-};
-
-::uint8_t* InitResponse::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* InitResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.elec.input.v1.InitResponse)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
-  cached_has_bits = _impl_._has_bits_[0];
   // .city.elec.input.v1.Facilities facilities = 1 [json_name = "facilities"];
-  if (cached_has_bits & 0x00000001u) {
-    target = ::google::protobuf::internal::WireFormatLite::
+  if (this->_internal_has_facilities()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(1, _Internal::facilities(this),
         _Internal::facilities(this).GetCachedSize(), target, stream);
   }
 
   // string address = 2 [json_name = "address"];
   if (!this->_internal_address().empty()) {
-    const std::string& _s = this->_internal_address();
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "city.elec.input.v1.InitResponse.address");
-    target = stream->WriteStringMaybeAliased(2, _s, target);
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_address().data(), static_cast<int>(this->_internal_address().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "city.elec.input.v1.InitResponse.address");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_address(), target);
   }
 
   // .city.elec.input.v1.Control control = 3 [json_name = "control"];
-  if (cached_has_bits & 0x00000002u) {
-    target = ::google::protobuf::internal::WireFormatLite::
+  if (this->_internal_has_control()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(3, _Internal::control(this),
         _Internal::control(this).GetCachedSize(), target, stream);
   }
 
   // .city.map.v2.Map map = 4 [json_name = "map"];
-  if (cached_has_bits & 0x00000004u) {
-    target = ::google::protobuf::internal::WireFormatLite::
+  if (this->_internal_has_map()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(4, _Internal::map(this),
         _Internal::map(this).GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.elec.input.v1.InitResponse)
   return target;
 }
 
-::size_t InitResponse::ByteSizeLong() const {
+size_t InitResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.elec.input.v1.InitResponse)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // string address = 2 [json_name = "address"];
   if (!this->_internal_address().empty()) {
-    total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
-                                    this->_internal_address());
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_address());
   }
 
-  cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000007u) {
-    // .city.elec.input.v1.Facilities facilities = 1 [json_name = "facilities"];
-    if (cached_has_bits & 0x00000001u) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          *_impl_.facilities_);
-    }
-
-    // .city.elec.input.v1.Control control = 3 [json_name = "control"];
-    if (cached_has_bits & 0x00000002u) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          *_impl_.control_);
-    }
-
-    // .city.map.v2.Map map = 4 [json_name = "map"];
-    if (cached_has_bits & 0x00000004u) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          *_impl_.map_);
-    }
-
+  // .city.elec.input.v1.Facilities facilities = 1 [json_name = "facilities"];
+  if (this->_internal_has_facilities()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.facilities_);
   }
+
+  // .city.elec.input.v1.Control control = 3 [json_name = "control"];
+  if (this->_internal_has_control()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.control_);
+  }
+
+  // .city.map.v2.Map map = 4 [json_name = "map"];
+  if (this->_internal_has_map()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.map_);
+  }
+
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData InitResponse::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData InitResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     InitResponse::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*InitResponse::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*InitResponse::GetClassData() const { return &_class_data_; }
 
 
-void InitResponse::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void InitResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<InitResponse*>(&to_msg);
   auto& from = static_cast<const InitResponse&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.elec.input.v1.InitResponse)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_address().empty()) {
     _this->_internal_set_address(from._internal_address());
   }
-  cached_has_bits = from._impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000007u) {
-    if (cached_has_bits & 0x00000001u) {
-      _this->_internal_mutable_facilities()->::city::elec::input::v1::Facilities::MergeFrom(
-          from._internal_facilities());
-    }
-    if (cached_has_bits & 0x00000002u) {
-      _this->_internal_mutable_control()->::city::elec::input::v1::Control::MergeFrom(
-          from._internal_control());
-    }
-    if (cached_has_bits & 0x00000004u) {
-      _this->_internal_mutable_map()->::city::map::v2::Map::MergeFrom(
-          from._internal_map());
-    }
+  if (from._internal_has_facilities()) {
+    _this->_internal_mutable_facilities()->::city::elec::input::v1::Facilities::MergeFrom(
+        from._internal_facilities());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  if (from._internal_has_control()) {
+    _this->_internal_mutable_control()->::city::elec::input::v1::Control::MergeFrom(
+        from._internal_control());
+  }
+  if (from._internal_has_map()) {
+    _this->_internal_mutable_map()->::city::map::v2::Map::MergeFrom(
+        from._internal_map());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void InitResponse::CopyFrom(const InitResponse& from) {
@@ -536,7 +494,7 @@ void InitResponse::CopyFrom(const InitResponse& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool InitResponse::IsInitialized() const {
+bool InitResponse::IsInitialized() const {
   return true;
 }
 
@@ -545,10 +503,11 @@ void InitResponse::InternalSwap(InitResponse* other) {
   auto* lhs_arena = GetArenaForAllocation();
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.address_, lhs_arena,
-                                       &other->_impl_.address_, rhs_arena);
-  ::google::protobuf::internal::memswap<
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.address_, lhs_arena,
+      &other->_impl_.address_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(InitResponse, _impl_.map_)
       + sizeof(InitResponse::_impl_.map_)
       - PROTOBUF_FIELD_OFFSET(InitResponse, _impl_.facilities_)>(
@@ -556,19 +515,27 @@ void InitResponse::InternalSwap(InitResponse* other) {
           reinterpret_cast<char*>(&other->_impl_.facilities_));
 }
 
-::google::protobuf::Metadata InitResponse::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata InitResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2felec_2finput_2fv1_2finput_5fservice_2eproto_getter, &descriptor_table_city_2felec_2finput_2fv1_2finput_5fservice_2eproto_once,
       file_level_metadata_city_2felec_2finput_2fv1_2finput_5fservice_2eproto[1]);
 }
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace v1
 }  // namespace input
 }  // namespace elec
 }  // namespace city
-namespace google {
-namespace protobuf {
-}  // namespace protobuf
-}  // namespace google
+PROTOBUF_NAMESPACE_OPEN
+template<> PROTOBUF_NOINLINE ::city::elec::input::v1::InitRequest*
+Arena::CreateMaybeMessage< ::city::elec::input::v1::InitRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::elec::input::v1::InitRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::elec::input::v1::InitResponse*
+Arena::CreateMaybeMessage< ::city::elec::input::v1::InitResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::elec::input::v1::InitResponse >(arena);
+}
+PROTOBUF_NAMESPACE_CLOSE
+
 // @@protoc_insertion_point(global_scope)
-#include "google/protobuf/port_undef.inc"
+#include <google/protobuf/port_undef.inc>

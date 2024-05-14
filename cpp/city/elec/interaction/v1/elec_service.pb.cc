@@ -4,670 +4,596 @@
 #include "city/elec/interaction/v1/elec_service.pb.h"
 
 #include <algorithm>
-#include "google/protobuf/io/coded_stream.h"
-#include "google/protobuf/extension_set.h"
-#include "google/protobuf/wire_format_lite.h"
-#include "google/protobuf/descriptor.h"
-#include "google/protobuf/generated_message_reflection.h"
-#include "google/protobuf/reflection_ops.h"
-#include "google/protobuf/wire_format.h"
-#include "google/protobuf/generated_message_tctable_impl.h"
-// @@protoc_insertion_point(includes)
 
-// Must be included last.
-#include "google/protobuf/port_def.inc"
+#include <google/protobuf/io/coded_stream.h>
+#include <google/protobuf/extension_set.h>
+#include <google/protobuf/wire_format_lite.h>
+#include <google/protobuf/descriptor.h>
+#include <google/protobuf/generated_message_reflection.h>
+#include <google/protobuf/reflection_ops.h>
+#include <google/protobuf/wire_format.h>
+// @@protoc_insertion_point(includes)
+#include <google/protobuf/port_def.inc>
+
 PROTOBUF_PRAGMA_INIT_SEG
-namespace _pb = ::google::protobuf;
-namespace _pbi = ::google::protobuf::internal;
-namespace _fl = ::google::protobuf::internal::field_layout;
+
+namespace _pb = ::PROTOBUF_NAMESPACE_ID;
+namespace _pbi = _pb::internal;
+
 namespace city {
 namespace elec {
 namespace interaction {
 namespace v1 {
-        template <typename>
-PROTOBUF_CONSTEXPR SetStatusRequest::SetStatusRequest(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_.id_)*/ 0,
-      /*decltype(_impl_.status_)*/ false,
-      /*decltype(_impl_._cached_size_)*/ {},
-    } {}
+PROTOBUF_CONSTEXPR SetStatusRequest::SetStatusRequest(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.id_)*/0
+  , /*decltype(_impl_.status_)*/false
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct SetStatusRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR SetStatusRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR SetStatusRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~SetStatusRequestDefaultTypeInternal() {}
   union {
     SetStatusRequest _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SetStatusRequestDefaultTypeInternal _SetStatusRequest_default_instance_;
-      template <typename>
-PROTOBUF_CONSTEXPR SetStatusResponse::SetStatusResponse(::_pbi::ConstantInitialized) {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SetStatusRequestDefaultTypeInternal _SetStatusRequest_default_instance_;
+PROTOBUF_CONSTEXPR SetStatusResponse::SetStatusResponse(
+    ::_pbi::ConstantInitialized) {}
 struct SetStatusResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR SetStatusResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR SetStatusResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~SetStatusResponseDefaultTypeInternal() {}
   union {
     SetStatusResponse _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SetStatusResponseDefaultTypeInternal _SetStatusResponse_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR GetPowerRequest::GetPowerRequest(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_.id_)*/ 0,
-      /*decltype(_impl_._cached_size_)*/ {},
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SetStatusResponseDefaultTypeInternal _SetStatusResponse_default_instance_;
+PROTOBUF_CONSTEXPR GetPowerRequest::GetPowerRequest(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.id_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct GetPowerRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR GetPowerRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR GetPowerRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~GetPowerRequestDefaultTypeInternal() {}
   union {
     GetPowerRequest _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetPowerRequestDefaultTypeInternal _GetPowerRequest_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR GetPowerResponse::GetPowerResponse(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_.power_)*/ 0,
-      /*decltype(_impl_._cached_size_)*/ {},
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetPowerRequestDefaultTypeInternal _GetPowerRequest_default_instance_;
+PROTOBUF_CONSTEXPR GetPowerResponse::GetPowerResponse(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.power_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct GetPowerResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR GetPowerResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR GetPowerResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~GetPowerResponseDefaultTypeInternal() {}
   union {
     GetPowerResponse _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetPowerResponseDefaultTypeInternal _GetPowerResponse_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR GetPowerStatusRequest::GetPowerStatusRequest(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_.flag_)*/ 0,
-      /*decltype(_impl_._cached_size_)*/ {},
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetPowerResponseDefaultTypeInternal _GetPowerResponse_default_instance_;
+PROTOBUF_CONSTEXPR GetPowerStatusRequest::GetPowerStatusRequest(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.flag_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct GetPowerStatusRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR GetPowerStatusRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR GetPowerStatusRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~GetPowerStatusRequestDefaultTypeInternal() {}
   union {
     GetPowerStatusRequest _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetPowerStatusRequestDefaultTypeInternal _GetPowerStatusRequest_default_instance_;
-      template <typename>
-PROTOBUF_CONSTEXPR GetPowerStatusResponse_PowerStatusEntry_DoNotUse::GetPowerStatusResponse_PowerStatusEntry_DoNotUse(::_pbi::ConstantInitialized) {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetPowerStatusRequestDefaultTypeInternal _GetPowerStatusRequest_default_instance_;
+PROTOBUF_CONSTEXPR GetPowerStatusResponse_PowerStatusEntry_DoNotUse::GetPowerStatusResponse_PowerStatusEntry_DoNotUse(
+    ::_pbi::ConstantInitialized) {}
 struct GetPowerStatusResponse_PowerStatusEntry_DoNotUseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR GetPowerStatusResponse_PowerStatusEntry_DoNotUseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR GetPowerStatusResponse_PowerStatusEntry_DoNotUseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~GetPowerStatusResponse_PowerStatusEntry_DoNotUseDefaultTypeInternal() {}
   union {
     GetPowerStatusResponse_PowerStatusEntry_DoNotUse _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetPowerStatusResponse_PowerStatusEntry_DoNotUseDefaultTypeInternal _GetPowerStatusResponse_PowerStatusEntry_DoNotUse_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR GetPowerStatusResponse::GetPowerStatusResponse(::_pbi::ConstantInitialized)
-    : _impl_{
-      /* decltype(_impl_.power_status_) */ {},
-      /*decltype(_impl_._cached_size_)*/ {},
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetPowerStatusResponse_PowerStatusEntry_DoNotUseDefaultTypeInternal _GetPowerStatusResponse_PowerStatusEntry_DoNotUse_default_instance_;
+PROTOBUF_CONSTEXPR GetPowerStatusResponse::GetPowerStatusResponse(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.power_status_)*/{::_pbi::ConstantInitialized()}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct GetPowerStatusResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR GetPowerStatusResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR GetPowerStatusResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~GetPowerStatusResponseDefaultTypeInternal() {}
   union {
     GetPowerStatusResponse _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetPowerStatusResponseDefaultTypeInternal _GetPowerStatusResponse_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR GetNoPowerAOIRequest::GetNoPowerAOIRequest(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_.flag_)*/ 0,
-      /*decltype(_impl_._cached_size_)*/ {},
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetPowerStatusResponseDefaultTypeInternal _GetPowerStatusResponse_default_instance_;
+PROTOBUF_CONSTEXPR GetNoPowerAOIRequest::GetNoPowerAOIRequest(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.flag_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct GetNoPowerAOIRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR GetNoPowerAOIRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR GetNoPowerAOIRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~GetNoPowerAOIRequestDefaultTypeInternal() {}
   union {
     GetNoPowerAOIRequest _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetNoPowerAOIRequestDefaultTypeInternal _GetNoPowerAOIRequest_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR GetNoPowerAOIResponse::GetNoPowerAOIResponse(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_.aoi_)*/ {},
-      /* _impl_._aoi_cached_byte_size_ = */ {0},
-      /*decltype(_impl_._cached_size_)*/ {},
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetNoPowerAOIRequestDefaultTypeInternal _GetNoPowerAOIRequest_default_instance_;
+PROTOBUF_CONSTEXPR GetNoPowerAOIResponse::GetNoPowerAOIResponse(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.aoi_)*/{}
+  , /*decltype(_impl_._aoi_cached_byte_size_)*/{0}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct GetNoPowerAOIResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR GetNoPowerAOIResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR GetNoPowerAOIResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~GetNoPowerAOIResponseDefaultTypeInternal() {}
   union {
     GetNoPowerAOIResponse _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetNoPowerAOIResponseDefaultTypeInternal _GetNoPowerAOIResponse_default_instance_;
-      template <typename>
-PROTOBUF_CONSTEXPR GetRuinInfoRequest::GetRuinInfoRequest(::_pbi::ConstantInitialized) {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetNoPowerAOIResponseDefaultTypeInternal _GetNoPowerAOIResponse_default_instance_;
+PROTOBUF_CONSTEXPR GetRuinInfoRequest::GetRuinInfoRequest(
+    ::_pbi::ConstantInitialized) {}
 struct GetRuinInfoRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR GetRuinInfoRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR GetRuinInfoRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~GetRuinInfoRequestDefaultTypeInternal() {}
   union {
     GetRuinInfoRequest _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetRuinInfoRequestDefaultTypeInternal _GetRuinInfoRequest_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR RuinInfo::RuinInfo(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_.ratio_)*/ 0,
-      /*decltype(_impl_.num_)*/ 0,
-      /*decltype(_impl_._cached_size_)*/ {},
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetRuinInfoRequestDefaultTypeInternal _GetRuinInfoRequest_default_instance_;
+PROTOBUF_CONSTEXPR RuinInfo::RuinInfo(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.ratio_)*/0
+  , /*decltype(_impl_.num_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct RuinInfoDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR RuinInfoDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR RuinInfoDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~RuinInfoDefaultTypeInternal() {}
   union {
     RuinInfo _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 RuinInfoDefaultTypeInternal _RuinInfo_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR GetRuinInfoResponse::GetRuinInfoResponse(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_._has_bits_)*/ {},
-      /*decltype(_impl_._cached_size_)*/ {},
-      /*decltype(_impl_.one_)*/ nullptr,
-      /*decltype(_impl_.two_)*/ nullptr,
-      /*decltype(_impl_.three_)*/ nullptr,
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 RuinInfoDefaultTypeInternal _RuinInfo_default_instance_;
+PROTOBUF_CONSTEXPR GetRuinInfoResponse::GetRuinInfoResponse(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.one_)*/nullptr
+  , /*decltype(_impl_.two_)*/nullptr
+  , /*decltype(_impl_.three_)*/nullptr
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct GetRuinInfoResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR GetRuinInfoResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR GetRuinInfoResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~GetRuinInfoResponseDefaultTypeInternal() {}
   union {
     GetRuinInfoResponse _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetRuinInfoResponseDefaultTypeInternal _GetRuinInfoResponse_default_instance_;
-      template <typename>
-PROTOBUF_CONSTEXPR GetEdgeStatusRequest::GetEdgeStatusRequest(::_pbi::ConstantInitialized) {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetRuinInfoResponseDefaultTypeInternal _GetRuinInfoResponse_default_instance_;
+PROTOBUF_CONSTEXPR GetEdgeStatusRequest::GetEdgeStatusRequest(
+    ::_pbi::ConstantInitialized) {}
 struct GetEdgeStatusRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR GetEdgeStatusRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR GetEdgeStatusRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~GetEdgeStatusRequestDefaultTypeInternal() {}
   union {
     GetEdgeStatusRequest _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetEdgeStatusRequestDefaultTypeInternal _GetEdgeStatusRequest_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR GetEdgeStatusResponse::GetEdgeStatusResponse(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_.reason1_)*/ {},
-      /*decltype(_impl_.reason2_)*/ {},
-      /*decltype(_impl_.reason3_)*/ {},
-      /*decltype(_impl_._cached_size_)*/ {},
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetEdgeStatusRequestDefaultTypeInternal _GetEdgeStatusRequest_default_instance_;
+PROTOBUF_CONSTEXPR GetEdgeStatusResponse::GetEdgeStatusResponse(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.reason1_)*/{}
+  , /*decltype(_impl_.reason2_)*/{}
+  , /*decltype(_impl_.reason3_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct GetEdgeStatusResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR GetEdgeStatusResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR GetEdgeStatusResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~GetEdgeStatusResponseDefaultTypeInternal() {}
   union {
     GetEdgeStatusResponse _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetEdgeStatusResponseDefaultTypeInternal _GetEdgeStatusResponse_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetEdgeStatusResponseDefaultTypeInternal _GetEdgeStatusResponse_default_instance_;
 }  // namespace v1
 }  // namespace interaction
 }  // namespace elec
 }  // namespace city
 static ::_pb::Metadata file_level_metadata_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto[14];
-static constexpr const ::_pb::EnumDescriptor**
-    file_level_enum_descriptors_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto = nullptr;
-static constexpr const ::_pb::ServiceDescriptor**
-    file_level_service_descriptors_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto = nullptr;
-const ::uint32_t TableStruct_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
-    protodesc_cold) = {
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::elec::interaction::v1::SetStatusRequest, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::elec::interaction::v1::SetStatusRequest, _impl_.id_),
-    PROTOBUF_FIELD_OFFSET(::city::elec::interaction::v1::SetStatusRequest, _impl_.status_),
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::elec::interaction::v1::SetStatusResponse, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::elec::interaction::v1::GetPowerRequest, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::elec::interaction::v1::GetPowerRequest, _impl_.id_),
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::elec::interaction::v1::GetPowerResponse, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::elec::interaction::v1::GetPowerResponse, _impl_.power_),
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::elec::interaction::v1::GetPowerStatusRequest, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::elec::interaction::v1::GetPowerStatusRequest, _impl_.flag_),
-    PROTOBUF_FIELD_OFFSET(::city::elec::interaction::v1::GetPowerStatusResponse_PowerStatusEntry_DoNotUse, _has_bits_),
-    PROTOBUF_FIELD_OFFSET(::city::elec::interaction::v1::GetPowerStatusResponse_PowerStatusEntry_DoNotUse, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::elec::interaction::v1::GetPowerStatusResponse_PowerStatusEntry_DoNotUse, key_),
-    PROTOBUF_FIELD_OFFSET(::city::elec::interaction::v1::GetPowerStatusResponse_PowerStatusEntry_DoNotUse, value_),
-    0,
-    1,
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::elec::interaction::v1::GetPowerStatusResponse, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::elec::interaction::v1::GetPowerStatusResponse, _impl_.power_status_),
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::elec::interaction::v1::GetNoPowerAOIRequest, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::elec::interaction::v1::GetNoPowerAOIRequest, _impl_.flag_),
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::elec::interaction::v1::GetNoPowerAOIResponse, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::elec::interaction::v1::GetNoPowerAOIResponse, _impl_.aoi_),
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::elec::interaction::v1::GetRuinInfoRequest, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::elec::interaction::v1::RuinInfo, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::elec::interaction::v1::RuinInfo, _impl_.num_),
-    PROTOBUF_FIELD_OFFSET(::city::elec::interaction::v1::RuinInfo, _impl_.ratio_),
-    PROTOBUF_FIELD_OFFSET(::city::elec::interaction::v1::GetRuinInfoResponse, _impl_._has_bits_),
-    PROTOBUF_FIELD_OFFSET(::city::elec::interaction::v1::GetRuinInfoResponse, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::elec::interaction::v1::GetRuinInfoResponse, _impl_.one_),
-    PROTOBUF_FIELD_OFFSET(::city::elec::interaction::v1::GetRuinInfoResponse, _impl_.two_),
-    PROTOBUF_FIELD_OFFSET(::city::elec::interaction::v1::GetRuinInfoResponse, _impl_.three_),
-    0,
-    1,
-    2,
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::elec::interaction::v1::GetEdgeStatusRequest, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::elec::interaction::v1::GetEdgeStatusResponse, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::elec::interaction::v1::GetEdgeStatusResponse, _impl_.reason1_),
-    PROTOBUF_FIELD_OFFSET(::city::elec::interaction::v1::GetEdgeStatusResponse, _impl_.reason2_),
-    PROTOBUF_FIELD_OFFSET(::city::elec::interaction::v1::GetEdgeStatusResponse, _impl_.reason3_),
-};
+static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto = nullptr;
+static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto = nullptr;
 
-static const ::_pbi::MigrationSchema
-    schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-        {0, -1, -1, sizeof(::city::elec::interaction::v1::SetStatusRequest)},
-        {10, -1, -1, sizeof(::city::elec::interaction::v1::SetStatusResponse)},
-        {18, -1, -1, sizeof(::city::elec::interaction::v1::GetPowerRequest)},
-        {27, -1, -1, sizeof(::city::elec::interaction::v1::GetPowerResponse)},
-        {36, -1, -1, sizeof(::city::elec::interaction::v1::GetPowerStatusRequest)},
-        {45, 55, -1, sizeof(::city::elec::interaction::v1::GetPowerStatusResponse_PowerStatusEntry_DoNotUse)},
-        {57, -1, -1, sizeof(::city::elec::interaction::v1::GetPowerStatusResponse)},
-        {66, -1, -1, sizeof(::city::elec::interaction::v1::GetNoPowerAOIRequest)},
-        {75, -1, -1, sizeof(::city::elec::interaction::v1::GetNoPowerAOIResponse)},
-        {84, -1, -1, sizeof(::city::elec::interaction::v1::GetRuinInfoRequest)},
-        {92, -1, -1, sizeof(::city::elec::interaction::v1::RuinInfo)},
-        {102, 113, -1, sizeof(::city::elec::interaction::v1::GetRuinInfoResponse)},
-        {116, -1, -1, sizeof(::city::elec::interaction::v1::GetEdgeStatusRequest)},
-        {124, -1, -1, sizeof(::city::elec::interaction::v1::GetEdgeStatusResponse)},
+const uint32_t TableStruct_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::elec::interaction::v1::SetStatusRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::elec::interaction::v1::SetStatusRequest, _impl_.id_),
+  PROTOBUF_FIELD_OFFSET(::city::elec::interaction::v1::SetStatusRequest, _impl_.status_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::elec::interaction::v1::SetStatusResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::elec::interaction::v1::GetPowerRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::elec::interaction::v1::GetPowerRequest, _impl_.id_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::elec::interaction::v1::GetPowerResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::elec::interaction::v1::GetPowerResponse, _impl_.power_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::elec::interaction::v1::GetPowerStatusRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::elec::interaction::v1::GetPowerStatusRequest, _impl_.flag_),
+  PROTOBUF_FIELD_OFFSET(::city::elec::interaction::v1::GetPowerStatusResponse_PowerStatusEntry_DoNotUse, _has_bits_),
+  PROTOBUF_FIELD_OFFSET(::city::elec::interaction::v1::GetPowerStatusResponse_PowerStatusEntry_DoNotUse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::elec::interaction::v1::GetPowerStatusResponse_PowerStatusEntry_DoNotUse, key_),
+  PROTOBUF_FIELD_OFFSET(::city::elec::interaction::v1::GetPowerStatusResponse_PowerStatusEntry_DoNotUse, value_),
+  0,
+  1,
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::elec::interaction::v1::GetPowerStatusResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::elec::interaction::v1::GetPowerStatusResponse, _impl_.power_status_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::elec::interaction::v1::GetNoPowerAOIRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::elec::interaction::v1::GetNoPowerAOIRequest, _impl_.flag_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::elec::interaction::v1::GetNoPowerAOIResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::elec::interaction::v1::GetNoPowerAOIResponse, _impl_.aoi_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::elec::interaction::v1::GetRuinInfoRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::elec::interaction::v1::RuinInfo, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::elec::interaction::v1::RuinInfo, _impl_.num_),
+  PROTOBUF_FIELD_OFFSET(::city::elec::interaction::v1::RuinInfo, _impl_.ratio_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::elec::interaction::v1::GetRuinInfoResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::elec::interaction::v1::GetRuinInfoResponse, _impl_.one_),
+  PROTOBUF_FIELD_OFFSET(::city::elec::interaction::v1::GetRuinInfoResponse, _impl_.two_),
+  PROTOBUF_FIELD_OFFSET(::city::elec::interaction::v1::GetRuinInfoResponse, _impl_.three_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::elec::interaction::v1::GetEdgeStatusRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::elec::interaction::v1::GetEdgeStatusResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::elec::interaction::v1::GetEdgeStatusResponse, _impl_.reason1_),
+  PROTOBUF_FIELD_OFFSET(::city::elec::interaction::v1::GetEdgeStatusResponse, _impl_.reason2_),
+  PROTOBUF_FIELD_OFFSET(::city::elec::interaction::v1::GetEdgeStatusResponse, _impl_.reason3_),
+};
+static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  { 0, -1, -1, sizeof(::city::elec::interaction::v1::SetStatusRequest)},
+  { 8, -1, -1, sizeof(::city::elec::interaction::v1::SetStatusResponse)},
+  { 14, -1, -1, sizeof(::city::elec::interaction::v1::GetPowerRequest)},
+  { 21, -1, -1, sizeof(::city::elec::interaction::v1::GetPowerResponse)},
+  { 28, -1, -1, sizeof(::city::elec::interaction::v1::GetPowerStatusRequest)},
+  { 35, 43, -1, sizeof(::city::elec::interaction::v1::GetPowerStatusResponse_PowerStatusEntry_DoNotUse)},
+  { 45, -1, -1, sizeof(::city::elec::interaction::v1::GetPowerStatusResponse)},
+  { 52, -1, -1, sizeof(::city::elec::interaction::v1::GetNoPowerAOIRequest)},
+  { 59, -1, -1, sizeof(::city::elec::interaction::v1::GetNoPowerAOIResponse)},
+  { 66, -1, -1, sizeof(::city::elec::interaction::v1::GetRuinInfoRequest)},
+  { 72, -1, -1, sizeof(::city::elec::interaction::v1::RuinInfo)},
+  { 80, -1, -1, sizeof(::city::elec::interaction::v1::GetRuinInfoResponse)},
+  { 89, -1, -1, sizeof(::city::elec::interaction::v1::GetEdgeStatusRequest)},
+  { 95, -1, -1, sizeof(::city::elec::interaction::v1::GetEdgeStatusResponse)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
-    &::city::elec::interaction::v1::_SetStatusRequest_default_instance_._instance,
-    &::city::elec::interaction::v1::_SetStatusResponse_default_instance_._instance,
-    &::city::elec::interaction::v1::_GetPowerRequest_default_instance_._instance,
-    &::city::elec::interaction::v1::_GetPowerResponse_default_instance_._instance,
-    &::city::elec::interaction::v1::_GetPowerStatusRequest_default_instance_._instance,
-    &::city::elec::interaction::v1::_GetPowerStatusResponse_PowerStatusEntry_DoNotUse_default_instance_._instance,
-    &::city::elec::interaction::v1::_GetPowerStatusResponse_default_instance_._instance,
-    &::city::elec::interaction::v1::_GetNoPowerAOIRequest_default_instance_._instance,
-    &::city::elec::interaction::v1::_GetNoPowerAOIResponse_default_instance_._instance,
-    &::city::elec::interaction::v1::_GetRuinInfoRequest_default_instance_._instance,
-    &::city::elec::interaction::v1::_RuinInfo_default_instance_._instance,
-    &::city::elec::interaction::v1::_GetRuinInfoResponse_default_instance_._instance,
-    &::city::elec::interaction::v1::_GetEdgeStatusRequest_default_instance_._instance,
-    &::city::elec::interaction::v1::_GetEdgeStatusResponse_default_instance_._instance,
-};
-const char descriptor_table_protodef_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-    "\n+city/elec/interaction/v1/elec_service."
-    "proto\022\030city.elec.interaction.v1\":\n\020SetSt"
-    "atusRequest\022\016\n\002id\030\001 \001(\005R\002id\022\026\n\006status\030\002 "
-    "\001(\010R\006status\"\023\n\021SetStatusResponse\"!\n\017GetP"
-    "owerRequest\022\016\n\002id\030\001 \001(\005R\002id\"(\n\020GetPowerR"
-    "esponse\022\024\n\005power\030\001 \001(\001R\005power\"+\n\025GetPowe"
-    "rStatusRequest\022\022\n\004flag\030\001 \001(\005R\004flag\"\276\001\n\026G"
-    "etPowerStatusResponse\022d\n\014power_status\030\001 "
-    "\003(\0132A.city.elec.interaction.v1.GetPowerS"
-    "tatusResponse.PowerStatusEntryR\013powerSta"
-    "tus\032>\n\020PowerStatusEntry\022\020\n\003key\030\001 \001(\005R\003ke"
-    "y\022\024\n\005value\030\002 \001(\001R\005value:\0028\001\"*\n\024GetNoPowe"
-    "rAOIRequest\022\022\n\004flag\030\001 \001(\005R\004flag\")\n\025GetNo"
-    "PowerAOIResponse\022\020\n\003aoi\030\001 \003(\005R\003aoi\"\024\n\022Ge"
-    "tRuinInfoRequest\"2\n\010RuinInfo\022\020\n\003num\030\001 \001("
-    "\005R\003num\022\024\n\005ratio\030\002 \001(\001R\005ratio\"\273\001\n\023GetRuin"
-    "InfoResponse\0224\n\003one\030\001 \001(\0132\".city.elec.in"
-    "teraction.v1.RuinInfoR\003one\0224\n\003two\030\002 \001(\0132"
-    "\".city.elec.interaction.v1.RuinInfoR\003two"
-    "\0228\n\005three\030\003 \001(\0132\".city.elec.interaction."
-    "v1.RuinInfoR\005three\"\026\n\024GetEdgeStatusReque"
-    "st\"e\n\025GetEdgeStatusResponse\022\030\n\007reason1\030\001"
-    " \003(\tR\007reason1\022\030\n\007reason2\030\002 \003(\tR\007reason2\022"
-    "\030\n\007reason3\030\003 \003(\tR\007reason32\233\005\n\013ElecServic"
-    "e\022d\n\tSetStatus\022*.city.elec.interaction.v"
-    "1.SetStatusRequest\032+.city.elec.interacti"
-    "on.v1.SetStatusResponse\022a\n\010GetPower\022).ci"
-    "ty.elec.interaction.v1.GetPowerRequest\032*"
-    ".city.elec.interaction.v1.GetPowerRespon"
-    "se\022s\n\016GetPowerStatus\022/.city.elec.interac"
-    "tion.v1.GetPowerStatusRequest\0320.city.ele"
-    "c.interaction.v1.GetPowerStatusResponse\022"
-    "p\n\rGetNoPowerAOI\022..city.elec.interaction"
-    ".v1.GetNoPowerAOIRequest\032/.city.elec.int"
-    "eraction.v1.GetNoPowerAOIResponse\022j\n\013Get"
-    "RuinInfo\022,.city.elec.interaction.v1.GetR"
-    "uinInfoRequest\032-.city.elec.interaction.v"
-    "1.GetRuinInfoResponse\022p\n\rGetEdgeStatus\022."
-    ".city.elec.interaction.v1.GetEdgeStatusR"
-    "equest\032/.city.elec.interaction.v1.GetEdg"
-    "eStatusResponseB\370\001\n\034com.city.elec.intera"
-    "ction.v1B\020ElecServiceProtoP\001ZCgit.fiblab"
-    ".net/sim/protos/go/city/elec/interaction"
-    "/v1;interactionv1\242\002\003CEI\252\002\030City.Elec.Inte"
-    "raction.V1\312\002\030City\\Elec\\Interaction\\V1\342\002$"
-    "City\\Elec\\Interaction\\V1\\GPBMetadata\352\002\033C"
-    "ity::Elec::Interaction::V1b\006proto3"
-};
-static ::absl::once_flag descriptor_table_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto_once;
-const ::_pbi::DescriptorTable descriptor_table_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto = {
-    false,
-    false,
-    1874,
-    descriptor_table_protodef_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto,
-    "city/elec/interaction/v1/elec_service.proto",
-    &descriptor_table_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto_once,
-    nullptr,
-    0,
-    14,
-    schemas,
-    file_default_instances,
-    TableStruct_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto::offsets,
-    file_level_metadata_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto,
-    file_level_enum_descriptors_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto,
-    file_level_service_descriptors_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto,
+  &::city::elec::interaction::v1::_SetStatusRequest_default_instance_._instance,
+  &::city::elec::interaction::v1::_SetStatusResponse_default_instance_._instance,
+  &::city::elec::interaction::v1::_GetPowerRequest_default_instance_._instance,
+  &::city::elec::interaction::v1::_GetPowerResponse_default_instance_._instance,
+  &::city::elec::interaction::v1::_GetPowerStatusRequest_default_instance_._instance,
+  &::city::elec::interaction::v1::_GetPowerStatusResponse_PowerStatusEntry_DoNotUse_default_instance_._instance,
+  &::city::elec::interaction::v1::_GetPowerStatusResponse_default_instance_._instance,
+  &::city::elec::interaction::v1::_GetNoPowerAOIRequest_default_instance_._instance,
+  &::city::elec::interaction::v1::_GetNoPowerAOIResponse_default_instance_._instance,
+  &::city::elec::interaction::v1::_GetRuinInfoRequest_default_instance_._instance,
+  &::city::elec::interaction::v1::_RuinInfo_default_instance_._instance,
+  &::city::elec::interaction::v1::_GetRuinInfoResponse_default_instance_._instance,
+  &::city::elec::interaction::v1::_GetEdgeStatusRequest_default_instance_._instance,
+  &::city::elec::interaction::v1::_GetEdgeStatusResponse_default_instance_._instance,
 };
 
-// This function exists to be marked as weak.
-// It can significantly speed up compilation by breaking up LLVM's SCC
-// in the .pb.cc translation units. Large translation units see a
-// reduction of more than 35% of walltime for optimized builds. Without
-// the weak attribute all the messages in the file, including all the
-// vtables and everything they use become part of the same SCC through
-// a cycle like:
-// GetMetadata -> descriptor table -> default instances ->
-//   vtables -> GetMetadata
-// By adding a weak function here we break the connection from the
-// individual vtables back into the descriptor table.
+const char descriptor_table_protodef_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
+  "\n+city/elec/interaction/v1/elec_service."
+  "proto\022\030city.elec.interaction.v1\":\n\020SetSt"
+  "atusRequest\022\016\n\002id\030\001 \001(\005R\002id\022\026\n\006status\030\002 "
+  "\001(\010R\006status\"\023\n\021SetStatusResponse\"!\n\017GetP"
+  "owerRequest\022\016\n\002id\030\001 \001(\005R\002id\"(\n\020GetPowerR"
+  "esponse\022\024\n\005power\030\001 \001(\001R\005power\"+\n\025GetPowe"
+  "rStatusRequest\022\022\n\004flag\030\001 \001(\005R\004flag\"\276\001\n\026G"
+  "etPowerStatusResponse\022d\n\014power_status\030\001 "
+  "\003(\0132A.city.elec.interaction.v1.GetPowerS"
+  "tatusResponse.PowerStatusEntryR\013powerSta"
+  "tus\032>\n\020PowerStatusEntry\022\020\n\003key\030\001 \001(\005R\003ke"
+  "y\022\024\n\005value\030\002 \001(\001R\005value:\0028\001\"*\n\024GetNoPowe"
+  "rAOIRequest\022\022\n\004flag\030\001 \001(\005R\004flag\")\n\025GetNo"
+  "PowerAOIResponse\022\020\n\003aoi\030\001 \003(\005R\003aoi\"\024\n\022Ge"
+  "tRuinInfoRequest\"2\n\010RuinInfo\022\020\n\003num\030\001 \001("
+  "\005R\003num\022\024\n\005ratio\030\002 \001(\001R\005ratio\"\273\001\n\023GetRuin"
+  "InfoResponse\0224\n\003one\030\001 \001(\0132\".city.elec.in"
+  "teraction.v1.RuinInfoR\003one\0224\n\003two\030\002 \001(\0132"
+  "\".city.elec.interaction.v1.RuinInfoR\003two"
+  "\0228\n\005three\030\003 \001(\0132\".city.elec.interaction."
+  "v1.RuinInfoR\005three\"\026\n\024GetEdgeStatusReque"
+  "st\"e\n\025GetEdgeStatusResponse\022\030\n\007reason1\030\001"
+  " \003(\tR\007reason1\022\030\n\007reason2\030\002 \003(\tR\007reason2\022"
+  "\030\n\007reason3\030\003 \003(\tR\007reason32\233\005\n\013ElecServic"
+  "e\022d\n\tSetStatus\022*.city.elec.interaction.v"
+  "1.SetStatusRequest\032+.city.elec.interacti"
+  "on.v1.SetStatusResponse\022a\n\010GetPower\022).ci"
+  "ty.elec.interaction.v1.GetPowerRequest\032*"
+  ".city.elec.interaction.v1.GetPowerRespon"
+  "se\022s\n\016GetPowerStatus\022/.city.elec.interac"
+  "tion.v1.GetPowerStatusRequest\0320.city.ele"
+  "c.interaction.v1.GetPowerStatusResponse\022"
+  "p\n\rGetNoPowerAOI\022..city.elec.interaction"
+  ".v1.GetNoPowerAOIRequest\032/.city.elec.int"
+  "eraction.v1.GetNoPowerAOIResponse\022j\n\013Get"
+  "RuinInfo\022,.city.elec.interaction.v1.GetR"
+  "uinInfoRequest\032-.city.elec.interaction.v"
+  "1.GetRuinInfoResponse\022p\n\rGetEdgeStatus\022."
+  ".city.elec.interaction.v1.GetEdgeStatusR"
+  "equest\032/.city.elec.interaction.v1.GetEdg"
+  "eStatusResponseB\370\001\n\034com.city.elec.intera"
+  "ction.v1B\020ElecServiceProtoP\001ZCgit.fiblab"
+  ".net/sim/protos/go/city/elec/interaction"
+  "/v1;interactionv1\242\002\003CEI\252\002\030City.Elec.Inte"
+  "raction.V1\312\002\030City\\Elec\\Interaction\\V1\342\002$"
+  "City\\Elec\\Interaction\\V1\\GPBMetadata\352\002\033C"
+  "ity::Elec::Interaction::V1b\006proto3"
+  ;
+static ::_pbi::once_flag descriptor_table_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto_once;
+const ::_pbi::DescriptorTable descriptor_table_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto = {
+    false, false, 1874, descriptor_table_protodef_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto,
+    "city/elec/interaction/v1/elec_service.proto",
+    &descriptor_table_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto_once, nullptr, 0, 14,
+    schemas, file_default_instances, TableStruct_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto::offsets,
+    file_level_metadata_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto, file_level_enum_descriptors_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto,
+    file_level_service_descriptors_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto,
+};
 PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto_getter() {
   return &descriptor_table_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto;
 }
+
 // Force running AddDescriptors() at dynamic initialization time.
-PROTOBUF_ATTRIBUTE_INIT_PRIORITY2
-static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto(&descriptor_table_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto(&descriptor_table_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto);
 namespace city {
 namespace elec {
 namespace interaction {
 namespace v1 {
+
 // ===================================================================
 
 class SetStatusRequest::_Internal {
  public:
 };
 
-SetStatusRequest::SetStatusRequest(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+SetStatusRequest::SetStatusRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.elec.interaction.v1.SetStatusRequest)
 }
 SetStatusRequest::SetStatusRequest(const SetStatusRequest& from)
-    : ::google::protobuf::Message(), _impl_(from._impl_) {
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  SetStatusRequest* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.id_){}
+    , decltype(_impl_.status_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&_impl_.id_, &from._impl_.id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.status_) -
+    reinterpret_cast<char*>(&_impl_.id_)) + sizeof(_impl_.status_));
   // @@protoc_insertion_point(copy_constructor:city.elec.interaction.v1.SetStatusRequest)
 }
-inline void SetStatusRequest::SharedCtor(::_pb::Arena* arena) {
+
+inline void SetStatusRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.id_){0},
-      decltype(_impl_.status_){false},
-      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.id_){0}
+    , decltype(_impl_.status_){false}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 SetStatusRequest::~SetStatusRequest() {
   // @@protoc_insertion_point(destructor:city.elec.interaction.v1.SetStatusRequest)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void SetStatusRequest::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
+
 void SetStatusRequest::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void SetStatusRequest::Clear() {
+void SetStatusRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.elec.interaction.v1.SetStatusRequest)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&_impl_.id_, 0, static_cast<::size_t>(
+  ::memset(&_impl_.id_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_impl_.status_) -
       reinterpret_cast<char*>(&_impl_.id_)) + sizeof(_impl_.status_));
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* SetStatusRequest::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* SetStatusRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 id = 1 [json_name = "id"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // bool status = 2 [json_name = "status"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _impl_.status_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<1, 2, 0, 0, 2> SetStatusRequest::_table_ = {
-  {
-    0,  // no _has_bits_
-    0, // no _extensions_
-    2, 8,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967292,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    2,  // num_field_entries
-    0,  // num_aux_entries
-    offsetof(decltype(_table_), field_names),  // no aux_entries
-    &_SetStatusRequest_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    // bool status = 2 [json_name = "status"];
-    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(SetStatusRequest, _impl_.status_), 63>(),
-     {16, 63, 0, PROTOBUF_FIELD_OFFSET(SetStatusRequest, _impl_.status_)}},
-    // int32 id = 1 [json_name = "id"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(SetStatusRequest, _impl_.id_), 63>(),
-     {8, 63, 0, PROTOBUF_FIELD_OFFSET(SetStatusRequest, _impl_.id_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // int32 id = 1 [json_name = "id"];
-    {PROTOBUF_FIELD_OFFSET(SetStatusRequest, _impl_.id_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-    // bool status = 2 [json_name = "status"];
-    {PROTOBUF_FIELD_OFFSET(SetStatusRequest, _impl_.status_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kBool)},
-  }},
-  // no aux_entries
-  {{
-  }},
-};
-
-::uint8_t* SetStatusRequest::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* SetStatusRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.elec.interaction.v1.SetStatusRequest)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // int32 id = 1 [json_name = "id"];
   if (this->_internal_id() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<1>(
-            stream, this->_internal_id(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_id(), target);
   }
 
   // bool status = 2 [json_name = "status"];
   if (this->_internal_status() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(
-        2, this->_internal_status(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(2, this->_internal_status(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.elec.interaction.v1.SetStatusRequest)
   return target;
 }
 
-::size_t SetStatusRequest::ByteSizeLong() const {
+size_t SetStatusRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.elec.interaction.v1.SetStatusRequest)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // int32 id = 1 [json_name = "id"];
   if (this->_internal_id() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_id());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_id());
   }
 
   // bool status = 2 [json_name = "status"];
   if (this->_internal_status() != 0) {
-    total_size += 2;
+    total_size += 1 + 1;
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData SetStatusRequest::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData SetStatusRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     SetStatusRequest::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*SetStatusRequest::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SetStatusRequest::GetClassData() const { return &_class_data_; }
 
 
-void SetStatusRequest::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void SetStatusRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<SetStatusRequest*>(&to_msg);
   auto& from = static_cast<const SetStatusRequest&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.elec.interaction.v1.SetStatusRequest)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_id() != 0) {
@@ -676,7 +602,7 @@ void SetStatusRequest::MergeImpl(::google::protobuf::Message& to_msg, const ::go
   if (from._internal_status() != 0) {
     _this->_internal_set_status(from._internal_status());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void SetStatusRequest::CopyFrom(const SetStatusRequest& from) {
@@ -686,14 +612,14 @@ void SetStatusRequest::CopyFrom(const SetStatusRequest& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool SetStatusRequest::IsInitialized() const {
+bool SetStatusRequest::IsInitialized() const {
   return true;
 }
 
 void SetStatusRequest::InternalSwap(SetStatusRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::google::protobuf::internal::memswap<
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(SetStatusRequest, _impl_.status_)
       + sizeof(SetStatusRequest::_impl_.status_)
       - PROTOBUF_FIELD_OFFSET(SetStatusRequest, _impl_.id_)>(
@@ -701,38 +627,39 @@ void SetStatusRequest::InternalSwap(SetStatusRequest* other) {
           reinterpret_cast<char*>(&other->_impl_.id_));
 }
 
-::google::protobuf::Metadata SetStatusRequest::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata SetStatusRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto_getter, &descriptor_table_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto_once,
       file_level_metadata_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto[0]);
 }
+
 // ===================================================================
 
 class SetStatusResponse::_Internal {
  public:
 };
 
-SetStatusResponse::SetStatusResponse(::google::protobuf::Arena* arena)
-    : ::google::protobuf::internal::ZeroFieldsBase(arena) {
+SetStatusResponse::SetStatusResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
   // @@protoc_insertion_point(arena_constructor:city.elec.interaction.v1.SetStatusResponse)
 }
-SetStatusResponse::SetStatusResponse(const SetStatusResponse& from) : ::google::protobuf::internal::ZeroFieldsBase() {
-  SetStatusResponse* const _this = this;
-  (void)_this;
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
-
+SetStatusResponse::SetStatusResponse(const SetStatusResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
+  SetStatusResponse* const _this = this; (void)_this;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:city.elec.interaction.v1.SetStatusResponse)
 }
 
 
 
 
-const ::google::protobuf::Message::ClassData SetStatusResponse::_class_data_ = {
-    ::google::protobuf::internal::ZeroFieldsBase::CopyImpl,
-    ::google::protobuf::internal::ZeroFieldsBase::MergeImpl,
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData SetStatusResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
 };
-const ::google::protobuf::Message::ClassData*SetStatusResponse::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SetStatusResponse::GetClassData() const { return &_class_data_; }
 
 
 
@@ -740,153 +667,165 @@ const ::google::protobuf::Message::ClassData*SetStatusResponse::GetClassData() c
 
 
 
-::google::protobuf::Metadata SetStatusResponse::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata SetStatusResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto_getter, &descriptor_table_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto_once,
       file_level_metadata_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto[1]);
 }
+
 // ===================================================================
 
 class GetPowerRequest::_Internal {
  public:
 };
 
-GetPowerRequest::GetPowerRequest(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+GetPowerRequest::GetPowerRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.elec.interaction.v1.GetPowerRequest)
 }
 GetPowerRequest::GetPowerRequest(const GetPowerRequest& from)
-    : ::google::protobuf::Message(), _impl_(from._impl_) {
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  GetPowerRequest* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.id_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.id_ = from._impl_.id_;
   // @@protoc_insertion_point(copy_constructor:city.elec.interaction.v1.GetPowerRequest)
 }
-inline void GetPowerRequest::SharedCtor(::_pb::Arena* arena) {
+
+inline void GetPowerRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.id_){0},
-      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.id_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 GetPowerRequest::~GetPowerRequest() {
   // @@protoc_insertion_point(destructor:city.elec.interaction.v1.GetPowerRequest)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void GetPowerRequest::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
+
 void GetPowerRequest::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void GetPowerRequest::Clear() {
+void GetPowerRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.elec.interaction.v1.GetPowerRequest)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   _impl_.id_ = 0;
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* GetPowerRequest::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* GetPowerRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 id = 1 [json_name = "id"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<0, 1, 0, 0, 2> GetPowerRequest::_table_ = {
-  {
-    0,  // no _has_bits_
-    0, // no _extensions_
-    1, 0,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967294,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    1,  // num_field_entries
-    0,  // num_aux_entries
-    offsetof(decltype(_table_), field_names),  // no aux_entries
-    &_GetPowerRequest_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    // int32 id = 1 [json_name = "id"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(GetPowerRequest, _impl_.id_), 63>(),
-     {8, 63, 0, PROTOBUF_FIELD_OFFSET(GetPowerRequest, _impl_.id_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // int32 id = 1 [json_name = "id"];
-    {PROTOBUF_FIELD_OFFSET(GetPowerRequest, _impl_.id_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-  }},
-  // no aux_entries
-  {{
-  }},
-};
-
-::uint8_t* GetPowerRequest::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* GetPowerRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.elec.interaction.v1.GetPowerRequest)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // int32 id = 1 [json_name = "id"];
   if (this->_internal_id() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<1>(
-            stream, this->_internal_id(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_id(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.elec.interaction.v1.GetPowerRequest)
   return target;
 }
 
-::size_t GetPowerRequest::ByteSizeLong() const {
+size_t GetPowerRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.elec.interaction.v1.GetPowerRequest)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // int32 id = 1 [json_name = "id"];
   if (this->_internal_id() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_id());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_id());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData GetPowerRequest::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetPowerRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     GetPowerRequest::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*GetPowerRequest::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetPowerRequest::GetClassData() const { return &_class_data_; }
 
 
-void GetPowerRequest::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void GetPowerRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<GetPowerRequest*>(&to_msg);
   auto& from = static_cast<const GetPowerRequest&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.elec.interaction.v1.GetPowerRequest)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_id() != 0) {
     _this->_internal_set_id(from._internal_id());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void GetPowerRequest::CopyFrom(const GetPowerRequest& from) {
@@ -896,177 +835,187 @@ void GetPowerRequest::CopyFrom(const GetPowerRequest& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool GetPowerRequest::IsInitialized() const {
+bool GetPowerRequest::IsInitialized() const {
   return true;
 }
 
 void GetPowerRequest::InternalSwap(GetPowerRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-        swap(_impl_.id_, other->_impl_.id_);
+  swap(_impl_.id_, other->_impl_.id_);
 }
 
-::google::protobuf::Metadata GetPowerRequest::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata GetPowerRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto_getter, &descriptor_table_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto_once,
       file_level_metadata_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto[2]);
 }
+
 // ===================================================================
 
 class GetPowerResponse::_Internal {
  public:
 };
 
-GetPowerResponse::GetPowerResponse(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+GetPowerResponse::GetPowerResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.elec.interaction.v1.GetPowerResponse)
 }
 GetPowerResponse::GetPowerResponse(const GetPowerResponse& from)
-    : ::google::protobuf::Message(), _impl_(from._impl_) {
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  GetPowerResponse* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.power_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.power_ = from._impl_.power_;
   // @@protoc_insertion_point(copy_constructor:city.elec.interaction.v1.GetPowerResponse)
 }
-inline void GetPowerResponse::SharedCtor(::_pb::Arena* arena) {
+
+inline void GetPowerResponse::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.power_){0},
-      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.power_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 GetPowerResponse::~GetPowerResponse() {
   // @@protoc_insertion_point(destructor:city.elec.interaction.v1.GetPowerResponse)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void GetPowerResponse::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
+
 void GetPowerResponse::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void GetPowerResponse::Clear() {
+void GetPowerResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.elec.interaction.v1.GetPowerResponse)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   _impl_.power_ = 0;
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* GetPowerResponse::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* GetPowerResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // double power = 1 [json_name = "power"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 9)) {
+          _impl_.power_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<0, 1, 0, 0, 2> GetPowerResponse::_table_ = {
-  {
-    0,  // no _has_bits_
-    0, // no _extensions_
-    1, 0,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967294,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    1,  // num_field_entries
-    0,  // num_aux_entries
-    offsetof(decltype(_table_), field_names),  // no aux_entries
-    &_GetPowerResponse_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    // double power = 1 [json_name = "power"];
-    {::_pbi::TcParser::FastF64S1,
-     {9, 63, 0, PROTOBUF_FIELD_OFFSET(GetPowerResponse, _impl_.power_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // double power = 1 [json_name = "power"];
-    {PROTOBUF_FIELD_OFFSET(GetPowerResponse, _impl_.power_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-  }},
-  // no aux_entries
-  {{
-  }},
-};
-
-::uint8_t* GetPowerResponse::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* GetPowerResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.elec.interaction.v1.GetPowerResponse)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // double power = 1 [json_name = "power"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_power = this->_internal_power();
-  ::uint64_t raw_power;
+  uint64_t raw_power;
   memcpy(&raw_power, &tmp_power, sizeof(tmp_power));
   if (raw_power != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        1, this->_internal_power(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(1, this->_internal_power(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.elec.interaction.v1.GetPowerResponse)
   return target;
 }
 
-::size_t GetPowerResponse::ByteSizeLong() const {
+size_t GetPowerResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.elec.interaction.v1.GetPowerResponse)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // double power = 1 [json_name = "power"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_power = this->_internal_power();
-  ::uint64_t raw_power;
+  uint64_t raw_power;
   memcpy(&raw_power, &tmp_power, sizeof(tmp_power));
   if (raw_power != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData GetPowerResponse::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetPowerResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     GetPowerResponse::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*GetPowerResponse::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetPowerResponse::GetClassData() const { return &_class_data_; }
 
 
-void GetPowerResponse::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void GetPowerResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<GetPowerResponse*>(&to_msg);
   auto& from = static_cast<const GetPowerResponse&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.elec.interaction.v1.GetPowerResponse)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_power = from._internal_power();
-  ::uint64_t raw_power;
+  uint64_t raw_power;
   memcpy(&raw_power, &tmp_power, sizeof(tmp_power));
   if (raw_power != 0) {
     _this->_internal_set_power(from._internal_power());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void GetPowerResponse::CopyFrom(const GetPowerResponse& from) {
@@ -1076,163 +1025,175 @@ void GetPowerResponse::CopyFrom(const GetPowerResponse& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool GetPowerResponse::IsInitialized() const {
+bool GetPowerResponse::IsInitialized() const {
   return true;
 }
 
 void GetPowerResponse::InternalSwap(GetPowerResponse* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-        swap(_impl_.power_, other->_impl_.power_);
+  swap(_impl_.power_, other->_impl_.power_);
 }
 
-::google::protobuf::Metadata GetPowerResponse::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata GetPowerResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto_getter, &descriptor_table_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto_once,
       file_level_metadata_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto[3]);
 }
+
 // ===================================================================
 
 class GetPowerStatusRequest::_Internal {
  public:
 };
 
-GetPowerStatusRequest::GetPowerStatusRequest(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+GetPowerStatusRequest::GetPowerStatusRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.elec.interaction.v1.GetPowerStatusRequest)
 }
 GetPowerStatusRequest::GetPowerStatusRequest(const GetPowerStatusRequest& from)
-    : ::google::protobuf::Message(), _impl_(from._impl_) {
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  GetPowerStatusRequest* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.flag_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.flag_ = from._impl_.flag_;
   // @@protoc_insertion_point(copy_constructor:city.elec.interaction.v1.GetPowerStatusRequest)
 }
-inline void GetPowerStatusRequest::SharedCtor(::_pb::Arena* arena) {
+
+inline void GetPowerStatusRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.flag_){0},
-      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.flag_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 GetPowerStatusRequest::~GetPowerStatusRequest() {
   // @@protoc_insertion_point(destructor:city.elec.interaction.v1.GetPowerStatusRequest)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void GetPowerStatusRequest::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
+
 void GetPowerStatusRequest::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void GetPowerStatusRequest::Clear() {
+void GetPowerStatusRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.elec.interaction.v1.GetPowerStatusRequest)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   _impl_.flag_ = 0;
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* GetPowerStatusRequest::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* GetPowerStatusRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 flag = 1 [json_name = "flag"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.flag_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<0, 1, 0, 0, 2> GetPowerStatusRequest::_table_ = {
-  {
-    0,  // no _has_bits_
-    0, // no _extensions_
-    1, 0,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967294,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    1,  // num_field_entries
-    0,  // num_aux_entries
-    offsetof(decltype(_table_), field_names),  // no aux_entries
-    &_GetPowerStatusRequest_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    // int32 flag = 1 [json_name = "flag"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(GetPowerStatusRequest, _impl_.flag_), 63>(),
-     {8, 63, 0, PROTOBUF_FIELD_OFFSET(GetPowerStatusRequest, _impl_.flag_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // int32 flag = 1 [json_name = "flag"];
-    {PROTOBUF_FIELD_OFFSET(GetPowerStatusRequest, _impl_.flag_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-  }},
-  // no aux_entries
-  {{
-  }},
-};
-
-::uint8_t* GetPowerStatusRequest::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* GetPowerStatusRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.elec.interaction.v1.GetPowerStatusRequest)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // int32 flag = 1 [json_name = "flag"];
   if (this->_internal_flag() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<1>(
-            stream, this->_internal_flag(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_flag(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.elec.interaction.v1.GetPowerStatusRequest)
   return target;
 }
 
-::size_t GetPowerStatusRequest::ByteSizeLong() const {
+size_t GetPowerStatusRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.elec.interaction.v1.GetPowerStatusRequest)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // int32 flag = 1 [json_name = "flag"];
   if (this->_internal_flag() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_flag());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_flag());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData GetPowerStatusRequest::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetPowerStatusRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     GetPowerStatusRequest::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*GetPowerStatusRequest::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetPowerStatusRequest::GetClassData() const { return &_class_data_; }
 
 
-void GetPowerStatusRequest::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void GetPowerStatusRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<GetPowerStatusRequest*>(&to_msg);
   auto& from = static_cast<const GetPowerStatusRequest&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.elec.interaction.v1.GetPowerStatusRequest)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_flag() != 0) {
     _this->_internal_set_flag(from._internal_flag());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void GetPowerStatusRequest::CopyFrom(const GetPowerStatusRequest& from) {
@@ -1242,191 +1203,217 @@ void GetPowerStatusRequest::CopyFrom(const GetPowerStatusRequest& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool GetPowerStatusRequest::IsInitialized() const {
+bool GetPowerStatusRequest::IsInitialized() const {
   return true;
 }
 
 void GetPowerStatusRequest::InternalSwap(GetPowerStatusRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-        swap(_impl_.flag_, other->_impl_.flag_);
+  swap(_impl_.flag_, other->_impl_.flag_);
 }
 
-::google::protobuf::Metadata GetPowerStatusRequest::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata GetPowerStatusRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto_getter, &descriptor_table_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto_once,
       file_level_metadata_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto[4]);
 }
+
 // ===================================================================
 
 GetPowerStatusResponse_PowerStatusEntry_DoNotUse::GetPowerStatusResponse_PowerStatusEntry_DoNotUse() {}
-GetPowerStatusResponse_PowerStatusEntry_DoNotUse::GetPowerStatusResponse_PowerStatusEntry_DoNotUse(::google::protobuf::Arena* arena)
+GetPowerStatusResponse_PowerStatusEntry_DoNotUse::GetPowerStatusResponse_PowerStatusEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
     : SuperType(arena) {}
 void GetPowerStatusResponse_PowerStatusEntry_DoNotUse::MergeFrom(const GetPowerStatusResponse_PowerStatusEntry_DoNotUse& other) {
   MergeFromInternal(other);
 }
-::google::protobuf::Metadata GetPowerStatusResponse_PowerStatusEntry_DoNotUse::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata GetPowerStatusResponse_PowerStatusEntry_DoNotUse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto_getter, &descriptor_table_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto_once,
       file_level_metadata_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto[5]);
 }
+
 // ===================================================================
 
 class GetPowerStatusResponse::_Internal {
  public:
 };
 
-GetPowerStatusResponse::GetPowerStatusResponse(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+GetPowerStatusResponse::GetPowerStatusResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  if (arena != nullptr && !is_message_owned) {
+    arena->OwnCustomDestructor(this, &GetPowerStatusResponse::ArenaDtor);
+  }
   // @@protoc_insertion_point(arena_constructor:city.elec.interaction.v1.GetPowerStatusResponse)
 }
-GetPowerStatusResponse::GetPowerStatusResponse(const GetPowerStatusResponse& from) : ::google::protobuf::Message() {
-  GetPowerStatusResponse* const _this = this;
-  (void)_this;
+GetPowerStatusResponse::GetPowerStatusResponse(const GetPowerStatusResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  GetPowerStatusResponse* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      /* decltype(_impl_.power_status_) */ {},
-      /*decltype(_impl_._cached_size_)*/ {},
-  };
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
-  _this->_impl_.power_status_.MergeFrom(from._impl_.power_status_);
+      /*decltype(_impl_.power_status_)*/{}
+    , /*decltype(_impl_._cached_size_)*/{}};
 
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.power_status_.MergeFrom(from._impl_.power_status_);
   // @@protoc_insertion_point(copy_constructor:city.elec.interaction.v1.GetPowerStatusResponse)
 }
-inline void GetPowerStatusResponse::SharedCtor(::_pb::Arena* arena) {
+
+inline void GetPowerStatusResponse::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      /* decltype(_impl_.power_status_) */ {::google::protobuf::internal::ArenaInitialized(), arena},
-      /*decltype(_impl_._cached_size_)*/ {},
+      /*decltype(_impl_.power_status_)*/{::_pbi::ArenaInitialized(), arena}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 GetPowerStatusResponse::~GetPowerStatusResponse() {
   // @@protoc_insertion_point(destructor:city.elec.interaction.v1.GetPowerStatusResponse)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    ArenaDtor(this);
+    return;
+  }
   SharedDtor();
 }
+
 inline void GetPowerStatusResponse::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.power_status_.Destruct();
   _impl_.power_status_.~MapField();
+}
+
+void GetPowerStatusResponse::ArenaDtor(void* object) {
+  GetPowerStatusResponse* _this = reinterpret_cast< GetPowerStatusResponse* >(object);
+  _this->_impl_.power_status_.Destruct();
 }
 void GetPowerStatusResponse::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void GetPowerStatusResponse::Clear() {
+void GetPowerStatusResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.elec.interaction.v1.GetPowerStatusResponse)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   _impl_.power_status_.Clear();
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* GetPowerStatusResponse::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* GetPowerStatusResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // map<int32, double> power_status = 1 [json_name = "powerStatus"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(&_impl_.power_status_, ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<0, 1, 1, 0, 2> GetPowerStatusResponse::_table_ = {
-  {
-    0,  // no _has_bits_
-    0, // no _extensions_
-    1, 0,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967294,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    1,  // num_field_entries
-    1,  // num_aux_entries
-    offsetof(decltype(_table_), aux_entries),
-    &_GetPowerStatusResponse_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    {::_pbi::TcParser::MiniParse, {}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // map<int32, double> power_status = 1 [json_name = "powerStatus"];
-    {PROTOBUF_FIELD_OFFSET(GetPowerStatusResponse, _impl_.power_status_), 0, 0,
-    (0 | ::_fl::kFcRepeated | ::_fl::kMap)},
-  }}, {{
-    {::_pbi::TcParser::GetMapAuxInfo<decltype(GetPowerStatusResponse()._impl_.power_status_)>(1, 0, 0)},
-  }}, {{
-  }},
-};
-
-::uint8_t* GetPowerStatusResponse::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* GetPowerStatusResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.elec.interaction.v1.GetPowerStatusResponse)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // map<int32, double> power_status = 1 [json_name = "powerStatus"];
-  if (!_internal_power_status().empty()) {
-    using MapType = ::google::protobuf::Map<::int32_t, double>;
+  if (!this->_internal_power_status().empty()) {
+    using MapType = ::_pb::Map<int32_t, double>;
     using WireHelper = GetPowerStatusResponse_PowerStatusEntry_DoNotUse::Funcs;
-    const auto& field = _internal_power_status();
+    const auto& map_field = this->_internal_power_status();
 
-    if (stream->IsSerializationDeterministic() && field.size() > 1) {
-      for (const auto& entry : ::google::protobuf::internal::MapSorterFlat<MapType>(field)) {
-        target = WireHelper::InternalSerialize(
-            1, entry.first, entry.second, target, stream);
+    if (stream->IsSerializationDeterministic() && map_field.size() > 1) {
+      for (const auto& entry : ::_pbi::MapSorterFlat<MapType>(map_field)) {
+        target = WireHelper::InternalSerialize(1, entry.first, entry.second, target, stream);
       }
     } else {
-      for (const auto& entry : field) {
-        target = WireHelper::InternalSerialize(
-            1, entry.first, entry.second, target, stream);
+      for (const auto& entry : map_field) {
+        target = WireHelper::InternalSerialize(1, entry.first, entry.second, target, stream);
       }
     }
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.elec.interaction.v1.GetPowerStatusResponse)
   return target;
 }
 
-::size_t GetPowerStatusResponse::ByteSizeLong() const {
+size_t GetPowerStatusResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.elec.interaction.v1.GetPowerStatusResponse)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // map<int32, double> power_status = 1 [json_name = "powerStatus"];
-  total_size += 1 * ::google::protobuf::internal::FromIntSize(_internal_power_status_size());
-  for (const auto& entry : _internal_power_status()) {
-    total_size += GetPowerStatusResponse_PowerStatusEntry_DoNotUse::Funcs::ByteSizeLong(entry.first, entry.second);
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(this->_internal_power_status_size());
+  for (::PROTOBUF_NAMESPACE_ID::Map< int32_t, double >::const_iterator
+      it = this->_internal_power_status().begin();
+      it != this->_internal_power_status().end(); ++it) {
+    total_size += GetPowerStatusResponse_PowerStatusEntry_DoNotUse::Funcs::ByteSizeLong(it->first, it->second);
   }
+
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData GetPowerStatusResponse::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetPowerStatusResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     GetPowerStatusResponse::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*GetPowerStatusResponse::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetPowerStatusResponse::GetClassData() const { return &_class_data_; }
 
 
-void GetPowerStatusResponse::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void GetPowerStatusResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<GetPowerStatusResponse*>(&to_msg);
   auto& from = static_cast<const GetPowerStatusResponse&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.elec.interaction.v1.GetPowerStatusResponse)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   _this->_impl_.power_status_.MergeFrom(from._impl_.power_status_);
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void GetPowerStatusResponse::CopyFrom(const GetPowerStatusResponse& from) {
@@ -1436,7 +1423,7 @@ void GetPowerStatusResponse::CopyFrom(const GetPowerStatusResponse& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool GetPowerStatusResponse::IsInitialized() const {
+bool GetPowerStatusResponse::IsInitialized() const {
   return true;
 }
 
@@ -1446,153 +1433,165 @@ void GetPowerStatusResponse::InternalSwap(GetPowerStatusResponse* other) {
   _impl_.power_status_.InternalSwap(&other->_impl_.power_status_);
 }
 
-::google::protobuf::Metadata GetPowerStatusResponse::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata GetPowerStatusResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto_getter, &descriptor_table_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto_once,
       file_level_metadata_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto[6]);
 }
+
 // ===================================================================
 
 class GetNoPowerAOIRequest::_Internal {
  public:
 };
 
-GetNoPowerAOIRequest::GetNoPowerAOIRequest(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+GetNoPowerAOIRequest::GetNoPowerAOIRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.elec.interaction.v1.GetNoPowerAOIRequest)
 }
 GetNoPowerAOIRequest::GetNoPowerAOIRequest(const GetNoPowerAOIRequest& from)
-    : ::google::protobuf::Message(), _impl_(from._impl_) {
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  GetNoPowerAOIRequest* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.flag_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.flag_ = from._impl_.flag_;
   // @@protoc_insertion_point(copy_constructor:city.elec.interaction.v1.GetNoPowerAOIRequest)
 }
-inline void GetNoPowerAOIRequest::SharedCtor(::_pb::Arena* arena) {
+
+inline void GetNoPowerAOIRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.flag_){0},
-      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.flag_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 GetNoPowerAOIRequest::~GetNoPowerAOIRequest() {
   // @@protoc_insertion_point(destructor:city.elec.interaction.v1.GetNoPowerAOIRequest)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void GetNoPowerAOIRequest::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
+
 void GetNoPowerAOIRequest::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void GetNoPowerAOIRequest::Clear() {
+void GetNoPowerAOIRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.elec.interaction.v1.GetNoPowerAOIRequest)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   _impl_.flag_ = 0;
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* GetNoPowerAOIRequest::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* GetNoPowerAOIRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 flag = 1 [json_name = "flag"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.flag_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<0, 1, 0, 0, 2> GetNoPowerAOIRequest::_table_ = {
-  {
-    0,  // no _has_bits_
-    0, // no _extensions_
-    1, 0,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967294,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    1,  // num_field_entries
-    0,  // num_aux_entries
-    offsetof(decltype(_table_), field_names),  // no aux_entries
-    &_GetNoPowerAOIRequest_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    // int32 flag = 1 [json_name = "flag"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(GetNoPowerAOIRequest, _impl_.flag_), 63>(),
-     {8, 63, 0, PROTOBUF_FIELD_OFFSET(GetNoPowerAOIRequest, _impl_.flag_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // int32 flag = 1 [json_name = "flag"];
-    {PROTOBUF_FIELD_OFFSET(GetNoPowerAOIRequest, _impl_.flag_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-  }},
-  // no aux_entries
-  {{
-  }},
-};
-
-::uint8_t* GetNoPowerAOIRequest::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* GetNoPowerAOIRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.elec.interaction.v1.GetNoPowerAOIRequest)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // int32 flag = 1 [json_name = "flag"];
   if (this->_internal_flag() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<1>(
-            stream, this->_internal_flag(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_flag(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.elec.interaction.v1.GetNoPowerAOIRequest)
   return target;
 }
 
-::size_t GetNoPowerAOIRequest::ByteSizeLong() const {
+size_t GetNoPowerAOIRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.elec.interaction.v1.GetNoPowerAOIRequest)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // int32 flag = 1 [json_name = "flag"];
   if (this->_internal_flag() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_flag());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_flag());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData GetNoPowerAOIRequest::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetNoPowerAOIRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     GetNoPowerAOIRequest::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*GetNoPowerAOIRequest::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetNoPowerAOIRequest::GetClassData() const { return &_class_data_; }
 
 
-void GetNoPowerAOIRequest::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void GetNoPowerAOIRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<GetNoPowerAOIRequest*>(&to_msg);
   auto& from = static_cast<const GetNoPowerAOIRequest&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.elec.interaction.v1.GetNoPowerAOIRequest)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_flag() != 0) {
     _this->_internal_set_flag(from._internal_flag());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void GetNoPowerAOIRequest::CopyFrom(const GetNoPowerAOIRequest& from) {
@@ -1602,179 +1601,190 @@ void GetNoPowerAOIRequest::CopyFrom(const GetNoPowerAOIRequest& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool GetNoPowerAOIRequest::IsInitialized() const {
+bool GetNoPowerAOIRequest::IsInitialized() const {
   return true;
 }
 
 void GetNoPowerAOIRequest::InternalSwap(GetNoPowerAOIRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-        swap(_impl_.flag_, other->_impl_.flag_);
+  swap(_impl_.flag_, other->_impl_.flag_);
 }
 
-::google::protobuf::Metadata GetNoPowerAOIRequest::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata GetNoPowerAOIRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto_getter, &descriptor_table_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto_once,
       file_level_metadata_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto[7]);
 }
+
 // ===================================================================
 
 class GetNoPowerAOIResponse::_Internal {
  public:
 };
 
-GetNoPowerAOIResponse::GetNoPowerAOIResponse(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+GetNoPowerAOIResponse::GetNoPowerAOIResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.elec.interaction.v1.GetNoPowerAOIResponse)
 }
-GetNoPowerAOIResponse::GetNoPowerAOIResponse(const GetNoPowerAOIResponse& from) : ::google::protobuf::Message() {
-  GetNoPowerAOIResponse* const _this = this;
-  (void)_this;
+GetNoPowerAOIResponse::GetNoPowerAOIResponse(const GetNoPowerAOIResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  GetNoPowerAOIResponse* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.aoi_){from._impl_.aoi_},
-      /* _impl_._aoi_cached_byte_size_ = */ {0},
-      /*decltype(_impl_._cached_size_)*/ {},
-  };
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+      decltype(_impl_.aoi_){from._impl_.aoi_}
+    , /*decltype(_impl_._aoi_cached_byte_size_)*/{0}
+    , /*decltype(_impl_._cached_size_)*/{}};
 
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:city.elec.interaction.v1.GetNoPowerAOIResponse)
 }
-inline void GetNoPowerAOIResponse::SharedCtor(::_pb::Arena* arena) {
+
+inline void GetNoPowerAOIResponse::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.aoi_){arena},
-      /* _impl_._aoi_cached_byte_size_ = */ {0},
-      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.aoi_){arena}
+    , /*decltype(_impl_._aoi_cached_byte_size_)*/{0}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 GetNoPowerAOIResponse::~GetNoPowerAOIResponse() {
   // @@protoc_insertion_point(destructor:city.elec.interaction.v1.GetNoPowerAOIResponse)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void GetNoPowerAOIResponse::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.aoi_.~RepeatedField();
 }
+
 void GetNoPowerAOIResponse::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void GetNoPowerAOIResponse::Clear() {
+void GetNoPowerAOIResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.elec.interaction.v1.GetNoPowerAOIResponse)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _internal_mutable_aoi()->Clear();
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _impl_.aoi_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* GetNoPowerAOIResponse::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* GetNoPowerAOIResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // repeated int32 aoi = 1 [json_name = "aoi"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_aoi(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<uint8_t>(tag) == 8) {
+          _internal_add_aoi(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<0, 1, 0, 0, 2> GetNoPowerAOIResponse::_table_ = {
-  {
-    0,  // no _has_bits_
-    0, // no _extensions_
-    1, 0,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967294,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    1,  // num_field_entries
-    0,  // num_aux_entries
-    offsetof(decltype(_table_), field_names),  // no aux_entries
-    &_GetNoPowerAOIResponse_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    // repeated int32 aoi = 1 [json_name = "aoi"];
-    {::_pbi::TcParser::FastV32P1,
-     {10, 63, 0, PROTOBUF_FIELD_OFFSET(GetNoPowerAOIResponse, _impl_.aoi_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // repeated int32 aoi = 1 [json_name = "aoi"];
-    {PROTOBUF_FIELD_OFFSET(GetNoPowerAOIResponse, _impl_.aoi_), 0, 0,
-    (0 | ::_fl::kFcRepeated | ::_fl::kPackedInt32)},
-  }},
-  // no aux_entries
-  {{
-  }},
-};
-
-::uint8_t* GetNoPowerAOIResponse::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* GetNoPowerAOIResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.elec.interaction.v1.GetNoPowerAOIResponse)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // repeated int32 aoi = 1 [json_name = "aoi"];
   {
-    int byte_size = _impl_._aoi_cached_byte_size_.Get();
+    int byte_size = _impl_._aoi_cached_byte_size_.load(std::memory_order_relaxed);
     if (byte_size > 0) {
-      target = stream->WriteInt32Packed(1, _internal_aoi(),
-                                                 byte_size, target);
+      target = stream->WriteInt32Packed(
+          1, _internal_aoi(), byte_size, target);
     }
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.elec.interaction.v1.GetNoPowerAOIResponse)
   return target;
 }
 
-::size_t GetNoPowerAOIResponse::ByteSizeLong() const {
+size_t GetNoPowerAOIResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.elec.interaction.v1.GetNoPowerAOIResponse)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // repeated int32 aoi = 1 [json_name = "aoi"];
   {
-    std::size_t data_size = ::_pbi::WireFormatLite::Int32Size(
-        this->_internal_aoi())
-    ;
-    _impl_._aoi_cached_byte_size_.Set(::_pbi::ToCachedSize(data_size));
-    std::size_t tag_size = data_size == 0
-        ? 0
-        : 1 + ::_pbi::WireFormatLite::Int32Size(
-                            static_cast<int32_t>(data_size))
-    ;
-    total_size += tag_size + data_size;
+    size_t data_size = ::_pbi::WireFormatLite::
+      Int32Size(this->_impl_.aoi_);
+    if (data_size > 0) {
+      total_size += 1 +
+        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
+    }
+    int cached_size = ::_pbi::ToCachedSize(data_size);
+    _impl_._aoi_cached_byte_size_.store(cached_size,
+                                    std::memory_order_relaxed);
+    total_size += data_size;
   }
+
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData GetNoPowerAOIResponse::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetNoPowerAOIResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     GetNoPowerAOIResponse::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*GetNoPowerAOIResponse::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetNoPowerAOIResponse::GetClassData() const { return &_class_data_; }
 
 
-void GetNoPowerAOIResponse::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void GetNoPowerAOIResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<GetNoPowerAOIResponse*>(&to_msg);
   auto& from = static_cast<const GetNoPowerAOIResponse&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.elec.interaction.v1.GetNoPowerAOIResponse)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  _this->_internal_mutable_aoi()->MergeFrom(from._internal_aoi());
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.aoi_.MergeFrom(from._impl_.aoi_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void GetNoPowerAOIResponse::CopyFrom(const GetNoPowerAOIResponse& from) {
@@ -1784,7 +1794,7 @@ void GetNoPowerAOIResponse::CopyFrom(const GetNoPowerAOIResponse& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool GetNoPowerAOIResponse::IsInitialized() const {
+bool GetNoPowerAOIResponse::IsInitialized() const {
   return true;
 }
 
@@ -1794,38 +1804,39 @@ void GetNoPowerAOIResponse::InternalSwap(GetNoPowerAOIResponse* other) {
   _impl_.aoi_.InternalSwap(&other->_impl_.aoi_);
 }
 
-::google::protobuf::Metadata GetNoPowerAOIResponse::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata GetNoPowerAOIResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto_getter, &descriptor_table_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto_once,
       file_level_metadata_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto[8]);
 }
+
 // ===================================================================
 
 class GetRuinInfoRequest::_Internal {
  public:
 };
 
-GetRuinInfoRequest::GetRuinInfoRequest(::google::protobuf::Arena* arena)
-    : ::google::protobuf::internal::ZeroFieldsBase(arena) {
+GetRuinInfoRequest::GetRuinInfoRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
   // @@protoc_insertion_point(arena_constructor:city.elec.interaction.v1.GetRuinInfoRequest)
 }
-GetRuinInfoRequest::GetRuinInfoRequest(const GetRuinInfoRequest& from) : ::google::protobuf::internal::ZeroFieldsBase() {
-  GetRuinInfoRequest* const _this = this;
-  (void)_this;
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
-
+GetRuinInfoRequest::GetRuinInfoRequest(const GetRuinInfoRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
+  GetRuinInfoRequest* const _this = this; (void)_this;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:city.elec.interaction.v1.GetRuinInfoRequest)
 }
 
 
 
 
-const ::google::protobuf::Message::ClassData GetRuinInfoRequest::_class_data_ = {
-    ::google::protobuf::internal::ZeroFieldsBase::CopyImpl,
-    ::google::protobuf::internal::ZeroFieldsBase::MergeImpl,
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetRuinInfoRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
 };
-const ::google::protobuf::Message::ClassData*GetRuinInfoRequest::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetRuinInfoRequest::GetClassData() const { return &_class_data_; }
 
 
 
@@ -1833,184 +1844,197 @@ const ::google::protobuf::Message::ClassData*GetRuinInfoRequest::GetClassData() 
 
 
 
-::google::protobuf::Metadata GetRuinInfoRequest::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata GetRuinInfoRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto_getter, &descriptor_table_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto_once,
       file_level_metadata_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto[9]);
 }
+
 // ===================================================================
 
 class RuinInfo::_Internal {
  public:
 };
 
-RuinInfo::RuinInfo(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+RuinInfo::RuinInfo(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.elec.interaction.v1.RuinInfo)
 }
 RuinInfo::RuinInfo(const RuinInfo& from)
-    : ::google::protobuf::Message(), _impl_(from._impl_) {
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  RuinInfo* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.ratio_){}
+    , decltype(_impl_.num_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&_impl_.ratio_, &from._impl_.ratio_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.num_) -
+    reinterpret_cast<char*>(&_impl_.ratio_)) + sizeof(_impl_.num_));
   // @@protoc_insertion_point(copy_constructor:city.elec.interaction.v1.RuinInfo)
 }
-inline void RuinInfo::SharedCtor(::_pb::Arena* arena) {
+
+inline void RuinInfo::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.ratio_){0},
-      decltype(_impl_.num_){0},
-      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.ratio_){0}
+    , decltype(_impl_.num_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 RuinInfo::~RuinInfo() {
   // @@protoc_insertion_point(destructor:city.elec.interaction.v1.RuinInfo)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void RuinInfo::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
+
 void RuinInfo::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void RuinInfo::Clear() {
+void RuinInfo::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.elec.interaction.v1.RuinInfo)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&_impl_.ratio_, 0, static_cast<::size_t>(
+  ::memset(&_impl_.ratio_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_impl_.num_) -
       reinterpret_cast<char*>(&_impl_.ratio_)) + sizeof(_impl_.num_));
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* RuinInfo::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* RuinInfo::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 num = 1 [json_name = "num"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.num_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // double ratio = 2 [json_name = "ratio"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 17)) {
+          _impl_.ratio_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<1, 2, 0, 0, 2> RuinInfo::_table_ = {
-  {
-    0,  // no _has_bits_
-    0, // no _extensions_
-    2, 8,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967292,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    2,  // num_field_entries
-    0,  // num_aux_entries
-    offsetof(decltype(_table_), field_names),  // no aux_entries
-    &_RuinInfo_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    // double ratio = 2 [json_name = "ratio"];
-    {::_pbi::TcParser::FastF64S1,
-     {17, 63, 0, PROTOBUF_FIELD_OFFSET(RuinInfo, _impl_.ratio_)}},
-    // int32 num = 1 [json_name = "num"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(RuinInfo, _impl_.num_), 63>(),
-     {8, 63, 0, PROTOBUF_FIELD_OFFSET(RuinInfo, _impl_.num_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // int32 num = 1 [json_name = "num"];
-    {PROTOBUF_FIELD_OFFSET(RuinInfo, _impl_.num_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-    // double ratio = 2 [json_name = "ratio"];
-    {PROTOBUF_FIELD_OFFSET(RuinInfo, _impl_.ratio_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-  }},
-  // no aux_entries
-  {{
-  }},
-};
-
-::uint8_t* RuinInfo::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* RuinInfo::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.elec.interaction.v1.RuinInfo)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // int32 num = 1 [json_name = "num"];
   if (this->_internal_num() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<1>(
-            stream, this->_internal_num(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_num(), target);
   }
 
   // double ratio = 2 [json_name = "ratio"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_ratio = this->_internal_ratio();
-  ::uint64_t raw_ratio;
+  uint64_t raw_ratio;
   memcpy(&raw_ratio, &tmp_ratio, sizeof(tmp_ratio));
   if (raw_ratio != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        2, this->_internal_ratio(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(2, this->_internal_ratio(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.elec.interaction.v1.RuinInfo)
   return target;
 }
 
-::size_t RuinInfo::ByteSizeLong() const {
+size_t RuinInfo::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.elec.interaction.v1.RuinInfo)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // double ratio = 2 [json_name = "ratio"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_ratio = this->_internal_ratio();
-  ::uint64_t raw_ratio;
+  uint64_t raw_ratio;
   memcpy(&raw_ratio, &tmp_ratio, sizeof(tmp_ratio));
   if (raw_ratio != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   // int32 num = 1 [json_name = "num"];
   if (this->_internal_num() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_num());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_num());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData RuinInfo::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData RuinInfo::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     RuinInfo::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*RuinInfo::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*RuinInfo::GetClassData() const { return &_class_data_; }
 
 
-void RuinInfo::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void RuinInfo::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<RuinInfo*>(&to_msg);
   auto& from = static_cast<const RuinInfo&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.elec.interaction.v1.RuinInfo)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_ratio = from._internal_ratio();
-  ::uint64_t raw_ratio;
+  uint64_t raw_ratio;
   memcpy(&raw_ratio, &tmp_ratio, sizeof(tmp_ratio));
   if (raw_ratio != 0) {
     _this->_internal_set_ratio(from._internal_ratio());
@@ -2018,7 +2042,7 @@ void RuinInfo::MergeImpl(::google::protobuf::Message& to_msg, const ::google::pr
   if (from._internal_num() != 0) {
     _this->_internal_set_num(from._internal_num());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void RuinInfo::CopyFrom(const RuinInfo& from) {
@@ -2028,14 +2052,14 @@ void RuinInfo::CopyFrom(const RuinInfo& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool RuinInfo::IsInitialized() const {
+bool RuinInfo::IsInitialized() const {
   return true;
 }
 
 void RuinInfo::InternalSwap(RuinInfo* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::google::protobuf::internal::memswap<
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(RuinInfo, _impl_.num_)
       + sizeof(RuinInfo::_impl_.num_)
       - PROTOBUF_FIELD_OFFSET(RuinInfo, _impl_.ratio_)>(
@@ -2043,276 +2067,262 @@ void RuinInfo::InternalSwap(RuinInfo* other) {
           reinterpret_cast<char*>(&other->_impl_.ratio_));
 }
 
-::google::protobuf::Metadata RuinInfo::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata RuinInfo::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto_getter, &descriptor_table_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto_once,
       file_level_metadata_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto[10]);
 }
+
 // ===================================================================
 
 class GetRuinInfoResponse::_Internal {
  public:
-  using HasBits = decltype(std::declval<GetRuinInfoResponse>()._impl_._has_bits_);
-  static constexpr ::int32_t kHasBitsOffset =
-    8 * PROTOBUF_FIELD_OFFSET(GetRuinInfoResponse, _impl_._has_bits_);
   static const ::city::elec::interaction::v1::RuinInfo& one(const GetRuinInfoResponse* msg);
-  static void set_has_one(HasBits* has_bits) {
-    (*has_bits)[0] |= 1u;
-  }
   static const ::city::elec::interaction::v1::RuinInfo& two(const GetRuinInfoResponse* msg);
-  static void set_has_two(HasBits* has_bits) {
-    (*has_bits)[0] |= 2u;
-  }
   static const ::city::elec::interaction::v1::RuinInfo& three(const GetRuinInfoResponse* msg);
-  static void set_has_three(HasBits* has_bits) {
-    (*has_bits)[0] |= 4u;
-  }
 };
 
-const ::city::elec::interaction::v1::RuinInfo& GetRuinInfoResponse::_Internal::one(const GetRuinInfoResponse* msg) {
+const ::city::elec::interaction::v1::RuinInfo&
+GetRuinInfoResponse::_Internal::one(const GetRuinInfoResponse* msg) {
   return *msg->_impl_.one_;
 }
-const ::city::elec::interaction::v1::RuinInfo& GetRuinInfoResponse::_Internal::two(const GetRuinInfoResponse* msg) {
+const ::city::elec::interaction::v1::RuinInfo&
+GetRuinInfoResponse::_Internal::two(const GetRuinInfoResponse* msg) {
   return *msg->_impl_.two_;
 }
-const ::city::elec::interaction::v1::RuinInfo& GetRuinInfoResponse::_Internal::three(const GetRuinInfoResponse* msg) {
+const ::city::elec::interaction::v1::RuinInfo&
+GetRuinInfoResponse::_Internal::three(const GetRuinInfoResponse* msg) {
   return *msg->_impl_.three_;
 }
-GetRuinInfoResponse::GetRuinInfoResponse(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+GetRuinInfoResponse::GetRuinInfoResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.elec.interaction.v1.GetRuinInfoResponse)
 }
-GetRuinInfoResponse::GetRuinInfoResponse(const GetRuinInfoResponse& from) : ::google::protobuf::Message() {
-  GetRuinInfoResponse* const _this = this;
-  (void)_this;
+GetRuinInfoResponse::GetRuinInfoResponse(const GetRuinInfoResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  GetRuinInfoResponse* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){from._impl_._has_bits_},
-      /*decltype(_impl_._cached_size_)*/ {},
-      decltype(_impl_.one_){nullptr},
-      decltype(_impl_.two_){nullptr},
-      decltype(_impl_.three_){nullptr},
-  };
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
-  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+      decltype(_impl_.one_){nullptr}
+    , decltype(_impl_.two_){nullptr}
+    , decltype(_impl_.three_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  if (from._internal_has_one()) {
     _this->_impl_.one_ = new ::city::elec::interaction::v1::RuinInfo(*from._impl_.one_);
   }
-  if ((from._impl_._has_bits_[0] & 0x00000002u) != 0) {
+  if (from._internal_has_two()) {
     _this->_impl_.two_ = new ::city::elec::interaction::v1::RuinInfo(*from._impl_.two_);
   }
-  if ((from._impl_._has_bits_[0] & 0x00000004u) != 0) {
+  if (from._internal_has_three()) {
     _this->_impl_.three_ = new ::city::elec::interaction::v1::RuinInfo(*from._impl_.three_);
   }
-
   // @@protoc_insertion_point(copy_constructor:city.elec.interaction.v1.GetRuinInfoResponse)
 }
-inline void GetRuinInfoResponse::SharedCtor(::_pb::Arena* arena) {
+
+inline void GetRuinInfoResponse::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){},
-      /*decltype(_impl_._cached_size_)*/ {},
-      decltype(_impl_.one_){nullptr},
-      decltype(_impl_.two_){nullptr},
-      decltype(_impl_.three_){nullptr},
+      decltype(_impl_.one_){nullptr}
+    , decltype(_impl_.two_){nullptr}
+    , decltype(_impl_.three_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 GetRuinInfoResponse::~GetRuinInfoResponse() {
   // @@protoc_insertion_point(destructor:city.elec.interaction.v1.GetRuinInfoResponse)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void GetRuinInfoResponse::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete _impl_.one_;
   if (this != internal_default_instance()) delete _impl_.two_;
   if (this != internal_default_instance()) delete _impl_.three_;
 }
+
 void GetRuinInfoResponse::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void GetRuinInfoResponse::Clear() {
+void GetRuinInfoResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.elec.interaction.v1.GetRuinInfoResponse)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000007u) {
-    if (cached_has_bits & 0x00000001u) {
-      ABSL_DCHECK(_impl_.one_ != nullptr);
-      _impl_.one_->Clear();
-    }
-    if (cached_has_bits & 0x00000002u) {
-      ABSL_DCHECK(_impl_.two_ != nullptr);
-      _impl_.two_->Clear();
-    }
-    if (cached_has_bits & 0x00000004u) {
-      ABSL_DCHECK(_impl_.three_ != nullptr);
-      _impl_.three_->Clear();
-    }
+  if (GetArenaForAllocation() == nullptr && _impl_.one_ != nullptr) {
+    delete _impl_.one_;
   }
-  _impl_._has_bits_.Clear();
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _impl_.one_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.two_ != nullptr) {
+    delete _impl_.two_;
+  }
+  _impl_.two_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.three_ != nullptr) {
+    delete _impl_.three_;
+  }
+  _impl_.three_ = nullptr;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* GetRuinInfoResponse::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* GetRuinInfoResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // .city.elec.interaction.v1.RuinInfo one = 1 [json_name = "one"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_one(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .city.elec.interaction.v1.RuinInfo two = 2 [json_name = "two"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr = ctx->ParseMessage(_internal_mutable_two(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .city.elec.interaction.v1.RuinInfo three = 3 [json_name = "three"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+          ptr = ctx->ParseMessage(_internal_mutable_three(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<2, 3, 3, 0, 2> GetRuinInfoResponse::_table_ = {
-  {
-    PROTOBUF_FIELD_OFFSET(GetRuinInfoResponse, _impl_._has_bits_),
-    0, // no _extensions_
-    3, 24,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967288,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    3,  // num_field_entries
-    3,  // num_aux_entries
-    offsetof(decltype(_table_), aux_entries),
-    &_GetRuinInfoResponse_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    {::_pbi::TcParser::MiniParse, {}},
-    // .city.elec.interaction.v1.RuinInfo one = 1 [json_name = "one"];
-    {::_pbi::TcParser::FastMtS1,
-     {10, 0, 0, PROTOBUF_FIELD_OFFSET(GetRuinInfoResponse, _impl_.one_)}},
-    // .city.elec.interaction.v1.RuinInfo two = 2 [json_name = "two"];
-    {::_pbi::TcParser::FastMtS1,
-     {18, 1, 1, PROTOBUF_FIELD_OFFSET(GetRuinInfoResponse, _impl_.two_)}},
-    // .city.elec.interaction.v1.RuinInfo three = 3 [json_name = "three"];
-    {::_pbi::TcParser::FastMtS1,
-     {26, 2, 2, PROTOBUF_FIELD_OFFSET(GetRuinInfoResponse, _impl_.three_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // .city.elec.interaction.v1.RuinInfo one = 1 [json_name = "one"];
-    {PROTOBUF_FIELD_OFFSET(GetRuinInfoResponse, _impl_.one_), _Internal::kHasBitsOffset + 0, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
-    // .city.elec.interaction.v1.RuinInfo two = 2 [json_name = "two"];
-    {PROTOBUF_FIELD_OFFSET(GetRuinInfoResponse, _impl_.two_), _Internal::kHasBitsOffset + 1, 1,
-    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
-    // .city.elec.interaction.v1.RuinInfo three = 3 [json_name = "three"];
-    {PROTOBUF_FIELD_OFFSET(GetRuinInfoResponse, _impl_.three_), _Internal::kHasBitsOffset + 2, 2,
-    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
-  }}, {{
-    {::_pbi::TcParser::GetTable<::city::elec::interaction::v1::RuinInfo>()},
-    {::_pbi::TcParser::GetTable<::city::elec::interaction::v1::RuinInfo>()},
-    {::_pbi::TcParser::GetTable<::city::elec::interaction::v1::RuinInfo>()},
-  }}, {{
-  }},
-};
-
-::uint8_t* GetRuinInfoResponse::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* GetRuinInfoResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.elec.interaction.v1.GetRuinInfoResponse)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
-  cached_has_bits = _impl_._has_bits_[0];
   // .city.elec.interaction.v1.RuinInfo one = 1 [json_name = "one"];
-  if (cached_has_bits & 0x00000001u) {
-    target = ::google::protobuf::internal::WireFormatLite::
+  if (this->_internal_has_one()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(1, _Internal::one(this),
         _Internal::one(this).GetCachedSize(), target, stream);
   }
 
   // .city.elec.interaction.v1.RuinInfo two = 2 [json_name = "two"];
-  if (cached_has_bits & 0x00000002u) {
-    target = ::google::protobuf::internal::WireFormatLite::
+  if (this->_internal_has_two()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(2, _Internal::two(this),
         _Internal::two(this).GetCachedSize(), target, stream);
   }
 
   // .city.elec.interaction.v1.RuinInfo three = 3 [json_name = "three"];
-  if (cached_has_bits & 0x00000004u) {
-    target = ::google::protobuf::internal::WireFormatLite::
+  if (this->_internal_has_three()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(3, _Internal::three(this),
         _Internal::three(this).GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.elec.interaction.v1.GetRuinInfoResponse)
   return target;
 }
 
-::size_t GetRuinInfoResponse::ByteSizeLong() const {
+size_t GetRuinInfoResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.elec.interaction.v1.GetRuinInfoResponse)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000007u) {
-    // .city.elec.interaction.v1.RuinInfo one = 1 [json_name = "one"];
-    if (cached_has_bits & 0x00000001u) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          *_impl_.one_);
-    }
-
-    // .city.elec.interaction.v1.RuinInfo two = 2 [json_name = "two"];
-    if (cached_has_bits & 0x00000002u) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          *_impl_.two_);
-    }
-
-    // .city.elec.interaction.v1.RuinInfo three = 3 [json_name = "three"];
-    if (cached_has_bits & 0x00000004u) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          *_impl_.three_);
-    }
-
+  // .city.elec.interaction.v1.RuinInfo one = 1 [json_name = "one"];
+  if (this->_internal_has_one()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.one_);
   }
+
+  // .city.elec.interaction.v1.RuinInfo two = 2 [json_name = "two"];
+  if (this->_internal_has_two()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.two_);
+  }
+
+  // .city.elec.interaction.v1.RuinInfo three = 3 [json_name = "three"];
+  if (this->_internal_has_three()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.three_);
+  }
+
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData GetRuinInfoResponse::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetRuinInfoResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     GetRuinInfoResponse::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*GetRuinInfoResponse::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetRuinInfoResponse::GetClassData() const { return &_class_data_; }
 
 
-void GetRuinInfoResponse::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void GetRuinInfoResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<GetRuinInfoResponse*>(&to_msg);
   auto& from = static_cast<const GetRuinInfoResponse&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.elec.interaction.v1.GetRuinInfoResponse)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  cached_has_bits = from._impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000007u) {
-    if (cached_has_bits & 0x00000001u) {
-      _this->_internal_mutable_one()->::city::elec::interaction::v1::RuinInfo::MergeFrom(
-          from._internal_one());
-    }
-    if (cached_has_bits & 0x00000002u) {
-      _this->_internal_mutable_two()->::city::elec::interaction::v1::RuinInfo::MergeFrom(
-          from._internal_two());
-    }
-    if (cached_has_bits & 0x00000004u) {
-      _this->_internal_mutable_three()->::city::elec::interaction::v1::RuinInfo::MergeFrom(
-          from._internal_three());
-    }
+  if (from._internal_has_one()) {
+    _this->_internal_mutable_one()->::city::elec::interaction::v1::RuinInfo::MergeFrom(
+        from._internal_one());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  if (from._internal_has_two()) {
+    _this->_internal_mutable_two()->::city::elec::interaction::v1::RuinInfo::MergeFrom(
+        from._internal_two());
+  }
+  if (from._internal_has_three()) {
+    _this->_internal_mutable_three()->::city::elec::interaction::v1::RuinInfo::MergeFrom(
+        from._internal_three());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void GetRuinInfoResponse::CopyFrom(const GetRuinInfoResponse& from) {
@@ -2322,15 +2332,14 @@ void GetRuinInfoResponse::CopyFrom(const GetRuinInfoResponse& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool GetRuinInfoResponse::IsInitialized() const {
+bool GetRuinInfoResponse::IsInitialized() const {
   return true;
 }
 
 void GetRuinInfoResponse::InternalSwap(GetRuinInfoResponse* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
-  ::google::protobuf::internal::memswap<
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(GetRuinInfoResponse, _impl_.three_)
       + sizeof(GetRuinInfoResponse::_impl_.three_)
       - PROTOBUF_FIELD_OFFSET(GetRuinInfoResponse, _impl_.one_)>(
@@ -2338,38 +2347,39 @@ void GetRuinInfoResponse::InternalSwap(GetRuinInfoResponse* other) {
           reinterpret_cast<char*>(&other->_impl_.one_));
 }
 
-::google::protobuf::Metadata GetRuinInfoResponse::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata GetRuinInfoResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto_getter, &descriptor_table_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto_once,
       file_level_metadata_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto[11]);
 }
+
 // ===================================================================
 
 class GetEdgeStatusRequest::_Internal {
  public:
 };
 
-GetEdgeStatusRequest::GetEdgeStatusRequest(::google::protobuf::Arena* arena)
-    : ::google::protobuf::internal::ZeroFieldsBase(arena) {
+GetEdgeStatusRequest::GetEdgeStatusRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
   // @@protoc_insertion_point(arena_constructor:city.elec.interaction.v1.GetEdgeStatusRequest)
 }
-GetEdgeStatusRequest::GetEdgeStatusRequest(const GetEdgeStatusRequest& from) : ::google::protobuf::internal::ZeroFieldsBase() {
-  GetEdgeStatusRequest* const _this = this;
-  (void)_this;
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
-
+GetEdgeStatusRequest::GetEdgeStatusRequest(const GetEdgeStatusRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
+  GetEdgeStatusRequest* const _this = this; (void)_this;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:city.elec.interaction.v1.GetEdgeStatusRequest)
 }
 
 
 
 
-const ::google::protobuf::Message::ClassData GetEdgeStatusRequest::_class_data_ = {
-    ::google::protobuf::internal::ZeroFieldsBase::CopyImpl,
-    ::google::protobuf::internal::ZeroFieldsBase::MergeImpl,
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetEdgeStatusRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
 };
-const ::google::protobuf::Message::ClassData*GetEdgeStatusRequest::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetEdgeStatusRequest::GetClassData() const { return &_class_data_; }
 
 
 
@@ -2377,215 +2387,253 @@ const ::google::protobuf::Message::ClassData*GetEdgeStatusRequest::GetClassData(
 
 
 
-::google::protobuf::Metadata GetEdgeStatusRequest::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata GetEdgeStatusRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto_getter, &descriptor_table_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto_once,
       file_level_metadata_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto[12]);
 }
+
 // ===================================================================
 
 class GetEdgeStatusResponse::_Internal {
  public:
 };
 
-GetEdgeStatusResponse::GetEdgeStatusResponse(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+GetEdgeStatusResponse::GetEdgeStatusResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.elec.interaction.v1.GetEdgeStatusResponse)
 }
-GetEdgeStatusResponse::GetEdgeStatusResponse(const GetEdgeStatusResponse& from) : ::google::protobuf::Message() {
-  GetEdgeStatusResponse* const _this = this;
-  (void)_this;
+GetEdgeStatusResponse::GetEdgeStatusResponse(const GetEdgeStatusResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  GetEdgeStatusResponse* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.reason1_){from._impl_.reason1_},
-      decltype(_impl_.reason2_){from._impl_.reason2_},
-      decltype(_impl_.reason3_){from._impl_.reason3_},
-      /*decltype(_impl_._cached_size_)*/ {},
-  };
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+      decltype(_impl_.reason1_){from._impl_.reason1_}
+    , decltype(_impl_.reason2_){from._impl_.reason2_}
+    , decltype(_impl_.reason3_){from._impl_.reason3_}
+    , /*decltype(_impl_._cached_size_)*/{}};
 
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:city.elec.interaction.v1.GetEdgeStatusResponse)
 }
-inline void GetEdgeStatusResponse::SharedCtor(::_pb::Arena* arena) {
+
+inline void GetEdgeStatusResponse::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.reason1_){arena},
-      decltype(_impl_.reason2_){arena},
-      decltype(_impl_.reason3_){arena},
-      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.reason1_){arena}
+    , decltype(_impl_.reason2_){arena}
+    , decltype(_impl_.reason3_){arena}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 GetEdgeStatusResponse::~GetEdgeStatusResponse() {
   // @@protoc_insertion_point(destructor:city.elec.interaction.v1.GetEdgeStatusResponse)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void GetEdgeStatusResponse::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
-  _internal_mutable_reason1()->~RepeatedPtrField();
-  _internal_mutable_reason2()->~RepeatedPtrField();
-  _internal_mutable_reason3()->~RepeatedPtrField();
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.reason1_.~RepeatedPtrField();
+  _impl_.reason2_.~RepeatedPtrField();
+  _impl_.reason3_.~RepeatedPtrField();
 }
+
 void GetEdgeStatusResponse::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void GetEdgeStatusResponse::Clear() {
+void GetEdgeStatusResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.elec.interaction.v1.GetEdgeStatusResponse)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _internal_mutable_reason1()->Clear();
-  _internal_mutable_reason2()->Clear();
-  _internal_mutable_reason3()->Clear();
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _impl_.reason1_.Clear();
+  _impl_.reason2_.Clear();
+  _impl_.reason3_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* GetEdgeStatusResponse::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* GetEdgeStatusResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // repeated string reason1 = 1 [json_name = "reason1"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            auto str = _internal_add_reason1();
+            ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+            CHK_(ptr);
+            CHK_(::_pbi::VerifyUTF8(str, "city.elec.interaction.v1.GetEdgeStatusResponse.reason1"));
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated string reason2 = 2 [json_name = "reason2"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            auto str = _internal_add_reason2();
+            ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+            CHK_(ptr);
+            CHK_(::_pbi::VerifyUTF8(str, "city.elec.interaction.v1.GetEdgeStatusResponse.reason2"));
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated string reason3 = 3 [json_name = "reason3"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            auto str = _internal_add_reason3();
+            ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+            CHK_(ptr);
+            CHK_(::_pbi::VerifyUTF8(str, "city.elec.interaction.v1.GetEdgeStatusResponse.reason3"));
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<26>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<2, 3, 0, 76, 2> GetEdgeStatusResponse::_table_ = {
-  {
-    0,  // no _has_bits_
-    0, // no _extensions_
-    3, 24,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967288,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    3,  // num_field_entries
-    0,  // num_aux_entries
-    offsetof(decltype(_table_), field_names),  // no aux_entries
-    &_GetEdgeStatusResponse_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    {::_pbi::TcParser::MiniParse, {}},
-    // repeated string reason1 = 1 [json_name = "reason1"];
-    {::_pbi::TcParser::FastUR1,
-     {10, 63, 0, PROTOBUF_FIELD_OFFSET(GetEdgeStatusResponse, _impl_.reason1_)}},
-    // repeated string reason2 = 2 [json_name = "reason2"];
-    {::_pbi::TcParser::FastUR1,
-     {18, 63, 0, PROTOBUF_FIELD_OFFSET(GetEdgeStatusResponse, _impl_.reason2_)}},
-    // repeated string reason3 = 3 [json_name = "reason3"];
-    {::_pbi::TcParser::FastUR1,
-     {26, 63, 0, PROTOBUF_FIELD_OFFSET(GetEdgeStatusResponse, _impl_.reason3_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // repeated string reason1 = 1 [json_name = "reason1"];
-    {PROTOBUF_FIELD_OFFSET(GetEdgeStatusResponse, _impl_.reason1_), 0, 0,
-    (0 | ::_fl::kFcRepeated | ::_fl::kUtf8String | ::_fl::kRepSString)},
-    // repeated string reason2 = 2 [json_name = "reason2"];
-    {PROTOBUF_FIELD_OFFSET(GetEdgeStatusResponse, _impl_.reason2_), 0, 0,
-    (0 | ::_fl::kFcRepeated | ::_fl::kUtf8String | ::_fl::kRepSString)},
-    // repeated string reason3 = 3 [json_name = "reason3"];
-    {PROTOBUF_FIELD_OFFSET(GetEdgeStatusResponse, _impl_.reason3_), 0, 0,
-    (0 | ::_fl::kFcRepeated | ::_fl::kUtf8String | ::_fl::kRepSString)},
-  }},
-  // no aux_entries
-  {{
-    "\56\7\7\7\0\0\0\0"
-    "city.elec.interaction.v1.GetEdgeStatusResponse"
-    "reason1"
-    "reason2"
-    "reason3"
-  }},
-};
-
-::uint8_t* GetEdgeStatusResponse::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* GetEdgeStatusResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.elec.interaction.v1.GetEdgeStatusResponse)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // repeated string reason1 = 1 [json_name = "reason1"];
-  for (int i = 0, n = this->_internal_reason1_size(); i < n; ++i) {
-    const auto& s = this->_internal_reason1().Get(i);
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-        s.data(), static_cast<int>(s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "city.elec.interaction.v1.GetEdgeStatusResponse.reason1");
+  for (int i = 0, n = this->_internal_reason1_size(); i < n; i++) {
+    const auto& s = this->_internal_reason1(i);
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      s.data(), static_cast<int>(s.length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "city.elec.interaction.v1.GetEdgeStatusResponse.reason1");
     target = stream->WriteString(1, s, target);
   }
 
   // repeated string reason2 = 2 [json_name = "reason2"];
-  for (int i = 0, n = this->_internal_reason2_size(); i < n; ++i) {
-    const auto& s = this->_internal_reason2().Get(i);
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-        s.data(), static_cast<int>(s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "city.elec.interaction.v1.GetEdgeStatusResponse.reason2");
+  for (int i = 0, n = this->_internal_reason2_size(); i < n; i++) {
+    const auto& s = this->_internal_reason2(i);
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      s.data(), static_cast<int>(s.length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "city.elec.interaction.v1.GetEdgeStatusResponse.reason2");
     target = stream->WriteString(2, s, target);
   }
 
   // repeated string reason3 = 3 [json_name = "reason3"];
-  for (int i = 0, n = this->_internal_reason3_size(); i < n; ++i) {
-    const auto& s = this->_internal_reason3().Get(i);
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-        s.data(), static_cast<int>(s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "city.elec.interaction.v1.GetEdgeStatusResponse.reason3");
+  for (int i = 0, n = this->_internal_reason3_size(); i < n; i++) {
+    const auto& s = this->_internal_reason3(i);
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      s.data(), static_cast<int>(s.length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "city.elec.interaction.v1.GetEdgeStatusResponse.reason3");
     target = stream->WriteString(3, s, target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.elec.interaction.v1.GetEdgeStatusResponse)
   return target;
 }
 
-::size_t GetEdgeStatusResponse::ByteSizeLong() const {
+size_t GetEdgeStatusResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.elec.interaction.v1.GetEdgeStatusResponse)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // repeated string reason1 = 1 [json_name = "reason1"];
-  total_size += 1 * ::google::protobuf::internal::FromIntSize(_internal_reason1().size());
-  for (int i = 0, n = _internal_reason1().size(); i < n; ++i) {
-    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
-        _internal_reason1().Get(i));
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(_impl_.reason1_.size());
+  for (int i = 0, n = _impl_.reason1_.size(); i < n; i++) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+      _impl_.reason1_.Get(i));
   }
+
   // repeated string reason2 = 2 [json_name = "reason2"];
-  total_size += 1 * ::google::protobuf::internal::FromIntSize(_internal_reason2().size());
-  for (int i = 0, n = _internal_reason2().size(); i < n; ++i) {
-    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
-        _internal_reason2().Get(i));
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(_impl_.reason2_.size());
+  for (int i = 0, n = _impl_.reason2_.size(); i < n; i++) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+      _impl_.reason2_.Get(i));
   }
+
   // repeated string reason3 = 3 [json_name = "reason3"];
-  total_size += 1 * ::google::protobuf::internal::FromIntSize(_internal_reason3().size());
-  for (int i = 0, n = _internal_reason3().size(); i < n; ++i) {
-    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
-        _internal_reason3().Get(i));
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(_impl_.reason3_.size());
+  for (int i = 0, n = _impl_.reason3_.size(); i < n; i++) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+      _impl_.reason3_.Get(i));
   }
+
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData GetEdgeStatusResponse::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetEdgeStatusResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     GetEdgeStatusResponse::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*GetEdgeStatusResponse::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetEdgeStatusResponse::GetClassData() const { return &_class_data_; }
 
 
-void GetEdgeStatusResponse::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void GetEdgeStatusResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<GetEdgeStatusResponse*>(&to_msg);
   auto& from = static_cast<const GetEdgeStatusResponse&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.elec.interaction.v1.GetEdgeStatusResponse)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  _this->_internal_mutable_reason1()->MergeFrom(from._internal_reason1());
-  _this->_internal_mutable_reason2()->MergeFrom(from._internal_reason2());
-  _this->_internal_mutable_reason3()->MergeFrom(from._internal_reason3());
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.reason1_.MergeFrom(from._impl_.reason1_);
+  _this->_impl_.reason2_.MergeFrom(from._impl_.reason2_);
+  _this->_impl_.reason3_.MergeFrom(from._impl_.reason3_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void GetEdgeStatusResponse::CopyFrom(const GetEdgeStatusResponse& from) {
@@ -2595,7 +2643,7 @@ void GetEdgeStatusResponse::CopyFrom(const GetEdgeStatusResponse& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool GetEdgeStatusResponse::IsInitialized() const {
+bool GetEdgeStatusResponse::IsInitialized() const {
   return true;
 }
 
@@ -2607,19 +2655,75 @@ void GetEdgeStatusResponse::InternalSwap(GetEdgeStatusResponse* other) {
   _impl_.reason3_.InternalSwap(&other->_impl_.reason3_);
 }
 
-::google::protobuf::Metadata GetEdgeStatusResponse::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata GetEdgeStatusResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto_getter, &descriptor_table_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto_once,
       file_level_metadata_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto[13]);
 }
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace v1
 }  // namespace interaction
 }  // namespace elec
 }  // namespace city
-namespace google {
-namespace protobuf {
-}  // namespace protobuf
-}  // namespace google
+PROTOBUF_NAMESPACE_OPEN
+template<> PROTOBUF_NOINLINE ::city::elec::interaction::v1::SetStatusRequest*
+Arena::CreateMaybeMessage< ::city::elec::interaction::v1::SetStatusRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::elec::interaction::v1::SetStatusRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::elec::interaction::v1::SetStatusResponse*
+Arena::CreateMaybeMessage< ::city::elec::interaction::v1::SetStatusResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::elec::interaction::v1::SetStatusResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::elec::interaction::v1::GetPowerRequest*
+Arena::CreateMaybeMessage< ::city::elec::interaction::v1::GetPowerRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::elec::interaction::v1::GetPowerRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::elec::interaction::v1::GetPowerResponse*
+Arena::CreateMaybeMessage< ::city::elec::interaction::v1::GetPowerResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::elec::interaction::v1::GetPowerResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::elec::interaction::v1::GetPowerStatusRequest*
+Arena::CreateMaybeMessage< ::city::elec::interaction::v1::GetPowerStatusRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::elec::interaction::v1::GetPowerStatusRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::elec::interaction::v1::GetPowerStatusResponse_PowerStatusEntry_DoNotUse*
+Arena::CreateMaybeMessage< ::city::elec::interaction::v1::GetPowerStatusResponse_PowerStatusEntry_DoNotUse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::elec::interaction::v1::GetPowerStatusResponse_PowerStatusEntry_DoNotUse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::elec::interaction::v1::GetPowerStatusResponse*
+Arena::CreateMaybeMessage< ::city::elec::interaction::v1::GetPowerStatusResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::elec::interaction::v1::GetPowerStatusResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::elec::interaction::v1::GetNoPowerAOIRequest*
+Arena::CreateMaybeMessage< ::city::elec::interaction::v1::GetNoPowerAOIRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::elec::interaction::v1::GetNoPowerAOIRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::elec::interaction::v1::GetNoPowerAOIResponse*
+Arena::CreateMaybeMessage< ::city::elec::interaction::v1::GetNoPowerAOIResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::elec::interaction::v1::GetNoPowerAOIResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::elec::interaction::v1::GetRuinInfoRequest*
+Arena::CreateMaybeMessage< ::city::elec::interaction::v1::GetRuinInfoRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::elec::interaction::v1::GetRuinInfoRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::elec::interaction::v1::RuinInfo*
+Arena::CreateMaybeMessage< ::city::elec::interaction::v1::RuinInfo >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::elec::interaction::v1::RuinInfo >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::elec::interaction::v1::GetRuinInfoResponse*
+Arena::CreateMaybeMessage< ::city::elec::interaction::v1::GetRuinInfoResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::elec::interaction::v1::GetRuinInfoResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::elec::interaction::v1::GetEdgeStatusRequest*
+Arena::CreateMaybeMessage< ::city::elec::interaction::v1::GetEdgeStatusRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::elec::interaction::v1::GetEdgeStatusRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::elec::interaction::v1::GetEdgeStatusResponse*
+Arena::CreateMaybeMessage< ::city::elec::interaction::v1::GetEdgeStatusResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::elec::interaction::v1::GetEdgeStatusResponse >(arena);
+}
+PROTOBUF_NAMESPACE_CLOSE
+
 // @@protoc_insertion_point(global_scope)
-#include "google/protobuf/port_undef.inc"
+#include <google/protobuf/port_undef.inc>

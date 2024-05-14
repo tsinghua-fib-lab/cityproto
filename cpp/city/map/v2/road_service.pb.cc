@@ -4,361 +4,295 @@
 #include "city/map/v2/road_service.pb.h"
 
 #include <algorithm>
-#include "google/protobuf/io/coded_stream.h"
-#include "google/protobuf/extension_set.h"
-#include "google/protobuf/wire_format_lite.h"
-#include "google/protobuf/descriptor.h"
-#include "google/protobuf/generated_message_reflection.h"
-#include "google/protobuf/reflection_ops.h"
-#include "google/protobuf/wire_format.h"
-#include "google/protobuf/generated_message_tctable_impl.h"
-// @@protoc_insertion_point(includes)
 
-// Must be included last.
-#include "google/protobuf/port_def.inc"
+#include <google/protobuf/io/coded_stream.h>
+#include <google/protobuf/extension_set.h>
+#include <google/protobuf/wire_format_lite.h>
+#include <google/protobuf/descriptor.h>
+#include <google/protobuf/generated_message_reflection.h>
+#include <google/protobuf/reflection_ops.h>
+#include <google/protobuf/wire_format.h>
+// @@protoc_insertion_point(includes)
+#include <google/protobuf/port_def.inc>
+
 PROTOBUF_PRAGMA_INIT_SEG
-namespace _pb = ::google::protobuf;
-namespace _pbi = ::google::protobuf::internal;
-namespace _fl = ::google::protobuf::internal::field_layout;
+
+namespace _pb = ::PROTOBUF_NAMESPACE_ID;
+namespace _pbi = _pb::internal;
+
 namespace city {
 namespace map {
 namespace v2 {
-        template <typename>
-PROTOBUF_CONSTEXPR GetRoadRequest::GetRoadRequest(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_.road_ids_)*/ {},
-      /* _impl_._road_ids_cached_byte_size_ = */ {0},
-      /*decltype(_impl_.exclude_lane_)*/ false,
-      /*decltype(_impl_.exclude_person_)*/ false,
-      /*decltype(_impl_._cached_size_)*/ {},
-    } {}
+PROTOBUF_CONSTEXPR GetRoadRequest::GetRoadRequest(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.road_ids_)*/{}
+  , /*decltype(_impl_._road_ids_cached_byte_size_)*/{0}
+  , /*decltype(_impl_.exclude_lane_)*/false
+  , /*decltype(_impl_.exclude_person_)*/false
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct GetRoadRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR GetRoadRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR GetRoadRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~GetRoadRequestDefaultTypeInternal() {}
   union {
     GetRoadRequest _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetRoadRequestDefaultTypeInternal _GetRoadRequest_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR GetRoadResponse::GetRoadResponse(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_.states_)*/ {},
-      /*decltype(_impl_._cached_size_)*/ {},
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetRoadRequestDefaultTypeInternal _GetRoadRequest_default_instance_;
+PROTOBUF_CONSTEXPR GetRoadResponse::GetRoadResponse(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.states_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct GetRoadResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR GetRoadResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR GetRoadResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~GetRoadResponseDefaultTypeInternal() {}
   union {
     GetRoadResponse _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetRoadResponseDefaultTypeInternal _GetRoadResponse_default_instance_;
-      template <typename>
-PROTOBUF_CONSTEXPR GetRuinInfoRequest::GetRuinInfoRequest(::_pbi::ConstantInitialized) {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetRoadResponseDefaultTypeInternal _GetRoadResponse_default_instance_;
+PROTOBUF_CONSTEXPR GetRuinInfoRequest::GetRuinInfoRequest(
+    ::_pbi::ConstantInitialized) {}
 struct GetRuinInfoRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR GetRuinInfoRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR GetRuinInfoRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~GetRuinInfoRequestDefaultTypeInternal() {}
   union {
     GetRuinInfoRequest _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetRuinInfoRequestDefaultTypeInternal _GetRuinInfoRequest_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR RuinInfo::RuinInfo(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_.ratio_)*/ 0,
-      /*decltype(_impl_.num_)*/ 0,
-      /*decltype(_impl_._cached_size_)*/ {},
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetRuinInfoRequestDefaultTypeInternal _GetRuinInfoRequest_default_instance_;
+PROTOBUF_CONSTEXPR RuinInfo::RuinInfo(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.ratio_)*/0
+  , /*decltype(_impl_.num_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct RuinInfoDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR RuinInfoDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR RuinInfoDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~RuinInfoDefaultTypeInternal() {}
   union {
     RuinInfo _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 RuinInfoDefaultTypeInternal _RuinInfo_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR GetRuinInfoResponse::GetRuinInfoResponse(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_._has_bits_)*/ {},
-      /*decltype(_impl_._cached_size_)*/ {},
-      /*decltype(_impl_.one_)*/ nullptr,
-      /*decltype(_impl_.two_)*/ nullptr,
-      /*decltype(_impl_.three_)*/ nullptr,
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 RuinInfoDefaultTypeInternal _RuinInfo_default_instance_;
+PROTOBUF_CONSTEXPR GetRuinInfoResponse::GetRuinInfoResponse(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.one_)*/nullptr
+  , /*decltype(_impl_.two_)*/nullptr
+  , /*decltype(_impl_.three_)*/nullptr
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct GetRuinInfoResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR GetRuinInfoResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR GetRuinInfoResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~GetRuinInfoResponseDefaultTypeInternal() {}
   union {
     GetRuinInfoResponse _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetRuinInfoResponseDefaultTypeInternal _GetRuinInfoResponse_default_instance_;
-      template <typename>
-PROTOBUF_CONSTEXPR GetEventsRequest::GetEventsRequest(::_pbi::ConstantInitialized) {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetRuinInfoResponseDefaultTypeInternal _GetRuinInfoResponse_default_instance_;
+PROTOBUF_CONSTEXPR GetEventsRequest::GetEventsRequest(
+    ::_pbi::ConstantInitialized) {}
 struct GetEventsRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR GetEventsRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR GetEventsRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~GetEventsRequestDefaultTypeInternal() {}
   union {
     GetEventsRequest _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetEventsRequestDefaultTypeInternal _GetEventsRequest_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR GetEventsResponse::GetEventsResponse(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_._has_bits_)*/ {},
-      /*decltype(_impl_._cached_size_)*/ {},
-      /*decltype(_impl_.events_)*/ nullptr,
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetEventsRequestDefaultTypeInternal _GetEventsRequest_default_instance_;
+PROTOBUF_CONSTEXPR GetEventsResponse::GetEventsResponse(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.events_)*/nullptr
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct GetEventsResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR GetEventsResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR GetEventsResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~GetEventsResponseDefaultTypeInternal() {}
   union {
     GetEventsResponse _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetEventsResponseDefaultTypeInternal _GetEventsResponse_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR RoadState::RoadState(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_.lanes_)*/ {},
-      /*decltype(_impl_.id_)*/ 0,
-      /*decltype(_impl_.level_)*/ 0,
-      /*decltype(_impl_.avg_v_)*/ 0,
-      /*decltype(_impl_.reason_)*/ 0,
-      /*decltype(_impl_._cached_size_)*/ {},
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetEventsResponseDefaultTypeInternal _GetEventsResponse_default_instance_;
+PROTOBUF_CONSTEXPR RoadState::RoadState(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.lanes_)*/{}
+  , /*decltype(_impl_.id_)*/0
+  , /*decltype(_impl_.level_)*/0
+  , /*decltype(_impl_.avg_v_)*/0
+  , /*decltype(_impl_.reason_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct RoadStateDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR RoadStateDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR RoadStateDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~RoadStateDefaultTypeInternal() {}
   union {
     RoadState _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 RoadStateDefaultTypeInternal _RoadState_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 RoadStateDefaultTypeInternal _RoadState_default_instance_;
 }  // namespace v2
 }  // namespace map
 }  // namespace city
 static ::_pb::Metadata file_level_metadata_city_2fmap_2fv2_2froad_5fservice_2eproto[8];
 static const ::_pb::EnumDescriptor* file_level_enum_descriptors_city_2fmap_2fv2_2froad_5fservice_2eproto[2];
-static constexpr const ::_pb::ServiceDescriptor**
-    file_level_service_descriptors_city_2fmap_2fv2_2froad_5fservice_2eproto = nullptr;
-const ::uint32_t TableStruct_city_2fmap_2fv2_2froad_5fservice_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
-    protodesc_cold) = {
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::map::v2::GetRoadRequest, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::map::v2::GetRoadRequest, _impl_.road_ids_),
-    PROTOBUF_FIELD_OFFSET(::city::map::v2::GetRoadRequest, _impl_.exclude_lane_),
-    PROTOBUF_FIELD_OFFSET(::city::map::v2::GetRoadRequest, _impl_.exclude_person_),
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::map::v2::GetRoadResponse, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::map::v2::GetRoadResponse, _impl_.states_),
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::map::v2::GetRuinInfoRequest, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::map::v2::RuinInfo, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::map::v2::RuinInfo, _impl_.num_),
-    PROTOBUF_FIELD_OFFSET(::city::map::v2::RuinInfo, _impl_.ratio_),
-    PROTOBUF_FIELD_OFFSET(::city::map::v2::GetRuinInfoResponse, _impl_._has_bits_),
-    PROTOBUF_FIELD_OFFSET(::city::map::v2::GetRuinInfoResponse, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::map::v2::GetRuinInfoResponse, _impl_.one_),
-    PROTOBUF_FIELD_OFFSET(::city::map::v2::GetRuinInfoResponse, _impl_.two_),
-    PROTOBUF_FIELD_OFFSET(::city::map::v2::GetRuinInfoResponse, _impl_.three_),
-    0,
-    1,
-    2,
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::map::v2::GetEventsRequest, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::map::v2::GetEventsResponse, _impl_._has_bits_),
-    PROTOBUF_FIELD_OFFSET(::city::map::v2::GetEventsResponse, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::map::v2::GetEventsResponse, _impl_.events_),
-    0,
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::map::v2::RoadState, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::map::v2::RoadState, _impl_.id_),
-    PROTOBUF_FIELD_OFFSET(::city::map::v2::RoadState, _impl_.avg_v_),
-    PROTOBUF_FIELD_OFFSET(::city::map::v2::RoadState, _impl_.level_),
-    PROTOBUF_FIELD_OFFSET(::city::map::v2::RoadState, _impl_.reason_),
-    PROTOBUF_FIELD_OFFSET(::city::map::v2::RoadState, _impl_.lanes_),
-};
+static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_city_2fmap_2fv2_2froad_5fservice_2eproto = nullptr;
 
-static const ::_pbi::MigrationSchema
-    schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-        {0, -1, -1, sizeof(::city::map::v2::GetRoadRequest)},
-        {11, -1, -1, sizeof(::city::map::v2::GetRoadResponse)},
-        {20, -1, -1, sizeof(::city::map::v2::GetRuinInfoRequest)},
-        {28, -1, -1, sizeof(::city::map::v2::RuinInfo)},
-        {38, 49, -1, sizeof(::city::map::v2::GetRuinInfoResponse)},
-        {52, -1, -1, sizeof(::city::map::v2::GetEventsRequest)},
-        {60, 69, -1, sizeof(::city::map::v2::GetEventsResponse)},
-        {70, -1, -1, sizeof(::city::map::v2::RoadState)},
+const uint32_t TableStruct_city_2fmap_2fv2_2froad_5fservice_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::map::v2::GetRoadRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::map::v2::GetRoadRequest, _impl_.road_ids_),
+  PROTOBUF_FIELD_OFFSET(::city::map::v2::GetRoadRequest, _impl_.exclude_lane_),
+  PROTOBUF_FIELD_OFFSET(::city::map::v2::GetRoadRequest, _impl_.exclude_person_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::map::v2::GetRoadResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::map::v2::GetRoadResponse, _impl_.states_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::map::v2::GetRuinInfoRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::map::v2::RuinInfo, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::map::v2::RuinInfo, _impl_.num_),
+  PROTOBUF_FIELD_OFFSET(::city::map::v2::RuinInfo, _impl_.ratio_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::map::v2::GetRuinInfoResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::map::v2::GetRuinInfoResponse, _impl_.one_),
+  PROTOBUF_FIELD_OFFSET(::city::map::v2::GetRuinInfoResponse, _impl_.two_),
+  PROTOBUF_FIELD_OFFSET(::city::map::v2::GetRuinInfoResponse, _impl_.three_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::map::v2::GetEventsRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::map::v2::GetEventsResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::map::v2::GetEventsResponse, _impl_.events_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::map::v2::RoadState, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::map::v2::RoadState, _impl_.id_),
+  PROTOBUF_FIELD_OFFSET(::city::map::v2::RoadState, _impl_.avg_v_),
+  PROTOBUF_FIELD_OFFSET(::city::map::v2::RoadState, _impl_.level_),
+  PROTOBUF_FIELD_OFFSET(::city::map::v2::RoadState, _impl_.reason_),
+  PROTOBUF_FIELD_OFFSET(::city::map::v2::RoadState, _impl_.lanes_),
+};
+static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  { 0, -1, -1, sizeof(::city::map::v2::GetRoadRequest)},
+  { 9, -1, -1, sizeof(::city::map::v2::GetRoadResponse)},
+  { 16, -1, -1, sizeof(::city::map::v2::GetRuinInfoRequest)},
+  { 22, -1, -1, sizeof(::city::map::v2::RuinInfo)},
+  { 30, -1, -1, sizeof(::city::map::v2::GetRuinInfoResponse)},
+  { 39, -1, -1, sizeof(::city::map::v2::GetEventsRequest)},
+  { 45, -1, -1, sizeof(::city::map::v2::GetEventsResponse)},
+  { 52, -1, -1, sizeof(::city::map::v2::RoadState)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
-    &::city::map::v2::_GetRoadRequest_default_instance_._instance,
-    &::city::map::v2::_GetRoadResponse_default_instance_._instance,
-    &::city::map::v2::_GetRuinInfoRequest_default_instance_._instance,
-    &::city::map::v2::_RuinInfo_default_instance_._instance,
-    &::city::map::v2::_GetRuinInfoResponse_default_instance_._instance,
-    &::city::map::v2::_GetEventsRequest_default_instance_._instance,
-    &::city::map::v2::_GetEventsResponse_default_instance_._instance,
-    &::city::map::v2::_RoadState_default_instance_._instance,
-};
-const char descriptor_table_protodef_city_2fmap_2fv2_2froad_5fservice_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-    "\n\036city/map/v2/road_service.proto\022\013city.m"
-    "ap.v2\032\031city/event/v1/event.proto\032\036city/m"
-    "ap/v2/lane_service.proto\"u\n\016GetRoadReque"
-    "st\022\031\n\010road_ids\030\001 \003(\005R\007roadIds\022!\n\014exclude"
-    "_lane\030\002 \001(\010R\013excludeLane\022%\n\016exclude_pers"
-    "on\030\003 \001(\010R\rexcludePerson\"A\n\017GetRoadRespon"
-    "se\022.\n\006states\030\001 \003(\0132\026.city.map.v2.RoadSta"
-    "teR\006states\"\024\n\022GetRuinInfoRequest\"2\n\010Ruin"
-    "Info\022\020\n\003num\030\001 \001(\005R\003num\022\024\n\005ratio\030\002 \001(\001R\005r"
-    "atio\"\224\001\n\023GetRuinInfoResponse\022\'\n\003one\030\001 \001("
-    "\0132\025.city.map.v2.RuinInfoR\003one\022\'\n\003two\030\002 \001"
-    "(\0132\025.city.map.v2.RuinInfoR\003two\022+\n\005three\030"
-    "\003 \001(\0132\025.city.map.v2.RuinInfoR\005three\"\022\n\020G"
-    "etEventsRequest\"B\n\021GetEventsResponse\022-\n\006"
-    "events\030\001 \001(\0132\025.city.event.v1.EventsR\006eve"
-    "nts\"\305\001\n\tRoadState\022\016\n\002id\030\001 \001(\005R\002id\022\023\n\005avg"
-    "_v\030\004 \001(\001R\004avgV\022,\n\005level\030\002 \001(\0162\026.city.map"
-    ".v2.RoadLevelR\005level\0227\n\006reason\030\003 \001(\0162\037.c"
-    "ity.map.v2.InterruptionReasonR\006reason\022,\n"
-    "\005lanes\030\005 \003(\0132\026.city.map.v2.LaneStateR\005la"
-    "nes*\303\001\n\tRoadLevel\022\032\n\026ROAD_LEVEL_UNSPECIF"
-    "IED\020\000\022\024\n\020ROAD_LEVEL_CLEAR\020\001\022\031\n\025ROAD_LEVE"
-    "L_LIGHT_LOAD\020\002\022\032\n\026ROAD_LEVEL_MEDIUM_LOAD"
-    "\020\003\022\031\n\025ROAD_LEVEL_HEAVY_LOAD\020\004\022\027\n\023ROAD_LE"
-    "VEL_OVERLOAD\020\005\022\031\n\025ROAD_LEVEL_RESTRICTED\020"
-    "\006*\236\001\n\022InterruptionReason\022#\n\037INTERRUPTION"
-    "_REASON_UNSPECIFIED\020\000\022\036\n\032INTERRUPTION_RE"
-    "ASON_RUINED\020\001\022\037\n\033INTERRUPTION_REASON_CAS"
-    "CADE\020\002\022\"\n\036INTERRUPTION_REASON_CONGESTION"
-    "\020\0032\361\001\n\013RoadService\022D\n\007GetRoad\022\033.city.map"
-    ".v2.GetRoadRequest\032\034.city.map.v2.GetRoad"
-    "Response\022P\n\013GetRuinInfo\022\037.city.map.v2.Ge"
-    "tRuinInfoRequest\032 .city.map.v2.GetRuinIn"
-    "foResponse\022J\n\tGetEvents\022\035.city.map.v2.Ge"
-    "tEventsRequest\032\036.city.map.v2.GetEventsRe"
-    "sponseB\241\001\n\017com.city.map.v2B\020RoadServiceP"
-    "rotoP\001Z.git.fiblab.net/sim/protos/go/cit"
-    "y/map/v2;mapv2\242\002\003CMX\252\002\013City.Map.V2\312\002\013Cit"
-    "y\\Map\\V2\342\002\027City\\Map\\V2\\GPBMetadata\352\002\rCit"
-    "y::Map::V2b\006proto3"
-};
-static const ::_pbi::DescriptorTable* const descriptor_table_city_2fmap_2fv2_2froad_5fservice_2eproto_deps[2] =
-    {
-        &::descriptor_table_city_2fevent_2fv1_2fevent_2eproto,
-        &::descriptor_table_city_2fmap_2fv2_2flane_5fservice_2eproto,
-};
-static ::absl::once_flag descriptor_table_city_2fmap_2fv2_2froad_5fservice_2eproto_once;
-const ::_pbi::DescriptorTable descriptor_table_city_2fmap_2fv2_2froad_5fservice_2eproto = {
-    false,
-    false,
-    1578,
-    descriptor_table_protodef_city_2fmap_2fv2_2froad_5fservice_2eproto,
-    "city/map/v2/road_service.proto",
-    &descriptor_table_city_2fmap_2fv2_2froad_5fservice_2eproto_once,
-    descriptor_table_city_2fmap_2fv2_2froad_5fservice_2eproto_deps,
-    2,
-    8,
-    schemas,
-    file_default_instances,
-    TableStruct_city_2fmap_2fv2_2froad_5fservice_2eproto::offsets,
-    file_level_metadata_city_2fmap_2fv2_2froad_5fservice_2eproto,
-    file_level_enum_descriptors_city_2fmap_2fv2_2froad_5fservice_2eproto,
-    file_level_service_descriptors_city_2fmap_2fv2_2froad_5fservice_2eproto,
+  &::city::map::v2::_GetRoadRequest_default_instance_._instance,
+  &::city::map::v2::_GetRoadResponse_default_instance_._instance,
+  &::city::map::v2::_GetRuinInfoRequest_default_instance_._instance,
+  &::city::map::v2::_RuinInfo_default_instance_._instance,
+  &::city::map::v2::_GetRuinInfoResponse_default_instance_._instance,
+  &::city::map::v2::_GetEventsRequest_default_instance_._instance,
+  &::city::map::v2::_GetEventsResponse_default_instance_._instance,
+  &::city::map::v2::_RoadState_default_instance_._instance,
 };
 
-// This function exists to be marked as weak.
-// It can significantly speed up compilation by breaking up LLVM's SCC
-// in the .pb.cc translation units. Large translation units see a
-// reduction of more than 35% of walltime for optimized builds. Without
-// the weak attribute all the messages in the file, including all the
-// vtables and everything they use become part of the same SCC through
-// a cycle like:
-// GetMetadata -> descriptor table -> default instances ->
-//   vtables -> GetMetadata
-// By adding a weak function here we break the connection from the
-// individual vtables back into the descriptor table.
+const char descriptor_table_protodef_city_2fmap_2fv2_2froad_5fservice_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
+  "\n\036city/map/v2/road_service.proto\022\013city.m"
+  "ap.v2\032\031city/event/v1/event.proto\032\036city/m"
+  "ap/v2/lane_service.proto\"u\n\016GetRoadReque"
+  "st\022\031\n\010road_ids\030\001 \003(\005R\007roadIds\022!\n\014exclude"
+  "_lane\030\002 \001(\010R\013excludeLane\022%\n\016exclude_pers"
+  "on\030\003 \001(\010R\rexcludePerson\"A\n\017GetRoadRespon"
+  "se\022.\n\006states\030\001 \003(\0132\026.city.map.v2.RoadSta"
+  "teR\006states\"\024\n\022GetRuinInfoRequest\"2\n\010Ruin"
+  "Info\022\020\n\003num\030\001 \001(\005R\003num\022\024\n\005ratio\030\002 \001(\001R\005r"
+  "atio\"\224\001\n\023GetRuinInfoResponse\022\'\n\003one\030\001 \001("
+  "\0132\025.city.map.v2.RuinInfoR\003one\022\'\n\003two\030\002 \001"
+  "(\0132\025.city.map.v2.RuinInfoR\003two\022+\n\005three\030"
+  "\003 \001(\0132\025.city.map.v2.RuinInfoR\005three\"\022\n\020G"
+  "etEventsRequest\"B\n\021GetEventsResponse\022-\n\006"
+  "events\030\001 \001(\0132\025.city.event.v1.EventsR\006eve"
+  "nts\"\305\001\n\tRoadState\022\016\n\002id\030\001 \001(\005R\002id\022\023\n\005avg"
+  "_v\030\004 \001(\001R\004avgV\022,\n\005level\030\002 \001(\0162\026.city.map"
+  ".v2.RoadLevelR\005level\0227\n\006reason\030\003 \001(\0162\037.c"
+  "ity.map.v2.InterruptionReasonR\006reason\022,\n"
+  "\005lanes\030\005 \003(\0132\026.city.map.v2.LaneStateR\005la"
+  "nes*\303\001\n\tRoadLevel\022\032\n\026ROAD_LEVEL_UNSPECIF"
+  "IED\020\000\022\024\n\020ROAD_LEVEL_CLEAR\020\001\022\031\n\025ROAD_LEVE"
+  "L_LIGHT_LOAD\020\002\022\032\n\026ROAD_LEVEL_MEDIUM_LOAD"
+  "\020\003\022\031\n\025ROAD_LEVEL_HEAVY_LOAD\020\004\022\027\n\023ROAD_LE"
+  "VEL_OVERLOAD\020\005\022\031\n\025ROAD_LEVEL_RESTRICTED\020"
+  "\006*\236\001\n\022InterruptionReason\022#\n\037INTERRUPTION"
+  "_REASON_UNSPECIFIED\020\000\022\036\n\032INTERRUPTION_RE"
+  "ASON_RUINED\020\001\022\037\n\033INTERRUPTION_REASON_CAS"
+  "CADE\020\002\022\"\n\036INTERRUPTION_REASON_CONGESTION"
+  "\020\0032\361\001\n\013RoadService\022D\n\007GetRoad\022\033.city.map"
+  ".v2.GetRoadRequest\032\034.city.map.v2.GetRoad"
+  "Response\022P\n\013GetRuinInfo\022\037.city.map.v2.Ge"
+  "tRuinInfoRequest\032 .city.map.v2.GetRuinIn"
+  "foResponse\022J\n\tGetEvents\022\035.city.map.v2.Ge"
+  "tEventsRequest\032\036.city.map.v2.GetEventsRe"
+  "sponseB\241\001\n\017com.city.map.v2B\020RoadServiceP"
+  "rotoP\001Z.git.fiblab.net/sim/protos/go/cit"
+  "y/map/v2;mapv2\242\002\003CMX\252\002\013City.Map.V2\312\002\013Cit"
+  "y\\Map\\V2\342\002\027City\\Map\\V2\\GPBMetadata\352\002\rCit"
+  "y::Map::V2b\006proto3"
+  ;
+static const ::_pbi::DescriptorTable* const descriptor_table_city_2fmap_2fv2_2froad_5fservice_2eproto_deps[2] = {
+  &::descriptor_table_city_2fevent_2fv1_2fevent_2eproto,
+  &::descriptor_table_city_2fmap_2fv2_2flane_5fservice_2eproto,
+};
+static ::_pbi::once_flag descriptor_table_city_2fmap_2fv2_2froad_5fservice_2eproto_once;
+const ::_pbi::DescriptorTable descriptor_table_city_2fmap_2fv2_2froad_5fservice_2eproto = {
+    false, false, 1578, descriptor_table_protodef_city_2fmap_2fv2_2froad_5fservice_2eproto,
+    "city/map/v2/road_service.proto",
+    &descriptor_table_city_2fmap_2fv2_2froad_5fservice_2eproto_once, descriptor_table_city_2fmap_2fv2_2froad_5fservice_2eproto_deps, 2, 8,
+    schemas, file_default_instances, TableStruct_city_2fmap_2fv2_2froad_5fservice_2eproto::offsets,
+    file_level_metadata_city_2fmap_2fv2_2froad_5fservice_2eproto, file_level_enum_descriptors_city_2fmap_2fv2_2froad_5fservice_2eproto,
+    file_level_service_descriptors_city_2fmap_2fv2_2froad_5fservice_2eproto,
+};
 PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_city_2fmap_2fv2_2froad_5fservice_2eproto_getter() {
   return &descriptor_table_city_2fmap_2fv2_2froad_5fservice_2eproto;
 }
+
 // Force running AddDescriptors() at dynamic initialization time.
-PROTOBUF_ATTRIBUTE_INIT_PRIORITY2
-static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_city_2fmap_2fv2_2froad_5fservice_2eproto(&descriptor_table_city_2fmap_2fv2_2froad_5fservice_2eproto);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_city_2fmap_2fv2_2froad_5fservice_2eproto(&descriptor_table_city_2fmap_2fv2_2froad_5fservice_2eproto);
 namespace city {
 namespace map {
 namespace v2 {
-const ::google::protobuf::EnumDescriptor* RoadLevel_descriptor() {
-  ::google::protobuf::internal::AssignDescriptors(&descriptor_table_city_2fmap_2fv2_2froad_5fservice_2eproto);
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* RoadLevel_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_city_2fmap_2fv2_2froad_5fservice_2eproto);
   return file_level_enum_descriptors_city_2fmap_2fv2_2froad_5fservice_2eproto[0];
 }
 bool RoadLevel_IsValid(int value) {
@@ -375,8 +309,9 @@ bool RoadLevel_IsValid(int value) {
       return false;
   }
 }
-const ::google::protobuf::EnumDescriptor* InterruptionReason_descriptor() {
-  ::google::protobuf::internal::AssignDescriptors(&descriptor_table_city_2fmap_2fv2_2froad_5fservice_2eproto);
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* InterruptionReason_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_city_2fmap_2fv2_2froad_5fservice_2eproto);
   return file_level_enum_descriptors_city_2fmap_2fv2_2froad_5fservice_2eproto[1];
 }
 bool InterruptionReason_IsValid(int value) {
@@ -390,217 +325,230 @@ bool InterruptionReason_IsValid(int value) {
       return false;
   }
 }
+
+
 // ===================================================================
 
 class GetRoadRequest::_Internal {
  public:
 };
 
-GetRoadRequest::GetRoadRequest(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+GetRoadRequest::GetRoadRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.map.v2.GetRoadRequest)
 }
-GetRoadRequest::GetRoadRequest(const GetRoadRequest& from) : ::google::protobuf::Message() {
-  GetRoadRequest* const _this = this;
-  (void)_this;
+GetRoadRequest::GetRoadRequest(const GetRoadRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  GetRoadRequest* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.road_ids_){from._impl_.road_ids_},
-      /* _impl_._road_ids_cached_byte_size_ = */ {0},
-      decltype(_impl_.exclude_lane_){},
-      decltype(_impl_.exclude_person_){},
-      /*decltype(_impl_._cached_size_)*/ {},
-  };
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
-  ::memcpy(&_impl_.exclude_lane_, &from._impl_.exclude_lane_,
-    static_cast<::size_t>(reinterpret_cast<char*>(&_impl_.exclude_person_) -
-    reinterpret_cast<char*>(&_impl_.exclude_lane_)) + sizeof(_impl_.exclude_person_));
+      decltype(_impl_.road_ids_){from._impl_.road_ids_}
+    , /*decltype(_impl_._road_ids_cached_byte_size_)*/{0}
+    , decltype(_impl_.exclude_lane_){}
+    , decltype(_impl_.exclude_person_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
 
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&_impl_.exclude_lane_, &from._impl_.exclude_lane_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.exclude_person_) -
+    reinterpret_cast<char*>(&_impl_.exclude_lane_)) + sizeof(_impl_.exclude_person_));
   // @@protoc_insertion_point(copy_constructor:city.map.v2.GetRoadRequest)
 }
-inline void GetRoadRequest::SharedCtor(::_pb::Arena* arena) {
+
+inline void GetRoadRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.road_ids_){arena},
-      /* _impl_._road_ids_cached_byte_size_ = */ {0},
-      decltype(_impl_.exclude_lane_){false},
-      decltype(_impl_.exclude_person_){false},
-      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.road_ids_){arena}
+    , /*decltype(_impl_._road_ids_cached_byte_size_)*/{0}
+    , decltype(_impl_.exclude_lane_){false}
+    , decltype(_impl_.exclude_person_){false}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 GetRoadRequest::~GetRoadRequest() {
   // @@protoc_insertion_point(destructor:city.map.v2.GetRoadRequest)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void GetRoadRequest::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.road_ids_.~RepeatedField();
 }
+
 void GetRoadRequest::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void GetRoadRequest::Clear() {
+void GetRoadRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.map.v2.GetRoadRequest)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _internal_mutable_road_ids()->Clear();
-  ::memset(&_impl_.exclude_lane_, 0, static_cast<::size_t>(
+  _impl_.road_ids_.Clear();
+  ::memset(&_impl_.exclude_lane_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_impl_.exclude_person_) -
       reinterpret_cast<char*>(&_impl_.exclude_lane_)) + sizeof(_impl_.exclude_person_));
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* GetRoadRequest::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* GetRoadRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // repeated int32 road_ids = 1 [json_name = "roadIds"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_road_ids(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<uint8_t>(tag) == 8) {
+          _internal_add_road_ids(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // bool exclude_lane = 2 [json_name = "excludeLane"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _impl_.exclude_lane_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // bool exclude_person = 3 [json_name = "excludePerson"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+          _impl_.exclude_person_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<2, 3, 0, 0, 2> GetRoadRequest::_table_ = {
-  {
-    0,  // no _has_bits_
-    0, // no _extensions_
-    3, 24,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967288,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    3,  // num_field_entries
-    0,  // num_aux_entries
-    offsetof(decltype(_table_), field_names),  // no aux_entries
-    &_GetRoadRequest_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    {::_pbi::TcParser::MiniParse, {}},
-    // repeated int32 road_ids = 1 [json_name = "roadIds"];
-    {::_pbi::TcParser::FastV32P1,
-     {10, 63, 0, PROTOBUF_FIELD_OFFSET(GetRoadRequest, _impl_.road_ids_)}},
-    // bool exclude_lane = 2 [json_name = "excludeLane"];
-    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(GetRoadRequest, _impl_.exclude_lane_), 63>(),
-     {16, 63, 0, PROTOBUF_FIELD_OFFSET(GetRoadRequest, _impl_.exclude_lane_)}},
-    // bool exclude_person = 3 [json_name = "excludePerson"];
-    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(GetRoadRequest, _impl_.exclude_person_), 63>(),
-     {24, 63, 0, PROTOBUF_FIELD_OFFSET(GetRoadRequest, _impl_.exclude_person_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // repeated int32 road_ids = 1 [json_name = "roadIds"];
-    {PROTOBUF_FIELD_OFFSET(GetRoadRequest, _impl_.road_ids_), 0, 0,
-    (0 | ::_fl::kFcRepeated | ::_fl::kPackedInt32)},
-    // bool exclude_lane = 2 [json_name = "excludeLane"];
-    {PROTOBUF_FIELD_OFFSET(GetRoadRequest, _impl_.exclude_lane_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kBool)},
-    // bool exclude_person = 3 [json_name = "excludePerson"];
-    {PROTOBUF_FIELD_OFFSET(GetRoadRequest, _impl_.exclude_person_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kBool)},
-  }},
-  // no aux_entries
-  {{
-  }},
-};
-
-::uint8_t* GetRoadRequest::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* GetRoadRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.map.v2.GetRoadRequest)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // repeated int32 road_ids = 1 [json_name = "roadIds"];
   {
-    int byte_size = _impl_._road_ids_cached_byte_size_.Get();
+    int byte_size = _impl_._road_ids_cached_byte_size_.load(std::memory_order_relaxed);
     if (byte_size > 0) {
-      target = stream->WriteInt32Packed(1, _internal_road_ids(),
-                                                 byte_size, target);
+      target = stream->WriteInt32Packed(
+          1, _internal_road_ids(), byte_size, target);
     }
   }
 
   // bool exclude_lane = 2 [json_name = "excludeLane"];
   if (this->_internal_exclude_lane() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(
-        2, this->_internal_exclude_lane(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(2, this->_internal_exclude_lane(), target);
   }
 
   // bool exclude_person = 3 [json_name = "excludePerson"];
   if (this->_internal_exclude_person() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(
-        3, this->_internal_exclude_person(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(3, this->_internal_exclude_person(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.map.v2.GetRoadRequest)
   return target;
 }
 
-::size_t GetRoadRequest::ByteSizeLong() const {
+size_t GetRoadRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.map.v2.GetRoadRequest)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // repeated int32 road_ids = 1 [json_name = "roadIds"];
   {
-    std::size_t data_size = ::_pbi::WireFormatLite::Int32Size(
-        this->_internal_road_ids())
-    ;
-    _impl_._road_ids_cached_byte_size_.Set(::_pbi::ToCachedSize(data_size));
-    std::size_t tag_size = data_size == 0
-        ? 0
-        : 1 + ::_pbi::WireFormatLite::Int32Size(
-                            static_cast<int32_t>(data_size))
-    ;
-    total_size += tag_size + data_size;
+    size_t data_size = ::_pbi::WireFormatLite::
+      Int32Size(this->_impl_.road_ids_);
+    if (data_size > 0) {
+      total_size += 1 +
+        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
+    }
+    int cached_size = ::_pbi::ToCachedSize(data_size);
+    _impl_._road_ids_cached_byte_size_.store(cached_size,
+                                    std::memory_order_relaxed);
+    total_size += data_size;
   }
+
   // bool exclude_lane = 2 [json_name = "excludeLane"];
   if (this->_internal_exclude_lane() != 0) {
-    total_size += 2;
+    total_size += 1 + 1;
   }
 
   // bool exclude_person = 3 [json_name = "excludePerson"];
   if (this->_internal_exclude_person() != 0) {
-    total_size += 2;
+    total_size += 1 + 1;
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData GetRoadRequest::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetRoadRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     GetRoadRequest::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*GetRoadRequest::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetRoadRequest::GetClassData() const { return &_class_data_; }
 
 
-void GetRoadRequest::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void GetRoadRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<GetRoadRequest*>(&to_msg);
   auto& from = static_cast<const GetRoadRequest&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.map.v2.GetRoadRequest)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  _this->_internal_mutable_road_ids()->MergeFrom(from._internal_road_ids());
+  _this->_impl_.road_ids_.MergeFrom(from._impl_.road_ids_);
   if (from._internal_exclude_lane() != 0) {
     _this->_internal_set_exclude_lane(from._internal_exclude_lane());
   }
   if (from._internal_exclude_person() != 0) {
     _this->_internal_set_exclude_person(from._internal_exclude_person());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void GetRoadRequest::CopyFrom(const GetRoadRequest& from) {
@@ -610,7 +558,7 @@ void GetRoadRequest::CopyFrom(const GetRoadRequest& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool GetRoadRequest::IsInitialized() const {
+bool GetRoadRequest::IsInitialized() const {
   return true;
 }
 
@@ -618,7 +566,7 @@ void GetRoadRequest::InternalSwap(GetRoadRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   _impl_.road_ids_.InternalSwap(&other->_impl_.road_ids_);
-  ::google::protobuf::internal::memswap<
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(GetRoadRequest, _impl_.exclude_person_)
       + sizeof(GetRoadRequest::_impl_.exclude_person_)
       - PROTOBUF_FIELD_OFFSET(GetRoadRequest, _impl_.exclude_lane_)>(
@@ -626,159 +574,172 @@ void GetRoadRequest::InternalSwap(GetRoadRequest* other) {
           reinterpret_cast<char*>(&other->_impl_.exclude_lane_));
 }
 
-::google::protobuf::Metadata GetRoadRequest::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata GetRoadRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fmap_2fv2_2froad_5fservice_2eproto_getter, &descriptor_table_city_2fmap_2fv2_2froad_5fservice_2eproto_once,
       file_level_metadata_city_2fmap_2fv2_2froad_5fservice_2eproto[0]);
 }
+
 // ===================================================================
 
 class GetRoadResponse::_Internal {
  public:
 };
 
-GetRoadResponse::GetRoadResponse(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+GetRoadResponse::GetRoadResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.map.v2.GetRoadResponse)
 }
-GetRoadResponse::GetRoadResponse(const GetRoadResponse& from) : ::google::protobuf::Message() {
-  GetRoadResponse* const _this = this;
-  (void)_this;
+GetRoadResponse::GetRoadResponse(const GetRoadResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  GetRoadResponse* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.states_){from._impl_.states_},
-      /*decltype(_impl_._cached_size_)*/ {},
-  };
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+      decltype(_impl_.states_){from._impl_.states_}
+    , /*decltype(_impl_._cached_size_)*/{}};
 
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:city.map.v2.GetRoadResponse)
 }
-inline void GetRoadResponse::SharedCtor(::_pb::Arena* arena) {
+
+inline void GetRoadResponse::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.states_){arena},
-      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.states_){arena}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 GetRoadResponse::~GetRoadResponse() {
   // @@protoc_insertion_point(destructor:city.map.v2.GetRoadResponse)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void GetRoadResponse::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.states_.~RepeatedPtrField();
 }
+
 void GetRoadResponse::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void GetRoadResponse::Clear() {
+void GetRoadResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.map.v2.GetRoadResponse)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _internal_mutable_states()->Clear();
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _impl_.states_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* GetRoadResponse::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* GetRoadResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // repeated .city.map.v2.RoadState states = 1 [json_name = "states"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_states(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<0, 1, 1, 0, 2> GetRoadResponse::_table_ = {
-  {
-    0,  // no _has_bits_
-    0, // no _extensions_
-    1, 0,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967294,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    1,  // num_field_entries
-    1,  // num_aux_entries
-    offsetof(decltype(_table_), aux_entries),
-    &_GetRoadResponse_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    // repeated .city.map.v2.RoadState states = 1 [json_name = "states"];
-    {::_pbi::TcParser::FastMtR1,
-     {10, 63, 0, PROTOBUF_FIELD_OFFSET(GetRoadResponse, _impl_.states_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // repeated .city.map.v2.RoadState states = 1 [json_name = "states"];
-    {PROTOBUF_FIELD_OFFSET(GetRoadResponse, _impl_.states_), 0, 0,
-    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
-  }}, {{
-    {::_pbi::TcParser::GetTable<::city::map::v2::RoadState>()},
-  }}, {{
-  }},
-};
-
-::uint8_t* GetRoadResponse::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* GetRoadResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.map.v2.GetRoadResponse)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // repeated .city.map.v2.RoadState states = 1 [json_name = "states"];
   for (unsigned i = 0,
       n = static_cast<unsigned>(this->_internal_states_size()); i < n; i++) {
-    const auto& repfield = this->_internal_states().Get(i);
-    target = ::google::protobuf::internal::WireFormatLite::
+    const auto& repfield = this->_internal_states(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
         InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.map.v2.GetRoadResponse)
   return target;
 }
 
-::size_t GetRoadResponse::ByteSizeLong() const {
+size_t GetRoadResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.map.v2.GetRoadResponse)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // repeated .city.map.v2.RoadState states = 1 [json_name = "states"];
   total_size += 1UL * this->_internal_states_size();
-  for (const auto& msg : this->_internal_states()) {
+  for (const auto& msg : this->_impl_.states_) {
     total_size +=
-      ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
+
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData GetRoadResponse::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetRoadResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     GetRoadResponse::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*GetRoadResponse::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetRoadResponse::GetClassData() const { return &_class_data_; }
 
 
-void GetRoadResponse::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void GetRoadResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<GetRoadResponse*>(&to_msg);
   auto& from = static_cast<const GetRoadResponse&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.map.v2.GetRoadResponse)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  _this->_internal_mutable_states()->MergeFrom(from._internal_states());
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.states_.MergeFrom(from._impl_.states_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void GetRoadResponse::CopyFrom(const GetRoadResponse& from) {
@@ -788,7 +749,7 @@ void GetRoadResponse::CopyFrom(const GetRoadResponse& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool GetRoadResponse::IsInitialized() const {
+bool GetRoadResponse::IsInitialized() const {
   return true;
 }
 
@@ -798,38 +759,39 @@ void GetRoadResponse::InternalSwap(GetRoadResponse* other) {
   _impl_.states_.InternalSwap(&other->_impl_.states_);
 }
 
-::google::protobuf::Metadata GetRoadResponse::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata GetRoadResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fmap_2fv2_2froad_5fservice_2eproto_getter, &descriptor_table_city_2fmap_2fv2_2froad_5fservice_2eproto_once,
       file_level_metadata_city_2fmap_2fv2_2froad_5fservice_2eproto[1]);
 }
+
 // ===================================================================
 
 class GetRuinInfoRequest::_Internal {
  public:
 };
 
-GetRuinInfoRequest::GetRuinInfoRequest(::google::protobuf::Arena* arena)
-    : ::google::protobuf::internal::ZeroFieldsBase(arena) {
+GetRuinInfoRequest::GetRuinInfoRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
   // @@protoc_insertion_point(arena_constructor:city.map.v2.GetRuinInfoRequest)
 }
-GetRuinInfoRequest::GetRuinInfoRequest(const GetRuinInfoRequest& from) : ::google::protobuf::internal::ZeroFieldsBase() {
-  GetRuinInfoRequest* const _this = this;
-  (void)_this;
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
-
+GetRuinInfoRequest::GetRuinInfoRequest(const GetRuinInfoRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
+  GetRuinInfoRequest* const _this = this; (void)_this;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:city.map.v2.GetRuinInfoRequest)
 }
 
 
 
 
-const ::google::protobuf::Message::ClassData GetRuinInfoRequest::_class_data_ = {
-    ::google::protobuf::internal::ZeroFieldsBase::CopyImpl,
-    ::google::protobuf::internal::ZeroFieldsBase::MergeImpl,
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetRuinInfoRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
 };
-const ::google::protobuf::Message::ClassData*GetRuinInfoRequest::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetRuinInfoRequest::GetClassData() const { return &_class_data_; }
 
 
 
@@ -837,184 +799,197 @@ const ::google::protobuf::Message::ClassData*GetRuinInfoRequest::GetClassData() 
 
 
 
-::google::protobuf::Metadata GetRuinInfoRequest::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata GetRuinInfoRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fmap_2fv2_2froad_5fservice_2eproto_getter, &descriptor_table_city_2fmap_2fv2_2froad_5fservice_2eproto_once,
       file_level_metadata_city_2fmap_2fv2_2froad_5fservice_2eproto[2]);
 }
+
 // ===================================================================
 
 class RuinInfo::_Internal {
  public:
 };
 
-RuinInfo::RuinInfo(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+RuinInfo::RuinInfo(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.map.v2.RuinInfo)
 }
 RuinInfo::RuinInfo(const RuinInfo& from)
-    : ::google::protobuf::Message(), _impl_(from._impl_) {
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  RuinInfo* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.ratio_){}
+    , decltype(_impl_.num_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&_impl_.ratio_, &from._impl_.ratio_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.num_) -
+    reinterpret_cast<char*>(&_impl_.ratio_)) + sizeof(_impl_.num_));
   // @@protoc_insertion_point(copy_constructor:city.map.v2.RuinInfo)
 }
-inline void RuinInfo::SharedCtor(::_pb::Arena* arena) {
+
+inline void RuinInfo::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.ratio_){0},
-      decltype(_impl_.num_){0},
-      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.ratio_){0}
+    , decltype(_impl_.num_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 RuinInfo::~RuinInfo() {
   // @@protoc_insertion_point(destructor:city.map.v2.RuinInfo)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void RuinInfo::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
+
 void RuinInfo::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void RuinInfo::Clear() {
+void RuinInfo::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.map.v2.RuinInfo)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&_impl_.ratio_, 0, static_cast<::size_t>(
+  ::memset(&_impl_.ratio_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_impl_.num_) -
       reinterpret_cast<char*>(&_impl_.ratio_)) + sizeof(_impl_.num_));
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* RuinInfo::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* RuinInfo::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 num = 1 [json_name = "num"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.num_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // double ratio = 2 [json_name = "ratio"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 17)) {
+          _impl_.ratio_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<1, 2, 0, 0, 2> RuinInfo::_table_ = {
-  {
-    0,  // no _has_bits_
-    0, // no _extensions_
-    2, 8,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967292,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    2,  // num_field_entries
-    0,  // num_aux_entries
-    offsetof(decltype(_table_), field_names),  // no aux_entries
-    &_RuinInfo_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    // double ratio = 2 [json_name = "ratio"];
-    {::_pbi::TcParser::FastF64S1,
-     {17, 63, 0, PROTOBUF_FIELD_OFFSET(RuinInfo, _impl_.ratio_)}},
-    // int32 num = 1 [json_name = "num"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(RuinInfo, _impl_.num_), 63>(),
-     {8, 63, 0, PROTOBUF_FIELD_OFFSET(RuinInfo, _impl_.num_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // int32 num = 1 [json_name = "num"];
-    {PROTOBUF_FIELD_OFFSET(RuinInfo, _impl_.num_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-    // double ratio = 2 [json_name = "ratio"];
-    {PROTOBUF_FIELD_OFFSET(RuinInfo, _impl_.ratio_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-  }},
-  // no aux_entries
-  {{
-  }},
-};
-
-::uint8_t* RuinInfo::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* RuinInfo::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.map.v2.RuinInfo)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // int32 num = 1 [json_name = "num"];
   if (this->_internal_num() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<1>(
-            stream, this->_internal_num(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_num(), target);
   }
 
   // double ratio = 2 [json_name = "ratio"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_ratio = this->_internal_ratio();
-  ::uint64_t raw_ratio;
+  uint64_t raw_ratio;
   memcpy(&raw_ratio, &tmp_ratio, sizeof(tmp_ratio));
   if (raw_ratio != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        2, this->_internal_ratio(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(2, this->_internal_ratio(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.map.v2.RuinInfo)
   return target;
 }
 
-::size_t RuinInfo::ByteSizeLong() const {
+size_t RuinInfo::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.map.v2.RuinInfo)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // double ratio = 2 [json_name = "ratio"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_ratio = this->_internal_ratio();
-  ::uint64_t raw_ratio;
+  uint64_t raw_ratio;
   memcpy(&raw_ratio, &tmp_ratio, sizeof(tmp_ratio));
   if (raw_ratio != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   // int32 num = 1 [json_name = "num"];
   if (this->_internal_num() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_num());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_num());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData RuinInfo::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData RuinInfo::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     RuinInfo::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*RuinInfo::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*RuinInfo::GetClassData() const { return &_class_data_; }
 
 
-void RuinInfo::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void RuinInfo::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<RuinInfo*>(&to_msg);
   auto& from = static_cast<const RuinInfo&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.map.v2.RuinInfo)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_ratio = from._internal_ratio();
-  ::uint64_t raw_ratio;
+  uint64_t raw_ratio;
   memcpy(&raw_ratio, &tmp_ratio, sizeof(tmp_ratio));
   if (raw_ratio != 0) {
     _this->_internal_set_ratio(from._internal_ratio());
@@ -1022,7 +997,7 @@ void RuinInfo::MergeImpl(::google::protobuf::Message& to_msg, const ::google::pr
   if (from._internal_num() != 0) {
     _this->_internal_set_num(from._internal_num());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void RuinInfo::CopyFrom(const RuinInfo& from) {
@@ -1032,14 +1007,14 @@ void RuinInfo::CopyFrom(const RuinInfo& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool RuinInfo::IsInitialized() const {
+bool RuinInfo::IsInitialized() const {
   return true;
 }
 
 void RuinInfo::InternalSwap(RuinInfo* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::google::protobuf::internal::memswap<
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(RuinInfo, _impl_.num_)
       + sizeof(RuinInfo::_impl_.num_)
       - PROTOBUF_FIELD_OFFSET(RuinInfo, _impl_.ratio_)>(
@@ -1047,276 +1022,262 @@ void RuinInfo::InternalSwap(RuinInfo* other) {
           reinterpret_cast<char*>(&other->_impl_.ratio_));
 }
 
-::google::protobuf::Metadata RuinInfo::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata RuinInfo::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fmap_2fv2_2froad_5fservice_2eproto_getter, &descriptor_table_city_2fmap_2fv2_2froad_5fservice_2eproto_once,
       file_level_metadata_city_2fmap_2fv2_2froad_5fservice_2eproto[3]);
 }
+
 // ===================================================================
 
 class GetRuinInfoResponse::_Internal {
  public:
-  using HasBits = decltype(std::declval<GetRuinInfoResponse>()._impl_._has_bits_);
-  static constexpr ::int32_t kHasBitsOffset =
-    8 * PROTOBUF_FIELD_OFFSET(GetRuinInfoResponse, _impl_._has_bits_);
   static const ::city::map::v2::RuinInfo& one(const GetRuinInfoResponse* msg);
-  static void set_has_one(HasBits* has_bits) {
-    (*has_bits)[0] |= 1u;
-  }
   static const ::city::map::v2::RuinInfo& two(const GetRuinInfoResponse* msg);
-  static void set_has_two(HasBits* has_bits) {
-    (*has_bits)[0] |= 2u;
-  }
   static const ::city::map::v2::RuinInfo& three(const GetRuinInfoResponse* msg);
-  static void set_has_three(HasBits* has_bits) {
-    (*has_bits)[0] |= 4u;
-  }
 };
 
-const ::city::map::v2::RuinInfo& GetRuinInfoResponse::_Internal::one(const GetRuinInfoResponse* msg) {
+const ::city::map::v2::RuinInfo&
+GetRuinInfoResponse::_Internal::one(const GetRuinInfoResponse* msg) {
   return *msg->_impl_.one_;
 }
-const ::city::map::v2::RuinInfo& GetRuinInfoResponse::_Internal::two(const GetRuinInfoResponse* msg) {
+const ::city::map::v2::RuinInfo&
+GetRuinInfoResponse::_Internal::two(const GetRuinInfoResponse* msg) {
   return *msg->_impl_.two_;
 }
-const ::city::map::v2::RuinInfo& GetRuinInfoResponse::_Internal::three(const GetRuinInfoResponse* msg) {
+const ::city::map::v2::RuinInfo&
+GetRuinInfoResponse::_Internal::three(const GetRuinInfoResponse* msg) {
   return *msg->_impl_.three_;
 }
-GetRuinInfoResponse::GetRuinInfoResponse(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+GetRuinInfoResponse::GetRuinInfoResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.map.v2.GetRuinInfoResponse)
 }
-GetRuinInfoResponse::GetRuinInfoResponse(const GetRuinInfoResponse& from) : ::google::protobuf::Message() {
-  GetRuinInfoResponse* const _this = this;
-  (void)_this;
+GetRuinInfoResponse::GetRuinInfoResponse(const GetRuinInfoResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  GetRuinInfoResponse* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){from._impl_._has_bits_},
-      /*decltype(_impl_._cached_size_)*/ {},
-      decltype(_impl_.one_){nullptr},
-      decltype(_impl_.two_){nullptr},
-      decltype(_impl_.three_){nullptr},
-  };
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
-  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+      decltype(_impl_.one_){nullptr}
+    , decltype(_impl_.two_){nullptr}
+    , decltype(_impl_.three_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  if (from._internal_has_one()) {
     _this->_impl_.one_ = new ::city::map::v2::RuinInfo(*from._impl_.one_);
   }
-  if ((from._impl_._has_bits_[0] & 0x00000002u) != 0) {
+  if (from._internal_has_two()) {
     _this->_impl_.two_ = new ::city::map::v2::RuinInfo(*from._impl_.two_);
   }
-  if ((from._impl_._has_bits_[0] & 0x00000004u) != 0) {
+  if (from._internal_has_three()) {
     _this->_impl_.three_ = new ::city::map::v2::RuinInfo(*from._impl_.three_);
   }
-
   // @@protoc_insertion_point(copy_constructor:city.map.v2.GetRuinInfoResponse)
 }
-inline void GetRuinInfoResponse::SharedCtor(::_pb::Arena* arena) {
+
+inline void GetRuinInfoResponse::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){},
-      /*decltype(_impl_._cached_size_)*/ {},
-      decltype(_impl_.one_){nullptr},
-      decltype(_impl_.two_){nullptr},
-      decltype(_impl_.three_){nullptr},
+      decltype(_impl_.one_){nullptr}
+    , decltype(_impl_.two_){nullptr}
+    , decltype(_impl_.three_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 GetRuinInfoResponse::~GetRuinInfoResponse() {
   // @@protoc_insertion_point(destructor:city.map.v2.GetRuinInfoResponse)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void GetRuinInfoResponse::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete _impl_.one_;
   if (this != internal_default_instance()) delete _impl_.two_;
   if (this != internal_default_instance()) delete _impl_.three_;
 }
+
 void GetRuinInfoResponse::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void GetRuinInfoResponse::Clear() {
+void GetRuinInfoResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.map.v2.GetRuinInfoResponse)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000007u) {
-    if (cached_has_bits & 0x00000001u) {
-      ABSL_DCHECK(_impl_.one_ != nullptr);
-      _impl_.one_->Clear();
-    }
-    if (cached_has_bits & 0x00000002u) {
-      ABSL_DCHECK(_impl_.two_ != nullptr);
-      _impl_.two_->Clear();
-    }
-    if (cached_has_bits & 0x00000004u) {
-      ABSL_DCHECK(_impl_.three_ != nullptr);
-      _impl_.three_->Clear();
-    }
+  if (GetArenaForAllocation() == nullptr && _impl_.one_ != nullptr) {
+    delete _impl_.one_;
   }
-  _impl_._has_bits_.Clear();
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _impl_.one_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.two_ != nullptr) {
+    delete _impl_.two_;
+  }
+  _impl_.two_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.three_ != nullptr) {
+    delete _impl_.three_;
+  }
+  _impl_.three_ = nullptr;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* GetRuinInfoResponse::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* GetRuinInfoResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // .city.map.v2.RuinInfo one = 1 [json_name = "one"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_one(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .city.map.v2.RuinInfo two = 2 [json_name = "two"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr = ctx->ParseMessage(_internal_mutable_two(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .city.map.v2.RuinInfo three = 3 [json_name = "three"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+          ptr = ctx->ParseMessage(_internal_mutable_three(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<2, 3, 3, 0, 2> GetRuinInfoResponse::_table_ = {
-  {
-    PROTOBUF_FIELD_OFFSET(GetRuinInfoResponse, _impl_._has_bits_),
-    0, // no _extensions_
-    3, 24,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967288,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    3,  // num_field_entries
-    3,  // num_aux_entries
-    offsetof(decltype(_table_), aux_entries),
-    &_GetRuinInfoResponse_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    {::_pbi::TcParser::MiniParse, {}},
-    // .city.map.v2.RuinInfo one = 1 [json_name = "one"];
-    {::_pbi::TcParser::FastMtS1,
-     {10, 0, 0, PROTOBUF_FIELD_OFFSET(GetRuinInfoResponse, _impl_.one_)}},
-    // .city.map.v2.RuinInfo two = 2 [json_name = "two"];
-    {::_pbi::TcParser::FastMtS1,
-     {18, 1, 1, PROTOBUF_FIELD_OFFSET(GetRuinInfoResponse, _impl_.two_)}},
-    // .city.map.v2.RuinInfo three = 3 [json_name = "three"];
-    {::_pbi::TcParser::FastMtS1,
-     {26, 2, 2, PROTOBUF_FIELD_OFFSET(GetRuinInfoResponse, _impl_.three_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // .city.map.v2.RuinInfo one = 1 [json_name = "one"];
-    {PROTOBUF_FIELD_OFFSET(GetRuinInfoResponse, _impl_.one_), _Internal::kHasBitsOffset + 0, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
-    // .city.map.v2.RuinInfo two = 2 [json_name = "two"];
-    {PROTOBUF_FIELD_OFFSET(GetRuinInfoResponse, _impl_.two_), _Internal::kHasBitsOffset + 1, 1,
-    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
-    // .city.map.v2.RuinInfo three = 3 [json_name = "three"];
-    {PROTOBUF_FIELD_OFFSET(GetRuinInfoResponse, _impl_.three_), _Internal::kHasBitsOffset + 2, 2,
-    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
-  }}, {{
-    {::_pbi::TcParser::GetTable<::city::map::v2::RuinInfo>()},
-    {::_pbi::TcParser::GetTable<::city::map::v2::RuinInfo>()},
-    {::_pbi::TcParser::GetTable<::city::map::v2::RuinInfo>()},
-  }}, {{
-  }},
-};
-
-::uint8_t* GetRuinInfoResponse::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* GetRuinInfoResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.map.v2.GetRuinInfoResponse)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
-  cached_has_bits = _impl_._has_bits_[0];
   // .city.map.v2.RuinInfo one = 1 [json_name = "one"];
-  if (cached_has_bits & 0x00000001u) {
-    target = ::google::protobuf::internal::WireFormatLite::
+  if (this->_internal_has_one()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(1, _Internal::one(this),
         _Internal::one(this).GetCachedSize(), target, stream);
   }
 
   // .city.map.v2.RuinInfo two = 2 [json_name = "two"];
-  if (cached_has_bits & 0x00000002u) {
-    target = ::google::protobuf::internal::WireFormatLite::
+  if (this->_internal_has_two()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(2, _Internal::two(this),
         _Internal::two(this).GetCachedSize(), target, stream);
   }
 
   // .city.map.v2.RuinInfo three = 3 [json_name = "three"];
-  if (cached_has_bits & 0x00000004u) {
-    target = ::google::protobuf::internal::WireFormatLite::
+  if (this->_internal_has_three()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(3, _Internal::three(this),
         _Internal::three(this).GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.map.v2.GetRuinInfoResponse)
   return target;
 }
 
-::size_t GetRuinInfoResponse::ByteSizeLong() const {
+size_t GetRuinInfoResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.map.v2.GetRuinInfoResponse)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000007u) {
-    // .city.map.v2.RuinInfo one = 1 [json_name = "one"];
-    if (cached_has_bits & 0x00000001u) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          *_impl_.one_);
-    }
-
-    // .city.map.v2.RuinInfo two = 2 [json_name = "two"];
-    if (cached_has_bits & 0x00000002u) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          *_impl_.two_);
-    }
-
-    // .city.map.v2.RuinInfo three = 3 [json_name = "three"];
-    if (cached_has_bits & 0x00000004u) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          *_impl_.three_);
-    }
-
+  // .city.map.v2.RuinInfo one = 1 [json_name = "one"];
+  if (this->_internal_has_one()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.one_);
   }
+
+  // .city.map.v2.RuinInfo two = 2 [json_name = "two"];
+  if (this->_internal_has_two()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.two_);
+  }
+
+  // .city.map.v2.RuinInfo three = 3 [json_name = "three"];
+  if (this->_internal_has_three()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.three_);
+  }
+
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData GetRuinInfoResponse::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetRuinInfoResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     GetRuinInfoResponse::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*GetRuinInfoResponse::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetRuinInfoResponse::GetClassData() const { return &_class_data_; }
 
 
-void GetRuinInfoResponse::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void GetRuinInfoResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<GetRuinInfoResponse*>(&to_msg);
   auto& from = static_cast<const GetRuinInfoResponse&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.map.v2.GetRuinInfoResponse)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  cached_has_bits = from._impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000007u) {
-    if (cached_has_bits & 0x00000001u) {
-      _this->_internal_mutable_one()->::city::map::v2::RuinInfo::MergeFrom(
-          from._internal_one());
-    }
-    if (cached_has_bits & 0x00000002u) {
-      _this->_internal_mutable_two()->::city::map::v2::RuinInfo::MergeFrom(
-          from._internal_two());
-    }
-    if (cached_has_bits & 0x00000004u) {
-      _this->_internal_mutable_three()->::city::map::v2::RuinInfo::MergeFrom(
-          from._internal_three());
-    }
+  if (from._internal_has_one()) {
+    _this->_internal_mutable_one()->::city::map::v2::RuinInfo::MergeFrom(
+        from._internal_one());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  if (from._internal_has_two()) {
+    _this->_internal_mutable_two()->::city::map::v2::RuinInfo::MergeFrom(
+        from._internal_two());
+  }
+  if (from._internal_has_three()) {
+    _this->_internal_mutable_three()->::city::map::v2::RuinInfo::MergeFrom(
+        from._internal_three());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void GetRuinInfoResponse::CopyFrom(const GetRuinInfoResponse& from) {
@@ -1326,15 +1287,14 @@ void GetRuinInfoResponse::CopyFrom(const GetRuinInfoResponse& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool GetRuinInfoResponse::IsInitialized() const {
+bool GetRuinInfoResponse::IsInitialized() const {
   return true;
 }
 
 void GetRuinInfoResponse::InternalSwap(GetRuinInfoResponse* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
-  ::google::protobuf::internal::memswap<
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(GetRuinInfoResponse, _impl_.three_)
       + sizeof(GetRuinInfoResponse::_impl_.three_)
       - PROTOBUF_FIELD_OFFSET(GetRuinInfoResponse, _impl_.one_)>(
@@ -1342,38 +1302,39 @@ void GetRuinInfoResponse::InternalSwap(GetRuinInfoResponse* other) {
           reinterpret_cast<char*>(&other->_impl_.one_));
 }
 
-::google::protobuf::Metadata GetRuinInfoResponse::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata GetRuinInfoResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fmap_2fv2_2froad_5fservice_2eproto_getter, &descriptor_table_city_2fmap_2fv2_2froad_5fservice_2eproto_once,
       file_level_metadata_city_2fmap_2fv2_2froad_5fservice_2eproto[4]);
 }
+
 // ===================================================================
 
 class GetEventsRequest::_Internal {
  public:
 };
 
-GetEventsRequest::GetEventsRequest(::google::protobuf::Arena* arena)
-    : ::google::protobuf::internal::ZeroFieldsBase(arena) {
+GetEventsRequest::GetEventsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
   // @@protoc_insertion_point(arena_constructor:city.map.v2.GetEventsRequest)
 }
-GetEventsRequest::GetEventsRequest(const GetEventsRequest& from) : ::google::protobuf::internal::ZeroFieldsBase() {
-  GetEventsRequest* const _this = this;
-  (void)_this;
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
-
+GetEventsRequest::GetEventsRequest(const GetEventsRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
+  GetEventsRequest* const _this = this; (void)_this;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:city.map.v2.GetEventsRequest)
 }
 
 
 
 
-const ::google::protobuf::Message::ClassData GetEventsRequest::_class_data_ = {
-    ::google::protobuf::internal::ZeroFieldsBase::CopyImpl,
-    ::google::protobuf::internal::ZeroFieldsBase::MergeImpl,
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetEventsRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
 };
-const ::google::protobuf::Message::ClassData*GetEventsRequest::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetEventsRequest::GetClassData() const { return &_class_data_; }
 
 
 
@@ -1381,188 +1342,186 @@ const ::google::protobuf::Message::ClassData*GetEventsRequest::GetClassData() co
 
 
 
-::google::protobuf::Metadata GetEventsRequest::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata GetEventsRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fmap_2fv2_2froad_5fservice_2eproto_getter, &descriptor_table_city_2fmap_2fv2_2froad_5fservice_2eproto_once,
       file_level_metadata_city_2fmap_2fv2_2froad_5fservice_2eproto[5]);
 }
+
 // ===================================================================
 
 class GetEventsResponse::_Internal {
  public:
-  using HasBits = decltype(std::declval<GetEventsResponse>()._impl_._has_bits_);
-  static constexpr ::int32_t kHasBitsOffset =
-    8 * PROTOBUF_FIELD_OFFSET(GetEventsResponse, _impl_._has_bits_);
   static const ::city::event::v1::Events& events(const GetEventsResponse* msg);
-  static void set_has_events(HasBits* has_bits) {
-    (*has_bits)[0] |= 1u;
-  }
 };
 
-const ::city::event::v1::Events& GetEventsResponse::_Internal::events(const GetEventsResponse* msg) {
+const ::city::event::v1::Events&
+GetEventsResponse::_Internal::events(const GetEventsResponse* msg) {
   return *msg->_impl_.events_;
 }
 void GetEventsResponse::clear_events() {
-  if (_impl_.events_ != nullptr) _impl_.events_->Clear();
-  _impl_._has_bits_[0] &= ~0x00000001u;
+  if (GetArenaForAllocation() == nullptr && _impl_.events_ != nullptr) {
+    delete _impl_.events_;
+  }
+  _impl_.events_ = nullptr;
 }
-GetEventsResponse::GetEventsResponse(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+GetEventsResponse::GetEventsResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.map.v2.GetEventsResponse)
 }
-GetEventsResponse::GetEventsResponse(const GetEventsResponse& from) : ::google::protobuf::Message() {
-  GetEventsResponse* const _this = this;
-  (void)_this;
+GetEventsResponse::GetEventsResponse(const GetEventsResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  GetEventsResponse* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){from._impl_._has_bits_},
-      /*decltype(_impl_._cached_size_)*/ {},
-      decltype(_impl_.events_){nullptr},
-  };
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
-  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+      decltype(_impl_.events_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  if (from._internal_has_events()) {
     _this->_impl_.events_ = new ::city::event::v1::Events(*from._impl_.events_);
   }
-
   // @@protoc_insertion_point(copy_constructor:city.map.v2.GetEventsResponse)
 }
-inline void GetEventsResponse::SharedCtor(::_pb::Arena* arena) {
+
+inline void GetEventsResponse::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){},
-      /*decltype(_impl_._cached_size_)*/ {},
-      decltype(_impl_.events_){nullptr},
+      decltype(_impl_.events_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 GetEventsResponse::~GetEventsResponse() {
   // @@protoc_insertion_point(destructor:city.map.v2.GetEventsResponse)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void GetEventsResponse::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete _impl_.events_;
 }
+
 void GetEventsResponse::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void GetEventsResponse::Clear() {
+void GetEventsResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.map.v2.GetEventsResponse)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000001u) {
-    ABSL_DCHECK(_impl_.events_ != nullptr);
-    _impl_.events_->Clear();
+  if (GetArenaForAllocation() == nullptr && _impl_.events_ != nullptr) {
+    delete _impl_.events_;
   }
-  _impl_._has_bits_.Clear();
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _impl_.events_ = nullptr;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* GetEventsResponse::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* GetEventsResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // .city.event.v1.Events events = 1 [json_name = "events"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_events(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<0, 1, 1, 0, 2> GetEventsResponse::_table_ = {
-  {
-    PROTOBUF_FIELD_OFFSET(GetEventsResponse, _impl_._has_bits_),
-    0, // no _extensions_
-    1, 0,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967294,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    1,  // num_field_entries
-    1,  // num_aux_entries
-    offsetof(decltype(_table_), aux_entries),
-    &_GetEventsResponse_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    // .city.event.v1.Events events = 1 [json_name = "events"];
-    {::_pbi::TcParser::FastMtS1,
-     {10, 0, 0, PROTOBUF_FIELD_OFFSET(GetEventsResponse, _impl_.events_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // .city.event.v1.Events events = 1 [json_name = "events"];
-    {PROTOBUF_FIELD_OFFSET(GetEventsResponse, _impl_.events_), _Internal::kHasBitsOffset + 0, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
-  }}, {{
-    {::_pbi::TcParser::GetTable<::city::event::v1::Events>()},
-  }}, {{
-  }},
-};
-
-::uint8_t* GetEventsResponse::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* GetEventsResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.map.v2.GetEventsResponse)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
-  cached_has_bits = _impl_._has_bits_[0];
   // .city.event.v1.Events events = 1 [json_name = "events"];
-  if (cached_has_bits & 0x00000001u) {
-    target = ::google::protobuf::internal::WireFormatLite::
+  if (this->_internal_has_events()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(1, _Internal::events(this),
         _Internal::events(this).GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.map.v2.GetEventsResponse)
   return target;
 }
 
-::size_t GetEventsResponse::ByteSizeLong() const {
+size_t GetEventsResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.map.v2.GetEventsResponse)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // .city.event.v1.Events events = 1 [json_name = "events"];
-  cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000001u) {
+  if (this->_internal_has_events()) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *_impl_.events_);
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData GetEventsResponse::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetEventsResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     GetEventsResponse::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*GetEventsResponse::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetEventsResponse::GetClassData() const { return &_class_data_; }
 
 
-void GetEventsResponse::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void GetEventsResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<GetEventsResponse*>(&to_msg);
   auto& from = static_cast<const GetEventsResponse&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.map.v2.GetEventsResponse)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+  if (from._internal_has_events()) {
     _this->_internal_mutable_events()->::city::event::v1::Events::MergeFrom(
         from._internal_events());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void GetEventsResponse::CopyFrom(const GetEventsResponse& from) {
@@ -1572,22 +1531,22 @@ void GetEventsResponse::CopyFrom(const GetEventsResponse& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool GetEventsResponse::IsInitialized() const {
+bool GetEventsResponse::IsInitialized() const {
   return true;
 }
 
 void GetEventsResponse::InternalSwap(GetEventsResponse* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
   swap(_impl_.events_, other->_impl_.events_);
 }
 
-::google::protobuf::Metadata GetEventsResponse::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata GetEventsResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fmap_2fv2_2froad_5fservice_2eproto_getter, &descriptor_table_city_2fmap_2fv2_2froad_5fservice_2eproto_once,
       file_level_metadata_city_2fmap_2fv2_2froad_5fservice_2eproto[6]);
 }
+
 // ===================================================================
 
 class RoadState::_Internal {
@@ -1595,261 +1554,274 @@ class RoadState::_Internal {
 };
 
 void RoadState::clear_lanes() {
-  _internal_mutable_lanes()->Clear();
+  _impl_.lanes_.Clear();
 }
-RoadState::RoadState(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+RoadState::RoadState(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.map.v2.RoadState)
 }
-RoadState::RoadState(const RoadState& from) : ::google::protobuf::Message() {
-  RoadState* const _this = this;
-  (void)_this;
+RoadState::RoadState(const RoadState& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  RoadState* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.lanes_){from._impl_.lanes_},
-      decltype(_impl_.id_){},
-      decltype(_impl_.level_){},
-      decltype(_impl_.avg_v_){},
-      decltype(_impl_.reason_){},
-      /*decltype(_impl_._cached_size_)*/ {},
-  };
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
-  ::memcpy(&_impl_.id_, &from._impl_.id_,
-    static_cast<::size_t>(reinterpret_cast<char*>(&_impl_.reason_) -
-    reinterpret_cast<char*>(&_impl_.id_)) + sizeof(_impl_.reason_));
+      decltype(_impl_.lanes_){from._impl_.lanes_}
+    , decltype(_impl_.id_){}
+    , decltype(_impl_.level_){}
+    , decltype(_impl_.avg_v_){}
+    , decltype(_impl_.reason_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
 
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&_impl_.id_, &from._impl_.id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.reason_) -
+    reinterpret_cast<char*>(&_impl_.id_)) + sizeof(_impl_.reason_));
   // @@protoc_insertion_point(copy_constructor:city.map.v2.RoadState)
 }
-inline void RoadState::SharedCtor(::_pb::Arena* arena) {
+
+inline void RoadState::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.lanes_){arena},
-      decltype(_impl_.id_){0},
-      decltype(_impl_.level_){0},
-      decltype(_impl_.avg_v_){0},
-      decltype(_impl_.reason_){0},
-      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.lanes_){arena}
+    , decltype(_impl_.id_){0}
+    , decltype(_impl_.level_){0}
+    , decltype(_impl_.avg_v_){0}
+    , decltype(_impl_.reason_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 RoadState::~RoadState() {
   // @@protoc_insertion_point(destructor:city.map.v2.RoadState)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void RoadState::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.lanes_.~RepeatedPtrField();
 }
+
 void RoadState::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void RoadState::Clear() {
+void RoadState::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.map.v2.RoadState)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _internal_mutable_lanes()->Clear();
-  ::memset(&_impl_.id_, 0, static_cast<::size_t>(
+  _impl_.lanes_.Clear();
+  ::memset(&_impl_.id_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_impl_.reason_) -
       reinterpret_cast<char*>(&_impl_.id_)) + sizeof(_impl_.reason_));
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* RoadState::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* RoadState::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 id = 1 [json_name = "id"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .city.map.v2.RoadLevel level = 2 [json_name = "level"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_set_level(static_cast<::city::map::v2::RoadLevel>(val));
+        } else
+          goto handle_unusual;
+        continue;
+      // .city.map.v2.InterruptionReason reason = 3 [json_name = "reason"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_set_reason(static_cast<::city::map::v2::InterruptionReason>(val));
+        } else
+          goto handle_unusual;
+        continue;
+      // double avg_v = 4 [json_name = "avgV"];
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 33)) {
+          _impl_.avg_v_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated .city.map.v2.LaneState lanes = 5 [json_name = "lanes"];
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_lanes(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<42>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<3, 5, 1, 0, 2> RoadState::_table_ = {
-  {
-    0,  // no _has_bits_
-    0, // no _extensions_
-    5, 56,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967264,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    5,  // num_field_entries
-    1,  // num_aux_entries
-    offsetof(decltype(_table_), aux_entries),
-    &_RoadState_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    {::_pbi::TcParser::MiniParse, {}},
-    // int32 id = 1 [json_name = "id"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(RoadState, _impl_.id_), 63>(),
-     {8, 63, 0, PROTOBUF_FIELD_OFFSET(RoadState, _impl_.id_)}},
-    // .city.map.v2.RoadLevel level = 2 [json_name = "level"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(RoadState, _impl_.level_), 63>(),
-     {16, 63, 0, PROTOBUF_FIELD_OFFSET(RoadState, _impl_.level_)}},
-    // .city.map.v2.InterruptionReason reason = 3 [json_name = "reason"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(RoadState, _impl_.reason_), 63>(),
-     {24, 63, 0, PROTOBUF_FIELD_OFFSET(RoadState, _impl_.reason_)}},
-    // double avg_v = 4 [json_name = "avgV"];
-    {::_pbi::TcParser::FastF64S1,
-     {33, 63, 0, PROTOBUF_FIELD_OFFSET(RoadState, _impl_.avg_v_)}},
-    // repeated .city.map.v2.LaneState lanes = 5 [json_name = "lanes"];
-    {::_pbi::TcParser::FastMtR1,
-     {42, 63, 0, PROTOBUF_FIELD_OFFSET(RoadState, _impl_.lanes_)}},
-    {::_pbi::TcParser::MiniParse, {}},
-    {::_pbi::TcParser::MiniParse, {}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // int32 id = 1 [json_name = "id"];
-    {PROTOBUF_FIELD_OFFSET(RoadState, _impl_.id_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-    // .city.map.v2.RoadLevel level = 2 [json_name = "level"];
-    {PROTOBUF_FIELD_OFFSET(RoadState, _impl_.level_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kOpenEnum)},
-    // .city.map.v2.InterruptionReason reason = 3 [json_name = "reason"];
-    {PROTOBUF_FIELD_OFFSET(RoadState, _impl_.reason_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kOpenEnum)},
-    // double avg_v = 4 [json_name = "avgV"];
-    {PROTOBUF_FIELD_OFFSET(RoadState, _impl_.avg_v_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-    // repeated .city.map.v2.LaneState lanes = 5 [json_name = "lanes"];
-    {PROTOBUF_FIELD_OFFSET(RoadState, _impl_.lanes_), 0, 0,
-    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
-  }}, {{
-    {::_pbi::TcParser::GetTable<::city::map::v2::LaneState>()},
-  }}, {{
-  }},
-};
-
-::uint8_t* RoadState::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* RoadState::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.map.v2.RoadState)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // int32 id = 1 [json_name = "id"];
   if (this->_internal_id() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<1>(
-            stream, this->_internal_id(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_id(), target);
   }
 
   // .city.map.v2.RoadLevel level = 2 [json_name = "level"];
   if (this->_internal_level() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteEnumToArray(
-        2, this->_internal_level(), target);
+      2, this->_internal_level(), target);
   }
 
   // .city.map.v2.InterruptionReason reason = 3 [json_name = "reason"];
   if (this->_internal_reason() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteEnumToArray(
-        3, this->_internal_reason(), target);
+      3, this->_internal_reason(), target);
   }
 
   // double avg_v = 4 [json_name = "avgV"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_avg_v = this->_internal_avg_v();
-  ::uint64_t raw_avg_v;
+  uint64_t raw_avg_v;
   memcpy(&raw_avg_v, &tmp_avg_v, sizeof(tmp_avg_v));
   if (raw_avg_v != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        4, this->_internal_avg_v(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(4, this->_internal_avg_v(), target);
   }
 
   // repeated .city.map.v2.LaneState lanes = 5 [json_name = "lanes"];
   for (unsigned i = 0,
       n = static_cast<unsigned>(this->_internal_lanes_size()); i < n; i++) {
-    const auto& repfield = this->_internal_lanes().Get(i);
-    target = ::google::protobuf::internal::WireFormatLite::
+    const auto& repfield = this->_internal_lanes(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
         InternalWriteMessage(5, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.map.v2.RoadState)
   return target;
 }
 
-::size_t RoadState::ByteSizeLong() const {
+size_t RoadState::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.map.v2.RoadState)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // repeated .city.map.v2.LaneState lanes = 5 [json_name = "lanes"];
   total_size += 1UL * this->_internal_lanes_size();
-  for (const auto& msg : this->_internal_lanes()) {
+  for (const auto& msg : this->_impl_.lanes_) {
     total_size +=
-      ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
+
   // int32 id = 1 [json_name = "id"];
   if (this->_internal_id() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_id());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_id());
   }
 
   // .city.map.v2.RoadLevel level = 2 [json_name = "level"];
   if (this->_internal_level() != 0) {
     total_size += 1 +
-                  ::_pbi::WireFormatLite::EnumSize(this->_internal_level());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_level());
   }
 
   // double avg_v = 4 [json_name = "avgV"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_avg_v = this->_internal_avg_v();
-  ::uint64_t raw_avg_v;
+  uint64_t raw_avg_v;
   memcpy(&raw_avg_v, &tmp_avg_v, sizeof(tmp_avg_v));
   if (raw_avg_v != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   // .city.map.v2.InterruptionReason reason = 3 [json_name = "reason"];
   if (this->_internal_reason() != 0) {
     total_size += 1 +
-                  ::_pbi::WireFormatLite::EnumSize(this->_internal_reason());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_reason());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData RoadState::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData RoadState::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     RoadState::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*RoadState::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*RoadState::GetClassData() const { return &_class_data_; }
 
 
-void RoadState::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void RoadState::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<RoadState*>(&to_msg);
   auto& from = static_cast<const RoadState&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.map.v2.RoadState)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  _this->_internal_mutable_lanes()->MergeFrom(from._internal_lanes());
+  _this->_impl_.lanes_.MergeFrom(from._impl_.lanes_);
   if (from._internal_id() != 0) {
     _this->_internal_set_id(from._internal_id());
   }
   if (from._internal_level() != 0) {
     _this->_internal_set_level(from._internal_level());
   }
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_avg_v = from._internal_avg_v();
-  ::uint64_t raw_avg_v;
+  uint64_t raw_avg_v;
   memcpy(&raw_avg_v, &tmp_avg_v, sizeof(tmp_avg_v));
   if (raw_avg_v != 0) {
     _this->_internal_set_avg_v(from._internal_avg_v());
@@ -1857,7 +1829,7 @@ void RoadState::MergeImpl(::google::protobuf::Message& to_msg, const ::google::p
   if (from._internal_reason() != 0) {
     _this->_internal_set_reason(from._internal_reason());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void RoadState::CopyFrom(const RoadState& from) {
@@ -1867,7 +1839,7 @@ void RoadState::CopyFrom(const RoadState& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool RoadState::IsInitialized() const {
+bool RoadState::IsInitialized() const {
   return true;
 }
 
@@ -1875,7 +1847,7 @@ void RoadState::InternalSwap(RoadState* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   _impl_.lanes_.InternalSwap(&other->_impl_.lanes_);
-  ::google::protobuf::internal::memswap<
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(RoadState, _impl_.reason_)
       + sizeof(RoadState::_impl_.reason_)
       - PROTOBUF_FIELD_OFFSET(RoadState, _impl_.id_)>(
@@ -1883,18 +1855,50 @@ void RoadState::InternalSwap(RoadState* other) {
           reinterpret_cast<char*>(&other->_impl_.id_));
 }
 
-::google::protobuf::Metadata RoadState::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata RoadState::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fmap_2fv2_2froad_5fservice_2eproto_getter, &descriptor_table_city_2fmap_2fv2_2froad_5fservice_2eproto_once,
       file_level_metadata_city_2fmap_2fv2_2froad_5fservice_2eproto[7]);
 }
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace v2
 }  // namespace map
 }  // namespace city
-namespace google {
-namespace protobuf {
-}  // namespace protobuf
-}  // namespace google
+PROTOBUF_NAMESPACE_OPEN
+template<> PROTOBUF_NOINLINE ::city::map::v2::GetRoadRequest*
+Arena::CreateMaybeMessage< ::city::map::v2::GetRoadRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::map::v2::GetRoadRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::map::v2::GetRoadResponse*
+Arena::CreateMaybeMessage< ::city::map::v2::GetRoadResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::map::v2::GetRoadResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::map::v2::GetRuinInfoRequest*
+Arena::CreateMaybeMessage< ::city::map::v2::GetRuinInfoRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::map::v2::GetRuinInfoRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::map::v2::RuinInfo*
+Arena::CreateMaybeMessage< ::city::map::v2::RuinInfo >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::map::v2::RuinInfo >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::map::v2::GetRuinInfoResponse*
+Arena::CreateMaybeMessage< ::city::map::v2::GetRuinInfoResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::map::v2::GetRuinInfoResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::map::v2::GetEventsRequest*
+Arena::CreateMaybeMessage< ::city::map::v2::GetEventsRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::map::v2::GetEventsRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::map::v2::GetEventsResponse*
+Arena::CreateMaybeMessage< ::city::map::v2::GetEventsResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::map::v2::GetEventsResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::map::v2::RoadState*
+Arena::CreateMaybeMessage< ::city::map::v2::RoadState >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::map::v2::RoadState >(arena);
+}
+PROTOBUF_NAMESPACE_CLOSE
+
 // @@protoc_insertion_point(global_scope)
-#include "google/protobuf/port_undef.inc"
+#include <google/protobuf/port_undef.inc>

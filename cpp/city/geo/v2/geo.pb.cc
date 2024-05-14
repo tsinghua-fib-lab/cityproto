@@ -4,541 +4,500 @@
 #include "city/geo/v2/geo.pb.h"
 
 #include <algorithm>
-#include "google/protobuf/io/coded_stream.h"
-#include "google/protobuf/extension_set.h"
-#include "google/protobuf/wire_format_lite.h"
-#include "google/protobuf/descriptor.h"
-#include "google/protobuf/generated_message_reflection.h"
-#include "google/protobuf/reflection_ops.h"
-#include "google/protobuf/wire_format.h"
-#include "google/protobuf/generated_message_tctable_impl.h"
-// @@protoc_insertion_point(includes)
 
-// Must be included last.
-#include "google/protobuf/port_def.inc"
+#include <google/protobuf/io/coded_stream.h>
+#include <google/protobuf/extension_set.h>
+#include <google/protobuf/wire_format_lite.h>
+#include <google/protobuf/descriptor.h>
+#include <google/protobuf/generated_message_reflection.h>
+#include <google/protobuf/reflection_ops.h>
+#include <google/protobuf/wire_format.h>
+// @@protoc_insertion_point(includes)
+#include <google/protobuf/port_def.inc>
+
 PROTOBUF_PRAGMA_INIT_SEG
-namespace _pb = ::google::protobuf;
-namespace _pbi = ::google::protobuf::internal;
-namespace _fl = ::google::protobuf::internal::field_layout;
+
+namespace _pb = ::PROTOBUF_NAMESPACE_ID;
+namespace _pbi = _pb::internal;
+
 namespace city {
 namespace geo {
 namespace v2 {
-        template <typename>
-PROTOBUF_CONSTEXPR LongLatPosition::LongLatPosition(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_._has_bits_)*/ {},
-      /*decltype(_impl_._cached_size_)*/ {},
-      /*decltype(_impl_.longitude_)*/ 0,
-      /*decltype(_impl_.latitude_)*/ 0,
-      /*decltype(_impl_.z_)*/ 0,
-    } {}
+PROTOBUF_CONSTEXPR LongLatPosition::LongLatPosition(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_._has_bits_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}
+  , /*decltype(_impl_.longitude_)*/0
+  , /*decltype(_impl_.latitude_)*/0
+  , /*decltype(_impl_.z_)*/0} {}
 struct LongLatPositionDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR LongLatPositionDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR LongLatPositionDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~LongLatPositionDefaultTypeInternal() {}
   union {
     LongLatPosition _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 LongLatPositionDefaultTypeInternal _LongLatPosition_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR XYPosition::XYPosition(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_._has_bits_)*/ {},
-      /*decltype(_impl_._cached_size_)*/ {},
-      /*decltype(_impl_.x_)*/ 0,
-      /*decltype(_impl_.y_)*/ 0,
-      /*decltype(_impl_.z_)*/ 0,
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 LongLatPositionDefaultTypeInternal _LongLatPosition_default_instance_;
+PROTOBUF_CONSTEXPR XYPosition::XYPosition(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_._has_bits_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}
+  , /*decltype(_impl_.x_)*/0
+  , /*decltype(_impl_.y_)*/0
+  , /*decltype(_impl_.z_)*/0} {}
 struct XYPositionDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR XYPositionDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR XYPositionDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~XYPositionDefaultTypeInternal() {}
   union {
     XYPosition _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 XYPositionDefaultTypeInternal _XYPosition_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR LanePosition::LanePosition(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_.s_)*/ 0,
-      /*decltype(_impl_.lane_id_)*/ 0,
-      /*decltype(_impl_._cached_size_)*/ {},
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 XYPositionDefaultTypeInternal _XYPosition_default_instance_;
+PROTOBUF_CONSTEXPR LanePosition::LanePosition(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.s_)*/0
+  , /*decltype(_impl_.lane_id_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct LanePositionDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR LanePositionDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR LanePositionDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~LanePositionDefaultTypeInternal() {}
   union {
     LanePosition _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 LanePositionDefaultTypeInternal _LanePosition_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR AoiPosition::AoiPosition(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_._has_bits_)*/ {},
-      /*decltype(_impl_._cached_size_)*/ {},
-      /*decltype(_impl_.aoi_id_)*/ 0,
-      /*decltype(_impl_.poi_id_)*/ 0,
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 LanePositionDefaultTypeInternal _LanePosition_default_instance_;
+PROTOBUF_CONSTEXPR AoiPosition::AoiPosition(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_._has_bits_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}
+  , /*decltype(_impl_.aoi_id_)*/0
+  , /*decltype(_impl_.poi_id_)*/0} {}
 struct AoiPositionDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR AoiPositionDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR AoiPositionDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~AoiPositionDefaultTypeInternal() {}
   union {
     AoiPosition _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 AoiPositionDefaultTypeInternal _AoiPosition_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR Position::Position(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_._has_bits_)*/ {},
-      /*decltype(_impl_._cached_size_)*/ {},
-      /*decltype(_impl_.lane_position_)*/ nullptr,
-      /*decltype(_impl_.aoi_position_)*/ nullptr,
-      /*decltype(_impl_.longlat_position_)*/ nullptr,
-      /*decltype(_impl_.xy_position_)*/ nullptr,
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 AoiPositionDefaultTypeInternal _AoiPosition_default_instance_;
+PROTOBUF_CONSTEXPR Position::Position(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_._has_bits_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}
+  , /*decltype(_impl_.lane_position_)*/nullptr
+  , /*decltype(_impl_.aoi_position_)*/nullptr
+  , /*decltype(_impl_.longlat_position_)*/nullptr
+  , /*decltype(_impl_.xy_position_)*/nullptr} {}
 struct PositionDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR PositionDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR PositionDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~PositionDefaultTypeInternal() {}
   union {
     Position _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PositionDefaultTypeInternal _Position_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR LongLatBBox::LongLatBBox(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_.min_longitude_)*/ 0,
-      /*decltype(_impl_.min_latitude_)*/ 0,
-      /*decltype(_impl_.max_longitude_)*/ 0,
-      /*decltype(_impl_.max_latitude_)*/ 0,
-      /*decltype(_impl_._cached_size_)*/ {},
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PositionDefaultTypeInternal _Position_default_instance_;
+PROTOBUF_CONSTEXPR LongLatBBox::LongLatBBox(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.min_longitude_)*/0
+  , /*decltype(_impl_.min_latitude_)*/0
+  , /*decltype(_impl_.max_longitude_)*/0
+  , /*decltype(_impl_.max_latitude_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct LongLatBBoxDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR LongLatBBoxDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR LongLatBBoxDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~LongLatBBoxDefaultTypeInternal() {}
   union {
     LongLatBBox _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 LongLatBBoxDefaultTypeInternal _LongLatBBox_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 LongLatBBoxDefaultTypeInternal _LongLatBBox_default_instance_;
 }  // namespace v2
 }  // namespace geo
 }  // namespace city
 static ::_pb::Metadata file_level_metadata_city_2fgeo_2fv2_2fgeo_2eproto[6];
-static constexpr const ::_pb::EnumDescriptor**
-    file_level_enum_descriptors_city_2fgeo_2fv2_2fgeo_2eproto = nullptr;
-static constexpr const ::_pb::ServiceDescriptor**
-    file_level_service_descriptors_city_2fgeo_2fv2_2fgeo_2eproto = nullptr;
-const ::uint32_t TableStruct_city_2fgeo_2fv2_2fgeo_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
-    protodesc_cold) = {
-    PROTOBUF_FIELD_OFFSET(::city::geo::v2::LongLatPosition, _impl_._has_bits_),
-    PROTOBUF_FIELD_OFFSET(::city::geo::v2::LongLatPosition, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::geo::v2::LongLatPosition, _impl_.longitude_),
-    PROTOBUF_FIELD_OFFSET(::city::geo::v2::LongLatPosition, _impl_.latitude_),
-    PROTOBUF_FIELD_OFFSET(::city::geo::v2::LongLatPosition, _impl_.z_),
-    ~0u,
-    ~0u,
-    0,
-    PROTOBUF_FIELD_OFFSET(::city::geo::v2::XYPosition, _impl_._has_bits_),
-    PROTOBUF_FIELD_OFFSET(::city::geo::v2::XYPosition, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::geo::v2::XYPosition, _impl_.x_),
-    PROTOBUF_FIELD_OFFSET(::city::geo::v2::XYPosition, _impl_.y_),
-    PROTOBUF_FIELD_OFFSET(::city::geo::v2::XYPosition, _impl_.z_),
-    ~0u,
-    ~0u,
-    0,
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::geo::v2::LanePosition, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::geo::v2::LanePosition, _impl_.lane_id_),
-    PROTOBUF_FIELD_OFFSET(::city::geo::v2::LanePosition, _impl_.s_),
-    PROTOBUF_FIELD_OFFSET(::city::geo::v2::AoiPosition, _impl_._has_bits_),
-    PROTOBUF_FIELD_OFFSET(::city::geo::v2::AoiPosition, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::geo::v2::AoiPosition, _impl_.aoi_id_),
-    PROTOBUF_FIELD_OFFSET(::city::geo::v2::AoiPosition, _impl_.poi_id_),
-    ~0u,
-    0,
-    PROTOBUF_FIELD_OFFSET(::city::geo::v2::Position, _impl_._has_bits_),
-    PROTOBUF_FIELD_OFFSET(::city::geo::v2::Position, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::geo::v2::Position, _impl_.lane_position_),
-    PROTOBUF_FIELD_OFFSET(::city::geo::v2::Position, _impl_.aoi_position_),
-    PROTOBUF_FIELD_OFFSET(::city::geo::v2::Position, _impl_.longlat_position_),
-    PROTOBUF_FIELD_OFFSET(::city::geo::v2::Position, _impl_.xy_position_),
-    0,
-    1,
-    2,
-    3,
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::geo::v2::LongLatBBox, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::geo::v2::LongLatBBox, _impl_.min_longitude_),
-    PROTOBUF_FIELD_OFFSET(::city::geo::v2::LongLatBBox, _impl_.min_latitude_),
-    PROTOBUF_FIELD_OFFSET(::city::geo::v2::LongLatBBox, _impl_.max_longitude_),
-    PROTOBUF_FIELD_OFFSET(::city::geo::v2::LongLatBBox, _impl_.max_latitude_),
-};
+static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_city_2fgeo_2fv2_2fgeo_2eproto = nullptr;
+static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_city_2fgeo_2fv2_2fgeo_2eproto = nullptr;
 
-static const ::_pbi::MigrationSchema
-    schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-        {0, 11, -1, sizeof(::city::geo::v2::LongLatPosition)},
-        {14, 25, -1, sizeof(::city::geo::v2::XYPosition)},
-        {28, -1, -1, sizeof(::city::geo::v2::LanePosition)},
-        {38, 48, -1, sizeof(::city::geo::v2::AoiPosition)},
-        {50, 62, -1, sizeof(::city::geo::v2::Position)},
-        {66, -1, -1, sizeof(::city::geo::v2::LongLatBBox)},
+const uint32_t TableStruct_city_2fgeo_2fv2_2fgeo_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  PROTOBUF_FIELD_OFFSET(::city::geo::v2::LongLatPosition, _impl_._has_bits_),
+  PROTOBUF_FIELD_OFFSET(::city::geo::v2::LongLatPosition, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::geo::v2::LongLatPosition, _impl_.longitude_),
+  PROTOBUF_FIELD_OFFSET(::city::geo::v2::LongLatPosition, _impl_.latitude_),
+  PROTOBUF_FIELD_OFFSET(::city::geo::v2::LongLatPosition, _impl_.z_),
+  ~0u,
+  ~0u,
+  0,
+  PROTOBUF_FIELD_OFFSET(::city::geo::v2::XYPosition, _impl_._has_bits_),
+  PROTOBUF_FIELD_OFFSET(::city::geo::v2::XYPosition, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::geo::v2::XYPosition, _impl_.x_),
+  PROTOBUF_FIELD_OFFSET(::city::geo::v2::XYPosition, _impl_.y_),
+  PROTOBUF_FIELD_OFFSET(::city::geo::v2::XYPosition, _impl_.z_),
+  ~0u,
+  ~0u,
+  0,
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::geo::v2::LanePosition, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::geo::v2::LanePosition, _impl_.lane_id_),
+  PROTOBUF_FIELD_OFFSET(::city::geo::v2::LanePosition, _impl_.s_),
+  PROTOBUF_FIELD_OFFSET(::city::geo::v2::AoiPosition, _impl_._has_bits_),
+  PROTOBUF_FIELD_OFFSET(::city::geo::v2::AoiPosition, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::geo::v2::AoiPosition, _impl_.aoi_id_),
+  PROTOBUF_FIELD_OFFSET(::city::geo::v2::AoiPosition, _impl_.poi_id_),
+  ~0u,
+  0,
+  PROTOBUF_FIELD_OFFSET(::city::geo::v2::Position, _impl_._has_bits_),
+  PROTOBUF_FIELD_OFFSET(::city::geo::v2::Position, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::geo::v2::Position, _impl_.lane_position_),
+  PROTOBUF_FIELD_OFFSET(::city::geo::v2::Position, _impl_.aoi_position_),
+  PROTOBUF_FIELD_OFFSET(::city::geo::v2::Position, _impl_.longlat_position_),
+  PROTOBUF_FIELD_OFFSET(::city::geo::v2::Position, _impl_.xy_position_),
+  0,
+  1,
+  2,
+  3,
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::geo::v2::LongLatBBox, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::geo::v2::LongLatBBox, _impl_.min_longitude_),
+  PROTOBUF_FIELD_OFFSET(::city::geo::v2::LongLatBBox, _impl_.min_latitude_),
+  PROTOBUF_FIELD_OFFSET(::city::geo::v2::LongLatBBox, _impl_.max_longitude_),
+  PROTOBUF_FIELD_OFFSET(::city::geo::v2::LongLatBBox, _impl_.max_latitude_),
+};
+static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  { 0, 9, -1, sizeof(::city::geo::v2::LongLatPosition)},
+  { 12, 21, -1, sizeof(::city::geo::v2::XYPosition)},
+  { 24, -1, -1, sizeof(::city::geo::v2::LanePosition)},
+  { 32, 40, -1, sizeof(::city::geo::v2::AoiPosition)},
+  { 42, 52, -1, sizeof(::city::geo::v2::Position)},
+  { 56, -1, -1, sizeof(::city::geo::v2::LongLatBBox)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
-    &::city::geo::v2::_LongLatPosition_default_instance_._instance,
-    &::city::geo::v2::_XYPosition_default_instance_._instance,
-    &::city::geo::v2::_LanePosition_default_instance_._instance,
-    &::city::geo::v2::_AoiPosition_default_instance_._instance,
-    &::city::geo::v2::_Position_default_instance_._instance,
-    &::city::geo::v2::_LongLatBBox_default_instance_._instance,
-};
-const char descriptor_table_protodef_city_2fgeo_2fv2_2fgeo_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-    "\n\025city/geo/v2/geo.proto\022\013city.geo.v2\"d\n\017"
-    "LongLatPosition\022\034\n\tlongitude\030\001 \001(\001R\tlong"
-    "itude\022\032\n\010latitude\030\002 \001(\001R\010latitude\022\021\n\001z\030\003"
-    " \001(\001H\000R\001z\210\001\001B\004\n\002_z\"A\n\nXYPosition\022\014\n\001x\030\001 "
-    "\001(\001R\001x\022\014\n\001y\030\002 \001(\001R\001y\022\021\n\001z\030\003 \001(\001H\000R\001z\210\001\001B"
-    "\004\n\002_z\"5\n\014LanePosition\022\027\n\007lane_id\030\001 \001(\005R\006"
-    "laneId\022\014\n\001s\030\002 \001(\001R\001s\"K\n\013AoiPosition\022\025\n\006a"
-    "oi_id\030\001 \001(\005R\005aoiId\022\032\n\006poi_id\030\002 \001(\005H\000R\005po"
-    "iId\210\001\001B\t\n\007_poi_id\"\346\002\n\010Position\022C\n\rlane_p"
-    "osition\030\001 \001(\0132\031.city.geo.v2.LanePosition"
-    "H\000R\014lanePosition\210\001\001\022@\n\014aoi_position\030\002 \001("
-    "\0132\030.city.geo.v2.AoiPositionH\001R\013aoiPositi"
-    "on\210\001\001\022L\n\020longlat_position\030\003 \001(\0132\034.city.g"
-    "eo.v2.LongLatPositionH\002R\017longlatPosition"
-    "\210\001\001\022=\n\013xy_position\030\004 \001(\0132\027.city.geo.v2.X"
-    "YPositionH\003R\nxyPosition\210\001\001B\020\n\016_lane_posi"
-    "tionB\017\n\r_aoi_positionB\023\n\021_longlat_positi"
-    "onB\016\n\014_xy_position\"\235\001\n\013LongLatBBox\022#\n\rmi"
-    "n_longitude\030\001 \001(\001R\014minLongitude\022!\n\014min_l"
-    "atitude\030\002 \001(\001R\013minLatitude\022#\n\rmax_longit"
-    "ude\030\003 \001(\001R\014maxLongitude\022!\n\014max_latitude\030"
-    "\004 \001(\001R\013maxLatitudeB\231\001\n\017com.city.geo.v2B\010"
-    "GeoProtoP\001Z.git.fiblab.net/sim/protos/go"
-    "/city/geo/v2;geov2\242\002\003CGX\252\002\013City.Geo.V2\312\002"
-    "\013City\\Geo\\V2\342\002\027City\\Geo\\V2\\GPBMetadata\352\002"
-    "\rCity::Geo::V2b\006proto3"
-};
-static ::absl::once_flag descriptor_table_city_2fgeo_2fv2_2fgeo_2eproto_once;
-const ::_pbi::DescriptorTable descriptor_table_city_2fgeo_2fv2_2fgeo_2eproto = {
-    false,
-    false,
-    1022,
-    descriptor_table_protodef_city_2fgeo_2fv2_2fgeo_2eproto,
-    "city/geo/v2/geo.proto",
-    &descriptor_table_city_2fgeo_2fv2_2fgeo_2eproto_once,
-    nullptr,
-    0,
-    6,
-    schemas,
-    file_default_instances,
-    TableStruct_city_2fgeo_2fv2_2fgeo_2eproto::offsets,
-    file_level_metadata_city_2fgeo_2fv2_2fgeo_2eproto,
-    file_level_enum_descriptors_city_2fgeo_2fv2_2fgeo_2eproto,
-    file_level_service_descriptors_city_2fgeo_2fv2_2fgeo_2eproto,
+  &::city::geo::v2::_LongLatPosition_default_instance_._instance,
+  &::city::geo::v2::_XYPosition_default_instance_._instance,
+  &::city::geo::v2::_LanePosition_default_instance_._instance,
+  &::city::geo::v2::_AoiPosition_default_instance_._instance,
+  &::city::geo::v2::_Position_default_instance_._instance,
+  &::city::geo::v2::_LongLatBBox_default_instance_._instance,
 };
 
-// This function exists to be marked as weak.
-// It can significantly speed up compilation by breaking up LLVM's SCC
-// in the .pb.cc translation units. Large translation units see a
-// reduction of more than 35% of walltime for optimized builds. Without
-// the weak attribute all the messages in the file, including all the
-// vtables and everything they use become part of the same SCC through
-// a cycle like:
-// GetMetadata -> descriptor table -> default instances ->
-//   vtables -> GetMetadata
-// By adding a weak function here we break the connection from the
-// individual vtables back into the descriptor table.
+const char descriptor_table_protodef_city_2fgeo_2fv2_2fgeo_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
+  "\n\025city/geo/v2/geo.proto\022\013city.geo.v2\"d\n\017"
+  "LongLatPosition\022\034\n\tlongitude\030\001 \001(\001R\tlong"
+  "itude\022\032\n\010latitude\030\002 \001(\001R\010latitude\022\021\n\001z\030\003"
+  " \001(\001H\000R\001z\210\001\001B\004\n\002_z\"A\n\nXYPosition\022\014\n\001x\030\001 "
+  "\001(\001R\001x\022\014\n\001y\030\002 \001(\001R\001y\022\021\n\001z\030\003 \001(\001H\000R\001z\210\001\001B"
+  "\004\n\002_z\"5\n\014LanePosition\022\027\n\007lane_id\030\001 \001(\005R\006"
+  "laneId\022\014\n\001s\030\002 \001(\001R\001s\"K\n\013AoiPosition\022\025\n\006a"
+  "oi_id\030\001 \001(\005R\005aoiId\022\032\n\006poi_id\030\002 \001(\005H\000R\005po"
+  "iId\210\001\001B\t\n\007_poi_id\"\346\002\n\010Position\022C\n\rlane_p"
+  "osition\030\001 \001(\0132\031.city.geo.v2.LanePosition"
+  "H\000R\014lanePosition\210\001\001\022@\n\014aoi_position\030\002 \001("
+  "\0132\030.city.geo.v2.AoiPositionH\001R\013aoiPositi"
+  "on\210\001\001\022L\n\020longlat_position\030\003 \001(\0132\034.city.g"
+  "eo.v2.LongLatPositionH\002R\017longlatPosition"
+  "\210\001\001\022=\n\013xy_position\030\004 \001(\0132\027.city.geo.v2.X"
+  "YPositionH\003R\nxyPosition\210\001\001B\020\n\016_lane_posi"
+  "tionB\017\n\r_aoi_positionB\023\n\021_longlat_positi"
+  "onB\016\n\014_xy_position\"\235\001\n\013LongLatBBox\022#\n\rmi"
+  "n_longitude\030\001 \001(\001R\014minLongitude\022!\n\014min_l"
+  "atitude\030\002 \001(\001R\013minLatitude\022#\n\rmax_longit"
+  "ude\030\003 \001(\001R\014maxLongitude\022!\n\014max_latitude\030"
+  "\004 \001(\001R\013maxLatitudeB\231\001\n\017com.city.geo.v2B\010"
+  "GeoProtoP\001Z.git.fiblab.net/sim/protos/go"
+  "/city/geo/v2;geov2\242\002\003CGX\252\002\013City.Geo.V2\312\002"
+  "\013City\\Geo\\V2\342\002\027City\\Geo\\V2\\GPBMetadata\352\002"
+  "\rCity::Geo::V2b\006proto3"
+  ;
+static ::_pbi::once_flag descriptor_table_city_2fgeo_2fv2_2fgeo_2eproto_once;
+const ::_pbi::DescriptorTable descriptor_table_city_2fgeo_2fv2_2fgeo_2eproto = {
+    false, false, 1022, descriptor_table_protodef_city_2fgeo_2fv2_2fgeo_2eproto,
+    "city/geo/v2/geo.proto",
+    &descriptor_table_city_2fgeo_2fv2_2fgeo_2eproto_once, nullptr, 0, 6,
+    schemas, file_default_instances, TableStruct_city_2fgeo_2fv2_2fgeo_2eproto::offsets,
+    file_level_metadata_city_2fgeo_2fv2_2fgeo_2eproto, file_level_enum_descriptors_city_2fgeo_2fv2_2fgeo_2eproto,
+    file_level_service_descriptors_city_2fgeo_2fv2_2fgeo_2eproto,
+};
 PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_city_2fgeo_2fv2_2fgeo_2eproto_getter() {
   return &descriptor_table_city_2fgeo_2fv2_2fgeo_2eproto;
 }
+
 // Force running AddDescriptors() at dynamic initialization time.
-PROTOBUF_ATTRIBUTE_INIT_PRIORITY2
-static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_city_2fgeo_2fv2_2fgeo_2eproto(&descriptor_table_city_2fgeo_2fv2_2fgeo_2eproto);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_city_2fgeo_2fv2_2fgeo_2eproto(&descriptor_table_city_2fgeo_2fv2_2fgeo_2eproto);
 namespace city {
 namespace geo {
 namespace v2 {
+
 // ===================================================================
 
 class LongLatPosition::_Internal {
  public:
   using HasBits = decltype(std::declval<LongLatPosition>()._impl_._has_bits_);
-  static constexpr ::int32_t kHasBitsOffset =
-    8 * PROTOBUF_FIELD_OFFSET(LongLatPosition, _impl_._has_bits_);
   static void set_has_z(HasBits* has_bits) {
     (*has_bits)[0] |= 1u;
   }
 };
 
-LongLatPosition::LongLatPosition(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+LongLatPosition::LongLatPosition(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.geo.v2.LongLatPosition)
 }
 LongLatPosition::LongLatPosition(const LongLatPosition& from)
-    : ::google::protobuf::Message(), _impl_(from._impl_) {
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  LongLatPosition* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){from._impl_._has_bits_}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.longitude_){}
+    , decltype(_impl_.latitude_){}
+    , decltype(_impl_.z_){}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&_impl_.longitude_, &from._impl_.longitude_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.z_) -
+    reinterpret_cast<char*>(&_impl_.longitude_)) + sizeof(_impl_.z_));
   // @@protoc_insertion_point(copy_constructor:city.geo.v2.LongLatPosition)
 }
-inline void LongLatPosition::SharedCtor(::_pb::Arena* arena) {
+
+inline void LongLatPosition::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){},
-      /*decltype(_impl_._cached_size_)*/ {},
-      decltype(_impl_.longitude_){0},
-      decltype(_impl_.latitude_){0},
-      decltype(_impl_.z_){0},
+      decltype(_impl_._has_bits_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.longitude_){0}
+    , decltype(_impl_.latitude_){0}
+    , decltype(_impl_.z_){0}
   };
 }
+
 LongLatPosition::~LongLatPosition() {
   // @@protoc_insertion_point(destructor:city.geo.v2.LongLatPosition)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void LongLatPosition::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
+
 void LongLatPosition::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void LongLatPosition::Clear() {
+void LongLatPosition::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.geo.v2.LongLatPosition)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&_impl_.longitude_, 0, static_cast<::size_t>(
+  ::memset(&_impl_.longitude_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_impl_.latitude_) -
       reinterpret_cast<char*>(&_impl_.longitude_)) + sizeof(_impl_.latitude_));
   _impl_.z_ = 0;
   _impl_._has_bits_.Clear();
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* LongLatPosition::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* LongLatPosition::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  _Internal::HasBits has_bits{};
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // double longitude = 1 [json_name = "longitude"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 9)) {
+          _impl_.longitude_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // double latitude = 2 [json_name = "latitude"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 17)) {
+          _impl_.latitude_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional double z = 3 [json_name = "z"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 25)) {
+          _Internal::set_has_z(&has_bits);
+          _impl_.z_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  _impl_._has_bits_.Or(has_bits);
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<2, 3, 0, 0, 2> LongLatPosition::_table_ = {
-  {
-    PROTOBUF_FIELD_OFFSET(LongLatPosition, _impl_._has_bits_),
-    0, // no _extensions_
-    3, 24,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967288,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    3,  // num_field_entries
-    0,  // num_aux_entries
-    offsetof(decltype(_table_), field_names),  // no aux_entries
-    &_LongLatPosition_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    {::_pbi::TcParser::MiniParse, {}},
-    // double longitude = 1 [json_name = "longitude"];
-    {::_pbi::TcParser::FastF64S1,
-     {9, 63, 0, PROTOBUF_FIELD_OFFSET(LongLatPosition, _impl_.longitude_)}},
-    // double latitude = 2 [json_name = "latitude"];
-    {::_pbi::TcParser::FastF64S1,
-     {17, 63, 0, PROTOBUF_FIELD_OFFSET(LongLatPosition, _impl_.latitude_)}},
-    // optional double z = 3 [json_name = "z"];
-    {::_pbi::TcParser::FastF64S1,
-     {25, 0, 0, PROTOBUF_FIELD_OFFSET(LongLatPosition, _impl_.z_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // double longitude = 1 [json_name = "longitude"];
-    {PROTOBUF_FIELD_OFFSET(LongLatPosition, _impl_.longitude_), -1, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-    // double latitude = 2 [json_name = "latitude"];
-    {PROTOBUF_FIELD_OFFSET(LongLatPosition, _impl_.latitude_), -1, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-    // optional double z = 3 [json_name = "z"];
-    {PROTOBUF_FIELD_OFFSET(LongLatPosition, _impl_.z_), _Internal::kHasBitsOffset + 0, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kDouble)},
-  }},
-  // no aux_entries
-  {{
-  }},
-};
-
-::uint8_t* LongLatPosition::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* LongLatPosition::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.geo.v2.LongLatPosition)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // double longitude = 1 [json_name = "longitude"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_longitude = this->_internal_longitude();
-  ::uint64_t raw_longitude;
+  uint64_t raw_longitude;
   memcpy(&raw_longitude, &tmp_longitude, sizeof(tmp_longitude));
   if (raw_longitude != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        1, this->_internal_longitude(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(1, this->_internal_longitude(), target);
   }
 
   // double latitude = 2 [json_name = "latitude"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_latitude = this->_internal_latitude();
-  ::uint64_t raw_latitude;
+  uint64_t raw_latitude;
   memcpy(&raw_latitude, &tmp_latitude, sizeof(tmp_latitude));
   if (raw_latitude != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        2, this->_internal_latitude(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(2, this->_internal_latitude(), target);
   }
 
-  cached_has_bits = _impl_._has_bits_[0];
   // optional double z = 3 [json_name = "z"];
-  if (cached_has_bits & 0x00000001u) {
+  if (_internal_has_z()) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        3, this->_internal_z(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(3, this->_internal_z(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.geo.v2.LongLatPosition)
   return target;
 }
 
-::size_t LongLatPosition::ByteSizeLong() const {
+size_t LongLatPosition::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.geo.v2.LongLatPosition)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // double longitude = 1 [json_name = "longitude"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_longitude = this->_internal_longitude();
-  ::uint64_t raw_longitude;
+  uint64_t raw_longitude;
   memcpy(&raw_longitude, &tmp_longitude, sizeof(tmp_longitude));
   if (raw_longitude != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   // double latitude = 2 [json_name = "latitude"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_latitude = this->_internal_latitude();
-  ::uint64_t raw_latitude;
+  uint64_t raw_latitude;
   memcpy(&raw_latitude, &tmp_latitude, sizeof(tmp_latitude));
   if (raw_latitude != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   // optional double z = 3 [json_name = "z"];
   cached_has_bits = _impl_._has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData LongLatPosition::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData LongLatPosition::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     LongLatPosition::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*LongLatPosition::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*LongLatPosition::GetClassData() const { return &_class_data_; }
 
 
-void LongLatPosition::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void LongLatPosition::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<LongLatPosition*>(&to_msg);
   auto& from = static_cast<const LongLatPosition&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.geo.v2.LongLatPosition)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_longitude = from._internal_longitude();
-  ::uint64_t raw_longitude;
+  uint64_t raw_longitude;
   memcpy(&raw_longitude, &tmp_longitude, sizeof(tmp_longitude));
   if (raw_longitude != 0) {
     _this->_internal_set_longitude(from._internal_longitude());
   }
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_latitude = from._internal_latitude();
-  ::uint64_t raw_latitude;
+  uint64_t raw_latitude;
   memcpy(&raw_latitude, &tmp_latitude, sizeof(tmp_latitude));
   if (raw_latitude != 0) {
     _this->_internal_set_latitude(from._internal_latitude());
   }
-  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+  if (from._internal_has_z()) {
     _this->_internal_set_z(from._internal_z());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void LongLatPosition::CopyFrom(const LongLatPosition& from) {
@@ -548,7 +507,7 @@ void LongLatPosition::CopyFrom(const LongLatPosition& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool LongLatPosition::IsInitialized() const {
+bool LongLatPosition::IsInitialized() const {
   return true;
 }
 
@@ -556,7 +515,7 @@ void LongLatPosition::InternalSwap(LongLatPosition* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
-  ::google::protobuf::internal::memswap<
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(LongLatPosition, _impl_.z_)
       + sizeof(LongLatPosition::_impl_.z_)
       - PROTOBUF_FIELD_OFFSET(LongLatPosition, _impl_.longitude_)>(
@@ -564,240 +523,253 @@ void LongLatPosition::InternalSwap(LongLatPosition* other) {
           reinterpret_cast<char*>(&other->_impl_.longitude_));
 }
 
-::google::protobuf::Metadata LongLatPosition::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata LongLatPosition::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fgeo_2fv2_2fgeo_2eproto_getter, &descriptor_table_city_2fgeo_2fv2_2fgeo_2eproto_once,
       file_level_metadata_city_2fgeo_2fv2_2fgeo_2eproto[0]);
 }
+
 // ===================================================================
 
 class XYPosition::_Internal {
  public:
   using HasBits = decltype(std::declval<XYPosition>()._impl_._has_bits_);
-  static constexpr ::int32_t kHasBitsOffset =
-    8 * PROTOBUF_FIELD_OFFSET(XYPosition, _impl_._has_bits_);
   static void set_has_z(HasBits* has_bits) {
     (*has_bits)[0] |= 1u;
   }
 };
 
-XYPosition::XYPosition(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+XYPosition::XYPosition(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.geo.v2.XYPosition)
 }
 XYPosition::XYPosition(const XYPosition& from)
-    : ::google::protobuf::Message(), _impl_(from._impl_) {
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  XYPosition* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){from._impl_._has_bits_}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.x_){}
+    , decltype(_impl_.y_){}
+    , decltype(_impl_.z_){}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&_impl_.x_, &from._impl_.x_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.z_) -
+    reinterpret_cast<char*>(&_impl_.x_)) + sizeof(_impl_.z_));
   // @@protoc_insertion_point(copy_constructor:city.geo.v2.XYPosition)
 }
-inline void XYPosition::SharedCtor(::_pb::Arena* arena) {
+
+inline void XYPosition::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){},
-      /*decltype(_impl_._cached_size_)*/ {},
-      decltype(_impl_.x_){0},
-      decltype(_impl_.y_){0},
-      decltype(_impl_.z_){0},
+      decltype(_impl_._has_bits_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.x_){0}
+    , decltype(_impl_.y_){0}
+    , decltype(_impl_.z_){0}
   };
 }
+
 XYPosition::~XYPosition() {
   // @@protoc_insertion_point(destructor:city.geo.v2.XYPosition)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void XYPosition::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
+
 void XYPosition::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void XYPosition::Clear() {
+void XYPosition::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.geo.v2.XYPosition)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&_impl_.x_, 0, static_cast<::size_t>(
+  ::memset(&_impl_.x_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_impl_.y_) -
       reinterpret_cast<char*>(&_impl_.x_)) + sizeof(_impl_.y_));
   _impl_.z_ = 0;
   _impl_._has_bits_.Clear();
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* XYPosition::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* XYPosition::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  _Internal::HasBits has_bits{};
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // double x = 1 [json_name = "x"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 9)) {
+          _impl_.x_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // double y = 2 [json_name = "y"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 17)) {
+          _impl_.y_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional double z = 3 [json_name = "z"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 25)) {
+          _Internal::set_has_z(&has_bits);
+          _impl_.z_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  _impl_._has_bits_.Or(has_bits);
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<2, 3, 0, 0, 2> XYPosition::_table_ = {
-  {
-    PROTOBUF_FIELD_OFFSET(XYPosition, _impl_._has_bits_),
-    0, // no _extensions_
-    3, 24,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967288,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    3,  // num_field_entries
-    0,  // num_aux_entries
-    offsetof(decltype(_table_), field_names),  // no aux_entries
-    &_XYPosition_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    {::_pbi::TcParser::MiniParse, {}},
-    // double x = 1 [json_name = "x"];
-    {::_pbi::TcParser::FastF64S1,
-     {9, 63, 0, PROTOBUF_FIELD_OFFSET(XYPosition, _impl_.x_)}},
-    // double y = 2 [json_name = "y"];
-    {::_pbi::TcParser::FastF64S1,
-     {17, 63, 0, PROTOBUF_FIELD_OFFSET(XYPosition, _impl_.y_)}},
-    // optional double z = 3 [json_name = "z"];
-    {::_pbi::TcParser::FastF64S1,
-     {25, 0, 0, PROTOBUF_FIELD_OFFSET(XYPosition, _impl_.z_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // double x = 1 [json_name = "x"];
-    {PROTOBUF_FIELD_OFFSET(XYPosition, _impl_.x_), -1, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-    // double y = 2 [json_name = "y"];
-    {PROTOBUF_FIELD_OFFSET(XYPosition, _impl_.y_), -1, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-    // optional double z = 3 [json_name = "z"];
-    {PROTOBUF_FIELD_OFFSET(XYPosition, _impl_.z_), _Internal::kHasBitsOffset + 0, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kDouble)},
-  }},
-  // no aux_entries
-  {{
-  }},
-};
-
-::uint8_t* XYPosition::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* XYPosition::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.geo.v2.XYPosition)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // double x = 1 [json_name = "x"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_x = this->_internal_x();
-  ::uint64_t raw_x;
+  uint64_t raw_x;
   memcpy(&raw_x, &tmp_x, sizeof(tmp_x));
   if (raw_x != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        1, this->_internal_x(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(1, this->_internal_x(), target);
   }
 
   // double y = 2 [json_name = "y"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_y = this->_internal_y();
-  ::uint64_t raw_y;
+  uint64_t raw_y;
   memcpy(&raw_y, &tmp_y, sizeof(tmp_y));
   if (raw_y != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        2, this->_internal_y(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(2, this->_internal_y(), target);
   }
 
-  cached_has_bits = _impl_._has_bits_[0];
   // optional double z = 3 [json_name = "z"];
-  if (cached_has_bits & 0x00000001u) {
+  if (_internal_has_z()) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        3, this->_internal_z(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(3, this->_internal_z(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.geo.v2.XYPosition)
   return target;
 }
 
-::size_t XYPosition::ByteSizeLong() const {
+size_t XYPosition::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.geo.v2.XYPosition)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // double x = 1 [json_name = "x"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_x = this->_internal_x();
-  ::uint64_t raw_x;
+  uint64_t raw_x;
   memcpy(&raw_x, &tmp_x, sizeof(tmp_x));
   if (raw_x != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   // double y = 2 [json_name = "y"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_y = this->_internal_y();
-  ::uint64_t raw_y;
+  uint64_t raw_y;
   memcpy(&raw_y, &tmp_y, sizeof(tmp_y));
   if (raw_y != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   // optional double z = 3 [json_name = "z"];
   cached_has_bits = _impl_._has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData XYPosition::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData XYPosition::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     XYPosition::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*XYPosition::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*XYPosition::GetClassData() const { return &_class_data_; }
 
 
-void XYPosition::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void XYPosition::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<XYPosition*>(&to_msg);
   auto& from = static_cast<const XYPosition&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.geo.v2.XYPosition)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_x = from._internal_x();
-  ::uint64_t raw_x;
+  uint64_t raw_x;
   memcpy(&raw_x, &tmp_x, sizeof(tmp_x));
   if (raw_x != 0) {
     _this->_internal_set_x(from._internal_x());
   }
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_y = from._internal_y();
-  ::uint64_t raw_y;
+  uint64_t raw_y;
   memcpy(&raw_y, &tmp_y, sizeof(tmp_y));
   if (raw_y != 0) {
     _this->_internal_set_y(from._internal_y());
   }
-  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+  if (from._internal_has_z()) {
     _this->_internal_set_z(from._internal_z());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void XYPosition::CopyFrom(const XYPosition& from) {
@@ -807,7 +779,7 @@ void XYPosition::CopyFrom(const XYPosition& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool XYPosition::IsInitialized() const {
+bool XYPosition::IsInitialized() const {
   return true;
 }
 
@@ -815,7 +787,7 @@ void XYPosition::InternalSwap(XYPosition* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
-  ::google::protobuf::internal::memswap<
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(XYPosition, _impl_.z_)
       + sizeof(XYPosition::_impl_.z_)
       - PROTOBUF_FIELD_OFFSET(XYPosition, _impl_.x_)>(
@@ -823,184 +795,197 @@ void XYPosition::InternalSwap(XYPosition* other) {
           reinterpret_cast<char*>(&other->_impl_.x_));
 }
 
-::google::protobuf::Metadata XYPosition::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata XYPosition::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fgeo_2fv2_2fgeo_2eproto_getter, &descriptor_table_city_2fgeo_2fv2_2fgeo_2eproto_once,
       file_level_metadata_city_2fgeo_2fv2_2fgeo_2eproto[1]);
 }
+
 // ===================================================================
 
 class LanePosition::_Internal {
  public:
 };
 
-LanePosition::LanePosition(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+LanePosition::LanePosition(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.geo.v2.LanePosition)
 }
 LanePosition::LanePosition(const LanePosition& from)
-    : ::google::protobuf::Message(), _impl_(from._impl_) {
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  LanePosition* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.s_){}
+    , decltype(_impl_.lane_id_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&_impl_.s_, &from._impl_.s_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.lane_id_) -
+    reinterpret_cast<char*>(&_impl_.s_)) + sizeof(_impl_.lane_id_));
   // @@protoc_insertion_point(copy_constructor:city.geo.v2.LanePosition)
 }
-inline void LanePosition::SharedCtor(::_pb::Arena* arena) {
+
+inline void LanePosition::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.s_){0},
-      decltype(_impl_.lane_id_){0},
-      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.s_){0}
+    , decltype(_impl_.lane_id_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 LanePosition::~LanePosition() {
   // @@protoc_insertion_point(destructor:city.geo.v2.LanePosition)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void LanePosition::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
+
 void LanePosition::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void LanePosition::Clear() {
+void LanePosition::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.geo.v2.LanePosition)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&_impl_.s_, 0, static_cast<::size_t>(
+  ::memset(&_impl_.s_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_impl_.lane_id_) -
       reinterpret_cast<char*>(&_impl_.s_)) + sizeof(_impl_.lane_id_));
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* LanePosition::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* LanePosition::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 lane_id = 1 [json_name = "laneId"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.lane_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // double s = 2 [json_name = "s"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 17)) {
+          _impl_.s_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<1, 2, 0, 0, 2> LanePosition::_table_ = {
-  {
-    0,  // no _has_bits_
-    0, // no _extensions_
-    2, 8,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967292,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    2,  // num_field_entries
-    0,  // num_aux_entries
-    offsetof(decltype(_table_), field_names),  // no aux_entries
-    &_LanePosition_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    // double s = 2 [json_name = "s"];
-    {::_pbi::TcParser::FastF64S1,
-     {17, 63, 0, PROTOBUF_FIELD_OFFSET(LanePosition, _impl_.s_)}},
-    // int32 lane_id = 1 [json_name = "laneId"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(LanePosition, _impl_.lane_id_), 63>(),
-     {8, 63, 0, PROTOBUF_FIELD_OFFSET(LanePosition, _impl_.lane_id_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // int32 lane_id = 1 [json_name = "laneId"];
-    {PROTOBUF_FIELD_OFFSET(LanePosition, _impl_.lane_id_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-    // double s = 2 [json_name = "s"];
-    {PROTOBUF_FIELD_OFFSET(LanePosition, _impl_.s_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-  }},
-  // no aux_entries
-  {{
-  }},
-};
-
-::uint8_t* LanePosition::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* LanePosition::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.geo.v2.LanePosition)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // int32 lane_id = 1 [json_name = "laneId"];
   if (this->_internal_lane_id() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<1>(
-            stream, this->_internal_lane_id(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_lane_id(), target);
   }
 
   // double s = 2 [json_name = "s"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_s = this->_internal_s();
-  ::uint64_t raw_s;
+  uint64_t raw_s;
   memcpy(&raw_s, &tmp_s, sizeof(tmp_s));
   if (raw_s != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        2, this->_internal_s(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(2, this->_internal_s(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.geo.v2.LanePosition)
   return target;
 }
 
-::size_t LanePosition::ByteSizeLong() const {
+size_t LanePosition::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.geo.v2.LanePosition)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // double s = 2 [json_name = "s"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_s = this->_internal_s();
-  ::uint64_t raw_s;
+  uint64_t raw_s;
   memcpy(&raw_s, &tmp_s, sizeof(tmp_s));
   if (raw_s != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   // int32 lane_id = 1 [json_name = "laneId"];
   if (this->_internal_lane_id() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_lane_id());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_lane_id());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData LanePosition::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData LanePosition::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     LanePosition::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*LanePosition::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*LanePosition::GetClassData() const { return &_class_data_; }
 
 
-void LanePosition::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void LanePosition::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<LanePosition*>(&to_msg);
   auto& from = static_cast<const LanePosition&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.geo.v2.LanePosition)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_s = from._internal_s();
-  ::uint64_t raw_s;
+  uint64_t raw_s;
   memcpy(&raw_s, &tmp_s, sizeof(tmp_s));
   if (raw_s != 0) {
     _this->_internal_set_s(from._internal_s());
@@ -1008,7 +993,7 @@ void LanePosition::MergeImpl(::google::protobuf::Message& to_msg, const ::google
   if (from._internal_lane_id() != 0) {
     _this->_internal_set_lane_id(from._internal_lane_id());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void LanePosition::CopyFrom(const LanePosition& from) {
@@ -1018,14 +1003,14 @@ void LanePosition::CopyFrom(const LanePosition& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool LanePosition::IsInitialized() const {
+bool LanePosition::IsInitialized() const {
   return true;
 }
 
 void LanePosition::InternalSwap(LanePosition* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::google::protobuf::internal::memswap<
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(LanePosition, _impl_.lane_id_)
       + sizeof(LanePosition::_impl_.lane_id_)
       - PROTOBUF_FIELD_OFFSET(LanePosition, _impl_.s_)>(
@@ -1033,187 +1018,203 @@ void LanePosition::InternalSwap(LanePosition* other) {
           reinterpret_cast<char*>(&other->_impl_.s_));
 }
 
-::google::protobuf::Metadata LanePosition::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata LanePosition::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fgeo_2fv2_2fgeo_2eproto_getter, &descriptor_table_city_2fgeo_2fv2_2fgeo_2eproto_once,
       file_level_metadata_city_2fgeo_2fv2_2fgeo_2eproto[2]);
 }
+
 // ===================================================================
 
 class AoiPosition::_Internal {
  public:
   using HasBits = decltype(std::declval<AoiPosition>()._impl_._has_bits_);
-  static constexpr ::int32_t kHasBitsOffset =
-    8 * PROTOBUF_FIELD_OFFSET(AoiPosition, _impl_._has_bits_);
   static void set_has_poi_id(HasBits* has_bits) {
     (*has_bits)[0] |= 1u;
   }
 };
 
-AoiPosition::AoiPosition(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+AoiPosition::AoiPosition(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.geo.v2.AoiPosition)
 }
 AoiPosition::AoiPosition(const AoiPosition& from)
-    : ::google::protobuf::Message(), _impl_(from._impl_) {
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  AoiPosition* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){from._impl_._has_bits_}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.aoi_id_){}
+    , decltype(_impl_.poi_id_){}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&_impl_.aoi_id_, &from._impl_.aoi_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.poi_id_) -
+    reinterpret_cast<char*>(&_impl_.aoi_id_)) + sizeof(_impl_.poi_id_));
   // @@protoc_insertion_point(copy_constructor:city.geo.v2.AoiPosition)
 }
-inline void AoiPosition::SharedCtor(::_pb::Arena* arena) {
+
+inline void AoiPosition::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){},
-      /*decltype(_impl_._cached_size_)*/ {},
-      decltype(_impl_.aoi_id_){0},
-      decltype(_impl_.poi_id_){0},
+      decltype(_impl_._has_bits_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.aoi_id_){0}
+    , decltype(_impl_.poi_id_){0}
   };
 }
+
 AoiPosition::~AoiPosition() {
   // @@protoc_insertion_point(destructor:city.geo.v2.AoiPosition)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void AoiPosition::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
+
 void AoiPosition::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void AoiPosition::Clear() {
+void AoiPosition::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.geo.v2.AoiPosition)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   _impl_.aoi_id_ = 0;
   _impl_.poi_id_ = 0;
   _impl_._has_bits_.Clear();
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* AoiPosition::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* AoiPosition::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  _Internal::HasBits has_bits{};
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 aoi_id = 1 [json_name = "aoiId"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.aoi_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional int32 poi_id = 2 [json_name = "poiId"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _Internal::set_has_poi_id(&has_bits);
+          _impl_.poi_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  _impl_._has_bits_.Or(has_bits);
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<1, 2, 0, 0, 2> AoiPosition::_table_ = {
-  {
-    PROTOBUF_FIELD_OFFSET(AoiPosition, _impl_._has_bits_),
-    0, // no _extensions_
-    2, 8,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967292,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    2,  // num_field_entries
-    0,  // num_aux_entries
-    offsetof(decltype(_table_), field_names),  // no aux_entries
-    &_AoiPosition_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    // optional int32 poi_id = 2 [json_name = "poiId"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(AoiPosition, _impl_.poi_id_), 0>(),
-     {16, 0, 0, PROTOBUF_FIELD_OFFSET(AoiPosition, _impl_.poi_id_)}},
-    // int32 aoi_id = 1 [json_name = "aoiId"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(AoiPosition, _impl_.aoi_id_), 63>(),
-     {8, 63, 0, PROTOBUF_FIELD_OFFSET(AoiPosition, _impl_.aoi_id_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // int32 aoi_id = 1 [json_name = "aoiId"];
-    {PROTOBUF_FIELD_OFFSET(AoiPosition, _impl_.aoi_id_), -1, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-    // optional int32 poi_id = 2 [json_name = "poiId"];
-    {PROTOBUF_FIELD_OFFSET(AoiPosition, _impl_.poi_id_), _Internal::kHasBitsOffset + 0, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
-  }},
-  // no aux_entries
-  {{
-  }},
-};
-
-::uint8_t* AoiPosition::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* AoiPosition::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.geo.v2.AoiPosition)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // int32 aoi_id = 1 [json_name = "aoiId"];
   if (this->_internal_aoi_id() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<1>(
-            stream, this->_internal_aoi_id(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_aoi_id(), target);
   }
 
-  cached_has_bits = _impl_._has_bits_[0];
   // optional int32 poi_id = 2 [json_name = "poiId"];
-  if (cached_has_bits & 0x00000001u) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<2>(
-            stream, this->_internal_poi_id(), target);
+  if (_internal_has_poi_id()) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(2, this->_internal_poi_id(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.geo.v2.AoiPosition)
   return target;
 }
 
-::size_t AoiPosition::ByteSizeLong() const {
+size_t AoiPosition::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.geo.v2.AoiPosition)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // int32 aoi_id = 1 [json_name = "aoiId"];
   if (this->_internal_aoi_id() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_aoi_id());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_aoi_id());
   }
 
   // optional int32 poi_id = 2 [json_name = "poiId"];
   cached_has_bits = _impl_._has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_poi_id());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_poi_id());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData AoiPosition::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData AoiPosition::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     AoiPosition::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*AoiPosition::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*AoiPosition::GetClassData() const { return &_class_data_; }
 
 
-void AoiPosition::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void AoiPosition::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<AoiPosition*>(&to_msg);
   auto& from = static_cast<const AoiPosition&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.geo.v2.AoiPosition)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_aoi_id() != 0) {
     _this->_internal_set_aoi_id(from._internal_aoi_id());
   }
-  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+  if (from._internal_has_poi_id()) {
     _this->_internal_set_poi_id(from._internal_poi_id());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void AoiPosition::CopyFrom(const AoiPosition& from) {
@@ -1223,7 +1224,7 @@ void AoiPosition::CopyFrom(const AoiPosition& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool AoiPosition::IsInitialized() const {
+bool AoiPosition::IsInitialized() const {
   return true;
 }
 
@@ -1231,7 +1232,7 @@ void AoiPosition::InternalSwap(AoiPosition* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
-  ::google::protobuf::internal::memswap<
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(AoiPosition, _impl_.poi_id_)
       + sizeof(AoiPosition::_impl_.poi_id_)
       - PROTOBUF_FIELD_OFFSET(AoiPosition, _impl_.aoi_id_)>(
@@ -1239,18 +1240,17 @@ void AoiPosition::InternalSwap(AoiPosition* other) {
           reinterpret_cast<char*>(&other->_impl_.aoi_id_));
 }
 
-::google::protobuf::Metadata AoiPosition::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata AoiPosition::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fgeo_2fv2_2fgeo_2eproto_getter, &descriptor_table_city_2fgeo_2fv2_2fgeo_2eproto_once,
       file_level_metadata_city_2fgeo_2fv2_2fgeo_2eproto[3]);
 }
+
 // ===================================================================
 
 class Position::_Internal {
  public:
   using HasBits = decltype(std::declval<Position>()._impl_._has_bits_);
-  static constexpr ::int32_t kHasBitsOffset =
-    8 * PROTOBUF_FIELD_OFFSET(Position, _impl_._has_bits_);
   static const ::city::geo::v2::LanePosition& lane_position(const Position* msg);
   static void set_has_lane_position(HasBits* has_bits) {
     (*has_bits)[0] |= 1u;
@@ -1269,215 +1269,229 @@ class Position::_Internal {
   }
 };
 
-const ::city::geo::v2::LanePosition& Position::_Internal::lane_position(const Position* msg) {
+const ::city::geo::v2::LanePosition&
+Position::_Internal::lane_position(const Position* msg) {
   return *msg->_impl_.lane_position_;
 }
-const ::city::geo::v2::AoiPosition& Position::_Internal::aoi_position(const Position* msg) {
+const ::city::geo::v2::AoiPosition&
+Position::_Internal::aoi_position(const Position* msg) {
   return *msg->_impl_.aoi_position_;
 }
-const ::city::geo::v2::LongLatPosition& Position::_Internal::longlat_position(const Position* msg) {
+const ::city::geo::v2::LongLatPosition&
+Position::_Internal::longlat_position(const Position* msg) {
   return *msg->_impl_.longlat_position_;
 }
-const ::city::geo::v2::XYPosition& Position::_Internal::xy_position(const Position* msg) {
+const ::city::geo::v2::XYPosition&
+Position::_Internal::xy_position(const Position* msg) {
   return *msg->_impl_.xy_position_;
 }
-Position::Position(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+Position::Position(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.geo.v2.Position)
 }
-Position::Position(const Position& from) : ::google::protobuf::Message() {
-  Position* const _this = this;
-  (void)_this;
+Position::Position(const Position& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  Position* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){from._impl_._has_bits_},
-      /*decltype(_impl_._cached_size_)*/ {},
-      decltype(_impl_.lane_position_){nullptr},
-      decltype(_impl_.aoi_position_){nullptr},
-      decltype(_impl_.longlat_position_){nullptr},
-      decltype(_impl_.xy_position_){nullptr},
-  };
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
-  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+      decltype(_impl_._has_bits_){from._impl_._has_bits_}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.lane_position_){nullptr}
+    , decltype(_impl_.aoi_position_){nullptr}
+    , decltype(_impl_.longlat_position_){nullptr}
+    , decltype(_impl_.xy_position_){nullptr}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  if (from._internal_has_lane_position()) {
     _this->_impl_.lane_position_ = new ::city::geo::v2::LanePosition(*from._impl_.lane_position_);
   }
-  if ((from._impl_._has_bits_[0] & 0x00000002u) != 0) {
+  if (from._internal_has_aoi_position()) {
     _this->_impl_.aoi_position_ = new ::city::geo::v2::AoiPosition(*from._impl_.aoi_position_);
   }
-  if ((from._impl_._has_bits_[0] & 0x00000004u) != 0) {
+  if (from._internal_has_longlat_position()) {
     _this->_impl_.longlat_position_ = new ::city::geo::v2::LongLatPosition(*from._impl_.longlat_position_);
   }
-  if ((from._impl_._has_bits_[0] & 0x00000008u) != 0) {
+  if (from._internal_has_xy_position()) {
     _this->_impl_.xy_position_ = new ::city::geo::v2::XYPosition(*from._impl_.xy_position_);
   }
-
   // @@protoc_insertion_point(copy_constructor:city.geo.v2.Position)
 }
-inline void Position::SharedCtor(::_pb::Arena* arena) {
+
+inline void Position::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){},
-      /*decltype(_impl_._cached_size_)*/ {},
-      decltype(_impl_.lane_position_){nullptr},
-      decltype(_impl_.aoi_position_){nullptr},
-      decltype(_impl_.longlat_position_){nullptr},
-      decltype(_impl_.xy_position_){nullptr},
+      decltype(_impl_._has_bits_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.lane_position_){nullptr}
+    , decltype(_impl_.aoi_position_){nullptr}
+    , decltype(_impl_.longlat_position_){nullptr}
+    , decltype(_impl_.xy_position_){nullptr}
   };
 }
+
 Position::~Position() {
   // @@protoc_insertion_point(destructor:city.geo.v2.Position)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void Position::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete _impl_.lane_position_;
   if (this != internal_default_instance()) delete _impl_.aoi_position_;
   if (this != internal_default_instance()) delete _impl_.longlat_position_;
   if (this != internal_default_instance()) delete _impl_.xy_position_;
 }
+
 void Position::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void Position::Clear() {
+void Position::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.geo.v2.Position)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   cached_has_bits = _impl_._has_bits_[0];
   if (cached_has_bits & 0x0000000fu) {
     if (cached_has_bits & 0x00000001u) {
-      ABSL_DCHECK(_impl_.lane_position_ != nullptr);
+      GOOGLE_DCHECK(_impl_.lane_position_ != nullptr);
       _impl_.lane_position_->Clear();
     }
     if (cached_has_bits & 0x00000002u) {
-      ABSL_DCHECK(_impl_.aoi_position_ != nullptr);
+      GOOGLE_DCHECK(_impl_.aoi_position_ != nullptr);
       _impl_.aoi_position_->Clear();
     }
     if (cached_has_bits & 0x00000004u) {
-      ABSL_DCHECK(_impl_.longlat_position_ != nullptr);
+      GOOGLE_DCHECK(_impl_.longlat_position_ != nullptr);
       _impl_.longlat_position_->Clear();
     }
     if (cached_has_bits & 0x00000008u) {
-      ABSL_DCHECK(_impl_.xy_position_ != nullptr);
+      GOOGLE_DCHECK(_impl_.xy_position_ != nullptr);
       _impl_.xy_position_->Clear();
     }
   }
   _impl_._has_bits_.Clear();
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* Position::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* Position::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  _Internal::HasBits has_bits{};
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // optional .city.geo.v2.LanePosition lane_position = 1 [json_name = "lanePosition"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_lane_position(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional .city.geo.v2.AoiPosition aoi_position = 2 [json_name = "aoiPosition"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr = ctx->ParseMessage(_internal_mutable_aoi_position(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional .city.geo.v2.LongLatPosition longlat_position = 3 [json_name = "longlatPosition"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+          ptr = ctx->ParseMessage(_internal_mutable_longlat_position(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional .city.geo.v2.XYPosition xy_position = 4 [json_name = "xyPosition"];
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
+          ptr = ctx->ParseMessage(_internal_mutable_xy_position(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  _impl_._has_bits_.Or(has_bits);
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<2, 4, 4, 0, 2> Position::_table_ = {
-  {
-    PROTOBUF_FIELD_OFFSET(Position, _impl_._has_bits_),
-    0, // no _extensions_
-    4, 24,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967280,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    4,  // num_field_entries
-    4,  // num_aux_entries
-    offsetof(decltype(_table_), aux_entries),
-    &_Position_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    // optional .city.geo.v2.XYPosition xy_position = 4 [json_name = "xyPosition"];
-    {::_pbi::TcParser::FastMtS1,
-     {34, 3, 3, PROTOBUF_FIELD_OFFSET(Position, _impl_.xy_position_)}},
-    // optional .city.geo.v2.LanePosition lane_position = 1 [json_name = "lanePosition"];
-    {::_pbi::TcParser::FastMtS1,
-     {10, 0, 0, PROTOBUF_FIELD_OFFSET(Position, _impl_.lane_position_)}},
-    // optional .city.geo.v2.AoiPosition aoi_position = 2 [json_name = "aoiPosition"];
-    {::_pbi::TcParser::FastMtS1,
-     {18, 1, 1, PROTOBUF_FIELD_OFFSET(Position, _impl_.aoi_position_)}},
-    // optional .city.geo.v2.LongLatPosition longlat_position = 3 [json_name = "longlatPosition"];
-    {::_pbi::TcParser::FastMtS1,
-     {26, 2, 2, PROTOBUF_FIELD_OFFSET(Position, _impl_.longlat_position_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // optional .city.geo.v2.LanePosition lane_position = 1 [json_name = "lanePosition"];
-    {PROTOBUF_FIELD_OFFSET(Position, _impl_.lane_position_), _Internal::kHasBitsOffset + 0, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
-    // optional .city.geo.v2.AoiPosition aoi_position = 2 [json_name = "aoiPosition"];
-    {PROTOBUF_FIELD_OFFSET(Position, _impl_.aoi_position_), _Internal::kHasBitsOffset + 1, 1,
-    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
-    // optional .city.geo.v2.LongLatPosition longlat_position = 3 [json_name = "longlatPosition"];
-    {PROTOBUF_FIELD_OFFSET(Position, _impl_.longlat_position_), _Internal::kHasBitsOffset + 2, 2,
-    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
-    // optional .city.geo.v2.XYPosition xy_position = 4 [json_name = "xyPosition"];
-    {PROTOBUF_FIELD_OFFSET(Position, _impl_.xy_position_), _Internal::kHasBitsOffset + 3, 3,
-    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
-  }}, {{
-    {::_pbi::TcParser::GetTable<::city::geo::v2::LanePosition>()},
-    {::_pbi::TcParser::GetTable<::city::geo::v2::AoiPosition>()},
-    {::_pbi::TcParser::GetTable<::city::geo::v2::LongLatPosition>()},
-    {::_pbi::TcParser::GetTable<::city::geo::v2::XYPosition>()},
-  }}, {{
-  }},
-};
-
-::uint8_t* Position::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* Position::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.geo.v2.Position)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
-  cached_has_bits = _impl_._has_bits_[0];
   // optional .city.geo.v2.LanePosition lane_position = 1 [json_name = "lanePosition"];
-  if (cached_has_bits & 0x00000001u) {
-    target = ::google::protobuf::internal::WireFormatLite::
+  if (_internal_has_lane_position()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(1, _Internal::lane_position(this),
         _Internal::lane_position(this).GetCachedSize(), target, stream);
   }
 
   // optional .city.geo.v2.AoiPosition aoi_position = 2 [json_name = "aoiPosition"];
-  if (cached_has_bits & 0x00000002u) {
-    target = ::google::protobuf::internal::WireFormatLite::
+  if (_internal_has_aoi_position()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(2, _Internal::aoi_position(this),
         _Internal::aoi_position(this).GetCachedSize(), target, stream);
   }
 
   // optional .city.geo.v2.LongLatPosition longlat_position = 3 [json_name = "longlatPosition"];
-  if (cached_has_bits & 0x00000004u) {
-    target = ::google::protobuf::internal::WireFormatLite::
+  if (_internal_has_longlat_position()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(3, _Internal::longlat_position(this),
         _Internal::longlat_position(this).GetCachedSize(), target, stream);
   }
 
   // optional .city.geo.v2.XYPosition xy_position = 4 [json_name = "xyPosition"];
-  if (cached_has_bits & 0x00000008u) {
-    target = ::google::protobuf::internal::WireFormatLite::
+  if (_internal_has_xy_position()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(4, _Internal::xy_position(this),
         _Internal::xy_position(this).GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.geo.v2.Position)
   return target;
 }
 
-::size_t Position::ByteSizeLong() const {
+size_t Position::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.geo.v2.Position)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1486,28 +1500,28 @@ const ::_pbi::TcParseTable<2, 4, 4, 0, 2> Position::_table_ = {
     // optional .city.geo.v2.LanePosition lane_position = 1 [json_name = "lanePosition"];
     if (cached_has_bits & 0x00000001u) {
       total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *_impl_.lane_position_);
     }
 
     // optional .city.geo.v2.AoiPosition aoi_position = 2 [json_name = "aoiPosition"];
     if (cached_has_bits & 0x00000002u) {
       total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *_impl_.aoi_position_);
     }
 
     // optional .city.geo.v2.LongLatPosition longlat_position = 3 [json_name = "longlatPosition"];
     if (cached_has_bits & 0x00000004u) {
       total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *_impl_.longlat_position_);
     }
 
     // optional .city.geo.v2.XYPosition xy_position = 4 [json_name = "xyPosition"];
     if (cached_has_bits & 0x00000008u) {
       total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *_impl_.xy_position_);
     }
 
@@ -1515,19 +1529,19 @@ const ::_pbi::TcParseTable<2, 4, 4, 0, 2> Position::_table_ = {
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData Position::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Position::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     Position::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*Position::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Position::GetClassData() const { return &_class_data_; }
 
 
-void Position::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void Position::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<Position*>(&to_msg);
   auto& from = static_cast<const Position&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.geo.v2.Position)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._impl_._has_bits_[0];
@@ -1549,7 +1563,7 @@ void Position::MergeImpl(::google::protobuf::Message& to_msg, const ::google::pr
           from._internal_xy_position());
     }
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void Position::CopyFrom(const Position& from) {
@@ -1559,7 +1573,7 @@ void Position::CopyFrom(const Position& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool Position::IsInitialized() const {
+bool Position::IsInitialized() const {
   return true;
 }
 
@@ -1567,7 +1581,7 @@ void Position::InternalSwap(Position* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
-  ::google::protobuf::internal::memswap<
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(Position, _impl_.xy_position_)
       + sizeof(Position::_impl_.xy_position_)
       - PROTOBUF_FIELD_OFFSET(Position, _impl_.lane_position_)>(
@@ -1575,280 +1589,289 @@ void Position::InternalSwap(Position* other) {
           reinterpret_cast<char*>(&other->_impl_.lane_position_));
 }
 
-::google::protobuf::Metadata Position::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata Position::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fgeo_2fv2_2fgeo_2eproto_getter, &descriptor_table_city_2fgeo_2fv2_2fgeo_2eproto_once,
       file_level_metadata_city_2fgeo_2fv2_2fgeo_2eproto[4]);
 }
+
 // ===================================================================
 
 class LongLatBBox::_Internal {
  public:
 };
 
-LongLatBBox::LongLatBBox(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+LongLatBBox::LongLatBBox(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.geo.v2.LongLatBBox)
 }
 LongLatBBox::LongLatBBox(const LongLatBBox& from)
-    : ::google::protobuf::Message(), _impl_(from._impl_) {
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  LongLatBBox* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.min_longitude_){}
+    , decltype(_impl_.min_latitude_){}
+    , decltype(_impl_.max_longitude_){}
+    , decltype(_impl_.max_latitude_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&_impl_.min_longitude_, &from._impl_.min_longitude_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.max_latitude_) -
+    reinterpret_cast<char*>(&_impl_.min_longitude_)) + sizeof(_impl_.max_latitude_));
   // @@protoc_insertion_point(copy_constructor:city.geo.v2.LongLatBBox)
 }
-inline void LongLatBBox::SharedCtor(::_pb::Arena* arena) {
+
+inline void LongLatBBox::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.min_longitude_){0},
-      decltype(_impl_.min_latitude_){0},
-      decltype(_impl_.max_longitude_){0},
-      decltype(_impl_.max_latitude_){0},
-      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.min_longitude_){0}
+    , decltype(_impl_.min_latitude_){0}
+    , decltype(_impl_.max_longitude_){0}
+    , decltype(_impl_.max_latitude_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 LongLatBBox::~LongLatBBox() {
   // @@protoc_insertion_point(destructor:city.geo.v2.LongLatBBox)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void LongLatBBox::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
+
 void LongLatBBox::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void LongLatBBox::Clear() {
+void LongLatBBox::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.geo.v2.LongLatBBox)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&_impl_.min_longitude_, 0, static_cast<::size_t>(
+  ::memset(&_impl_.min_longitude_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_impl_.max_latitude_) -
       reinterpret_cast<char*>(&_impl_.min_longitude_)) + sizeof(_impl_.max_latitude_));
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* LongLatBBox::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* LongLatBBox::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // double min_longitude = 1 [json_name = "minLongitude"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 9)) {
+          _impl_.min_longitude_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // double min_latitude = 2 [json_name = "minLatitude"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 17)) {
+          _impl_.min_latitude_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // double max_longitude = 3 [json_name = "maxLongitude"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 25)) {
+          _impl_.max_longitude_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // double max_latitude = 4 [json_name = "maxLatitude"];
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 33)) {
+          _impl_.max_latitude_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<2, 4, 0, 0, 2> LongLatBBox::_table_ = {
-  {
-    0,  // no _has_bits_
-    0, // no _extensions_
-    4, 24,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967280,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    4,  // num_field_entries
-    0,  // num_aux_entries
-    offsetof(decltype(_table_), field_names),  // no aux_entries
-    &_LongLatBBox_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    // double max_latitude = 4 [json_name = "maxLatitude"];
-    {::_pbi::TcParser::FastF64S1,
-     {33, 63, 0, PROTOBUF_FIELD_OFFSET(LongLatBBox, _impl_.max_latitude_)}},
-    // double min_longitude = 1 [json_name = "minLongitude"];
-    {::_pbi::TcParser::FastF64S1,
-     {9, 63, 0, PROTOBUF_FIELD_OFFSET(LongLatBBox, _impl_.min_longitude_)}},
-    // double min_latitude = 2 [json_name = "minLatitude"];
-    {::_pbi::TcParser::FastF64S1,
-     {17, 63, 0, PROTOBUF_FIELD_OFFSET(LongLatBBox, _impl_.min_latitude_)}},
-    // double max_longitude = 3 [json_name = "maxLongitude"];
-    {::_pbi::TcParser::FastF64S1,
-     {25, 63, 0, PROTOBUF_FIELD_OFFSET(LongLatBBox, _impl_.max_longitude_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // double min_longitude = 1 [json_name = "minLongitude"];
-    {PROTOBUF_FIELD_OFFSET(LongLatBBox, _impl_.min_longitude_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-    // double min_latitude = 2 [json_name = "minLatitude"];
-    {PROTOBUF_FIELD_OFFSET(LongLatBBox, _impl_.min_latitude_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-    // double max_longitude = 3 [json_name = "maxLongitude"];
-    {PROTOBUF_FIELD_OFFSET(LongLatBBox, _impl_.max_longitude_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-    // double max_latitude = 4 [json_name = "maxLatitude"];
-    {PROTOBUF_FIELD_OFFSET(LongLatBBox, _impl_.max_latitude_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-  }},
-  // no aux_entries
-  {{
-  }},
-};
-
-::uint8_t* LongLatBBox::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* LongLatBBox::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.geo.v2.LongLatBBox)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // double min_longitude = 1 [json_name = "minLongitude"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_min_longitude = this->_internal_min_longitude();
-  ::uint64_t raw_min_longitude;
+  uint64_t raw_min_longitude;
   memcpy(&raw_min_longitude, &tmp_min_longitude, sizeof(tmp_min_longitude));
   if (raw_min_longitude != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        1, this->_internal_min_longitude(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(1, this->_internal_min_longitude(), target);
   }
 
   // double min_latitude = 2 [json_name = "minLatitude"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_min_latitude = this->_internal_min_latitude();
-  ::uint64_t raw_min_latitude;
+  uint64_t raw_min_latitude;
   memcpy(&raw_min_latitude, &tmp_min_latitude, sizeof(tmp_min_latitude));
   if (raw_min_latitude != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        2, this->_internal_min_latitude(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(2, this->_internal_min_latitude(), target);
   }
 
   // double max_longitude = 3 [json_name = "maxLongitude"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_max_longitude = this->_internal_max_longitude();
-  ::uint64_t raw_max_longitude;
+  uint64_t raw_max_longitude;
   memcpy(&raw_max_longitude, &tmp_max_longitude, sizeof(tmp_max_longitude));
   if (raw_max_longitude != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        3, this->_internal_max_longitude(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(3, this->_internal_max_longitude(), target);
   }
 
   // double max_latitude = 4 [json_name = "maxLatitude"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_max_latitude = this->_internal_max_latitude();
-  ::uint64_t raw_max_latitude;
+  uint64_t raw_max_latitude;
   memcpy(&raw_max_latitude, &tmp_max_latitude, sizeof(tmp_max_latitude));
   if (raw_max_latitude != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        4, this->_internal_max_latitude(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(4, this->_internal_max_latitude(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.geo.v2.LongLatBBox)
   return target;
 }
 
-::size_t LongLatBBox::ByteSizeLong() const {
+size_t LongLatBBox::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.geo.v2.LongLatBBox)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // double min_longitude = 1 [json_name = "minLongitude"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_min_longitude = this->_internal_min_longitude();
-  ::uint64_t raw_min_longitude;
+  uint64_t raw_min_longitude;
   memcpy(&raw_min_longitude, &tmp_min_longitude, sizeof(tmp_min_longitude));
   if (raw_min_longitude != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   // double min_latitude = 2 [json_name = "minLatitude"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_min_latitude = this->_internal_min_latitude();
-  ::uint64_t raw_min_latitude;
+  uint64_t raw_min_latitude;
   memcpy(&raw_min_latitude, &tmp_min_latitude, sizeof(tmp_min_latitude));
   if (raw_min_latitude != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   // double max_longitude = 3 [json_name = "maxLongitude"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_max_longitude = this->_internal_max_longitude();
-  ::uint64_t raw_max_longitude;
+  uint64_t raw_max_longitude;
   memcpy(&raw_max_longitude, &tmp_max_longitude, sizeof(tmp_max_longitude));
   if (raw_max_longitude != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   // double max_latitude = 4 [json_name = "maxLatitude"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_max_latitude = this->_internal_max_latitude();
-  ::uint64_t raw_max_latitude;
+  uint64_t raw_max_latitude;
   memcpy(&raw_max_latitude, &tmp_max_latitude, sizeof(tmp_max_latitude));
   if (raw_max_latitude != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData LongLatBBox::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData LongLatBBox::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     LongLatBBox::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*LongLatBBox::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*LongLatBBox::GetClassData() const { return &_class_data_; }
 
 
-void LongLatBBox::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void LongLatBBox::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<LongLatBBox*>(&to_msg);
   auto& from = static_cast<const LongLatBBox&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.geo.v2.LongLatBBox)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_min_longitude = from._internal_min_longitude();
-  ::uint64_t raw_min_longitude;
+  uint64_t raw_min_longitude;
   memcpy(&raw_min_longitude, &tmp_min_longitude, sizeof(tmp_min_longitude));
   if (raw_min_longitude != 0) {
     _this->_internal_set_min_longitude(from._internal_min_longitude());
   }
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_min_latitude = from._internal_min_latitude();
-  ::uint64_t raw_min_latitude;
+  uint64_t raw_min_latitude;
   memcpy(&raw_min_latitude, &tmp_min_latitude, sizeof(tmp_min_latitude));
   if (raw_min_latitude != 0) {
     _this->_internal_set_min_latitude(from._internal_min_latitude());
   }
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_max_longitude = from._internal_max_longitude();
-  ::uint64_t raw_max_longitude;
+  uint64_t raw_max_longitude;
   memcpy(&raw_max_longitude, &tmp_max_longitude, sizeof(tmp_max_longitude));
   if (raw_max_longitude != 0) {
     _this->_internal_set_max_longitude(from._internal_max_longitude());
   }
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_max_latitude = from._internal_max_latitude();
-  ::uint64_t raw_max_latitude;
+  uint64_t raw_max_latitude;
   memcpy(&raw_max_latitude, &tmp_max_latitude, sizeof(tmp_max_latitude));
   if (raw_max_latitude != 0) {
     _this->_internal_set_max_latitude(from._internal_max_latitude());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void LongLatBBox::CopyFrom(const LongLatBBox& from) {
@@ -1858,14 +1881,14 @@ void LongLatBBox::CopyFrom(const LongLatBBox& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool LongLatBBox::IsInitialized() const {
+bool LongLatBBox::IsInitialized() const {
   return true;
 }
 
 void LongLatBBox::InternalSwap(LongLatBBox* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::google::protobuf::internal::memswap<
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(LongLatBBox, _impl_.max_latitude_)
       + sizeof(LongLatBBox::_impl_.max_latitude_)
       - PROTOBUF_FIELD_OFFSET(LongLatBBox, _impl_.min_longitude_)>(
@@ -1873,18 +1896,42 @@ void LongLatBBox::InternalSwap(LongLatBBox* other) {
           reinterpret_cast<char*>(&other->_impl_.min_longitude_));
 }
 
-::google::protobuf::Metadata LongLatBBox::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata LongLatBBox::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fgeo_2fv2_2fgeo_2eproto_getter, &descriptor_table_city_2fgeo_2fv2_2fgeo_2eproto_once,
       file_level_metadata_city_2fgeo_2fv2_2fgeo_2eproto[5]);
 }
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace v2
 }  // namespace geo
 }  // namespace city
-namespace google {
-namespace protobuf {
-}  // namespace protobuf
-}  // namespace google
+PROTOBUF_NAMESPACE_OPEN
+template<> PROTOBUF_NOINLINE ::city::geo::v2::LongLatPosition*
+Arena::CreateMaybeMessage< ::city::geo::v2::LongLatPosition >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::geo::v2::LongLatPosition >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::geo::v2::XYPosition*
+Arena::CreateMaybeMessage< ::city::geo::v2::XYPosition >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::geo::v2::XYPosition >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::geo::v2::LanePosition*
+Arena::CreateMaybeMessage< ::city::geo::v2::LanePosition >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::geo::v2::LanePosition >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::geo::v2::AoiPosition*
+Arena::CreateMaybeMessage< ::city::geo::v2::AoiPosition >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::geo::v2::AoiPosition >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::geo::v2::Position*
+Arena::CreateMaybeMessage< ::city::geo::v2::Position >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::geo::v2::Position >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::geo::v2::LongLatBBox*
+Arena::CreateMaybeMessage< ::city::geo::v2::LongLatBBox >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::geo::v2::LongLatBBox >(arena);
+}
+PROTOBUF_NAMESPACE_CLOSE
+
 // @@protoc_insertion_point(global_scope)
-#include "google/protobuf/port_undef.inc"
+#include <google/protobuf/port_undef.inc>

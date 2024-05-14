@@ -39,7 +39,7 @@ type GetRouteRequest struct {
 	End *v2.Position `protobuf:"bytes,3,opt,name=end,proto3" json:"end,omitempty" yaml:"end" bson:"end" db:"end"`
 	// 发送导航请求的时间（目前仅在行车导航中使用）
 	// The time to send routing request (currently only used in driving routing)
-	Time float64 `protobuf:"fixed64,5,opt,name=time,proto3" json:"time,omitempty" yaml:"time" bson:"time" db:"time"`
+	Time float64 `protobuf:"fixed64,5,opt,name=time,proto3" json:"time,omitempty" db:"time" yaml:"time" bson:"time"`
 }
 
 func (x *GetRouteRequest) Reset() {
@@ -109,7 +109,7 @@ type GetRouteResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Journeys []*Journey `protobuf:"bytes,1,rep,name=journeys,proto3" json:"journeys,omitempty" bson:"journeys" db:"journeys" yaml:"journeys"`
+	Journeys []*Journey `protobuf:"bytes,1,rep,name=journeys,proto3" json:"journeys,omitempty" yaml:"journeys" bson:"journeys" db:"journeys"`
 }
 
 func (x *GetRouteResponse) Reset() {
@@ -251,7 +251,7 @@ type GetDrivingCostsRequest struct {
 
 	// 道路通行成本（按照给定的id和time进行查询）
 	// travelling cost (query via the given ID and time)
-	Costs []*Cost `protobuf:"bytes,1,rep,name=costs,proto3" json:"costs,omitempty" yaml:"costs" bson:"costs" db:"costs"`
+	Costs []*Cost `protobuf:"bytes,1,rep,name=costs,proto3" json:"costs,omitempty" bson:"costs" db:"costs" yaml:"costs"`
 }
 
 func (x *GetDrivingCostsRequest) Reset() {
@@ -302,7 +302,7 @@ type GetDrivingCostsResponse struct {
 
 	// 道路通行成本（补全cost后的结果）
 	// travelling cost (results after completing the cost)
-	Costs []*Cost `protobuf:"bytes,1,rep,name=costs,proto3" json:"costs,omitempty" yaml:"costs" bson:"costs" db:"costs"`
+	Costs []*Cost `protobuf:"bytes,1,rep,name=costs,proto3" json:"costs,omitempty" bson:"costs" db:"costs" yaml:"costs"`
 }
 
 func (x *GetDrivingCostsResponse) Reset() {

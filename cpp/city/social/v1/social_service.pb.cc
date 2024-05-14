@@ -4,207 +4,165 @@
 #include "city/social/v1/social_service.pb.h"
 
 #include <algorithm>
-#include "google/protobuf/io/coded_stream.h"
-#include "google/protobuf/extension_set.h"
-#include "google/protobuf/wire_format_lite.h"
-#include "google/protobuf/descriptor.h"
-#include "google/protobuf/generated_message_reflection.h"
-#include "google/protobuf/reflection_ops.h"
-#include "google/protobuf/wire_format.h"
-#include "google/protobuf/generated_message_tctable_impl.h"
-// @@protoc_insertion_point(includes)
 
-// Must be included last.
-#include "google/protobuf/port_def.inc"
+#include <google/protobuf/io/coded_stream.h>
+#include <google/protobuf/extension_set.h>
+#include <google/protobuf/wire_format_lite.h>
+#include <google/protobuf/descriptor.h>
+#include <google/protobuf/generated_message_reflection.h>
+#include <google/protobuf/reflection_ops.h>
+#include <google/protobuf/wire_format.h>
+// @@protoc_insertion_point(includes)
+#include <google/protobuf/port_def.inc>
+
 PROTOBUF_PRAGMA_INIT_SEG
-namespace _pb = ::google::protobuf;
-namespace _pbi = ::google::protobuf::internal;
-namespace _fl = ::google::protobuf::internal::field_layout;
+
+namespace _pb = ::PROTOBUF_NAMESPACE_ID;
+namespace _pbi = _pb::internal;
+
 namespace city {
 namespace social {
 namespace v1 {
-        template <typename>
-PROTOBUF_CONSTEXPR SendRequest::SendRequest(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_.messages_)*/ {},
-      /*decltype(_impl_._cached_size_)*/ {},
-    } {}
+PROTOBUF_CONSTEXPR SendRequest::SendRequest(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.messages_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct SendRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR SendRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR SendRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~SendRequestDefaultTypeInternal() {}
   union {
     SendRequest _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SendRequestDefaultTypeInternal _SendRequest_default_instance_;
-      template <typename>
-PROTOBUF_CONSTEXPR SendResponse::SendResponse(::_pbi::ConstantInitialized) {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SendRequestDefaultTypeInternal _SendRequest_default_instance_;
+PROTOBUF_CONSTEXPR SendResponse::SendResponse(
+    ::_pbi::ConstantInitialized) {}
 struct SendResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR SendResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR SendResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~SendResponseDefaultTypeInternal() {}
   union {
     SendResponse _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SendResponseDefaultTypeInternal _SendResponse_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR ReceiveRequest::ReceiveRequest(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_.id_)*/ 0,
-      /*decltype(_impl_._cached_size_)*/ {},
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SendResponseDefaultTypeInternal _SendResponse_default_instance_;
+PROTOBUF_CONSTEXPR ReceiveRequest::ReceiveRequest(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.id_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct ReceiveRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR ReceiveRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR ReceiveRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~ReceiveRequestDefaultTypeInternal() {}
   union {
     ReceiveRequest _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ReceiveRequestDefaultTypeInternal _ReceiveRequest_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR ReceiveResponse::ReceiveResponse(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_.messages_)*/ {},
-      /*decltype(_impl_._cached_size_)*/ {},
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ReceiveRequestDefaultTypeInternal _ReceiveRequest_default_instance_;
+PROTOBUF_CONSTEXPR ReceiveResponse::ReceiveResponse(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.messages_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct ReceiveResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR ReceiveResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR ReceiveResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~ReceiveResponseDefaultTypeInternal() {}
   union {
     ReceiveResponse _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ReceiveResponseDefaultTypeInternal _ReceiveResponse_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ReceiveResponseDefaultTypeInternal _ReceiveResponse_default_instance_;
 }  // namespace v1
 }  // namespace social
 }  // namespace city
 static ::_pb::Metadata file_level_metadata_city_2fsocial_2fv1_2fsocial_5fservice_2eproto[4];
-static constexpr const ::_pb::EnumDescriptor**
-    file_level_enum_descriptors_city_2fsocial_2fv1_2fsocial_5fservice_2eproto = nullptr;
-static constexpr const ::_pb::ServiceDescriptor**
-    file_level_service_descriptors_city_2fsocial_2fv1_2fsocial_5fservice_2eproto = nullptr;
-const ::uint32_t TableStruct_city_2fsocial_2fv1_2fsocial_5fservice_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
-    protodesc_cold) = {
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::social::v1::SendRequest, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::social::v1::SendRequest, _impl_.messages_),
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::social::v1::SendResponse, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::social::v1::ReceiveRequest, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::social::v1::ReceiveRequest, _impl_.id_),
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::social::v1::ReceiveResponse, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::social::v1::ReceiveResponse, _impl_.messages_),
-};
+static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_city_2fsocial_2fv1_2fsocial_5fservice_2eproto = nullptr;
+static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_city_2fsocial_2fv1_2fsocial_5fservice_2eproto = nullptr;
 
-static const ::_pbi::MigrationSchema
-    schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-        {0, -1, -1, sizeof(::city::social::v1::SendRequest)},
-        {9, -1, -1, sizeof(::city::social::v1::SendResponse)},
-        {17, -1, -1, sizeof(::city::social::v1::ReceiveRequest)},
-        {26, -1, -1, sizeof(::city::social::v1::ReceiveResponse)},
+const uint32_t TableStruct_city_2fsocial_2fv1_2fsocial_5fservice_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::social::v1::SendRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::social::v1::SendRequest, _impl_.messages_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::social::v1::SendResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::social::v1::ReceiveRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::social::v1::ReceiveRequest, _impl_.id_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::social::v1::ReceiveResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::social::v1::ReceiveResponse, _impl_.messages_),
+};
+static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  { 0, -1, -1, sizeof(::city::social::v1::SendRequest)},
+  { 7, -1, -1, sizeof(::city::social::v1::SendResponse)},
+  { 13, -1, -1, sizeof(::city::social::v1::ReceiveRequest)},
+  { 20, -1, -1, sizeof(::city::social::v1::ReceiveResponse)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
-    &::city::social::v1::_SendRequest_default_instance_._instance,
-    &::city::social::v1::_SendResponse_default_instance_._instance,
-    &::city::social::v1::_ReceiveRequest_default_instance_._instance,
-    &::city::social::v1::_ReceiveResponse_default_instance_._instance,
-};
-const char descriptor_table_protodef_city_2fsocial_2fv1_2fsocial_5fservice_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-    "\n#city/social/v1/social_service.proto\022\016c"
-    "ity.social.v1\032\034city/social/v1/message.pr"
-    "oto\"B\n\013SendRequest\0223\n\010messages\030\001 \003(\0132\027.c"
-    "ity.social.v1.MessageR\010messages\"\016\n\014SendR"
-    "esponse\" \n\016ReceiveRequest\022\016\n\002id\030\001 \001(\005R\002i"
-    "d\"F\n\017ReceiveResponse\0223\n\010messages\030\001 \003(\0132\027"
-    ".city.social.v1.MessageR\010messages2\236\001\n\rSo"
-    "cialService\022A\n\004Send\022\033.city.social.v1.Sen"
-    "dRequest\032\034.city.social.v1.SendResponse\022J"
-    "\n\007Receive\022\036.city.social.v1.ReceiveReques"
-    "t\032\037.city.social.v1.ReceiveResponseB\270\001\n\022c"
-    "om.city.social.v1B\022SocialServiceProtoP\001Z"
-    "4git.fiblab.net/sim/protos/go/city/socia"
-    "l/v1;socialv1\242\002\003CSX\252\002\016City.Social.V1\312\002\016C"
-    "ity\\Social\\V1\342\002\032City\\Social\\V1\\GPBMetada"
-    "ta\352\002\020City::Social::V1b\006proto3"
-};
-static const ::_pbi::DescriptorTable* const descriptor_table_city_2fsocial_2fv1_2fsocial_5fservice_2eproto_deps[1] =
-    {
-        &::descriptor_table_city_2fsocial_2fv1_2fmessage_2eproto,
-};
-static ::absl::once_flag descriptor_table_city_2fsocial_2fv1_2fsocial_5fservice_2eproto_once;
-const ::_pbi::DescriptorTable descriptor_table_city_2fsocial_2fv1_2fsocial_5fservice_2eproto = {
-    false,
-    false,
-    629,
-    descriptor_table_protodef_city_2fsocial_2fv1_2fsocial_5fservice_2eproto,
-    "city/social/v1/social_service.proto",
-    &descriptor_table_city_2fsocial_2fv1_2fsocial_5fservice_2eproto_once,
-    descriptor_table_city_2fsocial_2fv1_2fsocial_5fservice_2eproto_deps,
-    1,
-    4,
-    schemas,
-    file_default_instances,
-    TableStruct_city_2fsocial_2fv1_2fsocial_5fservice_2eproto::offsets,
-    file_level_metadata_city_2fsocial_2fv1_2fsocial_5fservice_2eproto,
-    file_level_enum_descriptors_city_2fsocial_2fv1_2fsocial_5fservice_2eproto,
-    file_level_service_descriptors_city_2fsocial_2fv1_2fsocial_5fservice_2eproto,
+  &::city::social::v1::_SendRequest_default_instance_._instance,
+  &::city::social::v1::_SendResponse_default_instance_._instance,
+  &::city::social::v1::_ReceiveRequest_default_instance_._instance,
+  &::city::social::v1::_ReceiveResponse_default_instance_._instance,
 };
 
-// This function exists to be marked as weak.
-// It can significantly speed up compilation by breaking up LLVM's SCC
-// in the .pb.cc translation units. Large translation units see a
-// reduction of more than 35% of walltime for optimized builds. Without
-// the weak attribute all the messages in the file, including all the
-// vtables and everything they use become part of the same SCC through
-// a cycle like:
-// GetMetadata -> descriptor table -> default instances ->
-//   vtables -> GetMetadata
-// By adding a weak function here we break the connection from the
-// individual vtables back into the descriptor table.
+const char descriptor_table_protodef_city_2fsocial_2fv1_2fsocial_5fservice_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
+  "\n#city/social/v1/social_service.proto\022\016c"
+  "ity.social.v1\032\034city/social/v1/message.pr"
+  "oto\"B\n\013SendRequest\0223\n\010messages\030\001 \003(\0132\027.c"
+  "ity.social.v1.MessageR\010messages\"\016\n\014SendR"
+  "esponse\" \n\016ReceiveRequest\022\016\n\002id\030\001 \001(\005R\002i"
+  "d\"F\n\017ReceiveResponse\0223\n\010messages\030\001 \003(\0132\027"
+  ".city.social.v1.MessageR\010messages2\236\001\n\rSo"
+  "cialService\022A\n\004Send\022\033.city.social.v1.Sen"
+  "dRequest\032\034.city.social.v1.SendResponse\022J"
+  "\n\007Receive\022\036.city.social.v1.ReceiveReques"
+  "t\032\037.city.social.v1.ReceiveResponseB\270\001\n\022c"
+  "om.city.social.v1B\022SocialServiceProtoP\001Z"
+  "4git.fiblab.net/sim/protos/go/city/socia"
+  "l/v1;socialv1\242\002\003CSX\252\002\016City.Social.V1\312\002\016C"
+  "ity\\Social\\V1\342\002\032City\\Social\\V1\\GPBMetada"
+  "ta\352\002\020City::Social::V1b\006proto3"
+  ;
+static const ::_pbi::DescriptorTable* const descriptor_table_city_2fsocial_2fv1_2fsocial_5fservice_2eproto_deps[1] = {
+  &::descriptor_table_city_2fsocial_2fv1_2fmessage_2eproto,
+};
+static ::_pbi::once_flag descriptor_table_city_2fsocial_2fv1_2fsocial_5fservice_2eproto_once;
+const ::_pbi::DescriptorTable descriptor_table_city_2fsocial_2fv1_2fsocial_5fservice_2eproto = {
+    false, false, 629, descriptor_table_protodef_city_2fsocial_2fv1_2fsocial_5fservice_2eproto,
+    "city/social/v1/social_service.proto",
+    &descriptor_table_city_2fsocial_2fv1_2fsocial_5fservice_2eproto_once, descriptor_table_city_2fsocial_2fv1_2fsocial_5fservice_2eproto_deps, 1, 4,
+    schemas, file_default_instances, TableStruct_city_2fsocial_2fv1_2fsocial_5fservice_2eproto::offsets,
+    file_level_metadata_city_2fsocial_2fv1_2fsocial_5fservice_2eproto, file_level_enum_descriptors_city_2fsocial_2fv1_2fsocial_5fservice_2eproto,
+    file_level_service_descriptors_city_2fsocial_2fv1_2fsocial_5fservice_2eproto,
+};
 PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_city_2fsocial_2fv1_2fsocial_5fservice_2eproto_getter() {
   return &descriptor_table_city_2fsocial_2fv1_2fsocial_5fservice_2eproto;
 }
+
 // Force running AddDescriptors() at dynamic initialization time.
-PROTOBUF_ATTRIBUTE_INIT_PRIORITY2
-static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_city_2fsocial_2fv1_2fsocial_5fservice_2eproto(&descriptor_table_city_2fsocial_2fv1_2fsocial_5fservice_2eproto);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_city_2fsocial_2fv1_2fsocial_5fservice_2eproto(&descriptor_table_city_2fsocial_2fv1_2fsocial_5fservice_2eproto);
 namespace city {
 namespace social {
 namespace v1 {
+
 // ===================================================================
 
 class SendRequest::_Internal {
@@ -212,150 +170,162 @@ class SendRequest::_Internal {
 };
 
 void SendRequest::clear_messages() {
-  _internal_mutable_messages()->Clear();
+  _impl_.messages_.Clear();
 }
-SendRequest::SendRequest(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+SendRequest::SendRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.social.v1.SendRequest)
 }
-SendRequest::SendRequest(const SendRequest& from) : ::google::protobuf::Message() {
-  SendRequest* const _this = this;
-  (void)_this;
+SendRequest::SendRequest(const SendRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  SendRequest* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.messages_){from._impl_.messages_},
-      /*decltype(_impl_._cached_size_)*/ {},
-  };
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+      decltype(_impl_.messages_){from._impl_.messages_}
+    , /*decltype(_impl_._cached_size_)*/{}};
 
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:city.social.v1.SendRequest)
 }
-inline void SendRequest::SharedCtor(::_pb::Arena* arena) {
+
+inline void SendRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.messages_){arena},
-      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.messages_){arena}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 SendRequest::~SendRequest() {
   // @@protoc_insertion_point(destructor:city.social.v1.SendRequest)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void SendRequest::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.messages_.~RepeatedPtrField();
 }
+
 void SendRequest::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void SendRequest::Clear() {
+void SendRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.social.v1.SendRequest)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _internal_mutable_messages()->Clear();
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _impl_.messages_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* SendRequest::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* SendRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // repeated .city.social.v1.Message messages = 1 [json_name = "messages"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_messages(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<0, 1, 1, 0, 2> SendRequest::_table_ = {
-  {
-    0,  // no _has_bits_
-    0, // no _extensions_
-    1, 0,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967294,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    1,  // num_field_entries
-    1,  // num_aux_entries
-    offsetof(decltype(_table_), aux_entries),
-    &_SendRequest_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    // repeated .city.social.v1.Message messages = 1 [json_name = "messages"];
-    {::_pbi::TcParser::FastMtR1,
-     {10, 63, 0, PROTOBUF_FIELD_OFFSET(SendRequest, _impl_.messages_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // repeated .city.social.v1.Message messages = 1 [json_name = "messages"];
-    {PROTOBUF_FIELD_OFFSET(SendRequest, _impl_.messages_), 0, 0,
-    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
-  }}, {{
-    {::_pbi::TcParser::GetTable<::city::social::v1::Message>()},
-  }}, {{
-  }},
-};
-
-::uint8_t* SendRequest::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* SendRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.social.v1.SendRequest)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // repeated .city.social.v1.Message messages = 1 [json_name = "messages"];
   for (unsigned i = 0,
       n = static_cast<unsigned>(this->_internal_messages_size()); i < n; i++) {
-    const auto& repfield = this->_internal_messages().Get(i);
-    target = ::google::protobuf::internal::WireFormatLite::
+    const auto& repfield = this->_internal_messages(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
         InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.social.v1.SendRequest)
   return target;
 }
 
-::size_t SendRequest::ByteSizeLong() const {
+size_t SendRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.social.v1.SendRequest)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // repeated .city.social.v1.Message messages = 1 [json_name = "messages"];
   total_size += 1UL * this->_internal_messages_size();
-  for (const auto& msg : this->_internal_messages()) {
+  for (const auto& msg : this->_impl_.messages_) {
     total_size +=
-      ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
+
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData SendRequest::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData SendRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     SendRequest::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*SendRequest::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SendRequest::GetClassData() const { return &_class_data_; }
 
 
-void SendRequest::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void SendRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<SendRequest*>(&to_msg);
   auto& from = static_cast<const SendRequest&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.social.v1.SendRequest)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  _this->_internal_mutable_messages()->MergeFrom(from._internal_messages());
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.messages_.MergeFrom(from._impl_.messages_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void SendRequest::CopyFrom(const SendRequest& from) {
@@ -365,7 +335,7 @@ void SendRequest::CopyFrom(const SendRequest& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool SendRequest::IsInitialized() const {
+bool SendRequest::IsInitialized() const {
   return true;
 }
 
@@ -375,38 +345,39 @@ void SendRequest::InternalSwap(SendRequest* other) {
   _impl_.messages_.InternalSwap(&other->_impl_.messages_);
 }
 
-::google::protobuf::Metadata SendRequest::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata SendRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fsocial_2fv1_2fsocial_5fservice_2eproto_getter, &descriptor_table_city_2fsocial_2fv1_2fsocial_5fservice_2eproto_once,
       file_level_metadata_city_2fsocial_2fv1_2fsocial_5fservice_2eproto[0]);
 }
+
 // ===================================================================
 
 class SendResponse::_Internal {
  public:
 };
 
-SendResponse::SendResponse(::google::protobuf::Arena* arena)
-    : ::google::protobuf::internal::ZeroFieldsBase(arena) {
+SendResponse::SendResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
   // @@protoc_insertion_point(arena_constructor:city.social.v1.SendResponse)
 }
-SendResponse::SendResponse(const SendResponse& from) : ::google::protobuf::internal::ZeroFieldsBase() {
-  SendResponse* const _this = this;
-  (void)_this;
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
-
+SendResponse::SendResponse(const SendResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
+  SendResponse* const _this = this; (void)_this;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:city.social.v1.SendResponse)
 }
 
 
 
 
-const ::google::protobuf::Message::ClassData SendResponse::_class_data_ = {
-    ::google::protobuf::internal::ZeroFieldsBase::CopyImpl,
-    ::google::protobuf::internal::ZeroFieldsBase::MergeImpl,
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData SendResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
 };
-const ::google::protobuf::Message::ClassData*SendResponse::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SendResponse::GetClassData() const { return &_class_data_; }
 
 
 
@@ -414,153 +385,165 @@ const ::google::protobuf::Message::ClassData*SendResponse::GetClassData() const 
 
 
 
-::google::protobuf::Metadata SendResponse::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata SendResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fsocial_2fv1_2fsocial_5fservice_2eproto_getter, &descriptor_table_city_2fsocial_2fv1_2fsocial_5fservice_2eproto_once,
       file_level_metadata_city_2fsocial_2fv1_2fsocial_5fservice_2eproto[1]);
 }
+
 // ===================================================================
 
 class ReceiveRequest::_Internal {
  public:
 };
 
-ReceiveRequest::ReceiveRequest(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+ReceiveRequest::ReceiveRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.social.v1.ReceiveRequest)
 }
 ReceiveRequest::ReceiveRequest(const ReceiveRequest& from)
-    : ::google::protobuf::Message(), _impl_(from._impl_) {
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  ReceiveRequest* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.id_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.id_ = from._impl_.id_;
   // @@protoc_insertion_point(copy_constructor:city.social.v1.ReceiveRequest)
 }
-inline void ReceiveRequest::SharedCtor(::_pb::Arena* arena) {
+
+inline void ReceiveRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.id_){0},
-      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.id_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 ReceiveRequest::~ReceiveRequest() {
   // @@protoc_insertion_point(destructor:city.social.v1.ReceiveRequest)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void ReceiveRequest::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
+
 void ReceiveRequest::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void ReceiveRequest::Clear() {
+void ReceiveRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.social.v1.ReceiveRequest)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   _impl_.id_ = 0;
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* ReceiveRequest::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* ReceiveRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 id = 1 [json_name = "id"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<0, 1, 0, 0, 2> ReceiveRequest::_table_ = {
-  {
-    0,  // no _has_bits_
-    0, // no _extensions_
-    1, 0,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967294,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    1,  // num_field_entries
-    0,  // num_aux_entries
-    offsetof(decltype(_table_), field_names),  // no aux_entries
-    &_ReceiveRequest_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    // int32 id = 1 [json_name = "id"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(ReceiveRequest, _impl_.id_), 63>(),
-     {8, 63, 0, PROTOBUF_FIELD_OFFSET(ReceiveRequest, _impl_.id_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // int32 id = 1 [json_name = "id"];
-    {PROTOBUF_FIELD_OFFSET(ReceiveRequest, _impl_.id_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-  }},
-  // no aux_entries
-  {{
-  }},
-};
-
-::uint8_t* ReceiveRequest::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* ReceiveRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.social.v1.ReceiveRequest)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // int32 id = 1 [json_name = "id"];
   if (this->_internal_id() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<1>(
-            stream, this->_internal_id(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_id(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.social.v1.ReceiveRequest)
   return target;
 }
 
-::size_t ReceiveRequest::ByteSizeLong() const {
+size_t ReceiveRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.social.v1.ReceiveRequest)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // int32 id = 1 [json_name = "id"];
   if (this->_internal_id() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_id());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_id());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData ReceiveRequest::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ReceiveRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     ReceiveRequest::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*ReceiveRequest::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ReceiveRequest::GetClassData() const { return &_class_data_; }
 
 
-void ReceiveRequest::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void ReceiveRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<ReceiveRequest*>(&to_msg);
   auto& from = static_cast<const ReceiveRequest&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.social.v1.ReceiveRequest)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_id() != 0) {
     _this->_internal_set_id(from._internal_id());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void ReceiveRequest::CopyFrom(const ReceiveRequest& from) {
@@ -570,21 +553,22 @@ void ReceiveRequest::CopyFrom(const ReceiveRequest& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool ReceiveRequest::IsInitialized() const {
+bool ReceiveRequest::IsInitialized() const {
   return true;
 }
 
 void ReceiveRequest::InternalSwap(ReceiveRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-        swap(_impl_.id_, other->_impl_.id_);
+  swap(_impl_.id_, other->_impl_.id_);
 }
 
-::google::protobuf::Metadata ReceiveRequest::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata ReceiveRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fsocial_2fv1_2fsocial_5fservice_2eproto_getter, &descriptor_table_city_2fsocial_2fv1_2fsocial_5fservice_2eproto_once,
       file_level_metadata_city_2fsocial_2fv1_2fsocial_5fservice_2eproto[2]);
 }
+
 // ===================================================================
 
 class ReceiveResponse::_Internal {
@@ -592,150 +576,162 @@ class ReceiveResponse::_Internal {
 };
 
 void ReceiveResponse::clear_messages() {
-  _internal_mutable_messages()->Clear();
+  _impl_.messages_.Clear();
 }
-ReceiveResponse::ReceiveResponse(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+ReceiveResponse::ReceiveResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.social.v1.ReceiveResponse)
 }
-ReceiveResponse::ReceiveResponse(const ReceiveResponse& from) : ::google::protobuf::Message() {
-  ReceiveResponse* const _this = this;
-  (void)_this;
+ReceiveResponse::ReceiveResponse(const ReceiveResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  ReceiveResponse* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.messages_){from._impl_.messages_},
-      /*decltype(_impl_._cached_size_)*/ {},
-  };
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+      decltype(_impl_.messages_){from._impl_.messages_}
+    , /*decltype(_impl_._cached_size_)*/{}};
 
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:city.social.v1.ReceiveResponse)
 }
-inline void ReceiveResponse::SharedCtor(::_pb::Arena* arena) {
+
+inline void ReceiveResponse::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.messages_){arena},
-      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.messages_){arena}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 ReceiveResponse::~ReceiveResponse() {
   // @@protoc_insertion_point(destructor:city.social.v1.ReceiveResponse)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void ReceiveResponse::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.messages_.~RepeatedPtrField();
 }
+
 void ReceiveResponse::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void ReceiveResponse::Clear() {
+void ReceiveResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.social.v1.ReceiveResponse)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _internal_mutable_messages()->Clear();
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _impl_.messages_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* ReceiveResponse::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* ReceiveResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // repeated .city.social.v1.Message messages = 1 [json_name = "messages"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_messages(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<0, 1, 1, 0, 2> ReceiveResponse::_table_ = {
-  {
-    0,  // no _has_bits_
-    0, // no _extensions_
-    1, 0,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967294,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    1,  // num_field_entries
-    1,  // num_aux_entries
-    offsetof(decltype(_table_), aux_entries),
-    &_ReceiveResponse_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    // repeated .city.social.v1.Message messages = 1 [json_name = "messages"];
-    {::_pbi::TcParser::FastMtR1,
-     {10, 63, 0, PROTOBUF_FIELD_OFFSET(ReceiveResponse, _impl_.messages_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // repeated .city.social.v1.Message messages = 1 [json_name = "messages"];
-    {PROTOBUF_FIELD_OFFSET(ReceiveResponse, _impl_.messages_), 0, 0,
-    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
-  }}, {{
-    {::_pbi::TcParser::GetTable<::city::social::v1::Message>()},
-  }}, {{
-  }},
-};
-
-::uint8_t* ReceiveResponse::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* ReceiveResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.social.v1.ReceiveResponse)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // repeated .city.social.v1.Message messages = 1 [json_name = "messages"];
   for (unsigned i = 0,
       n = static_cast<unsigned>(this->_internal_messages_size()); i < n; i++) {
-    const auto& repfield = this->_internal_messages().Get(i);
-    target = ::google::protobuf::internal::WireFormatLite::
+    const auto& repfield = this->_internal_messages(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
         InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.social.v1.ReceiveResponse)
   return target;
 }
 
-::size_t ReceiveResponse::ByteSizeLong() const {
+size_t ReceiveResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.social.v1.ReceiveResponse)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // repeated .city.social.v1.Message messages = 1 [json_name = "messages"];
   total_size += 1UL * this->_internal_messages_size();
-  for (const auto& msg : this->_internal_messages()) {
+  for (const auto& msg : this->_impl_.messages_) {
     total_size +=
-      ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
+
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData ReceiveResponse::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ReceiveResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     ReceiveResponse::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*ReceiveResponse::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ReceiveResponse::GetClassData() const { return &_class_data_; }
 
 
-void ReceiveResponse::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void ReceiveResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<ReceiveResponse*>(&to_msg);
   auto& from = static_cast<const ReceiveResponse&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.social.v1.ReceiveResponse)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  _this->_internal_mutable_messages()->MergeFrom(from._internal_messages());
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.messages_.MergeFrom(from._impl_.messages_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void ReceiveResponse::CopyFrom(const ReceiveResponse& from) {
@@ -745,7 +741,7 @@ void ReceiveResponse::CopyFrom(const ReceiveResponse& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool ReceiveResponse::IsInitialized() const {
+bool ReceiveResponse::IsInitialized() const {
   return true;
 }
 
@@ -755,18 +751,34 @@ void ReceiveResponse::InternalSwap(ReceiveResponse* other) {
   _impl_.messages_.InternalSwap(&other->_impl_.messages_);
 }
 
-::google::protobuf::Metadata ReceiveResponse::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata ReceiveResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fsocial_2fv1_2fsocial_5fservice_2eproto_getter, &descriptor_table_city_2fsocial_2fv1_2fsocial_5fservice_2eproto_once,
       file_level_metadata_city_2fsocial_2fv1_2fsocial_5fservice_2eproto[3]);
 }
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace v1
 }  // namespace social
 }  // namespace city
-namespace google {
-namespace protobuf {
-}  // namespace protobuf
-}  // namespace google
+PROTOBUF_NAMESPACE_OPEN
+template<> PROTOBUF_NOINLINE ::city::social::v1::SendRequest*
+Arena::CreateMaybeMessage< ::city::social::v1::SendRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::social::v1::SendRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::social::v1::SendResponse*
+Arena::CreateMaybeMessage< ::city::social::v1::SendResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::social::v1::SendResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::social::v1::ReceiveRequest*
+Arena::CreateMaybeMessage< ::city::social::v1::ReceiveRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::social::v1::ReceiveRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::social::v1::ReceiveResponse*
+Arena::CreateMaybeMessage< ::city::social::v1::ReceiveResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::social::v1::ReceiveResponse >(arena);
+}
+PROTOBUF_NAMESPACE_CLOSE
+
 // @@protoc_insertion_point(global_scope)
-#include "google/protobuf/port_undef.inc"
+#include <google/protobuf/port_undef.inc>

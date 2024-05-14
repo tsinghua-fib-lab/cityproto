@@ -4,45 +4,42 @@
 #include "city/comm/interaction/gateway/v1/gateway.pb.h"
 
 #include <algorithm>
-#include "google/protobuf/io/coded_stream.h"
-#include "google/protobuf/extension_set.h"
-#include "google/protobuf/wire_format_lite.h"
-#include "google/protobuf/descriptor.h"
-#include "google/protobuf/generated_message_reflection.h"
-#include "google/protobuf/reflection_ops.h"
-#include "google/protobuf/wire_format.h"
-#include "google/protobuf/generated_message_tctable_impl.h"
-// @@protoc_insertion_point(includes)
 
-// Must be included last.
-#include "google/protobuf/port_def.inc"
+#include <google/protobuf/io/coded_stream.h>
+#include <google/protobuf/extension_set.h>
+#include <google/protobuf/wire_format_lite.h>
+#include <google/protobuf/descriptor.h>
+#include <google/protobuf/generated_message_reflection.h>
+#include <google/protobuf/reflection_ops.h>
+#include <google/protobuf/wire_format.h>
+// @@protoc_insertion_point(includes)
+#include <google/protobuf/port_def.inc>
+
 PROTOBUF_PRAGMA_INIT_SEG
-namespace _pb = ::google::protobuf;
-namespace _pbi = ::google::protobuf::internal;
-namespace _fl = ::google::protobuf::internal::field_layout;
+
+namespace _pb = ::PROTOBUF_NAMESPACE_ID;
+namespace _pbi = _pb::internal;
+
 namespace city {
 namespace comm {
 namespace interaction {
 namespace gateway {
 namespace v1 {
-        template <typename>
-PROTOBUF_CONSTEXPR Station::Station(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_.id_)*/ 0,
-      /*decltype(_impl_.status_)*/ false,
-      /*decltype(_impl_.reason_)*/ 0,
-      /*decltype(_impl_._cached_size_)*/ {},
-    } {}
+PROTOBUF_CONSTEXPR Station::Station(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.id_)*/0
+  , /*decltype(_impl_.status_)*/false
+  , /*decltype(_impl_.reason_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct StationDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR StationDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR StationDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~StationDefaultTypeInternal() {}
   union {
     Station _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 StationDefaultTypeInternal _Station_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 StationDefaultTypeInternal _Station_default_instance_;
 }  // namespace v1
 }  // namespace gateway
 }  // namespace interaction
@@ -50,91 +47,66 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
 }  // namespace city
 static ::_pb::Metadata file_level_metadata_city_2fcomm_2finteraction_2fgateway_2fv1_2fgateway_2eproto[1];
 static const ::_pb::EnumDescriptor* file_level_enum_descriptors_city_2fcomm_2finteraction_2fgateway_2fv1_2fgateway_2eproto[1];
-static constexpr const ::_pb::ServiceDescriptor**
-    file_level_service_descriptors_city_2fcomm_2finteraction_2fgateway_2fv1_2fgateway_2eproto = nullptr;
-const ::uint32_t TableStruct_city_2fcomm_2finteraction_2fgateway_2fv1_2fgateway_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
-    protodesc_cold) = {
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::comm::interaction::gateway::v1::Station, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::comm::interaction::gateway::v1::Station, _impl_.id_),
-    PROTOBUF_FIELD_OFFSET(::city::comm::interaction::gateway::v1::Station, _impl_.status_),
-    PROTOBUF_FIELD_OFFSET(::city::comm::interaction::gateway::v1::Station, _impl_.reason_),
-};
+static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_city_2fcomm_2finteraction_2fgateway_2fv1_2fgateway_2eproto = nullptr;
 
-static const ::_pbi::MigrationSchema
-    schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-        {0, -1, -1, sizeof(::city::comm::interaction::gateway::v1::Station)},
+const uint32_t TableStruct_city_2fcomm_2finteraction_2fgateway_2fv1_2fgateway_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::comm::interaction::gateway::v1::Station, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::comm::interaction::gateway::v1::Station, _impl_.id_),
+  PROTOBUF_FIELD_OFFSET(::city::comm::interaction::gateway::v1::Station, _impl_.status_),
+  PROTOBUF_FIELD_OFFSET(::city::comm::interaction::gateway::v1::Station, _impl_.reason_),
+};
+static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  { 0, -1, -1, sizeof(::city::comm::interaction::gateway::v1::Station)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
-    &::city::comm::interaction::gateway::v1::_Station_default_instance_._instance,
-};
-const char descriptor_table_protodef_city_2fcomm_2finteraction_2fgateway_2fv1_2fgateway_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-    "\n.city/comm/interaction/gateway/v1/gatew"
-    "ay.proto\022 city.comm.interaction.gateway."
-    "v1\"s\n\007Station\022\016\n\002id\030\001 \001(\005R\002id\022\026\n\006status\030"
-    "\002 \001(\010R\006status\022@\n\006reason\030\003 \001(\0162(.city.com"
-    "m.interaction.gateway.v1.ReasonR\006reason*"
-    "E\n\006Reason\022\026\n\022REASON_UNSPECIFIED\020\000\022\017\n\013REA"
-    "SON_RUIN\020\001\022\022\n\016REASON_CASCADE\020\002B\242\002\n$com.c"
-    "ity.comm.interaction.gateway.v1B\014Gateway"
-    "ProtoP\001ZGgit.fiblab.net/sim/protos/go/ci"
-    "ty/comm/interaction/gateway/v1;gatewayv1"
-    "\242\002\004CCIG\252\002 City.Comm.Interaction.Gateway."
-    "V1\312\002 City\\Comm\\Interaction\\Gateway\\V1\342\002,"
-    "City\\Comm\\Interaction\\Gateway\\V1\\GPBMeta"
-    "data\352\002$City::Comm::Interaction::Gateway:"
-    ":V1b\006proto3"
-};
-static ::absl::once_flag descriptor_table_city_2fcomm_2finteraction_2fgateway_2fv1_2fgateway_2eproto_once;
-const ::_pbi::DescriptorTable descriptor_table_city_2fcomm_2finteraction_2fgateway_2fv1_2fgateway_2eproto = {
-    false,
-    false,
-    571,
-    descriptor_table_protodef_city_2fcomm_2finteraction_2fgateway_2fv1_2fgateway_2eproto,
-    "city/comm/interaction/gateway/v1/gateway.proto",
-    &descriptor_table_city_2fcomm_2finteraction_2fgateway_2fv1_2fgateway_2eproto_once,
-    nullptr,
-    0,
-    1,
-    schemas,
-    file_default_instances,
-    TableStruct_city_2fcomm_2finteraction_2fgateway_2fv1_2fgateway_2eproto::offsets,
-    file_level_metadata_city_2fcomm_2finteraction_2fgateway_2fv1_2fgateway_2eproto,
-    file_level_enum_descriptors_city_2fcomm_2finteraction_2fgateway_2fv1_2fgateway_2eproto,
-    file_level_service_descriptors_city_2fcomm_2finteraction_2fgateway_2fv1_2fgateway_2eproto,
+  &::city::comm::interaction::gateway::v1::_Station_default_instance_._instance,
 };
 
-// This function exists to be marked as weak.
-// It can significantly speed up compilation by breaking up LLVM's SCC
-// in the .pb.cc translation units. Large translation units see a
-// reduction of more than 35% of walltime for optimized builds. Without
-// the weak attribute all the messages in the file, including all the
-// vtables and everything they use become part of the same SCC through
-// a cycle like:
-// GetMetadata -> descriptor table -> default instances ->
-//   vtables -> GetMetadata
-// By adding a weak function here we break the connection from the
-// individual vtables back into the descriptor table.
+const char descriptor_table_protodef_city_2fcomm_2finteraction_2fgateway_2fv1_2fgateway_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
+  "\n.city/comm/interaction/gateway/v1/gatew"
+  "ay.proto\022 city.comm.interaction.gateway."
+  "v1\"s\n\007Station\022\016\n\002id\030\001 \001(\005R\002id\022\026\n\006status\030"
+  "\002 \001(\010R\006status\022@\n\006reason\030\003 \001(\0162(.city.com"
+  "m.interaction.gateway.v1.ReasonR\006reason*"
+  "E\n\006Reason\022\026\n\022REASON_UNSPECIFIED\020\000\022\017\n\013REA"
+  "SON_RUIN\020\001\022\022\n\016REASON_CASCADE\020\002B\242\002\n$com.c"
+  "ity.comm.interaction.gateway.v1B\014Gateway"
+  "ProtoP\001ZGgit.fiblab.net/sim/protos/go/ci"
+  "ty/comm/interaction/gateway/v1;gatewayv1"
+  "\242\002\004CCIG\252\002 City.Comm.Interaction.Gateway."
+  "V1\312\002 City\\Comm\\Interaction\\Gateway\\V1\342\002,"
+  "City\\Comm\\Interaction\\Gateway\\V1\\GPBMeta"
+  "data\352\002$City::Comm::Interaction::Gateway:"
+  ":V1b\006proto3"
+  ;
+static ::_pbi::once_flag descriptor_table_city_2fcomm_2finteraction_2fgateway_2fv1_2fgateway_2eproto_once;
+const ::_pbi::DescriptorTable descriptor_table_city_2fcomm_2finteraction_2fgateway_2fv1_2fgateway_2eproto = {
+    false, false, 571, descriptor_table_protodef_city_2fcomm_2finteraction_2fgateway_2fv1_2fgateway_2eproto,
+    "city/comm/interaction/gateway/v1/gateway.proto",
+    &descriptor_table_city_2fcomm_2finteraction_2fgateway_2fv1_2fgateway_2eproto_once, nullptr, 0, 1,
+    schemas, file_default_instances, TableStruct_city_2fcomm_2finteraction_2fgateway_2fv1_2fgateway_2eproto::offsets,
+    file_level_metadata_city_2fcomm_2finteraction_2fgateway_2fv1_2fgateway_2eproto, file_level_enum_descriptors_city_2fcomm_2finteraction_2fgateway_2fv1_2fgateway_2eproto,
+    file_level_service_descriptors_city_2fcomm_2finteraction_2fgateway_2fv1_2fgateway_2eproto,
+};
 PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_city_2fcomm_2finteraction_2fgateway_2fv1_2fgateway_2eproto_getter() {
   return &descriptor_table_city_2fcomm_2finteraction_2fgateway_2fv1_2fgateway_2eproto;
 }
+
 // Force running AddDescriptors() at dynamic initialization time.
-PROTOBUF_ATTRIBUTE_INIT_PRIORITY2
-static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_city_2fcomm_2finteraction_2fgateway_2fv1_2fgateway_2eproto(&descriptor_table_city_2fcomm_2finteraction_2fgateway_2fv1_2fgateway_2eproto);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_city_2fcomm_2finteraction_2fgateway_2fv1_2fgateway_2eproto(&descriptor_table_city_2fcomm_2finteraction_2fgateway_2fv1_2fgateway_2eproto);
 namespace city {
 namespace comm {
 namespace interaction {
 namespace gateway {
 namespace v1 {
-const ::google::protobuf::EnumDescriptor* Reason_descriptor() {
-  ::google::protobuf::internal::AssignDescriptors(&descriptor_table_city_2fcomm_2finteraction_2fgateway_2fv1_2fgateway_2eproto);
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* Reason_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_city_2fcomm_2finteraction_2fgateway_2fv1_2fgateway_2eproto);
   return file_level_enum_descriptors_city_2fcomm_2finteraction_2fgateway_2fv1_2fgateway_2eproto[0];
 }
 bool Reason_IsValid(int value) {
@@ -147,184 +119,204 @@ bool Reason_IsValid(int value) {
       return false;
   }
 }
+
+
 // ===================================================================
 
 class Station::_Internal {
  public:
 };
 
-Station::Station(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+Station::Station(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.comm.interaction.gateway.v1.Station)
 }
 Station::Station(const Station& from)
-    : ::google::protobuf::Message(), _impl_(from._impl_) {
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  Station* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.id_){}
+    , decltype(_impl_.status_){}
+    , decltype(_impl_.reason_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&_impl_.id_, &from._impl_.id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.reason_) -
+    reinterpret_cast<char*>(&_impl_.id_)) + sizeof(_impl_.reason_));
   // @@protoc_insertion_point(copy_constructor:city.comm.interaction.gateway.v1.Station)
 }
-inline void Station::SharedCtor(::_pb::Arena* arena) {
+
+inline void Station::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.id_){0},
-      decltype(_impl_.status_){false},
-      decltype(_impl_.reason_){0},
-      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.id_){0}
+    , decltype(_impl_.status_){false}
+    , decltype(_impl_.reason_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 Station::~Station() {
   // @@protoc_insertion_point(destructor:city.comm.interaction.gateway.v1.Station)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void Station::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
+
 void Station::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void Station::Clear() {
+void Station::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.comm.interaction.gateway.v1.Station)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&_impl_.id_, 0, static_cast<::size_t>(
+  ::memset(&_impl_.id_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_impl_.reason_) -
       reinterpret_cast<char*>(&_impl_.id_)) + sizeof(_impl_.reason_));
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* Station::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* Station::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 id = 1 [json_name = "id"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // bool status = 2 [json_name = "status"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _impl_.status_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .city.comm.interaction.gateway.v1.Reason reason = 3 [json_name = "reason"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_set_reason(static_cast<::city::comm::interaction::gateway::v1::Reason>(val));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<2, 3, 0, 0, 2> Station::_table_ = {
-  {
-    0,  // no _has_bits_
-    0, // no _extensions_
-    3, 24,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967288,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    3,  // num_field_entries
-    0,  // num_aux_entries
-    offsetof(decltype(_table_), field_names),  // no aux_entries
-    &_Station_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    {::_pbi::TcParser::MiniParse, {}},
-    // int32 id = 1 [json_name = "id"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(Station, _impl_.id_), 63>(),
-     {8, 63, 0, PROTOBUF_FIELD_OFFSET(Station, _impl_.id_)}},
-    // bool status = 2 [json_name = "status"];
-    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(Station, _impl_.status_), 63>(),
-     {16, 63, 0, PROTOBUF_FIELD_OFFSET(Station, _impl_.status_)}},
-    // .city.comm.interaction.gateway.v1.Reason reason = 3 [json_name = "reason"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(Station, _impl_.reason_), 63>(),
-     {24, 63, 0, PROTOBUF_FIELD_OFFSET(Station, _impl_.reason_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // int32 id = 1 [json_name = "id"];
-    {PROTOBUF_FIELD_OFFSET(Station, _impl_.id_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-    // bool status = 2 [json_name = "status"];
-    {PROTOBUF_FIELD_OFFSET(Station, _impl_.status_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kBool)},
-    // .city.comm.interaction.gateway.v1.Reason reason = 3 [json_name = "reason"];
-    {PROTOBUF_FIELD_OFFSET(Station, _impl_.reason_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kOpenEnum)},
-  }},
-  // no aux_entries
-  {{
-  }},
-};
-
-::uint8_t* Station::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* Station::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.comm.interaction.gateway.v1.Station)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // int32 id = 1 [json_name = "id"];
   if (this->_internal_id() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<1>(
-            stream, this->_internal_id(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_id(), target);
   }
 
   // bool status = 2 [json_name = "status"];
   if (this->_internal_status() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(
-        2, this->_internal_status(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(2, this->_internal_status(), target);
   }
 
   // .city.comm.interaction.gateway.v1.Reason reason = 3 [json_name = "reason"];
   if (this->_internal_reason() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteEnumToArray(
-        3, this->_internal_reason(), target);
+      3, this->_internal_reason(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.comm.interaction.gateway.v1.Station)
   return target;
 }
 
-::size_t Station::ByteSizeLong() const {
+size_t Station::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.comm.interaction.gateway.v1.Station)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // int32 id = 1 [json_name = "id"];
   if (this->_internal_id() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_id());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_id());
   }
 
   // bool status = 2 [json_name = "status"];
   if (this->_internal_status() != 0) {
-    total_size += 2;
+    total_size += 1 + 1;
   }
 
   // .city.comm.interaction.gateway.v1.Reason reason = 3 [json_name = "reason"];
   if (this->_internal_reason() != 0) {
     total_size += 1 +
-                  ::_pbi::WireFormatLite::EnumSize(this->_internal_reason());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_reason());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData Station::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Station::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     Station::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*Station::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Station::GetClassData() const { return &_class_data_; }
 
 
-void Station::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void Station::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<Station*>(&to_msg);
   auto& from = static_cast<const Station&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.comm.interaction.gateway.v1.Station)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_id() != 0) {
@@ -336,7 +328,7 @@ void Station::MergeImpl(::google::protobuf::Message& to_msg, const ::google::pro
   if (from._internal_reason() != 0) {
     _this->_internal_set_reason(from._internal_reason());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void Station::CopyFrom(const Station& from) {
@@ -346,14 +338,14 @@ void Station::CopyFrom(const Station& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool Station::IsInitialized() const {
+bool Station::IsInitialized() const {
   return true;
 }
 
 void Station::InternalSwap(Station* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::google::protobuf::internal::memswap<
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(Station, _impl_.reason_)
       + sizeof(Station::_impl_.reason_)
       - PROTOBUF_FIELD_OFFSET(Station, _impl_.id_)>(
@@ -361,20 +353,24 @@ void Station::InternalSwap(Station* other) {
           reinterpret_cast<char*>(&other->_impl_.id_));
 }
 
-::google::protobuf::Metadata Station::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata Station::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fcomm_2finteraction_2fgateway_2fv1_2fgateway_2eproto_getter, &descriptor_table_city_2fcomm_2finteraction_2fgateway_2fv1_2fgateway_2eproto_once,
       file_level_metadata_city_2fcomm_2finteraction_2fgateway_2fv1_2fgateway_2eproto[0]);
 }
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace v1
 }  // namespace gateway
 }  // namespace interaction
 }  // namespace comm
 }  // namespace city
-namespace google {
-namespace protobuf {
-}  // namespace protobuf
-}  // namespace google
+PROTOBUF_NAMESPACE_OPEN
+template<> PROTOBUF_NOINLINE ::city::comm::interaction::gateway::v1::Station*
+Arena::CreateMaybeMessage< ::city::comm::interaction::gateway::v1::Station >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::comm::interaction::gateway::v1::Station >(arena);
+}
+PROTOBUF_NAMESPACE_CLOSE
+
 // @@protoc_insertion_point(global_scope)
-#include "google/protobuf/port_undef.inc"
+#include <google/protobuf/port_undef.inc>

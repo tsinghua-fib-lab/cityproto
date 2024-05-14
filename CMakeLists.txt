@@ -17,7 +17,7 @@ include(FetchContent)
 FetchContent_Declare(
   grpc
   GIT_REPOSITORY https://github.com/grpc/grpc.git
-  GIT_TAG v1.59.4
+  GIT_TAG v1.54.3
   GIT_SUBMODULES_RECURSE TRUE
 )
 set(FETCHCONTENT_QUIET OFF)

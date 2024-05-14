@@ -103,10 +103,10 @@ type XYPosition struct {
 	X float64 `protobuf:"fixed64,1,opt,name=x,proto3" json:"x,omitempty" db:"x" yaml:"x" bson:"x"`
 	// y坐标，单位米，对应纬度
 	// y coordinate, in meters, corresponding to latitude
-	Y float64 `protobuf:"fixed64,2,opt,name=y,proto3" json:"y,omitempty" db:"y" yaml:"y" bson:"y"`
+	Y float64 `protobuf:"fixed64,2,opt,name=y,proto3" json:"y,omitempty" yaml:"y" bson:"y" db:"y"`
 	// z坐标，单位米，对应高程
 	// z coordinate, in meters, corresponding to elevation
-	Z *float64 `protobuf:"fixed64,3,opt,name=z,proto3,oneof" json:"z,omitempty" bson:"z" db:"z" yaml:"z"`
+	Z *float64 `protobuf:"fixed64,3,opt,name=z,proto3,oneof" json:"z,omitempty" yaml:"z" bson:"z" db:"z"`
 }
 
 func (x *XYPosition) Reset() {
@@ -174,7 +174,7 @@ type LanePosition struct {
 	LaneId int32 `protobuf:"varint,1,opt,name=lane_id,json=laneId,proto3" json:"lane_id,omitempty" yaml:"lane_id" bson:"lane_id" db:"lane_id"`
 	// s是车道上的点到车道起点的距离
 	// s is the distance from the point on the lane to the starting point of the lane
-	S float64 `protobuf:"fixed64,2,opt,name=s,proto3" json:"s,omitempty" bson:"s" db:"s" yaml:"s"`
+	S float64 `protobuf:"fixed64,2,opt,name=s,proto3" json:"s,omitempty" yaml:"s" bson:"s" db:"s"`
 }
 
 func (x *LanePosition) Reset() {
@@ -234,7 +234,7 @@ type AoiPosition struct {
 	AoiId int32 `protobuf:"varint,1,opt,name=aoi_id,json=aoiId,proto3" json:"aoi_id,omitempty" yaml:"aoi_id" bson:"aoi_id" db:"aoi_id"`
 	// POI ID，需要是aoi_id的子poi，否则该值无效
 	// POI ID, needs to be a sub-poi of aoi_id, otherwise the value is invalid
-	PoiId *int32 `protobuf:"varint,2,opt,name=poi_id,json=poiId,proto3,oneof" json:"poi_id,omitempty" yaml:"poi_id" bson:"poi_id" db:"poi_id"`
+	PoiId *int32 `protobuf:"varint,2,opt,name=poi_id,json=poiId,proto3,oneof" json:"poi_id,omitempty" bson:"poi_id" db:"poi_id" yaml:"poi_id"`
 }
 
 func (x *AoiPosition) Reset() {
@@ -295,13 +295,13 @@ type Position struct {
 	LanePosition *LanePosition `protobuf:"bytes,1,opt,name=lane_position,json=lanePosition,proto3,oneof" json:"lane_position,omitempty" yaml:"lane_position" bson:"lane_position" db:"lane_position"`
 	// 地图坐标Lane+S（必须提供其中之一）
 	// Map coordinates Lane+S (one of these must be provided)
-	AoiPosition *AoiPosition `protobuf:"bytes,2,opt,name=aoi_position,json=aoiPosition,proto3,oneof" json:"aoi_position,omitempty" yaml:"aoi_position" bson:"aoi_position" db:"aoi_position"`
+	AoiPosition *AoiPosition `protobuf:"bytes,2,opt,name=aoi_position,json=aoiPosition,proto3,oneof" json:"aoi_position,omitempty" db:"aoi_position" yaml:"aoi_position" bson:"aoi_position"`
 	// WGS84经纬度坐标
 	// WGS84 longitute and latitude coordinates
 	LonglatPosition *LongLatPosition `protobuf:"bytes,3,opt,name=longlat_position,json=longlatPosition,proto3,oneof" json:"longlat_position,omitempty" yaml:"longlat_position" bson:"longlat_position" db:"longlat_position"`
 	// XY坐标
 	// XY coordinates
-	XyPosition *XYPosition `protobuf:"bytes,4,opt,name=xy_position,json=xyPosition,proto3,oneof" json:"xy_position,omitempty" yaml:"xy_position" bson:"xy_position" db:"xy_position"`
+	XyPosition *XYPosition `protobuf:"bytes,4,opt,name=xy_position,json=xyPosition,proto3,oneof" json:"xy_position,omitempty" db:"xy_position" yaml:"xy_position" bson:"xy_position"`
 }
 
 func (x *Position) Reset() {
@@ -373,16 +373,16 @@ type LongLatBBox struct {
 
 	// 最小经度
 	// minimum longitude
-	MinLongitude float64 `protobuf:"fixed64,1,opt,name=min_longitude,json=minLongitude,proto3" json:"min_longitude,omitempty" yaml:"min_longitude" bson:"min_longitude" db:"min_longitude"`
+	MinLongitude float64 `protobuf:"fixed64,1,opt,name=min_longitude,json=minLongitude,proto3" json:"min_longitude,omitempty" bson:"min_longitude" db:"min_longitude" yaml:"min_longitude"`
 	// 最小纬度
 	// minimum latitude
 	MinLatitude float64 `protobuf:"fixed64,2,opt,name=min_latitude,json=minLatitude,proto3" json:"min_latitude,omitempty" yaml:"min_latitude" bson:"min_latitude" db:"min_latitude"`
 	// 最大经度
 	// maximu longitude
-	MaxLongitude float64 `protobuf:"fixed64,3,opt,name=max_longitude,json=maxLongitude,proto3" json:"max_longitude,omitempty" db:"max_longitude" yaml:"max_longitude" bson:"max_longitude"`
+	MaxLongitude float64 `protobuf:"fixed64,3,opt,name=max_longitude,json=maxLongitude,proto3" json:"max_longitude,omitempty" yaml:"max_longitude" bson:"max_longitude" db:"max_longitude"`
 	// 最大纬度
 	// minimum longitude
-	MaxLatitude float64 `protobuf:"fixed64,4,opt,name=max_latitude,json=maxLatitude,proto3" json:"max_latitude,omitempty" db:"max_latitude" yaml:"max_latitude" bson:"max_latitude"`
+	MaxLatitude float64 `protobuf:"fixed64,4,opt,name=max_latitude,json=maxLatitude,proto3" json:"max_latitude,omitempty" yaml:"max_latitude" bson:"max_latitude" db:"max_latitude"`
 }
 
 func (x *LongLatBBox) Reset() {

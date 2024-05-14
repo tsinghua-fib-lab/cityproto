@@ -4,421 +4,368 @@
 #include "city/comm/output/v1/output.pb.h"
 
 #include <algorithm>
-#include "google/protobuf/io/coded_stream.h"
-#include "google/protobuf/extension_set.h"
-#include "google/protobuf/wire_format_lite.h"
-#include "google/protobuf/descriptor.h"
-#include "google/protobuf/generated_message_reflection.h"
-#include "google/protobuf/reflection_ops.h"
-#include "google/protobuf/wire_format.h"
-#include "google/protobuf/generated_message_tctable_impl.h"
-// @@protoc_insertion_point(includes)
 
-// Must be included last.
-#include "google/protobuf/port_def.inc"
+#include <google/protobuf/io/coded_stream.h>
+#include <google/protobuf/extension_set.h>
+#include <google/protobuf/wire_format_lite.h>
+#include <google/protobuf/descriptor.h>
+#include <google/protobuf/generated_message_reflection.h>
+#include <google/protobuf/reflection_ops.h>
+#include <google/protobuf/wire_format.h>
+// @@protoc_insertion_point(includes)
+#include <google/protobuf/port_def.inc>
+
 PROTOBUF_PRAGMA_INIT_SEG
-namespace _pb = ::google::protobuf;
-namespace _pbi = ::google::protobuf::internal;
-namespace _fl = ::google::protobuf::internal::field_layout;
+
+namespace _pb = ::PROTOBUF_NAMESPACE_ID;
+namespace _pbi = _pb::internal;
+
 namespace city {
 namespace comm {
 namespace output {
 namespace v1 {
-        template <typename>
-PROTOBUF_CONSTEXPR Node::Node(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_._has_bits_)*/ {},
-      /*decltype(_impl_._cached_size_)*/ {},
-      /*decltype(_impl_.id_)*/ 0,
-      /*decltype(_impl_.status_)*/ 0,
-      /*decltype(_impl_.battery_remaining_time_)*/ 0,
-    } {}
+PROTOBUF_CONSTEXPR Node::Node(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_._has_bits_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}
+  , /*decltype(_impl_.id_)*/0
+  , /*decltype(_impl_.status_)*/0
+  , /*decltype(_impl_.battery_remaining_time_)*/0} {}
 struct NodeDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR NodeDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR NodeDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~NodeDefaultTypeInternal() {}
   union {
     Node _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 NodeDefaultTypeInternal _Node_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR BaseStation::BaseStation(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_.demand_flow_)*/ 0,
-      /*decltype(_impl_.id_)*/ 0,
-      /*decltype(_impl_.num_agents_)*/ 0,
-      /*decltype(_impl_.actual_flow_)*/ 0,
-      /*decltype(_impl_.overload_)*/ false,
-      /*decltype(_impl_.unsatisfied_num_)*/ 0,
-      /*decltype(_impl_.satisfied_num_)*/ 0,
-      /*decltype(_impl_.outage_num_)*/ 0,
-      /*decltype(_impl_.transmit_power_)*/ 0,
-      /*decltype(_impl_.active_num_)*/ 0,
-      /*decltype(_impl_._cached_size_)*/ {},
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 NodeDefaultTypeInternal _Node_default_instance_;
+PROTOBUF_CONSTEXPR BaseStation::BaseStation(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.demand_flow_)*/0
+  , /*decltype(_impl_.id_)*/0
+  , /*decltype(_impl_.num_agents_)*/0
+  , /*decltype(_impl_.actual_flow_)*/0
+  , /*decltype(_impl_.overload_)*/false
+  , /*decltype(_impl_.unsatisfied_num_)*/0
+  , /*decltype(_impl_.satisfied_num_)*/0
+  , /*decltype(_impl_.outage_num_)*/0
+  , /*decltype(_impl_.transmit_power_)*/0
+  , /*decltype(_impl_.active_num_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct BaseStationDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR BaseStationDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR BaseStationDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~BaseStationDefaultTypeInternal() {}
   union {
     BaseStation _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BaseStationDefaultTypeInternal _BaseStation_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR Signal::Signal(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_.strength_)*/ {},
-      /*decltype(_impl_.base_station_id_)*/ {},
-      /* _impl_._base_station_id_cached_byte_size_ = */ {0},
-      /*decltype(_impl_.freq_range_id_)*/ {},
-      /* _impl_._freq_range_id_cached_byte_size_ = */ {0},
-      /*decltype(_impl_.num_rows_)*/ 0,
-      /*decltype(_impl_.num_columns_)*/ 0,
-      /*decltype(_impl_._cached_size_)*/ {},
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BaseStationDefaultTypeInternal _BaseStation_default_instance_;
+PROTOBUF_CONSTEXPR Signal::Signal(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.strength_)*/{}
+  , /*decltype(_impl_.base_station_id_)*/{}
+  , /*decltype(_impl_._base_station_id_cached_byte_size_)*/{0}
+  , /*decltype(_impl_.freq_range_id_)*/{}
+  , /*decltype(_impl_._freq_range_id_cached_byte_size_)*/{0}
+  , /*decltype(_impl_.num_rows_)*/0
+  , /*decltype(_impl_.num_columns_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct SignalDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR SignalDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR SignalDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~SignalDefaultTypeInternal() {}
   union {
     Signal _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SignalDefaultTypeInternal _Signal_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR Person::Person(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_.freq_range_ids_)*/ {},
-      /* _impl_._freq_range_ids_cached_byte_size_ = */ {0},
-      /*decltype(_impl_.demand_rate_)*/ 0,
-      /*decltype(_impl_.id_)*/ 0,
-      /*decltype(_impl_.connect_status_)*/ 0,
-      /*decltype(_impl_.actual_rate_)*/ 0,
-      /*decltype(_impl_.strength_)*/ 0,
-      /*decltype(_impl_.base_station_id_)*/ 0,
-      /*decltype(_impl_.demand_status_)*/ 0,
-      /*decltype(_impl_.received_power_)*/ 0,
-      /*decltype(_impl_._cached_size_)*/ {},
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SignalDefaultTypeInternal _Signal_default_instance_;
+PROTOBUF_CONSTEXPR Person::Person(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.freq_range_ids_)*/{}
+  , /*decltype(_impl_._freq_range_ids_cached_byte_size_)*/{0}
+  , /*decltype(_impl_.demand_rate_)*/0
+  , /*decltype(_impl_.id_)*/0
+  , /*decltype(_impl_.connect_status_)*/0
+  , /*decltype(_impl_.actual_rate_)*/0
+  , /*decltype(_impl_.strength_)*/0
+  , /*decltype(_impl_.base_station_id_)*/0
+  , /*decltype(_impl_.demand_status_)*/0
+  , /*decltype(_impl_.received_power_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct PersonDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR PersonDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR PersonDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~PersonDefaultTypeInternal() {}
   union {
     Person _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PersonDefaultTypeInternal _Person_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR Aoi::Aoi(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_.demand_flow_)*/ 0,
-      /*decltype(_impl_.id_)*/ 0,
-      /*decltype(_impl_.outage_num_)*/ 0,
-      /*decltype(_impl_.actual_flow_)*/ 0,
-      /*decltype(_impl_.satisfied_num_)*/ 0,
-      /*decltype(_impl_.unsatisfied_num_)*/ 0,
-      /*decltype(_impl_.active_user_num_)*/ 0,
-      /*decltype(_impl_._cached_size_)*/ {},
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PersonDefaultTypeInternal _Person_default_instance_;
+PROTOBUF_CONSTEXPR Aoi::Aoi(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.demand_flow_)*/0
+  , /*decltype(_impl_.id_)*/0
+  , /*decltype(_impl_.outage_num_)*/0
+  , /*decltype(_impl_.actual_flow_)*/0
+  , /*decltype(_impl_.satisfied_num_)*/0
+  , /*decltype(_impl_.unsatisfied_num_)*/0
+  , /*decltype(_impl_.active_user_num_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct AoiDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR AoiDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR AoiDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~AoiDefaultTypeInternal() {}
   union {
     Aoi _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 AoiDefaultTypeInternal _Aoi_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR Statistics::Statistics(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_.num_satisfied_agents_)*/ 0,
-      /*decltype(_impl_.num_unsatisfied_agents_)*/ 0,
-      /*decltype(_impl_.num_outage_agents_)*/ 0,
-      /*decltype(_impl_.num_active_agents_)*/ 0,
-      /*decltype(_impl_.demand_flow_)*/ 0,
-      /*decltype(_impl_.actual_flow_)*/ 0,
-      /*decltype(_impl_.num_base_station_)*/ 0,
-      /*decltype(_impl_.num_ok_base_station_)*/ 0,
-      /*decltype(_impl_.num_ruined_base_station_)*/ 0,
-      /*decltype(_impl_.num_stopped_base_station_)*/ 0,
-      /*decltype(_impl_.num_overloaded_base_station_)*/ 0,
-      /*decltype(_impl_.num_gateway_)*/ 0,
-      /*decltype(_impl_.num_ok_gateway_)*/ 0,
-      /*decltype(_impl_.num_ruined_gateway_)*/ 0,
-      /*decltype(_impl_.num_stopped_gateway_)*/ 0,
-      /*decltype(_impl_.num_overloaded_gateway_)*/ 0,
-      /*decltype(_impl_.power_consumption_)*/ 0,
-      /*decltype(_impl_.num_battery_gateway_)*/ 0,
-      /*decltype(_impl_._cached_size_)*/ {},
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 AoiDefaultTypeInternal _Aoi_default_instance_;
+PROTOBUF_CONSTEXPR Statistics::Statistics(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.num_satisfied_agents_)*/0
+  , /*decltype(_impl_.num_unsatisfied_agents_)*/0
+  , /*decltype(_impl_.num_outage_agents_)*/0
+  , /*decltype(_impl_.num_active_agents_)*/0
+  , /*decltype(_impl_.demand_flow_)*/0
+  , /*decltype(_impl_.actual_flow_)*/0
+  , /*decltype(_impl_.num_base_station_)*/0
+  , /*decltype(_impl_.num_ok_base_station_)*/0
+  , /*decltype(_impl_.num_ruined_base_station_)*/0
+  , /*decltype(_impl_.num_stopped_base_station_)*/0
+  , /*decltype(_impl_.num_overloaded_base_station_)*/0
+  , /*decltype(_impl_.num_gateway_)*/0
+  , /*decltype(_impl_.num_ok_gateway_)*/0
+  , /*decltype(_impl_.num_ruined_gateway_)*/0
+  , /*decltype(_impl_.num_stopped_gateway_)*/0
+  , /*decltype(_impl_.num_overloaded_gateway_)*/0
+  , /*decltype(_impl_.power_consumption_)*/0
+  , /*decltype(_impl_.num_battery_gateway_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct StatisticsDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR StatisticsDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR StatisticsDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~StatisticsDefaultTypeInternal() {}
   union {
     Statistics _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 StatisticsDefaultTypeInternal _Statistics_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 StatisticsDefaultTypeInternal _Statistics_default_instance_;
 }  // namespace v1
 }  // namespace output
 }  // namespace comm
 }  // namespace city
 static ::_pb::Metadata file_level_metadata_city_2fcomm_2foutput_2fv1_2foutput_2eproto[6];
 static const ::_pb::EnumDescriptor* file_level_enum_descriptors_city_2fcomm_2foutput_2fv1_2foutput_2eproto[3];
-static constexpr const ::_pb::ServiceDescriptor**
-    file_level_service_descriptors_city_2fcomm_2foutput_2fv1_2foutput_2eproto = nullptr;
-const ::uint32_t TableStruct_city_2fcomm_2foutput_2fv1_2foutput_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
-    protodesc_cold) = {
-    PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Node, _impl_._has_bits_),
-    PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Node, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Node, _impl_.id_),
-    PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Node, _impl_.status_),
-    PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Node, _impl_.battery_remaining_time_),
-    ~0u,
-    ~0u,
-    0,
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::BaseStation, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::BaseStation, _impl_.id_),
-    PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::BaseStation, _impl_.demand_flow_),
-    PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::BaseStation, _impl_.actual_flow_),
-    PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::BaseStation, _impl_.num_agents_),
-    PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::BaseStation, _impl_.overload_),
-    PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::BaseStation, _impl_.unsatisfied_num_),
-    PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::BaseStation, _impl_.satisfied_num_),
-    PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::BaseStation, _impl_.outage_num_),
-    PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::BaseStation, _impl_.active_num_),
-    PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::BaseStation, _impl_.transmit_power_),
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Signal, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Signal, _impl_.num_rows_),
-    PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Signal, _impl_.num_columns_),
-    PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Signal, _impl_.strength_),
-    PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Signal, _impl_.base_station_id_),
-    PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Signal, _impl_.freq_range_id_),
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Person, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Person, _impl_.id_),
-    PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Person, _impl_.demand_rate_),
-    PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Person, _impl_.actual_rate_),
-    PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Person, _impl_.connect_status_),
-    PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Person, _impl_.demand_status_),
-    PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Person, _impl_.strength_),
-    PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Person, _impl_.base_station_id_),
-    PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Person, _impl_.freq_range_ids_),
-    PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Person, _impl_.received_power_),
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Aoi, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Aoi, _impl_.id_),
-    PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Aoi, _impl_.demand_flow_),
-    PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Aoi, _impl_.actual_flow_),
-    PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Aoi, _impl_.outage_num_),
-    PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Aoi, _impl_.satisfied_num_),
-    PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Aoi, _impl_.unsatisfied_num_),
-    PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Aoi, _impl_.active_user_num_),
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Statistics, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Statistics, _impl_.num_satisfied_agents_),
-    PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Statistics, _impl_.num_unsatisfied_agents_),
-    PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Statistics, _impl_.num_outage_agents_),
-    PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Statistics, _impl_.num_active_agents_),
-    PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Statistics, _impl_.demand_flow_),
-    PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Statistics, _impl_.actual_flow_),
-    PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Statistics, _impl_.num_base_station_),
-    PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Statistics, _impl_.num_ok_base_station_),
-    PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Statistics, _impl_.num_ruined_base_station_),
-    PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Statistics, _impl_.num_stopped_base_station_),
-    PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Statistics, _impl_.num_overloaded_base_station_),
-    PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Statistics, _impl_.num_gateway_),
-    PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Statistics, _impl_.num_ok_gateway_),
-    PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Statistics, _impl_.num_ruined_gateway_),
-    PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Statistics, _impl_.num_stopped_gateway_),
-    PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Statistics, _impl_.num_overloaded_gateway_),
-    PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Statistics, _impl_.num_battery_gateway_),
-    PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Statistics, _impl_.power_consumption_),
-};
+static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_city_2fcomm_2foutput_2fv1_2foutput_2eproto = nullptr;
 
-static const ::_pbi::MigrationSchema
-    schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-        {0, 11, -1, sizeof(::city::comm::output::v1::Node)},
-        {14, -1, -1, sizeof(::city::comm::output::v1::BaseStation)},
-        {32, -1, -1, sizeof(::city::comm::output::v1::Signal)},
-        {45, -1, -1, sizeof(::city::comm::output::v1::Person)},
-        {62, -1, -1, sizeof(::city::comm::output::v1::Aoi)},
-        {77, -1, -1, sizeof(::city::comm::output::v1::Statistics)},
+const uint32_t TableStruct_city_2fcomm_2foutput_2fv1_2foutput_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Node, _impl_._has_bits_),
+  PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Node, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Node, _impl_.id_),
+  PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Node, _impl_.status_),
+  PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Node, _impl_.battery_remaining_time_),
+  ~0u,
+  ~0u,
+  0,
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::BaseStation, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::BaseStation, _impl_.id_),
+  PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::BaseStation, _impl_.demand_flow_),
+  PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::BaseStation, _impl_.actual_flow_),
+  PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::BaseStation, _impl_.num_agents_),
+  PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::BaseStation, _impl_.overload_),
+  PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::BaseStation, _impl_.unsatisfied_num_),
+  PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::BaseStation, _impl_.satisfied_num_),
+  PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::BaseStation, _impl_.outage_num_),
+  PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::BaseStation, _impl_.active_num_),
+  PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::BaseStation, _impl_.transmit_power_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Signal, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Signal, _impl_.num_rows_),
+  PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Signal, _impl_.num_columns_),
+  PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Signal, _impl_.strength_),
+  PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Signal, _impl_.base_station_id_),
+  PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Signal, _impl_.freq_range_id_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Person, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Person, _impl_.id_),
+  PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Person, _impl_.demand_rate_),
+  PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Person, _impl_.actual_rate_),
+  PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Person, _impl_.connect_status_),
+  PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Person, _impl_.demand_status_),
+  PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Person, _impl_.strength_),
+  PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Person, _impl_.base_station_id_),
+  PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Person, _impl_.freq_range_ids_),
+  PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Person, _impl_.received_power_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Aoi, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Aoi, _impl_.id_),
+  PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Aoi, _impl_.demand_flow_),
+  PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Aoi, _impl_.actual_flow_),
+  PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Aoi, _impl_.outage_num_),
+  PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Aoi, _impl_.satisfied_num_),
+  PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Aoi, _impl_.unsatisfied_num_),
+  PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Aoi, _impl_.active_user_num_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Statistics, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Statistics, _impl_.num_satisfied_agents_),
+  PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Statistics, _impl_.num_unsatisfied_agents_),
+  PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Statistics, _impl_.num_outage_agents_),
+  PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Statistics, _impl_.num_active_agents_),
+  PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Statistics, _impl_.demand_flow_),
+  PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Statistics, _impl_.actual_flow_),
+  PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Statistics, _impl_.num_base_station_),
+  PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Statistics, _impl_.num_ok_base_station_),
+  PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Statistics, _impl_.num_ruined_base_station_),
+  PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Statistics, _impl_.num_stopped_base_station_),
+  PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Statistics, _impl_.num_overloaded_base_station_),
+  PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Statistics, _impl_.num_gateway_),
+  PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Statistics, _impl_.num_ok_gateway_),
+  PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Statistics, _impl_.num_ruined_gateway_),
+  PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Statistics, _impl_.num_stopped_gateway_),
+  PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Statistics, _impl_.num_overloaded_gateway_),
+  PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Statistics, _impl_.num_battery_gateway_),
+  PROTOBUF_FIELD_OFFSET(::city::comm::output::v1::Statistics, _impl_.power_consumption_),
+};
+static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  { 0, 9, -1, sizeof(::city::comm::output::v1::Node)},
+  { 12, -1, -1, sizeof(::city::comm::output::v1::BaseStation)},
+  { 28, -1, -1, sizeof(::city::comm::output::v1::Signal)},
+  { 39, -1, -1, sizeof(::city::comm::output::v1::Person)},
+  { 54, -1, -1, sizeof(::city::comm::output::v1::Aoi)},
+  { 67, -1, -1, sizeof(::city::comm::output::v1::Statistics)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
-    &::city::comm::output::v1::_Node_default_instance_._instance,
-    &::city::comm::output::v1::_BaseStation_default_instance_._instance,
-    &::city::comm::output::v1::_Signal_default_instance_._instance,
-    &::city::comm::output::v1::_Person_default_instance_._instance,
-    &::city::comm::output::v1::_Aoi_default_instance_._instance,
-    &::city::comm::output::v1::_Statistics_default_instance_._instance,
-};
-const char descriptor_table_protodef_city_2fcomm_2foutput_2fv1_2foutput_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-    "\n city/comm/output/v1/output.proto\022\023city"
-    ".comm.output.v1\"\245\001\n\004Node\022\016\n\002id\030\001 \001(\005R\002id"
-    "\0227\n\006status\030\002 \001(\0162\037.city.comm.output.v1.N"
-    "odeStatusR\006status\0229\n\026battery_remaining_t"
-    "ime\030\003 \001(\001H\000R\024batteryRemainingTime\210\001\001B\031\n\027"
-    "_battery_remaining_time\"\315\002\n\013BaseStation\022"
-    "\016\n\002id\030\001 \001(\005R\002id\022\037\n\013demand_flow\030\002 \001(\001R\nde"
-    "mandFlow\022\037\n\013actual_flow\030\003 \001(\001R\nactualFlo"
-    "w\022\035\n\nnum_agents\030\004 \001(\005R\tnumAgents\022\032\n\010over"
-    "load\030\005 \001(\010R\010overload\022\'\n\017unsatisfied_num\030"
-    "\006 \001(\005R\016unsatisfiedNum\022#\n\rsatisfied_num\030\007"
-    " \001(\005R\014satisfiedNum\022\035\n\noutage_num\030\010 \001(\005R\t"
-    "outageNum\022\035\n\nactive_num\030\t \001(\005R\tactiveNum"
-    "\022%\n\016transmit_power\030\n \001(\001R\rtransmitPower\""
-    "\254\001\n\006Signal\022\031\n\010num_rows\030\001 \001(\005R\007numRows\022\037\n"
-    "\013num_columns\030\002 \001(\005R\nnumColumns\022\032\n\010streng"
-    "th\030\003 \003(\001R\010strength\022&\n\017base_station_id\030\004 "
-    "\003(\005R\rbaseStationId\022\"\n\rfreq_range_id\030\005 \003("
-    "\005R\013freqRangeId\"\212\003\n\006Person\022\016\n\002id\030\001 \001(\005R\002i"
-    "d\022\037\n\013demand_rate\030\002 \001(\001R\ndemandRate\022\037\n\013ac"
-    "tual_rate\030\003 \001(\001R\nactualRate\022O\n\016connect_s"
-    "tatus\030\004 \001(\0162(.city.comm.output.v1.Person"
-    "ConnectStatusR\rconnectStatus\022L\n\rdemand_s"
-    "tatus\030\t \001(\0162\'.city.comm.output.v1.Person"
-    "DemandStatusR\014demandStatus\022\032\n\010strength\030\005"
-    " \001(\001R\010strength\022&\n\017base_station_id\030\006 \001(\005R"
-    "\rbaseStationId\022$\n\016freq_range_ids\030\007 \003(\005R\014"
-    "freqRangeIds\022%\n\016received_power\030\010 \001(\001R\rre"
-    "ceivedPower\"\354\001\n\003Aoi\022\016\n\002id\030\001 \001(\005R\002id\022\037\n\013d"
-    "emand_flow\030\002 \001(\001R\ndemandFlow\022\037\n\013actual_f"
-    "low\030\003 \001(\001R\nactualFlow\022\035\n\noutage_num\030\004 \001("
-    "\005R\toutageNum\022#\n\rsatisfied_num\030\005 \001(\005R\014sat"
-    "isfiedNum\022\'\n\017unsatisfied_num\030\006 \001(\005R\016unsa"
-    "tisfiedNum\022&\n\017active_user_num\030\007 \001(\005R\ract"
-    "iveUserNum\"\316\006\n\nStatistics\0220\n\024num_satisfi"
-    "ed_agents\030\001 \001(\005R\022numSatisfiedAgents\0224\n\026n"
-    "um_unsatisfied_agents\030\002 \001(\005R\024numUnsatisf"
-    "iedAgents\022*\n\021num_outage_agents\030\003 \001(\005R\017nu"
-    "mOutageAgents\022*\n\021num_active_agents\030\004 \001(\005"
-    "R\017numActiveAgents\022\037\n\013demand_flow\030\005 \001(\001R\n"
-    "demandFlow\022\037\n\013actual_flow\030\006 \001(\001R\nactualF"
-    "low\022(\n\020num_base_station\030\007 \001(\005R\016numBaseSt"
-    "ation\022-\n\023num_ok_base_station\030\010 \001(\005R\020numO"
-    "kBaseStation\0225\n\027num_ruined_base_station\030"
-    "\t \001(\005R\024numRuinedBaseStation\0227\n\030num_stopp"
-    "ed_base_station\030\n \001(\005R\025numStoppedBaseSta"
-    "tion\022=\n\033num_overloaded_base_station\030\013 \001("
-    "\005R\030numOverloadedBaseStation\022\037\n\013num_gatew"
-    "ay\030\014 \001(\005R\nnumGateway\022$\n\016num_ok_gateway\030\r"
-    " \001(\005R\014numOkGateway\022,\n\022num_ruined_gateway"
-    "\030\016 \001(\005R\020numRuinedGateway\022.\n\023num_stopped_"
-    "gateway\030\017 \001(\005R\021numStoppedGateway\0224\n\026num_"
-    "overloaded_gateway\030\020 \001(\005R\024numOverloadedG"
-    "ateway\022.\n\023num_battery_gateway\030\021 \001(\005R\021num"
-    "BatteryGateway\022+\n\021power_consumption\030\022 \001("
-    "\001R\020powerConsumption*\207\001\n\nNodeStatus\022\033\n\027NO"
-    "DE_STATUS_UNSPECIFIED\020\000\022\022\n\016NODE_STATUS_O"
-    "K\020\001\022\027\n\023NODE_STATUS_BATTERY\020\002\022\027\n\023NODE_STA"
-    "TUS_FAILURE\020\003\022\026\n\022NODE_STATUS_RUINED\020\004*|\n"
-    "\023PersonConnectStatus\022%\n!PERSON_CONNECT_S"
-    "TATUS_UNSPECIFIED\020\000\022\034\n\030PERSON_CONNECT_ST"
-    "ATUS_OK\020\001\022 \n\034PERSON_CONNECT_STATUS_OUTAG"
-    "E\020\002*\241\001\n\022PersonDemandStatus\022$\n PERSON_DEM"
-    "AND_STATUS_UNSPECIFIED\020\000\022\"\n\036PERSON_DEMAN"
-    "D_STATUS_SATISFIED\020\001\022$\n PERSON_DEMAND_ST"
-    "ATUS_UNSATISFIED\020\002\022\033\n\027PERSON_DEMAND_STAT"
-    "US_NO\020\003B\320\001\n\027com.city.comm.output.v1B\013Out"
-    "putProtoP\001Z9git.fiblab.net/sim/protos/go"
-    "/city/comm/output/v1;outputv1\242\002\003CCO\252\002\023Ci"
-    "ty.Comm.Output.V1\312\002\023City\\Comm\\Output\\V1\342"
-    "\002\037City\\Comm\\Output\\V1\\GPBMetadata\352\002\026City"
-    "::Comm::Output::V1b\006proto3"
-};
-static ::absl::once_flag descriptor_table_city_2fcomm_2foutput_2fv1_2foutput_2eproto_once;
-const ::_pbi::DescriptorTable descriptor_table_city_2fcomm_2foutput_2fv1_2foutput_2eproto = {
-    false,
-    false,
-    2866,
-    descriptor_table_protodef_city_2fcomm_2foutput_2fv1_2foutput_2eproto,
-    "city/comm/output/v1/output.proto",
-    &descriptor_table_city_2fcomm_2foutput_2fv1_2foutput_2eproto_once,
-    nullptr,
-    0,
-    6,
-    schemas,
-    file_default_instances,
-    TableStruct_city_2fcomm_2foutput_2fv1_2foutput_2eproto::offsets,
-    file_level_metadata_city_2fcomm_2foutput_2fv1_2foutput_2eproto,
-    file_level_enum_descriptors_city_2fcomm_2foutput_2fv1_2foutput_2eproto,
-    file_level_service_descriptors_city_2fcomm_2foutput_2fv1_2foutput_2eproto,
+  &::city::comm::output::v1::_Node_default_instance_._instance,
+  &::city::comm::output::v1::_BaseStation_default_instance_._instance,
+  &::city::comm::output::v1::_Signal_default_instance_._instance,
+  &::city::comm::output::v1::_Person_default_instance_._instance,
+  &::city::comm::output::v1::_Aoi_default_instance_._instance,
+  &::city::comm::output::v1::_Statistics_default_instance_._instance,
 };
 
-// This function exists to be marked as weak.
-// It can significantly speed up compilation by breaking up LLVM's SCC
-// in the .pb.cc translation units. Large translation units see a
-// reduction of more than 35% of walltime for optimized builds. Without
-// the weak attribute all the messages in the file, including all the
-// vtables and everything they use become part of the same SCC through
-// a cycle like:
-// GetMetadata -> descriptor table -> default instances ->
-//   vtables -> GetMetadata
-// By adding a weak function here we break the connection from the
-// individual vtables back into the descriptor table.
+const char descriptor_table_protodef_city_2fcomm_2foutput_2fv1_2foutput_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
+  "\n city/comm/output/v1/output.proto\022\023city"
+  ".comm.output.v1\"\245\001\n\004Node\022\016\n\002id\030\001 \001(\005R\002id"
+  "\0227\n\006status\030\002 \001(\0162\037.city.comm.output.v1.N"
+  "odeStatusR\006status\0229\n\026battery_remaining_t"
+  "ime\030\003 \001(\001H\000R\024batteryRemainingTime\210\001\001B\031\n\027"
+  "_battery_remaining_time\"\315\002\n\013BaseStation\022"
+  "\016\n\002id\030\001 \001(\005R\002id\022\037\n\013demand_flow\030\002 \001(\001R\nde"
+  "mandFlow\022\037\n\013actual_flow\030\003 \001(\001R\nactualFlo"
+  "w\022\035\n\nnum_agents\030\004 \001(\005R\tnumAgents\022\032\n\010over"
+  "load\030\005 \001(\010R\010overload\022\'\n\017unsatisfied_num\030"
+  "\006 \001(\005R\016unsatisfiedNum\022#\n\rsatisfied_num\030\007"
+  " \001(\005R\014satisfiedNum\022\035\n\noutage_num\030\010 \001(\005R\t"
+  "outageNum\022\035\n\nactive_num\030\t \001(\005R\tactiveNum"
+  "\022%\n\016transmit_power\030\n \001(\001R\rtransmitPower\""
+  "\254\001\n\006Signal\022\031\n\010num_rows\030\001 \001(\005R\007numRows\022\037\n"
+  "\013num_columns\030\002 \001(\005R\nnumColumns\022\032\n\010streng"
+  "th\030\003 \003(\001R\010strength\022&\n\017base_station_id\030\004 "
+  "\003(\005R\rbaseStationId\022\"\n\rfreq_range_id\030\005 \003("
+  "\005R\013freqRangeId\"\212\003\n\006Person\022\016\n\002id\030\001 \001(\005R\002i"
+  "d\022\037\n\013demand_rate\030\002 \001(\001R\ndemandRate\022\037\n\013ac"
+  "tual_rate\030\003 \001(\001R\nactualRate\022O\n\016connect_s"
+  "tatus\030\004 \001(\0162(.city.comm.output.v1.Person"
+  "ConnectStatusR\rconnectStatus\022L\n\rdemand_s"
+  "tatus\030\t \001(\0162\'.city.comm.output.v1.Person"
+  "DemandStatusR\014demandStatus\022\032\n\010strength\030\005"
+  " \001(\001R\010strength\022&\n\017base_station_id\030\006 \001(\005R"
+  "\rbaseStationId\022$\n\016freq_range_ids\030\007 \003(\005R\014"
+  "freqRangeIds\022%\n\016received_power\030\010 \001(\001R\rre"
+  "ceivedPower\"\354\001\n\003Aoi\022\016\n\002id\030\001 \001(\005R\002id\022\037\n\013d"
+  "emand_flow\030\002 \001(\001R\ndemandFlow\022\037\n\013actual_f"
+  "low\030\003 \001(\001R\nactualFlow\022\035\n\noutage_num\030\004 \001("
+  "\005R\toutageNum\022#\n\rsatisfied_num\030\005 \001(\005R\014sat"
+  "isfiedNum\022\'\n\017unsatisfied_num\030\006 \001(\005R\016unsa"
+  "tisfiedNum\022&\n\017active_user_num\030\007 \001(\005R\ract"
+  "iveUserNum\"\316\006\n\nStatistics\0220\n\024num_satisfi"
+  "ed_agents\030\001 \001(\005R\022numSatisfiedAgents\0224\n\026n"
+  "um_unsatisfied_agents\030\002 \001(\005R\024numUnsatisf"
+  "iedAgents\022*\n\021num_outage_agents\030\003 \001(\005R\017nu"
+  "mOutageAgents\022*\n\021num_active_agents\030\004 \001(\005"
+  "R\017numActiveAgents\022\037\n\013demand_flow\030\005 \001(\001R\n"
+  "demandFlow\022\037\n\013actual_flow\030\006 \001(\001R\nactualF"
+  "low\022(\n\020num_base_station\030\007 \001(\005R\016numBaseSt"
+  "ation\022-\n\023num_ok_base_station\030\010 \001(\005R\020numO"
+  "kBaseStation\0225\n\027num_ruined_base_station\030"
+  "\t \001(\005R\024numRuinedBaseStation\0227\n\030num_stopp"
+  "ed_base_station\030\n \001(\005R\025numStoppedBaseSta"
+  "tion\022=\n\033num_overloaded_base_station\030\013 \001("
+  "\005R\030numOverloadedBaseStation\022\037\n\013num_gatew"
+  "ay\030\014 \001(\005R\nnumGateway\022$\n\016num_ok_gateway\030\r"
+  " \001(\005R\014numOkGateway\022,\n\022num_ruined_gateway"
+  "\030\016 \001(\005R\020numRuinedGateway\022.\n\023num_stopped_"
+  "gateway\030\017 \001(\005R\021numStoppedGateway\0224\n\026num_"
+  "overloaded_gateway\030\020 \001(\005R\024numOverloadedG"
+  "ateway\022.\n\023num_battery_gateway\030\021 \001(\005R\021num"
+  "BatteryGateway\022+\n\021power_consumption\030\022 \001("
+  "\001R\020powerConsumption*\207\001\n\nNodeStatus\022\033\n\027NO"
+  "DE_STATUS_UNSPECIFIED\020\000\022\022\n\016NODE_STATUS_O"
+  "K\020\001\022\027\n\023NODE_STATUS_BATTERY\020\002\022\027\n\023NODE_STA"
+  "TUS_FAILURE\020\003\022\026\n\022NODE_STATUS_RUINED\020\004*|\n"
+  "\023PersonConnectStatus\022%\n!PERSON_CONNECT_S"
+  "TATUS_UNSPECIFIED\020\000\022\034\n\030PERSON_CONNECT_ST"
+  "ATUS_OK\020\001\022 \n\034PERSON_CONNECT_STATUS_OUTAG"
+  "E\020\002*\241\001\n\022PersonDemandStatus\022$\n PERSON_DEM"
+  "AND_STATUS_UNSPECIFIED\020\000\022\"\n\036PERSON_DEMAN"
+  "D_STATUS_SATISFIED\020\001\022$\n PERSON_DEMAND_ST"
+  "ATUS_UNSATISFIED\020\002\022\033\n\027PERSON_DEMAND_STAT"
+  "US_NO\020\003B\320\001\n\027com.city.comm.output.v1B\013Out"
+  "putProtoP\001Z9git.fiblab.net/sim/protos/go"
+  "/city/comm/output/v1;outputv1\242\002\003CCO\252\002\023Ci"
+  "ty.Comm.Output.V1\312\002\023City\\Comm\\Output\\V1\342"
+  "\002\037City\\Comm\\Output\\V1\\GPBMetadata\352\002\026City"
+  "::Comm::Output::V1b\006proto3"
+  ;
+static ::_pbi::once_flag descriptor_table_city_2fcomm_2foutput_2fv1_2foutput_2eproto_once;
+const ::_pbi::DescriptorTable descriptor_table_city_2fcomm_2foutput_2fv1_2foutput_2eproto = {
+    false, false, 2866, descriptor_table_protodef_city_2fcomm_2foutput_2fv1_2foutput_2eproto,
+    "city/comm/output/v1/output.proto",
+    &descriptor_table_city_2fcomm_2foutput_2fv1_2foutput_2eproto_once, nullptr, 0, 6,
+    schemas, file_default_instances, TableStruct_city_2fcomm_2foutput_2fv1_2foutput_2eproto::offsets,
+    file_level_metadata_city_2fcomm_2foutput_2fv1_2foutput_2eproto, file_level_enum_descriptors_city_2fcomm_2foutput_2fv1_2foutput_2eproto,
+    file_level_service_descriptors_city_2fcomm_2foutput_2fv1_2foutput_2eproto,
+};
 PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_city_2fcomm_2foutput_2fv1_2foutput_2eproto_getter() {
   return &descriptor_table_city_2fcomm_2foutput_2fv1_2foutput_2eproto;
 }
+
 // Force running AddDescriptors() at dynamic initialization time.
-PROTOBUF_ATTRIBUTE_INIT_PRIORITY2
-static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_city_2fcomm_2foutput_2fv1_2foutput_2eproto(&descriptor_table_city_2fcomm_2foutput_2fv1_2foutput_2eproto);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_city_2fcomm_2foutput_2fv1_2foutput_2eproto(&descriptor_table_city_2fcomm_2foutput_2fv1_2foutput_2eproto);
 namespace city {
 namespace comm {
 namespace output {
 namespace v1 {
-const ::google::protobuf::EnumDescriptor* NodeStatus_descriptor() {
-  ::google::protobuf::internal::AssignDescriptors(&descriptor_table_city_2fcomm_2foutput_2fv1_2foutput_2eproto);
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* NodeStatus_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_city_2fcomm_2foutput_2fv1_2foutput_2eproto);
   return file_level_enum_descriptors_city_2fcomm_2foutput_2fv1_2foutput_2eproto[0];
 }
 bool NodeStatus_IsValid(int value) {
@@ -433,8 +380,9 @@ bool NodeStatus_IsValid(int value) {
       return false;
   }
 }
-const ::google::protobuf::EnumDescriptor* PersonConnectStatus_descriptor() {
-  ::google::protobuf::internal::AssignDescriptors(&descriptor_table_city_2fcomm_2foutput_2fv1_2foutput_2eproto);
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* PersonConnectStatus_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_city_2fcomm_2foutput_2fv1_2foutput_2eproto);
   return file_level_enum_descriptors_city_2fcomm_2foutput_2fv1_2foutput_2eproto[1];
 }
 bool PersonConnectStatus_IsValid(int value) {
@@ -447,8 +395,9 @@ bool PersonConnectStatus_IsValid(int value) {
       return false;
   }
 }
-const ::google::protobuf::EnumDescriptor* PersonDemandStatus_descriptor() {
-  ::google::protobuf::internal::AssignDescriptors(&descriptor_table_city_2fcomm_2foutput_2fv1_2foutput_2eproto);
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* PersonDemandStatus_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_city_2fcomm_2foutput_2fv1_2foutput_2eproto);
   return file_level_enum_descriptors_city_2fcomm_2foutput_2fv1_2foutput_2eproto[2];
 }
 bool PersonDemandStatus_IsValid(int value) {
@@ -462,195 +411,216 @@ bool PersonDemandStatus_IsValid(int value) {
       return false;
   }
 }
+
+
 // ===================================================================
 
 class Node::_Internal {
  public:
   using HasBits = decltype(std::declval<Node>()._impl_._has_bits_);
-  static constexpr ::int32_t kHasBitsOffset =
-    8 * PROTOBUF_FIELD_OFFSET(Node, _impl_._has_bits_);
   static void set_has_battery_remaining_time(HasBits* has_bits) {
     (*has_bits)[0] |= 1u;
   }
 };
 
-Node::Node(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+Node::Node(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.comm.output.v1.Node)
 }
 Node::Node(const Node& from)
-    : ::google::protobuf::Message(), _impl_(from._impl_) {
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  Node* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){from._impl_._has_bits_}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.id_){}
+    , decltype(_impl_.status_){}
+    , decltype(_impl_.battery_remaining_time_){}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&_impl_.id_, &from._impl_.id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.battery_remaining_time_) -
+    reinterpret_cast<char*>(&_impl_.id_)) + sizeof(_impl_.battery_remaining_time_));
   // @@protoc_insertion_point(copy_constructor:city.comm.output.v1.Node)
 }
-inline void Node::SharedCtor(::_pb::Arena* arena) {
+
+inline void Node::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){},
-      /*decltype(_impl_._cached_size_)*/ {},
-      decltype(_impl_.id_){0},
-      decltype(_impl_.status_){0},
-      decltype(_impl_.battery_remaining_time_){0},
+      decltype(_impl_._has_bits_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.id_){0}
+    , decltype(_impl_.status_){0}
+    , decltype(_impl_.battery_remaining_time_){0}
   };
 }
+
 Node::~Node() {
   // @@protoc_insertion_point(destructor:city.comm.output.v1.Node)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void Node::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
+
 void Node::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void Node::Clear() {
+void Node::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.comm.output.v1.Node)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&_impl_.id_, 0, static_cast<::size_t>(
+  ::memset(&_impl_.id_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_impl_.status_) -
       reinterpret_cast<char*>(&_impl_.id_)) + sizeof(_impl_.status_));
   _impl_.battery_remaining_time_ = 0;
   _impl_._has_bits_.Clear();
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* Node::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* Node::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  _Internal::HasBits has_bits{};
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 id = 1 [json_name = "id"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .city.comm.output.v1.NodeStatus status = 2 [json_name = "status"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_set_status(static_cast<::city::comm::output::v1::NodeStatus>(val));
+        } else
+          goto handle_unusual;
+        continue;
+      // optional double battery_remaining_time = 3 [json_name = "batteryRemainingTime"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 25)) {
+          _Internal::set_has_battery_remaining_time(&has_bits);
+          _impl_.battery_remaining_time_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  _impl_._has_bits_.Or(has_bits);
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<2, 3, 0, 0, 2> Node::_table_ = {
-  {
-    PROTOBUF_FIELD_OFFSET(Node, _impl_._has_bits_),
-    0, // no _extensions_
-    3, 24,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967288,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    3,  // num_field_entries
-    0,  // num_aux_entries
-    offsetof(decltype(_table_), field_names),  // no aux_entries
-    &_Node_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    {::_pbi::TcParser::MiniParse, {}},
-    // int32 id = 1 [json_name = "id"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(Node, _impl_.id_), 63>(),
-     {8, 63, 0, PROTOBUF_FIELD_OFFSET(Node, _impl_.id_)}},
-    // .city.comm.output.v1.NodeStatus status = 2 [json_name = "status"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(Node, _impl_.status_), 63>(),
-     {16, 63, 0, PROTOBUF_FIELD_OFFSET(Node, _impl_.status_)}},
-    // optional double battery_remaining_time = 3 [json_name = "batteryRemainingTime"];
-    {::_pbi::TcParser::FastF64S1,
-     {25, 0, 0, PROTOBUF_FIELD_OFFSET(Node, _impl_.battery_remaining_time_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // int32 id = 1 [json_name = "id"];
-    {PROTOBUF_FIELD_OFFSET(Node, _impl_.id_), -1, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-    // .city.comm.output.v1.NodeStatus status = 2 [json_name = "status"];
-    {PROTOBUF_FIELD_OFFSET(Node, _impl_.status_), -1, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kOpenEnum)},
-    // optional double battery_remaining_time = 3 [json_name = "batteryRemainingTime"];
-    {PROTOBUF_FIELD_OFFSET(Node, _impl_.battery_remaining_time_), _Internal::kHasBitsOffset + 0, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kDouble)},
-  }},
-  // no aux_entries
-  {{
-  }},
-};
-
-::uint8_t* Node::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* Node::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.comm.output.v1.Node)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // int32 id = 1 [json_name = "id"];
   if (this->_internal_id() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<1>(
-            stream, this->_internal_id(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_id(), target);
   }
 
   // .city.comm.output.v1.NodeStatus status = 2 [json_name = "status"];
   if (this->_internal_status() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteEnumToArray(
-        2, this->_internal_status(), target);
+      2, this->_internal_status(), target);
   }
 
-  cached_has_bits = _impl_._has_bits_[0];
   // optional double battery_remaining_time = 3 [json_name = "batteryRemainingTime"];
-  if (cached_has_bits & 0x00000001u) {
+  if (_internal_has_battery_remaining_time()) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        3, this->_internal_battery_remaining_time(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(3, this->_internal_battery_remaining_time(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.comm.output.v1.Node)
   return target;
 }
 
-::size_t Node::ByteSizeLong() const {
+size_t Node::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.comm.output.v1.Node)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // int32 id = 1 [json_name = "id"];
   if (this->_internal_id() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_id());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_id());
   }
 
   // .city.comm.output.v1.NodeStatus status = 2 [json_name = "status"];
   if (this->_internal_status() != 0) {
     total_size += 1 +
-                  ::_pbi::WireFormatLite::EnumSize(this->_internal_status());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_status());
   }
 
   // optional double battery_remaining_time = 3 [json_name = "batteryRemainingTime"];
   cached_has_bits = _impl_._has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData Node::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Node::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     Node::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*Node::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Node::GetClassData() const { return &_class_data_; }
 
 
-void Node::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void Node::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<Node*>(&to_msg);
   auto& from = static_cast<const Node&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.comm.output.v1.Node)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_id() != 0) {
@@ -659,10 +629,10 @@ void Node::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protob
   if (from._internal_status() != 0) {
     _this->_internal_set_status(from._internal_status());
   }
-  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+  if (from._internal_has_battery_remaining_time()) {
     _this->_internal_set_battery_remaining_time(from._internal_battery_remaining_time());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void Node::CopyFrom(const Node& from) {
@@ -672,7 +642,7 @@ void Node::CopyFrom(const Node& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool Node::IsInitialized() const {
+bool Node::IsInitialized() const {
   return true;
 }
 
@@ -680,7 +650,7 @@ void Node::InternalSwap(Node* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
-  ::google::protobuf::internal::memswap<
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(Node, _impl_.battery_remaining_time_)
       + sizeof(Node::_impl_.battery_remaining_time_)
       - PROTOBUF_FIELD_OFFSET(Node, _impl_.id_)>(
@@ -688,367 +658,381 @@ void Node::InternalSwap(Node* other) {
           reinterpret_cast<char*>(&other->_impl_.id_));
 }
 
-::google::protobuf::Metadata Node::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata Node::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fcomm_2foutput_2fv1_2foutput_2eproto_getter, &descriptor_table_city_2fcomm_2foutput_2fv1_2foutput_2eproto_once,
       file_level_metadata_city_2fcomm_2foutput_2fv1_2foutput_2eproto[0]);
 }
+
 // ===================================================================
 
 class BaseStation::_Internal {
  public:
 };
 
-BaseStation::BaseStation(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+BaseStation::BaseStation(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.comm.output.v1.BaseStation)
 }
 BaseStation::BaseStation(const BaseStation& from)
-    : ::google::protobuf::Message(), _impl_(from._impl_) {
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  BaseStation* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.demand_flow_){}
+    , decltype(_impl_.id_){}
+    , decltype(_impl_.num_agents_){}
+    , decltype(_impl_.actual_flow_){}
+    , decltype(_impl_.overload_){}
+    , decltype(_impl_.unsatisfied_num_){}
+    , decltype(_impl_.satisfied_num_){}
+    , decltype(_impl_.outage_num_){}
+    , decltype(_impl_.transmit_power_){}
+    , decltype(_impl_.active_num_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&_impl_.demand_flow_, &from._impl_.demand_flow_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.active_num_) -
+    reinterpret_cast<char*>(&_impl_.demand_flow_)) + sizeof(_impl_.active_num_));
   // @@protoc_insertion_point(copy_constructor:city.comm.output.v1.BaseStation)
 }
-inline void BaseStation::SharedCtor(::_pb::Arena* arena) {
+
+inline void BaseStation::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.demand_flow_){0},
-      decltype(_impl_.id_){0},
-      decltype(_impl_.num_agents_){0},
-      decltype(_impl_.actual_flow_){0},
-      decltype(_impl_.overload_){false},
-      decltype(_impl_.unsatisfied_num_){0},
-      decltype(_impl_.satisfied_num_){0},
-      decltype(_impl_.outage_num_){0},
-      decltype(_impl_.transmit_power_){0},
-      decltype(_impl_.active_num_){0},
-      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.demand_flow_){0}
+    , decltype(_impl_.id_){0}
+    , decltype(_impl_.num_agents_){0}
+    , decltype(_impl_.actual_flow_){0}
+    , decltype(_impl_.overload_){false}
+    , decltype(_impl_.unsatisfied_num_){0}
+    , decltype(_impl_.satisfied_num_){0}
+    , decltype(_impl_.outage_num_){0}
+    , decltype(_impl_.transmit_power_){0}
+    , decltype(_impl_.active_num_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 BaseStation::~BaseStation() {
   // @@protoc_insertion_point(destructor:city.comm.output.v1.BaseStation)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void BaseStation::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
+
 void BaseStation::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void BaseStation::Clear() {
+void BaseStation::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.comm.output.v1.BaseStation)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&_impl_.demand_flow_, 0, static_cast<::size_t>(
+  ::memset(&_impl_.demand_flow_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_impl_.active_num_) -
       reinterpret_cast<char*>(&_impl_.demand_flow_)) + sizeof(_impl_.active_num_));
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* BaseStation::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* BaseStation::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 id = 1 [json_name = "id"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // double demand_flow = 2 [json_name = "demandFlow"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 17)) {
+          _impl_.demand_flow_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // double actual_flow = 3 [json_name = "actualFlow"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 25)) {
+          _impl_.actual_flow_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 num_agents = 4 [json_name = "numAgents"];
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
+          _impl_.num_agents_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // bool overload = 5 [json_name = "overload"];
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
+          _impl_.overload_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 unsatisfied_num = 6 [json_name = "unsatisfiedNum"];
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
+          _impl_.unsatisfied_num_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 satisfied_num = 7 [json_name = "satisfiedNum"];
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 56)) {
+          _impl_.satisfied_num_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 outage_num = 8 [json_name = "outageNum"];
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 64)) {
+          _impl_.outage_num_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 active_num = 9 [json_name = "activeNum"];
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 72)) {
+          _impl_.active_num_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // double transmit_power = 10 [json_name = "transmitPower"];
+      case 10:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 81)) {
+          _impl_.transmit_power_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<4, 10, 0, 0, 2> BaseStation::_table_ = {
-  {
-    0,  // no _has_bits_
-    0, // no _extensions_
-    10, 120,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294966272,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    10,  // num_field_entries
-    0,  // num_aux_entries
-    offsetof(decltype(_table_), field_names),  // no aux_entries
-    &_BaseStation_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    {::_pbi::TcParser::MiniParse, {}},
-    // int32 id = 1 [json_name = "id"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(BaseStation, _impl_.id_), 63>(),
-     {8, 63, 0, PROTOBUF_FIELD_OFFSET(BaseStation, _impl_.id_)}},
-    // double demand_flow = 2 [json_name = "demandFlow"];
-    {::_pbi::TcParser::FastF64S1,
-     {17, 63, 0, PROTOBUF_FIELD_OFFSET(BaseStation, _impl_.demand_flow_)}},
-    // double actual_flow = 3 [json_name = "actualFlow"];
-    {::_pbi::TcParser::FastF64S1,
-     {25, 63, 0, PROTOBUF_FIELD_OFFSET(BaseStation, _impl_.actual_flow_)}},
-    // int32 num_agents = 4 [json_name = "numAgents"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(BaseStation, _impl_.num_agents_), 63>(),
-     {32, 63, 0, PROTOBUF_FIELD_OFFSET(BaseStation, _impl_.num_agents_)}},
-    // bool overload = 5 [json_name = "overload"];
-    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(BaseStation, _impl_.overload_), 63>(),
-     {40, 63, 0, PROTOBUF_FIELD_OFFSET(BaseStation, _impl_.overload_)}},
-    // int32 unsatisfied_num = 6 [json_name = "unsatisfiedNum"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(BaseStation, _impl_.unsatisfied_num_), 63>(),
-     {48, 63, 0, PROTOBUF_FIELD_OFFSET(BaseStation, _impl_.unsatisfied_num_)}},
-    // int32 satisfied_num = 7 [json_name = "satisfiedNum"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(BaseStation, _impl_.satisfied_num_), 63>(),
-     {56, 63, 0, PROTOBUF_FIELD_OFFSET(BaseStation, _impl_.satisfied_num_)}},
-    // int32 outage_num = 8 [json_name = "outageNum"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(BaseStation, _impl_.outage_num_), 63>(),
-     {64, 63, 0, PROTOBUF_FIELD_OFFSET(BaseStation, _impl_.outage_num_)}},
-    // int32 active_num = 9 [json_name = "activeNum"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(BaseStation, _impl_.active_num_), 63>(),
-     {72, 63, 0, PROTOBUF_FIELD_OFFSET(BaseStation, _impl_.active_num_)}},
-    // double transmit_power = 10 [json_name = "transmitPower"];
-    {::_pbi::TcParser::FastF64S1,
-     {81, 63, 0, PROTOBUF_FIELD_OFFSET(BaseStation, _impl_.transmit_power_)}},
-    {::_pbi::TcParser::MiniParse, {}},
-    {::_pbi::TcParser::MiniParse, {}},
-    {::_pbi::TcParser::MiniParse, {}},
-    {::_pbi::TcParser::MiniParse, {}},
-    {::_pbi::TcParser::MiniParse, {}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // int32 id = 1 [json_name = "id"];
-    {PROTOBUF_FIELD_OFFSET(BaseStation, _impl_.id_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-    // double demand_flow = 2 [json_name = "demandFlow"];
-    {PROTOBUF_FIELD_OFFSET(BaseStation, _impl_.demand_flow_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-    // double actual_flow = 3 [json_name = "actualFlow"];
-    {PROTOBUF_FIELD_OFFSET(BaseStation, _impl_.actual_flow_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-    // int32 num_agents = 4 [json_name = "numAgents"];
-    {PROTOBUF_FIELD_OFFSET(BaseStation, _impl_.num_agents_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-    // bool overload = 5 [json_name = "overload"];
-    {PROTOBUF_FIELD_OFFSET(BaseStation, _impl_.overload_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kBool)},
-    // int32 unsatisfied_num = 6 [json_name = "unsatisfiedNum"];
-    {PROTOBUF_FIELD_OFFSET(BaseStation, _impl_.unsatisfied_num_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-    // int32 satisfied_num = 7 [json_name = "satisfiedNum"];
-    {PROTOBUF_FIELD_OFFSET(BaseStation, _impl_.satisfied_num_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-    // int32 outage_num = 8 [json_name = "outageNum"];
-    {PROTOBUF_FIELD_OFFSET(BaseStation, _impl_.outage_num_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-    // int32 active_num = 9 [json_name = "activeNum"];
-    {PROTOBUF_FIELD_OFFSET(BaseStation, _impl_.active_num_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-    // double transmit_power = 10 [json_name = "transmitPower"];
-    {PROTOBUF_FIELD_OFFSET(BaseStation, _impl_.transmit_power_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-  }},
-  // no aux_entries
-  {{
-  }},
-};
-
-::uint8_t* BaseStation::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* BaseStation::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.comm.output.v1.BaseStation)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // int32 id = 1 [json_name = "id"];
   if (this->_internal_id() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<1>(
-            stream, this->_internal_id(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_id(), target);
   }
 
   // double demand_flow = 2 [json_name = "demandFlow"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_demand_flow = this->_internal_demand_flow();
-  ::uint64_t raw_demand_flow;
+  uint64_t raw_demand_flow;
   memcpy(&raw_demand_flow, &tmp_demand_flow, sizeof(tmp_demand_flow));
   if (raw_demand_flow != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        2, this->_internal_demand_flow(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(2, this->_internal_demand_flow(), target);
   }
 
   // double actual_flow = 3 [json_name = "actualFlow"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_actual_flow = this->_internal_actual_flow();
-  ::uint64_t raw_actual_flow;
+  uint64_t raw_actual_flow;
   memcpy(&raw_actual_flow, &tmp_actual_flow, sizeof(tmp_actual_flow));
   if (raw_actual_flow != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        3, this->_internal_actual_flow(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(3, this->_internal_actual_flow(), target);
   }
 
   // int32 num_agents = 4 [json_name = "numAgents"];
   if (this->_internal_num_agents() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<4>(
-            stream, this->_internal_num_agents(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(4, this->_internal_num_agents(), target);
   }
 
   // bool overload = 5 [json_name = "overload"];
   if (this->_internal_overload() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(
-        5, this->_internal_overload(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(5, this->_internal_overload(), target);
   }
 
   // int32 unsatisfied_num = 6 [json_name = "unsatisfiedNum"];
   if (this->_internal_unsatisfied_num() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<6>(
-            stream, this->_internal_unsatisfied_num(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(6, this->_internal_unsatisfied_num(), target);
   }
 
   // int32 satisfied_num = 7 [json_name = "satisfiedNum"];
   if (this->_internal_satisfied_num() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<7>(
-            stream, this->_internal_satisfied_num(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(7, this->_internal_satisfied_num(), target);
   }
 
   // int32 outage_num = 8 [json_name = "outageNum"];
   if (this->_internal_outage_num() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<8>(
-            stream, this->_internal_outage_num(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(8, this->_internal_outage_num(), target);
   }
 
   // int32 active_num = 9 [json_name = "activeNum"];
   if (this->_internal_active_num() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<9>(
-            stream, this->_internal_active_num(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(9, this->_internal_active_num(), target);
   }
 
   // double transmit_power = 10 [json_name = "transmitPower"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_transmit_power = this->_internal_transmit_power();
-  ::uint64_t raw_transmit_power;
+  uint64_t raw_transmit_power;
   memcpy(&raw_transmit_power, &tmp_transmit_power, sizeof(tmp_transmit_power));
   if (raw_transmit_power != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        10, this->_internal_transmit_power(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(10, this->_internal_transmit_power(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.comm.output.v1.BaseStation)
   return target;
 }
 
-::size_t BaseStation::ByteSizeLong() const {
+size_t BaseStation::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.comm.output.v1.BaseStation)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // double demand_flow = 2 [json_name = "demandFlow"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_demand_flow = this->_internal_demand_flow();
-  ::uint64_t raw_demand_flow;
+  uint64_t raw_demand_flow;
   memcpy(&raw_demand_flow, &tmp_demand_flow, sizeof(tmp_demand_flow));
   if (raw_demand_flow != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   // int32 id = 1 [json_name = "id"];
   if (this->_internal_id() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_id());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_id());
   }
 
   // int32 num_agents = 4 [json_name = "numAgents"];
   if (this->_internal_num_agents() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_num_agents());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_num_agents());
   }
 
   // double actual_flow = 3 [json_name = "actualFlow"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_actual_flow = this->_internal_actual_flow();
-  ::uint64_t raw_actual_flow;
+  uint64_t raw_actual_flow;
   memcpy(&raw_actual_flow, &tmp_actual_flow, sizeof(tmp_actual_flow));
   if (raw_actual_flow != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   // bool overload = 5 [json_name = "overload"];
   if (this->_internal_overload() != 0) {
-    total_size += 2;
+    total_size += 1 + 1;
   }
 
   // int32 unsatisfied_num = 6 [json_name = "unsatisfiedNum"];
   if (this->_internal_unsatisfied_num() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_unsatisfied_num());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_unsatisfied_num());
   }
 
   // int32 satisfied_num = 7 [json_name = "satisfiedNum"];
   if (this->_internal_satisfied_num() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_satisfied_num());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_satisfied_num());
   }
 
   // int32 outage_num = 8 [json_name = "outageNum"];
   if (this->_internal_outage_num() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_outage_num());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_outage_num());
   }
 
   // double transmit_power = 10 [json_name = "transmitPower"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_transmit_power = this->_internal_transmit_power();
-  ::uint64_t raw_transmit_power;
+  uint64_t raw_transmit_power;
   memcpy(&raw_transmit_power, &tmp_transmit_power, sizeof(tmp_transmit_power));
   if (raw_transmit_power != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   // int32 active_num = 9 [json_name = "activeNum"];
   if (this->_internal_active_num() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_active_num());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_active_num());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData BaseStation::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BaseStation::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     BaseStation::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*BaseStation::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BaseStation::GetClassData() const { return &_class_data_; }
 
 
-void BaseStation::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void BaseStation::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<BaseStation*>(&to_msg);
   auto& from = static_cast<const BaseStation&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.comm.output.v1.BaseStation)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_demand_flow = from._internal_demand_flow();
-  ::uint64_t raw_demand_flow;
+  uint64_t raw_demand_flow;
   memcpy(&raw_demand_flow, &tmp_demand_flow, sizeof(tmp_demand_flow));
   if (raw_demand_flow != 0) {
     _this->_internal_set_demand_flow(from._internal_demand_flow());
@@ -1059,10 +1043,9 @@ void BaseStation::MergeImpl(::google::protobuf::Message& to_msg, const ::google:
   if (from._internal_num_agents() != 0) {
     _this->_internal_set_num_agents(from._internal_num_agents());
   }
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_actual_flow = from._internal_actual_flow();
-  ::uint64_t raw_actual_flow;
+  uint64_t raw_actual_flow;
   memcpy(&raw_actual_flow, &tmp_actual_flow, sizeof(tmp_actual_flow));
   if (raw_actual_flow != 0) {
     _this->_internal_set_actual_flow(from._internal_actual_flow());
@@ -1079,10 +1062,9 @@ void BaseStation::MergeImpl(::google::protobuf::Message& to_msg, const ::google:
   if (from._internal_outage_num() != 0) {
     _this->_internal_set_outage_num(from._internal_outage_num());
   }
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_transmit_power = from._internal_transmit_power();
-  ::uint64_t raw_transmit_power;
+  uint64_t raw_transmit_power;
   memcpy(&raw_transmit_power, &tmp_transmit_power, sizeof(tmp_transmit_power));
   if (raw_transmit_power != 0) {
     _this->_internal_set_transmit_power(from._internal_transmit_power());
@@ -1090,7 +1072,7 @@ void BaseStation::MergeImpl(::google::protobuf::Message& to_msg, const ::google:
   if (from._internal_active_num() != 0) {
     _this->_internal_set_active_num(from._internal_active_num());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void BaseStation::CopyFrom(const BaseStation& from) {
@@ -1100,14 +1082,14 @@ void BaseStation::CopyFrom(const BaseStation& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool BaseStation::IsInitialized() const {
+bool BaseStation::IsInitialized() const {
   return true;
 }
 
 void BaseStation::InternalSwap(BaseStation* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::google::protobuf::internal::memswap<
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(BaseStation, _impl_.active_num_)
       + sizeof(BaseStation::_impl_.active_num_)
       - PROTOBUF_FIELD_OFFSET(BaseStation, _impl_.demand_flow_)>(
@@ -1115,169 +1097,189 @@ void BaseStation::InternalSwap(BaseStation* other) {
           reinterpret_cast<char*>(&other->_impl_.demand_flow_));
 }
 
-::google::protobuf::Metadata BaseStation::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata BaseStation::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fcomm_2foutput_2fv1_2foutput_2eproto_getter, &descriptor_table_city_2fcomm_2foutput_2fv1_2foutput_2eproto_once,
       file_level_metadata_city_2fcomm_2foutput_2fv1_2foutput_2eproto[1]);
 }
+
 // ===================================================================
 
 class Signal::_Internal {
  public:
 };
 
-Signal::Signal(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+Signal::Signal(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.comm.output.v1.Signal)
 }
-Signal::Signal(const Signal& from) : ::google::protobuf::Message() {
-  Signal* const _this = this;
-  (void)_this;
+Signal::Signal(const Signal& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  Signal* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.strength_){from._impl_.strength_},
-      decltype(_impl_.base_station_id_){from._impl_.base_station_id_},
-      /* _impl_._base_station_id_cached_byte_size_ = */ {0},
-      decltype(_impl_.freq_range_id_){from._impl_.freq_range_id_},
-      /* _impl_._freq_range_id_cached_byte_size_ = */ {0},
-      decltype(_impl_.num_rows_){},
-      decltype(_impl_.num_columns_){},
-      /*decltype(_impl_._cached_size_)*/ {},
-  };
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
-  ::memcpy(&_impl_.num_rows_, &from._impl_.num_rows_,
-    static_cast<::size_t>(reinterpret_cast<char*>(&_impl_.num_columns_) -
-    reinterpret_cast<char*>(&_impl_.num_rows_)) + sizeof(_impl_.num_columns_));
+      decltype(_impl_.strength_){from._impl_.strength_}
+    , decltype(_impl_.base_station_id_){from._impl_.base_station_id_}
+    , /*decltype(_impl_._base_station_id_cached_byte_size_)*/{0}
+    , decltype(_impl_.freq_range_id_){from._impl_.freq_range_id_}
+    , /*decltype(_impl_._freq_range_id_cached_byte_size_)*/{0}
+    , decltype(_impl_.num_rows_){}
+    , decltype(_impl_.num_columns_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
 
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&_impl_.num_rows_, &from._impl_.num_rows_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.num_columns_) -
+    reinterpret_cast<char*>(&_impl_.num_rows_)) + sizeof(_impl_.num_columns_));
   // @@protoc_insertion_point(copy_constructor:city.comm.output.v1.Signal)
 }
-inline void Signal::SharedCtor(::_pb::Arena* arena) {
+
+inline void Signal::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.strength_){arena},
-      decltype(_impl_.base_station_id_){arena},
-      /* _impl_._base_station_id_cached_byte_size_ = */ {0},
-      decltype(_impl_.freq_range_id_){arena},
-      /* _impl_._freq_range_id_cached_byte_size_ = */ {0},
-      decltype(_impl_.num_rows_){0},
-      decltype(_impl_.num_columns_){0},
-      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.strength_){arena}
+    , decltype(_impl_.base_station_id_){arena}
+    , /*decltype(_impl_._base_station_id_cached_byte_size_)*/{0}
+    , decltype(_impl_.freq_range_id_){arena}
+    , /*decltype(_impl_._freq_range_id_cached_byte_size_)*/{0}
+    , decltype(_impl_.num_rows_){0}
+    , decltype(_impl_.num_columns_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 Signal::~Signal() {
   // @@protoc_insertion_point(destructor:city.comm.output.v1.Signal)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void Signal::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.strength_.~RepeatedField();
   _impl_.base_station_id_.~RepeatedField();
   _impl_.freq_range_id_.~RepeatedField();
 }
+
 void Signal::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void Signal::Clear() {
+void Signal::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.comm.output.v1.Signal)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _internal_mutable_strength()->Clear();
-  _internal_mutable_base_station_id()->Clear();
-  _internal_mutable_freq_range_id()->Clear();
-  ::memset(&_impl_.num_rows_, 0, static_cast<::size_t>(
+  _impl_.strength_.Clear();
+  _impl_.base_station_id_.Clear();
+  _impl_.freq_range_id_.Clear();
+  ::memset(&_impl_.num_rows_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_impl_.num_columns_) -
       reinterpret_cast<char*>(&_impl_.num_rows_)) + sizeof(_impl_.num_columns_));
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* Signal::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* Signal::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 num_rows = 1 [json_name = "numRows"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.num_rows_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 num_columns = 2 [json_name = "numColumns"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _impl_.num_columns_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated double strength = 3 [json_name = "strength"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedDoubleParser(_internal_mutable_strength(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<uint8_t>(tag) == 25) {
+          _internal_add_strength(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr));
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated int32 base_station_id = 4 [json_name = "baseStationId"];
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_base_station_id(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<uint8_t>(tag) == 32) {
+          _internal_add_base_station_id(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated int32 freq_range_id = 5 [json_name = "freqRangeId"];
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_freq_range_id(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<uint8_t>(tag) == 40) {
+          _internal_add_freq_range_id(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<3, 5, 0, 0, 2> Signal::_table_ = {
-  {
-    0,  // no _has_bits_
-    0, // no _extensions_
-    5, 56,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967264,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    5,  // num_field_entries
-    0,  // num_aux_entries
-    offsetof(decltype(_table_), field_names),  // no aux_entries
-    &_Signal_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    {::_pbi::TcParser::MiniParse, {}},
-    // int32 num_rows = 1 [json_name = "numRows"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(Signal, _impl_.num_rows_), 63>(),
-     {8, 63, 0, PROTOBUF_FIELD_OFFSET(Signal, _impl_.num_rows_)}},
-    // int32 num_columns = 2 [json_name = "numColumns"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(Signal, _impl_.num_columns_), 63>(),
-     {16, 63, 0, PROTOBUF_FIELD_OFFSET(Signal, _impl_.num_columns_)}},
-    // repeated double strength = 3 [json_name = "strength"];
-    {::_pbi::TcParser::FastF64P1,
-     {26, 63, 0, PROTOBUF_FIELD_OFFSET(Signal, _impl_.strength_)}},
-    // repeated int32 base_station_id = 4 [json_name = "baseStationId"];
-    {::_pbi::TcParser::FastV32P1,
-     {34, 63, 0, PROTOBUF_FIELD_OFFSET(Signal, _impl_.base_station_id_)}},
-    // repeated int32 freq_range_id = 5 [json_name = "freqRangeId"];
-    {::_pbi::TcParser::FastV32P1,
-     {42, 63, 0, PROTOBUF_FIELD_OFFSET(Signal, _impl_.freq_range_id_)}},
-    {::_pbi::TcParser::MiniParse, {}},
-    {::_pbi::TcParser::MiniParse, {}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // int32 num_rows = 1 [json_name = "numRows"];
-    {PROTOBUF_FIELD_OFFSET(Signal, _impl_.num_rows_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-    // int32 num_columns = 2 [json_name = "numColumns"];
-    {PROTOBUF_FIELD_OFFSET(Signal, _impl_.num_columns_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-    // repeated double strength = 3 [json_name = "strength"];
-    {PROTOBUF_FIELD_OFFSET(Signal, _impl_.strength_), 0, 0,
-    (0 | ::_fl::kFcRepeated | ::_fl::kPackedDouble)},
-    // repeated int32 base_station_id = 4 [json_name = "baseStationId"];
-    {PROTOBUF_FIELD_OFFSET(Signal, _impl_.base_station_id_), 0, 0,
-    (0 | ::_fl::kFcRepeated | ::_fl::kPackedInt32)},
-    // repeated int32 freq_range_id = 5 [json_name = "freqRangeId"];
-    {PROTOBUF_FIELD_OFFSET(Signal, _impl_.freq_range_id_), 0, 0,
-    (0 | ::_fl::kFcRepeated | ::_fl::kPackedInt32)},
-  }},
-  // no aux_entries
-  {{
-  }},
-};
-
-::uint8_t* Signal::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* Signal::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.comm.output.v1.Signal)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // int32 num_rows = 1 [json_name = "numRows"];
   if (this->_internal_num_rows() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<1>(
-            stream, this->_internal_num_rows(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_num_rows(), target);
   }
 
   // int32 num_columns = 2 [json_name = "numColumns"];
   if (this->_internal_num_columns() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<2>(
-            stream, this->_internal_num_columns(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(2, this->_internal_num_columns(), target);
   }
 
   // repeated double strength = 3 [json_name = "strength"];
@@ -1287,117 +1289,115 @@ const ::_pbi::TcParseTable<3, 5, 0, 0, 2> Signal::_table_ = {
 
   // repeated int32 base_station_id = 4 [json_name = "baseStationId"];
   {
-    int byte_size = _impl_._base_station_id_cached_byte_size_.Get();
+    int byte_size = _impl_._base_station_id_cached_byte_size_.load(std::memory_order_relaxed);
     if (byte_size > 0) {
-      target = stream->WriteInt32Packed(4, _internal_base_station_id(),
-                                                 byte_size, target);
+      target = stream->WriteInt32Packed(
+          4, _internal_base_station_id(), byte_size, target);
     }
   }
 
   // repeated int32 freq_range_id = 5 [json_name = "freqRangeId"];
   {
-    int byte_size = _impl_._freq_range_id_cached_byte_size_.Get();
+    int byte_size = _impl_._freq_range_id_cached_byte_size_.load(std::memory_order_relaxed);
     if (byte_size > 0) {
-      target = stream->WriteInt32Packed(5, _internal_freq_range_id(),
-                                                 byte_size, target);
+      target = stream->WriteInt32Packed(
+          5, _internal_freq_range_id(), byte_size, target);
     }
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.comm.output.v1.Signal)
   return target;
 }
 
-::size_t Signal::ByteSizeLong() const {
+size_t Signal::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.comm.output.v1.Signal)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // repeated double strength = 3 [json_name = "strength"];
   {
-    std::size_t data_size = std::size_t{8} *
-        ::_pbi::FromIntSize(this->_internal_strength_size())
-    ;
-    std::size_t tag_size = data_size == 0
-        ? 0
-        : 1 + ::_pbi::WireFormatLite::Int32Size(
-                            static_cast<int32_t>(data_size))
-    ;
-    total_size += tag_size + data_size;
+    unsigned int count = static_cast<unsigned int>(this->_internal_strength_size());
+    size_t data_size = 8UL * count;
+    if (data_size > 0) {
+      total_size += 1 +
+        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
+    }
+    total_size += data_size;
   }
+
   // repeated int32 base_station_id = 4 [json_name = "baseStationId"];
   {
-    std::size_t data_size = ::_pbi::WireFormatLite::Int32Size(
-        this->_internal_base_station_id())
-    ;
-    _impl_._base_station_id_cached_byte_size_.Set(::_pbi::ToCachedSize(data_size));
-    std::size_t tag_size = data_size == 0
-        ? 0
-        : 1 + ::_pbi::WireFormatLite::Int32Size(
-                            static_cast<int32_t>(data_size))
-    ;
-    total_size += tag_size + data_size;
+    size_t data_size = ::_pbi::WireFormatLite::
+      Int32Size(this->_impl_.base_station_id_);
+    if (data_size > 0) {
+      total_size += 1 +
+        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
+    }
+    int cached_size = ::_pbi::ToCachedSize(data_size);
+    _impl_._base_station_id_cached_byte_size_.store(cached_size,
+                                    std::memory_order_relaxed);
+    total_size += data_size;
   }
+
   // repeated int32 freq_range_id = 5 [json_name = "freqRangeId"];
   {
-    std::size_t data_size = ::_pbi::WireFormatLite::Int32Size(
-        this->_internal_freq_range_id())
-    ;
-    _impl_._freq_range_id_cached_byte_size_.Set(::_pbi::ToCachedSize(data_size));
-    std::size_t tag_size = data_size == 0
-        ? 0
-        : 1 + ::_pbi::WireFormatLite::Int32Size(
-                            static_cast<int32_t>(data_size))
-    ;
-    total_size += tag_size + data_size;
+    size_t data_size = ::_pbi::WireFormatLite::
+      Int32Size(this->_impl_.freq_range_id_);
+    if (data_size > 0) {
+      total_size += 1 +
+        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
+    }
+    int cached_size = ::_pbi::ToCachedSize(data_size);
+    _impl_._freq_range_id_cached_byte_size_.store(cached_size,
+                                    std::memory_order_relaxed);
+    total_size += data_size;
   }
+
   // int32 num_rows = 1 [json_name = "numRows"];
   if (this->_internal_num_rows() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_num_rows());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_num_rows());
   }
 
   // int32 num_columns = 2 [json_name = "numColumns"];
   if (this->_internal_num_columns() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_num_columns());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_num_columns());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData Signal::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Signal::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     Signal::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*Signal::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Signal::GetClassData() const { return &_class_data_; }
 
 
-void Signal::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void Signal::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<Signal*>(&to_msg);
   auto& from = static_cast<const Signal&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.comm.output.v1.Signal)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  _this->_internal_mutable_strength()->MergeFrom(from._internal_strength());
-  _this->_internal_mutable_base_station_id()->MergeFrom(from._internal_base_station_id());
-  _this->_internal_mutable_freq_range_id()->MergeFrom(from._internal_freq_range_id());
+  _this->_impl_.strength_.MergeFrom(from._impl_.strength_);
+  _this->_impl_.base_station_id_.MergeFrom(from._impl_.base_station_id_);
+  _this->_impl_.freq_range_id_.MergeFrom(from._impl_.freq_range_id_);
   if (from._internal_num_rows() != 0) {
     _this->_internal_set_num_rows(from._internal_num_rows());
   }
   if (from._internal_num_columns() != 0) {
     _this->_internal_set_num_columns(from._internal_num_columns());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void Signal::CopyFrom(const Signal& from) {
@@ -1407,7 +1407,7 @@ void Signal::CopyFrom(const Signal& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool Signal::IsInitialized() const {
+bool Signal::IsInitialized() const {
   return true;
 }
 
@@ -1417,7 +1417,7 @@ void Signal::InternalSwap(Signal* other) {
   _impl_.strength_.InternalSwap(&other->_impl_.strength_);
   _impl_.base_station_id_.InternalSwap(&other->_impl_.base_station_id_);
   _impl_.freq_range_id_.InternalSwap(&other->_impl_.freq_range_id_);
-  ::google::protobuf::internal::memswap<
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(Signal, _impl_.num_columns_)
       + sizeof(Signal::_impl_.num_columns_)
       - PROTOBUF_FIELD_OFFSET(Signal, _impl_.num_rows_)>(
@@ -1425,389 +1425,394 @@ void Signal::InternalSwap(Signal* other) {
           reinterpret_cast<char*>(&other->_impl_.num_rows_));
 }
 
-::google::protobuf::Metadata Signal::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata Signal::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fcomm_2foutput_2fv1_2foutput_2eproto_getter, &descriptor_table_city_2fcomm_2foutput_2fv1_2foutput_2eproto_once,
       file_level_metadata_city_2fcomm_2foutput_2fv1_2foutput_2eproto[2]);
 }
+
 // ===================================================================
 
 class Person::_Internal {
  public:
 };
 
-Person::Person(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+Person::Person(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.comm.output.v1.Person)
 }
-Person::Person(const Person& from) : ::google::protobuf::Message() {
-  Person* const _this = this;
-  (void)_this;
+Person::Person(const Person& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  Person* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.freq_range_ids_){from._impl_.freq_range_ids_},
-      /* _impl_._freq_range_ids_cached_byte_size_ = */ {0},
-      decltype(_impl_.demand_rate_){},
-      decltype(_impl_.id_){},
-      decltype(_impl_.connect_status_){},
-      decltype(_impl_.actual_rate_){},
-      decltype(_impl_.strength_){},
-      decltype(_impl_.base_station_id_){},
-      decltype(_impl_.demand_status_){},
-      decltype(_impl_.received_power_){},
-      /*decltype(_impl_._cached_size_)*/ {},
-  };
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
-  ::memcpy(&_impl_.demand_rate_, &from._impl_.demand_rate_,
-    static_cast<::size_t>(reinterpret_cast<char*>(&_impl_.received_power_) -
-    reinterpret_cast<char*>(&_impl_.demand_rate_)) + sizeof(_impl_.received_power_));
+      decltype(_impl_.freq_range_ids_){from._impl_.freq_range_ids_}
+    , /*decltype(_impl_._freq_range_ids_cached_byte_size_)*/{0}
+    , decltype(_impl_.demand_rate_){}
+    , decltype(_impl_.id_){}
+    , decltype(_impl_.connect_status_){}
+    , decltype(_impl_.actual_rate_){}
+    , decltype(_impl_.strength_){}
+    , decltype(_impl_.base_station_id_){}
+    , decltype(_impl_.demand_status_){}
+    , decltype(_impl_.received_power_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
 
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&_impl_.demand_rate_, &from._impl_.demand_rate_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.received_power_) -
+    reinterpret_cast<char*>(&_impl_.demand_rate_)) + sizeof(_impl_.received_power_));
   // @@protoc_insertion_point(copy_constructor:city.comm.output.v1.Person)
 }
-inline void Person::SharedCtor(::_pb::Arena* arena) {
+
+inline void Person::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.freq_range_ids_){arena},
-      /* _impl_._freq_range_ids_cached_byte_size_ = */ {0},
-      decltype(_impl_.demand_rate_){0},
-      decltype(_impl_.id_){0},
-      decltype(_impl_.connect_status_){0},
-      decltype(_impl_.actual_rate_){0},
-      decltype(_impl_.strength_){0},
-      decltype(_impl_.base_station_id_){0},
-      decltype(_impl_.demand_status_){0},
-      decltype(_impl_.received_power_){0},
-      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.freq_range_ids_){arena}
+    , /*decltype(_impl_._freq_range_ids_cached_byte_size_)*/{0}
+    , decltype(_impl_.demand_rate_){0}
+    , decltype(_impl_.id_){0}
+    , decltype(_impl_.connect_status_){0}
+    , decltype(_impl_.actual_rate_){0}
+    , decltype(_impl_.strength_){0}
+    , decltype(_impl_.base_station_id_){0}
+    , decltype(_impl_.demand_status_){0}
+    , decltype(_impl_.received_power_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 Person::~Person() {
   // @@protoc_insertion_point(destructor:city.comm.output.v1.Person)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void Person::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.freq_range_ids_.~RepeatedField();
 }
+
 void Person::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void Person::Clear() {
+void Person::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.comm.output.v1.Person)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _internal_mutable_freq_range_ids()->Clear();
-  ::memset(&_impl_.demand_rate_, 0, static_cast<::size_t>(
+  _impl_.freq_range_ids_.Clear();
+  ::memset(&_impl_.demand_rate_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_impl_.received_power_) -
       reinterpret_cast<char*>(&_impl_.demand_rate_)) + sizeof(_impl_.received_power_));
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* Person::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* Person::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 id = 1 [json_name = "id"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // double demand_rate = 2 [json_name = "demandRate"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 17)) {
+          _impl_.demand_rate_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // double actual_rate = 3 [json_name = "actualRate"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 25)) {
+          _impl_.actual_rate_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // .city.comm.output.v1.PersonConnectStatus connect_status = 4 [json_name = "connectStatus"];
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_set_connect_status(static_cast<::city::comm::output::v1::PersonConnectStatus>(val));
+        } else
+          goto handle_unusual;
+        continue;
+      // double strength = 5 [json_name = "strength"];
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 41)) {
+          _impl_.strength_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 base_station_id = 6 [json_name = "baseStationId"];
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
+          _impl_.base_station_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated int32 freq_range_ids = 7 [json_name = "freqRangeIds"];
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 58)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_freq_range_ids(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<uint8_t>(tag) == 56) {
+          _internal_add_freq_range_ids(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // double received_power = 8 [json_name = "receivedPower"];
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 65)) {
+          _impl_.received_power_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // .city.comm.output.v1.PersonDemandStatus demand_status = 9 [json_name = "demandStatus"];
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 72)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_set_demand_status(static_cast<::city::comm::output::v1::PersonDemandStatus>(val));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<4, 9, 0, 0, 2> Person::_table_ = {
-  {
-    0,  // no _has_bits_
-    0, // no _extensions_
-    9, 120,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294966784,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    9,  // num_field_entries
-    0,  // num_aux_entries
-    offsetof(decltype(_table_), field_names),  // no aux_entries
-    &_Person_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    {::_pbi::TcParser::MiniParse, {}},
-    // int32 id = 1 [json_name = "id"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(Person, _impl_.id_), 63>(),
-     {8, 63, 0, PROTOBUF_FIELD_OFFSET(Person, _impl_.id_)}},
-    // double demand_rate = 2 [json_name = "demandRate"];
-    {::_pbi::TcParser::FastF64S1,
-     {17, 63, 0, PROTOBUF_FIELD_OFFSET(Person, _impl_.demand_rate_)}},
-    // double actual_rate = 3 [json_name = "actualRate"];
-    {::_pbi::TcParser::FastF64S1,
-     {25, 63, 0, PROTOBUF_FIELD_OFFSET(Person, _impl_.actual_rate_)}},
-    // .city.comm.output.v1.PersonConnectStatus connect_status = 4 [json_name = "connectStatus"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(Person, _impl_.connect_status_), 63>(),
-     {32, 63, 0, PROTOBUF_FIELD_OFFSET(Person, _impl_.connect_status_)}},
-    // double strength = 5 [json_name = "strength"];
-    {::_pbi::TcParser::FastF64S1,
-     {41, 63, 0, PROTOBUF_FIELD_OFFSET(Person, _impl_.strength_)}},
-    // int32 base_station_id = 6 [json_name = "baseStationId"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(Person, _impl_.base_station_id_), 63>(),
-     {48, 63, 0, PROTOBUF_FIELD_OFFSET(Person, _impl_.base_station_id_)}},
-    // repeated int32 freq_range_ids = 7 [json_name = "freqRangeIds"];
-    {::_pbi::TcParser::FastV32P1,
-     {58, 63, 0, PROTOBUF_FIELD_OFFSET(Person, _impl_.freq_range_ids_)}},
-    // double received_power = 8 [json_name = "receivedPower"];
-    {::_pbi::TcParser::FastF64S1,
-     {65, 63, 0, PROTOBUF_FIELD_OFFSET(Person, _impl_.received_power_)}},
-    // .city.comm.output.v1.PersonDemandStatus demand_status = 9 [json_name = "demandStatus"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(Person, _impl_.demand_status_), 63>(),
-     {72, 63, 0, PROTOBUF_FIELD_OFFSET(Person, _impl_.demand_status_)}},
-    {::_pbi::TcParser::MiniParse, {}},
-    {::_pbi::TcParser::MiniParse, {}},
-    {::_pbi::TcParser::MiniParse, {}},
-    {::_pbi::TcParser::MiniParse, {}},
-    {::_pbi::TcParser::MiniParse, {}},
-    {::_pbi::TcParser::MiniParse, {}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // int32 id = 1 [json_name = "id"];
-    {PROTOBUF_FIELD_OFFSET(Person, _impl_.id_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-    // double demand_rate = 2 [json_name = "demandRate"];
-    {PROTOBUF_FIELD_OFFSET(Person, _impl_.demand_rate_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-    // double actual_rate = 3 [json_name = "actualRate"];
-    {PROTOBUF_FIELD_OFFSET(Person, _impl_.actual_rate_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-    // .city.comm.output.v1.PersonConnectStatus connect_status = 4 [json_name = "connectStatus"];
-    {PROTOBUF_FIELD_OFFSET(Person, _impl_.connect_status_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kOpenEnum)},
-    // double strength = 5 [json_name = "strength"];
-    {PROTOBUF_FIELD_OFFSET(Person, _impl_.strength_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-    // int32 base_station_id = 6 [json_name = "baseStationId"];
-    {PROTOBUF_FIELD_OFFSET(Person, _impl_.base_station_id_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-    // repeated int32 freq_range_ids = 7 [json_name = "freqRangeIds"];
-    {PROTOBUF_FIELD_OFFSET(Person, _impl_.freq_range_ids_), 0, 0,
-    (0 | ::_fl::kFcRepeated | ::_fl::kPackedInt32)},
-    // double received_power = 8 [json_name = "receivedPower"];
-    {PROTOBUF_FIELD_OFFSET(Person, _impl_.received_power_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-    // .city.comm.output.v1.PersonDemandStatus demand_status = 9 [json_name = "demandStatus"];
-    {PROTOBUF_FIELD_OFFSET(Person, _impl_.demand_status_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kOpenEnum)},
-  }},
-  // no aux_entries
-  {{
-  }},
-};
-
-::uint8_t* Person::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* Person::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.comm.output.v1.Person)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // int32 id = 1 [json_name = "id"];
   if (this->_internal_id() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<1>(
-            stream, this->_internal_id(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_id(), target);
   }
 
   // double demand_rate = 2 [json_name = "demandRate"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_demand_rate = this->_internal_demand_rate();
-  ::uint64_t raw_demand_rate;
+  uint64_t raw_demand_rate;
   memcpy(&raw_demand_rate, &tmp_demand_rate, sizeof(tmp_demand_rate));
   if (raw_demand_rate != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        2, this->_internal_demand_rate(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(2, this->_internal_demand_rate(), target);
   }
 
   // double actual_rate = 3 [json_name = "actualRate"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_actual_rate = this->_internal_actual_rate();
-  ::uint64_t raw_actual_rate;
+  uint64_t raw_actual_rate;
   memcpy(&raw_actual_rate, &tmp_actual_rate, sizeof(tmp_actual_rate));
   if (raw_actual_rate != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        3, this->_internal_actual_rate(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(3, this->_internal_actual_rate(), target);
   }
 
   // .city.comm.output.v1.PersonConnectStatus connect_status = 4 [json_name = "connectStatus"];
   if (this->_internal_connect_status() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteEnumToArray(
-        4, this->_internal_connect_status(), target);
+      4, this->_internal_connect_status(), target);
   }
 
   // double strength = 5 [json_name = "strength"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_strength = this->_internal_strength();
-  ::uint64_t raw_strength;
+  uint64_t raw_strength;
   memcpy(&raw_strength, &tmp_strength, sizeof(tmp_strength));
   if (raw_strength != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        5, this->_internal_strength(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(5, this->_internal_strength(), target);
   }
 
   // int32 base_station_id = 6 [json_name = "baseStationId"];
   if (this->_internal_base_station_id() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<6>(
-            stream, this->_internal_base_station_id(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(6, this->_internal_base_station_id(), target);
   }
 
   // repeated int32 freq_range_ids = 7 [json_name = "freqRangeIds"];
   {
-    int byte_size = _impl_._freq_range_ids_cached_byte_size_.Get();
+    int byte_size = _impl_._freq_range_ids_cached_byte_size_.load(std::memory_order_relaxed);
     if (byte_size > 0) {
-      target = stream->WriteInt32Packed(7, _internal_freq_range_ids(),
-                                                 byte_size, target);
+      target = stream->WriteInt32Packed(
+          7, _internal_freq_range_ids(), byte_size, target);
     }
   }
 
   // double received_power = 8 [json_name = "receivedPower"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_received_power = this->_internal_received_power();
-  ::uint64_t raw_received_power;
+  uint64_t raw_received_power;
   memcpy(&raw_received_power, &tmp_received_power, sizeof(tmp_received_power));
   if (raw_received_power != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        8, this->_internal_received_power(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(8, this->_internal_received_power(), target);
   }
 
   // .city.comm.output.v1.PersonDemandStatus demand_status = 9 [json_name = "demandStatus"];
   if (this->_internal_demand_status() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteEnumToArray(
-        9, this->_internal_demand_status(), target);
+      9, this->_internal_demand_status(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.comm.output.v1.Person)
   return target;
 }
 
-::size_t Person::ByteSizeLong() const {
+size_t Person::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.comm.output.v1.Person)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // repeated int32 freq_range_ids = 7 [json_name = "freqRangeIds"];
   {
-    std::size_t data_size = ::_pbi::WireFormatLite::Int32Size(
-        this->_internal_freq_range_ids())
-    ;
-    _impl_._freq_range_ids_cached_byte_size_.Set(::_pbi::ToCachedSize(data_size));
-    std::size_t tag_size = data_size == 0
-        ? 0
-        : 1 + ::_pbi::WireFormatLite::Int32Size(
-                            static_cast<int32_t>(data_size))
-    ;
-    total_size += tag_size + data_size;
+    size_t data_size = ::_pbi::WireFormatLite::
+      Int32Size(this->_impl_.freq_range_ids_);
+    if (data_size > 0) {
+      total_size += 1 +
+        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
+    }
+    int cached_size = ::_pbi::ToCachedSize(data_size);
+    _impl_._freq_range_ids_cached_byte_size_.store(cached_size,
+                                    std::memory_order_relaxed);
+    total_size += data_size;
   }
+
   // double demand_rate = 2 [json_name = "demandRate"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_demand_rate = this->_internal_demand_rate();
-  ::uint64_t raw_demand_rate;
+  uint64_t raw_demand_rate;
   memcpy(&raw_demand_rate, &tmp_demand_rate, sizeof(tmp_demand_rate));
   if (raw_demand_rate != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   // int32 id = 1 [json_name = "id"];
   if (this->_internal_id() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_id());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_id());
   }
 
   // .city.comm.output.v1.PersonConnectStatus connect_status = 4 [json_name = "connectStatus"];
   if (this->_internal_connect_status() != 0) {
     total_size += 1 +
-                  ::_pbi::WireFormatLite::EnumSize(this->_internal_connect_status());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_connect_status());
   }
 
   // double actual_rate = 3 [json_name = "actualRate"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_actual_rate = this->_internal_actual_rate();
-  ::uint64_t raw_actual_rate;
+  uint64_t raw_actual_rate;
   memcpy(&raw_actual_rate, &tmp_actual_rate, sizeof(tmp_actual_rate));
   if (raw_actual_rate != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   // double strength = 5 [json_name = "strength"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_strength = this->_internal_strength();
-  ::uint64_t raw_strength;
+  uint64_t raw_strength;
   memcpy(&raw_strength, &tmp_strength, sizeof(tmp_strength));
   if (raw_strength != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   // int32 base_station_id = 6 [json_name = "baseStationId"];
   if (this->_internal_base_station_id() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_base_station_id());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_base_station_id());
   }
 
   // .city.comm.output.v1.PersonDemandStatus demand_status = 9 [json_name = "demandStatus"];
   if (this->_internal_demand_status() != 0) {
     total_size += 1 +
-                  ::_pbi::WireFormatLite::EnumSize(this->_internal_demand_status());
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_demand_status());
   }
 
   // double received_power = 8 [json_name = "receivedPower"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_received_power = this->_internal_received_power();
-  ::uint64_t raw_received_power;
+  uint64_t raw_received_power;
   memcpy(&raw_received_power, &tmp_received_power, sizeof(tmp_received_power));
   if (raw_received_power != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData Person::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Person::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     Person::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*Person::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Person::GetClassData() const { return &_class_data_; }
 
 
-void Person::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void Person::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<Person*>(&to_msg);
   auto& from = static_cast<const Person&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.comm.output.v1.Person)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  _this->_internal_mutable_freq_range_ids()->MergeFrom(from._internal_freq_range_ids());
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  _this->_impl_.freq_range_ids_.MergeFrom(from._impl_.freq_range_ids_);
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_demand_rate = from._internal_demand_rate();
-  ::uint64_t raw_demand_rate;
+  uint64_t raw_demand_rate;
   memcpy(&raw_demand_rate, &tmp_demand_rate, sizeof(tmp_demand_rate));
   if (raw_demand_rate != 0) {
     _this->_internal_set_demand_rate(from._internal_demand_rate());
@@ -1818,18 +1823,16 @@ void Person::MergeImpl(::google::protobuf::Message& to_msg, const ::google::prot
   if (from._internal_connect_status() != 0) {
     _this->_internal_set_connect_status(from._internal_connect_status());
   }
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_actual_rate = from._internal_actual_rate();
-  ::uint64_t raw_actual_rate;
+  uint64_t raw_actual_rate;
   memcpy(&raw_actual_rate, &tmp_actual_rate, sizeof(tmp_actual_rate));
   if (raw_actual_rate != 0) {
     _this->_internal_set_actual_rate(from._internal_actual_rate());
   }
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_strength = from._internal_strength();
-  ::uint64_t raw_strength;
+  uint64_t raw_strength;
   memcpy(&raw_strength, &tmp_strength, sizeof(tmp_strength));
   if (raw_strength != 0) {
     _this->_internal_set_strength(from._internal_strength());
@@ -1840,15 +1843,14 @@ void Person::MergeImpl(::google::protobuf::Message& to_msg, const ::google::prot
   if (from._internal_demand_status() != 0) {
     _this->_internal_set_demand_status(from._internal_demand_status());
   }
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_received_power = from._internal_received_power();
-  ::uint64_t raw_received_power;
+  uint64_t raw_received_power;
   memcpy(&raw_received_power, &tmp_received_power, sizeof(tmp_received_power));
   if (raw_received_power != 0) {
     _this->_internal_set_received_power(from._internal_received_power());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void Person::CopyFrom(const Person& from) {
@@ -1858,7 +1860,7 @@ void Person::CopyFrom(const Person& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool Person::IsInitialized() const {
+bool Person::IsInitialized() const {
   return true;
 }
 
@@ -1866,7 +1868,7 @@ void Person::InternalSwap(Person* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   _impl_.freq_range_ids_.InternalSwap(&other->_impl_.freq_range_ids_);
-  ::google::protobuf::internal::memswap<
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(Person, _impl_.received_power_)
       + sizeof(Person::_impl_.received_power_)
       - PROTOBUF_FIELD_OFFSET(Person, _impl_.demand_rate_)>(
@@ -1874,294 +1876,310 @@ void Person::InternalSwap(Person* other) {
           reinterpret_cast<char*>(&other->_impl_.demand_rate_));
 }
 
-::google::protobuf::Metadata Person::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata Person::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fcomm_2foutput_2fv1_2foutput_2eproto_getter, &descriptor_table_city_2fcomm_2foutput_2fv1_2foutput_2eproto_once,
       file_level_metadata_city_2fcomm_2foutput_2fv1_2foutput_2eproto[3]);
 }
+
 // ===================================================================
 
 class Aoi::_Internal {
  public:
 };
 
-Aoi::Aoi(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+Aoi::Aoi(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.comm.output.v1.Aoi)
 }
 Aoi::Aoi(const Aoi& from)
-    : ::google::protobuf::Message(), _impl_(from._impl_) {
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  Aoi* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.demand_flow_){}
+    , decltype(_impl_.id_){}
+    , decltype(_impl_.outage_num_){}
+    , decltype(_impl_.actual_flow_){}
+    , decltype(_impl_.satisfied_num_){}
+    , decltype(_impl_.unsatisfied_num_){}
+    , decltype(_impl_.active_user_num_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&_impl_.demand_flow_, &from._impl_.demand_flow_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.active_user_num_) -
+    reinterpret_cast<char*>(&_impl_.demand_flow_)) + sizeof(_impl_.active_user_num_));
   // @@protoc_insertion_point(copy_constructor:city.comm.output.v1.Aoi)
 }
-inline void Aoi::SharedCtor(::_pb::Arena* arena) {
+
+inline void Aoi::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.demand_flow_){0},
-      decltype(_impl_.id_){0},
-      decltype(_impl_.outage_num_){0},
-      decltype(_impl_.actual_flow_){0},
-      decltype(_impl_.satisfied_num_){0},
-      decltype(_impl_.unsatisfied_num_){0},
-      decltype(_impl_.active_user_num_){0},
-      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.demand_flow_){0}
+    , decltype(_impl_.id_){0}
+    , decltype(_impl_.outage_num_){0}
+    , decltype(_impl_.actual_flow_){0}
+    , decltype(_impl_.satisfied_num_){0}
+    , decltype(_impl_.unsatisfied_num_){0}
+    , decltype(_impl_.active_user_num_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 Aoi::~Aoi() {
   // @@protoc_insertion_point(destructor:city.comm.output.v1.Aoi)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void Aoi::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
+
 void Aoi::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void Aoi::Clear() {
+void Aoi::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.comm.output.v1.Aoi)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&_impl_.demand_flow_, 0, static_cast<::size_t>(
+  ::memset(&_impl_.demand_flow_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_impl_.active_user_num_) -
       reinterpret_cast<char*>(&_impl_.demand_flow_)) + sizeof(_impl_.active_user_num_));
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* Aoi::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* Aoi::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 id = 1 [json_name = "id"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // double demand_flow = 2 [json_name = "demandFlow"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 17)) {
+          _impl_.demand_flow_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // double actual_flow = 3 [json_name = "actualFlow"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 25)) {
+          _impl_.actual_flow_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 outage_num = 4 [json_name = "outageNum"];
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
+          _impl_.outage_num_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 satisfied_num = 5 [json_name = "satisfiedNum"];
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
+          _impl_.satisfied_num_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 unsatisfied_num = 6 [json_name = "unsatisfiedNum"];
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
+          _impl_.unsatisfied_num_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 active_user_num = 7 [json_name = "activeUserNum"];
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 56)) {
+          _impl_.active_user_num_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<3, 7, 0, 0, 2> Aoi::_table_ = {
-  {
-    0,  // no _has_bits_
-    0, // no _extensions_
-    7, 56,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967168,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    7,  // num_field_entries
-    0,  // num_aux_entries
-    offsetof(decltype(_table_), field_names),  // no aux_entries
-    &_Aoi_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    {::_pbi::TcParser::MiniParse, {}},
-    // int32 id = 1 [json_name = "id"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(Aoi, _impl_.id_), 63>(),
-     {8, 63, 0, PROTOBUF_FIELD_OFFSET(Aoi, _impl_.id_)}},
-    // double demand_flow = 2 [json_name = "demandFlow"];
-    {::_pbi::TcParser::FastF64S1,
-     {17, 63, 0, PROTOBUF_FIELD_OFFSET(Aoi, _impl_.demand_flow_)}},
-    // double actual_flow = 3 [json_name = "actualFlow"];
-    {::_pbi::TcParser::FastF64S1,
-     {25, 63, 0, PROTOBUF_FIELD_OFFSET(Aoi, _impl_.actual_flow_)}},
-    // int32 outage_num = 4 [json_name = "outageNum"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(Aoi, _impl_.outage_num_), 63>(),
-     {32, 63, 0, PROTOBUF_FIELD_OFFSET(Aoi, _impl_.outage_num_)}},
-    // int32 satisfied_num = 5 [json_name = "satisfiedNum"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(Aoi, _impl_.satisfied_num_), 63>(),
-     {40, 63, 0, PROTOBUF_FIELD_OFFSET(Aoi, _impl_.satisfied_num_)}},
-    // int32 unsatisfied_num = 6 [json_name = "unsatisfiedNum"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(Aoi, _impl_.unsatisfied_num_), 63>(),
-     {48, 63, 0, PROTOBUF_FIELD_OFFSET(Aoi, _impl_.unsatisfied_num_)}},
-    // int32 active_user_num = 7 [json_name = "activeUserNum"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(Aoi, _impl_.active_user_num_), 63>(),
-     {56, 63, 0, PROTOBUF_FIELD_OFFSET(Aoi, _impl_.active_user_num_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // int32 id = 1 [json_name = "id"];
-    {PROTOBUF_FIELD_OFFSET(Aoi, _impl_.id_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-    // double demand_flow = 2 [json_name = "demandFlow"];
-    {PROTOBUF_FIELD_OFFSET(Aoi, _impl_.demand_flow_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-    // double actual_flow = 3 [json_name = "actualFlow"];
-    {PROTOBUF_FIELD_OFFSET(Aoi, _impl_.actual_flow_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-    // int32 outage_num = 4 [json_name = "outageNum"];
-    {PROTOBUF_FIELD_OFFSET(Aoi, _impl_.outage_num_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-    // int32 satisfied_num = 5 [json_name = "satisfiedNum"];
-    {PROTOBUF_FIELD_OFFSET(Aoi, _impl_.satisfied_num_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-    // int32 unsatisfied_num = 6 [json_name = "unsatisfiedNum"];
-    {PROTOBUF_FIELD_OFFSET(Aoi, _impl_.unsatisfied_num_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-    // int32 active_user_num = 7 [json_name = "activeUserNum"];
-    {PROTOBUF_FIELD_OFFSET(Aoi, _impl_.active_user_num_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-  }},
-  // no aux_entries
-  {{
-  }},
-};
-
-::uint8_t* Aoi::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* Aoi::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.comm.output.v1.Aoi)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // int32 id = 1 [json_name = "id"];
   if (this->_internal_id() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<1>(
-            stream, this->_internal_id(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_id(), target);
   }
 
   // double demand_flow = 2 [json_name = "demandFlow"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_demand_flow = this->_internal_demand_flow();
-  ::uint64_t raw_demand_flow;
+  uint64_t raw_demand_flow;
   memcpy(&raw_demand_flow, &tmp_demand_flow, sizeof(tmp_demand_flow));
   if (raw_demand_flow != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        2, this->_internal_demand_flow(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(2, this->_internal_demand_flow(), target);
   }
 
   // double actual_flow = 3 [json_name = "actualFlow"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_actual_flow = this->_internal_actual_flow();
-  ::uint64_t raw_actual_flow;
+  uint64_t raw_actual_flow;
   memcpy(&raw_actual_flow, &tmp_actual_flow, sizeof(tmp_actual_flow));
   if (raw_actual_flow != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        3, this->_internal_actual_flow(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(3, this->_internal_actual_flow(), target);
   }
 
   // int32 outage_num = 4 [json_name = "outageNum"];
   if (this->_internal_outage_num() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<4>(
-            stream, this->_internal_outage_num(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(4, this->_internal_outage_num(), target);
   }
 
   // int32 satisfied_num = 5 [json_name = "satisfiedNum"];
   if (this->_internal_satisfied_num() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<5>(
-            stream, this->_internal_satisfied_num(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(5, this->_internal_satisfied_num(), target);
   }
 
   // int32 unsatisfied_num = 6 [json_name = "unsatisfiedNum"];
   if (this->_internal_unsatisfied_num() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<6>(
-            stream, this->_internal_unsatisfied_num(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(6, this->_internal_unsatisfied_num(), target);
   }
 
   // int32 active_user_num = 7 [json_name = "activeUserNum"];
   if (this->_internal_active_user_num() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<7>(
-            stream, this->_internal_active_user_num(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(7, this->_internal_active_user_num(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.comm.output.v1.Aoi)
   return target;
 }
 
-::size_t Aoi::ByteSizeLong() const {
+size_t Aoi::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.comm.output.v1.Aoi)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // double demand_flow = 2 [json_name = "demandFlow"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_demand_flow = this->_internal_demand_flow();
-  ::uint64_t raw_demand_flow;
+  uint64_t raw_demand_flow;
   memcpy(&raw_demand_flow, &tmp_demand_flow, sizeof(tmp_demand_flow));
   if (raw_demand_flow != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   // int32 id = 1 [json_name = "id"];
   if (this->_internal_id() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_id());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_id());
   }
 
   // int32 outage_num = 4 [json_name = "outageNum"];
   if (this->_internal_outage_num() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_outage_num());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_outage_num());
   }
 
   // double actual_flow = 3 [json_name = "actualFlow"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_actual_flow = this->_internal_actual_flow();
-  ::uint64_t raw_actual_flow;
+  uint64_t raw_actual_flow;
   memcpy(&raw_actual_flow, &tmp_actual_flow, sizeof(tmp_actual_flow));
   if (raw_actual_flow != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   // int32 satisfied_num = 5 [json_name = "satisfiedNum"];
   if (this->_internal_satisfied_num() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_satisfied_num());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_satisfied_num());
   }
 
   // int32 unsatisfied_num = 6 [json_name = "unsatisfiedNum"];
   if (this->_internal_unsatisfied_num() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_unsatisfied_num());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_unsatisfied_num());
   }
 
   // int32 active_user_num = 7 [json_name = "activeUserNum"];
   if (this->_internal_active_user_num() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_active_user_num());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_active_user_num());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData Aoi::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Aoi::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     Aoi::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*Aoi::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Aoi::GetClassData() const { return &_class_data_; }
 
 
-void Aoi::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void Aoi::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<Aoi*>(&to_msg);
   auto& from = static_cast<const Aoi&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.comm.output.v1.Aoi)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_demand_flow = from._internal_demand_flow();
-  ::uint64_t raw_demand_flow;
+  uint64_t raw_demand_flow;
   memcpy(&raw_demand_flow, &tmp_demand_flow, sizeof(tmp_demand_flow));
   if (raw_demand_flow != 0) {
     _this->_internal_set_demand_flow(from._internal_demand_flow());
@@ -2172,10 +2190,9 @@ void Aoi::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobu
   if (from._internal_outage_num() != 0) {
     _this->_internal_set_outage_num(from._internal_outage_num());
   }
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_actual_flow = from._internal_actual_flow();
-  ::uint64_t raw_actual_flow;
+  uint64_t raw_actual_flow;
   memcpy(&raw_actual_flow, &tmp_actual_flow, sizeof(tmp_actual_flow));
   if (raw_actual_flow != 0) {
     _this->_internal_set_actual_flow(from._internal_actual_flow());
@@ -2189,7 +2206,7 @@ void Aoi::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobu
   if (from._internal_active_user_num() != 0) {
     _this->_internal_set_active_user_num(from._internal_active_user_num());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void Aoi::CopyFrom(const Aoi& from) {
@@ -2199,14 +2216,14 @@ void Aoi::CopyFrom(const Aoi& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool Aoi::IsInitialized() const {
+bool Aoi::IsInitialized() const {
   return true;
 }
 
 void Aoi::InternalSwap(Aoi* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::google::protobuf::internal::memswap<
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(Aoi, _impl_.active_user_num_)
       + sizeof(Aoi::_impl_.active_user_num_)
       - PROTOBUF_FIELD_OFFSET(Aoi, _impl_.demand_flow_)>(
@@ -2214,530 +2231,548 @@ void Aoi::InternalSwap(Aoi* other) {
           reinterpret_cast<char*>(&other->_impl_.demand_flow_));
 }
 
-::google::protobuf::Metadata Aoi::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata Aoi::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fcomm_2foutput_2fv1_2foutput_2eproto_getter, &descriptor_table_city_2fcomm_2foutput_2fv1_2foutput_2eproto_once,
       file_level_metadata_city_2fcomm_2foutput_2fv1_2foutput_2eproto[4]);
 }
+
 // ===================================================================
 
 class Statistics::_Internal {
  public:
 };
 
-Statistics::Statistics(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+Statistics::Statistics(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.comm.output.v1.Statistics)
 }
 Statistics::Statistics(const Statistics& from)
-    : ::google::protobuf::Message(), _impl_(from._impl_) {
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  Statistics* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.num_satisfied_agents_){}
+    , decltype(_impl_.num_unsatisfied_agents_){}
+    , decltype(_impl_.num_outage_agents_){}
+    , decltype(_impl_.num_active_agents_){}
+    , decltype(_impl_.demand_flow_){}
+    , decltype(_impl_.actual_flow_){}
+    , decltype(_impl_.num_base_station_){}
+    , decltype(_impl_.num_ok_base_station_){}
+    , decltype(_impl_.num_ruined_base_station_){}
+    , decltype(_impl_.num_stopped_base_station_){}
+    , decltype(_impl_.num_overloaded_base_station_){}
+    , decltype(_impl_.num_gateway_){}
+    , decltype(_impl_.num_ok_gateway_){}
+    , decltype(_impl_.num_ruined_gateway_){}
+    , decltype(_impl_.num_stopped_gateway_){}
+    , decltype(_impl_.num_overloaded_gateway_){}
+    , decltype(_impl_.power_consumption_){}
+    , decltype(_impl_.num_battery_gateway_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&_impl_.num_satisfied_agents_, &from._impl_.num_satisfied_agents_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.num_battery_gateway_) -
+    reinterpret_cast<char*>(&_impl_.num_satisfied_agents_)) + sizeof(_impl_.num_battery_gateway_));
   // @@protoc_insertion_point(copy_constructor:city.comm.output.v1.Statistics)
 }
-inline void Statistics::SharedCtor(::_pb::Arena* arena) {
+
+inline void Statistics::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.num_satisfied_agents_){0},
-      decltype(_impl_.num_unsatisfied_agents_){0},
-      decltype(_impl_.num_outage_agents_){0},
-      decltype(_impl_.num_active_agents_){0},
-      decltype(_impl_.demand_flow_){0},
-      decltype(_impl_.actual_flow_){0},
-      decltype(_impl_.num_base_station_){0},
-      decltype(_impl_.num_ok_base_station_){0},
-      decltype(_impl_.num_ruined_base_station_){0},
-      decltype(_impl_.num_stopped_base_station_){0},
-      decltype(_impl_.num_overloaded_base_station_){0},
-      decltype(_impl_.num_gateway_){0},
-      decltype(_impl_.num_ok_gateway_){0},
-      decltype(_impl_.num_ruined_gateway_){0},
-      decltype(_impl_.num_stopped_gateway_){0},
-      decltype(_impl_.num_overloaded_gateway_){0},
-      decltype(_impl_.power_consumption_){0},
-      decltype(_impl_.num_battery_gateway_){0},
-      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.num_satisfied_agents_){0}
+    , decltype(_impl_.num_unsatisfied_agents_){0}
+    , decltype(_impl_.num_outage_agents_){0}
+    , decltype(_impl_.num_active_agents_){0}
+    , decltype(_impl_.demand_flow_){0}
+    , decltype(_impl_.actual_flow_){0}
+    , decltype(_impl_.num_base_station_){0}
+    , decltype(_impl_.num_ok_base_station_){0}
+    , decltype(_impl_.num_ruined_base_station_){0}
+    , decltype(_impl_.num_stopped_base_station_){0}
+    , decltype(_impl_.num_overloaded_base_station_){0}
+    , decltype(_impl_.num_gateway_){0}
+    , decltype(_impl_.num_ok_gateway_){0}
+    , decltype(_impl_.num_ruined_gateway_){0}
+    , decltype(_impl_.num_stopped_gateway_){0}
+    , decltype(_impl_.num_overloaded_gateway_){0}
+    , decltype(_impl_.power_consumption_){0}
+    , decltype(_impl_.num_battery_gateway_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 Statistics::~Statistics() {
   // @@protoc_insertion_point(destructor:city.comm.output.v1.Statistics)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void Statistics::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
+
 void Statistics::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void Statistics::Clear() {
+void Statistics::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.comm.output.v1.Statistics)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&_impl_.num_satisfied_agents_, 0, static_cast<::size_t>(
+  ::memset(&_impl_.num_satisfied_agents_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_impl_.num_battery_gateway_) -
       reinterpret_cast<char*>(&_impl_.num_satisfied_agents_)) + sizeof(_impl_.num_battery_gateway_));
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* Statistics::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* Statistics::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 num_satisfied_agents = 1 [json_name = "numSatisfiedAgents"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.num_satisfied_agents_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 num_unsatisfied_agents = 2 [json_name = "numUnsatisfiedAgents"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _impl_.num_unsatisfied_agents_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 num_outage_agents = 3 [json_name = "numOutageAgents"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+          _impl_.num_outage_agents_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 num_active_agents = 4 [json_name = "numActiveAgents"];
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
+          _impl_.num_active_agents_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // double demand_flow = 5 [json_name = "demandFlow"];
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 41)) {
+          _impl_.demand_flow_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // double actual_flow = 6 [json_name = "actualFlow"];
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 49)) {
+          _impl_.actual_flow_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 num_base_station = 7 [json_name = "numBaseStation"];
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 56)) {
+          _impl_.num_base_station_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 num_ok_base_station = 8 [json_name = "numOkBaseStation"];
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 64)) {
+          _impl_.num_ok_base_station_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 num_ruined_base_station = 9 [json_name = "numRuinedBaseStation"];
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 72)) {
+          _impl_.num_ruined_base_station_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 num_stopped_base_station = 10 [json_name = "numStoppedBaseStation"];
+      case 10:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 80)) {
+          _impl_.num_stopped_base_station_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 num_overloaded_base_station = 11 [json_name = "numOverloadedBaseStation"];
+      case 11:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 88)) {
+          _impl_.num_overloaded_base_station_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 num_gateway = 12 [json_name = "numGateway"];
+      case 12:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 96)) {
+          _impl_.num_gateway_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 num_ok_gateway = 13 [json_name = "numOkGateway"];
+      case 13:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 104)) {
+          _impl_.num_ok_gateway_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 num_ruined_gateway = 14 [json_name = "numRuinedGateway"];
+      case 14:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 112)) {
+          _impl_.num_ruined_gateway_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 num_stopped_gateway = 15 [json_name = "numStoppedGateway"];
+      case 15:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 120)) {
+          _impl_.num_stopped_gateway_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 num_overloaded_gateway = 16 [json_name = "numOverloadedGateway"];
+      case 16:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 128)) {
+          _impl_.num_overloaded_gateway_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 num_battery_gateway = 17 [json_name = "numBatteryGateway"];
+      case 17:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 136)) {
+          _impl_.num_battery_gateway_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // double power_consumption = 18 [json_name = "powerConsumption"];
+      case 18:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 145)) {
+          _impl_.power_consumption_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<5, 18, 0, 0, 2> Statistics::_table_ = {
-  {
-    0,  // no _has_bits_
-    0, // no _extensions_
-    18, 248,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294705152,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    18,  // num_field_entries
-    0,  // num_aux_entries
-    offsetof(decltype(_table_), field_names),  // no aux_entries
-    &_Statistics_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    {::_pbi::TcParser::MiniParse, {}},
-    // int32 num_satisfied_agents = 1 [json_name = "numSatisfiedAgents"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(Statistics, _impl_.num_satisfied_agents_), 63>(),
-     {8, 63, 0, PROTOBUF_FIELD_OFFSET(Statistics, _impl_.num_satisfied_agents_)}},
-    // int32 num_unsatisfied_agents = 2 [json_name = "numUnsatisfiedAgents"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(Statistics, _impl_.num_unsatisfied_agents_), 63>(),
-     {16, 63, 0, PROTOBUF_FIELD_OFFSET(Statistics, _impl_.num_unsatisfied_agents_)}},
-    // int32 num_outage_agents = 3 [json_name = "numOutageAgents"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(Statistics, _impl_.num_outage_agents_), 63>(),
-     {24, 63, 0, PROTOBUF_FIELD_OFFSET(Statistics, _impl_.num_outage_agents_)}},
-    // int32 num_active_agents = 4 [json_name = "numActiveAgents"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(Statistics, _impl_.num_active_agents_), 63>(),
-     {32, 63, 0, PROTOBUF_FIELD_OFFSET(Statistics, _impl_.num_active_agents_)}},
-    // double demand_flow = 5 [json_name = "demandFlow"];
-    {::_pbi::TcParser::FastF64S1,
-     {41, 63, 0, PROTOBUF_FIELD_OFFSET(Statistics, _impl_.demand_flow_)}},
-    // double actual_flow = 6 [json_name = "actualFlow"];
-    {::_pbi::TcParser::FastF64S1,
-     {49, 63, 0, PROTOBUF_FIELD_OFFSET(Statistics, _impl_.actual_flow_)}},
-    // int32 num_base_station = 7 [json_name = "numBaseStation"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(Statistics, _impl_.num_base_station_), 63>(),
-     {56, 63, 0, PROTOBUF_FIELD_OFFSET(Statistics, _impl_.num_base_station_)}},
-    // int32 num_ok_base_station = 8 [json_name = "numOkBaseStation"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(Statistics, _impl_.num_ok_base_station_), 63>(),
-     {64, 63, 0, PROTOBUF_FIELD_OFFSET(Statistics, _impl_.num_ok_base_station_)}},
-    // int32 num_ruined_base_station = 9 [json_name = "numRuinedBaseStation"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(Statistics, _impl_.num_ruined_base_station_), 63>(),
-     {72, 63, 0, PROTOBUF_FIELD_OFFSET(Statistics, _impl_.num_ruined_base_station_)}},
-    // int32 num_stopped_base_station = 10 [json_name = "numStoppedBaseStation"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(Statistics, _impl_.num_stopped_base_station_), 63>(),
-     {80, 63, 0, PROTOBUF_FIELD_OFFSET(Statistics, _impl_.num_stopped_base_station_)}},
-    // int32 num_overloaded_base_station = 11 [json_name = "numOverloadedBaseStation"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(Statistics, _impl_.num_overloaded_base_station_), 63>(),
-     {88, 63, 0, PROTOBUF_FIELD_OFFSET(Statistics, _impl_.num_overloaded_base_station_)}},
-    // int32 num_gateway = 12 [json_name = "numGateway"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(Statistics, _impl_.num_gateway_), 63>(),
-     {96, 63, 0, PROTOBUF_FIELD_OFFSET(Statistics, _impl_.num_gateway_)}},
-    // int32 num_ok_gateway = 13 [json_name = "numOkGateway"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(Statistics, _impl_.num_ok_gateway_), 63>(),
-     {104, 63, 0, PROTOBUF_FIELD_OFFSET(Statistics, _impl_.num_ok_gateway_)}},
-    // int32 num_ruined_gateway = 14 [json_name = "numRuinedGateway"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(Statistics, _impl_.num_ruined_gateway_), 63>(),
-     {112, 63, 0, PROTOBUF_FIELD_OFFSET(Statistics, _impl_.num_ruined_gateway_)}},
-    // int32 num_stopped_gateway = 15 [json_name = "numStoppedGateway"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(Statistics, _impl_.num_stopped_gateway_), 63>(),
-     {120, 63, 0, PROTOBUF_FIELD_OFFSET(Statistics, _impl_.num_stopped_gateway_)}},
-    // int32 num_overloaded_gateway = 16 [json_name = "numOverloadedGateway"];
-    {::_pbi::TcParser::FastV32S2,
-     {384, 63, 0, PROTOBUF_FIELD_OFFSET(Statistics, _impl_.num_overloaded_gateway_)}},
-    // int32 num_battery_gateway = 17 [json_name = "numBatteryGateway"];
-    {::_pbi::TcParser::FastV32S2,
-     {392, 63, 0, PROTOBUF_FIELD_OFFSET(Statistics, _impl_.num_battery_gateway_)}},
-    // double power_consumption = 18 [json_name = "powerConsumption"];
-    {::_pbi::TcParser::FastF64S2,
-     {401, 63, 0, PROTOBUF_FIELD_OFFSET(Statistics, _impl_.power_consumption_)}},
-    {::_pbi::TcParser::MiniParse, {}},
-    {::_pbi::TcParser::MiniParse, {}},
-    {::_pbi::TcParser::MiniParse, {}},
-    {::_pbi::TcParser::MiniParse, {}},
-    {::_pbi::TcParser::MiniParse, {}},
-    {::_pbi::TcParser::MiniParse, {}},
-    {::_pbi::TcParser::MiniParse, {}},
-    {::_pbi::TcParser::MiniParse, {}},
-    {::_pbi::TcParser::MiniParse, {}},
-    {::_pbi::TcParser::MiniParse, {}},
-    {::_pbi::TcParser::MiniParse, {}},
-    {::_pbi::TcParser::MiniParse, {}},
-    {::_pbi::TcParser::MiniParse, {}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // int32 num_satisfied_agents = 1 [json_name = "numSatisfiedAgents"];
-    {PROTOBUF_FIELD_OFFSET(Statistics, _impl_.num_satisfied_agents_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-    // int32 num_unsatisfied_agents = 2 [json_name = "numUnsatisfiedAgents"];
-    {PROTOBUF_FIELD_OFFSET(Statistics, _impl_.num_unsatisfied_agents_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-    // int32 num_outage_agents = 3 [json_name = "numOutageAgents"];
-    {PROTOBUF_FIELD_OFFSET(Statistics, _impl_.num_outage_agents_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-    // int32 num_active_agents = 4 [json_name = "numActiveAgents"];
-    {PROTOBUF_FIELD_OFFSET(Statistics, _impl_.num_active_agents_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-    // double demand_flow = 5 [json_name = "demandFlow"];
-    {PROTOBUF_FIELD_OFFSET(Statistics, _impl_.demand_flow_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-    // double actual_flow = 6 [json_name = "actualFlow"];
-    {PROTOBUF_FIELD_OFFSET(Statistics, _impl_.actual_flow_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-    // int32 num_base_station = 7 [json_name = "numBaseStation"];
-    {PROTOBUF_FIELD_OFFSET(Statistics, _impl_.num_base_station_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-    // int32 num_ok_base_station = 8 [json_name = "numOkBaseStation"];
-    {PROTOBUF_FIELD_OFFSET(Statistics, _impl_.num_ok_base_station_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-    // int32 num_ruined_base_station = 9 [json_name = "numRuinedBaseStation"];
-    {PROTOBUF_FIELD_OFFSET(Statistics, _impl_.num_ruined_base_station_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-    // int32 num_stopped_base_station = 10 [json_name = "numStoppedBaseStation"];
-    {PROTOBUF_FIELD_OFFSET(Statistics, _impl_.num_stopped_base_station_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-    // int32 num_overloaded_base_station = 11 [json_name = "numOverloadedBaseStation"];
-    {PROTOBUF_FIELD_OFFSET(Statistics, _impl_.num_overloaded_base_station_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-    // int32 num_gateway = 12 [json_name = "numGateway"];
-    {PROTOBUF_FIELD_OFFSET(Statistics, _impl_.num_gateway_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-    // int32 num_ok_gateway = 13 [json_name = "numOkGateway"];
-    {PROTOBUF_FIELD_OFFSET(Statistics, _impl_.num_ok_gateway_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-    // int32 num_ruined_gateway = 14 [json_name = "numRuinedGateway"];
-    {PROTOBUF_FIELD_OFFSET(Statistics, _impl_.num_ruined_gateway_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-    // int32 num_stopped_gateway = 15 [json_name = "numStoppedGateway"];
-    {PROTOBUF_FIELD_OFFSET(Statistics, _impl_.num_stopped_gateway_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-    // int32 num_overloaded_gateway = 16 [json_name = "numOverloadedGateway"];
-    {PROTOBUF_FIELD_OFFSET(Statistics, _impl_.num_overloaded_gateway_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-    // int32 num_battery_gateway = 17 [json_name = "numBatteryGateway"];
-    {PROTOBUF_FIELD_OFFSET(Statistics, _impl_.num_battery_gateway_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-    // double power_consumption = 18 [json_name = "powerConsumption"];
-    {PROTOBUF_FIELD_OFFSET(Statistics, _impl_.power_consumption_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-  }},
-  // no aux_entries
-  {{
-  }},
-};
-
-::uint8_t* Statistics::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* Statistics::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.comm.output.v1.Statistics)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // int32 num_satisfied_agents = 1 [json_name = "numSatisfiedAgents"];
   if (this->_internal_num_satisfied_agents() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<1>(
-            stream, this->_internal_num_satisfied_agents(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_num_satisfied_agents(), target);
   }
 
   // int32 num_unsatisfied_agents = 2 [json_name = "numUnsatisfiedAgents"];
   if (this->_internal_num_unsatisfied_agents() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<2>(
-            stream, this->_internal_num_unsatisfied_agents(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(2, this->_internal_num_unsatisfied_agents(), target);
   }
 
   // int32 num_outage_agents = 3 [json_name = "numOutageAgents"];
   if (this->_internal_num_outage_agents() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<3>(
-            stream, this->_internal_num_outage_agents(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(3, this->_internal_num_outage_agents(), target);
   }
 
   // int32 num_active_agents = 4 [json_name = "numActiveAgents"];
   if (this->_internal_num_active_agents() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<4>(
-            stream, this->_internal_num_active_agents(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(4, this->_internal_num_active_agents(), target);
   }
 
   // double demand_flow = 5 [json_name = "demandFlow"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_demand_flow = this->_internal_demand_flow();
-  ::uint64_t raw_demand_flow;
+  uint64_t raw_demand_flow;
   memcpy(&raw_demand_flow, &tmp_demand_flow, sizeof(tmp_demand_flow));
   if (raw_demand_flow != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        5, this->_internal_demand_flow(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(5, this->_internal_demand_flow(), target);
   }
 
   // double actual_flow = 6 [json_name = "actualFlow"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_actual_flow = this->_internal_actual_flow();
-  ::uint64_t raw_actual_flow;
+  uint64_t raw_actual_flow;
   memcpy(&raw_actual_flow, &tmp_actual_flow, sizeof(tmp_actual_flow));
   if (raw_actual_flow != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        6, this->_internal_actual_flow(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(6, this->_internal_actual_flow(), target);
   }
 
   // int32 num_base_station = 7 [json_name = "numBaseStation"];
   if (this->_internal_num_base_station() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<7>(
-            stream, this->_internal_num_base_station(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(7, this->_internal_num_base_station(), target);
   }
 
   // int32 num_ok_base_station = 8 [json_name = "numOkBaseStation"];
   if (this->_internal_num_ok_base_station() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<8>(
-            stream, this->_internal_num_ok_base_station(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(8, this->_internal_num_ok_base_station(), target);
   }
 
   // int32 num_ruined_base_station = 9 [json_name = "numRuinedBaseStation"];
   if (this->_internal_num_ruined_base_station() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<9>(
-            stream, this->_internal_num_ruined_base_station(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(9, this->_internal_num_ruined_base_station(), target);
   }
 
   // int32 num_stopped_base_station = 10 [json_name = "numStoppedBaseStation"];
   if (this->_internal_num_stopped_base_station() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<10>(
-            stream, this->_internal_num_stopped_base_station(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(10, this->_internal_num_stopped_base_station(), target);
   }
 
   // int32 num_overloaded_base_station = 11 [json_name = "numOverloadedBaseStation"];
   if (this->_internal_num_overloaded_base_station() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<11>(
-            stream, this->_internal_num_overloaded_base_station(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(11, this->_internal_num_overloaded_base_station(), target);
   }
 
   // int32 num_gateway = 12 [json_name = "numGateway"];
   if (this->_internal_num_gateway() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<12>(
-            stream, this->_internal_num_gateway(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(12, this->_internal_num_gateway(), target);
   }
 
   // int32 num_ok_gateway = 13 [json_name = "numOkGateway"];
   if (this->_internal_num_ok_gateway() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<13>(
-            stream, this->_internal_num_ok_gateway(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(13, this->_internal_num_ok_gateway(), target);
   }
 
   // int32 num_ruined_gateway = 14 [json_name = "numRuinedGateway"];
   if (this->_internal_num_ruined_gateway() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<14>(
-            stream, this->_internal_num_ruined_gateway(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(14, this->_internal_num_ruined_gateway(), target);
   }
 
   // int32 num_stopped_gateway = 15 [json_name = "numStoppedGateway"];
   if (this->_internal_num_stopped_gateway() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<15>(
-            stream, this->_internal_num_stopped_gateway(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(15, this->_internal_num_stopped_gateway(), target);
   }
 
   // int32 num_overloaded_gateway = 16 [json_name = "numOverloadedGateway"];
   if (this->_internal_num_overloaded_gateway() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
-        16, this->_internal_num_overloaded_gateway(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(16, this->_internal_num_overloaded_gateway(), target);
   }
 
   // int32 num_battery_gateway = 17 [json_name = "numBatteryGateway"];
   if (this->_internal_num_battery_gateway() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
-        17, this->_internal_num_battery_gateway(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(17, this->_internal_num_battery_gateway(), target);
   }
 
   // double power_consumption = 18 [json_name = "powerConsumption"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_power_consumption = this->_internal_power_consumption();
-  ::uint64_t raw_power_consumption;
+  uint64_t raw_power_consumption;
   memcpy(&raw_power_consumption, &tmp_power_consumption, sizeof(tmp_power_consumption));
   if (raw_power_consumption != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        18, this->_internal_power_consumption(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(18, this->_internal_power_consumption(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.comm.output.v1.Statistics)
   return target;
 }
 
-::size_t Statistics::ByteSizeLong() const {
+size_t Statistics::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.comm.output.v1.Statistics)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // int32 num_satisfied_agents = 1 [json_name = "numSatisfiedAgents"];
   if (this->_internal_num_satisfied_agents() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_num_satisfied_agents());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_num_satisfied_agents());
   }
 
   // int32 num_unsatisfied_agents = 2 [json_name = "numUnsatisfiedAgents"];
   if (this->_internal_num_unsatisfied_agents() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_num_unsatisfied_agents());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_num_unsatisfied_agents());
   }
 
   // int32 num_outage_agents = 3 [json_name = "numOutageAgents"];
   if (this->_internal_num_outage_agents() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_num_outage_agents());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_num_outage_agents());
   }
 
   // int32 num_active_agents = 4 [json_name = "numActiveAgents"];
   if (this->_internal_num_active_agents() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_num_active_agents());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_num_active_agents());
   }
 
   // double demand_flow = 5 [json_name = "demandFlow"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_demand_flow = this->_internal_demand_flow();
-  ::uint64_t raw_demand_flow;
+  uint64_t raw_demand_flow;
   memcpy(&raw_demand_flow, &tmp_demand_flow, sizeof(tmp_demand_flow));
   if (raw_demand_flow != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   // double actual_flow = 6 [json_name = "actualFlow"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_actual_flow = this->_internal_actual_flow();
-  ::uint64_t raw_actual_flow;
+  uint64_t raw_actual_flow;
   memcpy(&raw_actual_flow, &tmp_actual_flow, sizeof(tmp_actual_flow));
   if (raw_actual_flow != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   // int32 num_base_station = 7 [json_name = "numBaseStation"];
   if (this->_internal_num_base_station() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_num_base_station());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_num_base_station());
   }
 
   // int32 num_ok_base_station = 8 [json_name = "numOkBaseStation"];
   if (this->_internal_num_ok_base_station() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_num_ok_base_station());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_num_ok_base_station());
   }
 
   // int32 num_ruined_base_station = 9 [json_name = "numRuinedBaseStation"];
   if (this->_internal_num_ruined_base_station() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_num_ruined_base_station());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_num_ruined_base_station());
   }
 
   // int32 num_stopped_base_station = 10 [json_name = "numStoppedBaseStation"];
   if (this->_internal_num_stopped_base_station() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_num_stopped_base_station());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_num_stopped_base_station());
   }
 
   // int32 num_overloaded_base_station = 11 [json_name = "numOverloadedBaseStation"];
   if (this->_internal_num_overloaded_base_station() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_num_overloaded_base_station());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_num_overloaded_base_station());
   }
 
   // int32 num_gateway = 12 [json_name = "numGateway"];
   if (this->_internal_num_gateway() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_num_gateway());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_num_gateway());
   }
 
   // int32 num_ok_gateway = 13 [json_name = "numOkGateway"];
   if (this->_internal_num_ok_gateway() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_num_ok_gateway());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_num_ok_gateway());
   }
 
   // int32 num_ruined_gateway = 14 [json_name = "numRuinedGateway"];
   if (this->_internal_num_ruined_gateway() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_num_ruined_gateway());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_num_ruined_gateway());
   }
 
   // int32 num_stopped_gateway = 15 [json_name = "numStoppedGateway"];
   if (this->_internal_num_stopped_gateway() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_num_stopped_gateway());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_num_stopped_gateway());
   }
 
   // int32 num_overloaded_gateway = 16 [json_name = "numOverloadedGateway"];
   if (this->_internal_num_overloaded_gateway() != 0) {
-    total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
-                                    this->_internal_num_overloaded_gateway());
+    total_size += 2 +
+      ::_pbi::WireFormatLite::Int32Size(
+        this->_internal_num_overloaded_gateway());
   }
 
   // double power_consumption = 18 [json_name = "powerConsumption"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_power_consumption = this->_internal_power_consumption();
-  ::uint64_t raw_power_consumption;
+  uint64_t raw_power_consumption;
   memcpy(&raw_power_consumption, &tmp_power_consumption, sizeof(tmp_power_consumption));
   if (raw_power_consumption != 0) {
-    total_size += 10;
+    total_size += 2 + 8;
   }
 
   // int32 num_battery_gateway = 17 [json_name = "numBatteryGateway"];
   if (this->_internal_num_battery_gateway() != 0) {
-    total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
-                                    this->_internal_num_battery_gateway());
+    total_size += 2 +
+      ::_pbi::WireFormatLite::Int32Size(
+        this->_internal_num_battery_gateway());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData Statistics::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Statistics::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     Statistics::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*Statistics::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Statistics::GetClassData() const { return &_class_data_; }
 
 
-void Statistics::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void Statistics::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<Statistics*>(&to_msg);
   auto& from = static_cast<const Statistics&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.comm.output.v1.Statistics)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_num_satisfied_agents() != 0) {
@@ -2752,18 +2787,16 @@ void Statistics::MergeImpl(::google::protobuf::Message& to_msg, const ::google::
   if (from._internal_num_active_agents() != 0) {
     _this->_internal_set_num_active_agents(from._internal_num_active_agents());
   }
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_demand_flow = from._internal_demand_flow();
-  ::uint64_t raw_demand_flow;
+  uint64_t raw_demand_flow;
   memcpy(&raw_demand_flow, &tmp_demand_flow, sizeof(tmp_demand_flow));
   if (raw_demand_flow != 0) {
     _this->_internal_set_demand_flow(from._internal_demand_flow());
   }
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_actual_flow = from._internal_actual_flow();
-  ::uint64_t raw_actual_flow;
+  uint64_t raw_actual_flow;
   memcpy(&raw_actual_flow, &tmp_actual_flow, sizeof(tmp_actual_flow));
   if (raw_actual_flow != 0) {
     _this->_internal_set_actual_flow(from._internal_actual_flow());
@@ -2798,10 +2831,9 @@ void Statistics::MergeImpl(::google::protobuf::Message& to_msg, const ::google::
   if (from._internal_num_overloaded_gateway() != 0) {
     _this->_internal_set_num_overloaded_gateway(from._internal_num_overloaded_gateway());
   }
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_power_consumption = from._internal_power_consumption();
-  ::uint64_t raw_power_consumption;
+  uint64_t raw_power_consumption;
   memcpy(&raw_power_consumption, &tmp_power_consumption, sizeof(tmp_power_consumption));
   if (raw_power_consumption != 0) {
     _this->_internal_set_power_consumption(from._internal_power_consumption());
@@ -2809,7 +2841,7 @@ void Statistics::MergeImpl(::google::protobuf::Message& to_msg, const ::google::
   if (from._internal_num_battery_gateway() != 0) {
     _this->_internal_set_num_battery_gateway(from._internal_num_battery_gateway());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void Statistics::CopyFrom(const Statistics& from) {
@@ -2819,14 +2851,14 @@ void Statistics::CopyFrom(const Statistics& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool Statistics::IsInitialized() const {
+bool Statistics::IsInitialized() const {
   return true;
 }
 
 void Statistics::InternalSwap(Statistics* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::google::protobuf::internal::memswap<
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(Statistics, _impl_.num_battery_gateway_)
       + sizeof(Statistics::_impl_.num_battery_gateway_)
       - PROTOBUF_FIELD_OFFSET(Statistics, _impl_.num_satisfied_agents_)>(
@@ -2834,19 +2866,43 @@ void Statistics::InternalSwap(Statistics* other) {
           reinterpret_cast<char*>(&other->_impl_.num_satisfied_agents_));
 }
 
-::google::protobuf::Metadata Statistics::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata Statistics::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fcomm_2foutput_2fv1_2foutput_2eproto_getter, &descriptor_table_city_2fcomm_2foutput_2fv1_2foutput_2eproto_once,
       file_level_metadata_city_2fcomm_2foutput_2fv1_2foutput_2eproto[5]);
 }
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace v1
 }  // namespace output
 }  // namespace comm
 }  // namespace city
-namespace google {
-namespace protobuf {
-}  // namespace protobuf
-}  // namespace google
+PROTOBUF_NAMESPACE_OPEN
+template<> PROTOBUF_NOINLINE ::city::comm::output::v1::Node*
+Arena::CreateMaybeMessage< ::city::comm::output::v1::Node >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::comm::output::v1::Node >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::comm::output::v1::BaseStation*
+Arena::CreateMaybeMessage< ::city::comm::output::v1::BaseStation >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::comm::output::v1::BaseStation >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::comm::output::v1::Signal*
+Arena::CreateMaybeMessage< ::city::comm::output::v1::Signal >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::comm::output::v1::Signal >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::comm::output::v1::Person*
+Arena::CreateMaybeMessage< ::city::comm::output::v1::Person >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::comm::output::v1::Person >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::comm::output::v1::Aoi*
+Arena::CreateMaybeMessage< ::city::comm::output::v1::Aoi >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::comm::output::v1::Aoi >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::comm::output::v1::Statistics*
+Arena::CreateMaybeMessage< ::city::comm::output::v1::Statistics >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::comm::output::v1::Statistics >(arena);
+}
+PROTOBUF_NAMESPACE_CLOSE
+
 // @@protoc_insertion_point(global_scope)
-#include "google/protobuf/port_undef.inc"
+#include <google/protobuf/port_undef.inc>

@@ -84,7 +84,7 @@ type OutputTarget struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Sql string `protobuf:"bytes,1,opt,name=sql,proto3" json:"sql,omitempty" db:"sql" yaml:"sql" bson:"sql"`
+	Sql string `protobuf:"bytes,1,opt,name=sql,proto3" json:"sql,omitempty" bson:"sql" db:"sql" yaml:"sql"`
 }
 
 func (x *OutputTarget) Reset() {

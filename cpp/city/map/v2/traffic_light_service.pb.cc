@@ -4,488 +4,433 @@
 #include "city/map/v2/traffic_light_service.pb.h"
 
 #include <algorithm>
-#include "google/protobuf/io/coded_stream.h"
-#include "google/protobuf/extension_set.h"
-#include "google/protobuf/wire_format_lite.h"
-#include "google/protobuf/descriptor.h"
-#include "google/protobuf/generated_message_reflection.h"
-#include "google/protobuf/reflection_ops.h"
-#include "google/protobuf/wire_format.h"
-#include "google/protobuf/generated_message_tctable_impl.h"
-// @@protoc_insertion_point(includes)
 
-// Must be included last.
-#include "google/protobuf/port_def.inc"
+#include <google/protobuf/io/coded_stream.h>
+#include <google/protobuf/extension_set.h>
+#include <google/protobuf/wire_format_lite.h>
+#include <google/protobuf/descriptor.h>
+#include <google/protobuf/generated_message_reflection.h>
+#include <google/protobuf/reflection_ops.h>
+#include <google/protobuf/wire_format.h>
+// @@protoc_insertion_point(includes)
+#include <google/protobuf/port_def.inc>
+
 PROTOBUF_PRAGMA_INIT_SEG
-namespace _pb = ::google::protobuf;
-namespace _pbi = ::google::protobuf::internal;
-namespace _fl = ::google::protobuf::internal::field_layout;
+
+namespace _pb = ::PROTOBUF_NAMESPACE_ID;
+namespace _pbi = _pb::internal;
+
 namespace city {
 namespace map {
 namespace v2 {
-        template <typename>
-PROTOBUF_CONSTEXPR GetTrafficLightRequest::GetTrafficLightRequest(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_.junction_id_)*/ 0,
-      /*decltype(_impl_._cached_size_)*/ {},
-    } {}
+PROTOBUF_CONSTEXPR GetTrafficLightRequest::GetTrafficLightRequest(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.junction_id_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct GetTrafficLightRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR GetTrafficLightRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR GetTrafficLightRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~GetTrafficLightRequestDefaultTypeInternal() {}
   union {
     GetTrafficLightRequest _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetTrafficLightRequestDefaultTypeInternal _GetTrafficLightRequest_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR GetTrafficLightResponse::GetTrafficLightResponse(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_._has_bits_)*/ {},
-      /*decltype(_impl_._cached_size_)*/ {},
-      /*decltype(_impl_.traffic_light_)*/ nullptr,
-      /*decltype(_impl_.time_remaining_)*/ 0,
-      /*decltype(_impl_.phase_index_)*/ 0,
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetTrafficLightRequestDefaultTypeInternal _GetTrafficLightRequest_default_instance_;
+PROTOBUF_CONSTEXPR GetTrafficLightResponse::GetTrafficLightResponse(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.traffic_light_)*/nullptr
+  , /*decltype(_impl_.time_remaining_)*/0
+  , /*decltype(_impl_.phase_index_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct GetTrafficLightResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR GetTrafficLightResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR GetTrafficLightResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~GetTrafficLightResponseDefaultTypeInternal() {}
   union {
     GetTrafficLightResponse _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetTrafficLightResponseDefaultTypeInternal _GetTrafficLightResponse_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR SetTrafficLightRequest::SetTrafficLightRequest(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_._has_bits_)*/ {},
-      /*decltype(_impl_._cached_size_)*/ {},
-      /*decltype(_impl_.traffic_light_)*/ nullptr,
-      /*decltype(_impl_.time_remaining_)*/ 0,
-      /*decltype(_impl_.phase_index_)*/ 0,
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetTrafficLightResponseDefaultTypeInternal _GetTrafficLightResponse_default_instance_;
+PROTOBUF_CONSTEXPR SetTrafficLightRequest::SetTrafficLightRequest(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.traffic_light_)*/nullptr
+  , /*decltype(_impl_.time_remaining_)*/0
+  , /*decltype(_impl_.phase_index_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct SetTrafficLightRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR SetTrafficLightRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR SetTrafficLightRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~SetTrafficLightRequestDefaultTypeInternal() {}
   union {
     SetTrafficLightRequest _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SetTrafficLightRequestDefaultTypeInternal _SetTrafficLightRequest_default_instance_;
-      template <typename>
-PROTOBUF_CONSTEXPR SetTrafficLightResponse::SetTrafficLightResponse(::_pbi::ConstantInitialized) {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SetTrafficLightRequestDefaultTypeInternal _SetTrafficLightRequest_default_instance_;
+PROTOBUF_CONSTEXPR SetTrafficLightResponse::SetTrafficLightResponse(
+    ::_pbi::ConstantInitialized) {}
 struct SetTrafficLightResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR SetTrafficLightResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR SetTrafficLightResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~SetTrafficLightResponseDefaultTypeInternal() {}
   union {
     SetTrafficLightResponse _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SetTrafficLightResponseDefaultTypeInternal _SetTrafficLightResponse_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR SetTrafficLightPhaseRequest::SetTrafficLightPhaseRequest(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_.junction_id_)*/ 0,
-      /*decltype(_impl_.phase_index_)*/ 0,
-      /*decltype(_impl_.time_remaining_)*/ 0,
-      /*decltype(_impl_._cached_size_)*/ {},
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SetTrafficLightResponseDefaultTypeInternal _SetTrafficLightResponse_default_instance_;
+PROTOBUF_CONSTEXPR SetTrafficLightPhaseRequest::SetTrafficLightPhaseRequest(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.junction_id_)*/0
+  , /*decltype(_impl_.phase_index_)*/0
+  , /*decltype(_impl_.time_remaining_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct SetTrafficLightPhaseRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR SetTrafficLightPhaseRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR SetTrafficLightPhaseRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~SetTrafficLightPhaseRequestDefaultTypeInternal() {}
   union {
     SetTrafficLightPhaseRequest _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SetTrafficLightPhaseRequestDefaultTypeInternal _SetTrafficLightPhaseRequest_default_instance_;
-      template <typename>
-PROTOBUF_CONSTEXPR SetTrafficLightPhaseResponse::SetTrafficLightPhaseResponse(::_pbi::ConstantInitialized) {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SetTrafficLightPhaseRequestDefaultTypeInternal _SetTrafficLightPhaseRequest_default_instance_;
+PROTOBUF_CONSTEXPR SetTrafficLightPhaseResponse::SetTrafficLightPhaseResponse(
+    ::_pbi::ConstantInitialized) {}
 struct SetTrafficLightPhaseResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR SetTrafficLightPhaseResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR SetTrafficLightPhaseResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~SetTrafficLightPhaseResponseDefaultTypeInternal() {}
   union {
     SetTrafficLightPhaseResponse _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SetTrafficLightPhaseResponseDefaultTypeInternal _SetTrafficLightPhaseResponse_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR SetTrafficLightStatusRequest::SetTrafficLightStatusRequest(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_.junction_id_)*/ 0,
-      /*decltype(_impl_.ok_)*/ false,
-      /*decltype(_impl_._cached_size_)*/ {},
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SetTrafficLightPhaseResponseDefaultTypeInternal _SetTrafficLightPhaseResponse_default_instance_;
+PROTOBUF_CONSTEXPR SetTrafficLightStatusRequest::SetTrafficLightStatusRequest(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.junction_id_)*/0
+  , /*decltype(_impl_.ok_)*/false
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct SetTrafficLightStatusRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR SetTrafficLightStatusRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR SetTrafficLightStatusRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~SetTrafficLightStatusRequestDefaultTypeInternal() {}
   union {
     SetTrafficLightStatusRequest _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SetTrafficLightStatusRequestDefaultTypeInternal _SetTrafficLightStatusRequest_default_instance_;
-      template <typename>
-PROTOBUF_CONSTEXPR SetTrafficLightStatusResponse::SetTrafficLightStatusResponse(::_pbi::ConstantInitialized) {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SetTrafficLightStatusRequestDefaultTypeInternal _SetTrafficLightStatusRequest_default_instance_;
+PROTOBUF_CONSTEXPR SetTrafficLightStatusResponse::SetTrafficLightStatusResponse(
+    ::_pbi::ConstantInitialized) {}
 struct SetTrafficLightStatusResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR SetTrafficLightStatusResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR SetTrafficLightStatusResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~SetTrafficLightStatusResponseDefaultTypeInternal() {}
   union {
     SetTrafficLightStatusResponse _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SetTrafficLightStatusResponseDefaultTypeInternal _SetTrafficLightStatusResponse_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SetTrafficLightStatusResponseDefaultTypeInternal _SetTrafficLightStatusResponse_default_instance_;
 }  // namespace v2
 }  // namespace map
 }  // namespace city
 static ::_pb::Metadata file_level_metadata_city_2fmap_2fv2_2ftraffic_5flight_5fservice_2eproto[8];
-static constexpr const ::_pb::EnumDescriptor**
-    file_level_enum_descriptors_city_2fmap_2fv2_2ftraffic_5flight_5fservice_2eproto = nullptr;
-static constexpr const ::_pb::ServiceDescriptor**
-    file_level_service_descriptors_city_2fmap_2fv2_2ftraffic_5flight_5fservice_2eproto = nullptr;
-const ::uint32_t TableStruct_city_2fmap_2fv2_2ftraffic_5flight_5fservice_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
-    protodesc_cold) = {
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::map::v2::GetTrafficLightRequest, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::map::v2::GetTrafficLightRequest, _impl_.junction_id_),
-    PROTOBUF_FIELD_OFFSET(::city::map::v2::GetTrafficLightResponse, _impl_._has_bits_),
-    PROTOBUF_FIELD_OFFSET(::city::map::v2::GetTrafficLightResponse, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::map::v2::GetTrafficLightResponse, _impl_.traffic_light_),
-    PROTOBUF_FIELD_OFFSET(::city::map::v2::GetTrafficLightResponse, _impl_.phase_index_),
-    PROTOBUF_FIELD_OFFSET(::city::map::v2::GetTrafficLightResponse, _impl_.time_remaining_),
-    0,
-    ~0u,
-    ~0u,
-    PROTOBUF_FIELD_OFFSET(::city::map::v2::SetTrafficLightRequest, _impl_._has_bits_),
-    PROTOBUF_FIELD_OFFSET(::city::map::v2::SetTrafficLightRequest, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::map::v2::SetTrafficLightRequest, _impl_.traffic_light_),
-    PROTOBUF_FIELD_OFFSET(::city::map::v2::SetTrafficLightRequest, _impl_.phase_index_),
-    PROTOBUF_FIELD_OFFSET(::city::map::v2::SetTrafficLightRequest, _impl_.time_remaining_),
-    0,
-    ~0u,
-    ~0u,
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::map::v2::SetTrafficLightResponse, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::map::v2::SetTrafficLightPhaseRequest, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::map::v2::SetTrafficLightPhaseRequest, _impl_.junction_id_),
-    PROTOBUF_FIELD_OFFSET(::city::map::v2::SetTrafficLightPhaseRequest, _impl_.phase_index_),
-    PROTOBUF_FIELD_OFFSET(::city::map::v2::SetTrafficLightPhaseRequest, _impl_.time_remaining_),
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::map::v2::SetTrafficLightPhaseResponse, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::map::v2::SetTrafficLightStatusRequest, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::map::v2::SetTrafficLightStatusRequest, _impl_.junction_id_),
-    PROTOBUF_FIELD_OFFSET(::city::map::v2::SetTrafficLightStatusRequest, _impl_.ok_),
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::map::v2::SetTrafficLightStatusResponse, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-};
+static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_city_2fmap_2fv2_2ftraffic_5flight_5fservice_2eproto = nullptr;
+static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_city_2fmap_2fv2_2ftraffic_5flight_5fservice_2eproto = nullptr;
 
-static const ::_pbi::MigrationSchema
-    schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-        {0, -1, -1, sizeof(::city::map::v2::GetTrafficLightRequest)},
-        {9, 20, -1, sizeof(::city::map::v2::GetTrafficLightResponse)},
-        {23, 34, -1, sizeof(::city::map::v2::SetTrafficLightRequest)},
-        {37, -1, -1, sizeof(::city::map::v2::SetTrafficLightResponse)},
-        {45, -1, -1, sizeof(::city::map::v2::SetTrafficLightPhaseRequest)},
-        {56, -1, -1, sizeof(::city::map::v2::SetTrafficLightPhaseResponse)},
-        {64, -1, -1, sizeof(::city::map::v2::SetTrafficLightStatusRequest)},
-        {74, -1, -1, sizeof(::city::map::v2::SetTrafficLightStatusResponse)},
+const uint32_t TableStruct_city_2fmap_2fv2_2ftraffic_5flight_5fservice_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::map::v2::GetTrafficLightRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::map::v2::GetTrafficLightRequest, _impl_.junction_id_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::map::v2::GetTrafficLightResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::map::v2::GetTrafficLightResponse, _impl_.traffic_light_),
+  PROTOBUF_FIELD_OFFSET(::city::map::v2::GetTrafficLightResponse, _impl_.phase_index_),
+  PROTOBUF_FIELD_OFFSET(::city::map::v2::GetTrafficLightResponse, _impl_.time_remaining_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::map::v2::SetTrafficLightRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::map::v2::SetTrafficLightRequest, _impl_.traffic_light_),
+  PROTOBUF_FIELD_OFFSET(::city::map::v2::SetTrafficLightRequest, _impl_.phase_index_),
+  PROTOBUF_FIELD_OFFSET(::city::map::v2::SetTrafficLightRequest, _impl_.time_remaining_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::map::v2::SetTrafficLightResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::map::v2::SetTrafficLightPhaseRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::map::v2::SetTrafficLightPhaseRequest, _impl_.junction_id_),
+  PROTOBUF_FIELD_OFFSET(::city::map::v2::SetTrafficLightPhaseRequest, _impl_.phase_index_),
+  PROTOBUF_FIELD_OFFSET(::city::map::v2::SetTrafficLightPhaseRequest, _impl_.time_remaining_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::map::v2::SetTrafficLightPhaseResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::map::v2::SetTrafficLightStatusRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::map::v2::SetTrafficLightStatusRequest, _impl_.junction_id_),
+  PROTOBUF_FIELD_OFFSET(::city::map::v2::SetTrafficLightStatusRequest, _impl_.ok_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::map::v2::SetTrafficLightStatusResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+};
+static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  { 0, -1, -1, sizeof(::city::map::v2::GetTrafficLightRequest)},
+  { 7, -1, -1, sizeof(::city::map::v2::GetTrafficLightResponse)},
+  { 16, -1, -1, sizeof(::city::map::v2::SetTrafficLightRequest)},
+  { 25, -1, -1, sizeof(::city::map::v2::SetTrafficLightResponse)},
+  { 31, -1, -1, sizeof(::city::map::v2::SetTrafficLightPhaseRequest)},
+  { 40, -1, -1, sizeof(::city::map::v2::SetTrafficLightPhaseResponse)},
+  { 46, -1, -1, sizeof(::city::map::v2::SetTrafficLightStatusRequest)},
+  { 54, -1, -1, sizeof(::city::map::v2::SetTrafficLightStatusResponse)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
-    &::city::map::v2::_GetTrafficLightRequest_default_instance_._instance,
-    &::city::map::v2::_GetTrafficLightResponse_default_instance_._instance,
-    &::city::map::v2::_SetTrafficLightRequest_default_instance_._instance,
-    &::city::map::v2::_SetTrafficLightResponse_default_instance_._instance,
-    &::city::map::v2::_SetTrafficLightPhaseRequest_default_instance_._instance,
-    &::city::map::v2::_SetTrafficLightPhaseResponse_default_instance_._instance,
-    &::city::map::v2::_SetTrafficLightStatusRequest_default_instance_._instance,
-    &::city::map::v2::_SetTrafficLightStatusResponse_default_instance_._instance,
-};
-const char descriptor_table_protodef_city_2fmap_2fv2_2ftraffic_5flight_5fservice_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-    "\n\'city/map/v2/traffic_light_service.prot"
-    "o\022\013city.map.v2\032\027city/map/v2/light.proto\""
-    "9\n\026GetTrafficLightRequest\022\037\n\013junction_id"
-    "\030\001 \001(\005R\njunctionId\"\241\001\n\027GetTrafficLightRe"
-    "sponse\022>\n\rtraffic_light\030\001 \001(\0132\031.city.map"
-    ".v2.TrafficLightR\014trafficLight\022\037\n\013phase_"
-    "index\030\002 \001(\005R\nphaseIndex\022%\n\016time_remainin"
-    "g\030\003 \001(\001R\rtimeRemaining\"\240\001\n\026SetTrafficLig"
-    "htRequest\022>\n\rtraffic_light\030\001 \001(\0132\031.city."
-    "map.v2.TrafficLightR\014trafficLight\022\037\n\013pha"
-    "se_index\030\002 \001(\005R\nphaseIndex\022%\n\016time_remai"
-    "ning\030\003 \001(\001R\rtimeRemaining\"\031\n\027SetTrafficL"
-    "ightResponse\"\206\001\n\033SetTrafficLightPhaseReq"
-    "uest\022\037\n\013junction_id\030\001 \001(\005R\njunctionId\022\037\n"
-    "\013phase_index\030\002 \001(\005R\nphaseIndex\022%\n\016time_r"
-    "emaining\030\003 \001(\001R\rtimeRemaining\"\036\n\034SetTraf"
-    "ficLightPhaseResponse\"O\n\034SetTrafficLight"
-    "StatusRequest\022\037\n\013junction_id\030\001 \001(\005R\njunc"
-    "tionId\022\016\n\002ok\030\002 \001(\010R\002ok\"\037\n\035SetTrafficLigh"
-    "tStatusResponse2\256\003\n\023TrafficLightService\022"
-    "\\\n\017GetTrafficLight\022#.city.map.v2.GetTraf"
-    "ficLightRequest\032$.city.map.v2.GetTraffic"
-    "LightResponse\022\\\n\017SetTrafficLight\022#.city."
-    "map.v2.SetTrafficLightRequest\032$.city.map"
-    ".v2.SetTrafficLightResponse\022k\n\024SetTraffi"
-    "cLightPhase\022(.city.map.v2.SetTrafficLigh"
-    "tPhaseRequest\032).city.map.v2.SetTrafficLi"
-    "ghtPhaseResponse\022n\n\025SetTrafficLightStatu"
-    "s\022).city.map.v2.SetTrafficLightStatusReq"
-    "uest\032*.city.map.v2.SetTrafficLightStatus"
-    "ResponseB\251\001\n\017com.city.map.v2B\030TrafficLig"
-    "htServiceProtoP\001Z.git.fiblab.net/sim/pro"
-    "tos/go/city/map/v2;mapv2\242\002\003CMX\252\002\013City.Ma"
-    "p.V2\312\002\013City\\Map\\V2\342\002\027City\\Map\\V2\\GPBMeta"
-    "data\352\002\rCity::Map::V2b\006proto3"
-};
-static const ::_pbi::DescriptorTable* const descriptor_table_city_2fmap_2fv2_2ftraffic_5flight_5fservice_2eproto_deps[1] =
-    {
-        &::descriptor_table_city_2fmap_2fv2_2flight_2eproto,
-};
-static ::absl::once_flag descriptor_table_city_2fmap_2fv2_2ftraffic_5flight_5fservice_2eproto_once;
-const ::_pbi::DescriptorTable descriptor_table_city_2fmap_2fv2_2ftraffic_5flight_5fservice_2eproto = {
-    false,
-    false,
-    1388,
-    descriptor_table_protodef_city_2fmap_2fv2_2ftraffic_5flight_5fservice_2eproto,
-    "city/map/v2/traffic_light_service.proto",
-    &descriptor_table_city_2fmap_2fv2_2ftraffic_5flight_5fservice_2eproto_once,
-    descriptor_table_city_2fmap_2fv2_2ftraffic_5flight_5fservice_2eproto_deps,
-    1,
-    8,
-    schemas,
-    file_default_instances,
-    TableStruct_city_2fmap_2fv2_2ftraffic_5flight_5fservice_2eproto::offsets,
-    file_level_metadata_city_2fmap_2fv2_2ftraffic_5flight_5fservice_2eproto,
-    file_level_enum_descriptors_city_2fmap_2fv2_2ftraffic_5flight_5fservice_2eproto,
-    file_level_service_descriptors_city_2fmap_2fv2_2ftraffic_5flight_5fservice_2eproto,
+  &::city::map::v2::_GetTrafficLightRequest_default_instance_._instance,
+  &::city::map::v2::_GetTrafficLightResponse_default_instance_._instance,
+  &::city::map::v2::_SetTrafficLightRequest_default_instance_._instance,
+  &::city::map::v2::_SetTrafficLightResponse_default_instance_._instance,
+  &::city::map::v2::_SetTrafficLightPhaseRequest_default_instance_._instance,
+  &::city::map::v2::_SetTrafficLightPhaseResponse_default_instance_._instance,
+  &::city::map::v2::_SetTrafficLightStatusRequest_default_instance_._instance,
+  &::city::map::v2::_SetTrafficLightStatusResponse_default_instance_._instance,
 };
 
-// This function exists to be marked as weak.
-// It can significantly speed up compilation by breaking up LLVM's SCC
-// in the .pb.cc translation units. Large translation units see a
-// reduction of more than 35% of walltime for optimized builds. Without
-// the weak attribute all the messages in the file, including all the
-// vtables and everything they use become part of the same SCC through
-// a cycle like:
-// GetMetadata -> descriptor table -> default instances ->
-//   vtables -> GetMetadata
-// By adding a weak function here we break the connection from the
-// individual vtables back into the descriptor table.
+const char descriptor_table_protodef_city_2fmap_2fv2_2ftraffic_5flight_5fservice_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
+  "\n\'city/map/v2/traffic_light_service.prot"
+  "o\022\013city.map.v2\032\027city/map/v2/light.proto\""
+  "9\n\026GetTrafficLightRequest\022\037\n\013junction_id"
+  "\030\001 \001(\005R\njunctionId\"\241\001\n\027GetTrafficLightRe"
+  "sponse\022>\n\rtraffic_light\030\001 \001(\0132\031.city.map"
+  ".v2.TrafficLightR\014trafficLight\022\037\n\013phase_"
+  "index\030\002 \001(\005R\nphaseIndex\022%\n\016time_remainin"
+  "g\030\003 \001(\001R\rtimeRemaining\"\240\001\n\026SetTrafficLig"
+  "htRequest\022>\n\rtraffic_light\030\001 \001(\0132\031.city."
+  "map.v2.TrafficLightR\014trafficLight\022\037\n\013pha"
+  "se_index\030\002 \001(\005R\nphaseIndex\022%\n\016time_remai"
+  "ning\030\003 \001(\001R\rtimeRemaining\"\031\n\027SetTrafficL"
+  "ightResponse\"\206\001\n\033SetTrafficLightPhaseReq"
+  "uest\022\037\n\013junction_id\030\001 \001(\005R\njunctionId\022\037\n"
+  "\013phase_index\030\002 \001(\005R\nphaseIndex\022%\n\016time_r"
+  "emaining\030\003 \001(\001R\rtimeRemaining\"\036\n\034SetTraf"
+  "ficLightPhaseResponse\"O\n\034SetTrafficLight"
+  "StatusRequest\022\037\n\013junction_id\030\001 \001(\005R\njunc"
+  "tionId\022\016\n\002ok\030\002 \001(\010R\002ok\"\037\n\035SetTrafficLigh"
+  "tStatusResponse2\256\003\n\023TrafficLightService\022"
+  "\\\n\017GetTrafficLight\022#.city.map.v2.GetTraf"
+  "ficLightRequest\032$.city.map.v2.GetTraffic"
+  "LightResponse\022\\\n\017SetTrafficLight\022#.city."
+  "map.v2.SetTrafficLightRequest\032$.city.map"
+  ".v2.SetTrafficLightResponse\022k\n\024SetTraffi"
+  "cLightPhase\022(.city.map.v2.SetTrafficLigh"
+  "tPhaseRequest\032).city.map.v2.SetTrafficLi"
+  "ghtPhaseResponse\022n\n\025SetTrafficLightStatu"
+  "s\022).city.map.v2.SetTrafficLightStatusReq"
+  "uest\032*.city.map.v2.SetTrafficLightStatus"
+  "ResponseB\251\001\n\017com.city.map.v2B\030TrafficLig"
+  "htServiceProtoP\001Z.git.fiblab.net/sim/pro"
+  "tos/go/city/map/v2;mapv2\242\002\003CMX\252\002\013City.Ma"
+  "p.V2\312\002\013City\\Map\\V2\342\002\027City\\Map\\V2\\GPBMeta"
+  "data\352\002\rCity::Map::V2b\006proto3"
+  ;
+static const ::_pbi::DescriptorTable* const descriptor_table_city_2fmap_2fv2_2ftraffic_5flight_5fservice_2eproto_deps[1] = {
+  &::descriptor_table_city_2fmap_2fv2_2flight_2eproto,
+};
+static ::_pbi::once_flag descriptor_table_city_2fmap_2fv2_2ftraffic_5flight_5fservice_2eproto_once;
+const ::_pbi::DescriptorTable descriptor_table_city_2fmap_2fv2_2ftraffic_5flight_5fservice_2eproto = {
+    false, false, 1388, descriptor_table_protodef_city_2fmap_2fv2_2ftraffic_5flight_5fservice_2eproto,
+    "city/map/v2/traffic_light_service.proto",
+    &descriptor_table_city_2fmap_2fv2_2ftraffic_5flight_5fservice_2eproto_once, descriptor_table_city_2fmap_2fv2_2ftraffic_5flight_5fservice_2eproto_deps, 1, 8,
+    schemas, file_default_instances, TableStruct_city_2fmap_2fv2_2ftraffic_5flight_5fservice_2eproto::offsets,
+    file_level_metadata_city_2fmap_2fv2_2ftraffic_5flight_5fservice_2eproto, file_level_enum_descriptors_city_2fmap_2fv2_2ftraffic_5flight_5fservice_2eproto,
+    file_level_service_descriptors_city_2fmap_2fv2_2ftraffic_5flight_5fservice_2eproto,
+};
 PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_city_2fmap_2fv2_2ftraffic_5flight_5fservice_2eproto_getter() {
   return &descriptor_table_city_2fmap_2fv2_2ftraffic_5flight_5fservice_2eproto;
 }
+
 // Force running AddDescriptors() at dynamic initialization time.
-PROTOBUF_ATTRIBUTE_INIT_PRIORITY2
-static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_city_2fmap_2fv2_2ftraffic_5flight_5fservice_2eproto(&descriptor_table_city_2fmap_2fv2_2ftraffic_5flight_5fservice_2eproto);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_city_2fmap_2fv2_2ftraffic_5flight_5fservice_2eproto(&descriptor_table_city_2fmap_2fv2_2ftraffic_5flight_5fservice_2eproto);
 namespace city {
 namespace map {
 namespace v2 {
+
 // ===================================================================
 
 class GetTrafficLightRequest::_Internal {
  public:
 };
 
-GetTrafficLightRequest::GetTrafficLightRequest(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+GetTrafficLightRequest::GetTrafficLightRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.map.v2.GetTrafficLightRequest)
 }
 GetTrafficLightRequest::GetTrafficLightRequest(const GetTrafficLightRequest& from)
-    : ::google::protobuf::Message(), _impl_(from._impl_) {
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  GetTrafficLightRequest* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.junction_id_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.junction_id_ = from._impl_.junction_id_;
   // @@protoc_insertion_point(copy_constructor:city.map.v2.GetTrafficLightRequest)
 }
-inline void GetTrafficLightRequest::SharedCtor(::_pb::Arena* arena) {
+
+inline void GetTrafficLightRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.junction_id_){0},
-      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.junction_id_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 GetTrafficLightRequest::~GetTrafficLightRequest() {
   // @@protoc_insertion_point(destructor:city.map.v2.GetTrafficLightRequest)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void GetTrafficLightRequest::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
+
 void GetTrafficLightRequest::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void GetTrafficLightRequest::Clear() {
+void GetTrafficLightRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.map.v2.GetTrafficLightRequest)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   _impl_.junction_id_ = 0;
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* GetTrafficLightRequest::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* GetTrafficLightRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 junction_id = 1 [json_name = "junctionId"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.junction_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<0, 1, 0, 0, 2> GetTrafficLightRequest::_table_ = {
-  {
-    0,  // no _has_bits_
-    0, // no _extensions_
-    1, 0,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967294,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    1,  // num_field_entries
-    0,  // num_aux_entries
-    offsetof(decltype(_table_), field_names),  // no aux_entries
-    &_GetTrafficLightRequest_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    // int32 junction_id = 1 [json_name = "junctionId"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(GetTrafficLightRequest, _impl_.junction_id_), 63>(),
-     {8, 63, 0, PROTOBUF_FIELD_OFFSET(GetTrafficLightRequest, _impl_.junction_id_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // int32 junction_id = 1 [json_name = "junctionId"];
-    {PROTOBUF_FIELD_OFFSET(GetTrafficLightRequest, _impl_.junction_id_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-  }},
-  // no aux_entries
-  {{
-  }},
-};
-
-::uint8_t* GetTrafficLightRequest::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* GetTrafficLightRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.map.v2.GetTrafficLightRequest)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // int32 junction_id = 1 [json_name = "junctionId"];
   if (this->_internal_junction_id() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<1>(
-            stream, this->_internal_junction_id(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_junction_id(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.map.v2.GetTrafficLightRequest)
   return target;
 }
 
-::size_t GetTrafficLightRequest::ByteSizeLong() const {
+size_t GetTrafficLightRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.map.v2.GetTrafficLightRequest)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // int32 junction_id = 1 [json_name = "junctionId"];
   if (this->_internal_junction_id() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_junction_id());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_junction_id());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData GetTrafficLightRequest::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetTrafficLightRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     GetTrafficLightRequest::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*GetTrafficLightRequest::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetTrafficLightRequest::GetClassData() const { return &_class_data_; }
 
 
-void GetTrafficLightRequest::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void GetTrafficLightRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<GetTrafficLightRequest*>(&to_msg);
   auto& from = static_cast<const GetTrafficLightRequest&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.map.v2.GetTrafficLightRequest)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_junction_id() != 0) {
     _this->_internal_set_junction_id(from._internal_junction_id());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void GetTrafficLightRequest::CopyFrom(const GetTrafficLightRequest& from) {
@@ -495,259 +440,254 @@ void GetTrafficLightRequest::CopyFrom(const GetTrafficLightRequest& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool GetTrafficLightRequest::IsInitialized() const {
+bool GetTrafficLightRequest::IsInitialized() const {
   return true;
 }
 
 void GetTrafficLightRequest::InternalSwap(GetTrafficLightRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-        swap(_impl_.junction_id_, other->_impl_.junction_id_);
+  swap(_impl_.junction_id_, other->_impl_.junction_id_);
 }
 
-::google::protobuf::Metadata GetTrafficLightRequest::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata GetTrafficLightRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fmap_2fv2_2ftraffic_5flight_5fservice_2eproto_getter, &descriptor_table_city_2fmap_2fv2_2ftraffic_5flight_5fservice_2eproto_once,
       file_level_metadata_city_2fmap_2fv2_2ftraffic_5flight_5fservice_2eproto[0]);
 }
+
 // ===================================================================
 
 class GetTrafficLightResponse::_Internal {
  public:
-  using HasBits = decltype(std::declval<GetTrafficLightResponse>()._impl_._has_bits_);
-  static constexpr ::int32_t kHasBitsOffset =
-    8 * PROTOBUF_FIELD_OFFSET(GetTrafficLightResponse, _impl_._has_bits_);
   static const ::city::map::v2::TrafficLight& traffic_light(const GetTrafficLightResponse* msg);
-  static void set_has_traffic_light(HasBits* has_bits) {
-    (*has_bits)[0] |= 1u;
-  }
 };
 
-const ::city::map::v2::TrafficLight& GetTrafficLightResponse::_Internal::traffic_light(const GetTrafficLightResponse* msg) {
+const ::city::map::v2::TrafficLight&
+GetTrafficLightResponse::_Internal::traffic_light(const GetTrafficLightResponse* msg) {
   return *msg->_impl_.traffic_light_;
 }
 void GetTrafficLightResponse::clear_traffic_light() {
-  if (_impl_.traffic_light_ != nullptr) _impl_.traffic_light_->Clear();
-  _impl_._has_bits_[0] &= ~0x00000001u;
+  if (GetArenaForAllocation() == nullptr && _impl_.traffic_light_ != nullptr) {
+    delete _impl_.traffic_light_;
+  }
+  _impl_.traffic_light_ = nullptr;
 }
-GetTrafficLightResponse::GetTrafficLightResponse(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+GetTrafficLightResponse::GetTrafficLightResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.map.v2.GetTrafficLightResponse)
 }
-GetTrafficLightResponse::GetTrafficLightResponse(const GetTrafficLightResponse& from) : ::google::protobuf::Message() {
-  GetTrafficLightResponse* const _this = this;
-  (void)_this;
+GetTrafficLightResponse::GetTrafficLightResponse(const GetTrafficLightResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  GetTrafficLightResponse* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){from._impl_._has_bits_},
-      /*decltype(_impl_._cached_size_)*/ {},
-      decltype(_impl_.traffic_light_){nullptr},
-      decltype(_impl_.time_remaining_){},
-      decltype(_impl_.phase_index_){},
-  };
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
-  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+      decltype(_impl_.traffic_light_){nullptr}
+    , decltype(_impl_.time_remaining_){}
+    , decltype(_impl_.phase_index_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  if (from._internal_has_traffic_light()) {
     _this->_impl_.traffic_light_ = new ::city::map::v2::TrafficLight(*from._impl_.traffic_light_);
   }
   ::memcpy(&_impl_.time_remaining_, &from._impl_.time_remaining_,
-    static_cast<::size_t>(reinterpret_cast<char*>(&_impl_.phase_index_) -
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.phase_index_) -
     reinterpret_cast<char*>(&_impl_.time_remaining_)) + sizeof(_impl_.phase_index_));
-
   // @@protoc_insertion_point(copy_constructor:city.map.v2.GetTrafficLightResponse)
 }
-inline void GetTrafficLightResponse::SharedCtor(::_pb::Arena* arena) {
+
+inline void GetTrafficLightResponse::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){},
-      /*decltype(_impl_._cached_size_)*/ {},
-      decltype(_impl_.traffic_light_){nullptr},
-      decltype(_impl_.time_remaining_){0},
-      decltype(_impl_.phase_index_){0},
+      decltype(_impl_.traffic_light_){nullptr}
+    , decltype(_impl_.time_remaining_){0}
+    , decltype(_impl_.phase_index_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 GetTrafficLightResponse::~GetTrafficLightResponse() {
   // @@protoc_insertion_point(destructor:city.map.v2.GetTrafficLightResponse)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void GetTrafficLightResponse::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete _impl_.traffic_light_;
 }
+
 void GetTrafficLightResponse::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void GetTrafficLightResponse::Clear() {
+void GetTrafficLightResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.map.v2.GetTrafficLightResponse)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000001u) {
-    ABSL_DCHECK(_impl_.traffic_light_ != nullptr);
-    _impl_.traffic_light_->Clear();
+  if (GetArenaForAllocation() == nullptr && _impl_.traffic_light_ != nullptr) {
+    delete _impl_.traffic_light_;
   }
-  ::memset(&_impl_.time_remaining_, 0, static_cast<::size_t>(
+  _impl_.traffic_light_ = nullptr;
+  ::memset(&_impl_.time_remaining_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_impl_.phase_index_) -
       reinterpret_cast<char*>(&_impl_.time_remaining_)) + sizeof(_impl_.phase_index_));
-  _impl_._has_bits_.Clear();
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* GetTrafficLightResponse::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* GetTrafficLightResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // .city.map.v2.TrafficLight traffic_light = 1 [json_name = "trafficLight"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_traffic_light(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 phase_index = 2 [json_name = "phaseIndex"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _impl_.phase_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // double time_remaining = 3 [json_name = "timeRemaining"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 25)) {
+          _impl_.time_remaining_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<2, 3, 1, 0, 2> GetTrafficLightResponse::_table_ = {
-  {
-    PROTOBUF_FIELD_OFFSET(GetTrafficLightResponse, _impl_._has_bits_),
-    0, // no _extensions_
-    3, 24,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967288,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    3,  // num_field_entries
-    1,  // num_aux_entries
-    offsetof(decltype(_table_), aux_entries),
-    &_GetTrafficLightResponse_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    {::_pbi::TcParser::MiniParse, {}},
-    // .city.map.v2.TrafficLight traffic_light = 1 [json_name = "trafficLight"];
-    {::_pbi::TcParser::FastMtS1,
-     {10, 0, 0, PROTOBUF_FIELD_OFFSET(GetTrafficLightResponse, _impl_.traffic_light_)}},
-    // int32 phase_index = 2 [json_name = "phaseIndex"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(GetTrafficLightResponse, _impl_.phase_index_), 63>(),
-     {16, 63, 0, PROTOBUF_FIELD_OFFSET(GetTrafficLightResponse, _impl_.phase_index_)}},
-    // double time_remaining = 3 [json_name = "timeRemaining"];
-    {::_pbi::TcParser::FastF64S1,
-     {25, 63, 0, PROTOBUF_FIELD_OFFSET(GetTrafficLightResponse, _impl_.time_remaining_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // .city.map.v2.TrafficLight traffic_light = 1 [json_name = "trafficLight"];
-    {PROTOBUF_FIELD_OFFSET(GetTrafficLightResponse, _impl_.traffic_light_), _Internal::kHasBitsOffset + 0, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
-    // int32 phase_index = 2 [json_name = "phaseIndex"];
-    {PROTOBUF_FIELD_OFFSET(GetTrafficLightResponse, _impl_.phase_index_), -1, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-    // double time_remaining = 3 [json_name = "timeRemaining"];
-    {PROTOBUF_FIELD_OFFSET(GetTrafficLightResponse, _impl_.time_remaining_), -1, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-  }}, {{
-    {::_pbi::TcParser::GetTable<::city::map::v2::TrafficLight>()},
-  }}, {{
-  }},
-};
-
-::uint8_t* GetTrafficLightResponse::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* GetTrafficLightResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.map.v2.GetTrafficLightResponse)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
-  cached_has_bits = _impl_._has_bits_[0];
   // .city.map.v2.TrafficLight traffic_light = 1 [json_name = "trafficLight"];
-  if (cached_has_bits & 0x00000001u) {
-    target = ::google::protobuf::internal::WireFormatLite::
+  if (this->_internal_has_traffic_light()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(1, _Internal::traffic_light(this),
         _Internal::traffic_light(this).GetCachedSize(), target, stream);
   }
 
   // int32 phase_index = 2 [json_name = "phaseIndex"];
   if (this->_internal_phase_index() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<2>(
-            stream, this->_internal_phase_index(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(2, this->_internal_phase_index(), target);
   }
 
   // double time_remaining = 3 [json_name = "timeRemaining"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_time_remaining = this->_internal_time_remaining();
-  ::uint64_t raw_time_remaining;
+  uint64_t raw_time_remaining;
   memcpy(&raw_time_remaining, &tmp_time_remaining, sizeof(tmp_time_remaining));
   if (raw_time_remaining != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        3, this->_internal_time_remaining(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(3, this->_internal_time_remaining(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.map.v2.GetTrafficLightResponse)
   return target;
 }
 
-::size_t GetTrafficLightResponse::ByteSizeLong() const {
+size_t GetTrafficLightResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.map.v2.GetTrafficLightResponse)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // .city.map.v2.TrafficLight traffic_light = 1 [json_name = "trafficLight"];
-  cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000001u) {
+  if (this->_internal_has_traffic_light()) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *_impl_.traffic_light_);
   }
 
   // double time_remaining = 3 [json_name = "timeRemaining"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_time_remaining = this->_internal_time_remaining();
-  ::uint64_t raw_time_remaining;
+  uint64_t raw_time_remaining;
   memcpy(&raw_time_remaining, &tmp_time_remaining, sizeof(tmp_time_remaining));
   if (raw_time_remaining != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   // int32 phase_index = 2 [json_name = "phaseIndex"];
   if (this->_internal_phase_index() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_phase_index());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_phase_index());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData GetTrafficLightResponse::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetTrafficLightResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     GetTrafficLightResponse::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*GetTrafficLightResponse::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetTrafficLightResponse::GetClassData() const { return &_class_data_; }
 
 
-void GetTrafficLightResponse::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void GetTrafficLightResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<GetTrafficLightResponse*>(&to_msg);
   auto& from = static_cast<const GetTrafficLightResponse&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.map.v2.GetTrafficLightResponse)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+  if (from._internal_has_traffic_light()) {
     _this->_internal_mutable_traffic_light()->::city::map::v2::TrafficLight::MergeFrom(
         from._internal_traffic_light());
   }
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_time_remaining = from._internal_time_remaining();
-  ::uint64_t raw_time_remaining;
+  uint64_t raw_time_remaining;
   memcpy(&raw_time_remaining, &tmp_time_remaining, sizeof(tmp_time_remaining));
   if (raw_time_remaining != 0) {
     _this->_internal_set_time_remaining(from._internal_time_remaining());
@@ -755,7 +695,7 @@ void GetTrafficLightResponse::MergeImpl(::google::protobuf::Message& to_msg, con
   if (from._internal_phase_index() != 0) {
     _this->_internal_set_phase_index(from._internal_phase_index());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void GetTrafficLightResponse::CopyFrom(const GetTrafficLightResponse& from) {
@@ -765,15 +705,14 @@ void GetTrafficLightResponse::CopyFrom(const GetTrafficLightResponse& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool GetTrafficLightResponse::IsInitialized() const {
+bool GetTrafficLightResponse::IsInitialized() const {
   return true;
 }
 
 void GetTrafficLightResponse::InternalSwap(GetTrafficLightResponse* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
-  ::google::protobuf::internal::memswap<
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(GetTrafficLightResponse, _impl_.phase_index_)
       + sizeof(GetTrafficLightResponse::_impl_.phase_index_)
       - PROTOBUF_FIELD_OFFSET(GetTrafficLightResponse, _impl_.traffic_light_)>(
@@ -781,249 +720,244 @@ void GetTrafficLightResponse::InternalSwap(GetTrafficLightResponse* other) {
           reinterpret_cast<char*>(&other->_impl_.traffic_light_));
 }
 
-::google::protobuf::Metadata GetTrafficLightResponse::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata GetTrafficLightResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fmap_2fv2_2ftraffic_5flight_5fservice_2eproto_getter, &descriptor_table_city_2fmap_2fv2_2ftraffic_5flight_5fservice_2eproto_once,
       file_level_metadata_city_2fmap_2fv2_2ftraffic_5flight_5fservice_2eproto[1]);
 }
+
 // ===================================================================
 
 class SetTrafficLightRequest::_Internal {
  public:
-  using HasBits = decltype(std::declval<SetTrafficLightRequest>()._impl_._has_bits_);
-  static constexpr ::int32_t kHasBitsOffset =
-    8 * PROTOBUF_FIELD_OFFSET(SetTrafficLightRequest, _impl_._has_bits_);
   static const ::city::map::v2::TrafficLight& traffic_light(const SetTrafficLightRequest* msg);
-  static void set_has_traffic_light(HasBits* has_bits) {
-    (*has_bits)[0] |= 1u;
-  }
 };
 
-const ::city::map::v2::TrafficLight& SetTrafficLightRequest::_Internal::traffic_light(const SetTrafficLightRequest* msg) {
+const ::city::map::v2::TrafficLight&
+SetTrafficLightRequest::_Internal::traffic_light(const SetTrafficLightRequest* msg) {
   return *msg->_impl_.traffic_light_;
 }
 void SetTrafficLightRequest::clear_traffic_light() {
-  if (_impl_.traffic_light_ != nullptr) _impl_.traffic_light_->Clear();
-  _impl_._has_bits_[0] &= ~0x00000001u;
+  if (GetArenaForAllocation() == nullptr && _impl_.traffic_light_ != nullptr) {
+    delete _impl_.traffic_light_;
+  }
+  _impl_.traffic_light_ = nullptr;
 }
-SetTrafficLightRequest::SetTrafficLightRequest(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+SetTrafficLightRequest::SetTrafficLightRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.map.v2.SetTrafficLightRequest)
 }
-SetTrafficLightRequest::SetTrafficLightRequest(const SetTrafficLightRequest& from) : ::google::protobuf::Message() {
-  SetTrafficLightRequest* const _this = this;
-  (void)_this;
+SetTrafficLightRequest::SetTrafficLightRequest(const SetTrafficLightRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  SetTrafficLightRequest* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){from._impl_._has_bits_},
-      /*decltype(_impl_._cached_size_)*/ {},
-      decltype(_impl_.traffic_light_){nullptr},
-      decltype(_impl_.time_remaining_){},
-      decltype(_impl_.phase_index_){},
-  };
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
-  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+      decltype(_impl_.traffic_light_){nullptr}
+    , decltype(_impl_.time_remaining_){}
+    , decltype(_impl_.phase_index_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  if (from._internal_has_traffic_light()) {
     _this->_impl_.traffic_light_ = new ::city::map::v2::TrafficLight(*from._impl_.traffic_light_);
   }
   ::memcpy(&_impl_.time_remaining_, &from._impl_.time_remaining_,
-    static_cast<::size_t>(reinterpret_cast<char*>(&_impl_.phase_index_) -
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.phase_index_) -
     reinterpret_cast<char*>(&_impl_.time_remaining_)) + sizeof(_impl_.phase_index_));
-
   // @@protoc_insertion_point(copy_constructor:city.map.v2.SetTrafficLightRequest)
 }
-inline void SetTrafficLightRequest::SharedCtor(::_pb::Arena* arena) {
+
+inline void SetTrafficLightRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){},
-      /*decltype(_impl_._cached_size_)*/ {},
-      decltype(_impl_.traffic_light_){nullptr},
-      decltype(_impl_.time_remaining_){0},
-      decltype(_impl_.phase_index_){0},
+      decltype(_impl_.traffic_light_){nullptr}
+    , decltype(_impl_.time_remaining_){0}
+    , decltype(_impl_.phase_index_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 SetTrafficLightRequest::~SetTrafficLightRequest() {
   // @@protoc_insertion_point(destructor:city.map.v2.SetTrafficLightRequest)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void SetTrafficLightRequest::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete _impl_.traffic_light_;
 }
+
 void SetTrafficLightRequest::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void SetTrafficLightRequest::Clear() {
+void SetTrafficLightRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.map.v2.SetTrafficLightRequest)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000001u) {
-    ABSL_DCHECK(_impl_.traffic_light_ != nullptr);
-    _impl_.traffic_light_->Clear();
+  if (GetArenaForAllocation() == nullptr && _impl_.traffic_light_ != nullptr) {
+    delete _impl_.traffic_light_;
   }
-  ::memset(&_impl_.time_remaining_, 0, static_cast<::size_t>(
+  _impl_.traffic_light_ = nullptr;
+  ::memset(&_impl_.time_remaining_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_impl_.phase_index_) -
       reinterpret_cast<char*>(&_impl_.time_remaining_)) + sizeof(_impl_.phase_index_));
-  _impl_._has_bits_.Clear();
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* SetTrafficLightRequest::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* SetTrafficLightRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // .city.map.v2.TrafficLight traffic_light = 1 [json_name = "trafficLight"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_traffic_light(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 phase_index = 2 [json_name = "phaseIndex"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _impl_.phase_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // double time_remaining = 3 [json_name = "timeRemaining"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 25)) {
+          _impl_.time_remaining_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<2, 3, 1, 0, 2> SetTrafficLightRequest::_table_ = {
-  {
-    PROTOBUF_FIELD_OFFSET(SetTrafficLightRequest, _impl_._has_bits_),
-    0, // no _extensions_
-    3, 24,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967288,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    3,  // num_field_entries
-    1,  // num_aux_entries
-    offsetof(decltype(_table_), aux_entries),
-    &_SetTrafficLightRequest_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    {::_pbi::TcParser::MiniParse, {}},
-    // .city.map.v2.TrafficLight traffic_light = 1 [json_name = "trafficLight"];
-    {::_pbi::TcParser::FastMtS1,
-     {10, 0, 0, PROTOBUF_FIELD_OFFSET(SetTrafficLightRequest, _impl_.traffic_light_)}},
-    // int32 phase_index = 2 [json_name = "phaseIndex"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(SetTrafficLightRequest, _impl_.phase_index_), 63>(),
-     {16, 63, 0, PROTOBUF_FIELD_OFFSET(SetTrafficLightRequest, _impl_.phase_index_)}},
-    // double time_remaining = 3 [json_name = "timeRemaining"];
-    {::_pbi::TcParser::FastF64S1,
-     {25, 63, 0, PROTOBUF_FIELD_OFFSET(SetTrafficLightRequest, _impl_.time_remaining_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // .city.map.v2.TrafficLight traffic_light = 1 [json_name = "trafficLight"];
-    {PROTOBUF_FIELD_OFFSET(SetTrafficLightRequest, _impl_.traffic_light_), _Internal::kHasBitsOffset + 0, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
-    // int32 phase_index = 2 [json_name = "phaseIndex"];
-    {PROTOBUF_FIELD_OFFSET(SetTrafficLightRequest, _impl_.phase_index_), -1, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-    // double time_remaining = 3 [json_name = "timeRemaining"];
-    {PROTOBUF_FIELD_OFFSET(SetTrafficLightRequest, _impl_.time_remaining_), -1, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-  }}, {{
-    {::_pbi::TcParser::GetTable<::city::map::v2::TrafficLight>()},
-  }}, {{
-  }},
-};
-
-::uint8_t* SetTrafficLightRequest::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* SetTrafficLightRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.map.v2.SetTrafficLightRequest)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
-  cached_has_bits = _impl_._has_bits_[0];
   // .city.map.v2.TrafficLight traffic_light = 1 [json_name = "trafficLight"];
-  if (cached_has_bits & 0x00000001u) {
-    target = ::google::protobuf::internal::WireFormatLite::
+  if (this->_internal_has_traffic_light()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(1, _Internal::traffic_light(this),
         _Internal::traffic_light(this).GetCachedSize(), target, stream);
   }
 
   // int32 phase_index = 2 [json_name = "phaseIndex"];
   if (this->_internal_phase_index() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<2>(
-            stream, this->_internal_phase_index(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(2, this->_internal_phase_index(), target);
   }
 
   // double time_remaining = 3 [json_name = "timeRemaining"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_time_remaining = this->_internal_time_remaining();
-  ::uint64_t raw_time_remaining;
+  uint64_t raw_time_remaining;
   memcpy(&raw_time_remaining, &tmp_time_remaining, sizeof(tmp_time_remaining));
   if (raw_time_remaining != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        3, this->_internal_time_remaining(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(3, this->_internal_time_remaining(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.map.v2.SetTrafficLightRequest)
   return target;
 }
 
-::size_t SetTrafficLightRequest::ByteSizeLong() const {
+size_t SetTrafficLightRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.map.v2.SetTrafficLightRequest)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // .city.map.v2.TrafficLight traffic_light = 1 [json_name = "trafficLight"];
-  cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000001u) {
+  if (this->_internal_has_traffic_light()) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *_impl_.traffic_light_);
   }
 
   // double time_remaining = 3 [json_name = "timeRemaining"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_time_remaining = this->_internal_time_remaining();
-  ::uint64_t raw_time_remaining;
+  uint64_t raw_time_remaining;
   memcpy(&raw_time_remaining, &tmp_time_remaining, sizeof(tmp_time_remaining));
   if (raw_time_remaining != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   // int32 phase_index = 2 [json_name = "phaseIndex"];
   if (this->_internal_phase_index() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_phase_index());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_phase_index());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData SetTrafficLightRequest::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData SetTrafficLightRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     SetTrafficLightRequest::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*SetTrafficLightRequest::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SetTrafficLightRequest::GetClassData() const { return &_class_data_; }
 
 
-void SetTrafficLightRequest::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void SetTrafficLightRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<SetTrafficLightRequest*>(&to_msg);
   auto& from = static_cast<const SetTrafficLightRequest&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.map.v2.SetTrafficLightRequest)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+  if (from._internal_has_traffic_light()) {
     _this->_internal_mutable_traffic_light()->::city::map::v2::TrafficLight::MergeFrom(
         from._internal_traffic_light());
   }
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_time_remaining = from._internal_time_remaining();
-  ::uint64_t raw_time_remaining;
+  uint64_t raw_time_remaining;
   memcpy(&raw_time_remaining, &tmp_time_remaining, sizeof(tmp_time_remaining));
   if (raw_time_remaining != 0) {
     _this->_internal_set_time_remaining(from._internal_time_remaining());
@@ -1031,7 +965,7 @@ void SetTrafficLightRequest::MergeImpl(::google::protobuf::Message& to_msg, cons
   if (from._internal_phase_index() != 0) {
     _this->_internal_set_phase_index(from._internal_phase_index());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void SetTrafficLightRequest::CopyFrom(const SetTrafficLightRequest& from) {
@@ -1041,15 +975,14 @@ void SetTrafficLightRequest::CopyFrom(const SetTrafficLightRequest& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool SetTrafficLightRequest::IsInitialized() const {
+bool SetTrafficLightRequest::IsInitialized() const {
   return true;
 }
 
 void SetTrafficLightRequest::InternalSwap(SetTrafficLightRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
-  ::google::protobuf::internal::memswap<
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(SetTrafficLightRequest, _impl_.phase_index_)
       + sizeof(SetTrafficLightRequest::_impl_.phase_index_)
       - PROTOBUF_FIELD_OFFSET(SetTrafficLightRequest, _impl_.traffic_light_)>(
@@ -1057,38 +990,39 @@ void SetTrafficLightRequest::InternalSwap(SetTrafficLightRequest* other) {
           reinterpret_cast<char*>(&other->_impl_.traffic_light_));
 }
 
-::google::protobuf::Metadata SetTrafficLightRequest::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata SetTrafficLightRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fmap_2fv2_2ftraffic_5flight_5fservice_2eproto_getter, &descriptor_table_city_2fmap_2fv2_2ftraffic_5flight_5fservice_2eproto_once,
       file_level_metadata_city_2fmap_2fv2_2ftraffic_5flight_5fservice_2eproto[2]);
 }
+
 // ===================================================================
 
 class SetTrafficLightResponse::_Internal {
  public:
 };
 
-SetTrafficLightResponse::SetTrafficLightResponse(::google::protobuf::Arena* arena)
-    : ::google::protobuf::internal::ZeroFieldsBase(arena) {
+SetTrafficLightResponse::SetTrafficLightResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
   // @@protoc_insertion_point(arena_constructor:city.map.v2.SetTrafficLightResponse)
 }
-SetTrafficLightResponse::SetTrafficLightResponse(const SetTrafficLightResponse& from) : ::google::protobuf::internal::ZeroFieldsBase() {
-  SetTrafficLightResponse* const _this = this;
-  (void)_this;
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
-
+SetTrafficLightResponse::SetTrafficLightResponse(const SetTrafficLightResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
+  SetTrafficLightResponse* const _this = this; (void)_this;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:city.map.v2.SetTrafficLightResponse)
 }
 
 
 
 
-const ::google::protobuf::Message::ClassData SetTrafficLightResponse::_class_data_ = {
-    ::google::protobuf::internal::ZeroFieldsBase::CopyImpl,
-    ::google::protobuf::internal::ZeroFieldsBase::MergeImpl,
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData SetTrafficLightResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
 };
-const ::google::protobuf::Message::ClassData*SetTrafficLightResponse::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SetTrafficLightResponse::GetClassData() const { return &_class_data_; }
 
 
 
@@ -1096,199 +1030,213 @@ const ::google::protobuf::Message::ClassData*SetTrafficLightResponse::GetClassDa
 
 
 
-::google::protobuf::Metadata SetTrafficLightResponse::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata SetTrafficLightResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fmap_2fv2_2ftraffic_5flight_5fservice_2eproto_getter, &descriptor_table_city_2fmap_2fv2_2ftraffic_5flight_5fservice_2eproto_once,
       file_level_metadata_city_2fmap_2fv2_2ftraffic_5flight_5fservice_2eproto[3]);
 }
+
 // ===================================================================
 
 class SetTrafficLightPhaseRequest::_Internal {
  public:
 };
 
-SetTrafficLightPhaseRequest::SetTrafficLightPhaseRequest(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+SetTrafficLightPhaseRequest::SetTrafficLightPhaseRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.map.v2.SetTrafficLightPhaseRequest)
 }
 SetTrafficLightPhaseRequest::SetTrafficLightPhaseRequest(const SetTrafficLightPhaseRequest& from)
-    : ::google::protobuf::Message(), _impl_(from._impl_) {
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  SetTrafficLightPhaseRequest* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.junction_id_){}
+    , decltype(_impl_.phase_index_){}
+    , decltype(_impl_.time_remaining_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&_impl_.junction_id_, &from._impl_.junction_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.time_remaining_) -
+    reinterpret_cast<char*>(&_impl_.junction_id_)) + sizeof(_impl_.time_remaining_));
   // @@protoc_insertion_point(copy_constructor:city.map.v2.SetTrafficLightPhaseRequest)
 }
-inline void SetTrafficLightPhaseRequest::SharedCtor(::_pb::Arena* arena) {
+
+inline void SetTrafficLightPhaseRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.junction_id_){0},
-      decltype(_impl_.phase_index_){0},
-      decltype(_impl_.time_remaining_){0},
-      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.junction_id_){0}
+    , decltype(_impl_.phase_index_){0}
+    , decltype(_impl_.time_remaining_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 SetTrafficLightPhaseRequest::~SetTrafficLightPhaseRequest() {
   // @@protoc_insertion_point(destructor:city.map.v2.SetTrafficLightPhaseRequest)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void SetTrafficLightPhaseRequest::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
+
 void SetTrafficLightPhaseRequest::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void SetTrafficLightPhaseRequest::Clear() {
+void SetTrafficLightPhaseRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.map.v2.SetTrafficLightPhaseRequest)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&_impl_.junction_id_, 0, static_cast<::size_t>(
+  ::memset(&_impl_.junction_id_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_impl_.time_remaining_) -
       reinterpret_cast<char*>(&_impl_.junction_id_)) + sizeof(_impl_.time_remaining_));
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* SetTrafficLightPhaseRequest::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* SetTrafficLightPhaseRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 junction_id = 1 [json_name = "junctionId"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.junction_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 phase_index = 2 [json_name = "phaseIndex"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _impl_.phase_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // double time_remaining = 3 [json_name = "timeRemaining"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 25)) {
+          _impl_.time_remaining_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<2, 3, 0, 0, 2> SetTrafficLightPhaseRequest::_table_ = {
-  {
-    0,  // no _has_bits_
-    0, // no _extensions_
-    3, 24,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967288,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    3,  // num_field_entries
-    0,  // num_aux_entries
-    offsetof(decltype(_table_), field_names),  // no aux_entries
-    &_SetTrafficLightPhaseRequest_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    {::_pbi::TcParser::MiniParse, {}},
-    // int32 junction_id = 1 [json_name = "junctionId"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(SetTrafficLightPhaseRequest, _impl_.junction_id_), 63>(),
-     {8, 63, 0, PROTOBUF_FIELD_OFFSET(SetTrafficLightPhaseRequest, _impl_.junction_id_)}},
-    // int32 phase_index = 2 [json_name = "phaseIndex"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(SetTrafficLightPhaseRequest, _impl_.phase_index_), 63>(),
-     {16, 63, 0, PROTOBUF_FIELD_OFFSET(SetTrafficLightPhaseRequest, _impl_.phase_index_)}},
-    // double time_remaining = 3 [json_name = "timeRemaining"];
-    {::_pbi::TcParser::FastF64S1,
-     {25, 63, 0, PROTOBUF_FIELD_OFFSET(SetTrafficLightPhaseRequest, _impl_.time_remaining_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // int32 junction_id = 1 [json_name = "junctionId"];
-    {PROTOBUF_FIELD_OFFSET(SetTrafficLightPhaseRequest, _impl_.junction_id_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-    // int32 phase_index = 2 [json_name = "phaseIndex"];
-    {PROTOBUF_FIELD_OFFSET(SetTrafficLightPhaseRequest, _impl_.phase_index_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-    // double time_remaining = 3 [json_name = "timeRemaining"];
-    {PROTOBUF_FIELD_OFFSET(SetTrafficLightPhaseRequest, _impl_.time_remaining_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-  }},
-  // no aux_entries
-  {{
-  }},
-};
-
-::uint8_t* SetTrafficLightPhaseRequest::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* SetTrafficLightPhaseRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.map.v2.SetTrafficLightPhaseRequest)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // int32 junction_id = 1 [json_name = "junctionId"];
   if (this->_internal_junction_id() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<1>(
-            stream, this->_internal_junction_id(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_junction_id(), target);
   }
 
   // int32 phase_index = 2 [json_name = "phaseIndex"];
   if (this->_internal_phase_index() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<2>(
-            stream, this->_internal_phase_index(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(2, this->_internal_phase_index(), target);
   }
 
   // double time_remaining = 3 [json_name = "timeRemaining"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_time_remaining = this->_internal_time_remaining();
-  ::uint64_t raw_time_remaining;
+  uint64_t raw_time_remaining;
   memcpy(&raw_time_remaining, &tmp_time_remaining, sizeof(tmp_time_remaining));
   if (raw_time_remaining != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        3, this->_internal_time_remaining(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(3, this->_internal_time_remaining(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.map.v2.SetTrafficLightPhaseRequest)
   return target;
 }
 
-::size_t SetTrafficLightPhaseRequest::ByteSizeLong() const {
+size_t SetTrafficLightPhaseRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.map.v2.SetTrafficLightPhaseRequest)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // int32 junction_id = 1 [json_name = "junctionId"];
   if (this->_internal_junction_id() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_junction_id());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_junction_id());
   }
 
   // int32 phase_index = 2 [json_name = "phaseIndex"];
   if (this->_internal_phase_index() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_phase_index());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_phase_index());
   }
 
   // double time_remaining = 3 [json_name = "timeRemaining"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_time_remaining = this->_internal_time_remaining();
-  ::uint64_t raw_time_remaining;
+  uint64_t raw_time_remaining;
   memcpy(&raw_time_remaining, &tmp_time_remaining, sizeof(tmp_time_remaining));
   if (raw_time_remaining != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData SetTrafficLightPhaseRequest::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData SetTrafficLightPhaseRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     SetTrafficLightPhaseRequest::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*SetTrafficLightPhaseRequest::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SetTrafficLightPhaseRequest::GetClassData() const { return &_class_data_; }
 
 
-void SetTrafficLightPhaseRequest::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void SetTrafficLightPhaseRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<SetTrafficLightPhaseRequest*>(&to_msg);
   auto& from = static_cast<const SetTrafficLightPhaseRequest&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.map.v2.SetTrafficLightPhaseRequest)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_junction_id() != 0) {
@@ -1297,15 +1245,14 @@ void SetTrafficLightPhaseRequest::MergeImpl(::google::protobuf::Message& to_msg,
   if (from._internal_phase_index() != 0) {
     _this->_internal_set_phase_index(from._internal_phase_index());
   }
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_time_remaining = from._internal_time_remaining();
-  ::uint64_t raw_time_remaining;
+  uint64_t raw_time_remaining;
   memcpy(&raw_time_remaining, &tmp_time_remaining, sizeof(tmp_time_remaining));
   if (raw_time_remaining != 0) {
     _this->_internal_set_time_remaining(from._internal_time_remaining());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void SetTrafficLightPhaseRequest::CopyFrom(const SetTrafficLightPhaseRequest& from) {
@@ -1315,14 +1262,14 @@ void SetTrafficLightPhaseRequest::CopyFrom(const SetTrafficLightPhaseRequest& fr
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool SetTrafficLightPhaseRequest::IsInitialized() const {
+bool SetTrafficLightPhaseRequest::IsInitialized() const {
   return true;
 }
 
 void SetTrafficLightPhaseRequest::InternalSwap(SetTrafficLightPhaseRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::google::protobuf::internal::memswap<
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(SetTrafficLightPhaseRequest, _impl_.time_remaining_)
       + sizeof(SetTrafficLightPhaseRequest::_impl_.time_remaining_)
       - PROTOBUF_FIELD_OFFSET(SetTrafficLightPhaseRequest, _impl_.junction_id_)>(
@@ -1330,38 +1277,39 @@ void SetTrafficLightPhaseRequest::InternalSwap(SetTrafficLightPhaseRequest* othe
           reinterpret_cast<char*>(&other->_impl_.junction_id_));
 }
 
-::google::protobuf::Metadata SetTrafficLightPhaseRequest::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata SetTrafficLightPhaseRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fmap_2fv2_2ftraffic_5flight_5fservice_2eproto_getter, &descriptor_table_city_2fmap_2fv2_2ftraffic_5flight_5fservice_2eproto_once,
       file_level_metadata_city_2fmap_2fv2_2ftraffic_5flight_5fservice_2eproto[4]);
 }
+
 // ===================================================================
 
 class SetTrafficLightPhaseResponse::_Internal {
  public:
 };
 
-SetTrafficLightPhaseResponse::SetTrafficLightPhaseResponse(::google::protobuf::Arena* arena)
-    : ::google::protobuf::internal::ZeroFieldsBase(arena) {
+SetTrafficLightPhaseResponse::SetTrafficLightPhaseResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
   // @@protoc_insertion_point(arena_constructor:city.map.v2.SetTrafficLightPhaseResponse)
 }
-SetTrafficLightPhaseResponse::SetTrafficLightPhaseResponse(const SetTrafficLightPhaseResponse& from) : ::google::protobuf::internal::ZeroFieldsBase() {
-  SetTrafficLightPhaseResponse* const _this = this;
-  (void)_this;
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
-
+SetTrafficLightPhaseResponse::SetTrafficLightPhaseResponse(const SetTrafficLightPhaseResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
+  SetTrafficLightPhaseResponse* const _this = this; (void)_this;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:city.map.v2.SetTrafficLightPhaseResponse)
 }
 
 
 
 
-const ::google::protobuf::Message::ClassData SetTrafficLightPhaseResponse::_class_data_ = {
-    ::google::protobuf::internal::ZeroFieldsBase::CopyImpl,
-    ::google::protobuf::internal::ZeroFieldsBase::MergeImpl,
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData SetTrafficLightPhaseResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
 };
-const ::google::protobuf::Message::ClassData*SetTrafficLightPhaseResponse::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SetTrafficLightPhaseResponse::GetClassData() const { return &_class_data_; }
 
 
 
@@ -1369,168 +1317,184 @@ const ::google::protobuf::Message::ClassData*SetTrafficLightPhaseResponse::GetCl
 
 
 
-::google::protobuf::Metadata SetTrafficLightPhaseResponse::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata SetTrafficLightPhaseResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fmap_2fv2_2ftraffic_5flight_5fservice_2eproto_getter, &descriptor_table_city_2fmap_2fv2_2ftraffic_5flight_5fservice_2eproto_once,
       file_level_metadata_city_2fmap_2fv2_2ftraffic_5flight_5fservice_2eproto[5]);
 }
+
 // ===================================================================
 
 class SetTrafficLightStatusRequest::_Internal {
  public:
 };
 
-SetTrafficLightStatusRequest::SetTrafficLightStatusRequest(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+SetTrafficLightStatusRequest::SetTrafficLightStatusRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.map.v2.SetTrafficLightStatusRequest)
 }
 SetTrafficLightStatusRequest::SetTrafficLightStatusRequest(const SetTrafficLightStatusRequest& from)
-    : ::google::protobuf::Message(), _impl_(from._impl_) {
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  SetTrafficLightStatusRequest* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.junction_id_){}
+    , decltype(_impl_.ok_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&_impl_.junction_id_, &from._impl_.junction_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.ok_) -
+    reinterpret_cast<char*>(&_impl_.junction_id_)) + sizeof(_impl_.ok_));
   // @@protoc_insertion_point(copy_constructor:city.map.v2.SetTrafficLightStatusRequest)
 }
-inline void SetTrafficLightStatusRequest::SharedCtor(::_pb::Arena* arena) {
+
+inline void SetTrafficLightStatusRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.junction_id_){0},
-      decltype(_impl_.ok_){false},
-      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.junction_id_){0}
+    , decltype(_impl_.ok_){false}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 SetTrafficLightStatusRequest::~SetTrafficLightStatusRequest() {
   // @@protoc_insertion_point(destructor:city.map.v2.SetTrafficLightStatusRequest)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void SetTrafficLightStatusRequest::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
+
 void SetTrafficLightStatusRequest::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void SetTrafficLightStatusRequest::Clear() {
+void SetTrafficLightStatusRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.map.v2.SetTrafficLightStatusRequest)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&_impl_.junction_id_, 0, static_cast<::size_t>(
+  ::memset(&_impl_.junction_id_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_impl_.ok_) -
       reinterpret_cast<char*>(&_impl_.junction_id_)) + sizeof(_impl_.ok_));
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* SetTrafficLightStatusRequest::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* SetTrafficLightStatusRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 junction_id = 1 [json_name = "junctionId"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.junction_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // bool ok = 2 [json_name = "ok"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _impl_.ok_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<1, 2, 0, 0, 2> SetTrafficLightStatusRequest::_table_ = {
-  {
-    0,  // no _has_bits_
-    0, // no _extensions_
-    2, 8,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967292,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    2,  // num_field_entries
-    0,  // num_aux_entries
-    offsetof(decltype(_table_), field_names),  // no aux_entries
-    &_SetTrafficLightStatusRequest_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    // bool ok = 2 [json_name = "ok"];
-    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(SetTrafficLightStatusRequest, _impl_.ok_), 63>(),
-     {16, 63, 0, PROTOBUF_FIELD_OFFSET(SetTrafficLightStatusRequest, _impl_.ok_)}},
-    // int32 junction_id = 1 [json_name = "junctionId"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(SetTrafficLightStatusRequest, _impl_.junction_id_), 63>(),
-     {8, 63, 0, PROTOBUF_FIELD_OFFSET(SetTrafficLightStatusRequest, _impl_.junction_id_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // int32 junction_id = 1 [json_name = "junctionId"];
-    {PROTOBUF_FIELD_OFFSET(SetTrafficLightStatusRequest, _impl_.junction_id_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-    // bool ok = 2 [json_name = "ok"];
-    {PROTOBUF_FIELD_OFFSET(SetTrafficLightStatusRequest, _impl_.ok_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kBool)},
-  }},
-  // no aux_entries
-  {{
-  }},
-};
-
-::uint8_t* SetTrafficLightStatusRequest::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* SetTrafficLightStatusRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.map.v2.SetTrafficLightStatusRequest)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // int32 junction_id = 1 [json_name = "junctionId"];
   if (this->_internal_junction_id() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<1>(
-            stream, this->_internal_junction_id(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_junction_id(), target);
   }
 
   // bool ok = 2 [json_name = "ok"];
   if (this->_internal_ok() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(
-        2, this->_internal_ok(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(2, this->_internal_ok(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.map.v2.SetTrafficLightStatusRequest)
   return target;
 }
 
-::size_t SetTrafficLightStatusRequest::ByteSizeLong() const {
+size_t SetTrafficLightStatusRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.map.v2.SetTrafficLightStatusRequest)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // int32 junction_id = 1 [json_name = "junctionId"];
   if (this->_internal_junction_id() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_junction_id());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_junction_id());
   }
 
   // bool ok = 2 [json_name = "ok"];
   if (this->_internal_ok() != 0) {
-    total_size += 2;
+    total_size += 1 + 1;
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData SetTrafficLightStatusRequest::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData SetTrafficLightStatusRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     SetTrafficLightStatusRequest::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*SetTrafficLightStatusRequest::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SetTrafficLightStatusRequest::GetClassData() const { return &_class_data_; }
 
 
-void SetTrafficLightStatusRequest::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void SetTrafficLightStatusRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<SetTrafficLightStatusRequest*>(&to_msg);
   auto& from = static_cast<const SetTrafficLightStatusRequest&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.map.v2.SetTrafficLightStatusRequest)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_junction_id() != 0) {
@@ -1539,7 +1503,7 @@ void SetTrafficLightStatusRequest::MergeImpl(::google::protobuf::Message& to_msg
   if (from._internal_ok() != 0) {
     _this->_internal_set_ok(from._internal_ok());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void SetTrafficLightStatusRequest::CopyFrom(const SetTrafficLightStatusRequest& from) {
@@ -1549,14 +1513,14 @@ void SetTrafficLightStatusRequest::CopyFrom(const SetTrafficLightStatusRequest& 
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool SetTrafficLightStatusRequest::IsInitialized() const {
+bool SetTrafficLightStatusRequest::IsInitialized() const {
   return true;
 }
 
 void SetTrafficLightStatusRequest::InternalSwap(SetTrafficLightStatusRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::google::protobuf::internal::memswap<
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(SetTrafficLightStatusRequest, _impl_.ok_)
       + sizeof(SetTrafficLightStatusRequest::_impl_.ok_)
       - PROTOBUF_FIELD_OFFSET(SetTrafficLightStatusRequest, _impl_.junction_id_)>(
@@ -1564,38 +1528,39 @@ void SetTrafficLightStatusRequest::InternalSwap(SetTrafficLightStatusRequest* ot
           reinterpret_cast<char*>(&other->_impl_.junction_id_));
 }
 
-::google::protobuf::Metadata SetTrafficLightStatusRequest::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata SetTrafficLightStatusRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fmap_2fv2_2ftraffic_5flight_5fservice_2eproto_getter, &descriptor_table_city_2fmap_2fv2_2ftraffic_5flight_5fservice_2eproto_once,
       file_level_metadata_city_2fmap_2fv2_2ftraffic_5flight_5fservice_2eproto[6]);
 }
+
 // ===================================================================
 
 class SetTrafficLightStatusResponse::_Internal {
  public:
 };
 
-SetTrafficLightStatusResponse::SetTrafficLightStatusResponse(::google::protobuf::Arena* arena)
-    : ::google::protobuf::internal::ZeroFieldsBase(arena) {
+SetTrafficLightStatusResponse::SetTrafficLightStatusResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
   // @@protoc_insertion_point(arena_constructor:city.map.v2.SetTrafficLightStatusResponse)
 }
-SetTrafficLightStatusResponse::SetTrafficLightStatusResponse(const SetTrafficLightStatusResponse& from) : ::google::protobuf::internal::ZeroFieldsBase() {
-  SetTrafficLightStatusResponse* const _this = this;
-  (void)_this;
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
-
+SetTrafficLightStatusResponse::SetTrafficLightStatusResponse(const SetTrafficLightStatusResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
+  SetTrafficLightStatusResponse* const _this = this; (void)_this;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:city.map.v2.SetTrafficLightStatusResponse)
 }
 
 
 
 
-const ::google::protobuf::Message::ClassData SetTrafficLightStatusResponse::_class_data_ = {
-    ::google::protobuf::internal::ZeroFieldsBase::CopyImpl,
-    ::google::protobuf::internal::ZeroFieldsBase::MergeImpl,
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData SetTrafficLightStatusResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
 };
-const ::google::protobuf::Message::ClassData*SetTrafficLightStatusResponse::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SetTrafficLightStatusResponse::GetClassData() const { return &_class_data_; }
 
 
 
@@ -1603,18 +1568,50 @@ const ::google::protobuf::Message::ClassData*SetTrafficLightStatusResponse::GetC
 
 
 
-::google::protobuf::Metadata SetTrafficLightStatusResponse::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata SetTrafficLightStatusResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fmap_2fv2_2ftraffic_5flight_5fservice_2eproto_getter, &descriptor_table_city_2fmap_2fv2_2ftraffic_5flight_5fservice_2eproto_once,
       file_level_metadata_city_2fmap_2fv2_2ftraffic_5flight_5fservice_2eproto[7]);
 }
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace v2
 }  // namespace map
 }  // namespace city
-namespace google {
-namespace protobuf {
-}  // namespace protobuf
-}  // namespace google
+PROTOBUF_NAMESPACE_OPEN
+template<> PROTOBUF_NOINLINE ::city::map::v2::GetTrafficLightRequest*
+Arena::CreateMaybeMessage< ::city::map::v2::GetTrafficLightRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::map::v2::GetTrafficLightRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::map::v2::GetTrafficLightResponse*
+Arena::CreateMaybeMessage< ::city::map::v2::GetTrafficLightResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::map::v2::GetTrafficLightResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::map::v2::SetTrafficLightRequest*
+Arena::CreateMaybeMessage< ::city::map::v2::SetTrafficLightRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::map::v2::SetTrafficLightRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::map::v2::SetTrafficLightResponse*
+Arena::CreateMaybeMessage< ::city::map::v2::SetTrafficLightResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::map::v2::SetTrafficLightResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::map::v2::SetTrafficLightPhaseRequest*
+Arena::CreateMaybeMessage< ::city::map::v2::SetTrafficLightPhaseRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::map::v2::SetTrafficLightPhaseRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::map::v2::SetTrafficLightPhaseResponse*
+Arena::CreateMaybeMessage< ::city::map::v2::SetTrafficLightPhaseResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::map::v2::SetTrafficLightPhaseResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::map::v2::SetTrafficLightStatusRequest*
+Arena::CreateMaybeMessage< ::city::map::v2::SetTrafficLightStatusRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::map::v2::SetTrafficLightStatusRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::map::v2::SetTrafficLightStatusResponse*
+Arena::CreateMaybeMessage< ::city::map::v2::SetTrafficLightStatusResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::map::v2::SetTrafficLightStatusResponse >(arena);
+}
+PROTOBUF_NAMESPACE_CLOSE
+
 // @@protoc_insertion_point(global_scope)
-#include "google/protobuf/port_undef.inc"
+#include <google/protobuf/port_undef.inc>

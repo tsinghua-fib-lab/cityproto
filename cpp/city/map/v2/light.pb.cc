@@ -4,187 +4,149 @@
 #include "city/map/v2/light.pb.h"
 
 #include <algorithm>
-#include "google/protobuf/io/coded_stream.h"
-#include "google/protobuf/extension_set.h"
-#include "google/protobuf/wire_format_lite.h"
-#include "google/protobuf/descriptor.h"
-#include "google/protobuf/generated_message_reflection.h"
-#include "google/protobuf/reflection_ops.h"
-#include "google/protobuf/wire_format.h"
-#include "google/protobuf/generated_message_tctable_impl.h"
-// @@protoc_insertion_point(includes)
 
-// Must be included last.
-#include "google/protobuf/port_def.inc"
+#include <google/protobuf/io/coded_stream.h>
+#include <google/protobuf/extension_set.h>
+#include <google/protobuf/wire_format_lite.h>
+#include <google/protobuf/descriptor.h>
+#include <google/protobuf/generated_message_reflection.h>
+#include <google/protobuf/reflection_ops.h>
+#include <google/protobuf/wire_format.h>
+// @@protoc_insertion_point(includes)
+#include <google/protobuf/port_def.inc>
+
 PROTOBUF_PRAGMA_INIT_SEG
-namespace _pb = ::google::protobuf;
-namespace _pbi = ::google::protobuf::internal;
-namespace _fl = ::google::protobuf::internal::field_layout;
+
+namespace _pb = ::PROTOBUF_NAMESPACE_ID;
+namespace _pbi = _pb::internal;
+
 namespace city {
 namespace map {
 namespace v2 {
-        template <typename>
-PROTOBUF_CONSTEXPR Phase::Phase(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_.states_)*/ {},
-      /*decltype(_impl_._states_cached_byte_size_)*/ {0},
-      /*decltype(_impl_.duration_)*/ 0,
-      /*decltype(_impl_._cached_size_)*/ {},
-    } {}
+PROTOBUF_CONSTEXPR Phase::Phase(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.states_)*/{}
+  , /*decltype(_impl_._states_cached_byte_size_)*/{0}
+  , /*decltype(_impl_.duration_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct PhaseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR PhaseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR PhaseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~PhaseDefaultTypeInternal() {}
   union {
     Phase _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PhaseDefaultTypeInternal _Phase_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR AvailablePhase::AvailablePhase(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_.states_)*/ {},
-      /*decltype(_impl_._states_cached_byte_size_)*/ {0},
-      /*decltype(_impl_._cached_size_)*/ {},
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PhaseDefaultTypeInternal _Phase_default_instance_;
+PROTOBUF_CONSTEXPR AvailablePhase::AvailablePhase(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.states_)*/{}
+  , /*decltype(_impl_._states_cached_byte_size_)*/{0}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct AvailablePhaseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR AvailablePhaseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR AvailablePhaseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~AvailablePhaseDefaultTypeInternal() {}
   union {
     AvailablePhase _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 AvailablePhaseDefaultTypeInternal _AvailablePhase_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR TrafficLight::TrafficLight(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_.phases_)*/ {},
-      /*decltype(_impl_.junction_id_)*/ 0,
-      /*decltype(_impl_._cached_size_)*/ {},
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 AvailablePhaseDefaultTypeInternal _AvailablePhase_default_instance_;
+PROTOBUF_CONSTEXPR TrafficLight::TrafficLight(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.phases_)*/{}
+  , /*decltype(_impl_.junction_id_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct TrafficLightDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR TrafficLightDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR TrafficLightDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~TrafficLightDefaultTypeInternal() {}
   union {
     TrafficLight _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 TrafficLightDefaultTypeInternal _TrafficLight_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 TrafficLightDefaultTypeInternal _TrafficLight_default_instance_;
 }  // namespace v2
 }  // namespace map
 }  // namespace city
 static ::_pb::Metadata file_level_metadata_city_2fmap_2fv2_2flight_2eproto[3];
 static const ::_pb::EnumDescriptor* file_level_enum_descriptors_city_2fmap_2fv2_2flight_2eproto[1];
-static constexpr const ::_pb::ServiceDescriptor**
-    file_level_service_descriptors_city_2fmap_2fv2_2flight_2eproto = nullptr;
-const ::uint32_t TableStruct_city_2fmap_2fv2_2flight_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
-    protodesc_cold) = {
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::map::v2::Phase, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::map::v2::Phase, _impl_.duration_),
-    PROTOBUF_FIELD_OFFSET(::city::map::v2::Phase, _impl_.states_),
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::map::v2::AvailablePhase, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::map::v2::AvailablePhase, _impl_.states_),
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::map::v2::TrafficLight, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::map::v2::TrafficLight, _impl_.junction_id_),
-    PROTOBUF_FIELD_OFFSET(::city::map::v2::TrafficLight, _impl_.phases_),
-};
+static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_city_2fmap_2fv2_2flight_2eproto = nullptr;
 
-static const ::_pbi::MigrationSchema
-    schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-        {0, -1, -1, sizeof(::city::map::v2::Phase)},
-        {10, -1, -1, sizeof(::city::map::v2::AvailablePhase)},
-        {19, -1, -1, sizeof(::city::map::v2::TrafficLight)},
+const uint32_t TableStruct_city_2fmap_2fv2_2flight_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::map::v2::Phase, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::map::v2::Phase, _impl_.duration_),
+  PROTOBUF_FIELD_OFFSET(::city::map::v2::Phase, _impl_.states_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::map::v2::AvailablePhase, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::map::v2::AvailablePhase, _impl_.states_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::map::v2::TrafficLight, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::map::v2::TrafficLight, _impl_.junction_id_),
+  PROTOBUF_FIELD_OFFSET(::city::map::v2::TrafficLight, _impl_.phases_),
+};
+static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  { 0, -1, -1, sizeof(::city::map::v2::Phase)},
+  { 8, -1, -1, sizeof(::city::map::v2::AvailablePhase)},
+  { 15, -1, -1, sizeof(::city::map::v2::TrafficLight)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
-    &::city::map::v2::_Phase_default_instance_._instance,
-    &::city::map::v2::_AvailablePhase_default_instance_._instance,
-    &::city::map::v2::_TrafficLight_default_instance_._instance,
-};
-const char descriptor_table_protodef_city_2fmap_2fv2_2flight_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-    "\n\027city/map/v2/light.proto\022\013city.map.v2\"T"
-    "\n\005Phase\022\032\n\010duration\030\001 \001(\001R\010duration\022/\n\006s"
-    "tates\030\002 \003(\0162\027.city.map.v2.LightStateR\006st"
-    "ates\"A\n\016AvailablePhase\022/\n\006states\030\001 \003(\0162\027"
-    ".city.map.v2.LightStateR\006states\"[\n\014Traff"
-    "icLight\022\037\n\013junction_id\030\001 \001(\005R\njunctionId"
-    "\022*\n\006phases\030\002 \003(\0132\022.city.map.v2.PhaseR\006ph"
-    "ases*m\n\nLightState\022\033\n\027LIGHT_STATE_UNSPEC"
-    "IFIED\020\000\022\023\n\017LIGHT_STATE_RED\020\001\022\025\n\021LIGHT_ST"
-    "ATE_GREEN\020\002\022\026\n\022LIGHT_STATE_YELLOW\020\003B\233\001\n\017"
-    "com.city.map.v2B\nLightProtoP\001Z.git.fibla"
-    "b.net/sim/protos/go/city/map/v2;mapv2\242\002\003"
-    "CMX\252\002\013City.Map.V2\312\002\013City\\Map\\V2\342\002\027City\\M"
-    "ap\\V2\\GPBMetadata\352\002\rCity::Map::V2b\006proto"
-    "3"
-};
-static ::absl::once_flag descriptor_table_city_2fmap_2fv2_2flight_2eproto_once;
-const ::_pbi::DescriptorTable descriptor_table_city_2fmap_2fv2_2flight_2eproto = {
-    false,
-    false,
-    561,
-    descriptor_table_protodef_city_2fmap_2fv2_2flight_2eproto,
-    "city/map/v2/light.proto",
-    &descriptor_table_city_2fmap_2fv2_2flight_2eproto_once,
-    nullptr,
-    0,
-    3,
-    schemas,
-    file_default_instances,
-    TableStruct_city_2fmap_2fv2_2flight_2eproto::offsets,
-    file_level_metadata_city_2fmap_2fv2_2flight_2eproto,
-    file_level_enum_descriptors_city_2fmap_2fv2_2flight_2eproto,
-    file_level_service_descriptors_city_2fmap_2fv2_2flight_2eproto,
+  &::city::map::v2::_Phase_default_instance_._instance,
+  &::city::map::v2::_AvailablePhase_default_instance_._instance,
+  &::city::map::v2::_TrafficLight_default_instance_._instance,
 };
 
-// This function exists to be marked as weak.
-// It can significantly speed up compilation by breaking up LLVM's SCC
-// in the .pb.cc translation units. Large translation units see a
-// reduction of more than 35% of walltime for optimized builds. Without
-// the weak attribute all the messages in the file, including all the
-// vtables and everything they use become part of the same SCC through
-// a cycle like:
-// GetMetadata -> descriptor table -> default instances ->
-//   vtables -> GetMetadata
-// By adding a weak function here we break the connection from the
-// individual vtables back into the descriptor table.
+const char descriptor_table_protodef_city_2fmap_2fv2_2flight_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
+  "\n\027city/map/v2/light.proto\022\013city.map.v2\"T"
+  "\n\005Phase\022\032\n\010duration\030\001 \001(\001R\010duration\022/\n\006s"
+  "tates\030\002 \003(\0162\027.city.map.v2.LightStateR\006st"
+  "ates\"A\n\016AvailablePhase\022/\n\006states\030\001 \003(\0162\027"
+  ".city.map.v2.LightStateR\006states\"[\n\014Traff"
+  "icLight\022\037\n\013junction_id\030\001 \001(\005R\njunctionId"
+  "\022*\n\006phases\030\002 \003(\0132\022.city.map.v2.PhaseR\006ph"
+  "ases*m\n\nLightState\022\033\n\027LIGHT_STATE_UNSPEC"
+  "IFIED\020\000\022\023\n\017LIGHT_STATE_RED\020\001\022\025\n\021LIGHT_ST"
+  "ATE_GREEN\020\002\022\026\n\022LIGHT_STATE_YELLOW\020\003B\233\001\n\017"
+  "com.city.map.v2B\nLightProtoP\001Z.git.fibla"
+  "b.net/sim/protos/go/city/map/v2;mapv2\242\002\003"
+  "CMX\252\002\013City.Map.V2\312\002\013City\\Map\\V2\342\002\027City\\M"
+  "ap\\V2\\GPBMetadata\352\002\rCity::Map::V2b\006proto"
+  "3"
+  ;
+static ::_pbi::once_flag descriptor_table_city_2fmap_2fv2_2flight_2eproto_once;
+const ::_pbi::DescriptorTable descriptor_table_city_2fmap_2fv2_2flight_2eproto = {
+    false, false, 561, descriptor_table_protodef_city_2fmap_2fv2_2flight_2eproto,
+    "city/map/v2/light.proto",
+    &descriptor_table_city_2fmap_2fv2_2flight_2eproto_once, nullptr, 0, 3,
+    schemas, file_default_instances, TableStruct_city_2fmap_2fv2_2flight_2eproto::offsets,
+    file_level_metadata_city_2fmap_2fv2_2flight_2eproto, file_level_enum_descriptors_city_2fmap_2fv2_2flight_2eproto,
+    file_level_service_descriptors_city_2fmap_2fv2_2flight_2eproto,
+};
 PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_city_2fmap_2fv2_2flight_2eproto_getter() {
   return &descriptor_table_city_2fmap_2fv2_2flight_2eproto;
 }
+
 // Force running AddDescriptors() at dynamic initialization time.
-PROTOBUF_ATTRIBUTE_INIT_PRIORITY2
-static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_city_2fmap_2fv2_2flight_2eproto(&descriptor_table_city_2fmap_2fv2_2flight_2eproto);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_city_2fmap_2fv2_2flight_2eproto(&descriptor_table_city_2fmap_2fv2_2flight_2eproto);
 namespace city {
 namespace map {
 namespace v2 {
-const ::google::protobuf::EnumDescriptor* LightState_descriptor() {
-  ::google::protobuf::internal::AssignDescriptors(&descriptor_table_city_2fmap_2fv2_2flight_2eproto);
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* LightState_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_city_2fmap_2fv2_2flight_2eproto);
   return file_level_enum_descriptors_city_2fmap_2fv2_2flight_2eproto[0];
 }
 bool LightState_IsValid(int value) {
@@ -198,208 +160,218 @@ bool LightState_IsValid(int value) {
       return false;
   }
 }
+
+
 // ===================================================================
 
 class Phase::_Internal {
  public:
 };
 
-Phase::Phase(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+Phase::Phase(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.map.v2.Phase)
 }
-Phase::Phase(const Phase& from) : ::google::protobuf::Message() {
-  Phase* const _this = this;
-  (void)_this;
+Phase::Phase(const Phase& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  Phase* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.states_){from._internal_states()},
-      /*decltype(_impl_._states_cached_byte_size_)*/ {0},
-      decltype(_impl_.duration_){},
-      /*decltype(_impl_._cached_size_)*/ {},
-  };
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
-  _this->_impl_.duration_ = from._impl_.duration_;
+      decltype(_impl_.states_){from._impl_.states_}
+    , /*decltype(_impl_._states_cached_byte_size_)*/{0}
+    , decltype(_impl_.duration_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
 
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.duration_ = from._impl_.duration_;
   // @@protoc_insertion_point(copy_constructor:city.map.v2.Phase)
 }
-inline void Phase::SharedCtor(::_pb::Arena* arena) {
+
+inline void Phase::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.states_){arena},
-      /*decltype(_impl_._states_cached_byte_size_)*/ {0},
-      decltype(_impl_.duration_){0},
-      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.states_){arena}
+    , /*decltype(_impl_._states_cached_byte_size_)*/{0}
+    , decltype(_impl_.duration_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 Phase::~Phase() {
   // @@protoc_insertion_point(destructor:city.map.v2.Phase)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void Phase::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
-  _internal_mutable_states()->~RepeatedField();
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.states_.~RepeatedField();
 }
+
 void Phase::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void Phase::Clear() {
+void Phase::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.map.v2.Phase)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _internal_mutable_states()->Clear();
+  _impl_.states_.Clear();
   _impl_.duration_ = 0;
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* Phase::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* Phase::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // double duration = 1 [json_name = "duration"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 9)) {
+          _impl_.duration_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated .city.map.v2.LightState states = 2 [json_name = "states"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedEnumParser(_internal_mutable_states(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<uint8_t>(tag) == 16) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_add_states(static_cast<::city::map::v2::LightState>(val));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<1, 2, 0, 0, 2> Phase::_table_ = {
-  {
-    0,  // no _has_bits_
-    0, // no _extensions_
-    2, 8,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967292,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    2,  // num_field_entries
-    0,  // num_aux_entries
-    offsetof(decltype(_table_), field_names),  // no aux_entries
-    &_Phase_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    // repeated .city.map.v2.LightState states = 2 [json_name = "states"];
-    {::_pbi::TcParser::FastV32P1,
-     {18, 63, 0, PROTOBUF_FIELD_OFFSET(Phase, _impl_.states_)}},
-    // double duration = 1 [json_name = "duration"];
-    {::_pbi::TcParser::FastF64S1,
-     {9, 63, 0, PROTOBUF_FIELD_OFFSET(Phase, _impl_.duration_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // double duration = 1 [json_name = "duration"];
-    {PROTOBUF_FIELD_OFFSET(Phase, _impl_.duration_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-    // repeated .city.map.v2.LightState states = 2 [json_name = "states"];
-    {PROTOBUF_FIELD_OFFSET(Phase, _impl_.states_), 0, 0,
-    (0 | ::_fl::kFcRepeated | ::_fl::kPackedOpenEnum)},
-  }},
-  // no aux_entries
-  {{
-  }},
-};
-
-::uint8_t* Phase::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* Phase::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.map.v2.Phase)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // double duration = 1 [json_name = "duration"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_duration = this->_internal_duration();
-  ::uint64_t raw_duration;
+  uint64_t raw_duration;
   memcpy(&raw_duration, &tmp_duration, sizeof(tmp_duration));
   if (raw_duration != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        1, this->_internal_duration(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(1, this->_internal_duration(), target);
   }
 
   // repeated .city.map.v2.LightState states = 2 [json_name = "states"];
   {
-    int byte_size = _impl_._states_cached_byte_size_.Get();
+    int byte_size = _impl_._states_cached_byte_size_.load(std::memory_order_relaxed);
     if (byte_size > 0) {
-      target = stream->WriteEnumPacked(2, _internal_states(),
-                                       byte_size, target);
+      target = stream->WriteEnumPacked(
+          2, _impl_.states_, byte_size, target);
     }
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.map.v2.Phase)
   return target;
 }
 
-::size_t Phase::ByteSizeLong() const {
+size_t Phase::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.map.v2.Phase)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // repeated .city.map.v2.LightState states = 2 [json_name = "states"];
   {
-    std::size_t data_size = 0;
-    auto count = static_cast<std::size_t>(this->_internal_states_size());
-
-    for (std::size_t i = 0; i < count; ++i) {
+    size_t data_size = 0;
+    unsigned int count = static_cast<unsigned int>(this->_internal_states_size());for (unsigned int i = 0; i < count; i++) {
       data_size += ::_pbi::WireFormatLite::EnumSize(
-          this->_internal_states().Get(static_cast<int>(i)));
+        this->_internal_states(static_cast<int>(i)));
     }
-    total_size += data_size;
     if (data_size > 0) {
-      total_size += 1;
-      total_size += ::_pbi::WireFormatLite::Int32Size(
-          static_cast<int32_t>(data_size));
+      total_size += 1 +
+        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
     }
-    _impl_._states_cached_byte_size_.Set(::_pbi::ToCachedSize(data_size));
+    int cached_size = ::_pbi::ToCachedSize(data_size);
+    _impl_._states_cached_byte_size_.store(cached_size,
+                                    std::memory_order_relaxed);
+    total_size += data_size;
   }
+
   // double duration = 1 [json_name = "duration"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_duration = this->_internal_duration();
-  ::uint64_t raw_duration;
+  uint64_t raw_duration;
   memcpy(&raw_duration, &tmp_duration, sizeof(tmp_duration));
   if (raw_duration != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData Phase::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Phase::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     Phase::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*Phase::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Phase::GetClassData() const { return &_class_data_; }
 
 
-void Phase::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void Phase::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<Phase*>(&to_msg);
   auto& from = static_cast<const Phase&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.map.v2.Phase)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  _this->_internal_mutable_states()->MergeFrom(from._internal_states());
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  _this->_impl_.states_.MergeFrom(from._impl_.states_);
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_duration = from._internal_duration();
-  ::uint64_t raw_duration;
+  uint64_t raw_duration;
   memcpy(&raw_duration, &tmp_duration, sizeof(tmp_duration));
   if (raw_duration != 0) {
     _this->_internal_set_duration(from._internal_duration());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void Phase::CopyFrom(const Phase& from) {
@@ -409,7 +381,7 @@ void Phase::CopyFrom(const Phase& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool Phase::IsInitialized() const {
+bool Phase::IsInitialized() const {
   return true;
 }
 
@@ -417,176 +389,187 @@ void Phase::InternalSwap(Phase* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   _impl_.states_.InternalSwap(&other->_impl_.states_);
-        swap(_impl_.duration_, other->_impl_.duration_);
+  swap(_impl_.duration_, other->_impl_.duration_);
 }
 
-::google::protobuf::Metadata Phase::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata Phase::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fmap_2fv2_2flight_2eproto_getter, &descriptor_table_city_2fmap_2fv2_2flight_2eproto_once,
       file_level_metadata_city_2fmap_2fv2_2flight_2eproto[0]);
 }
+
 // ===================================================================
 
 class AvailablePhase::_Internal {
  public:
 };
 
-AvailablePhase::AvailablePhase(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+AvailablePhase::AvailablePhase(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.map.v2.AvailablePhase)
 }
-AvailablePhase::AvailablePhase(const AvailablePhase& from) : ::google::protobuf::Message() {
-  AvailablePhase* const _this = this;
-  (void)_this;
+AvailablePhase::AvailablePhase(const AvailablePhase& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  AvailablePhase* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.states_){from._internal_states()},
-      /*decltype(_impl_._states_cached_byte_size_)*/ {0},
-      /*decltype(_impl_._cached_size_)*/ {},
-  };
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+      decltype(_impl_.states_){from._impl_.states_}
+    , /*decltype(_impl_._states_cached_byte_size_)*/{0}
+    , /*decltype(_impl_._cached_size_)*/{}};
 
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:city.map.v2.AvailablePhase)
 }
-inline void AvailablePhase::SharedCtor(::_pb::Arena* arena) {
+
+inline void AvailablePhase::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.states_){arena},
-      /*decltype(_impl_._states_cached_byte_size_)*/ {0},
-      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.states_){arena}
+    , /*decltype(_impl_._states_cached_byte_size_)*/{0}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 AvailablePhase::~AvailablePhase() {
   // @@protoc_insertion_point(destructor:city.map.v2.AvailablePhase)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void AvailablePhase::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
-  _internal_mutable_states()->~RepeatedField();
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.states_.~RepeatedField();
 }
+
 void AvailablePhase::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void AvailablePhase::Clear() {
+void AvailablePhase::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.map.v2.AvailablePhase)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _internal_mutable_states()->Clear();
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _impl_.states_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* AvailablePhase::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* AvailablePhase::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // repeated .city.map.v2.LightState states = 1 [json_name = "states"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedEnumParser(_internal_mutable_states(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<uint8_t>(tag) == 8) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_add_states(static_cast<::city::map::v2::LightState>(val));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<0, 1, 0, 0, 2> AvailablePhase::_table_ = {
-  {
-    0,  // no _has_bits_
-    0, // no _extensions_
-    1, 0,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967294,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    1,  // num_field_entries
-    0,  // num_aux_entries
-    offsetof(decltype(_table_), field_names),  // no aux_entries
-    &_AvailablePhase_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    // repeated .city.map.v2.LightState states = 1 [json_name = "states"];
-    {::_pbi::TcParser::FastV32P1,
-     {10, 63, 0, PROTOBUF_FIELD_OFFSET(AvailablePhase, _impl_.states_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // repeated .city.map.v2.LightState states = 1 [json_name = "states"];
-    {PROTOBUF_FIELD_OFFSET(AvailablePhase, _impl_.states_), 0, 0,
-    (0 | ::_fl::kFcRepeated | ::_fl::kPackedOpenEnum)},
-  }},
-  // no aux_entries
-  {{
-  }},
-};
-
-::uint8_t* AvailablePhase::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* AvailablePhase::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.map.v2.AvailablePhase)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // repeated .city.map.v2.LightState states = 1 [json_name = "states"];
   {
-    int byte_size = _impl_._states_cached_byte_size_.Get();
+    int byte_size = _impl_._states_cached_byte_size_.load(std::memory_order_relaxed);
     if (byte_size > 0) {
-      target = stream->WriteEnumPacked(1, _internal_states(),
-                                       byte_size, target);
+      target = stream->WriteEnumPacked(
+          1, _impl_.states_, byte_size, target);
     }
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.map.v2.AvailablePhase)
   return target;
 }
 
-::size_t AvailablePhase::ByteSizeLong() const {
+size_t AvailablePhase::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.map.v2.AvailablePhase)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // repeated .city.map.v2.LightState states = 1 [json_name = "states"];
   {
-    std::size_t data_size = 0;
-    auto count = static_cast<std::size_t>(this->_internal_states_size());
-
-    for (std::size_t i = 0; i < count; ++i) {
+    size_t data_size = 0;
+    unsigned int count = static_cast<unsigned int>(this->_internal_states_size());for (unsigned int i = 0; i < count; i++) {
       data_size += ::_pbi::WireFormatLite::EnumSize(
-          this->_internal_states().Get(static_cast<int>(i)));
+        this->_internal_states(static_cast<int>(i)));
     }
-    total_size += data_size;
     if (data_size > 0) {
-      total_size += 1;
-      total_size += ::_pbi::WireFormatLite::Int32Size(
-          static_cast<int32_t>(data_size));
+      total_size += 1 +
+        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
     }
-    _impl_._states_cached_byte_size_.Set(::_pbi::ToCachedSize(data_size));
+    int cached_size = ::_pbi::ToCachedSize(data_size);
+    _impl_._states_cached_byte_size_.store(cached_size,
+                                    std::memory_order_relaxed);
+    total_size += data_size;
   }
+
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData AvailablePhase::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData AvailablePhase::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     AvailablePhase::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*AvailablePhase::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*AvailablePhase::GetClassData() const { return &_class_data_; }
 
 
-void AvailablePhase::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void AvailablePhase::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<AvailablePhase*>(&to_msg);
   auto& from = static_cast<const AvailablePhase&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.map.v2.AvailablePhase)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  _this->_internal_mutable_states()->MergeFrom(from._internal_states());
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.states_.MergeFrom(from._impl_.states_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void AvailablePhase::CopyFrom(const AvailablePhase& from) {
@@ -596,7 +579,7 @@ void AvailablePhase::CopyFrom(const AvailablePhase& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool AvailablePhase::IsInitialized() const {
+bool AvailablePhase::IsInitialized() const {
   return true;
 }
 
@@ -606,185 +589,198 @@ void AvailablePhase::InternalSwap(AvailablePhase* other) {
   _impl_.states_.InternalSwap(&other->_impl_.states_);
 }
 
-::google::protobuf::Metadata AvailablePhase::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata AvailablePhase::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fmap_2fv2_2flight_2eproto_getter, &descriptor_table_city_2fmap_2fv2_2flight_2eproto_once,
       file_level_metadata_city_2fmap_2fv2_2flight_2eproto[1]);
 }
+
 // ===================================================================
 
 class TrafficLight::_Internal {
  public:
 };
 
-TrafficLight::TrafficLight(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+TrafficLight::TrafficLight(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.map.v2.TrafficLight)
 }
-TrafficLight::TrafficLight(const TrafficLight& from) : ::google::protobuf::Message() {
-  TrafficLight* const _this = this;
-  (void)_this;
+TrafficLight::TrafficLight(const TrafficLight& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  TrafficLight* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.phases_){from._impl_.phases_},
-      decltype(_impl_.junction_id_){},
-      /*decltype(_impl_._cached_size_)*/ {},
-  };
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
-  _this->_impl_.junction_id_ = from._impl_.junction_id_;
+      decltype(_impl_.phases_){from._impl_.phases_}
+    , decltype(_impl_.junction_id_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
 
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.junction_id_ = from._impl_.junction_id_;
   // @@protoc_insertion_point(copy_constructor:city.map.v2.TrafficLight)
 }
-inline void TrafficLight::SharedCtor(::_pb::Arena* arena) {
+
+inline void TrafficLight::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.phases_){arena},
-      decltype(_impl_.junction_id_){0},
-      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.phases_){arena}
+    , decltype(_impl_.junction_id_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 TrafficLight::~TrafficLight() {
   // @@protoc_insertion_point(destructor:city.map.v2.TrafficLight)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void TrafficLight::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.phases_.~RepeatedPtrField();
 }
+
 void TrafficLight::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void TrafficLight::Clear() {
+void TrafficLight::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.map.v2.TrafficLight)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _internal_mutable_phases()->Clear();
+  _impl_.phases_.Clear();
   _impl_.junction_id_ = 0;
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* TrafficLight::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* TrafficLight::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 junction_id = 1 [json_name = "junctionId"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.junction_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated .city.map.v2.Phase phases = 2 [json_name = "phases"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_phases(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<1, 2, 1, 0, 2> TrafficLight::_table_ = {
-  {
-    0,  // no _has_bits_
-    0, // no _extensions_
-    2, 8,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967292,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    2,  // num_field_entries
-    1,  // num_aux_entries
-    offsetof(decltype(_table_), aux_entries),
-    &_TrafficLight_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    // repeated .city.map.v2.Phase phases = 2 [json_name = "phases"];
-    {::_pbi::TcParser::FastMtR1,
-     {18, 63, 0, PROTOBUF_FIELD_OFFSET(TrafficLight, _impl_.phases_)}},
-    // int32 junction_id = 1 [json_name = "junctionId"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(TrafficLight, _impl_.junction_id_), 63>(),
-     {8, 63, 0, PROTOBUF_FIELD_OFFSET(TrafficLight, _impl_.junction_id_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // int32 junction_id = 1 [json_name = "junctionId"];
-    {PROTOBUF_FIELD_OFFSET(TrafficLight, _impl_.junction_id_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-    // repeated .city.map.v2.Phase phases = 2 [json_name = "phases"];
-    {PROTOBUF_FIELD_OFFSET(TrafficLight, _impl_.phases_), 0, 0,
-    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
-  }}, {{
-    {::_pbi::TcParser::GetTable<::city::map::v2::Phase>()},
-  }}, {{
-  }},
-};
-
-::uint8_t* TrafficLight::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* TrafficLight::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.map.v2.TrafficLight)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // int32 junction_id = 1 [json_name = "junctionId"];
   if (this->_internal_junction_id() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<1>(
-            stream, this->_internal_junction_id(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_junction_id(), target);
   }
 
   // repeated .city.map.v2.Phase phases = 2 [json_name = "phases"];
   for (unsigned i = 0,
       n = static_cast<unsigned>(this->_internal_phases_size()); i < n; i++) {
-    const auto& repfield = this->_internal_phases().Get(i);
-    target = ::google::protobuf::internal::WireFormatLite::
+    const auto& repfield = this->_internal_phases(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
         InternalWriteMessage(2, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.map.v2.TrafficLight)
   return target;
 }
 
-::size_t TrafficLight::ByteSizeLong() const {
+size_t TrafficLight::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.map.v2.TrafficLight)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // repeated .city.map.v2.Phase phases = 2 [json_name = "phases"];
   total_size += 1UL * this->_internal_phases_size();
-  for (const auto& msg : this->_internal_phases()) {
+  for (const auto& msg : this->_impl_.phases_) {
     total_size +=
-      ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
+
   // int32 junction_id = 1 [json_name = "junctionId"];
   if (this->_internal_junction_id() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_junction_id());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_junction_id());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData TrafficLight::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData TrafficLight::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     TrafficLight::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*TrafficLight::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*TrafficLight::GetClassData() const { return &_class_data_; }
 
 
-void TrafficLight::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void TrafficLight::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<TrafficLight*>(&to_msg);
   auto& from = static_cast<const TrafficLight&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.map.v2.TrafficLight)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  _this->_internal_mutable_phases()->MergeFrom(from._internal_phases());
+  _this->_impl_.phases_.MergeFrom(from._impl_.phases_);
   if (from._internal_junction_id() != 0) {
     _this->_internal_set_junction_id(from._internal_junction_id());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void TrafficLight::CopyFrom(const TrafficLight& from) {
@@ -794,7 +790,7 @@ void TrafficLight::CopyFrom(const TrafficLight& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool TrafficLight::IsInitialized() const {
+bool TrafficLight::IsInitialized() const {
   return true;
 }
 
@@ -802,21 +798,33 @@ void TrafficLight::InternalSwap(TrafficLight* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   _impl_.phases_.InternalSwap(&other->_impl_.phases_);
-        swap(_impl_.junction_id_, other->_impl_.junction_id_);
+  swap(_impl_.junction_id_, other->_impl_.junction_id_);
 }
 
-::google::protobuf::Metadata TrafficLight::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata TrafficLight::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fmap_2fv2_2flight_2eproto_getter, &descriptor_table_city_2fmap_2fv2_2flight_2eproto_once,
       file_level_metadata_city_2fmap_2fv2_2flight_2eproto[2]);
 }
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace v2
 }  // namespace map
 }  // namespace city
-namespace google {
-namespace protobuf {
-}  // namespace protobuf
-}  // namespace google
+PROTOBUF_NAMESPACE_OPEN
+template<> PROTOBUF_NOINLINE ::city::map::v2::Phase*
+Arena::CreateMaybeMessage< ::city::map::v2::Phase >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::map::v2::Phase >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::map::v2::AvailablePhase*
+Arena::CreateMaybeMessage< ::city::map::v2::AvailablePhase >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::map::v2::AvailablePhase >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::map::v2::TrafficLight*
+Arena::CreateMaybeMessage< ::city::map::v2::TrafficLight >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::map::v2::TrafficLight >(arena);
+}
+PROTOBUF_NAMESPACE_CLOSE
+
 // @@protoc_insertion_point(global_scope)
-#include "google/protobuf/port_undef.inc"
+#include <google/protobuf/port_undef.inc>

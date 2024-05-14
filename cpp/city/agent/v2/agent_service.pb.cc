@@ -4,490 +4,432 @@
 #include "city/agent/v2/agent_service.pb.h"
 
 #include <algorithm>
-#include "google/protobuf/io/coded_stream.h"
-#include "google/protobuf/extension_set.h"
-#include "google/protobuf/wire_format_lite.h"
-#include "google/protobuf/descriptor.h"
-#include "google/protobuf/generated_message_reflection.h"
-#include "google/protobuf/reflection_ops.h"
-#include "google/protobuf/wire_format.h"
-#include "google/protobuf/generated_message_tctable_impl.h"
-// @@protoc_insertion_point(includes)
 
-// Must be included last.
-#include "google/protobuf/port_def.inc"
+#include <google/protobuf/io/coded_stream.h>
+#include <google/protobuf/extension_set.h>
+#include <google/protobuf/wire_format_lite.h>
+#include <google/protobuf/descriptor.h>
+#include <google/protobuf/generated_message_reflection.h>
+#include <google/protobuf/reflection_ops.h>
+#include <google/protobuf/wire_format.h>
+// @@protoc_insertion_point(includes)
+#include <google/protobuf/port_def.inc>
+
 PROTOBUF_PRAGMA_INIT_SEG
-namespace _pb = ::google::protobuf;
-namespace _pbi = ::google::protobuf::internal;
-namespace _fl = ::google::protobuf::internal::field_layout;
+
+namespace _pb = ::PROTOBUF_NAMESPACE_ID;
+namespace _pbi = _pb::internal;
+
 namespace city {
 namespace agent {
 namespace v2 {
-        template <typename>
-PROTOBUF_CONSTEXPR GetAgentRequest::GetAgentRequest(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_.agent_id_)*/ 0,
-      /*decltype(_impl_._cached_size_)*/ {},
-    } {}
+PROTOBUF_CONSTEXPR GetAgentRequest::GetAgentRequest(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.agent_id_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct GetAgentRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR GetAgentRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR GetAgentRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~GetAgentRequestDefaultTypeInternal() {}
   union {
     GetAgentRequest _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetAgentRequestDefaultTypeInternal _GetAgentRequest_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR GetAgentResponse::GetAgentResponse(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_._has_bits_)*/ {},
-      /*decltype(_impl_._cached_size_)*/ {},
-      /*decltype(_impl_.base_)*/ nullptr,
-      /*decltype(_impl_.motion_)*/ nullptr,
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetAgentRequestDefaultTypeInternal _GetAgentRequest_default_instance_;
+PROTOBUF_CONSTEXPR GetAgentResponse::GetAgentResponse(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.base_)*/nullptr
+  , /*decltype(_impl_.motion_)*/nullptr
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct GetAgentResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR GetAgentResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR GetAgentResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~GetAgentResponseDefaultTypeInternal() {}
   union {
     GetAgentResponse _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetAgentResponseDefaultTypeInternal _GetAgentResponse_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR AddAgentRequest::AddAgentRequest(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_._has_bits_)*/ {},
-      /*decltype(_impl_._cached_size_)*/ {},
-      /*decltype(_impl_.agent_)*/ nullptr,
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetAgentResponseDefaultTypeInternal _GetAgentResponse_default_instance_;
+PROTOBUF_CONSTEXPR AddAgentRequest::AddAgentRequest(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.agent_)*/nullptr
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct AddAgentRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR AddAgentRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR AddAgentRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~AddAgentRequestDefaultTypeInternal() {}
   union {
     AddAgentRequest _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 AddAgentRequestDefaultTypeInternal _AddAgentRequest_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR AddAgentResponse::AddAgentResponse(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_.agent_id_)*/ 0,
-      /*decltype(_impl_._cached_size_)*/ {},
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 AddAgentRequestDefaultTypeInternal _AddAgentRequest_default_instance_;
+PROTOBUF_CONSTEXPR AddAgentResponse::AddAgentResponse(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.agent_id_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct AddAgentResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR AddAgentResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR AddAgentResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~AddAgentResponseDefaultTypeInternal() {}
   union {
     AddAgentResponse _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 AddAgentResponseDefaultTypeInternal _AddAgentResponse_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR SetScheduleRequest::SetScheduleRequest(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_.schedules_)*/ {},
-      /*decltype(_impl_.agent_id_)*/ 0,
-      /*decltype(_impl_._cached_size_)*/ {},
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 AddAgentResponseDefaultTypeInternal _AddAgentResponse_default_instance_;
+PROTOBUF_CONSTEXPR SetScheduleRequest::SetScheduleRequest(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.schedules_)*/{}
+  , /*decltype(_impl_.agent_id_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct SetScheduleRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR SetScheduleRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR SetScheduleRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~SetScheduleRequestDefaultTypeInternal() {}
   union {
     SetScheduleRequest _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SetScheduleRequestDefaultTypeInternal _SetScheduleRequest_default_instance_;
-      template <typename>
-PROTOBUF_CONSTEXPR SetScheduleResponse::SetScheduleResponse(::_pbi::ConstantInitialized) {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SetScheduleRequestDefaultTypeInternal _SetScheduleRequest_default_instance_;
+PROTOBUF_CONSTEXPR SetScheduleResponse::SetScheduleResponse(
+    ::_pbi::ConstantInitialized) {}
 struct SetScheduleResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR SetScheduleResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR SetScheduleResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~SetScheduleResponseDefaultTypeInternal() {}
   union {
     SetScheduleResponse _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SetScheduleResponseDefaultTypeInternal _SetScheduleResponse_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR GetAgentsByLongLatAreaRequest::GetAgentsByLongLatAreaRequest(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_._has_bits_)*/ {},
-      /*decltype(_impl_._cached_size_)*/ {},
-      /*decltype(_impl_.area_)*/ nullptr,
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SetScheduleResponseDefaultTypeInternal _SetScheduleResponse_default_instance_;
+PROTOBUF_CONSTEXPR GetAgentsByLongLatAreaRequest::GetAgentsByLongLatAreaRequest(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.area_)*/nullptr
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct GetAgentsByLongLatAreaRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR GetAgentsByLongLatAreaRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR GetAgentsByLongLatAreaRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~GetAgentsByLongLatAreaRequestDefaultTypeInternal() {}
   union {
     GetAgentsByLongLatAreaRequest _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetAgentsByLongLatAreaRequestDefaultTypeInternal _GetAgentsByLongLatAreaRequest_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR GetAgentsByLongLatAreaResponse::GetAgentsByLongLatAreaResponse(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_.motions_)*/ {},
-      /*decltype(_impl_.step_)*/ 0,
-      /*decltype(_impl_._cached_size_)*/ {},
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetAgentsByLongLatAreaRequestDefaultTypeInternal _GetAgentsByLongLatAreaRequest_default_instance_;
+PROTOBUF_CONSTEXPR GetAgentsByLongLatAreaResponse::GetAgentsByLongLatAreaResponse(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.motions_)*/{}
+  , /*decltype(_impl_.step_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct GetAgentsByLongLatAreaResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR GetAgentsByLongLatAreaResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR GetAgentsByLongLatAreaResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~GetAgentsByLongLatAreaResponseDefaultTypeInternal() {}
   union {
     GetAgentsByLongLatAreaResponse _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetAgentsByLongLatAreaResponseDefaultTypeInternal _GetAgentsByLongLatAreaResponse_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetAgentsByLongLatAreaResponseDefaultTypeInternal _GetAgentsByLongLatAreaResponse_default_instance_;
 }  // namespace v2
 }  // namespace agent
 }  // namespace city
 static ::_pb::Metadata file_level_metadata_city_2fagent_2fv2_2fagent_5fservice_2eproto[8];
-static constexpr const ::_pb::EnumDescriptor**
-    file_level_enum_descriptors_city_2fagent_2fv2_2fagent_5fservice_2eproto = nullptr;
-static constexpr const ::_pb::ServiceDescriptor**
-    file_level_service_descriptors_city_2fagent_2fv2_2fagent_5fservice_2eproto = nullptr;
-const ::uint32_t TableStruct_city_2fagent_2fv2_2fagent_5fservice_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
-    protodesc_cold) = {
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::agent::v2::GetAgentRequest, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::agent::v2::GetAgentRequest, _impl_.agent_id_),
-    PROTOBUF_FIELD_OFFSET(::city::agent::v2::GetAgentResponse, _impl_._has_bits_),
-    PROTOBUF_FIELD_OFFSET(::city::agent::v2::GetAgentResponse, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::agent::v2::GetAgentResponse, _impl_.base_),
-    PROTOBUF_FIELD_OFFSET(::city::agent::v2::GetAgentResponse, _impl_.motion_),
-    0,
-    1,
-    PROTOBUF_FIELD_OFFSET(::city::agent::v2::AddAgentRequest, _impl_._has_bits_),
-    PROTOBUF_FIELD_OFFSET(::city::agent::v2::AddAgentRequest, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::agent::v2::AddAgentRequest, _impl_.agent_),
-    0,
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::agent::v2::AddAgentResponse, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::agent::v2::AddAgentResponse, _impl_.agent_id_),
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::agent::v2::SetScheduleRequest, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::agent::v2::SetScheduleRequest, _impl_.agent_id_),
-    PROTOBUF_FIELD_OFFSET(::city::agent::v2::SetScheduleRequest, _impl_.schedules_),
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::agent::v2::SetScheduleResponse, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::agent::v2::GetAgentsByLongLatAreaRequest, _impl_._has_bits_),
-    PROTOBUF_FIELD_OFFSET(::city::agent::v2::GetAgentsByLongLatAreaRequest, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::agent::v2::GetAgentsByLongLatAreaRequest, _impl_.area_),
-    0,
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::agent::v2::GetAgentsByLongLatAreaResponse, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::agent::v2::GetAgentsByLongLatAreaResponse, _impl_.step_),
-    PROTOBUF_FIELD_OFFSET(::city::agent::v2::GetAgentsByLongLatAreaResponse, _impl_.motions_),
-};
+static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_city_2fagent_2fv2_2fagent_5fservice_2eproto = nullptr;
+static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_city_2fagent_2fv2_2fagent_5fservice_2eproto = nullptr;
 
-static const ::_pbi::MigrationSchema
-    schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-        {0, -1, -1, sizeof(::city::agent::v2::GetAgentRequest)},
-        {9, 19, -1, sizeof(::city::agent::v2::GetAgentResponse)},
-        {21, 30, -1, sizeof(::city::agent::v2::AddAgentRequest)},
-        {31, -1, -1, sizeof(::city::agent::v2::AddAgentResponse)},
-        {40, -1, -1, sizeof(::city::agent::v2::SetScheduleRequest)},
-        {50, -1, -1, sizeof(::city::agent::v2::SetScheduleResponse)},
-        {58, 67, -1, sizeof(::city::agent::v2::GetAgentsByLongLatAreaRequest)},
-        {68, -1, -1, sizeof(::city::agent::v2::GetAgentsByLongLatAreaResponse)},
+const uint32_t TableStruct_city_2fagent_2fv2_2fagent_5fservice_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::agent::v2::GetAgentRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::agent::v2::GetAgentRequest, _impl_.agent_id_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::agent::v2::GetAgentResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::agent::v2::GetAgentResponse, _impl_.base_),
+  PROTOBUF_FIELD_OFFSET(::city::agent::v2::GetAgentResponse, _impl_.motion_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::agent::v2::AddAgentRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::agent::v2::AddAgentRequest, _impl_.agent_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::agent::v2::AddAgentResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::agent::v2::AddAgentResponse, _impl_.agent_id_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::agent::v2::SetScheduleRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::agent::v2::SetScheduleRequest, _impl_.agent_id_),
+  PROTOBUF_FIELD_OFFSET(::city::agent::v2::SetScheduleRequest, _impl_.schedules_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::agent::v2::SetScheduleResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::agent::v2::GetAgentsByLongLatAreaRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::agent::v2::GetAgentsByLongLatAreaRequest, _impl_.area_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::agent::v2::GetAgentsByLongLatAreaResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::agent::v2::GetAgentsByLongLatAreaResponse, _impl_.step_),
+  PROTOBUF_FIELD_OFFSET(::city::agent::v2::GetAgentsByLongLatAreaResponse, _impl_.motions_),
+};
+static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  { 0, -1, -1, sizeof(::city::agent::v2::GetAgentRequest)},
+  { 7, -1, -1, sizeof(::city::agent::v2::GetAgentResponse)},
+  { 15, -1, -1, sizeof(::city::agent::v2::AddAgentRequest)},
+  { 22, -1, -1, sizeof(::city::agent::v2::AddAgentResponse)},
+  { 29, -1, -1, sizeof(::city::agent::v2::SetScheduleRequest)},
+  { 37, -1, -1, sizeof(::city::agent::v2::SetScheduleResponse)},
+  { 43, -1, -1, sizeof(::city::agent::v2::GetAgentsByLongLatAreaRequest)},
+  { 50, -1, -1, sizeof(::city::agent::v2::GetAgentsByLongLatAreaResponse)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
-    &::city::agent::v2::_GetAgentRequest_default_instance_._instance,
-    &::city::agent::v2::_GetAgentResponse_default_instance_._instance,
-    &::city::agent::v2::_AddAgentRequest_default_instance_._instance,
-    &::city::agent::v2::_AddAgentResponse_default_instance_._instance,
-    &::city::agent::v2::_SetScheduleRequest_default_instance_._instance,
-    &::city::agent::v2::_SetScheduleResponse_default_instance_._instance,
-    &::city::agent::v2::_GetAgentsByLongLatAreaRequest_default_instance_._instance,
-    &::city::agent::v2::_GetAgentsByLongLatAreaResponse_default_instance_._instance,
-};
-const char descriptor_table_protodef_city_2fagent_2fv2_2fagent_5fservice_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-    "\n!city/agent/v2/agent_service.proto\022\rcit"
-    "y.agent.v2\032\031city/agent/v2/agent.proto\032\032c"
-    "ity/agent/v2/motion.proto\032\025city/geo/v2/g"
-    "eo.proto\032\027city/trip/v2/trip.proto\",\n\017Get"
-    "AgentRequest\022\031\n\010agent_id\030\001 \001(\005R\007agentId\""
-    "p\n\020GetAgentResponse\022(\n\004base\030\001 \001(\0132\024.city"
-    ".agent.v2.AgentR\004base\0222\n\006motion\030\002 \001(\0132\032."
-    "city.agent.v2.AgentMotionR\006motion\"=\n\017Add"
-    "AgentRequest\022*\n\005agent\030\001 \001(\0132\024.city.agent"
-    ".v2.AgentR\005agent\"-\n\020AddAgentResponse\022\031\n\010"
-    "agent_id\030\001 \001(\005R\007agentId\"e\n\022SetScheduleRe"
-    "quest\022\031\n\010agent_id\030\001 \001(\005R\007agentId\0224\n\tsche"
-    "dules\030\002 \003(\0132\026.city.trip.v2.ScheduleR\tsch"
-    "edules\"\025\n\023SetScheduleResponse\"M\n\035GetAgen"
-    "tsByLongLatAreaRequest\022,\n\004area\030\001 \001(\0132\030.c"
-    "ity.geo.v2.LongLatBBoxR\004area\"j\n\036GetAgent"
-    "sByLongLatAreaResponse\022\022\n\004step\030\001 \001(\005R\004st"
-    "ep\0224\n\007motions\030\002 \003(\0132\032.city.agent.v2.Agen"
-    "tMotionR\007motions2\211\003\n\014AgentService\022P\n\010Get"
-    "Agent\022\036.city.agent.v2.GetAgentRequest\032\037."
-    "city.agent.v2.GetAgentResponse\"\003\210\002\001\022P\n\010A"
-    "ddAgent\022\036.city.agent.v2.AddAgentRequest\032"
-    "\037.city.agent.v2.AddAgentResponse\"\003\210\002\001\022Y\n"
-    "\013SetSchedule\022!.city.agent.v2.SetSchedule"
-    "Request\032\".city.agent.v2.SetScheduleRespo"
-    "nse\"\003\210\002\001\022z\n\026GetAgentsByLongLatArea\022,.cit"
-    "y.agent.v2.GetAgentsByLongLatAreaRequest"
-    "\032-.city.agent.v2.GetAgentsByLongLatAreaR"
-    "esponse\"\003\210\002\001B\260\001\n\021com.city.agent.v2B\021Agen"
-    "tServiceProtoP\001Z2git.fiblab.net/sim/prot"
-    "os/go/city/agent/v2;agentv2\242\002\003CAX\252\002\rCity"
-    ".Agent.V2\312\002\rCity\\Agent\\V2\342\002\031City\\Agent\\V"
-    "2\\GPBMetadata\352\002\017City::Agent::V2b\006proto3"
-};
-static const ::_pbi::DescriptorTable* const descriptor_table_city_2fagent_2fv2_2fagent_5fservice_2eproto_deps[4] =
-    {
-        &::descriptor_table_city_2fagent_2fv2_2fagent_2eproto,
-        &::descriptor_table_city_2fagent_2fv2_2fmotion_2eproto,
-        &::descriptor_table_city_2fgeo_2fv2_2fgeo_2eproto,
-        &::descriptor_table_city_2ftrip_2fv2_2ftrip_2eproto,
-};
-static ::absl::once_flag descriptor_table_city_2fagent_2fv2_2fagent_5fservice_2eproto_once;
-const ::_pbi::DescriptorTable descriptor_table_city_2fagent_2fv2_2fagent_5fservice_2eproto = {
-    false,
-    false,
-    1319,
-    descriptor_table_protodef_city_2fagent_2fv2_2fagent_5fservice_2eproto,
-    "city/agent/v2/agent_service.proto",
-    &descriptor_table_city_2fagent_2fv2_2fagent_5fservice_2eproto_once,
-    descriptor_table_city_2fagent_2fv2_2fagent_5fservice_2eproto_deps,
-    4,
-    8,
-    schemas,
-    file_default_instances,
-    TableStruct_city_2fagent_2fv2_2fagent_5fservice_2eproto::offsets,
-    file_level_metadata_city_2fagent_2fv2_2fagent_5fservice_2eproto,
-    file_level_enum_descriptors_city_2fagent_2fv2_2fagent_5fservice_2eproto,
-    file_level_service_descriptors_city_2fagent_2fv2_2fagent_5fservice_2eproto,
+  &::city::agent::v2::_GetAgentRequest_default_instance_._instance,
+  &::city::agent::v2::_GetAgentResponse_default_instance_._instance,
+  &::city::agent::v2::_AddAgentRequest_default_instance_._instance,
+  &::city::agent::v2::_AddAgentResponse_default_instance_._instance,
+  &::city::agent::v2::_SetScheduleRequest_default_instance_._instance,
+  &::city::agent::v2::_SetScheduleResponse_default_instance_._instance,
+  &::city::agent::v2::_GetAgentsByLongLatAreaRequest_default_instance_._instance,
+  &::city::agent::v2::_GetAgentsByLongLatAreaResponse_default_instance_._instance,
 };
 
-// This function exists to be marked as weak.
-// It can significantly speed up compilation by breaking up LLVM's SCC
-// in the .pb.cc translation units. Large translation units see a
-// reduction of more than 35% of walltime for optimized builds. Without
-// the weak attribute all the messages in the file, including all the
-// vtables and everything they use become part of the same SCC through
-// a cycle like:
-// GetMetadata -> descriptor table -> default instances ->
-//   vtables -> GetMetadata
-// By adding a weak function here we break the connection from the
-// individual vtables back into the descriptor table.
+const char descriptor_table_protodef_city_2fagent_2fv2_2fagent_5fservice_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
+  "\n!city/agent/v2/agent_service.proto\022\rcit"
+  "y.agent.v2\032\031city/agent/v2/agent.proto\032\032c"
+  "ity/agent/v2/motion.proto\032\025city/geo/v2/g"
+  "eo.proto\032\027city/trip/v2/trip.proto\",\n\017Get"
+  "AgentRequest\022\031\n\010agent_id\030\001 \001(\005R\007agentId\""
+  "p\n\020GetAgentResponse\022(\n\004base\030\001 \001(\0132\024.city"
+  ".agent.v2.AgentR\004base\0222\n\006motion\030\002 \001(\0132\032."
+  "city.agent.v2.AgentMotionR\006motion\"=\n\017Add"
+  "AgentRequest\022*\n\005agent\030\001 \001(\0132\024.city.agent"
+  ".v2.AgentR\005agent\"-\n\020AddAgentResponse\022\031\n\010"
+  "agent_id\030\001 \001(\005R\007agentId\"e\n\022SetScheduleRe"
+  "quest\022\031\n\010agent_id\030\001 \001(\005R\007agentId\0224\n\tsche"
+  "dules\030\002 \003(\0132\026.city.trip.v2.ScheduleR\tsch"
+  "edules\"\025\n\023SetScheduleResponse\"M\n\035GetAgen"
+  "tsByLongLatAreaRequest\022,\n\004area\030\001 \001(\0132\030.c"
+  "ity.geo.v2.LongLatBBoxR\004area\"j\n\036GetAgent"
+  "sByLongLatAreaResponse\022\022\n\004step\030\001 \001(\005R\004st"
+  "ep\0224\n\007motions\030\002 \003(\0132\032.city.agent.v2.Agen"
+  "tMotionR\007motions2\211\003\n\014AgentService\022P\n\010Get"
+  "Agent\022\036.city.agent.v2.GetAgentRequest\032\037."
+  "city.agent.v2.GetAgentResponse\"\003\210\002\001\022P\n\010A"
+  "ddAgent\022\036.city.agent.v2.AddAgentRequest\032"
+  "\037.city.agent.v2.AddAgentResponse\"\003\210\002\001\022Y\n"
+  "\013SetSchedule\022!.city.agent.v2.SetSchedule"
+  "Request\032\".city.agent.v2.SetScheduleRespo"
+  "nse\"\003\210\002\001\022z\n\026GetAgentsByLongLatArea\022,.cit"
+  "y.agent.v2.GetAgentsByLongLatAreaRequest"
+  "\032-.city.agent.v2.GetAgentsByLongLatAreaR"
+  "esponse\"\003\210\002\001B\260\001\n\021com.city.agent.v2B\021Agen"
+  "tServiceProtoP\001Z2git.fiblab.net/sim/prot"
+  "os/go/city/agent/v2;agentv2\242\002\003CAX\252\002\rCity"
+  ".Agent.V2\312\002\rCity\\Agent\\V2\342\002\031City\\Agent\\V"
+  "2\\GPBMetadata\352\002\017City::Agent::V2b\006proto3"
+  ;
+static const ::_pbi::DescriptorTable* const descriptor_table_city_2fagent_2fv2_2fagent_5fservice_2eproto_deps[4] = {
+  &::descriptor_table_city_2fagent_2fv2_2fagent_2eproto,
+  &::descriptor_table_city_2fagent_2fv2_2fmotion_2eproto,
+  &::descriptor_table_city_2fgeo_2fv2_2fgeo_2eproto,
+  &::descriptor_table_city_2ftrip_2fv2_2ftrip_2eproto,
+};
+static ::_pbi::once_flag descriptor_table_city_2fagent_2fv2_2fagent_5fservice_2eproto_once;
+const ::_pbi::DescriptorTable descriptor_table_city_2fagent_2fv2_2fagent_5fservice_2eproto = {
+    false, false, 1319, descriptor_table_protodef_city_2fagent_2fv2_2fagent_5fservice_2eproto,
+    "city/agent/v2/agent_service.proto",
+    &descriptor_table_city_2fagent_2fv2_2fagent_5fservice_2eproto_once, descriptor_table_city_2fagent_2fv2_2fagent_5fservice_2eproto_deps, 4, 8,
+    schemas, file_default_instances, TableStruct_city_2fagent_2fv2_2fagent_5fservice_2eproto::offsets,
+    file_level_metadata_city_2fagent_2fv2_2fagent_5fservice_2eproto, file_level_enum_descriptors_city_2fagent_2fv2_2fagent_5fservice_2eproto,
+    file_level_service_descriptors_city_2fagent_2fv2_2fagent_5fservice_2eproto,
+};
 PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_city_2fagent_2fv2_2fagent_5fservice_2eproto_getter() {
   return &descriptor_table_city_2fagent_2fv2_2fagent_5fservice_2eproto;
 }
+
 // Force running AddDescriptors() at dynamic initialization time.
-PROTOBUF_ATTRIBUTE_INIT_PRIORITY2
-static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_city_2fagent_2fv2_2fagent_5fservice_2eproto(&descriptor_table_city_2fagent_2fv2_2fagent_5fservice_2eproto);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_city_2fagent_2fv2_2fagent_5fservice_2eproto(&descriptor_table_city_2fagent_2fv2_2fagent_5fservice_2eproto);
 namespace city {
 namespace agent {
 namespace v2 {
+
 // ===================================================================
 
 class GetAgentRequest::_Internal {
  public:
 };
 
-GetAgentRequest::GetAgentRequest(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+GetAgentRequest::GetAgentRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.agent.v2.GetAgentRequest)
 }
 GetAgentRequest::GetAgentRequest(const GetAgentRequest& from)
-    : ::google::protobuf::Message(), _impl_(from._impl_) {
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  GetAgentRequest* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.agent_id_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.agent_id_ = from._impl_.agent_id_;
   // @@protoc_insertion_point(copy_constructor:city.agent.v2.GetAgentRequest)
 }
-inline void GetAgentRequest::SharedCtor(::_pb::Arena* arena) {
+
+inline void GetAgentRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.agent_id_){0},
-      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.agent_id_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 GetAgentRequest::~GetAgentRequest() {
   // @@protoc_insertion_point(destructor:city.agent.v2.GetAgentRequest)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void GetAgentRequest::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
+
 void GetAgentRequest::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void GetAgentRequest::Clear() {
+void GetAgentRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.agent.v2.GetAgentRequest)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   _impl_.agent_id_ = 0;
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* GetAgentRequest::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* GetAgentRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 agent_id = 1 [json_name = "agentId"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.agent_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<0, 1, 0, 0, 2> GetAgentRequest::_table_ = {
-  {
-    0,  // no _has_bits_
-    0, // no _extensions_
-    1, 0,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967294,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    1,  // num_field_entries
-    0,  // num_aux_entries
-    offsetof(decltype(_table_), field_names),  // no aux_entries
-    &_GetAgentRequest_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    // int32 agent_id = 1 [json_name = "agentId"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(GetAgentRequest, _impl_.agent_id_), 63>(),
-     {8, 63, 0, PROTOBUF_FIELD_OFFSET(GetAgentRequest, _impl_.agent_id_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // int32 agent_id = 1 [json_name = "agentId"];
-    {PROTOBUF_FIELD_OFFSET(GetAgentRequest, _impl_.agent_id_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-  }},
-  // no aux_entries
-  {{
-  }},
-};
-
-::uint8_t* GetAgentRequest::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* GetAgentRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.agent.v2.GetAgentRequest)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // int32 agent_id = 1 [json_name = "agentId"];
   if (this->_internal_agent_id() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<1>(
-            stream, this->_internal_agent_id(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_agent_id(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.agent.v2.GetAgentRequest)
   return target;
 }
 
-::size_t GetAgentRequest::ByteSizeLong() const {
+size_t GetAgentRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.agent.v2.GetAgentRequest)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // int32 agent_id = 1 [json_name = "agentId"];
   if (this->_internal_agent_id() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_agent_id());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_agent_id());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData GetAgentRequest::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetAgentRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     GetAgentRequest::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*GetAgentRequest::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetAgentRequest::GetClassData() const { return &_class_data_; }
 
 
-void GetAgentRequest::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void GetAgentRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<GetAgentRequest*>(&to_msg);
   auto& from = static_cast<const GetAgentRequest&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.agent.v2.GetAgentRequest)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_agent_id() != 0) {
     _this->_internal_set_agent_id(from._internal_agent_id());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void GetAgentRequest::CopyFrom(const GetAgentRequest& from) {
@@ -497,251 +439,243 @@ void GetAgentRequest::CopyFrom(const GetAgentRequest& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool GetAgentRequest::IsInitialized() const {
+bool GetAgentRequest::IsInitialized() const {
   return true;
 }
 
 void GetAgentRequest::InternalSwap(GetAgentRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-        swap(_impl_.agent_id_, other->_impl_.agent_id_);
+  swap(_impl_.agent_id_, other->_impl_.agent_id_);
 }
 
-::google::protobuf::Metadata GetAgentRequest::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata GetAgentRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fagent_2fv2_2fagent_5fservice_2eproto_getter, &descriptor_table_city_2fagent_2fv2_2fagent_5fservice_2eproto_once,
       file_level_metadata_city_2fagent_2fv2_2fagent_5fservice_2eproto[0]);
 }
+
 // ===================================================================
 
 class GetAgentResponse::_Internal {
  public:
-  using HasBits = decltype(std::declval<GetAgentResponse>()._impl_._has_bits_);
-  static constexpr ::int32_t kHasBitsOffset =
-    8 * PROTOBUF_FIELD_OFFSET(GetAgentResponse, _impl_._has_bits_);
   static const ::city::agent::v2::Agent& base(const GetAgentResponse* msg);
-  static void set_has_base(HasBits* has_bits) {
-    (*has_bits)[0] |= 1u;
-  }
   static const ::city::agent::v2::AgentMotion& motion(const GetAgentResponse* msg);
-  static void set_has_motion(HasBits* has_bits) {
-    (*has_bits)[0] |= 2u;
-  }
 };
 
-const ::city::agent::v2::Agent& GetAgentResponse::_Internal::base(const GetAgentResponse* msg) {
+const ::city::agent::v2::Agent&
+GetAgentResponse::_Internal::base(const GetAgentResponse* msg) {
   return *msg->_impl_.base_;
 }
-const ::city::agent::v2::AgentMotion& GetAgentResponse::_Internal::motion(const GetAgentResponse* msg) {
+const ::city::agent::v2::AgentMotion&
+GetAgentResponse::_Internal::motion(const GetAgentResponse* msg) {
   return *msg->_impl_.motion_;
 }
 void GetAgentResponse::clear_base() {
-  if (_impl_.base_ != nullptr) _impl_.base_->Clear();
-  _impl_._has_bits_[0] &= ~0x00000001u;
+  if (GetArenaForAllocation() == nullptr && _impl_.base_ != nullptr) {
+    delete _impl_.base_;
+  }
+  _impl_.base_ = nullptr;
 }
 void GetAgentResponse::clear_motion() {
-  if (_impl_.motion_ != nullptr) _impl_.motion_->Clear();
-  _impl_._has_bits_[0] &= ~0x00000002u;
+  if (GetArenaForAllocation() == nullptr && _impl_.motion_ != nullptr) {
+    delete _impl_.motion_;
+  }
+  _impl_.motion_ = nullptr;
 }
-GetAgentResponse::GetAgentResponse(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+GetAgentResponse::GetAgentResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.agent.v2.GetAgentResponse)
 }
-GetAgentResponse::GetAgentResponse(const GetAgentResponse& from) : ::google::protobuf::Message() {
-  GetAgentResponse* const _this = this;
-  (void)_this;
+GetAgentResponse::GetAgentResponse(const GetAgentResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  GetAgentResponse* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){from._impl_._has_bits_},
-      /*decltype(_impl_._cached_size_)*/ {},
-      decltype(_impl_.base_){nullptr},
-      decltype(_impl_.motion_){nullptr},
-  };
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
-  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+      decltype(_impl_.base_){nullptr}
+    , decltype(_impl_.motion_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  if (from._internal_has_base()) {
     _this->_impl_.base_ = new ::city::agent::v2::Agent(*from._impl_.base_);
   }
-  if ((from._impl_._has_bits_[0] & 0x00000002u) != 0) {
+  if (from._internal_has_motion()) {
     _this->_impl_.motion_ = new ::city::agent::v2::AgentMotion(*from._impl_.motion_);
   }
-
   // @@protoc_insertion_point(copy_constructor:city.agent.v2.GetAgentResponse)
 }
-inline void GetAgentResponse::SharedCtor(::_pb::Arena* arena) {
+
+inline void GetAgentResponse::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){},
-      /*decltype(_impl_._cached_size_)*/ {},
-      decltype(_impl_.base_){nullptr},
-      decltype(_impl_.motion_){nullptr},
+      decltype(_impl_.base_){nullptr}
+    , decltype(_impl_.motion_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 GetAgentResponse::~GetAgentResponse() {
   // @@protoc_insertion_point(destructor:city.agent.v2.GetAgentResponse)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void GetAgentResponse::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete _impl_.base_;
   if (this != internal_default_instance()) delete _impl_.motion_;
 }
+
 void GetAgentResponse::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void GetAgentResponse::Clear() {
+void GetAgentResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.agent.v2.GetAgentResponse)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000003u) {
-    if (cached_has_bits & 0x00000001u) {
-      ABSL_DCHECK(_impl_.base_ != nullptr);
-      _impl_.base_->Clear();
-    }
-    if (cached_has_bits & 0x00000002u) {
-      ABSL_DCHECK(_impl_.motion_ != nullptr);
-      _impl_.motion_->Clear();
-    }
+  if (GetArenaForAllocation() == nullptr && _impl_.base_ != nullptr) {
+    delete _impl_.base_;
   }
-  _impl_._has_bits_.Clear();
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _impl_.base_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.motion_ != nullptr) {
+    delete _impl_.motion_;
+  }
+  _impl_.motion_ = nullptr;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* GetAgentResponse::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* GetAgentResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // .city.agent.v2.Agent base = 1 [json_name = "base"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_base(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .city.agent.v2.AgentMotion motion = 2 [json_name = "motion"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr = ctx->ParseMessage(_internal_mutable_motion(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<1, 2, 2, 0, 2> GetAgentResponse::_table_ = {
-  {
-    PROTOBUF_FIELD_OFFSET(GetAgentResponse, _impl_._has_bits_),
-    0, // no _extensions_
-    2, 8,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967292,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    2,  // num_field_entries
-    2,  // num_aux_entries
-    offsetof(decltype(_table_), aux_entries),
-    &_GetAgentResponse_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    // .city.agent.v2.AgentMotion motion = 2 [json_name = "motion"];
-    {::_pbi::TcParser::FastMtS1,
-     {18, 1, 1, PROTOBUF_FIELD_OFFSET(GetAgentResponse, _impl_.motion_)}},
-    // .city.agent.v2.Agent base = 1 [json_name = "base"];
-    {::_pbi::TcParser::FastMtS1,
-     {10, 0, 0, PROTOBUF_FIELD_OFFSET(GetAgentResponse, _impl_.base_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // .city.agent.v2.Agent base = 1 [json_name = "base"];
-    {PROTOBUF_FIELD_OFFSET(GetAgentResponse, _impl_.base_), _Internal::kHasBitsOffset + 0, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
-    // .city.agent.v2.AgentMotion motion = 2 [json_name = "motion"];
-    {PROTOBUF_FIELD_OFFSET(GetAgentResponse, _impl_.motion_), _Internal::kHasBitsOffset + 1, 1,
-    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
-  }}, {{
-    {::_pbi::TcParser::GetTable<::city::agent::v2::Agent>()},
-    {::_pbi::TcParser::GetTable<::city::agent::v2::AgentMotion>()},
-  }}, {{
-  }},
-};
-
-::uint8_t* GetAgentResponse::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* GetAgentResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.agent.v2.GetAgentResponse)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
-  cached_has_bits = _impl_._has_bits_[0];
   // .city.agent.v2.Agent base = 1 [json_name = "base"];
-  if (cached_has_bits & 0x00000001u) {
-    target = ::google::protobuf::internal::WireFormatLite::
+  if (this->_internal_has_base()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(1, _Internal::base(this),
         _Internal::base(this).GetCachedSize(), target, stream);
   }
 
   // .city.agent.v2.AgentMotion motion = 2 [json_name = "motion"];
-  if (cached_has_bits & 0x00000002u) {
-    target = ::google::protobuf::internal::WireFormatLite::
+  if (this->_internal_has_motion()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(2, _Internal::motion(this),
         _Internal::motion(this).GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.agent.v2.GetAgentResponse)
   return target;
 }
 
-::size_t GetAgentResponse::ByteSizeLong() const {
+size_t GetAgentResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.agent.v2.GetAgentResponse)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000003u) {
-    // .city.agent.v2.Agent base = 1 [json_name = "base"];
-    if (cached_has_bits & 0x00000001u) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          *_impl_.base_);
-    }
-
-    // .city.agent.v2.AgentMotion motion = 2 [json_name = "motion"];
-    if (cached_has_bits & 0x00000002u) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          *_impl_.motion_);
-    }
-
+  // .city.agent.v2.Agent base = 1 [json_name = "base"];
+  if (this->_internal_has_base()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.base_);
   }
+
+  // .city.agent.v2.AgentMotion motion = 2 [json_name = "motion"];
+  if (this->_internal_has_motion()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.motion_);
+  }
+
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData GetAgentResponse::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetAgentResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     GetAgentResponse::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*GetAgentResponse::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetAgentResponse::GetClassData() const { return &_class_data_; }
 
 
-void GetAgentResponse::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void GetAgentResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<GetAgentResponse*>(&to_msg);
   auto& from = static_cast<const GetAgentResponse&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.agent.v2.GetAgentResponse)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  cached_has_bits = from._impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000003u) {
-    if (cached_has_bits & 0x00000001u) {
-      _this->_internal_mutable_base()->::city::agent::v2::Agent::MergeFrom(
-          from._internal_base());
-    }
-    if (cached_has_bits & 0x00000002u) {
-      _this->_internal_mutable_motion()->::city::agent::v2::AgentMotion::MergeFrom(
-          from._internal_motion());
-    }
+  if (from._internal_has_base()) {
+    _this->_internal_mutable_base()->::city::agent::v2::Agent::MergeFrom(
+        from._internal_base());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  if (from._internal_has_motion()) {
+    _this->_internal_mutable_motion()->::city::agent::v2::AgentMotion::MergeFrom(
+        from._internal_motion());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void GetAgentResponse::CopyFrom(const GetAgentResponse& from) {
@@ -751,15 +685,14 @@ void GetAgentResponse::CopyFrom(const GetAgentResponse& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool GetAgentResponse::IsInitialized() const {
+bool GetAgentResponse::IsInitialized() const {
   return true;
 }
 
 void GetAgentResponse::InternalSwap(GetAgentResponse* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
-  ::google::protobuf::internal::memswap<
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(GetAgentResponse, _impl_.motion_)
       + sizeof(GetAgentResponse::_impl_.motion_)
       - PROTOBUF_FIELD_OFFSET(GetAgentResponse, _impl_.base_)>(
@@ -767,188 +700,186 @@ void GetAgentResponse::InternalSwap(GetAgentResponse* other) {
           reinterpret_cast<char*>(&other->_impl_.base_));
 }
 
-::google::protobuf::Metadata GetAgentResponse::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata GetAgentResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fagent_2fv2_2fagent_5fservice_2eproto_getter, &descriptor_table_city_2fagent_2fv2_2fagent_5fservice_2eproto_once,
       file_level_metadata_city_2fagent_2fv2_2fagent_5fservice_2eproto[1]);
 }
+
 // ===================================================================
 
 class AddAgentRequest::_Internal {
  public:
-  using HasBits = decltype(std::declval<AddAgentRequest>()._impl_._has_bits_);
-  static constexpr ::int32_t kHasBitsOffset =
-    8 * PROTOBUF_FIELD_OFFSET(AddAgentRequest, _impl_._has_bits_);
   static const ::city::agent::v2::Agent& agent(const AddAgentRequest* msg);
-  static void set_has_agent(HasBits* has_bits) {
-    (*has_bits)[0] |= 1u;
-  }
 };
 
-const ::city::agent::v2::Agent& AddAgentRequest::_Internal::agent(const AddAgentRequest* msg) {
+const ::city::agent::v2::Agent&
+AddAgentRequest::_Internal::agent(const AddAgentRequest* msg) {
   return *msg->_impl_.agent_;
 }
 void AddAgentRequest::clear_agent() {
-  if (_impl_.agent_ != nullptr) _impl_.agent_->Clear();
-  _impl_._has_bits_[0] &= ~0x00000001u;
+  if (GetArenaForAllocation() == nullptr && _impl_.agent_ != nullptr) {
+    delete _impl_.agent_;
+  }
+  _impl_.agent_ = nullptr;
 }
-AddAgentRequest::AddAgentRequest(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+AddAgentRequest::AddAgentRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.agent.v2.AddAgentRequest)
 }
-AddAgentRequest::AddAgentRequest(const AddAgentRequest& from) : ::google::protobuf::Message() {
-  AddAgentRequest* const _this = this;
-  (void)_this;
+AddAgentRequest::AddAgentRequest(const AddAgentRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  AddAgentRequest* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){from._impl_._has_bits_},
-      /*decltype(_impl_._cached_size_)*/ {},
-      decltype(_impl_.agent_){nullptr},
-  };
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
-  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+      decltype(_impl_.agent_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  if (from._internal_has_agent()) {
     _this->_impl_.agent_ = new ::city::agent::v2::Agent(*from._impl_.agent_);
   }
-
   // @@protoc_insertion_point(copy_constructor:city.agent.v2.AddAgentRequest)
 }
-inline void AddAgentRequest::SharedCtor(::_pb::Arena* arena) {
+
+inline void AddAgentRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){},
-      /*decltype(_impl_._cached_size_)*/ {},
-      decltype(_impl_.agent_){nullptr},
+      decltype(_impl_.agent_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 AddAgentRequest::~AddAgentRequest() {
   // @@protoc_insertion_point(destructor:city.agent.v2.AddAgentRequest)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void AddAgentRequest::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete _impl_.agent_;
 }
+
 void AddAgentRequest::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void AddAgentRequest::Clear() {
+void AddAgentRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.agent.v2.AddAgentRequest)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000001u) {
-    ABSL_DCHECK(_impl_.agent_ != nullptr);
-    _impl_.agent_->Clear();
+  if (GetArenaForAllocation() == nullptr && _impl_.agent_ != nullptr) {
+    delete _impl_.agent_;
   }
-  _impl_._has_bits_.Clear();
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _impl_.agent_ = nullptr;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* AddAgentRequest::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* AddAgentRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // .city.agent.v2.Agent agent = 1 [json_name = "agent"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_agent(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<0, 1, 1, 0, 2> AddAgentRequest::_table_ = {
-  {
-    PROTOBUF_FIELD_OFFSET(AddAgentRequest, _impl_._has_bits_),
-    0, // no _extensions_
-    1, 0,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967294,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    1,  // num_field_entries
-    1,  // num_aux_entries
-    offsetof(decltype(_table_), aux_entries),
-    &_AddAgentRequest_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    // .city.agent.v2.Agent agent = 1 [json_name = "agent"];
-    {::_pbi::TcParser::FastMtS1,
-     {10, 0, 0, PROTOBUF_FIELD_OFFSET(AddAgentRequest, _impl_.agent_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // .city.agent.v2.Agent agent = 1 [json_name = "agent"];
-    {PROTOBUF_FIELD_OFFSET(AddAgentRequest, _impl_.agent_), _Internal::kHasBitsOffset + 0, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
-  }}, {{
-    {::_pbi::TcParser::GetTable<::city::agent::v2::Agent>()},
-  }}, {{
-  }},
-};
-
-::uint8_t* AddAgentRequest::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* AddAgentRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.agent.v2.AddAgentRequest)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
-  cached_has_bits = _impl_._has_bits_[0];
   // .city.agent.v2.Agent agent = 1 [json_name = "agent"];
-  if (cached_has_bits & 0x00000001u) {
-    target = ::google::protobuf::internal::WireFormatLite::
+  if (this->_internal_has_agent()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(1, _Internal::agent(this),
         _Internal::agent(this).GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.agent.v2.AddAgentRequest)
   return target;
 }
 
-::size_t AddAgentRequest::ByteSizeLong() const {
+size_t AddAgentRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.agent.v2.AddAgentRequest)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // .city.agent.v2.Agent agent = 1 [json_name = "agent"];
-  cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000001u) {
+  if (this->_internal_has_agent()) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *_impl_.agent_);
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData AddAgentRequest::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData AddAgentRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     AddAgentRequest::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*AddAgentRequest::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*AddAgentRequest::GetClassData() const { return &_class_data_; }
 
 
-void AddAgentRequest::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void AddAgentRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<AddAgentRequest*>(&to_msg);
   auto& from = static_cast<const AddAgentRequest&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.agent.v2.AddAgentRequest)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+  if (from._internal_has_agent()) {
     _this->_internal_mutable_agent()->::city::agent::v2::Agent::MergeFrom(
         from._internal_agent());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void AddAgentRequest::CopyFrom(const AddAgentRequest& from) {
@@ -958,164 +889,175 @@ void AddAgentRequest::CopyFrom(const AddAgentRequest& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool AddAgentRequest::IsInitialized() const {
+bool AddAgentRequest::IsInitialized() const {
   return true;
 }
 
 void AddAgentRequest::InternalSwap(AddAgentRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
   swap(_impl_.agent_, other->_impl_.agent_);
 }
 
-::google::protobuf::Metadata AddAgentRequest::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata AddAgentRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fagent_2fv2_2fagent_5fservice_2eproto_getter, &descriptor_table_city_2fagent_2fv2_2fagent_5fservice_2eproto_once,
       file_level_metadata_city_2fagent_2fv2_2fagent_5fservice_2eproto[2]);
 }
+
 // ===================================================================
 
 class AddAgentResponse::_Internal {
  public:
 };
 
-AddAgentResponse::AddAgentResponse(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+AddAgentResponse::AddAgentResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.agent.v2.AddAgentResponse)
 }
 AddAgentResponse::AddAgentResponse(const AddAgentResponse& from)
-    : ::google::protobuf::Message(), _impl_(from._impl_) {
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  AddAgentResponse* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.agent_id_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.agent_id_ = from._impl_.agent_id_;
   // @@protoc_insertion_point(copy_constructor:city.agent.v2.AddAgentResponse)
 }
-inline void AddAgentResponse::SharedCtor(::_pb::Arena* arena) {
+
+inline void AddAgentResponse::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.agent_id_){0},
-      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.agent_id_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 AddAgentResponse::~AddAgentResponse() {
   // @@protoc_insertion_point(destructor:city.agent.v2.AddAgentResponse)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void AddAgentResponse::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
+
 void AddAgentResponse::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void AddAgentResponse::Clear() {
+void AddAgentResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.agent.v2.AddAgentResponse)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   _impl_.agent_id_ = 0;
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* AddAgentResponse::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* AddAgentResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 agent_id = 1 [json_name = "agentId"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.agent_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<0, 1, 0, 0, 2> AddAgentResponse::_table_ = {
-  {
-    0,  // no _has_bits_
-    0, // no _extensions_
-    1, 0,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967294,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    1,  // num_field_entries
-    0,  // num_aux_entries
-    offsetof(decltype(_table_), field_names),  // no aux_entries
-    &_AddAgentResponse_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    // int32 agent_id = 1 [json_name = "agentId"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(AddAgentResponse, _impl_.agent_id_), 63>(),
-     {8, 63, 0, PROTOBUF_FIELD_OFFSET(AddAgentResponse, _impl_.agent_id_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // int32 agent_id = 1 [json_name = "agentId"];
-    {PROTOBUF_FIELD_OFFSET(AddAgentResponse, _impl_.agent_id_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-  }},
-  // no aux_entries
-  {{
-  }},
-};
-
-::uint8_t* AddAgentResponse::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* AddAgentResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.agent.v2.AddAgentResponse)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // int32 agent_id = 1 [json_name = "agentId"];
   if (this->_internal_agent_id() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<1>(
-            stream, this->_internal_agent_id(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_agent_id(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.agent.v2.AddAgentResponse)
   return target;
 }
 
-::size_t AddAgentResponse::ByteSizeLong() const {
+size_t AddAgentResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.agent.v2.AddAgentResponse)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // int32 agent_id = 1 [json_name = "agentId"];
   if (this->_internal_agent_id() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_agent_id());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_agent_id());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData AddAgentResponse::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData AddAgentResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     AddAgentResponse::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*AddAgentResponse::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*AddAgentResponse::GetClassData() const { return &_class_data_; }
 
 
-void AddAgentResponse::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void AddAgentResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<AddAgentResponse*>(&to_msg);
   auto& from = static_cast<const AddAgentResponse&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.agent.v2.AddAgentResponse)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_agent_id() != 0) {
     _this->_internal_set_agent_id(from._internal_agent_id());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void AddAgentResponse::CopyFrom(const AddAgentResponse& from) {
@@ -1125,21 +1067,22 @@ void AddAgentResponse::CopyFrom(const AddAgentResponse& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool AddAgentResponse::IsInitialized() const {
+bool AddAgentResponse::IsInitialized() const {
   return true;
 }
 
 void AddAgentResponse::InternalSwap(AddAgentResponse* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-        swap(_impl_.agent_id_, other->_impl_.agent_id_);
+  swap(_impl_.agent_id_, other->_impl_.agent_id_);
 }
 
-::google::protobuf::Metadata AddAgentResponse::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata AddAgentResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fagent_2fv2_2fagent_5fservice_2eproto_getter, &descriptor_table_city_2fagent_2fv2_2fagent_5fservice_2eproto_once,
       file_level_metadata_city_2fagent_2fv2_2fagent_5fservice_2eproto[3]);
 }
+
 // ===================================================================
 
 class SetScheduleRequest::_Internal {
@@ -1147,176 +1090,188 @@ class SetScheduleRequest::_Internal {
 };
 
 void SetScheduleRequest::clear_schedules() {
-  _internal_mutable_schedules()->Clear();
+  _impl_.schedules_.Clear();
 }
-SetScheduleRequest::SetScheduleRequest(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+SetScheduleRequest::SetScheduleRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.agent.v2.SetScheduleRequest)
 }
-SetScheduleRequest::SetScheduleRequest(const SetScheduleRequest& from) : ::google::protobuf::Message() {
-  SetScheduleRequest* const _this = this;
-  (void)_this;
+SetScheduleRequest::SetScheduleRequest(const SetScheduleRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  SetScheduleRequest* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.schedules_){from._impl_.schedules_},
-      decltype(_impl_.agent_id_){},
-      /*decltype(_impl_._cached_size_)*/ {},
-  };
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
-  _this->_impl_.agent_id_ = from._impl_.agent_id_;
+      decltype(_impl_.schedules_){from._impl_.schedules_}
+    , decltype(_impl_.agent_id_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
 
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.agent_id_ = from._impl_.agent_id_;
   // @@protoc_insertion_point(copy_constructor:city.agent.v2.SetScheduleRequest)
 }
-inline void SetScheduleRequest::SharedCtor(::_pb::Arena* arena) {
+
+inline void SetScheduleRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.schedules_){arena},
-      decltype(_impl_.agent_id_){0},
-      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.schedules_){arena}
+    , decltype(_impl_.agent_id_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 SetScheduleRequest::~SetScheduleRequest() {
   // @@protoc_insertion_point(destructor:city.agent.v2.SetScheduleRequest)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void SetScheduleRequest::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.schedules_.~RepeatedPtrField();
 }
+
 void SetScheduleRequest::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void SetScheduleRequest::Clear() {
+void SetScheduleRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.agent.v2.SetScheduleRequest)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _internal_mutable_schedules()->Clear();
+  _impl_.schedules_.Clear();
   _impl_.agent_id_ = 0;
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* SetScheduleRequest::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* SetScheduleRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 agent_id = 1 [json_name = "agentId"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.agent_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated .city.trip.v2.Schedule schedules = 2 [json_name = "schedules"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_schedules(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<1, 2, 1, 0, 2> SetScheduleRequest::_table_ = {
-  {
-    0,  // no _has_bits_
-    0, // no _extensions_
-    2, 8,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967292,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    2,  // num_field_entries
-    1,  // num_aux_entries
-    offsetof(decltype(_table_), aux_entries),
-    &_SetScheduleRequest_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    // repeated .city.trip.v2.Schedule schedules = 2 [json_name = "schedules"];
-    {::_pbi::TcParser::FastMtR1,
-     {18, 63, 0, PROTOBUF_FIELD_OFFSET(SetScheduleRequest, _impl_.schedules_)}},
-    // int32 agent_id = 1 [json_name = "agentId"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(SetScheduleRequest, _impl_.agent_id_), 63>(),
-     {8, 63, 0, PROTOBUF_FIELD_OFFSET(SetScheduleRequest, _impl_.agent_id_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // int32 agent_id = 1 [json_name = "agentId"];
-    {PROTOBUF_FIELD_OFFSET(SetScheduleRequest, _impl_.agent_id_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-    // repeated .city.trip.v2.Schedule schedules = 2 [json_name = "schedules"];
-    {PROTOBUF_FIELD_OFFSET(SetScheduleRequest, _impl_.schedules_), 0, 0,
-    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
-  }}, {{
-    {::_pbi::TcParser::GetTable<::city::trip::v2::Schedule>()},
-  }}, {{
-  }},
-};
-
-::uint8_t* SetScheduleRequest::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* SetScheduleRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.agent.v2.SetScheduleRequest)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // int32 agent_id = 1 [json_name = "agentId"];
   if (this->_internal_agent_id() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<1>(
-            stream, this->_internal_agent_id(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_agent_id(), target);
   }
 
   // repeated .city.trip.v2.Schedule schedules = 2 [json_name = "schedules"];
   for (unsigned i = 0,
       n = static_cast<unsigned>(this->_internal_schedules_size()); i < n; i++) {
-    const auto& repfield = this->_internal_schedules().Get(i);
-    target = ::google::protobuf::internal::WireFormatLite::
+    const auto& repfield = this->_internal_schedules(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
         InternalWriteMessage(2, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.agent.v2.SetScheduleRequest)
   return target;
 }
 
-::size_t SetScheduleRequest::ByteSizeLong() const {
+size_t SetScheduleRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.agent.v2.SetScheduleRequest)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // repeated .city.trip.v2.Schedule schedules = 2 [json_name = "schedules"];
   total_size += 1UL * this->_internal_schedules_size();
-  for (const auto& msg : this->_internal_schedules()) {
+  for (const auto& msg : this->_impl_.schedules_) {
     total_size +=
-      ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
+
   // int32 agent_id = 1 [json_name = "agentId"];
   if (this->_internal_agent_id() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_agent_id());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_agent_id());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData SetScheduleRequest::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData SetScheduleRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     SetScheduleRequest::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*SetScheduleRequest::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SetScheduleRequest::GetClassData() const { return &_class_data_; }
 
 
-void SetScheduleRequest::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void SetScheduleRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<SetScheduleRequest*>(&to_msg);
   auto& from = static_cast<const SetScheduleRequest&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.agent.v2.SetScheduleRequest)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  _this->_internal_mutable_schedules()->MergeFrom(from._internal_schedules());
+  _this->_impl_.schedules_.MergeFrom(from._impl_.schedules_);
   if (from._internal_agent_id() != 0) {
     _this->_internal_set_agent_id(from._internal_agent_id());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void SetScheduleRequest::CopyFrom(const SetScheduleRequest& from) {
@@ -1326,7 +1281,7 @@ void SetScheduleRequest::CopyFrom(const SetScheduleRequest& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool SetScheduleRequest::IsInitialized() const {
+bool SetScheduleRequest::IsInitialized() const {
   return true;
 }
 
@@ -1334,41 +1289,42 @@ void SetScheduleRequest::InternalSwap(SetScheduleRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   _impl_.schedules_.InternalSwap(&other->_impl_.schedules_);
-        swap(_impl_.agent_id_, other->_impl_.agent_id_);
+  swap(_impl_.agent_id_, other->_impl_.agent_id_);
 }
 
-::google::protobuf::Metadata SetScheduleRequest::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata SetScheduleRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fagent_2fv2_2fagent_5fservice_2eproto_getter, &descriptor_table_city_2fagent_2fv2_2fagent_5fservice_2eproto_once,
       file_level_metadata_city_2fagent_2fv2_2fagent_5fservice_2eproto[4]);
 }
+
 // ===================================================================
 
 class SetScheduleResponse::_Internal {
  public:
 };
 
-SetScheduleResponse::SetScheduleResponse(::google::protobuf::Arena* arena)
-    : ::google::protobuf::internal::ZeroFieldsBase(arena) {
+SetScheduleResponse::SetScheduleResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
   // @@protoc_insertion_point(arena_constructor:city.agent.v2.SetScheduleResponse)
 }
-SetScheduleResponse::SetScheduleResponse(const SetScheduleResponse& from) : ::google::protobuf::internal::ZeroFieldsBase() {
-  SetScheduleResponse* const _this = this;
-  (void)_this;
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
-
+SetScheduleResponse::SetScheduleResponse(const SetScheduleResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
+  SetScheduleResponse* const _this = this; (void)_this;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:city.agent.v2.SetScheduleResponse)
 }
 
 
 
 
-const ::google::protobuf::Message::ClassData SetScheduleResponse::_class_data_ = {
-    ::google::protobuf::internal::ZeroFieldsBase::CopyImpl,
-    ::google::protobuf::internal::ZeroFieldsBase::MergeImpl,
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData SetScheduleResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
 };
-const ::google::protobuf::Message::ClassData*SetScheduleResponse::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SetScheduleResponse::GetClassData() const { return &_class_data_; }
 
 
 
@@ -1376,188 +1332,186 @@ const ::google::protobuf::Message::ClassData*SetScheduleResponse::GetClassData()
 
 
 
-::google::protobuf::Metadata SetScheduleResponse::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata SetScheduleResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fagent_2fv2_2fagent_5fservice_2eproto_getter, &descriptor_table_city_2fagent_2fv2_2fagent_5fservice_2eproto_once,
       file_level_metadata_city_2fagent_2fv2_2fagent_5fservice_2eproto[5]);
 }
+
 // ===================================================================
 
 class GetAgentsByLongLatAreaRequest::_Internal {
  public:
-  using HasBits = decltype(std::declval<GetAgentsByLongLatAreaRequest>()._impl_._has_bits_);
-  static constexpr ::int32_t kHasBitsOffset =
-    8 * PROTOBUF_FIELD_OFFSET(GetAgentsByLongLatAreaRequest, _impl_._has_bits_);
   static const ::city::geo::v2::LongLatBBox& area(const GetAgentsByLongLatAreaRequest* msg);
-  static void set_has_area(HasBits* has_bits) {
-    (*has_bits)[0] |= 1u;
-  }
 };
 
-const ::city::geo::v2::LongLatBBox& GetAgentsByLongLatAreaRequest::_Internal::area(const GetAgentsByLongLatAreaRequest* msg) {
+const ::city::geo::v2::LongLatBBox&
+GetAgentsByLongLatAreaRequest::_Internal::area(const GetAgentsByLongLatAreaRequest* msg) {
   return *msg->_impl_.area_;
 }
 void GetAgentsByLongLatAreaRequest::clear_area() {
-  if (_impl_.area_ != nullptr) _impl_.area_->Clear();
-  _impl_._has_bits_[0] &= ~0x00000001u;
+  if (GetArenaForAllocation() == nullptr && _impl_.area_ != nullptr) {
+    delete _impl_.area_;
+  }
+  _impl_.area_ = nullptr;
 }
-GetAgentsByLongLatAreaRequest::GetAgentsByLongLatAreaRequest(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+GetAgentsByLongLatAreaRequest::GetAgentsByLongLatAreaRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.agent.v2.GetAgentsByLongLatAreaRequest)
 }
-GetAgentsByLongLatAreaRequest::GetAgentsByLongLatAreaRequest(const GetAgentsByLongLatAreaRequest& from) : ::google::protobuf::Message() {
-  GetAgentsByLongLatAreaRequest* const _this = this;
-  (void)_this;
+GetAgentsByLongLatAreaRequest::GetAgentsByLongLatAreaRequest(const GetAgentsByLongLatAreaRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  GetAgentsByLongLatAreaRequest* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){from._impl_._has_bits_},
-      /*decltype(_impl_._cached_size_)*/ {},
-      decltype(_impl_.area_){nullptr},
-  };
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
-  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+      decltype(_impl_.area_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  if (from._internal_has_area()) {
     _this->_impl_.area_ = new ::city::geo::v2::LongLatBBox(*from._impl_.area_);
   }
-
   // @@protoc_insertion_point(copy_constructor:city.agent.v2.GetAgentsByLongLatAreaRequest)
 }
-inline void GetAgentsByLongLatAreaRequest::SharedCtor(::_pb::Arena* arena) {
+
+inline void GetAgentsByLongLatAreaRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){},
-      /*decltype(_impl_._cached_size_)*/ {},
-      decltype(_impl_.area_){nullptr},
+      decltype(_impl_.area_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 GetAgentsByLongLatAreaRequest::~GetAgentsByLongLatAreaRequest() {
   // @@protoc_insertion_point(destructor:city.agent.v2.GetAgentsByLongLatAreaRequest)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void GetAgentsByLongLatAreaRequest::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete _impl_.area_;
 }
+
 void GetAgentsByLongLatAreaRequest::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void GetAgentsByLongLatAreaRequest::Clear() {
+void GetAgentsByLongLatAreaRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.agent.v2.GetAgentsByLongLatAreaRequest)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000001u) {
-    ABSL_DCHECK(_impl_.area_ != nullptr);
-    _impl_.area_->Clear();
+  if (GetArenaForAllocation() == nullptr && _impl_.area_ != nullptr) {
+    delete _impl_.area_;
   }
-  _impl_._has_bits_.Clear();
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _impl_.area_ = nullptr;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* GetAgentsByLongLatAreaRequest::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* GetAgentsByLongLatAreaRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // .city.geo.v2.LongLatBBox area = 1 [json_name = "area"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_area(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<0, 1, 1, 0, 2> GetAgentsByLongLatAreaRequest::_table_ = {
-  {
-    PROTOBUF_FIELD_OFFSET(GetAgentsByLongLatAreaRequest, _impl_._has_bits_),
-    0, // no _extensions_
-    1, 0,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967294,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    1,  // num_field_entries
-    1,  // num_aux_entries
-    offsetof(decltype(_table_), aux_entries),
-    &_GetAgentsByLongLatAreaRequest_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    // .city.geo.v2.LongLatBBox area = 1 [json_name = "area"];
-    {::_pbi::TcParser::FastMtS1,
-     {10, 0, 0, PROTOBUF_FIELD_OFFSET(GetAgentsByLongLatAreaRequest, _impl_.area_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // .city.geo.v2.LongLatBBox area = 1 [json_name = "area"];
-    {PROTOBUF_FIELD_OFFSET(GetAgentsByLongLatAreaRequest, _impl_.area_), _Internal::kHasBitsOffset + 0, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
-  }}, {{
-    {::_pbi::TcParser::GetTable<::city::geo::v2::LongLatBBox>()},
-  }}, {{
-  }},
-};
-
-::uint8_t* GetAgentsByLongLatAreaRequest::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* GetAgentsByLongLatAreaRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.agent.v2.GetAgentsByLongLatAreaRequest)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
-  cached_has_bits = _impl_._has_bits_[0];
   // .city.geo.v2.LongLatBBox area = 1 [json_name = "area"];
-  if (cached_has_bits & 0x00000001u) {
-    target = ::google::protobuf::internal::WireFormatLite::
+  if (this->_internal_has_area()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(1, _Internal::area(this),
         _Internal::area(this).GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.agent.v2.GetAgentsByLongLatAreaRequest)
   return target;
 }
 
-::size_t GetAgentsByLongLatAreaRequest::ByteSizeLong() const {
+size_t GetAgentsByLongLatAreaRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.agent.v2.GetAgentsByLongLatAreaRequest)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // .city.geo.v2.LongLatBBox area = 1 [json_name = "area"];
-  cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000001u) {
+  if (this->_internal_has_area()) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *_impl_.area_);
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData GetAgentsByLongLatAreaRequest::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetAgentsByLongLatAreaRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     GetAgentsByLongLatAreaRequest::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*GetAgentsByLongLatAreaRequest::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetAgentsByLongLatAreaRequest::GetClassData() const { return &_class_data_; }
 
 
-void GetAgentsByLongLatAreaRequest::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void GetAgentsByLongLatAreaRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<GetAgentsByLongLatAreaRequest*>(&to_msg);
   auto& from = static_cast<const GetAgentsByLongLatAreaRequest&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.agent.v2.GetAgentsByLongLatAreaRequest)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+  if (from._internal_has_area()) {
     _this->_internal_mutable_area()->::city::geo::v2::LongLatBBox::MergeFrom(
         from._internal_area());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void GetAgentsByLongLatAreaRequest::CopyFrom(const GetAgentsByLongLatAreaRequest& from) {
@@ -1567,22 +1521,22 @@ void GetAgentsByLongLatAreaRequest::CopyFrom(const GetAgentsByLongLatAreaRequest
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool GetAgentsByLongLatAreaRequest::IsInitialized() const {
+bool GetAgentsByLongLatAreaRequest::IsInitialized() const {
   return true;
 }
 
 void GetAgentsByLongLatAreaRequest::InternalSwap(GetAgentsByLongLatAreaRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
   swap(_impl_.area_, other->_impl_.area_);
 }
 
-::google::protobuf::Metadata GetAgentsByLongLatAreaRequest::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata GetAgentsByLongLatAreaRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fagent_2fv2_2fagent_5fservice_2eproto_getter, &descriptor_table_city_2fagent_2fv2_2fagent_5fservice_2eproto_once,
       file_level_metadata_city_2fagent_2fv2_2fagent_5fservice_2eproto[6]);
 }
+
 // ===================================================================
 
 class GetAgentsByLongLatAreaResponse::_Internal {
@@ -1590,176 +1544,188 @@ class GetAgentsByLongLatAreaResponse::_Internal {
 };
 
 void GetAgentsByLongLatAreaResponse::clear_motions() {
-  _internal_mutable_motions()->Clear();
+  _impl_.motions_.Clear();
 }
-GetAgentsByLongLatAreaResponse::GetAgentsByLongLatAreaResponse(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+GetAgentsByLongLatAreaResponse::GetAgentsByLongLatAreaResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.agent.v2.GetAgentsByLongLatAreaResponse)
 }
-GetAgentsByLongLatAreaResponse::GetAgentsByLongLatAreaResponse(const GetAgentsByLongLatAreaResponse& from) : ::google::protobuf::Message() {
-  GetAgentsByLongLatAreaResponse* const _this = this;
-  (void)_this;
+GetAgentsByLongLatAreaResponse::GetAgentsByLongLatAreaResponse(const GetAgentsByLongLatAreaResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  GetAgentsByLongLatAreaResponse* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.motions_){from._impl_.motions_},
-      decltype(_impl_.step_){},
-      /*decltype(_impl_._cached_size_)*/ {},
-  };
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
-  _this->_impl_.step_ = from._impl_.step_;
+      decltype(_impl_.motions_){from._impl_.motions_}
+    , decltype(_impl_.step_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
 
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.step_ = from._impl_.step_;
   // @@protoc_insertion_point(copy_constructor:city.agent.v2.GetAgentsByLongLatAreaResponse)
 }
-inline void GetAgentsByLongLatAreaResponse::SharedCtor(::_pb::Arena* arena) {
+
+inline void GetAgentsByLongLatAreaResponse::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.motions_){arena},
-      decltype(_impl_.step_){0},
-      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.motions_){arena}
+    , decltype(_impl_.step_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 GetAgentsByLongLatAreaResponse::~GetAgentsByLongLatAreaResponse() {
   // @@protoc_insertion_point(destructor:city.agent.v2.GetAgentsByLongLatAreaResponse)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void GetAgentsByLongLatAreaResponse::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.motions_.~RepeatedPtrField();
 }
+
 void GetAgentsByLongLatAreaResponse::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void GetAgentsByLongLatAreaResponse::Clear() {
+void GetAgentsByLongLatAreaResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.agent.v2.GetAgentsByLongLatAreaResponse)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _internal_mutable_motions()->Clear();
+  _impl_.motions_.Clear();
   _impl_.step_ = 0;
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* GetAgentsByLongLatAreaResponse::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* GetAgentsByLongLatAreaResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 step = 1 [json_name = "step"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.step_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated .city.agent.v2.AgentMotion motions = 2 [json_name = "motions"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_motions(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<1, 2, 1, 0, 2> GetAgentsByLongLatAreaResponse::_table_ = {
-  {
-    0,  // no _has_bits_
-    0, // no _extensions_
-    2, 8,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967292,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    2,  // num_field_entries
-    1,  // num_aux_entries
-    offsetof(decltype(_table_), aux_entries),
-    &_GetAgentsByLongLatAreaResponse_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    // repeated .city.agent.v2.AgentMotion motions = 2 [json_name = "motions"];
-    {::_pbi::TcParser::FastMtR1,
-     {18, 63, 0, PROTOBUF_FIELD_OFFSET(GetAgentsByLongLatAreaResponse, _impl_.motions_)}},
-    // int32 step = 1 [json_name = "step"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(GetAgentsByLongLatAreaResponse, _impl_.step_), 63>(),
-     {8, 63, 0, PROTOBUF_FIELD_OFFSET(GetAgentsByLongLatAreaResponse, _impl_.step_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // int32 step = 1 [json_name = "step"];
-    {PROTOBUF_FIELD_OFFSET(GetAgentsByLongLatAreaResponse, _impl_.step_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-    // repeated .city.agent.v2.AgentMotion motions = 2 [json_name = "motions"];
-    {PROTOBUF_FIELD_OFFSET(GetAgentsByLongLatAreaResponse, _impl_.motions_), 0, 0,
-    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
-  }}, {{
-    {::_pbi::TcParser::GetTable<::city::agent::v2::AgentMotion>()},
-  }}, {{
-  }},
-};
-
-::uint8_t* GetAgentsByLongLatAreaResponse::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* GetAgentsByLongLatAreaResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.agent.v2.GetAgentsByLongLatAreaResponse)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // int32 step = 1 [json_name = "step"];
   if (this->_internal_step() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<1>(
-            stream, this->_internal_step(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_step(), target);
   }
 
   // repeated .city.agent.v2.AgentMotion motions = 2 [json_name = "motions"];
   for (unsigned i = 0,
       n = static_cast<unsigned>(this->_internal_motions_size()); i < n; i++) {
-    const auto& repfield = this->_internal_motions().Get(i);
-    target = ::google::protobuf::internal::WireFormatLite::
+    const auto& repfield = this->_internal_motions(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
         InternalWriteMessage(2, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.agent.v2.GetAgentsByLongLatAreaResponse)
   return target;
 }
 
-::size_t GetAgentsByLongLatAreaResponse::ByteSizeLong() const {
+size_t GetAgentsByLongLatAreaResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.agent.v2.GetAgentsByLongLatAreaResponse)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // repeated .city.agent.v2.AgentMotion motions = 2 [json_name = "motions"];
   total_size += 1UL * this->_internal_motions_size();
-  for (const auto& msg : this->_internal_motions()) {
+  for (const auto& msg : this->_impl_.motions_) {
     total_size +=
-      ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
+
   // int32 step = 1 [json_name = "step"];
   if (this->_internal_step() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_step());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_step());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData GetAgentsByLongLatAreaResponse::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetAgentsByLongLatAreaResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     GetAgentsByLongLatAreaResponse::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*GetAgentsByLongLatAreaResponse::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetAgentsByLongLatAreaResponse::GetClassData() const { return &_class_data_; }
 
 
-void GetAgentsByLongLatAreaResponse::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void GetAgentsByLongLatAreaResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<GetAgentsByLongLatAreaResponse*>(&to_msg);
   auto& from = static_cast<const GetAgentsByLongLatAreaResponse&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.agent.v2.GetAgentsByLongLatAreaResponse)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  _this->_internal_mutable_motions()->MergeFrom(from._internal_motions());
+  _this->_impl_.motions_.MergeFrom(from._impl_.motions_);
   if (from._internal_step() != 0) {
     _this->_internal_set_step(from._internal_step());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void GetAgentsByLongLatAreaResponse::CopyFrom(const GetAgentsByLongLatAreaResponse& from) {
@@ -1769,7 +1735,7 @@ void GetAgentsByLongLatAreaResponse::CopyFrom(const GetAgentsByLongLatAreaRespon
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool GetAgentsByLongLatAreaResponse::IsInitialized() const {
+bool GetAgentsByLongLatAreaResponse::IsInitialized() const {
   return true;
 }
 
@@ -1777,21 +1743,53 @@ void GetAgentsByLongLatAreaResponse::InternalSwap(GetAgentsByLongLatAreaResponse
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   _impl_.motions_.InternalSwap(&other->_impl_.motions_);
-        swap(_impl_.step_, other->_impl_.step_);
+  swap(_impl_.step_, other->_impl_.step_);
 }
 
-::google::protobuf::Metadata GetAgentsByLongLatAreaResponse::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata GetAgentsByLongLatAreaResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fagent_2fv2_2fagent_5fservice_2eproto_getter, &descriptor_table_city_2fagent_2fv2_2fagent_5fservice_2eproto_once,
       file_level_metadata_city_2fagent_2fv2_2fagent_5fservice_2eproto[7]);
 }
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace v2
 }  // namespace agent
 }  // namespace city
-namespace google {
-namespace protobuf {
-}  // namespace protobuf
-}  // namespace google
+PROTOBUF_NAMESPACE_OPEN
+template<> PROTOBUF_NOINLINE ::city::agent::v2::GetAgentRequest*
+Arena::CreateMaybeMessage< ::city::agent::v2::GetAgentRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::agent::v2::GetAgentRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::agent::v2::GetAgentResponse*
+Arena::CreateMaybeMessage< ::city::agent::v2::GetAgentResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::agent::v2::GetAgentResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::agent::v2::AddAgentRequest*
+Arena::CreateMaybeMessage< ::city::agent::v2::AddAgentRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::agent::v2::AddAgentRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::agent::v2::AddAgentResponse*
+Arena::CreateMaybeMessage< ::city::agent::v2::AddAgentResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::agent::v2::AddAgentResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::agent::v2::SetScheduleRequest*
+Arena::CreateMaybeMessage< ::city::agent::v2::SetScheduleRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::agent::v2::SetScheduleRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::agent::v2::SetScheduleResponse*
+Arena::CreateMaybeMessage< ::city::agent::v2::SetScheduleResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::agent::v2::SetScheduleResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::agent::v2::GetAgentsByLongLatAreaRequest*
+Arena::CreateMaybeMessage< ::city::agent::v2::GetAgentsByLongLatAreaRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::agent::v2::GetAgentsByLongLatAreaRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::agent::v2::GetAgentsByLongLatAreaResponse*
+Arena::CreateMaybeMessage< ::city::agent::v2::GetAgentsByLongLatAreaResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::agent::v2::GetAgentsByLongLatAreaResponse >(arena);
+}
+PROTOBUF_NAMESPACE_CLOSE
+
 // @@protoc_insertion_point(global_scope)
-#include "google/protobuf/port_undef.inc"
+#include <google/protobuf/port_undef.inc>

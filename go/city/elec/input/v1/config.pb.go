@@ -26,7 +26,7 @@ type Mongo struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Uri        string        `protobuf:"bytes,1,opt,name=uri,proto3" json:"uri,omitempty" bson:"uri" db:"uri" yaml:"uri"`
+	Uri        string        `protobuf:"bytes,1,opt,name=uri,proto3" json:"uri,omitempty" yaml:"uri" bson:"uri" db:"uri"`
 	Map        *v1.MongoPath `protobuf:"bytes,2,opt,name=map,proto3" json:"map,omitempty" yaml:"map" bson:"map" db:"map"`
 	Facilities *v1.MongoPath `protobuf:"bytes,3,opt,name=facilities,proto3" json:"facilities,omitempty" yaml:"facilities" bson:"facilities" db:"facilities"`
 }
@@ -89,7 +89,7 @@ type ControlStep struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Start int32 `protobuf:"varint,1,opt,name=start,proto3" json:"start,omitempty" bson:"start" db:"start" yaml:"start"`
+	Start int32 `protobuf:"varint,1,opt,name=start,proto3" json:"start,omitempty" yaml:"start" bson:"start" db:"start"`
 	Total int32 `protobuf:"varint,2,opt,name=total,proto3" json:"total,omitempty" yaml:"total" bson:"total" db:"total"`
 }
 
@@ -144,7 +144,7 @@ type Control struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Step *ControlStep `protobuf:"bytes,1,opt,name=step,proto3" json:"step,omitempty" yaml:"step" bson:"step" db:"step"`
+	Step *ControlStep `protobuf:"bytes,1,opt,name=step,proto3" json:"step,omitempty" bson:"step" db:"step" yaml:"step"`
 }
 
 func (x *Control) Reset() {
@@ -256,7 +256,7 @@ type Output struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Target *v1.OutputTarget `protobuf:"bytes,1,opt,name=target,proto3" json:"target,omitempty" db:"target" yaml:"target" bson:"target"`
+	Target *v1.OutputTarget `protobuf:"bytes,1,opt,name=target,proto3" json:"target,omitempty" yaml:"target" bson:"target" db:"target"`
 	Switch *OutputSwitch    `protobuf:"bytes,2,opt,name=switch,proto3" json:"switch,omitempty" yaml:"switch" bson:"switch" db:"switch"`
 }
 
@@ -313,7 +313,7 @@ type Config struct {
 
 	Mongo   *Mongo   `protobuf:"bytes,1,opt,name=mongo,proto3" json:"mongo,omitempty" yaml:"mongo" bson:"mongo" db:"mongo"`
 	Control *Control `protobuf:"bytes,2,opt,name=control,proto3" json:"control,omitempty" yaml:"control" bson:"control" db:"control"`
-	Output  *Output  `protobuf:"bytes,3,opt,name=output,proto3" json:"output,omitempty" yaml:"output" bson:"output" db:"output"`
+	Output  *Output  `protobuf:"bytes,3,opt,name=output,proto3" json:"output,omitempty" bson:"output" db:"output" yaml:"output"`
 }
 
 func (x *Config) Reset() {

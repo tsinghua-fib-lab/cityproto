@@ -81,10 +81,10 @@ type GetPersonResponse struct {
 
 	// person信息
 	// person information
-	Base *Person `protobuf:"bytes,1,opt,name=base,proto3" json:"base,omitempty" yaml:"base" bson:"base" db:"base"`
+	Base *Person `protobuf:"bytes,1,opt,name=base,proto3" json:"base,omitempty" bson:"base" db:"base" yaml:"base"`
 	// person运动信息
 	// person motion information
-	Motion *PersonMotion `protobuf:"bytes,2,opt,name=motion,proto3" json:"motion,omitempty" yaml:"motion" bson:"motion" db:"motion"`
+	Motion *PersonMotion `protobuf:"bytes,2,opt,name=motion,proto3" json:"motion,omitempty" db:"motion" yaml:"motion" bson:"motion"`
 }
 
 func (x *GetPersonResponse) Reset() {
@@ -347,7 +347,7 @@ type GetPersonByLongLatBBoxRequest struct {
 	Bbox *v21.LongLatBBox `protobuf:"bytes,1,opt,name=bbox,proto3" json:"bbox,omitempty" db:"bbox" yaml:"bbox" bson:"bbox"`
 	// 过滤人的状态（状态为列表内的值的人不返回）
 	// Filter person's status (person whose status is in the list will not be returned)
-	ExcludeStatuses []Status `protobuf:"varint,2,rep,packed,name=exclude_statuses,json=excludeStatuses,proto3,enum=city.person.v1.Status" json:"exclude_statuses,omitempty" db:"exclude_statuses" yaml:"exclude_statuses" bson:"exclude_statuses"`
+	ExcludeStatuses []Status `protobuf:"varint,2,rep,packed,name=exclude_statuses,json=excludeStatuses,proto3,enum=city.person.v1.Status" json:"exclude_statuses,omitempty" yaml:"exclude_statuses" bson:"exclude_statuses" db:"exclude_statuses"`
 }
 
 func (x *GetPersonByLongLatBBoxRequest) Reset() {
@@ -405,7 +405,7 @@ type GetPersonByLongLatBBoxResponse struct {
 
 	// 区域内的person的运动信息
 	// motion status of persons in the region
-	Motions []*PersonMotion `protobuf:"bytes,1,rep,name=motions,proto3" json:"motions,omitempty" db:"motions" yaml:"motions" bson:"motions"`
+	Motions []*PersonMotion `protobuf:"bytes,1,rep,name=motions,proto3" json:"motions,omitempty" yaml:"motions" bson:"motions" db:"motions"`
 }
 
 func (x *GetPersonByLongLatBBoxResponse) Reset() {

@@ -4,407 +4,368 @@
 #include "city/economy/v1/person_service.pb.h"
 
 #include <algorithm>
-#include "google/protobuf/io/coded_stream.h"
-#include "google/protobuf/extension_set.h"
-#include "google/protobuf/wire_format_lite.h"
-#include "google/protobuf/descriptor.h"
-#include "google/protobuf/generated_message_reflection.h"
-#include "google/protobuf/reflection_ops.h"
-#include "google/protobuf/wire_format.h"
-#include "google/protobuf/generated_message_tctable_impl.h"
-// @@protoc_insertion_point(includes)
 
-// Must be included last.
-#include "google/protobuf/port_def.inc"
+#include <google/protobuf/io/coded_stream.h>
+#include <google/protobuf/extension_set.h>
+#include <google/protobuf/wire_format_lite.h>
+#include <google/protobuf/descriptor.h>
+#include <google/protobuf/generated_message_reflection.h>
+#include <google/protobuf/reflection_ops.h>
+#include <google/protobuf/wire_format.h>
+// @@protoc_insertion_point(includes)
+#include <google/protobuf/port_def.inc>
+
 PROTOBUF_PRAGMA_INIT_SEG
-namespace _pb = ::google::protobuf;
-namespace _pbi = ::google::protobuf::internal;
-namespace _fl = ::google::protobuf::internal::field_layout;
+
+namespace _pb = ::PROTOBUF_NAMESPACE_ID;
+namespace _pbi = _pb::internal;
+
 namespace city {
 namespace economy {
 namespace v1 {
-        template <typename>
-PROTOBUF_CONSTEXPR GetPersonRequest::GetPersonRequest(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_.person_ids_)*/ {},
-      /* _impl_._person_ids_cached_byte_size_ = */ {0},
-      /*decltype(_impl_._cached_size_)*/ {},
-    } {}
+PROTOBUF_CONSTEXPR GetPersonRequest::GetPersonRequest(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.person_ids_)*/{}
+  , /*decltype(_impl_._person_ids_cached_byte_size_)*/{0}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct GetPersonRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR GetPersonRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR GetPersonRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~GetPersonRequestDefaultTypeInternal() {}
   union {
     GetPersonRequest _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetPersonRequestDefaultTypeInternal _GetPersonRequest_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR GetPersonResponse::GetPersonResponse(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_.persons_)*/ {},
-      /*decltype(_impl_._cached_size_)*/ {},
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetPersonRequestDefaultTypeInternal _GetPersonRequest_default_instance_;
+PROTOBUF_CONSTEXPR GetPersonResponse::GetPersonResponse(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.persons_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct GetPersonResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR GetPersonResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR GetPersonResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~GetPersonResponseDefaultTypeInternal() {}
   union {
     GetPersonResponse _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetPersonResponseDefaultTypeInternal _GetPersonResponse_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR UpdatePersonMoneyRequest::UpdatePersonMoneyRequest(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_.items_)*/ {},
-      /*decltype(_impl_._cached_size_)*/ {},
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetPersonResponseDefaultTypeInternal _GetPersonResponse_default_instance_;
+PROTOBUF_CONSTEXPR UpdatePersonMoneyRequest::UpdatePersonMoneyRequest(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.items_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct UpdatePersonMoneyRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR UpdatePersonMoneyRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR UpdatePersonMoneyRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~UpdatePersonMoneyRequestDefaultTypeInternal() {}
   union {
     UpdatePersonMoneyRequest _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 UpdatePersonMoneyRequestDefaultTypeInternal _UpdatePersonMoneyRequest_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR UpdatePersonMoneyRequestItem::UpdatePersonMoneyRequestItem(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_.money_)*/ 0,
-      /*decltype(_impl_.person_id_)*/ 0,
-      /*decltype(_impl_._cached_size_)*/ {},
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 UpdatePersonMoneyRequestDefaultTypeInternal _UpdatePersonMoneyRequest_default_instance_;
+PROTOBUF_CONSTEXPR UpdatePersonMoneyRequestItem::UpdatePersonMoneyRequestItem(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.money_)*/0
+  , /*decltype(_impl_.person_id_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct UpdatePersonMoneyRequestItemDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR UpdatePersonMoneyRequestItemDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR UpdatePersonMoneyRequestItemDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~UpdatePersonMoneyRequestItemDefaultTypeInternal() {}
   union {
     UpdatePersonMoneyRequestItem _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 UpdatePersonMoneyRequestItemDefaultTypeInternal _UpdatePersonMoneyRequestItem_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR UpdatePersonMoneyResponse::UpdatePersonMoneyResponse(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_.persons_)*/ {},
-      /*decltype(_impl_._cached_size_)*/ {},
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 UpdatePersonMoneyRequestItemDefaultTypeInternal _UpdatePersonMoneyRequestItem_default_instance_;
+PROTOBUF_CONSTEXPR UpdatePersonMoneyResponse::UpdatePersonMoneyResponse(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.persons_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct UpdatePersonMoneyResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR UpdatePersonMoneyResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR UpdatePersonMoneyResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~UpdatePersonMoneyResponseDefaultTypeInternal() {}
   union {
     UpdatePersonMoneyResponse _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 UpdatePersonMoneyResponseDefaultTypeInternal _UpdatePersonMoneyResponse_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 UpdatePersonMoneyResponseDefaultTypeInternal _UpdatePersonMoneyResponse_default_instance_;
 }  // namespace v1
 }  // namespace economy
 }  // namespace city
 static ::_pb::Metadata file_level_metadata_city_2feconomy_2fv1_2fperson_5fservice_2eproto[5];
-static constexpr const ::_pb::EnumDescriptor**
-    file_level_enum_descriptors_city_2feconomy_2fv1_2fperson_5fservice_2eproto = nullptr;
-static constexpr const ::_pb::ServiceDescriptor**
-    file_level_service_descriptors_city_2feconomy_2fv1_2fperson_5fservice_2eproto = nullptr;
-const ::uint32_t TableStruct_city_2feconomy_2fv1_2fperson_5fservice_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
-    protodesc_cold) = {
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::economy::v1::GetPersonRequest, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::economy::v1::GetPersonRequest, _impl_.person_ids_),
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::economy::v1::GetPersonResponse, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::economy::v1::GetPersonResponse, _impl_.persons_),
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::economy::v1::UpdatePersonMoneyRequest, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::economy::v1::UpdatePersonMoneyRequest, _impl_.items_),
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::economy::v1::UpdatePersonMoneyRequestItem, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::economy::v1::UpdatePersonMoneyRequestItem, _impl_.person_id_),
-    PROTOBUF_FIELD_OFFSET(::city::economy::v1::UpdatePersonMoneyRequestItem, _impl_.money_),
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::economy::v1::UpdatePersonMoneyResponse, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::economy::v1::UpdatePersonMoneyResponse, _impl_.persons_),
-};
+static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_city_2feconomy_2fv1_2fperson_5fservice_2eproto = nullptr;
+static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_city_2feconomy_2fv1_2fperson_5fservice_2eproto = nullptr;
 
-static const ::_pbi::MigrationSchema
-    schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-        {0, -1, -1, sizeof(::city::economy::v1::GetPersonRequest)},
-        {9, -1, -1, sizeof(::city::economy::v1::GetPersonResponse)},
-        {18, -1, -1, sizeof(::city::economy::v1::UpdatePersonMoneyRequest)},
-        {27, -1, -1, sizeof(::city::economy::v1::UpdatePersonMoneyRequestItem)},
-        {37, -1, -1, sizeof(::city::economy::v1::UpdatePersonMoneyResponse)},
+const uint32_t TableStruct_city_2feconomy_2fv1_2fperson_5fservice_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v1::GetPersonRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v1::GetPersonRequest, _impl_.person_ids_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v1::GetPersonResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v1::GetPersonResponse, _impl_.persons_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v1::UpdatePersonMoneyRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v1::UpdatePersonMoneyRequest, _impl_.items_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v1::UpdatePersonMoneyRequestItem, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v1::UpdatePersonMoneyRequestItem, _impl_.person_id_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v1::UpdatePersonMoneyRequestItem, _impl_.money_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v1::UpdatePersonMoneyResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v1::UpdatePersonMoneyResponse, _impl_.persons_),
+};
+static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  { 0, -1, -1, sizeof(::city::economy::v1::GetPersonRequest)},
+  { 7, -1, -1, sizeof(::city::economy::v1::GetPersonResponse)},
+  { 14, -1, -1, sizeof(::city::economy::v1::UpdatePersonMoneyRequest)},
+  { 21, -1, -1, sizeof(::city::economy::v1::UpdatePersonMoneyRequestItem)},
+  { 29, -1, -1, sizeof(::city::economy::v1::UpdatePersonMoneyResponse)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
-    &::city::economy::v1::_GetPersonRequest_default_instance_._instance,
-    &::city::economy::v1::_GetPersonResponse_default_instance_._instance,
-    &::city::economy::v1::_UpdatePersonMoneyRequest_default_instance_._instance,
-    &::city::economy::v1::_UpdatePersonMoneyRequestItem_default_instance_._instance,
-    &::city::economy::v1::_UpdatePersonMoneyResponse_default_instance_._instance,
-};
-const char descriptor_table_protodef_city_2feconomy_2fv1_2fperson_5fservice_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-    "\n$city/economy/v1/person_service.proto\022\017"
-    "city.economy.v1\032\035city/economy/v1/economy"
-    ".proto\"1\n\020GetPersonRequest\022\035\n\nperson_ids"
-    "\030\001 \003(\005R\tpersonIds\"F\n\021GetPersonResponse\0221"
-    "\n\007persons\030\001 \003(\0132\027.city.economy.v1.Person"
-    "R\007persons\"_\n\030UpdatePersonMoneyRequest\022C\n"
-    "\005items\030\001 \003(\0132-.city.economy.v1.UpdatePer"
-    "sonMoneyRequestItemR\005items\"Q\n\034UpdatePers"
-    "onMoneyRequestItem\022\033\n\tperson_id\030\001 \001(\005R\010p"
-    "ersonId\022\024\n\005money\030\002 \001(\001R\005money\"N\n\031UpdateP"
-    "ersonMoneyResponse\0221\n\007persons\030\001 \003(\0132\027.ci"
-    "ty.economy.v1.PersonR\007persons2\323\001\n\rPerson"
-    "Service\022T\n\tGetPerson\022!.city.economy.v1.G"
-    "etPersonRequest\032\".city.economy.v1.GetPer"
-    "sonResponse\"\000\022l\n\021UpdatePersonMoney\022).cit"
-    "y.economy.v1.UpdatePersonMoneyRequest\032*."
-    "city.economy.v1.UpdatePersonMoneyRespons"
-    "e\"\000B\277\001\n\023com.city.economy.v1B\022PersonServi"
-    "ceProtoP\001Z6git.fiblab.net/sim/protos/go/"
-    "city/economy/v1;economyv1\242\002\003CEX\252\002\017City.E"
-    "conomy.V1\312\002\017City\\Economy\\V1\342\002\033City\\Econo"
-    "my\\V1\\GPBMetadata\352\002\021City::Economy::V1b\006p"
-    "roto3"
-};
-static const ::_pbi::DescriptorTable* const descriptor_table_city_2feconomy_2fv1_2fperson_5fservice_2eproto_deps[1] =
-    {
-        &::descriptor_table_city_2feconomy_2fv1_2feconomy_2eproto,
-};
-static ::absl::once_flag descriptor_table_city_2feconomy_2fv1_2fperson_5fservice_2eproto_once;
-const ::_pbi::DescriptorTable descriptor_table_city_2feconomy_2fv1_2fperson_5fservice_2eproto = {
-    false,
-    false,
-    885,
-    descriptor_table_protodef_city_2feconomy_2fv1_2fperson_5fservice_2eproto,
-    "city/economy/v1/person_service.proto",
-    &descriptor_table_city_2feconomy_2fv1_2fperson_5fservice_2eproto_once,
-    descriptor_table_city_2feconomy_2fv1_2fperson_5fservice_2eproto_deps,
-    1,
-    5,
-    schemas,
-    file_default_instances,
-    TableStruct_city_2feconomy_2fv1_2fperson_5fservice_2eproto::offsets,
-    file_level_metadata_city_2feconomy_2fv1_2fperson_5fservice_2eproto,
-    file_level_enum_descriptors_city_2feconomy_2fv1_2fperson_5fservice_2eproto,
-    file_level_service_descriptors_city_2feconomy_2fv1_2fperson_5fservice_2eproto,
+  &::city::economy::v1::_GetPersonRequest_default_instance_._instance,
+  &::city::economy::v1::_GetPersonResponse_default_instance_._instance,
+  &::city::economy::v1::_UpdatePersonMoneyRequest_default_instance_._instance,
+  &::city::economy::v1::_UpdatePersonMoneyRequestItem_default_instance_._instance,
+  &::city::economy::v1::_UpdatePersonMoneyResponse_default_instance_._instance,
 };
 
-// This function exists to be marked as weak.
-// It can significantly speed up compilation by breaking up LLVM's SCC
-// in the .pb.cc translation units. Large translation units see a
-// reduction of more than 35% of walltime for optimized builds. Without
-// the weak attribute all the messages in the file, including all the
-// vtables and everything they use become part of the same SCC through
-// a cycle like:
-// GetMetadata -> descriptor table -> default instances ->
-//   vtables -> GetMetadata
-// By adding a weak function here we break the connection from the
-// individual vtables back into the descriptor table.
+const char descriptor_table_protodef_city_2feconomy_2fv1_2fperson_5fservice_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
+  "\n$city/economy/v1/person_service.proto\022\017"
+  "city.economy.v1\032\035city/economy/v1/economy"
+  ".proto\"1\n\020GetPersonRequest\022\035\n\nperson_ids"
+  "\030\001 \003(\005R\tpersonIds\"F\n\021GetPersonResponse\0221"
+  "\n\007persons\030\001 \003(\0132\027.city.economy.v1.Person"
+  "R\007persons\"_\n\030UpdatePersonMoneyRequest\022C\n"
+  "\005items\030\001 \003(\0132-.city.economy.v1.UpdatePer"
+  "sonMoneyRequestItemR\005items\"Q\n\034UpdatePers"
+  "onMoneyRequestItem\022\033\n\tperson_id\030\001 \001(\005R\010p"
+  "ersonId\022\024\n\005money\030\002 \001(\001R\005money\"N\n\031UpdateP"
+  "ersonMoneyResponse\0221\n\007persons\030\001 \003(\0132\027.ci"
+  "ty.economy.v1.PersonR\007persons2\323\001\n\rPerson"
+  "Service\022T\n\tGetPerson\022!.city.economy.v1.G"
+  "etPersonRequest\032\".city.economy.v1.GetPer"
+  "sonResponse\"\000\022l\n\021UpdatePersonMoney\022).cit"
+  "y.economy.v1.UpdatePersonMoneyRequest\032*."
+  "city.economy.v1.UpdatePersonMoneyRespons"
+  "e\"\000B\277\001\n\023com.city.economy.v1B\022PersonServi"
+  "ceProtoP\001Z6git.fiblab.net/sim/protos/go/"
+  "city/economy/v1;economyv1\242\002\003CEX\252\002\017City.E"
+  "conomy.V1\312\002\017City\\Economy\\V1\342\002\033City\\Econo"
+  "my\\V1\\GPBMetadata\352\002\021City::Economy::V1b\006p"
+  "roto3"
+  ;
+static const ::_pbi::DescriptorTable* const descriptor_table_city_2feconomy_2fv1_2fperson_5fservice_2eproto_deps[1] = {
+  &::descriptor_table_city_2feconomy_2fv1_2feconomy_2eproto,
+};
+static ::_pbi::once_flag descriptor_table_city_2feconomy_2fv1_2fperson_5fservice_2eproto_once;
+const ::_pbi::DescriptorTable descriptor_table_city_2feconomy_2fv1_2fperson_5fservice_2eproto = {
+    false, false, 885, descriptor_table_protodef_city_2feconomy_2fv1_2fperson_5fservice_2eproto,
+    "city/economy/v1/person_service.proto",
+    &descriptor_table_city_2feconomy_2fv1_2fperson_5fservice_2eproto_once, descriptor_table_city_2feconomy_2fv1_2fperson_5fservice_2eproto_deps, 1, 5,
+    schemas, file_default_instances, TableStruct_city_2feconomy_2fv1_2fperson_5fservice_2eproto::offsets,
+    file_level_metadata_city_2feconomy_2fv1_2fperson_5fservice_2eproto, file_level_enum_descriptors_city_2feconomy_2fv1_2fperson_5fservice_2eproto,
+    file_level_service_descriptors_city_2feconomy_2fv1_2fperson_5fservice_2eproto,
+};
 PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_city_2feconomy_2fv1_2fperson_5fservice_2eproto_getter() {
   return &descriptor_table_city_2feconomy_2fv1_2fperson_5fservice_2eproto;
 }
+
 // Force running AddDescriptors() at dynamic initialization time.
-PROTOBUF_ATTRIBUTE_INIT_PRIORITY2
-static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_city_2feconomy_2fv1_2fperson_5fservice_2eproto(&descriptor_table_city_2feconomy_2fv1_2fperson_5fservice_2eproto);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_city_2feconomy_2fv1_2fperson_5fservice_2eproto(&descriptor_table_city_2feconomy_2fv1_2fperson_5fservice_2eproto);
 namespace city {
 namespace economy {
 namespace v1 {
+
 // ===================================================================
 
 class GetPersonRequest::_Internal {
  public:
 };
 
-GetPersonRequest::GetPersonRequest(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+GetPersonRequest::GetPersonRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.economy.v1.GetPersonRequest)
 }
-GetPersonRequest::GetPersonRequest(const GetPersonRequest& from) : ::google::protobuf::Message() {
-  GetPersonRequest* const _this = this;
-  (void)_this;
+GetPersonRequest::GetPersonRequest(const GetPersonRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  GetPersonRequest* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.person_ids_){from._impl_.person_ids_},
-      /* _impl_._person_ids_cached_byte_size_ = */ {0},
-      /*decltype(_impl_._cached_size_)*/ {},
-  };
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+      decltype(_impl_.person_ids_){from._impl_.person_ids_}
+    , /*decltype(_impl_._person_ids_cached_byte_size_)*/{0}
+    , /*decltype(_impl_._cached_size_)*/{}};
 
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:city.economy.v1.GetPersonRequest)
 }
-inline void GetPersonRequest::SharedCtor(::_pb::Arena* arena) {
+
+inline void GetPersonRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.person_ids_){arena},
-      /* _impl_._person_ids_cached_byte_size_ = */ {0},
-      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.person_ids_){arena}
+    , /*decltype(_impl_._person_ids_cached_byte_size_)*/{0}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 GetPersonRequest::~GetPersonRequest() {
   // @@protoc_insertion_point(destructor:city.economy.v1.GetPersonRequest)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void GetPersonRequest::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.person_ids_.~RepeatedField();
 }
+
 void GetPersonRequest::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void GetPersonRequest::Clear() {
+void GetPersonRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.economy.v1.GetPersonRequest)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _internal_mutable_person_ids()->Clear();
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _impl_.person_ids_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* GetPersonRequest::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* GetPersonRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // repeated int32 person_ids = 1 [json_name = "personIds"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_person_ids(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<uint8_t>(tag) == 8) {
+          _internal_add_person_ids(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<0, 1, 0, 0, 2> GetPersonRequest::_table_ = {
-  {
-    0,  // no _has_bits_
-    0, // no _extensions_
-    1, 0,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967294,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    1,  // num_field_entries
-    0,  // num_aux_entries
-    offsetof(decltype(_table_), field_names),  // no aux_entries
-    &_GetPersonRequest_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    // repeated int32 person_ids = 1 [json_name = "personIds"];
-    {::_pbi::TcParser::FastV32P1,
-     {10, 63, 0, PROTOBUF_FIELD_OFFSET(GetPersonRequest, _impl_.person_ids_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // repeated int32 person_ids = 1 [json_name = "personIds"];
-    {PROTOBUF_FIELD_OFFSET(GetPersonRequest, _impl_.person_ids_), 0, 0,
-    (0 | ::_fl::kFcRepeated | ::_fl::kPackedInt32)},
-  }},
-  // no aux_entries
-  {{
-  }},
-};
-
-::uint8_t* GetPersonRequest::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* GetPersonRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.economy.v1.GetPersonRequest)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // repeated int32 person_ids = 1 [json_name = "personIds"];
   {
-    int byte_size = _impl_._person_ids_cached_byte_size_.Get();
+    int byte_size = _impl_._person_ids_cached_byte_size_.load(std::memory_order_relaxed);
     if (byte_size > 0) {
-      target = stream->WriteInt32Packed(1, _internal_person_ids(),
-                                                 byte_size, target);
+      target = stream->WriteInt32Packed(
+          1, _internal_person_ids(), byte_size, target);
     }
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.economy.v1.GetPersonRequest)
   return target;
 }
 
-::size_t GetPersonRequest::ByteSizeLong() const {
+size_t GetPersonRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.economy.v1.GetPersonRequest)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // repeated int32 person_ids = 1 [json_name = "personIds"];
   {
-    std::size_t data_size = ::_pbi::WireFormatLite::Int32Size(
-        this->_internal_person_ids())
-    ;
-    _impl_._person_ids_cached_byte_size_.Set(::_pbi::ToCachedSize(data_size));
-    std::size_t tag_size = data_size == 0
-        ? 0
-        : 1 + ::_pbi::WireFormatLite::Int32Size(
-                            static_cast<int32_t>(data_size))
-    ;
-    total_size += tag_size + data_size;
+    size_t data_size = ::_pbi::WireFormatLite::
+      Int32Size(this->_impl_.person_ids_);
+    if (data_size > 0) {
+      total_size += 1 +
+        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
+    }
+    int cached_size = ::_pbi::ToCachedSize(data_size);
+    _impl_._person_ids_cached_byte_size_.store(cached_size,
+                                    std::memory_order_relaxed);
+    total_size += data_size;
   }
+
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData GetPersonRequest::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetPersonRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     GetPersonRequest::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*GetPersonRequest::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetPersonRequest::GetClassData() const { return &_class_data_; }
 
 
-void GetPersonRequest::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void GetPersonRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<GetPersonRequest*>(&to_msg);
   auto& from = static_cast<const GetPersonRequest&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.economy.v1.GetPersonRequest)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  _this->_internal_mutable_person_ids()->MergeFrom(from._internal_person_ids());
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.person_ids_.MergeFrom(from._impl_.person_ids_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void GetPersonRequest::CopyFrom(const GetPersonRequest& from) {
@@ -414,7 +375,7 @@ void GetPersonRequest::CopyFrom(const GetPersonRequest& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool GetPersonRequest::IsInitialized() const {
+bool GetPersonRequest::IsInitialized() const {
   return true;
 }
 
@@ -424,11 +385,12 @@ void GetPersonRequest::InternalSwap(GetPersonRequest* other) {
   _impl_.person_ids_.InternalSwap(&other->_impl_.person_ids_);
 }
 
-::google::protobuf::Metadata GetPersonRequest::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata GetPersonRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv1_2fperson_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv1_2fperson_5fservice_2eproto_once,
       file_level_metadata_city_2feconomy_2fv1_2fperson_5fservice_2eproto[0]);
 }
+
 // ===================================================================
 
 class GetPersonResponse::_Internal {
@@ -436,150 +398,162 @@ class GetPersonResponse::_Internal {
 };
 
 void GetPersonResponse::clear_persons() {
-  _internal_mutable_persons()->Clear();
+  _impl_.persons_.Clear();
 }
-GetPersonResponse::GetPersonResponse(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+GetPersonResponse::GetPersonResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.economy.v1.GetPersonResponse)
 }
-GetPersonResponse::GetPersonResponse(const GetPersonResponse& from) : ::google::protobuf::Message() {
-  GetPersonResponse* const _this = this;
-  (void)_this;
+GetPersonResponse::GetPersonResponse(const GetPersonResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  GetPersonResponse* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.persons_){from._impl_.persons_},
-      /*decltype(_impl_._cached_size_)*/ {},
-  };
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+      decltype(_impl_.persons_){from._impl_.persons_}
+    , /*decltype(_impl_._cached_size_)*/{}};
 
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:city.economy.v1.GetPersonResponse)
 }
-inline void GetPersonResponse::SharedCtor(::_pb::Arena* arena) {
+
+inline void GetPersonResponse::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.persons_){arena},
-      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.persons_){arena}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 GetPersonResponse::~GetPersonResponse() {
   // @@protoc_insertion_point(destructor:city.economy.v1.GetPersonResponse)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void GetPersonResponse::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.persons_.~RepeatedPtrField();
 }
+
 void GetPersonResponse::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void GetPersonResponse::Clear() {
+void GetPersonResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.economy.v1.GetPersonResponse)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _internal_mutable_persons()->Clear();
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _impl_.persons_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* GetPersonResponse::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* GetPersonResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // repeated .city.economy.v1.Person persons = 1 [json_name = "persons"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_persons(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<0, 1, 1, 0, 2> GetPersonResponse::_table_ = {
-  {
-    0,  // no _has_bits_
-    0, // no _extensions_
-    1, 0,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967294,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    1,  // num_field_entries
-    1,  // num_aux_entries
-    offsetof(decltype(_table_), aux_entries),
-    &_GetPersonResponse_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    // repeated .city.economy.v1.Person persons = 1 [json_name = "persons"];
-    {::_pbi::TcParser::FastMtR1,
-     {10, 63, 0, PROTOBUF_FIELD_OFFSET(GetPersonResponse, _impl_.persons_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // repeated .city.economy.v1.Person persons = 1 [json_name = "persons"];
-    {PROTOBUF_FIELD_OFFSET(GetPersonResponse, _impl_.persons_), 0, 0,
-    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
-  }}, {{
-    {::_pbi::TcParser::GetTable<::city::economy::v1::Person>()},
-  }}, {{
-  }},
-};
-
-::uint8_t* GetPersonResponse::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* GetPersonResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.economy.v1.GetPersonResponse)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // repeated .city.economy.v1.Person persons = 1 [json_name = "persons"];
   for (unsigned i = 0,
       n = static_cast<unsigned>(this->_internal_persons_size()); i < n; i++) {
-    const auto& repfield = this->_internal_persons().Get(i);
-    target = ::google::protobuf::internal::WireFormatLite::
+    const auto& repfield = this->_internal_persons(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
         InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.economy.v1.GetPersonResponse)
   return target;
 }
 
-::size_t GetPersonResponse::ByteSizeLong() const {
+size_t GetPersonResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.economy.v1.GetPersonResponse)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // repeated .city.economy.v1.Person persons = 1 [json_name = "persons"];
   total_size += 1UL * this->_internal_persons_size();
-  for (const auto& msg : this->_internal_persons()) {
+  for (const auto& msg : this->_impl_.persons_) {
     total_size +=
-      ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
+
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData GetPersonResponse::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetPersonResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     GetPersonResponse::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*GetPersonResponse::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetPersonResponse::GetClassData() const { return &_class_data_; }
 
 
-void GetPersonResponse::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void GetPersonResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<GetPersonResponse*>(&to_msg);
   auto& from = static_cast<const GetPersonResponse&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.economy.v1.GetPersonResponse)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  _this->_internal_mutable_persons()->MergeFrom(from._internal_persons());
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.persons_.MergeFrom(from._impl_.persons_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void GetPersonResponse::CopyFrom(const GetPersonResponse& from) {
@@ -589,7 +563,7 @@ void GetPersonResponse::CopyFrom(const GetPersonResponse& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool GetPersonResponse::IsInitialized() const {
+bool GetPersonResponse::IsInitialized() const {
   return true;
 }
 
@@ -599,159 +573,172 @@ void GetPersonResponse::InternalSwap(GetPersonResponse* other) {
   _impl_.persons_.InternalSwap(&other->_impl_.persons_);
 }
 
-::google::protobuf::Metadata GetPersonResponse::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata GetPersonResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv1_2fperson_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv1_2fperson_5fservice_2eproto_once,
       file_level_metadata_city_2feconomy_2fv1_2fperson_5fservice_2eproto[1]);
 }
+
 // ===================================================================
 
 class UpdatePersonMoneyRequest::_Internal {
  public:
 };
 
-UpdatePersonMoneyRequest::UpdatePersonMoneyRequest(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+UpdatePersonMoneyRequest::UpdatePersonMoneyRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.economy.v1.UpdatePersonMoneyRequest)
 }
-UpdatePersonMoneyRequest::UpdatePersonMoneyRequest(const UpdatePersonMoneyRequest& from) : ::google::protobuf::Message() {
-  UpdatePersonMoneyRequest* const _this = this;
-  (void)_this;
+UpdatePersonMoneyRequest::UpdatePersonMoneyRequest(const UpdatePersonMoneyRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  UpdatePersonMoneyRequest* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.items_){from._impl_.items_},
-      /*decltype(_impl_._cached_size_)*/ {},
-  };
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+      decltype(_impl_.items_){from._impl_.items_}
+    , /*decltype(_impl_._cached_size_)*/{}};
 
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:city.economy.v1.UpdatePersonMoneyRequest)
 }
-inline void UpdatePersonMoneyRequest::SharedCtor(::_pb::Arena* arena) {
+
+inline void UpdatePersonMoneyRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.items_){arena},
-      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.items_){arena}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 UpdatePersonMoneyRequest::~UpdatePersonMoneyRequest() {
   // @@protoc_insertion_point(destructor:city.economy.v1.UpdatePersonMoneyRequest)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void UpdatePersonMoneyRequest::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.items_.~RepeatedPtrField();
 }
+
 void UpdatePersonMoneyRequest::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void UpdatePersonMoneyRequest::Clear() {
+void UpdatePersonMoneyRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.economy.v1.UpdatePersonMoneyRequest)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _internal_mutable_items()->Clear();
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _impl_.items_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* UpdatePersonMoneyRequest::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* UpdatePersonMoneyRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // repeated .city.economy.v1.UpdatePersonMoneyRequestItem items = 1 [json_name = "items"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_items(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<0, 1, 1, 0, 2> UpdatePersonMoneyRequest::_table_ = {
-  {
-    0,  // no _has_bits_
-    0, // no _extensions_
-    1, 0,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967294,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    1,  // num_field_entries
-    1,  // num_aux_entries
-    offsetof(decltype(_table_), aux_entries),
-    &_UpdatePersonMoneyRequest_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    // repeated .city.economy.v1.UpdatePersonMoneyRequestItem items = 1 [json_name = "items"];
-    {::_pbi::TcParser::FastMtR1,
-     {10, 63, 0, PROTOBUF_FIELD_OFFSET(UpdatePersonMoneyRequest, _impl_.items_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // repeated .city.economy.v1.UpdatePersonMoneyRequestItem items = 1 [json_name = "items"];
-    {PROTOBUF_FIELD_OFFSET(UpdatePersonMoneyRequest, _impl_.items_), 0, 0,
-    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
-  }}, {{
-    {::_pbi::TcParser::GetTable<::city::economy::v1::UpdatePersonMoneyRequestItem>()},
-  }}, {{
-  }},
-};
-
-::uint8_t* UpdatePersonMoneyRequest::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* UpdatePersonMoneyRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.economy.v1.UpdatePersonMoneyRequest)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // repeated .city.economy.v1.UpdatePersonMoneyRequestItem items = 1 [json_name = "items"];
   for (unsigned i = 0,
       n = static_cast<unsigned>(this->_internal_items_size()); i < n; i++) {
-    const auto& repfield = this->_internal_items().Get(i);
-    target = ::google::protobuf::internal::WireFormatLite::
+    const auto& repfield = this->_internal_items(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
         InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.economy.v1.UpdatePersonMoneyRequest)
   return target;
 }
 
-::size_t UpdatePersonMoneyRequest::ByteSizeLong() const {
+size_t UpdatePersonMoneyRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.economy.v1.UpdatePersonMoneyRequest)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // repeated .city.economy.v1.UpdatePersonMoneyRequestItem items = 1 [json_name = "items"];
   total_size += 1UL * this->_internal_items_size();
-  for (const auto& msg : this->_internal_items()) {
+  for (const auto& msg : this->_impl_.items_) {
     total_size +=
-      ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
+
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData UpdatePersonMoneyRequest::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData UpdatePersonMoneyRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     UpdatePersonMoneyRequest::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*UpdatePersonMoneyRequest::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*UpdatePersonMoneyRequest::GetClassData() const { return &_class_data_; }
 
 
-void UpdatePersonMoneyRequest::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void UpdatePersonMoneyRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<UpdatePersonMoneyRequest*>(&to_msg);
   auto& from = static_cast<const UpdatePersonMoneyRequest&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.economy.v1.UpdatePersonMoneyRequest)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  _this->_internal_mutable_items()->MergeFrom(from._internal_items());
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.items_.MergeFrom(from._impl_.items_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void UpdatePersonMoneyRequest::CopyFrom(const UpdatePersonMoneyRequest& from) {
@@ -761,7 +748,7 @@ void UpdatePersonMoneyRequest::CopyFrom(const UpdatePersonMoneyRequest& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool UpdatePersonMoneyRequest::IsInitialized() const {
+bool UpdatePersonMoneyRequest::IsInitialized() const {
   return true;
 }
 
@@ -771,184 +758,197 @@ void UpdatePersonMoneyRequest::InternalSwap(UpdatePersonMoneyRequest* other) {
   _impl_.items_.InternalSwap(&other->_impl_.items_);
 }
 
-::google::protobuf::Metadata UpdatePersonMoneyRequest::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata UpdatePersonMoneyRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv1_2fperson_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv1_2fperson_5fservice_2eproto_once,
       file_level_metadata_city_2feconomy_2fv1_2fperson_5fservice_2eproto[2]);
 }
+
 // ===================================================================
 
 class UpdatePersonMoneyRequestItem::_Internal {
  public:
 };
 
-UpdatePersonMoneyRequestItem::UpdatePersonMoneyRequestItem(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+UpdatePersonMoneyRequestItem::UpdatePersonMoneyRequestItem(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.economy.v1.UpdatePersonMoneyRequestItem)
 }
 UpdatePersonMoneyRequestItem::UpdatePersonMoneyRequestItem(const UpdatePersonMoneyRequestItem& from)
-    : ::google::protobuf::Message(), _impl_(from._impl_) {
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  UpdatePersonMoneyRequestItem* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.money_){}
+    , decltype(_impl_.person_id_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&_impl_.money_, &from._impl_.money_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.person_id_) -
+    reinterpret_cast<char*>(&_impl_.money_)) + sizeof(_impl_.person_id_));
   // @@protoc_insertion_point(copy_constructor:city.economy.v1.UpdatePersonMoneyRequestItem)
 }
-inline void UpdatePersonMoneyRequestItem::SharedCtor(::_pb::Arena* arena) {
+
+inline void UpdatePersonMoneyRequestItem::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.money_){0},
-      decltype(_impl_.person_id_){0},
-      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.money_){0}
+    , decltype(_impl_.person_id_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 UpdatePersonMoneyRequestItem::~UpdatePersonMoneyRequestItem() {
   // @@protoc_insertion_point(destructor:city.economy.v1.UpdatePersonMoneyRequestItem)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void UpdatePersonMoneyRequestItem::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
+
 void UpdatePersonMoneyRequestItem::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void UpdatePersonMoneyRequestItem::Clear() {
+void UpdatePersonMoneyRequestItem::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.economy.v1.UpdatePersonMoneyRequestItem)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&_impl_.money_, 0, static_cast<::size_t>(
+  ::memset(&_impl_.money_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_impl_.person_id_) -
       reinterpret_cast<char*>(&_impl_.money_)) + sizeof(_impl_.person_id_));
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* UpdatePersonMoneyRequestItem::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* UpdatePersonMoneyRequestItem::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 person_id = 1 [json_name = "personId"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.person_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // double money = 2 [json_name = "money"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 17)) {
+          _impl_.money_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<1, 2, 0, 0, 2> UpdatePersonMoneyRequestItem::_table_ = {
-  {
-    0,  // no _has_bits_
-    0, // no _extensions_
-    2, 8,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967292,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    2,  // num_field_entries
-    0,  // num_aux_entries
-    offsetof(decltype(_table_), field_names),  // no aux_entries
-    &_UpdatePersonMoneyRequestItem_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    // double money = 2 [json_name = "money"];
-    {::_pbi::TcParser::FastF64S1,
-     {17, 63, 0, PROTOBUF_FIELD_OFFSET(UpdatePersonMoneyRequestItem, _impl_.money_)}},
-    // int32 person_id = 1 [json_name = "personId"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(UpdatePersonMoneyRequestItem, _impl_.person_id_), 63>(),
-     {8, 63, 0, PROTOBUF_FIELD_OFFSET(UpdatePersonMoneyRequestItem, _impl_.person_id_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // int32 person_id = 1 [json_name = "personId"];
-    {PROTOBUF_FIELD_OFFSET(UpdatePersonMoneyRequestItem, _impl_.person_id_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-    // double money = 2 [json_name = "money"];
-    {PROTOBUF_FIELD_OFFSET(UpdatePersonMoneyRequestItem, _impl_.money_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kDouble)},
-  }},
-  // no aux_entries
-  {{
-  }},
-};
-
-::uint8_t* UpdatePersonMoneyRequestItem::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* UpdatePersonMoneyRequestItem::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.economy.v1.UpdatePersonMoneyRequestItem)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // int32 person_id = 1 [json_name = "personId"];
   if (this->_internal_person_id() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<1>(
-            stream, this->_internal_person_id(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_person_id(), target);
   }
 
   // double money = 2 [json_name = "money"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_money = this->_internal_money();
-  ::uint64_t raw_money;
+  uint64_t raw_money;
   memcpy(&raw_money, &tmp_money, sizeof(tmp_money));
   if (raw_money != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-        2, this->_internal_money(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(2, this->_internal_money(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.economy.v1.UpdatePersonMoneyRequestItem)
   return target;
 }
 
-::size_t UpdatePersonMoneyRequestItem::ByteSizeLong() const {
+size_t UpdatePersonMoneyRequestItem::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.economy.v1.UpdatePersonMoneyRequestItem)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // double money = 2 [json_name = "money"];
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_money = this->_internal_money();
-  ::uint64_t raw_money;
+  uint64_t raw_money;
   memcpy(&raw_money, &tmp_money, sizeof(tmp_money));
   if (raw_money != 0) {
-    total_size += 9;
+    total_size += 1 + 8;
   }
 
   // int32 person_id = 1 [json_name = "personId"];
   if (this->_internal_person_id() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_person_id());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_person_id());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData UpdatePersonMoneyRequestItem::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData UpdatePersonMoneyRequestItem::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     UpdatePersonMoneyRequestItem::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*UpdatePersonMoneyRequestItem::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*UpdatePersonMoneyRequestItem::GetClassData() const { return &_class_data_; }
 
 
-void UpdatePersonMoneyRequestItem::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void UpdatePersonMoneyRequestItem::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<UpdatePersonMoneyRequestItem*>(&to_msg);
   auto& from = static_cast<const UpdatePersonMoneyRequestItem&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.economy.v1.UpdatePersonMoneyRequestItem)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  static_assert(sizeof(::uint64_t) == sizeof(double),
-                "Code assumes ::uint64_t and double are the same size.");
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
   double tmp_money = from._internal_money();
-  ::uint64_t raw_money;
+  uint64_t raw_money;
   memcpy(&raw_money, &tmp_money, sizeof(tmp_money));
   if (raw_money != 0) {
     _this->_internal_set_money(from._internal_money());
@@ -956,7 +956,7 @@ void UpdatePersonMoneyRequestItem::MergeImpl(::google::protobuf::Message& to_msg
   if (from._internal_person_id() != 0) {
     _this->_internal_set_person_id(from._internal_person_id());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void UpdatePersonMoneyRequestItem::CopyFrom(const UpdatePersonMoneyRequestItem& from) {
@@ -966,14 +966,14 @@ void UpdatePersonMoneyRequestItem::CopyFrom(const UpdatePersonMoneyRequestItem& 
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool UpdatePersonMoneyRequestItem::IsInitialized() const {
+bool UpdatePersonMoneyRequestItem::IsInitialized() const {
   return true;
 }
 
 void UpdatePersonMoneyRequestItem::InternalSwap(UpdatePersonMoneyRequestItem* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::google::protobuf::internal::memswap<
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(UpdatePersonMoneyRequestItem, _impl_.person_id_)
       + sizeof(UpdatePersonMoneyRequestItem::_impl_.person_id_)
       - PROTOBUF_FIELD_OFFSET(UpdatePersonMoneyRequestItem, _impl_.money_)>(
@@ -981,11 +981,12 @@ void UpdatePersonMoneyRequestItem::InternalSwap(UpdatePersonMoneyRequestItem* ot
           reinterpret_cast<char*>(&other->_impl_.money_));
 }
 
-::google::protobuf::Metadata UpdatePersonMoneyRequestItem::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata UpdatePersonMoneyRequestItem::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv1_2fperson_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv1_2fperson_5fservice_2eproto_once,
       file_level_metadata_city_2feconomy_2fv1_2fperson_5fservice_2eproto[3]);
 }
+
 // ===================================================================
 
 class UpdatePersonMoneyResponse::_Internal {
@@ -993,150 +994,162 @@ class UpdatePersonMoneyResponse::_Internal {
 };
 
 void UpdatePersonMoneyResponse::clear_persons() {
-  _internal_mutable_persons()->Clear();
+  _impl_.persons_.Clear();
 }
-UpdatePersonMoneyResponse::UpdatePersonMoneyResponse(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+UpdatePersonMoneyResponse::UpdatePersonMoneyResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.economy.v1.UpdatePersonMoneyResponse)
 }
-UpdatePersonMoneyResponse::UpdatePersonMoneyResponse(const UpdatePersonMoneyResponse& from) : ::google::protobuf::Message() {
-  UpdatePersonMoneyResponse* const _this = this;
-  (void)_this;
+UpdatePersonMoneyResponse::UpdatePersonMoneyResponse(const UpdatePersonMoneyResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  UpdatePersonMoneyResponse* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.persons_){from._impl_.persons_},
-      /*decltype(_impl_._cached_size_)*/ {},
-  };
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+      decltype(_impl_.persons_){from._impl_.persons_}
+    , /*decltype(_impl_._cached_size_)*/{}};
 
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:city.economy.v1.UpdatePersonMoneyResponse)
 }
-inline void UpdatePersonMoneyResponse::SharedCtor(::_pb::Arena* arena) {
+
+inline void UpdatePersonMoneyResponse::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.persons_){arena},
-      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.persons_){arena}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 UpdatePersonMoneyResponse::~UpdatePersonMoneyResponse() {
   // @@protoc_insertion_point(destructor:city.economy.v1.UpdatePersonMoneyResponse)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void UpdatePersonMoneyResponse::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.persons_.~RepeatedPtrField();
 }
+
 void UpdatePersonMoneyResponse::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void UpdatePersonMoneyResponse::Clear() {
+void UpdatePersonMoneyResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.economy.v1.UpdatePersonMoneyResponse)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _internal_mutable_persons()->Clear();
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _impl_.persons_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* UpdatePersonMoneyResponse::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* UpdatePersonMoneyResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // repeated .city.economy.v1.Person persons = 1 [json_name = "persons"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_persons(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<0, 1, 1, 0, 2> UpdatePersonMoneyResponse::_table_ = {
-  {
-    0,  // no _has_bits_
-    0, // no _extensions_
-    1, 0,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967294,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    1,  // num_field_entries
-    1,  // num_aux_entries
-    offsetof(decltype(_table_), aux_entries),
-    &_UpdatePersonMoneyResponse_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    // repeated .city.economy.v1.Person persons = 1 [json_name = "persons"];
-    {::_pbi::TcParser::FastMtR1,
-     {10, 63, 0, PROTOBUF_FIELD_OFFSET(UpdatePersonMoneyResponse, _impl_.persons_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // repeated .city.economy.v1.Person persons = 1 [json_name = "persons"];
-    {PROTOBUF_FIELD_OFFSET(UpdatePersonMoneyResponse, _impl_.persons_), 0, 0,
-    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
-  }}, {{
-    {::_pbi::TcParser::GetTable<::city::economy::v1::Person>()},
-  }}, {{
-  }},
-};
-
-::uint8_t* UpdatePersonMoneyResponse::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* UpdatePersonMoneyResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.economy.v1.UpdatePersonMoneyResponse)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // repeated .city.economy.v1.Person persons = 1 [json_name = "persons"];
   for (unsigned i = 0,
       n = static_cast<unsigned>(this->_internal_persons_size()); i < n; i++) {
-    const auto& repfield = this->_internal_persons().Get(i);
-    target = ::google::protobuf::internal::WireFormatLite::
+    const auto& repfield = this->_internal_persons(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
         InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.economy.v1.UpdatePersonMoneyResponse)
   return target;
 }
 
-::size_t UpdatePersonMoneyResponse::ByteSizeLong() const {
+size_t UpdatePersonMoneyResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.economy.v1.UpdatePersonMoneyResponse)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // repeated .city.economy.v1.Person persons = 1 [json_name = "persons"];
   total_size += 1UL * this->_internal_persons_size();
-  for (const auto& msg : this->_internal_persons()) {
+  for (const auto& msg : this->_impl_.persons_) {
     total_size +=
-      ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
+
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData UpdatePersonMoneyResponse::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData UpdatePersonMoneyResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     UpdatePersonMoneyResponse::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*UpdatePersonMoneyResponse::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*UpdatePersonMoneyResponse::GetClassData() const { return &_class_data_; }
 
 
-void UpdatePersonMoneyResponse::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void UpdatePersonMoneyResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<UpdatePersonMoneyResponse*>(&to_msg);
   auto& from = static_cast<const UpdatePersonMoneyResponse&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.economy.v1.UpdatePersonMoneyResponse)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  _this->_internal_mutable_persons()->MergeFrom(from._internal_persons());
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.persons_.MergeFrom(from._impl_.persons_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void UpdatePersonMoneyResponse::CopyFrom(const UpdatePersonMoneyResponse& from) {
@@ -1146,7 +1159,7 @@ void UpdatePersonMoneyResponse::CopyFrom(const UpdatePersonMoneyResponse& from) 
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool UpdatePersonMoneyResponse::IsInitialized() const {
+bool UpdatePersonMoneyResponse::IsInitialized() const {
   return true;
 }
 
@@ -1156,18 +1169,38 @@ void UpdatePersonMoneyResponse::InternalSwap(UpdatePersonMoneyResponse* other) {
   _impl_.persons_.InternalSwap(&other->_impl_.persons_);
 }
 
-::google::protobuf::Metadata UpdatePersonMoneyResponse::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata UpdatePersonMoneyResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv1_2fperson_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv1_2fperson_5fservice_2eproto_once,
       file_level_metadata_city_2feconomy_2fv1_2fperson_5fservice_2eproto[4]);
 }
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace v1
 }  // namespace economy
 }  // namespace city
-namespace google {
-namespace protobuf {
-}  // namespace protobuf
-}  // namespace google
+PROTOBUF_NAMESPACE_OPEN
+template<> PROTOBUF_NOINLINE ::city::economy::v1::GetPersonRequest*
+Arena::CreateMaybeMessage< ::city::economy::v1::GetPersonRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::economy::v1::GetPersonRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::economy::v1::GetPersonResponse*
+Arena::CreateMaybeMessage< ::city::economy::v1::GetPersonResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::economy::v1::GetPersonResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::economy::v1::UpdatePersonMoneyRequest*
+Arena::CreateMaybeMessage< ::city::economy::v1::UpdatePersonMoneyRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::economy::v1::UpdatePersonMoneyRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::economy::v1::UpdatePersonMoneyRequestItem*
+Arena::CreateMaybeMessage< ::city::economy::v1::UpdatePersonMoneyRequestItem >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::economy::v1::UpdatePersonMoneyRequestItem >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::economy::v1::UpdatePersonMoneyResponse*
+Arena::CreateMaybeMessage< ::city::economy::v1::UpdatePersonMoneyResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::economy::v1::UpdatePersonMoneyResponse >(arena);
+}
+PROTOBUF_NAMESPACE_CLOSE
+
 // @@protoc_insertion_point(global_scope)
-#include "google/protobuf/port_undef.inc"
+#include <google/protobuf/port_undef.inc>

@@ -4,629 +4,555 @@
 #include "city/cognition/input/v1/config.pb.h"
 
 #include <algorithm>
-#include "google/protobuf/io/coded_stream.h"
-#include "google/protobuf/extension_set.h"
-#include "google/protobuf/wire_format_lite.h"
-#include "google/protobuf/descriptor.h"
-#include "google/protobuf/generated_message_reflection.h"
-#include "google/protobuf/reflection_ops.h"
-#include "google/protobuf/wire_format.h"
-#include "google/protobuf/generated_message_tctable_impl.h"
-// @@protoc_insertion_point(includes)
 
-// Must be included last.
-#include "google/protobuf/port_def.inc"
+#include <google/protobuf/io/coded_stream.h>
+#include <google/protobuf/extension_set.h>
+#include <google/protobuf/wire_format_lite.h>
+#include <google/protobuf/descriptor.h>
+#include <google/protobuf/generated_message_reflection.h>
+#include <google/protobuf/reflection_ops.h>
+#include <google/protobuf/wire_format.h>
+// @@protoc_insertion_point(includes)
+#include <google/protobuf/port_def.inc>
+
 PROTOBUF_PRAGMA_INIT_SEG
-namespace _pb = ::google::protobuf;
-namespace _pbi = ::google::protobuf::internal;
-namespace _fl = ::google::protobuf::internal::field_layout;
+
+namespace _pb = ::PROTOBUF_NAMESPACE_ID;
+namespace _pbi = _pb::internal;
+
 namespace city {
 namespace cognition {
 namespace input {
 namespace v1 {
-        template <typename>
-PROTOBUF_CONSTEXPR Mongo::Mongo(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_._has_bits_)*/ {},
-      /*decltype(_impl_._cached_size_)*/ {},
-      /*decltype(_impl_.uri_)*/ {
-          &::_pbi::fixed_address_empty_string,
-          ::_pbi::ConstantInitialized{},
-      },
-      /*decltype(_impl_.map_)*/ nullptr,
-      /*decltype(_impl_.agents_)*/ nullptr,
-      /*decltype(_impl_.edges_)*/ nullptr,
-    } {}
+PROTOBUF_CONSTEXPR Mongo::Mongo(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.uri_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.map_)*/nullptr
+  , /*decltype(_impl_.agents_)*/nullptr
+  , /*decltype(_impl_.edges_)*/nullptr
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct MongoDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR MongoDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR MongoDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~MongoDefaultTypeInternal() {}
   union {
     Mongo _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 MongoDefaultTypeInternal _Mongo_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR ControlStep::ControlStep(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_.start_)*/ 0,
-      /*decltype(_impl_.total_)*/ 0,
-      /*decltype(_impl_.interval_)*/ 0,
-      /*decltype(_impl_._cached_size_)*/ {},
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 MongoDefaultTypeInternal _Mongo_default_instance_;
+PROTOBUF_CONSTEXPR ControlStep::ControlStep(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.start_)*/0
+  , /*decltype(_impl_.total_)*/0
+  , /*decltype(_impl_.interval_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct ControlStepDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR ControlStepDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR ControlStepDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~ControlStepDefaultTypeInternal() {}
   union {
     ControlStep _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ControlStepDefaultTypeInternal _ControlStep_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR Control::Control(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_._has_bits_)*/ {},
-      /*decltype(_impl_._cached_size_)*/ {},
-      /*decltype(_impl_.step_)*/ nullptr,
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ControlStepDefaultTypeInternal _ControlStep_default_instance_;
+PROTOBUF_CONSTEXPR Control::Control(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.step_)*/nullptr
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct ControlDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR ControlDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR ControlDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~ControlDefaultTypeInternal() {}
   union {
     Control _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ControlDefaultTypeInternal _Control_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR OutputSwitch::OutputSwitch(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_.common_)*/ false,
-      /*decltype(_impl_._cached_size_)*/ {},
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ControlDefaultTypeInternal _Control_default_instance_;
+PROTOBUF_CONSTEXPR OutputSwitch::OutputSwitch(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.common_)*/false
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct OutputSwitchDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR OutputSwitchDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR OutputSwitchDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~OutputSwitchDefaultTypeInternal() {}
   union {
     OutputSwitch _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 OutputSwitchDefaultTypeInternal _OutputSwitch_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR Output::Output(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_._has_bits_)*/ {},
-      /*decltype(_impl_._cached_size_)*/ {},
-      /*decltype(_impl_.target_)*/ nullptr,
-      /*decltype(_impl_.switch__)*/ nullptr,
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 OutputSwitchDefaultTypeInternal _OutputSwitch_default_instance_;
+PROTOBUF_CONSTEXPR Output::Output(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.target_)*/nullptr
+  , /*decltype(_impl_.switch__)*/nullptr
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct OutputDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR OutputDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR OutputDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~OutputDefaultTypeInternal() {}
   union {
     Output _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 OutputDefaultTypeInternal _Output_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR Config::Config(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_._has_bits_)*/ {},
-      /*decltype(_impl_._cached_size_)*/ {},
-      /*decltype(_impl_.mongo_)*/ nullptr,
-      /*decltype(_impl_.control_)*/ nullptr,
-      /*decltype(_impl_.output_)*/ nullptr,
-    } {}
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 OutputDefaultTypeInternal _Output_default_instance_;
+PROTOBUF_CONSTEXPR Config::Config(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.mongo_)*/nullptr
+  , /*decltype(_impl_.control_)*/nullptr
+  , /*decltype(_impl_.output_)*/nullptr
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct ConfigDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR ConfigDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  PROTOBUF_CONSTEXPR ConfigDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
   ~ConfigDefaultTypeInternal() {}
   union {
     Config _instance;
   };
 };
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ConfigDefaultTypeInternal _Config_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ConfigDefaultTypeInternal _Config_default_instance_;
 }  // namespace v1
 }  // namespace input
 }  // namespace cognition
 }  // namespace city
 static ::_pb::Metadata file_level_metadata_city_2fcognition_2finput_2fv1_2fconfig_2eproto[6];
-static constexpr const ::_pb::EnumDescriptor**
-    file_level_enum_descriptors_city_2fcognition_2finput_2fv1_2fconfig_2eproto = nullptr;
-static constexpr const ::_pb::ServiceDescriptor**
-    file_level_service_descriptors_city_2fcognition_2finput_2fv1_2fconfig_2eproto = nullptr;
-const ::uint32_t TableStruct_city_2fcognition_2finput_2fv1_2fconfig_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
-    protodesc_cold) = {
-    PROTOBUF_FIELD_OFFSET(::city::cognition::input::v1::Mongo, _impl_._has_bits_),
-    PROTOBUF_FIELD_OFFSET(::city::cognition::input::v1::Mongo, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::cognition::input::v1::Mongo, _impl_.uri_),
-    PROTOBUF_FIELD_OFFSET(::city::cognition::input::v1::Mongo, _impl_.map_),
-    PROTOBUF_FIELD_OFFSET(::city::cognition::input::v1::Mongo, _impl_.agents_),
-    PROTOBUF_FIELD_OFFSET(::city::cognition::input::v1::Mongo, _impl_.edges_),
-    ~0u,
-    0,
-    1,
-    2,
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::cognition::input::v1::ControlStep, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::cognition::input::v1::ControlStep, _impl_.start_),
-    PROTOBUF_FIELD_OFFSET(::city::cognition::input::v1::ControlStep, _impl_.total_),
-    PROTOBUF_FIELD_OFFSET(::city::cognition::input::v1::ControlStep, _impl_.interval_),
-    PROTOBUF_FIELD_OFFSET(::city::cognition::input::v1::Control, _impl_._has_bits_),
-    PROTOBUF_FIELD_OFFSET(::city::cognition::input::v1::Control, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::cognition::input::v1::Control, _impl_.step_),
-    0,
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::city::cognition::input::v1::OutputSwitch, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::cognition::input::v1::OutputSwitch, _impl_.common_),
-    PROTOBUF_FIELD_OFFSET(::city::cognition::input::v1::Output, _impl_._has_bits_),
-    PROTOBUF_FIELD_OFFSET(::city::cognition::input::v1::Output, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::cognition::input::v1::Output, _impl_.target_),
-    PROTOBUF_FIELD_OFFSET(::city::cognition::input::v1::Output, _impl_.switch__),
-    0,
-    1,
-    PROTOBUF_FIELD_OFFSET(::city::cognition::input::v1::Config, _impl_._has_bits_),
-    PROTOBUF_FIELD_OFFSET(::city::cognition::input::v1::Config, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::city::cognition::input::v1::Config, _impl_.mongo_),
-    PROTOBUF_FIELD_OFFSET(::city::cognition::input::v1::Config, _impl_.control_),
-    PROTOBUF_FIELD_OFFSET(::city::cognition::input::v1::Config, _impl_.output_),
-    0,
-    1,
-    2,
-};
+static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_city_2fcognition_2finput_2fv1_2fconfig_2eproto = nullptr;
+static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_city_2fcognition_2finput_2fv1_2fconfig_2eproto = nullptr;
 
-static const ::_pbi::MigrationSchema
-    schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-        {0, 12, -1, sizeof(::city::cognition::input::v1::Mongo)},
-        {16, -1, -1, sizeof(::city::cognition::input::v1::ControlStep)},
-        {27, 36, -1, sizeof(::city::cognition::input::v1::Control)},
-        {37, -1, -1, sizeof(::city::cognition::input::v1::OutputSwitch)},
-        {46, 56, -1, sizeof(::city::cognition::input::v1::Output)},
-        {58, 69, -1, sizeof(::city::cognition::input::v1::Config)},
+const uint32_t TableStruct_city_2fcognition_2finput_2fv1_2fconfig_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::cognition::input::v1::Mongo, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::cognition::input::v1::Mongo, _impl_.uri_),
+  PROTOBUF_FIELD_OFFSET(::city::cognition::input::v1::Mongo, _impl_.map_),
+  PROTOBUF_FIELD_OFFSET(::city::cognition::input::v1::Mongo, _impl_.agents_),
+  PROTOBUF_FIELD_OFFSET(::city::cognition::input::v1::Mongo, _impl_.edges_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::cognition::input::v1::ControlStep, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::cognition::input::v1::ControlStep, _impl_.start_),
+  PROTOBUF_FIELD_OFFSET(::city::cognition::input::v1::ControlStep, _impl_.total_),
+  PROTOBUF_FIELD_OFFSET(::city::cognition::input::v1::ControlStep, _impl_.interval_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::cognition::input::v1::Control, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::cognition::input::v1::Control, _impl_.step_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::cognition::input::v1::OutputSwitch, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::cognition::input::v1::OutputSwitch, _impl_.common_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::cognition::input::v1::Output, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::cognition::input::v1::Output, _impl_.target_),
+  PROTOBUF_FIELD_OFFSET(::city::cognition::input::v1::Output, _impl_.switch__),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::cognition::input::v1::Config, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::cognition::input::v1::Config, _impl_.mongo_),
+  PROTOBUF_FIELD_OFFSET(::city::cognition::input::v1::Config, _impl_.control_),
+  PROTOBUF_FIELD_OFFSET(::city::cognition::input::v1::Config, _impl_.output_),
+};
+static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  { 0, -1, -1, sizeof(::city::cognition::input::v1::Mongo)},
+  { 10, -1, -1, sizeof(::city::cognition::input::v1::ControlStep)},
+  { 19, -1, -1, sizeof(::city::cognition::input::v1::Control)},
+  { 26, -1, -1, sizeof(::city::cognition::input::v1::OutputSwitch)},
+  { 33, -1, -1, sizeof(::city::cognition::input::v1::Output)},
+  { 41, -1, -1, sizeof(::city::cognition::input::v1::Config)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
-    &::city::cognition::input::v1::_Mongo_default_instance_._instance,
-    &::city::cognition::input::v1::_ControlStep_default_instance_._instance,
-    &::city::cognition::input::v1::_Control_default_instance_._instance,
-    &::city::cognition::input::v1::_OutputSwitch_default_instance_._instance,
-    &::city::cognition::input::v1::_Output_default_instance_._instance,
-    &::city::cognition::input::v1::_Config_default_instance_._instance,
-};
-const char descriptor_table_protodef_city_2fcognition_2finput_2fv1_2fconfig_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-    "\n$city/cognition/input/v1/config.proto\022\027"
-    "city.cognition.input.v1\032\033city/config/v1/"
-    "config.proto\"\252\001\n\005Mongo\022\020\n\003uri\030\001 \001(\tR\003uri"
-    "\022+\n\003map\030\002 \001(\0132\031.city.config.v1.MongoPath"
-    "R\003map\0221\n\006agents\030\003 \001(\0132\031.city.config.v1.M"
-    "ongoPathR\006agents\022/\n\005edges\030\004 \001(\0132\031.city.c"
-    "onfig.v1.MongoPathR\005edges\"U\n\013ControlStep"
-    "\022\024\n\005start\030\001 \001(\005R\005start\022\024\n\005total\030\002 \001(\005R\005t"
-    "otal\022\032\n\010interval\030\003 \001(\002R\010interval\"C\n\007Cont"
-    "rol\0228\n\004step\030\001 \001(\0132$.city.cognition.input"
-    ".v1.ControlStepR\004step\"&\n\014OutputSwitch\022\026\n"
-    "\006common\030\001 \001(\010R\006common\"}\n\006Output\0224\n\006targe"
-    "t\030\001 \001(\0132\034.city.config.v1.OutputTargetR\006t"
-    "arget\022=\n\006switch\030\002 \001(\0132%.city.cognition.i"
-    "nput.v1.OutputSwitchR\006switch\"\263\001\n\006Config\022"
-    "4\n\005mongo\030\001 \001(\0132\036.city.cognition.input.v1"
-    ".MongoR\005mongo\022:\n\007control\030\002 \001(\0132 .city.co"
-    "gnition.input.v1.ControlR\007control\0227\n\006out"
-    "put\030\003 \001(\0132\037.city.cognition.input.v1.Outp"
-    "utR\006outputB\347\001\n\033com.city.cognition.input."
-    "v1B\013ConfigProtoP\001Z<git.fiblab.net/sim/pr"
-    "otos/go/city/cognition/input/v1;inputv1\242"
-    "\002\003CCI\252\002\027City.Cognition.Input.V1\312\002\027City\\C"
-    "ognition\\Input\\V1\342\002#City\\Cognition\\Input"
-    "\\V1\\GPBMetadata\352\002\032City::Cognition::Input"
-    "::V1b\006proto3"
-};
-static const ::_pbi::DescriptorTable* const descriptor_table_city_2fcognition_2finput_2fv1_2fconfig_2eproto_deps[1] =
-    {
-        &::descriptor_table_city_2fconfig_2fv1_2fconfig_2eproto,
-};
-static ::absl::once_flag descriptor_table_city_2fcognition_2finput_2fv1_2fconfig_2eproto_once;
-const ::_pbi::DescriptorTable descriptor_table_city_2fcognition_2finput_2fv1_2fconfig_2eproto = {
-    false,
-    false,
-    1012,
-    descriptor_table_protodef_city_2fcognition_2finput_2fv1_2fconfig_2eproto,
-    "city/cognition/input/v1/config.proto",
-    &descriptor_table_city_2fcognition_2finput_2fv1_2fconfig_2eproto_once,
-    descriptor_table_city_2fcognition_2finput_2fv1_2fconfig_2eproto_deps,
-    1,
-    6,
-    schemas,
-    file_default_instances,
-    TableStruct_city_2fcognition_2finput_2fv1_2fconfig_2eproto::offsets,
-    file_level_metadata_city_2fcognition_2finput_2fv1_2fconfig_2eproto,
-    file_level_enum_descriptors_city_2fcognition_2finput_2fv1_2fconfig_2eproto,
-    file_level_service_descriptors_city_2fcognition_2finput_2fv1_2fconfig_2eproto,
+  &::city::cognition::input::v1::_Mongo_default_instance_._instance,
+  &::city::cognition::input::v1::_ControlStep_default_instance_._instance,
+  &::city::cognition::input::v1::_Control_default_instance_._instance,
+  &::city::cognition::input::v1::_OutputSwitch_default_instance_._instance,
+  &::city::cognition::input::v1::_Output_default_instance_._instance,
+  &::city::cognition::input::v1::_Config_default_instance_._instance,
 };
 
-// This function exists to be marked as weak.
-// It can significantly speed up compilation by breaking up LLVM's SCC
-// in the .pb.cc translation units. Large translation units see a
-// reduction of more than 35% of walltime for optimized builds. Without
-// the weak attribute all the messages in the file, including all the
-// vtables and everything they use become part of the same SCC through
-// a cycle like:
-// GetMetadata -> descriptor table -> default instances ->
-//   vtables -> GetMetadata
-// By adding a weak function here we break the connection from the
-// individual vtables back into the descriptor table.
+const char descriptor_table_protodef_city_2fcognition_2finput_2fv1_2fconfig_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
+  "\n$city/cognition/input/v1/config.proto\022\027"
+  "city.cognition.input.v1\032\033city/config/v1/"
+  "config.proto\"\252\001\n\005Mongo\022\020\n\003uri\030\001 \001(\tR\003uri"
+  "\022+\n\003map\030\002 \001(\0132\031.city.config.v1.MongoPath"
+  "R\003map\0221\n\006agents\030\003 \001(\0132\031.city.config.v1.M"
+  "ongoPathR\006agents\022/\n\005edges\030\004 \001(\0132\031.city.c"
+  "onfig.v1.MongoPathR\005edges\"U\n\013ControlStep"
+  "\022\024\n\005start\030\001 \001(\005R\005start\022\024\n\005total\030\002 \001(\005R\005t"
+  "otal\022\032\n\010interval\030\003 \001(\002R\010interval\"C\n\007Cont"
+  "rol\0228\n\004step\030\001 \001(\0132$.city.cognition.input"
+  ".v1.ControlStepR\004step\"&\n\014OutputSwitch\022\026\n"
+  "\006common\030\001 \001(\010R\006common\"}\n\006Output\0224\n\006targe"
+  "t\030\001 \001(\0132\034.city.config.v1.OutputTargetR\006t"
+  "arget\022=\n\006switch\030\002 \001(\0132%.city.cognition.i"
+  "nput.v1.OutputSwitchR\006switch\"\263\001\n\006Config\022"
+  "4\n\005mongo\030\001 \001(\0132\036.city.cognition.input.v1"
+  ".MongoR\005mongo\022:\n\007control\030\002 \001(\0132 .city.co"
+  "gnition.input.v1.ControlR\007control\0227\n\006out"
+  "put\030\003 \001(\0132\037.city.cognition.input.v1.Outp"
+  "utR\006outputB\347\001\n\033com.city.cognition.input."
+  "v1B\013ConfigProtoP\001Z<git.fiblab.net/sim/pr"
+  "otos/go/city/cognition/input/v1;inputv1\242"
+  "\002\003CCI\252\002\027City.Cognition.Input.V1\312\002\027City\\C"
+  "ognition\\Input\\V1\342\002#City\\Cognition\\Input"
+  "\\V1\\GPBMetadata\352\002\032City::Cognition::Input"
+  "::V1b\006proto3"
+  ;
+static const ::_pbi::DescriptorTable* const descriptor_table_city_2fcognition_2finput_2fv1_2fconfig_2eproto_deps[1] = {
+  &::descriptor_table_city_2fconfig_2fv1_2fconfig_2eproto,
+};
+static ::_pbi::once_flag descriptor_table_city_2fcognition_2finput_2fv1_2fconfig_2eproto_once;
+const ::_pbi::DescriptorTable descriptor_table_city_2fcognition_2finput_2fv1_2fconfig_2eproto = {
+    false, false, 1012, descriptor_table_protodef_city_2fcognition_2finput_2fv1_2fconfig_2eproto,
+    "city/cognition/input/v1/config.proto",
+    &descriptor_table_city_2fcognition_2finput_2fv1_2fconfig_2eproto_once, descriptor_table_city_2fcognition_2finput_2fv1_2fconfig_2eproto_deps, 1, 6,
+    schemas, file_default_instances, TableStruct_city_2fcognition_2finput_2fv1_2fconfig_2eproto::offsets,
+    file_level_metadata_city_2fcognition_2finput_2fv1_2fconfig_2eproto, file_level_enum_descriptors_city_2fcognition_2finput_2fv1_2fconfig_2eproto,
+    file_level_service_descriptors_city_2fcognition_2finput_2fv1_2fconfig_2eproto,
+};
 PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_city_2fcognition_2finput_2fv1_2fconfig_2eproto_getter() {
   return &descriptor_table_city_2fcognition_2finput_2fv1_2fconfig_2eproto;
 }
+
 // Force running AddDescriptors() at dynamic initialization time.
-PROTOBUF_ATTRIBUTE_INIT_PRIORITY2
-static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_city_2fcognition_2finput_2fv1_2fconfig_2eproto(&descriptor_table_city_2fcognition_2finput_2fv1_2fconfig_2eproto);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_city_2fcognition_2finput_2fv1_2fconfig_2eproto(&descriptor_table_city_2fcognition_2finput_2fv1_2fconfig_2eproto);
 namespace city {
 namespace cognition {
 namespace input {
 namespace v1 {
+
 // ===================================================================
 
 class Mongo::_Internal {
  public:
-  using HasBits = decltype(std::declval<Mongo>()._impl_._has_bits_);
-  static constexpr ::int32_t kHasBitsOffset =
-    8 * PROTOBUF_FIELD_OFFSET(Mongo, _impl_._has_bits_);
   static const ::city::config::v1::MongoPath& map(const Mongo* msg);
-  static void set_has_map(HasBits* has_bits) {
-    (*has_bits)[0] |= 1u;
-  }
   static const ::city::config::v1::MongoPath& agents(const Mongo* msg);
-  static void set_has_agents(HasBits* has_bits) {
-    (*has_bits)[0] |= 2u;
-  }
   static const ::city::config::v1::MongoPath& edges(const Mongo* msg);
-  static void set_has_edges(HasBits* has_bits) {
-    (*has_bits)[0] |= 4u;
-  }
 };
 
-const ::city::config::v1::MongoPath& Mongo::_Internal::map(const Mongo* msg) {
+const ::city::config::v1::MongoPath&
+Mongo::_Internal::map(const Mongo* msg) {
   return *msg->_impl_.map_;
 }
-const ::city::config::v1::MongoPath& Mongo::_Internal::agents(const Mongo* msg) {
+const ::city::config::v1::MongoPath&
+Mongo::_Internal::agents(const Mongo* msg) {
   return *msg->_impl_.agents_;
 }
-const ::city::config::v1::MongoPath& Mongo::_Internal::edges(const Mongo* msg) {
+const ::city::config::v1::MongoPath&
+Mongo::_Internal::edges(const Mongo* msg) {
   return *msg->_impl_.edges_;
 }
 void Mongo::clear_map() {
-  if (_impl_.map_ != nullptr) _impl_.map_->Clear();
-  _impl_._has_bits_[0] &= ~0x00000001u;
+  if (GetArenaForAllocation() == nullptr && _impl_.map_ != nullptr) {
+    delete _impl_.map_;
+  }
+  _impl_.map_ = nullptr;
 }
 void Mongo::clear_agents() {
-  if (_impl_.agents_ != nullptr) _impl_.agents_->Clear();
-  _impl_._has_bits_[0] &= ~0x00000002u;
+  if (GetArenaForAllocation() == nullptr && _impl_.agents_ != nullptr) {
+    delete _impl_.agents_;
+  }
+  _impl_.agents_ = nullptr;
 }
 void Mongo::clear_edges() {
-  if (_impl_.edges_ != nullptr) _impl_.edges_->Clear();
-  _impl_._has_bits_[0] &= ~0x00000004u;
+  if (GetArenaForAllocation() == nullptr && _impl_.edges_ != nullptr) {
+    delete _impl_.edges_;
+  }
+  _impl_.edges_ = nullptr;
 }
-Mongo::Mongo(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+Mongo::Mongo(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.cognition.input.v1.Mongo)
 }
-Mongo::Mongo(const Mongo& from) : ::google::protobuf::Message() {
-  Mongo* const _this = this;
-  (void)_this;
+Mongo::Mongo(const Mongo& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  Mongo* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){from._impl_._has_bits_},
-      /*decltype(_impl_._cached_size_)*/ {},
-      decltype(_impl_.uri_){},
-      decltype(_impl_.map_){nullptr},
-      decltype(_impl_.agents_){nullptr},
-      decltype(_impl_.edges_){nullptr},
-  };
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+      decltype(_impl_.uri_){}
+    , decltype(_impl_.map_){nullptr}
+    , decltype(_impl_.agents_){nullptr}
+    , decltype(_impl_.edges_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   _impl_.uri_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        _impl_.uri_.Set("", GetArenaForAllocation());
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.uri_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (!from._internal_uri().empty()) {
-    _this->_impl_.uri_.Set(from._internal_uri(), _this->GetArenaForAllocation());
+    _this->_impl_.uri_.Set(from._internal_uri(), 
+      _this->GetArenaForAllocation());
   }
-  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+  if (from._internal_has_map()) {
     _this->_impl_.map_ = new ::city::config::v1::MongoPath(*from._impl_.map_);
   }
-  if ((from._impl_._has_bits_[0] & 0x00000002u) != 0) {
+  if (from._internal_has_agents()) {
     _this->_impl_.agents_ = new ::city::config::v1::MongoPath(*from._impl_.agents_);
   }
-  if ((from._impl_._has_bits_[0] & 0x00000004u) != 0) {
+  if (from._internal_has_edges()) {
     _this->_impl_.edges_ = new ::city::config::v1::MongoPath(*from._impl_.edges_);
   }
-
   // @@protoc_insertion_point(copy_constructor:city.cognition.input.v1.Mongo)
 }
-inline void Mongo::SharedCtor(::_pb::Arena* arena) {
+
+inline void Mongo::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){},
-      /*decltype(_impl_._cached_size_)*/ {},
-      decltype(_impl_.uri_){},
-      decltype(_impl_.map_){nullptr},
-      decltype(_impl_.agents_){nullptr},
-      decltype(_impl_.edges_){nullptr},
+      decltype(_impl_.uri_){}
+    , decltype(_impl_.map_){nullptr}
+    , decltype(_impl_.agents_){nullptr}
+    , decltype(_impl_.edges_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
   _impl_.uri_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        _impl_.uri_.Set("", GetArenaForAllocation());
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.uri_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
+
 Mongo::~Mongo() {
   // @@protoc_insertion_point(destructor:city.cognition.input.v1.Mongo)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void Mongo::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.uri_.Destroy();
   if (this != internal_default_instance()) delete _impl_.map_;
   if (this != internal_default_instance()) delete _impl_.agents_;
   if (this != internal_default_instance()) delete _impl_.edges_;
 }
+
 void Mongo::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void Mongo::Clear() {
+void Mongo::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.cognition.input.v1.Mongo)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   _impl_.uri_.ClearToEmpty();
-  cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000007u) {
-    if (cached_has_bits & 0x00000001u) {
-      ABSL_DCHECK(_impl_.map_ != nullptr);
-      _impl_.map_->Clear();
-    }
-    if (cached_has_bits & 0x00000002u) {
-      ABSL_DCHECK(_impl_.agents_ != nullptr);
-      _impl_.agents_->Clear();
-    }
-    if (cached_has_bits & 0x00000004u) {
-      ABSL_DCHECK(_impl_.edges_ != nullptr);
-      _impl_.edges_->Clear();
-    }
+  if (GetArenaForAllocation() == nullptr && _impl_.map_ != nullptr) {
+    delete _impl_.map_;
   }
-  _impl_._has_bits_.Clear();
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _impl_.map_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.agents_ != nullptr) {
+    delete _impl_.agents_;
+  }
+  _impl_.agents_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.edges_ != nullptr) {
+    delete _impl_.edges_;
+  }
+  _impl_.edges_ = nullptr;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* Mongo::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* Mongo::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string uri = 1 [json_name = "uri"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_uri();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "city.cognition.input.v1.Mongo.uri"));
+        } else
+          goto handle_unusual;
+        continue;
+      // .city.config.v1.MongoPath map = 2 [json_name = "map"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr = ctx->ParseMessage(_internal_mutable_map(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .city.config.v1.MongoPath agents = 3 [json_name = "agents"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+          ptr = ctx->ParseMessage(_internal_mutable_agents(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .city.config.v1.MongoPath edges = 4 [json_name = "edges"];
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
+          ptr = ctx->ParseMessage(_internal_mutable_edges(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<2, 4, 3, 41, 2> Mongo::_table_ = {
-  {
-    PROTOBUF_FIELD_OFFSET(Mongo, _impl_._has_bits_),
-    0, // no _extensions_
-    4, 24,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967280,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    4,  // num_field_entries
-    3,  // num_aux_entries
-    offsetof(decltype(_table_), aux_entries),
-    &_Mongo_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    // .city.config.v1.MongoPath edges = 4 [json_name = "edges"];
-    {::_pbi::TcParser::FastMtS1,
-     {34, 2, 2, PROTOBUF_FIELD_OFFSET(Mongo, _impl_.edges_)}},
-    // string uri = 1 [json_name = "uri"];
-    {::_pbi::TcParser::FastUS1,
-     {10, 63, 0, PROTOBUF_FIELD_OFFSET(Mongo, _impl_.uri_)}},
-    // .city.config.v1.MongoPath map = 2 [json_name = "map"];
-    {::_pbi::TcParser::FastMtS1,
-     {18, 0, 0, PROTOBUF_FIELD_OFFSET(Mongo, _impl_.map_)}},
-    // .city.config.v1.MongoPath agents = 3 [json_name = "agents"];
-    {::_pbi::TcParser::FastMtS1,
-     {26, 1, 1, PROTOBUF_FIELD_OFFSET(Mongo, _impl_.agents_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // string uri = 1 [json_name = "uri"];
-    {PROTOBUF_FIELD_OFFSET(Mongo, _impl_.uri_), -1, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // .city.config.v1.MongoPath map = 2 [json_name = "map"];
-    {PROTOBUF_FIELD_OFFSET(Mongo, _impl_.map_), _Internal::kHasBitsOffset + 0, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
-    // .city.config.v1.MongoPath agents = 3 [json_name = "agents"];
-    {PROTOBUF_FIELD_OFFSET(Mongo, _impl_.agents_), _Internal::kHasBitsOffset + 1, 1,
-    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
-    // .city.config.v1.MongoPath edges = 4 [json_name = "edges"];
-    {PROTOBUF_FIELD_OFFSET(Mongo, _impl_.edges_), _Internal::kHasBitsOffset + 2, 2,
-    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
-  }}, {{
-    {::_pbi::TcParser::GetTable<::city::config::v1::MongoPath>()},
-    {::_pbi::TcParser::GetTable<::city::config::v1::MongoPath>()},
-    {::_pbi::TcParser::GetTable<::city::config::v1::MongoPath>()},
-  }}, {{
-    "\35\3\0\0\0\0\0\0"
-    "city.cognition.input.v1.Mongo"
-    "uri"
-  }},
-};
-
-::uint8_t* Mongo::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* Mongo::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.cognition.input.v1.Mongo)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // string uri = 1 [json_name = "uri"];
   if (!this->_internal_uri().empty()) {
-    const std::string& _s = this->_internal_uri();
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "city.cognition.input.v1.Mongo.uri");
-    target = stream->WriteStringMaybeAliased(1, _s, target);
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_uri().data(), static_cast<int>(this->_internal_uri().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "city.cognition.input.v1.Mongo.uri");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_uri(), target);
   }
 
-  cached_has_bits = _impl_._has_bits_[0];
   // .city.config.v1.MongoPath map = 2 [json_name = "map"];
-  if (cached_has_bits & 0x00000001u) {
-    target = ::google::protobuf::internal::WireFormatLite::
+  if (this->_internal_has_map()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(2, _Internal::map(this),
         _Internal::map(this).GetCachedSize(), target, stream);
   }
 
   // .city.config.v1.MongoPath agents = 3 [json_name = "agents"];
-  if (cached_has_bits & 0x00000002u) {
-    target = ::google::protobuf::internal::WireFormatLite::
+  if (this->_internal_has_agents()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(3, _Internal::agents(this),
         _Internal::agents(this).GetCachedSize(), target, stream);
   }
 
   // .city.config.v1.MongoPath edges = 4 [json_name = "edges"];
-  if (cached_has_bits & 0x00000004u) {
-    target = ::google::protobuf::internal::WireFormatLite::
+  if (this->_internal_has_edges()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(4, _Internal::edges(this),
         _Internal::edges(this).GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.cognition.input.v1.Mongo)
   return target;
 }
 
-::size_t Mongo::ByteSizeLong() const {
+size_t Mongo::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.cognition.input.v1.Mongo)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // string uri = 1 [json_name = "uri"];
   if (!this->_internal_uri().empty()) {
-    total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
-                                    this->_internal_uri());
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_uri());
   }
 
-  cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000007u) {
-    // .city.config.v1.MongoPath map = 2 [json_name = "map"];
-    if (cached_has_bits & 0x00000001u) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          *_impl_.map_);
-    }
-
-    // .city.config.v1.MongoPath agents = 3 [json_name = "agents"];
-    if (cached_has_bits & 0x00000002u) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          *_impl_.agents_);
-    }
-
-    // .city.config.v1.MongoPath edges = 4 [json_name = "edges"];
-    if (cached_has_bits & 0x00000004u) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          *_impl_.edges_);
-    }
-
+  // .city.config.v1.MongoPath map = 2 [json_name = "map"];
+  if (this->_internal_has_map()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.map_);
   }
+
+  // .city.config.v1.MongoPath agents = 3 [json_name = "agents"];
+  if (this->_internal_has_agents()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.agents_);
+  }
+
+  // .city.config.v1.MongoPath edges = 4 [json_name = "edges"];
+  if (this->_internal_has_edges()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.edges_);
+  }
+
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData Mongo::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Mongo::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     Mongo::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*Mongo::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Mongo::GetClassData() const { return &_class_data_; }
 
 
-void Mongo::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void Mongo::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<Mongo*>(&to_msg);
   auto& from = static_cast<const Mongo&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.cognition.input.v1.Mongo)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (!from._internal_uri().empty()) {
     _this->_internal_set_uri(from._internal_uri());
   }
-  cached_has_bits = from._impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000007u) {
-    if (cached_has_bits & 0x00000001u) {
-      _this->_internal_mutable_map()->::city::config::v1::MongoPath::MergeFrom(
-          from._internal_map());
-    }
-    if (cached_has_bits & 0x00000002u) {
-      _this->_internal_mutable_agents()->::city::config::v1::MongoPath::MergeFrom(
-          from._internal_agents());
-    }
-    if (cached_has_bits & 0x00000004u) {
-      _this->_internal_mutable_edges()->::city::config::v1::MongoPath::MergeFrom(
-          from._internal_edges());
-    }
+  if (from._internal_has_map()) {
+    _this->_internal_mutable_map()->::city::config::v1::MongoPath::MergeFrom(
+        from._internal_map());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  if (from._internal_has_agents()) {
+    _this->_internal_mutable_agents()->::city::config::v1::MongoPath::MergeFrom(
+        from._internal_agents());
+  }
+  if (from._internal_has_edges()) {
+    _this->_internal_mutable_edges()->::city::config::v1::MongoPath::MergeFrom(
+        from._internal_edges());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void Mongo::CopyFrom(const Mongo& from) {
@@ -636,7 +562,7 @@ void Mongo::CopyFrom(const Mongo& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool Mongo::IsInitialized() const {
+bool Mongo::IsInitialized() const {
   return true;
 }
 
@@ -645,10 +571,11 @@ void Mongo::InternalSwap(Mongo* other) {
   auto* lhs_arena = GetArenaForAllocation();
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.uri_, lhs_arena,
-                                       &other->_impl_.uri_, rhs_arena);
-  ::google::protobuf::internal::memswap<
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.uri_, lhs_arena,
+      &other->_impl_.uri_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(Mongo, _impl_.edges_)
       + sizeof(Mongo::_impl_.edges_)
       - PROTOBUF_FIELD_OFFSET(Mongo, _impl_.map_)>(
@@ -656,199 +583,213 @@ void Mongo::InternalSwap(Mongo* other) {
           reinterpret_cast<char*>(&other->_impl_.map_));
 }
 
-::google::protobuf::Metadata Mongo::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata Mongo::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fcognition_2finput_2fv1_2fconfig_2eproto_getter, &descriptor_table_city_2fcognition_2finput_2fv1_2fconfig_2eproto_once,
       file_level_metadata_city_2fcognition_2finput_2fv1_2fconfig_2eproto[0]);
 }
+
 // ===================================================================
 
 class ControlStep::_Internal {
  public:
 };
 
-ControlStep::ControlStep(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+ControlStep::ControlStep(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.cognition.input.v1.ControlStep)
 }
 ControlStep::ControlStep(const ControlStep& from)
-    : ::google::protobuf::Message(), _impl_(from._impl_) {
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  ControlStep* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.start_){}
+    , decltype(_impl_.total_){}
+    , decltype(_impl_.interval_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&_impl_.start_, &from._impl_.start_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.interval_) -
+    reinterpret_cast<char*>(&_impl_.start_)) + sizeof(_impl_.interval_));
   // @@protoc_insertion_point(copy_constructor:city.cognition.input.v1.ControlStep)
 }
-inline void ControlStep::SharedCtor(::_pb::Arena* arena) {
+
+inline void ControlStep::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.start_){0},
-      decltype(_impl_.total_){0},
-      decltype(_impl_.interval_){0},
-      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.start_){0}
+    , decltype(_impl_.total_){0}
+    , decltype(_impl_.interval_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 ControlStep::~ControlStep() {
   // @@protoc_insertion_point(destructor:city.cognition.input.v1.ControlStep)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void ControlStep::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
+
 void ControlStep::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void ControlStep::Clear() {
+void ControlStep::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.cognition.input.v1.ControlStep)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&_impl_.start_, 0, static_cast<::size_t>(
+  ::memset(&_impl_.start_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_impl_.interval_) -
       reinterpret_cast<char*>(&_impl_.start_)) + sizeof(_impl_.interval_));
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* ControlStep::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* ControlStep::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 start = 1 [json_name = "start"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.start_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 total = 2 [json_name = "total"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _impl_.total_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // float interval = 3 [json_name = "interval"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 29)) {
+          _impl_.interval_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<2, 3, 0, 0, 2> ControlStep::_table_ = {
-  {
-    0,  // no _has_bits_
-    0, // no _extensions_
-    3, 24,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967288,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    3,  // num_field_entries
-    0,  // num_aux_entries
-    offsetof(decltype(_table_), field_names),  // no aux_entries
-    &_ControlStep_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    {::_pbi::TcParser::MiniParse, {}},
-    // int32 start = 1 [json_name = "start"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(ControlStep, _impl_.start_), 63>(),
-     {8, 63, 0, PROTOBUF_FIELD_OFFSET(ControlStep, _impl_.start_)}},
-    // int32 total = 2 [json_name = "total"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(ControlStep, _impl_.total_), 63>(),
-     {16, 63, 0, PROTOBUF_FIELD_OFFSET(ControlStep, _impl_.total_)}},
-    // float interval = 3 [json_name = "interval"];
-    {::_pbi::TcParser::FastF32S1,
-     {29, 63, 0, PROTOBUF_FIELD_OFFSET(ControlStep, _impl_.interval_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // int32 start = 1 [json_name = "start"];
-    {PROTOBUF_FIELD_OFFSET(ControlStep, _impl_.start_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-    // int32 total = 2 [json_name = "total"];
-    {PROTOBUF_FIELD_OFFSET(ControlStep, _impl_.total_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kInt32)},
-    // float interval = 3 [json_name = "interval"];
-    {PROTOBUF_FIELD_OFFSET(ControlStep, _impl_.interval_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kFloat)},
-  }},
-  // no aux_entries
-  {{
-  }},
-};
-
-::uint8_t* ControlStep::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* ControlStep::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.cognition.input.v1.ControlStep)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // int32 start = 1 [json_name = "start"];
   if (this->_internal_start() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<1>(
-            stream, this->_internal_start(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_start(), target);
   }
 
   // int32 total = 2 [json_name = "total"];
   if (this->_internal_total() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::
-        WriteInt32ToArrayWithField<2>(
-            stream, this->_internal_total(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(2, this->_internal_total(), target);
   }
 
   // float interval = 3 [json_name = "interval"];
-  static_assert(sizeof(::uint32_t) == sizeof(float),
-                "Code assumes ::uint32_t and float are the same size.");
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
   float tmp_interval = this->_internal_interval();
-  ::uint32_t raw_interval;
+  uint32_t raw_interval;
   memcpy(&raw_interval, &tmp_interval, sizeof(tmp_interval));
   if (raw_interval != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(
-        3, this->_internal_interval(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(3, this->_internal_interval(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.cognition.input.v1.ControlStep)
   return target;
 }
 
-::size_t ControlStep::ByteSizeLong() const {
+size_t ControlStep::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.cognition.input.v1.ControlStep)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // int32 start = 1 [json_name = "start"];
   if (this->_internal_start() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_start());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_start());
   }
 
   // int32 total = 2 [json_name = "total"];
   if (this->_internal_total() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-        this->_internal_total());
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_total());
   }
 
   // float interval = 3 [json_name = "interval"];
-  static_assert(sizeof(::uint32_t) == sizeof(float),
-                "Code assumes ::uint32_t and float are the same size.");
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
   float tmp_interval = this->_internal_interval();
-  ::uint32_t raw_interval;
+  uint32_t raw_interval;
   memcpy(&raw_interval, &tmp_interval, sizeof(tmp_interval));
   if (raw_interval != 0) {
-    total_size += 5;
+    total_size += 1 + 4;
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData ControlStep::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ControlStep::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     ControlStep::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*ControlStep::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ControlStep::GetClassData() const { return &_class_data_; }
 
 
-void ControlStep::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void ControlStep::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<ControlStep*>(&to_msg);
   auto& from = static_cast<const ControlStep&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.cognition.input.v1.ControlStep)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_start() != 0) {
@@ -857,15 +798,14 @@ void ControlStep::MergeImpl(::google::protobuf::Message& to_msg, const ::google:
   if (from._internal_total() != 0) {
     _this->_internal_set_total(from._internal_total());
   }
-  static_assert(sizeof(::uint32_t) == sizeof(float),
-                "Code assumes ::uint32_t and float are the same size.");
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
   float tmp_interval = from._internal_interval();
-  ::uint32_t raw_interval;
+  uint32_t raw_interval;
   memcpy(&raw_interval, &tmp_interval, sizeof(tmp_interval));
   if (raw_interval != 0) {
     _this->_internal_set_interval(from._internal_interval());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void ControlStep::CopyFrom(const ControlStep& from) {
@@ -875,14 +815,14 @@ void ControlStep::CopyFrom(const ControlStep& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool ControlStep::IsInitialized() const {
+bool ControlStep::IsInitialized() const {
   return true;
 }
 
 void ControlStep::InternalSwap(ControlStep* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::google::protobuf::internal::memswap<
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(ControlStep, _impl_.interval_)
       + sizeof(ControlStep::_impl_.interval_)
       - PROTOBUF_FIELD_OFFSET(ControlStep, _impl_.start_)>(
@@ -890,184 +830,180 @@ void ControlStep::InternalSwap(ControlStep* other) {
           reinterpret_cast<char*>(&other->_impl_.start_));
 }
 
-::google::protobuf::Metadata ControlStep::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata ControlStep::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fcognition_2finput_2fv1_2fconfig_2eproto_getter, &descriptor_table_city_2fcognition_2finput_2fv1_2fconfig_2eproto_once,
       file_level_metadata_city_2fcognition_2finput_2fv1_2fconfig_2eproto[1]);
 }
+
 // ===================================================================
 
 class Control::_Internal {
  public:
-  using HasBits = decltype(std::declval<Control>()._impl_._has_bits_);
-  static constexpr ::int32_t kHasBitsOffset =
-    8 * PROTOBUF_FIELD_OFFSET(Control, _impl_._has_bits_);
   static const ::city::cognition::input::v1::ControlStep& step(const Control* msg);
-  static void set_has_step(HasBits* has_bits) {
-    (*has_bits)[0] |= 1u;
-  }
 };
 
-const ::city::cognition::input::v1::ControlStep& Control::_Internal::step(const Control* msg) {
+const ::city::cognition::input::v1::ControlStep&
+Control::_Internal::step(const Control* msg) {
   return *msg->_impl_.step_;
 }
-Control::Control(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+Control::Control(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.cognition.input.v1.Control)
 }
-Control::Control(const Control& from) : ::google::protobuf::Message() {
-  Control* const _this = this;
-  (void)_this;
+Control::Control(const Control& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  Control* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){from._impl_._has_bits_},
-      /*decltype(_impl_._cached_size_)*/ {},
-      decltype(_impl_.step_){nullptr},
-  };
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
-  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+      decltype(_impl_.step_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  if (from._internal_has_step()) {
     _this->_impl_.step_ = new ::city::cognition::input::v1::ControlStep(*from._impl_.step_);
   }
-
   // @@protoc_insertion_point(copy_constructor:city.cognition.input.v1.Control)
 }
-inline void Control::SharedCtor(::_pb::Arena* arena) {
+
+inline void Control::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){},
-      /*decltype(_impl_._cached_size_)*/ {},
-      decltype(_impl_.step_){nullptr},
+      decltype(_impl_.step_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 Control::~Control() {
   // @@protoc_insertion_point(destructor:city.cognition.input.v1.Control)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void Control::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete _impl_.step_;
 }
+
 void Control::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void Control::Clear() {
+void Control::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.cognition.input.v1.Control)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000001u) {
-    ABSL_DCHECK(_impl_.step_ != nullptr);
-    _impl_.step_->Clear();
+  if (GetArenaForAllocation() == nullptr && _impl_.step_ != nullptr) {
+    delete _impl_.step_;
   }
-  _impl_._has_bits_.Clear();
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _impl_.step_ = nullptr;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* Control::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* Control::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // .city.cognition.input.v1.ControlStep step = 1 [json_name = "step"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_step(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<0, 1, 1, 0, 2> Control::_table_ = {
-  {
-    PROTOBUF_FIELD_OFFSET(Control, _impl_._has_bits_),
-    0, // no _extensions_
-    1, 0,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967294,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    1,  // num_field_entries
-    1,  // num_aux_entries
-    offsetof(decltype(_table_), aux_entries),
-    &_Control_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    // .city.cognition.input.v1.ControlStep step = 1 [json_name = "step"];
-    {::_pbi::TcParser::FastMtS1,
-     {10, 0, 0, PROTOBUF_FIELD_OFFSET(Control, _impl_.step_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // .city.cognition.input.v1.ControlStep step = 1 [json_name = "step"];
-    {PROTOBUF_FIELD_OFFSET(Control, _impl_.step_), _Internal::kHasBitsOffset + 0, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
-  }}, {{
-    {::_pbi::TcParser::GetTable<::city::cognition::input::v1::ControlStep>()},
-  }}, {{
-  }},
-};
-
-::uint8_t* Control::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* Control::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.cognition.input.v1.Control)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
-  cached_has_bits = _impl_._has_bits_[0];
   // .city.cognition.input.v1.ControlStep step = 1 [json_name = "step"];
-  if (cached_has_bits & 0x00000001u) {
-    target = ::google::protobuf::internal::WireFormatLite::
+  if (this->_internal_has_step()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(1, _Internal::step(this),
         _Internal::step(this).GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.cognition.input.v1.Control)
   return target;
 }
 
-::size_t Control::ByteSizeLong() const {
+size_t Control::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.cognition.input.v1.Control)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // .city.cognition.input.v1.ControlStep step = 1 [json_name = "step"];
-  cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000001u) {
+  if (this->_internal_has_step()) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *_impl_.step_);
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData Control::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Control::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     Control::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*Control::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Control::GetClassData() const { return &_class_data_; }
 
 
-void Control::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void Control::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<Control*>(&to_msg);
   auto& from = static_cast<const Control&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.cognition.input.v1.Control)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+  if (from._internal_has_step()) {
     _this->_internal_mutable_step()->::city::cognition::input::v1::ControlStep::MergeFrom(
         from._internal_step());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void Control::CopyFrom(const Control& from) {
@@ -1077,163 +1013,175 @@ void Control::CopyFrom(const Control& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool Control::IsInitialized() const {
+bool Control::IsInitialized() const {
   return true;
 }
 
 void Control::InternalSwap(Control* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
   swap(_impl_.step_, other->_impl_.step_);
 }
 
-::google::protobuf::Metadata Control::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata Control::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fcognition_2finput_2fv1_2fconfig_2eproto_getter, &descriptor_table_city_2fcognition_2finput_2fv1_2fconfig_2eproto_once,
       file_level_metadata_city_2fcognition_2finput_2fv1_2fconfig_2eproto[2]);
 }
+
 // ===================================================================
 
 class OutputSwitch::_Internal {
  public:
 };
 
-OutputSwitch::OutputSwitch(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+OutputSwitch::OutputSwitch(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.cognition.input.v1.OutputSwitch)
 }
 OutputSwitch::OutputSwitch(const OutputSwitch& from)
-    : ::google::protobuf::Message(), _impl_(from._impl_) {
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  OutputSwitch* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.common_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.common_ = from._impl_.common_;
   // @@protoc_insertion_point(copy_constructor:city.cognition.input.v1.OutputSwitch)
 }
-inline void OutputSwitch::SharedCtor(::_pb::Arena* arena) {
+
+inline void OutputSwitch::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.common_){false},
-      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.common_){false}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 OutputSwitch::~OutputSwitch() {
   // @@protoc_insertion_point(destructor:city.cognition.input.v1.OutputSwitch)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void OutputSwitch::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
+
 void OutputSwitch::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void OutputSwitch::Clear() {
+void OutputSwitch::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.cognition.input.v1.OutputSwitch)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   _impl_.common_ = false;
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* OutputSwitch::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* OutputSwitch::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // bool common = 1 [json_name = "common"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.common_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<0, 1, 0, 0, 2> OutputSwitch::_table_ = {
-  {
-    0,  // no _has_bits_
-    0, // no _extensions_
-    1, 0,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967294,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    1,  // num_field_entries
-    0,  // num_aux_entries
-    offsetof(decltype(_table_), field_names),  // no aux_entries
-    &_OutputSwitch_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    // bool common = 1 [json_name = "common"];
-    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(OutputSwitch, _impl_.common_), 63>(),
-     {8, 63, 0, PROTOBUF_FIELD_OFFSET(OutputSwitch, _impl_.common_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // bool common = 1 [json_name = "common"];
-    {PROTOBUF_FIELD_OFFSET(OutputSwitch, _impl_.common_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kBool)},
-  }},
-  // no aux_entries
-  {{
-  }},
-};
-
-::uint8_t* OutputSwitch::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* OutputSwitch::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.cognition.input.v1.OutputSwitch)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
   // bool common = 1 [json_name = "common"];
   if (this->_internal_common() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(
-        1, this->_internal_common(), target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(1, this->_internal_common(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.cognition.input.v1.OutputSwitch)
   return target;
 }
 
-::size_t OutputSwitch::ByteSizeLong() const {
+size_t OutputSwitch::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.cognition.input.v1.OutputSwitch)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   // bool common = 1 [json_name = "common"];
   if (this->_internal_common() != 0) {
-    total_size += 2;
+    total_size += 1 + 1;
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData OutputSwitch::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData OutputSwitch::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     OutputSwitch::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*OutputSwitch::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*OutputSwitch::GetClassData() const { return &_class_data_; }
 
 
-void OutputSwitch::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void OutputSwitch::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<OutputSwitch*>(&to_msg);
   auto& from = static_cast<const OutputSwitch&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.cognition.input.v1.OutputSwitch)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from._internal_common() != 0) {
     _this->_internal_set_common(from._internal_common());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void OutputSwitch::CopyFrom(const OutputSwitch& from) {
@@ -1243,247 +1191,237 @@ void OutputSwitch::CopyFrom(const OutputSwitch& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool OutputSwitch::IsInitialized() const {
+bool OutputSwitch::IsInitialized() const {
   return true;
 }
 
 void OutputSwitch::InternalSwap(OutputSwitch* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-        swap(_impl_.common_, other->_impl_.common_);
+  swap(_impl_.common_, other->_impl_.common_);
 }
 
-::google::protobuf::Metadata OutputSwitch::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata OutputSwitch::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fcognition_2finput_2fv1_2fconfig_2eproto_getter, &descriptor_table_city_2fcognition_2finput_2fv1_2fconfig_2eproto_once,
       file_level_metadata_city_2fcognition_2finput_2fv1_2fconfig_2eproto[3]);
 }
+
 // ===================================================================
 
 class Output::_Internal {
  public:
-  using HasBits = decltype(std::declval<Output>()._impl_._has_bits_);
-  static constexpr ::int32_t kHasBitsOffset =
-    8 * PROTOBUF_FIELD_OFFSET(Output, _impl_._has_bits_);
   static const ::city::config::v1::OutputTarget& target(const Output* msg);
-  static void set_has_target(HasBits* has_bits) {
-    (*has_bits)[0] |= 1u;
-  }
   static const ::city::cognition::input::v1::OutputSwitch& switch_(const Output* msg);
-  static void set_has_switch_(HasBits* has_bits) {
-    (*has_bits)[0] |= 2u;
-  }
 };
 
-const ::city::config::v1::OutputTarget& Output::_Internal::target(const Output* msg) {
+const ::city::config::v1::OutputTarget&
+Output::_Internal::target(const Output* msg) {
   return *msg->_impl_.target_;
 }
-const ::city::cognition::input::v1::OutputSwitch& Output::_Internal::switch_(const Output* msg) {
+const ::city::cognition::input::v1::OutputSwitch&
+Output::_Internal::switch_(const Output* msg) {
   return *msg->_impl_.switch__;
 }
 void Output::clear_target() {
-  if (_impl_.target_ != nullptr) _impl_.target_->Clear();
-  _impl_._has_bits_[0] &= ~0x00000001u;
+  if (GetArenaForAllocation() == nullptr && _impl_.target_ != nullptr) {
+    delete _impl_.target_;
+  }
+  _impl_.target_ = nullptr;
 }
-Output::Output(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+Output::Output(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.cognition.input.v1.Output)
 }
-Output::Output(const Output& from) : ::google::protobuf::Message() {
-  Output* const _this = this;
-  (void)_this;
+Output::Output(const Output& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  Output* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){from._impl_._has_bits_},
-      /*decltype(_impl_._cached_size_)*/ {},
-      decltype(_impl_.target_){nullptr},
-      decltype(_impl_.switch__){nullptr},
-  };
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
-  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+      decltype(_impl_.target_){nullptr}
+    , decltype(_impl_.switch__){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  if (from._internal_has_target()) {
     _this->_impl_.target_ = new ::city::config::v1::OutputTarget(*from._impl_.target_);
   }
-  if ((from._impl_._has_bits_[0] & 0x00000002u) != 0) {
+  if (from._internal_has_switch_()) {
     _this->_impl_.switch__ = new ::city::cognition::input::v1::OutputSwitch(*from._impl_.switch__);
   }
-
   // @@protoc_insertion_point(copy_constructor:city.cognition.input.v1.Output)
 }
-inline void Output::SharedCtor(::_pb::Arena* arena) {
+
+inline void Output::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){},
-      /*decltype(_impl_._cached_size_)*/ {},
-      decltype(_impl_.target_){nullptr},
-      decltype(_impl_.switch__){nullptr},
+      decltype(_impl_.target_){nullptr}
+    , decltype(_impl_.switch__){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 Output::~Output() {
   // @@protoc_insertion_point(destructor:city.cognition.input.v1.Output)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void Output::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete _impl_.target_;
   if (this != internal_default_instance()) delete _impl_.switch__;
 }
+
 void Output::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void Output::Clear() {
+void Output::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.cognition.input.v1.Output)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000003u) {
-    if (cached_has_bits & 0x00000001u) {
-      ABSL_DCHECK(_impl_.target_ != nullptr);
-      _impl_.target_->Clear();
-    }
-    if (cached_has_bits & 0x00000002u) {
-      ABSL_DCHECK(_impl_.switch__ != nullptr);
-      _impl_.switch__->Clear();
-    }
+  if (GetArenaForAllocation() == nullptr && _impl_.target_ != nullptr) {
+    delete _impl_.target_;
   }
-  _impl_._has_bits_.Clear();
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _impl_.target_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.switch__ != nullptr) {
+    delete _impl_.switch__;
+  }
+  _impl_.switch__ = nullptr;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* Output::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* Output::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // .city.config.v1.OutputTarget target = 1 [json_name = "target"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_target(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .city.cognition.input.v1.OutputSwitch switch = 2 [json_name = "switch"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr = ctx->ParseMessage(_internal_mutable_switch_(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<1, 2, 2, 0, 2> Output::_table_ = {
-  {
-    PROTOBUF_FIELD_OFFSET(Output, _impl_._has_bits_),
-    0, // no _extensions_
-    2, 8,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967292,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    2,  // num_field_entries
-    2,  // num_aux_entries
-    offsetof(decltype(_table_), aux_entries),
-    &_Output_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    // .city.cognition.input.v1.OutputSwitch switch = 2 [json_name = "switch"];
-    {::_pbi::TcParser::FastMtS1,
-     {18, 1, 1, PROTOBUF_FIELD_OFFSET(Output, _impl_.switch__)}},
-    // .city.config.v1.OutputTarget target = 1 [json_name = "target"];
-    {::_pbi::TcParser::FastMtS1,
-     {10, 0, 0, PROTOBUF_FIELD_OFFSET(Output, _impl_.target_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // .city.config.v1.OutputTarget target = 1 [json_name = "target"];
-    {PROTOBUF_FIELD_OFFSET(Output, _impl_.target_), _Internal::kHasBitsOffset + 0, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
-    // .city.cognition.input.v1.OutputSwitch switch = 2 [json_name = "switch"];
-    {PROTOBUF_FIELD_OFFSET(Output, _impl_.switch__), _Internal::kHasBitsOffset + 1, 1,
-    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
-  }}, {{
-    {::_pbi::TcParser::GetTable<::city::config::v1::OutputTarget>()},
-    {::_pbi::TcParser::GetTable<::city::cognition::input::v1::OutputSwitch>()},
-  }}, {{
-  }},
-};
-
-::uint8_t* Output::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* Output::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.cognition.input.v1.Output)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
-  cached_has_bits = _impl_._has_bits_[0];
   // .city.config.v1.OutputTarget target = 1 [json_name = "target"];
-  if (cached_has_bits & 0x00000001u) {
-    target = ::google::protobuf::internal::WireFormatLite::
+  if (this->_internal_has_target()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(1, _Internal::target(this),
         _Internal::target(this).GetCachedSize(), target, stream);
   }
 
   // .city.cognition.input.v1.OutputSwitch switch = 2 [json_name = "switch"];
-  if (cached_has_bits & 0x00000002u) {
-    target = ::google::protobuf::internal::WireFormatLite::
+  if (this->_internal_has_switch_()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(2, _Internal::switch_(this),
         _Internal::switch_(this).GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.cognition.input.v1.Output)
   return target;
 }
 
-::size_t Output::ByteSizeLong() const {
+size_t Output::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.cognition.input.v1.Output)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000003u) {
-    // .city.config.v1.OutputTarget target = 1 [json_name = "target"];
-    if (cached_has_bits & 0x00000001u) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          *_impl_.target_);
-    }
-
-    // .city.cognition.input.v1.OutputSwitch switch = 2 [json_name = "switch"];
-    if (cached_has_bits & 0x00000002u) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          *_impl_.switch__);
-    }
-
+  // .city.config.v1.OutputTarget target = 1 [json_name = "target"];
+  if (this->_internal_has_target()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.target_);
   }
+
+  // .city.cognition.input.v1.OutputSwitch switch = 2 [json_name = "switch"];
+  if (this->_internal_has_switch_()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.switch__);
+  }
+
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData Output::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Output::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     Output::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*Output::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Output::GetClassData() const { return &_class_data_; }
 
 
-void Output::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void Output::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<Output*>(&to_msg);
   auto& from = static_cast<const Output&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.cognition.input.v1.Output)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  cached_has_bits = from._impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000003u) {
-    if (cached_has_bits & 0x00000001u) {
-      _this->_internal_mutable_target()->::city::config::v1::OutputTarget::MergeFrom(
-          from._internal_target());
-    }
-    if (cached_has_bits & 0x00000002u) {
-      _this->_internal_mutable_switch_()->::city::cognition::input::v1::OutputSwitch::MergeFrom(
-          from._internal_switch_());
-    }
+  if (from._internal_has_target()) {
+    _this->_internal_mutable_target()->::city::config::v1::OutputTarget::MergeFrom(
+        from._internal_target());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  if (from._internal_has_switch_()) {
+    _this->_internal_mutable_switch_()->::city::cognition::input::v1::OutputSwitch::MergeFrom(
+        from._internal_switch_());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void Output::CopyFrom(const Output& from) {
@@ -1493,15 +1431,14 @@ void Output::CopyFrom(const Output& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool Output::IsInitialized() const {
+bool Output::IsInitialized() const {
   return true;
 }
 
 void Output::InternalSwap(Output* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
-  ::google::protobuf::internal::memswap<
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(Output, _impl_.switch__)
       + sizeof(Output::_impl_.switch__)
       - PROTOBUF_FIELD_OFFSET(Output, _impl_.target_)>(
@@ -1509,276 +1446,262 @@ void Output::InternalSwap(Output* other) {
           reinterpret_cast<char*>(&other->_impl_.target_));
 }
 
-::google::protobuf::Metadata Output::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata Output::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fcognition_2finput_2fv1_2fconfig_2eproto_getter, &descriptor_table_city_2fcognition_2finput_2fv1_2fconfig_2eproto_once,
       file_level_metadata_city_2fcognition_2finput_2fv1_2fconfig_2eproto[4]);
 }
+
 // ===================================================================
 
 class Config::_Internal {
  public:
-  using HasBits = decltype(std::declval<Config>()._impl_._has_bits_);
-  static constexpr ::int32_t kHasBitsOffset =
-    8 * PROTOBUF_FIELD_OFFSET(Config, _impl_._has_bits_);
   static const ::city::cognition::input::v1::Mongo& mongo(const Config* msg);
-  static void set_has_mongo(HasBits* has_bits) {
-    (*has_bits)[0] |= 1u;
-  }
   static const ::city::cognition::input::v1::Control& control(const Config* msg);
-  static void set_has_control(HasBits* has_bits) {
-    (*has_bits)[0] |= 2u;
-  }
   static const ::city::cognition::input::v1::Output& output(const Config* msg);
-  static void set_has_output(HasBits* has_bits) {
-    (*has_bits)[0] |= 4u;
-  }
 };
 
-const ::city::cognition::input::v1::Mongo& Config::_Internal::mongo(const Config* msg) {
+const ::city::cognition::input::v1::Mongo&
+Config::_Internal::mongo(const Config* msg) {
   return *msg->_impl_.mongo_;
 }
-const ::city::cognition::input::v1::Control& Config::_Internal::control(const Config* msg) {
+const ::city::cognition::input::v1::Control&
+Config::_Internal::control(const Config* msg) {
   return *msg->_impl_.control_;
 }
-const ::city::cognition::input::v1::Output& Config::_Internal::output(const Config* msg) {
+const ::city::cognition::input::v1::Output&
+Config::_Internal::output(const Config* msg) {
   return *msg->_impl_.output_;
 }
-Config::Config(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
+Config::Config(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.cognition.input.v1.Config)
 }
-Config::Config(const Config& from) : ::google::protobuf::Message() {
-  Config* const _this = this;
-  (void)_this;
+Config::Config(const Config& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  Config* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){from._impl_._has_bits_},
-      /*decltype(_impl_._cached_size_)*/ {},
-      decltype(_impl_.mongo_){nullptr},
-      decltype(_impl_.control_){nullptr},
-      decltype(_impl_.output_){nullptr},
-  };
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
-  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+      decltype(_impl_.mongo_){nullptr}
+    , decltype(_impl_.control_){nullptr}
+    , decltype(_impl_.output_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  if (from._internal_has_mongo()) {
     _this->_impl_.mongo_ = new ::city::cognition::input::v1::Mongo(*from._impl_.mongo_);
   }
-  if ((from._impl_._has_bits_[0] & 0x00000002u) != 0) {
+  if (from._internal_has_control()) {
     _this->_impl_.control_ = new ::city::cognition::input::v1::Control(*from._impl_.control_);
   }
-  if ((from._impl_._has_bits_[0] & 0x00000004u) != 0) {
+  if (from._internal_has_output()) {
     _this->_impl_.output_ = new ::city::cognition::input::v1::Output(*from._impl_.output_);
   }
-
   // @@protoc_insertion_point(copy_constructor:city.cognition.input.v1.Config)
 }
-inline void Config::SharedCtor(::_pb::Arena* arena) {
+
+inline void Config::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
+  (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){},
-      /*decltype(_impl_._cached_size_)*/ {},
-      decltype(_impl_.mongo_){nullptr},
-      decltype(_impl_.control_){nullptr},
-      decltype(_impl_.output_){nullptr},
+      decltype(_impl_.mongo_){nullptr}
+    , decltype(_impl_.control_){nullptr}
+    , decltype(_impl_.output_){nullptr}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
+
 Config::~Config() {
   // @@protoc_insertion_point(destructor:city.cognition.input.v1.Config)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
+
 inline void Config::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete _impl_.mongo_;
   if (this != internal_default_instance()) delete _impl_.control_;
   if (this != internal_default_instance()) delete _impl_.output_;
 }
+
 void Config::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-PROTOBUF_NOINLINE void Config::Clear() {
+void Config::Clear() {
 // @@protoc_insertion_point(message_clear_start:city.cognition.input.v1.Config)
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000007u) {
-    if (cached_has_bits & 0x00000001u) {
-      ABSL_DCHECK(_impl_.mongo_ != nullptr);
-      _impl_.mongo_->Clear();
-    }
-    if (cached_has_bits & 0x00000002u) {
-      ABSL_DCHECK(_impl_.control_ != nullptr);
-      _impl_.control_->Clear();
-    }
-    if (cached_has_bits & 0x00000004u) {
-      ABSL_DCHECK(_impl_.output_ != nullptr);
-      _impl_.output_->Clear();
-    }
+  if (GetArenaForAllocation() == nullptr && _impl_.mongo_ != nullptr) {
+    delete _impl_.mongo_;
   }
-  _impl_._has_bits_.Clear();
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+  _impl_.mongo_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.control_ != nullptr) {
+    delete _impl_.control_;
+  }
+  _impl_.control_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.output_ != nullptr) {
+    delete _impl_.output_;
+  }
+  _impl_.output_ = nullptr;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* Config::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+const char* Config::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // .city.cognition.input.v1.Mongo mongo = 1 [json_name = "mongo"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_mongo(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .city.cognition.input.v1.Control control = 2 [json_name = "control"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr = ctx->ParseMessage(_internal_mutable_control(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .city.cognition.input.v1.Output output = 3 [json_name = "output"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+          ptr = ctx->ParseMessage(_internal_mutable_output(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
   return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<2, 3, 3, 0, 2> Config::_table_ = {
-  {
-    PROTOBUF_FIELD_OFFSET(Config, _impl_._has_bits_),
-    0, // no _extensions_
-    3, 24,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967288,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    3,  // num_field_entries
-    3,  // num_aux_entries
-    offsetof(decltype(_table_), aux_entries),
-    &_Config_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    {::_pbi::TcParser::MiniParse, {}},
-    // .city.cognition.input.v1.Mongo mongo = 1 [json_name = "mongo"];
-    {::_pbi::TcParser::FastMtS1,
-     {10, 0, 0, PROTOBUF_FIELD_OFFSET(Config, _impl_.mongo_)}},
-    // .city.cognition.input.v1.Control control = 2 [json_name = "control"];
-    {::_pbi::TcParser::FastMtS1,
-     {18, 1, 1, PROTOBUF_FIELD_OFFSET(Config, _impl_.control_)}},
-    // .city.cognition.input.v1.Output output = 3 [json_name = "output"];
-    {::_pbi::TcParser::FastMtS1,
-     {26, 2, 2, PROTOBUF_FIELD_OFFSET(Config, _impl_.output_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // .city.cognition.input.v1.Mongo mongo = 1 [json_name = "mongo"];
-    {PROTOBUF_FIELD_OFFSET(Config, _impl_.mongo_), _Internal::kHasBitsOffset + 0, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
-    // .city.cognition.input.v1.Control control = 2 [json_name = "control"];
-    {PROTOBUF_FIELD_OFFSET(Config, _impl_.control_), _Internal::kHasBitsOffset + 1, 1,
-    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
-    // .city.cognition.input.v1.Output output = 3 [json_name = "output"];
-    {PROTOBUF_FIELD_OFFSET(Config, _impl_.output_), _Internal::kHasBitsOffset + 2, 2,
-    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
-  }}, {{
-    {::_pbi::TcParser::GetTable<::city::cognition::input::v1::Mongo>()},
-    {::_pbi::TcParser::GetTable<::city::cognition::input::v1::Control>()},
-    {::_pbi::TcParser::GetTable<::city::cognition::input::v1::Output>()},
-  }}, {{
-  }},
-};
-
-::uint8_t* Config::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+uint8_t* Config::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:city.cognition.input.v1.Config)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
-  cached_has_bits = _impl_._has_bits_[0];
   // .city.cognition.input.v1.Mongo mongo = 1 [json_name = "mongo"];
-  if (cached_has_bits & 0x00000001u) {
-    target = ::google::protobuf::internal::WireFormatLite::
+  if (this->_internal_has_mongo()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(1, _Internal::mongo(this),
         _Internal::mongo(this).GetCachedSize(), target, stream);
   }
 
   // .city.cognition.input.v1.Control control = 2 [json_name = "control"];
-  if (cached_has_bits & 0x00000002u) {
-    target = ::google::protobuf::internal::WireFormatLite::
+  if (this->_internal_has_control()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(2, _Internal::control(this),
         _Internal::control(this).GetCachedSize(), target, stream);
   }
 
   // .city.cognition.input.v1.Output output = 3 [json_name = "output"];
-  if (cached_has_bits & 0x00000004u) {
-    target = ::google::protobuf::internal::WireFormatLite::
+  if (this->_internal_has_output()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(3, _Internal::output(this),
         _Internal::output(this).GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:city.cognition.input.v1.Config)
   return target;
 }
 
-::size_t Config::ByteSizeLong() const {
+size_t Config::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:city.cognition.input.v1.Config)
-  ::size_t total_size = 0;
+  size_t total_size = 0;
 
-  ::uint32_t cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000007u) {
-    // .city.cognition.input.v1.Mongo mongo = 1 [json_name = "mongo"];
-    if (cached_has_bits & 0x00000001u) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          *_impl_.mongo_);
-    }
-
-    // .city.cognition.input.v1.Control control = 2 [json_name = "control"];
-    if (cached_has_bits & 0x00000002u) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          *_impl_.control_);
-    }
-
-    // .city.cognition.input.v1.Output output = 3 [json_name = "output"];
-    if (cached_has_bits & 0x00000004u) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          *_impl_.output_);
-    }
-
+  // .city.cognition.input.v1.Mongo mongo = 1 [json_name = "mongo"];
+  if (this->_internal_has_mongo()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.mongo_);
   }
+
+  // .city.cognition.input.v1.Control control = 2 [json_name = "control"];
+  if (this->_internal_has_control()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.control_);
+  }
+
+  // .city.cognition.input.v1.Output output = 3 [json_name = "output"];
+  if (this->_internal_has_output()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.output_);
+  }
+
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::google::protobuf::Message::ClassData Config::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Config::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
     Config::MergeImpl
 };
-const ::google::protobuf::Message::ClassData*Config::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Config::GetClassData() const { return &_class_data_; }
 
 
-void Config::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+void Config::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<Config*>(&to_msg);
   auto& from = static_cast<const Config&>(from_msg);
   // @@protoc_insertion_point(class_specific_merge_from_start:city.cognition.input.v1.Config)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  cached_has_bits = from._impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000007u) {
-    if (cached_has_bits & 0x00000001u) {
-      _this->_internal_mutable_mongo()->::city::cognition::input::v1::Mongo::MergeFrom(
-          from._internal_mongo());
-    }
-    if (cached_has_bits & 0x00000002u) {
-      _this->_internal_mutable_control()->::city::cognition::input::v1::Control::MergeFrom(
-          from._internal_control());
-    }
-    if (cached_has_bits & 0x00000004u) {
-      _this->_internal_mutable_output()->::city::cognition::input::v1::Output::MergeFrom(
-          from._internal_output());
-    }
+  if (from._internal_has_mongo()) {
+    _this->_internal_mutable_mongo()->::city::cognition::input::v1::Mongo::MergeFrom(
+        from._internal_mongo());
   }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+  if (from._internal_has_control()) {
+    _this->_internal_mutable_control()->::city::cognition::input::v1::Control::MergeFrom(
+        from._internal_control());
+  }
+  if (from._internal_has_output()) {
+    _this->_internal_mutable_output()->::city::cognition::input::v1::Output::MergeFrom(
+        from._internal_output());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void Config::CopyFrom(const Config& from) {
@@ -1788,15 +1711,14 @@ void Config::CopyFrom(const Config& from) {
   MergeFrom(from);
 }
 
-PROTOBUF_NOINLINE bool Config::IsInitialized() const {
+bool Config::IsInitialized() const {
   return true;
 }
 
 void Config::InternalSwap(Config* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
-  ::google::protobuf::internal::memswap<
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(Config, _impl_.output_)
       + sizeof(Config::_impl_.output_)
       - PROTOBUF_FIELD_OFFSET(Config, _impl_.mongo_)>(
@@ -1804,19 +1726,43 @@ void Config::InternalSwap(Config* other) {
           reinterpret_cast<char*>(&other->_impl_.mongo_));
 }
 
-::google::protobuf::Metadata Config::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata Config::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fcognition_2finput_2fv1_2fconfig_2eproto_getter, &descriptor_table_city_2fcognition_2finput_2fv1_2fconfig_2eproto_once,
       file_level_metadata_city_2fcognition_2finput_2fv1_2fconfig_2eproto[5]);
 }
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace v1
 }  // namespace input
 }  // namespace cognition
 }  // namespace city
-namespace google {
-namespace protobuf {
-}  // namespace protobuf
-}  // namespace google
+PROTOBUF_NAMESPACE_OPEN
+template<> PROTOBUF_NOINLINE ::city::cognition::input::v1::Mongo*
+Arena::CreateMaybeMessage< ::city::cognition::input::v1::Mongo >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::cognition::input::v1::Mongo >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::cognition::input::v1::ControlStep*
+Arena::CreateMaybeMessage< ::city::cognition::input::v1::ControlStep >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::cognition::input::v1::ControlStep >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::cognition::input::v1::Control*
+Arena::CreateMaybeMessage< ::city::cognition::input::v1::Control >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::cognition::input::v1::Control >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::cognition::input::v1::OutputSwitch*
+Arena::CreateMaybeMessage< ::city::cognition::input::v1::OutputSwitch >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::cognition::input::v1::OutputSwitch >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::cognition::input::v1::Output*
+Arena::CreateMaybeMessage< ::city::cognition::input::v1::Output >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::cognition::input::v1::Output >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::cognition::input::v1::Config*
+Arena::CreateMaybeMessage< ::city::cognition::input::v1::Config >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::cognition::input::v1::Config >(arena);
+}
+PROTOBUF_NAMESPACE_CLOSE
+
 // @@protoc_insertion_point(global_scope)
-#include "google/protobuf/port_undef.inc"
+#include <google/protobuf/port_undef.inc>
