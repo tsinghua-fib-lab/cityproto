@@ -32,8 +32,7 @@
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
 #include <google/protobuf/unknown_field_set.h>
 #include "city/geo/v2/geo.pb.h"
-#include "city/map/v2/light.pb.h"
-#include "city/person/v1/motion.pb.h"
+#include "city/map/v2/lane_state.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_city_2fmap_2fv2_2flane_5fservice_2eproto
@@ -63,9 +62,6 @@ extern GetLaneRequestDefaultTypeInternal _GetLaneRequest_default_instance_;
 class GetLaneResponse;
 struct GetLaneResponseDefaultTypeInternal;
 extern GetLaneResponseDefaultTypeInternal _GetLaneResponse_default_instance_;
-class LaneState;
-struct LaneStateDefaultTypeInternal;
-extern LaneStateDefaultTypeInternal _LaneState_default_instance_;
 class SetLaneMaxVRequest;
 struct SetLaneMaxVRequestDefaultTypeInternal;
 extern SetLaneMaxVRequestDefaultTypeInternal _SetLaneMaxVRequest_default_instance_;
@@ -80,7 +76,6 @@ template<> ::city::map::v2::GetLaneByLongLatBBoxRequest* Arena::CreateMaybeMessa
 template<> ::city::map::v2::GetLaneByLongLatBBoxResponse* Arena::CreateMaybeMessage<::city::map::v2::GetLaneByLongLatBBoxResponse>(Arena*);
 template<> ::city::map::v2::GetLaneRequest* Arena::CreateMaybeMessage<::city::map::v2::GetLaneRequest>(Arena*);
 template<> ::city::map::v2::GetLaneResponse* Arena::CreateMaybeMessage<::city::map::v2::GetLaneResponse>(Arena*);
-template<> ::city::map::v2::LaneState* Arena::CreateMaybeMessage<::city::map::v2::LaneState>(Arena*);
 template<> ::city::map::v2::SetLaneMaxVRequest* Arena::CreateMaybeMessage<::city::map::v2::SetLaneMaxVRequest>(Arena*);
 template<> ::city::map::v2::SetLaneMaxVResponse* Arena::CreateMaybeMessage<::city::map::v2::SetLaneMaxVResponse>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
@@ -1020,207 +1015,6 @@ class GetLaneByLongLatBBoxResponse final :
   union { Impl_ _impl_; };
   friend struct ::TableStruct_city_2fmap_2fv2_2flane_5fservice_2eproto;
 };
-// -------------------------------------------------------------------
-
-class LaneState final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.map.v2.LaneState) */ {
- public:
-  inline LaneState() : LaneState(nullptr) {}
-  ~LaneState() override;
-  explicit PROTOBUF_CONSTEXPR LaneState(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  LaneState(const LaneState& from);
-  LaneState(LaneState&& from) noexcept
-    : LaneState() {
-    *this = ::std::move(from);
-  }
-
-  inline LaneState& operator=(const LaneState& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline LaneState& operator=(LaneState&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()
-  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
-        && GetOwningArena() != nullptr
-  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
-    ) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const LaneState& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const LaneState* internal_default_instance() {
-    return reinterpret_cast<const LaneState*>(
-               &_LaneState_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    6;
-
-  friend void swap(LaneState& a, LaneState& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(LaneState* other) {
-    if (other == this) return;
-  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() != nullptr &&
-        GetOwningArena() == other->GetOwningArena()) {
-   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() == other->GetOwningArena()) {
-  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(LaneState* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  LaneState* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<LaneState>(arena);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const LaneState& from);
-  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom( const LaneState& from) {
-    LaneState::MergeImpl(*this, from);
-  }
-  private:
-  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
-  public:
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  uint8_t* _InternalSerialize(
-      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
-
-  private:
-  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(LaneState* other);
-
-  private:
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "city.map.v2.LaneState";
-  }
-  protected:
-  explicit LaneState(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                       bool is_message_owned = false);
-  public:
-
-  static const ClassData _class_data_;
-  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kPersonsFieldNumber = 2,
-    kIdFieldNumber = 1,
-    kRestrictionFieldNumber = 4,
-    kAvgVFieldNumber = 3,
-    kLightStateFieldNumber = 5,
-  };
-  // repeated .city.person.v1.PersonMotion persons = 2 [json_name = "persons"];
-  int persons_size() const;
-  private:
-  int _internal_persons_size() const;
-  public:
-  void clear_persons();
-  ::city::person::v1::PersonMotion* mutable_persons(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v1::PersonMotion >*
-      mutable_persons();
-  private:
-  const ::city::person::v1::PersonMotion& _internal_persons(int index) const;
-  ::city::person::v1::PersonMotion* _internal_add_persons();
-  public:
-  const ::city::person::v1::PersonMotion& persons(int index) const;
-  ::city::person::v1::PersonMotion* add_persons();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v1::PersonMotion >&
-      persons() const;
-
-  // int32 id = 1 [json_name = "id"];
-  void clear_id();
-  int32_t id() const;
-  void set_id(int32_t value);
-  private:
-  int32_t _internal_id() const;
-  void _internal_set_id(int32_t value);
-  public:
-
-  // bool restriction = 4 [json_name = "restriction"];
-  void clear_restriction();
-  bool restriction() const;
-  void set_restriction(bool value);
-  private:
-  bool _internal_restriction() const;
-  void _internal_set_restriction(bool value);
-  public:
-
-  // double avg_v = 3 [json_name = "avgV"];
-  void clear_avg_v();
-  double avg_v() const;
-  void set_avg_v(double value);
-  private:
-  double _internal_avg_v() const;
-  void _internal_set_avg_v(double value);
-  public:
-
-  // .city.map.v2.LightState light_state = 5 [json_name = "lightState"];
-  void clear_light_state();
-  ::city::map::v2::LightState light_state() const;
-  void set_light_state(::city::map::v2::LightState value);
-  private:
-  ::city::map::v2::LightState _internal_light_state() const;
-  void _internal_set_light_state(::city::map::v2::LightState value);
-  public:
-
-  // @@protoc_insertion_point(class_scope:city.map.v2.LaneState)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v1::PersonMotion > persons_;
-    int32_t id_;
-    bool restriction_;
-    double avg_v_;
-    int light_state_;
-    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  };
-  union { Impl_ _impl_; };
-  friend struct ::TableStruct_city_2fmap_2fv2_2flane_5fservice_2eproto;
-};
 // ===================================================================
 
 
@@ -1357,9 +1151,6 @@ inline int GetLaneResponse::_internal_states_size() const {
 }
 inline int GetLaneResponse::states_size() const {
   return _internal_states_size();
-}
-inline void GetLaneResponse::clear_states() {
-  _impl_.states_.Clear();
 }
 inline ::city::map::v2::LaneState* GetLaneResponse::mutable_states(int index) {
   // @@protoc_insertion_point(field_mutable:city.map.v2.GetLaneResponse.states)
@@ -1511,9 +1302,6 @@ inline int GetLaneByLongLatBBoxResponse::_internal_states_size() const {
 inline int GetLaneByLongLatBBoxResponse::states_size() const {
   return _internal_states_size();
 }
-inline void GetLaneByLongLatBBoxResponse::clear_states() {
-  _impl_.states_.Clear();
-}
 inline ::city::map::v2::LaneState* GetLaneByLongLatBBoxResponse::mutable_states(int index) {
   // @@protoc_insertion_point(field_mutable:city.map.v2.GetLaneByLongLatBBoxResponse.states)
   return _impl_.states_.Mutable(index);
@@ -1544,132 +1332,9 @@ GetLaneByLongLatBBoxResponse::states() const {
   return _impl_.states_;
 }
 
-// -------------------------------------------------------------------
-
-// LaneState
-
-// int32 id = 1 [json_name = "id"];
-inline void LaneState::clear_id() {
-  _impl_.id_ = 0;
-}
-inline int32_t LaneState::_internal_id() const {
-  return _impl_.id_;
-}
-inline int32_t LaneState::id() const {
-  // @@protoc_insertion_point(field_get:city.map.v2.LaneState.id)
-  return _internal_id();
-}
-inline void LaneState::_internal_set_id(int32_t value) {
-  
-  _impl_.id_ = value;
-}
-inline void LaneState::set_id(int32_t value) {
-  _internal_set_id(value);
-  // @@protoc_insertion_point(field_set:city.map.v2.LaneState.id)
-}
-
-// repeated .city.person.v1.PersonMotion persons = 2 [json_name = "persons"];
-inline int LaneState::_internal_persons_size() const {
-  return _impl_.persons_.size();
-}
-inline int LaneState::persons_size() const {
-  return _internal_persons_size();
-}
-inline ::city::person::v1::PersonMotion* LaneState::mutable_persons(int index) {
-  // @@protoc_insertion_point(field_mutable:city.map.v2.LaneState.persons)
-  return _impl_.persons_.Mutable(index);
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v1::PersonMotion >*
-LaneState::mutable_persons() {
-  // @@protoc_insertion_point(field_mutable_list:city.map.v2.LaneState.persons)
-  return &_impl_.persons_;
-}
-inline const ::city::person::v1::PersonMotion& LaneState::_internal_persons(int index) const {
-  return _impl_.persons_.Get(index);
-}
-inline const ::city::person::v1::PersonMotion& LaneState::persons(int index) const {
-  // @@protoc_insertion_point(field_get:city.map.v2.LaneState.persons)
-  return _internal_persons(index);
-}
-inline ::city::person::v1::PersonMotion* LaneState::_internal_add_persons() {
-  return _impl_.persons_.Add();
-}
-inline ::city::person::v1::PersonMotion* LaneState::add_persons() {
-  ::city::person::v1::PersonMotion* _add = _internal_add_persons();
-  // @@protoc_insertion_point(field_add:city.map.v2.LaneState.persons)
-  return _add;
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v1::PersonMotion >&
-LaneState::persons() const {
-  // @@protoc_insertion_point(field_list:city.map.v2.LaneState.persons)
-  return _impl_.persons_;
-}
-
-// double avg_v = 3 [json_name = "avgV"];
-inline void LaneState::clear_avg_v() {
-  _impl_.avg_v_ = 0;
-}
-inline double LaneState::_internal_avg_v() const {
-  return _impl_.avg_v_;
-}
-inline double LaneState::avg_v() const {
-  // @@protoc_insertion_point(field_get:city.map.v2.LaneState.avg_v)
-  return _internal_avg_v();
-}
-inline void LaneState::_internal_set_avg_v(double value) {
-  
-  _impl_.avg_v_ = value;
-}
-inline void LaneState::set_avg_v(double value) {
-  _internal_set_avg_v(value);
-  // @@protoc_insertion_point(field_set:city.map.v2.LaneState.avg_v)
-}
-
-// bool restriction = 4 [json_name = "restriction"];
-inline void LaneState::clear_restriction() {
-  _impl_.restriction_ = false;
-}
-inline bool LaneState::_internal_restriction() const {
-  return _impl_.restriction_;
-}
-inline bool LaneState::restriction() const {
-  // @@protoc_insertion_point(field_get:city.map.v2.LaneState.restriction)
-  return _internal_restriction();
-}
-inline void LaneState::_internal_set_restriction(bool value) {
-  
-  _impl_.restriction_ = value;
-}
-inline void LaneState::set_restriction(bool value) {
-  _internal_set_restriction(value);
-  // @@protoc_insertion_point(field_set:city.map.v2.LaneState.restriction)
-}
-
-// .city.map.v2.LightState light_state = 5 [json_name = "lightState"];
-inline void LaneState::clear_light_state() {
-  _impl_.light_state_ = 0;
-}
-inline ::city::map::v2::LightState LaneState::_internal_light_state() const {
-  return static_cast< ::city::map::v2::LightState >(_impl_.light_state_);
-}
-inline ::city::map::v2::LightState LaneState::light_state() const {
-  // @@protoc_insertion_point(field_get:city.map.v2.LaneState.light_state)
-  return _internal_light_state();
-}
-inline void LaneState::_internal_set_light_state(::city::map::v2::LightState value) {
-  
-  _impl_.light_state_ = value;
-}
-inline void LaneState::set_light_state(::city::map::v2::LightState value) {
-  _internal_set_light_state(value);
-  // @@protoc_insertion_point(field_set:city.map.v2.LaneState.light_state)
-}
-
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
-// -------------------------------------------------------------------
-
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

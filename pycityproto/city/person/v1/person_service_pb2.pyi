@@ -1,6 +1,7 @@
 from city.geo.v2 import geo_pb2 as _geo_pb2
 from city.person.v1 import motion_pb2 as _motion_pb2
 from city.person.v1 import person_pb2 as _person_pb2
+from city.person.v1 import vehicle_pb2 as _vehicle_pb2
 from city.trip.v2 import trip_pb2 as _trip_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
@@ -74,4 +75,60 @@ class GetPersonByLongLatBBoxResponse(_message.Message):
     motions: _containers.RepeatedCompositeFieldContainer[_motion_pb2.PersonMotion]
 
     def __init__(self, motions: _Optional[_Iterable[_Union[_motion_pb2.PersonMotion, _Mapping]]]=...) -> None:
+        ...
+
+class GetAllVehiclesRequest(_message.Message):
+    __slots__ = []
+
+    def __init__(self) -> None:
+        ...
+
+class GetAllVehiclesResponse(_message.Message):
+    __slots__ = ['motions']
+    MOTIONS_FIELD_NUMBER: _ClassVar[int]
+    motions: _containers.RepeatedCompositeFieldContainer[_motion_pb2.PersonMotion]
+
+    def __init__(self, motions: _Optional[_Iterable[_Union[_motion_pb2.PersonMotion, _Mapping]]]=...) -> None:
+        ...
+
+class SetControlledVehicleIDsRequest(_message.Message):
+    __slots__ = ['vehicle_ids']
+    VEHICLE_IDS_FIELD_NUMBER: _ClassVar[int]
+    vehicle_ids: _containers.RepeatedScalarFieldContainer[int]
+
+    def __init__(self, vehicle_ids: _Optional[_Iterable[int]]=...) -> None:
+        ...
+
+class SetControlledVehicleIDsResponse(_message.Message):
+    __slots__ = []
+
+    def __init__(self) -> None:
+        ...
+
+class FetchControlledVehicleEnvsRequest(_message.Message):
+    __slots__ = []
+
+    def __init__(self) -> None:
+        ...
+
+class FetchControlledVehicleEnvsResponse(_message.Message):
+    __slots__ = ['vehicle_envs']
+    VEHICLE_ENVS_FIELD_NUMBER: _ClassVar[int]
+    vehicle_envs: _containers.RepeatedCompositeFieldContainer[_vehicle_pb2.VehicleEnv]
+
+    def __init__(self, vehicle_envs: _Optional[_Iterable[_Union[_vehicle_pb2.VehicleEnv, _Mapping]]]=...) -> None:
+        ...
+
+class SetControlledVehicleActionsRequest(_message.Message):
+    __slots__ = ['vehicle_actions']
+    VEHICLE_ACTIONS_FIELD_NUMBER: _ClassVar[int]
+    vehicle_actions: _containers.RepeatedCompositeFieldContainer[_vehicle_pb2.VehicleAction]
+
+    def __init__(self, vehicle_actions: _Optional[_Iterable[_Union[_vehicle_pb2.VehicleAction, _Mapping]]]=...) -> None:
+        ...
+
+class SetControlledVehicleActionsResponse(_message.Message):
+    __slots__ = []
+
+    def __init__(self) -> None:
         ...

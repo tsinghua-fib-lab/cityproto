@@ -90,7 +90,7 @@ type GetAoiRequest struct {
 
 	// 指定AOI ID列表，如果为空，则返回所有AOI信息
 	// List of targeted AOI IDs, if empty, returns all information of AOIs
-	AoiIds []int32 `protobuf:"varint,1,rep,packed,name=aoi_ids,json=aoiIds,proto3" json:"aoi_ids,omitempty" db:"aoi_ids" yaml:"aoi_ids" bson:"aoi_ids"`
+	AoiIds []int32 `protobuf:"varint,1,rep,packed,name=aoi_ids,json=aoiIds,proto3" json:"aoi_ids,omitempty" yaml:"aoi_ids" bson:"aoi_ids" db:"aoi_ids"`
 }
 
 func (x *GetAoiRequest) Reset() {

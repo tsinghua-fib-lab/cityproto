@@ -103,27 +103,10 @@ struct GetLaneByLongLatBBoxResponseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetLaneByLongLatBBoxResponseDefaultTypeInternal _GetLaneByLongLatBBoxResponse_default_instance_;
-PROTOBUF_CONSTEXPR LaneState::LaneState(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.persons_)*/{}
-  , /*decltype(_impl_.id_)*/0
-  , /*decltype(_impl_.restriction_)*/false
-  , /*decltype(_impl_.avg_v_)*/0
-  , /*decltype(_impl_.light_state_)*/0
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct LaneStateDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR LaneStateDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~LaneStateDefaultTypeInternal() {}
-  union {
-    LaneState _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 LaneStateDefaultTypeInternal _LaneState_default_instance_;
 }  // namespace v2
 }  // namespace map
 }  // namespace city
-static ::_pb::Metadata file_level_metadata_city_2fmap_2fv2_2flane_5fservice_2eproto[7];
+static ::_pb::Metadata file_level_metadata_city_2fmap_2fv2_2flane_5fservice_2eproto[6];
 static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_city_2fmap_2fv2_2flane_5fservice_2eproto = nullptr;
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_city_2fmap_2fv2_2flane_5fservice_2eproto = nullptr;
 
@@ -172,17 +155,6 @@ const uint32_t TableStruct_city_2fmap_2fv2_2flane_5fservice_2eproto::offsets[] P
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::city::map::v2::GetLaneByLongLatBBoxResponse, _impl_.states_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::city::map::v2::LaneState, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::city::map::v2::LaneState, _impl_.id_),
-  PROTOBUF_FIELD_OFFSET(::city::map::v2::LaneState, _impl_.persons_),
-  PROTOBUF_FIELD_OFFSET(::city::map::v2::LaneState, _impl_.avg_v_),
-  PROTOBUF_FIELD_OFFSET(::city::map::v2::LaneState, _impl_.restriction_),
-  PROTOBUF_FIELD_OFFSET(::city::map::v2::LaneState, _impl_.light_state_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::city::map::v2::SetLaneMaxVRequest)},
@@ -191,7 +163,6 @@ static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protode
   { 22, -1, -1, sizeof(::city::map::v2::GetLaneResponse)},
   { 29, -1, -1, sizeof(::city::map::v2::GetLaneByLongLatBBoxRequest)},
   { 37, -1, -1, sizeof(::city::map::v2::GetLaneByLongLatBBoxResponse)},
-  { 44, -1, -1, sizeof(::city::map::v2::LaneState)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -201,52 +172,44 @@ static const ::_pb::Message* const file_default_instances[] = {
   &::city::map::v2::_GetLaneResponse_default_instance_._instance,
   &::city::map::v2::_GetLaneByLongLatBBoxRequest_default_instance_._instance,
   &::city::map::v2::_GetLaneByLongLatBBoxResponse_default_instance_._instance,
-  &::city::map::v2::_LaneState_default_instance_._instance,
 };
 
 const char descriptor_table_protodef_city_2fmap_2fv2_2flane_5fservice_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\036city/map/v2/lane_service.proto\022\013city.m"
-  "ap.v2\032\025city/geo/v2/geo.proto\032\027city/map/v"
-  "2/light.proto\032\033city/person/v1/motion.pro"
-  "to\"B\n\022SetLaneMaxVRequest\022\027\n\007lane_id\030\001 \001("
-  "\005R\006laneId\022\023\n\005max_v\030\002 \001(\001R\004maxV\"\025\n\023SetLan"
-  "eMaxVResponse\"R\n\016GetLaneRequest\022\031\n\010lane_"
-  "ids\030\001 \003(\005R\007laneIds\022%\n\016exclude_person\030\002 \001"
-  "(\010R\rexcludePerson\"A\n\017GetLaneResponse\022.\n\006"
-  "states\030\001 \003(\0132\026.city.map.v2.LaneStateR\006st"
-  "ates\"r\n\033GetLaneByLongLatBBoxRequest\022,\n\004b"
-  "box\030\001 \001(\0132\030.city.geo.v2.LongLatBBoxR\004bbo"
-  "x\022%\n\016exclude_person\030\002 \001(\010R\rexcludePerson"
-  "\"N\n\034GetLaneByLongLatBBoxResponse\022.\n\006stat"
-  "es\030\001 \003(\0132\026.city.map.v2.LaneStateR\006states"
-  "\"\304\001\n\tLaneState\022\016\n\002id\030\001 \001(\005R\002id\0226\n\007person"
-  "s\030\002 \003(\0132\034.city.person.v1.PersonMotionR\007p"
-  "ersons\022\023\n\005avg_v\030\003 \001(\001R\004avgV\022 \n\013restricti"
-  "on\030\004 \001(\010R\013restriction\0228\n\013light_state\030\005 \001"
-  "(\0162\027.city.map.v2.LightStateR\nlightState2"
-  "\222\002\n\013LaneService\022P\n\013SetLaneMaxV\022\037.city.ma"
-  "p.v2.SetLaneMaxVRequest\032 .city.map.v2.Se"
-  "tLaneMaxVResponse\022D\n\007GetLane\022\033.city.map."
-  "v2.GetLaneRequest\032\034.city.map.v2.GetLaneR"
-  "esponse\022k\n\024GetLaneByLongLatBBox\022(.city.m"
-  "ap.v2.GetLaneByLongLatBBoxRequest\032).city"
-  ".map.v2.GetLaneByLongLatBBoxResponseB\241\001\n"
-  "\017com.city.map.v2B\020LaneServiceProtoP\001Z.gi"
-  "t.fiblab.net/sim/protos/go/city/map/v2;m"
-  "apv2\242\002\003CMX\252\002\013City.Map.V2\312\002\013City\\Map\\V2\342\002"
-  "\027City\\Map\\V2\\GPBMetadata\352\002\rCity::Map::V2"
-  "b\006proto3"
+  "ap.v2\032\025city/geo/v2/geo.proto\032\034city/map/v"
+  "2/lane_state.proto\"B\n\022SetLaneMaxVRequest"
+  "\022\027\n\007lane_id\030\001 \001(\005R\006laneId\022\023\n\005max_v\030\002 \001(\001"
+  "R\004maxV\"\025\n\023SetLaneMaxVResponse\"R\n\016GetLane"
+  "Request\022\031\n\010lane_ids\030\001 \003(\005R\007laneIds\022%\n\016ex"
+  "clude_person\030\002 \001(\010R\rexcludePerson\"A\n\017Get"
+  "LaneResponse\022.\n\006states\030\001 \003(\0132\026.city.map."
+  "v2.LaneStateR\006states\"r\n\033GetLaneByLongLat"
+  "BBoxRequest\022,\n\004bbox\030\001 \001(\0132\030.city.geo.v2."
+  "LongLatBBoxR\004bbox\022%\n\016exclude_person\030\002 \001("
+  "\010R\rexcludePerson\"N\n\034GetLaneByLongLatBBox"
+  "Response\022.\n\006states\030\001 \003(\0132\026.city.map.v2.L"
+  "aneStateR\006states2\222\002\n\013LaneService\022P\n\013SetL"
+  "aneMaxV\022\037.city.map.v2.SetLaneMaxVRequest"
+  "\032 .city.map.v2.SetLaneMaxVResponse\022D\n\007Ge"
+  "tLane\022\033.city.map.v2.GetLaneRequest\032\034.cit"
+  "y.map.v2.GetLaneResponse\022k\n\024GetLaneByLon"
+  "gLatBBox\022(.city.map.v2.GetLaneByLongLatB"
+  "BoxRequest\032).city.map.v2.GetLaneByLongLa"
+  "tBBoxResponseB\241\001\n\017com.city.map.v2B\020LaneS"
+  "erviceProtoP\001Z.git.fiblab.net/sim/protos"
+  "/go/city/map/v2;mapv2\242\002\003CMX\252\002\013City.Map.V"
+  "2\312\002\013City\\Map\\V2\342\002\027City\\Map\\V2\\GPBMetadat"
+  "a\352\002\rCity::Map::V2b\006proto3"
   ;
-static const ::_pbi::DescriptorTable* const descriptor_table_city_2fmap_2fv2_2flane_5fservice_2eproto_deps[3] = {
+static const ::_pbi::DescriptorTable* const descriptor_table_city_2fmap_2fv2_2flane_5fservice_2eproto_deps[2] = {
   &::descriptor_table_city_2fgeo_2fv2_2fgeo_2eproto,
-  &::descriptor_table_city_2fmap_2fv2_2flight_2eproto,
-  &::descriptor_table_city_2fperson_2fv1_2fmotion_2eproto,
+  &::descriptor_table_city_2fmap_2fv2_2flane_5fstate_2eproto,
 };
 static ::_pbi::once_flag descriptor_table_city_2fmap_2fv2_2flane_5fservice_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2fmap_2fv2_2flane_5fservice_2eproto = {
-    false, false, 1208, descriptor_table_protodef_city_2fmap_2fv2_2flane_5fservice_2eproto,
+    false, false, 985, descriptor_table_protodef_city_2fmap_2fv2_2flane_5fservice_2eproto,
     "city/map/v2/lane_service.proto",
-    &descriptor_table_city_2fmap_2fv2_2flane_5fservice_2eproto_once, descriptor_table_city_2fmap_2fv2_2flane_5fservice_2eproto_deps, 3, 7,
+    &descriptor_table_city_2fmap_2fv2_2flane_5fservice_2eproto_once, descriptor_table_city_2fmap_2fv2_2flane_5fservice_2eproto_deps, 2, 6,
     schemas, file_default_instances, TableStruct_city_2fmap_2fv2_2flane_5fservice_2eproto::offsets,
     file_level_metadata_city_2fmap_2fv2_2flane_5fservice_2eproto, file_level_enum_descriptors_city_2fmap_2fv2_2flane_5fservice_2eproto,
     file_level_service_descriptors_city_2fmap_2fv2_2flane_5fservice_2eproto,
@@ -750,6 +713,9 @@ class GetLaneResponse::_Internal {
  public:
 };
 
+void GetLaneResponse::clear_states() {
+  _impl_.states_.Clear();
+}
 GetLaneResponse::GetLaneResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
@@ -1165,6 +1131,9 @@ class GetLaneByLongLatBBoxResponse::_Internal {
  public:
 };
 
+void GetLaneByLongLatBBoxResponse::clear_states() {
+  _impl_.states_.Clear();
+}
 GetLaneByLongLatBBoxResponse::GetLaneByLongLatBBoxResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
@@ -1344,317 +1313,6 @@ void GetLaneByLongLatBBoxResponse::InternalSwap(GetLaneByLongLatBBoxResponse* ot
       file_level_metadata_city_2fmap_2fv2_2flane_5fservice_2eproto[5]);
 }
 
-// ===================================================================
-
-class LaneState::_Internal {
- public:
-};
-
-void LaneState::clear_persons() {
-  _impl_.persons_.Clear();
-}
-LaneState::LaneState(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:city.map.v2.LaneState)
-}
-LaneState::LaneState(const LaneState& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  LaneState* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.persons_){from._impl_.persons_}
-    , decltype(_impl_.id_){}
-    , decltype(_impl_.restriction_){}
-    , decltype(_impl_.avg_v_){}
-    , decltype(_impl_.light_state_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&_impl_.id_, &from._impl_.id_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.light_state_) -
-    reinterpret_cast<char*>(&_impl_.id_)) + sizeof(_impl_.light_state_));
-  // @@protoc_insertion_point(copy_constructor:city.map.v2.LaneState)
-}
-
-inline void LaneState::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.persons_){arena}
-    , decltype(_impl_.id_){0}
-    , decltype(_impl_.restriction_){false}
-    , decltype(_impl_.avg_v_){0}
-    , decltype(_impl_.light_state_){0}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-}
-
-LaneState::~LaneState() {
-  // @@protoc_insertion_point(destructor:city.map.v2.LaneState)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
-  SharedDtor();
-}
-
-inline void LaneState::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.persons_.~RepeatedPtrField();
-}
-
-void LaneState::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
-}
-
-void LaneState::Clear() {
-// @@protoc_insertion_point(message_clear_start:city.map.v2.LaneState)
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  _impl_.persons_.Clear();
-  ::memset(&_impl_.id_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_impl_.light_state_) -
-      reinterpret_cast<char*>(&_impl_.id_)) + sizeof(_impl_.light_state_));
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* LaneState::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // int32 id = 1 [json_name = "id"];
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // repeated .city.person.v1.PersonMotion persons = 2 [json_name = "persons"];
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_persons(), ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
-        } else
-          goto handle_unusual;
-        continue;
-      // double avg_v = 3 [json_name = "avgV"];
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 25)) {
-          _impl_.avg_v_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
-          ptr += sizeof(double);
-        } else
-          goto handle_unusual;
-        continue;
-      // bool restriction = 4 [json_name = "restriction"];
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
-          _impl_.restriction_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // .city.map.v2.LightState light_state = 5 [json_name = "lightState"];
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
-          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-          _internal_set_light_state(static_cast<::city::map::v2::LightState>(val));
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
-}
-
-uint8_t* LaneState::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:city.map.v2.LaneState)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // int32 id = 1 [json_name = "id"];
-  if (this->_internal_id() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_id(), target);
-  }
-
-  // repeated .city.person.v1.PersonMotion persons = 2 [json_name = "persons"];
-  for (unsigned i = 0,
-      n = static_cast<unsigned>(this->_internal_persons_size()); i < n; i++) {
-    const auto& repfield = this->_internal_persons(i);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-        InternalWriteMessage(2, repfield, repfield.GetCachedSize(), target, stream);
-  }
-
-  // double avg_v = 3 [json_name = "avgV"];
-  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
-  double tmp_avg_v = this->_internal_avg_v();
-  uint64_t raw_avg_v;
-  memcpy(&raw_avg_v, &tmp_avg_v, sizeof(tmp_avg_v));
-  if (raw_avg_v != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(3, this->_internal_avg_v(), target);
-  }
-
-  // bool restriction = 4 [json_name = "restriction"];
-  if (this->_internal_restriction() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(4, this->_internal_restriction(), target);
-  }
-
-  // .city.map.v2.LightState light_state = 5 [json_name = "lightState"];
-  if (this->_internal_light_state() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteEnumToArray(
-      5, this->_internal_light_state(), target);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:city.map.v2.LaneState)
-  return target;
-}
-
-size_t LaneState::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:city.map.v2.LaneState)
-  size_t total_size = 0;
-
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // repeated .city.person.v1.PersonMotion persons = 2 [json_name = "persons"];
-  total_size += 1UL * this->_internal_persons_size();
-  for (const auto& msg : this->_impl_.persons_) {
-    total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
-  }
-
-  // int32 id = 1 [json_name = "id"];
-  if (this->_internal_id() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_id());
-  }
-
-  // bool restriction = 4 [json_name = "restriction"];
-  if (this->_internal_restriction() != 0) {
-    total_size += 1 + 1;
-  }
-
-  // double avg_v = 3 [json_name = "avgV"];
-  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
-  double tmp_avg_v = this->_internal_avg_v();
-  uint64_t raw_avg_v;
-  memcpy(&raw_avg_v, &tmp_avg_v, sizeof(tmp_avg_v));
-  if (raw_avg_v != 0) {
-    total_size += 1 + 8;
-  }
-
-  // .city.map.v2.LightState light_state = 5 [json_name = "lightState"];
-  if (this->_internal_light_state() != 0) {
-    total_size += 1 +
-      ::_pbi::WireFormatLite::EnumSize(this->_internal_light_state());
-  }
-
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
-}
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData LaneState::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    LaneState::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*LaneState::GetClassData() const { return &_class_data_; }
-
-
-void LaneState::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<LaneState*>(&to_msg);
-  auto& from = static_cast<const LaneState&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:city.map.v2.LaneState)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  _this->_impl_.persons_.MergeFrom(from._impl_.persons_);
-  if (from._internal_id() != 0) {
-    _this->_internal_set_id(from._internal_id());
-  }
-  if (from._internal_restriction() != 0) {
-    _this->_internal_set_restriction(from._internal_restriction());
-  }
-  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
-  double tmp_avg_v = from._internal_avg_v();
-  uint64_t raw_avg_v;
-  memcpy(&raw_avg_v, &tmp_avg_v, sizeof(tmp_avg_v));
-  if (raw_avg_v != 0) {
-    _this->_internal_set_avg_v(from._internal_avg_v());
-  }
-  if (from._internal_light_state() != 0) {
-    _this->_internal_set_light_state(from._internal_light_state());
-  }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-}
-
-void LaneState::CopyFrom(const LaneState& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:city.map.v2.LaneState)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool LaneState::IsInitialized() const {
-  return true;
-}
-
-void LaneState::InternalSwap(LaneState* other) {
-  using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  _impl_.persons_.InternalSwap(&other->_impl_.persons_);
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(LaneState, _impl_.light_state_)
-      + sizeof(LaneState::_impl_.light_state_)
-      - PROTOBUF_FIELD_OFFSET(LaneState, _impl_.id_)>(
-          reinterpret_cast<char*>(&_impl_.id_),
-          reinterpret_cast<char*>(&other->_impl_.id_));
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata LaneState::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_city_2fmap_2fv2_2flane_5fservice_2eproto_getter, &descriptor_table_city_2fmap_2fv2_2flane_5fservice_2eproto_once,
-      file_level_metadata_city_2fmap_2fv2_2flane_5fservice_2eproto[6]);
-}
-
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace v2
 }  // namespace map
@@ -1683,10 +1341,6 @@ Arena::CreateMaybeMessage< ::city::map::v2::GetLaneByLongLatBBoxRequest >(Arena*
 template<> PROTOBUF_NOINLINE ::city::map::v2::GetLaneByLongLatBBoxResponse*
 Arena::CreateMaybeMessage< ::city::map::v2::GetLaneByLongLatBBoxResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::city::map::v2::GetLaneByLongLatBBoxResponse >(arena);
-}
-template<> PROTOBUF_NOINLINE ::city::map::v2::LaneState*
-Arena::CreateMaybeMessage< ::city::map::v2::LaneState >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::city::map::v2::LaneState >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

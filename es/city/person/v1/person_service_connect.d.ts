@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AddPersonRequest, AddPersonResponse, GetPersonByLongLatBBoxRequest, GetPersonByLongLatBBoxResponse, GetPersonRequest, GetPersonResponse, SetScheduleRequest, SetScheduleResponse } from "./person_service_pb.js";
+import { AddPersonRequest, AddPersonResponse, FetchControlledVehicleEnvsRequest, FetchControlledVehicleEnvsResponse, GetAllVehiclesRequest, GetAllVehiclesResponse, GetPersonByLongLatBBoxRequest, GetPersonByLongLatBBoxResponse, GetPersonRequest, GetPersonResponse, SetControlledVehicleActionsRequest, SetControlledVehicleActionsResponse, SetControlledVehicleIDsRequest, SetControlledVehicleIDsResponse, SetScheduleRequest, SetScheduleResponse } from "./person_service_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -58,6 +58,54 @@ export declare const PersonService: {
       readonly name: "GetPersonByLongLatBBox",
       readonly I: typeof GetPersonByLongLatBBoxRequest,
       readonly O: typeof GetPersonByLongLatBBoxResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * 获取所有车辆
+     * Get all vehicles
+     *
+     * @generated from rpc city.person.v1.PersonService.GetAllVehicles
+     */
+    readonly getAllVehicles: {
+      readonly name: "GetAllVehicles",
+      readonly I: typeof GetAllVehiclesRequest,
+      readonly O: typeof GetAllVehiclesResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * 设置由外部控制行为的vehicle
+     * Set vehicle controlled by external behavior
+     *
+     * @generated from rpc city.person.v1.PersonService.SetControlledVehicleIDs
+     */
+    readonly setControlledVehicleIDs: {
+      readonly name: "SetControlledVehicleIDs",
+      readonly I: typeof SetControlledVehicleIDsRequest,
+      readonly O: typeof SetControlledVehicleIDsResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * 获取由外部控制行为的vehicle信息
+     * Get information of vehicle controlled by external behavior
+     *
+     * @generated from rpc city.person.v1.PersonService.FetchControlledVehicleEnvs
+     */
+    readonly fetchControlledVehicleEnvs: {
+      readonly name: "FetchControlledVehicleEnvs",
+      readonly I: typeof FetchControlledVehicleEnvsRequest,
+      readonly O: typeof FetchControlledVehicleEnvsResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * 设置由外部控制行为的vehicle的行为
+     * Set behavior of vehicle controlled by external behavior
+     *
+     * @generated from rpc city.person.v1.PersonService.SetControlledVehicleActions
+     */
+    readonly setControlledVehicleActions: {
+      readonly name: "SetControlledVehicleActions",
+      readonly I: typeof SetControlledVehicleActionsRequest,
+      readonly O: typeof SetControlledVehicleActionsResponse,
       readonly kind: MethodKind.Unary,
     },
   }

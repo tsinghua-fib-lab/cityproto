@@ -3,7 +3,7 @@ syntax = "proto3";
 package city.map.v2;
 
 import "city/event/v1/event.proto";
-import "city/map/v2/lane_service.proto";
+import "city/map/v2/lane_state.proto";
 
 service RoadService {
   // 查询道路信息

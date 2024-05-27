@@ -90,7 +90,7 @@ type ControlStep struct {
 	unknownFields protoimpl.UnknownFields
 
 	Start int32 `protobuf:"varint,1,opt,name=start,proto3" json:"start,omitempty" yaml:"start" bson:"start" db:"start"`
-	Total int32 `protobuf:"varint,2,opt,name=total,proto3" json:"total,omitempty" yaml:"total" bson:"total" db:"total"`
+	Total int32 `protobuf:"varint,2,opt,name=total,proto3" json:"total,omitempty" bson:"total" db:"total" yaml:"total"`
 }
 
 func (x *ControlStep) Reset() {
@@ -257,7 +257,7 @@ type Output struct {
 	unknownFields protoimpl.UnknownFields
 
 	Target *v1.OutputTarget `protobuf:"bytes,1,opt,name=target,proto3" json:"target,omitempty" yaml:"target" bson:"target" db:"target"`
-	Switch *OutputSwitch    `protobuf:"bytes,2,opt,name=switch,proto3" json:"switch,omitempty" yaml:"switch" bson:"switch" db:"switch"`
+	Switch *OutputSwitch    `protobuf:"bytes,2,opt,name=switch,proto3" json:"switch,omitempty" db:"switch" yaml:"switch" bson:"switch"`
 }
 
 func (x *Output) Reset() {
@@ -313,7 +313,7 @@ type Config struct {
 
 	Mongo   *Mongo   `protobuf:"bytes,1,opt,name=mongo,proto3" json:"mongo,omitempty" yaml:"mongo" bson:"mongo" db:"mongo"`
 	Control *Control `protobuf:"bytes,2,opt,name=control,proto3" json:"control,omitempty" yaml:"control" bson:"control" db:"control"`
-	Output  *Output  `protobuf:"bytes,3,opt,name=output,proto3" json:"output,omitempty" bson:"output" db:"output" yaml:"output"`
+	Output  *Output  `protobuf:"bytes,3,opt,name=output,proto3" json:"output,omitempty" yaml:"output" bson:"output" db:"output"`
 }
 
 func (x *Config) Reset() {

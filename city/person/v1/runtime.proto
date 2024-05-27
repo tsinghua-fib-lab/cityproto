@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package city.person.v1;
+
+message BaseRuntime {
+  // x坐标
+  // x coordinate
+  double x = 1;
+  // y坐标
+  // y coordinate
+  double y = 2;
+  // 车速
+  // velocity (m/s)
+  double v = 3;
+  // 方向(rad)，逆时针方向增加，0为正东方向
+  // direction (rad), increase in counterclockwise direction, 0 is east
+  double direction = 4;
+}
+
+message BaseRuntimeOnRoad {
+  // 车道ID
+  // lane ID
+  int32 lane_id = 1;
+  // 车道中心线坐标
+  // lane center line coordinate
+  double s = 2;
+}

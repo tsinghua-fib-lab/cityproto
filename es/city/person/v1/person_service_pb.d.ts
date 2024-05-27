@@ -9,6 +9,7 @@ import type { Person } from "./person_pb.js";
 import type { PersonMotion, Status } from "./motion_pb.js";
 import type { Schedule } from "../../trip/v2/trip_pb.js";
 import type { LongLatBBox } from "../../geo/v2/geo_pb.js";
+import type { VehicleAction, VehicleEnv } from "./vehicle_pb.js";
 
 /**
  * 获取person信息请求
@@ -262,5 +263,213 @@ export declare class GetPersonByLongLatBBoxResponse extends Message<GetPersonByL
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetPersonByLongLatBBoxResponse;
 
   static equals(a: GetPersonByLongLatBBoxResponse | PlainMessage<GetPersonByLongLatBBoxResponse> | undefined, b: GetPersonByLongLatBBoxResponse | PlainMessage<GetPersonByLongLatBBoxResponse> | undefined): boolean;
+}
+
+/**
+ * 获取所有车辆请求
+ * Request for getting all vehicles
+ *
+ * @generated from message city.person.v1.GetAllVehiclesRequest
+ */
+export declare class GetAllVehiclesRequest extends Message<GetAllVehiclesRequest> {
+  constructor(data?: PartialMessage<GetAllVehiclesRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.person.v1.GetAllVehiclesRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetAllVehiclesRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetAllVehiclesRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetAllVehiclesRequest;
+
+  static equals(a: GetAllVehiclesRequest | PlainMessage<GetAllVehiclesRequest> | undefined, b: GetAllVehiclesRequest | PlainMessage<GetAllVehiclesRequest> | undefined): boolean;
+}
+
+/**
+ * 获取所有车辆响应
+ * Response of getting all vehicles
+ *
+ * @generated from message city.person.v1.GetAllVehiclesResponse
+ */
+export declare class GetAllVehiclesResponse extends Message<GetAllVehiclesResponse> {
+  /**
+   * 所有车辆的信息
+   * Information of all vehicles
+   *
+   * @generated from field: repeated city.person.v1.PersonMotion motions = 1;
+   */
+  motions: PersonMotion[];
+
+  constructor(data?: PartialMessage<GetAllVehiclesResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.person.v1.GetAllVehiclesResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetAllVehiclesResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetAllVehiclesResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetAllVehiclesResponse;
+
+  static equals(a: GetAllVehiclesResponse | PlainMessage<GetAllVehiclesResponse> | undefined, b: GetAllVehiclesResponse | PlainMessage<GetAllVehiclesResponse> | undefined): boolean;
+}
+
+/**
+ * 设置由外部控制行为的vehicle请求（下一个step生效）
+ * Request for setting vehicle controlled by external behavior
+ *
+ * @generated from message city.person.v1.SetControlledVehicleIDsRequest
+ */
+export declare class SetControlledVehicleIDsRequest extends Message<SetControlledVehicleIDsRequest> {
+  /**
+   * 由外部控制行为的vehicle id列表
+   * List of vehicle ids controlled by external behavior
+   *
+   * @generated from field: repeated int32 vehicle_ids = 1;
+   */
+  vehicleIds: number[];
+
+  constructor(data?: PartialMessage<SetControlledVehicleIDsRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.person.v1.SetControlledVehicleIDsRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetControlledVehicleIDsRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetControlledVehicleIDsRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetControlledVehicleIDsRequest;
+
+  static equals(a: SetControlledVehicleIDsRequest | PlainMessage<SetControlledVehicleIDsRequest> | undefined, b: SetControlledVehicleIDsRequest | PlainMessage<SetControlledVehicleIDsRequest> | undefined): boolean;
+}
+
+/**
+ * 设置由外部控制行为的vehicle响应
+ * Response of setting vehicle controlled by external behavior
+ *
+ * @generated from message city.person.v1.SetControlledVehicleIDsResponse
+ */
+export declare class SetControlledVehicleIDsResponse extends Message<SetControlledVehicleIDsResponse> {
+  constructor(data?: PartialMessage<SetControlledVehicleIDsResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.person.v1.SetControlledVehicleIDsResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetControlledVehicleIDsResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetControlledVehicleIDsResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetControlledVehicleIDsResponse;
+
+  static equals(a: SetControlledVehicleIDsResponse | PlainMessage<SetControlledVehicleIDsResponse> | undefined, b: SetControlledVehicleIDsResponse | PlainMessage<SetControlledVehicleIDsResponse> | undefined): boolean;
+}
+
+/**
+ * 获取由外部控制行为的vehicle信息请求
+ * Request for getting information of vehicle controlled by external behavior
+ *
+ * @generated from message city.person.v1.FetchControlledVehicleEnvsRequest
+ */
+export declare class FetchControlledVehicleEnvsRequest extends Message<FetchControlledVehicleEnvsRequest> {
+  constructor(data?: PartialMessage<FetchControlledVehicleEnvsRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.person.v1.FetchControlledVehicleEnvsRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): FetchControlledVehicleEnvsRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): FetchControlledVehicleEnvsRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): FetchControlledVehicleEnvsRequest;
+
+  static equals(a: FetchControlledVehicleEnvsRequest | PlainMessage<FetchControlledVehicleEnvsRequest> | undefined, b: FetchControlledVehicleEnvsRequest | PlainMessage<FetchControlledVehicleEnvsRequest> | undefined): boolean;
+}
+
+/**
+ * 获取由外部控制行为的vehicle信息响应
+ * Response of getting information of vehicle controlled by external behavior
+ *
+ * @generated from message city.person.v1.FetchControlledVehicleEnvsResponse
+ */
+export declare class FetchControlledVehicleEnvsResponse extends Message<FetchControlledVehicleEnvsResponse> {
+  /**
+   * 由外部控制行为的vehicle信息
+   * Information of vehicle controlled by external behavior
+   *
+   * @generated from field: repeated city.person.v1.VehicleEnv vehicle_envs = 1;
+   */
+  vehicleEnvs: VehicleEnv[];
+
+  constructor(data?: PartialMessage<FetchControlledVehicleEnvsResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.person.v1.FetchControlledVehicleEnvsResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): FetchControlledVehicleEnvsResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): FetchControlledVehicleEnvsResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): FetchControlledVehicleEnvsResponse;
+
+  static equals(a: FetchControlledVehicleEnvsResponse | PlainMessage<FetchControlledVehicleEnvsResponse> | undefined, b: FetchControlledVehicleEnvsResponse | PlainMessage<FetchControlledVehicleEnvsResponse> | undefined): boolean;
+}
+
+/**
+ * 设置由外部控制行为的vehicle的行为请求
+ * Request for setting behavior of vehicle controlled by external behavior
+ *
+ * @generated from message city.person.v1.SetControlledVehicleActionsRequest
+ */
+export declare class SetControlledVehicleActionsRequest extends Message<SetControlledVehicleActionsRequest> {
+  /**
+   * 由外部控制行为的vehicle的行为
+   * Behavior of vehicle controlled by external behavior
+   *
+   * @generated from field: repeated city.person.v1.VehicleAction vehicle_actions = 1;
+   */
+  vehicleActions: VehicleAction[];
+
+  constructor(data?: PartialMessage<SetControlledVehicleActionsRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.person.v1.SetControlledVehicleActionsRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetControlledVehicleActionsRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetControlledVehicleActionsRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetControlledVehicleActionsRequest;
+
+  static equals(a: SetControlledVehicleActionsRequest | PlainMessage<SetControlledVehicleActionsRequest> | undefined, b: SetControlledVehicleActionsRequest | PlainMessage<SetControlledVehicleActionsRequest> | undefined): boolean;
+}
+
+/**
+ * 设置由外部控制行为的vehicle的行为响应
+ * Response of setting behavior of vehicle controlled by external behavior
+ *
+ * @generated from message city.person.v1.SetControlledVehicleActionsResponse
+ */
+export declare class SetControlledVehicleActionsResponse extends Message<SetControlledVehicleActionsResponse> {
+  constructor(data?: PartialMessage<SetControlledVehicleActionsResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.person.v1.SetControlledVehicleActionsResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetControlledVehicleActionsResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetControlledVehicleActionsResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetControlledVehicleActionsResponse;
+
+  static equals(a: SetControlledVehicleActionsResponse | PlainMessage<SetControlledVehicleActionsResponse> | undefined, b: SetControlledVehicleActionsResponse | PlainMessage<SetControlledVehicleActionsResponse> | undefined): boolean;
 }
 

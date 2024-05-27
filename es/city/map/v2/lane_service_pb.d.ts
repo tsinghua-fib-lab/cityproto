@@ -5,9 +5,8 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
+import type { LaneState } from "./lane_state_pb.js";
 import type { LongLatBBox } from "../../geo/v2/geo_pb.js";
-import type { PersonMotion } from "../../person/v1/motion_pb.js";
-import type { LightState } from "./light_pb.js";
 
 /**
  * 设置Lane的最大速度（限速）请求
@@ -202,66 +201,5 @@ export declare class GetLaneByLongLatBBoxResponse extends Message<GetLaneByLongL
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetLaneByLongLatBBoxResponse;
 
   static equals(a: GetLaneByLongLatBBoxResponse | PlainMessage<GetLaneByLongLatBBoxResponse> | undefined, b: GetLaneByLongLatBBoxResponse | PlainMessage<GetLaneByLongLatBBoxResponse> | undefined): boolean;
-}
-
-/**
- * Lane状态
- * Lane state
- *
- * @generated from message city.map.v2.LaneState
- */
-export declare class LaneState extends Message<LaneState> {
-  /**
-   * Lane ID
-   *
-   * @generated from field: int32 id = 1;
-   */
-  id: number;
-
-  /**
-   * Lane上的人/车
-   * person/vehicle on the lane
-   *
-   * @generated from field: repeated city.person.v1.PersonMotion persons = 2;
-   */
-  persons: PersonMotion[];
-
-  /**
-   * 平均速度（m/s）
-   * average speed (m/s)
-   *
-   * @generated from field: double avg_v = 3;
-   */
-  avgV: number;
-
-  /**
-   * 是否限行
-   * whether restricted
-   *
-   * @generated from field: bool restriction = 4;
-   */
-  restriction: boolean;
-
-  /**
-   * 交通灯状态
-   * traffic light state
-   *
-   * @generated from field: city.map.v2.LightState light_state = 5;
-   */
-  lightState: LightState;
-
-  constructor(data?: PartialMessage<LaneState>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.map.v2.LaneState";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LaneState;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LaneState;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LaneState;
-
-  static equals(a: LaneState | PlainMessage<LaneState> | undefined, b: LaneState | PlainMessage<LaneState> | undefined): boolean;
 }
 

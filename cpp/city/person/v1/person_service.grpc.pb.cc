@@ -28,6 +28,10 @@ static const char* PersonService_method_names[] = {
   "/city.person.v1.PersonService/AddPerson",
   "/city.person.v1.PersonService/SetSchedule",
   "/city.person.v1.PersonService/GetPersonByLongLatBBox",
+  "/city.person.v1.PersonService/GetAllVehicles",
+  "/city.person.v1.PersonService/SetControlledVehicleIDs",
+  "/city.person.v1.PersonService/FetchControlledVehicleEnvs",
+  "/city.person.v1.PersonService/SetControlledVehicleActions",
 };
 
 std::unique_ptr< PersonService::Stub> PersonService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -41,6 +45,10 @@ PersonService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& chan
   , rpcmethod_AddPerson_(PersonService_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_SetSchedule_(PersonService_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GetPersonByLongLatBBox_(PersonService_method_names[3], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetAllVehicles_(PersonService_method_names[4], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_SetControlledVehicleIDs_(PersonService_method_names[5], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_FetchControlledVehicleEnvs_(PersonService_method_names[6], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_SetControlledVehicleActions_(PersonService_method_names[7], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status PersonService::Stub::GetPerson(::grpc::ClientContext* context, const ::city::person::v1::GetPersonRequest& request, ::city::person::v1::GetPersonResponse* response) {
@@ -135,6 +143,98 @@ void PersonService::Stub::async::GetPersonByLongLatBBox(::grpc::ClientContext* c
   return result;
 }
 
+::grpc::Status PersonService::Stub::GetAllVehicles(::grpc::ClientContext* context, const ::city::person::v1::GetAllVehiclesRequest& request, ::city::person::v1::GetAllVehiclesResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::city::person::v1::GetAllVehiclesRequest, ::city::person::v1::GetAllVehiclesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetAllVehicles_, context, request, response);
+}
+
+void PersonService::Stub::async::GetAllVehicles(::grpc::ClientContext* context, const ::city::person::v1::GetAllVehiclesRequest* request, ::city::person::v1::GetAllVehiclesResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::city::person::v1::GetAllVehiclesRequest, ::city::person::v1::GetAllVehiclesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetAllVehicles_, context, request, response, std::move(f));
+}
+
+void PersonService::Stub::async::GetAllVehicles(::grpc::ClientContext* context, const ::city::person::v1::GetAllVehiclesRequest* request, ::city::person::v1::GetAllVehiclesResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetAllVehicles_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::city::person::v1::GetAllVehiclesResponse>* PersonService::Stub::PrepareAsyncGetAllVehiclesRaw(::grpc::ClientContext* context, const ::city::person::v1::GetAllVehiclesRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::person::v1::GetAllVehiclesResponse, ::city::person::v1::GetAllVehiclesRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetAllVehicles_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::city::person::v1::GetAllVehiclesResponse>* PersonService::Stub::AsyncGetAllVehiclesRaw(::grpc::ClientContext* context, const ::city::person::v1::GetAllVehiclesRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncGetAllVehiclesRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status PersonService::Stub::SetControlledVehicleIDs(::grpc::ClientContext* context, const ::city::person::v1::SetControlledVehicleIDsRequest& request, ::city::person::v1::SetControlledVehicleIDsResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::city::person::v1::SetControlledVehicleIDsRequest, ::city::person::v1::SetControlledVehicleIDsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_SetControlledVehicleIDs_, context, request, response);
+}
+
+void PersonService::Stub::async::SetControlledVehicleIDs(::grpc::ClientContext* context, const ::city::person::v1::SetControlledVehicleIDsRequest* request, ::city::person::v1::SetControlledVehicleIDsResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::city::person::v1::SetControlledVehicleIDsRequest, ::city::person::v1::SetControlledVehicleIDsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SetControlledVehicleIDs_, context, request, response, std::move(f));
+}
+
+void PersonService::Stub::async::SetControlledVehicleIDs(::grpc::ClientContext* context, const ::city::person::v1::SetControlledVehicleIDsRequest* request, ::city::person::v1::SetControlledVehicleIDsResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SetControlledVehicleIDs_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::city::person::v1::SetControlledVehicleIDsResponse>* PersonService::Stub::PrepareAsyncSetControlledVehicleIDsRaw(::grpc::ClientContext* context, const ::city::person::v1::SetControlledVehicleIDsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::person::v1::SetControlledVehicleIDsResponse, ::city::person::v1::SetControlledVehicleIDsRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_SetControlledVehicleIDs_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::city::person::v1::SetControlledVehicleIDsResponse>* PersonService::Stub::AsyncSetControlledVehicleIDsRaw(::grpc::ClientContext* context, const ::city::person::v1::SetControlledVehicleIDsRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncSetControlledVehicleIDsRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status PersonService::Stub::FetchControlledVehicleEnvs(::grpc::ClientContext* context, const ::city::person::v1::FetchControlledVehicleEnvsRequest& request, ::city::person::v1::FetchControlledVehicleEnvsResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::city::person::v1::FetchControlledVehicleEnvsRequest, ::city::person::v1::FetchControlledVehicleEnvsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_FetchControlledVehicleEnvs_, context, request, response);
+}
+
+void PersonService::Stub::async::FetchControlledVehicleEnvs(::grpc::ClientContext* context, const ::city::person::v1::FetchControlledVehicleEnvsRequest* request, ::city::person::v1::FetchControlledVehicleEnvsResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::city::person::v1::FetchControlledVehicleEnvsRequest, ::city::person::v1::FetchControlledVehicleEnvsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_FetchControlledVehicleEnvs_, context, request, response, std::move(f));
+}
+
+void PersonService::Stub::async::FetchControlledVehicleEnvs(::grpc::ClientContext* context, const ::city::person::v1::FetchControlledVehicleEnvsRequest* request, ::city::person::v1::FetchControlledVehicleEnvsResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_FetchControlledVehicleEnvs_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::city::person::v1::FetchControlledVehicleEnvsResponse>* PersonService::Stub::PrepareAsyncFetchControlledVehicleEnvsRaw(::grpc::ClientContext* context, const ::city::person::v1::FetchControlledVehicleEnvsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::person::v1::FetchControlledVehicleEnvsResponse, ::city::person::v1::FetchControlledVehicleEnvsRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_FetchControlledVehicleEnvs_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::city::person::v1::FetchControlledVehicleEnvsResponse>* PersonService::Stub::AsyncFetchControlledVehicleEnvsRaw(::grpc::ClientContext* context, const ::city::person::v1::FetchControlledVehicleEnvsRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncFetchControlledVehicleEnvsRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status PersonService::Stub::SetControlledVehicleActions(::grpc::ClientContext* context, const ::city::person::v1::SetControlledVehicleActionsRequest& request, ::city::person::v1::SetControlledVehicleActionsResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::city::person::v1::SetControlledVehicleActionsRequest, ::city::person::v1::SetControlledVehicleActionsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_SetControlledVehicleActions_, context, request, response);
+}
+
+void PersonService::Stub::async::SetControlledVehicleActions(::grpc::ClientContext* context, const ::city::person::v1::SetControlledVehicleActionsRequest* request, ::city::person::v1::SetControlledVehicleActionsResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::city::person::v1::SetControlledVehicleActionsRequest, ::city::person::v1::SetControlledVehicleActionsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SetControlledVehicleActions_, context, request, response, std::move(f));
+}
+
+void PersonService::Stub::async::SetControlledVehicleActions(::grpc::ClientContext* context, const ::city::person::v1::SetControlledVehicleActionsRequest* request, ::city::person::v1::SetControlledVehicleActionsResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SetControlledVehicleActions_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::city::person::v1::SetControlledVehicleActionsResponse>* PersonService::Stub::PrepareAsyncSetControlledVehicleActionsRaw(::grpc::ClientContext* context, const ::city::person::v1::SetControlledVehicleActionsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::person::v1::SetControlledVehicleActionsResponse, ::city::person::v1::SetControlledVehicleActionsRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_SetControlledVehicleActions_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::city::person::v1::SetControlledVehicleActionsResponse>* PersonService::Stub::AsyncSetControlledVehicleActionsRaw(::grpc::ClientContext* context, const ::city::person::v1::SetControlledVehicleActionsRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncSetControlledVehicleActionsRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
 PersonService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       PersonService_method_names[0],
@@ -176,6 +276,46 @@ PersonService::Service::Service() {
              ::city::person::v1::GetPersonByLongLatBBoxResponse* resp) {
                return service->GetPersonByLongLatBBox(ctx, req, resp);
              }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      PersonService_method_names[4],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< PersonService::Service, ::city::person::v1::GetAllVehiclesRequest, ::city::person::v1::GetAllVehiclesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](PersonService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::city::person::v1::GetAllVehiclesRequest* req,
+             ::city::person::v1::GetAllVehiclesResponse* resp) {
+               return service->GetAllVehicles(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      PersonService_method_names[5],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< PersonService::Service, ::city::person::v1::SetControlledVehicleIDsRequest, ::city::person::v1::SetControlledVehicleIDsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](PersonService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::city::person::v1::SetControlledVehicleIDsRequest* req,
+             ::city::person::v1::SetControlledVehicleIDsResponse* resp) {
+               return service->SetControlledVehicleIDs(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      PersonService_method_names[6],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< PersonService::Service, ::city::person::v1::FetchControlledVehicleEnvsRequest, ::city::person::v1::FetchControlledVehicleEnvsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](PersonService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::city::person::v1::FetchControlledVehicleEnvsRequest* req,
+             ::city::person::v1::FetchControlledVehicleEnvsResponse* resp) {
+               return service->FetchControlledVehicleEnvs(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      PersonService_method_names[7],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< PersonService::Service, ::city::person::v1::SetControlledVehicleActionsRequest, ::city::person::v1::SetControlledVehicleActionsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](PersonService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::city::person::v1::SetControlledVehicleActionsRequest* req,
+             ::city::person::v1::SetControlledVehicleActionsResponse* resp) {
+               return service->SetControlledVehicleActions(ctx, req, resp);
+             }, this)));
 }
 
 PersonService::Service::~Service() {
@@ -203,6 +343,34 @@ PersonService::Service::~Service() {
 }
 
 ::grpc::Status PersonService::Service::GetPersonByLongLatBBox(::grpc::ServerContext* context, const ::city::person::v1::GetPersonByLongLatBBoxRequest* request, ::city::person::v1::GetPersonByLongLatBBoxResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status PersonService::Service::GetAllVehicles(::grpc::ServerContext* context, const ::city::person::v1::GetAllVehiclesRequest* request, ::city::person::v1::GetAllVehiclesResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status PersonService::Service::SetControlledVehicleIDs(::grpc::ServerContext* context, const ::city::person::v1::SetControlledVehicleIDsRequest* request, ::city::person::v1::SetControlledVehicleIDsResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status PersonService::Service::FetchControlledVehicleEnvs(::grpc::ServerContext* context, const ::city::person::v1::FetchControlledVehicleEnvsRequest* request, ::city::person::v1::FetchControlledVehicleEnvsResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status PersonService::Service::SetControlledVehicleActions(::grpc::ServerContext* context, const ::city::person::v1::SetControlledVehicleActionsRequest* request, ::city::person::v1::SetControlledVehicleActionsResponse* response) {
   (void) context;
   (void) request;
   (void) response;

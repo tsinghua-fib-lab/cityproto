@@ -3,8 +3,7 @@ syntax = "proto3";
 package city.map.v2;
 
 import "city/geo/v2/geo.proto";
-import "city/map/v2/light.proto";
-import "city/person/v1/motion.proto";
+import "city/map/v2/lane_state.proto";
 
 service LaneService {
   // 设置Lane的最大速度（限速）
@@ -68,23 +67,4 @@ message GetLaneByLongLatBBoxResponse {
   // Lane的信息
   // Lane information
   repeated LaneState states = 1;
-}
-
-// Lane状态
-// Lane state
-message LaneState {
-  // Lane ID
-  int32 id = 1;
-  // Lane上的人/车
-  // person/vehicle on the lane
-  repeated city.person.v1.PersonMotion persons = 2;
-  // 平均速度（m/s）
-  // average speed (m/s)
-  double avg_v = 3;
-  // 是否限行
-  // whether restricted
-  bool restriction = 4;
-  // 交通灯状态
-  // traffic light state
-  LightState light_state = 5;
 }
