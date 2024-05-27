@@ -109,8 +109,8 @@ type RepairStation struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	AoiId    int32               `protobuf:"varint,1,opt,name=aoi_id,json=aoiId,proto3" json:"aoi_id,omitempty" db:"aoi_id" yaml:"aoi_id" bson:"aoi_id"`
-	Position *v2.LongLatPosition `protobuf:"bytes,2,opt,name=position,proto3" json:"position,omitempty" yaml:"position" bson:"position" db:"position"`
+	AoiId    int32               `protobuf:"varint,1,opt,name=aoi_id,json=aoiId,proto3" json:"aoi_id,omitempty" yaml:"aoi_id" bson:"aoi_id" db:"aoi_id"`
+	Position *v2.LongLatPosition `protobuf:"bytes,2,opt,name=position,proto3" json:"position,omitempty" bson:"position" db:"position" yaml:"position"`
 }
 
 func (x *RepairStation) Reset() {
@@ -166,7 +166,7 @@ type Facility struct {
 
 	Id       int32               `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
 	Position *v2.LongLatPosition `protobuf:"bytes,2,opt,name=position,proto3" json:"position,omitempty" yaml:"position" bson:"position" db:"position"`
-	Type     FacilityType        `protobuf:"varint,3,opt,name=type,proto3,enum=city.elec.input.v1.FacilityType" json:"type,omitempty" yaml:"type" bson:"type" db:"type"`
+	Type     FacilityType        `protobuf:"varint,3,opt,name=type,proto3,enum=city.elec.input.v1.FacilityType" json:"type,omitempty" bson:"type" db:"type" yaml:"type"`
 	// 当前节点的邻居节点的id
 	Relation []int32 `protobuf:"varint,4,rep,packed,name=relation,proto3" json:"relation,omitempty" yaml:"relation" bson:"relation" db:"relation"`
 	// 在其它关联的网络中如水网使用时，可使用外部id
@@ -265,7 +265,7 @@ type Facilities struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Facilities     []*Facility      `protobuf:"bytes,1,rep,name=facilities,proto3" json:"facilities,omitempty" db:"facilities" yaml:"facilities" bson:"facilities"`
+	Facilities     []*Facility      `protobuf:"bytes,1,rep,name=facilities,proto3" json:"facilities,omitempty" yaml:"facilities" bson:"facilities" db:"facilities"`
 	RepairStations []*RepairStation `protobuf:"bytes,2,rep,name=repair_stations,json=repairStations,proto3" json:"repair_stations,omitempty" yaml:"repair_stations" bson:"repair_stations" db:"repair_stations"`
 }
 

@@ -89,15 +89,15 @@ type AgentAttribute struct {
 	// 智能体类型
 	Type AgentType `protobuf:"varint,1,opt,name=type,proto3,enum=city.agent.v2.AgentType" json:"type,omitempty" yaml:"type" bson:"type" db:"type"`
 	// 单位: m，长度
-	Length float64 `protobuf:"fixed64,2,opt,name=length,proto3" json:"length,omitempty" yaml:"length" bson:"length" db:"length"`
+	Length float64 `protobuf:"fixed64,2,opt,name=length,proto3" json:"length,omitempty" bson:"length" db:"length" yaml:"length"`
 	// 单位: m，宽度
 	Width float64 `protobuf:"fixed64,3,opt,name=width,proto3" json:"width,omitempty" yaml:"width" bson:"width" db:"width"`
 	// 单位: m/s
-	MaxSpeed float64 `protobuf:"fixed64,4,opt,name=max_speed,json=maxSpeed,proto3" json:"max_speed,omitempty" bson:"max_speed" db:"max_speed" yaml:"max_speed"`
+	MaxSpeed float64 `protobuf:"fixed64,4,opt,name=max_speed,json=maxSpeed,proto3" json:"max_speed,omitempty" yaml:"max_speed" bson:"max_speed" db:"max_speed"`
 	// 单位: m/s^2, 最大加速度（正值）
-	MaxAcceleration float64 `protobuf:"fixed64,5,opt,name=max_acceleration,json=maxAcceleration,proto3" json:"max_acceleration,omitempty" yaml:"max_acceleration" bson:"max_acceleration" db:"max_acceleration"`
+	MaxAcceleration float64 `protobuf:"fixed64,5,opt,name=max_acceleration,json=maxAcceleration,proto3" json:"max_acceleration,omitempty" bson:"max_acceleration" db:"max_acceleration" yaml:"max_acceleration"`
 	// 单位: m/s^2, 最大减速度（负值）
-	MaxBrakingAcceleration float64 `protobuf:"fixed64,6,opt,name=max_braking_acceleration,json=maxBrakingAcceleration,proto3" json:"max_braking_acceleration,omitempty" bson:"max_braking_acceleration" db:"max_braking_acceleration" yaml:"max_braking_acceleration"`
+	MaxBrakingAcceleration float64 `protobuf:"fixed64,6,opt,name=max_braking_acceleration,json=maxBrakingAcceleration,proto3" json:"max_braking_acceleration,omitempty" yaml:"max_braking_acceleration" bson:"max_braking_acceleration" db:"max_braking_acceleration"`
 	// 单位: m/s^2, 一般加速度（正值），要求小于最大加速度
 	UsualAcceleration float64 `protobuf:"fixed64,7,opt,name=usual_acceleration,json=usualAcceleration,proto3" json:"usual_acceleration,omitempty" yaml:"usual_acceleration" bson:"usual_acceleration" db:"usual_acceleration"`
 	// 单位: m/s^2, 一般减速度（负值），要求大于最大减速度
@@ -199,7 +199,7 @@ type VehicleAttribute struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 单位: m, 完成变道所需路程
-	LaneChangeLength float64 `protobuf:"fixed64,1,opt,name=lane_change_length,json=laneChangeLength,proto3" json:"lane_change_length,omitempty" db:"lane_change_length" yaml:"lane_change_length" bson:"lane_change_length"`
+	LaneChangeLength float64 `protobuf:"fixed64,1,opt,name=lane_change_length,json=laneChangeLength,proto3" json:"lane_change_length,omitempty" yaml:"lane_change_length" bson:"lane_change_length" db:"lane_change_length"`
 	// 单位：米，本车距离前车的最小距离
 	MinGap float64 `protobuf:"fixed64,2,opt,name=min_gap,json=minGap,proto3" json:"min_gap,omitempty" yaml:"min_gap" bson:"min_gap" db:"min_gap"`
 }
@@ -360,7 +360,7 @@ type Agent struct {
 	// 参数
 	Attribute *AgentAttribute `protobuf:"bytes,2,opt,name=attribute,proto3" json:"attribute,omitempty" bson:"attribute" db:"attribute" yaml:"attribute"`
 	// 初始位置
-	Home *v2.Position `protobuf:"bytes,3,opt,name=home,proto3" json:"home,omitempty" yaml:"home" bson:"home" db:"home"`
+	Home *v2.Position `protobuf:"bytes,3,opt,name=home,proto3" json:"home,omitempty" bson:"home" db:"home" yaml:"home"`
 	// 初始日程
 	Schedules []*v21.Schedule `protobuf:"bytes,4,rep,name=schedules,proto3" json:"schedules,omitempty" yaml:"schedules" bson:"schedules" db:"schedules"`
 	// 车辆附加属性
@@ -370,7 +370,7 @@ type Agent struct {
 	// 自行车附加属性
 	BikeAttribute *BikeAttribute `protobuf:"bytes,9,opt,name=bike_attribute,json=bikeAttribute,proto3,oneof" json:"bike_attribute,omitempty" yaml:"bike_attribute" bson:"bike_attribute" db:"bike_attribute"`
 	// [可空] 额外的标签（例如：抢修车类型->电网）
-	Labels map[string]string `protobuf:"bytes,10,rep,name=labels,proto3" json:"labels,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3" yaml:"labels" bson:"labels" db:"labels"`
+	Labels map[string]string `protobuf:"bytes,10,rep,name=labels,proto3" json:"labels,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3" bson:"labels" db:"labels" yaml:"labels"`
 }
 
 func (x *Agent) Reset() {
@@ -469,7 +469,7 @@ type Agents struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Agents []*Agent `protobuf:"bytes,1,rep,name=agents,proto3" json:"agents,omitempty" yaml:"agents" bson:"agents" db:"agents"`
+	Agents []*Agent `protobuf:"bytes,1,rep,name=agents,proto3" json:"agents,omitempty" db:"agents" yaml:"agents" bson:"agents"`
 }
 
 func (x *Agents) Reset() {

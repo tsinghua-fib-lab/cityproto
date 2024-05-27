@@ -5,6 +5,7 @@ package city.person.v1;
 import "city/geo/v2/geo.proto";
 import "city/person/v1/motion.proto";
 import "city/person/v1/person.proto";
+import "city/person/v1/vehicle.proto";
 import "city/trip/v2/trip.proto";
 
 service PersonService {
@@ -20,6 +21,22 @@ service PersonService {
   // 获取特定区域内的person
   // Get persons in a specific region
   rpc GetPersonByLongLatBBox(GetPersonByLongLatBBoxRequest) returns (GetPersonByLongLatBBoxResponse);
+  // 获取所有车辆
+  // Get all vehicles
+  rpc GetAllVehicles(GetAllVehiclesRequest) returns (GetAllVehiclesResponse);
+
+  // RL接口
+  // RL interface
+
+  // 设置由外部控制行为的vehicle
+  // Set vehicle controlled by external behavior
+  rpc SetControlledVehicleIDs(SetControlledVehicleIDsRequest) returns (SetControlledVehicleIDsResponse);
+  // 获取由外部控制行为的vehicle信息
+  // Get information of vehicle controlled by external behavior
+  rpc FetchControlledVehicleEnvs(FetchControlledVehicleEnvsRequest) returns (FetchControlledVehicleEnvsResponse);
+  // 设置由外部控制行为的vehicle的行为
+  // Set behavior of vehicle controlled by external behavior
+  rpc SetControlledVehicleActions(SetControlledVehicleActionsRequest) returns (SetControlledVehicleActionsResponse);
 }
 
 // 获取person信息请求
@@ -88,3 +105,51 @@ message GetPersonByLongLatBBoxResponse {
   // motion status of persons in the region
   repeated PersonMotion motions = 1;
 }
+
+// 获取所有车辆请求
+// Request for getting all vehicles
+message GetAllVehiclesRequest {}
+
+// 获取所有车辆响应
+// Response of getting all vehicles
+message GetAllVehiclesResponse {
+  // 所有车辆的信息
+  // Information of all vehicles
+  repeated PersonMotion motions = 1;
+}
+
+// 设置由外部控制行为的vehicle请求（下一个step生效）
+// Request for setting vehicle controlled by external behavior
+message SetControlledVehicleIDsRequest {
+  // 由外部控制行为的vehicle id列表
+  // List of vehicle ids controlled by external behavior
+  repeated int32 vehicle_ids = 1;
+}
+
+// 设置由外部控制行为的vehicle响应
+// Response of setting vehicle controlled by external behavior
+message SetControlledVehicleIDsResponse {}
+
+// 获取由外部控制行为的vehicle信息请求
+// Request for getting information of vehicle controlled by external behavior
+message FetchControlledVehicleEnvsRequest {}
+
+// 获取由外部控制行为的vehicle信息响应
+// Response of getting information of vehicle controlled by external behavior
+message FetchControlledVehicleEnvsResponse {
+  // 由外部控制行为的vehicle信息
+  // Information of vehicle controlled by external behavior
+  repeated VehicleEnv vehicle_envs = 1;
+}
+
+// 设置由外部控制行为的vehicle的行为请求
+// Request for setting behavior of vehicle controlled by external behavior
+message SetControlledVehicleActionsRequest {
+  // 由外部控制行为的vehicle的行为
+  // Behavior of vehicle controlled by external behavior
+  repeated VehicleAction vehicle_actions = 1;
+}
+
+// 设置由外部控制行为的vehicle的行为响应
+// Response of setting behavior of vehicle controlled by external behavior
+message SetControlledVehicleActionsResponse {}

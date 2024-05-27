@@ -8,6 +8,7 @@ import { Person } from "./person_pb.js";
 import { PersonMotion, Status } from "./motion_pb.js";
 import { Schedule } from "../../trip/v2/trip_pb.js";
 import { LongLatBBox } from "../../geo/v2/geo_pb.js";
+import { VehicleAction, VehicleEnv } from "./vehicle_pb.js";
 
 /**
  * 获取person信息请求
@@ -112,5 +113,101 @@ export const GetPersonByLongLatBBoxResponse = proto3.makeMessageType(
   () => [
     { no: 1, name: "motions", kind: "message", T: PersonMotion, repeated: true },
   ],
+);
+
+/**
+ * 获取所有车辆请求
+ * Request for getting all vehicles
+ *
+ * @generated from message city.person.v1.GetAllVehiclesRequest
+ */
+export const GetAllVehiclesRequest = proto3.makeMessageType(
+  "city.person.v1.GetAllVehiclesRequest",
+  [],
+);
+
+/**
+ * 获取所有车辆响应
+ * Response of getting all vehicles
+ *
+ * @generated from message city.person.v1.GetAllVehiclesResponse
+ */
+export const GetAllVehiclesResponse = proto3.makeMessageType(
+  "city.person.v1.GetAllVehiclesResponse",
+  () => [
+    { no: 1, name: "motions", kind: "message", T: PersonMotion, repeated: true },
+  ],
+);
+
+/**
+ * 设置由外部控制行为的vehicle请求（下一个step生效）
+ * Request for setting vehicle controlled by external behavior
+ *
+ * @generated from message city.person.v1.SetControlledVehicleIDsRequest
+ */
+export const SetControlledVehicleIDsRequest = proto3.makeMessageType(
+  "city.person.v1.SetControlledVehicleIDsRequest",
+  () => [
+    { no: 1, name: "vehicle_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+  ],
+);
+
+/**
+ * 设置由外部控制行为的vehicle响应
+ * Response of setting vehicle controlled by external behavior
+ *
+ * @generated from message city.person.v1.SetControlledVehicleIDsResponse
+ */
+export const SetControlledVehicleIDsResponse = proto3.makeMessageType(
+  "city.person.v1.SetControlledVehicleIDsResponse",
+  [],
+);
+
+/**
+ * 获取由外部控制行为的vehicle信息请求
+ * Request for getting information of vehicle controlled by external behavior
+ *
+ * @generated from message city.person.v1.FetchControlledVehicleEnvsRequest
+ */
+export const FetchControlledVehicleEnvsRequest = proto3.makeMessageType(
+  "city.person.v1.FetchControlledVehicleEnvsRequest",
+  [],
+);
+
+/**
+ * 获取由外部控制行为的vehicle信息响应
+ * Response of getting information of vehicle controlled by external behavior
+ *
+ * @generated from message city.person.v1.FetchControlledVehicleEnvsResponse
+ */
+export const FetchControlledVehicleEnvsResponse = proto3.makeMessageType(
+  "city.person.v1.FetchControlledVehicleEnvsResponse",
+  () => [
+    { no: 1, name: "vehicle_envs", kind: "message", T: VehicleEnv, repeated: true },
+  ],
+);
+
+/**
+ * 设置由外部控制行为的vehicle的行为请求
+ * Request for setting behavior of vehicle controlled by external behavior
+ *
+ * @generated from message city.person.v1.SetControlledVehicleActionsRequest
+ */
+export const SetControlledVehicleActionsRequest = proto3.makeMessageType(
+  "city.person.v1.SetControlledVehicleActionsRequest",
+  () => [
+    { no: 1, name: "vehicle_actions", kind: "message", T: VehicleAction, repeated: true },
+  ],
+);
+
+/**
+ * 设置由外部控制行为的vehicle的行为响应
+ * Response of setting behavior of vehicle controlled by external behavior
+ *
+ * @generated from message city.person.v1.SetControlledVehicleActionsResponse
+ */
+export const SetControlledVehicleActionsResponse = proto3.makeMessageType(
+  "city.person.v1.SetControlledVehicleActionsResponse",
+  [],
 );
 

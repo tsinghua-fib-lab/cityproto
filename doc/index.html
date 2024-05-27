@@ -1426,6 +1426,21 @@
         
           
           <li>
+            <a href="#city%2fmap%2fv2%2flane_state.proto">city/map/v2/lane_state.proto</a>
+            <ul>
+              
+                <li>
+                  <a href="#city.map.v2.LaneState"><span class="badge">M</span>LaneState</a>
+                </li>
+              
+              
+              
+              
+            </ul>
+          </li>
+        
+          
+          <li>
             <a href="#city%2fmap%2fv2%2flane_service.proto">city/map/v2/lane_service.proto</a>
             <ul>
               
@@ -1443,10 +1458,6 @@
               
                 <li>
                   <a href="#city.map.v2.GetLaneResponse"><span class="badge">M</span>GetLaneResponse</a>
-                </li>
-              
-                <li>
-                  <a href="#city.map.v2.LaneState"><span class="badge">M</span>LaneState</a>
                 </li>
               
                 <li>
@@ -1630,6 +1641,68 @@
         
           
           <li>
+            <a href="#city%2fperson%2fv1%2fruntime.proto">city/person/v1/runtime.proto</a>
+            <ul>
+              
+                <li>
+                  <a href="#city.person.v1.BaseRuntime"><span class="badge">M</span>BaseRuntime</a>
+                </li>
+              
+                <li>
+                  <a href="#city.person.v1.BaseRuntimeOnRoad"><span class="badge">M</span>BaseRuntimeOnRoad</a>
+                </li>
+              
+              
+              
+              
+            </ul>
+          </li>
+        
+          
+          <li>
+            <a href="#city%2fperson%2fv1%2fvehicle.proto">city/person/v1/vehicle.proto</a>
+            <ul>
+              
+                <li>
+                  <a href="#city.person.v1.LC"><span class="badge">M</span>LC</a>
+                </li>
+              
+                <li>
+                  <a href="#city.person.v1.ObservedLane"><span class="badge">M</span>ObservedLane</a>
+                </li>
+              
+                <li>
+                  <a href="#city.person.v1.ObservedVehicle"><span class="badge">M</span>ObservedVehicle</a>
+                </li>
+              
+                <li>
+                  <a href="#city.person.v1.VehicleAction"><span class="badge">M</span>VehicleAction</a>
+                </li>
+              
+                <li>
+                  <a href="#city.person.v1.VehicleEnv"><span class="badge">M</span>VehicleEnv</a>
+                </li>
+              
+                <li>
+                  <a href="#city.person.v1.VehicleRuntime"><span class="badge">M</span>VehicleRuntime</a>
+                </li>
+              
+              
+                <li>
+                  <a href="#city.person.v1.LightState"><span class="badge">E</span>LightState</a>
+                </li>
+              
+                <li>
+                  <a href="#city.person.v1.VehicleRelation"><span class="badge">E</span>VehicleRelation</a>
+                </li>
+              
+              
+              
+            </ul>
+          </li>
+        
+          
+          <li>
             <a href="#city%2fperson%2fv1%2fperson_service.proto">city/person/v1/person_service.proto</a>
             <ul>
               
@@ -1639,6 +1712,22 @@
               
                 <li>
                   <a href="#city.person.v1.AddPersonResponse"><span class="badge">M</span>AddPersonResponse</a>
+                </li>
+              
+                <li>
+                  <a href="#city.person.v1.FetchControlledVehicleEnvsRequest"><span class="badge">M</span>FetchControlledVehicleEnvsRequest</a>
+                </li>
+              
+                <li>
+                  <a href="#city.person.v1.FetchControlledVehicleEnvsResponse"><span class="badge">M</span>FetchControlledVehicleEnvsResponse</a>
+                </li>
+              
+                <li>
+                  <a href="#city.person.v1.GetAllVehiclesRequest"><span class="badge">M</span>GetAllVehiclesRequest</a>
+                </li>
+              
+                <li>
+                  <a href="#city.person.v1.GetAllVehiclesResponse"><span class="badge">M</span>GetAllVehiclesResponse</a>
                 </li>
               
                 <li>
@@ -1655,6 +1744,22 @@
               
                 <li>
                   <a href="#city.person.v1.GetPersonResponse"><span class="badge">M</span>GetPersonResponse</a>
+                </li>
+              
+                <li>
+                  <a href="#city.person.v1.SetControlledVehicleActionsRequest"><span class="badge">M</span>SetControlledVehicleActionsRequest</a>
+                </li>
+              
+                <li>
+                  <a href="#city.person.v1.SetControlledVehicleActionsResponse"><span class="badge">M</span>SetControlledVehicleActionsResponse</a>
+                </li>
+              
+                <li>
+                  <a href="#city.person.v1.SetControlledVehicleIDsRequest"><span class="badge">M</span>SetControlledVehicleIDsRequest</a>
+                </li>
+              
+                <li>
+                  <a href="#city.person.v1.SetControlledVehicleIDsResponse"><span class="badge">M</span>SetControlledVehicleIDsResponse</a>
                 </li>
               
                 <li>
@@ -10362,6 +10467,76 @@ Get AOI information</p></td>
     
       
       <div class="file-heading">
+        <h2 id="city/map/v2/lane_state.proto">city/map/v2/lane_state.proto</h2><a href="#title">Top</a>
+      </div>
+      <p></p>
+
+      
+        <h3 id="city.map.v2.LaneState">LaneState</h3>
+        <p>Lane状态</p><p>Lane state</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>id</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p>Lane ID </p></td>
+                </tr>
+              
+                <tr>
+                  <td>persons</td>
+                  <td><a href="#city.person.v1.PersonMotion">city.person.v1.PersonMotion</a></td>
+                  <td>repeated</td>
+                  <td><p>Lane上的人/车
+person/vehicle on the lane </p></td>
+                </tr>
+              
+                <tr>
+                  <td>avg_v</td>
+                  <td><a href="#double">double</a></td>
+                  <td></td>
+                  <td><p>平均速度（m/s）
+average speed (m/s) </p></td>
+                </tr>
+              
+                <tr>
+                  <td>restriction</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p>是否限行
+whether restricted </p></td>
+                </tr>
+              
+                <tr>
+                  <td>light_state</td>
+                  <td><a href="#city.map.v2.LightState">LightState</a></td>
+                  <td></td>
+                  <td><p>交通灯状态
+traffic light state </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+
+      
+
+      
+
+      
+    
+      
+      <div class="file-heading">
         <h2 id="city/map/v2/lane_service.proto">city/map/v2/lane_service.proto</h2><a href="#title">Top</a>
       </div>
       <p></p>
@@ -10474,62 +10649,6 @@ Whether to exclude information of person on the lane </p></td>
                   <td>repeated</td>
                   <td><p>Lane的信息
 Lane information </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-
-          
-
-        
-      
-        <h3 id="city.map.v2.LaneState">LaneState</h3>
-        <p>Lane状态</p><p>Lane state</p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>id</td>
-                  <td><a href="#int32">int32</a></td>
-                  <td></td>
-                  <td><p>Lane ID </p></td>
-                </tr>
-              
-                <tr>
-                  <td>persons</td>
-                  <td><a href="#city.person.v1.PersonMotion">city.person.v1.PersonMotion</a></td>
-                  <td>repeated</td>
-                  <td><p>Lane上的人/车
-person/vehicle on the lane </p></td>
-                </tr>
-              
-                <tr>
-                  <td>avg_v</td>
-                  <td><a href="#double">double</a></td>
-                  <td></td>
-                  <td><p>平均速度（m/s）
-average speed (m/s) </p></td>
-                </tr>
-              
-                <tr>
-                  <td>restriction</td>
-                  <td><a href="#bool">bool</a></td>
-                  <td></td>
-                  <td><p>是否限行
-whether restricted </p></td>
-                </tr>
-              
-                <tr>
-                  <td>light_state</td>
-                  <td><a href="#city.map.v2.LightState">LightState</a></td>
-                  <td></td>
-                  <td><p>交通灯状态
-traffic light state </p></td>
                 </tr>
               
             </tbody>
@@ -11845,6 +11964,538 @@ female</p></td>
     
       
       <div class="file-heading">
+        <h2 id="city/person/v1/runtime.proto">city/person/v1/runtime.proto</h2><a href="#title">Top</a>
+      </div>
+      <p></p>
+
+      
+        <h3 id="city.person.v1.BaseRuntime">BaseRuntime</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>x</td>
+                  <td><a href="#double">double</a></td>
+                  <td></td>
+                  <td><p>x坐标
+x coordinate </p></td>
+                </tr>
+              
+                <tr>
+                  <td>y</td>
+                  <td><a href="#double">double</a></td>
+                  <td></td>
+                  <td><p>y坐标
+y coordinate </p></td>
+                </tr>
+              
+                <tr>
+                  <td>v</td>
+                  <td><a href="#double">double</a></td>
+                  <td></td>
+                  <td><p>车速
+velocity (m/s) </p></td>
+                </tr>
+              
+                <tr>
+                  <td>direction</td>
+                  <td><a href="#double">double</a></td>
+                  <td></td>
+                  <td><p>方向(rad)，逆时针方向增加，0为正东方向
+direction (rad), increase in counterclockwise direction, 0 is east </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="city.person.v1.BaseRuntimeOnRoad">BaseRuntimeOnRoad</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>lane_id</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p>车道ID
+lane ID </p></td>
+                </tr>
+              
+                <tr>
+                  <td>s</td>
+                  <td><a href="#double">double</a></td>
+                  <td></td>
+                  <td><p>车道中心线坐标
+lane center line coordinate </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+
+      
+
+      
+
+      
+    
+      
+      <div class="file-heading">
+        <h2 id="city/person/v1/vehicle.proto">city/person/v1/vehicle.proto</h2><a href="#title">Top</a>
+      </div>
+      <p></p>
+
+      
+        <h3 id="city.person.v1.LC">LC</h3>
+        <p>变道相关的信息</p><p>lane change related information</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>shadow_lane_id</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p>影子车道ID（变道前的车道）
+shadow lane id (lane before lane change) </p></td>
+                </tr>
+              
+                <tr>
+                  <td>shadow_s</td>
+                  <td><a href="#double">double</a></td>
+                  <td></td>
+                  <td><p>投影到影子车道的坐标
+s coordinate projected to shadow lane </p></td>
+                </tr>
+              
+                <tr>
+                  <td>angle</td>
+                  <td><a href="#double">double</a></td>
+                  <td></td>
+                  <td><p>变道过程车头相对于前进方向的偏转角（弧度，总是为正，0代表不转向）
+deviation angle of the vehicle head relative to the forward direction during lane change (radians, always positive, 0 means no steering) </p></td>
+                </tr>
+              
+                <tr>
+                  <td>completed_ratio</td>
+                  <td><a href="#double">double</a></td>
+                  <td></td>
+                  <td><p>已完成的变道比例
+completed ratio of lane change </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="city.person.v1.ObservedLane">ObservedLane</h3>
+        <p>观测到的车道</p><p>observed lane</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>id</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p>Lane ID </p></td>
+                </tr>
+              
+                <tr>
+                  <td>restriction</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p>是否限行
+whether restricted </p></td>
+                </tr>
+              
+                <tr>
+                  <td>light_state</td>
+                  <td><a href="#city.person.v1.LightState">LightState</a></td>
+                  <td></td>
+                  <td><p>交通灯状态
+traffic light state </p></td>
+                </tr>
+              
+                <tr>
+                  <td>light_remaining_time</td>
+                  <td><a href="#double">double</a></td>
+                  <td></td>
+                  <td><p>交通灯剩余时间
+remaining time of traffic light </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="city.person.v1.ObservedVehicle">ObservedVehicle</h3>
+        <p>观测到的车辆</p><p>observed vehicles</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>id</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p>车辆编号
+vehicle id </p></td>
+                </tr>
+              
+                <tr>
+                  <td>motion</td>
+                  <td><a href="#city.person.v1.PersonMotion">PersonMotion</a></td>
+                  <td></td>
+                  <td><p>当前的车辆运行时信息
+current vehicle runtime information </p></td>
+                </tr>
+              
+                <tr>
+                  <td>relative_distance</td>
+                  <td><a href="#double">double</a></td>
+                  <td></td>
+                  <td><p>相对距离
+relative distance </p></td>
+                </tr>
+              
+                <tr>
+                  <td>relation</td>
+                  <td><a href="#city.person.v1.VehicleRelation">VehicleRelation</a></td>
+                  <td></td>
+                  <td><p>关系枚举
+relation enumeration </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="city.person.v1.VehicleAction">VehicleAction</h3>
+        <p>车辆控制信息</p><p>vehicle control information</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>id</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p>车辆编号
+vehicle id </p></td>
+                </tr>
+              
+                <tr>
+                  <td>acc</td>
+                  <td><a href="#double">double</a></td>
+                  <td></td>
+                  <td><p>本轮更新中设定的加速度
+acceleration set in this step </p></td>
+                </tr>
+              
+                <tr>
+                  <td>lc_target_id</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td>optional</td>
+                  <td><p>变道目标（可选，不设置代表不变道或保持变道状态）
+lane change target (optional, not set means no lane change) </p></td>
+                </tr>
+              
+                <tr>
+                  <td>angle</td>
+                  <td><a href="#double">double</a></td>
+                  <td></td>
+                  <td><p>变道过程的转向角度
+steering angle during lane change </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="city.person.v1.VehicleEnv">VehicleEnv</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>id</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p>车辆编号
+vehicle id </p></td>
+                </tr>
+              
+                <tr>
+                  <td>runtime</td>
+                  <td><a href="#city.person.v1.VehicleRuntime">VehicleRuntime</a></td>
+                  <td></td>
+                  <td><p>当前的车辆运行时信息
+current vehicle runtime information </p></td>
+                </tr>
+              
+                <tr>
+                  <td>journey</td>
+                  <td><a href="#city.routing.v2.Journey">city.routing.v2.Journey</a></td>
+                  <td></td>
+                  <td><p>当前的路径规划结果
+journey: current routing result </p></td>
+                </tr>
+              
+                <tr>
+                  <td>observed_vehicles</td>
+                  <td><a href="#city.person.v1.ObservedVehicle">ObservedVehicle</a></td>
+                  <td>repeated</td>
+                  <td><p>观测到的车辆
+observed vehicles </p></td>
+                </tr>
+              
+                <tr>
+                  <td>observed_lanes</td>
+                  <td><a href="#city.person.v1.ObservedLane">ObservedLane</a></td>
+                  <td>repeated</td>
+                  <td><p>观测到的车道状态
+observed lane states </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="city.person.v1.VehicleRuntime">VehicleRuntime</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>base</td>
+                  <td><a href="#city.person.v1.BaseRuntime">BaseRuntime</a></td>
+                  <td></td>
+                  <td><p>基本运行时信息
+basic runtime information </p></td>
+                </tr>
+              
+                <tr>
+                  <td>base_on_road</td>
+                  <td><a href="#city.person.v1.BaseRuntimeOnRoad">BaseRuntimeOnRoad</a></td>
+                  <td></td>
+                  <td><p>基本运行时信息（道路上的对象）
+basic runtime information (on the road) </p></td>
+                </tr>
+              
+                <tr>
+                  <td>distance_to_end</td>
+                  <td><a href="#double">double</a></td>
+                  <td></td>
+                  <td><p>距终点的距离
+distance to the end </p></td>
+                </tr>
+              
+                <tr>
+                  <td>lc</td>
+                  <td><a href="#city.person.v1.LC">LC</a></td>
+                  <td>optional</td>
+                  <td><p>变道信息
+lane change information </p></td>
+                </tr>
+              
+                <tr>
+                  <td>action</td>
+                  <td><a href="#city.person.v1.VehicleAction">VehicleAction</a></td>
+                  <td>optional</td>
+                  <td><p>本轮车辆行为（获取车辆环境信息时不返回）
+vehicle action in the step (not returned when getting vehicle environment information) </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+
+      
+        <h3 id="city.person.v1.LightState">LightState</h3>
+        <p>交通灯的状态</p><p>traffic light state</p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>LIGHT_STATE_UNSPECIFIED</td>
+                <td>0</td>
+                <td><p>未指定
+unspecified</p></td>
+              </tr>
+            
+              <tr>
+                <td>LIGHT_STATE_RED</td>
+                <td>1</td>
+                <td><p>红灯
+red light</p></td>
+              </tr>
+            
+              <tr>
+                <td>LIGHT_STATE_GREEN</td>
+                <td>2</td>
+                <td><p>绿灯
+green light</p></td>
+              </tr>
+            
+              <tr>
+                <td>LIGHT_STATE_YELLOW</td>
+                <td>3</td>
+                <td><p>黄灯
+yellow light</p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+      
+        <h3 id="city.person.v1.VehicleRelation">VehicleRelation</h3>
+        <p></p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>VEHICLE_RELATION_UNSPECIFIED</td>
+                <td>0</td>
+                <td><p>未指定
+unspecified</p></td>
+              </tr>
+            
+              <tr>
+                <td>VEHICLE_RELATION_AHEAD</td>
+                <td>1</td>
+                <td><p>当前车道前车
+vehicle ahead in the current lane</p></td>
+              </tr>
+            
+              <tr>
+                <td>VEHICLE_RELATION_BEHIND</td>
+                <td>2</td>
+                <td><p>当前车道后车
+vehicle behind in the current lane</p></td>
+              </tr>
+            
+              <tr>
+                <td>VEHICLE_RELATION_SHADOW_AHEAD</td>
+                <td>3</td>
+                <td><p>影子车道前车
+vehicle ahead in the shadow lane</p></td>
+              </tr>
+            
+              <tr>
+                <td>VEHICLE_RELATION_SHADOW_BEHIND</td>
+                <td>4</td>
+                <td><p>影子车道后车
+vehicle behind in the shadow lane</p></td>
+              </tr>
+            
+              <tr>
+                <td>VEHICLE_RELATION_LEFT_AHEAD</td>
+                <td>5</td>
+                <td><p>当前车道左侧车道前车
+vehicle ahead in the left lane</p></td>
+              </tr>
+            
+              <tr>
+                <td>VEHICLE_RELATION_RIGHT_AHEAD</td>
+                <td>6</td>
+                <td><p>当前车道右侧车道前车
+vehicle ahead in the right lane</p></td>
+              </tr>
+            
+              <tr>
+                <td>VEHICLE_RELATION_LEFT_BEHIND</td>
+                <td>7</td>
+                <td><p>当前车道左侧车道后车
+vehicle behind in the left lane</p></td>
+              </tr>
+            
+              <tr>
+                <td>VEHICLE_RELATION_RIGHT_BEHIND</td>
+                <td>8</td>
+                <td><p>当前车道右侧车道后车
+vehicle behind in the right lane</p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+      
+
+      
+
+      
+    
+      
+      <div class="file-heading">
         <h2 id="city/person/v1/person_service.proto">city/person/v1/person_service.proto</h2><a href="#title">Top</a>
       </div>
       <p></p>
@@ -11891,6 +12542,70 @@ Convention: personid is not set here </p></td>
                   <td></td>
                   <td><p>新增的person分配得到的ID
 The ID assigned to the newly added person </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="city.person.v1.FetchControlledVehicleEnvsRequest">FetchControlledVehicleEnvsRequest</h3>
+        <p>获取由外部控制行为的vehicle信息请求</p><p>Request for getting information of vehicle controlled by external behavior</p>
+
+        
+
+        
+      
+        <h3 id="city.person.v1.FetchControlledVehicleEnvsResponse">FetchControlledVehicleEnvsResponse</h3>
+        <p>获取由外部控制行为的vehicle信息响应</p><p>Response of getting information of vehicle controlled by external behavior</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>vehicle_envs</td>
+                  <td><a href="#city.person.v1.VehicleEnv">VehicleEnv</a></td>
+                  <td>repeated</td>
+                  <td><p>由外部控制行为的vehicle信息
+Information of vehicle controlled by external behavior </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="city.person.v1.GetAllVehiclesRequest">GetAllVehiclesRequest</h3>
+        <p>获取所有车辆请求</p><p>Request for getting all vehicles</p>
+
+        
+
+        
+      
+        <h3 id="city.person.v1.GetAllVehiclesResponse">GetAllVehiclesResponse</h3>
+        <p>获取所有车辆响应</p><p>Response of getting all vehicles</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>motions</td>
+                  <td><a href="#city.person.v1.PersonMotion">PersonMotion</a></td>
+                  <td>repeated</td>
+                  <td><p>所有车辆的信息
+Information of all vehicles </p></td>
                 </tr>
               
             </tbody>
@@ -12015,6 +12730,70 @@ person motion information </p></td>
 
         
       
+        <h3 id="city.person.v1.SetControlledVehicleActionsRequest">SetControlledVehicleActionsRequest</h3>
+        <p>设置由外部控制行为的vehicle的行为请求</p><p>Request for setting behavior of vehicle controlled by external behavior</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>vehicle_actions</td>
+                  <td><a href="#city.person.v1.VehicleAction">VehicleAction</a></td>
+                  <td>repeated</td>
+                  <td><p>由外部控制行为的vehicle的行为
+Behavior of vehicle controlled by external behavior </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="city.person.v1.SetControlledVehicleActionsResponse">SetControlledVehicleActionsResponse</h3>
+        <p>设置由外部控制行为的vehicle的行为响应</p><p>Response of setting behavior of vehicle controlled by external behavior</p>
+
+        
+
+        
+      
+        <h3 id="city.person.v1.SetControlledVehicleIDsRequest">SetControlledVehicleIDsRequest</h3>
+        <p>设置由外部控制行为的vehicle请求（下一个step生效）</p><p>Request for setting vehicle controlled by external behavior</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>vehicle_ids</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td>repeated</td>
+                  <td><p>由外部控制行为的vehicle id列表
+List of vehicle ids controlled by external behavior </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="city.person.v1.SetControlledVehicleIDsResponse">SetControlledVehicleIDsResponse</h3>
+        <p>设置由外部控制行为的vehicle响应</p><p>Response of setting vehicle controlled by external behavior</p>
+
+        
+
+        
+      
         <h3 id="city.person.v1.SetScheduleRequest">SetScheduleRequest</h3>
         <p>修改person的schedule请求</p><p>Request for setting person schedule</p>
 
@@ -12098,6 +12877,38 @@ Set person&#39;s schedule. Input personid and destination table</p></td>
                 <td><a href="#city.person.v1.GetPersonByLongLatBBoxResponse">GetPersonByLongLatBBoxResponse</a></td>
                 <td><p>获取特定区域内的person
 Get persons in a specific region</p></td>
+              </tr>
+            
+              <tr>
+                <td>GetAllVehicles</td>
+                <td><a href="#city.person.v1.GetAllVehiclesRequest">GetAllVehiclesRequest</a></td>
+                <td><a href="#city.person.v1.GetAllVehiclesResponse">GetAllVehiclesResponse</a></td>
+                <td><p>获取所有车辆
+Get all vehicles</p></td>
+              </tr>
+            
+              <tr>
+                <td>SetControlledVehicleIDs</td>
+                <td><a href="#city.person.v1.SetControlledVehicleIDsRequest">SetControlledVehicleIDsRequest</a></td>
+                <td><a href="#city.person.v1.SetControlledVehicleIDsResponse">SetControlledVehicleIDsResponse</a></td>
+                <td><p>设置由外部控制行为的vehicle
+Set vehicle controlled by external behavior</p></td>
+              </tr>
+            
+              <tr>
+                <td>FetchControlledVehicleEnvs</td>
+                <td><a href="#city.person.v1.FetchControlledVehicleEnvsRequest">FetchControlledVehicleEnvsRequest</a></td>
+                <td><a href="#city.person.v1.FetchControlledVehicleEnvsResponse">FetchControlledVehicleEnvsResponse</a></td>
+                <td><p>获取由外部控制行为的vehicle信息
+Get information of vehicle controlled by external behavior</p></td>
+              </tr>
+            
+              <tr>
+                <td>SetControlledVehicleActions</td>
+                <td><a href="#city.person.v1.SetControlledVehicleActionsRequest">SetControlledVehicleActionsRequest</a></td>
+                <td><a href="#city.person.v1.SetControlledVehicleActionsResponse">SetControlledVehicleActionsResponse</a></td>
+                <td><p>设置由外部控制行为的vehicle的行为
+Set behavior of vehicle controlled by external behavior</p></td>
               </tr>
             
           </tbody>

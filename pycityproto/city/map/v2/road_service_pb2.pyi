@@ -1,5 +1,5 @@
 from city.event.v1 import event_pb2 as _event_pb2
-from city.map.v2 import lane_service_pb2 as _lane_service_pb2
+from city.map.v2 import lane_state_pb2 as _lane_state_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
@@ -108,7 +108,7 @@ class RoadState(_message.Message):
     avg_v: float
     level: RoadLevel
     reason: InterruptionReason
-    lanes: _containers.RepeatedCompositeFieldContainer[_lane_service_pb2.LaneState]
+    lanes: _containers.RepeatedCompositeFieldContainer[_lane_state_pb2.LaneState]
 
-    def __init__(self, id: _Optional[int]=..., avg_v: _Optional[float]=..., level: _Optional[_Union[RoadLevel, str]]=..., reason: _Optional[_Union[InterruptionReason, str]]=..., lanes: _Optional[_Iterable[_Union[_lane_service_pb2.LaneState, _Mapping]]]=...) -> None:
+    def __init__(self, id: _Optional[int]=..., avg_v: _Optional[float]=..., level: _Optional[_Union[RoadLevel, str]]=..., reason: _Optional[_Union[InterruptionReason, str]]=..., lanes: _Optional[_Iterable[_Union[_lane_state_pb2.LaneState, _Mapping]]]=...) -> None:
         ...

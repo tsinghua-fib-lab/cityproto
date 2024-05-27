@@ -6,7 +6,7 @@
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
 import type { Events } from "../../event/v1/event_pb.js";
-import type { LaneState } from "./lane_service_pb.js";
+import type { LaneState } from "./lane_state_pb.js";
 
 /**
  * 道路拥堵情况

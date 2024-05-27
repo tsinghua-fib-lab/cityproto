@@ -26,7 +26,7 @@ type Mongo struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Uri  string        `protobuf:"bytes,1,opt,name=uri,proto3" json:"uri,omitempty" yaml:"uri" bson:"uri" db:"uri"`
+	Uri  string        `protobuf:"bytes,1,opt,name=uri,proto3" json:"uri,omitempty" bson:"uri" db:"uri" yaml:"uri"`
 	Map  *v1.MongoPath `protobuf:"bytes,2,opt,name=map,proto3" json:"map,omitempty" yaml:"map" bson:"map" db:"map"`
 	Rain *v1.MongoPath `protobuf:"bytes,3,opt,name=rain,proto3" json:"rain,omitempty" yaml:"rain" bson:"rain" db:"rain"`
 }
@@ -90,7 +90,7 @@ type ControlStep struct {
 	unknownFields protoimpl.UnknownFields
 
 	Start    int32   `protobuf:"varint,1,opt,name=start,proto3" json:"start,omitempty" yaml:"start" bson:"start" db:"start"`
-	Total    int32   `protobuf:"varint,2,opt,name=total,proto3" json:"total,omitempty" db:"total" yaml:"total" bson:"total"`
+	Total    int32   `protobuf:"varint,2,opt,name=total,proto3" json:"total,omitempty" yaml:"total" bson:"total" db:"total"`
 	Interval float64 `protobuf:"fixed64,3,opt,name=interval,proto3" json:"interval,omitempty" yaml:"interval" bson:"interval" db:"interval"`
 }
 
@@ -200,11 +200,11 @@ type OutputSwitch struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Road     bool `protobuf:"varint,1,opt,name=road,proto3" json:"road,omitempty" yaml:"road" bson:"road" db:"road"`
+	Road     bool `protobuf:"varint,1,opt,name=road,proto3" json:"road,omitempty" bson:"road" db:"road" yaml:"road"`
 	Drainage bool `protobuf:"varint,2,opt,name=drainage,proto3" json:"drainage,omitempty" yaml:"drainage" bson:"drainage" db:"drainage"`
 	Supply   bool `protobuf:"varint,3,opt,name=supply,proto3" json:"supply,omitempty" yaml:"supply" bson:"supply" db:"supply"`
-	Aoi      bool `protobuf:"varint,4,opt,name=aoi,proto3" json:"aoi,omitempty" db:"aoi" yaml:"aoi" bson:"aoi"`
-	Event    bool `protobuf:"varint,5,opt,name=event,proto3" json:"event,omitempty" db:"event" yaml:"event" bson:"event"`
+	Aoi      bool `protobuf:"varint,4,opt,name=aoi,proto3" json:"aoi,omitempty" yaml:"aoi" bson:"aoi" db:"aoi"`
+	Event    bool `protobuf:"varint,5,opt,name=event,proto3" json:"event,omitempty" yaml:"event" bson:"event" db:"event"`
 }
 
 func (x *OutputSwitch) Reset() {
@@ -280,7 +280,7 @@ type Output struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 统一的输出目标
-	Target *v1.OutputTarget `protobuf:"bytes,1,opt,name=target,proto3" json:"target,omitempty" db:"target" yaml:"target" bson:"target"`
+	Target *v1.OutputTarget `protobuf:"bytes,1,opt,name=target,proto3" json:"target,omitempty" bson:"target" db:"target" yaml:"target"`
 	Switch *OutputSwitch    `protobuf:"bytes,2,opt,name=switch,proto3" json:"switch,omitempty" yaml:"switch" bson:"switch" db:"switch"`
 }
 

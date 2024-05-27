@@ -33,7 +33,7 @@
 #include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 #include "city/event/v1/event.pb.h"
-#include "city/map/v2/lane_service.pb.h"
+#include "city/map/v2/lane_state.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_city_2fmap_2fv2_2froad_5fservice_2eproto

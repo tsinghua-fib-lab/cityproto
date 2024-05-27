@@ -34,6 +34,7 @@
 #include "city/geo/v2/geo.pb.h"
 #include "city/person/v1/motion.pb.h"
 #include "city/person/v1/person.pb.h"
+#include "city/person/v1/vehicle.pb.h"
 #include "city/trip/v2/trip.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
@@ -58,6 +59,18 @@ extern AddPersonRequestDefaultTypeInternal _AddPersonRequest_default_instance_;
 class AddPersonResponse;
 struct AddPersonResponseDefaultTypeInternal;
 extern AddPersonResponseDefaultTypeInternal _AddPersonResponse_default_instance_;
+class FetchControlledVehicleEnvsRequest;
+struct FetchControlledVehicleEnvsRequestDefaultTypeInternal;
+extern FetchControlledVehicleEnvsRequestDefaultTypeInternal _FetchControlledVehicleEnvsRequest_default_instance_;
+class FetchControlledVehicleEnvsResponse;
+struct FetchControlledVehicleEnvsResponseDefaultTypeInternal;
+extern FetchControlledVehicleEnvsResponseDefaultTypeInternal _FetchControlledVehicleEnvsResponse_default_instance_;
+class GetAllVehiclesRequest;
+struct GetAllVehiclesRequestDefaultTypeInternal;
+extern GetAllVehiclesRequestDefaultTypeInternal _GetAllVehiclesRequest_default_instance_;
+class GetAllVehiclesResponse;
+struct GetAllVehiclesResponseDefaultTypeInternal;
+extern GetAllVehiclesResponseDefaultTypeInternal _GetAllVehiclesResponse_default_instance_;
 class GetPersonByLongLatBBoxRequest;
 struct GetPersonByLongLatBBoxRequestDefaultTypeInternal;
 extern GetPersonByLongLatBBoxRequestDefaultTypeInternal _GetPersonByLongLatBBoxRequest_default_instance_;
@@ -70,6 +83,18 @@ extern GetPersonRequestDefaultTypeInternal _GetPersonRequest_default_instance_;
 class GetPersonResponse;
 struct GetPersonResponseDefaultTypeInternal;
 extern GetPersonResponseDefaultTypeInternal _GetPersonResponse_default_instance_;
+class SetControlledVehicleActionsRequest;
+struct SetControlledVehicleActionsRequestDefaultTypeInternal;
+extern SetControlledVehicleActionsRequestDefaultTypeInternal _SetControlledVehicleActionsRequest_default_instance_;
+class SetControlledVehicleActionsResponse;
+struct SetControlledVehicleActionsResponseDefaultTypeInternal;
+extern SetControlledVehicleActionsResponseDefaultTypeInternal _SetControlledVehicleActionsResponse_default_instance_;
+class SetControlledVehicleIDsRequest;
+struct SetControlledVehicleIDsRequestDefaultTypeInternal;
+extern SetControlledVehicleIDsRequestDefaultTypeInternal _SetControlledVehicleIDsRequest_default_instance_;
+class SetControlledVehicleIDsResponse;
+struct SetControlledVehicleIDsResponseDefaultTypeInternal;
+extern SetControlledVehicleIDsResponseDefaultTypeInternal _SetControlledVehicleIDsResponse_default_instance_;
 class SetScheduleRequest;
 struct SetScheduleRequestDefaultTypeInternal;
 extern SetScheduleRequestDefaultTypeInternal _SetScheduleRequest_default_instance_;
@@ -82,10 +107,18 @@ extern SetScheduleResponseDefaultTypeInternal _SetScheduleResponse_default_insta
 PROTOBUF_NAMESPACE_OPEN
 template<> ::city::person::v1::AddPersonRequest* Arena::CreateMaybeMessage<::city::person::v1::AddPersonRequest>(Arena*);
 template<> ::city::person::v1::AddPersonResponse* Arena::CreateMaybeMessage<::city::person::v1::AddPersonResponse>(Arena*);
+template<> ::city::person::v1::FetchControlledVehicleEnvsRequest* Arena::CreateMaybeMessage<::city::person::v1::FetchControlledVehicleEnvsRequest>(Arena*);
+template<> ::city::person::v1::FetchControlledVehicleEnvsResponse* Arena::CreateMaybeMessage<::city::person::v1::FetchControlledVehicleEnvsResponse>(Arena*);
+template<> ::city::person::v1::GetAllVehiclesRequest* Arena::CreateMaybeMessage<::city::person::v1::GetAllVehiclesRequest>(Arena*);
+template<> ::city::person::v1::GetAllVehiclesResponse* Arena::CreateMaybeMessage<::city::person::v1::GetAllVehiclesResponse>(Arena*);
 template<> ::city::person::v1::GetPersonByLongLatBBoxRequest* Arena::CreateMaybeMessage<::city::person::v1::GetPersonByLongLatBBoxRequest>(Arena*);
 template<> ::city::person::v1::GetPersonByLongLatBBoxResponse* Arena::CreateMaybeMessage<::city::person::v1::GetPersonByLongLatBBoxResponse>(Arena*);
 template<> ::city::person::v1::GetPersonRequest* Arena::CreateMaybeMessage<::city::person::v1::GetPersonRequest>(Arena*);
 template<> ::city::person::v1::GetPersonResponse* Arena::CreateMaybeMessage<::city::person::v1::GetPersonResponse>(Arena*);
+template<> ::city::person::v1::SetControlledVehicleActionsRequest* Arena::CreateMaybeMessage<::city::person::v1::SetControlledVehicleActionsRequest>(Arena*);
+template<> ::city::person::v1::SetControlledVehicleActionsResponse* Arena::CreateMaybeMessage<::city::person::v1::SetControlledVehicleActionsResponse>(Arena*);
+template<> ::city::person::v1::SetControlledVehicleIDsRequest* Arena::CreateMaybeMessage<::city::person::v1::SetControlledVehicleIDsRequest>(Arena*);
+template<> ::city::person::v1::SetControlledVehicleIDsResponse* Arena::CreateMaybeMessage<::city::person::v1::SetControlledVehicleIDsResponse>(Arena*);
 template<> ::city::person::v1::SetScheduleRequest* Arena::CreateMaybeMessage<::city::person::v1::SetScheduleRequest>(Arena*);
 template<> ::city::person::v1::SetScheduleResponse* Arena::CreateMaybeMessage<::city::person::v1::SetScheduleResponse>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
@@ -1343,6 +1376,1111 @@ class GetPersonByLongLatBBoxResponse final :
   union { Impl_ _impl_; };
   friend struct ::TableStruct_city_2fperson_2fv1_2fperson_5fservice_2eproto;
 };
+// -------------------------------------------------------------------
+
+class GetAllVehiclesRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:city.person.v1.GetAllVehiclesRequest) */ {
+ public:
+  inline GetAllVehiclesRequest() : GetAllVehiclesRequest(nullptr) {}
+  explicit PROTOBUF_CONSTEXPR GetAllVehiclesRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  GetAllVehiclesRequest(const GetAllVehiclesRequest& from);
+  GetAllVehiclesRequest(GetAllVehiclesRequest&& from) noexcept
+    : GetAllVehiclesRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline GetAllVehiclesRequest& operator=(const GetAllVehiclesRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetAllVehiclesRequest& operator=(GetAllVehiclesRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const GetAllVehiclesRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GetAllVehiclesRequest* internal_default_instance() {
+    return reinterpret_cast<const GetAllVehiclesRequest*>(
+               &_GetAllVehiclesRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    8;
+
+  friend void swap(GetAllVehiclesRequest& a, GetAllVehiclesRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetAllVehiclesRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetAllVehiclesRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  GetAllVehiclesRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<GetAllVehiclesRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
+  inline void CopyFrom(const GetAllVehiclesRequest& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(*this, from);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
+  void MergeFrom(const GetAllVehiclesRequest& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(*this, from);
+  }
+  public:
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.person.v1.GetAllVehiclesRequest";
+  }
+  protected:
+  explicit GetAllVehiclesRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:city.person.v1.GetAllVehiclesRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+  };
+  friend struct ::TableStruct_city_2fperson_2fv1_2fperson_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetAllVehiclesResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.person.v1.GetAllVehiclesResponse) */ {
+ public:
+  inline GetAllVehiclesResponse() : GetAllVehiclesResponse(nullptr) {}
+  ~GetAllVehiclesResponse() override;
+  explicit PROTOBUF_CONSTEXPR GetAllVehiclesResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  GetAllVehiclesResponse(const GetAllVehiclesResponse& from);
+  GetAllVehiclesResponse(GetAllVehiclesResponse&& from) noexcept
+    : GetAllVehiclesResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline GetAllVehiclesResponse& operator=(const GetAllVehiclesResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetAllVehiclesResponse& operator=(GetAllVehiclesResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const GetAllVehiclesResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GetAllVehiclesResponse* internal_default_instance() {
+    return reinterpret_cast<const GetAllVehiclesResponse*>(
+               &_GetAllVehiclesResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    9;
+
+  friend void swap(GetAllVehiclesResponse& a, GetAllVehiclesResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetAllVehiclesResponse* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetAllVehiclesResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  GetAllVehiclesResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<GetAllVehiclesResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const GetAllVehiclesResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const GetAllVehiclesResponse& from) {
+    GetAllVehiclesResponse::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetAllVehiclesResponse* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.person.v1.GetAllVehiclesResponse";
+  }
+  protected:
+  explicit GetAllVehiclesResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kMotionsFieldNumber = 1,
+  };
+  // repeated .city.person.v1.PersonMotion motions = 1 [json_name = "motions"];
+  int motions_size() const;
+  private:
+  int _internal_motions_size() const;
+  public:
+  void clear_motions();
+  ::city::person::v1::PersonMotion* mutable_motions(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v1::PersonMotion >*
+      mutable_motions();
+  private:
+  const ::city::person::v1::PersonMotion& _internal_motions(int index) const;
+  ::city::person::v1::PersonMotion* _internal_add_motions();
+  public:
+  const ::city::person::v1::PersonMotion& motions(int index) const;
+  ::city::person::v1::PersonMotion* add_motions();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v1::PersonMotion >&
+      motions() const;
+
+  // @@protoc_insertion_point(class_scope:city.person.v1.GetAllVehiclesResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v1::PersonMotion > motions_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_city_2fperson_2fv1_2fperson_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class SetControlledVehicleIDsRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.person.v1.SetControlledVehicleIDsRequest) */ {
+ public:
+  inline SetControlledVehicleIDsRequest() : SetControlledVehicleIDsRequest(nullptr) {}
+  ~SetControlledVehicleIDsRequest() override;
+  explicit PROTOBUF_CONSTEXPR SetControlledVehicleIDsRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  SetControlledVehicleIDsRequest(const SetControlledVehicleIDsRequest& from);
+  SetControlledVehicleIDsRequest(SetControlledVehicleIDsRequest&& from) noexcept
+    : SetControlledVehicleIDsRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline SetControlledVehicleIDsRequest& operator=(const SetControlledVehicleIDsRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline SetControlledVehicleIDsRequest& operator=(SetControlledVehicleIDsRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const SetControlledVehicleIDsRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const SetControlledVehicleIDsRequest* internal_default_instance() {
+    return reinterpret_cast<const SetControlledVehicleIDsRequest*>(
+               &_SetControlledVehicleIDsRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    10;
+
+  friend void swap(SetControlledVehicleIDsRequest& a, SetControlledVehicleIDsRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(SetControlledVehicleIDsRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(SetControlledVehicleIDsRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  SetControlledVehicleIDsRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<SetControlledVehicleIDsRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const SetControlledVehicleIDsRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const SetControlledVehicleIDsRequest& from) {
+    SetControlledVehicleIDsRequest::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(SetControlledVehicleIDsRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.person.v1.SetControlledVehicleIDsRequest";
+  }
+  protected:
+  explicit SetControlledVehicleIDsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kVehicleIdsFieldNumber = 1,
+  };
+  // repeated int32 vehicle_ids = 1 [json_name = "vehicleIds"];
+  int vehicle_ids_size() const;
+  private:
+  int _internal_vehicle_ids_size() const;
+  public:
+  void clear_vehicle_ids();
+  private:
+  int32_t _internal_vehicle_ids(int index) const;
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+      _internal_vehicle_ids() const;
+  void _internal_add_vehicle_ids(int32_t value);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+      _internal_mutable_vehicle_ids();
+  public:
+  int32_t vehicle_ids(int index) const;
+  void set_vehicle_ids(int index, int32_t value);
+  void add_vehicle_ids(int32_t value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+      vehicle_ids() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+      mutable_vehicle_ids();
+
+  // @@protoc_insertion_point(class_scope:city.person.v1.SetControlledVehicleIDsRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t > vehicle_ids_;
+    mutable std::atomic<int> _vehicle_ids_cached_byte_size_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_city_2fperson_2fv1_2fperson_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class SetControlledVehicleIDsResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:city.person.v1.SetControlledVehicleIDsResponse) */ {
+ public:
+  inline SetControlledVehicleIDsResponse() : SetControlledVehicleIDsResponse(nullptr) {}
+  explicit PROTOBUF_CONSTEXPR SetControlledVehicleIDsResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  SetControlledVehicleIDsResponse(const SetControlledVehicleIDsResponse& from);
+  SetControlledVehicleIDsResponse(SetControlledVehicleIDsResponse&& from) noexcept
+    : SetControlledVehicleIDsResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline SetControlledVehicleIDsResponse& operator=(const SetControlledVehicleIDsResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline SetControlledVehicleIDsResponse& operator=(SetControlledVehicleIDsResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const SetControlledVehicleIDsResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const SetControlledVehicleIDsResponse* internal_default_instance() {
+    return reinterpret_cast<const SetControlledVehicleIDsResponse*>(
+               &_SetControlledVehicleIDsResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    11;
+
+  friend void swap(SetControlledVehicleIDsResponse& a, SetControlledVehicleIDsResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(SetControlledVehicleIDsResponse* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(SetControlledVehicleIDsResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  SetControlledVehicleIDsResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<SetControlledVehicleIDsResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
+  inline void CopyFrom(const SetControlledVehicleIDsResponse& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(*this, from);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
+  void MergeFrom(const SetControlledVehicleIDsResponse& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(*this, from);
+  }
+  public:
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.person.v1.SetControlledVehicleIDsResponse";
+  }
+  protected:
+  explicit SetControlledVehicleIDsResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:city.person.v1.SetControlledVehicleIDsResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+  };
+  friend struct ::TableStruct_city_2fperson_2fv1_2fperson_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class FetchControlledVehicleEnvsRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:city.person.v1.FetchControlledVehicleEnvsRequest) */ {
+ public:
+  inline FetchControlledVehicleEnvsRequest() : FetchControlledVehicleEnvsRequest(nullptr) {}
+  explicit PROTOBUF_CONSTEXPR FetchControlledVehicleEnvsRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  FetchControlledVehicleEnvsRequest(const FetchControlledVehicleEnvsRequest& from);
+  FetchControlledVehicleEnvsRequest(FetchControlledVehicleEnvsRequest&& from) noexcept
+    : FetchControlledVehicleEnvsRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline FetchControlledVehicleEnvsRequest& operator=(const FetchControlledVehicleEnvsRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline FetchControlledVehicleEnvsRequest& operator=(FetchControlledVehicleEnvsRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const FetchControlledVehicleEnvsRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const FetchControlledVehicleEnvsRequest* internal_default_instance() {
+    return reinterpret_cast<const FetchControlledVehicleEnvsRequest*>(
+               &_FetchControlledVehicleEnvsRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    12;
+
+  friend void swap(FetchControlledVehicleEnvsRequest& a, FetchControlledVehicleEnvsRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(FetchControlledVehicleEnvsRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(FetchControlledVehicleEnvsRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  FetchControlledVehicleEnvsRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<FetchControlledVehicleEnvsRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
+  inline void CopyFrom(const FetchControlledVehicleEnvsRequest& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(*this, from);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
+  void MergeFrom(const FetchControlledVehicleEnvsRequest& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(*this, from);
+  }
+  public:
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.person.v1.FetchControlledVehicleEnvsRequest";
+  }
+  protected:
+  explicit FetchControlledVehicleEnvsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:city.person.v1.FetchControlledVehicleEnvsRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+  };
+  friend struct ::TableStruct_city_2fperson_2fv1_2fperson_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class FetchControlledVehicleEnvsResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.person.v1.FetchControlledVehicleEnvsResponse) */ {
+ public:
+  inline FetchControlledVehicleEnvsResponse() : FetchControlledVehicleEnvsResponse(nullptr) {}
+  ~FetchControlledVehicleEnvsResponse() override;
+  explicit PROTOBUF_CONSTEXPR FetchControlledVehicleEnvsResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  FetchControlledVehicleEnvsResponse(const FetchControlledVehicleEnvsResponse& from);
+  FetchControlledVehicleEnvsResponse(FetchControlledVehicleEnvsResponse&& from) noexcept
+    : FetchControlledVehicleEnvsResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline FetchControlledVehicleEnvsResponse& operator=(const FetchControlledVehicleEnvsResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline FetchControlledVehicleEnvsResponse& operator=(FetchControlledVehicleEnvsResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const FetchControlledVehicleEnvsResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const FetchControlledVehicleEnvsResponse* internal_default_instance() {
+    return reinterpret_cast<const FetchControlledVehicleEnvsResponse*>(
+               &_FetchControlledVehicleEnvsResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    13;
+
+  friend void swap(FetchControlledVehicleEnvsResponse& a, FetchControlledVehicleEnvsResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(FetchControlledVehicleEnvsResponse* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(FetchControlledVehicleEnvsResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  FetchControlledVehicleEnvsResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<FetchControlledVehicleEnvsResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const FetchControlledVehicleEnvsResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const FetchControlledVehicleEnvsResponse& from) {
+    FetchControlledVehicleEnvsResponse::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(FetchControlledVehicleEnvsResponse* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.person.v1.FetchControlledVehicleEnvsResponse";
+  }
+  protected:
+  explicit FetchControlledVehicleEnvsResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kVehicleEnvsFieldNumber = 1,
+  };
+  // repeated .city.person.v1.VehicleEnv vehicle_envs = 1 [json_name = "vehicleEnvs"];
+  int vehicle_envs_size() const;
+  private:
+  int _internal_vehicle_envs_size() const;
+  public:
+  void clear_vehicle_envs();
+  ::city::person::v1::VehicleEnv* mutable_vehicle_envs(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v1::VehicleEnv >*
+      mutable_vehicle_envs();
+  private:
+  const ::city::person::v1::VehicleEnv& _internal_vehicle_envs(int index) const;
+  ::city::person::v1::VehicleEnv* _internal_add_vehicle_envs();
+  public:
+  const ::city::person::v1::VehicleEnv& vehicle_envs(int index) const;
+  ::city::person::v1::VehicleEnv* add_vehicle_envs();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v1::VehicleEnv >&
+      vehicle_envs() const;
+
+  // @@protoc_insertion_point(class_scope:city.person.v1.FetchControlledVehicleEnvsResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v1::VehicleEnv > vehicle_envs_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_city_2fperson_2fv1_2fperson_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class SetControlledVehicleActionsRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.person.v1.SetControlledVehicleActionsRequest) */ {
+ public:
+  inline SetControlledVehicleActionsRequest() : SetControlledVehicleActionsRequest(nullptr) {}
+  ~SetControlledVehicleActionsRequest() override;
+  explicit PROTOBUF_CONSTEXPR SetControlledVehicleActionsRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  SetControlledVehicleActionsRequest(const SetControlledVehicleActionsRequest& from);
+  SetControlledVehicleActionsRequest(SetControlledVehicleActionsRequest&& from) noexcept
+    : SetControlledVehicleActionsRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline SetControlledVehicleActionsRequest& operator=(const SetControlledVehicleActionsRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline SetControlledVehicleActionsRequest& operator=(SetControlledVehicleActionsRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const SetControlledVehicleActionsRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const SetControlledVehicleActionsRequest* internal_default_instance() {
+    return reinterpret_cast<const SetControlledVehicleActionsRequest*>(
+               &_SetControlledVehicleActionsRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    14;
+
+  friend void swap(SetControlledVehicleActionsRequest& a, SetControlledVehicleActionsRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(SetControlledVehicleActionsRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(SetControlledVehicleActionsRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  SetControlledVehicleActionsRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<SetControlledVehicleActionsRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const SetControlledVehicleActionsRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const SetControlledVehicleActionsRequest& from) {
+    SetControlledVehicleActionsRequest::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(SetControlledVehicleActionsRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.person.v1.SetControlledVehicleActionsRequest";
+  }
+  protected:
+  explicit SetControlledVehicleActionsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kVehicleActionsFieldNumber = 1,
+  };
+  // repeated .city.person.v1.VehicleAction vehicle_actions = 1 [json_name = "vehicleActions"];
+  int vehicle_actions_size() const;
+  private:
+  int _internal_vehicle_actions_size() const;
+  public:
+  void clear_vehicle_actions();
+  ::city::person::v1::VehicleAction* mutable_vehicle_actions(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v1::VehicleAction >*
+      mutable_vehicle_actions();
+  private:
+  const ::city::person::v1::VehicleAction& _internal_vehicle_actions(int index) const;
+  ::city::person::v1::VehicleAction* _internal_add_vehicle_actions();
+  public:
+  const ::city::person::v1::VehicleAction& vehicle_actions(int index) const;
+  ::city::person::v1::VehicleAction* add_vehicle_actions();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v1::VehicleAction >&
+      vehicle_actions() const;
+
+  // @@protoc_insertion_point(class_scope:city.person.v1.SetControlledVehicleActionsRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v1::VehicleAction > vehicle_actions_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_city_2fperson_2fv1_2fperson_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class SetControlledVehicleActionsResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:city.person.v1.SetControlledVehicleActionsResponse) */ {
+ public:
+  inline SetControlledVehicleActionsResponse() : SetControlledVehicleActionsResponse(nullptr) {}
+  explicit PROTOBUF_CONSTEXPR SetControlledVehicleActionsResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  SetControlledVehicleActionsResponse(const SetControlledVehicleActionsResponse& from);
+  SetControlledVehicleActionsResponse(SetControlledVehicleActionsResponse&& from) noexcept
+    : SetControlledVehicleActionsResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline SetControlledVehicleActionsResponse& operator=(const SetControlledVehicleActionsResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline SetControlledVehicleActionsResponse& operator=(SetControlledVehicleActionsResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const SetControlledVehicleActionsResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const SetControlledVehicleActionsResponse* internal_default_instance() {
+    return reinterpret_cast<const SetControlledVehicleActionsResponse*>(
+               &_SetControlledVehicleActionsResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    15;
+
+  friend void swap(SetControlledVehicleActionsResponse& a, SetControlledVehicleActionsResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(SetControlledVehicleActionsResponse* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(SetControlledVehicleActionsResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  SetControlledVehicleActionsResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<SetControlledVehicleActionsResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
+  inline void CopyFrom(const SetControlledVehicleActionsResponse& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(*this, from);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
+  void MergeFrom(const SetControlledVehicleActionsResponse& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(*this, from);
+  }
+  public:
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.person.v1.SetControlledVehicleActionsResponse";
+  }
+  protected:
+  explicit SetControlledVehicleActionsResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:city.person.v1.SetControlledVehicleActionsResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+  };
+  friend struct ::TableStruct_city_2fperson_2fv1_2fperson_5fservice_2eproto;
+};
 // ===================================================================
 
 
@@ -1899,9 +3037,215 @@ GetPersonByLongLatBBoxResponse::motions() const {
   return _impl_.motions_;
 }
 
+// -------------------------------------------------------------------
+
+// GetAllVehiclesRequest
+
+// -------------------------------------------------------------------
+
+// GetAllVehiclesResponse
+
+// repeated .city.person.v1.PersonMotion motions = 1 [json_name = "motions"];
+inline int GetAllVehiclesResponse::_internal_motions_size() const {
+  return _impl_.motions_.size();
+}
+inline int GetAllVehiclesResponse::motions_size() const {
+  return _internal_motions_size();
+}
+inline ::city::person::v1::PersonMotion* GetAllVehiclesResponse::mutable_motions(int index) {
+  // @@protoc_insertion_point(field_mutable:city.person.v1.GetAllVehiclesResponse.motions)
+  return _impl_.motions_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v1::PersonMotion >*
+GetAllVehiclesResponse::mutable_motions() {
+  // @@protoc_insertion_point(field_mutable_list:city.person.v1.GetAllVehiclesResponse.motions)
+  return &_impl_.motions_;
+}
+inline const ::city::person::v1::PersonMotion& GetAllVehiclesResponse::_internal_motions(int index) const {
+  return _impl_.motions_.Get(index);
+}
+inline const ::city::person::v1::PersonMotion& GetAllVehiclesResponse::motions(int index) const {
+  // @@protoc_insertion_point(field_get:city.person.v1.GetAllVehiclesResponse.motions)
+  return _internal_motions(index);
+}
+inline ::city::person::v1::PersonMotion* GetAllVehiclesResponse::_internal_add_motions() {
+  return _impl_.motions_.Add();
+}
+inline ::city::person::v1::PersonMotion* GetAllVehiclesResponse::add_motions() {
+  ::city::person::v1::PersonMotion* _add = _internal_add_motions();
+  // @@protoc_insertion_point(field_add:city.person.v1.GetAllVehiclesResponse.motions)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v1::PersonMotion >&
+GetAllVehiclesResponse::motions() const {
+  // @@protoc_insertion_point(field_list:city.person.v1.GetAllVehiclesResponse.motions)
+  return _impl_.motions_;
+}
+
+// -------------------------------------------------------------------
+
+// SetControlledVehicleIDsRequest
+
+// repeated int32 vehicle_ids = 1 [json_name = "vehicleIds"];
+inline int SetControlledVehicleIDsRequest::_internal_vehicle_ids_size() const {
+  return _impl_.vehicle_ids_.size();
+}
+inline int SetControlledVehicleIDsRequest::vehicle_ids_size() const {
+  return _internal_vehicle_ids_size();
+}
+inline void SetControlledVehicleIDsRequest::clear_vehicle_ids() {
+  _impl_.vehicle_ids_.Clear();
+}
+inline int32_t SetControlledVehicleIDsRequest::_internal_vehicle_ids(int index) const {
+  return _impl_.vehicle_ids_.Get(index);
+}
+inline int32_t SetControlledVehicleIDsRequest::vehicle_ids(int index) const {
+  // @@protoc_insertion_point(field_get:city.person.v1.SetControlledVehicleIDsRequest.vehicle_ids)
+  return _internal_vehicle_ids(index);
+}
+inline void SetControlledVehicleIDsRequest::set_vehicle_ids(int index, int32_t value) {
+  _impl_.vehicle_ids_.Set(index, value);
+  // @@protoc_insertion_point(field_set:city.person.v1.SetControlledVehicleIDsRequest.vehicle_ids)
+}
+inline void SetControlledVehicleIDsRequest::_internal_add_vehicle_ids(int32_t value) {
+  _impl_.vehicle_ids_.Add(value);
+}
+inline void SetControlledVehicleIDsRequest::add_vehicle_ids(int32_t value) {
+  _internal_add_vehicle_ids(value);
+  // @@protoc_insertion_point(field_add:city.person.v1.SetControlledVehicleIDsRequest.vehicle_ids)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+SetControlledVehicleIDsRequest::_internal_vehicle_ids() const {
+  return _impl_.vehicle_ids_;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+SetControlledVehicleIDsRequest::vehicle_ids() const {
+  // @@protoc_insertion_point(field_list:city.person.v1.SetControlledVehicleIDsRequest.vehicle_ids)
+  return _internal_vehicle_ids();
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+SetControlledVehicleIDsRequest::_internal_mutable_vehicle_ids() {
+  return &_impl_.vehicle_ids_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+SetControlledVehicleIDsRequest::mutable_vehicle_ids() {
+  // @@protoc_insertion_point(field_mutable_list:city.person.v1.SetControlledVehicleIDsRequest.vehicle_ids)
+  return _internal_mutable_vehicle_ids();
+}
+
+// -------------------------------------------------------------------
+
+// SetControlledVehicleIDsResponse
+
+// -------------------------------------------------------------------
+
+// FetchControlledVehicleEnvsRequest
+
+// -------------------------------------------------------------------
+
+// FetchControlledVehicleEnvsResponse
+
+// repeated .city.person.v1.VehicleEnv vehicle_envs = 1 [json_name = "vehicleEnvs"];
+inline int FetchControlledVehicleEnvsResponse::_internal_vehicle_envs_size() const {
+  return _impl_.vehicle_envs_.size();
+}
+inline int FetchControlledVehicleEnvsResponse::vehicle_envs_size() const {
+  return _internal_vehicle_envs_size();
+}
+inline ::city::person::v1::VehicleEnv* FetchControlledVehicleEnvsResponse::mutable_vehicle_envs(int index) {
+  // @@protoc_insertion_point(field_mutable:city.person.v1.FetchControlledVehicleEnvsResponse.vehicle_envs)
+  return _impl_.vehicle_envs_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v1::VehicleEnv >*
+FetchControlledVehicleEnvsResponse::mutable_vehicle_envs() {
+  // @@protoc_insertion_point(field_mutable_list:city.person.v1.FetchControlledVehicleEnvsResponse.vehicle_envs)
+  return &_impl_.vehicle_envs_;
+}
+inline const ::city::person::v1::VehicleEnv& FetchControlledVehicleEnvsResponse::_internal_vehicle_envs(int index) const {
+  return _impl_.vehicle_envs_.Get(index);
+}
+inline const ::city::person::v1::VehicleEnv& FetchControlledVehicleEnvsResponse::vehicle_envs(int index) const {
+  // @@protoc_insertion_point(field_get:city.person.v1.FetchControlledVehicleEnvsResponse.vehicle_envs)
+  return _internal_vehicle_envs(index);
+}
+inline ::city::person::v1::VehicleEnv* FetchControlledVehicleEnvsResponse::_internal_add_vehicle_envs() {
+  return _impl_.vehicle_envs_.Add();
+}
+inline ::city::person::v1::VehicleEnv* FetchControlledVehicleEnvsResponse::add_vehicle_envs() {
+  ::city::person::v1::VehicleEnv* _add = _internal_add_vehicle_envs();
+  // @@protoc_insertion_point(field_add:city.person.v1.FetchControlledVehicleEnvsResponse.vehicle_envs)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v1::VehicleEnv >&
+FetchControlledVehicleEnvsResponse::vehicle_envs() const {
+  // @@protoc_insertion_point(field_list:city.person.v1.FetchControlledVehicleEnvsResponse.vehicle_envs)
+  return _impl_.vehicle_envs_;
+}
+
+// -------------------------------------------------------------------
+
+// SetControlledVehicleActionsRequest
+
+// repeated .city.person.v1.VehicleAction vehicle_actions = 1 [json_name = "vehicleActions"];
+inline int SetControlledVehicleActionsRequest::_internal_vehicle_actions_size() const {
+  return _impl_.vehicle_actions_.size();
+}
+inline int SetControlledVehicleActionsRequest::vehicle_actions_size() const {
+  return _internal_vehicle_actions_size();
+}
+inline ::city::person::v1::VehicleAction* SetControlledVehicleActionsRequest::mutable_vehicle_actions(int index) {
+  // @@protoc_insertion_point(field_mutable:city.person.v1.SetControlledVehicleActionsRequest.vehicle_actions)
+  return _impl_.vehicle_actions_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v1::VehicleAction >*
+SetControlledVehicleActionsRequest::mutable_vehicle_actions() {
+  // @@protoc_insertion_point(field_mutable_list:city.person.v1.SetControlledVehicleActionsRequest.vehicle_actions)
+  return &_impl_.vehicle_actions_;
+}
+inline const ::city::person::v1::VehicleAction& SetControlledVehicleActionsRequest::_internal_vehicle_actions(int index) const {
+  return _impl_.vehicle_actions_.Get(index);
+}
+inline const ::city::person::v1::VehicleAction& SetControlledVehicleActionsRequest::vehicle_actions(int index) const {
+  // @@protoc_insertion_point(field_get:city.person.v1.SetControlledVehicleActionsRequest.vehicle_actions)
+  return _internal_vehicle_actions(index);
+}
+inline ::city::person::v1::VehicleAction* SetControlledVehicleActionsRequest::_internal_add_vehicle_actions() {
+  return _impl_.vehicle_actions_.Add();
+}
+inline ::city::person::v1::VehicleAction* SetControlledVehicleActionsRequest::add_vehicle_actions() {
+  ::city::person::v1::VehicleAction* _add = _internal_add_vehicle_actions();
+  // @@protoc_insertion_point(field_add:city.person.v1.SetControlledVehicleActionsRequest.vehicle_actions)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v1::VehicleAction >&
+SetControlledVehicleActionsRequest::vehicle_actions() const {
+  // @@protoc_insertion_point(field_list:city.person.v1.SetControlledVehicleActionsRequest.vehicle_actions)
+  return _impl_.vehicle_actions_;
+}
+
+// -------------------------------------------------------------------
+
+// SetControlledVehicleActionsResponse
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

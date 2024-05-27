@@ -4,9 +4,8 @@
 // @ts-nocheck
 
 import { proto3 } from "@bufbuild/protobuf";
+import { LaneState } from "./lane_state_pb.js";
 import { LongLatBBox } from "../../geo/v2/geo_pb.js";
-import { PersonMotion } from "../../person/v1/motion_pb.js";
-import { LightState } from "./light_pb.js";
 
 /**
  * 设置Lane的最大速度（限速）请求
@@ -84,23 +83,6 @@ export const GetLaneByLongLatBBoxResponse = proto3.makeMessageType(
   "city.map.v2.GetLaneByLongLatBBoxResponse",
   () => [
     { no: 1, name: "states", kind: "message", T: LaneState, repeated: true },
-  ],
-);
-
-/**
- * Lane状态
- * Lane state
- *
- * @generated from message city.map.v2.LaneState
- */
-export const LaneState = proto3.makeMessageType(
-  "city.map.v2.LaneState",
-  () => [
-    { no: 1, name: "id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 2, name: "persons", kind: "message", T: PersonMotion, repeated: true },
-    { no: 3, name: "avg_v", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
-    { no: 4, name: "restriction", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
-    { no: 5, name: "light_state", kind: "enum", T: proto3.getEnumType(LightState) },
   ],
 );
 

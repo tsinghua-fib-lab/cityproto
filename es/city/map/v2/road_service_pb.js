@@ -5,7 +5,7 @@
 
 import { proto3 } from "@bufbuild/protobuf";
 import { Events } from "../../event/v1/event_pb.js";
-import { LaneState } from "./lane_service_pb.js";
+import { LaneState } from "./lane_state_pb.js";
 
 /**
  * 道路拥堵情况

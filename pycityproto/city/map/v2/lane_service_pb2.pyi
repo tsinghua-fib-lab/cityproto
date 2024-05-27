@@ -1,6 +1,5 @@
 from city.geo.v2 import geo_pb2 as _geo_pb2
-from city.map.v2 import light_pb2 as _light_pb2
-from city.person.v1 import motion_pb2 as _motion_pb2
+from city.map.v2 import lane_state_pb2 as _lane_state_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
@@ -36,9 +35,9 @@ class GetLaneRequest(_message.Message):
 class GetLaneResponse(_message.Message):
     __slots__ = ['states']
     STATES_FIELD_NUMBER: _ClassVar[int]
-    states: _containers.RepeatedCompositeFieldContainer[LaneState]
+    states: _containers.RepeatedCompositeFieldContainer[_lane_state_pb2.LaneState]
 
-    def __init__(self, states: _Optional[_Iterable[_Union[LaneState, _Mapping]]]=...) -> None:
+    def __init__(self, states: _Optional[_Iterable[_Union[_lane_state_pb2.LaneState, _Mapping]]]=...) -> None:
         ...
 
 class GetLaneByLongLatBBoxRequest(_message.Message):
@@ -54,23 +53,7 @@ class GetLaneByLongLatBBoxRequest(_message.Message):
 class GetLaneByLongLatBBoxResponse(_message.Message):
     __slots__ = ['states']
     STATES_FIELD_NUMBER: _ClassVar[int]
-    states: _containers.RepeatedCompositeFieldContainer[LaneState]
+    states: _containers.RepeatedCompositeFieldContainer[_lane_state_pb2.LaneState]
 
-    def __init__(self, states: _Optional[_Iterable[_Union[LaneState, _Mapping]]]=...) -> None:
-        ...
-
-class LaneState(_message.Message):
-    __slots__ = ['id', 'persons', 'avg_v', 'restriction', 'light_state']
-    ID_FIELD_NUMBER: _ClassVar[int]
-    PERSONS_FIELD_NUMBER: _ClassVar[int]
-    AVG_V_FIELD_NUMBER: _ClassVar[int]
-    RESTRICTION_FIELD_NUMBER: _ClassVar[int]
-    LIGHT_STATE_FIELD_NUMBER: _ClassVar[int]
-    id: int
-    persons: _containers.RepeatedCompositeFieldContainer[_motion_pb2.PersonMotion]
-    avg_v: float
-    restriction: bool
-    light_state: _light_pb2.LightState
-
-    def __init__(self, id: _Optional[int]=..., persons: _Optional[_Iterable[_Union[_motion_pb2.PersonMotion, _Mapping]]]=..., avg_v: _Optional[float]=..., restriction: bool=..., light_state: _Optional[_Union[_light_pb2.LightState, str]]=...) -> None:
+    def __init__(self, states: _Optional[_Iterable[_Union[_lane_state_pb2.LaneState, _Mapping]]]=...) -> None:
         ...
