@@ -68,6 +68,12 @@ extern SetLaneMaxVRequestDefaultTypeInternal _SetLaneMaxVRequest_default_instanc
 class SetLaneMaxVResponse;
 struct SetLaneMaxVResponseDefaultTypeInternal;
 extern SetLaneMaxVResponseDefaultTypeInternal _SetLaneMaxVResponse_default_instance_;
+class SetLaneRestrictionRequest;
+struct SetLaneRestrictionRequestDefaultTypeInternal;
+extern SetLaneRestrictionRequestDefaultTypeInternal _SetLaneRestrictionRequest_default_instance_;
+class SetLaneRestrictionResponse;
+struct SetLaneRestrictionResponseDefaultTypeInternal;
+extern SetLaneRestrictionResponseDefaultTypeInternal _SetLaneRestrictionResponse_default_instance_;
 }  // namespace v2
 }  // namespace map
 }  // namespace city
@@ -78,6 +84,8 @@ template<> ::city::map::v2::GetLaneRequest* Arena::CreateMaybeMessage<::city::ma
 template<> ::city::map::v2::GetLaneResponse* Arena::CreateMaybeMessage<::city::map::v2::GetLaneResponse>(Arena*);
 template<> ::city::map::v2::SetLaneMaxVRequest* Arena::CreateMaybeMessage<::city::map::v2::SetLaneMaxVRequest>(Arena*);
 template<> ::city::map::v2::SetLaneMaxVResponse* Arena::CreateMaybeMessage<::city::map::v2::SetLaneMaxVResponse>(Arena*);
+template<> ::city::map::v2::SetLaneRestrictionRequest* Arena::CreateMaybeMessage<::city::map::v2::SetLaneRestrictionRequest>(Arena*);
+template<> ::city::map::v2::SetLaneRestrictionResponse* Arena::CreateMaybeMessage<::city::map::v2::SetLaneRestrictionResponse>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace city {
 namespace map {
@@ -362,6 +370,283 @@ class SetLaneMaxVResponse final :
 };
 // -------------------------------------------------------------------
 
+class SetLaneRestrictionRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.map.v2.SetLaneRestrictionRequest) */ {
+ public:
+  inline SetLaneRestrictionRequest() : SetLaneRestrictionRequest(nullptr) {}
+  ~SetLaneRestrictionRequest() override;
+  explicit PROTOBUF_CONSTEXPR SetLaneRestrictionRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  SetLaneRestrictionRequest(const SetLaneRestrictionRequest& from);
+  SetLaneRestrictionRequest(SetLaneRestrictionRequest&& from) noexcept
+    : SetLaneRestrictionRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline SetLaneRestrictionRequest& operator=(const SetLaneRestrictionRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline SetLaneRestrictionRequest& operator=(SetLaneRestrictionRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const SetLaneRestrictionRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const SetLaneRestrictionRequest* internal_default_instance() {
+    return reinterpret_cast<const SetLaneRestrictionRequest*>(
+               &_SetLaneRestrictionRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    2;
+
+  friend void swap(SetLaneRestrictionRequest& a, SetLaneRestrictionRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(SetLaneRestrictionRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(SetLaneRestrictionRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  SetLaneRestrictionRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<SetLaneRestrictionRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const SetLaneRestrictionRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const SetLaneRestrictionRequest& from) {
+    SetLaneRestrictionRequest::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(SetLaneRestrictionRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.map.v2.SetLaneRestrictionRequest";
+  }
+  protected:
+  explicit SetLaneRestrictionRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kLaneIdFieldNumber = 1,
+    kRestrictionFieldNumber = 2,
+  };
+  // int32 lane_id = 1 [json_name = "laneId"];
+  void clear_lane_id();
+  int32_t lane_id() const;
+  void set_lane_id(int32_t value);
+  private:
+  int32_t _internal_lane_id() const;
+  void _internal_set_lane_id(int32_t value);
+  public:
+
+  // bool restriction = 2 [json_name = "restriction"];
+  void clear_restriction();
+  bool restriction() const;
+  void set_restriction(bool value);
+  private:
+  bool _internal_restriction() const;
+  void _internal_set_restriction(bool value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:city.map.v2.SetLaneRestrictionRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    int32_t lane_id_;
+    bool restriction_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_city_2fmap_2fv2_2flane_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class SetLaneRestrictionResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:city.map.v2.SetLaneRestrictionResponse) */ {
+ public:
+  inline SetLaneRestrictionResponse() : SetLaneRestrictionResponse(nullptr) {}
+  explicit PROTOBUF_CONSTEXPR SetLaneRestrictionResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  SetLaneRestrictionResponse(const SetLaneRestrictionResponse& from);
+  SetLaneRestrictionResponse(SetLaneRestrictionResponse&& from) noexcept
+    : SetLaneRestrictionResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline SetLaneRestrictionResponse& operator=(const SetLaneRestrictionResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline SetLaneRestrictionResponse& operator=(SetLaneRestrictionResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const SetLaneRestrictionResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const SetLaneRestrictionResponse* internal_default_instance() {
+    return reinterpret_cast<const SetLaneRestrictionResponse*>(
+               &_SetLaneRestrictionResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    3;
+
+  friend void swap(SetLaneRestrictionResponse& a, SetLaneRestrictionResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(SetLaneRestrictionResponse* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(SetLaneRestrictionResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  SetLaneRestrictionResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<SetLaneRestrictionResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
+  inline void CopyFrom(const SetLaneRestrictionResponse& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(*this, from);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
+  void MergeFrom(const SetLaneRestrictionResponse& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(*this, from);
+  }
+  public:
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.map.v2.SetLaneRestrictionResponse";
+  }
+  protected:
+  explicit SetLaneRestrictionResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:city.map.v2.SetLaneRestrictionResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+  };
+  friend struct ::TableStruct_city_2fmap_2fv2_2flane_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
 class GetLaneRequest final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.map.v2.GetLaneRequest) */ {
  public:
@@ -410,7 +695,7 @@ class GetLaneRequest final :
                &_GetLaneRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    4;
 
   friend void swap(GetLaneRequest& a, GetLaneRequest& b) {
     a.Swap(&b);
@@ -583,7 +868,7 @@ class GetLaneResponse final :
                &_GetLaneResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    5;
 
   friend void swap(GetLaneResponse& a, GetLaneResponse& b) {
     a.Swap(&b);
@@ -740,7 +1025,7 @@ class GetLaneByLongLatBBoxRequest final :
                &_GetLaneByLongLatBBoxRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    6;
 
   friend void swap(GetLaneByLongLatBBoxRequest& a, GetLaneByLongLatBBoxRequest& b) {
     a.Swap(&b);
@@ -908,7 +1193,7 @@ class GetLaneByLongLatBBoxResponse final :
                &_GetLaneByLongLatBBoxResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    7;
 
   friend void swap(GetLaneByLongLatBBoxResponse& a, GetLaneByLongLatBBoxResponse& b) {
     a.Swap(&b);
@@ -1069,6 +1354,54 @@ inline void SetLaneMaxVRequest::set_max_v(double value) {
 // -------------------------------------------------------------------
 
 // SetLaneMaxVResponse
+
+// -------------------------------------------------------------------
+
+// SetLaneRestrictionRequest
+
+// int32 lane_id = 1 [json_name = "laneId"];
+inline void SetLaneRestrictionRequest::clear_lane_id() {
+  _impl_.lane_id_ = 0;
+}
+inline int32_t SetLaneRestrictionRequest::_internal_lane_id() const {
+  return _impl_.lane_id_;
+}
+inline int32_t SetLaneRestrictionRequest::lane_id() const {
+  // @@protoc_insertion_point(field_get:city.map.v2.SetLaneRestrictionRequest.lane_id)
+  return _internal_lane_id();
+}
+inline void SetLaneRestrictionRequest::_internal_set_lane_id(int32_t value) {
+  
+  _impl_.lane_id_ = value;
+}
+inline void SetLaneRestrictionRequest::set_lane_id(int32_t value) {
+  _internal_set_lane_id(value);
+  // @@protoc_insertion_point(field_set:city.map.v2.SetLaneRestrictionRequest.lane_id)
+}
+
+// bool restriction = 2 [json_name = "restriction"];
+inline void SetLaneRestrictionRequest::clear_restriction() {
+  _impl_.restriction_ = false;
+}
+inline bool SetLaneRestrictionRequest::_internal_restriction() const {
+  return _impl_.restriction_;
+}
+inline bool SetLaneRestrictionRequest::restriction() const {
+  // @@protoc_insertion_point(field_get:city.map.v2.SetLaneRestrictionRequest.restriction)
+  return _internal_restriction();
+}
+inline void SetLaneRestrictionRequest::_internal_set_restriction(bool value) {
+  
+  _impl_.restriction_ = value;
+}
+inline void SetLaneRestrictionRequest::set_restriction(bool value) {
+  _internal_set_restriction(value);
+  // @@protoc_insertion_point(field_set:city.map.v2.SetLaneRestrictionRequest.restriction)
+}
+
+// -------------------------------------------------------------------
+
+// SetLaneRestrictionResponse
 
 // -------------------------------------------------------------------
 
@@ -1335,6 +1668,10 @@ GetLaneByLongLatBBoxResponse::states() const {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

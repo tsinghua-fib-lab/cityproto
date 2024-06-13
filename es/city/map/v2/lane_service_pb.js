@@ -33,6 +33,31 @@ export const SetLaneMaxVResponse = proto3.makeMessageType(
 );
 
 /**
+ * 设置Lane限行请求
+ * Request for setting lane's traffic restriction
+ *
+ * @generated from message city.map.v2.SetLaneRestrictionRequest
+ */
+export const SetLaneRestrictionRequest = proto3.makeMessageType(
+  "city.map.v2.SetLaneRestrictionRequest",
+  () => [
+    { no: 1, name: "lane_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "restriction", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ],
+);
+
+/**
+ * 设置Lane限行响应
+ * Response of setting lane's traffic restriction
+ *
+ * @generated from message city.map.v2.SetLaneRestrictionResponse
+ */
+export const SetLaneRestrictionResponse = proto3.makeMessageType(
+  "city.map.v2.SetLaneRestrictionResponse",
+  [],
+);
+
+/**
  * 获取Lane的信息请求
  * Request for getting lane information
  *

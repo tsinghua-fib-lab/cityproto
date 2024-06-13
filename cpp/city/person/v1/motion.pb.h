@@ -221,6 +221,7 @@ class PersonMotion final :
     kStatusFieldNumber = 2,
     kVFieldNumber = 4,
     kDirectionFieldNumber = 5,
+    kLFieldNumber = 7,
   };
   // string activity = 6 [json_name = "activity"];
   void clear_activity();
@@ -290,6 +291,15 @@ class PersonMotion final :
   void _internal_set_direction(double value);
   public:
 
+  // double l = 7 [json_name = "l"];
+  void clear_l();
+  double l() const;
+  void set_l(double value);
+  private:
+  double _internal_l() const;
+  void _internal_set_l(double value);
+  public:
+
   // @@protoc_insertion_point(class_scope:city.person.v1.PersonMotion)
  private:
   class _Internal;
@@ -304,6 +314,7 @@ class PersonMotion final :
     int status_;
     double v_;
     double direction_;
+    double l_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -533,6 +544,26 @@ inline void PersonMotion::set_allocated_activity(std::string* activity) {
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   // @@protoc_insertion_point(field_set_allocated:city.person.v1.PersonMotion.activity)
+}
+
+// double l = 7 [json_name = "l"];
+inline void PersonMotion::clear_l() {
+  _impl_.l_ = 0;
+}
+inline double PersonMotion::_internal_l() const {
+  return _impl_.l_;
+}
+inline double PersonMotion::l() const {
+  // @@protoc_insertion_point(field_get:city.person.v1.PersonMotion.l)
+  return _internal_l();
+}
+inline void PersonMotion::_internal_set_l(double value) {
+  
+  _impl_.l_ = value;
+}
+inline void PersonMotion::set_l(double value) {
+  _internal_set_l(value);
+  // @@protoc_insertion_point(field_set:city.person.v1.PersonMotion.l)
 }
 
 #ifdef __GNUC__

@@ -191,6 +191,7 @@ class BaseRuntime final :
     kYFieldNumber = 2,
     kVFieldNumber = 3,
     kDirectionFieldNumber = 4,
+    kLFieldNumber = 5,
   };
   // double x = 1 [json_name = "x"];
   void clear_x();
@@ -228,6 +229,15 @@ class BaseRuntime final :
   void _internal_set_direction(double value);
   public:
 
+  // double l = 5 [json_name = "l"];
+  void clear_l();
+  double l() const;
+  void set_l(double value);
+  private:
+  double _internal_l() const;
+  void _internal_set_l(double value);
+  public:
+
   // @@protoc_insertion_point(class_scope:city.person.v1.BaseRuntime)
  private:
   class _Internal;
@@ -240,6 +250,7 @@ class BaseRuntime final :
     double y_;
     double v_;
     double direction_;
+    double l_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -493,6 +504,26 @@ inline void BaseRuntime::_internal_set_direction(double value) {
 inline void BaseRuntime::set_direction(double value) {
   _internal_set_direction(value);
   // @@protoc_insertion_point(field_set:city.person.v1.BaseRuntime.direction)
+}
+
+// double l = 5 [json_name = "l"];
+inline void BaseRuntime::clear_l() {
+  _impl_.l_ = 0;
+}
+inline double BaseRuntime::_internal_l() const {
+  return _impl_.l_;
+}
+inline double BaseRuntime::l() const {
+  // @@protoc_insertion_point(field_get:city.person.v1.BaseRuntime.l)
+  return _internal_l();
+}
+inline void BaseRuntime::_internal_set_l(double value) {
+  
+  _impl_.l_ = value;
+}
+inline void BaseRuntime::set_l(double value) {
+  _internal_set_l(value);
+  // @@protoc_insertion_point(field_set:city.person.v1.BaseRuntime.l)
 }
 
 // -------------------------------------------------------------------

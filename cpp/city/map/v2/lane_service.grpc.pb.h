@@ -46,6 +46,15 @@ class LaneService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::map::v2::SetLaneMaxVResponse>> PrepareAsyncSetLaneMaxV(::grpc::ClientContext* context, const ::city::map::v2::SetLaneMaxVRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::map::v2::SetLaneMaxVResponse>>(PrepareAsyncSetLaneMaxVRaw(context, request, cq));
     }
+    // 设置Lane限行
+    // Set Lane's traffic restriction
+    virtual ::grpc::Status SetLaneRestriction(::grpc::ClientContext* context, const ::city::map::v2::SetLaneRestrictionRequest& request, ::city::map::v2::SetLaneRestrictionResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::map::v2::SetLaneRestrictionResponse>> AsyncSetLaneRestriction(::grpc::ClientContext* context, const ::city::map::v2::SetLaneRestrictionRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::map::v2::SetLaneRestrictionResponse>>(AsyncSetLaneRestrictionRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::map::v2::SetLaneRestrictionResponse>> PrepareAsyncSetLaneRestriction(::grpc::ClientContext* context, const ::city::map::v2::SetLaneRestrictionRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::map::v2::SetLaneRestrictionResponse>>(PrepareAsyncSetLaneRestrictionRaw(context, request, cq));
+    }
     // 获取Lane的信息
     // Get Lane information
     virtual ::grpc::Status GetLane(::grpc::ClientContext* context, const ::city::map::v2::GetLaneRequest& request, ::city::map::v2::GetLaneResponse* response) = 0;
@@ -71,6 +80,10 @@ class LaneService final {
       // Set Lane's maximum speed (speed limit)
       virtual void SetLaneMaxV(::grpc::ClientContext* context, const ::city::map::v2::SetLaneMaxVRequest* request, ::city::map::v2::SetLaneMaxVResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void SetLaneMaxV(::grpc::ClientContext* context, const ::city::map::v2::SetLaneMaxVRequest* request, ::city::map::v2::SetLaneMaxVResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // 设置Lane限行
+      // Set Lane's traffic restriction
+      virtual void SetLaneRestriction(::grpc::ClientContext* context, const ::city::map::v2::SetLaneRestrictionRequest* request, ::city::map::v2::SetLaneRestrictionResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void SetLaneRestriction(::grpc::ClientContext* context, const ::city::map::v2::SetLaneRestrictionRequest* request, ::city::map::v2::SetLaneRestrictionResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       // 获取Lane的信息
       // Get Lane information
       virtual void GetLane(::grpc::ClientContext* context, const ::city::map::v2::GetLaneRequest* request, ::city::map::v2::GetLaneResponse* response, std::function<void(::grpc::Status)>) = 0;
@@ -86,6 +99,8 @@ class LaneService final {
    private:
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::map::v2::SetLaneMaxVResponse>* AsyncSetLaneMaxVRaw(::grpc::ClientContext* context, const ::city::map::v2::SetLaneMaxVRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::map::v2::SetLaneMaxVResponse>* PrepareAsyncSetLaneMaxVRaw(::grpc::ClientContext* context, const ::city::map::v2::SetLaneMaxVRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::map::v2::SetLaneRestrictionResponse>* AsyncSetLaneRestrictionRaw(::grpc::ClientContext* context, const ::city::map::v2::SetLaneRestrictionRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::map::v2::SetLaneRestrictionResponse>* PrepareAsyncSetLaneRestrictionRaw(::grpc::ClientContext* context, const ::city::map::v2::SetLaneRestrictionRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::map::v2::GetLaneResponse>* AsyncGetLaneRaw(::grpc::ClientContext* context, const ::city::map::v2::GetLaneRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::map::v2::GetLaneResponse>* PrepareAsyncGetLaneRaw(::grpc::ClientContext* context, const ::city::map::v2::GetLaneRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::map::v2::GetLaneByLongLatBBoxResponse>* AsyncGetLaneByLongLatBBoxRaw(::grpc::ClientContext* context, const ::city::map::v2::GetLaneByLongLatBBoxRequest& request, ::grpc::CompletionQueue* cq) = 0;
@@ -100,6 +115,13 @@ class LaneService final {
     }
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::map::v2::SetLaneMaxVResponse>> PrepareAsyncSetLaneMaxV(::grpc::ClientContext* context, const ::city::map::v2::SetLaneMaxVRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::map::v2::SetLaneMaxVResponse>>(PrepareAsyncSetLaneMaxVRaw(context, request, cq));
+    }
+    ::grpc::Status SetLaneRestriction(::grpc::ClientContext* context, const ::city::map::v2::SetLaneRestrictionRequest& request, ::city::map::v2::SetLaneRestrictionResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::map::v2::SetLaneRestrictionResponse>> AsyncSetLaneRestriction(::grpc::ClientContext* context, const ::city::map::v2::SetLaneRestrictionRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::map::v2::SetLaneRestrictionResponse>>(AsyncSetLaneRestrictionRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::map::v2::SetLaneRestrictionResponse>> PrepareAsyncSetLaneRestriction(::grpc::ClientContext* context, const ::city::map::v2::SetLaneRestrictionRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::map::v2::SetLaneRestrictionResponse>>(PrepareAsyncSetLaneRestrictionRaw(context, request, cq));
     }
     ::grpc::Status GetLane(::grpc::ClientContext* context, const ::city::map::v2::GetLaneRequest& request, ::city::map::v2::GetLaneResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::map::v2::GetLaneResponse>> AsyncGetLane(::grpc::ClientContext* context, const ::city::map::v2::GetLaneRequest& request, ::grpc::CompletionQueue* cq) {
@@ -120,6 +142,8 @@ class LaneService final {
      public:
       void SetLaneMaxV(::grpc::ClientContext* context, const ::city::map::v2::SetLaneMaxVRequest* request, ::city::map::v2::SetLaneMaxVResponse* response, std::function<void(::grpc::Status)>) override;
       void SetLaneMaxV(::grpc::ClientContext* context, const ::city::map::v2::SetLaneMaxVRequest* request, ::city::map::v2::SetLaneMaxVResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void SetLaneRestriction(::grpc::ClientContext* context, const ::city::map::v2::SetLaneRestrictionRequest* request, ::city::map::v2::SetLaneRestrictionResponse* response, std::function<void(::grpc::Status)>) override;
+      void SetLaneRestriction(::grpc::ClientContext* context, const ::city::map::v2::SetLaneRestrictionRequest* request, ::city::map::v2::SetLaneRestrictionResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       void GetLane(::grpc::ClientContext* context, const ::city::map::v2::GetLaneRequest* request, ::city::map::v2::GetLaneResponse* response, std::function<void(::grpc::Status)>) override;
       void GetLane(::grpc::ClientContext* context, const ::city::map::v2::GetLaneRequest* request, ::city::map::v2::GetLaneResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       void GetLaneByLongLatBBox(::grpc::ClientContext* context, const ::city::map::v2::GetLaneByLongLatBBoxRequest* request, ::city::map::v2::GetLaneByLongLatBBoxResponse* response, std::function<void(::grpc::Status)>) override;
@@ -137,11 +161,14 @@ class LaneService final {
     class async async_stub_{this};
     ::grpc::ClientAsyncResponseReader< ::city::map::v2::SetLaneMaxVResponse>* AsyncSetLaneMaxVRaw(::grpc::ClientContext* context, const ::city::map::v2::SetLaneMaxVRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::city::map::v2::SetLaneMaxVResponse>* PrepareAsyncSetLaneMaxVRaw(::grpc::ClientContext* context, const ::city::map::v2::SetLaneMaxVRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::city::map::v2::SetLaneRestrictionResponse>* AsyncSetLaneRestrictionRaw(::grpc::ClientContext* context, const ::city::map::v2::SetLaneRestrictionRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::city::map::v2::SetLaneRestrictionResponse>* PrepareAsyncSetLaneRestrictionRaw(::grpc::ClientContext* context, const ::city::map::v2::SetLaneRestrictionRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::city::map::v2::GetLaneResponse>* AsyncGetLaneRaw(::grpc::ClientContext* context, const ::city::map::v2::GetLaneRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::city::map::v2::GetLaneResponse>* PrepareAsyncGetLaneRaw(::grpc::ClientContext* context, const ::city::map::v2::GetLaneRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::city::map::v2::GetLaneByLongLatBBoxResponse>* AsyncGetLaneByLongLatBBoxRaw(::grpc::ClientContext* context, const ::city::map::v2::GetLaneByLongLatBBoxRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::city::map::v2::GetLaneByLongLatBBoxResponse>* PrepareAsyncGetLaneByLongLatBBoxRaw(::grpc::ClientContext* context, const ::city::map::v2::GetLaneByLongLatBBoxRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_SetLaneMaxV_;
+    const ::grpc::internal::RpcMethod rpcmethod_SetLaneRestriction_;
     const ::grpc::internal::RpcMethod rpcmethod_GetLane_;
     const ::grpc::internal::RpcMethod rpcmethod_GetLaneByLongLatBBox_;
   };
@@ -154,6 +181,9 @@ class LaneService final {
     // 设置Lane的最大速度（限速）
     // Set Lane's maximum speed (speed limit)
     virtual ::grpc::Status SetLaneMaxV(::grpc::ServerContext* context, const ::city::map::v2::SetLaneMaxVRequest* request, ::city::map::v2::SetLaneMaxVResponse* response);
+    // 设置Lane限行
+    // Set Lane's traffic restriction
+    virtual ::grpc::Status SetLaneRestriction(::grpc::ServerContext* context, const ::city::map::v2::SetLaneRestrictionRequest* request, ::city::map::v2::SetLaneRestrictionResponse* response);
     // 获取Lane的信息
     // Get Lane information
     virtual ::grpc::Status GetLane(::grpc::ServerContext* context, const ::city::map::v2::GetLaneRequest* request, ::city::map::v2::GetLaneResponse* response);
@@ -182,12 +212,32 @@ class LaneService final {
     }
   };
   template <class BaseClass>
+  class WithAsyncMethod_SetLaneRestriction : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_SetLaneRestriction() {
+      ::grpc::Service::MarkMethodAsync(1);
+    }
+    ~WithAsyncMethod_SetLaneRestriction() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SetLaneRestriction(::grpc::ServerContext* /*context*/, const ::city::map::v2::SetLaneRestrictionRequest* /*request*/, ::city::map::v2::SetLaneRestrictionResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestSetLaneRestriction(::grpc::ServerContext* context, ::city::map::v2::SetLaneRestrictionRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::map::v2::SetLaneRestrictionResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithAsyncMethod_GetLane : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_GetLane() {
-      ::grpc::Service::MarkMethodAsync(1);
+      ::grpc::Service::MarkMethodAsync(2);
     }
     ~WithAsyncMethod_GetLane() override {
       BaseClassMustBeDerivedFromService(this);
@@ -198,7 +248,7 @@ class LaneService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetLane(::grpc::ServerContext* context, ::city::map::v2::GetLaneRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::map::v2::GetLaneResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -207,7 +257,7 @@ class LaneService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_GetLaneByLongLatBBox() {
-      ::grpc::Service::MarkMethodAsync(2);
+      ::grpc::Service::MarkMethodAsync(3);
     }
     ~WithAsyncMethod_GetLaneByLongLatBBox() override {
       BaseClassMustBeDerivedFromService(this);
@@ -218,10 +268,10 @@ class LaneService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetLaneByLongLatBBox(::grpc::ServerContext* context, ::city::map::v2::GetLaneByLongLatBBoxRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::map::v2::GetLaneByLongLatBBoxResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_SetLaneMaxV<WithAsyncMethod_GetLane<WithAsyncMethod_GetLaneByLongLatBBox<Service > > > AsyncService;
+  typedef WithAsyncMethod_SetLaneMaxV<WithAsyncMethod_SetLaneRestriction<WithAsyncMethod_GetLane<WithAsyncMethod_GetLaneByLongLatBBox<Service > > > > AsyncService;
   template <class BaseClass>
   class WithCallbackMethod_SetLaneMaxV : public BaseClass {
    private:
@@ -250,18 +300,45 @@ class LaneService final {
       ::grpc::CallbackServerContext* /*context*/, const ::city::map::v2::SetLaneMaxVRequest* /*request*/, ::city::map::v2::SetLaneMaxVResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
+  class WithCallbackMethod_SetLaneRestriction : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_SetLaneRestriction() {
+      ::grpc::Service::MarkMethodCallback(1,
+          new ::grpc::internal::CallbackUnaryHandler< ::city::map::v2::SetLaneRestrictionRequest, ::city::map::v2::SetLaneRestrictionResponse>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::city::map::v2::SetLaneRestrictionRequest* request, ::city::map::v2::SetLaneRestrictionResponse* response) { return this->SetLaneRestriction(context, request, response); }));}
+    void SetMessageAllocatorFor_SetLaneRestriction(
+        ::grpc::MessageAllocator< ::city::map::v2::SetLaneRestrictionRequest, ::city::map::v2::SetLaneRestrictionResponse>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::city::map::v2::SetLaneRestrictionRequest, ::city::map::v2::SetLaneRestrictionResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_SetLaneRestriction() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SetLaneRestriction(::grpc::ServerContext* /*context*/, const ::city::map::v2::SetLaneRestrictionRequest* /*request*/, ::city::map::v2::SetLaneRestrictionResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* SetLaneRestriction(
+      ::grpc::CallbackServerContext* /*context*/, const ::city::map::v2::SetLaneRestrictionRequest* /*request*/, ::city::map::v2::SetLaneRestrictionResponse* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
   class WithCallbackMethod_GetLane : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_GetLane() {
-      ::grpc::Service::MarkMethodCallback(1,
+      ::grpc::Service::MarkMethodCallback(2,
           new ::grpc::internal::CallbackUnaryHandler< ::city::map::v2::GetLaneRequest, ::city::map::v2::GetLaneResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::map::v2::GetLaneRequest* request, ::city::map::v2::GetLaneResponse* response) { return this->GetLane(context, request, response); }));}
     void SetMessageAllocatorFor_GetLane(
         ::grpc::MessageAllocator< ::city::map::v2::GetLaneRequest, ::city::map::v2::GetLaneResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(1);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(2);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::map::v2::GetLaneRequest, ::city::map::v2::GetLaneResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -282,13 +359,13 @@ class LaneService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_GetLaneByLongLatBBox() {
-      ::grpc::Service::MarkMethodCallback(2,
+      ::grpc::Service::MarkMethodCallback(3,
           new ::grpc::internal::CallbackUnaryHandler< ::city::map::v2::GetLaneByLongLatBBoxRequest, ::city::map::v2::GetLaneByLongLatBBoxResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::map::v2::GetLaneByLongLatBBoxRequest* request, ::city::map::v2::GetLaneByLongLatBBoxResponse* response) { return this->GetLaneByLongLatBBox(context, request, response); }));}
     void SetMessageAllocatorFor_GetLaneByLongLatBBox(
         ::grpc::MessageAllocator< ::city::map::v2::GetLaneByLongLatBBoxRequest, ::city::map::v2::GetLaneByLongLatBBoxResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(2);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(3);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::map::v2::GetLaneByLongLatBBoxRequest, ::city::map::v2::GetLaneByLongLatBBoxResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -303,7 +380,7 @@ class LaneService final {
     virtual ::grpc::ServerUnaryReactor* GetLaneByLongLatBBox(
       ::grpc::CallbackServerContext* /*context*/, const ::city::map::v2::GetLaneByLongLatBBoxRequest* /*request*/, ::city::map::v2::GetLaneByLongLatBBoxResponse* /*response*/)  { return nullptr; }
   };
-  typedef WithCallbackMethod_SetLaneMaxV<WithCallbackMethod_GetLane<WithCallbackMethod_GetLaneByLongLatBBox<Service > > > CallbackService;
+  typedef WithCallbackMethod_SetLaneMaxV<WithCallbackMethod_SetLaneRestriction<WithCallbackMethod_GetLane<WithCallbackMethod_GetLaneByLongLatBBox<Service > > > > CallbackService;
   typedef CallbackService ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_SetLaneMaxV : public BaseClass {
@@ -323,12 +400,29 @@ class LaneService final {
     }
   };
   template <class BaseClass>
+  class WithGenericMethod_SetLaneRestriction : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_SetLaneRestriction() {
+      ::grpc::Service::MarkMethodGeneric(1);
+    }
+    ~WithGenericMethod_SetLaneRestriction() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SetLaneRestriction(::grpc::ServerContext* /*context*/, const ::city::map::v2::SetLaneRestrictionRequest* /*request*/, ::city::map::v2::SetLaneRestrictionResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
   class WithGenericMethod_GetLane : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_GetLane() {
-      ::grpc::Service::MarkMethodGeneric(1);
+      ::grpc::Service::MarkMethodGeneric(2);
     }
     ~WithGenericMethod_GetLane() override {
       BaseClassMustBeDerivedFromService(this);
@@ -345,7 +439,7 @@ class LaneService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_GetLaneByLongLatBBox() {
-      ::grpc::Service::MarkMethodGeneric(2);
+      ::grpc::Service::MarkMethodGeneric(3);
     }
     ~WithGenericMethod_GetLaneByLongLatBBox() override {
       BaseClassMustBeDerivedFromService(this);
@@ -377,12 +471,32 @@ class LaneService final {
     }
   };
   template <class BaseClass>
+  class WithRawMethod_SetLaneRestriction : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_SetLaneRestriction() {
+      ::grpc::Service::MarkMethodRaw(1);
+    }
+    ~WithRawMethod_SetLaneRestriction() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SetLaneRestriction(::grpc::ServerContext* /*context*/, const ::city::map::v2::SetLaneRestrictionRequest* /*request*/, ::city::map::v2::SetLaneRestrictionResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestSetLaneRestriction(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithRawMethod_GetLane : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_GetLane() {
-      ::grpc::Service::MarkMethodRaw(1);
+      ::grpc::Service::MarkMethodRaw(2);
     }
     ~WithRawMethod_GetLane() override {
       BaseClassMustBeDerivedFromService(this);
@@ -393,7 +507,7 @@ class LaneService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetLane(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -402,7 +516,7 @@ class LaneService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_GetLaneByLongLatBBox() {
-      ::grpc::Service::MarkMethodRaw(2);
+      ::grpc::Service::MarkMethodRaw(3);
     }
     ~WithRawMethod_GetLaneByLongLatBBox() override {
       BaseClassMustBeDerivedFromService(this);
@@ -413,7 +527,7 @@ class LaneService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetLaneByLongLatBBox(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -439,12 +553,34 @@ class LaneService final {
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
+  class WithRawCallbackMethod_SetLaneRestriction : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_SetLaneRestriction() {
+      ::grpc::Service::MarkMethodRawCallback(1,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->SetLaneRestriction(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_SetLaneRestriction() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SetLaneRestriction(::grpc::ServerContext* /*context*/, const ::city::map::v2::SetLaneRestrictionRequest* /*request*/, ::city::map::v2::SetLaneRestrictionResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* SetLaneRestriction(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
   class WithRawCallbackMethod_GetLane : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_GetLane() {
-      ::grpc::Service::MarkMethodRawCallback(1,
+      ::grpc::Service::MarkMethodRawCallback(2,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetLane(context, request, response); }));
@@ -466,7 +602,7 @@ class LaneService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_GetLaneByLongLatBBox() {
-      ::grpc::Service::MarkMethodRawCallback(2,
+      ::grpc::Service::MarkMethodRawCallback(3,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetLaneByLongLatBBox(context, request, response); }));
@@ -510,12 +646,39 @@ class LaneService final {
     virtual ::grpc::Status StreamedSetLaneMaxV(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::city::map::v2::SetLaneMaxVRequest,::city::map::v2::SetLaneMaxVResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
+  class WithStreamedUnaryMethod_SetLaneRestriction : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_SetLaneRestriction() {
+      ::grpc::Service::MarkMethodStreamed(1,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::city::map::v2::SetLaneRestrictionRequest, ::city::map::v2::SetLaneRestrictionResponse>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::city::map::v2::SetLaneRestrictionRequest, ::city::map::v2::SetLaneRestrictionResponse>* streamer) {
+                       return this->StreamedSetLaneRestriction(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_SetLaneRestriction() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status SetLaneRestriction(::grpc::ServerContext* /*context*/, const ::city::map::v2::SetLaneRestrictionRequest* /*request*/, ::city::map::v2::SetLaneRestrictionResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedSetLaneRestriction(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::city::map::v2::SetLaneRestrictionRequest,::city::map::v2::SetLaneRestrictionResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_GetLane : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_GetLane() {
-      ::grpc::Service::MarkMethodStreamed(1,
+      ::grpc::Service::MarkMethodStreamed(2,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::map::v2::GetLaneRequest, ::city::map::v2::GetLaneResponse>(
             [this](::grpc::ServerContext* context,
@@ -542,7 +705,7 @@ class LaneService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_GetLaneByLongLatBBox() {
-      ::grpc::Service::MarkMethodStreamed(2,
+      ::grpc::Service::MarkMethodStreamed(3,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::map::v2::GetLaneByLongLatBBoxRequest, ::city::map::v2::GetLaneByLongLatBBoxResponse>(
             [this](::grpc::ServerContext* context,
@@ -563,9 +726,9 @@ class LaneService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedGetLaneByLongLatBBox(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::city::map::v2::GetLaneByLongLatBBoxRequest,::city::map::v2::GetLaneByLongLatBBoxResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_SetLaneMaxV<WithStreamedUnaryMethod_GetLane<WithStreamedUnaryMethod_GetLaneByLongLatBBox<Service > > > StreamedUnaryService;
+  typedef WithStreamedUnaryMethod_SetLaneMaxV<WithStreamedUnaryMethod_SetLaneRestriction<WithStreamedUnaryMethod_GetLane<WithStreamedUnaryMethod_GetLaneByLongLatBBox<Service > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_SetLaneMaxV<WithStreamedUnaryMethod_GetLane<WithStreamedUnaryMethod_GetLaneByLongLatBBox<Service > > > StreamedService;
+  typedef WithStreamedUnaryMethod_SetLaneMaxV<WithStreamedUnaryMethod_SetLaneRestriction<WithStreamedUnaryMethod_GetLane<WithStreamedUnaryMethod_GetLaneByLongLatBBox<Service > > > > StreamedService;
 };
 
 }  // namespace v2

@@ -85,6 +85,11 @@ export const VehicleRuntime = proto3.makeMessageType(
     { no: 3, name: "distance_to_end", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
     { no: 4, name: "lc", kind: "message", T: LC, opt: true },
     { no: 5, name: "action", kind: "message", T: VehicleAction, opt: true },
+    { no: 6, name: "running_distance", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 7, name: "num_going_astray", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 8, name: "departure_time", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 9, name: "eta", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 10, name: "eta_free_flow", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
   ],
 );
 

@@ -278,6 +278,46 @@ export declare class VehicleRuntime extends Message<VehicleRuntime> {
    */
   action?: VehicleAction;
 
+  /**
+   * 走过的里程
+   * running distance
+   *
+   * @generated from field: double running_distance = 6;
+   */
+  runningDistance: number;
+
+  /**
+   * 走错路次数
+   * number of going astray
+   *
+   * @generated from field: int32 num_going_astray = 7;
+   */
+  numGoingAstray: number;
+
+  /**
+   * 出发时刻
+   * departure time
+   *
+   * @generated from field: double departure_time = 8;
+   */
+  departureTime: number;
+
+  /**
+   * 预计到达时刻（导航返回的eta+出发时刻）
+   * estimated arrival time (eta returned by routing + departure time)
+   *
+   * @generated from field: double eta = 9;
+   */
+  eta: number;
+
+  /**
+   * 自由流下的预计到达时刻
+   * estimated arrival time under free flow
+   *
+   * @generated from field: double eta_free_flow = 10;
+   */
+  etaFreeFlow: number;
+
   constructor(data?: PartialMessage<VehicleRuntime>);
 
   static readonly runtime: typeof proto3;

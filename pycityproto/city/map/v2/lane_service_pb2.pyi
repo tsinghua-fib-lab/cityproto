@@ -22,6 +22,22 @@ class SetLaneMaxVResponse(_message.Message):
     def __init__(self) -> None:
         ...
 
+class SetLaneRestrictionRequest(_message.Message):
+    __slots__ = ['lane_id', 'restriction']
+    LANE_ID_FIELD_NUMBER: _ClassVar[int]
+    RESTRICTION_FIELD_NUMBER: _ClassVar[int]
+    lane_id: int
+    restriction: bool
+
+    def __init__(self, lane_id: _Optional[int]=..., restriction: bool=...) -> None:
+        ...
+
+class SetLaneRestrictionResponse(_message.Message):
+    __slots__ = []
+
+    def __init__(self) -> None:
+        ...
+
 class GetLaneRequest(_message.Message):
     __slots__ = ['lane_ids', 'exclude_person']
     LANE_IDS_FIELD_NUMBER: _ClassVar[int]

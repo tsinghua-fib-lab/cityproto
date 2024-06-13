@@ -64,7 +64,12 @@ PROTOBUF_CONSTEXPR VehicleRuntime::VehicleRuntime(
   , /*decltype(_impl_.base_on_road_)*/nullptr
   , /*decltype(_impl_.lc_)*/nullptr
   , /*decltype(_impl_.action_)*/nullptr
-  , /*decltype(_impl_.distance_to_end_)*/0} {}
+  , /*decltype(_impl_.distance_to_end_)*/0
+  , /*decltype(_impl_.running_distance_)*/0
+  , /*decltype(_impl_.departure_time_)*/0
+  , /*decltype(_impl_.eta_)*/0
+  , /*decltype(_impl_.eta_free_flow_)*/0
+  , /*decltype(_impl_.num_going_astray_)*/0} {}
 struct VehicleRuntimeDefaultTypeInternal {
   PROTOBUF_CONSTEXPR VehicleRuntimeDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -166,11 +171,21 @@ const uint32_t TableStruct_city_2fperson_2fv1_2fvehicle_2eproto::offsets[] PROTO
   PROTOBUF_FIELD_OFFSET(::city::person::v1::VehicleRuntime, _impl_.distance_to_end_),
   PROTOBUF_FIELD_OFFSET(::city::person::v1::VehicleRuntime, _impl_.lc_),
   PROTOBUF_FIELD_OFFSET(::city::person::v1::VehicleRuntime, _impl_.action_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v1::VehicleRuntime, _impl_.running_distance_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v1::VehicleRuntime, _impl_.num_going_astray_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v1::VehicleRuntime, _impl_.departure_time_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v1::VehicleRuntime, _impl_.eta_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v1::VehicleRuntime, _impl_.eta_free_flow_),
   ~0u,
   ~0u,
   ~0u,
   0,
   1,
+  ~0u,
+  ~0u,
+  ~0u,
+  ~0u,
+  ~0u,
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::city::person::v1::ObservedVehicle, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -206,10 +221,10 @@ const uint32_t TableStruct_city_2fperson_2fv1_2fvehicle_2eproto::offsets[] PROTO
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::city::person::v1::LC)},
   { 10, 20, -1, sizeof(::city::person::v1::VehicleAction)},
-  { 24, 35, -1, sizeof(::city::person::v1::VehicleRuntime)},
-  { 40, -1, -1, sizeof(::city::person::v1::ObservedVehicle)},
-  { 50, -1, -1, sizeof(::city::person::v1::ObservedLane)},
-  { 60, -1, -1, sizeof(::city::person::v1::VehicleEnv)},
+  { 24, 40, -1, sizeof(::city::person::v1::VehicleRuntime)},
+  { 50, -1, -1, sizeof(::city::person::v1::ObservedVehicle)},
+  { 60, -1, -1, sizeof(::city::person::v1::ObservedLane)},
+  { 70, -1, -1, sizeof(::city::person::v1::VehicleEnv)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -232,46 +247,50 @@ const char descriptor_table_protodef_city_2fperson_2fv1_2fvehicle_2eproto[] PROT
   "leAction\022\016\n\002id\030\004 \001(\005R\002id\022\020\n\003acc\030\001 \001(\001R\003a"
   "cc\022%\n\014lc_target_id\030\002 \001(\005H\000R\nlcTargetId\210\001"
   "\001\022\024\n\005angle\030\003 \001(\001R\005angleB\017\n\r_lc_target_id"
-  "\"\245\002\n\016VehicleRuntime\022/\n\004base\030\001 \001(\0132\033.city"
+  "\"\327\003\n\016VehicleRuntime\022/\n\004base\030\001 \001(\0132\033.city"
   ".person.v1.BaseRuntimeR\004base\022C\n\014base_on_"
   "road\030\002 \001(\0132!.city.person.v1.BaseRuntimeO"
   "nRoadR\nbaseOnRoad\022&\n\017distance_to_end\030\003 \001"
   "(\001R\rdistanceToEnd\022\'\n\002lc\030\004 \001(\0132\022.city.per"
   "son.v1.LCH\000R\002lc\210\001\001\022:\n\006action\030\005 \001(\0132\035.cit"
-  "y.person.v1.VehicleActionH\001R\006action\210\001\001B\005"
-  "\n\003_lcB\t\n\007_action\"\301\001\n\017ObservedVehicle\022\016\n\002"
-  "id\030\001 \001(\005R\002id\0224\n\006motion\030\002 \001(\0132\034.city.pers"
-  "on.v1.PersonMotionR\006motion\022+\n\021relative_d"
-  "istance\030\003 \001(\001R\020relativeDistance\022;\n\010relat"
-  "ion\030\004 \001(\0162\037.city.person.v1.VehicleRelati"
-  "onR\010relation\"\257\001\n\014ObservedLane\022\016\n\002id\030\001 \001("
-  "\005R\002id\022 \n\013restriction\030\002 \001(\010R\013restriction\022"
-  ";\n\013light_state\030\003 \001(\0162\032.city.person.v1.Li"
-  "ghtStateR\nlightState\0220\n\024light_remaining_"
-  "time\030\004 \001(\001R\022lightRemainingTime\"\235\002\n\nVehic"
-  "leEnv\022\016\n\002id\030\001 \001(\005R\002id\0228\n\007runtime\030\002 \001(\0132\036"
-  ".city.person.v1.VehicleRuntimeR\007runtime\022"
-  "2\n\007journey\030\003 \001(\0132\030.city.routing.v2.Journ"
-  "eyR\007journey\022L\n\021observed_vehicles\030\004 \003(\0132\037"
-  ".city.person.v1.ObservedVehicleR\020observe"
-  "dVehicles\022C\n\016observed_lanes\030\005 \003(\0132\034.city"
-  ".person.v1.ObservedLaneR\robservedLanes*\273"
-  "\002\n\017VehicleRelation\022 \n\034VEHICLE_RELATION_U"
-  "NSPECIFIED\020\000\022\032\n\026VEHICLE_RELATION_AHEAD\020\001"
-  "\022\033\n\027VEHICLE_RELATION_BEHIND\020\002\022!\n\035VEHICLE"
-  "_RELATION_SHADOW_AHEAD\020\003\022\"\n\036VEHICLE_RELA"
-  "TION_SHADOW_BEHIND\020\004\022\037\n\033VEHICLE_RELATION"
-  "_LEFT_AHEAD\020\005\022 \n\034VEHICLE_RELATION_RIGHT_"
-  "AHEAD\020\006\022 \n\034VEHICLE_RELATION_LEFT_BEHIND\020"
-  "\007\022!\n\035VEHICLE_RELATION_RIGHT_BEHIND\020\010*m\n\n"
-  "LightState\022\033\n\027LIGHT_STATE_UNSPECIFIED\020\000\022"
-  "\023\n\017LIGHT_STATE_RED\020\001\022\025\n\021LIGHT_STATE_GREE"
-  "N\020\002\022\026\n\022LIGHT_STATE_YELLOW\020\003B\262\001\n\022com.city"
-  ".person.v1B\014VehicleProtoP\001Z4git.fiblab.n"
-  "et/sim/protos/go/city/person/v1;personv1"
-  "\242\002\003CPX\252\002\016City.Person.V1\312\002\016City\\Person\\V1"
-  "\342\002\032City\\Person\\V1\\GPBMetadata\352\002\020City::Pe"
-  "rson::V1b\006proto3"
+  "y.person.v1.VehicleActionH\001R\006action\210\001\001\022)"
+  "\n\020running_distance\030\006 \001(\001R\017runningDistanc"
+  "e\022(\n\020num_going_astray\030\007 \001(\005R\016numGoingAst"
+  "ray\022%\n\016departure_time\030\010 \001(\001R\rdepartureTi"
+  "me\022\020\n\003eta\030\t \001(\001R\003eta\022\"\n\reta_free_flow\030\n "
+  "\001(\001R\013etaFreeFlowB\005\n\003_lcB\t\n\007_action\"\301\001\n\017O"
+  "bservedVehicle\022\016\n\002id\030\001 \001(\005R\002id\0224\n\006motion"
+  "\030\002 \001(\0132\034.city.person.v1.PersonMotionR\006mo"
+  "tion\022+\n\021relative_distance\030\003 \001(\001R\020relativ"
+  "eDistance\022;\n\010relation\030\004 \001(\0162\037.city.perso"
+  "n.v1.VehicleRelationR\010relation\"\257\001\n\014Obser"
+  "vedLane\022\016\n\002id\030\001 \001(\005R\002id\022 \n\013restriction\030\002"
+  " \001(\010R\013restriction\022;\n\013light_state\030\003 \001(\0162\032"
+  ".city.person.v1.LightStateR\nlightState\0220"
+  "\n\024light_remaining_time\030\004 \001(\001R\022lightRemai"
+  "ningTime\"\235\002\n\nVehicleEnv\022\016\n\002id\030\001 \001(\005R\002id\022"
+  "8\n\007runtime\030\002 \001(\0132\036.city.person.v1.Vehicl"
+  "eRuntimeR\007runtime\0222\n\007journey\030\003 \001(\0132\030.cit"
+  "y.routing.v2.JourneyR\007journey\022L\n\021observe"
+  "d_vehicles\030\004 \003(\0132\037.city.person.v1.Observ"
+  "edVehicleR\020observedVehicles\022C\n\016observed_"
+  "lanes\030\005 \003(\0132\034.city.person.v1.ObservedLan"
+  "eR\robservedLanes*\273\002\n\017VehicleRelation\022 \n\034"
+  "VEHICLE_RELATION_UNSPECIFIED\020\000\022\032\n\026VEHICL"
+  "E_RELATION_AHEAD\020\001\022\033\n\027VEHICLE_RELATION_B"
+  "EHIND\020\002\022!\n\035VEHICLE_RELATION_SHADOW_AHEAD"
+  "\020\003\022\"\n\036VEHICLE_RELATION_SHADOW_BEHIND\020\004\022\037"
+  "\n\033VEHICLE_RELATION_LEFT_AHEAD\020\005\022 \n\034VEHIC"
+  "LE_RELATION_RIGHT_AHEAD\020\006\022 \n\034VEHICLE_REL"
+  "ATION_LEFT_BEHIND\020\007\022!\n\035VEHICLE_RELATION_"
+  "RIGHT_BEHIND\020\010*m\n\nLightState\022\033\n\027LIGHT_ST"
+  "ATE_UNSPECIFIED\020\000\022\023\n\017LIGHT_STATE_RED\020\001\022\025"
+  "\n\021LIGHT_STATE_GREEN\020\002\022\026\n\022LIGHT_STATE_YEL"
+  "LOW\020\003B\262\001\n\022com.city.person.v1B\014VehiclePro"
+  "toP\001Z4git.fiblab.net/sim/protos/go/city/"
+  "person/v1;personv1\242\002\003CPX\252\002\016City.Person.V"
+  "1\312\002\016City\\Person\\V1\342\002\032City\\Person\\V1\\GPBM"
+  "etadata\352\002\020City::Person::V1b\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_city_2fperson_2fv1_2fvehicle_2eproto_deps[3] = {
   &::descriptor_table_city_2fperson_2fv1_2fmotion_2eproto,
@@ -280,7 +299,7 @@ static const ::_pbi::DescriptorTable* const descriptor_table_city_2fperson_2fv1_
 };
 static ::_pbi::once_flag descriptor_table_city_2fperson_2fv1_2fvehicle_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2fperson_2fv1_2fvehicle_2eproto = {
-    false, false, 1976, descriptor_table_protodef_city_2fperson_2fv1_2fvehicle_2eproto,
+    false, false, 2154, descriptor_table_protodef_city_2fperson_2fv1_2fvehicle_2eproto,
     "city/person/v1/vehicle.proto",
     &descriptor_table_city_2fperson_2fv1_2fvehicle_2eproto_once, descriptor_table_city_2fperson_2fv1_2fvehicle_2eproto_deps, 3, 6,
     schemas, file_default_instances, TableStruct_city_2fperson_2fv1_2fvehicle_2eproto::offsets,
@@ -987,7 +1006,12 @@ VehicleRuntime::VehicleRuntime(const VehicleRuntime& from)
     , decltype(_impl_.base_on_road_){nullptr}
     , decltype(_impl_.lc_){nullptr}
     , decltype(_impl_.action_){nullptr}
-    , decltype(_impl_.distance_to_end_){}};
+    , decltype(_impl_.distance_to_end_){}
+    , decltype(_impl_.running_distance_){}
+    , decltype(_impl_.departure_time_){}
+    , decltype(_impl_.eta_){}
+    , decltype(_impl_.eta_free_flow_){}
+    , decltype(_impl_.num_going_astray_){}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_base()) {
@@ -1002,7 +1026,9 @@ VehicleRuntime::VehicleRuntime(const VehicleRuntime& from)
   if (from._internal_has_action()) {
     _this->_impl_.action_ = new ::city::person::v1::VehicleAction(*from._impl_.action_);
   }
-  _this->_impl_.distance_to_end_ = from._impl_.distance_to_end_;
+  ::memcpy(&_impl_.distance_to_end_, &from._impl_.distance_to_end_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.num_going_astray_) -
+    reinterpret_cast<char*>(&_impl_.distance_to_end_)) + sizeof(_impl_.num_going_astray_));
   // @@protoc_insertion_point(copy_constructor:city.person.v1.VehicleRuntime)
 }
 
@@ -1018,6 +1044,11 @@ inline void VehicleRuntime::SharedCtor(
     , decltype(_impl_.lc_){nullptr}
     , decltype(_impl_.action_){nullptr}
     , decltype(_impl_.distance_to_end_){0}
+    , decltype(_impl_.running_distance_){0}
+    , decltype(_impl_.departure_time_){0}
+    , decltype(_impl_.eta_){0}
+    , decltype(_impl_.eta_free_flow_){0}
+    , decltype(_impl_.num_going_astray_){0}
   };
 }
 
@@ -1067,7 +1098,9 @@ void VehicleRuntime::Clear() {
       _impl_.action_->Clear();
     }
   }
-  _impl_.distance_to_end_ = 0;
+  ::memset(&_impl_.distance_to_end_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.num_going_astray_) -
+      reinterpret_cast<char*>(&_impl_.distance_to_end_)) + sizeof(_impl_.num_going_astray_));
   _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -1116,6 +1149,46 @@ const char* VehicleRuntime::_InternalParse(const char* ptr, ::_pbi::ParseContext
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
           ptr = ctx->ParseMessage(_internal_mutable_action(), ptr);
           CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // double running_distance = 6 [json_name = "runningDistance"];
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 49)) {
+          _impl_.running_distance_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 num_going_astray = 7 [json_name = "numGoingAstray"];
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 56)) {
+          _impl_.num_going_astray_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // double departure_time = 8 [json_name = "departureTime"];
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 65)) {
+          _impl_.departure_time_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // double eta = 9 [json_name = "eta"];
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 73)) {
+          _impl_.eta_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // double eta_free_flow = 10 [json_name = "etaFreeFlow"];
+      case 10:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 81)) {
+          _impl_.eta_free_flow_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
         } else
           goto handle_unusual;
         continue;
@@ -1187,6 +1260,52 @@ uint8_t* VehicleRuntime::_InternalSerialize(
         _Internal::action(this).GetCachedSize(), target, stream);
   }
 
+  // double running_distance = 6 [json_name = "runningDistance"];
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_running_distance = this->_internal_running_distance();
+  uint64_t raw_running_distance;
+  memcpy(&raw_running_distance, &tmp_running_distance, sizeof(tmp_running_distance));
+  if (raw_running_distance != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(6, this->_internal_running_distance(), target);
+  }
+
+  // int32 num_going_astray = 7 [json_name = "numGoingAstray"];
+  if (this->_internal_num_going_astray() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(7, this->_internal_num_going_astray(), target);
+  }
+
+  // double departure_time = 8 [json_name = "departureTime"];
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_departure_time = this->_internal_departure_time();
+  uint64_t raw_departure_time;
+  memcpy(&raw_departure_time, &tmp_departure_time, sizeof(tmp_departure_time));
+  if (raw_departure_time != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(8, this->_internal_departure_time(), target);
+  }
+
+  // double eta = 9 [json_name = "eta"];
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_eta = this->_internal_eta();
+  uint64_t raw_eta;
+  memcpy(&raw_eta, &tmp_eta, sizeof(tmp_eta));
+  if (raw_eta != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(9, this->_internal_eta(), target);
+  }
+
+  // double eta_free_flow = 10 [json_name = "etaFreeFlow"];
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_eta_free_flow = this->_internal_eta_free_flow();
+  uint64_t raw_eta_free_flow;
+  memcpy(&raw_eta_free_flow, &tmp_eta_free_flow, sizeof(tmp_eta_free_flow));
+  if (raw_eta_free_flow != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(10, this->_internal_eta_free_flow(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -1243,6 +1362,47 @@ size_t VehicleRuntime::ByteSizeLong() const {
     total_size += 1 + 8;
   }
 
+  // double running_distance = 6 [json_name = "runningDistance"];
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_running_distance = this->_internal_running_distance();
+  uint64_t raw_running_distance;
+  memcpy(&raw_running_distance, &tmp_running_distance, sizeof(tmp_running_distance));
+  if (raw_running_distance != 0) {
+    total_size += 1 + 8;
+  }
+
+  // double departure_time = 8 [json_name = "departureTime"];
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_departure_time = this->_internal_departure_time();
+  uint64_t raw_departure_time;
+  memcpy(&raw_departure_time, &tmp_departure_time, sizeof(tmp_departure_time));
+  if (raw_departure_time != 0) {
+    total_size += 1 + 8;
+  }
+
+  // double eta = 9 [json_name = "eta"];
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_eta = this->_internal_eta();
+  uint64_t raw_eta;
+  memcpy(&raw_eta, &tmp_eta, sizeof(tmp_eta));
+  if (raw_eta != 0) {
+    total_size += 1 + 8;
+  }
+
+  // double eta_free_flow = 10 [json_name = "etaFreeFlow"];
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_eta_free_flow = this->_internal_eta_free_flow();
+  uint64_t raw_eta_free_flow;
+  memcpy(&raw_eta_free_flow, &tmp_eta_free_flow, sizeof(tmp_eta_free_flow));
+  if (raw_eta_free_flow != 0) {
+    total_size += 1 + 8;
+  }
+
+  // int32 num_going_astray = 7 [json_name = "numGoingAstray"];
+  if (this->_internal_num_going_astray() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_num_going_astray());
+  }
+
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
@@ -1287,6 +1447,37 @@ void VehicleRuntime::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const :
   if (raw_distance_to_end != 0) {
     _this->_internal_set_distance_to_end(from._internal_distance_to_end());
   }
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_running_distance = from._internal_running_distance();
+  uint64_t raw_running_distance;
+  memcpy(&raw_running_distance, &tmp_running_distance, sizeof(tmp_running_distance));
+  if (raw_running_distance != 0) {
+    _this->_internal_set_running_distance(from._internal_running_distance());
+  }
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_departure_time = from._internal_departure_time();
+  uint64_t raw_departure_time;
+  memcpy(&raw_departure_time, &tmp_departure_time, sizeof(tmp_departure_time));
+  if (raw_departure_time != 0) {
+    _this->_internal_set_departure_time(from._internal_departure_time());
+  }
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_eta = from._internal_eta();
+  uint64_t raw_eta;
+  memcpy(&raw_eta, &tmp_eta, sizeof(tmp_eta));
+  if (raw_eta != 0) {
+    _this->_internal_set_eta(from._internal_eta());
+  }
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_eta_free_flow = from._internal_eta_free_flow();
+  uint64_t raw_eta_free_flow;
+  memcpy(&raw_eta_free_flow, &tmp_eta_free_flow, sizeof(tmp_eta_free_flow));
+  if (raw_eta_free_flow != 0) {
+    _this->_internal_set_eta_free_flow(from._internal_eta_free_flow());
+  }
+  if (from._internal_num_going_astray() != 0) {
+    _this->_internal_set_num_going_astray(from._internal_num_going_astray());
+  }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -1306,8 +1497,8 @@ void VehicleRuntime::InternalSwap(VehicleRuntime* other) {
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(VehicleRuntime, _impl_.distance_to_end_)
-      + sizeof(VehicleRuntime::_impl_.distance_to_end_)
+      PROTOBUF_FIELD_OFFSET(VehicleRuntime, _impl_.num_going_astray_)
+      + sizeof(VehicleRuntime::_impl_.num_going_astray_)
       - PROTOBUF_FIELD_OFFSET(VehicleRuntime, _impl_.base_)>(
           reinterpret_cast<char*>(&_impl_.base_),
           reinterpret_cast<char*>(&other->_impl_.base_));

@@ -4,17 +4,19 @@ from typing import ClassVar as _ClassVar, Optional as _Optional
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class BaseRuntime(_message.Message):
-    __slots__ = ['x', 'y', 'v', 'direction']
+    __slots__ = ['x', 'y', 'v', 'direction', 'l']
     X_FIELD_NUMBER: _ClassVar[int]
     Y_FIELD_NUMBER: _ClassVar[int]
     V_FIELD_NUMBER: _ClassVar[int]
     DIRECTION_FIELD_NUMBER: _ClassVar[int]
+    L_FIELD_NUMBER: _ClassVar[int]
     x: float
     y: float
     v: float
     direction: float
+    l: float
 
-    def __init__(self, x: _Optional[float]=..., y: _Optional[float]=..., v: _Optional[float]=..., direction: _Optional[float]=...) -> None:
+    def __init__(self, x: _Optional[float]=..., y: _Optional[float]=..., v: _Optional[float]=..., direction: _Optional[float]=..., l: _Optional[float]=...) -> None:
         ...
 
 class BaseRuntimeOnRoad(_message.Message):

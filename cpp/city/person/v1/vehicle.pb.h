@@ -638,6 +638,11 @@ class VehicleRuntime final :
     kLcFieldNumber = 4,
     kActionFieldNumber = 5,
     kDistanceToEndFieldNumber = 3,
+    kRunningDistanceFieldNumber = 6,
+    kDepartureTimeFieldNumber = 8,
+    kEtaFieldNumber = 9,
+    kEtaFreeFlowFieldNumber = 10,
+    kNumGoingAstrayFieldNumber = 7,
   };
   // .city.person.v1.BaseRuntime base = 1 [json_name = "base"];
   bool has_base() const;
@@ -720,6 +725,51 @@ class VehicleRuntime final :
   void _internal_set_distance_to_end(double value);
   public:
 
+  // double running_distance = 6 [json_name = "runningDistance"];
+  void clear_running_distance();
+  double running_distance() const;
+  void set_running_distance(double value);
+  private:
+  double _internal_running_distance() const;
+  void _internal_set_running_distance(double value);
+  public:
+
+  // double departure_time = 8 [json_name = "departureTime"];
+  void clear_departure_time();
+  double departure_time() const;
+  void set_departure_time(double value);
+  private:
+  double _internal_departure_time() const;
+  void _internal_set_departure_time(double value);
+  public:
+
+  // double eta = 9 [json_name = "eta"];
+  void clear_eta();
+  double eta() const;
+  void set_eta(double value);
+  private:
+  double _internal_eta() const;
+  void _internal_set_eta(double value);
+  public:
+
+  // double eta_free_flow = 10 [json_name = "etaFreeFlow"];
+  void clear_eta_free_flow();
+  double eta_free_flow() const;
+  void set_eta_free_flow(double value);
+  private:
+  double _internal_eta_free_flow() const;
+  void _internal_set_eta_free_flow(double value);
+  public:
+
+  // int32 num_going_astray = 7 [json_name = "numGoingAstray"];
+  void clear_num_going_astray();
+  int32_t num_going_astray() const;
+  void set_num_going_astray(int32_t value);
+  private:
+  int32_t _internal_num_going_astray() const;
+  void _internal_set_num_going_astray(int32_t value);
+  public:
+
   // @@protoc_insertion_point(class_scope:city.person.v1.VehicleRuntime)
  private:
   class _Internal;
@@ -735,6 +785,11 @@ class VehicleRuntime final :
     ::city::person::v1::LC* lc_;
     ::city::person::v1::VehicleAction* action_;
     double distance_to_end_;
+    double running_distance_;
+    double departure_time_;
+    double eta_;
+    double eta_free_flow_;
+    int32_t num_going_astray_;
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_city_2fperson_2fv1_2fvehicle_2eproto;
@@ -1893,6 +1948,106 @@ inline void VehicleRuntime::set_allocated_action(::city::person::v1::VehicleActi
   }
   _impl_.action_ = action;
   // @@protoc_insertion_point(field_set_allocated:city.person.v1.VehicleRuntime.action)
+}
+
+// double running_distance = 6 [json_name = "runningDistance"];
+inline void VehicleRuntime::clear_running_distance() {
+  _impl_.running_distance_ = 0;
+}
+inline double VehicleRuntime::_internal_running_distance() const {
+  return _impl_.running_distance_;
+}
+inline double VehicleRuntime::running_distance() const {
+  // @@protoc_insertion_point(field_get:city.person.v1.VehicleRuntime.running_distance)
+  return _internal_running_distance();
+}
+inline void VehicleRuntime::_internal_set_running_distance(double value) {
+  
+  _impl_.running_distance_ = value;
+}
+inline void VehicleRuntime::set_running_distance(double value) {
+  _internal_set_running_distance(value);
+  // @@protoc_insertion_point(field_set:city.person.v1.VehicleRuntime.running_distance)
+}
+
+// int32 num_going_astray = 7 [json_name = "numGoingAstray"];
+inline void VehicleRuntime::clear_num_going_astray() {
+  _impl_.num_going_astray_ = 0;
+}
+inline int32_t VehicleRuntime::_internal_num_going_astray() const {
+  return _impl_.num_going_astray_;
+}
+inline int32_t VehicleRuntime::num_going_astray() const {
+  // @@protoc_insertion_point(field_get:city.person.v1.VehicleRuntime.num_going_astray)
+  return _internal_num_going_astray();
+}
+inline void VehicleRuntime::_internal_set_num_going_astray(int32_t value) {
+  
+  _impl_.num_going_astray_ = value;
+}
+inline void VehicleRuntime::set_num_going_astray(int32_t value) {
+  _internal_set_num_going_astray(value);
+  // @@protoc_insertion_point(field_set:city.person.v1.VehicleRuntime.num_going_astray)
+}
+
+// double departure_time = 8 [json_name = "departureTime"];
+inline void VehicleRuntime::clear_departure_time() {
+  _impl_.departure_time_ = 0;
+}
+inline double VehicleRuntime::_internal_departure_time() const {
+  return _impl_.departure_time_;
+}
+inline double VehicleRuntime::departure_time() const {
+  // @@protoc_insertion_point(field_get:city.person.v1.VehicleRuntime.departure_time)
+  return _internal_departure_time();
+}
+inline void VehicleRuntime::_internal_set_departure_time(double value) {
+  
+  _impl_.departure_time_ = value;
+}
+inline void VehicleRuntime::set_departure_time(double value) {
+  _internal_set_departure_time(value);
+  // @@protoc_insertion_point(field_set:city.person.v1.VehicleRuntime.departure_time)
+}
+
+// double eta = 9 [json_name = "eta"];
+inline void VehicleRuntime::clear_eta() {
+  _impl_.eta_ = 0;
+}
+inline double VehicleRuntime::_internal_eta() const {
+  return _impl_.eta_;
+}
+inline double VehicleRuntime::eta() const {
+  // @@protoc_insertion_point(field_get:city.person.v1.VehicleRuntime.eta)
+  return _internal_eta();
+}
+inline void VehicleRuntime::_internal_set_eta(double value) {
+  
+  _impl_.eta_ = value;
+}
+inline void VehicleRuntime::set_eta(double value) {
+  _internal_set_eta(value);
+  // @@protoc_insertion_point(field_set:city.person.v1.VehicleRuntime.eta)
+}
+
+// double eta_free_flow = 10 [json_name = "etaFreeFlow"];
+inline void VehicleRuntime::clear_eta_free_flow() {
+  _impl_.eta_free_flow_ = 0;
+}
+inline double VehicleRuntime::_internal_eta_free_flow() const {
+  return _impl_.eta_free_flow_;
+}
+inline double VehicleRuntime::eta_free_flow() const {
+  // @@protoc_insertion_point(field_get:city.person.v1.VehicleRuntime.eta_free_flow)
+  return _internal_eta_free_flow();
+}
+inline void VehicleRuntime::_internal_set_eta_free_flow(double value) {
+  
+  _impl_.eta_free_flow_ = value;
+}
+inline void VehicleRuntime::set_eta_free_flow(double value) {
+  _internal_set_eta_free_flow(value);
+  // @@protoc_insertion_point(field_set:city.person.v1.VehicleRuntime.eta_free_flow)
 }
 
 // -------------------------------------------------------------------

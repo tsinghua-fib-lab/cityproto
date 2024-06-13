@@ -124,6 +124,14 @@ export declare class PersonMotion extends Message<PersonMotion> {
    */
   activity: string;
 
+  /**
+   * 长度
+   * length
+   *
+   * @generated from field: double l = 7;
+   */
+  l: number;
+
   constructor(data?: PartialMessage<PersonMotion>);
 
   static readonly runtime: typeof proto3;

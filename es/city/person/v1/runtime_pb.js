@@ -15,6 +15,7 @@ export const BaseRuntime = proto3.makeMessageType(
     { no: 2, name: "y", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
     { no: 3, name: "v", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
     { no: 4, name: "direction", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 5, name: "l", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
   ],
 );
 

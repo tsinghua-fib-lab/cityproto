@@ -56,6 +56,21 @@ message VehicleRuntime {
   // 本轮车辆行为（获取车辆环境信息时不返回）
   // vehicle action in the step (not returned when getting vehicle environment information)
   optional VehicleAction action = 5;
+  // 走过的里程
+  // running distance
+  double running_distance = 6;
+  // 走错路次数
+  // number of going astray
+  int32 num_going_astray = 7;
+  // 出发时刻
+  // departure time
+  double departure_time = 8;
+  // 预计到达时刻（导航返回的eta+出发时刻）
+  // estimated arrival time (eta returned by routing + departure time)
+  double eta = 9;
+  // 自由流下的预计到达时刻
+  // estimated arrival time under free flow
+  double eta_free_flow = 10;
 }
 
 enum VehicleRelation {

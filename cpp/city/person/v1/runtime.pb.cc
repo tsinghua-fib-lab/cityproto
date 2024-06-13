@@ -29,6 +29,7 @@ PROTOBUF_CONSTEXPR BaseRuntime::BaseRuntime(
   , /*decltype(_impl_.y_)*/0
   , /*decltype(_impl_.v_)*/0
   , /*decltype(_impl_.direction_)*/0
+  , /*decltype(_impl_.l_)*/0
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct BaseRuntimeDefaultTypeInternal {
   PROTOBUF_CONSTEXPR BaseRuntimeDefaultTypeInternal()
@@ -71,6 +72,7 @@ const uint32_t TableStruct_city_2fperson_2fv1_2fruntime_2eproto::offsets[] PROTO
   PROTOBUF_FIELD_OFFSET(::city::person::v1::BaseRuntime, _impl_.y_),
   PROTOBUF_FIELD_OFFSET(::city::person::v1::BaseRuntime, _impl_.v_),
   PROTOBUF_FIELD_OFFSET(::city::person::v1::BaseRuntime, _impl_.direction_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v1::BaseRuntime, _impl_.l_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::city::person::v1::BaseRuntimeOnRoad, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -82,7 +84,7 @@ const uint32_t TableStruct_city_2fperson_2fv1_2fruntime_2eproto::offsets[] PROTO
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::city::person::v1::BaseRuntime)},
-  { 10, -1, -1, sizeof(::city::person::v1::BaseRuntimeOnRoad)},
+  { 11, -1, -1, sizeof(::city::person::v1::BaseRuntimeOnRoad)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -92,19 +94,19 @@ static const ::_pb::Message* const file_default_instances[] = {
 
 const char descriptor_table_protodef_city_2fperson_2fv1_2fruntime_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\034city/person/v1/runtime.proto\022\016city.per"
-  "son.v1\"U\n\013BaseRuntime\022\014\n\001x\030\001 \001(\001R\001x\022\014\n\001y"
+  "son.v1\"c\n\013BaseRuntime\022\014\n\001x\030\001 \001(\001R\001x\022\014\n\001y"
   "\030\002 \001(\001R\001y\022\014\n\001v\030\003 \001(\001R\001v\022\034\n\tdirection\030\004 \001"
-  "(\001R\tdirection\":\n\021BaseRuntimeOnRoad\022\027\n\007la"
-  "ne_id\030\001 \001(\005R\006laneId\022\014\n\001s\030\002 \001(\001R\001sB\262\001\n\022co"
-  "m.city.person.v1B\014RuntimeProtoP\001Z4git.fi"
-  "blab.net/sim/protos/go/city/person/v1;pe"
-  "rsonv1\242\002\003CPX\252\002\016City.Person.V1\312\002\016City\\Per"
-  "son\\V1\342\002\032City\\Person\\V1\\GPBMetadata\352\002\020Ci"
-  "ty::Person::V1b\006proto3"
+  "(\001R\tdirection\022\014\n\001l\030\005 \001(\001R\001l\":\n\021BaseRunti"
+  "meOnRoad\022\027\n\007lane_id\030\001 \001(\005R\006laneId\022\014\n\001s\030\002"
+  " \001(\001R\001sB\262\001\n\022com.city.person.v1B\014RuntimeP"
+  "rotoP\001Z4git.fiblab.net/sim/protos/go/cit"
+  "y/person/v1;personv1\242\002\003CPX\252\002\016City.Person"
+  ".V1\312\002\016City\\Person\\V1\342\002\032City\\Person\\V1\\GP"
+  "BMetadata\352\002\020City::Person::V1b\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_city_2fperson_2fv1_2fruntime_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2fperson_2fv1_2fruntime_2eproto = {
-    false, false, 382, descriptor_table_protodef_city_2fperson_2fv1_2fruntime_2eproto,
+    false, false, 396, descriptor_table_protodef_city_2fperson_2fv1_2fruntime_2eproto,
     "city/person/v1/runtime.proto",
     &descriptor_table_city_2fperson_2fv1_2fruntime_2eproto_once, nullptr, 0, 2,
     schemas, file_default_instances, TableStruct_city_2fperson_2fv1_2fruntime_2eproto::offsets,
@@ -141,12 +143,13 @@ BaseRuntime::BaseRuntime(const BaseRuntime& from)
     , decltype(_impl_.y_){}
     , decltype(_impl_.v_){}
     , decltype(_impl_.direction_){}
+    , decltype(_impl_.l_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&_impl_.x_, &from._impl_.x_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.direction_) -
-    reinterpret_cast<char*>(&_impl_.x_)) + sizeof(_impl_.direction_));
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.l_) -
+    reinterpret_cast<char*>(&_impl_.x_)) + sizeof(_impl_.l_));
   // @@protoc_insertion_point(copy_constructor:city.person.v1.BaseRuntime)
 }
 
@@ -159,6 +162,7 @@ inline void BaseRuntime::SharedCtor(
     , decltype(_impl_.y_){0}
     , decltype(_impl_.v_){0}
     , decltype(_impl_.direction_){0}
+    , decltype(_impl_.l_){0}
     , /*decltype(_impl_._cached_size_)*/{}
   };
 }
@@ -187,8 +191,8 @@ void BaseRuntime::Clear() {
   (void) cached_has_bits;
 
   ::memset(&_impl_.x_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_impl_.direction_) -
-      reinterpret_cast<char*>(&_impl_.x_)) + sizeof(_impl_.direction_));
+      reinterpret_cast<char*>(&_impl_.l_) -
+      reinterpret_cast<char*>(&_impl_.x_)) + sizeof(_impl_.l_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -226,6 +230,14 @@ const char* BaseRuntime::_InternalParse(const char* ptr, ::_pbi::ParseContext* c
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 33)) {
           _impl_.direction_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // double l = 5 [json_name = "l"];
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 41)) {
+          _impl_.l_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
         } else
           goto handle_unusual;
@@ -299,6 +311,16 @@ uint8_t* BaseRuntime::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteDoubleToArray(4, this->_internal_direction(), target);
   }
 
+  // double l = 5 [json_name = "l"];
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_l = this->_internal_l();
+  uint64_t raw_l;
+  memcpy(&raw_l, &tmp_l, sizeof(tmp_l));
+  if (raw_l != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(5, this->_internal_l(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -351,6 +373,15 @@ size_t BaseRuntime::ByteSizeLong() const {
     total_size += 1 + 8;
   }
 
+  // double l = 5 [json_name = "l"];
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_l = this->_internal_l();
+  uint64_t raw_l;
+  memcpy(&raw_l, &tmp_l, sizeof(tmp_l));
+  if (raw_l != 0) {
+    total_size += 1 + 8;
+  }
+
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
@@ -397,6 +428,13 @@ void BaseRuntime::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PR
   if (raw_direction != 0) {
     _this->_internal_set_direction(from._internal_direction());
   }
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_l = from._internal_l();
+  uint64_t raw_l;
+  memcpy(&raw_l, &tmp_l, sizeof(tmp_l));
+  if (raw_l != 0) {
+    _this->_internal_set_l(from._internal_l());
+  }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -415,8 +453,8 @@ void BaseRuntime::InternalSwap(BaseRuntime* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(BaseRuntime, _impl_.direction_)
-      + sizeof(BaseRuntime::_impl_.direction_)
+      PROTOBUF_FIELD_OFFSET(BaseRuntime, _impl_.l_)
+      + sizeof(BaseRuntime::_impl_.l_)
       - PROTOBUF_FIELD_OFFSET(BaseRuntime, _impl_.x_)>(
           reinterpret_cast<char*>(&_impl_.x_),
           reinterpret_cast<char*>(&other->_impl_.x_));

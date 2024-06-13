@@ -23,19 +23,21 @@ STATUS_PASSENGER: Status
 STATUS_WAIT_ROUTE: Status
 
 class PersonMotion(_message.Message):
-    __slots__ = ['id', 'status', 'position', 'v', 'direction', 'activity']
+    __slots__ = ['id', 'status', 'position', 'v', 'direction', 'activity', 'l']
     ID_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
     POSITION_FIELD_NUMBER: _ClassVar[int]
     V_FIELD_NUMBER: _ClassVar[int]
     DIRECTION_FIELD_NUMBER: _ClassVar[int]
     ACTIVITY_FIELD_NUMBER: _ClassVar[int]
+    L_FIELD_NUMBER: _ClassVar[int]
     id: int
     status: Status
     position: _geo_pb2.Position
     v: float
     direction: float
     activity: str
+    l: float
 
-    def __init__(self, id: _Optional[int]=..., status: _Optional[_Union[Status, str]]=..., position: _Optional[_Union[_geo_pb2.Position, _Mapping]]=..., v: _Optional[float]=..., direction: _Optional[float]=..., activity: _Optional[str]=...) -> None:
+    def __init__(self, id: _Optional[int]=..., status: _Optional[_Union[Status, str]]=..., position: _Optional[_Union[_geo_pb2.Position, _Mapping]]=..., v: _Optional[float]=..., direction: _Optional[float]=..., activity: _Optional[str]=..., l: _Optional[float]=...) -> None:
         ...

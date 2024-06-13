@@ -42,6 +42,14 @@ export declare class BaseRuntime extends Message<BaseRuntime> {
    */
   direction: number;
 
+  /**
+   * 长度
+   * length
+   *
+   * @generated from field: double l = 5;
+   */
+  l: number;
+
   constructor(data?: PartialMessage<BaseRuntime>);
 
   static readonly runtime: typeof proto3;

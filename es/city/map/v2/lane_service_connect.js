@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { GetLaneByLongLatBBoxRequest, GetLaneByLongLatBBoxResponse, GetLaneRequest, GetLaneResponse, SetLaneMaxVRequest, SetLaneMaxVResponse } from "./lane_service_pb.js";
+import { GetLaneByLongLatBBoxRequest, GetLaneByLongLatBBoxResponse, GetLaneRequest, GetLaneResponse, SetLaneMaxVRequest, SetLaneMaxVResponse, SetLaneRestrictionRequest, SetLaneRestrictionResponse } from "./lane_service_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -22,6 +22,18 @@ export const LaneService = {
       name: "SetLaneMaxV",
       I: SetLaneMaxVRequest,
       O: SetLaneMaxVResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * 设置Lane限行
+     * Set Lane's traffic restriction
+     *
+     * @generated from rpc city.map.v2.LaneService.SetLaneRestriction
+     */
+    setLaneRestriction: {
+      name: "SetLaneRestriction",
+      I: SetLaneRestrictionRequest,
+      O: SetLaneRestrictionResponse,
       kind: MethodKind.Unary,
     },
     /**

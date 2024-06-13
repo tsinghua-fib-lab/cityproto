@@ -31,6 +31,7 @@ PROTOBUF_CONSTEXPR PersonMotion::PersonMotion(
   , /*decltype(_impl_.status_)*/0
   , /*decltype(_impl_.v_)*/0
   , /*decltype(_impl_.direction_)*/0
+  , /*decltype(_impl_.l_)*/0
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct PersonMotionDefaultTypeInternal {
   PROTOBUF_CONSTEXPR PersonMotionDefaultTypeInternal()
@@ -61,6 +62,7 @@ const uint32_t TableStruct_city_2fperson_2fv1_2fmotion_2eproto::offsets[] PROTOB
   PROTOBUF_FIELD_OFFSET(::city::person::v1::PersonMotion, _impl_.v_),
   PROTOBUF_FIELD_OFFSET(::city::person::v1::PersonMotion, _impl_.direction_),
   PROTOBUF_FIELD_OFFSET(::city::person::v1::PersonMotion, _impl_.activity_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v1::PersonMotion, _impl_.l_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::city::person::v1::PersonMotion)},
@@ -72,28 +74,28 @@ static const ::_pb::Message* const file_default_instances[] = {
 
 const char descriptor_table_protodef_city_2fperson_2fv1_2fmotion_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\033city/person/v1/motion.proto\022\016city.pers"
-  "on.v1\032\025city/geo/v2/geo.proto\"\311\001\n\014PersonM"
+  "on.v1\032\025city/geo/v2/geo.proto\"\327\001\n\014PersonM"
   "otion\022\016\n\002id\030\001 \001(\005R\002id\022.\n\006status\030\002 \001(\0162\026."
   "city.person.v1.StatusR\006status\0221\n\010positio"
   "n\030\003 \001(\0132\025.city.geo.v2.PositionR\010position"
   "\022\014\n\001v\030\004 \001(\001R\001v\022\034\n\tdirection\030\005 \001(\001R\tdirec"
-  "tion\022\032\n\010activity\030\006 \001(\tR\010activity*\231\001\n\006Sta"
-  "tus\022\026\n\022STATUS_UNSPECIFIED\020\000\022\020\n\014STATUS_SL"
-  "EEP\020\001\022\022\n\016STATUS_DRIVING\020\002\022\022\n\016STATUS_WALK"
-  "ING\020\003\022\020\n\014STATUS_CROWD\020\004\022\024\n\020STATUS_PASSEN"
-  "GER\020\005\022\025\n\021STATUS_WAIT_ROUTE\020\006B\261\001\n\022com.cit"
-  "y.person.v1B\013MotionProtoP\001Z4git.fiblab.n"
-  "et/sim/protos/go/city/person/v1;personv1"
-  "\242\002\003CPX\252\002\016City.Person.V1\312\002\016City\\Person\\V1"
-  "\342\002\032City\\Person\\V1\\GPBMetadata\352\002\020City::Pe"
-  "rson::V1b\006proto3"
+  "tion\022\032\n\010activity\030\006 \001(\tR\010activity\022\014\n\001l\030\007 "
+  "\001(\001R\001l*\231\001\n\006Status\022\026\n\022STATUS_UNSPECIFIED\020"
+  "\000\022\020\n\014STATUS_SLEEP\020\001\022\022\n\016STATUS_DRIVING\020\002\022"
+  "\022\n\016STATUS_WALKING\020\003\022\020\n\014STATUS_CROWD\020\004\022\024\n"
+  "\020STATUS_PASSENGER\020\005\022\025\n\021STATUS_WAIT_ROUTE"
+  "\020\006B\261\001\n\022com.city.person.v1B\013MotionProtoP\001"
+  "Z4git.fiblab.net/sim/protos/go/city/pers"
+  "on/v1;personv1\242\002\003CPX\252\002\016City.Person.V1\312\002\016"
+  "City\\Person\\V1\342\002\032City\\Person\\V1\\GPBMetad"
+  "ata\352\002\020City::Person::V1b\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_city_2fperson_2fv1_2fmotion_2eproto_deps[1] = {
   &::descriptor_table_city_2fgeo_2fv2_2fgeo_2eproto,
 };
 static ::_pbi::once_flag descriptor_table_city_2fperson_2fv1_2fmotion_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2fperson_2fv1_2fmotion_2eproto = {
-    false, false, 616, descriptor_table_protodef_city_2fperson_2fv1_2fmotion_2eproto,
+    false, false, 630, descriptor_table_protodef_city_2fperson_2fv1_2fmotion_2eproto,
     "city/person/v1/motion.proto",
     &descriptor_table_city_2fperson_2fv1_2fmotion_2eproto_once, descriptor_table_city_2fperson_2fv1_2fmotion_2eproto_deps, 1, 1,
     schemas, file_default_instances, TableStruct_city_2fperson_2fv1_2fmotion_2eproto::offsets,
@@ -162,6 +164,7 @@ PersonMotion::PersonMotion(const PersonMotion& from)
     , decltype(_impl_.status_){}
     , decltype(_impl_.v_){}
     , decltype(_impl_.direction_){}
+    , decltype(_impl_.l_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
@@ -177,8 +180,8 @@ PersonMotion::PersonMotion(const PersonMotion& from)
     _this->_impl_.position_ = new ::city::geo::v2::Position(*from._impl_.position_);
   }
   ::memcpy(&_impl_.id_, &from._impl_.id_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.direction_) -
-    reinterpret_cast<char*>(&_impl_.id_)) + sizeof(_impl_.direction_));
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.l_) -
+    reinterpret_cast<char*>(&_impl_.id_)) + sizeof(_impl_.l_));
   // @@protoc_insertion_point(copy_constructor:city.person.v1.PersonMotion)
 }
 
@@ -193,6 +196,7 @@ inline void PersonMotion::SharedCtor(
     , decltype(_impl_.status_){0}
     , decltype(_impl_.v_){0}
     , decltype(_impl_.direction_){0}
+    , decltype(_impl_.l_){0}
     , /*decltype(_impl_._cached_size_)*/{}
   };
   _impl_.activity_.InitDefault();
@@ -232,8 +236,8 @@ void PersonMotion::Clear() {
   }
   _impl_.position_ = nullptr;
   ::memset(&_impl_.id_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_impl_.direction_) -
-      reinterpret_cast<char*>(&_impl_.id_)) + sizeof(_impl_.direction_));
+      reinterpret_cast<char*>(&_impl_.l_) -
+      reinterpret_cast<char*>(&_impl_.id_)) + sizeof(_impl_.l_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -291,6 +295,14 @@ const char* PersonMotion::_InternalParse(const char* ptr, ::_pbi::ParseContext* 
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
           CHK_(::_pbi::VerifyUTF8(str, "city.person.v1.PersonMotion.activity"));
+        } else
+          goto handle_unusual;
+        continue;
+      // double l = 7 [json_name = "l"];
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 57)) {
+          _impl_.l_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
         } else
           goto handle_unusual;
         continue;
@@ -373,6 +385,16 @@ uint8_t* PersonMotion::_InternalSerialize(
         6, this->_internal_activity(), target);
   }
 
+  // double l = 7 [json_name = "l"];
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_l = this->_internal_l();
+  uint64_t raw_l;
+  memcpy(&raw_l, &tmp_l, sizeof(tmp_l));
+  if (raw_l != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(7, this->_internal_l(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -432,6 +454,15 @@ size_t PersonMotion::ByteSizeLong() const {
     total_size += 1 + 8;
   }
 
+  // double l = 7 [json_name = "l"];
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_l = this->_internal_l();
+  uint64_t raw_l;
+  memcpy(&raw_l, &tmp_l, sizeof(tmp_l));
+  if (raw_l != 0) {
+    total_size += 1 + 8;
+  }
+
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
@@ -477,6 +508,13 @@ void PersonMotion::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::P
   if (raw_direction != 0) {
     _this->_internal_set_direction(from._internal_direction());
   }
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_l = from._internal_l();
+  uint64_t raw_l;
+  memcpy(&raw_l, &tmp_l, sizeof(tmp_l));
+  if (raw_l != 0) {
+    _this->_internal_set_l(from._internal_l());
+  }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -501,8 +539,8 @@ void PersonMotion::InternalSwap(PersonMotion* other) {
       &other->_impl_.activity_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(PersonMotion, _impl_.direction_)
-      + sizeof(PersonMotion::_impl_.direction_)
+      PROTOBUF_FIELD_OFFSET(PersonMotion, _impl_.l_)
+      + sizeof(PersonMotion::_impl_.l_)
       - PROTOBUF_FIELD_OFFSET(PersonMotion, _impl_.position_)>(
           reinterpret_cast<char*>(&_impl_.position_),
           reinterpret_cast<char*>(&other->_impl_.position_));

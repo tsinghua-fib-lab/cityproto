@@ -35,6 +35,9 @@ const (
 const (
 	// LaneServiceSetLaneMaxVProcedure is the fully-qualified name of the LaneService's SetLaneMaxV RPC.
 	LaneServiceSetLaneMaxVProcedure = "/city.map.v2.LaneService/SetLaneMaxV"
+	// LaneServiceSetLaneRestrictionProcedure is the fully-qualified name of the LaneService's
+	// SetLaneRestriction RPC.
+	LaneServiceSetLaneRestrictionProcedure = "/city.map.v2.LaneService/SetLaneRestriction"
 	// LaneServiceGetLaneProcedure is the fully-qualified name of the LaneService's GetLane RPC.
 	LaneServiceGetLaneProcedure = "/city.map.v2.LaneService/GetLane"
 	// LaneServiceGetLaneByLongLatBBoxProcedure is the fully-qualified name of the LaneService's
@@ -46,6 +49,7 @@ const (
 var (
 	laneServiceServiceDescriptor                    = v2.File_city_map_v2_lane_service_proto.Services().ByName("LaneService")
 	laneServiceSetLaneMaxVMethodDescriptor          = laneServiceServiceDescriptor.Methods().ByName("SetLaneMaxV")
+	laneServiceSetLaneRestrictionMethodDescriptor   = laneServiceServiceDescriptor.Methods().ByName("SetLaneRestriction")
 	laneServiceGetLaneMethodDescriptor              = laneServiceServiceDescriptor.Methods().ByName("GetLane")
 	laneServiceGetLaneByLongLatBBoxMethodDescriptor = laneServiceServiceDescriptor.Methods().ByName("GetLaneByLongLatBBox")
 )
@@ -55,6 +59,9 @@ type LaneServiceClient interface {
 	// 设置Lane的最大速度（限速）
 	// Set Lane's maximum speed (speed limit)
 	SetLaneMaxV(context.Context, *connect.Request[v2.SetLaneMaxVRequest]) (*connect.Response[v2.SetLaneMaxVResponse], error)
+	// 设置Lane限行
+	// Set Lane's traffic restriction
+	SetLaneRestriction(context.Context, *connect.Request[v2.SetLaneRestrictionRequest]) (*connect.Response[v2.SetLaneRestrictionResponse], error)
 	// 获取Lane的信息
 	// Get Lane information
 	GetLane(context.Context, *connect.Request[v2.GetLaneRequest]) (*connect.Response[v2.GetLaneResponse], error)
@@ -79,6 +86,12 @@ func NewLaneServiceClient(httpClient connect.HTTPClient, baseURL string, opts ..
 			connect.WithSchema(laneServiceSetLaneMaxVMethodDescriptor),
 			connect.WithClientOptions(opts...),
 		),
+		setLaneRestriction: connect.NewClient[v2.SetLaneRestrictionRequest, v2.SetLaneRestrictionResponse](
+			httpClient,
+			baseURL+LaneServiceSetLaneRestrictionProcedure,
+			connect.WithSchema(laneServiceSetLaneRestrictionMethodDescriptor),
+			connect.WithClientOptions(opts...),
+		),
 		getLane: connect.NewClient[v2.GetLaneRequest, v2.GetLaneResponse](
 			httpClient,
 			baseURL+LaneServiceGetLaneProcedure,
@@ -97,6 +110,7 @@ func NewLaneServiceClient(httpClient connect.HTTPClient, baseURL string, opts ..
 // laneServiceClient implements LaneServiceClient.
 type laneServiceClient struct {
 	setLaneMaxV          *connect.Client[v2.SetLaneMaxVRequest, v2.SetLaneMaxVResponse]
+	setLaneRestriction   *connect.Client[v2.SetLaneRestrictionRequest, v2.SetLaneRestrictionResponse]
 	getLane              *connect.Client[v2.GetLaneRequest, v2.GetLaneResponse]
 	getLaneByLongLatBBox *connect.Client[v2.GetLaneByLongLatBBoxRequest, v2.GetLaneByLongLatBBoxResponse]
 }
@@ -104,6 +118,11 @@ type laneServiceClient struct {
 // SetLaneMaxV calls city.map.v2.LaneService.SetLaneMaxV.
 func (c *laneServiceClient) SetLaneMaxV(ctx context.Context, req *connect.Request[v2.SetLaneMaxVRequest]) (*connect.Response[v2.SetLaneMaxVResponse], error) {
 	return c.setLaneMaxV.CallUnary(ctx, req)
+}
+
+// SetLaneRestriction calls city.map.v2.LaneService.SetLaneRestriction.
+func (c *laneServiceClient) SetLaneRestriction(ctx context.Context, req *connect.Request[v2.SetLaneRestrictionRequest]) (*connect.Response[v2.SetLaneRestrictionResponse], error) {
+	return c.setLaneRestriction.CallUnary(ctx, req)
 }
 
 // GetLane calls city.map.v2.LaneService.GetLane.
@@ -121,6 +140,9 @@ type LaneServiceHandler interface {
 	// 设置Lane的最大速度（限速）
 	// Set Lane's maximum speed (speed limit)
 	SetLaneMaxV(context.Context, *connect.Request[v2.SetLaneMaxVRequest]) (*connect.Response[v2.SetLaneMaxVResponse], error)
+	// 设置Lane限行
+	// Set Lane's traffic restriction
+	SetLaneRestriction(context.Context, *connect.Request[v2.SetLaneRestrictionRequest]) (*connect.Response[v2.SetLaneRestrictionResponse], error)
 	// 获取Lane的信息
 	// Get Lane information
 	GetLane(context.Context, *connect.Request[v2.GetLaneRequest]) (*connect.Response[v2.GetLaneResponse], error)
@@ -141,6 +163,12 @@ func NewLaneServiceHandler(svc LaneServiceHandler, opts ...connect.HandlerOption
 		connect.WithSchema(laneServiceSetLaneMaxVMethodDescriptor),
 		connect.WithHandlerOptions(opts...),
 	)
+	laneServiceSetLaneRestrictionHandler := connect.NewUnaryHandler(
+		LaneServiceSetLaneRestrictionProcedure,
+		svc.SetLaneRestriction,
+		connect.WithSchema(laneServiceSetLaneRestrictionMethodDescriptor),
+		connect.WithHandlerOptions(opts...),
+	)
 	laneServiceGetLaneHandler := connect.NewUnaryHandler(
 		LaneServiceGetLaneProcedure,
 		svc.GetLane,
@@ -157,6 +185,8 @@ func NewLaneServiceHandler(svc LaneServiceHandler, opts ...connect.HandlerOption
 		switch r.URL.Path {
 		case LaneServiceSetLaneMaxVProcedure:
 			laneServiceSetLaneMaxVHandler.ServeHTTP(w, r)
+		case LaneServiceSetLaneRestrictionProcedure:
+			laneServiceSetLaneRestrictionHandler.ServeHTTP(w, r)
 		case LaneServiceGetLaneProcedure:
 			laneServiceGetLaneHandler.ServeHTTP(w, r)
 		case LaneServiceGetLaneByLongLatBBoxProcedure:
@@ -172,6 +202,10 @@ type UnimplementedLaneServiceHandler struct{}
 
 func (UnimplementedLaneServiceHandler) SetLaneMaxV(context.Context, *connect.Request[v2.SetLaneMaxVRequest]) (*connect.Response[v2.SetLaneMaxVResponse], error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.map.v2.LaneService.SetLaneMaxV is not implemented"))
+}
+
+func (UnimplementedLaneServiceHandler) SetLaneRestriction(context.Context, *connect.Request[v2.SetLaneRestrictionRequest]) (*connect.Response[v2.SetLaneRestrictionResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.map.v2.LaneService.SetLaneRestriction is not implemented"))
 }
 
 func (UnimplementedLaneServiceHandler) GetLane(context.Context, *connect.Request[v2.GetLaneRequest]) (*connect.Response[v2.GetLaneResponse], error) {

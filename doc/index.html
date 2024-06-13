@@ -1468,6 +1468,14 @@
                   <a href="#city.map.v2.SetLaneMaxVResponse"><span class="badge">M</span>SetLaneMaxVResponse</a>
                 </li>
               
+                <li>
+                  <a href="#city.map.v2.SetLaneRestrictionRequest"><span class="badge">M</span>SetLaneRestrictionRequest</a>
+                </li>
+              
+                <li>
+                  <a href="#city.map.v2.SetLaneRestrictionResponse"><span class="badge">M</span>SetLaneRestrictionResponse</a>
+                </li>
+              
               
               
               
@@ -10275,6 +10283,14 @@ Direction angle (radians calculated by atan2) </p></td>
 activity descriptions </p></td>
                 </tr>
               
+                <tr>
+                  <td>l</td>
+                  <td><a href="#double">double</a></td>
+                  <td></td>
+                  <td><p>长度
+length </p></td>
+                </tr>
+              
             </tbody>
           </table>
 
@@ -10697,6 +10713,45 @@ Maximum speed (speed limit), unit: m/s </p></td>
 
         
       
+        <h3 id="city.map.v2.SetLaneRestrictionRequest">SetLaneRestrictionRequest</h3>
+        <p>设置Lane限行请求</p><p>Request for setting lane's traffic restriction</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>lane_id</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p>Lane id </p></td>
+                </tr>
+              
+                <tr>
+                  <td>restriction</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p>限行
+Traffic restriction </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="city.map.v2.SetLaneRestrictionResponse">SetLaneRestrictionResponse</h3>
+        <p>设置Lane限行响应</p><p>Response of setting lane's traffic restriction</p>
+
+        
+
+        
+      
 
       
 
@@ -10717,6 +10772,14 @@ Maximum speed (speed limit), unit: m/s </p></td>
                 <td><a href="#city.map.v2.SetLaneMaxVResponse">SetLaneMaxVResponse</a></td>
                 <td><p>设置Lane的最大速度（限速）
 Set Lane&#39;s maximum speed (speed limit)</p></td>
+              </tr>
+            
+              <tr>
+                <td>SetLaneRestriction</td>
+                <td><a href="#city.map.v2.SetLaneRestrictionRequest">SetLaneRestrictionRequest</a></td>
+                <td><a href="#city.map.v2.SetLaneRestrictionResponse">SetLaneRestrictionResponse</a></td>
+                <td><p>设置Lane限行
+Set Lane&#39;s traffic restriction</p></td>
               </tr>
             
               <tr>
@@ -12011,6 +12074,14 @@ velocity (m/s) </p></td>
 direction (rad), increase in counterclockwise direction, 0 is east </p></td>
                 </tr>
               
+                <tr>
+                  <td>l</td>
+                  <td><a href="#double">double</a></td>
+                  <td></td>
+                  <td><p>长度
+length </p></td>
+                </tr>
+              
             </tbody>
           </table>
 
@@ -12365,6 +12436,46 @@ lane change information </p></td>
                   <td>optional</td>
                   <td><p>本轮车辆行为（获取车辆环境信息时不返回）
 vehicle action in the step (not returned when getting vehicle environment information) </p></td>
+                </tr>
+              
+                <tr>
+                  <td>running_distance</td>
+                  <td><a href="#double">double</a></td>
+                  <td></td>
+                  <td><p>走过的里程
+running distance </p></td>
+                </tr>
+              
+                <tr>
+                  <td>num_going_astray</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p>走错路次数
+number of going astray </p></td>
+                </tr>
+              
+                <tr>
+                  <td>departure_time</td>
+                  <td><a href="#double">double</a></td>
+                  <td></td>
+                  <td><p>出发时刻
+departure time </p></td>
+                </tr>
+              
+                <tr>
+                  <td>eta</td>
+                  <td><a href="#double">double</a></td>
+                  <td></td>
+                  <td><p>预计到达时刻（导航返回的eta&#43;出发时刻）
+estimated arrival time (eta returned by routing &#43; departure time) </p></td>
+                </tr>
+              
+                <tr>
+                  <td>eta_free_flow</td>
+                  <td><a href="#double">double</a></td>
+                  <td></td>
+                  <td><p>自由流下的预计到达时刻
+estimated arrival time under free flow </p></td>
                 </tr>
               
             </tbody>

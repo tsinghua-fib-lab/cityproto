@@ -25,6 +25,7 @@ namespace v2 {
 
 static const char* LaneService_method_names[] = {
   "/city.map.v2.LaneService/SetLaneMaxV",
+  "/city.map.v2.LaneService/SetLaneRestriction",
   "/city.map.v2.LaneService/GetLane",
   "/city.map.v2.LaneService/GetLaneByLongLatBBox",
 };
@@ -37,8 +38,9 @@ std::unique_ptr< LaneService::Stub> LaneService::NewStub(const std::shared_ptr< 
 
 LaneService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
   : channel_(channel), rpcmethod_SetLaneMaxV_(LaneService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetLane_(LaneService_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetLaneByLongLatBBox_(LaneService_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_SetLaneRestriction_(LaneService_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetLane_(LaneService_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetLaneByLongLatBBox_(LaneService_method_names[3], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status LaneService::Stub::SetLaneMaxV(::grpc::ClientContext* context, const ::city::map::v2::SetLaneMaxVRequest& request, ::city::map::v2::SetLaneMaxVResponse* response) {
@@ -60,6 +62,29 @@ void LaneService::Stub::async::SetLaneMaxV(::grpc::ClientContext* context, const
 ::grpc::ClientAsyncResponseReader< ::city::map::v2::SetLaneMaxVResponse>* LaneService::Stub::AsyncSetLaneMaxVRaw(::grpc::ClientContext* context, const ::city::map::v2::SetLaneMaxVRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncSetLaneMaxVRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status LaneService::Stub::SetLaneRestriction(::grpc::ClientContext* context, const ::city::map::v2::SetLaneRestrictionRequest& request, ::city::map::v2::SetLaneRestrictionResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::city::map::v2::SetLaneRestrictionRequest, ::city::map::v2::SetLaneRestrictionResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_SetLaneRestriction_, context, request, response);
+}
+
+void LaneService::Stub::async::SetLaneRestriction(::grpc::ClientContext* context, const ::city::map::v2::SetLaneRestrictionRequest* request, ::city::map::v2::SetLaneRestrictionResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::city::map::v2::SetLaneRestrictionRequest, ::city::map::v2::SetLaneRestrictionResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SetLaneRestriction_, context, request, response, std::move(f));
+}
+
+void LaneService::Stub::async::SetLaneRestriction(::grpc::ClientContext* context, const ::city::map::v2::SetLaneRestrictionRequest* request, ::city::map::v2::SetLaneRestrictionResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SetLaneRestriction_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::city::map::v2::SetLaneRestrictionResponse>* LaneService::Stub::PrepareAsyncSetLaneRestrictionRaw(::grpc::ClientContext* context, const ::city::map::v2::SetLaneRestrictionRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::map::v2::SetLaneRestrictionResponse, ::city::map::v2::SetLaneRestrictionRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_SetLaneRestriction_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::city::map::v2::SetLaneRestrictionResponse>* LaneService::Stub::AsyncSetLaneRestrictionRaw(::grpc::ClientContext* context, const ::city::map::v2::SetLaneRestrictionRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncSetLaneRestrictionRaw(context, request, cq);
   result->StartCall();
   return result;
 }
@@ -124,6 +149,16 @@ LaneService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       LaneService_method_names[1],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< LaneService::Service, ::city::map::v2::SetLaneRestrictionRequest, ::city::map::v2::SetLaneRestrictionResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](LaneService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::city::map::v2::SetLaneRestrictionRequest* req,
+             ::city::map::v2::SetLaneRestrictionResponse* resp) {
+               return service->SetLaneRestriction(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      LaneService_method_names[2],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< LaneService::Service, ::city::map::v2::GetLaneRequest, ::city::map::v2::GetLaneResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](LaneService::Service* service,
              ::grpc::ServerContext* ctx,
@@ -132,7 +167,7 @@ LaneService::Service::Service() {
                return service->GetLane(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      LaneService_method_names[2],
+      LaneService_method_names[3],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< LaneService::Service, ::city::map::v2::GetLaneByLongLatBBoxRequest, ::city::map::v2::GetLaneByLongLatBBoxResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](LaneService::Service* service,
@@ -147,6 +182,13 @@ LaneService::Service::~Service() {
 }
 
 ::grpc::Status LaneService::Service::SetLaneMaxV(::grpc::ServerContext* context, const ::city::map::v2::SetLaneMaxVRequest* request, ::city::map::v2::SetLaneMaxVResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status LaneService::Service::SetLaneRestriction(::grpc::ServerContext* context, const ::city::map::v2::SetLaneRestrictionRequest* request, ::city::map::v2::SetLaneRestrictionResponse* response) {
   (void) context;
   (void) request;
   (void) response;

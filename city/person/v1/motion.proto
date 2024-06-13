@@ -49,4 +49,7 @@ message PersonMotion {
   // 活动描述
   // activity descriptions
   string activity = 6;
+  // 长度
+  // length
+  double l = 7;
 }

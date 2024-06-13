@@ -68,6 +68,65 @@ export declare class SetLaneMaxVResponse extends Message<SetLaneMaxVResponse> {
 }
 
 /**
+ * 设置Lane限行请求
+ * Request for setting lane's traffic restriction
+ *
+ * @generated from message city.map.v2.SetLaneRestrictionRequest
+ */
+export declare class SetLaneRestrictionRequest extends Message<SetLaneRestrictionRequest> {
+  /**
+   * Lane id
+   *
+   * @generated from field: int32 lane_id = 1;
+   */
+  laneId: number;
+
+  /**
+   * 限行
+   * Traffic restriction
+   *
+   * @generated from field: bool restriction = 2;
+   */
+  restriction: boolean;
+
+  constructor(data?: PartialMessage<SetLaneRestrictionRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.map.v2.SetLaneRestrictionRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetLaneRestrictionRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetLaneRestrictionRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetLaneRestrictionRequest;
+
+  static equals(a: SetLaneRestrictionRequest | PlainMessage<SetLaneRestrictionRequest> | undefined, b: SetLaneRestrictionRequest | PlainMessage<SetLaneRestrictionRequest> | undefined): boolean;
+}
+
+/**
+ * 设置Lane限行响应
+ * Response of setting lane's traffic restriction
+ *
+ * @generated from message city.map.v2.SetLaneRestrictionResponse
+ */
+export declare class SetLaneRestrictionResponse extends Message<SetLaneRestrictionResponse> {
+  constructor(data?: PartialMessage<SetLaneRestrictionResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.map.v2.SetLaneRestrictionResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetLaneRestrictionResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetLaneRestrictionResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetLaneRestrictionResponse;
+
+  static equals(a: SetLaneRestrictionResponse | PlainMessage<SetLaneRestrictionResponse> | undefined, b: SetLaneRestrictionResponse | PlainMessage<SetLaneRestrictionResponse> | undefined): boolean;
+}
+
+/**
  * 获取Lane的信息请求
  * Request for getting lane information
  *
