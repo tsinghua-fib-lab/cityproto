@@ -46,6 +46,12 @@ message Header {
   // PROJ.4 投影字符串，用以支持xy坐标到其他坐标系的转换
   // PROJ.4 projection string to support the conversion of xy coordinates to other coordinate systems
   string projection = 7;
+  // 在x方向划分TAZ的步长
+  // Step size of the TAZ in the x-direction
+  optional double taz_x_step = 8;
+  // 在y方向划分TAZ的步长
+  // Step size of the TAZ in the y-direction
+  optional double taz_y_step = 9;
 }
 
 // 车道类型
@@ -315,6 +321,82 @@ enum LandUseType {
   // other land
   LAND_USE_TYPE_OTHER = 12;
 }
+message RoadIds {
+  repeated int32 road_ids = 1;
+}
+
+// 发车时刻表
+// Subline departure schedule
+message SublineSchedules {
+  // 始发站发车时间
+  // Departure time from the departure station
+  repeated double departure_times = 1;
+  // 到达沿途站点预计时间
+  // Estimated time to arrive at stops along the way
+  repeated double offset_times = 2;
+}
+
+// 支线类型
+// Type of subline
+enum SublineType {
+  // 未指定
+  // unspecified
+  SUBLINE_TYPE_UNSPECIFIED = 0;
+  // 公交类型支线
+  // The subline is a bus line
+  SUBLINE_TYPE_BUS = 1;
+  // 地铁类型支线
+  // The subline is a subway line
+  SUBLINE_TYPE_SUBWAY = 2;
+}
+
+// // 交通分析区，用于预计算公共交通权重
+// // TAZ, used to precalculate public transport costs
+// message TransportationAnalysisZone{
+//   int32 x_id = 1;
+//   int32 y_id = 2;
+//   double x_minimum = 3;
+//   double x_maximum = 4;
+//   double y_minimum = 5;
+//   double y_maximum = 6;
+// }
+// 预计算公共交通权重
+// Precalculate public transport costs
+message HeuristicTAZCost {
+  int32 taz_x_id = 1;
+  int32 taz_y_id = 2;
+  int32 aoi_id = 3;
+  double cost = 4;
+}
+
+// 公共交通支线 描述依附于行车路网的公共交通线路
+// Public transport sub-lines, describe public transport routes attached to the road network
+message PublicTransportSubline {
+  // 支线ID
+  // Subline ID
+  int32 id = 1;
+  // 支线名字
+  // Subline name
+  string name = 2;
+  // 该条支线沿途的所有车站AOI，按支线前进顺序排列
+  // All stations along this subline, in the order of advancement of the subline."
+  repeated int32 aoi_ids = 3;
+  // 依次连接两个相邻车站的road ids
+  // Road IDs between two adjacent stations.
+  repeated RoadIds station_connection_road_ids = 4;
+  // 支线类型
+  // Type of subline
+  SublineType type = 5;
+  // 所属线路名称
+  // Name of the belonging line
+  string parent_name = 6;
+  // 发车时刻表
+  // departure schedule
+  SublineSchedules schedules = 7;
+  // 预计算公共交通权重
+  // Precalculate public transport costs
+  repeated HeuristicTAZCost taz_costs = 8;
+}
 
 // Aoi，用于描述地图上的区域
 // Aoi, describing a region on the map
@@ -365,6 +447,9 @@ message Aoi {
   // Aoi包含的Poi
   // Pois contained in Aoi
   repeated int32 poi_ids = 9;
+  // Aoi所在的所有公共交通线路ID
+  // Subline IDs contained this Aoi
+  repeated int32 subline_ids = 13;
 }
 
 // Poi，用于描述地图上的兴趣点
@@ -402,4 +487,5 @@ message Map {
   repeated Junction junctions = 4;
   repeated Aoi aois = 5;
   repeated Poi pois = 6;
+  repeated PublicTransportSubline sublines = 7;
 }

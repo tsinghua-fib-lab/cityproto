@@ -218,14 +218,6 @@
                 </li>
               
                 <li>
-                  <a href="#city.routing.v2.BusLine"><span class="badge">M</span>BusLine</a>
-                </li>
-              
-                <li>
-                  <a href="#city.routing.v2.BusLines"><span class="badge">M</span>BusLines</a>
-                </li>
-              
-                <li>
                   <a href="#city.routing.v2.DrivingJourneyBody"><span class="badge">M</span>DrivingJourneyBody</a>
                 </li>
               
@@ -239,6 +231,10 @@
               
                 <li>
                   <a href="#city.routing.v2.RoadStatuses"><span class="badge">M</span>RoadStatuses</a>
+                </li>
+              
+                <li>
+                  <a href="#city.routing.v2.TransferSegment"><span class="badge">M</span>TransferSegment</a>
                 </li>
               
                 <li>
@@ -536,6 +532,10 @@
                 </li>
               
                 <li>
+                  <a href="#city.map.v2.HeuristicTAZCost"><span class="badge">M</span>HeuristicTAZCost</a>
+                </li>
+              
+                <li>
                   <a href="#city.map.v2.Junction"><span class="badge">M</span>Junction</a>
                 </li>
               
@@ -576,7 +576,19 @@
                 </li>
               
                 <li>
+                  <a href="#city.map.v2.PublicTransportSubline"><span class="badge">M</span>PublicTransportSubline</a>
+                </li>
+              
+                <li>
                   <a href="#city.map.v2.Road"><span class="badge">M</span>Road</a>
+                </li>
+              
+                <li>
+                  <a href="#city.map.v2.RoadIds"><span class="badge">M</span>RoadIds</a>
+                </li>
+              
+                <li>
+                  <a href="#city.map.v2.SublineSchedules"><span class="badge">M</span>SublineSchedules</a>
                 </li>
               
               
@@ -598,6 +610,10 @@
               
                 <li>
                   <a href="#city.map.v2.LaneType"><span class="badge">E</span>LaneType</a>
+                </li>
+              
+                <li>
+                  <a href="#city.map.v2.SublineType"><span class="badge">E</span>SublineType</a>
                 </li>
               
               
@@ -2627,102 +2643,18 @@ z coordinate, in meters, corresponding to elevation </p></td>
             <tbody>
               
                 <tr>
-                  <td>line_id</td>
-                  <td><a href="#int32">int32</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>start_station_id</td>
-                  <td><a href="#int32">int32</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>end_station_id</td>
-                  <td><a href="#int32">int32</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-
-          
-
-        
-      
-        <h3 id="city.routing.v2.BusLine">BusLine</h3>
-        <p>公交线路</p><p>Bus line</p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>line_id</td>
-                  <td><a href="#int32">int32</a></td>
-                  <td></td>
-                  <td><p>线路ID
-bus line ID </p></td>
-                </tr>
-              
-                <tr>
-                  <td>stops</td>
-                  <td><a href="#int32">int32</a></td>
+                  <td>transfers</td>
+                  <td><a href="#city.routing.v2.TransferSegment">TransferSegment</a></td>
                   <td>repeated</td>
-                  <td><p>停靠站点AOI ID列表
-List of the AOI IDs of bus stations </p></td>
+                  <td><p> </p></td>
                 </tr>
               
                 <tr>
-                  <td>distances</td>
+                  <td>eta</td>
                   <td><a href="#double">double</a></td>
-                  <td>repeated</td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>interval</td>
-                  <td><a href="#int32">int32</a></td>
                   <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>count</td>
-                  <td><a href="#int32">int32</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-
-          
-
-        
-      
-        <h3 id="city.routing.v2.BusLines">BusLines</h3>
-        <p>公交线路集合，对应一个公交线路pb文件或一个公交线路mongodb collection</p><p>Bus lines collection, corresponding to a bus line PB file or a bus line mongodb collection</p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>lines</td>
-                  <td><a href="#city.routing.v2.BusLine">BusLine</a></td>
-                  <td>repeated</td>
-                  <td><p> </p></td>
+                  <td><p>从起点到终点预计的时间(estimation time of arrival)
+estimation time of arrival </p></td>
                 </tr>
               
             </tbody>
@@ -2865,6 +2797,44 @@ The speed of the lane at each time slot (5 minutes each) </p></td>
                   <td>road_statuses</td>
                   <td><a href="#city.routing.v2.RoadStatus">RoadStatus</a></td>
                   <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="city.routing.v2.TransferSegment">TransferSegment</h3>
+        <p>message BusJourneyBody {</p><p>int32 line_id = 1;</p><p>int32 start_station_id = 2;</p><p>int32 end_station_id = 3;</p><p>}</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>subline_id</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>start_station_id</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>end_station_id</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
                   <td><p> </p></td>
                 </tr>
               
@@ -4646,6 +4616,14 @@ Urban Land use type, refer to the national standard GB 50137-2011 </p></td>
 Pois contained in Aoi </p></td>
                 </tr>
               
+                <tr>
+                  <td>subline_ids</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td>repeated</td>
+                  <td><p>Aoi所在的所有公共交通线路ID
+Subline IDs contained this Aoi </p></td>
+                </tr>
+              
             </tbody>
           </table>
 
@@ -4743,6 +4721,67 @@ x coordinate corresponding to the minimum longitude </p></td>
                   <td></td>
                   <td><p>PROJ.4 投影字符串，用以支持xy坐标到其他坐标系的转换
 PROJ.4 projection string to support the conversion of xy coordinates to other coordinate systems </p></td>
+                </tr>
+              
+                <tr>
+                  <td>taz_x_step</td>
+                  <td><a href="#double">double</a></td>
+                  <td>optional</td>
+                  <td><p>在x方向划分TAZ的步长
+Step size of the TAZ in the x-direction </p></td>
+                </tr>
+              
+                <tr>
+                  <td>taz_y_step</td>
+                  <td><a href="#double">double</a></td>
+                  <td>optional</td>
+                  <td><p>在y方向划分TAZ的步长
+Step size of the TAZ in the y-direction </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="city.map.v2.HeuristicTAZCost">HeuristicTAZCost</h3>
+        <p>交通分析区，用于预计算公共交通权重</p><p>// TAZ, used to precalculate public transport costs</p><p>message TransportationAnalysisZone{</p><p>int32 x_id = 1;</p><p>int32 y_id = 2;</p><p>double x_minimum = 3;</p><p>double x_maximum = 4;</p><p>double y_minimum = 5;</p><p>double y_maximum = 6;</p><p>}</p><p>预计算公共交通权重</p><p>Precalculate public transport costs</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>taz_x_id</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>taz_y_id</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>aoi_id</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>cost</td>
+                  <td><a href="#double">double</a></td>
+                  <td></td>
+                  <td><p> </p></td>
                 </tr>
               
             </tbody>
@@ -5185,6 +5224,13 @@ Whether this lane has priority </p></td>
                   <td><p> </p></td>
                 </tr>
               
+                <tr>
+                  <td>sublines</td>
+                  <td><a href="#city.map.v2.PublicTransportSubline">PublicTransportSubline</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
             </tbody>
           </table>
 
@@ -5355,6 +5401,87 @@ Points of the polyline </p></td>
 
         
       
+        <h3 id="city.map.v2.PublicTransportSubline">PublicTransportSubline</h3>
+        <p>公共交通支线 描述依附于行车路网的公共交通线路</p><p>Public transport sub-lines, describe public transport routes attached to the road network</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>id</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p>支线ID
+Subline ID </p></td>
+                </tr>
+              
+                <tr>
+                  <td>name</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>支线名字
+Subline name </p></td>
+                </tr>
+              
+                <tr>
+                  <td>aoi_ids</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td>repeated</td>
+                  <td><p>该条支线沿途的所有车站AOI，按支线前进顺序排列
+All stations along this subline, in the order of advancement of the subline.&#34; </p></td>
+                </tr>
+              
+                <tr>
+                  <td>station_connection_road_ids</td>
+                  <td><a href="#city.map.v2.RoadIds">RoadIds</a></td>
+                  <td>repeated</td>
+                  <td><p>依次连接两个相邻车站的road ids
+Road IDs between two adjacent stations. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>type</td>
+                  <td><a href="#city.map.v2.SublineType">SublineType</a></td>
+                  <td></td>
+                  <td><p>支线类型
+Type of subline </p></td>
+                </tr>
+              
+                <tr>
+                  <td>parent_name</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>所属线路名称
+Name of the belonging line </p></td>
+                </tr>
+              
+                <tr>
+                  <td>schedules</td>
+                  <td><a href="#city.map.v2.SublineSchedules">SublineSchedules</a></td>
+                  <td></td>
+                  <td><p>发车时刻表
+departure schedule </p></td>
+                </tr>
+              
+                <tr>
+                  <td>taz_costs</td>
+                  <td><a href="#city.map.v2.HeuristicTAZCost">HeuristicTAZCost</a></td>
+                  <td>repeated</td>
+                  <td><p>预计算公共交通权重
+Precalculate public transport costs </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
         <h3 id="city.map.v2.Road">Road</h3>
         <p>Road，用于描述道路</p><p>Road, describing roads</p>
 
@@ -5397,6 +5524,63 @@ lane_ids are given in order from the leftmost lane to the rightmost lane (viewed
                   <td>repeated</td>
                   <td><p>对于包含动态车道的道路，需要通过这一项来指定所有的候选方案
 For roads containing dynamic lanes, this is required to specify all candidates </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="city.map.v2.RoadIds">RoadIds</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>road_ids</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="city.map.v2.SublineSchedules">SublineSchedules</h3>
+        <p>发车时刻表</p><p>Subline departure schedule</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>departure_times</td>
+                  <td><a href="#double">double</a></td>
+                  <td>repeated</td>
+                  <td><p>始发站发车时间
+Departure time from the departure station </p></td>
+                </tr>
+              
+                <tr>
+                  <td>offset_times</td>
+                  <td><a href="#double">double</a></td>
+                  <td>repeated</td>
+                  <td><p>到达沿途站点预计时间
+Estimated time to arrive at stops along the way </p></td>
                 </tr>
               
             </tbody>
@@ -5605,6 +5789,38 @@ driving</p></td>
                 <td>2</td>
                 <td><p>步行
 walking</p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+      
+        <h3 id="city.map.v2.SublineType">SublineType</h3>
+        <p>支线类型</p><p>Type of subline</p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>SUBLINE_TYPE_UNSPECIFIED</td>
+                <td>0</td>
+                <td><p>未指定
+unspecified</p></td>
+              </tr>
+            
+              <tr>
+                <td>SUBLINE_TYPE_BUS</td>
+                <td>1</td>
+                <td><p>公交类型支线
+The subline is a bus line</p></td>
+              </tr>
+            
+              <tr>
+                <td>SUBLINE_TYPE_SUBWAY</td>
+                <td>2</td>
+                <td><p>地铁类型支线
+The subline is a subway line</p></td>
               </tr>
             
           </tbody>

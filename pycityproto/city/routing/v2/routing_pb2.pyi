@@ -66,16 +66,26 @@ class WalkingJourneyBody(_message.Message):
     def __init__(self, route: _Optional[_Iterable[_Union[WalkingRouteSegment, _Mapping]]]=..., eta: _Optional[float]=...) -> None:
         ...
 
-class BusJourneyBody(_message.Message):
-    __slots__ = ['line_id', 'start_station_id', 'end_station_id']
-    LINE_ID_FIELD_NUMBER: _ClassVar[int]
+class TransferSegment(_message.Message):
+    __slots__ = ['subline_id', 'start_station_id', 'end_station_id']
+    SUBLINE_ID_FIELD_NUMBER: _ClassVar[int]
     START_STATION_ID_FIELD_NUMBER: _ClassVar[int]
     END_STATION_ID_FIELD_NUMBER: _ClassVar[int]
-    line_id: int
+    subline_id: int
     start_station_id: int
     end_station_id: int
 
-    def __init__(self, line_id: _Optional[int]=..., start_station_id: _Optional[int]=..., end_station_id: _Optional[int]=...) -> None:
+    def __init__(self, subline_id: _Optional[int]=..., start_station_id: _Optional[int]=..., end_station_id: _Optional[int]=...) -> None:
+        ...
+
+class BusJourneyBody(_message.Message):
+    __slots__ = ['transfers', 'eta']
+    TRANSFERS_FIELD_NUMBER: _ClassVar[int]
+    ETA_FIELD_NUMBER: _ClassVar[int]
+    transfers: _containers.RepeatedCompositeFieldContainer[TransferSegment]
+    eta: float
+
+    def __init__(self, transfers: _Optional[_Iterable[_Union[TransferSegment, _Mapping]]]=..., eta: _Optional[float]=...) -> None:
         ...
 
 class Journey(_message.Message):
@@ -90,30 +100,6 @@ class Journey(_message.Message):
     by_bus: BusJourneyBody
 
     def __init__(self, type: _Optional[_Union[JourneyType, str]]=..., driving: _Optional[_Union[DrivingJourneyBody, _Mapping]]=..., walking: _Optional[_Union[WalkingJourneyBody, _Mapping]]=..., by_bus: _Optional[_Union[BusJourneyBody, _Mapping]]=...) -> None:
-        ...
-
-class BusLine(_message.Message):
-    __slots__ = ['line_id', 'stops', 'distances', 'interval', 'count']
-    LINE_ID_FIELD_NUMBER: _ClassVar[int]
-    STOPS_FIELD_NUMBER: _ClassVar[int]
-    DISTANCES_FIELD_NUMBER: _ClassVar[int]
-    INTERVAL_FIELD_NUMBER: _ClassVar[int]
-    COUNT_FIELD_NUMBER: _ClassVar[int]
-    line_id: int
-    stops: _containers.RepeatedScalarFieldContainer[int]
-    distances: _containers.RepeatedScalarFieldContainer[float]
-    interval: int
-    count: int
-
-    def __init__(self, line_id: _Optional[int]=..., stops: _Optional[_Iterable[int]]=..., distances: _Optional[_Iterable[float]]=..., interval: _Optional[int]=..., count: _Optional[int]=...) -> None:
-        ...
-
-class BusLines(_message.Message):
-    __slots__ = ['lines']
-    LINES_FIELD_NUMBER: _ClassVar[int]
-    lines: _containers.RepeatedCompositeFieldContainer[BusLine]
-
-    def __init__(self, lines: _Optional[_Iterable[_Union[BusLine, _Mapping]]]=...) -> None:
         ...
 
 class RoadStatus(_message.Message):

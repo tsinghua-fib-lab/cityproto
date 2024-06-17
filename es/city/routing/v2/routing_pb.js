@@ -105,14 +105,31 @@ export const WalkingJourneyBody = proto3.makeMessageType(
 );
 
 /**
+ * message BusJourneyBody {
+ *   int32 line_id = 1;
+ *   int32 start_station_id = 2;
+ *   int32 end_station_id = 3;
+ * }
+ *
+ * @generated from message city.routing.v2.TransferSegment
+ */
+export const TransferSegment = proto3.makeMessageType(
+  "city.routing.v2.TransferSegment",
+  () => [
+    { no: 1, name: "subline_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "start_station_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "end_station_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ],
+);
+
+/**
  * @generated from message city.routing.v2.BusJourneyBody
  */
 export const BusJourneyBody = proto3.makeMessageType(
   "city.routing.v2.BusJourneyBody",
   () => [
-    { no: 1, name: "line_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 2, name: "start_station_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 3, name: "end_station_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 1, name: "transfers", kind: "message", T: TransferSegment, repeated: true },
+    { no: 2, name: "eta", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
   ],
 );
 
@@ -129,36 +146,6 @@ export const Journey = proto3.makeMessageType(
     { no: 2, name: "driving", kind: "message", T: DrivingJourneyBody, opt: true },
     { no: 3, name: "walking", kind: "message", T: WalkingJourneyBody, opt: true },
     { no: 4, name: "by_bus", kind: "message", T: BusJourneyBody, opt: true },
-  ],
-);
-
-/**
- * 公交线路
- * Bus line
- *
- * @generated from message city.routing.v2.BusLine
- */
-export const BusLine = proto3.makeMessageType(
-  "city.routing.v2.BusLine",
-  () => [
-    { no: 1, name: "line_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 2, name: "stops", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
-    { no: 3, name: "distances", kind: "scalar", T: 1 /* ScalarType.DOUBLE */, repeated: true },
-    { no: 4, name: "interval", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 5, name: "count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-  ],
-);
-
-/**
- * 公交线路集合，对应一个公交线路pb文件或一个公交线路mongodb collection
- * Bus lines collection, corresponding to a bus line PB file or a bus line mongodb collection
- *
- * @generated from message city.routing.v2.BusLines
- */
-export const BusLines = proto3.makeMessageType(
-  "city.routing.v2.BusLines",
-  () => [
-    { no: 1, name: "lines", kind: "message", T: BusLine, repeated: true },
   ],
 );
 
