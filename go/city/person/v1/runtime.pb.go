@@ -30,13 +30,13 @@ type BaseRuntime struct {
 	X float64 `protobuf:"fixed64,1,opt,name=x,proto3" json:"x,omitempty" yaml:"x" bson:"x" db:"x"`
 	// y坐标
 	// y coordinate
-	Y float64 `protobuf:"fixed64,2,opt,name=y,proto3" json:"y,omitempty" yaml:"y" bson:"y" db:"y"`
+	Y float64 `protobuf:"fixed64,2,opt,name=y,proto3" json:"y,omitempty" bson:"y" db:"y" yaml:"y"`
 	// 车速
 	// velocity (m/s)
 	V float64 `protobuf:"fixed64,3,opt,name=v,proto3" json:"v,omitempty" yaml:"v" bson:"v" db:"v"`
 	// 方向(rad)，逆时针方向增加，0为正东方向
 	// direction (rad), increase in counterclockwise direction, 0 is east
-	Direction float64 `protobuf:"fixed64,4,opt,name=direction,proto3" json:"direction,omitempty" yaml:"direction" bson:"direction" db:"direction"`
+	Direction float64 `protobuf:"fixed64,4,opt,name=direction,proto3" json:"direction,omitempty" bson:"direction" db:"direction" yaml:"direction"`
 	// 长度
 	// length
 	L float64 `protobuf:"fixed64,5,opt,name=l,proto3" json:"l,omitempty" yaml:"l" bson:"l" db:"l"`
@@ -116,10 +116,10 @@ type BaseRuntimeOnRoad struct {
 
 	// 车道ID
 	// lane ID
-	LaneId int32 `protobuf:"varint,1,opt,name=lane_id,json=laneId,proto3" json:"lane_id,omitempty" bson:"lane_id" db:"lane_id" yaml:"lane_id"`
+	LaneId int32 `protobuf:"varint,1,opt,name=lane_id,json=laneId,proto3" json:"lane_id,omitempty" yaml:"lane_id" bson:"lane_id" db:"lane_id"`
 	// 车道中心线坐标
 	// lane center line coordinate
-	S float64 `protobuf:"fixed64,2,opt,name=s,proto3" json:"s,omitempty" db:"s" yaml:"s" bson:"s"`
+	S float64 `protobuf:"fixed64,2,opt,name=s,proto3" json:"s,omitempty" yaml:"s" bson:"s" db:"s"`
 }
 
 func (x *BaseRuntimeOnRoad) Reset() {

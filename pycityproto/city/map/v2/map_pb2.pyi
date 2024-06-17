@@ -42,6 +42,12 @@ class LandUseType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     LAND_USE_TYPE_PUBLIC: _ClassVar[LandUseType]
     LAND_USE_TYPE_TRANSPORTATION: _ClassVar[LandUseType]
     LAND_USE_TYPE_OTHER: _ClassVar[LandUseType]
+
+class SublineType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+    __slots__ = []
+    SUBLINE_TYPE_UNSPECIFIED: _ClassVar[SublineType]
+    SUBLINE_TYPE_BUS: _ClassVar[SublineType]
+    SUBLINE_TYPE_SUBWAY: _ClassVar[SublineType]
 LANE_TYPE_UNSPECIFIED: LaneType
 LANE_TYPE_DRIVING: LaneType
 LANE_TYPE_WALKING: LaneType
@@ -63,6 +69,9 @@ LAND_USE_TYPE_RESIDENTIAL: LandUseType
 LAND_USE_TYPE_PUBLIC: LandUseType
 LAND_USE_TYPE_TRANSPORTATION: LandUseType
 LAND_USE_TYPE_OTHER: LandUseType
+SUBLINE_TYPE_UNSPECIFIED: SublineType
+SUBLINE_TYPE_BUS: SublineType
+SUBLINE_TYPE_SUBWAY: SublineType
 
 class Polyline(_message.Message):
     __slots__ = ['nodes']
@@ -73,7 +82,7 @@ class Polyline(_message.Message):
         ...
 
 class Header(_message.Message):
-    __slots__ = ['name', 'date', 'north', 'south', 'east', 'west', 'projection']
+    __slots__ = ['name', 'date', 'north', 'south', 'east', 'west', 'projection', 'taz_x_step', 'taz_y_step']
     NAME_FIELD_NUMBER: _ClassVar[int]
     DATE_FIELD_NUMBER: _ClassVar[int]
     NORTH_FIELD_NUMBER: _ClassVar[int]
@@ -81,6 +90,8 @@ class Header(_message.Message):
     EAST_FIELD_NUMBER: _ClassVar[int]
     WEST_FIELD_NUMBER: _ClassVar[int]
     PROJECTION_FIELD_NUMBER: _ClassVar[int]
+    TAZ_X_STEP_FIELD_NUMBER: _ClassVar[int]
+    TAZ_Y_STEP_FIELD_NUMBER: _ClassVar[int]
     name: str
     date: str
     north: float
@@ -88,8 +99,10 @@ class Header(_message.Message):
     east: float
     west: float
     projection: str
+    taz_x_step: float
+    taz_y_step: float
 
-    def __init__(self, name: _Optional[str]=..., date: _Optional[str]=..., north: _Optional[float]=..., south: _Optional[float]=..., east: _Optional[float]=..., west: _Optional[float]=..., projection: _Optional[str]=...) -> None:
+    def __init__(self, name: _Optional[str]=..., date: _Optional[str]=..., north: _Optional[float]=..., south: _Optional[float]=..., east: _Optional[float]=..., west: _Optional[float]=..., projection: _Optional[str]=..., taz_x_step: _Optional[float]=..., taz_y_step: _Optional[float]=...) -> None:
         ...
 
 class LaneOverlap(_message.Message):
@@ -220,8 +233,62 @@ class Junction(_message.Message):
     def __init__(self, id: _Optional[int]=..., lane_ids: _Optional[_Iterable[int]]=..., driving_lane_groups: _Optional[_Iterable[_Union[JunctionLaneGroup, _Mapping]]]=..., phases: _Optional[_Iterable[_Union[_light_pb2.AvailablePhase, _Mapping]]]=..., fixed_program: _Optional[_Union[_light_pb2.TrafficLight, _Mapping]]=...) -> None:
         ...
 
+class RoadIds(_message.Message):
+    __slots__ = ['road_ids']
+    ROAD_IDS_FIELD_NUMBER: _ClassVar[int]
+    road_ids: _containers.RepeatedScalarFieldContainer[int]
+
+    def __init__(self, road_ids: _Optional[_Iterable[int]]=...) -> None:
+        ...
+
+class SublineSchedules(_message.Message):
+    __slots__ = ['departure_times', 'offset_times']
+    DEPARTURE_TIMES_FIELD_NUMBER: _ClassVar[int]
+    OFFSET_TIMES_FIELD_NUMBER: _ClassVar[int]
+    departure_times: _containers.RepeatedScalarFieldContainer[float]
+    offset_times: _containers.RepeatedScalarFieldContainer[float]
+
+    def __init__(self, departure_times: _Optional[_Iterable[float]]=..., offset_times: _Optional[_Iterable[float]]=...) -> None:
+        ...
+
+class HeuristicTAZCost(_message.Message):
+    __slots__ = ['taz_x_id', 'taz_y_id', 'aoi_id', 'cost']
+    TAZ_X_ID_FIELD_NUMBER: _ClassVar[int]
+    TAZ_Y_ID_FIELD_NUMBER: _ClassVar[int]
+    AOI_ID_FIELD_NUMBER: _ClassVar[int]
+    COST_FIELD_NUMBER: _ClassVar[int]
+    taz_x_id: int
+    taz_y_id: int
+    aoi_id: int
+    cost: float
+
+    def __init__(self, taz_x_id: _Optional[int]=..., taz_y_id: _Optional[int]=..., aoi_id: _Optional[int]=..., cost: _Optional[float]=...) -> None:
+        ...
+
+class PublicTransportSubline(_message.Message):
+    __slots__ = ['id', 'name', 'aoi_ids', 'station_connection_road_ids', 'type', 'parent_name', 'schedules', 'taz_costs']
+    ID_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    AOI_IDS_FIELD_NUMBER: _ClassVar[int]
+    STATION_CONNECTION_ROAD_IDS_FIELD_NUMBER: _ClassVar[int]
+    TYPE_FIELD_NUMBER: _ClassVar[int]
+    PARENT_NAME_FIELD_NUMBER: _ClassVar[int]
+    SCHEDULES_FIELD_NUMBER: _ClassVar[int]
+    TAZ_COSTS_FIELD_NUMBER: _ClassVar[int]
+    id: int
+    name: str
+    aoi_ids: _containers.RepeatedScalarFieldContainer[int]
+    station_connection_road_ids: _containers.RepeatedCompositeFieldContainer[RoadIds]
+    type: SublineType
+    parent_name: str
+    schedules: SublineSchedules
+    taz_costs: _containers.RepeatedCompositeFieldContainer[HeuristicTAZCost]
+
+    def __init__(self, id: _Optional[int]=..., name: _Optional[str]=..., aoi_ids: _Optional[_Iterable[int]]=..., station_connection_road_ids: _Optional[_Iterable[_Union[RoadIds, _Mapping]]]=..., type: _Optional[_Union[SublineType, str]]=..., parent_name: _Optional[str]=..., schedules: _Optional[_Union[SublineSchedules, _Mapping]]=..., taz_costs: _Optional[_Iterable[_Union[HeuristicTAZCost, _Mapping]]]=...) -> None:
+        ...
+
 class Aoi(_message.Message):
-    __slots__ = ['id', 'name', 'type', 'driving_positions', 'walking_positions', 'positions', 'driving_gates', 'walking_gates', 'area', 'land_use', 'urban_land_use', 'poi_ids']
+    __slots__ = ['id', 'name', 'type', 'driving_positions', 'walking_positions', 'positions', 'driving_gates', 'walking_gates', 'area', 'land_use', 'urban_land_use', 'poi_ids', 'subline_ids']
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
@@ -234,6 +301,7 @@ class Aoi(_message.Message):
     LAND_USE_FIELD_NUMBER: _ClassVar[int]
     URBAN_LAND_USE_FIELD_NUMBER: _ClassVar[int]
     POI_IDS_FIELD_NUMBER: _ClassVar[int]
+    SUBLINE_IDS_FIELD_NUMBER: _ClassVar[int]
     id: int
     name: str
     type: AoiType
@@ -246,8 +314,9 @@ class Aoi(_message.Message):
     land_use: LandUseType
     urban_land_use: str
     poi_ids: _containers.RepeatedScalarFieldContainer[int]
+    subline_ids: _containers.RepeatedScalarFieldContainer[int]
 
-    def __init__(self, id: _Optional[int]=..., name: _Optional[str]=..., type: _Optional[_Union[AoiType, str]]=..., driving_positions: _Optional[_Iterable[_Union[_geo_pb2.LanePosition, _Mapping]]]=..., walking_positions: _Optional[_Iterable[_Union[_geo_pb2.LanePosition, _Mapping]]]=..., positions: _Optional[_Iterable[_Union[_geo_pb2.XYPosition, _Mapping]]]=..., driving_gates: _Optional[_Iterable[_Union[_geo_pb2.XYPosition, _Mapping]]]=..., walking_gates: _Optional[_Iterable[_Union[_geo_pb2.XYPosition, _Mapping]]]=..., area: _Optional[float]=..., land_use: _Optional[_Union[LandUseType, str]]=..., urban_land_use: _Optional[str]=..., poi_ids: _Optional[_Iterable[int]]=...) -> None:
+    def __init__(self, id: _Optional[int]=..., name: _Optional[str]=..., type: _Optional[_Union[AoiType, str]]=..., driving_positions: _Optional[_Iterable[_Union[_geo_pb2.LanePosition, _Mapping]]]=..., walking_positions: _Optional[_Iterable[_Union[_geo_pb2.LanePosition, _Mapping]]]=..., positions: _Optional[_Iterable[_Union[_geo_pb2.XYPosition, _Mapping]]]=..., driving_gates: _Optional[_Iterable[_Union[_geo_pb2.XYPosition, _Mapping]]]=..., walking_gates: _Optional[_Iterable[_Union[_geo_pb2.XYPosition, _Mapping]]]=..., area: _Optional[float]=..., land_use: _Optional[_Union[LandUseType, str]]=..., urban_land_use: _Optional[str]=..., poi_ids: _Optional[_Iterable[int]]=..., subline_ids: _Optional[_Iterable[int]]=...) -> None:
         ...
 
 class Poi(_message.Message):
@@ -271,19 +340,21 @@ class Poi(_message.Message):
         ...
 
 class Map(_message.Message):
-    __slots__ = ['header', 'lanes', 'roads', 'junctions', 'aois', 'pois']
+    __slots__ = ['header', 'lanes', 'roads', 'junctions', 'aois', 'pois', 'sublines']
     HEADER_FIELD_NUMBER: _ClassVar[int]
     LANES_FIELD_NUMBER: _ClassVar[int]
     ROADS_FIELD_NUMBER: _ClassVar[int]
     JUNCTIONS_FIELD_NUMBER: _ClassVar[int]
     AOIS_FIELD_NUMBER: _ClassVar[int]
     POIS_FIELD_NUMBER: _ClassVar[int]
+    SUBLINES_FIELD_NUMBER: _ClassVar[int]
     header: Header
     lanes: _containers.RepeatedCompositeFieldContainer[Lane]
     roads: _containers.RepeatedCompositeFieldContainer[Road]
     junctions: _containers.RepeatedCompositeFieldContainer[Junction]
     aois: _containers.RepeatedCompositeFieldContainer[Aoi]
     pois: _containers.RepeatedCompositeFieldContainer[Poi]
+    sublines: _containers.RepeatedCompositeFieldContainer[PublicTransportSubline]
 
-    def __init__(self, header: _Optional[_Union[Header, _Mapping]]=..., lanes: _Optional[_Iterable[_Union[Lane, _Mapping]]]=..., roads: _Optional[_Iterable[_Union[Road, _Mapping]]]=..., junctions: _Optional[_Iterable[_Union[Junction, _Mapping]]]=..., aois: _Optional[_Iterable[_Union[Aoi, _Mapping]]]=..., pois: _Optional[_Iterable[_Union[Poi, _Mapping]]]=...) -> None:
+    def __init__(self, header: _Optional[_Union[Header, _Mapping]]=..., lanes: _Optional[_Iterable[_Union[Lane, _Mapping]]]=..., roads: _Optional[_Iterable[_Union[Road, _Mapping]]]=..., junctions: _Optional[_Iterable[_Union[Junction, _Mapping]]]=..., aois: _Optional[_Iterable[_Union[Aoi, _Mapping]]]=..., pois: _Optional[_Iterable[_Union[Poi, _Mapping]]]=..., sublines: _Optional[_Iterable[_Union[PublicTransportSubline, _Mapping]]]=...) -> None:
         ...

@@ -51,12 +51,6 @@ namespace v2 {
 class BusJourneyBody;
 struct BusJourneyBodyDefaultTypeInternal;
 extern BusJourneyBodyDefaultTypeInternal _BusJourneyBody_default_instance_;
-class BusLine;
-struct BusLineDefaultTypeInternal;
-extern BusLineDefaultTypeInternal _BusLine_default_instance_;
-class BusLines;
-struct BusLinesDefaultTypeInternal;
-extern BusLinesDefaultTypeInternal _BusLines_default_instance_;
 class DrivingJourneyBody;
 struct DrivingJourneyBodyDefaultTypeInternal;
 extern DrivingJourneyBodyDefaultTypeInternal _DrivingJourneyBody_default_instance_;
@@ -69,6 +63,9 @@ extern RoadStatusDefaultTypeInternal _RoadStatus_default_instance_;
 class RoadStatuses;
 struct RoadStatusesDefaultTypeInternal;
 extern RoadStatusesDefaultTypeInternal _RoadStatuses_default_instance_;
+class TransferSegment;
+struct TransferSegmentDefaultTypeInternal;
+extern TransferSegmentDefaultTypeInternal _TransferSegment_default_instance_;
 class WalkingJourneyBody;
 struct WalkingJourneyBodyDefaultTypeInternal;
 extern WalkingJourneyBodyDefaultTypeInternal _WalkingJourneyBody_default_instance_;
@@ -80,12 +77,11 @@ extern WalkingRouteSegmentDefaultTypeInternal _WalkingRouteSegment_default_insta
 }  // namespace city
 PROTOBUF_NAMESPACE_OPEN
 template<> ::city::routing::v2::BusJourneyBody* Arena::CreateMaybeMessage<::city::routing::v2::BusJourneyBody>(Arena*);
-template<> ::city::routing::v2::BusLine* Arena::CreateMaybeMessage<::city::routing::v2::BusLine>(Arena*);
-template<> ::city::routing::v2::BusLines* Arena::CreateMaybeMessage<::city::routing::v2::BusLines>(Arena*);
 template<> ::city::routing::v2::DrivingJourneyBody* Arena::CreateMaybeMessage<::city::routing::v2::DrivingJourneyBody>(Arena*);
 template<> ::city::routing::v2::Journey* Arena::CreateMaybeMessage<::city::routing::v2::Journey>(Arena*);
 template<> ::city::routing::v2::RoadStatus* Arena::CreateMaybeMessage<::city::routing::v2::RoadStatus>(Arena*);
 template<> ::city::routing::v2::RoadStatuses* Arena::CreateMaybeMessage<::city::routing::v2::RoadStatuses>(Arena*);
+template<> ::city::routing::v2::TransferSegment* Arena::CreateMaybeMessage<::city::routing::v2::TransferSegment>(Arena*);
 template<> ::city::routing::v2::WalkingJourneyBody* Arena::CreateMaybeMessage<::city::routing::v2::WalkingJourneyBody>(Arena*);
 template<> ::city::routing::v2::WalkingRouteSegment* Arena::CreateMaybeMessage<::city::routing::v2::WalkingRouteSegment>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
@@ -675,6 +671,176 @@ class WalkingJourneyBody final :
 };
 // -------------------------------------------------------------------
 
+class TransferSegment final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.routing.v2.TransferSegment) */ {
+ public:
+  inline TransferSegment() : TransferSegment(nullptr) {}
+  ~TransferSegment() override;
+  explicit PROTOBUF_CONSTEXPR TransferSegment(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  TransferSegment(const TransferSegment& from);
+  TransferSegment(TransferSegment&& from) noexcept
+    : TransferSegment() {
+    *this = ::std::move(from);
+  }
+
+  inline TransferSegment& operator=(const TransferSegment& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline TransferSegment& operator=(TransferSegment&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const TransferSegment& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const TransferSegment* internal_default_instance() {
+    return reinterpret_cast<const TransferSegment*>(
+               &_TransferSegment_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    3;
+
+  friend void swap(TransferSegment& a, TransferSegment& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(TransferSegment* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(TransferSegment* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  TransferSegment* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<TransferSegment>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const TransferSegment& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const TransferSegment& from) {
+    TransferSegment::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(TransferSegment* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.routing.v2.TransferSegment";
+  }
+  protected:
+  explicit TransferSegment(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kSublineIdFieldNumber = 1,
+    kStartStationIdFieldNumber = 2,
+    kEndStationIdFieldNumber = 3,
+  };
+  // int32 subline_id = 1 [json_name = "sublineId"];
+  void clear_subline_id();
+  int32_t subline_id() const;
+  void set_subline_id(int32_t value);
+  private:
+  int32_t _internal_subline_id() const;
+  void _internal_set_subline_id(int32_t value);
+  public:
+
+  // int32 start_station_id = 2 [json_name = "startStationId"];
+  void clear_start_station_id();
+  int32_t start_station_id() const;
+  void set_start_station_id(int32_t value);
+  private:
+  int32_t _internal_start_station_id() const;
+  void _internal_set_start_station_id(int32_t value);
+  public:
+
+  // int32 end_station_id = 3 [json_name = "endStationId"];
+  void clear_end_station_id();
+  int32_t end_station_id() const;
+  void set_end_station_id(int32_t value);
+  private:
+  int32_t _internal_end_station_id() const;
+  void _internal_set_end_station_id(int32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:city.routing.v2.TransferSegment)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    int32_t subline_id_;
+    int32_t start_station_id_;
+    int32_t end_station_id_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_city_2frouting_2fv2_2frouting_2eproto;
+};
+// -------------------------------------------------------------------
+
 class BusJourneyBody final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.routing.v2.BusJourneyBody) */ {
  public:
@@ -723,7 +889,7 @@ class BusJourneyBody final :
                &_BusJourneyBody_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    4;
 
   friend void swap(BusJourneyBody& a, BusJourneyBody& b) {
     a.Swap(&b);
@@ -796,35 +962,34 @@ class BusJourneyBody final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kLineIdFieldNumber = 1,
-    kStartStationIdFieldNumber = 2,
-    kEndStationIdFieldNumber = 3,
+    kTransfersFieldNumber = 1,
+    kEtaFieldNumber = 2,
   };
-  // int32 line_id = 1 [json_name = "lineId"];
-  void clear_line_id();
-  int32_t line_id() const;
-  void set_line_id(int32_t value);
+  // repeated .city.routing.v2.TransferSegment transfers = 1 [json_name = "transfers"];
+  int transfers_size() const;
   private:
-  int32_t _internal_line_id() const;
-  void _internal_set_line_id(int32_t value);
+  int _internal_transfers_size() const;
   public:
-
-  // int32 start_station_id = 2 [json_name = "startStationId"];
-  void clear_start_station_id();
-  int32_t start_station_id() const;
-  void set_start_station_id(int32_t value);
+  void clear_transfers();
+  ::city::routing::v2::TransferSegment* mutable_transfers(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::routing::v2::TransferSegment >*
+      mutable_transfers();
   private:
-  int32_t _internal_start_station_id() const;
-  void _internal_set_start_station_id(int32_t value);
+  const ::city::routing::v2::TransferSegment& _internal_transfers(int index) const;
+  ::city::routing::v2::TransferSegment* _internal_add_transfers();
   public:
+  const ::city::routing::v2::TransferSegment& transfers(int index) const;
+  ::city::routing::v2::TransferSegment* add_transfers();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::routing::v2::TransferSegment >&
+      transfers() const;
 
-  // int32 end_station_id = 3 [json_name = "endStationId"];
-  void clear_end_station_id();
-  int32_t end_station_id() const;
-  void set_end_station_id(int32_t value);
+  // double eta = 2 [json_name = "eta"];
+  void clear_eta();
+  double eta() const;
+  void set_eta(double value);
   private:
-  int32_t _internal_end_station_id() const;
-  void _internal_set_end_station_id(int32_t value);
+  double _internal_eta() const;
+  void _internal_set_eta(double value);
   public:
 
   // @@protoc_insertion_point(class_scope:city.routing.v2.BusJourneyBody)
@@ -835,9 +1000,8 @@ class BusJourneyBody final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    int32_t line_id_;
-    int32_t start_station_id_;
-    int32_t end_station_id_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::routing::v2::TransferSegment > transfers_;
+    double eta_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -893,7 +1057,7 @@ class Journey final :
                &_Journey_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    5;
 
   friend void swap(Journey& a, Journey& b) {
     a.Swap(&b);
@@ -1054,382 +1218,6 @@ class Journey final :
 };
 // -------------------------------------------------------------------
 
-class BusLine final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.routing.v2.BusLine) */ {
- public:
-  inline BusLine() : BusLine(nullptr) {}
-  ~BusLine() override;
-  explicit PROTOBUF_CONSTEXPR BusLine(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  BusLine(const BusLine& from);
-  BusLine(BusLine&& from) noexcept
-    : BusLine() {
-    *this = ::std::move(from);
-  }
-
-  inline BusLine& operator=(const BusLine& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline BusLine& operator=(BusLine&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()
-  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
-        && GetOwningArena() != nullptr
-  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
-    ) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const BusLine& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const BusLine* internal_default_instance() {
-    return reinterpret_cast<const BusLine*>(
-               &_BusLine_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    5;
-
-  friend void swap(BusLine& a, BusLine& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(BusLine* other) {
-    if (other == this) return;
-  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() != nullptr &&
-        GetOwningArena() == other->GetOwningArena()) {
-   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() == other->GetOwningArena()) {
-  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(BusLine* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  BusLine* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<BusLine>(arena);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const BusLine& from);
-  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom( const BusLine& from) {
-    BusLine::MergeImpl(*this, from);
-  }
-  private:
-  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
-  public:
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  uint8_t* _InternalSerialize(
-      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
-
-  private:
-  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(BusLine* other);
-
-  private:
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "city.routing.v2.BusLine";
-  }
-  protected:
-  explicit BusLine(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                       bool is_message_owned = false);
-  public:
-
-  static const ClassData _class_data_;
-  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kStopsFieldNumber = 2,
-    kDistancesFieldNumber = 3,
-    kLineIdFieldNumber = 1,
-    kIntervalFieldNumber = 4,
-    kCountFieldNumber = 5,
-  };
-  // repeated int32 stops = 2 [json_name = "stops"];
-  int stops_size() const;
-  private:
-  int _internal_stops_size() const;
-  public:
-  void clear_stops();
-  private:
-  int32_t _internal_stops(int index) const;
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
-      _internal_stops() const;
-  void _internal_add_stops(int32_t value);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
-      _internal_mutable_stops();
-  public:
-  int32_t stops(int index) const;
-  void set_stops(int index, int32_t value);
-  void add_stops(int32_t value);
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
-      stops() const;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
-      mutable_stops();
-
-  // repeated double distances = 3 [json_name = "distances"];
-  int distances_size() const;
-  private:
-  int _internal_distances_size() const;
-  public:
-  void clear_distances();
-  private:
-  double _internal_distances(int index) const;
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< double >&
-      _internal_distances() const;
-  void _internal_add_distances(double value);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedField< double >*
-      _internal_mutable_distances();
-  public:
-  double distances(int index) const;
-  void set_distances(int index, double value);
-  void add_distances(double value);
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< double >&
-      distances() const;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedField< double >*
-      mutable_distances();
-
-  // int32 line_id = 1 [json_name = "lineId"];
-  void clear_line_id();
-  int32_t line_id() const;
-  void set_line_id(int32_t value);
-  private:
-  int32_t _internal_line_id() const;
-  void _internal_set_line_id(int32_t value);
-  public:
-
-  // int32 interval = 4 [json_name = "interval"];
-  void clear_interval();
-  int32_t interval() const;
-  void set_interval(int32_t value);
-  private:
-  int32_t _internal_interval() const;
-  void _internal_set_interval(int32_t value);
-  public:
-
-  // int32 count = 5 [json_name = "count"];
-  void clear_count();
-  int32_t count() const;
-  void set_count(int32_t value);
-  private:
-  int32_t _internal_count() const;
-  void _internal_set_count(int32_t value);
-  public:
-
-  // @@protoc_insertion_point(class_scope:city.routing.v2.BusLine)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t > stops_;
-    mutable std::atomic<int> _stops_cached_byte_size_;
-    ::PROTOBUF_NAMESPACE_ID::RepeatedField< double > distances_;
-    int32_t line_id_;
-    int32_t interval_;
-    int32_t count_;
-    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  };
-  union { Impl_ _impl_; };
-  friend struct ::TableStruct_city_2frouting_2fv2_2frouting_2eproto;
-};
-// -------------------------------------------------------------------
-
-class BusLines final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.routing.v2.BusLines) */ {
- public:
-  inline BusLines() : BusLines(nullptr) {}
-  ~BusLines() override;
-  explicit PROTOBUF_CONSTEXPR BusLines(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  BusLines(const BusLines& from);
-  BusLines(BusLines&& from) noexcept
-    : BusLines() {
-    *this = ::std::move(from);
-  }
-
-  inline BusLines& operator=(const BusLines& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline BusLines& operator=(BusLines&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()
-  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
-        && GetOwningArena() != nullptr
-  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
-    ) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const BusLines& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const BusLines* internal_default_instance() {
-    return reinterpret_cast<const BusLines*>(
-               &_BusLines_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    6;
-
-  friend void swap(BusLines& a, BusLines& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(BusLines* other) {
-    if (other == this) return;
-  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() != nullptr &&
-        GetOwningArena() == other->GetOwningArena()) {
-   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() == other->GetOwningArena()) {
-  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(BusLines* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  BusLines* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<BusLines>(arena);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const BusLines& from);
-  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom( const BusLines& from) {
-    BusLines::MergeImpl(*this, from);
-  }
-  private:
-  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
-  public:
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  uint8_t* _InternalSerialize(
-      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
-
-  private:
-  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(BusLines* other);
-
-  private:
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "city.routing.v2.BusLines";
-  }
-  protected:
-  explicit BusLines(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                       bool is_message_owned = false);
-  public:
-
-  static const ClassData _class_data_;
-  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kLinesFieldNumber = 1,
-  };
-  // repeated .city.routing.v2.BusLine lines = 1 [json_name = "lines"];
-  int lines_size() const;
-  private:
-  int _internal_lines_size() const;
-  public:
-  void clear_lines();
-  ::city::routing::v2::BusLine* mutable_lines(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::routing::v2::BusLine >*
-      mutable_lines();
-  private:
-  const ::city::routing::v2::BusLine& _internal_lines(int index) const;
-  ::city::routing::v2::BusLine* _internal_add_lines();
-  public:
-  const ::city::routing::v2::BusLine& lines(int index) const;
-  ::city::routing::v2::BusLine* add_lines();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::routing::v2::BusLine >&
-      lines() const;
-
-  // @@protoc_insertion_point(class_scope:city.routing.v2.BusLines)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::routing::v2::BusLine > lines_;
-    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  };
-  union { Impl_ _impl_; };
-  friend struct ::TableStruct_city_2frouting_2fv2_2frouting_2eproto;
-};
-// -------------------------------------------------------------------
-
 class RoadStatus final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.routing.v2.RoadStatus) */ {
  public:
@@ -1478,7 +1266,7 @@ class RoadStatus final :
                &_RoadStatus_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    6;
 
   friend void swap(RoadStatus& a, RoadStatus& b) {
     a.Swap(&b);
@@ -1650,7 +1438,7 @@ class RoadStatuses final :
                &_RoadStatuses_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    7;
 
   friend void swap(RoadStatuses& a, RoadStatuses& b) {
     a.Swap(&b);
@@ -1945,66 +1733,130 @@ inline void WalkingJourneyBody::set_eta(double value) {
 
 // -------------------------------------------------------------------
 
-// BusJourneyBody
+// TransferSegment
 
-// int32 line_id = 1 [json_name = "lineId"];
-inline void BusJourneyBody::clear_line_id() {
-  _impl_.line_id_ = 0;
+// int32 subline_id = 1 [json_name = "sublineId"];
+inline void TransferSegment::clear_subline_id() {
+  _impl_.subline_id_ = 0;
 }
-inline int32_t BusJourneyBody::_internal_line_id() const {
-  return _impl_.line_id_;
+inline int32_t TransferSegment::_internal_subline_id() const {
+  return _impl_.subline_id_;
 }
-inline int32_t BusJourneyBody::line_id() const {
-  // @@protoc_insertion_point(field_get:city.routing.v2.BusJourneyBody.line_id)
-  return _internal_line_id();
+inline int32_t TransferSegment::subline_id() const {
+  // @@protoc_insertion_point(field_get:city.routing.v2.TransferSegment.subline_id)
+  return _internal_subline_id();
 }
-inline void BusJourneyBody::_internal_set_line_id(int32_t value) {
+inline void TransferSegment::_internal_set_subline_id(int32_t value) {
   
-  _impl_.line_id_ = value;
+  _impl_.subline_id_ = value;
 }
-inline void BusJourneyBody::set_line_id(int32_t value) {
-  _internal_set_line_id(value);
-  // @@protoc_insertion_point(field_set:city.routing.v2.BusJourneyBody.line_id)
+inline void TransferSegment::set_subline_id(int32_t value) {
+  _internal_set_subline_id(value);
+  // @@protoc_insertion_point(field_set:city.routing.v2.TransferSegment.subline_id)
 }
 
 // int32 start_station_id = 2 [json_name = "startStationId"];
-inline void BusJourneyBody::clear_start_station_id() {
+inline void TransferSegment::clear_start_station_id() {
   _impl_.start_station_id_ = 0;
 }
-inline int32_t BusJourneyBody::_internal_start_station_id() const {
+inline int32_t TransferSegment::_internal_start_station_id() const {
   return _impl_.start_station_id_;
 }
-inline int32_t BusJourneyBody::start_station_id() const {
-  // @@protoc_insertion_point(field_get:city.routing.v2.BusJourneyBody.start_station_id)
+inline int32_t TransferSegment::start_station_id() const {
+  // @@protoc_insertion_point(field_get:city.routing.v2.TransferSegment.start_station_id)
   return _internal_start_station_id();
 }
-inline void BusJourneyBody::_internal_set_start_station_id(int32_t value) {
+inline void TransferSegment::_internal_set_start_station_id(int32_t value) {
   
   _impl_.start_station_id_ = value;
 }
-inline void BusJourneyBody::set_start_station_id(int32_t value) {
+inline void TransferSegment::set_start_station_id(int32_t value) {
   _internal_set_start_station_id(value);
-  // @@protoc_insertion_point(field_set:city.routing.v2.BusJourneyBody.start_station_id)
+  // @@protoc_insertion_point(field_set:city.routing.v2.TransferSegment.start_station_id)
 }
 
 // int32 end_station_id = 3 [json_name = "endStationId"];
-inline void BusJourneyBody::clear_end_station_id() {
+inline void TransferSegment::clear_end_station_id() {
   _impl_.end_station_id_ = 0;
 }
-inline int32_t BusJourneyBody::_internal_end_station_id() const {
+inline int32_t TransferSegment::_internal_end_station_id() const {
   return _impl_.end_station_id_;
 }
-inline int32_t BusJourneyBody::end_station_id() const {
-  // @@protoc_insertion_point(field_get:city.routing.v2.BusJourneyBody.end_station_id)
+inline int32_t TransferSegment::end_station_id() const {
+  // @@protoc_insertion_point(field_get:city.routing.v2.TransferSegment.end_station_id)
   return _internal_end_station_id();
 }
-inline void BusJourneyBody::_internal_set_end_station_id(int32_t value) {
+inline void TransferSegment::_internal_set_end_station_id(int32_t value) {
   
   _impl_.end_station_id_ = value;
 }
-inline void BusJourneyBody::set_end_station_id(int32_t value) {
+inline void TransferSegment::set_end_station_id(int32_t value) {
   _internal_set_end_station_id(value);
-  // @@protoc_insertion_point(field_set:city.routing.v2.BusJourneyBody.end_station_id)
+  // @@protoc_insertion_point(field_set:city.routing.v2.TransferSegment.end_station_id)
+}
+
+// -------------------------------------------------------------------
+
+// BusJourneyBody
+
+// repeated .city.routing.v2.TransferSegment transfers = 1 [json_name = "transfers"];
+inline int BusJourneyBody::_internal_transfers_size() const {
+  return _impl_.transfers_.size();
+}
+inline int BusJourneyBody::transfers_size() const {
+  return _internal_transfers_size();
+}
+inline void BusJourneyBody::clear_transfers() {
+  _impl_.transfers_.Clear();
+}
+inline ::city::routing::v2::TransferSegment* BusJourneyBody::mutable_transfers(int index) {
+  // @@protoc_insertion_point(field_mutable:city.routing.v2.BusJourneyBody.transfers)
+  return _impl_.transfers_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::routing::v2::TransferSegment >*
+BusJourneyBody::mutable_transfers() {
+  // @@protoc_insertion_point(field_mutable_list:city.routing.v2.BusJourneyBody.transfers)
+  return &_impl_.transfers_;
+}
+inline const ::city::routing::v2::TransferSegment& BusJourneyBody::_internal_transfers(int index) const {
+  return _impl_.transfers_.Get(index);
+}
+inline const ::city::routing::v2::TransferSegment& BusJourneyBody::transfers(int index) const {
+  // @@protoc_insertion_point(field_get:city.routing.v2.BusJourneyBody.transfers)
+  return _internal_transfers(index);
+}
+inline ::city::routing::v2::TransferSegment* BusJourneyBody::_internal_add_transfers() {
+  return _impl_.transfers_.Add();
+}
+inline ::city::routing::v2::TransferSegment* BusJourneyBody::add_transfers() {
+  ::city::routing::v2::TransferSegment* _add = _internal_add_transfers();
+  // @@protoc_insertion_point(field_add:city.routing.v2.BusJourneyBody.transfers)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::routing::v2::TransferSegment >&
+BusJourneyBody::transfers() const {
+  // @@protoc_insertion_point(field_list:city.routing.v2.BusJourneyBody.transfers)
+  return _impl_.transfers_;
+}
+
+// double eta = 2 [json_name = "eta"];
+inline void BusJourneyBody::clear_eta() {
+  _impl_.eta_ = 0;
+}
+inline double BusJourneyBody::_internal_eta() const {
+  return _impl_.eta_;
+}
+inline double BusJourneyBody::eta() const {
+  // @@protoc_insertion_point(field_get:city.routing.v2.BusJourneyBody.eta)
+  return _internal_eta();
+}
+inline void BusJourneyBody::_internal_set_eta(double value) {
+  
+  _impl_.eta_ = value;
+}
+inline void BusJourneyBody::set_eta(double value) {
+  _internal_set_eta(value);
+  // @@protoc_insertion_point(field_set:city.routing.v2.BusJourneyBody.eta)
 }
 
 // -------------------------------------------------------------------
@@ -2303,208 +2155,6 @@ inline void Journey::set_allocated_by_bus(::city::routing::v2::BusJourneyBody* b
 
 // -------------------------------------------------------------------
 
-// BusLine
-
-// int32 line_id = 1 [json_name = "lineId"];
-inline void BusLine::clear_line_id() {
-  _impl_.line_id_ = 0;
-}
-inline int32_t BusLine::_internal_line_id() const {
-  return _impl_.line_id_;
-}
-inline int32_t BusLine::line_id() const {
-  // @@protoc_insertion_point(field_get:city.routing.v2.BusLine.line_id)
-  return _internal_line_id();
-}
-inline void BusLine::_internal_set_line_id(int32_t value) {
-  
-  _impl_.line_id_ = value;
-}
-inline void BusLine::set_line_id(int32_t value) {
-  _internal_set_line_id(value);
-  // @@protoc_insertion_point(field_set:city.routing.v2.BusLine.line_id)
-}
-
-// repeated int32 stops = 2 [json_name = "stops"];
-inline int BusLine::_internal_stops_size() const {
-  return _impl_.stops_.size();
-}
-inline int BusLine::stops_size() const {
-  return _internal_stops_size();
-}
-inline void BusLine::clear_stops() {
-  _impl_.stops_.Clear();
-}
-inline int32_t BusLine::_internal_stops(int index) const {
-  return _impl_.stops_.Get(index);
-}
-inline int32_t BusLine::stops(int index) const {
-  // @@protoc_insertion_point(field_get:city.routing.v2.BusLine.stops)
-  return _internal_stops(index);
-}
-inline void BusLine::set_stops(int index, int32_t value) {
-  _impl_.stops_.Set(index, value);
-  // @@protoc_insertion_point(field_set:city.routing.v2.BusLine.stops)
-}
-inline void BusLine::_internal_add_stops(int32_t value) {
-  _impl_.stops_.Add(value);
-}
-inline void BusLine::add_stops(int32_t value) {
-  _internal_add_stops(value);
-  // @@protoc_insertion_point(field_add:city.routing.v2.BusLine.stops)
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
-BusLine::_internal_stops() const {
-  return _impl_.stops_;
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
-BusLine::stops() const {
-  // @@protoc_insertion_point(field_list:city.routing.v2.BusLine.stops)
-  return _internal_stops();
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
-BusLine::_internal_mutable_stops() {
-  return &_impl_.stops_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
-BusLine::mutable_stops() {
-  // @@protoc_insertion_point(field_mutable_list:city.routing.v2.BusLine.stops)
-  return _internal_mutable_stops();
-}
-
-// repeated double distances = 3 [json_name = "distances"];
-inline int BusLine::_internal_distances_size() const {
-  return _impl_.distances_.size();
-}
-inline int BusLine::distances_size() const {
-  return _internal_distances_size();
-}
-inline void BusLine::clear_distances() {
-  _impl_.distances_.Clear();
-}
-inline double BusLine::_internal_distances(int index) const {
-  return _impl_.distances_.Get(index);
-}
-inline double BusLine::distances(int index) const {
-  // @@protoc_insertion_point(field_get:city.routing.v2.BusLine.distances)
-  return _internal_distances(index);
-}
-inline void BusLine::set_distances(int index, double value) {
-  _impl_.distances_.Set(index, value);
-  // @@protoc_insertion_point(field_set:city.routing.v2.BusLine.distances)
-}
-inline void BusLine::_internal_add_distances(double value) {
-  _impl_.distances_.Add(value);
-}
-inline void BusLine::add_distances(double value) {
-  _internal_add_distances(value);
-  // @@protoc_insertion_point(field_add:city.routing.v2.BusLine.distances)
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< double >&
-BusLine::_internal_distances() const {
-  return _impl_.distances_;
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< double >&
-BusLine::distances() const {
-  // @@protoc_insertion_point(field_list:city.routing.v2.BusLine.distances)
-  return _internal_distances();
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< double >*
-BusLine::_internal_mutable_distances() {
-  return &_impl_.distances_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< double >*
-BusLine::mutable_distances() {
-  // @@protoc_insertion_point(field_mutable_list:city.routing.v2.BusLine.distances)
-  return _internal_mutable_distances();
-}
-
-// int32 interval = 4 [json_name = "interval"];
-inline void BusLine::clear_interval() {
-  _impl_.interval_ = 0;
-}
-inline int32_t BusLine::_internal_interval() const {
-  return _impl_.interval_;
-}
-inline int32_t BusLine::interval() const {
-  // @@protoc_insertion_point(field_get:city.routing.v2.BusLine.interval)
-  return _internal_interval();
-}
-inline void BusLine::_internal_set_interval(int32_t value) {
-  
-  _impl_.interval_ = value;
-}
-inline void BusLine::set_interval(int32_t value) {
-  _internal_set_interval(value);
-  // @@protoc_insertion_point(field_set:city.routing.v2.BusLine.interval)
-}
-
-// int32 count = 5 [json_name = "count"];
-inline void BusLine::clear_count() {
-  _impl_.count_ = 0;
-}
-inline int32_t BusLine::_internal_count() const {
-  return _impl_.count_;
-}
-inline int32_t BusLine::count() const {
-  // @@protoc_insertion_point(field_get:city.routing.v2.BusLine.count)
-  return _internal_count();
-}
-inline void BusLine::_internal_set_count(int32_t value) {
-  
-  _impl_.count_ = value;
-}
-inline void BusLine::set_count(int32_t value) {
-  _internal_set_count(value);
-  // @@protoc_insertion_point(field_set:city.routing.v2.BusLine.count)
-}
-
-// -------------------------------------------------------------------
-
-// BusLines
-
-// repeated .city.routing.v2.BusLine lines = 1 [json_name = "lines"];
-inline int BusLines::_internal_lines_size() const {
-  return _impl_.lines_.size();
-}
-inline int BusLines::lines_size() const {
-  return _internal_lines_size();
-}
-inline void BusLines::clear_lines() {
-  _impl_.lines_.Clear();
-}
-inline ::city::routing::v2::BusLine* BusLines::mutable_lines(int index) {
-  // @@protoc_insertion_point(field_mutable:city.routing.v2.BusLines.lines)
-  return _impl_.lines_.Mutable(index);
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::routing::v2::BusLine >*
-BusLines::mutable_lines() {
-  // @@protoc_insertion_point(field_mutable_list:city.routing.v2.BusLines.lines)
-  return &_impl_.lines_;
-}
-inline const ::city::routing::v2::BusLine& BusLines::_internal_lines(int index) const {
-  return _impl_.lines_.Get(index);
-}
-inline const ::city::routing::v2::BusLine& BusLines::lines(int index) const {
-  // @@protoc_insertion_point(field_get:city.routing.v2.BusLines.lines)
-  return _internal_lines(index);
-}
-inline ::city::routing::v2::BusLine* BusLines::_internal_add_lines() {
-  return _impl_.lines_.Add();
-}
-inline ::city::routing::v2::BusLine* BusLines::add_lines() {
-  ::city::routing::v2::BusLine* _add = _internal_add_lines();
-  // @@protoc_insertion_point(field_add:city.routing.v2.BusLines.lines)
-  return _add;
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::routing::v2::BusLine >&
-BusLines::lines() const {
-  // @@protoc_insertion_point(field_list:city.routing.v2.BusLines.lines)
-  return _impl_.lines_;
-}
-
-// -------------------------------------------------------------------
-
 // RoadStatus
 
 // int32 id = 1 [json_name = "id"];
@@ -2621,8 +2271,6 @@ RoadStatuses::road_statuses() const {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
-// -------------------------------------------------------------------
-
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

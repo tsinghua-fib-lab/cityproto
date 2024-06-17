@@ -242,13 +242,19 @@ export declare class WalkingJourneyBody extends Message<WalkingJourneyBody> {
 }
 
 /**
- * @generated from message city.routing.v2.BusJourneyBody
+ * message BusJourneyBody {
+ *   int32 line_id = 1;
+ *   int32 start_station_id = 2;
+ *   int32 end_station_id = 3;
+ * }
+ *
+ * @generated from message city.routing.v2.TransferSegment
  */
-export declare class BusJourneyBody extends Message<BusJourneyBody> {
+export declare class TransferSegment extends Message<TransferSegment> {
   /**
-   * @generated from field: int32 line_id = 1;
+   * @generated from field: int32 subline_id = 1;
    */
-  lineId: number;
+  sublineId: number;
 
   /**
    * @generated from field: int32 start_station_id = 2;
@@ -259,6 +265,38 @@ export declare class BusJourneyBody extends Message<BusJourneyBody> {
    * @generated from field: int32 end_station_id = 3;
    */
   endStationId: number;
+
+  constructor(data?: PartialMessage<TransferSegment>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.routing.v2.TransferSegment";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TransferSegment;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TransferSegment;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TransferSegment;
+
+  static equals(a: TransferSegment | PlainMessage<TransferSegment> | undefined, b: TransferSegment | PlainMessage<TransferSegment> | undefined): boolean;
+}
+
+/**
+ * @generated from message city.routing.v2.BusJourneyBody
+ */
+export declare class BusJourneyBody extends Message<BusJourneyBody> {
+  /**
+   * @generated from field: repeated city.routing.v2.TransferSegment transfers = 1;
+   */
+  transfers: TransferSegment[];
+
+  /**
+   * 从起点到终点预计的时间(estimation time of arrival)
+   * estimation time of arrival
+   *
+   * @generated from field: double eta = 2;
+   */
+  eta: number;
 
   constructor(data?: PartialMessage<BusJourneyBody>);
 
@@ -327,86 +365,6 @@ export declare class Journey extends Message<Journey> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Journey;
 
   static equals(a: Journey | PlainMessage<Journey> | undefined, b: Journey | PlainMessage<Journey> | undefined): boolean;
-}
-
-/**
- * 公交线路
- * Bus line
- *
- * @generated from message city.routing.v2.BusLine
- */
-export declare class BusLine extends Message<BusLine> {
-  /**
-   * 线路ID
-   * bus line ID
-   *
-   * @generated from field: int32 line_id = 1;
-   */
-  lineId: number;
-
-  /**
-   * 停靠站点AOI ID列表
-   * List of the AOI IDs of bus stations
-   *
-   * @generated from field: repeated int32 stops = 2;
-   */
-  stops: number[];
-
-  /**
-   * @generated from field: repeated double distances = 3;
-   */
-  distances: number[];
-
-  /**
-   * @generated from field: int32 interval = 4;
-   */
-  interval: number;
-
-  /**
-   * @generated from field: int32 count = 5;
-   */
-  count: number;
-
-  constructor(data?: PartialMessage<BusLine>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.routing.v2.BusLine";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): BusLine;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): BusLine;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): BusLine;
-
-  static equals(a: BusLine | PlainMessage<BusLine> | undefined, b: BusLine | PlainMessage<BusLine> | undefined): boolean;
-}
-
-/**
- * 公交线路集合，对应一个公交线路pb文件或一个公交线路mongodb collection
- * Bus lines collection, corresponding to a bus line PB file or a bus line mongodb collection
- *
- * @generated from message city.routing.v2.BusLines
- */
-export declare class BusLines extends Message<BusLines> {
-  /**
-   * @generated from field: repeated city.routing.v2.BusLine lines = 1;
-   */
-  lines: BusLine[];
-
-  constructor(data?: PartialMessage<BusLines>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.routing.v2.BusLines";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): BusLines;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): BusLines;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): BusLines;
-
-  static equals(a: BusLines | PlainMessage<BusLines> | undefined, b: BusLines | PlainMessage<BusLines> | undefined): boolean;
 }
 
 /**

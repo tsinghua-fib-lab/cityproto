@@ -56,6 +56,9 @@ extern AoiDefaultTypeInternal _Aoi_default_instance_;
 class Header;
 struct HeaderDefaultTypeInternal;
 extern HeaderDefaultTypeInternal _Header_default_instance_;
+class HeuristicTAZCost;
+struct HeuristicTAZCostDefaultTypeInternal;
+extern HeuristicTAZCostDefaultTypeInternal _HeuristicTAZCost_default_instance_;
 class Junction;
 struct JunctionDefaultTypeInternal;
 extern JunctionDefaultTypeInternal _Junction_default_instance_;
@@ -86,15 +89,25 @@ extern PoiDefaultTypeInternal _Poi_default_instance_;
 class Polyline;
 struct PolylineDefaultTypeInternal;
 extern PolylineDefaultTypeInternal _Polyline_default_instance_;
+class PublicTransportSubline;
+struct PublicTransportSublineDefaultTypeInternal;
+extern PublicTransportSublineDefaultTypeInternal _PublicTransportSubline_default_instance_;
 class Road;
 struct RoadDefaultTypeInternal;
 extern RoadDefaultTypeInternal _Road_default_instance_;
+class RoadIds;
+struct RoadIdsDefaultTypeInternal;
+extern RoadIdsDefaultTypeInternal _RoadIds_default_instance_;
+class SublineSchedules;
+struct SublineSchedulesDefaultTypeInternal;
+extern SublineSchedulesDefaultTypeInternal _SublineSchedules_default_instance_;
 }  // namespace v2
 }  // namespace map
 }  // namespace city
 PROTOBUF_NAMESPACE_OPEN
 template<> ::city::map::v2::Aoi* Arena::CreateMaybeMessage<::city::map::v2::Aoi>(Arena*);
 template<> ::city::map::v2::Header* Arena::CreateMaybeMessage<::city::map::v2::Header>(Arena*);
+template<> ::city::map::v2::HeuristicTAZCost* Arena::CreateMaybeMessage<::city::map::v2::HeuristicTAZCost>(Arena*);
 template<> ::city::map::v2::Junction* Arena::CreateMaybeMessage<::city::map::v2::Junction>(Arena*);
 template<> ::city::map::v2::JunctionLaneGroup* Arena::CreateMaybeMessage<::city::map::v2::JunctionLaneGroup>(Arena*);
 template<> ::city::map::v2::Lane* Arena::CreateMaybeMessage<::city::map::v2::Lane>(Arena*);
@@ -105,7 +118,10 @@ template<> ::city::map::v2::NextRoadLane* Arena::CreateMaybeMessage<::city::map:
 template<> ::city::map::v2::NextRoadLanePlan* Arena::CreateMaybeMessage<::city::map::v2::NextRoadLanePlan>(Arena*);
 template<> ::city::map::v2::Poi* Arena::CreateMaybeMessage<::city::map::v2::Poi>(Arena*);
 template<> ::city::map::v2::Polyline* Arena::CreateMaybeMessage<::city::map::v2::Polyline>(Arena*);
+template<> ::city::map::v2::PublicTransportSubline* Arena::CreateMaybeMessage<::city::map::v2::PublicTransportSubline>(Arena*);
 template<> ::city::map::v2::Road* Arena::CreateMaybeMessage<::city::map::v2::Road>(Arena*);
+template<> ::city::map::v2::RoadIds* Arena::CreateMaybeMessage<::city::map::v2::RoadIds>(Arena*);
+template<> ::city::map::v2::SublineSchedules* Arena::CreateMaybeMessage<::city::map::v2::SublineSchedules>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace city {
 namespace map {
@@ -246,6 +262,32 @@ inline bool LandUseType_Parse(
     ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, LandUseType* value) {
   return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<LandUseType>(
     LandUseType_descriptor(), name, value);
+}
+enum SublineType : int {
+  SUBLINE_TYPE_UNSPECIFIED = 0,
+  SUBLINE_TYPE_BUS = 1,
+  SUBLINE_TYPE_SUBWAY = 2,
+  SublineType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
+  SublineType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
+};
+bool SublineType_IsValid(int value);
+constexpr SublineType SublineType_MIN = SUBLINE_TYPE_UNSPECIFIED;
+constexpr SublineType SublineType_MAX = SUBLINE_TYPE_SUBWAY;
+constexpr int SublineType_ARRAYSIZE = SublineType_MAX + 1;
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* SublineType_descriptor();
+template<typename T>
+inline const std::string& SublineType_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, SublineType>::value ||
+    ::std::is_integral<T>::value,
+    "Incorrect type passed to function SublineType_Name.");
+  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
+    SublineType_descriptor(), enum_t_value);
+}
+inline bool SublineType_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, SublineType* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<SublineType>(
+    SublineType_descriptor(), name, value);
 }
 // ===================================================================
 
@@ -534,6 +576,8 @@ class Header final :
     kSouthFieldNumber = 4,
     kEastFieldNumber = 5,
     kWestFieldNumber = 6,
+    kTazXStepFieldNumber = 8,
+    kTazYStepFieldNumber = 9,
   };
   // string name = 1 [json_name = "name"];
   void clear_name();
@@ -613,6 +657,32 @@ class Header final :
   void _internal_set_west(double value);
   public:
 
+  // optional double taz_x_step = 8 [json_name = "tazXStep"];
+  bool has_taz_x_step() const;
+  private:
+  bool _internal_has_taz_x_step() const;
+  public:
+  void clear_taz_x_step();
+  double taz_x_step() const;
+  void set_taz_x_step(double value);
+  private:
+  double _internal_taz_x_step() const;
+  void _internal_set_taz_x_step(double value);
+  public:
+
+  // optional double taz_y_step = 9 [json_name = "tazYStep"];
+  bool has_taz_y_step() const;
+  private:
+  bool _internal_has_taz_y_step() const;
+  public:
+  void clear_taz_y_step();
+  double taz_y_step() const;
+  void set_taz_y_step(double value);
+  private:
+  double _internal_taz_y_step() const;
+  void _internal_set_taz_y_step(double value);
+  public:
+
   // @@protoc_insertion_point(class_scope:city.map.v2.Header)
  private:
   class _Internal;
@@ -621,6 +691,8 @@ class Header final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr date_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr projection_;
@@ -628,7 +700,8 @@ class Header final :
     double south_;
     double east_;
     double west_;
-    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+    double taz_x_step_;
+    double taz_y_step_;
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_city_2fmap_2fv2_2fmap_2eproto;
@@ -2378,6 +2451,810 @@ class Junction final :
 };
 // -------------------------------------------------------------------
 
+class RoadIds final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.map.v2.RoadIds) */ {
+ public:
+  inline RoadIds() : RoadIds(nullptr) {}
+  ~RoadIds() override;
+  explicit PROTOBUF_CONSTEXPR RoadIds(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  RoadIds(const RoadIds& from);
+  RoadIds(RoadIds&& from) noexcept
+    : RoadIds() {
+    *this = ::std::move(from);
+  }
+
+  inline RoadIds& operator=(const RoadIds& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline RoadIds& operator=(RoadIds&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const RoadIds& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const RoadIds* internal_default_instance() {
+    return reinterpret_cast<const RoadIds*>(
+               &_RoadIds_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    10;
+
+  friend void swap(RoadIds& a, RoadIds& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(RoadIds* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(RoadIds* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  RoadIds* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<RoadIds>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const RoadIds& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const RoadIds& from) {
+    RoadIds::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(RoadIds* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.map.v2.RoadIds";
+  }
+  protected:
+  explicit RoadIds(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kRoadIdsFieldNumber = 1,
+  };
+  // repeated int32 road_ids = 1 [json_name = "roadIds"];
+  int road_ids_size() const;
+  private:
+  int _internal_road_ids_size() const;
+  public:
+  void clear_road_ids();
+  private:
+  int32_t _internal_road_ids(int index) const;
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+      _internal_road_ids() const;
+  void _internal_add_road_ids(int32_t value);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+      _internal_mutable_road_ids();
+  public:
+  int32_t road_ids(int index) const;
+  void set_road_ids(int index, int32_t value);
+  void add_road_ids(int32_t value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+      road_ids() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+      mutable_road_ids();
+
+  // @@protoc_insertion_point(class_scope:city.map.v2.RoadIds)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t > road_ids_;
+    mutable std::atomic<int> _road_ids_cached_byte_size_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_city_2fmap_2fv2_2fmap_2eproto;
+};
+// -------------------------------------------------------------------
+
+class SublineSchedules final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.map.v2.SublineSchedules) */ {
+ public:
+  inline SublineSchedules() : SublineSchedules(nullptr) {}
+  ~SublineSchedules() override;
+  explicit PROTOBUF_CONSTEXPR SublineSchedules(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  SublineSchedules(const SublineSchedules& from);
+  SublineSchedules(SublineSchedules&& from) noexcept
+    : SublineSchedules() {
+    *this = ::std::move(from);
+  }
+
+  inline SublineSchedules& operator=(const SublineSchedules& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline SublineSchedules& operator=(SublineSchedules&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const SublineSchedules& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const SublineSchedules* internal_default_instance() {
+    return reinterpret_cast<const SublineSchedules*>(
+               &_SublineSchedules_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    11;
+
+  friend void swap(SublineSchedules& a, SublineSchedules& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(SublineSchedules* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(SublineSchedules* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  SublineSchedules* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<SublineSchedules>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const SublineSchedules& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const SublineSchedules& from) {
+    SublineSchedules::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(SublineSchedules* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.map.v2.SublineSchedules";
+  }
+  protected:
+  explicit SublineSchedules(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kDepartureTimesFieldNumber = 1,
+    kOffsetTimesFieldNumber = 2,
+  };
+  // repeated double departure_times = 1 [json_name = "departureTimes"];
+  int departure_times_size() const;
+  private:
+  int _internal_departure_times_size() const;
+  public:
+  void clear_departure_times();
+  private:
+  double _internal_departure_times(int index) const;
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< double >&
+      _internal_departure_times() const;
+  void _internal_add_departure_times(double value);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< double >*
+      _internal_mutable_departure_times();
+  public:
+  double departure_times(int index) const;
+  void set_departure_times(int index, double value);
+  void add_departure_times(double value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< double >&
+      departure_times() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< double >*
+      mutable_departure_times();
+
+  // repeated double offset_times = 2 [json_name = "offsetTimes"];
+  int offset_times_size() const;
+  private:
+  int _internal_offset_times_size() const;
+  public:
+  void clear_offset_times();
+  private:
+  double _internal_offset_times(int index) const;
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< double >&
+      _internal_offset_times() const;
+  void _internal_add_offset_times(double value);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< double >*
+      _internal_mutable_offset_times();
+  public:
+  double offset_times(int index) const;
+  void set_offset_times(int index, double value);
+  void add_offset_times(double value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< double >&
+      offset_times() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< double >*
+      mutable_offset_times();
+
+  // @@protoc_insertion_point(class_scope:city.map.v2.SublineSchedules)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::RepeatedField< double > departure_times_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedField< double > offset_times_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_city_2fmap_2fv2_2fmap_2eproto;
+};
+// -------------------------------------------------------------------
+
+class HeuristicTAZCost final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.map.v2.HeuristicTAZCost) */ {
+ public:
+  inline HeuristicTAZCost() : HeuristicTAZCost(nullptr) {}
+  ~HeuristicTAZCost() override;
+  explicit PROTOBUF_CONSTEXPR HeuristicTAZCost(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  HeuristicTAZCost(const HeuristicTAZCost& from);
+  HeuristicTAZCost(HeuristicTAZCost&& from) noexcept
+    : HeuristicTAZCost() {
+    *this = ::std::move(from);
+  }
+
+  inline HeuristicTAZCost& operator=(const HeuristicTAZCost& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline HeuristicTAZCost& operator=(HeuristicTAZCost&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const HeuristicTAZCost& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const HeuristicTAZCost* internal_default_instance() {
+    return reinterpret_cast<const HeuristicTAZCost*>(
+               &_HeuristicTAZCost_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    12;
+
+  friend void swap(HeuristicTAZCost& a, HeuristicTAZCost& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(HeuristicTAZCost* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(HeuristicTAZCost* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  HeuristicTAZCost* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<HeuristicTAZCost>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const HeuristicTAZCost& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const HeuristicTAZCost& from) {
+    HeuristicTAZCost::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(HeuristicTAZCost* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.map.v2.HeuristicTAZCost";
+  }
+  protected:
+  explicit HeuristicTAZCost(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kTazXIdFieldNumber = 1,
+    kTazYIdFieldNumber = 2,
+    kCostFieldNumber = 4,
+    kAoiIdFieldNumber = 3,
+  };
+  // int32 taz_x_id = 1 [json_name = "tazXId"];
+  void clear_taz_x_id();
+  int32_t taz_x_id() const;
+  void set_taz_x_id(int32_t value);
+  private:
+  int32_t _internal_taz_x_id() const;
+  void _internal_set_taz_x_id(int32_t value);
+  public:
+
+  // int32 taz_y_id = 2 [json_name = "tazYId"];
+  void clear_taz_y_id();
+  int32_t taz_y_id() const;
+  void set_taz_y_id(int32_t value);
+  private:
+  int32_t _internal_taz_y_id() const;
+  void _internal_set_taz_y_id(int32_t value);
+  public:
+
+  // double cost = 4 [json_name = "cost"];
+  void clear_cost();
+  double cost() const;
+  void set_cost(double value);
+  private:
+  double _internal_cost() const;
+  void _internal_set_cost(double value);
+  public:
+
+  // int32 aoi_id = 3 [json_name = "aoiId"];
+  void clear_aoi_id();
+  int32_t aoi_id() const;
+  void set_aoi_id(int32_t value);
+  private:
+  int32_t _internal_aoi_id() const;
+  void _internal_set_aoi_id(int32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:city.map.v2.HeuristicTAZCost)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    int32_t taz_x_id_;
+    int32_t taz_y_id_;
+    double cost_;
+    int32_t aoi_id_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_city_2fmap_2fv2_2fmap_2eproto;
+};
+// -------------------------------------------------------------------
+
+class PublicTransportSubline final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.map.v2.PublicTransportSubline) */ {
+ public:
+  inline PublicTransportSubline() : PublicTransportSubline(nullptr) {}
+  ~PublicTransportSubline() override;
+  explicit PROTOBUF_CONSTEXPR PublicTransportSubline(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  PublicTransportSubline(const PublicTransportSubline& from);
+  PublicTransportSubline(PublicTransportSubline&& from) noexcept
+    : PublicTransportSubline() {
+    *this = ::std::move(from);
+  }
+
+  inline PublicTransportSubline& operator=(const PublicTransportSubline& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline PublicTransportSubline& operator=(PublicTransportSubline&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const PublicTransportSubline& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const PublicTransportSubline* internal_default_instance() {
+    return reinterpret_cast<const PublicTransportSubline*>(
+               &_PublicTransportSubline_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    13;
+
+  friend void swap(PublicTransportSubline& a, PublicTransportSubline& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(PublicTransportSubline* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(PublicTransportSubline* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  PublicTransportSubline* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<PublicTransportSubline>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const PublicTransportSubline& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const PublicTransportSubline& from) {
+    PublicTransportSubline::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(PublicTransportSubline* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.map.v2.PublicTransportSubline";
+  }
+  protected:
+  explicit PublicTransportSubline(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kAoiIdsFieldNumber = 3,
+    kStationConnectionRoadIdsFieldNumber = 4,
+    kTazCostsFieldNumber = 8,
+    kNameFieldNumber = 2,
+    kParentNameFieldNumber = 6,
+    kSchedulesFieldNumber = 7,
+    kIdFieldNumber = 1,
+    kTypeFieldNumber = 5,
+  };
+  // repeated int32 aoi_ids = 3 [json_name = "aoiIds"];
+  int aoi_ids_size() const;
+  private:
+  int _internal_aoi_ids_size() const;
+  public:
+  void clear_aoi_ids();
+  private:
+  int32_t _internal_aoi_ids(int index) const;
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+      _internal_aoi_ids() const;
+  void _internal_add_aoi_ids(int32_t value);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+      _internal_mutable_aoi_ids();
+  public:
+  int32_t aoi_ids(int index) const;
+  void set_aoi_ids(int index, int32_t value);
+  void add_aoi_ids(int32_t value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+      aoi_ids() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+      mutable_aoi_ids();
+
+  // repeated .city.map.v2.RoadIds station_connection_road_ids = 4 [json_name = "stationConnectionRoadIds"];
+  int station_connection_road_ids_size() const;
+  private:
+  int _internal_station_connection_road_ids_size() const;
+  public:
+  void clear_station_connection_road_ids();
+  ::city::map::v2::RoadIds* mutable_station_connection_road_ids(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::map::v2::RoadIds >*
+      mutable_station_connection_road_ids();
+  private:
+  const ::city::map::v2::RoadIds& _internal_station_connection_road_ids(int index) const;
+  ::city::map::v2::RoadIds* _internal_add_station_connection_road_ids();
+  public:
+  const ::city::map::v2::RoadIds& station_connection_road_ids(int index) const;
+  ::city::map::v2::RoadIds* add_station_connection_road_ids();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::map::v2::RoadIds >&
+      station_connection_road_ids() const;
+
+  // repeated .city.map.v2.HeuristicTAZCost taz_costs = 8 [json_name = "tazCosts"];
+  int taz_costs_size() const;
+  private:
+  int _internal_taz_costs_size() const;
+  public:
+  void clear_taz_costs();
+  ::city::map::v2::HeuristicTAZCost* mutable_taz_costs(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::map::v2::HeuristicTAZCost >*
+      mutable_taz_costs();
+  private:
+  const ::city::map::v2::HeuristicTAZCost& _internal_taz_costs(int index) const;
+  ::city::map::v2::HeuristicTAZCost* _internal_add_taz_costs();
+  public:
+  const ::city::map::v2::HeuristicTAZCost& taz_costs(int index) const;
+  ::city::map::v2::HeuristicTAZCost* add_taz_costs();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::map::v2::HeuristicTAZCost >&
+      taz_costs() const;
+
+  // string name = 2 [json_name = "name"];
+  void clear_name();
+  const std::string& name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_NODISCARD std::string* release_name();
+  void set_allocated_name(std::string* name);
+  private:
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
+  public:
+
+  // string parent_name = 6 [json_name = "parentName"];
+  void clear_parent_name();
+  const std::string& parent_name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_parent_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_parent_name();
+  PROTOBUF_NODISCARD std::string* release_parent_name();
+  void set_allocated_parent_name(std::string* parent_name);
+  private:
+  const std::string& _internal_parent_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_parent_name(const std::string& value);
+  std::string* _internal_mutable_parent_name();
+  public:
+
+  // .city.map.v2.SublineSchedules schedules = 7 [json_name = "schedules"];
+  bool has_schedules() const;
+  private:
+  bool _internal_has_schedules() const;
+  public:
+  void clear_schedules();
+  const ::city::map::v2::SublineSchedules& schedules() const;
+  PROTOBUF_NODISCARD ::city::map::v2::SublineSchedules* release_schedules();
+  ::city::map::v2::SublineSchedules* mutable_schedules();
+  void set_allocated_schedules(::city::map::v2::SublineSchedules* schedules);
+  private:
+  const ::city::map::v2::SublineSchedules& _internal_schedules() const;
+  ::city::map::v2::SublineSchedules* _internal_mutable_schedules();
+  public:
+  void unsafe_arena_set_allocated_schedules(
+      ::city::map::v2::SublineSchedules* schedules);
+  ::city::map::v2::SublineSchedules* unsafe_arena_release_schedules();
+
+  // int32 id = 1 [json_name = "id"];
+  void clear_id();
+  int32_t id() const;
+  void set_id(int32_t value);
+  private:
+  int32_t _internal_id() const;
+  void _internal_set_id(int32_t value);
+  public:
+
+  // .city.map.v2.SublineType type = 5 [json_name = "type"];
+  void clear_type();
+  ::city::map::v2::SublineType type() const;
+  void set_type(::city::map::v2::SublineType value);
+  private:
+  ::city::map::v2::SublineType _internal_type() const;
+  void _internal_set_type(::city::map::v2::SublineType value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:city.map.v2.PublicTransportSubline)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t > aoi_ids_;
+    mutable std::atomic<int> _aoi_ids_cached_byte_size_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::map::v2::RoadIds > station_connection_road_ids_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::map::v2::HeuristicTAZCost > taz_costs_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr parent_name_;
+    ::city::map::v2::SublineSchedules* schedules_;
+    int32_t id_;
+    int type_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_city_2fmap_2fv2_2fmap_2eproto;
+};
+// -------------------------------------------------------------------
+
 class Aoi final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.map.v2.Aoi) */ {
  public:
@@ -2426,7 +3303,7 @@ class Aoi final :
                &_Aoi_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    14;
 
   friend void swap(Aoi& a, Aoi& b) {
     a.Swap(&b);
@@ -2505,6 +3382,7 @@ class Aoi final :
     kDrivingGatesFieldNumber = 6,
     kWalkingGatesFieldNumber = 7,
     kPoiIdsFieldNumber = 9,
+    kSublineIdsFieldNumber = 13,
     kNameFieldNumber = 11,
     kUrbanLandUseFieldNumber = 12,
     kIdFieldNumber = 1,
@@ -2624,6 +3502,28 @@ class Aoi final :
   ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
       mutable_poi_ids();
 
+  // repeated int32 subline_ids = 13 [json_name = "sublineIds"];
+  int subline_ids_size() const;
+  private:
+  int _internal_subline_ids_size() const;
+  public:
+  void clear_subline_ids();
+  private:
+  int32_t _internal_subline_ids(int index) const;
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+      _internal_subline_ids() const;
+  void _internal_add_subline_ids(int32_t value);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+      _internal_mutable_subline_ids();
+  public:
+  int32_t subline_ids(int index) const;
+  void set_subline_ids(int index, int32_t value);
+  void add_subline_ids(int32_t value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+      subline_ids() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+      mutable_subline_ids();
+
   // string name = 11 [json_name = "name"];
   void clear_name();
   const std::string& name() const;
@@ -2717,6 +3617,8 @@ class Aoi final :
     ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::geo::v2::XYPosition > walking_gates_;
     ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t > poi_ids_;
     mutable std::atomic<int> _poi_ids_cached_byte_size_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t > subline_ids_;
+    mutable std::atomic<int> _subline_ids_cached_byte_size_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr urban_land_use_;
     int32_t id_;
@@ -2777,7 +3679,7 @@ class Poi final :
                &_Poi_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    15;
 
   friend void swap(Poi& a, Poi& b) {
     a.Swap(&b);
@@ -3030,7 +3932,7 @@ class Map final :
                &_Map_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    16;
 
   friend void swap(Map& a, Map& b) {
     a.Swap(&b);
@@ -3108,6 +4010,7 @@ class Map final :
     kJunctionsFieldNumber = 4,
     kAoisFieldNumber = 5,
     kPoisFieldNumber = 6,
+    kSublinesFieldNumber = 7,
     kHeaderFieldNumber = 1,
   };
   // repeated .city.map.v2.Lane lanes = 2 [json_name = "lanes"];
@@ -3200,6 +4103,24 @@ class Map final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::map::v2::Poi >&
       pois() const;
 
+  // repeated .city.map.v2.PublicTransportSubline sublines = 7 [json_name = "sublines"];
+  int sublines_size() const;
+  private:
+  int _internal_sublines_size() const;
+  public:
+  void clear_sublines();
+  ::city::map::v2::PublicTransportSubline* mutable_sublines(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::map::v2::PublicTransportSubline >*
+      mutable_sublines();
+  private:
+  const ::city::map::v2::PublicTransportSubline& _internal_sublines(int index) const;
+  ::city::map::v2::PublicTransportSubline* _internal_add_sublines();
+  public:
+  const ::city::map::v2::PublicTransportSubline& sublines(int index) const;
+  ::city::map::v2::PublicTransportSubline* add_sublines();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::map::v2::PublicTransportSubline >&
+      sublines() const;
+
   // .city.map.v2.Header header = 1 [json_name = "header"];
   bool has_header() const;
   private:
@@ -3231,6 +4152,7 @@ class Map final :
     ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::map::v2::Junction > junctions_;
     ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::map::v2::Aoi > aois_;
     ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::map::v2::Poi > pois_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::map::v2::PublicTransportSubline > sublines_;
     ::city::map::v2::Header* header_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
@@ -3517,6 +4439,62 @@ inline void Header::set_allocated_projection(std::string* projection) {
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   // @@protoc_insertion_point(field_set_allocated:city.map.v2.Header.projection)
+}
+
+// optional double taz_x_step = 8 [json_name = "tazXStep"];
+inline bool Header::_internal_has_taz_x_step() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline bool Header::has_taz_x_step() const {
+  return _internal_has_taz_x_step();
+}
+inline void Header::clear_taz_x_step() {
+  _impl_.taz_x_step_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline double Header::_internal_taz_x_step() const {
+  return _impl_.taz_x_step_;
+}
+inline double Header::taz_x_step() const {
+  // @@protoc_insertion_point(field_get:city.map.v2.Header.taz_x_step)
+  return _internal_taz_x_step();
+}
+inline void Header::_internal_set_taz_x_step(double value) {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.taz_x_step_ = value;
+}
+inline void Header::set_taz_x_step(double value) {
+  _internal_set_taz_x_step(value);
+  // @@protoc_insertion_point(field_set:city.map.v2.Header.taz_x_step)
+}
+
+// optional double taz_y_step = 9 [json_name = "tazYStep"];
+inline bool Header::_internal_has_taz_y_step() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  return value;
+}
+inline bool Header::has_taz_y_step() const {
+  return _internal_has_taz_y_step();
+}
+inline void Header::clear_taz_y_step() {
+  _impl_.taz_y_step_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000002u;
+}
+inline double Header::_internal_taz_y_step() const {
+  return _impl_.taz_y_step_;
+}
+inline double Header::taz_y_step() const {
+  // @@protoc_insertion_point(field_get:city.map.v2.Header.taz_y_step)
+  return _internal_taz_y_step();
+}
+inline void Header::_internal_set_taz_y_step(double value) {
+  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_.taz_y_step_ = value;
+}
+inline void Header::set_taz_y_step(double value) {
+  _internal_set_taz_y_step(value);
+  // @@protoc_insertion_point(field_set:city.map.v2.Header.taz_y_step)
 }
 
 // -------------------------------------------------------------------
@@ -5089,6 +6067,600 @@ inline void Junction::set_allocated_fixed_program(::city::map::v2::TrafficLight*
 
 // -------------------------------------------------------------------
 
+// RoadIds
+
+// repeated int32 road_ids = 1 [json_name = "roadIds"];
+inline int RoadIds::_internal_road_ids_size() const {
+  return _impl_.road_ids_.size();
+}
+inline int RoadIds::road_ids_size() const {
+  return _internal_road_ids_size();
+}
+inline void RoadIds::clear_road_ids() {
+  _impl_.road_ids_.Clear();
+}
+inline int32_t RoadIds::_internal_road_ids(int index) const {
+  return _impl_.road_ids_.Get(index);
+}
+inline int32_t RoadIds::road_ids(int index) const {
+  // @@protoc_insertion_point(field_get:city.map.v2.RoadIds.road_ids)
+  return _internal_road_ids(index);
+}
+inline void RoadIds::set_road_ids(int index, int32_t value) {
+  _impl_.road_ids_.Set(index, value);
+  // @@protoc_insertion_point(field_set:city.map.v2.RoadIds.road_ids)
+}
+inline void RoadIds::_internal_add_road_ids(int32_t value) {
+  _impl_.road_ids_.Add(value);
+}
+inline void RoadIds::add_road_ids(int32_t value) {
+  _internal_add_road_ids(value);
+  // @@protoc_insertion_point(field_add:city.map.v2.RoadIds.road_ids)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+RoadIds::_internal_road_ids() const {
+  return _impl_.road_ids_;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+RoadIds::road_ids() const {
+  // @@protoc_insertion_point(field_list:city.map.v2.RoadIds.road_ids)
+  return _internal_road_ids();
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+RoadIds::_internal_mutable_road_ids() {
+  return &_impl_.road_ids_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+RoadIds::mutable_road_ids() {
+  // @@protoc_insertion_point(field_mutable_list:city.map.v2.RoadIds.road_ids)
+  return _internal_mutable_road_ids();
+}
+
+// -------------------------------------------------------------------
+
+// SublineSchedules
+
+// repeated double departure_times = 1 [json_name = "departureTimes"];
+inline int SublineSchedules::_internal_departure_times_size() const {
+  return _impl_.departure_times_.size();
+}
+inline int SublineSchedules::departure_times_size() const {
+  return _internal_departure_times_size();
+}
+inline void SublineSchedules::clear_departure_times() {
+  _impl_.departure_times_.Clear();
+}
+inline double SublineSchedules::_internal_departure_times(int index) const {
+  return _impl_.departure_times_.Get(index);
+}
+inline double SublineSchedules::departure_times(int index) const {
+  // @@protoc_insertion_point(field_get:city.map.v2.SublineSchedules.departure_times)
+  return _internal_departure_times(index);
+}
+inline void SublineSchedules::set_departure_times(int index, double value) {
+  _impl_.departure_times_.Set(index, value);
+  // @@protoc_insertion_point(field_set:city.map.v2.SublineSchedules.departure_times)
+}
+inline void SublineSchedules::_internal_add_departure_times(double value) {
+  _impl_.departure_times_.Add(value);
+}
+inline void SublineSchedules::add_departure_times(double value) {
+  _internal_add_departure_times(value);
+  // @@protoc_insertion_point(field_add:city.map.v2.SublineSchedules.departure_times)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< double >&
+SublineSchedules::_internal_departure_times() const {
+  return _impl_.departure_times_;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< double >&
+SublineSchedules::departure_times() const {
+  // @@protoc_insertion_point(field_list:city.map.v2.SublineSchedules.departure_times)
+  return _internal_departure_times();
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< double >*
+SublineSchedules::_internal_mutable_departure_times() {
+  return &_impl_.departure_times_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< double >*
+SublineSchedules::mutable_departure_times() {
+  // @@protoc_insertion_point(field_mutable_list:city.map.v2.SublineSchedules.departure_times)
+  return _internal_mutable_departure_times();
+}
+
+// repeated double offset_times = 2 [json_name = "offsetTimes"];
+inline int SublineSchedules::_internal_offset_times_size() const {
+  return _impl_.offset_times_.size();
+}
+inline int SublineSchedules::offset_times_size() const {
+  return _internal_offset_times_size();
+}
+inline void SublineSchedules::clear_offset_times() {
+  _impl_.offset_times_.Clear();
+}
+inline double SublineSchedules::_internal_offset_times(int index) const {
+  return _impl_.offset_times_.Get(index);
+}
+inline double SublineSchedules::offset_times(int index) const {
+  // @@protoc_insertion_point(field_get:city.map.v2.SublineSchedules.offset_times)
+  return _internal_offset_times(index);
+}
+inline void SublineSchedules::set_offset_times(int index, double value) {
+  _impl_.offset_times_.Set(index, value);
+  // @@protoc_insertion_point(field_set:city.map.v2.SublineSchedules.offset_times)
+}
+inline void SublineSchedules::_internal_add_offset_times(double value) {
+  _impl_.offset_times_.Add(value);
+}
+inline void SublineSchedules::add_offset_times(double value) {
+  _internal_add_offset_times(value);
+  // @@protoc_insertion_point(field_add:city.map.v2.SublineSchedules.offset_times)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< double >&
+SublineSchedules::_internal_offset_times() const {
+  return _impl_.offset_times_;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< double >&
+SublineSchedules::offset_times() const {
+  // @@protoc_insertion_point(field_list:city.map.v2.SublineSchedules.offset_times)
+  return _internal_offset_times();
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< double >*
+SublineSchedules::_internal_mutable_offset_times() {
+  return &_impl_.offset_times_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< double >*
+SublineSchedules::mutable_offset_times() {
+  // @@protoc_insertion_point(field_mutable_list:city.map.v2.SublineSchedules.offset_times)
+  return _internal_mutable_offset_times();
+}
+
+// -------------------------------------------------------------------
+
+// HeuristicTAZCost
+
+// int32 taz_x_id = 1 [json_name = "tazXId"];
+inline void HeuristicTAZCost::clear_taz_x_id() {
+  _impl_.taz_x_id_ = 0;
+}
+inline int32_t HeuristicTAZCost::_internal_taz_x_id() const {
+  return _impl_.taz_x_id_;
+}
+inline int32_t HeuristicTAZCost::taz_x_id() const {
+  // @@protoc_insertion_point(field_get:city.map.v2.HeuristicTAZCost.taz_x_id)
+  return _internal_taz_x_id();
+}
+inline void HeuristicTAZCost::_internal_set_taz_x_id(int32_t value) {
+  
+  _impl_.taz_x_id_ = value;
+}
+inline void HeuristicTAZCost::set_taz_x_id(int32_t value) {
+  _internal_set_taz_x_id(value);
+  // @@protoc_insertion_point(field_set:city.map.v2.HeuristicTAZCost.taz_x_id)
+}
+
+// int32 taz_y_id = 2 [json_name = "tazYId"];
+inline void HeuristicTAZCost::clear_taz_y_id() {
+  _impl_.taz_y_id_ = 0;
+}
+inline int32_t HeuristicTAZCost::_internal_taz_y_id() const {
+  return _impl_.taz_y_id_;
+}
+inline int32_t HeuristicTAZCost::taz_y_id() const {
+  // @@protoc_insertion_point(field_get:city.map.v2.HeuristicTAZCost.taz_y_id)
+  return _internal_taz_y_id();
+}
+inline void HeuristicTAZCost::_internal_set_taz_y_id(int32_t value) {
+  
+  _impl_.taz_y_id_ = value;
+}
+inline void HeuristicTAZCost::set_taz_y_id(int32_t value) {
+  _internal_set_taz_y_id(value);
+  // @@protoc_insertion_point(field_set:city.map.v2.HeuristicTAZCost.taz_y_id)
+}
+
+// int32 aoi_id = 3 [json_name = "aoiId"];
+inline void HeuristicTAZCost::clear_aoi_id() {
+  _impl_.aoi_id_ = 0;
+}
+inline int32_t HeuristicTAZCost::_internal_aoi_id() const {
+  return _impl_.aoi_id_;
+}
+inline int32_t HeuristicTAZCost::aoi_id() const {
+  // @@protoc_insertion_point(field_get:city.map.v2.HeuristicTAZCost.aoi_id)
+  return _internal_aoi_id();
+}
+inline void HeuristicTAZCost::_internal_set_aoi_id(int32_t value) {
+  
+  _impl_.aoi_id_ = value;
+}
+inline void HeuristicTAZCost::set_aoi_id(int32_t value) {
+  _internal_set_aoi_id(value);
+  // @@protoc_insertion_point(field_set:city.map.v2.HeuristicTAZCost.aoi_id)
+}
+
+// double cost = 4 [json_name = "cost"];
+inline void HeuristicTAZCost::clear_cost() {
+  _impl_.cost_ = 0;
+}
+inline double HeuristicTAZCost::_internal_cost() const {
+  return _impl_.cost_;
+}
+inline double HeuristicTAZCost::cost() const {
+  // @@protoc_insertion_point(field_get:city.map.v2.HeuristicTAZCost.cost)
+  return _internal_cost();
+}
+inline void HeuristicTAZCost::_internal_set_cost(double value) {
+  
+  _impl_.cost_ = value;
+}
+inline void HeuristicTAZCost::set_cost(double value) {
+  _internal_set_cost(value);
+  // @@protoc_insertion_point(field_set:city.map.v2.HeuristicTAZCost.cost)
+}
+
+// -------------------------------------------------------------------
+
+// PublicTransportSubline
+
+// int32 id = 1 [json_name = "id"];
+inline void PublicTransportSubline::clear_id() {
+  _impl_.id_ = 0;
+}
+inline int32_t PublicTransportSubline::_internal_id() const {
+  return _impl_.id_;
+}
+inline int32_t PublicTransportSubline::id() const {
+  // @@protoc_insertion_point(field_get:city.map.v2.PublicTransportSubline.id)
+  return _internal_id();
+}
+inline void PublicTransportSubline::_internal_set_id(int32_t value) {
+  
+  _impl_.id_ = value;
+}
+inline void PublicTransportSubline::set_id(int32_t value) {
+  _internal_set_id(value);
+  // @@protoc_insertion_point(field_set:city.map.v2.PublicTransportSubline.id)
+}
+
+// string name = 2 [json_name = "name"];
+inline void PublicTransportSubline::clear_name() {
+  _impl_.name_.ClearToEmpty();
+}
+inline const std::string& PublicTransportSubline::name() const {
+  // @@protoc_insertion_point(field_get:city.map.v2.PublicTransportSubline.name)
+  return _internal_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void PublicTransportSubline::set_name(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.name_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:city.map.v2.PublicTransportSubline.name)
+}
+inline std::string* PublicTransportSubline::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:city.map.v2.PublicTransportSubline.name)
+  return _s;
+}
+inline const std::string& PublicTransportSubline::_internal_name() const {
+  return _impl_.name_.Get();
+}
+inline void PublicTransportSubline::_internal_set_name(const std::string& value) {
+  
+  _impl_.name_.Set(value, GetArenaForAllocation());
+}
+inline std::string* PublicTransportSubline::_internal_mutable_name() {
+  
+  return _impl_.name_.Mutable(GetArenaForAllocation());
+}
+inline std::string* PublicTransportSubline::release_name() {
+  // @@protoc_insertion_point(field_release:city.map.v2.PublicTransportSubline.name)
+  return _impl_.name_.Release();
+}
+inline void PublicTransportSubline::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.name_.SetAllocated(name, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.name_.IsDefault()) {
+    _impl_.name_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:city.map.v2.PublicTransportSubline.name)
+}
+
+// repeated int32 aoi_ids = 3 [json_name = "aoiIds"];
+inline int PublicTransportSubline::_internal_aoi_ids_size() const {
+  return _impl_.aoi_ids_.size();
+}
+inline int PublicTransportSubline::aoi_ids_size() const {
+  return _internal_aoi_ids_size();
+}
+inline void PublicTransportSubline::clear_aoi_ids() {
+  _impl_.aoi_ids_.Clear();
+}
+inline int32_t PublicTransportSubline::_internal_aoi_ids(int index) const {
+  return _impl_.aoi_ids_.Get(index);
+}
+inline int32_t PublicTransportSubline::aoi_ids(int index) const {
+  // @@protoc_insertion_point(field_get:city.map.v2.PublicTransportSubline.aoi_ids)
+  return _internal_aoi_ids(index);
+}
+inline void PublicTransportSubline::set_aoi_ids(int index, int32_t value) {
+  _impl_.aoi_ids_.Set(index, value);
+  // @@protoc_insertion_point(field_set:city.map.v2.PublicTransportSubline.aoi_ids)
+}
+inline void PublicTransportSubline::_internal_add_aoi_ids(int32_t value) {
+  _impl_.aoi_ids_.Add(value);
+}
+inline void PublicTransportSubline::add_aoi_ids(int32_t value) {
+  _internal_add_aoi_ids(value);
+  // @@protoc_insertion_point(field_add:city.map.v2.PublicTransportSubline.aoi_ids)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+PublicTransportSubline::_internal_aoi_ids() const {
+  return _impl_.aoi_ids_;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+PublicTransportSubline::aoi_ids() const {
+  // @@protoc_insertion_point(field_list:city.map.v2.PublicTransportSubline.aoi_ids)
+  return _internal_aoi_ids();
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+PublicTransportSubline::_internal_mutable_aoi_ids() {
+  return &_impl_.aoi_ids_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+PublicTransportSubline::mutable_aoi_ids() {
+  // @@protoc_insertion_point(field_mutable_list:city.map.v2.PublicTransportSubline.aoi_ids)
+  return _internal_mutable_aoi_ids();
+}
+
+// repeated .city.map.v2.RoadIds station_connection_road_ids = 4 [json_name = "stationConnectionRoadIds"];
+inline int PublicTransportSubline::_internal_station_connection_road_ids_size() const {
+  return _impl_.station_connection_road_ids_.size();
+}
+inline int PublicTransportSubline::station_connection_road_ids_size() const {
+  return _internal_station_connection_road_ids_size();
+}
+inline void PublicTransportSubline::clear_station_connection_road_ids() {
+  _impl_.station_connection_road_ids_.Clear();
+}
+inline ::city::map::v2::RoadIds* PublicTransportSubline::mutable_station_connection_road_ids(int index) {
+  // @@protoc_insertion_point(field_mutable:city.map.v2.PublicTransportSubline.station_connection_road_ids)
+  return _impl_.station_connection_road_ids_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::map::v2::RoadIds >*
+PublicTransportSubline::mutable_station_connection_road_ids() {
+  // @@protoc_insertion_point(field_mutable_list:city.map.v2.PublicTransportSubline.station_connection_road_ids)
+  return &_impl_.station_connection_road_ids_;
+}
+inline const ::city::map::v2::RoadIds& PublicTransportSubline::_internal_station_connection_road_ids(int index) const {
+  return _impl_.station_connection_road_ids_.Get(index);
+}
+inline const ::city::map::v2::RoadIds& PublicTransportSubline::station_connection_road_ids(int index) const {
+  // @@protoc_insertion_point(field_get:city.map.v2.PublicTransportSubline.station_connection_road_ids)
+  return _internal_station_connection_road_ids(index);
+}
+inline ::city::map::v2::RoadIds* PublicTransportSubline::_internal_add_station_connection_road_ids() {
+  return _impl_.station_connection_road_ids_.Add();
+}
+inline ::city::map::v2::RoadIds* PublicTransportSubline::add_station_connection_road_ids() {
+  ::city::map::v2::RoadIds* _add = _internal_add_station_connection_road_ids();
+  // @@protoc_insertion_point(field_add:city.map.v2.PublicTransportSubline.station_connection_road_ids)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::map::v2::RoadIds >&
+PublicTransportSubline::station_connection_road_ids() const {
+  // @@protoc_insertion_point(field_list:city.map.v2.PublicTransportSubline.station_connection_road_ids)
+  return _impl_.station_connection_road_ids_;
+}
+
+// .city.map.v2.SublineType type = 5 [json_name = "type"];
+inline void PublicTransportSubline::clear_type() {
+  _impl_.type_ = 0;
+}
+inline ::city::map::v2::SublineType PublicTransportSubline::_internal_type() const {
+  return static_cast< ::city::map::v2::SublineType >(_impl_.type_);
+}
+inline ::city::map::v2::SublineType PublicTransportSubline::type() const {
+  // @@protoc_insertion_point(field_get:city.map.v2.PublicTransportSubline.type)
+  return _internal_type();
+}
+inline void PublicTransportSubline::_internal_set_type(::city::map::v2::SublineType value) {
+  
+  _impl_.type_ = value;
+}
+inline void PublicTransportSubline::set_type(::city::map::v2::SublineType value) {
+  _internal_set_type(value);
+  // @@protoc_insertion_point(field_set:city.map.v2.PublicTransportSubline.type)
+}
+
+// string parent_name = 6 [json_name = "parentName"];
+inline void PublicTransportSubline::clear_parent_name() {
+  _impl_.parent_name_.ClearToEmpty();
+}
+inline const std::string& PublicTransportSubline::parent_name() const {
+  // @@protoc_insertion_point(field_get:city.map.v2.PublicTransportSubline.parent_name)
+  return _internal_parent_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void PublicTransportSubline::set_parent_name(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.parent_name_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:city.map.v2.PublicTransportSubline.parent_name)
+}
+inline std::string* PublicTransportSubline::mutable_parent_name() {
+  std::string* _s = _internal_mutable_parent_name();
+  // @@protoc_insertion_point(field_mutable:city.map.v2.PublicTransportSubline.parent_name)
+  return _s;
+}
+inline const std::string& PublicTransportSubline::_internal_parent_name() const {
+  return _impl_.parent_name_.Get();
+}
+inline void PublicTransportSubline::_internal_set_parent_name(const std::string& value) {
+  
+  _impl_.parent_name_.Set(value, GetArenaForAllocation());
+}
+inline std::string* PublicTransportSubline::_internal_mutable_parent_name() {
+  
+  return _impl_.parent_name_.Mutable(GetArenaForAllocation());
+}
+inline std::string* PublicTransportSubline::release_parent_name() {
+  // @@protoc_insertion_point(field_release:city.map.v2.PublicTransportSubline.parent_name)
+  return _impl_.parent_name_.Release();
+}
+inline void PublicTransportSubline::set_allocated_parent_name(std::string* parent_name) {
+  if (parent_name != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.parent_name_.SetAllocated(parent_name, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.parent_name_.IsDefault()) {
+    _impl_.parent_name_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:city.map.v2.PublicTransportSubline.parent_name)
+}
+
+// .city.map.v2.SublineSchedules schedules = 7 [json_name = "schedules"];
+inline bool PublicTransportSubline::_internal_has_schedules() const {
+  return this != internal_default_instance() && _impl_.schedules_ != nullptr;
+}
+inline bool PublicTransportSubline::has_schedules() const {
+  return _internal_has_schedules();
+}
+inline void PublicTransportSubline::clear_schedules() {
+  if (GetArenaForAllocation() == nullptr && _impl_.schedules_ != nullptr) {
+    delete _impl_.schedules_;
+  }
+  _impl_.schedules_ = nullptr;
+}
+inline const ::city::map::v2::SublineSchedules& PublicTransportSubline::_internal_schedules() const {
+  const ::city::map::v2::SublineSchedules* p = _impl_.schedules_;
+  return p != nullptr ? *p : reinterpret_cast<const ::city::map::v2::SublineSchedules&>(
+      ::city::map::v2::_SublineSchedules_default_instance_);
+}
+inline const ::city::map::v2::SublineSchedules& PublicTransportSubline::schedules() const {
+  // @@protoc_insertion_point(field_get:city.map.v2.PublicTransportSubline.schedules)
+  return _internal_schedules();
+}
+inline void PublicTransportSubline::unsafe_arena_set_allocated_schedules(
+    ::city::map::v2::SublineSchedules* schedules) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.schedules_);
+  }
+  _impl_.schedules_ = schedules;
+  if (schedules) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:city.map.v2.PublicTransportSubline.schedules)
+}
+inline ::city::map::v2::SublineSchedules* PublicTransportSubline::release_schedules() {
+  
+  ::city::map::v2::SublineSchedules* temp = _impl_.schedules_;
+  _impl_.schedules_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::city::map::v2::SublineSchedules* PublicTransportSubline::unsafe_arena_release_schedules() {
+  // @@protoc_insertion_point(field_release:city.map.v2.PublicTransportSubline.schedules)
+  
+  ::city::map::v2::SublineSchedules* temp = _impl_.schedules_;
+  _impl_.schedules_ = nullptr;
+  return temp;
+}
+inline ::city::map::v2::SublineSchedules* PublicTransportSubline::_internal_mutable_schedules() {
+  
+  if (_impl_.schedules_ == nullptr) {
+    auto* p = CreateMaybeMessage<::city::map::v2::SublineSchedules>(GetArenaForAllocation());
+    _impl_.schedules_ = p;
+  }
+  return _impl_.schedules_;
+}
+inline ::city::map::v2::SublineSchedules* PublicTransportSubline::mutable_schedules() {
+  ::city::map::v2::SublineSchedules* _msg = _internal_mutable_schedules();
+  // @@protoc_insertion_point(field_mutable:city.map.v2.PublicTransportSubline.schedules)
+  return _msg;
+}
+inline void PublicTransportSubline::set_allocated_schedules(::city::map::v2::SublineSchedules* schedules) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete _impl_.schedules_;
+  }
+  if (schedules) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(schedules);
+    if (message_arena != submessage_arena) {
+      schedules = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, schedules, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  _impl_.schedules_ = schedules;
+  // @@protoc_insertion_point(field_set_allocated:city.map.v2.PublicTransportSubline.schedules)
+}
+
+// repeated .city.map.v2.HeuristicTAZCost taz_costs = 8 [json_name = "tazCosts"];
+inline int PublicTransportSubline::_internal_taz_costs_size() const {
+  return _impl_.taz_costs_.size();
+}
+inline int PublicTransportSubline::taz_costs_size() const {
+  return _internal_taz_costs_size();
+}
+inline void PublicTransportSubline::clear_taz_costs() {
+  _impl_.taz_costs_.Clear();
+}
+inline ::city::map::v2::HeuristicTAZCost* PublicTransportSubline::mutable_taz_costs(int index) {
+  // @@protoc_insertion_point(field_mutable:city.map.v2.PublicTransportSubline.taz_costs)
+  return _impl_.taz_costs_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::map::v2::HeuristicTAZCost >*
+PublicTransportSubline::mutable_taz_costs() {
+  // @@protoc_insertion_point(field_mutable_list:city.map.v2.PublicTransportSubline.taz_costs)
+  return &_impl_.taz_costs_;
+}
+inline const ::city::map::v2::HeuristicTAZCost& PublicTransportSubline::_internal_taz_costs(int index) const {
+  return _impl_.taz_costs_.Get(index);
+}
+inline const ::city::map::v2::HeuristicTAZCost& PublicTransportSubline::taz_costs(int index) const {
+  // @@protoc_insertion_point(field_get:city.map.v2.PublicTransportSubline.taz_costs)
+  return _internal_taz_costs(index);
+}
+inline ::city::map::v2::HeuristicTAZCost* PublicTransportSubline::_internal_add_taz_costs() {
+  return _impl_.taz_costs_.Add();
+}
+inline ::city::map::v2::HeuristicTAZCost* PublicTransportSubline::add_taz_costs() {
+  ::city::map::v2::HeuristicTAZCost* _add = _internal_add_taz_costs();
+  // @@protoc_insertion_point(field_add:city.map.v2.PublicTransportSubline.taz_costs)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::map::v2::HeuristicTAZCost >&
+PublicTransportSubline::taz_costs() const {
+  // @@protoc_insertion_point(field_list:city.map.v2.PublicTransportSubline.taz_costs)
+  return _impl_.taz_costs_;
+}
+
+// -------------------------------------------------------------------
+
 // Aoi
 
 // int32 id = 1 [json_name = "id"];
@@ -5535,6 +7107,53 @@ inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
 Aoi::mutable_poi_ids() {
   // @@protoc_insertion_point(field_mutable_list:city.map.v2.Aoi.poi_ids)
   return _internal_mutable_poi_ids();
+}
+
+// repeated int32 subline_ids = 13 [json_name = "sublineIds"];
+inline int Aoi::_internal_subline_ids_size() const {
+  return _impl_.subline_ids_.size();
+}
+inline int Aoi::subline_ids_size() const {
+  return _internal_subline_ids_size();
+}
+inline void Aoi::clear_subline_ids() {
+  _impl_.subline_ids_.Clear();
+}
+inline int32_t Aoi::_internal_subline_ids(int index) const {
+  return _impl_.subline_ids_.Get(index);
+}
+inline int32_t Aoi::subline_ids(int index) const {
+  // @@protoc_insertion_point(field_get:city.map.v2.Aoi.subline_ids)
+  return _internal_subline_ids(index);
+}
+inline void Aoi::set_subline_ids(int index, int32_t value) {
+  _impl_.subline_ids_.Set(index, value);
+  // @@protoc_insertion_point(field_set:city.map.v2.Aoi.subline_ids)
+}
+inline void Aoi::_internal_add_subline_ids(int32_t value) {
+  _impl_.subline_ids_.Add(value);
+}
+inline void Aoi::add_subline_ids(int32_t value) {
+  _internal_add_subline_ids(value);
+  // @@protoc_insertion_point(field_add:city.map.v2.Aoi.subline_ids)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+Aoi::_internal_subline_ids() const {
+  return _impl_.subline_ids_;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+Aoi::subline_ids() const {
+  // @@protoc_insertion_point(field_list:city.map.v2.Aoi.subline_ids)
+  return _internal_subline_ids();
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+Aoi::_internal_mutable_subline_ids() {
+  return &_impl_.subline_ids_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+Aoi::mutable_subline_ids() {
+  // @@protoc_insertion_point(field_mutable_list:city.map.v2.Aoi.subline_ids)
+  return _internal_mutable_subline_ids();
 }
 
 // -------------------------------------------------------------------
@@ -6163,9 +7782,57 @@ Map::pois() const {
   return _impl_.pois_;
 }
 
+// repeated .city.map.v2.PublicTransportSubline sublines = 7 [json_name = "sublines"];
+inline int Map::_internal_sublines_size() const {
+  return _impl_.sublines_.size();
+}
+inline int Map::sublines_size() const {
+  return _internal_sublines_size();
+}
+inline void Map::clear_sublines() {
+  _impl_.sublines_.Clear();
+}
+inline ::city::map::v2::PublicTransportSubline* Map::mutable_sublines(int index) {
+  // @@protoc_insertion_point(field_mutable:city.map.v2.Map.sublines)
+  return _impl_.sublines_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::map::v2::PublicTransportSubline >*
+Map::mutable_sublines() {
+  // @@protoc_insertion_point(field_mutable_list:city.map.v2.Map.sublines)
+  return &_impl_.sublines_;
+}
+inline const ::city::map::v2::PublicTransportSubline& Map::_internal_sublines(int index) const {
+  return _impl_.sublines_.Get(index);
+}
+inline const ::city::map::v2::PublicTransportSubline& Map::sublines(int index) const {
+  // @@protoc_insertion_point(field_get:city.map.v2.Map.sublines)
+  return _internal_sublines(index);
+}
+inline ::city::map::v2::PublicTransportSubline* Map::_internal_add_sublines() {
+  return _impl_.sublines_.Add();
+}
+inline ::city::map::v2::PublicTransportSubline* Map::add_sublines() {
+  ::city::map::v2::PublicTransportSubline* _add = _internal_add_sublines();
+  // @@protoc_insertion_point(field_add:city.map.v2.Map.sublines)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::map::v2::PublicTransportSubline >&
+Map::sublines() const {
+  // @@protoc_insertion_point(field_list:city.map.v2.Map.sublines)
+  return _impl_.sublines_;
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
@@ -6223,6 +7890,11 @@ template <> struct is_proto_enum< ::city::map::v2::LandUseType> : ::std::true_ty
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::city::map::v2::LandUseType>() {
   return ::city::map::v2::LandUseType_descriptor();
+}
+template <> struct is_proto_enum< ::city::map::v2::SublineType> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::city::map::v2::SublineType>() {
+  return ::city::map::v2::SublineType_descriptor();
 }
 
 PROTOBUF_NAMESPACE_CLOSE

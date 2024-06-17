@@ -27,8 +27,8 @@ type Mongo struct {
 	unknownFields protoimpl.UnknownFields
 
 	Uri        string        `protobuf:"bytes,1,opt,name=uri,proto3" json:"uri,omitempty" yaml:"uri" bson:"uri" db:"uri"`
-	Map        *v1.MongoPath `protobuf:"bytes,2,opt,name=map,proto3" json:"map,omitempty" yaml:"map" bson:"map" db:"map"`
-	Facilities *v1.MongoPath `protobuf:"bytes,3,opt,name=facilities,proto3" json:"facilities,omitempty" yaml:"facilities" bson:"facilities" db:"facilities"`
+	Map        *v1.MongoPath `protobuf:"bytes,2,opt,name=map,proto3" json:"map,omitempty" bson:"map" db:"map" yaml:"map"`
+	Facilities *v1.MongoPath `protobuf:"bytes,3,opt,name=facilities,proto3" json:"facilities,omitempty" db:"facilities" yaml:"facilities" bson:"facilities"`
 }
 
 func (x *Mongo) Reset() {
@@ -89,8 +89,8 @@ type ControlStep struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Start int32 `protobuf:"varint,1,opt,name=start,proto3" json:"start,omitempty" yaml:"start" bson:"start" db:"start"`
-	Total int32 `protobuf:"varint,2,opt,name=total,proto3" json:"total,omitempty" yaml:"total" bson:"total" db:"total"`
+	Start int32 `protobuf:"varint,1,opt,name=start,proto3" json:"start,omitempty" db:"start" yaml:"start" bson:"start"`
+	Total int32 `protobuf:"varint,2,opt,name=total,proto3" json:"total,omitempty" db:"total" yaml:"total" bson:"total"`
 }
 
 func (x *ControlStep) Reset() {
@@ -144,7 +144,7 @@ type Control struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Step *ControlStep `protobuf:"bytes,1,opt,name=step,proto3" json:"step,omitempty" yaml:"step" bson:"step" db:"step"`
+	Step *ControlStep `protobuf:"bytes,1,opt,name=step,proto3" json:"step,omitempty" bson:"step" db:"step" yaml:"step"`
 }
 
 func (x *Control) Reset() {
@@ -311,8 +311,8 @@ type Config struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Mongo   *Mongo   `protobuf:"bytes,1,opt,name=mongo,proto3" json:"mongo,omitempty" db:"mongo" yaml:"mongo" bson:"mongo"`
-	Control *Control `protobuf:"bytes,2,opt,name=control,proto3" json:"control,omitempty" bson:"control" db:"control" yaml:"control"`
+	Mongo   *Mongo   `protobuf:"bytes,1,opt,name=mongo,proto3" json:"mongo,omitempty" yaml:"mongo" bson:"mongo" db:"mongo"`
+	Control *Control `protobuf:"bytes,2,opt,name=control,proto3" json:"control,omitempty" yaml:"control" bson:"control" db:"control"`
 	Output  *Output  `protobuf:"bytes,3,opt,name=output,proto3" json:"output,omitempty" db:"output" yaml:"output" bson:"output"`
 }
 

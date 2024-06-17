@@ -217,6 +217,38 @@ export declare enum LandUseType {
 }
 
 /**
+ * 支线类型
+ * Type of subline
+ *
+ * @generated from enum city.map.v2.SublineType
+ */
+export declare enum SublineType {
+  /**
+   * 未指定
+   * unspecified
+   *
+   * @generated from enum value: SUBLINE_TYPE_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * 公交类型支线
+   * The subline is a bus line
+   *
+   * @generated from enum value: SUBLINE_TYPE_BUS = 1;
+   */
+  BUS = 1,
+
+  /**
+   * 地铁类型支线
+   * The subline is a subway line
+   *
+   * @generated from enum value: SUBLINE_TYPE_SUBWAY = 2;
+   */
+  SUBWAY = 2,
+}
+
+/**
  * 折线，用于定义车道等的形状
  * Polyline, used to define the shape of lanes, etc.
  *
@@ -308,6 +340,22 @@ export declare class Header extends Message<Header> {
    * @generated from field: string projection = 7;
    */
   projection: string;
+
+  /**
+   * 在x方向划分TAZ的步长
+   * Step size of the TAZ in the x-direction
+   *
+   * @generated from field: optional double taz_x_step = 8;
+   */
+  tazXStep?: number;
+
+  /**
+   * 在y方向划分TAZ的步长
+   * Step size of the TAZ in the y-direction
+   *
+   * @generated from field: optional double taz_y_step = 9;
+   */
+  tazYStep?: number;
 
   constructor(data?: PartialMessage<Header>);
 
@@ -834,6 +882,206 @@ export declare class Junction extends Message<Junction> {
 }
 
 /**
+ * @generated from message city.map.v2.RoadIds
+ */
+export declare class RoadIds extends Message<RoadIds> {
+  /**
+   * @generated from field: repeated int32 road_ids = 1;
+   */
+  roadIds: number[];
+
+  constructor(data?: PartialMessage<RoadIds>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.map.v2.RoadIds";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RoadIds;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RoadIds;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RoadIds;
+
+  static equals(a: RoadIds | PlainMessage<RoadIds> | undefined, b: RoadIds | PlainMessage<RoadIds> | undefined): boolean;
+}
+
+/**
+ * 发车时刻表
+ * Subline departure schedule
+ *
+ * @generated from message city.map.v2.SublineSchedules
+ */
+export declare class SublineSchedules extends Message<SublineSchedules> {
+  /**
+   * 始发站发车时间
+   * Departure time from the departure station
+   *
+   * @generated from field: repeated double departure_times = 1;
+   */
+  departureTimes: number[];
+
+  /**
+   * 到达沿途站点预计时间
+   * Estimated time to arrive at stops along the way
+   *
+   * @generated from field: repeated double offset_times = 2;
+   */
+  offsetTimes: number[];
+
+  constructor(data?: PartialMessage<SublineSchedules>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.map.v2.SublineSchedules";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SublineSchedules;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SublineSchedules;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SublineSchedules;
+
+  static equals(a: SublineSchedules | PlainMessage<SublineSchedules> | undefined, b: SublineSchedules | PlainMessage<SublineSchedules> | undefined): boolean;
+}
+
+/**
+ * // 交通分析区，用于预计算公共交通权重
+ * // TAZ, used to precalculate public transport costs
+ * message TransportationAnalysisZone{
+ *   int32 x_id = 1;
+ *   int32 y_id = 2;
+ *   double x_minimum = 3;
+ *   double x_maximum = 4;
+ *   double y_minimum = 5;
+ *   double y_maximum = 6;
+ * }
+ * 预计算公共交通权重
+ * Precalculate public transport costs
+ *
+ * @generated from message city.map.v2.HeuristicTAZCost
+ */
+export declare class HeuristicTAZCost extends Message<HeuristicTAZCost> {
+  /**
+   * @generated from field: int32 taz_x_id = 1;
+   */
+  tazXId: number;
+
+  /**
+   * @generated from field: int32 taz_y_id = 2;
+   */
+  tazYId: number;
+
+  /**
+   * @generated from field: int32 aoi_id = 3;
+   */
+  aoiId: number;
+
+  /**
+   * @generated from field: double cost = 4;
+   */
+  cost: number;
+
+  constructor(data?: PartialMessage<HeuristicTAZCost>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.map.v2.HeuristicTAZCost";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): HeuristicTAZCost;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): HeuristicTAZCost;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): HeuristicTAZCost;
+
+  static equals(a: HeuristicTAZCost | PlainMessage<HeuristicTAZCost> | undefined, b: HeuristicTAZCost | PlainMessage<HeuristicTAZCost> | undefined): boolean;
+}
+
+/**
+ * 公共交通支线 描述依附于行车路网的公共交通线路
+ * Public transport sub-lines, describe public transport routes attached to the road network
+ *
+ * @generated from message city.map.v2.PublicTransportSubline
+ */
+export declare class PublicTransportSubline extends Message<PublicTransportSubline> {
+  /**
+   * 支线ID
+   * Subline ID
+   *
+   * @generated from field: int32 id = 1;
+   */
+  id: number;
+
+  /**
+   * 支线名字
+   * Subline name
+   *
+   * @generated from field: string name = 2;
+   */
+  name: string;
+
+  /**
+   * 该条支线沿途的所有车站AOI，按支线前进顺序排列
+   * All stations along this subline, in the order of advancement of the subline."
+   *
+   * @generated from field: repeated int32 aoi_ids = 3;
+   */
+  aoiIds: number[];
+
+  /**
+   * 依次连接两个相邻车站的road ids
+   * Road IDs between two adjacent stations.
+   *
+   * @generated from field: repeated city.map.v2.RoadIds station_connection_road_ids = 4;
+   */
+  stationConnectionRoadIds: RoadIds[];
+
+  /**
+   * 支线类型
+   * Type of subline
+   *
+   * @generated from field: city.map.v2.SublineType type = 5;
+   */
+  type: SublineType;
+
+  /**
+   * 所属线路名称
+   * Name of the belonging line
+   *
+   * @generated from field: string parent_name = 6;
+   */
+  parentName: string;
+
+  /**
+   * 发车时刻表
+   * departure schedule
+   *
+   * @generated from field: city.map.v2.SublineSchedules schedules = 7;
+   */
+  schedules?: SublineSchedules;
+
+  /**
+   * 预计算公共交通权重
+   * Precalculate public transport costs
+   *
+   * @generated from field: repeated city.map.v2.HeuristicTAZCost taz_costs = 8;
+   */
+  tazCosts: HeuristicTAZCost[];
+
+  constructor(data?: PartialMessage<PublicTransportSubline>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.map.v2.PublicTransportSubline";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PublicTransportSubline;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PublicTransportSubline;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PublicTransportSubline;
+
+  static equals(a: PublicTransportSubline | PlainMessage<PublicTransportSubline> | undefined, b: PublicTransportSubline | PlainMessage<PublicTransportSubline> | undefined): boolean;
+}
+
+/**
  * Aoi，用于描述地图上的区域
  * Aoi, describing a region on the map
  *
@@ -939,6 +1187,14 @@ export declare class Aoi extends Message<Aoi> {
    * @generated from field: repeated int32 poi_ids = 9;
    */
   poiIds: number[];
+
+  /**
+   * Aoi所在的所有公共交通线路ID
+   * Subline IDs contained this Aoi
+   *
+   * @generated from field: repeated int32 subline_ids = 13;
+   */
+  sublineIds: number[];
 
   constructor(data?: PartialMessage<Aoi>);
 
@@ -1069,6 +1325,11 @@ export declare class Map extends Message<Map> {
    * @generated from field: repeated city.map.v2.Poi pois = 6;
    */
   pois: Poi[];
+
+  /**
+   * @generated from field: repeated city.map.v2.PublicTransportSubline sublines = 7;
+   */
+  sublines: PublicTransportSubline[];
 
   constructor(data?: PartialMessage<Map>);
 

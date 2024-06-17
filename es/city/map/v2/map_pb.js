@@ -89,6 +89,21 @@ export const LandUseType = proto3.makeEnum(
 );
 
 /**
+ * 支线类型
+ * Type of subline
+ *
+ * @generated from enum city.map.v2.SublineType
+ */
+export const SublineType = proto3.makeEnum(
+  "city.map.v2.SublineType",
+  [
+    {no: 0, name: "SUBLINE_TYPE_UNSPECIFIED", localName: "UNSPECIFIED"},
+    {no: 1, name: "SUBLINE_TYPE_BUS", localName: "BUS"},
+    {no: 2, name: "SUBLINE_TYPE_SUBWAY", localName: "SUBWAY"},
+  ],
+);
+
+/**
  * 折线，用于定义车道等的形状
  * Polyline, used to define the shape of lanes, etc.
  *
@@ -117,6 +132,8 @@ export const Header = proto3.makeMessageType(
     { no: 5, name: "east", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
     { no: 6, name: "west", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
     { no: 7, name: "projection", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "taz_x_step", kind: "scalar", T: 1 /* ScalarType.DOUBLE */, opt: true },
+    { no: 9, name: "taz_y_step", kind: "scalar", T: 1 /* ScalarType.DOUBLE */, opt: true },
   ],
 );
 
@@ -255,6 +272,76 @@ export const Junction = proto3.makeMessageType(
 );
 
 /**
+ * @generated from message city.map.v2.RoadIds
+ */
+export const RoadIds = proto3.makeMessageType(
+  "city.map.v2.RoadIds",
+  () => [
+    { no: 1, name: "road_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+  ],
+);
+
+/**
+ * 发车时刻表
+ * Subline departure schedule
+ *
+ * @generated from message city.map.v2.SublineSchedules
+ */
+export const SublineSchedules = proto3.makeMessageType(
+  "city.map.v2.SublineSchedules",
+  () => [
+    { no: 1, name: "departure_times", kind: "scalar", T: 1 /* ScalarType.DOUBLE */, repeated: true },
+    { no: 2, name: "offset_times", kind: "scalar", T: 1 /* ScalarType.DOUBLE */, repeated: true },
+  ],
+);
+
+/**
+ * // 交通分析区，用于预计算公共交通权重
+ * // TAZ, used to precalculate public transport costs
+ * message TransportationAnalysisZone{
+ *   int32 x_id = 1;
+ *   int32 y_id = 2;
+ *   double x_minimum = 3;
+ *   double x_maximum = 4;
+ *   double y_minimum = 5;
+ *   double y_maximum = 6;
+ * }
+ * 预计算公共交通权重
+ * Precalculate public transport costs
+ *
+ * @generated from message city.map.v2.HeuristicTAZCost
+ */
+export const HeuristicTAZCost = proto3.makeMessageType(
+  "city.map.v2.HeuristicTAZCost",
+  () => [
+    { no: 1, name: "taz_x_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "taz_y_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "aoi_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: "cost", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+  ],
+);
+
+/**
+ * 公共交通支线 描述依附于行车路网的公共交通线路
+ * Public transport sub-lines, describe public transport routes attached to the road network
+ *
+ * @generated from message city.map.v2.PublicTransportSubline
+ */
+export const PublicTransportSubline = proto3.makeMessageType(
+  "city.map.v2.PublicTransportSubline",
+  () => [
+    { no: 1, name: "id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "aoi_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 4, name: "station_connection_road_ids", kind: "message", T: RoadIds, repeated: true },
+    { no: 5, name: "type", kind: "enum", T: proto3.getEnumType(SublineType) },
+    { no: 6, name: "parent_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "schedules", kind: "message", T: SublineSchedules },
+    { no: 8, name: "taz_costs", kind: "message", T: HeuristicTAZCost, repeated: true },
+  ],
+);
+
+/**
  * Aoi，用于描述地图上的区域
  * Aoi, describing a region on the map
  *
@@ -275,6 +362,7 @@ export const Aoi = proto3.makeMessageType(
     { no: 10, name: "land_use", kind: "enum", T: proto3.getEnumType(LandUseType), opt: true },
     { no: 12, name: "urban_land_use", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
     { no: 9, name: "poi_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 13, name: "subline_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
   ],
 );
 
@@ -312,6 +400,7 @@ export const Map = proto3.makeMessageType(
     { no: 4, name: "junctions", kind: "message", T: Junction, repeated: true },
     { no: 5, name: "aois", kind: "message", T: Aoi, repeated: true },
     { no: 6, name: "pois", kind: "message", T: Poi, repeated: true },
+    { no: 7, name: "sublines", kind: "message", T: PublicTransportSubline, repeated: true },
   ],
 );
 

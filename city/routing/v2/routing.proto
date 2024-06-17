@@ -92,10 +92,21 @@ message WalkingJourneyBody {
   double eta = 2;
 }
 
-message BusJourneyBody {
-  int32 line_id = 1;
+// message BusJourneyBody {
+//   int32 line_id = 1;
+//   int32 start_station_id = 2;
+//   int32 end_station_id = 3;
+// }
+message TransferSegment {
+  int32 subline_id = 1;
   int32 start_station_id = 2;
   int32 end_station_id = 3;
+}
+message BusJourneyBody {
+  repeated TransferSegment transfers = 1;
+  // 从起点到终点预计的时间(estimation time of arrival)
+  // estimation time of arrival
+  double eta = 2;
 }
 
 // 路径规划结果的一部分，含且仅含采用一种交通出行方式的完整出行序列
@@ -121,25 +132,25 @@ message Journey {
   // optional TaxiJourneyBody by_taxi = 5;
 }
 
-// 公交线路
-// Bus line
-message BusLine {
-  // 线路ID
-  // bus line ID
-  int32 line_id = 1;
-  // 停靠站点AOI ID列表
-  // List of the AOI IDs of bus stations
-  repeated int32 stops = 2;
-  repeated double distances = 3;
-  int32 interval = 4;
-  int32 count = 5;
-}
+// // 公交线路
+// // Bus line
+// message BusLine {
+//   // 线路ID
+//   // bus line ID
+//   int32 line_id = 1;
+//   // 停靠站点AOI ID列表
+//   // List of the AOI IDs of bus stations
+//   repeated int32 stops = 2;
+//   repeated double distances = 3;
+//   int32 interval = 4;
+//   int32 count = 5;
+// }
 
-// 公交线路集合，对应一个公交线路pb文件或一个公交线路mongodb collection
-// Bus lines collection, corresponding to a bus line PB file or a bus line mongodb collection
-message BusLines {
-  repeated BusLine lines = 1;
-}
+// // 公交线路集合，对应一个公交线路pb文件或一个公交线路mongodb collection
+// // Bus lines collection, corresponding to a bus line PB file or a bus line mongodb collection
+// message BusLines {
+//   repeated BusLine lines = 1;
+// }
 
 // 预计算路况信息
 // Pre calculate road condition information

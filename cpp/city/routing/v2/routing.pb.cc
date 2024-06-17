@@ -66,11 +66,25 @@ struct WalkingJourneyBodyDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 WalkingJourneyBodyDefaultTypeInternal _WalkingJourneyBody_default_instance_;
-PROTOBUF_CONSTEXPR BusJourneyBody::BusJourneyBody(
+PROTOBUF_CONSTEXPR TransferSegment::TransferSegment(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.line_id_)*/0
+    /*decltype(_impl_.subline_id_)*/0
   , /*decltype(_impl_.start_station_id_)*/0
   , /*decltype(_impl_.end_station_id_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct TransferSegmentDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR TransferSegmentDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~TransferSegmentDefaultTypeInternal() {}
+  union {
+    TransferSegment _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 TransferSegmentDefaultTypeInternal _TransferSegment_default_instance_;
+PROTOBUF_CONSTEXPR BusJourneyBody::BusJourneyBody(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.transfers_)*/{}
+  , /*decltype(_impl_.eta_)*/0
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct BusJourneyBodyDefaultTypeInternal {
   PROTOBUF_CONSTEXPR BusJourneyBodyDefaultTypeInternal()
@@ -98,37 +112,6 @@ struct JourneyDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 JourneyDefaultTypeInternal _Journey_default_instance_;
-PROTOBUF_CONSTEXPR BusLine::BusLine(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.stops_)*/{}
-  , /*decltype(_impl_._stops_cached_byte_size_)*/{0}
-  , /*decltype(_impl_.distances_)*/{}
-  , /*decltype(_impl_.line_id_)*/0
-  , /*decltype(_impl_.interval_)*/0
-  , /*decltype(_impl_.count_)*/0
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct BusLineDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR BusLineDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~BusLineDefaultTypeInternal() {}
-  union {
-    BusLine _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BusLineDefaultTypeInternal _BusLine_default_instance_;
-PROTOBUF_CONSTEXPR BusLines::BusLines(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.lines_)*/{}
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct BusLinesDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR BusLinesDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~BusLinesDefaultTypeInternal() {}
-  union {
-    BusLines _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BusLinesDefaultTypeInternal _BusLines_default_instance_;
 PROTOBUF_CONSTEXPR RoadStatus::RoadStatus(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.speed_)*/{}
@@ -159,7 +142,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORIT
 }  // namespace v2
 }  // namespace routing
 }  // namespace city
-static ::_pb::Metadata file_level_metadata_city_2frouting_2fv2_2frouting_2eproto[9];
+static ::_pb::Metadata file_level_metadata_city_2frouting_2fv2_2frouting_2eproto[8];
 static const ::_pb::EnumDescriptor* file_level_enum_descriptors_city_2frouting_2fv2_2frouting_2eproto[3];
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_city_2frouting_2fv2_2frouting_2eproto = nullptr;
 
@@ -189,14 +172,22 @@ const uint32_t TableStruct_city_2frouting_2fv2_2frouting_2eproto::offsets[] PROT
   PROTOBUF_FIELD_OFFSET(::city::routing::v2::WalkingJourneyBody, _impl_.route_),
   PROTOBUF_FIELD_OFFSET(::city::routing::v2::WalkingJourneyBody, _impl_.eta_),
   ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::routing::v2::TransferSegment, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::routing::v2::TransferSegment, _impl_.subline_id_),
+  PROTOBUF_FIELD_OFFSET(::city::routing::v2::TransferSegment, _impl_.start_station_id_),
+  PROTOBUF_FIELD_OFFSET(::city::routing::v2::TransferSegment, _impl_.end_station_id_),
+  ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::city::routing::v2::BusJourneyBody, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::city::routing::v2::BusJourneyBody, _impl_.line_id_),
-  PROTOBUF_FIELD_OFFSET(::city::routing::v2::BusJourneyBody, _impl_.start_station_id_),
-  PROTOBUF_FIELD_OFFSET(::city::routing::v2::BusJourneyBody, _impl_.end_station_id_),
+  PROTOBUF_FIELD_OFFSET(::city::routing::v2::BusJourneyBody, _impl_.transfers_),
+  PROTOBUF_FIELD_OFFSET(::city::routing::v2::BusJourneyBody, _impl_.eta_),
   PROTOBUF_FIELD_OFFSET(::city::routing::v2::Journey, _impl_._has_bits_),
   PROTOBUF_FIELD_OFFSET(::city::routing::v2::Journey, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -211,24 +202,6 @@ const uint32_t TableStruct_city_2frouting_2fv2_2frouting_2eproto::offsets[] PROT
   0,
   1,
   2,
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::city::routing::v2::BusLine, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::city::routing::v2::BusLine, _impl_.line_id_),
-  PROTOBUF_FIELD_OFFSET(::city::routing::v2::BusLine, _impl_.stops_),
-  PROTOBUF_FIELD_OFFSET(::city::routing::v2::BusLine, _impl_.distances_),
-  PROTOBUF_FIELD_OFFSET(::city::routing::v2::BusLine, _impl_.interval_),
-  PROTOBUF_FIELD_OFFSET(::city::routing::v2::BusLine, _impl_.count_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::city::routing::v2::BusLines, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::city::routing::v2::BusLines, _impl_.lines_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::city::routing::v2::RoadStatus, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -249,22 +222,20 @@ static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protode
   { 0, -1, -1, sizeof(::city::routing::v2::DrivingJourneyBody)},
   { 8, -1, -1, sizeof(::city::routing::v2::WalkingRouteSegment)},
   { 16, -1, -1, sizeof(::city::routing::v2::WalkingJourneyBody)},
-  { 24, -1, -1, sizeof(::city::routing::v2::BusJourneyBody)},
-  { 33, 43, -1, sizeof(::city::routing::v2::Journey)},
-  { 47, -1, -1, sizeof(::city::routing::v2::BusLine)},
-  { 58, -1, -1, sizeof(::city::routing::v2::BusLines)},
-  { 65, -1, -1, sizeof(::city::routing::v2::RoadStatus)},
-  { 73, -1, -1, sizeof(::city::routing::v2::RoadStatuses)},
+  { 24, -1, -1, sizeof(::city::routing::v2::TransferSegment)},
+  { 33, -1, -1, sizeof(::city::routing::v2::BusJourneyBody)},
+  { 41, 51, -1, sizeof(::city::routing::v2::Journey)},
+  { 55, -1, -1, sizeof(::city::routing::v2::RoadStatus)},
+  { 63, -1, -1, sizeof(::city::routing::v2::RoadStatuses)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
   &::city::routing::v2::_DrivingJourneyBody_default_instance_._instance,
   &::city::routing::v2::_WalkingRouteSegment_default_instance_._instance,
   &::city::routing::v2::_WalkingJourneyBody_default_instance_._instance,
+  &::city::routing::v2::_TransferSegment_default_instance_._instance,
   &::city::routing::v2::_BusJourneyBody_default_instance_._instance,
   &::city::routing::v2::_Journey_default_instance_._instance,
-  &::city::routing::v2::_BusLine_default_instance_._instance,
-  &::city::routing::v2::_BusLines_default_instance_._instance,
   &::city::routing::v2::_RoadStatus_default_instance_._instance,
   &::city::routing::v2::_RoadStatuses_default_instance_._instance,
 };
@@ -278,45 +249,43 @@ const char descriptor_table_protodef_city_2frouting_2fv2_2frouting_2eproto[] PRO
   "ting.v2.MovingDirectionR\017movingDirection"
   "\"b\n\022WalkingJourneyBody\022:\n\005route\030\001 \003(\0132$."
   "city.routing.v2.WalkingRouteSegmentR\005rou"
-  "te\022\020\n\003eta\030\002 \001(\001R\003eta\"y\n\016BusJourneyBody\022\027"
-  "\n\007line_id\030\001 \001(\005R\006lineId\022(\n\020start_station"
-  "_id\030\002 \001(\005R\016startStationId\022$\n\016end_station"
-  "_id\030\003 \001(\005R\014endStationId\"\243\002\n\007Journey\0220\n\004t"
-  "ype\030\001 \001(\0162\034.city.routing.v2.JourneyTypeR"
-  "\004type\022B\n\007driving\030\002 \001(\0132#.city.routing.v2"
-  ".DrivingJourneyBodyH\000R\007driving\210\001\001\022B\n\007wal"
-  "king\030\003 \001(\0132#.city.routing.v2.WalkingJour"
-  "neyBodyH\001R\007walking\210\001\001\022;\n\006by_bus\030\004 \001(\0132\037."
-  "city.routing.v2.BusJourneyBodyH\002R\005byBus\210"
-  "\001\001B\n\n\010_drivingB\n\n\010_walkingB\t\n\007_by_bus\"\210\001"
-  "\n\007BusLine\022\027\n\007line_id\030\001 \001(\005R\006lineId\022\024\n\005st"
-  "ops\030\002 \003(\005R\005stops\022\034\n\tdistances\030\003 \003(\001R\tdis"
-  "tances\022\032\n\010interval\030\004 \001(\005R\010interval\022\024\n\005co"
-  "unt\030\005 \001(\005R\005count\":\n\010BusLines\022.\n\005lines\030\001 "
-  "\003(\0132\030.city.routing.v2.BusLineR\005lines\"2\n\n"
-  "RoadStatus\022\016\n\002id\030\001 \001(\005R\002id\022\024\n\005speed\030\002 \003("
-  "\001R\005speed\"P\n\014RoadStatuses\022@\n\rroad_statuse"
-  "s\030\001 \003(\0132\033.city.routing.v2.RoadStatusR\014ro"
-  "adStatuses*n\n\tRouteType\022\032\n\026ROUTE_TYPE_UN"
-  "SPECIFIED\020\000\022\026\n\022ROUTE_TYPE_DRIVING\020\001\022\026\n\022R"
-  "OUTE_TYPE_WALKING\020\002\022\025\n\021ROUTE_TYPE_BY_BUS"
-  "\020\003*x\n\013JourneyType\022\034\n\030JOURNEY_TYPE_UNSPEC"
-  "IFIED\020\000\022\030\n\024JOURNEY_TYPE_DRIVING\020\001\022\030\n\024JOU"
-  "RNEY_TYPE_WALKING\020\002\022\027\n\023JOURNEY_TYPE_BY_B"
-  "US\020\003*p\n\017MovingDirection\022 \n\034MOVING_DIRECT"
-  "ION_UNSPECIFIED\020\000\022\034\n\030MOVING_DIRECTION_FO"
-  "RWARD\020\001\022\035\n\031MOVING_DIRECTION_BACKWARD\020\002B\271"
-  "\001\n\023com.city.routing.v2B\014RoutingProtoP\001Z6"
-  "git.fiblab.net/sim/protos/go/city/routin"
-  "g/v2;routingv2\242\002\003CRX\252\002\017City.Routing.V2\312\002"
-  "\017City\\Routing\\V2\342\002\033City\\Routing\\V2\\GPBMe"
-  "tadata\352\002\021City::Routing::V2b\006proto3"
+  "te\022\020\n\003eta\030\002 \001(\001R\003eta\"\200\001\n\017TransferSegment"
+  "\022\035\n\nsubline_id\030\001 \001(\005R\tsublineId\022(\n\020start"
+  "_station_id\030\002 \001(\005R\016startStationId\022$\n\016end"
+  "_station_id\030\003 \001(\005R\014endStationId\"b\n\016BusJo"
+  "urneyBody\022>\n\ttransfers\030\001 \003(\0132 .city.rout"
+  "ing.v2.TransferSegmentR\ttransfers\022\020\n\003eta"
+  "\030\002 \001(\001R\003eta\"\243\002\n\007Journey\0220\n\004type\030\001 \001(\0162\034."
+  "city.routing.v2.JourneyTypeR\004type\022B\n\007dri"
+  "ving\030\002 \001(\0132#.city.routing.v2.DrivingJour"
+  "neyBodyH\000R\007driving\210\001\001\022B\n\007walking\030\003 \001(\0132#"
+  ".city.routing.v2.WalkingJourneyBodyH\001R\007w"
+  "alking\210\001\001\022;\n\006by_bus\030\004 \001(\0132\037.city.routing"
+  ".v2.BusJourneyBodyH\002R\005byBus\210\001\001B\n\n\010_drivi"
+  "ngB\n\n\010_walkingB\t\n\007_by_bus\"2\n\nRoadStatus\022"
+  "\016\n\002id\030\001 \001(\005R\002id\022\024\n\005speed\030\002 \003(\001R\005speed\"P\n"
+  "\014RoadStatuses\022@\n\rroad_statuses\030\001 \003(\0132\033.c"
+  "ity.routing.v2.RoadStatusR\014roadStatuses*"
+  "n\n\tRouteType\022\032\n\026ROUTE_TYPE_UNSPECIFIED\020\000"
+  "\022\026\n\022ROUTE_TYPE_DRIVING\020\001\022\026\n\022ROUTE_TYPE_W"
+  "ALKING\020\002\022\025\n\021ROUTE_TYPE_BY_BUS\020\003*x\n\013Journ"
+  "eyType\022\034\n\030JOURNEY_TYPE_UNSPECIFIED\020\000\022\030\n\024"
+  "JOURNEY_TYPE_DRIVING\020\001\022\030\n\024JOURNEY_TYPE_W"
+  "ALKING\020\002\022\027\n\023JOURNEY_TYPE_BY_BUS\020\003*p\n\017Mov"
+  "ingDirection\022 \n\034MOVING_DIRECTION_UNSPECI"
+  "FIED\020\000\022\034\n\030MOVING_DIRECTION_FORWARD\020\001\022\035\n\031"
+  "MOVING_DIRECTION_BACKWARD\020\002B\271\001\n\023com.city"
+  ".routing.v2B\014RoutingProtoP\001Z6git.fiblab."
+  "net/sim/protos/go/city/routing/v2;routin"
+  "gv2\242\002\003CRX\252\002\017City.Routing.V2\312\002\017City\\Routi"
+  "ng\\V2\342\002\033City\\Routing\\V2\\GPBMetadata\352\002\021Ci"
+  "ty::Routing::V2b\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_city_2frouting_2fv2_2frouting_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2frouting_2fv2_2frouting_2eproto = {
-    false, false, 1634, descriptor_table_protodef_city_2frouting_2fv2_2frouting_2eproto,
+    false, false, 1543, descriptor_table_protodef_city_2frouting_2fv2_2frouting_2eproto,
     "city/routing/v2/routing.proto",
-    &descriptor_table_city_2frouting_2fv2_2frouting_2eproto_once, nullptr, 0, 9,
+    &descriptor_table_city_2frouting_2fv2_2frouting_2eproto_once, nullptr, 0, 8,
     schemas, file_default_instances, TableStruct_city_2frouting_2fv2_2frouting_2eproto::offsets,
     file_level_metadata_city_2frouting_2fv2_2frouting_2eproto, file_level_enum_descriptors_city_2frouting_2fv2_2frouting_2eproto,
     file_level_service_descriptors_city_2frouting_2fv2_2frouting_2eproto,
@@ -1050,46 +1019,46 @@ void WalkingJourneyBody::InternalSwap(WalkingJourneyBody* other) {
 
 // ===================================================================
 
-class BusJourneyBody::_Internal {
+class TransferSegment::_Internal {
  public:
 };
 
-BusJourneyBody::BusJourneyBody(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+TransferSegment::TransferSegment(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:city.routing.v2.BusJourneyBody)
+  // @@protoc_insertion_point(arena_constructor:city.routing.v2.TransferSegment)
 }
-BusJourneyBody::BusJourneyBody(const BusJourneyBody& from)
+TransferSegment::TransferSegment(const TransferSegment& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  BusJourneyBody* const _this = this; (void)_this;
+  TransferSegment* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.line_id_){}
+      decltype(_impl_.subline_id_){}
     , decltype(_impl_.start_station_id_){}
     , decltype(_impl_.end_station_id_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&_impl_.line_id_, &from._impl_.line_id_,
+  ::memcpy(&_impl_.subline_id_, &from._impl_.subline_id_,
     static_cast<size_t>(reinterpret_cast<char*>(&_impl_.end_station_id_) -
-    reinterpret_cast<char*>(&_impl_.line_id_)) + sizeof(_impl_.end_station_id_));
-  // @@protoc_insertion_point(copy_constructor:city.routing.v2.BusJourneyBody)
+    reinterpret_cast<char*>(&_impl_.subline_id_)) + sizeof(_impl_.end_station_id_));
+  // @@protoc_insertion_point(copy_constructor:city.routing.v2.TransferSegment)
 }
 
-inline void BusJourneyBody::SharedCtor(
+inline void TransferSegment::SharedCtor(
     ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
   (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.line_id_){0}
+      decltype(_impl_.subline_id_){0}
     , decltype(_impl_.start_station_id_){0}
     , decltype(_impl_.end_station_id_){0}
     , /*decltype(_impl_._cached_size_)*/{}
   };
 }
 
-BusJourneyBody::~BusJourneyBody() {
-  // @@protoc_insertion_point(destructor:city.routing.v2.BusJourneyBody)
+TransferSegment::~TransferSegment() {
+  // @@protoc_insertion_point(destructor:city.routing.v2.TransferSegment)
   if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
   (void)arena;
     return;
@@ -1097,36 +1066,36 @@ BusJourneyBody::~BusJourneyBody() {
   SharedDtor();
 }
 
-inline void BusJourneyBody::SharedDtor() {
+inline void TransferSegment::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
-void BusJourneyBody::SetCachedSize(int size) const {
+void TransferSegment::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-void BusJourneyBody::Clear() {
-// @@protoc_insertion_point(message_clear_start:city.routing.v2.BusJourneyBody)
+void TransferSegment::Clear() {
+// @@protoc_insertion_point(message_clear_start:city.routing.v2.TransferSegment)
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&_impl_.line_id_, 0, static_cast<size_t>(
+  ::memset(&_impl_.subline_id_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_impl_.end_station_id_) -
-      reinterpret_cast<char*>(&_impl_.line_id_)) + sizeof(_impl_.end_station_id_));
+      reinterpret_cast<char*>(&_impl_.subline_id_)) + sizeof(_impl_.end_station_id_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* BusJourneyBody::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* TransferSegment::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // int32 line_id = 1 [json_name = "lineId"];
+      // int32 subline_id = 1 [json_name = "sublineId"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.line_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.subline_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1170,16 +1139,16 @@ failure:
 #undef CHK_
 }
 
-uint8_t* BusJourneyBody::_InternalSerialize(
+uint8_t* TransferSegment::_InternalSerialize(
     uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:city.routing.v2.BusJourneyBody)
+  // @@protoc_insertion_point(serialize_to_array_start:city.routing.v2.TransferSegment)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // int32 line_id = 1 [json_name = "lineId"];
-  if (this->_internal_line_id() != 0) {
+  // int32 subline_id = 1 [json_name = "sublineId"];
+  if (this->_internal_subline_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_line_id(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_subline_id(), target);
   }
 
   // int32 start_station_id = 2 [json_name = "startStationId"];
@@ -1198,6 +1167,234 @@ uint8_t* BusJourneyBody::_InternalSerialize(
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
+  // @@protoc_insertion_point(serialize_to_array_end:city.routing.v2.TransferSegment)
+  return target;
+}
+
+size_t TransferSegment::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:city.routing.v2.TransferSegment)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // int32 subline_id = 1 [json_name = "sublineId"];
+  if (this->_internal_subline_id() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_subline_id());
+  }
+
+  // int32 start_station_id = 2 [json_name = "startStationId"];
+  if (this->_internal_start_station_id() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_start_station_id());
+  }
+
+  // int32 end_station_id = 3 [json_name = "endStationId"];
+  if (this->_internal_end_station_id() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_end_station_id());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData TransferSegment::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    TransferSegment::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*TransferSegment::GetClassData() const { return &_class_data_; }
+
+
+void TransferSegment::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<TransferSegment*>(&to_msg);
+  auto& from = static_cast<const TransferSegment&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:city.routing.v2.TransferSegment)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_subline_id() != 0) {
+    _this->_internal_set_subline_id(from._internal_subline_id());
+  }
+  if (from._internal_start_station_id() != 0) {
+    _this->_internal_set_start_station_id(from._internal_start_station_id());
+  }
+  if (from._internal_end_station_id() != 0) {
+    _this->_internal_set_end_station_id(from._internal_end_station_id());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void TransferSegment::CopyFrom(const TransferSegment& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:city.routing.v2.TransferSegment)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool TransferSegment::IsInitialized() const {
+  return true;
+}
+
+void TransferSegment::InternalSwap(TransferSegment* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(TransferSegment, _impl_.end_station_id_)
+      + sizeof(TransferSegment::_impl_.end_station_id_)
+      - PROTOBUF_FIELD_OFFSET(TransferSegment, _impl_.subline_id_)>(
+          reinterpret_cast<char*>(&_impl_.subline_id_),
+          reinterpret_cast<char*>(&other->_impl_.subline_id_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata TransferSegment::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2frouting_2fv2_2frouting_2eproto_getter, &descriptor_table_city_2frouting_2fv2_2frouting_2eproto_once,
+      file_level_metadata_city_2frouting_2fv2_2frouting_2eproto[3]);
+}
+
+// ===================================================================
+
+class BusJourneyBody::_Internal {
+ public:
+};
+
+BusJourneyBody::BusJourneyBody(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:city.routing.v2.BusJourneyBody)
+}
+BusJourneyBody::BusJourneyBody(const BusJourneyBody& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  BusJourneyBody* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.transfers_){from._impl_.transfers_}
+    , decltype(_impl_.eta_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.eta_ = from._impl_.eta_;
+  // @@protoc_insertion_point(copy_constructor:city.routing.v2.BusJourneyBody)
+}
+
+inline void BusJourneyBody::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.transfers_){arena}
+    , decltype(_impl_.eta_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+}
+
+BusJourneyBody::~BusJourneyBody() {
+  // @@protoc_insertion_point(destructor:city.routing.v2.BusJourneyBody)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void BusJourneyBody::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.transfers_.~RepeatedPtrField();
+}
+
+void BusJourneyBody::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void BusJourneyBody::Clear() {
+// @@protoc_insertion_point(message_clear_start:city.routing.v2.BusJourneyBody)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.transfers_.Clear();
+  _impl_.eta_ = 0;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* BusJourneyBody::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // repeated .city.routing.v2.TransferSegment transfers = 1 [json_name = "transfers"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_transfers(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      // double eta = 2 [json_name = "eta"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 17)) {
+          _impl_.eta_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* BusJourneyBody::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:city.routing.v2.BusJourneyBody)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated .city.routing.v2.TransferSegment transfers = 1 [json_name = "transfers"];
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_transfers_size()); i < n; i++) {
+    const auto& repfield = this->_internal_transfers(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
+  }
+
+  // double eta = 2 [json_name = "eta"];
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_eta = this->_internal_eta();
+  uint64_t raw_eta;
+  memcpy(&raw_eta, &tmp_eta, sizeof(tmp_eta));
+  if (raw_eta != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(2, this->_internal_eta(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
   // @@protoc_insertion_point(serialize_to_array_end:city.routing.v2.BusJourneyBody)
   return target;
 }
@@ -1210,19 +1407,20 @@ size_t BusJourneyBody::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // int32 line_id = 1 [json_name = "lineId"];
-  if (this->_internal_line_id() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_line_id());
+  // repeated .city.routing.v2.TransferSegment transfers = 1 [json_name = "transfers"];
+  total_size += 1UL * this->_internal_transfers_size();
+  for (const auto& msg : this->_impl_.transfers_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // int32 start_station_id = 2 [json_name = "startStationId"];
-  if (this->_internal_start_station_id() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_start_station_id());
-  }
-
-  // int32 end_station_id = 3 [json_name = "endStationId"];
-  if (this->_internal_end_station_id() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_end_station_id());
+  // double eta = 2 [json_name = "eta"];
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_eta = this->_internal_eta();
+  uint64_t raw_eta;
+  memcpy(&raw_eta, &tmp_eta, sizeof(tmp_eta));
+  if (raw_eta != 0) {
+    total_size += 1 + 8;
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -1243,14 +1441,13 @@ void BusJourneyBody::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const :
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_line_id() != 0) {
-    _this->_internal_set_line_id(from._internal_line_id());
-  }
-  if (from._internal_start_station_id() != 0) {
-    _this->_internal_set_start_station_id(from._internal_start_station_id());
-  }
-  if (from._internal_end_station_id() != 0) {
-    _this->_internal_set_end_station_id(from._internal_end_station_id());
+  _this->_impl_.transfers_.MergeFrom(from._impl_.transfers_);
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_eta = from._internal_eta();
+  uint64_t raw_eta;
+  memcpy(&raw_eta, &tmp_eta, sizeof(tmp_eta));
+  if (raw_eta != 0) {
+    _this->_internal_set_eta(from._internal_eta());
   }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -1269,18 +1466,14 @@ bool BusJourneyBody::IsInitialized() const {
 void BusJourneyBody::InternalSwap(BusJourneyBody* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(BusJourneyBody, _impl_.end_station_id_)
-      + sizeof(BusJourneyBody::_impl_.end_station_id_)
-      - PROTOBUF_FIELD_OFFSET(BusJourneyBody, _impl_.line_id_)>(
-          reinterpret_cast<char*>(&_impl_.line_id_),
-          reinterpret_cast<char*>(&other->_impl_.line_id_));
+  _impl_.transfers_.InternalSwap(&other->_impl_.transfers_);
+  swap(_impl_.eta_, other->_impl_.eta_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata BusJourneyBody::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2frouting_2fv2_2frouting_2eproto_getter, &descriptor_table_city_2frouting_2fv2_2frouting_2eproto_once,
-      file_level_metadata_city_2frouting_2fv2_2frouting_2eproto[3]);
+      file_level_metadata_city_2frouting_2fv2_2frouting_2eproto[4]);
 }
 
 // ===================================================================
@@ -1614,502 +1807,7 @@ void Journey::InternalSwap(Journey* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata Journey::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2frouting_2fv2_2frouting_2eproto_getter, &descriptor_table_city_2frouting_2fv2_2frouting_2eproto_once,
-      file_level_metadata_city_2frouting_2fv2_2frouting_2eproto[4]);
-}
-
-// ===================================================================
-
-class BusLine::_Internal {
- public:
-};
-
-BusLine::BusLine(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:city.routing.v2.BusLine)
-}
-BusLine::BusLine(const BusLine& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  BusLine* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.stops_){from._impl_.stops_}
-    , /*decltype(_impl_._stops_cached_byte_size_)*/{0}
-    , decltype(_impl_.distances_){from._impl_.distances_}
-    , decltype(_impl_.line_id_){}
-    , decltype(_impl_.interval_){}
-    , decltype(_impl_.count_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&_impl_.line_id_, &from._impl_.line_id_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.count_) -
-    reinterpret_cast<char*>(&_impl_.line_id_)) + sizeof(_impl_.count_));
-  // @@protoc_insertion_point(copy_constructor:city.routing.v2.BusLine)
-}
-
-inline void BusLine::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.stops_){arena}
-    , /*decltype(_impl_._stops_cached_byte_size_)*/{0}
-    , decltype(_impl_.distances_){arena}
-    , decltype(_impl_.line_id_){0}
-    , decltype(_impl_.interval_){0}
-    , decltype(_impl_.count_){0}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-}
-
-BusLine::~BusLine() {
-  // @@protoc_insertion_point(destructor:city.routing.v2.BusLine)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
-  SharedDtor();
-}
-
-inline void BusLine::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.stops_.~RepeatedField();
-  _impl_.distances_.~RepeatedField();
-}
-
-void BusLine::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
-}
-
-void BusLine::Clear() {
-// @@protoc_insertion_point(message_clear_start:city.routing.v2.BusLine)
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  _impl_.stops_.Clear();
-  _impl_.distances_.Clear();
-  ::memset(&_impl_.line_id_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_impl_.count_) -
-      reinterpret_cast<char*>(&_impl_.line_id_)) + sizeof(_impl_.count_));
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* BusLine::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // int32 line_id = 1 [json_name = "lineId"];
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.line_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // repeated int32 stops = 2 [json_name = "stops"];
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_stops(), ptr, ctx);
-          CHK_(ptr);
-        } else if (static_cast<uint8_t>(tag) == 16) {
-          _internal_add_stops(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // repeated double distances = 3 [json_name = "distances"];
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedDoubleParser(_internal_mutable_distances(), ptr, ctx);
-          CHK_(ptr);
-        } else if (static_cast<uint8_t>(tag) == 25) {
-          _internal_add_distances(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr));
-          ptr += sizeof(double);
-        } else
-          goto handle_unusual;
-        continue;
-      // int32 interval = 4 [json_name = "interval"];
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
-          _impl_.interval_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // int32 count = 5 [json_name = "count"];
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
-          _impl_.count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
-}
-
-uint8_t* BusLine::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:city.routing.v2.BusLine)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // int32 line_id = 1 [json_name = "lineId"];
-  if (this->_internal_line_id() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_line_id(), target);
-  }
-
-  // repeated int32 stops = 2 [json_name = "stops"];
-  {
-    int byte_size = _impl_._stops_cached_byte_size_.load(std::memory_order_relaxed);
-    if (byte_size > 0) {
-      target = stream->WriteInt32Packed(
-          2, _internal_stops(), byte_size, target);
-    }
-  }
-
-  // repeated double distances = 3 [json_name = "distances"];
-  if (this->_internal_distances_size() > 0) {
-    target = stream->WriteFixedPacked(3, _internal_distances(), target);
-  }
-
-  // int32 interval = 4 [json_name = "interval"];
-  if (this->_internal_interval() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteInt32ToArray(4, this->_internal_interval(), target);
-  }
-
-  // int32 count = 5 [json_name = "count"];
-  if (this->_internal_count() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteInt32ToArray(5, this->_internal_count(), target);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:city.routing.v2.BusLine)
-  return target;
-}
-
-size_t BusLine::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:city.routing.v2.BusLine)
-  size_t total_size = 0;
-
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // repeated int32 stops = 2 [json_name = "stops"];
-  {
-    size_t data_size = ::_pbi::WireFormatLite::
-      Int32Size(this->_impl_.stops_);
-    if (data_size > 0) {
-      total_size += 1 +
-        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
-    }
-    int cached_size = ::_pbi::ToCachedSize(data_size);
-    _impl_._stops_cached_byte_size_.store(cached_size,
-                                    std::memory_order_relaxed);
-    total_size += data_size;
-  }
-
-  // repeated double distances = 3 [json_name = "distances"];
-  {
-    unsigned int count = static_cast<unsigned int>(this->_internal_distances_size());
-    size_t data_size = 8UL * count;
-    if (data_size > 0) {
-      total_size += 1 +
-        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
-    }
-    total_size += data_size;
-  }
-
-  // int32 line_id = 1 [json_name = "lineId"];
-  if (this->_internal_line_id() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_line_id());
-  }
-
-  // int32 interval = 4 [json_name = "interval"];
-  if (this->_internal_interval() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_interval());
-  }
-
-  // int32 count = 5 [json_name = "count"];
-  if (this->_internal_count() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_count());
-  }
-
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
-}
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BusLine::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    BusLine::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BusLine::GetClassData() const { return &_class_data_; }
-
-
-void BusLine::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<BusLine*>(&to_msg);
-  auto& from = static_cast<const BusLine&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:city.routing.v2.BusLine)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  _this->_impl_.stops_.MergeFrom(from._impl_.stops_);
-  _this->_impl_.distances_.MergeFrom(from._impl_.distances_);
-  if (from._internal_line_id() != 0) {
-    _this->_internal_set_line_id(from._internal_line_id());
-  }
-  if (from._internal_interval() != 0) {
-    _this->_internal_set_interval(from._internal_interval());
-  }
-  if (from._internal_count() != 0) {
-    _this->_internal_set_count(from._internal_count());
-  }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-}
-
-void BusLine::CopyFrom(const BusLine& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:city.routing.v2.BusLine)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool BusLine::IsInitialized() const {
-  return true;
-}
-
-void BusLine::InternalSwap(BusLine* other) {
-  using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  _impl_.stops_.InternalSwap(&other->_impl_.stops_);
-  _impl_.distances_.InternalSwap(&other->_impl_.distances_);
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(BusLine, _impl_.count_)
-      + sizeof(BusLine::_impl_.count_)
-      - PROTOBUF_FIELD_OFFSET(BusLine, _impl_.line_id_)>(
-          reinterpret_cast<char*>(&_impl_.line_id_),
-          reinterpret_cast<char*>(&other->_impl_.line_id_));
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata BusLine::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_city_2frouting_2fv2_2frouting_2eproto_getter, &descriptor_table_city_2frouting_2fv2_2frouting_2eproto_once,
       file_level_metadata_city_2frouting_2fv2_2frouting_2eproto[5]);
-}
-
-// ===================================================================
-
-class BusLines::_Internal {
- public:
-};
-
-BusLines::BusLines(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:city.routing.v2.BusLines)
-}
-BusLines::BusLines(const BusLines& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  BusLines* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.lines_){from._impl_.lines_}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:city.routing.v2.BusLines)
-}
-
-inline void BusLines::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.lines_){arena}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-}
-
-BusLines::~BusLines() {
-  // @@protoc_insertion_point(destructor:city.routing.v2.BusLines)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
-  SharedDtor();
-}
-
-inline void BusLines::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.lines_.~RepeatedPtrField();
-}
-
-void BusLines::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
-}
-
-void BusLines::Clear() {
-// @@protoc_insertion_point(message_clear_start:city.routing.v2.BusLines)
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  _impl_.lines_.Clear();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* BusLines::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // repeated .city.routing.v2.BusLine lines = 1 [json_name = "lines"];
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_lines(), ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
-}
-
-uint8_t* BusLines::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:city.routing.v2.BusLines)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // repeated .city.routing.v2.BusLine lines = 1 [json_name = "lines"];
-  for (unsigned i = 0,
-      n = static_cast<unsigned>(this->_internal_lines_size()); i < n; i++) {
-    const auto& repfield = this->_internal_lines(i);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-        InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:city.routing.v2.BusLines)
-  return target;
-}
-
-size_t BusLines::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:city.routing.v2.BusLines)
-  size_t total_size = 0;
-
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // repeated .city.routing.v2.BusLine lines = 1 [json_name = "lines"];
-  total_size += 1UL * this->_internal_lines_size();
-  for (const auto& msg : this->_impl_.lines_) {
-    total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
-  }
-
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
-}
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BusLines::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    BusLines::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BusLines::GetClassData() const { return &_class_data_; }
-
-
-void BusLines::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<BusLines*>(&to_msg);
-  auto& from = static_cast<const BusLines&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:city.routing.v2.BusLines)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  _this->_impl_.lines_.MergeFrom(from._impl_.lines_);
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-}
-
-void BusLines::CopyFrom(const BusLines& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:city.routing.v2.BusLines)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool BusLines::IsInitialized() const {
-  return true;
-}
-
-void BusLines::InternalSwap(BusLines* other) {
-  using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  _impl_.lines_.InternalSwap(&other->_impl_.lines_);
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata BusLines::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_city_2frouting_2fv2_2frouting_2eproto_getter, &descriptor_table_city_2frouting_2fv2_2frouting_2eproto_once,
-      file_level_metadata_city_2frouting_2fv2_2frouting_2eproto[6]);
 }
 
 // ===================================================================
@@ -2320,7 +2018,7 @@ void RoadStatus::InternalSwap(RoadStatus* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata RoadStatus::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2frouting_2fv2_2frouting_2eproto_getter, &descriptor_table_city_2frouting_2fv2_2frouting_2eproto_once,
-      file_level_metadata_city_2frouting_2fv2_2frouting_2eproto[7]);
+      file_level_metadata_city_2frouting_2fv2_2frouting_2eproto[6]);
 }
 
 // ===================================================================
@@ -2505,7 +2203,7 @@ void RoadStatuses::InternalSwap(RoadStatuses* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata RoadStatuses::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2frouting_2fv2_2frouting_2eproto_getter, &descriptor_table_city_2frouting_2fv2_2frouting_2eproto_once,
-      file_level_metadata_city_2frouting_2fv2_2frouting_2eproto[8]);
+      file_level_metadata_city_2frouting_2fv2_2frouting_2eproto[7]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
@@ -2525,6 +2223,10 @@ template<> PROTOBUF_NOINLINE ::city::routing::v2::WalkingJourneyBody*
 Arena::CreateMaybeMessage< ::city::routing::v2::WalkingJourneyBody >(Arena* arena) {
   return Arena::CreateMessageInternal< ::city::routing::v2::WalkingJourneyBody >(arena);
 }
+template<> PROTOBUF_NOINLINE ::city::routing::v2::TransferSegment*
+Arena::CreateMaybeMessage< ::city::routing::v2::TransferSegment >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::routing::v2::TransferSegment >(arena);
+}
 template<> PROTOBUF_NOINLINE ::city::routing::v2::BusJourneyBody*
 Arena::CreateMaybeMessage< ::city::routing::v2::BusJourneyBody >(Arena* arena) {
   return Arena::CreateMessageInternal< ::city::routing::v2::BusJourneyBody >(arena);
@@ -2532,14 +2234,6 @@ Arena::CreateMaybeMessage< ::city::routing::v2::BusJourneyBody >(Arena* arena) {
 template<> PROTOBUF_NOINLINE ::city::routing::v2::Journey*
 Arena::CreateMaybeMessage< ::city::routing::v2::Journey >(Arena* arena) {
   return Arena::CreateMessageInternal< ::city::routing::v2::Journey >(arena);
-}
-template<> PROTOBUF_NOINLINE ::city::routing::v2::BusLine*
-Arena::CreateMaybeMessage< ::city::routing::v2::BusLine >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::city::routing::v2::BusLine >(arena);
-}
-template<> PROTOBUF_NOINLINE ::city::routing::v2::BusLines*
-Arena::CreateMaybeMessage< ::city::routing::v2::BusLines >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::city::routing::v2::BusLines >(arena);
 }
 template<> PROTOBUF_NOINLINE ::city::routing::v2::RoadStatus*
 Arena::CreateMaybeMessage< ::city::routing::v2::RoadStatus >(Arena* arena) {
