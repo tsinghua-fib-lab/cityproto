@@ -112,6 +112,14 @@ export declare class Trip extends Message<Trip> {
   activity?: string;
 
   /**
+   * 本次出行对应的可视化模型（覆盖Person Attribute中的默认模型）
+   * The visual model corresponding to this trip (overriding the default model in Person Attribute)
+   *
+   * @generated from field: optional string model = 8;
+   */
+  model?: string;
+
+  /**
    * 预计算的导航结果
    * Pre calculated routing results
    *

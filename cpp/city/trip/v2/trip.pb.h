@@ -220,6 +220,7 @@ class Trip final :
   enum : int {
     kRoutesFieldNumber = 7,
     kActivityFieldNumber = 6,
+    kModelFieldNumber = 8,
     kEndFieldNumber = 2,
     kDepartureTimeFieldNumber = 3,
     kWaitTimeFieldNumber = 4,
@@ -260,6 +261,24 @@ class Trip final :
   const std::string& _internal_activity() const;
   inline PROTOBUF_ALWAYS_INLINE void _internal_set_activity(const std::string& value);
   std::string* _internal_mutable_activity();
+  public:
+
+  // optional string model = 8 [json_name = "model"];
+  bool has_model() const;
+  private:
+  bool _internal_has_model() const;
+  public:
+  void clear_model();
+  const std::string& model() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_model(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_model();
+  PROTOBUF_NODISCARD std::string* release_model();
+  void set_allocated_model(std::string* model);
+  private:
+  const std::string& _internal_model() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_model(const std::string& value);
+  std::string* _internal_mutable_model();
   public:
 
   // .city.geo.v2.Position end = 2 [json_name = "end"];
@@ -340,6 +359,7 @@ class Trip final :
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
     ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::routing::v2::Journey > routes_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr activity_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr model_;
     ::city::geo::v2::Position* end_;
     double departure_time_;
     double wait_time_;
@@ -666,7 +686,7 @@ inline void Trip::set_allocated_end(::city::geo::v2::Position* end) {
 
 // optional double departure_time = 3 [json_name = "departureTime"];
 inline bool Trip::_internal_has_departure_time() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
   return value;
 }
 inline bool Trip::has_departure_time() const {
@@ -674,7 +694,7 @@ inline bool Trip::has_departure_time() const {
 }
 inline void Trip::clear_departure_time() {
   _impl_.departure_time_ = 0;
-  _impl_._has_bits_[0] &= ~0x00000002u;
+  _impl_._has_bits_[0] &= ~0x00000004u;
 }
 inline double Trip::_internal_departure_time() const {
   return _impl_.departure_time_;
@@ -684,7 +704,7 @@ inline double Trip::departure_time() const {
   return _internal_departure_time();
 }
 inline void Trip::_internal_set_departure_time(double value) {
-  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_._has_bits_[0] |= 0x00000004u;
   _impl_.departure_time_ = value;
 }
 inline void Trip::set_departure_time(double value) {
@@ -694,7 +714,7 @@ inline void Trip::set_departure_time(double value) {
 
 // optional double wait_time = 4 [json_name = "waitTime"];
 inline bool Trip::_internal_has_wait_time() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000008u) != 0;
   return value;
 }
 inline bool Trip::has_wait_time() const {
@@ -702,7 +722,7 @@ inline bool Trip::has_wait_time() const {
 }
 inline void Trip::clear_wait_time() {
   _impl_.wait_time_ = 0;
-  _impl_._has_bits_[0] &= ~0x00000004u;
+  _impl_._has_bits_[0] &= ~0x00000008u;
 }
 inline double Trip::_internal_wait_time() const {
   return _impl_.wait_time_;
@@ -712,7 +732,7 @@ inline double Trip::wait_time() const {
   return _internal_wait_time();
 }
 inline void Trip::_internal_set_wait_time(double value) {
-  _impl_._has_bits_[0] |= 0x00000004u;
+  _impl_._has_bits_[0] |= 0x00000008u;
   _impl_.wait_time_ = value;
 }
 inline void Trip::set_wait_time(double value) {
@@ -722,7 +742,7 @@ inline void Trip::set_wait_time(double value) {
 
 // optional double arrival_time = 5 [json_name = "arrivalTime"];
 inline bool Trip::_internal_has_arrival_time() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000008u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000010u) != 0;
   return value;
 }
 inline bool Trip::has_arrival_time() const {
@@ -730,7 +750,7 @@ inline bool Trip::has_arrival_time() const {
 }
 inline void Trip::clear_arrival_time() {
   _impl_.arrival_time_ = 0;
-  _impl_._has_bits_[0] &= ~0x00000008u;
+  _impl_._has_bits_[0] &= ~0x00000010u;
 }
 inline double Trip::_internal_arrival_time() const {
   return _impl_.arrival_time_;
@@ -740,7 +760,7 @@ inline double Trip::arrival_time() const {
   return _internal_arrival_time();
 }
 inline void Trip::_internal_set_arrival_time(double value) {
-  _impl_._has_bits_[0] |= 0x00000008u;
+  _impl_._has_bits_[0] |= 0x00000010u;
   _impl_.arrival_time_ = value;
 }
 inline void Trip::set_arrival_time(double value) {
@@ -814,6 +834,74 @@ inline void Trip::set_allocated_activity(std::string* activity) {
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   // @@protoc_insertion_point(field_set_allocated:city.trip.v2.Trip.activity)
+}
+
+// optional string model = 8 [json_name = "model"];
+inline bool Trip::_internal_has_model() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  return value;
+}
+inline bool Trip::has_model() const {
+  return _internal_has_model();
+}
+inline void Trip::clear_model() {
+  _impl_.model_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000002u;
+}
+inline const std::string& Trip::model() const {
+  // @@protoc_insertion_point(field_get:city.trip.v2.Trip.model)
+  return _internal_model();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Trip::set_model(ArgT0&& arg0, ArgT... args) {
+ _impl_._has_bits_[0] |= 0x00000002u;
+ _impl_.model_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:city.trip.v2.Trip.model)
+}
+inline std::string* Trip::mutable_model() {
+  std::string* _s = _internal_mutable_model();
+  // @@protoc_insertion_point(field_mutable:city.trip.v2.Trip.model)
+  return _s;
+}
+inline const std::string& Trip::_internal_model() const {
+  return _impl_.model_.Get();
+}
+inline void Trip::_internal_set_model(const std::string& value) {
+  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_.model_.Set(value, GetArenaForAllocation());
+}
+inline std::string* Trip::_internal_mutable_model() {
+  _impl_._has_bits_[0] |= 0x00000002u;
+  return _impl_.model_.Mutable(GetArenaForAllocation());
+}
+inline std::string* Trip::release_model() {
+  // @@protoc_insertion_point(field_release:city.trip.v2.Trip.model)
+  if (!_internal_has_model()) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000002u;
+  auto* p = _impl_.model_.Release();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.model_.IsDefault()) {
+    _impl_.model_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  return p;
+}
+inline void Trip::set_allocated_model(std::string* model) {
+  if (model != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000002u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000002u;
+  }
+  _impl_.model_.SetAllocated(model, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.model_.IsDefault()) {
+    _impl_.model_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:city.trip.v2.Trip.model)
 }
 
 // repeated .city.routing.v2.Journey routes = 7 [json_name = "routes"];

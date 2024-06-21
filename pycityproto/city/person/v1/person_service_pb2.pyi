@@ -84,11 +84,11 @@ class GetAllVehiclesRequest(_message.Message):
         ...
 
 class GetAllVehiclesResponse(_message.Message):
-    __slots__ = ['motions']
-    MOTIONS_FIELD_NUMBER: _ClassVar[int]
-    motions: _containers.RepeatedCompositeFieldContainer[_motion_pb2.PersonMotion]
+    __slots__ = ['vehicles']
+    VEHICLES_FIELD_NUMBER: _ClassVar[int]
+    vehicles: _containers.RepeatedCompositeFieldContainer[_vehicle_pb2.VehicleRuntime]
 
-    def __init__(self, motions: _Optional[_Iterable[_Union[_motion_pb2.PersonMotion, _Mapping]]]=...) -> None:
+    def __init__(self, vehicles: _Optional[_Iterable[_Union[_vehicle_pb2.VehicleRuntime, _Mapping]]]=...) -> None:
         ...
 
 class SetControlledVehicleIDsRequest(_message.Message):

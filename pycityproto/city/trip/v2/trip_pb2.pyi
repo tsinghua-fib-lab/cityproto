@@ -21,13 +21,14 @@ TRIP_MODE_BUS_WALK: TripMode
 TRIP_MODE_BIKE_WALK: TripMode
 
 class Trip(_message.Message):
-    __slots__ = ['mode', 'end', 'departure_time', 'wait_time', 'arrival_time', 'activity', 'routes']
+    __slots__ = ['mode', 'end', 'departure_time', 'wait_time', 'arrival_time', 'activity', 'model', 'routes']
     MODE_FIELD_NUMBER: _ClassVar[int]
     END_FIELD_NUMBER: _ClassVar[int]
     DEPARTURE_TIME_FIELD_NUMBER: _ClassVar[int]
     WAIT_TIME_FIELD_NUMBER: _ClassVar[int]
     ARRIVAL_TIME_FIELD_NUMBER: _ClassVar[int]
     ACTIVITY_FIELD_NUMBER: _ClassVar[int]
+    MODEL_FIELD_NUMBER: _ClassVar[int]
     ROUTES_FIELD_NUMBER: _ClassVar[int]
     mode: TripMode
     end: _geo_pb2.Position
@@ -35,9 +36,10 @@ class Trip(_message.Message):
     wait_time: float
     arrival_time: float
     activity: str
+    model: str
     routes: _containers.RepeatedCompositeFieldContainer[_routing_pb2.Journey]
 
-    def __init__(self, mode: _Optional[_Union[TripMode, str]]=..., end: _Optional[_Union[_geo_pb2.Position, _Mapping]]=..., departure_time: _Optional[float]=..., wait_time: _Optional[float]=..., arrival_time: _Optional[float]=..., activity: _Optional[str]=..., routes: _Optional[_Iterable[_Union[_routing_pb2.Journey, _Mapping]]]=...) -> None:
+    def __init__(self, mode: _Optional[_Union[TripMode, str]]=..., end: _Optional[_Union[_geo_pb2.Position, _Mapping]]=..., departure_time: _Optional[float]=..., wait_time: _Optional[float]=..., arrival_time: _Optional[float]=..., activity: _Optional[str]=..., model: _Optional[str]=..., routes: _Optional[_Iterable[_Union[_routing_pb2.Journey, _Mapping]]]=...) -> None:
         ...
 
 class Schedule(_message.Message):

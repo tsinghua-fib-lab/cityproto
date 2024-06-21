@@ -1,5 +1,4 @@
 from city.person.v1 import motion_pb2 as _motion_pb2
-from city.person.v1 import runtime_pb2 as _runtime_pb2
 from city.routing.v2 import routing_pb2 as _routing_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
@@ -69,10 +68,8 @@ class VehicleAction(_message.Message):
         ...
 
 class VehicleRuntime(_message.Message):
-    __slots__ = ['base', 'base_on_road', 'distance_to_end', 'lc', 'action', 'running_distance', 'num_going_astray', 'departure_time', 'eta', 'eta_free_flow']
+    __slots__ = ['base', 'lc', 'action', 'running_distance', 'num_going_astray', 'departure_time', 'eta', 'eta_free_flow']
     BASE_FIELD_NUMBER: _ClassVar[int]
-    BASE_ON_ROAD_FIELD_NUMBER: _ClassVar[int]
-    DISTANCE_TO_END_FIELD_NUMBER: _ClassVar[int]
     LC_FIELD_NUMBER: _ClassVar[int]
     ACTION_FIELD_NUMBER: _ClassVar[int]
     RUNNING_DISTANCE_FIELD_NUMBER: _ClassVar[int]
@@ -80,9 +77,7 @@ class VehicleRuntime(_message.Message):
     DEPARTURE_TIME_FIELD_NUMBER: _ClassVar[int]
     ETA_FIELD_NUMBER: _ClassVar[int]
     ETA_FREE_FLOW_FIELD_NUMBER: _ClassVar[int]
-    base: _runtime_pb2.BaseRuntime
-    base_on_road: _runtime_pb2.BaseRuntimeOnRoad
-    distance_to_end: float
+    base: _motion_pb2.PersonMotion
     lc: LC
     action: VehicleAction
     running_distance: float
@@ -91,7 +86,7 @@ class VehicleRuntime(_message.Message):
     eta: float
     eta_free_flow: float
 
-    def __init__(self, base: _Optional[_Union[_runtime_pb2.BaseRuntime, _Mapping]]=..., base_on_road: _Optional[_Union[_runtime_pb2.BaseRuntimeOnRoad, _Mapping]]=..., distance_to_end: _Optional[float]=..., lc: _Optional[_Union[LC, _Mapping]]=..., action: _Optional[_Union[VehicleAction, _Mapping]]=..., running_distance: _Optional[float]=..., num_going_astray: _Optional[int]=..., departure_time: _Optional[float]=..., eta: _Optional[float]=..., eta_free_flow: _Optional[float]=...) -> None:
+    def __init__(self, base: _Optional[_Union[_motion_pb2.PersonMotion, _Mapping]]=..., lc: _Optional[_Union[LC, _Mapping]]=..., action: _Optional[_Union[VehicleAction, _Mapping]]=..., running_distance: _Optional[float]=..., num_going_astray: _Optional[int]=..., departure_time: _Optional[float]=..., eta: _Optional[float]=..., eta_free_flow: _Optional[float]=...) -> None:
         ...
 
 class ObservedVehicle(_message.Message):

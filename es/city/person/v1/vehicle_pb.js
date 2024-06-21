@@ -4,7 +4,6 @@
 // @ts-nocheck
 
 import { proto3 } from "@bufbuild/protobuf";
-import { BaseRuntime, BaseRuntimeOnRoad } from "./runtime_pb.js";
 import { PersonMotion } from "./motion_pb.js";
 import { Journey } from "../../routing/v2/routing_pb.js";
 
@@ -80,9 +79,7 @@ export const VehicleAction = proto3.makeMessageType(
 export const VehicleRuntime = proto3.makeMessageType(
   "city.person.v1.VehicleRuntime",
   () => [
-    { no: 1, name: "base", kind: "message", T: BaseRuntime },
-    { no: 2, name: "base_on_road", kind: "message", T: BaseRuntimeOnRoad },
-    { no: 3, name: "distance_to_end", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 1, name: "base", kind: "message", T: PersonMotion },
     { no: 4, name: "lc", kind: "message", T: LC, opt: true },
     { no: 5, name: "action", kind: "message", T: VehicleAction, opt: true },
     { no: 6, name: "running_distance", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },

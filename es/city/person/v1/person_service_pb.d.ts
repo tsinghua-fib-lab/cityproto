@@ -9,7 +9,7 @@ import type { Person } from "./person_pb.js";
 import type { PersonMotion, Status } from "./motion_pb.js";
 import type { Schedule } from "../../trip/v2/trip_pb.js";
 import type { LongLatBBox } from "../../geo/v2/geo_pb.js";
-import type { VehicleAction, VehicleEnv } from "./vehicle_pb.js";
+import type { VehicleAction, VehicleEnv, VehicleRuntime } from "./vehicle_pb.js";
 
 /**
  * 获取person信息请求
@@ -298,9 +298,9 @@ export declare class GetAllVehiclesResponse extends Message<GetAllVehiclesRespon
    * 所有车辆的信息
    * Information of all vehicles
    *
-   * @generated from field: repeated city.person.v1.PersonMotion motions = 1;
+   * @generated from field: repeated city.person.v1.VehicleRuntime vehicles = 1;
    */
-  motions: PersonMotion[];
+  vehicles: VehicleRuntime[];
 
   constructor(data?: PartialMessage<GetAllVehiclesResponse>);
 

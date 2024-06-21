@@ -3,7 +3,6 @@ syntax = "proto3";
 package city.person.v1;
 
 import "city/person/v1/motion.proto";
-import "city/person/v1/runtime.proto";
 import "city/routing/v2/routing.proto";
 
 // 变道相关的信息
@@ -43,13 +42,7 @@ message VehicleAction {
 message VehicleRuntime {
   // 基本运行时信息
   // basic runtime information
-  BaseRuntime base = 1;
-  // 基本运行时信息（道路上的对象）
-  // basic runtime information (on the road)
-  BaseRuntimeOnRoad base_on_road = 2;
-  // 距终点的距离
-  // distance to the end
-  double distance_to_end = 3;
+  PersonMotion base = 1;
   // 变道信息
   // lane change information
   optional LC lc = 4;

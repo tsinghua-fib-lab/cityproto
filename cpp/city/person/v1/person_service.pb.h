@@ -1617,25 +1617,25 @@ class GetAllVehiclesResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kMotionsFieldNumber = 1,
+    kVehiclesFieldNumber = 1,
   };
-  // repeated .city.person.v1.PersonMotion motions = 1 [json_name = "motions"];
-  int motions_size() const;
+  // repeated .city.person.v1.VehicleRuntime vehicles = 1 [json_name = "vehicles"];
+  int vehicles_size() const;
   private:
-  int _internal_motions_size() const;
+  int _internal_vehicles_size() const;
   public:
-  void clear_motions();
-  ::city::person::v1::PersonMotion* mutable_motions(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v1::PersonMotion >*
-      mutable_motions();
+  void clear_vehicles();
+  ::city::person::v1::VehicleRuntime* mutable_vehicles(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v1::VehicleRuntime >*
+      mutable_vehicles();
   private:
-  const ::city::person::v1::PersonMotion& _internal_motions(int index) const;
-  ::city::person::v1::PersonMotion* _internal_add_motions();
+  const ::city::person::v1::VehicleRuntime& _internal_vehicles(int index) const;
+  ::city::person::v1::VehicleRuntime* _internal_add_vehicles();
   public:
-  const ::city::person::v1::PersonMotion& motions(int index) const;
-  ::city::person::v1::PersonMotion* add_motions();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v1::PersonMotion >&
-      motions() const;
+  const ::city::person::v1::VehicleRuntime& vehicles(int index) const;
+  ::city::person::v1::VehicleRuntime* add_vehicles();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v1::VehicleRuntime >&
+      vehicles() const;
 
   // @@protoc_insertion_point(class_scope:city.person.v1.GetAllVehiclesResponse)
  private:
@@ -1645,7 +1645,7 @@ class GetAllVehiclesResponse final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v1::PersonMotion > motions_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v1::VehicleRuntime > vehicles_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -3045,41 +3045,41 @@ GetPersonByLongLatBBoxResponse::motions() const {
 
 // GetAllVehiclesResponse
 
-// repeated .city.person.v1.PersonMotion motions = 1 [json_name = "motions"];
-inline int GetAllVehiclesResponse::_internal_motions_size() const {
-  return _impl_.motions_.size();
+// repeated .city.person.v1.VehicleRuntime vehicles = 1 [json_name = "vehicles"];
+inline int GetAllVehiclesResponse::_internal_vehicles_size() const {
+  return _impl_.vehicles_.size();
 }
-inline int GetAllVehiclesResponse::motions_size() const {
-  return _internal_motions_size();
+inline int GetAllVehiclesResponse::vehicles_size() const {
+  return _internal_vehicles_size();
 }
-inline ::city::person::v1::PersonMotion* GetAllVehiclesResponse::mutable_motions(int index) {
-  // @@protoc_insertion_point(field_mutable:city.person.v1.GetAllVehiclesResponse.motions)
-  return _impl_.motions_.Mutable(index);
+inline ::city::person::v1::VehicleRuntime* GetAllVehiclesResponse::mutable_vehicles(int index) {
+  // @@protoc_insertion_point(field_mutable:city.person.v1.GetAllVehiclesResponse.vehicles)
+  return _impl_.vehicles_.Mutable(index);
 }
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v1::PersonMotion >*
-GetAllVehiclesResponse::mutable_motions() {
-  // @@protoc_insertion_point(field_mutable_list:city.person.v1.GetAllVehiclesResponse.motions)
-  return &_impl_.motions_;
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v1::VehicleRuntime >*
+GetAllVehiclesResponse::mutable_vehicles() {
+  // @@protoc_insertion_point(field_mutable_list:city.person.v1.GetAllVehiclesResponse.vehicles)
+  return &_impl_.vehicles_;
 }
-inline const ::city::person::v1::PersonMotion& GetAllVehiclesResponse::_internal_motions(int index) const {
-  return _impl_.motions_.Get(index);
+inline const ::city::person::v1::VehicleRuntime& GetAllVehiclesResponse::_internal_vehicles(int index) const {
+  return _impl_.vehicles_.Get(index);
 }
-inline const ::city::person::v1::PersonMotion& GetAllVehiclesResponse::motions(int index) const {
-  // @@protoc_insertion_point(field_get:city.person.v1.GetAllVehiclesResponse.motions)
-  return _internal_motions(index);
+inline const ::city::person::v1::VehicleRuntime& GetAllVehiclesResponse::vehicles(int index) const {
+  // @@protoc_insertion_point(field_get:city.person.v1.GetAllVehiclesResponse.vehicles)
+  return _internal_vehicles(index);
 }
-inline ::city::person::v1::PersonMotion* GetAllVehiclesResponse::_internal_add_motions() {
-  return _impl_.motions_.Add();
+inline ::city::person::v1::VehicleRuntime* GetAllVehiclesResponse::_internal_add_vehicles() {
+  return _impl_.vehicles_.Add();
 }
-inline ::city::person::v1::PersonMotion* GetAllVehiclesResponse::add_motions() {
-  ::city::person::v1::PersonMotion* _add = _internal_add_motions();
-  // @@protoc_insertion_point(field_add:city.person.v1.GetAllVehiclesResponse.motions)
+inline ::city::person::v1::VehicleRuntime* GetAllVehiclesResponse::add_vehicles() {
+  ::city::person::v1::VehicleRuntime* _add = _internal_add_vehicles();
+  // @@protoc_insertion_point(field_add:city.person.v1.GetAllVehiclesResponse.vehicles)
   return _add;
 }
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v1::PersonMotion >&
-GetAllVehiclesResponse::motions() const {
-  // @@protoc_insertion_point(field_list:city.person.v1.GetAllVehiclesResponse.motions)
-  return _impl_.motions_;
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v1::VehicleRuntime >&
+GetAllVehiclesResponse::vehicles() const {
+  // @@protoc_insertion_point(field_list:city.person.v1.GetAllVehiclesResponse.vehicles)
+  return _impl_.vehicles_;
 }
 
 // -------------------------------------------------------------------

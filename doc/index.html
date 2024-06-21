@@ -1665,25 +1665,6 @@
         
           
           <li>
-            <a href="#city%2fperson%2fv1%2fruntime.proto">city/person/v1/runtime.proto</a>
-            <ul>
-              
-                <li>
-                  <a href="#city.person.v1.BaseRuntime"><span class="badge">M</span>BaseRuntime</a>
-                </li>
-              
-                <li>
-                  <a href="#city.person.v1.BaseRuntimeOnRoad"><span class="badge">M</span>BaseRuntimeOnRoad</a>
-                </li>
-              
-              
-              
-              
-            </ul>
-          </li>
-        
-          
-          <li>
             <a href="#city%2fperson%2fv1%2fvehicle.proto">city/person/v1/vehicle.proto</a>
             <ul>
               
@@ -3135,6 +3116,14 @@ Expected arrival time (in seconds) </p></td>
                   <td>optional</td>
                   <td><p>本次出行目的地的活动名
 The activity name of the destination for this trip </p></td>
+                </tr>
+              
+                <tr>
+                  <td>model</td>
+                  <td><a href="#string">string</a></td>
+                  <td>optional</td>
+                  <td><p>本次出行对应的可视化模型（覆盖Person Attribute中的默认模型）
+The visual model corresponding to this trip (overriding the default model in Person Attribute) </p></td>
                 </tr>
               
                 <tr>
@@ -12243,110 +12232,6 @@ female</p></td>
     
       
       <div class="file-heading">
-        <h2 id="city/person/v1/runtime.proto">city/person/v1/runtime.proto</h2><a href="#title">Top</a>
-      </div>
-      <p></p>
-
-      
-        <h3 id="city.person.v1.BaseRuntime">BaseRuntime</h3>
-        <p></p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>x</td>
-                  <td><a href="#double">double</a></td>
-                  <td></td>
-                  <td><p>x坐标
-x coordinate </p></td>
-                </tr>
-              
-                <tr>
-                  <td>y</td>
-                  <td><a href="#double">double</a></td>
-                  <td></td>
-                  <td><p>y坐标
-y coordinate </p></td>
-                </tr>
-              
-                <tr>
-                  <td>v</td>
-                  <td><a href="#double">double</a></td>
-                  <td></td>
-                  <td><p>车速
-velocity (m/s) </p></td>
-                </tr>
-              
-                <tr>
-                  <td>direction</td>
-                  <td><a href="#double">double</a></td>
-                  <td></td>
-                  <td><p>方向(rad)，逆时针方向增加，0为正东方向
-direction (rad), increase in counterclockwise direction, 0 is east </p></td>
-                </tr>
-              
-                <tr>
-                  <td>l</td>
-                  <td><a href="#double">double</a></td>
-                  <td></td>
-                  <td><p>长度
-length </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-
-          
-
-        
-      
-        <h3 id="city.person.v1.BaseRuntimeOnRoad">BaseRuntimeOnRoad</h3>
-        <p></p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>lane_id</td>
-                  <td><a href="#int32">int32</a></td>
-                  <td></td>
-                  <td><p>车道ID
-lane ID </p></td>
-                </tr>
-              
-                <tr>
-                  <td>s</td>
-                  <td><a href="#double">double</a></td>
-                  <td></td>
-                  <td><p>车道中心线坐标
-lane center line coordinate </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-
-          
-
-        
-      
-
-      
-
-      
-
-      
-    
-      
-      <div class="file-heading">
         <h2 id="city/person/v1/vehicle.proto">city/person/v1/vehicle.proto</h2><a href="#title">Top</a>
       </div>
       <p></p>
@@ -12616,26 +12501,10 @@ observed lane states </p></td>
               
                 <tr>
                   <td>base</td>
-                  <td><a href="#city.person.v1.BaseRuntime">BaseRuntime</a></td>
+                  <td><a href="#city.person.v1.PersonMotion">PersonMotion</a></td>
                   <td></td>
                   <td><p>基本运行时信息
 basic runtime information </p></td>
-                </tr>
-              
-                <tr>
-                  <td>base_on_road</td>
-                  <td><a href="#city.person.v1.BaseRuntimeOnRoad">BaseRuntimeOnRoad</a></td>
-                  <td></td>
-                  <td><p>基本运行时信息（道路上的对象）
-basic runtime information (on the road) </p></td>
-                </tr>
-              
-                <tr>
-                  <td>distance_to_end</td>
-                  <td><a href="#double">double</a></td>
-                  <td></td>
-                  <td><p>距终点的距离
-distance to the end </p></td>
                 </tr>
               
                 <tr>
@@ -12928,8 +12797,8 @@ Information of vehicle controlled by external behavior </p></td>
             <tbody>
               
                 <tr>
-                  <td>motions</td>
-                  <td><a href="#city.person.v1.PersonMotion">PersonMotion</a></td>
+                  <td>vehicles</td>
+                  <td><a href="#city.person.v1.VehicleRuntime">VehicleRuntime</a></td>
                   <td>repeated</td>
                   <td><p>所有车辆的信息
 Information of all vehicles </p></td>

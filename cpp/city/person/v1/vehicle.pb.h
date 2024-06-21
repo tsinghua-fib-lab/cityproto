@@ -32,7 +32,6 @@
 #include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 #include "city/person/v1/motion.pb.h"
-#include "city/person/v1/runtime.pb.h"
 #include "city/routing/v2/routing.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
@@ -634,51 +633,31 @@ class VehicleRuntime final :
 
   enum : int {
     kBaseFieldNumber = 1,
-    kBaseOnRoadFieldNumber = 2,
     kLcFieldNumber = 4,
     kActionFieldNumber = 5,
-    kDistanceToEndFieldNumber = 3,
     kRunningDistanceFieldNumber = 6,
     kDepartureTimeFieldNumber = 8,
     kEtaFieldNumber = 9,
     kEtaFreeFlowFieldNumber = 10,
     kNumGoingAstrayFieldNumber = 7,
   };
-  // .city.person.v1.BaseRuntime base = 1 [json_name = "base"];
+  // .city.person.v1.PersonMotion base = 1 [json_name = "base"];
   bool has_base() const;
   private:
   bool _internal_has_base() const;
   public:
   void clear_base();
-  const ::city::person::v1::BaseRuntime& base() const;
-  PROTOBUF_NODISCARD ::city::person::v1::BaseRuntime* release_base();
-  ::city::person::v1::BaseRuntime* mutable_base();
-  void set_allocated_base(::city::person::v1::BaseRuntime* base);
+  const ::city::person::v1::PersonMotion& base() const;
+  PROTOBUF_NODISCARD ::city::person::v1::PersonMotion* release_base();
+  ::city::person::v1::PersonMotion* mutable_base();
+  void set_allocated_base(::city::person::v1::PersonMotion* base);
   private:
-  const ::city::person::v1::BaseRuntime& _internal_base() const;
-  ::city::person::v1::BaseRuntime* _internal_mutable_base();
+  const ::city::person::v1::PersonMotion& _internal_base() const;
+  ::city::person::v1::PersonMotion* _internal_mutable_base();
   public:
   void unsafe_arena_set_allocated_base(
-      ::city::person::v1::BaseRuntime* base);
-  ::city::person::v1::BaseRuntime* unsafe_arena_release_base();
-
-  // .city.person.v1.BaseRuntimeOnRoad base_on_road = 2 [json_name = "baseOnRoad"];
-  bool has_base_on_road() const;
-  private:
-  bool _internal_has_base_on_road() const;
-  public:
-  void clear_base_on_road();
-  const ::city::person::v1::BaseRuntimeOnRoad& base_on_road() const;
-  PROTOBUF_NODISCARD ::city::person::v1::BaseRuntimeOnRoad* release_base_on_road();
-  ::city::person::v1::BaseRuntimeOnRoad* mutable_base_on_road();
-  void set_allocated_base_on_road(::city::person::v1::BaseRuntimeOnRoad* base_on_road);
-  private:
-  const ::city::person::v1::BaseRuntimeOnRoad& _internal_base_on_road() const;
-  ::city::person::v1::BaseRuntimeOnRoad* _internal_mutable_base_on_road();
-  public:
-  void unsafe_arena_set_allocated_base_on_road(
-      ::city::person::v1::BaseRuntimeOnRoad* base_on_road);
-  ::city::person::v1::BaseRuntimeOnRoad* unsafe_arena_release_base_on_road();
+      ::city::person::v1::PersonMotion* base);
+  ::city::person::v1::PersonMotion* unsafe_arena_release_base();
 
   // optional .city.person.v1.LC lc = 4 [json_name = "lc"];
   bool has_lc() const;
@@ -715,15 +694,6 @@ class VehicleRuntime final :
   void unsafe_arena_set_allocated_action(
       ::city::person::v1::VehicleAction* action);
   ::city::person::v1::VehicleAction* unsafe_arena_release_action();
-
-  // double distance_to_end = 3 [json_name = "distanceToEnd"];
-  void clear_distance_to_end();
-  double distance_to_end() const;
-  void set_distance_to_end(double value);
-  private:
-  double _internal_distance_to_end() const;
-  void _internal_set_distance_to_end(double value);
-  public:
 
   // double running_distance = 6 [json_name = "runningDistance"];
   void clear_running_distance();
@@ -780,11 +750,9 @@ class VehicleRuntime final :
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-    ::city::person::v1::BaseRuntime* base_;
-    ::city::person::v1::BaseRuntimeOnRoad* base_on_road_;
+    ::city::person::v1::PersonMotion* base_;
     ::city::person::v1::LC* lc_;
     ::city::person::v1::VehicleAction* action_;
-    double distance_to_end_;
     double running_distance_;
     double departure_time_;
     double eta_;
@@ -1580,24 +1548,24 @@ inline void VehicleAction::set_angle(double value) {
 
 // VehicleRuntime
 
-// .city.person.v1.BaseRuntime base = 1 [json_name = "base"];
+// .city.person.v1.PersonMotion base = 1 [json_name = "base"];
 inline bool VehicleRuntime::_internal_has_base() const {
   return this != internal_default_instance() && _impl_.base_ != nullptr;
 }
 inline bool VehicleRuntime::has_base() const {
   return _internal_has_base();
 }
-inline const ::city::person::v1::BaseRuntime& VehicleRuntime::_internal_base() const {
-  const ::city::person::v1::BaseRuntime* p = _impl_.base_;
-  return p != nullptr ? *p : reinterpret_cast<const ::city::person::v1::BaseRuntime&>(
-      ::city::person::v1::_BaseRuntime_default_instance_);
+inline const ::city::person::v1::PersonMotion& VehicleRuntime::_internal_base() const {
+  const ::city::person::v1::PersonMotion* p = _impl_.base_;
+  return p != nullptr ? *p : reinterpret_cast<const ::city::person::v1::PersonMotion&>(
+      ::city::person::v1::_PersonMotion_default_instance_);
 }
-inline const ::city::person::v1::BaseRuntime& VehicleRuntime::base() const {
+inline const ::city::person::v1::PersonMotion& VehicleRuntime::base() const {
   // @@protoc_insertion_point(field_get:city.person.v1.VehicleRuntime.base)
   return _internal_base();
 }
 inline void VehicleRuntime::unsafe_arena_set_allocated_base(
-    ::city::person::v1::BaseRuntime* base) {
+    ::city::person::v1::PersonMotion* base) {
   if (GetArenaForAllocation() == nullptr) {
     delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.base_);
   }
@@ -1609,9 +1577,9 @@ inline void VehicleRuntime::unsafe_arena_set_allocated_base(
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:city.person.v1.VehicleRuntime.base)
 }
-inline ::city::person::v1::BaseRuntime* VehicleRuntime::release_base() {
+inline ::city::person::v1::PersonMotion* VehicleRuntime::release_base() {
   
-  ::city::person::v1::BaseRuntime* temp = _impl_.base_;
+  ::city::person::v1::PersonMotion* temp = _impl_.base_;
   _impl_.base_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
   auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
@@ -1624,27 +1592,27 @@ inline ::city::person::v1::BaseRuntime* VehicleRuntime::release_base() {
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::city::person::v1::BaseRuntime* VehicleRuntime::unsafe_arena_release_base() {
+inline ::city::person::v1::PersonMotion* VehicleRuntime::unsafe_arena_release_base() {
   // @@protoc_insertion_point(field_release:city.person.v1.VehicleRuntime.base)
   
-  ::city::person::v1::BaseRuntime* temp = _impl_.base_;
+  ::city::person::v1::PersonMotion* temp = _impl_.base_;
   _impl_.base_ = nullptr;
   return temp;
 }
-inline ::city::person::v1::BaseRuntime* VehicleRuntime::_internal_mutable_base() {
+inline ::city::person::v1::PersonMotion* VehicleRuntime::_internal_mutable_base() {
   
   if (_impl_.base_ == nullptr) {
-    auto* p = CreateMaybeMessage<::city::person::v1::BaseRuntime>(GetArenaForAllocation());
+    auto* p = CreateMaybeMessage<::city::person::v1::PersonMotion>(GetArenaForAllocation());
     _impl_.base_ = p;
   }
   return _impl_.base_;
 }
-inline ::city::person::v1::BaseRuntime* VehicleRuntime::mutable_base() {
-  ::city::person::v1::BaseRuntime* _msg = _internal_mutable_base();
+inline ::city::person::v1::PersonMotion* VehicleRuntime::mutable_base() {
+  ::city::person::v1::PersonMotion* _msg = _internal_mutable_base();
   // @@protoc_insertion_point(field_mutable:city.person.v1.VehicleRuntime.base)
   return _msg;
 }
-inline void VehicleRuntime::set_allocated_base(::city::person::v1::BaseRuntime* base) {
+inline void VehicleRuntime::set_allocated_base(::city::person::v1::PersonMotion* base) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
     delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.base_);
@@ -1663,111 +1631,6 @@ inline void VehicleRuntime::set_allocated_base(::city::person::v1::BaseRuntime* 
   }
   _impl_.base_ = base;
   // @@protoc_insertion_point(field_set_allocated:city.person.v1.VehicleRuntime.base)
-}
-
-// .city.person.v1.BaseRuntimeOnRoad base_on_road = 2 [json_name = "baseOnRoad"];
-inline bool VehicleRuntime::_internal_has_base_on_road() const {
-  return this != internal_default_instance() && _impl_.base_on_road_ != nullptr;
-}
-inline bool VehicleRuntime::has_base_on_road() const {
-  return _internal_has_base_on_road();
-}
-inline const ::city::person::v1::BaseRuntimeOnRoad& VehicleRuntime::_internal_base_on_road() const {
-  const ::city::person::v1::BaseRuntimeOnRoad* p = _impl_.base_on_road_;
-  return p != nullptr ? *p : reinterpret_cast<const ::city::person::v1::BaseRuntimeOnRoad&>(
-      ::city::person::v1::_BaseRuntimeOnRoad_default_instance_);
-}
-inline const ::city::person::v1::BaseRuntimeOnRoad& VehicleRuntime::base_on_road() const {
-  // @@protoc_insertion_point(field_get:city.person.v1.VehicleRuntime.base_on_road)
-  return _internal_base_on_road();
-}
-inline void VehicleRuntime::unsafe_arena_set_allocated_base_on_road(
-    ::city::person::v1::BaseRuntimeOnRoad* base_on_road) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.base_on_road_);
-  }
-  _impl_.base_on_road_ = base_on_road;
-  if (base_on_road) {
-    
-  } else {
-    
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:city.person.v1.VehicleRuntime.base_on_road)
-}
-inline ::city::person::v1::BaseRuntimeOnRoad* VehicleRuntime::release_base_on_road() {
-  
-  ::city::person::v1::BaseRuntimeOnRoad* temp = _impl_.base_on_road_;
-  _impl_.base_on_road_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
-}
-inline ::city::person::v1::BaseRuntimeOnRoad* VehicleRuntime::unsafe_arena_release_base_on_road() {
-  // @@protoc_insertion_point(field_release:city.person.v1.VehicleRuntime.base_on_road)
-  
-  ::city::person::v1::BaseRuntimeOnRoad* temp = _impl_.base_on_road_;
-  _impl_.base_on_road_ = nullptr;
-  return temp;
-}
-inline ::city::person::v1::BaseRuntimeOnRoad* VehicleRuntime::_internal_mutable_base_on_road() {
-  
-  if (_impl_.base_on_road_ == nullptr) {
-    auto* p = CreateMaybeMessage<::city::person::v1::BaseRuntimeOnRoad>(GetArenaForAllocation());
-    _impl_.base_on_road_ = p;
-  }
-  return _impl_.base_on_road_;
-}
-inline ::city::person::v1::BaseRuntimeOnRoad* VehicleRuntime::mutable_base_on_road() {
-  ::city::person::v1::BaseRuntimeOnRoad* _msg = _internal_mutable_base_on_road();
-  // @@protoc_insertion_point(field_mutable:city.person.v1.VehicleRuntime.base_on_road)
-  return _msg;
-}
-inline void VehicleRuntime::set_allocated_base_on_road(::city::person::v1::BaseRuntimeOnRoad* base_on_road) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.base_on_road_);
-  }
-  if (base_on_road) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(base_on_road));
-    if (message_arena != submessage_arena) {
-      base_on_road = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, base_on_road, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  _impl_.base_on_road_ = base_on_road;
-  // @@protoc_insertion_point(field_set_allocated:city.person.v1.VehicleRuntime.base_on_road)
-}
-
-// double distance_to_end = 3 [json_name = "distanceToEnd"];
-inline void VehicleRuntime::clear_distance_to_end() {
-  _impl_.distance_to_end_ = 0;
-}
-inline double VehicleRuntime::_internal_distance_to_end() const {
-  return _impl_.distance_to_end_;
-}
-inline double VehicleRuntime::distance_to_end() const {
-  // @@protoc_insertion_point(field_get:city.person.v1.VehicleRuntime.distance_to_end)
-  return _internal_distance_to_end();
-}
-inline void VehicleRuntime::_internal_set_distance_to_end(double value) {
-  
-  _impl_.distance_to_end_ = value;
-}
-inline void VehicleRuntime::set_distance_to_end(double value) {
-  _internal_set_distance_to_end(value);
-  // @@protoc_insertion_point(field_set:city.person.v1.VehicleRuntime.distance_to_end)
 }
 
 // optional .city.person.v1.LC lc = 4 [json_name = "lc"];

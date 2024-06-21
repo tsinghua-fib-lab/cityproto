@@ -75,6 +75,10 @@ message Trip {
   // The activity name of the destination for this trip
   optional string activity = 6;
 
+  // 本次出行对应的可视化模型（覆盖Person Attribute中的默认模型）
+  // The visual model corresponding to this trip (overriding the default model in Person Attribute)
+  optional string model = 8;
+
   // 预计算的导航结果
   // Pre calculated routing results
   repeated city.routing.v2.Journey routes = 7;

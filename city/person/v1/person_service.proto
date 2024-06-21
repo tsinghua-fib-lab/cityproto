@@ -115,7 +115,7 @@ message GetAllVehiclesRequest {}
 message GetAllVehiclesResponse {
   // 所有车辆的信息
   // Information of all vehicles
-  repeated PersonMotion motions = 1;
+  repeated VehicleRuntime vehicles = 1;
 }
 
 // 设置由外部控制行为的vehicle请求（下一个step生效）

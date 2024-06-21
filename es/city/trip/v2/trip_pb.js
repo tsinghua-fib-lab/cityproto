@@ -39,6 +39,7 @@ export const Trip = proto3.makeMessageType(
     { no: 4, name: "wait_time", kind: "scalar", T: 1 /* ScalarType.DOUBLE */, opt: true },
     { no: 5, name: "arrival_time", kind: "scalar", T: 1 /* ScalarType.DOUBLE */, opt: true },
     { no: 6, name: "activity", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 8, name: "model", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
     { no: 7, name: "routes", kind: "message", T: Journey, repeated: true },
   ],
 );

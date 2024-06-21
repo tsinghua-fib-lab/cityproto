@@ -5,7 +5,6 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { BaseRuntime, BaseRuntimeOnRoad } from "./runtime_pb.js";
 import type { PersonMotion } from "./motion_pb.js";
 import type { Journey } from "../../routing/v2/routing_pb.js";
 
@@ -242,25 +241,9 @@ export declare class VehicleRuntime extends Message<VehicleRuntime> {
    * 基本运行时信息
    * basic runtime information
    *
-   * @generated from field: city.person.v1.BaseRuntime base = 1;
+   * @generated from field: city.person.v1.PersonMotion base = 1;
    */
-  base?: BaseRuntime;
-
-  /**
-   * 基本运行时信息（道路上的对象）
-   * basic runtime information (on the road)
-   *
-   * @generated from field: city.person.v1.BaseRuntimeOnRoad base_on_road = 2;
-   */
-  baseOnRoad?: BaseRuntimeOnRoad;
-
-  /**
-   * 距终点的距离
-   * distance to the end
-   *
-   * @generated from field: double distance_to_end = 3;
-   */
-  distanceToEnd: number;
+  base?: PersonMotion;
 
   /**
    * 变道信息

@@ -8,7 +8,7 @@ import { Person } from "./person_pb.js";
 import { PersonMotion, Status } from "./motion_pb.js";
 import { Schedule } from "../../trip/v2/trip_pb.js";
 import { LongLatBBox } from "../../geo/v2/geo_pb.js";
-import { VehicleAction, VehicleEnv } from "./vehicle_pb.js";
+import { VehicleAction, VehicleEnv, VehicleRuntime } from "./vehicle_pb.js";
 
 /**
  * 获取person信息请求
@@ -135,7 +135,7 @@ export const GetAllVehiclesRequest = proto3.makeMessageType(
 export const GetAllVehiclesResponse = proto3.makeMessageType(
   "city.person.v1.GetAllVehiclesResponse",
   () => [
-    { no: 1, name: "motions", kind: "message", T: PersonMotion, repeated: true },
+    { no: 1, name: "vehicles", kind: "message", T: VehicleRuntime, repeated: true },
   ],
 );
 

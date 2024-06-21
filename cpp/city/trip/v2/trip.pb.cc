@@ -29,6 +29,7 @@ PROTOBUF_CONSTEXPR Trip::Trip(
   , /*decltype(_impl_._cached_size_)*/{}
   , /*decltype(_impl_.routes_)*/{}
   , /*decltype(_impl_.activity_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.model_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.end_)*/nullptr
   , /*decltype(_impl_.departure_time_)*/0
   , /*decltype(_impl_.wait_time_)*/0
@@ -80,13 +81,15 @@ const uint32_t TableStruct_city_2ftrip_2fv2_2ftrip_2eproto::offsets[] PROTOBUF_S
   PROTOBUF_FIELD_OFFSET(::city::trip::v2::Trip, _impl_.wait_time_),
   PROTOBUF_FIELD_OFFSET(::city::trip::v2::Trip, _impl_.arrival_time_),
   PROTOBUF_FIELD_OFFSET(::city::trip::v2::Trip, _impl_.activity_),
+  PROTOBUF_FIELD_OFFSET(::city::trip::v2::Trip, _impl_.model_),
   PROTOBUF_FIELD_OFFSET(::city::trip::v2::Trip, _impl_.routes_),
   ~0u,
   ~0u,
-  1,
   2,
   3,
+  4,
   0,
+  1,
   ~0u,
   PROTOBUF_FIELD_OFFSET(::city::trip::v2::Schedule, _impl_._has_bits_),
   PROTOBUF_FIELD_OFFSET(::city::trip::v2::Schedule, _internal_metadata_),
@@ -104,8 +107,8 @@ const uint32_t TableStruct_city_2ftrip_2fv2_2ftrip_2eproto::offsets[] PROTOBUF_S
   1,
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, 13, -1, sizeof(::city::trip::v2::Trip)},
-  { 20, 30, -1, sizeof(::city::trip::v2::Schedule)},
+  { 0, 14, -1, sizeof(::city::trip::v2::Trip)},
+  { 22, 32, -1, sizeof(::city::trip::v2::Schedule)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -116,28 +119,29 @@ static const ::_pb::Message* const file_default_instances[] = {
 const char descriptor_table_protodef_city_2ftrip_2fv2_2ftrip_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\027city/trip/v2/trip.proto\022\014city.trip.v2\032"
   "\025city/geo/v2/geo.proto\032\035city/routing/v2/"
-  "routing.proto\"\343\002\n\004Trip\022*\n\004mode\030\001 \001(\0162\026.c"
+  "routing.proto\"\210\003\n\004Trip\022*\n\004mode\030\001 \001(\0162\026.c"
   "ity.trip.v2.TripModeR\004mode\022\'\n\003end\030\002 \001(\0132"
   "\025.city.geo.v2.PositionR\003end\022*\n\016departure"
   "_time\030\003 \001(\001H\000R\rdepartureTime\210\001\001\022 \n\twait_"
   "time\030\004 \001(\001H\001R\010waitTime\210\001\001\022&\n\014arrival_tim"
   "e\030\005 \001(\001H\002R\013arrivalTime\210\001\001\022\037\n\010activity\030\006 "
-  "\001(\tH\003R\010activity\210\001\001\0220\n\006routes\030\007 \003(\0132\030.cit"
-  "y.routing.v2.JourneyR\006routesB\021\n\017_departu"
-  "re_timeB\014\n\n_wait_timeB\017\n\r_arrival_timeB\013"
-  "\n\t_activity\"\302\001\n\010Schedule\022(\n\005trips\030\001 \003(\0132"
-  "\022.city.trip.v2.TripR\005trips\022\035\n\nloop_count"
-  "\030\002 \001(\005R\tloopCount\022*\n\016departure_time\030\003 \001("
-  "\001H\000R\rdepartureTime\210\001\001\022 \n\twait_time\030\004 \001(\001"
-  "H\001R\010waitTime\210\001\001B\021\n\017_departure_timeB\014\n\n_w"
-  "ait_time*\211\001\n\010TripMode\022\031\n\025TRIP_MODE_UNSPE"
-  "CIFIED\020\000\022\027\n\023TRIP_MODE_WALK_ONLY\020\001\022\030\n\024TRI"
-  "P_MODE_DRIVE_ONLY\020\002\022\026\n\022TRIP_MODE_BUS_WAL"
-  "K\020\004\022\027\n\023TRIP_MODE_BIKE_WALK\020\005B\241\001\n\020com.cit"
-  "y.trip.v2B\tTripProtoP\001Z0git.fiblab.net/s"
-  "im/protos/go/city/trip/v2;tripv2\242\002\003CTX\252\002"
-  "\014City.Trip.V2\312\002\014City\\Trip\\V2\342\002\030City\\Trip"
-  "\\V2\\GPBMetadata\352\002\016City::Trip::V2b\006proto3"
+  "\001(\tH\003R\010activity\210\001\001\022\031\n\005model\030\010 \001(\tH\004R\005mod"
+  "el\210\001\001\0220\n\006routes\030\007 \003(\0132\030.city.routing.v2."
+  "JourneyR\006routesB\021\n\017_departure_timeB\014\n\n_w"
+  "ait_timeB\017\n\r_arrival_timeB\013\n\t_activityB\010"
+  "\n\006_model\"\302\001\n\010Schedule\022(\n\005trips\030\001 \003(\0132\022.c"
+  "ity.trip.v2.TripR\005trips\022\035\n\nloop_count\030\002 "
+  "\001(\005R\tloopCount\022*\n\016departure_time\030\003 \001(\001H\000"
+  "R\rdepartureTime\210\001\001\022 \n\twait_time\030\004 \001(\001H\001R"
+  "\010waitTime\210\001\001B\021\n\017_departure_timeB\014\n\n_wait"
+  "_time*\211\001\n\010TripMode\022\031\n\025TRIP_MODE_UNSPECIF"
+  "IED\020\000\022\027\n\023TRIP_MODE_WALK_ONLY\020\001\022\030\n\024TRIP_M"
+  "ODE_DRIVE_ONLY\020\002\022\026\n\022TRIP_MODE_BUS_WALK\020\004"
+  "\022\027\n\023TRIP_MODE_BIKE_WALK\020\005B\241\001\n\020com.city.t"
+  "rip.v2B\tTripProtoP\001Z0git.fiblab.net/sim/"
+  "protos/go/city/trip/v2;tripv2\242\002\003CTX\252\002\014Ci"
+  "ty.Trip.V2\312\002\014City\\Trip\\V2\342\002\030City\\Trip\\V2"
+  "\\GPBMetadata\352\002\016City::Trip::V2b\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_city_2ftrip_2fv2_2ftrip_2eproto_deps[2] = {
   &::descriptor_table_city_2fgeo_2fv2_2fgeo_2eproto,
@@ -145,7 +149,7 @@ static const ::_pbi::DescriptorTable* const descriptor_table_city_2ftrip_2fv2_2f
 };
 static ::_pbi::once_flag descriptor_table_city_2ftrip_2fv2_2ftrip_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2ftrip_2fv2_2ftrip_2eproto = {
-    false, false, 960, descriptor_table_protodef_city_2ftrip_2fv2_2ftrip_2eproto,
+    false, false, 997, descriptor_table_protodef_city_2ftrip_2fv2_2ftrip_2eproto,
     "city/trip/v2/trip.proto",
     &descriptor_table_city_2ftrip_2fv2_2ftrip_2eproto_once, descriptor_table_city_2ftrip_2fv2_2ftrip_2eproto_deps, 2, 2,
     schemas, file_default_instances, TableStruct_city_2ftrip_2fv2_2ftrip_2eproto::offsets,
@@ -186,16 +190,19 @@ class Trip::_Internal {
   using HasBits = decltype(std::declval<Trip>()._impl_._has_bits_);
   static const ::city::geo::v2::Position& end(const Trip* msg);
   static void set_has_departure_time(HasBits* has_bits) {
-    (*has_bits)[0] |= 2u;
-  }
-  static void set_has_wait_time(HasBits* has_bits) {
     (*has_bits)[0] |= 4u;
   }
-  static void set_has_arrival_time(HasBits* has_bits) {
+  static void set_has_wait_time(HasBits* has_bits) {
     (*has_bits)[0] |= 8u;
+  }
+  static void set_has_arrival_time(HasBits* has_bits) {
+    (*has_bits)[0] |= 16u;
   }
   static void set_has_activity(HasBits* has_bits) {
     (*has_bits)[0] |= 1u;
+  }
+  static void set_has_model(HasBits* has_bits) {
+    (*has_bits)[0] |= 2u;
   }
 };
 
@@ -226,6 +233,7 @@ Trip::Trip(const Trip& from)
     , /*decltype(_impl_._cached_size_)*/{}
     , decltype(_impl_.routes_){from._impl_.routes_}
     , decltype(_impl_.activity_){}
+    , decltype(_impl_.model_){}
     , decltype(_impl_.end_){nullptr}
     , decltype(_impl_.departure_time_){}
     , decltype(_impl_.wait_time_){}
@@ -239,6 +247,14 @@ Trip::Trip(const Trip& from)
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_activity()) {
     _this->_impl_.activity_.Set(from._internal_activity(), 
+      _this->GetArenaForAllocation());
+  }
+  _impl_.model_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.model_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (from._internal_has_model()) {
+    _this->_impl_.model_.Set(from._internal_model(), 
       _this->GetArenaForAllocation());
   }
   if (from._internal_has_end()) {
@@ -259,6 +275,7 @@ inline void Trip::SharedCtor(
     , /*decltype(_impl_._cached_size_)*/{}
     , decltype(_impl_.routes_){arena}
     , decltype(_impl_.activity_){}
+    , decltype(_impl_.model_){}
     , decltype(_impl_.end_){nullptr}
     , decltype(_impl_.departure_time_){0}
     , decltype(_impl_.wait_time_){0}
@@ -268,6 +285,10 @@ inline void Trip::SharedCtor(
   _impl_.activity_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
     _impl_.activity_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.model_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.model_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
@@ -284,6 +305,7 @@ inline void Trip::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.routes_.~RepeatedPtrField();
   _impl_.activity_.Destroy();
+  _impl_.model_.Destroy();
   if (this != internal_default_instance()) delete _impl_.end_;
 }
 
@@ -299,14 +321,19 @@ void Trip::Clear() {
 
   _impl_.routes_.Clear();
   cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000001u) {
-    _impl_.activity_.ClearNonDefaultToEmpty();
+  if (cached_has_bits & 0x00000003u) {
+    if (cached_has_bits & 0x00000001u) {
+      _impl_.activity_.ClearNonDefaultToEmpty();
+    }
+    if (cached_has_bits & 0x00000002u) {
+      _impl_.model_.ClearNonDefaultToEmpty();
+    }
   }
   if (GetArenaForAllocation() == nullptr && _impl_.end_ != nullptr) {
     delete _impl_.end_;
   }
   _impl_.end_ = nullptr;
-  if (cached_has_bits & 0x0000000eu) {
+  if (cached_has_bits & 0x0000001cu) {
     ::memset(&_impl_.departure_time_, 0, static_cast<size_t>(
         reinterpret_cast<char*>(&_impl_.arrival_time_) -
         reinterpret_cast<char*>(&_impl_.departure_time_)) + sizeof(_impl_.arrival_time_));
@@ -390,6 +417,16 @@ const char* Trip::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
         } else
           goto handle_unusual;
         continue;
+      // optional string model = 8 [json_name = "model"];
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 66)) {
+          auto str = _internal_mutable_model();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "city.trip.v2.Trip.model"));
+        } else
+          goto handle_unusual;
+        continue;
       default:
         goto handle_unusual;
     }  // switch
@@ -470,6 +507,16 @@ uint8_t* Trip::_InternalSerialize(
         InternalWriteMessage(7, repfield, repfield.GetCachedSize(), target, stream);
   }
 
+  // optional string model = 8 [json_name = "model"];
+  if (_internal_has_model()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_model().data(), static_cast<int>(this->_internal_model().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "city.trip.v2.Trip.model");
+    target = stream->WriteStringMaybeAliased(
+        8, this->_internal_model(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -493,14 +540,23 @@ size_t Trip::ByteSizeLong() const {
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // optional string activity = 6 [json_name = "activity"];
   cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000001u) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_activity());
-  }
+  if (cached_has_bits & 0x00000003u) {
+    // optional string activity = 6 [json_name = "activity"];
+    if (cached_has_bits & 0x00000001u) {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+          this->_internal_activity());
+    }
 
+    // optional string model = 8 [json_name = "model"];
+    if (cached_has_bits & 0x00000002u) {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+          this->_internal_model());
+    }
+
+  }
   // .city.geo.v2.Position end = 2 [json_name = "end"];
   if (this->_internal_has_end()) {
     total_size += 1 +
@@ -508,19 +564,19 @@ size_t Trip::ByteSizeLong() const {
         *_impl_.end_);
   }
 
-  if (cached_has_bits & 0x0000000eu) {
+  if (cached_has_bits & 0x0000001cu) {
     // optional double departure_time = 3 [json_name = "departureTime"];
-    if (cached_has_bits & 0x00000002u) {
-      total_size += 1 + 8;
-    }
-
-    // optional double wait_time = 4 [json_name = "waitTime"];
     if (cached_has_bits & 0x00000004u) {
       total_size += 1 + 8;
     }
 
-    // optional double arrival_time = 5 [json_name = "arrivalTime"];
+    // optional double wait_time = 4 [json_name = "waitTime"];
     if (cached_has_bits & 0x00000008u) {
+      total_size += 1 + 8;
+    }
+
+    // optional double arrival_time = 5 [json_name = "arrivalTime"];
+    if (cached_has_bits & 0x00000010u) {
       total_size += 1 + 8;
     }
 
@@ -550,22 +606,27 @@ void Trip::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_
   (void) cached_has_bits;
 
   _this->_impl_.routes_.MergeFrom(from._impl_.routes_);
-  if (from._internal_has_activity()) {
-    _this->_internal_set_activity(from._internal_activity());
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
+    if (cached_has_bits & 0x00000001u) {
+      _this->_internal_set_activity(from._internal_activity());
+    }
+    if (cached_has_bits & 0x00000002u) {
+      _this->_internal_set_model(from._internal_model());
+    }
   }
   if (from._internal_has_end()) {
     _this->_internal_mutable_end()->::city::geo::v2::Position::MergeFrom(
         from._internal_end());
   }
-  cached_has_bits = from._impl_._has_bits_[0];
-  if (cached_has_bits & 0x0000000eu) {
-    if (cached_has_bits & 0x00000002u) {
+  if (cached_has_bits & 0x0000001cu) {
+    if (cached_has_bits & 0x00000004u) {
       _this->_impl_.departure_time_ = from._impl_.departure_time_;
     }
-    if (cached_has_bits & 0x00000004u) {
+    if (cached_has_bits & 0x00000008u) {
       _this->_impl_.wait_time_ = from._impl_.wait_time_;
     }
-    if (cached_has_bits & 0x00000008u) {
+    if (cached_has_bits & 0x00000010u) {
       _this->_impl_.arrival_time_ = from._impl_.arrival_time_;
     }
     _this->_impl_._has_bits_[0] |= cached_has_bits;
@@ -597,6 +658,10 @@ void Trip::InternalSwap(Trip* other) {
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &_impl_.activity_, lhs_arena,
       &other->_impl_.activity_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.model_, lhs_arena,
+      &other->_impl_.model_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(Trip, _impl_.mode_)
