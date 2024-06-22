@@ -144,6 +144,7 @@ PROTOBUF_CONSTEXPR Person::Person(
   , /*decltype(_impl_.bike_attribute_)*/nullptr
   , /*decltype(_impl_.profile_)*/nullptr
   , /*decltype(_impl_.pedestrian_attribute_)*/nullptr
+  , /*decltype(_impl_.work_)*/nullptr
   , /*decltype(_impl_.id_)*/0} {}
 struct PersonDefaultTypeInternal {
   PROTOBUF_CONSTEXPR PersonDefaultTypeInternal()
@@ -268,6 +269,7 @@ const uint32_t TableStruct_city_2fperson_2fv1_2fperson_2eproto::offsets[] PROTOB
   PROTOBUF_FIELD_OFFSET(::city::person::v1::Person, _impl_.bike_attribute_),
   PROTOBUF_FIELD_OFFSET(::city::person::v1::Person, _impl_.labels_),
   PROTOBUF_FIELD_OFFSET(::city::person::v1::Person, _impl_.profile_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v1::Person, _impl_.work_),
   ~0u,
   ~0u,
   ~0u,
@@ -278,6 +280,7 @@ const uint32_t TableStruct_city_2fperson_2fv1_2fperson_2eproto::offsets[] PROTOB
   2,
   ~0u,
   3,
+  5,
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::city::person::v1::Persons, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -294,8 +297,8 @@ static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protode
   { 47, 55, -1, sizeof(::city::person::v1::BikeAttribute)},
   { 57, -1, -1, sizeof(::city::person::v1::PersonProfile)},
   { 67, 75, -1, sizeof(::city::person::v1::Person_LabelsEntry_DoNotUse)},
-  { 77, 93, -1, sizeof(::city::person::v1::Person)},
-  { 103, -1, -1, sizeof(::city::person::v1::Persons)},
+  { 77, 94, -1, sizeof(::city::person::v1::Person)},
+  { 105, -1, -1, sizeof(::city::person::v1::Persons)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -335,7 +338,7 @@ const char descriptor_table_protodef_city_2fperson_2fv1_2fperson_2eproto[] PROTO
   "\002 \001(\0162\031.city.person.v1.EducationR\teducat"
   "ion\022.\n\006gender\030\003 \001(\0162\026.city.person.v1.Gen"
   "derR\006gender\022=\n\013consumption\030\004 \001(\0162\033.city."
-  "person.v1.ConsumptionR\013consumption\"\221\006\n\006P"
+  "person.v1.ConsumptionR\013consumption\"\312\006\n\006P"
   "erson\022\016\n\002id\030\001 \001(\005R\002id\022=\n\tattribute\030\002 \001(\013"
   "2\037.city.person.v1.PersonAttributeR\tattri"
   "bute\022)\n\004home\030\003 \001(\0132\025.city.geo.v2.Positio"
@@ -351,29 +354,30 @@ const char descriptor_table_protodef_city_2fperson_2fv1_2fperson_2eproto[] PROTO
   "ibuteH\003R\rbikeAttribute\210\001\001\022:\n\006labels\030\n \003("
   "\0132\".city.person.v1.Person.LabelsEntryR\006l"
   "abels\022<\n\007profile\030\013 \001(\0132\035.city.person.v1."
-  "PersonProfileH\004R\007profile\210\001\001\0329\n\013LabelsEnt"
-  "ry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005val"
-  "ue:\0028\001B\024\n\022_vehicle_attributeB\020\n\016_bus_att"
-  "ributeB\027\n\025_pedestrian_attributeB\021\n\017_bike"
-  "_attributeB\n\n\010_profile\";\n\007Persons\0220\n\007per"
-  "sons\030\001 \003(\0132\026.city.person.v1.PersonR\007pers"
-  "ons*\334\001\n\tEducation\022\031\n\025EDUCATION_UNSPECIFI"
-  "ED\020\000\022\024\n\020EDUCATION_DOCTOR\020\001\022\024\n\020EDUCATION_"
-  "MASTER\020\002\022\026\n\022EDUCATION_BACHELOR\020\003\022\031\n\025EDUC"
-  "ATION_HIGH_SCHOOL\020\004\022 \n\034EDUCATION_JUNIOR_"
-  "HIGH_SCHOOL\020\005\022\034\n\030EDUCATION_PRIMARY_SCHOO"
-  "L\020\006\022\025\n\021EDUCATION_COLLEGE\020\007*D\n\006Gender\022\026\n\022"
-  "GENDER_UNSPECIFIED\020\000\022\017\n\013GENDER_MALE\020\001\022\021\n"
-  "\rGENDER_FEMALE\020\002*\256\001\n\013Consumption\022\033\n\027CONS"
-  "UMPTION_UNSPECIFIED\020\000\022\023\n\017CONSUMPTION_LOW"
-  "\020\001\022\036\n\032CONSUMPTION_RELATIVELY_LOW\020\002\022\026\n\022CO"
-  "NSUMPTION_MEDIUM\020\003\022\037\n\033CONSUMPTION_RELATI"
-  "VELY_HIGH\020\004\022\024\n\020CONSUMPTION_HIGH\020\005B\261\001\n\022co"
-  "m.city.person.v1B\013PersonProtoP\001Z4git.fib"
-  "lab.net/sim/protos/go/city/person/v1;per"
-  "sonv1\242\002\003CPX\252\002\016City.Person.V1\312\002\016City\\Pers"
-  "on\\V1\342\002\032City\\Person\\V1\\GPBMetadata\352\002\020Cit"
-  "y::Person::V1b\006proto3"
+  "PersonProfileH\004R\007profile\210\001\001\022.\n\004work\030\r \001("
+  "\0132\025.city.geo.v2.PositionH\005R\004work\210\001\001\0329\n\013L"
+  "abelsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 "
+  "\001(\tR\005value:\0028\001B\024\n\022_vehicle_attributeB\020\n\016"
+  "_bus_attributeB\027\n\025_pedestrian_attributeB"
+  "\021\n\017_bike_attributeB\n\n\010_profileB\007\n\005_work\""
+  ";\n\007Persons\0220\n\007persons\030\001 \003(\0132\026.city.perso"
+  "n.v1.PersonR\007persons*\334\001\n\tEducation\022\031\n\025ED"
+  "UCATION_UNSPECIFIED\020\000\022\024\n\020EDUCATION_DOCTO"
+  "R\020\001\022\024\n\020EDUCATION_MASTER\020\002\022\026\n\022EDUCATION_B"
+  "ACHELOR\020\003\022\031\n\025EDUCATION_HIGH_SCHOOL\020\004\022 \n\034"
+  "EDUCATION_JUNIOR_HIGH_SCHOOL\020\005\022\034\n\030EDUCAT"
+  "ION_PRIMARY_SCHOOL\020\006\022\025\n\021EDUCATION_COLLEG"
+  "E\020\007*D\n\006Gender\022\026\n\022GENDER_UNSPECIFIED\020\000\022\017\n"
+  "\013GENDER_MALE\020\001\022\021\n\rGENDER_FEMALE\020\002*\256\001\n\013Co"
+  "nsumption\022\033\n\027CONSUMPTION_UNSPECIFIED\020\000\022\023"
+  "\n\017CONSUMPTION_LOW\020\001\022\036\n\032CONSUMPTION_RELAT"
+  "IVELY_LOW\020\002\022\026\n\022CONSUMPTION_MEDIUM\020\003\022\037\n\033C"
+  "ONSUMPTION_RELATIVELY_HIGH\020\004\022\024\n\020CONSUMPT"
+  "ION_HIGH\020\005B\261\001\n\022com.city.person.v1B\013Perso"
+  "nProtoP\001Z4git.fiblab.net/sim/protos/go/c"
+  "ity/person/v1;personv1\242\002\003CPX\252\002\016City.Pers"
+  "on.V1\312\002\016City\\Person\\V1\342\002\032City\\Person\\V1\\"
+  "GPBMetadata\352\002\020City::Person::V1b\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_city_2fperson_2fv1_2fperson_2eproto_deps[2] = {
   &::descriptor_table_city_2fgeo_2fv2_2fgeo_2eproto,
@@ -381,7 +385,7 @@ static const ::_pbi::DescriptorTable* const descriptor_table_city_2fperson_2fv1_
 };
 static ::_pbi::once_flag descriptor_table_city_2fperson_2fv1_2fperson_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2fperson_2fv1_2fperson_2eproto = {
-    false, false, 2501, descriptor_table_protodef_city_2fperson_2fv1_2fperson_2eproto,
+    false, false, 2558, descriptor_table_protodef_city_2fperson_2fv1_2fperson_2eproto,
     "city/person/v1/person.proto",
     &descriptor_table_city_2fperson_2fv1_2fperson_2eproto_once, descriptor_table_city_2fperson_2fv1_2fperson_2eproto_deps, 2, 9,
     schemas, file_default_instances, TableStruct_city_2fperson_2fv1_2fperson_2eproto::offsets,
@@ -2265,6 +2269,10 @@ class Person::_Internal {
   static void set_has_profile(HasBits* has_bits) {
     (*has_bits)[0] |= 8u;
   }
+  static const ::city::geo::v2::Position& work(const Person* msg);
+  static void set_has_work(HasBits* has_bits) {
+    (*has_bits)[0] |= 32u;
+  }
 };
 
 const ::city::person::v1::PersonAttribute&
@@ -2295,6 +2303,10 @@ const ::city::person::v1::PersonProfile&
 Person::_Internal::profile(const Person* msg) {
   return *msg->_impl_.profile_;
 }
+const ::city::geo::v2::Position&
+Person::_Internal::work(const Person* msg) {
+  return *msg->_impl_.work_;
+}
 void Person::clear_home() {
   if (GetArenaForAllocation() == nullptr && _impl_.home_ != nullptr) {
     delete _impl_.home_;
@@ -2303,6 +2315,10 @@ void Person::clear_home() {
 }
 void Person::clear_schedules() {
   _impl_.schedules_.Clear();
+}
+void Person::clear_work() {
+  if (_impl_.work_ != nullptr) _impl_.work_->Clear();
+  _impl_._has_bits_[0] &= ~0x00000020u;
 }
 Person::Person(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
@@ -2328,6 +2344,7 @@ Person::Person(const Person& from)
     , decltype(_impl_.bike_attribute_){nullptr}
     , decltype(_impl_.profile_){nullptr}
     , decltype(_impl_.pedestrian_attribute_){nullptr}
+    , decltype(_impl_.work_){nullptr}
     , decltype(_impl_.id_){}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
@@ -2353,6 +2370,9 @@ Person::Person(const Person& from)
   if (from._internal_has_pedestrian_attribute()) {
     _this->_impl_.pedestrian_attribute_ = new ::city::person::v1::PedestrianAttribute(*from._impl_.pedestrian_attribute_);
   }
+  if (from._internal_has_work()) {
+    _this->_impl_.work_ = new ::city::geo::v2::Position(*from._impl_.work_);
+  }
   _this->_impl_.id_ = from._impl_.id_;
   // @@protoc_insertion_point(copy_constructor:city.person.v1.Person)
 }
@@ -2373,6 +2393,7 @@ inline void Person::SharedCtor(
     , decltype(_impl_.bike_attribute_){nullptr}
     , decltype(_impl_.profile_){nullptr}
     , decltype(_impl_.pedestrian_attribute_){nullptr}
+    , decltype(_impl_.work_){nullptr}
     , decltype(_impl_.id_){0}
   };
 }
@@ -2399,6 +2420,7 @@ inline void Person::SharedDtor() {
   if (this != internal_default_instance()) delete _impl_.bike_attribute_;
   if (this != internal_default_instance()) delete _impl_.profile_;
   if (this != internal_default_instance()) delete _impl_.pedestrian_attribute_;
+  if (this != internal_default_instance()) delete _impl_.work_;
 }
 
 void Person::ArenaDtor(void* object) {
@@ -2426,7 +2448,7 @@ void Person::Clear() {
   }
   _impl_.home_ = nullptr;
   cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x0000001fu) {
+  if (cached_has_bits & 0x0000003fu) {
     if (cached_has_bits & 0x00000001u) {
       GOOGLE_DCHECK(_impl_.vehicle_attribute_ != nullptr);
       _impl_.vehicle_attribute_->Clear();
@@ -2446,6 +2468,10 @@ void Person::Clear() {
     if (cached_has_bits & 0x00000010u) {
       GOOGLE_DCHECK(_impl_.pedestrian_attribute_ != nullptr);
       _impl_.pedestrian_attribute_->Clear();
+    }
+    if (cached_has_bits & 0x00000020u) {
+      GOOGLE_DCHECK(_impl_.work_ != nullptr);
+      _impl_.work_->Clear();
     }
   }
   _impl_.id_ = 0;
@@ -2546,6 +2572,14 @@ const char* Person::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
       case 12:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 98)) {
           ptr = ctx->ParseMessage(_internal_mutable_pedestrian_attribute(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional .city.geo.v2.Position work = 13 [json_name = "work"];
+      case 13:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 106)) {
+          ptr = ctx->ParseMessage(_internal_mutable_work(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -2673,6 +2707,13 @@ uint8_t* Person::_InternalSerialize(
         _Internal::pedestrian_attribute(this).GetCachedSize(), target, stream);
   }
 
+  // optional .city.geo.v2.Position work = 13 [json_name = "work"];
+  if (_internal_has_work()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(13, _Internal::work(this),
+        _Internal::work(this).GetCachedSize(), target, stream);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -2720,7 +2761,7 @@ size_t Person::ByteSizeLong() const {
   }
 
   cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x0000001fu) {
+  if (cached_has_bits & 0x0000003fu) {
     // optional .city.person.v1.VehicleAttribute vehicle_attribute = 7 [json_name = "vehicleAttribute"];
     if (cached_has_bits & 0x00000001u) {
       total_size += 1 +
@@ -2754,6 +2795,13 @@ size_t Person::ByteSizeLong() const {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *_impl_.pedestrian_attribute_);
+    }
+
+    // optional .city.geo.v2.Position work = 13 [json_name = "work"];
+    if (cached_has_bits & 0x00000020u) {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *_impl_.work_);
     }
 
   }
@@ -2791,7 +2839,7 @@ void Person::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBU
         from._internal_home());
   }
   cached_has_bits = from._impl_._has_bits_[0];
-  if (cached_has_bits & 0x0000001fu) {
+  if (cached_has_bits & 0x0000003fu) {
     if (cached_has_bits & 0x00000001u) {
       _this->_internal_mutable_vehicle_attribute()->::city::person::v1::VehicleAttribute::MergeFrom(
           from._internal_vehicle_attribute());
@@ -2811,6 +2859,10 @@ void Person::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBU
     if (cached_has_bits & 0x00000010u) {
       _this->_internal_mutable_pedestrian_attribute()->::city::person::v1::PedestrianAttribute::MergeFrom(
           from._internal_pedestrian_attribute());
+    }
+    if (cached_has_bits & 0x00000020u) {
+      _this->_internal_mutable_work()->::city::geo::v2::Position::MergeFrom(
+          from._internal_work());
     }
   }
   if (from._internal_id() != 0) {

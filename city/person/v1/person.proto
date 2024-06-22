@@ -202,6 +202,9 @@ message Person {
   // [可空] 智能体简介
   // [can be empty] agent profile
   optional PersonProfile profile = 11;
+  // 工作地位置
+  // work position
+  optional city.geo.v2.Position work = 13;
 }
 
 // 智能体集合，对应一个智能体pb文件或一个智能体mongodb collection

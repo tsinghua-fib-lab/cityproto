@@ -1440,6 +1440,7 @@ class Person final :
     kBikeAttributeFieldNumber = 9,
     kProfileFieldNumber = 11,
     kPedestrianAttributeFieldNumber = 12,
+    kWorkFieldNumber = 13,
     kIdFieldNumber = 1,
   };
   // repeated .city.trip.v2.Schedule schedules = 4 [json_name = "schedules"];
@@ -1603,6 +1604,24 @@ class Person final :
       ::city::person::v1::PedestrianAttribute* pedestrian_attribute);
   ::city::person::v1::PedestrianAttribute* unsafe_arena_release_pedestrian_attribute();
 
+  // optional .city.geo.v2.Position work = 13 [json_name = "work"];
+  bool has_work() const;
+  private:
+  bool _internal_has_work() const;
+  public:
+  void clear_work();
+  const ::city::geo::v2::Position& work() const;
+  PROTOBUF_NODISCARD ::city::geo::v2::Position* release_work();
+  ::city::geo::v2::Position* mutable_work();
+  void set_allocated_work(::city::geo::v2::Position* work);
+  private:
+  const ::city::geo::v2::Position& _internal_work() const;
+  ::city::geo::v2::Position* _internal_mutable_work();
+  public:
+  void unsafe_arena_set_allocated_work(
+      ::city::geo::v2::Position* work);
+  ::city::geo::v2::Position* unsafe_arena_release_work();
+
   // int32 id = 1 [json_name = "id"];
   void clear_id();
   int32_t id() const;
@@ -1635,6 +1654,7 @@ class Person final :
     ::city::person::v1::BikeAttribute* bike_attribute_;
     ::city::person::v1::PersonProfile* profile_;
     ::city::person::v1::PedestrianAttribute* pedestrian_attribute_;
+    ::city::geo::v2::Position* work_;
     int32_t id_;
   };
   union { Impl_ _impl_; };
@@ -3155,6 +3175,93 @@ inline void Person::set_allocated_profile(::city::person::v1::PersonProfile* pro
   }
   _impl_.profile_ = profile;
   // @@protoc_insertion_point(field_set_allocated:city.person.v1.Person.profile)
+}
+
+// optional .city.geo.v2.Position work = 13 [json_name = "work"];
+inline bool Person::_internal_has_work() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000020u) != 0;
+  PROTOBUF_ASSUME(!value || _impl_.work_ != nullptr);
+  return value;
+}
+inline bool Person::has_work() const {
+  return _internal_has_work();
+}
+inline const ::city::geo::v2::Position& Person::_internal_work() const {
+  const ::city::geo::v2::Position* p = _impl_.work_;
+  return p != nullptr ? *p : reinterpret_cast<const ::city::geo::v2::Position&>(
+      ::city::geo::v2::_Position_default_instance_);
+}
+inline const ::city::geo::v2::Position& Person::work() const {
+  // @@protoc_insertion_point(field_get:city.person.v1.Person.work)
+  return _internal_work();
+}
+inline void Person::unsafe_arena_set_allocated_work(
+    ::city::geo::v2::Position* work) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.work_);
+  }
+  _impl_.work_ = work;
+  if (work) {
+    _impl_._has_bits_[0] |= 0x00000020u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000020u;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:city.person.v1.Person.work)
+}
+inline ::city::geo::v2::Position* Person::release_work() {
+  _impl_._has_bits_[0] &= ~0x00000020u;
+  ::city::geo::v2::Position* temp = _impl_.work_;
+  _impl_.work_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::city::geo::v2::Position* Person::unsafe_arena_release_work() {
+  // @@protoc_insertion_point(field_release:city.person.v1.Person.work)
+  _impl_._has_bits_[0] &= ~0x00000020u;
+  ::city::geo::v2::Position* temp = _impl_.work_;
+  _impl_.work_ = nullptr;
+  return temp;
+}
+inline ::city::geo::v2::Position* Person::_internal_mutable_work() {
+  _impl_._has_bits_[0] |= 0x00000020u;
+  if (_impl_.work_ == nullptr) {
+    auto* p = CreateMaybeMessage<::city::geo::v2::Position>(GetArenaForAllocation());
+    _impl_.work_ = p;
+  }
+  return _impl_.work_;
+}
+inline ::city::geo::v2::Position* Person::mutable_work() {
+  ::city::geo::v2::Position* _msg = _internal_mutable_work();
+  // @@protoc_insertion_point(field_mutable:city.person.v1.Person.work)
+  return _msg;
+}
+inline void Person::set_allocated_work(::city::geo::v2::Position* work) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.work_);
+  }
+  if (work) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(work));
+    if (message_arena != submessage_arena) {
+      work = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, work, submessage_arena);
+    }
+    _impl_._has_bits_[0] |= 0x00000020u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000020u;
+  }
+  _impl_.work_ = work;
+  // @@protoc_insertion_point(field_set_allocated:city.person.v1.Person.work)
 }
 
 // -------------------------------------------------------------------

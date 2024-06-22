@@ -555,6 +555,14 @@ export declare class Person extends Message<Person> {
    */
   profile?: PersonProfile;
 
+  /**
+   * 工作地位置
+   * work position
+   *
+   * @generated from field: optional city.geo.v2.Position work = 13;
+   */
+  work?: Position;
+
   constructor(data?: PartialMessage<Person>);
 
   static readonly runtime: typeof proto3;

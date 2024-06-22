@@ -78,7 +78,7 @@ type GetAgentResponse struct {
 	unknownFields protoimpl.UnknownFields
 
 	// agent信息
-	Base *Agent `protobuf:"bytes,1,opt,name=base,proto3" json:"base,omitempty" bson:"base" db:"base" yaml:"base"`
+	Base *Agent `protobuf:"bytes,1,opt,name=base,proto3" json:"base,omitempty" yaml:"base" bson:"base" db:"base"`
 	// agent运动信息
 	Motion *AgentMotion `protobuf:"bytes,2,opt,name=motion,proto3" json:"motion,omitempty" yaml:"motion" bson:"motion" db:"motion"`
 }
@@ -185,7 +185,7 @@ type AddAgentResponse struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 新增的agent分配得到的ID
-	AgentId int32 `protobuf:"varint,1,opt,name=agent_id,json=agentId,proto3" json:"agent_id,omitempty" yaml:"agent_id" bson:"agent_id" db:"agent_id"`
+	AgentId int32 `protobuf:"varint,1,opt,name=agent_id,json=agentId,proto3" json:"agent_id,omitempty" db:"agent_id" yaml:"agent_id" bson:"agent_id"`
 }
 
 func (x *AddAgentResponse) Reset() {
@@ -331,7 +331,7 @@ type GetAgentsByLongLatAreaRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 经纬度范围
-	Area *v21.LongLatBBox `protobuf:"bytes,1,opt,name=area,proto3" json:"area,omitempty" db:"area" yaml:"area" bson:"area"`
+	Area *v21.LongLatBBox `protobuf:"bytes,1,opt,name=area,proto3" json:"area,omitempty" bson:"area" db:"area" yaml:"area"`
 }
 
 func (x *GetAgentsByLongLatAreaRequest) Reset() {
