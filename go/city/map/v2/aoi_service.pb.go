@@ -32,7 +32,7 @@ type AoiState struct {
 	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
 	// AOI内的人
 	// Persons in AOI
-	Persons []*v1.PersonMotion `protobuf:"bytes,2,rep,name=persons,proto3" json:"persons,omitempty" db:"persons" yaml:"persons" bson:"persons"`
+	Persons []*v1.PersonMotion `protobuf:"bytes,2,rep,name=persons,proto3" json:"persons,omitempty" yaml:"persons" bson:"persons" db:"persons"`
 }
 
 func (x *AoiState) Reset() {
@@ -141,7 +141,7 @@ type GetAoiResponse struct {
 
 	// AOI信息列表
 	// Lis of AOIs information
-	States []*AoiState `protobuf:"bytes,1,rep,name=states,proto3" json:"states,omitempty" yaml:"states" bson:"states" db:"states"`
+	States []*AoiState `protobuf:"bytes,1,rep,name=states,proto3" json:"states,omitempty" db:"states" yaml:"states" bson:"states"`
 }
 
 func (x *GetAoiResponse) Reset() {

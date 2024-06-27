@@ -98,10 +98,10 @@ type Trip struct {
 
 	// 出行方式
 	// trip mode
-	Mode TripMode `protobuf:"varint,1,opt,name=mode,proto3,enum=city.trip.v2.TripMode" json:"mode,omitempty" bson:"mode" db:"mode" yaml:"mode"`
+	Mode TripMode `protobuf:"varint,1,opt,name=mode,proto3,enum=city.trip.v2.TripMode" json:"mode,omitempty" yaml:"mode" bson:"mode" db:"mode"`
 	// 目的地
 	// destination
-	End *v2.Position `protobuf:"bytes,2,opt,name=end,proto3" json:"end,omitempty" yaml:"end" bson:"end" db:"end"`
+	End *v2.Position `protobuf:"bytes,2,opt,name=end,proto3" json:"end,omitempty" bson:"end" db:"end" yaml:"end"`
 	// 期望的出发时间（单位: 秒）
 	// Expected departure time (in seconds)
 	DepartureTime *float64 `protobuf:"fixed64,3,opt,name=departure_time,json=departureTime,proto3,oneof" json:"departure_time,omitempty" yaml:"departure_time" bson:"departure_time" db:"departure_time"`
@@ -110,13 +110,13 @@ type Trip struct {
 	WaitTime *float64 `protobuf:"fixed64,4,opt,name=wait_time,json=waitTime,proto3,oneof" json:"wait_time,omitempty" yaml:"wait_time" bson:"wait_time" db:"wait_time"`
 	// 期望的到达时间（单位: 秒）
 	// Expected arrival time (in seconds)
-	ArrivalTime *float64 `protobuf:"fixed64,5,opt,name=arrival_time,json=arrivalTime,proto3,oneof" json:"arrival_time,omitempty" yaml:"arrival_time" bson:"arrival_time" db:"arrival_time"`
+	ArrivalTime *float64 `protobuf:"fixed64,5,opt,name=arrival_time,json=arrivalTime,proto3,oneof" json:"arrival_time,omitempty" db:"arrival_time" yaml:"arrival_time" bson:"arrival_time"`
 	// 本次出行目的地的活动名
 	// The activity name of the destination for this trip
-	Activity *string `protobuf:"bytes,6,opt,name=activity,proto3,oneof" json:"activity,omitempty" db:"activity" yaml:"activity" bson:"activity"`
+	Activity *string `protobuf:"bytes,6,opt,name=activity,proto3,oneof" json:"activity,omitempty" yaml:"activity" bson:"activity" db:"activity"`
 	// 本次出行对应的可视化模型（覆盖Person Attribute中的默认模型）
 	// The visual model corresponding to this trip (overriding the default model in Person Attribute)
-	Model *string `protobuf:"bytes,8,opt,name=model,proto3,oneof" json:"model,omitempty" yaml:"model" bson:"model" db:"model"`
+	Model *string `protobuf:"bytes,8,opt,name=model,proto3,oneof" json:"model,omitempty" bson:"model" db:"model" yaml:"model"`
 	// 预计算的导航结果
 	// Pre calculated routing results
 	Routes []*v21.Journey `protobuf:"bytes,7,rep,name=routes,proto3" json:"routes,omitempty" yaml:"routes" bson:"routes" db:"routes"`
@@ -252,13 +252,13 @@ type Schedule struct {
 	Trips []*Trip `protobuf:"bytes,1,rep,name=trips,proto3" json:"trips,omitempty" yaml:"trips" bson:"trips" db:"trips"`
 	// trips的执行次数，0表示无限循环，大于0表示执行几次
 	// The number of times trips are executed, where 0 represents infinite loops and greater than 0 represents how many times they are executed
-	LoopCount int32 `protobuf:"varint,2,opt,name=loop_count,json=loopCount,proto3" json:"loop_count,omitempty" yaml:"loop_count" bson:"loop_count" db:"loop_count"`
+	LoopCount int32 `protobuf:"varint,2,opt,name=loop_count,json=loopCount,proto3" json:"loop_count,omitempty" bson:"loop_count" db:"loop_count" yaml:"loop_count"`
 	// 期望的出发时间（单位: 秒）
 	// Expected departure time (in seconds)
 	DepartureTime *float64 `protobuf:"fixed64,3,opt,name=departure_time,json=departureTime,proto3,oneof" json:"departure_time,omitempty" yaml:"departure_time" bson:"departure_time" db:"departure_time"`
 	// 期望的等待时间（单位：秒），如果departure_time为空则wait_time默认为0
 	// Expected waiting time (in seconds), if departure_time is empty, wait_time defaults to 0
-	WaitTime *float64 `protobuf:"fixed64,4,opt,name=wait_time,json=waitTime,proto3,oneof" json:"wait_time,omitempty" yaml:"wait_time" bson:"wait_time" db:"wait_time"`
+	WaitTime *float64 `protobuf:"fixed64,4,opt,name=wait_time,json=waitTime,proto3,oneof" json:"wait_time,omitempty" bson:"wait_time" db:"wait_time" yaml:"wait_time"`
 }
 
 func (x *Schedule) Reset() {

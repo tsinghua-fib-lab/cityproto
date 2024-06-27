@@ -1,0 +1,63 @@
+syntax = "proto3";
+
+package city.sync.v2;
+
+service SyncService {
+  // 注册程序URL
+  rpc SetURL(SetURLRequest) returns (SetURLResponse);
+  // 获取程序URL
+  rpc GetURL(GetURLRequest) returns (GetURLResponse);
+  // 程序完成本步所有操作，进入同步状态。
+  // 要求：进入同步状态的程序不再向其他程序发送消息，直到下一步开始。
+  rpc EnterStepSync(EnterStepSyncRequest) returns (EnterStepSyncResponse);
+  // 程序完成同步阶段（无通信的安全区域）中必要的处理，如为prepare阶段加锁，可以进入准备阶段（恢复通信）。
+  rpc ExitStepSync(ExitStepSyncRequest) returns (ExitStepSyncResponse);
+}
+
+// 注册程序URL请求
+message SetURLRequest {
+  // 组件名，需要在同步器启动参数列表中
+  string name = 1;
+  // 程序URL
+  string url = 2;
+}
+
+// 注册程序URL响应
+message SetURLResponse {}
+
+// 获取程序URL请求
+message GetURLRequest {
+  // 组件名，需要在同步器启动参数列表中
+  string name = 1;
+}
+
+// 获取程序URL响应
+message GetURLResponse {
+  // 程序URL
+  string url = 1;
+}
+
+// 进入同步状态请求
+// Enter step sync request
+message EnterStepSyncRequest {
+  // 组件名，需要在同步器启动参数列表中
+  string name = 1;
+}
+
+// 进入同步状态响应
+// Enter step sync response
+message EnterStepSyncResponse {}
+
+// 退出同步状态请求
+// Exit step sync request
+message ExitStepSyncRequest {
+  // 组件名，需要在同步器启动参数列表中
+  string name = 1;
+}
+
+// 退出同步状态响应
+// Exit step sync response
+message ExitStepSyncResponse {
+  //服务是否关闭
+  bool close = 1;
+}
