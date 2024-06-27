@@ -50,11 +50,13 @@ class EnterStepSyncResponse(_message.Message):
         ...
 
 class ExitStepSyncRequest(_message.Message):
-    __slots__ = ['name']
+    __slots__ = ['name', 'close']
     NAME_FIELD_NUMBER: _ClassVar[int]
+    CLOSE_FIELD_NUMBER: _ClassVar[int]
     name: str
+    close: bool
 
-    def __init__(self, name: _Optional[str]=...) -> None:
+    def __init__(self, name: _Optional[str]=..., close: bool=...) -> None:
         ...
 
 class ExitStepSyncResponse(_message.Message):

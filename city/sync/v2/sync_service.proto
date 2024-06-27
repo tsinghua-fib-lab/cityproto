@@ -53,11 +53,13 @@ message EnterStepSyncResponse {}
 message ExitStepSyncRequest {
   // 组件名，需要在同步器启动参数列表中
   string name = 1;
+  // 是否退出服务
+  bool close = 2;
 }
 
 // 退出同步状态响应
 // Exit step sync response
 message ExitStepSyncResponse {
-  //服务是否关闭
+  // 服务是否关闭
   bool close = 1;
 }

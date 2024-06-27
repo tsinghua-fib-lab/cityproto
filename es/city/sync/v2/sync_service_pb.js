@@ -86,6 +86,7 @@ export const ExitStepSyncRequest = proto3.makeMessageType(
   "city.sync.v2.ExitStepSyncRequest",
   () => [
     { no: 1, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "close", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 

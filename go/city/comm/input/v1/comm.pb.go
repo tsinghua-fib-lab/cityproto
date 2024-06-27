@@ -130,13 +130,13 @@ type Node struct {
 	unknownFields protoimpl.UnknownFields
 
 	Id   int32    `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
-	Type NodeType `protobuf:"varint,2,opt,name=type,proto3,enum=city.comm.input.v1.NodeType" json:"type,omitempty" yaml:"type" bson:"type" db:"type"`
+	Type NodeType `protobuf:"varint,2,opt,name=type,proto3,enum=city.comm.input.v1.NodeType" json:"type,omitempty" bson:"type" db:"type" yaml:"type"`
 	// 父节点
-	ParentId int32 `protobuf:"varint,3,opt,name=parent_id,json=parentId,proto3" json:"parent_id,omitempty" db:"parent_id" yaml:"parent_id" bson:"parent_id"`
+	ParentId int32 `protobuf:"varint,3,opt,name=parent_id,json=parentId,proto3" json:"parent_id,omitempty" yaml:"parent_id" bson:"parent_id" db:"parent_id"`
 	// 子节点
 	ChildrenIds []int32 `protobuf:"varint,4,rep,packed,name=children_ids,json=childrenIds,proto3" json:"children_ids,omitempty" yaml:"children_ids" bson:"children_ids" db:"children_ids"`
 	// 节点经纬度位置
-	Position *v2.Position `protobuf:"bytes,5,opt,name=position,proto3,oneof" json:"position,omitempty" db:"position" yaml:"position" bson:"position"`
+	Position *v2.Position `protobuf:"bytes,5,opt,name=position,proto3,oneof" json:"position,omitempty" yaml:"position" bson:"position" db:"position"`
 	// 节点所在aoi
 	AoiId *int32 `protobuf:"varint,6,opt,name=aoi_id,json=aoiId,proto3,oneof" json:"aoi_id,omitempty" yaml:"aoi_id" bson:"aoi_id" db:"aoi_id"`
 	// 基站频段id
@@ -239,9 +239,9 @@ type RepairStation struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Id       int32        `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" bson:"id" db:"id" yaml:"id"`
+	Id       int32        `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
 	AoiId    int32        `protobuf:"varint,2,opt,name=aoi_id,json=aoiId,proto3" json:"aoi_id,omitempty" yaml:"aoi_id" bson:"aoi_id" db:"aoi_id"`
-	Position *v2.Position `protobuf:"bytes,3,opt,name=position,proto3" json:"position,omitempty" db:"position" yaml:"position" bson:"position"`
+	Position *v2.Position `protobuf:"bytes,3,opt,name=position,proto3" json:"position,omitempty" yaml:"position" bson:"position" db:"position"`
 }
 
 func (x *RepairStation) Reset() {
@@ -303,8 +303,8 @@ type Pump struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Id       int32        `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" db:"id" yaml:"id" bson:"id"`
-	Position *v2.Position `protobuf:"bytes,2,opt,name=position,proto3" json:"position,omitempty" yaml:"position" bson:"position" db:"position"`
+	Id       int32        `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
+	Position *v2.Position `protobuf:"bytes,2,opt,name=position,proto3" json:"position,omitempty" db:"position" yaml:"position" bson:"position"`
 }
 
 func (x *Pump) Reset() {
@@ -359,8 +359,8 @@ type CommDemand struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Id      int32     `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
-	Demands []float64 `protobuf:"fixed64,2,rep,packed,name=demands,proto3" json:"demands,omitempty" yaml:"demands" bson:"demands" db:"demands"`
+	Id      int32     `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" db:"id" yaml:"id" bson:"id"`
+	Demands []float64 `protobuf:"fixed64,2,rep,packed,name=demands,proto3" json:"demands,omitempty" bson:"demands" db:"demands" yaml:"demands"`
 }
 
 func (x *CommDemand) Reset() {
@@ -414,9 +414,9 @@ type Nodes struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Nodes          []*Node          `protobuf:"bytes,1,rep,name=nodes,proto3" json:"nodes,omitempty" db:"nodes" yaml:"nodes" bson:"nodes"`
+	Nodes          []*Node          `protobuf:"bytes,1,rep,name=nodes,proto3" json:"nodes,omitempty" bson:"nodes" db:"nodes" yaml:"nodes"`
 	RepairStations []*RepairStation `protobuf:"bytes,2,rep,name=repair_stations,json=repairStations,proto3" json:"repair_stations,omitempty" yaml:"repair_stations" bson:"repair_stations" db:"repair_stations"`
-	Pumps          []*Pump          `protobuf:"bytes,3,rep,name=pumps,proto3" json:"pumps,omitempty" bson:"pumps" db:"pumps" yaml:"pumps"`
+	Pumps          []*Pump          `protobuf:"bytes,3,rep,name=pumps,proto3" json:"pumps,omitempty" yaml:"pumps" bson:"pumps" db:"pumps"`
 }
 
 func (x *Nodes) Reset() {

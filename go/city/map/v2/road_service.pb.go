@@ -161,7 +161,7 @@ type GetRoadRequest struct {
 
 	// 指定查询的道路ID列表，为空代表查询所有道路
 	// List of targeted road IDs. If empty, it means querying all roads.
-	RoadIds []int32 `protobuf:"varint,1,rep,packed,name=road_ids,json=roadIds,proto3" json:"road_ids,omitempty" yaml:"road_ids" bson:"road_ids" db:"road_ids"`
+	RoadIds []int32 `protobuf:"varint,1,rep,packed,name=road_ids,json=roadIds,proto3" json:"road_ids,omitempty" db:"road_ids" yaml:"road_ids" bson:"road_ids"`
 	// 是否要排除车道信息
 	// Whether to exclude lane information
 	ExcludeLane bool `protobuf:"varint,2,opt,name=exclude_lane,json=excludeLane,proto3" json:"exclude_lane,omitempty" yaml:"exclude_lane" bson:"exclude_lane" db:"exclude_lane"`
@@ -232,7 +232,7 @@ type GetRoadResponse struct {
 
 	// 道路信息列表
 	// List of road information
-	States []*RoadState `protobuf:"bytes,1,rep,name=states,proto3" json:"states,omitempty" db:"states" yaml:"states" bson:"states"`
+	States []*RoadState `protobuf:"bytes,1,rep,name=states,proto3" json:"states,omitempty" bson:"states" db:"states" yaml:"states"`
 }
 
 func (x *GetRoadResponse) Reset() {
@@ -374,9 +374,9 @@ type GetRuinInfoResponse struct {
 
 	// 三级损伤信息
 	// Three-level ruin information
-	One   *RuinInfo `protobuf:"bytes,1,opt,name=one,proto3" json:"one,omitempty" db:"one" yaml:"one" bson:"one"`
+	One   *RuinInfo `protobuf:"bytes,1,opt,name=one,proto3" json:"one,omitempty" yaml:"one" bson:"one" db:"one"`
 	Two   *RuinInfo `protobuf:"bytes,2,opt,name=two,proto3" json:"two,omitempty" yaml:"two" bson:"two" db:"two"`
-	Three *RuinInfo `protobuf:"bytes,3,opt,name=three,proto3" json:"three,omitempty" db:"three" yaml:"three" bson:"three"`
+	Three *RuinInfo `protobuf:"bytes,3,opt,name=three,proto3" json:"three,omitempty" yaml:"three" bson:"three" db:"three"`
 }
 
 func (x *GetRuinInfoResponse) Reset() {
@@ -475,7 +475,7 @@ type GetEventsResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Events *v1.Events `protobuf:"bytes,1,opt,name=events,proto3" json:"events,omitempty" yaml:"events" bson:"events" db:"events"`
+	Events *v1.Events `protobuf:"bytes,1,opt,name=events,proto3" json:"events,omitempty" bson:"events" db:"events" yaml:"events"`
 }
 
 func (x *GetEventsResponse) Reset() {
@@ -535,7 +535,7 @@ type RoadState struct {
 	Level RoadLevel `protobuf:"varint,2,opt,name=level,proto3,enum=city.map.v2.RoadLevel" json:"level,omitempty" yaml:"level" bson:"level" db:"level"`
 	// 道路中断原因
 	// road interruption reason
-	Reason InterruptionReason `protobuf:"varint,3,opt,name=reason,proto3,enum=city.map.v2.InterruptionReason" json:"reason,omitempty" yaml:"reason" bson:"reason" db:"reason"`
+	Reason InterruptionReason `protobuf:"varint,3,opt,name=reason,proto3,enum=city.map.v2.InterruptionReason" json:"reason,omitempty" db:"reason" yaml:"reason" bson:"reason"`
 	// 车道情况
 	// lane state
 	Lanes []*LaneState `protobuf:"bytes,5,rep,name=lanes,proto3" json:"lanes,omitempty" yaml:"lanes" bson:"lanes" db:"lanes"`

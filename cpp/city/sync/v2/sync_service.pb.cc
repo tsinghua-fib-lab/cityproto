@@ -101,6 +101,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORIT
 PROTOBUF_CONSTEXPR ExitStepSyncRequest::ExitStepSyncRequest(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.name_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.close_)*/false
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct ExitStepSyncRequestDefaultTypeInternal {
   PROTOBUF_CONSTEXPR ExitStepSyncRequestDefaultTypeInternal()
@@ -180,6 +181,7 @@ const uint32_t TableStruct_city_2fsync_2fv2_2fsync_5fservice_2eproto::offsets[] 
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::city::sync::v2::ExitStepSyncRequest, _impl_.name_),
+  PROTOBUF_FIELD_OFFSET(::city::sync::v2::ExitStepSyncRequest, _impl_.close_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::city::sync::v2::ExitStepSyncResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -196,7 +198,7 @@ static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protode
   { 28, -1, -1, sizeof(::city::sync::v2::EnterStepSyncRequest)},
   { 35, -1, -1, sizeof(::city::sync::v2::EnterStepSyncResponse)},
   { 41, -1, -1, sizeof(::city::sync::v2::ExitStepSyncRequest)},
-  { 48, -1, -1, sizeof(::city::sync::v2::ExitStepSyncResponse)},
+  { 49, -1, -1, sizeof(::city::sync::v2::ExitStepSyncResponse)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -217,26 +219,27 @@ const char descriptor_table_protodef_city_2fsync_2fv2_2fsync_5fservice_2eproto[]
   "\"#\n\rGetURLRequest\022\022\n\004name\030\001 \001(\tR\004name\"\"\n"
   "\016GetURLResponse\022\020\n\003url\030\001 \001(\tR\003url\"*\n\024Ent"
   "erStepSyncRequest\022\022\n\004name\030\001 \001(\tR\004name\"\027\n"
-  "\025EnterStepSyncResponse\")\n\023ExitStepSyncRe"
-  "quest\022\022\n\004name\030\001 \001(\tR\004name\",\n\024ExitStepSyn"
-  "cResponse\022\024\n\005close\030\001 \001(\010R\005close2\310\002\n\013Sync"
-  "Service\022C\n\006SetURL\022\033.city.sync.v2.SetURLR"
-  "equest\032\034.city.sync.v2.SetURLResponse\022C\n\006"
-  "GetURL\022\033.city.sync.v2.GetURLRequest\032\034.ci"
-  "ty.sync.v2.GetURLResponse\022X\n\rEnterStepSy"
-  "nc\022\".city.sync.v2.EnterStepSyncRequest\032#"
-  ".city.sync.v2.EnterStepSyncResponse\022U\n\014E"
-  "xitStepSync\022!.city.sync.v2.ExitStepSyncR"
-  "equest\032\".city.sync.v2.ExitStepSyncRespon"
-  "seB\250\001\n\020com.city.sync.v2B\020SyncServiceProt"
-  "oP\001Z0git.fiblab.net/sim/protos/go/city/s"
-  "ync/v2;syncv2\242\002\003CSX\252\002\014City.Sync.V2\312\002\014Cit"
-  "y\\Sync\\V2\342\002\030City\\Sync\\V2\\GPBMetadata\352\002\016C"
-  "ity::Sync::V2b\006proto3"
+  "\025EnterStepSyncResponse\"\?\n\023ExitStepSyncRe"
+  "quest\022\022\n\004name\030\001 \001(\tR\004name\022\024\n\005close\030\002 \001(\010"
+  "R\005close\",\n\024ExitStepSyncResponse\022\024\n\005close"
+  "\030\001 \001(\010R\005close2\310\002\n\013SyncService\022C\n\006SetURL\022"
+  "\033.city.sync.v2.SetURLRequest\032\034.city.sync"
+  ".v2.SetURLResponse\022C\n\006GetURL\022\033.city.sync"
+  ".v2.GetURLRequest\032\034.city.sync.v2.GetURLR"
+  "esponse\022X\n\rEnterStepSync\022\".city.sync.v2."
+  "EnterStepSyncRequest\032#.city.sync.v2.Ente"
+  "rStepSyncResponse\022U\n\014ExitStepSync\022!.city"
+  ".sync.v2.ExitStepSyncRequest\032\".city.sync"
+  ".v2.ExitStepSyncResponseB\250\001\n\020com.city.sy"
+  "nc.v2B\020SyncServiceProtoP\001Z0git.fiblab.ne"
+  "t/sim/protos/go/city/sync/v2;syncv2\242\002\003CS"
+  "X\252\002\014City.Sync.V2\312\002\014City\\Sync\\V2\342\002\030City\\S"
+  "ync\\V2\\GPBMetadata\352\002\016City::Sync::V2b\006pro"
+  "to3"
   ;
 static ::_pbi::once_flag descriptor_table_city_2fsync_2fv2_2fsync_5fservice_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2fsync_2fv2_2fsync_5fservice_2eproto = {
-    false, false, 861, descriptor_table_protodef_city_2fsync_2fv2_2fsync_5fservice_2eproto,
+    false, false, 883, descriptor_table_protodef_city_2fsync_2fv2_2fsync_5fservice_2eproto,
     "city/sync/v2/sync_service.proto",
     &descriptor_table_city_2fsync_2fv2_2fsync_5fservice_2eproto_once, nullptr, 0, 8,
     schemas, file_default_instances, TableStruct_city_2fsync_2fv2_2fsync_5fservice_2eproto::offsets,
@@ -1212,6 +1215,7 @@ ExitStepSyncRequest::ExitStepSyncRequest(const ExitStepSyncRequest& from)
   ExitStepSyncRequest* const _this = this; (void)_this;
   new (&_impl_) Impl_{
       decltype(_impl_.name_){}
+    , decltype(_impl_.close_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
@@ -1223,6 +1227,7 @@ ExitStepSyncRequest::ExitStepSyncRequest(const ExitStepSyncRequest& from)
     _this->_impl_.name_.Set(from._internal_name(), 
       _this->GetArenaForAllocation());
   }
+  _this->_impl_.close_ = from._impl_.close_;
   // @@protoc_insertion_point(copy_constructor:city.sync.v2.ExitStepSyncRequest)
 }
 
@@ -1232,6 +1237,7 @@ inline void ExitStepSyncRequest::SharedCtor(
   (void)is_message_owned;
   new (&_impl_) Impl_{
       decltype(_impl_.name_){}
+    , decltype(_impl_.close_){false}
     , /*decltype(_impl_._cached_size_)*/{}
   };
   _impl_.name_.InitDefault();
@@ -1265,6 +1271,7 @@ void ExitStepSyncRequest::Clear() {
   (void) cached_has_bits;
 
   _impl_.name_.ClearToEmpty();
+  _impl_.close_ = false;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1281,6 +1288,14 @@ const char* ExitStepSyncRequest::_InternalParse(const char* ptr, ::_pbi::ParseCo
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
           CHK_(::_pbi::VerifyUTF8(str, "city.sync.v2.ExitStepSyncRequest.name"));
+        } else
+          goto handle_unusual;
+        continue;
+      // bool close = 2 [json_name = "close"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _impl_.close_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
@@ -1323,6 +1338,12 @@ uint8_t* ExitStepSyncRequest::_InternalSerialize(
         1, this->_internal_name(), target);
   }
 
+  // bool close = 2 [json_name = "close"];
+  if (this->_internal_close() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(2, this->_internal_close(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -1346,6 +1367,11 @@ size_t ExitStepSyncRequest::ByteSizeLong() const {
         this->_internal_name());
   }
 
+  // bool close = 2 [json_name = "close"];
+  if (this->_internal_close() != 0) {
+    total_size += 1 + 1;
+  }
+
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
@@ -1366,6 +1392,9 @@ void ExitStepSyncRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, co
 
   if (!from._internal_name().empty()) {
     _this->_internal_set_name(from._internal_name());
+  }
+  if (from._internal_close() != 0) {
+    _this->_internal_set_close(from._internal_close());
   }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -1390,6 +1419,7 @@ void ExitStepSyncRequest::InternalSwap(ExitStepSyncRequest* other) {
       &_impl_.name_, lhs_arena,
       &other->_impl_.name_, rhs_arena
   );
+  swap(_impl_.close_, other->_impl_.close_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ExitStepSyncRequest::GetMetadata() const {

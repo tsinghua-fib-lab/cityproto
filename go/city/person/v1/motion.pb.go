@@ -123,7 +123,7 @@ type PersonMotion struct {
 	Activity string `protobuf:"bytes,6,opt,name=activity,proto3" json:"activity,omitempty" yaml:"activity" bson:"activity" db:"activity"`
 	// 长度
 	// length
-	L float64 `protobuf:"fixed64,7,opt,name=l,proto3" json:"l,omitempty" yaml:"l" bson:"l" db:"l"`
+	L float64 `protobuf:"fixed64,7,opt,name=l,proto3" json:"l,omitempty" db:"l" yaml:"l" bson:"l"`
 }
 
 func (x *PersonMotion) Reset() {

@@ -1077,6 +1077,7 @@ class ExitStepSyncRequest final :
 
   enum : int {
     kNameFieldNumber = 1,
+    kCloseFieldNumber = 2,
   };
   // string name = 1 [json_name = "name"];
   void clear_name();
@@ -1092,6 +1093,15 @@ class ExitStepSyncRequest final :
   std::string* _internal_mutable_name();
   public:
 
+  // bool close = 2 [json_name = "close"];
+  void clear_close();
+  bool close() const;
+  void set_close(bool value);
+  private:
+  bool _internal_close() const;
+  void _internal_set_close(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:city.sync.v2.ExitStepSyncRequest)
  private:
   class _Internal;
@@ -1101,6 +1111,7 @@ class ExitStepSyncRequest final :
   typedef void DestructorSkippable_;
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
+    bool close_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -1587,6 +1598,26 @@ inline void ExitStepSyncRequest::set_allocated_name(std::string* name) {
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   // @@protoc_insertion_point(field_set_allocated:city.sync.v2.ExitStepSyncRequest.name)
+}
+
+// bool close = 2 [json_name = "close"];
+inline void ExitStepSyncRequest::clear_close() {
+  _impl_.close_ = false;
+}
+inline bool ExitStepSyncRequest::_internal_close() const {
+  return _impl_.close_;
+}
+inline bool ExitStepSyncRequest::close() const {
+  // @@protoc_insertion_point(field_get:city.sync.v2.ExitStepSyncRequest.close)
+  return _internal_close();
+}
+inline void ExitStepSyncRequest::_internal_set_close(bool value) {
+  
+  _impl_.close_ = value;
+}
+inline void ExitStepSyncRequest::set_close(bool value) {
+  _internal_set_close(value);
+  // @@protoc_insertion_point(field_set:city.sync.v2.ExitStepSyncRequest.close)
 }
 
 // -------------------------------------------------------------------

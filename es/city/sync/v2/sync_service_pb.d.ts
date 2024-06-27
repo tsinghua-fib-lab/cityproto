@@ -183,6 +183,13 @@ export declare class ExitStepSyncRequest extends Message<ExitStepSyncRequest> {
    */
   name: string;
 
+  /**
+   * 是否退出服务
+   *
+   * @generated from field: bool close = 2;
+   */
+  close: boolean;
+
   constructor(data?: PartialMessage<ExitStepSyncRequest>);
 
   static readonly runtime: typeof proto3;
