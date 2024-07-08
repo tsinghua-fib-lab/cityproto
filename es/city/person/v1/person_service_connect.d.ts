@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AddPersonRequest, AddPersonResponse, FetchControlledVehicleEnvsRequest, FetchControlledVehicleEnvsResponse, GetAllVehiclesRequest, GetAllVehiclesResponse, GetPersonByLongLatBBoxRequest, GetPersonByLongLatBBoxResponse, GetPersonRequest, GetPersonResponse, SetControlledVehicleActionsRequest, SetControlledVehicleActionsResponse, SetControlledVehicleIDsRequest, SetControlledVehicleIDsResponse, SetScheduleRequest, SetScheduleResponse } from "./person_service_pb.js";
+import { AddPersonRequest, AddPersonResponse, FetchControlledVehicleEnvsRequest, FetchControlledVehicleEnvsResponse, GetAllVehiclesRequest, GetAllVehiclesResponse, GetPersonByLongLatBBoxRequest, GetPersonByLongLatBBoxResponse, GetPersonRequest, GetPersonResponse, GetPersonsRequest, GetPersonsResponse, ResetPersonPositionRequest, ResetPersonPositionResponse, SetControlledVehicleActionsRequest, SetControlledVehicleActionsResponse, SetControlledVehicleIDsRequest, SetControlledVehicleIDsResponse, SetScheduleRequest, SetScheduleResponse } from "./person_service_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -49,6 +49,18 @@ export declare const PersonService: {
       readonly kind: MethodKind.Unary,
     },
     /**
+     * 获取多个person信息
+     * Get information of multiple persons
+     *
+     * @generated from rpc city.person.v1.PersonService.GetPersons
+     */
+    readonly getPersons: {
+      readonly name: "GetPersons",
+      readonly I: typeof GetPersonsRequest,
+      readonly O: typeof GetPersonsResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
      * 获取特定区域内的person
      * Get persons in a specific region
      *
@@ -70,6 +82,18 @@ export declare const PersonService: {
       readonly name: "GetAllVehicles",
       readonly I: typeof GetAllVehiclesRequest,
       readonly O: typeof GetAllVehiclesResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * 重置人的位置（将停止当前正在进行的出行，转为sleep状态）
+     * Reset person's position (stop the current trip and switch to sleep status)
+     *
+     * @generated from rpc city.person.v1.PersonService.ResetPersonPosition
+     */
+    readonly resetPersonPosition: {
+      readonly name: "ResetPersonPosition",
+      readonly I: typeof ResetPersonPositionRequest,
+      readonly O: typeof ResetPersonPositionResponse,
       readonly kind: MethodKind.Unary,
     },
     /**

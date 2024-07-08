@@ -64,6 +64,15 @@ class PersonService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::person::v1::SetScheduleResponse>> PrepareAsyncSetSchedule(::grpc::ClientContext* context, const ::city::person::v1::SetScheduleRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::person::v1::SetScheduleResponse>>(PrepareAsyncSetScheduleRaw(context, request, cq));
     }
+    // 获取多个person信息
+    // Get information of multiple persons
+    virtual ::grpc::Status GetPersons(::grpc::ClientContext* context, const ::city::person::v1::GetPersonsRequest& request, ::city::person::v1::GetPersonsResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::person::v1::GetPersonsResponse>> AsyncGetPersons(::grpc::ClientContext* context, const ::city::person::v1::GetPersonsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::person::v1::GetPersonsResponse>>(AsyncGetPersonsRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::person::v1::GetPersonsResponse>> PrepareAsyncGetPersons(::grpc::ClientContext* context, const ::city::person::v1::GetPersonsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::person::v1::GetPersonsResponse>>(PrepareAsyncGetPersonsRaw(context, request, cq));
+    }
     // 获取特定区域内的person
     // Get persons in a specific region
     virtual ::grpc::Status GetPersonByLongLatBBox(::grpc::ClientContext* context, const ::city::person::v1::GetPersonByLongLatBBoxRequest& request, ::city::person::v1::GetPersonByLongLatBBoxResponse* response) = 0;
@@ -81,6 +90,15 @@ class PersonService final {
     }
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::person::v1::GetAllVehiclesResponse>> PrepareAsyncGetAllVehicles(::grpc::ClientContext* context, const ::city::person::v1::GetAllVehiclesRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::person::v1::GetAllVehiclesResponse>>(PrepareAsyncGetAllVehiclesRaw(context, request, cq));
+    }
+    // 重置人的位置（将停止当前正在进行的出行，转为sleep状态）
+    // Reset person's position (stop the current trip and switch to sleep status)
+    virtual ::grpc::Status ResetPersonPosition(::grpc::ClientContext* context, const ::city::person::v1::ResetPersonPositionRequest& request, ::city::person::v1::ResetPersonPositionResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::person::v1::ResetPersonPositionResponse>> AsyncResetPersonPosition(::grpc::ClientContext* context, const ::city::person::v1::ResetPersonPositionRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::person::v1::ResetPersonPositionResponse>>(AsyncResetPersonPositionRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::person::v1::ResetPersonPositionResponse>> PrepareAsyncResetPersonPosition(::grpc::ClientContext* context, const ::city::person::v1::ResetPersonPositionRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::person::v1::ResetPersonPositionResponse>>(PrepareAsyncResetPersonPositionRaw(context, request, cq));
     }
     // RL接口
     // RL interface
@@ -127,6 +145,10 @@ class PersonService final {
       // Set person's schedule. Input personid and destination table
       virtual void SetSchedule(::grpc::ClientContext* context, const ::city::person::v1::SetScheduleRequest* request, ::city::person::v1::SetScheduleResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void SetSchedule(::grpc::ClientContext* context, const ::city::person::v1::SetScheduleRequest* request, ::city::person::v1::SetScheduleResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // 获取多个person信息
+      // Get information of multiple persons
+      virtual void GetPersons(::grpc::ClientContext* context, const ::city::person::v1::GetPersonsRequest* request, ::city::person::v1::GetPersonsResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetPersons(::grpc::ClientContext* context, const ::city::person::v1::GetPersonsRequest* request, ::city::person::v1::GetPersonsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       // 获取特定区域内的person
       // Get persons in a specific region
       virtual void GetPersonByLongLatBBox(::grpc::ClientContext* context, const ::city::person::v1::GetPersonByLongLatBBoxRequest* request, ::city::person::v1::GetPersonByLongLatBBoxResponse* response, std::function<void(::grpc::Status)>) = 0;
@@ -135,6 +157,10 @@ class PersonService final {
       // Get all vehicles
       virtual void GetAllVehicles(::grpc::ClientContext* context, const ::city::person::v1::GetAllVehiclesRequest* request, ::city::person::v1::GetAllVehiclesResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetAllVehicles(::grpc::ClientContext* context, const ::city::person::v1::GetAllVehiclesRequest* request, ::city::person::v1::GetAllVehiclesResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // 重置人的位置（将停止当前正在进行的出行，转为sleep状态）
+      // Reset person's position (stop the current trip and switch to sleep status)
+      virtual void ResetPersonPosition(::grpc::ClientContext* context, const ::city::person::v1::ResetPersonPositionRequest* request, ::city::person::v1::ResetPersonPositionResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void ResetPersonPosition(::grpc::ClientContext* context, const ::city::person::v1::ResetPersonPositionRequest* request, ::city::person::v1::ResetPersonPositionResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       // RL接口
       // RL interface
       //
@@ -161,10 +187,14 @@ class PersonService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::person::v1::AddPersonResponse>* PrepareAsyncAddPersonRaw(::grpc::ClientContext* context, const ::city::person::v1::AddPersonRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::person::v1::SetScheduleResponse>* AsyncSetScheduleRaw(::grpc::ClientContext* context, const ::city::person::v1::SetScheduleRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::person::v1::SetScheduleResponse>* PrepareAsyncSetScheduleRaw(::grpc::ClientContext* context, const ::city::person::v1::SetScheduleRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::person::v1::GetPersonsResponse>* AsyncGetPersonsRaw(::grpc::ClientContext* context, const ::city::person::v1::GetPersonsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::person::v1::GetPersonsResponse>* PrepareAsyncGetPersonsRaw(::grpc::ClientContext* context, const ::city::person::v1::GetPersonsRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::person::v1::GetPersonByLongLatBBoxResponse>* AsyncGetPersonByLongLatBBoxRaw(::grpc::ClientContext* context, const ::city::person::v1::GetPersonByLongLatBBoxRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::person::v1::GetPersonByLongLatBBoxResponse>* PrepareAsyncGetPersonByLongLatBBoxRaw(::grpc::ClientContext* context, const ::city::person::v1::GetPersonByLongLatBBoxRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::person::v1::GetAllVehiclesResponse>* AsyncGetAllVehiclesRaw(::grpc::ClientContext* context, const ::city::person::v1::GetAllVehiclesRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::person::v1::GetAllVehiclesResponse>* PrepareAsyncGetAllVehiclesRaw(::grpc::ClientContext* context, const ::city::person::v1::GetAllVehiclesRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::person::v1::ResetPersonPositionResponse>* AsyncResetPersonPositionRaw(::grpc::ClientContext* context, const ::city::person::v1::ResetPersonPositionRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::person::v1::ResetPersonPositionResponse>* PrepareAsyncResetPersonPositionRaw(::grpc::ClientContext* context, const ::city::person::v1::ResetPersonPositionRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::person::v1::SetControlledVehicleIDsResponse>* AsyncSetControlledVehicleIDsRaw(::grpc::ClientContext* context, const ::city::person::v1::SetControlledVehicleIDsRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::person::v1::SetControlledVehicleIDsResponse>* PrepareAsyncSetControlledVehicleIDsRaw(::grpc::ClientContext* context, const ::city::person::v1::SetControlledVehicleIDsRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::person::v1::FetchControlledVehicleEnvsResponse>* AsyncFetchControlledVehicleEnvsRaw(::grpc::ClientContext* context, const ::city::person::v1::FetchControlledVehicleEnvsRequest& request, ::grpc::CompletionQueue* cq) = 0;
@@ -196,6 +226,13 @@ class PersonService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::person::v1::SetScheduleResponse>> PrepareAsyncSetSchedule(::grpc::ClientContext* context, const ::city::person::v1::SetScheduleRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::person::v1::SetScheduleResponse>>(PrepareAsyncSetScheduleRaw(context, request, cq));
     }
+    ::grpc::Status GetPersons(::grpc::ClientContext* context, const ::city::person::v1::GetPersonsRequest& request, ::city::person::v1::GetPersonsResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::person::v1::GetPersonsResponse>> AsyncGetPersons(::grpc::ClientContext* context, const ::city::person::v1::GetPersonsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::person::v1::GetPersonsResponse>>(AsyncGetPersonsRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::person::v1::GetPersonsResponse>> PrepareAsyncGetPersons(::grpc::ClientContext* context, const ::city::person::v1::GetPersonsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::person::v1::GetPersonsResponse>>(PrepareAsyncGetPersonsRaw(context, request, cq));
+    }
     ::grpc::Status GetPersonByLongLatBBox(::grpc::ClientContext* context, const ::city::person::v1::GetPersonByLongLatBBoxRequest& request, ::city::person::v1::GetPersonByLongLatBBoxResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::person::v1::GetPersonByLongLatBBoxResponse>> AsyncGetPersonByLongLatBBox(::grpc::ClientContext* context, const ::city::person::v1::GetPersonByLongLatBBoxRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::person::v1::GetPersonByLongLatBBoxResponse>>(AsyncGetPersonByLongLatBBoxRaw(context, request, cq));
@@ -209,6 +246,13 @@ class PersonService final {
     }
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::person::v1::GetAllVehiclesResponse>> PrepareAsyncGetAllVehicles(::grpc::ClientContext* context, const ::city::person::v1::GetAllVehiclesRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::person::v1::GetAllVehiclesResponse>>(PrepareAsyncGetAllVehiclesRaw(context, request, cq));
+    }
+    ::grpc::Status ResetPersonPosition(::grpc::ClientContext* context, const ::city::person::v1::ResetPersonPositionRequest& request, ::city::person::v1::ResetPersonPositionResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::person::v1::ResetPersonPositionResponse>> AsyncResetPersonPosition(::grpc::ClientContext* context, const ::city::person::v1::ResetPersonPositionRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::person::v1::ResetPersonPositionResponse>>(AsyncResetPersonPositionRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::person::v1::ResetPersonPositionResponse>> PrepareAsyncResetPersonPosition(::grpc::ClientContext* context, const ::city::person::v1::ResetPersonPositionRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::person::v1::ResetPersonPositionResponse>>(PrepareAsyncResetPersonPositionRaw(context, request, cq));
     }
     ::grpc::Status SetControlledVehicleIDs(::grpc::ClientContext* context, const ::city::person::v1::SetControlledVehicleIDsRequest& request, ::city::person::v1::SetControlledVehicleIDsResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::person::v1::SetControlledVehicleIDsResponse>> AsyncSetControlledVehicleIDs(::grpc::ClientContext* context, const ::city::person::v1::SetControlledVehicleIDsRequest& request, ::grpc::CompletionQueue* cq) {
@@ -240,10 +284,14 @@ class PersonService final {
       void AddPerson(::grpc::ClientContext* context, const ::city::person::v1::AddPersonRequest* request, ::city::person::v1::AddPersonResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       void SetSchedule(::grpc::ClientContext* context, const ::city::person::v1::SetScheduleRequest* request, ::city::person::v1::SetScheduleResponse* response, std::function<void(::grpc::Status)>) override;
       void SetSchedule(::grpc::ClientContext* context, const ::city::person::v1::SetScheduleRequest* request, ::city::person::v1::SetScheduleResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void GetPersons(::grpc::ClientContext* context, const ::city::person::v1::GetPersonsRequest* request, ::city::person::v1::GetPersonsResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetPersons(::grpc::ClientContext* context, const ::city::person::v1::GetPersonsRequest* request, ::city::person::v1::GetPersonsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       void GetPersonByLongLatBBox(::grpc::ClientContext* context, const ::city::person::v1::GetPersonByLongLatBBoxRequest* request, ::city::person::v1::GetPersonByLongLatBBoxResponse* response, std::function<void(::grpc::Status)>) override;
       void GetPersonByLongLatBBox(::grpc::ClientContext* context, const ::city::person::v1::GetPersonByLongLatBBoxRequest* request, ::city::person::v1::GetPersonByLongLatBBoxResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       void GetAllVehicles(::grpc::ClientContext* context, const ::city::person::v1::GetAllVehiclesRequest* request, ::city::person::v1::GetAllVehiclesResponse* response, std::function<void(::grpc::Status)>) override;
       void GetAllVehicles(::grpc::ClientContext* context, const ::city::person::v1::GetAllVehiclesRequest* request, ::city::person::v1::GetAllVehiclesResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void ResetPersonPosition(::grpc::ClientContext* context, const ::city::person::v1::ResetPersonPositionRequest* request, ::city::person::v1::ResetPersonPositionResponse* response, std::function<void(::grpc::Status)>) override;
+      void ResetPersonPosition(::grpc::ClientContext* context, const ::city::person::v1::ResetPersonPositionRequest* request, ::city::person::v1::ResetPersonPositionResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       void SetControlledVehicleIDs(::grpc::ClientContext* context, const ::city::person::v1::SetControlledVehicleIDsRequest* request, ::city::person::v1::SetControlledVehicleIDsResponse* response, std::function<void(::grpc::Status)>) override;
       void SetControlledVehicleIDs(::grpc::ClientContext* context, const ::city::person::v1::SetControlledVehicleIDsRequest* request, ::city::person::v1::SetControlledVehicleIDsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       void FetchControlledVehicleEnvs(::grpc::ClientContext* context, const ::city::person::v1::FetchControlledVehicleEnvsRequest* request, ::city::person::v1::FetchControlledVehicleEnvsResponse* response, std::function<void(::grpc::Status)>) override;
@@ -267,10 +315,14 @@ class PersonService final {
     ::grpc::ClientAsyncResponseReader< ::city::person::v1::AddPersonResponse>* PrepareAsyncAddPersonRaw(::grpc::ClientContext* context, const ::city::person::v1::AddPersonRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::city::person::v1::SetScheduleResponse>* AsyncSetScheduleRaw(::grpc::ClientContext* context, const ::city::person::v1::SetScheduleRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::city::person::v1::SetScheduleResponse>* PrepareAsyncSetScheduleRaw(::grpc::ClientContext* context, const ::city::person::v1::SetScheduleRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::city::person::v1::GetPersonsResponse>* AsyncGetPersonsRaw(::grpc::ClientContext* context, const ::city::person::v1::GetPersonsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::city::person::v1::GetPersonsResponse>* PrepareAsyncGetPersonsRaw(::grpc::ClientContext* context, const ::city::person::v1::GetPersonsRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::city::person::v1::GetPersonByLongLatBBoxResponse>* AsyncGetPersonByLongLatBBoxRaw(::grpc::ClientContext* context, const ::city::person::v1::GetPersonByLongLatBBoxRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::city::person::v1::GetPersonByLongLatBBoxResponse>* PrepareAsyncGetPersonByLongLatBBoxRaw(::grpc::ClientContext* context, const ::city::person::v1::GetPersonByLongLatBBoxRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::city::person::v1::GetAllVehiclesResponse>* AsyncGetAllVehiclesRaw(::grpc::ClientContext* context, const ::city::person::v1::GetAllVehiclesRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::city::person::v1::GetAllVehiclesResponse>* PrepareAsyncGetAllVehiclesRaw(::grpc::ClientContext* context, const ::city::person::v1::GetAllVehiclesRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::city::person::v1::ResetPersonPositionResponse>* AsyncResetPersonPositionRaw(::grpc::ClientContext* context, const ::city::person::v1::ResetPersonPositionRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::city::person::v1::ResetPersonPositionResponse>* PrepareAsyncResetPersonPositionRaw(::grpc::ClientContext* context, const ::city::person::v1::ResetPersonPositionRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::city::person::v1::SetControlledVehicleIDsResponse>* AsyncSetControlledVehicleIDsRaw(::grpc::ClientContext* context, const ::city::person::v1::SetControlledVehicleIDsRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::city::person::v1::SetControlledVehicleIDsResponse>* PrepareAsyncSetControlledVehicleIDsRaw(::grpc::ClientContext* context, const ::city::person::v1::SetControlledVehicleIDsRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::city::person::v1::FetchControlledVehicleEnvsResponse>* AsyncFetchControlledVehicleEnvsRaw(::grpc::ClientContext* context, const ::city::person::v1::FetchControlledVehicleEnvsRequest& request, ::grpc::CompletionQueue* cq) override;
@@ -280,8 +332,10 @@ class PersonService final {
     const ::grpc::internal::RpcMethod rpcmethod_GetPerson_;
     const ::grpc::internal::RpcMethod rpcmethod_AddPerson_;
     const ::grpc::internal::RpcMethod rpcmethod_SetSchedule_;
+    const ::grpc::internal::RpcMethod rpcmethod_GetPersons_;
     const ::grpc::internal::RpcMethod rpcmethod_GetPersonByLongLatBBox_;
     const ::grpc::internal::RpcMethod rpcmethod_GetAllVehicles_;
+    const ::grpc::internal::RpcMethod rpcmethod_ResetPersonPosition_;
     const ::grpc::internal::RpcMethod rpcmethod_SetControlledVehicleIDs_;
     const ::grpc::internal::RpcMethod rpcmethod_FetchControlledVehicleEnvs_;
     const ::grpc::internal::RpcMethod rpcmethod_SetControlledVehicleActions_;
@@ -301,12 +355,18 @@ class PersonService final {
     // 修改person的schedule 传入personid、目的地表
     // Set person's schedule. Input personid and destination table
     virtual ::grpc::Status SetSchedule(::grpc::ServerContext* context, const ::city::person::v1::SetScheduleRequest* request, ::city::person::v1::SetScheduleResponse* response);
+    // 获取多个person信息
+    // Get information of multiple persons
+    virtual ::grpc::Status GetPersons(::grpc::ServerContext* context, const ::city::person::v1::GetPersonsRequest* request, ::city::person::v1::GetPersonsResponse* response);
     // 获取特定区域内的person
     // Get persons in a specific region
     virtual ::grpc::Status GetPersonByLongLatBBox(::grpc::ServerContext* context, const ::city::person::v1::GetPersonByLongLatBBoxRequest* request, ::city::person::v1::GetPersonByLongLatBBoxResponse* response);
     // 获取所有车辆
     // Get all vehicles
     virtual ::grpc::Status GetAllVehicles(::grpc::ServerContext* context, const ::city::person::v1::GetAllVehiclesRequest* request, ::city::person::v1::GetAllVehiclesResponse* response);
+    // 重置人的位置（将停止当前正在进行的出行，转为sleep状态）
+    // Reset person's position (stop the current trip and switch to sleep status)
+    virtual ::grpc::Status ResetPersonPosition(::grpc::ServerContext* context, const ::city::person::v1::ResetPersonPositionRequest* request, ::city::person::v1::ResetPersonPositionResponse* response);
     // RL接口
     // RL interface
     //
@@ -381,12 +441,32 @@ class PersonService final {
     }
   };
   template <class BaseClass>
+  class WithAsyncMethod_GetPersons : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_GetPersons() {
+      ::grpc::Service::MarkMethodAsync(3);
+    }
+    ~WithAsyncMethod_GetPersons() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetPersons(::grpc::ServerContext* /*context*/, const ::city::person::v1::GetPersonsRequest* /*request*/, ::city::person::v1::GetPersonsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetPersons(::grpc::ServerContext* context, ::city::person::v1::GetPersonsRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::person::v1::GetPersonsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithAsyncMethod_GetPersonByLongLatBBox : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_GetPersonByLongLatBBox() {
-      ::grpc::Service::MarkMethodAsync(3);
+      ::grpc::Service::MarkMethodAsync(4);
     }
     ~WithAsyncMethod_GetPersonByLongLatBBox() override {
       BaseClassMustBeDerivedFromService(this);
@@ -397,7 +477,7 @@ class PersonService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetPersonByLongLatBBox(::grpc::ServerContext* context, ::city::person::v1::GetPersonByLongLatBBoxRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::person::v1::GetPersonByLongLatBBoxResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -406,7 +486,7 @@ class PersonService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_GetAllVehicles() {
-      ::grpc::Service::MarkMethodAsync(4);
+      ::grpc::Service::MarkMethodAsync(5);
     }
     ~WithAsyncMethod_GetAllVehicles() override {
       BaseClassMustBeDerivedFromService(this);
@@ -417,7 +497,27 @@ class PersonService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetAllVehicles(::grpc::ServerContext* context, ::city::person::v1::GetAllVehiclesRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::person::v1::GetAllVehiclesResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_ResetPersonPosition : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_ResetPersonPosition() {
+      ::grpc::Service::MarkMethodAsync(6);
+    }
+    ~WithAsyncMethod_ResetPersonPosition() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ResetPersonPosition(::grpc::ServerContext* /*context*/, const ::city::person::v1::ResetPersonPositionRequest* /*request*/, ::city::person::v1::ResetPersonPositionResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestResetPersonPosition(::grpc::ServerContext* context, ::city::person::v1::ResetPersonPositionRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::person::v1::ResetPersonPositionResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -426,7 +526,7 @@ class PersonService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_SetControlledVehicleIDs() {
-      ::grpc::Service::MarkMethodAsync(5);
+      ::grpc::Service::MarkMethodAsync(7);
     }
     ~WithAsyncMethod_SetControlledVehicleIDs() override {
       BaseClassMustBeDerivedFromService(this);
@@ -437,7 +537,7 @@ class PersonService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestSetControlledVehicleIDs(::grpc::ServerContext* context, ::city::person::v1::SetControlledVehicleIDsRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::person::v1::SetControlledVehicleIDsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -446,7 +546,7 @@ class PersonService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_FetchControlledVehicleEnvs() {
-      ::grpc::Service::MarkMethodAsync(6);
+      ::grpc::Service::MarkMethodAsync(8);
     }
     ~WithAsyncMethod_FetchControlledVehicleEnvs() override {
       BaseClassMustBeDerivedFromService(this);
@@ -457,7 +557,7 @@ class PersonService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestFetchControlledVehicleEnvs(::grpc::ServerContext* context, ::city::person::v1::FetchControlledVehicleEnvsRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::person::v1::FetchControlledVehicleEnvsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -466,7 +566,7 @@ class PersonService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_SetControlledVehicleActions() {
-      ::grpc::Service::MarkMethodAsync(7);
+      ::grpc::Service::MarkMethodAsync(9);
     }
     ~WithAsyncMethod_SetControlledVehicleActions() override {
       BaseClassMustBeDerivedFromService(this);
@@ -477,10 +577,10 @@ class PersonService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestSetControlledVehicleActions(::grpc::ServerContext* context, ::city::person::v1::SetControlledVehicleActionsRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::person::v1::SetControlledVehicleActionsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(9, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_GetPerson<WithAsyncMethod_AddPerson<WithAsyncMethod_SetSchedule<WithAsyncMethod_GetPersonByLongLatBBox<WithAsyncMethod_GetAllVehicles<WithAsyncMethod_SetControlledVehicleIDs<WithAsyncMethod_FetchControlledVehicleEnvs<WithAsyncMethod_SetControlledVehicleActions<Service > > > > > > > > AsyncService;
+  typedef WithAsyncMethod_GetPerson<WithAsyncMethod_AddPerson<WithAsyncMethod_SetSchedule<WithAsyncMethod_GetPersons<WithAsyncMethod_GetPersonByLongLatBBox<WithAsyncMethod_GetAllVehicles<WithAsyncMethod_ResetPersonPosition<WithAsyncMethod_SetControlledVehicleIDs<WithAsyncMethod_FetchControlledVehicleEnvs<WithAsyncMethod_SetControlledVehicleActions<Service > > > > > > > > > > AsyncService;
   template <class BaseClass>
   class WithCallbackMethod_GetPerson : public BaseClass {
    private:
@@ -563,18 +663,45 @@ class PersonService final {
       ::grpc::CallbackServerContext* /*context*/, const ::city::person::v1::SetScheduleRequest* /*request*/, ::city::person::v1::SetScheduleResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
+  class WithCallbackMethod_GetPersons : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_GetPersons() {
+      ::grpc::Service::MarkMethodCallback(3,
+          new ::grpc::internal::CallbackUnaryHandler< ::city::person::v1::GetPersonsRequest, ::city::person::v1::GetPersonsResponse>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::city::person::v1::GetPersonsRequest* request, ::city::person::v1::GetPersonsResponse* response) { return this->GetPersons(context, request, response); }));}
+    void SetMessageAllocatorFor_GetPersons(
+        ::grpc::MessageAllocator< ::city::person::v1::GetPersonsRequest, ::city::person::v1::GetPersonsResponse>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(3);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::city::person::v1::GetPersonsRequest, ::city::person::v1::GetPersonsResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_GetPersons() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetPersons(::grpc::ServerContext* /*context*/, const ::city::person::v1::GetPersonsRequest* /*request*/, ::city::person::v1::GetPersonsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* GetPersons(
+      ::grpc::CallbackServerContext* /*context*/, const ::city::person::v1::GetPersonsRequest* /*request*/, ::city::person::v1::GetPersonsResponse* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
   class WithCallbackMethod_GetPersonByLongLatBBox : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_GetPersonByLongLatBBox() {
-      ::grpc::Service::MarkMethodCallback(3,
+      ::grpc::Service::MarkMethodCallback(4,
           new ::grpc::internal::CallbackUnaryHandler< ::city::person::v1::GetPersonByLongLatBBoxRequest, ::city::person::v1::GetPersonByLongLatBBoxResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::person::v1::GetPersonByLongLatBBoxRequest* request, ::city::person::v1::GetPersonByLongLatBBoxResponse* response) { return this->GetPersonByLongLatBBox(context, request, response); }));}
     void SetMessageAllocatorFor_GetPersonByLongLatBBox(
         ::grpc::MessageAllocator< ::city::person::v1::GetPersonByLongLatBBoxRequest, ::city::person::v1::GetPersonByLongLatBBoxResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(3);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(4);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::person::v1::GetPersonByLongLatBBoxRequest, ::city::person::v1::GetPersonByLongLatBBoxResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -595,13 +722,13 @@ class PersonService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_GetAllVehicles() {
-      ::grpc::Service::MarkMethodCallback(4,
+      ::grpc::Service::MarkMethodCallback(5,
           new ::grpc::internal::CallbackUnaryHandler< ::city::person::v1::GetAllVehiclesRequest, ::city::person::v1::GetAllVehiclesResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::person::v1::GetAllVehiclesRequest* request, ::city::person::v1::GetAllVehiclesResponse* response) { return this->GetAllVehicles(context, request, response); }));}
     void SetMessageAllocatorFor_GetAllVehicles(
         ::grpc::MessageAllocator< ::city::person::v1::GetAllVehiclesRequest, ::city::person::v1::GetAllVehiclesResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(4);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(5);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::person::v1::GetAllVehiclesRequest, ::city::person::v1::GetAllVehiclesResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -617,18 +744,45 @@ class PersonService final {
       ::grpc::CallbackServerContext* /*context*/, const ::city::person::v1::GetAllVehiclesRequest* /*request*/, ::city::person::v1::GetAllVehiclesResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
+  class WithCallbackMethod_ResetPersonPosition : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_ResetPersonPosition() {
+      ::grpc::Service::MarkMethodCallback(6,
+          new ::grpc::internal::CallbackUnaryHandler< ::city::person::v1::ResetPersonPositionRequest, ::city::person::v1::ResetPersonPositionResponse>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::city::person::v1::ResetPersonPositionRequest* request, ::city::person::v1::ResetPersonPositionResponse* response) { return this->ResetPersonPosition(context, request, response); }));}
+    void SetMessageAllocatorFor_ResetPersonPosition(
+        ::grpc::MessageAllocator< ::city::person::v1::ResetPersonPositionRequest, ::city::person::v1::ResetPersonPositionResponse>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(6);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::city::person::v1::ResetPersonPositionRequest, ::city::person::v1::ResetPersonPositionResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_ResetPersonPosition() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ResetPersonPosition(::grpc::ServerContext* /*context*/, const ::city::person::v1::ResetPersonPositionRequest* /*request*/, ::city::person::v1::ResetPersonPositionResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* ResetPersonPosition(
+      ::grpc::CallbackServerContext* /*context*/, const ::city::person::v1::ResetPersonPositionRequest* /*request*/, ::city::person::v1::ResetPersonPositionResponse* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
   class WithCallbackMethod_SetControlledVehicleIDs : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_SetControlledVehicleIDs() {
-      ::grpc::Service::MarkMethodCallback(5,
+      ::grpc::Service::MarkMethodCallback(7,
           new ::grpc::internal::CallbackUnaryHandler< ::city::person::v1::SetControlledVehicleIDsRequest, ::city::person::v1::SetControlledVehicleIDsResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::person::v1::SetControlledVehicleIDsRequest* request, ::city::person::v1::SetControlledVehicleIDsResponse* response) { return this->SetControlledVehicleIDs(context, request, response); }));}
     void SetMessageAllocatorFor_SetControlledVehicleIDs(
         ::grpc::MessageAllocator< ::city::person::v1::SetControlledVehicleIDsRequest, ::city::person::v1::SetControlledVehicleIDsResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(5);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(7);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::person::v1::SetControlledVehicleIDsRequest, ::city::person::v1::SetControlledVehicleIDsResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -649,13 +803,13 @@ class PersonService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_FetchControlledVehicleEnvs() {
-      ::grpc::Service::MarkMethodCallback(6,
+      ::grpc::Service::MarkMethodCallback(8,
           new ::grpc::internal::CallbackUnaryHandler< ::city::person::v1::FetchControlledVehicleEnvsRequest, ::city::person::v1::FetchControlledVehicleEnvsResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::person::v1::FetchControlledVehicleEnvsRequest* request, ::city::person::v1::FetchControlledVehicleEnvsResponse* response) { return this->FetchControlledVehicleEnvs(context, request, response); }));}
     void SetMessageAllocatorFor_FetchControlledVehicleEnvs(
         ::grpc::MessageAllocator< ::city::person::v1::FetchControlledVehicleEnvsRequest, ::city::person::v1::FetchControlledVehicleEnvsResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(6);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(8);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::person::v1::FetchControlledVehicleEnvsRequest, ::city::person::v1::FetchControlledVehicleEnvsResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -676,13 +830,13 @@ class PersonService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_SetControlledVehicleActions() {
-      ::grpc::Service::MarkMethodCallback(7,
+      ::grpc::Service::MarkMethodCallback(9,
           new ::grpc::internal::CallbackUnaryHandler< ::city::person::v1::SetControlledVehicleActionsRequest, ::city::person::v1::SetControlledVehicleActionsResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::person::v1::SetControlledVehicleActionsRequest* request, ::city::person::v1::SetControlledVehicleActionsResponse* response) { return this->SetControlledVehicleActions(context, request, response); }));}
     void SetMessageAllocatorFor_SetControlledVehicleActions(
         ::grpc::MessageAllocator< ::city::person::v1::SetControlledVehicleActionsRequest, ::city::person::v1::SetControlledVehicleActionsResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(7);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(9);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::person::v1::SetControlledVehicleActionsRequest, ::city::person::v1::SetControlledVehicleActionsResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -697,7 +851,7 @@ class PersonService final {
     virtual ::grpc::ServerUnaryReactor* SetControlledVehicleActions(
       ::grpc::CallbackServerContext* /*context*/, const ::city::person::v1::SetControlledVehicleActionsRequest* /*request*/, ::city::person::v1::SetControlledVehicleActionsResponse* /*response*/)  { return nullptr; }
   };
-  typedef WithCallbackMethod_GetPerson<WithCallbackMethod_AddPerson<WithCallbackMethod_SetSchedule<WithCallbackMethod_GetPersonByLongLatBBox<WithCallbackMethod_GetAllVehicles<WithCallbackMethod_SetControlledVehicleIDs<WithCallbackMethod_FetchControlledVehicleEnvs<WithCallbackMethod_SetControlledVehicleActions<Service > > > > > > > > CallbackService;
+  typedef WithCallbackMethod_GetPerson<WithCallbackMethod_AddPerson<WithCallbackMethod_SetSchedule<WithCallbackMethod_GetPersons<WithCallbackMethod_GetPersonByLongLatBBox<WithCallbackMethod_GetAllVehicles<WithCallbackMethod_ResetPersonPosition<WithCallbackMethod_SetControlledVehicleIDs<WithCallbackMethod_FetchControlledVehicleEnvs<WithCallbackMethod_SetControlledVehicleActions<Service > > > > > > > > > > CallbackService;
   typedef CallbackService ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_GetPerson : public BaseClass {
@@ -751,12 +905,29 @@ class PersonService final {
     }
   };
   template <class BaseClass>
+  class WithGenericMethod_GetPersons : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_GetPersons() {
+      ::grpc::Service::MarkMethodGeneric(3);
+    }
+    ~WithGenericMethod_GetPersons() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetPersons(::grpc::ServerContext* /*context*/, const ::city::person::v1::GetPersonsRequest* /*request*/, ::city::person::v1::GetPersonsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
   class WithGenericMethod_GetPersonByLongLatBBox : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_GetPersonByLongLatBBox() {
-      ::grpc::Service::MarkMethodGeneric(3);
+      ::grpc::Service::MarkMethodGeneric(4);
     }
     ~WithGenericMethod_GetPersonByLongLatBBox() override {
       BaseClassMustBeDerivedFromService(this);
@@ -773,7 +944,7 @@ class PersonService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_GetAllVehicles() {
-      ::grpc::Service::MarkMethodGeneric(4);
+      ::grpc::Service::MarkMethodGeneric(5);
     }
     ~WithGenericMethod_GetAllVehicles() override {
       BaseClassMustBeDerivedFromService(this);
@@ -785,12 +956,29 @@ class PersonService final {
     }
   };
   template <class BaseClass>
+  class WithGenericMethod_ResetPersonPosition : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_ResetPersonPosition() {
+      ::grpc::Service::MarkMethodGeneric(6);
+    }
+    ~WithGenericMethod_ResetPersonPosition() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ResetPersonPosition(::grpc::ServerContext* /*context*/, const ::city::person::v1::ResetPersonPositionRequest* /*request*/, ::city::person::v1::ResetPersonPositionResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
   class WithGenericMethod_SetControlledVehicleIDs : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_SetControlledVehicleIDs() {
-      ::grpc::Service::MarkMethodGeneric(5);
+      ::grpc::Service::MarkMethodGeneric(7);
     }
     ~WithGenericMethod_SetControlledVehicleIDs() override {
       BaseClassMustBeDerivedFromService(this);
@@ -807,7 +995,7 @@ class PersonService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_FetchControlledVehicleEnvs() {
-      ::grpc::Service::MarkMethodGeneric(6);
+      ::grpc::Service::MarkMethodGeneric(8);
     }
     ~WithGenericMethod_FetchControlledVehicleEnvs() override {
       BaseClassMustBeDerivedFromService(this);
@@ -824,7 +1012,7 @@ class PersonService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_SetControlledVehicleActions() {
-      ::grpc::Service::MarkMethodGeneric(7);
+      ::grpc::Service::MarkMethodGeneric(9);
     }
     ~WithGenericMethod_SetControlledVehicleActions() override {
       BaseClassMustBeDerivedFromService(this);
@@ -896,12 +1084,32 @@ class PersonService final {
     }
   };
   template <class BaseClass>
+  class WithRawMethod_GetPersons : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_GetPersons() {
+      ::grpc::Service::MarkMethodRaw(3);
+    }
+    ~WithRawMethod_GetPersons() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetPersons(::grpc::ServerContext* /*context*/, const ::city::person::v1::GetPersonsRequest* /*request*/, ::city::person::v1::GetPersonsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetPersons(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithRawMethod_GetPersonByLongLatBBox : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_GetPersonByLongLatBBox() {
-      ::grpc::Service::MarkMethodRaw(3);
+      ::grpc::Service::MarkMethodRaw(4);
     }
     ~WithRawMethod_GetPersonByLongLatBBox() override {
       BaseClassMustBeDerivedFromService(this);
@@ -912,7 +1120,7 @@ class PersonService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetPersonByLongLatBBox(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -921,7 +1129,7 @@ class PersonService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_GetAllVehicles() {
-      ::grpc::Service::MarkMethodRaw(4);
+      ::grpc::Service::MarkMethodRaw(5);
     }
     ~WithRawMethod_GetAllVehicles() override {
       BaseClassMustBeDerivedFromService(this);
@@ -932,7 +1140,27 @@ class PersonService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetAllVehicles(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_ResetPersonPosition : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_ResetPersonPosition() {
+      ::grpc::Service::MarkMethodRaw(6);
+    }
+    ~WithRawMethod_ResetPersonPosition() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ResetPersonPosition(::grpc::ServerContext* /*context*/, const ::city::person::v1::ResetPersonPositionRequest* /*request*/, ::city::person::v1::ResetPersonPositionResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestResetPersonPosition(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -941,7 +1169,7 @@ class PersonService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_SetControlledVehicleIDs() {
-      ::grpc::Service::MarkMethodRaw(5);
+      ::grpc::Service::MarkMethodRaw(7);
     }
     ~WithRawMethod_SetControlledVehicleIDs() override {
       BaseClassMustBeDerivedFromService(this);
@@ -952,7 +1180,7 @@ class PersonService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestSetControlledVehicleIDs(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -961,7 +1189,7 @@ class PersonService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_FetchControlledVehicleEnvs() {
-      ::grpc::Service::MarkMethodRaw(6);
+      ::grpc::Service::MarkMethodRaw(8);
     }
     ~WithRawMethod_FetchControlledVehicleEnvs() override {
       BaseClassMustBeDerivedFromService(this);
@@ -972,7 +1200,7 @@ class PersonService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestFetchControlledVehicleEnvs(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -981,7 +1209,7 @@ class PersonService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_SetControlledVehicleActions() {
-      ::grpc::Service::MarkMethodRaw(7);
+      ::grpc::Service::MarkMethodRaw(9);
     }
     ~WithRawMethod_SetControlledVehicleActions() override {
       BaseClassMustBeDerivedFromService(this);
@@ -992,7 +1220,7 @@ class PersonService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestSetControlledVehicleActions(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(9, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1062,12 +1290,34 @@ class PersonService final {
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
+  class WithRawCallbackMethod_GetPersons : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_GetPersons() {
+      ::grpc::Service::MarkMethodRawCallback(3,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetPersons(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_GetPersons() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetPersons(::grpc::ServerContext* /*context*/, const ::city::person::v1::GetPersonsRequest* /*request*/, ::city::person::v1::GetPersonsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* GetPersons(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
   class WithRawCallbackMethod_GetPersonByLongLatBBox : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_GetPersonByLongLatBBox() {
-      ::grpc::Service::MarkMethodRawCallback(3,
+      ::grpc::Service::MarkMethodRawCallback(4,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetPersonByLongLatBBox(context, request, response); }));
@@ -1089,7 +1339,7 @@ class PersonService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_GetAllVehicles() {
-      ::grpc::Service::MarkMethodRawCallback(4,
+      ::grpc::Service::MarkMethodRawCallback(5,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetAllVehicles(context, request, response); }));
@@ -1106,12 +1356,34 @@ class PersonService final {
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
+  class WithRawCallbackMethod_ResetPersonPosition : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_ResetPersonPosition() {
+      ::grpc::Service::MarkMethodRawCallback(6,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->ResetPersonPosition(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_ResetPersonPosition() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status ResetPersonPosition(::grpc::ServerContext* /*context*/, const ::city::person::v1::ResetPersonPositionRequest* /*request*/, ::city::person::v1::ResetPersonPositionResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* ResetPersonPosition(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
   class WithRawCallbackMethod_SetControlledVehicleIDs : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_SetControlledVehicleIDs() {
-      ::grpc::Service::MarkMethodRawCallback(5,
+      ::grpc::Service::MarkMethodRawCallback(7,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->SetControlledVehicleIDs(context, request, response); }));
@@ -1133,7 +1405,7 @@ class PersonService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_FetchControlledVehicleEnvs() {
-      ::grpc::Service::MarkMethodRawCallback(6,
+      ::grpc::Service::MarkMethodRawCallback(8,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->FetchControlledVehicleEnvs(context, request, response); }));
@@ -1155,7 +1427,7 @@ class PersonService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_SetControlledVehicleActions() {
-      ::grpc::Service::MarkMethodRawCallback(7,
+      ::grpc::Service::MarkMethodRawCallback(9,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->SetControlledVehicleActions(context, request, response); }));
@@ -1253,12 +1525,39 @@ class PersonService final {
     virtual ::grpc::Status StreamedSetSchedule(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::city::person::v1::SetScheduleRequest,::city::person::v1::SetScheduleResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
+  class WithStreamedUnaryMethod_GetPersons : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_GetPersons() {
+      ::grpc::Service::MarkMethodStreamed(3,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::city::person::v1::GetPersonsRequest, ::city::person::v1::GetPersonsResponse>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::city::person::v1::GetPersonsRequest, ::city::person::v1::GetPersonsResponse>* streamer) {
+                       return this->StreamedGetPersons(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_GetPersons() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status GetPersons(::grpc::ServerContext* /*context*/, const ::city::person::v1::GetPersonsRequest* /*request*/, ::city::person::v1::GetPersonsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedGetPersons(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::city::person::v1::GetPersonsRequest,::city::person::v1::GetPersonsResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_GetPersonByLongLatBBox : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_GetPersonByLongLatBBox() {
-      ::grpc::Service::MarkMethodStreamed(3,
+      ::grpc::Service::MarkMethodStreamed(4,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::person::v1::GetPersonByLongLatBBoxRequest, ::city::person::v1::GetPersonByLongLatBBoxResponse>(
             [this](::grpc::ServerContext* context,
@@ -1285,7 +1584,7 @@ class PersonService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_GetAllVehicles() {
-      ::grpc::Service::MarkMethodStreamed(4,
+      ::grpc::Service::MarkMethodStreamed(5,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::person::v1::GetAllVehiclesRequest, ::city::person::v1::GetAllVehiclesResponse>(
             [this](::grpc::ServerContext* context,
@@ -1307,12 +1606,39 @@ class PersonService final {
     virtual ::grpc::Status StreamedGetAllVehicles(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::city::person::v1::GetAllVehiclesRequest,::city::person::v1::GetAllVehiclesResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
+  class WithStreamedUnaryMethod_ResetPersonPosition : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_ResetPersonPosition() {
+      ::grpc::Service::MarkMethodStreamed(6,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::city::person::v1::ResetPersonPositionRequest, ::city::person::v1::ResetPersonPositionResponse>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::city::person::v1::ResetPersonPositionRequest, ::city::person::v1::ResetPersonPositionResponse>* streamer) {
+                       return this->StreamedResetPersonPosition(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_ResetPersonPosition() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status ResetPersonPosition(::grpc::ServerContext* /*context*/, const ::city::person::v1::ResetPersonPositionRequest* /*request*/, ::city::person::v1::ResetPersonPositionResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedResetPersonPosition(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::city::person::v1::ResetPersonPositionRequest,::city::person::v1::ResetPersonPositionResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_SetControlledVehicleIDs : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_SetControlledVehicleIDs() {
-      ::grpc::Service::MarkMethodStreamed(5,
+      ::grpc::Service::MarkMethodStreamed(7,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::person::v1::SetControlledVehicleIDsRequest, ::city::person::v1::SetControlledVehicleIDsResponse>(
             [this](::grpc::ServerContext* context,
@@ -1339,7 +1665,7 @@ class PersonService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_FetchControlledVehicleEnvs() {
-      ::grpc::Service::MarkMethodStreamed(6,
+      ::grpc::Service::MarkMethodStreamed(8,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::person::v1::FetchControlledVehicleEnvsRequest, ::city::person::v1::FetchControlledVehicleEnvsResponse>(
             [this](::grpc::ServerContext* context,
@@ -1366,7 +1692,7 @@ class PersonService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_SetControlledVehicleActions() {
-      ::grpc::Service::MarkMethodStreamed(7,
+      ::grpc::Service::MarkMethodStreamed(9,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::person::v1::SetControlledVehicleActionsRequest, ::city::person::v1::SetControlledVehicleActionsResponse>(
             [this](::grpc::ServerContext* context,
@@ -1387,9 +1713,9 @@ class PersonService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedSetControlledVehicleActions(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::city::person::v1::SetControlledVehicleActionsRequest,::city::person::v1::SetControlledVehicleActionsResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_GetPerson<WithStreamedUnaryMethod_AddPerson<WithStreamedUnaryMethod_SetSchedule<WithStreamedUnaryMethod_GetPersonByLongLatBBox<WithStreamedUnaryMethod_GetAllVehicles<WithStreamedUnaryMethod_SetControlledVehicleIDs<WithStreamedUnaryMethod_FetchControlledVehicleEnvs<WithStreamedUnaryMethod_SetControlledVehicleActions<Service > > > > > > > > StreamedUnaryService;
+  typedef WithStreamedUnaryMethod_GetPerson<WithStreamedUnaryMethod_AddPerson<WithStreamedUnaryMethod_SetSchedule<WithStreamedUnaryMethod_GetPersons<WithStreamedUnaryMethod_GetPersonByLongLatBBox<WithStreamedUnaryMethod_GetAllVehicles<WithStreamedUnaryMethod_ResetPersonPosition<WithStreamedUnaryMethod_SetControlledVehicleIDs<WithStreamedUnaryMethod_FetchControlledVehicleEnvs<WithStreamedUnaryMethod_SetControlledVehicleActions<Service > > > > > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_GetPerson<WithStreamedUnaryMethod_AddPerson<WithStreamedUnaryMethod_SetSchedule<WithStreamedUnaryMethod_GetPersonByLongLatBBox<WithStreamedUnaryMethod_GetAllVehicles<WithStreamedUnaryMethod_SetControlledVehicleIDs<WithStreamedUnaryMethod_FetchControlledVehicleEnvs<WithStreamedUnaryMethod_SetControlledVehicleActions<Service > > > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_GetPerson<WithStreamedUnaryMethod_AddPerson<WithStreamedUnaryMethod_SetSchedule<WithStreamedUnaryMethod_GetPersons<WithStreamedUnaryMethod_GetPersonByLongLatBBox<WithStreamedUnaryMethod_GetAllVehicles<WithStreamedUnaryMethod_ResetPersonPosition<WithStreamedUnaryMethod_SetControlledVehicleIDs<WithStreamedUnaryMethod_FetchControlledVehicleEnvs<WithStreamedUnaryMethod_SetControlledVehicleActions<Service > > > > > > > > > > StreamedService;
 };
 
 }  // namespace v1

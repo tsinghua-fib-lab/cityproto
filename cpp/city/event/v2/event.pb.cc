@@ -39,13 +39,14 @@ struct EntityDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 EntityDefaultTypeInternal _Entity_default_instance_;
 PROTOBUF_CONSTEXPR Event::Event(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.topic_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+    /*decltype(_impl_._has_bits_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}
+  , /*decltype(_impl_.topic_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.content_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.subject_)*/nullptr
   , /*decltype(_impl_.position_)*/nullptr
   , /*decltype(_impl_.t_)*/0
-  , /*decltype(_impl_.id_)*/0
-  , /*decltype(_impl_._cached_size_)*/{}} {}
+  , /*decltype(_impl_.id_)*/0} {}
 struct EventDefaultTypeInternal {
   PROTOBUF_CONSTEXPR EventDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -71,7 +72,7 @@ const uint32_t TableStruct_city_2fevent_2fv2_2fevent_2eproto::offsets[] PROTOBUF
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::city::event::v2::Entity, _impl_.type_),
   PROTOBUF_FIELD_OFFSET(::city::event::v2::Entity, _impl_.id_),
-  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::event::v2::Event, _impl_._has_bits_),
   PROTOBUF_FIELD_OFFSET(::city::event::v2::Event, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
@@ -83,10 +84,16 @@ const uint32_t TableStruct_city_2fevent_2fv2_2fevent_2eproto::offsets[] PROTOBUF
   PROTOBUF_FIELD_OFFSET(::city::event::v2::Event, _impl_.content_),
   PROTOBUF_FIELD_OFFSET(::city::event::v2::Event, _impl_.position_),
   PROTOBUF_FIELD_OFFSET(::city::event::v2::Event, _impl_.t_),
+  ~0u,
+  0,
+  ~0u,
+  ~0u,
+  ~0u,
+  ~0u,
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::city::event::v2::Entity)},
-  { 8, -1, -1, sizeof(::city::event::v2::Event)},
+  { 8, 20, -1, sizeof(::city::event::v2::Event)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -98,28 +105,28 @@ const char descriptor_table_protodef_city_2fevent_2fv2_2fevent_2eproto[] PROTOBU
   "\n\031city/event/v2/event.proto\022\rcity.event."
   "v2\032\025city/geo/v2/geo.proto\"G\n\006Entity\022-\n\004t"
   "ype\030\001 \001(\0162\031.city.event.v2.EntityTypeR\004ty"
-  "pe\022\016\n\002id\030\002 \001(\005R\002id\"\271\001\n\005Event\022\024\n\005topic\030\001 "
-  "\001(\tR\005topic\022\016\n\002id\030\002 \001(\005R\002id\022/\n\007subject\030\003 "
-  "\001(\0132\025.city.event.v2.EntityR\007subject\022\030\n\007c"
-  "ontent\030\004 \001(\tR\007content\0221\n\010position\030\005 \001(\0132"
-  "\025.city.geo.v2.PositionR\010position\022\014\n\001t\030\006 "
-  "\001(\001R\001t*\306\001\n\nEntityType\022\033\n\027ENTITY_TYPE_UNS"
-  "PECIFIED\020\000\022\024\n\020ENTITY_TYPE_LANE\020\001\022\024\n\020ENTI"
-  "TY_TYPE_ROAD\020\002\022\030\n\024ENTITY_TYPE_JUNCTION\020\003"
-  "\022\023\n\017ENTITY_TYPE_AOI\020\004\022\023\n\017ENTITY_TYPE_POI"
-  "\020\005\022\026\n\022ENTITY_TYPE_PERSON\020\006\022\023\n\017ENTITY_TYP"
-  "E_ORG\020\007B\251\001\n\021com.city.event.v2B\nEventProt"
-  "oP\001Z2git.fiblab.net/sim/protos/go/city/e"
-  "vent/v2;eventv2\242\002\003CEX\252\002\rCity.Event.V2\312\002\r"
-  "City\\Event\\V2\342\002\031City\\Event\\V2\\GPBMetadat"
-  "a\352\002\017City::Event::V2b\006proto3"
+  "pe\022\016\n\002id\030\002 \001(\005R\002id\"\305\001\n\005Event\022\024\n\005topic\030\001 "
+  "\001(\tR\005topic\022\023\n\002id\030\002 \001(\005H\000R\002id\210\001\001\022/\n\007subje"
+  "ct\030\003 \001(\0132\025.city.event.v2.EntityR\007subject"
+  "\022\030\n\007content\030\004 \001(\tR\007content\0221\n\010position\030\005"
+  " \001(\0132\025.city.geo.v2.PositionR\010position\022\014\n"
+  "\001t\030\006 \001(\001R\001tB\005\n\003_id*\306\001\n\nEntityType\022\033\n\027ENT"
+  "ITY_TYPE_UNSPECIFIED\020\000\022\024\n\020ENTITY_TYPE_LA"
+  "NE\020\001\022\024\n\020ENTITY_TYPE_ROAD\020\002\022\030\n\024ENTITY_TYP"
+  "E_JUNCTION\020\003\022\023\n\017ENTITY_TYPE_AOI\020\004\022\023\n\017ENT"
+  "ITY_TYPE_POI\020\005\022\026\n\022ENTITY_TYPE_PERSON\020\006\022\023"
+  "\n\017ENTITY_TYPE_ORG\020\007B\251\001\n\021com.city.event.v"
+  "2B\nEventProtoP\001Z2git.fiblab.net/sim/prot"
+  "os/go/city/event/v2;eventv2\242\002\003CEX\252\002\rCity"
+  ".Event.V2\312\002\rCity\\Event\\V2\342\002\031City\\Event\\V"
+  "2\\GPBMetadata\352\002\017City::Event::V2b\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_city_2fevent_2fv2_2fevent_2eproto_deps[1] = {
   &::descriptor_table_city_2fgeo_2fv2_2fgeo_2eproto,
 };
 static ::_pbi::once_flag descriptor_table_city_2fevent_2fv2_2fevent_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2fevent_2fv2_2fevent_2eproto = {
-    false, false, 707, descriptor_table_protodef_city_2fevent_2fv2_2fevent_2eproto,
+    false, false, 719, descriptor_table_protodef_city_2fevent_2fv2_2fevent_2eproto,
     "city/event/v2/event.proto",
     &descriptor_table_city_2fevent_2fv2_2fevent_2eproto_once, descriptor_table_city_2fevent_2fv2_2fevent_2eproto_deps, 1, 2,
     schemas, file_default_instances, TableStruct_city_2fevent_2fv2_2fevent_2eproto::offsets,
@@ -374,6 +381,10 @@ void Entity::InternalSwap(Entity* other) {
 
 class Event::_Internal {
  public:
+  using HasBits = decltype(std::declval<Event>()._impl_._has_bits_);
+  static void set_has_id(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
   static const ::city::event::v2::Entity& subject(const Event* msg);
   static const ::city::geo::v2::Position& position(const Event* msg);
 };
@@ -402,13 +413,14 @@ Event::Event(const Event& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   Event* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.topic_){}
+      decltype(_impl_._has_bits_){from._impl_._has_bits_}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.topic_){}
     , decltype(_impl_.content_){}
     , decltype(_impl_.subject_){nullptr}
     , decltype(_impl_.position_){nullptr}
     , decltype(_impl_.t_){}
-    , decltype(_impl_.id_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
+    , decltype(_impl_.id_){}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   _impl_.topic_.InitDefault();
@@ -444,13 +456,14 @@ inline void Event::SharedCtor(
   (void)arena;
   (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.topic_){}
+      decltype(_impl_._has_bits_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.topic_){}
     , decltype(_impl_.content_){}
     , decltype(_impl_.subject_){nullptr}
     , decltype(_impl_.position_){nullptr}
     , decltype(_impl_.t_){0}
     , decltype(_impl_.id_){0}
-    , /*decltype(_impl_._cached_size_)*/{}
   };
   _impl_.topic_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
@@ -499,14 +512,15 @@ void Event::Clear() {
     delete _impl_.position_;
   }
   _impl_.position_ = nullptr;
-  ::memset(&_impl_.t_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_impl_.id_) -
-      reinterpret_cast<char*>(&_impl_.t_)) + sizeof(_impl_.id_));
+  _impl_.t_ = 0;
+  _impl_.id_ = 0;
+  _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* Event::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
@@ -521,9 +535,10 @@ const char* Event::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
         } else
           goto handle_unusual;
         continue;
-      // int32 id = 2 [json_name = "id"];
+      // optional int32 id = 2 [json_name = "id"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _Internal::set_has_id(&has_bits);
           _impl_.id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
@@ -579,6 +594,7 @@ const char* Event::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
     CHK_(ptr != nullptr);
   }  // while
 message_done:
+  _impl_._has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
@@ -602,8 +618,8 @@ uint8_t* Event::_InternalSerialize(
         1, this->_internal_topic(), target);
   }
 
-  // int32 id = 2 [json_name = "id"];
-  if (this->_internal_id() != 0) {
+  // optional int32 id = 2 [json_name = "id"];
+  if (_internal_has_id()) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteInt32ToArray(2, this->_internal_id(), target);
   }
@@ -695,8 +711,9 @@ size_t Event::ByteSizeLong() const {
     total_size += 1 + 8;
   }
 
-  // int32 id = 2 [json_name = "id"];
-  if (this->_internal_id() != 0) {
+  // optional int32 id = 2 [json_name = "id"];
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000001u) {
     total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_id());
   }
 
@@ -739,7 +756,7 @@ void Event::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF
   if (raw_t != 0) {
     _this->_internal_set_t(from._internal_t());
   }
-  if (from._internal_id() != 0) {
+  if (from._internal_has_id()) {
     _this->_internal_set_id(from._internal_id());
   }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
@@ -761,6 +778,7 @@ void Event::InternalSwap(Event* other) {
   auto* lhs_arena = GetArenaForAllocation();
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &_impl_.topic_, lhs_arena,
       &other->_impl_.topic_, rhs_arena

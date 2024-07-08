@@ -242,13 +242,13 @@ type PersonAttribute struct {
 
 	// 单位: m，长度
 	// length: m
-	Length float64 `protobuf:"fixed64,2,opt,name=length,proto3" json:"length,omitempty" yaml:"length" bson:"length" db:"length"`
+	Length float64 `protobuf:"fixed64,2,opt,name=length,proto3" json:"length,omitempty" bson:"length" db:"length" yaml:"length"`
 	// 单位: m，宽度
 	// width: m
-	Width float64 `protobuf:"fixed64,3,opt,name=width,proto3" json:"width,omitempty" yaml:"width" bson:"width" db:"width"`
+	Width float64 `protobuf:"fixed64,3,opt,name=width,proto3" json:"width,omitempty" db:"width" yaml:"width" bson:"width"`
 	// 单位: m/s
 	// max speed: m/s
-	MaxSpeed float64 `protobuf:"fixed64,4,opt,name=max_speed,json=maxSpeed,proto3" json:"max_speed,omitempty" db:"max_speed" yaml:"max_speed" bson:"max_speed"`
+	MaxSpeed float64 `protobuf:"fixed64,4,opt,name=max_speed,json=maxSpeed,proto3" json:"max_speed,omitempty" yaml:"max_speed" bson:"max_speed" db:"max_speed"`
 	// 单位: m/s^2, 最大加速度（正值）
 	// max accelaration: m/s^2 (positive value)
 	MaxAcceleration float64 `protobuf:"fixed64,5,opt,name=max_acceleration,json=maxAcceleration,proto3" json:"max_acceleration,omitempty" yaml:"max_acceleration" bson:"max_acceleration" db:"max_acceleration"`
@@ -559,7 +559,7 @@ type BikeAttribute struct {
 	Speed float64 `protobuf:"fixed64,1,opt,name=speed,proto3" json:"speed,omitempty" yaml:"speed" bson:"speed" db:"speed"`
 	// 自行车模型标签
 	// Bike model tag
-	Model *string `protobuf:"bytes,2,opt,name=model,proto3,oneof" json:"model,omitempty" db:"model" yaml:"model" bson:"model"`
+	Model *string `protobuf:"bytes,2,opt,name=model,proto3,oneof" json:"model,omitempty" yaml:"model" bson:"model" db:"model"`
 }
 
 func (x *BikeAttribute) Reset() {
@@ -620,13 +620,13 @@ type PersonProfile struct {
 	Age int32 `protobuf:"varint,1,opt,name=age,proto3" json:"age,omitempty" yaml:"age" bson:"age" db:"age"`
 	// 教育水平
 	// education level
-	Education Education `protobuf:"varint,2,opt,name=education,proto3,enum=city.person.v1.Education" json:"education,omitempty" yaml:"education" bson:"education" db:"education"`
+	Education Education `protobuf:"varint,2,opt,name=education,proto3,enum=city.person.v1.Education" json:"education,omitempty" bson:"education" db:"education" yaml:"education"`
 	// 性别
 	// gender
 	Gender Gender `protobuf:"varint,3,opt,name=gender,proto3,enum=city.person.v1.Gender" json:"gender,omitempty" yaml:"gender" bson:"gender" db:"gender"`
 	// 消费水平
 	// consumption level
-	Consumption Consumption `protobuf:"varint,4,opt,name=consumption,proto3,enum=city.person.v1.Consumption" json:"consumption,omitempty" yaml:"consumption" bson:"consumption" db:"consumption"`
+	Consumption Consumption `protobuf:"varint,4,opt,name=consumption,proto3,enum=city.person.v1.Consumption" json:"consumption,omitempty" bson:"consumption" db:"consumption" yaml:"consumption"`
 }
 
 func (x *PersonProfile) Reset() {

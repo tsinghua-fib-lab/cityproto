@@ -459,7 +459,11 @@ class Event final :
   void _internal_set_t(double value);
   public:
 
-  // int32 id = 2 [json_name = "id"];
+  // optional int32 id = 2 [json_name = "id"];
+  bool has_id() const;
+  private:
+  bool _internal_has_id() const;
+  public:
   void clear_id();
   int32_t id() const;
   void set_id(int32_t value);
@@ -476,13 +480,14 @@ class Event final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr topic_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr content_;
     ::city::event::v2::Entity* subject_;
     ::city::geo::v2::Position* position_;
     double t_;
     int32_t id_;
-    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_city_2fevent_2fv2_2fevent_2eproto;
@@ -592,9 +597,17 @@ inline void Event::set_allocated_topic(std::string* topic) {
   // @@protoc_insertion_point(field_set_allocated:city.event.v2.Event.topic)
 }
 
-// int32 id = 2 [json_name = "id"];
+// optional int32 id = 2 [json_name = "id"];
+inline bool Event::_internal_has_id() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline bool Event::has_id() const {
+  return _internal_has_id();
+}
 inline void Event::clear_id() {
   _impl_.id_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000001u;
 }
 inline int32_t Event::_internal_id() const {
   return _impl_.id_;
@@ -604,7 +617,7 @@ inline int32_t Event::id() const {
   return _internal_id();
 }
 inline void Event::_internal_set_id(int32_t value) {
-  
+  _impl_._has_bits_[0] |= 0x00000001u;
   _impl_.id_ = value;
 }
 inline void Event::set_id(int32_t value) {

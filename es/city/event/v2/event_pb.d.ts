@@ -122,9 +122,9 @@ export declare class Event extends Message<Event> {
   /**
    * ID
    *
-   * @generated from field: int32 id = 2;
+   * @generated from field: optional int32 id = 2;
    */
-  id: number;
+  id?: number;
 
   /**
    * 主语

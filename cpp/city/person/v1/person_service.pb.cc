@@ -38,8 +38,7 @@ struct GetPersonRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetPersonRequestDefaultTypeInternal _GetPersonRequest_default_instance_;
 PROTOBUF_CONSTEXPR GetPersonResponse::GetPersonResponse(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.base_)*/nullptr
-  , /*decltype(_impl_.motion_)*/nullptr
+    /*decltype(_impl_.person_)*/nullptr
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct GetPersonResponseDefaultTypeInternal {
   PROTOBUF_CONSTEXPR GetPersonResponseDefaultTypeInternal()
@@ -101,11 +100,42 @@ struct SetScheduleResponseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SetScheduleResponseDefaultTypeInternal _SetScheduleResponse_default_instance_;
+PROTOBUF_CONSTEXPR GetPersonsRequest::GetPersonsRequest(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.person_ids_)*/{}
+  , /*decltype(_impl_._person_ids_cached_byte_size_)*/{0}
+  , /*decltype(_impl_.exclude_statuses_)*/{}
+  , /*decltype(_impl_._exclude_statuses_cached_byte_size_)*/{0}
+  , /*decltype(_impl_.return_base_)*/false
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct GetPersonsRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR GetPersonsRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~GetPersonsRequestDefaultTypeInternal() {}
+  union {
+    GetPersonsRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetPersonsRequestDefaultTypeInternal _GetPersonsRequest_default_instance_;
+PROTOBUF_CONSTEXPR GetPersonsResponse::GetPersonsResponse(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.persons_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct GetPersonsResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR GetPersonsResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~GetPersonsResponseDefaultTypeInternal() {}
+  union {
+    GetPersonsResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetPersonsResponseDefaultTypeInternal _GetPersonsResponse_default_instance_;
 PROTOBUF_CONSTEXPR GetPersonByLongLatBBoxRequest::GetPersonByLongLatBBoxRequest(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.exclude_statuses_)*/{}
   , /*decltype(_impl_._exclude_statuses_cached_byte_size_)*/{0}
   , /*decltype(_impl_.bbox_)*/nullptr
+  , /*decltype(_impl_.return_base_)*/false
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct GetPersonByLongLatBBoxRequestDefaultTypeInternal {
   PROTOBUF_CONSTEXPR GetPersonByLongLatBBoxRequestDefaultTypeInternal()
@@ -118,7 +148,7 @@ struct GetPersonByLongLatBBoxRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetPersonByLongLatBBoxRequestDefaultTypeInternal _GetPersonByLongLatBBoxRequest_default_instance_;
 PROTOBUF_CONSTEXPR GetPersonByLongLatBBoxResponse::GetPersonByLongLatBBoxResponse(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.motions_)*/{}
+    /*decltype(_impl_.persons_)*/{}
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct GetPersonByLongLatBBoxResponseDefaultTypeInternal {
   PROTOBUF_CONSTEXPR GetPersonByLongLatBBoxResponseDefaultTypeInternal()
@@ -153,6 +183,31 @@ struct GetAllVehiclesResponseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetAllVehiclesResponseDefaultTypeInternal _GetAllVehiclesResponse_default_instance_;
+PROTOBUF_CONSTEXPR ResetPersonPositionRequest::ResetPersonPositionRequest(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.position_)*/nullptr
+  , /*decltype(_impl_.person_id_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct ResetPersonPositionRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR ResetPersonPositionRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~ResetPersonPositionRequestDefaultTypeInternal() {}
+  union {
+    ResetPersonPositionRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ResetPersonPositionRequestDefaultTypeInternal _ResetPersonPositionRequest_default_instance_;
+PROTOBUF_CONSTEXPR ResetPersonPositionResponse::ResetPersonPositionResponse(
+    ::_pbi::ConstantInitialized) {}
+struct ResetPersonPositionResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR ResetPersonPositionResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~ResetPersonPositionResponseDefaultTypeInternal() {}
+  union {
+    ResetPersonPositionResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ResetPersonPositionResponseDefaultTypeInternal _ResetPersonPositionResponse_default_instance_;
 PROTOBUF_CONSTEXPR SetControlledVehicleIDsRequest::SetControlledVehicleIDsRequest(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.vehicle_ids_)*/{}
@@ -229,7 +284,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORIT
 }  // namespace v1
 }  // namespace person
 }  // namespace city
-static ::_pb::Metadata file_level_metadata_city_2fperson_2fv1_2fperson_5fservice_2eproto[16];
+static ::_pb::Metadata file_level_metadata_city_2fperson_2fv1_2fperson_5fservice_2eproto[20];
 static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_city_2fperson_2fv1_2fperson_5fservice_2eproto = nullptr;
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_city_2fperson_2fv1_2fperson_5fservice_2eproto = nullptr;
 
@@ -247,8 +302,7 @@ const uint32_t TableStruct_city_2fperson_2fv1_2fperson_5fservice_2eproto::offset
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::city::person::v1::GetPersonResponse, _impl_.base_),
-  PROTOBUF_FIELD_OFFSET(::city::person::v1::GetPersonResponse, _impl_.motion_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v1::GetPersonResponse, _impl_.person_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::city::person::v1::AddPersonRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -278,6 +332,22 @@ const uint32_t TableStruct_city_2fperson_2fv1_2fperson_5fservice_2eproto::offset
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::person::v1::GetPersonsRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::person::v1::GetPersonsRequest, _impl_.person_ids_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v1::GetPersonsRequest, _impl_.exclude_statuses_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v1::GetPersonsRequest, _impl_.return_base_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::person::v1::GetPersonsResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::person::v1::GetPersonsResponse, _impl_.persons_),
+  ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::city::person::v1::GetPersonByLongLatBBoxRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
@@ -285,13 +355,14 @@ const uint32_t TableStruct_city_2fperson_2fv1_2fperson_5fservice_2eproto::offset
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::city::person::v1::GetPersonByLongLatBBoxRequest, _impl_.bbox_),
   PROTOBUF_FIELD_OFFSET(::city::person::v1::GetPersonByLongLatBBoxRequest, _impl_.exclude_statuses_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v1::GetPersonByLongLatBBoxRequest, _impl_.return_base_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::city::person::v1::GetPersonByLongLatBBoxResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::city::person::v1::GetPersonByLongLatBBoxResponse, _impl_.motions_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v1::GetPersonByLongLatBBoxResponse, _impl_.persons_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::city::person::v1::GetAllVehiclesRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -305,6 +376,20 @@ const uint32_t TableStruct_city_2fperson_2fv1_2fperson_5fservice_2eproto::offset
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::city::person::v1::GetAllVehiclesResponse, _impl_.vehicles_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::person::v1::ResetPersonPositionRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::person::v1::ResetPersonPositionRequest, _impl_.person_id_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v1::ResetPersonPositionRequest, _impl_.position_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::person::v1::ResetPersonPositionResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::city::person::v1::SetControlledVehicleIDsRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -348,20 +433,24 @@ const uint32_t TableStruct_city_2fperson_2fv1_2fperson_5fservice_2eproto::offset
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::city::person::v1::GetPersonRequest)},
   { 7, -1, -1, sizeof(::city::person::v1::GetPersonResponse)},
-  { 15, -1, -1, sizeof(::city::person::v1::AddPersonRequest)},
-  { 22, -1, -1, sizeof(::city::person::v1::AddPersonResponse)},
-  { 29, -1, -1, sizeof(::city::person::v1::SetScheduleRequest)},
-  { 37, -1, -1, sizeof(::city::person::v1::SetScheduleResponse)},
-  { 43, -1, -1, sizeof(::city::person::v1::GetPersonByLongLatBBoxRequest)},
-  { 51, -1, -1, sizeof(::city::person::v1::GetPersonByLongLatBBoxResponse)},
-  { 58, -1, -1, sizeof(::city::person::v1::GetAllVehiclesRequest)},
-  { 64, -1, -1, sizeof(::city::person::v1::GetAllVehiclesResponse)},
-  { 71, -1, -1, sizeof(::city::person::v1::SetControlledVehicleIDsRequest)},
-  { 78, -1, -1, sizeof(::city::person::v1::SetControlledVehicleIDsResponse)},
-  { 84, -1, -1, sizeof(::city::person::v1::FetchControlledVehicleEnvsRequest)},
-  { 90, -1, -1, sizeof(::city::person::v1::FetchControlledVehicleEnvsResponse)},
-  { 97, -1, -1, sizeof(::city::person::v1::SetControlledVehicleActionsRequest)},
-  { 104, -1, -1, sizeof(::city::person::v1::SetControlledVehicleActionsResponse)},
+  { 14, -1, -1, sizeof(::city::person::v1::AddPersonRequest)},
+  { 21, -1, -1, sizeof(::city::person::v1::AddPersonResponse)},
+  { 28, -1, -1, sizeof(::city::person::v1::SetScheduleRequest)},
+  { 36, -1, -1, sizeof(::city::person::v1::SetScheduleResponse)},
+  { 42, -1, -1, sizeof(::city::person::v1::GetPersonsRequest)},
+  { 51, -1, -1, sizeof(::city::person::v1::GetPersonsResponse)},
+  { 58, -1, -1, sizeof(::city::person::v1::GetPersonByLongLatBBoxRequest)},
+  { 67, -1, -1, sizeof(::city::person::v1::GetPersonByLongLatBBoxResponse)},
+  { 74, -1, -1, sizeof(::city::person::v1::GetAllVehiclesRequest)},
+  { 80, -1, -1, sizeof(::city::person::v1::GetAllVehiclesResponse)},
+  { 87, -1, -1, sizeof(::city::person::v1::ResetPersonPositionRequest)},
+  { 95, -1, -1, sizeof(::city::person::v1::ResetPersonPositionResponse)},
+  { 101, -1, -1, sizeof(::city::person::v1::SetControlledVehicleIDsRequest)},
+  { 108, -1, -1, sizeof(::city::person::v1::SetControlledVehicleIDsResponse)},
+  { 114, -1, -1, sizeof(::city::person::v1::FetchControlledVehicleEnvsRequest)},
+  { 120, -1, -1, sizeof(::city::person::v1::FetchControlledVehicleEnvsResponse)},
+  { 127, -1, -1, sizeof(::city::person::v1::SetControlledVehicleActionsRequest)},
+  { 134, -1, -1, sizeof(::city::person::v1::SetControlledVehicleActionsResponse)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -371,10 +460,14 @@ static const ::_pb::Message* const file_default_instances[] = {
   &::city::person::v1::_AddPersonResponse_default_instance_._instance,
   &::city::person::v1::_SetScheduleRequest_default_instance_._instance,
   &::city::person::v1::_SetScheduleResponse_default_instance_._instance,
+  &::city::person::v1::_GetPersonsRequest_default_instance_._instance,
+  &::city::person::v1::_GetPersonsResponse_default_instance_._instance,
   &::city::person::v1::_GetPersonByLongLatBBoxRequest_default_instance_._instance,
   &::city::person::v1::_GetPersonByLongLatBBoxResponse_default_instance_._instance,
   &::city::person::v1::_GetAllVehiclesRequest_default_instance_._instance,
   &::city::person::v1::_GetAllVehiclesResponse_default_instance_._instance,
+  &::city::person::v1::_ResetPersonPositionRequest_default_instance_._instance,
+  &::city::person::v1::_ResetPersonPositionResponse_default_instance_._instance,
   &::city::person::v1::_SetControlledVehicleIDsRequest_default_instance_._instance,
   &::city::person::v1::_SetControlledVehicleIDsResponse_default_instance_._instance,
   &::city::person::v1::_FetchControlledVehicleEnvsRequest_default_instance_._instance,
@@ -387,77 +480,93 @@ const char descriptor_table_protodef_city_2fperson_2fv1_2fperson_5fservice_2epro
   "\n#city/person/v1/person_service.proto\022\016c"
   "ity.person.v1\032\025city/geo/v2/geo.proto\032\033ci"
   "ty/person/v1/motion.proto\032\033city/person/v"
-  "1/person.proto\032\034city/person/v1/vehicle.p"
-  "roto\032\027city/trip/v2/trip.proto\"/\n\020GetPers"
-  "onRequest\022\033\n\tperson_id\030\001 \001(\005R\010personId\"u"
-  "\n\021GetPersonResponse\022*\n\004base\030\001 \001(\0132\026.city"
-  ".person.v1.PersonR\004base\0224\n\006motion\030\002 \001(\0132"
-  "\034.city.person.v1.PersonMotionR\006motion\"B\n"
-  "\020AddPersonRequest\022.\n\006person\030\001 \001(\0132\026.city"
-  ".person.v1.PersonR\006person\"0\n\021AddPersonRe"
-  "sponse\022\033\n\tperson_id\030\001 \001(\005R\010personId\"g\n\022S"
-  "etScheduleRequest\022\033\n\tperson_id\030\001 \001(\005R\010pe"
-  "rsonId\0224\n\tschedules\030\002 \003(\0132\026.city.trip.v2"
-  ".ScheduleR\tschedules\"\025\n\023SetScheduleRespo"
-  "nse\"\220\001\n\035GetPersonByLongLatBBoxRequest\022,\n"
-  "\004bbox\030\001 \001(\0132\030.city.geo.v2.LongLatBBoxR\004b"
-  "box\022A\n\020exclude_statuses\030\002 \003(\0162\026.city.per"
-  "son.v1.StatusR\017excludeStatuses\"X\n\036GetPer"
-  "sonByLongLatBBoxResponse\0226\n\007motions\030\001 \003("
-  "\0132\034.city.person.v1.PersonMotionR\007motions"
-  "\"\027\n\025GetAllVehiclesRequest\"T\n\026GetAllVehic"
-  "lesResponse\022:\n\010vehicles\030\001 \003(\0132\036.city.per"
-  "son.v1.VehicleRuntimeR\010vehicles\"A\n\036SetCo"
-  "ntrolledVehicleIDsRequest\022\037\n\013vehicle_ids"
-  "\030\001 \003(\005R\nvehicleIds\"!\n\037SetControlledVehic"
-  "leIDsResponse\"#\n!FetchControlledVehicleE"
-  "nvsRequest\"c\n\"FetchControlledVehicleEnvs"
-  "Response\022=\n\014vehicle_envs\030\001 \003(\0132\032.city.pe"
-  "rson.v1.VehicleEnvR\013vehicleEnvs\"l\n\"SetCo"
-  "ntrolledVehicleActionsRequest\022F\n\017vehicle"
-  "_actions\030\001 \003(\0132\035.city.person.v1.VehicleA"
-  "ctionR\016vehicleActions\"%\n#SetControlledVe"
-  "hicleActionsResponse2\360\006\n\rPersonService\022P"
-  "\n\tGetPerson\022 .city.person.v1.GetPersonRe"
-  "quest\032!.city.person.v1.GetPersonResponse"
-  "\022P\n\tAddPerson\022 .city.person.v1.AddPerson"
-  "Request\032!.city.person.v1.AddPersonRespon"
-  "se\022V\n\013SetSchedule\022\".city.person.v1.SetSc"
-  "heduleRequest\032#.city.person.v1.SetSchedu"
-  "leResponse\022w\n\026GetPersonByLongLatBBox\022-.c"
-  "ity.person.v1.GetPersonByLongLatBBoxRequ"
-  "est\032..city.person.v1.GetPersonByLongLatB"
-  "BoxResponse\022_\n\016GetAllVehicles\022%.city.per"
-  "son.v1.GetAllVehiclesRequest\032&.city.pers"
-  "on.v1.GetAllVehiclesResponse\022z\n\027SetContr"
-  "olledVehicleIDs\022..city.person.v1.SetCont"
-  "rolledVehicleIDsRequest\032/.city.person.v1"
-  ".SetControlledVehicleIDsResponse\022\203\001\n\032Fet"
-  "chControlledVehicleEnvs\0221.city.person.v1"
-  ".FetchControlledVehicleEnvsRequest\0322.cit"
-  "y.person.v1.FetchControlledVehicleEnvsRe"
-  "sponse\022\206\001\n\033SetControlledVehicleActions\0222"
-  ".city.person.v1.SetControlledVehicleActi"
-  "onsRequest\0323.city.person.v1.SetControlle"
-  "dVehicleActionsResponseB\270\001\n\022com.city.per"
-  "son.v1B\022PersonServiceProtoP\001Z4git.fiblab"
-  ".net/sim/protos/go/city/person/v1;person"
-  "v1\242\002\003CPX\252\002\016City.Person.V1\312\002\016City\\Person\\"
-  "V1\342\002\032City\\Person\\V1\\GPBMetadata\352\002\020City::"
-  "Person::V1b\006proto3"
+  "1/person.proto\032#city/person/v1/person_ru"
+  "ntime.proto\032\034city/person/v1/vehicle.prot"
+  "o\032\027city/trip/v2/trip.proto\"/\n\020GetPersonR"
+  "equest\022\033\n\tperson_id\030\001 \001(\005R\010personId\"J\n\021G"
+  "etPersonResponse\0225\n\006person\030\001 \001(\0132\035.city."
+  "person.v1.PersonRuntimeR\006person\"B\n\020AddPe"
+  "rsonRequest\022.\n\006person\030\001 \001(\0132\026.city.perso"
+  "n.v1.PersonR\006person\"0\n\021AddPersonResponse"
+  "\022\033\n\tperson_id\030\001 \001(\005R\010personId\"g\n\022SetSche"
+  "duleRequest\022\033\n\tperson_id\030\001 \001(\005R\010personId"
+  "\0224\n\tschedules\030\002 \003(\0132\026.city.trip.v2.Sched"
+  "uleR\tschedules\"\025\n\023SetScheduleResponse\"\226\001"
+  "\n\021GetPersonsRequest\022\035\n\nperson_ids\030\001 \003(\005R"
+  "\tpersonIds\022A\n\020exclude_statuses\030\002 \003(\0162\026.c"
+  "ity.person.v1.StatusR\017excludeStatuses\022\037\n"
+  "\013return_base\030\003 \001(\010R\nreturnBase\"M\n\022GetPer"
+  "sonsResponse\0227\n\007persons\030\001 \003(\0132\035.city.per"
+  "son.v1.PersonRuntimeR\007persons\"\261\001\n\035GetPer"
+  "sonByLongLatBBoxRequest\022,\n\004bbox\030\001 \001(\0132\030."
+  "city.geo.v2.LongLatBBoxR\004bbox\022A\n\020exclude"
+  "_statuses\030\002 \003(\0162\026.city.person.v1.StatusR"
+  "\017excludeStatuses\022\037\n\013return_base\030\003 \001(\010R\nr"
+  "eturnBase\"Y\n\036GetPersonByLongLatBBoxRespo"
+  "nse\0227\n\007persons\030\001 \003(\0132\035.city.person.v1.Pe"
+  "rsonRuntimeR\007persons\"\027\n\025GetAllVehiclesRe"
+  "quest\"T\n\026GetAllVehiclesResponse\022:\n\010vehic"
+  "les\030\001 \003(\0132\036.city.person.v1.VehicleRuntim"
+  "eR\010vehicles\"l\n\032ResetPersonPositionReques"
+  "t\022\033\n\tperson_id\030\001 \001(\005R\010personId\0221\n\010positi"
+  "on\030\002 \001(\0132\025.city.geo.v2.PositionR\010positio"
+  "n\"\035\n\033ResetPersonPositionResponse\"A\n\036SetC"
+  "ontrolledVehicleIDsRequest\022\037\n\013vehicle_id"
+  "s\030\001 \003(\005R\nvehicleIds\"!\n\037SetControlledVehi"
+  "cleIDsResponse\"#\n!FetchControlledVehicle"
+  "EnvsRequest\"c\n\"FetchControlledVehicleEnv"
+  "sResponse\022=\n\014vehicle_envs\030\001 \003(\0132\032.city.p"
+  "erson.v1.VehicleEnvR\013vehicleEnvs\"l\n\"SetC"
+  "ontrolledVehicleActionsRequest\022F\n\017vehicl"
+  "e_actions\030\001 \003(\0132\035.city.person.v1.Vehicle"
+  "ActionR\016vehicleActions\"%\n#SetControlledV"
+  "ehicleActionsResponse2\265\010\n\rPersonService\022"
+  "P\n\tGetPerson\022 .city.person.v1.GetPersonR"
+  "equest\032!.city.person.v1.GetPersonRespons"
+  "e\022P\n\tAddPerson\022 .city.person.v1.AddPerso"
+  "nRequest\032!.city.person.v1.AddPersonRespo"
+  "nse\022V\n\013SetSchedule\022\".city.person.v1.SetS"
+  "cheduleRequest\032#.city.person.v1.SetSched"
+  "uleResponse\022S\n\nGetPersons\022!.city.person."
+  "v1.GetPersonsRequest\032\".city.person.v1.Ge"
+  "tPersonsResponse\022w\n\026GetPersonByLongLatBB"
+  "ox\022-.city.person.v1.GetPersonByLongLatBB"
+  "oxRequest\032..city.person.v1.GetPersonByLo"
+  "ngLatBBoxResponse\022_\n\016GetAllVehicles\022%.ci"
+  "ty.person.v1.GetAllVehiclesRequest\032&.cit"
+  "y.person.v1.GetAllVehiclesResponse\022n\n\023Re"
+  "setPersonPosition\022*.city.person.v1.Reset"
+  "PersonPositionRequest\032+.city.person.v1.R"
+  "esetPersonPositionResponse\022z\n\027SetControl"
+  "ledVehicleIDs\022..city.person.v1.SetContro"
+  "lledVehicleIDsRequest\032/.city.person.v1.S"
+  "etControlledVehicleIDsResponse\022\203\001\n\032Fetch"
+  "ControlledVehicleEnvs\0221.city.person.v1.F"
+  "etchControlledVehicleEnvsRequest\0322.city."
+  "person.v1.FetchControlledVehicleEnvsResp"
+  "onse\022\206\001\n\033SetControlledVehicleActions\0222.c"
+  "ity.person.v1.SetControlledVehicleAction"
+  "sRequest\0323.city.person.v1.SetControlledV"
+  "ehicleActionsResponseB\270\001\n\022com.city.perso"
+  "n.v1B\022PersonServiceProtoP\001Z4git.fiblab.n"
+  "et/sim/protos/go/city/person/v1;personv1"
+  "\242\002\003CPX\252\002\016City.Person.V1\312\002\016City\\Person\\V1"
+  "\342\002\032City\\Person\\V1\\GPBMetadata\352\002\020City::Pe"
+  "rson::V1b\006proto3"
   ;
-static const ::_pbi::DescriptorTable* const descriptor_table_city_2fperson_2fv1_2fperson_5fservice_2eproto_deps[5] = {
+static const ::_pbi::DescriptorTable* const descriptor_table_city_2fperson_2fv1_2fperson_5fservice_2eproto_deps[6] = {
   &::descriptor_table_city_2fgeo_2fv2_2fgeo_2eproto,
   &::descriptor_table_city_2fperson_2fv1_2fmotion_2eproto,
   &::descriptor_table_city_2fperson_2fv1_2fperson_2eproto,
+  &::descriptor_table_city_2fperson_2fv1_2fperson_5fruntime_2eproto,
   &::descriptor_table_city_2fperson_2fv1_2fvehicle_2eproto,
   &::descriptor_table_city_2ftrip_2fv2_2ftrip_2eproto,
 };
 static ::_pbi::once_flag descriptor_table_city_2fperson_2fv1_2fperson_5fservice_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2fperson_2fv1_2fperson_5fservice_2eproto = {
-    false, false, 2418, descriptor_table_protodef_city_2fperson_2fv1_2fperson_5fservice_2eproto,
+    false, false, 3016, descriptor_table_protodef_city_2fperson_2fv1_2fperson_5fservice_2eproto,
     "city/person/v1/person_service.proto",
-    &descriptor_table_city_2fperson_2fv1_2fperson_5fservice_2eproto_once, descriptor_table_city_2fperson_2fv1_2fperson_5fservice_2eproto_deps, 5, 16,
+    &descriptor_table_city_2fperson_2fv1_2fperson_5fservice_2eproto_once, descriptor_table_city_2fperson_2fv1_2fperson_5fservice_2eproto_deps, 6, 20,
     schemas, file_default_instances, TableStruct_city_2fperson_2fv1_2fperson_5fservice_2eproto::offsets,
     file_level_metadata_city_2fperson_2fv1_2fperson_5fservice_2eproto, file_level_enum_descriptors_city_2fperson_2fv1_2fperson_5fservice_2eproto,
     file_level_service_descriptors_city_2fperson_2fv1_2fperson_5fservice_2eproto,
@@ -654,29 +763,18 @@ void GetPersonRequest::InternalSwap(GetPersonRequest* other) {
 
 class GetPersonResponse::_Internal {
  public:
-  static const ::city::person::v1::Person& base(const GetPersonResponse* msg);
-  static const ::city::person::v1::PersonMotion& motion(const GetPersonResponse* msg);
+  static const ::city::person::v1::PersonRuntime& person(const GetPersonResponse* msg);
 };
 
-const ::city::person::v1::Person&
-GetPersonResponse::_Internal::base(const GetPersonResponse* msg) {
-  return *msg->_impl_.base_;
+const ::city::person::v1::PersonRuntime&
+GetPersonResponse::_Internal::person(const GetPersonResponse* msg) {
+  return *msg->_impl_.person_;
 }
-const ::city::person::v1::PersonMotion&
-GetPersonResponse::_Internal::motion(const GetPersonResponse* msg) {
-  return *msg->_impl_.motion_;
-}
-void GetPersonResponse::clear_base() {
-  if (GetArenaForAllocation() == nullptr && _impl_.base_ != nullptr) {
-    delete _impl_.base_;
+void GetPersonResponse::clear_person() {
+  if (GetArenaForAllocation() == nullptr && _impl_.person_ != nullptr) {
+    delete _impl_.person_;
   }
-  _impl_.base_ = nullptr;
-}
-void GetPersonResponse::clear_motion() {
-  if (GetArenaForAllocation() == nullptr && _impl_.motion_ != nullptr) {
-    delete _impl_.motion_;
-  }
-  _impl_.motion_ = nullptr;
+  _impl_.person_ = nullptr;
 }
 GetPersonResponse::GetPersonResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
@@ -688,16 +786,12 @@ GetPersonResponse::GetPersonResponse(const GetPersonResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   GetPersonResponse* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.base_){nullptr}
-    , decltype(_impl_.motion_){nullptr}
+      decltype(_impl_.person_){nullptr}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  if (from._internal_has_base()) {
-    _this->_impl_.base_ = new ::city::person::v1::Person(*from._impl_.base_);
-  }
-  if (from._internal_has_motion()) {
-    _this->_impl_.motion_ = new ::city::person::v1::PersonMotion(*from._impl_.motion_);
+  if (from._internal_has_person()) {
+    _this->_impl_.person_ = new ::city::person::v1::PersonRuntime(*from._impl_.person_);
   }
   // @@protoc_insertion_point(copy_constructor:city.person.v1.GetPersonResponse)
 }
@@ -707,8 +801,7 @@ inline void GetPersonResponse::SharedCtor(
   (void)arena;
   (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.base_){nullptr}
-    , decltype(_impl_.motion_){nullptr}
+      decltype(_impl_.person_){nullptr}
     , /*decltype(_impl_._cached_size_)*/{}
   };
 }
@@ -724,8 +817,7 @@ GetPersonResponse::~GetPersonResponse() {
 
 inline void GetPersonResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete _impl_.base_;
-  if (this != internal_default_instance()) delete _impl_.motion_;
+  if (this != internal_default_instance()) delete _impl_.person_;
 }
 
 void GetPersonResponse::SetCachedSize(int size) const {
@@ -738,14 +830,10 @@ void GetPersonResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaForAllocation() == nullptr && _impl_.base_ != nullptr) {
-    delete _impl_.base_;
+  if (GetArenaForAllocation() == nullptr && _impl_.person_ != nullptr) {
+    delete _impl_.person_;
   }
-  _impl_.base_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && _impl_.motion_ != nullptr) {
-    delete _impl_.motion_;
-  }
-  _impl_.motion_ = nullptr;
+  _impl_.person_ = nullptr;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -755,18 +843,10 @@ const char* GetPersonResponse::_InternalParse(const char* ptr, ::_pbi::ParseCont
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .city.person.v1.Person base = 1 [json_name = "base"];
+      // .city.person.v1.PersonRuntime person = 1 [json_name = "person"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_base(), ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // .city.person.v1.PersonMotion motion = 2 [json_name = "motion"];
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
-          ptr = ctx->ParseMessage(_internal_mutable_motion(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_person(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -800,18 +880,11 @@ uint8_t* GetPersonResponse::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .city.person.v1.Person base = 1 [json_name = "base"];
-  if (this->_internal_has_base()) {
+  // .city.person.v1.PersonRuntime person = 1 [json_name = "person"];
+  if (this->_internal_has_person()) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(1, _Internal::base(this),
-        _Internal::base(this).GetCachedSize(), target, stream);
-  }
-
-  // .city.person.v1.PersonMotion motion = 2 [json_name = "motion"];
-  if (this->_internal_has_motion()) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(2, _Internal::motion(this),
-        _Internal::motion(this).GetCachedSize(), target, stream);
+      InternalWriteMessage(1, _Internal::person(this),
+        _Internal::person(this).GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -830,18 +903,11 @@ size_t GetPersonResponse::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .city.person.v1.Person base = 1 [json_name = "base"];
-  if (this->_internal_has_base()) {
+  // .city.person.v1.PersonRuntime person = 1 [json_name = "person"];
+  if (this->_internal_has_person()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *_impl_.base_);
-  }
-
-  // .city.person.v1.PersonMotion motion = 2 [json_name = "motion"];
-  if (this->_internal_has_motion()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *_impl_.motion_);
+        *_impl_.person_);
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -862,13 +928,9 @@ void GetPersonResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, cons
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_has_base()) {
-    _this->_internal_mutable_base()->::city::person::v1::Person::MergeFrom(
-        from._internal_base());
-  }
-  if (from._internal_has_motion()) {
-    _this->_internal_mutable_motion()->::city::person::v1::PersonMotion::MergeFrom(
-        from._internal_motion());
+  if (from._internal_has_person()) {
+    _this->_internal_mutable_person()->::city::person::v1::PersonRuntime::MergeFrom(
+        from._internal_person());
   }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -887,12 +949,7 @@ bool GetPersonResponse::IsInitialized() const {
 void GetPersonResponse::InternalSwap(GetPersonResponse* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(GetPersonResponse, _impl_.motion_)
-      + sizeof(GetPersonResponse::_impl_.motion_)
-      - PROTOBUF_FIELD_OFFSET(GetPersonResponse, _impl_.base_)>(
-          reinterpret_cast<char*>(&_impl_.base_),
-          reinterpret_cast<char*>(&other->_impl_.base_));
+  swap(_impl_.person_, other->_impl_.person_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GetPersonResponse::GetMetadata() const {
@@ -1535,6 +1592,460 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SetScheduleResponse::GetClassD
 
 // ===================================================================
 
+class GetPersonsRequest::_Internal {
+ public:
+};
+
+GetPersonsRequest::GetPersonsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:city.person.v1.GetPersonsRequest)
+}
+GetPersonsRequest::GetPersonsRequest(const GetPersonsRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  GetPersonsRequest* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.person_ids_){from._impl_.person_ids_}
+    , /*decltype(_impl_._person_ids_cached_byte_size_)*/{0}
+    , decltype(_impl_.exclude_statuses_){from._impl_.exclude_statuses_}
+    , /*decltype(_impl_._exclude_statuses_cached_byte_size_)*/{0}
+    , decltype(_impl_.return_base_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.return_base_ = from._impl_.return_base_;
+  // @@protoc_insertion_point(copy_constructor:city.person.v1.GetPersonsRequest)
+}
+
+inline void GetPersonsRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.person_ids_){arena}
+    , /*decltype(_impl_._person_ids_cached_byte_size_)*/{0}
+    , decltype(_impl_.exclude_statuses_){arena}
+    , /*decltype(_impl_._exclude_statuses_cached_byte_size_)*/{0}
+    , decltype(_impl_.return_base_){false}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+}
+
+GetPersonsRequest::~GetPersonsRequest() {
+  // @@protoc_insertion_point(destructor:city.person.v1.GetPersonsRequest)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void GetPersonsRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.person_ids_.~RepeatedField();
+  _impl_.exclude_statuses_.~RepeatedField();
+}
+
+void GetPersonsRequest::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void GetPersonsRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:city.person.v1.GetPersonsRequest)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.person_ids_.Clear();
+  _impl_.exclude_statuses_.Clear();
+  _impl_.return_base_ = false;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* GetPersonsRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // repeated int32 person_ids = 1 [json_name = "personIds"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_person_ids(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<uint8_t>(tag) == 8) {
+          _internal_add_person_ids(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated .city.person.v1.Status exclude_statuses = 2 [json_name = "excludeStatuses"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedEnumParser(_internal_mutable_exclude_statuses(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<uint8_t>(tag) == 16) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_add_exclude_statuses(static_cast<::city::person::v1::Status>(val));
+        } else
+          goto handle_unusual;
+        continue;
+      // bool return_base = 3 [json_name = "returnBase"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+          _impl_.return_base_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* GetPersonsRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:city.person.v1.GetPersonsRequest)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated int32 person_ids = 1 [json_name = "personIds"];
+  {
+    int byte_size = _impl_._person_ids_cached_byte_size_.load(std::memory_order_relaxed);
+    if (byte_size > 0) {
+      target = stream->WriteInt32Packed(
+          1, _internal_person_ids(), byte_size, target);
+    }
+  }
+
+  // repeated .city.person.v1.Status exclude_statuses = 2 [json_name = "excludeStatuses"];
+  {
+    int byte_size = _impl_._exclude_statuses_cached_byte_size_.load(std::memory_order_relaxed);
+    if (byte_size > 0) {
+      target = stream->WriteEnumPacked(
+          2, _impl_.exclude_statuses_, byte_size, target);
+    }
+  }
+
+  // bool return_base = 3 [json_name = "returnBase"];
+  if (this->_internal_return_base() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(3, this->_internal_return_base(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:city.person.v1.GetPersonsRequest)
+  return target;
+}
+
+size_t GetPersonsRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:city.person.v1.GetPersonsRequest)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated int32 person_ids = 1 [json_name = "personIds"];
+  {
+    size_t data_size = ::_pbi::WireFormatLite::
+      Int32Size(this->_impl_.person_ids_);
+    if (data_size > 0) {
+      total_size += 1 +
+        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
+    }
+    int cached_size = ::_pbi::ToCachedSize(data_size);
+    _impl_._person_ids_cached_byte_size_.store(cached_size,
+                                    std::memory_order_relaxed);
+    total_size += data_size;
+  }
+
+  // repeated .city.person.v1.Status exclude_statuses = 2 [json_name = "excludeStatuses"];
+  {
+    size_t data_size = 0;
+    unsigned int count = static_cast<unsigned int>(this->_internal_exclude_statuses_size());for (unsigned int i = 0; i < count; i++) {
+      data_size += ::_pbi::WireFormatLite::EnumSize(
+        this->_internal_exclude_statuses(static_cast<int>(i)));
+    }
+    if (data_size > 0) {
+      total_size += 1 +
+        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
+    }
+    int cached_size = ::_pbi::ToCachedSize(data_size);
+    _impl_._exclude_statuses_cached_byte_size_.store(cached_size,
+                                    std::memory_order_relaxed);
+    total_size += data_size;
+  }
+
+  // bool return_base = 3 [json_name = "returnBase"];
+  if (this->_internal_return_base() != 0) {
+    total_size += 1 + 1;
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetPersonsRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    GetPersonsRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetPersonsRequest::GetClassData() const { return &_class_data_; }
+
+
+void GetPersonsRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<GetPersonsRequest*>(&to_msg);
+  auto& from = static_cast<const GetPersonsRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:city.person.v1.GetPersonsRequest)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_impl_.person_ids_.MergeFrom(from._impl_.person_ids_);
+  _this->_impl_.exclude_statuses_.MergeFrom(from._impl_.exclude_statuses_);
+  if (from._internal_return_base() != 0) {
+    _this->_internal_set_return_base(from._internal_return_base());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void GetPersonsRequest::CopyFrom(const GetPersonsRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:city.person.v1.GetPersonsRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetPersonsRequest::IsInitialized() const {
+  return true;
+}
+
+void GetPersonsRequest::InternalSwap(GetPersonsRequest* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _impl_.person_ids_.InternalSwap(&other->_impl_.person_ids_);
+  _impl_.exclude_statuses_.InternalSwap(&other->_impl_.exclude_statuses_);
+  swap(_impl_.return_base_, other->_impl_.return_base_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetPersonsRequest::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2fperson_2fv1_2fperson_5fservice_2eproto_getter, &descriptor_table_city_2fperson_2fv1_2fperson_5fservice_2eproto_once,
+      file_level_metadata_city_2fperson_2fv1_2fperson_5fservice_2eproto[6]);
+}
+
+// ===================================================================
+
+class GetPersonsResponse::_Internal {
+ public:
+};
+
+void GetPersonsResponse::clear_persons() {
+  _impl_.persons_.Clear();
+}
+GetPersonsResponse::GetPersonsResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:city.person.v1.GetPersonsResponse)
+}
+GetPersonsResponse::GetPersonsResponse(const GetPersonsResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  GetPersonsResponse* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.persons_){from._impl_.persons_}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:city.person.v1.GetPersonsResponse)
+}
+
+inline void GetPersonsResponse::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.persons_){arena}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+}
+
+GetPersonsResponse::~GetPersonsResponse() {
+  // @@protoc_insertion_point(destructor:city.person.v1.GetPersonsResponse)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void GetPersonsResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.persons_.~RepeatedPtrField();
+}
+
+void GetPersonsResponse::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void GetPersonsResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:city.person.v1.GetPersonsResponse)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.persons_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* GetPersonsResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // repeated .city.person.v1.PersonRuntime persons = 1 [json_name = "persons"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_persons(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* GetPersonsResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:city.person.v1.GetPersonsResponse)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated .city.person.v1.PersonRuntime persons = 1 [json_name = "persons"];
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_persons_size()); i < n; i++) {
+    const auto& repfield = this->_internal_persons(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:city.person.v1.GetPersonsResponse)
+  return target;
+}
+
+size_t GetPersonsResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:city.person.v1.GetPersonsResponse)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated .city.person.v1.PersonRuntime persons = 1 [json_name = "persons"];
+  total_size += 1UL * this->_internal_persons_size();
+  for (const auto& msg : this->_impl_.persons_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetPersonsResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    GetPersonsResponse::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetPersonsResponse::GetClassData() const { return &_class_data_; }
+
+
+void GetPersonsResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<GetPersonsResponse*>(&to_msg);
+  auto& from = static_cast<const GetPersonsResponse&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:city.person.v1.GetPersonsResponse)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_impl_.persons_.MergeFrom(from._impl_.persons_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void GetPersonsResponse::CopyFrom(const GetPersonsResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:city.person.v1.GetPersonsResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetPersonsResponse::IsInitialized() const {
+  return true;
+}
+
+void GetPersonsResponse::InternalSwap(GetPersonsResponse* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _impl_.persons_.InternalSwap(&other->_impl_.persons_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetPersonsResponse::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2fperson_2fv1_2fperson_5fservice_2eproto_getter, &descriptor_table_city_2fperson_2fv1_2fperson_5fservice_2eproto_once,
+      file_level_metadata_city_2fperson_2fv1_2fperson_5fservice_2eproto[7]);
+}
+
+// ===================================================================
+
 class GetPersonByLongLatBBoxRequest::_Internal {
  public:
   static const ::city::geo::v2::LongLatBBox& bbox(const GetPersonByLongLatBBoxRequest* msg);
@@ -1563,12 +2074,14 @@ GetPersonByLongLatBBoxRequest::GetPersonByLongLatBBoxRequest(const GetPersonByLo
       decltype(_impl_.exclude_statuses_){from._impl_.exclude_statuses_}
     , /*decltype(_impl_._exclude_statuses_cached_byte_size_)*/{0}
     , decltype(_impl_.bbox_){nullptr}
+    , decltype(_impl_.return_base_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_bbox()) {
     _this->_impl_.bbox_ = new ::city::geo::v2::LongLatBBox(*from._impl_.bbox_);
   }
+  _this->_impl_.return_base_ = from._impl_.return_base_;
   // @@protoc_insertion_point(copy_constructor:city.person.v1.GetPersonByLongLatBBoxRequest)
 }
 
@@ -1580,6 +2093,7 @@ inline void GetPersonByLongLatBBoxRequest::SharedCtor(
       decltype(_impl_.exclude_statuses_){arena}
     , /*decltype(_impl_._exclude_statuses_cached_byte_size_)*/{0}
     , decltype(_impl_.bbox_){nullptr}
+    , decltype(_impl_.return_base_){false}
     , /*decltype(_impl_._cached_size_)*/{}
   };
 }
@@ -1614,6 +2128,7 @@ void GetPersonByLongLatBBoxRequest::Clear() {
     delete _impl_.bbox_;
   }
   _impl_.bbox_ = nullptr;
+  _impl_.return_base_ = false;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1640,6 +2155,14 @@ const char* GetPersonByLongLatBBoxRequest::_InternalParse(const char* ptr, ::_pb
           uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_add_exclude_statuses(static_cast<::city::person::v1::Status>(val));
+        } else
+          goto handle_unusual;
+        continue;
+      // bool return_base = 3 [json_name = "returnBase"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+          _impl_.return_base_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
@@ -1688,6 +2211,12 @@ uint8_t* GetPersonByLongLatBBoxRequest::_InternalSerialize(
     }
   }
 
+  // bool return_base = 3 [json_name = "returnBase"];
+  if (this->_internal_return_base() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(3, this->_internal_return_base(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -1728,6 +2257,11 @@ size_t GetPersonByLongLatBBoxRequest::ByteSizeLong() const {
         *_impl_.bbox_);
   }
 
+  // bool return_base = 3 [json_name = "returnBase"];
+  if (this->_internal_return_base() != 0) {
+    total_size += 1 + 1;
+  }
+
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
@@ -1751,6 +2285,9 @@ void GetPersonByLongLatBBoxRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& 
     _this->_internal_mutable_bbox()->::city::geo::v2::LongLatBBox::MergeFrom(
         from._internal_bbox());
   }
+  if (from._internal_return_base() != 0) {
+    _this->_internal_set_return_base(from._internal_return_base());
+  }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -1769,13 +2306,18 @@ void GetPersonByLongLatBBoxRequest::InternalSwap(GetPersonByLongLatBBoxRequest* 
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   _impl_.exclude_statuses_.InternalSwap(&other->_impl_.exclude_statuses_);
-  swap(_impl_.bbox_, other->_impl_.bbox_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(GetPersonByLongLatBBoxRequest, _impl_.return_base_)
+      + sizeof(GetPersonByLongLatBBoxRequest::_impl_.return_base_)
+      - PROTOBUF_FIELD_OFFSET(GetPersonByLongLatBBoxRequest, _impl_.bbox_)>(
+          reinterpret_cast<char*>(&_impl_.bbox_),
+          reinterpret_cast<char*>(&other->_impl_.bbox_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GetPersonByLongLatBBoxRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fperson_2fv1_2fperson_5fservice_2eproto_getter, &descriptor_table_city_2fperson_2fv1_2fperson_5fservice_2eproto_once,
-      file_level_metadata_city_2fperson_2fv1_2fperson_5fservice_2eproto[6]);
+      file_level_metadata_city_2fperson_2fv1_2fperson_5fservice_2eproto[8]);
 }
 
 // ===================================================================
@@ -1784,8 +2326,8 @@ class GetPersonByLongLatBBoxResponse::_Internal {
  public:
 };
 
-void GetPersonByLongLatBBoxResponse::clear_motions() {
-  _impl_.motions_.Clear();
+void GetPersonByLongLatBBoxResponse::clear_persons() {
+  _impl_.persons_.Clear();
 }
 GetPersonByLongLatBBoxResponse::GetPersonByLongLatBBoxResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
@@ -1797,7 +2339,7 @@ GetPersonByLongLatBBoxResponse::GetPersonByLongLatBBoxResponse(const GetPersonBy
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   GetPersonByLongLatBBoxResponse* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.motions_){from._impl_.motions_}
+      decltype(_impl_.persons_){from._impl_.persons_}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
@@ -1809,7 +2351,7 @@ inline void GetPersonByLongLatBBoxResponse::SharedCtor(
   (void)arena;
   (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.motions_){arena}
+      decltype(_impl_.persons_){arena}
     , /*decltype(_impl_._cached_size_)*/{}
   };
 }
@@ -1825,7 +2367,7 @@ GetPersonByLongLatBBoxResponse::~GetPersonByLongLatBBoxResponse() {
 
 inline void GetPersonByLongLatBBoxResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.motions_.~RepeatedPtrField();
+  _impl_.persons_.~RepeatedPtrField();
 }
 
 void GetPersonByLongLatBBoxResponse::SetCachedSize(int size) const {
@@ -1838,7 +2380,7 @@ void GetPersonByLongLatBBoxResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.motions_.Clear();
+  _impl_.persons_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1848,13 +2390,13 @@ const char* GetPersonByLongLatBBoxResponse::_InternalParse(const char* ptr, ::_p
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // repeated .city.person.v1.PersonMotion motions = 1 [json_name = "motions"];
+      // repeated .city.person.v1.PersonRuntime persons = 1 [json_name = "persons"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr -= 1;
           do {
             ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_motions(), ptr);
+            ptr = ctx->ParseMessage(_internal_add_persons(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
@@ -1890,10 +2432,10 @@ uint8_t* GetPersonByLongLatBBoxResponse::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated .city.person.v1.PersonMotion motions = 1 [json_name = "motions"];
+  // repeated .city.person.v1.PersonRuntime persons = 1 [json_name = "persons"];
   for (unsigned i = 0,
-      n = static_cast<unsigned>(this->_internal_motions_size()); i < n; i++) {
-    const auto& repfield = this->_internal_motions(i);
+      n = static_cast<unsigned>(this->_internal_persons_size()); i < n; i++) {
+    const auto& repfield = this->_internal_persons(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
         InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
   }
@@ -1914,9 +2456,9 @@ size_t GetPersonByLongLatBBoxResponse::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .city.person.v1.PersonMotion motions = 1 [json_name = "motions"];
-  total_size += 1UL * this->_internal_motions_size();
-  for (const auto& msg : this->_impl_.motions_) {
+  // repeated .city.person.v1.PersonRuntime persons = 1 [json_name = "persons"];
+  total_size += 1UL * this->_internal_persons_size();
+  for (const auto& msg : this->_impl_.persons_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
@@ -1939,7 +2481,7 @@ void GetPersonByLongLatBBoxResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message&
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  _this->_impl_.motions_.MergeFrom(from._impl_.motions_);
+  _this->_impl_.persons_.MergeFrom(from._impl_.persons_);
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -1957,13 +2499,13 @@ bool GetPersonByLongLatBBoxResponse::IsInitialized() const {
 void GetPersonByLongLatBBoxResponse::InternalSwap(GetPersonByLongLatBBoxResponse* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  _impl_.motions_.InternalSwap(&other->_impl_.motions_);
+  _impl_.persons_.InternalSwap(&other->_impl_.persons_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GetPersonByLongLatBBoxResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fperson_2fv1_2fperson_5fservice_2eproto_getter, &descriptor_table_city_2fperson_2fv1_2fperson_5fservice_2eproto_once,
-      file_level_metadata_city_2fperson_2fv1_2fperson_5fservice_2eproto[7]);
+      file_level_metadata_city_2fperson_2fv1_2fperson_5fservice_2eproto[9]);
 }
 
 // ===================================================================
@@ -2003,7 +2545,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetAllVehiclesRequest::GetClas
 ::PROTOBUF_NAMESPACE_ID::Metadata GetAllVehiclesRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fperson_2fv1_2fperson_5fservice_2eproto_getter, &descriptor_table_city_2fperson_2fv1_2fperson_5fservice_2eproto_once,
-      file_level_metadata_city_2fperson_2fv1_2fperson_5fservice_2eproto[8]);
+      file_level_metadata_city_2fperson_2fv1_2fperson_5fservice_2eproto[10]);
 }
 
 // ===================================================================
@@ -2191,7 +2733,277 @@ void GetAllVehiclesResponse::InternalSwap(GetAllVehiclesResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata GetAllVehiclesResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fperson_2fv1_2fperson_5fservice_2eproto_getter, &descriptor_table_city_2fperson_2fv1_2fperson_5fservice_2eproto_once,
-      file_level_metadata_city_2fperson_2fv1_2fperson_5fservice_2eproto[9]);
+      file_level_metadata_city_2fperson_2fv1_2fperson_5fservice_2eproto[11]);
+}
+
+// ===================================================================
+
+class ResetPersonPositionRequest::_Internal {
+ public:
+  static const ::city::geo::v2::Position& position(const ResetPersonPositionRequest* msg);
+};
+
+const ::city::geo::v2::Position&
+ResetPersonPositionRequest::_Internal::position(const ResetPersonPositionRequest* msg) {
+  return *msg->_impl_.position_;
+}
+void ResetPersonPositionRequest::clear_position() {
+  if (GetArenaForAllocation() == nullptr && _impl_.position_ != nullptr) {
+    delete _impl_.position_;
+  }
+  _impl_.position_ = nullptr;
+}
+ResetPersonPositionRequest::ResetPersonPositionRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:city.person.v1.ResetPersonPositionRequest)
+}
+ResetPersonPositionRequest::ResetPersonPositionRequest(const ResetPersonPositionRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  ResetPersonPositionRequest* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.position_){nullptr}
+    , decltype(_impl_.person_id_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  if (from._internal_has_position()) {
+    _this->_impl_.position_ = new ::city::geo::v2::Position(*from._impl_.position_);
+  }
+  _this->_impl_.person_id_ = from._impl_.person_id_;
+  // @@protoc_insertion_point(copy_constructor:city.person.v1.ResetPersonPositionRequest)
+}
+
+inline void ResetPersonPositionRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.position_){nullptr}
+    , decltype(_impl_.person_id_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+}
+
+ResetPersonPositionRequest::~ResetPersonPositionRequest() {
+  // @@protoc_insertion_point(destructor:city.person.v1.ResetPersonPositionRequest)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void ResetPersonPositionRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  if (this != internal_default_instance()) delete _impl_.position_;
+}
+
+void ResetPersonPositionRequest::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void ResetPersonPositionRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:city.person.v1.ResetPersonPositionRequest)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  if (GetArenaForAllocation() == nullptr && _impl_.position_ != nullptr) {
+    delete _impl_.position_;
+  }
+  _impl_.position_ = nullptr;
+  _impl_.person_id_ = 0;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* ResetPersonPositionRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 person_id = 1 [json_name = "personId"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.person_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .city.geo.v2.Position position = 2 [json_name = "position"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr = ctx->ParseMessage(_internal_mutable_position(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* ResetPersonPositionRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:city.person.v1.ResetPersonPositionRequest)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 person_id = 1 [json_name = "personId"];
+  if (this->_internal_person_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_person_id(), target);
+  }
+
+  // .city.geo.v2.Position position = 2 [json_name = "position"];
+  if (this->_internal_has_position()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(2, _Internal::position(this),
+        _Internal::position(this).GetCachedSize(), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:city.person.v1.ResetPersonPositionRequest)
+  return target;
+}
+
+size_t ResetPersonPositionRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:city.person.v1.ResetPersonPositionRequest)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // .city.geo.v2.Position position = 2 [json_name = "position"];
+  if (this->_internal_has_position()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.position_);
+  }
+
+  // int32 person_id = 1 [json_name = "personId"];
+  if (this->_internal_person_id() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_person_id());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ResetPersonPositionRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    ResetPersonPositionRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ResetPersonPositionRequest::GetClassData() const { return &_class_data_; }
+
+
+void ResetPersonPositionRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<ResetPersonPositionRequest*>(&to_msg);
+  auto& from = static_cast<const ResetPersonPositionRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:city.person.v1.ResetPersonPositionRequest)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_has_position()) {
+    _this->_internal_mutable_position()->::city::geo::v2::Position::MergeFrom(
+        from._internal_position());
+  }
+  if (from._internal_person_id() != 0) {
+    _this->_internal_set_person_id(from._internal_person_id());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void ResetPersonPositionRequest::CopyFrom(const ResetPersonPositionRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:city.person.v1.ResetPersonPositionRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ResetPersonPositionRequest::IsInitialized() const {
+  return true;
+}
+
+void ResetPersonPositionRequest::InternalSwap(ResetPersonPositionRequest* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(ResetPersonPositionRequest, _impl_.person_id_)
+      + sizeof(ResetPersonPositionRequest::_impl_.person_id_)
+      - PROTOBUF_FIELD_OFFSET(ResetPersonPositionRequest, _impl_.position_)>(
+          reinterpret_cast<char*>(&_impl_.position_),
+          reinterpret_cast<char*>(&other->_impl_.position_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata ResetPersonPositionRequest::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2fperson_2fv1_2fperson_5fservice_2eproto_getter, &descriptor_table_city_2fperson_2fv1_2fperson_5fservice_2eproto_once,
+      file_level_metadata_city_2fperson_2fv1_2fperson_5fservice_2eproto[12]);
+}
+
+// ===================================================================
+
+class ResetPersonPositionResponse::_Internal {
+ public:
+};
+
+ResetPersonPositionResponse::ResetPersonPositionResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
+  // @@protoc_insertion_point(arena_constructor:city.person.v1.ResetPersonPositionResponse)
+}
+ResetPersonPositionResponse::ResetPersonPositionResponse(const ResetPersonPositionResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
+  ResetPersonPositionResponse* const _this = this; (void)_this;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:city.person.v1.ResetPersonPositionResponse)
+}
+
+
+
+
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ResetPersonPositionResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ResetPersonPositionResponse::GetClassData() const { return &_class_data_; }
+
+
+
+
+
+
+
+::PROTOBUF_NAMESPACE_ID::Metadata ResetPersonPositionResponse::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2fperson_2fv1_2fperson_5fservice_2eproto_getter, &descriptor_table_city_2fperson_2fv1_2fperson_5fservice_2eproto_once,
+      file_level_metadata_city_2fperson_2fv1_2fperson_5fservice_2eproto[13]);
 }
 
 // ===================================================================
@@ -2384,7 +3196,7 @@ void SetControlledVehicleIDsRequest::InternalSwap(SetControlledVehicleIDsRequest
 ::PROTOBUF_NAMESPACE_ID::Metadata SetControlledVehicleIDsRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fperson_2fv1_2fperson_5fservice_2eproto_getter, &descriptor_table_city_2fperson_2fv1_2fperson_5fservice_2eproto_once,
-      file_level_metadata_city_2fperson_2fv1_2fperson_5fservice_2eproto[10]);
+      file_level_metadata_city_2fperson_2fv1_2fperson_5fservice_2eproto[14]);
 }
 
 // ===================================================================
@@ -2424,7 +3236,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SetControlledVehicleIDsRespons
 ::PROTOBUF_NAMESPACE_ID::Metadata SetControlledVehicleIDsResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fperson_2fv1_2fperson_5fservice_2eproto_getter, &descriptor_table_city_2fperson_2fv1_2fperson_5fservice_2eproto_once,
-      file_level_metadata_city_2fperson_2fv1_2fperson_5fservice_2eproto[11]);
+      file_level_metadata_city_2fperson_2fv1_2fperson_5fservice_2eproto[15]);
 }
 
 // ===================================================================
@@ -2464,7 +3276,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*FetchControlledVehicleEnvsRequ
 ::PROTOBUF_NAMESPACE_ID::Metadata FetchControlledVehicleEnvsRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fperson_2fv1_2fperson_5fservice_2eproto_getter, &descriptor_table_city_2fperson_2fv1_2fperson_5fservice_2eproto_once,
-      file_level_metadata_city_2fperson_2fv1_2fperson_5fservice_2eproto[12]);
+      file_level_metadata_city_2fperson_2fv1_2fperson_5fservice_2eproto[16]);
 }
 
 // ===================================================================
@@ -2652,7 +3464,7 @@ void FetchControlledVehicleEnvsResponse::InternalSwap(FetchControlledVehicleEnvs
 ::PROTOBUF_NAMESPACE_ID::Metadata FetchControlledVehicleEnvsResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fperson_2fv1_2fperson_5fservice_2eproto_getter, &descriptor_table_city_2fperson_2fv1_2fperson_5fservice_2eproto_once,
-      file_level_metadata_city_2fperson_2fv1_2fperson_5fservice_2eproto[13]);
+      file_level_metadata_city_2fperson_2fv1_2fperson_5fservice_2eproto[17]);
 }
 
 // ===================================================================
@@ -2840,7 +3652,7 @@ void SetControlledVehicleActionsRequest::InternalSwap(SetControlledVehicleAction
 ::PROTOBUF_NAMESPACE_ID::Metadata SetControlledVehicleActionsRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fperson_2fv1_2fperson_5fservice_2eproto_getter, &descriptor_table_city_2fperson_2fv1_2fperson_5fservice_2eproto_once,
-      file_level_metadata_city_2fperson_2fv1_2fperson_5fservice_2eproto[14]);
+      file_level_metadata_city_2fperson_2fv1_2fperson_5fservice_2eproto[18]);
 }
 
 // ===================================================================
@@ -2880,7 +3692,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SetControlledVehicleActionsRes
 ::PROTOBUF_NAMESPACE_ID::Metadata SetControlledVehicleActionsResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fperson_2fv1_2fperson_5fservice_2eproto_getter, &descriptor_table_city_2fperson_2fv1_2fperson_5fservice_2eproto_once,
-      file_level_metadata_city_2fperson_2fv1_2fperson_5fservice_2eproto[15]);
+      file_level_metadata_city_2fperson_2fv1_2fperson_5fservice_2eproto[19]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
@@ -2912,6 +3724,14 @@ template<> PROTOBUF_NOINLINE ::city::person::v1::SetScheduleResponse*
 Arena::CreateMaybeMessage< ::city::person::v1::SetScheduleResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::city::person::v1::SetScheduleResponse >(arena);
 }
+template<> PROTOBUF_NOINLINE ::city::person::v1::GetPersonsRequest*
+Arena::CreateMaybeMessage< ::city::person::v1::GetPersonsRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::person::v1::GetPersonsRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::person::v1::GetPersonsResponse*
+Arena::CreateMaybeMessage< ::city::person::v1::GetPersonsResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::person::v1::GetPersonsResponse >(arena);
+}
 template<> PROTOBUF_NOINLINE ::city::person::v1::GetPersonByLongLatBBoxRequest*
 Arena::CreateMaybeMessage< ::city::person::v1::GetPersonByLongLatBBoxRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::city::person::v1::GetPersonByLongLatBBoxRequest >(arena);
@@ -2927,6 +3747,14 @@ Arena::CreateMaybeMessage< ::city::person::v1::GetAllVehiclesRequest >(Arena* ar
 template<> PROTOBUF_NOINLINE ::city::person::v1::GetAllVehiclesResponse*
 Arena::CreateMaybeMessage< ::city::person::v1::GetAllVehiclesResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::city::person::v1::GetAllVehiclesResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::person::v1::ResetPersonPositionRequest*
+Arena::CreateMaybeMessage< ::city::person::v1::ResetPersonPositionRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::person::v1::ResetPersonPositionRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::person::v1::ResetPersonPositionResponse*
+Arena::CreateMaybeMessage< ::city::person::v1::ResetPersonPositionResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::person::v1::ResetPersonPositionResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::city::person::v1::SetControlledVehicleIDsRequest*
 Arena::CreateMaybeMessage< ::city::person::v1::SetControlledVehicleIDsRequest >(Arena* arena) {

@@ -27,7 +27,7 @@ type GetPersonRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 待查询的人的ID列表（为空时查询所有人）
-	PersonIds []int32 `protobuf:"varint,1,rep,packed,name=person_ids,json=personIds,proto3" json:"person_ids,omitempty" yaml:"person_ids" bson:"person_ids" db:"person_ids"`
+	PersonIds []int32 `protobuf:"varint,1,rep,packed,name=person_ids,json=personIds,proto3" json:"person_ids,omitempty" db:"person_ids" yaml:"person_ids" bson:"person_ids"`
 }
 
 func (x *GetPersonRequest) Reset() {
@@ -76,7 +76,7 @@ type GetPersonResponse struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 人的经济情况
-	Persons []*Person `protobuf:"bytes,1,rep,name=persons,proto3" json:"persons,omitempty" yaml:"persons" bson:"persons" db:"persons"`
+	Persons []*Person `protobuf:"bytes,1,rep,name=persons,proto3" json:"persons,omitempty" bson:"persons" db:"persons" yaml:"persons"`
 }
 
 func (x *GetPersonResponse) Reset() {
@@ -125,7 +125,7 @@ type UpdatePersonMoneyRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 待修改的人员资金变动
-	Items []*UpdatePersonMoneyRequestItem `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty" db:"items" yaml:"items" bson:"items"`
+	Items []*UpdatePersonMoneyRequestItem `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty" yaml:"items" bson:"items" db:"items"`
 }
 
 func (x *UpdatePersonMoneyRequest) Reset() {
@@ -232,7 +232,7 @@ type UpdatePersonMoneyResponse struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 修改后的人的经济情况
-	Persons []*Person `protobuf:"bytes,1,rep,name=persons,proto3" json:"persons,omitempty" bson:"persons" db:"persons" yaml:"persons"`
+	Persons []*Person `protobuf:"bytes,1,rep,name=persons,proto3" json:"persons,omitempty" yaml:"persons" bson:"persons" db:"persons"`
 }
 
 func (x *UpdatePersonMoneyResponse) Reset() {

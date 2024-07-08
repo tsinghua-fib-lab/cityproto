@@ -48,7 +48,7 @@ export const Event = proto3.makeMessageType(
   "city.event.v2.Event",
   () => [
     { no: 1, name: "topic", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "id", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
     { no: 3, name: "subject", kind: "message", T: Entity },
     { no: 4, name: "content", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 5, name: "position", kind: "message", T: Position },

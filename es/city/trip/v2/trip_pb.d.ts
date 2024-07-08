@@ -72,8 +72,8 @@ export declare class Trip extends Message<Trip> {
   mode: TripMode;
 
   /**
-   * 目的地
-   * destination
+   * 目的地，如果目的地是AOI且指定了XYPosition，则以XYPosition为室内步行的终点
+   * destination, if the destination is AOI and XYPosition is specified, XYPosition is the end point of indoor walking
    *
    * @generated from field: city.geo.v2.Position end = 2;
    */

@@ -4,10 +4,11 @@
 // @ts-nocheck
 
 import { proto3 } from "@bufbuild/protobuf";
+import { PersonRuntime } from "./person_runtime_pb.js";
 import { Person } from "./person_pb.js";
-import { PersonMotion, Status } from "./motion_pb.js";
 import { Schedule } from "../../trip/v2/trip_pb.js";
-import { LongLatBBox } from "../../geo/v2/geo_pb.js";
+import { Status } from "./motion_pb.js";
+import { LongLatBBox, Position } from "../../geo/v2/geo_pb.js";
 import { VehicleAction, VehicleEnv, VehicleRuntime } from "./vehicle_pb.js";
 
 /**
@@ -32,8 +33,7 @@ export const GetPersonRequest = proto3.makeMessageType(
 export const GetPersonResponse = proto3.makeMessageType(
   "city.person.v1.GetPersonResponse",
   () => [
-    { no: 1, name: "base", kind: "message", T: Person },
-    { no: 2, name: "motion", kind: "message", T: PersonMotion },
+    { no: 1, name: "person", kind: "message", T: PersonRuntime },
   ],
 );
 
@@ -89,6 +89,34 @@ export const SetScheduleResponse = proto3.makeMessageType(
 );
 
 /**
+ * 获取多个person信息请求
+ * Request for getting information of multiple persons
+ *
+ * @generated from message city.person.v1.GetPersonsRequest
+ */
+export const GetPersonsRequest = proto3.makeMessageType(
+  "city.person.v1.GetPersonsRequest",
+  () => [
+    { no: 1, name: "person_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 2, name: "exclude_statuses", kind: "enum", T: proto3.getEnumType(Status), repeated: true },
+    { no: 3, name: "return_base", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ],
+);
+
+/**
+ * 获取多个person信息响应
+ * Response of getting information of multiple persons
+ *
+ * @generated from message city.person.v1.GetPersonsResponse
+ */
+export const GetPersonsResponse = proto3.makeMessageType(
+  "city.person.v1.GetPersonsResponse",
+  () => [
+    { no: 1, name: "persons", kind: "message", T: PersonRuntime, repeated: true },
+  ],
+);
+
+/**
  * 获取特定区域内的person请求
  * Request for getting persons in region
  *
@@ -99,6 +127,7 @@ export const GetPersonByLongLatBBoxRequest = proto3.makeMessageType(
   () => [
     { no: 1, name: "bbox", kind: "message", T: LongLatBBox },
     { no: 2, name: "exclude_statuses", kind: "enum", T: proto3.getEnumType(Status), repeated: true },
+    { no: 3, name: "return_base", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 
@@ -111,7 +140,7 @@ export const GetPersonByLongLatBBoxRequest = proto3.makeMessageType(
 export const GetPersonByLongLatBBoxResponse = proto3.makeMessageType(
   "city.person.v1.GetPersonByLongLatBBoxResponse",
   () => [
-    { no: 1, name: "motions", kind: "message", T: PersonMotion, repeated: true },
+    { no: 1, name: "persons", kind: "message", T: PersonRuntime, repeated: true },
   ],
 );
 
@@ -137,6 +166,31 @@ export const GetAllVehiclesResponse = proto3.makeMessageType(
   () => [
     { no: 1, name: "vehicles", kind: "message", T: VehicleRuntime, repeated: true },
   ],
+);
+
+/**
+ * 重置人的位置请求
+ * Request for resetting person's position
+ *
+ * @generated from message city.person.v1.ResetPersonPositionRequest
+ */
+export const ResetPersonPositionRequest = proto3.makeMessageType(
+  "city.person.v1.ResetPersonPositionRequest",
+  () => [
+    { no: 1, name: "person_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "position", kind: "message", T: Position },
+  ],
+);
+
+/**
+ * 重置人的位置响应
+ * Response of resetting person's position
+ *
+ * @generated from message city.person.v1.ResetPersonPositionResponse
+ */
+export const ResetPersonPositionResponse = proto3.makeMessageType(
+  "city.person.v1.ResetPersonPositionResponse",
+  [],
 );
 
 /**

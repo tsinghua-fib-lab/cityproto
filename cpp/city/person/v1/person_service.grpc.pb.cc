@@ -27,8 +27,10 @@ static const char* PersonService_method_names[] = {
   "/city.person.v1.PersonService/GetPerson",
   "/city.person.v1.PersonService/AddPerson",
   "/city.person.v1.PersonService/SetSchedule",
+  "/city.person.v1.PersonService/GetPersons",
   "/city.person.v1.PersonService/GetPersonByLongLatBBox",
   "/city.person.v1.PersonService/GetAllVehicles",
+  "/city.person.v1.PersonService/ResetPersonPosition",
   "/city.person.v1.PersonService/SetControlledVehicleIDs",
   "/city.person.v1.PersonService/FetchControlledVehicleEnvs",
   "/city.person.v1.PersonService/SetControlledVehicleActions",
@@ -44,11 +46,13 @@ PersonService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& chan
   : channel_(channel), rpcmethod_GetPerson_(PersonService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_AddPerson_(PersonService_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_SetSchedule_(PersonService_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetPersonByLongLatBBox_(PersonService_method_names[3], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetAllVehicles_(PersonService_method_names[4], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_SetControlledVehicleIDs_(PersonService_method_names[5], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_FetchControlledVehicleEnvs_(PersonService_method_names[6], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_SetControlledVehicleActions_(PersonService_method_names[7], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetPersons_(PersonService_method_names[3], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetPersonByLongLatBBox_(PersonService_method_names[4], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetAllVehicles_(PersonService_method_names[5], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_ResetPersonPosition_(PersonService_method_names[6], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_SetControlledVehicleIDs_(PersonService_method_names[7], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_FetchControlledVehicleEnvs_(PersonService_method_names[8], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_SetControlledVehicleActions_(PersonService_method_names[9], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status PersonService::Stub::GetPerson(::grpc::ClientContext* context, const ::city::person::v1::GetPersonRequest& request, ::city::person::v1::GetPersonResponse* response) {
@@ -120,6 +124,29 @@ void PersonService::Stub::async::SetSchedule(::grpc::ClientContext* context, con
   return result;
 }
 
+::grpc::Status PersonService::Stub::GetPersons(::grpc::ClientContext* context, const ::city::person::v1::GetPersonsRequest& request, ::city::person::v1::GetPersonsResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::city::person::v1::GetPersonsRequest, ::city::person::v1::GetPersonsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetPersons_, context, request, response);
+}
+
+void PersonService::Stub::async::GetPersons(::grpc::ClientContext* context, const ::city::person::v1::GetPersonsRequest* request, ::city::person::v1::GetPersonsResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::city::person::v1::GetPersonsRequest, ::city::person::v1::GetPersonsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetPersons_, context, request, response, std::move(f));
+}
+
+void PersonService::Stub::async::GetPersons(::grpc::ClientContext* context, const ::city::person::v1::GetPersonsRequest* request, ::city::person::v1::GetPersonsResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetPersons_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::city::person::v1::GetPersonsResponse>* PersonService::Stub::PrepareAsyncGetPersonsRaw(::grpc::ClientContext* context, const ::city::person::v1::GetPersonsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::person::v1::GetPersonsResponse, ::city::person::v1::GetPersonsRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetPersons_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::city::person::v1::GetPersonsResponse>* PersonService::Stub::AsyncGetPersonsRaw(::grpc::ClientContext* context, const ::city::person::v1::GetPersonsRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncGetPersonsRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
 ::grpc::Status PersonService::Stub::GetPersonByLongLatBBox(::grpc::ClientContext* context, const ::city::person::v1::GetPersonByLongLatBBoxRequest& request, ::city::person::v1::GetPersonByLongLatBBoxResponse* response) {
   return ::grpc::internal::BlockingUnaryCall< ::city::person::v1::GetPersonByLongLatBBoxRequest, ::city::person::v1::GetPersonByLongLatBBoxResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetPersonByLongLatBBox_, context, request, response);
 }
@@ -162,6 +189,29 @@ void PersonService::Stub::async::GetAllVehicles(::grpc::ClientContext* context, 
 ::grpc::ClientAsyncResponseReader< ::city::person::v1::GetAllVehiclesResponse>* PersonService::Stub::AsyncGetAllVehiclesRaw(::grpc::ClientContext* context, const ::city::person::v1::GetAllVehiclesRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncGetAllVehiclesRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status PersonService::Stub::ResetPersonPosition(::grpc::ClientContext* context, const ::city::person::v1::ResetPersonPositionRequest& request, ::city::person::v1::ResetPersonPositionResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::city::person::v1::ResetPersonPositionRequest, ::city::person::v1::ResetPersonPositionResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_ResetPersonPosition_, context, request, response);
+}
+
+void PersonService::Stub::async::ResetPersonPosition(::grpc::ClientContext* context, const ::city::person::v1::ResetPersonPositionRequest* request, ::city::person::v1::ResetPersonPositionResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::city::person::v1::ResetPersonPositionRequest, ::city::person::v1::ResetPersonPositionResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_ResetPersonPosition_, context, request, response, std::move(f));
+}
+
+void PersonService::Stub::async::ResetPersonPosition(::grpc::ClientContext* context, const ::city::person::v1::ResetPersonPositionRequest* request, ::city::person::v1::ResetPersonPositionResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_ResetPersonPosition_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::city::person::v1::ResetPersonPositionResponse>* PersonService::Stub::PrepareAsyncResetPersonPositionRaw(::grpc::ClientContext* context, const ::city::person::v1::ResetPersonPositionRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::person::v1::ResetPersonPositionResponse, ::city::person::v1::ResetPersonPositionRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_ResetPersonPosition_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::city::person::v1::ResetPersonPositionResponse>* PersonService::Stub::AsyncResetPersonPositionRaw(::grpc::ClientContext* context, const ::city::person::v1::ResetPersonPositionRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncResetPersonPositionRaw(context, request, cq);
   result->StartCall();
   return result;
 }
@@ -269,6 +319,16 @@ PersonService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       PersonService_method_names[3],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< PersonService::Service, ::city::person::v1::GetPersonsRequest, ::city::person::v1::GetPersonsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](PersonService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::city::person::v1::GetPersonsRequest* req,
+             ::city::person::v1::GetPersonsResponse* resp) {
+               return service->GetPersons(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      PersonService_method_names[4],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< PersonService::Service, ::city::person::v1::GetPersonByLongLatBBoxRequest, ::city::person::v1::GetPersonByLongLatBBoxResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](PersonService::Service* service,
              ::grpc::ServerContext* ctx,
@@ -277,7 +337,7 @@ PersonService::Service::Service() {
                return service->GetPersonByLongLatBBox(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      PersonService_method_names[4],
+      PersonService_method_names[5],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< PersonService::Service, ::city::person::v1::GetAllVehiclesRequest, ::city::person::v1::GetAllVehiclesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](PersonService::Service* service,
@@ -287,7 +347,17 @@ PersonService::Service::Service() {
                return service->GetAllVehicles(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      PersonService_method_names[5],
+      PersonService_method_names[6],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< PersonService::Service, ::city::person::v1::ResetPersonPositionRequest, ::city::person::v1::ResetPersonPositionResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](PersonService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::city::person::v1::ResetPersonPositionRequest* req,
+             ::city::person::v1::ResetPersonPositionResponse* resp) {
+               return service->ResetPersonPosition(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      PersonService_method_names[7],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< PersonService::Service, ::city::person::v1::SetControlledVehicleIDsRequest, ::city::person::v1::SetControlledVehicleIDsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](PersonService::Service* service,
@@ -297,7 +367,7 @@ PersonService::Service::Service() {
                return service->SetControlledVehicleIDs(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      PersonService_method_names[6],
+      PersonService_method_names[8],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< PersonService::Service, ::city::person::v1::FetchControlledVehicleEnvsRequest, ::city::person::v1::FetchControlledVehicleEnvsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](PersonService::Service* service,
@@ -307,7 +377,7 @@ PersonService::Service::Service() {
                return service->FetchControlledVehicleEnvs(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      PersonService_method_names[7],
+      PersonService_method_names[9],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< PersonService::Service, ::city::person::v1::SetControlledVehicleActionsRequest, ::city::person::v1::SetControlledVehicleActionsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](PersonService::Service* service,
@@ -342,6 +412,13 @@ PersonService::Service::~Service() {
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
+::grpc::Status PersonService::Service::GetPersons(::grpc::ServerContext* context, const ::city::person::v1::GetPersonsRequest* request, ::city::person::v1::GetPersonsResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
 ::grpc::Status PersonService::Service::GetPersonByLongLatBBox(::grpc::ServerContext* context, const ::city::person::v1::GetPersonByLongLatBBoxRequest* request, ::city::person::v1::GetPersonByLongLatBBoxResponse* response) {
   (void) context;
   (void) request;
@@ -350,6 +427,13 @@ PersonService::Service::~Service() {
 }
 
 ::grpc::Status PersonService::Service::GetAllVehicles(::grpc::ServerContext* context, const ::city::person::v1::GetAllVehiclesRequest* request, ::city::person::v1::GetAllVehiclesResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status PersonService::Service::ResetPersonPosition(::grpc::ServerContext* context, const ::city::person::v1::ResetPersonPositionRequest* request, ::city::person::v1::ResetPersonPositionResponse* response) {
   (void) context;
   (void) request;
   (void) response;

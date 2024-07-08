@@ -5,10 +5,11 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
+import type { PersonRuntime } from "./person_runtime_pb.js";
 import type { Person } from "./person_pb.js";
-import type { PersonMotion, Status } from "./motion_pb.js";
 import type { Schedule } from "../../trip/v2/trip_pb.js";
-import type { LongLatBBox } from "../../geo/v2/geo_pb.js";
+import type { Status } from "./motion_pb.js";
+import type { LongLatBBox, Position } from "../../geo/v2/geo_pb.js";
 import type { VehicleAction, VehicleEnv, VehicleRuntime } from "./vehicle_pb.js";
 
 /**
@@ -48,20 +49,9 @@ export declare class GetPersonRequest extends Message<GetPersonRequest> {
  */
 export declare class GetPersonResponse extends Message<GetPersonResponse> {
   /**
-   * person信息
-   * person information
-   *
-   * @generated from field: city.person.v1.Person base = 1;
+   * @generated from field: city.person.v1.PersonRuntime person = 1;
    */
-  base?: Person;
-
-  /**
-   * person运动信息
-   * person motion information
-   *
-   * @generated from field: city.person.v1.PersonMotion motion = 2;
-   */
-  motion?: PersonMotion;
+  person?: PersonRuntime;
 
   constructor(data?: PartialMessage<GetPersonResponse>);
 
@@ -198,6 +188,82 @@ export declare class SetScheduleResponse extends Message<SetScheduleResponse> {
 }
 
 /**
+ * 获取多个person信息请求
+ * Request for getting information of multiple persons
+ *
+ * @generated from message city.person.v1.GetPersonsRequest
+ */
+export declare class GetPersonsRequest extends Message<GetPersonsRequest> {
+  /**
+   * person id列表，为空则返回所有person
+   * List of person ids, return all persons if empty
+   *
+   * @generated from field: repeated int32 person_ids = 1;
+   */
+  personIds: number[];
+
+  /**
+   * 过滤人的状态（状态为列表内的值的人不返回），即使包含在person_ids中
+   * Filter person's status (person whose status is in the list will not be returned), even if included in person_ids
+   *
+   * @generated from field: repeated city.person.v1.Status exclude_statuses = 2;
+   */
+  excludeStatuses: Status[];
+
+  /**
+   * 设置是否返回base信息
+   * Set whether to return base information
+   *
+   * @generated from field: bool return_base = 3;
+   */
+  returnBase: boolean;
+
+  constructor(data?: PartialMessage<GetPersonsRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.person.v1.GetPersonsRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetPersonsRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetPersonsRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetPersonsRequest;
+
+  static equals(a: GetPersonsRequest | PlainMessage<GetPersonsRequest> | undefined, b: GetPersonsRequest | PlainMessage<GetPersonsRequest> | undefined): boolean;
+}
+
+/**
+ * 获取多个person信息响应
+ * Response of getting information of multiple persons
+ *
+ * @generated from message city.person.v1.GetPersonsResponse
+ */
+export declare class GetPersonsResponse extends Message<GetPersonsResponse> {
+  /**
+   * person信息
+   * person information
+   *
+   * @generated from field: repeated city.person.v1.PersonRuntime persons = 1;
+   */
+  persons: PersonRuntime[];
+
+  constructor(data?: PartialMessage<GetPersonsResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.person.v1.GetPersonsResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetPersonsResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetPersonsResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetPersonsResponse;
+
+  static equals(a: GetPersonsResponse | PlainMessage<GetPersonsResponse> | undefined, b: GetPersonsResponse | PlainMessage<GetPersonsResponse> | undefined): boolean;
+}
+
+/**
  * 获取特定区域内的person请求
  * Request for getting persons in region
  *
@@ -219,6 +285,14 @@ export declare class GetPersonByLongLatBBoxRequest extends Message<GetPersonByLo
    * @generated from field: repeated city.person.v1.Status exclude_statuses = 2;
    */
   excludeStatuses: Status[];
+
+  /**
+   * 设置是否返回base信息
+   * Set whether to return base information
+   *
+   * @generated from field: bool return_base = 3;
+   */
+  returnBase: boolean;
 
   constructor(data?: PartialMessage<GetPersonByLongLatBBoxRequest>);
 
@@ -243,12 +317,12 @@ export declare class GetPersonByLongLatBBoxRequest extends Message<GetPersonByLo
  */
 export declare class GetPersonByLongLatBBoxResponse extends Message<GetPersonByLongLatBBoxResponse> {
   /**
-   * 区域内的person的运动信息
-   * motion status of persons in the region
+   * 区域内的person的信息
+   * Information of persons in the region
    *
-   * @generated from field: repeated city.person.v1.PersonMotion motions = 1;
+   * @generated from field: repeated city.person.v1.PersonRuntime persons = 1;
    */
-  motions: PersonMotion[];
+  persons: PersonRuntime[];
 
   constructor(data?: PartialMessage<GetPersonByLongLatBBoxResponse>);
 
@@ -315,6 +389,65 @@ export declare class GetAllVehiclesResponse extends Message<GetAllVehiclesRespon
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetAllVehiclesResponse;
 
   static equals(a: GetAllVehiclesResponse | PlainMessage<GetAllVehiclesResponse> | undefined, b: GetAllVehiclesResponse | PlainMessage<GetAllVehiclesResponse> | undefined): boolean;
+}
+
+/**
+ * 重置人的位置请求
+ * Request for resetting person's position
+ *
+ * @generated from message city.person.v1.ResetPersonPositionRequest
+ */
+export declare class ResetPersonPositionRequest extends Message<ResetPersonPositionRequest> {
+  /**
+   * person id
+   *
+   * @generated from field: int32 person_id = 1;
+   */
+  personId: number;
+
+  /**
+   * 重置位置
+   * reset position
+   *
+   * @generated from field: city.geo.v2.Position position = 2;
+   */
+  position?: Position;
+
+  constructor(data?: PartialMessage<ResetPersonPositionRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.person.v1.ResetPersonPositionRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ResetPersonPositionRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ResetPersonPositionRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ResetPersonPositionRequest;
+
+  static equals(a: ResetPersonPositionRequest | PlainMessage<ResetPersonPositionRequest> | undefined, b: ResetPersonPositionRequest | PlainMessage<ResetPersonPositionRequest> | undefined): boolean;
+}
+
+/**
+ * 重置人的位置响应
+ * Response of resetting person's position
+ *
+ * @generated from message city.person.v1.ResetPersonPositionResponse
+ */
+export declare class ResetPersonPositionResponse extends Message<ResetPersonPositionResponse> {
+  constructor(data?: PartialMessage<ResetPersonPositionResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.person.v1.ResetPersonPositionResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ResetPersonPositionResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ResetPersonPositionResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ResetPersonPositionResponse;
+
+  static equals(a: ResetPersonPositionResponse | PlainMessage<ResetPersonPositionResponse> | undefined, b: ResetPersonPositionResponse | PlainMessage<ResetPersonPositionResponse> | undefined): boolean;
 }
 
 /**

@@ -38,7 +38,7 @@ message Event {
   // 主题
   string topic = 1;
   // ID
-  int32 id = 2;
+  optional int32 id = 2;
   // 主语
   Entity subject = 3;
   // 谓词

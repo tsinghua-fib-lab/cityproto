@@ -34,6 +34,7 @@
 #include "city/geo/v2/geo.pb.h"
 #include "city/person/v1/motion.pb.h"
 #include "city/person/v1/person.pb.h"
+#include "city/person/v1/person_runtime.pb.h"
 #include "city/person/v1/vehicle.pb.h"
 #include "city/trip/v2/trip.pb.h"
 // @@protoc_insertion_point(includes)
@@ -83,6 +84,18 @@ extern GetPersonRequestDefaultTypeInternal _GetPersonRequest_default_instance_;
 class GetPersonResponse;
 struct GetPersonResponseDefaultTypeInternal;
 extern GetPersonResponseDefaultTypeInternal _GetPersonResponse_default_instance_;
+class GetPersonsRequest;
+struct GetPersonsRequestDefaultTypeInternal;
+extern GetPersonsRequestDefaultTypeInternal _GetPersonsRequest_default_instance_;
+class GetPersonsResponse;
+struct GetPersonsResponseDefaultTypeInternal;
+extern GetPersonsResponseDefaultTypeInternal _GetPersonsResponse_default_instance_;
+class ResetPersonPositionRequest;
+struct ResetPersonPositionRequestDefaultTypeInternal;
+extern ResetPersonPositionRequestDefaultTypeInternal _ResetPersonPositionRequest_default_instance_;
+class ResetPersonPositionResponse;
+struct ResetPersonPositionResponseDefaultTypeInternal;
+extern ResetPersonPositionResponseDefaultTypeInternal _ResetPersonPositionResponse_default_instance_;
 class SetControlledVehicleActionsRequest;
 struct SetControlledVehicleActionsRequestDefaultTypeInternal;
 extern SetControlledVehicleActionsRequestDefaultTypeInternal _SetControlledVehicleActionsRequest_default_instance_;
@@ -115,6 +128,10 @@ template<> ::city::person::v1::GetPersonByLongLatBBoxRequest* Arena::CreateMaybe
 template<> ::city::person::v1::GetPersonByLongLatBBoxResponse* Arena::CreateMaybeMessage<::city::person::v1::GetPersonByLongLatBBoxResponse>(Arena*);
 template<> ::city::person::v1::GetPersonRequest* Arena::CreateMaybeMessage<::city::person::v1::GetPersonRequest>(Arena*);
 template<> ::city::person::v1::GetPersonResponse* Arena::CreateMaybeMessage<::city::person::v1::GetPersonResponse>(Arena*);
+template<> ::city::person::v1::GetPersonsRequest* Arena::CreateMaybeMessage<::city::person::v1::GetPersonsRequest>(Arena*);
+template<> ::city::person::v1::GetPersonsResponse* Arena::CreateMaybeMessage<::city::person::v1::GetPersonsResponse>(Arena*);
+template<> ::city::person::v1::ResetPersonPositionRequest* Arena::CreateMaybeMessage<::city::person::v1::ResetPersonPositionRequest>(Arena*);
+template<> ::city::person::v1::ResetPersonPositionResponse* Arena::CreateMaybeMessage<::city::person::v1::ResetPersonPositionResponse>(Arena*);
 template<> ::city::person::v1::SetControlledVehicleActionsRequest* Arena::CreateMaybeMessage<::city::person::v1::SetControlledVehicleActionsRequest>(Arena*);
 template<> ::city::person::v1::SetControlledVehicleActionsResponse* Arena::CreateMaybeMessage<::city::person::v1::SetControlledVehicleActionsResponse>(Arena*);
 template<> ::city::person::v1::SetControlledVehicleIDsRequest* Arena::CreateMaybeMessage<::city::person::v1::SetControlledVehicleIDsRequest>(Arena*);
@@ -397,44 +414,25 @@ class GetPersonResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kBaseFieldNumber = 1,
-    kMotionFieldNumber = 2,
+    kPersonFieldNumber = 1,
   };
-  // .city.person.v1.Person base = 1 [json_name = "base"];
-  bool has_base() const;
+  // .city.person.v1.PersonRuntime person = 1 [json_name = "person"];
+  bool has_person() const;
   private:
-  bool _internal_has_base() const;
+  bool _internal_has_person() const;
   public:
-  void clear_base();
-  const ::city::person::v1::Person& base() const;
-  PROTOBUF_NODISCARD ::city::person::v1::Person* release_base();
-  ::city::person::v1::Person* mutable_base();
-  void set_allocated_base(::city::person::v1::Person* base);
+  void clear_person();
+  const ::city::person::v1::PersonRuntime& person() const;
+  PROTOBUF_NODISCARD ::city::person::v1::PersonRuntime* release_person();
+  ::city::person::v1::PersonRuntime* mutable_person();
+  void set_allocated_person(::city::person::v1::PersonRuntime* person);
   private:
-  const ::city::person::v1::Person& _internal_base() const;
-  ::city::person::v1::Person* _internal_mutable_base();
+  const ::city::person::v1::PersonRuntime& _internal_person() const;
+  ::city::person::v1::PersonRuntime* _internal_mutable_person();
   public:
-  void unsafe_arena_set_allocated_base(
-      ::city::person::v1::Person* base);
-  ::city::person::v1::Person* unsafe_arena_release_base();
-
-  // .city.person.v1.PersonMotion motion = 2 [json_name = "motion"];
-  bool has_motion() const;
-  private:
-  bool _internal_has_motion() const;
-  public:
-  void clear_motion();
-  const ::city::person::v1::PersonMotion& motion() const;
-  PROTOBUF_NODISCARD ::city::person::v1::PersonMotion* release_motion();
-  ::city::person::v1::PersonMotion* mutable_motion();
-  void set_allocated_motion(::city::person::v1::PersonMotion* motion);
-  private:
-  const ::city::person::v1::PersonMotion& _internal_motion() const;
-  ::city::person::v1::PersonMotion* _internal_mutable_motion();
-  public:
-  void unsafe_arena_set_allocated_motion(
-      ::city::person::v1::PersonMotion* motion);
-  ::city::person::v1::PersonMotion* unsafe_arena_release_motion();
+  void unsafe_arena_set_allocated_person(
+      ::city::person::v1::PersonRuntime* person);
+  ::city::person::v1::PersonRuntime* unsafe_arena_release_person();
 
   // @@protoc_insertion_point(class_scope:city.person.v1.GetPersonResponse)
  private:
@@ -444,8 +442,7 @@ class GetPersonResponse final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::city::person::v1::Person* base_;
-    ::city::person::v1::PersonMotion* motion_;
+    ::city::person::v1::PersonRuntime* person_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -1044,6 +1041,356 @@ class SetScheduleResponse final :
 };
 // -------------------------------------------------------------------
 
+class GetPersonsRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.person.v1.GetPersonsRequest) */ {
+ public:
+  inline GetPersonsRequest() : GetPersonsRequest(nullptr) {}
+  ~GetPersonsRequest() override;
+  explicit PROTOBUF_CONSTEXPR GetPersonsRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  GetPersonsRequest(const GetPersonsRequest& from);
+  GetPersonsRequest(GetPersonsRequest&& from) noexcept
+    : GetPersonsRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline GetPersonsRequest& operator=(const GetPersonsRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetPersonsRequest& operator=(GetPersonsRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const GetPersonsRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GetPersonsRequest* internal_default_instance() {
+    return reinterpret_cast<const GetPersonsRequest*>(
+               &_GetPersonsRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    6;
+
+  friend void swap(GetPersonsRequest& a, GetPersonsRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetPersonsRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetPersonsRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  GetPersonsRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<GetPersonsRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const GetPersonsRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const GetPersonsRequest& from) {
+    GetPersonsRequest::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetPersonsRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.person.v1.GetPersonsRequest";
+  }
+  protected:
+  explicit GetPersonsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kPersonIdsFieldNumber = 1,
+    kExcludeStatusesFieldNumber = 2,
+    kReturnBaseFieldNumber = 3,
+  };
+  // repeated int32 person_ids = 1 [json_name = "personIds"];
+  int person_ids_size() const;
+  private:
+  int _internal_person_ids_size() const;
+  public:
+  void clear_person_ids();
+  private:
+  int32_t _internal_person_ids(int index) const;
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+      _internal_person_ids() const;
+  void _internal_add_person_ids(int32_t value);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+      _internal_mutable_person_ids();
+  public:
+  int32_t person_ids(int index) const;
+  void set_person_ids(int index, int32_t value);
+  void add_person_ids(int32_t value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+      person_ids() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+      mutable_person_ids();
+
+  // repeated .city.person.v1.Status exclude_statuses = 2 [json_name = "excludeStatuses"];
+  int exclude_statuses_size() const;
+  private:
+  int _internal_exclude_statuses_size() const;
+  public:
+  void clear_exclude_statuses();
+  private:
+  ::city::person::v1::Status _internal_exclude_statuses(int index) const;
+  void _internal_add_exclude_statuses(::city::person::v1::Status value);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField<int>* _internal_mutable_exclude_statuses();
+  public:
+  ::city::person::v1::Status exclude_statuses(int index) const;
+  void set_exclude_statuses(int index, ::city::person::v1::Status value);
+  void add_exclude_statuses(::city::person::v1::Status value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField<int>& exclude_statuses() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField<int>* mutable_exclude_statuses();
+
+  // bool return_base = 3 [json_name = "returnBase"];
+  void clear_return_base();
+  bool return_base() const;
+  void set_return_base(bool value);
+  private:
+  bool _internal_return_base() const;
+  void _internal_set_return_base(bool value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:city.person.v1.GetPersonsRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t > person_ids_;
+    mutable std::atomic<int> _person_ids_cached_byte_size_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedField<int> exclude_statuses_;
+    mutable std::atomic<int> _exclude_statuses_cached_byte_size_;
+    bool return_base_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_city_2fperson_2fv1_2fperson_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetPersonsResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.person.v1.GetPersonsResponse) */ {
+ public:
+  inline GetPersonsResponse() : GetPersonsResponse(nullptr) {}
+  ~GetPersonsResponse() override;
+  explicit PROTOBUF_CONSTEXPR GetPersonsResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  GetPersonsResponse(const GetPersonsResponse& from);
+  GetPersonsResponse(GetPersonsResponse&& from) noexcept
+    : GetPersonsResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline GetPersonsResponse& operator=(const GetPersonsResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetPersonsResponse& operator=(GetPersonsResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const GetPersonsResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GetPersonsResponse* internal_default_instance() {
+    return reinterpret_cast<const GetPersonsResponse*>(
+               &_GetPersonsResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    7;
+
+  friend void swap(GetPersonsResponse& a, GetPersonsResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetPersonsResponse* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetPersonsResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  GetPersonsResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<GetPersonsResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const GetPersonsResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const GetPersonsResponse& from) {
+    GetPersonsResponse::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetPersonsResponse* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.person.v1.GetPersonsResponse";
+  }
+  protected:
+  explicit GetPersonsResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kPersonsFieldNumber = 1,
+  };
+  // repeated .city.person.v1.PersonRuntime persons = 1 [json_name = "persons"];
+  int persons_size() const;
+  private:
+  int _internal_persons_size() const;
+  public:
+  void clear_persons();
+  ::city::person::v1::PersonRuntime* mutable_persons(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v1::PersonRuntime >*
+      mutable_persons();
+  private:
+  const ::city::person::v1::PersonRuntime& _internal_persons(int index) const;
+  ::city::person::v1::PersonRuntime* _internal_add_persons();
+  public:
+  const ::city::person::v1::PersonRuntime& persons(int index) const;
+  ::city::person::v1::PersonRuntime* add_persons();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v1::PersonRuntime >&
+      persons() const;
+
+  // @@protoc_insertion_point(class_scope:city.person.v1.GetPersonsResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v1::PersonRuntime > persons_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_city_2fperson_2fv1_2fperson_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
 class GetPersonByLongLatBBoxRequest final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.person.v1.GetPersonByLongLatBBoxRequest) */ {
  public:
@@ -1092,7 +1439,7 @@ class GetPersonByLongLatBBoxRequest final :
                &_GetPersonByLongLatBBoxRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    8;
 
   friend void swap(GetPersonByLongLatBBoxRequest& a, GetPersonByLongLatBBoxRequest& b) {
     a.Swap(&b);
@@ -1167,6 +1514,7 @@ class GetPersonByLongLatBBoxRequest final :
   enum : int {
     kExcludeStatusesFieldNumber = 2,
     kBboxFieldNumber = 1,
+    kReturnBaseFieldNumber = 3,
   };
   // repeated .city.person.v1.Status exclude_statuses = 2 [json_name = "excludeStatuses"];
   int exclude_statuses_size() const;
@@ -1203,6 +1551,15 @@ class GetPersonByLongLatBBoxRequest final :
       ::city::geo::v2::LongLatBBox* bbox);
   ::city::geo::v2::LongLatBBox* unsafe_arena_release_bbox();
 
+  // bool return_base = 3 [json_name = "returnBase"];
+  void clear_return_base();
+  bool return_base() const;
+  void set_return_base(bool value);
+  private:
+  bool _internal_return_base() const;
+  void _internal_set_return_base(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:city.person.v1.GetPersonByLongLatBBoxRequest)
  private:
   class _Internal;
@@ -1214,6 +1571,7 @@ class GetPersonByLongLatBBoxRequest final :
     ::PROTOBUF_NAMESPACE_ID::RepeatedField<int> exclude_statuses_;
     mutable std::atomic<int> _exclude_statuses_cached_byte_size_;
     ::city::geo::v2::LongLatBBox* bbox_;
+    bool return_base_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -1269,7 +1627,7 @@ class GetPersonByLongLatBBoxResponse final :
                &_GetPersonByLongLatBBoxResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    9;
 
   friend void swap(GetPersonByLongLatBBoxResponse& a, GetPersonByLongLatBBoxResponse& b) {
     a.Swap(&b);
@@ -1342,25 +1700,25 @@ class GetPersonByLongLatBBoxResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kMotionsFieldNumber = 1,
+    kPersonsFieldNumber = 1,
   };
-  // repeated .city.person.v1.PersonMotion motions = 1 [json_name = "motions"];
-  int motions_size() const;
+  // repeated .city.person.v1.PersonRuntime persons = 1 [json_name = "persons"];
+  int persons_size() const;
   private:
-  int _internal_motions_size() const;
+  int _internal_persons_size() const;
   public:
-  void clear_motions();
-  ::city::person::v1::PersonMotion* mutable_motions(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v1::PersonMotion >*
-      mutable_motions();
+  void clear_persons();
+  ::city::person::v1::PersonRuntime* mutable_persons(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v1::PersonRuntime >*
+      mutable_persons();
   private:
-  const ::city::person::v1::PersonMotion& _internal_motions(int index) const;
-  ::city::person::v1::PersonMotion* _internal_add_motions();
+  const ::city::person::v1::PersonRuntime& _internal_persons(int index) const;
+  ::city::person::v1::PersonRuntime* _internal_add_persons();
   public:
-  const ::city::person::v1::PersonMotion& motions(int index) const;
-  ::city::person::v1::PersonMotion* add_motions();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v1::PersonMotion >&
-      motions() const;
+  const ::city::person::v1::PersonRuntime& persons(int index) const;
+  ::city::person::v1::PersonRuntime* add_persons();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v1::PersonRuntime >&
+      persons() const;
 
   // @@protoc_insertion_point(class_scope:city.person.v1.GetPersonByLongLatBBoxResponse)
  private:
@@ -1370,7 +1728,7 @@ class GetPersonByLongLatBBoxResponse final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v1::PersonMotion > motions_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v1::PersonRuntime > persons_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -1425,7 +1783,7 @@ class GetAllVehiclesRequest final :
                &_GetAllVehiclesRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    10;
 
   friend void swap(GetAllVehiclesRequest& a, GetAllVehiclesRequest& b) {
     a.Swap(&b);
@@ -1544,7 +1902,7 @@ class GetAllVehiclesResponse final :
                &_GetAllVehiclesResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    11;
 
   friend void swap(GetAllVehiclesResponse& a, GetAllVehiclesResponse& b) {
     a.Swap(&b);
@@ -1653,6 +2011,292 @@ class GetAllVehiclesResponse final :
 };
 // -------------------------------------------------------------------
 
+class ResetPersonPositionRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.person.v1.ResetPersonPositionRequest) */ {
+ public:
+  inline ResetPersonPositionRequest() : ResetPersonPositionRequest(nullptr) {}
+  ~ResetPersonPositionRequest() override;
+  explicit PROTOBUF_CONSTEXPR ResetPersonPositionRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  ResetPersonPositionRequest(const ResetPersonPositionRequest& from);
+  ResetPersonPositionRequest(ResetPersonPositionRequest&& from) noexcept
+    : ResetPersonPositionRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline ResetPersonPositionRequest& operator=(const ResetPersonPositionRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ResetPersonPositionRequest& operator=(ResetPersonPositionRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const ResetPersonPositionRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const ResetPersonPositionRequest* internal_default_instance() {
+    return reinterpret_cast<const ResetPersonPositionRequest*>(
+               &_ResetPersonPositionRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    12;
+
+  friend void swap(ResetPersonPositionRequest& a, ResetPersonPositionRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ResetPersonPositionRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ResetPersonPositionRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  ResetPersonPositionRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<ResetPersonPositionRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const ResetPersonPositionRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const ResetPersonPositionRequest& from) {
+    ResetPersonPositionRequest::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ResetPersonPositionRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.person.v1.ResetPersonPositionRequest";
+  }
+  protected:
+  explicit ResetPersonPositionRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kPositionFieldNumber = 2,
+    kPersonIdFieldNumber = 1,
+  };
+  // .city.geo.v2.Position position = 2 [json_name = "position"];
+  bool has_position() const;
+  private:
+  bool _internal_has_position() const;
+  public:
+  void clear_position();
+  const ::city::geo::v2::Position& position() const;
+  PROTOBUF_NODISCARD ::city::geo::v2::Position* release_position();
+  ::city::geo::v2::Position* mutable_position();
+  void set_allocated_position(::city::geo::v2::Position* position);
+  private:
+  const ::city::geo::v2::Position& _internal_position() const;
+  ::city::geo::v2::Position* _internal_mutable_position();
+  public:
+  void unsafe_arena_set_allocated_position(
+      ::city::geo::v2::Position* position);
+  ::city::geo::v2::Position* unsafe_arena_release_position();
+
+  // int32 person_id = 1 [json_name = "personId"];
+  void clear_person_id();
+  int32_t person_id() const;
+  void set_person_id(int32_t value);
+  private:
+  int32_t _internal_person_id() const;
+  void _internal_set_person_id(int32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:city.person.v1.ResetPersonPositionRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::city::geo::v2::Position* position_;
+    int32_t person_id_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_city_2fperson_2fv1_2fperson_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class ResetPersonPositionResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:city.person.v1.ResetPersonPositionResponse) */ {
+ public:
+  inline ResetPersonPositionResponse() : ResetPersonPositionResponse(nullptr) {}
+  explicit PROTOBUF_CONSTEXPR ResetPersonPositionResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  ResetPersonPositionResponse(const ResetPersonPositionResponse& from);
+  ResetPersonPositionResponse(ResetPersonPositionResponse&& from) noexcept
+    : ResetPersonPositionResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline ResetPersonPositionResponse& operator=(const ResetPersonPositionResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ResetPersonPositionResponse& operator=(ResetPersonPositionResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const ResetPersonPositionResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const ResetPersonPositionResponse* internal_default_instance() {
+    return reinterpret_cast<const ResetPersonPositionResponse*>(
+               &_ResetPersonPositionResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    13;
+
+  friend void swap(ResetPersonPositionResponse& a, ResetPersonPositionResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ResetPersonPositionResponse* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ResetPersonPositionResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  ResetPersonPositionResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<ResetPersonPositionResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
+  inline void CopyFrom(const ResetPersonPositionResponse& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(*this, from);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
+  void MergeFrom(const ResetPersonPositionResponse& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(*this, from);
+  }
+  public:
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.person.v1.ResetPersonPositionResponse";
+  }
+  protected:
+  explicit ResetPersonPositionResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:city.person.v1.ResetPersonPositionResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+  };
+  friend struct ::TableStruct_city_2fperson_2fv1_2fperson_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
 class SetControlledVehicleIDsRequest final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.person.v1.SetControlledVehicleIDsRequest) */ {
  public:
@@ -1701,7 +2345,7 @@ class SetControlledVehicleIDsRequest final :
                &_SetControlledVehicleIDsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    14;
 
   friend void swap(SetControlledVehicleIDsRequest& a, SetControlledVehicleIDsRequest& b) {
     a.Swap(&b);
@@ -1862,7 +2506,7 @@ class SetControlledVehicleIDsResponse final :
                &_SetControlledVehicleIDsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    15;
 
   friend void swap(SetControlledVehicleIDsResponse& a, SetControlledVehicleIDsResponse& b) {
     a.Swap(&b);
@@ -1980,7 +2624,7 @@ class FetchControlledVehicleEnvsRequest final :
                &_FetchControlledVehicleEnvsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    16;
 
   friend void swap(FetchControlledVehicleEnvsRequest& a, FetchControlledVehicleEnvsRequest& b) {
     a.Swap(&b);
@@ -2099,7 +2743,7 @@ class FetchControlledVehicleEnvsResponse final :
                &_FetchControlledVehicleEnvsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    17;
 
   friend void swap(FetchControlledVehicleEnvsResponse& a, FetchControlledVehicleEnvsResponse& b) {
     a.Swap(&b);
@@ -2256,7 +2900,7 @@ class SetControlledVehicleActionsRequest final :
                &_SetControlledVehicleActionsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    18;
 
   friend void swap(SetControlledVehicleActionsRequest& a, SetControlledVehicleActionsRequest& b) {
     a.Swap(&b);
@@ -2412,7 +3056,7 @@ class SetControlledVehicleActionsResponse final :
                &_SetControlledVehicleActionsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    19;
 
   friend void swap(SetControlledVehicleActionsResponse& a, SetControlledVehicleActionsResponse& b) {
     a.Swap(&b);
@@ -2516,39 +3160,39 @@ inline void GetPersonRequest::set_person_id(int32_t value) {
 
 // GetPersonResponse
 
-// .city.person.v1.Person base = 1 [json_name = "base"];
-inline bool GetPersonResponse::_internal_has_base() const {
-  return this != internal_default_instance() && _impl_.base_ != nullptr;
+// .city.person.v1.PersonRuntime person = 1 [json_name = "person"];
+inline bool GetPersonResponse::_internal_has_person() const {
+  return this != internal_default_instance() && _impl_.person_ != nullptr;
 }
-inline bool GetPersonResponse::has_base() const {
-  return _internal_has_base();
+inline bool GetPersonResponse::has_person() const {
+  return _internal_has_person();
 }
-inline const ::city::person::v1::Person& GetPersonResponse::_internal_base() const {
-  const ::city::person::v1::Person* p = _impl_.base_;
-  return p != nullptr ? *p : reinterpret_cast<const ::city::person::v1::Person&>(
-      ::city::person::v1::_Person_default_instance_);
+inline const ::city::person::v1::PersonRuntime& GetPersonResponse::_internal_person() const {
+  const ::city::person::v1::PersonRuntime* p = _impl_.person_;
+  return p != nullptr ? *p : reinterpret_cast<const ::city::person::v1::PersonRuntime&>(
+      ::city::person::v1::_PersonRuntime_default_instance_);
 }
-inline const ::city::person::v1::Person& GetPersonResponse::base() const {
-  // @@protoc_insertion_point(field_get:city.person.v1.GetPersonResponse.base)
-  return _internal_base();
+inline const ::city::person::v1::PersonRuntime& GetPersonResponse::person() const {
+  // @@protoc_insertion_point(field_get:city.person.v1.GetPersonResponse.person)
+  return _internal_person();
 }
-inline void GetPersonResponse::unsafe_arena_set_allocated_base(
-    ::city::person::v1::Person* base) {
+inline void GetPersonResponse::unsafe_arena_set_allocated_person(
+    ::city::person::v1::PersonRuntime* person) {
   if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.base_);
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.person_);
   }
-  _impl_.base_ = base;
-  if (base) {
+  _impl_.person_ = person;
+  if (person) {
     
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:city.person.v1.GetPersonResponse.base)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:city.person.v1.GetPersonResponse.person)
 }
-inline ::city::person::v1::Person* GetPersonResponse::release_base() {
+inline ::city::person::v1::PersonRuntime* GetPersonResponse::release_person() {
   
-  ::city::person::v1::Person* temp = _impl_.base_;
-  _impl_.base_ = nullptr;
+  ::city::person::v1::PersonRuntime* temp = _impl_.person_;
+  _impl_.person_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
   auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
   temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
@@ -2560,130 +3204,45 @@ inline ::city::person::v1::Person* GetPersonResponse::release_base() {
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::city::person::v1::Person* GetPersonResponse::unsafe_arena_release_base() {
-  // @@protoc_insertion_point(field_release:city.person.v1.GetPersonResponse.base)
+inline ::city::person::v1::PersonRuntime* GetPersonResponse::unsafe_arena_release_person() {
+  // @@protoc_insertion_point(field_release:city.person.v1.GetPersonResponse.person)
   
-  ::city::person::v1::Person* temp = _impl_.base_;
-  _impl_.base_ = nullptr;
+  ::city::person::v1::PersonRuntime* temp = _impl_.person_;
+  _impl_.person_ = nullptr;
   return temp;
 }
-inline ::city::person::v1::Person* GetPersonResponse::_internal_mutable_base() {
+inline ::city::person::v1::PersonRuntime* GetPersonResponse::_internal_mutable_person() {
   
-  if (_impl_.base_ == nullptr) {
-    auto* p = CreateMaybeMessage<::city::person::v1::Person>(GetArenaForAllocation());
-    _impl_.base_ = p;
+  if (_impl_.person_ == nullptr) {
+    auto* p = CreateMaybeMessage<::city::person::v1::PersonRuntime>(GetArenaForAllocation());
+    _impl_.person_ = p;
   }
-  return _impl_.base_;
+  return _impl_.person_;
 }
-inline ::city::person::v1::Person* GetPersonResponse::mutable_base() {
-  ::city::person::v1::Person* _msg = _internal_mutable_base();
-  // @@protoc_insertion_point(field_mutable:city.person.v1.GetPersonResponse.base)
+inline ::city::person::v1::PersonRuntime* GetPersonResponse::mutable_person() {
+  ::city::person::v1::PersonRuntime* _msg = _internal_mutable_person();
+  // @@protoc_insertion_point(field_mutable:city.person.v1.GetPersonResponse.person)
   return _msg;
 }
-inline void GetPersonResponse::set_allocated_base(::city::person::v1::Person* base) {
+inline void GetPersonResponse::set_allocated_person(::city::person::v1::PersonRuntime* person) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.base_);
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.person_);
   }
-  if (base) {
+  if (person) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
         ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(base));
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(person));
     if (message_arena != submessage_arena) {
-      base = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, base, submessage_arena);
+      person = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, person, submessage_arena);
     }
     
   } else {
     
   }
-  _impl_.base_ = base;
-  // @@protoc_insertion_point(field_set_allocated:city.person.v1.GetPersonResponse.base)
-}
-
-// .city.person.v1.PersonMotion motion = 2 [json_name = "motion"];
-inline bool GetPersonResponse::_internal_has_motion() const {
-  return this != internal_default_instance() && _impl_.motion_ != nullptr;
-}
-inline bool GetPersonResponse::has_motion() const {
-  return _internal_has_motion();
-}
-inline const ::city::person::v1::PersonMotion& GetPersonResponse::_internal_motion() const {
-  const ::city::person::v1::PersonMotion* p = _impl_.motion_;
-  return p != nullptr ? *p : reinterpret_cast<const ::city::person::v1::PersonMotion&>(
-      ::city::person::v1::_PersonMotion_default_instance_);
-}
-inline const ::city::person::v1::PersonMotion& GetPersonResponse::motion() const {
-  // @@protoc_insertion_point(field_get:city.person.v1.GetPersonResponse.motion)
-  return _internal_motion();
-}
-inline void GetPersonResponse::unsafe_arena_set_allocated_motion(
-    ::city::person::v1::PersonMotion* motion) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.motion_);
-  }
-  _impl_.motion_ = motion;
-  if (motion) {
-    
-  } else {
-    
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:city.person.v1.GetPersonResponse.motion)
-}
-inline ::city::person::v1::PersonMotion* GetPersonResponse::release_motion() {
-  
-  ::city::person::v1::PersonMotion* temp = _impl_.motion_;
-  _impl_.motion_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
-}
-inline ::city::person::v1::PersonMotion* GetPersonResponse::unsafe_arena_release_motion() {
-  // @@protoc_insertion_point(field_release:city.person.v1.GetPersonResponse.motion)
-  
-  ::city::person::v1::PersonMotion* temp = _impl_.motion_;
-  _impl_.motion_ = nullptr;
-  return temp;
-}
-inline ::city::person::v1::PersonMotion* GetPersonResponse::_internal_mutable_motion() {
-  
-  if (_impl_.motion_ == nullptr) {
-    auto* p = CreateMaybeMessage<::city::person::v1::PersonMotion>(GetArenaForAllocation());
-    _impl_.motion_ = p;
-  }
-  return _impl_.motion_;
-}
-inline ::city::person::v1::PersonMotion* GetPersonResponse::mutable_motion() {
-  ::city::person::v1::PersonMotion* _msg = _internal_mutable_motion();
-  // @@protoc_insertion_point(field_mutable:city.person.v1.GetPersonResponse.motion)
-  return _msg;
-}
-inline void GetPersonResponse::set_allocated_motion(::city::person::v1::PersonMotion* motion) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.motion_);
-  }
-  if (motion) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(motion));
-    if (message_arena != submessage_arena) {
-      motion = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, motion, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  _impl_.motion_ = motion;
-  // @@protoc_insertion_point(field_set_allocated:city.person.v1.GetPersonResponse.motion)
+  _impl_.person_ = person;
+  // @@protoc_insertion_point(field_set_allocated:city.person.v1.GetPersonResponse.person)
 }
 
 // -------------------------------------------------------------------
@@ -2866,6 +3425,161 @@ SetScheduleRequest::schedules() const {
 
 // -------------------------------------------------------------------
 
+// GetPersonsRequest
+
+// repeated int32 person_ids = 1 [json_name = "personIds"];
+inline int GetPersonsRequest::_internal_person_ids_size() const {
+  return _impl_.person_ids_.size();
+}
+inline int GetPersonsRequest::person_ids_size() const {
+  return _internal_person_ids_size();
+}
+inline void GetPersonsRequest::clear_person_ids() {
+  _impl_.person_ids_.Clear();
+}
+inline int32_t GetPersonsRequest::_internal_person_ids(int index) const {
+  return _impl_.person_ids_.Get(index);
+}
+inline int32_t GetPersonsRequest::person_ids(int index) const {
+  // @@protoc_insertion_point(field_get:city.person.v1.GetPersonsRequest.person_ids)
+  return _internal_person_ids(index);
+}
+inline void GetPersonsRequest::set_person_ids(int index, int32_t value) {
+  _impl_.person_ids_.Set(index, value);
+  // @@protoc_insertion_point(field_set:city.person.v1.GetPersonsRequest.person_ids)
+}
+inline void GetPersonsRequest::_internal_add_person_ids(int32_t value) {
+  _impl_.person_ids_.Add(value);
+}
+inline void GetPersonsRequest::add_person_ids(int32_t value) {
+  _internal_add_person_ids(value);
+  // @@protoc_insertion_point(field_add:city.person.v1.GetPersonsRequest.person_ids)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+GetPersonsRequest::_internal_person_ids() const {
+  return _impl_.person_ids_;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+GetPersonsRequest::person_ids() const {
+  // @@protoc_insertion_point(field_list:city.person.v1.GetPersonsRequest.person_ids)
+  return _internal_person_ids();
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+GetPersonsRequest::_internal_mutable_person_ids() {
+  return &_impl_.person_ids_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+GetPersonsRequest::mutable_person_ids() {
+  // @@protoc_insertion_point(field_mutable_list:city.person.v1.GetPersonsRequest.person_ids)
+  return _internal_mutable_person_ids();
+}
+
+// repeated .city.person.v1.Status exclude_statuses = 2 [json_name = "excludeStatuses"];
+inline int GetPersonsRequest::_internal_exclude_statuses_size() const {
+  return _impl_.exclude_statuses_.size();
+}
+inline int GetPersonsRequest::exclude_statuses_size() const {
+  return _internal_exclude_statuses_size();
+}
+inline void GetPersonsRequest::clear_exclude_statuses() {
+  _impl_.exclude_statuses_.Clear();
+}
+inline ::city::person::v1::Status GetPersonsRequest::_internal_exclude_statuses(int index) const {
+  return static_cast< ::city::person::v1::Status >(_impl_.exclude_statuses_.Get(index));
+}
+inline ::city::person::v1::Status GetPersonsRequest::exclude_statuses(int index) const {
+  // @@protoc_insertion_point(field_get:city.person.v1.GetPersonsRequest.exclude_statuses)
+  return _internal_exclude_statuses(index);
+}
+inline void GetPersonsRequest::set_exclude_statuses(int index, ::city::person::v1::Status value) {
+  _impl_.exclude_statuses_.Set(index, value);
+  // @@protoc_insertion_point(field_set:city.person.v1.GetPersonsRequest.exclude_statuses)
+}
+inline void GetPersonsRequest::_internal_add_exclude_statuses(::city::person::v1::Status value) {
+  _impl_.exclude_statuses_.Add(value);
+}
+inline void GetPersonsRequest::add_exclude_statuses(::city::person::v1::Status value) {
+  _internal_add_exclude_statuses(value);
+  // @@protoc_insertion_point(field_add:city.person.v1.GetPersonsRequest.exclude_statuses)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField<int>&
+GetPersonsRequest::exclude_statuses() const {
+  // @@protoc_insertion_point(field_list:city.person.v1.GetPersonsRequest.exclude_statuses)
+  return _impl_.exclude_statuses_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField<int>*
+GetPersonsRequest::_internal_mutable_exclude_statuses() {
+  return &_impl_.exclude_statuses_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField<int>*
+GetPersonsRequest::mutable_exclude_statuses() {
+  // @@protoc_insertion_point(field_mutable_list:city.person.v1.GetPersonsRequest.exclude_statuses)
+  return _internal_mutable_exclude_statuses();
+}
+
+// bool return_base = 3 [json_name = "returnBase"];
+inline void GetPersonsRequest::clear_return_base() {
+  _impl_.return_base_ = false;
+}
+inline bool GetPersonsRequest::_internal_return_base() const {
+  return _impl_.return_base_;
+}
+inline bool GetPersonsRequest::return_base() const {
+  // @@protoc_insertion_point(field_get:city.person.v1.GetPersonsRequest.return_base)
+  return _internal_return_base();
+}
+inline void GetPersonsRequest::_internal_set_return_base(bool value) {
+  
+  _impl_.return_base_ = value;
+}
+inline void GetPersonsRequest::set_return_base(bool value) {
+  _internal_set_return_base(value);
+  // @@protoc_insertion_point(field_set:city.person.v1.GetPersonsRequest.return_base)
+}
+
+// -------------------------------------------------------------------
+
+// GetPersonsResponse
+
+// repeated .city.person.v1.PersonRuntime persons = 1 [json_name = "persons"];
+inline int GetPersonsResponse::_internal_persons_size() const {
+  return _impl_.persons_.size();
+}
+inline int GetPersonsResponse::persons_size() const {
+  return _internal_persons_size();
+}
+inline ::city::person::v1::PersonRuntime* GetPersonsResponse::mutable_persons(int index) {
+  // @@protoc_insertion_point(field_mutable:city.person.v1.GetPersonsResponse.persons)
+  return _impl_.persons_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v1::PersonRuntime >*
+GetPersonsResponse::mutable_persons() {
+  // @@protoc_insertion_point(field_mutable_list:city.person.v1.GetPersonsResponse.persons)
+  return &_impl_.persons_;
+}
+inline const ::city::person::v1::PersonRuntime& GetPersonsResponse::_internal_persons(int index) const {
+  return _impl_.persons_.Get(index);
+}
+inline const ::city::person::v1::PersonRuntime& GetPersonsResponse::persons(int index) const {
+  // @@protoc_insertion_point(field_get:city.person.v1.GetPersonsResponse.persons)
+  return _internal_persons(index);
+}
+inline ::city::person::v1::PersonRuntime* GetPersonsResponse::_internal_add_persons() {
+  return _impl_.persons_.Add();
+}
+inline ::city::person::v1::PersonRuntime* GetPersonsResponse::add_persons() {
+  ::city::person::v1::PersonRuntime* _add = _internal_add_persons();
+  // @@protoc_insertion_point(field_add:city.person.v1.GetPersonsResponse.persons)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v1::PersonRuntime >&
+GetPersonsResponse::persons() const {
+  // @@protoc_insertion_point(field_list:city.person.v1.GetPersonsResponse.persons)
+  return _impl_.persons_;
+}
+
+// -------------------------------------------------------------------
+
 // GetPersonByLongLatBBoxRequest
 
 // .city.geo.v2.LongLatBBox bbox = 1 [json_name = "bbox"];
@@ -2996,45 +3710,65 @@ GetPersonByLongLatBBoxRequest::mutable_exclude_statuses() {
   return _internal_mutable_exclude_statuses();
 }
 
+// bool return_base = 3 [json_name = "returnBase"];
+inline void GetPersonByLongLatBBoxRequest::clear_return_base() {
+  _impl_.return_base_ = false;
+}
+inline bool GetPersonByLongLatBBoxRequest::_internal_return_base() const {
+  return _impl_.return_base_;
+}
+inline bool GetPersonByLongLatBBoxRequest::return_base() const {
+  // @@protoc_insertion_point(field_get:city.person.v1.GetPersonByLongLatBBoxRequest.return_base)
+  return _internal_return_base();
+}
+inline void GetPersonByLongLatBBoxRequest::_internal_set_return_base(bool value) {
+  
+  _impl_.return_base_ = value;
+}
+inline void GetPersonByLongLatBBoxRequest::set_return_base(bool value) {
+  _internal_set_return_base(value);
+  // @@protoc_insertion_point(field_set:city.person.v1.GetPersonByLongLatBBoxRequest.return_base)
+}
+
 // -------------------------------------------------------------------
 
 // GetPersonByLongLatBBoxResponse
 
-// repeated .city.person.v1.PersonMotion motions = 1 [json_name = "motions"];
-inline int GetPersonByLongLatBBoxResponse::_internal_motions_size() const {
-  return _impl_.motions_.size();
+// repeated .city.person.v1.PersonRuntime persons = 1 [json_name = "persons"];
+inline int GetPersonByLongLatBBoxResponse::_internal_persons_size() const {
+  return _impl_.persons_.size();
 }
-inline int GetPersonByLongLatBBoxResponse::motions_size() const {
-  return _internal_motions_size();
+inline int GetPersonByLongLatBBoxResponse::persons_size() const {
+  return _internal_persons_size();
 }
-inline ::city::person::v1::PersonMotion* GetPersonByLongLatBBoxResponse::mutable_motions(int index) {
-  // @@protoc_insertion_point(field_mutable:city.person.v1.GetPersonByLongLatBBoxResponse.motions)
-  return _impl_.motions_.Mutable(index);
+inline ::city::person::v1::PersonRuntime* GetPersonByLongLatBBoxResponse::mutable_persons(int index) {
+  // @@protoc_insertion_point(field_mutable:city.person.v1.GetPersonByLongLatBBoxResponse.persons)
+  return _impl_.persons_.Mutable(index);
 }
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v1::PersonMotion >*
-GetPersonByLongLatBBoxResponse::mutable_motions() {
-  // @@protoc_insertion_point(field_mutable_list:city.person.v1.GetPersonByLongLatBBoxResponse.motions)
-  return &_impl_.motions_;
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v1::PersonRuntime >*
+GetPersonByLongLatBBoxResponse::mutable_persons() {
+  // @@protoc_insertion_point(field_mutable_list:city.person.v1.GetPersonByLongLatBBoxResponse.persons)
+  return &_impl_.persons_;
 }
-inline const ::city::person::v1::PersonMotion& GetPersonByLongLatBBoxResponse::_internal_motions(int index) const {
-  return _impl_.motions_.Get(index);
+inline const ::city::person::v1::PersonRuntime& GetPersonByLongLatBBoxResponse::_internal_persons(int index) const {
+  return _impl_.persons_.Get(index);
 }
-inline const ::city::person::v1::PersonMotion& GetPersonByLongLatBBoxResponse::motions(int index) const {
-  // @@protoc_insertion_point(field_get:city.person.v1.GetPersonByLongLatBBoxResponse.motions)
-  return _internal_motions(index);
+inline const ::city::person::v1::PersonRuntime& GetPersonByLongLatBBoxResponse::persons(int index) const {
+  // @@protoc_insertion_point(field_get:city.person.v1.GetPersonByLongLatBBoxResponse.persons)
+  return _internal_persons(index);
 }
-inline ::city::person::v1::PersonMotion* GetPersonByLongLatBBoxResponse::_internal_add_motions() {
-  return _impl_.motions_.Add();
+inline ::city::person::v1::PersonRuntime* GetPersonByLongLatBBoxResponse::_internal_add_persons() {
+  return _impl_.persons_.Add();
 }
-inline ::city::person::v1::PersonMotion* GetPersonByLongLatBBoxResponse::add_motions() {
-  ::city::person::v1::PersonMotion* _add = _internal_add_motions();
-  // @@protoc_insertion_point(field_add:city.person.v1.GetPersonByLongLatBBoxResponse.motions)
+inline ::city::person::v1::PersonRuntime* GetPersonByLongLatBBoxResponse::add_persons() {
+  ::city::person::v1::PersonRuntime* _add = _internal_add_persons();
+  // @@protoc_insertion_point(field_add:city.person.v1.GetPersonByLongLatBBoxResponse.persons)
   return _add;
 }
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v1::PersonMotion >&
-GetPersonByLongLatBBoxResponse::motions() const {
-  // @@protoc_insertion_point(field_list:city.person.v1.GetPersonByLongLatBBoxResponse.motions)
-  return _impl_.motions_;
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v1::PersonRuntime >&
+GetPersonByLongLatBBoxResponse::persons() const {
+  // @@protoc_insertion_point(field_list:city.person.v1.GetPersonByLongLatBBoxResponse.persons)
+  return _impl_.persons_;
 }
 
 // -------------------------------------------------------------------
@@ -3081,6 +3815,119 @@ GetAllVehiclesResponse::vehicles() const {
   // @@protoc_insertion_point(field_list:city.person.v1.GetAllVehiclesResponse.vehicles)
   return _impl_.vehicles_;
 }
+
+// -------------------------------------------------------------------
+
+// ResetPersonPositionRequest
+
+// int32 person_id = 1 [json_name = "personId"];
+inline void ResetPersonPositionRequest::clear_person_id() {
+  _impl_.person_id_ = 0;
+}
+inline int32_t ResetPersonPositionRequest::_internal_person_id() const {
+  return _impl_.person_id_;
+}
+inline int32_t ResetPersonPositionRequest::person_id() const {
+  // @@protoc_insertion_point(field_get:city.person.v1.ResetPersonPositionRequest.person_id)
+  return _internal_person_id();
+}
+inline void ResetPersonPositionRequest::_internal_set_person_id(int32_t value) {
+  
+  _impl_.person_id_ = value;
+}
+inline void ResetPersonPositionRequest::set_person_id(int32_t value) {
+  _internal_set_person_id(value);
+  // @@protoc_insertion_point(field_set:city.person.v1.ResetPersonPositionRequest.person_id)
+}
+
+// .city.geo.v2.Position position = 2 [json_name = "position"];
+inline bool ResetPersonPositionRequest::_internal_has_position() const {
+  return this != internal_default_instance() && _impl_.position_ != nullptr;
+}
+inline bool ResetPersonPositionRequest::has_position() const {
+  return _internal_has_position();
+}
+inline const ::city::geo::v2::Position& ResetPersonPositionRequest::_internal_position() const {
+  const ::city::geo::v2::Position* p = _impl_.position_;
+  return p != nullptr ? *p : reinterpret_cast<const ::city::geo::v2::Position&>(
+      ::city::geo::v2::_Position_default_instance_);
+}
+inline const ::city::geo::v2::Position& ResetPersonPositionRequest::position() const {
+  // @@protoc_insertion_point(field_get:city.person.v1.ResetPersonPositionRequest.position)
+  return _internal_position();
+}
+inline void ResetPersonPositionRequest::unsafe_arena_set_allocated_position(
+    ::city::geo::v2::Position* position) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.position_);
+  }
+  _impl_.position_ = position;
+  if (position) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:city.person.v1.ResetPersonPositionRequest.position)
+}
+inline ::city::geo::v2::Position* ResetPersonPositionRequest::release_position() {
+  
+  ::city::geo::v2::Position* temp = _impl_.position_;
+  _impl_.position_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::city::geo::v2::Position* ResetPersonPositionRequest::unsafe_arena_release_position() {
+  // @@protoc_insertion_point(field_release:city.person.v1.ResetPersonPositionRequest.position)
+  
+  ::city::geo::v2::Position* temp = _impl_.position_;
+  _impl_.position_ = nullptr;
+  return temp;
+}
+inline ::city::geo::v2::Position* ResetPersonPositionRequest::_internal_mutable_position() {
+  
+  if (_impl_.position_ == nullptr) {
+    auto* p = CreateMaybeMessage<::city::geo::v2::Position>(GetArenaForAllocation());
+    _impl_.position_ = p;
+  }
+  return _impl_.position_;
+}
+inline ::city::geo::v2::Position* ResetPersonPositionRequest::mutable_position() {
+  ::city::geo::v2::Position* _msg = _internal_mutable_position();
+  // @@protoc_insertion_point(field_mutable:city.person.v1.ResetPersonPositionRequest.position)
+  return _msg;
+}
+inline void ResetPersonPositionRequest::set_allocated_position(::city::geo::v2::Position* position) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.position_);
+  }
+  if (position) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(position));
+    if (message_arena != submessage_arena) {
+      position = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, position, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  _impl_.position_ = position;
+  // @@protoc_insertion_point(field_set_allocated:city.person.v1.ResetPersonPositionRequest.position)
+}
+
+// -------------------------------------------------------------------
+
+// ResetPersonPositionResponse
 
 // -------------------------------------------------------------------
 
@@ -3230,6 +4077,14 @@ SetControlledVehicleActionsRequest::vehicle_actions() const {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

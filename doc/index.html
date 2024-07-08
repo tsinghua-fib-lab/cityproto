@@ -1665,6 +1665,21 @@
         
           
           <li>
+            <a href="#city%2fperson%2fv1%2fperson_runtime.proto">city/person/v1/person_runtime.proto</a>
+            <ul>
+              
+                <li>
+                  <a href="#city.person.v1.PersonRuntime"><span class="badge">M</span>PersonRuntime</a>
+                </li>
+              
+              
+              
+              
+            </ul>
+          </li>
+        
+          
+          <li>
             <a href="#city%2fperson%2fv1%2fvehicle.proto">city/person/v1/vehicle.proto</a>
             <ul>
               
@@ -1749,6 +1764,22 @@
               
                 <li>
                   <a href="#city.person.v1.GetPersonResponse"><span class="badge">M</span>GetPersonResponse</a>
+                </li>
+              
+                <li>
+                  <a href="#city.person.v1.GetPersonsRequest"><span class="badge">M</span>GetPersonsRequest</a>
+                </li>
+              
+                <li>
+                  <a href="#city.person.v1.GetPersonsResponse"><span class="badge">M</span>GetPersonsResponse</a>
+                </li>
+              
+                <li>
+                  <a href="#city.person.v1.ResetPersonPositionRequest"><span class="badge">M</span>ResetPersonPositionRequest</a>
+                </li>
+              
+                <li>
+                  <a href="#city.person.v1.ResetPersonPositionResponse"><span class="badge">M</span>ResetPersonPositionResponse</a>
                 </li>
               
                 <li>
@@ -3129,8 +3160,8 @@ trip mode </p></td>
                   <td>end</td>
                   <td><a href="#city.geo.v2.Position">city.geo.v2.Position</a></td>
                   <td></td>
-                  <td><p>目的地
-destination </p></td>
+                  <td><p>目的地，如果目的地是AOI且指定了XYPosition，则以XYPosition为室内步行的终点
+destination, if the destination is AOI and XYPosition is specified, XYPosition is the end point of indoor walking </p></td>
                 </tr>
               
                 <tr>
@@ -10248,7 +10279,7 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
                 <tr>
                   <td>id</td>
                   <td><a href="#int32">int32</a></td>
-                  <td></td>
+                  <td>optional</td>
                   <td><p>ID </p></td>
                 </tr>
               
@@ -12287,6 +12318,61 @@ female</p></td>
     
       
       <div class="file-heading">
+        <h2 id="city/person/v1/person_runtime.proto">city/person/v1/person_runtime.proto</h2><a href="#title">Top</a>
+      </div>
+      <p></p>
+
+      
+        <h3 id="city.person.v1.PersonRuntime">PersonRuntime</h3>
+        <p>智能体运行时信息</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>base</td>
+                  <td><a href="#city.person.v1.Person">Person</a></td>
+                  <td>optional</td>
+                  <td><p>person信息
+person information </p></td>
+                </tr>
+              
+                <tr>
+                  <td>motion</td>
+                  <td><a href="#city.person.v1.PersonMotion">PersonMotion</a></td>
+                  <td></td>
+                  <td><p>person运动信息
+person motion information </p></td>
+                </tr>
+              
+                <tr>
+                  <td>events</td>
+                  <td><a href="#city.event.v2.Event">city.event.v2.Event</a></td>
+                  <td>repeated</td>
+                  <td><p>事件信息
+event information </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+
+      
+
+      
+
+      
+    
+      
+      <div class="file-heading">
         <h2 id="city/person/v1/vehicle.proto">city/person/v1/vehicle.proto</h2><a href="#title">Top</a>
       </div>
       <p></p>
@@ -12892,6 +12978,14 @@ longitude and latitude bounding box </p></td>
 Filter person&#39;s status (person whose status is in the list will not be returned) </p></td>
                 </tr>
               
+                <tr>
+                  <td>return_base</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p>设置是否返回base信息
+Set whether to return base information </p></td>
+                </tr>
+              
             </tbody>
           </table>
 
@@ -12910,11 +13004,11 @@ Filter person&#39;s status (person whose status is in the list will not be retur
             <tbody>
               
                 <tr>
-                  <td>motions</td>
-                  <td><a href="#city.person.v1.PersonMotion">PersonMotion</a></td>
+                  <td>persons</td>
+                  <td><a href="#city.person.v1.PersonRuntime">PersonRuntime</a></td>
                   <td>repeated</td>
-                  <td><p>区域内的person的运动信息
-motion status of persons in the region </p></td>
+                  <td><p>区域内的person的信息
+Information of persons in the region </p></td>
                 </tr>
               
             </tbody>
@@ -12959,25 +13053,121 @@ motion status of persons in the region </p></td>
             <tbody>
               
                 <tr>
-                  <td>base</td>
-                  <td><a href="#city.person.v1.Person">Person</a></td>
+                  <td>person</td>
+                  <td><a href="#city.person.v1.PersonRuntime">PersonRuntime</a></td>
                   <td></td>
-                  <td><p>person信息
-person information </p></td>
-                </tr>
-              
-                <tr>
-                  <td>motion</td>
-                  <td><a href="#city.person.v1.PersonMotion">PersonMotion</a></td>
-                  <td></td>
-                  <td><p>person运动信息
-person motion information </p></td>
+                  <td><p> </p></td>
                 </tr>
               
             </tbody>
           </table>
 
           
+
+        
+      
+        <h3 id="city.person.v1.GetPersonsRequest">GetPersonsRequest</h3>
+        <p>获取多个person信息请求</p><p>Request for getting information of multiple persons</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>person_ids</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td>repeated</td>
+                  <td><p>person id列表，为空则返回所有person
+List of person ids, return all persons if empty </p></td>
+                </tr>
+              
+                <tr>
+                  <td>exclude_statuses</td>
+                  <td><a href="#city.person.v1.Status">Status</a></td>
+                  <td>repeated</td>
+                  <td><p>过滤人的状态（状态为列表内的值的人不返回），即使包含在person_ids中
+Filter person&#39;s status (person whose status is in the list will not be returned), even if included in person_ids </p></td>
+                </tr>
+              
+                <tr>
+                  <td>return_base</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p>设置是否返回base信息
+Set whether to return base information </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="city.person.v1.GetPersonsResponse">GetPersonsResponse</h3>
+        <p>获取多个person信息响应</p><p>Response of getting information of multiple persons</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>persons</td>
+                  <td><a href="#city.person.v1.PersonRuntime">PersonRuntime</a></td>
+                  <td>repeated</td>
+                  <td><p>person信息
+person information </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="city.person.v1.ResetPersonPositionRequest">ResetPersonPositionRequest</h3>
+        <p>重置人的位置请求</p><p>Request for resetting person's position</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>person_id</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p>person id </p></td>
+                </tr>
+              
+                <tr>
+                  <td>position</td>
+                  <td><a href="#city.geo.v2.Position">city.geo.v2.Position</a></td>
+                  <td></td>
+                  <td><p>重置位置
+reset position </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="city.person.v1.ResetPersonPositionResponse">ResetPersonPositionResponse</h3>
+        <p>重置人的位置响应</p><p>Response of resetting person's position</p>
+
+        
 
         
       
@@ -13123,6 +13313,14 @@ Set person&#39;s schedule. Input personid and destination table</p></td>
               </tr>
             
               <tr>
+                <td>GetPersons</td>
+                <td><a href="#city.person.v1.GetPersonsRequest">GetPersonsRequest</a></td>
+                <td><a href="#city.person.v1.GetPersonsResponse">GetPersonsResponse</a></td>
+                <td><p>获取多个person信息
+Get information of multiple persons</p></td>
+              </tr>
+            
+              <tr>
                 <td>GetPersonByLongLatBBox</td>
                 <td><a href="#city.person.v1.GetPersonByLongLatBBoxRequest">GetPersonByLongLatBBoxRequest</a></td>
                 <td><a href="#city.person.v1.GetPersonByLongLatBBoxResponse">GetPersonByLongLatBBoxResponse</a></td>
@@ -13136,6 +13334,14 @@ Get persons in a specific region</p></td>
                 <td><a href="#city.person.v1.GetAllVehiclesResponse">GetAllVehiclesResponse</a></td>
                 <td><p>获取所有车辆
 Get all vehicles</p></td>
+              </tr>
+            
+              <tr>
+                <td>ResetPersonPosition</td>
+                <td><a href="#city.person.v1.ResetPersonPositionRequest">ResetPersonPositionRequest</a></td>
+                <td><a href="#city.person.v1.ResetPersonPositionResponse">ResetPersonPositionResponse</a></td>
+                <td><p>重置人的位置（将停止当前正在进行的出行，转为sleep状态）
+Reset person&#39;s position (stop the current trip and switch to sleep status)</p></td>
               </tr>
             
               <tr>

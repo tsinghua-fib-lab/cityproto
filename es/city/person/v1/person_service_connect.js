@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AddPersonRequest, AddPersonResponse, FetchControlledVehicleEnvsRequest, FetchControlledVehicleEnvsResponse, GetAllVehiclesRequest, GetAllVehiclesResponse, GetPersonByLongLatBBoxRequest, GetPersonByLongLatBBoxResponse, GetPersonRequest, GetPersonResponse, SetControlledVehicleActionsRequest, SetControlledVehicleActionsResponse, SetControlledVehicleIDsRequest, SetControlledVehicleIDsResponse, SetScheduleRequest, SetScheduleResponse } from "./person_service_pb.js";
+import { AddPersonRequest, AddPersonResponse, FetchControlledVehicleEnvsRequest, FetchControlledVehicleEnvsResponse, GetAllVehiclesRequest, GetAllVehiclesResponse, GetPersonByLongLatBBoxRequest, GetPersonByLongLatBBoxResponse, GetPersonRequest, GetPersonResponse, GetPersonsRequest, GetPersonsResponse, ResetPersonPositionRequest, ResetPersonPositionResponse, SetControlledVehicleActionsRequest, SetControlledVehicleActionsResponse, SetControlledVehicleIDsRequest, SetControlledVehicleIDsResponse, SetScheduleRequest, SetScheduleResponse } from "./person_service_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -49,6 +49,18 @@ export const PersonService = {
       kind: MethodKind.Unary,
     },
     /**
+     * 获取多个person信息
+     * Get information of multiple persons
+     *
+     * @generated from rpc city.person.v1.PersonService.GetPersons
+     */
+    getPersons: {
+      name: "GetPersons",
+      I: GetPersonsRequest,
+      O: GetPersonsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
      * 获取特定区域内的person
      * Get persons in a specific region
      *
@@ -70,6 +82,18 @@ export const PersonService = {
       name: "GetAllVehicles",
       I: GetAllVehiclesRequest,
       O: GetAllVehiclesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * 重置人的位置（将停止当前正在进行的出行，转为sleep状态）
+     * Reset person's position (stop the current trip and switch to sleep status)
+     *
+     * @generated from rpc city.person.v1.PersonService.ResetPersonPosition
+     */
+    resetPersonPosition: {
+      name: "ResetPersonPosition",
+      I: ResetPersonPositionRequest,
+      O: ResetPersonPositionResponse,
       kind: MethodKind.Unary,
     },
     /**
