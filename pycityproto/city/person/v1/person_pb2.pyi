@@ -129,7 +129,7 @@ class PersonProfile(_message.Message):
         ...
 
 class Person(_message.Message):
-    __slots__ = ['id', 'attribute', 'home', 'schedules', 'vehicle_attribute', 'bus_attribute', 'pedestrian_attribute', 'bike_attribute', 'labels', 'profile', 'work']
+    __slots__ = ['id', 'attribute', 'home', 'schedules', 'vehicle_attribute', 'bus_attribute', 'pedestrian_attribute', 'bike_attribute', 'labels', 'profile', 'work', 'output_when_sleep']
 
     class LabelsEntry(_message.Message):
         __slots__ = ['key', 'value']
@@ -151,6 +151,7 @@ class Person(_message.Message):
     LABELS_FIELD_NUMBER: _ClassVar[int]
     PROFILE_FIELD_NUMBER: _ClassVar[int]
     WORK_FIELD_NUMBER: _ClassVar[int]
+    OUTPUT_WHEN_SLEEP_FIELD_NUMBER: _ClassVar[int]
     id: int
     attribute: PersonAttribute
     home: _geo_pb2.Position
@@ -162,8 +163,9 @@ class Person(_message.Message):
     labels: _containers.ScalarMap[str, str]
     profile: PersonProfile
     work: _geo_pb2.Position
+    output_when_sleep: bool
 
-    def __init__(self, id: _Optional[int]=..., attribute: _Optional[_Union[PersonAttribute, _Mapping]]=..., home: _Optional[_Union[_geo_pb2.Position, _Mapping]]=..., schedules: _Optional[_Iterable[_Union[_trip_pb2.Schedule, _Mapping]]]=..., vehicle_attribute: _Optional[_Union[VehicleAttribute, _Mapping]]=..., bus_attribute: _Optional[_Union[BusAttribute, _Mapping]]=..., pedestrian_attribute: _Optional[_Union[PedestrianAttribute, _Mapping]]=..., bike_attribute: _Optional[_Union[BikeAttribute, _Mapping]]=..., labels: _Optional[_Mapping[str, str]]=..., profile: _Optional[_Union[PersonProfile, _Mapping]]=..., work: _Optional[_Union[_geo_pb2.Position, _Mapping]]=...) -> None:
+    def __init__(self, id: _Optional[int]=..., attribute: _Optional[_Union[PersonAttribute, _Mapping]]=..., home: _Optional[_Union[_geo_pb2.Position, _Mapping]]=..., schedules: _Optional[_Iterable[_Union[_trip_pb2.Schedule, _Mapping]]]=..., vehicle_attribute: _Optional[_Union[VehicleAttribute, _Mapping]]=..., bus_attribute: _Optional[_Union[BusAttribute, _Mapping]]=..., pedestrian_attribute: _Optional[_Union[PedestrianAttribute, _Mapping]]=..., bike_attribute: _Optional[_Union[BikeAttribute, _Mapping]]=..., labels: _Optional[_Mapping[str, str]]=..., profile: _Optional[_Union[PersonProfile, _Mapping]]=..., work: _Optional[_Union[_geo_pb2.Position, _Mapping]]=..., output_when_sleep: bool=...) -> None:
         ...
 
 class Persons(_message.Message):

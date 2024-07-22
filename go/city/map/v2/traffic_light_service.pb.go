@@ -86,7 +86,7 @@ type GetTrafficLightResponse struct {
 	PhaseIndex int32 `protobuf:"varint,2,opt,name=phase_index,json=phaseIndex,proto3" json:"phase_index,omitempty" db:"phase_index" yaml:"phase_index" bson:"phase_index"`
 	// 当前相位的剩余时间
 	// The remaining time of the current phase
-	TimeRemaining float64 `protobuf:"fixed64,3,opt,name=time_remaining,json=timeRemaining,proto3" json:"time_remaining,omitempty" bson:"time_remaining" db:"time_remaining" yaml:"time_remaining"`
+	TimeRemaining float64 `protobuf:"fixed64,3,opt,name=time_remaining,json=timeRemaining,proto3" json:"time_remaining,omitempty" yaml:"time_remaining" bson:"time_remaining" db:"time_remaining"`
 }
 
 func (x *GetTrafficLightResponse) Reset() {
@@ -157,7 +157,7 @@ type SetTrafficLightRequest struct {
 	PhaseIndex int32 `protobuf:"varint,2,opt,name=phase_index,json=phaseIndex,proto3" json:"phase_index,omitempty" yaml:"phase_index" bson:"phase_index" db:"phase_index"`
 	// 当前相位的剩余时间
 	// The remaining time of the current phase
-	TimeRemaining float64 `protobuf:"fixed64,3,opt,name=time_remaining,json=timeRemaining,proto3" json:"time_remaining,omitempty" bson:"time_remaining" db:"time_remaining" yaml:"time_remaining"`
+	TimeRemaining float64 `protobuf:"fixed64,3,opt,name=time_remaining,json=timeRemaining,proto3" json:"time_remaining,omitempty" yaml:"time_remaining" bson:"time_remaining" db:"time_remaining"`
 }
 
 func (x *SetTrafficLightRequest) Reset() {
@@ -373,7 +373,7 @@ type SetTrafficLightStatusRequest struct {
 
 	// 需要改变状态的路口编号
 	// The target junction ID
-	JunctionId int32 `protobuf:"varint,1,opt,name=junction_id,json=junctionId,proto3" json:"junction_id,omitempty" yaml:"junction_id" bson:"junction_id" db:"junction_id"`
+	JunctionId int32 `protobuf:"varint,1,opt,name=junction_id,json=junctionId,proto3" json:"junction_id,omitempty" bson:"junction_id" db:"junction_id" yaml:"junction_id"`
 	// 当前路口红绿灯状态，true为通，false为断
 	// The current traffic light status at the junction, true is on, false is off
 	Ok bool `protobuf:"varint,2,opt,name=ok,proto3" json:"ok,omitempty" yaml:"ok" bson:"ok" db:"ok"`

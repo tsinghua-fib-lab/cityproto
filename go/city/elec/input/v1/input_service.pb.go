@@ -66,9 +66,9 @@ type InitResponse struct {
 
 	// 模拟器gRPC监听地址
 	Address    string      `protobuf:"bytes,2,opt,name=address,proto3" json:"address,omitempty" yaml:"address" bson:"address" db:"address"`
-	Control    *Control    `protobuf:"bytes,3,opt,name=control,proto3" json:"control,omitempty" db:"control" yaml:"control" bson:"control"`
+	Control    *Control    `protobuf:"bytes,3,opt,name=control,proto3" json:"control,omitempty" yaml:"control" bson:"control" db:"control"`
 	Facilities *Facilities `protobuf:"bytes,1,opt,name=facilities,proto3" json:"facilities,omitempty" yaml:"facilities" bson:"facilities" db:"facilities"`
-	Map        *v2.Map     `protobuf:"bytes,4,opt,name=map,proto3" json:"map,omitempty" yaml:"map" bson:"map" db:"map"`
+	Map        *v2.Map     `protobuf:"bytes,4,opt,name=map,proto3" json:"map,omitempty" db:"map" yaml:"map" bson:"map"`
 }
 
 func (x *InitResponse) Reset() {

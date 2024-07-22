@@ -173,6 +173,7 @@ export const Person = proto3.makeMessageType(
     { no: 10, name: "labels", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 9 /* ScalarType.STRING */} },
     { no: 11, name: "profile", kind: "message", T: PersonProfile, opt: true },
     { no: 13, name: "work", kind: "message", T: Position, opt: true },
+    { no: 14, name: "output_when_sleep", kind: "scalar", T: 8 /* ScalarType.BOOL */, opt: true },
   ],
 );
 

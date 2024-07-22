@@ -1442,6 +1442,7 @@ class Person final :
     kPedestrianAttributeFieldNumber = 12,
     kWorkFieldNumber = 13,
     kIdFieldNumber = 1,
+    kOutputWhenSleepFieldNumber = 14,
   };
   // repeated .city.trip.v2.Schedule schedules = 4 [json_name = "schedules"];
   int schedules_size() const;
@@ -1631,6 +1632,19 @@ class Person final :
   void _internal_set_id(int32_t value);
   public:
 
+  // optional bool output_when_sleep = 14 [json_name = "outputWhenSleep"];
+  bool has_output_when_sleep() const;
+  private:
+  bool _internal_has_output_when_sleep() const;
+  public:
+  void clear_output_when_sleep();
+  bool output_when_sleep() const;
+  void set_output_when_sleep(bool value);
+  private:
+  bool _internal_output_when_sleep() const;
+  void _internal_set_output_when_sleep(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:city.person.v1.Person)
  private:
   class _Internal;
@@ -1656,6 +1670,7 @@ class Person final :
     ::city::person::v1::PedestrianAttribute* pedestrian_attribute_;
     ::city::geo::v2::Position* work_;
     int32_t id_;
+    bool output_when_sleep_;
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_city_2fperson_2fv1_2fperson_2eproto;
@@ -3262,6 +3277,34 @@ inline void Person::set_allocated_work(::city::geo::v2::Position* work) {
   }
   _impl_.work_ = work;
   // @@protoc_insertion_point(field_set_allocated:city.person.v1.Person.work)
+}
+
+// optional bool output_when_sleep = 14 [json_name = "outputWhenSleep"];
+inline bool Person::_internal_has_output_when_sleep() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000040u) != 0;
+  return value;
+}
+inline bool Person::has_output_when_sleep() const {
+  return _internal_has_output_when_sleep();
+}
+inline void Person::clear_output_when_sleep() {
+  _impl_.output_when_sleep_ = false;
+  _impl_._has_bits_[0] &= ~0x00000040u;
+}
+inline bool Person::_internal_output_when_sleep() const {
+  return _impl_.output_when_sleep_;
+}
+inline bool Person::output_when_sleep() const {
+  // @@protoc_insertion_point(field_get:city.person.v1.Person.output_when_sleep)
+  return _internal_output_when_sleep();
+}
+inline void Person::_internal_set_output_when_sleep(bool value) {
+  _impl_._has_bits_[0] |= 0x00000040u;
+  _impl_.output_when_sleep_ = value;
+}
+inline void Person::set_output_when_sleep(bool value) {
+  _internal_set_output_when_sleep(value);
+  // @@protoc_insertion_point(field_set:city.person.v1.Person.output_when_sleep)
 }
 
 // -------------------------------------------------------------------

@@ -26,9 +26,9 @@ type Mongo struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Uri        string        `protobuf:"bytes,1,opt,name=uri,proto3" json:"uri,omitempty" bson:"uri" db:"uri" yaml:"uri"`
+	Uri        string        `protobuf:"bytes,1,opt,name=uri,proto3" json:"uri,omitempty" yaml:"uri" bson:"uri" db:"uri"`
 	Map        *v1.MongoPath `protobuf:"bytes,2,opt,name=map,proto3" json:"map,omitempty" yaml:"map" bson:"map" db:"map"`
-	Facilities *v1.MongoPath `protobuf:"bytes,3,opt,name=facilities,proto3" json:"facilities,omitempty" bson:"facilities" db:"facilities" yaml:"facilities"`
+	Facilities *v1.MongoPath `protobuf:"bytes,3,opt,name=facilities,proto3" json:"facilities,omitempty" yaml:"facilities" bson:"facilities" db:"facilities"`
 }
 
 func (x *Mongo) Reset() {
@@ -193,8 +193,8 @@ type OutputSwitch struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 电网节点状态
-	Node  bool `protobuf:"varint,1,opt,name=node,proto3" json:"node,omitempty" yaml:"node" bson:"node" db:"node"`
-	Aoi   bool `protobuf:"varint,2,opt,name=aoi,proto3" json:"aoi,omitempty" db:"aoi" yaml:"aoi" bson:"aoi"`
+	Node  bool `protobuf:"varint,1,opt,name=node,proto3" json:"node,omitempty" bson:"node" db:"node" yaml:"node"`
+	Aoi   bool `protobuf:"varint,2,opt,name=aoi,proto3" json:"aoi,omitempty" yaml:"aoi" bson:"aoi" db:"aoi"`
 	Event bool `protobuf:"varint,3,opt,name=event,proto3" json:"event,omitempty" yaml:"event" bson:"event" db:"event"`
 }
 
@@ -256,7 +256,7 @@ type Output struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Target *v1.OutputTarget `protobuf:"bytes,1,opt,name=target,proto3" json:"target,omitempty" yaml:"target" bson:"target" db:"target"`
+	Target *v1.OutputTarget `protobuf:"bytes,1,opt,name=target,proto3" json:"target,omitempty" db:"target" yaml:"target" bson:"target"`
 	Switch *OutputSwitch    `protobuf:"bytes,2,opt,name=switch,proto3" json:"switch,omitempty" yaml:"switch" bson:"switch" db:"switch"`
 }
 

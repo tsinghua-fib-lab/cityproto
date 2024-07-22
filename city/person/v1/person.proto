@@ -205,6 +205,9 @@ message Person {
   // 工作地位置
   // work position
   optional city.geo.v2.Position work = 13;
+  // 是否在SLEEP状态下也输出可视化（仅限车辆）
+  // Whether to output visualization in the SLEEP state (vehicles only)
+  optional bool output_when_sleep = 14;
 }
 
 // 智能体集合，对应一个智能体pb文件或一个智能体mongodb collection

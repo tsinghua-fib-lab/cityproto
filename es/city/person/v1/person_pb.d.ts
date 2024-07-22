@@ -563,6 +563,14 @@ export declare class Person extends Message<Person> {
    */
   work?: Position;
 
+  /**
+   * 是否在SLEEP状态下也输出可视化（仅限车辆）
+   * Whether to output visualization in the SLEEP state (vehicles only)
+   *
+   * @generated from field: optional bool output_when_sleep = 14;
+   */
+  outputWhenSleep?: boolean;
+
   constructor(data?: PartialMessage<Person>);
 
   static readonly runtime: typeof proto3;
