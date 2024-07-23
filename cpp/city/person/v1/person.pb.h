@@ -1223,6 +1223,7 @@ class PersonProfile final :
     kEducationFieldNumber = 2,
     kGenderFieldNumber = 3,
     kConsumptionFieldNumber = 4,
+    kHouseIdFieldNumber = 5,
   };
   // int32 age = 1 [json_name = "age"];
   void clear_age();
@@ -1260,6 +1261,15 @@ class PersonProfile final :
   void _internal_set_consumption(::city::person::v1::Consumption value);
   public:
 
+  // int32 house_id = 5 [json_name = "houseId"];
+  void clear_house_id();
+  int32_t house_id() const;
+  void set_house_id(int32_t value);
+  private:
+  int32_t _internal_house_id() const;
+  void _internal_set_house_id(int32_t value);
+  public:
+
   // @@protoc_insertion_point(class_scope:city.person.v1.PersonProfile)
  private:
   class _Internal;
@@ -1272,6 +1282,7 @@ class PersonProfile final :
     int education_;
     int gender_;
     int consumption_;
+    int32_t house_id_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -2473,6 +2484,26 @@ inline void PersonProfile::_internal_set_consumption(::city::person::v1::Consump
 inline void PersonProfile::set_consumption(::city::person::v1::Consumption value) {
   _internal_set_consumption(value);
   // @@protoc_insertion_point(field_set:city.person.v1.PersonProfile.consumption)
+}
+
+// int32 house_id = 5 [json_name = "houseId"];
+inline void PersonProfile::clear_house_id() {
+  _impl_.house_id_ = 0;
+}
+inline int32_t PersonProfile::_internal_house_id() const {
+  return _impl_.house_id_;
+}
+inline int32_t PersonProfile::house_id() const {
+  // @@protoc_insertion_point(field_get:city.person.v1.PersonProfile.house_id)
+  return _internal_house_id();
+}
+inline void PersonProfile::_internal_set_house_id(int32_t value) {
+  
+  _impl_.house_id_ = value;
+}
+inline void PersonProfile::set_house_id(int32_t value) {
+  _internal_set_house_id(value);
+  // @@protoc_insertion_point(field_set:city.person.v1.PersonProfile.house_id)
 }
 
 // -------------------------------------------------------------------

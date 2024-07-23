@@ -101,7 +101,7 @@ type Entity struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 实体类型
-	Type EntityType `protobuf:"varint,1,opt,name=type,proto3,enum=city.event.v2.EntityType" json:"type,omitempty" bson:"type" db:"type" yaml:"type"`
+	Type EntityType `protobuf:"varint,1,opt,name=type,proto3,enum=city.event.v2.EntityType" json:"type,omitempty" yaml:"type" bson:"type" db:"type"`
 	// 实体ID
 	Id int32 `protobuf:"varint,2,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
 }
@@ -170,7 +170,7 @@ type Event struct {
 	// 地点
 	Position *v2.Position `protobuf:"bytes,5,opt,name=position,proto3" json:"position,omitempty" db:"position" yaml:"position" bson:"position"`
 	// 时间
-	T float64 `protobuf:"fixed64,6,opt,name=t,proto3" json:"t,omitempty" bson:"t" db:"t" yaml:"t"`
+	T float64 `protobuf:"fixed64,6,opt,name=t,proto3" json:"t,omitempty" yaml:"t" bson:"t" db:"t"`
 }
 
 func (x *Event) Reset() {

@@ -29,10 +29,10 @@ type SetLaneMaxVRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Lane id
-	LaneId int32 `protobuf:"varint,1,opt,name=lane_id,json=laneId,proto3" json:"lane_id,omitempty" db:"lane_id" yaml:"lane_id" bson:"lane_id"`
+	LaneId int32 `protobuf:"varint,1,opt,name=lane_id,json=laneId,proto3" json:"lane_id,omitempty" yaml:"lane_id" bson:"lane_id" db:"lane_id"`
 	// 最大速度（限速），单位：m/s
 	// Maximum speed (speed limit), unit: m/s
-	MaxV float64 `protobuf:"fixed64,2,opt,name=max_v,json=maxV,proto3" json:"max_v,omitempty" yaml:"max_v" bson:"max_v" db:"max_v"`
+	MaxV float64 `protobuf:"fixed64,2,opt,name=max_v,json=maxV,proto3" json:"max_v,omitempty" bson:"max_v" db:"max_v" yaml:"max_v"`
 }
 
 func (x *SetLaneMaxVRequest) Reset() {
@@ -230,7 +230,7 @@ type GetLaneRequest struct {
 
 	// 指定的Lane id列表，如果为空，则返回所有Lane的信息
 	// List of targeted lane IDs, if empty, returns all information of lanes
-	LaneIds []int32 `protobuf:"varint,1,rep,packed,name=lane_ids,json=laneIds,proto3" json:"lane_ids,omitempty" db:"lane_ids" yaml:"lane_ids" bson:"lane_ids"`
+	LaneIds []int32 `protobuf:"varint,1,rep,packed,name=lane_ids,json=laneIds,proto3" json:"lane_ids,omitempty" bson:"lane_ids" db:"lane_ids" yaml:"lane_ids"`
 	// 是否要排除车道上的人的信息
 	// Whether to exclude information of person on the lane
 	ExcludePerson bool `protobuf:"varint,2,opt,name=exclude_person,json=excludePerson,proto3" json:"exclude_person,omitempty" yaml:"exclude_person" bson:"exclude_person" db:"exclude_person"`
@@ -403,7 +403,7 @@ type GetLaneByLongLatBBoxResponse struct {
 
 	// Lane的信息
 	// Lane information
-	States []*LaneState `protobuf:"bytes,1,rep,name=states,proto3" json:"states,omitempty" db:"states" yaml:"states" bson:"states"`
+	States []*LaneState `protobuf:"bytes,1,rep,name=states,proto3" json:"states,omitempty" yaml:"states" bson:"states" db:"states"`
 }
 
 func (x *GetLaneByLongLatBBoxResponse) Reset() {

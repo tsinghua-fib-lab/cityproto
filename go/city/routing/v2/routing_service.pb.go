@@ -30,7 +30,7 @@ type GetRouteRequest struct {
 
 	// 导航类型
 	// routing type
-	Type RouteType `protobuf:"varint,1,opt,name=type,proto3,enum=city.routing.v2.RouteType" json:"type,omitempty" db:"type" yaml:"type" bson:"type"`
+	Type RouteType `protobuf:"varint,1,opt,name=type,proto3,enum=city.routing.v2.RouteType" json:"type,omitempty" yaml:"type" bson:"type" db:"type"`
 	// 起点，约定：包含LanePosition或AoiPosition中的一种
 	// Starting point, convention: as LanePosition or AoiPosition
 	Start *v2.Position `protobuf:"bytes,2,opt,name=start,proto3" json:"start,omitempty" yaml:"start" bson:"start" db:"start"`
@@ -160,7 +160,7 @@ type SetDrivingCostsRequest struct {
 
 	// 道路通行成本
 	// travelling cost
-	Costs []*Cost `protobuf:"bytes,1,rep,name=costs,proto3" json:"costs,omitempty" bson:"costs" db:"costs" yaml:"costs"`
+	Costs []*Cost `protobuf:"bytes,1,rep,name=costs,proto3" json:"costs,omitempty" yaml:"costs" bson:"costs" db:"costs"`
 }
 
 func (x *SetDrivingCostsRequest) Reset() {

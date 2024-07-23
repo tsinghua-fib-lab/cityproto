@@ -150,6 +150,7 @@ export const PersonProfile = proto3.makeMessageType(
     { no: 2, name: "education", kind: "enum", T: proto3.getEnumType(Education) },
     { no: 3, name: "gender", kind: "enum", T: proto3.getEnumType(Gender) },
     { no: 4, name: "consumption", kind: "enum", T: proto3.getEnumType(Consumption) },
+    { no: 5, name: "house_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
   ],
 );
 

@@ -29,7 +29,7 @@ type GetAgentRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// agent id
-	AgentId int32 `protobuf:"varint,1,opt,name=agent_id,json=agentId,proto3" json:"agent_id,omitempty" yaml:"agent_id" bson:"agent_id" db:"agent_id"`
+	AgentId int32 `protobuf:"varint,1,opt,name=agent_id,json=agentId,proto3" json:"agent_id,omitempty" bson:"agent_id" db:"agent_id" yaml:"agent_id"`
 }
 
 func (x *GetAgentRequest) Reset() {
@@ -80,7 +80,7 @@ type GetAgentResponse struct {
 	// agent信息
 	Base *Agent `protobuf:"bytes,1,opt,name=base,proto3" json:"base,omitempty" yaml:"base" bson:"base" db:"base"`
 	// agent运动信息
-	Motion *AgentMotion `protobuf:"bytes,2,opt,name=motion,proto3" json:"motion,omitempty" yaml:"motion" bson:"motion" db:"motion"`
+	Motion *AgentMotion `protobuf:"bytes,2,opt,name=motion,proto3" json:"motion,omitempty" db:"motion" yaml:"motion" bson:"motion"`
 }
 
 func (x *GetAgentResponse) Reset() {
@@ -136,7 +136,7 @@ type AddAgentRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 约定：agent中不设置id
-	Agent *Agent `protobuf:"bytes,1,opt,name=agent,proto3" json:"agent,omitempty" bson:"agent" db:"agent" yaml:"agent"`
+	Agent *Agent `protobuf:"bytes,1,opt,name=agent,proto3" json:"agent,omitempty" yaml:"agent" bson:"agent" db:"agent"`
 }
 
 func (x *AddAgentRequest) Reset() {
@@ -236,7 +236,7 @@ type SetScheduleRequest struct {
 	// agent id
 	AgentId int32 `protobuf:"varint,1,opt,name=agent_id,json=agentId,proto3" json:"agent_id,omitempty" yaml:"agent_id" bson:"agent_id" db:"agent_id"`
 	// 新的schedule（覆盖原有的schedule）
-	Schedules []*v2.Schedule `protobuf:"bytes,2,rep,name=schedules,proto3" json:"schedules,omitempty" yaml:"schedules" bson:"schedules" db:"schedules"`
+	Schedules []*v2.Schedule `protobuf:"bytes,2,rep,name=schedules,proto3" json:"schedules,omitempty" db:"schedules" yaml:"schedules" bson:"schedules"`
 }
 
 func (x *SetScheduleRequest) Reset() {
@@ -331,7 +331,7 @@ type GetAgentsByLongLatAreaRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 经纬度范围
-	Area *v21.LongLatBBox `protobuf:"bytes,1,opt,name=area,proto3" json:"area,omitempty" yaml:"area" bson:"area" db:"area"`
+	Area *v21.LongLatBBox `protobuf:"bytes,1,opt,name=area,proto3" json:"area,omitempty" db:"area" yaml:"area" bson:"area"`
 }
 
 func (x *GetAgentsByLongLatAreaRequest) Reset() {
@@ -380,7 +380,7 @@ type GetAgentsByLongLatAreaResponse struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 当前模拟步数
-	Step int32 `protobuf:"varint,1,opt,name=step,proto3" json:"step,omitempty" db:"step" yaml:"step" bson:"step"`
+	Step int32 `protobuf:"varint,1,opt,name=step,proto3" json:"step,omitempty" yaml:"step" bson:"step" db:"step"`
 	// 区域内的agent的运动信息
 	Motions []*AgentMotion `protobuf:"bytes,2,rep,name=motions,proto3" json:"motions,omitempty" yaml:"motions" bson:"motions" db:"motions"`
 }

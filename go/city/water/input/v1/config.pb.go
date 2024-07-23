@@ -26,8 +26,8 @@ type Mongo struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Uri  string        `protobuf:"bytes,1,opt,name=uri,proto3" json:"uri,omitempty" yaml:"uri" bson:"uri" db:"uri"`
-	Map  *v1.MongoPath `protobuf:"bytes,2,opt,name=map,proto3" json:"map,omitempty" db:"map" yaml:"map" bson:"map"`
+	Uri  string        `protobuf:"bytes,1,opt,name=uri,proto3" json:"uri,omitempty" db:"uri" yaml:"uri" bson:"uri"`
+	Map  *v1.MongoPath `protobuf:"bytes,2,opt,name=map,proto3" json:"map,omitempty" yaml:"map" bson:"map" db:"map"`
 	Rain *v1.MongoPath `protobuf:"bytes,3,opt,name=rain,proto3" json:"rain,omitempty" yaml:"rain" bson:"rain" db:"rain"`
 }
 
@@ -91,7 +91,7 @@ type ControlStep struct {
 
 	Start    int32   `protobuf:"varint,1,opt,name=start,proto3" json:"start,omitempty" yaml:"start" bson:"start" db:"start"`
 	Total    int32   `protobuf:"varint,2,opt,name=total,proto3" json:"total,omitempty" yaml:"total" bson:"total" db:"total"`
-	Interval float64 `protobuf:"fixed64,3,opt,name=interval,proto3" json:"interval,omitempty" db:"interval" yaml:"interval" bson:"interval"`
+	Interval float64 `protobuf:"fixed64,3,opt,name=interval,proto3" json:"interval,omitempty" bson:"interval" db:"interval" yaml:"interval"`
 }
 
 func (x *ControlStep) Reset() {
@@ -152,7 +152,7 @@ type Control struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Step *ControlStep `protobuf:"bytes,1,opt,name=step,proto3" json:"step,omitempty" yaml:"step" bson:"step" db:"step"`
+	Step *ControlStep `protobuf:"bytes,1,opt,name=step,proto3" json:"step,omitempty" bson:"step" db:"step" yaml:"step"`
 }
 
 func (x *Control) Reset() {
@@ -200,8 +200,8 @@ type OutputSwitch struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Road     bool `protobuf:"varint,1,opt,name=road,proto3" json:"road,omitempty" yaml:"road" bson:"road" db:"road"`
-	Drainage bool `protobuf:"varint,2,opt,name=drainage,proto3" json:"drainage,omitempty" db:"drainage" yaml:"drainage" bson:"drainage"`
+	Road     bool `protobuf:"varint,1,opt,name=road,proto3" json:"road,omitempty" bson:"road" db:"road" yaml:"road"`
+	Drainage bool `protobuf:"varint,2,opt,name=drainage,proto3" json:"drainage,omitempty" yaml:"drainage" bson:"drainage" db:"drainage"`
 	Supply   bool `protobuf:"varint,3,opt,name=supply,proto3" json:"supply,omitempty" db:"supply" yaml:"supply" bson:"supply"`
 	Aoi      bool `protobuf:"varint,4,opt,name=aoi,proto3" json:"aoi,omitempty" yaml:"aoi" bson:"aoi" db:"aoi"`
 	Event    bool `protobuf:"varint,5,opt,name=event,proto3" json:"event,omitempty" yaml:"event" bson:"event" db:"event"`
@@ -336,7 +336,7 @@ type Config struct {
 	unknownFields protoimpl.UnknownFields
 
 	Mongo   *Mongo   `protobuf:"bytes,1,opt,name=mongo,proto3" json:"mongo,omitempty" yaml:"mongo" bson:"mongo" db:"mongo"`
-	Control *Control `protobuf:"bytes,2,opt,name=control,proto3" json:"control,omitempty" yaml:"control" bson:"control" db:"control"`
+	Control *Control `protobuf:"bytes,2,opt,name=control,proto3" json:"control,omitempty" bson:"control" db:"control" yaml:"control"`
 	Output  *Output  `protobuf:"bytes,3,opt,name=output,proto3" json:"output,omitempty" yaml:"output" bson:"output" db:"output"`
 }
 

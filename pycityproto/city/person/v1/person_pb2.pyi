@@ -115,17 +115,19 @@ class BikeAttribute(_message.Message):
         ...
 
 class PersonProfile(_message.Message):
-    __slots__ = ['age', 'education', 'gender', 'consumption']
+    __slots__ = ['age', 'education', 'gender', 'consumption', 'house_id']
     AGE_FIELD_NUMBER: _ClassVar[int]
     EDUCATION_FIELD_NUMBER: _ClassVar[int]
     GENDER_FIELD_NUMBER: _ClassVar[int]
     CONSUMPTION_FIELD_NUMBER: _ClassVar[int]
+    HOUSE_ID_FIELD_NUMBER: _ClassVar[int]
     age: int
     education: Education
     gender: Gender
     consumption: Consumption
+    house_id: int
 
-    def __init__(self, age: _Optional[int]=..., education: _Optional[_Union[Education, str]]=..., gender: _Optional[_Union[Gender, str]]=..., consumption: _Optional[_Union[Consumption, str]]=...) -> None:
+    def __init__(self, age: _Optional[int]=..., education: _Optional[_Union[Education, str]]=..., gender: _Optional[_Union[Gender, str]]=..., consumption: _Optional[_Union[Consumption, str]]=..., house_id: _Optional[int]=...) -> None:
         ...
 
 class Person(_message.Message):

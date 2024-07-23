@@ -453,6 +453,14 @@ export declare class PersonProfile extends Message<PersonProfile> {
    */
   consumption: Consumption;
 
+  /**
+   * 房屋ID 区分不同家庭
+   * House ID, identify which family this person belongs to
+   *
+   * @generated from field: int32 house_id = 5;
+   */
+  houseId: number;
+
   constructor(data?: PartialMessage<PersonProfile>);
 
   static readonly runtime: typeof proto3;

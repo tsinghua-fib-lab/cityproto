@@ -110,6 +110,7 @@ PROTOBUF_CONSTEXPR PersonProfile::PersonProfile(
   , /*decltype(_impl_.education_)*/0
   , /*decltype(_impl_.gender_)*/0
   , /*decltype(_impl_.consumption_)*/0
+  , /*decltype(_impl_.house_id_)*/0
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct PersonProfileDefaultTypeInternal {
   PROTOBUF_CONSTEXPR PersonProfileDefaultTypeInternal()
@@ -244,6 +245,7 @@ const uint32_t TableStruct_city_2fperson_2fv1_2fperson_2eproto::offsets[] PROTOB
   PROTOBUF_FIELD_OFFSET(::city::person::v1::PersonProfile, _impl_.education_),
   PROTOBUF_FIELD_OFFSET(::city::person::v1::PersonProfile, _impl_.gender_),
   PROTOBUF_FIELD_OFFSET(::city::person::v1::PersonProfile, _impl_.consumption_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v1::PersonProfile, _impl_.house_id_),
   PROTOBUF_FIELD_OFFSET(::city::person::v1::Person_LabelsEntry_DoNotUse, _has_bits_),
   PROTOBUF_FIELD_OFFSET(::city::person::v1::Person_LabelsEntry_DoNotUse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -299,9 +301,9 @@ static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protode
   { 37, 45, -1, sizeof(::city::person::v1::PedestrianAttribute)},
   { 47, 55, -1, sizeof(::city::person::v1::BikeAttribute)},
   { 57, -1, -1, sizeof(::city::person::v1::PersonProfile)},
-  { 67, 75, -1, sizeof(::city::person::v1::Person_LabelsEntry_DoNotUse)},
-  { 77, 95, -1, sizeof(::city::person::v1::Person)},
-  { 107, -1, -1, sizeof(::city::person::v1::Persons)},
+  { 68, 76, -1, sizeof(::city::person::v1::Person_LabelsEntry_DoNotUse)},
+  { 78, 96, -1, sizeof(::city::person::v1::Person)},
+  { 108, -1, -1, sizeof(::city::person::v1::Persons)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -336,53 +338,54 @@ const char descriptor_table_protodef_city_2fperson_2fv1_2fperson_2eproto[] PROTO
   "strianAttribute\022\024\n\005speed\030\001 \001(\001R\005speed\022\031\n"
   "\005model\030\002 \001(\tH\000R\005model\210\001\001B\010\n\006_model\"J\n\rBi"
   "keAttribute\022\024\n\005speed\030\001 \001(\001R\005speed\022\031\n\005mod"
-  "el\030\002 \001(\tH\000R\005model\210\001\001B\010\n\006_model\"\311\001\n\rPerso"
+  "el\030\002 \001(\tH\000R\005model\210\001\001B\010\n\006_model\"\344\001\n\rPerso"
   "nProfile\022\020\n\003age\030\001 \001(\005R\003age\0227\n\teducation\030"
   "\002 \001(\0162\031.city.person.v1.EducationR\teducat"
   "ion\022.\n\006gender\030\003 \001(\0162\026.city.person.v1.Gen"
   "derR\006gender\022=\n\013consumption\030\004 \001(\0162\033.city."
-  "person.v1.ConsumptionR\013consumption\"\221\007\n\006P"
-  "erson\022\016\n\002id\030\001 \001(\005R\002id\022=\n\tattribute\030\002 \001(\013"
-  "2\037.city.person.v1.PersonAttributeR\tattri"
-  "bute\022)\n\004home\030\003 \001(\0132\025.city.geo.v2.Positio"
-  "nR\004home\0224\n\tschedules\030\004 \003(\0132\026.city.trip.v"
-  "2.ScheduleR\tschedules\022R\n\021vehicle_attribu"
-  "te\030\007 \001(\0132 .city.person.v1.VehicleAttribu"
-  "teH\000R\020vehicleAttribute\210\001\001\022F\n\rbus_attribu"
-  "te\030\010 \001(\0132\034.city.person.v1.BusAttributeH\001"
-  "R\014busAttribute\210\001\001\022[\n\024pedestrian_attribut"
-  "e\030\014 \001(\0132#.city.person.v1.PedestrianAttri"
-  "buteH\002R\023pedestrianAttribute\210\001\001\022I\n\016bike_a"
-  "ttribute\030\t \001(\0132\035.city.person.v1.BikeAttr"
-  "ibuteH\003R\rbikeAttribute\210\001\001\022:\n\006labels\030\n \003("
-  "\0132\".city.person.v1.Person.LabelsEntryR\006l"
-  "abels\022<\n\007profile\030\013 \001(\0132\035.city.person.v1."
-  "PersonProfileH\004R\007profile\210\001\001\022.\n\004work\030\r \001("
-  "\0132\025.city.geo.v2.PositionH\005R\004work\210\001\001\022/\n\021o"
-  "utput_when_sleep\030\016 \001(\010H\006R\017outputWhenSlee"
-  "p\210\001\001\0329\n\013LabelsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n"
-  "\005value\030\002 \001(\tR\005value:\0028\001B\024\n\022_vehicle_attr"
-  "ibuteB\020\n\016_bus_attributeB\027\n\025_pedestrian_a"
-  "ttributeB\021\n\017_bike_attributeB\n\n\010_profileB"
-  "\007\n\005_workB\024\n\022_output_when_sleep\";\n\007Person"
-  "s\0220\n\007persons\030\001 \003(\0132\026.city.person.v1.Pers"
-  "onR\007persons*\334\001\n\tEducation\022\031\n\025EDUCATION_U"
-  "NSPECIFIED\020\000\022\024\n\020EDUCATION_DOCTOR\020\001\022\024\n\020ED"
-  "UCATION_MASTER\020\002\022\026\n\022EDUCATION_BACHELOR\020\003"
-  "\022\031\n\025EDUCATION_HIGH_SCHOOL\020\004\022 \n\034EDUCATION"
-  "_JUNIOR_HIGH_SCHOOL\020\005\022\034\n\030EDUCATION_PRIMA"
-  "RY_SCHOOL\020\006\022\025\n\021EDUCATION_COLLEGE\020\007*D\n\006Ge"
-  "nder\022\026\n\022GENDER_UNSPECIFIED\020\000\022\017\n\013GENDER_M"
-  "ALE\020\001\022\021\n\rGENDER_FEMALE\020\002*\256\001\n\013Consumption"
-  "\022\033\n\027CONSUMPTION_UNSPECIFIED\020\000\022\023\n\017CONSUMP"
-  "TION_LOW\020\001\022\036\n\032CONSUMPTION_RELATIVELY_LOW"
-  "\020\002\022\026\n\022CONSUMPTION_MEDIUM\020\003\022\037\n\033CONSUMPTIO"
-  "N_RELATIVELY_HIGH\020\004\022\024\n\020CONSUMPTION_HIGH\020"
-  "\005B\261\001\n\022com.city.person.v1B\013PersonProtoP\001Z"
-  "4git.fiblab.net/sim/protos/go/city/perso"
-  "n/v1;personv1\242\002\003CPX\252\002\016City.Person.V1\312\002\016C"
-  "ity\\Person\\V1\342\002\032City\\Person\\V1\\GPBMetada"
-  "ta\352\002\020City::Person::V1b\006proto3"
+  "person.v1.ConsumptionR\013consumption\022\031\n\010ho"
+  "use_id\030\005 \001(\005R\007houseId\"\221\007\n\006Person\022\016\n\002id\030\001"
+  " \001(\005R\002id\022=\n\tattribute\030\002 \001(\0132\037.city.perso"
+  "n.v1.PersonAttributeR\tattribute\022)\n\004home\030"
+  "\003 \001(\0132\025.city.geo.v2.PositionR\004home\0224\n\tsc"
+  "hedules\030\004 \003(\0132\026.city.trip.v2.ScheduleR\ts"
+  "chedules\022R\n\021vehicle_attribute\030\007 \001(\0132 .ci"
+  "ty.person.v1.VehicleAttributeH\000R\020vehicle"
+  "Attribute\210\001\001\022F\n\rbus_attribute\030\010 \001(\0132\034.ci"
+  "ty.person.v1.BusAttributeH\001R\014busAttribut"
+  "e\210\001\001\022[\n\024pedestrian_attribute\030\014 \001(\0132#.cit"
+  "y.person.v1.PedestrianAttributeH\002R\023pedes"
+  "trianAttribute\210\001\001\022I\n\016bike_attribute\030\t \001("
+  "\0132\035.city.person.v1.BikeAttributeH\003R\rbike"
+  "Attribute\210\001\001\022:\n\006labels\030\n \003(\0132\".city.pers"
+  "on.v1.Person.LabelsEntryR\006labels\022<\n\007prof"
+  "ile\030\013 \001(\0132\035.city.person.v1.PersonProfile"
+  "H\004R\007profile\210\001\001\022.\n\004work\030\r \001(\0132\025.city.geo."
+  "v2.PositionH\005R\004work\210\001\001\022/\n\021output_when_sl"
+  "eep\030\016 \001(\010H\006R\017outputWhenSleep\210\001\001\0329\n\013Label"
+  "sEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR"
+  "\005value:\0028\001B\024\n\022_vehicle_attributeB\020\n\016_bus"
+  "_attributeB\027\n\025_pedestrian_attributeB\021\n\017_"
+  "bike_attributeB\n\n\010_profileB\007\n\005_workB\024\n\022_"
+  "output_when_sleep\";\n\007Persons\0220\n\007persons\030"
+  "\001 \003(\0132\026.city.person.v1.PersonR\007persons*\334"
+  "\001\n\tEducation\022\031\n\025EDUCATION_UNSPECIFIED\020\000\022"
+  "\024\n\020EDUCATION_DOCTOR\020\001\022\024\n\020EDUCATION_MASTE"
+  "R\020\002\022\026\n\022EDUCATION_BACHELOR\020\003\022\031\n\025EDUCATION"
+  "_HIGH_SCHOOL\020\004\022 \n\034EDUCATION_JUNIOR_HIGH_"
+  "SCHOOL\020\005\022\034\n\030EDUCATION_PRIMARY_SCHOOL\020\006\022\025"
+  "\n\021EDUCATION_COLLEGE\020\007*D\n\006Gender\022\026\n\022GENDE"
+  "R_UNSPECIFIED\020\000\022\017\n\013GENDER_MALE\020\001\022\021\n\rGEND"
+  "ER_FEMALE\020\002*\256\001\n\013Consumption\022\033\n\027CONSUMPTI"
+  "ON_UNSPECIFIED\020\000\022\023\n\017CONSUMPTION_LOW\020\001\022\036\n"
+  "\032CONSUMPTION_RELATIVELY_LOW\020\002\022\026\n\022CONSUMP"
+  "TION_MEDIUM\020\003\022\037\n\033CONSUMPTION_RELATIVELY_"
+  "HIGH\020\004\022\024\n\020CONSUMPTION_HIGH\020\005B\261\001\n\022com.cit"
+  "y.person.v1B\013PersonProtoP\001Z4git.fiblab.n"
+  "et/sim/protos/go/city/person/v1;personv1"
+  "\242\002\003CPX\252\002\016City.Person.V1\312\002\016City\\Person\\V1"
+  "\342\002\032City\\Person\\V1\\GPBMetadata\352\002\020City::Pe"
+  "rson::V1b\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_city_2fperson_2fv1_2fperson_2eproto_deps[2] = {
   &::descriptor_table_city_2fgeo_2fv2_2fgeo_2eproto,
@@ -390,7 +393,7 @@ static const ::_pbi::DescriptorTable* const descriptor_table_city_2fperson_2fv1_
 };
 static ::_pbi::once_flag descriptor_table_city_2fperson_2fv1_2fperson_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2fperson_2fv1_2fperson_2eproto = {
-    false, false, 2629, descriptor_table_protodef_city_2fperson_2fv1_2fperson_2eproto,
+    false, false, 2656, descriptor_table_protodef_city_2fperson_2fv1_2fperson_2eproto,
     "city/person/v1/person.proto",
     &descriptor_table_city_2fperson_2fv1_2fperson_2eproto_once, descriptor_table_city_2fperson_2fv1_2fperson_2eproto_deps, 2, 9,
     schemas, file_default_instances, TableStruct_city_2fperson_2fv1_2fperson_2eproto::offsets,
@@ -1985,12 +1988,13 @@ PersonProfile::PersonProfile(const PersonProfile& from)
     , decltype(_impl_.education_){}
     , decltype(_impl_.gender_){}
     , decltype(_impl_.consumption_){}
+    , decltype(_impl_.house_id_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&_impl_.age_, &from._impl_.age_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.consumption_) -
-    reinterpret_cast<char*>(&_impl_.age_)) + sizeof(_impl_.consumption_));
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.house_id_) -
+    reinterpret_cast<char*>(&_impl_.age_)) + sizeof(_impl_.house_id_));
   // @@protoc_insertion_point(copy_constructor:city.person.v1.PersonProfile)
 }
 
@@ -2003,6 +2007,7 @@ inline void PersonProfile::SharedCtor(
     , decltype(_impl_.education_){0}
     , decltype(_impl_.gender_){0}
     , decltype(_impl_.consumption_){0}
+    , decltype(_impl_.house_id_){0}
     , /*decltype(_impl_._cached_size_)*/{}
   };
 }
@@ -2031,8 +2036,8 @@ void PersonProfile::Clear() {
   (void) cached_has_bits;
 
   ::memset(&_impl_.age_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_impl_.consumption_) -
-      reinterpret_cast<char*>(&_impl_.age_)) + sizeof(_impl_.consumption_));
+      reinterpret_cast<char*>(&_impl_.house_id_) -
+      reinterpret_cast<char*>(&_impl_.age_)) + sizeof(_impl_.house_id_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2074,6 +2079,14 @@ const char* PersonProfile::_InternalParse(const char* ptr, ::_pbi::ParseContext*
           uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_consumption(static_cast<::city::person::v1::Consumption>(val));
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 house_id = 5 [json_name = "houseId"];
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
+          _impl_.house_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
@@ -2133,6 +2146,12 @@ uint8_t* PersonProfile::_InternalSerialize(
       4, this->_internal_consumption(), target);
   }
 
+  // int32 house_id = 5 [json_name = "houseId"];
+  if (this->_internal_house_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(5, this->_internal_house_id(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -2172,6 +2191,11 @@ size_t PersonProfile::ByteSizeLong() const {
       ::_pbi::WireFormatLite::EnumSize(this->_internal_consumption());
   }
 
+  // int32 house_id = 5 [json_name = "houseId"];
+  if (this->_internal_house_id() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_house_id());
+  }
+
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
@@ -2202,6 +2226,9 @@ void PersonProfile::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::
   if (from._internal_consumption() != 0) {
     _this->_internal_set_consumption(from._internal_consumption());
   }
+  if (from._internal_house_id() != 0) {
+    _this->_internal_set_house_id(from._internal_house_id());
+  }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -2220,8 +2247,8 @@ void PersonProfile::InternalSwap(PersonProfile* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(PersonProfile, _impl_.consumption_)
-      + sizeof(PersonProfile::_impl_.consumption_)
+      PROTOBUF_FIELD_OFFSET(PersonProfile, _impl_.house_id_)
+      + sizeof(PersonProfile::_impl_.house_id_)
       - PROTOBUF_FIELD_OFFSET(PersonProfile, _impl_.age_)>(
           reinterpret_cast<char*>(&_impl_.age_),
           reinterpret_cast<char*>(&other->_impl_.age_));
