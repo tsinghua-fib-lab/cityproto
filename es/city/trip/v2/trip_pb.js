@@ -4,7 +4,7 @@
 // @ts-nocheck
 
 import { proto3 } from "@bufbuild/protobuf";
-import { Position } from "../../geo/v2/geo_pb.js";
+import { AoiPosition, LanePosition, Position } from "../../geo/v2/geo_pb.js";
 import { Journey } from "../../routing/v2/routing_pb.js";
 
 /**
@@ -25,6 +25,21 @@ export const TripMode = proto3.makeEnum(
 );
 
 /**
+ * 停靠点
+ * stop points of person
+ *
+ * @generated from message city.trip.v2.TripStop
+ */
+export const TripStop = proto3.makeMessageType(
+  "city.trip.v2.TripStop",
+  () => [
+    { no: 1, name: "aoi_position", kind: "message", T: AoiPosition, opt: true },
+    { no: 2, name: "lane_position", kind: "message", T: LanePosition },
+    { no: 3, name: "duration", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+  ],
+);
+
+/**
  * 出行
  * Trip
  *
@@ -41,6 +56,7 @@ export const Trip = proto3.makeMessageType(
     { no: 6, name: "activity", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
     { no: 8, name: "model", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
     { no: 7, name: "routes", kind: "message", T: Journey, repeated: true },
+    { no: 9, name: "trip_stops", kind: "message", T: TripStop, repeated: true },
   ],
 );
 

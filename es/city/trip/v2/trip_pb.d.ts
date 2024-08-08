@@ -5,7 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { Position } from "../../geo/v2/geo_pb.js";
+import type { AoiPosition, LanePosition, Position } from "../../geo/v2/geo_pb.js";
 import type { Journey } from "../../routing/v2/routing_pb.js";
 
 /**
@@ -54,6 +54,52 @@ export declare enum TripMode {
    * @generated from enum value: TRIP_MODE_BIKE_WALK = 5;
    */
   BIKE_WALK = 5,
+}
+
+/**
+ * 停靠点
+ * stop points of person
+ *
+ * @generated from message city.trip.v2.TripStop
+ */
+export declare class TripStop extends Message<TripStop> {
+  /**
+   * 停车点AOI坐标（可选）
+   * Parking position coordinates AOI (optional)
+   *
+   * @generated from field: optional city.geo.v2.AoiPosition aoi_position = 1;
+   */
+  aoiPosition?: AoiPosition;
+
+  /**
+   * 停车点Lane+S坐标（必须提供）
+   * Parking position coordinates Lane+S (must be provided)
+   *
+   * @generated from field: city.geo.v2.LanePosition lane_position = 2;
+   */
+  lanePosition?: LanePosition;
+
+  /**
+   * 停车持续时间
+   * Parking duration time (s)
+   *
+   * @generated from field: double duration = 3;
+   */
+  duration: number;
+
+  constructor(data?: PartialMessage<TripStop>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.trip.v2.TripStop";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TripStop;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TripStop;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TripStop;
+
+  static equals(a: TripStop | PlainMessage<TripStop> | undefined, b: TripStop | PlainMessage<TripStop> | undefined): boolean;
 }
 
 /**
@@ -126,6 +172,14 @@ export declare class Trip extends Message<Trip> {
    * @generated from field: repeated city.routing.v2.Journey routes = 7;
    */
   routes: Journey[];
+
+  /**
+   * 本次出行的所有停靠点
+   * stop points of this trip
+   *
+   * @generated from field: repeated city.trip.v2.TripStop trip_stops = 9;
+   */
+  tripStops: TripStop[];
 
   constructor(data?: PartialMessage<Trip>);
 

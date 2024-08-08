@@ -342,6 +342,20 @@ export const PublicTransportSubline = proto3.makeMessageType(
 );
 
 /**
+ * 描述公交线和lane的配对关系
+ * corresponding relations between sublines and driving lanes
+ *
+ * @generated from message city.map.v2.SublineDrivingLanePair
+ */
+export const SublineDrivingLanePair = proto3.makeMessageType(
+  "city.map.v2.SublineDrivingLanePair",
+  () => [
+    { no: 1, name: "subline_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "driving_lane_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ],
+);
+
+/**
  * Aoi，用于描述地图上的区域
  * Aoi, describing a region on the map
  *
@@ -363,6 +377,7 @@ export const Aoi = proto3.makeMessageType(
     { no: 12, name: "urban_land_use", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
     { no: 9, name: "poi_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
     { no: 13, name: "subline_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 14, name: "subline_driving_lane_pairs", kind: "message", T: SublineDrivingLanePair, repeated: true },
   ],
 );
 

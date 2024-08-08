@@ -28,6 +28,12 @@ enum Status {
   // 等待路径规划
   // wait for path routing
   STATUS_WAIT_ROUTE = 6;
+  // 等待公交车
+  // wait for bus coming
+  STATUS_WAIT_BUS = 7;
+  // 操控轨道交通
+  // operating rail transit
+  STATUS_RAIL_TRANSIT = 8;
 }
 
 // Person（人）的运动状态

@@ -98,6 +98,9 @@ extern RoadDefaultTypeInternal _Road_default_instance_;
 class RoadIds;
 struct RoadIdsDefaultTypeInternal;
 extern RoadIdsDefaultTypeInternal _RoadIds_default_instance_;
+class SublineDrivingLanePair;
+struct SublineDrivingLanePairDefaultTypeInternal;
+extern SublineDrivingLanePairDefaultTypeInternal _SublineDrivingLanePair_default_instance_;
 class SublineSchedules;
 struct SublineSchedulesDefaultTypeInternal;
 extern SublineSchedulesDefaultTypeInternal _SublineSchedules_default_instance_;
@@ -121,6 +124,7 @@ template<> ::city::map::v2::Polyline* Arena::CreateMaybeMessage<::city::map::v2:
 template<> ::city::map::v2::PublicTransportSubline* Arena::CreateMaybeMessage<::city::map::v2::PublicTransportSubline>(Arena*);
 template<> ::city::map::v2::Road* Arena::CreateMaybeMessage<::city::map::v2::Road>(Arena*);
 template<> ::city::map::v2::RoadIds* Arena::CreateMaybeMessage<::city::map::v2::RoadIds>(Arena*);
+template<> ::city::map::v2::SublineDrivingLanePair* Arena::CreateMaybeMessage<::city::map::v2::SublineDrivingLanePair>(Arena*);
 template<> ::city::map::v2::SublineSchedules* Arena::CreateMaybeMessage<::city::map::v2::SublineSchedules>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace city {
@@ -3255,6 +3259,165 @@ class PublicTransportSubline final :
 };
 // -------------------------------------------------------------------
 
+class SublineDrivingLanePair final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.map.v2.SublineDrivingLanePair) */ {
+ public:
+  inline SublineDrivingLanePair() : SublineDrivingLanePair(nullptr) {}
+  ~SublineDrivingLanePair() override;
+  explicit PROTOBUF_CONSTEXPR SublineDrivingLanePair(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  SublineDrivingLanePair(const SublineDrivingLanePair& from);
+  SublineDrivingLanePair(SublineDrivingLanePair&& from) noexcept
+    : SublineDrivingLanePair() {
+    *this = ::std::move(from);
+  }
+
+  inline SublineDrivingLanePair& operator=(const SublineDrivingLanePair& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline SublineDrivingLanePair& operator=(SublineDrivingLanePair&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const SublineDrivingLanePair& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const SublineDrivingLanePair* internal_default_instance() {
+    return reinterpret_cast<const SublineDrivingLanePair*>(
+               &_SublineDrivingLanePair_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    14;
+
+  friend void swap(SublineDrivingLanePair& a, SublineDrivingLanePair& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(SublineDrivingLanePair* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(SublineDrivingLanePair* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  SublineDrivingLanePair* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<SublineDrivingLanePair>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const SublineDrivingLanePair& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const SublineDrivingLanePair& from) {
+    SublineDrivingLanePair::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(SublineDrivingLanePair* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.map.v2.SublineDrivingLanePair";
+  }
+  protected:
+  explicit SublineDrivingLanePair(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kSublineIdFieldNumber = 1,
+    kDrivingLaneIdFieldNumber = 2,
+  };
+  // int32 subline_id = 1 [json_name = "sublineId"];
+  void clear_subline_id();
+  int32_t subline_id() const;
+  void set_subline_id(int32_t value);
+  private:
+  int32_t _internal_subline_id() const;
+  void _internal_set_subline_id(int32_t value);
+  public:
+
+  // int32 driving_lane_id = 2 [json_name = "drivingLaneId"];
+  void clear_driving_lane_id();
+  int32_t driving_lane_id() const;
+  void set_driving_lane_id(int32_t value);
+  private:
+  int32_t _internal_driving_lane_id() const;
+  void _internal_set_driving_lane_id(int32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:city.map.v2.SublineDrivingLanePair)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    int32_t subline_id_;
+    int32_t driving_lane_id_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_city_2fmap_2fv2_2fmap_2eproto;
+};
+// -------------------------------------------------------------------
+
 class Aoi final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.map.v2.Aoi) */ {
  public:
@@ -3303,7 +3466,7 @@ class Aoi final :
                &_Aoi_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    15;
 
   friend void swap(Aoi& a, Aoi& b) {
     a.Swap(&b);
@@ -3383,6 +3546,7 @@ class Aoi final :
     kWalkingGatesFieldNumber = 7,
     kPoiIdsFieldNumber = 9,
     kSublineIdsFieldNumber = 13,
+    kSublineDrivingLanePairsFieldNumber = 14,
     kNameFieldNumber = 11,
     kUrbanLandUseFieldNumber = 12,
     kIdFieldNumber = 1,
@@ -3524,6 +3688,24 @@ class Aoi final :
   ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
       mutable_subline_ids();
 
+  // repeated .city.map.v2.SublineDrivingLanePair subline_driving_lane_pairs = 14 [json_name = "sublineDrivingLanePairs"];
+  int subline_driving_lane_pairs_size() const;
+  private:
+  int _internal_subline_driving_lane_pairs_size() const;
+  public:
+  void clear_subline_driving_lane_pairs();
+  ::city::map::v2::SublineDrivingLanePair* mutable_subline_driving_lane_pairs(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::map::v2::SublineDrivingLanePair >*
+      mutable_subline_driving_lane_pairs();
+  private:
+  const ::city::map::v2::SublineDrivingLanePair& _internal_subline_driving_lane_pairs(int index) const;
+  ::city::map::v2::SublineDrivingLanePair* _internal_add_subline_driving_lane_pairs();
+  public:
+  const ::city::map::v2::SublineDrivingLanePair& subline_driving_lane_pairs(int index) const;
+  ::city::map::v2::SublineDrivingLanePair* add_subline_driving_lane_pairs();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::map::v2::SublineDrivingLanePair >&
+      subline_driving_lane_pairs() const;
+
   // string name = 11 [json_name = "name"];
   void clear_name();
   const std::string& name() const;
@@ -3619,6 +3801,7 @@ class Aoi final :
     mutable std::atomic<int> _poi_ids_cached_byte_size_;
     ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t > subline_ids_;
     mutable std::atomic<int> _subline_ids_cached_byte_size_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::map::v2::SublineDrivingLanePair > subline_driving_lane_pairs_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr urban_land_use_;
     int32_t id_;
@@ -3679,7 +3862,7 @@ class Poi final :
                &_Poi_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    16;
 
   friend void swap(Poi& a, Poi& b) {
     a.Swap(&b);
@@ -3932,7 +4115,7 @@ class Map final :
                &_Map_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    17;
 
   friend void swap(Map& a, Map& b) {
     a.Swap(&b);
@@ -6661,6 +6844,50 @@ PublicTransportSubline::taz_costs() const {
 
 // -------------------------------------------------------------------
 
+// SublineDrivingLanePair
+
+// int32 subline_id = 1 [json_name = "sublineId"];
+inline void SublineDrivingLanePair::clear_subline_id() {
+  _impl_.subline_id_ = 0;
+}
+inline int32_t SublineDrivingLanePair::_internal_subline_id() const {
+  return _impl_.subline_id_;
+}
+inline int32_t SublineDrivingLanePair::subline_id() const {
+  // @@protoc_insertion_point(field_get:city.map.v2.SublineDrivingLanePair.subline_id)
+  return _internal_subline_id();
+}
+inline void SublineDrivingLanePair::_internal_set_subline_id(int32_t value) {
+  
+  _impl_.subline_id_ = value;
+}
+inline void SublineDrivingLanePair::set_subline_id(int32_t value) {
+  _internal_set_subline_id(value);
+  // @@protoc_insertion_point(field_set:city.map.v2.SublineDrivingLanePair.subline_id)
+}
+
+// int32 driving_lane_id = 2 [json_name = "drivingLaneId"];
+inline void SublineDrivingLanePair::clear_driving_lane_id() {
+  _impl_.driving_lane_id_ = 0;
+}
+inline int32_t SublineDrivingLanePair::_internal_driving_lane_id() const {
+  return _impl_.driving_lane_id_;
+}
+inline int32_t SublineDrivingLanePair::driving_lane_id() const {
+  // @@protoc_insertion_point(field_get:city.map.v2.SublineDrivingLanePair.driving_lane_id)
+  return _internal_driving_lane_id();
+}
+inline void SublineDrivingLanePair::_internal_set_driving_lane_id(int32_t value) {
+  
+  _impl_.driving_lane_id_ = value;
+}
+inline void SublineDrivingLanePair::set_driving_lane_id(int32_t value) {
+  _internal_set_driving_lane_id(value);
+  // @@protoc_insertion_point(field_set:city.map.v2.SublineDrivingLanePair.driving_lane_id)
+}
+
+// -------------------------------------------------------------------
+
 // Aoi
 
 // int32 id = 1 [json_name = "id"];
@@ -7154,6 +7381,46 @@ inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
 Aoi::mutable_subline_ids() {
   // @@protoc_insertion_point(field_mutable_list:city.map.v2.Aoi.subline_ids)
   return _internal_mutable_subline_ids();
+}
+
+// repeated .city.map.v2.SublineDrivingLanePair subline_driving_lane_pairs = 14 [json_name = "sublineDrivingLanePairs"];
+inline int Aoi::_internal_subline_driving_lane_pairs_size() const {
+  return _impl_.subline_driving_lane_pairs_.size();
+}
+inline int Aoi::subline_driving_lane_pairs_size() const {
+  return _internal_subline_driving_lane_pairs_size();
+}
+inline void Aoi::clear_subline_driving_lane_pairs() {
+  _impl_.subline_driving_lane_pairs_.Clear();
+}
+inline ::city::map::v2::SublineDrivingLanePair* Aoi::mutable_subline_driving_lane_pairs(int index) {
+  // @@protoc_insertion_point(field_mutable:city.map.v2.Aoi.subline_driving_lane_pairs)
+  return _impl_.subline_driving_lane_pairs_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::map::v2::SublineDrivingLanePair >*
+Aoi::mutable_subline_driving_lane_pairs() {
+  // @@protoc_insertion_point(field_mutable_list:city.map.v2.Aoi.subline_driving_lane_pairs)
+  return &_impl_.subline_driving_lane_pairs_;
+}
+inline const ::city::map::v2::SublineDrivingLanePair& Aoi::_internal_subline_driving_lane_pairs(int index) const {
+  return _impl_.subline_driving_lane_pairs_.Get(index);
+}
+inline const ::city::map::v2::SublineDrivingLanePair& Aoi::subline_driving_lane_pairs(int index) const {
+  // @@protoc_insertion_point(field_get:city.map.v2.Aoi.subline_driving_lane_pairs)
+  return _internal_subline_driving_lane_pairs(index);
+}
+inline ::city::map::v2::SublineDrivingLanePair* Aoi::_internal_add_subline_driving_lane_pairs() {
+  return _impl_.subline_driving_lane_pairs_.Add();
+}
+inline ::city::map::v2::SublineDrivingLanePair* Aoi::add_subline_driving_lane_pairs() {
+  ::city::map::v2::SublineDrivingLanePair* _add = _internal_add_subline_driving_lane_pairs();
+  // @@protoc_insertion_point(field_add:city.map.v2.Aoi.subline_driving_lane_pairs)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::map::v2::SublineDrivingLanePair >&
+Aoi::subline_driving_lane_pairs() const {
+  // @@protoc_insertion_point(field_list:city.map.v2.Aoi.subline_driving_lane_pairs)
+  return _impl_.subline_driving_lane_pairs_;
 }
 
 // -------------------------------------------------------------------
@@ -7825,6 +8092,8 @@ Map::sublines() const {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

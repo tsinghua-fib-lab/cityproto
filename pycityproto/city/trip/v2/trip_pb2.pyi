@@ -20,8 +20,20 @@ TRIP_MODE_DRIVE_ONLY: TripMode
 TRIP_MODE_BUS_WALK: TripMode
 TRIP_MODE_BIKE_WALK: TripMode
 
+class TripStop(_message.Message):
+    __slots__ = ['aoi_position', 'lane_position', 'duration']
+    AOI_POSITION_FIELD_NUMBER: _ClassVar[int]
+    LANE_POSITION_FIELD_NUMBER: _ClassVar[int]
+    DURATION_FIELD_NUMBER: _ClassVar[int]
+    aoi_position: _geo_pb2.AoiPosition
+    lane_position: _geo_pb2.LanePosition
+    duration: float
+
+    def __init__(self, aoi_position: _Optional[_Union[_geo_pb2.AoiPosition, _Mapping]]=..., lane_position: _Optional[_Union[_geo_pb2.LanePosition, _Mapping]]=..., duration: _Optional[float]=...) -> None:
+        ...
+
 class Trip(_message.Message):
-    __slots__ = ['mode', 'end', 'departure_time', 'wait_time', 'arrival_time', 'activity', 'model', 'routes']
+    __slots__ = ['mode', 'end', 'departure_time', 'wait_time', 'arrival_time', 'activity', 'model', 'routes', 'trip_stops']
     MODE_FIELD_NUMBER: _ClassVar[int]
     END_FIELD_NUMBER: _ClassVar[int]
     DEPARTURE_TIME_FIELD_NUMBER: _ClassVar[int]
@@ -30,6 +42,7 @@ class Trip(_message.Message):
     ACTIVITY_FIELD_NUMBER: _ClassVar[int]
     MODEL_FIELD_NUMBER: _ClassVar[int]
     ROUTES_FIELD_NUMBER: _ClassVar[int]
+    TRIP_STOPS_FIELD_NUMBER: _ClassVar[int]
     mode: TripMode
     end: _geo_pb2.Position
     departure_time: float
@@ -38,8 +51,9 @@ class Trip(_message.Message):
     activity: str
     model: str
     routes: _containers.RepeatedCompositeFieldContainer[_routing_pb2.Journey]
+    trip_stops: _containers.RepeatedCompositeFieldContainer[TripStop]
 
-    def __init__(self, mode: _Optional[_Union[TripMode, str]]=..., end: _Optional[_Union[_geo_pb2.Position, _Mapping]]=..., departure_time: _Optional[float]=..., wait_time: _Optional[float]=..., arrival_time: _Optional[float]=..., activity: _Optional[str]=..., model: _Optional[str]=..., routes: _Optional[_Iterable[_Union[_routing_pb2.Journey, _Mapping]]]=...) -> None:
+    def __init__(self, mode: _Optional[_Union[TripMode, str]]=..., end: _Optional[_Union[_geo_pb2.Position, _Mapping]]=..., departure_time: _Optional[float]=..., wait_time: _Optional[float]=..., arrival_time: _Optional[float]=..., activity: _Optional[str]=..., model: _Optional[str]=..., routes: _Optional[_Iterable[_Union[_routing_pb2.Journey, _Mapping]]]=..., trip_stops: _Optional[_Iterable[_Union[TripStop, _Mapping]]]=...) -> None:
         ...
 
 class Schedule(_message.Message):

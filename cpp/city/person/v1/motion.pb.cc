@@ -80,22 +80,23 @@ const char descriptor_table_protodef_city_2fperson_2fv1_2fmotion_2eproto[] PROTO
   "n\030\003 \001(\0132\025.city.geo.v2.PositionR\010position"
   "\022\014\n\001v\030\004 \001(\001R\001v\022\034\n\tdirection\030\005 \001(\001R\tdirec"
   "tion\022\032\n\010activity\030\006 \001(\tR\010activity\022\014\n\001l\030\007 "
-  "\001(\001R\001l*\231\001\n\006Status\022\026\n\022STATUS_UNSPECIFIED\020"
+  "\001(\001R\001l*\307\001\n\006Status\022\026\n\022STATUS_UNSPECIFIED\020"
   "\000\022\020\n\014STATUS_SLEEP\020\001\022\022\n\016STATUS_DRIVING\020\002\022"
   "\022\n\016STATUS_WALKING\020\003\022\020\n\014STATUS_CROWD\020\004\022\024\n"
   "\020STATUS_PASSENGER\020\005\022\025\n\021STATUS_WAIT_ROUTE"
-  "\020\006B\261\001\n\022com.city.person.v1B\013MotionProtoP\001"
-  "Z4git.fiblab.net/sim/protos/go/city/pers"
-  "on/v1;personv1\242\002\003CPX\252\002\016City.Person.V1\312\002\016"
-  "City\\Person\\V1\342\002\032City\\Person\\V1\\GPBMetad"
-  "ata\352\002\020City::Person::V1b\006proto3"
+  "\020\006\022\023\n\017STATUS_WAIT_BUS\020\007\022\027\n\023STATUS_RAIL_T"
+  "RANSIT\020\010B\261\001\n\022com.city.person.v1B\013MotionP"
+  "rotoP\001Z4git.fiblab.net/sim/protos/go/cit"
+  "y/person/v1;personv1\242\002\003CPX\252\002\016City.Person"
+  ".V1\312\002\016City\\Person\\V1\342\002\032City\\Person\\V1\\GP"
+  "BMetadata\352\002\020City::Person::V1b\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_city_2fperson_2fv1_2fmotion_2eproto_deps[1] = {
   &::descriptor_table_city_2fgeo_2fv2_2fgeo_2eproto,
 };
 static ::_pbi::once_flag descriptor_table_city_2fperson_2fv1_2fmotion_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2fperson_2fv1_2fmotion_2eproto = {
-    false, false, 630, descriptor_table_protodef_city_2fperson_2fv1_2fmotion_2eproto,
+    false, false, 676, descriptor_table_protodef_city_2fperson_2fv1_2fmotion_2eproto,
     "city/person/v1/motion.proto",
     &descriptor_table_city_2fperson_2fv1_2fmotion_2eproto_once, descriptor_table_city_2fperson_2fv1_2fmotion_2eproto_deps, 1, 1,
     schemas, file_default_instances, TableStruct_city_2fperson_2fv1_2fmotion_2eproto::offsets,
@@ -124,6 +125,8 @@ bool Status_IsValid(int value) {
     case 4:
     case 5:
     case 6:
+    case 7:
+    case 8:
       return true;
     default:
       return false;

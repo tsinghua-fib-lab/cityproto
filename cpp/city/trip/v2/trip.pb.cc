@@ -23,11 +23,28 @@ namespace _pbi = _pb::internal;
 namespace city {
 namespace trip {
 namespace v2 {
+PROTOBUF_CONSTEXPR TripStop::TripStop(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_._has_bits_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}
+  , /*decltype(_impl_.aoi_position_)*/nullptr
+  , /*decltype(_impl_.lane_position_)*/nullptr
+  , /*decltype(_impl_.duration_)*/0} {}
+struct TripStopDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR TripStopDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~TripStopDefaultTypeInternal() {}
+  union {
+    TripStop _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 TripStopDefaultTypeInternal _TripStop_default_instance_;
 PROTOBUF_CONSTEXPR Trip::Trip(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_._has_bits_)*/{}
   , /*decltype(_impl_._cached_size_)*/{}
   , /*decltype(_impl_.routes_)*/{}
+  , /*decltype(_impl_.trip_stops_)*/{}
   , /*decltype(_impl_.activity_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.model_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.end_)*/nullptr
@@ -64,11 +81,23 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORIT
 }  // namespace v2
 }  // namespace trip
 }  // namespace city
-static ::_pb::Metadata file_level_metadata_city_2ftrip_2fv2_2ftrip_2eproto[2];
+static ::_pb::Metadata file_level_metadata_city_2ftrip_2fv2_2ftrip_2eproto[3];
 static const ::_pb::EnumDescriptor* file_level_enum_descriptors_city_2ftrip_2fv2_2ftrip_2eproto[1];
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_city_2ftrip_2fv2_2ftrip_2eproto = nullptr;
 
 const uint32_t TableStruct_city_2ftrip_2fv2_2ftrip_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  PROTOBUF_FIELD_OFFSET(::city::trip::v2::TripStop, _impl_._has_bits_),
+  PROTOBUF_FIELD_OFFSET(::city::trip::v2::TripStop, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::trip::v2::TripStop, _impl_.aoi_position_),
+  PROTOBUF_FIELD_OFFSET(::city::trip::v2::TripStop, _impl_.lane_position_),
+  PROTOBUF_FIELD_OFFSET(::city::trip::v2::TripStop, _impl_.duration_),
+  0,
+  ~0u,
+  ~0u,
   PROTOBUF_FIELD_OFFSET(::city::trip::v2::Trip, _impl_._has_bits_),
   PROTOBUF_FIELD_OFFSET(::city::trip::v2::Trip, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -83,6 +112,7 @@ const uint32_t TableStruct_city_2ftrip_2fv2_2ftrip_2eproto::offsets[] PROTOBUF_S
   PROTOBUF_FIELD_OFFSET(::city::trip::v2::Trip, _impl_.activity_),
   PROTOBUF_FIELD_OFFSET(::city::trip::v2::Trip, _impl_.model_),
   PROTOBUF_FIELD_OFFSET(::city::trip::v2::Trip, _impl_.routes_),
+  PROTOBUF_FIELD_OFFSET(::city::trip::v2::Trip, _impl_.trip_stops_),
   ~0u,
   ~0u,
   2,
@@ -90,6 +120,7 @@ const uint32_t TableStruct_city_2ftrip_2fv2_2ftrip_2eproto::offsets[] PROTOBUF_S
   4,
   0,
   1,
+  ~0u,
   ~0u,
   PROTOBUF_FIELD_OFFSET(::city::trip::v2::Schedule, _impl_._has_bits_),
   PROTOBUF_FIELD_OFFSET(::city::trip::v2::Schedule, _internal_metadata_),
@@ -107,11 +138,13 @@ const uint32_t TableStruct_city_2ftrip_2fv2_2ftrip_2eproto::offsets[] PROTOBUF_S
   1,
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, 14, -1, sizeof(::city::trip::v2::Trip)},
-  { 22, 32, -1, sizeof(::city::trip::v2::Schedule)},
+  { 0, 9, -1, sizeof(::city::trip::v2::TripStop)},
+  { 12, 27, -1, sizeof(::city::trip::v2::Trip)},
+  { 36, 46, -1, sizeof(::city::trip::v2::Schedule)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
+  &::city::trip::v2::_TripStop_default_instance_._instance,
   &::city::trip::v2::_Trip_default_instance_._instance,
   &::city::trip::v2::_Schedule_default_instance_._instance,
 };
@@ -119,29 +152,35 @@ static const ::_pb::Message* const file_default_instances[] = {
 const char descriptor_table_protodef_city_2ftrip_2fv2_2ftrip_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\027city/trip/v2/trip.proto\022\014city.trip.v2\032"
   "\025city/geo/v2/geo.proto\032\035city/routing/v2/"
-  "routing.proto\"\210\003\n\004Trip\022*\n\004mode\030\001 \001(\0162\026.c"
-  "ity.trip.v2.TripModeR\004mode\022\'\n\003end\030\002 \001(\0132"
-  "\025.city.geo.v2.PositionR\003end\022*\n\016departure"
-  "_time\030\003 \001(\001H\000R\rdepartureTime\210\001\001\022 \n\twait_"
-  "time\030\004 \001(\001H\001R\010waitTime\210\001\001\022&\n\014arrival_tim"
-  "e\030\005 \001(\001H\002R\013arrivalTime\210\001\001\022\037\n\010activity\030\006 "
-  "\001(\tH\003R\010activity\210\001\001\022\031\n\005model\030\010 \001(\tH\004R\005mod"
-  "el\210\001\001\0220\n\006routes\030\007 \003(\0132\030.city.routing.v2."
-  "JourneyR\006routesB\021\n\017_departure_timeB\014\n\n_w"
-  "ait_timeB\017\n\r_arrival_timeB\013\n\t_activityB\010"
-  "\n\006_model\"\302\001\n\010Schedule\022(\n\005trips\030\001 \003(\0132\022.c"
-  "ity.trip.v2.TripR\005trips\022\035\n\nloop_count\030\002 "
-  "\001(\005R\tloopCount\022*\n\016departure_time\030\003 \001(\001H\000"
-  "R\rdepartureTime\210\001\001\022 \n\twait_time\030\004 \001(\001H\001R"
-  "\010waitTime\210\001\001B\021\n\017_departure_timeB\014\n\n_wait"
-  "_time*\211\001\n\010TripMode\022\031\n\025TRIP_MODE_UNSPECIF"
-  "IED\020\000\022\027\n\023TRIP_MODE_WALK_ONLY\020\001\022\030\n\024TRIP_M"
-  "ODE_DRIVE_ONLY\020\002\022\026\n\022TRIP_MODE_BUS_WALK\020\004"
-  "\022\027\n\023TRIP_MODE_BIKE_WALK\020\005B\241\001\n\020com.city.t"
-  "rip.v2B\tTripProtoP\001Z0git.fiblab.net/sim/"
-  "protos/go/city/trip/v2;tripv2\242\002\003CTX\252\002\014Ci"
-  "ty.Trip.V2\312\002\014City\\Trip\\V2\342\002\030City\\Trip\\V2"
-  "\\GPBMetadata\352\002\016City::Trip::V2b\006proto3"
+  "routing.proto\"\271\001\n\010TripStop\022@\n\014aoi_positi"
+  "on\030\001 \001(\0132\030.city.geo.v2.AoiPositionH\000R\013ao"
+  "iPosition\210\001\001\022>\n\rlane_position\030\002 \001(\0132\031.ci"
+  "ty.geo.v2.LanePositionR\014lanePosition\022\032\n\010"
+  "duration\030\003 \001(\001R\010durationB\017\n\r_aoi_positio"
+  "n\"\277\003\n\004Trip\022*\n\004mode\030\001 \001(\0162\026.city.trip.v2."
+  "TripModeR\004mode\022\'\n\003end\030\002 \001(\0132\025.city.geo.v"
+  "2.PositionR\003end\022*\n\016departure_time\030\003 \001(\001H"
+  "\000R\rdepartureTime\210\001\001\022 \n\twait_time\030\004 \001(\001H\001"
+  "R\010waitTime\210\001\001\022&\n\014arrival_time\030\005 \001(\001H\002R\013a"
+  "rrivalTime\210\001\001\022\037\n\010activity\030\006 \001(\tH\003R\010activ"
+  "ity\210\001\001\022\031\n\005model\030\010 \001(\tH\004R\005model\210\001\001\0220\n\006rou"
+  "tes\030\007 \003(\0132\030.city.routing.v2.JourneyR\006rou"
+  "tes\0225\n\ntrip_stops\030\t \003(\0132\026.city.trip.v2.T"
+  "ripStopR\ttripStopsB\021\n\017_departure_timeB\014\n"
+  "\n_wait_timeB\017\n\r_arrival_timeB\013\n\t_activit"
+  "yB\010\n\006_model\"\302\001\n\010Schedule\022(\n\005trips\030\001 \003(\0132"
+  "\022.city.trip.v2.TripR\005trips\022\035\n\nloop_count"
+  "\030\002 \001(\005R\tloopCount\022*\n\016departure_time\030\003 \001("
+  "\001H\000R\rdepartureTime\210\001\001\022 \n\twait_time\030\004 \001(\001"
+  "H\001R\010waitTime\210\001\001B\021\n\017_departure_timeB\014\n\n_w"
+  "ait_time*\211\001\n\010TripMode\022\031\n\025TRIP_MODE_UNSPE"
+  "CIFIED\020\000\022\027\n\023TRIP_MODE_WALK_ONLY\020\001\022\030\n\024TRI"
+  "P_MODE_DRIVE_ONLY\020\002\022\026\n\022TRIP_MODE_BUS_WAL"
+  "K\020\004\022\027\n\023TRIP_MODE_BIKE_WALK\020\005B\241\001\n\020com.cit"
+  "y.trip.v2B\tTripProtoP\001Z0git.fiblab.net/s"
+  "im/protos/go/city/trip/v2;tripv2\242\002\003CTX\252\002"
+  "\014City.Trip.V2\312\002\014City\\Trip\\V2\342\002\030City\\Trip"
+  "\\V2\\GPBMetadata\352\002\016City::Trip::V2b\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_city_2ftrip_2fv2_2ftrip_2eproto_deps[2] = {
   &::descriptor_table_city_2fgeo_2fv2_2fgeo_2eproto,
@@ -149,9 +188,9 @@ static const ::_pbi::DescriptorTable* const descriptor_table_city_2ftrip_2fv2_2f
 };
 static ::_pbi::once_flag descriptor_table_city_2ftrip_2fv2_2ftrip_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2ftrip_2fv2_2ftrip_2eproto = {
-    false, false, 997, descriptor_table_protodef_city_2ftrip_2fv2_2ftrip_2eproto,
+    false, false, 1240, descriptor_table_protodef_city_2ftrip_2fv2_2ftrip_2eproto,
     "city/trip/v2/trip.proto",
-    &descriptor_table_city_2ftrip_2fv2_2ftrip_2eproto_once, descriptor_table_city_2ftrip_2fv2_2ftrip_2eproto_deps, 2, 2,
+    &descriptor_table_city_2ftrip_2fv2_2ftrip_2eproto_once, descriptor_table_city_2ftrip_2fv2_2ftrip_2eproto_deps, 2, 3,
     schemas, file_default_instances, TableStruct_city_2ftrip_2fv2_2ftrip_2eproto::offsets,
     file_level_metadata_city_2ftrip_2fv2_2ftrip_2eproto, file_level_enum_descriptors_city_2ftrip_2fv2_2ftrip_2eproto,
     file_level_service_descriptors_city_2ftrip_2fv2_2ftrip_2eproto,
@@ -182,6 +221,305 @@ bool TripMode_IsValid(int value) {
   }
 }
 
+
+// ===================================================================
+
+class TripStop::_Internal {
+ public:
+  using HasBits = decltype(std::declval<TripStop>()._impl_._has_bits_);
+  static const ::city::geo::v2::AoiPosition& aoi_position(const TripStop* msg);
+  static void set_has_aoi_position(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
+  static const ::city::geo::v2::LanePosition& lane_position(const TripStop* msg);
+};
+
+const ::city::geo::v2::AoiPosition&
+TripStop::_Internal::aoi_position(const TripStop* msg) {
+  return *msg->_impl_.aoi_position_;
+}
+const ::city::geo::v2::LanePosition&
+TripStop::_Internal::lane_position(const TripStop* msg) {
+  return *msg->_impl_.lane_position_;
+}
+void TripStop::clear_aoi_position() {
+  if (_impl_.aoi_position_ != nullptr) _impl_.aoi_position_->Clear();
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+void TripStop::clear_lane_position() {
+  if (GetArenaForAllocation() == nullptr && _impl_.lane_position_ != nullptr) {
+    delete _impl_.lane_position_;
+  }
+  _impl_.lane_position_ = nullptr;
+}
+TripStop::TripStop(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:city.trip.v2.TripStop)
+}
+TripStop::TripStop(const TripStop& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  TripStop* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){from._impl_._has_bits_}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.aoi_position_){nullptr}
+    , decltype(_impl_.lane_position_){nullptr}
+    , decltype(_impl_.duration_){}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  if (from._internal_has_aoi_position()) {
+    _this->_impl_.aoi_position_ = new ::city::geo::v2::AoiPosition(*from._impl_.aoi_position_);
+  }
+  if (from._internal_has_lane_position()) {
+    _this->_impl_.lane_position_ = new ::city::geo::v2::LanePosition(*from._impl_.lane_position_);
+  }
+  _this->_impl_.duration_ = from._impl_.duration_;
+  // @@protoc_insertion_point(copy_constructor:city.trip.v2.TripStop)
+}
+
+inline void TripStop::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.aoi_position_){nullptr}
+    , decltype(_impl_.lane_position_){nullptr}
+    , decltype(_impl_.duration_){0}
+  };
+}
+
+TripStop::~TripStop() {
+  // @@protoc_insertion_point(destructor:city.trip.v2.TripStop)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void TripStop::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  if (this != internal_default_instance()) delete _impl_.aoi_position_;
+  if (this != internal_default_instance()) delete _impl_.lane_position_;
+}
+
+void TripStop::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void TripStop::Clear() {
+// @@protoc_insertion_point(message_clear_start:city.trip.v2.TripStop)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000001u) {
+    GOOGLE_DCHECK(_impl_.aoi_position_ != nullptr);
+    _impl_.aoi_position_->Clear();
+  }
+  if (GetArenaForAllocation() == nullptr && _impl_.lane_position_ != nullptr) {
+    delete _impl_.lane_position_;
+  }
+  _impl_.lane_position_ = nullptr;
+  _impl_.duration_ = 0;
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* TripStop::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  _Internal::HasBits has_bits{};
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // optional .city.geo.v2.AoiPosition aoi_position = 1 [json_name = "aoiPosition"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_aoi_position(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .city.geo.v2.LanePosition lane_position = 2 [json_name = "lanePosition"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr = ctx->ParseMessage(_internal_mutable_lane_position(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // double duration = 3 [json_name = "duration"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 25)) {
+          _impl_.duration_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  _impl_._has_bits_.Or(has_bits);
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* TripStop::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:city.trip.v2.TripStop)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // optional .city.geo.v2.AoiPosition aoi_position = 1 [json_name = "aoiPosition"];
+  if (_internal_has_aoi_position()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(1, _Internal::aoi_position(this),
+        _Internal::aoi_position(this).GetCachedSize(), target, stream);
+  }
+
+  // .city.geo.v2.LanePosition lane_position = 2 [json_name = "lanePosition"];
+  if (this->_internal_has_lane_position()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(2, _Internal::lane_position(this),
+        _Internal::lane_position(this).GetCachedSize(), target, stream);
+  }
+
+  // double duration = 3 [json_name = "duration"];
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_duration = this->_internal_duration();
+  uint64_t raw_duration;
+  memcpy(&raw_duration, &tmp_duration, sizeof(tmp_duration));
+  if (raw_duration != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(3, this->_internal_duration(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:city.trip.v2.TripStop)
+  return target;
+}
+
+size_t TripStop::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:city.trip.v2.TripStop)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // optional .city.geo.v2.AoiPosition aoi_position = 1 [json_name = "aoiPosition"];
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000001u) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.aoi_position_);
+  }
+
+  // .city.geo.v2.LanePosition lane_position = 2 [json_name = "lanePosition"];
+  if (this->_internal_has_lane_position()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.lane_position_);
+  }
+
+  // double duration = 3 [json_name = "duration"];
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_duration = this->_internal_duration();
+  uint64_t raw_duration;
+  memcpy(&raw_duration, &tmp_duration, sizeof(tmp_duration));
+  if (raw_duration != 0) {
+    total_size += 1 + 8;
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData TripStop::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    TripStop::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*TripStop::GetClassData() const { return &_class_data_; }
+
+
+void TripStop::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<TripStop*>(&to_msg);
+  auto& from = static_cast<const TripStop&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:city.trip.v2.TripStop)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_has_aoi_position()) {
+    _this->_internal_mutable_aoi_position()->::city::geo::v2::AoiPosition::MergeFrom(
+        from._internal_aoi_position());
+  }
+  if (from._internal_has_lane_position()) {
+    _this->_internal_mutable_lane_position()->::city::geo::v2::LanePosition::MergeFrom(
+        from._internal_lane_position());
+  }
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_duration = from._internal_duration();
+  uint64_t raw_duration;
+  memcpy(&raw_duration, &tmp_duration, sizeof(tmp_duration));
+  if (raw_duration != 0) {
+    _this->_internal_set_duration(from._internal_duration());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void TripStop::CopyFrom(const TripStop& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:city.trip.v2.TripStop)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool TripStop::IsInitialized() const {
+  return true;
+}
+
+void TripStop::InternalSwap(TripStop* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(TripStop, _impl_.duration_)
+      + sizeof(TripStop::_impl_.duration_)
+      - PROTOBUF_FIELD_OFFSET(TripStop, _impl_.aoi_position_)>(
+          reinterpret_cast<char*>(&_impl_.aoi_position_),
+          reinterpret_cast<char*>(&other->_impl_.aoi_position_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata TripStop::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2ftrip_2fv2_2ftrip_2eproto_getter, &descriptor_table_city_2ftrip_2fv2_2ftrip_2eproto_once,
+      file_level_metadata_city_2ftrip_2fv2_2ftrip_2eproto[0]);
+}
 
 // ===================================================================
 
@@ -232,6 +570,7 @@ Trip::Trip(const Trip& from)
       decltype(_impl_._has_bits_){from._impl_._has_bits_}
     , /*decltype(_impl_._cached_size_)*/{}
     , decltype(_impl_.routes_){from._impl_.routes_}
+    , decltype(_impl_.trip_stops_){from._impl_.trip_stops_}
     , decltype(_impl_.activity_){}
     , decltype(_impl_.model_){}
     , decltype(_impl_.end_){nullptr}
@@ -274,6 +613,7 @@ inline void Trip::SharedCtor(
       decltype(_impl_._has_bits_){}
     , /*decltype(_impl_._cached_size_)*/{}
     , decltype(_impl_.routes_){arena}
+    , decltype(_impl_.trip_stops_){arena}
     , decltype(_impl_.activity_){}
     , decltype(_impl_.model_){}
     , decltype(_impl_.end_){nullptr}
@@ -304,6 +644,7 @@ Trip::~Trip() {
 inline void Trip::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.routes_.~RepeatedPtrField();
+  _impl_.trip_stops_.~RepeatedPtrField();
   _impl_.activity_.Destroy();
   _impl_.model_.Destroy();
   if (this != internal_default_instance()) delete _impl_.end_;
@@ -320,6 +661,7 @@ void Trip::Clear() {
   (void) cached_has_bits;
 
   _impl_.routes_.Clear();
+  _impl_.trip_stops_.Clear();
   cached_has_bits = _impl_._has_bits_[0];
   if (cached_has_bits & 0x00000003u) {
     if (cached_has_bits & 0x00000001u) {
@@ -427,6 +769,19 @@ const char* Trip::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
         } else
           goto handle_unusual;
         continue;
+      // repeated .city.trip.v2.TripStop trip_stops = 9 [json_name = "tripStops"];
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 74)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_trip_stops(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<74>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
       default:
         goto handle_unusual;
     }  // switch
@@ -517,6 +872,14 @@ uint8_t* Trip::_InternalSerialize(
         8, this->_internal_model(), target);
   }
 
+  // repeated .city.trip.v2.TripStop trip_stops = 9 [json_name = "tripStops"];
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_trip_stops_size()); i < n; i++) {
+    const auto& repfield = this->_internal_trip_stops(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        InternalWriteMessage(9, repfield, repfield.GetCachedSize(), target, stream);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -536,6 +899,13 @@ size_t Trip::ByteSizeLong() const {
   // repeated .city.routing.v2.Journey routes = 7 [json_name = "routes"];
   total_size += 1UL * this->_internal_routes_size();
   for (const auto& msg : this->_impl_.routes_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // repeated .city.trip.v2.TripStop trip_stops = 9 [json_name = "tripStops"];
+  total_size += 1UL * this->_internal_trip_stops_size();
+  for (const auto& msg : this->_impl_.trip_stops_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
@@ -606,6 +976,7 @@ void Trip::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_
   (void) cached_has_bits;
 
   _this->_impl_.routes_.MergeFrom(from._impl_.routes_);
+  _this->_impl_.trip_stops_.MergeFrom(from._impl_.trip_stops_);
   cached_has_bits = from._impl_._has_bits_[0];
   if (cached_has_bits & 0x00000003u) {
     if (cached_has_bits & 0x00000001u) {
@@ -655,6 +1026,7 @@ void Trip::InternalSwap(Trip* other) {
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
   _impl_.routes_.InternalSwap(&other->_impl_.routes_);
+  _impl_.trip_stops_.InternalSwap(&other->_impl_.trip_stops_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &_impl_.activity_, lhs_arena,
       &other->_impl_.activity_, rhs_arena
@@ -674,7 +1046,7 @@ void Trip::InternalSwap(Trip* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata Trip::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2ftrip_2fv2_2ftrip_2eproto_getter, &descriptor_table_city_2ftrip_2fv2_2ftrip_2eproto_once,
-      file_level_metadata_city_2ftrip_2fv2_2ftrip_2eproto[0]);
+      file_level_metadata_city_2ftrip_2fv2_2ftrip_2eproto[1]);
 }
 
 // ===================================================================
@@ -969,7 +1341,7 @@ void Schedule::InternalSwap(Schedule* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata Schedule::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2ftrip_2fv2_2ftrip_2eproto_getter, &descriptor_table_city_2ftrip_2fv2_2ftrip_2eproto_once,
-      file_level_metadata_city_2ftrip_2fv2_2ftrip_2eproto[1]);
+      file_level_metadata_city_2ftrip_2fv2_2ftrip_2eproto[2]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
@@ -977,6 +1349,10 @@ void Schedule::InternalSwap(Schedule* other) {
 }  // namespace trip
 }  // namespace city
 PROTOBUF_NAMESPACE_OPEN
+template<> PROTOBUF_NOINLINE ::city::trip::v2::TripStop*
+Arena::CreateMaybeMessage< ::city::trip::v2::TripStop >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::trip::v2::TripStop >(arena);
+}
 template<> PROTOBUF_NOINLINE ::city::trip::v2::Trip*
 Arena::CreateMaybeMessage< ::city::trip::v2::Trip >(Arena* arena) {
   return Arena::CreateMessageInternal< ::city::trip::v2::Trip >(arena);

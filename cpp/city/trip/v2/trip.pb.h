@@ -56,12 +56,16 @@ extern ScheduleDefaultTypeInternal _Schedule_default_instance_;
 class Trip;
 struct TripDefaultTypeInternal;
 extern TripDefaultTypeInternal _Trip_default_instance_;
+class TripStop;
+struct TripStopDefaultTypeInternal;
+extern TripStopDefaultTypeInternal _TripStop_default_instance_;
 }  // namespace v2
 }  // namespace trip
 }  // namespace city
 PROTOBUF_NAMESPACE_OPEN
 template<> ::city::trip::v2::Schedule* Arena::CreateMaybeMessage<::city::trip::v2::Schedule>(Arena*);
 template<> ::city::trip::v2::Trip* Arena::CreateMaybeMessage<::city::trip::v2::Trip>(Arena*);
+template<> ::city::trip::v2::TripStop* Arena::CreateMaybeMessage<::city::trip::v2::TripStop>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace city {
 namespace trip {
@@ -96,6 +100,195 @@ inline bool TripMode_Parse(
     TripMode_descriptor(), name, value);
 }
 // ===================================================================
+
+class TripStop final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.trip.v2.TripStop) */ {
+ public:
+  inline TripStop() : TripStop(nullptr) {}
+  ~TripStop() override;
+  explicit PROTOBUF_CONSTEXPR TripStop(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  TripStop(const TripStop& from);
+  TripStop(TripStop&& from) noexcept
+    : TripStop() {
+    *this = ::std::move(from);
+  }
+
+  inline TripStop& operator=(const TripStop& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline TripStop& operator=(TripStop&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const TripStop& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const TripStop* internal_default_instance() {
+    return reinterpret_cast<const TripStop*>(
+               &_TripStop_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    0;
+
+  friend void swap(TripStop& a, TripStop& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(TripStop* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(TripStop* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  TripStop* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<TripStop>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const TripStop& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const TripStop& from) {
+    TripStop::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(TripStop* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.trip.v2.TripStop";
+  }
+  protected:
+  explicit TripStop(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kAoiPositionFieldNumber = 1,
+    kLanePositionFieldNumber = 2,
+    kDurationFieldNumber = 3,
+  };
+  // optional .city.geo.v2.AoiPosition aoi_position = 1 [json_name = "aoiPosition"];
+  bool has_aoi_position() const;
+  private:
+  bool _internal_has_aoi_position() const;
+  public:
+  void clear_aoi_position();
+  const ::city::geo::v2::AoiPosition& aoi_position() const;
+  PROTOBUF_NODISCARD ::city::geo::v2::AoiPosition* release_aoi_position();
+  ::city::geo::v2::AoiPosition* mutable_aoi_position();
+  void set_allocated_aoi_position(::city::geo::v2::AoiPosition* aoi_position);
+  private:
+  const ::city::geo::v2::AoiPosition& _internal_aoi_position() const;
+  ::city::geo::v2::AoiPosition* _internal_mutable_aoi_position();
+  public:
+  void unsafe_arena_set_allocated_aoi_position(
+      ::city::geo::v2::AoiPosition* aoi_position);
+  ::city::geo::v2::AoiPosition* unsafe_arena_release_aoi_position();
+
+  // .city.geo.v2.LanePosition lane_position = 2 [json_name = "lanePosition"];
+  bool has_lane_position() const;
+  private:
+  bool _internal_has_lane_position() const;
+  public:
+  void clear_lane_position();
+  const ::city::geo::v2::LanePosition& lane_position() const;
+  PROTOBUF_NODISCARD ::city::geo::v2::LanePosition* release_lane_position();
+  ::city::geo::v2::LanePosition* mutable_lane_position();
+  void set_allocated_lane_position(::city::geo::v2::LanePosition* lane_position);
+  private:
+  const ::city::geo::v2::LanePosition& _internal_lane_position() const;
+  ::city::geo::v2::LanePosition* _internal_mutable_lane_position();
+  public:
+  void unsafe_arena_set_allocated_lane_position(
+      ::city::geo::v2::LanePosition* lane_position);
+  ::city::geo::v2::LanePosition* unsafe_arena_release_lane_position();
+
+  // double duration = 3 [json_name = "duration"];
+  void clear_duration();
+  double duration() const;
+  void set_duration(double value);
+  private:
+  double _internal_duration() const;
+  void _internal_set_duration(double value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:city.trip.v2.TripStop)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+    ::city::geo::v2::AoiPosition* aoi_position_;
+    ::city::geo::v2::LanePosition* lane_position_;
+    double duration_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_city_2ftrip_2fv2_2ftrip_2eproto;
+};
+// -------------------------------------------------------------------
 
 class Trip final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.trip.v2.Trip) */ {
@@ -145,7 +338,7 @@ class Trip final :
                &_Trip_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    0;
+    1;
 
   friend void swap(Trip& a, Trip& b) {
     a.Swap(&b);
@@ -219,6 +412,7 @@ class Trip final :
 
   enum : int {
     kRoutesFieldNumber = 7,
+    kTripStopsFieldNumber = 9,
     kActivityFieldNumber = 6,
     kModelFieldNumber = 8,
     kEndFieldNumber = 2,
@@ -244,6 +438,24 @@ class Trip final :
   ::city::routing::v2::Journey* add_routes();
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::routing::v2::Journey >&
       routes() const;
+
+  // repeated .city.trip.v2.TripStop trip_stops = 9 [json_name = "tripStops"];
+  int trip_stops_size() const;
+  private:
+  int _internal_trip_stops_size() const;
+  public:
+  void clear_trip_stops();
+  ::city::trip::v2::TripStop* mutable_trip_stops(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::trip::v2::TripStop >*
+      mutable_trip_stops();
+  private:
+  const ::city::trip::v2::TripStop& _internal_trip_stops(int index) const;
+  ::city::trip::v2::TripStop* _internal_add_trip_stops();
+  public:
+  const ::city::trip::v2::TripStop& trip_stops(int index) const;
+  ::city::trip::v2::TripStop* add_trip_stops();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::trip::v2::TripStop >&
+      trip_stops() const;
 
   // optional string activity = 6 [json_name = "activity"];
   bool has_activity() const;
@@ -358,6 +570,7 @@ class Trip final :
     ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
     ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::routing::v2::Journey > routes_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::trip::v2::TripStop > trip_stops_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr activity_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr model_;
     ::city::geo::v2::Position* end_;
@@ -419,7 +632,7 @@ class Schedule final :
                &_Schedule_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    2;
 
   friend void swap(Schedule& a, Schedule& b) {
     a.Swap(&b);
@@ -577,6 +790,202 @@ class Schedule final :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
+// TripStop
+
+// optional .city.geo.v2.AoiPosition aoi_position = 1 [json_name = "aoiPosition"];
+inline bool TripStop::_internal_has_aoi_position() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  PROTOBUF_ASSUME(!value || _impl_.aoi_position_ != nullptr);
+  return value;
+}
+inline bool TripStop::has_aoi_position() const {
+  return _internal_has_aoi_position();
+}
+inline const ::city::geo::v2::AoiPosition& TripStop::_internal_aoi_position() const {
+  const ::city::geo::v2::AoiPosition* p = _impl_.aoi_position_;
+  return p != nullptr ? *p : reinterpret_cast<const ::city::geo::v2::AoiPosition&>(
+      ::city::geo::v2::_AoiPosition_default_instance_);
+}
+inline const ::city::geo::v2::AoiPosition& TripStop::aoi_position() const {
+  // @@protoc_insertion_point(field_get:city.trip.v2.TripStop.aoi_position)
+  return _internal_aoi_position();
+}
+inline void TripStop::unsafe_arena_set_allocated_aoi_position(
+    ::city::geo::v2::AoiPosition* aoi_position) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.aoi_position_);
+  }
+  _impl_.aoi_position_ = aoi_position;
+  if (aoi_position) {
+    _impl_._has_bits_[0] |= 0x00000001u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000001u;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:city.trip.v2.TripStop.aoi_position)
+}
+inline ::city::geo::v2::AoiPosition* TripStop::release_aoi_position() {
+  _impl_._has_bits_[0] &= ~0x00000001u;
+  ::city::geo::v2::AoiPosition* temp = _impl_.aoi_position_;
+  _impl_.aoi_position_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::city::geo::v2::AoiPosition* TripStop::unsafe_arena_release_aoi_position() {
+  // @@protoc_insertion_point(field_release:city.trip.v2.TripStop.aoi_position)
+  _impl_._has_bits_[0] &= ~0x00000001u;
+  ::city::geo::v2::AoiPosition* temp = _impl_.aoi_position_;
+  _impl_.aoi_position_ = nullptr;
+  return temp;
+}
+inline ::city::geo::v2::AoiPosition* TripStop::_internal_mutable_aoi_position() {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  if (_impl_.aoi_position_ == nullptr) {
+    auto* p = CreateMaybeMessage<::city::geo::v2::AoiPosition>(GetArenaForAllocation());
+    _impl_.aoi_position_ = p;
+  }
+  return _impl_.aoi_position_;
+}
+inline ::city::geo::v2::AoiPosition* TripStop::mutable_aoi_position() {
+  ::city::geo::v2::AoiPosition* _msg = _internal_mutable_aoi_position();
+  // @@protoc_insertion_point(field_mutable:city.trip.v2.TripStop.aoi_position)
+  return _msg;
+}
+inline void TripStop::set_allocated_aoi_position(::city::geo::v2::AoiPosition* aoi_position) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.aoi_position_);
+  }
+  if (aoi_position) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(aoi_position));
+    if (message_arena != submessage_arena) {
+      aoi_position = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, aoi_position, submessage_arena);
+    }
+    _impl_._has_bits_[0] |= 0x00000001u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000001u;
+  }
+  _impl_.aoi_position_ = aoi_position;
+  // @@protoc_insertion_point(field_set_allocated:city.trip.v2.TripStop.aoi_position)
+}
+
+// .city.geo.v2.LanePosition lane_position = 2 [json_name = "lanePosition"];
+inline bool TripStop::_internal_has_lane_position() const {
+  return this != internal_default_instance() && _impl_.lane_position_ != nullptr;
+}
+inline bool TripStop::has_lane_position() const {
+  return _internal_has_lane_position();
+}
+inline const ::city::geo::v2::LanePosition& TripStop::_internal_lane_position() const {
+  const ::city::geo::v2::LanePosition* p = _impl_.lane_position_;
+  return p != nullptr ? *p : reinterpret_cast<const ::city::geo::v2::LanePosition&>(
+      ::city::geo::v2::_LanePosition_default_instance_);
+}
+inline const ::city::geo::v2::LanePosition& TripStop::lane_position() const {
+  // @@protoc_insertion_point(field_get:city.trip.v2.TripStop.lane_position)
+  return _internal_lane_position();
+}
+inline void TripStop::unsafe_arena_set_allocated_lane_position(
+    ::city::geo::v2::LanePosition* lane_position) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.lane_position_);
+  }
+  _impl_.lane_position_ = lane_position;
+  if (lane_position) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:city.trip.v2.TripStop.lane_position)
+}
+inline ::city::geo::v2::LanePosition* TripStop::release_lane_position() {
+  
+  ::city::geo::v2::LanePosition* temp = _impl_.lane_position_;
+  _impl_.lane_position_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::city::geo::v2::LanePosition* TripStop::unsafe_arena_release_lane_position() {
+  // @@protoc_insertion_point(field_release:city.trip.v2.TripStop.lane_position)
+  
+  ::city::geo::v2::LanePosition* temp = _impl_.lane_position_;
+  _impl_.lane_position_ = nullptr;
+  return temp;
+}
+inline ::city::geo::v2::LanePosition* TripStop::_internal_mutable_lane_position() {
+  
+  if (_impl_.lane_position_ == nullptr) {
+    auto* p = CreateMaybeMessage<::city::geo::v2::LanePosition>(GetArenaForAllocation());
+    _impl_.lane_position_ = p;
+  }
+  return _impl_.lane_position_;
+}
+inline ::city::geo::v2::LanePosition* TripStop::mutable_lane_position() {
+  ::city::geo::v2::LanePosition* _msg = _internal_mutable_lane_position();
+  // @@protoc_insertion_point(field_mutable:city.trip.v2.TripStop.lane_position)
+  return _msg;
+}
+inline void TripStop::set_allocated_lane_position(::city::geo::v2::LanePosition* lane_position) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.lane_position_);
+  }
+  if (lane_position) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(lane_position));
+    if (message_arena != submessage_arena) {
+      lane_position = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, lane_position, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  _impl_.lane_position_ = lane_position;
+  // @@protoc_insertion_point(field_set_allocated:city.trip.v2.TripStop.lane_position)
+}
+
+// double duration = 3 [json_name = "duration"];
+inline void TripStop::clear_duration() {
+  _impl_.duration_ = 0;
+}
+inline double TripStop::_internal_duration() const {
+  return _impl_.duration_;
+}
+inline double TripStop::duration() const {
+  // @@protoc_insertion_point(field_get:city.trip.v2.TripStop.duration)
+  return _internal_duration();
+}
+inline void TripStop::_internal_set_duration(double value) {
+  
+  _impl_.duration_ = value;
+}
+inline void TripStop::set_duration(double value) {
+  _internal_set_duration(value);
+  // @@protoc_insertion_point(field_set:city.trip.v2.TripStop.duration)
+}
+
+// -------------------------------------------------------------------
+
 // Trip
 
 // .city.trip.v2.TripMode mode = 1 [json_name = "mode"];
@@ -941,6 +1350,46 @@ Trip::routes() const {
   return _impl_.routes_;
 }
 
+// repeated .city.trip.v2.TripStop trip_stops = 9 [json_name = "tripStops"];
+inline int Trip::_internal_trip_stops_size() const {
+  return _impl_.trip_stops_.size();
+}
+inline int Trip::trip_stops_size() const {
+  return _internal_trip_stops_size();
+}
+inline void Trip::clear_trip_stops() {
+  _impl_.trip_stops_.Clear();
+}
+inline ::city::trip::v2::TripStop* Trip::mutable_trip_stops(int index) {
+  // @@protoc_insertion_point(field_mutable:city.trip.v2.Trip.trip_stops)
+  return _impl_.trip_stops_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::trip::v2::TripStop >*
+Trip::mutable_trip_stops() {
+  // @@protoc_insertion_point(field_mutable_list:city.trip.v2.Trip.trip_stops)
+  return &_impl_.trip_stops_;
+}
+inline const ::city::trip::v2::TripStop& Trip::_internal_trip_stops(int index) const {
+  return _impl_.trip_stops_.Get(index);
+}
+inline const ::city::trip::v2::TripStop& Trip::trip_stops(int index) const {
+  // @@protoc_insertion_point(field_get:city.trip.v2.Trip.trip_stops)
+  return _internal_trip_stops(index);
+}
+inline ::city::trip::v2::TripStop* Trip::_internal_add_trip_stops() {
+  return _impl_.trip_stops_.Add();
+}
+inline ::city::trip::v2::TripStop* Trip::add_trip_stops() {
+  ::city::trip::v2::TripStop* _add = _internal_add_trip_stops();
+  // @@protoc_insertion_point(field_add:city.trip.v2.Trip.trip_stops)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::trip::v2::TripStop >&
+Trip::trip_stops() const {
+  // @@protoc_insertion_point(field_list:city.trip.v2.Trip.trip_stops)
+  return _impl_.trip_stops_;
+}
+
 // -------------------------------------------------------------------
 
 // Schedule
@@ -1064,6 +1513,8 @@ inline void Schedule::set_wait_time(double value) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 

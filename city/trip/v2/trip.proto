@@ -42,6 +42,20 @@ enum TripMode {
   TRIP_MODE_BIKE_WALK = 5;
 }
 
+// 停靠点
+// stop points of person
+message TripStop {
+  // 停车点AOI坐标（可选）
+  // Parking position coordinates AOI (optional)
+  optional city.geo.v2.AoiPosition aoi_position = 1;
+  // 停车点Lane+S坐标（必须提供）
+  // Parking position coordinates Lane+S (must be provided)
+  city.geo.v2.LanePosition lane_position = 2;
+  // 停车持续时间
+  // Parking duration time (s)
+  double duration = 3;
+}
+
 // 出行
 // Trip
 message Trip {
@@ -82,6 +96,10 @@ message Trip {
   // 预计算的导航结果
   // Pre calculated routing results
   repeated city.routing.v2.Journey routes = 7;
+
+  // 本次出行的所有停靠点
+  // stop points of this trip
+  repeated TripStop trip_stops = 9;
 }
 
 // 时刻表

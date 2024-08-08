@@ -95,7 +95,7 @@ type Phase struct {
 	// 描述该相位下每个lane的灯控情况，lane与Junction.lane_ids一一对应
 	// The lighting control situation of each lane in this phase, and the lane
 	// corresponds one-to-one with junction.lane_ids
-	States []LightState `protobuf:"varint,2,rep,packed,name=states,proto3,enum=city.map.v2.LightState" json:"states,omitempty" bson:"states" db:"states" yaml:"states"`
+	States []LightState `protobuf:"varint,2,rep,packed,name=states,proto3,enum=city.map.v2.LightState" json:"states,omitempty" yaml:"states" bson:"states" db:"states"`
 }
 
 func (x *Phase) Reset() {
@@ -153,7 +153,7 @@ type AvailablePhase struct {
 	// Describes the feasible phase for max pressure algorithm, consisting of the
 	// lighting control situation for each lane in the junction, nd the lane
 	// corresponds one-to-one with junction.lane_ids
-	States []LightState `protobuf:"varint,1,rep,packed,name=states,proto3,enum=city.map.v2.LightState" json:"states,omitempty" yaml:"states" bson:"states" db:"states"`
+	States []LightState `protobuf:"varint,1,rep,packed,name=states,proto3,enum=city.map.v2.LightState" json:"states,omitempty" bson:"states" db:"states" yaml:"states"`
 }
 
 func (x *AvailablePhase) Reset() {

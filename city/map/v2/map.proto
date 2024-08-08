@@ -398,6 +398,13 @@ message PublicTransportSubline {
   repeated HeuristicTAZCost taz_costs = 8;
 }
 
+// 描述公交线和lane的配对关系
+// corresponding relations between sublines and driving lanes
+message SublineDrivingLanePair {
+  int32 subline_id = 1;
+  int32 driving_lane_id = 2;
+}
+
 // Aoi，用于描述地图上的区域
 // Aoi, describing a region on the map
 message Aoi {
@@ -450,6 +457,9 @@ message Aoi {
   // Aoi所在的所有公共交通线路ID
   // Subline IDs contained this Aoi
   repeated int32 subline_ids = 13;
+  // subline id对应连接的lane id
+  // The lane id connecting to the subline id
+  repeated SublineDrivingLanePair subline_driving_lane_pairs = 14;
 }
 
 // Poi，用于描述地图上的兴趣点

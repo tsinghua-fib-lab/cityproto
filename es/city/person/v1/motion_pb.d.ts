@@ -69,6 +69,22 @@ export declare enum Status {
    * @generated from enum value: STATUS_WAIT_ROUTE = 6;
    */
   WAIT_ROUTE = 6,
+
+  /**
+   * 等待公交车
+   * wait for bus coming
+   *
+   * @generated from enum value: STATUS_WAIT_BUS = 7;
+   */
+  WAIT_BUS = 7,
+
+  /**
+   * 操控轨道交通
+   * operating rail transit
+   *
+   * @generated from enum value: STATUS_RAIL_TRANSIT = 8;
+   */
+  RAIL_TRANSIT = 8,
 }
 
 /**

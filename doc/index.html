@@ -276,6 +276,10 @@
                   <a href="#city.trip.v2.Trip"><span class="badge">M</span>Trip</a>
                 </li>
               
+                <li>
+                  <a href="#city.trip.v2.TripStop"><span class="badge">M</span>TripStop</a>
+                </li>
+              
               
                 <li>
                   <a href="#city.trip.v2.TripMode"><span class="badge">E</span>TripMode</a>
@@ -585,6 +589,10 @@
               
                 <li>
                   <a href="#city.map.v2.RoadIds"><span class="badge">M</span>RoadIds</a>
+                </li>
+              
+                <li>
+                  <a href="#city.map.v2.SublineDrivingLanePair"><span class="badge">M</span>SublineDrivingLanePair</a>
                 </li>
               
                 <li>
@@ -1645,6 +1653,10 @@
                   <a href="#city.person.v1.VehicleAttribute"><span class="badge">M</span>VehicleAttribute</a>
                 </li>
               
+              
+                <li>
+                  <a href="#city.person.v1.BusType"><span class="badge">E</span>BusType</a>
+                </li>
               
                 <li>
                   <a href="#city.person.v1.Consumption"><span class="badge">E</span>Consumption</a>
@@ -3212,6 +3224,55 @@ The visual model corresponding to this trip (overriding the default model in Per
 Pre calculated routing results </p></td>
                 </tr>
               
+                <tr>
+                  <td>trip_stops</td>
+                  <td><a href="#city.trip.v2.TripStop">TripStop</a></td>
+                  <td>repeated</td>
+                  <td><p>本次出行的所有停靠点
+stop points of this trip </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="city.trip.v2.TripStop">TripStop</h3>
+        <p>停靠点</p><p>stop points of person</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>aoi_position</td>
+                  <td><a href="#city.geo.v2.AoiPosition">city.geo.v2.AoiPosition</a></td>
+                  <td>optional</td>
+                  <td><p>停车点AOI坐标（可选）
+Parking position coordinates AOI (optional) </p></td>
+                </tr>
+              
+                <tr>
+                  <td>lane_position</td>
+                  <td><a href="#city.geo.v2.LanePosition">city.geo.v2.LanePosition</a></td>
+                  <td></td>
+                  <td><p>停车点Lane&#43;S坐标（必须提供）
+Parking position coordinates Lane&#43;S (must be provided) </p></td>
+                </tr>
+              
+                <tr>
+                  <td>duration</td>
+                  <td><a href="#double">double</a></td>
+                  <td></td>
+                  <td><p>停车持续时间
+Parking duration time (s) </p></td>
+                </tr>
+              
             </tbody>
           </table>
 
@@ -4691,6 +4752,14 @@ Pois contained in Aoi </p></td>
 Subline IDs contained this Aoi </p></td>
                 </tr>
               
+                <tr>
+                  <td>subline_driving_lane_pairs</td>
+                  <td><a href="#city.map.v2.SublineDrivingLanePair">SublineDrivingLanePair</a></td>
+                  <td>repeated</td>
+                  <td><p>subline id对应连接的lane id
+The lane id connecting to the subline id </p></td>
+                </tr>
+              
             </tbody>
           </table>
 
@@ -5614,6 +5683,37 @@ For roads containing dynamic lanes, this is required to specify all candidates <
                   <td>road_ids</td>
                   <td><a href="#int32">int32</a></td>
                   <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="city.map.v2.SublineDrivingLanePair">SublineDrivingLanePair</h3>
+        <p>描述公交线和lane的配对关系</p><p>corresponding relations between sublines and driving lanes</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>subline_id</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>driving_lane_id</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
                   <td><p> </p></td>
                 </tr>
               
@@ -10640,6 +10740,20 @@ vehicle passenger</p></td>
 wait for path routing</p></td>
               </tr>
             
+              <tr>
+                <td>STATUS_WAIT_BUS</td>
+                <td>7</td>
+                <td><p>等待公交车
+wait for bus coming</p></td>
+              </tr>
+            
+              <tr>
+                <td>STATUS_RAIL_TRANSIT</td>
+                <td>8</td>
+                <td><p>操控轨道交通
+operating rail transit</p></td>
+              </tr>
+            
           </tbody>
         </table>
       
@@ -11771,7 +11885,7 @@ Bike model tag </p></td>
             <tbody>
               
                 <tr>
-                  <td>line_id</td>
+                  <td>subline_id</td>
                   <td><a href="#int32">int32</a></td>
                   <td></td>
                   <td><p>公交线路ID
@@ -11792,6 +11906,14 @@ bus capacity </p></td>
                   <td>optional</td>
                   <td><p>公交车模型标签
 bus model tag </p></td>
+                </tr>
+              
+                <tr>
+                  <td>type</td>
+                  <td><a href="#city.person.v1.BusType">BusType</a></td>
+                  <td></td>
+                  <td><p>公交车类型
+type of bus </p></td>
                 </tr>
               
             </tbody>
@@ -12174,6 +12296,38 @@ Vehicle model tag </p></td>
         
       
 
+      
+        <h3 id="city.person.v1.BusType">BusType</h3>
+        <p>公交车</p><p>Type of Bus</p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>BUS_TYPE_UNSPECIFIED</td>
+                <td>0</td>
+                <td><p>未指定
+unspecified</p></td>
+              </tr>
+            
+              <tr>
+                <td>BUS_TYPE_BUS</td>
+                <td>1</td>
+                <td><p>公交类型
+The bus is a trolleybus, BRT, eta.</p></td>
+              </tr>
+            
+              <tr>
+                <td>BUS_TYPE_SUBWAY</td>
+                <td>2</td>
+                <td><p>地铁类型
+The bus is a subway</p></td>
+              </tr>
+            
+          </tbody>
+        </table>
       
         <h3 id="city.person.v1.Consumption">Consumption</h3>
         <p>智能体消费水平</p><p>agent consumption level</p>
