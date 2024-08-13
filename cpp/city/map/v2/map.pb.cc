@@ -742,29 +742,30 @@ const char descriptor_table_protodef_city_2fmap_2fv2_2fmap_2eproto[] PROTOBUF_SE
   "city.map.v2.AoiR\004aois\022$\n\004pois\030\006 \003(\0132\020.ci"
   "ty.map.v2.PoiR\004pois\022\?\n\010sublines\030\007 \003(\0132#."
   "city.map.v2.PublicTransportSublineR\010subl"
-  "ines*S\n\010LaneType\022\031\n\025LANE_TYPE_UNSPECIFIE"
+  "ines*o\n\010LaneType\022\031\n\025LANE_TYPE_UNSPECIFIE"
   "D\020\000\022\025\n\021LANE_TYPE_DRIVING\020\001\022\025\n\021LANE_TYPE_"
-  "WALKING\020\002*|\n\010LaneTurn\022\031\n\025LANE_TURN_UNSPE"
-  "CIFIED\020\000\022\026\n\022LANE_TURN_STRAIGHT\020\001\022\022\n\016LANE"
-  "_TURN_LEFT\020\002\022\023\n\017LANE_TURN_RIGHT\020\003\022\024\n\020LAN"
-  "E_TURN_AROUND\020\004*x\n\022LaneConnectionType\022$\n"
-  " LANE_CONNECTION_TYPE_UNSPECIFIED\020\000\022\035\n\031L"
-  "ANE_CONNECTION_TYPE_HEAD\020\001\022\035\n\031LANE_CONNE"
-  "CTION_TYPE_TAIL\020\002*Q\n\007AoiType\022\030\n\024AOI_TYPE"
-  "_UNSPECIFIED\020\000\022\030\n\024AOI_TYPE_BUS_STATION\020\001"
-  "\022\022\n\016AOI_TYPE_OTHER\020\002*\334\001\n\013LandUseType\022\035\n\031"
-  "LAND_USE_TYPE_UNSPECIFIED\020\000\022\034\n\030LAND_USE_"
-  "TYPE_COMMERCIAL\020\005\022\034\n\030LAND_USE_TYPE_INDUS"
-  "TRIAL\020\006\022\035\n\031LAND_USE_TYPE_RESIDENTIAL\020\007\022\030"
-  "\n\024LAND_USE_TYPE_PUBLIC\020\010\022 \n\034LAND_USE_TYP"
-  "E_TRANSPORTATION\020\n\022\027\n\023LAND_USE_TYPE_OTHE"
-  "R\020\014*Z\n\013SublineType\022\034\n\030SUBLINE_TYPE_UNSPE"
-  "CIFIED\020\000\022\024\n\020SUBLINE_TYPE_BUS\020\001\022\027\n\023SUBLIN"
-  "E_TYPE_SUBWAY\020\002B\231\001\n\017com.city.map.v2B\010Map"
-  "ProtoP\001Z.git.fiblab.net/sim/protos/go/ci"
-  "ty/map/v2;mapv2\242\002\003CMX\252\002\013City.Map.V2\312\002\013Ci"
-  "ty\\Map\\V2\342\002\027City\\Map\\V2\\GPBMetadata\352\002\rCi"
-  "ty::Map::V2b\006proto3"
+  "WALKING\020\002\022\032\n\026LANE_TYPE_RAIL_TRANSIT\020\003*|\n"
+  "\010LaneTurn\022\031\n\025LANE_TURN_UNSPECIFIED\020\000\022\026\n\022"
+  "LANE_TURN_STRAIGHT\020\001\022\022\n\016LANE_TURN_LEFT\020\002"
+  "\022\023\n\017LANE_TURN_RIGHT\020\003\022\024\n\020LANE_TURN_AROUN"
+  "D\020\004*x\n\022LaneConnectionType\022$\n LANE_CONNEC"
+  "TION_TYPE_UNSPECIFIED\020\000\022\035\n\031LANE_CONNECTI"
+  "ON_TYPE_HEAD\020\001\022\035\n\031LANE_CONNECTION_TYPE_T"
+  "AIL\020\002*Q\n\007AoiType\022\030\n\024AOI_TYPE_UNSPECIFIED"
+  "\020\000\022\030\n\024AOI_TYPE_BUS_STATION\020\001\022\022\n\016AOI_TYPE"
+  "_OTHER\020\002*\334\001\n\013LandUseType\022\035\n\031LAND_USE_TYP"
+  "E_UNSPECIFIED\020\000\022\034\n\030LAND_USE_TYPE_COMMERC"
+  "IAL\020\005\022\034\n\030LAND_USE_TYPE_INDUSTRIAL\020\006\022\035\n\031L"
+  "AND_USE_TYPE_RESIDENTIAL\020\007\022\030\n\024LAND_USE_T"
+  "YPE_PUBLIC\020\010\022 \n\034LAND_USE_TYPE_TRANSPORTA"
+  "TION\020\n\022\027\n\023LAND_USE_TYPE_OTHER\020\014*Z\n\013Subli"
+  "neType\022\034\n\030SUBLINE_TYPE_UNSPECIFIED\020\000\022\024\n\020"
+  "SUBLINE_TYPE_BUS\020\001\022\027\n\023SUBLINE_TYPE_SUBWA"
+  "Y\020\002B\231\001\n\017com.city.map.v2B\010MapProtoP\001Z.git"
+  ".fiblab.net/sim/protos/go/city/map/v2;ma"
+  "pv2\242\002\003CMX\252\002\013City.Map.V2\312\002\013City\\Map\\V2\342\002\027"
+  "City\\Map\\V2\\GPBMetadata\352\002\rCity::Map::V2b"
+  "\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_city_2fmap_2fv2_2fmap_2eproto_deps[2] = {
   &::descriptor_table_city_2fgeo_2fv2_2fgeo_2eproto,
@@ -772,7 +773,7 @@ static const ::_pbi::DescriptorTable* const descriptor_table_city_2fmap_2fv2_2fm
 };
 static ::_pbi::once_flag descriptor_table_city_2fmap_2fv2_2fmap_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2fmap_2fv2_2fmap_2eproto = {
-    false, false, 5059, descriptor_table_protodef_city_2fmap_2fv2_2fmap_2eproto,
+    false, false, 5087, descriptor_table_protodef_city_2fmap_2fv2_2fmap_2eproto,
     "city/map/v2/map.proto",
     &descriptor_table_city_2fmap_2fv2_2fmap_2eproto_once, descriptor_table_city_2fmap_2fv2_2fmap_2eproto_deps, 2, 18,
     schemas, file_default_instances, TableStruct_city_2fmap_2fv2_2fmap_2eproto::offsets,
@@ -797,6 +798,7 @@ bool LaneType_IsValid(int value) {
     case 0:
     case 1:
     case 2:
+    case 3:
       return true;
     default:
       return false;

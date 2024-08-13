@@ -129,10 +129,10 @@ type SetLaneRestrictionRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Lane id
-	LaneId int32 `protobuf:"varint,1,opt,name=lane_id,json=laneId,proto3" json:"lane_id,omitempty" bson:"lane_id" db:"lane_id" yaml:"lane_id"`
+	LaneId int32 `protobuf:"varint,1,opt,name=lane_id,json=laneId,proto3" json:"lane_id,omitempty" yaml:"lane_id" bson:"lane_id" db:"lane_id"`
 	// 限行
 	// Traffic restriction
-	Restriction bool `protobuf:"varint,2,opt,name=restriction,proto3" json:"restriction,omitempty" db:"restriction" yaml:"restriction" bson:"restriction"`
+	Restriction bool `protobuf:"varint,2,opt,name=restriction,proto3" json:"restriction,omitempty" yaml:"restriction" bson:"restriction" db:"restriction"`
 }
 
 func (x *SetLaneRestrictionRequest) Reset() {
@@ -403,7 +403,7 @@ type GetLaneByLongLatBBoxResponse struct {
 
 	// Lane的信息
 	// Lane information
-	States []*LaneState `protobuf:"bytes,1,rep,name=states,proto3" json:"states,omitempty" yaml:"states" bson:"states" db:"states"`
+	States []*LaneState `protobuf:"bytes,1,rep,name=states,proto3" json:"states,omitempty" bson:"states" db:"states" yaml:"states"`
 }
 
 func (x *GetLaneByLongLatBBoxResponse) Reset() {

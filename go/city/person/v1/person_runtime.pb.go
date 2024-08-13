@@ -29,7 +29,7 @@ type PersonRuntime struct {
 
 	// person信息
 	// person information
-	Base *Person `protobuf:"bytes,1,opt,name=base,proto3,oneof" json:"base,omitempty" db:"base" yaml:"base" bson:"base"`
+	Base *Person `protobuf:"bytes,1,opt,name=base,proto3,oneof" json:"base,omitempty" yaml:"base" bson:"base" db:"base"`
 	// person运动信息
 	// person motion information
 	Motion *PersonMotion `protobuf:"bytes,2,opt,name=motion,proto3" json:"motion,omitempty" yaml:"motion" bson:"motion" db:"motion"`

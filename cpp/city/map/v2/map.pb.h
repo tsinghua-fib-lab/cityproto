@@ -135,12 +135,13 @@ enum LaneType : int {
   LANE_TYPE_UNSPECIFIED = 0,
   LANE_TYPE_DRIVING = 1,
   LANE_TYPE_WALKING = 2,
+  LANE_TYPE_RAIL_TRANSIT = 3,
   LaneType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
   LaneType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
 };
 bool LaneType_IsValid(int value);
 constexpr LaneType LaneType_MIN = LANE_TYPE_UNSPECIFIED;
-constexpr LaneType LaneType_MAX = LANE_TYPE_WALKING;
+constexpr LaneType LaneType_MAX = LANE_TYPE_RAIL_TRANSIT;
 constexpr int LaneType_ARRAYSIZE = LaneType_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* LaneType_descriptor();

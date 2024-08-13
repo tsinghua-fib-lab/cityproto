@@ -38,6 +38,14 @@ export declare enum LaneType {
    * @generated from enum value: LANE_TYPE_WALKING = 2;
    */
   WALKING = 2,
+
+  /**
+   * 轨道交通
+   * rail transit
+   *
+   * @generated from enum value: LANE_TYPE_RAIL_TRANSIT = 3;
+   */
+  RAIL_TRANSIT = 3,
 }
 
 /**

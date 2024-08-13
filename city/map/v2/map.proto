@@ -66,6 +66,9 @@ enum LaneType {
   // 步行
   // walking
   LANE_TYPE_WALKING = 2;
+  // 轨道交通
+  // rail transit
+  LANE_TYPE_RAIL_TRANSIT = 3;
 }
 
 // 车道转向

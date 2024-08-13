@@ -19,6 +19,7 @@ export const LaneType = proto3.makeEnum(
     {no: 0, name: "LANE_TYPE_UNSPECIFIED", localName: "UNSPECIFIED"},
     {no: 1, name: "LANE_TYPE_DRIVING", localName: "DRIVING"},
     {no: 2, name: "LANE_TYPE_WALKING", localName: "WALKING"},
+    {no: 3, name: "LANE_TYPE_RAIL_TRANSIT", localName: "RAIL_TRANSIT"},
   ],
 );
 

@@ -30,13 +30,13 @@ type GetRouteRequest struct {
 
 	// 导航类型
 	// routing type
-	Type RouteType `protobuf:"varint,1,opt,name=type,proto3,enum=city.routing.v2.RouteType" json:"type,omitempty" yaml:"type" bson:"type" db:"type"`
+	Type RouteType `protobuf:"varint,1,opt,name=type,proto3,enum=city.routing.v2.RouteType" json:"type,omitempty" bson:"type" db:"type" yaml:"type"`
 	// 起点，约定：包含LanePosition或AoiPosition中的一种
 	// Starting point, convention: as LanePosition or AoiPosition
 	Start *v2.Position `protobuf:"bytes,2,opt,name=start,proto3" json:"start,omitempty" yaml:"start" bson:"start" db:"start"`
 	// 终点，约定：包含LanePosition或AoiPosition中的一种
 	// Ending point, convention: as LanePosition or AoiPosition
-	End *v2.Position `protobuf:"bytes,3,opt,name=end,proto3" json:"end,omitempty" db:"end" yaml:"end" bson:"end"`
+	End *v2.Position `protobuf:"bytes,3,opt,name=end,proto3" json:"end,omitempty" yaml:"end" bson:"end" db:"end"`
 	// 发送导航请求的时间（目前仅在行车导航中使用）
 	// The time to send routing request (currently only used in driving routing)
 	Time float64 `protobuf:"fixed64,5,opt,name=time,proto3" json:"time,omitempty" yaml:"time" bson:"time" db:"time"`
@@ -109,7 +109,7 @@ type GetRouteResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Journeys []*Journey `protobuf:"bytes,1,rep,name=journeys,proto3" json:"journeys,omitempty" yaml:"journeys" bson:"journeys" db:"journeys"`
+	Journeys []*Journey `protobuf:"bytes,1,rep,name=journeys,proto3" json:"journeys,omitempty" bson:"journeys" db:"journeys" yaml:"journeys"`
 }
 
 func (x *GetRouteResponse) Reset() {
@@ -160,7 +160,7 @@ type SetDrivingCostsRequest struct {
 
 	// 道路通行成本
 	// travelling cost
-	Costs []*Cost `protobuf:"bytes,1,rep,name=costs,proto3" json:"costs,omitempty" bson:"costs" db:"costs" yaml:"costs"`
+	Costs []*Cost `protobuf:"bytes,1,rep,name=costs,proto3" json:"costs,omitempty" yaml:"costs" bson:"costs" db:"costs"`
 }
 
 func (x *SetDrivingCostsRequest) Reset() {
@@ -251,7 +251,7 @@ type GetDrivingCostsRequest struct {
 
 	// 道路通行成本（按照给定的id和time进行查询）
 	// travelling cost (query via the given ID and time)
-	Costs []*Cost `protobuf:"bytes,1,rep,name=costs,proto3" json:"costs,omitempty" db:"costs" yaml:"costs" bson:"costs"`
+	Costs []*Cost `protobuf:"bytes,1,rep,name=costs,proto3" json:"costs,omitempty" yaml:"costs" bson:"costs" db:"costs"`
 }
 
 func (x *GetDrivingCostsRequest) Reset() {

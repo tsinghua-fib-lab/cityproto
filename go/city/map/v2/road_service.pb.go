@@ -167,7 +167,7 @@ type GetRoadRequest struct {
 	ExcludeLane bool `protobuf:"varint,2,opt,name=exclude_lane,json=excludeLane,proto3" json:"exclude_lane,omitempty" yaml:"exclude_lane" bson:"exclude_lane" db:"exclude_lane"`
 	// 是否要排除车道上的人的信息（仅在包含车道信息时有效）
 	// Whether to exclude information about person in the lane (only valid when lane information is included)
-	ExcludePerson bool `protobuf:"varint,3,opt,name=exclude_person,json=excludePerson,proto3" json:"exclude_person,omitempty" db:"exclude_person" yaml:"exclude_person" bson:"exclude_person"`
+	ExcludePerson bool `protobuf:"varint,3,opt,name=exclude_person,json=excludePerson,proto3" json:"exclude_person,omitempty" bson:"exclude_person" db:"exclude_person" yaml:"exclude_person"`
 }
 
 func (x *GetRoadRequest) Reset() {
@@ -232,7 +232,7 @@ type GetRoadResponse struct {
 
 	// 道路信息列表
 	// List of road information
-	States []*RoadState `protobuf:"bytes,1,rep,name=states,proto3" json:"states,omitempty" bson:"states" db:"states" yaml:"states"`
+	States []*RoadState `protobuf:"bytes,1,rep,name=states,proto3" json:"states,omitempty" yaml:"states" bson:"states" db:"states"`
 }
 
 func (x *GetRoadResponse) Reset() {
@@ -317,7 +317,7 @@ type RuinInfo struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Num   int32   `protobuf:"varint,1,opt,name=num,proto3" json:"num,omitempty" db:"num" yaml:"num" bson:"num"`            // 损坏数量。Ruined number
+	Num   int32   `protobuf:"varint,1,opt,name=num,proto3" json:"num,omitempty" bson:"num" db:"num" yaml:"num"`            // 损坏数量。Ruined number
 	Ratio float64 `protobuf:"fixed64,2,opt,name=ratio,proto3" json:"ratio,omitempty" yaml:"ratio" bson:"ratio" db:"ratio"` // 损坏占比。Ruined ratio
 }
 
@@ -538,7 +538,7 @@ type RoadState struct {
 	Reason InterruptionReason `protobuf:"varint,3,opt,name=reason,proto3,enum=city.map.v2.InterruptionReason" json:"reason,omitempty" yaml:"reason" bson:"reason" db:"reason"`
 	// 车道情况
 	// lane state
-	Lanes []*LaneState `protobuf:"bytes,5,rep,name=lanes,proto3" json:"lanes,omitempty" bson:"lanes" db:"lanes" yaml:"lanes"`
+	Lanes []*LaneState `protobuf:"bytes,5,rep,name=lanes,proto3" json:"lanes,omitempty" yaml:"lanes" bson:"lanes" db:"lanes"`
 }
 
 func (x *RoadState) Reset() {

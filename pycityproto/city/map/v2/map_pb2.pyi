@@ -12,6 +12,7 @@ class LaneType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     LANE_TYPE_UNSPECIFIED: _ClassVar[LaneType]
     LANE_TYPE_DRIVING: _ClassVar[LaneType]
     LANE_TYPE_WALKING: _ClassVar[LaneType]
+    LANE_TYPE_RAIL_TRANSIT: _ClassVar[LaneType]
 
 class LaneTurn(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     __slots__ = []
@@ -51,6 +52,7 @@ class SublineType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
 LANE_TYPE_UNSPECIFIED: LaneType
 LANE_TYPE_DRIVING: LaneType
 LANE_TYPE_WALKING: LaneType
+LANE_TYPE_RAIL_TRANSIT: LaneType
 LANE_TURN_UNSPECIFIED: LaneTurn
 LANE_TURN_STRAIGHT: LaneTurn
 LANE_TURN_LEFT: LaneTurn

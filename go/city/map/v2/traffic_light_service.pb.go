@@ -29,7 +29,7 @@ type GetTrafficLightRequest struct {
 
 	// 信号等相关的接口精确到junction
 	// The interfaces related to signals are precise to junction
-	JunctionId int32 `protobuf:"varint,1,opt,name=junction_id,json=junctionId,proto3" json:"junction_id,omitempty" bson:"junction_id" db:"junction_id" yaml:"junction_id"`
+	JunctionId int32 `protobuf:"varint,1,opt,name=junction_id,json=junctionId,proto3" json:"junction_id,omitempty" yaml:"junction_id" bson:"junction_id" db:"junction_id"`
 }
 
 func (x *GetTrafficLightRequest) Reset() {
@@ -373,10 +373,10 @@ type SetTrafficLightStatusRequest struct {
 
 	// 需要改变状态的路口编号
 	// The target junction ID
-	JunctionId int32 `protobuf:"varint,1,opt,name=junction_id,json=junctionId,proto3" json:"junction_id,omitempty" yaml:"junction_id" bson:"junction_id" db:"junction_id"`
+	JunctionId int32 `protobuf:"varint,1,opt,name=junction_id,json=junctionId,proto3" json:"junction_id,omitempty" db:"junction_id" yaml:"junction_id" bson:"junction_id"`
 	// 当前路口红绿灯状态，true为通，false为断
 	// The current traffic light status at the junction, true is on, false is off
-	Ok bool `protobuf:"varint,2,opt,name=ok,proto3" json:"ok,omitempty" yaml:"ok" bson:"ok" db:"ok"`
+	Ok bool `protobuf:"varint,2,opt,name=ok,proto3" json:"ok,omitempty" bson:"ok" db:"ok" yaml:"ok"`
 }
 
 func (x *SetTrafficLightStatusRequest) Reset() {
