@@ -183,7 +183,7 @@ type LC struct {
 	ShadowS float64 `protobuf:"fixed64,2,opt,name=shadow_s,json=shadowS,proto3" json:"shadow_s,omitempty" yaml:"shadow_s" bson:"shadow_s" db:"shadow_s"`
 	// 变道过程车头相对于前进方向的偏转角（弧度，总是为正，0代表不转向）
 	// deviation angle of the vehicle head relative to the forward direction during lane change (radians, always positive, 0 means no steering)
-	Angle float64 `protobuf:"fixed64,3,opt,name=angle,proto3" json:"angle,omitempty" db:"angle" yaml:"angle" bson:"angle"`
+	Angle float64 `protobuf:"fixed64,3,opt,name=angle,proto3" json:"angle,omitempty" yaml:"angle" bson:"angle" db:"angle"`
 	// 已完成的变道比例
 	// completed ratio of lane change
 	CompletedRatio float64 `protobuf:"fixed64,4,opt,name=completed_ratio,json=completedRatio,proto3" json:"completed_ratio,omitempty" yaml:"completed_ratio" bson:"completed_ratio" db:"completed_ratio"`
@@ -261,13 +261,13 @@ type VehicleAction struct {
 	Id int32 `protobuf:"varint,4,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
 	// 本轮更新中设定的加速度
 	// acceleration set in this step
-	Acc float64 `protobuf:"fixed64,1,opt,name=acc,proto3" json:"acc,omitempty" bson:"acc" db:"acc" yaml:"acc"`
+	Acc float64 `protobuf:"fixed64,1,opt,name=acc,proto3" json:"acc,omitempty" yaml:"acc" bson:"acc" db:"acc"`
 	// 变道目标（可选，不设置代表不变道或保持变道状态）
 	// lane change target (optional, not set means no lane change)
 	LcTargetId *int32 `protobuf:"varint,2,opt,name=lc_target_id,json=lcTargetId,proto3,oneof" json:"lc_target_id,omitempty" yaml:"lc_target_id" bson:"lc_target_id" db:"lc_target_id"`
 	// 变道过程的转向角度
 	// steering angle during lane change
-	Angle float64 `protobuf:"fixed64,3,opt,name=angle,proto3" json:"angle,omitempty" yaml:"angle" bson:"angle" db:"angle"`
+	Angle float64 `protobuf:"fixed64,3,opt,name=angle,proto3" json:"angle,omitempty" bson:"angle" db:"angle" yaml:"angle"`
 }
 
 func (x *VehicleAction) Reset() {
@@ -337,7 +337,7 @@ type VehicleRuntime struct {
 
 	// 基本运行时信息
 	// basic runtime information
-	Base *PersonMotion `protobuf:"bytes,1,opt,name=base,proto3" json:"base,omitempty" db:"base" yaml:"base" bson:"base"`
+	Base *PersonMotion `protobuf:"bytes,1,opt,name=base,proto3" json:"base,omitempty" yaml:"base" bson:"base" db:"base"`
 	// 变道信息
 	// lane change information
 	Lc *LC `protobuf:"bytes,4,opt,name=lc,proto3,oneof" json:"lc,omitempty" yaml:"lc" bson:"lc" db:"lc"`
@@ -467,7 +467,7 @@ type ObservedVehicle struct {
 	RelativeDistance float64 `protobuf:"fixed64,3,opt,name=relative_distance,json=relativeDistance,proto3" json:"relative_distance,omitempty" yaml:"relative_distance" bson:"relative_distance" db:"relative_distance"`
 	// 关系枚举
 	// relation enumeration
-	Relation VehicleRelation `protobuf:"varint,4,opt,name=relation,proto3,enum=city.person.v1.VehicleRelation" json:"relation,omitempty" bson:"relation" db:"relation" yaml:"relation"`
+	Relation VehicleRelation `protobuf:"varint,4,opt,name=relation,proto3,enum=city.person.v1.VehicleRelation" json:"relation,omitempty" yaml:"relation" bson:"relation" db:"relation"`
 }
 
 func (x *ObservedVehicle) Reset() {
@@ -617,7 +617,7 @@ type VehicleEnv struct {
 
 	// 车辆编号
 	// vehicle id
-	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" bson:"id" db:"id" yaml:"id"`
+	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
 	// 当前的车辆运行时信息
 	// current vehicle runtime information
 	Runtime *VehicleRuntime `protobuf:"bytes,2,opt,name=runtime,proto3" json:"runtime,omitempty" yaml:"runtime" bson:"runtime" db:"runtime"`
@@ -626,7 +626,7 @@ type VehicleEnv struct {
 	Journey *v2.Journey `protobuf:"bytes,3,opt,name=journey,proto3" json:"journey,omitempty" yaml:"journey" bson:"journey" db:"journey"`
 	// 观测到的车辆
 	// observed vehicles
-	ObservedVehicles []*ObservedVehicle `protobuf:"bytes,4,rep,name=observed_vehicles,json=observedVehicles,proto3" json:"observed_vehicles,omitempty" bson:"observed_vehicles" db:"observed_vehicles" yaml:"observed_vehicles"`
+	ObservedVehicles []*ObservedVehicle `protobuf:"bytes,4,rep,name=observed_vehicles,json=observedVehicles,proto3" json:"observed_vehicles,omitempty" yaml:"observed_vehicles" bson:"observed_vehicles" db:"observed_vehicles"`
 	// 观测到的车道状态
 	// observed lane states
 	ObservedLanes []*ObservedLane `protobuf:"bytes,5,rep,name=observed_lanes,json=observedLanes,proto3" json:"observed_lanes,omitempty" yaml:"observed_lanes" bson:"observed_lanes" db:"observed_lanes"`

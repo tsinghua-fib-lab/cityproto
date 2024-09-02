@@ -174,7 +174,7 @@ type UpdateOrgMoneyRequestItem struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 待修改的组织
-	OrgId int32 `protobuf:"varint,1,opt,name=org_id,json=orgId,proto3" json:"org_id,omitempty" db:"org_id" yaml:"org_id" bson:"org_id"`
+	OrgId int32 `protobuf:"varint,1,opt,name=org_id,json=orgId,proto3" json:"org_id,omitempty" yaml:"org_id" bson:"org_id" db:"org_id"`
 	// 正数表示增加，负数表示减少
 	Money float64 `protobuf:"fixed64,2,opt,name=money,proto3" json:"money,omitempty" yaml:"money" bson:"money" db:"money"`
 }
@@ -335,7 +335,7 @@ type UpdateOrgGoodsRequestItem struct {
 	// 按照(type, name)相等来判断是否为同一种货物
 	// 货物数量为增量，正数表示增加，负数表示减少
 	// price如果未设定则沿用原来的价格，否则使用新的价格
-	Goods []*Goods `protobuf:"bytes,2,rep,name=goods,proto3" json:"goods,omitempty" yaml:"goods" bson:"goods" db:"goods"`
+	Goods []*Goods `protobuf:"bytes,2,rep,name=goods,proto3" json:"goods,omitempty" bson:"goods" db:"goods" yaml:"goods"`
 }
 
 func (x *UpdateOrgGoodsRequestItem) Reset() {
@@ -493,9 +493,9 @@ type UpdateOrgEmployeeRequestItem struct {
 	// 新增的员工
 	Adds []*Employee `protobuf:"bytes,2,rep,name=adds,proto3" json:"adds,omitempty" yaml:"adds" bson:"adds" db:"adds"`
 	// 删除的员工
-	Dels []int32 `protobuf:"varint,3,rep,packed,name=dels,proto3" json:"dels,omitempty" yaml:"dels" bson:"dels" db:"dels"`
+	Dels []int32 `protobuf:"varint,3,rep,packed,name=dels,proto3" json:"dels,omitempty" db:"dels" yaml:"dels" bson:"dels"`
 	// 修改薪水的员工
-	Updates []*Employee `protobuf:"bytes,4,rep,name=updates,proto3" json:"updates,omitempty" bson:"updates" db:"updates" yaml:"updates"`
+	Updates []*Employee `protobuf:"bytes,4,rep,name=updates,proto3" json:"updates,omitempty" yaml:"updates" bson:"updates" db:"updates"`
 }
 
 func (x *UpdateOrgEmployeeRequestItem) Reset() {

@@ -454,13 +454,13 @@ type GetPersonByLongLatBBoxRequest struct {
 
 	// 经纬度范围
 	// longitude and latitude bounding box
-	Bbox *v21.LongLatBBox `protobuf:"bytes,1,opt,name=bbox,proto3" json:"bbox,omitempty" bson:"bbox" db:"bbox" yaml:"bbox"`
+	Bbox *v21.LongLatBBox `protobuf:"bytes,1,opt,name=bbox,proto3" json:"bbox,omitempty" yaml:"bbox" bson:"bbox" db:"bbox"`
 	// 过滤人的状态（状态为列表内的值的人不返回）
 	// Filter person's status (person whose status is in the list will not be returned)
 	ExcludeStatuses []Status `protobuf:"varint,2,rep,packed,name=exclude_statuses,json=excludeStatuses,proto3,enum=city.person.v1.Status" json:"exclude_statuses,omitempty" yaml:"exclude_statuses" bson:"exclude_statuses" db:"exclude_statuses"`
 	// 设置是否返回base信息
 	// Set whether to return base information
-	ReturnBase bool `protobuf:"varint,3,opt,name=return_base,json=returnBase,proto3" json:"return_base,omitempty" yaml:"return_base" bson:"return_base" db:"return_base"`
+	ReturnBase bool `protobuf:"varint,3,opt,name=return_base,json=returnBase,proto3" json:"return_base,omitempty" bson:"return_base" db:"return_base" yaml:"return_base"`
 }
 
 func (x *GetPersonByLongLatBBoxRequest) Reset() {
@@ -525,7 +525,7 @@ type GetPersonByLongLatBBoxResponse struct {
 
 	// 区域内的person的信息
 	// Information of persons in the region
-	Persons []*PersonRuntime `protobuf:"bytes,1,rep,name=persons,proto3" json:"persons,omitempty" yaml:"persons" bson:"persons" db:"persons"`
+	Persons []*PersonRuntime `protobuf:"bytes,1,rep,name=persons,proto3" json:"persons,omitempty" bson:"persons" db:"persons" yaml:"persons"`
 }
 
 func (x *GetPersonByLongLatBBoxResponse) Reset() {
@@ -767,7 +767,7 @@ type SetControlledVehicleIDsRequest struct {
 
 	// 由外部控制行为的vehicle id列表
 	// List of vehicle ids controlled by external behavior
-	VehicleIds []int32 `protobuf:"varint,1,rep,packed,name=vehicle_ids,json=vehicleIds,proto3" json:"vehicle_ids,omitempty" yaml:"vehicle_ids" bson:"vehicle_ids" db:"vehicle_ids"`
+	VehicleIds []int32 `protobuf:"varint,1,rep,packed,name=vehicle_ids,json=vehicleIds,proto3" json:"vehicle_ids,omitempty" bson:"vehicle_ids" db:"vehicle_ids" yaml:"vehicle_ids"`
 }
 
 func (x *SetControlledVehicleIDsRequest) Reset() {

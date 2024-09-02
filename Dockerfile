@@ -6,7 +6,7 @@ WORKDIR /home/node/app
 RUN yarn global add serve
 
 # Copy build files
-COPY ./doc ./build
+COPY ./doc/index.html ./build/cityproto/index.html
 
 EXPOSE 80
 

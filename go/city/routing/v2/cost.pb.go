@@ -39,7 +39,7 @@ type Cost struct {
 	// That is, set the cost as the value at what time
 	// 为空表示设置全天通行成本均为cost
 	// If empty, it means that the all-day cost is set to the value.
-	Time *float64 `protobuf:"fixed64,3,opt,name=time,proto3,oneof" json:"time,omitempty" yaml:"time" bson:"time" db:"time"`
+	Time *float64 `protobuf:"fixed64,3,opt,name=time,proto3,oneof" json:"time,omitempty" db:"time" yaml:"time" bson:"time"`
 }
 
 func (x *Cost) Reset() {

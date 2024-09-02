@@ -265,8 +265,8 @@ type Facilities struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Facilities     []*Facility      `protobuf:"bytes,1,rep,name=facilities,proto3" json:"facilities,omitempty" db:"facilities" yaml:"facilities" bson:"facilities"`
-	RepairStations []*RepairStation `protobuf:"bytes,2,rep,name=repair_stations,json=repairStations,proto3" json:"repair_stations,omitempty" yaml:"repair_stations" bson:"repair_stations" db:"repair_stations"`
+	Facilities     []*Facility      `protobuf:"bytes,1,rep,name=facilities,proto3" json:"facilities,omitempty" bson:"facilities" db:"facilities" yaml:"facilities"`
+	RepairStations []*RepairStation `protobuf:"bytes,2,rep,name=repair_stations,json=repairStations,proto3" json:"repair_stations,omitempty" bson:"repair_stations" db:"repair_stations" yaml:"repair_stations"`
 }
 
 func (x *Facilities) Reset() {
