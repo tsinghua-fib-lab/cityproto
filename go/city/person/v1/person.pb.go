@@ -308,16 +308,16 @@ type PersonAttribute struct {
 	MaxSpeed float64 `protobuf:"fixed64,4,opt,name=max_speed,json=maxSpeed,proto3" json:"max_speed,omitempty" yaml:"max_speed" bson:"max_speed" db:"max_speed"`
 	// 单位: m/s^2, 最大加速度（正值）
 	// max accelaration: m/s^2 (positive value)
-	MaxAcceleration float64 `protobuf:"fixed64,5,opt,name=max_acceleration,json=maxAcceleration,proto3" json:"max_acceleration,omitempty" db:"max_acceleration" yaml:"max_acceleration" bson:"max_acceleration"`
+	MaxAcceleration float64 `protobuf:"fixed64,5,opt,name=max_acceleration,json=maxAcceleration,proto3" json:"max_acceleration,omitempty" yaml:"max_acceleration" bson:"max_acceleration" db:"max_acceleration"`
 	// 单位: m/s^2, 最大减速度（负值）
 	// max deceleration: m/s^2 (negative value)
 	MaxBrakingAcceleration float64 `protobuf:"fixed64,6,opt,name=max_braking_acceleration,json=maxBrakingAcceleration,proto3" json:"max_braking_acceleration,omitempty" yaml:"max_braking_acceleration" bson:"max_braking_acceleration" db:"max_braking_acceleration"`
 	// 单位: m/s^2, 一般加速度（正值），要求小于最大加速度
 	// usual acceleration: m/s^2 (positive value), required to be less than the max acceleration
-	UsualAcceleration float64 `protobuf:"fixed64,7,opt,name=usual_acceleration,json=usualAcceleration,proto3" json:"usual_acceleration,omitempty" bson:"usual_acceleration" db:"usual_acceleration" yaml:"usual_acceleration"`
+	UsualAcceleration float64 `protobuf:"fixed64,7,opt,name=usual_acceleration,json=usualAcceleration,proto3" json:"usual_acceleration,omitempty" yaml:"usual_acceleration" bson:"usual_acceleration" db:"usual_acceleration"`
 	// 单位: m/s^2, 一般减速度（负值），要求大于最大减速度
 	// usual deceleration: m/s^2 (negative value), required to be greater than the max deceleration
-	UsualBrakingAcceleration float64 `protobuf:"fixed64,8,opt,name=usual_braking_acceleration,json=usualBrakingAcceleration,proto3" json:"usual_braking_acceleration,omitempty" db:"usual_braking_acceleration" yaml:"usual_braking_acceleration" bson:"usual_braking_acceleration"`
+	UsualBrakingAcceleration float64 `protobuf:"fixed64,8,opt,name=usual_braking_acceleration,json=usualBrakingAcceleration,proto3" json:"usual_braking_acceleration,omitempty" yaml:"usual_braking_acceleration" bson:"usual_braking_acceleration" db:"usual_braking_acceleration"`
 }
 
 func (x *PersonAttribute) Reset() {
@@ -481,13 +481,13 @@ type BusAttribute struct {
 
 	// 公交线路ID
 	// bus line ID
-	SublineId int32 `protobuf:"varint,1,opt,name=subline_id,json=sublineId,proto3" json:"subline_id,omitempty" yaml:"subline_id" bson:"subline_id" db:"subline_id"`
+	SublineId int32 `protobuf:"varint,1,opt,name=subline_id,json=sublineId,proto3" json:"subline_id,omitempty" bson:"subline_id" db:"subline_id" yaml:"subline_id"`
 	// 公交车容量
 	// bus capacity
 	Capacity int32 `protobuf:"varint,2,opt,name=capacity,proto3" json:"capacity,omitempty" yaml:"capacity" bson:"capacity" db:"capacity"`
 	// 公交车模型标签
 	// bus model tag
-	Model *string `protobuf:"bytes,3,opt,name=model,proto3,oneof" json:"model,omitempty" db:"model" yaml:"model" bson:"model"`
+	Model *string `protobuf:"bytes,3,opt,name=model,proto3,oneof" json:"model,omitempty" yaml:"model" bson:"model" db:"model"`
 	// 公交车类型
 	// type of bus
 	Type BusType `protobuf:"varint,5,opt,name=type,proto3,enum=city.person.v1.BusType" json:"type,omitempty" yaml:"type" bson:"type" db:"type"`
@@ -623,7 +623,7 @@ type BikeAttribute struct {
 
 	// 单位: m/s
 	// speed: m/s
-	Speed float64 `protobuf:"fixed64,1,opt,name=speed,proto3" json:"speed,omitempty" yaml:"speed" bson:"speed" db:"speed"`
+	Speed float64 `protobuf:"fixed64,1,opt,name=speed,proto3" json:"speed,omitempty" bson:"speed" db:"speed" yaml:"speed"`
 	// 自行车模型标签
 	// Bike model tag
 	Model *string `protobuf:"bytes,2,opt,name=model,proto3,oneof" json:"model,omitempty" yaml:"model" bson:"model" db:"model"`
@@ -778,7 +778,7 @@ type Person struct {
 	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
 	// 参数
 	// attribute
-	Attribute *PersonAttribute `protobuf:"bytes,2,opt,name=attribute,proto3" json:"attribute,omitempty" bson:"attribute" db:"attribute" yaml:"attribute"`
+	Attribute *PersonAttribute `protobuf:"bytes,2,opt,name=attribute,proto3" json:"attribute,omitempty" yaml:"attribute" bson:"attribute" db:"attribute"`
 	// 初始位置
 	// initial position
 	Home *v2.Position `protobuf:"bytes,3,opt,name=home,proto3" json:"home,omitempty" yaml:"home" bson:"home" db:"home"`
@@ -790,7 +790,7 @@ type Person struct {
 	VehicleAttribute *VehicleAttribute `protobuf:"bytes,7,opt,name=vehicle_attribute,json=vehicleAttribute,proto3,oneof" json:"vehicle_attribute,omitempty" yaml:"vehicle_attribute" bson:"vehicle_attribute" db:"vehicle_attribute"`
 	// 公交车附加属性
 	// bus additional attribute
-	BusAttribute *BusAttribute `protobuf:"bytes,8,opt,name=bus_attribute,json=busAttribute,proto3,oneof" json:"bus_attribute,omitempty" yaml:"bus_attribute" bson:"bus_attribute" db:"bus_attribute"`
+	BusAttribute *BusAttribute `protobuf:"bytes,8,opt,name=bus_attribute,json=busAttribute,proto3,oneof" json:"bus_attribute,omitempty" bson:"bus_attribute" db:"bus_attribute" yaml:"bus_attribute"`
 	// 行人附加属性
 	// pedestrian additional attribute
 	PedestrianAttribute *PedestrianAttribute `protobuf:"bytes,12,opt,name=pedestrian_attribute,json=pedestrianAttribute,proto3,oneof" json:"pedestrian_attribute,omitempty" yaml:"pedestrian_attribute" bson:"pedestrian_attribute" db:"pedestrian_attribute"`
@@ -934,7 +934,7 @@ type Persons struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Persons []*Person `protobuf:"bytes,1,rep,name=persons,proto3" json:"persons,omitempty" bson:"persons" db:"persons" yaml:"persons"`
+	Persons []*Person `protobuf:"bytes,1,rep,name=persons,proto3" json:"persons,omitempty" yaml:"persons" bson:"persons" db:"persons"`
 }
 
 func (x *Persons) Reset() {

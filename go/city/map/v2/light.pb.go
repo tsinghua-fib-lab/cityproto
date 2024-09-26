@@ -91,7 +91,7 @@ type Phase struct {
 
 	// 相位持续时间，单位秒
 	// Phase duration in seconds
-	Duration float64 `protobuf:"fixed64,1,opt,name=duration,proto3" json:"duration,omitempty" yaml:"duration" bson:"duration" db:"duration"`
+	Duration float64 `protobuf:"fixed64,1,opt,name=duration,proto3" json:"duration,omitempty" db:"duration" yaml:"duration" bson:"duration"`
 	// 描述该相位下每个lane的灯控情况，lane与Junction.lane_ids一一对应
 	// The lighting control situation of each lane in this phase, and the lane
 	// corresponds one-to-one with junction.lane_ids

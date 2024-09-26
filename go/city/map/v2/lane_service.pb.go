@@ -230,10 +230,10 @@ type GetLaneRequest struct {
 
 	// 指定的Lane id列表，如果为空，则返回所有Lane的信息
 	// List of targeted lane IDs, if empty, returns all information of lanes
-	LaneIds []int32 `protobuf:"varint,1,rep,packed,name=lane_ids,json=laneIds,proto3" json:"lane_ids,omitempty" db:"lane_ids" yaml:"lane_ids" bson:"lane_ids"`
+	LaneIds []int32 `protobuf:"varint,1,rep,packed,name=lane_ids,json=laneIds,proto3" json:"lane_ids,omitempty" yaml:"lane_ids" bson:"lane_ids" db:"lane_ids"`
 	// 是否要排除车道上的人的信息
 	// Whether to exclude information of person on the lane
-	ExcludePerson bool `protobuf:"varint,2,opt,name=exclude_person,json=excludePerson,proto3" json:"exclude_person,omitempty" yaml:"exclude_person" bson:"exclude_person" db:"exclude_person"`
+	ExcludePerson bool `protobuf:"varint,2,opt,name=exclude_person,json=excludePerson,proto3" json:"exclude_person,omitempty" db:"exclude_person" yaml:"exclude_person" bson:"exclude_person"`
 }
 
 func (x *GetLaneRequest) Reset() {
@@ -342,7 +342,7 @@ type GetLaneByLongLatBBoxRequest struct {
 
 	// 经纬度范围
 	// latitude and longitude bounding box
-	Bbox *v2.LongLatBBox `protobuf:"bytes,1,opt,name=bbox,proto3" json:"bbox,omitempty" bson:"bbox" db:"bbox" yaml:"bbox"`
+	Bbox *v2.LongLatBBox `protobuf:"bytes,1,opt,name=bbox,proto3" json:"bbox,omitempty" yaml:"bbox" bson:"bbox" db:"bbox"`
 	// 是否要排除车道上的人的信息
 	// Whether to exclude information of person on the lane
 	ExcludePerson bool `protobuf:"varint,2,opt,name=exclude_person,json=excludePerson,proto3" json:"exclude_person,omitempty" yaml:"exclude_person" bson:"exclude_person" db:"exclude_person"`

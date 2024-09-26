@@ -83,10 +83,10 @@ type GetTrafficLightResponse struct {
 	TrafficLight *TrafficLight `protobuf:"bytes,1,opt,name=traffic_light,json=trafficLight,proto3" json:"traffic_light,omitempty" yaml:"traffic_light" bson:"traffic_light" db:"traffic_light"`
 	// 表示当前路口处的红绿灯处于哪一个相位
 	// Which phase the traffic light is currently in
-	PhaseIndex int32 `protobuf:"varint,2,opt,name=phase_index,json=phaseIndex,proto3" json:"phase_index,omitempty" yaml:"phase_index" bson:"phase_index" db:"phase_index"`
+	PhaseIndex int32 `protobuf:"varint,2,opt,name=phase_index,json=phaseIndex,proto3" json:"phase_index,omitempty" db:"phase_index" yaml:"phase_index" bson:"phase_index"`
 	// 当前相位的剩余时间
 	// The remaining time of the current phase
-	TimeRemaining float64 `protobuf:"fixed64,3,opt,name=time_remaining,json=timeRemaining,proto3" json:"time_remaining,omitempty" yaml:"time_remaining" bson:"time_remaining" db:"time_remaining"`
+	TimeRemaining float64 `protobuf:"fixed64,3,opt,name=time_remaining,json=timeRemaining,proto3" json:"time_remaining,omitempty" bson:"time_remaining" db:"time_remaining" yaml:"time_remaining"`
 }
 
 func (x *GetTrafficLightResponse) Reset() {

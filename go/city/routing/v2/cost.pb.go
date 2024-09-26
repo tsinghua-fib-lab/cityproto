@@ -29,7 +29,7 @@ type Cost struct {
 
 	// 目标拓扑元素（只支持道路Road）
 	// Target topology element (only supports roads)
-	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
+	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" db:"id" yaml:"id" bson:"id"`
 	// 路径成本（单位：秒）
 	// Path cost (in seconds)
 	Cost float64 `protobuf:"fixed64,2,opt,name=cost,proto3" json:"cost,omitempty" yaml:"cost" bson:"cost" db:"cost"`
@@ -39,7 +39,7 @@ type Cost struct {
 	// That is, set the cost as the value at what time
 	// 为空表示设置全天通行成本均为cost
 	// If empty, it means that the all-day cost is set to the value.
-	Time *float64 `protobuf:"fixed64,3,opt,name=time,proto3,oneof" json:"time,omitempty" bson:"time" db:"time" yaml:"time"`
+	Time *float64 `protobuf:"fixed64,3,opt,name=time,proto3,oneof" json:"time,omitempty" yaml:"time" bson:"time" db:"time"`
 }
 
 func (x *Cost) Reset() {

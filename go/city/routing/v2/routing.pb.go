@@ -220,7 +220,7 @@ type DrivingJourneyBody struct {
 	// The reason for using road sequences is that active lane changing requires frequent modifications to lane level navigation
 	// 优先使用road_ids，如果road_ids为空，则使用route（也可以直接忽略route）
 	// Prioritize using road_ids. If road_ids is empty, use route (or simply ignore route)
-	RoadIds []int32 `protobuf:"varint,2,rep,packed,name=road_ids,json=roadIds,proto3" json:"road_ids,omitempty" db:"road_ids" yaml:"road_ids" bson:"road_ids"`
+	RoadIds []int32 `protobuf:"varint,2,rep,packed,name=road_ids,json=roadIds,proto3" json:"road_ids,omitempty" yaml:"road_ids" bson:"road_ids" db:"road_ids"`
 	// 从起点到终点预计的时间(estimation time of arrival)
 	// estimation time of arrival
 	Eta float64 `protobuf:"fixed64,3,opt,name=eta,proto3" json:"eta,omitempty" yaml:"eta" bson:"eta" db:"eta"`
@@ -466,7 +466,7 @@ type BusJourneyBody struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Transfers []*TransferSegment `protobuf:"bytes,1,rep,name=transfers,proto3" json:"transfers,omitempty" bson:"transfers" db:"transfers" yaml:"transfers"`
+	Transfers []*TransferSegment `protobuf:"bytes,1,rep,name=transfers,proto3" json:"transfers,omitempty" yaml:"transfers" bson:"transfers" db:"transfers"`
 	// 从起点到终点预计的时间(estimation time of arrival)
 	// estimation time of arrival
 	Eta float64 `protobuf:"fixed64,2,opt,name=eta,proto3" json:"eta,omitempty" yaml:"eta" bson:"eta" db:"eta"`
@@ -536,7 +536,7 @@ type Journey struct {
 	Walking *WalkingJourneyBody `protobuf:"bytes,3,opt,name=walking,proto3,oneof" json:"walking,omitempty" yaml:"walking" bson:"walking" db:"walking"`
 	// 公交
 	// Routing results of bus journey
-	ByBus *BusJourneyBody `protobuf:"bytes,4,opt,name=by_bus,json=byBus,proto3,oneof" json:"by_bus,omitempty" db:"by_bus" yaml:"by_bus" bson:"by_bus"`
+	ByBus *BusJourneyBody `protobuf:"bytes,4,opt,name=by_bus,json=byBus,proto3,oneof" json:"by_bus,omitempty" yaml:"by_bus" bson:"by_bus" db:"by_bus"`
 }
 
 func (x *Journey) Reset() {
@@ -611,7 +611,7 @@ type RoadStatus struct {
 	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
 	// 车道在各个时间片（每个5min）的速度
 	// The speed of the lane at each time slot (5 minutes each)
-	Speed []float64 `protobuf:"fixed64,2,rep,packed,name=speed,proto3" json:"speed,omitempty" yaml:"speed" bson:"speed" db:"speed"`
+	Speed []float64 `protobuf:"fixed64,2,rep,packed,name=speed,proto3" json:"speed,omitempty" bson:"speed" db:"speed" yaml:"speed"`
 }
 
 func (x *RoadStatus) Reset() {

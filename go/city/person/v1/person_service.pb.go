@@ -79,7 +79,7 @@ type GetPersonResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Person *PersonRuntime `protobuf:"bytes,1,opt,name=person,proto3" json:"person,omitempty" db:"person" yaml:"person" bson:"person"`
+	Person *PersonRuntime `protobuf:"bytes,1,opt,name=person,proto3" json:"person,omitempty" bson:"person" db:"person" yaml:"person"`
 }
 
 func (x *GetPersonResponse) Reset() {
@@ -130,7 +130,7 @@ type AddPersonRequest struct {
 
 	// 约定：person中不设置id
 	// Convention: personid is not set here
-	Person *Person `protobuf:"bytes,1,opt,name=person,proto3" json:"person,omitempty" db:"person" yaml:"person" bson:"person"`
+	Person *Person `protobuf:"bytes,1,opt,name=person,proto3" json:"person,omitempty" bson:"person" db:"person" yaml:"person"`
 }
 
 func (x *AddPersonRequest) Reset() {
@@ -181,7 +181,7 @@ type AddPersonResponse struct {
 
 	// 新增的person分配得到的ID
 	// The ID assigned to the newly added person
-	PersonId int32 `protobuf:"varint,1,opt,name=person_id,json=personId,proto3" json:"person_id,omitempty" bson:"person_id" db:"person_id" yaml:"person_id"`
+	PersonId int32 `protobuf:"varint,1,opt,name=person_id,json=personId,proto3" json:"person_id,omitempty" yaml:"person_id" bson:"person_id" db:"person_id"`
 }
 
 func (x *AddPersonResponse) Reset() {
@@ -454,7 +454,7 @@ type GetPersonByLongLatBBoxRequest struct {
 
 	// 经纬度范围
 	// longitude and latitude bounding box
-	Bbox *v21.LongLatBBox `protobuf:"bytes,1,opt,name=bbox,proto3" json:"bbox,omitempty" yaml:"bbox" bson:"bbox" db:"bbox"`
+	Bbox *v21.LongLatBBox `protobuf:"bytes,1,opt,name=bbox,proto3" json:"bbox,omitempty" bson:"bbox" db:"bbox" yaml:"bbox"`
 	// 过滤人的状态（状态为列表内的值的人不返回）
 	// Filter person's status (person whose status is in the list will not be returned)
 	ExcludeStatuses []Status `protobuf:"varint,2,rep,packed,name=exclude_statuses,json=excludeStatuses,proto3,enum=city.person.v1.Status" json:"exclude_statuses,omitempty" yaml:"exclude_statuses" bson:"exclude_statuses" db:"exclude_statuses"`
@@ -616,7 +616,7 @@ type GetAllVehiclesResponse struct {
 
 	// 所有车辆的信息
 	// Information of all vehicles
-	Vehicles []*VehicleRuntime `protobuf:"bytes,1,rep,name=vehicles,proto3" json:"vehicles,omitempty" bson:"vehicles" db:"vehicles" yaml:"vehicles"`
+	Vehicles []*VehicleRuntime `protobuf:"bytes,1,rep,name=vehicles,proto3" json:"vehicles,omitempty" db:"vehicles" yaml:"vehicles" bson:"vehicles"`
 }
 
 func (x *GetAllVehiclesResponse) Reset() {
@@ -666,7 +666,7 @@ type ResetPersonPositionRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// person id
-	PersonId int32 `protobuf:"varint,1,opt,name=person_id,json=personId,proto3" json:"person_id,omitempty" bson:"person_id" db:"person_id" yaml:"person_id"`
+	PersonId int32 `protobuf:"varint,1,opt,name=person_id,json=personId,proto3" json:"person_id,omitempty" yaml:"person_id" bson:"person_id" db:"person_id"`
 	// 重置位置
 	// reset position
 	Position *v21.Position `protobuf:"bytes,2,opt,name=position,proto3" json:"position,omitempty" yaml:"position" bson:"position" db:"position"`
