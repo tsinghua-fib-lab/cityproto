@@ -32,10 +32,10 @@ type LongLatPosition struct {
 	Longitude float64 `protobuf:"fixed64,1,opt,name=longitude,proto3" json:"longitude,omitempty" yaml:"longitude" bson:"longitude" db:"longitude"`
 	// 纬度
 	// latitude
-	Latitude float64 `protobuf:"fixed64,2,opt,name=latitude,proto3" json:"latitude,omitempty" bson:"latitude" db:"latitude" yaml:"latitude"`
+	Latitude float64 `protobuf:"fixed64,2,opt,name=latitude,proto3" json:"latitude,omitempty" yaml:"latitude" bson:"latitude" db:"latitude"`
 	// 高程（单位：米）
 	// elevation (unit: meters)
-	Z *float64 `protobuf:"fixed64,3,opt,name=z,proto3,oneof" json:"z,omitempty" yaml:"z" bson:"z" db:"z"`
+	Z *float64 `protobuf:"fixed64,3,opt,name=z,proto3,oneof" json:"z,omitempty" db:"z" yaml:"z" bson:"z"`
 }
 
 func (x *LongLatPosition) Reset() {
@@ -100,7 +100,7 @@ type XYPosition struct {
 
 	// x坐标，单位米，对应经度
 	// x coordinate, in meters, corresponding to longitude
-	X float64 `protobuf:"fixed64,1,opt,name=x,proto3" json:"x,omitempty" yaml:"x" bson:"x" db:"x"`
+	X float64 `protobuf:"fixed64,1,opt,name=x,proto3" json:"x,omitempty" db:"x" yaml:"x" bson:"x"`
 	// y坐标，单位米，对应纬度
 	// y coordinate, in meters, corresponding to latitude
 	Y float64 `protobuf:"fixed64,2,opt,name=y,proto3" json:"y,omitempty" yaml:"y" bson:"y" db:"y"`
@@ -171,10 +171,10 @@ type LanePosition struct {
 
 	// 车道id
 	// Lane ID
-	LaneId int32 `protobuf:"varint,1,opt,name=lane_id,json=laneId,proto3" json:"lane_id,omitempty" db:"lane_id" yaml:"lane_id" bson:"lane_id"`
+	LaneId int32 `protobuf:"varint,1,opt,name=lane_id,json=laneId,proto3" json:"lane_id,omitempty" yaml:"lane_id" bson:"lane_id" db:"lane_id"`
 	// s是车道上的点到车道起点的距离
 	// s is the distance from the point on the lane to the starting point of the lane
-	S float64 `protobuf:"fixed64,2,opt,name=s,proto3" json:"s,omitempty" yaml:"s" bson:"s" db:"s"`
+	S float64 `protobuf:"fixed64,2,opt,name=s,proto3" json:"s,omitempty" db:"s" yaml:"s" bson:"s"`
 }
 
 func (x *LanePosition) Reset() {
@@ -373,7 +373,7 @@ type LongLatBBox struct {
 
 	// 最小经度
 	// minimum longitude
-	MinLongitude float64 `protobuf:"fixed64,1,opt,name=min_longitude,json=minLongitude,proto3" json:"min_longitude,omitempty" bson:"min_longitude" db:"min_longitude" yaml:"min_longitude"`
+	MinLongitude float64 `protobuf:"fixed64,1,opt,name=min_longitude,json=minLongitude,proto3" json:"min_longitude,omitempty" yaml:"min_longitude" bson:"min_longitude" db:"min_longitude"`
 	// 最小纬度
 	// minimum latitude
 	MinLatitude float64 `protobuf:"fixed64,2,opt,name=min_latitude,json=minLatitude,proto3" json:"min_latitude,omitempty" yaml:"min_latitude" bson:"min_latitude" db:"min_latitude"`
@@ -382,7 +382,7 @@ type LongLatBBox struct {
 	MaxLongitude float64 `protobuf:"fixed64,3,opt,name=max_longitude,json=maxLongitude,proto3" json:"max_longitude,omitempty" yaml:"max_longitude" bson:"max_longitude" db:"max_longitude"`
 	// 最大纬度
 	// minimum longitude
-	MaxLatitude float64 `protobuf:"fixed64,4,opt,name=max_latitude,json=maxLatitude,proto3" json:"max_latitude,omitempty" db:"max_latitude" yaml:"max_latitude" bson:"max_latitude"`
+	MaxLatitude float64 `protobuf:"fixed64,4,opt,name=max_latitude,json=maxLatitude,proto3" json:"max_latitude,omitempty" yaml:"max_latitude" bson:"max_latitude" db:"max_latitude"`
 }
 
 func (x *LongLatBBox) Reset() {

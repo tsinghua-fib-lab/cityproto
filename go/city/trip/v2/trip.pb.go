@@ -98,10 +98,10 @@ type TripStop struct {
 
 	// 停车点AOI坐标（可选）
 	// Parking position coordinates AOI (optional)
-	AoiPosition *v2.AoiPosition `protobuf:"bytes,1,opt,name=aoi_position,json=aoiPosition,proto3,oneof" json:"aoi_position,omitempty" db:"aoi_position" yaml:"aoi_position" bson:"aoi_position"`
+	AoiPosition *v2.AoiPosition `protobuf:"bytes,1,opt,name=aoi_position,json=aoiPosition,proto3,oneof" json:"aoi_position,omitempty" yaml:"aoi_position" bson:"aoi_position" db:"aoi_position"`
 	// 停车点Lane+S坐标（必须提供）
 	// Parking position coordinates Lane+S (must be provided)
-	LanePosition *v2.LanePosition `protobuf:"bytes,2,opt,name=lane_position,json=lanePosition,proto3" json:"lane_position,omitempty" yaml:"lane_position" bson:"lane_position" db:"lane_position"`
+	LanePosition *v2.LanePosition `protobuf:"bytes,2,opt,name=lane_position,json=lanePosition,proto3" json:"lane_position,omitempty" bson:"lane_position" db:"lane_position" yaml:"lane_position"`
 	// 停车持续时间
 	// Parking duration time (s)
 	Duration float64 `protobuf:"fixed64,3,opt,name=duration,proto3" json:"duration,omitempty" yaml:"duration" bson:"duration" db:"duration"`
@@ -169,7 +169,7 @@ type Trip struct {
 
 	// 出行方式
 	// trip mode
-	Mode TripMode `protobuf:"varint,1,opt,name=mode,proto3,enum=city.trip.v2.TripMode" json:"mode,omitempty" yaml:"mode" bson:"mode" db:"mode"`
+	Mode TripMode `protobuf:"varint,1,opt,name=mode,proto3,enum=city.trip.v2.TripMode" json:"mode,omitempty" bson:"mode" db:"mode" yaml:"mode"`
 	// 目的地，如果目的地是AOI且指定了XYPosition，则以XYPosition为室内步行的终点
 	// destination, if the destination is AOI and XYPosition is specified, XYPosition is the end point of indoor walking
 	End *v2.Position `protobuf:"bytes,2,opt,name=end,proto3" json:"end,omitempty" yaml:"end" bson:"end" db:"end"`
@@ -190,7 +190,7 @@ type Trip struct {
 	Model *string `protobuf:"bytes,8,opt,name=model,proto3,oneof" json:"model,omitempty" yaml:"model" bson:"model" db:"model"`
 	// 预计算的导航结果
 	// Pre calculated routing results
-	Routes []*v21.Journey `protobuf:"bytes,7,rep,name=routes,proto3" json:"routes,omitempty" yaml:"routes" bson:"routes" db:"routes"`
+	Routes []*v21.Journey `protobuf:"bytes,7,rep,name=routes,proto3" json:"routes,omitempty" bson:"routes" db:"routes" yaml:"routes"`
 	// 本次出行的所有停靠点
 	// stop points of this trip
 	TripStops []*TripStop `protobuf:"bytes,9,rep,name=trip_stops,json=tripStops,proto3" json:"trip_stops,omitempty" yaml:"trip_stops" bson:"trip_stops" db:"trip_stops"`

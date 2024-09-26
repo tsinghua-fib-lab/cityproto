@@ -1,6 +1,6 @@
 {
   "name": "@fiblab/cityproto",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "City Proto Generated JS/TS SDK",
   "main": "index.js",
   "directories": {
@@ -14,5 +14,8 @@
     "url": "https://git.fiblab.net/sim/protos"
   },
   "author": "fiblab",
-  "license": "ISC"
+  "license": "MIT",
+  "dependencies": {
+    "@bufbuild/protobuf": "^2.1.0"
+  }
 }

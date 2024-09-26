@@ -160,7 +160,7 @@ type Event struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 主题
-	Topic string `protobuf:"bytes,1,opt,name=topic,proto3" json:"topic,omitempty" db:"topic" yaml:"topic" bson:"topic"`
+	Topic string `protobuf:"bytes,1,opt,name=topic,proto3" json:"topic,omitempty" bson:"topic" db:"topic" yaml:"topic"`
 	// ID
 	Id *int32 `protobuf:"varint,2,opt,name=id,proto3,oneof" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
 	// 主语
@@ -170,7 +170,7 @@ type Event struct {
 	// 地点
 	Position *v2.Position `protobuf:"bytes,5,opt,name=position,proto3" json:"position,omitempty" yaml:"position" bson:"position" db:"position"`
 	// 时间
-	T float64 `protobuf:"fixed64,6,opt,name=t,proto3" json:"t,omitempty" yaml:"t" bson:"t" db:"t"`
+	T float64 `protobuf:"fixed64,6,opt,name=t,proto3" json:"t,omitempty" bson:"t" db:"t" yaml:"t"`
 }
 
 func (x *Event) Reset() {
