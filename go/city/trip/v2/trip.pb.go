@@ -101,10 +101,10 @@ type TripStop struct {
 	AoiPosition *v2.AoiPosition `protobuf:"bytes,1,opt,name=aoi_position,json=aoiPosition,proto3,oneof" json:"aoi_position,omitempty" bson:"aoi_position" db:"aoi_position" yaml:"aoi_position"`
 	// 停车点Lane+S坐标（必须提供）
 	// Parking position coordinates Lane+S (must be provided)
-	LanePosition *v2.LanePosition `protobuf:"bytes,2,opt,name=lane_position,json=lanePosition,proto3" json:"lane_position,omitempty" db:"lane_position" yaml:"lane_position" bson:"lane_position"`
+	LanePosition *v2.LanePosition `protobuf:"bytes,2,opt,name=lane_position,json=lanePosition,proto3" json:"lane_position,omitempty" yaml:"lane_position" bson:"lane_position" db:"lane_position"`
 	// 停车持续时间
 	// Parking duration time (s)
-	Duration float64 `protobuf:"fixed64,3,opt,name=duration,proto3" json:"duration,omitempty" yaml:"duration" bson:"duration" db:"duration"`
+	Duration float64 `protobuf:"fixed64,3,opt,name=duration,proto3" json:"duration,omitempty" db:"duration" yaml:"duration" bson:"duration"`
 }
 
 func (x *TripStop) Reset() {
@@ -172,10 +172,10 @@ type Trip struct {
 	Mode TripMode `protobuf:"varint,1,opt,name=mode,proto3,enum=city.trip.v2.TripMode" json:"mode,omitempty" yaml:"mode" bson:"mode" db:"mode"`
 	// 目的地，如果目的地是AOI且指定了XYPosition，则以XYPosition为室内步行的终点
 	// destination, if the destination is AOI and XYPosition is specified, XYPosition is the end point of indoor walking
-	End *v2.Position `protobuf:"bytes,2,opt,name=end,proto3" json:"end,omitempty" yaml:"end" bson:"end" db:"end"`
+	End *v2.Position `protobuf:"bytes,2,opt,name=end,proto3" json:"end,omitempty" db:"end" yaml:"end" bson:"end"`
 	// 期望的出发时间（单位: 秒）
 	// Expected departure time (in seconds)
-	DepartureTime *float64 `protobuf:"fixed64,3,opt,name=departure_time,json=departureTime,proto3,oneof" json:"departure_time,omitempty" yaml:"departure_time" bson:"departure_time" db:"departure_time"`
+	DepartureTime *float64 `protobuf:"fixed64,3,opt,name=departure_time,json=departureTime,proto3,oneof" json:"departure_time,omitempty" db:"departure_time" yaml:"departure_time" bson:"departure_time"`
 	// 期望的等待时间（单位：秒），如果departure_time为空则wait_time默认为0
 	// The expected waiting time (in seconds), if departure_time is empty, wait_time defaults to 0
 	WaitTime *float64 `protobuf:"fixed64,4,opt,name=wait_time,json=waitTime,proto3,oneof" json:"wait_time,omitempty" yaml:"wait_time" bson:"wait_time" db:"wait_time"`
@@ -193,7 +193,7 @@ type Trip struct {
 	Routes []*v21.Journey `protobuf:"bytes,7,rep,name=routes,proto3" json:"routes,omitempty" yaml:"routes" bson:"routes" db:"routes"`
 	// 本次出行的所有停靠点
 	// stop points of this trip
-	TripStops []*TripStop `protobuf:"bytes,9,rep,name=trip_stops,json=tripStops,proto3" json:"trip_stops,omitempty" yaml:"trip_stops" bson:"trip_stops" db:"trip_stops"`
+	TripStops []*TripStop `protobuf:"bytes,9,rep,name=trip_stops,json=tripStops,proto3" json:"trip_stops,omitempty" bson:"trip_stops" db:"trip_stops" yaml:"trip_stops"`
 }
 
 func (x *Trip) Reset() {
@@ -339,7 +339,7 @@ type Schedule struct {
 	DepartureTime *float64 `protobuf:"fixed64,3,opt,name=departure_time,json=departureTime,proto3,oneof" json:"departure_time,omitempty" yaml:"departure_time" bson:"departure_time" db:"departure_time"`
 	// 期望的等待时间（单位：秒），如果departure_time为空则wait_time默认为0
 	// Expected waiting time (in seconds), if departure_time is empty, wait_time defaults to 0
-	WaitTime *float64 `protobuf:"fixed64,4,opt,name=wait_time,json=waitTime,proto3,oneof" json:"wait_time,omitempty" db:"wait_time" yaml:"wait_time" bson:"wait_time"`
+	WaitTime *float64 `protobuf:"fixed64,4,opt,name=wait_time,json=waitTime,proto3,oneof" json:"wait_time,omitempty" yaml:"wait_time" bson:"wait_time" db:"wait_time"`
 }
 
 func (x *Schedule) Reset() {
