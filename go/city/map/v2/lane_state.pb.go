@@ -29,7 +29,7 @@ type LaneState struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Lane ID
-	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" bson:"id" db:"id" yaml:"id"`
+	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
 	// Lane上的人/车
 	// person/vehicle on the lane
 	Persons []*v1.PersonMotion `protobuf:"bytes,2,rep,name=persons,proto3" json:"persons,omitempty" yaml:"persons" bson:"persons" db:"persons"`

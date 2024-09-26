@@ -29,7 +29,7 @@ type GetAgentRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// agent id
-	AgentId int32 `protobuf:"varint,1,opt,name=agent_id,json=agentId,proto3" json:"agent_id,omitempty" yaml:"agent_id" bson:"agent_id" db:"agent_id"`
+	AgentId int32 `protobuf:"varint,1,opt,name=agent_id,json=agentId,proto3" json:"agent_id,omitempty" bson:"agent_id" db:"agent_id" yaml:"agent_id"`
 }
 
 func (x *GetAgentRequest) Reset() {
@@ -136,7 +136,7 @@ type AddAgentRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 约定：agent中不设置id
-	Agent *Agent `protobuf:"bytes,1,opt,name=agent,proto3" json:"agent,omitempty" db:"agent" yaml:"agent" bson:"agent"`
+	Agent *Agent `protobuf:"bytes,1,opt,name=agent,proto3" json:"agent,omitempty" yaml:"agent" bson:"agent" db:"agent"`
 }
 
 func (x *AddAgentRequest) Reset() {

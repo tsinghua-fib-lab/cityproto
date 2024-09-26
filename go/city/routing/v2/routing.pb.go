@@ -344,7 +344,7 @@ type WalkingJourneyBody struct {
 	Route []*WalkingRouteSegment `protobuf:"bytes,1,rep,name=route,proto3" json:"route,omitempty" yaml:"route" bson:"route" db:"route"`
 	// 从起点到终点预计的时间(estimation time of arrival)
 	// estimation time of arrival
-	Eta float64 `protobuf:"fixed64,2,opt,name=eta,proto3" json:"eta,omitempty" yaml:"eta" bson:"eta" db:"eta"`
+	Eta float64 `protobuf:"fixed64,2,opt,name=eta,proto3" json:"eta,omitempty" db:"eta" yaml:"eta" bson:"eta"`
 }
 
 func (x *WalkingJourneyBody) Reset() {
@@ -608,7 +608,7 @@ type RoadStatus struct {
 
 	// 车道ID
 	// Lane ID
-	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
+	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" bson:"id" db:"id" yaml:"id"`
 	// 车道在各个时间片（每个5min）的速度
 	// The speed of the lane at each time slot (5 minutes each)
 	Speed []float64 `protobuf:"fixed64,2,rep,packed,name=speed,proto3" json:"speed,omitempty" bson:"speed" db:"speed" yaml:"speed"`

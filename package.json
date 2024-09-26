@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://git.fiblab.net/sim/protos"
+    "url": "https://github.com/tsinghua-fib-lab/cityproto"
   },
   "author": "fiblab",
   "license": "MIT",

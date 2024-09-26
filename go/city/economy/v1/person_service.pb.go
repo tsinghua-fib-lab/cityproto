@@ -76,7 +76,7 @@ type GetPersonResponse struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 人的经济情况
-	Persons []*Person `protobuf:"bytes,1,rep,name=persons,proto3" json:"persons,omitempty" yaml:"persons" bson:"persons" db:"persons"`
+	Persons []*Person `protobuf:"bytes,1,rep,name=persons,proto3" json:"persons,omitempty" db:"persons" yaml:"persons" bson:"persons"`
 }
 
 func (x *GetPersonResponse) Reset() {

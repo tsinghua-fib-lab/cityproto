@@ -109,7 +109,7 @@ type GetRouteResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Journeys []*Journey `protobuf:"bytes,1,rep,name=journeys,proto3" json:"journeys,omitempty" db:"journeys" yaml:"journeys" bson:"journeys"`
+	Journeys []*Journey `protobuf:"bytes,1,rep,name=journeys,proto3" json:"journeys,omitempty" yaml:"journeys" bson:"journeys" db:"journeys"`
 }
 
 func (x *GetRouteResponse) Reset() {
@@ -251,7 +251,7 @@ type GetDrivingCostsRequest struct {
 
 	// 道路通行成本（按照给定的id和time进行查询）
 	// travelling cost (query via the given ID and time)
-	Costs []*Cost `protobuf:"bytes,1,rep,name=costs,proto3" json:"costs,omitempty" db:"costs" yaml:"costs" bson:"costs"`
+	Costs []*Cost `protobuf:"bytes,1,rep,name=costs,proto3" json:"costs,omitempty" yaml:"costs" bson:"costs" db:"costs"`
 }
 
 func (x *GetDrivingCostsRequest) Reset() {
@@ -302,7 +302,7 @@ type GetDrivingCostsResponse struct {
 
 	// 道路通行成本（补全cost后的结果）
 	// travelling cost (results after completing the cost)
-	Costs []*Cost `protobuf:"bytes,1,rep,name=costs,proto3" json:"costs,omitempty" db:"costs" yaml:"costs" bson:"costs"`
+	Costs []*Cost `protobuf:"bytes,1,rep,name=costs,proto3" json:"costs,omitempty" yaml:"costs" bson:"costs" db:"costs"`
 }
 
 func (x *GetDrivingCostsResponse) Reset() {
