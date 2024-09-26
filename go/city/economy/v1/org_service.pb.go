@@ -76,7 +76,7 @@ type GetOrgResponse struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 组织的经济情况
-	Orgs []*Org `protobuf:"bytes,1,rep,name=orgs,proto3" json:"orgs,omitempty" yaml:"orgs" bson:"orgs" db:"orgs"`
+	Orgs []*Org `protobuf:"bytes,1,rep,name=orgs,proto3" json:"orgs,omitempty" db:"orgs" yaml:"orgs" bson:"orgs"`
 }
 
 func (x *GetOrgResponse) Reset() {
@@ -174,9 +174,9 @@ type UpdateOrgMoneyRequestItem struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 待修改的组织
-	OrgId int32 `protobuf:"varint,1,opt,name=org_id,json=orgId,proto3" json:"org_id,omitempty" yaml:"org_id" bson:"org_id" db:"org_id"`
+	OrgId int32 `protobuf:"varint,1,opt,name=org_id,json=orgId,proto3" json:"org_id,omitempty" bson:"org_id" db:"org_id" yaml:"org_id"`
 	// 正数表示增加，负数表示减少
-	Money float64 `protobuf:"fixed64,2,opt,name=money,proto3" json:"money,omitempty" yaml:"money" bson:"money" db:"money"`
+	Money float64 `protobuf:"fixed64,2,opt,name=money,proto3" json:"money,omitempty" bson:"money" db:"money" yaml:"money"`
 }
 
 func (x *UpdateOrgMoneyRequestItem) Reset() {
@@ -232,7 +232,7 @@ type UpdateOrgMoneyResponse struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 修改后的组织的经济情况
-	Orgs []*Org `protobuf:"bytes,1,rep,name=orgs,proto3" json:"orgs,omitempty" bson:"orgs" db:"orgs" yaml:"orgs"`
+	Orgs []*Org `protobuf:"bytes,1,rep,name=orgs,proto3" json:"orgs,omitempty" db:"orgs" yaml:"orgs" bson:"orgs"`
 }
 
 func (x *UpdateOrgMoneyResponse) Reset() {
@@ -391,7 +391,7 @@ type UpdateOrgGoodsResponse struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 修改后的组织的经济情况
-	Orgs []*Org `protobuf:"bytes,1,rep,name=orgs,proto3" json:"orgs,omitempty" db:"orgs" yaml:"orgs" bson:"orgs"`
+	Orgs []*Org `protobuf:"bytes,1,rep,name=orgs,proto3" json:"orgs,omitempty" bson:"orgs" db:"orgs" yaml:"orgs"`
 }
 
 func (x *UpdateOrgGoodsResponse) Reset() {
@@ -489,7 +489,7 @@ type UpdateOrgEmployeeRequestItem struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 待修改的组织
-	OrgId int32 `protobuf:"varint,1,opt,name=org_id,json=orgId,proto3" json:"org_id,omitempty" yaml:"org_id" bson:"org_id" db:"org_id"`
+	OrgId int32 `protobuf:"varint,1,opt,name=org_id,json=orgId,proto3" json:"org_id,omitempty" bson:"org_id" db:"org_id" yaml:"org_id"`
 	// 新增的员工
 	Adds []*Employee `protobuf:"bytes,2,rep,name=adds,proto3" json:"adds,omitempty" yaml:"adds" bson:"adds" db:"adds"`
 	// 删除的员工

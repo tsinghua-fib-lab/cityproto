@@ -95,7 +95,7 @@ type Employee struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 员工ID
-	PersonId int32 `protobuf:"varint,1,opt,name=person_id,json=personId,proto3" json:"person_id,omitempty" db:"person_id" yaml:"person_id" bson:"person_id"`
+	PersonId int32 `protobuf:"varint,1,opt,name=person_id,json=personId,proto3" json:"person_id,omitempty" bson:"person_id" db:"person_id" yaml:"person_id"`
 	// 薪水
 	Salary float64 `protobuf:"fixed64,2,opt,name=salary,proto3" json:"salary,omitempty" yaml:"salary" bson:"salary" db:"salary"`
 }
@@ -222,9 +222,9 @@ type Goods struct {
 	// 货物类型
 	Type string `protobuf:"bytes,1,opt,name=type,proto3" json:"type,omitempty" yaml:"type" bson:"type" db:"type"`
 	// 货物名称
-	Name string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty" db:"name" yaml:"name" bson:"name"`
+	Name string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty" yaml:"name" bson:"name" db:"name"`
 	// 货物数量
-	Count int32 `protobuf:"varint,3,opt,name=count,proto3" json:"count,omitempty" db:"count" yaml:"count" bson:"count"`
+	Count int32 `protobuf:"varint,3,opt,name=count,proto3" json:"count,omitempty" bson:"count" db:"count" yaml:"count"`
 	// 货物价格（允许暂未定价）
 	Price *float64 `protobuf:"fixed64,4,opt,name=price,proto3,oneof" json:"price,omitempty" yaml:"price" bson:"price" db:"price"`
 }
@@ -296,22 +296,22 @@ type Org struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 组织ID
-	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
+	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" db:"id" yaml:"id" bson:"id"`
 	// 组织所在的POI ID
-	PoiId int32 `protobuf:"varint,2,opt,name=poi_id,json=poiId,proto3" json:"poi_id,omitempty" yaml:"poi_id" bson:"poi_id" db:"poi_id"`
+	PoiId int32 `protobuf:"varint,2,opt,name=poi_id,json=poiId,proto3" json:"poi_id,omitempty" bson:"poi_id" db:"poi_id" yaml:"poi_id"`
 	// 员工列表（初始化时由Orgs列表提供，单向绑定到person上）
-	Employees []*Employee `protobuf:"bytes,3,rep,name=employees,proto3" json:"employees,omitempty" db:"employees" yaml:"employees" bson:"employees"`
+	Employees []*Employee `protobuf:"bytes,3,rep,name=employees,proto3" json:"employees,omitempty" yaml:"employees" bson:"employees" db:"employees"`
 	// 岗位列表
 	Jobs []*Job `protobuf:"bytes,4,rep,name=jobs,proto3" json:"jobs,omitempty" yaml:"jobs" bson:"jobs" db:"jobs"`
 	// 资金
-	Money float64 `protobuf:"fixed64,5,opt,name=money,proto3" json:"money,omitempty" yaml:"money" bson:"money" db:"money"`
+	Money float64 `protobuf:"fixed64,5,opt,name=money,proto3" json:"money,omitempty" db:"money" yaml:"money" bson:"money"`
 	// 货物
 	Goods []*Goods `protobuf:"bytes,6,rep,name=goods,proto3" json:"goods,omitempty" bson:"goods" db:"goods" yaml:"goods"`
 	// 功能列表
 	// buy: 购买货物
 	// apply: 申请岗位
 	// ...
-	Functions []string `protobuf:"bytes,7,rep,name=functions,proto3" json:"functions,omitempty" bson:"functions" db:"functions" yaml:"functions"`
+	Functions []string `protobuf:"bytes,7,rep,name=functions,proto3" json:"functions,omitempty" db:"functions" yaml:"functions" bson:"functions"`
 }
 
 func (x *Org) Reset() {
@@ -402,7 +402,7 @@ type Economy struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 人
-	Persons []*Person `protobuf:"bytes,1,rep,name=persons,proto3" json:"persons,omitempty" bson:"persons" db:"persons" yaml:"persons"`
+	Persons []*Person `protobuf:"bytes,1,rep,name=persons,proto3" json:"persons,omitempty" yaml:"persons" bson:"persons" db:"persons"`
 	// 组织列表
 	Orgs []*Org `protobuf:"bytes,2,rep,name=orgs,proto3" json:"orgs,omitempty" yaml:"orgs" bson:"orgs" db:"orgs"`
 }

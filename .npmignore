@@ -1,9 +1,12 @@
+.github/
 .git/
 .gitignore
 .gitlab-ci.yml
 .vscode/
 buf.gen.yaml
 buf.yaml
+cmake/
+cpp/
 doc/
 go.mod
 go.sum
@@ -11,3 +14,5 @@ go/
 pyproject.toml
 pycityproto/
 scripts/
+CMakeLists.txt
+Dockerfile

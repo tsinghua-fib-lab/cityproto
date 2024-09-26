@@ -220,7 +220,7 @@ type DrivingJourneyBody struct {
 	// The reason for using road sequences is that active lane changing requires frequent modifications to lane level navigation
 	// 优先使用road_ids，如果road_ids为空，则使用route（也可以直接忽略route）
 	// Prioritize using road_ids. If road_ids is empty, use route (or simply ignore route)
-	RoadIds []int32 `protobuf:"varint,2,rep,packed,name=road_ids,json=roadIds,proto3" json:"road_ids,omitempty" bson:"road_ids" db:"road_ids" yaml:"road_ids"`
+	RoadIds []int32 `protobuf:"varint,2,rep,packed,name=road_ids,json=roadIds,proto3" json:"road_ids,omitempty" yaml:"road_ids" bson:"road_ids" db:"road_ids"`
 	// 从起点到终点预计的时间(estimation time of arrival)
 	// estimation time of arrival
 	Eta float64 `protobuf:"fixed64,3,opt,name=eta,proto3" json:"eta,omitempty" yaml:"eta" bson:"eta" db:"eta"`
@@ -283,7 +283,7 @@ type WalkingRouteSegment struct {
 	LaneId int32 `protobuf:"varint,1,opt,name=lane_id,json=laneId,proto3" json:"lane_id,omitempty" yaml:"lane_id" bson:"lane_id" db:"lane_id"`
 	// 移动方向
 	// moving direction
-	MovingDirection MovingDirection `protobuf:"varint,2,opt,name=moving_direction,json=movingDirection,proto3,enum=city.routing.v2.MovingDirection" json:"moving_direction,omitempty" yaml:"moving_direction" bson:"moving_direction" db:"moving_direction"`
+	MovingDirection MovingDirection `protobuf:"varint,2,opt,name=moving_direction,json=movingDirection,proto3,enum=city.routing.v2.MovingDirection" json:"moving_direction,omitempty" bson:"moving_direction" db:"moving_direction" yaml:"moving_direction"`
 }
 
 func (x *WalkingRouteSegment) Reset() {
@@ -344,7 +344,7 @@ type WalkingJourneyBody struct {
 	Route []*WalkingRouteSegment `protobuf:"bytes,1,rep,name=route,proto3" json:"route,omitempty" yaml:"route" bson:"route" db:"route"`
 	// 从起点到终点预计的时间(estimation time of arrival)
 	// estimation time of arrival
-	Eta float64 `protobuf:"fixed64,2,opt,name=eta,proto3" json:"eta,omitempty" yaml:"eta" bson:"eta" db:"eta"`
+	Eta float64 `protobuf:"fixed64,2,opt,name=eta,proto3" json:"eta,omitempty" db:"eta" yaml:"eta" bson:"eta"`
 }
 
 func (x *WalkingJourneyBody) Reset() {
@@ -403,9 +403,9 @@ type TransferSegment struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	SublineId      int32 `protobuf:"varint,1,opt,name=subline_id,json=sublineId,proto3" json:"subline_id,omitempty" bson:"subline_id" db:"subline_id" yaml:"subline_id"`
+	SublineId      int32 `protobuf:"varint,1,opt,name=subline_id,json=sublineId,proto3" json:"subline_id,omitempty" yaml:"subline_id" bson:"subline_id" db:"subline_id"`
 	StartStationId int32 `protobuf:"varint,2,opt,name=start_station_id,json=startStationId,proto3" json:"start_station_id,omitempty" yaml:"start_station_id" bson:"start_station_id" db:"start_station_id"`
-	EndStationId   int32 `protobuf:"varint,3,opt,name=end_station_id,json=endStationId,proto3" json:"end_station_id,omitempty" yaml:"end_station_id" bson:"end_station_id" db:"end_station_id"`
+	EndStationId   int32 `protobuf:"varint,3,opt,name=end_station_id,json=endStationId,proto3" json:"end_station_id,omitempty" db:"end_station_id" yaml:"end_station_id" bson:"end_station_id"`
 }
 
 func (x *TransferSegment) Reset() {
@@ -466,7 +466,7 @@ type BusJourneyBody struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Transfers []*TransferSegment `protobuf:"bytes,1,rep,name=transfers,proto3" json:"transfers,omitempty" db:"transfers" yaml:"transfers" bson:"transfers"`
+	Transfers []*TransferSegment `protobuf:"bytes,1,rep,name=transfers,proto3" json:"transfers,omitempty" yaml:"transfers" bson:"transfers" db:"transfers"`
 	// 从起点到终点预计的时间(estimation time of arrival)
 	// estimation time of arrival
 	Eta float64 `protobuf:"fixed64,2,opt,name=eta,proto3" json:"eta,omitempty" yaml:"eta" bson:"eta" db:"eta"`
@@ -533,10 +533,10 @@ type Journey struct {
 	Driving *DrivingJourneyBody `protobuf:"bytes,2,opt,name=driving,proto3,oneof" json:"driving,omitempty" yaml:"driving" bson:"driving" db:"driving"`
 	// 步行
 	// Routing results of walking journey
-	Walking *WalkingJourneyBody `protobuf:"bytes,3,opt,name=walking,proto3,oneof" json:"walking,omitempty" bson:"walking" db:"walking" yaml:"walking"`
+	Walking *WalkingJourneyBody `protobuf:"bytes,3,opt,name=walking,proto3,oneof" json:"walking,omitempty" yaml:"walking" bson:"walking" db:"walking"`
 	// 公交
 	// Routing results of bus journey
-	ByBus *BusJourneyBody `protobuf:"bytes,4,opt,name=by_bus,json=byBus,proto3,oneof" json:"by_bus,omitempty" db:"by_bus" yaml:"by_bus" bson:"by_bus"`
+	ByBus *BusJourneyBody `protobuf:"bytes,4,opt,name=by_bus,json=byBus,proto3,oneof" json:"by_bus,omitempty" yaml:"by_bus" bson:"by_bus" db:"by_bus"`
 }
 
 func (x *Journey) Reset() {
@@ -611,7 +611,7 @@ type RoadStatus struct {
 	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" bson:"id" db:"id" yaml:"id"`
 	// 车道在各个时间片（每个5min）的速度
 	// The speed of the lane at each time slot (5 minutes each)
-	Speed []float64 `protobuf:"fixed64,2,rep,packed,name=speed,proto3" json:"speed,omitempty" yaml:"speed" bson:"speed" db:"speed"`
+	Speed []float64 `protobuf:"fixed64,2,rep,packed,name=speed,proto3" json:"speed,omitempty" db:"speed" yaml:"speed" bson:"speed"`
 }
 
 func (x *RoadStatus) Reset() {

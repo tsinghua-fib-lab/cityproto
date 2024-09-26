@@ -35,7 +35,7 @@ type LongLatPosition struct {
 	Latitude float64 `protobuf:"fixed64,2,opt,name=latitude,proto3" json:"latitude,omitempty" yaml:"latitude" bson:"latitude" db:"latitude"`
 	// 高程（单位：米）
 	// elevation (unit: meters)
-	Z *float64 `protobuf:"fixed64,3,opt,name=z,proto3,oneof" json:"z,omitempty" db:"z" yaml:"z" bson:"z"`
+	Z *float64 `protobuf:"fixed64,3,opt,name=z,proto3,oneof" json:"z,omitempty" yaml:"z" bson:"z" db:"z"`
 }
 
 func (x *LongLatPosition) Reset() {
@@ -106,7 +106,7 @@ type XYPosition struct {
 	Y float64 `protobuf:"fixed64,2,opt,name=y,proto3" json:"y,omitempty" yaml:"y" bson:"y" db:"y"`
 	// z坐标，单位米，对应高程
 	// z coordinate, in meters, corresponding to elevation
-	Z *float64 `protobuf:"fixed64,3,opt,name=z,proto3,oneof" json:"z,omitempty" yaml:"z" bson:"z" db:"z"`
+	Z *float64 `protobuf:"fixed64,3,opt,name=z,proto3,oneof" json:"z,omitempty" bson:"z" db:"z" yaml:"z"`
 }
 
 func (x *XYPosition) Reset() {
@@ -171,10 +171,10 @@ type LanePosition struct {
 
 	// 车道id
 	// Lane ID
-	LaneId int32 `protobuf:"varint,1,opt,name=lane_id,json=laneId,proto3" json:"lane_id,omitempty" yaml:"lane_id" bson:"lane_id" db:"lane_id"`
+	LaneId int32 `protobuf:"varint,1,opt,name=lane_id,json=laneId,proto3" json:"lane_id,omitempty" db:"lane_id" yaml:"lane_id" bson:"lane_id"`
 	// s是车道上的点到车道起点的距离
 	// s is the distance from the point on the lane to the starting point of the lane
-	S float64 `protobuf:"fixed64,2,opt,name=s,proto3" json:"s,omitempty" yaml:"s" bson:"s" db:"s"`
+	S float64 `protobuf:"fixed64,2,opt,name=s,proto3" json:"s,omitempty" bson:"s" db:"s" yaml:"s"`
 }
 
 func (x *LanePosition) Reset() {
@@ -292,7 +292,7 @@ type Position struct {
 
 	// 地图坐标AOI（必须提供其中之一）
 	// Map coordinates AOI (one of these must be provided)
-	LanePosition *LanePosition `protobuf:"bytes,1,opt,name=lane_position,json=lanePosition,proto3,oneof" json:"lane_position,omitempty" yaml:"lane_position" bson:"lane_position" db:"lane_position"`
+	LanePosition *LanePosition `protobuf:"bytes,1,opt,name=lane_position,json=lanePosition,proto3,oneof" json:"lane_position,omitempty" db:"lane_position" yaml:"lane_position" bson:"lane_position"`
 	// 地图坐标Lane+S（必须提供其中之一）
 	// Map coordinates Lane+S (one of these must be provided)
 	AoiPosition *AoiPosition `protobuf:"bytes,2,opt,name=aoi_position,json=aoiPosition,proto3,oneof" json:"aoi_position,omitempty" yaml:"aoi_position" bson:"aoi_position" db:"aoi_position"`

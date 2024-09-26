@@ -27,7 +27,7 @@ type GetPersonRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 待查询的人的ID列表（为空时查询所有人）
-	PersonIds []int32 `protobuf:"varint,1,rep,packed,name=person_ids,json=personIds,proto3" json:"person_ids,omitempty" db:"person_ids" yaml:"person_ids" bson:"person_ids"`
+	PersonIds []int32 `protobuf:"varint,1,rep,packed,name=person_ids,json=personIds,proto3" json:"person_ids,omitempty" bson:"person_ids" db:"person_ids" yaml:"person_ids"`
 }
 
 func (x *GetPersonRequest) Reset() {
@@ -176,7 +176,7 @@ type UpdatePersonMoneyRequestItem struct {
 	// 待修改的人员id
 	PersonId int32 `protobuf:"varint,1,opt,name=person_id,json=personId,proto3" json:"person_id,omitempty" yaml:"person_id" bson:"person_id" db:"person_id"`
 	// 资金变动（正数表示增加，负数表示减少）
-	Money float64 `protobuf:"fixed64,2,opt,name=money,proto3" json:"money,omitempty" db:"money" yaml:"money" bson:"money"`
+	Money float64 `protobuf:"fixed64,2,opt,name=money,proto3" json:"money,omitempty" yaml:"money" bson:"money" db:"money"`
 }
 
 func (x *UpdatePersonMoneyRequestItem) Reset() {
