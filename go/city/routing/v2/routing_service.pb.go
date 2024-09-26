@@ -30,16 +30,16 @@ type GetRouteRequest struct {
 
 	// 导航类型
 	// routing type
-	Type RouteType `protobuf:"varint,1,opt,name=type,proto3,enum=city.routing.v2.RouteType" json:"type,omitempty" db:"type" yaml:"type" bson:"type"`
+	Type RouteType `protobuf:"varint,1,opt,name=type,proto3,enum=city.routing.v2.RouteType" json:"type,omitempty" yaml:"type" bson:"type" db:"type"`
 	// 起点，约定：包含LanePosition或AoiPosition中的一种
 	// Starting point, convention: as LanePosition or AoiPosition
-	Start *v2.Position `protobuf:"bytes,2,opt,name=start,proto3" json:"start,omitempty" yaml:"start" bson:"start" db:"start"`
+	Start *v2.Position `protobuf:"bytes,2,opt,name=start,proto3" json:"start,omitempty" bson:"start" db:"start" yaml:"start"`
 	// 终点，约定：包含LanePosition或AoiPosition中的一种
 	// Ending point, convention: as LanePosition or AoiPosition
 	End *v2.Position `protobuf:"bytes,3,opt,name=end,proto3" json:"end,omitempty" yaml:"end" bson:"end" db:"end"`
 	// 发送导航请求的时间（目前仅在行车导航中使用）
 	// The time to send routing request (currently only used in driving routing)
-	Time float64 `protobuf:"fixed64,5,opt,name=time,proto3" json:"time,omitempty" yaml:"time" bson:"time" db:"time"`
+	Time float64 `protobuf:"fixed64,5,opt,name=time,proto3" json:"time,omitempty" db:"time" yaml:"time" bson:"time"`
 }
 
 func (x *GetRouteRequest) Reset() {

@@ -344,7 +344,7 @@ type WalkingJourneyBody struct {
 	Route []*WalkingRouteSegment `protobuf:"bytes,1,rep,name=route,proto3" json:"route,omitempty" yaml:"route" bson:"route" db:"route"`
 	// 从起点到终点预计的时间(estimation time of arrival)
 	// estimation time of arrival
-	Eta float64 `protobuf:"fixed64,2,opt,name=eta,proto3" json:"eta,omitempty" db:"eta" yaml:"eta" bson:"eta"`
+	Eta float64 `protobuf:"fixed64,2,opt,name=eta,proto3" json:"eta,omitempty" bson:"eta" db:"eta" yaml:"eta"`
 }
 
 func (x *WalkingJourneyBody) Reset() {
@@ -469,7 +469,7 @@ type BusJourneyBody struct {
 	Transfers []*TransferSegment `protobuf:"bytes,1,rep,name=transfers,proto3" json:"transfers,omitempty" yaml:"transfers" bson:"transfers" db:"transfers"`
 	// 从起点到终点预计的时间(estimation time of arrival)
 	// estimation time of arrival
-	Eta float64 `protobuf:"fixed64,2,opt,name=eta,proto3" json:"eta,omitempty" yaml:"eta" bson:"eta" db:"eta"`
+	Eta float64 `protobuf:"fixed64,2,opt,name=eta,proto3" json:"eta,omitempty" bson:"eta" db:"eta" yaml:"eta"`
 }
 
 func (x *BusJourneyBody) Reset() {
@@ -533,7 +533,7 @@ type Journey struct {
 	Driving *DrivingJourneyBody `protobuf:"bytes,2,opt,name=driving,proto3,oneof" json:"driving,omitempty" yaml:"driving" bson:"driving" db:"driving"`
 	// 步行
 	// Routing results of walking journey
-	Walking *WalkingJourneyBody `protobuf:"bytes,3,opt,name=walking,proto3,oneof" json:"walking,omitempty" yaml:"walking" bson:"walking" db:"walking"`
+	Walking *WalkingJourneyBody `protobuf:"bytes,3,opt,name=walking,proto3,oneof" json:"walking,omitempty" db:"walking" yaml:"walking" bson:"walking"`
 	// 公交
 	// Routing results of bus journey
 	ByBus *BusJourneyBody `protobuf:"bytes,4,opt,name=by_bus,json=byBus,proto3,oneof" json:"by_bus,omitempty" yaml:"by_bus" bson:"by_bus" db:"by_bus"`
@@ -608,10 +608,10 @@ type RoadStatus struct {
 
 	// 车道ID
 	// Lane ID
-	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" bson:"id" db:"id" yaml:"id"`
+	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
 	// 车道在各个时间片（每个5min）的速度
 	// The speed of the lane at each time slot (5 minutes each)
-	Speed []float64 `protobuf:"fixed64,2,rep,packed,name=speed,proto3" json:"speed,omitempty" bson:"speed" db:"speed" yaml:"speed"`
+	Speed []float64 `protobuf:"fixed64,2,rep,packed,name=speed,proto3" json:"speed,omitempty" yaml:"speed" bson:"speed" db:"speed"`
 }
 
 func (x *RoadStatus) Reset() {

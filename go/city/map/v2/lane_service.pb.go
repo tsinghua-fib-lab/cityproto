@@ -129,7 +129,7 @@ type SetLaneRestrictionRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Lane id
-	LaneId int32 `protobuf:"varint,1,opt,name=lane_id,json=laneId,proto3" json:"lane_id,omitempty" yaml:"lane_id" bson:"lane_id" db:"lane_id"`
+	LaneId int32 `protobuf:"varint,1,opt,name=lane_id,json=laneId,proto3" json:"lane_id,omitempty" db:"lane_id" yaml:"lane_id" bson:"lane_id"`
 	// 限行
 	// Traffic restriction
 	Restriction bool `protobuf:"varint,2,opt,name=restriction,proto3" json:"restriction,omitempty" bson:"restriction" db:"restriction" yaml:"restriction"`
@@ -233,7 +233,7 @@ type GetLaneRequest struct {
 	LaneIds []int32 `protobuf:"varint,1,rep,packed,name=lane_ids,json=laneIds,proto3" json:"lane_ids,omitempty" yaml:"lane_ids" bson:"lane_ids" db:"lane_ids"`
 	// 是否要排除车道上的人的信息
 	// Whether to exclude information of person on the lane
-	ExcludePerson bool `protobuf:"varint,2,opt,name=exclude_person,json=excludePerson,proto3" json:"exclude_person,omitempty" yaml:"exclude_person" bson:"exclude_person" db:"exclude_person"`
+	ExcludePerson bool `protobuf:"varint,2,opt,name=exclude_person,json=excludePerson,proto3" json:"exclude_person,omitempty" db:"exclude_person" yaml:"exclude_person" bson:"exclude_person"`
 }
 
 func (x *GetLaneRequest) Reset() {

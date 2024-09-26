@@ -32,7 +32,7 @@ type LaneState struct {
 	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
 	// Lane上的人/车
 	// person/vehicle on the lane
-	Persons []*v1.PersonMotion `protobuf:"bytes,2,rep,name=persons,proto3" json:"persons,omitempty" yaml:"persons" bson:"persons" db:"persons"`
+	Persons []*v1.PersonMotion `protobuf:"bytes,2,rep,name=persons,proto3" json:"persons,omitempty" bson:"persons" db:"persons" yaml:"persons"`
 	// 平均速度（m/s）
 	// average speed (m/s)
 	AvgV float64 `protobuf:"fixed64,3,opt,name=avg_v,json=avgV,proto3" json:"avg_v,omitempty" yaml:"avg_v" bson:"avg_v" db:"avg_v"`

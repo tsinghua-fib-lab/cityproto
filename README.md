@@ -77,7 +77,7 @@ go get -u git.fiblab.net/sim/protos@v${major}.${minor}.${patch}
 ## Python库使用
 
 ```shell
-pip install pycityproto --extra-index-url https://__token__:glpat-fq6C-NTr45Z_Te4BV4kC@git.fiblab.net/api/v4/projects/26/packages/pypi/simple
+pip install pycityproto
 ```
 
 安装 grpcio 的过程中，如果出现
@@ -102,28 +102,14 @@ apk add g++
 
 #### NPM
 
-首先，保证项目已经能够正确访问NPM服务
-```bash
-npm config set @fiblab:registry https://git.fiblab.net/api/v4/projects/26/packages/npm/
-npm config set -- '//git.fiblab.net/api/v4/projects/26/packages/npm/:_authToken' "glpat-sdKgi23Ns3KvfpyrREzy"
-```
-
-然后，使用`npm install`命令安装SDK：
+使用`npm install`命令安装SDK：
 ```bash
 npm install @fiblab/cityproto
 ```
 
 #### Yarn
-首先，保证项目已经能够正确访问NPM服务
-```bash
-yarn config set @fiblab:registry https://git.fiblab.net/api/v4/projects/26/packages/npm/
-# 以下未经测试
-yarn config set -- '//git.fiblab.net/api/v4/projects/26/packages/npm/:_authToken' "glpat-sdKgi23Ns3KvfpyrREzy"
-```
 
-然后，使用`npm install`命令安装SDK：
+使用`yarn add`命令安装SDK：
 ```bash
 yarn add @fiblab/cityproto
 ```
-
-

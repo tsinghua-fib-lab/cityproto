@@ -144,7 +144,7 @@ type Control struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Step *ControlStep `protobuf:"bytes,1,opt,name=step,proto3" json:"step,omitempty" db:"step" yaml:"step" bson:"step"`
+	Step *ControlStep `protobuf:"bytes,1,opt,name=step,proto3" json:"step,omitempty" yaml:"step" bson:"step" db:"step"`
 }
 
 func (x *Control) Reset() {
@@ -193,7 +193,7 @@ type OutputSwitch struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 电网节点状态
-	Node  bool `protobuf:"varint,1,opt,name=node,proto3" json:"node,omitempty" db:"node" yaml:"node" bson:"node"`
+	Node  bool `protobuf:"varint,1,opt,name=node,proto3" json:"node,omitempty" yaml:"node" bson:"node" db:"node"`
 	Aoi   bool `protobuf:"varint,2,opt,name=aoi,proto3" json:"aoi,omitempty" yaml:"aoi" bson:"aoi" db:"aoi"`
 	Event bool `protobuf:"varint,3,opt,name=event,proto3" json:"event,omitempty" yaml:"event" bson:"event" db:"event"`
 }
