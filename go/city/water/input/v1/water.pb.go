@@ -26,9 +26,9 @@ type RainPeriod struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 起始时间点，单位为秒，但必须整小时
-	Start int32 `protobuf:"varint,1,opt,name=start,proto3" json:"start,omitempty" db:"start" yaml:"start" bson:"start"`
+	Start int32 `protobuf:"varint,1,opt,name=start,proto3" json:"start,omitempty" bson:"start" db:"start" yaml:"start"`
 	// 降雨量：单位mm
-	Rainfall float64 `protobuf:"fixed64,2,opt,name=rainfall,proto3" json:"rainfall,omitempty" db:"rainfall" yaml:"rainfall" bson:"rainfall"`
+	Rainfall float64 `protobuf:"fixed64,2,opt,name=rainfall,proto3" json:"rainfall,omitempty" bson:"rainfall" db:"rainfall" yaml:"rainfall"`
 }
 
 func (x *RainPeriod) Reset() {
@@ -83,7 +83,7 @@ type Rain struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Rains []*RainPeriod `protobuf:"bytes,1,rep,name=rains,proto3" json:"rains,omitempty" yaml:"rains" bson:"rains" db:"rains"`
+	Rains []*RainPeriod `protobuf:"bytes,1,rep,name=rains,proto3" json:"rains,omitempty" bson:"rains" db:"rains" yaml:"rains"`
 }
 
 func (x *Rain) Reset() {
