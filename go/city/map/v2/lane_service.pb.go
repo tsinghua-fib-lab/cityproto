@@ -345,7 +345,7 @@ type GetLaneByLongLatBBoxRequest struct {
 	Bbox *v2.LongLatBBox `protobuf:"bytes,1,opt,name=bbox,proto3" json:"bbox,omitempty" yaml:"bbox" bson:"bbox" db:"bbox"`
 	// 是否要排除车道上的人的信息
 	// Whether to exclude information of person on the lane
-	ExcludePerson bool `protobuf:"varint,2,opt,name=exclude_person,json=excludePerson,proto3" json:"exclude_person,omitempty" yaml:"exclude_person" bson:"exclude_person" db:"exclude_person"`
+	ExcludePerson bool `protobuf:"varint,2,opt,name=exclude_person,json=excludePerson,proto3" json:"exclude_person,omitempty" bson:"exclude_person" db:"exclude_person" yaml:"exclude_person"`
 }
 
 func (x *GetLaneByLongLatBBoxRequest) Reset() {

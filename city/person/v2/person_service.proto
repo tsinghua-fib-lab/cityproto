@@ -1,0 +1,197 @@
+syntax = "proto3";
+
+package city.person.v2;
+
+import "city/geo/v2/geo.proto";
+import "city/person/v2/motion.proto";
+import "city/person/v2/person.proto";
+import "city/person/v2/person_runtime.proto";
+import "city/person/v2/vehicle.proto";
+import "city/trip/v2/trip.proto";
+
+service PersonService {
+  // 获取person信息
+  // Get person information
+  rpc GetPerson(GetPersonRequest) returns (GetPersonResponse);
+  // 新增person 传入person初始位置、目的地表、属性 返回personid
+  // Add a new person. Input person's initial location, destination table, and attributes, return personid
+  rpc AddPerson(AddPersonRequest) returns (AddPersonResponse);
+  // 修改person的schedule 传入personid、目的地表
+  // Set person's schedule. Input personid and destination table
+  rpc SetSchedule(SetScheduleRequest) returns (SetScheduleResponse);
+  // 获取多个person信息
+  // Get information of multiple persons
+  rpc GetPersons(GetPersonsRequest) returns (GetPersonsResponse);
+  // 获取特定区域内的person
+  // Get persons in a specific region
+  rpc GetPersonByLongLatBBox(GetPersonByLongLatBBoxRequest) returns (GetPersonByLongLatBBoxResponse);
+  // 获取所有车辆
+  // Get all vehicles
+  rpc GetAllVehicles(GetAllVehiclesRequest) returns (GetAllVehiclesResponse);
+
+  // 重置人的位置（将停止当前正在进行的出行，转为sleep状态）
+  // Reset person's position (stop the current trip and switch to sleep status)
+  rpc ResetPersonPosition(ResetPersonPositionRequest) returns (ResetPersonPositionResponse);
+
+  // RL接口
+  // RL interface
+
+  // 设置由外部控制行为的vehicle
+  // Set vehicle controlled by external behavior
+  rpc SetControlledVehicleIDs(SetControlledVehicleIDsRequest) returns (SetControlledVehicleIDsResponse);
+  // 获取由外部控制行为的vehicle信息
+  // Get information of vehicle controlled by external behavior
+  rpc FetchControlledVehicleEnvs(FetchControlledVehicleEnvsRequest) returns (FetchControlledVehicleEnvsResponse);
+  // 设置由外部控制行为的vehicle的行为
+  // Set behavior of vehicle controlled by external behavior
+  rpc SetControlledVehicleActions(SetControlledVehicleActionsRequest) returns (SetControlledVehicleActionsResponse);
+}
+
+// 获取person信息请求
+// Request for getting person information
+message GetPersonRequest {
+  // person id
+  int32 person_id = 1;
+}
+
+// 获取person信息响应
+// Response of getting person information
+message GetPersonResponse {
+  PersonRuntime person = 1;
+}
+
+// 新增person请求
+// Request for adding a new person
+message AddPersonRequest {
+  // 约定：person中不设置id
+  // Convention: personid is not set here
+  Person person = 1;
+}
+
+// 新增person响应
+// Response of adding a new person
+message AddPersonResponse {
+  // 新增的person分配得到的ID
+  // The ID assigned to the newly added person
+  int32 person_id = 1;
+}
+
+// 修改person的schedule请求
+// Request for setting person schedule
+message SetScheduleRequest {
+  // person id
+  int32 person_id = 1;
+  // 新的schedule（覆盖原有的schedule）
+  // New schedule (overwrites the original schedule)
+  repeated city.trip.v2.Schedule schedules = 2;
+}
+
+// 修改person的schedule响应
+// Response of setting person schedule
+message SetScheduleResponse {}
+
+// 获取多个person信息请求
+// Request for getting information of multiple persons
+message GetPersonsRequest {
+  // person id列表，为空则返回所有person
+  // List of person ids, return all persons if empty
+  repeated int32 person_ids = 1;
+  // 过滤人的状态（状态为列表内的值的人不返回），即使包含在person_ids中
+  // Filter person's status (person whose status is in the list will not be returned), even if included in person_ids
+  repeated Status exclude_statuses = 2;
+  // 设置是否返回base信息
+  // Set whether to return base information
+  bool return_base = 3;
+}
+
+// 获取多个person信息响应
+// Response of getting information of multiple persons
+message GetPersonsResponse {
+  // person信息
+  // person information
+  repeated PersonRuntime persons = 1;
+}
+
+// 获取特定区域内的person请求
+// Request for getting persons in region
+message GetPersonByLongLatBBoxRequest {
+  // 经纬度范围
+  // longitude and latitude bounding box
+  city.geo.v2.LongLatBBox bbox = 1;
+  // 过滤人的状态（状态为列表内的值的人不返回）
+  // Filter person's status (person whose status is in the list will not be returned)
+  repeated Status exclude_statuses = 2;
+  // 设置是否返回base信息
+  // Set whether to return base information
+  bool return_base = 3;
+}
+
+// 获取特定区域内的person响应
+// Response of getting persons in region
+message GetPersonByLongLatBBoxResponse {
+  // 区域内的person的信息
+  // Information of persons in the region
+  repeated PersonRuntime persons = 1;
+}
+
+// 获取所有车辆请求
+// Request for getting all vehicles
+message GetAllVehiclesRequest {}
+
+// 获取所有车辆响应
+// Response of getting all vehicles
+message GetAllVehiclesResponse {
+  // 所有车辆的信息
+  // Information of all vehicles
+  repeated VehicleRuntime vehicles = 1;
+}
+
+// 重置人的位置请求
+// Request for resetting person's position
+message ResetPersonPositionRequest {
+  // person id
+  int32 person_id = 1;
+  // 重置位置
+  // reset position
+  city.geo.v2.Position position = 2;
+}
+
+// 重置人的位置响应
+// Response of resetting person's position
+message ResetPersonPositionResponse {}
+
+// 设置由外部控制行为的vehicle请求（下一个step生效）
+// Request for setting vehicle controlled by external behavior
+message SetControlledVehicleIDsRequest {
+  // 由外部控制行为的vehicle id列表
+  // List of vehicle ids controlled by external behavior
+  repeated int32 vehicle_ids = 1;
+}
+
+// 设置由外部控制行为的vehicle响应
+// Response of setting vehicle controlled by external behavior
+message SetControlledVehicleIDsResponse {}
+
+// 获取由外部控制行为的vehicle信息请求
+// Request for getting information of vehicle controlled by external behavior
+message FetchControlledVehicleEnvsRequest {}
+
+// 获取由外部控制行为的vehicle信息响应
+// Response of getting information of vehicle controlled by external behavior
+message FetchControlledVehicleEnvsResponse {
+  // 由外部控制行为的vehicle信息
+  // Information of vehicle controlled by external behavior
+  repeated VehicleEnv vehicle_envs = 1;
+}
+
+// 设置由外部控制行为的vehicle的行为请求
+// Request for setting behavior of vehicle controlled by external behavior
+message SetControlledVehicleActionsRequest {
+  // 由外部控制行为的vehicle的行为
+  // Behavior of vehicle controlled by external behavior
+  repeated VehicleAction vehicle_actions = 1;
+}
+
+// 设置由外部控制行为的vehicle的行为响应
+// Response of setting behavior of vehicle controlled by external behavior
+message SetControlledVehicleActionsResponse {}

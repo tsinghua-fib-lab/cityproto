@@ -22,6 +22,7 @@ buf generate --template buf.gen.tag.yaml --include-imports \
     --path city/map/v2 \
     --path city/routing/v2 \
     --path city/person/v1 \
+    --path city/person/v2 \
     --path city/water/input/v1
 protol --create-package --in-place --python-out pycityproto/ \
     protoc --proto-path=./ $(find ./city -name "*.proto")

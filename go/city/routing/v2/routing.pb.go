@@ -280,10 +280,10 @@ type WalkingRouteSegment struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Lane ID
-	LaneId int32 `protobuf:"varint,1,opt,name=lane_id,json=laneId,proto3" json:"lane_id,omitempty" yaml:"lane_id" bson:"lane_id" db:"lane_id"`
+	LaneId int32 `protobuf:"varint,1,opt,name=lane_id,json=laneId,proto3" json:"lane_id,omitempty" db:"lane_id" yaml:"lane_id" bson:"lane_id"`
 	// 移动方向
 	// moving direction
-	MovingDirection MovingDirection `protobuf:"varint,2,opt,name=moving_direction,json=movingDirection,proto3,enum=city.routing.v2.MovingDirection" json:"moving_direction,omitempty" bson:"moving_direction" db:"moving_direction" yaml:"moving_direction"`
+	MovingDirection MovingDirection `protobuf:"varint,2,opt,name=moving_direction,json=movingDirection,proto3,enum=city.routing.v2.MovingDirection" json:"moving_direction,omitempty" yaml:"moving_direction" bson:"moving_direction" db:"moving_direction"`
 }
 
 func (x *WalkingRouteSegment) Reset() {
@@ -344,7 +344,7 @@ type WalkingJourneyBody struct {
 	Route []*WalkingRouteSegment `protobuf:"bytes,1,rep,name=route,proto3" json:"route,omitempty" yaml:"route" bson:"route" db:"route"`
 	// 从起点到终点预计的时间(estimation time of arrival)
 	// estimation time of arrival
-	Eta float64 `protobuf:"fixed64,2,opt,name=eta,proto3" json:"eta,omitempty" db:"eta" yaml:"eta" bson:"eta"`
+	Eta float64 `protobuf:"fixed64,2,opt,name=eta,proto3" json:"eta,omitempty" yaml:"eta" bson:"eta" db:"eta"`
 }
 
 func (x *WalkingJourneyBody) Reset() {
@@ -405,7 +405,7 @@ type TransferSegment struct {
 
 	SublineId      int32 `protobuf:"varint,1,opt,name=subline_id,json=sublineId,proto3" json:"subline_id,omitempty" yaml:"subline_id" bson:"subline_id" db:"subline_id"`
 	StartStationId int32 `protobuf:"varint,2,opt,name=start_station_id,json=startStationId,proto3" json:"start_station_id,omitempty" yaml:"start_station_id" bson:"start_station_id" db:"start_station_id"`
-	EndStationId   int32 `protobuf:"varint,3,opt,name=end_station_id,json=endStationId,proto3" json:"end_station_id,omitempty" db:"end_station_id" yaml:"end_station_id" bson:"end_station_id"`
+	EndStationId   int32 `protobuf:"varint,3,opt,name=end_station_id,json=endStationId,proto3" json:"end_station_id,omitempty" yaml:"end_station_id" bson:"end_station_id" db:"end_station_id"`
 }
 
 func (x *TransferSegment) Reset() {
@@ -611,7 +611,7 @@ type RoadStatus struct {
 	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" bson:"id" db:"id" yaml:"id"`
 	// 车道在各个时间片（每个5min）的速度
 	// The speed of the lane at each time slot (5 minutes each)
-	Speed []float64 `protobuf:"fixed64,2,rep,packed,name=speed,proto3" json:"speed,omitempty" db:"speed" yaml:"speed" bson:"speed"`
+	Speed []float64 `protobuf:"fixed64,2,rep,packed,name=speed,proto3" json:"speed,omitempty" bson:"speed" db:"speed" yaml:"speed"`
 }
 
 func (x *RoadStatus) Reset() {

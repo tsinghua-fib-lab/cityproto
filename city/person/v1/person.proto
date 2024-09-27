@@ -50,35 +50,18 @@ message VehicleAttribute {
   optional string model = 3;
 }
 
-// 公交车
-// Type of Bus
-enum BusType {
-  // 未指定
-  // unspecified
-  BUS_TYPE_UNSPECIFIED = 0;
-  // 公交类型
-  // The bus is a trolleybus, BRT, eta.
-  BUS_TYPE_BUS = 1;
-  // 地铁类型
-  // The bus is a subway
-  BUS_TYPE_SUBWAY = 2;
-}
-
 // 公交车附加属性
 // Bus additional attributes
 message BusAttribute {
   // 公交线路ID
   // bus line ID
-  int32 subline_id = 1;
+  int32 line_id = 1;
   // 公交车容量
   // bus capacity
   int32 capacity = 2;
   // 公交车模型标签
   // bus model tag
   optional string model = 3;
-  // 公交车类型
-  // type of bus
-  BusType type = 5;
 }
 
 // 行人附加属性

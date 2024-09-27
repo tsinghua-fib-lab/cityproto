@@ -9,38 +9,6 @@ import type { Position } from "../../geo/v2/geo_pb.js";
 import type { Schedule } from "../../trip/v2/trip_pb.js";
 
 /**
- * 公交车
- * Type of Bus
- *
- * @generated from enum city.person.v1.BusType
- */
-export declare enum BusType {
-  /**
-   * 未指定
-   * unspecified
-   *
-   * @generated from enum value: BUS_TYPE_UNSPECIFIED = 0;
-   */
-  UNSPECIFIED = 0,
-
-  /**
-   * 公交类型
-   * The bus is a trolleybus, BRT, eta.
-   *
-   * @generated from enum value: BUS_TYPE_BUS = 1;
-   */
-  BUS = 1,
-
-  /**
-   * 地铁类型
-   * The bus is a subway
-   *
-   * @generated from enum value: BUS_TYPE_SUBWAY = 2;
-   */
-  SUBWAY = 2,
-}
-
-/**
  * 智能体教育等级
  * Agent education level
  *
@@ -335,9 +303,9 @@ export declare class BusAttribute extends Message<BusAttribute> {
    * 公交线路ID
    * bus line ID
    *
-   * @generated from field: int32 subline_id = 1;
+   * @generated from field: int32 line_id = 1;
    */
-  sublineId: number;
+  lineId: number;
 
   /**
    * 公交车容量
@@ -354,14 +322,6 @@ export declare class BusAttribute extends Message<BusAttribute> {
    * @generated from field: optional string model = 3;
    */
   model?: string;
-
-  /**
-   * 公交车类型
-   * type of bus
-   *
-   * @generated from field: city.person.v1.BusType type = 5;
-   */
-  type: BusType;
 
   constructor(data?: PartialMessage<BusAttribute>);
 

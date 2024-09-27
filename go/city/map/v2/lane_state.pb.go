@@ -41,7 +41,7 @@ type LaneState struct {
 	Restriction bool `protobuf:"varint,4,opt,name=restriction,proto3" json:"restriction,omitempty" bson:"restriction" db:"restriction" yaml:"restriction"`
 	// 交通灯状态
 	// traffic light state
-	LightState LightState `protobuf:"varint,5,opt,name=light_state,json=lightState,proto3,enum=city.map.v2.LightState" json:"light_state,omitempty" yaml:"light_state" bson:"light_state" db:"light_state"`
+	LightState LightState `protobuf:"varint,5,opt,name=light_state,json=lightState,proto3,enum=city.map.v2.LightState" json:"light_state,omitempty" db:"light_state" yaml:"light_state" bson:"light_state"`
 }
 
 func (x *LaneState) Reset() {

@@ -107,7 +107,7 @@ type AgentMotion struct {
 	// 速度
 	V float64 `protobuf:"fixed64,4,opt,name=v,proto3" json:"v,omitempty" yaml:"v" bson:"v" db:"v"`
 	// 方向角（atan2计算得到的弧度）
-	Direction float64 `protobuf:"fixed64,5,opt,name=direction,proto3" json:"direction,omitempty" bson:"direction" db:"direction" yaml:"direction"`
+	Direction float64 `protobuf:"fixed64,5,opt,name=direction,proto3" json:"direction,omitempty" yaml:"direction" bson:"direction" db:"direction"`
 	// 活动描述
 	Activity string `protobuf:"bytes,6,opt,name=activity,proto3" json:"activity,omitempty" yaml:"activity" bson:"activity" db:"activity"`
 }
