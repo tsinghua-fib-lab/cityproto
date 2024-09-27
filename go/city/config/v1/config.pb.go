@@ -29,7 +29,7 @@ type MongoPath struct {
 	// 数据库名
 	Db string `protobuf:"bytes,1,opt,name=db,proto3" json:"db,omitempty" yaml:"db" bson:"db" db:"db"`
 	// 集合名
-	Col string `protobuf:"bytes,2,opt,name=col,proto3" json:"col,omitempty" db:"col" yaml:"col" bson:"col"`
+	Col string `protobuf:"bytes,2,opt,name=col,proto3" json:"col,omitempty" bson:"col" db:"col" yaml:"col"`
 }
 
 func (x *MongoPath) Reset() {

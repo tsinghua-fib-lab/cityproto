@@ -1655,6 +1655,10 @@
               
               
                 <li>
+                  <a href="#city.person.v1.BusType"><span class="badge">E</span>BusType</a>
+                </li>
+              
+                <li>
                   <a href="#city.person.v1.Consumption"><span class="badge">E</span>Consumption</a>
                 </li>
               
@@ -12135,7 +12139,7 @@ Bike model tag </p></td>
             <tbody>
               
                 <tr>
-                  <td>line_id</td>
+                  <td>subline_id</td>
                   <td><a href="#int32">int32</a></td>
                   <td></td>
                   <td><p>公交线路ID
@@ -12156,6 +12160,14 @@ bus capacity </p></td>
                   <td>optional</td>
                   <td><p>公交车模型标签
 bus model tag </p></td>
+                </tr>
+              
+                <tr>
+                  <td>type</td>
+                  <td><a href="#city.person.v1.BusType">BusType</a></td>
+                  <td></td>
+                  <td><p>公交车类型
+type of bus </p></td>
                 </tr>
               
             </tbody>
@@ -12538,6 +12550,38 @@ Vehicle model tag </p></td>
         
       
 
+      
+        <h3 id="city.person.v1.BusType">BusType</h3>
+        <p>公交车</p><p>Type of Bus</p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>BUS_TYPE_UNSPECIFIED</td>
+                <td>0</td>
+                <td><p>未指定
+unspecified</p></td>
+              </tr>
+            
+              <tr>
+                <td>BUS_TYPE_BUS</td>
+                <td>1</td>
+                <td><p>公交类型
+The bus is a trolleybus, BRT, eta.</p></td>
+              </tr>
+            
+              <tr>
+                <td>BUS_TYPE_SUBWAY</td>
+                <td>2</td>
+                <td><p>地铁类型
+The bus is a subway</p></td>
+              </tr>
+            
+          </tbody>
+        </table>
       
         <h3 id="city.person.v1.Consumption">Consumption</h3>
         <p>智能体消费水平</p><p>agent consumption level</p>

@@ -101,9 +101,9 @@ type Entity struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 实体类型
-	Type EntityType `protobuf:"varint,1,opt,name=type,proto3,enum=city.event.v2.EntityType" json:"type,omitempty" yaml:"type" bson:"type" db:"type"`
+	Type EntityType `protobuf:"varint,1,opt,name=type,proto3,enum=city.event.v2.EntityType" json:"type,omitempty" bson:"type" db:"type" yaml:"type"`
 	// 实体ID
-	Id int32 `protobuf:"varint,2,opt,name=id,proto3" json:"id,omitempty" bson:"id" db:"id" yaml:"id"`
+	Id int32 `protobuf:"varint,2,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
 }
 
 func (x *Entity) Reset() {
@@ -164,7 +164,7 @@ type Event struct {
 	// ID
 	Id *int32 `protobuf:"varint,2,opt,name=id,proto3,oneof" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
 	// 主语
-	Subject *Entity `protobuf:"bytes,3,opt,name=subject,proto3" json:"subject,omitempty" bson:"subject" db:"subject" yaml:"subject"`
+	Subject *Entity `protobuf:"bytes,3,opt,name=subject,proto3" json:"subject,omitempty" db:"subject" yaml:"subject" bson:"subject"`
 	// 谓词
 	Content string `protobuf:"bytes,4,opt,name=content,proto3" json:"content,omitempty" db:"content" yaml:"content" bson:"content"`
 	// 地点

@@ -98,6 +98,32 @@ namespace city {
 namespace person {
 namespace v1 {
 
+enum BusType : int {
+  BUS_TYPE_UNSPECIFIED = 0,
+  BUS_TYPE_BUS = 1,
+  BUS_TYPE_SUBWAY = 2,
+  BusType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
+  BusType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
+};
+bool BusType_IsValid(int value);
+constexpr BusType BusType_MIN = BUS_TYPE_UNSPECIFIED;
+constexpr BusType BusType_MAX = BUS_TYPE_SUBWAY;
+constexpr int BusType_ARRAYSIZE = BusType_MAX + 1;
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* BusType_descriptor();
+template<typename T>
+inline const std::string& BusType_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, BusType>::value ||
+    ::std::is_integral<T>::value,
+    "Incorrect type passed to function BusType_Name.");
+  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
+    BusType_descriptor(), enum_t_value);
+}
+inline bool BusType_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, BusType* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<BusType>(
+    BusType_descriptor(), name, value);
+}
 enum Education : int {
   EDUCATION_UNSPECIFIED = 0,
   EDUCATION_DOCTOR = 1,
@@ -702,8 +728,9 @@ class BusAttribute final :
 
   enum : int {
     kModelFieldNumber = 3,
-    kLineIdFieldNumber = 1,
+    kSublineIdFieldNumber = 1,
     kCapacityFieldNumber = 2,
+    kTypeFieldNumber = 5,
   };
   // optional string model = 3 [json_name = "model"];
   bool has_model() const;
@@ -723,13 +750,13 @@ class BusAttribute final :
   std::string* _internal_mutable_model();
   public:
 
-  // int32 line_id = 1 [json_name = "lineId"];
-  void clear_line_id();
-  int32_t line_id() const;
-  void set_line_id(int32_t value);
+  // int32 subline_id = 1 [json_name = "sublineId"];
+  void clear_subline_id();
+  int32_t subline_id() const;
+  void set_subline_id(int32_t value);
   private:
-  int32_t _internal_line_id() const;
-  void _internal_set_line_id(int32_t value);
+  int32_t _internal_subline_id() const;
+  void _internal_set_subline_id(int32_t value);
   public:
 
   // int32 capacity = 2 [json_name = "capacity"];
@@ -739,6 +766,15 @@ class BusAttribute final :
   private:
   int32_t _internal_capacity() const;
   void _internal_set_capacity(int32_t value);
+  public:
+
+  // .city.person.v1.BusType type = 5 [json_name = "type"];
+  void clear_type();
+  ::city::person::v1::BusType type() const;
+  void set_type(::city::person::v1::BusType value);
+  private:
+  ::city::person::v1::BusType _internal_type() const;
+  void _internal_set_type(::city::person::v1::BusType value);
   public:
 
   // @@protoc_insertion_point(class_scope:city.person.v1.BusAttribute)
@@ -752,8 +788,9 @@ class BusAttribute final :
     ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr model_;
-    int32_t line_id_;
+    int32_t subline_id_;
     int32_t capacity_;
+    int type_;
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_city_2fperson_2fv1_2fperson_2eproto;
@@ -2110,24 +2147,24 @@ inline void VehicleAttribute::set_allocated_model(std::string* model) {
 
 // BusAttribute
 
-// int32 line_id = 1 [json_name = "lineId"];
-inline void BusAttribute::clear_line_id() {
-  _impl_.line_id_ = 0;
+// int32 subline_id = 1 [json_name = "sublineId"];
+inline void BusAttribute::clear_subline_id() {
+  _impl_.subline_id_ = 0;
 }
-inline int32_t BusAttribute::_internal_line_id() const {
-  return _impl_.line_id_;
+inline int32_t BusAttribute::_internal_subline_id() const {
+  return _impl_.subline_id_;
 }
-inline int32_t BusAttribute::line_id() const {
-  // @@protoc_insertion_point(field_get:city.person.v1.BusAttribute.line_id)
-  return _internal_line_id();
+inline int32_t BusAttribute::subline_id() const {
+  // @@protoc_insertion_point(field_get:city.person.v1.BusAttribute.subline_id)
+  return _internal_subline_id();
 }
-inline void BusAttribute::_internal_set_line_id(int32_t value) {
+inline void BusAttribute::_internal_set_subline_id(int32_t value) {
   
-  _impl_.line_id_ = value;
+  _impl_.subline_id_ = value;
 }
-inline void BusAttribute::set_line_id(int32_t value) {
-  _internal_set_line_id(value);
-  // @@protoc_insertion_point(field_set:city.person.v1.BusAttribute.line_id)
+inline void BusAttribute::set_subline_id(int32_t value) {
+  _internal_set_subline_id(value);
+  // @@protoc_insertion_point(field_set:city.person.v1.BusAttribute.subline_id)
 }
 
 // int32 capacity = 2 [json_name = "capacity"];
@@ -2216,6 +2253,26 @@ inline void BusAttribute::set_allocated_model(std::string* model) {
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   // @@protoc_insertion_point(field_set_allocated:city.person.v1.BusAttribute.model)
+}
+
+// .city.person.v1.BusType type = 5 [json_name = "type"];
+inline void BusAttribute::clear_type() {
+  _impl_.type_ = 0;
+}
+inline ::city::person::v1::BusType BusAttribute::_internal_type() const {
+  return static_cast< ::city::person::v1::BusType >(_impl_.type_);
+}
+inline ::city::person::v1::BusType BusAttribute::type() const {
+  // @@protoc_insertion_point(field_get:city.person.v1.BusAttribute.type)
+  return _internal_type();
+}
+inline void BusAttribute::_internal_set_type(::city::person::v1::BusType value) {
+  
+  _impl_.type_ = value;
+}
+inline void BusAttribute::set_type(::city::person::v1::BusType value) {
+  _internal_set_type(value);
+  // @@protoc_insertion_point(field_set:city.person.v1.BusAttribute.type)
 }
 
 // -------------------------------------------------------------------
@@ -3410,6 +3467,11 @@ Persons::persons() const {
 
 PROTOBUF_NAMESPACE_OPEN
 
+template <> struct is_proto_enum< ::city::person::v1::BusType> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::city::person::v1::BusType>() {
+  return ::city::person::v1::BusType_descriptor();
+}
 template <> struct is_proto_enum< ::city::person::v1::Education> : ::std::true_type {};
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::city::person::v1::Education>() {

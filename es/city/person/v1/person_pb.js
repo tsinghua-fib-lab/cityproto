@@ -8,6 +8,21 @@ import { Position } from "../../geo/v2/geo_pb.js";
 import { Schedule } from "../../trip/v2/trip_pb.js";
 
 /**
+ * 公交车
+ * Type of Bus
+ *
+ * @generated from enum city.person.v1.BusType
+ */
+export const BusType = proto3.makeEnum(
+  "city.person.v1.BusType",
+  [
+    {no: 0, name: "BUS_TYPE_UNSPECIFIED", localName: "UNSPECIFIED"},
+    {no: 1, name: "BUS_TYPE_BUS", localName: "BUS"},
+    {no: 2, name: "BUS_TYPE_SUBWAY", localName: "SUBWAY"},
+  ],
+);
+
+/**
  * 智能体教育等级
  * Agent education level
  *
@@ -103,9 +118,10 @@ export const VehicleAttribute = proto3.makeMessageType(
 export const BusAttribute = proto3.makeMessageType(
   "city.person.v1.BusAttribute",
   () => [
-    { no: 1, name: "line_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 1, name: "subline_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 2, name: "capacity", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 3, name: "model", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 5, name: "type", kind: "enum", T: proto3.getEnumType(BusType) },
   ],
 );
 

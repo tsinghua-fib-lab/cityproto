@@ -7,6 +7,12 @@ from google.protobuf import message as _message
 from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
+class BusType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+    __slots__ = []
+    BUS_TYPE_UNSPECIFIED: _ClassVar[BusType]
+    BUS_TYPE_BUS: _ClassVar[BusType]
+    BUS_TYPE_SUBWAY: _ClassVar[BusType]
+
 class Education(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     __slots__ = []
     EDUCATION_UNSPECIFIED: _ClassVar[Education]
@@ -32,6 +38,9 @@ class Consumption(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     CONSUMPTION_MEDIUM: _ClassVar[Consumption]
     CONSUMPTION_RELATIVELY_HIGH: _ClassVar[Consumption]
     CONSUMPTION_HIGH: _ClassVar[Consumption]
+BUS_TYPE_UNSPECIFIED: BusType
+BUS_TYPE_BUS: BusType
+BUS_TYPE_SUBWAY: BusType
 EDUCATION_UNSPECIFIED: Education
 EDUCATION_DOCTOR: Education
 EDUCATION_MASTER: Education
@@ -83,15 +92,17 @@ class VehicleAttribute(_message.Message):
         ...
 
 class BusAttribute(_message.Message):
-    __slots__ = ['line_id', 'capacity', 'model']
-    LINE_ID_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ['subline_id', 'capacity', 'model', 'type']
+    SUBLINE_ID_FIELD_NUMBER: _ClassVar[int]
     CAPACITY_FIELD_NUMBER: _ClassVar[int]
     MODEL_FIELD_NUMBER: _ClassVar[int]
-    line_id: int
+    TYPE_FIELD_NUMBER: _ClassVar[int]
+    subline_id: int
     capacity: int
     model: str
+    type: BusType
 
-    def __init__(self, line_id: _Optional[int]=..., capacity: _Optional[int]=..., model: _Optional[str]=...) -> None:
+    def __init__(self, subline_id: _Optional[int]=..., capacity: _Optional[int]=..., model: _Optional[str]=..., type: _Optional[_Union[BusType, str]]=...) -> None:
         ...
 
 class PedestrianAttribute(_message.Message):

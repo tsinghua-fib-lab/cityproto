@@ -103,7 +103,7 @@ type XYPosition struct {
 	X float64 `protobuf:"fixed64,1,opt,name=x,proto3" json:"x,omitempty" yaml:"x" bson:"x" db:"x"`
 	// y坐标，单位米，对应纬度
 	// y coordinate, in meters, corresponding to latitude
-	Y float64 `protobuf:"fixed64,2,opt,name=y,proto3" json:"y,omitempty" db:"y" yaml:"y" bson:"y"`
+	Y float64 `protobuf:"fixed64,2,opt,name=y,proto3" json:"y,omitempty" yaml:"y" bson:"y" db:"y"`
 	// z坐标，单位米，对应高程
 	// z coordinate, in meters, corresponding to elevation
 	Z *float64 `protobuf:"fixed64,3,opt,name=z,proto3,oneof" json:"z,omitempty" yaml:"z" bson:"z" db:"z"`
@@ -171,7 +171,7 @@ type LanePosition struct {
 
 	// 车道id
 	// Lane ID
-	LaneId int32 `protobuf:"varint,1,opt,name=lane_id,json=laneId,proto3" json:"lane_id,omitempty" yaml:"lane_id" bson:"lane_id" db:"lane_id"`
+	LaneId int32 `protobuf:"varint,1,opt,name=lane_id,json=laneId,proto3" json:"lane_id,omitempty" db:"lane_id" yaml:"lane_id" bson:"lane_id"`
 	// s是车道上的点到车道起点的距离
 	// s is the distance from the point on the lane to the starting point of the lane
 	S float64 `protobuf:"fixed64,2,opt,name=s,proto3" json:"s,omitempty" yaml:"s" bson:"s" db:"s"`
@@ -376,7 +376,7 @@ type LongLatBBox struct {
 	MinLongitude float64 `protobuf:"fixed64,1,opt,name=min_longitude,json=minLongitude,proto3" json:"min_longitude,omitempty" yaml:"min_longitude" bson:"min_longitude" db:"min_longitude"`
 	// 最小纬度
 	// minimum latitude
-	MinLatitude float64 `protobuf:"fixed64,2,opt,name=min_latitude,json=minLatitude,proto3" json:"min_latitude,omitempty" db:"min_latitude" yaml:"min_latitude" bson:"min_latitude"`
+	MinLatitude float64 `protobuf:"fixed64,2,opt,name=min_latitude,json=minLatitude,proto3" json:"min_latitude,omitempty" yaml:"min_latitude" bson:"min_latitude" db:"min_latitude"`
 	// 最大经度
 	// maximu longitude
 	MaxLongitude float64 `protobuf:"fixed64,3,opt,name=max_longitude,json=maxLongitude,proto3" json:"max_longitude,omitempty" yaml:"max_longitude" bson:"max_longitude" db:"max_longitude"`
