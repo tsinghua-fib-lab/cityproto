@@ -4,8 +4,7 @@ proto 文件仓库。
 
 ## 内容
 
-- `city.agent`: 智能体
-- `city.cognition`: 认知
+- `city.person`: 智能体
 - `city.comm`: 通信
 - `city.config`: 配置文件基本组件
 - `city.elec`: 电网
@@ -19,7 +18,6 @@ proto 文件仓库。
 - `city.traffic`: 交通
 - `city.traffic_light`: 信控
 - `city.trip`: 出行与日程
-- `city.wargame`: 兵棋
 - `city.water`: 水网
 
 ## STYLE

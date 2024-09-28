@@ -4,7 +4,7 @@
 // @ts-nocheck
 
 import { proto3 } from "@bufbuild/protobuf";
-import { PersonMotion } from "../../person/v1/motion_pb.js";
+import { PersonMotion } from "../../person/v2/motion_pb.js";
 
 /**
  * AOI状态

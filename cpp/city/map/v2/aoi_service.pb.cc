@@ -109,9 +109,9 @@ static const ::_pb::Message* const file_default_instances[] = {
 
 const char descriptor_table_protodef_city_2fmap_2fv2_2faoi_5fservice_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\035city/map/v2/aoi_service.proto\022\013city.ma"
-  "p.v2\032\033city/person/v1/motion.proto\"R\n\010Aoi"
+  "p.v2\032\033city/person/v2/motion.proto\"R\n\010Aoi"
   "State\022\016\n\002id\030\001 \001(\005R\002id\0226\n\007persons\030\002 \003(\0132\034"
-  ".city.person.v1.PersonMotionR\007persons\"(\n"
+  ".city.person.v2.PersonMotionR\007persons\"(\n"
   "\rGetAoiRequest\022\027\n\007aoi_ids\030\001 \003(\005R\006aoiIds\""
   "\?\n\016GetAoiResponse\022-\n\006states\030\001 \003(\0132\025.city"
   ".map.v2.AoiStateR\006states2O\n\nAoiService\022A"
@@ -123,7 +123,7 @@ const char descriptor_table_protodef_city_2fmap_2fv2_2faoi_5fservice_2eproto[] P
   "\\GPBMetadata\352\002\rCity::Map::V2b\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_city_2fmap_2fv2_2faoi_5fservice_2eproto_deps[1] = {
-  &::descriptor_table_city_2fperson_2fv1_2fmotion_2eproto,
+  &::descriptor_table_city_2fperson_2fv2_2fmotion_2eproto,
 };
 static ::_pbi::once_flag descriptor_table_city_2fmap_2fv2_2faoi_5fservice_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2fmap_2fv2_2faoi_5fservice_2eproto = {
@@ -226,7 +226,7 @@ const char* AoiState::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx)
         } else
           goto handle_unusual;
         continue;
-      // repeated .city.person.v1.PersonMotion persons = 2 [json_name = "persons"];
+      // repeated .city.person.v2.PersonMotion persons = 2 [json_name = "persons"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr -= 1;
@@ -274,7 +274,7 @@ uint8_t* AoiState::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_id(), target);
   }
 
-  // repeated .city.person.v1.PersonMotion persons = 2 [json_name = "persons"];
+  // repeated .city.person.v2.PersonMotion persons = 2 [json_name = "persons"];
   for (unsigned i = 0,
       n = static_cast<unsigned>(this->_internal_persons_size()); i < n; i++) {
     const auto& repfield = this->_internal_persons(i);
@@ -298,7 +298,7 @@ size_t AoiState::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .city.person.v1.PersonMotion persons = 2 [json_name = "persons"];
+  // repeated .city.person.v2.PersonMotion persons = 2 [json_name = "persons"];
   total_size += 1UL * this->_internal_persons_size();
   for (const auto& msg : this->_impl_.persons_) {
     total_size +=

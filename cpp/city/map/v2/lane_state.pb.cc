@@ -71,9 +71,9 @@ static const ::_pb::Message* const file_default_instances[] = {
 const char descriptor_table_protodef_city_2fmap_2fv2_2flane_5fstate_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\034city/map/v2/lane_state.proto\022\013city.map"
   ".v2\032\027city/map/v2/light.proto\032\033city/perso"
-  "n/v1/motion.proto\"\304\001\n\tLaneState\022\016\n\002id\030\001 "
+  "n/v2/motion.proto\"\304\001\n\tLaneState\022\016\n\002id\030\001 "
   "\001(\005R\002id\0226\n\007persons\030\002 \003(\0132\034.city.person.v"
-  "1.PersonMotionR\007persons\022\023\n\005avg_v\030\003 \001(\001R\004"
+  "2.PersonMotionR\007persons\022\023\n\005avg_v\030\003 \001(\001R\004"
   "avgV\022 \n\013restriction\030\004 \001(\010R\013restriction\0228"
   "\n\013light_state\030\005 \001(\0162\027.city.map.v2.LightS"
   "tateR\nlightStateB\237\001\n\017com.city.map.v2B\016La"
@@ -84,7 +84,7 @@ const char descriptor_table_protodef_city_2fmap_2fv2_2flane_5fstate_2eproto[] PR
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_city_2fmap_2fv2_2flane_5fstate_2eproto_deps[2] = {
   &::descriptor_table_city_2fmap_2fv2_2flight_2eproto,
-  &::descriptor_table_city_2fperson_2fv1_2fmotion_2eproto,
+  &::descriptor_table_city_2fperson_2fv2_2fmotion_2eproto,
 };
 static ::_pbi::once_flag descriptor_table_city_2fmap_2fv2_2flane_5fstate_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2fmap_2fv2_2flane_5fstate_2eproto = {
@@ -197,7 +197,7 @@ const char* LaneState::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx
         } else
           goto handle_unusual;
         continue;
-      // repeated .city.person.v1.PersonMotion persons = 2 [json_name = "persons"];
+      // repeated .city.person.v2.PersonMotion persons = 2 [json_name = "persons"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr -= 1;
@@ -270,7 +270,7 @@ uint8_t* LaneState::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_id(), target);
   }
 
-  // repeated .city.person.v1.PersonMotion persons = 2 [json_name = "persons"];
+  // repeated .city.person.v2.PersonMotion persons = 2 [json_name = "persons"];
   for (unsigned i = 0,
       n = static_cast<unsigned>(this->_internal_persons_size()); i < n; i++) {
     const auto& repfield = this->_internal_persons(i);
@@ -317,7 +317,7 @@ size_t LaneState::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .city.person.v1.PersonMotion persons = 2 [json_name = "persons"];
+  // repeated .city.person.v2.PersonMotion persons = 2 [json_name = "persons"];
   total_size += 1UL * this->_internal_persons_size();
   for (const auto& msg : this->_impl_.persons_) {
     total_size +=

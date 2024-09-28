@@ -1,5 +1,5 @@
 from city.map.v2 import light_pb2 as _light_pb2
-from city.person.v1 import motion_pb2 as _motion_pb2
+from city.person.v2 import motion_pb2 as _motion_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message

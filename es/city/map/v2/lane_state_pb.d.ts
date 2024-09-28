@@ -5,7 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { PersonMotion } from "../../person/v1/motion_pb.js";
+import type { PersonMotion } from "../../person/v2/motion_pb.js";
 import type { LightState } from "./light_pb.js";
 
 /**
@@ -26,7 +26,7 @@ export declare class LaneState extends Message<LaneState> {
    * Lane上的人/车
    * person/vehicle on the lane
    *
-   * @generated from field: repeated city.person.v1.PersonMotion persons = 2;
+   * @generated from field: repeated city.person.v2.PersonMotion persons = 2;
    */
   persons: PersonMotion[];
 

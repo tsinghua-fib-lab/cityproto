@@ -31,7 +31,7 @@
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
 #include <google/protobuf/unknown_field_set.h>
 #include "city/map/v2/light.pb.h"
-#include "city/person/v1/motion.pb.h"
+#include "city/person/v2/motion.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_city_2fmap_2fv2_2flane_5fstate_2eproto
@@ -191,22 +191,22 @@ class LaneState final :
     kAvgVFieldNumber = 3,
     kLightStateFieldNumber = 5,
   };
-  // repeated .city.person.v1.PersonMotion persons = 2 [json_name = "persons"];
+  // repeated .city.person.v2.PersonMotion persons = 2 [json_name = "persons"];
   int persons_size() const;
   private:
   int _internal_persons_size() const;
   public:
   void clear_persons();
-  ::city::person::v1::PersonMotion* mutable_persons(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v1::PersonMotion >*
+  ::city::person::v2::PersonMotion* mutable_persons(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::PersonMotion >*
       mutable_persons();
   private:
-  const ::city::person::v1::PersonMotion& _internal_persons(int index) const;
-  ::city::person::v1::PersonMotion* _internal_add_persons();
+  const ::city::person::v2::PersonMotion& _internal_persons(int index) const;
+  ::city::person::v2::PersonMotion* _internal_add_persons();
   public:
-  const ::city::person::v1::PersonMotion& persons(int index) const;
-  ::city::person::v1::PersonMotion* add_persons();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v1::PersonMotion >&
+  const ::city::person::v2::PersonMotion& persons(int index) const;
+  ::city::person::v2::PersonMotion* add_persons();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::PersonMotion >&
       persons() const;
 
   // int32 id = 1 [json_name = "id"];
@@ -253,7 +253,7 @@ class LaneState final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v1::PersonMotion > persons_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::PersonMotion > persons_;
     int32_t id_;
     bool restriction_;
     double avg_v_;
@@ -294,38 +294,38 @@ inline void LaneState::set_id(int32_t value) {
   // @@protoc_insertion_point(field_set:city.map.v2.LaneState.id)
 }
 
-// repeated .city.person.v1.PersonMotion persons = 2 [json_name = "persons"];
+// repeated .city.person.v2.PersonMotion persons = 2 [json_name = "persons"];
 inline int LaneState::_internal_persons_size() const {
   return _impl_.persons_.size();
 }
 inline int LaneState::persons_size() const {
   return _internal_persons_size();
 }
-inline ::city::person::v1::PersonMotion* LaneState::mutable_persons(int index) {
+inline ::city::person::v2::PersonMotion* LaneState::mutable_persons(int index) {
   // @@protoc_insertion_point(field_mutable:city.map.v2.LaneState.persons)
   return _impl_.persons_.Mutable(index);
 }
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v1::PersonMotion >*
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::PersonMotion >*
 LaneState::mutable_persons() {
   // @@protoc_insertion_point(field_mutable_list:city.map.v2.LaneState.persons)
   return &_impl_.persons_;
 }
-inline const ::city::person::v1::PersonMotion& LaneState::_internal_persons(int index) const {
+inline const ::city::person::v2::PersonMotion& LaneState::_internal_persons(int index) const {
   return _impl_.persons_.Get(index);
 }
-inline const ::city::person::v1::PersonMotion& LaneState::persons(int index) const {
+inline const ::city::person::v2::PersonMotion& LaneState::persons(int index) const {
   // @@protoc_insertion_point(field_get:city.map.v2.LaneState.persons)
   return _internal_persons(index);
 }
-inline ::city::person::v1::PersonMotion* LaneState::_internal_add_persons() {
+inline ::city::person::v2::PersonMotion* LaneState::_internal_add_persons() {
   return _impl_.persons_.Add();
 }
-inline ::city::person::v1::PersonMotion* LaneState::add_persons() {
-  ::city::person::v1::PersonMotion* _add = _internal_add_persons();
+inline ::city::person::v2::PersonMotion* LaneState::add_persons() {
+  ::city::person::v2::PersonMotion* _add = _internal_add_persons();
   // @@protoc_insertion_point(field_add:city.map.v2.LaneState.persons)
   return _add;
 }
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v1::PersonMotion >&
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::PersonMotion >&
 LaneState::persons() const {
   // @@protoc_insertion_point(field_list:city.map.v2.LaneState.persons)
   return _impl_.persons_;

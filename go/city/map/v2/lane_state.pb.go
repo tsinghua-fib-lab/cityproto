@@ -7,7 +7,7 @@
 package mapv2
 
 import (
-	v1 "git.fiblab.net/sim/protos/go/city/person/v1"
+	v2 "git.fiblab.net/sim/protos/go/city/person/v2"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -29,19 +29,19 @@ type LaneState struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Lane ID
-	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" bson:"id" db:"id" yaml:"id"`
+	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
 	// Lane上的人/车
 	// person/vehicle on the lane
-	Persons []*v1.PersonMotion `protobuf:"bytes,2,rep,name=persons,proto3" json:"persons,omitempty" bson:"persons" db:"persons" yaml:"persons"`
+	Persons []*v2.PersonMotion `protobuf:"bytes,2,rep,name=persons,proto3" json:"persons,omitempty" yaml:"persons" bson:"persons" db:"persons"`
 	// 平均速度（m/s）
 	// average speed (m/s)
-	AvgV float64 `protobuf:"fixed64,3,opt,name=avg_v,json=avgV,proto3" json:"avg_v,omitempty" bson:"avg_v" db:"avg_v" yaml:"avg_v"`
+	AvgV float64 `protobuf:"fixed64,3,opt,name=avg_v,json=avgV,proto3" json:"avg_v,omitempty" yaml:"avg_v" bson:"avg_v" db:"avg_v"`
 	// 是否限行
 	// whether restricted
-	Restriction bool `protobuf:"varint,4,opt,name=restriction,proto3" json:"restriction,omitempty" bson:"restriction" db:"restriction" yaml:"restriction"`
+	Restriction bool `protobuf:"varint,4,opt,name=restriction,proto3" json:"restriction,omitempty" yaml:"restriction" bson:"restriction" db:"restriction"`
 	// 交通灯状态
 	// traffic light state
-	LightState LightState `protobuf:"varint,5,opt,name=light_state,json=lightState,proto3,enum=city.map.v2.LightState" json:"light_state,omitempty" bson:"light_state" db:"light_state" yaml:"light_state"`
+	LightState LightState `protobuf:"varint,5,opt,name=light_state,json=lightState,proto3,enum=city.map.v2.LightState" json:"light_state,omitempty" yaml:"light_state" bson:"light_state" db:"light_state"`
 }
 
 func (x *LaneState) Reset() {
@@ -83,7 +83,7 @@ func (x *LaneState) GetId() int32 {
 	return 0
 }
 
-func (x *LaneState) GetPersons() []*v1.PersonMotion {
+func (x *LaneState) GetPersons() []*v2.PersonMotion {
 	if x != nil {
 		return x.Persons
 	}
@@ -119,12 +119,12 @@ var file_city_map_v2_lane_state_proto_rawDesc = []byte{
 	0x63, 0x69, 0x74, 0x79, 0x2e, 0x6d, 0x61, 0x70, 0x2e, 0x76, 0x32, 0x1a, 0x17, 0x63, 0x69, 0x74,
 	0x79, 0x2f, 0x6d, 0x61, 0x70, 0x2f, 0x76, 0x32, 0x2f, 0x6c, 0x69, 0x67, 0x68, 0x74, 0x2e, 0x70,
 	0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x1b, 0x63, 0x69, 0x74, 0x79, 0x2f, 0x70, 0x65, 0x72, 0x73, 0x6f,
-	0x6e, 0x2f, 0x76, 0x31, 0x2f, 0x6d, 0x6f, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x70, 0x72, 0x6f, 0x74,
+	0x6e, 0x2f, 0x76, 0x32, 0x2f, 0x6d, 0x6f, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x70, 0x72, 0x6f, 0x74,
 	0x6f, 0x22, 0xc4, 0x01, 0x0a, 0x09, 0x4c, 0x61, 0x6e, 0x65, 0x53, 0x74, 0x61, 0x74, 0x65, 0x12,
 	0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x05, 0x52, 0x02, 0x69, 0x64, 0x12,
 	0x36, 0x0a, 0x07, 0x70, 0x65, 0x72, 0x73, 0x6f, 0x6e, 0x73, 0x18, 0x02, 0x20, 0x03, 0x28, 0x0b,
 	0x32, 0x1c, 0x2e, 0x63, 0x69, 0x74, 0x79, 0x2e, 0x70, 0x65, 0x72, 0x73, 0x6f, 0x6e, 0x2e, 0x76,
-	0x31, 0x2e, 0x50, 0x65, 0x72, 0x73, 0x6f, 0x6e, 0x4d, 0x6f, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x07,
+	0x32, 0x2e, 0x50, 0x65, 0x72, 0x73, 0x6f, 0x6e, 0x4d, 0x6f, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x07,
 	0x70, 0x65, 0x72, 0x73, 0x6f, 0x6e, 0x73, 0x12, 0x13, 0x0a, 0x05, 0x61, 0x76, 0x67, 0x5f, 0x76,
 	0x18, 0x03, 0x20, 0x01, 0x28, 0x01, 0x52, 0x04, 0x61, 0x76, 0x67, 0x56, 0x12, 0x20, 0x0a, 0x0b,
 	0x72, 0x65, 0x73, 0x74, 0x72, 0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x04, 0x20, 0x01, 0x28,
@@ -161,11 +161,11 @@ func file_city_map_v2_lane_state_proto_rawDescGZIP() []byte {
 var file_city_map_v2_lane_state_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
 var file_city_map_v2_lane_state_proto_goTypes = []any{
 	(*LaneState)(nil),       // 0: city.map.v2.LaneState
-	(*v1.PersonMotion)(nil), // 1: city.person.v1.PersonMotion
+	(*v2.PersonMotion)(nil), // 1: city.person.v2.PersonMotion
 	(LightState)(0),         // 2: city.map.v2.LightState
 }
 var file_city_map_v2_lane_state_proto_depIdxs = []int32{
-	1, // 0: city.map.v2.LaneState.persons:type_name -> city.person.v1.PersonMotion
+	1, // 0: city.map.v2.LaneState.persons:type_name -> city.person.v2.PersonMotion
 	2, // 1: city.map.v2.LaneState.light_state:type_name -> city.map.v2.LightState
 	2, // [2:2] is the sub-list for method output_type
 	2, // [2:2] is the sub-list for method input_type
