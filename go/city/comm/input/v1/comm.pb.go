@@ -7,7 +7,7 @@
 package inputv1
 
 import (
-	v2 "git.fiblab.net/sim/protos/go/city/geo/v2"
+	v2 "git.fiblab.net/sim/protos/v2/go/city/geo/v2"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -129,20 +129,20 @@ type Node struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Id   int32    `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
-	Type NodeType `protobuf:"varint,2,opt,name=type,proto3,enum=city.comm.input.v1.NodeType" json:"type,omitempty" yaml:"type" bson:"type" db:"type"`
+	Id   int32    `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" bson:"id" db:"id" yaml:"id"`
+	Type NodeType `protobuf:"varint,2,opt,name=type,proto3,enum=city.comm.input.v1.NodeType" json:"type,omitempty" bson:"type" db:"type" yaml:"type"`
 	// 父节点
-	ParentId int32 `protobuf:"varint,3,opt,name=parent_id,json=parentId,proto3" json:"parent_id,omitempty" db:"parent_id" yaml:"parent_id" bson:"parent_id"`
+	ParentId int32 `protobuf:"varint,3,opt,name=parent_id,json=parentId,proto3" json:"parent_id,omitempty" bson:"parent_id" db:"parent_id" yaml:"parent_id"`
 	// 子节点
-	ChildrenIds []int32 `protobuf:"varint,4,rep,packed,name=children_ids,json=childrenIds,proto3" json:"children_ids,omitempty" db:"children_ids" yaml:"children_ids" bson:"children_ids"`
+	ChildrenIds []int32 `protobuf:"varint,4,rep,packed,name=children_ids,json=childrenIds,proto3" json:"children_ids,omitempty" bson:"children_ids" db:"children_ids" yaml:"children_ids"`
 	// 节点经纬度位置
-	Position *v2.Position `protobuf:"bytes,5,opt,name=position,proto3,oneof" json:"position,omitempty" yaml:"position" bson:"position" db:"position"`
+	Position *v2.Position `protobuf:"bytes,5,opt,name=position,proto3,oneof" json:"position,omitempty" bson:"position" db:"position" yaml:"position"`
 	// 节点所在aoi
 	AoiId *int32 `protobuf:"varint,6,opt,name=aoi_id,json=aoiId,proto3,oneof" json:"aoi_id,omitempty" bson:"aoi_id" db:"aoi_id" yaml:"aoi_id"`
 	// 基站频段id
-	FreqRangeId *int32 `protobuf:"varint,7,opt,name=freq_range_id,json=freqRangeId,proto3,oneof" json:"freq_range_id,omitempty" yaml:"freq_range_id" bson:"freq_range_id" db:"freq_range_id"`
+	FreqRangeId *int32 `protobuf:"varint,7,opt,name=freq_range_id,json=freqRangeId,proto3,oneof" json:"freq_range_id,omitempty" bson:"freq_range_id" db:"freq_range_id" yaml:"freq_range_id"`
 	// 室内外基站类型
-	BaseStationType *BaseStationType `protobuf:"varint,8,opt,name=base_station_type,json=baseStationType,proto3,enum=city.comm.input.v1.BaseStationType,oneof" json:"base_station_type,omitempty" yaml:"base_station_type" bson:"base_station_type" db:"base_station_type"`
+	BaseStationType *BaseStationType `protobuf:"varint,8,opt,name=base_station_type,json=baseStationType,proto3,enum=city.comm.input.v1.BaseStationType,oneof" json:"base_station_type,omitempty" bson:"base_station_type" db:"base_station_type" yaml:"base_station_type"`
 }
 
 func (x *Node) Reset() {
@@ -240,8 +240,8 @@ type RepairStation struct {
 	unknownFields protoimpl.UnknownFields
 
 	Id       int32        `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" bson:"id" db:"id" yaml:"id"`
-	AoiId    int32        `protobuf:"varint,2,opt,name=aoi_id,json=aoiId,proto3" json:"aoi_id,omitempty" yaml:"aoi_id" bson:"aoi_id" db:"aoi_id"`
-	Position *v2.Position `protobuf:"bytes,3,opt,name=position,proto3" json:"position,omitempty" yaml:"position" bson:"position" db:"position"`
+	AoiId    int32        `protobuf:"varint,2,opt,name=aoi_id,json=aoiId,proto3" json:"aoi_id,omitempty" bson:"aoi_id" db:"aoi_id" yaml:"aoi_id"`
+	Position *v2.Position `protobuf:"bytes,3,opt,name=position,proto3" json:"position,omitempty" bson:"position" db:"position" yaml:"position"`
 }
 
 func (x *RepairStation) Reset() {
@@ -303,7 +303,7 @@ type Pump struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Id       int32        `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
+	Id       int32        `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" bson:"id" db:"id" yaml:"id"`
 	Position *v2.Position `protobuf:"bytes,2,opt,name=position,proto3" json:"position,omitempty" bson:"position" db:"position" yaml:"position"`
 }
 
@@ -359,8 +359,8 @@ type CommDemand struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Id      int32     `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" db:"id" yaml:"id" bson:"id"`
-	Demands []float64 `protobuf:"fixed64,2,rep,packed,name=demands,proto3" json:"demands,omitempty" yaml:"demands" bson:"demands" db:"demands"`
+	Id      int32     `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" bson:"id" db:"id" yaml:"id"`
+	Demands []float64 `protobuf:"fixed64,2,rep,packed,name=demands,proto3" json:"demands,omitempty" bson:"demands" db:"demands" yaml:"demands"`
 }
 
 func (x *CommDemand) Reset() {
@@ -414,8 +414,8 @@ type Nodes struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Nodes          []*Node          `protobuf:"bytes,1,rep,name=nodes,proto3" json:"nodes,omitempty" yaml:"nodes" bson:"nodes" db:"nodes"`
-	RepairStations []*RepairStation `protobuf:"bytes,2,rep,name=repair_stations,json=repairStations,proto3" json:"repair_stations,omitempty" yaml:"repair_stations" bson:"repair_stations" db:"repair_stations"`
+	Nodes          []*Node          `protobuf:"bytes,1,rep,name=nodes,proto3" json:"nodes,omitempty" bson:"nodes" db:"nodes" yaml:"nodes"`
+	RepairStations []*RepairStation `protobuf:"bytes,2,rep,name=repair_stations,json=repairStations,proto3" json:"repair_stations,omitempty" bson:"repair_stations" db:"repair_stations" yaml:"repair_stations"`
 	Pumps          []*Pump          `protobuf:"bytes,3,rep,name=pumps,proto3" json:"pumps,omitempty" bson:"pumps" db:"pumps" yaml:"pumps"`
 }
 
@@ -477,7 +477,7 @@ type CommDemands struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	CommDemands []*CommDemand `protobuf:"bytes,1,rep,name=comm_demands,json=commDemands,proto3" json:"comm_demands,omitempty" db:"comm_demands" yaml:"comm_demands" bson:"comm_demands"`
+	CommDemands []*CommDemand `protobuf:"bytes,1,rep,name=comm_demands,json=commDemands,proto3" json:"comm_demands,omitempty" bson:"comm_demands" db:"comm_demands" yaml:"comm_demands"`
 }
 
 func (x *CommDemands) Reset() {
@@ -598,20 +598,20 @@ var file_city_comm_input_v1_comm_proto_rawDesc = []byte{
 	0x54, 0x41, 0x54, 0x49, 0x4f, 0x4e, 0x5f, 0x54, 0x59, 0x50, 0x45, 0x5f, 0x49, 0x4e, 0x44, 0x4f,
 	0x4f, 0x52, 0x10, 0x01, 0x12, 0x1d, 0x0a, 0x19, 0x42, 0x41, 0x53, 0x45, 0x5f, 0x53, 0x54, 0x41,
 	0x54, 0x49, 0x4f, 0x4e, 0x5f, 0x54, 0x59, 0x50, 0x45, 0x5f, 0x4f, 0x55, 0x54, 0x44, 0x4f, 0x4f,
-	0x52, 0x10, 0x02, 0x42, 0xc7, 0x01, 0x0a, 0x16, 0x63, 0x6f, 0x6d, 0x2e, 0x63, 0x69, 0x74, 0x79,
+	0x52, 0x10, 0x02, 0x42, 0xca, 0x01, 0x0a, 0x16, 0x63, 0x6f, 0x6d, 0x2e, 0x63, 0x69, 0x74, 0x79,
 	0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x2e, 0x69, 0x6e, 0x70, 0x75, 0x74, 0x2e, 0x76, 0x31, 0x42, 0x09,
-	0x43, 0x6f, 0x6d, 0x6d, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x37, 0x67, 0x69, 0x74,
+	0x43, 0x6f, 0x6d, 0x6d, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x3a, 0x67, 0x69, 0x74,
 	0x2e, 0x66, 0x69, 0x62, 0x6c, 0x61, 0x62, 0x2e, 0x6e, 0x65, 0x74, 0x2f, 0x73, 0x69, 0x6d, 0x2f,
-	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x73, 0x2f, 0x67, 0x6f, 0x2f, 0x63, 0x69, 0x74, 0x79, 0x2f, 0x63,
-	0x6f, 0x6d, 0x6d, 0x2f, 0x69, 0x6e, 0x70, 0x75, 0x74, 0x2f, 0x76, 0x31, 0x3b, 0x69, 0x6e, 0x70,
-	0x75, 0x74, 0x76, 0x31, 0xa2, 0x02, 0x03, 0x43, 0x43, 0x49, 0xaa, 0x02, 0x12, 0x43, 0x69, 0x74,
-	0x79, 0x2e, 0x43, 0x6f, 0x6d, 0x6d, 0x2e, 0x49, 0x6e, 0x70, 0x75, 0x74, 0x2e, 0x56, 0x31, 0xca,
-	0x02, 0x12, 0x43, 0x69, 0x74, 0x79, 0x5c, 0x43, 0x6f, 0x6d, 0x6d, 0x5c, 0x49, 0x6e, 0x70, 0x75,
-	0x74, 0x5c, 0x56, 0x31, 0xe2, 0x02, 0x1e, 0x43, 0x69, 0x74, 0x79, 0x5c, 0x43, 0x6f, 0x6d, 0x6d,
-	0x5c, 0x49, 0x6e, 0x70, 0x75, 0x74, 0x5c, 0x56, 0x31, 0x5c, 0x47, 0x50, 0x42, 0x4d, 0x65, 0x74,
-	0x61, 0x64, 0x61, 0x74, 0x61, 0xea, 0x02, 0x15, 0x43, 0x69, 0x74, 0x79, 0x3a, 0x3a, 0x43, 0x6f,
-	0x6d, 0x6d, 0x3a, 0x3a, 0x49, 0x6e, 0x70, 0x75, 0x74, 0x3a, 0x3a, 0x56, 0x31, 0x62, 0x06, 0x70,
-	0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x73, 0x2f, 0x76, 0x32, 0x2f, 0x67, 0x6f, 0x2f, 0x63, 0x69, 0x74,
+	0x79, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x2f, 0x69, 0x6e, 0x70, 0x75, 0x74, 0x2f, 0x76, 0x31, 0x3b,
+	0x69, 0x6e, 0x70, 0x75, 0x74, 0x76, 0x31, 0xa2, 0x02, 0x03, 0x43, 0x43, 0x49, 0xaa, 0x02, 0x12,
+	0x43, 0x69, 0x74, 0x79, 0x2e, 0x43, 0x6f, 0x6d, 0x6d, 0x2e, 0x49, 0x6e, 0x70, 0x75, 0x74, 0x2e,
+	0x56, 0x31, 0xca, 0x02, 0x12, 0x43, 0x69, 0x74, 0x79, 0x5c, 0x43, 0x6f, 0x6d, 0x6d, 0x5c, 0x49,
+	0x6e, 0x70, 0x75, 0x74, 0x5c, 0x56, 0x31, 0xe2, 0x02, 0x1e, 0x43, 0x69, 0x74, 0x79, 0x5c, 0x43,
+	0x6f, 0x6d, 0x6d, 0x5c, 0x49, 0x6e, 0x70, 0x75, 0x74, 0x5c, 0x56, 0x31, 0x5c, 0x47, 0x50, 0x42,
+	0x4d, 0x65, 0x74, 0x61, 0x64, 0x61, 0x74, 0x61, 0xea, 0x02, 0x15, 0x43, 0x69, 0x74, 0x79, 0x3a,
+	0x3a, 0x43, 0x6f, 0x6d, 0x6d, 0x3a, 0x3a, 0x49, 0x6e, 0x70, 0x75, 0x74, 0x3a, 0x3a, 0x56, 0x31,
+	0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (

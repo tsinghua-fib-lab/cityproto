@@ -197,12 +197,12 @@ const char descriptor_table_protodef_city_2frouting_2fv2_2frouting_5fservice_2ep
   "ng.v2.SetDrivingCostsResponse\022d\n\017GetDriv"
   "ingCosts\022\'.city.routing.v2.GetDrivingCos"
   "tsRequest\032(.city.routing.v2.GetDrivingCo"
-  "stsResponseB\300\001\n\023com.city.routing.v2B\023Rou"
-  "tingServiceProtoP\001Z6git.fiblab.net/sim/p"
-  "rotos/go/city/routing/v2;routingv2\242\002\003CRX"
-  "\252\002\017City.Routing.V2\312\002\017City\\Routing\\V2\342\002\033C"
-  "ity\\Routing\\V2\\GPBMetadata\352\002\021City::Routi"
-  "ng::V2b\006proto3"
+  "stsResponseB\303\001\n\023com.city.routing.v2B\023Rou"
+  "tingServiceProtoP\001Z9git.fiblab.net/sim/p"
+  "rotos/v2/go/city/routing/v2;routingv2\242\002\003"
+  "CRX\252\002\017City.Routing.V2\312\002\017City\\Routing\\V2\342"
+  "\002\033City\\Routing\\V2\\GPBMetadata\352\002\021City::Ro"
+  "uting::V2b\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_city_2frouting_2fv2_2frouting_5fservice_2eproto_deps[3] = {
   &::descriptor_table_city_2fgeo_2fv2_2fgeo_2eproto,
@@ -211,7 +211,7 @@ static const ::_pbi::DescriptorTable* const descriptor_table_city_2frouting_2fv2
 };
 static ::_pbi::once_flag descriptor_table_city_2frouting_2fv2_2frouting_5fservice_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2frouting_2fv2_2frouting_5fservice_2eproto = {
-    false, false, 1134, descriptor_table_protodef_city_2frouting_2fv2_2frouting_5fservice_2eproto,
+    false, false, 1137, descriptor_table_protodef_city_2frouting_2fv2_2frouting_5fservice_2eproto,
     "city/routing/v2/routing_service.proto",
     &descriptor_table_city_2frouting_2fv2_2frouting_5fservice_2eproto_once, descriptor_table_city_2frouting_2fv2_2frouting_5fservice_2eproto_deps, 3, 6,
     schemas, file_default_instances, TableStruct_city_2frouting_2fv2_2frouting_5fservice_2eproto::offsets,

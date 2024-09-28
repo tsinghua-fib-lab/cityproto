@@ -338,16 +338,16 @@ const char descriptor_table_protodef_city_2fcomm_2foutput_2fv1_2foutput_2eproto[
   "AND_STATUS_UNSPECIFIED\020\000\022\"\n\036PERSON_DEMAN"
   "D_STATUS_SATISFIED\020\001\022$\n PERSON_DEMAND_ST"
   "ATUS_UNSATISFIED\020\002\022\033\n\027PERSON_DEMAND_STAT"
-  "US_NO\020\003B\320\001\n\027com.city.comm.output.v1B\013Out"
-  "putProtoP\001Z9git.fiblab.net/sim/protos/go"
-  "/city/comm/output/v1;outputv1\242\002\003CCO\252\002\023Ci"
-  "ty.Comm.Output.V1\312\002\023City\\Comm\\Output\\V1\342"
-  "\002\037City\\Comm\\Output\\V1\\GPBMetadata\352\002\026City"
-  "::Comm::Output::V1b\006proto3"
+  "US_NO\020\003B\323\001\n\027com.city.comm.output.v1B\013Out"
+  "putProtoP\001Z<git.fiblab.net/sim/protos/v2"
+  "/go/city/comm/output/v1;outputv1\242\002\003CCO\252\002"
+  "\023City.Comm.Output.V1\312\002\023City\\Comm\\Output\\"
+  "V1\342\002\037City\\Comm\\Output\\V1\\GPBMetadata\352\002\026C"
+  "ity::Comm::Output::V1b\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_city_2fcomm_2foutput_2fv1_2foutput_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2fcomm_2foutput_2fv1_2foutput_2eproto = {
-    false, false, 2866, descriptor_table_protodef_city_2fcomm_2foutput_2fv1_2foutput_2eproto,
+    false, false, 2869, descriptor_table_protodef_city_2fcomm_2foutput_2fv1_2foutput_2eproto,
     "city/comm/output/v1/output.proto",
     &descriptor_table_city_2fcomm_2foutput_2fv1_2foutput_2eproto_once, nullptr, 0, 6,
     schemas, file_default_instances, TableStruct_city_2fcomm_2foutput_2fv1_2foutput_2eproto::offsets,

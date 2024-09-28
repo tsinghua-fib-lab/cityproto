@@ -394,17 +394,17 @@ const char descriptor_table_protodef_city_2felec_2finteraction_2fv1_2felec_5fser
   "1.GetRuinInfoResponse\022p\n\rGetEdgeStatus\022."
   ".city.elec.interaction.v1.GetEdgeStatusR"
   "equest\032/.city.elec.interaction.v1.GetEdg"
-  "eStatusResponseB\370\001\n\034com.city.elec.intera"
-  "ction.v1B\020ElecServiceProtoP\001ZCgit.fiblab"
-  ".net/sim/protos/go/city/elec/interaction"
-  "/v1;interactionv1\242\002\003CEI\252\002\030City.Elec.Inte"
-  "raction.V1\312\002\030City\\Elec\\Interaction\\V1\342\002$"
-  "City\\Elec\\Interaction\\V1\\GPBMetadata\352\002\033C"
-  "ity::Elec::Interaction::V1b\006proto3"
+  "eStatusResponseB\373\001\n\034com.city.elec.intera"
+  "ction.v1B\020ElecServiceProtoP\001ZFgit.fiblab"
+  ".net/sim/protos/v2/go/city/elec/interact"
+  "ion/v1;interactionv1\242\002\003CEI\252\002\030City.Elec.I"
+  "nteraction.V1\312\002\030City\\Elec\\Interaction\\V1"
+  "\342\002$City\\Elec\\Interaction\\V1\\GPBMetadata\352"
+  "\002\033City::Elec::Interaction::V1b\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto = {
-    false, false, 1874, descriptor_table_protodef_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto,
+    false, false, 1877, descriptor_table_protodef_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto,
     "city/elec/interaction/v1/elec_service.proto",
     &descriptor_table_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto_once, nullptr, 0, 14,
     schemas, file_default_instances, TableStruct_city_2felec_2finteraction_2fv1_2felec_5fservice_2eproto::offsets,

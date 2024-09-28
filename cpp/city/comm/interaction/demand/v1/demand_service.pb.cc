@@ -95,18 +95,18 @@ const char descriptor_table_protodef_city_2fcomm_2finteraction_2fdemand_2fv1_2fd
   "mandStatus\0227.city.comm.interaction.deman"
   "d.v1.SetDemandStatusRequest\0328.city.comm."
   "interaction.demand.v1.SetDemandStatusRes"
-  "ponseB\241\002\n#com.city.comm.interaction.dema"
-  "nd.v1B\022DemandServiceProtoP\001ZEgit.fiblab."
-  "net/sim/protos/go/city/comm/interaction/"
-  "demand/v1;demandv1\242\002\004CCID\252\002\037City.Comm.In"
-  "teraction.Demand.V1\312\002\037City\\Comm\\Interact"
-  "ion\\Demand\\V1\342\002+City\\Comm\\Interaction\\De"
-  "mand\\V1\\GPBMetadata\352\002#City::Comm::Intera"
-  "ction::Demand::V1b\006proto3"
+  "ponseB\244\002\n#com.city.comm.interaction.dema"
+  "nd.v1B\022DemandServiceProtoP\001ZHgit.fiblab."
+  "net/sim/protos/v2/go/city/comm/interacti"
+  "on/demand/v1;demandv1\242\002\004CCID\252\002\037City.Comm"
+  ".Interaction.Demand.V1\312\002\037City\\Comm\\Inter"
+  "action\\Demand\\V1\342\002+City\\Comm\\Interaction"
+  "\\Demand\\V1\\GPBMetadata\352\002#City::Comm::Int"
+  "eraction::Demand::V1b\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_city_2fcomm_2finteraction_2fdemand_2fv1_2fdemand_5fservice_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2fcomm_2finteraction_2fdemand_2fv1_2fdemand_5fservice_2eproto = {
-    false, false, 665, descriptor_table_protodef_city_2fcomm_2finteraction_2fdemand_2fv1_2fdemand_5fservice_2eproto,
+    false, false, 668, descriptor_table_protodef_city_2fcomm_2finteraction_2fdemand_2fv1_2fdemand_5fservice_2eproto,
     "city/comm/interaction/demand/v1/demand_service.proto",
     &descriptor_table_city_2fcomm_2finteraction_2fdemand_2fv1_2fdemand_5fservice_2eproto_once, nullptr, 0, 2,
     schemas, file_default_instances, TableStruct_city_2fcomm_2finteraction_2fdemand_2fv1_2fdemand_5fservice_2eproto::offsets,

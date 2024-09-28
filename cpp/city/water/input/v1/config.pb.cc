@@ -214,19 +214,19 @@ const char descriptor_table_protodef_city_2fwater_2finput_2fv1_2fconfig_2eproto[
   "water.input.v1.MongoR\005mongo\0226\n\007control\030\002"
   " \001(\0132\034.city.water.input.v1.ControlR\007cont"
   "rol\0223\n\006output\030\003 \001(\0132\033.city.water.input.v"
-  "1.OutputR\006outputB\317\001\n\027com.city.water.inpu"
-  "t.v1B\013ConfigProtoP\001Z8git.fiblab.net/sim/"
-  "protos/go/city/water/input/v1;inputv1\242\002\003"
-  "CWI\252\002\023City.Water.Input.V1\312\002\023City\\Water\\I"
-  "nput\\V1\342\002\037City\\Water\\Input\\V1\\GPBMetadat"
-  "a\352\002\026City::Water::Input::V1b\006proto3"
+  "1.OutputR\006outputB\322\001\n\027com.city.water.inpu"
+  "t.v1B\013ConfigProtoP\001Z;git.fiblab.net/sim/"
+  "protos/v2/go/city/water/input/v1;inputv1"
+  "\242\002\003CWI\252\002\023City.Water.Input.V1\312\002\023City\\Wate"
+  "r\\Input\\V1\342\002\037City\\Water\\Input\\V1\\GPBMeta"
+  "data\352\002\026City::Water::Input::V1b\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_city_2fwater_2finput_2fv1_2fconfig_2eproto_deps[1] = {
   &::descriptor_table_city_2fconfig_2fv1_2fconfig_2eproto,
 };
 static ::_pbi::once_flag descriptor_table_city_2fwater_2finput_2fv1_2fconfig_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2fwater_2finput_2fv1_2fconfig_2eproto = {
-    false, false, 994, descriptor_table_protodef_city_2fwater_2finput_2fv1_2fconfig_2eproto,
+    false, false, 997, descriptor_table_protodef_city_2fwater_2finput_2fv1_2fconfig_2eproto,
     "city/water/input/v1/config.proto",
     &descriptor_table_city_2fwater_2finput_2fv1_2fconfig_2eproto_once, descriptor_table_city_2fwater_2finput_2fv1_2fconfig_2eproto_deps, 1, 6,
     schemas, file_default_instances, TableStruct_city_2fwater_2finput_2fv1_2fconfig_2eproto::offsets,

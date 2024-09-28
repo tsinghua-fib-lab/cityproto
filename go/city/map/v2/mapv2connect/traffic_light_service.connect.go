@@ -8,7 +8,7 @@ import (
 	connect "connectrpc.com/connect"
 	context "context"
 	errors "errors"
-	v2 "git.fiblab.net/sim/protos/go/city/map/v2"
+	v2 "git.fiblab.net/sim/protos/v2/go/city/map/v2"
 	http "net/http"
 	strings "strings"
 )

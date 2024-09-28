@@ -118,19 +118,19 @@ const char descriptor_table_protodef_city_2fstreetview_2fv1_2fstreetview_2eproto
   ".streetview.v1.StreetViewImageR\006images\"P"
   "\n\013StreetViews\022A\n\014street_views\030\001 \003(\0132\036.ci"
   "ty.streetview.v1.StreetViewR\013streetViews"
-  "B\321\001\n\026com.city.streetview.v1B\017StreetviewP"
-  "rotoP\001Z<git.fiblab.net/sim/protos/go/cit"
-  "y/streetview/v1;streetviewv1\242\002\003CSX\252\002\022Cit"
-  "y.Streetview.V1\312\002\022City\\Streetview\\V1\342\002\036C"
-  "ity\\Streetview\\V1\\GPBMetadata\352\002\024City::St"
-  "reetview::V1b\006proto3"
+  "B\324\001\n\026com.city.streetview.v1B\017StreetviewP"
+  "rotoP\001Z\?git.fiblab.net/sim/protos/v2/go/"
+  "city/streetview/v1;streetviewv1\242\002\003CSX\252\002\022"
+  "City.Streetview.V1\312\002\022City\\Streetview\\V1\342"
+  "\002\036City\\Streetview\\V1\\GPBMetadata\352\002\024City:"
+  ":Streetview::V1b\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_city_2fstreetview_2fv1_2fstreetview_2eproto_deps[1] = {
   &::descriptor_table_city_2fgeo_2fv2_2fgeo_2eproto,
 };
 static ::_pbi::once_flag descriptor_table_city_2fstreetview_2fv1_2fstreetview_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2fstreetview_2fv1_2fstreetview_2eproto = {
-    false, false, 580, descriptor_table_protodef_city_2fstreetview_2fv1_2fstreetview_2eproto,
+    false, false, 583, descriptor_table_protodef_city_2fstreetview_2fv1_2fstreetview_2eproto,
     "city/streetview/v1/streetview.proto",
     &descriptor_table_city_2fstreetview_2fv1_2fstreetview_2eproto_once, descriptor_table_city_2fstreetview_2fv1_2fstreetview_2eproto_deps, 1, 3,
     schemas, file_default_instances, TableStruct_city_2fstreetview_2fv1_2fstreetview_2eproto::offsets,

@@ -7,8 +7,8 @@
 package personv2
 
 import (
-	v21 "git.fiblab.net/sim/protos/go/city/geo/v2"
-	v2 "git.fiblab.net/sim/protos/go/city/trip/v2"
+	v21 "git.fiblab.net/sim/protos/v2/go/city/geo/v2"
+	v2 "git.fiblab.net/sim/protos/v2/go/city/trip/v2"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -30,7 +30,7 @@ type GetPersonRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// person id
-	PersonId int32 `protobuf:"varint,1,opt,name=person_id,json=personId,proto3" json:"person_id,omitempty" yaml:"person_id" bson:"person_id" db:"person_id"`
+	PersonId int32 `protobuf:"varint,1,opt,name=person_id,json=personId,proto3" json:"person_id,omitempty" bson:"person_id" db:"person_id" yaml:"person_id"`
 }
 
 func (x *GetPersonRequest) Reset() {
@@ -79,7 +79,7 @@ type GetPersonResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Person *PersonRuntime `protobuf:"bytes,1,opt,name=person,proto3" json:"person,omitempty" yaml:"person" bson:"person" db:"person"`
+	Person *PersonRuntime `protobuf:"bytes,1,opt,name=person,proto3" json:"person,omitempty" bson:"person" db:"person" yaml:"person"`
 }
 
 func (x *GetPersonResponse) Reset() {
@@ -130,7 +130,7 @@ type AddPersonRequest struct {
 
 	// 约定：person中不设置id
 	// Convention: personid is not set here
-	Person *Person `protobuf:"bytes,1,opt,name=person,proto3" json:"person,omitempty" yaml:"person" bson:"person" db:"person"`
+	Person *Person `protobuf:"bytes,1,opt,name=person,proto3" json:"person,omitempty" bson:"person" db:"person" yaml:"person"`
 }
 
 func (x *AddPersonRequest) Reset() {
@@ -181,7 +181,7 @@ type AddPersonResponse struct {
 
 	// 新增的person分配得到的ID
 	// The ID assigned to the newly added person
-	PersonId int32 `protobuf:"varint,1,opt,name=person_id,json=personId,proto3" json:"person_id,omitempty" yaml:"person_id" bson:"person_id" db:"person_id"`
+	PersonId int32 `protobuf:"varint,1,opt,name=person_id,json=personId,proto3" json:"person_id,omitempty" bson:"person_id" db:"person_id" yaml:"person_id"`
 }
 
 func (x *AddPersonResponse) Reset() {
@@ -231,10 +231,10 @@ type SetScheduleRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// person id
-	PersonId int32 `protobuf:"varint,1,opt,name=person_id,json=personId,proto3" json:"person_id,omitempty" yaml:"person_id" bson:"person_id" db:"person_id"`
+	PersonId int32 `protobuf:"varint,1,opt,name=person_id,json=personId,proto3" json:"person_id,omitempty" bson:"person_id" db:"person_id" yaml:"person_id"`
 	// 新的schedule（覆盖原有的schedule）
 	// New schedule (overwrites the original schedule)
-	Schedules []*v2.Schedule `protobuf:"bytes,2,rep,name=schedules,proto3" json:"schedules,omitempty" yaml:"schedules" bson:"schedules" db:"schedules"`
+	Schedules []*v2.Schedule `protobuf:"bytes,2,rep,name=schedules,proto3" json:"schedules,omitempty" bson:"schedules" db:"schedules" yaml:"schedules"`
 }
 
 func (x *SetScheduleRequest) Reset() {
@@ -332,10 +332,10 @@ type GetPersonsRequest struct {
 
 	// person id列表，为空则返回所有person
 	// List of person ids, return all persons if empty
-	PersonIds []int32 `protobuf:"varint,1,rep,packed,name=person_ids,json=personIds,proto3" json:"person_ids,omitempty" yaml:"person_ids" bson:"person_ids" db:"person_ids"`
+	PersonIds []int32 `protobuf:"varint,1,rep,packed,name=person_ids,json=personIds,proto3" json:"person_ids,omitempty" bson:"person_ids" db:"person_ids" yaml:"person_ids"`
 	// 过滤人的状态（状态为列表内的值的人不返回），即使包含在person_ids中
 	// Filter person's status (person whose status is in the list will not be returned), even if included in person_ids
-	ExcludeStatuses []Status `protobuf:"varint,2,rep,packed,name=exclude_statuses,json=excludeStatuses,proto3,enum=city.person.v2.Status" json:"exclude_statuses,omitempty" yaml:"exclude_statuses" bson:"exclude_statuses" db:"exclude_statuses"`
+	ExcludeStatuses []Status `protobuf:"varint,2,rep,packed,name=exclude_statuses,json=excludeStatuses,proto3,enum=city.person.v2.Status" json:"exclude_statuses,omitempty" bson:"exclude_statuses" db:"exclude_statuses" yaml:"exclude_statuses"`
 	// 设置是否返回base信息
 	// Set whether to return base information
 	ReturnBase bool `protobuf:"varint,3,opt,name=return_base,json=returnBase,proto3" json:"return_base,omitempty" bson:"return_base" db:"return_base" yaml:"return_base"`
@@ -403,7 +403,7 @@ type GetPersonsResponse struct {
 
 	// person信息
 	// person information
-	Persons []*PersonRuntime `protobuf:"bytes,1,rep,name=persons,proto3" json:"persons,omitempty" db:"persons" yaml:"persons" bson:"persons"`
+	Persons []*PersonRuntime `protobuf:"bytes,1,rep,name=persons,proto3" json:"persons,omitempty" bson:"persons" db:"persons" yaml:"persons"`
 }
 
 func (x *GetPersonsResponse) Reset() {
@@ -454,13 +454,13 @@ type GetPersonByLongLatBBoxRequest struct {
 
 	// 经纬度范围
 	// longitude and latitude bounding box
-	Bbox *v21.LongLatBBox `protobuf:"bytes,1,opt,name=bbox,proto3" json:"bbox,omitempty" yaml:"bbox" bson:"bbox" db:"bbox"`
+	Bbox *v21.LongLatBBox `protobuf:"bytes,1,opt,name=bbox,proto3" json:"bbox,omitempty" bson:"bbox" db:"bbox" yaml:"bbox"`
 	// 过滤人的状态（状态为列表内的值的人不返回）
 	// Filter person's status (person whose status is in the list will not be returned)
 	ExcludeStatuses []Status `protobuf:"varint,2,rep,packed,name=exclude_statuses,json=excludeStatuses,proto3,enum=city.person.v2.Status" json:"exclude_statuses,omitempty" bson:"exclude_statuses" db:"exclude_statuses" yaml:"exclude_statuses"`
 	// 设置是否返回base信息
 	// Set whether to return base information
-	ReturnBase bool `protobuf:"varint,3,opt,name=return_base,json=returnBase,proto3" json:"return_base,omitempty" yaml:"return_base" bson:"return_base" db:"return_base"`
+	ReturnBase bool `protobuf:"varint,3,opt,name=return_base,json=returnBase,proto3" json:"return_base,omitempty" bson:"return_base" db:"return_base" yaml:"return_base"`
 }
 
 func (x *GetPersonByLongLatBBoxRequest) Reset() {
@@ -525,7 +525,7 @@ type GetPersonByLongLatBBoxResponse struct {
 
 	// 区域内的person的信息
 	// Information of persons in the region
-	Persons []*PersonRuntime `protobuf:"bytes,1,rep,name=persons,proto3" json:"persons,omitempty" yaml:"persons" bson:"persons" db:"persons"`
+	Persons []*PersonRuntime `protobuf:"bytes,1,rep,name=persons,proto3" json:"persons,omitempty" bson:"persons" db:"persons" yaml:"persons"`
 }
 
 func (x *GetPersonByLongLatBBoxResponse) Reset() {
@@ -616,7 +616,7 @@ type GetAllVehiclesResponse struct {
 
 	// 所有车辆的信息
 	// Information of all vehicles
-	Vehicles []*VehicleRuntime `protobuf:"bytes,1,rep,name=vehicles,proto3" json:"vehicles,omitempty" yaml:"vehicles" bson:"vehicles" db:"vehicles"`
+	Vehicles []*VehicleRuntime `protobuf:"bytes,1,rep,name=vehicles,proto3" json:"vehicles,omitempty" bson:"vehicles" db:"vehicles" yaml:"vehicles"`
 }
 
 func (x *GetAllVehiclesResponse) Reset() {
@@ -666,10 +666,10 @@ type ResetPersonPositionRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// person id
-	PersonId int32 `protobuf:"varint,1,opt,name=person_id,json=personId,proto3" json:"person_id,omitempty" yaml:"person_id" bson:"person_id" db:"person_id"`
+	PersonId int32 `protobuf:"varint,1,opt,name=person_id,json=personId,proto3" json:"person_id,omitempty" bson:"person_id" db:"person_id" yaml:"person_id"`
 	// 重置位置
 	// reset position
-	Position *v21.Position `protobuf:"bytes,2,opt,name=position,proto3" json:"position,omitempty" yaml:"position" bson:"position" db:"position"`
+	Position *v21.Position `protobuf:"bytes,2,opt,name=position,proto3" json:"position,omitempty" bson:"position" db:"position" yaml:"position"`
 }
 
 func (x *ResetPersonPositionRequest) Reset() {
@@ -767,7 +767,7 @@ type SetControlledVehicleIDsRequest struct {
 
 	// 由外部控制行为的vehicle id列表
 	// List of vehicle ids controlled by external behavior
-	VehicleIds []int32 `protobuf:"varint,1,rep,packed,name=vehicle_ids,json=vehicleIds,proto3" json:"vehicle_ids,omitempty" yaml:"vehicle_ids" bson:"vehicle_ids" db:"vehicle_ids"`
+	VehicleIds []int32 `protobuf:"varint,1,rep,packed,name=vehicle_ids,json=vehicleIds,proto3" json:"vehicle_ids,omitempty" bson:"vehicle_ids" db:"vehicle_ids" yaml:"vehicle_ids"`
 }
 
 func (x *SetControlledVehicleIDsRequest) Reset() {
@@ -898,7 +898,7 @@ type FetchControlledVehicleEnvsResponse struct {
 
 	// 由外部控制行为的vehicle信息
 	// Information of vehicle controlled by external behavior
-	VehicleEnvs []*VehicleEnv `protobuf:"bytes,1,rep,name=vehicle_envs,json=vehicleEnvs,proto3" json:"vehicle_envs,omitempty" yaml:"vehicle_envs" bson:"vehicle_envs" db:"vehicle_envs"`
+	VehicleEnvs []*VehicleEnv `protobuf:"bytes,1,rep,name=vehicle_envs,json=vehicleEnvs,proto3" json:"vehicle_envs,omitempty" bson:"vehicle_envs" db:"vehicle_envs" yaml:"vehicle_envs"`
 }
 
 func (x *FetchControlledVehicleEnvsResponse) Reset() {
@@ -949,7 +949,7 @@ type SetControlledVehicleActionsRequest struct {
 
 	// 由外部控制行为的vehicle的行为
 	// Behavior of vehicle controlled by external behavior
-	VehicleActions []*VehicleAction `protobuf:"bytes,1,rep,name=vehicle_actions,json=vehicleActions,proto3" json:"vehicle_actions,omitempty" yaml:"vehicle_actions" bson:"vehicle_actions" db:"vehicle_actions"`
+	VehicleActions []*VehicleAction `protobuf:"bytes,1,rep,name=vehicle_actions,json=vehicleActions,proto3" json:"vehicle_actions,omitempty" bson:"vehicle_actions" db:"vehicle_actions" yaml:"vehicle_actions"`
 }
 
 func (x *SetControlledVehicleActionsRequest) Reset() {
@@ -1210,19 +1210,19 @@ var file_city_person_v2_person_service_proto_rawDesc = []byte{
 	0x1a, 0x33, 0x2e, 0x63, 0x69, 0x74, 0x79, 0x2e, 0x70, 0x65, 0x72, 0x73, 0x6f, 0x6e, 0x2e, 0x76,
 	0x32, 0x2e, 0x53, 0x65, 0x74, 0x43, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x6c, 0x65, 0x64, 0x56,
 	0x65, 0x68, 0x69, 0x63, 0x6c, 0x65, 0x41, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x52, 0x65, 0x73,
-	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x42, 0xb8, 0x01, 0x0a, 0x12, 0x63, 0x6f, 0x6d, 0x2e, 0x63, 0x69,
+	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x42, 0xbb, 0x01, 0x0a, 0x12, 0x63, 0x6f, 0x6d, 0x2e, 0x63, 0x69,
 	0x74, 0x79, 0x2e, 0x70, 0x65, 0x72, 0x73, 0x6f, 0x6e, 0x2e, 0x76, 0x32, 0x42, 0x12, 0x50, 0x65,
 	0x72, 0x73, 0x6f, 0x6e, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x50, 0x72, 0x6f, 0x74, 0x6f,
-	0x50, 0x01, 0x5a, 0x34, 0x67, 0x69, 0x74, 0x2e, 0x66, 0x69, 0x62, 0x6c, 0x61, 0x62, 0x2e, 0x6e,
-	0x65, 0x74, 0x2f, 0x73, 0x69, 0x6d, 0x2f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x73, 0x2f, 0x67, 0x6f,
-	0x2f, 0x63, 0x69, 0x74, 0x79, 0x2f, 0x70, 0x65, 0x72, 0x73, 0x6f, 0x6e, 0x2f, 0x76, 0x32, 0x3b,
-	0x70, 0x65, 0x72, 0x73, 0x6f, 0x6e, 0x76, 0x32, 0xa2, 0x02, 0x03, 0x43, 0x50, 0x58, 0xaa, 0x02,
-	0x0e, 0x43, 0x69, 0x74, 0x79, 0x2e, 0x50, 0x65, 0x72, 0x73, 0x6f, 0x6e, 0x2e, 0x56, 0x32, 0xca,
-	0x02, 0x0e, 0x43, 0x69, 0x74, 0x79, 0x5c, 0x50, 0x65, 0x72, 0x73, 0x6f, 0x6e, 0x5c, 0x56, 0x32,
-	0xe2, 0x02, 0x1a, 0x43, 0x69, 0x74, 0x79, 0x5c, 0x50, 0x65, 0x72, 0x73, 0x6f, 0x6e, 0x5c, 0x56,
-	0x32, 0x5c, 0x47, 0x50, 0x42, 0x4d, 0x65, 0x74, 0x61, 0x64, 0x61, 0x74, 0x61, 0xea, 0x02, 0x10,
-	0x43, 0x69, 0x74, 0x79, 0x3a, 0x3a, 0x50, 0x65, 0x72, 0x73, 0x6f, 0x6e, 0x3a, 0x3a, 0x56, 0x32,
-	0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x50, 0x01, 0x5a, 0x37, 0x67, 0x69, 0x74, 0x2e, 0x66, 0x69, 0x62, 0x6c, 0x61, 0x62, 0x2e, 0x6e,
+	0x65, 0x74, 0x2f, 0x73, 0x69, 0x6d, 0x2f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x73, 0x2f, 0x76, 0x32,
+	0x2f, 0x67, 0x6f, 0x2f, 0x63, 0x69, 0x74, 0x79, 0x2f, 0x70, 0x65, 0x72, 0x73, 0x6f, 0x6e, 0x2f,
+	0x76, 0x32, 0x3b, 0x70, 0x65, 0x72, 0x73, 0x6f, 0x6e, 0x76, 0x32, 0xa2, 0x02, 0x03, 0x43, 0x50,
+	0x58, 0xaa, 0x02, 0x0e, 0x43, 0x69, 0x74, 0x79, 0x2e, 0x50, 0x65, 0x72, 0x73, 0x6f, 0x6e, 0x2e,
+	0x56, 0x32, 0xca, 0x02, 0x0e, 0x43, 0x69, 0x74, 0x79, 0x5c, 0x50, 0x65, 0x72, 0x73, 0x6f, 0x6e,
+	0x5c, 0x56, 0x32, 0xe2, 0x02, 0x1a, 0x43, 0x69, 0x74, 0x79, 0x5c, 0x50, 0x65, 0x72, 0x73, 0x6f,
+	0x6e, 0x5c, 0x56, 0x32, 0x5c, 0x47, 0x50, 0x42, 0x4d, 0x65, 0x74, 0x61, 0x64, 0x61, 0x74, 0x61,
+	0xea, 0x02, 0x10, 0x43, 0x69, 0x74, 0x79, 0x3a, 0x3a, 0x50, 0x65, 0x72, 0x73, 0x6f, 0x6e, 0x3a,
+	0x3a, 0x56, 0x32, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (

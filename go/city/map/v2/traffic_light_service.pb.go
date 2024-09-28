@@ -29,7 +29,7 @@ type GetTrafficLightRequest struct {
 
 	// 信号等相关的接口精确到junction
 	// The interfaces related to signals are precise to junction
-	JunctionId int32 `protobuf:"varint,1,opt,name=junction_id,json=junctionId,proto3" json:"junction_id,omitempty" yaml:"junction_id" bson:"junction_id" db:"junction_id"`
+	JunctionId int32 `protobuf:"varint,1,opt,name=junction_id,json=junctionId,proto3" json:"junction_id,omitempty" bson:"junction_id" db:"junction_id" yaml:"junction_id"`
 }
 
 func (x *GetTrafficLightRequest) Reset() {
@@ -80,13 +80,13 @@ type GetTrafficLightResponse struct {
 
 	// 当前路口处的红绿灯
 	// The traffic light at the junction
-	TrafficLight *TrafficLight `protobuf:"bytes,1,opt,name=traffic_light,json=trafficLight,proto3" json:"traffic_light,omitempty" yaml:"traffic_light" bson:"traffic_light" db:"traffic_light"`
+	TrafficLight *TrafficLight `protobuf:"bytes,1,opt,name=traffic_light,json=trafficLight,proto3" json:"traffic_light,omitempty" bson:"traffic_light" db:"traffic_light" yaml:"traffic_light"`
 	// 表示当前路口处的红绿灯处于哪一个相位
 	// Which phase the traffic light is currently in
-	PhaseIndex int32 `protobuf:"varint,2,opt,name=phase_index,json=phaseIndex,proto3" json:"phase_index,omitempty" yaml:"phase_index" bson:"phase_index" db:"phase_index"`
+	PhaseIndex int32 `protobuf:"varint,2,opt,name=phase_index,json=phaseIndex,proto3" json:"phase_index,omitempty" bson:"phase_index" db:"phase_index" yaml:"phase_index"`
 	// 当前相位的剩余时间
 	// The remaining time of the current phase
-	TimeRemaining float64 `protobuf:"fixed64,3,opt,name=time_remaining,json=timeRemaining,proto3" json:"time_remaining,omitempty" yaml:"time_remaining" bson:"time_remaining" db:"time_remaining"`
+	TimeRemaining float64 `protobuf:"fixed64,3,opt,name=time_remaining,json=timeRemaining,proto3" json:"time_remaining,omitempty" bson:"time_remaining" db:"time_remaining" yaml:"time_remaining"`
 }
 
 func (x *GetTrafficLightResponse) Reset() {
@@ -151,10 +151,10 @@ type SetTrafficLightRequest struct {
 
 	// 需要改变的红绿灯（含路口编号）
 	// The target traffic light (including junction ID)
-	TrafficLight *TrafficLight `protobuf:"bytes,1,opt,name=traffic_light,json=trafficLight,proto3" json:"traffic_light,omitempty" yaml:"traffic_light" bson:"traffic_light" db:"traffic_light"`
+	TrafficLight *TrafficLight `protobuf:"bytes,1,opt,name=traffic_light,json=trafficLight,proto3" json:"traffic_light,omitempty" bson:"traffic_light" db:"traffic_light" yaml:"traffic_light"`
 	// 指定当前路口处的红绿灯的相位
 	// Specify the phase of the traffic light
-	PhaseIndex int32 `protobuf:"varint,2,opt,name=phase_index,json=phaseIndex,proto3" json:"phase_index,omitempty" yaml:"phase_index" bson:"phase_index" db:"phase_index"`
+	PhaseIndex int32 `protobuf:"varint,2,opt,name=phase_index,json=phaseIndex,proto3" json:"phase_index,omitempty" bson:"phase_index" db:"phase_index" yaml:"phase_index"`
 	// 当前相位的剩余时间
 	// The remaining time of the current phase
 	TimeRemaining float64 `protobuf:"fixed64,3,opt,name=time_remaining,json=timeRemaining,proto3" json:"time_remaining,omitempty" bson:"time_remaining" db:"time_remaining" yaml:"time_remaining"`
@@ -262,13 +262,13 @@ type SetTrafficLightPhaseRequest struct {
 
 	// 需要改变相位的路口编号
 	// The target junction ID
-	JunctionId int32 `protobuf:"varint,1,opt,name=junction_id,json=junctionId,proto3" json:"junction_id,omitempty" yaml:"junction_id" bson:"junction_id" db:"junction_id"`
+	JunctionId int32 `protobuf:"varint,1,opt,name=junction_id,json=junctionId,proto3" json:"junction_id,omitempty" bson:"junction_id" db:"junction_id" yaml:"junction_id"`
 	// 指定当前路口红绿灯的相位
 	// Specify the traffic light phase
-	PhaseIndex int32 `protobuf:"varint,2,opt,name=phase_index,json=phaseIndex,proto3" json:"phase_index,omitempty" yaml:"phase_index" bson:"phase_index" db:"phase_index"`
+	PhaseIndex int32 `protobuf:"varint,2,opt,name=phase_index,json=phaseIndex,proto3" json:"phase_index,omitempty" bson:"phase_index" db:"phase_index" yaml:"phase_index"`
 	// 当前相位的剩余时间
 	// The remaining time of the current phase
-	TimeRemaining float64 `protobuf:"fixed64,3,opt,name=time_remaining,json=timeRemaining,proto3" json:"time_remaining,omitempty" yaml:"time_remaining" bson:"time_remaining" db:"time_remaining"`
+	TimeRemaining float64 `protobuf:"fixed64,3,opt,name=time_remaining,json=timeRemaining,proto3" json:"time_remaining,omitempty" bson:"time_remaining" db:"time_remaining" yaml:"time_remaining"`
 }
 
 func (x *SetTrafficLightPhaseRequest) Reset() {
@@ -373,10 +373,10 @@ type SetTrafficLightStatusRequest struct {
 
 	// 需要改变状态的路口编号
 	// The target junction ID
-	JunctionId int32 `protobuf:"varint,1,opt,name=junction_id,json=junctionId,proto3" json:"junction_id,omitempty" yaml:"junction_id" bson:"junction_id" db:"junction_id"`
+	JunctionId int32 `protobuf:"varint,1,opt,name=junction_id,json=junctionId,proto3" json:"junction_id,omitempty" bson:"junction_id" db:"junction_id" yaml:"junction_id"`
 	// 当前路口红绿灯状态，true为通，false为断
 	// The current traffic light status at the junction, true is on, false is off
-	Ok bool `protobuf:"varint,2,opt,name=ok,proto3" json:"ok,omitempty" yaml:"ok" bson:"ok" db:"ok"`
+	Ok bool `protobuf:"varint,2,opt,name=ok,proto3" json:"ok,omitempty" bson:"ok" db:"ok" yaml:"ok"`
 }
 
 func (x *SetTrafficLightStatusRequest) Reset() {
@@ -543,18 +543,18 @@ var file_city_map_v2_traffic_light_service_proto_rawDesc = []byte{
 	0x74, 0x61, 0x74, 0x75, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2a, 0x2e, 0x63,
 	0x69, 0x74, 0x79, 0x2e, 0x6d, 0x61, 0x70, 0x2e, 0x76, 0x32, 0x2e, 0x53, 0x65, 0x74, 0x54, 0x72,
 	0x61, 0x66, 0x66, 0x69, 0x63, 0x4c, 0x69, 0x67, 0x68, 0x74, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73,
-	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x42, 0xa9, 0x01, 0x0a, 0x0f, 0x63, 0x6f, 0x6d,
+	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x42, 0xac, 0x01, 0x0a, 0x0f, 0x63, 0x6f, 0x6d,
 	0x2e, 0x63, 0x69, 0x74, 0x79, 0x2e, 0x6d, 0x61, 0x70, 0x2e, 0x76, 0x32, 0x42, 0x18, 0x54, 0x72,
 	0x61, 0x66, 0x66, 0x69, 0x63, 0x4c, 0x69, 0x67, 0x68, 0x74, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63,
-	0x65, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x2e, 0x67, 0x69, 0x74, 0x2e, 0x66, 0x69,
+	0x65, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x31, 0x67, 0x69, 0x74, 0x2e, 0x66, 0x69,
 	0x62, 0x6c, 0x61, 0x62, 0x2e, 0x6e, 0x65, 0x74, 0x2f, 0x73, 0x69, 0x6d, 0x2f, 0x70, 0x72, 0x6f,
-	0x74, 0x6f, 0x73, 0x2f, 0x67, 0x6f, 0x2f, 0x63, 0x69, 0x74, 0x79, 0x2f, 0x6d, 0x61, 0x70, 0x2f,
-	0x76, 0x32, 0x3b, 0x6d, 0x61, 0x70, 0x76, 0x32, 0xa2, 0x02, 0x03, 0x43, 0x4d, 0x58, 0xaa, 0x02,
-	0x0b, 0x43, 0x69, 0x74, 0x79, 0x2e, 0x4d, 0x61, 0x70, 0x2e, 0x56, 0x32, 0xca, 0x02, 0x0b, 0x43,
-	0x69, 0x74, 0x79, 0x5c, 0x4d, 0x61, 0x70, 0x5c, 0x56, 0x32, 0xe2, 0x02, 0x17, 0x43, 0x69, 0x74,
-	0x79, 0x5c, 0x4d, 0x61, 0x70, 0x5c, 0x56, 0x32, 0x5c, 0x47, 0x50, 0x42, 0x4d, 0x65, 0x74, 0x61,
-	0x64, 0x61, 0x74, 0x61, 0xea, 0x02, 0x0d, 0x43, 0x69, 0x74, 0x79, 0x3a, 0x3a, 0x4d, 0x61, 0x70,
-	0x3a, 0x3a, 0x56, 0x32, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x74, 0x6f, 0x73, 0x2f, 0x76, 0x32, 0x2f, 0x67, 0x6f, 0x2f, 0x63, 0x69, 0x74, 0x79, 0x2f, 0x6d,
+	0x61, 0x70, 0x2f, 0x76, 0x32, 0x3b, 0x6d, 0x61, 0x70, 0x76, 0x32, 0xa2, 0x02, 0x03, 0x43, 0x4d,
+	0x58, 0xaa, 0x02, 0x0b, 0x43, 0x69, 0x74, 0x79, 0x2e, 0x4d, 0x61, 0x70, 0x2e, 0x56, 0x32, 0xca,
+	0x02, 0x0b, 0x43, 0x69, 0x74, 0x79, 0x5c, 0x4d, 0x61, 0x70, 0x5c, 0x56, 0x32, 0xe2, 0x02, 0x17,
+	0x43, 0x69, 0x74, 0x79, 0x5c, 0x4d, 0x61, 0x70, 0x5c, 0x56, 0x32, 0x5c, 0x47, 0x50, 0x42, 0x4d,
+	0x65, 0x74, 0x61, 0x64, 0x61, 0x74, 0x61, 0xea, 0x02, 0x0d, 0x43, 0x69, 0x74, 0x79, 0x3a, 0x3a,
+	0x4d, 0x61, 0x70, 0x3a, 0x3a, 0x56, 0x32, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (

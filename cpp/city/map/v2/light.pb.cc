@@ -120,16 +120,16 @@ const char descriptor_table_protodef_city_2fmap_2fv2_2flight_2eproto[] PROTOBUF_
   "\022*\n\006phases\030\002 \003(\0132\022.city.map.v2.PhaseR\006ph"
   "ases*m\n\nLightState\022\033\n\027LIGHT_STATE_UNSPEC"
   "IFIED\020\000\022\023\n\017LIGHT_STATE_RED\020\001\022\025\n\021LIGHT_ST"
-  "ATE_GREEN\020\002\022\026\n\022LIGHT_STATE_YELLOW\020\003B\233\001\n\017"
-  "com.city.map.v2B\nLightProtoP\001Z.git.fibla"
-  "b.net/sim/protos/go/city/map/v2;mapv2\242\002\003"
-  "CMX\252\002\013City.Map.V2\312\002\013City\\Map\\V2\342\002\027City\\M"
-  "ap\\V2\\GPBMetadata\352\002\rCity::Map::V2b\006proto"
-  "3"
+  "ATE_GREEN\020\002\022\026\n\022LIGHT_STATE_YELLOW\020\003B\236\001\n\017"
+  "com.city.map.v2B\nLightProtoP\001Z1git.fibla"
+  "b.net/sim/protos/v2/go/city/map/v2;mapv2"
+  "\242\002\003CMX\252\002\013City.Map.V2\312\002\013City\\Map\\V2\342\002\027Cit"
+  "y\\Map\\V2\\GPBMetadata\352\002\rCity::Map::V2b\006pr"
+  "oto3"
   ;
 static ::_pbi::once_flag descriptor_table_city_2fmap_2fv2_2flight_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2fmap_2fv2_2flight_2eproto = {
-    false, false, 561, descriptor_table_protodef_city_2fmap_2fv2_2flight_2eproto,
+    false, false, 564, descriptor_table_protodef_city_2fmap_2fv2_2flight_2eproto,
     "city/map/v2/light.proto",
     &descriptor_table_city_2fmap_2fv2_2flight_2eproto_once, nullptr, 0, 3,
     schemas, file_default_instances, TableStruct_city_2fmap_2fv2_2flight_2eproto::offsets,

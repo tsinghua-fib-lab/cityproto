@@ -76,12 +76,12 @@ const char descriptor_table_protodef_city_2fperson_2fv2_2fperson_5fruntime_2epro
   "base\030\001 \001(\0132\026.city.person.v2.PersonH\000R\004ba"
   "se\210\001\001\0224\n\006motion\030\002 \001(\0132\034.city.person.v2.P"
   "ersonMotionR\006motion\022,\n\006events\030\003 \003(\0132\024.ci"
-  "ty.event.v2.EventR\006eventsB\007\n\005_baseB\270\001\n\022c"
+  "ty.event.v2.EventR\006eventsB\007\n\005_baseB\273\001\n\022c"
   "om.city.person.v2B\022PersonRuntimeProtoP\001Z"
-  "4git.fiblab.net/sim/protos/go/city/perso"
-  "n/v2;personv2\242\002\003CPX\252\002\016City.Person.V2\312\002\016C"
-  "ity\\Person\\V2\342\002\032City\\Person\\V2\\GPBMetada"
-  "ta\352\002\020City::Person::V2b\006proto3"
+  "7git.fiblab.net/sim/protos/v2/go/city/pe"
+  "rson/v2;personv2\242\002\003CPX\252\002\016City.Person.V2\312"
+  "\002\016City\\Person\\V2\342\002\032City\\Person\\V2\\GPBMet"
+  "adata\352\002\020City::Person::V2b\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_city_2fperson_2fv2_2fperson_5fruntime_2eproto_deps[3] = {
   &::descriptor_table_city_2fevent_2fv2_2fevent_2eproto,
@@ -90,7 +90,7 @@ static const ::_pbi::DescriptorTable* const descriptor_table_city_2fperson_2fv2_
 };
 static ::_pbi::once_flag descriptor_table_city_2fperson_2fv2_2fperson_5fruntime_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2fperson_2fv2_2fperson_5fruntime_2eproto = {
-    false, false, 509, descriptor_table_protodef_city_2fperson_2fv2_2fperson_5fruntime_2eproto,
+    false, false, 512, descriptor_table_protodef_city_2fperson_2fv2_2fperson_5fruntime_2eproto,
     "city/person/v2/person_runtime.proto",
     &descriptor_table_city_2fperson_2fv2_2fperson_5fruntime_2eproto_once, descriptor_table_city_2fperson_2fv2_2fperson_5fruntime_2eproto_deps, 3, 1,
     schemas, file_default_instances, TableStruct_city_2fperson_2fv2_2fperson_5fruntime_2eproto::offsets,

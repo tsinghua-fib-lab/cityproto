@@ -158,19 +158,19 @@ const char descriptor_table_protodef_city_2felec_2finput_2fv1_2finput_2eproto[] 
   "_GATEWAY\020\007\022\037\n\033FACILITY_TYPE_DRAINAGE_PUM"
   "P\020\010\022\037\n\033FACILITY_TYPE_TRAFFIC_LIGHT\020\t\022\025\n\021"
   "FACILITY_TYPE_AOI\020\n\022\035\n\031FACILITY_TYPE_SUP"
-  "PLY_PUMP\020\013B\310\001\n\026com.city.elec.input.v1B\nI"
-  "nputProtoP\001Z7git.fiblab.net/sim/protos/g"
-  "o/city/elec/input/v1;inputv1\242\002\003CEI\252\002\022Cit"
-  "y.Elec.Input.V1\312\002\022City\\Elec\\Input\\V1\342\002\036C"
-  "ity\\Elec\\Input\\V1\\GPBMetadata\352\002\025City::El"
-  "ec::Input::V1b\006proto3"
+  "PLY_PUMP\020\013B\313\001\n\026com.city.elec.input.v1B\nI"
+  "nputProtoP\001Z:git.fiblab.net/sim/protos/v"
+  "2/go/city/elec/input/v1;inputv1\242\002\003CEI\252\002\022"
+  "City.Elec.Input.V1\312\002\022City\\Elec\\Input\\V1\342"
+  "\002\036City\\Elec\\Input\\V1\\GPBMetadata\352\002\025City:"
+  ":Elec::Input::V1b\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_city_2felec_2finput_2fv1_2finput_2eproto_deps[1] = {
   &::descriptor_table_city_2fgeo_2fv2_2fgeo_2eproto,
 };
 static ::_pbi::once_flag descriptor_table_city_2felec_2finput_2fv1_2finput_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2felec_2finput_2fv1_2finput_2eproto = {
-    false, false, 1261, descriptor_table_protodef_city_2felec_2finput_2fv1_2finput_2eproto,
+    false, false, 1264, descriptor_table_protodef_city_2felec_2finput_2fv1_2finput_2eproto,
     "city/elec/input/v1/input.proto",
     &descriptor_table_city_2felec_2finput_2fv1_2finput_2eproto_once, descriptor_table_city_2felec_2finput_2fv1_2finput_2eproto_deps, 1, 3,
     schemas, file_default_instances, TableStruct_city_2felec_2finput_2fv1_2finput_2eproto::offsets,

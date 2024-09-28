@@ -232,15 +232,15 @@ const char descriptor_table_protodef_city_2fgeo_2fv2_2fgeo_2eproto[] PROTOBUF_SE
   "n_longitude\030\001 \001(\001R\014minLongitude\022!\n\014min_l"
   "atitude\030\002 \001(\001R\013minLatitude\022#\n\rmax_longit"
   "ude\030\003 \001(\001R\014maxLongitude\022!\n\014max_latitude\030"
-  "\004 \001(\001R\013maxLatitudeB\231\001\n\017com.city.geo.v2B\010"
-  "GeoProtoP\001Z.git.fiblab.net/sim/protos/go"
-  "/city/geo/v2;geov2\242\002\003CGX\252\002\013City.Geo.V2\312\002"
-  "\013City\\Geo\\V2\342\002\027City\\Geo\\V2\\GPBMetadata\352\002"
-  "\rCity::Geo::V2b\006proto3"
+  "\004 \001(\001R\013maxLatitudeB\234\001\n\017com.city.geo.v2B\010"
+  "GeoProtoP\001Z1git.fiblab.net/sim/protos/v2"
+  "/go/city/geo/v2;geov2\242\002\003CGX\252\002\013City.Geo.V"
+  "2\312\002\013City\\Geo\\V2\342\002\027City\\Geo\\V2\\GPBMetadat"
+  "a\352\002\rCity::Geo::V2b\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_city_2fgeo_2fv2_2fgeo_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2fgeo_2fv2_2fgeo_2eproto = {
-    false, false, 1022, descriptor_table_protodef_city_2fgeo_2fv2_2fgeo_2eproto,
+    false, false, 1025, descriptor_table_protodef_city_2fgeo_2fv2_2fgeo_2eproto,
     "city/geo/v2/geo.proto",
     &descriptor_table_city_2fgeo_2fv2_2fgeo_2eproto_once, nullptr, 0, 6,
     schemas, file_default_instances, TableStruct_city_2fgeo_2fv2_2fgeo_2eproto::offsets,

@@ -276,12 +276,12 @@ const char descriptor_table_protodef_city_2fperson_2fv2_2fvehicle_2eproto[] PROT
   "\007\022!\n\035VEHICLE_RELATION_RIGHT_BEHIND\020\010*m\n\n"
   "LightState\022\033\n\027LIGHT_STATE_UNSPECIFIED\020\000\022"
   "\023\n\017LIGHT_STATE_RED\020\001\022\025\n\021LIGHT_STATE_GREE"
-  "N\020\002\022\026\n\022LIGHT_STATE_YELLOW\020\003B\262\001\n\022com.city"
-  ".person.v2B\014VehicleProtoP\001Z4git.fiblab.n"
-  "et/sim/protos/go/city/person/v2;personv2"
-  "\242\002\003CPX\252\002\016City.Person.V2\312\002\016City\\Person\\V2"
-  "\342\002\032City\\Person\\V2\\GPBMetadata\352\002\020City::Pe"
-  "rson::V2b\006proto3"
+  "N\020\002\022\026\n\022LIGHT_STATE_YELLOW\020\003B\265\001\n\022com.city"
+  ".person.v2B\014VehicleProtoP\001Z7git.fiblab.n"
+  "et/sim/protos/v2/go/city/person/v2;perso"
+  "nv2\242\002\003CPX\252\002\016City.Person.V2\312\002\016City\\Person"
+  "\\V2\342\002\032City\\Person\\V2\\GPBMetadata\352\002\020City:"
+  ":Person::V2b\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_city_2fperson_2fv2_2fvehicle_2eproto_deps[2] = {
   &::descriptor_table_city_2fperson_2fv2_2fmotion_2eproto,
@@ -289,7 +289,7 @@ static const ::_pbi::DescriptorTable* const descriptor_table_city_2fperson_2fv2_
 };
 static ::_pbi::once_flag descriptor_table_city_2fperson_2fv2_2fvehicle_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2fperson_2fv2_2fvehicle_2eproto = {
-    false, false, 2016, descriptor_table_protodef_city_2fperson_2fv2_2fvehicle_2eproto,
+    false, false, 2019, descriptor_table_protodef_city_2fperson_2fv2_2fvehicle_2eproto,
     "city/person/v2/vehicle.proto",
     &descriptor_table_city_2fperson_2fv2_2fvehicle_2eproto_once, descriptor_table_city_2fperson_2fv2_2fvehicle_2eproto_deps, 2, 6,
     schemas, file_default_instances, TableStruct_city_2fperson_2fv2_2fvehicle_2eproto::offsets,

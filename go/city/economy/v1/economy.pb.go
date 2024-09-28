@@ -28,11 +28,11 @@ type Person struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 与person id一致
-	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" db:"id" yaml:"id" bson:"id"`
+	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" bson:"id" db:"id" yaml:"id"`
 	// 起始资金
 	Money float64 `protobuf:"fixed64,2,opt,name=money,proto3" json:"money,omitempty" bson:"money" db:"money" yaml:"money"`
 	// 所在组织ID（初始化时不提供，由组织中的员工列表设定）
-	OrgId *int32 `protobuf:"varint,3,opt,name=org_id,json=orgId,proto3,oneof" json:"org_id,omitempty" yaml:"org_id" bson:"org_id" db:"org_id"`
+	OrgId *int32 `protobuf:"varint,3,opt,name=org_id,json=orgId,proto3,oneof" json:"org_id,omitempty" bson:"org_id" db:"org_id" yaml:"org_id"`
 }
 
 func (x *Person) Reset() {
@@ -95,9 +95,9 @@ type Employee struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 员工ID
-	PersonId int32 `protobuf:"varint,1,opt,name=person_id,json=personId,proto3" json:"person_id,omitempty" db:"person_id" yaml:"person_id" bson:"person_id"`
+	PersonId int32 `protobuf:"varint,1,opt,name=person_id,json=personId,proto3" json:"person_id,omitempty" bson:"person_id" db:"person_id" yaml:"person_id"`
 	// 薪水
-	Salary float64 `protobuf:"fixed64,2,opt,name=salary,proto3" json:"salary,omitempty" yaml:"salary" bson:"salary" db:"salary"`
+	Salary float64 `protobuf:"fixed64,2,opt,name=salary,proto3" json:"salary,omitempty" bson:"salary" db:"salary" yaml:"salary"`
 }
 
 func (x *Employee) Reset() {
@@ -153,11 +153,11 @@ type Job struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 岗位名称
-	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty" yaml:"name" bson:"name" db:"name"`
+	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty" bson:"name" db:"name" yaml:"name"`
 	// 岗位所需员工数量
 	EmployeeCount int32 `protobuf:"varint,2,opt,name=employee_count,json=employeeCount,proto3" json:"employee_count,omitempty" bson:"employee_count" db:"employee_count" yaml:"employee_count"`
 	// 岗位薪水
-	Salary *float64 `protobuf:"fixed64,3,opt,name=salary,proto3,oneof" json:"salary,omitempty" yaml:"salary" bson:"salary" db:"salary"`
+	Salary *float64 `protobuf:"fixed64,3,opt,name=salary,proto3,oneof" json:"salary,omitempty" bson:"salary" db:"salary" yaml:"salary"`
 }
 
 func (x *Job) Reset() {
@@ -220,13 +220,13 @@ type Goods struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 货物类型
-	Type string `protobuf:"bytes,1,opt,name=type,proto3" json:"type,omitempty" yaml:"type" bson:"type" db:"type"`
+	Type string `protobuf:"bytes,1,opt,name=type,proto3" json:"type,omitempty" bson:"type" db:"type" yaml:"type"`
 	// 货物名称
-	Name string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty" yaml:"name" bson:"name" db:"name"`
+	Name string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty" bson:"name" db:"name" yaml:"name"`
 	// 货物数量
-	Count int32 `protobuf:"varint,3,opt,name=count,proto3" json:"count,omitempty" db:"count" yaml:"count" bson:"count"`
+	Count int32 `protobuf:"varint,3,opt,name=count,proto3" json:"count,omitempty" bson:"count" db:"count" yaml:"count"`
 	// 货物价格（允许暂未定价）
-	Price *float64 `protobuf:"fixed64,4,opt,name=price,proto3,oneof" json:"price,omitempty" yaml:"price" bson:"price" db:"price"`
+	Price *float64 `protobuf:"fixed64,4,opt,name=price,proto3,oneof" json:"price,omitempty" bson:"price" db:"price" yaml:"price"`
 }
 
 func (x *Goods) Reset() {
@@ -296,22 +296,22 @@ type Org struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 组织ID
-	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
+	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" bson:"id" db:"id" yaml:"id"`
 	// 组织所在的POI ID
-	PoiId int32 `protobuf:"varint,2,opt,name=poi_id,json=poiId,proto3" json:"poi_id,omitempty" yaml:"poi_id" bson:"poi_id" db:"poi_id"`
+	PoiId int32 `protobuf:"varint,2,opt,name=poi_id,json=poiId,proto3" json:"poi_id,omitempty" bson:"poi_id" db:"poi_id" yaml:"poi_id"`
 	// 员工列表（初始化时由Orgs列表提供，单向绑定到person上）
-	Employees []*Employee `protobuf:"bytes,3,rep,name=employees,proto3" json:"employees,omitempty" yaml:"employees" bson:"employees" db:"employees"`
+	Employees []*Employee `protobuf:"bytes,3,rep,name=employees,proto3" json:"employees,omitempty" bson:"employees" db:"employees" yaml:"employees"`
 	// 岗位列表
-	Jobs []*Job `protobuf:"bytes,4,rep,name=jobs,proto3" json:"jobs,omitempty" yaml:"jobs" bson:"jobs" db:"jobs"`
+	Jobs []*Job `protobuf:"bytes,4,rep,name=jobs,proto3" json:"jobs,omitempty" bson:"jobs" db:"jobs" yaml:"jobs"`
 	// 资金
-	Money float64 `protobuf:"fixed64,5,opt,name=money,proto3" json:"money,omitempty" yaml:"money" bson:"money" db:"money"`
+	Money float64 `protobuf:"fixed64,5,opt,name=money,proto3" json:"money,omitempty" bson:"money" db:"money" yaml:"money"`
 	// 货物
-	Goods []*Goods `protobuf:"bytes,6,rep,name=goods,proto3" json:"goods,omitempty" yaml:"goods" bson:"goods" db:"goods"`
+	Goods []*Goods `protobuf:"bytes,6,rep,name=goods,proto3" json:"goods,omitempty" bson:"goods" db:"goods" yaml:"goods"`
 	// 功能列表
 	// buy: 购买货物
 	// apply: 申请岗位
 	// ...
-	Functions []string `protobuf:"bytes,7,rep,name=functions,proto3" json:"functions,omitempty" yaml:"functions" bson:"functions" db:"functions"`
+	Functions []string `protobuf:"bytes,7,rep,name=functions,proto3" json:"functions,omitempty" bson:"functions" db:"functions" yaml:"functions"`
 }
 
 func (x *Org) Reset() {
@@ -402,9 +402,9 @@ type Economy struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 人
-	Persons []*Person `protobuf:"bytes,1,rep,name=persons,proto3" json:"persons,omitempty" yaml:"persons" bson:"persons" db:"persons"`
+	Persons []*Person `protobuf:"bytes,1,rep,name=persons,proto3" json:"persons,omitempty" bson:"persons" db:"persons" yaml:"persons"`
 	// 组织列表
-	Orgs []*Org `protobuf:"bytes,2,rep,name=orgs,proto3" json:"orgs,omitempty" yaml:"orgs" bson:"orgs" db:"orgs"`
+	Orgs []*Org `protobuf:"bytes,2,rep,name=orgs,proto3" json:"orgs,omitempty" bson:"orgs" db:"orgs" yaml:"orgs"`
 }
 
 func (x *Economy) Reset() {
@@ -503,19 +503,20 @@ var file_city_economy_v1_economy_proto_rawDesc = []byte{
 	0x2e, 0x50, 0x65, 0x72, 0x73, 0x6f, 0x6e, 0x52, 0x07, 0x70, 0x65, 0x72, 0x73, 0x6f, 0x6e, 0x73,
 	0x12, 0x28, 0x0a, 0x04, 0x6f, 0x72, 0x67, 0x73, 0x18, 0x02, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x14,
 	0x2e, 0x63, 0x69, 0x74, 0x79, 0x2e, 0x65, 0x63, 0x6f, 0x6e, 0x6f, 0x6d, 0x79, 0x2e, 0x76, 0x31,
-	0x2e, 0x4f, 0x72, 0x67, 0x52, 0x04, 0x6f, 0x72, 0x67, 0x73, 0x42, 0xb9, 0x01, 0x0a, 0x13, 0x63,
+	0x2e, 0x4f, 0x72, 0x67, 0x52, 0x04, 0x6f, 0x72, 0x67, 0x73, 0x42, 0xbc, 0x01, 0x0a, 0x13, 0x63,
 	0x6f, 0x6d, 0x2e, 0x63, 0x69, 0x74, 0x79, 0x2e, 0x65, 0x63, 0x6f, 0x6e, 0x6f, 0x6d, 0x79, 0x2e,
 	0x76, 0x31, 0x42, 0x0c, 0x45, 0x63, 0x6f, 0x6e, 0x6f, 0x6d, 0x79, 0x50, 0x72, 0x6f, 0x74, 0x6f,
-	0x50, 0x01, 0x5a, 0x36, 0x67, 0x69, 0x74, 0x2e, 0x66, 0x69, 0x62, 0x6c, 0x61, 0x62, 0x2e, 0x6e,
-	0x65, 0x74, 0x2f, 0x73, 0x69, 0x6d, 0x2f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x73, 0x2f, 0x67, 0x6f,
-	0x2f, 0x63, 0x69, 0x74, 0x79, 0x2f, 0x65, 0x63, 0x6f, 0x6e, 0x6f, 0x6d, 0x79, 0x2f, 0x76, 0x31,
-	0x3b, 0x65, 0x63, 0x6f, 0x6e, 0x6f, 0x6d, 0x79, 0x76, 0x31, 0xa2, 0x02, 0x03, 0x43, 0x45, 0x58,
-	0xaa, 0x02, 0x0f, 0x43, 0x69, 0x74, 0x79, 0x2e, 0x45, 0x63, 0x6f, 0x6e, 0x6f, 0x6d, 0x79, 0x2e,
-	0x56, 0x31, 0xca, 0x02, 0x0f, 0x43, 0x69, 0x74, 0x79, 0x5c, 0x45, 0x63, 0x6f, 0x6e, 0x6f, 0x6d,
-	0x79, 0x5c, 0x56, 0x31, 0xe2, 0x02, 0x1b, 0x43, 0x69, 0x74, 0x79, 0x5c, 0x45, 0x63, 0x6f, 0x6e,
-	0x6f, 0x6d, 0x79, 0x5c, 0x56, 0x31, 0x5c, 0x47, 0x50, 0x42, 0x4d, 0x65, 0x74, 0x61, 0x64, 0x61,
-	0x74, 0x61, 0xea, 0x02, 0x11, 0x43, 0x69, 0x74, 0x79, 0x3a, 0x3a, 0x45, 0x63, 0x6f, 0x6e, 0x6f,
-	0x6d, 0x79, 0x3a, 0x3a, 0x56, 0x31, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x50, 0x01, 0x5a, 0x39, 0x67, 0x69, 0x74, 0x2e, 0x66, 0x69, 0x62, 0x6c, 0x61, 0x62, 0x2e, 0x6e,
+	0x65, 0x74, 0x2f, 0x73, 0x69, 0x6d, 0x2f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x73, 0x2f, 0x76, 0x32,
+	0x2f, 0x67, 0x6f, 0x2f, 0x63, 0x69, 0x74, 0x79, 0x2f, 0x65, 0x63, 0x6f, 0x6e, 0x6f, 0x6d, 0x79,
+	0x2f, 0x76, 0x31, 0x3b, 0x65, 0x63, 0x6f, 0x6e, 0x6f, 0x6d, 0x79, 0x76, 0x31, 0xa2, 0x02, 0x03,
+	0x43, 0x45, 0x58, 0xaa, 0x02, 0x0f, 0x43, 0x69, 0x74, 0x79, 0x2e, 0x45, 0x63, 0x6f, 0x6e, 0x6f,
+	0x6d, 0x79, 0x2e, 0x56, 0x31, 0xca, 0x02, 0x0f, 0x43, 0x69, 0x74, 0x79, 0x5c, 0x45, 0x63, 0x6f,
+	0x6e, 0x6f, 0x6d, 0x79, 0x5c, 0x56, 0x31, 0xe2, 0x02, 0x1b, 0x43, 0x69, 0x74, 0x79, 0x5c, 0x45,
+	0x63, 0x6f, 0x6e, 0x6f, 0x6d, 0x79, 0x5c, 0x56, 0x31, 0x5c, 0x47, 0x50, 0x42, 0x4d, 0x65, 0x74,
+	0x61, 0x64, 0x61, 0x74, 0x61, 0xea, 0x02, 0x11, 0x43, 0x69, 0x74, 0x79, 0x3a, 0x3a, 0x45, 0x63,
+	0x6f, 0x6e, 0x6f, 0x6d, 0x79, 0x3a, 0x3a, 0x56, 0x31, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f,
+	0x33,
 }
 
 var (

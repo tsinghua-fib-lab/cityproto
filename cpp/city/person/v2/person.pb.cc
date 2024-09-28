@@ -486,12 +486,12 @@ const char descriptor_table_protodef_city_2fperson_2fv2_2fperson_2eproto[] PROTO
   "PTION_UNSPECIFIED\020\000\022\023\n\017CONSUMPTION_LOW\020\001"
   "\022\036\n\032CONSUMPTION_RELATIVELY_LOW\020\002\022\026\n\022CONS"
   "UMPTION_MEDIUM\020\003\022\037\n\033CONSUMPTION_RELATIVE"
-  "LY_HIGH\020\004\022\024\n\020CONSUMPTION_HIGH\020\005B\261\001\n\022com."
-  "city.person.v2B\013PersonProtoP\001Z4git.fibla"
-  "b.net/sim/protos/go/city/person/v2;perso"
-  "nv2\242\002\003CPX\252\002\016City.Person.V2\312\002\016City\\Person"
-  "\\V2\342\002\032City\\Person\\V2\\GPBMetadata\352\002\020City:"
-  ":Person::V2b\006proto3"
+  "LY_HIGH\020\004\022\024\n\020CONSUMPTION_HIGH\020\005B\264\001\n\022com."
+  "city.person.v2B\013PersonProtoP\001Z7git.fibla"
+  "b.net/sim/protos/v2/go/city/person/v2;pe"
+  "rsonv2\242\002\003CPX\252\002\016City.Person.V2\312\002\016City\\Per"
+  "son\\V2\342\002\032City\\Person\\V2\\GPBMetadata\352\002\020Ci"
+  "ty::Person::V2b\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_city_2fperson_2fv2_2fperson_2eproto_deps[2] = {
   &::descriptor_table_city_2fgeo_2fv2_2fgeo_2eproto,
@@ -499,7 +499,7 @@ static const ::_pbi::DescriptorTable* const descriptor_table_city_2fperson_2fv2_
 };
 static ::_pbi::once_flag descriptor_table_city_2fperson_2fv2_2fperson_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2fperson_2fv2_2fperson_2eproto = {
-    false, false, 3619, descriptor_table_protodef_city_2fperson_2fv2_2fperson_2eproto,
+    false, false, 3622, descriptor_table_protodef_city_2fperson_2fv2_2fperson_2eproto,
     "city/person/v2/person.proto",
     &descriptor_table_city_2fperson_2fv2_2fperson_2eproto_once, descriptor_table_city_2fperson_2fv2_2fperson_2eproto_deps, 2, 11,
     schemas, file_default_instances, TableStruct_city_2fperson_2fv2_2fperson_2eproto::offsets,

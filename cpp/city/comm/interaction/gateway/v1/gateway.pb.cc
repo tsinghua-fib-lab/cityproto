@@ -75,19 +75,19 @@ const char descriptor_table_protodef_city_2fcomm_2finteraction_2fgateway_2fv1_2f
   "\002 \001(\010R\006status\022@\n\006reason\030\003 \001(\0162(.city.com"
   "m.interaction.gateway.v1.ReasonR\006reason*"
   "E\n\006Reason\022\026\n\022REASON_UNSPECIFIED\020\000\022\017\n\013REA"
-  "SON_RUIN\020\001\022\022\n\016REASON_CASCADE\020\002B\242\002\n$com.c"
+  "SON_RUIN\020\001\022\022\n\016REASON_CASCADE\020\002B\245\002\n$com.c"
   "ity.comm.interaction.gateway.v1B\014Gateway"
-  "ProtoP\001ZGgit.fiblab.net/sim/protos/go/ci"
-  "ty/comm/interaction/gateway/v1;gatewayv1"
-  "\242\002\004CCIG\252\002 City.Comm.Interaction.Gateway."
-  "V1\312\002 City\\Comm\\Interaction\\Gateway\\V1\342\002,"
-  "City\\Comm\\Interaction\\Gateway\\V1\\GPBMeta"
-  "data\352\002$City::Comm::Interaction::Gateway:"
-  ":V1b\006proto3"
+  "ProtoP\001ZJgit.fiblab.net/sim/protos/v2/go"
+  "/city/comm/interaction/gateway/v1;gatewa"
+  "yv1\242\002\004CCIG\252\002 City.Comm.Interaction.Gatew"
+  "ay.V1\312\002 City\\Comm\\Interaction\\Gateway\\V1"
+  "\342\002,City\\Comm\\Interaction\\Gateway\\V1\\GPBM"
+  "etadata\352\002$City::Comm::Interaction::Gatew"
+  "ay::V1b\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_city_2fcomm_2finteraction_2fgateway_2fv1_2fgateway_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2fcomm_2finteraction_2fgateway_2fv1_2fgateway_2eproto = {
-    false, false, 571, descriptor_table_protodef_city_2fcomm_2finteraction_2fgateway_2fv1_2fgateway_2eproto,
+    false, false, 574, descriptor_table_protodef_city_2fcomm_2finteraction_2fgateway_2fv1_2fgateway_2eproto,
     "city/comm/interaction/gateway/v1/gateway.proto",
     &descriptor_table_city_2fcomm_2finteraction_2fgateway_2fv1_2fgateway_2eproto_once, nullptr, 0, 1,
     schemas, file_default_instances, TableStruct_city_2fcomm_2finteraction_2fgateway_2fv1_2fgateway_2eproto::offsets,

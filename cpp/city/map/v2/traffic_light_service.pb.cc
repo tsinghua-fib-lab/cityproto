@@ -250,18 +250,18 @@ const char descriptor_table_protodef_city_2fmap_2fv2_2ftraffic_5flight_5fservice
   "ghtPhaseResponse\022n\n\025SetTrafficLightStatu"
   "s\022).city.map.v2.SetTrafficLightStatusReq"
   "uest\032*.city.map.v2.SetTrafficLightStatus"
-  "ResponseB\251\001\n\017com.city.map.v2B\030TrafficLig"
-  "htServiceProtoP\001Z.git.fiblab.net/sim/pro"
-  "tos/go/city/map/v2;mapv2\242\002\003CMX\252\002\013City.Ma"
-  "p.V2\312\002\013City\\Map\\V2\342\002\027City\\Map\\V2\\GPBMeta"
-  "data\352\002\rCity::Map::V2b\006proto3"
+  "ResponseB\254\001\n\017com.city.map.v2B\030TrafficLig"
+  "htServiceProtoP\001Z1git.fiblab.net/sim/pro"
+  "tos/v2/go/city/map/v2;mapv2\242\002\003CMX\252\002\013City"
+  ".Map.V2\312\002\013City\\Map\\V2\342\002\027City\\Map\\V2\\GPBM"
+  "etadata\352\002\rCity::Map::V2b\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_city_2fmap_2fv2_2ftraffic_5flight_5fservice_2eproto_deps[1] = {
   &::descriptor_table_city_2fmap_2fv2_2flight_2eproto,
 };
 static ::_pbi::once_flag descriptor_table_city_2fmap_2fv2_2ftraffic_5flight_5fservice_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2fmap_2fv2_2ftraffic_5flight_5fservice_2eproto = {
-    false, false, 1388, descriptor_table_protodef_city_2fmap_2fv2_2ftraffic_5flight_5fservice_2eproto,
+    false, false, 1391, descriptor_table_protodef_city_2fmap_2fv2_2ftraffic_5flight_5fservice_2eproto,
     "city/map/v2/traffic_light_service.proto",
     &descriptor_table_city_2fmap_2fv2_2ftraffic_5flight_5fservice_2eproto_once, descriptor_table_city_2fmap_2fv2_2ftraffic_5flight_5fservice_2eproto_deps, 1, 8,
     schemas, file_default_instances, TableStruct_city_2fmap_2fv2_2ftraffic_5flight_5fservice_2eproto::offsets,

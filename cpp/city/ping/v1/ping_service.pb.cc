@@ -80,16 +80,16 @@ const char descriptor_table_protodef_city_2fping_2fv1_2fping_5fservice_2eproto[]
   "\n\037city/ping/v1/ping_service.proto\022\014city."
   "ping.v1\"\r\n\013PingRequest\"\016\n\014PingResponse2L"
   "\n\013PingService\022=\n\004Ping\022\031.city.ping.v1.Pin"
-  "gRequest\032\032.city.ping.v1.PingResponseB\250\001\n"
-  "\020com.city.ping.v1B\020PingServiceProtoP\001Z0g"
-  "it.fiblab.net/sim/protos/go/city/ping/v1"
-  ";pingv1\242\002\003CPX\252\002\014City.Ping.V1\312\002\014City\\Ping"
-  "\\V1\342\002\030City\\Ping\\V1\\GPBMetadata\352\002\016City::P"
-  "ing::V1b\006proto3"
+  "gRequest\032\032.city.ping.v1.PingResponseB\253\001\n"
+  "\020com.city.ping.v1B\020PingServiceProtoP\001Z3g"
+  "it.fiblab.net/sim/protos/v2/go/city/ping"
+  "/v1;pingv1\242\002\003CPX\252\002\014City.Ping.V1\312\002\014City\\P"
+  "ing\\V1\342\002\030City\\Ping\\V1\\GPBMetadata\352\002\016City"
+  "::Ping::V1b\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_city_2fping_2fv1_2fping_5fservice_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2fping_2fv1_2fping_5fservice_2eproto = {
-    false, false, 335, descriptor_table_protodef_city_2fping_2fv1_2fping_5fservice_2eproto,
+    false, false, 338, descriptor_table_protodef_city_2fping_2fv1_2fping_5fservice_2eproto,
     "city/ping/v1/ping_service.proto",
     &descriptor_table_city_2fping_2fv1_2fping_5fservice_2eproto_once, nullptr, 0, 2,
     schemas, file_default_instances, TableStruct_city_2fping_2fv1_2fping_5fservice_2eproto::offsets,

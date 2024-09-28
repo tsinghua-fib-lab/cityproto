@@ -130,19 +130,19 @@ const char descriptor_table_protodef_city_2fevent_2fv1_2fevent_5fservice_2eproto
   "EventService\022J\n\007Publish\022\035.city.event.v1."
   "PublishRequest\032\036.city.event.v1.PublishRe"
   "sponse\"\000\022A\n\004Pull\022\032.city.event.v1.PullReq"
-  "uest\032\033.city.event.v1.PullResponse\"\000B\260\001\n\021"
-  "com.city.event.v1B\021EventServiceProtoP\001Z2"
-  "git.fiblab.net/sim/protos/go/city/event/"
-  "v1;eventv1\242\002\003CEX\252\002\rCity.Event.V1\312\002\rCity\\"
-  "Event\\V1\342\002\031City\\Event\\V1\\GPBMetadata\352\002\017C"
-  "ity::Event::V1b\006proto3"
+  "uest\032\033.city.event.v1.PullResponse\"\000B\263\001\n\021"
+  "com.city.event.v1B\021EventServiceProtoP\001Z5"
+  "git.fiblab.net/sim/protos/v2/go/city/eve"
+  "nt/v1;eventv1\242\002\003CEX\252\002\rCity.Event.V1\312\002\rCi"
+  "ty\\Event\\V1\342\002\031City\\Event\\V1\\GPBMetadata\352"
+  "\002\017City::Event::V1b\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_city_2fevent_2fv1_2fevent_5fservice_2eproto_deps[1] = {
   &::descriptor_table_city_2fevent_2fv1_2fevent_2eproto,
 };
 static ::_pbi::once_flag descriptor_table_city_2fevent_2fv1_2fevent_5fservice_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2fevent_2fv1_2fevent_5fservice_2eproto = {
-    false, false, 582, descriptor_table_protodef_city_2fevent_2fv1_2fevent_5fservice_2eproto,
+    false, false, 585, descriptor_table_protodef_city_2fevent_2fv1_2fevent_5fservice_2eproto,
     "city/event/v1/event_service.proto",
     &descriptor_table_city_2fevent_2fv1_2fevent_5fservice_2eproto_once, descriptor_table_city_2fevent_2fv1_2fevent_5fservice_2eproto_deps, 1, 4,
     schemas, file_default_instances, TableStruct_city_2fevent_2fv1_2fevent_5fservice_2eproto::offsets,
