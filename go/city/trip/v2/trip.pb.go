@@ -178,7 +178,7 @@ type Trip struct {
 	DepartureTime *float64 `protobuf:"fixed64,3,opt,name=departure_time,json=departureTime,proto3,oneof" json:"departure_time,omitempty" db:"departure_time" yaml:"departure_time" bson:"departure_time"`
 	// 期望的等待时间（单位：秒），如果departure_time为空则wait_time默认为0
 	// The expected waiting time (in seconds), if departure_time is empty, wait_time defaults to 0
-	WaitTime *float64 `protobuf:"fixed64,4,opt,name=wait_time,json=waitTime,proto3,oneof" json:"wait_time,omitempty" bson:"wait_time" db:"wait_time" yaml:"wait_time"`
+	WaitTime *float64 `protobuf:"fixed64,4,opt,name=wait_time,json=waitTime,proto3,oneof" json:"wait_time,omitempty" yaml:"wait_time" bson:"wait_time" db:"wait_time"`
 	// 期望的到达时间（单位: 秒）
 	// Expected arrival time (in seconds)
 	ArrivalTime *float64 `protobuf:"fixed64,5,opt,name=arrival_time,json=arrivalTime,proto3,oneof" json:"arrival_time,omitempty" yaml:"arrival_time" bson:"arrival_time" db:"arrival_time"`
@@ -330,10 +330,10 @@ type Schedule struct {
 
 	// 出行列表
 	// List of trips
-	Trips []*Trip `protobuf:"bytes,1,rep,name=trips,proto3" json:"trips,omitempty" db:"trips" yaml:"trips" bson:"trips"`
+	Trips []*Trip `protobuf:"bytes,1,rep,name=trips,proto3" json:"trips,omitempty" bson:"trips" db:"trips" yaml:"trips"`
 	// trips的执行次数，0表示无限循环，大于0表示执行几次
 	// The number of times trips are executed, where 0 represents infinite loops and greater than 0 represents how many times they are executed
-	LoopCount int32 `protobuf:"varint,2,opt,name=loop_count,json=loopCount,proto3" json:"loop_count,omitempty" bson:"loop_count" db:"loop_count" yaml:"loop_count"`
+	LoopCount int32 `protobuf:"varint,2,opt,name=loop_count,json=loopCount,proto3" json:"loop_count,omitempty" yaml:"loop_count" bson:"loop_count" db:"loop_count"`
 	// 期望的出发时间（单位: 秒）
 	// Expected departure time (in seconds)
 	DepartureTime *float64 `protobuf:"fixed64,3,opt,name=departure_time,json=departureTime,proto3,oneof" json:"departure_time,omitempty" yaml:"departure_time" bson:"departure_time" db:"departure_time"`
