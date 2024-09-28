@@ -109,16 +109,16 @@ const char descriptor_table_protodef_city_2felec_2foutput_2fv1_2foutput_2eproto[
   "\001R\016transformer500\022\'\n\017transformer_220\030\002 \001"
   "(\001R\016transformer220\022\'\n\017transformer_110\030\003 "
   "\001(\001R\016transformer110\022%\n\016transformer_10\030\004 "
-  "\001(\001R\rtransformer10B\320\001\n\027com.city.elec.out"
-  "put.v1B\013OutputProtoP\001Z9git.fiblab.net/si"
-  "m/protos/go/city/elec/output/v1;outputv1"
-  "\242\002\003CEO\252\002\023City.Elec.Output.V1\312\002\023City\\Elec"
-  "\\Output\\V1\342\002\037City\\Elec\\Output\\V1\\GPBMeta"
-  "data\352\002\026City::Elec::Output::V1b\006proto3"
+  "\001(\001R\rtransformer10B\323\001\n\027com.city.elec.out"
+  "put.v1B\013OutputProtoP\001Z<git.fiblab.net/si"
+  "m/protos/go/v2/city/elec/output/v1;outpu"
+  "tv1\242\002\003CEO\252\002\023City.Elec.Output.V1\312\002\023City\\E"
+  "lec\\Output\\V1\342\002\037City\\Elec\\Output\\V1\\GPBM"
+  "etadata\352\002\026City::Elec::Output::V1b\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_city_2felec_2foutput_2fv1_2foutput_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2felec_2foutput_2fv1_2foutput_2eproto = {
-    false, false, 637, descriptor_table_protodef_city_2felec_2foutput_2fv1_2foutput_2eproto,
+    false, false, 640, descriptor_table_protodef_city_2felec_2foutput_2fv1_2foutput_2eproto,
     "city/elec/output/v1/output.proto",
     &descriptor_table_city_2felec_2foutput_2fv1_2foutput_2eproto_once, nullptr, 0, 2,
     schemas, file_default_instances, TableStruct_city_2felec_2foutput_2fv1_2foutput_2eproto::offsets,

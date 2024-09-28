@@ -91,16 +91,17 @@ const char descriptor_table_protodef_city_2fwater_2finput_2fv1_2fwater_2eproto[]
   "water.input.v1\">\n\nRainPeriod\022\024\n\005start\030\001 "
   "\001(\005R\005start\022\032\n\010rainfall\030\002 \001(\001R\010rainfall\"="
   "\n\004Rain\0225\n\005rains\030\001 \003(\0132\037.city.water.input"
-  ".v1.RainPeriodR\005rainsB\316\001\n\027com.city.water"
-  ".input.v1B\nWaterProtoP\001Z8git.fiblab.net/"
-  "sim/protos/go/city/water/input/v1;inputv"
-  "1\242\002\003CWI\252\002\023City.Water.Input.V1\312\002\023City\\Wat"
-  "er\\Input\\V1\342\002\037City\\Water\\Input\\V1\\GPBMet"
-  "adata\352\002\026City::Water::Input::V1b\006proto3"
+  ".v1.RainPeriodR\005rainsB\321\001\n\027com.city.water"
+  ".input.v1B\nWaterProtoP\001Z;git.fiblab.net/"
+  "sim/protos/go/v2/city/water/input/v1;inp"
+  "utv1\242\002\003CWI\252\002\023City.Water.Input.V1\312\002\023City\\"
+  "Water\\Input\\V1\342\002\037City\\Water\\Input\\V1\\GPB"
+  "Metadata\352\002\026City::Water::Input::V1b\006proto"
+  "3"
   ;
 static ::_pbi::once_flag descriptor_table_city_2fwater_2finput_2fv1_2fwater_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2fwater_2finput_2fv1_2fwater_2eproto = {
-    false, false, 398, descriptor_table_protodef_city_2fwater_2finput_2fv1_2fwater_2eproto,
+    false, false, 401, descriptor_table_protodef_city_2fwater_2finput_2fv1_2fwater_2eproto,
     "city/water/input/v1/water.proto",
     &descriptor_table_city_2fwater_2finput_2fv1_2fwater_2eproto_once, nullptr, 0, 2,
     schemas, file_default_instances, TableStruct_city_2fwater_2finput_2fv1_2fwater_2eproto::offsets,

@@ -103,15 +103,15 @@ const char descriptor_table_protodef_city_2fevent_2fv1_2fevent_2eproto[] PROTOBU
   "VENT_TYPE_COMM_RUINED_BASE_STATION\020\t\022(\n$"
   "EVENT_TYPE_COMM_STOPPED_BASE_STATION\020\n\022)"
   "\n%EVENT_TYPE_COMM_OVERLOAD_BASE_STATION\020"
-  "\013B\251\001\n\021com.city.event.v1B\nEventProtoP\001Z2g"
-  "it.fiblab.net/sim/protos/go/city/event/v"
-  "1;eventv1\242\002\003CEX\252\002\rCity.Event.V1\312\002\rCity\\E"
-  "vent\\V1\342\002\031City\\Event\\V1\\GPBMetadata\352\002\017Ci"
-  "ty::Event::V1b\006proto3"
+  "\013B\254\001\n\021com.city.event.v1B\nEventProtoP\001Z5g"
+  "it.fiblab.net/sim/protos/go/v2/city/even"
+  "t/v1;eventv1\242\002\003CEX\252\002\rCity.Event.V1\312\002\rCit"
+  "y\\Event\\V1\342\002\031City\\Event\\V1\\GPBMetadata\352\002"
+  "\017City::Event::V1b\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_city_2fevent_2fv1_2fevent_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2fevent_2fv1_2fevent_2eproto = {
-    false, false, 821, descriptor_table_protodef_city_2fevent_2fv1_2fevent_2eproto,
+    false, false, 824, descriptor_table_protodef_city_2fevent_2fv1_2fevent_2eproto,
     "city/event/v1/event.proto",
     &descriptor_table_city_2fevent_2fv1_2fevent_2eproto_once, nullptr, 0, 2,
     schemas, file_default_instances, TableStruct_city_2fevent_2fv1_2fevent_2eproto::offsets,

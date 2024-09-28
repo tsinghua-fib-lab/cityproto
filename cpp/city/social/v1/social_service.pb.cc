@@ -134,19 +134,19 @@ const char descriptor_table_protodef_city_2fsocial_2fv1_2fsocial_5fservice_2epro
   "cialService\022A\n\004Send\022\033.city.social.v1.Sen"
   "dRequest\032\034.city.social.v1.SendResponse\022J"
   "\n\007Receive\022\036.city.social.v1.ReceiveReques"
-  "t\032\037.city.social.v1.ReceiveResponseB\270\001\n\022c"
+  "t\032\037.city.social.v1.ReceiveResponseB\273\001\n\022c"
   "om.city.social.v1B\022SocialServiceProtoP\001Z"
-  "4git.fiblab.net/sim/protos/go/city/socia"
-  "l/v1;socialv1\242\002\003CSX\252\002\016City.Social.V1\312\002\016C"
-  "ity\\Social\\V1\342\002\032City\\Social\\V1\\GPBMetada"
-  "ta\352\002\020City::Social::V1b\006proto3"
+  "7git.fiblab.net/sim/protos/go/v2/city/so"
+  "cial/v1;socialv1\242\002\003CSX\252\002\016City.Social.V1\312"
+  "\002\016City\\Social\\V1\342\002\032City\\Social\\V1\\GPBMet"
+  "adata\352\002\020City::Social::V1b\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_city_2fsocial_2fv1_2fsocial_5fservice_2eproto_deps[1] = {
   &::descriptor_table_city_2fsocial_2fv1_2fmessage_2eproto,
 };
 static ::_pbi::once_flag descriptor_table_city_2fsocial_2fv1_2fsocial_5fservice_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2fsocial_2fv1_2fsocial_5fservice_2eproto = {
-    false, false, 629, descriptor_table_protodef_city_2fsocial_2fv1_2fsocial_5fservice_2eproto,
+    false, false, 632, descriptor_table_protodef_city_2fsocial_2fv1_2fsocial_5fservice_2eproto,
     "city/social/v1/social_service.proto",
     &descriptor_table_city_2fsocial_2fv1_2fsocial_5fservice_2eproto_once, descriptor_table_city_2fsocial_2fv1_2fsocial_5fservice_2eproto_deps, 1, 4,
     schemas, file_default_instances, TableStruct_city_2fsocial_2fv1_2fsocial_5fservice_2eproto::offsets,

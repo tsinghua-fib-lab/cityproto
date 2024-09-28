@@ -263,11 +263,11 @@ const char descriptor_table_protodef_city_2fmap_2fv2_2froad_5fservice_2eproto[] 
   "uinInfoRequest\032 .city.map.v2.GetRuinInfo"
   "Response\022J\n\tGetEvents\022\035.city.map.v2.GetE"
   "ventsRequest\032\036.city.map.v2.GetEventsResp"
-  "onseB\241\001\n\017com.city.map.v2B\020RoadServicePro"
-  "toP\001Z.git.fiblab.net/sim/protos/go/city/"
-  "map/v2;mapv2\242\002\003CMX\252\002\013City.Map.V2\312\002\013City\\"
-  "Map\\V2\342\002\027City\\Map\\V2\\GPBMetadata\352\002\rCity:"
-  ":Map::V2b\006proto3"
+  "onseB\244\001\n\017com.city.map.v2B\020RoadServicePro"
+  "toP\001Z1git.fiblab.net/sim/protos/go/v2/ci"
+  "ty/map/v2;mapv2\242\002\003CMX\252\002\013City.Map.V2\312\002\013Ci"
+  "ty\\Map\\V2\342\002\027City\\Map\\V2\\GPBMetadata\352\002\rCi"
+  "ty::Map::V2b\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_city_2fmap_2fv2_2froad_5fservice_2eproto_deps[2] = {
   &::descriptor_table_city_2fevent_2fv1_2fevent_2eproto,
@@ -275,7 +275,7 @@ static const ::_pbi::DescriptorTable* const descriptor_table_city_2fmap_2fv2_2fr
 };
 static ::_pbi::once_flag descriptor_table_city_2fmap_2fv2_2froad_5fservice_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2fmap_2fv2_2froad_5fservice_2eproto = {
-    false, false, 1576, descriptor_table_protodef_city_2fmap_2fv2_2froad_5fservice_2eproto,
+    false, false, 1579, descriptor_table_protodef_city_2fmap_2fv2_2froad_5fservice_2eproto,
     "city/map/v2/road_service.proto",
     &descriptor_table_city_2fmap_2fv2_2froad_5fservice_2eproto_once, descriptor_table_city_2fmap_2fv2_2froad_5fservice_2eproto_deps, 2, 8,
     schemas, file_default_instances, TableStruct_city_2fmap_2fv2_2froad_5fservice_2eproto::offsets,

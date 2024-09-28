@@ -117,12 +117,12 @@ const char descriptor_table_protodef_city_2fcomm_2foutput_2fv1_2foutput_5fservic
   "cs\"\020\n\016OutputResponse2b\n\rOutputService\022Q\n"
   "\006Output\022\".city.comm.output.v1.OutputRequ"
   "est\032#.city.comm.output.v1.OutputResponse"
-  "B\327\001\n\027com.city.comm.output.v1B\022OutputServ"
-  "iceProtoP\001Z9git.fiblab.net/sim/protos/go"
-  "/city/comm/output/v1;outputv1\242\002\003CCO\252\002\023Ci"
-  "ty.Comm.Output.V1\312\002\023City\\Comm\\Output\\V1\342"
-  "\002\037City\\Comm\\Output\\V1\\GPBMetadata\352\002\026City"
-  "::Comm::Output::V1b\006proto3"
+  "B\332\001\n\027com.city.comm.output.v1B\022OutputServ"
+  "iceProtoP\001Z<git.fiblab.net/sim/protos/go"
+  "/v2/city/comm/output/v1;outputv1\242\002\003CCO\252\002"
+  "\023City.Comm.Output.V1\312\002\023City\\Comm\\Output\\"
+  "V1\342\002\037City\\Comm\\Output\\V1\\GPBMetadata\352\002\026C"
+  "ity::Comm::Output::V1b\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_city_2fcomm_2foutput_2fv1_2foutput_5fservice_2eproto_deps[2] = {
   &::descriptor_table_city_2fcomm_2foutput_2fv1_2foutput_2eproto,
@@ -130,7 +130,7 @@ static const ::_pbi::DescriptorTable* const descriptor_table_city_2fcomm_2foutpu
 };
 static ::_pbi::once_flag descriptor_table_city_2fcomm_2foutput_2fv1_2foutput_5fservice_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2fcomm_2foutput_2fv1_2foutput_5fservice_2eproto = {
-    false, false, 986, descriptor_table_protodef_city_2fcomm_2foutput_2fv1_2foutput_5fservice_2eproto,
+    false, false, 989, descriptor_table_protodef_city_2fcomm_2foutput_2fv1_2foutput_5fservice_2eproto,
     "city/comm/output/v1/output_service.proto",
     &descriptor_table_city_2fcomm_2foutput_2fv1_2foutput_5fservice_2eproto_once, descriptor_table_city_2fcomm_2foutput_2fv1_2foutput_5fservice_2eproto_deps, 2, 2,
     schemas, file_default_instances, TableStruct_city_2fcomm_2foutput_2fv1_2foutput_5fservice_2eproto::offsets,

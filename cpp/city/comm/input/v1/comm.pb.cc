@@ -239,19 +239,19 @@ const char descriptor_table_protodef_city_2fcomm_2finput_2fv1_2fcomm_2eproto[] P
   "NODE_TYPE_BASE_STATION\020\003*q\n\017BaseStationT"
   "ype\022!\n\035BASE_STATION_TYPE_UNSPECIFIED\020\000\022\034"
   "\n\030BASE_STATION_TYPE_INDOOR\020\001\022\035\n\031BASE_STA"
-  "TION_TYPE_OUTDOOR\020\002B\307\001\n\026com.city.comm.in"
-  "put.v1B\tCommProtoP\001Z7git.fiblab.net/sim/"
-  "protos/go/city/comm/input/v1;inputv1\242\002\003C"
-  "CI\252\002\022City.Comm.Input.V1\312\002\022City\\Comm\\Inpu"
-  "t\\V1\342\002\036City\\Comm\\Input\\V1\\GPBMetadata\352\002\025"
-  "City::Comm::Input::V1b\006proto3"
+  "TION_TYPE_OUTDOOR\020\002B\312\001\n\026com.city.comm.in"
+  "put.v1B\tCommProtoP\001Z:git.fiblab.net/sim/"
+  "protos/go/v2/city/comm/input/v1;inputv1\242"
+  "\002\003CCI\252\002\022City.Comm.Input.V1\312\002\022City\\Comm\\I"
+  "nput\\V1\342\002\036City\\Comm\\Input\\V1\\GPBMetadata"
+  "\352\002\025City::Comm::Input::V1b\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_city_2fcomm_2finput_2fv1_2fcomm_2eproto_deps[1] = {
   &::descriptor_table_city_2fgeo_2fv2_2fgeo_2eproto,
 };
 static ::_pbi::once_flag descriptor_table_city_2fcomm_2finput_2fv1_2fcomm_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2fcomm_2finput_2fv1_2fcomm_2eproto = {
-    false, false, 1429, descriptor_table_protodef_city_2fcomm_2finput_2fv1_2fcomm_2eproto,
+    false, false, 1432, descriptor_table_protodef_city_2fcomm_2finput_2fv1_2fcomm_2eproto,
     "city/comm/input/v1/comm.proto",
     &descriptor_table_city_2fcomm_2finput_2fv1_2fcomm_2eproto_once, descriptor_table_city_2fcomm_2finput_2fv1_2fcomm_2eproto_deps, 1, 6,
     schemas, file_default_instances, TableStruct_city_2fcomm_2finput_2fv1_2fcomm_2eproto::offsets,

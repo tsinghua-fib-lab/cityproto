@@ -3,7 +3,7 @@ managed:
   enabled: true
   override:
     - file_option: go_package_prefix
-      value: git.fiblab.net/sim/protos/go
+      value: git.fiblab.net/sim/protos/go/v2
 plugins:
   - remote: buf.build/protocolbuffers/cpp:v21.12
     out: cpp

@@ -230,16 +230,16 @@ const char descriptor_table_protodef_city_2fsync_2fv2_2fsync_5fservice_2eproto[]
   "EnterStepSyncRequest\032#.city.sync.v2.Ente"
   "rStepSyncResponse\022U\n\014ExitStepSync\022!.city"
   ".sync.v2.ExitStepSyncRequest\032\".city.sync"
-  ".v2.ExitStepSyncResponseB\250\001\n\020com.city.sy"
-  "nc.v2B\020SyncServiceProtoP\001Z0git.fiblab.ne"
-  "t/sim/protos/go/city/sync/v2;syncv2\242\002\003CS"
-  "X\252\002\014City.Sync.V2\312\002\014City\\Sync\\V2\342\002\030City\\S"
-  "ync\\V2\\GPBMetadata\352\002\016City::Sync::V2b\006pro"
-  "to3"
+  ".v2.ExitStepSyncResponseB\253\001\n\020com.city.sy"
+  "nc.v2B\020SyncServiceProtoP\001Z3git.fiblab.ne"
+  "t/sim/protos/go/v2/city/sync/v2;syncv2\242\002"
+  "\003CSX\252\002\014City.Sync.V2\312\002\014City\\Sync\\V2\342\002\030Cit"
+  "y\\Sync\\V2\\GPBMetadata\352\002\016City::Sync::V2b\006"
+  "proto3"
   ;
 static ::_pbi::once_flag descriptor_table_city_2fsync_2fv2_2fsync_5fservice_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2fsync_2fv2_2fsync_5fservice_2eproto = {
-    false, false, 883, descriptor_table_protodef_city_2fsync_2fv2_2fsync_5fservice_2eproto,
+    false, false, 886, descriptor_table_protodef_city_2fsync_2fv2_2fsync_5fservice_2eproto,
     "city/sync/v2/sync_service.proto",
     &descriptor_table_city_2fsync_2fv2_2fsync_5fservice_2eproto_once, nullptr, 0, 8,
     schemas, file_default_instances, TableStruct_city_2fsync_2fv2_2fsync_5fservice_2eproto::offsets,

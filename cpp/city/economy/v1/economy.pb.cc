@@ -233,15 +233,16 @@ const char descriptor_table_protodef_city_2feconomy_2fv1_2feconomy_2eproto[] PRO
   "s\030\007 \003(\tR\tfunctions\"f\n\007Economy\0221\n\007persons"
   "\030\001 \003(\0132\027.city.economy.v1.PersonR\007persons"
   "\022(\n\004orgs\030\002 \003(\0132\024.city.economy.v1.OrgR\004or"
-  "gsB\271\001\n\023com.city.economy.v1B\014EconomyProto"
-  "P\001Z6git.fiblab.net/sim/protos/go/city/ec"
-  "onomy/v1;economyv1\242\002\003CEX\252\002\017City.Economy."
-  "V1\312\002\017City\\Economy\\V1\342\002\033City\\Economy\\V1\\G"
-  "PBMetadata\352\002\021City::Economy::V1b\006proto3"
+  "gsB\274\001\n\023com.city.economy.v1B\014EconomyProto"
+  "P\001Z9git.fiblab.net/sim/protos/go/v2/city"
+  "/economy/v1;economyv1\242\002\003CEX\252\002\017City.Econo"
+  "my.V1\312\002\017City\\Economy\\V1\342\002\033City\\Economy\\V"
+  "1\\GPBMetadata\352\002\021City::Economy::V1b\006proto"
+  "3"
   ;
 static ::_pbi::once_flag descriptor_table_city_2feconomy_2fv1_2feconomy_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2feconomy_2fv1_2feconomy_2eproto = {
-    false, false, 958, descriptor_table_protodef_city_2feconomy_2fv1_2feconomy_2eproto,
+    false, false, 961, descriptor_table_protodef_city_2feconomy_2fv1_2feconomy_2eproto,
     "city/economy/v1/economy.proto",
     &descriptor_table_city_2feconomy_2fv1_2feconomy_2eproto_once, nullptr, 0, 6,
     schemas, file_default_instances, TableStruct_city_2feconomy_2fv1_2feconomy_2eproto::offsets,

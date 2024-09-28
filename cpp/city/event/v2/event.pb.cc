@@ -115,18 +115,19 @@ const char descriptor_table_protodef_city_2fevent_2fv2_2fevent_2eproto[] PROTOBU
   "NE\020\001\022\024\n\020ENTITY_TYPE_ROAD\020\002\022\030\n\024ENTITY_TYP"
   "E_JUNCTION\020\003\022\023\n\017ENTITY_TYPE_AOI\020\004\022\023\n\017ENT"
   "ITY_TYPE_POI\020\005\022\026\n\022ENTITY_TYPE_PERSON\020\006\022\023"
-  "\n\017ENTITY_TYPE_ORG\020\007B\251\001\n\021com.city.event.v"
-  "2B\nEventProtoP\001Z2git.fiblab.net/sim/prot"
-  "os/go/city/event/v2;eventv2\242\002\003CEX\252\002\rCity"
-  ".Event.V2\312\002\rCity\\Event\\V2\342\002\031City\\Event\\V"
-  "2\\GPBMetadata\352\002\017City::Event::V2b\006proto3"
+  "\n\017ENTITY_TYPE_ORG\020\007B\254\001\n\021com.city.event.v"
+  "2B\nEventProtoP\001Z5git.fiblab.net/sim/prot"
+  "os/go/v2/city/event/v2;eventv2\242\002\003CEX\252\002\rC"
+  "ity.Event.V2\312\002\rCity\\Event\\V2\342\002\031City\\Even"
+  "t\\V2\\GPBMetadata\352\002\017City::Event::V2b\006prot"
+  "o3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_city_2fevent_2fv2_2fevent_2eproto_deps[1] = {
   &::descriptor_table_city_2fgeo_2fv2_2fgeo_2eproto,
 };
 static ::_pbi::once_flag descriptor_table_city_2fevent_2fv2_2fevent_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2fevent_2fv2_2fevent_2eproto = {
-    false, false, 719, descriptor_table_protodef_city_2fevent_2fv2_2fevent_2eproto,
+    false, false, 722, descriptor_table_protodef_city_2fevent_2fv2_2fevent_2eproto,
     "city/event/v2/event.proto",
     &descriptor_table_city_2fevent_2fv2_2fevent_2eproto_once, descriptor_table_city_2fevent_2fv2_2fevent_2eproto_deps, 1, 2,
     schemas, file_default_instances, TableStruct_city_2fevent_2fv2_2fevent_2eproto::offsets,

@@ -91,18 +91,18 @@ const char descriptor_table_protodef_city_2fcomm_2finteraction_2faoi_2fv1_2faoi_
   "nse\022\020\n\003ids\030\001 \003(\005R\003ids2\200\001\n\nAoiService\022r\n\013"
   "GetBadAoiID\0220.city.comm.interaction.aoi."
   "v1.GetBadAoiIDRequest\0321.city.comm.intera"
-  "ction.aoi.v1.GetBadAoiIDResponseB\211\002\n com"
+  "ction.aoi.v1.GetBadAoiIDResponseB\214\002\n com"
   ".city.comm.interaction.aoi.v1B\017AoiServic"
-  "eProtoP\001Z\?git.fiblab.net/sim/protos/go/c"
-  "ity/comm/interaction/aoi/v1;aoiv1\242\002\004CCIA"
-  "\252\002\034City.Comm.Interaction.Aoi.V1\312\002\034City\\C"
-  "omm\\Interaction\\Aoi\\V1\342\002(City\\Comm\\Inter"
-  "action\\Aoi\\V1\\GPBMetadata\352\002 City::Comm::"
-  "Interaction::Aoi::V1b\006proto3"
+  "eProtoP\001ZBgit.fiblab.net/sim/protos/go/v"
+  "2/city/comm/interaction/aoi/v1;aoiv1\242\002\004C"
+  "CIA\252\002\034City.Comm.Interaction.Aoi.V1\312\002\034Cit"
+  "y\\Comm\\Interaction\\Aoi\\V1\342\002(City\\Comm\\In"
+  "teraction\\Aoi\\V1\\GPBMetadata\352\002 City::Com"
+  "m::Interaction::Aoi::V1b\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_city_2fcomm_2finteraction_2faoi_2fv1_2faoi_5fservice_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2fcomm_2finteraction_2faoi_2fv1_2faoi_5fservice_2eproto = {
-    false, false, 548, descriptor_table_protodef_city_2fcomm_2finteraction_2faoi_2fv1_2faoi_5fservice_2eproto,
+    false, false, 551, descriptor_table_protodef_city_2fcomm_2finteraction_2faoi_2fv1_2faoi_5fservice_2eproto,
     "city/comm/interaction/aoi/v1/aoi_service.proto",
     &descriptor_table_city_2fcomm_2finteraction_2faoi_2fv1_2faoi_5fservice_2eproto_once, nullptr, 0, 2,
     schemas, file_default_instances, TableStruct_city_2fcomm_2finteraction_2faoi_2fv1_2faoi_5fservice_2eproto::offsets,

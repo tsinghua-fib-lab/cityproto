@@ -407,18 +407,18 @@ const char descriptor_table_protodef_city_2fwater_2finteraction_2fv1_2fwater_5fs
   "er.interaction.v1.GetNoWaterAOIResponse\""
   "\000\022n\n\013GetRuinInfo\022-.city.water.interactio"
   "n.v1.GetRuinInfoRequest\032..city.water.int"
-  "eraction.v1.GetRuinInfoResponse\"\000B\377\001\n\035co"
+  "eraction.v1.GetRuinInfoResponse\"\000B\202\002\n\035co"
   "m.city.water.interaction.v1B\021WaterServic"
-  "eProtoP\001ZDgit.fiblab.net/sim/protos/go/c"
-  "ity/water/interaction/v1;interactionv1\242\002"
-  "\003CWI\252\002\031City.Water.Interaction.V1\312\002\031City\\"
-  "Water\\Interaction\\V1\342\002%City\\Water\\Intera"
-  "ction\\V1\\GPBMetadata\352\002\034City::Water::Inte"
-  "raction::V1b\006proto3"
+  "eProtoP\001ZGgit.fiblab.net/sim/protos/go/v"
+  "2/city/water/interaction/v1;interactionv"
+  "1\242\002\003CWI\252\002\031City.Water.Interaction.V1\312\002\031Ci"
+  "ty\\Water\\Interaction\\V1\342\002%City\\Water\\Int"
+  "eraction\\V1\\GPBMetadata\352\002\034City::Water::I"
+  "nteraction::V1b\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_city_2fwater_2finteraction_2fv1_2fwater_5fservice_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2fwater_2finteraction_2fv1_2fwater_5fservice_2eproto = {
-    false, false, 2299, descriptor_table_protodef_city_2fwater_2finteraction_2fv1_2fwater_5fservice_2eproto,
+    false, false, 2302, descriptor_table_protodef_city_2fwater_2finteraction_2fv1_2fwater_5fservice_2eproto,
     "city/water/interaction/v1/water_service.proto",
     &descriptor_table_city_2fwater_2finteraction_2fv1_2fwater_5fservice_2eproto_once, nullptr, 0, 14,
     schemas, file_default_instances, TableStruct_city_2fwater_2finteraction_2fv1_2fwater_5fservice_2eproto::offsets,

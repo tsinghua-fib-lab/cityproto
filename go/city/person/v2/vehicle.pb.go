@@ -7,7 +7,7 @@
 package personv2
 
 import (
-	v2 "git.fiblab.net/sim/protos/go/city/routing/v2"
+	v2 "git.fiblab.net/sim/protos/go/v2/city/routing/v2"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -177,7 +177,7 @@ type LC struct {
 
 	// 影子车道ID（变道前的车道）
 	// shadow lane id (lane before lane change)
-	ShadowLaneId int32 `protobuf:"varint,1,opt,name=shadow_lane_id,json=shadowLaneId,proto3" json:"shadow_lane_id,omitempty" db:"shadow_lane_id" yaml:"shadow_lane_id" bson:"shadow_lane_id"`
+	ShadowLaneId int32 `protobuf:"varint,1,opt,name=shadow_lane_id,json=shadowLaneId,proto3" json:"shadow_lane_id,omitempty" yaml:"shadow_lane_id" bson:"shadow_lane_id" db:"shadow_lane_id"`
 	// 投影到影子车道的坐标
 	// s coordinate projected to shadow lane
 	ShadowS float64 `protobuf:"fixed64,2,opt,name=shadow_s,json=shadowS,proto3" json:"shadow_s,omitempty" yaml:"shadow_s" bson:"shadow_s" db:"shadow_s"`
@@ -186,7 +186,7 @@ type LC struct {
 	Angle float64 `protobuf:"fixed64,3,opt,name=angle,proto3" json:"angle,omitempty" yaml:"angle" bson:"angle" db:"angle"`
 	// 已完成的变道比例
 	// completed ratio of lane change
-	CompletedRatio float64 `protobuf:"fixed64,4,opt,name=completed_ratio,json=completedRatio,proto3" json:"completed_ratio,omitempty" yaml:"completed_ratio" bson:"completed_ratio" db:"completed_ratio"`
+	CompletedRatio float64 `protobuf:"fixed64,4,opt,name=completed_ratio,json=completedRatio,proto3" json:"completed_ratio,omitempty" bson:"completed_ratio" db:"completed_ratio" yaml:"completed_ratio"`
 }
 
 func (x *LC) Reset() {
@@ -261,13 +261,13 @@ type VehicleAction struct {
 	Id int32 `protobuf:"varint,4,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
 	// 本轮更新中设定的加速度
 	// acceleration set in this step
-	Acc float64 `protobuf:"fixed64,1,opt,name=acc,proto3" json:"acc,omitempty" bson:"acc" db:"acc" yaml:"acc"`
+	Acc float64 `protobuf:"fixed64,1,opt,name=acc,proto3" json:"acc,omitempty" db:"acc" yaml:"acc" bson:"acc"`
 	// 变道目标（可选，不设置代表不变道或保持变道状态）
 	// lane change target (optional, not set means no lane change)
 	LcTargetId *int32 `protobuf:"varint,2,opt,name=lc_target_id,json=lcTargetId,proto3,oneof" json:"lc_target_id,omitempty" yaml:"lc_target_id" bson:"lc_target_id" db:"lc_target_id"`
 	// 变道过程的转向角度
 	// steering angle during lane change
-	Angle float64 `protobuf:"fixed64,3,opt,name=angle,proto3" json:"angle,omitempty" yaml:"angle" bson:"angle" db:"angle"`
+	Angle float64 `protobuf:"fixed64,3,opt,name=angle,proto3" json:"angle,omitempty" db:"angle" yaml:"angle" bson:"angle"`
 }
 
 func (x *VehicleAction) Reset() {
@@ -337,7 +337,7 @@ type VehicleRuntime struct {
 
 	// 基本运行时信息
 	// basic runtime information
-	Base *PersonMotion `protobuf:"bytes,1,opt,name=base,proto3" json:"base,omitempty" bson:"base" db:"base" yaml:"base"`
+	Base *PersonMotion `protobuf:"bytes,1,opt,name=base,proto3" json:"base,omitempty" yaml:"base" bson:"base" db:"base"`
 	// 变道信息
 	// lane change information
 	Lc *LC `protobuf:"bytes,4,opt,name=lc,proto3,oneof" json:"lc,omitempty" yaml:"lc" bson:"lc" db:"lc"`
@@ -352,7 +352,7 @@ type VehicleRuntime struct {
 	NumGoingAstray int32 `protobuf:"varint,7,opt,name=num_going_astray,json=numGoingAstray,proto3" json:"num_going_astray,omitempty" db:"num_going_astray" yaml:"num_going_astray" bson:"num_going_astray"`
 	// 出发时刻
 	// departure time
-	DepartureTime float64 `protobuf:"fixed64,8,opt,name=departure_time,json=departureTime,proto3" json:"departure_time,omitempty" yaml:"departure_time" bson:"departure_time" db:"departure_time"`
+	DepartureTime float64 `protobuf:"fixed64,8,opt,name=departure_time,json=departureTime,proto3" json:"departure_time,omitempty" bson:"departure_time" db:"departure_time" yaml:"departure_time"`
 	// 预计到达时刻（导航返回的eta+出发时刻）
 	// estimated arrival time (eta returned by routing + departure time)
 	Eta float64 `protobuf:"fixed64,9,opt,name=eta,proto3" json:"eta,omitempty" yaml:"eta" bson:"eta" db:"eta"`
@@ -461,7 +461,7 @@ type ObservedVehicle struct {
 	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
 	// 当前的车辆运行时信息
 	// current vehicle runtime information
-	Motion *PersonMotion `protobuf:"bytes,2,opt,name=motion,proto3" json:"motion,omitempty" yaml:"motion" bson:"motion" db:"motion"`
+	Motion *PersonMotion `protobuf:"bytes,2,opt,name=motion,proto3" json:"motion,omitempty" db:"motion" yaml:"motion" bson:"motion"`
 	// 相对距离
 	// relative distance
 	RelativeDistance float64 `protobuf:"fixed64,3,opt,name=relative_distance,json=relativeDistance,proto3" json:"relative_distance,omitempty" yaml:"relative_distance" bson:"relative_distance" db:"relative_distance"`
@@ -541,10 +541,10 @@ type ObservedLane struct {
 	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
 	// 是否限行
 	// whether restricted
-	Restriction bool `protobuf:"varint,2,opt,name=restriction,proto3" json:"restriction,omitempty" db:"restriction" yaml:"restriction" bson:"restriction"`
+	Restriction bool `protobuf:"varint,2,opt,name=restriction,proto3" json:"restriction,omitempty" yaml:"restriction" bson:"restriction" db:"restriction"`
 	// 交通灯状态
 	// traffic light state
-	LightState LightState `protobuf:"varint,3,opt,name=light_state,json=lightState,proto3,enum=city.person.v2.LightState" json:"light_state,omitempty" bson:"light_state" db:"light_state" yaml:"light_state"`
+	LightState LightState `protobuf:"varint,3,opt,name=light_state,json=lightState,proto3,enum=city.person.v2.LightState" json:"light_state,omitempty" yaml:"light_state" bson:"light_state" db:"light_state"`
 	// 交通灯剩余时间
 	// remaining time of traffic light
 	LightRemainingTime float64 `protobuf:"fixed64,4,opt,name=light_remaining_time,json=lightRemainingTime,proto3" json:"light_remaining_time,omitempty" yaml:"light_remaining_time" bson:"light_remaining_time" db:"light_remaining_time"`
@@ -617,7 +617,7 @@ type VehicleEnv struct {
 
 	// 车辆编号
 	// vehicle id
-	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" bson:"id" db:"id" yaml:"id"`
+	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
 	// 当前的车辆运行时信息
 	// current vehicle runtime information
 	Runtime *VehicleRuntime `protobuf:"bytes,2,opt,name=runtime,proto3" json:"runtime,omitempty" yaml:"runtime" bson:"runtime" db:"runtime"`
@@ -629,7 +629,7 @@ type VehicleEnv struct {
 	ObservedVehicles []*ObservedVehicle `protobuf:"bytes,4,rep,name=observed_vehicles,json=observedVehicles,proto3" json:"observed_vehicles,omitempty" yaml:"observed_vehicles" bson:"observed_vehicles" db:"observed_vehicles"`
 	// 观测到的车道状态
 	// observed lane states
-	ObservedLanes []*ObservedLane `protobuf:"bytes,5,rep,name=observed_lanes,json=observedLanes,proto3" json:"observed_lanes,omitempty" yaml:"observed_lanes" bson:"observed_lanes" db:"observed_lanes"`
+	ObservedLanes []*ObservedLane `protobuf:"bytes,5,rep,name=observed_lanes,json=observedLanes,proto3" json:"observed_lanes,omitempty" bson:"observed_lanes" db:"observed_lanes" yaml:"observed_lanes"`
 }
 
 func (x *VehicleEnv) Reset() {
@@ -816,18 +816,19 @@ var file_city_person_v2_vehicle_proto_rawDesc = []byte{
 	0x45, 0x44, 0x10, 0x01, 0x12, 0x15, 0x0a, 0x11, 0x4c, 0x49, 0x47, 0x48, 0x54, 0x5f, 0x53, 0x54,
 	0x41, 0x54, 0x45, 0x5f, 0x47, 0x52, 0x45, 0x45, 0x4e, 0x10, 0x02, 0x12, 0x16, 0x0a, 0x12, 0x4c,
 	0x49, 0x47, 0x48, 0x54, 0x5f, 0x53, 0x54, 0x41, 0x54, 0x45, 0x5f, 0x59, 0x45, 0x4c, 0x4c, 0x4f,
-	0x57, 0x10, 0x03, 0x42, 0xb2, 0x01, 0x0a, 0x12, 0x63, 0x6f, 0x6d, 0x2e, 0x63, 0x69, 0x74, 0x79,
+	0x57, 0x10, 0x03, 0x42, 0xb5, 0x01, 0x0a, 0x12, 0x63, 0x6f, 0x6d, 0x2e, 0x63, 0x69, 0x74, 0x79,
 	0x2e, 0x70, 0x65, 0x72, 0x73, 0x6f, 0x6e, 0x2e, 0x76, 0x32, 0x42, 0x0c, 0x56, 0x65, 0x68, 0x69,
-	0x63, 0x6c, 0x65, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x34, 0x67, 0x69, 0x74, 0x2e,
+	0x63, 0x6c, 0x65, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x37, 0x67, 0x69, 0x74, 0x2e,
 	0x66, 0x69, 0x62, 0x6c, 0x61, 0x62, 0x2e, 0x6e, 0x65, 0x74, 0x2f, 0x73, 0x69, 0x6d, 0x2f, 0x70,
-	0x72, 0x6f, 0x74, 0x6f, 0x73, 0x2f, 0x67, 0x6f, 0x2f, 0x63, 0x69, 0x74, 0x79, 0x2f, 0x70, 0x65,
-	0x72, 0x73, 0x6f, 0x6e, 0x2f, 0x76, 0x32, 0x3b, 0x70, 0x65, 0x72, 0x73, 0x6f, 0x6e, 0x76, 0x32,
-	0xa2, 0x02, 0x03, 0x43, 0x50, 0x58, 0xaa, 0x02, 0x0e, 0x43, 0x69, 0x74, 0x79, 0x2e, 0x50, 0x65,
-	0x72, 0x73, 0x6f, 0x6e, 0x2e, 0x56, 0x32, 0xca, 0x02, 0x0e, 0x43, 0x69, 0x74, 0x79, 0x5c, 0x50,
-	0x65, 0x72, 0x73, 0x6f, 0x6e, 0x5c, 0x56, 0x32, 0xe2, 0x02, 0x1a, 0x43, 0x69, 0x74, 0x79, 0x5c,
-	0x50, 0x65, 0x72, 0x73, 0x6f, 0x6e, 0x5c, 0x56, 0x32, 0x5c, 0x47, 0x50, 0x42, 0x4d, 0x65, 0x74,
-	0x61, 0x64, 0x61, 0x74, 0x61, 0xea, 0x02, 0x10, 0x43, 0x69, 0x74, 0x79, 0x3a, 0x3a, 0x50, 0x65,
-	0x72, 0x73, 0x6f, 0x6e, 0x3a, 0x3a, 0x56, 0x32, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x72, 0x6f, 0x74, 0x6f, 0x73, 0x2f, 0x67, 0x6f, 0x2f, 0x76, 0x32, 0x2f, 0x63, 0x69, 0x74, 0x79,
+	0x2f, 0x70, 0x65, 0x72, 0x73, 0x6f, 0x6e, 0x2f, 0x76, 0x32, 0x3b, 0x70, 0x65, 0x72, 0x73, 0x6f,
+	0x6e, 0x76, 0x32, 0xa2, 0x02, 0x03, 0x43, 0x50, 0x58, 0xaa, 0x02, 0x0e, 0x43, 0x69, 0x74, 0x79,
+	0x2e, 0x50, 0x65, 0x72, 0x73, 0x6f, 0x6e, 0x2e, 0x56, 0x32, 0xca, 0x02, 0x0e, 0x43, 0x69, 0x74,
+	0x79, 0x5c, 0x50, 0x65, 0x72, 0x73, 0x6f, 0x6e, 0x5c, 0x56, 0x32, 0xe2, 0x02, 0x1a, 0x43, 0x69,
+	0x74, 0x79, 0x5c, 0x50, 0x65, 0x72, 0x73, 0x6f, 0x6e, 0x5c, 0x56, 0x32, 0x5c, 0x47, 0x50, 0x42,
+	0x4d, 0x65, 0x74, 0x61, 0x64, 0x61, 0x74, 0x61, 0xea, 0x02, 0x10, 0x43, 0x69, 0x74, 0x79, 0x3a,
+	0x3a, 0x50, 0x65, 0x72, 0x73, 0x6f, 0x6e, 0x3a, 0x3a, 0x56, 0x32, 0x62, 0x06, 0x70, 0x72, 0x6f,
+	0x74, 0x6f, 0x33,
 }
 
 var (

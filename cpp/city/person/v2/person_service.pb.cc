@@ -547,12 +547,12 @@ const char descriptor_table_protodef_city_2fperson_2fv2_2fperson_5fservice_2epro
   "onse\022\206\001\n\033SetControlledVehicleActions\0222.c"
   "ity.person.v2.SetControlledVehicleAction"
   "sRequest\0323.city.person.v2.SetControlledV"
-  "ehicleActionsResponseB\270\001\n\022com.city.perso"
-  "n.v2B\022PersonServiceProtoP\001Z4git.fiblab.n"
-  "et/sim/protos/go/city/person/v2;personv2"
-  "\242\002\003CPX\252\002\016City.Person.V2\312\002\016City\\Person\\V2"
-  "\342\002\032City\\Person\\V2\\GPBMetadata\352\002\020City::Pe"
-  "rson::V2b\006proto3"
+  "ehicleActionsResponseB\273\001\n\022com.city.perso"
+  "n.v2B\022PersonServiceProtoP\001Z7git.fiblab.n"
+  "et/sim/protos/go/v2/city/person/v2;perso"
+  "nv2\242\002\003CPX\252\002\016City.Person.V2\312\002\016City\\Person"
+  "\\V2\342\002\032City\\Person\\V2\\GPBMetadata\352\002\020City:"
+  ":Person::V2b\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_deps[6] = {
   &::descriptor_table_city_2fgeo_2fv2_2fgeo_2eproto,
@@ -564,7 +564,7 @@ static const ::_pbi::DescriptorTable* const descriptor_table_city_2fperson_2fv2_
 };
 static ::_pbi::once_flag descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto = {
-    false, false, 3016, descriptor_table_protodef_city_2fperson_2fv2_2fperson_5fservice_2eproto,
+    false, false, 3019, descriptor_table_protodef_city_2fperson_2fv2_2fperson_5fservice_2eproto,
     "city/person/v2/person_service.proto",
     &descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_once, descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_deps, 6, 20,
     schemas, file_default_instances, TableStruct_city_2fperson_2fv2_2fperson_5fservice_2eproto::offsets,

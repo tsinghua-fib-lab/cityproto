@@ -122,13 +122,13 @@ const char descriptor_table_protodef_city_2felec_2foutput_2fv1_2foutput_5fservic
   "AveragePowerR\raveragePowers\"\020\n\016OutputRes"
   "ponse2b\n\rOutputService\022Q\n\006Output\022\".city."
   "elec.output.v1.OutputRequest\032#.city.elec"
-  ".output.v1.OutputResponseB\327\001\n\027com.city.e"
-  "lec.output.v1B\022OutputServiceProtoP\001Z9git"
-  ".fiblab.net/sim/protos/go/city/elec/outp"
-  "ut/v1;outputv1\242\002\003CEO\252\002\023City.Elec.Output."
-  "V1\312\002\023City\\Elec\\Output\\V1\342\002\037City\\Elec\\Out"
-  "put\\V1\\GPBMetadata\352\002\026City::Elec::Output:"
-  ":V1b\006proto3"
+  ".output.v1.OutputResponseB\332\001\n\027com.city.e"
+  "lec.output.v1B\022OutputServiceProtoP\001Z<git"
+  ".fiblab.net/sim/protos/go/v2/city/elec/o"
+  "utput/v1;outputv1\242\002\003CEO\252\002\023City.Elec.Outp"
+  "ut.V1\312\002\023City\\Elec\\Output\\V1\342\002\037City\\Elec\\"
+  "Output\\V1\\GPBMetadata\352\002\026City::Elec::Outp"
+  "ut::V1b\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_city_2felec_2foutput_2fv1_2foutput_5fservice_2eproto_deps[2] = {
   &::descriptor_table_city_2felec_2foutput_2fv1_2foutput_2eproto,
@@ -136,7 +136,7 @@ static const ::_pbi::DescriptorTable* const descriptor_table_city_2felec_2foutpu
 };
 static ::_pbi::once_flag descriptor_table_city_2felec_2foutput_2fv1_2foutput_5fservice_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2felec_2foutput_2fv1_2foutput_5fservice_2eproto = {
-    false, false, 971, descriptor_table_protodef_city_2felec_2foutput_2fv1_2foutput_5fservice_2eproto,
+    false, false, 974, descriptor_table_protodef_city_2felec_2foutput_2fv1_2foutput_5fservice_2eproto,
     "city/elec/output/v1/output_service.proto",
     &descriptor_table_city_2felec_2foutput_2fv1_2foutput_5fservice_2eproto_once, descriptor_table_city_2felec_2foutput_2fv1_2foutput_5fservice_2eproto_deps, 2, 2,
     schemas, file_default_instances, TableStruct_city_2felec_2foutput_2fv1_2foutput_5fservice_2eproto::offsets,

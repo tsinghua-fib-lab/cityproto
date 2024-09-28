@@ -274,16 +274,16 @@ const char descriptor_table_protodef_city_2frouting_2fv2_2frouting_2eproto[] PRO
   "ALKING\020\002\022\027\n\023JOURNEY_TYPE_BY_BUS\020\003*p\n\017Mov"
   "ingDirection\022 \n\034MOVING_DIRECTION_UNSPECI"
   "FIED\020\000\022\034\n\030MOVING_DIRECTION_FORWARD\020\001\022\035\n\031"
-  "MOVING_DIRECTION_BACKWARD\020\002B\271\001\n\023com.city"
-  ".routing.v2B\014RoutingProtoP\001Z6git.fiblab."
-  "net/sim/protos/go/city/routing/v2;routin"
-  "gv2\242\002\003CRX\252\002\017City.Routing.V2\312\002\017City\\Routi"
-  "ng\\V2\342\002\033City\\Routing\\V2\\GPBMetadata\352\002\021Ci"
-  "ty::Routing::V2b\006proto3"
+  "MOVING_DIRECTION_BACKWARD\020\002B\274\001\n\023com.city"
+  ".routing.v2B\014RoutingProtoP\001Z9git.fiblab."
+  "net/sim/protos/go/v2/city/routing/v2;rou"
+  "tingv2\242\002\003CRX\252\002\017City.Routing.V2\312\002\017City\\Ro"
+  "uting\\V2\342\002\033City\\Routing\\V2\\GPBMetadata\352\002"
+  "\021City::Routing::V2b\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_city_2frouting_2fv2_2frouting_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2frouting_2fv2_2frouting_2eproto = {
-    false, false, 1543, descriptor_table_protodef_city_2frouting_2fv2_2frouting_2eproto,
+    false, false, 1546, descriptor_table_protodef_city_2frouting_2fv2_2frouting_2eproto,
     "city/routing/v2/routing.proto",
     &descriptor_table_city_2frouting_2fv2_2frouting_2eproto_once, nullptr, 0, 8,
     schemas, file_default_instances, TableStruct_city_2frouting_2fv2_2frouting_2eproto::offsets,

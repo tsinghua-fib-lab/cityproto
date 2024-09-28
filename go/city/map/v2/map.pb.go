@@ -7,7 +7,7 @@
 package mapv2
 
 import (
-	v2 "git.fiblab.net/sim/protos/go/city/geo/v2"
+	v2 "git.fiblab.net/sim/protos/go/v2/city/geo/v2"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -407,7 +407,7 @@ type Polyline struct {
 
 	// 折线上的点
 	// Points of the polyline
-	Nodes []*v2.XYPosition `protobuf:"bytes,1,rep,name=nodes,proto3" json:"nodes,omitempty" yaml:"nodes" bson:"nodes" db:"nodes"`
+	Nodes []*v2.XYPosition `protobuf:"bytes,1,rep,name=nodes,proto3" json:"nodes,omitempty" db:"nodes" yaml:"nodes" bson:"nodes"`
 }
 
 func (x *Polyline) Reset() {
@@ -461,28 +461,28 @@ type Header struct {
 	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty" yaml:"name" bson:"name" db:"name"`
 	// 地图创建时间
 	// Map creation time
-	Date string `protobuf:"bytes,2,opt,name=date,proto3" json:"date,omitempty" yaml:"date" bson:"date" db:"date"`
+	Date string `protobuf:"bytes,2,opt,name=date,proto3" json:"date,omitempty" db:"date" yaml:"date" bson:"date"`
 	// 最大纬度对应的y坐标
 	// y coordinate corresponding to the maximum latitude
-	North float64 `protobuf:"fixed64,3,opt,name=north,proto3" json:"north,omitempty" yaml:"north" bson:"north" db:"north"`
+	North float64 `protobuf:"fixed64,3,opt,name=north,proto3" json:"north,omitempty" bson:"north" db:"north" yaml:"north"`
 	// 最小纬度对应的y坐标
 	// y coordinate corresponding to the minimum latitude
 	South float64 `protobuf:"fixed64,4,opt,name=south,proto3" json:"south,omitempty" yaml:"south" bson:"south" db:"south"`
 	// 最大经度对应的x坐标
 	// x coordinate corresponding to the maximum longitude
-	East float64 `protobuf:"fixed64,5,opt,name=east,proto3" json:"east,omitempty" yaml:"east" bson:"east" db:"east"`
+	East float64 `protobuf:"fixed64,5,opt,name=east,proto3" json:"east,omitempty" db:"east" yaml:"east" bson:"east"`
 	// 最小经度对应的x坐标
 	// x coordinate corresponding to the minimum longitude
 	West float64 `protobuf:"fixed64,6,opt,name=west,proto3" json:"west,omitempty" yaml:"west" bson:"west" db:"west"`
 	// PROJ.4 投影字符串，用以支持xy坐标到其他坐标系的转换
 	// PROJ.4 projection string to support the conversion of xy coordinates to other coordinate systems
-	Projection string `protobuf:"bytes,7,opt,name=projection,proto3" json:"projection,omitempty" bson:"projection" db:"projection" yaml:"projection"`
+	Projection string `protobuf:"bytes,7,opt,name=projection,proto3" json:"projection,omitempty" yaml:"projection" bson:"projection" db:"projection"`
 	// 在x方向划分TAZ的步长
 	// Step size of the TAZ in the x-direction
 	TazXStep *float64 `protobuf:"fixed64,8,opt,name=taz_x_step,json=tazXStep,proto3,oneof" json:"taz_x_step,omitempty" yaml:"taz_x_step" bson:"taz_x_step" db:"taz_x_step"`
 	// 在y方向划分TAZ的步长
 	// Step size of the TAZ in the y-direction
-	TazYStep *float64 `protobuf:"fixed64,9,opt,name=taz_y_step,json=tazYStep,proto3,oneof" json:"taz_y_step,omitempty" bson:"taz_y_step" db:"taz_y_step" yaml:"taz_y_step"`
+	TazYStep *float64 `protobuf:"fixed64,9,opt,name=taz_y_step,json=tazYStep,proto3,oneof" json:"taz_y_step,omitempty" yaml:"taz_y_step" bson:"taz_y_step" db:"taz_y_step"`
 }
 
 func (x *Header) Reset() {
@@ -592,7 +592,7 @@ type LaneOverlap struct {
 	Self *v2.LanePosition `protobuf:"bytes,1,opt,name=self,proto3" json:"self,omitempty" yaml:"self" bson:"self" db:"self"`
 	// 冲突点在冲突车道上的坐标
 	// Coordinates of the conflict point on the conflicted lane
-	Other *v2.LanePosition `protobuf:"bytes,2,opt,name=other,proto3" json:"other,omitempty" db:"other" yaml:"other" bson:"other"`
+	Other *v2.LanePosition `protobuf:"bytes,2,opt,name=other,proto3" json:"other,omitempty" yaml:"other" bson:"other" db:"other"`
 	// 本车道是否有优先通行权
 	// Whether this lane has priority
 	SelfFirst bool `protobuf:"varint,3,opt,name=self_first,json=selfFirst,proto3" json:"self_first,omitempty" yaml:"self_first" bson:"self_first" db:"self_first"`
@@ -749,7 +749,7 @@ type Lane struct {
 	// Lane right boundary line
 	//
 	// Deprecated: Marked as deprecated in city/map/v2/map.proto.
-	RightBorderLine *Polyline `protobuf:"bytes,9,opt,name=right_border_line,json=rightBorderLine,proto3" json:"right_border_line,omitempty" bson:"right_border_line" db:"right_border_line" yaml:"right_border_line"` // 弃用 deprecated
+	RightBorderLine *Polyline `protobuf:"bytes,9,opt,name=right_border_line,json=rightBorderLine,proto3" json:"right_border_line,omitempty" yaml:"right_border_line" bson:"right_border_line" db:"right_border_line"` // 弃用 deprecated
 	// Lanes can drive / walk from
 	// 对于Junction内的车道至多1个前驱
 	// For lanes within junction, there is at most 1 predecessor
@@ -765,19 +765,19 @@ type Lane struct {
 	// For LANE_TYPE_DRIVING, the connection type must be LANE_CONNECTION_TYPE_HEAD
 	// 对于LANE_TYPE_WALKING连接类型，两种都有可能
 	// For LANE_TYPE_WALKING, both connection types are possible
-	Successors []*LaneConnection `protobuf:"bytes,11,rep,name=successors,proto3" json:"successors,omitempty" bson:"successors" db:"successors" yaml:"successors"`
+	Successors []*LaneConnection `protobuf:"bytes,11,rep,name=successors,proto3" json:"successors,omitempty" yaml:"successors" bson:"successors" db:"successors"`
 	// 左侧相邻车道（按从近到远排列）
 	// Adjacent lanes on the left (arranged from nearest to far)
-	LeftLaneIds []int32 `protobuf:"varint,12,rep,packed,name=left_lane_ids,json=leftLaneIds,proto3" json:"left_lane_ids,omitempty" yaml:"left_lane_ids" bson:"left_lane_ids" db:"left_lane_ids"`
+	LeftLaneIds []int32 `protobuf:"varint,12,rep,packed,name=left_lane_ids,json=leftLaneIds,proto3" json:"left_lane_ids,omitempty" bson:"left_lane_ids" db:"left_lane_ids" yaml:"left_lane_ids"`
 	// 右侧相邻车道（按从近到远排列）
 	// Adjacent lanes on the right (arranged from nearest to far)
 	RightLaneIds []int32 `protobuf:"varint,13,rep,packed,name=right_lane_ids,json=rightLaneIds,proto3" json:"right_lane_ids,omitempty" yaml:"right_lane_ids" bson:"right_lane_ids" db:"right_lane_ids"`
 	// 所属的道路road id或路口junction id
 	// The road id or junction id it belongs to
-	ParentId int32 `protobuf:"varint,14,opt,name=parent_id,json=parentId,proto3" json:"parent_id,omitempty" yaml:"parent_id" bson:"parent_id" db:"parent_id"`
+	ParentId int32 `protobuf:"varint,14,opt,name=parent_id,json=parentId,proto3" json:"parent_id,omitempty" bson:"parent_id" db:"parent_id" yaml:"parent_id"`
 	// 车道之间的冲突点（仅在Junction内有效），保证按照self_s从小到大排序
 	// Conflict points between lanes (valid only within Junction), guaranteed to be sorted from small to large according to self_s
-	Overlaps []*LaneOverlap `protobuf:"bytes,15,rep,name=overlaps,proto3" json:"overlaps,omitempty" bson:"overlaps" db:"overlaps" yaml:"overlaps"`
+	Overlaps []*LaneOverlap `protobuf:"bytes,15,rep,name=overlaps,proto3" json:"overlaps,omitempty" yaml:"overlaps" bson:"overlaps" db:"overlaps"`
 	// 连接到该车道的所有AOI
 	// All AOIs connected to this lane
 	AoiIds []int32 `protobuf:"varint,16,rep,packed,name=aoi_ids,json=aoiIds,proto3" json:"aoi_ids,omitempty" yaml:"aoi_ids" bson:"aoi_ids" db:"aoi_ids"`
@@ -940,7 +940,7 @@ type NextRoadLane struct {
 	// 我们假定能去往对应道路的车道id范围是连续的，用[a,b]表示
 	// We assume that the range of lane IDs of the next road is continuous, represented by [a, b]
 	LaneIdA int32 `protobuf:"varint,2,opt,name=lane_id_a,json=laneIdA,proto3" json:"lane_id_a,omitempty" yaml:"lane_id_a" bson:"lane_id_a" db:"lane_id_a"`
-	LaneIdB int32 `protobuf:"varint,3,opt,name=lane_id_b,json=laneIdB,proto3" json:"lane_id_b,omitempty" db:"lane_id_b" yaml:"lane_id_b" bson:"lane_id_b"`
+	LaneIdB int32 `protobuf:"varint,3,opt,name=lane_id_b,json=laneIdB,proto3" json:"lane_id_b,omitempty" yaml:"lane_id_b" bson:"lane_id_b" db:"lane_id_b"`
 }
 
 func (x *NextRoadLane) Reset() {
@@ -1054,7 +1054,7 @@ type Road struct {
 
 	// 道路id（从2_0000_0000开始）
 	// Road ID (starting from 2_0000_0000)
-	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" db:"id" yaml:"id" bson:"id"`
+	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
 	// 道路名字
 	// road name
 	Name string `protobuf:"bytes,4,opt,name=name,proto3" json:"name,omitempty" yaml:"name" bson:"name" db:"name"`
@@ -1062,7 +1062,7 @@ type Road struct {
 	// All lanes/sidewalks belonging to the road
 	// lane_id是按从最左侧车道到最右侧车道(从前进方向来看)的顺序给出的
 	// lane_ids are given in order from the leftmost lane to the rightmost lane (viewed from the forward direction)
-	LaneIds []int32 `protobuf:"varint,2,rep,packed,name=lane_ids,json=laneIds,proto3" json:"lane_ids,omitempty" yaml:"lane_ids" bson:"lane_ids" db:"lane_ids"`
+	LaneIds []int32 `protobuf:"varint,2,rep,packed,name=lane_ids,json=laneIds,proto3" json:"lane_ids,omitempty" bson:"lane_ids" db:"lane_ids" yaml:"lane_ids"`
 	// 对于包含动态车道的道路，需要通过这一项来指定所有的候选方案
 	// For roads containing dynamic lanes, this is required to specify all candidates
 	NextRoadLanePlans []*NextRoadLanePlan `protobuf:"bytes,3,rep,name=next_road_lane_plans,json=nextRoadLanePlans,proto3" json:"next_road_lane_plans,omitempty" yaml:"next_road_lane_plans" bson:"next_road_lane_plans" db:"next_road_lane_plans"`
@@ -1147,16 +1147,16 @@ type JunctionLaneGroup struct {
 	InAngle float64 `protobuf:"fixed64,2,opt,name=in_angle,json=inAngle,proto3" json:"in_angle,omitempty" yaml:"in_angle" bson:"in_angle" db:"in_angle"`
 	// 该车道组的出口道路
 	// The exit road for this lane group
-	OutRoadId int32 `protobuf:"varint,3,opt,name=out_road_id,json=outRoadId,proto3" json:"out_road_id,omitempty" db:"out_road_id" yaml:"out_road_id" bson:"out_road_id"`
+	OutRoadId int32 `protobuf:"varint,3,opt,name=out_road_id,json=outRoadId,proto3" json:"out_road_id,omitempty" yaml:"out_road_id" bson:"out_road_id" db:"out_road_id"`
 	// 该车道组的出口角度（弧度制）
 	// The exit angle of this lane group (in radians)
-	OutAngle float64 `protobuf:"fixed64,4,opt,name=out_angle,json=outAngle,proto3" json:"out_angle,omitempty" yaml:"out_angle" bson:"out_angle" db:"out_angle"`
+	OutAngle float64 `protobuf:"fixed64,4,opt,name=out_angle,json=outAngle,proto3" json:"out_angle,omitempty" bson:"out_angle" db:"out_angle" yaml:"out_angle"`
 	// 该车道组包含的车道
 	// Lanes in the group
-	LaneIds []int32 `protobuf:"varint,5,rep,packed,name=lane_ids,json=laneIds,proto3" json:"lane_ids,omitempty" yaml:"lane_ids" bson:"lane_ids" db:"lane_ids"`
+	LaneIds []int32 `protobuf:"varint,5,rep,packed,name=lane_ids,json=laneIds,proto3" json:"lane_ids,omitempty" db:"lane_ids" yaml:"lane_ids" bson:"lane_ids"`
 	// 该车道组的转向属性
 	// The turn type of this lane group
-	Turn LaneTurn `protobuf:"varint,6,opt,name=turn,proto3,enum=city.map.v2.LaneTurn" json:"turn,omitempty" yaml:"turn" bson:"turn" db:"turn"`
+	Turn LaneTurn `protobuf:"varint,6,opt,name=turn,proto3,enum=city.map.v2.LaneTurn" json:"turn,omitempty" db:"turn" yaml:"turn" bson:"turn"`
 }
 
 func (x *JunctionLaneGroup) Reset() {
@@ -1251,10 +1251,10 @@ type Junction struct {
 	DrivingLaneGroups []*JunctionLaneGroup `protobuf:"bytes,3,rep,name=driving_lane_groups,json=drivingLaneGroups,proto3" json:"driving_lane_groups,omitempty" yaml:"driving_lane_groups" bson:"driving_lane_groups" db:"driving_lane_groups"`
 	// 所有可用信号灯相位
 	// All available phases for max pressure algorithm
-	Phases []*AvailablePhase `protobuf:"bytes,4,rep,name=phases,proto3" json:"phases,omitempty" bson:"phases" db:"phases" yaml:"phases"`
+	Phases []*AvailablePhase `protobuf:"bytes,4,rep,name=phases,proto3" json:"phases,omitempty" yaml:"phases" bson:"phases" db:"phases"`
 	// 默认固定相位信号灯
 	// Default fixed phases traffic light
-	FixedProgram *TrafficLight `protobuf:"bytes,5,opt,name=fixed_program,json=fixedProgram,proto3,oneof" json:"fixed_program,omitempty" db:"fixed_program" yaml:"fixed_program" bson:"fixed_program"`
+	FixedProgram *TrafficLight `protobuf:"bytes,5,opt,name=fixed_program,json=fixedProgram,proto3,oneof" json:"fixed_program,omitempty" yaml:"fixed_program" bson:"fixed_program" db:"fixed_program"`
 }
 
 func (x *Junction) Reset() {
@@ -1380,10 +1380,10 @@ type SublineSchedules struct {
 
 	// 始发站发车时间
 	// Departure time from the departure station
-	DepartureTimes []float64 `protobuf:"fixed64,1,rep,packed,name=departure_times,json=departureTimes,proto3" json:"departure_times,omitempty" yaml:"departure_times" bson:"departure_times" db:"departure_times"`
+	DepartureTimes []float64 `protobuf:"fixed64,1,rep,packed,name=departure_times,json=departureTimes,proto3" json:"departure_times,omitempty" bson:"departure_times" db:"departure_times" yaml:"departure_times"`
 	// 到达沿途站点预计时间
 	// Estimated time to arrive at stops along the way
-	OffsetTimes []float64 `protobuf:"fixed64,2,rep,packed,name=offset_times,json=offsetTimes,proto3" json:"offset_times,omitempty" yaml:"offset_times" bson:"offset_times" db:"offset_times"`
+	OffsetTimes []float64 `protobuf:"fixed64,2,rep,packed,name=offset_times,json=offsetTimes,proto3" json:"offset_times,omitempty" bson:"offset_times" db:"offset_times" yaml:"offset_times"`
 }
 
 func (x *SublineSchedules) Reset() {
@@ -1453,8 +1453,8 @@ type HeuristicTAZCost struct {
 
 	TazXId int32   `protobuf:"varint,1,opt,name=taz_x_id,json=tazXId,proto3" json:"taz_x_id,omitempty" db:"taz_x_id" yaml:"taz_x_id" bson:"taz_x_id"`
 	TazYId int32   `protobuf:"varint,2,opt,name=taz_y_id,json=tazYId,proto3" json:"taz_y_id,omitempty" yaml:"taz_y_id" bson:"taz_y_id" db:"taz_y_id"`
-	AoiId  int32   `protobuf:"varint,3,opt,name=aoi_id,json=aoiId,proto3" json:"aoi_id,omitempty" db:"aoi_id" yaml:"aoi_id" bson:"aoi_id"`
-	Cost   float64 `protobuf:"fixed64,4,opt,name=cost,proto3" json:"cost,omitempty" db:"cost" yaml:"cost" bson:"cost"`
+	AoiId  int32   `protobuf:"varint,3,opt,name=aoi_id,json=aoiId,proto3" json:"aoi_id,omitempty" yaml:"aoi_id" bson:"aoi_id" db:"aoi_id"`
+	Cost   float64 `protobuf:"fixed64,4,opt,name=cost,proto3" json:"cost,omitempty" yaml:"cost" bson:"cost" db:"cost"`
 }
 
 func (x *HeuristicTAZCost) Reset() {
@@ -1526,10 +1526,10 @@ type PublicTransportSubline struct {
 
 	// 支线ID
 	// Subline ID
-	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
+	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" db:"id" yaml:"id" bson:"id"`
 	// 支线名字
 	// Subline name
-	Name string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty" bson:"name" db:"name" yaml:"name"`
+	Name string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty" yaml:"name" bson:"name" db:"name"`
 	// 该条支线沿途的所有车站AOI，按支线前进顺序排列
 	// All stations along this subline, in the order of advancement of the subline."
 	AoiIds []int32 `protobuf:"varint,3,rep,packed,name=aoi_ids,json=aoiIds,proto3" json:"aoi_ids,omitempty" yaml:"aoi_ids" bson:"aoi_ids" db:"aoi_ids"`
@@ -1547,7 +1547,7 @@ type PublicTransportSubline struct {
 	Schedules *SublineSchedules `protobuf:"bytes,7,opt,name=schedules,proto3" json:"schedules,omitempty" yaml:"schedules" bson:"schedules" db:"schedules"`
 	// 预计算公共交通权重
 	// Precalculate public transport costs
-	TazCosts []*HeuristicTAZCost `protobuf:"bytes,8,rep,name=taz_costs,json=tazCosts,proto3" json:"taz_costs,omitempty" db:"taz_costs" yaml:"taz_costs" bson:"taz_costs"`
+	TazCosts []*HeuristicTAZCost `protobuf:"bytes,8,rep,name=taz_costs,json=tazCosts,proto3" json:"taz_costs,omitempty" yaml:"taz_costs" bson:"taz_costs" db:"taz_costs"`
 }
 
 func (x *PublicTransportSubline) Reset() {
@@ -1707,7 +1707,7 @@ type Aoi struct {
 	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
 	// Aoi名字
 	// Aoi name
-	Name string `protobuf:"bytes,11,opt,name=name,proto3" json:"name,omitempty" bson:"name" db:"name" yaml:"name"`
+	Name string `protobuf:"bytes,11,opt,name=name,proto3" json:"name,omitempty" yaml:"name" bson:"name" db:"name"`
 	// Aoi类型
 	// Aoi type
 	//
@@ -1721,7 +1721,7 @@ type Aoi struct {
 	WalkingPositions []*v2.LanePosition `protobuf:"bytes,4,rep,name=walking_positions,json=walkingPositions,proto3" json:"walking_positions,omitempty" yaml:"walking_positions" bson:"walking_positions" db:"walking_positions"`
 	// Aoi原始位置（如果只有一个值，则为Aoi所在的点，否则为Aoi多边形的边界）
 	// Aoi original position (if there is only one value, it is the point where Aoi is located, otherwise it is the boundary of the Aoi polygon)
-	Positions []*v2.XYPosition `protobuf:"bytes,5,rep,name=positions,proto3" json:"positions,omitempty" bson:"positions" db:"positions" yaml:"positions"`
+	Positions []*v2.XYPosition `protobuf:"bytes,5,rep,name=positions,proto3" json:"positions,omitempty" yaml:"positions" bson:"positions" db:"positions"`
 	// Aoi与行车路网连接时在自身边界上的连接点, 与driving_positions按索引一一对应
 	// The connection point on its own boundary when Aoi is connected to the driving lanes corresponds one-to-one with driving_positions by index.
 	DrivingGates []*v2.XYPosition `protobuf:"bytes,6,rep,name=driving_gates,json=drivingGates,proto3" json:"driving_gates,omitempty" yaml:"driving_gates" bson:"driving_gates" db:"driving_gates"`
@@ -1730,21 +1730,21 @@ type Aoi struct {
 	WalkingGates []*v2.XYPosition `protobuf:"bytes,7,rep,name=walking_gates,json=walkingGates,proto3" json:"walking_gates,omitempty" yaml:"walking_gates" bson:"walking_gates" db:"walking_gates"`
 	// Aoi面积, 若是Poi则无此字段
 	// Aoi area, if it is Poi, there is no such field
-	Area *float64 `protobuf:"fixed64,8,opt,name=area,proto3,oneof" json:"area,omitempty" bson:"area" db:"area" yaml:"area"`
+	Area *float64 `protobuf:"fixed64,8,opt,name=area,proto3,oneof" json:"area,omitempty" yaml:"area" bson:"area" db:"area"`
 	// 土地利用分类，若是Poi则无此字段
 	// Land use type, if it is Poi, there is no such field
 	//
 	// Deprecated: Marked as deprecated in city/map/v2/map.proto.
-	LandUse *LandUseType `protobuf:"varint,10,opt,name=land_use,json=landUse,proto3,enum=city.map.v2.LandUseType,oneof" json:"land_use,omitempty" db:"land_use" yaml:"land_use" bson:"land_use"` // 弃用 deprecated
+	LandUse *LandUseType `protobuf:"varint,10,opt,name=land_use,json=landUse,proto3,enum=city.map.v2.LandUseType,oneof" json:"land_use,omitempty" bson:"land_use" db:"land_use" yaml:"land_use"` // 弃用 deprecated
 	// 城市建设用地分类，参照执行标准GB 50137-2011（https://www.planning.org.cn/law/uploads/2013/1383993139.pdf）
 	// Urban Land use type, refer to the national standard GB 50137-2011
 	UrbanLandUse *string `protobuf:"bytes,12,opt,name=urban_land_use,json=urbanLandUse,proto3,oneof" json:"urban_land_use,omitempty" yaml:"urban_land_use" bson:"urban_land_use" db:"urban_land_use"`
 	// Aoi包含的Poi
 	// Pois contained in Aoi
-	PoiIds []int32 `protobuf:"varint,9,rep,packed,name=poi_ids,json=poiIds,proto3" json:"poi_ids,omitempty" bson:"poi_ids" db:"poi_ids" yaml:"poi_ids"`
+	PoiIds []int32 `protobuf:"varint,9,rep,packed,name=poi_ids,json=poiIds,proto3" json:"poi_ids,omitempty" yaml:"poi_ids" bson:"poi_ids" db:"poi_ids"`
 	// Aoi所在的所有公共交通线路ID
 	// Subline IDs contained this Aoi
-	SublineIds []int32 `protobuf:"varint,13,rep,packed,name=subline_ids,json=sublineIds,proto3" json:"subline_ids,omitempty" db:"subline_ids" yaml:"subline_ids" bson:"subline_ids"`
+	SublineIds []int32 `protobuf:"varint,13,rep,packed,name=subline_ids,json=sublineIds,proto3" json:"subline_ids,omitempty" yaml:"subline_ids" bson:"subline_ids" db:"subline_ids"`
 	// subline id对应连接的lane id
 	// The lane id connecting to the subline id
 	SublineDrivingLanePairs []*SublineDrivingLanePair `protobuf:"bytes,14,rep,name=subline_driving_lane_pairs,json=sublineDrivingLanePairs,proto3" json:"subline_driving_lane_pairs,omitempty" yaml:"subline_driving_lane_pairs" bson:"subline_driving_lane_pairs" db:"subline_driving_lane_pairs"`
@@ -1891,13 +1891,13 @@ type Poi struct {
 
 	// Poi id(从7_0000_0000开始)
 	// Poi id (starting from 7_0000_0000)
-	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" bson:"id" db:"id" yaml:"id"`
+	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
 	// Poi名称
 	// Poi name
 	Name string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty" yaml:"name" bson:"name" db:"name"`
 	// Poi分类编码
 	// Poi category code
-	Category string `protobuf:"bytes,3,opt,name=category,proto3" json:"category,omitempty" bson:"category" db:"category" yaml:"category"`
+	Category string `protobuf:"bytes,3,opt,name=category,proto3" json:"category,omitempty" yaml:"category" bson:"category" db:"category"`
 	// Poi原始位置
 	// Poi original position
 	Position *v2.XYPosition `protobuf:"bytes,4,opt,name=position,proto3" json:"position,omitempty" yaml:"position" bson:"position" db:"position"`
@@ -1906,7 +1906,7 @@ type Poi struct {
 	AoiId int32 `protobuf:"varint,5,opt,name=aoi_id,json=aoiId,proto3" json:"aoi_id,omitempty" yaml:"aoi_id" bson:"aoi_id" db:"aoi_id"`
 	// Poi的容量（能同时容纳的人数），若无则表示无人数限制
 	// The capacity of Poi (the number of people it can accommodate at the same time), if none, it means there is no limit on the number of people
-	Capacity *int32 `protobuf:"varint,6,opt,name=capacity,proto3,oneof" json:"capacity,omitempty" db:"capacity" yaml:"capacity" bson:"capacity"`
+	Capacity *int32 `protobuf:"varint,6,opt,name=capacity,proto3,oneof" json:"capacity,omitempty" yaml:"capacity" bson:"capacity" db:"capacity"`
 	// Poi所能提供的功能
 	// The functions the Poi can offer
 	Functions []string `protobuf:"bytes,7,rep,name=functions,proto3" json:"functions,omitempty" yaml:"functions" bson:"functions" db:"functions"`
@@ -2002,10 +2002,10 @@ type Map struct {
 
 	Header    *Header                   `protobuf:"bytes,1,opt,name=header,proto3" json:"header,omitempty" db:"header" yaml:"header" bson:"header"`
 	Lanes     []*Lane                   `protobuf:"bytes,2,rep,name=lanes,proto3" json:"lanes,omitempty" yaml:"lanes" bson:"lanes" db:"lanes"`
-	Roads     []*Road                   `protobuf:"bytes,3,rep,name=roads,proto3" json:"roads,omitempty" yaml:"roads" bson:"roads" db:"roads"`
+	Roads     []*Road                   `protobuf:"bytes,3,rep,name=roads,proto3" json:"roads,omitempty" db:"roads" yaml:"roads" bson:"roads"`
 	Junctions []*Junction               `protobuf:"bytes,4,rep,name=junctions,proto3" json:"junctions,omitempty" yaml:"junctions" bson:"junctions" db:"junctions"`
 	Aois      []*Aoi                    `protobuf:"bytes,5,rep,name=aois,proto3" json:"aois,omitempty" db:"aois" yaml:"aois" bson:"aois"`
-	Pois      []*Poi                    `protobuf:"bytes,6,rep,name=pois,proto3" json:"pois,omitempty" yaml:"pois" bson:"pois" db:"pois"`
+	Pois      []*Poi                    `protobuf:"bytes,6,rep,name=pois,proto3" json:"pois,omitempty" bson:"pois" db:"pois" yaml:"pois"`
 	Sublines  []*PublicTransportSubline `protobuf:"bytes,7,rep,name=sublines,proto3" json:"sublines,omitempty" yaml:"sublines" bson:"sublines" db:"sublines"`
 }
 
@@ -2400,17 +2400,18 @@ var file_city_map_v2_map_proto_rawDesc = []byte{
 	0x4e, 0x53, 0x50, 0x45, 0x43, 0x49, 0x46, 0x49, 0x45, 0x44, 0x10, 0x00, 0x12, 0x14, 0x0a, 0x10,
 	0x53, 0x55, 0x42, 0x4c, 0x49, 0x4e, 0x45, 0x5f, 0x54, 0x59, 0x50, 0x45, 0x5f, 0x42, 0x55, 0x53,
 	0x10, 0x01, 0x12, 0x17, 0x0a, 0x13, 0x53, 0x55, 0x42, 0x4c, 0x49, 0x4e, 0x45, 0x5f, 0x54, 0x59,
-	0x50, 0x45, 0x5f, 0x53, 0x55, 0x42, 0x57, 0x41, 0x59, 0x10, 0x02, 0x42, 0x99, 0x01, 0x0a, 0x0f,
+	0x50, 0x45, 0x5f, 0x53, 0x55, 0x42, 0x57, 0x41, 0x59, 0x10, 0x02, 0x42, 0x9c, 0x01, 0x0a, 0x0f,
 	0x63, 0x6f, 0x6d, 0x2e, 0x63, 0x69, 0x74, 0x79, 0x2e, 0x6d, 0x61, 0x70, 0x2e, 0x76, 0x32, 0x42,
-	0x08, 0x4d, 0x61, 0x70, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x2e, 0x67, 0x69, 0x74,
+	0x08, 0x4d, 0x61, 0x70, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x31, 0x67, 0x69, 0x74,
 	0x2e, 0x66, 0x69, 0x62, 0x6c, 0x61, 0x62, 0x2e, 0x6e, 0x65, 0x74, 0x2f, 0x73, 0x69, 0x6d, 0x2f,
-	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x73, 0x2f, 0x67, 0x6f, 0x2f, 0x63, 0x69, 0x74, 0x79, 0x2f, 0x6d,
-	0x61, 0x70, 0x2f, 0x76, 0x32, 0x3b, 0x6d, 0x61, 0x70, 0x76, 0x32, 0xa2, 0x02, 0x03, 0x43, 0x4d,
-	0x58, 0xaa, 0x02, 0x0b, 0x43, 0x69, 0x74, 0x79, 0x2e, 0x4d, 0x61, 0x70, 0x2e, 0x56, 0x32, 0xca,
-	0x02, 0x0b, 0x43, 0x69, 0x74, 0x79, 0x5c, 0x4d, 0x61, 0x70, 0x5c, 0x56, 0x32, 0xe2, 0x02, 0x17,
-	0x43, 0x69, 0x74, 0x79, 0x5c, 0x4d, 0x61, 0x70, 0x5c, 0x56, 0x32, 0x5c, 0x47, 0x50, 0x42, 0x4d,
-	0x65, 0x74, 0x61, 0x64, 0x61, 0x74, 0x61, 0xea, 0x02, 0x0d, 0x43, 0x69, 0x74, 0x79, 0x3a, 0x3a,
-	0x4d, 0x61, 0x70, 0x3a, 0x3a, 0x56, 0x32, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x73, 0x2f, 0x67, 0x6f, 0x2f, 0x76, 0x32, 0x2f, 0x63, 0x69, 0x74,
+	0x79, 0x2f, 0x6d, 0x61, 0x70, 0x2f, 0x76, 0x32, 0x3b, 0x6d, 0x61, 0x70, 0x76, 0x32, 0xa2, 0x02,
+	0x03, 0x43, 0x4d, 0x58, 0xaa, 0x02, 0x0b, 0x43, 0x69, 0x74, 0x79, 0x2e, 0x4d, 0x61, 0x70, 0x2e,
+	0x56, 0x32, 0xca, 0x02, 0x0b, 0x43, 0x69, 0x74, 0x79, 0x5c, 0x4d, 0x61, 0x70, 0x5c, 0x56, 0x32,
+	0xe2, 0x02, 0x17, 0x43, 0x69, 0x74, 0x79, 0x5c, 0x4d, 0x61, 0x70, 0x5c, 0x56, 0x32, 0x5c, 0x47,
+	0x50, 0x42, 0x4d, 0x65, 0x74, 0x61, 0x64, 0x61, 0x74, 0x61, 0xea, 0x02, 0x0d, 0x43, 0x69, 0x74,
+	0x79, 0x3a, 0x3a, 0x4d, 0x61, 0x70, 0x3a, 0x3a, 0x56, 0x32, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74,
+	0x6f, 0x33,
 }
 
 var (

@@ -116,18 +116,18 @@ const char descriptor_table_protodef_city_2fmap_2fv2_2faoi_5fservice_2eproto[] P
   "\?\n\016GetAoiResponse\022-\n\006states\030\001 \003(\0132\025.city"
   ".map.v2.AoiStateR\006states2O\n\nAoiService\022A"
   "\n\006GetAoi\022\032.city.map.v2.GetAoiRequest\032\033.c"
-  "ity.map.v2.GetAoiResponseB\240\001\n\017com.city.m"
-  "ap.v2B\017AoiServiceProtoP\001Z.git.fiblab.net"
-  "/sim/protos/go/city/map/v2;mapv2\242\002\003CMX\252\002"
-  "\013City.Map.V2\312\002\013City\\Map\\V2\342\002\027City\\Map\\V2"
-  "\\GPBMetadata\352\002\rCity::Map::V2b\006proto3"
+  "ity.map.v2.GetAoiResponseB\243\001\n\017com.city.m"
+  "ap.v2B\017AoiServiceProtoP\001Z1git.fiblab.net"
+  "/sim/protos/go/v2/city/map/v2;mapv2\242\002\003CM"
+  "X\252\002\013City.Map.V2\312\002\013City\\Map\\V2\342\002\027City\\Map"
+  "\\V2\\GPBMetadata\352\002\rCity::Map::V2b\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_city_2fmap_2fv2_2faoi_5fservice_2eproto_deps[1] = {
   &::descriptor_table_city_2fperson_2fv2_2fmotion_2eproto,
 };
 static ::_pbi::once_flag descriptor_table_city_2fmap_2fv2_2faoi_5fservice_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2fmap_2fv2_2faoi_5fservice_2eproto = {
-    false, false, 516, descriptor_table_protodef_city_2fmap_2fv2_2faoi_5fservice_2eproto,
+    false, false, 519, descriptor_table_protodef_city_2fmap_2fv2_2faoi_5fservice_2eproto,
     "city/map/v2/aoi_service.proto",
     &descriptor_table_city_2fmap_2fv2_2faoi_5fservice_2eproto_once, descriptor_table_city_2fmap_2fv2_2faoi_5fservice_2eproto_deps, 1, 3,
     schemas, file_default_instances, TableStruct_city_2fmap_2fv2_2faoi_5fservice_2eproto::offsets,

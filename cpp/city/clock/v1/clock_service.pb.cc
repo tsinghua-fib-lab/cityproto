@@ -84,15 +84,16 @@ const char descriptor_table_protodef_city_2fclock_2fv1_2fclock_5fservice_2eproto
   "y.clock.v1\"\014\n\nNowRequest\"\033\n\013NowResponse\022"
   "\014\n\001t\030\001 \001(\001R\001t2L\n\014ClockService\022<\n\003Now\022\031.c"
   "ity.clock.v1.NowRequest\032\032.city.clock.v1."
-  "NowResponseB\260\001\n\021com.city.clock.v1B\021Clock"
-  "ServiceProtoP\001Z2git.fiblab.net/sim/proto"
-  "s/go/city/clock/v1;clockv1\242\002\003CCX\252\002\rCity."
-  "Clock.V1\312\002\rCity\\Clock\\V1\342\002\031City\\Clock\\V1"
-  "\\GPBMetadata\352\002\017City::Clock::V1b\006proto3"
+  "NowResponseB\263\001\n\021com.city.clock.v1B\021Clock"
+  "ServiceProtoP\001Z5git.fiblab.net/sim/proto"
+  "s/go/v2/city/clock/v1;clockv1\242\002\003CCX\252\002\rCi"
+  "ty.Clock.V1\312\002\rCity\\Clock\\V1\342\002\031City\\Clock"
+  "\\V1\\GPBMetadata\352\002\017City::Clock::V1b\006proto"
+  "3"
   ;
 static ::_pbi::once_flag descriptor_table_city_2fclock_2fv1_2fclock_5fservice_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2fclock_2fv1_2fclock_5fservice_2eproto = {
-    false, false, 358, descriptor_table_protodef_city_2fclock_2fv1_2fclock_5fservice_2eproto,
+    false, false, 361, descriptor_table_protodef_city_2fclock_2fv1_2fclock_5fservice_2eproto,
     "city/clock/v1/clock_service.proto",
     &descriptor_table_city_2fclock_2fv1_2fclock_5fservice_2eproto_once, nullptr, 0, 2,
     schemas, file_default_instances, TableStruct_city_2fclock_2fv1_2fclock_5fservice_2eproto::offsets,

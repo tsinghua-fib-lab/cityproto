@@ -761,11 +761,11 @@ const char descriptor_table_protodef_city_2fmap_2fv2_2fmap_2eproto[] PROTOBUF_SE
   "TION\020\n\022\027\n\023LAND_USE_TYPE_OTHER\020\014*Z\n\013Subli"
   "neType\022\034\n\030SUBLINE_TYPE_UNSPECIFIED\020\000\022\024\n\020"
   "SUBLINE_TYPE_BUS\020\001\022\027\n\023SUBLINE_TYPE_SUBWA"
-  "Y\020\002B\231\001\n\017com.city.map.v2B\010MapProtoP\001Z.git"
-  ".fiblab.net/sim/protos/go/city/map/v2;ma"
-  "pv2\242\002\003CMX\252\002\013City.Map.V2\312\002\013City\\Map\\V2\342\002\027"
-  "City\\Map\\V2\\GPBMetadata\352\002\rCity::Map::V2b"
-  "\006proto3"
+  "Y\020\002B\234\001\n\017com.city.map.v2B\010MapProtoP\001Z1git"
+  ".fiblab.net/sim/protos/go/v2/city/map/v2"
+  ";mapv2\242\002\003CMX\252\002\013City.Map.V2\312\002\013City\\Map\\V2"
+  "\342\002\027City\\Map\\V2\\GPBMetadata\352\002\rCity::Map::"
+  "V2b\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_city_2fmap_2fv2_2fmap_2eproto_deps[2] = {
   &::descriptor_table_city_2fgeo_2fv2_2fgeo_2eproto,
@@ -773,7 +773,7 @@ static const ::_pbi::DescriptorTable* const descriptor_table_city_2fmap_2fv2_2fm
 };
 static ::_pbi::once_flag descriptor_table_city_2fmap_2fv2_2fmap_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2fmap_2fv2_2fmap_2eproto = {
-    false, false, 5087, descriptor_table_protodef_city_2fmap_2fv2_2fmap_2eproto,
+    false, false, 5090, descriptor_table_protodef_city_2fmap_2fv2_2fmap_2eproto,
     "city/map/v2/map.proto",
     &descriptor_table_city_2fmap_2fv2_2fmap_2eproto_once, descriptor_table_city_2fmap_2fv2_2fmap_2eproto_deps, 2, 18,
     schemas, file_default_instances, TableStruct_city_2fmap_2fv2_2fmap_2eproto::offsets,

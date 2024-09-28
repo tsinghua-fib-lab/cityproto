@@ -72,15 +72,15 @@ const char descriptor_table_protodef_city_2frouting_2fv2_2fcost_2eproto[] PROTOB
   "\n\032city/routing/v2/cost.proto\022\017city.routi"
   "ng.v2\"L\n\004Cost\022\016\n\002id\030\001 \001(\005R\002id\022\022\n\004cost\030\002 "
   "\001(\001R\004cost\022\027\n\004time\030\003 \001(\001H\000R\004time\210\001\001B\007\n\005_t"
-  "imeB\266\001\n\023com.city.routing.v2B\tCostProtoP\001"
-  "Z6git.fiblab.net/sim/protos/go/city/rout"
-  "ing/v2;routingv2\242\002\003CRX\252\002\017City.Routing.V2"
-  "\312\002\017City\\Routing\\V2\342\002\033City\\Routing\\V2\\GPB"
-  "Metadata\352\002\021City::Routing::V2b\006proto3"
+  "imeB\271\001\n\023com.city.routing.v2B\tCostProtoP\001"
+  "Z9git.fiblab.net/sim/protos/go/v2/city/r"
+  "outing/v2;routingv2\242\002\003CRX\252\002\017City.Routing"
+  ".V2\312\002\017City\\Routing\\V2\342\002\033City\\Routing\\V2\\"
+  "GPBMetadata\352\002\021City::Routing::V2b\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_city_2frouting_2fv2_2fcost_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2frouting_2fv2_2fcost_2eproto = {
-    false, false, 316, descriptor_table_protodef_city_2frouting_2fv2_2fcost_2eproto,
+    false, false, 319, descriptor_table_protodef_city_2frouting_2fv2_2fcost_2eproto,
     "city/routing/v2/cost.proto",
     &descriptor_table_city_2frouting_2fv2_2fcost_2eproto_once, nullptr, 0, 1,
     schemas, file_default_instances, TableStruct_city_2frouting_2fv2_2fcost_2eproto::offsets,

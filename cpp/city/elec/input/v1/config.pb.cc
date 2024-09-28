@@ -206,19 +206,19 @@ const char descriptor_table_protodef_city_2felec_2finput_2fv1_2fconfig_2eproto[]
   "\0132\031.city.elec.input.v1.MongoR\005mongo\0225\n\007c"
   "ontrol\030\002 \001(\0132\033.city.elec.input.v1.Contro"
   "lR\007control\0222\n\006output\030\003 \001(\0132\032.city.elec.i"
-  "nput.v1.OutputR\006outputB\311\001\n\026com.city.elec"
-  ".input.v1B\013ConfigProtoP\001Z7git.fiblab.net"
-  "/sim/protos/go/city/elec/input/v1;inputv"
-  "1\242\002\003CEI\252\002\022City.Elec.Input.V1\312\002\022City\\Elec"
-  "\\Input\\V1\342\002\036City\\Elec\\Input\\V1\\GPBMetada"
-  "ta\352\002\025City::Elec::Input::V1b\006proto3"
+  "nput.v1.OutputR\006outputB\314\001\n\026com.city.elec"
+  ".input.v1B\013ConfigProtoP\001Z:git.fiblab.net"
+  "/sim/protos/go/v2/city/elec/input/v1;inp"
+  "utv1\242\002\003CEI\252\002\022City.Elec.Input.V1\312\002\022City\\E"
+  "lec\\Input\\V1\342\002\036City\\Elec\\Input\\V1\\GPBMet"
+  "adata\352\002\025City::Elec::Input::V1b\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_city_2felec_2finput_2fv1_2fconfig_2eproto_deps[1] = {
   &::descriptor_table_city_2fconfig_2fv1_2fconfig_2eproto,
 };
 static ::_pbi::once_flag descriptor_table_city_2felec_2finput_2fv1_2fconfig_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2felec_2finput_2fv1_2fconfig_2eproto = {
-    false, false, 914, descriptor_table_protodef_city_2felec_2finput_2fv1_2fconfig_2eproto,
+    false, false, 917, descriptor_table_protodef_city_2felec_2finput_2fv1_2fconfig_2eproto,
     "city/elec/input/v1/config.proto",
     &descriptor_table_city_2felec_2finput_2fv1_2fconfig_2eproto_once, descriptor_table_city_2felec_2finput_2fv1_2fconfig_2eproto_deps, 1, 6,
     schemas, file_default_instances, TableStruct_city_2felec_2finput_2fv1_2fconfig_2eproto::offsets,

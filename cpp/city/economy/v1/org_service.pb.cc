@@ -405,19 +405,19 @@ const char descriptor_table_protodef_city_2feconomy_2fv1_2forg_5fservice_2eproto
   ".UpdateOrgEmployeeResponse\"\000\022]\n\014UpdateOr"
   "gJob\022$.city.economy.v1.UpdateOrgJobReque"
   "st\032%.city.economy.v1.UpdateOrgJobRespons"
-  "e\"\000B\274\001\n\023com.city.economy.v1B\017OrgServiceP"
-  "rotoP\001Z6git.fiblab.net/sim/protos/go/cit"
-  "y/economy/v1;economyv1\242\002\003CEX\252\002\017City.Econ"
-  "omy.V1\312\002\017City\\Economy\\V1\342\002\033City\\Economy\\"
-  "V1\\GPBMetadata\352\002\021City::Economy::V1b\006prot"
-  "o3"
+  "e\"\000B\277\001\n\023com.city.economy.v1B\017OrgServiceP"
+  "rotoP\001Z9git.fiblab.net/sim/protos/go/v2/"
+  "city/economy/v1;economyv1\242\002\003CEX\252\002\017City.E"
+  "conomy.V1\312\002\017City\\Economy\\V1\342\002\033City\\Econo"
+  "my\\V1\\GPBMetadata\352\002\021City::Economy::V1b\006p"
+  "roto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_city_2feconomy_2fv1_2forg_5fservice_2eproto_deps[1] = {
   &::descriptor_table_city_2feconomy_2fv1_2feconomy_2eproto,
 };
 static ::_pbi::once_flag descriptor_table_city_2feconomy_2fv1_2forg_5fservice_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2feconomy_2fv1_2forg_5fservice_2eproto = {
-    false, false, 1962, descriptor_table_protodef_city_2feconomy_2fv1_2forg_5fservice_2eproto,
+    false, false, 1965, descriptor_table_protodef_city_2feconomy_2fv1_2forg_5fservice_2eproto,
     "city/economy/v1/org_service.proto",
     &descriptor_table_city_2feconomy_2fv1_2forg_5fservice_2eproto_once, descriptor_table_city_2feconomy_2fv1_2forg_5fservice_2eproto_deps, 1, 14,
     schemas, file_default_instances, TableStruct_city_2feconomy_2fv1_2forg_5fservice_2eproto::offsets,

@@ -176,11 +176,12 @@ const char descriptor_table_protodef_city_2ftrip_2fv2_2ftrip_2eproto[] PROTOBUF_
   "ait_time*\211\001\n\010TripMode\022\031\n\025TRIP_MODE_UNSPE"
   "CIFIED\020\000\022\027\n\023TRIP_MODE_WALK_ONLY\020\001\022\030\n\024TRI"
   "P_MODE_DRIVE_ONLY\020\002\022\026\n\022TRIP_MODE_BUS_WAL"
-  "K\020\004\022\027\n\023TRIP_MODE_BIKE_WALK\020\005B\241\001\n\020com.cit"
-  "y.trip.v2B\tTripProtoP\001Z0git.fiblab.net/s"
-  "im/protos/go/city/trip/v2;tripv2\242\002\003CTX\252\002"
-  "\014City.Trip.V2\312\002\014City\\Trip\\V2\342\002\030City\\Trip"
-  "\\V2\\GPBMetadata\352\002\016City::Trip::V2b\006proto3"
+  "K\020\004\022\027\n\023TRIP_MODE_BIKE_WALK\020\005B\244\001\n\020com.cit"
+  "y.trip.v2B\tTripProtoP\001Z3git.fiblab.net/s"
+  "im/protos/go/v2/city/trip/v2;tripv2\242\002\003CT"
+  "X\252\002\014City.Trip.V2\312\002\014City\\Trip\\V2\342\002\030City\\T"
+  "rip\\V2\\GPBMetadata\352\002\016City::Trip::V2b\006pro"
+  "to3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_city_2ftrip_2fv2_2ftrip_2eproto_deps[2] = {
   &::descriptor_table_city_2fgeo_2fv2_2fgeo_2eproto,
@@ -188,7 +189,7 @@ static const ::_pbi::DescriptorTable* const descriptor_table_city_2ftrip_2fv2_2f
 };
 static ::_pbi::once_flag descriptor_table_city_2ftrip_2fv2_2ftrip_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2ftrip_2fv2_2ftrip_2eproto = {
-    false, false, 1240, descriptor_table_protodef_city_2ftrip_2fv2_2ftrip_2eproto,
+    false, false, 1243, descriptor_table_protodef_city_2ftrip_2fv2_2ftrip_2eproto,
     "city/trip/v2/trip.proto",
     &descriptor_table_city_2ftrip_2fv2_2ftrip_2eproto_once, descriptor_table_city_2ftrip_2fv2_2ftrip_2eproto_deps, 2, 3,
     schemas, file_default_instances, TableStruct_city_2ftrip_2fv2_2ftrip_2eproto::offsets,

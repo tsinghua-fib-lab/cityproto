@@ -319,14 +319,14 @@ const char descriptor_table_protodef_city_2fcomm_2finteraction_2fgateway_2fv1_2f
   "onse\022t\n\tGetEvents\0222.city.comm.interactio"
   "n.gateway.v1.GetEventsRequest\0323.city.com"
   "m.interaction.gateway.v1.GetEventsRespon"
-  "seB\251\002\n$com.city.comm.interaction.gateway"
-  ".v1B\023GatewayServiceProtoP\001ZGgit.fiblab.n"
-  "et/sim/protos/go/city/comm/interaction/g"
-  "ateway/v1;gatewayv1\242\002\004CCIG\252\002 City.Comm.I"
-  "nteraction.Gateway.V1\312\002 City\\Comm\\Intera"
-  "ction\\Gateway\\V1\342\002,City\\Comm\\Interaction"
-  "\\Gateway\\V1\\GPBMetadata\352\002$City::Comm::In"
-  "teraction::Gateway::V1b\006proto3"
+  "seB\254\002\n$com.city.comm.interaction.gateway"
+  ".v1B\023GatewayServiceProtoP\001ZJgit.fiblab.n"
+  "et/sim/protos/go/v2/city/comm/interactio"
+  "n/gateway/v1;gatewayv1\242\002\004CCIG\252\002 City.Com"
+  "m.Interaction.Gateway.V1\312\002 City\\Comm\\Int"
+  "eraction\\Gateway\\V1\342\002,City\\Comm\\Interact"
+  "ion\\Gateway\\V1\\GPBMetadata\352\002$City::Comm:"
+  ":Interaction::Gateway::V1b\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_city_2fcomm_2finteraction_2fgateway_2fv1_2fgateway_5fservice_2eproto_deps[2] = {
   &::descriptor_table_city_2fcomm_2finteraction_2fgateway_2fv1_2fgateway_2eproto,
@@ -334,7 +334,7 @@ static const ::_pbi::DescriptorTable* const descriptor_table_city_2fcomm_2finter
 };
 static ::_pbi::once_flag descriptor_table_city_2fcomm_2finteraction_2fgateway_2fv1_2fgateway_5fservice_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2fcomm_2finteraction_2fgateway_2fv1_2fgateway_5fservice_2eproto = {
-    false, false, 1870, descriptor_table_protodef_city_2fcomm_2finteraction_2fgateway_2fv1_2fgateway_5fservice_2eproto,
+    false, false, 1873, descriptor_table_protodef_city_2fcomm_2finteraction_2fgateway_2fv1_2fgateway_5fservice_2eproto,
     "city/comm/interaction/gateway/v1/gateway_service.proto",
     &descriptor_table_city_2fcomm_2finteraction_2fgateway_2fv1_2fgateway_5fservice_2eproto_once, descriptor_table_city_2fcomm_2finteraction_2fgateway_2fv1_2fgateway_5fservice_2eproto_deps, 2, 11,
     schemas, file_default_instances, TableStruct_city_2fcomm_2finteraction_2fgateway_2fv1_2fgateway_5fservice_2eproto::offsets,

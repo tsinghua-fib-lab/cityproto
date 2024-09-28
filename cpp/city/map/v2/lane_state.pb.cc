@@ -76,11 +76,11 @@ const char descriptor_table_protodef_city_2fmap_2fv2_2flane_5fstate_2eproto[] PR
   "2.PersonMotionR\007persons\022\023\n\005avg_v\030\003 \001(\001R\004"
   "avgV\022 \n\013restriction\030\004 \001(\010R\013restriction\0228"
   "\n\013light_state\030\005 \001(\0162\027.city.map.v2.LightS"
-  "tateR\nlightStateB\237\001\n\017com.city.map.v2B\016La"
-  "neStateProtoP\001Z.git.fiblab.net/sim/proto"
-  "s/go/city/map/v2;mapv2\242\002\003CMX\252\002\013City.Map."
-  "V2\312\002\013City\\Map\\V2\342\002\027City\\Map\\V2\\GPBMetada"
-  "ta\352\002\rCity::Map::V2b\006proto3"
+  "tateR\nlightStateB\242\001\n\017com.city.map.v2B\016La"
+  "neStateProtoP\001Z1git.fiblab.net/sim/proto"
+  "s/go/v2/city/map/v2;mapv2\242\002\003CMX\252\002\013City.M"
+  "ap.V2\312\002\013City\\Map\\V2\342\002\027City\\Map\\V2\\GPBMet"
+  "adata\352\002\rCity::Map::V2b\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_city_2fmap_2fv2_2flane_5fstate_2eproto_deps[2] = {
   &::descriptor_table_city_2fmap_2fv2_2flight_2eproto,
@@ -88,7 +88,7 @@ static const ::_pbi::DescriptorTable* const descriptor_table_city_2fmap_2fv2_2fl
 };
 static ::_pbi::once_flag descriptor_table_city_2fmap_2fv2_2flane_5fstate_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2fmap_2fv2_2flane_5fstate_2eproto = {
-    false, false, 466, descriptor_table_protodef_city_2fmap_2fv2_2flane_5fstate_2eproto,
+    false, false, 469, descriptor_table_protodef_city_2fmap_2fv2_2flane_5fstate_2eproto,
     "city/map/v2/lane_state.proto",
     &descriptor_table_city_2fmap_2fv2_2flane_5fstate_2eproto_once, descriptor_table_city_2fmap_2fv2_2flane_5fstate_2eproto_deps, 2, 1,
     schemas, file_default_instances, TableStruct_city_2fmap_2fv2_2flane_5fstate_2eproto::offsets,

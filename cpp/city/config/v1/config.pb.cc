@@ -88,15 +88,15 @@ const char descriptor_table_protodef_city_2fconfig_2fv1_2fconfig_2eproto[] PROTO
   "\n\033city/config/v1/config.proto\022\016city.conf"
   "ig.v1\"-\n\tMongoPath\022\016\n\002db\030\001 \001(\tR\002db\022\020\n\003co"
   "l\030\002 \001(\tR\003col\" \n\014OutputTarget\022\020\n\003sql\030\001 \001("
-  "\tR\003sqlB\261\001\n\022com.city.config.v1B\013ConfigPro"
-  "toP\001Z4git.fiblab.net/sim/protos/go/city/"
-  "config/v1;configv1\242\002\003CCX\252\002\016City.Config.V"
-  "1\312\002\016City\\Config\\V1\342\002\032City\\Config\\V1\\GPBM"
-  "etadata\352\002\020City::Config::V1b\006proto3"
+  "\tR\003sqlB\264\001\n\022com.city.config.v1B\013ConfigPro"
+  "toP\001Z7git.fiblab.net/sim/protos/go/v2/ci"
+  "ty/config/v1;configv1\242\002\003CCX\252\002\016City.Confi"
+  "g.V1\312\002\016City\\Config\\V1\342\002\032City\\Config\\V1\\G"
+  "PBMetadata\352\002\020City::Config::V1b\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_city_2fconfig_2fv1_2fconfig_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2fconfig_2fv1_2fconfig_2eproto = {
-    false, false, 314, descriptor_table_protodef_city_2fconfig_2fv1_2fconfig_2eproto,
+    false, false, 317, descriptor_table_protodef_city_2fconfig_2fv1_2fconfig_2eproto,
     "city/config/v1/config.proto",
     &descriptor_table_city_2fconfig_2fv1_2fconfig_2eproto_once, nullptr, 0, 2,
     schemas, file_default_instances, TableStruct_city_2fconfig_2fv1_2fconfig_2eproto::offsets,

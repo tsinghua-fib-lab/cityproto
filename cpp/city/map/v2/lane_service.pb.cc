@@ -243,12 +243,12 @@ const char descriptor_table_protodef_city_2fmap_2fv2_2flane_5fservice_2eproto[] 
   ".GetLaneRequest\032\034.city.map.v2.GetLaneRes"
   "ponse\022k\n\024GetLaneByLongLatBBox\022(.city.map"
   ".v2.GetLaneByLongLatBBoxRequest\032).city.m"
-  "ap.v2.GetLaneByLongLatBBoxResponseB\241\001\n\017c"
-  "om.city.map.v2B\020LaneServiceProtoP\001Z.git."
-  "fiblab.net/sim/protos/go/city/map/v2;map"
-  "v2\242\002\003CMX\252\002\013City.Map.V2\312\002\013City\\Map\\V2\342\002\027C"
-  "ity\\Map\\V2\\GPBMetadata\352\002\rCity::Map::V2b\006"
-  "proto3"
+  "ap.v2.GetLaneByLongLatBBoxResponseB\244\001\n\017c"
+  "om.city.map.v2B\020LaneServiceProtoP\001Z1git."
+  "fiblab.net/sim/protos/go/v2/city/map/v2;"
+  "mapv2\242\002\003CMX\252\002\013City.Map.V2\312\002\013City\\Map\\V2\342"
+  "\002\027City\\Map\\V2\\GPBMetadata\352\002\rCity::Map::V"
+  "2b\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_city_2fmap_2fv2_2flane_5fservice_2eproto_deps[2] = {
   &::descriptor_table_city_2fgeo_2fv2_2fgeo_2eproto,
@@ -256,7 +256,7 @@ static const ::_pbi::DescriptorTable* const descriptor_table_city_2fmap_2fv2_2fl
 };
 static ::_pbi::once_flag descriptor_table_city_2fmap_2fv2_2flane_5fservice_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2fmap_2fv2_2flane_5fservice_2eproto = {
-    false, false, 1206, descriptor_table_protodef_city_2fmap_2fv2_2flane_5fservice_2eproto,
+    false, false, 1209, descriptor_table_protodef_city_2fmap_2fv2_2flane_5fservice_2eproto,
     "city/map/v2/lane_service.proto",
     &descriptor_table_city_2fmap_2fv2_2flane_5fservice_2eproto_once, descriptor_table_city_2fmap_2fv2_2flane_5fservice_2eproto_deps, 2, 8,
     schemas, file_default_instances, TableStruct_city_2fmap_2fv2_2flane_5fservice_2eproto::offsets,
