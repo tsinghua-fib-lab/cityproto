@@ -18,6 +18,9 @@ message VehicleEngineEfficiency {
   // 能量转换效率：车辆消耗的能量 / 燃料的能量
   // the energy conversion efficiency: E_{vehicle consumed} / E_{fuel or electricity}
   double energy_conversion_efficiency = 1;
+  // 消耗能量(MJ) 折合到CO2排放(g)的系数
+  // the conversion factor from consumed energy (MJ) to CO2 emissions (g)
+  double c_ef = 2;
 }
 
 // 车辆碳排附加属性
@@ -36,7 +39,7 @@ message EmissionAttribute {
   // Pavement friction coefficient
   double lambda_s = 4;
   // 单位: m^2，迎风面积
-  // Frontal area: m^3
+  // Frontal area: m^2
   double frontal_area = 5;
   // 燃油引擎车辆效率
   // Fuel vehicle efficiency
@@ -58,6 +61,9 @@ enum VehicleEngineType {
   // 电车
   // electric vehicle
   VEHICLE_ENGINE_TYPE_ELECTRIC = 2;
+  // 混合动力汽车
+  // hybrid vehicle
+  VEHICLE_ENGINE_TYPE_HYBRID = 3;
 }
 
 // 车辆附加属性

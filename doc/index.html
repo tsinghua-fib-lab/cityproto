@@ -10048,7 +10048,7 @@ Pavement friction coefficient </p></td>
                   <td><a href="#double">double</a></td>
                   <td></td>
                   <td><p>单位: m^2，迎风面积
-Frontal area: m^3 </p></td>
+Frontal area: m^2 </p></td>
                 </tr>
               
                 <tr>
@@ -10478,6 +10478,14 @@ Carbon emission attribute </p></td>
 the energy conversion efficiency: E_{vehicle consumed} / E_{fuel or electricity} </p></td>
                 </tr>
               
+                <tr>
+                  <td>c_ef</td>
+                  <td><a href="#double">double</a></td>
+                  <td></td>
+                  <td><p>消耗能量(MJ) 折合到CO2排放(g)的系数
+the conversion factor from consumed energy (MJ) to CO2 emissions (g) </p></td>
+                </tr>
+              
             </tbody>
           </table>
 
@@ -10698,6 +10706,13 @@ gasoline vehicle</p></td>
                 <td>2</td>
                 <td><p>电车
 electric vehicle</p></td>
+              </tr>
+            
+              <tr>
+                <td>VEHICLE_ENGINE_TYPE_HYBRID</td>
+                <td>3</td>
+                <td><p>混合动力汽车
+hybrid vehicle</p></td>
               </tr>
             
           </tbody>

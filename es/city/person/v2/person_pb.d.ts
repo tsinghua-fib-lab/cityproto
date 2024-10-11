@@ -38,6 +38,14 @@ export declare enum VehicleEngineType {
    * @generated from enum value: VEHICLE_ENGINE_TYPE_ELECTRIC = 2;
    */
   ELECTRIC = 2,
+
+  /**
+   * 混合动力汽车
+   * hybrid vehicle
+   *
+   * @generated from enum value: VEHICLE_ENGINE_TYPE_HYBRID = 3;
+   */
+  HYBRID = 3,
 }
 
 /**
@@ -266,6 +274,14 @@ export declare class VehicleEngineEfficiency extends Message<VehicleEngineEffici
    */
   energyConversionEfficiency: number;
 
+  /**
+   * 消耗能量(MJ) 折合到CO2排放(g)的系数
+   * the conversion factor from consumed energy (MJ) to CO2 emissions (g)
+   *
+   * @generated from field: double c_ef = 2;
+   */
+  cEf: number;
+
   constructor(data?: PartialMessage<VehicleEngineEfficiency>);
 
   static readonly runtime: typeof proto3;
@@ -322,7 +338,7 @@ export declare class EmissionAttribute extends Message<EmissionAttribute> {
 
   /**
    * 单位: m^2，迎风面积
-   * Frontal area: m^3
+   * Frontal area: m^2
    *
    * @generated from field: double frontal_area = 5;
    */

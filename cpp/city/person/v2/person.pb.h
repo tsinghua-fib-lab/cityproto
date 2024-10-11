@@ -111,12 +111,13 @@ enum VehicleEngineType : int {
   VEHICLE_ENGINE_TYPE_UNSPECIFIED = 0,
   VEHICLE_ENGINE_TYPE_FUEL = 1,
   VEHICLE_ENGINE_TYPE_ELECTRIC = 2,
+  VEHICLE_ENGINE_TYPE_HYBRID = 3,
   VehicleEngineType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
   VehicleEngineType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
 };
 bool VehicleEngineType_IsValid(int value);
 constexpr VehicleEngineType VehicleEngineType_MIN = VEHICLE_ENGINE_TYPE_UNSPECIFIED;
-constexpr VehicleEngineType VehicleEngineType_MAX = VEHICLE_ENGINE_TYPE_ELECTRIC;
+constexpr VehicleEngineType VehicleEngineType_MAX = VEHICLE_ENGINE_TYPE_HYBRID;
 constexpr int VehicleEngineType_ARRAYSIZE = VehicleEngineType_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* VehicleEngineType_descriptor();
@@ -487,6 +488,7 @@ class VehicleEngineEfficiency final :
 
   enum : int {
     kEnergyConversionEfficiencyFieldNumber = 1,
+    kCEfFieldNumber = 2,
   };
   // double energy_conversion_efficiency = 1 [json_name = "energyConversionEfficiency"];
   void clear_energy_conversion_efficiency();
@@ -495,6 +497,15 @@ class VehicleEngineEfficiency final :
   private:
   double _internal_energy_conversion_efficiency() const;
   void _internal_set_energy_conversion_efficiency(double value);
+  public:
+
+  // double c_ef = 2 [json_name = "cEf"];
+  void clear_c_ef();
+  double c_ef() const;
+  void set_c_ef(double value);
+  private:
+  double _internal_c_ef() const;
+  void _internal_set_c_ef(double value);
   public:
 
   // @@protoc_insertion_point(class_scope:city.person.v2.VehicleEngineEfficiency)
@@ -506,6 +517,7 @@ class VehicleEngineEfficiency final :
   typedef void DestructorSkippable_;
   struct Impl_ {
     double energy_conversion_efficiency_;
+    double c_ef_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -2352,6 +2364,26 @@ inline void VehicleEngineEfficiency::_internal_set_energy_conversion_efficiency(
 inline void VehicleEngineEfficiency::set_energy_conversion_efficiency(double value) {
   _internal_set_energy_conversion_efficiency(value);
   // @@protoc_insertion_point(field_set:city.person.v2.VehicleEngineEfficiency.energy_conversion_efficiency)
+}
+
+// double c_ef = 2 [json_name = "cEf"];
+inline void VehicleEngineEfficiency::clear_c_ef() {
+  _impl_.c_ef_ = 0;
+}
+inline double VehicleEngineEfficiency::_internal_c_ef() const {
+  return _impl_.c_ef_;
+}
+inline double VehicleEngineEfficiency::c_ef() const {
+  // @@protoc_insertion_point(field_get:city.person.v2.VehicleEngineEfficiency.c_ef)
+  return _internal_c_ef();
+}
+inline void VehicleEngineEfficiency::_internal_set_c_ef(double value) {
+  
+  _impl_.c_ef_ = value;
+}
+inline void VehicleEngineEfficiency::set_c_ef(double value) {
+  _internal_set_c_ef(value);
+  // @@protoc_insertion_point(field_set:city.person.v2.VehicleEngineEfficiency.c_ef)
 }
 
 // -------------------------------------------------------------------

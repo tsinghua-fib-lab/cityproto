@@ -37,6 +37,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORIT
 PROTOBUF_CONSTEXPR VehicleEngineEfficiency::VehicleEngineEfficiency(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.energy_conversion_efficiency_)*/0
+  , /*decltype(_impl_.c_ef_)*/0
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct VehicleEngineEfficiencyDefaultTypeInternal {
   PROTOBUF_CONSTEXPR VehicleEngineEfficiencyDefaultTypeInternal()
@@ -227,6 +228,7 @@ const uint32_t TableStruct_city_2fperson_2fv2_2fperson_2eproto::offsets[] PROTOB
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::city::person::v2::VehicleEngineEfficiency, _impl_.energy_conversion_efficiency_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v2::VehicleEngineEfficiency, _impl_.c_ef_),
   PROTOBUF_FIELD_OFFSET(::city::person::v2::EmissionAttribute, _impl_._has_bits_),
   PROTOBUF_FIELD_OFFSET(::city::person::v2::EmissionAttribute, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -375,15 +377,15 @@ const uint32_t TableStruct_city_2fperson_2fv2_2fperson_2eproto::offsets[] PROTOB
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::city::person::v2::PersonAttribute)},
   { 6, -1, -1, sizeof(::city::person::v2::VehicleEngineEfficiency)},
-  { 13, 26, -1, sizeof(::city::person::v2::EmissionAttribute)},
-  { 33, 52, -1, sizeof(::city::person::v2::VehicleAttribute)},
-  { 65, 75, -1, sizeof(::city::person::v2::BusAttribute)},
-  { 79, 87, -1, sizeof(::city::person::v2::PedestrianAttribute)},
-  { 89, 97, -1, sizeof(::city::person::v2::BikeAttribute)},
-  { 99, -1, -1, sizeof(::city::person::v2::PersonProfile)},
-  { 110, 118, -1, sizeof(::city::person::v2::Person_LabelsEntry_DoNotUse)},
-  { 120, 138, -1, sizeof(::city::person::v2::Person)},
-  { 150, -1, -1, sizeof(::city::person::v2::Persons)},
+  { 14, 27, -1, sizeof(::city::person::v2::EmissionAttribute)},
+  { 34, 53, -1, sizeof(::city::person::v2::VehicleAttribute)},
+  { 66, 76, -1, sizeof(::city::person::v2::BusAttribute)},
+  { 80, 88, -1, sizeof(::city::person::v2::PedestrianAttribute)},
+  { 90, 98, -1, sizeof(::city::person::v2::BikeAttribute)},
+  { 100, -1, -1, sizeof(::city::person::v2::PersonProfile)},
+  { 111, 119, -1, sizeof(::city::person::v2::Person_LabelsEntry_DoNotUse)},
+  { 121, 139, -1, sizeof(::city::person::v2::Person)},
+  { 151, -1, -1, sizeof(::city::person::v2::Persons)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -403,95 +405,96 @@ static const ::_pb::Message* const file_default_instances[] = {
 const char descriptor_table_protodef_city_2fperson_2fv2_2fperson_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\033city/person/v2/person.proto\022\016city.pers"
   "on.v2\032\025city/geo/v2/geo.proto\032\027city/trip/"
-  "v2/trip.proto\"\021\n\017PersonAttribute\"[\n\027Vehi"
+  "v2/trip.proto\"\021\n\017PersonAttribute\"n\n\027Vehi"
   "cleEngineEfficiency\022@\n\034energy_conversion"
   "_efficiency\030\001 \001(\001R\032energyConversionEffic"
-  "iency\"\255\003\n\021EmissionAttribute\022\026\n\006weight\030\001 "
-  "\001(\001R\006weight\0225\n\004type\030\002 \001(\0162!.city.person."
-  "v2.VehicleEngineTypeR\004type\022)\n\020coefficien"
-  "t_drag\030\003 \001(\001R\017coefficientDrag\022\031\n\010lambda_"
-  "s\030\004 \001(\001R\007lambdaS\022!\n\014frontal_area\030\005 \001(\001R\013"
-  "frontalArea\022U\n\017fuel_efficiency\030\006 \001(\0132\'.c"
-  "ity.person.v2.VehicleEngineEfficiencyH\000R"
-  "\016fuelEfficiency\210\001\001\022]\n\023electric_efficienc"
-  "y\030\007 \001(\0132\'.city.person.v2.VehicleEngineEf"
-  "ficiencyH\001R\022electricEfficiency\210\001\001B\022\n\020_fu"
-  "el_efficiencyB\026\n\024_electric_efficiency\"\327\004"
-  "\n\020VehicleAttribute\022\026\n\006length\030\001 \001(\001R\006leng"
-  "th\022\024\n\005width\030\002 \001(\001R\005width\022\033\n\tmax_speed\030\003 "
-  "\001(\001R\010maxSpeed\022)\n\020max_acceleration\030\004 \001(\001R"
-  "\017maxAcceleration\0228\n\030max_braking_accelera"
-  "tion\030\005 \001(\001R\026maxBrakingAcceleration\022-\n\022us"
-  "ual_acceleration\030\006 \001(\001R\021usualAcceleratio"
-  "n\022<\n\032usual_braking_acceleration\030\007 \001(\001R\030u"
-  "sualBrakingAcceleration\022,\n\022lane_change_l"
-  "ength\030\010 \001(\001R\020laneChangeLength\022\027\n\007min_gap"
-  "\030\t \001(\001R\006minGap\022\030\n\007headway\030\n \001(\001R\007headway"
-  "\022\031\n\005model\030\013 \001(\tH\000R\005model\210\001\001\022N\n$lane_max_"
-  "speed_recognition_deviation\030\014 \001(\001R laneM"
-  "axSpeedRecognitionDeviation\022P\n\022emission_"
-  "attribute\030\r \001(\0132!.city.person.v2.Emissio"
-  "nAttributeR\021emissionAttributeB\010\n\006_model\""
-  "\233\001\n\014BusAttribute\022\035\n\nsubline_id\030\001 \001(\005R\tsu"
-  "blineId\022\032\n\010capacity\030\002 \001(\005R\010capacity\022\031\n\005m"
-  "odel\030\003 \001(\tH\000R\005model\210\001\001\022+\n\004type\030\005 \001(\0162\027.c"
-  "ity.person.v2.BusTypeR\004typeB\010\n\006_model\"P\n"
-  "\023PedestrianAttribute\022\024\n\005speed\030\001 \001(\001R\005spe"
-  "ed\022\031\n\005model\030\002 \001(\tH\000R\005model\210\001\001B\010\n\006_model\""
-  "J\n\rBikeAttribute\022\024\n\005speed\030\001 \001(\001R\005speed\022\031"
-  "\n\005model\030\002 \001(\tH\000R\005model\210\001\001B\010\n\006_model\"\344\001\n\r"
-  "PersonProfile\022\020\n\003age\030\001 \001(\005R\003age\0227\n\teduca"
-  "tion\030\002 \001(\0162\031.city.person.v2.EducationR\te"
-  "ducation\022.\n\006gender\030\003 \001(\0162\026.city.person.v"
-  "2.GenderR\006gender\022=\n\013consumption\030\004 \001(\0162\033."
-  "city.person.v2.ConsumptionR\013consumption\022"
-  "\031\n\010house_id\030\005 \001(\005R\007houseId\"\221\007\n\006Person\022\016\n"
-  "\002id\030\001 \001(\005R\002id\022=\n\tattribute\030\002 \001(\0132\037.city."
-  "person.v2.PersonAttributeR\tattribute\022)\n\004"
-  "home\030\003 \001(\0132\025.city.geo.v2.PositionR\004home\022"
-  "4\n\tschedules\030\004 \003(\0132\026.city.trip.v2.Schedu"
-  "leR\tschedules\022R\n\021vehicle_attribute\030\007 \001(\013"
-  "2 .city.person.v2.VehicleAttributeH\000R\020ve"
-  "hicleAttribute\210\001\001\022F\n\rbus_attribute\030\010 \001(\013"
-  "2\034.city.person.v2.BusAttributeH\001R\014busAtt"
-  "ribute\210\001\001\022[\n\024pedestrian_attribute\030\014 \001(\0132"
-  "#.city.person.v2.PedestrianAttributeH\002R\023"
-  "pedestrianAttribute\210\001\001\022I\n\016bike_attribute"
-  "\030\t \001(\0132\035.city.person.v2.BikeAttributeH\003R"
-  "\rbikeAttribute\210\001\001\022:\n\006labels\030\n \003(\0132\".city"
-  ".person.v2.Person.LabelsEntryR\006labels\022<\n"
-  "\007profile\030\013 \001(\0132\035.city.person.v2.PersonPr"
-  "ofileH\004R\007profile\210\001\001\022.\n\004work\030\r \001(\0132\025.city"
-  ".geo.v2.PositionH\005R\004work\210\001\001\022/\n\021output_wh"
-  "en_sleep\030\016 \001(\010H\006R\017outputWhenSleep\210\001\001\0329\n\013"
-  "LabelsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002"
-  " \001(\tR\005value:\0028\001B\024\n\022_vehicle_attributeB\020\n"
-  "\016_bus_attributeB\027\n\025_pedestrian_attribute"
-  "B\021\n\017_bike_attributeB\n\n\010_profileB\007\n\005_work"
-  "B\024\n\022_output_when_sleep\";\n\007Persons\0220\n\007per"
-  "sons\030\001 \003(\0132\026.city.person.v2.PersonR\007pers"
-  "ons*x\n\021VehicleEngineType\022#\n\037VEHICLE_ENGI"
-  "NE_TYPE_UNSPECIFIED\020\000\022\034\n\030VEHICLE_ENGINE_"
-  "TYPE_FUEL\020\001\022 \n\034VEHICLE_ENGINE_TYPE_ELECT"
-  "RIC\020\002*J\n\007BusType\022\030\n\024BUS_TYPE_UNSPECIFIED"
-  "\020\000\022\020\n\014BUS_TYPE_BUS\020\001\022\023\n\017BUS_TYPE_SUBWAY\020"
-  "\002*\334\001\n\tEducation\022\031\n\025EDUCATION_UNSPECIFIED"
-  "\020\000\022\024\n\020EDUCATION_DOCTOR\020\001\022\024\n\020EDUCATION_MA"
-  "STER\020\002\022\026\n\022EDUCATION_BACHELOR\020\003\022\031\n\025EDUCAT"
-  "ION_HIGH_SCHOOL\020\004\022 \n\034EDUCATION_JUNIOR_HI"
-  "GH_SCHOOL\020\005\022\034\n\030EDUCATION_PRIMARY_SCHOOL\020"
-  "\006\022\025\n\021EDUCATION_COLLEGE\020\007*D\n\006Gender\022\026\n\022GE"
-  "NDER_UNSPECIFIED\020\000\022\017\n\013GENDER_MALE\020\001\022\021\n\rG"
-  "ENDER_FEMALE\020\002*\256\001\n\013Consumption\022\033\n\027CONSUM"
-  "PTION_UNSPECIFIED\020\000\022\023\n\017CONSUMPTION_LOW\020\001"
-  "\022\036\n\032CONSUMPTION_RELATIVELY_LOW\020\002\022\026\n\022CONS"
-  "UMPTION_MEDIUM\020\003\022\037\n\033CONSUMPTION_RELATIVE"
-  "LY_HIGH\020\004\022\024\n\020CONSUMPTION_HIGH\020\005B\264\001\n\022com."
-  "city.person.v2B\013PersonProtoP\001Z7git.fibla"
-  "b.net/sim/protos/v2/go/city/person/v2;pe"
-  "rsonv2\242\002\003CPX\252\002\016City.Person.V2\312\002\016City\\Per"
-  "son\\V2\342\002\032City\\Person\\V2\\GPBMetadata\352\002\020Ci"
-  "ty::Person::V2b\006proto3"
+  "iency\022\021\n\004c_ef\030\002 \001(\001R\003cEf\"\255\003\n\021EmissionAtt"
+  "ribute\022\026\n\006weight\030\001 \001(\001R\006weight\0225\n\004type\030\002"
+  " \001(\0162!.city.person.v2.VehicleEngineTypeR"
+  "\004type\022)\n\020coefficient_drag\030\003 \001(\001R\017coeffic"
+  "ientDrag\022\031\n\010lambda_s\030\004 \001(\001R\007lambdaS\022!\n\014f"
+  "rontal_area\030\005 \001(\001R\013frontalArea\022U\n\017fuel_e"
+  "fficiency\030\006 \001(\0132\'.city.person.v2.Vehicle"
+  "EngineEfficiencyH\000R\016fuelEfficiency\210\001\001\022]\n"
+  "\023electric_efficiency\030\007 \001(\0132\'.city.person"
+  ".v2.VehicleEngineEfficiencyH\001R\022electricE"
+  "fficiency\210\001\001B\022\n\020_fuel_efficiencyB\026\n\024_ele"
+  "ctric_efficiency\"\327\004\n\020VehicleAttribute\022\026\n"
+  "\006length\030\001 \001(\001R\006length\022\024\n\005width\030\002 \001(\001R\005wi"
+  "dth\022\033\n\tmax_speed\030\003 \001(\001R\010maxSpeed\022)\n\020max_"
+  "acceleration\030\004 \001(\001R\017maxAcceleration\0228\n\030m"
+  "ax_braking_acceleration\030\005 \001(\001R\026maxBrakin"
+  "gAcceleration\022-\n\022usual_acceleration\030\006 \001("
+  "\001R\021usualAcceleration\022<\n\032usual_braking_ac"
+  "celeration\030\007 \001(\001R\030usualBrakingAccelerati"
+  "on\022,\n\022lane_change_length\030\010 \001(\001R\020laneChan"
+  "geLength\022\027\n\007min_gap\030\t \001(\001R\006minGap\022\030\n\007hea"
+  "dway\030\n \001(\001R\007headway\022\031\n\005model\030\013 \001(\tH\000R\005mo"
+  "del\210\001\001\022N\n$lane_max_speed_recognition_dev"
+  "iation\030\014 \001(\001R laneMaxSpeedRecognitionDev"
+  "iation\022P\n\022emission_attribute\030\r \001(\0132!.cit"
+  "y.person.v2.EmissionAttributeR\021emissionA"
+  "ttributeB\010\n\006_model\"\233\001\n\014BusAttribute\022\035\n\ns"
+  "ubline_id\030\001 \001(\005R\tsublineId\022\032\n\010capacity\030\002"
+  " \001(\005R\010capacity\022\031\n\005model\030\003 \001(\tH\000R\005model\210\001"
+  "\001\022+\n\004type\030\005 \001(\0162\027.city.person.v2.BusType"
+  "R\004typeB\010\n\006_model\"P\n\023PedestrianAttribute\022"
+  "\024\n\005speed\030\001 \001(\001R\005speed\022\031\n\005model\030\002 \001(\tH\000R\005"
+  "model\210\001\001B\010\n\006_model\"J\n\rBikeAttribute\022\024\n\005s"
+  "peed\030\001 \001(\001R\005speed\022\031\n\005model\030\002 \001(\tH\000R\005mode"
+  "l\210\001\001B\010\n\006_model\"\344\001\n\rPersonProfile\022\020\n\003age\030"
+  "\001 \001(\005R\003age\0227\n\teducation\030\002 \001(\0162\031.city.per"
+  "son.v2.EducationR\teducation\022.\n\006gender\030\003 "
+  "\001(\0162\026.city.person.v2.GenderR\006gender\022=\n\013c"
+  "onsumption\030\004 \001(\0162\033.city.person.v2.Consum"
+  "ptionR\013consumption\022\031\n\010house_id\030\005 \001(\005R\007ho"
+  "useId\"\221\007\n\006Person\022\016\n\002id\030\001 \001(\005R\002id\022=\n\tattr"
+  "ibute\030\002 \001(\0132\037.city.person.v2.PersonAttri"
+  "buteR\tattribute\022)\n\004home\030\003 \001(\0132\025.city.geo"
+  ".v2.PositionR\004home\0224\n\tschedules\030\004 \003(\0132\026."
+  "city.trip.v2.ScheduleR\tschedules\022R\n\021vehi"
+  "cle_attribute\030\007 \001(\0132 .city.person.v2.Veh"
+  "icleAttributeH\000R\020vehicleAttribute\210\001\001\022F\n\r"
+  "bus_attribute\030\010 \001(\0132\034.city.person.v2.Bus"
+  "AttributeH\001R\014busAttribute\210\001\001\022[\n\024pedestri"
+  "an_attribute\030\014 \001(\0132#.city.person.v2.Pede"
+  "strianAttributeH\002R\023pedestrianAttribute\210\001"
+  "\001\022I\n\016bike_attribute\030\t \001(\0132\035.city.person."
+  "v2.BikeAttributeH\003R\rbikeAttribute\210\001\001\022:\n\006"
+  "labels\030\n \003(\0132\".city.person.v2.Person.Lab"
+  "elsEntryR\006labels\022<\n\007profile\030\013 \001(\0132\035.city"
+  ".person.v2.PersonProfileH\004R\007profile\210\001\001\022."
+  "\n\004work\030\r \001(\0132\025.city.geo.v2.PositionH\005R\004w"
+  "ork\210\001\001\022/\n\021output_when_sleep\030\016 \001(\010H\006R\017out"
+  "putWhenSleep\210\001\001\0329\n\013LabelsEntry\022\020\n\003key\030\001 "
+  "\001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001B\024\n\022_v"
+  "ehicle_attributeB\020\n\016_bus_attributeB\027\n\025_p"
+  "edestrian_attributeB\021\n\017_bike_attributeB\n"
+  "\n\010_profileB\007\n\005_workB\024\n\022_output_when_slee"
+  "p\";\n\007Persons\0220\n\007persons\030\001 \003(\0132\026.city.per"
+  "son.v2.PersonR\007persons*\230\001\n\021VehicleEngine"
+  "Type\022#\n\037VEHICLE_ENGINE_TYPE_UNSPECIFIED\020"
+  "\000\022\034\n\030VEHICLE_ENGINE_TYPE_FUEL\020\001\022 \n\034VEHIC"
+  "LE_ENGINE_TYPE_ELECTRIC\020\002\022\036\n\032VEHICLE_ENG"
+  "INE_TYPE_HYBRID\020\003*J\n\007BusType\022\030\n\024BUS_TYPE"
+  "_UNSPECIFIED\020\000\022\020\n\014BUS_TYPE_BUS\020\001\022\023\n\017BUS_"
+  "TYPE_SUBWAY\020\002*\334\001\n\tEducation\022\031\n\025EDUCATION"
+  "_UNSPECIFIED\020\000\022\024\n\020EDUCATION_DOCTOR\020\001\022\024\n\020"
+  "EDUCATION_MASTER\020\002\022\026\n\022EDUCATION_BACHELOR"
+  "\020\003\022\031\n\025EDUCATION_HIGH_SCHOOL\020\004\022 \n\034EDUCATI"
+  "ON_JUNIOR_HIGH_SCHOOL\020\005\022\034\n\030EDUCATION_PRI"
+  "MARY_SCHOOL\020\006\022\025\n\021EDUCATION_COLLEGE\020\007*D\n\006"
+  "Gender\022\026\n\022GENDER_UNSPECIFIED\020\000\022\017\n\013GENDER"
+  "_MALE\020\001\022\021\n\rGENDER_FEMALE\020\002*\256\001\n\013Consumpti"
+  "on\022\033\n\027CONSUMPTION_UNSPECIFIED\020\000\022\023\n\017CONSU"
+  "MPTION_LOW\020\001\022\036\n\032CONSUMPTION_RELATIVELY_L"
+  "OW\020\002\022\026\n\022CONSUMPTION_MEDIUM\020\003\022\037\n\033CONSUMPT"
+  "ION_RELATIVELY_HIGH\020\004\022\024\n\020CONSUMPTION_HIG"
+  "H\020\005B\264\001\n\022com.city.person.v2B\013PersonProtoP"
+  "\001Z7git.fiblab.net/sim/protos/v2/go/city/"
+  "person/v2;personv2\242\002\003CPX\252\002\016City.Person.V"
+  "2\312\002\016City\\Person\\V2\342\002\032City\\Person\\V2\\GPBM"
+  "etadata\352\002\020City::Person::V2b\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_city_2fperson_2fv2_2fperson_2eproto_deps[2] = {
   &::descriptor_table_city_2fgeo_2fv2_2fgeo_2eproto,
@@ -499,7 +502,7 @@ static const ::_pbi::DescriptorTable* const descriptor_table_city_2fperson_2fv2_
 };
 static ::_pbi::once_flag descriptor_table_city_2fperson_2fv2_2fperson_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2fperson_2fv2_2fperson_2eproto = {
-    false, false, 3622, descriptor_table_protodef_city_2fperson_2fv2_2fperson_2eproto,
+    false, false, 3674, descriptor_table_protodef_city_2fperson_2fv2_2fperson_2eproto,
     "city/person/v2/person.proto",
     &descriptor_table_city_2fperson_2fv2_2fperson_2eproto_once, descriptor_table_city_2fperson_2fv2_2fperson_2eproto_deps, 2, 11,
     schemas, file_default_instances, TableStruct_city_2fperson_2fv2_2fperson_2eproto::offsets,
@@ -524,6 +527,7 @@ bool VehicleEngineType_IsValid(int value) {
     case 0:
     case 1:
     case 2:
+    case 3:
       return true;
     default:
       return false;
@@ -656,10 +660,13 @@ VehicleEngineEfficiency::VehicleEngineEfficiency(const VehicleEngineEfficiency& 
   VehicleEngineEfficiency* const _this = this; (void)_this;
   new (&_impl_) Impl_{
       decltype(_impl_.energy_conversion_efficiency_){}
+    , decltype(_impl_.c_ef_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _this->_impl_.energy_conversion_efficiency_ = from._impl_.energy_conversion_efficiency_;
+  ::memcpy(&_impl_.energy_conversion_efficiency_, &from._impl_.energy_conversion_efficiency_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.c_ef_) -
+    reinterpret_cast<char*>(&_impl_.energy_conversion_efficiency_)) + sizeof(_impl_.c_ef_));
   // @@protoc_insertion_point(copy_constructor:city.person.v2.VehicleEngineEfficiency)
 }
 
@@ -669,6 +676,7 @@ inline void VehicleEngineEfficiency::SharedCtor(
   (void)is_message_owned;
   new (&_impl_) Impl_{
       decltype(_impl_.energy_conversion_efficiency_){0}
+    , decltype(_impl_.c_ef_){0}
     , /*decltype(_impl_._cached_size_)*/{}
   };
 }
@@ -696,7 +704,9 @@ void VehicleEngineEfficiency::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.energy_conversion_efficiency_ = 0;
+  ::memset(&_impl_.energy_conversion_efficiency_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.c_ef_) -
+      reinterpret_cast<char*>(&_impl_.energy_conversion_efficiency_)) + sizeof(_impl_.c_ef_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -710,6 +720,14 @@ const char* VehicleEngineEfficiency::_InternalParse(const char* ptr, ::_pbi::Par
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 9)) {
           _impl_.energy_conversion_efficiency_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // double c_ef = 2 [json_name = "cEf"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 17)) {
+          _impl_.c_ef_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
         } else
           goto handle_unusual;
@@ -753,6 +771,16 @@ uint8_t* VehicleEngineEfficiency::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteDoubleToArray(1, this->_internal_energy_conversion_efficiency(), target);
   }
 
+  // double c_ef = 2 [json_name = "cEf"];
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_c_ef = this->_internal_c_ef();
+  uint64_t raw_c_ef;
+  memcpy(&raw_c_ef, &tmp_c_ef, sizeof(tmp_c_ef));
+  if (raw_c_ef != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(2, this->_internal_c_ef(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -775,6 +803,15 @@ size_t VehicleEngineEfficiency::ByteSizeLong() const {
   uint64_t raw_energy_conversion_efficiency;
   memcpy(&raw_energy_conversion_efficiency, &tmp_energy_conversion_efficiency, sizeof(tmp_energy_conversion_efficiency));
   if (raw_energy_conversion_efficiency != 0) {
+    total_size += 1 + 8;
+  }
+
+  // double c_ef = 2 [json_name = "cEf"];
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_c_ef = this->_internal_c_ef();
+  uint64_t raw_c_ef;
+  memcpy(&raw_c_ef, &tmp_c_ef, sizeof(tmp_c_ef));
+  if (raw_c_ef != 0) {
     total_size += 1 + 8;
   }
 
@@ -803,6 +840,13 @@ void VehicleEngineEfficiency::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg
   if (raw_energy_conversion_efficiency != 0) {
     _this->_internal_set_energy_conversion_efficiency(from._internal_energy_conversion_efficiency());
   }
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_c_ef = from._internal_c_ef();
+  uint64_t raw_c_ef;
+  memcpy(&raw_c_ef, &tmp_c_ef, sizeof(tmp_c_ef));
+  if (raw_c_ef != 0) {
+    _this->_internal_set_c_ef(from._internal_c_ef());
+  }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -820,7 +864,12 @@ bool VehicleEngineEfficiency::IsInitialized() const {
 void VehicleEngineEfficiency::InternalSwap(VehicleEngineEfficiency* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_.energy_conversion_efficiency_, other->_impl_.energy_conversion_efficiency_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(VehicleEngineEfficiency, _impl_.c_ef_)
+      + sizeof(VehicleEngineEfficiency::_impl_.c_ef_)
+      - PROTOBUF_FIELD_OFFSET(VehicleEngineEfficiency, _impl_.energy_conversion_efficiency_)>(
+          reinterpret_cast<char*>(&_impl_.energy_conversion_efficiency_),
+          reinterpret_cast<char*>(&other->_impl_.energy_conversion_efficiency_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata VehicleEngineEfficiency::GetMetadata() const {

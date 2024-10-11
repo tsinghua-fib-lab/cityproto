@@ -19,6 +19,7 @@ export const VehicleEngineType = /*@__PURE__*/ proto3.makeEnum(
     {no: 0, name: "VEHICLE_ENGINE_TYPE_UNSPECIFIED", localName: "UNSPECIFIED"},
     {no: 1, name: "VEHICLE_ENGINE_TYPE_FUEL", localName: "FUEL"},
     {no: 2, name: "VEHICLE_ENGINE_TYPE_ELECTRIC", localName: "ELECTRIC"},
+    {no: 3, name: "VEHICLE_ENGINE_TYPE_HYBRID", localName: "HYBRID"},
   ],
 );
 
@@ -108,6 +109,7 @@ export const VehicleEngineEfficiency = /*@__PURE__*/ proto3.makeMessageType(
   "city.person.v2.VehicleEngineEfficiency",
   () => [
     { no: 1, name: "energy_conversion_efficiency", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 2, name: "c_ef", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
   ],
 );
 

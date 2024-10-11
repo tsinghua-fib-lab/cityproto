@@ -12,6 +12,7 @@ class VehicleEngineType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     VEHICLE_ENGINE_TYPE_UNSPECIFIED: _ClassVar[VehicleEngineType]
     VEHICLE_ENGINE_TYPE_FUEL: _ClassVar[VehicleEngineType]
     VEHICLE_ENGINE_TYPE_ELECTRIC: _ClassVar[VehicleEngineType]
+    VEHICLE_ENGINE_TYPE_HYBRID: _ClassVar[VehicleEngineType]
 
 class BusType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     __slots__ = []
@@ -47,6 +48,7 @@ class Consumption(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
 VEHICLE_ENGINE_TYPE_UNSPECIFIED: VehicleEngineType
 VEHICLE_ENGINE_TYPE_FUEL: VehicleEngineType
 VEHICLE_ENGINE_TYPE_ELECTRIC: VehicleEngineType
+VEHICLE_ENGINE_TYPE_HYBRID: VehicleEngineType
 BUS_TYPE_UNSPECIFIED: BusType
 BUS_TYPE_BUS: BusType
 BUS_TYPE_SUBWAY: BusType
@@ -75,11 +77,13 @@ class PersonAttribute(_message.Message):
         ...
 
 class VehicleEngineEfficiency(_message.Message):
-    __slots__ = ['energy_conversion_efficiency']
+    __slots__ = ['energy_conversion_efficiency', 'c_ef']
     ENERGY_CONVERSION_EFFICIENCY_FIELD_NUMBER: _ClassVar[int]
+    C_EF_FIELD_NUMBER: _ClassVar[int]
     energy_conversion_efficiency: float
+    c_ef: float
 
-    def __init__(self, energy_conversion_efficiency: _Optional[float]=...) -> None:
+    def __init__(self, energy_conversion_efficiency: _Optional[float]=..., c_ef: _Optional[float]=...) -> None:
         ...
 
 class EmissionAttribute(_message.Message):
