@@ -161,7 +161,7 @@ type GetRoadRequest struct {
 
 	// 指定查询的道路ID列表，为空代表查询所有道路
 	// List of targeted road IDs. If empty, it means querying all roads.
-	RoadIds []int32 `protobuf:"varint,1,rep,packed,name=road_ids,json=roadIds,proto3" json:"road_ids,omitempty" bson:"road_ids" db:"road_ids" yaml:"road_ids"`
+	RoadIds []int32 `protobuf:"varint,1,rep,packed,name=road_ids,json=roadIds,proto3" json:"road_ids,omitempty" yaml:"road_ids" bson:"road_ids" db:"road_ids"`
 	// 是否要排除车道信息
 	// Whether to exclude lane information
 	ExcludeLane bool `protobuf:"varint,2,opt,name=exclude_lane,json=excludeLane,proto3" json:"exclude_lane,omitempty" yaml:"exclude_lane" bson:"exclude_lane" db:"exclude_lane"`
@@ -230,7 +230,7 @@ type GetRoadResponse struct {
 
 	// 道路信息列表
 	// List of road information
-	States []*RoadState `protobuf:"bytes,1,rep,name=states,proto3" json:"states,omitempty" bson:"states" db:"states" yaml:"states"`
+	States []*RoadState `protobuf:"bytes,1,rep,name=states,proto3" json:"states,omitempty" yaml:"states" bson:"states" db:"states"`
 }
 
 func (x *GetRoadResponse) Reset() {
@@ -311,7 +311,7 @@ type RuinInfo struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Num   int32   `protobuf:"varint,1,opt,name=num,proto3" json:"num,omitempty" db:"num" yaml:"num" bson:"num"`            // 损坏数量。Ruined number
+	Num   int32   `protobuf:"varint,1,opt,name=num,proto3" json:"num,omitempty" yaml:"num" bson:"num" db:"num"`            // 损坏数量。Ruined number
 	Ratio float64 `protobuf:"fixed64,2,opt,name=ratio,proto3" json:"ratio,omitempty" yaml:"ratio" bson:"ratio" db:"ratio"` // 损坏占比。Ruined ratio
 }
 
@@ -367,7 +367,7 @@ type GetRuinInfoResponse struct {
 	// 三级损伤信息
 	// Three-level ruin information
 	One   *RuinInfo `protobuf:"bytes,1,opt,name=one,proto3" json:"one,omitempty" yaml:"one" bson:"one" db:"one"`
-	Two   *RuinInfo `protobuf:"bytes,2,opt,name=two,proto3" json:"two,omitempty" db:"two" yaml:"two" bson:"two"`
+	Two   *RuinInfo `protobuf:"bytes,2,opt,name=two,proto3" json:"two,omitempty" bson:"two" db:"two" yaml:"two"`
 	Three *RuinInfo `protobuf:"bytes,3,opt,name=three,proto3" json:"three,omitempty" yaml:"three" bson:"three" db:"three"`
 }
 
@@ -524,7 +524,7 @@ type RoadState struct {
 	Reason InterruptionReason `protobuf:"varint,3,opt,name=reason,proto3,enum=city.map.v2.InterruptionReason" json:"reason,omitempty" yaml:"reason" bson:"reason" db:"reason"`
 	// 车道情况
 	// lane state
-	Lanes []*LaneState `protobuf:"bytes,5,rep,name=lanes,proto3" json:"lanes,omitempty" db:"lanes" yaml:"lanes" bson:"lanes"`
+	Lanes []*LaneState `protobuf:"bytes,5,rep,name=lanes,proto3" json:"lanes,omitempty" yaml:"lanes" bson:"lanes" db:"lanes"`
 }
 
 func (x *RoadState) Reset() {

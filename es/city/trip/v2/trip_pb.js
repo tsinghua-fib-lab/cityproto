@@ -21,6 +21,7 @@ export const TripMode = /*@__PURE__*/ proto3.makeEnum(
     {no: 2, name: "TRIP_MODE_DRIVE_ONLY", localName: "DRIVE_ONLY"},
     {no: 4, name: "TRIP_MODE_BUS_WALK", localName: "BUS_WALK"},
     {no: 5, name: "TRIP_MODE_BIKE_WALK", localName: "BIKE_WALK"},
+    {no: 6, name: "TRIP_MODE_TAXI", localName: "TAXI"},
   ],
 );
 

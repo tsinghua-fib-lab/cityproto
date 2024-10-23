@@ -223,7 +223,7 @@ type DrivingJourneyBody struct {
 	RoadIds []int32 `protobuf:"varint,2,rep,packed,name=road_ids,json=roadIds,proto3" json:"road_ids,omitempty" yaml:"road_ids" bson:"road_ids" db:"road_ids"`
 	// 从起点到终点预计的时间(estimation time of arrival)
 	// estimation time of arrival
-	Eta float64 `protobuf:"fixed64,3,opt,name=eta,proto3" json:"eta,omitempty" yaml:"eta" bson:"eta" db:"eta"`
+	Eta float64 `protobuf:"fixed64,3,opt,name=eta,proto3" json:"eta,omitempty" db:"eta" yaml:"eta" bson:"eta"`
 }
 
 func (x *DrivingJourneyBody) Reset() {
@@ -278,10 +278,10 @@ type WalkingRouteSegment struct {
 	unknownFields protoimpl.UnknownFields
 
 	// Lane ID
-	LaneId int32 `protobuf:"varint,1,opt,name=lane_id,json=laneId,proto3" json:"lane_id,omitempty" bson:"lane_id" db:"lane_id" yaml:"lane_id"`
+	LaneId int32 `protobuf:"varint,1,opt,name=lane_id,json=laneId,proto3" json:"lane_id,omitempty" db:"lane_id" yaml:"lane_id" bson:"lane_id"`
 	// 移动方向
 	// moving direction
-	MovingDirection MovingDirection `protobuf:"varint,2,opt,name=moving_direction,json=movingDirection,proto3,enum=city.routing.v2.MovingDirection" json:"moving_direction,omitempty" yaml:"moving_direction" bson:"moving_direction" db:"moving_direction"`
+	MovingDirection MovingDirection `protobuf:"varint,2,opt,name=moving_direction,json=movingDirection,proto3,enum=city.routing.v2.MovingDirection" json:"moving_direction,omitempty" bson:"moving_direction" db:"moving_direction" yaml:"moving_direction"`
 }
 
 func (x *WalkingRouteSegment) Reset() {
@@ -337,7 +337,7 @@ type WalkingJourneyBody struct {
 
 	// 从起点到终点的（Lane+方向）序列
 	// The (Lane+direction) sequence from the origin to destination
-	Route []*WalkingRouteSegment `protobuf:"bytes,1,rep,name=route,proto3" json:"route,omitempty" yaml:"route" bson:"route" db:"route"`
+	Route []*WalkingRouteSegment `protobuf:"bytes,1,rep,name=route,proto3" json:"route,omitempty" db:"route" yaml:"route" bson:"route"`
 	// 从起点到终点预计的时间(estimation time of arrival)
 	// estimation time of arrival
 	Eta float64 `protobuf:"fixed64,2,opt,name=eta,proto3" json:"eta,omitempty" yaml:"eta" bson:"eta" db:"eta"`
@@ -461,7 +461,7 @@ type BusJourneyBody struct {
 	Transfers []*TransferSegment `protobuf:"bytes,1,rep,name=transfers,proto3" json:"transfers,omitempty" yaml:"transfers" bson:"transfers" db:"transfers"`
 	// 从起点到终点预计的时间(estimation time of arrival)
 	// estimation time of arrival
-	Eta float64 `protobuf:"fixed64,2,opt,name=eta,proto3" json:"eta,omitempty" bson:"eta" db:"eta" yaml:"eta"`
+	Eta float64 `protobuf:"fixed64,2,opt,name=eta,proto3" json:"eta,omitempty" yaml:"eta" bson:"eta" db:"eta"`
 }
 
 func (x *BusJourneyBody) Reset() {
@@ -517,7 +517,7 @@ type Journey struct {
 
 	// 出行方式
 	// journey travelling mode
-	Type JourneyType `protobuf:"varint,1,opt,name=type,proto3,enum=city.routing.v2.JourneyType" json:"type,omitempty" bson:"type" db:"type" yaml:"type"`
+	Type JourneyType `protobuf:"varint,1,opt,name=type,proto3,enum=city.routing.v2.JourneyType" json:"type,omitempty" yaml:"type" bson:"type" db:"type"`
 	// 驾车
 	// Routing results for driving journey
 	Driving *DrivingJourneyBody `protobuf:"bytes,2,opt,name=driving,proto3,oneof" json:"driving,omitempty" yaml:"driving" bson:"driving" db:"driving"`
@@ -526,7 +526,7 @@ type Journey struct {
 	Walking *WalkingJourneyBody `protobuf:"bytes,3,opt,name=walking,proto3,oneof" json:"walking,omitempty" yaml:"walking" bson:"walking" db:"walking"`
 	// 公交
 	// Routing results of bus journey
-	ByBus *BusJourneyBody `protobuf:"bytes,4,opt,name=by_bus,json=byBus,proto3,oneof" json:"by_bus,omitempty" yaml:"by_bus" bson:"by_bus" db:"by_bus"`
+	ByBus *BusJourneyBody `protobuf:"bytes,4,opt,name=by_bus,json=byBus,proto3,oneof" json:"by_bus,omitempty" db:"by_bus" yaml:"by_bus" bson:"by_bus"`
 }
 
 func (x *Journey) Reset() {
@@ -653,7 +653,7 @@ type RoadStatuses struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	RoadStatuses []*RoadStatus `protobuf:"bytes,1,rep,name=road_statuses,json=roadStatuses,proto3" json:"road_statuses,omitempty" yaml:"road_statuses" bson:"road_statuses" db:"road_statuses"`
+	RoadStatuses []*RoadStatus `protobuf:"bytes,1,rep,name=road_statuses,json=roadStatuses,proto3" json:"road_statuses,omitempty" db:"road_statuses" yaml:"road_statuses" bson:"road_statuses"`
 }
 
 func (x *RoadStatuses) Reset() {

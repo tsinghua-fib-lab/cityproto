@@ -29,7 +29,7 @@ type MongoPath struct {
 	// 数据库名
 	Db string `protobuf:"bytes,1,opt,name=db,proto3" json:"db,omitempty" yaml:"db" bson:"db" db:"db"`
 	// 集合名
-	Col string `protobuf:"bytes,2,opt,name=col,proto3" json:"col,omitempty" bson:"col" db:"col" yaml:"col"`
+	Col string `protobuf:"bytes,2,opt,name=col,proto3" json:"col,omitempty" yaml:"col" bson:"col" db:"col"`
 }
 
 func (x *MongoPath) Reset() {
@@ -82,7 +82,7 @@ type OutputTarget struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Sql string `protobuf:"bytes,1,opt,name=sql,proto3" json:"sql,omitempty" yaml:"sql" bson:"sql" db:"sql"`
+	Sql string `protobuf:"bytes,1,opt,name=sql,proto3" json:"sql,omitempty" bson:"sql" db:"sql" yaml:"sql"`
 }
 
 func (x *OutputTarget) Reset() {

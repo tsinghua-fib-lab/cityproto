@@ -77,12 +77,13 @@ enum TripMode : int {
   TRIP_MODE_DRIVE_ONLY = 2,
   TRIP_MODE_BUS_WALK = 4,
   TRIP_MODE_BIKE_WALK = 5,
+  TRIP_MODE_TAXI = 6,
   TripMode_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
   TripMode_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
 };
 bool TripMode_IsValid(int value);
 constexpr TripMode TripMode_MIN = TRIP_MODE_UNSPECIFIED;
-constexpr TripMode TripMode_MAX = TRIP_MODE_BIKE_WALK;
+constexpr TripMode TripMode_MAX = TRIP_MODE_TAXI;
 constexpr int TripMode_ARRAYSIZE = TripMode_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* TripMode_descriptor();
