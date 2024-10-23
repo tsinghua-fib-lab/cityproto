@@ -54,6 +54,14 @@ export declare enum TripMode {
    * @generated from enum value: TRIP_MODE_BIKE_WALK = 5;
    */
   BIKE_WALK = 5,
+
+  /**
+   * 乘出租车
+   * taking a taxi
+   *
+   * @generated from enum value: TRIP_MODE_TAXI = 6;
+   */
+  TAXI = 6,
 }
 
 /**

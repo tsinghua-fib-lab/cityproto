@@ -40,6 +40,9 @@ enum TripMode {
   // 当有自行车时选择骑自行车，否则步行
   // Riding bikes if avaible, otherwise walking
   TRIP_MODE_BIKE_WALK = 5;
+  // 乘出租车
+  // taking a taxi
+  TRIP_MODE_TAXI = 6;
 }
 
 // 停靠点
