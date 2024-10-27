@@ -4,8 +4,8 @@
 // @ts-nocheck
 
 import { proto3 } from "@bufbuild/protobuf";
-import { PersonMotion } from "./motion_pb.js";
 import { Journey } from "../../routing/v2/routing_pb.js";
+import { PersonMotion } from "./motion_pb.js";
 
 /**
  * @generated from enum city.person.v2.VehicleRelation
@@ -70,6 +70,20 @@ export const VehicleAction = /*@__PURE__*/ proto3.makeMessageType(
     { no: 1, name: "acc", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
     { no: 2, name: "lc_target_id", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
     { no: 3, name: "angle", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+  ],
+);
+
+/**
+ * 修改车辆路由信息
+ * vehicle routing information modification
+ *
+ * @generated from message city.person.v2.VehicleRouteAction
+ */
+export const VehicleRouteAction = /*@__PURE__*/ proto3.makeMessageType(
+  "city.person.v2.VehicleRouteAction",
+  () => [
+    { no: 1, name: "id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "journey", kind: "message", T: Journey },
   ],
 );
 

@@ -9,12 +9,13 @@ enabled = true
 [project]
 name = "pycityproto"
 authors = [
-    {name = "Jun Zhang", email = "zhangjun990222@gmail.com"},
+  { name = "Jun Zhang", email = "zhangjun990222@gmail.com" },
+  { name = "Junbo Yan", email = "yanjb20thu@gmali.com" },
 ]
 description = "City Proto Generated Python SDK"
 keywords = ["city", "proto", "protobuf"]
 readme = "README.md"
-license = {file = "LICENSE"}
+license = { file = "LICENSE" }
 dynamic = ["version"]
 requires-python = ">=3.8"
 dependencies = [

@@ -129,11 +129,13 @@ class ResetPersonPositionResponse(_message.Message):
         ...
 
 class SetControlledVehicleIDsRequest(_message.Message):
-    __slots__ = ['vehicle_ids']
+    __slots__ = ['vehicle_ids', 'route_vehicle_ids']
     VEHICLE_IDS_FIELD_NUMBER: _ClassVar[int]
+    ROUTE_VEHICLE_IDS_FIELD_NUMBER: _ClassVar[int]
     vehicle_ids: _containers.RepeatedScalarFieldContainer[int]
+    route_vehicle_ids: _containers.RepeatedScalarFieldContainer[int]
 
-    def __init__(self, vehicle_ids: _Optional[_Iterable[int]]=...) -> None:
+    def __init__(self, vehicle_ids: _Optional[_Iterable[int]]=..., route_vehicle_ids: _Optional[_Iterable[int]]=...) -> None:
         ...
 
 class SetControlledVehicleIDsResponse(_message.Message):
@@ -149,19 +151,23 @@ class FetchControlledVehicleEnvsRequest(_message.Message):
         ...
 
 class FetchControlledVehicleEnvsResponse(_message.Message):
-    __slots__ = ['vehicle_envs']
+    __slots__ = ['vehicle_envs', 'route_vehicle_envs']
     VEHICLE_ENVS_FIELD_NUMBER: _ClassVar[int]
+    ROUTE_VEHICLE_ENVS_FIELD_NUMBER: _ClassVar[int]
     vehicle_envs: _containers.RepeatedCompositeFieldContainer[_vehicle_pb2.VehicleEnv]
+    route_vehicle_envs: _containers.RepeatedCompositeFieldContainer[_vehicle_pb2.VehicleEnv]
 
-    def __init__(self, vehicle_envs: _Optional[_Iterable[_Union[_vehicle_pb2.VehicleEnv, _Mapping]]]=...) -> None:
+    def __init__(self, vehicle_envs: _Optional[_Iterable[_Union[_vehicle_pb2.VehicleEnv, _Mapping]]]=..., route_vehicle_envs: _Optional[_Iterable[_Union[_vehicle_pb2.VehicleEnv, _Mapping]]]=...) -> None:
         ...
 
 class SetControlledVehicleActionsRequest(_message.Message):
-    __slots__ = ['vehicle_actions']
+    __slots__ = ['vehicle_actions', 'vehicle_journeys']
     VEHICLE_ACTIONS_FIELD_NUMBER: _ClassVar[int]
+    VEHICLE_JOURNEYS_FIELD_NUMBER: _ClassVar[int]
     vehicle_actions: _containers.RepeatedCompositeFieldContainer[_vehicle_pb2.VehicleAction]
+    vehicle_journeys: _containers.RepeatedCompositeFieldContainer[_vehicle_pb2.VehicleRouteAction]
 
-    def __init__(self, vehicle_actions: _Optional[_Iterable[_Union[_vehicle_pb2.VehicleAction, _Mapping]]]=...) -> None:
+    def __init__(self, vehicle_actions: _Optional[_Iterable[_Union[_vehicle_pb2.VehicleAction, _Mapping]]]=..., vehicle_journeys: _Optional[_Iterable[_Union[_vehicle_pb2.VehicleRouteAction, _Mapping]]]=...) -> None:
         ...
 
 class SetControlledVehicleActionsResponse(_message.Message):

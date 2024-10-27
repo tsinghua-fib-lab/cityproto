@@ -1476,6 +1476,10 @@
                 </li>
               
                 <li>
+                  <a href="#city.person.v2.VehicleRouteAction"><span class="badge">M</span>VehicleRouteAction</a>
+                </li>
+              
+                <li>
                   <a href="#city.person.v2.VehicleRuntime"><span class="badge">M</span>VehicleRuntime</a>
                 </li>
               
@@ -11044,6 +11048,39 @@ observed lane states </p></td>
 
         
       
+        <h3 id="city.person.v2.VehicleRouteAction">VehicleRouteAction</h3>
+        <p>修改车辆路由信息</p><p>vehicle routing information modification</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>id</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p>车辆编号
+vehicle id </p></td>
+                </tr>
+              
+                <tr>
+                  <td>journey</td>
+                  <td><a href="#city.routing.v2.Journey">city.routing.v2.Journey</a></td>
+                  <td></td>
+                  <td><p>新的路径规划结果
+new routing result </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
         <h3 id="city.person.v2.VehicleRuntime">VehicleRuntime</h3>
         <p></p>
 
@@ -11327,6 +11364,14 @@ The ID assigned to the newly added person </p></td>
 Information of vehicle controlled by external behavior </p></td>
                 </tr>
               
+                <tr>
+                  <td>route_vehicle_envs</td>
+                  <td><a href="#city.person.v2.VehicleEnv">VehicleEnv</a></td>
+                  <td>repeated</td>
+                  <td><p>由外部控制车辆路由的vehicle信息
+Information of vehicle controlled by external behavior (control is triggered after entering a new road) </p></td>
+                </tr>
+              
             </tbody>
           </table>
 
@@ -11603,6 +11648,14 @@ reset position </p></td>
 Behavior of vehicle controlled by external behavior </p></td>
                 </tr>
               
+                <tr>
+                  <td>vehicle_journeys</td>
+                  <td><a href="#city.person.v2.VehicleRouteAction">VehicleRouteAction</a></td>
+                  <td>repeated</td>
+                  <td><p>由外部控制车辆路由的vehicle的新路由
+New route of vehicle controlled by external behavior (control is triggered after entering a new road) </p></td>
+                </tr>
+              
             </tbody>
           </table>
 
@@ -11633,6 +11686,14 @@ Behavior of vehicle controlled by external behavior </p></td>
                   <td>repeated</td>
                   <td><p>由外部控制行为的vehicle id列表
 List of vehicle ids controlled by external behavior </p></td>
+                </tr>
+              
+                <tr>
+                  <td>route_vehicle_ids</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td>repeated</td>
+                  <td><p>由外部控制车辆路由的vehicle id列表（在进入新的road后触发控制）
+List of vehicle ids controlled by external behavior (control is triggered after entering a new road) </p></td>
                 </tr>
               
             </tbody>

@@ -67,6 +67,16 @@ class VehicleAction(_message.Message):
     def __init__(self, id: _Optional[int]=..., acc: _Optional[float]=..., lc_target_id: _Optional[int]=..., angle: _Optional[float]=...) -> None:
         ...
 
+class VehicleRouteAction(_message.Message):
+    __slots__ = ['id', 'journey']
+    ID_FIELD_NUMBER: _ClassVar[int]
+    JOURNEY_FIELD_NUMBER: _ClassVar[int]
+    id: int
+    journey: _routing_pb2.Journey
+
+    def __init__(self, id: _Optional[int]=..., journey: _Optional[_Union[_routing_pb2.Journey, _Mapping]]=...) -> None:
+        ...
+
 class VehicleRuntime(_message.Message):
     __slots__ = ['base', 'lc', 'action', 'running_distance', 'num_going_astray', 'departure_time', 'eta', 'eta_free_flow']
     BASE_FIELD_NUMBER: _ClassVar[int]

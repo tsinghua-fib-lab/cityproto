@@ -2419,6 +2419,7 @@ class SetControlledVehicleIDsRequest final :
 
   enum : int {
     kVehicleIdsFieldNumber = 1,
+    kRouteVehicleIdsFieldNumber = 2,
   };
   // repeated int32 vehicle_ids = 1 [json_name = "vehicleIds"];
   int vehicle_ids_size() const;
@@ -2442,6 +2443,28 @@ class SetControlledVehicleIDsRequest final :
   ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
       mutable_vehicle_ids();
 
+  // repeated int32 route_vehicle_ids = 2 [json_name = "routeVehicleIds"];
+  int route_vehicle_ids_size() const;
+  private:
+  int _internal_route_vehicle_ids_size() const;
+  public:
+  void clear_route_vehicle_ids();
+  private:
+  int32_t _internal_route_vehicle_ids(int index) const;
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+      _internal_route_vehicle_ids() const;
+  void _internal_add_route_vehicle_ids(int32_t value);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+      _internal_mutable_route_vehicle_ids();
+  public:
+  int32_t route_vehicle_ids(int index) const;
+  void set_route_vehicle_ids(int index, int32_t value);
+  void add_route_vehicle_ids(int32_t value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+      route_vehicle_ids() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+      mutable_route_vehicle_ids();
+
   // @@protoc_insertion_point(class_scope:city.person.v2.SetControlledVehicleIDsRequest)
  private:
   class _Internal;
@@ -2452,6 +2475,8 @@ class SetControlledVehicleIDsRequest final :
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t > vehicle_ids_;
     mutable std::atomic<int> _vehicle_ids_cached_byte_size_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t > route_vehicle_ids_;
+    mutable std::atomic<int> _route_vehicle_ids_cached_byte_size_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -2817,6 +2842,7 @@ class FetchControlledVehicleEnvsResponse final :
 
   enum : int {
     kVehicleEnvsFieldNumber = 1,
+    kRouteVehicleEnvsFieldNumber = 2,
   };
   // repeated .city.person.v2.VehicleEnv vehicle_envs = 1 [json_name = "vehicleEnvs"];
   int vehicle_envs_size() const;
@@ -2836,6 +2862,24 @@ class FetchControlledVehicleEnvsResponse final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::VehicleEnv >&
       vehicle_envs() const;
 
+  // repeated .city.person.v2.VehicleEnv route_vehicle_envs = 2 [json_name = "routeVehicleEnvs"];
+  int route_vehicle_envs_size() const;
+  private:
+  int _internal_route_vehicle_envs_size() const;
+  public:
+  void clear_route_vehicle_envs();
+  ::city::person::v2::VehicleEnv* mutable_route_vehicle_envs(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::VehicleEnv >*
+      mutable_route_vehicle_envs();
+  private:
+  const ::city::person::v2::VehicleEnv& _internal_route_vehicle_envs(int index) const;
+  ::city::person::v2::VehicleEnv* _internal_add_route_vehicle_envs();
+  public:
+  const ::city::person::v2::VehicleEnv& route_vehicle_envs(int index) const;
+  ::city::person::v2::VehicleEnv* add_route_vehicle_envs();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::VehicleEnv >&
+      route_vehicle_envs() const;
+
   // @@protoc_insertion_point(class_scope:city.person.v2.FetchControlledVehicleEnvsResponse)
  private:
   class _Internal;
@@ -2845,6 +2889,7 @@ class FetchControlledVehicleEnvsResponse final :
   typedef void DestructorSkippable_;
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::VehicleEnv > vehicle_envs_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::VehicleEnv > route_vehicle_envs_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -2974,6 +3019,7 @@ class SetControlledVehicleActionsRequest final :
 
   enum : int {
     kVehicleActionsFieldNumber = 1,
+    kVehicleJourneysFieldNumber = 2,
   };
   // repeated .city.person.v2.VehicleAction vehicle_actions = 1 [json_name = "vehicleActions"];
   int vehicle_actions_size() const;
@@ -2993,6 +3039,24 @@ class SetControlledVehicleActionsRequest final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::VehicleAction >&
       vehicle_actions() const;
 
+  // repeated .city.person.v2.VehicleRouteAction vehicle_journeys = 2 [json_name = "vehicleJourneys"];
+  int vehicle_journeys_size() const;
+  private:
+  int _internal_vehicle_journeys_size() const;
+  public:
+  void clear_vehicle_journeys();
+  ::city::person::v2::VehicleRouteAction* mutable_vehicle_journeys(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::VehicleRouteAction >*
+      mutable_vehicle_journeys();
+  private:
+  const ::city::person::v2::VehicleRouteAction& _internal_vehicle_journeys(int index) const;
+  ::city::person::v2::VehicleRouteAction* _internal_add_vehicle_journeys();
+  public:
+  const ::city::person::v2::VehicleRouteAction& vehicle_journeys(int index) const;
+  ::city::person::v2::VehicleRouteAction* add_vehicle_journeys();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::VehicleRouteAction >&
+      vehicle_journeys() const;
+
   // @@protoc_insertion_point(class_scope:city.person.v2.SetControlledVehicleActionsRequest)
  private:
   class _Internal;
@@ -3002,6 +3066,7 @@ class SetControlledVehicleActionsRequest final :
   typedef void DestructorSkippable_;
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::VehicleAction > vehicle_actions_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::VehicleRouteAction > vehicle_journeys_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -3980,6 +4045,53 @@ SetControlledVehicleIDsRequest::mutable_vehicle_ids() {
   return _internal_mutable_vehicle_ids();
 }
 
+// repeated int32 route_vehicle_ids = 2 [json_name = "routeVehicleIds"];
+inline int SetControlledVehicleIDsRequest::_internal_route_vehicle_ids_size() const {
+  return _impl_.route_vehicle_ids_.size();
+}
+inline int SetControlledVehicleIDsRequest::route_vehicle_ids_size() const {
+  return _internal_route_vehicle_ids_size();
+}
+inline void SetControlledVehicleIDsRequest::clear_route_vehicle_ids() {
+  _impl_.route_vehicle_ids_.Clear();
+}
+inline int32_t SetControlledVehicleIDsRequest::_internal_route_vehicle_ids(int index) const {
+  return _impl_.route_vehicle_ids_.Get(index);
+}
+inline int32_t SetControlledVehicleIDsRequest::route_vehicle_ids(int index) const {
+  // @@protoc_insertion_point(field_get:city.person.v2.SetControlledVehicleIDsRequest.route_vehicle_ids)
+  return _internal_route_vehicle_ids(index);
+}
+inline void SetControlledVehicleIDsRequest::set_route_vehicle_ids(int index, int32_t value) {
+  _impl_.route_vehicle_ids_.Set(index, value);
+  // @@protoc_insertion_point(field_set:city.person.v2.SetControlledVehicleIDsRequest.route_vehicle_ids)
+}
+inline void SetControlledVehicleIDsRequest::_internal_add_route_vehicle_ids(int32_t value) {
+  _impl_.route_vehicle_ids_.Add(value);
+}
+inline void SetControlledVehicleIDsRequest::add_route_vehicle_ids(int32_t value) {
+  _internal_add_route_vehicle_ids(value);
+  // @@protoc_insertion_point(field_add:city.person.v2.SetControlledVehicleIDsRequest.route_vehicle_ids)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+SetControlledVehicleIDsRequest::_internal_route_vehicle_ids() const {
+  return _impl_.route_vehicle_ids_;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+SetControlledVehicleIDsRequest::route_vehicle_ids() const {
+  // @@protoc_insertion_point(field_list:city.person.v2.SetControlledVehicleIDsRequest.route_vehicle_ids)
+  return _internal_route_vehicle_ids();
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+SetControlledVehicleIDsRequest::_internal_mutable_route_vehicle_ids() {
+  return &_impl_.route_vehicle_ids_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+SetControlledVehicleIDsRequest::mutable_route_vehicle_ids() {
+  // @@protoc_insertion_point(field_mutable_list:city.person.v2.SetControlledVehicleIDsRequest.route_vehicle_ids)
+  return _internal_mutable_route_vehicle_ids();
+}
+
 // -------------------------------------------------------------------
 
 // SetControlledVehicleIDsResponse
@@ -4029,6 +4141,43 @@ FetchControlledVehicleEnvsResponse::vehicle_envs() const {
   return _impl_.vehicle_envs_;
 }
 
+// repeated .city.person.v2.VehicleEnv route_vehicle_envs = 2 [json_name = "routeVehicleEnvs"];
+inline int FetchControlledVehicleEnvsResponse::_internal_route_vehicle_envs_size() const {
+  return _impl_.route_vehicle_envs_.size();
+}
+inline int FetchControlledVehicleEnvsResponse::route_vehicle_envs_size() const {
+  return _internal_route_vehicle_envs_size();
+}
+inline ::city::person::v2::VehicleEnv* FetchControlledVehicleEnvsResponse::mutable_route_vehicle_envs(int index) {
+  // @@protoc_insertion_point(field_mutable:city.person.v2.FetchControlledVehicleEnvsResponse.route_vehicle_envs)
+  return _impl_.route_vehicle_envs_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::VehicleEnv >*
+FetchControlledVehicleEnvsResponse::mutable_route_vehicle_envs() {
+  // @@protoc_insertion_point(field_mutable_list:city.person.v2.FetchControlledVehicleEnvsResponse.route_vehicle_envs)
+  return &_impl_.route_vehicle_envs_;
+}
+inline const ::city::person::v2::VehicleEnv& FetchControlledVehicleEnvsResponse::_internal_route_vehicle_envs(int index) const {
+  return _impl_.route_vehicle_envs_.Get(index);
+}
+inline const ::city::person::v2::VehicleEnv& FetchControlledVehicleEnvsResponse::route_vehicle_envs(int index) const {
+  // @@protoc_insertion_point(field_get:city.person.v2.FetchControlledVehicleEnvsResponse.route_vehicle_envs)
+  return _internal_route_vehicle_envs(index);
+}
+inline ::city::person::v2::VehicleEnv* FetchControlledVehicleEnvsResponse::_internal_add_route_vehicle_envs() {
+  return _impl_.route_vehicle_envs_.Add();
+}
+inline ::city::person::v2::VehicleEnv* FetchControlledVehicleEnvsResponse::add_route_vehicle_envs() {
+  ::city::person::v2::VehicleEnv* _add = _internal_add_route_vehicle_envs();
+  // @@protoc_insertion_point(field_add:city.person.v2.FetchControlledVehicleEnvsResponse.route_vehicle_envs)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::VehicleEnv >&
+FetchControlledVehicleEnvsResponse::route_vehicle_envs() const {
+  // @@protoc_insertion_point(field_list:city.person.v2.FetchControlledVehicleEnvsResponse.route_vehicle_envs)
+  return _impl_.route_vehicle_envs_;
+}
+
 // -------------------------------------------------------------------
 
 // SetControlledVehicleActionsRequest
@@ -4068,6 +4217,43 @@ inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::Vehi
 SetControlledVehicleActionsRequest::vehicle_actions() const {
   // @@protoc_insertion_point(field_list:city.person.v2.SetControlledVehicleActionsRequest.vehicle_actions)
   return _impl_.vehicle_actions_;
+}
+
+// repeated .city.person.v2.VehicleRouteAction vehicle_journeys = 2 [json_name = "vehicleJourneys"];
+inline int SetControlledVehicleActionsRequest::_internal_vehicle_journeys_size() const {
+  return _impl_.vehicle_journeys_.size();
+}
+inline int SetControlledVehicleActionsRequest::vehicle_journeys_size() const {
+  return _internal_vehicle_journeys_size();
+}
+inline ::city::person::v2::VehicleRouteAction* SetControlledVehicleActionsRequest::mutable_vehicle_journeys(int index) {
+  // @@protoc_insertion_point(field_mutable:city.person.v2.SetControlledVehicleActionsRequest.vehicle_journeys)
+  return _impl_.vehicle_journeys_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::VehicleRouteAction >*
+SetControlledVehicleActionsRequest::mutable_vehicle_journeys() {
+  // @@protoc_insertion_point(field_mutable_list:city.person.v2.SetControlledVehicleActionsRequest.vehicle_journeys)
+  return &_impl_.vehicle_journeys_;
+}
+inline const ::city::person::v2::VehicleRouteAction& SetControlledVehicleActionsRequest::_internal_vehicle_journeys(int index) const {
+  return _impl_.vehicle_journeys_.Get(index);
+}
+inline const ::city::person::v2::VehicleRouteAction& SetControlledVehicleActionsRequest::vehicle_journeys(int index) const {
+  // @@protoc_insertion_point(field_get:city.person.v2.SetControlledVehicleActionsRequest.vehicle_journeys)
+  return _internal_vehicle_journeys(index);
+}
+inline ::city::person::v2::VehicleRouteAction* SetControlledVehicleActionsRequest::_internal_add_vehicle_journeys() {
+  return _impl_.vehicle_journeys_.Add();
+}
+inline ::city::person::v2::VehicleRouteAction* SetControlledVehicleActionsRequest::add_vehicle_journeys() {
+  ::city::person::v2::VehicleRouteAction* _add = _internal_add_vehicle_journeys();
+  // @@protoc_insertion_point(field_add:city.person.v2.SetControlledVehicleActionsRequest.vehicle_journeys)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::VehicleRouteAction >&
+SetControlledVehicleActionsRequest::vehicle_journeys() const {
+  // @@protoc_insertion_point(field_list:city.person.v2.SetControlledVehicleActionsRequest.vehicle_journeys)
+  return _impl_.vehicle_journeys_;
 }
 
 // -------------------------------------------------------------------

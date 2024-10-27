@@ -65,6 +65,9 @@ extern VehicleActionDefaultTypeInternal _VehicleAction_default_instance_;
 class VehicleEnv;
 struct VehicleEnvDefaultTypeInternal;
 extern VehicleEnvDefaultTypeInternal _VehicleEnv_default_instance_;
+class VehicleRouteAction;
+struct VehicleRouteActionDefaultTypeInternal;
+extern VehicleRouteActionDefaultTypeInternal _VehicleRouteAction_default_instance_;
 class VehicleRuntime;
 struct VehicleRuntimeDefaultTypeInternal;
 extern VehicleRuntimeDefaultTypeInternal _VehicleRuntime_default_instance_;
@@ -77,6 +80,7 @@ template<> ::city::person::v2::ObservedLane* Arena::CreateMaybeMessage<::city::p
 template<> ::city::person::v2::ObservedVehicle* Arena::CreateMaybeMessage<::city::person::v2::ObservedVehicle>(Arena*);
 template<> ::city::person::v2::VehicleAction* Arena::CreateMaybeMessage<::city::person::v2::VehicleAction>(Arena*);
 template<> ::city::person::v2::VehicleEnv* Arena::CreateMaybeMessage<::city::person::v2::VehicleEnv>(Arena*);
+template<> ::city::person::v2::VehicleRouteAction* Arena::CreateMaybeMessage<::city::person::v2::VehicleRouteAction>(Arena*);
 template<> ::city::person::v2::VehicleRuntime* Arena::CreateMaybeMessage<::city::person::v2::VehicleRuntime>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace city {
@@ -511,6 +515,174 @@ class VehicleAction final :
 };
 // -------------------------------------------------------------------
 
+class VehicleRouteAction final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.person.v2.VehicleRouteAction) */ {
+ public:
+  inline VehicleRouteAction() : VehicleRouteAction(nullptr) {}
+  ~VehicleRouteAction() override;
+  explicit PROTOBUF_CONSTEXPR VehicleRouteAction(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  VehicleRouteAction(const VehicleRouteAction& from);
+  VehicleRouteAction(VehicleRouteAction&& from) noexcept
+    : VehicleRouteAction() {
+    *this = ::std::move(from);
+  }
+
+  inline VehicleRouteAction& operator=(const VehicleRouteAction& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline VehicleRouteAction& operator=(VehicleRouteAction&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const VehicleRouteAction& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const VehicleRouteAction* internal_default_instance() {
+    return reinterpret_cast<const VehicleRouteAction*>(
+               &_VehicleRouteAction_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    2;
+
+  friend void swap(VehicleRouteAction& a, VehicleRouteAction& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(VehicleRouteAction* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(VehicleRouteAction* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  VehicleRouteAction* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<VehicleRouteAction>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const VehicleRouteAction& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const VehicleRouteAction& from) {
+    VehicleRouteAction::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(VehicleRouteAction* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.person.v2.VehicleRouteAction";
+  }
+  protected:
+  explicit VehicleRouteAction(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kJourneyFieldNumber = 2,
+    kIdFieldNumber = 1,
+  };
+  // .city.routing.v2.Journey journey = 2 [json_name = "journey"];
+  bool has_journey() const;
+  private:
+  bool _internal_has_journey() const;
+  public:
+  void clear_journey();
+  const ::city::routing::v2::Journey& journey() const;
+  PROTOBUF_NODISCARD ::city::routing::v2::Journey* release_journey();
+  ::city::routing::v2::Journey* mutable_journey();
+  void set_allocated_journey(::city::routing::v2::Journey* journey);
+  private:
+  const ::city::routing::v2::Journey& _internal_journey() const;
+  ::city::routing::v2::Journey* _internal_mutable_journey();
+  public:
+  void unsafe_arena_set_allocated_journey(
+      ::city::routing::v2::Journey* journey);
+  ::city::routing::v2::Journey* unsafe_arena_release_journey();
+
+  // int32 id = 1 [json_name = "id"];
+  void clear_id();
+  int32_t id() const;
+  void set_id(int32_t value);
+  private:
+  int32_t _internal_id() const;
+  void _internal_set_id(int32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:city.person.v2.VehicleRouteAction)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::city::routing::v2::Journey* journey_;
+    int32_t id_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_city_2fperson_2fv2_2fvehicle_2eproto;
+};
+// -------------------------------------------------------------------
+
 class VehicleRuntime final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.person.v2.VehicleRuntime) */ {
  public:
@@ -559,7 +731,7 @@ class VehicleRuntime final :
                &_VehicleRuntime_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    3;
 
   friend void swap(VehicleRuntime& a, VehicleRuntime& b) {
     a.Swap(&b);
@@ -812,7 +984,7 @@ class ObservedVehicle final :
                &_ObservedVehicle_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    4;
 
   friend void swap(ObservedVehicle& a, ObservedVehicle& b) {
     a.Swap(&b);
@@ -1002,7 +1174,7 @@ class ObservedLane final :
                &_ObservedLane_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    5;
 
   friend void swap(ObservedLane& a, ObservedLane& b) {
     a.Swap(&b);
@@ -1183,7 +1355,7 @@ class VehicleEnv final :
                &_VehicleEnv_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    6;
 
   friend void swap(VehicleEnv& a, VehicleEnv& b) {
     a.Swap(&b);
@@ -1542,6 +1714,115 @@ inline void VehicleAction::_internal_set_angle(double value) {
 inline void VehicleAction::set_angle(double value) {
   _internal_set_angle(value);
   // @@protoc_insertion_point(field_set:city.person.v2.VehicleAction.angle)
+}
+
+// -------------------------------------------------------------------
+
+// VehicleRouteAction
+
+// int32 id = 1 [json_name = "id"];
+inline void VehicleRouteAction::clear_id() {
+  _impl_.id_ = 0;
+}
+inline int32_t VehicleRouteAction::_internal_id() const {
+  return _impl_.id_;
+}
+inline int32_t VehicleRouteAction::id() const {
+  // @@protoc_insertion_point(field_get:city.person.v2.VehicleRouteAction.id)
+  return _internal_id();
+}
+inline void VehicleRouteAction::_internal_set_id(int32_t value) {
+  
+  _impl_.id_ = value;
+}
+inline void VehicleRouteAction::set_id(int32_t value) {
+  _internal_set_id(value);
+  // @@protoc_insertion_point(field_set:city.person.v2.VehicleRouteAction.id)
+}
+
+// .city.routing.v2.Journey journey = 2 [json_name = "journey"];
+inline bool VehicleRouteAction::_internal_has_journey() const {
+  return this != internal_default_instance() && _impl_.journey_ != nullptr;
+}
+inline bool VehicleRouteAction::has_journey() const {
+  return _internal_has_journey();
+}
+inline const ::city::routing::v2::Journey& VehicleRouteAction::_internal_journey() const {
+  const ::city::routing::v2::Journey* p = _impl_.journey_;
+  return p != nullptr ? *p : reinterpret_cast<const ::city::routing::v2::Journey&>(
+      ::city::routing::v2::_Journey_default_instance_);
+}
+inline const ::city::routing::v2::Journey& VehicleRouteAction::journey() const {
+  // @@protoc_insertion_point(field_get:city.person.v2.VehicleRouteAction.journey)
+  return _internal_journey();
+}
+inline void VehicleRouteAction::unsafe_arena_set_allocated_journey(
+    ::city::routing::v2::Journey* journey) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.journey_);
+  }
+  _impl_.journey_ = journey;
+  if (journey) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:city.person.v2.VehicleRouteAction.journey)
+}
+inline ::city::routing::v2::Journey* VehicleRouteAction::release_journey() {
+  
+  ::city::routing::v2::Journey* temp = _impl_.journey_;
+  _impl_.journey_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::city::routing::v2::Journey* VehicleRouteAction::unsafe_arena_release_journey() {
+  // @@protoc_insertion_point(field_release:city.person.v2.VehicleRouteAction.journey)
+  
+  ::city::routing::v2::Journey* temp = _impl_.journey_;
+  _impl_.journey_ = nullptr;
+  return temp;
+}
+inline ::city::routing::v2::Journey* VehicleRouteAction::_internal_mutable_journey() {
+  
+  if (_impl_.journey_ == nullptr) {
+    auto* p = CreateMaybeMessage<::city::routing::v2::Journey>(GetArenaForAllocation());
+    _impl_.journey_ = p;
+  }
+  return _impl_.journey_;
+}
+inline ::city::routing::v2::Journey* VehicleRouteAction::mutable_journey() {
+  ::city::routing::v2::Journey* _msg = _internal_mutable_journey();
+  // @@protoc_insertion_point(field_mutable:city.person.v2.VehicleRouteAction.journey)
+  return _msg;
+}
+inline void VehicleRouteAction::set_allocated_journey(::city::routing::v2::Journey* journey) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.journey_);
+  }
+  if (journey) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(journey));
+    if (message_arena != submessage_arena) {
+      journey = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, journey, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  _impl_.journey_ = journey;
+  // @@protoc_insertion_point(field_set_allocated:city.person.v2.VehicleRouteAction.journey)
 }
 
 // -------------------------------------------------------------------
@@ -2428,6 +2709,8 @@ VehicleEnv::observed_lanes() const {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

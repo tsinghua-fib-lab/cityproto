@@ -212,6 +212,8 @@ PROTOBUF_CONSTEXPR SetControlledVehicleIDsRequest::SetControlledVehicleIDsReques
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.vehicle_ids_)*/{}
   , /*decltype(_impl_._vehicle_ids_cached_byte_size_)*/{0}
+  , /*decltype(_impl_.route_vehicle_ids_)*/{}
+  , /*decltype(_impl_._route_vehicle_ids_cached_byte_size_)*/{0}
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct SetControlledVehicleIDsRequestDefaultTypeInternal {
   PROTOBUF_CONSTEXPR SetControlledVehicleIDsRequestDefaultTypeInternal()
@@ -247,6 +249,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORIT
 PROTOBUF_CONSTEXPR FetchControlledVehicleEnvsResponse::FetchControlledVehicleEnvsResponse(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.vehicle_envs_)*/{}
+  , /*decltype(_impl_.route_vehicle_envs_)*/{}
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct FetchControlledVehicleEnvsResponseDefaultTypeInternal {
   PROTOBUF_CONSTEXPR FetchControlledVehicleEnvsResponseDefaultTypeInternal()
@@ -260,6 +263,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORIT
 PROTOBUF_CONSTEXPR SetControlledVehicleActionsRequest::SetControlledVehicleActionsRequest(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.vehicle_actions_)*/{}
+  , /*decltype(_impl_.vehicle_journeys_)*/{}
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct SetControlledVehicleActionsRequestDefaultTypeInternal {
   PROTOBUF_CONSTEXPR SetControlledVehicleActionsRequestDefaultTypeInternal()
@@ -397,6 +401,7 @@ const uint32_t TableStruct_city_2fperson_2fv2_2fperson_5fservice_2eproto::offset
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::city::person::v2::SetControlledVehicleIDsRequest, _impl_.vehicle_ids_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v2::SetControlledVehicleIDsRequest, _impl_.route_vehicle_ids_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::city::person::v2::SetControlledVehicleIDsResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -416,6 +421,7 @@ const uint32_t TableStruct_city_2fperson_2fv2_2fperson_5fservice_2eproto::offset
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::city::person::v2::FetchControlledVehicleEnvsResponse, _impl_.vehicle_envs_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v2::FetchControlledVehicleEnvsResponse, _impl_.route_vehicle_envs_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::city::person::v2::SetControlledVehicleActionsRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -423,6 +429,7 @@ const uint32_t TableStruct_city_2fperson_2fv2_2fperson_5fservice_2eproto::offset
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::city::person::v2::SetControlledVehicleActionsRequest, _impl_.vehicle_actions_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v2::SetControlledVehicleActionsRequest, _impl_.vehicle_journeys_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::city::person::v2::SetControlledVehicleActionsResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -446,11 +453,11 @@ static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protode
   { 87, -1, -1, sizeof(::city::person::v2::ResetPersonPositionRequest)},
   { 95, -1, -1, sizeof(::city::person::v2::ResetPersonPositionResponse)},
   { 101, -1, -1, sizeof(::city::person::v2::SetControlledVehicleIDsRequest)},
-  { 108, -1, -1, sizeof(::city::person::v2::SetControlledVehicleIDsResponse)},
-  { 114, -1, -1, sizeof(::city::person::v2::FetchControlledVehicleEnvsRequest)},
-  { 120, -1, -1, sizeof(::city::person::v2::FetchControlledVehicleEnvsResponse)},
-  { 127, -1, -1, sizeof(::city::person::v2::SetControlledVehicleActionsRequest)},
-  { 134, -1, -1, sizeof(::city::person::v2::SetControlledVehicleActionsResponse)},
+  { 109, -1, -1, sizeof(::city::person::v2::SetControlledVehicleIDsResponse)},
+  { 115, -1, -1, sizeof(::city::person::v2::FetchControlledVehicleEnvsRequest)},
+  { 121, -1, -1, sizeof(::city::person::v2::FetchControlledVehicleEnvsResponse)},
+  { 129, -1, -1, sizeof(::city::person::v2::SetControlledVehicleActionsRequest)},
+  { 137, -1, -1, sizeof(::city::person::v2::SetControlledVehicleActionsResponse)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -510,49 +517,54 @@ const char descriptor_table_protodef_city_2fperson_2fv2_2fperson_5fservice_2epro
   "eR\010vehicles\"l\n\032ResetPersonPositionReques"
   "t\022\033\n\tperson_id\030\001 \001(\005R\010personId\0221\n\010positi"
   "on\030\002 \001(\0132\025.city.geo.v2.PositionR\010positio"
-  "n\"\035\n\033ResetPersonPositionResponse\"A\n\036SetC"
+  "n\"\035\n\033ResetPersonPositionResponse\"m\n\036SetC"
   "ontrolledVehicleIDsRequest\022\037\n\013vehicle_id"
-  "s\030\001 \003(\005R\nvehicleIds\"!\n\037SetControlledVehi"
-  "cleIDsResponse\"#\n!FetchControlledVehicle"
-  "EnvsRequest\"c\n\"FetchControlledVehicleEnv"
-  "sResponse\022=\n\014vehicle_envs\030\001 \003(\0132\032.city.p"
-  "erson.v2.VehicleEnvR\013vehicleEnvs\"l\n\"SetC"
+  "s\030\001 \003(\005R\nvehicleIds\022*\n\021route_vehicle_ids"
+  "\030\002 \003(\005R\017routeVehicleIds\"!\n\037SetControlled"
+  "VehicleIDsResponse\"#\n!FetchControlledVeh"
+  "icleEnvsRequest\"\255\001\n\"FetchControlledVehic"
+  "leEnvsResponse\022=\n\014vehicle_envs\030\001 \003(\0132\032.c"
+  "ity.person.v2.VehicleEnvR\013vehicleEnvs\022H\n"
+  "\022route_vehicle_envs\030\002 \003(\0132\032.city.person."
+  "v2.VehicleEnvR\020routeVehicleEnvs\"\273\001\n\"SetC"
   "ontrolledVehicleActionsRequest\022F\n\017vehicl"
   "e_actions\030\001 \003(\0132\035.city.person.v2.Vehicle"
-  "ActionR\016vehicleActions\"%\n#SetControlledV"
-  "ehicleActionsResponse2\265\010\n\rPersonService\022"
-  "P\n\tGetPerson\022 .city.person.v2.GetPersonR"
-  "equest\032!.city.person.v2.GetPersonRespons"
-  "e\022P\n\tAddPerson\022 .city.person.v2.AddPerso"
-  "nRequest\032!.city.person.v2.AddPersonRespo"
-  "nse\022V\n\013SetSchedule\022\".city.person.v2.SetS"
-  "cheduleRequest\032#.city.person.v2.SetSched"
-  "uleResponse\022S\n\nGetPersons\022!.city.person."
-  "v2.GetPersonsRequest\032\".city.person.v2.Ge"
-  "tPersonsResponse\022w\n\026GetPersonByLongLatBB"
-  "ox\022-.city.person.v2.GetPersonByLongLatBB"
-  "oxRequest\032..city.person.v2.GetPersonByLo"
-  "ngLatBBoxResponse\022_\n\016GetAllVehicles\022%.ci"
-  "ty.person.v2.GetAllVehiclesRequest\032&.cit"
-  "y.person.v2.GetAllVehiclesResponse\022n\n\023Re"
-  "setPersonPosition\022*.city.person.v2.Reset"
-  "PersonPositionRequest\032+.city.person.v2.R"
-  "esetPersonPositionResponse\022z\n\027SetControl"
-  "ledVehicleIDs\022..city.person.v2.SetContro"
-  "lledVehicleIDsRequest\032/.city.person.v2.S"
-  "etControlledVehicleIDsResponse\022\203\001\n\032Fetch"
-  "ControlledVehicleEnvs\0221.city.person.v2.F"
-  "etchControlledVehicleEnvsRequest\0322.city."
-  "person.v2.FetchControlledVehicleEnvsResp"
-  "onse\022\206\001\n\033SetControlledVehicleActions\0222.c"
-  "ity.person.v2.SetControlledVehicleAction"
-  "sRequest\0323.city.person.v2.SetControlledV"
-  "ehicleActionsResponseB\273\001\n\022com.city.perso"
-  "n.v2B\022PersonServiceProtoP\001Z7git.fiblab.n"
-  "et/sim/protos/v2/go/city/person/v2;perso"
-  "nv2\242\002\003CPX\252\002\016City.Person.V2\312\002\016City\\Person"
-  "\\V2\342\002\032City\\Person\\V2\\GPBMetadata\352\002\020City:"
-  ":Person::V2b\006proto3"
+  "ActionR\016vehicleActions\022M\n\020vehicle_journe"
+  "ys\030\002 \003(\0132\".city.person.v2.VehicleRouteAc"
+  "tionR\017vehicleJourneys\"%\n#SetControlledVe"
+  "hicleActionsResponse2\265\010\n\rPersonService\022P"
+  "\n\tGetPerson\022 .city.person.v2.GetPersonRe"
+  "quest\032!.city.person.v2.GetPersonResponse"
+  "\022P\n\tAddPerson\022 .city.person.v2.AddPerson"
+  "Request\032!.city.person.v2.AddPersonRespon"
+  "se\022V\n\013SetSchedule\022\".city.person.v2.SetSc"
+  "heduleRequest\032#.city.person.v2.SetSchedu"
+  "leResponse\022S\n\nGetPersons\022!.city.person.v"
+  "2.GetPersonsRequest\032\".city.person.v2.Get"
+  "PersonsResponse\022w\n\026GetPersonByLongLatBBo"
+  "x\022-.city.person.v2.GetPersonByLongLatBBo"
+  "xRequest\032..city.person.v2.GetPersonByLon"
+  "gLatBBoxResponse\022_\n\016GetAllVehicles\022%.cit"
+  "y.person.v2.GetAllVehiclesRequest\032&.city"
+  ".person.v2.GetAllVehiclesResponse\022n\n\023Res"
+  "etPersonPosition\022*.city.person.v2.ResetP"
+  "ersonPositionRequest\032+.city.person.v2.Re"
+  "setPersonPositionResponse\022z\n\027SetControll"
+  "edVehicleIDs\022..city.person.v2.SetControl"
+  "ledVehicleIDsRequest\032/.city.person.v2.Se"
+  "tControlledVehicleIDsResponse\022\203\001\n\032FetchC"
+  "ontrolledVehicleEnvs\0221.city.person.v2.Fe"
+  "tchControlledVehicleEnvsRequest\0322.city.p"
+  "erson.v2.FetchControlledVehicleEnvsRespo"
+  "nse\022\206\001\n\033SetControlledVehicleActions\0222.ci"
+  "ty.person.v2.SetControlledVehicleActions"
+  "Request\0323.city.person.v2.SetControlledVe"
+  "hicleActionsResponseB\273\001\n\022com.city.person"
+  ".v2B\022PersonServiceProtoP\001Z7git.fiblab.ne"
+  "t/sim/protos/v2/go/city/person/v2;person"
+  "v2\242\002\003CPX\252\002\016City.Person.V2\312\002\016City\\Person\\"
+  "V2\342\002\032City\\Person\\V2\\GPBMetadata\352\002\020City::"
+  "Person::V2b\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_deps[6] = {
   &::descriptor_table_city_2fgeo_2fv2_2fgeo_2eproto,
@@ -564,7 +576,7 @@ static const ::_pbi::DescriptorTable* const descriptor_table_city_2fperson_2fv2_
 };
 static ::_pbi::once_flag descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto = {
-    false, false, 3019, descriptor_table_protodef_city_2fperson_2fv2_2fperson_5fservice_2eproto,
+    false, false, 3218, descriptor_table_protodef_city_2fperson_2fv2_2fperson_5fservice_2eproto,
     "city/person/v2/person_service.proto",
     &descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_once, descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_deps, 6, 20,
     schemas, file_default_instances, TableStruct_city_2fperson_2fv2_2fperson_5fservice_2eproto::offsets,
@@ -3024,6 +3036,8 @@ SetControlledVehicleIDsRequest::SetControlledVehicleIDsRequest(const SetControll
   new (&_impl_) Impl_{
       decltype(_impl_.vehicle_ids_){from._impl_.vehicle_ids_}
     , /*decltype(_impl_._vehicle_ids_cached_byte_size_)*/{0}
+    , decltype(_impl_.route_vehicle_ids_){from._impl_.route_vehicle_ids_}
+    , /*decltype(_impl_._route_vehicle_ids_cached_byte_size_)*/{0}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
@@ -3037,6 +3051,8 @@ inline void SetControlledVehicleIDsRequest::SharedCtor(
   new (&_impl_) Impl_{
       decltype(_impl_.vehicle_ids_){arena}
     , /*decltype(_impl_._vehicle_ids_cached_byte_size_)*/{0}
+    , decltype(_impl_.route_vehicle_ids_){arena}
+    , /*decltype(_impl_._route_vehicle_ids_cached_byte_size_)*/{0}
     , /*decltype(_impl_._cached_size_)*/{}
   };
 }
@@ -3053,6 +3069,7 @@ SetControlledVehicleIDsRequest::~SetControlledVehicleIDsRequest() {
 inline void SetControlledVehicleIDsRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.vehicle_ids_.~RepeatedField();
+  _impl_.route_vehicle_ids_.~RepeatedField();
 }
 
 void SetControlledVehicleIDsRequest::SetCachedSize(int size) const {
@@ -3066,6 +3083,7 @@ void SetControlledVehicleIDsRequest::Clear() {
   (void) cached_has_bits;
 
   _impl_.vehicle_ids_.Clear();
+  _impl_.route_vehicle_ids_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -3082,6 +3100,17 @@ const char* SetControlledVehicleIDsRequest::_InternalParse(const char* ptr, ::_p
           CHK_(ptr);
         } else if (static_cast<uint8_t>(tag) == 8) {
           _internal_add_vehicle_ids(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated int32 route_vehicle_ids = 2 [json_name = "routeVehicleIds"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_route_vehicle_ids(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<uint8_t>(tag) == 16) {
+          _internal_add_route_vehicle_ids(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -3124,6 +3153,15 @@ uint8_t* SetControlledVehicleIDsRequest::_InternalSerialize(
     }
   }
 
+  // repeated int32 route_vehicle_ids = 2 [json_name = "routeVehicleIds"];
+  {
+    int byte_size = _impl_._route_vehicle_ids_cached_byte_size_.load(std::memory_order_relaxed);
+    if (byte_size > 0) {
+      target = stream->WriteInt32Packed(
+          2, _internal_route_vehicle_ids(), byte_size, target);
+    }
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -3154,6 +3192,20 @@ size_t SetControlledVehicleIDsRequest::ByteSizeLong() const {
     total_size += data_size;
   }
 
+  // repeated int32 route_vehicle_ids = 2 [json_name = "routeVehicleIds"];
+  {
+    size_t data_size = ::_pbi::WireFormatLite::
+      Int32Size(this->_impl_.route_vehicle_ids_);
+    if (data_size > 0) {
+      total_size += 1 +
+        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
+    }
+    int cached_size = ::_pbi::ToCachedSize(data_size);
+    _impl_._route_vehicle_ids_cached_byte_size_.store(cached_size,
+                                    std::memory_order_relaxed);
+    total_size += data_size;
+  }
+
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
@@ -3173,6 +3225,7 @@ void SetControlledVehicleIDsRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message&
   (void) cached_has_bits;
 
   _this->_impl_.vehicle_ids_.MergeFrom(from._impl_.vehicle_ids_);
+  _this->_impl_.route_vehicle_ids_.MergeFrom(from._impl_.route_vehicle_ids_);
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -3191,6 +3244,7 @@ void SetControlledVehicleIDsRequest::InternalSwap(SetControlledVehicleIDsRequest
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   _impl_.vehicle_ids_.InternalSwap(&other->_impl_.vehicle_ids_);
+  _impl_.route_vehicle_ids_.InternalSwap(&other->_impl_.route_vehicle_ids_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SetControlledVehicleIDsRequest::GetMetadata() const {
@@ -3288,6 +3342,9 @@ class FetchControlledVehicleEnvsResponse::_Internal {
 void FetchControlledVehicleEnvsResponse::clear_vehicle_envs() {
   _impl_.vehicle_envs_.Clear();
 }
+void FetchControlledVehicleEnvsResponse::clear_route_vehicle_envs() {
+  _impl_.route_vehicle_envs_.Clear();
+}
 FetchControlledVehicleEnvsResponse::FetchControlledVehicleEnvsResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
@@ -3299,6 +3356,7 @@ FetchControlledVehicleEnvsResponse::FetchControlledVehicleEnvsResponse(const Fet
   FetchControlledVehicleEnvsResponse* const _this = this; (void)_this;
   new (&_impl_) Impl_{
       decltype(_impl_.vehicle_envs_){from._impl_.vehicle_envs_}
+    , decltype(_impl_.route_vehicle_envs_){from._impl_.route_vehicle_envs_}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
@@ -3311,6 +3369,7 @@ inline void FetchControlledVehicleEnvsResponse::SharedCtor(
   (void)is_message_owned;
   new (&_impl_) Impl_{
       decltype(_impl_.vehicle_envs_){arena}
+    , decltype(_impl_.route_vehicle_envs_){arena}
     , /*decltype(_impl_._cached_size_)*/{}
   };
 }
@@ -3327,6 +3386,7 @@ FetchControlledVehicleEnvsResponse::~FetchControlledVehicleEnvsResponse() {
 inline void FetchControlledVehicleEnvsResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.vehicle_envs_.~RepeatedPtrField();
+  _impl_.route_vehicle_envs_.~RepeatedPtrField();
 }
 
 void FetchControlledVehicleEnvsResponse::SetCachedSize(int size) const {
@@ -3340,6 +3400,7 @@ void FetchControlledVehicleEnvsResponse::Clear() {
   (void) cached_has_bits;
 
   _impl_.vehicle_envs_.Clear();
+  _impl_.route_vehicle_envs_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -3359,6 +3420,19 @@ const char* FetchControlledVehicleEnvsResponse::_InternalParse(const char* ptr, 
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated .city.person.v2.VehicleEnv route_vehicle_envs = 2 [json_name = "routeVehicleEnvs"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_route_vehicle_envs(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
         } else
           goto handle_unusual;
         continue;
@@ -3399,6 +3473,14 @@ uint8_t* FetchControlledVehicleEnvsResponse::_InternalSerialize(
         InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
   }
 
+  // repeated .city.person.v2.VehicleEnv route_vehicle_envs = 2 [json_name = "routeVehicleEnvs"];
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_route_vehicle_envs_size()); i < n; i++) {
+    const auto& repfield = this->_internal_route_vehicle_envs(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        InternalWriteMessage(2, repfield, repfield.GetCachedSize(), target, stream);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -3422,6 +3504,13 @@ size_t FetchControlledVehicleEnvsResponse::ByteSizeLong() const {
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
+  // repeated .city.person.v2.VehicleEnv route_vehicle_envs = 2 [json_name = "routeVehicleEnvs"];
+  total_size += 1UL * this->_internal_route_vehicle_envs_size();
+  for (const auto& msg : this->_impl_.route_vehicle_envs_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
@@ -3441,6 +3530,7 @@ void FetchControlledVehicleEnvsResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Mess
   (void) cached_has_bits;
 
   _this->_impl_.vehicle_envs_.MergeFrom(from._impl_.vehicle_envs_);
+  _this->_impl_.route_vehicle_envs_.MergeFrom(from._impl_.route_vehicle_envs_);
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -3459,6 +3549,7 @@ void FetchControlledVehicleEnvsResponse::InternalSwap(FetchControlledVehicleEnvs
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   _impl_.vehicle_envs_.InternalSwap(&other->_impl_.vehicle_envs_);
+  _impl_.route_vehicle_envs_.InternalSwap(&other->_impl_.route_vehicle_envs_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata FetchControlledVehicleEnvsResponse::GetMetadata() const {
@@ -3476,6 +3567,9 @@ class SetControlledVehicleActionsRequest::_Internal {
 void SetControlledVehicleActionsRequest::clear_vehicle_actions() {
   _impl_.vehicle_actions_.Clear();
 }
+void SetControlledVehicleActionsRequest::clear_vehicle_journeys() {
+  _impl_.vehicle_journeys_.Clear();
+}
 SetControlledVehicleActionsRequest::SetControlledVehicleActionsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
@@ -3487,6 +3581,7 @@ SetControlledVehicleActionsRequest::SetControlledVehicleActionsRequest(const Set
   SetControlledVehicleActionsRequest* const _this = this; (void)_this;
   new (&_impl_) Impl_{
       decltype(_impl_.vehicle_actions_){from._impl_.vehicle_actions_}
+    , decltype(_impl_.vehicle_journeys_){from._impl_.vehicle_journeys_}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
@@ -3499,6 +3594,7 @@ inline void SetControlledVehicleActionsRequest::SharedCtor(
   (void)is_message_owned;
   new (&_impl_) Impl_{
       decltype(_impl_.vehicle_actions_){arena}
+    , decltype(_impl_.vehicle_journeys_){arena}
     , /*decltype(_impl_._cached_size_)*/{}
   };
 }
@@ -3515,6 +3611,7 @@ SetControlledVehicleActionsRequest::~SetControlledVehicleActionsRequest() {
 inline void SetControlledVehicleActionsRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.vehicle_actions_.~RepeatedPtrField();
+  _impl_.vehicle_journeys_.~RepeatedPtrField();
 }
 
 void SetControlledVehicleActionsRequest::SetCachedSize(int size) const {
@@ -3528,6 +3625,7 @@ void SetControlledVehicleActionsRequest::Clear() {
   (void) cached_has_bits;
 
   _impl_.vehicle_actions_.Clear();
+  _impl_.vehicle_journeys_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -3547,6 +3645,19 @@ const char* SetControlledVehicleActionsRequest::_InternalParse(const char* ptr, 
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated .city.person.v2.VehicleRouteAction vehicle_journeys = 2 [json_name = "vehicleJourneys"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_vehicle_journeys(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
         } else
           goto handle_unusual;
         continue;
@@ -3587,6 +3698,14 @@ uint8_t* SetControlledVehicleActionsRequest::_InternalSerialize(
         InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
   }
 
+  // repeated .city.person.v2.VehicleRouteAction vehicle_journeys = 2 [json_name = "vehicleJourneys"];
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_vehicle_journeys_size()); i < n; i++) {
+    const auto& repfield = this->_internal_vehicle_journeys(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        InternalWriteMessage(2, repfield, repfield.GetCachedSize(), target, stream);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -3610,6 +3729,13 @@ size_t SetControlledVehicleActionsRequest::ByteSizeLong() const {
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
+  // repeated .city.person.v2.VehicleRouteAction vehicle_journeys = 2 [json_name = "vehicleJourneys"];
+  total_size += 1UL * this->_internal_vehicle_journeys_size();
+  for (const auto& msg : this->_impl_.vehicle_journeys_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
@@ -3629,6 +3755,7 @@ void SetControlledVehicleActionsRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Mess
   (void) cached_has_bits;
 
   _this->_impl_.vehicle_actions_.MergeFrom(from._impl_.vehicle_actions_);
+  _this->_impl_.vehicle_journeys_.MergeFrom(from._impl_.vehicle_journeys_);
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -3647,6 +3774,7 @@ void SetControlledVehicleActionsRequest::InternalSwap(SetControlledVehicleAction
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   _impl_.vehicle_actions_.InternalSwap(&other->_impl_.vehicle_actions_);
+  _impl_.vehicle_journeys_.InternalSwap(&other->_impl_.vehicle_journeys_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SetControlledVehicleActionsRequest::GetMetadata() const {

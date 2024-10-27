@@ -166,6 +166,9 @@ message SetControlledVehicleIDsRequest {
   // 由外部控制行为的vehicle id列表
   // List of vehicle ids controlled by external behavior
   repeated int32 vehicle_ids = 1;
+  // 由外部控制车辆路由的vehicle id列表（在进入新的road后触发控制）
+  // List of vehicle ids controlled by external behavior (control is triggered after entering a new road)
+  repeated int32 route_vehicle_ids = 2;
 }
 
 // 设置由外部控制行为的vehicle响应
@@ -182,6 +185,9 @@ message FetchControlledVehicleEnvsResponse {
   // 由外部控制行为的vehicle信息
   // Information of vehicle controlled by external behavior
   repeated VehicleEnv vehicle_envs = 1;
+  // 由外部控制车辆路由的vehicle信息
+  // Information of vehicle controlled by external behavior (control is triggered after entering a new road)
+  repeated VehicleEnv route_vehicle_envs = 2;
 }
 
 // 设置由外部控制行为的vehicle的行为请求
@@ -190,6 +196,9 @@ message SetControlledVehicleActionsRequest {
   // 由外部控制行为的vehicle的行为
   // Behavior of vehicle controlled by external behavior
   repeated VehicleAction vehicle_actions = 1;
+  // 由外部控制车辆路由的vehicle的新路由
+  // New route of vehicle controlled by external behavior (control is triggered after entering a new road)
+  repeated VehicleRouteAction vehicle_journeys = 2;
 }
 
 // 设置由外部控制行为的vehicle的行为响应

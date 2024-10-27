@@ -5,8 +5,8 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { PersonMotion } from "./motion_pb.js";
 import type { Journey } from "../../routing/v2/routing_pb.js";
+import type { PersonMotion } from "./motion_pb.js";
 
 /**
  * @generated from enum city.person.v2.VehicleRelation
@@ -231,6 +231,44 @@ export declare class VehicleAction extends Message<VehicleAction> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): VehicleAction;
 
   static equals(a: VehicleAction | PlainMessage<VehicleAction> | undefined, b: VehicleAction | PlainMessage<VehicleAction> | undefined): boolean;
+}
+
+/**
+ * 修改车辆路由信息
+ * vehicle routing information modification
+ *
+ * @generated from message city.person.v2.VehicleRouteAction
+ */
+export declare class VehicleRouteAction extends Message<VehicleRouteAction> {
+  /**
+   * 车辆编号
+   * vehicle id
+   *
+   * @generated from field: int32 id = 1;
+   */
+  id: number;
+
+  /**
+   * 新的路径规划结果
+   * new routing result
+   *
+   * @generated from field: city.routing.v2.Journey journey = 2;
+   */
+  journey?: Journey;
+
+  constructor(data?: PartialMessage<VehicleRouteAction>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.person.v2.VehicleRouteAction";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): VehicleRouteAction;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): VehicleRouteAction;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): VehicleRouteAction;
+
+  static equals(a: VehicleRouteAction | PlainMessage<VehicleRouteAction> | undefined, b: VehicleRouteAction | PlainMessage<VehicleRouteAction> | undefined): boolean;
 }
 
 /**

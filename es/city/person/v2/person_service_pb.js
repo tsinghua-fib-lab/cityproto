@@ -9,7 +9,7 @@ import { Person } from "./person_pb.js";
 import { Schedule } from "../../trip/v2/trip_pb.js";
 import { Status } from "./motion_pb.js";
 import { LongLatBBox, Position } from "../../geo/v2/geo_pb.js";
-import { VehicleAction, VehicleEnv, VehicleRuntime } from "./vehicle_pb.js";
+import { VehicleAction, VehicleEnv, VehicleRouteAction, VehicleRuntime } from "./vehicle_pb.js";
 
 /**
  * 获取person信息请求
@@ -203,6 +203,7 @@ export const SetControlledVehicleIDsRequest = /*@__PURE__*/ proto3.makeMessageTy
   "city.person.v2.SetControlledVehicleIDsRequest",
   () => [
     { no: 1, name: "vehicle_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 2, name: "route_vehicle_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
   ],
 );
 
@@ -238,6 +239,7 @@ export const FetchControlledVehicleEnvsResponse = /*@__PURE__*/ proto3.makeMessa
   "city.person.v2.FetchControlledVehicleEnvsResponse",
   () => [
     { no: 1, name: "vehicle_envs", kind: "message", T: VehicleEnv, repeated: true },
+    { no: 2, name: "route_vehicle_envs", kind: "message", T: VehicleEnv, repeated: true },
   ],
 );
 
@@ -251,6 +253,7 @@ export const SetControlledVehicleActionsRequest = /*@__PURE__*/ proto3.makeMessa
   "city.person.v2.SetControlledVehicleActionsRequest",
   () => [
     { no: 1, name: "vehicle_actions", kind: "message", T: VehicleAction, repeated: true },
+    { no: 2, name: "vehicle_journeys", kind: "message", T: VehicleRouteAction, repeated: true },
   ],
 );
 

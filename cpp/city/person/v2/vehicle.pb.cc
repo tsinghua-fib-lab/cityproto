@@ -56,6 +56,20 @@ struct VehicleActionDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 VehicleActionDefaultTypeInternal _VehicleAction_default_instance_;
+PROTOBUF_CONSTEXPR VehicleRouteAction::VehicleRouteAction(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.journey_)*/nullptr
+  , /*decltype(_impl_.id_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct VehicleRouteActionDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR VehicleRouteActionDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~VehicleRouteActionDefaultTypeInternal() {}
+  union {
+    VehicleRouteAction _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 VehicleRouteActionDefaultTypeInternal _VehicleRouteAction_default_instance_;
 PROTOBUF_CONSTEXPR VehicleRuntime::VehicleRuntime(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_._has_bits_)*/{}
@@ -129,7 +143,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORIT
 }  // namespace v2
 }  // namespace person
 }  // namespace city
-static ::_pb::Metadata file_level_metadata_city_2fperson_2fv2_2fvehicle_2eproto[6];
+static ::_pb::Metadata file_level_metadata_city_2fperson_2fv2_2fvehicle_2eproto[7];
 static const ::_pb::EnumDescriptor* file_level_enum_descriptors_city_2fperson_2fv2_2fvehicle_2eproto[2];
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_city_2fperson_2fv2_2fvehicle_2eproto = nullptr;
 
@@ -158,6 +172,14 @@ const uint32_t TableStruct_city_2fperson_2fv2_2fvehicle_2eproto::offsets[] PROTO
   ~0u,
   0,
   ~0u,
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::person::v2::VehicleRouteAction, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::person::v2::VehicleRouteAction, _impl_.id_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v2::VehicleRouteAction, _impl_.journey_),
   PROTOBUF_FIELD_OFFSET(::city::person::v2::VehicleRuntime, _impl_._has_bits_),
   PROTOBUF_FIELD_OFFSET(::city::person::v2::VehicleRuntime, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -215,15 +237,17 @@ const uint32_t TableStruct_city_2fperson_2fv2_2fvehicle_2eproto::offsets[] PROTO
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::city::person::v2::LC)},
   { 10, 20, -1, sizeof(::city::person::v2::VehicleAction)},
-  { 24, 38, -1, sizeof(::city::person::v2::VehicleRuntime)},
-  { 46, -1, -1, sizeof(::city::person::v2::ObservedVehicle)},
-  { 56, -1, -1, sizeof(::city::person::v2::ObservedLane)},
-  { 66, -1, -1, sizeof(::city::person::v2::VehicleEnv)},
+  { 24, -1, -1, sizeof(::city::person::v2::VehicleRouteAction)},
+  { 32, 46, -1, sizeof(::city::person::v2::VehicleRuntime)},
+  { 54, -1, -1, sizeof(::city::person::v2::ObservedVehicle)},
+  { 64, -1, -1, sizeof(::city::person::v2::ObservedLane)},
+  { 74, -1, -1, sizeof(::city::person::v2::VehicleEnv)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
   &::city::person::v2::_LC_default_instance_._instance,
   &::city::person::v2::_VehicleAction_default_instance_._instance,
+  &::city::person::v2::_VehicleRouteAction_default_instance_._instance,
   &::city::person::v2::_VehicleRuntime_default_instance_._instance,
   &::city::person::v2::_ObservedVehicle_default_instance_._instance,
   &::city::person::v2::_ObservedLane_default_instance_._instance,
@@ -240,48 +264,50 @@ const char descriptor_table_protodef_city_2fperson_2fv2_2fvehicle_2eproto[] PROT
   "o\"\177\n\rVehicleAction\022\016\n\002id\030\004 \001(\005R\002id\022\020\n\003ac"
   "c\030\001 \001(\001R\003acc\022%\n\014lc_target_id\030\002 \001(\005H\000R\nlc"
   "TargetId\210\001\001\022\024\n\005angle\030\003 \001(\001R\005angleB\017\n\r_lc"
-  "_target_id\"\353\002\n\016VehicleRuntime\0220\n\004base\030\001 "
-  "\001(\0132\034.city.person.v2.PersonMotionR\004base\022"
-  "\'\n\002lc\030\004 \001(\0132\022.city.person.v2.LCH\000R\002lc\210\001\001"
-  "\022:\n\006action\030\005 \001(\0132\035.city.person.v2.Vehicl"
-  "eActionH\001R\006action\210\001\001\022)\n\020running_distance"
-  "\030\006 \001(\001R\017runningDistance\022(\n\020num_going_ast"
-  "ray\030\007 \001(\005R\016numGoingAstray\022%\n\016departure_t"
-  "ime\030\010 \001(\001R\rdepartureTime\022\020\n\003eta\030\t \001(\001R\003e"
-  "ta\022\"\n\reta_free_flow\030\n \001(\001R\013etaFreeFlowB\005"
-  "\n\003_lcB\t\n\007_action\"\301\001\n\017ObservedVehicle\022\016\n\002"
-  "id\030\001 \001(\005R\002id\0224\n\006motion\030\002 \001(\0132\034.city.pers"
-  "on.v2.PersonMotionR\006motion\022+\n\021relative_d"
-  "istance\030\003 \001(\001R\020relativeDistance\022;\n\010relat"
-  "ion\030\004 \001(\0162\037.city.person.v2.VehicleRelati"
-  "onR\010relation\"\257\001\n\014ObservedLane\022\016\n\002id\030\001 \001("
-  "\005R\002id\022 \n\013restriction\030\002 \001(\010R\013restriction\022"
-  ";\n\013light_state\030\003 \001(\0162\032.city.person.v2.Li"
-  "ghtStateR\nlightState\0220\n\024light_remaining_"
-  "time\030\004 \001(\001R\022lightRemainingTime\"\235\002\n\nVehic"
-  "leEnv\022\016\n\002id\030\001 \001(\005R\002id\0228\n\007runtime\030\002 \001(\0132\036"
-  ".city.person.v2.VehicleRuntimeR\007runtime\022"
-  "2\n\007journey\030\003 \001(\0132\030.city.routing.v2.Journ"
-  "eyR\007journey\022L\n\021observed_vehicles\030\004 \003(\0132\037"
-  ".city.person.v2.ObservedVehicleR\020observe"
-  "dVehicles\022C\n\016observed_lanes\030\005 \003(\0132\034.city"
-  ".person.v2.ObservedLaneR\robservedLanes*\273"
-  "\002\n\017VehicleRelation\022 \n\034VEHICLE_RELATION_U"
-  "NSPECIFIED\020\000\022\032\n\026VEHICLE_RELATION_AHEAD\020\001"
-  "\022\033\n\027VEHICLE_RELATION_BEHIND\020\002\022!\n\035VEHICLE"
-  "_RELATION_SHADOW_AHEAD\020\003\022\"\n\036VEHICLE_RELA"
-  "TION_SHADOW_BEHIND\020\004\022\037\n\033VEHICLE_RELATION"
-  "_LEFT_AHEAD\020\005\022 \n\034VEHICLE_RELATION_RIGHT_"
-  "AHEAD\020\006\022 \n\034VEHICLE_RELATION_LEFT_BEHIND\020"
-  "\007\022!\n\035VEHICLE_RELATION_RIGHT_BEHIND\020\010*m\n\n"
-  "LightState\022\033\n\027LIGHT_STATE_UNSPECIFIED\020\000\022"
-  "\023\n\017LIGHT_STATE_RED\020\001\022\025\n\021LIGHT_STATE_GREE"
-  "N\020\002\022\026\n\022LIGHT_STATE_YELLOW\020\003B\265\001\n\022com.city"
-  ".person.v2B\014VehicleProtoP\001Z7git.fiblab.n"
-  "et/sim/protos/v2/go/city/person/v2;perso"
-  "nv2\242\002\003CPX\252\002\016City.Person.V2\312\002\016City\\Person"
-  "\\V2\342\002\032City\\Person\\V2\\GPBMetadata\352\002\020City:"
-  ":Person::V2b\006proto3"
+  "_target_id\"X\n\022VehicleRouteAction\022\016\n\002id\030\001"
+  " \001(\005R\002id\0222\n\007journey\030\002 \001(\0132\030.city.routing"
+  ".v2.JourneyR\007journey\"\353\002\n\016VehicleRuntime\022"
+  "0\n\004base\030\001 \001(\0132\034.city.person.v2.PersonMot"
+  "ionR\004base\022\'\n\002lc\030\004 \001(\0132\022.city.person.v2.L"
+  "CH\000R\002lc\210\001\001\022:\n\006action\030\005 \001(\0132\035.city.person"
+  ".v2.VehicleActionH\001R\006action\210\001\001\022)\n\020runnin"
+  "g_distance\030\006 \001(\001R\017runningDistance\022(\n\020num"
+  "_going_astray\030\007 \001(\005R\016numGoingAstray\022%\n\016d"
+  "eparture_time\030\010 \001(\001R\rdepartureTime\022\020\n\003et"
+  "a\030\t \001(\001R\003eta\022\"\n\reta_free_flow\030\n \001(\001R\013eta"
+  "FreeFlowB\005\n\003_lcB\t\n\007_action\"\301\001\n\017ObservedV"
+  "ehicle\022\016\n\002id\030\001 \001(\005R\002id\0224\n\006motion\030\002 \001(\0132\034"
+  ".city.person.v2.PersonMotionR\006motion\022+\n\021"
+  "relative_distance\030\003 \001(\001R\020relativeDistanc"
+  "e\022;\n\010relation\030\004 \001(\0162\037.city.person.v2.Veh"
+  "icleRelationR\010relation\"\257\001\n\014ObservedLane\022"
+  "\016\n\002id\030\001 \001(\005R\002id\022 \n\013restriction\030\002 \001(\010R\013re"
+  "striction\022;\n\013light_state\030\003 \001(\0162\032.city.pe"
+  "rson.v2.LightStateR\nlightState\0220\n\024light_"
+  "remaining_time\030\004 \001(\001R\022lightRemainingTime"
+  "\"\235\002\n\nVehicleEnv\022\016\n\002id\030\001 \001(\005R\002id\0228\n\007runti"
+  "me\030\002 \001(\0132\036.city.person.v2.VehicleRuntime"
+  "R\007runtime\0222\n\007journey\030\003 \001(\0132\030.city.routin"
+  "g.v2.JourneyR\007journey\022L\n\021observed_vehicl"
+  "es\030\004 \003(\0132\037.city.person.v2.ObservedVehicl"
+  "eR\020observedVehicles\022C\n\016observed_lanes\030\005 "
+  "\003(\0132\034.city.person.v2.ObservedLaneR\robser"
+  "vedLanes*\273\002\n\017VehicleRelation\022 \n\034VEHICLE_"
+  "RELATION_UNSPECIFIED\020\000\022\032\n\026VEHICLE_RELATI"
+  "ON_AHEAD\020\001\022\033\n\027VEHICLE_RELATION_BEHIND\020\002\022"
+  "!\n\035VEHICLE_RELATION_SHADOW_AHEAD\020\003\022\"\n\036VE"
+  "HICLE_RELATION_SHADOW_BEHIND\020\004\022\037\n\033VEHICL"
+  "E_RELATION_LEFT_AHEAD\020\005\022 \n\034VEHICLE_RELAT"
+  "ION_RIGHT_AHEAD\020\006\022 \n\034VEHICLE_RELATION_LE"
+  "FT_BEHIND\020\007\022!\n\035VEHICLE_RELATION_RIGHT_BE"
+  "HIND\020\010*m\n\nLightState\022\033\n\027LIGHT_STATE_UNSP"
+  "ECIFIED\020\000\022\023\n\017LIGHT_STATE_RED\020\001\022\025\n\021LIGHT_"
+  "STATE_GREEN\020\002\022\026\n\022LIGHT_STATE_YELLOW\020\003B\265\001"
+  "\n\022com.city.person.v2B\014VehicleProtoP\001Z7gi"
+  "t.fiblab.net/sim/protos/v2/go/city/perso"
+  "n/v2;personv2\242\002\003CPX\252\002\016City.Person.V2\312\002\016C"
+  "ity\\Person\\V2\342\002\032City\\Person\\V2\\GPBMetada"
+  "ta\352\002\020City::Person::V2b\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_city_2fperson_2fv2_2fvehicle_2eproto_deps[2] = {
   &::descriptor_table_city_2fperson_2fv2_2fmotion_2eproto,
@@ -289,9 +315,9 @@ static const ::_pbi::DescriptorTable* const descriptor_table_city_2fperson_2fv2_
 };
 static ::_pbi::once_flag descriptor_table_city_2fperson_2fv2_2fvehicle_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2fperson_2fv2_2fvehicle_2eproto = {
-    false, false, 2019, descriptor_table_protodef_city_2fperson_2fv2_2fvehicle_2eproto,
+    false, false, 2109, descriptor_table_protodef_city_2fperson_2fv2_2fvehicle_2eproto,
     "city/person/v2/vehicle.proto",
-    &descriptor_table_city_2fperson_2fv2_2fvehicle_2eproto_once, descriptor_table_city_2fperson_2fv2_2fvehicle_2eproto_deps, 2, 6,
+    &descriptor_table_city_2fperson_2fv2_2fvehicle_2eproto_once, descriptor_table_city_2fperson_2fv2_2fvehicle_2eproto_deps, 2, 7,
     schemas, file_default_instances, TableStruct_city_2fperson_2fv2_2fvehicle_2eproto::offsets,
     file_level_metadata_city_2fperson_2fv2_2fvehicle_2eproto, file_level_enum_descriptors_city_2fperson_2fv2_2fvehicle_2eproto,
     file_level_service_descriptors_city_2fperson_2fv2_2fvehicle_2eproto,
@@ -937,6 +963,236 @@ void VehicleAction::InternalSwap(VehicleAction* other) {
 
 // ===================================================================
 
+class VehicleRouteAction::_Internal {
+ public:
+  static const ::city::routing::v2::Journey& journey(const VehicleRouteAction* msg);
+};
+
+const ::city::routing::v2::Journey&
+VehicleRouteAction::_Internal::journey(const VehicleRouteAction* msg) {
+  return *msg->_impl_.journey_;
+}
+void VehicleRouteAction::clear_journey() {
+  if (GetArenaForAllocation() == nullptr && _impl_.journey_ != nullptr) {
+    delete _impl_.journey_;
+  }
+  _impl_.journey_ = nullptr;
+}
+VehicleRouteAction::VehicleRouteAction(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:city.person.v2.VehicleRouteAction)
+}
+VehicleRouteAction::VehicleRouteAction(const VehicleRouteAction& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  VehicleRouteAction* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.journey_){nullptr}
+    , decltype(_impl_.id_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  if (from._internal_has_journey()) {
+    _this->_impl_.journey_ = new ::city::routing::v2::Journey(*from._impl_.journey_);
+  }
+  _this->_impl_.id_ = from._impl_.id_;
+  // @@protoc_insertion_point(copy_constructor:city.person.v2.VehicleRouteAction)
+}
+
+inline void VehicleRouteAction::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.journey_){nullptr}
+    , decltype(_impl_.id_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+}
+
+VehicleRouteAction::~VehicleRouteAction() {
+  // @@protoc_insertion_point(destructor:city.person.v2.VehicleRouteAction)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void VehicleRouteAction::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  if (this != internal_default_instance()) delete _impl_.journey_;
+}
+
+void VehicleRouteAction::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void VehicleRouteAction::Clear() {
+// @@protoc_insertion_point(message_clear_start:city.person.v2.VehicleRouteAction)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  if (GetArenaForAllocation() == nullptr && _impl_.journey_ != nullptr) {
+    delete _impl_.journey_;
+  }
+  _impl_.journey_ = nullptr;
+  _impl_.id_ = 0;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* VehicleRouteAction::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 id = 1 [json_name = "id"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .city.routing.v2.Journey journey = 2 [json_name = "journey"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr = ctx->ParseMessage(_internal_mutable_journey(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* VehicleRouteAction::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:city.person.v2.VehicleRouteAction)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 id = 1 [json_name = "id"];
+  if (this->_internal_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_id(), target);
+  }
+
+  // .city.routing.v2.Journey journey = 2 [json_name = "journey"];
+  if (this->_internal_has_journey()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(2, _Internal::journey(this),
+        _Internal::journey(this).GetCachedSize(), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:city.person.v2.VehicleRouteAction)
+  return target;
+}
+
+size_t VehicleRouteAction::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:city.person.v2.VehicleRouteAction)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // .city.routing.v2.Journey journey = 2 [json_name = "journey"];
+  if (this->_internal_has_journey()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.journey_);
+  }
+
+  // int32 id = 1 [json_name = "id"];
+  if (this->_internal_id() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_id());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData VehicleRouteAction::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    VehicleRouteAction::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*VehicleRouteAction::GetClassData() const { return &_class_data_; }
+
+
+void VehicleRouteAction::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<VehicleRouteAction*>(&to_msg);
+  auto& from = static_cast<const VehicleRouteAction&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:city.person.v2.VehicleRouteAction)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_has_journey()) {
+    _this->_internal_mutable_journey()->::city::routing::v2::Journey::MergeFrom(
+        from._internal_journey());
+  }
+  if (from._internal_id() != 0) {
+    _this->_internal_set_id(from._internal_id());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void VehicleRouteAction::CopyFrom(const VehicleRouteAction& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:city.person.v2.VehicleRouteAction)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool VehicleRouteAction::IsInitialized() const {
+  return true;
+}
+
+void VehicleRouteAction::InternalSwap(VehicleRouteAction* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(VehicleRouteAction, _impl_.id_)
+      + sizeof(VehicleRouteAction::_impl_.id_)
+      - PROTOBUF_FIELD_OFFSET(VehicleRouteAction, _impl_.journey_)>(
+          reinterpret_cast<char*>(&_impl_.journey_),
+          reinterpret_cast<char*>(&other->_impl_.journey_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata VehicleRouteAction::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2fperson_2fv2_2fvehicle_2eproto_getter, &descriptor_table_city_2fperson_2fv2_2fvehicle_2eproto_once,
+      file_level_metadata_city_2fperson_2fv2_2fvehicle_2eproto[2]);
+}
+
+// ===================================================================
+
 class VehicleRuntime::_Internal {
  public:
   using HasBits = decltype(std::declval<VehicleRuntime>()._impl_._has_bits_);
@@ -1414,7 +1670,7 @@ void VehicleRuntime::InternalSwap(VehicleRuntime* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata VehicleRuntime::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fperson_2fv2_2fvehicle_2eproto_getter, &descriptor_table_city_2fperson_2fv2_2fvehicle_2eproto_once,
-      file_level_metadata_city_2fperson_2fv2_2fvehicle_2eproto[2]);
+      file_level_metadata_city_2fperson_2fv2_2fvehicle_2eproto[3]);
 }
 
 // ===================================================================
@@ -1711,7 +1967,7 @@ void ObservedVehicle::InternalSwap(ObservedVehicle* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata ObservedVehicle::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fperson_2fv2_2fvehicle_2eproto_getter, &descriptor_table_city_2fperson_2fv2_2fvehicle_2eproto_once,
-      file_level_metadata_city_2fperson_2fv2_2fvehicle_2eproto[3]);
+      file_level_metadata_city_2fperson_2fv2_2fvehicle_2eproto[4]);
 }
 
 // ===================================================================
@@ -1985,7 +2241,7 @@ void ObservedLane::InternalSwap(ObservedLane* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata ObservedLane::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fperson_2fv2_2fvehicle_2eproto_getter, &descriptor_table_city_2fperson_2fv2_2fvehicle_2eproto_once,
-      file_level_metadata_city_2fperson_2fv2_2fvehicle_2eproto[4]);
+      file_level_metadata_city_2fperson_2fv2_2fvehicle_2eproto[5]);
 }
 
 // ===================================================================
@@ -2324,7 +2580,7 @@ void VehicleEnv::InternalSwap(VehicleEnv* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata VehicleEnv::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fperson_2fv2_2fvehicle_2eproto_getter, &descriptor_table_city_2fperson_2fv2_2fvehicle_2eproto_once,
-      file_level_metadata_city_2fperson_2fv2_2fvehicle_2eproto[5]);
+      file_level_metadata_city_2fperson_2fv2_2fvehicle_2eproto[6]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
@@ -2339,6 +2595,10 @@ Arena::CreateMaybeMessage< ::city::person::v2::LC >(Arena* arena) {
 template<> PROTOBUF_NOINLINE ::city::person::v2::VehicleAction*
 Arena::CreateMaybeMessage< ::city::person::v2::VehicleAction >(Arena* arena) {
   return Arena::CreateMessageInternal< ::city::person::v2::VehicleAction >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::person::v2::VehicleRouteAction*
+Arena::CreateMaybeMessage< ::city::person::v2::VehicleRouteAction >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::person::v2::VehicleRouteAction >(arena);
 }
 template<> PROTOBUF_NOINLINE ::city::person::v2::VehicleRuntime*
 Arena::CreateMaybeMessage< ::city::person::v2::VehicleRuntime >(Arena* arena) {

@@ -10,7 +10,7 @@ import type { Person } from "./person_pb.js";
 import type { Schedule } from "../../trip/v2/trip_pb.js";
 import type { Status } from "./motion_pb.js";
 import type { LongLatBBox, Position } from "../../geo/v2/geo_pb.js";
-import type { VehicleAction, VehicleEnv, VehicleRuntime } from "./vehicle_pb.js";
+import type { VehicleAction, VehicleEnv, VehicleRouteAction, VehicleRuntime } from "./vehicle_pb.js";
 
 /**
  * 获取person信息请求
@@ -465,6 +465,14 @@ export declare class SetControlledVehicleIDsRequest extends Message<SetControlle
    */
   vehicleIds: number[];
 
+  /**
+   * 由外部控制车辆路由的vehicle id列表（在进入新的road后触发控制）
+   * List of vehicle ids controlled by external behavior (control is triggered after entering a new road)
+   *
+   * @generated from field: repeated int32 route_vehicle_ids = 2;
+   */
+  routeVehicleIds: number[];
+
   constructor(data?: PartialMessage<SetControlledVehicleIDsRequest>);
 
   static readonly runtime: typeof proto3;
@@ -539,6 +547,14 @@ export declare class FetchControlledVehicleEnvsResponse extends Message<FetchCon
    */
   vehicleEnvs: VehicleEnv[];
 
+  /**
+   * 由外部控制车辆路由的vehicle信息
+   * Information of vehicle controlled by external behavior (control is triggered after entering a new road)
+   *
+   * @generated from field: repeated city.person.v2.VehicleEnv route_vehicle_envs = 2;
+   */
+  routeVehicleEnvs: VehicleEnv[];
+
   constructor(data?: PartialMessage<FetchControlledVehicleEnvsResponse>);
 
   static readonly runtime: typeof proto3;
@@ -568,6 +584,14 @@ export declare class SetControlledVehicleActionsRequest extends Message<SetContr
    * @generated from field: repeated city.person.v2.VehicleAction vehicle_actions = 1;
    */
   vehicleActions: VehicleAction[];
+
+  /**
+   * 由外部控制车辆路由的vehicle的新路由
+   * New route of vehicle controlled by external behavior (control is triggered after entering a new road)
+   *
+   * @generated from field: repeated city.person.v2.VehicleRouteAction vehicle_journeys = 2;
+   */
+  vehicleJourneys: VehicleRouteAction[];
 
   constructor(data?: PartialMessage<SetControlledVehicleActionsRequest>);
 

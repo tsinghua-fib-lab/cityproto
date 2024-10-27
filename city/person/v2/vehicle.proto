@@ -39,6 +39,17 @@ message VehicleAction {
   double angle = 3;
 }
 
+// 修改车辆路由信息
+// vehicle routing information modification
+message VehicleRouteAction {
+  // 车辆编号
+  // vehicle id
+  int32 id = 1;
+  // 新的路径规划结果
+  // new routing result
+  city.routing.v2.Journey journey = 2;
+}
+
 message VehicleRuntime {
   // 基本运行时信息
   // basic runtime information

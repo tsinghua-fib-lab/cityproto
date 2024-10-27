@@ -29,7 +29,7 @@ type GetTrafficLightRequest struct {
 
 	// 信号等相关的接口精确到junction
 	// The interfaces related to signals are precise to junction
-	JunctionId int32 `protobuf:"varint,1,opt,name=junction_id,json=junctionId,proto3" json:"junction_id,omitempty" yaml:"junction_id" bson:"junction_id" db:"junction_id"`
+	JunctionId int32 `protobuf:"varint,1,opt,name=junction_id,json=junctionId,proto3" json:"junction_id,omitempty" bson:"junction_id" db:"junction_id" yaml:"junction_id"`
 }
 
 func (x *GetTrafficLightRequest) Reset() {
@@ -78,13 +78,13 @@ type GetTrafficLightResponse struct {
 
 	// 当前路口处的红绿灯
 	// The traffic light at the junction
-	TrafficLight *TrafficLight `protobuf:"bytes,1,opt,name=traffic_light,json=trafficLight,proto3" json:"traffic_light,omitempty" yaml:"traffic_light" bson:"traffic_light" db:"traffic_light"`
+	TrafficLight *TrafficLight `protobuf:"bytes,1,opt,name=traffic_light,json=trafficLight,proto3" json:"traffic_light,omitempty" bson:"traffic_light" db:"traffic_light" yaml:"traffic_light"`
 	// 表示当前路口处的红绿灯处于哪一个相位
 	// Which phase the traffic light is currently in
 	PhaseIndex int32 `protobuf:"varint,2,opt,name=phase_index,json=phaseIndex,proto3" json:"phase_index,omitempty" bson:"phase_index" db:"phase_index" yaml:"phase_index"`
 	// 当前相位的剩余时间
 	// The remaining time of the current phase
-	TimeRemaining float64 `protobuf:"fixed64,3,opt,name=time_remaining,json=timeRemaining,proto3" json:"time_remaining,omitempty" yaml:"time_remaining" bson:"time_remaining" db:"time_remaining"`
+	TimeRemaining float64 `protobuf:"fixed64,3,opt,name=time_remaining,json=timeRemaining,proto3" json:"time_remaining,omitempty" bson:"time_remaining" db:"time_remaining" yaml:"time_remaining"`
 }
 
 func (x *GetTrafficLightResponse) Reset() {
@@ -147,13 +147,13 @@ type SetTrafficLightRequest struct {
 
 	// 需要改变的红绿灯（含路口编号）
 	// The target traffic light (including junction ID)
-	TrafficLight *TrafficLight `protobuf:"bytes,1,opt,name=traffic_light,json=trafficLight,proto3" json:"traffic_light,omitempty" yaml:"traffic_light" bson:"traffic_light" db:"traffic_light"`
+	TrafficLight *TrafficLight `protobuf:"bytes,1,opt,name=traffic_light,json=trafficLight,proto3" json:"traffic_light,omitempty" bson:"traffic_light" db:"traffic_light" yaml:"traffic_light"`
 	// 指定当前路口处的红绿灯的相位
 	// Specify the phase of the traffic light
-	PhaseIndex int32 `protobuf:"varint,2,opt,name=phase_index,json=phaseIndex,proto3" json:"phase_index,omitempty" yaml:"phase_index" bson:"phase_index" db:"phase_index"`
+	PhaseIndex int32 `protobuf:"varint,2,opt,name=phase_index,json=phaseIndex,proto3" json:"phase_index,omitempty" bson:"phase_index" db:"phase_index" yaml:"phase_index"`
 	// 当前相位的剩余时间
 	// The remaining time of the current phase
-	TimeRemaining float64 `protobuf:"fixed64,3,opt,name=time_remaining,json=timeRemaining,proto3" json:"time_remaining,omitempty" yaml:"time_remaining" bson:"time_remaining" db:"time_remaining"`
+	TimeRemaining float64 `protobuf:"fixed64,3,opt,name=time_remaining,json=timeRemaining,proto3" json:"time_remaining,omitempty" bson:"time_remaining" db:"time_remaining" yaml:"time_remaining"`
 }
 
 func (x *SetTrafficLightRequest) Reset() {
@@ -257,10 +257,10 @@ type SetTrafficLightPhaseRequest struct {
 	JunctionId int32 `protobuf:"varint,1,opt,name=junction_id,json=junctionId,proto3" json:"junction_id,omitempty" bson:"junction_id" db:"junction_id" yaml:"junction_id"`
 	// 指定当前路口红绿灯的相位
 	// Specify the traffic light phase
-	PhaseIndex int32 `protobuf:"varint,2,opt,name=phase_index,json=phaseIndex,proto3" json:"phase_index,omitempty" yaml:"phase_index" bson:"phase_index" db:"phase_index"`
+	PhaseIndex int32 `protobuf:"varint,2,opt,name=phase_index,json=phaseIndex,proto3" json:"phase_index,omitempty" bson:"phase_index" db:"phase_index" yaml:"phase_index"`
 	// 当前相位的剩余时间
 	// The remaining time of the current phase
-	TimeRemaining float64 `protobuf:"fixed64,3,opt,name=time_remaining,json=timeRemaining,proto3" json:"time_remaining,omitempty" yaml:"time_remaining" bson:"time_remaining" db:"time_remaining"`
+	TimeRemaining float64 `protobuf:"fixed64,3,opt,name=time_remaining,json=timeRemaining,proto3" json:"time_remaining,omitempty" bson:"time_remaining" db:"time_remaining" yaml:"time_remaining"`
 }
 
 func (x *SetTrafficLightPhaseRequest) Reset() {
@@ -361,10 +361,10 @@ type SetTrafficLightStatusRequest struct {
 
 	// 需要改变状态的路口编号
 	// The target junction ID
-	JunctionId int32 `protobuf:"varint,1,opt,name=junction_id,json=junctionId,proto3" json:"junction_id,omitempty" yaml:"junction_id" bson:"junction_id" db:"junction_id"`
+	JunctionId int32 `protobuf:"varint,1,opt,name=junction_id,json=junctionId,proto3" json:"junction_id,omitempty" bson:"junction_id" db:"junction_id" yaml:"junction_id"`
 	// 当前路口红绿灯状态，true为通，false为断
 	// The current traffic light status at the junction, true is on, false is off
-	Ok bool `protobuf:"varint,2,opt,name=ok,proto3" json:"ok,omitempty" yaml:"ok" bson:"ok" db:"ok"`
+	Ok bool `protobuf:"varint,2,opt,name=ok,proto3" json:"ok,omitempty" bson:"ok" db:"ok" yaml:"ok"`
 }
 
 func (x *SetTrafficLightStatusRequest) Reset() {
