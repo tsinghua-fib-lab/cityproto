@@ -1280,6 +1280,21 @@
         
           
           <li>
+            <a href="#city%2fperson%2fv2%2fcarbon.proto">city/person/v2/carbon.proto</a>
+            <ul>
+              
+                <li>
+                  <a href="#city.person.v2.VehicleCarbon"><span class="badge">M</span>VehicleCarbon</a>
+                </li>
+              
+              
+              
+              
+            </ul>
+          </li>
+        
+          
+          <li>
             <a href="#city%2frouting%2fv2%2frouting.proto">city/routing/v2/routing.proto</a>
             <ul>
               
@@ -9281,6 +9296,93 @@ Set traffic light status</p></td>
     
       
       <div class="file-heading">
+        <h2 id="city/person/v2/carbon.proto">city/person/v2/carbon.proto</h2><a href="#title">Top</a>
+      </div>
+      <p></p>
+
+      
+        <h3 id="city.person.v2.VehicleCarbon">VehicleCarbon</h3>
+        <p>车辆瞬时碳排放信息</p><p>Vehicle instantaneous carbon emission information</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>id</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p>ID </p></td>
+                </tr>
+              
+                <tr>
+                  <td>ds</td>
+                  <td><a href="#double">double</a></td>
+                  <td></td>
+                  <td><p>delta distance (m) </p></td>
+                </tr>
+              
+                <tr>
+                  <td>v</td>
+                  <td><a href="#double">double</a></td>
+                  <td></td>
+                  <td><p>vehicle speed (m/s) </p></td>
+                </tr>
+              
+                <tr>
+                  <td>a</td>
+                  <td><a href="#double">double</a></td>
+                  <td></td>
+                  <td><p>vehicle acceleration (m/s^2) </p></td>
+                </tr>
+              
+                <tr>
+                  <td>u_acc</td>
+                  <td><a href="#double">double</a></td>
+                  <td></td>
+                  <td><p>energy for acceleration (J) </p></td>
+                </tr>
+              
+                <tr>
+                  <td>u_roll</td>
+                  <td><a href="#double">double</a></td>
+                  <td></td>
+                  <td><p>energy for rolling resistance (J) </p></td>
+                </tr>
+              
+                <tr>
+                  <td>u_aero</td>
+                  <td><a href="#double">double</a></td>
+                  <td></td>
+                  <td><p>energy for air resistance (J) </p></td>
+                </tr>
+              
+                <tr>
+                  <td>c_d</td>
+                  <td><a href="#double">double</a></td>
+                  <td></td>
+                  <td><p>C_D: drag coefficient </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+
+      
+
+      
+
+      
+    
+      
+      <div class="file-heading">
         <h2 id="city/routing/v2/routing.proto">city/routing/v2/routing.proto</h2><a href="#title">Top</a>
       </div>
       <p></p>
@@ -11153,6 +11255,14 @@ estimated arrival time (eta returned by routing &#43; departure time) </p></td>
                   <td></td>
                   <td><p>自由流下的预计到达时刻
 estimated arrival time under free flow </p></td>
+                </tr>
+              
+                <tr>
+                  <td>carbon</td>
+                  <td><a href="#city.person.v2.VehicleCarbon">VehicleCarbon</a></td>
+                  <td>optional</td>
+                  <td><p>碳排放信息
+carbon emission information </p></td>
                 </tr>
               
             </tbody>

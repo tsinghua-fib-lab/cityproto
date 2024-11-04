@@ -2,6 +2,7 @@ syntax = "proto3";
 
 package city.person.v2;
 
+import "city/person/v2/carbon.proto";
 import "city/person/v2/motion.proto";
 import "city/routing/v2/routing.proto";
 
@@ -75,6 +76,9 @@ message VehicleRuntime {
   // 自由流下的预计到达时刻
   // estimated arrival time under free flow
   double eta_free_flow = 10;
+  // 碳排放信息
+  // carbon emission information
+  optional VehicleCarbon carbon = 11;
 }
 
 enum VehicleRelation {

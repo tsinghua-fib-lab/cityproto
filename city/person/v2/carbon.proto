@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package city.person.v2;
+
+// 车辆瞬时碳排放信息
+// Vehicle instantaneous carbon emission information
+message VehicleCarbon {
+  // ID
+  int32 id = 1;
+  // delta distance (m)
+  double ds = 2;
+  // vehicle speed (m/s)
+  double v = 3;
+  // vehicle acceleration (m/s^2)
+  double a = 4;
+  // energy for acceleration (J)
+  double u_acc = 5;
+  // energy for rolling resistance (J)
+  double u_roll = 6;
+  // energy for air resistance (J)
+  double u_aero = 7;
+  // C_D: drag coefficient
+  double c_d = 8;
+}

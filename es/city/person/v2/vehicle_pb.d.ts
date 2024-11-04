@@ -7,6 +7,7 @@ import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialM
 import { Message, proto3 } from "@bufbuild/protobuf";
 import type { Journey } from "../../routing/v2/routing_pb.js";
 import type { PersonMotion } from "./motion_pb.js";
+import type { VehicleCarbon } from "./carbon_pb.js";
 
 /**
  * @generated from enum city.person.v2.VehicleRelation
@@ -338,6 +339,14 @@ export declare class VehicleRuntime extends Message<VehicleRuntime> {
    * @generated from field: double eta_free_flow = 10;
    */
   etaFreeFlow: number;
+
+  /**
+   * 碳排放信息
+   * carbon emission information
+   *
+   * @generated from field: optional city.person.v2.VehicleCarbon carbon = 11;
+   */
+  carbon?: VehicleCarbon;
 
   constructor(data?: PartialMessage<VehicleRuntime>);
 

@@ -31,6 +31,7 @@
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
 #include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
+#include "city/person/v2/carbon.pb.h"
 #include "city/person/v2/motion.pb.h"
 #include "city/routing/v2/routing.pb.h"
 // @@protoc_insertion_point(includes)
@@ -807,6 +808,7 @@ class VehicleRuntime final :
     kBaseFieldNumber = 1,
     kLcFieldNumber = 4,
     kActionFieldNumber = 5,
+    kCarbonFieldNumber = 11,
     kRunningDistanceFieldNumber = 6,
     kDepartureTimeFieldNumber = 8,
     kEtaFieldNumber = 9,
@@ -867,6 +869,24 @@ class VehicleRuntime final :
       ::city::person::v2::VehicleAction* action);
   ::city::person::v2::VehicleAction* unsafe_arena_release_action();
 
+  // optional .city.person.v2.VehicleCarbon carbon = 11 [json_name = "carbon"];
+  bool has_carbon() const;
+  private:
+  bool _internal_has_carbon() const;
+  public:
+  void clear_carbon();
+  const ::city::person::v2::VehicleCarbon& carbon() const;
+  PROTOBUF_NODISCARD ::city::person::v2::VehicleCarbon* release_carbon();
+  ::city::person::v2::VehicleCarbon* mutable_carbon();
+  void set_allocated_carbon(::city::person::v2::VehicleCarbon* carbon);
+  private:
+  const ::city::person::v2::VehicleCarbon& _internal_carbon() const;
+  ::city::person::v2::VehicleCarbon* _internal_mutable_carbon();
+  public:
+  void unsafe_arena_set_allocated_carbon(
+      ::city::person::v2::VehicleCarbon* carbon);
+  ::city::person::v2::VehicleCarbon* unsafe_arena_release_carbon();
+
   // double running_distance = 6 [json_name = "runningDistance"];
   void clear_running_distance();
   double running_distance() const;
@@ -925,6 +945,7 @@ class VehicleRuntime final :
     ::city::person::v2::PersonMotion* base_;
     ::city::person::v2::LC* lc_;
     ::city::person::v2::VehicleAction* action_;
+    ::city::person::v2::VehicleCarbon* carbon_;
     double running_distance_;
     double departure_time_;
     double eta_;
@@ -2192,6 +2213,93 @@ inline void VehicleRuntime::_internal_set_eta_free_flow(double value) {
 inline void VehicleRuntime::set_eta_free_flow(double value) {
   _internal_set_eta_free_flow(value);
   // @@protoc_insertion_point(field_set:city.person.v2.VehicleRuntime.eta_free_flow)
+}
+
+// optional .city.person.v2.VehicleCarbon carbon = 11 [json_name = "carbon"];
+inline bool VehicleRuntime::_internal_has_carbon() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
+  PROTOBUF_ASSUME(!value || _impl_.carbon_ != nullptr);
+  return value;
+}
+inline bool VehicleRuntime::has_carbon() const {
+  return _internal_has_carbon();
+}
+inline const ::city::person::v2::VehicleCarbon& VehicleRuntime::_internal_carbon() const {
+  const ::city::person::v2::VehicleCarbon* p = _impl_.carbon_;
+  return p != nullptr ? *p : reinterpret_cast<const ::city::person::v2::VehicleCarbon&>(
+      ::city::person::v2::_VehicleCarbon_default_instance_);
+}
+inline const ::city::person::v2::VehicleCarbon& VehicleRuntime::carbon() const {
+  // @@protoc_insertion_point(field_get:city.person.v2.VehicleRuntime.carbon)
+  return _internal_carbon();
+}
+inline void VehicleRuntime::unsafe_arena_set_allocated_carbon(
+    ::city::person::v2::VehicleCarbon* carbon) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.carbon_);
+  }
+  _impl_.carbon_ = carbon;
+  if (carbon) {
+    _impl_._has_bits_[0] |= 0x00000004u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000004u;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:city.person.v2.VehicleRuntime.carbon)
+}
+inline ::city::person::v2::VehicleCarbon* VehicleRuntime::release_carbon() {
+  _impl_._has_bits_[0] &= ~0x00000004u;
+  ::city::person::v2::VehicleCarbon* temp = _impl_.carbon_;
+  _impl_.carbon_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::city::person::v2::VehicleCarbon* VehicleRuntime::unsafe_arena_release_carbon() {
+  // @@protoc_insertion_point(field_release:city.person.v2.VehicleRuntime.carbon)
+  _impl_._has_bits_[0] &= ~0x00000004u;
+  ::city::person::v2::VehicleCarbon* temp = _impl_.carbon_;
+  _impl_.carbon_ = nullptr;
+  return temp;
+}
+inline ::city::person::v2::VehicleCarbon* VehicleRuntime::_internal_mutable_carbon() {
+  _impl_._has_bits_[0] |= 0x00000004u;
+  if (_impl_.carbon_ == nullptr) {
+    auto* p = CreateMaybeMessage<::city::person::v2::VehicleCarbon>(GetArenaForAllocation());
+    _impl_.carbon_ = p;
+  }
+  return _impl_.carbon_;
+}
+inline ::city::person::v2::VehicleCarbon* VehicleRuntime::mutable_carbon() {
+  ::city::person::v2::VehicleCarbon* _msg = _internal_mutable_carbon();
+  // @@protoc_insertion_point(field_mutable:city.person.v2.VehicleRuntime.carbon)
+  return _msg;
+}
+inline void VehicleRuntime::set_allocated_carbon(::city::person::v2::VehicleCarbon* carbon) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.carbon_);
+  }
+  if (carbon) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(carbon));
+    if (message_arena != submessage_arena) {
+      carbon = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, carbon, submessage_arena);
+    }
+    _impl_._has_bits_[0] |= 0x00000004u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000004u;
+  }
+  _impl_.carbon_ = carbon;
+  // @@protoc_insertion_point(field_set_allocated:city.person.v2.VehicleRuntime.carbon)
 }
 
 // -------------------------------------------------------------------

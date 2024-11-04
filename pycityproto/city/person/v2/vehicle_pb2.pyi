@@ -1,3 +1,4 @@
+from city.person.v2 import carbon_pb2 as _carbon_pb2
 from city.person.v2 import motion_pb2 as _motion_pb2
 from city.routing.v2 import routing_pb2 as _routing_pb2
 from google.protobuf.internal import containers as _containers
@@ -78,7 +79,7 @@ class VehicleRouteAction(_message.Message):
         ...
 
 class VehicleRuntime(_message.Message):
-    __slots__ = ['base', 'lc', 'action', 'running_distance', 'num_going_astray', 'departure_time', 'eta', 'eta_free_flow']
+    __slots__ = ['base', 'lc', 'action', 'running_distance', 'num_going_astray', 'departure_time', 'eta', 'eta_free_flow', 'carbon']
     BASE_FIELD_NUMBER: _ClassVar[int]
     LC_FIELD_NUMBER: _ClassVar[int]
     ACTION_FIELD_NUMBER: _ClassVar[int]
@@ -87,6 +88,7 @@ class VehicleRuntime(_message.Message):
     DEPARTURE_TIME_FIELD_NUMBER: _ClassVar[int]
     ETA_FIELD_NUMBER: _ClassVar[int]
     ETA_FREE_FLOW_FIELD_NUMBER: _ClassVar[int]
+    CARBON_FIELD_NUMBER: _ClassVar[int]
     base: _motion_pb2.PersonMotion
     lc: LC
     action: VehicleAction
@@ -95,8 +97,9 @@ class VehicleRuntime(_message.Message):
     departure_time: float
     eta: float
     eta_free_flow: float
+    carbon: _carbon_pb2.VehicleCarbon
 
-    def __init__(self, base: _Optional[_Union[_motion_pb2.PersonMotion, _Mapping]]=..., lc: _Optional[_Union[LC, _Mapping]]=..., action: _Optional[_Union[VehicleAction, _Mapping]]=..., running_distance: _Optional[float]=..., num_going_astray: _Optional[int]=..., departure_time: _Optional[float]=..., eta: _Optional[float]=..., eta_free_flow: _Optional[float]=...) -> None:
+    def __init__(self, base: _Optional[_Union[_motion_pb2.PersonMotion, _Mapping]]=..., lc: _Optional[_Union[LC, _Mapping]]=..., action: _Optional[_Union[VehicleAction, _Mapping]]=..., running_distance: _Optional[float]=..., num_going_astray: _Optional[int]=..., departure_time: _Optional[float]=..., eta: _Optional[float]=..., eta_free_flow: _Optional[float]=..., carbon: _Optional[_Union[_carbon_pb2.VehicleCarbon, _Mapping]]=...) -> None:
         ...
 
 class ObservedVehicle(_message.Message):
