@@ -63,9 +63,9 @@ type InitResponse struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 模拟器gRPC监听地址
-	Address string   `protobuf:"bytes,2,opt,name=address,proto3" json:"address,omitempty" bson:"address" db:"address" yaml:"address"`
-	Control *Control `protobuf:"bytes,3,opt,name=control,proto3" json:"control,omitempty" bson:"control" db:"control" yaml:"control"`
-	Rain    *Rain    `protobuf:"bytes,1,opt,name=rain,proto3" json:"rain,omitempty" bson:"rain" db:"rain" yaml:"rain"`
+	Address string   `protobuf:"bytes,2,opt,name=address,proto3" json:"address,omitempty" yaml:"address" bson:"address" db:"address"`
+	Control *Control `protobuf:"bytes,3,opt,name=control,proto3" json:"control,omitempty" yaml:"control" bson:"control" db:"control"`
+	Rain    *Rain    `protobuf:"bytes,1,opt,name=rain,proto3" json:"rain,omitempty" yaml:"rain" bson:"rain" db:"rain"`
 	// 仅包括header与roads
 	Map *v2.Map `protobuf:"bytes,4,opt,name=map,proto3" json:"map,omitempty" bson:"map" db:"map" yaml:"map"`
 }

@@ -1178,29 +1178,10 @@ class BusAttribute final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kModelFieldNumber = 3,
     kSublineIdFieldNumber = 1,
     kCapacityFieldNumber = 2,
     kTypeFieldNumber = 5,
   };
-  // optional string model = 3 [json_name = "model"];
-  bool has_model() const;
-  private:
-  bool _internal_has_model() const;
-  public:
-  void clear_model();
-  const std::string& model() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_model(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_model();
-  PROTOBUF_NODISCARD std::string* release_model();
-  void set_allocated_model(std::string* model);
-  private:
-  const std::string& _internal_model() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_model(const std::string& value);
-  std::string* _internal_mutable_model();
-  public:
-
   // int32 subline_id = 1 [json_name = "sublineId"];
   void clear_subline_id();
   int32_t subline_id() const;
@@ -1236,12 +1217,10 @@ class BusAttribute final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
-    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr model_;
     int32_t subline_id_;
     int32_t capacity_;
     int type_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_city_2fperson_2fv2_2fperson_2eproto;
@@ -3094,74 +3073,6 @@ inline void BusAttribute::_internal_set_capacity(int32_t value) {
 inline void BusAttribute::set_capacity(int32_t value) {
   _internal_set_capacity(value);
   // @@protoc_insertion_point(field_set:city.person.v2.BusAttribute.capacity)
-}
-
-// optional string model = 3 [json_name = "model"];
-inline bool BusAttribute::_internal_has_model() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
-  return value;
-}
-inline bool BusAttribute::has_model() const {
-  return _internal_has_model();
-}
-inline void BusAttribute::clear_model() {
-  _impl_.model_.ClearToEmpty();
-  _impl_._has_bits_[0] &= ~0x00000001u;
-}
-inline const std::string& BusAttribute::model() const {
-  // @@protoc_insertion_point(field_get:city.person.v2.BusAttribute.model)
-  return _internal_model();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void BusAttribute::set_model(ArgT0&& arg0, ArgT... args) {
- _impl_._has_bits_[0] |= 0x00000001u;
- _impl_.model_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:city.person.v2.BusAttribute.model)
-}
-inline std::string* BusAttribute::mutable_model() {
-  std::string* _s = _internal_mutable_model();
-  // @@protoc_insertion_point(field_mutable:city.person.v2.BusAttribute.model)
-  return _s;
-}
-inline const std::string& BusAttribute::_internal_model() const {
-  return _impl_.model_.Get();
-}
-inline void BusAttribute::_internal_set_model(const std::string& value) {
-  _impl_._has_bits_[0] |= 0x00000001u;
-  _impl_.model_.Set(value, GetArenaForAllocation());
-}
-inline std::string* BusAttribute::_internal_mutable_model() {
-  _impl_._has_bits_[0] |= 0x00000001u;
-  return _impl_.model_.Mutable(GetArenaForAllocation());
-}
-inline std::string* BusAttribute::release_model() {
-  // @@protoc_insertion_point(field_release:city.person.v2.BusAttribute.model)
-  if (!_internal_has_model()) {
-    return nullptr;
-  }
-  _impl_._has_bits_[0] &= ~0x00000001u;
-  auto* p = _impl_.model_.Release();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.model_.IsDefault()) {
-    _impl_.model_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  return p;
-}
-inline void BusAttribute::set_allocated_model(std::string* model) {
-  if (model != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000001u;
-  } else {
-    _impl_._has_bits_[0] &= ~0x00000001u;
-  }
-  _impl_.model_.SetAllocated(model, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.model_.IsDefault()) {
-    _impl_.model_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:city.person.v2.BusAttribute.model)
 }
 
 // .city.person.v2.BusType type = 5 [json_name = "type"];

@@ -139,17 +139,15 @@ class VehicleAttribute(_message.Message):
         ...
 
 class BusAttribute(_message.Message):
-    __slots__ = ['subline_id', 'capacity', 'model', 'type']
+    __slots__ = ['subline_id', 'capacity', 'type']
     SUBLINE_ID_FIELD_NUMBER: _ClassVar[int]
     CAPACITY_FIELD_NUMBER: _ClassVar[int]
-    MODEL_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
     subline_id: int
     capacity: int
-    model: str
     type: BusType
 
-    def __init__(self, subline_id: _Optional[int]=..., capacity: _Optional[int]=..., model: _Optional[str]=..., type: _Optional[_Union[BusType, str]]=...) -> None:
+    def __init__(self, subline_id: _Optional[int]=..., capacity: _Optional[int]=..., type: _Optional[_Union[BusType, str]]=...) -> None:
         ...
 
 class PedestrianAttribute(_message.Message):

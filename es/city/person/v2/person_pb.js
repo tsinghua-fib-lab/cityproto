@@ -168,7 +168,6 @@ export const BusAttribute = /*@__PURE__*/ proto3.makeMessageType(
   () => [
     { no: 1, name: "subline_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 2, name: "capacity", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 3, name: "model", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
     { no: 5, name: "type", kind: "enum", T: proto3.getEnumType(BusType) },
   ],
 );

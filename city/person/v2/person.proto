@@ -133,9 +133,6 @@ message BusAttribute {
   // 公交车容量
   // bus capacity
   int32 capacity = 2;
-  // 公交车模型标签
-  // bus model tag
-  optional string model = 3;
   // 公交车类型
   // type of bus
   BusType type = 5;

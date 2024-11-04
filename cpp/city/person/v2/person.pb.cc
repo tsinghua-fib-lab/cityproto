@@ -96,12 +96,10 @@ struct VehicleAttributeDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 VehicleAttributeDefaultTypeInternal _VehicleAttribute_default_instance_;
 PROTOBUF_CONSTEXPR BusAttribute::BusAttribute(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_._has_bits_)*/{}
-  , /*decltype(_impl_._cached_size_)*/{}
-  , /*decltype(_impl_.model_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.subline_id_)*/0
+    /*decltype(_impl_.subline_id_)*/0
   , /*decltype(_impl_.capacity_)*/0
-  , /*decltype(_impl_.type_)*/0} {}
+  , /*decltype(_impl_.type_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct BusAttributeDefaultTypeInternal {
   PROTOBUF_CONSTEXPR BusAttributeDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -281,7 +279,7 @@ const uint32_t TableStruct_city_2fperson_2fv2_2fperson_2eproto::offsets[] PROTOB
   0,
   ~0u,
   ~0u,
-  PROTOBUF_FIELD_OFFSET(::city::person::v2::BusAttribute, _impl_._has_bits_),
+  ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::city::person::v2::BusAttribute, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
@@ -289,12 +287,7 @@ const uint32_t TableStruct_city_2fperson_2fv2_2fperson_2eproto::offsets[] PROTOB
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::city::person::v2::BusAttribute, _impl_.subline_id_),
   PROTOBUF_FIELD_OFFSET(::city::person::v2::BusAttribute, _impl_.capacity_),
-  PROTOBUF_FIELD_OFFSET(::city::person::v2::BusAttribute, _impl_.model_),
   PROTOBUF_FIELD_OFFSET(::city::person::v2::BusAttribute, _impl_.type_),
-  ~0u,
-  ~0u,
-  0,
-  ~0u,
   PROTOBUF_FIELD_OFFSET(::city::person::v2::PedestrianAttribute, _impl_._has_bits_),
   PROTOBUF_FIELD_OFFSET(::city::person::v2::PedestrianAttribute, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -379,13 +372,13 @@ static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protode
   { 6, -1, -1, sizeof(::city::person::v2::VehicleEngineEfficiency)},
   { 14, 27, -1, sizeof(::city::person::v2::EmissionAttribute)},
   { 34, 53, -1, sizeof(::city::person::v2::VehicleAttribute)},
-  { 66, 76, -1, sizeof(::city::person::v2::BusAttribute)},
-  { 80, 88, -1, sizeof(::city::person::v2::PedestrianAttribute)},
-  { 90, 98, -1, sizeof(::city::person::v2::BikeAttribute)},
-  { 100, -1, -1, sizeof(::city::person::v2::PersonProfile)},
-  { 111, 119, -1, sizeof(::city::person::v2::Person_LabelsEntry_DoNotUse)},
-  { 121, 139, -1, sizeof(::city::person::v2::Person)},
-  { 151, -1, -1, sizeof(::city::person::v2::Persons)},
+  { 66, -1, -1, sizeof(::city::person::v2::BusAttribute)},
+  { 75, 83, -1, sizeof(::city::person::v2::PedestrianAttribute)},
+  { 85, 93, -1, sizeof(::city::person::v2::BikeAttribute)},
+  { 95, -1, -1, sizeof(::city::person::v2::PersonProfile)},
+  { 106, 114, -1, sizeof(::city::person::v2::Person_LabelsEntry_DoNotUse)},
+  { 116, 134, -1, sizeof(::city::person::v2::Person)},
+  { 146, -1, -1, sizeof(::city::person::v2::Persons)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -434,67 +427,66 @@ const char descriptor_table_protodef_city_2fperson_2fv2_2fperson_2eproto[] PROTO
   "iation\030\014 \001(\001R laneMaxSpeedRecognitionDev"
   "iation\022P\n\022emission_attribute\030\r \001(\0132!.cit"
   "y.person.v2.EmissionAttributeR\021emissionA"
-  "ttributeB\010\n\006_model\"\233\001\n\014BusAttribute\022\035\n\ns"
-  "ubline_id\030\001 \001(\005R\tsublineId\022\032\n\010capacity\030\002"
-  " \001(\005R\010capacity\022\031\n\005model\030\003 \001(\tH\000R\005model\210\001"
-  "\001\022+\n\004type\030\005 \001(\0162\027.city.person.v2.BusType"
-  "R\004typeB\010\n\006_model\"P\n\023PedestrianAttribute\022"
-  "\024\n\005speed\030\001 \001(\001R\005speed\022\031\n\005model\030\002 \001(\tH\000R\005"
-  "model\210\001\001B\010\n\006_model\"J\n\rBikeAttribute\022\024\n\005s"
-  "peed\030\001 \001(\001R\005speed\022\031\n\005model\030\002 \001(\tH\000R\005mode"
-  "l\210\001\001B\010\n\006_model\"\344\001\n\rPersonProfile\022\020\n\003age\030"
-  "\001 \001(\005R\003age\0227\n\teducation\030\002 \001(\0162\031.city.per"
-  "son.v2.EducationR\teducation\022.\n\006gender\030\003 "
-  "\001(\0162\026.city.person.v2.GenderR\006gender\022=\n\013c"
-  "onsumption\030\004 \001(\0162\033.city.person.v2.Consum"
-  "ptionR\013consumption\022\031\n\010house_id\030\005 \001(\005R\007ho"
-  "useId\"\221\007\n\006Person\022\016\n\002id\030\001 \001(\005R\002id\022=\n\tattr"
-  "ibute\030\002 \001(\0132\037.city.person.v2.PersonAttri"
-  "buteR\tattribute\022)\n\004home\030\003 \001(\0132\025.city.geo"
-  ".v2.PositionR\004home\0224\n\tschedules\030\004 \003(\0132\026."
-  "city.trip.v2.ScheduleR\tschedules\022R\n\021vehi"
-  "cle_attribute\030\007 \001(\0132 .city.person.v2.Veh"
-  "icleAttributeH\000R\020vehicleAttribute\210\001\001\022F\n\r"
-  "bus_attribute\030\010 \001(\0132\034.city.person.v2.Bus"
-  "AttributeH\001R\014busAttribute\210\001\001\022[\n\024pedestri"
-  "an_attribute\030\014 \001(\0132#.city.person.v2.Pede"
-  "strianAttributeH\002R\023pedestrianAttribute\210\001"
-  "\001\022I\n\016bike_attribute\030\t \001(\0132\035.city.person."
-  "v2.BikeAttributeH\003R\rbikeAttribute\210\001\001\022:\n\006"
-  "labels\030\n \003(\0132\".city.person.v2.Person.Lab"
-  "elsEntryR\006labels\022<\n\007profile\030\013 \001(\0132\035.city"
-  ".person.v2.PersonProfileH\004R\007profile\210\001\001\022."
-  "\n\004work\030\r \001(\0132\025.city.geo.v2.PositionH\005R\004w"
-  "ork\210\001\001\022/\n\021output_when_sleep\030\016 \001(\010H\006R\017out"
-  "putWhenSleep\210\001\001\0329\n\013LabelsEntry\022\020\n\003key\030\001 "
-  "\001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001B\024\n\022_v"
-  "ehicle_attributeB\020\n\016_bus_attributeB\027\n\025_p"
-  "edestrian_attributeB\021\n\017_bike_attributeB\n"
-  "\n\010_profileB\007\n\005_workB\024\n\022_output_when_slee"
-  "p\";\n\007Persons\0220\n\007persons\030\001 \003(\0132\026.city.per"
-  "son.v2.PersonR\007persons*\230\001\n\021VehicleEngine"
-  "Type\022#\n\037VEHICLE_ENGINE_TYPE_UNSPECIFIED\020"
-  "\000\022\034\n\030VEHICLE_ENGINE_TYPE_FUEL\020\001\022 \n\034VEHIC"
-  "LE_ENGINE_TYPE_ELECTRIC\020\002\022\036\n\032VEHICLE_ENG"
-  "INE_TYPE_HYBRID\020\003*J\n\007BusType\022\030\n\024BUS_TYPE"
-  "_UNSPECIFIED\020\000\022\020\n\014BUS_TYPE_BUS\020\001\022\023\n\017BUS_"
-  "TYPE_SUBWAY\020\002*\334\001\n\tEducation\022\031\n\025EDUCATION"
-  "_UNSPECIFIED\020\000\022\024\n\020EDUCATION_DOCTOR\020\001\022\024\n\020"
-  "EDUCATION_MASTER\020\002\022\026\n\022EDUCATION_BACHELOR"
-  "\020\003\022\031\n\025EDUCATION_HIGH_SCHOOL\020\004\022 \n\034EDUCATI"
-  "ON_JUNIOR_HIGH_SCHOOL\020\005\022\034\n\030EDUCATION_PRI"
-  "MARY_SCHOOL\020\006\022\025\n\021EDUCATION_COLLEGE\020\007*D\n\006"
-  "Gender\022\026\n\022GENDER_UNSPECIFIED\020\000\022\017\n\013GENDER"
-  "_MALE\020\001\022\021\n\rGENDER_FEMALE\020\002*\256\001\n\013Consumpti"
-  "on\022\033\n\027CONSUMPTION_UNSPECIFIED\020\000\022\023\n\017CONSU"
-  "MPTION_LOW\020\001\022\036\n\032CONSUMPTION_RELATIVELY_L"
-  "OW\020\002\022\026\n\022CONSUMPTION_MEDIUM\020\003\022\037\n\033CONSUMPT"
-  "ION_RELATIVELY_HIGH\020\004\022\024\n\020CONSUMPTION_HIG"
-  "H\020\005B\264\001\n\022com.city.person.v2B\013PersonProtoP"
-  "\001Z7git.fiblab.net/sim/protos/v2/go/city/"
-  "person/v2;personv2\242\002\003CPX\252\002\016City.Person.V"
-  "2\312\002\016City\\Person\\V2\342\002\032City\\Person\\V2\\GPBM"
-  "etadata\352\002\020City::Person::V2b\006proto3"
+  "ttributeB\010\n\006_model\"v\n\014BusAttribute\022\035\n\nsu"
+  "bline_id\030\001 \001(\005R\tsublineId\022\032\n\010capacity\030\002 "
+  "\001(\005R\010capacity\022+\n\004type\030\005 \001(\0162\027.city.perso"
+  "n.v2.BusTypeR\004type\"P\n\023PedestrianAttribut"
+  "e\022\024\n\005speed\030\001 \001(\001R\005speed\022\031\n\005model\030\002 \001(\tH\000"
+  "R\005model\210\001\001B\010\n\006_model\"J\n\rBikeAttribute\022\024\n"
+  "\005speed\030\001 \001(\001R\005speed\022\031\n\005model\030\002 \001(\tH\000R\005mo"
+  "del\210\001\001B\010\n\006_model\"\344\001\n\rPersonProfile\022\020\n\003ag"
+  "e\030\001 \001(\005R\003age\0227\n\teducation\030\002 \001(\0162\031.city.p"
+  "erson.v2.EducationR\teducation\022.\n\006gender\030"
+  "\003 \001(\0162\026.city.person.v2.GenderR\006gender\022=\n"
+  "\013consumption\030\004 \001(\0162\033.city.person.v2.Cons"
+  "umptionR\013consumption\022\031\n\010house_id\030\005 \001(\005R\007"
+  "houseId\"\221\007\n\006Person\022\016\n\002id\030\001 \001(\005R\002id\022=\n\tat"
+  "tribute\030\002 \001(\0132\037.city.person.v2.PersonAtt"
+  "ributeR\tattribute\022)\n\004home\030\003 \001(\0132\025.city.g"
+  "eo.v2.PositionR\004home\0224\n\tschedules\030\004 \003(\0132"
+  "\026.city.trip.v2.ScheduleR\tschedules\022R\n\021ve"
+  "hicle_attribute\030\007 \001(\0132 .city.person.v2.V"
+  "ehicleAttributeH\000R\020vehicleAttribute\210\001\001\022F"
+  "\n\rbus_attribute\030\010 \001(\0132\034.city.person.v2.B"
+  "usAttributeH\001R\014busAttribute\210\001\001\022[\n\024pedest"
+  "rian_attribute\030\014 \001(\0132#.city.person.v2.Pe"
+  "destrianAttributeH\002R\023pedestrianAttribute"
+  "\210\001\001\022I\n\016bike_attribute\030\t \001(\0132\035.city.perso"
+  "n.v2.BikeAttributeH\003R\rbikeAttribute\210\001\001\022:"
+  "\n\006labels\030\n \003(\0132\".city.person.v2.Person.L"
+  "abelsEntryR\006labels\022<\n\007profile\030\013 \001(\0132\035.ci"
+  "ty.person.v2.PersonProfileH\004R\007profile\210\001\001"
+  "\022.\n\004work\030\r \001(\0132\025.city.geo.v2.PositionH\005R"
+  "\004work\210\001\001\022/\n\021output_when_sleep\030\016 \001(\010H\006R\017o"
+  "utputWhenSleep\210\001\001\0329\n\013LabelsEntry\022\020\n\003key\030"
+  "\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001B\024\n\022"
+  "_vehicle_attributeB\020\n\016_bus_attributeB\027\n\025"
+  "_pedestrian_attributeB\021\n\017_bike_attribute"
+  "B\n\n\010_profileB\007\n\005_workB\024\n\022_output_when_sl"
+  "eep\";\n\007Persons\0220\n\007persons\030\001 \003(\0132\026.city.p"
+  "erson.v2.PersonR\007persons*\230\001\n\021VehicleEngi"
+  "neType\022#\n\037VEHICLE_ENGINE_TYPE_UNSPECIFIE"
+  "D\020\000\022\034\n\030VEHICLE_ENGINE_TYPE_FUEL\020\001\022 \n\034VEH"
+  "ICLE_ENGINE_TYPE_ELECTRIC\020\002\022\036\n\032VEHICLE_E"
+  "NGINE_TYPE_HYBRID\020\003*J\n\007BusType\022\030\n\024BUS_TY"
+  "PE_UNSPECIFIED\020\000\022\020\n\014BUS_TYPE_BUS\020\001\022\023\n\017BU"
+  "S_TYPE_SUBWAY\020\002*\334\001\n\tEducation\022\031\n\025EDUCATI"
+  "ON_UNSPECIFIED\020\000\022\024\n\020EDUCATION_DOCTOR\020\001\022\024"
+  "\n\020EDUCATION_MASTER\020\002\022\026\n\022EDUCATION_BACHEL"
+  "OR\020\003\022\031\n\025EDUCATION_HIGH_SCHOOL\020\004\022 \n\034EDUCA"
+  "TION_JUNIOR_HIGH_SCHOOL\020\005\022\034\n\030EDUCATION_P"
+  "RIMARY_SCHOOL\020\006\022\025\n\021EDUCATION_COLLEGE\020\007*D"
+  "\n\006Gender\022\026\n\022GENDER_UNSPECIFIED\020\000\022\017\n\013GEND"
+  "ER_MALE\020\001\022\021\n\rGENDER_FEMALE\020\002*\256\001\n\013Consump"
+  "tion\022\033\n\027CONSUMPTION_UNSPECIFIED\020\000\022\023\n\017CON"
+  "SUMPTION_LOW\020\001\022\036\n\032CONSUMPTION_RELATIVELY"
+  "_LOW\020\002\022\026\n\022CONSUMPTION_MEDIUM\020\003\022\037\n\033CONSUM"
+  "PTION_RELATIVELY_HIGH\020\004\022\024\n\020CONSUMPTION_H"
+  "IGH\020\005B\264\001\n\022com.city.person.v2B\013PersonProt"
+  "oP\001Z7git.fiblab.net/sim/protos/v2/go/cit"
+  "y/person/v2;personv2\242\002\003CPX\252\002\016City.Person"
+  ".V2\312\002\016City\\Person\\V2\342\002\032City\\Person\\V2\\GP"
+  "BMetadata\352\002\020City::Person::V2b\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_city_2fperson_2fv2_2fperson_2eproto_deps[2] = {
   &::descriptor_table_city_2fgeo_2fv2_2fgeo_2eproto,
@@ -502,7 +494,7 @@ static const ::_pbi::DescriptorTable* const descriptor_table_city_2fperson_2fv2_
 };
 static ::_pbi::once_flag descriptor_table_city_2fperson_2fv2_2fperson_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2fperson_2fv2_2fperson_2eproto = {
-    false, false, 3674, descriptor_table_protodef_city_2fperson_2fv2_2fperson_2eproto,
+    false, false, 3636, descriptor_table_protodef_city_2fperson_2fv2_2fperson_2eproto,
     "city/person/v2/person.proto",
     &descriptor_table_city_2fperson_2fv2_2fperson_2eproto_once, descriptor_table_city_2fperson_2fv2_2fperson_2eproto_deps, 2, 11,
     schemas, file_default_instances, TableStruct_city_2fperson_2fv2_2fperson_2eproto::offsets,
@@ -1986,10 +1978,6 @@ void VehicleAttribute::InternalSwap(VehicleAttribute* other) {
 
 class BusAttribute::_Internal {
  public:
-  using HasBits = decltype(std::declval<BusAttribute>()._impl_._has_bits_);
-  static void set_has_model(HasBits* has_bits) {
-    (*has_bits)[0] |= 1u;
-  }
 };
 
 BusAttribute::BusAttribute(::PROTOBUF_NAMESPACE_ID::Arena* arena,
@@ -2002,22 +1990,12 @@ BusAttribute::BusAttribute(const BusAttribute& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   BusAttribute* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){from._impl_._has_bits_}
-    , /*decltype(_impl_._cached_size_)*/{}
-    , decltype(_impl_.model_){}
-    , decltype(_impl_.subline_id_){}
+      decltype(_impl_.subline_id_){}
     , decltype(_impl_.capacity_){}
-    , decltype(_impl_.type_){}};
+    , decltype(_impl_.type_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.model_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.model_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (from._internal_has_model()) {
-    _this->_impl_.model_.Set(from._internal_model(), 
-      _this->GetArenaForAllocation());
-  }
   ::memcpy(&_impl_.subline_id_, &from._impl_.subline_id_,
     static_cast<size_t>(reinterpret_cast<char*>(&_impl_.type_) -
     reinterpret_cast<char*>(&_impl_.subline_id_)) + sizeof(_impl_.type_));
@@ -2029,17 +2007,11 @@ inline void BusAttribute::SharedCtor(
   (void)arena;
   (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){}
-    , /*decltype(_impl_._cached_size_)*/{}
-    , decltype(_impl_.model_){}
-    , decltype(_impl_.subline_id_){0}
+      decltype(_impl_.subline_id_){0}
     , decltype(_impl_.capacity_){0}
     , decltype(_impl_.type_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
-  _impl_.model_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.model_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
 BusAttribute::~BusAttribute() {
@@ -2053,7 +2025,6 @@ BusAttribute::~BusAttribute() {
 
 inline void BusAttribute::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.model_.Destroy();
 }
 
 void BusAttribute::SetCachedSize(int size) const {
@@ -2066,20 +2037,14 @@ void BusAttribute::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000001u) {
-    _impl_.model_.ClearNonDefaultToEmpty();
-  }
   ::memset(&_impl_.subline_id_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_impl_.type_) -
       reinterpret_cast<char*>(&_impl_.subline_id_)) + sizeof(_impl_.type_));
-  _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* BusAttribute::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
@@ -2097,16 +2062,6 @@ const char* BusAttribute::_InternalParse(const char* ptr, ::_pbi::ParseContext* 
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           _impl_.capacity_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // optional string model = 3 [json_name = "model"];
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
-          auto str = _internal_mutable_model();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "city.person.v2.BusAttribute.model"));
         } else
           goto handle_unusual;
         continue;
@@ -2135,7 +2090,6 @@ const char* BusAttribute::_InternalParse(const char* ptr, ::_pbi::ParseContext* 
     CHK_(ptr != nullptr);
   }  // while
 message_done:
-  _impl_._has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
@@ -2161,16 +2115,6 @@ uint8_t* BusAttribute::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteInt32ToArray(2, this->_internal_capacity(), target);
   }
 
-  // optional string model = 3 [json_name = "model"];
-  if (_internal_has_model()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_model().data(), static_cast<int>(this->_internal_model().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "city.person.v2.BusAttribute.model");
-    target = stream->WriteStringMaybeAliased(
-        3, this->_internal_model(), target);
-  }
-
   // .city.person.v2.BusType type = 5 [json_name = "type"];
   if (this->_internal_type() != 0) {
     target = stream->EnsureSpace(target);
@@ -2193,14 +2137,6 @@ size_t BusAttribute::ByteSizeLong() const {
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
-
-  // optional string model = 3 [json_name = "model"];
-  cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000001u) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_model());
-  }
 
   // int32 subline_id = 1 [json_name = "sublineId"];
   if (this->_internal_subline_id() != 0) {
@@ -2236,9 +2172,6 @@ void BusAttribute::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::P
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_has_model()) {
-    _this->_internal_set_model(from._internal_model());
-  }
   if (from._internal_subline_id() != 0) {
     _this->_internal_set_subline_id(from._internal_subline_id());
   }
@@ -2264,14 +2197,7 @@ bool BusAttribute::IsInitialized() const {
 
 void BusAttribute::InternalSwap(BusAttribute* other) {
   using std::swap;
-  auto* lhs_arena = GetArenaForAllocation();
-  auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.model_, lhs_arena,
-      &other->_impl_.model_, rhs_arena
-  );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(BusAttribute, _impl_.type_)
       + sizeof(BusAttribute::_impl_.type_)

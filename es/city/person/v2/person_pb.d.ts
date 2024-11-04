@@ -525,14 +525,6 @@ export declare class BusAttribute extends Message<BusAttribute> {
   capacity: number;
 
   /**
-   * 公交车模型标签
-   * bus model tag
-   *
-   * @generated from field: optional string model = 3;
-   */
-  model?: string;
-
-  /**
    * 公交车类型
    * type of bus
    *
