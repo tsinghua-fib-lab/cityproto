@@ -230,7 +230,7 @@ type GetRoadResponse struct {
 
 	// 道路信息列表
 	// List of road information
-	States []*RoadState `protobuf:"bytes,1,rep,name=states,proto3" json:"states,omitempty" db:"states" yaml:"states" bson:"states"`
+	States []*RoadState `protobuf:"bytes,1,rep,name=states,proto3" json:"states,omitempty" yaml:"states" bson:"states" db:"states"`
 }
 
 func (x *GetRoadResponse) Reset() {
@@ -311,8 +311,8 @@ type RuinInfo struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Num   int32   `protobuf:"varint,1,opt,name=num,proto3" json:"num,omitempty" yaml:"num" bson:"num" db:"num"`            // 损坏数量。Ruined number
-	Ratio float64 `protobuf:"fixed64,2,opt,name=ratio,proto3" json:"ratio,omitempty" db:"ratio" yaml:"ratio" bson:"ratio"` // 损坏占比。Ruined ratio
+	Num   int32   `protobuf:"varint,1,opt,name=num,proto3" json:"num,omitempty" db:"num" yaml:"num" bson:"num"`            // 损坏数量。Ruined number
+	Ratio float64 `protobuf:"fixed64,2,opt,name=ratio,proto3" json:"ratio,omitempty" yaml:"ratio" bson:"ratio" db:"ratio"` // 损坏占比。Ruined ratio
 }
 
 func (x *RuinInfo) Reset() {
@@ -366,7 +366,7 @@ type GetRuinInfoResponse struct {
 
 	// 三级损伤信息
 	// Three-level ruin information
-	One   *RuinInfo `protobuf:"bytes,1,opt,name=one,proto3" json:"one,omitempty" yaml:"one" bson:"one" db:"one"`
+	One   *RuinInfo `protobuf:"bytes,1,opt,name=one,proto3" json:"one,omitempty" db:"one" yaml:"one" bson:"one"`
 	Two   *RuinInfo `protobuf:"bytes,2,opt,name=two,proto3" json:"two,omitempty" yaml:"two" bson:"two" db:"two"`
 	Three *RuinInfo `protobuf:"bytes,3,opt,name=three,proto3" json:"three,omitempty" yaml:"three" bson:"three" db:"three"`
 }
@@ -518,7 +518,7 @@ type RoadState struct {
 	AvgV float64 `protobuf:"fixed64,4,opt,name=avg_v,json=avgV,proto3" json:"avg_v,omitempty" yaml:"avg_v" bson:"avg_v" db:"avg_v"`
 	// 道路拥堵情况
 	// road congestion level
-	Level RoadLevel `protobuf:"varint,2,opt,name=level,proto3,enum=city.map.v2.RoadLevel" json:"level,omitempty" bson:"level" db:"level" yaml:"level"`
+	Level RoadLevel `protobuf:"varint,2,opt,name=level,proto3,enum=city.map.v2.RoadLevel" json:"level,omitempty" yaml:"level" bson:"level" db:"level"`
 	// 道路中断原因
 	// road interruption reason
 	Reason InterruptionReason `protobuf:"varint,3,opt,name=reason,proto3,enum=city.map.v2.InterruptionReason" json:"reason,omitempty" yaml:"reason" bson:"reason" db:"reason"`

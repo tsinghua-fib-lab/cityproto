@@ -37,9 +37,23 @@ export declare enum RouteType {
   /**
    * 公交
    *
-   * @generated from enum value: ROUTE_TYPE_BY_BUS = 3;
+   * @generated from enum value: ROUTE_TYPE_BUS = 3;
    */
-  BY_BUS = 3,
+  BUS = 3,
+
+  /**
+   * 地铁
+   *
+   * @generated from enum value: ROUTE_TYPE_SUBWAY = 4;
+   */
+  SUBWAY = 4,
+
+  /**
+   * 公交+地铁
+   *
+   * @generated from enum value: ROUTE_TYPE_BUS_SUBWAY = 5;
+   */
+  BUS_SUBWAY = 5,
 }
 
 /**

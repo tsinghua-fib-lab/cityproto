@@ -62,6 +62,22 @@ export declare enum TripMode {
    * @generated from enum value: TRIP_MODE_TAXI = 6;
    */
   TAXI = 6,
+
+  /**
+   * 乘坐地铁（含站点间步行换乘）
+   * taking subway with walking to transit bus line between stations
+   *
+   * @generated from enum value: TRIP_MODE_SUBWAY_WALK = 7;
+   */
+  SUBWAY_WALK = 7,
+
+  /**
+   * 乘坐公交车（含站点间步行换乘）
+   * taking bus and subway with walking to transit bus line between stations
+   *
+   * @generated from enum value: TRIP_MODE_BUS_SUBWAY_WALK = 8;
+   */
+  BUS_SUBWAY_WALK = 8,
 }
 
 /**

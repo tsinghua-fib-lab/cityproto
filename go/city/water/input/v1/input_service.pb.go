@@ -67,7 +67,7 @@ type InitResponse struct {
 	Control *Control `protobuf:"bytes,3,opt,name=control,proto3" json:"control,omitempty" yaml:"control" bson:"control" db:"control"`
 	Rain    *Rain    `protobuf:"bytes,1,opt,name=rain,proto3" json:"rain,omitempty" yaml:"rain" bson:"rain" db:"rain"`
 	// 仅包括header与roads
-	Map *v2.Map `protobuf:"bytes,4,opt,name=map,proto3" json:"map,omitempty" bson:"map" db:"map" yaml:"map"`
+	Map *v2.Map `protobuf:"bytes,4,opt,name=map,proto3" json:"map,omitempty" yaml:"map" bson:"map" db:"map"`
 }
 
 func (x *InitResponse) Reset() {

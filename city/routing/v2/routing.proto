@@ -12,7 +12,11 @@ enum RouteType {
   // 步行
   ROUTE_TYPE_WALKING = 2;
   // 公交
-  ROUTE_TYPE_BY_BUS = 3;
+  ROUTE_TYPE_BUS = 3;
+  // 地铁
+  ROUTE_TYPE_SUBWAY = 4;
+  // 公交+地铁
+  ROUTE_TYPE_BUS_SUBWAY = 5;
 }
 
 // 移动方式

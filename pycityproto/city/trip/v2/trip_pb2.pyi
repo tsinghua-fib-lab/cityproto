@@ -15,12 +15,16 @@ class TripMode(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     TRIP_MODE_BUS_WALK: _ClassVar[TripMode]
     TRIP_MODE_BIKE_WALK: _ClassVar[TripMode]
     TRIP_MODE_TAXI: _ClassVar[TripMode]
+    TRIP_MODE_SUBWAY_WALK: _ClassVar[TripMode]
+    TRIP_MODE_BUS_SUBWAY_WALK: _ClassVar[TripMode]
 TRIP_MODE_UNSPECIFIED: TripMode
 TRIP_MODE_WALK_ONLY: TripMode
 TRIP_MODE_DRIVE_ONLY: TripMode
 TRIP_MODE_BUS_WALK: TripMode
 TRIP_MODE_BIKE_WALK: TripMode
 TRIP_MODE_TAXI: TripMode
+TRIP_MODE_SUBWAY_WALK: TripMode
+TRIP_MODE_BUS_SUBWAY_WALK: TripMode
 
 class TripStop(_message.Message):
     __slots__ = ['aoi_position', 'lane_position', 'duration']

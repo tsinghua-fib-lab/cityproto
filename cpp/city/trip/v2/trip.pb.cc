@@ -173,15 +173,17 @@ const char descriptor_table_protodef_city_2ftrip_2fv2_2ftrip_2eproto[] PROTOBUF_
   "\030\002 \001(\005R\tloopCount\022*\n\016departure_time\030\003 \001("
   "\001H\000R\rdepartureTime\210\001\001\022 \n\twait_time\030\004 \001(\001"
   "H\001R\010waitTime\210\001\001B\021\n\017_departure_timeB\014\n\n_w"
-  "ait_time*\235\001\n\010TripMode\022\031\n\025TRIP_MODE_UNSPE"
+  "ait_time*\327\001\n\010TripMode\022\031\n\025TRIP_MODE_UNSPE"
   "CIFIED\020\000\022\027\n\023TRIP_MODE_WALK_ONLY\020\001\022\030\n\024TRI"
   "P_MODE_DRIVE_ONLY\020\002\022\026\n\022TRIP_MODE_BUS_WAL"
   "K\020\004\022\027\n\023TRIP_MODE_BIKE_WALK\020\005\022\022\n\016TRIP_MOD"
-  "E_TAXI\020\006B\244\001\n\020com.city.trip.v2B\tTripProto"
-  "P\001Z3git.fiblab.net/sim/protos/v2/go/city"
-  "/trip/v2;tripv2\242\002\003CTX\252\002\014City.Trip.V2\312\002\014C"
-  "ity\\Trip\\V2\342\002\030City\\Trip\\V2\\GPBMetadata\352\002"
-  "\016City::Trip::V2b\006proto3"
+  "E_TAXI\020\006\022\031\n\025TRIP_MODE_SUBWAY_WALK\020\007\022\035\n\031T"
+  "RIP_MODE_BUS_SUBWAY_WALK\020\010B\244\001\n\020com.city."
+  "trip.v2B\tTripProtoP\001Z3git.fiblab.net/sim"
+  "/protos/v2/go/city/trip/v2;tripv2\242\002\003CTX\252"
+  "\002\014City.Trip.V2\312\002\014City\\Trip\\V2\342\002\030City\\Tri"
+  "p\\V2\\GPBMetadata\352\002\016City::Trip::V2b\006proto"
+  "3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_city_2ftrip_2fv2_2ftrip_2eproto_deps[2] = {
   &::descriptor_table_city_2fgeo_2fv2_2fgeo_2eproto,
@@ -189,7 +191,7 @@ static const ::_pbi::DescriptorTable* const descriptor_table_city_2ftrip_2fv2_2f
 };
 static ::_pbi::once_flag descriptor_table_city_2ftrip_2fv2_2ftrip_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2ftrip_2fv2_2ftrip_2eproto = {
-    false, false, 1263, descriptor_table_protodef_city_2ftrip_2fv2_2ftrip_2eproto,
+    false, false, 1321, descriptor_table_protodef_city_2ftrip_2fv2_2ftrip_2eproto,
     "city/trip/v2/trip.proto",
     &descriptor_table_city_2ftrip_2fv2_2ftrip_2eproto_once, descriptor_table_city_2ftrip_2fv2_2ftrip_2eproto_deps, 2, 3,
     schemas, file_default_instances, TableStruct_city_2ftrip_2fv2_2ftrip_2eproto::offsets,
@@ -217,6 +219,8 @@ bool TripMode_IsValid(int value) {
     case 4:
     case 5:
     case 6:
+    case 7:
+    case 8:
       return true;
     default:
       return false;

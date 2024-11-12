@@ -93,13 +93,15 @@ enum RouteType : int {
   ROUTE_TYPE_UNSPECIFIED = 0,
   ROUTE_TYPE_DRIVING = 1,
   ROUTE_TYPE_WALKING = 2,
-  ROUTE_TYPE_BY_BUS = 3,
+  ROUTE_TYPE_BUS = 3,
+  ROUTE_TYPE_SUBWAY = 4,
+  ROUTE_TYPE_BUS_SUBWAY = 5,
   RouteType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
   RouteType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
 };
 bool RouteType_IsValid(int value);
 constexpr RouteType RouteType_MIN = ROUTE_TYPE_UNSPECIFIED;
-constexpr RouteType RouteType_MAX = ROUTE_TYPE_BY_BUS;
+constexpr RouteType RouteType_MAX = ROUTE_TYPE_BUS_SUBWAY;
 constexpr int RouteType_ARRAYSIZE = RouteType_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* RouteType_descriptor();

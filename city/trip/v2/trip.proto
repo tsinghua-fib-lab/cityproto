@@ -43,6 +43,12 @@ enum TripMode {
   // 乘出租车
   // taking a taxi
   TRIP_MODE_TAXI = 6;
+  // 乘坐地铁（含站点间步行换乘）
+  // taking subway with walking to transit bus line between stations
+  TRIP_MODE_SUBWAY_WALK = 7;
+  // 乘坐公交车（含站点间步行换乘）
+  // taking bus and subway with walking to transit bus line between stations
+  TRIP_MODE_BUS_SUBWAY_WALK = 8;
 }
 
 // 停靠点

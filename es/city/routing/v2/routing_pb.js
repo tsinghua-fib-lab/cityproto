@@ -17,7 +17,9 @@ export const RouteType = /*@__PURE__*/ proto3.makeEnum(
     {no: 0, name: "ROUTE_TYPE_UNSPECIFIED", localName: "UNSPECIFIED"},
     {no: 1, name: "ROUTE_TYPE_DRIVING", localName: "DRIVING"},
     {no: 2, name: "ROUTE_TYPE_WALKING", localName: "WALKING"},
-    {no: 3, name: "ROUTE_TYPE_BY_BUS", localName: "BY_BUS"},
+    {no: 3, name: "ROUTE_TYPE_BUS", localName: "BUS"},
+    {no: 4, name: "ROUTE_TYPE_SUBWAY", localName: "SUBWAY"},
+    {no: 5, name: "ROUTE_TYPE_BUS_SUBWAY", localName: "BUS_SUBWAY"},
   ],
 );
 

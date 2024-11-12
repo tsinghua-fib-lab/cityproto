@@ -158,9 +158,9 @@ type Event struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 主题
-	Topic string `protobuf:"bytes,1,opt,name=topic,proto3" json:"topic,omitempty" yaml:"topic" bson:"topic" db:"topic"`
+	Topic string `protobuf:"bytes,1,opt,name=topic,proto3" json:"topic,omitempty" bson:"topic" db:"topic" yaml:"topic"`
 	// ID
-	Id *int32 `protobuf:"varint,2,opt,name=id,proto3,oneof" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
+	Id *int32 `protobuf:"varint,2,opt,name=id,proto3,oneof" json:"id,omitempty" db:"id" yaml:"id" bson:"id"`
 	// 主语
 	Subject *Entity `protobuf:"bytes,3,opt,name=subject,proto3" json:"subject,omitempty" yaml:"subject" bson:"subject" db:"subject"`
 	// 谓词

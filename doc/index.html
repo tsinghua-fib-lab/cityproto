@@ -9766,9 +9766,21 @@ In the opposite direction as the positive lane direction</p></td>
               </tr>
             
               <tr>
-                <td>ROUTE_TYPE_BY_BUS</td>
+                <td>ROUTE_TYPE_BUS</td>
                 <td>3</td>
                 <td><p>公交</p></td>
+              </tr>
+            
+              <tr>
+                <td>ROUTE_TYPE_SUBWAY</td>
+                <td>4</td>
+                <td><p>地铁</p></td>
+              </tr>
+            
+              <tr>
+                <td>ROUTE_TYPE_BUS_SUBWAY</td>
+                <td>5</td>
+                <td><p>公交&#43;地铁</p></td>
               </tr>
             
           </tbody>
@@ -10015,6 +10027,20 @@ Riding bikes if avaible, otherwise walking</p></td>
                 <td>6</td>
                 <td><p>乘出租车
 taking a taxi</p></td>
+              </tr>
+            
+              <tr>
+                <td>TRIP_MODE_SUBWAY_WALK</td>
+                <td>7</td>
+                <td><p>乘坐地铁（含站点间步行换乘）
+taking subway with walking to transit bus line between stations</p></td>
+              </tr>
+            
+              <tr>
+                <td>TRIP_MODE_BUS_SUBWAY_WALK</td>
+                <td>8</td>
+                <td><p>乘坐公交车（含站点间步行换乘）
+taking bus and subway with walking to transit bus line between stations</p></td>
               </tr>
             
           </tbody>
