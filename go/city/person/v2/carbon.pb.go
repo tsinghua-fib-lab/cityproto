@@ -42,7 +42,7 @@ type VehicleCarbon struct {
 	// energy for air resistance (J)
 	UAero float64 `protobuf:"fixed64,7,opt,name=u_aero,json=uAero,proto3" json:"u_aero,omitempty" yaml:"u_aero" bson:"u_aero" db:"u_aero"`
 	// C_D: drag coefficient
-	CD float64 `protobuf:"fixed64,8,opt,name=c_d,json=cD,proto3" json:"c_d,omitempty" yaml:"cd" bson:"cd" db:"cd"`
+	CD float64 `protobuf:"fixed64,8,opt,name=c_d,json=cD,proto3" json:"c_d,omitempty" bson:"cd" db:"cd" yaml:"cd"`
 }
 
 func (x *VehicleCarbon) Reset() {

@@ -121,7 +121,7 @@ type UpdateOrgMoneyRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 待修改的组织资金变动
-	Items []*UpdateOrgMoneyRequestItem `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty" bson:"items" db:"items" yaml:"items"`
+	Items []*UpdateOrgMoneyRequestItem `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty" yaml:"items" bson:"items" db:"items"`
 }
 
 func (x *UpdateOrgMoneyRequest) Reset() {
@@ -224,7 +224,7 @@ type UpdateOrgMoneyResponse struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 修改后的组织的经济情况
-	Orgs []*Org `protobuf:"bytes,1,rep,name=orgs,proto3" json:"orgs,omitempty" db:"orgs" yaml:"orgs" bson:"orgs"`
+	Orgs []*Org `protobuf:"bytes,1,rep,name=orgs,proto3" json:"orgs,omitempty" bson:"orgs" db:"orgs" yaml:"orgs"`
 }
 
 func (x *UpdateOrgMoneyResponse) Reset() {
@@ -271,7 +271,7 @@ type UpdateOrgGoodsRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 待修改的组织货物变动
-	Items []*UpdateOrgGoodsRequestItem `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty" yaml:"items" bson:"items" db:"items"`
+	Items []*UpdateOrgGoodsRequestItem `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty" bson:"items" db:"items" yaml:"items"`
 }
 
 func (x *UpdateOrgGoodsRequest) Reset() {
@@ -377,7 +377,7 @@ type UpdateOrgGoodsResponse struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 修改后的组织的经济情况
-	Orgs []*Org `protobuf:"bytes,1,rep,name=orgs,proto3" json:"orgs,omitempty" bson:"orgs" db:"orgs" yaml:"orgs"`
+	Orgs []*Org `protobuf:"bytes,1,rep,name=orgs,proto3" json:"orgs,omitempty" yaml:"orgs" bson:"orgs" db:"orgs"`
 }
 
 func (x *UpdateOrgGoodsResponse) Reset() {
@@ -471,7 +471,7 @@ type UpdateOrgEmployeeRequestItem struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 待修改的组织
-	OrgId int32 `protobuf:"varint,1,opt,name=org_id,json=orgId,proto3" json:"org_id,omitempty" yaml:"org_id" bson:"org_id" db:"org_id"`
+	OrgId int32 `protobuf:"varint,1,opt,name=org_id,json=orgId,proto3" json:"org_id,omitempty" bson:"org_id" db:"org_id" yaml:"org_id"`
 	// 新增的员工
 	Adds []*Employee `protobuf:"bytes,2,rep,name=adds,proto3" json:"adds,omitempty" yaml:"adds" bson:"adds" db:"adds"`
 	// 删除的员工
@@ -592,7 +592,7 @@ type UpdateOrgJobRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 待修改的组织岗位变动
-	Items []*UpdateOrgJobRequestItem `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty" yaml:"items" bson:"items" db:"items"`
+	Items []*UpdateOrgJobRequestItem `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty" bson:"items" db:"items" yaml:"items"`
 }
 
 func (x *UpdateOrgJobRequest) Reset() {
@@ -644,7 +644,7 @@ type UpdateOrgJobRequestItem struct {
 	// 按照name相等来判断是否为同一种岗位
 	// 岗位数量为增量，正数表示增加，负数表示减少
 	// salary如果未设定则沿用原来的薪水，否则使用新的薪水
-	Jobs []*Job `protobuf:"bytes,2,rep,name=jobs,proto3" json:"jobs,omitempty" yaml:"jobs" bson:"jobs" db:"jobs"`
+	Jobs []*Job `protobuf:"bytes,2,rep,name=jobs,proto3" json:"jobs,omitempty" bson:"jobs" db:"jobs" yaml:"jobs"`
 }
 
 func (x *UpdateOrgJobRequestItem) Reset() {

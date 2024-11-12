@@ -1090,38 +1090,6 @@ export declare class PublicTransportSubline extends Message<PublicTransportSubli
 }
 
 /**
- * 描述公交线和lane的配对关系
- * corresponding relations between sublines and driving lanes
- *
- * @generated from message city.map.v2.SublineDrivingLanePair
- */
-export declare class SublineDrivingLanePair extends Message<SublineDrivingLanePair> {
-  /**
-   * @generated from field: int32 subline_id = 1;
-   */
-  sublineId: number;
-
-  /**
-   * @generated from field: int32 driving_lane_id = 2;
-   */
-  drivingLaneId: number;
-
-  constructor(data?: PartialMessage<SublineDrivingLanePair>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.map.v2.SublineDrivingLanePair";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SublineDrivingLanePair;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SublineDrivingLanePair;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SublineDrivingLanePair;
-
-  static equals(a: SublineDrivingLanePair | PlainMessage<SublineDrivingLanePair> | undefined, b: SublineDrivingLanePair | PlainMessage<SublineDrivingLanePair> | undefined): boolean;
-}
-
-/**
  * Aoi，用于描述地图上的区域
  * Aoi, describing a region on the map
  *
@@ -1227,22 +1195,6 @@ export declare class Aoi extends Message<Aoi> {
    * @generated from field: repeated int32 poi_ids = 9;
    */
   poiIds: number[];
-
-  /**
-   * Aoi所在的所有公共交通线路ID
-   * Subline IDs contained this Aoi
-   *
-   * @generated from field: repeated int32 subline_ids = 13;
-   */
-  sublineIds: number[];
-
-  /**
-   * subline id对应连接的lane id
-   * The lane id connecting to the subline id
-   *
-   * @generated from field: repeated city.map.v2.SublineDrivingLanePair subline_driving_lane_pairs = 14;
-   */
-  sublineDrivingLanePairs: SublineDrivingLanePair[];
 
   constructor(data?: PartialMessage<Aoi>);
 

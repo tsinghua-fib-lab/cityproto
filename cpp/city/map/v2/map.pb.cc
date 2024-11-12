@@ -266,20 +266,6 @@ struct PublicTransportSublineDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PublicTransportSublineDefaultTypeInternal _PublicTransportSubline_default_instance_;
-PROTOBUF_CONSTEXPR SublineDrivingLanePair::SublineDrivingLanePair(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.subline_id_)*/0
-  , /*decltype(_impl_.driving_lane_id_)*/0
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct SublineDrivingLanePairDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR SublineDrivingLanePairDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~SublineDrivingLanePairDefaultTypeInternal() {}
-  union {
-    SublineDrivingLanePair _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SublineDrivingLanePairDefaultTypeInternal _SublineDrivingLanePair_default_instance_;
 PROTOBUF_CONSTEXPR Aoi::Aoi(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_._has_bits_)*/{}
@@ -291,9 +277,6 @@ PROTOBUF_CONSTEXPR Aoi::Aoi(
   , /*decltype(_impl_.walking_gates_)*/{}
   , /*decltype(_impl_.poi_ids_)*/{}
   , /*decltype(_impl_._poi_ids_cached_byte_size_)*/{0}
-  , /*decltype(_impl_.subline_ids_)*/{}
-  , /*decltype(_impl_._subline_ids_cached_byte_size_)*/{0}
-  , /*decltype(_impl_.subline_driving_lane_pairs_)*/{}
   , /*decltype(_impl_.name_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.urban_land_use_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.id_)*/0
@@ -351,7 +334,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORIT
 }  // namespace v2
 }  // namespace map
 }  // namespace city
-static ::_pb::Metadata file_level_metadata_city_2fmap_2fv2_2fmap_2eproto[18];
+static ::_pb::Metadata file_level_metadata_city_2fmap_2fv2_2fmap_2eproto[17];
 static const ::_pb::EnumDescriptor* file_level_enum_descriptors_city_2fmap_2fv2_2fmap_2eproto[6];
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_city_2fmap_2fv2_2fmap_2eproto = nullptr;
 
@@ -519,14 +502,6 @@ const uint32_t TableStruct_city_2fmap_2fv2_2fmap_2eproto::offsets[] PROTOBUF_SEC
   PROTOBUF_FIELD_OFFSET(::city::map::v2::PublicTransportSubline, _impl_.parent_name_),
   PROTOBUF_FIELD_OFFSET(::city::map::v2::PublicTransportSubline, _impl_.schedules_),
   PROTOBUF_FIELD_OFFSET(::city::map::v2::PublicTransportSubline, _impl_.taz_costs_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::city::map::v2::SublineDrivingLanePair, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::city::map::v2::SublineDrivingLanePair, _impl_.subline_id_),
-  PROTOBUF_FIELD_OFFSET(::city::map::v2::SublineDrivingLanePair, _impl_.driving_lane_id_),
   PROTOBUF_FIELD_OFFSET(::city::map::v2::Aoi, _impl_._has_bits_),
   PROTOBUF_FIELD_OFFSET(::city::map::v2::Aoi, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -545,8 +520,6 @@ const uint32_t TableStruct_city_2fmap_2fv2_2fmap_2eproto::offsets[] PROTOBUF_SEC
   PROTOBUF_FIELD_OFFSET(::city::map::v2::Aoi, _impl_.land_use_),
   PROTOBUF_FIELD_OFFSET(::city::map::v2::Aoi, _impl_.urban_land_use_),
   PROTOBUF_FIELD_OFFSET(::city::map::v2::Aoi, _impl_.poi_ids_),
-  PROTOBUF_FIELD_OFFSET(::city::map::v2::Aoi, _impl_.subline_ids_),
-  PROTOBUF_FIELD_OFFSET(::city::map::v2::Aoi, _impl_.subline_driving_lane_pairs_),
   ~0u,
   ~0u,
   ~0u,
@@ -558,8 +531,6 @@ const uint32_t TableStruct_city_2fmap_2fv2_2fmap_2eproto::offsets[] PROTOBUF_SEC
   1,
   2,
   0,
-  ~0u,
-  ~0u,
   ~0u,
   PROTOBUF_FIELD_OFFSET(::city::map::v2::Poi, _impl_._has_bits_),
   PROTOBUF_FIELD_OFFSET(::city::map::v2::Poi, _internal_metadata_),
@@ -610,10 +581,9 @@ static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protode
   { 131, -1, -1, sizeof(::city::map::v2::SublineSchedules)},
   { 139, -1, -1, sizeof(::city::map::v2::HeuristicTAZCost)},
   { 149, -1, -1, sizeof(::city::map::v2::PublicTransportSubline)},
-  { 163, -1, -1, sizeof(::city::map::v2::SublineDrivingLanePair)},
-  { 171, 191, -1, sizeof(::city::map::v2::Aoi)},
-  { 205, 218, -1, sizeof(::city::map::v2::Poi)},
-  { 225, -1, -1, sizeof(::city::map::v2::Map)},
+  { 163, 181, -1, sizeof(::city::map::v2::Aoi)},
+  { 193, 206, -1, sizeof(::city::map::v2::Poi)},
+  { 213, -1, -1, sizeof(::city::map::v2::Map)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -631,7 +601,6 @@ static const ::_pb::Message* const file_default_instances[] = {
   &::city::map::v2::_SublineSchedules_default_instance_._instance,
   &::city::map::v2::_HeuristicTAZCost_default_instance_._instance,
   &::city::map::v2::_PublicTransportSubline_default_instance_._instance,
-  &::city::map::v2::_SublineDrivingLanePair_default_instance_._instance,
   &::city::map::v2::_Aoi_default_instance_._instance,
   &::city::map::v2::_Poi_default_instance_._instance,
   &::city::map::v2::_Map_default_instance_._instance,
@@ -707,65 +676,59 @@ const char descriptor_table_protodef_city_2fmap_2fv2_2fmap_2eproto[] PROTOBUF_SE
   "\tR\nparentName\022;\n\tschedules\030\007 \001(\0132\035.city."
   "map.v2.SublineSchedulesR\tschedules\022:\n\tta"
   "z_costs\030\010 \003(\0132\035.city.map.v2.HeuristicTAZ"
-  "CostR\010tazCosts\"_\n\026SublineDrivingLanePair"
-  "\022\035\n\nsubline_id\030\001 \001(\005R\tsublineId\022&\n\017drivi"
-  "ng_lane_id\030\002 \001(\005R\rdrivingLaneId\"\341\005\n\003Aoi\022"
-  "\016\n\002id\030\001 \001(\005R\002id\022\022\n\004name\030\013 \001(\tR\004name\022,\n\004t"
-  "ype\030\002 \001(\0162\024.city.map.v2.AoiTypeB\002\030\001R\004typ"
-  "e\022F\n\021driving_positions\030\003 \003(\0132\031.city.geo."
-  "v2.LanePositionR\020drivingPositions\022F\n\021wal"
-  "king_positions\030\004 \003(\0132\031.city.geo.v2.LaneP"
-  "ositionR\020walkingPositions\0225\n\tpositions\030\005"
-  " \003(\0132\027.city.geo.v2.XYPositionR\tpositions"
-  "\022<\n\rdriving_gates\030\006 \003(\0132\027.city.geo.v2.XY"
-  "PositionR\014drivingGates\022<\n\rwalking_gates\030"
-  "\007 \003(\0132\027.city.geo.v2.XYPositionR\014walkingG"
-  "ates\022\027\n\004area\030\010 \001(\001H\000R\004area\210\001\001\022<\n\010land_us"
-  "e\030\n \001(\0162\030.city.map.v2.LandUseTypeB\002\030\001H\001R"
-  "\007landUse\210\001\001\022)\n\016urban_land_use\030\014 \001(\tH\002R\014u"
-  "rbanLandUse\210\001\001\022\027\n\007poi_ids\030\t \003(\005R\006poiIds\022"
-  "\037\n\013subline_ids\030\r \003(\005R\nsublineIds\022`\n\032subl"
-  "ine_driving_lane_pairs\030\016 \003(\0132#.city.map."
-  "v2.SublineDrivingLanePairR\027sublineDrivin"
-  "gLanePairsB\007\n\005_areaB\013\n\t_land_useB\021\n\017_urb"
-  "an_land_use\"\335\001\n\003Poi\022\016\n\002id\030\001 \001(\005R\002id\022\022\n\004n"
-  "ame\030\002 \001(\tR\004name\022\032\n\010category\030\003 \001(\tR\010categ"
-  "ory\0223\n\010position\030\004 \001(\0132\027.city.geo.v2.XYPo"
-  "sitionR\010position\022\025\n\006aoi_id\030\005 \001(\005R\005aoiId\022"
-  "\037\n\010capacity\030\006 \001(\005H\000R\010capacity\210\001\001\022\034\n\tfunc"
-  "tions\030\007 \003(\tR\tfunctionsB\013\n\t_capacity\"\306\002\n\003"
-  "Map\022+\n\006header\030\001 \001(\0132\023.city.map.v2.Header"
-  "R\006header\022\'\n\005lanes\030\002 \003(\0132\021.city.map.v2.La"
-  "neR\005lanes\022\'\n\005roads\030\003 \003(\0132\021.city.map.v2.R"
-  "oadR\005roads\0223\n\tjunctions\030\004 \003(\0132\025.city.map"
-  ".v2.JunctionR\tjunctions\022$\n\004aois\030\005 \003(\0132\020."
-  "city.map.v2.AoiR\004aois\022$\n\004pois\030\006 \003(\0132\020.ci"
-  "ty.map.v2.PoiR\004pois\022\?\n\010sublines\030\007 \003(\0132#."
-  "city.map.v2.PublicTransportSublineR\010subl"
-  "ines*o\n\010LaneType\022\031\n\025LANE_TYPE_UNSPECIFIE"
-  "D\020\000\022\025\n\021LANE_TYPE_DRIVING\020\001\022\025\n\021LANE_TYPE_"
-  "WALKING\020\002\022\032\n\026LANE_TYPE_RAIL_TRANSIT\020\003*|\n"
-  "\010LaneTurn\022\031\n\025LANE_TURN_UNSPECIFIED\020\000\022\026\n\022"
-  "LANE_TURN_STRAIGHT\020\001\022\022\n\016LANE_TURN_LEFT\020\002"
-  "\022\023\n\017LANE_TURN_RIGHT\020\003\022\024\n\020LANE_TURN_AROUN"
-  "D\020\004*x\n\022LaneConnectionType\022$\n LANE_CONNEC"
-  "TION_TYPE_UNSPECIFIED\020\000\022\035\n\031LANE_CONNECTI"
-  "ON_TYPE_HEAD\020\001\022\035\n\031LANE_CONNECTION_TYPE_T"
-  "AIL\020\002*Q\n\007AoiType\022\030\n\024AOI_TYPE_UNSPECIFIED"
-  "\020\000\022\030\n\024AOI_TYPE_BUS_STATION\020\001\022\022\n\016AOI_TYPE"
-  "_OTHER\020\002*\334\001\n\013LandUseType\022\035\n\031LAND_USE_TYP"
-  "E_UNSPECIFIED\020\000\022\034\n\030LAND_USE_TYPE_COMMERC"
-  "IAL\020\005\022\034\n\030LAND_USE_TYPE_INDUSTRIAL\020\006\022\035\n\031L"
-  "AND_USE_TYPE_RESIDENTIAL\020\007\022\030\n\024LAND_USE_T"
-  "YPE_PUBLIC\020\010\022 \n\034LAND_USE_TYPE_TRANSPORTA"
-  "TION\020\n\022\027\n\023LAND_USE_TYPE_OTHER\020\014*Z\n\013Subli"
-  "neType\022\034\n\030SUBLINE_TYPE_UNSPECIFIED\020\000\022\024\n\020"
-  "SUBLINE_TYPE_BUS\020\001\022\027\n\023SUBLINE_TYPE_SUBWA"
-  "Y\020\002B\234\001\n\017com.city.map.v2B\010MapProtoP\001Z1git"
-  ".fiblab.net/sim/protos/v2/go/city/map/v2"
-  ";mapv2\242\002\003CMX\252\002\013City.Map.V2\312\002\013City\\Map\\V2"
-  "\342\002\027City\\Map\\V2\\GPBMetadata\352\002\rCity::Map::"
-  "V2b\006proto3"
+  "CostR\010tazCosts\"\336\004\n\003Aoi\022\016\n\002id\030\001 \001(\005R\002id\022\022"
+  "\n\004name\030\013 \001(\tR\004name\022,\n\004type\030\002 \001(\0162\024.city."
+  "map.v2.AoiTypeB\002\030\001R\004type\022F\n\021driving_posi"
+  "tions\030\003 \003(\0132\031.city.geo.v2.LanePositionR\020"
+  "drivingPositions\022F\n\021walking_positions\030\004 "
+  "\003(\0132\031.city.geo.v2.LanePositionR\020walkingP"
+  "ositions\0225\n\tpositions\030\005 \003(\0132\027.city.geo.v"
+  "2.XYPositionR\tpositions\022<\n\rdriving_gates"
+  "\030\006 \003(\0132\027.city.geo.v2.XYPositionR\014driving"
+  "Gates\022<\n\rwalking_gates\030\007 \003(\0132\027.city.geo."
+  "v2.XYPositionR\014walkingGates\022\027\n\004area\030\010 \001("
+  "\001H\000R\004area\210\001\001\022<\n\010land_use\030\n \001(\0162\030.city.ma"
+  "p.v2.LandUseTypeB\002\030\001H\001R\007landUse\210\001\001\022)\n\016ur"
+  "ban_land_use\030\014 \001(\tH\002R\014urbanLandUse\210\001\001\022\027\n"
+  "\007poi_ids\030\t \003(\005R\006poiIdsB\007\n\005_areaB\013\n\t_land"
+  "_useB\021\n\017_urban_land_use\"\335\001\n\003Poi\022\016\n\002id\030\001 "
+  "\001(\005R\002id\022\022\n\004name\030\002 \001(\tR\004name\022\032\n\010category\030"
+  "\003 \001(\tR\010category\0223\n\010position\030\004 \001(\0132\027.city"
+  ".geo.v2.XYPositionR\010position\022\025\n\006aoi_id\030\005"
+  " \001(\005R\005aoiId\022\037\n\010capacity\030\006 \001(\005H\000R\010capacit"
+  "y\210\001\001\022\034\n\tfunctions\030\007 \003(\tR\tfunctionsB\013\n\t_c"
+  "apacity\"\306\002\n\003Map\022+\n\006header\030\001 \001(\0132\023.city.m"
+  "ap.v2.HeaderR\006header\022\'\n\005lanes\030\002 \003(\0132\021.ci"
+  "ty.map.v2.LaneR\005lanes\022\'\n\005roads\030\003 \003(\0132\021.c"
+  "ity.map.v2.RoadR\005roads\0223\n\tjunctions\030\004 \003("
+  "\0132\025.city.map.v2.JunctionR\tjunctions\022$\n\004a"
+  "ois\030\005 \003(\0132\020.city.map.v2.AoiR\004aois\022$\n\004poi"
+  "s\030\006 \003(\0132\020.city.map.v2.PoiR\004pois\022\?\n\010subli"
+  "nes\030\007 \003(\0132#.city.map.v2.PublicTransportS"
+  "ublineR\010sublines*o\n\010LaneType\022\031\n\025LANE_TYP"
+  "E_UNSPECIFIED\020\000\022\025\n\021LANE_TYPE_DRIVING\020\001\022\025"
+  "\n\021LANE_TYPE_WALKING\020\002\022\032\n\026LANE_TYPE_RAIL_"
+  "TRANSIT\020\003*|\n\010LaneTurn\022\031\n\025LANE_TURN_UNSPE"
+  "CIFIED\020\000\022\026\n\022LANE_TURN_STRAIGHT\020\001\022\022\n\016LANE"
+  "_TURN_LEFT\020\002\022\023\n\017LANE_TURN_RIGHT\020\003\022\024\n\020LAN"
+  "E_TURN_AROUND\020\004*x\n\022LaneConnectionType\022$\n"
+  " LANE_CONNECTION_TYPE_UNSPECIFIED\020\000\022\035\n\031L"
+  "ANE_CONNECTION_TYPE_HEAD\020\001\022\035\n\031LANE_CONNE"
+  "CTION_TYPE_TAIL\020\002*Q\n\007AoiType\022\030\n\024AOI_TYPE"
+  "_UNSPECIFIED\020\000\022\030\n\024AOI_TYPE_BUS_STATION\020\001"
+  "\022\022\n\016AOI_TYPE_OTHER\020\002*\334\001\n\013LandUseType\022\035\n\031"
+  "LAND_USE_TYPE_UNSPECIFIED\020\000\022\034\n\030LAND_USE_"
+  "TYPE_COMMERCIAL\020\005\022\034\n\030LAND_USE_TYPE_INDUS"
+  "TRIAL\020\006\022\035\n\031LAND_USE_TYPE_RESIDENTIAL\020\007\022\030"
+  "\n\024LAND_USE_TYPE_PUBLIC\020\010\022 \n\034LAND_USE_TYP"
+  "E_TRANSPORTATION\020\n\022\027\n\023LAND_USE_TYPE_OTHE"
+  "R\020\014*Z\n\013SublineType\022\034\n\030SUBLINE_TYPE_UNSPE"
+  "CIFIED\020\000\022\024\n\020SUBLINE_TYPE_BUS\020\001\022\027\n\023SUBLIN"
+  "E_TYPE_SUBWAY\020\002B\234\001\n\017com.city.map.v2B\010Map"
+  "ProtoP\001Z1git.fiblab.net/sim/protos/v2/go"
+  "/city/map/v2;mapv2\242\002\003CMX\252\002\013City.Map.V2\312\002"
+  "\013City\\Map\\V2\342\002\027City\\Map\\V2\\GPBMetadata\352\002"
+  "\rCity::Map::V2b\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_city_2fmap_2fv2_2fmap_2eproto_deps[2] = {
   &::descriptor_table_city_2fgeo_2fv2_2fgeo_2eproto,
@@ -773,9 +736,9 @@ static const ::_pbi::DescriptorTable* const descriptor_table_city_2fmap_2fv2_2fm
 };
 static ::_pbi::once_flag descriptor_table_city_2fmap_2fv2_2fmap_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2fmap_2fv2_2fmap_2eproto = {
-    false, false, 5090, descriptor_table_protodef_city_2fmap_2fv2_2fmap_2eproto,
+    false, false, 4862, descriptor_table_protodef_city_2fmap_2fv2_2fmap_2eproto,
     "city/map/v2/map.proto",
-    &descriptor_table_city_2fmap_2fv2_2fmap_2eproto_once, descriptor_table_city_2fmap_2fv2_2fmap_2eproto_deps, 2, 18,
+    &descriptor_table_city_2fmap_2fv2_2fmap_2eproto_once, descriptor_table_city_2fmap_2fv2_2fmap_2eproto_deps, 2, 17,
     schemas, file_default_instances, TableStruct_city_2fmap_2fv2_2fmap_2eproto::offsets,
     file_level_metadata_city_2fmap_2fv2_2fmap_2eproto, file_level_enum_descriptors_city_2fmap_2fv2_2fmap_2eproto,
     file_level_service_descriptors_city_2fmap_2fv2_2fmap_2eproto,
@@ -5406,217 +5369,6 @@ void PublicTransportSubline::InternalSwap(PublicTransportSubline* other) {
 
 // ===================================================================
 
-class SublineDrivingLanePair::_Internal {
- public:
-};
-
-SublineDrivingLanePair::SublineDrivingLanePair(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:city.map.v2.SublineDrivingLanePair)
-}
-SublineDrivingLanePair::SublineDrivingLanePair(const SublineDrivingLanePair& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  SublineDrivingLanePair* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.subline_id_){}
-    , decltype(_impl_.driving_lane_id_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&_impl_.subline_id_, &from._impl_.subline_id_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.driving_lane_id_) -
-    reinterpret_cast<char*>(&_impl_.subline_id_)) + sizeof(_impl_.driving_lane_id_));
-  // @@protoc_insertion_point(copy_constructor:city.map.v2.SublineDrivingLanePair)
-}
-
-inline void SublineDrivingLanePair::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.subline_id_){0}
-    , decltype(_impl_.driving_lane_id_){0}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-}
-
-SublineDrivingLanePair::~SublineDrivingLanePair() {
-  // @@protoc_insertion_point(destructor:city.map.v2.SublineDrivingLanePair)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
-  SharedDtor();
-}
-
-inline void SublineDrivingLanePair::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-}
-
-void SublineDrivingLanePair::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
-}
-
-void SublineDrivingLanePair::Clear() {
-// @@protoc_insertion_point(message_clear_start:city.map.v2.SublineDrivingLanePair)
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  ::memset(&_impl_.subline_id_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_impl_.driving_lane_id_) -
-      reinterpret_cast<char*>(&_impl_.subline_id_)) + sizeof(_impl_.driving_lane_id_));
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* SublineDrivingLanePair::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // int32 subline_id = 1 [json_name = "sublineId"];
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.subline_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // int32 driving_lane_id = 2 [json_name = "drivingLaneId"];
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          _impl_.driving_lane_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
-}
-
-uint8_t* SublineDrivingLanePair::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:city.map.v2.SublineDrivingLanePair)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // int32 subline_id = 1 [json_name = "sublineId"];
-  if (this->_internal_subline_id() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_subline_id(), target);
-  }
-
-  // int32 driving_lane_id = 2 [json_name = "drivingLaneId"];
-  if (this->_internal_driving_lane_id() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteInt32ToArray(2, this->_internal_driving_lane_id(), target);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:city.map.v2.SublineDrivingLanePair)
-  return target;
-}
-
-size_t SublineDrivingLanePair::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:city.map.v2.SublineDrivingLanePair)
-  size_t total_size = 0;
-
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // int32 subline_id = 1 [json_name = "sublineId"];
-  if (this->_internal_subline_id() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_subline_id());
-  }
-
-  // int32 driving_lane_id = 2 [json_name = "drivingLaneId"];
-  if (this->_internal_driving_lane_id() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_driving_lane_id());
-  }
-
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
-}
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData SublineDrivingLanePair::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    SublineDrivingLanePair::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SublineDrivingLanePair::GetClassData() const { return &_class_data_; }
-
-
-void SublineDrivingLanePair::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<SublineDrivingLanePair*>(&to_msg);
-  auto& from = static_cast<const SublineDrivingLanePair&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:city.map.v2.SublineDrivingLanePair)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (from._internal_subline_id() != 0) {
-    _this->_internal_set_subline_id(from._internal_subline_id());
-  }
-  if (from._internal_driving_lane_id() != 0) {
-    _this->_internal_set_driving_lane_id(from._internal_driving_lane_id());
-  }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-}
-
-void SublineDrivingLanePair::CopyFrom(const SublineDrivingLanePair& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:city.map.v2.SublineDrivingLanePair)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool SublineDrivingLanePair::IsInitialized() const {
-  return true;
-}
-
-void SublineDrivingLanePair::InternalSwap(SublineDrivingLanePair* other) {
-  using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(SublineDrivingLanePair, _impl_.driving_lane_id_)
-      + sizeof(SublineDrivingLanePair::_impl_.driving_lane_id_)
-      - PROTOBUF_FIELD_OFFSET(SublineDrivingLanePair, _impl_.subline_id_)>(
-          reinterpret_cast<char*>(&_impl_.subline_id_),
-          reinterpret_cast<char*>(&other->_impl_.subline_id_));
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata SublineDrivingLanePair::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_city_2fmap_2fv2_2fmap_2eproto_getter, &descriptor_table_city_2fmap_2fv2_2fmap_2eproto_once,
-      file_level_metadata_city_2fmap_2fv2_2fmap_2eproto[14]);
-}
-
-// ===================================================================
-
 class Aoi::_Internal {
  public:
   using HasBits = decltype(std::declval<Aoi>()._impl_._has_bits_);
@@ -5665,9 +5417,6 @@ Aoi::Aoi(const Aoi& from)
     , decltype(_impl_.walking_gates_){from._impl_.walking_gates_}
     , decltype(_impl_.poi_ids_){from._impl_.poi_ids_}
     , /*decltype(_impl_._poi_ids_cached_byte_size_)*/{0}
-    , decltype(_impl_.subline_ids_){from._impl_.subline_ids_}
-    , /*decltype(_impl_._subline_ids_cached_byte_size_)*/{0}
-    , decltype(_impl_.subline_driving_lane_pairs_){from._impl_.subline_driving_lane_pairs_}
     , decltype(_impl_.name_){}
     , decltype(_impl_.urban_land_use_){}
     , decltype(_impl_.id_){}
@@ -5712,9 +5461,6 @@ inline void Aoi::SharedCtor(
     , decltype(_impl_.walking_gates_){arena}
     , decltype(_impl_.poi_ids_){arena}
     , /*decltype(_impl_._poi_ids_cached_byte_size_)*/{0}
-    , decltype(_impl_.subline_ids_){arena}
-    , /*decltype(_impl_._subline_ids_cached_byte_size_)*/{0}
-    , decltype(_impl_.subline_driving_lane_pairs_){arena}
     , decltype(_impl_.name_){}
     , decltype(_impl_.urban_land_use_){}
     , decltype(_impl_.id_){0}
@@ -5749,8 +5495,6 @@ inline void Aoi::SharedDtor() {
   _impl_.driving_gates_.~RepeatedPtrField();
   _impl_.walking_gates_.~RepeatedPtrField();
   _impl_.poi_ids_.~RepeatedField();
-  _impl_.subline_ids_.~RepeatedField();
-  _impl_.subline_driving_lane_pairs_.~RepeatedPtrField();
   _impl_.name_.Destroy();
   _impl_.urban_land_use_.Destroy();
 }
@@ -5771,8 +5515,6 @@ void Aoi::Clear() {
   _impl_.driving_gates_.Clear();
   _impl_.walking_gates_.Clear();
   _impl_.poi_ids_.Clear();
-  _impl_.subline_ids_.Clear();
-  _impl_.subline_driving_lane_pairs_.Clear();
   _impl_.name_.ClearToEmpty();
   cached_has_bits = _impl_._has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
@@ -5928,30 +5670,6 @@ const char* Aoi::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
         } else
           goto handle_unusual;
         continue;
-      // repeated int32 subline_ids = 13 [json_name = "sublineIds"];
-      case 13:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 106)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_subline_ids(), ptr, ctx);
-          CHK_(ptr);
-        } else if (static_cast<uint8_t>(tag) == 104) {
-          _internal_add_subline_ids(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // repeated .city.map.v2.SublineDrivingLanePair subline_driving_lane_pairs = 14 [json_name = "sublineDrivingLanePairs"];
-      case 14:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 114)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_subline_driving_lane_pairs(), ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<114>(ptr));
-        } else
-          goto handle_unusual;
-        continue;
       default:
         goto handle_unusual;
     }  // switch
@@ -6077,23 +5795,6 @@ uint8_t* Aoi::_InternalSerialize(
         12, this->_internal_urban_land_use(), target);
   }
 
-  // repeated int32 subline_ids = 13 [json_name = "sublineIds"];
-  {
-    int byte_size = _impl_._subline_ids_cached_byte_size_.load(std::memory_order_relaxed);
-    if (byte_size > 0) {
-      target = stream->WriteInt32Packed(
-          13, _internal_subline_ids(), byte_size, target);
-    }
-  }
-
-  // repeated .city.map.v2.SublineDrivingLanePair subline_driving_lane_pairs = 14 [json_name = "sublineDrivingLanePairs"];
-  for (unsigned i = 0,
-      n = static_cast<unsigned>(this->_internal_subline_driving_lane_pairs_size()); i < n; i++) {
-    const auto& repfield = this->_internal_subline_driving_lane_pairs(i);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-        InternalWriteMessage(14, repfield, repfield.GetCachedSize(), target, stream);
-  }
-
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -6159,27 +5860,6 @@ size_t Aoi::ByteSizeLong() const {
     total_size += data_size;
   }
 
-  // repeated int32 subline_ids = 13 [json_name = "sublineIds"];
-  {
-    size_t data_size = ::_pbi::WireFormatLite::
-      Int32Size(this->_impl_.subline_ids_);
-    if (data_size > 0) {
-      total_size += 1 +
-        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
-    }
-    int cached_size = ::_pbi::ToCachedSize(data_size);
-    _impl_._subline_ids_cached_byte_size_.store(cached_size,
-                                    std::memory_order_relaxed);
-    total_size += data_size;
-  }
-
-  // repeated .city.map.v2.SublineDrivingLanePair subline_driving_lane_pairs = 14 [json_name = "sublineDrivingLanePairs"];
-  total_size += 1UL * this->_internal_subline_driving_lane_pairs_size();
-  for (const auto& msg : this->_impl_.subline_driving_lane_pairs_) {
-    total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
-  }
-
   // string name = 11 [json_name = "name"];
   if (!this->_internal_name().empty()) {
     total_size += 1 +
@@ -6243,8 +5923,6 @@ void Aoi::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_N
   _this->_impl_.driving_gates_.MergeFrom(from._impl_.driving_gates_);
   _this->_impl_.walking_gates_.MergeFrom(from._impl_.walking_gates_);
   _this->_impl_.poi_ids_.MergeFrom(from._impl_.poi_ids_);
-  _this->_impl_.subline_ids_.MergeFrom(from._impl_.subline_ids_);
-  _this->_impl_.subline_driving_lane_pairs_.MergeFrom(from._impl_.subline_driving_lane_pairs_);
   if (!from._internal_name().empty()) {
     _this->_internal_set_name(from._internal_name());
   }
@@ -6293,8 +5971,6 @@ void Aoi::InternalSwap(Aoi* other) {
   _impl_.driving_gates_.InternalSwap(&other->_impl_.driving_gates_);
   _impl_.walking_gates_.InternalSwap(&other->_impl_.walking_gates_);
   _impl_.poi_ids_.InternalSwap(&other->_impl_.poi_ids_);
-  _impl_.subline_ids_.InternalSwap(&other->_impl_.subline_ids_);
-  _impl_.subline_driving_lane_pairs_.InternalSwap(&other->_impl_.subline_driving_lane_pairs_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &_impl_.name_, lhs_arena,
       &other->_impl_.name_, rhs_arena
@@ -6314,7 +5990,7 @@ void Aoi::InternalSwap(Aoi* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata Aoi::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fmap_2fv2_2fmap_2eproto_getter, &descriptor_table_city_2fmap_2fv2_2fmap_2eproto_once,
-      file_level_metadata_city_2fmap_2fv2_2fmap_2eproto[15]);
+      file_level_metadata_city_2fmap_2fv2_2fmap_2eproto[14]);
 }
 
 // ===================================================================
@@ -6750,7 +6426,7 @@ void Poi::InternalSwap(Poi* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata Poi::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fmap_2fv2_2fmap_2eproto_getter, &descriptor_table_city_2fmap_2fv2_2fmap_2eproto_once,
-      file_level_metadata_city_2fmap_2fv2_2fmap_2eproto[16]);
+      file_level_metadata_city_2fmap_2fv2_2fmap_2eproto[15]);
 }
 
 // ===================================================================
@@ -7147,7 +6823,7 @@ void Map::InternalSwap(Map* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata Map::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fmap_2fv2_2fmap_2eproto_getter, &descriptor_table_city_2fmap_2fv2_2fmap_2eproto_once,
-      file_level_metadata_city_2fmap_2fv2_2fmap_2eproto[17]);
+      file_level_metadata_city_2fmap_2fv2_2fmap_2eproto[16]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
@@ -7210,10 +6886,6 @@ Arena::CreateMaybeMessage< ::city::map::v2::HeuristicTAZCost >(Arena* arena) {
 template<> PROTOBUF_NOINLINE ::city::map::v2::PublicTransportSubline*
 Arena::CreateMaybeMessage< ::city::map::v2::PublicTransportSubline >(Arena* arena) {
   return Arena::CreateMessageInternal< ::city::map::v2::PublicTransportSubline >(arena);
-}
-template<> PROTOBUF_NOINLINE ::city::map::v2::SublineDrivingLanePair*
-Arena::CreateMaybeMessage< ::city::map::v2::SublineDrivingLanePair >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::city::map::v2::SublineDrivingLanePair >(arena);
 }
 template<> PROTOBUF_NOINLINE ::city::map::v2::Aoi*
 Arena::CreateMaybeMessage< ::city::map::v2::Aoi >(Arena* arena) {

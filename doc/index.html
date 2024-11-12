@@ -810,10 +810,6 @@
                 </li>
               
                 <li>
-                  <a href="#city.map.v2.SublineDrivingLanePair"><span class="badge">M</span>SublineDrivingLanePair</a>
-                </li>
-              
-                <li>
                   <a href="#city.map.v2.SublineSchedules"><span class="badge">M</span>SublineSchedules</a>
                 </li>
               
@@ -5686,22 +5682,6 @@ Urban Land use type, refer to the national standard GB 50137-2011 </p></td>
 Pois contained in Aoi </p></td>
                 </tr>
               
-                <tr>
-                  <td>subline_ids</td>
-                  <td><a href="#int32">int32</a></td>
-                  <td>repeated</td>
-                  <td><p>Aoi所在的所有公共交通线路ID
-Subline IDs contained this Aoi </p></td>
-                </tr>
-              
-                <tr>
-                  <td>subline_driving_lane_pairs</td>
-                  <td><a href="#city.map.v2.SublineDrivingLanePair">SublineDrivingLanePair</a></td>
-                  <td>repeated</td>
-                  <td><p>subline id对应连接的lane id
-The lane id connecting to the subline id </p></td>
-                </tr>
-              
             </tbody>
           </table>
 
@@ -6625,37 +6605,6 @@ For roads containing dynamic lanes, this is required to specify all candidates <
                   <td>road_ids</td>
                   <td><a href="#int32">int32</a></td>
                   <td>repeated</td>
-                  <td><p> </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-
-          
-
-        
-      
-        <h3 id="city.map.v2.SublineDrivingLanePair">SublineDrivingLanePair</h3>
-        <p>描述公交线和lane的配对关系</p><p>corresponding relations between sublines and driving lanes</p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>subline_id</td>
-                  <td><a href="#int32">int32</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>driving_lane_id</td>
-                  <td><a href="#int32">int32</a></td>
-                  <td></td>
                   <td><p> </p></td>
                 </tr>
               

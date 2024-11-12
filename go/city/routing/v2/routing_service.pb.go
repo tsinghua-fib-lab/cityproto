@@ -243,7 +243,7 @@ type GetDrivingCostsRequest struct {
 
 	// 道路通行成本（按照给定的id和time进行查询）
 	// travelling cost (query via the given ID and time)
-	Costs []*Cost `protobuf:"bytes,1,rep,name=costs,proto3" json:"costs,omitempty" bson:"costs" db:"costs" yaml:"costs"`
+	Costs []*Cost `protobuf:"bytes,1,rep,name=costs,proto3" json:"costs,omitempty" yaml:"costs" bson:"costs" db:"costs"`
 }
 
 func (x *GetDrivingCostsRequest) Reset() {
