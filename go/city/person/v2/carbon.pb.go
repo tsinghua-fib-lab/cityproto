@@ -30,7 +30,7 @@ type VehicleCarbon struct {
 	// ID
 	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
 	// delta distance (m)
-	Ds float64 `protobuf:"fixed64,2,opt,name=ds,proto3" json:"ds,omitempty" yaml:"ds" bson:"ds" db:"ds"`
+	Ds float64 `protobuf:"fixed64,2,opt,name=ds,proto3" json:"ds,omitempty" bson:"ds" db:"ds" yaml:"ds"`
 	// vehicle speed (m/s)
 	V float64 `protobuf:"fixed64,3,opt,name=v,proto3" json:"v,omitempty" yaml:"v" bson:"v" db:"v"`
 	// vehicle acceleration (m/s^2)
@@ -40,9 +40,9 @@ type VehicleCarbon struct {
 	// energy for rolling resistance (J)
 	URoll float64 `protobuf:"fixed64,6,opt,name=u_roll,json=uRoll,proto3" json:"u_roll,omitempty" yaml:"u_roll" bson:"u_roll" db:"u_roll"`
 	// energy for air resistance (J)
-	UAero float64 `protobuf:"fixed64,7,opt,name=u_aero,json=uAero,proto3" json:"u_aero,omitempty" yaml:"u_aero" bson:"u_aero" db:"u_aero"`
+	UAero float64 `protobuf:"fixed64,7,opt,name=u_aero,json=uAero,proto3" json:"u_aero,omitempty" bson:"u_aero" db:"u_aero" yaml:"u_aero"`
 	// C_D: drag coefficient
-	CD float64 `protobuf:"fixed64,8,opt,name=c_d,json=cD,proto3" json:"c_d,omitempty" bson:"cd" db:"cd" yaml:"cd"`
+	CD float64 `protobuf:"fixed64,8,opt,name=c_d,json=cD,proto3" json:"c_d,omitempty" yaml:"cd" bson:"cd" db:"cd"`
 }
 
 func (x *VehicleCarbon) Reset() {

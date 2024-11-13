@@ -200,10 +200,10 @@ type TrafficLight struct {
 
 	// 所在路口id
 	// ID of the junction where the traffic light is at
-	JunctionId int32 `protobuf:"varint,1,opt,name=junction_id,json=junctionId,proto3" json:"junction_id,omitempty" yaml:"junction_id" bson:"junction_id" db:"junction_id"`
+	JunctionId int32 `protobuf:"varint,1,opt,name=junction_id,json=junctionId,proto3" json:"junction_id,omitempty" db:"junction_id" yaml:"junction_id" bson:"junction_id"`
 	// 相位循环的一个循环周期
 	// One cycle of phase cycling
-	Phases []*Phase `protobuf:"bytes,2,rep,name=phases,proto3" json:"phases,omitempty" db:"phases" yaml:"phases" bson:"phases"`
+	Phases []*Phase `protobuf:"bytes,2,rep,name=phases,proto3" json:"phases,omitempty" yaml:"phases" bson:"phases" db:"phases"`
 }
 
 func (x *TrafficLight) Reset() {

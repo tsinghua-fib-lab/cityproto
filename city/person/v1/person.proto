@@ -1,0 +1,237 @@
+syntax = "proto3";
+
+package city.person.v1;
+
+import "city/geo/v2/geo.proto";
+import "city/trip/v2/trip.proto";
+
+// 本文件描述智能体person的属性与状态
+// This file describes the attributes and status of the agent person
+// 注意：本文件不用于描述智能体模拟过程中的数据结构
+// Note: This file is not to describe the data structure during the agent simulation process
+
+// 智能体属性（通用）
+// Agent properties (general)
+message PersonAttribute {
+  // 单位: m，长度
+  // length: m
+  double length = 2;
+  // 单位: m，宽度
+  // width: m
+  double width = 3;
+  // 单位: m/s
+  // max speed: m/s
+  double max_speed = 4;
+  // 单位: m/s^2, 最大加速度（正值）
+  // max accelaration: m/s^2 (positive value)
+  double max_acceleration = 5;
+  // 单位: m/s^2, 最大减速度（负值）
+  // max deceleration: m/s^2 (negative value)
+  double max_braking_acceleration = 6;
+  // 单位: m/s^2, 一般加速度（正值），要求小于最大加速度
+  // usual acceleration: m/s^2 (positive value), required to be less than the max acceleration
+  double usual_acceleration = 7;
+  // 单位: m/s^2, 一般减速度（负值），要求大于最大减速度
+  // usual deceleration: m/s^2 (negative value), required to be greater than the max deceleration
+  double usual_braking_acceleration = 8;
+}
+
+// 车辆附加属性
+// Vehicle additional attributes
+message VehicleAttribute {
+  // 单位: m, 完成变道所需路程
+  // Distance required to complete lane change: m
+  double lane_change_length = 1;
+  // 单位：米，本车距离前车的最小距离
+  // The minimum distance between the vehicle and the vehicle in front: m
+  double min_gap = 2;
+  // 车辆模型标签
+  // Vehicle model tag
+  optional string model = 3;
+}
+
+// 公交车
+// Type of Bus
+enum BusType {
+  // 未指定
+  // unspecified
+  BUS_TYPE_UNSPECIFIED = 0;
+  // 公交类型
+  // The bus is a trolleybus, BRT, eta.
+  BUS_TYPE_BUS = 1;
+  // 地铁类型
+  // The bus is a subway
+  BUS_TYPE_SUBWAY = 2;
+}
+
+// 公交车附加属性
+// Bus additional attributes
+message BusAttribute {
+  // 公交线路ID
+  // bus line ID
+  int32 subline_id = 1;
+  // 公交车容量
+  // bus capacity
+  int32 capacity = 2;
+  // 公交车模型标签
+  // bus model tag
+  optional string model = 3;
+  // 公交车类型
+  // type of bus
+  BusType type = 5;
+}
+
+// 行人附加属性
+// Pedestrian additional attributes
+message PedestrianAttribute {
+  // 单位: m/s
+  // speed: m/s
+  double speed = 1;
+  // 行人模型标签
+  // Pedestrian model tag
+  optional string model = 2;
+}
+
+// 自行车附加属性
+// Bike additional attributes
+message BikeAttribute {
+  // 单位: m/s
+  // speed: m/s
+  double speed = 1;
+  // 自行车模型标签
+  // Bike model tag
+  optional string model = 2;
+}
+
+// 智能体教育等级
+// Agent education level
+enum Education {
+  // 未指定
+  // unspecified
+  EDUCATION_UNSPECIFIED = 0;
+  // 博士
+  // doctor
+  EDUCATION_DOCTOR = 1;
+  // 硕士
+  // master
+  EDUCATION_MASTER = 2;
+  // 本科
+  // bachelor
+  EDUCATION_BACHELOR = 3;
+  // 高中
+  // high school
+  EDUCATION_HIGH_SCHOOL = 4;
+  // 初中
+  // junior high school
+  EDUCATION_JUNIOR_HIGH_SCHOOL = 5;
+  // 小学
+  // primary school
+  EDUCATION_PRIMARY_SCHOOL = 6;
+  // 大专
+  // college
+  EDUCATION_COLLEGE = 7;
+}
+
+// 智能体性别
+// agent gender
+enum Gender {
+  // 未指定
+  // unspecified
+  GENDER_UNSPECIFIED = 0;
+  // 男性
+  // male
+  GENDER_MALE = 1;
+  // 女性
+  // female
+  GENDER_FEMALE = 2;
+}
+
+// 智能体消费水平
+// agent consumption level
+enum Consumption {
+  // 未指定
+  // unspecified
+  CONSUMPTION_UNSPECIFIED = 0;
+  // 低
+  // low
+  CONSUMPTION_LOW = 1;
+  // 较低
+  // relatively low
+  CONSUMPTION_RELATIVELY_LOW = 2;
+  // 中等
+  // medium
+  CONSUMPTION_MEDIUM = 3;
+  // 较高
+  // relatively high
+  CONSUMPTION_RELATIVELY_HIGH = 4;
+  // 高
+  // high
+  CONSUMPTION_HIGH = 5;
+}
+
+// 智能体简介
+// agent profile
+message PersonProfile {
+  // 年龄
+  // age
+  int32 age = 1;
+  // 教育水平
+  // education level
+  Education education = 2;
+  // 性别
+  // gender
+  Gender gender = 3;
+  // 消费水平
+  // consumption level
+  Consumption consumption = 4;
+  // 房屋ID 区分不同家庭
+  // House ID, identify which family this person belongs to
+  int32 house_id = 5;
+}
+
+// 智能体
+// agent
+message Person {
+  // 智能体ID
+  // agent ID
+  int32 id = 1;
+  // 参数
+  // attribute
+  PersonAttribute attribute = 2;
+  // 初始位置
+  // initial position
+  city.geo.v2.Position home = 3;
+  // 初始日程
+  // initial schedules
+  repeated city.trip.v2.Schedule schedules = 4;
+  // 车辆附加属性
+  // vehicle addtional attribute
+  optional VehicleAttribute vehicle_attribute = 7;
+  // 公交车附加属性
+  // bus additional attribute
+  optional BusAttribute bus_attribute = 8;
+  // 行人附加属性
+  // pedestrian additional attribute
+  optional PedestrianAttribute pedestrian_attribute = 12;
+  // 自行车附加属性
+  // bike addition attribute
+  optional BikeAttribute bike_attribute = 9;
+  // [可空] 额外的标签（例如：抢修车类型->电网）
+  // [can be empty] additional tags (e.g. repair vehicle type -> power grid)
+  map<string, string> labels = 10;
+  // [可空] 智能体简介
+  // [can be empty] agent profile
+  optional PersonProfile profile = 11;
+  // 工作地位置
+  // work position
+  optional city.geo.v2.Position work = 13;
+  // 是否在SLEEP状态下也输出可视化（仅限车辆）
+  // Whether to output visualization in the SLEEP state (vehicles only)
+  optional bool output_when_sleep = 14;
+}
+
+// 智能体集合，对应一个智能体pb文件或一个智能体mongodb collection
+// Agent collection, corresponding to an agent pb file or an agent mongodb collection
+message Persons {
+  repeated Person persons = 1;
+}

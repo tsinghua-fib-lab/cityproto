@@ -27,9 +27,9 @@ type MongoPath struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 数据库名
-	Db string `protobuf:"bytes,1,opt,name=db,proto3" json:"db,omitempty" db:"db" yaml:"db" bson:"db"`
+	Db string `protobuf:"bytes,1,opt,name=db,proto3" json:"db,omitempty" yaml:"db" bson:"db" db:"db"`
 	// 集合名
-	Col string `protobuf:"bytes,2,opt,name=col,proto3" json:"col,omitempty" db:"col" yaml:"col" bson:"col"`
+	Col string `protobuf:"bytes,2,opt,name=col,proto3" json:"col,omitempty" yaml:"col" bson:"col" db:"col"`
 }
 
 func (x *MongoPath) Reset() {
