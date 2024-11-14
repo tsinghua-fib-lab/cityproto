@@ -168,7 +168,7 @@ type UpdatePersonMoneyRequestItem struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 待修改的人员id
-	PersonId int32 `protobuf:"varint,1,opt,name=person_id,json=personId,proto3" json:"person_id,omitempty" db:"person_id" yaml:"person_id" bson:"person_id"`
+	PersonId int32 `protobuf:"varint,1,opt,name=person_id,json=personId,proto3" json:"person_id,omitempty" bson:"person_id" db:"person_id" yaml:"person_id"`
 	// 资金变动（正数表示增加，负数表示减少）
 	Money float64 `protobuf:"fixed64,2,opt,name=money,proto3" json:"money,omitempty" yaml:"money" bson:"money" db:"money"`
 }
@@ -224,7 +224,7 @@ type UpdatePersonMoneyResponse struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 修改后的人的经济情况
-	Persons []*Person `protobuf:"bytes,1,rep,name=persons,proto3" json:"persons,omitempty" yaml:"persons" bson:"persons" db:"persons"`
+	Persons []*Person `protobuf:"bytes,1,rep,name=persons,proto3" json:"persons,omitempty" db:"persons" yaml:"persons" bson:"persons"`
 }
 
 func (x *UpdatePersonMoneyResponse) Reset() {

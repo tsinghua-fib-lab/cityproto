@@ -6,16 +6,22 @@ package city.routing.v2;
 // routing type
 enum RouteType {
   // 未指定
+  // unspecified
   ROUTE_TYPE_UNSPECIFIED = 0;
   // 驾车
+  // driving
   ROUTE_TYPE_DRIVING = 1;
   // 步行
+  // walking
   ROUTE_TYPE_WALKING = 2;
   // 公交
+  // by bus
   ROUTE_TYPE_BUS = 3;
   // 地铁
+  // by subway
   ROUTE_TYPE_SUBWAY = 4;
-  // 公交+地铁
+  // 地铁+公交，包含两者的换乘
+  // both bus and subway are available, including multimodal transfers
   ROUTE_TYPE_BUS_SUBWAY = 5;
 }
 

@@ -15,6 +15,7 @@ import { Message, proto3 } from "@bufbuild/protobuf";
 export declare enum RouteType {
   /**
    * 未指定
+   * unspecified
    *
    * @generated from enum value: ROUTE_TYPE_UNSPECIFIED = 0;
    */
@@ -22,6 +23,7 @@ export declare enum RouteType {
 
   /**
    * 驾车
+   * driving
    *
    * @generated from enum value: ROUTE_TYPE_DRIVING = 1;
    */
@@ -29,6 +31,7 @@ export declare enum RouteType {
 
   /**
    * 步行
+   * walking
    *
    * @generated from enum value: ROUTE_TYPE_WALKING = 2;
    */
@@ -36,6 +39,7 @@ export declare enum RouteType {
 
   /**
    * 公交
+   * by bus
    *
    * @generated from enum value: ROUTE_TYPE_BUS = 3;
    */
@@ -43,13 +47,15 @@ export declare enum RouteType {
 
   /**
    * 地铁
+   * by subway
    *
    * @generated from enum value: ROUTE_TYPE_SUBWAY = 4;
    */
   SUBWAY = 4,
 
   /**
-   * 公交+地铁
+   * 地铁+公交，包含两者的换乘
+   * both bus and subway are available, including multimodal transfers
    *
    * @generated from enum value: ROUTE_TYPE_BUS_SUBWAY = 5;
    */

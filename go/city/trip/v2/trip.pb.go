@@ -116,7 +116,7 @@ type TripStop struct {
 	AoiPosition *v2.AoiPosition `protobuf:"bytes,1,opt,name=aoi_position,json=aoiPosition,proto3,oneof" json:"aoi_position,omitempty" yaml:"aoi_position" bson:"aoi_position" db:"aoi_position"`
 	// 停车点Lane+S坐标（必须提供）
 	// Parking position coordinates Lane+S (must be provided)
-	LanePosition *v2.LanePosition `protobuf:"bytes,2,opt,name=lane_position,json=lanePosition,proto3" json:"lane_position,omitempty" yaml:"lane_position" bson:"lane_position" db:"lane_position"`
+	LanePosition *v2.LanePosition `protobuf:"bytes,2,opt,name=lane_position,json=lanePosition,proto3" json:"lane_position,omitempty" bson:"lane_position" db:"lane_position" yaml:"lane_position"`
 	// 停车持续时间
 	// Parking duration time (s)
 	Duration float64 `protobuf:"fixed64,3,opt,name=duration,proto3" json:"duration,omitempty" yaml:"duration" bson:"duration" db:"duration"`
@@ -182,7 +182,7 @@ type Trip struct {
 
 	// 出行方式
 	// trip mode
-	Mode TripMode `protobuf:"varint,1,opt,name=mode,proto3,enum=city.trip.v2.TripMode" json:"mode,omitempty" bson:"mode" db:"mode" yaml:"mode"`
+	Mode TripMode `protobuf:"varint,1,opt,name=mode,proto3,enum=city.trip.v2.TripMode" json:"mode,omitempty" yaml:"mode" bson:"mode" db:"mode"`
 	// 目的地，如果目的地是AOI且指定了XYPosition，则以XYPosition为室内步行的终点
 	// destination, if the destination is AOI and XYPosition is specified, XYPosition is the end point of indoor walking
 	End *v2.Position `protobuf:"bytes,2,opt,name=end,proto3" json:"end,omitempty" yaml:"end" bson:"end" db:"end"`
