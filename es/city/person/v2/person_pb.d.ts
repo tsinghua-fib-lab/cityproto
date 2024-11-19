@@ -241,6 +241,35 @@ export declare enum Consumption {
 }
 
 /**
+ * @generated from enum city.person.v2.PersonType
+ */
+export declare enum PersonType {
+  /**
+   * 未指定
+   * unspecified
+   *
+   * @generated from enum value: PERSON_TYPE_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * 出租车
+   * taxi
+   *
+   * @generated from enum value: PERSON_TYPE_TAXI = 1;
+   */
+  TAXI = 1,
+
+  /**
+   * 常规智能体
+   * normal person
+   *
+   * @generated from enum value: PERSON_TYPE_NORMAL = 2;
+   */
+  NORMAL = 2,
+}
+
+/**
  * 智能体属性（通用）
  * Agent properties (general)
  *
@@ -787,6 +816,14 @@ export declare class Person extends Message<Person> {
    * @generated from field: optional bool output_when_sleep = 14;
    */
   outputWhenSleep?: boolean;
+
+  /**
+   * 智能体类型
+   * agent type
+   *
+   * @generated from field: city.person.v2.PersonType type = 15;
+   */
+  type: PersonType;
 
   constructor(data?: PartialMessage<Person>);
 

@@ -246,6 +246,32 @@ inline bool Consumption_Parse(
   return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<Consumption>(
     Consumption_descriptor(), name, value);
 }
+enum PersonType : int {
+  PERSON_TYPE_UNSPECIFIED = 0,
+  PERSON_TYPE_TAXI = 1,
+  PERSON_TYPE_NORMAL = 2,
+  PersonType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
+  PersonType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
+};
+bool PersonType_IsValid(int value);
+constexpr PersonType PersonType_MIN = PERSON_TYPE_UNSPECIFIED;
+constexpr PersonType PersonType_MAX = PERSON_TYPE_NORMAL;
+constexpr int PersonType_ARRAYSIZE = PersonType_MAX + 1;
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* PersonType_descriptor();
+template<typename T>
+inline const std::string& PersonType_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, PersonType>::value ||
+    ::std::is_integral<T>::value,
+    "Incorrect type passed to function PersonType_Name.");
+  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
+    PersonType_descriptor(), enum_t_value);
+}
+inline bool PersonType_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, PersonType* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<PersonType>(
+    PersonType_descriptor(), name, value);
+}
 // ===================================================================
 
 class PersonAttribute final :
@@ -1921,6 +1947,7 @@ class Person final :
     kWorkFieldNumber = 13,
     kIdFieldNumber = 1,
     kOutputWhenSleepFieldNumber = 14,
+    kTypeFieldNumber = 15,
   };
   // repeated .city.trip.v2.Schedule schedules = 4 [json_name = "schedules"];
   int schedules_size() const;
@@ -2123,6 +2150,15 @@ class Person final :
   void _internal_set_output_when_sleep(bool value);
   public:
 
+  // .city.person.v2.PersonType type = 15 [json_name = "type"];
+  void clear_type();
+  ::city::person::v2::PersonType type() const;
+  void set_type(::city::person::v2::PersonType value);
+  private:
+  ::city::person::v2::PersonType _internal_type() const;
+  void _internal_set_type(::city::person::v2::PersonType value);
+  public:
+
   // @@protoc_insertion_point(class_scope:city.person.v2.Person)
  private:
   class _Internal;
@@ -2149,6 +2185,7 @@ class Person final :
     ::city::geo::v2::Position* work_;
     int32_t id_;
     bool output_when_sleep_;
+    int type_;
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_city_2fperson_2fv2_2fperson_2eproto;
@@ -4215,6 +4252,26 @@ inline void Person::set_output_when_sleep(bool value) {
   // @@protoc_insertion_point(field_set:city.person.v2.Person.output_when_sleep)
 }
 
+// .city.person.v2.PersonType type = 15 [json_name = "type"];
+inline void Person::clear_type() {
+  _impl_.type_ = 0;
+}
+inline ::city::person::v2::PersonType Person::_internal_type() const {
+  return static_cast< ::city::person::v2::PersonType >(_impl_.type_);
+}
+inline ::city::person::v2::PersonType Person::type() const {
+  // @@protoc_insertion_point(field_get:city.person.v2.Person.type)
+  return _internal_type();
+}
+inline void Person::_internal_set_type(::city::person::v2::PersonType value) {
+  
+  _impl_.type_ = value;
+}
+inline void Person::set_type(::city::person::v2::PersonType value) {
+  _internal_set_type(value);
+  // @@protoc_insertion_point(field_set:city.person.v2.Person.type)
+}
+
 // -------------------------------------------------------------------
 
 // Persons
@@ -4315,6 +4372,11 @@ template <> struct is_proto_enum< ::city::person::v2::Consumption> : ::std::true
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::city::person::v2::Consumption>() {
   return ::city::person::v2::Consumption_descriptor();
+}
+template <> struct is_proto_enum< ::city::person::v2::PersonType> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::city::person::v2::PersonType>() {
+  return ::city::person::v2::PersonType_descriptor();
 }
 
 PROTOBUF_NAMESPACE_CLOSE

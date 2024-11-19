@@ -245,6 +245,17 @@ message PersonProfile {
   // House ID, identify which family this person belongs to
   int32 house_id = 5;
 }
+enum PersonType {
+  // 未指定
+  // unspecified
+  PERSON_TYPE_UNSPECIFIED = 0;
+  // 出租车
+  // taxi
+  PERSON_TYPE_TAXI = 1;
+  // 常规智能体
+  // normal person
+  PERSON_TYPE_NORMAL = 2;
+}
 
 // 智能体
 // agent
@@ -285,6 +296,9 @@ message Person {
   // 是否在SLEEP状态下也输出可视化（仅限车辆）
   // Whether to output visualization in the SLEEP state (vehicles only)
   optional bool output_when_sleep = 14;
+  // 智能体类型
+  // agent type
+  PersonType type = 15;
 }
 
 // 智能体集合，对应一个智能体pb文件或一个智能体mongodb collection

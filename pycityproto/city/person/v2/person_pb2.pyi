@@ -45,6 +45,12 @@ class Consumption(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     CONSUMPTION_MEDIUM: _ClassVar[Consumption]
     CONSUMPTION_RELATIVELY_HIGH: _ClassVar[Consumption]
     CONSUMPTION_HIGH: _ClassVar[Consumption]
+
+class PersonType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+    __slots__ = []
+    PERSON_TYPE_UNSPECIFIED: _ClassVar[PersonType]
+    PERSON_TYPE_TAXI: _ClassVar[PersonType]
+    PERSON_TYPE_NORMAL: _ClassVar[PersonType]
 VEHICLE_ENGINE_TYPE_UNSPECIFIED: VehicleEngineType
 VEHICLE_ENGINE_TYPE_FUEL: VehicleEngineType
 VEHICLE_ENGINE_TYPE_ELECTRIC: VehicleEngineType
@@ -69,6 +75,9 @@ CONSUMPTION_RELATIVELY_LOW: Consumption
 CONSUMPTION_MEDIUM: Consumption
 CONSUMPTION_RELATIVELY_HIGH: Consumption
 CONSUMPTION_HIGH: Consumption
+PERSON_TYPE_UNSPECIFIED: PersonType
+PERSON_TYPE_TAXI: PersonType
+PERSON_TYPE_NORMAL: PersonType
 
 class PersonAttribute(_message.Message):
     __slots__ = []
@@ -187,7 +196,7 @@ class PersonProfile(_message.Message):
         ...
 
 class Person(_message.Message):
-    __slots__ = ['id', 'attribute', 'home', 'schedules', 'vehicle_attribute', 'bus_attribute', 'pedestrian_attribute', 'bike_attribute', 'labels', 'profile', 'work', 'output_when_sleep']
+    __slots__ = ['id', 'attribute', 'home', 'schedules', 'vehicle_attribute', 'bus_attribute', 'pedestrian_attribute', 'bike_attribute', 'labels', 'profile', 'work', 'output_when_sleep', 'type']
 
     class LabelsEntry(_message.Message):
         __slots__ = ['key', 'value']
@@ -210,6 +219,7 @@ class Person(_message.Message):
     PROFILE_FIELD_NUMBER: _ClassVar[int]
     WORK_FIELD_NUMBER: _ClassVar[int]
     OUTPUT_WHEN_SLEEP_FIELD_NUMBER: _ClassVar[int]
+    TYPE_FIELD_NUMBER: _ClassVar[int]
     id: int
     attribute: PersonAttribute
     home: _geo_pb2.Position
@@ -222,8 +232,9 @@ class Person(_message.Message):
     profile: PersonProfile
     work: _geo_pb2.Position
     output_when_sleep: bool
+    type: PersonType
 
-    def __init__(self, id: _Optional[int]=..., attribute: _Optional[_Union[PersonAttribute, _Mapping]]=..., home: _Optional[_Union[_geo_pb2.Position, _Mapping]]=..., schedules: _Optional[_Iterable[_Union[_trip_pb2.Schedule, _Mapping]]]=..., vehicle_attribute: _Optional[_Union[VehicleAttribute, _Mapping]]=..., bus_attribute: _Optional[_Union[BusAttribute, _Mapping]]=..., pedestrian_attribute: _Optional[_Union[PedestrianAttribute, _Mapping]]=..., bike_attribute: _Optional[_Union[BikeAttribute, _Mapping]]=..., labels: _Optional[_Mapping[str, str]]=..., profile: _Optional[_Union[PersonProfile, _Mapping]]=..., work: _Optional[_Union[_geo_pb2.Position, _Mapping]]=..., output_when_sleep: bool=...) -> None:
+    def __init__(self, id: _Optional[int]=..., attribute: _Optional[_Union[PersonAttribute, _Mapping]]=..., home: _Optional[_Union[_geo_pb2.Position, _Mapping]]=..., schedules: _Optional[_Iterable[_Union[_trip_pb2.Schedule, _Mapping]]]=..., vehicle_attribute: _Optional[_Union[VehicleAttribute, _Mapping]]=..., bus_attribute: _Optional[_Union[BusAttribute, _Mapping]]=..., pedestrian_attribute: _Optional[_Union[PedestrianAttribute, _Mapping]]=..., bike_attribute: _Optional[_Union[BikeAttribute, _Mapping]]=..., labels: _Optional[_Mapping[str, str]]=..., profile: _Optional[_Union[PersonProfile, _Mapping]]=..., work: _Optional[_Union[_geo_pb2.Position, _Mapping]]=..., output_when_sleep: bool=..., type: _Optional[_Union[PersonType, str]]=...) -> None:
         ...
 
 class Persons(_message.Message):

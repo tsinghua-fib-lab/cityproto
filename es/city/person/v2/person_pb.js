@@ -92,6 +92,18 @@ export const Consumption = /*@__PURE__*/ proto3.makeEnum(
 );
 
 /**
+ * @generated from enum city.person.v2.PersonType
+ */
+export const PersonType = /*@__PURE__*/ proto3.makeEnum(
+  "city.person.v2.PersonType",
+  [
+    {no: 0, name: "PERSON_TYPE_UNSPECIFIED", localName: "UNSPECIFIED"},
+    {no: 1, name: "PERSON_TYPE_TAXI", localName: "TAXI"},
+    {no: 2, name: "PERSON_TYPE_NORMAL", localName: "NORMAL"},
+  ],
+);
+
+/**
  * 智能体属性（通用）
  * Agent properties (general)
  *
@@ -238,6 +250,7 @@ export const Person = /*@__PURE__*/ proto3.makeMessageType(
     { no: 11, name: "profile", kind: "message", T: PersonProfile, opt: true },
     { no: 13, name: "work", kind: "message", T: Position, opt: true },
     { no: 14, name: "output_when_sleep", kind: "scalar", T: 8 /* ScalarType.BOOL */, opt: true },
+    { no: 15, name: "type", kind: "enum", T: proto3.getEnumType(PersonType) },
   ],
 );
 

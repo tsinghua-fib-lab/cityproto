@@ -182,7 +182,8 @@ PROTOBUF_CONSTEXPR Person::Person(
   , /*decltype(_impl_.pedestrian_attribute_)*/nullptr
   , /*decltype(_impl_.work_)*/nullptr
   , /*decltype(_impl_.id_)*/0
-  , /*decltype(_impl_.output_when_sleep_)*/false} {}
+  , /*decltype(_impl_.output_when_sleep_)*/false
+  , /*decltype(_impl_.type_)*/0} {}
 struct PersonDefaultTypeInternal {
   PROTOBUF_CONSTEXPR PersonDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -209,7 +210,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORIT
 }  // namespace person
 }  // namespace city
 static ::_pb::Metadata file_level_metadata_city_2fperson_2fv2_2fperson_2eproto[11];
-static const ::_pb::EnumDescriptor* file_level_enum_descriptors_city_2fperson_2fv2_2fperson_2eproto[5];
+static const ::_pb::EnumDescriptor* file_level_enum_descriptors_city_2fperson_2fv2_2fperson_2eproto[6];
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_city_2fperson_2fv2_2fperson_2eproto = nullptr;
 
 const uint32_t TableStruct_city_2fperson_2fv2_2fperson_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -347,6 +348,7 @@ const uint32_t TableStruct_city_2fperson_2fv2_2fperson_2eproto::offsets[] PROTOB
   PROTOBUF_FIELD_OFFSET(::city::person::v2::Person, _impl_.profile_),
   PROTOBUF_FIELD_OFFSET(::city::person::v2::Person, _impl_.work_),
   PROTOBUF_FIELD_OFFSET(::city::person::v2::Person, _impl_.output_when_sleep_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v2::Person, _impl_.type_),
   ~0u,
   ~0u,
   ~0u,
@@ -359,6 +361,7 @@ const uint32_t TableStruct_city_2fperson_2fv2_2fperson_2eproto::offsets[] PROTOB
   3,
   5,
   6,
+  ~0u,
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::city::person::v2::Persons, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -377,8 +380,8 @@ static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protode
   { 85, 93, -1, sizeof(::city::person::v2::BikeAttribute)},
   { 95, -1, -1, sizeof(::city::person::v2::PersonProfile)},
   { 106, 114, -1, sizeof(::city::person::v2::Person_LabelsEntry_DoNotUse)},
-  { 116, 134, -1, sizeof(::city::person::v2::Person)},
-  { 146, -1, -1, sizeof(::city::person::v2::Persons)},
+  { 116, 135, -1, sizeof(::city::person::v2::Person)},
+  { 148, -1, -1, sizeof(::city::person::v2::Persons)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -440,7 +443,7 @@ const char descriptor_table_protodef_city_2fperson_2fv2_2fperson_2eproto[] PROTO
   "\003 \001(\0162\026.city.person.v2.GenderR\006gender\022=\n"
   "\013consumption\030\004 \001(\0162\033.city.person.v2.Cons"
   "umptionR\013consumption\022\031\n\010house_id\030\005 \001(\005R\007"
-  "houseId\"\221\007\n\006Person\022\016\n\002id\030\001 \001(\005R\002id\022=\n\tat"
+  "houseId\"\301\007\n\006Person\022\016\n\002id\030\001 \001(\005R\002id\022=\n\tat"
   "tribute\030\002 \001(\0132\037.city.person.v2.PersonAtt"
   "ributeR\tattribute\022)\n\004home\030\003 \001(\0132\025.city.g"
   "eo.v2.PositionR\004home\0224\n\tschedules\030\004 \003(\0132"
@@ -458,35 +461,39 @@ const char descriptor_table_protodef_city_2fperson_2fv2_2fperson_2eproto[] PROTO
   "ty.person.v2.PersonProfileH\004R\007profile\210\001\001"
   "\022.\n\004work\030\r \001(\0132\025.city.geo.v2.PositionH\005R"
   "\004work\210\001\001\022/\n\021output_when_sleep\030\016 \001(\010H\006R\017o"
-  "utputWhenSleep\210\001\001\0329\n\013LabelsEntry\022\020\n\003key\030"
-  "\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001B\024\n\022"
-  "_vehicle_attributeB\020\n\016_bus_attributeB\027\n\025"
-  "_pedestrian_attributeB\021\n\017_bike_attribute"
-  "B\n\n\010_profileB\007\n\005_workB\024\n\022_output_when_sl"
-  "eep\";\n\007Persons\0220\n\007persons\030\001 \003(\0132\026.city.p"
-  "erson.v2.PersonR\007persons*\230\001\n\021VehicleEngi"
-  "neType\022#\n\037VEHICLE_ENGINE_TYPE_UNSPECIFIE"
-  "D\020\000\022\034\n\030VEHICLE_ENGINE_TYPE_FUEL\020\001\022 \n\034VEH"
-  "ICLE_ENGINE_TYPE_ELECTRIC\020\002\022\036\n\032VEHICLE_E"
-  "NGINE_TYPE_HYBRID\020\003*J\n\007BusType\022\030\n\024BUS_TY"
-  "PE_UNSPECIFIED\020\000\022\020\n\014BUS_TYPE_BUS\020\001\022\023\n\017BU"
-  "S_TYPE_SUBWAY\020\002*\334\001\n\tEducation\022\031\n\025EDUCATI"
-  "ON_UNSPECIFIED\020\000\022\024\n\020EDUCATION_DOCTOR\020\001\022\024"
-  "\n\020EDUCATION_MASTER\020\002\022\026\n\022EDUCATION_BACHEL"
-  "OR\020\003\022\031\n\025EDUCATION_HIGH_SCHOOL\020\004\022 \n\034EDUCA"
-  "TION_JUNIOR_HIGH_SCHOOL\020\005\022\034\n\030EDUCATION_P"
-  "RIMARY_SCHOOL\020\006\022\025\n\021EDUCATION_COLLEGE\020\007*D"
-  "\n\006Gender\022\026\n\022GENDER_UNSPECIFIED\020\000\022\017\n\013GEND"
-  "ER_MALE\020\001\022\021\n\rGENDER_FEMALE\020\002*\256\001\n\013Consump"
-  "tion\022\033\n\027CONSUMPTION_UNSPECIFIED\020\000\022\023\n\017CON"
-  "SUMPTION_LOW\020\001\022\036\n\032CONSUMPTION_RELATIVELY"
-  "_LOW\020\002\022\026\n\022CONSUMPTION_MEDIUM\020\003\022\037\n\033CONSUM"
-  "PTION_RELATIVELY_HIGH\020\004\022\024\n\020CONSUMPTION_H"
-  "IGH\020\005B\264\001\n\022com.city.person.v2B\013PersonProt"
-  "oP\001Z7git.fiblab.net/sim/protos/v2/go/cit"
-  "y/person/v2;personv2\242\002\003CPX\252\002\016City.Person"
-  ".V2\312\002\016City\\Person\\V2\342\002\032City\\Person\\V2\\GP"
-  "BMetadata\352\002\020City::Person::V2b\006proto3"
+  "utputWhenSleep\210\001\001\022.\n\004type\030\017 \001(\0162\032.city.p"
+  "erson.v2.PersonTypeR\004type\0329\n\013LabelsEntry"
+  "\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value"
+  ":\0028\001B\024\n\022_vehicle_attributeB\020\n\016_bus_attri"
+  "buteB\027\n\025_pedestrian_attributeB\021\n\017_bike_a"
+  "ttributeB\n\n\010_profileB\007\n\005_workB\024\n\022_output"
+  "_when_sleep\";\n\007Persons\0220\n\007persons\030\001 \003(\0132"
+  "\026.city.person.v2.PersonR\007persons*\230\001\n\021Veh"
+  "icleEngineType\022#\n\037VEHICLE_ENGINE_TYPE_UN"
+  "SPECIFIED\020\000\022\034\n\030VEHICLE_ENGINE_TYPE_FUEL\020"
+  "\001\022 \n\034VEHICLE_ENGINE_TYPE_ELECTRIC\020\002\022\036\n\032V"
+  "EHICLE_ENGINE_TYPE_HYBRID\020\003*J\n\007BusType\022\030"
+  "\n\024BUS_TYPE_UNSPECIFIED\020\000\022\020\n\014BUS_TYPE_BUS"
+  "\020\001\022\023\n\017BUS_TYPE_SUBWAY\020\002*\334\001\n\tEducation\022\031\n"
+  "\025EDUCATION_UNSPECIFIED\020\000\022\024\n\020EDUCATION_DO"
+  "CTOR\020\001\022\024\n\020EDUCATION_MASTER\020\002\022\026\n\022EDUCATIO"
+  "N_BACHELOR\020\003\022\031\n\025EDUCATION_HIGH_SCHOOL\020\004\022"
+  " \n\034EDUCATION_JUNIOR_HIGH_SCHOOL\020\005\022\034\n\030EDU"
+  "CATION_PRIMARY_SCHOOL\020\006\022\025\n\021EDUCATION_COL"
+  "LEGE\020\007*D\n\006Gender\022\026\n\022GENDER_UNSPECIFIED\020\000"
+  "\022\017\n\013GENDER_MALE\020\001\022\021\n\rGENDER_FEMALE\020\002*\256\001\n"
+  "\013Consumption\022\033\n\027CONSUMPTION_UNSPECIFIED\020"
+  "\000\022\023\n\017CONSUMPTION_LOW\020\001\022\036\n\032CONSUMPTION_RE"
+  "LATIVELY_LOW\020\002\022\026\n\022CONSUMPTION_MEDIUM\020\003\022\037"
+  "\n\033CONSUMPTION_RELATIVELY_HIGH\020\004\022\024\n\020CONSU"
+  "MPTION_HIGH\020\005*W\n\nPersonType\022\033\n\027PERSON_TY"
+  "PE_UNSPECIFIED\020\000\022\024\n\020PERSON_TYPE_TAXI\020\001\022\026"
+  "\n\022PERSON_TYPE_NORMAL\020\002B\264\001\n\022com.city.pers"
+  "on.v2B\013PersonProtoP\001Z7git.fiblab.net/sim"
+  "/protos/v2/go/city/person/v2;personv2\242\002\003"
+  "CPX\252\002\016City.Person.V2\312\002\016City\\Person\\V2\342\002\032"
+  "City\\Person\\V2\\GPBMetadata\352\002\020City::Perso"
+  "n::V2b\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_city_2fperson_2fv2_2fperson_2eproto_deps[2] = {
   &::descriptor_table_city_2fgeo_2fv2_2fgeo_2eproto,
@@ -494,7 +501,7 @@ static const ::_pbi::DescriptorTable* const descriptor_table_city_2fperson_2fv2_
 };
 static ::_pbi::once_flag descriptor_table_city_2fperson_2fv2_2fperson_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2fperson_2fv2_2fperson_2eproto = {
-    false, false, 3636, descriptor_table_protodef_city_2fperson_2fv2_2fperson_2eproto,
+    false, false, 3773, descriptor_table_protodef_city_2fperson_2fv2_2fperson_2eproto,
     "city/person/v2/person.proto",
     &descriptor_table_city_2fperson_2fv2_2fperson_2eproto_once, descriptor_table_city_2fperson_2fv2_2fperson_2eproto_deps, 2, 11,
     schemas, file_default_instances, TableStruct_city_2fperson_2fv2_2fperson_2eproto::offsets,
@@ -588,6 +595,21 @@ bool Consumption_IsValid(int value) {
     case 3:
     case 4:
     case 5:
+      return true;
+    default:
+      return false;
+  }
+}
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* PersonType_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_city_2fperson_2fv2_2fperson_2eproto);
+  return file_level_enum_descriptors_city_2fperson_2fv2_2fperson_2eproto[5];
+}
+bool PersonType_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+    case 2:
       return true;
     default:
       return false;
@@ -3137,7 +3159,8 @@ Person::Person(const Person& from)
     , decltype(_impl_.pedestrian_attribute_){nullptr}
     , decltype(_impl_.work_){nullptr}
     , decltype(_impl_.id_){}
-    , decltype(_impl_.output_when_sleep_){}};
+    , decltype(_impl_.output_when_sleep_){}
+    , decltype(_impl_.type_){}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   _this->_impl_.labels_.MergeFrom(from._impl_.labels_);
@@ -3166,8 +3189,8 @@ Person::Person(const Person& from)
     _this->_impl_.work_ = new ::city::geo::v2::Position(*from._impl_.work_);
   }
   ::memcpy(&_impl_.id_, &from._impl_.id_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.output_when_sleep_) -
-    reinterpret_cast<char*>(&_impl_.id_)) + sizeof(_impl_.output_when_sleep_));
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.type_) -
+    reinterpret_cast<char*>(&_impl_.id_)) + sizeof(_impl_.type_));
   // @@protoc_insertion_point(copy_constructor:city.person.v2.Person)
 }
 
@@ -3190,6 +3213,7 @@ inline void Person::SharedCtor(
     , decltype(_impl_.work_){nullptr}
     , decltype(_impl_.id_){0}
     , decltype(_impl_.output_when_sleep_){false}
+    , decltype(_impl_.type_){0}
   };
 }
 
@@ -3271,6 +3295,7 @@ void Person::Clear() {
   }
   _impl_.id_ = 0;
   _impl_.output_when_sleep_ = false;
+  _impl_.type_ = 0;
   _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -3386,6 +3411,15 @@ const char* Person::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
           _Internal::set_has_output_when_sleep(&has_bits);
           _impl_.output_when_sleep_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .city.person.v2.PersonType type = 15 [json_name = "type"];
+      case 15:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 120)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_set_type(static_cast<::city::person::v2::PersonType>(val));
         } else
           goto handle_unusual;
         continue;
@@ -3525,6 +3559,13 @@ uint8_t* Person::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteBoolToArray(14, this->_internal_output_when_sleep(), target);
   }
 
+  // .city.person.v2.PersonType type = 15 [json_name = "type"];
+  if (this->_internal_type() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
+      15, this->_internal_type(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -3626,6 +3667,12 @@ size_t Person::ByteSizeLong() const {
     total_size += 1 + 1;
   }
 
+  // .city.person.v2.PersonType type = 15 [json_name = "type"];
+  if (this->_internal_type() != 0) {
+    total_size += 1 +
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_type());
+  }
+
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
@@ -3687,6 +3734,9 @@ void Person::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBU
   if (cached_has_bits & 0x00000040u) {
     _this->_internal_set_output_when_sleep(from._internal_output_when_sleep());
   }
+  if (from._internal_type() != 0) {
+    _this->_internal_set_type(from._internal_type());
+  }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -3708,8 +3758,8 @@ void Person::InternalSwap(Person* other) {
   _impl_.schedules_.InternalSwap(&other->_impl_.schedules_);
   _impl_.labels_.InternalSwap(&other->_impl_.labels_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(Person, _impl_.output_when_sleep_)
-      + sizeof(Person::_impl_.output_when_sleep_)
+      PROTOBUF_FIELD_OFFSET(Person, _impl_.type_)
+      + sizeof(Person::_impl_.type_)
       - PROTOBUF_FIELD_OFFSET(Person, _impl_.attribute_)>(
           reinterpret_cast<char*>(&_impl_.attribute_),
           reinterpret_cast<char*>(&other->_impl_.attribute_));
