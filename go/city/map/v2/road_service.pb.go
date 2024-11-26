@@ -167,7 +167,7 @@ type GetRoadRequest struct {
 	ExcludeLane bool `protobuf:"varint,2,opt,name=exclude_lane,json=excludeLane,proto3" json:"exclude_lane,omitempty" yaml:"exclude_lane" bson:"exclude_lane" db:"exclude_lane"`
 	// 是否要排除车道上的人的信息（仅在包含车道信息时有效）
 	// Whether to exclude information about person in the lane (only valid when lane information is included)
-	ExcludePerson bool `protobuf:"varint,3,opt,name=exclude_person,json=excludePerson,proto3" json:"exclude_person,omitempty" yaml:"exclude_person" bson:"exclude_person" db:"exclude_person"`
+	ExcludePerson bool `protobuf:"varint,3,opt,name=exclude_person,json=excludePerson,proto3" json:"exclude_person,omitempty" bson:"exclude_person" db:"exclude_person" yaml:"exclude_person"`
 }
 
 func (x *GetRoadRequest) Reset() {
@@ -367,7 +367,7 @@ type GetRuinInfoResponse struct {
 	// 三级损伤信息
 	// Three-level ruin information
 	One   *RuinInfo `protobuf:"bytes,1,opt,name=one,proto3" json:"one,omitempty" yaml:"one" bson:"one" db:"one"`
-	Two   *RuinInfo `protobuf:"bytes,2,opt,name=two,proto3" json:"two,omitempty" yaml:"two" bson:"two" db:"two"`
+	Two   *RuinInfo `protobuf:"bytes,2,opt,name=two,proto3" json:"two,omitempty" bson:"two" db:"two" yaml:"two"`
 	Three *RuinInfo `protobuf:"bytes,3,opt,name=three,proto3" json:"three,omitempty" yaml:"three" bson:"three" db:"three"`
 }
 
@@ -512,7 +512,7 @@ type RoadState struct {
 
 	// 道路ID
 	// road ID
-	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" bson:"id" db:"id" yaml:"id"`
+	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
 	// 道路平均速度（m/s）
 	// road average speed (m/s)
 	AvgV float64 `protobuf:"fixed64,4,opt,name=avg_v,json=avgV,proto3" json:"avg_v,omitempty" yaml:"avg_v" bson:"avg_v" db:"avg_v"`
@@ -521,7 +521,7 @@ type RoadState struct {
 	Level RoadLevel `protobuf:"varint,2,opt,name=level,proto3,enum=city.map.v2.RoadLevel" json:"level,omitempty" yaml:"level" bson:"level" db:"level"`
 	// 道路中断原因
 	// road interruption reason
-	Reason InterruptionReason `protobuf:"varint,3,opt,name=reason,proto3,enum=city.map.v2.InterruptionReason" json:"reason,omitempty" db:"reason" yaml:"reason" bson:"reason"`
+	Reason InterruptionReason `protobuf:"varint,3,opt,name=reason,proto3,enum=city.map.v2.InterruptionReason" json:"reason,omitempty" yaml:"reason" bson:"reason" db:"reason"`
 	// 车道情况
 	// lane state
 	Lanes []*LaneState `protobuf:"bytes,5,rep,name=lanes,proto3" json:"lanes,omitempty" yaml:"lanes" bson:"lanes" db:"lanes"`

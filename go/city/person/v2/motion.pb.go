@@ -130,7 +130,7 @@ type PersonMotion struct {
 	Direction float64 `protobuf:"fixed64,5,opt,name=direction,proto3" json:"direction,omitempty" yaml:"direction" bson:"direction" db:"direction"`
 	// 活动描述
 	// activity descriptions
-	Activity string `protobuf:"bytes,6,opt,name=activity,proto3" json:"activity,omitempty" yaml:"activity" bson:"activity" db:"activity"`
+	Activity string `protobuf:"bytes,6,opt,name=activity,proto3" json:"activity,omitempty" db:"activity" yaml:"activity" bson:"activity"`
 	// 长度
 	// length
 	L float64 `protobuf:"fixed64,7,opt,name=l,proto3" json:"l,omitempty" db:"l" yaml:"l" bson:"l"`

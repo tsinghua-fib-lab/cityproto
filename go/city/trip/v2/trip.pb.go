@@ -203,7 +203,7 @@ type Trip struct {
 	Model *string `protobuf:"bytes,8,opt,name=model,proto3,oneof" json:"model,omitempty" yaml:"model" bson:"model" db:"model"`
 	// 预计算的导航结果
 	// Pre calculated routing results
-	Routes []*v21.Journey `protobuf:"bytes,7,rep,name=routes,proto3" json:"routes,omitempty" yaml:"routes" bson:"routes" db:"routes"`
+	Routes []*v21.Journey `protobuf:"bytes,7,rep,name=routes,proto3" json:"routes,omitempty" db:"routes" yaml:"routes" bson:"routes"`
 	// 本次出行的所有停靠点
 	// stop points of this trip
 	TripStops []*TripStop `protobuf:"bytes,9,rep,name=trip_stops,json=tripStops,proto3" json:"trip_stops,omitempty" yaml:"trip_stops" bson:"trip_stops" db:"trip_stops"`

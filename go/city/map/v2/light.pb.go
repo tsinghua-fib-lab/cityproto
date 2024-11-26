@@ -95,7 +95,7 @@ type Phase struct {
 	// 描述该相位下每个lane的灯控情况，lane与Junction.lane_ids一一对应
 	// The lighting control situation of each lane in this phase, and the lane
 	// corresponds one-to-one with junction.lane_ids
-	States []LightState `protobuf:"varint,2,rep,packed,name=states,proto3,enum=city.map.v2.LightState" json:"states,omitempty" db:"states" yaml:"states" bson:"states"`
+	States []LightState `protobuf:"varint,2,rep,packed,name=states,proto3,enum=city.map.v2.LightState" json:"states,omitempty" yaml:"states" bson:"states" db:"states"`
 }
 
 func (x *Phase) Reset() {
@@ -203,7 +203,7 @@ type TrafficLight struct {
 	JunctionId int32 `protobuf:"varint,1,opt,name=junction_id,json=junctionId,proto3" json:"junction_id,omitempty" yaml:"junction_id" bson:"junction_id" db:"junction_id"`
 	// 相位循环的一个循环周期
 	// One cycle of phase cycling
-	Phases []*Phase `protobuf:"bytes,2,rep,name=phases,proto3" json:"phases,omitempty" yaml:"phases" bson:"phases" db:"phases"`
+	Phases []*Phase `protobuf:"bytes,2,rep,name=phases,proto3" json:"phases,omitempty" db:"phases" yaml:"phases" bson:"phases"`
 }
 
 func (x *TrafficLight) Reset() {

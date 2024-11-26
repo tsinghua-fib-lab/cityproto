@@ -1,0 +1,65 @@
+syntax = "proto3";
+
+package city.economy.v2;
+enum OrgType {
+  // 未指定
+  // unspecified
+  ORG_TYPE_UNSPECIFIED = 0;
+  // 国家统计局
+  // NBS
+  ORG_TYPE_NBS = 1;
+  // 公司
+  // firm
+  ORG_TYPE_FIRM = 2;
+  // 银行
+  // bank
+  ORG_TYPE_BANK = 3;
+  // 政府
+  // government
+  ORG_TYPE_GOVERNMENT = 4;
+}
+
+// 组织
+// Organization
+message Org {
+  // 组织ID
+  // organization id
+  int32 id = 1;
+  // 组织类别
+  // organization type
+  OrgType type = 2;
+  // NBS
+  //
+  repeated float nominal_gdp = 3;
+  //
+  repeated float real_gdp = 4;
+  //
+  repeated float unemployment = 5;
+  //
+  repeated float wages = 6;
+  //
+  repeated float prices = 7;
+  // Firm
+  //
+  optional int32 inventory = 8;
+  //
+  optional float price = 9;
+  // Firm & Bank & Government
+  //
+  optional float currency = 10;
+  // Bank
+  //
+  optional float interest_rate = 11;
+  // Government
+  //
+  repeated float bracket_cutoffs = 12;
+  //
+  repeated float bracket_rates = 13;
+}
+
+message Agent {
+  // person ID
+  int32 id = 1;
+  // currency
+  optional float currency = 2;
+}

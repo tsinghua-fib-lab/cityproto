@@ -142,7 +142,7 @@ type PullResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Events []*Event `protobuf:"bytes,1,rep,name=events,proto3" json:"events,omitempty" yaml:"events" bson:"events" db:"events"`
+	Events []*Event `protobuf:"bytes,1,rep,name=events,proto3" json:"events,omitempty" bson:"events" db:"events" yaml:"events"`
 }
 
 func (x *PullResponse) Reset() {
