@@ -55,3 +55,14 @@ export const Agent = /*@__PURE__*/ proto3.makeMessageType(
   ],
 );
 
+/**
+ * @generated from message city.economy.v2.EconomyEntities
+ */
+export const EconomyEntities = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.EconomyEntities",
+  () => [
+    { no: 1, name: "orgs", kind: "message", T: Org, repeated: true },
+    { no: 2, name: "agents", kind: "message", T: Agent, repeated: true },
+  ],
+);
+

@@ -2,7 +2,7 @@ from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
-from typing import ClassVar as _ClassVar, Iterable as _Iterable, Optional as _Optional, Union as _Union
+from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class OrgType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
@@ -58,4 +58,14 @@ class Agent(_message.Message):
     currency: float
 
     def __init__(self, id: _Optional[int]=..., currency: _Optional[float]=...) -> None:
+        ...
+
+class EconomyEntities(_message.Message):
+    __slots__ = ['orgs', 'agents']
+    ORGS_FIELD_NUMBER: _ClassVar[int]
+    AGENTS_FIELD_NUMBER: _ClassVar[int]
+    orgs: _containers.RepeatedCompositeFieldContainer[Org]
+    agents: _containers.RepeatedCompositeFieldContainer[Agent]
+
+    def __init__(self, orgs: _Optional[_Iterable[_Union[Org, _Mapping]]]=..., agents: _Optional[_Iterable[_Union[Agent, _Mapping]]]=...) -> None:
         ...

@@ -53,6 +53,8 @@ static const char* OrgService_method_names[] = {
   "/city.economy.v2.OrgService/CalculateTaxesDue",
   "/city.economy.v2.OrgService/CalculateConsumption",
   "/city.economy.v2.OrgService/CalculateInterest",
+  "/city.economy.v2.OrgService/SaveEconomyEntities",
+  "/city.economy.v2.OrgService/LoadEconomyEntities",
 };
 
 std::unique_ptr< OrgService::Stub> OrgService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -91,6 +93,8 @@ OrgService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel
   , rpcmethod_CalculateTaxesDue_(OrgService_method_names[26], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_CalculateConsumption_(OrgService_method_names[27], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_CalculateInterest_(OrgService_method_names[28], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_SaveEconomyEntities_(OrgService_method_names[29], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_LoadEconomyEntities_(OrgService_method_names[30], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status OrgService::Stub::AddOrg(::grpc::ClientContext* context, const ::city::economy::v2::AddOrgRequest& request, ::city::economy::v2::AddOrgResponse* response) {
@@ -760,6 +764,52 @@ void OrgService::Stub::async::CalculateInterest(::grpc::ClientContext* context, 
   return result;
 }
 
+::grpc::Status OrgService::Stub::SaveEconomyEntities(::grpc::ClientContext* context, const ::city::economy::v2::SaveEconomyEntitiesRequest& request, ::city::economy::v2::SaveEconomyEntitiesResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::SaveEconomyEntitiesRequest, ::city::economy::v2::SaveEconomyEntitiesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_SaveEconomyEntities_, context, request, response);
+}
+
+void OrgService::Stub::async::SaveEconomyEntities(::grpc::ClientContext* context, const ::city::economy::v2::SaveEconomyEntitiesRequest* request, ::city::economy::v2::SaveEconomyEntitiesResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::SaveEconomyEntitiesRequest, ::city::economy::v2::SaveEconomyEntitiesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SaveEconomyEntities_, context, request, response, std::move(f));
+}
+
+void OrgService::Stub::async::SaveEconomyEntities(::grpc::ClientContext* context, const ::city::economy::v2::SaveEconomyEntitiesRequest* request, ::city::economy::v2::SaveEconomyEntitiesResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SaveEconomyEntities_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::city::economy::v2::SaveEconomyEntitiesResponse>* OrgService::Stub::PrepareAsyncSaveEconomyEntitiesRaw(::grpc::ClientContext* context, const ::city::economy::v2::SaveEconomyEntitiesRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::SaveEconomyEntitiesResponse, ::city::economy::v2::SaveEconomyEntitiesRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_SaveEconomyEntities_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::city::economy::v2::SaveEconomyEntitiesResponse>* OrgService::Stub::AsyncSaveEconomyEntitiesRaw(::grpc::ClientContext* context, const ::city::economy::v2::SaveEconomyEntitiesRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncSaveEconomyEntitiesRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status OrgService::Stub::LoadEconomyEntities(::grpc::ClientContext* context, const ::city::economy::v2::LoadEconomyEntitiesRequest& request, ::city::economy::v2::LoadEconomyEntitiesResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::LoadEconomyEntitiesRequest, ::city::economy::v2::LoadEconomyEntitiesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_LoadEconomyEntities_, context, request, response);
+}
+
+void OrgService::Stub::async::LoadEconomyEntities(::grpc::ClientContext* context, const ::city::economy::v2::LoadEconomyEntitiesRequest* request, ::city::economy::v2::LoadEconomyEntitiesResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::LoadEconomyEntitiesRequest, ::city::economy::v2::LoadEconomyEntitiesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_LoadEconomyEntities_, context, request, response, std::move(f));
+}
+
+void OrgService::Stub::async::LoadEconomyEntities(::grpc::ClientContext* context, const ::city::economy::v2::LoadEconomyEntitiesRequest* request, ::city::economy::v2::LoadEconomyEntitiesResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_LoadEconomyEntities_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::city::economy::v2::LoadEconomyEntitiesResponse>* OrgService::Stub::PrepareAsyncLoadEconomyEntitiesRaw(::grpc::ClientContext* context, const ::city::economy::v2::LoadEconomyEntitiesRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::LoadEconomyEntitiesResponse, ::city::economy::v2::LoadEconomyEntitiesRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_LoadEconomyEntities_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::city::economy::v2::LoadEconomyEntitiesResponse>* OrgService::Stub::AsyncLoadEconomyEntitiesRaw(::grpc::ClientContext* context, const ::city::economy::v2::LoadEconomyEntitiesRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncLoadEconomyEntitiesRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
 OrgService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       OrgService_method_names[0],
@@ -1051,6 +1101,26 @@ OrgService::Service::Service() {
              ::city::economy::v2::CalculateInterestResponse* resp) {
                return service->CalculateInterest(ctx, req, resp);
              }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      OrgService_method_names[29],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::SaveEconomyEntitiesRequest, ::city::economy::v2::SaveEconomyEntitiesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](OrgService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::city::economy::v2::SaveEconomyEntitiesRequest* req,
+             ::city::economy::v2::SaveEconomyEntitiesResponse* resp) {
+               return service->SaveEconomyEntities(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      OrgService_method_names[30],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::LoadEconomyEntitiesRequest, ::city::economy::v2::LoadEconomyEntitiesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](OrgService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::city::economy::v2::LoadEconomyEntitiesRequest* req,
+             ::city::economy::v2::LoadEconomyEntitiesResponse* resp) {
+               return service->LoadEconomyEntities(ctx, req, resp);
+             }, this)));
 }
 
 OrgService::Service::~Service() {
@@ -1253,6 +1323,20 @@ OrgService::Service::~Service() {
 }
 
 ::grpc::Status OrgService::Service::CalculateInterest(::grpc::ServerContext* context, const ::city::economy::v2::CalculateInterestRequest* request, ::city::economy::v2::CalculateInterestResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status OrgService::Service::SaveEconomyEntities(::grpc::ServerContext* context, const ::city::economy::v2::SaveEconomyEntitiesRequest* request, ::city::economy::v2::SaveEconomyEntitiesResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status OrgService::Service::LoadEconomyEntities(::grpc::ServerContext* context, const ::city::economy::v2::LoadEconomyEntitiesRequest* request, ::city::economy::v2::LoadEconomyEntitiesResponse* response) {
   (void) context;
   (void) request;
   (void) response;

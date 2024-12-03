@@ -104,6 +104,12 @@ const (
 	// OrgServiceCalculateInterestProcedure is the fully-qualified name of the OrgService's
 	// CalculateInterest RPC.
 	OrgServiceCalculateInterestProcedure = "/city.economy.v2.OrgService/CalculateInterest"
+	// OrgServiceSaveEconomyEntitiesProcedure is the fully-qualified name of the OrgService's
+	// SaveEconomyEntities RPC.
+	OrgServiceSaveEconomyEntitiesProcedure = "/city.economy.v2.OrgService/SaveEconomyEntities"
+	// OrgServiceLoadEconomyEntitiesProcedure is the fully-qualified name of the OrgService's
+	// LoadEconomyEntities RPC.
+	OrgServiceLoadEconomyEntitiesProcedure = "/city.economy.v2.OrgService/LoadEconomyEntities"
 )
 
 // These variables are the protoreflect.Descriptor objects for the RPCs defined in this package.
@@ -138,17 +144,23 @@ var (
 	orgServiceCalculateTaxesDueMethodDescriptor    = orgServiceServiceDescriptor.Methods().ByName("CalculateTaxesDue")
 	orgServiceCalculateConsumptionMethodDescriptor = orgServiceServiceDescriptor.Methods().ByName("CalculateConsumption")
 	orgServiceCalculateInterestMethodDescriptor    = orgServiceServiceDescriptor.Methods().ByName("CalculateInterest")
+	orgServiceSaveEconomyEntitiesMethodDescriptor  = orgServiceServiceDescriptor.Methods().ByName("SaveEconomyEntities")
+	orgServiceLoadEconomyEntitiesMethodDescriptor  = orgServiceServiceDescriptor.Methods().ByName("LoadEconomyEntities")
 )
 
 // OrgServiceClient is a client for the city.economy.v2.OrgService service.
 type OrgServiceClient interface {
 	// 添加组织
+	// add org
 	AddOrg(context.Context, *connect.Request[v2.AddOrgRequest]) (*connect.Response[v2.AddOrgResponse], error)
 	// 移除组织
+	// remove org
 	RemoveOrg(context.Context, *connect.Request[v2.RemoveOrgRequest]) (*connect.Response[v2.RemoveOrgResponse], error)
 	// 添加Agent
+	// add agent
 	AddAgent(context.Context, *connect.Request[v2.AddAgentRequest]) (*connect.Response[v2.AddAgentResponse], error)
 	// 移除Agent
+	// remove agent
 	RemoveAgent(context.Context, *connect.Request[v2.RemoveAgentRequest]) (*connect.Response[v2.RemoveAgentResponse], error)
 	// Nominal GDP
 	GetNominalGDP(context.Context, *connect.Request[v2.GetNominalGDPRequest]) (*connect.Response[v2.GetNominalGDPResponse], error)
@@ -189,6 +201,10 @@ type OrgServiceClient interface {
 	CalculateConsumption(context.Context, *connect.Request[v2.CalculateConsumptionRequest]) (*connect.Response[v2.CalculateConsumptionResponse], error)
 	// Consumption
 	CalculateInterest(context.Context, *connect.Request[v2.CalculateInterestRequest]) (*connect.Response[v2.CalculateInterestResponse], error)
+	// Save
+	SaveEconomyEntities(context.Context, *connect.Request[v2.SaveEconomyEntitiesRequest]) (*connect.Response[v2.SaveEconomyEntitiesResponse], error)
+	// Load
+	LoadEconomyEntities(context.Context, *connect.Request[v2.LoadEconomyEntitiesRequest]) (*connect.Response[v2.LoadEconomyEntitiesResponse], error)
 }
 
 // NewOrgServiceClient constructs a client for the city.economy.v2.OrgService service. By default,
@@ -375,6 +391,18 @@ func NewOrgServiceClient(httpClient connect.HTTPClient, baseURL string, opts ...
 			connect.WithSchema(orgServiceCalculateInterestMethodDescriptor),
 			connect.WithClientOptions(opts...),
 		),
+		saveEconomyEntities: connect.NewClient[v2.SaveEconomyEntitiesRequest, v2.SaveEconomyEntitiesResponse](
+			httpClient,
+			baseURL+OrgServiceSaveEconomyEntitiesProcedure,
+			connect.WithSchema(orgServiceSaveEconomyEntitiesMethodDescriptor),
+			connect.WithClientOptions(opts...),
+		),
+		loadEconomyEntities: connect.NewClient[v2.LoadEconomyEntitiesRequest, v2.LoadEconomyEntitiesResponse](
+			httpClient,
+			baseURL+OrgServiceLoadEconomyEntitiesProcedure,
+			connect.WithSchema(orgServiceLoadEconomyEntitiesMethodDescriptor),
+			connect.WithClientOptions(opts...),
+		),
 	}
 }
 
@@ -409,6 +437,8 @@ type orgServiceClient struct {
 	calculateTaxesDue    *connect.Client[v2.CalculateTaxesDueRequest, v2.CalculateTaxesDueResponse]
 	calculateConsumption *connect.Client[v2.CalculateConsumptionRequest, v2.CalculateConsumptionResponse]
 	calculateInterest    *connect.Client[v2.CalculateInterestRequest, v2.CalculateInterestResponse]
+	saveEconomyEntities  *connect.Client[v2.SaveEconomyEntitiesRequest, v2.SaveEconomyEntitiesResponse]
+	loadEconomyEntities  *connect.Client[v2.LoadEconomyEntitiesRequest, v2.LoadEconomyEntitiesResponse]
 }
 
 // AddOrg calls city.economy.v2.OrgService.AddOrg.
@@ -556,15 +586,29 @@ func (c *orgServiceClient) CalculateInterest(ctx context.Context, req *connect.R
 	return c.calculateInterest.CallUnary(ctx, req)
 }
 
+// SaveEconomyEntities calls city.economy.v2.OrgService.SaveEconomyEntities.
+func (c *orgServiceClient) SaveEconomyEntities(ctx context.Context, req *connect.Request[v2.SaveEconomyEntitiesRequest]) (*connect.Response[v2.SaveEconomyEntitiesResponse], error) {
+	return c.saveEconomyEntities.CallUnary(ctx, req)
+}
+
+// LoadEconomyEntities calls city.economy.v2.OrgService.LoadEconomyEntities.
+func (c *orgServiceClient) LoadEconomyEntities(ctx context.Context, req *connect.Request[v2.LoadEconomyEntitiesRequest]) (*connect.Response[v2.LoadEconomyEntitiesResponse], error) {
+	return c.loadEconomyEntities.CallUnary(ctx, req)
+}
+
 // OrgServiceHandler is an implementation of the city.economy.v2.OrgService service.
 type OrgServiceHandler interface {
 	// 添加组织
+	// add org
 	AddOrg(context.Context, *connect.Request[v2.AddOrgRequest]) (*connect.Response[v2.AddOrgResponse], error)
 	// 移除组织
+	// remove org
 	RemoveOrg(context.Context, *connect.Request[v2.RemoveOrgRequest]) (*connect.Response[v2.RemoveOrgResponse], error)
 	// 添加Agent
+	// add agent
 	AddAgent(context.Context, *connect.Request[v2.AddAgentRequest]) (*connect.Response[v2.AddAgentResponse], error)
 	// 移除Agent
+	// remove agent
 	RemoveAgent(context.Context, *connect.Request[v2.RemoveAgentRequest]) (*connect.Response[v2.RemoveAgentResponse], error)
 	// Nominal GDP
 	GetNominalGDP(context.Context, *connect.Request[v2.GetNominalGDPRequest]) (*connect.Response[v2.GetNominalGDPResponse], error)
@@ -605,6 +649,10 @@ type OrgServiceHandler interface {
 	CalculateConsumption(context.Context, *connect.Request[v2.CalculateConsumptionRequest]) (*connect.Response[v2.CalculateConsumptionResponse], error)
 	// Consumption
 	CalculateInterest(context.Context, *connect.Request[v2.CalculateInterestRequest]) (*connect.Response[v2.CalculateInterestResponse], error)
+	// Save
+	SaveEconomyEntities(context.Context, *connect.Request[v2.SaveEconomyEntitiesRequest]) (*connect.Response[v2.SaveEconomyEntitiesResponse], error)
+	// Load
+	LoadEconomyEntities(context.Context, *connect.Request[v2.LoadEconomyEntitiesRequest]) (*connect.Response[v2.LoadEconomyEntitiesResponse], error)
 }
 
 // NewOrgServiceHandler builds an HTTP handler from the service implementation. It returns the path
@@ -787,6 +835,18 @@ func NewOrgServiceHandler(svc OrgServiceHandler, opts ...connect.HandlerOption) 
 		connect.WithSchema(orgServiceCalculateInterestMethodDescriptor),
 		connect.WithHandlerOptions(opts...),
 	)
+	orgServiceSaveEconomyEntitiesHandler := connect.NewUnaryHandler(
+		OrgServiceSaveEconomyEntitiesProcedure,
+		svc.SaveEconomyEntities,
+		connect.WithSchema(orgServiceSaveEconomyEntitiesMethodDescriptor),
+		connect.WithHandlerOptions(opts...),
+	)
+	orgServiceLoadEconomyEntitiesHandler := connect.NewUnaryHandler(
+		OrgServiceLoadEconomyEntitiesProcedure,
+		svc.LoadEconomyEntities,
+		connect.WithSchema(orgServiceLoadEconomyEntitiesMethodDescriptor),
+		connect.WithHandlerOptions(opts...),
+	)
 	return "/city.economy.v2.OrgService/", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		switch r.URL.Path {
 		case OrgServiceAddOrgProcedure:
@@ -847,6 +907,10 @@ func NewOrgServiceHandler(svc OrgServiceHandler, opts ...connect.HandlerOption) 
 			orgServiceCalculateConsumptionHandler.ServeHTTP(w, r)
 		case OrgServiceCalculateInterestProcedure:
 			orgServiceCalculateInterestHandler.ServeHTTP(w, r)
+		case OrgServiceSaveEconomyEntitiesProcedure:
+			orgServiceSaveEconomyEntitiesHandler.ServeHTTP(w, r)
+		case OrgServiceLoadEconomyEntitiesProcedure:
+			orgServiceLoadEconomyEntitiesHandler.ServeHTTP(w, r)
 		default:
 			http.NotFound(w, r)
 		}
@@ -970,4 +1034,12 @@ func (UnimplementedOrgServiceHandler) CalculateConsumption(context.Context, *con
 
 func (UnimplementedOrgServiceHandler) CalculateInterest(context.Context, *connect.Request[v2.CalculateInterestRequest]) (*connect.Response[v2.CalculateInterestResponse], error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.CalculateInterest is not implemented"))
+}
+
+func (UnimplementedOrgServiceHandler) SaveEconomyEntities(context.Context, *connect.Request[v2.SaveEconomyEntitiesRequest]) (*connect.Response[v2.SaveEconomyEntitiesResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.SaveEconomyEntities is not implemented"))
+}
+
+func (UnimplementedOrgServiceHandler) LoadEconomyEntities(context.Context, *connect.Request[v2.LoadEconomyEntitiesRequest]) (*connect.Response[v2.LoadEconomyEntitiesResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.LoadEconomyEntities is not implemented"))
 }

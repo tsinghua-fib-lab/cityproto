@@ -516,6 +516,7 @@ export const CalculateTaxesDueRequest = /*@__PURE__*/ proto3.makeMessageType(
     { no: 1, name: "government_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 2, name: "agent_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
     { no: 3, name: "incomes", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
+    { no: 4, name: "enable_redistribution", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 
@@ -572,6 +573,48 @@ export const CalculateInterestResponse = /*@__PURE__*/ proto3.makeMessageType(
   () => [
     { no: 1, name: "total_interest", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
     { no: 2, name: "updated_currencies", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.SaveEconomyEntitiesRequest
+ */
+export const SaveEconomyEntitiesRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.SaveEconomyEntitiesRequest",
+  () => [
+    { no: 1, name: "file_path", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.SaveEconomyEntitiesResponse
+ */
+export const SaveEconomyEntitiesResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.SaveEconomyEntitiesResponse",
+  () => [
+    { no: 1, name: "agent_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 2, name: "org_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.LoadEconomyEntitiesRequest
+ */
+export const LoadEconomyEntitiesRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.LoadEconomyEntitiesRequest",
+  () => [
+    { no: 1, name: "file_path", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.LoadEconomyEntitiesResponse
+ */
+export const LoadEconomyEntitiesResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.LoadEconomyEntitiesResponse",
+  () => [
+    { no: 1, name: "agent_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 2, name: "org_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
   ],
 );
 

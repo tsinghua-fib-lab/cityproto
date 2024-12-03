@@ -39,6 +39,7 @@ class OrgService final {
    public:
     virtual ~StubInterface() {}
     // 添加组织
+    // add org
     virtual ::grpc::Status AddOrg(::grpc::ClientContext* context, const ::city::economy::v2::AddOrgRequest& request, ::city::economy::v2::AddOrgResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::AddOrgResponse>> AsyncAddOrg(::grpc::ClientContext* context, const ::city::economy::v2::AddOrgRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::AddOrgResponse>>(AsyncAddOrgRaw(context, request, cq));
@@ -47,6 +48,7 @@ class OrgService final {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::AddOrgResponse>>(PrepareAsyncAddOrgRaw(context, request, cq));
     }
     // 移除组织
+    // remove org
     virtual ::grpc::Status RemoveOrg(::grpc::ClientContext* context, const ::city::economy::v2::RemoveOrgRequest& request, ::city::economy::v2::RemoveOrgResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::RemoveOrgResponse>> AsyncRemoveOrg(::grpc::ClientContext* context, const ::city::economy::v2::RemoveOrgRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::RemoveOrgResponse>>(AsyncRemoveOrgRaw(context, request, cq));
@@ -55,6 +57,7 @@ class OrgService final {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::RemoveOrgResponse>>(PrepareAsyncRemoveOrgRaw(context, request, cq));
     }
     // 添加Agent
+    // add agent
     virtual ::grpc::Status AddAgent(::grpc::ClientContext* context, const ::city::economy::v2::AddAgentRequest& request, ::city::economy::v2::AddAgentResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::AddAgentResponse>> AsyncAddAgent(::grpc::ClientContext* context, const ::city::economy::v2::AddAgentRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::AddAgentResponse>>(AsyncAddAgentRaw(context, request, cq));
@@ -63,6 +66,7 @@ class OrgService final {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::AddAgentResponse>>(PrepareAsyncAddAgentRaw(context, request, cq));
     }
     // 移除Agent
+    // remove agent
     virtual ::grpc::Status RemoveAgent(::grpc::ClientContext* context, const ::city::economy::v2::RemoveAgentRequest& request, ::city::economy::v2::RemoveAgentResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::RemoveAgentResponse>> AsyncRemoveAgent(::grpc::ClientContext* context, const ::city::economy::v2::RemoveAgentRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::RemoveAgentResponse>>(AsyncRemoveAgentRaw(context, request, cq));
@@ -259,19 +263,39 @@ class OrgService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::CalculateInterestResponse>> PrepareAsyncCalculateInterest(::grpc::ClientContext* context, const ::city::economy::v2::CalculateInterestRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::CalculateInterestResponse>>(PrepareAsyncCalculateInterestRaw(context, request, cq));
     }
+    // Save
+    virtual ::grpc::Status SaveEconomyEntities(::grpc::ClientContext* context, const ::city::economy::v2::SaveEconomyEntitiesRequest& request, ::city::economy::v2::SaveEconomyEntitiesResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::SaveEconomyEntitiesResponse>> AsyncSaveEconomyEntities(::grpc::ClientContext* context, const ::city::economy::v2::SaveEconomyEntitiesRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::SaveEconomyEntitiesResponse>>(AsyncSaveEconomyEntitiesRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::SaveEconomyEntitiesResponse>> PrepareAsyncSaveEconomyEntities(::grpc::ClientContext* context, const ::city::economy::v2::SaveEconomyEntitiesRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::SaveEconomyEntitiesResponse>>(PrepareAsyncSaveEconomyEntitiesRaw(context, request, cq));
+    }
+    // Load
+    virtual ::grpc::Status LoadEconomyEntities(::grpc::ClientContext* context, const ::city::economy::v2::LoadEconomyEntitiesRequest& request, ::city::economy::v2::LoadEconomyEntitiesResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::LoadEconomyEntitiesResponse>> AsyncLoadEconomyEntities(::grpc::ClientContext* context, const ::city::economy::v2::LoadEconomyEntitiesRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::LoadEconomyEntitiesResponse>>(AsyncLoadEconomyEntitiesRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::LoadEconomyEntitiesResponse>> PrepareAsyncLoadEconomyEntities(::grpc::ClientContext* context, const ::city::economy::v2::LoadEconomyEntitiesRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::LoadEconomyEntitiesResponse>>(PrepareAsyncLoadEconomyEntitiesRaw(context, request, cq));
+    }
     class async_interface {
      public:
       virtual ~async_interface() {}
       // 添加组织
+      // add org
       virtual void AddOrg(::grpc::ClientContext* context, const ::city::economy::v2::AddOrgRequest* request, ::city::economy::v2::AddOrgResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void AddOrg(::grpc::ClientContext* context, const ::city::economy::v2::AddOrgRequest* request, ::city::economy::v2::AddOrgResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       // 移除组织
+      // remove org
       virtual void RemoveOrg(::grpc::ClientContext* context, const ::city::economy::v2::RemoveOrgRequest* request, ::city::economy::v2::RemoveOrgResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void RemoveOrg(::grpc::ClientContext* context, const ::city::economy::v2::RemoveOrgRequest* request, ::city::economy::v2::RemoveOrgResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       // 添加Agent
+      // add agent
       virtual void AddAgent(::grpc::ClientContext* context, const ::city::economy::v2::AddAgentRequest* request, ::city::economy::v2::AddAgentResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void AddAgent(::grpc::ClientContext* context, const ::city::economy::v2::AddAgentRequest* request, ::city::economy::v2::AddAgentResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       // 移除Agent
+      // remove agent
       virtual void RemoveAgent(::grpc::ClientContext* context, const ::city::economy::v2::RemoveAgentRequest* request, ::city::economy::v2::RemoveAgentResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void RemoveAgent(::grpc::ClientContext* context, const ::city::economy::v2::RemoveAgentRequest* request, ::city::economy::v2::RemoveAgentResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       // Nominal GDP
@@ -338,6 +362,12 @@ class OrgService final {
       // Consumption
       virtual void CalculateInterest(::grpc::ClientContext* context, const ::city::economy::v2::CalculateInterestRequest* request, ::city::economy::v2::CalculateInterestResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void CalculateInterest(::grpc::ClientContext* context, const ::city::economy::v2::CalculateInterestRequest* request, ::city::economy::v2::CalculateInterestResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Save
+      virtual void SaveEconomyEntities(::grpc::ClientContext* context, const ::city::economy::v2::SaveEconomyEntitiesRequest* request, ::city::economy::v2::SaveEconomyEntitiesResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void SaveEconomyEntities(::grpc::ClientContext* context, const ::city::economy::v2::SaveEconomyEntitiesRequest* request, ::city::economy::v2::SaveEconomyEntitiesResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Load
+      virtual void LoadEconomyEntities(::grpc::ClientContext* context, const ::city::economy::v2::LoadEconomyEntitiesRequest* request, ::city::economy::v2::LoadEconomyEntitiesResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void LoadEconomyEntities(::grpc::ClientContext* context, const ::city::economy::v2::LoadEconomyEntitiesRequest* request, ::city::economy::v2::LoadEconomyEntitiesResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
     };
     typedef class async_interface experimental_async_interface;
     virtual class async_interface* async() { return nullptr; }
@@ -401,6 +431,10 @@ class OrgService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::CalculateConsumptionResponse>* PrepareAsyncCalculateConsumptionRaw(::grpc::ClientContext* context, const ::city::economy::v2::CalculateConsumptionRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::CalculateInterestResponse>* AsyncCalculateInterestRaw(::grpc::ClientContext* context, const ::city::economy::v2::CalculateInterestRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::CalculateInterestResponse>* PrepareAsyncCalculateInterestRaw(::grpc::ClientContext* context, const ::city::economy::v2::CalculateInterestRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::SaveEconomyEntitiesResponse>* AsyncSaveEconomyEntitiesRaw(::grpc::ClientContext* context, const ::city::economy::v2::SaveEconomyEntitiesRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::SaveEconomyEntitiesResponse>* PrepareAsyncSaveEconomyEntitiesRaw(::grpc::ClientContext* context, const ::city::economy::v2::SaveEconomyEntitiesRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::LoadEconomyEntitiesResponse>* AsyncLoadEconomyEntitiesRaw(::grpc::ClientContext* context, const ::city::economy::v2::LoadEconomyEntitiesRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::LoadEconomyEntitiesResponse>* PrepareAsyncLoadEconomyEntitiesRaw(::grpc::ClientContext* context, const ::city::economy::v2::LoadEconomyEntitiesRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -608,6 +642,20 @@ class OrgService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::CalculateInterestResponse>> PrepareAsyncCalculateInterest(::grpc::ClientContext* context, const ::city::economy::v2::CalculateInterestRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::CalculateInterestResponse>>(PrepareAsyncCalculateInterestRaw(context, request, cq));
     }
+    ::grpc::Status SaveEconomyEntities(::grpc::ClientContext* context, const ::city::economy::v2::SaveEconomyEntitiesRequest& request, ::city::economy::v2::SaveEconomyEntitiesResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::SaveEconomyEntitiesResponse>> AsyncSaveEconomyEntities(::grpc::ClientContext* context, const ::city::economy::v2::SaveEconomyEntitiesRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::SaveEconomyEntitiesResponse>>(AsyncSaveEconomyEntitiesRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::SaveEconomyEntitiesResponse>> PrepareAsyncSaveEconomyEntities(::grpc::ClientContext* context, const ::city::economy::v2::SaveEconomyEntitiesRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::SaveEconomyEntitiesResponse>>(PrepareAsyncSaveEconomyEntitiesRaw(context, request, cq));
+    }
+    ::grpc::Status LoadEconomyEntities(::grpc::ClientContext* context, const ::city::economy::v2::LoadEconomyEntitiesRequest& request, ::city::economy::v2::LoadEconomyEntitiesResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::LoadEconomyEntitiesResponse>> AsyncLoadEconomyEntities(::grpc::ClientContext* context, const ::city::economy::v2::LoadEconomyEntitiesRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::LoadEconomyEntitiesResponse>>(AsyncLoadEconomyEntitiesRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::LoadEconomyEntitiesResponse>> PrepareAsyncLoadEconomyEntities(::grpc::ClientContext* context, const ::city::economy::v2::LoadEconomyEntitiesRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::LoadEconomyEntitiesResponse>>(PrepareAsyncLoadEconomyEntitiesRaw(context, request, cq));
+    }
     class async final :
       public StubInterface::async_interface {
      public:
@@ -669,6 +717,10 @@ class OrgService final {
       void CalculateConsumption(::grpc::ClientContext* context, const ::city::economy::v2::CalculateConsumptionRequest* request, ::city::economy::v2::CalculateConsumptionResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       void CalculateInterest(::grpc::ClientContext* context, const ::city::economy::v2::CalculateInterestRequest* request, ::city::economy::v2::CalculateInterestResponse* response, std::function<void(::grpc::Status)>) override;
       void CalculateInterest(::grpc::ClientContext* context, const ::city::economy::v2::CalculateInterestRequest* request, ::city::economy::v2::CalculateInterestResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void SaveEconomyEntities(::grpc::ClientContext* context, const ::city::economy::v2::SaveEconomyEntitiesRequest* request, ::city::economy::v2::SaveEconomyEntitiesResponse* response, std::function<void(::grpc::Status)>) override;
+      void SaveEconomyEntities(::grpc::ClientContext* context, const ::city::economy::v2::SaveEconomyEntitiesRequest* request, ::city::economy::v2::SaveEconomyEntitiesResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void LoadEconomyEntities(::grpc::ClientContext* context, const ::city::economy::v2::LoadEconomyEntitiesRequest* request, ::city::economy::v2::LoadEconomyEntitiesResponse* response, std::function<void(::grpc::Status)>) override;
+      void LoadEconomyEntities(::grpc::ClientContext* context, const ::city::economy::v2::LoadEconomyEntitiesRequest* request, ::city::economy::v2::LoadEconomyEntitiesResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
      private:
       friend class Stub;
       explicit async(Stub* stub): stub_(stub) { }
@@ -738,6 +790,10 @@ class OrgService final {
     ::grpc::ClientAsyncResponseReader< ::city::economy::v2::CalculateConsumptionResponse>* PrepareAsyncCalculateConsumptionRaw(::grpc::ClientContext* context, const ::city::economy::v2::CalculateConsumptionRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::city::economy::v2::CalculateInterestResponse>* AsyncCalculateInterestRaw(::grpc::ClientContext* context, const ::city::economy::v2::CalculateInterestRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::city::economy::v2::CalculateInterestResponse>* PrepareAsyncCalculateInterestRaw(::grpc::ClientContext* context, const ::city::economy::v2::CalculateInterestRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::city::economy::v2::SaveEconomyEntitiesResponse>* AsyncSaveEconomyEntitiesRaw(::grpc::ClientContext* context, const ::city::economy::v2::SaveEconomyEntitiesRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::city::economy::v2::SaveEconomyEntitiesResponse>* PrepareAsyncSaveEconomyEntitiesRaw(::grpc::ClientContext* context, const ::city::economy::v2::SaveEconomyEntitiesRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::city::economy::v2::LoadEconomyEntitiesResponse>* AsyncLoadEconomyEntitiesRaw(::grpc::ClientContext* context, const ::city::economy::v2::LoadEconomyEntitiesRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::city::economy::v2::LoadEconomyEntitiesResponse>* PrepareAsyncLoadEconomyEntitiesRaw(::grpc::ClientContext* context, const ::city::economy::v2::LoadEconomyEntitiesRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_AddOrg_;
     const ::grpc::internal::RpcMethod rpcmethod_RemoveOrg_;
     const ::grpc::internal::RpcMethod rpcmethod_AddAgent_;
@@ -767,6 +823,8 @@ class OrgService final {
     const ::grpc::internal::RpcMethod rpcmethod_CalculateTaxesDue_;
     const ::grpc::internal::RpcMethod rpcmethod_CalculateConsumption_;
     const ::grpc::internal::RpcMethod rpcmethod_CalculateInterest_;
+    const ::grpc::internal::RpcMethod rpcmethod_SaveEconomyEntities_;
+    const ::grpc::internal::RpcMethod rpcmethod_LoadEconomyEntities_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -775,12 +833,16 @@ class OrgService final {
     Service();
     virtual ~Service();
     // 添加组织
+    // add org
     virtual ::grpc::Status AddOrg(::grpc::ServerContext* context, const ::city::economy::v2::AddOrgRequest* request, ::city::economy::v2::AddOrgResponse* response);
     // 移除组织
+    // remove org
     virtual ::grpc::Status RemoveOrg(::grpc::ServerContext* context, const ::city::economy::v2::RemoveOrgRequest* request, ::city::economy::v2::RemoveOrgResponse* response);
     // 添加Agent
+    // add agent
     virtual ::grpc::Status AddAgent(::grpc::ServerContext* context, const ::city::economy::v2::AddAgentRequest* request, ::city::economy::v2::AddAgentResponse* response);
     // 移除Agent
+    // remove agent
     virtual ::grpc::Status RemoveAgent(::grpc::ServerContext* context, const ::city::economy::v2::RemoveAgentRequest* request, ::city::economy::v2::RemoveAgentResponse* response);
     // Nominal GDP
     virtual ::grpc::Status GetNominalGDP(::grpc::ServerContext* context, const ::city::economy::v2::GetNominalGDPRequest* request, ::city::economy::v2::GetNominalGDPResponse* response);
@@ -821,6 +883,10 @@ class OrgService final {
     virtual ::grpc::Status CalculateConsumption(::grpc::ServerContext* context, const ::city::economy::v2::CalculateConsumptionRequest* request, ::city::economy::v2::CalculateConsumptionResponse* response);
     // Consumption
     virtual ::grpc::Status CalculateInterest(::grpc::ServerContext* context, const ::city::economy::v2::CalculateInterestRequest* request, ::city::economy::v2::CalculateInterestResponse* response);
+    // Save
+    virtual ::grpc::Status SaveEconomyEntities(::grpc::ServerContext* context, const ::city::economy::v2::SaveEconomyEntitiesRequest* request, ::city::economy::v2::SaveEconomyEntitiesResponse* response);
+    // Load
+    virtual ::grpc::Status LoadEconomyEntities(::grpc::ServerContext* context, const ::city::economy::v2::LoadEconomyEntitiesRequest* request, ::city::economy::v2::LoadEconomyEntitiesResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_AddOrg : public BaseClass {
@@ -1402,7 +1468,47 @@ class OrgService final {
       ::grpc::Service::RequestAsyncUnary(28, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_AddOrg<WithAsyncMethod_RemoveOrg<WithAsyncMethod_AddAgent<WithAsyncMethod_RemoveAgent<WithAsyncMethod_GetNominalGDP<WithAsyncMethod_SetNominalGDP<WithAsyncMethod_GetRealGDP<WithAsyncMethod_SetRealGDP<WithAsyncMethod_GetUnemployment<WithAsyncMethod_SetUnemployment<WithAsyncMethod_GetWages<WithAsyncMethod_SetWages<WithAsyncMethod_GetPrices<WithAsyncMethod_SetPrices<WithAsyncMethod_GetInventory<WithAsyncMethod_SetInventory<WithAsyncMethod_GetPrice<WithAsyncMethod_SetPrice<WithAsyncMethod_GetCurrency<WithAsyncMethod_SetCurrency<WithAsyncMethod_GetInterestRate<WithAsyncMethod_SetInterestRate<WithAsyncMethod_GetBracketCutoffs<WithAsyncMethod_SetBracketCutoffs<WithAsyncMethod_GetBracketRates<WithAsyncMethod_SetBracketRates<WithAsyncMethod_CalculateTaxesDue<WithAsyncMethod_CalculateConsumption<WithAsyncMethod_CalculateInterest<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_SaveEconomyEntities : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_SaveEconomyEntities() {
+      ::grpc::Service::MarkMethodAsync(29);
+    }
+    ~WithAsyncMethod_SaveEconomyEntities() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SaveEconomyEntities(::grpc::ServerContext* /*context*/, const ::city::economy::v2::SaveEconomyEntitiesRequest* /*request*/, ::city::economy::v2::SaveEconomyEntitiesResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestSaveEconomyEntities(::grpc::ServerContext* context, ::city::economy::v2::SaveEconomyEntitiesRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::SaveEconomyEntitiesResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(29, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_LoadEconomyEntities : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_LoadEconomyEntities() {
+      ::grpc::Service::MarkMethodAsync(30);
+    }
+    ~WithAsyncMethod_LoadEconomyEntities() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status LoadEconomyEntities(::grpc::ServerContext* /*context*/, const ::city::economy::v2::LoadEconomyEntitiesRequest* /*request*/, ::city::economy::v2::LoadEconomyEntitiesResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestLoadEconomyEntities(::grpc::ServerContext* context, ::city::economy::v2::LoadEconomyEntitiesRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::LoadEconomyEntitiesResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(30, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_AddOrg<WithAsyncMethod_RemoveOrg<WithAsyncMethod_AddAgent<WithAsyncMethod_RemoveAgent<WithAsyncMethod_GetNominalGDP<WithAsyncMethod_SetNominalGDP<WithAsyncMethod_GetRealGDP<WithAsyncMethod_SetRealGDP<WithAsyncMethod_GetUnemployment<WithAsyncMethod_SetUnemployment<WithAsyncMethod_GetWages<WithAsyncMethod_SetWages<WithAsyncMethod_GetPrices<WithAsyncMethod_SetPrices<WithAsyncMethod_GetInventory<WithAsyncMethod_SetInventory<WithAsyncMethod_GetPrice<WithAsyncMethod_SetPrice<WithAsyncMethod_GetCurrency<WithAsyncMethod_SetCurrency<WithAsyncMethod_GetInterestRate<WithAsyncMethod_SetInterestRate<WithAsyncMethod_GetBracketCutoffs<WithAsyncMethod_SetBracketCutoffs<WithAsyncMethod_GetBracketRates<WithAsyncMethod_SetBracketRates<WithAsyncMethod_CalculateTaxesDue<WithAsyncMethod_CalculateConsumption<WithAsyncMethod_CalculateInterest<WithAsyncMethod_SaveEconomyEntities<WithAsyncMethod_LoadEconomyEntities<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > AsyncService;
   template <class BaseClass>
   class WithCallbackMethod_AddOrg : public BaseClass {
    private:
@@ -2186,7 +2292,61 @@ class OrgService final {
     virtual ::grpc::ServerUnaryReactor* CalculateInterest(
       ::grpc::CallbackServerContext* /*context*/, const ::city::economy::v2::CalculateInterestRequest* /*request*/, ::city::economy::v2::CalculateInterestResponse* /*response*/)  { return nullptr; }
   };
-  typedef WithCallbackMethod_AddOrg<WithCallbackMethod_RemoveOrg<WithCallbackMethod_AddAgent<WithCallbackMethod_RemoveAgent<WithCallbackMethod_GetNominalGDP<WithCallbackMethod_SetNominalGDP<WithCallbackMethod_GetRealGDP<WithCallbackMethod_SetRealGDP<WithCallbackMethod_GetUnemployment<WithCallbackMethod_SetUnemployment<WithCallbackMethod_GetWages<WithCallbackMethod_SetWages<WithCallbackMethod_GetPrices<WithCallbackMethod_SetPrices<WithCallbackMethod_GetInventory<WithCallbackMethod_SetInventory<WithCallbackMethod_GetPrice<WithCallbackMethod_SetPrice<WithCallbackMethod_GetCurrency<WithCallbackMethod_SetCurrency<WithCallbackMethod_GetInterestRate<WithCallbackMethod_SetInterestRate<WithCallbackMethod_GetBracketCutoffs<WithCallbackMethod_SetBracketCutoffs<WithCallbackMethod_GetBracketRates<WithCallbackMethod_SetBracketRates<WithCallbackMethod_CalculateTaxesDue<WithCallbackMethod_CalculateConsumption<WithCallbackMethod_CalculateInterest<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > CallbackService;
+  template <class BaseClass>
+  class WithCallbackMethod_SaveEconomyEntities : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_SaveEconomyEntities() {
+      ::grpc::Service::MarkMethodCallback(29,
+          new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::SaveEconomyEntitiesRequest, ::city::economy::v2::SaveEconomyEntitiesResponse>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::city::economy::v2::SaveEconomyEntitiesRequest* request, ::city::economy::v2::SaveEconomyEntitiesResponse* response) { return this->SaveEconomyEntities(context, request, response); }));}
+    void SetMessageAllocatorFor_SaveEconomyEntities(
+        ::grpc::MessageAllocator< ::city::economy::v2::SaveEconomyEntitiesRequest, ::city::economy::v2::SaveEconomyEntitiesResponse>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(29);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::SaveEconomyEntitiesRequest, ::city::economy::v2::SaveEconomyEntitiesResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_SaveEconomyEntities() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SaveEconomyEntities(::grpc::ServerContext* /*context*/, const ::city::economy::v2::SaveEconomyEntitiesRequest* /*request*/, ::city::economy::v2::SaveEconomyEntitiesResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* SaveEconomyEntities(
+      ::grpc::CallbackServerContext* /*context*/, const ::city::economy::v2::SaveEconomyEntitiesRequest* /*request*/, ::city::economy::v2::SaveEconomyEntitiesResponse* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithCallbackMethod_LoadEconomyEntities : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_LoadEconomyEntities() {
+      ::grpc::Service::MarkMethodCallback(30,
+          new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::LoadEconomyEntitiesRequest, ::city::economy::v2::LoadEconomyEntitiesResponse>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::city::economy::v2::LoadEconomyEntitiesRequest* request, ::city::economy::v2::LoadEconomyEntitiesResponse* response) { return this->LoadEconomyEntities(context, request, response); }));}
+    void SetMessageAllocatorFor_LoadEconomyEntities(
+        ::grpc::MessageAllocator< ::city::economy::v2::LoadEconomyEntitiesRequest, ::city::economy::v2::LoadEconomyEntitiesResponse>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(30);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::LoadEconomyEntitiesRequest, ::city::economy::v2::LoadEconomyEntitiesResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_LoadEconomyEntities() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status LoadEconomyEntities(::grpc::ServerContext* /*context*/, const ::city::economy::v2::LoadEconomyEntitiesRequest* /*request*/, ::city::economy::v2::LoadEconomyEntitiesResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* LoadEconomyEntities(
+      ::grpc::CallbackServerContext* /*context*/, const ::city::economy::v2::LoadEconomyEntitiesRequest* /*request*/, ::city::economy::v2::LoadEconomyEntitiesResponse* /*response*/)  { return nullptr; }
+  };
+  typedef WithCallbackMethod_AddOrg<WithCallbackMethod_RemoveOrg<WithCallbackMethod_AddAgent<WithCallbackMethod_RemoveAgent<WithCallbackMethod_GetNominalGDP<WithCallbackMethod_SetNominalGDP<WithCallbackMethod_GetRealGDP<WithCallbackMethod_SetRealGDP<WithCallbackMethod_GetUnemployment<WithCallbackMethod_SetUnemployment<WithCallbackMethod_GetWages<WithCallbackMethod_SetWages<WithCallbackMethod_GetPrices<WithCallbackMethod_SetPrices<WithCallbackMethod_GetInventory<WithCallbackMethod_SetInventory<WithCallbackMethod_GetPrice<WithCallbackMethod_SetPrice<WithCallbackMethod_GetCurrency<WithCallbackMethod_SetCurrency<WithCallbackMethod_GetInterestRate<WithCallbackMethod_SetInterestRate<WithCallbackMethod_GetBracketCutoffs<WithCallbackMethod_SetBracketCutoffs<WithCallbackMethod_GetBracketRates<WithCallbackMethod_SetBracketRates<WithCallbackMethod_CalculateTaxesDue<WithCallbackMethod_CalculateConsumption<WithCallbackMethod_CalculateInterest<WithCallbackMethod_SaveEconomyEntities<WithCallbackMethod_LoadEconomyEntities<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > CallbackService;
   typedef CallbackService ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_AddOrg : public BaseClass {
@@ -2677,6 +2837,40 @@ class OrgService final {
     }
     // disable synchronous version of this method
     ::grpc::Status CalculateInterest(::grpc::ServerContext* /*context*/, const ::city::economy::v2::CalculateInterestRequest* /*request*/, ::city::economy::v2::CalculateInterestResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_SaveEconomyEntities : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_SaveEconomyEntities() {
+      ::grpc::Service::MarkMethodGeneric(29);
+    }
+    ~WithGenericMethod_SaveEconomyEntities() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SaveEconomyEntities(::grpc::ServerContext* /*context*/, const ::city::economy::v2::SaveEconomyEntitiesRequest* /*request*/, ::city::economy::v2::SaveEconomyEntitiesResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_LoadEconomyEntities : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_LoadEconomyEntities() {
+      ::grpc::Service::MarkMethodGeneric(30);
+    }
+    ~WithGenericMethod_LoadEconomyEntities() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status LoadEconomyEntities(::grpc::ServerContext* /*context*/, const ::city::economy::v2::LoadEconomyEntitiesRequest* /*request*/, ::city::economy::v2::LoadEconomyEntitiesResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -3259,6 +3453,46 @@ class OrgService final {
     }
     void RequestCalculateInterest(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(28, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_SaveEconomyEntities : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_SaveEconomyEntities() {
+      ::grpc::Service::MarkMethodRaw(29);
+    }
+    ~WithRawMethod_SaveEconomyEntities() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SaveEconomyEntities(::grpc::ServerContext* /*context*/, const ::city::economy::v2::SaveEconomyEntitiesRequest* /*request*/, ::city::economy::v2::SaveEconomyEntitiesResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestSaveEconomyEntities(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(29, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_LoadEconomyEntities : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_LoadEconomyEntities() {
+      ::grpc::Service::MarkMethodRaw(30);
+    }
+    ~WithRawMethod_LoadEconomyEntities() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status LoadEconomyEntities(::grpc::ServerContext* /*context*/, const ::city::economy::v2::LoadEconomyEntitiesRequest* /*request*/, ::city::economy::v2::LoadEconomyEntitiesResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestLoadEconomyEntities(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(30, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -3897,6 +4131,50 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     virtual ::grpc::ServerUnaryReactor* CalculateInterest(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_SaveEconomyEntities : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_SaveEconomyEntities() {
+      ::grpc::Service::MarkMethodRawCallback(29,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->SaveEconomyEntities(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_SaveEconomyEntities() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SaveEconomyEntities(::grpc::ServerContext* /*context*/, const ::city::economy::v2::SaveEconomyEntitiesRequest* /*request*/, ::city::economy::v2::SaveEconomyEntitiesResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* SaveEconomyEntities(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_LoadEconomyEntities : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_LoadEconomyEntities() {
+      ::grpc::Service::MarkMethodRawCallback(30,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->LoadEconomyEntities(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_LoadEconomyEntities() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status LoadEconomyEntities(::grpc::ServerContext* /*context*/, const ::city::economy::v2::LoadEconomyEntitiesRequest* /*request*/, ::city::economy::v2::LoadEconomyEntitiesResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* LoadEconomyEntities(
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
@@ -4682,9 +4960,63 @@ class OrgService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedCalculateInterest(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::city::economy::v2::CalculateInterestRequest,::city::economy::v2::CalculateInterestResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_AddOrg<WithStreamedUnaryMethod_RemoveOrg<WithStreamedUnaryMethod_AddAgent<WithStreamedUnaryMethod_RemoveAgent<WithStreamedUnaryMethod_GetNominalGDP<WithStreamedUnaryMethod_SetNominalGDP<WithStreamedUnaryMethod_GetRealGDP<WithStreamedUnaryMethod_SetRealGDP<WithStreamedUnaryMethod_GetUnemployment<WithStreamedUnaryMethod_SetUnemployment<WithStreamedUnaryMethod_GetWages<WithStreamedUnaryMethod_SetWages<WithStreamedUnaryMethod_GetPrices<WithStreamedUnaryMethod_SetPrices<WithStreamedUnaryMethod_GetInventory<WithStreamedUnaryMethod_SetInventory<WithStreamedUnaryMethod_GetPrice<WithStreamedUnaryMethod_SetPrice<WithStreamedUnaryMethod_GetCurrency<WithStreamedUnaryMethod_SetCurrency<WithStreamedUnaryMethod_GetInterestRate<WithStreamedUnaryMethod_SetInterestRate<WithStreamedUnaryMethod_GetBracketCutoffs<WithStreamedUnaryMethod_SetBracketCutoffs<WithStreamedUnaryMethod_GetBracketRates<WithStreamedUnaryMethod_SetBracketRates<WithStreamedUnaryMethod_CalculateTaxesDue<WithStreamedUnaryMethod_CalculateConsumption<WithStreamedUnaryMethod_CalculateInterest<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_SaveEconomyEntities : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_SaveEconomyEntities() {
+      ::grpc::Service::MarkMethodStreamed(29,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::city::economy::v2::SaveEconomyEntitiesRequest, ::city::economy::v2::SaveEconomyEntitiesResponse>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::city::economy::v2::SaveEconomyEntitiesRequest, ::city::economy::v2::SaveEconomyEntitiesResponse>* streamer) {
+                       return this->StreamedSaveEconomyEntities(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_SaveEconomyEntities() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status SaveEconomyEntities(::grpc::ServerContext* /*context*/, const ::city::economy::v2::SaveEconomyEntitiesRequest* /*request*/, ::city::economy::v2::SaveEconomyEntitiesResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedSaveEconomyEntities(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::city::economy::v2::SaveEconomyEntitiesRequest,::city::economy::v2::SaveEconomyEntitiesResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_LoadEconomyEntities : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_LoadEconomyEntities() {
+      ::grpc::Service::MarkMethodStreamed(30,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::city::economy::v2::LoadEconomyEntitiesRequest, ::city::economy::v2::LoadEconomyEntitiesResponse>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::city::economy::v2::LoadEconomyEntitiesRequest, ::city::economy::v2::LoadEconomyEntitiesResponse>* streamer) {
+                       return this->StreamedLoadEconomyEntities(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_LoadEconomyEntities() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status LoadEconomyEntities(::grpc::ServerContext* /*context*/, const ::city::economy::v2::LoadEconomyEntitiesRequest* /*request*/, ::city::economy::v2::LoadEconomyEntitiesResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedLoadEconomyEntities(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::city::economy::v2::LoadEconomyEntitiesRequest,::city::economy::v2::LoadEconomyEntitiesResponse>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_AddOrg<WithStreamedUnaryMethod_RemoveOrg<WithStreamedUnaryMethod_AddAgent<WithStreamedUnaryMethod_RemoveAgent<WithStreamedUnaryMethod_GetNominalGDP<WithStreamedUnaryMethod_SetNominalGDP<WithStreamedUnaryMethod_GetRealGDP<WithStreamedUnaryMethod_SetRealGDP<WithStreamedUnaryMethod_GetUnemployment<WithStreamedUnaryMethod_SetUnemployment<WithStreamedUnaryMethod_GetWages<WithStreamedUnaryMethod_SetWages<WithStreamedUnaryMethod_GetPrices<WithStreamedUnaryMethod_SetPrices<WithStreamedUnaryMethod_GetInventory<WithStreamedUnaryMethod_SetInventory<WithStreamedUnaryMethod_GetPrice<WithStreamedUnaryMethod_SetPrice<WithStreamedUnaryMethod_GetCurrency<WithStreamedUnaryMethod_SetCurrency<WithStreamedUnaryMethod_GetInterestRate<WithStreamedUnaryMethod_SetInterestRate<WithStreamedUnaryMethod_GetBracketCutoffs<WithStreamedUnaryMethod_SetBracketCutoffs<WithStreamedUnaryMethod_GetBracketRates<WithStreamedUnaryMethod_SetBracketRates<WithStreamedUnaryMethod_CalculateTaxesDue<WithStreamedUnaryMethod_CalculateConsumption<WithStreamedUnaryMethod_CalculateInterest<WithStreamedUnaryMethod_SaveEconomyEntities<WithStreamedUnaryMethod_LoadEconomyEntities<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_AddOrg<WithStreamedUnaryMethod_RemoveOrg<WithStreamedUnaryMethod_AddAgent<WithStreamedUnaryMethod_RemoveAgent<WithStreamedUnaryMethod_GetNominalGDP<WithStreamedUnaryMethod_SetNominalGDP<WithStreamedUnaryMethod_GetRealGDP<WithStreamedUnaryMethod_SetRealGDP<WithStreamedUnaryMethod_GetUnemployment<WithStreamedUnaryMethod_SetUnemployment<WithStreamedUnaryMethod_GetWages<WithStreamedUnaryMethod_SetWages<WithStreamedUnaryMethod_GetPrices<WithStreamedUnaryMethod_SetPrices<WithStreamedUnaryMethod_GetInventory<WithStreamedUnaryMethod_SetInventory<WithStreamedUnaryMethod_GetPrice<WithStreamedUnaryMethod_SetPrice<WithStreamedUnaryMethod_GetCurrency<WithStreamedUnaryMethod_SetCurrency<WithStreamedUnaryMethod_GetInterestRate<WithStreamedUnaryMethod_SetInterestRate<WithStreamedUnaryMethod_GetBracketCutoffs<WithStreamedUnaryMethod_SetBracketCutoffs<WithStreamedUnaryMethod_GetBracketRates<WithStreamedUnaryMethod_SetBracketRates<WithStreamedUnaryMethod_CalculateTaxesDue<WithStreamedUnaryMethod_CalculateConsumption<WithStreamedUnaryMethod_CalculateInterest<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_AddOrg<WithStreamedUnaryMethod_RemoveOrg<WithStreamedUnaryMethod_AddAgent<WithStreamedUnaryMethod_RemoveAgent<WithStreamedUnaryMethod_GetNominalGDP<WithStreamedUnaryMethod_SetNominalGDP<WithStreamedUnaryMethod_GetRealGDP<WithStreamedUnaryMethod_SetRealGDP<WithStreamedUnaryMethod_GetUnemployment<WithStreamedUnaryMethod_SetUnemployment<WithStreamedUnaryMethod_GetWages<WithStreamedUnaryMethod_SetWages<WithStreamedUnaryMethod_GetPrices<WithStreamedUnaryMethod_SetPrices<WithStreamedUnaryMethod_GetInventory<WithStreamedUnaryMethod_SetInventory<WithStreamedUnaryMethod_GetPrice<WithStreamedUnaryMethod_SetPrice<WithStreamedUnaryMethod_GetCurrency<WithStreamedUnaryMethod_SetCurrency<WithStreamedUnaryMethod_GetInterestRate<WithStreamedUnaryMethod_SetInterestRate<WithStreamedUnaryMethod_GetBracketCutoffs<WithStreamedUnaryMethod_SetBracketCutoffs<WithStreamedUnaryMethod_GetBracketRates<WithStreamedUnaryMethod_SetBracketRates<WithStreamedUnaryMethod_CalculateTaxesDue<WithStreamedUnaryMethod_CalculateConsumption<WithStreamedUnaryMethod_CalculateInterest<WithStreamedUnaryMethod_SaveEconomyEntities<WithStreamedUnaryMethod_LoadEconomyEntities<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedService;
 };
 
 }  // namespace v2

@@ -171,6 +171,8 @@ export declare class Agent extends Message<Agent> {
   id: number;
 
   /**
+   * currency
+   *
    * @generated from field: optional float currency = 2;
    */
   currency?: number;
@@ -188,5 +190,34 @@ export declare class Agent extends Message<Agent> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Agent;
 
   static equals(a: Agent | PlainMessage<Agent> | undefined, b: Agent | PlainMessage<Agent> | undefined): boolean;
+}
+
+/**
+ * @generated from message city.economy.v2.EconomyEntities
+ */
+export declare class EconomyEntities extends Message<EconomyEntities> {
+  /**
+   * @generated from field: repeated city.economy.v2.Org orgs = 1;
+   */
+  orgs: Org[];
+
+  /**
+   * @generated from field: repeated city.economy.v2.Agent agents = 2;
+   */
+  agents: Agent[];
+
+  constructor(data?: PartialMessage<EconomyEntities>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.economy.v2.EconomyEntities";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EconomyEntities;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EconomyEntities;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EconomyEntities;
+
+  static equals(a: EconomyEntities | PlainMessage<EconomyEntities> | undefined, b: EconomyEntities | PlainMessage<EconomyEntities> | undefined): boolean;
 }
 

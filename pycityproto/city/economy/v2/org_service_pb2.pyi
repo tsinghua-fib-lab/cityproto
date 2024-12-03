@@ -414,15 +414,17 @@ class SetBracketRatesResponse(_message.Message):
         ...
 
 class CalculateTaxesDueRequest(_message.Message):
-    __slots__ = ['government_id', 'agent_ids', 'incomes']
+    __slots__ = ['government_id', 'agent_ids', 'incomes', 'enable_redistribution']
     GOVERNMENT_ID_FIELD_NUMBER: _ClassVar[int]
     AGENT_IDS_FIELD_NUMBER: _ClassVar[int]
     INCOMES_FIELD_NUMBER: _ClassVar[int]
+    ENABLE_REDISTRIBUTION_FIELD_NUMBER: _ClassVar[int]
     government_id: int
     agent_ids: _containers.RepeatedScalarFieldContainer[int]
     incomes: _containers.RepeatedScalarFieldContainer[float]
+    enable_redistribution: bool
 
-    def __init__(self, government_id: _Optional[int]=..., agent_ids: _Optional[_Iterable[int]]=..., incomes: _Optional[_Iterable[float]]=...) -> None:
+    def __init__(self, government_id: _Optional[int]=..., agent_ids: _Optional[_Iterable[int]]=..., incomes: _Optional[_Iterable[float]]=..., enable_redistribution: bool=...) -> None:
         ...
 
 class CalculateTaxesDueResponse(_message.Message):
@@ -475,4 +477,40 @@ class CalculateInterestResponse(_message.Message):
     updated_currencies: _containers.RepeatedScalarFieldContainer[float]
 
     def __init__(self, total_interest: _Optional[float]=..., updated_currencies: _Optional[_Iterable[float]]=...) -> None:
+        ...
+
+class SaveEconomyEntitiesRequest(_message.Message):
+    __slots__ = ['file_path']
+    FILE_PATH_FIELD_NUMBER: _ClassVar[int]
+    file_path: str
+
+    def __init__(self, file_path: _Optional[str]=...) -> None:
+        ...
+
+class SaveEconomyEntitiesResponse(_message.Message):
+    __slots__ = ['agent_ids', 'org_ids']
+    AGENT_IDS_FIELD_NUMBER: _ClassVar[int]
+    ORG_IDS_FIELD_NUMBER: _ClassVar[int]
+    agent_ids: _containers.RepeatedScalarFieldContainer[int]
+    org_ids: _containers.RepeatedScalarFieldContainer[int]
+
+    def __init__(self, agent_ids: _Optional[_Iterable[int]]=..., org_ids: _Optional[_Iterable[int]]=...) -> None:
+        ...
+
+class LoadEconomyEntitiesRequest(_message.Message):
+    __slots__ = ['file_path']
+    FILE_PATH_FIELD_NUMBER: _ClassVar[int]
+    file_path: str
+
+    def __init__(self, file_path: _Optional[str]=...) -> None:
+        ...
+
+class LoadEconomyEntitiesResponse(_message.Message):
+    __slots__ = ['agent_ids', 'org_ids']
+    AGENT_IDS_FIELD_NUMBER: _ClassVar[int]
+    ORG_IDS_FIELD_NUMBER: _ClassVar[int]
+    agent_ids: _containers.RepeatedScalarFieldContainer[int]
+    org_ids: _containers.RepeatedScalarFieldContainer[int]
+
+    def __init__(self, agent_ids: _Optional[_Iterable[int]]=..., org_ids: _Optional[_Iterable[int]]=...) -> None:
         ...

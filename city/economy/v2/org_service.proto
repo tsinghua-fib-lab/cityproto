@@ -68,6 +68,10 @@ service OrgService {
   rpc CalculateConsumption(CalculateConsumptionRequest) returns (CalculateConsumptionResponse);
   // Consumption
   rpc CalculateInterest(CalculateInterestRequest) returns (CalculateInterestResponse);
+  // Save
+  rpc SaveEconomyEntities(SaveEconomyEntitiesRequest) returns (SaveEconomyEntitiesResponse);
+  // Load
+  rpc LoadEconomyEntities(LoadEconomyEntitiesRequest) returns (LoadEconomyEntitiesResponse);
 }
 
 message AddOrgRequest {
@@ -241,6 +245,8 @@ message CalculateTaxesDueRequest {
   repeated int32 agent_ids = 2;
   // income of agents who needs to pay tax, corresponds one-to-one with `agent_ids` by index
   repeated float incomes = 3;
+  // Whether redistribute the taxes to all agents or not
+  bool enable_redistribution = 4;
 }
 
 message CalculateTaxesDueResponse {
@@ -280,4 +286,22 @@ message CalculateInterestResponse {
   float total_interest = 1;
   // currencies with interest of each agents, corresponds one-to-one with `agent_ids` by index
   repeated float updated_currencies = 2;
+}
+
+message SaveEconomyEntitiesRequest {
+  string file_path = 1;
+}
+
+message SaveEconomyEntitiesResponse {
+  repeated int32 agent_ids = 1;
+  repeated int32 org_ids = 2;
+}
+
+message LoadEconomyEntitiesRequest {
+  string file_path = 1;
+}
+
+message LoadEconomyEntitiesResponse {
+  repeated int32 agent_ids = 1;
+  repeated int32 org_ids = 2;
 }

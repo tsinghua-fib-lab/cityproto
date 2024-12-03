@@ -1245,14 +1245,25 @@ export declare class CalculateTaxesDueRequest extends Message<CalculateTaxesDueR
   governmentId: number;
 
   /**
+   * id of agents who needs to pay tax
+   *
    * @generated from field: repeated int32 agent_ids = 2;
    */
   agentIds: number[];
 
   /**
+   * income of agents who needs to pay tax, corresponds one-to-one with `agent_ids` by index
+   *
    * @generated from field: repeated float incomes = 3;
    */
   incomes: number[];
+
+  /**
+   * Whether redistribute the taxes to all agents or not
+   *
+   * @generated from field: bool enable_redistribution = 4;
+   */
+  enableRedistribution: boolean;
 
   constructor(data?: PartialMessage<CalculateTaxesDueRequest>);
 
@@ -1274,11 +1285,15 @@ export declare class CalculateTaxesDueRequest extends Message<CalculateTaxesDueR
  */
 export declare class CalculateTaxesDueResponse extends Message<CalculateTaxesDueResponse> {
   /**
+   * total taxes from agents
+   *
    * @generated from field: float taxes_due = 1;
    */
   taxesDue: number;
 
   /**
+   * after-tax income of agents, corresponds one-to-one with `agent_ids` by index
+   *
    * @generated from field: repeated float updated_incomes = 2;
    */
   updatedIncomes: number[];
@@ -1308,11 +1323,15 @@ export declare class CalculateConsumptionRequest extends Message<CalculateConsum
   firmId: number;
 
   /**
+   * id of agents who has demand to consume at this firm
+   *
    * @generated from field: repeated int32 agent_ids = 2;
    */
   agentIds: number[];
 
   /**
+   * item demand number of each agents, corresponds one-to-one with `agent_ids` by index
+   *
    * @generated from field: repeated int32 demands = 3;
    */
   demands: number[];
@@ -1337,11 +1356,15 @@ export declare class CalculateConsumptionRequest extends Message<CalculateConsum
  */
 export declare class CalculateConsumptionResponse extends Message<CalculateConsumptionResponse> {
   /**
+   * the item remaining count
+   *
    * @generated from field: int32 remain_inventory = 1;
    */
   remainInventory: number;
 
   /**
+   * currencies after consumption of each agents, corresponds one-to-one with `agent_ids` by index
+   *
    * @generated from field: repeated float updated_currencies = 2;
    */
   updatedCurrencies: number[];
@@ -1371,6 +1394,8 @@ export declare class CalculateInterestRequest extends Message<CalculateInterestR
   bankId: number;
 
   /**
+   * id of agents who has currency stored in the bank
+   *
    * @generated from field: repeated int32 agent_ids = 2;
    */
   agentIds: number[];
@@ -1395,11 +1420,15 @@ export declare class CalculateInterestRequest extends Message<CalculateInterestR
  */
 export declare class CalculateInterestResponse extends Message<CalculateInterestResponse> {
   /**
+   * total interest that the agents got from the bank
+   *
    * @generated from field: float total_interest = 1;
    */
   totalInterest: number;
 
   /**
+   * currencies with interest of each agents, corresponds one-to-one with `agent_ids` by index
+   *
    * @generated from field: repeated float updated_currencies = 2;
    */
   updatedCurrencies: number[];
@@ -1417,5 +1446,111 @@ export declare class CalculateInterestResponse extends Message<CalculateInterest
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CalculateInterestResponse;
 
   static equals(a: CalculateInterestResponse | PlainMessage<CalculateInterestResponse> | undefined, b: CalculateInterestResponse | PlainMessage<CalculateInterestResponse> | undefined): boolean;
+}
+
+/**
+ * @generated from message city.economy.v2.SaveEconomyEntitiesRequest
+ */
+export declare class SaveEconomyEntitiesRequest extends Message<SaveEconomyEntitiesRequest> {
+  /**
+   * @generated from field: string file_path = 1;
+   */
+  filePath: string;
+
+  constructor(data?: PartialMessage<SaveEconomyEntitiesRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.economy.v2.SaveEconomyEntitiesRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveEconomyEntitiesRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveEconomyEntitiesRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveEconomyEntitiesRequest;
+
+  static equals(a: SaveEconomyEntitiesRequest | PlainMessage<SaveEconomyEntitiesRequest> | undefined, b: SaveEconomyEntitiesRequest | PlainMessage<SaveEconomyEntitiesRequest> | undefined): boolean;
+}
+
+/**
+ * @generated from message city.economy.v2.SaveEconomyEntitiesResponse
+ */
+export declare class SaveEconomyEntitiesResponse extends Message<SaveEconomyEntitiesResponse> {
+  /**
+   * @generated from field: repeated int32 agent_ids = 1;
+   */
+  agentIds: number[];
+
+  /**
+   * @generated from field: repeated int32 org_ids = 2;
+   */
+  orgIds: number[];
+
+  constructor(data?: PartialMessage<SaveEconomyEntitiesResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.economy.v2.SaveEconomyEntitiesResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveEconomyEntitiesResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveEconomyEntitiesResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveEconomyEntitiesResponse;
+
+  static equals(a: SaveEconomyEntitiesResponse | PlainMessage<SaveEconomyEntitiesResponse> | undefined, b: SaveEconomyEntitiesResponse | PlainMessage<SaveEconomyEntitiesResponse> | undefined): boolean;
+}
+
+/**
+ * @generated from message city.economy.v2.LoadEconomyEntitiesRequest
+ */
+export declare class LoadEconomyEntitiesRequest extends Message<LoadEconomyEntitiesRequest> {
+  /**
+   * @generated from field: string file_path = 1;
+   */
+  filePath: string;
+
+  constructor(data?: PartialMessage<LoadEconomyEntitiesRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.economy.v2.LoadEconomyEntitiesRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LoadEconomyEntitiesRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LoadEconomyEntitiesRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LoadEconomyEntitiesRequest;
+
+  static equals(a: LoadEconomyEntitiesRequest | PlainMessage<LoadEconomyEntitiesRequest> | undefined, b: LoadEconomyEntitiesRequest | PlainMessage<LoadEconomyEntitiesRequest> | undefined): boolean;
+}
+
+/**
+ * @generated from message city.economy.v2.LoadEconomyEntitiesResponse
+ */
+export declare class LoadEconomyEntitiesResponse extends Message<LoadEconomyEntitiesResponse> {
+  /**
+   * @generated from field: repeated int32 agent_ids = 1;
+   */
+  agentIds: number[];
+
+  /**
+   * @generated from field: repeated int32 org_ids = 2;
+   */
+  orgIds: number[];
+
+  constructor(data?: PartialMessage<LoadEconomyEntitiesResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.economy.v2.LoadEconomyEntitiesResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LoadEconomyEntitiesResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LoadEconomyEntitiesResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LoadEconomyEntitiesResponse;
+
+  static equals(a: LoadEconomyEntitiesResponse | PlainMessage<LoadEconomyEntitiesResponse> | undefined, b: LoadEconomyEntitiesResponse | PlainMessage<LoadEconomyEntitiesResponse> | undefined): boolean;
 }
 

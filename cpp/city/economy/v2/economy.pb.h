@@ -51,6 +51,9 @@ namespace v2 {
 class Agent;
 struct AgentDefaultTypeInternal;
 extern AgentDefaultTypeInternal _Agent_default_instance_;
+class EconomyEntities;
+struct EconomyEntitiesDefaultTypeInternal;
+extern EconomyEntitiesDefaultTypeInternal _EconomyEntities_default_instance_;
 class Org;
 struct OrgDefaultTypeInternal;
 extern OrgDefaultTypeInternal _Org_default_instance_;
@@ -59,6 +62,7 @@ extern OrgDefaultTypeInternal _Org_default_instance_;
 }  // namespace city
 PROTOBUF_NAMESPACE_OPEN
 template<> ::city::economy::v2::Agent* Arena::CreateMaybeMessage<::city::economy::v2::Agent>(Arena*);
+template<> ::city::economy::v2::EconomyEntities* Arena::CreateMaybeMessage<::city::economy::v2::EconomyEntities>(Arena*);
 template<> ::city::economy::v2::Org* Arena::CreateMaybeMessage<::city::economy::v2::Org>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace city {
@@ -645,6 +649,183 @@ class Agent final :
   union { Impl_ _impl_; };
   friend struct ::TableStruct_city_2feconomy_2fv2_2feconomy_2eproto;
 };
+// -------------------------------------------------------------------
+
+class EconomyEntities final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.economy.v2.EconomyEntities) */ {
+ public:
+  inline EconomyEntities() : EconomyEntities(nullptr) {}
+  ~EconomyEntities() override;
+  explicit PROTOBUF_CONSTEXPR EconomyEntities(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  EconomyEntities(const EconomyEntities& from);
+  EconomyEntities(EconomyEntities&& from) noexcept
+    : EconomyEntities() {
+    *this = ::std::move(from);
+  }
+
+  inline EconomyEntities& operator=(const EconomyEntities& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline EconomyEntities& operator=(EconomyEntities&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const EconomyEntities& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const EconomyEntities* internal_default_instance() {
+    return reinterpret_cast<const EconomyEntities*>(
+               &_EconomyEntities_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    2;
+
+  friend void swap(EconomyEntities& a, EconomyEntities& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(EconomyEntities* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(EconomyEntities* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  EconomyEntities* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<EconomyEntities>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const EconomyEntities& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const EconomyEntities& from) {
+    EconomyEntities::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(EconomyEntities* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.economy.v2.EconomyEntities";
+  }
+  protected:
+  explicit EconomyEntities(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kOrgsFieldNumber = 1,
+    kAgentsFieldNumber = 2,
+  };
+  // repeated .city.economy.v2.Org orgs = 1 [json_name = "orgs"];
+  int orgs_size() const;
+  private:
+  int _internal_orgs_size() const;
+  public:
+  void clear_orgs();
+  ::city::economy::v2::Org* mutable_orgs(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::economy::v2::Org >*
+      mutable_orgs();
+  private:
+  const ::city::economy::v2::Org& _internal_orgs(int index) const;
+  ::city::economy::v2::Org* _internal_add_orgs();
+  public:
+  const ::city::economy::v2::Org& orgs(int index) const;
+  ::city::economy::v2::Org* add_orgs();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::economy::v2::Org >&
+      orgs() const;
+
+  // repeated .city.economy.v2.Agent agents = 2 [json_name = "agents"];
+  int agents_size() const;
+  private:
+  int _internal_agents_size() const;
+  public:
+  void clear_agents();
+  ::city::economy::v2::Agent* mutable_agents(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::economy::v2::Agent >*
+      mutable_agents();
+  private:
+  const ::city::economy::v2::Agent& _internal_agents(int index) const;
+  ::city::economy::v2::Agent* _internal_add_agents();
+  public:
+  const ::city::economy::v2::Agent& agents(int index) const;
+  ::city::economy::v2::Agent* add_agents();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::economy::v2::Agent >&
+      agents() const;
+
+  // @@protoc_insertion_point(class_scope:city.economy.v2.EconomyEntities)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::economy::v2::Org > orgs_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::economy::v2::Agent > agents_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_city_2feconomy_2fv2_2feconomy_2eproto;
+};
 // ===================================================================
 
 
@@ -1189,9 +1370,95 @@ inline void Agent::set_currency(float value) {
   // @@protoc_insertion_point(field_set:city.economy.v2.Agent.currency)
 }
 
+// -------------------------------------------------------------------
+
+// EconomyEntities
+
+// repeated .city.economy.v2.Org orgs = 1 [json_name = "orgs"];
+inline int EconomyEntities::_internal_orgs_size() const {
+  return _impl_.orgs_.size();
+}
+inline int EconomyEntities::orgs_size() const {
+  return _internal_orgs_size();
+}
+inline void EconomyEntities::clear_orgs() {
+  _impl_.orgs_.Clear();
+}
+inline ::city::economy::v2::Org* EconomyEntities::mutable_orgs(int index) {
+  // @@protoc_insertion_point(field_mutable:city.economy.v2.EconomyEntities.orgs)
+  return _impl_.orgs_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::economy::v2::Org >*
+EconomyEntities::mutable_orgs() {
+  // @@protoc_insertion_point(field_mutable_list:city.economy.v2.EconomyEntities.orgs)
+  return &_impl_.orgs_;
+}
+inline const ::city::economy::v2::Org& EconomyEntities::_internal_orgs(int index) const {
+  return _impl_.orgs_.Get(index);
+}
+inline const ::city::economy::v2::Org& EconomyEntities::orgs(int index) const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.EconomyEntities.orgs)
+  return _internal_orgs(index);
+}
+inline ::city::economy::v2::Org* EconomyEntities::_internal_add_orgs() {
+  return _impl_.orgs_.Add();
+}
+inline ::city::economy::v2::Org* EconomyEntities::add_orgs() {
+  ::city::economy::v2::Org* _add = _internal_add_orgs();
+  // @@protoc_insertion_point(field_add:city.economy.v2.EconomyEntities.orgs)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::economy::v2::Org >&
+EconomyEntities::orgs() const {
+  // @@protoc_insertion_point(field_list:city.economy.v2.EconomyEntities.orgs)
+  return _impl_.orgs_;
+}
+
+// repeated .city.economy.v2.Agent agents = 2 [json_name = "agents"];
+inline int EconomyEntities::_internal_agents_size() const {
+  return _impl_.agents_.size();
+}
+inline int EconomyEntities::agents_size() const {
+  return _internal_agents_size();
+}
+inline void EconomyEntities::clear_agents() {
+  _impl_.agents_.Clear();
+}
+inline ::city::economy::v2::Agent* EconomyEntities::mutable_agents(int index) {
+  // @@protoc_insertion_point(field_mutable:city.economy.v2.EconomyEntities.agents)
+  return _impl_.agents_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::economy::v2::Agent >*
+EconomyEntities::mutable_agents() {
+  // @@protoc_insertion_point(field_mutable_list:city.economy.v2.EconomyEntities.agents)
+  return &_impl_.agents_;
+}
+inline const ::city::economy::v2::Agent& EconomyEntities::_internal_agents(int index) const {
+  return _impl_.agents_.Get(index);
+}
+inline const ::city::economy::v2::Agent& EconomyEntities::agents(int index) const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.EconomyEntities.agents)
+  return _internal_agents(index);
+}
+inline ::city::economy::v2::Agent* EconomyEntities::_internal_add_agents() {
+  return _impl_.agents_.Add();
+}
+inline ::city::economy::v2::Agent* EconomyEntities::add_agents() {
+  ::city::economy::v2::Agent* _add = _internal_add_agents();
+  // @@protoc_insertion_point(field_add:city.economy.v2.EconomyEntities.agents)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::economy::v2::Agent >&
+EconomyEntities::agents() const {
+  // @@protoc_insertion_point(field_list:city.economy.v2.EconomyEntities.agents)
+  return _impl_.agents_;
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 

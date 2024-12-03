@@ -661,6 +661,10 @@
                 </li>
               
                 <li>
+                  <a href="#city.economy.v2.EconomyEntities"><span class="badge">M</span>EconomyEntities</a>
+                </li>
+              
+                <li>
                   <a href="#city.economy.v2.Org"><span class="badge">M</span>Org</a>
                 </li>
               
@@ -808,6 +812,14 @@
                 </li>
               
                 <li>
+                  <a href="#city.economy.v2.LoadEconomyEntitiesRequest"><span class="badge">M</span>LoadEconomyEntitiesRequest</a>
+                </li>
+              
+                <li>
+                  <a href="#city.economy.v2.LoadEconomyEntitiesResponse"><span class="badge">M</span>LoadEconomyEntitiesResponse</a>
+                </li>
+              
+                <li>
                   <a href="#city.economy.v2.RemoveAgentRequest"><span class="badge">M</span>RemoveAgentRequest</a>
                 </li>
               
@@ -821,6 +833,14 @@
               
                 <li>
                   <a href="#city.economy.v2.RemoveOrgResponse"><span class="badge">M</span>RemoveOrgResponse</a>
+                </li>
+              
+                <li>
+                  <a href="#city.economy.v2.SaveEconomyEntitiesRequest"><span class="badge">M</span>SaveEconomyEntitiesRequest</a>
+                </li>
+              
+                <li>
+                  <a href="#city.economy.v2.SaveEconomyEntitiesResponse"><span class="badge">M</span>SaveEconomyEntitiesResponse</a>
                 </li>
               
                 <li>
@@ -5517,6 +5537,37 @@ salary如果未设定则沿用原来的薪水，否则使用新的薪水 </p></t
                   <td>currency</td>
                   <td><a href="#float">float</a></td>
                   <td>optional</td>
+                  <td><p>currency </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="city.economy.v2.EconomyEntities">EconomyEntities</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>orgs</td>
+                  <td><a href="#city.economy.v2.Org">Org</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>agents</td>
+                  <td><a href="#city.economy.v2.Agent">Agent</a></td>
+                  <td>repeated</td>
                   <td><p> </p></td>
                 </tr>
               
@@ -5780,14 +5831,14 @@ government</p></td>
                   <td>agent_ids</td>
                   <td><a href="#int32">int32</a></td>
                   <td>repeated</td>
-                  <td><p> </p></td>
+                  <td><p>id of agents who has demand to consume at this firm </p></td>
                 </tr>
               
                 <tr>
                   <td>demands</td>
                   <td><a href="#int32">int32</a></td>
                   <td>repeated</td>
-                  <td><p> </p></td>
+                  <td><p>item demand number of each agents, corresponds one-to-one with `agent_ids` by index </p></td>
                 </tr>
               
             </tbody>
@@ -5811,14 +5862,14 @@ government</p></td>
                   <td>remain_inventory</td>
                   <td><a href="#int32">int32</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>the item remaining count </p></td>
                 </tr>
               
                 <tr>
                   <td>updated_currencies</td>
                   <td><a href="#float">float</a></td>
                   <td>repeated</td>
-                  <td><p> </p></td>
+                  <td><p>currencies after consumption of each agents, corresponds one-to-one with `agent_ids` by index </p></td>
                 </tr>
               
             </tbody>
@@ -5849,7 +5900,7 @@ government</p></td>
                   <td>agent_ids</td>
                   <td><a href="#int32">int32</a></td>
                   <td>repeated</td>
-                  <td><p> </p></td>
+                  <td><p>id of agents who has currency stored in the bank </p></td>
                 </tr>
               
             </tbody>
@@ -5873,14 +5924,14 @@ government</p></td>
                   <td>total_interest</td>
                   <td><a href="#float">float</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>total interest that the agents got from the bank </p></td>
                 </tr>
               
                 <tr>
                   <td>updated_currencies</td>
                   <td><a href="#float">float</a></td>
                   <td>repeated</td>
-                  <td><p> </p></td>
+                  <td><p>currencies with interest of each agents, corresponds one-to-one with `agent_ids` by index </p></td>
                 </tr>
               
             </tbody>
@@ -5911,14 +5962,21 @@ government</p></td>
                   <td>agent_ids</td>
                   <td><a href="#int32">int32</a></td>
                   <td>repeated</td>
-                  <td><p> </p></td>
+                  <td><p>id of agents who needs to pay tax </p></td>
                 </tr>
               
                 <tr>
                   <td>incomes</td>
                   <td><a href="#float">float</a></td>
                   <td>repeated</td>
-                  <td><p> </p></td>
+                  <td><p>income of agents who needs to pay tax, corresponds one-to-one with `agent_ids` by index </p></td>
+                </tr>
+              
+                <tr>
+                  <td>enable_redistribution</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p>Whether redistribute the taxes to all agents or not </p></td>
                 </tr>
               
             </tbody>
@@ -5942,14 +6000,14 @@ government</p></td>
                   <td>taxes_due</td>
                   <td><a href="#float">float</a></td>
                   <td></td>
-                  <td><p> </p></td>
+                  <td><p>total taxes from agents </p></td>
                 </tr>
               
                 <tr>
                   <td>updated_incomes</td>
                   <td><a href="#float">float</a></td>
                   <td>repeated</td>
-                  <td><p> </p></td>
+                  <td><p>after-tax income of agents, corresponds one-to-one with `agent_ids` by index </p></td>
                 </tr>
               
             </tbody>
@@ -6487,6 +6545,61 @@ government</p></td>
 
         
       
+        <h3 id="city.economy.v2.LoadEconomyEntitiesRequest">LoadEconomyEntitiesRequest</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>file_path</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="city.economy.v2.LoadEconomyEntitiesResponse">LoadEconomyEntitiesResponse</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>agent_ids</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>org_ids</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
         <h3 id="city.economy.v2.RemoveAgentRequest">RemoveAgentRequest</h3>
         <p></p>
 
@@ -6546,6 +6659,61 @@ government</p></td>
         <p></p>
 
         
+
+        
+      
+        <h3 id="city.economy.v2.SaveEconomyEntitiesRequest">SaveEconomyEntitiesRequest</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>file_path</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="city.economy.v2.SaveEconomyEntitiesResponse">SaveEconomyEntitiesResponse</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>agent_ids</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>org_ids</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
 
         
       
@@ -6985,28 +7153,32 @@ government</p></td>
                 <td>AddOrg</td>
                 <td><a href="#city.economy.v2.AddOrgRequest">AddOrgRequest</a></td>
                 <td><a href="#city.economy.v2.AddOrgResponse">AddOrgResponse</a></td>
-                <td><p>添加组织</p></td>
+                <td><p>添加组织
+add org</p></td>
               </tr>
             
               <tr>
                 <td>RemoveOrg</td>
                 <td><a href="#city.economy.v2.RemoveOrgRequest">RemoveOrgRequest</a></td>
                 <td><a href="#city.economy.v2.RemoveOrgResponse">RemoveOrgResponse</a></td>
-                <td><p>移除组织</p></td>
+                <td><p>移除组织
+remove org</p></td>
               </tr>
             
               <tr>
                 <td>AddAgent</td>
                 <td><a href="#city.economy.v2.AddAgentRequest">AddAgentRequest</a></td>
                 <td><a href="#city.economy.v2.AddAgentResponse">AddAgentResponse</a></td>
-                <td><p>添加Agent</p></td>
+                <td><p>添加Agent
+add agent</p></td>
               </tr>
             
               <tr>
                 <td>RemoveAgent</td>
                 <td><a href="#city.economy.v2.RemoveAgentRequest">RemoveAgentRequest</a></td>
                 <td><a href="#city.economy.v2.RemoveAgentResponse">RemoveAgentResponse</a></td>
-                <td><p>移除Agent</p></td>
+                <td><p>移除Agent
+remove agent</p></td>
               </tr>
             
               <tr>
@@ -7182,6 +7354,20 @@ government</p></td>
                 <td><a href="#city.economy.v2.CalculateInterestRequest">CalculateInterestRequest</a></td>
                 <td><a href="#city.economy.v2.CalculateInterestResponse">CalculateInterestResponse</a></td>
                 <td><p>Consumption</p></td>
+              </tr>
+            
+              <tr>
+                <td>SaveEconomyEntities</td>
+                <td><a href="#city.economy.v2.SaveEconomyEntitiesRequest">SaveEconomyEntitiesRequest</a></td>
+                <td><a href="#city.economy.v2.SaveEconomyEntitiesResponse">SaveEconomyEntitiesResponse</a></td>
+                <td><p>Save</p></td>
+              </tr>
+            
+              <tr>
+                <td>LoadEconomyEntities</td>
+                <td><a href="#city.economy.v2.LoadEconomyEntitiesRequest">LoadEconomyEntitiesRequest</a></td>
+                <td><a href="#city.economy.v2.LoadEconomyEntitiesResponse">LoadEconomyEntitiesResponse</a></td>
+                <td><p>Load</p></td>
               </tr>
             
           </tbody>

@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AddAgentRequest, AddAgentResponse, AddOrgRequest, AddOrgResponse, CalculateConsumptionRequest, CalculateConsumptionResponse, CalculateInterestRequest, CalculateInterestResponse, CalculateTaxesDueRequest, CalculateTaxesDueResponse, GetBracketCutoffsRequest, GetBracketCutoffsResponse, GetBracketRatesRequest, GetBracketRatesResponse, GetCurrencyRequest, GetCurrencyResponse, GetInterestRateRequest, GetInterestRateResponse, GetInventoryRequest, GetInventoryResponse, GetNominalGDPRequest, GetNominalGDPResponse, GetPriceRequest, GetPriceResponse, GetPricesRequest, GetPricesResponse, GetRealGDPRequest, GetRealGDPResponse, GetUnemploymentRequest, GetUnemploymentResponse, GetWagesRequest, GetWagesResponse, RemoveAgentRequest, RemoveAgentResponse, RemoveOrgRequest, RemoveOrgResponse, SetBracketCutoffsRequest, SetBracketCutoffsResponse, SetBracketRatesRequest, SetBracketRatesResponse, SetCurrencyRequest, SetCurrencyResponse, SetInterestRateRequest, SetInterestRateResponse, SetInventoryRequest, SetInventoryResponse, SetNominalGDPRequest, SetNominalGDPResponse, SetPriceRequest, SetPriceResponse, SetPricesRequest, SetPricesResponse, SetRealGDPRequest, SetRealGDPResponse, SetUnemploymentRequest, SetUnemploymentResponse, SetWagesRequest, SetWagesResponse } from "./org_service_pb.js";
+import { AddAgentRequest, AddAgentResponse, AddOrgRequest, AddOrgResponse, CalculateConsumptionRequest, CalculateConsumptionResponse, CalculateInterestRequest, CalculateInterestResponse, CalculateTaxesDueRequest, CalculateTaxesDueResponse, GetBracketCutoffsRequest, GetBracketCutoffsResponse, GetBracketRatesRequest, GetBracketRatesResponse, GetCurrencyRequest, GetCurrencyResponse, GetInterestRateRequest, GetInterestRateResponse, GetInventoryRequest, GetInventoryResponse, GetNominalGDPRequest, GetNominalGDPResponse, GetPriceRequest, GetPriceResponse, GetPricesRequest, GetPricesResponse, GetRealGDPRequest, GetRealGDPResponse, GetUnemploymentRequest, GetUnemploymentResponse, GetWagesRequest, GetWagesResponse, LoadEconomyEntitiesRequest, LoadEconomyEntitiesResponse, RemoveAgentRequest, RemoveAgentResponse, RemoveOrgRequest, RemoveOrgResponse, SaveEconomyEntitiesRequest, SaveEconomyEntitiesResponse, SetBracketCutoffsRequest, SetBracketCutoffsResponse, SetBracketRatesRequest, SetBracketRatesResponse, SetCurrencyRequest, SetCurrencyResponse, SetInterestRateRequest, SetInterestRateResponse, SetInventoryRequest, SetInventoryResponse, SetNominalGDPRequest, SetNominalGDPResponse, SetPriceRequest, SetPriceResponse, SetPricesRequest, SetPricesResponse, SetRealGDPRequest, SetRealGDPResponse, SetUnemploymentRequest, SetUnemploymentResponse, SetWagesRequest, SetWagesResponse } from "./org_service_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -16,6 +16,7 @@ export const OrgService = {
   methods: {
     /**
      * 添加组织
+     * add org
      *
      * @generated from rpc city.economy.v2.OrgService.AddOrg
      */
@@ -27,6 +28,7 @@ export const OrgService = {
     },
     /**
      * 移除组织
+     * remove org
      *
      * @generated from rpc city.economy.v2.OrgService.RemoveOrg
      */
@@ -38,6 +40,7 @@ export const OrgService = {
     },
     /**
      * 添加Agent
+     * add agent
      *
      * @generated from rpc city.economy.v2.OrgService.AddAgent
      */
@@ -49,6 +52,7 @@ export const OrgService = {
     },
     /**
      * 移除Agent
+     * remove agent
      *
      * @generated from rpc city.economy.v2.OrgService.RemoveAgent
      */
@@ -309,6 +313,28 @@ export const OrgService = {
       name: "CalculateInterest",
       I: CalculateInterestRequest,
       O: CalculateInterestResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Save
+     *
+     * @generated from rpc city.economy.v2.OrgService.SaveEconomyEntities
+     */
+    saveEconomyEntities: {
+      name: "SaveEconomyEntities",
+      I: SaveEconomyEntitiesRequest,
+      O: SaveEconomyEntitiesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Load
+     *
+     * @generated from rpc city.economy.v2.OrgService.LoadEconomyEntities
+     */
+    loadEconomyEntities: {
+      name: "LoadEconomyEntities",
+      I: LoadEconomyEntitiesRequest,
+      O: LoadEconomyEntitiesResponse,
       kind: MethodKind.Unary,
     },
   }

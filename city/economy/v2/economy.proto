@@ -63,3 +63,8 @@ message Agent {
   // currency
   optional float currency = 2;
 }
+
+message EconomyEntities {
+  repeated Org orgs = 1;
+  repeated Agent agents = 2;
+}

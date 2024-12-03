@@ -112,8 +112,8 @@ type Event struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Type  EventType `protobuf:"varint,1,opt,name=type,proto3,enum=city.event.v1.EventType" json:"type,omitempty" db:"type" yaml:"type" bson:"type"`
-	Level int32     `protobuf:"varint,2,opt,name=level,proto3" json:"level,omitempty" yaml:"level" bson:"level" db:"level"`
+	Type  EventType `protobuf:"varint,1,opt,name=type,proto3,enum=city.event.v1.EventType" json:"type,omitempty" yaml:"type" bson:"type" db:"type"`
+	Level int32     `protobuf:"varint,2,opt,name=level,proto3" json:"level,omitempty" db:"level" yaml:"level" bson:"level"`
 	Step  int32     `protobuf:"varint,3,opt,name=step,proto3" json:"step,omitempty" yaml:"step" bson:"step" db:"step"`
 }
 

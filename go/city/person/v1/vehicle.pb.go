@@ -180,13 +180,13 @@ type LC struct {
 	ShadowLaneId int32 `protobuf:"varint,1,opt,name=shadow_lane_id,json=shadowLaneId,proto3" json:"shadow_lane_id,omitempty" yaml:"shadow_lane_id" bson:"shadow_lane_id" db:"shadow_lane_id"`
 	// 投影到影子车道的坐标
 	// s coordinate projected to shadow lane
-	ShadowS float64 `protobuf:"fixed64,2,opt,name=shadow_s,json=shadowS,proto3" json:"shadow_s,omitempty" yaml:"shadow_s" bson:"shadow_s" db:"shadow_s"`
+	ShadowS float64 `protobuf:"fixed64,2,opt,name=shadow_s,json=shadowS,proto3" json:"shadow_s,omitempty" bson:"shadow_s" db:"shadow_s" yaml:"shadow_s"`
 	// 变道过程车头相对于前进方向的偏转角（弧度，总是为正，0代表不转向）
 	// deviation angle of the vehicle head relative to the forward direction during lane change (radians, always positive, 0 means no steering)
 	Angle float64 `protobuf:"fixed64,3,opt,name=angle,proto3" json:"angle,omitempty" yaml:"angle" bson:"angle" db:"angle"`
 	// 已完成的变道比例
 	// completed ratio of lane change
-	CompletedRatio float64 `protobuf:"fixed64,4,opt,name=completed_ratio,json=completedRatio,proto3" json:"completed_ratio,omitempty" db:"completed_ratio" yaml:"completed_ratio" bson:"completed_ratio"`
+	CompletedRatio float64 `protobuf:"fixed64,4,opt,name=completed_ratio,json=completedRatio,proto3" json:"completed_ratio,omitempty" yaml:"completed_ratio" bson:"completed_ratio" db:"completed_ratio"`
 }
 
 func (x *LC) Reset() {
@@ -256,7 +256,7 @@ type VehicleAction struct {
 
 	// 车辆编号
 	// vehicle id
-	Id int32 `protobuf:"varint,4,opt,name=id,proto3" json:"id,omitempty" db:"id" yaml:"id" bson:"id"`
+	Id int32 `protobuf:"varint,4,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
 	// 本轮更新中设定的加速度
 	// acceleration set in this step
 	Acc float64 `protobuf:"fixed64,1,opt,name=acc,proto3" json:"acc,omitempty" yaml:"acc" bson:"acc" db:"acc"`
@@ -265,7 +265,7 @@ type VehicleAction struct {
 	LcTargetId *int32 `protobuf:"varint,2,opt,name=lc_target_id,json=lcTargetId,proto3,oneof" json:"lc_target_id,omitempty" yaml:"lc_target_id" bson:"lc_target_id" db:"lc_target_id"`
 	// 变道过程的转向角度
 	// steering angle during lane change
-	Angle float64 `protobuf:"fixed64,3,opt,name=angle,proto3" json:"angle,omitempty" yaml:"angle" bson:"angle" db:"angle"`
+	Angle float64 `protobuf:"fixed64,3,opt,name=angle,proto3" json:"angle,omitempty" db:"angle" yaml:"angle" bson:"angle"`
 }
 
 func (x *VehicleAction) Reset() {
@@ -351,7 +351,7 @@ type VehicleRuntime struct {
 	DepartureTime float64 `protobuf:"fixed64,8,opt,name=departure_time,json=departureTime,proto3" json:"departure_time,omitempty" yaml:"departure_time" bson:"departure_time" db:"departure_time"`
 	// 预计到达时刻（导航返回的eta+出发时刻）
 	// estimated arrival time (eta returned by routing + departure time)
-	Eta float64 `protobuf:"fixed64,9,opt,name=eta,proto3" json:"eta,omitempty" yaml:"eta" bson:"eta" db:"eta"`
+	Eta float64 `protobuf:"fixed64,9,opt,name=eta,proto3" json:"eta,omitempty" bson:"eta" db:"eta" yaml:"eta"`
 	// 自由流下的预计到达时刻
 	// estimated arrival time under free flow
 	EtaFreeFlow float64 `protobuf:"fixed64,10,opt,name=eta_free_flow,json=etaFreeFlow,proto3" json:"eta_free_flow,omitempty" yaml:"eta_free_flow" bson:"eta_free_flow" db:"eta_free_flow"`
@@ -458,7 +458,7 @@ type ObservedVehicle struct {
 	Motion *PersonMotion `protobuf:"bytes,2,opt,name=motion,proto3" json:"motion,omitempty" yaml:"motion" bson:"motion" db:"motion"`
 	// 相对距离
 	// relative distance
-	RelativeDistance float64 `protobuf:"fixed64,3,opt,name=relative_distance,json=relativeDistance,proto3" json:"relative_distance,omitempty" yaml:"relative_distance" bson:"relative_distance" db:"relative_distance"`
+	RelativeDistance float64 `protobuf:"fixed64,3,opt,name=relative_distance,json=relativeDistance,proto3" json:"relative_distance,omitempty" bson:"relative_distance" db:"relative_distance" yaml:"relative_distance"`
 	// 关系枚举
 	// relation enumeration
 	Relation VehicleRelation `protobuf:"varint,4,opt,name=relation,proto3,enum=city.person.v1.VehicleRelation" json:"relation,omitempty" yaml:"relation" bson:"relation" db:"relation"`
@@ -533,13 +533,13 @@ type ObservedLane struct {
 	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
 	// 是否限行
 	// whether restricted
-	Restriction bool `protobuf:"varint,2,opt,name=restriction,proto3" json:"restriction,omitempty" bson:"restriction" db:"restriction" yaml:"restriction"`
+	Restriction bool `protobuf:"varint,2,opt,name=restriction,proto3" json:"restriction,omitempty" yaml:"restriction" bson:"restriction" db:"restriction"`
 	// 交通灯状态
 	// traffic light state
 	LightState LightState `protobuf:"varint,3,opt,name=light_state,json=lightState,proto3,enum=city.person.v1.LightState" json:"light_state,omitempty" yaml:"light_state" bson:"light_state" db:"light_state"`
 	// 交通灯剩余时间
 	// remaining time of traffic light
-	LightRemainingTime float64 `protobuf:"fixed64,4,opt,name=light_remaining_time,json=lightRemainingTime,proto3" json:"light_remaining_time,omitempty" yaml:"light_remaining_time" bson:"light_remaining_time" db:"light_remaining_time"`
+	LightRemainingTime float64 `protobuf:"fixed64,4,opt,name=light_remaining_time,json=lightRemainingTime,proto3" json:"light_remaining_time,omitempty" db:"light_remaining_time" yaml:"light_remaining_time" bson:"light_remaining_time"`
 }
 
 func (x *ObservedLane) Reset() {
