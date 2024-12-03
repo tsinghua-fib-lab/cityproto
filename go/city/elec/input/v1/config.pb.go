@@ -87,7 +87,7 @@ type ControlStep struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Start int32 `protobuf:"varint,1,opt,name=start,proto3" json:"start,omitempty" db:"start" yaml:"start" bson:"start"`
+	Start int32 `protobuf:"varint,1,opt,name=start,proto3" json:"start,omitempty" yaml:"start" bson:"start" db:"start"`
 	Total int32 `protobuf:"varint,2,opt,name=total,proto3" json:"total,omitempty" yaml:"total" bson:"total" db:"total"`
 }
 
@@ -187,7 +187,7 @@ type OutputSwitch struct {
 	unknownFields protoimpl.UnknownFields
 
 	// 电网节点状态
-	Node  bool `protobuf:"varint,1,opt,name=node,proto3" json:"node,omitempty" bson:"node" db:"node" yaml:"node"`
+	Node  bool `protobuf:"varint,1,opt,name=node,proto3" json:"node,omitempty" yaml:"node" bson:"node" db:"node"`
 	Aoi   bool `protobuf:"varint,2,opt,name=aoi,proto3" json:"aoi,omitempty" yaml:"aoi" bson:"aoi" db:"aoi"`
 	Event bool `protobuf:"varint,3,opt,name=event,proto3" json:"event,omitempty" yaml:"event" bson:"event" db:"event"`
 }
@@ -301,9 +301,9 @@ type Config struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Mongo   *Mongo   `protobuf:"bytes,1,opt,name=mongo,proto3" json:"mongo,omitempty" yaml:"mongo" bson:"mongo" db:"mongo"`
+	Mongo   *Mongo   `protobuf:"bytes,1,opt,name=mongo,proto3" json:"mongo,omitempty" db:"mongo" yaml:"mongo" bson:"mongo"`
 	Control *Control `protobuf:"bytes,2,opt,name=control,proto3" json:"control,omitempty" yaml:"control" bson:"control" db:"control"`
-	Output  *Output  `protobuf:"bytes,3,opt,name=output,proto3" json:"output,omitempty" yaml:"output" bson:"output" db:"output"`
+	Output  *Output  `protobuf:"bytes,3,opt,name=output,proto3" json:"output,omitempty" bson:"output" db:"output" yaml:"output"`
 }
 
 func (x *Config) Reset() {

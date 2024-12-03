@@ -16,6 +16,7 @@ class Status(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     STATUS_WAIT_ROUTE: _ClassVar[Status]
     STATUS_WAIT_BUS: _ClassVar[Status]
     STATUS_RAIL_TRANSIT: _ClassVar[Status]
+    STATUS_WAIT_TAXI: _ClassVar[Status]
 STATUS_UNSPECIFIED: Status
 STATUS_SLEEP: Status
 STATUS_DRIVING: Status
@@ -25,6 +26,7 @@ STATUS_PASSENGER: Status
 STATUS_WAIT_ROUTE: Status
 STATUS_WAIT_BUS: Status
 STATUS_RAIL_TRANSIT: Status
+STATUS_WAIT_TAXI: Status
 
 class PersonMotion(_message.Message):
     __slots__ = ['id', 'status', 'position', 'v', 'direction', 'activity', 'l']

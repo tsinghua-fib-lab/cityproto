@@ -10558,6 +10558,13 @@ wait for bus coming</p></td>
 operating rail transit</p></td>
               </tr>
             
+              <tr>
+                <td>STATUS_WAIT_TAXI</td>
+                <td>9</td>
+                <td><p>等待出租车
+wait for taxi</p></td>
+              </tr>
+            
           </tbody>
         </table>
       
@@ -11874,7 +11881,7 @@ estimation time of arrival </p></td>
         
       
         <h3 id="city.routing.v2.Journey">Journey</h3>
-        <p>路径规划结果的一部分，含且仅含采用一种交通出行方式的完整出行序列</p><p>Part of the routing results, including a complete travel sequence using exactly one travelling mode</p>
+        <p>路径规划结果的一部分，含且仅含采用一种交通出行方式的完整出行序列</p><p>Part of the routing results, including a complete travel sequence using exactly one traveling mode</p>
 
         
           <table class="field-table">
@@ -11888,7 +11895,7 @@ estimation time of arrival </p></td>
                   <td><a href="#city.routing.v2.JourneyType">JourneyType</a></td>
                   <td></td>
                   <td><p>出行方式
-journey travelling mode </p></td>
+journey traveling mode </p></td>
                 </tr>
               
                 <tr>
@@ -12120,6 +12127,13 @@ walking</p></td>
 taking bus</p></td>
               </tr>
             
+              <tr>
+                <td>JOURNEY_TYPE_BY_TAXI</td>
+                <td>4</td>
+                <td><p>出租车
+taking taxi</p></td>
+              </tr>
+            
           </tbody>
         </table>
       
@@ -12203,6 +12217,13 @@ by subway</p></td>
                 <td>5</td>
                 <td><p>地铁&#43;公交，包含两者的换乘
 both bus and subway are available, including multimodal transfers</p></td>
+              </tr>
+            
+              <tr>
+                <td>ROUTE_TYPE_TAXI</td>
+                <td>6</td>
+                <td><p>出租车
+by taxi</p></td>
               </tr>
             
           </tbody>

@@ -85,6 +85,14 @@ export declare enum Status {
    * @generated from enum value: STATUS_RAIL_TRANSIT = 8;
    */
   RAIL_TRANSIT = 8,
+
+  /**
+   * 等待出租车
+   * wait for taxi
+   *
+   * @generated from enum value: STATUS_WAIT_TAXI = 9;
+   */
+  WAIT_TAXI = 9,
 }
 
 /**

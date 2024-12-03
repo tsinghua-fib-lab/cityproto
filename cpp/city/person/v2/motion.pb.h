@@ -72,12 +72,13 @@ enum Status : int {
   STATUS_WAIT_ROUTE = 6,
   STATUS_WAIT_BUS = 7,
   STATUS_RAIL_TRANSIT = 8,
+  STATUS_WAIT_TAXI = 9,
   Status_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
   Status_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
 };
 bool Status_IsValid(int value);
 constexpr Status Status_MIN = STATUS_UNSPECIFIED;
-constexpr Status Status_MAX = STATUS_RAIL_TRANSIT;
+constexpr Status Status_MAX = STATUS_WAIT_TAXI;
 constexpr int Status_ARRAYSIZE = Status_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* Status_descriptor();

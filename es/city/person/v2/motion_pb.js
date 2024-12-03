@@ -24,6 +24,7 @@ export const Status = /*@__PURE__*/ proto3.makeEnum(
     {no: 6, name: "STATUS_WAIT_ROUTE", localName: "WAIT_ROUTE"},
     {no: 7, name: "STATUS_WAIT_BUS", localName: "WAIT_BUS"},
     {no: 8, name: "STATUS_RAIL_TRANSIT", localName: "RAIL_TRANSIT"},
+    {no: 9, name: "STATUS_WAIT_TAXI", localName: "WAIT_TAXI"},
   ],
 );
 

@@ -266,25 +266,27 @@ const char descriptor_table_protodef_city_2frouting_2fv2_2frouting_2eproto[] PRO
   "\016\n\002id\030\001 \001(\005R\002id\022\024\n\005speed\030\002 \003(\001R\005speed\"P\n"
   "\014RoadStatuses\022@\n\rroad_statuses\030\001 \003(\0132\033.c"
   "ity.routing.v2.RoadStatusR\014roadStatuses*"
-  "\235\001\n\tRouteType\022\032\n\026ROUTE_TYPE_UNSPECIFIED\020"
+  "\262\001\n\tRouteType\022\032\n\026ROUTE_TYPE_UNSPECIFIED\020"
   "\000\022\026\n\022ROUTE_TYPE_DRIVING\020\001\022\026\n\022ROUTE_TYPE_"
   "WALKING\020\002\022\022\n\016ROUTE_TYPE_BUS\020\003\022\025\n\021ROUTE_T"
-  "YPE_SUBWAY\020\004\022\031\n\025ROUTE_TYPE_BUS_SUBWAY\020\005*"
-  "x\n\013JourneyType\022\034\n\030JOURNEY_TYPE_UNSPECIFI"
-  "ED\020\000\022\030\n\024JOURNEY_TYPE_DRIVING\020\001\022\030\n\024JOURNE"
-  "Y_TYPE_WALKING\020\002\022\027\n\023JOURNEY_TYPE_BY_BUS\020"
-  "\003*p\n\017MovingDirection\022 \n\034MOVING_DIRECTION"
-  "_UNSPECIFIED\020\000\022\034\n\030MOVING_DIRECTION_FORWA"
-  "RD\020\001\022\035\n\031MOVING_DIRECTION_BACKWARD\020\002B\274\001\n\023"
-  "com.city.routing.v2B\014RoutingProtoP\001Z9git"
-  ".fiblab.net/sim/protos/v2/go/city/routin"
-  "g/v2;routingv2\242\002\003CRX\252\002\017City.Routing.V2\312\002"
-  "\017City\\Routing\\V2\342\002\033City\\Routing\\V2\\GPBMe"
-  "tadata\352\002\021City::Routing::V2b\006proto3"
+  "YPE_SUBWAY\020\004\022\031\n\025ROUTE_TYPE_BUS_SUBWAY\020\005\022"
+  "\023\n\017ROUTE_TYPE_TAXI\020\006*\222\001\n\013JourneyType\022\034\n\030"
+  "JOURNEY_TYPE_UNSPECIFIED\020\000\022\030\n\024JOURNEY_TY"
+  "PE_DRIVING\020\001\022\030\n\024JOURNEY_TYPE_WALKING\020\002\022\027"
+  "\n\023JOURNEY_TYPE_BY_BUS\020\003\022\030\n\024JOURNEY_TYPE_"
+  "BY_TAXI\020\004*p\n\017MovingDirection\022 \n\034MOVING_D"
+  "IRECTION_UNSPECIFIED\020\000\022\034\n\030MOVING_DIRECTI"
+  "ON_FORWARD\020\001\022\035\n\031MOVING_DIRECTION_BACKWAR"
+  "D\020\002B\274\001\n\023com.city.routing.v2B\014RoutingProt"
+  "oP\001Z9git.fiblab.net/sim/protos/v2/go/cit"
+  "y/routing/v2;routingv2\242\002\003CRX\252\002\017City.Rout"
+  "ing.V2\312\002\017City\\Routing\\V2\342\002\033City\\Routing\\"
+  "V2\\GPBMetadata\352\002\021City::Routing::V2b\006prot"
+  "o3"
   ;
 static ::_pbi::once_flag descriptor_table_city_2frouting_2fv2_2frouting_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2frouting_2fv2_2frouting_2eproto = {
-    false, false, 1594, descriptor_table_protodef_city_2frouting_2fv2_2frouting_2eproto,
+    false, false, 1642, descriptor_table_protodef_city_2frouting_2fv2_2frouting_2eproto,
     "city/routing/v2/routing.proto",
     &descriptor_table_city_2frouting_2fv2_2frouting_2eproto_once, nullptr, 0, 8,
     schemas, file_default_instances, TableStruct_city_2frouting_2fv2_2frouting_2eproto::offsets,
@@ -312,6 +314,7 @@ bool RouteType_IsValid(int value) {
     case 3:
     case 4:
     case 5:
+    case 6:
       return true;
     default:
       return false;
@@ -328,6 +331,7 @@ bool JourneyType_IsValid(int value) {
     case 1:
     case 2:
     case 3:
+    case 4:
       return true;
     default:
       return false;

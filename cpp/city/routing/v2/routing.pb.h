@@ -96,12 +96,13 @@ enum RouteType : int {
   ROUTE_TYPE_BUS = 3,
   ROUTE_TYPE_SUBWAY = 4,
   ROUTE_TYPE_BUS_SUBWAY = 5,
+  ROUTE_TYPE_TAXI = 6,
   RouteType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
   RouteType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
 };
 bool RouteType_IsValid(int value);
 constexpr RouteType RouteType_MIN = ROUTE_TYPE_UNSPECIFIED;
-constexpr RouteType RouteType_MAX = ROUTE_TYPE_BUS_SUBWAY;
+constexpr RouteType RouteType_MAX = ROUTE_TYPE_TAXI;
 constexpr int RouteType_ARRAYSIZE = RouteType_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* RouteType_descriptor();
@@ -123,12 +124,13 @@ enum JourneyType : int {
   JOURNEY_TYPE_DRIVING = 1,
   JOURNEY_TYPE_WALKING = 2,
   JOURNEY_TYPE_BY_BUS = 3,
+  JOURNEY_TYPE_BY_TAXI = 4,
   JourneyType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
   JourneyType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
 };
 bool JourneyType_IsValid(int value);
 constexpr JourneyType JourneyType_MIN = JOURNEY_TYPE_UNSPECIFIED;
-constexpr JourneyType JourneyType_MAX = JOURNEY_TYPE_BY_BUS;
+constexpr JourneyType JourneyType_MAX = JOURNEY_TYPE_BY_TAXI;
 constexpr int JourneyType_ARRAYSIZE = JourneyType_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* JourneyType_descriptor();

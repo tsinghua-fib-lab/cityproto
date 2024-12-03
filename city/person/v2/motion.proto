@@ -34,6 +34,9 @@ enum Status {
   // 操控轨道交通
   // operating rail transit
   STATUS_RAIL_TRANSIT = 8;
+  // 等待出租车
+  // wait for taxi
+  STATUS_WAIT_TAXI = 9;
 }
 
 // Person（人）的运动状态

@@ -20,6 +20,7 @@ export const RouteType = /*@__PURE__*/ proto3.makeEnum(
     {no: 3, name: "ROUTE_TYPE_BUS", localName: "BUS"},
     {no: 4, name: "ROUTE_TYPE_SUBWAY", localName: "SUBWAY"},
     {no: 5, name: "ROUTE_TYPE_BUS_SUBWAY", localName: "BUS_SUBWAY"},
+    {no: 6, name: "ROUTE_TYPE_TAXI", localName: "TAXI"},
   ],
 );
 
@@ -44,6 +45,7 @@ export const JourneyType = /*@__PURE__*/ proto3.makeEnum(
     {no: 1, name: "JOURNEY_TYPE_DRIVING", localName: "DRIVING"},
     {no: 2, name: "JOURNEY_TYPE_WALKING", localName: "WALKING"},
     {no: 3, name: "JOURNEY_TYPE_BY_BUS", localName: "BY_BUS"},
+    {no: 4, name: "JOURNEY_TYPE_BY_TAXI", localName: "BY_TAXI"},
   ],
 );
 
@@ -137,7 +139,7 @@ export const BusJourneyBody = /*@__PURE__*/ proto3.makeMessageType(
 
 /**
  * 路径规划结果的一部分，含且仅含采用一种交通出行方式的完整出行序列
- * Part of the routing results, including a complete travel sequence using exactly one travelling mode
+ * Part of the routing results, including a complete travel sequence using exactly one traveling mode
  *
  * @generated from message city.routing.v2.Journey
  */

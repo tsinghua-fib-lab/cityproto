@@ -13,6 +13,7 @@ class RouteType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     ROUTE_TYPE_BUS: _ClassVar[RouteType]
     ROUTE_TYPE_SUBWAY: _ClassVar[RouteType]
     ROUTE_TYPE_BUS_SUBWAY: _ClassVar[RouteType]
+    ROUTE_TYPE_TAXI: _ClassVar[RouteType]
 
 class JourneyType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     __slots__ = []
@@ -20,6 +21,7 @@ class JourneyType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     JOURNEY_TYPE_DRIVING: _ClassVar[JourneyType]
     JOURNEY_TYPE_WALKING: _ClassVar[JourneyType]
     JOURNEY_TYPE_BY_BUS: _ClassVar[JourneyType]
+    JOURNEY_TYPE_BY_TAXI: _ClassVar[JourneyType]
 
 class MovingDirection(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     __slots__ = []
@@ -32,10 +34,12 @@ ROUTE_TYPE_WALKING: RouteType
 ROUTE_TYPE_BUS: RouteType
 ROUTE_TYPE_SUBWAY: RouteType
 ROUTE_TYPE_BUS_SUBWAY: RouteType
+ROUTE_TYPE_TAXI: RouteType
 JOURNEY_TYPE_UNSPECIFIED: JourneyType
 JOURNEY_TYPE_DRIVING: JourneyType
 JOURNEY_TYPE_WALKING: JourneyType
 JOURNEY_TYPE_BY_BUS: JourneyType
+JOURNEY_TYPE_BY_TAXI: JourneyType
 MOVING_DIRECTION_UNSPECIFIED: MovingDirection
 MOVING_DIRECTION_FORWARD: MovingDirection
 MOVING_DIRECTION_BACKWARD: MovingDirection

@@ -64,8 +64,8 @@ type InitResponse struct {
 
 	// 模拟器gRPC监听地址
 	Address    string      `protobuf:"bytes,2,opt,name=address,proto3" json:"address,omitempty" yaml:"address" bson:"address" db:"address"`
-	Control    *Control    `protobuf:"bytes,3,opt,name=control,proto3" json:"control,omitempty" yaml:"control" bson:"control" db:"control"`
-	Facilities *Facilities `protobuf:"bytes,1,opt,name=facilities,proto3" json:"facilities,omitempty" bson:"facilities" db:"facilities" yaml:"facilities"`
+	Control    *Control    `protobuf:"bytes,3,opt,name=control,proto3" json:"control,omitempty" bson:"control" db:"control" yaml:"control"`
+	Facilities *Facilities `protobuf:"bytes,1,opt,name=facilities,proto3" json:"facilities,omitempty" db:"facilities" yaml:"facilities" bson:"facilities"`
 	Map        *v2.Map     `protobuf:"bytes,4,opt,name=map,proto3" json:"map,omitempty" yaml:"map" bson:"map" db:"map"`
 }
 

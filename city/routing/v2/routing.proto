@@ -23,6 +23,9 @@ enum RouteType {
   // 地铁+公交，包含两者的换乘
   // both bus and subway are available, including multimodal transfers
   ROUTE_TYPE_BUS_SUBWAY = 5;
+  // 出租车
+  // by taxi
+  ROUTE_TYPE_TAXI = 6;
 }
 
 // 移动方式
@@ -48,6 +51,9 @@ enum JourneyType {
   // 公交
   // taking bus
   JOURNEY_TYPE_BY_BUS = 3;
+  // 出租车
+  // taking taxi
+  JOURNEY_TYPE_BY_TAXI = 4;
 }
 
 // 驾车出行方式的路径规划结果
@@ -120,10 +126,10 @@ message BusJourneyBody {
 }
 
 // 路径规划结果的一部分，含且仅含采用一种交通出行方式的完整出行序列
-// Part of the routing results, including a complete travel sequence using exactly one travelling mode
+// Part of the routing results, including a complete travel sequence using exactly one traveling mode
 message Journey {
   // 出行方式
-  // journey travelling mode
+  // journey traveling mode
   JourneyType type = 1;
 
   // 出行方式的具体信息

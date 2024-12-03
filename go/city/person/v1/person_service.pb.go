@@ -30,7 +30,7 @@ type GetPersonRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// person id
-	PersonId int32 `protobuf:"varint,1,opt,name=person_id,json=personId,proto3" json:"person_id,omitempty" yaml:"person_id" bson:"person_id" db:"person_id"`
+	PersonId int32 `protobuf:"varint,1,opt,name=person_id,json=personId,proto3" json:"person_id,omitempty" bson:"person_id" db:"person_id" yaml:"person_id"`
 }
 
 func (x *GetPersonRequest) Reset() {
@@ -77,7 +77,7 @@ type GetPersonResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Person *PersonRuntime `protobuf:"bytes,1,opt,name=person,proto3" json:"person,omitempty" db:"person" yaml:"person" bson:"person"`
+	Person *PersonRuntime `protobuf:"bytes,1,opt,name=person,proto3" json:"person,omitempty" yaml:"person" bson:"person" db:"person"`
 }
 
 func (x *GetPersonResponse) Reset() {
@@ -126,7 +126,7 @@ type AddPersonRequest struct {
 
 	// 约定：person中不设置id
 	// Convention: personid is not set here
-	Person *Person `protobuf:"bytes,1,opt,name=person,proto3" json:"person,omitempty" yaml:"person" bson:"person" db:"person"`
+	Person *Person `protobuf:"bytes,1,opt,name=person,proto3" json:"person,omitempty" bson:"person" db:"person" yaml:"person"`
 }
 
 func (x *AddPersonRequest) Reset() {
@@ -226,7 +226,7 @@ type SetScheduleRequest struct {
 	PersonId int32 `protobuf:"varint,1,opt,name=person_id,json=personId,proto3" json:"person_id,omitempty" bson:"person_id" db:"person_id" yaml:"person_id"`
 	// 新的schedule（覆盖原有的schedule）
 	// New schedule (overwrites the original schedule)
-	Schedules []*v2.Schedule `protobuf:"bytes,2,rep,name=schedules,proto3" json:"schedules,omitempty" yaml:"schedules" bson:"schedules" db:"schedules"`
+	Schedules []*v2.Schedule `protobuf:"bytes,2,rep,name=schedules,proto3" json:"schedules,omitempty" db:"schedules" yaml:"schedules" bson:"schedules"`
 }
 
 func (x *SetScheduleRequest) Reset() {
@@ -320,13 +320,13 @@ type GetPersonsRequest struct {
 
 	// person id列表，为空则返回所有person
 	// List of person ids, return all persons if empty
-	PersonIds []int32 `protobuf:"varint,1,rep,packed,name=person_ids,json=personIds,proto3" json:"person_ids,omitempty" bson:"person_ids" db:"person_ids" yaml:"person_ids"`
+	PersonIds []int32 `protobuf:"varint,1,rep,packed,name=person_ids,json=personIds,proto3" json:"person_ids,omitempty" yaml:"person_ids" bson:"person_ids" db:"person_ids"`
 	// 过滤人的状态（状态为列表内的值的人不返回），即使包含在person_ids中
 	// Filter person's status (person whose status is in the list will not be returned), even if included in person_ids
-	ExcludeStatuses []Status `protobuf:"varint,2,rep,packed,name=exclude_statuses,json=excludeStatuses,proto3,enum=city.person.v1.Status" json:"exclude_statuses,omitempty" yaml:"exclude_statuses" bson:"exclude_statuses" db:"exclude_statuses"`
+	ExcludeStatuses []Status `protobuf:"varint,2,rep,packed,name=exclude_statuses,json=excludeStatuses,proto3,enum=city.person.v1.Status" json:"exclude_statuses,omitempty" db:"exclude_statuses" yaml:"exclude_statuses" bson:"exclude_statuses"`
 	// 设置是否返回base信息
 	// Set whether to return base information
-	ReturnBase bool `protobuf:"varint,3,opt,name=return_base,json=returnBase,proto3" json:"return_base,omitempty" yaml:"return_base" bson:"return_base" db:"return_base"`
+	ReturnBase bool `protobuf:"varint,3,opt,name=return_base,json=returnBase,proto3" json:"return_base,omitempty" db:"return_base" yaml:"return_base" bson:"return_base"`
 }
 
 func (x *GetPersonsRequest) Reset() {
@@ -389,7 +389,7 @@ type GetPersonsResponse struct {
 
 	// person信息
 	// person information
-	Persons []*PersonRuntime `protobuf:"bytes,1,rep,name=persons,proto3" json:"persons,omitempty" bson:"persons" db:"persons" yaml:"persons"`
+	Persons []*PersonRuntime `protobuf:"bytes,1,rep,name=persons,proto3" json:"persons,omitempty" yaml:"persons" bson:"persons" db:"persons"`
 }
 
 func (x *GetPersonsResponse) Reset() {
@@ -438,10 +438,10 @@ type GetPersonByLongLatBBoxRequest struct {
 
 	// 经纬度范围
 	// longitude and latitude bounding box
-	Bbox *v21.LongLatBBox `protobuf:"bytes,1,opt,name=bbox,proto3" json:"bbox,omitempty" yaml:"bbox" bson:"bbox" db:"bbox"`
+	Bbox *v21.LongLatBBox `protobuf:"bytes,1,opt,name=bbox,proto3" json:"bbox,omitempty" bson:"bbox" db:"bbox" yaml:"bbox"`
 	// 过滤人的状态（状态为列表内的值的人不返回）
 	// Filter person's status (person whose status is in the list will not be returned)
-	ExcludeStatuses []Status `protobuf:"varint,2,rep,packed,name=exclude_statuses,json=excludeStatuses,proto3,enum=city.person.v1.Status" json:"exclude_statuses,omitempty" db:"exclude_statuses" yaml:"exclude_statuses" bson:"exclude_statuses"`
+	ExcludeStatuses []Status `protobuf:"varint,2,rep,packed,name=exclude_statuses,json=excludeStatuses,proto3,enum=city.person.v1.Status" json:"exclude_statuses,omitempty" yaml:"exclude_statuses" bson:"exclude_statuses" db:"exclude_statuses"`
 	// 设置是否返回base信息
 	// Set whether to return base information
 	ReturnBase bool `protobuf:"varint,3,opt,name=return_base,json=returnBase,proto3" json:"return_base,omitempty" yaml:"return_base" bson:"return_base" db:"return_base"`
@@ -642,10 +642,10 @@ type ResetPersonPositionRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	// person id
-	PersonId int32 `protobuf:"varint,1,opt,name=person_id,json=personId,proto3" json:"person_id,omitempty" bson:"person_id" db:"person_id" yaml:"person_id"`
+	PersonId int32 `protobuf:"varint,1,opt,name=person_id,json=personId,proto3" json:"person_id,omitempty" yaml:"person_id" bson:"person_id" db:"person_id"`
 	// 重置位置
 	// reset position
-	Position *v21.Position `protobuf:"bytes,2,opt,name=position,proto3" json:"position,omitempty" yaml:"position" bson:"position" db:"position"`
+	Position *v21.Position `protobuf:"bytes,2,opt,name=position,proto3" json:"position,omitempty" bson:"position" db:"position" yaml:"position"`
 }
 
 func (x *ResetPersonPositionRequest) Reset() {
@@ -739,7 +739,7 @@ type SetControlledVehicleIDsRequest struct {
 
 	// 由外部控制行为的vehicle id列表
 	// List of vehicle ids controlled by external behavior
-	VehicleIds []int32 `protobuf:"varint,1,rep,packed,name=vehicle_ids,json=vehicleIds,proto3" json:"vehicle_ids,omitempty" db:"vehicle_ids" yaml:"vehicle_ids" bson:"vehicle_ids"`
+	VehicleIds []int32 `protobuf:"varint,1,rep,packed,name=vehicle_ids,json=vehicleIds,proto3" json:"vehicle_ids,omitempty" yaml:"vehicle_ids" bson:"vehicle_ids" db:"vehicle_ids"`
 }
 
 func (x *SetControlledVehicleIDsRequest) Reset() {

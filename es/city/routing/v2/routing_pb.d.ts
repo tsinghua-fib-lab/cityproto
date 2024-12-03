@@ -60,6 +60,14 @@ export declare enum RouteType {
    * @generated from enum value: ROUTE_TYPE_BUS_SUBWAY = 5;
    */
   BUS_SUBWAY = 5,
+
+  /**
+   * 出租车
+   * by taxi
+   *
+   * @generated from enum value: ROUTE_TYPE_TAXI = 6;
+   */
+  TAXI = 6,
 }
 
 /**
@@ -108,6 +116,14 @@ export declare enum JourneyType {
    * @generated from enum value: JOURNEY_TYPE_BY_BUS = 3;
    */
   BY_BUS = 3,
+
+  /**
+   * 出租车
+   * taking taxi
+   *
+   * @generated from enum value: JOURNEY_TYPE_BY_TAXI = 4;
+   */
+  BY_TAXI = 4,
 }
 
 /**
@@ -335,14 +351,14 @@ export declare class BusJourneyBody extends Message<BusJourneyBody> {
 
 /**
  * 路径规划结果的一部分，含且仅含采用一种交通出行方式的完整出行序列
- * Part of the routing results, including a complete travel sequence using exactly one travelling mode
+ * Part of the routing results, including a complete travel sequence using exactly one traveling mode
  *
  * @generated from message city.routing.v2.Journey
  */
 export declare class Journey extends Message<Journey> {
   /**
    * 出行方式
-   * journey travelling mode
+   * journey traveling mode
    *
    * @generated from field: city.routing.v2.JourneyType type = 1;
    */
