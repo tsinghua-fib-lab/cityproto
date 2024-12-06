@@ -25,7 +25,7 @@ type PublishRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Event *Event `protobuf:"bytes,1,opt,name=event,proto3" json:"event,omitempty" yaml:"event" bson:"event" db:"event"`
+	Event *Event `protobuf:"bytes,1,opt,name=event,proto3" json:"event,omitempty" bson:"event" db:"event" yaml:"event"`
 }
 
 func (x *PublishRequest) Reset() {
@@ -142,7 +142,7 @@ type PullResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Events []*Event `protobuf:"bytes,1,rep,name=events,proto3" json:"events,omitempty" yaml:"events" bson:"events" db:"events"`
+	Events []*Event `protobuf:"bytes,1,rep,name=events,proto3" json:"events,omitempty" bson:"events" db:"events" yaml:"events"`
 }
 
 func (x *PullResponse) Reset() {

@@ -175,6 +175,29 @@
         
           
           <li>
+            <a href="#city%2fagentcomm%2fv1%2fagent_service.proto">city/agentcomm/v1/agent_service.proto</a>
+            <ul>
+              
+                <li>
+                  <a href="#city.agentcomm.v1.CommunicateRequest"><span class="badge">M</span>CommunicateRequest</a>
+                </li>
+              
+                <li>
+                  <a href="#city.agentcomm.v1.CommunicateResponse"><span class="badge">M</span>CommunicateResponse</a>
+                </li>
+              
+              
+              
+              
+                <li>
+                  <a href="#city.agentcomm.v1.AgentService"><span class="badge">S</span>AgentService</a>
+                </li>
+              
+            </ul>
+          </li>
+        
+          
+          <li>
             <a href="#city%2fclock%2fv1%2fclock_service.proto">city/clock/v1/clock_service.proto</a>
             <ul>
               
@@ -2567,6 +2590,101 @@
       </ul>
     </div>
 
+    
+      
+      <div class="file-heading">
+        <h2 id="city/agentcomm/v1/agent_service.proto">city/agentcomm/v1/agent_service.proto</h2><a href="#title">Top</a>
+      </div>
+      <p></p>
+
+      
+        <h3 id="city.agentcomm.v1.CommunicateRequest">CommunicateRequest</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>source_agent_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>消息发送者 ID </p></td>
+                </tr>
+              
+                <tr>
+                  <td>target_agent_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>消息目标 ID </p></td>
+                </tr>
+              
+                <tr>
+                  <td>data</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>消息内容 </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="city.agentcomm.v1.CommunicateResponse">CommunicateResponse</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>message</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>响应消息 </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+
+      
+
+      
+
+      
+        <h3 id="city.agentcomm.v1.AgentService">AgentService</h3>
+        <p></p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Method Name</td><td>Request Type</td><td>Response Type</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>Communicate</td>
+                <td><a href="#city.agentcomm.v1.CommunicateRequest">CommunicateRequest</a> stream</td>
+                <td><a href="#city.agentcomm.v1.CommunicateResponse">CommunicateResponse</a> stream</td>
+                <td><p></p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+
+        
     
       
       <div class="file-heading">

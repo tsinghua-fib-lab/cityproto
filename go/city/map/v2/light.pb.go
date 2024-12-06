@@ -91,11 +91,11 @@ type Phase struct {
 
 	// 相位持续时间，单位秒
 	// Phase duration in seconds
-	Duration float64 `protobuf:"fixed64,1,opt,name=duration,proto3" json:"duration,omitempty" yaml:"duration" bson:"duration" db:"duration"`
+	Duration float64 `protobuf:"fixed64,1,opt,name=duration,proto3" json:"duration,omitempty" bson:"duration" db:"duration" yaml:"duration"`
 	// 描述该相位下每个lane的灯控情况，lane与Junction.lane_ids一一对应
 	// The lighting control situation of each lane in this phase, and the lane
 	// corresponds one-to-one with junction.lane_ids
-	States []LightState `protobuf:"varint,2,rep,packed,name=states,proto3,enum=city.map.v2.LightState" json:"states,omitempty" yaml:"states" bson:"states" db:"states"`
+	States []LightState `protobuf:"varint,2,rep,packed,name=states,proto3,enum=city.map.v2.LightState" json:"states,omitempty" bson:"states" db:"states" yaml:"states"`
 }
 
 func (x *Phase) Reset() {
@@ -151,7 +151,7 @@ type AvailablePhase struct {
 	// Describes the feasible phase for max pressure algorithm, consisting of the
 	// lighting control situation for each lane in the junction, nd the lane
 	// corresponds one-to-one with junction.lane_ids
-	States []LightState `protobuf:"varint,1,rep,packed,name=states,proto3,enum=city.map.v2.LightState" json:"states,omitempty" yaml:"states" bson:"states" db:"states"`
+	States []LightState `protobuf:"varint,1,rep,packed,name=states,proto3,enum=city.map.v2.LightState" json:"states,omitempty" bson:"states" db:"states" yaml:"states"`
 }
 
 func (x *AvailablePhase) Reset() {
@@ -200,10 +200,10 @@ type TrafficLight struct {
 
 	// 所在路口id
 	// ID of the junction where the traffic light is at
-	JunctionId int32 `protobuf:"varint,1,opt,name=junction_id,json=junctionId,proto3" json:"junction_id,omitempty" yaml:"junction_id" bson:"junction_id" db:"junction_id"`
+	JunctionId int32 `protobuf:"varint,1,opt,name=junction_id,json=junctionId,proto3" json:"junction_id,omitempty" bson:"junction_id" db:"junction_id" yaml:"junction_id"`
 	// 相位循环的一个循环周期
 	// One cycle of phase cycling
-	Phases []*Phase `protobuf:"bytes,2,rep,name=phases,proto3" json:"phases,omitempty" yaml:"phases" bson:"phases" db:"phases"`
+	Phases []*Phase `protobuf:"bytes,2,rep,name=phases,proto3" json:"phases,omitempty" bson:"phases" db:"phases" yaml:"phases"`
 }
 
 func (x *TrafficLight) Reset() {

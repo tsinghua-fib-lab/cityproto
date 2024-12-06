@@ -116,24 +116,24 @@ type PersonMotion struct {
 	unknownFields protoimpl.UnknownFields
 
 	// ID
-	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
+	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" bson:"id" db:"id" yaml:"id"`
 	// 状态
 	// status
-	Status Status `protobuf:"varint,2,opt,name=status,proto3,enum=city.person.v1.Status" json:"status,omitempty" yaml:"status" bson:"status" db:"status"`
+	Status Status `protobuf:"varint,2,opt,name=status,proto3,enum=city.person.v1.Status" json:"status,omitempty" bson:"status" db:"status" yaml:"status"`
 	// 位置（包含逻辑位置、XY位置、经纬度位置）
 	// Position (including logical position, XY position, longitude and latitude position)
-	Position *v2.Position `protobuf:"bytes,3,opt,name=position,proto3" json:"position,omitempty" yaml:"position" bson:"position" db:"position"`
+	Position *v2.Position `protobuf:"bytes,3,opt,name=position,proto3" json:"position,omitempty" bson:"position" db:"position" yaml:"position"`
 	// speed
-	V float64 `protobuf:"fixed64,4,opt,name=v,proto3" json:"v,omitempty" db:"v" yaml:"v" bson:"v"`
+	V float64 `protobuf:"fixed64,4,opt,name=v,proto3" json:"v,omitempty" bson:"v" db:"v" yaml:"v"`
 	// 方向角（atan2计算得到的弧度）
 	// Direction angle (radians calculated by atan2)
-	Direction float64 `protobuf:"fixed64,5,opt,name=direction,proto3" json:"direction,omitempty" yaml:"direction" bson:"direction" db:"direction"`
+	Direction float64 `protobuf:"fixed64,5,opt,name=direction,proto3" json:"direction,omitempty" bson:"direction" db:"direction" yaml:"direction"`
 	// 活动描述
 	// activity descriptions
-	Activity string `protobuf:"bytes,6,opt,name=activity,proto3" json:"activity,omitempty" yaml:"activity" bson:"activity" db:"activity"`
+	Activity string `protobuf:"bytes,6,opt,name=activity,proto3" json:"activity,omitempty" bson:"activity" db:"activity" yaml:"activity"`
 	// 长度
 	// length
-	L float64 `protobuf:"fixed64,7,opt,name=l,proto3" json:"l,omitempty" yaml:"l" bson:"l" db:"l"`
+	L float64 `protobuf:"fixed64,7,opt,name=l,proto3" json:"l,omitempty" bson:"l" db:"l" yaml:"l"`
 }
 
 func (x *PersonMotion) Reset() {
