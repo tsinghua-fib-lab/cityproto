@@ -3543,10 +3543,10 @@ class Aoi final :
   void _internal_set_id(int32_t value);
   public:
 
-  // .city.map.v2.AoiType type = 2 [json_name = "type", deprecated = true];
-  PROTOBUF_DEPRECATED void clear_type();
-  PROTOBUF_DEPRECATED ::city::map::v2::AoiType type() const;
-  PROTOBUF_DEPRECATED void set_type(::city::map::v2::AoiType value);
+  // .city.map.v2.AoiType type = 2 [json_name = "type"];
+  void clear_type();
+  ::city::map::v2::AoiType type() const;
+  void set_type(::city::map::v2::AoiType value);
   private:
   ::city::map::v2::AoiType _internal_type() const;
   void _internal_set_type(::city::map::v2::AoiType value);
@@ -6709,7 +6709,7 @@ inline void Aoi::set_allocated_name(std::string* name) {
   // @@protoc_insertion_point(field_set_allocated:city.map.v2.Aoi.name)
 }
 
-// .city.map.v2.AoiType type = 2 [json_name = "type", deprecated = true];
+// .city.map.v2.AoiType type = 2 [json_name = "type"];
 inline void Aoi::clear_type() {
   _impl_.type_ = 0;
 }

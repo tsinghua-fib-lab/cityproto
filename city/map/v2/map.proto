@@ -285,7 +285,7 @@ message Junction {
   optional TrafficLight fixed_program = 5;
 }
 
-// TODO(张钧): 移除该项，重新设计公交地铁系统
+// Aoi类型 Aoi Type
 enum AoiType {
   // 未指定
   // unspecified
@@ -412,7 +412,7 @@ message Aoi {
   string name = 11;
   // Aoi类型
   // Aoi type
-  AoiType type = 2 [deprecated = true];
+  AoiType type = 2;
 
   // Aoi与行车路网的连接点
   // Connection point between Aoi and driving lanes

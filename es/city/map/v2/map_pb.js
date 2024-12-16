@@ -56,7 +56,7 @@ export const LaneConnectionType = /*@__PURE__*/ proto3.makeEnum(
 );
 
 /**
- * TODO(张钧): 移除该项，重新设计公交地铁系统
+ * Aoi类型 Aoi Type
  *
  * @generated from enum city.map.v2.AoiType
  */

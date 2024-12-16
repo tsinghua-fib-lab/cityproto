@@ -676,59 +676,59 @@ const char descriptor_table_protodef_city_2fmap_2fv2_2fmap_2eproto[] PROTOBUF_SE
   "\tR\nparentName\022;\n\tschedules\030\007 \001(\0132\035.city."
   "map.v2.SublineSchedulesR\tschedules\022:\n\tta"
   "z_costs\030\010 \003(\0132\035.city.map.v2.HeuristicTAZ"
-  "CostR\010tazCosts\"\336\004\n\003Aoi\022\016\n\002id\030\001 \001(\005R\002id\022\022"
-  "\n\004name\030\013 \001(\tR\004name\022,\n\004type\030\002 \001(\0162\024.city."
-  "map.v2.AoiTypeB\002\030\001R\004type\022F\n\021driving_posi"
-  "tions\030\003 \003(\0132\031.city.geo.v2.LanePositionR\020"
-  "drivingPositions\022F\n\021walking_positions\030\004 "
-  "\003(\0132\031.city.geo.v2.LanePositionR\020walkingP"
-  "ositions\0225\n\tpositions\030\005 \003(\0132\027.city.geo.v"
-  "2.XYPositionR\tpositions\022<\n\rdriving_gates"
-  "\030\006 \003(\0132\027.city.geo.v2.XYPositionR\014driving"
-  "Gates\022<\n\rwalking_gates\030\007 \003(\0132\027.city.geo."
-  "v2.XYPositionR\014walkingGates\022\027\n\004area\030\010 \001("
-  "\001H\000R\004area\210\001\001\022<\n\010land_use\030\n \001(\0162\030.city.ma"
-  "p.v2.LandUseTypeB\002\030\001H\001R\007landUse\210\001\001\022)\n\016ur"
-  "ban_land_use\030\014 \001(\tH\002R\014urbanLandUse\210\001\001\022\027\n"
-  "\007poi_ids\030\t \003(\005R\006poiIdsB\007\n\005_areaB\013\n\t_land"
-  "_useB\021\n\017_urban_land_use\"\335\001\n\003Poi\022\016\n\002id\030\001 "
-  "\001(\005R\002id\022\022\n\004name\030\002 \001(\tR\004name\022\032\n\010category\030"
-  "\003 \001(\tR\010category\0223\n\010position\030\004 \001(\0132\027.city"
-  ".geo.v2.XYPositionR\010position\022\025\n\006aoi_id\030\005"
-  " \001(\005R\005aoiId\022\037\n\010capacity\030\006 \001(\005H\000R\010capacit"
-  "y\210\001\001\022\034\n\tfunctions\030\007 \003(\tR\tfunctionsB\013\n\t_c"
-  "apacity\"\306\002\n\003Map\022+\n\006header\030\001 \001(\0132\023.city.m"
-  "ap.v2.HeaderR\006header\022\'\n\005lanes\030\002 \003(\0132\021.ci"
-  "ty.map.v2.LaneR\005lanes\022\'\n\005roads\030\003 \003(\0132\021.c"
-  "ity.map.v2.RoadR\005roads\0223\n\tjunctions\030\004 \003("
-  "\0132\025.city.map.v2.JunctionR\tjunctions\022$\n\004a"
-  "ois\030\005 \003(\0132\020.city.map.v2.AoiR\004aois\022$\n\004poi"
-  "s\030\006 \003(\0132\020.city.map.v2.PoiR\004pois\022\?\n\010subli"
-  "nes\030\007 \003(\0132#.city.map.v2.PublicTransportS"
-  "ublineR\010sublines*o\n\010LaneType\022\031\n\025LANE_TYP"
-  "E_UNSPECIFIED\020\000\022\025\n\021LANE_TYPE_DRIVING\020\001\022\025"
-  "\n\021LANE_TYPE_WALKING\020\002\022\032\n\026LANE_TYPE_RAIL_"
-  "TRANSIT\020\003*|\n\010LaneTurn\022\031\n\025LANE_TURN_UNSPE"
-  "CIFIED\020\000\022\026\n\022LANE_TURN_STRAIGHT\020\001\022\022\n\016LANE"
-  "_TURN_LEFT\020\002\022\023\n\017LANE_TURN_RIGHT\020\003\022\024\n\020LAN"
-  "E_TURN_AROUND\020\004*x\n\022LaneConnectionType\022$\n"
-  " LANE_CONNECTION_TYPE_UNSPECIFIED\020\000\022\035\n\031L"
-  "ANE_CONNECTION_TYPE_HEAD\020\001\022\035\n\031LANE_CONNE"
-  "CTION_TYPE_TAIL\020\002*Q\n\007AoiType\022\030\n\024AOI_TYPE"
-  "_UNSPECIFIED\020\000\022\030\n\024AOI_TYPE_BUS_STATION\020\001"
-  "\022\022\n\016AOI_TYPE_OTHER\020\002*\334\001\n\013LandUseType\022\035\n\031"
-  "LAND_USE_TYPE_UNSPECIFIED\020\000\022\034\n\030LAND_USE_"
-  "TYPE_COMMERCIAL\020\005\022\034\n\030LAND_USE_TYPE_INDUS"
-  "TRIAL\020\006\022\035\n\031LAND_USE_TYPE_RESIDENTIAL\020\007\022\030"
-  "\n\024LAND_USE_TYPE_PUBLIC\020\010\022 \n\034LAND_USE_TYP"
-  "E_TRANSPORTATION\020\n\022\027\n\023LAND_USE_TYPE_OTHE"
-  "R\020\014*Z\n\013SublineType\022\034\n\030SUBLINE_TYPE_UNSPE"
-  "CIFIED\020\000\022\024\n\020SUBLINE_TYPE_BUS\020\001\022\027\n\023SUBLIN"
-  "E_TYPE_SUBWAY\020\002B\234\001\n\017com.city.map.v2B\010Map"
-  "ProtoP\001Z1git.fiblab.net/sim/protos/v2/go"
-  "/city/map/v2;mapv2\242\002\003CMX\252\002\013City.Map.V2\312\002"
-  "\013City\\Map\\V2\342\002\027City\\Map\\V2\\GPBMetadata\352\002"
-  "\rCity::Map::V2b\006proto3"
+  "CostR\010tazCosts\"\332\004\n\003Aoi\022\016\n\002id\030\001 \001(\005R\002id\022\022"
+  "\n\004name\030\013 \001(\tR\004name\022(\n\004type\030\002 \001(\0162\024.city."
+  "map.v2.AoiTypeR\004type\022F\n\021driving_position"
+  "s\030\003 \003(\0132\031.city.geo.v2.LanePositionR\020driv"
+  "ingPositions\022F\n\021walking_positions\030\004 \003(\0132"
+  "\031.city.geo.v2.LanePositionR\020walkingPosit"
+  "ions\0225\n\tpositions\030\005 \003(\0132\027.city.geo.v2.XY"
+  "PositionR\tpositions\022<\n\rdriving_gates\030\006 \003"
+  "(\0132\027.city.geo.v2.XYPositionR\014drivingGate"
+  "s\022<\n\rwalking_gates\030\007 \003(\0132\027.city.geo.v2.X"
+  "YPositionR\014walkingGates\022\027\n\004area\030\010 \001(\001H\000R"
+  "\004area\210\001\001\022<\n\010land_use\030\n \001(\0162\030.city.map.v2"
+  ".LandUseTypeB\002\030\001H\001R\007landUse\210\001\001\022)\n\016urban_"
+  "land_use\030\014 \001(\tH\002R\014urbanLandUse\210\001\001\022\027\n\007poi"
+  "_ids\030\t \003(\005R\006poiIdsB\007\n\005_areaB\013\n\t_land_use"
+  "B\021\n\017_urban_land_use\"\335\001\n\003Poi\022\016\n\002id\030\001 \001(\005R"
+  "\002id\022\022\n\004name\030\002 \001(\tR\004name\022\032\n\010category\030\003 \001("
+  "\tR\010category\0223\n\010position\030\004 \001(\0132\027.city.geo"
+  ".v2.XYPositionR\010position\022\025\n\006aoi_id\030\005 \001(\005"
+  "R\005aoiId\022\037\n\010capacity\030\006 \001(\005H\000R\010capacity\210\001\001"
+  "\022\034\n\tfunctions\030\007 \003(\tR\tfunctionsB\013\n\t_capac"
+  "ity\"\306\002\n\003Map\022+\n\006header\030\001 \001(\0132\023.city.map.v"
+  "2.HeaderR\006header\022\'\n\005lanes\030\002 \003(\0132\021.city.m"
+  "ap.v2.LaneR\005lanes\022\'\n\005roads\030\003 \003(\0132\021.city."
+  "map.v2.RoadR\005roads\0223\n\tjunctions\030\004 \003(\0132\025."
+  "city.map.v2.JunctionR\tjunctions\022$\n\004aois\030"
+  "\005 \003(\0132\020.city.map.v2.AoiR\004aois\022$\n\004pois\030\006 "
+  "\003(\0132\020.city.map.v2.PoiR\004pois\022\?\n\010sublines\030"
+  "\007 \003(\0132#.city.map.v2.PublicTransportSubli"
+  "neR\010sublines*o\n\010LaneType\022\031\n\025LANE_TYPE_UN"
+  "SPECIFIED\020\000\022\025\n\021LANE_TYPE_DRIVING\020\001\022\025\n\021LA"
+  "NE_TYPE_WALKING\020\002\022\032\n\026LANE_TYPE_RAIL_TRAN"
+  "SIT\020\003*|\n\010LaneTurn\022\031\n\025LANE_TURN_UNSPECIFI"
+  "ED\020\000\022\026\n\022LANE_TURN_STRAIGHT\020\001\022\022\n\016LANE_TUR"
+  "N_LEFT\020\002\022\023\n\017LANE_TURN_RIGHT\020\003\022\024\n\020LANE_TU"
+  "RN_AROUND\020\004*x\n\022LaneConnectionType\022$\n LAN"
+  "E_CONNECTION_TYPE_UNSPECIFIED\020\000\022\035\n\031LANE_"
+  "CONNECTION_TYPE_HEAD\020\001\022\035\n\031LANE_CONNECTIO"
+  "N_TYPE_TAIL\020\002*Q\n\007AoiType\022\030\n\024AOI_TYPE_UNS"
+  "PECIFIED\020\000\022\030\n\024AOI_TYPE_BUS_STATION\020\001\022\022\n\016"
+  "AOI_TYPE_OTHER\020\002*\334\001\n\013LandUseType\022\035\n\031LAND"
+  "_USE_TYPE_UNSPECIFIED\020\000\022\034\n\030LAND_USE_TYPE"
+  "_COMMERCIAL\020\005\022\034\n\030LAND_USE_TYPE_INDUSTRIA"
+  "L\020\006\022\035\n\031LAND_USE_TYPE_RESIDENTIAL\020\007\022\030\n\024LA"
+  "ND_USE_TYPE_PUBLIC\020\010\022 \n\034LAND_USE_TYPE_TR"
+  "ANSPORTATION\020\n\022\027\n\023LAND_USE_TYPE_OTHER\020\014*"
+  "Z\n\013SublineType\022\034\n\030SUBLINE_TYPE_UNSPECIFI"
+  "ED\020\000\022\024\n\020SUBLINE_TYPE_BUS\020\001\022\027\n\023SUBLINE_TY"
+  "PE_SUBWAY\020\002B\234\001\n\017com.city.map.v2B\010MapProt"
+  "oP\001Z1git.fiblab.net/sim/protos/v2/go/cit"
+  "y/map/v2;mapv2\242\002\003CMX\252\002\013City.Map.V2\312\002\013Cit"
+  "y\\Map\\V2\342\002\027City\\Map\\V2\\GPBMetadata\352\002\rCit"
+  "y::Map::V2b\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_city_2fmap_2fv2_2fmap_2eproto_deps[2] = {
   &::descriptor_table_city_2fgeo_2fv2_2fgeo_2eproto,
@@ -736,7 +736,7 @@ static const ::_pbi::DescriptorTable* const descriptor_table_city_2fmap_2fv2_2fm
 };
 static ::_pbi::once_flag descriptor_table_city_2fmap_2fv2_2fmap_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2fmap_2fv2_2fmap_2eproto = {
-    false, false, 4862, descriptor_table_protodef_city_2fmap_2fv2_2fmap_2eproto,
+    false, false, 4858, descriptor_table_protodef_city_2fmap_2fv2_2fmap_2eproto,
     "city/map/v2/map.proto",
     &descriptor_table_city_2fmap_2fv2_2fmap_2eproto_once, descriptor_table_city_2fmap_2fv2_2fmap_2eproto_deps, 2, 17,
     schemas, file_default_instances, TableStruct_city_2fmap_2fv2_2fmap_2eproto::offsets,
@@ -5547,7 +5547,7 @@ const char* Aoi::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
         } else
           goto handle_unusual;
         continue;
-      // .city.map.v2.AoiType type = 2 [json_name = "type", deprecated = true];
+      // .city.map.v2.AoiType type = 2 [json_name = "type"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
@@ -5706,7 +5706,7 @@ uint8_t* Aoi::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_id(), target);
   }
 
-  // .city.map.v2.AoiType type = 2 [json_name = "type", deprecated = true];
+  // .city.map.v2.AoiType type = 2 [json_name = "type"];
   if (this->_internal_type() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteEnumToArray(
@@ -5880,7 +5880,7 @@ size_t Aoi::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_id());
   }
 
-  // .city.map.v2.AoiType type = 2 [json_name = "type", deprecated = true];
+  // .city.map.v2.AoiType type = 2 [json_name = "type"];
   if (this->_internal_type() != 0) {
     total_size += 1 +
       ::_pbi::WireFormatLite::EnumSize(this->_internal_type());

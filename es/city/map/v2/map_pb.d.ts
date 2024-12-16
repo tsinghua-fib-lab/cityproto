@@ -129,7 +129,7 @@ export declare enum LaneConnectionType {
 }
 
 /**
- * TODO(张钧): 移除该项，重新设计公交地铁系统
+ * Aoi类型 Aoi Type
  *
  * @generated from enum city.map.v2.AoiType
  */
@@ -1116,8 +1116,7 @@ export declare class Aoi extends Message<Aoi> {
    * Aoi类型
    * Aoi type
    *
-   * @generated from field: city.map.v2.AoiType type = 2 [deprecated = true];
-   * @deprecated
+   * @generated from field: city.map.v2.AoiType type = 2;
    */
   type: AoiType;
 
