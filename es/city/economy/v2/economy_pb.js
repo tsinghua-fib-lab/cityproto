@@ -41,6 +41,12 @@ export const Org = /*@__PURE__*/ proto3.makeMessageType(
     { no: 11, name: "interest_rate", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
     { no: 12, name: "bracket_cutoffs", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
     { no: 13, name: "bracket_rates", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
+    { no: 14, name: "consumption_currency", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
+    { no: 15, name: "consumption_propensity", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
+    { no: 16, name: "income_currency", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
+    { no: 17, name: "depression", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
+    { no: 18, name: "locus_control", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
+    { no: 19, name: "working_hours", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
   ],
 );
 

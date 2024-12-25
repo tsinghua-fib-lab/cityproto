@@ -514,3 +514,195 @@ class LoadEconomyEntitiesResponse(_message.Message):
 
     def __init__(self, agent_ids: _Optional[_Iterable[int]]=..., org_ids: _Optional[_Iterable[int]]=...) -> None:
         ...
+
+class GetConsumptionCurrencyRequest(_message.Message):
+    __slots__ = ['org_id']
+    ORG_ID_FIELD_NUMBER: _ClassVar[int]
+    org_id: int
+
+    def __init__(self, org_id: _Optional[int]=...) -> None:
+        ...
+
+class GetConsumptionCurrencyResponse(_message.Message):
+    __slots__ = ['consumption_currency']
+    CONSUMPTION_CURRENCY_FIELD_NUMBER: _ClassVar[int]
+    consumption_currency: _containers.RepeatedScalarFieldContainer[float]
+
+    def __init__(self, consumption_currency: _Optional[_Iterable[float]]=...) -> None:
+        ...
+
+class SetConsumptionCurrencyRequest(_message.Message):
+    __slots__ = ['org_id', 'consumption_currency']
+    ORG_ID_FIELD_NUMBER: _ClassVar[int]
+    CONSUMPTION_CURRENCY_FIELD_NUMBER: _ClassVar[int]
+    org_id: int
+    consumption_currency: _containers.RepeatedScalarFieldContainer[float]
+
+    def __init__(self, org_id: _Optional[int]=..., consumption_currency: _Optional[_Iterable[float]]=...) -> None:
+        ...
+
+class SetConsumptionCurrencyResponse(_message.Message):
+    __slots__ = []
+
+    def __init__(self) -> None:
+        ...
+
+class GetConsumptionPropensityRequest(_message.Message):
+    __slots__ = ['org_id']
+    ORG_ID_FIELD_NUMBER: _ClassVar[int]
+    org_id: int
+
+    def __init__(self, org_id: _Optional[int]=...) -> None:
+        ...
+
+class GetConsumptionPropensityResponse(_message.Message):
+    __slots__ = ['consumption_propensity']
+    CONSUMPTION_PROPENSITY_FIELD_NUMBER: _ClassVar[int]
+    consumption_propensity: _containers.RepeatedScalarFieldContainer[float]
+
+    def __init__(self, consumption_propensity: _Optional[_Iterable[float]]=...) -> None:
+        ...
+
+class SetConsumptionPropensityRequest(_message.Message):
+    __slots__ = ['org_id', 'consumption_propensity']
+    ORG_ID_FIELD_NUMBER: _ClassVar[int]
+    CONSUMPTION_PROPENSITY_FIELD_NUMBER: _ClassVar[int]
+    org_id: int
+    consumption_propensity: _containers.RepeatedScalarFieldContainer[float]
+
+    def __init__(self, org_id: _Optional[int]=..., consumption_propensity: _Optional[_Iterable[float]]=...) -> None:
+        ...
+
+class SetConsumptionPropensityResponse(_message.Message):
+    __slots__ = []
+
+    def __init__(self) -> None:
+        ...
+
+class GetIncomeCurrencyRequest(_message.Message):
+    __slots__ = ['org_id']
+    ORG_ID_FIELD_NUMBER: _ClassVar[int]
+    org_id: int
+
+    def __init__(self, org_id: _Optional[int]=...) -> None:
+        ...
+
+class GetIncomeCurrencyResponse(_message.Message):
+    __slots__ = ['income_currency']
+    INCOME_CURRENCY_FIELD_NUMBER: _ClassVar[int]
+    income_currency: _containers.RepeatedScalarFieldContainer[float]
+
+    def __init__(self, income_currency: _Optional[_Iterable[float]]=...) -> None:
+        ...
+
+class SetIncomeCurrencyRequest(_message.Message):
+    __slots__ = ['org_id', 'income_currency']
+    ORG_ID_FIELD_NUMBER: _ClassVar[int]
+    INCOME_CURRENCY_FIELD_NUMBER: _ClassVar[int]
+    org_id: int
+    income_currency: _containers.RepeatedScalarFieldContainer[float]
+
+    def __init__(self, org_id: _Optional[int]=..., income_currency: _Optional[_Iterable[float]]=...) -> None:
+        ...
+
+class SetIncomeCurrencyResponse(_message.Message):
+    __slots__ = []
+
+    def __init__(self) -> None:
+        ...
+
+class GetDepressionStatusRequest(_message.Message):
+    __slots__ = ['org_id']
+    ORG_ID_FIELD_NUMBER: _ClassVar[int]
+    org_id: int
+
+    def __init__(self, org_id: _Optional[int]=...) -> None:
+        ...
+
+class GetDepressionStatusResponse(_message.Message):
+    __slots__ = ['depression']
+    DEPRESSION_FIELD_NUMBER: _ClassVar[int]
+    depression: _containers.RepeatedScalarFieldContainer[float]
+
+    def __init__(self, depression: _Optional[_Iterable[float]]=...) -> None:
+        ...
+
+class SetDepressionStatusRequest(_message.Message):
+    __slots__ = ['org_id', 'depression']
+    ORG_ID_FIELD_NUMBER: _ClassVar[int]
+    DEPRESSION_FIELD_NUMBER: _ClassVar[int]
+    org_id: int
+    depression: _containers.RepeatedScalarFieldContainer[float]
+
+    def __init__(self, org_id: _Optional[int]=..., depression: _Optional[_Iterable[float]]=...) -> None:
+        ...
+
+class SetDepressionStatusResponse(_message.Message):
+    __slots__ = []
+
+    def __init__(self) -> None:
+        ...
+
+class GetLocusControlRequest(_message.Message):
+    __slots__ = ['org_id']
+    ORG_ID_FIELD_NUMBER: _ClassVar[int]
+    org_id: int
+
+    def __init__(self, org_id: _Optional[int]=...) -> None:
+        ...
+
+class GetLocusControlResponse(_message.Message):
+    __slots__ = ['locus_control']
+    LOCUS_CONTROL_FIELD_NUMBER: _ClassVar[int]
+    locus_control: _containers.RepeatedScalarFieldContainer[float]
+
+    def __init__(self, locus_control: _Optional[_Iterable[float]]=...) -> None:
+        ...
+
+class SetLocusControlRequest(_message.Message):
+    __slots__ = ['org_id', 'locus_control']
+    ORG_ID_FIELD_NUMBER: _ClassVar[int]
+    LOCUS_CONTROL_FIELD_NUMBER: _ClassVar[int]
+    org_id: int
+    locus_control: _containers.RepeatedScalarFieldContainer[float]
+
+    def __init__(self, org_id: _Optional[int]=..., locus_control: _Optional[_Iterable[float]]=...) -> None:
+        ...
+
+class SetLocusControlResponse(_message.Message):
+    __slots__ = []
+
+    def __init__(self) -> None:
+        ...
+
+class GetWorkingHoursRequest(_message.Message):
+    __slots__ = ['org_id']
+    ORG_ID_FIELD_NUMBER: _ClassVar[int]
+    org_id: int
+
+    def __init__(self, org_id: _Optional[int]=...) -> None:
+        ...
+
+class GetWorkingHoursResponse(_message.Message):
+    __slots__ = ['working_hours']
+    WORKING_HOURS_FIELD_NUMBER: _ClassVar[int]
+    working_hours: _containers.RepeatedScalarFieldContainer[float]
+
+    def __init__(self, working_hours: _Optional[_Iterable[float]]=...) -> None:
+        ...
+
+class SetWorkingHoursRequest(_message.Message):
+    __slots__ = ['org_id', 'working_hours']
+    ORG_ID_FIELD_NUMBER: _ClassVar[int]
+    WORKING_HOURS_FIELD_NUMBER: _ClassVar[int]
+    org_id: int
+    working_hours: _containers.RepeatedScalarFieldContainer[float]
+
+    def __init__(self, org_id: _Optional[int]=..., working_hours: _Optional[_Iterable[float]]=...) -> None:
+        ...
+
+class SetWorkingHoursResponse(_message.Message):
+    __slots__ = []
+
+    def __init__(self) -> None:
+        ...

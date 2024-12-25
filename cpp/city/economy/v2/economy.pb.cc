@@ -34,6 +34,12 @@ PROTOBUF_CONSTEXPR Org::Org(
   , /*decltype(_impl_.prices_)*/{}
   , /*decltype(_impl_.bracket_cutoffs_)*/{}
   , /*decltype(_impl_.bracket_rates_)*/{}
+  , /*decltype(_impl_.consumption_currency_)*/{}
+  , /*decltype(_impl_.consumption_propensity_)*/{}
+  , /*decltype(_impl_.income_currency_)*/{}
+  , /*decltype(_impl_.depression_)*/{}
+  , /*decltype(_impl_.locus_control_)*/{}
+  , /*decltype(_impl_.working_hours_)*/{}
   , /*decltype(_impl_.id_)*/0
   , /*decltype(_impl_.type_)*/0
   , /*decltype(_impl_.inventory_)*/0
@@ -105,6 +111,12 @@ const uint32_t TableStruct_city_2feconomy_2fv2_2feconomy_2eproto::offsets[] PROT
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::Org, _impl_.interest_rate_),
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::Org, _impl_.bracket_cutoffs_),
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::Org, _impl_.bracket_rates_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::Org, _impl_.consumption_currency_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::Org, _impl_.consumption_propensity_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::Org, _impl_.income_currency_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::Org, _impl_.depression_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::Org, _impl_.locus_control_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::Org, _impl_.working_hours_),
   ~0u,
   ~0u,
   ~0u,
@@ -116,6 +128,12 @@ const uint32_t TableStruct_city_2feconomy_2fv2_2feconomy_2eproto::offsets[] PROT
   1,
   2,
   3,
+  ~0u,
+  ~0u,
+  ~0u,
+  ~0u,
+  ~0u,
+  ~0u,
   ~0u,
   ~0u,
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::Agent, _impl_._has_bits_),
@@ -138,9 +156,9 @@ const uint32_t TableStruct_city_2feconomy_2fv2_2feconomy_2eproto::offsets[] PROT
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::EconomyEntities, _impl_.agents_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, 19, -1, sizeof(::city::economy::v2::Org)},
-  { 32, 40, -1, sizeof(::city::economy::v2::Agent)},
-  { 42, -1, -1, sizeof(::city::economy::v2::EconomyEntities)},
+  { 0, 25, -1, sizeof(::city::economy::v2::Org)},
+  { 44, 52, -1, sizeof(::city::economy::v2::Agent)},
+  { 54, -1, -1, sizeof(::city::economy::v2::EconomyEntities)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -151,7 +169,7 @@ static const ::_pb::Message* const file_default_instances[] = {
 
 const char descriptor_table_protodef_city_2feconomy_2fv2_2feconomy_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\035city/economy/v2/economy.proto\022\017city.ec"
-  "onomy.v2\"\337\003\n\003Org\022\016\n\002id\030\001 \001(\005R\002id\022,\n\004type"
+  "onomy.v2\"\334\005\n\003Org\022\016\n\002id\030\001 \001(\005R\002id\022,\n\004type"
   "\030\002 \001(\0162\030.city.economy.v2.OrgTypeR\004type\022\037"
   "\n\013nominal_gdp\030\003 \003(\002R\nnominalGdp\022\031\n\010real_"
   "gdp\030\004 \003(\002R\007realGdp\022\"\n\014unemployment\030\005 \003(\002"
@@ -161,25 +179,31 @@ const char descriptor_table_protodef_city_2feconomy_2fv2_2feconomy_2eproto[] PRO
   "\001\001\022\037\n\010currency\030\n \001(\002H\002R\010currency\210\001\001\022(\n\ri"
   "nterest_rate\030\013 \001(\002H\003R\014interestRate\210\001\001\022\'\n"
   "\017bracket_cutoffs\030\014 \003(\002R\016bracketCutoffs\022#"
-  "\n\rbracket_rates\030\r \003(\002R\014bracketRatesB\014\n\n_"
-  "inventoryB\010\n\006_priceB\013\n\t_currencyB\020\n\016_int"
-  "erest_rate\"E\n\005Agent\022\016\n\002id\030\001 \001(\005R\002id\022\037\n\010c"
-  "urrency\030\002 \001(\002H\000R\010currency\210\001\001B\013\n\t_currenc"
-  "y\"k\n\017EconomyEntities\022(\n\004orgs\030\001 \003(\0132\024.cit"
-  "y.economy.v2.OrgR\004orgs\022.\n\006agents\030\002 \003(\0132\026"
-  ".city.economy.v2.AgentR\006agents*t\n\007OrgTyp"
-  "e\022\030\n\024ORG_TYPE_UNSPECIFIED\020\000\022\020\n\014ORG_TYPE_"
-  "NBS\020\001\022\021\n\rORG_TYPE_FIRM\020\002\022\021\n\rORG_TYPE_BAN"
-  "K\020\003\022\027\n\023ORG_TYPE_GOVERNMENT\020\004B\274\001\n\023com.cit"
-  "y.economy.v2B\014EconomyProtoP\001Z9git.fiblab"
-  ".net/sim/protos/v2/go/city/economy/v2;ec"
-  "onomyv2\242\002\003CEX\252\002\017City.Economy.V2\312\002\017City\\E"
-  "conomy\\V2\342\002\033City\\Economy\\V2\\GPBMetadata\352"
-  "\002\021City::Economy::V2b\006proto3"
+  "\n\rbracket_rates\030\r \003(\002R\014bracketRates\0221\n\024c"
+  "onsumption_currency\030\016 \003(\002R\023consumptionCu"
+  "rrency\0225\n\026consumption_propensity\030\017 \003(\002R\025"
+  "consumptionPropensity\022\'\n\017income_currency"
+  "\030\020 \003(\002R\016incomeCurrency\022\036\n\ndepression\030\021 \003"
+  "(\002R\ndepression\022#\n\rlocus_control\030\022 \003(\002R\014l"
+  "ocusControl\022#\n\rworking_hours\030\023 \003(\002R\014work"
+  "ingHoursB\014\n\n_inventoryB\010\n\006_priceB\013\n\t_cur"
+  "rencyB\020\n\016_interest_rate\"E\n\005Agent\022\016\n\002id\030\001"
+  " \001(\005R\002id\022\037\n\010currency\030\002 \001(\002H\000R\010currency\210\001"
+  "\001B\013\n\t_currency\"k\n\017EconomyEntities\022(\n\004org"
+  "s\030\001 \003(\0132\024.city.economy.v2.OrgR\004orgs\022.\n\006a"
+  "gents\030\002 \003(\0132\026.city.economy.v2.AgentR\006age"
+  "nts*t\n\007OrgType\022\030\n\024ORG_TYPE_UNSPECIFIED\020\000"
+  "\022\020\n\014ORG_TYPE_NBS\020\001\022\021\n\rORG_TYPE_FIRM\020\002\022\021\n"
+  "\rORG_TYPE_BANK\020\003\022\027\n\023ORG_TYPE_GOVERNMENT\020"
+  "\004B\274\001\n\023com.city.economy.v2B\014EconomyProtoP"
+  "\001Z9git.fiblab.net/sim/protos/v2/go/city/"
+  "economy/v2;economyv2\242\002\003CEX\252\002\017City.Econom"
+  "y.V2\312\002\017City\\Economy\\V2\342\002\033City\\Economy\\V2"
+  "\\GPBMetadata\352\002\021City::Economy::V2b\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_city_2feconomy_2fv2_2feconomy_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2feconomy_2fv2_2feconomy_2eproto = {
-    false, false, 1027, descriptor_table_protodef_city_2feconomy_2fv2_2feconomy_2eproto,
+    false, false, 1280, descriptor_table_protodef_city_2feconomy_2fv2_2feconomy_2eproto,
     "city/economy/v2/economy.proto",
     &descriptor_table_city_2feconomy_2fv2_2feconomy_2eproto_once, nullptr, 0, 3,
     schemas, file_default_instances, TableStruct_city_2feconomy_2fv2_2feconomy_2eproto::offsets,
@@ -251,6 +275,12 @@ Org::Org(const Org& from)
     , decltype(_impl_.prices_){from._impl_.prices_}
     , decltype(_impl_.bracket_cutoffs_){from._impl_.bracket_cutoffs_}
     , decltype(_impl_.bracket_rates_){from._impl_.bracket_rates_}
+    , decltype(_impl_.consumption_currency_){from._impl_.consumption_currency_}
+    , decltype(_impl_.consumption_propensity_){from._impl_.consumption_propensity_}
+    , decltype(_impl_.income_currency_){from._impl_.income_currency_}
+    , decltype(_impl_.depression_){from._impl_.depression_}
+    , decltype(_impl_.locus_control_){from._impl_.locus_control_}
+    , decltype(_impl_.working_hours_){from._impl_.working_hours_}
     , decltype(_impl_.id_){}
     , decltype(_impl_.type_){}
     , decltype(_impl_.inventory_){}
@@ -279,6 +309,12 @@ inline void Org::SharedCtor(
     , decltype(_impl_.prices_){arena}
     , decltype(_impl_.bracket_cutoffs_){arena}
     , decltype(_impl_.bracket_rates_){arena}
+    , decltype(_impl_.consumption_currency_){arena}
+    , decltype(_impl_.consumption_propensity_){arena}
+    , decltype(_impl_.income_currency_){arena}
+    , decltype(_impl_.depression_){arena}
+    , decltype(_impl_.locus_control_){arena}
+    , decltype(_impl_.working_hours_){arena}
     , decltype(_impl_.id_){0}
     , decltype(_impl_.type_){0}
     , decltype(_impl_.inventory_){0}
@@ -306,6 +342,12 @@ inline void Org::SharedDtor() {
   _impl_.prices_.~RepeatedField();
   _impl_.bracket_cutoffs_.~RepeatedField();
   _impl_.bracket_rates_.~RepeatedField();
+  _impl_.consumption_currency_.~RepeatedField();
+  _impl_.consumption_propensity_.~RepeatedField();
+  _impl_.income_currency_.~RepeatedField();
+  _impl_.depression_.~RepeatedField();
+  _impl_.locus_control_.~RepeatedField();
+  _impl_.working_hours_.~RepeatedField();
 }
 
 void Org::SetCachedSize(int size) const {
@@ -325,6 +367,12 @@ void Org::Clear() {
   _impl_.prices_.Clear();
   _impl_.bracket_cutoffs_.Clear();
   _impl_.bracket_rates_.Clear();
+  _impl_.consumption_currency_.Clear();
+  _impl_.consumption_propensity_.Clear();
+  _impl_.income_currency_.Clear();
+  _impl_.depression_.Clear();
+  _impl_.locus_control_.Clear();
+  _impl_.working_hours_.Clear();
   ::memset(&_impl_.id_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_impl_.type_) -
       reinterpret_cast<char*>(&_impl_.id_)) + sizeof(_impl_.type_));
@@ -475,6 +523,72 @@ const char* Org::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
         } else
           goto handle_unusual;
         continue;
+      // repeated float consumption_currency = 14 [json_name = "consumptionCurrency"];
+      case 14:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 114)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedFloatParser(_internal_mutable_consumption_currency(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<uint8_t>(tag) == 117) {
+          _internal_add_consumption_currency(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated float consumption_propensity = 15 [json_name = "consumptionPropensity"];
+      case 15:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 122)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedFloatParser(_internal_mutable_consumption_propensity(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<uint8_t>(tag) == 125) {
+          _internal_add_consumption_propensity(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated float income_currency = 16 [json_name = "incomeCurrency"];
+      case 16:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 130)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedFloatParser(_internal_mutable_income_currency(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<uint8_t>(tag) == 133) {
+          _internal_add_income_currency(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated float depression = 17 [json_name = "depression"];
+      case 17:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 138)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedFloatParser(_internal_mutable_depression(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<uint8_t>(tag) == 141) {
+          _internal_add_depression(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated float locus_control = 18 [json_name = "locusControl"];
+      case 18:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 146)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedFloatParser(_internal_mutable_locus_control(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<uint8_t>(tag) == 149) {
+          _internal_add_locus_control(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated float working_hours = 19 [json_name = "workingHours"];
+      case 19:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 154)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedFloatParser(_internal_mutable_working_hours(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<uint8_t>(tag) == 157) {
+          _internal_add_working_hours(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
       default:
         goto handle_unusual;
     }  // switch
@@ -577,6 +691,36 @@ uint8_t* Org::_InternalSerialize(
     target = stream->WriteFixedPacked(13, _internal_bracket_rates(), target);
   }
 
+  // repeated float consumption_currency = 14 [json_name = "consumptionCurrency"];
+  if (this->_internal_consumption_currency_size() > 0) {
+    target = stream->WriteFixedPacked(14, _internal_consumption_currency(), target);
+  }
+
+  // repeated float consumption_propensity = 15 [json_name = "consumptionPropensity"];
+  if (this->_internal_consumption_propensity_size() > 0) {
+    target = stream->WriteFixedPacked(15, _internal_consumption_propensity(), target);
+  }
+
+  // repeated float income_currency = 16 [json_name = "incomeCurrency"];
+  if (this->_internal_income_currency_size() > 0) {
+    target = stream->WriteFixedPacked(16, _internal_income_currency(), target);
+  }
+
+  // repeated float depression = 17 [json_name = "depression"];
+  if (this->_internal_depression_size() > 0) {
+    target = stream->WriteFixedPacked(17, _internal_depression(), target);
+  }
+
+  // repeated float locus_control = 18 [json_name = "locusControl"];
+  if (this->_internal_locus_control_size() > 0) {
+    target = stream->WriteFixedPacked(18, _internal_locus_control(), target);
+  }
+
+  // repeated float working_hours = 19 [json_name = "workingHours"];
+  if (this->_internal_working_hours_size() > 0) {
+    target = stream->WriteFixedPacked(19, _internal_working_hours(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -670,6 +814,72 @@ size_t Org::ByteSizeLong() const {
     total_size += data_size;
   }
 
+  // repeated float consumption_currency = 14 [json_name = "consumptionCurrency"];
+  {
+    unsigned int count = static_cast<unsigned int>(this->_internal_consumption_currency_size());
+    size_t data_size = 4UL * count;
+    if (data_size > 0) {
+      total_size += 1 +
+        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
+    }
+    total_size += data_size;
+  }
+
+  // repeated float consumption_propensity = 15 [json_name = "consumptionPropensity"];
+  {
+    unsigned int count = static_cast<unsigned int>(this->_internal_consumption_propensity_size());
+    size_t data_size = 4UL * count;
+    if (data_size > 0) {
+      total_size += 1 +
+        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
+    }
+    total_size += data_size;
+  }
+
+  // repeated float income_currency = 16 [json_name = "incomeCurrency"];
+  {
+    unsigned int count = static_cast<unsigned int>(this->_internal_income_currency_size());
+    size_t data_size = 4UL * count;
+    if (data_size > 0) {
+      total_size += 2 +
+        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
+    }
+    total_size += data_size;
+  }
+
+  // repeated float depression = 17 [json_name = "depression"];
+  {
+    unsigned int count = static_cast<unsigned int>(this->_internal_depression_size());
+    size_t data_size = 4UL * count;
+    if (data_size > 0) {
+      total_size += 2 +
+        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
+    }
+    total_size += data_size;
+  }
+
+  // repeated float locus_control = 18 [json_name = "locusControl"];
+  {
+    unsigned int count = static_cast<unsigned int>(this->_internal_locus_control_size());
+    size_t data_size = 4UL * count;
+    if (data_size > 0) {
+      total_size += 2 +
+        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
+    }
+    total_size += data_size;
+  }
+
+  // repeated float working_hours = 19 [json_name = "workingHours"];
+  {
+    unsigned int count = static_cast<unsigned int>(this->_internal_working_hours_size());
+    size_t data_size = 4UL * count;
+    if (data_size > 0) {
+      total_size += 2 +
+        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
+    }
+    total_size += data_size;
+  }
+
   // int32 id = 1 [json_name = "id"];
   if (this->_internal_id() != 0) {
     total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_id());
@@ -729,6 +939,12 @@ void Org::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_N
   _this->_impl_.prices_.MergeFrom(from._impl_.prices_);
   _this->_impl_.bracket_cutoffs_.MergeFrom(from._impl_.bracket_cutoffs_);
   _this->_impl_.bracket_rates_.MergeFrom(from._impl_.bracket_rates_);
+  _this->_impl_.consumption_currency_.MergeFrom(from._impl_.consumption_currency_);
+  _this->_impl_.consumption_propensity_.MergeFrom(from._impl_.consumption_propensity_);
+  _this->_impl_.income_currency_.MergeFrom(from._impl_.income_currency_);
+  _this->_impl_.depression_.MergeFrom(from._impl_.depression_);
+  _this->_impl_.locus_control_.MergeFrom(from._impl_.locus_control_);
+  _this->_impl_.working_hours_.MergeFrom(from._impl_.working_hours_);
   if (from._internal_id() != 0) {
     _this->_internal_set_id(from._internal_id());
   }
@@ -776,6 +992,12 @@ void Org::InternalSwap(Org* other) {
   _impl_.prices_.InternalSwap(&other->_impl_.prices_);
   _impl_.bracket_cutoffs_.InternalSwap(&other->_impl_.bracket_cutoffs_);
   _impl_.bracket_rates_.InternalSwap(&other->_impl_.bracket_rates_);
+  _impl_.consumption_currency_.InternalSwap(&other->_impl_.consumption_currency_);
+  _impl_.consumption_propensity_.InternalSwap(&other->_impl_.consumption_propensity_);
+  _impl_.income_currency_.InternalSwap(&other->_impl_.income_currency_);
+  _impl_.depression_.InternalSwap(&other->_impl_.depression_);
+  _impl_.locus_control_.InternalSwap(&other->_impl_.locus_control_);
+  _impl_.working_hours_.InternalSwap(&other->_impl_.working_hours_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(Org, _impl_.interest_rate_)
       + sizeof(Org::_impl_.interest_rate_)

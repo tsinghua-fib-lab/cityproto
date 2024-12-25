@@ -618,3 +618,249 @@ export const LoadEconomyEntitiesResponse = /*@__PURE__*/ proto3.makeMessageType(
   ],
 );
 
+/**
+ * Consumption Currency
+ *
+ * @generated from message city.economy.v2.GetConsumptionCurrencyRequest
+ */
+export const GetConsumptionCurrencyRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.GetConsumptionCurrencyRequest",
+  () => [
+    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.GetConsumptionCurrencyResponse
+ */
+export const GetConsumptionCurrencyResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.GetConsumptionCurrencyResponse",
+  () => [
+    { no: 1, name: "consumption_currency", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.SetConsumptionCurrencyRequest
+ */
+export const SetConsumptionCurrencyRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.SetConsumptionCurrencyRequest",
+  () => [
+    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "consumption_currency", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.SetConsumptionCurrencyResponse
+ */
+export const SetConsumptionCurrencyResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.SetConsumptionCurrencyResponse",
+  [],
+);
+
+/**
+ * Consumption Propensity
+ *
+ * @generated from message city.economy.v2.GetConsumptionPropensityRequest
+ */
+export const GetConsumptionPropensityRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.GetConsumptionPropensityRequest",
+  () => [
+    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.GetConsumptionPropensityResponse
+ */
+export const GetConsumptionPropensityResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.GetConsumptionPropensityResponse",
+  () => [
+    { no: 1, name: "consumption_propensity", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.SetConsumptionPropensityRequest
+ */
+export const SetConsumptionPropensityRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.SetConsumptionPropensityRequest",
+  () => [
+    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "consumption_propensity", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.SetConsumptionPropensityResponse
+ */
+export const SetConsumptionPropensityResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.SetConsumptionPropensityResponse",
+  [],
+);
+
+/**
+ * Income Currency
+ *
+ * @generated from message city.economy.v2.GetIncomeCurrencyRequest
+ */
+export const GetIncomeCurrencyRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.GetIncomeCurrencyRequest",
+  () => [
+    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.GetIncomeCurrencyResponse
+ */
+export const GetIncomeCurrencyResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.GetIncomeCurrencyResponse",
+  () => [
+    { no: 1, name: "income_currency", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.SetIncomeCurrencyRequest
+ */
+export const SetIncomeCurrencyRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.SetIncomeCurrencyRequest",
+  () => [
+    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "income_currency", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.SetIncomeCurrencyResponse
+ */
+export const SetIncomeCurrencyResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.SetIncomeCurrencyResponse",
+  [],
+);
+
+/**
+ * Depression
+ *
+ * @generated from message city.economy.v2.GetDepressionStatusRequest
+ */
+export const GetDepressionStatusRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.GetDepressionStatusRequest",
+  () => [
+    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.GetDepressionStatusResponse
+ */
+export const GetDepressionStatusResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.GetDepressionStatusResponse",
+  () => [
+    { no: 1, name: "depression", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.SetDepressionStatusRequest
+ */
+export const SetDepressionStatusRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.SetDepressionStatusRequest",
+  () => [
+    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "depression", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.SetDepressionStatusResponse
+ */
+export const SetDepressionStatusResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.SetDepressionStatusResponse",
+  [],
+);
+
+/**
+ * Locus of Control
+ *
+ * @generated from message city.economy.v2.GetLocusControlRequest
+ */
+export const GetLocusControlRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.GetLocusControlRequest",
+  () => [
+    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.GetLocusControlResponse
+ */
+export const GetLocusControlResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.GetLocusControlResponse",
+  () => [
+    { no: 1, name: "locus_control", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.SetLocusControlRequest
+ */
+export const SetLocusControlRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.SetLocusControlRequest",
+  () => [
+    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "locus_control", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.SetLocusControlResponse
+ */
+export const SetLocusControlResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.SetLocusControlResponse",
+  [],
+);
+
+/**
+ * Working Hours
+ *
+ * @generated from message city.economy.v2.GetWorkingHoursRequest
+ */
+export const GetWorkingHoursRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.GetWorkingHoursRequest",
+  () => [
+    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.GetWorkingHoursResponse
+ */
+export const GetWorkingHoursResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.GetWorkingHoursResponse",
+  () => [
+    { no: 1, name: "working_hours", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.SetWorkingHoursRequest
+ */
+export const SetWorkingHoursRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.SetWorkingHoursRequest",
+  () => [
+    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "working_hours", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.SetWorkingHoursResponse
+ */
+export const SetWorkingHoursResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.SetWorkingHoursResponse",
+  [],
+);
+

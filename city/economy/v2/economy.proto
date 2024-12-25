@@ -55,6 +55,19 @@ message Org {
   repeated float bracket_cutoffs = 12;
   //
   repeated float bracket_rates = 13;
+  // NBS
+  //
+  repeated float consumption_currency = 14;
+  //
+  repeated float consumption_propensity = 15;
+  //
+  repeated float income_currency = 16;
+  //
+  repeated float depression = 17;
+  //
+  repeated float locus_control = 18;
+  //
+  repeated float working_hours = 19;
 }
 
 message Agent {

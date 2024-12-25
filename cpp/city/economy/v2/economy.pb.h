@@ -227,6 +227,12 @@ class Org final :
     kPricesFieldNumber = 7,
     kBracketCutoffsFieldNumber = 12,
     kBracketRatesFieldNumber = 13,
+    kConsumptionCurrencyFieldNumber = 14,
+    kConsumptionPropensityFieldNumber = 15,
+    kIncomeCurrencyFieldNumber = 16,
+    kDepressionFieldNumber = 17,
+    kLocusControlFieldNumber = 18,
+    kWorkingHoursFieldNumber = 19,
     kIdFieldNumber = 1,
     kTypeFieldNumber = 2,
     kInventoryFieldNumber = 8,
@@ -388,6 +394,138 @@ class Org final :
   ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
       mutable_bracket_rates();
 
+  // repeated float consumption_currency = 14 [json_name = "consumptionCurrency"];
+  int consumption_currency_size() const;
+  private:
+  int _internal_consumption_currency_size() const;
+  public:
+  void clear_consumption_currency();
+  private:
+  float _internal_consumption_currency(int index) const;
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+      _internal_consumption_currency() const;
+  void _internal_add_consumption_currency(float value);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+      _internal_mutable_consumption_currency();
+  public:
+  float consumption_currency(int index) const;
+  void set_consumption_currency(int index, float value);
+  void add_consumption_currency(float value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+      consumption_currency() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+      mutable_consumption_currency();
+
+  // repeated float consumption_propensity = 15 [json_name = "consumptionPropensity"];
+  int consumption_propensity_size() const;
+  private:
+  int _internal_consumption_propensity_size() const;
+  public:
+  void clear_consumption_propensity();
+  private:
+  float _internal_consumption_propensity(int index) const;
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+      _internal_consumption_propensity() const;
+  void _internal_add_consumption_propensity(float value);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+      _internal_mutable_consumption_propensity();
+  public:
+  float consumption_propensity(int index) const;
+  void set_consumption_propensity(int index, float value);
+  void add_consumption_propensity(float value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+      consumption_propensity() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+      mutable_consumption_propensity();
+
+  // repeated float income_currency = 16 [json_name = "incomeCurrency"];
+  int income_currency_size() const;
+  private:
+  int _internal_income_currency_size() const;
+  public:
+  void clear_income_currency();
+  private:
+  float _internal_income_currency(int index) const;
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+      _internal_income_currency() const;
+  void _internal_add_income_currency(float value);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+      _internal_mutable_income_currency();
+  public:
+  float income_currency(int index) const;
+  void set_income_currency(int index, float value);
+  void add_income_currency(float value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+      income_currency() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+      mutable_income_currency();
+
+  // repeated float depression = 17 [json_name = "depression"];
+  int depression_size() const;
+  private:
+  int _internal_depression_size() const;
+  public:
+  void clear_depression();
+  private:
+  float _internal_depression(int index) const;
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+      _internal_depression() const;
+  void _internal_add_depression(float value);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+      _internal_mutable_depression();
+  public:
+  float depression(int index) const;
+  void set_depression(int index, float value);
+  void add_depression(float value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+      depression() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+      mutable_depression();
+
+  // repeated float locus_control = 18 [json_name = "locusControl"];
+  int locus_control_size() const;
+  private:
+  int _internal_locus_control_size() const;
+  public:
+  void clear_locus_control();
+  private:
+  float _internal_locus_control(int index) const;
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+      _internal_locus_control() const;
+  void _internal_add_locus_control(float value);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+      _internal_mutable_locus_control();
+  public:
+  float locus_control(int index) const;
+  void set_locus_control(int index, float value);
+  void add_locus_control(float value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+      locus_control() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+      mutable_locus_control();
+
+  // repeated float working_hours = 19 [json_name = "workingHours"];
+  int working_hours_size() const;
+  private:
+  int _internal_working_hours_size() const;
+  public:
+  void clear_working_hours();
+  private:
+  float _internal_working_hours(int index) const;
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+      _internal_working_hours() const;
+  void _internal_add_working_hours(float value);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+      _internal_mutable_working_hours();
+  public:
+  float working_hours(int index) const;
+  void set_working_hours(int index, float value);
+  void add_working_hours(float value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+      working_hours() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+      mutable_working_hours();
+
   // int32 id = 1 [json_name = "id"];
   void clear_id();
   int32_t id() const;
@@ -475,6 +613,12 @@ class Org final :
     ::PROTOBUF_NAMESPACE_ID::RepeatedField< float > prices_;
     ::PROTOBUF_NAMESPACE_ID::RepeatedField< float > bracket_cutoffs_;
     ::PROTOBUF_NAMESPACE_ID::RepeatedField< float > bracket_rates_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedField< float > consumption_currency_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedField< float > consumption_propensity_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedField< float > income_currency_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedField< float > depression_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedField< float > locus_control_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedField< float > working_hours_;
     int32_t id_;
     int type_;
     int32_t inventory_;
@@ -1316,6 +1460,288 @@ inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
 Org::mutable_bracket_rates() {
   // @@protoc_insertion_point(field_mutable_list:city.economy.v2.Org.bracket_rates)
   return _internal_mutable_bracket_rates();
+}
+
+// repeated float consumption_currency = 14 [json_name = "consumptionCurrency"];
+inline int Org::_internal_consumption_currency_size() const {
+  return _impl_.consumption_currency_.size();
+}
+inline int Org::consumption_currency_size() const {
+  return _internal_consumption_currency_size();
+}
+inline void Org::clear_consumption_currency() {
+  _impl_.consumption_currency_.Clear();
+}
+inline float Org::_internal_consumption_currency(int index) const {
+  return _impl_.consumption_currency_.Get(index);
+}
+inline float Org::consumption_currency(int index) const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.Org.consumption_currency)
+  return _internal_consumption_currency(index);
+}
+inline void Org::set_consumption_currency(int index, float value) {
+  _impl_.consumption_currency_.Set(index, value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.Org.consumption_currency)
+}
+inline void Org::_internal_add_consumption_currency(float value) {
+  _impl_.consumption_currency_.Add(value);
+}
+inline void Org::add_consumption_currency(float value) {
+  _internal_add_consumption_currency(value);
+  // @@protoc_insertion_point(field_add:city.economy.v2.Org.consumption_currency)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+Org::_internal_consumption_currency() const {
+  return _impl_.consumption_currency_;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+Org::consumption_currency() const {
+  // @@protoc_insertion_point(field_list:city.economy.v2.Org.consumption_currency)
+  return _internal_consumption_currency();
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+Org::_internal_mutable_consumption_currency() {
+  return &_impl_.consumption_currency_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+Org::mutable_consumption_currency() {
+  // @@protoc_insertion_point(field_mutable_list:city.economy.v2.Org.consumption_currency)
+  return _internal_mutable_consumption_currency();
+}
+
+// repeated float consumption_propensity = 15 [json_name = "consumptionPropensity"];
+inline int Org::_internal_consumption_propensity_size() const {
+  return _impl_.consumption_propensity_.size();
+}
+inline int Org::consumption_propensity_size() const {
+  return _internal_consumption_propensity_size();
+}
+inline void Org::clear_consumption_propensity() {
+  _impl_.consumption_propensity_.Clear();
+}
+inline float Org::_internal_consumption_propensity(int index) const {
+  return _impl_.consumption_propensity_.Get(index);
+}
+inline float Org::consumption_propensity(int index) const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.Org.consumption_propensity)
+  return _internal_consumption_propensity(index);
+}
+inline void Org::set_consumption_propensity(int index, float value) {
+  _impl_.consumption_propensity_.Set(index, value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.Org.consumption_propensity)
+}
+inline void Org::_internal_add_consumption_propensity(float value) {
+  _impl_.consumption_propensity_.Add(value);
+}
+inline void Org::add_consumption_propensity(float value) {
+  _internal_add_consumption_propensity(value);
+  // @@protoc_insertion_point(field_add:city.economy.v2.Org.consumption_propensity)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+Org::_internal_consumption_propensity() const {
+  return _impl_.consumption_propensity_;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+Org::consumption_propensity() const {
+  // @@protoc_insertion_point(field_list:city.economy.v2.Org.consumption_propensity)
+  return _internal_consumption_propensity();
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+Org::_internal_mutable_consumption_propensity() {
+  return &_impl_.consumption_propensity_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+Org::mutable_consumption_propensity() {
+  // @@protoc_insertion_point(field_mutable_list:city.economy.v2.Org.consumption_propensity)
+  return _internal_mutable_consumption_propensity();
+}
+
+// repeated float income_currency = 16 [json_name = "incomeCurrency"];
+inline int Org::_internal_income_currency_size() const {
+  return _impl_.income_currency_.size();
+}
+inline int Org::income_currency_size() const {
+  return _internal_income_currency_size();
+}
+inline void Org::clear_income_currency() {
+  _impl_.income_currency_.Clear();
+}
+inline float Org::_internal_income_currency(int index) const {
+  return _impl_.income_currency_.Get(index);
+}
+inline float Org::income_currency(int index) const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.Org.income_currency)
+  return _internal_income_currency(index);
+}
+inline void Org::set_income_currency(int index, float value) {
+  _impl_.income_currency_.Set(index, value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.Org.income_currency)
+}
+inline void Org::_internal_add_income_currency(float value) {
+  _impl_.income_currency_.Add(value);
+}
+inline void Org::add_income_currency(float value) {
+  _internal_add_income_currency(value);
+  // @@protoc_insertion_point(field_add:city.economy.v2.Org.income_currency)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+Org::_internal_income_currency() const {
+  return _impl_.income_currency_;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+Org::income_currency() const {
+  // @@protoc_insertion_point(field_list:city.economy.v2.Org.income_currency)
+  return _internal_income_currency();
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+Org::_internal_mutable_income_currency() {
+  return &_impl_.income_currency_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+Org::mutable_income_currency() {
+  // @@protoc_insertion_point(field_mutable_list:city.economy.v2.Org.income_currency)
+  return _internal_mutable_income_currency();
+}
+
+// repeated float depression = 17 [json_name = "depression"];
+inline int Org::_internal_depression_size() const {
+  return _impl_.depression_.size();
+}
+inline int Org::depression_size() const {
+  return _internal_depression_size();
+}
+inline void Org::clear_depression() {
+  _impl_.depression_.Clear();
+}
+inline float Org::_internal_depression(int index) const {
+  return _impl_.depression_.Get(index);
+}
+inline float Org::depression(int index) const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.Org.depression)
+  return _internal_depression(index);
+}
+inline void Org::set_depression(int index, float value) {
+  _impl_.depression_.Set(index, value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.Org.depression)
+}
+inline void Org::_internal_add_depression(float value) {
+  _impl_.depression_.Add(value);
+}
+inline void Org::add_depression(float value) {
+  _internal_add_depression(value);
+  // @@protoc_insertion_point(field_add:city.economy.v2.Org.depression)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+Org::_internal_depression() const {
+  return _impl_.depression_;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+Org::depression() const {
+  // @@protoc_insertion_point(field_list:city.economy.v2.Org.depression)
+  return _internal_depression();
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+Org::_internal_mutable_depression() {
+  return &_impl_.depression_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+Org::mutable_depression() {
+  // @@protoc_insertion_point(field_mutable_list:city.economy.v2.Org.depression)
+  return _internal_mutable_depression();
+}
+
+// repeated float locus_control = 18 [json_name = "locusControl"];
+inline int Org::_internal_locus_control_size() const {
+  return _impl_.locus_control_.size();
+}
+inline int Org::locus_control_size() const {
+  return _internal_locus_control_size();
+}
+inline void Org::clear_locus_control() {
+  _impl_.locus_control_.Clear();
+}
+inline float Org::_internal_locus_control(int index) const {
+  return _impl_.locus_control_.Get(index);
+}
+inline float Org::locus_control(int index) const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.Org.locus_control)
+  return _internal_locus_control(index);
+}
+inline void Org::set_locus_control(int index, float value) {
+  _impl_.locus_control_.Set(index, value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.Org.locus_control)
+}
+inline void Org::_internal_add_locus_control(float value) {
+  _impl_.locus_control_.Add(value);
+}
+inline void Org::add_locus_control(float value) {
+  _internal_add_locus_control(value);
+  // @@protoc_insertion_point(field_add:city.economy.v2.Org.locus_control)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+Org::_internal_locus_control() const {
+  return _impl_.locus_control_;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+Org::locus_control() const {
+  // @@protoc_insertion_point(field_list:city.economy.v2.Org.locus_control)
+  return _internal_locus_control();
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+Org::_internal_mutable_locus_control() {
+  return &_impl_.locus_control_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+Org::mutable_locus_control() {
+  // @@protoc_insertion_point(field_mutable_list:city.economy.v2.Org.locus_control)
+  return _internal_mutable_locus_control();
+}
+
+// repeated float working_hours = 19 [json_name = "workingHours"];
+inline int Org::_internal_working_hours_size() const {
+  return _impl_.working_hours_.size();
+}
+inline int Org::working_hours_size() const {
+  return _internal_working_hours_size();
+}
+inline void Org::clear_working_hours() {
+  _impl_.working_hours_.Clear();
+}
+inline float Org::_internal_working_hours(int index) const {
+  return _impl_.working_hours_.Get(index);
+}
+inline float Org::working_hours(int index) const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.Org.working_hours)
+  return _internal_working_hours(index);
+}
+inline void Org::set_working_hours(int index, float value) {
+  _impl_.working_hours_.Set(index, value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.Org.working_hours)
+}
+inline void Org::_internal_add_working_hours(float value) {
+  _impl_.working_hours_.Add(value);
+}
+inline void Org::add_working_hours(float value) {
+  _internal_add_working_hours(value);
+  // @@protoc_insertion_point(field_add:city.economy.v2.Org.working_hours)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+Org::_internal_working_hours() const {
+  return _impl_.working_hours_;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+Org::working_hours() const {
+  // @@protoc_insertion_point(field_list:city.economy.v2.Org.working_hours)
+  return _internal_working_hours();
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+Org::_internal_mutable_working_hours() {
+  return &_impl_.working_hours_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+Org::mutable_working_hours() {
+  // @@protoc_insertion_point(field_mutable_list:city.economy.v2.Org.working_hours)
+  return _internal_mutable_working_hours();
 }
 
 // -------------------------------------------------------------------

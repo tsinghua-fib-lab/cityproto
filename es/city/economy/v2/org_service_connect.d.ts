@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AddAgentRequest, AddAgentResponse, AddOrgRequest, AddOrgResponse, CalculateConsumptionRequest, CalculateConsumptionResponse, CalculateInterestRequest, CalculateInterestResponse, CalculateTaxesDueRequest, CalculateTaxesDueResponse, GetBracketCutoffsRequest, GetBracketCutoffsResponse, GetBracketRatesRequest, GetBracketRatesResponse, GetCurrencyRequest, GetCurrencyResponse, GetInterestRateRequest, GetInterestRateResponse, GetInventoryRequest, GetInventoryResponse, GetNominalGDPRequest, GetNominalGDPResponse, GetPriceRequest, GetPriceResponse, GetPricesRequest, GetPricesResponse, GetRealGDPRequest, GetRealGDPResponse, GetUnemploymentRequest, GetUnemploymentResponse, GetWagesRequest, GetWagesResponse, LoadEconomyEntitiesRequest, LoadEconomyEntitiesResponse, RemoveAgentRequest, RemoveAgentResponse, RemoveOrgRequest, RemoveOrgResponse, SaveEconomyEntitiesRequest, SaveEconomyEntitiesResponse, SetBracketCutoffsRequest, SetBracketCutoffsResponse, SetBracketRatesRequest, SetBracketRatesResponse, SetCurrencyRequest, SetCurrencyResponse, SetInterestRateRequest, SetInterestRateResponse, SetInventoryRequest, SetInventoryResponse, SetNominalGDPRequest, SetNominalGDPResponse, SetPriceRequest, SetPriceResponse, SetPricesRequest, SetPricesResponse, SetRealGDPRequest, SetRealGDPResponse, SetUnemploymentRequest, SetUnemploymentResponse, SetWagesRequest, SetWagesResponse } from "./org_service_pb.js";
+import { AddAgentRequest, AddAgentResponse, AddOrgRequest, AddOrgResponse, CalculateConsumptionRequest, CalculateConsumptionResponse, CalculateInterestRequest, CalculateInterestResponse, CalculateTaxesDueRequest, CalculateTaxesDueResponse, GetBracketCutoffsRequest, GetBracketCutoffsResponse, GetBracketRatesRequest, GetBracketRatesResponse, GetConsumptionCurrencyRequest, GetConsumptionCurrencyResponse, GetConsumptionPropensityRequest, GetConsumptionPropensityResponse, GetCurrencyRequest, GetCurrencyResponse, GetDepressionStatusRequest, GetDepressionStatusResponse, GetIncomeCurrencyRequest, GetIncomeCurrencyResponse, GetInterestRateRequest, GetInterestRateResponse, GetInventoryRequest, GetInventoryResponse, GetLocusControlRequest, GetLocusControlResponse, GetNominalGDPRequest, GetNominalGDPResponse, GetPriceRequest, GetPriceResponse, GetPricesRequest, GetPricesResponse, GetRealGDPRequest, GetRealGDPResponse, GetUnemploymentRequest, GetUnemploymentResponse, GetWagesRequest, GetWagesResponse, GetWorkingHoursRequest, GetWorkingHoursResponse, LoadEconomyEntitiesRequest, LoadEconomyEntitiesResponse, RemoveAgentRequest, RemoveAgentResponse, RemoveOrgRequest, RemoveOrgResponse, SaveEconomyEntitiesRequest, SaveEconomyEntitiesResponse, SetBracketCutoffsRequest, SetBracketCutoffsResponse, SetBracketRatesRequest, SetBracketRatesResponse, SetConsumptionCurrencyRequest, SetConsumptionCurrencyResponse, SetConsumptionPropensityRequest, SetConsumptionPropensityResponse, SetCurrencyRequest, SetCurrencyResponse, SetDepressionStatusRequest, SetDepressionStatusResponse, SetIncomeCurrencyRequest, SetIncomeCurrencyResponse, SetInterestRateRequest, SetInterestRateResponse, SetInventoryRequest, SetInventoryResponse, SetLocusControlRequest, SetLocusControlResponse, SetNominalGDPRequest, SetNominalGDPResponse, SetPriceRequest, SetPriceResponse, SetPricesRequest, SetPricesResponse, SetRealGDPRequest, SetRealGDPResponse, SetUnemploymentRequest, SetUnemploymentResponse, SetWagesRequest, SetWagesResponse, SetWorkingHoursRequest, SetWorkingHoursResponse } from "./org_service_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -335,6 +335,126 @@ export declare const OrgService: {
       readonly name: "LoadEconomyEntities",
       readonly I: typeof LoadEconomyEntitiesRequest,
       readonly O: typeof LoadEconomyEntitiesResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * Consumption Currency
+     *
+     * @generated from rpc city.economy.v2.OrgService.GetConsumptionCurrency
+     */
+    readonly getConsumptionCurrency: {
+      readonly name: "GetConsumptionCurrency",
+      readonly I: typeof GetConsumptionCurrencyRequest,
+      readonly O: typeof GetConsumptionCurrencyResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc city.economy.v2.OrgService.SetConsumptionCurrency
+     */
+    readonly setConsumptionCurrency: {
+      readonly name: "SetConsumptionCurrency",
+      readonly I: typeof SetConsumptionCurrencyRequest,
+      readonly O: typeof SetConsumptionCurrencyResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * Consumption Propensity
+     *
+     * @generated from rpc city.economy.v2.OrgService.GetConsumptionPropensity
+     */
+    readonly getConsumptionPropensity: {
+      readonly name: "GetConsumptionPropensity",
+      readonly I: typeof GetConsumptionPropensityRequest,
+      readonly O: typeof GetConsumptionPropensityResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc city.economy.v2.OrgService.SetConsumptionPropensity
+     */
+    readonly setConsumptionPropensity: {
+      readonly name: "SetConsumptionPropensity",
+      readonly I: typeof SetConsumptionPropensityRequest,
+      readonly O: typeof SetConsumptionPropensityResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * Income Currency
+     *
+     * @generated from rpc city.economy.v2.OrgService.GetIncomeCurrency
+     */
+    readonly getIncomeCurrency: {
+      readonly name: "GetIncomeCurrency",
+      readonly I: typeof GetIncomeCurrencyRequest,
+      readonly O: typeof GetIncomeCurrencyResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc city.economy.v2.OrgService.SetIncomeCurrency
+     */
+    readonly setIncomeCurrency: {
+      readonly name: "SetIncomeCurrency",
+      readonly I: typeof SetIncomeCurrencyRequest,
+      readonly O: typeof SetIncomeCurrencyResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * Depression
+     *
+     * @generated from rpc city.economy.v2.OrgService.GetDepressionStatus
+     */
+    readonly getDepressionStatus: {
+      readonly name: "GetDepressionStatus",
+      readonly I: typeof GetDepressionStatusRequest,
+      readonly O: typeof GetDepressionStatusResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc city.economy.v2.OrgService.SetDepressionStatus
+     */
+    readonly setDepressionStatus: {
+      readonly name: "SetDepressionStatus",
+      readonly I: typeof SetDepressionStatusRequest,
+      readonly O: typeof SetDepressionStatusResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * Locus of Control
+     *
+     * @generated from rpc city.economy.v2.OrgService.GetLocusControl
+     */
+    readonly getLocusControl: {
+      readonly name: "GetLocusControl",
+      readonly I: typeof GetLocusControlRequest,
+      readonly O: typeof GetLocusControlResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc city.economy.v2.OrgService.SetLocusControl
+     */
+    readonly setLocusControl: {
+      readonly name: "SetLocusControl",
+      readonly I: typeof SetLocusControlRequest,
+      readonly O: typeof SetLocusControlResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * Working Hours
+     *
+     * @generated from rpc city.economy.v2.OrgService.GetWorkingHours
+     */
+    readonly getWorkingHours: {
+      readonly name: "GetWorkingHours",
+      readonly I: typeof GetWorkingHoursRequest,
+      readonly O: typeof GetWorkingHoursResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc city.economy.v2.OrgService.SetWorkingHours
+     */
+    readonly setWorkingHours: {
+      readonly name: "SetWorkingHours",
+      readonly I: typeof SetWorkingHoursRequest,
+      readonly O: typeof SetWorkingHoursResponse,
       readonly kind: MethodKind.Unary,
     },
   }

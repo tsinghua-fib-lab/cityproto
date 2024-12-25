@@ -91,12 +91,36 @@ extern GetBracketRatesRequestDefaultTypeInternal _GetBracketRatesRequest_default
 class GetBracketRatesResponse;
 struct GetBracketRatesResponseDefaultTypeInternal;
 extern GetBracketRatesResponseDefaultTypeInternal _GetBracketRatesResponse_default_instance_;
+class GetConsumptionCurrencyRequest;
+struct GetConsumptionCurrencyRequestDefaultTypeInternal;
+extern GetConsumptionCurrencyRequestDefaultTypeInternal _GetConsumptionCurrencyRequest_default_instance_;
+class GetConsumptionCurrencyResponse;
+struct GetConsumptionCurrencyResponseDefaultTypeInternal;
+extern GetConsumptionCurrencyResponseDefaultTypeInternal _GetConsumptionCurrencyResponse_default_instance_;
+class GetConsumptionPropensityRequest;
+struct GetConsumptionPropensityRequestDefaultTypeInternal;
+extern GetConsumptionPropensityRequestDefaultTypeInternal _GetConsumptionPropensityRequest_default_instance_;
+class GetConsumptionPropensityResponse;
+struct GetConsumptionPropensityResponseDefaultTypeInternal;
+extern GetConsumptionPropensityResponseDefaultTypeInternal _GetConsumptionPropensityResponse_default_instance_;
 class GetCurrencyRequest;
 struct GetCurrencyRequestDefaultTypeInternal;
 extern GetCurrencyRequestDefaultTypeInternal _GetCurrencyRequest_default_instance_;
 class GetCurrencyResponse;
 struct GetCurrencyResponseDefaultTypeInternal;
 extern GetCurrencyResponseDefaultTypeInternal _GetCurrencyResponse_default_instance_;
+class GetDepressionStatusRequest;
+struct GetDepressionStatusRequestDefaultTypeInternal;
+extern GetDepressionStatusRequestDefaultTypeInternal _GetDepressionStatusRequest_default_instance_;
+class GetDepressionStatusResponse;
+struct GetDepressionStatusResponseDefaultTypeInternal;
+extern GetDepressionStatusResponseDefaultTypeInternal _GetDepressionStatusResponse_default_instance_;
+class GetIncomeCurrencyRequest;
+struct GetIncomeCurrencyRequestDefaultTypeInternal;
+extern GetIncomeCurrencyRequestDefaultTypeInternal _GetIncomeCurrencyRequest_default_instance_;
+class GetIncomeCurrencyResponse;
+struct GetIncomeCurrencyResponseDefaultTypeInternal;
+extern GetIncomeCurrencyResponseDefaultTypeInternal _GetIncomeCurrencyResponse_default_instance_;
 class GetInterestRateRequest;
 struct GetInterestRateRequestDefaultTypeInternal;
 extern GetInterestRateRequestDefaultTypeInternal _GetInterestRateRequest_default_instance_;
@@ -109,6 +133,12 @@ extern GetInventoryRequestDefaultTypeInternal _GetInventoryRequest_default_insta
 class GetInventoryResponse;
 struct GetInventoryResponseDefaultTypeInternal;
 extern GetInventoryResponseDefaultTypeInternal _GetInventoryResponse_default_instance_;
+class GetLocusControlRequest;
+struct GetLocusControlRequestDefaultTypeInternal;
+extern GetLocusControlRequestDefaultTypeInternal _GetLocusControlRequest_default_instance_;
+class GetLocusControlResponse;
+struct GetLocusControlResponseDefaultTypeInternal;
+extern GetLocusControlResponseDefaultTypeInternal _GetLocusControlResponse_default_instance_;
 class GetNominalGDPRequest;
 struct GetNominalGDPRequestDefaultTypeInternal;
 extern GetNominalGDPRequestDefaultTypeInternal _GetNominalGDPRequest_default_instance_;
@@ -145,6 +175,12 @@ extern GetWagesRequestDefaultTypeInternal _GetWagesRequest_default_instance_;
 class GetWagesResponse;
 struct GetWagesResponseDefaultTypeInternal;
 extern GetWagesResponseDefaultTypeInternal _GetWagesResponse_default_instance_;
+class GetWorkingHoursRequest;
+struct GetWorkingHoursRequestDefaultTypeInternal;
+extern GetWorkingHoursRequestDefaultTypeInternal _GetWorkingHoursRequest_default_instance_;
+class GetWorkingHoursResponse;
+struct GetWorkingHoursResponseDefaultTypeInternal;
+extern GetWorkingHoursResponseDefaultTypeInternal _GetWorkingHoursResponse_default_instance_;
 class LoadEconomyEntitiesRequest;
 struct LoadEconomyEntitiesRequestDefaultTypeInternal;
 extern LoadEconomyEntitiesRequestDefaultTypeInternal _LoadEconomyEntitiesRequest_default_instance_;
@@ -181,12 +217,36 @@ extern SetBracketRatesRequestDefaultTypeInternal _SetBracketRatesRequest_default
 class SetBracketRatesResponse;
 struct SetBracketRatesResponseDefaultTypeInternal;
 extern SetBracketRatesResponseDefaultTypeInternal _SetBracketRatesResponse_default_instance_;
+class SetConsumptionCurrencyRequest;
+struct SetConsumptionCurrencyRequestDefaultTypeInternal;
+extern SetConsumptionCurrencyRequestDefaultTypeInternal _SetConsumptionCurrencyRequest_default_instance_;
+class SetConsumptionCurrencyResponse;
+struct SetConsumptionCurrencyResponseDefaultTypeInternal;
+extern SetConsumptionCurrencyResponseDefaultTypeInternal _SetConsumptionCurrencyResponse_default_instance_;
+class SetConsumptionPropensityRequest;
+struct SetConsumptionPropensityRequestDefaultTypeInternal;
+extern SetConsumptionPropensityRequestDefaultTypeInternal _SetConsumptionPropensityRequest_default_instance_;
+class SetConsumptionPropensityResponse;
+struct SetConsumptionPropensityResponseDefaultTypeInternal;
+extern SetConsumptionPropensityResponseDefaultTypeInternal _SetConsumptionPropensityResponse_default_instance_;
 class SetCurrencyRequest;
 struct SetCurrencyRequestDefaultTypeInternal;
 extern SetCurrencyRequestDefaultTypeInternal _SetCurrencyRequest_default_instance_;
 class SetCurrencyResponse;
 struct SetCurrencyResponseDefaultTypeInternal;
 extern SetCurrencyResponseDefaultTypeInternal _SetCurrencyResponse_default_instance_;
+class SetDepressionStatusRequest;
+struct SetDepressionStatusRequestDefaultTypeInternal;
+extern SetDepressionStatusRequestDefaultTypeInternal _SetDepressionStatusRequest_default_instance_;
+class SetDepressionStatusResponse;
+struct SetDepressionStatusResponseDefaultTypeInternal;
+extern SetDepressionStatusResponseDefaultTypeInternal _SetDepressionStatusResponse_default_instance_;
+class SetIncomeCurrencyRequest;
+struct SetIncomeCurrencyRequestDefaultTypeInternal;
+extern SetIncomeCurrencyRequestDefaultTypeInternal _SetIncomeCurrencyRequest_default_instance_;
+class SetIncomeCurrencyResponse;
+struct SetIncomeCurrencyResponseDefaultTypeInternal;
+extern SetIncomeCurrencyResponseDefaultTypeInternal _SetIncomeCurrencyResponse_default_instance_;
 class SetInterestRateRequest;
 struct SetInterestRateRequestDefaultTypeInternal;
 extern SetInterestRateRequestDefaultTypeInternal _SetInterestRateRequest_default_instance_;
@@ -199,6 +259,12 @@ extern SetInventoryRequestDefaultTypeInternal _SetInventoryRequest_default_insta
 class SetInventoryResponse;
 struct SetInventoryResponseDefaultTypeInternal;
 extern SetInventoryResponseDefaultTypeInternal _SetInventoryResponse_default_instance_;
+class SetLocusControlRequest;
+struct SetLocusControlRequestDefaultTypeInternal;
+extern SetLocusControlRequestDefaultTypeInternal _SetLocusControlRequest_default_instance_;
+class SetLocusControlResponse;
+struct SetLocusControlResponseDefaultTypeInternal;
+extern SetLocusControlResponseDefaultTypeInternal _SetLocusControlResponse_default_instance_;
 class SetNominalGDPRequest;
 struct SetNominalGDPRequestDefaultTypeInternal;
 extern SetNominalGDPRequestDefaultTypeInternal _SetNominalGDPRequest_default_instance_;
@@ -235,6 +301,12 @@ extern SetWagesRequestDefaultTypeInternal _SetWagesRequest_default_instance_;
 class SetWagesResponse;
 struct SetWagesResponseDefaultTypeInternal;
 extern SetWagesResponseDefaultTypeInternal _SetWagesResponse_default_instance_;
+class SetWorkingHoursRequest;
+struct SetWorkingHoursRequestDefaultTypeInternal;
+extern SetWorkingHoursRequestDefaultTypeInternal _SetWorkingHoursRequest_default_instance_;
+class SetWorkingHoursResponse;
+struct SetWorkingHoursResponseDefaultTypeInternal;
+extern SetWorkingHoursResponseDefaultTypeInternal _SetWorkingHoursResponse_default_instance_;
 }  // namespace v2
 }  // namespace economy
 }  // namespace city
@@ -253,12 +325,22 @@ template<> ::city::economy::v2::GetBracketCutoffsRequest* Arena::CreateMaybeMess
 template<> ::city::economy::v2::GetBracketCutoffsResponse* Arena::CreateMaybeMessage<::city::economy::v2::GetBracketCutoffsResponse>(Arena*);
 template<> ::city::economy::v2::GetBracketRatesRequest* Arena::CreateMaybeMessage<::city::economy::v2::GetBracketRatesRequest>(Arena*);
 template<> ::city::economy::v2::GetBracketRatesResponse* Arena::CreateMaybeMessage<::city::economy::v2::GetBracketRatesResponse>(Arena*);
+template<> ::city::economy::v2::GetConsumptionCurrencyRequest* Arena::CreateMaybeMessage<::city::economy::v2::GetConsumptionCurrencyRequest>(Arena*);
+template<> ::city::economy::v2::GetConsumptionCurrencyResponse* Arena::CreateMaybeMessage<::city::economy::v2::GetConsumptionCurrencyResponse>(Arena*);
+template<> ::city::economy::v2::GetConsumptionPropensityRequest* Arena::CreateMaybeMessage<::city::economy::v2::GetConsumptionPropensityRequest>(Arena*);
+template<> ::city::economy::v2::GetConsumptionPropensityResponse* Arena::CreateMaybeMessage<::city::economy::v2::GetConsumptionPropensityResponse>(Arena*);
 template<> ::city::economy::v2::GetCurrencyRequest* Arena::CreateMaybeMessage<::city::economy::v2::GetCurrencyRequest>(Arena*);
 template<> ::city::economy::v2::GetCurrencyResponse* Arena::CreateMaybeMessage<::city::economy::v2::GetCurrencyResponse>(Arena*);
+template<> ::city::economy::v2::GetDepressionStatusRequest* Arena::CreateMaybeMessage<::city::economy::v2::GetDepressionStatusRequest>(Arena*);
+template<> ::city::economy::v2::GetDepressionStatusResponse* Arena::CreateMaybeMessage<::city::economy::v2::GetDepressionStatusResponse>(Arena*);
+template<> ::city::economy::v2::GetIncomeCurrencyRequest* Arena::CreateMaybeMessage<::city::economy::v2::GetIncomeCurrencyRequest>(Arena*);
+template<> ::city::economy::v2::GetIncomeCurrencyResponse* Arena::CreateMaybeMessage<::city::economy::v2::GetIncomeCurrencyResponse>(Arena*);
 template<> ::city::economy::v2::GetInterestRateRequest* Arena::CreateMaybeMessage<::city::economy::v2::GetInterestRateRequest>(Arena*);
 template<> ::city::economy::v2::GetInterestRateResponse* Arena::CreateMaybeMessage<::city::economy::v2::GetInterestRateResponse>(Arena*);
 template<> ::city::economy::v2::GetInventoryRequest* Arena::CreateMaybeMessage<::city::economy::v2::GetInventoryRequest>(Arena*);
 template<> ::city::economy::v2::GetInventoryResponse* Arena::CreateMaybeMessage<::city::economy::v2::GetInventoryResponse>(Arena*);
+template<> ::city::economy::v2::GetLocusControlRequest* Arena::CreateMaybeMessage<::city::economy::v2::GetLocusControlRequest>(Arena*);
+template<> ::city::economy::v2::GetLocusControlResponse* Arena::CreateMaybeMessage<::city::economy::v2::GetLocusControlResponse>(Arena*);
 template<> ::city::economy::v2::GetNominalGDPRequest* Arena::CreateMaybeMessage<::city::economy::v2::GetNominalGDPRequest>(Arena*);
 template<> ::city::economy::v2::GetNominalGDPResponse* Arena::CreateMaybeMessage<::city::economy::v2::GetNominalGDPResponse>(Arena*);
 template<> ::city::economy::v2::GetPriceRequest* Arena::CreateMaybeMessage<::city::economy::v2::GetPriceRequest>(Arena*);
@@ -271,6 +353,8 @@ template<> ::city::economy::v2::GetUnemploymentRequest* Arena::CreateMaybeMessag
 template<> ::city::economy::v2::GetUnemploymentResponse* Arena::CreateMaybeMessage<::city::economy::v2::GetUnemploymentResponse>(Arena*);
 template<> ::city::economy::v2::GetWagesRequest* Arena::CreateMaybeMessage<::city::economy::v2::GetWagesRequest>(Arena*);
 template<> ::city::economy::v2::GetWagesResponse* Arena::CreateMaybeMessage<::city::economy::v2::GetWagesResponse>(Arena*);
+template<> ::city::economy::v2::GetWorkingHoursRequest* Arena::CreateMaybeMessage<::city::economy::v2::GetWorkingHoursRequest>(Arena*);
+template<> ::city::economy::v2::GetWorkingHoursResponse* Arena::CreateMaybeMessage<::city::economy::v2::GetWorkingHoursResponse>(Arena*);
 template<> ::city::economy::v2::LoadEconomyEntitiesRequest* Arena::CreateMaybeMessage<::city::economy::v2::LoadEconomyEntitiesRequest>(Arena*);
 template<> ::city::economy::v2::LoadEconomyEntitiesResponse* Arena::CreateMaybeMessage<::city::economy::v2::LoadEconomyEntitiesResponse>(Arena*);
 template<> ::city::economy::v2::RemoveAgentRequest* Arena::CreateMaybeMessage<::city::economy::v2::RemoveAgentRequest>(Arena*);
@@ -283,12 +367,22 @@ template<> ::city::economy::v2::SetBracketCutoffsRequest* Arena::CreateMaybeMess
 template<> ::city::economy::v2::SetBracketCutoffsResponse* Arena::CreateMaybeMessage<::city::economy::v2::SetBracketCutoffsResponse>(Arena*);
 template<> ::city::economy::v2::SetBracketRatesRequest* Arena::CreateMaybeMessage<::city::economy::v2::SetBracketRatesRequest>(Arena*);
 template<> ::city::economy::v2::SetBracketRatesResponse* Arena::CreateMaybeMessage<::city::economy::v2::SetBracketRatesResponse>(Arena*);
+template<> ::city::economy::v2::SetConsumptionCurrencyRequest* Arena::CreateMaybeMessage<::city::economy::v2::SetConsumptionCurrencyRequest>(Arena*);
+template<> ::city::economy::v2::SetConsumptionCurrencyResponse* Arena::CreateMaybeMessage<::city::economy::v2::SetConsumptionCurrencyResponse>(Arena*);
+template<> ::city::economy::v2::SetConsumptionPropensityRequest* Arena::CreateMaybeMessage<::city::economy::v2::SetConsumptionPropensityRequest>(Arena*);
+template<> ::city::economy::v2::SetConsumptionPropensityResponse* Arena::CreateMaybeMessage<::city::economy::v2::SetConsumptionPropensityResponse>(Arena*);
 template<> ::city::economy::v2::SetCurrencyRequest* Arena::CreateMaybeMessage<::city::economy::v2::SetCurrencyRequest>(Arena*);
 template<> ::city::economy::v2::SetCurrencyResponse* Arena::CreateMaybeMessage<::city::economy::v2::SetCurrencyResponse>(Arena*);
+template<> ::city::economy::v2::SetDepressionStatusRequest* Arena::CreateMaybeMessage<::city::economy::v2::SetDepressionStatusRequest>(Arena*);
+template<> ::city::economy::v2::SetDepressionStatusResponse* Arena::CreateMaybeMessage<::city::economy::v2::SetDepressionStatusResponse>(Arena*);
+template<> ::city::economy::v2::SetIncomeCurrencyRequest* Arena::CreateMaybeMessage<::city::economy::v2::SetIncomeCurrencyRequest>(Arena*);
+template<> ::city::economy::v2::SetIncomeCurrencyResponse* Arena::CreateMaybeMessage<::city::economy::v2::SetIncomeCurrencyResponse>(Arena*);
 template<> ::city::economy::v2::SetInterestRateRequest* Arena::CreateMaybeMessage<::city::economy::v2::SetInterestRateRequest>(Arena*);
 template<> ::city::economy::v2::SetInterestRateResponse* Arena::CreateMaybeMessage<::city::economy::v2::SetInterestRateResponse>(Arena*);
 template<> ::city::economy::v2::SetInventoryRequest* Arena::CreateMaybeMessage<::city::economy::v2::SetInventoryRequest>(Arena*);
 template<> ::city::economy::v2::SetInventoryResponse* Arena::CreateMaybeMessage<::city::economy::v2::SetInventoryResponse>(Arena*);
+template<> ::city::economy::v2::SetLocusControlRequest* Arena::CreateMaybeMessage<::city::economy::v2::SetLocusControlRequest>(Arena*);
+template<> ::city::economy::v2::SetLocusControlResponse* Arena::CreateMaybeMessage<::city::economy::v2::SetLocusControlResponse>(Arena*);
 template<> ::city::economy::v2::SetNominalGDPRequest* Arena::CreateMaybeMessage<::city::economy::v2::SetNominalGDPRequest>(Arena*);
 template<> ::city::economy::v2::SetNominalGDPResponse* Arena::CreateMaybeMessage<::city::economy::v2::SetNominalGDPResponse>(Arena*);
 template<> ::city::economy::v2::SetPriceRequest* Arena::CreateMaybeMessage<::city::economy::v2::SetPriceRequest>(Arena*);
@@ -301,6 +395,8 @@ template<> ::city::economy::v2::SetUnemploymentRequest* Arena::CreateMaybeMessag
 template<> ::city::economy::v2::SetUnemploymentResponse* Arena::CreateMaybeMessage<::city::economy::v2::SetUnemploymentResponse>(Arena*);
 template<> ::city::economy::v2::SetWagesRequest* Arena::CreateMaybeMessage<::city::economy::v2::SetWagesRequest>(Arena*);
 template<> ::city::economy::v2::SetWagesResponse* Arena::CreateMaybeMessage<::city::economy::v2::SetWagesResponse>(Arena*);
+template<> ::city::economy::v2::SetWorkingHoursRequest* Arena::CreateMaybeMessage<::city::economy::v2::SetWorkingHoursRequest>(Arena*);
+template<> ::city::economy::v2::SetWorkingHoursResponse* Arena::CreateMaybeMessage<::city::economy::v2::SetWorkingHoursResponse>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace city {
 namespace economy {
@@ -9648,6 +9744,3600 @@ class LoadEconomyEntitiesResponse final :
   union { Impl_ _impl_; };
   friend struct ::TableStruct_city_2feconomy_2fv2_2forg_5fservice_2eproto;
 };
+// -------------------------------------------------------------------
+
+class GetConsumptionCurrencyRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.economy.v2.GetConsumptionCurrencyRequest) */ {
+ public:
+  inline GetConsumptionCurrencyRequest() : GetConsumptionCurrencyRequest(nullptr) {}
+  ~GetConsumptionCurrencyRequest() override;
+  explicit PROTOBUF_CONSTEXPR GetConsumptionCurrencyRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  GetConsumptionCurrencyRequest(const GetConsumptionCurrencyRequest& from);
+  GetConsumptionCurrencyRequest(GetConsumptionCurrencyRequest&& from) noexcept
+    : GetConsumptionCurrencyRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline GetConsumptionCurrencyRequest& operator=(const GetConsumptionCurrencyRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetConsumptionCurrencyRequest& operator=(GetConsumptionCurrencyRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const GetConsumptionCurrencyRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GetConsumptionCurrencyRequest* internal_default_instance() {
+    return reinterpret_cast<const GetConsumptionCurrencyRequest*>(
+               &_GetConsumptionCurrencyRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    62;
+
+  friend void swap(GetConsumptionCurrencyRequest& a, GetConsumptionCurrencyRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetConsumptionCurrencyRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetConsumptionCurrencyRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  GetConsumptionCurrencyRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<GetConsumptionCurrencyRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const GetConsumptionCurrencyRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const GetConsumptionCurrencyRequest& from) {
+    GetConsumptionCurrencyRequest::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetConsumptionCurrencyRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.economy.v2.GetConsumptionCurrencyRequest";
+  }
+  protected:
+  explicit GetConsumptionCurrencyRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kOrgIdFieldNumber = 1,
+  };
+  // int32 org_id = 1 [json_name = "orgId"];
+  void clear_org_id();
+  int32_t org_id() const;
+  void set_org_id(int32_t value);
+  private:
+  int32_t _internal_org_id() const;
+  void _internal_set_org_id(int32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:city.economy.v2.GetConsumptionCurrencyRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    int32_t org_id_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_city_2feconomy_2fv2_2forg_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetConsumptionCurrencyResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.economy.v2.GetConsumptionCurrencyResponse) */ {
+ public:
+  inline GetConsumptionCurrencyResponse() : GetConsumptionCurrencyResponse(nullptr) {}
+  ~GetConsumptionCurrencyResponse() override;
+  explicit PROTOBUF_CONSTEXPR GetConsumptionCurrencyResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  GetConsumptionCurrencyResponse(const GetConsumptionCurrencyResponse& from);
+  GetConsumptionCurrencyResponse(GetConsumptionCurrencyResponse&& from) noexcept
+    : GetConsumptionCurrencyResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline GetConsumptionCurrencyResponse& operator=(const GetConsumptionCurrencyResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetConsumptionCurrencyResponse& operator=(GetConsumptionCurrencyResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const GetConsumptionCurrencyResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GetConsumptionCurrencyResponse* internal_default_instance() {
+    return reinterpret_cast<const GetConsumptionCurrencyResponse*>(
+               &_GetConsumptionCurrencyResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    63;
+
+  friend void swap(GetConsumptionCurrencyResponse& a, GetConsumptionCurrencyResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetConsumptionCurrencyResponse* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetConsumptionCurrencyResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  GetConsumptionCurrencyResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<GetConsumptionCurrencyResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const GetConsumptionCurrencyResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const GetConsumptionCurrencyResponse& from) {
+    GetConsumptionCurrencyResponse::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetConsumptionCurrencyResponse* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.economy.v2.GetConsumptionCurrencyResponse";
+  }
+  protected:
+  explicit GetConsumptionCurrencyResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kConsumptionCurrencyFieldNumber = 1,
+  };
+  // repeated float consumption_currency = 1 [json_name = "consumptionCurrency"];
+  int consumption_currency_size() const;
+  private:
+  int _internal_consumption_currency_size() const;
+  public:
+  void clear_consumption_currency();
+  private:
+  float _internal_consumption_currency(int index) const;
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+      _internal_consumption_currency() const;
+  void _internal_add_consumption_currency(float value);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+      _internal_mutable_consumption_currency();
+  public:
+  float consumption_currency(int index) const;
+  void set_consumption_currency(int index, float value);
+  void add_consumption_currency(float value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+      consumption_currency() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+      mutable_consumption_currency();
+
+  // @@protoc_insertion_point(class_scope:city.economy.v2.GetConsumptionCurrencyResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::RepeatedField< float > consumption_currency_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_city_2feconomy_2fv2_2forg_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class SetConsumptionCurrencyRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.economy.v2.SetConsumptionCurrencyRequest) */ {
+ public:
+  inline SetConsumptionCurrencyRequest() : SetConsumptionCurrencyRequest(nullptr) {}
+  ~SetConsumptionCurrencyRequest() override;
+  explicit PROTOBUF_CONSTEXPR SetConsumptionCurrencyRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  SetConsumptionCurrencyRequest(const SetConsumptionCurrencyRequest& from);
+  SetConsumptionCurrencyRequest(SetConsumptionCurrencyRequest&& from) noexcept
+    : SetConsumptionCurrencyRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline SetConsumptionCurrencyRequest& operator=(const SetConsumptionCurrencyRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline SetConsumptionCurrencyRequest& operator=(SetConsumptionCurrencyRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const SetConsumptionCurrencyRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const SetConsumptionCurrencyRequest* internal_default_instance() {
+    return reinterpret_cast<const SetConsumptionCurrencyRequest*>(
+               &_SetConsumptionCurrencyRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    64;
+
+  friend void swap(SetConsumptionCurrencyRequest& a, SetConsumptionCurrencyRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(SetConsumptionCurrencyRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(SetConsumptionCurrencyRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  SetConsumptionCurrencyRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<SetConsumptionCurrencyRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const SetConsumptionCurrencyRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const SetConsumptionCurrencyRequest& from) {
+    SetConsumptionCurrencyRequest::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(SetConsumptionCurrencyRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.economy.v2.SetConsumptionCurrencyRequest";
+  }
+  protected:
+  explicit SetConsumptionCurrencyRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kConsumptionCurrencyFieldNumber = 2,
+    kOrgIdFieldNumber = 1,
+  };
+  // repeated float consumption_currency = 2 [json_name = "consumptionCurrency"];
+  int consumption_currency_size() const;
+  private:
+  int _internal_consumption_currency_size() const;
+  public:
+  void clear_consumption_currency();
+  private:
+  float _internal_consumption_currency(int index) const;
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+      _internal_consumption_currency() const;
+  void _internal_add_consumption_currency(float value);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+      _internal_mutable_consumption_currency();
+  public:
+  float consumption_currency(int index) const;
+  void set_consumption_currency(int index, float value);
+  void add_consumption_currency(float value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+      consumption_currency() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+      mutable_consumption_currency();
+
+  // int32 org_id = 1 [json_name = "orgId"];
+  void clear_org_id();
+  int32_t org_id() const;
+  void set_org_id(int32_t value);
+  private:
+  int32_t _internal_org_id() const;
+  void _internal_set_org_id(int32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:city.economy.v2.SetConsumptionCurrencyRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::RepeatedField< float > consumption_currency_;
+    int32_t org_id_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_city_2feconomy_2fv2_2forg_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class SetConsumptionCurrencyResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:city.economy.v2.SetConsumptionCurrencyResponse) */ {
+ public:
+  inline SetConsumptionCurrencyResponse() : SetConsumptionCurrencyResponse(nullptr) {}
+  explicit PROTOBUF_CONSTEXPR SetConsumptionCurrencyResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  SetConsumptionCurrencyResponse(const SetConsumptionCurrencyResponse& from);
+  SetConsumptionCurrencyResponse(SetConsumptionCurrencyResponse&& from) noexcept
+    : SetConsumptionCurrencyResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline SetConsumptionCurrencyResponse& operator=(const SetConsumptionCurrencyResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline SetConsumptionCurrencyResponse& operator=(SetConsumptionCurrencyResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const SetConsumptionCurrencyResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const SetConsumptionCurrencyResponse* internal_default_instance() {
+    return reinterpret_cast<const SetConsumptionCurrencyResponse*>(
+               &_SetConsumptionCurrencyResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    65;
+
+  friend void swap(SetConsumptionCurrencyResponse& a, SetConsumptionCurrencyResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(SetConsumptionCurrencyResponse* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(SetConsumptionCurrencyResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  SetConsumptionCurrencyResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<SetConsumptionCurrencyResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
+  inline void CopyFrom(const SetConsumptionCurrencyResponse& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(*this, from);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
+  void MergeFrom(const SetConsumptionCurrencyResponse& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(*this, from);
+  }
+  public:
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.economy.v2.SetConsumptionCurrencyResponse";
+  }
+  protected:
+  explicit SetConsumptionCurrencyResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:city.economy.v2.SetConsumptionCurrencyResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+  };
+  friend struct ::TableStruct_city_2feconomy_2fv2_2forg_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetConsumptionPropensityRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.economy.v2.GetConsumptionPropensityRequest) */ {
+ public:
+  inline GetConsumptionPropensityRequest() : GetConsumptionPropensityRequest(nullptr) {}
+  ~GetConsumptionPropensityRequest() override;
+  explicit PROTOBUF_CONSTEXPR GetConsumptionPropensityRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  GetConsumptionPropensityRequest(const GetConsumptionPropensityRequest& from);
+  GetConsumptionPropensityRequest(GetConsumptionPropensityRequest&& from) noexcept
+    : GetConsumptionPropensityRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline GetConsumptionPropensityRequest& operator=(const GetConsumptionPropensityRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetConsumptionPropensityRequest& operator=(GetConsumptionPropensityRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const GetConsumptionPropensityRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GetConsumptionPropensityRequest* internal_default_instance() {
+    return reinterpret_cast<const GetConsumptionPropensityRequest*>(
+               &_GetConsumptionPropensityRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    66;
+
+  friend void swap(GetConsumptionPropensityRequest& a, GetConsumptionPropensityRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetConsumptionPropensityRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetConsumptionPropensityRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  GetConsumptionPropensityRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<GetConsumptionPropensityRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const GetConsumptionPropensityRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const GetConsumptionPropensityRequest& from) {
+    GetConsumptionPropensityRequest::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetConsumptionPropensityRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.economy.v2.GetConsumptionPropensityRequest";
+  }
+  protected:
+  explicit GetConsumptionPropensityRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kOrgIdFieldNumber = 1,
+  };
+  // int32 org_id = 1 [json_name = "orgId"];
+  void clear_org_id();
+  int32_t org_id() const;
+  void set_org_id(int32_t value);
+  private:
+  int32_t _internal_org_id() const;
+  void _internal_set_org_id(int32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:city.economy.v2.GetConsumptionPropensityRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    int32_t org_id_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_city_2feconomy_2fv2_2forg_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetConsumptionPropensityResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.economy.v2.GetConsumptionPropensityResponse) */ {
+ public:
+  inline GetConsumptionPropensityResponse() : GetConsumptionPropensityResponse(nullptr) {}
+  ~GetConsumptionPropensityResponse() override;
+  explicit PROTOBUF_CONSTEXPR GetConsumptionPropensityResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  GetConsumptionPropensityResponse(const GetConsumptionPropensityResponse& from);
+  GetConsumptionPropensityResponse(GetConsumptionPropensityResponse&& from) noexcept
+    : GetConsumptionPropensityResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline GetConsumptionPropensityResponse& operator=(const GetConsumptionPropensityResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetConsumptionPropensityResponse& operator=(GetConsumptionPropensityResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const GetConsumptionPropensityResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GetConsumptionPropensityResponse* internal_default_instance() {
+    return reinterpret_cast<const GetConsumptionPropensityResponse*>(
+               &_GetConsumptionPropensityResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    67;
+
+  friend void swap(GetConsumptionPropensityResponse& a, GetConsumptionPropensityResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetConsumptionPropensityResponse* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetConsumptionPropensityResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  GetConsumptionPropensityResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<GetConsumptionPropensityResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const GetConsumptionPropensityResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const GetConsumptionPropensityResponse& from) {
+    GetConsumptionPropensityResponse::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetConsumptionPropensityResponse* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.economy.v2.GetConsumptionPropensityResponse";
+  }
+  protected:
+  explicit GetConsumptionPropensityResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kConsumptionPropensityFieldNumber = 1,
+  };
+  // repeated float consumption_propensity = 1 [json_name = "consumptionPropensity"];
+  int consumption_propensity_size() const;
+  private:
+  int _internal_consumption_propensity_size() const;
+  public:
+  void clear_consumption_propensity();
+  private:
+  float _internal_consumption_propensity(int index) const;
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+      _internal_consumption_propensity() const;
+  void _internal_add_consumption_propensity(float value);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+      _internal_mutable_consumption_propensity();
+  public:
+  float consumption_propensity(int index) const;
+  void set_consumption_propensity(int index, float value);
+  void add_consumption_propensity(float value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+      consumption_propensity() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+      mutable_consumption_propensity();
+
+  // @@protoc_insertion_point(class_scope:city.economy.v2.GetConsumptionPropensityResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::RepeatedField< float > consumption_propensity_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_city_2feconomy_2fv2_2forg_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class SetConsumptionPropensityRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.economy.v2.SetConsumptionPropensityRequest) */ {
+ public:
+  inline SetConsumptionPropensityRequest() : SetConsumptionPropensityRequest(nullptr) {}
+  ~SetConsumptionPropensityRequest() override;
+  explicit PROTOBUF_CONSTEXPR SetConsumptionPropensityRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  SetConsumptionPropensityRequest(const SetConsumptionPropensityRequest& from);
+  SetConsumptionPropensityRequest(SetConsumptionPropensityRequest&& from) noexcept
+    : SetConsumptionPropensityRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline SetConsumptionPropensityRequest& operator=(const SetConsumptionPropensityRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline SetConsumptionPropensityRequest& operator=(SetConsumptionPropensityRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const SetConsumptionPropensityRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const SetConsumptionPropensityRequest* internal_default_instance() {
+    return reinterpret_cast<const SetConsumptionPropensityRequest*>(
+               &_SetConsumptionPropensityRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    68;
+
+  friend void swap(SetConsumptionPropensityRequest& a, SetConsumptionPropensityRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(SetConsumptionPropensityRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(SetConsumptionPropensityRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  SetConsumptionPropensityRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<SetConsumptionPropensityRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const SetConsumptionPropensityRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const SetConsumptionPropensityRequest& from) {
+    SetConsumptionPropensityRequest::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(SetConsumptionPropensityRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.economy.v2.SetConsumptionPropensityRequest";
+  }
+  protected:
+  explicit SetConsumptionPropensityRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kConsumptionPropensityFieldNumber = 2,
+    kOrgIdFieldNumber = 1,
+  };
+  // repeated float consumption_propensity = 2 [json_name = "consumptionPropensity"];
+  int consumption_propensity_size() const;
+  private:
+  int _internal_consumption_propensity_size() const;
+  public:
+  void clear_consumption_propensity();
+  private:
+  float _internal_consumption_propensity(int index) const;
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+      _internal_consumption_propensity() const;
+  void _internal_add_consumption_propensity(float value);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+      _internal_mutable_consumption_propensity();
+  public:
+  float consumption_propensity(int index) const;
+  void set_consumption_propensity(int index, float value);
+  void add_consumption_propensity(float value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+      consumption_propensity() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+      mutable_consumption_propensity();
+
+  // int32 org_id = 1 [json_name = "orgId"];
+  void clear_org_id();
+  int32_t org_id() const;
+  void set_org_id(int32_t value);
+  private:
+  int32_t _internal_org_id() const;
+  void _internal_set_org_id(int32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:city.economy.v2.SetConsumptionPropensityRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::RepeatedField< float > consumption_propensity_;
+    int32_t org_id_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_city_2feconomy_2fv2_2forg_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class SetConsumptionPropensityResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:city.economy.v2.SetConsumptionPropensityResponse) */ {
+ public:
+  inline SetConsumptionPropensityResponse() : SetConsumptionPropensityResponse(nullptr) {}
+  explicit PROTOBUF_CONSTEXPR SetConsumptionPropensityResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  SetConsumptionPropensityResponse(const SetConsumptionPropensityResponse& from);
+  SetConsumptionPropensityResponse(SetConsumptionPropensityResponse&& from) noexcept
+    : SetConsumptionPropensityResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline SetConsumptionPropensityResponse& operator=(const SetConsumptionPropensityResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline SetConsumptionPropensityResponse& operator=(SetConsumptionPropensityResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const SetConsumptionPropensityResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const SetConsumptionPropensityResponse* internal_default_instance() {
+    return reinterpret_cast<const SetConsumptionPropensityResponse*>(
+               &_SetConsumptionPropensityResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    69;
+
+  friend void swap(SetConsumptionPropensityResponse& a, SetConsumptionPropensityResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(SetConsumptionPropensityResponse* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(SetConsumptionPropensityResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  SetConsumptionPropensityResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<SetConsumptionPropensityResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
+  inline void CopyFrom(const SetConsumptionPropensityResponse& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(*this, from);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
+  void MergeFrom(const SetConsumptionPropensityResponse& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(*this, from);
+  }
+  public:
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.economy.v2.SetConsumptionPropensityResponse";
+  }
+  protected:
+  explicit SetConsumptionPropensityResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:city.economy.v2.SetConsumptionPropensityResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+  };
+  friend struct ::TableStruct_city_2feconomy_2fv2_2forg_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetIncomeCurrencyRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.economy.v2.GetIncomeCurrencyRequest) */ {
+ public:
+  inline GetIncomeCurrencyRequest() : GetIncomeCurrencyRequest(nullptr) {}
+  ~GetIncomeCurrencyRequest() override;
+  explicit PROTOBUF_CONSTEXPR GetIncomeCurrencyRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  GetIncomeCurrencyRequest(const GetIncomeCurrencyRequest& from);
+  GetIncomeCurrencyRequest(GetIncomeCurrencyRequest&& from) noexcept
+    : GetIncomeCurrencyRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline GetIncomeCurrencyRequest& operator=(const GetIncomeCurrencyRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetIncomeCurrencyRequest& operator=(GetIncomeCurrencyRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const GetIncomeCurrencyRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GetIncomeCurrencyRequest* internal_default_instance() {
+    return reinterpret_cast<const GetIncomeCurrencyRequest*>(
+               &_GetIncomeCurrencyRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    70;
+
+  friend void swap(GetIncomeCurrencyRequest& a, GetIncomeCurrencyRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetIncomeCurrencyRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetIncomeCurrencyRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  GetIncomeCurrencyRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<GetIncomeCurrencyRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const GetIncomeCurrencyRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const GetIncomeCurrencyRequest& from) {
+    GetIncomeCurrencyRequest::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetIncomeCurrencyRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.economy.v2.GetIncomeCurrencyRequest";
+  }
+  protected:
+  explicit GetIncomeCurrencyRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kOrgIdFieldNumber = 1,
+  };
+  // int32 org_id = 1 [json_name = "orgId"];
+  void clear_org_id();
+  int32_t org_id() const;
+  void set_org_id(int32_t value);
+  private:
+  int32_t _internal_org_id() const;
+  void _internal_set_org_id(int32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:city.economy.v2.GetIncomeCurrencyRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    int32_t org_id_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_city_2feconomy_2fv2_2forg_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetIncomeCurrencyResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.economy.v2.GetIncomeCurrencyResponse) */ {
+ public:
+  inline GetIncomeCurrencyResponse() : GetIncomeCurrencyResponse(nullptr) {}
+  ~GetIncomeCurrencyResponse() override;
+  explicit PROTOBUF_CONSTEXPR GetIncomeCurrencyResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  GetIncomeCurrencyResponse(const GetIncomeCurrencyResponse& from);
+  GetIncomeCurrencyResponse(GetIncomeCurrencyResponse&& from) noexcept
+    : GetIncomeCurrencyResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline GetIncomeCurrencyResponse& operator=(const GetIncomeCurrencyResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetIncomeCurrencyResponse& operator=(GetIncomeCurrencyResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const GetIncomeCurrencyResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GetIncomeCurrencyResponse* internal_default_instance() {
+    return reinterpret_cast<const GetIncomeCurrencyResponse*>(
+               &_GetIncomeCurrencyResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    71;
+
+  friend void swap(GetIncomeCurrencyResponse& a, GetIncomeCurrencyResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetIncomeCurrencyResponse* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetIncomeCurrencyResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  GetIncomeCurrencyResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<GetIncomeCurrencyResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const GetIncomeCurrencyResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const GetIncomeCurrencyResponse& from) {
+    GetIncomeCurrencyResponse::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetIncomeCurrencyResponse* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.economy.v2.GetIncomeCurrencyResponse";
+  }
+  protected:
+  explicit GetIncomeCurrencyResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kIncomeCurrencyFieldNumber = 1,
+  };
+  // repeated float income_currency = 1 [json_name = "incomeCurrency"];
+  int income_currency_size() const;
+  private:
+  int _internal_income_currency_size() const;
+  public:
+  void clear_income_currency();
+  private:
+  float _internal_income_currency(int index) const;
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+      _internal_income_currency() const;
+  void _internal_add_income_currency(float value);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+      _internal_mutable_income_currency();
+  public:
+  float income_currency(int index) const;
+  void set_income_currency(int index, float value);
+  void add_income_currency(float value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+      income_currency() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+      mutable_income_currency();
+
+  // @@protoc_insertion_point(class_scope:city.economy.v2.GetIncomeCurrencyResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::RepeatedField< float > income_currency_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_city_2feconomy_2fv2_2forg_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class SetIncomeCurrencyRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.economy.v2.SetIncomeCurrencyRequest) */ {
+ public:
+  inline SetIncomeCurrencyRequest() : SetIncomeCurrencyRequest(nullptr) {}
+  ~SetIncomeCurrencyRequest() override;
+  explicit PROTOBUF_CONSTEXPR SetIncomeCurrencyRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  SetIncomeCurrencyRequest(const SetIncomeCurrencyRequest& from);
+  SetIncomeCurrencyRequest(SetIncomeCurrencyRequest&& from) noexcept
+    : SetIncomeCurrencyRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline SetIncomeCurrencyRequest& operator=(const SetIncomeCurrencyRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline SetIncomeCurrencyRequest& operator=(SetIncomeCurrencyRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const SetIncomeCurrencyRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const SetIncomeCurrencyRequest* internal_default_instance() {
+    return reinterpret_cast<const SetIncomeCurrencyRequest*>(
+               &_SetIncomeCurrencyRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    72;
+
+  friend void swap(SetIncomeCurrencyRequest& a, SetIncomeCurrencyRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(SetIncomeCurrencyRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(SetIncomeCurrencyRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  SetIncomeCurrencyRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<SetIncomeCurrencyRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const SetIncomeCurrencyRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const SetIncomeCurrencyRequest& from) {
+    SetIncomeCurrencyRequest::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(SetIncomeCurrencyRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.economy.v2.SetIncomeCurrencyRequest";
+  }
+  protected:
+  explicit SetIncomeCurrencyRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kIncomeCurrencyFieldNumber = 2,
+    kOrgIdFieldNumber = 1,
+  };
+  // repeated float income_currency = 2 [json_name = "incomeCurrency"];
+  int income_currency_size() const;
+  private:
+  int _internal_income_currency_size() const;
+  public:
+  void clear_income_currency();
+  private:
+  float _internal_income_currency(int index) const;
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+      _internal_income_currency() const;
+  void _internal_add_income_currency(float value);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+      _internal_mutable_income_currency();
+  public:
+  float income_currency(int index) const;
+  void set_income_currency(int index, float value);
+  void add_income_currency(float value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+      income_currency() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+      mutable_income_currency();
+
+  // int32 org_id = 1 [json_name = "orgId"];
+  void clear_org_id();
+  int32_t org_id() const;
+  void set_org_id(int32_t value);
+  private:
+  int32_t _internal_org_id() const;
+  void _internal_set_org_id(int32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:city.economy.v2.SetIncomeCurrencyRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::RepeatedField< float > income_currency_;
+    int32_t org_id_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_city_2feconomy_2fv2_2forg_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class SetIncomeCurrencyResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:city.economy.v2.SetIncomeCurrencyResponse) */ {
+ public:
+  inline SetIncomeCurrencyResponse() : SetIncomeCurrencyResponse(nullptr) {}
+  explicit PROTOBUF_CONSTEXPR SetIncomeCurrencyResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  SetIncomeCurrencyResponse(const SetIncomeCurrencyResponse& from);
+  SetIncomeCurrencyResponse(SetIncomeCurrencyResponse&& from) noexcept
+    : SetIncomeCurrencyResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline SetIncomeCurrencyResponse& operator=(const SetIncomeCurrencyResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline SetIncomeCurrencyResponse& operator=(SetIncomeCurrencyResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const SetIncomeCurrencyResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const SetIncomeCurrencyResponse* internal_default_instance() {
+    return reinterpret_cast<const SetIncomeCurrencyResponse*>(
+               &_SetIncomeCurrencyResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    73;
+
+  friend void swap(SetIncomeCurrencyResponse& a, SetIncomeCurrencyResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(SetIncomeCurrencyResponse* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(SetIncomeCurrencyResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  SetIncomeCurrencyResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<SetIncomeCurrencyResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
+  inline void CopyFrom(const SetIncomeCurrencyResponse& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(*this, from);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
+  void MergeFrom(const SetIncomeCurrencyResponse& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(*this, from);
+  }
+  public:
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.economy.v2.SetIncomeCurrencyResponse";
+  }
+  protected:
+  explicit SetIncomeCurrencyResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:city.economy.v2.SetIncomeCurrencyResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+  };
+  friend struct ::TableStruct_city_2feconomy_2fv2_2forg_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetDepressionStatusRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.economy.v2.GetDepressionStatusRequest) */ {
+ public:
+  inline GetDepressionStatusRequest() : GetDepressionStatusRequest(nullptr) {}
+  ~GetDepressionStatusRequest() override;
+  explicit PROTOBUF_CONSTEXPR GetDepressionStatusRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  GetDepressionStatusRequest(const GetDepressionStatusRequest& from);
+  GetDepressionStatusRequest(GetDepressionStatusRequest&& from) noexcept
+    : GetDepressionStatusRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline GetDepressionStatusRequest& operator=(const GetDepressionStatusRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetDepressionStatusRequest& operator=(GetDepressionStatusRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const GetDepressionStatusRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GetDepressionStatusRequest* internal_default_instance() {
+    return reinterpret_cast<const GetDepressionStatusRequest*>(
+               &_GetDepressionStatusRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    74;
+
+  friend void swap(GetDepressionStatusRequest& a, GetDepressionStatusRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetDepressionStatusRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetDepressionStatusRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  GetDepressionStatusRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<GetDepressionStatusRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const GetDepressionStatusRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const GetDepressionStatusRequest& from) {
+    GetDepressionStatusRequest::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetDepressionStatusRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.economy.v2.GetDepressionStatusRequest";
+  }
+  protected:
+  explicit GetDepressionStatusRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kOrgIdFieldNumber = 1,
+  };
+  // int32 org_id = 1 [json_name = "orgId"];
+  void clear_org_id();
+  int32_t org_id() const;
+  void set_org_id(int32_t value);
+  private:
+  int32_t _internal_org_id() const;
+  void _internal_set_org_id(int32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:city.economy.v2.GetDepressionStatusRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    int32_t org_id_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_city_2feconomy_2fv2_2forg_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetDepressionStatusResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.economy.v2.GetDepressionStatusResponse) */ {
+ public:
+  inline GetDepressionStatusResponse() : GetDepressionStatusResponse(nullptr) {}
+  ~GetDepressionStatusResponse() override;
+  explicit PROTOBUF_CONSTEXPR GetDepressionStatusResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  GetDepressionStatusResponse(const GetDepressionStatusResponse& from);
+  GetDepressionStatusResponse(GetDepressionStatusResponse&& from) noexcept
+    : GetDepressionStatusResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline GetDepressionStatusResponse& operator=(const GetDepressionStatusResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetDepressionStatusResponse& operator=(GetDepressionStatusResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const GetDepressionStatusResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GetDepressionStatusResponse* internal_default_instance() {
+    return reinterpret_cast<const GetDepressionStatusResponse*>(
+               &_GetDepressionStatusResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    75;
+
+  friend void swap(GetDepressionStatusResponse& a, GetDepressionStatusResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetDepressionStatusResponse* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetDepressionStatusResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  GetDepressionStatusResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<GetDepressionStatusResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const GetDepressionStatusResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const GetDepressionStatusResponse& from) {
+    GetDepressionStatusResponse::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetDepressionStatusResponse* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.economy.v2.GetDepressionStatusResponse";
+  }
+  protected:
+  explicit GetDepressionStatusResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kDepressionFieldNumber = 1,
+  };
+  // repeated float depression = 1 [json_name = "depression"];
+  int depression_size() const;
+  private:
+  int _internal_depression_size() const;
+  public:
+  void clear_depression();
+  private:
+  float _internal_depression(int index) const;
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+      _internal_depression() const;
+  void _internal_add_depression(float value);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+      _internal_mutable_depression();
+  public:
+  float depression(int index) const;
+  void set_depression(int index, float value);
+  void add_depression(float value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+      depression() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+      mutable_depression();
+
+  // @@protoc_insertion_point(class_scope:city.economy.v2.GetDepressionStatusResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::RepeatedField< float > depression_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_city_2feconomy_2fv2_2forg_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class SetDepressionStatusRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.economy.v2.SetDepressionStatusRequest) */ {
+ public:
+  inline SetDepressionStatusRequest() : SetDepressionStatusRequest(nullptr) {}
+  ~SetDepressionStatusRequest() override;
+  explicit PROTOBUF_CONSTEXPR SetDepressionStatusRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  SetDepressionStatusRequest(const SetDepressionStatusRequest& from);
+  SetDepressionStatusRequest(SetDepressionStatusRequest&& from) noexcept
+    : SetDepressionStatusRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline SetDepressionStatusRequest& operator=(const SetDepressionStatusRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline SetDepressionStatusRequest& operator=(SetDepressionStatusRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const SetDepressionStatusRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const SetDepressionStatusRequest* internal_default_instance() {
+    return reinterpret_cast<const SetDepressionStatusRequest*>(
+               &_SetDepressionStatusRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    76;
+
+  friend void swap(SetDepressionStatusRequest& a, SetDepressionStatusRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(SetDepressionStatusRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(SetDepressionStatusRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  SetDepressionStatusRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<SetDepressionStatusRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const SetDepressionStatusRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const SetDepressionStatusRequest& from) {
+    SetDepressionStatusRequest::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(SetDepressionStatusRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.economy.v2.SetDepressionStatusRequest";
+  }
+  protected:
+  explicit SetDepressionStatusRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kDepressionFieldNumber = 2,
+    kOrgIdFieldNumber = 1,
+  };
+  // repeated float depression = 2 [json_name = "depression"];
+  int depression_size() const;
+  private:
+  int _internal_depression_size() const;
+  public:
+  void clear_depression();
+  private:
+  float _internal_depression(int index) const;
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+      _internal_depression() const;
+  void _internal_add_depression(float value);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+      _internal_mutable_depression();
+  public:
+  float depression(int index) const;
+  void set_depression(int index, float value);
+  void add_depression(float value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+      depression() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+      mutable_depression();
+
+  // int32 org_id = 1 [json_name = "orgId"];
+  void clear_org_id();
+  int32_t org_id() const;
+  void set_org_id(int32_t value);
+  private:
+  int32_t _internal_org_id() const;
+  void _internal_set_org_id(int32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:city.economy.v2.SetDepressionStatusRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::RepeatedField< float > depression_;
+    int32_t org_id_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_city_2feconomy_2fv2_2forg_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class SetDepressionStatusResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:city.economy.v2.SetDepressionStatusResponse) */ {
+ public:
+  inline SetDepressionStatusResponse() : SetDepressionStatusResponse(nullptr) {}
+  explicit PROTOBUF_CONSTEXPR SetDepressionStatusResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  SetDepressionStatusResponse(const SetDepressionStatusResponse& from);
+  SetDepressionStatusResponse(SetDepressionStatusResponse&& from) noexcept
+    : SetDepressionStatusResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline SetDepressionStatusResponse& operator=(const SetDepressionStatusResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline SetDepressionStatusResponse& operator=(SetDepressionStatusResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const SetDepressionStatusResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const SetDepressionStatusResponse* internal_default_instance() {
+    return reinterpret_cast<const SetDepressionStatusResponse*>(
+               &_SetDepressionStatusResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    77;
+
+  friend void swap(SetDepressionStatusResponse& a, SetDepressionStatusResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(SetDepressionStatusResponse* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(SetDepressionStatusResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  SetDepressionStatusResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<SetDepressionStatusResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
+  inline void CopyFrom(const SetDepressionStatusResponse& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(*this, from);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
+  void MergeFrom(const SetDepressionStatusResponse& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(*this, from);
+  }
+  public:
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.economy.v2.SetDepressionStatusResponse";
+  }
+  protected:
+  explicit SetDepressionStatusResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:city.economy.v2.SetDepressionStatusResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+  };
+  friend struct ::TableStruct_city_2feconomy_2fv2_2forg_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetLocusControlRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.economy.v2.GetLocusControlRequest) */ {
+ public:
+  inline GetLocusControlRequest() : GetLocusControlRequest(nullptr) {}
+  ~GetLocusControlRequest() override;
+  explicit PROTOBUF_CONSTEXPR GetLocusControlRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  GetLocusControlRequest(const GetLocusControlRequest& from);
+  GetLocusControlRequest(GetLocusControlRequest&& from) noexcept
+    : GetLocusControlRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline GetLocusControlRequest& operator=(const GetLocusControlRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetLocusControlRequest& operator=(GetLocusControlRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const GetLocusControlRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GetLocusControlRequest* internal_default_instance() {
+    return reinterpret_cast<const GetLocusControlRequest*>(
+               &_GetLocusControlRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    78;
+
+  friend void swap(GetLocusControlRequest& a, GetLocusControlRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetLocusControlRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetLocusControlRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  GetLocusControlRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<GetLocusControlRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const GetLocusControlRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const GetLocusControlRequest& from) {
+    GetLocusControlRequest::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetLocusControlRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.economy.v2.GetLocusControlRequest";
+  }
+  protected:
+  explicit GetLocusControlRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kOrgIdFieldNumber = 1,
+  };
+  // int32 org_id = 1 [json_name = "orgId"];
+  void clear_org_id();
+  int32_t org_id() const;
+  void set_org_id(int32_t value);
+  private:
+  int32_t _internal_org_id() const;
+  void _internal_set_org_id(int32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:city.economy.v2.GetLocusControlRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    int32_t org_id_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_city_2feconomy_2fv2_2forg_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetLocusControlResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.economy.v2.GetLocusControlResponse) */ {
+ public:
+  inline GetLocusControlResponse() : GetLocusControlResponse(nullptr) {}
+  ~GetLocusControlResponse() override;
+  explicit PROTOBUF_CONSTEXPR GetLocusControlResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  GetLocusControlResponse(const GetLocusControlResponse& from);
+  GetLocusControlResponse(GetLocusControlResponse&& from) noexcept
+    : GetLocusControlResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline GetLocusControlResponse& operator=(const GetLocusControlResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetLocusControlResponse& operator=(GetLocusControlResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const GetLocusControlResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GetLocusControlResponse* internal_default_instance() {
+    return reinterpret_cast<const GetLocusControlResponse*>(
+               &_GetLocusControlResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    79;
+
+  friend void swap(GetLocusControlResponse& a, GetLocusControlResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetLocusControlResponse* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetLocusControlResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  GetLocusControlResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<GetLocusControlResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const GetLocusControlResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const GetLocusControlResponse& from) {
+    GetLocusControlResponse::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetLocusControlResponse* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.economy.v2.GetLocusControlResponse";
+  }
+  protected:
+  explicit GetLocusControlResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kLocusControlFieldNumber = 1,
+  };
+  // repeated float locus_control = 1 [json_name = "locusControl"];
+  int locus_control_size() const;
+  private:
+  int _internal_locus_control_size() const;
+  public:
+  void clear_locus_control();
+  private:
+  float _internal_locus_control(int index) const;
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+      _internal_locus_control() const;
+  void _internal_add_locus_control(float value);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+      _internal_mutable_locus_control();
+  public:
+  float locus_control(int index) const;
+  void set_locus_control(int index, float value);
+  void add_locus_control(float value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+      locus_control() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+      mutable_locus_control();
+
+  // @@protoc_insertion_point(class_scope:city.economy.v2.GetLocusControlResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::RepeatedField< float > locus_control_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_city_2feconomy_2fv2_2forg_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class SetLocusControlRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.economy.v2.SetLocusControlRequest) */ {
+ public:
+  inline SetLocusControlRequest() : SetLocusControlRequest(nullptr) {}
+  ~SetLocusControlRequest() override;
+  explicit PROTOBUF_CONSTEXPR SetLocusControlRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  SetLocusControlRequest(const SetLocusControlRequest& from);
+  SetLocusControlRequest(SetLocusControlRequest&& from) noexcept
+    : SetLocusControlRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline SetLocusControlRequest& operator=(const SetLocusControlRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline SetLocusControlRequest& operator=(SetLocusControlRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const SetLocusControlRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const SetLocusControlRequest* internal_default_instance() {
+    return reinterpret_cast<const SetLocusControlRequest*>(
+               &_SetLocusControlRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    80;
+
+  friend void swap(SetLocusControlRequest& a, SetLocusControlRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(SetLocusControlRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(SetLocusControlRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  SetLocusControlRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<SetLocusControlRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const SetLocusControlRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const SetLocusControlRequest& from) {
+    SetLocusControlRequest::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(SetLocusControlRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.economy.v2.SetLocusControlRequest";
+  }
+  protected:
+  explicit SetLocusControlRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kLocusControlFieldNumber = 2,
+    kOrgIdFieldNumber = 1,
+  };
+  // repeated float locus_control = 2 [json_name = "locusControl"];
+  int locus_control_size() const;
+  private:
+  int _internal_locus_control_size() const;
+  public:
+  void clear_locus_control();
+  private:
+  float _internal_locus_control(int index) const;
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+      _internal_locus_control() const;
+  void _internal_add_locus_control(float value);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+      _internal_mutable_locus_control();
+  public:
+  float locus_control(int index) const;
+  void set_locus_control(int index, float value);
+  void add_locus_control(float value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+      locus_control() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+      mutable_locus_control();
+
+  // int32 org_id = 1 [json_name = "orgId"];
+  void clear_org_id();
+  int32_t org_id() const;
+  void set_org_id(int32_t value);
+  private:
+  int32_t _internal_org_id() const;
+  void _internal_set_org_id(int32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:city.economy.v2.SetLocusControlRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::RepeatedField< float > locus_control_;
+    int32_t org_id_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_city_2feconomy_2fv2_2forg_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class SetLocusControlResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:city.economy.v2.SetLocusControlResponse) */ {
+ public:
+  inline SetLocusControlResponse() : SetLocusControlResponse(nullptr) {}
+  explicit PROTOBUF_CONSTEXPR SetLocusControlResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  SetLocusControlResponse(const SetLocusControlResponse& from);
+  SetLocusControlResponse(SetLocusControlResponse&& from) noexcept
+    : SetLocusControlResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline SetLocusControlResponse& operator=(const SetLocusControlResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline SetLocusControlResponse& operator=(SetLocusControlResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const SetLocusControlResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const SetLocusControlResponse* internal_default_instance() {
+    return reinterpret_cast<const SetLocusControlResponse*>(
+               &_SetLocusControlResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    81;
+
+  friend void swap(SetLocusControlResponse& a, SetLocusControlResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(SetLocusControlResponse* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(SetLocusControlResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  SetLocusControlResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<SetLocusControlResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
+  inline void CopyFrom(const SetLocusControlResponse& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(*this, from);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
+  void MergeFrom(const SetLocusControlResponse& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(*this, from);
+  }
+  public:
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.economy.v2.SetLocusControlResponse";
+  }
+  protected:
+  explicit SetLocusControlResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:city.economy.v2.SetLocusControlResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+  };
+  friend struct ::TableStruct_city_2feconomy_2fv2_2forg_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetWorkingHoursRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.economy.v2.GetWorkingHoursRequest) */ {
+ public:
+  inline GetWorkingHoursRequest() : GetWorkingHoursRequest(nullptr) {}
+  ~GetWorkingHoursRequest() override;
+  explicit PROTOBUF_CONSTEXPR GetWorkingHoursRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  GetWorkingHoursRequest(const GetWorkingHoursRequest& from);
+  GetWorkingHoursRequest(GetWorkingHoursRequest&& from) noexcept
+    : GetWorkingHoursRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline GetWorkingHoursRequest& operator=(const GetWorkingHoursRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetWorkingHoursRequest& operator=(GetWorkingHoursRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const GetWorkingHoursRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GetWorkingHoursRequest* internal_default_instance() {
+    return reinterpret_cast<const GetWorkingHoursRequest*>(
+               &_GetWorkingHoursRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    82;
+
+  friend void swap(GetWorkingHoursRequest& a, GetWorkingHoursRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetWorkingHoursRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetWorkingHoursRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  GetWorkingHoursRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<GetWorkingHoursRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const GetWorkingHoursRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const GetWorkingHoursRequest& from) {
+    GetWorkingHoursRequest::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetWorkingHoursRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.economy.v2.GetWorkingHoursRequest";
+  }
+  protected:
+  explicit GetWorkingHoursRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kOrgIdFieldNumber = 1,
+  };
+  // int32 org_id = 1 [json_name = "orgId"];
+  void clear_org_id();
+  int32_t org_id() const;
+  void set_org_id(int32_t value);
+  private:
+  int32_t _internal_org_id() const;
+  void _internal_set_org_id(int32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:city.economy.v2.GetWorkingHoursRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    int32_t org_id_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_city_2feconomy_2fv2_2forg_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetWorkingHoursResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.economy.v2.GetWorkingHoursResponse) */ {
+ public:
+  inline GetWorkingHoursResponse() : GetWorkingHoursResponse(nullptr) {}
+  ~GetWorkingHoursResponse() override;
+  explicit PROTOBUF_CONSTEXPR GetWorkingHoursResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  GetWorkingHoursResponse(const GetWorkingHoursResponse& from);
+  GetWorkingHoursResponse(GetWorkingHoursResponse&& from) noexcept
+    : GetWorkingHoursResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline GetWorkingHoursResponse& operator=(const GetWorkingHoursResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetWorkingHoursResponse& operator=(GetWorkingHoursResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const GetWorkingHoursResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GetWorkingHoursResponse* internal_default_instance() {
+    return reinterpret_cast<const GetWorkingHoursResponse*>(
+               &_GetWorkingHoursResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    83;
+
+  friend void swap(GetWorkingHoursResponse& a, GetWorkingHoursResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetWorkingHoursResponse* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetWorkingHoursResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  GetWorkingHoursResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<GetWorkingHoursResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const GetWorkingHoursResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const GetWorkingHoursResponse& from) {
+    GetWorkingHoursResponse::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetWorkingHoursResponse* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.economy.v2.GetWorkingHoursResponse";
+  }
+  protected:
+  explicit GetWorkingHoursResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kWorkingHoursFieldNumber = 1,
+  };
+  // repeated float working_hours = 1 [json_name = "workingHours"];
+  int working_hours_size() const;
+  private:
+  int _internal_working_hours_size() const;
+  public:
+  void clear_working_hours();
+  private:
+  float _internal_working_hours(int index) const;
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+      _internal_working_hours() const;
+  void _internal_add_working_hours(float value);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+      _internal_mutable_working_hours();
+  public:
+  float working_hours(int index) const;
+  void set_working_hours(int index, float value);
+  void add_working_hours(float value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+      working_hours() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+      mutable_working_hours();
+
+  // @@protoc_insertion_point(class_scope:city.economy.v2.GetWorkingHoursResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::RepeatedField< float > working_hours_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_city_2feconomy_2fv2_2forg_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class SetWorkingHoursRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.economy.v2.SetWorkingHoursRequest) */ {
+ public:
+  inline SetWorkingHoursRequest() : SetWorkingHoursRequest(nullptr) {}
+  ~SetWorkingHoursRequest() override;
+  explicit PROTOBUF_CONSTEXPR SetWorkingHoursRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  SetWorkingHoursRequest(const SetWorkingHoursRequest& from);
+  SetWorkingHoursRequest(SetWorkingHoursRequest&& from) noexcept
+    : SetWorkingHoursRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline SetWorkingHoursRequest& operator=(const SetWorkingHoursRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline SetWorkingHoursRequest& operator=(SetWorkingHoursRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const SetWorkingHoursRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const SetWorkingHoursRequest* internal_default_instance() {
+    return reinterpret_cast<const SetWorkingHoursRequest*>(
+               &_SetWorkingHoursRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    84;
+
+  friend void swap(SetWorkingHoursRequest& a, SetWorkingHoursRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(SetWorkingHoursRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(SetWorkingHoursRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  SetWorkingHoursRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<SetWorkingHoursRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const SetWorkingHoursRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const SetWorkingHoursRequest& from) {
+    SetWorkingHoursRequest::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(SetWorkingHoursRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.economy.v2.SetWorkingHoursRequest";
+  }
+  protected:
+  explicit SetWorkingHoursRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kWorkingHoursFieldNumber = 2,
+    kOrgIdFieldNumber = 1,
+  };
+  // repeated float working_hours = 2 [json_name = "workingHours"];
+  int working_hours_size() const;
+  private:
+  int _internal_working_hours_size() const;
+  public:
+  void clear_working_hours();
+  private:
+  float _internal_working_hours(int index) const;
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+      _internal_working_hours() const;
+  void _internal_add_working_hours(float value);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+      _internal_mutable_working_hours();
+  public:
+  float working_hours(int index) const;
+  void set_working_hours(int index, float value);
+  void add_working_hours(float value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+      working_hours() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+      mutable_working_hours();
+
+  // int32 org_id = 1 [json_name = "orgId"];
+  void clear_org_id();
+  int32_t org_id() const;
+  void set_org_id(int32_t value);
+  private:
+  int32_t _internal_org_id() const;
+  void _internal_set_org_id(int32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:city.economy.v2.SetWorkingHoursRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::RepeatedField< float > working_hours_;
+    int32_t org_id_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_city_2feconomy_2fv2_2forg_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class SetWorkingHoursResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:city.economy.v2.SetWorkingHoursResponse) */ {
+ public:
+  inline SetWorkingHoursResponse() : SetWorkingHoursResponse(nullptr) {}
+  explicit PROTOBUF_CONSTEXPR SetWorkingHoursResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  SetWorkingHoursResponse(const SetWorkingHoursResponse& from);
+  SetWorkingHoursResponse(SetWorkingHoursResponse&& from) noexcept
+    : SetWorkingHoursResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline SetWorkingHoursResponse& operator=(const SetWorkingHoursResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline SetWorkingHoursResponse& operator=(SetWorkingHoursResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const SetWorkingHoursResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const SetWorkingHoursResponse* internal_default_instance() {
+    return reinterpret_cast<const SetWorkingHoursResponse*>(
+               &_SetWorkingHoursResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    85;
+
+  friend void swap(SetWorkingHoursResponse& a, SetWorkingHoursResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(SetWorkingHoursResponse* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(SetWorkingHoursResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  SetWorkingHoursResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<SetWorkingHoursResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
+  inline void CopyFrom(const SetWorkingHoursResponse& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(*this, from);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
+  void MergeFrom(const SetWorkingHoursResponse& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(*this, from);
+  }
+  public:
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.economy.v2.SetWorkingHoursResponse";
+  }
+  protected:
+  explicit SetWorkingHoursResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:city.economy.v2.SetWorkingHoursResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+  };
+  friend struct ::TableStruct_city_2feconomy_2fv2_2forg_5fservice_2eproto;
+};
 // ===================================================================
 
 
@@ -12175,9 +15865,957 @@ LoadEconomyEntitiesResponse::mutable_org_ids() {
   return _internal_mutable_org_ids();
 }
 
+// -------------------------------------------------------------------
+
+// GetConsumptionCurrencyRequest
+
+// int32 org_id = 1 [json_name = "orgId"];
+inline void GetConsumptionCurrencyRequest::clear_org_id() {
+  _impl_.org_id_ = 0;
+}
+inline int32_t GetConsumptionCurrencyRequest::_internal_org_id() const {
+  return _impl_.org_id_;
+}
+inline int32_t GetConsumptionCurrencyRequest::org_id() const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.GetConsumptionCurrencyRequest.org_id)
+  return _internal_org_id();
+}
+inline void GetConsumptionCurrencyRequest::_internal_set_org_id(int32_t value) {
+  
+  _impl_.org_id_ = value;
+}
+inline void GetConsumptionCurrencyRequest::set_org_id(int32_t value) {
+  _internal_set_org_id(value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.GetConsumptionCurrencyRequest.org_id)
+}
+
+// -------------------------------------------------------------------
+
+// GetConsumptionCurrencyResponse
+
+// repeated float consumption_currency = 1 [json_name = "consumptionCurrency"];
+inline int GetConsumptionCurrencyResponse::_internal_consumption_currency_size() const {
+  return _impl_.consumption_currency_.size();
+}
+inline int GetConsumptionCurrencyResponse::consumption_currency_size() const {
+  return _internal_consumption_currency_size();
+}
+inline void GetConsumptionCurrencyResponse::clear_consumption_currency() {
+  _impl_.consumption_currency_.Clear();
+}
+inline float GetConsumptionCurrencyResponse::_internal_consumption_currency(int index) const {
+  return _impl_.consumption_currency_.Get(index);
+}
+inline float GetConsumptionCurrencyResponse::consumption_currency(int index) const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.GetConsumptionCurrencyResponse.consumption_currency)
+  return _internal_consumption_currency(index);
+}
+inline void GetConsumptionCurrencyResponse::set_consumption_currency(int index, float value) {
+  _impl_.consumption_currency_.Set(index, value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.GetConsumptionCurrencyResponse.consumption_currency)
+}
+inline void GetConsumptionCurrencyResponse::_internal_add_consumption_currency(float value) {
+  _impl_.consumption_currency_.Add(value);
+}
+inline void GetConsumptionCurrencyResponse::add_consumption_currency(float value) {
+  _internal_add_consumption_currency(value);
+  // @@protoc_insertion_point(field_add:city.economy.v2.GetConsumptionCurrencyResponse.consumption_currency)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+GetConsumptionCurrencyResponse::_internal_consumption_currency() const {
+  return _impl_.consumption_currency_;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+GetConsumptionCurrencyResponse::consumption_currency() const {
+  // @@protoc_insertion_point(field_list:city.economy.v2.GetConsumptionCurrencyResponse.consumption_currency)
+  return _internal_consumption_currency();
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+GetConsumptionCurrencyResponse::_internal_mutable_consumption_currency() {
+  return &_impl_.consumption_currency_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+GetConsumptionCurrencyResponse::mutable_consumption_currency() {
+  // @@protoc_insertion_point(field_mutable_list:city.economy.v2.GetConsumptionCurrencyResponse.consumption_currency)
+  return _internal_mutable_consumption_currency();
+}
+
+// -------------------------------------------------------------------
+
+// SetConsumptionCurrencyRequest
+
+// int32 org_id = 1 [json_name = "orgId"];
+inline void SetConsumptionCurrencyRequest::clear_org_id() {
+  _impl_.org_id_ = 0;
+}
+inline int32_t SetConsumptionCurrencyRequest::_internal_org_id() const {
+  return _impl_.org_id_;
+}
+inline int32_t SetConsumptionCurrencyRequest::org_id() const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.SetConsumptionCurrencyRequest.org_id)
+  return _internal_org_id();
+}
+inline void SetConsumptionCurrencyRequest::_internal_set_org_id(int32_t value) {
+  
+  _impl_.org_id_ = value;
+}
+inline void SetConsumptionCurrencyRequest::set_org_id(int32_t value) {
+  _internal_set_org_id(value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.SetConsumptionCurrencyRequest.org_id)
+}
+
+// repeated float consumption_currency = 2 [json_name = "consumptionCurrency"];
+inline int SetConsumptionCurrencyRequest::_internal_consumption_currency_size() const {
+  return _impl_.consumption_currency_.size();
+}
+inline int SetConsumptionCurrencyRequest::consumption_currency_size() const {
+  return _internal_consumption_currency_size();
+}
+inline void SetConsumptionCurrencyRequest::clear_consumption_currency() {
+  _impl_.consumption_currency_.Clear();
+}
+inline float SetConsumptionCurrencyRequest::_internal_consumption_currency(int index) const {
+  return _impl_.consumption_currency_.Get(index);
+}
+inline float SetConsumptionCurrencyRequest::consumption_currency(int index) const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.SetConsumptionCurrencyRequest.consumption_currency)
+  return _internal_consumption_currency(index);
+}
+inline void SetConsumptionCurrencyRequest::set_consumption_currency(int index, float value) {
+  _impl_.consumption_currency_.Set(index, value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.SetConsumptionCurrencyRequest.consumption_currency)
+}
+inline void SetConsumptionCurrencyRequest::_internal_add_consumption_currency(float value) {
+  _impl_.consumption_currency_.Add(value);
+}
+inline void SetConsumptionCurrencyRequest::add_consumption_currency(float value) {
+  _internal_add_consumption_currency(value);
+  // @@protoc_insertion_point(field_add:city.economy.v2.SetConsumptionCurrencyRequest.consumption_currency)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+SetConsumptionCurrencyRequest::_internal_consumption_currency() const {
+  return _impl_.consumption_currency_;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+SetConsumptionCurrencyRequest::consumption_currency() const {
+  // @@protoc_insertion_point(field_list:city.economy.v2.SetConsumptionCurrencyRequest.consumption_currency)
+  return _internal_consumption_currency();
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+SetConsumptionCurrencyRequest::_internal_mutable_consumption_currency() {
+  return &_impl_.consumption_currency_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+SetConsumptionCurrencyRequest::mutable_consumption_currency() {
+  // @@protoc_insertion_point(field_mutable_list:city.economy.v2.SetConsumptionCurrencyRequest.consumption_currency)
+  return _internal_mutable_consumption_currency();
+}
+
+// -------------------------------------------------------------------
+
+// SetConsumptionCurrencyResponse
+
+// -------------------------------------------------------------------
+
+// GetConsumptionPropensityRequest
+
+// int32 org_id = 1 [json_name = "orgId"];
+inline void GetConsumptionPropensityRequest::clear_org_id() {
+  _impl_.org_id_ = 0;
+}
+inline int32_t GetConsumptionPropensityRequest::_internal_org_id() const {
+  return _impl_.org_id_;
+}
+inline int32_t GetConsumptionPropensityRequest::org_id() const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.GetConsumptionPropensityRequest.org_id)
+  return _internal_org_id();
+}
+inline void GetConsumptionPropensityRequest::_internal_set_org_id(int32_t value) {
+  
+  _impl_.org_id_ = value;
+}
+inline void GetConsumptionPropensityRequest::set_org_id(int32_t value) {
+  _internal_set_org_id(value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.GetConsumptionPropensityRequest.org_id)
+}
+
+// -------------------------------------------------------------------
+
+// GetConsumptionPropensityResponse
+
+// repeated float consumption_propensity = 1 [json_name = "consumptionPropensity"];
+inline int GetConsumptionPropensityResponse::_internal_consumption_propensity_size() const {
+  return _impl_.consumption_propensity_.size();
+}
+inline int GetConsumptionPropensityResponse::consumption_propensity_size() const {
+  return _internal_consumption_propensity_size();
+}
+inline void GetConsumptionPropensityResponse::clear_consumption_propensity() {
+  _impl_.consumption_propensity_.Clear();
+}
+inline float GetConsumptionPropensityResponse::_internal_consumption_propensity(int index) const {
+  return _impl_.consumption_propensity_.Get(index);
+}
+inline float GetConsumptionPropensityResponse::consumption_propensity(int index) const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.GetConsumptionPropensityResponse.consumption_propensity)
+  return _internal_consumption_propensity(index);
+}
+inline void GetConsumptionPropensityResponse::set_consumption_propensity(int index, float value) {
+  _impl_.consumption_propensity_.Set(index, value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.GetConsumptionPropensityResponse.consumption_propensity)
+}
+inline void GetConsumptionPropensityResponse::_internal_add_consumption_propensity(float value) {
+  _impl_.consumption_propensity_.Add(value);
+}
+inline void GetConsumptionPropensityResponse::add_consumption_propensity(float value) {
+  _internal_add_consumption_propensity(value);
+  // @@protoc_insertion_point(field_add:city.economy.v2.GetConsumptionPropensityResponse.consumption_propensity)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+GetConsumptionPropensityResponse::_internal_consumption_propensity() const {
+  return _impl_.consumption_propensity_;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+GetConsumptionPropensityResponse::consumption_propensity() const {
+  // @@protoc_insertion_point(field_list:city.economy.v2.GetConsumptionPropensityResponse.consumption_propensity)
+  return _internal_consumption_propensity();
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+GetConsumptionPropensityResponse::_internal_mutable_consumption_propensity() {
+  return &_impl_.consumption_propensity_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+GetConsumptionPropensityResponse::mutable_consumption_propensity() {
+  // @@protoc_insertion_point(field_mutable_list:city.economy.v2.GetConsumptionPropensityResponse.consumption_propensity)
+  return _internal_mutable_consumption_propensity();
+}
+
+// -------------------------------------------------------------------
+
+// SetConsumptionPropensityRequest
+
+// int32 org_id = 1 [json_name = "orgId"];
+inline void SetConsumptionPropensityRequest::clear_org_id() {
+  _impl_.org_id_ = 0;
+}
+inline int32_t SetConsumptionPropensityRequest::_internal_org_id() const {
+  return _impl_.org_id_;
+}
+inline int32_t SetConsumptionPropensityRequest::org_id() const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.SetConsumptionPropensityRequest.org_id)
+  return _internal_org_id();
+}
+inline void SetConsumptionPropensityRequest::_internal_set_org_id(int32_t value) {
+  
+  _impl_.org_id_ = value;
+}
+inline void SetConsumptionPropensityRequest::set_org_id(int32_t value) {
+  _internal_set_org_id(value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.SetConsumptionPropensityRequest.org_id)
+}
+
+// repeated float consumption_propensity = 2 [json_name = "consumptionPropensity"];
+inline int SetConsumptionPropensityRequest::_internal_consumption_propensity_size() const {
+  return _impl_.consumption_propensity_.size();
+}
+inline int SetConsumptionPropensityRequest::consumption_propensity_size() const {
+  return _internal_consumption_propensity_size();
+}
+inline void SetConsumptionPropensityRequest::clear_consumption_propensity() {
+  _impl_.consumption_propensity_.Clear();
+}
+inline float SetConsumptionPropensityRequest::_internal_consumption_propensity(int index) const {
+  return _impl_.consumption_propensity_.Get(index);
+}
+inline float SetConsumptionPropensityRequest::consumption_propensity(int index) const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.SetConsumptionPropensityRequest.consumption_propensity)
+  return _internal_consumption_propensity(index);
+}
+inline void SetConsumptionPropensityRequest::set_consumption_propensity(int index, float value) {
+  _impl_.consumption_propensity_.Set(index, value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.SetConsumptionPropensityRequest.consumption_propensity)
+}
+inline void SetConsumptionPropensityRequest::_internal_add_consumption_propensity(float value) {
+  _impl_.consumption_propensity_.Add(value);
+}
+inline void SetConsumptionPropensityRequest::add_consumption_propensity(float value) {
+  _internal_add_consumption_propensity(value);
+  // @@protoc_insertion_point(field_add:city.economy.v2.SetConsumptionPropensityRequest.consumption_propensity)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+SetConsumptionPropensityRequest::_internal_consumption_propensity() const {
+  return _impl_.consumption_propensity_;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+SetConsumptionPropensityRequest::consumption_propensity() const {
+  // @@protoc_insertion_point(field_list:city.economy.v2.SetConsumptionPropensityRequest.consumption_propensity)
+  return _internal_consumption_propensity();
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+SetConsumptionPropensityRequest::_internal_mutable_consumption_propensity() {
+  return &_impl_.consumption_propensity_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+SetConsumptionPropensityRequest::mutable_consumption_propensity() {
+  // @@protoc_insertion_point(field_mutable_list:city.economy.v2.SetConsumptionPropensityRequest.consumption_propensity)
+  return _internal_mutable_consumption_propensity();
+}
+
+// -------------------------------------------------------------------
+
+// SetConsumptionPropensityResponse
+
+// -------------------------------------------------------------------
+
+// GetIncomeCurrencyRequest
+
+// int32 org_id = 1 [json_name = "orgId"];
+inline void GetIncomeCurrencyRequest::clear_org_id() {
+  _impl_.org_id_ = 0;
+}
+inline int32_t GetIncomeCurrencyRequest::_internal_org_id() const {
+  return _impl_.org_id_;
+}
+inline int32_t GetIncomeCurrencyRequest::org_id() const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.GetIncomeCurrencyRequest.org_id)
+  return _internal_org_id();
+}
+inline void GetIncomeCurrencyRequest::_internal_set_org_id(int32_t value) {
+  
+  _impl_.org_id_ = value;
+}
+inline void GetIncomeCurrencyRequest::set_org_id(int32_t value) {
+  _internal_set_org_id(value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.GetIncomeCurrencyRequest.org_id)
+}
+
+// -------------------------------------------------------------------
+
+// GetIncomeCurrencyResponse
+
+// repeated float income_currency = 1 [json_name = "incomeCurrency"];
+inline int GetIncomeCurrencyResponse::_internal_income_currency_size() const {
+  return _impl_.income_currency_.size();
+}
+inline int GetIncomeCurrencyResponse::income_currency_size() const {
+  return _internal_income_currency_size();
+}
+inline void GetIncomeCurrencyResponse::clear_income_currency() {
+  _impl_.income_currency_.Clear();
+}
+inline float GetIncomeCurrencyResponse::_internal_income_currency(int index) const {
+  return _impl_.income_currency_.Get(index);
+}
+inline float GetIncomeCurrencyResponse::income_currency(int index) const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.GetIncomeCurrencyResponse.income_currency)
+  return _internal_income_currency(index);
+}
+inline void GetIncomeCurrencyResponse::set_income_currency(int index, float value) {
+  _impl_.income_currency_.Set(index, value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.GetIncomeCurrencyResponse.income_currency)
+}
+inline void GetIncomeCurrencyResponse::_internal_add_income_currency(float value) {
+  _impl_.income_currency_.Add(value);
+}
+inline void GetIncomeCurrencyResponse::add_income_currency(float value) {
+  _internal_add_income_currency(value);
+  // @@protoc_insertion_point(field_add:city.economy.v2.GetIncomeCurrencyResponse.income_currency)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+GetIncomeCurrencyResponse::_internal_income_currency() const {
+  return _impl_.income_currency_;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+GetIncomeCurrencyResponse::income_currency() const {
+  // @@protoc_insertion_point(field_list:city.economy.v2.GetIncomeCurrencyResponse.income_currency)
+  return _internal_income_currency();
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+GetIncomeCurrencyResponse::_internal_mutable_income_currency() {
+  return &_impl_.income_currency_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+GetIncomeCurrencyResponse::mutable_income_currency() {
+  // @@protoc_insertion_point(field_mutable_list:city.economy.v2.GetIncomeCurrencyResponse.income_currency)
+  return _internal_mutable_income_currency();
+}
+
+// -------------------------------------------------------------------
+
+// SetIncomeCurrencyRequest
+
+// int32 org_id = 1 [json_name = "orgId"];
+inline void SetIncomeCurrencyRequest::clear_org_id() {
+  _impl_.org_id_ = 0;
+}
+inline int32_t SetIncomeCurrencyRequest::_internal_org_id() const {
+  return _impl_.org_id_;
+}
+inline int32_t SetIncomeCurrencyRequest::org_id() const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.SetIncomeCurrencyRequest.org_id)
+  return _internal_org_id();
+}
+inline void SetIncomeCurrencyRequest::_internal_set_org_id(int32_t value) {
+  
+  _impl_.org_id_ = value;
+}
+inline void SetIncomeCurrencyRequest::set_org_id(int32_t value) {
+  _internal_set_org_id(value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.SetIncomeCurrencyRequest.org_id)
+}
+
+// repeated float income_currency = 2 [json_name = "incomeCurrency"];
+inline int SetIncomeCurrencyRequest::_internal_income_currency_size() const {
+  return _impl_.income_currency_.size();
+}
+inline int SetIncomeCurrencyRequest::income_currency_size() const {
+  return _internal_income_currency_size();
+}
+inline void SetIncomeCurrencyRequest::clear_income_currency() {
+  _impl_.income_currency_.Clear();
+}
+inline float SetIncomeCurrencyRequest::_internal_income_currency(int index) const {
+  return _impl_.income_currency_.Get(index);
+}
+inline float SetIncomeCurrencyRequest::income_currency(int index) const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.SetIncomeCurrencyRequest.income_currency)
+  return _internal_income_currency(index);
+}
+inline void SetIncomeCurrencyRequest::set_income_currency(int index, float value) {
+  _impl_.income_currency_.Set(index, value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.SetIncomeCurrencyRequest.income_currency)
+}
+inline void SetIncomeCurrencyRequest::_internal_add_income_currency(float value) {
+  _impl_.income_currency_.Add(value);
+}
+inline void SetIncomeCurrencyRequest::add_income_currency(float value) {
+  _internal_add_income_currency(value);
+  // @@protoc_insertion_point(field_add:city.economy.v2.SetIncomeCurrencyRequest.income_currency)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+SetIncomeCurrencyRequest::_internal_income_currency() const {
+  return _impl_.income_currency_;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+SetIncomeCurrencyRequest::income_currency() const {
+  // @@protoc_insertion_point(field_list:city.economy.v2.SetIncomeCurrencyRequest.income_currency)
+  return _internal_income_currency();
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+SetIncomeCurrencyRequest::_internal_mutable_income_currency() {
+  return &_impl_.income_currency_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+SetIncomeCurrencyRequest::mutable_income_currency() {
+  // @@protoc_insertion_point(field_mutable_list:city.economy.v2.SetIncomeCurrencyRequest.income_currency)
+  return _internal_mutable_income_currency();
+}
+
+// -------------------------------------------------------------------
+
+// SetIncomeCurrencyResponse
+
+// -------------------------------------------------------------------
+
+// GetDepressionStatusRequest
+
+// int32 org_id = 1 [json_name = "orgId"];
+inline void GetDepressionStatusRequest::clear_org_id() {
+  _impl_.org_id_ = 0;
+}
+inline int32_t GetDepressionStatusRequest::_internal_org_id() const {
+  return _impl_.org_id_;
+}
+inline int32_t GetDepressionStatusRequest::org_id() const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.GetDepressionStatusRequest.org_id)
+  return _internal_org_id();
+}
+inline void GetDepressionStatusRequest::_internal_set_org_id(int32_t value) {
+  
+  _impl_.org_id_ = value;
+}
+inline void GetDepressionStatusRequest::set_org_id(int32_t value) {
+  _internal_set_org_id(value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.GetDepressionStatusRequest.org_id)
+}
+
+// -------------------------------------------------------------------
+
+// GetDepressionStatusResponse
+
+// repeated float depression = 1 [json_name = "depression"];
+inline int GetDepressionStatusResponse::_internal_depression_size() const {
+  return _impl_.depression_.size();
+}
+inline int GetDepressionStatusResponse::depression_size() const {
+  return _internal_depression_size();
+}
+inline void GetDepressionStatusResponse::clear_depression() {
+  _impl_.depression_.Clear();
+}
+inline float GetDepressionStatusResponse::_internal_depression(int index) const {
+  return _impl_.depression_.Get(index);
+}
+inline float GetDepressionStatusResponse::depression(int index) const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.GetDepressionStatusResponse.depression)
+  return _internal_depression(index);
+}
+inline void GetDepressionStatusResponse::set_depression(int index, float value) {
+  _impl_.depression_.Set(index, value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.GetDepressionStatusResponse.depression)
+}
+inline void GetDepressionStatusResponse::_internal_add_depression(float value) {
+  _impl_.depression_.Add(value);
+}
+inline void GetDepressionStatusResponse::add_depression(float value) {
+  _internal_add_depression(value);
+  // @@protoc_insertion_point(field_add:city.economy.v2.GetDepressionStatusResponse.depression)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+GetDepressionStatusResponse::_internal_depression() const {
+  return _impl_.depression_;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+GetDepressionStatusResponse::depression() const {
+  // @@protoc_insertion_point(field_list:city.economy.v2.GetDepressionStatusResponse.depression)
+  return _internal_depression();
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+GetDepressionStatusResponse::_internal_mutable_depression() {
+  return &_impl_.depression_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+GetDepressionStatusResponse::mutable_depression() {
+  // @@protoc_insertion_point(field_mutable_list:city.economy.v2.GetDepressionStatusResponse.depression)
+  return _internal_mutable_depression();
+}
+
+// -------------------------------------------------------------------
+
+// SetDepressionStatusRequest
+
+// int32 org_id = 1 [json_name = "orgId"];
+inline void SetDepressionStatusRequest::clear_org_id() {
+  _impl_.org_id_ = 0;
+}
+inline int32_t SetDepressionStatusRequest::_internal_org_id() const {
+  return _impl_.org_id_;
+}
+inline int32_t SetDepressionStatusRequest::org_id() const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.SetDepressionStatusRequest.org_id)
+  return _internal_org_id();
+}
+inline void SetDepressionStatusRequest::_internal_set_org_id(int32_t value) {
+  
+  _impl_.org_id_ = value;
+}
+inline void SetDepressionStatusRequest::set_org_id(int32_t value) {
+  _internal_set_org_id(value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.SetDepressionStatusRequest.org_id)
+}
+
+// repeated float depression = 2 [json_name = "depression"];
+inline int SetDepressionStatusRequest::_internal_depression_size() const {
+  return _impl_.depression_.size();
+}
+inline int SetDepressionStatusRequest::depression_size() const {
+  return _internal_depression_size();
+}
+inline void SetDepressionStatusRequest::clear_depression() {
+  _impl_.depression_.Clear();
+}
+inline float SetDepressionStatusRequest::_internal_depression(int index) const {
+  return _impl_.depression_.Get(index);
+}
+inline float SetDepressionStatusRequest::depression(int index) const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.SetDepressionStatusRequest.depression)
+  return _internal_depression(index);
+}
+inline void SetDepressionStatusRequest::set_depression(int index, float value) {
+  _impl_.depression_.Set(index, value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.SetDepressionStatusRequest.depression)
+}
+inline void SetDepressionStatusRequest::_internal_add_depression(float value) {
+  _impl_.depression_.Add(value);
+}
+inline void SetDepressionStatusRequest::add_depression(float value) {
+  _internal_add_depression(value);
+  // @@protoc_insertion_point(field_add:city.economy.v2.SetDepressionStatusRequest.depression)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+SetDepressionStatusRequest::_internal_depression() const {
+  return _impl_.depression_;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+SetDepressionStatusRequest::depression() const {
+  // @@protoc_insertion_point(field_list:city.economy.v2.SetDepressionStatusRequest.depression)
+  return _internal_depression();
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+SetDepressionStatusRequest::_internal_mutable_depression() {
+  return &_impl_.depression_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+SetDepressionStatusRequest::mutable_depression() {
+  // @@protoc_insertion_point(field_mutable_list:city.economy.v2.SetDepressionStatusRequest.depression)
+  return _internal_mutable_depression();
+}
+
+// -------------------------------------------------------------------
+
+// SetDepressionStatusResponse
+
+// -------------------------------------------------------------------
+
+// GetLocusControlRequest
+
+// int32 org_id = 1 [json_name = "orgId"];
+inline void GetLocusControlRequest::clear_org_id() {
+  _impl_.org_id_ = 0;
+}
+inline int32_t GetLocusControlRequest::_internal_org_id() const {
+  return _impl_.org_id_;
+}
+inline int32_t GetLocusControlRequest::org_id() const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.GetLocusControlRequest.org_id)
+  return _internal_org_id();
+}
+inline void GetLocusControlRequest::_internal_set_org_id(int32_t value) {
+  
+  _impl_.org_id_ = value;
+}
+inline void GetLocusControlRequest::set_org_id(int32_t value) {
+  _internal_set_org_id(value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.GetLocusControlRequest.org_id)
+}
+
+// -------------------------------------------------------------------
+
+// GetLocusControlResponse
+
+// repeated float locus_control = 1 [json_name = "locusControl"];
+inline int GetLocusControlResponse::_internal_locus_control_size() const {
+  return _impl_.locus_control_.size();
+}
+inline int GetLocusControlResponse::locus_control_size() const {
+  return _internal_locus_control_size();
+}
+inline void GetLocusControlResponse::clear_locus_control() {
+  _impl_.locus_control_.Clear();
+}
+inline float GetLocusControlResponse::_internal_locus_control(int index) const {
+  return _impl_.locus_control_.Get(index);
+}
+inline float GetLocusControlResponse::locus_control(int index) const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.GetLocusControlResponse.locus_control)
+  return _internal_locus_control(index);
+}
+inline void GetLocusControlResponse::set_locus_control(int index, float value) {
+  _impl_.locus_control_.Set(index, value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.GetLocusControlResponse.locus_control)
+}
+inline void GetLocusControlResponse::_internal_add_locus_control(float value) {
+  _impl_.locus_control_.Add(value);
+}
+inline void GetLocusControlResponse::add_locus_control(float value) {
+  _internal_add_locus_control(value);
+  // @@protoc_insertion_point(field_add:city.economy.v2.GetLocusControlResponse.locus_control)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+GetLocusControlResponse::_internal_locus_control() const {
+  return _impl_.locus_control_;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+GetLocusControlResponse::locus_control() const {
+  // @@protoc_insertion_point(field_list:city.economy.v2.GetLocusControlResponse.locus_control)
+  return _internal_locus_control();
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+GetLocusControlResponse::_internal_mutable_locus_control() {
+  return &_impl_.locus_control_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+GetLocusControlResponse::mutable_locus_control() {
+  // @@protoc_insertion_point(field_mutable_list:city.economy.v2.GetLocusControlResponse.locus_control)
+  return _internal_mutable_locus_control();
+}
+
+// -------------------------------------------------------------------
+
+// SetLocusControlRequest
+
+// int32 org_id = 1 [json_name = "orgId"];
+inline void SetLocusControlRequest::clear_org_id() {
+  _impl_.org_id_ = 0;
+}
+inline int32_t SetLocusControlRequest::_internal_org_id() const {
+  return _impl_.org_id_;
+}
+inline int32_t SetLocusControlRequest::org_id() const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.SetLocusControlRequest.org_id)
+  return _internal_org_id();
+}
+inline void SetLocusControlRequest::_internal_set_org_id(int32_t value) {
+  
+  _impl_.org_id_ = value;
+}
+inline void SetLocusControlRequest::set_org_id(int32_t value) {
+  _internal_set_org_id(value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.SetLocusControlRequest.org_id)
+}
+
+// repeated float locus_control = 2 [json_name = "locusControl"];
+inline int SetLocusControlRequest::_internal_locus_control_size() const {
+  return _impl_.locus_control_.size();
+}
+inline int SetLocusControlRequest::locus_control_size() const {
+  return _internal_locus_control_size();
+}
+inline void SetLocusControlRequest::clear_locus_control() {
+  _impl_.locus_control_.Clear();
+}
+inline float SetLocusControlRequest::_internal_locus_control(int index) const {
+  return _impl_.locus_control_.Get(index);
+}
+inline float SetLocusControlRequest::locus_control(int index) const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.SetLocusControlRequest.locus_control)
+  return _internal_locus_control(index);
+}
+inline void SetLocusControlRequest::set_locus_control(int index, float value) {
+  _impl_.locus_control_.Set(index, value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.SetLocusControlRequest.locus_control)
+}
+inline void SetLocusControlRequest::_internal_add_locus_control(float value) {
+  _impl_.locus_control_.Add(value);
+}
+inline void SetLocusControlRequest::add_locus_control(float value) {
+  _internal_add_locus_control(value);
+  // @@protoc_insertion_point(field_add:city.economy.v2.SetLocusControlRequest.locus_control)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+SetLocusControlRequest::_internal_locus_control() const {
+  return _impl_.locus_control_;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+SetLocusControlRequest::locus_control() const {
+  // @@protoc_insertion_point(field_list:city.economy.v2.SetLocusControlRequest.locus_control)
+  return _internal_locus_control();
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+SetLocusControlRequest::_internal_mutable_locus_control() {
+  return &_impl_.locus_control_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+SetLocusControlRequest::mutable_locus_control() {
+  // @@protoc_insertion_point(field_mutable_list:city.economy.v2.SetLocusControlRequest.locus_control)
+  return _internal_mutable_locus_control();
+}
+
+// -------------------------------------------------------------------
+
+// SetLocusControlResponse
+
+// -------------------------------------------------------------------
+
+// GetWorkingHoursRequest
+
+// int32 org_id = 1 [json_name = "orgId"];
+inline void GetWorkingHoursRequest::clear_org_id() {
+  _impl_.org_id_ = 0;
+}
+inline int32_t GetWorkingHoursRequest::_internal_org_id() const {
+  return _impl_.org_id_;
+}
+inline int32_t GetWorkingHoursRequest::org_id() const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.GetWorkingHoursRequest.org_id)
+  return _internal_org_id();
+}
+inline void GetWorkingHoursRequest::_internal_set_org_id(int32_t value) {
+  
+  _impl_.org_id_ = value;
+}
+inline void GetWorkingHoursRequest::set_org_id(int32_t value) {
+  _internal_set_org_id(value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.GetWorkingHoursRequest.org_id)
+}
+
+// -------------------------------------------------------------------
+
+// GetWorkingHoursResponse
+
+// repeated float working_hours = 1 [json_name = "workingHours"];
+inline int GetWorkingHoursResponse::_internal_working_hours_size() const {
+  return _impl_.working_hours_.size();
+}
+inline int GetWorkingHoursResponse::working_hours_size() const {
+  return _internal_working_hours_size();
+}
+inline void GetWorkingHoursResponse::clear_working_hours() {
+  _impl_.working_hours_.Clear();
+}
+inline float GetWorkingHoursResponse::_internal_working_hours(int index) const {
+  return _impl_.working_hours_.Get(index);
+}
+inline float GetWorkingHoursResponse::working_hours(int index) const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.GetWorkingHoursResponse.working_hours)
+  return _internal_working_hours(index);
+}
+inline void GetWorkingHoursResponse::set_working_hours(int index, float value) {
+  _impl_.working_hours_.Set(index, value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.GetWorkingHoursResponse.working_hours)
+}
+inline void GetWorkingHoursResponse::_internal_add_working_hours(float value) {
+  _impl_.working_hours_.Add(value);
+}
+inline void GetWorkingHoursResponse::add_working_hours(float value) {
+  _internal_add_working_hours(value);
+  // @@protoc_insertion_point(field_add:city.economy.v2.GetWorkingHoursResponse.working_hours)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+GetWorkingHoursResponse::_internal_working_hours() const {
+  return _impl_.working_hours_;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+GetWorkingHoursResponse::working_hours() const {
+  // @@protoc_insertion_point(field_list:city.economy.v2.GetWorkingHoursResponse.working_hours)
+  return _internal_working_hours();
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+GetWorkingHoursResponse::_internal_mutable_working_hours() {
+  return &_impl_.working_hours_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+GetWorkingHoursResponse::mutable_working_hours() {
+  // @@protoc_insertion_point(field_mutable_list:city.economy.v2.GetWorkingHoursResponse.working_hours)
+  return _internal_mutable_working_hours();
+}
+
+// -------------------------------------------------------------------
+
+// SetWorkingHoursRequest
+
+// int32 org_id = 1 [json_name = "orgId"];
+inline void SetWorkingHoursRequest::clear_org_id() {
+  _impl_.org_id_ = 0;
+}
+inline int32_t SetWorkingHoursRequest::_internal_org_id() const {
+  return _impl_.org_id_;
+}
+inline int32_t SetWorkingHoursRequest::org_id() const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.SetWorkingHoursRequest.org_id)
+  return _internal_org_id();
+}
+inline void SetWorkingHoursRequest::_internal_set_org_id(int32_t value) {
+  
+  _impl_.org_id_ = value;
+}
+inline void SetWorkingHoursRequest::set_org_id(int32_t value) {
+  _internal_set_org_id(value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.SetWorkingHoursRequest.org_id)
+}
+
+// repeated float working_hours = 2 [json_name = "workingHours"];
+inline int SetWorkingHoursRequest::_internal_working_hours_size() const {
+  return _impl_.working_hours_.size();
+}
+inline int SetWorkingHoursRequest::working_hours_size() const {
+  return _internal_working_hours_size();
+}
+inline void SetWorkingHoursRequest::clear_working_hours() {
+  _impl_.working_hours_.Clear();
+}
+inline float SetWorkingHoursRequest::_internal_working_hours(int index) const {
+  return _impl_.working_hours_.Get(index);
+}
+inline float SetWorkingHoursRequest::working_hours(int index) const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.SetWorkingHoursRequest.working_hours)
+  return _internal_working_hours(index);
+}
+inline void SetWorkingHoursRequest::set_working_hours(int index, float value) {
+  _impl_.working_hours_.Set(index, value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.SetWorkingHoursRequest.working_hours)
+}
+inline void SetWorkingHoursRequest::_internal_add_working_hours(float value) {
+  _impl_.working_hours_.Add(value);
+}
+inline void SetWorkingHoursRequest::add_working_hours(float value) {
+  _internal_add_working_hours(value);
+  // @@protoc_insertion_point(field_add:city.economy.v2.SetWorkingHoursRequest.working_hours)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+SetWorkingHoursRequest::_internal_working_hours() const {
+  return _impl_.working_hours_;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+SetWorkingHoursRequest::working_hours() const {
+  // @@protoc_insertion_point(field_list:city.economy.v2.SetWorkingHoursRequest.working_hours)
+  return _internal_working_hours();
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+SetWorkingHoursRequest::_internal_mutable_working_hours() {
+  return &_impl_.working_hours_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+SetWorkingHoursRequest::mutable_working_hours() {
+  // @@protoc_insertion_point(field_mutable_list:city.economy.v2.SetWorkingHoursRequest.working_hours)
+  return _internal_mutable_working_hours();
+}
+
+// -------------------------------------------------------------------
+
+// SetWorkingHoursResponse
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

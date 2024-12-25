@@ -829,10 +829,316 @@ struct LoadEconomyEntitiesResponseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 LoadEconomyEntitiesResponseDefaultTypeInternal _LoadEconomyEntitiesResponse_default_instance_;
+PROTOBUF_CONSTEXPR GetConsumptionCurrencyRequest::GetConsumptionCurrencyRequest(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.org_id_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct GetConsumptionCurrencyRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR GetConsumptionCurrencyRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~GetConsumptionCurrencyRequestDefaultTypeInternal() {}
+  union {
+    GetConsumptionCurrencyRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetConsumptionCurrencyRequestDefaultTypeInternal _GetConsumptionCurrencyRequest_default_instance_;
+PROTOBUF_CONSTEXPR GetConsumptionCurrencyResponse::GetConsumptionCurrencyResponse(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.consumption_currency_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct GetConsumptionCurrencyResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR GetConsumptionCurrencyResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~GetConsumptionCurrencyResponseDefaultTypeInternal() {}
+  union {
+    GetConsumptionCurrencyResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetConsumptionCurrencyResponseDefaultTypeInternal _GetConsumptionCurrencyResponse_default_instance_;
+PROTOBUF_CONSTEXPR SetConsumptionCurrencyRequest::SetConsumptionCurrencyRequest(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.consumption_currency_)*/{}
+  , /*decltype(_impl_.org_id_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct SetConsumptionCurrencyRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR SetConsumptionCurrencyRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~SetConsumptionCurrencyRequestDefaultTypeInternal() {}
+  union {
+    SetConsumptionCurrencyRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SetConsumptionCurrencyRequestDefaultTypeInternal _SetConsumptionCurrencyRequest_default_instance_;
+PROTOBUF_CONSTEXPR SetConsumptionCurrencyResponse::SetConsumptionCurrencyResponse(
+    ::_pbi::ConstantInitialized) {}
+struct SetConsumptionCurrencyResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR SetConsumptionCurrencyResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~SetConsumptionCurrencyResponseDefaultTypeInternal() {}
+  union {
+    SetConsumptionCurrencyResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SetConsumptionCurrencyResponseDefaultTypeInternal _SetConsumptionCurrencyResponse_default_instance_;
+PROTOBUF_CONSTEXPR GetConsumptionPropensityRequest::GetConsumptionPropensityRequest(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.org_id_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct GetConsumptionPropensityRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR GetConsumptionPropensityRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~GetConsumptionPropensityRequestDefaultTypeInternal() {}
+  union {
+    GetConsumptionPropensityRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetConsumptionPropensityRequestDefaultTypeInternal _GetConsumptionPropensityRequest_default_instance_;
+PROTOBUF_CONSTEXPR GetConsumptionPropensityResponse::GetConsumptionPropensityResponse(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.consumption_propensity_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct GetConsumptionPropensityResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR GetConsumptionPropensityResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~GetConsumptionPropensityResponseDefaultTypeInternal() {}
+  union {
+    GetConsumptionPropensityResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetConsumptionPropensityResponseDefaultTypeInternal _GetConsumptionPropensityResponse_default_instance_;
+PROTOBUF_CONSTEXPR SetConsumptionPropensityRequest::SetConsumptionPropensityRequest(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.consumption_propensity_)*/{}
+  , /*decltype(_impl_.org_id_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct SetConsumptionPropensityRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR SetConsumptionPropensityRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~SetConsumptionPropensityRequestDefaultTypeInternal() {}
+  union {
+    SetConsumptionPropensityRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SetConsumptionPropensityRequestDefaultTypeInternal _SetConsumptionPropensityRequest_default_instance_;
+PROTOBUF_CONSTEXPR SetConsumptionPropensityResponse::SetConsumptionPropensityResponse(
+    ::_pbi::ConstantInitialized) {}
+struct SetConsumptionPropensityResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR SetConsumptionPropensityResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~SetConsumptionPropensityResponseDefaultTypeInternal() {}
+  union {
+    SetConsumptionPropensityResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SetConsumptionPropensityResponseDefaultTypeInternal _SetConsumptionPropensityResponse_default_instance_;
+PROTOBUF_CONSTEXPR GetIncomeCurrencyRequest::GetIncomeCurrencyRequest(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.org_id_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct GetIncomeCurrencyRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR GetIncomeCurrencyRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~GetIncomeCurrencyRequestDefaultTypeInternal() {}
+  union {
+    GetIncomeCurrencyRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetIncomeCurrencyRequestDefaultTypeInternal _GetIncomeCurrencyRequest_default_instance_;
+PROTOBUF_CONSTEXPR GetIncomeCurrencyResponse::GetIncomeCurrencyResponse(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.income_currency_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct GetIncomeCurrencyResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR GetIncomeCurrencyResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~GetIncomeCurrencyResponseDefaultTypeInternal() {}
+  union {
+    GetIncomeCurrencyResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetIncomeCurrencyResponseDefaultTypeInternal _GetIncomeCurrencyResponse_default_instance_;
+PROTOBUF_CONSTEXPR SetIncomeCurrencyRequest::SetIncomeCurrencyRequest(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.income_currency_)*/{}
+  , /*decltype(_impl_.org_id_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct SetIncomeCurrencyRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR SetIncomeCurrencyRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~SetIncomeCurrencyRequestDefaultTypeInternal() {}
+  union {
+    SetIncomeCurrencyRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SetIncomeCurrencyRequestDefaultTypeInternal _SetIncomeCurrencyRequest_default_instance_;
+PROTOBUF_CONSTEXPR SetIncomeCurrencyResponse::SetIncomeCurrencyResponse(
+    ::_pbi::ConstantInitialized) {}
+struct SetIncomeCurrencyResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR SetIncomeCurrencyResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~SetIncomeCurrencyResponseDefaultTypeInternal() {}
+  union {
+    SetIncomeCurrencyResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SetIncomeCurrencyResponseDefaultTypeInternal _SetIncomeCurrencyResponse_default_instance_;
+PROTOBUF_CONSTEXPR GetDepressionStatusRequest::GetDepressionStatusRequest(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.org_id_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct GetDepressionStatusRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR GetDepressionStatusRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~GetDepressionStatusRequestDefaultTypeInternal() {}
+  union {
+    GetDepressionStatusRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetDepressionStatusRequestDefaultTypeInternal _GetDepressionStatusRequest_default_instance_;
+PROTOBUF_CONSTEXPR GetDepressionStatusResponse::GetDepressionStatusResponse(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.depression_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct GetDepressionStatusResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR GetDepressionStatusResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~GetDepressionStatusResponseDefaultTypeInternal() {}
+  union {
+    GetDepressionStatusResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetDepressionStatusResponseDefaultTypeInternal _GetDepressionStatusResponse_default_instance_;
+PROTOBUF_CONSTEXPR SetDepressionStatusRequest::SetDepressionStatusRequest(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.depression_)*/{}
+  , /*decltype(_impl_.org_id_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct SetDepressionStatusRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR SetDepressionStatusRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~SetDepressionStatusRequestDefaultTypeInternal() {}
+  union {
+    SetDepressionStatusRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SetDepressionStatusRequestDefaultTypeInternal _SetDepressionStatusRequest_default_instance_;
+PROTOBUF_CONSTEXPR SetDepressionStatusResponse::SetDepressionStatusResponse(
+    ::_pbi::ConstantInitialized) {}
+struct SetDepressionStatusResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR SetDepressionStatusResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~SetDepressionStatusResponseDefaultTypeInternal() {}
+  union {
+    SetDepressionStatusResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SetDepressionStatusResponseDefaultTypeInternal _SetDepressionStatusResponse_default_instance_;
+PROTOBUF_CONSTEXPR GetLocusControlRequest::GetLocusControlRequest(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.org_id_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct GetLocusControlRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR GetLocusControlRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~GetLocusControlRequestDefaultTypeInternal() {}
+  union {
+    GetLocusControlRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetLocusControlRequestDefaultTypeInternal _GetLocusControlRequest_default_instance_;
+PROTOBUF_CONSTEXPR GetLocusControlResponse::GetLocusControlResponse(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.locus_control_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct GetLocusControlResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR GetLocusControlResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~GetLocusControlResponseDefaultTypeInternal() {}
+  union {
+    GetLocusControlResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetLocusControlResponseDefaultTypeInternal _GetLocusControlResponse_default_instance_;
+PROTOBUF_CONSTEXPR SetLocusControlRequest::SetLocusControlRequest(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.locus_control_)*/{}
+  , /*decltype(_impl_.org_id_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct SetLocusControlRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR SetLocusControlRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~SetLocusControlRequestDefaultTypeInternal() {}
+  union {
+    SetLocusControlRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SetLocusControlRequestDefaultTypeInternal _SetLocusControlRequest_default_instance_;
+PROTOBUF_CONSTEXPR SetLocusControlResponse::SetLocusControlResponse(
+    ::_pbi::ConstantInitialized) {}
+struct SetLocusControlResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR SetLocusControlResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~SetLocusControlResponseDefaultTypeInternal() {}
+  union {
+    SetLocusControlResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SetLocusControlResponseDefaultTypeInternal _SetLocusControlResponse_default_instance_;
+PROTOBUF_CONSTEXPR GetWorkingHoursRequest::GetWorkingHoursRequest(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.org_id_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct GetWorkingHoursRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR GetWorkingHoursRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~GetWorkingHoursRequestDefaultTypeInternal() {}
+  union {
+    GetWorkingHoursRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetWorkingHoursRequestDefaultTypeInternal _GetWorkingHoursRequest_default_instance_;
+PROTOBUF_CONSTEXPR GetWorkingHoursResponse::GetWorkingHoursResponse(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.working_hours_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct GetWorkingHoursResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR GetWorkingHoursResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~GetWorkingHoursResponseDefaultTypeInternal() {}
+  union {
+    GetWorkingHoursResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetWorkingHoursResponseDefaultTypeInternal _GetWorkingHoursResponse_default_instance_;
+PROTOBUF_CONSTEXPR SetWorkingHoursRequest::SetWorkingHoursRequest(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.working_hours_)*/{}
+  , /*decltype(_impl_.org_id_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct SetWorkingHoursRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR SetWorkingHoursRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~SetWorkingHoursRequestDefaultTypeInternal() {}
+  union {
+    SetWorkingHoursRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SetWorkingHoursRequestDefaultTypeInternal _SetWorkingHoursRequest_default_instance_;
+PROTOBUF_CONSTEXPR SetWorkingHoursResponse::SetWorkingHoursResponse(
+    ::_pbi::ConstantInitialized) {}
+struct SetWorkingHoursResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR SetWorkingHoursResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~SetWorkingHoursResponseDefaultTypeInternal() {}
+  union {
+    SetWorkingHoursResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SetWorkingHoursResponseDefaultTypeInternal _SetWorkingHoursResponse_default_instance_;
 }  // namespace v2
 }  // namespace economy
 }  // namespace city
-static ::_pb::Metadata file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[62];
+static ::_pb::Metadata file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[86];
 static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_city_2feconomy_2fv2_2forg_5fservice_2eproto = nullptr;
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_city_2feconomy_2fv2_2forg_5fservice_2eproto = nullptr;
 
@@ -1278,6 +1584,174 @@ const uint32_t TableStruct_city_2feconomy_2fv2_2forg_5fservice_2eproto::offsets[
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::LoadEconomyEntitiesResponse, _impl_.agent_ids_),
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::LoadEconomyEntitiesResponse, _impl_.org_ids_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::GetConsumptionCurrencyRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::GetConsumptionCurrencyRequest, _impl_.org_id_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::GetConsumptionCurrencyResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::GetConsumptionCurrencyResponse, _impl_.consumption_currency_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::SetConsumptionCurrencyRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::SetConsumptionCurrencyRequest, _impl_.org_id_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::SetConsumptionCurrencyRequest, _impl_.consumption_currency_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::SetConsumptionCurrencyResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::GetConsumptionPropensityRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::GetConsumptionPropensityRequest, _impl_.org_id_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::GetConsumptionPropensityResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::GetConsumptionPropensityResponse, _impl_.consumption_propensity_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::SetConsumptionPropensityRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::SetConsumptionPropensityRequest, _impl_.org_id_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::SetConsumptionPropensityRequest, _impl_.consumption_propensity_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::SetConsumptionPropensityResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::GetIncomeCurrencyRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::GetIncomeCurrencyRequest, _impl_.org_id_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::GetIncomeCurrencyResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::GetIncomeCurrencyResponse, _impl_.income_currency_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::SetIncomeCurrencyRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::SetIncomeCurrencyRequest, _impl_.org_id_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::SetIncomeCurrencyRequest, _impl_.income_currency_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::SetIncomeCurrencyResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::GetDepressionStatusRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::GetDepressionStatusRequest, _impl_.org_id_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::GetDepressionStatusResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::GetDepressionStatusResponse, _impl_.depression_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::SetDepressionStatusRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::SetDepressionStatusRequest, _impl_.org_id_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::SetDepressionStatusRequest, _impl_.depression_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::SetDepressionStatusResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::GetLocusControlRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::GetLocusControlRequest, _impl_.org_id_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::GetLocusControlResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::GetLocusControlResponse, _impl_.locus_control_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::SetLocusControlRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::SetLocusControlRequest, _impl_.org_id_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::SetLocusControlRequest, _impl_.locus_control_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::SetLocusControlResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::GetWorkingHoursRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::GetWorkingHoursRequest, _impl_.org_id_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::GetWorkingHoursResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::GetWorkingHoursResponse, _impl_.working_hours_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::SetWorkingHoursRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::SetWorkingHoursRequest, _impl_.org_id_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::SetWorkingHoursRequest, _impl_.working_hours_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::SetWorkingHoursResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::city::economy::v2::AddOrgRequest)},
@@ -1342,6 +1816,30 @@ static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protode
   { 418, -1, -1, sizeof(::city::economy::v2::SaveEconomyEntitiesResponse)},
   { 426, -1, -1, sizeof(::city::economy::v2::LoadEconomyEntitiesRequest)},
   { 433, -1, -1, sizeof(::city::economy::v2::LoadEconomyEntitiesResponse)},
+  { 441, -1, -1, sizeof(::city::economy::v2::GetConsumptionCurrencyRequest)},
+  { 448, -1, -1, sizeof(::city::economy::v2::GetConsumptionCurrencyResponse)},
+  { 455, -1, -1, sizeof(::city::economy::v2::SetConsumptionCurrencyRequest)},
+  { 463, -1, -1, sizeof(::city::economy::v2::SetConsumptionCurrencyResponse)},
+  { 469, -1, -1, sizeof(::city::economy::v2::GetConsumptionPropensityRequest)},
+  { 476, -1, -1, sizeof(::city::economy::v2::GetConsumptionPropensityResponse)},
+  { 483, -1, -1, sizeof(::city::economy::v2::SetConsumptionPropensityRequest)},
+  { 491, -1, -1, sizeof(::city::economy::v2::SetConsumptionPropensityResponse)},
+  { 497, -1, -1, sizeof(::city::economy::v2::GetIncomeCurrencyRequest)},
+  { 504, -1, -1, sizeof(::city::economy::v2::GetIncomeCurrencyResponse)},
+  { 511, -1, -1, sizeof(::city::economy::v2::SetIncomeCurrencyRequest)},
+  { 519, -1, -1, sizeof(::city::economy::v2::SetIncomeCurrencyResponse)},
+  { 525, -1, -1, sizeof(::city::economy::v2::GetDepressionStatusRequest)},
+  { 532, -1, -1, sizeof(::city::economy::v2::GetDepressionStatusResponse)},
+  { 539, -1, -1, sizeof(::city::economy::v2::SetDepressionStatusRequest)},
+  { 547, -1, -1, sizeof(::city::economy::v2::SetDepressionStatusResponse)},
+  { 553, -1, -1, sizeof(::city::economy::v2::GetLocusControlRequest)},
+  { 560, -1, -1, sizeof(::city::economy::v2::GetLocusControlResponse)},
+  { 567, -1, -1, sizeof(::city::economy::v2::SetLocusControlRequest)},
+  { 575, -1, -1, sizeof(::city::economy::v2::SetLocusControlResponse)},
+  { 581, -1, -1, sizeof(::city::economy::v2::GetWorkingHoursRequest)},
+  { 588, -1, -1, sizeof(::city::economy::v2::GetWorkingHoursResponse)},
+  { 595, -1, -1, sizeof(::city::economy::v2::SetWorkingHoursRequest)},
+  { 603, -1, -1, sizeof(::city::economy::v2::SetWorkingHoursResponse)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -1407,6 +1905,30 @@ static const ::_pb::Message* const file_default_instances[] = {
   &::city::economy::v2::_SaveEconomyEntitiesResponse_default_instance_._instance,
   &::city::economy::v2::_LoadEconomyEntitiesRequest_default_instance_._instance,
   &::city::economy::v2::_LoadEconomyEntitiesResponse_default_instance_._instance,
+  &::city::economy::v2::_GetConsumptionCurrencyRequest_default_instance_._instance,
+  &::city::economy::v2::_GetConsumptionCurrencyResponse_default_instance_._instance,
+  &::city::economy::v2::_SetConsumptionCurrencyRequest_default_instance_._instance,
+  &::city::economy::v2::_SetConsumptionCurrencyResponse_default_instance_._instance,
+  &::city::economy::v2::_GetConsumptionPropensityRequest_default_instance_._instance,
+  &::city::economy::v2::_GetConsumptionPropensityResponse_default_instance_._instance,
+  &::city::economy::v2::_SetConsumptionPropensityRequest_default_instance_._instance,
+  &::city::economy::v2::_SetConsumptionPropensityResponse_default_instance_._instance,
+  &::city::economy::v2::_GetIncomeCurrencyRequest_default_instance_._instance,
+  &::city::economy::v2::_GetIncomeCurrencyResponse_default_instance_._instance,
+  &::city::economy::v2::_SetIncomeCurrencyRequest_default_instance_._instance,
+  &::city::economy::v2::_SetIncomeCurrencyResponse_default_instance_._instance,
+  &::city::economy::v2::_GetDepressionStatusRequest_default_instance_._instance,
+  &::city::economy::v2::_GetDepressionStatusResponse_default_instance_._instance,
+  &::city::economy::v2::_SetDepressionStatusRequest_default_instance_._instance,
+  &::city::economy::v2::_SetDepressionStatusResponse_default_instance_._instance,
+  &::city::economy::v2::_GetLocusControlRequest_default_instance_._instance,
+  &::city::economy::v2::_GetLocusControlResponse_default_instance_._instance,
+  &::city::economy::v2::_SetLocusControlRequest_default_instance_._instance,
+  &::city::economy::v2::_SetLocusControlResponse_default_instance_._instance,
+  &::city::economy::v2::_GetWorkingHoursRequest_default_instance_._instance,
+  &::city::economy::v2::_GetWorkingHoursResponse_default_instance_._instance,
+  &::city::economy::v2::_SetWorkingHoursRequest_default_instance_._instance,
+  &::city::economy::v2::_SetWorkingHoursResponse_default_instance_._instance,
 };
 
 const char descriptor_table_protodef_city_2feconomy_2fv2_2forg_5fservice_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -1499,95 +2021,167 @@ const char descriptor_table_protodef_city_2feconomy_2fv2_2forg_5fservice_2eproto
   "gIds\"9\n\032LoadEconomyEntitiesRequest\022\033\n\tfi"
   "le_path\030\001 \001(\tR\010filePath\"S\n\033LoadEconomyEn"
   "titiesResponse\022\033\n\tagent_ids\030\001 \003(\005R\010agent"
-  "Ids\022\027\n\007org_ids\030\002 \003(\005R\006orgIds2\213\027\n\nOrgServ"
-  "ice\022I\n\006AddOrg\022\036.city.economy.v2.AddOrgRe"
-  "quest\032\037.city.economy.v2.AddOrgResponse\022R"
-  "\n\tRemoveOrg\022!.city.economy.v2.RemoveOrgR"
-  "equest\032\".city.economy.v2.RemoveOrgRespon"
-  "se\022O\n\010AddAgent\022 .city.economy.v2.AddAgen"
-  "tRequest\032!.city.economy.v2.AddAgentRespo"
-  "nse\022X\n\013RemoveAgent\022#.city.economy.v2.Rem"
-  "oveAgentRequest\032$.city.economy.v2.Remove"
-  "AgentResponse\022^\n\rGetNominalGDP\022%.city.ec"
-  "onomy.v2.GetNominalGDPRequest\032&.city.eco"
-  "nomy.v2.GetNominalGDPResponse\022^\n\rSetNomi"
-  "nalGDP\022%.city.economy.v2.SetNominalGDPRe"
-  "quest\032&.city.economy.v2.SetNominalGDPRes"
-  "ponse\022U\n\nGetRealGDP\022\".city.economy.v2.Ge"
-  "tRealGDPRequest\032#.city.economy.v2.GetRea"
-  "lGDPResponse\022U\n\nSetRealGDP\022\".city.econom"
-  "y.v2.SetRealGDPRequest\032#.city.economy.v2"
-  ".SetRealGDPResponse\022d\n\017GetUnemployment\022\'"
-  ".city.economy.v2.GetUnemploymentRequest\032"
-  "(.city.economy.v2.GetUnemploymentRespons"
-  "e\022d\n\017SetUnemployment\022\'.city.economy.v2.S"
-  "etUnemploymentRequest\032(.city.economy.v2."
-  "SetUnemploymentResponse\022O\n\010GetWages\022 .ci"
-  "ty.economy.v2.GetWagesRequest\032!.city.eco"
-  "nomy.v2.GetWagesResponse\022O\n\010SetWages\022 .c"
-  "ity.economy.v2.SetWagesRequest\032!.city.ec"
-  "onomy.v2.SetWagesResponse\022R\n\tGetPrices\022!"
-  ".city.economy.v2.GetPricesRequest\032\".city"
-  ".economy.v2.GetPricesResponse\022R\n\tSetPric"
-  "es\022!.city.economy.v2.SetPricesRequest\032\"."
-  "city.economy.v2.SetPricesResponse\022[\n\014Get"
-  "Inventory\022$.city.economy.v2.GetInventory"
-  "Request\032%.city.economy.v2.GetInventoryRe"
-  "sponse\022[\n\014SetInventory\022$.city.economy.v2"
-  ".SetInventoryRequest\032%.city.economy.v2.S"
-  "etInventoryResponse\022O\n\010GetPrice\022 .city.e"
-  "conomy.v2.GetPriceRequest\032!.city.economy"
-  ".v2.GetPriceResponse\022O\n\010SetPrice\022 .city."
-  "economy.v2.SetPriceRequest\032!.city.econom"
-  "y.v2.SetPriceResponse\022X\n\013GetCurrency\022#.c"
-  "ity.economy.v2.GetCurrencyRequest\032$.city"
-  ".economy.v2.GetCurrencyResponse\022X\n\013SetCu"
-  "rrency\022#.city.economy.v2.SetCurrencyRequ"
-  "est\032$.city.economy.v2.SetCurrencyRespons"
-  "e\022d\n\017GetInterestRate\022\'.city.economy.v2.G"
-  "etInterestRateRequest\032(.city.economy.v2."
-  "GetInterestRateResponse\022d\n\017SetInterestRa"
-  "te\022\'.city.economy.v2.SetInterestRateRequ"
-  "est\032(.city.economy.v2.SetInterestRateRes"
-  "ponse\022j\n\021GetBracketCutoffs\022).city.econom"
-  "y.v2.GetBracketCutoffsRequest\032*.city.eco"
-  "nomy.v2.GetBracketCutoffsResponse\022j\n\021Set"
-  "BracketCutoffs\022).city.economy.v2.SetBrac"
-  "ketCutoffsRequest\032*.city.economy.v2.SetB"
-  "racketCutoffsResponse\022d\n\017GetBracketRates"
-  "\022\'.city.economy.v2.GetBracketRatesReques"
-  "t\032(.city.economy.v2.GetBracketRatesRespo"
-  "nse\022d\n\017SetBracketRates\022\'.city.economy.v2"
-  ".SetBracketRatesRequest\032(.city.economy.v"
-  "2.SetBracketRatesResponse\022j\n\021CalculateTa"
-  "xesDue\022).city.economy.v2.CalculateTaxesD"
-  "ueRequest\032*.city.economy.v2.CalculateTax"
-  "esDueResponse\022s\n\024CalculateConsumption\022,."
-  "city.economy.v2.CalculateConsumptionRequ"
-  "est\032-.city.economy.v2.CalculateConsumpti"
-  "onResponse\022j\n\021CalculateInterest\022).city.e"
-  "conomy.v2.CalculateInterestRequest\032*.cit"
-  "y.economy.v2.CalculateInterestResponse\022p"
-  "\n\023SaveEconomyEntities\022+.city.economy.v2."
-  "SaveEconomyEntitiesRequest\032,.city.econom"
-  "y.v2.SaveEconomyEntitiesResponse\022p\n\023Load"
-  "EconomyEntities\022+.city.economy.v2.LoadEc"
-  "onomyEntitiesRequest\032,.city.economy.v2.L"
-  "oadEconomyEntitiesResponseB\277\001\n\023com.city."
-  "economy.v2B\017OrgServiceProtoP\001Z9git.fibla"
-  "b.net/sim/protos/v2/go/city/economy/v2;e"
-  "conomyv2\242\002\003CEX\252\002\017City.Economy.V2\312\002\017City\\"
-  "Economy\\V2\342\002\033City\\Economy\\V2\\GPBMetadata"
-  "\352\002\021City::Economy::V2b\006proto3"
+  "Ids\022\027\n\007org_ids\030\002 \003(\005R\006orgIds\"6\n\035GetConsu"
+  "mptionCurrencyRequest\022\025\n\006org_id\030\001 \001(\005R\005o"
+  "rgId\"S\n\036GetConsumptionCurrencyResponse\0221"
+  "\n\024consumption_currency\030\001 \003(\002R\023consumptio"
+  "nCurrency\"i\n\035SetConsumptionCurrencyReque"
+  "st\022\025\n\006org_id\030\001 \001(\005R\005orgId\0221\n\024consumption"
+  "_currency\030\002 \003(\002R\023consumptionCurrency\" \n\036"
+  "SetConsumptionCurrencyResponse\"8\n\037GetCon"
+  "sumptionPropensityRequest\022\025\n\006org_id\030\001 \001("
+  "\005R\005orgId\"Y\n GetConsumptionPropensityResp"
+  "onse\0225\n\026consumption_propensity\030\001 \003(\002R\025co"
+  "nsumptionPropensity\"o\n\037SetConsumptionPro"
+  "pensityRequest\022\025\n\006org_id\030\001 \001(\005R\005orgId\0225\n"
+  "\026consumption_propensity\030\002 \003(\002R\025consumpti"
+  "onPropensity\"\"\n SetConsumptionPropensity"
+  "Response\"1\n\030GetIncomeCurrencyRequest\022\025\n\006"
+  "org_id\030\001 \001(\005R\005orgId\"D\n\031GetIncomeCurrency"
+  "Response\022\'\n\017income_currency\030\001 \003(\002R\016incom"
+  "eCurrency\"Z\n\030SetIncomeCurrencyRequest\022\025\n"
+  "\006org_id\030\001 \001(\005R\005orgId\022\'\n\017income_currency\030"
+  "\002 \003(\002R\016incomeCurrency\"\033\n\031SetIncomeCurren"
+  "cyResponse\"3\n\032GetDepressionStatusRequest"
+  "\022\025\n\006org_id\030\001 \001(\005R\005orgId\"=\n\033GetDepression"
+  "StatusResponse\022\036\n\ndepression\030\001 \003(\002R\ndepr"
+  "ession\"S\n\032SetDepressionStatusRequest\022\025\n\006"
+  "org_id\030\001 \001(\005R\005orgId\022\036\n\ndepression\030\002 \003(\002R"
+  "\ndepression\"\035\n\033SetDepressionStatusRespon"
+  "se\"/\n\026GetLocusControlRequest\022\025\n\006org_id\030\001"
+  " \001(\005R\005orgId\">\n\027GetLocusControlResponse\022#"
+  "\n\rlocus_control\030\001 \003(\002R\014locusControl\"T\n\026S"
+  "etLocusControlRequest\022\025\n\006org_id\030\001 \001(\005R\005o"
+  "rgId\022#\n\rlocus_control\030\002 \003(\002R\014locusContro"
+  "l\"\031\n\027SetLocusControlResponse\"/\n\026GetWorki"
+  "ngHoursRequest\022\025\n\006org_id\030\001 \001(\005R\005orgId\">\n"
+  "\027GetWorkingHoursResponse\022#\n\rworking_hour"
+  "s\030\001 \003(\002R\014workingHours\"T\n\026SetWorkingHours"
+  "Request\022\025\n\006org_id\030\001 \001(\005R\005orgId\022#\n\rworkin"
+  "g_hours\030\002 \003(\002R\014workingHours\"\031\n\027SetWorkin"
+  "gHoursResponse2\327!\n\nOrgService\022I\n\006AddOrg\022"
+  "\036.city.economy.v2.AddOrgRequest\032\037.city.e"
+  "conomy.v2.AddOrgResponse\022R\n\tRemoveOrg\022!."
+  "city.economy.v2.RemoveOrgRequest\032\".city."
+  "economy.v2.RemoveOrgResponse\022O\n\010AddAgent"
+  "\022 .city.economy.v2.AddAgentRequest\032!.cit"
+  "y.economy.v2.AddAgentResponse\022X\n\013RemoveA"
+  "gent\022#.city.economy.v2.RemoveAgentReques"
+  "t\032$.city.economy.v2.RemoveAgentResponse\022"
+  "^\n\rGetNominalGDP\022%.city.economy.v2.GetNo"
+  "minalGDPRequest\032&.city.economy.v2.GetNom"
+  "inalGDPResponse\022^\n\rSetNominalGDP\022%.city."
+  "economy.v2.SetNominalGDPRequest\032&.city.e"
+  "conomy.v2.SetNominalGDPResponse\022U\n\nGetRe"
+  "alGDP\022\".city.economy.v2.GetRealGDPReques"
+  "t\032#.city.economy.v2.GetRealGDPResponse\022U"
+  "\n\nSetRealGDP\022\".city.economy.v2.SetRealGD"
+  "PRequest\032#.city.economy.v2.SetRealGDPRes"
+  "ponse\022d\n\017GetUnemployment\022\'.city.economy."
+  "v2.GetUnemploymentRequest\032(.city.economy"
+  ".v2.GetUnemploymentResponse\022d\n\017SetUnempl"
+  "oyment\022\'.city.economy.v2.SetUnemployment"
+  "Request\032(.city.economy.v2.SetUnemploymen"
+  "tResponse\022O\n\010GetWages\022 .city.economy.v2."
+  "GetWagesRequest\032!.city.economy.v2.GetWag"
+  "esResponse\022O\n\010SetWages\022 .city.economy.v2"
+  ".SetWagesRequest\032!.city.economy.v2.SetWa"
+  "gesResponse\022R\n\tGetPrices\022!.city.economy."
+  "v2.GetPricesRequest\032\".city.economy.v2.Ge"
+  "tPricesResponse\022R\n\tSetPrices\022!.city.econ"
+  "omy.v2.SetPricesRequest\032\".city.economy.v"
+  "2.SetPricesResponse\022[\n\014GetInventory\022$.ci"
+  "ty.economy.v2.GetInventoryRequest\032%.city"
+  ".economy.v2.GetInventoryResponse\022[\n\014SetI"
+  "nventory\022$.city.economy.v2.SetInventoryR"
+  "equest\032%.city.economy.v2.SetInventoryRes"
+  "ponse\022O\n\010GetPrice\022 .city.economy.v2.GetP"
+  "riceRequest\032!.city.economy.v2.GetPriceRe"
+  "sponse\022O\n\010SetPrice\022 .city.economy.v2.Set"
+  "PriceRequest\032!.city.economy.v2.SetPriceR"
+  "esponse\022X\n\013GetCurrency\022#.city.economy.v2"
+  ".GetCurrencyRequest\032$.city.economy.v2.Ge"
+  "tCurrencyResponse\022X\n\013SetCurrency\022#.city."
+  "economy.v2.SetCurrencyRequest\032$.city.eco"
+  "nomy.v2.SetCurrencyResponse\022d\n\017GetIntere"
+  "stRate\022\'.city.economy.v2.GetInterestRate"
+  "Request\032(.city.economy.v2.GetInterestRat"
+  "eResponse\022d\n\017SetInterestRate\022\'.city.econ"
+  "omy.v2.SetInterestRateRequest\032(.city.eco"
+  "nomy.v2.SetInterestRateResponse\022j\n\021GetBr"
+  "acketCutoffs\022).city.economy.v2.GetBracke"
+  "tCutoffsRequest\032*.city.economy.v2.GetBra"
+  "cketCutoffsResponse\022j\n\021SetBracketCutoffs"
+  "\022).city.economy.v2.SetBracketCutoffsRequ"
+  "est\032*.city.economy.v2.SetBracketCutoffsR"
+  "esponse\022d\n\017GetBracketRates\022\'.city.econom"
+  "y.v2.GetBracketRatesRequest\032(.city.econo"
+  "my.v2.GetBracketRatesResponse\022d\n\017SetBrac"
+  "ketRates\022\'.city.economy.v2.SetBracketRat"
+  "esRequest\032(.city.economy.v2.SetBracketRa"
+  "tesResponse\022j\n\021CalculateTaxesDue\022).city."
+  "economy.v2.CalculateTaxesDueRequest\032*.ci"
+  "ty.economy.v2.CalculateTaxesDueResponse\022"
+  "s\n\024CalculateConsumption\022,.city.economy.v"
+  "2.CalculateConsumptionRequest\032-.city.eco"
+  "nomy.v2.CalculateConsumptionResponse\022j\n\021"
+  "CalculateInterest\022).city.economy.v2.Calc"
+  "ulateInterestRequest\032*.city.economy.v2.C"
+  "alculateInterestResponse\022p\n\023SaveEconomyE"
+  "ntities\022+.city.economy.v2.SaveEconomyEnt"
+  "itiesRequest\032,.city.economy.v2.SaveEcono"
+  "myEntitiesResponse\022p\n\023LoadEconomyEntitie"
+  "s\022+.city.economy.v2.LoadEconomyEntitiesR"
+  "equest\032,.city.economy.v2.LoadEconomyEnti"
+  "tiesResponse\022y\n\026GetConsumptionCurrency\022."
+  ".city.economy.v2.GetConsumptionCurrencyR"
+  "equest\032/.city.economy.v2.GetConsumptionC"
+  "urrencyResponse\022y\n\026SetConsumptionCurrenc"
+  "y\022..city.economy.v2.SetConsumptionCurren"
+  "cyRequest\032/.city.economy.v2.SetConsumpti"
+  "onCurrencyResponse\022\177\n\030GetConsumptionProp"
+  "ensity\0220.city.economy.v2.GetConsumptionP"
+  "ropensityRequest\0321.city.economy.v2.GetCo"
+  "nsumptionPropensityResponse\022\177\n\030SetConsum"
+  "ptionPropensity\0220.city.economy.v2.SetCon"
+  "sumptionPropensityRequest\0321.city.economy"
+  ".v2.SetConsumptionPropensityResponse\022j\n\021"
+  "GetIncomeCurrency\022).city.economy.v2.GetI"
+  "ncomeCurrencyRequest\032*.city.economy.v2.G"
+  "etIncomeCurrencyResponse\022j\n\021SetIncomeCur"
+  "rency\022).city.economy.v2.SetIncomeCurrenc"
+  "yRequest\032*.city.economy.v2.SetIncomeCurr"
+  "encyResponse\022p\n\023GetDepressionStatus\022+.ci"
+  "ty.economy.v2.GetDepressionStatusRequest"
+  "\032,.city.economy.v2.GetDepressionStatusRe"
+  "sponse\022p\n\023SetDepressionStatus\022+.city.eco"
+  "nomy.v2.SetDepressionStatusRequest\032,.cit"
+  "y.economy.v2.SetDepressionStatusResponse"
+  "\022d\n\017GetLocusControl\022\'.city.economy.v2.Ge"
+  "tLocusControlRequest\032(.city.economy.v2.G"
+  "etLocusControlResponse\022d\n\017SetLocusContro"
+  "l\022\'.city.economy.v2.SetLocusControlReque"
+  "st\032(.city.economy.v2.SetLocusControlResp"
+  "onse\022d\n\017GetWorkingHours\022\'.city.economy.v"
+  "2.GetWorkingHoursRequest\032(.city.economy."
+  "v2.GetWorkingHoursResponse\022d\n\017SetWorking"
+  "Hours\022\'.city.economy.v2.SetWorkingHoursR"
+  "equest\032(.city.economy.v2.SetWorkingHours"
+  "ResponseB\277\001\n\023com.city.economy.v2B\017OrgSer"
+  "viceProtoP\001Z9git.fiblab.net/sim/protos/v"
+  "2/go/city/economy/v2;economyv2\242\002\003CEX\252\002\017C"
+  "ity.Economy.V2\312\002\017City\\Economy\\V2\342\002\033City\\"
+  "Economy\\V2\\GPBMetadata\352\002\021City::Economy::"
+  "V2b\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_deps[1] = {
   &::descriptor_table_city_2feconomy_2fv2_2feconomy_2eproto,
 };
 static ::_pbi::once_flag descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto = {
-    false, false, 6748, descriptor_table_protodef_city_2feconomy_2fv2_2forg_5fservice_2eproto,
+    false, false, 9610, descriptor_table_protodef_city_2feconomy_2fv2_2forg_5fservice_2eproto,
     "city/economy/v2/org_service.proto",
-    &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once, descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_deps, 1, 62,
+    &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once, descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_deps, 1, 86,
     schemas, file_default_instances, TableStruct_city_2feconomy_2fv2_2forg_5fservice_2eproto::offsets,
     file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto, file_level_enum_descriptors_city_2feconomy_2fv2_2forg_5fservice_2eproto,
     file_level_service_descriptors_city_2feconomy_2fv2_2forg_5fservice_2eproto,
@@ -11608,6 +12202,3684 @@ void LoadEconomyEntitiesResponse::InternalSwap(LoadEconomyEntitiesResponse* othe
       file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[61]);
 }
 
+// ===================================================================
+
+class GetConsumptionCurrencyRequest::_Internal {
+ public:
+};
+
+GetConsumptionCurrencyRequest::GetConsumptionCurrencyRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:city.economy.v2.GetConsumptionCurrencyRequest)
+}
+GetConsumptionCurrencyRequest::GetConsumptionCurrencyRequest(const GetConsumptionCurrencyRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  GetConsumptionCurrencyRequest* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.org_id_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.org_id_ = from._impl_.org_id_;
+  // @@protoc_insertion_point(copy_constructor:city.economy.v2.GetConsumptionCurrencyRequest)
+}
+
+inline void GetConsumptionCurrencyRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.org_id_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+}
+
+GetConsumptionCurrencyRequest::~GetConsumptionCurrencyRequest() {
+  // @@protoc_insertion_point(destructor:city.economy.v2.GetConsumptionCurrencyRequest)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void GetConsumptionCurrencyRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void GetConsumptionCurrencyRequest::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void GetConsumptionCurrencyRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:city.economy.v2.GetConsumptionCurrencyRequest)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.org_id_ = 0;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* GetConsumptionCurrencyRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 org_id = 1 [json_name = "orgId"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.org_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* GetConsumptionCurrencyRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:city.economy.v2.GetConsumptionCurrencyRequest)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 org_id = 1 [json_name = "orgId"];
+  if (this->_internal_org_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_org_id(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:city.economy.v2.GetConsumptionCurrencyRequest)
+  return target;
+}
+
+size_t GetConsumptionCurrencyRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:city.economy.v2.GetConsumptionCurrencyRequest)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // int32 org_id = 1 [json_name = "orgId"];
+  if (this->_internal_org_id() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_org_id());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetConsumptionCurrencyRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    GetConsumptionCurrencyRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetConsumptionCurrencyRequest::GetClassData() const { return &_class_data_; }
+
+
+void GetConsumptionCurrencyRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<GetConsumptionCurrencyRequest*>(&to_msg);
+  auto& from = static_cast<const GetConsumptionCurrencyRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:city.economy.v2.GetConsumptionCurrencyRequest)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_org_id() != 0) {
+    _this->_internal_set_org_id(from._internal_org_id());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void GetConsumptionCurrencyRequest::CopyFrom(const GetConsumptionCurrencyRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:city.economy.v2.GetConsumptionCurrencyRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetConsumptionCurrencyRequest::IsInitialized() const {
+  return true;
+}
+
+void GetConsumptionCurrencyRequest::InternalSwap(GetConsumptionCurrencyRequest* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_.org_id_, other->_impl_.org_id_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetConsumptionCurrencyRequest::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[62]);
+}
+
+// ===================================================================
+
+class GetConsumptionCurrencyResponse::_Internal {
+ public:
+};
+
+GetConsumptionCurrencyResponse::GetConsumptionCurrencyResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:city.economy.v2.GetConsumptionCurrencyResponse)
+}
+GetConsumptionCurrencyResponse::GetConsumptionCurrencyResponse(const GetConsumptionCurrencyResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  GetConsumptionCurrencyResponse* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.consumption_currency_){from._impl_.consumption_currency_}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:city.economy.v2.GetConsumptionCurrencyResponse)
+}
+
+inline void GetConsumptionCurrencyResponse::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.consumption_currency_){arena}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+}
+
+GetConsumptionCurrencyResponse::~GetConsumptionCurrencyResponse() {
+  // @@protoc_insertion_point(destructor:city.economy.v2.GetConsumptionCurrencyResponse)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void GetConsumptionCurrencyResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.consumption_currency_.~RepeatedField();
+}
+
+void GetConsumptionCurrencyResponse::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void GetConsumptionCurrencyResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:city.economy.v2.GetConsumptionCurrencyResponse)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.consumption_currency_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* GetConsumptionCurrencyResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // repeated float consumption_currency = 1 [json_name = "consumptionCurrency"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedFloatParser(_internal_mutable_consumption_currency(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<uint8_t>(tag) == 13) {
+          _internal_add_consumption_currency(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* GetConsumptionCurrencyResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:city.economy.v2.GetConsumptionCurrencyResponse)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated float consumption_currency = 1 [json_name = "consumptionCurrency"];
+  if (this->_internal_consumption_currency_size() > 0) {
+    target = stream->WriteFixedPacked(1, _internal_consumption_currency(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:city.economy.v2.GetConsumptionCurrencyResponse)
+  return target;
+}
+
+size_t GetConsumptionCurrencyResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:city.economy.v2.GetConsumptionCurrencyResponse)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated float consumption_currency = 1 [json_name = "consumptionCurrency"];
+  {
+    unsigned int count = static_cast<unsigned int>(this->_internal_consumption_currency_size());
+    size_t data_size = 4UL * count;
+    if (data_size > 0) {
+      total_size += 1 +
+        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
+    }
+    total_size += data_size;
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetConsumptionCurrencyResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    GetConsumptionCurrencyResponse::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetConsumptionCurrencyResponse::GetClassData() const { return &_class_data_; }
+
+
+void GetConsumptionCurrencyResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<GetConsumptionCurrencyResponse*>(&to_msg);
+  auto& from = static_cast<const GetConsumptionCurrencyResponse&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:city.economy.v2.GetConsumptionCurrencyResponse)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_impl_.consumption_currency_.MergeFrom(from._impl_.consumption_currency_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void GetConsumptionCurrencyResponse::CopyFrom(const GetConsumptionCurrencyResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:city.economy.v2.GetConsumptionCurrencyResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetConsumptionCurrencyResponse::IsInitialized() const {
+  return true;
+}
+
+void GetConsumptionCurrencyResponse::InternalSwap(GetConsumptionCurrencyResponse* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _impl_.consumption_currency_.InternalSwap(&other->_impl_.consumption_currency_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetConsumptionCurrencyResponse::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[63]);
+}
+
+// ===================================================================
+
+class SetConsumptionCurrencyRequest::_Internal {
+ public:
+};
+
+SetConsumptionCurrencyRequest::SetConsumptionCurrencyRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:city.economy.v2.SetConsumptionCurrencyRequest)
+}
+SetConsumptionCurrencyRequest::SetConsumptionCurrencyRequest(const SetConsumptionCurrencyRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  SetConsumptionCurrencyRequest* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.consumption_currency_){from._impl_.consumption_currency_}
+    , decltype(_impl_.org_id_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.org_id_ = from._impl_.org_id_;
+  // @@protoc_insertion_point(copy_constructor:city.economy.v2.SetConsumptionCurrencyRequest)
+}
+
+inline void SetConsumptionCurrencyRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.consumption_currency_){arena}
+    , decltype(_impl_.org_id_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+}
+
+SetConsumptionCurrencyRequest::~SetConsumptionCurrencyRequest() {
+  // @@protoc_insertion_point(destructor:city.economy.v2.SetConsumptionCurrencyRequest)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void SetConsumptionCurrencyRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.consumption_currency_.~RepeatedField();
+}
+
+void SetConsumptionCurrencyRequest::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void SetConsumptionCurrencyRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:city.economy.v2.SetConsumptionCurrencyRequest)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.consumption_currency_.Clear();
+  _impl_.org_id_ = 0;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* SetConsumptionCurrencyRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 org_id = 1 [json_name = "orgId"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.org_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated float consumption_currency = 2 [json_name = "consumptionCurrency"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedFloatParser(_internal_mutable_consumption_currency(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<uint8_t>(tag) == 21) {
+          _internal_add_consumption_currency(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* SetConsumptionCurrencyRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:city.economy.v2.SetConsumptionCurrencyRequest)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 org_id = 1 [json_name = "orgId"];
+  if (this->_internal_org_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_org_id(), target);
+  }
+
+  // repeated float consumption_currency = 2 [json_name = "consumptionCurrency"];
+  if (this->_internal_consumption_currency_size() > 0) {
+    target = stream->WriteFixedPacked(2, _internal_consumption_currency(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:city.economy.v2.SetConsumptionCurrencyRequest)
+  return target;
+}
+
+size_t SetConsumptionCurrencyRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:city.economy.v2.SetConsumptionCurrencyRequest)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated float consumption_currency = 2 [json_name = "consumptionCurrency"];
+  {
+    unsigned int count = static_cast<unsigned int>(this->_internal_consumption_currency_size());
+    size_t data_size = 4UL * count;
+    if (data_size > 0) {
+      total_size += 1 +
+        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
+    }
+    total_size += data_size;
+  }
+
+  // int32 org_id = 1 [json_name = "orgId"];
+  if (this->_internal_org_id() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_org_id());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData SetConsumptionCurrencyRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    SetConsumptionCurrencyRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SetConsumptionCurrencyRequest::GetClassData() const { return &_class_data_; }
+
+
+void SetConsumptionCurrencyRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<SetConsumptionCurrencyRequest*>(&to_msg);
+  auto& from = static_cast<const SetConsumptionCurrencyRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:city.economy.v2.SetConsumptionCurrencyRequest)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_impl_.consumption_currency_.MergeFrom(from._impl_.consumption_currency_);
+  if (from._internal_org_id() != 0) {
+    _this->_internal_set_org_id(from._internal_org_id());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void SetConsumptionCurrencyRequest::CopyFrom(const SetConsumptionCurrencyRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:city.economy.v2.SetConsumptionCurrencyRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool SetConsumptionCurrencyRequest::IsInitialized() const {
+  return true;
+}
+
+void SetConsumptionCurrencyRequest::InternalSwap(SetConsumptionCurrencyRequest* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _impl_.consumption_currency_.InternalSwap(&other->_impl_.consumption_currency_);
+  swap(_impl_.org_id_, other->_impl_.org_id_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata SetConsumptionCurrencyRequest::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[64]);
+}
+
+// ===================================================================
+
+class SetConsumptionCurrencyResponse::_Internal {
+ public:
+};
+
+SetConsumptionCurrencyResponse::SetConsumptionCurrencyResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
+  // @@protoc_insertion_point(arena_constructor:city.economy.v2.SetConsumptionCurrencyResponse)
+}
+SetConsumptionCurrencyResponse::SetConsumptionCurrencyResponse(const SetConsumptionCurrencyResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
+  SetConsumptionCurrencyResponse* const _this = this; (void)_this;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:city.economy.v2.SetConsumptionCurrencyResponse)
+}
+
+
+
+
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData SetConsumptionCurrencyResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SetConsumptionCurrencyResponse::GetClassData() const { return &_class_data_; }
+
+
+
+
+
+
+
+::PROTOBUF_NAMESPACE_ID::Metadata SetConsumptionCurrencyResponse::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[65]);
+}
+
+// ===================================================================
+
+class GetConsumptionPropensityRequest::_Internal {
+ public:
+};
+
+GetConsumptionPropensityRequest::GetConsumptionPropensityRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:city.economy.v2.GetConsumptionPropensityRequest)
+}
+GetConsumptionPropensityRequest::GetConsumptionPropensityRequest(const GetConsumptionPropensityRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  GetConsumptionPropensityRequest* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.org_id_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.org_id_ = from._impl_.org_id_;
+  // @@protoc_insertion_point(copy_constructor:city.economy.v2.GetConsumptionPropensityRequest)
+}
+
+inline void GetConsumptionPropensityRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.org_id_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+}
+
+GetConsumptionPropensityRequest::~GetConsumptionPropensityRequest() {
+  // @@protoc_insertion_point(destructor:city.economy.v2.GetConsumptionPropensityRequest)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void GetConsumptionPropensityRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void GetConsumptionPropensityRequest::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void GetConsumptionPropensityRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:city.economy.v2.GetConsumptionPropensityRequest)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.org_id_ = 0;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* GetConsumptionPropensityRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 org_id = 1 [json_name = "orgId"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.org_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* GetConsumptionPropensityRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:city.economy.v2.GetConsumptionPropensityRequest)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 org_id = 1 [json_name = "orgId"];
+  if (this->_internal_org_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_org_id(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:city.economy.v2.GetConsumptionPropensityRequest)
+  return target;
+}
+
+size_t GetConsumptionPropensityRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:city.economy.v2.GetConsumptionPropensityRequest)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // int32 org_id = 1 [json_name = "orgId"];
+  if (this->_internal_org_id() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_org_id());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetConsumptionPropensityRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    GetConsumptionPropensityRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetConsumptionPropensityRequest::GetClassData() const { return &_class_data_; }
+
+
+void GetConsumptionPropensityRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<GetConsumptionPropensityRequest*>(&to_msg);
+  auto& from = static_cast<const GetConsumptionPropensityRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:city.economy.v2.GetConsumptionPropensityRequest)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_org_id() != 0) {
+    _this->_internal_set_org_id(from._internal_org_id());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void GetConsumptionPropensityRequest::CopyFrom(const GetConsumptionPropensityRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:city.economy.v2.GetConsumptionPropensityRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetConsumptionPropensityRequest::IsInitialized() const {
+  return true;
+}
+
+void GetConsumptionPropensityRequest::InternalSwap(GetConsumptionPropensityRequest* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_.org_id_, other->_impl_.org_id_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetConsumptionPropensityRequest::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[66]);
+}
+
+// ===================================================================
+
+class GetConsumptionPropensityResponse::_Internal {
+ public:
+};
+
+GetConsumptionPropensityResponse::GetConsumptionPropensityResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:city.economy.v2.GetConsumptionPropensityResponse)
+}
+GetConsumptionPropensityResponse::GetConsumptionPropensityResponse(const GetConsumptionPropensityResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  GetConsumptionPropensityResponse* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.consumption_propensity_){from._impl_.consumption_propensity_}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:city.economy.v2.GetConsumptionPropensityResponse)
+}
+
+inline void GetConsumptionPropensityResponse::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.consumption_propensity_){arena}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+}
+
+GetConsumptionPropensityResponse::~GetConsumptionPropensityResponse() {
+  // @@protoc_insertion_point(destructor:city.economy.v2.GetConsumptionPropensityResponse)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void GetConsumptionPropensityResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.consumption_propensity_.~RepeatedField();
+}
+
+void GetConsumptionPropensityResponse::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void GetConsumptionPropensityResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:city.economy.v2.GetConsumptionPropensityResponse)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.consumption_propensity_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* GetConsumptionPropensityResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // repeated float consumption_propensity = 1 [json_name = "consumptionPropensity"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedFloatParser(_internal_mutable_consumption_propensity(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<uint8_t>(tag) == 13) {
+          _internal_add_consumption_propensity(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* GetConsumptionPropensityResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:city.economy.v2.GetConsumptionPropensityResponse)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated float consumption_propensity = 1 [json_name = "consumptionPropensity"];
+  if (this->_internal_consumption_propensity_size() > 0) {
+    target = stream->WriteFixedPacked(1, _internal_consumption_propensity(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:city.economy.v2.GetConsumptionPropensityResponse)
+  return target;
+}
+
+size_t GetConsumptionPropensityResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:city.economy.v2.GetConsumptionPropensityResponse)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated float consumption_propensity = 1 [json_name = "consumptionPropensity"];
+  {
+    unsigned int count = static_cast<unsigned int>(this->_internal_consumption_propensity_size());
+    size_t data_size = 4UL * count;
+    if (data_size > 0) {
+      total_size += 1 +
+        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
+    }
+    total_size += data_size;
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetConsumptionPropensityResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    GetConsumptionPropensityResponse::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetConsumptionPropensityResponse::GetClassData() const { return &_class_data_; }
+
+
+void GetConsumptionPropensityResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<GetConsumptionPropensityResponse*>(&to_msg);
+  auto& from = static_cast<const GetConsumptionPropensityResponse&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:city.economy.v2.GetConsumptionPropensityResponse)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_impl_.consumption_propensity_.MergeFrom(from._impl_.consumption_propensity_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void GetConsumptionPropensityResponse::CopyFrom(const GetConsumptionPropensityResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:city.economy.v2.GetConsumptionPropensityResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetConsumptionPropensityResponse::IsInitialized() const {
+  return true;
+}
+
+void GetConsumptionPropensityResponse::InternalSwap(GetConsumptionPropensityResponse* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _impl_.consumption_propensity_.InternalSwap(&other->_impl_.consumption_propensity_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetConsumptionPropensityResponse::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[67]);
+}
+
+// ===================================================================
+
+class SetConsumptionPropensityRequest::_Internal {
+ public:
+};
+
+SetConsumptionPropensityRequest::SetConsumptionPropensityRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:city.economy.v2.SetConsumptionPropensityRequest)
+}
+SetConsumptionPropensityRequest::SetConsumptionPropensityRequest(const SetConsumptionPropensityRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  SetConsumptionPropensityRequest* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.consumption_propensity_){from._impl_.consumption_propensity_}
+    , decltype(_impl_.org_id_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.org_id_ = from._impl_.org_id_;
+  // @@protoc_insertion_point(copy_constructor:city.economy.v2.SetConsumptionPropensityRequest)
+}
+
+inline void SetConsumptionPropensityRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.consumption_propensity_){arena}
+    , decltype(_impl_.org_id_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+}
+
+SetConsumptionPropensityRequest::~SetConsumptionPropensityRequest() {
+  // @@protoc_insertion_point(destructor:city.economy.v2.SetConsumptionPropensityRequest)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void SetConsumptionPropensityRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.consumption_propensity_.~RepeatedField();
+}
+
+void SetConsumptionPropensityRequest::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void SetConsumptionPropensityRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:city.economy.v2.SetConsumptionPropensityRequest)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.consumption_propensity_.Clear();
+  _impl_.org_id_ = 0;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* SetConsumptionPropensityRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 org_id = 1 [json_name = "orgId"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.org_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated float consumption_propensity = 2 [json_name = "consumptionPropensity"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedFloatParser(_internal_mutable_consumption_propensity(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<uint8_t>(tag) == 21) {
+          _internal_add_consumption_propensity(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* SetConsumptionPropensityRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:city.economy.v2.SetConsumptionPropensityRequest)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 org_id = 1 [json_name = "orgId"];
+  if (this->_internal_org_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_org_id(), target);
+  }
+
+  // repeated float consumption_propensity = 2 [json_name = "consumptionPropensity"];
+  if (this->_internal_consumption_propensity_size() > 0) {
+    target = stream->WriteFixedPacked(2, _internal_consumption_propensity(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:city.economy.v2.SetConsumptionPropensityRequest)
+  return target;
+}
+
+size_t SetConsumptionPropensityRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:city.economy.v2.SetConsumptionPropensityRequest)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated float consumption_propensity = 2 [json_name = "consumptionPropensity"];
+  {
+    unsigned int count = static_cast<unsigned int>(this->_internal_consumption_propensity_size());
+    size_t data_size = 4UL * count;
+    if (data_size > 0) {
+      total_size += 1 +
+        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
+    }
+    total_size += data_size;
+  }
+
+  // int32 org_id = 1 [json_name = "orgId"];
+  if (this->_internal_org_id() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_org_id());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData SetConsumptionPropensityRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    SetConsumptionPropensityRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SetConsumptionPropensityRequest::GetClassData() const { return &_class_data_; }
+
+
+void SetConsumptionPropensityRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<SetConsumptionPropensityRequest*>(&to_msg);
+  auto& from = static_cast<const SetConsumptionPropensityRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:city.economy.v2.SetConsumptionPropensityRequest)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_impl_.consumption_propensity_.MergeFrom(from._impl_.consumption_propensity_);
+  if (from._internal_org_id() != 0) {
+    _this->_internal_set_org_id(from._internal_org_id());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void SetConsumptionPropensityRequest::CopyFrom(const SetConsumptionPropensityRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:city.economy.v2.SetConsumptionPropensityRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool SetConsumptionPropensityRequest::IsInitialized() const {
+  return true;
+}
+
+void SetConsumptionPropensityRequest::InternalSwap(SetConsumptionPropensityRequest* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _impl_.consumption_propensity_.InternalSwap(&other->_impl_.consumption_propensity_);
+  swap(_impl_.org_id_, other->_impl_.org_id_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata SetConsumptionPropensityRequest::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[68]);
+}
+
+// ===================================================================
+
+class SetConsumptionPropensityResponse::_Internal {
+ public:
+};
+
+SetConsumptionPropensityResponse::SetConsumptionPropensityResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
+  // @@protoc_insertion_point(arena_constructor:city.economy.v2.SetConsumptionPropensityResponse)
+}
+SetConsumptionPropensityResponse::SetConsumptionPropensityResponse(const SetConsumptionPropensityResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
+  SetConsumptionPropensityResponse* const _this = this; (void)_this;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:city.economy.v2.SetConsumptionPropensityResponse)
+}
+
+
+
+
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData SetConsumptionPropensityResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SetConsumptionPropensityResponse::GetClassData() const { return &_class_data_; }
+
+
+
+
+
+
+
+::PROTOBUF_NAMESPACE_ID::Metadata SetConsumptionPropensityResponse::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[69]);
+}
+
+// ===================================================================
+
+class GetIncomeCurrencyRequest::_Internal {
+ public:
+};
+
+GetIncomeCurrencyRequest::GetIncomeCurrencyRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:city.economy.v2.GetIncomeCurrencyRequest)
+}
+GetIncomeCurrencyRequest::GetIncomeCurrencyRequest(const GetIncomeCurrencyRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  GetIncomeCurrencyRequest* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.org_id_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.org_id_ = from._impl_.org_id_;
+  // @@protoc_insertion_point(copy_constructor:city.economy.v2.GetIncomeCurrencyRequest)
+}
+
+inline void GetIncomeCurrencyRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.org_id_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+}
+
+GetIncomeCurrencyRequest::~GetIncomeCurrencyRequest() {
+  // @@protoc_insertion_point(destructor:city.economy.v2.GetIncomeCurrencyRequest)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void GetIncomeCurrencyRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void GetIncomeCurrencyRequest::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void GetIncomeCurrencyRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:city.economy.v2.GetIncomeCurrencyRequest)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.org_id_ = 0;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* GetIncomeCurrencyRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 org_id = 1 [json_name = "orgId"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.org_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* GetIncomeCurrencyRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:city.economy.v2.GetIncomeCurrencyRequest)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 org_id = 1 [json_name = "orgId"];
+  if (this->_internal_org_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_org_id(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:city.economy.v2.GetIncomeCurrencyRequest)
+  return target;
+}
+
+size_t GetIncomeCurrencyRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:city.economy.v2.GetIncomeCurrencyRequest)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // int32 org_id = 1 [json_name = "orgId"];
+  if (this->_internal_org_id() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_org_id());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetIncomeCurrencyRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    GetIncomeCurrencyRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetIncomeCurrencyRequest::GetClassData() const { return &_class_data_; }
+
+
+void GetIncomeCurrencyRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<GetIncomeCurrencyRequest*>(&to_msg);
+  auto& from = static_cast<const GetIncomeCurrencyRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:city.economy.v2.GetIncomeCurrencyRequest)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_org_id() != 0) {
+    _this->_internal_set_org_id(from._internal_org_id());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void GetIncomeCurrencyRequest::CopyFrom(const GetIncomeCurrencyRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:city.economy.v2.GetIncomeCurrencyRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetIncomeCurrencyRequest::IsInitialized() const {
+  return true;
+}
+
+void GetIncomeCurrencyRequest::InternalSwap(GetIncomeCurrencyRequest* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_.org_id_, other->_impl_.org_id_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetIncomeCurrencyRequest::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[70]);
+}
+
+// ===================================================================
+
+class GetIncomeCurrencyResponse::_Internal {
+ public:
+};
+
+GetIncomeCurrencyResponse::GetIncomeCurrencyResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:city.economy.v2.GetIncomeCurrencyResponse)
+}
+GetIncomeCurrencyResponse::GetIncomeCurrencyResponse(const GetIncomeCurrencyResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  GetIncomeCurrencyResponse* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.income_currency_){from._impl_.income_currency_}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:city.economy.v2.GetIncomeCurrencyResponse)
+}
+
+inline void GetIncomeCurrencyResponse::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.income_currency_){arena}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+}
+
+GetIncomeCurrencyResponse::~GetIncomeCurrencyResponse() {
+  // @@protoc_insertion_point(destructor:city.economy.v2.GetIncomeCurrencyResponse)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void GetIncomeCurrencyResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.income_currency_.~RepeatedField();
+}
+
+void GetIncomeCurrencyResponse::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void GetIncomeCurrencyResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:city.economy.v2.GetIncomeCurrencyResponse)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.income_currency_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* GetIncomeCurrencyResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // repeated float income_currency = 1 [json_name = "incomeCurrency"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedFloatParser(_internal_mutable_income_currency(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<uint8_t>(tag) == 13) {
+          _internal_add_income_currency(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* GetIncomeCurrencyResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:city.economy.v2.GetIncomeCurrencyResponse)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated float income_currency = 1 [json_name = "incomeCurrency"];
+  if (this->_internal_income_currency_size() > 0) {
+    target = stream->WriteFixedPacked(1, _internal_income_currency(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:city.economy.v2.GetIncomeCurrencyResponse)
+  return target;
+}
+
+size_t GetIncomeCurrencyResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:city.economy.v2.GetIncomeCurrencyResponse)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated float income_currency = 1 [json_name = "incomeCurrency"];
+  {
+    unsigned int count = static_cast<unsigned int>(this->_internal_income_currency_size());
+    size_t data_size = 4UL * count;
+    if (data_size > 0) {
+      total_size += 1 +
+        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
+    }
+    total_size += data_size;
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetIncomeCurrencyResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    GetIncomeCurrencyResponse::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetIncomeCurrencyResponse::GetClassData() const { return &_class_data_; }
+
+
+void GetIncomeCurrencyResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<GetIncomeCurrencyResponse*>(&to_msg);
+  auto& from = static_cast<const GetIncomeCurrencyResponse&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:city.economy.v2.GetIncomeCurrencyResponse)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_impl_.income_currency_.MergeFrom(from._impl_.income_currency_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void GetIncomeCurrencyResponse::CopyFrom(const GetIncomeCurrencyResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:city.economy.v2.GetIncomeCurrencyResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetIncomeCurrencyResponse::IsInitialized() const {
+  return true;
+}
+
+void GetIncomeCurrencyResponse::InternalSwap(GetIncomeCurrencyResponse* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _impl_.income_currency_.InternalSwap(&other->_impl_.income_currency_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetIncomeCurrencyResponse::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[71]);
+}
+
+// ===================================================================
+
+class SetIncomeCurrencyRequest::_Internal {
+ public:
+};
+
+SetIncomeCurrencyRequest::SetIncomeCurrencyRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:city.economy.v2.SetIncomeCurrencyRequest)
+}
+SetIncomeCurrencyRequest::SetIncomeCurrencyRequest(const SetIncomeCurrencyRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  SetIncomeCurrencyRequest* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.income_currency_){from._impl_.income_currency_}
+    , decltype(_impl_.org_id_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.org_id_ = from._impl_.org_id_;
+  // @@protoc_insertion_point(copy_constructor:city.economy.v2.SetIncomeCurrencyRequest)
+}
+
+inline void SetIncomeCurrencyRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.income_currency_){arena}
+    , decltype(_impl_.org_id_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+}
+
+SetIncomeCurrencyRequest::~SetIncomeCurrencyRequest() {
+  // @@protoc_insertion_point(destructor:city.economy.v2.SetIncomeCurrencyRequest)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void SetIncomeCurrencyRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.income_currency_.~RepeatedField();
+}
+
+void SetIncomeCurrencyRequest::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void SetIncomeCurrencyRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:city.economy.v2.SetIncomeCurrencyRequest)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.income_currency_.Clear();
+  _impl_.org_id_ = 0;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* SetIncomeCurrencyRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 org_id = 1 [json_name = "orgId"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.org_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated float income_currency = 2 [json_name = "incomeCurrency"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedFloatParser(_internal_mutable_income_currency(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<uint8_t>(tag) == 21) {
+          _internal_add_income_currency(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* SetIncomeCurrencyRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:city.economy.v2.SetIncomeCurrencyRequest)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 org_id = 1 [json_name = "orgId"];
+  if (this->_internal_org_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_org_id(), target);
+  }
+
+  // repeated float income_currency = 2 [json_name = "incomeCurrency"];
+  if (this->_internal_income_currency_size() > 0) {
+    target = stream->WriteFixedPacked(2, _internal_income_currency(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:city.economy.v2.SetIncomeCurrencyRequest)
+  return target;
+}
+
+size_t SetIncomeCurrencyRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:city.economy.v2.SetIncomeCurrencyRequest)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated float income_currency = 2 [json_name = "incomeCurrency"];
+  {
+    unsigned int count = static_cast<unsigned int>(this->_internal_income_currency_size());
+    size_t data_size = 4UL * count;
+    if (data_size > 0) {
+      total_size += 1 +
+        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
+    }
+    total_size += data_size;
+  }
+
+  // int32 org_id = 1 [json_name = "orgId"];
+  if (this->_internal_org_id() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_org_id());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData SetIncomeCurrencyRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    SetIncomeCurrencyRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SetIncomeCurrencyRequest::GetClassData() const { return &_class_data_; }
+
+
+void SetIncomeCurrencyRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<SetIncomeCurrencyRequest*>(&to_msg);
+  auto& from = static_cast<const SetIncomeCurrencyRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:city.economy.v2.SetIncomeCurrencyRequest)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_impl_.income_currency_.MergeFrom(from._impl_.income_currency_);
+  if (from._internal_org_id() != 0) {
+    _this->_internal_set_org_id(from._internal_org_id());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void SetIncomeCurrencyRequest::CopyFrom(const SetIncomeCurrencyRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:city.economy.v2.SetIncomeCurrencyRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool SetIncomeCurrencyRequest::IsInitialized() const {
+  return true;
+}
+
+void SetIncomeCurrencyRequest::InternalSwap(SetIncomeCurrencyRequest* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _impl_.income_currency_.InternalSwap(&other->_impl_.income_currency_);
+  swap(_impl_.org_id_, other->_impl_.org_id_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata SetIncomeCurrencyRequest::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[72]);
+}
+
+// ===================================================================
+
+class SetIncomeCurrencyResponse::_Internal {
+ public:
+};
+
+SetIncomeCurrencyResponse::SetIncomeCurrencyResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
+  // @@protoc_insertion_point(arena_constructor:city.economy.v2.SetIncomeCurrencyResponse)
+}
+SetIncomeCurrencyResponse::SetIncomeCurrencyResponse(const SetIncomeCurrencyResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
+  SetIncomeCurrencyResponse* const _this = this; (void)_this;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:city.economy.v2.SetIncomeCurrencyResponse)
+}
+
+
+
+
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData SetIncomeCurrencyResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SetIncomeCurrencyResponse::GetClassData() const { return &_class_data_; }
+
+
+
+
+
+
+
+::PROTOBUF_NAMESPACE_ID::Metadata SetIncomeCurrencyResponse::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[73]);
+}
+
+// ===================================================================
+
+class GetDepressionStatusRequest::_Internal {
+ public:
+};
+
+GetDepressionStatusRequest::GetDepressionStatusRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:city.economy.v2.GetDepressionStatusRequest)
+}
+GetDepressionStatusRequest::GetDepressionStatusRequest(const GetDepressionStatusRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  GetDepressionStatusRequest* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.org_id_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.org_id_ = from._impl_.org_id_;
+  // @@protoc_insertion_point(copy_constructor:city.economy.v2.GetDepressionStatusRequest)
+}
+
+inline void GetDepressionStatusRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.org_id_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+}
+
+GetDepressionStatusRequest::~GetDepressionStatusRequest() {
+  // @@protoc_insertion_point(destructor:city.economy.v2.GetDepressionStatusRequest)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void GetDepressionStatusRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void GetDepressionStatusRequest::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void GetDepressionStatusRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:city.economy.v2.GetDepressionStatusRequest)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.org_id_ = 0;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* GetDepressionStatusRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 org_id = 1 [json_name = "orgId"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.org_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* GetDepressionStatusRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:city.economy.v2.GetDepressionStatusRequest)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 org_id = 1 [json_name = "orgId"];
+  if (this->_internal_org_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_org_id(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:city.economy.v2.GetDepressionStatusRequest)
+  return target;
+}
+
+size_t GetDepressionStatusRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:city.economy.v2.GetDepressionStatusRequest)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // int32 org_id = 1 [json_name = "orgId"];
+  if (this->_internal_org_id() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_org_id());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetDepressionStatusRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    GetDepressionStatusRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetDepressionStatusRequest::GetClassData() const { return &_class_data_; }
+
+
+void GetDepressionStatusRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<GetDepressionStatusRequest*>(&to_msg);
+  auto& from = static_cast<const GetDepressionStatusRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:city.economy.v2.GetDepressionStatusRequest)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_org_id() != 0) {
+    _this->_internal_set_org_id(from._internal_org_id());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void GetDepressionStatusRequest::CopyFrom(const GetDepressionStatusRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:city.economy.v2.GetDepressionStatusRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetDepressionStatusRequest::IsInitialized() const {
+  return true;
+}
+
+void GetDepressionStatusRequest::InternalSwap(GetDepressionStatusRequest* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_.org_id_, other->_impl_.org_id_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetDepressionStatusRequest::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[74]);
+}
+
+// ===================================================================
+
+class GetDepressionStatusResponse::_Internal {
+ public:
+};
+
+GetDepressionStatusResponse::GetDepressionStatusResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:city.economy.v2.GetDepressionStatusResponse)
+}
+GetDepressionStatusResponse::GetDepressionStatusResponse(const GetDepressionStatusResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  GetDepressionStatusResponse* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.depression_){from._impl_.depression_}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:city.economy.v2.GetDepressionStatusResponse)
+}
+
+inline void GetDepressionStatusResponse::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.depression_){arena}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+}
+
+GetDepressionStatusResponse::~GetDepressionStatusResponse() {
+  // @@protoc_insertion_point(destructor:city.economy.v2.GetDepressionStatusResponse)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void GetDepressionStatusResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.depression_.~RepeatedField();
+}
+
+void GetDepressionStatusResponse::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void GetDepressionStatusResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:city.economy.v2.GetDepressionStatusResponse)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.depression_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* GetDepressionStatusResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // repeated float depression = 1 [json_name = "depression"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedFloatParser(_internal_mutable_depression(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<uint8_t>(tag) == 13) {
+          _internal_add_depression(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* GetDepressionStatusResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:city.economy.v2.GetDepressionStatusResponse)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated float depression = 1 [json_name = "depression"];
+  if (this->_internal_depression_size() > 0) {
+    target = stream->WriteFixedPacked(1, _internal_depression(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:city.economy.v2.GetDepressionStatusResponse)
+  return target;
+}
+
+size_t GetDepressionStatusResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:city.economy.v2.GetDepressionStatusResponse)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated float depression = 1 [json_name = "depression"];
+  {
+    unsigned int count = static_cast<unsigned int>(this->_internal_depression_size());
+    size_t data_size = 4UL * count;
+    if (data_size > 0) {
+      total_size += 1 +
+        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
+    }
+    total_size += data_size;
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetDepressionStatusResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    GetDepressionStatusResponse::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetDepressionStatusResponse::GetClassData() const { return &_class_data_; }
+
+
+void GetDepressionStatusResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<GetDepressionStatusResponse*>(&to_msg);
+  auto& from = static_cast<const GetDepressionStatusResponse&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:city.economy.v2.GetDepressionStatusResponse)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_impl_.depression_.MergeFrom(from._impl_.depression_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void GetDepressionStatusResponse::CopyFrom(const GetDepressionStatusResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:city.economy.v2.GetDepressionStatusResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetDepressionStatusResponse::IsInitialized() const {
+  return true;
+}
+
+void GetDepressionStatusResponse::InternalSwap(GetDepressionStatusResponse* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _impl_.depression_.InternalSwap(&other->_impl_.depression_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetDepressionStatusResponse::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[75]);
+}
+
+// ===================================================================
+
+class SetDepressionStatusRequest::_Internal {
+ public:
+};
+
+SetDepressionStatusRequest::SetDepressionStatusRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:city.economy.v2.SetDepressionStatusRequest)
+}
+SetDepressionStatusRequest::SetDepressionStatusRequest(const SetDepressionStatusRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  SetDepressionStatusRequest* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.depression_){from._impl_.depression_}
+    , decltype(_impl_.org_id_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.org_id_ = from._impl_.org_id_;
+  // @@protoc_insertion_point(copy_constructor:city.economy.v2.SetDepressionStatusRequest)
+}
+
+inline void SetDepressionStatusRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.depression_){arena}
+    , decltype(_impl_.org_id_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+}
+
+SetDepressionStatusRequest::~SetDepressionStatusRequest() {
+  // @@protoc_insertion_point(destructor:city.economy.v2.SetDepressionStatusRequest)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void SetDepressionStatusRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.depression_.~RepeatedField();
+}
+
+void SetDepressionStatusRequest::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void SetDepressionStatusRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:city.economy.v2.SetDepressionStatusRequest)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.depression_.Clear();
+  _impl_.org_id_ = 0;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* SetDepressionStatusRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 org_id = 1 [json_name = "orgId"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.org_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated float depression = 2 [json_name = "depression"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedFloatParser(_internal_mutable_depression(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<uint8_t>(tag) == 21) {
+          _internal_add_depression(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* SetDepressionStatusRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:city.economy.v2.SetDepressionStatusRequest)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 org_id = 1 [json_name = "orgId"];
+  if (this->_internal_org_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_org_id(), target);
+  }
+
+  // repeated float depression = 2 [json_name = "depression"];
+  if (this->_internal_depression_size() > 0) {
+    target = stream->WriteFixedPacked(2, _internal_depression(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:city.economy.v2.SetDepressionStatusRequest)
+  return target;
+}
+
+size_t SetDepressionStatusRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:city.economy.v2.SetDepressionStatusRequest)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated float depression = 2 [json_name = "depression"];
+  {
+    unsigned int count = static_cast<unsigned int>(this->_internal_depression_size());
+    size_t data_size = 4UL * count;
+    if (data_size > 0) {
+      total_size += 1 +
+        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
+    }
+    total_size += data_size;
+  }
+
+  // int32 org_id = 1 [json_name = "orgId"];
+  if (this->_internal_org_id() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_org_id());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData SetDepressionStatusRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    SetDepressionStatusRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SetDepressionStatusRequest::GetClassData() const { return &_class_data_; }
+
+
+void SetDepressionStatusRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<SetDepressionStatusRequest*>(&to_msg);
+  auto& from = static_cast<const SetDepressionStatusRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:city.economy.v2.SetDepressionStatusRequest)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_impl_.depression_.MergeFrom(from._impl_.depression_);
+  if (from._internal_org_id() != 0) {
+    _this->_internal_set_org_id(from._internal_org_id());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void SetDepressionStatusRequest::CopyFrom(const SetDepressionStatusRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:city.economy.v2.SetDepressionStatusRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool SetDepressionStatusRequest::IsInitialized() const {
+  return true;
+}
+
+void SetDepressionStatusRequest::InternalSwap(SetDepressionStatusRequest* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _impl_.depression_.InternalSwap(&other->_impl_.depression_);
+  swap(_impl_.org_id_, other->_impl_.org_id_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata SetDepressionStatusRequest::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[76]);
+}
+
+// ===================================================================
+
+class SetDepressionStatusResponse::_Internal {
+ public:
+};
+
+SetDepressionStatusResponse::SetDepressionStatusResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
+  // @@protoc_insertion_point(arena_constructor:city.economy.v2.SetDepressionStatusResponse)
+}
+SetDepressionStatusResponse::SetDepressionStatusResponse(const SetDepressionStatusResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
+  SetDepressionStatusResponse* const _this = this; (void)_this;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:city.economy.v2.SetDepressionStatusResponse)
+}
+
+
+
+
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData SetDepressionStatusResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SetDepressionStatusResponse::GetClassData() const { return &_class_data_; }
+
+
+
+
+
+
+
+::PROTOBUF_NAMESPACE_ID::Metadata SetDepressionStatusResponse::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[77]);
+}
+
+// ===================================================================
+
+class GetLocusControlRequest::_Internal {
+ public:
+};
+
+GetLocusControlRequest::GetLocusControlRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:city.economy.v2.GetLocusControlRequest)
+}
+GetLocusControlRequest::GetLocusControlRequest(const GetLocusControlRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  GetLocusControlRequest* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.org_id_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.org_id_ = from._impl_.org_id_;
+  // @@protoc_insertion_point(copy_constructor:city.economy.v2.GetLocusControlRequest)
+}
+
+inline void GetLocusControlRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.org_id_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+}
+
+GetLocusControlRequest::~GetLocusControlRequest() {
+  // @@protoc_insertion_point(destructor:city.economy.v2.GetLocusControlRequest)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void GetLocusControlRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void GetLocusControlRequest::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void GetLocusControlRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:city.economy.v2.GetLocusControlRequest)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.org_id_ = 0;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* GetLocusControlRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 org_id = 1 [json_name = "orgId"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.org_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* GetLocusControlRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:city.economy.v2.GetLocusControlRequest)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 org_id = 1 [json_name = "orgId"];
+  if (this->_internal_org_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_org_id(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:city.economy.v2.GetLocusControlRequest)
+  return target;
+}
+
+size_t GetLocusControlRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:city.economy.v2.GetLocusControlRequest)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // int32 org_id = 1 [json_name = "orgId"];
+  if (this->_internal_org_id() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_org_id());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetLocusControlRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    GetLocusControlRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetLocusControlRequest::GetClassData() const { return &_class_data_; }
+
+
+void GetLocusControlRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<GetLocusControlRequest*>(&to_msg);
+  auto& from = static_cast<const GetLocusControlRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:city.economy.v2.GetLocusControlRequest)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_org_id() != 0) {
+    _this->_internal_set_org_id(from._internal_org_id());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void GetLocusControlRequest::CopyFrom(const GetLocusControlRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:city.economy.v2.GetLocusControlRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetLocusControlRequest::IsInitialized() const {
+  return true;
+}
+
+void GetLocusControlRequest::InternalSwap(GetLocusControlRequest* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_.org_id_, other->_impl_.org_id_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetLocusControlRequest::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[78]);
+}
+
+// ===================================================================
+
+class GetLocusControlResponse::_Internal {
+ public:
+};
+
+GetLocusControlResponse::GetLocusControlResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:city.economy.v2.GetLocusControlResponse)
+}
+GetLocusControlResponse::GetLocusControlResponse(const GetLocusControlResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  GetLocusControlResponse* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.locus_control_){from._impl_.locus_control_}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:city.economy.v2.GetLocusControlResponse)
+}
+
+inline void GetLocusControlResponse::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.locus_control_){arena}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+}
+
+GetLocusControlResponse::~GetLocusControlResponse() {
+  // @@protoc_insertion_point(destructor:city.economy.v2.GetLocusControlResponse)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void GetLocusControlResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.locus_control_.~RepeatedField();
+}
+
+void GetLocusControlResponse::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void GetLocusControlResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:city.economy.v2.GetLocusControlResponse)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.locus_control_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* GetLocusControlResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // repeated float locus_control = 1 [json_name = "locusControl"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedFloatParser(_internal_mutable_locus_control(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<uint8_t>(tag) == 13) {
+          _internal_add_locus_control(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* GetLocusControlResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:city.economy.v2.GetLocusControlResponse)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated float locus_control = 1 [json_name = "locusControl"];
+  if (this->_internal_locus_control_size() > 0) {
+    target = stream->WriteFixedPacked(1, _internal_locus_control(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:city.economy.v2.GetLocusControlResponse)
+  return target;
+}
+
+size_t GetLocusControlResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:city.economy.v2.GetLocusControlResponse)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated float locus_control = 1 [json_name = "locusControl"];
+  {
+    unsigned int count = static_cast<unsigned int>(this->_internal_locus_control_size());
+    size_t data_size = 4UL * count;
+    if (data_size > 0) {
+      total_size += 1 +
+        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
+    }
+    total_size += data_size;
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetLocusControlResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    GetLocusControlResponse::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetLocusControlResponse::GetClassData() const { return &_class_data_; }
+
+
+void GetLocusControlResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<GetLocusControlResponse*>(&to_msg);
+  auto& from = static_cast<const GetLocusControlResponse&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:city.economy.v2.GetLocusControlResponse)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_impl_.locus_control_.MergeFrom(from._impl_.locus_control_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void GetLocusControlResponse::CopyFrom(const GetLocusControlResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:city.economy.v2.GetLocusControlResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetLocusControlResponse::IsInitialized() const {
+  return true;
+}
+
+void GetLocusControlResponse::InternalSwap(GetLocusControlResponse* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _impl_.locus_control_.InternalSwap(&other->_impl_.locus_control_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetLocusControlResponse::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[79]);
+}
+
+// ===================================================================
+
+class SetLocusControlRequest::_Internal {
+ public:
+};
+
+SetLocusControlRequest::SetLocusControlRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:city.economy.v2.SetLocusControlRequest)
+}
+SetLocusControlRequest::SetLocusControlRequest(const SetLocusControlRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  SetLocusControlRequest* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.locus_control_){from._impl_.locus_control_}
+    , decltype(_impl_.org_id_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.org_id_ = from._impl_.org_id_;
+  // @@protoc_insertion_point(copy_constructor:city.economy.v2.SetLocusControlRequest)
+}
+
+inline void SetLocusControlRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.locus_control_){arena}
+    , decltype(_impl_.org_id_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+}
+
+SetLocusControlRequest::~SetLocusControlRequest() {
+  // @@protoc_insertion_point(destructor:city.economy.v2.SetLocusControlRequest)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void SetLocusControlRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.locus_control_.~RepeatedField();
+}
+
+void SetLocusControlRequest::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void SetLocusControlRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:city.economy.v2.SetLocusControlRequest)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.locus_control_.Clear();
+  _impl_.org_id_ = 0;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* SetLocusControlRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 org_id = 1 [json_name = "orgId"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.org_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated float locus_control = 2 [json_name = "locusControl"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedFloatParser(_internal_mutable_locus_control(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<uint8_t>(tag) == 21) {
+          _internal_add_locus_control(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* SetLocusControlRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:city.economy.v2.SetLocusControlRequest)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 org_id = 1 [json_name = "orgId"];
+  if (this->_internal_org_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_org_id(), target);
+  }
+
+  // repeated float locus_control = 2 [json_name = "locusControl"];
+  if (this->_internal_locus_control_size() > 0) {
+    target = stream->WriteFixedPacked(2, _internal_locus_control(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:city.economy.v2.SetLocusControlRequest)
+  return target;
+}
+
+size_t SetLocusControlRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:city.economy.v2.SetLocusControlRequest)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated float locus_control = 2 [json_name = "locusControl"];
+  {
+    unsigned int count = static_cast<unsigned int>(this->_internal_locus_control_size());
+    size_t data_size = 4UL * count;
+    if (data_size > 0) {
+      total_size += 1 +
+        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
+    }
+    total_size += data_size;
+  }
+
+  // int32 org_id = 1 [json_name = "orgId"];
+  if (this->_internal_org_id() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_org_id());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData SetLocusControlRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    SetLocusControlRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SetLocusControlRequest::GetClassData() const { return &_class_data_; }
+
+
+void SetLocusControlRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<SetLocusControlRequest*>(&to_msg);
+  auto& from = static_cast<const SetLocusControlRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:city.economy.v2.SetLocusControlRequest)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_impl_.locus_control_.MergeFrom(from._impl_.locus_control_);
+  if (from._internal_org_id() != 0) {
+    _this->_internal_set_org_id(from._internal_org_id());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void SetLocusControlRequest::CopyFrom(const SetLocusControlRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:city.economy.v2.SetLocusControlRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool SetLocusControlRequest::IsInitialized() const {
+  return true;
+}
+
+void SetLocusControlRequest::InternalSwap(SetLocusControlRequest* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _impl_.locus_control_.InternalSwap(&other->_impl_.locus_control_);
+  swap(_impl_.org_id_, other->_impl_.org_id_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata SetLocusControlRequest::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[80]);
+}
+
+// ===================================================================
+
+class SetLocusControlResponse::_Internal {
+ public:
+};
+
+SetLocusControlResponse::SetLocusControlResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
+  // @@protoc_insertion_point(arena_constructor:city.economy.v2.SetLocusControlResponse)
+}
+SetLocusControlResponse::SetLocusControlResponse(const SetLocusControlResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
+  SetLocusControlResponse* const _this = this; (void)_this;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:city.economy.v2.SetLocusControlResponse)
+}
+
+
+
+
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData SetLocusControlResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SetLocusControlResponse::GetClassData() const { return &_class_data_; }
+
+
+
+
+
+
+
+::PROTOBUF_NAMESPACE_ID::Metadata SetLocusControlResponse::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[81]);
+}
+
+// ===================================================================
+
+class GetWorkingHoursRequest::_Internal {
+ public:
+};
+
+GetWorkingHoursRequest::GetWorkingHoursRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:city.economy.v2.GetWorkingHoursRequest)
+}
+GetWorkingHoursRequest::GetWorkingHoursRequest(const GetWorkingHoursRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  GetWorkingHoursRequest* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.org_id_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.org_id_ = from._impl_.org_id_;
+  // @@protoc_insertion_point(copy_constructor:city.economy.v2.GetWorkingHoursRequest)
+}
+
+inline void GetWorkingHoursRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.org_id_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+}
+
+GetWorkingHoursRequest::~GetWorkingHoursRequest() {
+  // @@protoc_insertion_point(destructor:city.economy.v2.GetWorkingHoursRequest)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void GetWorkingHoursRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void GetWorkingHoursRequest::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void GetWorkingHoursRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:city.economy.v2.GetWorkingHoursRequest)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.org_id_ = 0;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* GetWorkingHoursRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 org_id = 1 [json_name = "orgId"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.org_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* GetWorkingHoursRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:city.economy.v2.GetWorkingHoursRequest)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 org_id = 1 [json_name = "orgId"];
+  if (this->_internal_org_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_org_id(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:city.economy.v2.GetWorkingHoursRequest)
+  return target;
+}
+
+size_t GetWorkingHoursRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:city.economy.v2.GetWorkingHoursRequest)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // int32 org_id = 1 [json_name = "orgId"];
+  if (this->_internal_org_id() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_org_id());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetWorkingHoursRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    GetWorkingHoursRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetWorkingHoursRequest::GetClassData() const { return &_class_data_; }
+
+
+void GetWorkingHoursRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<GetWorkingHoursRequest*>(&to_msg);
+  auto& from = static_cast<const GetWorkingHoursRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:city.economy.v2.GetWorkingHoursRequest)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_org_id() != 0) {
+    _this->_internal_set_org_id(from._internal_org_id());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void GetWorkingHoursRequest::CopyFrom(const GetWorkingHoursRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:city.economy.v2.GetWorkingHoursRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetWorkingHoursRequest::IsInitialized() const {
+  return true;
+}
+
+void GetWorkingHoursRequest::InternalSwap(GetWorkingHoursRequest* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_.org_id_, other->_impl_.org_id_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetWorkingHoursRequest::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[82]);
+}
+
+// ===================================================================
+
+class GetWorkingHoursResponse::_Internal {
+ public:
+};
+
+GetWorkingHoursResponse::GetWorkingHoursResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:city.economy.v2.GetWorkingHoursResponse)
+}
+GetWorkingHoursResponse::GetWorkingHoursResponse(const GetWorkingHoursResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  GetWorkingHoursResponse* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.working_hours_){from._impl_.working_hours_}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:city.economy.v2.GetWorkingHoursResponse)
+}
+
+inline void GetWorkingHoursResponse::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.working_hours_){arena}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+}
+
+GetWorkingHoursResponse::~GetWorkingHoursResponse() {
+  // @@protoc_insertion_point(destructor:city.economy.v2.GetWorkingHoursResponse)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void GetWorkingHoursResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.working_hours_.~RepeatedField();
+}
+
+void GetWorkingHoursResponse::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void GetWorkingHoursResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:city.economy.v2.GetWorkingHoursResponse)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.working_hours_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* GetWorkingHoursResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // repeated float working_hours = 1 [json_name = "workingHours"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedFloatParser(_internal_mutable_working_hours(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<uint8_t>(tag) == 13) {
+          _internal_add_working_hours(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* GetWorkingHoursResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:city.economy.v2.GetWorkingHoursResponse)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated float working_hours = 1 [json_name = "workingHours"];
+  if (this->_internal_working_hours_size() > 0) {
+    target = stream->WriteFixedPacked(1, _internal_working_hours(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:city.economy.v2.GetWorkingHoursResponse)
+  return target;
+}
+
+size_t GetWorkingHoursResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:city.economy.v2.GetWorkingHoursResponse)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated float working_hours = 1 [json_name = "workingHours"];
+  {
+    unsigned int count = static_cast<unsigned int>(this->_internal_working_hours_size());
+    size_t data_size = 4UL * count;
+    if (data_size > 0) {
+      total_size += 1 +
+        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
+    }
+    total_size += data_size;
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetWorkingHoursResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    GetWorkingHoursResponse::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetWorkingHoursResponse::GetClassData() const { return &_class_data_; }
+
+
+void GetWorkingHoursResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<GetWorkingHoursResponse*>(&to_msg);
+  auto& from = static_cast<const GetWorkingHoursResponse&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:city.economy.v2.GetWorkingHoursResponse)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_impl_.working_hours_.MergeFrom(from._impl_.working_hours_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void GetWorkingHoursResponse::CopyFrom(const GetWorkingHoursResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:city.economy.v2.GetWorkingHoursResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetWorkingHoursResponse::IsInitialized() const {
+  return true;
+}
+
+void GetWorkingHoursResponse::InternalSwap(GetWorkingHoursResponse* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _impl_.working_hours_.InternalSwap(&other->_impl_.working_hours_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetWorkingHoursResponse::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[83]);
+}
+
+// ===================================================================
+
+class SetWorkingHoursRequest::_Internal {
+ public:
+};
+
+SetWorkingHoursRequest::SetWorkingHoursRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:city.economy.v2.SetWorkingHoursRequest)
+}
+SetWorkingHoursRequest::SetWorkingHoursRequest(const SetWorkingHoursRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  SetWorkingHoursRequest* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.working_hours_){from._impl_.working_hours_}
+    , decltype(_impl_.org_id_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.org_id_ = from._impl_.org_id_;
+  // @@protoc_insertion_point(copy_constructor:city.economy.v2.SetWorkingHoursRequest)
+}
+
+inline void SetWorkingHoursRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.working_hours_){arena}
+    , decltype(_impl_.org_id_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+}
+
+SetWorkingHoursRequest::~SetWorkingHoursRequest() {
+  // @@protoc_insertion_point(destructor:city.economy.v2.SetWorkingHoursRequest)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void SetWorkingHoursRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.working_hours_.~RepeatedField();
+}
+
+void SetWorkingHoursRequest::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void SetWorkingHoursRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:city.economy.v2.SetWorkingHoursRequest)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.working_hours_.Clear();
+  _impl_.org_id_ = 0;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* SetWorkingHoursRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 org_id = 1 [json_name = "orgId"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.org_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated float working_hours = 2 [json_name = "workingHours"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedFloatParser(_internal_mutable_working_hours(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<uint8_t>(tag) == 21) {
+          _internal_add_working_hours(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* SetWorkingHoursRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:city.economy.v2.SetWorkingHoursRequest)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 org_id = 1 [json_name = "orgId"];
+  if (this->_internal_org_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_org_id(), target);
+  }
+
+  // repeated float working_hours = 2 [json_name = "workingHours"];
+  if (this->_internal_working_hours_size() > 0) {
+    target = stream->WriteFixedPacked(2, _internal_working_hours(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:city.economy.v2.SetWorkingHoursRequest)
+  return target;
+}
+
+size_t SetWorkingHoursRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:city.economy.v2.SetWorkingHoursRequest)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated float working_hours = 2 [json_name = "workingHours"];
+  {
+    unsigned int count = static_cast<unsigned int>(this->_internal_working_hours_size());
+    size_t data_size = 4UL * count;
+    if (data_size > 0) {
+      total_size += 1 +
+        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
+    }
+    total_size += data_size;
+  }
+
+  // int32 org_id = 1 [json_name = "orgId"];
+  if (this->_internal_org_id() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_org_id());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData SetWorkingHoursRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    SetWorkingHoursRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SetWorkingHoursRequest::GetClassData() const { return &_class_data_; }
+
+
+void SetWorkingHoursRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<SetWorkingHoursRequest*>(&to_msg);
+  auto& from = static_cast<const SetWorkingHoursRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:city.economy.v2.SetWorkingHoursRequest)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_impl_.working_hours_.MergeFrom(from._impl_.working_hours_);
+  if (from._internal_org_id() != 0) {
+    _this->_internal_set_org_id(from._internal_org_id());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void SetWorkingHoursRequest::CopyFrom(const SetWorkingHoursRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:city.economy.v2.SetWorkingHoursRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool SetWorkingHoursRequest::IsInitialized() const {
+  return true;
+}
+
+void SetWorkingHoursRequest::InternalSwap(SetWorkingHoursRequest* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _impl_.working_hours_.InternalSwap(&other->_impl_.working_hours_);
+  swap(_impl_.org_id_, other->_impl_.org_id_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata SetWorkingHoursRequest::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[84]);
+}
+
+// ===================================================================
+
+class SetWorkingHoursResponse::_Internal {
+ public:
+};
+
+SetWorkingHoursResponse::SetWorkingHoursResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
+  // @@protoc_insertion_point(arena_constructor:city.economy.v2.SetWorkingHoursResponse)
+}
+SetWorkingHoursResponse::SetWorkingHoursResponse(const SetWorkingHoursResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
+  SetWorkingHoursResponse* const _this = this; (void)_this;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:city.economy.v2.SetWorkingHoursResponse)
+}
+
+
+
+
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData SetWorkingHoursResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SetWorkingHoursResponse::GetClassData() const { return &_class_data_; }
+
+
+
+
+
+
+
+::PROTOBUF_NAMESPACE_ID::Metadata SetWorkingHoursResponse::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[85]);
+}
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace v2
 }  // namespace economy
@@ -11860,6 +16132,102 @@ Arena::CreateMaybeMessage< ::city::economy::v2::LoadEconomyEntitiesRequest >(Are
 template<> PROTOBUF_NOINLINE ::city::economy::v2::LoadEconomyEntitiesResponse*
 Arena::CreateMaybeMessage< ::city::economy::v2::LoadEconomyEntitiesResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::city::economy::v2::LoadEconomyEntitiesResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::economy::v2::GetConsumptionCurrencyRequest*
+Arena::CreateMaybeMessage< ::city::economy::v2::GetConsumptionCurrencyRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::economy::v2::GetConsumptionCurrencyRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::economy::v2::GetConsumptionCurrencyResponse*
+Arena::CreateMaybeMessage< ::city::economy::v2::GetConsumptionCurrencyResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::economy::v2::GetConsumptionCurrencyResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::economy::v2::SetConsumptionCurrencyRequest*
+Arena::CreateMaybeMessage< ::city::economy::v2::SetConsumptionCurrencyRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::economy::v2::SetConsumptionCurrencyRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::economy::v2::SetConsumptionCurrencyResponse*
+Arena::CreateMaybeMessage< ::city::economy::v2::SetConsumptionCurrencyResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::economy::v2::SetConsumptionCurrencyResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::economy::v2::GetConsumptionPropensityRequest*
+Arena::CreateMaybeMessage< ::city::economy::v2::GetConsumptionPropensityRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::economy::v2::GetConsumptionPropensityRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::economy::v2::GetConsumptionPropensityResponse*
+Arena::CreateMaybeMessage< ::city::economy::v2::GetConsumptionPropensityResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::economy::v2::GetConsumptionPropensityResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::economy::v2::SetConsumptionPropensityRequest*
+Arena::CreateMaybeMessage< ::city::economy::v2::SetConsumptionPropensityRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::economy::v2::SetConsumptionPropensityRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::economy::v2::SetConsumptionPropensityResponse*
+Arena::CreateMaybeMessage< ::city::economy::v2::SetConsumptionPropensityResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::economy::v2::SetConsumptionPropensityResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::economy::v2::GetIncomeCurrencyRequest*
+Arena::CreateMaybeMessage< ::city::economy::v2::GetIncomeCurrencyRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::economy::v2::GetIncomeCurrencyRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::economy::v2::GetIncomeCurrencyResponse*
+Arena::CreateMaybeMessage< ::city::economy::v2::GetIncomeCurrencyResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::economy::v2::GetIncomeCurrencyResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::economy::v2::SetIncomeCurrencyRequest*
+Arena::CreateMaybeMessage< ::city::economy::v2::SetIncomeCurrencyRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::economy::v2::SetIncomeCurrencyRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::economy::v2::SetIncomeCurrencyResponse*
+Arena::CreateMaybeMessage< ::city::economy::v2::SetIncomeCurrencyResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::economy::v2::SetIncomeCurrencyResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::economy::v2::GetDepressionStatusRequest*
+Arena::CreateMaybeMessage< ::city::economy::v2::GetDepressionStatusRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::economy::v2::GetDepressionStatusRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::economy::v2::GetDepressionStatusResponse*
+Arena::CreateMaybeMessage< ::city::economy::v2::GetDepressionStatusResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::economy::v2::GetDepressionStatusResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::economy::v2::SetDepressionStatusRequest*
+Arena::CreateMaybeMessage< ::city::economy::v2::SetDepressionStatusRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::economy::v2::SetDepressionStatusRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::economy::v2::SetDepressionStatusResponse*
+Arena::CreateMaybeMessage< ::city::economy::v2::SetDepressionStatusResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::economy::v2::SetDepressionStatusResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::economy::v2::GetLocusControlRequest*
+Arena::CreateMaybeMessage< ::city::economy::v2::GetLocusControlRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::economy::v2::GetLocusControlRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::economy::v2::GetLocusControlResponse*
+Arena::CreateMaybeMessage< ::city::economy::v2::GetLocusControlResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::economy::v2::GetLocusControlResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::economy::v2::SetLocusControlRequest*
+Arena::CreateMaybeMessage< ::city::economy::v2::SetLocusControlRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::economy::v2::SetLocusControlRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::economy::v2::SetLocusControlResponse*
+Arena::CreateMaybeMessage< ::city::economy::v2::SetLocusControlResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::economy::v2::SetLocusControlResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::economy::v2::GetWorkingHoursRequest*
+Arena::CreateMaybeMessage< ::city::economy::v2::GetWorkingHoursRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::economy::v2::GetWorkingHoursRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::economy::v2::GetWorkingHoursResponse*
+Arena::CreateMaybeMessage< ::city::economy::v2::GetWorkingHoursResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::economy::v2::GetWorkingHoursResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::economy::v2::SetWorkingHoursRequest*
+Arena::CreateMaybeMessage< ::city::economy::v2::SetWorkingHoursRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::economy::v2::SetWorkingHoursRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::economy::v2::SetWorkingHoursResponse*
+Arena::CreateMaybeMessage< ::city::economy::v2::SetWorkingHoursResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::economy::v2::SetWorkingHoursResponse >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

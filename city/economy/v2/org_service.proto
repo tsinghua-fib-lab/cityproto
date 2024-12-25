@@ -72,6 +72,30 @@ service OrgService {
   rpc SaveEconomyEntities(SaveEconomyEntitiesRequest) returns (SaveEconomyEntitiesResponse);
   // Load
   rpc LoadEconomyEntities(LoadEconomyEntitiesRequest) returns (LoadEconomyEntitiesResponse);
+
+  // Consumption Currency
+  rpc GetConsumptionCurrency(GetConsumptionCurrencyRequest) returns (GetConsumptionCurrencyResponse);
+  rpc SetConsumptionCurrency(SetConsumptionCurrencyRequest) returns (SetConsumptionCurrencyResponse);
+
+  // Consumption Propensity
+  rpc GetConsumptionPropensity(GetConsumptionPropensityRequest) returns (GetConsumptionPropensityResponse);
+  rpc SetConsumptionPropensity(SetConsumptionPropensityRequest) returns (SetConsumptionPropensityResponse);
+
+  // Income Currency
+  rpc GetIncomeCurrency(GetIncomeCurrencyRequest) returns (GetIncomeCurrencyResponse);
+  rpc SetIncomeCurrency(SetIncomeCurrencyRequest) returns (SetIncomeCurrencyResponse);
+
+  // Depression
+  rpc GetDepressionStatus(GetDepressionStatusRequest) returns (GetDepressionStatusResponse);
+  rpc SetDepressionStatus(SetDepressionStatusRequest) returns (SetDepressionStatusResponse);
+
+  // Locus of Control
+  rpc GetLocusControl(GetLocusControlRequest) returns (GetLocusControlResponse);
+  rpc SetLocusControl(SetLocusControlRequest) returns (SetLocusControlResponse);
+
+  // Working Hours
+  rpc GetWorkingHours(GetWorkingHoursRequest) returns (GetWorkingHoursResponse);
+  rpc SetWorkingHours(SetWorkingHoursRequest) returns (SetWorkingHoursResponse);
 }
 
 message AddOrgRequest {
@@ -305,3 +329,87 @@ message LoadEconomyEntitiesResponse {
   repeated int32 agent_ids = 1;
   repeated int32 org_ids = 2;
 }
+
+// Consumption Currency
+message GetConsumptionCurrencyRequest {
+  int32 org_id = 1;
+}
+message GetConsumptionCurrencyResponse {
+  repeated float consumption_currency = 1;
+}
+
+message SetConsumptionCurrencyRequest {
+  int32 org_id = 1;
+  repeated float consumption_currency = 2;
+}
+message SetConsumptionCurrencyResponse {}
+
+// Consumption Propensity
+message GetConsumptionPropensityRequest {
+  int32 org_id = 1;
+}
+message GetConsumptionPropensityResponse {
+  repeated float consumption_propensity = 1;
+}
+
+message SetConsumptionPropensityRequest {
+  int32 org_id = 1;
+  repeated float consumption_propensity = 2;
+}
+message SetConsumptionPropensityResponse {}
+
+// Income Currency
+message GetIncomeCurrencyRequest {
+  int32 org_id = 1;
+}
+message GetIncomeCurrencyResponse {
+  repeated float income_currency = 1;
+}
+
+message SetIncomeCurrencyRequest {
+  int32 org_id = 1;
+  repeated float income_currency = 2;
+}
+message SetIncomeCurrencyResponse {}
+
+// Depression
+message GetDepressionStatusRequest {
+  int32 org_id = 1;
+}
+message GetDepressionStatusResponse {
+  repeated float depression = 1;
+}
+
+message SetDepressionStatusRequest {
+  int32 org_id = 1;
+  repeated float depression = 2;
+}
+message SetDepressionStatusResponse {}
+
+// Locus of Control
+message GetLocusControlRequest {
+  int32 org_id = 1;
+}
+message GetLocusControlResponse {
+  repeated float locus_control = 1;
+}
+
+message SetLocusControlRequest {
+  int32 org_id = 1;
+  repeated float locus_control = 2;
+}
+message SetLocusControlResponse {}
+
+// Working Hours
+message GetWorkingHoursRequest {
+  int32 org_id = 1;
+}
+message GetWorkingHoursResponse {
+  repeated float working_hours = 1;
+}
+
+message SetWorkingHoursRequest {
+  int32 org_id = 1;
+  repeated float working_hours = 2;
+}
+message SetWorkingHoursResponse {}

@@ -144,6 +144,39 @@ export declare class Org extends Message<Org> {
    */
   bracketRates: number[];
 
+  /**
+   * NBS
+   *
+   *
+   * @generated from field: repeated float consumption_currency = 14;
+   */
+  consumptionCurrency: number[];
+
+  /**
+   * @generated from field: repeated float consumption_propensity = 15;
+   */
+  consumptionPropensity: number[];
+
+  /**
+   * @generated from field: repeated float income_currency = 16;
+   */
+  incomeCurrency: number[];
+
+  /**
+   * @generated from field: repeated float depression = 17;
+   */
+  depression: number[];
+
+  /**
+   * @generated from field: repeated float locus_control = 18;
+   */
+  locusControl: number[];
+
+  /**
+   * @generated from field: repeated float working_hours = 19;
+   */
+  workingHours: number[];
+
   constructor(data?: PartialMessage<Org>);
 
   static readonly runtime: typeof proto3;
