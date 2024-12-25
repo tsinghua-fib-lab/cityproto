@@ -78,7 +78,7 @@ func (x *MongoPath) GetCol() string {
 // 输出目标PostgreSQL
 type OutputTarget struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Sql           string                 `protobuf:"bytes,1,opt,name=sql,proto3" json:"sql,omitempty" bson:"sql" db:"sql" yaml:"sql"`
+	Sql           string                 `protobuf:"bytes,1,opt,name=sql,proto3" json:"sql,omitempty" yaml:"sql" bson:"sql" db:"sql"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }

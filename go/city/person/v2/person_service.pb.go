@@ -73,7 +73,7 @@ func (x *GetPersonRequest) GetPersonId() int32 {
 // Response of getting person information
 type GetPersonResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Person        *PersonRuntime         `protobuf:"bytes,1,opt,name=person,proto3" json:"person,omitempty" db:"person" yaml:"person" bson:"person"`
+	Person        *PersonRuntime         `protobuf:"bytes,1,opt,name=person,proto3" json:"person,omitempty" bson:"person" db:"person" yaml:"person"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -169,7 +169,7 @@ type AddPersonResponse struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// 新增的person分配得到的ID
 	// The ID assigned to the newly added person
-	PersonId      int32 `protobuf:"varint,1,opt,name=person_id,json=personId,proto3" json:"person_id,omitempty" db:"person_id" yaml:"person_id" bson:"person_id"`
+	PersonId      int32 `protobuf:"varint,1,opt,name=person_id,json=personId,proto3" json:"person_id,omitempty" bson:"person_id" db:"person_id" yaml:"person_id"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -219,7 +219,7 @@ type SetScheduleRequest struct {
 	PersonId int32 `protobuf:"varint,1,opt,name=person_id,json=personId,proto3" json:"person_id,omitempty" yaml:"person_id" bson:"person_id" db:"person_id"`
 	// 新的schedule（覆盖原有的schedule）
 	// New schedule (overwrites the original schedule)
-	Schedules     []*v2.Schedule `protobuf:"bytes,2,rep,name=schedules,proto3" json:"schedules,omitempty" yaml:"schedules" bson:"schedules" db:"schedules"`
+	Schedules     []*v2.Schedule `protobuf:"bytes,2,rep,name=schedules,proto3" json:"schedules,omitempty" db:"schedules" yaml:"schedules" bson:"schedules"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -318,7 +318,7 @@ type GetPersonsRequest struct {
 	ExcludeStatuses []Status `protobuf:"varint,2,rep,packed,name=exclude_statuses,json=excludeStatuses,proto3,enum=city.person.v2.Status" json:"exclude_statuses,omitempty" yaml:"exclude_statuses" bson:"exclude_statuses" db:"exclude_statuses"`
 	// 设置是否返回base信息
 	// Set whether to return base information
-	ReturnBase    bool `protobuf:"varint,3,opt,name=return_base,json=returnBase,proto3" json:"return_base,omitempty" db:"return_base" yaml:"return_base" bson:"return_base"`
+	ReturnBase    bool `protobuf:"varint,3,opt,name=return_base,json=returnBase,proto3" json:"return_base,omitempty" yaml:"return_base" bson:"return_base" db:"return_base"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -582,7 +582,7 @@ type GetAllVehiclesResponse struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// 所有车辆的信息
 	// Information of all vehicles
-	Vehicles      []*VehicleRuntime `protobuf:"bytes,1,rep,name=vehicles,proto3" json:"vehicles,omitempty" db:"vehicles" yaml:"vehicles" bson:"vehicles"`
+	Vehicles      []*VehicleRuntime `protobuf:"bytes,1,rep,name=vehicles,proto3" json:"vehicles,omitempty" yaml:"vehicles" bson:"vehicles" db:"vehicles"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -629,7 +629,7 @@ func (x *GetAllVehiclesResponse) GetVehicles() []*VehicleRuntime {
 type ResetPersonPositionRequest struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// person id
-	PersonId int32 `protobuf:"varint,1,opt,name=person_id,json=personId,proto3" json:"person_id,omitempty" db:"person_id" yaml:"person_id" bson:"person_id"`
+	PersonId int32 `protobuf:"varint,1,opt,name=person_id,json=personId,proto3" json:"person_id,omitempty" yaml:"person_id" bson:"person_id" db:"person_id"`
 	// 重置位置
 	// reset position
 	Position      *v21.Position `protobuf:"bytes,2,opt,name=position,proto3" json:"position,omitempty" yaml:"position" bson:"position" db:"position"`
@@ -728,7 +728,7 @@ type SetControlledVehicleIDsRequest struct {
 	VehicleIds []int32 `protobuf:"varint,1,rep,packed,name=vehicle_ids,json=vehicleIds,proto3" json:"vehicle_ids,omitempty" yaml:"vehicle_ids" bson:"vehicle_ids" db:"vehicle_ids"`
 	// 由外部控制车辆路由的vehicle id列表（在进入新的road后触发控制）
 	// List of vehicle ids controlled by external behavior (control is triggered after entering a new road)
-	RouteVehicleIds []int32 `protobuf:"varint,2,rep,packed,name=route_vehicle_ids,json=routeVehicleIds,proto3" json:"route_vehicle_ids,omitempty" bson:"route_vehicle_ids" db:"route_vehicle_ids" yaml:"route_vehicle_ids"`
+	RouteVehicleIds []int32 `protobuf:"varint,2,rep,packed,name=route_vehicle_ids,json=routeVehicleIds,proto3" json:"route_vehicle_ids,omitempty" yaml:"route_vehicle_ids" bson:"route_vehicle_ids" db:"route_vehicle_ids"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -859,7 +859,7 @@ type FetchControlledVehicleEnvsResponse struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// 由外部控制行为的vehicle信息
 	// Information of vehicle controlled by external behavior
-	VehicleEnvs []*VehicleEnv `protobuf:"bytes,1,rep,name=vehicle_envs,json=vehicleEnvs,proto3" json:"vehicle_envs,omitempty" yaml:"vehicle_envs" bson:"vehicle_envs" db:"vehicle_envs"`
+	VehicleEnvs []*VehicleEnv `protobuf:"bytes,1,rep,name=vehicle_envs,json=vehicleEnvs,proto3" json:"vehicle_envs,omitempty" bson:"vehicle_envs" db:"vehicle_envs" yaml:"vehicle_envs"`
 	// 由外部控制车辆路由的vehicle信息
 	// Information of vehicle controlled by external behavior (control is triggered after entering a new road)
 	RouteVehicleEnvs []*VehicleEnv `protobuf:"bytes,2,rep,name=route_vehicle_envs,json=routeVehicleEnvs,proto3" json:"route_vehicle_envs,omitempty" yaml:"route_vehicle_envs" bson:"route_vehicle_envs" db:"route_vehicle_envs"`
@@ -917,7 +917,7 @@ type SetControlledVehicleActionsRequest struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// 由外部控制行为的vehicle的行为
 	// Behavior of vehicle controlled by external behavior
-	VehicleActions []*VehicleAction `protobuf:"bytes,1,rep,name=vehicle_actions,json=vehicleActions,proto3" json:"vehicle_actions,omitempty" yaml:"vehicle_actions" bson:"vehicle_actions" db:"vehicle_actions"`
+	VehicleActions []*VehicleAction `protobuf:"bytes,1,rep,name=vehicle_actions,json=vehicleActions,proto3" json:"vehicle_actions,omitempty" db:"vehicle_actions" yaml:"vehicle_actions" bson:"vehicle_actions"`
 	// 由外部控制车辆路由的vehicle的新路由
 	// New route of vehicle controlled by external behavior (control is triggered after entering a new road)
 	VehicleJourneys []*VehicleRouteAction `protobuf:"bytes,2,rep,name=vehicle_journeys,json=vehicleJourneys,proto3" json:"vehicle_journeys,omitempty" yaml:"vehicle_journeys" bson:"vehicle_journeys" db:"vehicle_journeys"`

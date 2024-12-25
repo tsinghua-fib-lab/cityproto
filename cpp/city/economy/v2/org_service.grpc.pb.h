@@ -325,19 +325,19 @@ class OrgService final {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::SetIncomeCurrencyResponse>>(PrepareAsyncSetIncomeCurrencyRaw(context, request, cq));
     }
     // Depression
-    virtual ::grpc::Status GetDepressionStatus(::grpc::ClientContext* context, const ::city::economy::v2::GetDepressionStatusRequest& request, ::city::economy::v2::GetDepressionStatusResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::GetDepressionStatusResponse>> AsyncGetDepressionStatus(::grpc::ClientContext* context, const ::city::economy::v2::GetDepressionStatusRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::GetDepressionStatusResponse>>(AsyncGetDepressionStatusRaw(context, request, cq));
+    virtual ::grpc::Status GetDepression(::grpc::ClientContext* context, const ::city::economy::v2::GetDepressionRequest& request, ::city::economy::v2::GetDepressionResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::GetDepressionResponse>> AsyncGetDepression(::grpc::ClientContext* context, const ::city::economy::v2::GetDepressionRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::GetDepressionResponse>>(AsyncGetDepressionRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::GetDepressionStatusResponse>> PrepareAsyncGetDepressionStatus(::grpc::ClientContext* context, const ::city::economy::v2::GetDepressionStatusRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::GetDepressionStatusResponse>>(PrepareAsyncGetDepressionStatusRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::GetDepressionResponse>> PrepareAsyncGetDepression(::grpc::ClientContext* context, const ::city::economy::v2::GetDepressionRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::GetDepressionResponse>>(PrepareAsyncGetDepressionRaw(context, request, cq));
     }
-    virtual ::grpc::Status SetDepressionStatus(::grpc::ClientContext* context, const ::city::economy::v2::SetDepressionStatusRequest& request, ::city::economy::v2::SetDepressionStatusResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::SetDepressionStatusResponse>> AsyncSetDepressionStatus(::grpc::ClientContext* context, const ::city::economy::v2::SetDepressionStatusRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::SetDepressionStatusResponse>>(AsyncSetDepressionStatusRaw(context, request, cq));
+    virtual ::grpc::Status SetDepression(::grpc::ClientContext* context, const ::city::economy::v2::SetDepressionRequest& request, ::city::economy::v2::SetDepressionResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::SetDepressionResponse>> AsyncSetDepression(::grpc::ClientContext* context, const ::city::economy::v2::SetDepressionRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::SetDepressionResponse>>(AsyncSetDepressionRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::SetDepressionStatusResponse>> PrepareAsyncSetDepressionStatus(::grpc::ClientContext* context, const ::city::economy::v2::SetDepressionStatusRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::SetDepressionStatusResponse>>(PrepareAsyncSetDepressionStatusRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::SetDepressionResponse>> PrepareAsyncSetDepression(::grpc::ClientContext* context, const ::city::economy::v2::SetDepressionRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::SetDepressionResponse>>(PrepareAsyncSetDepressionRaw(context, request, cq));
     }
     // Locus of Control
     virtual ::grpc::Status GetLocusControl(::grpc::ClientContext* context, const ::city::economy::v2::GetLocusControlRequest& request, ::city::economy::v2::GetLocusControlResponse* response) = 0;
@@ -474,10 +474,10 @@ class OrgService final {
       virtual void SetIncomeCurrency(::grpc::ClientContext* context, const ::city::economy::v2::SetIncomeCurrencyRequest* request, ::city::economy::v2::SetIncomeCurrencyResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void SetIncomeCurrency(::grpc::ClientContext* context, const ::city::economy::v2::SetIncomeCurrencyRequest* request, ::city::economy::v2::SetIncomeCurrencyResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       // Depression
-      virtual void GetDepressionStatus(::grpc::ClientContext* context, const ::city::economy::v2::GetDepressionStatusRequest* request, ::city::economy::v2::GetDepressionStatusResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void GetDepressionStatus(::grpc::ClientContext* context, const ::city::economy::v2::GetDepressionStatusRequest* request, ::city::economy::v2::GetDepressionStatusResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      virtual void SetDepressionStatus(::grpc::ClientContext* context, const ::city::economy::v2::SetDepressionStatusRequest* request, ::city::economy::v2::SetDepressionStatusResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void SetDepressionStatus(::grpc::ClientContext* context, const ::city::economy::v2::SetDepressionStatusRequest* request, ::city::economy::v2::SetDepressionStatusResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void GetDepression(::grpc::ClientContext* context, const ::city::economy::v2::GetDepressionRequest* request, ::city::economy::v2::GetDepressionResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetDepression(::grpc::ClientContext* context, const ::city::economy::v2::GetDepressionRequest* request, ::city::economy::v2::GetDepressionResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void SetDepression(::grpc::ClientContext* context, const ::city::economy::v2::SetDepressionRequest* request, ::city::economy::v2::SetDepressionResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void SetDepression(::grpc::ClientContext* context, const ::city::economy::v2::SetDepressionRequest* request, ::city::economy::v2::SetDepressionResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       // Locus of Control
       virtual void GetLocusControl(::grpc::ClientContext* context, const ::city::economy::v2::GetLocusControlRequest* request, ::city::economy::v2::GetLocusControlResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetLocusControl(::grpc::ClientContext* context, const ::city::economy::v2::GetLocusControlRequest* request, ::city::economy::v2::GetLocusControlResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
@@ -567,10 +567,10 @@ class OrgService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::GetIncomeCurrencyResponse>* PrepareAsyncGetIncomeCurrencyRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetIncomeCurrencyRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::SetIncomeCurrencyResponse>* AsyncSetIncomeCurrencyRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetIncomeCurrencyRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::SetIncomeCurrencyResponse>* PrepareAsyncSetIncomeCurrencyRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetIncomeCurrencyRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::GetDepressionStatusResponse>* AsyncGetDepressionStatusRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetDepressionStatusRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::GetDepressionStatusResponse>* PrepareAsyncGetDepressionStatusRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetDepressionStatusRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::SetDepressionStatusResponse>* AsyncSetDepressionStatusRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetDepressionStatusRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::SetDepressionStatusResponse>* PrepareAsyncSetDepressionStatusRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetDepressionStatusRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::GetDepressionResponse>* AsyncGetDepressionRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetDepressionRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::GetDepressionResponse>* PrepareAsyncGetDepressionRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetDepressionRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::SetDepressionResponse>* AsyncSetDepressionRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetDepressionRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::SetDepressionResponse>* PrepareAsyncSetDepressionRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetDepressionRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::GetLocusControlResponse>* AsyncGetLocusControlRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetLocusControlRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::GetLocusControlResponse>* PrepareAsyncGetLocusControlRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetLocusControlRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::SetLocusControlResponse>* AsyncSetLocusControlRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetLocusControlRequest& request, ::grpc::CompletionQueue* cq) = 0;
@@ -842,19 +842,19 @@ class OrgService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetIncomeCurrencyResponse>> PrepareAsyncSetIncomeCurrency(::grpc::ClientContext* context, const ::city::economy::v2::SetIncomeCurrencyRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetIncomeCurrencyResponse>>(PrepareAsyncSetIncomeCurrencyRaw(context, request, cq));
     }
-    ::grpc::Status GetDepressionStatus(::grpc::ClientContext* context, const ::city::economy::v2::GetDepressionStatusRequest& request, ::city::economy::v2::GetDepressionStatusResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetDepressionStatusResponse>> AsyncGetDepressionStatus(::grpc::ClientContext* context, const ::city::economy::v2::GetDepressionStatusRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetDepressionStatusResponse>>(AsyncGetDepressionStatusRaw(context, request, cq));
+    ::grpc::Status GetDepression(::grpc::ClientContext* context, const ::city::economy::v2::GetDepressionRequest& request, ::city::economy::v2::GetDepressionResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetDepressionResponse>> AsyncGetDepression(::grpc::ClientContext* context, const ::city::economy::v2::GetDepressionRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetDepressionResponse>>(AsyncGetDepressionRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetDepressionStatusResponse>> PrepareAsyncGetDepressionStatus(::grpc::ClientContext* context, const ::city::economy::v2::GetDepressionStatusRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetDepressionStatusResponse>>(PrepareAsyncGetDepressionStatusRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetDepressionResponse>> PrepareAsyncGetDepression(::grpc::ClientContext* context, const ::city::economy::v2::GetDepressionRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetDepressionResponse>>(PrepareAsyncGetDepressionRaw(context, request, cq));
     }
-    ::grpc::Status SetDepressionStatus(::grpc::ClientContext* context, const ::city::economy::v2::SetDepressionStatusRequest& request, ::city::economy::v2::SetDepressionStatusResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetDepressionStatusResponse>> AsyncSetDepressionStatus(::grpc::ClientContext* context, const ::city::economy::v2::SetDepressionStatusRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetDepressionStatusResponse>>(AsyncSetDepressionStatusRaw(context, request, cq));
+    ::grpc::Status SetDepression(::grpc::ClientContext* context, const ::city::economy::v2::SetDepressionRequest& request, ::city::economy::v2::SetDepressionResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetDepressionResponse>> AsyncSetDepression(::grpc::ClientContext* context, const ::city::economy::v2::SetDepressionRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetDepressionResponse>>(AsyncSetDepressionRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetDepressionStatusResponse>> PrepareAsyncSetDepressionStatus(::grpc::ClientContext* context, const ::city::economy::v2::SetDepressionStatusRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetDepressionStatusResponse>>(PrepareAsyncSetDepressionStatusRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetDepressionResponse>> PrepareAsyncSetDepression(::grpc::ClientContext* context, const ::city::economy::v2::SetDepressionRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetDepressionResponse>>(PrepareAsyncSetDepressionRaw(context, request, cq));
     }
     ::grpc::Status GetLocusControl(::grpc::ClientContext* context, const ::city::economy::v2::GetLocusControlRequest& request, ::city::economy::v2::GetLocusControlResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetLocusControlResponse>> AsyncGetLocusControl(::grpc::ClientContext* context, const ::city::economy::v2::GetLocusControlRequest& request, ::grpc::CompletionQueue* cq) {
@@ -961,10 +961,10 @@ class OrgService final {
       void GetIncomeCurrency(::grpc::ClientContext* context, const ::city::economy::v2::GetIncomeCurrencyRequest* request, ::city::economy::v2::GetIncomeCurrencyResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       void SetIncomeCurrency(::grpc::ClientContext* context, const ::city::economy::v2::SetIncomeCurrencyRequest* request, ::city::economy::v2::SetIncomeCurrencyResponse* response, std::function<void(::grpc::Status)>) override;
       void SetIncomeCurrency(::grpc::ClientContext* context, const ::city::economy::v2::SetIncomeCurrencyRequest* request, ::city::economy::v2::SetIncomeCurrencyResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      void GetDepressionStatus(::grpc::ClientContext* context, const ::city::economy::v2::GetDepressionStatusRequest* request, ::city::economy::v2::GetDepressionStatusResponse* response, std::function<void(::grpc::Status)>) override;
-      void GetDepressionStatus(::grpc::ClientContext* context, const ::city::economy::v2::GetDepressionStatusRequest* request, ::city::economy::v2::GetDepressionStatusResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      void SetDepressionStatus(::grpc::ClientContext* context, const ::city::economy::v2::SetDepressionStatusRequest* request, ::city::economy::v2::SetDepressionStatusResponse* response, std::function<void(::grpc::Status)>) override;
-      void SetDepressionStatus(::grpc::ClientContext* context, const ::city::economy::v2::SetDepressionStatusRequest* request, ::city::economy::v2::SetDepressionStatusResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void GetDepression(::grpc::ClientContext* context, const ::city::economy::v2::GetDepressionRequest* request, ::city::economy::v2::GetDepressionResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetDepression(::grpc::ClientContext* context, const ::city::economy::v2::GetDepressionRequest* request, ::city::economy::v2::GetDepressionResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void SetDepression(::grpc::ClientContext* context, const ::city::economy::v2::SetDepressionRequest* request, ::city::economy::v2::SetDepressionResponse* response, std::function<void(::grpc::Status)>) override;
+      void SetDepression(::grpc::ClientContext* context, const ::city::economy::v2::SetDepressionRequest* request, ::city::economy::v2::SetDepressionResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       void GetLocusControl(::grpc::ClientContext* context, const ::city::economy::v2::GetLocusControlRequest* request, ::city::economy::v2::GetLocusControlResponse* response, std::function<void(::grpc::Status)>) override;
       void GetLocusControl(::grpc::ClientContext* context, const ::city::economy::v2::GetLocusControlRequest* request, ::city::economy::v2::GetLocusControlResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       void SetLocusControl(::grpc::ClientContext* context, const ::city::economy::v2::SetLocusControlRequest* request, ::city::economy::v2::SetLocusControlResponse* response, std::function<void(::grpc::Status)>) override;
@@ -1058,10 +1058,10 @@ class OrgService final {
     ::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetIncomeCurrencyResponse>* PrepareAsyncGetIncomeCurrencyRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetIncomeCurrencyRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetIncomeCurrencyResponse>* AsyncSetIncomeCurrencyRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetIncomeCurrencyRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetIncomeCurrencyResponse>* PrepareAsyncSetIncomeCurrencyRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetIncomeCurrencyRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetDepressionStatusResponse>* AsyncGetDepressionStatusRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetDepressionStatusRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetDepressionStatusResponse>* PrepareAsyncGetDepressionStatusRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetDepressionStatusRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetDepressionStatusResponse>* AsyncSetDepressionStatusRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetDepressionStatusRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetDepressionStatusResponse>* PrepareAsyncSetDepressionStatusRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetDepressionStatusRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetDepressionResponse>* AsyncGetDepressionRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetDepressionRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetDepressionResponse>* PrepareAsyncGetDepressionRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetDepressionRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetDepressionResponse>* AsyncSetDepressionRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetDepressionRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetDepressionResponse>* PrepareAsyncSetDepressionRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetDepressionRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetLocusControlResponse>* AsyncGetLocusControlRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetLocusControlRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetLocusControlResponse>* PrepareAsyncGetLocusControlRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetLocusControlRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetLocusControlResponse>* AsyncSetLocusControlRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetLocusControlRequest& request, ::grpc::CompletionQueue* cq) override;
@@ -1107,8 +1107,8 @@ class OrgService final {
     const ::grpc::internal::RpcMethod rpcmethod_SetConsumptionPropensity_;
     const ::grpc::internal::RpcMethod rpcmethod_GetIncomeCurrency_;
     const ::grpc::internal::RpcMethod rpcmethod_SetIncomeCurrency_;
-    const ::grpc::internal::RpcMethod rpcmethod_GetDepressionStatus_;
-    const ::grpc::internal::RpcMethod rpcmethod_SetDepressionStatus_;
+    const ::grpc::internal::RpcMethod rpcmethod_GetDepression_;
+    const ::grpc::internal::RpcMethod rpcmethod_SetDepression_;
     const ::grpc::internal::RpcMethod rpcmethod_GetLocusControl_;
     const ::grpc::internal::RpcMethod rpcmethod_SetLocusControl_;
     const ::grpc::internal::RpcMethod rpcmethod_GetWorkingHours_;
@@ -1185,8 +1185,8 @@ class OrgService final {
     virtual ::grpc::Status GetIncomeCurrency(::grpc::ServerContext* context, const ::city::economy::v2::GetIncomeCurrencyRequest* request, ::city::economy::v2::GetIncomeCurrencyResponse* response);
     virtual ::grpc::Status SetIncomeCurrency(::grpc::ServerContext* context, const ::city::economy::v2::SetIncomeCurrencyRequest* request, ::city::economy::v2::SetIncomeCurrencyResponse* response);
     // Depression
-    virtual ::grpc::Status GetDepressionStatus(::grpc::ServerContext* context, const ::city::economy::v2::GetDepressionStatusRequest* request, ::city::economy::v2::GetDepressionStatusResponse* response);
-    virtual ::grpc::Status SetDepressionStatus(::grpc::ServerContext* context, const ::city::economy::v2::SetDepressionStatusRequest* request, ::city::economy::v2::SetDepressionStatusResponse* response);
+    virtual ::grpc::Status GetDepression(::grpc::ServerContext* context, const ::city::economy::v2::GetDepressionRequest* request, ::city::economy::v2::GetDepressionResponse* response);
+    virtual ::grpc::Status SetDepression(::grpc::ServerContext* context, const ::city::economy::v2::SetDepressionRequest* request, ::city::economy::v2::SetDepressionResponse* response);
     // Locus of Control
     virtual ::grpc::Status GetLocusControl(::grpc::ServerContext* context, const ::city::economy::v2::GetLocusControlRequest* request, ::city::economy::v2::GetLocusControlResponse* response);
     virtual ::grpc::Status SetLocusControl(::grpc::ServerContext* context, const ::city::economy::v2::SetLocusControlRequest* request, ::city::economy::v2::SetLocusControlResponse* response);
@@ -1935,42 +1935,42 @@ class OrgService final {
     }
   };
   template <class BaseClass>
-  class WithAsyncMethod_GetDepressionStatus : public BaseClass {
+  class WithAsyncMethod_GetDepression : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithAsyncMethod_GetDepressionStatus() {
+    WithAsyncMethod_GetDepression() {
       ::grpc::Service::MarkMethodAsync(37);
     }
-    ~WithAsyncMethod_GetDepressionStatus() override {
+    ~WithAsyncMethod_GetDepression() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetDepressionStatus(::grpc::ServerContext* /*context*/, const ::city::economy::v2::GetDepressionStatusRequest* /*request*/, ::city::economy::v2::GetDepressionStatusResponse* /*response*/) override {
+    ::grpc::Status GetDepression(::grpc::ServerContext* /*context*/, const ::city::economy::v2::GetDepressionRequest* /*request*/, ::city::economy::v2::GetDepressionResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestGetDepressionStatus(::grpc::ServerContext* context, ::city::economy::v2::GetDepressionStatusRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::GetDepressionStatusResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestGetDepression(::grpc::ServerContext* context, ::city::economy::v2::GetDepressionRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::GetDepressionResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(37, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
-  class WithAsyncMethod_SetDepressionStatus : public BaseClass {
+  class WithAsyncMethod_SetDepression : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithAsyncMethod_SetDepressionStatus() {
+    WithAsyncMethod_SetDepression() {
       ::grpc::Service::MarkMethodAsync(38);
     }
-    ~WithAsyncMethod_SetDepressionStatus() override {
+    ~WithAsyncMethod_SetDepression() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status SetDepressionStatus(::grpc::ServerContext* /*context*/, const ::city::economy::v2::SetDepressionStatusRequest* /*request*/, ::city::economy::v2::SetDepressionStatusResponse* /*response*/) override {
+    ::grpc::Status SetDepression(::grpc::ServerContext* /*context*/, const ::city::economy::v2::SetDepressionRequest* /*request*/, ::city::economy::v2::SetDepressionResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestSetDepressionStatus(::grpc::ServerContext* context, ::city::economy::v2::SetDepressionStatusRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::SetDepressionStatusResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestSetDepression(::grpc::ServerContext* context, ::city::economy::v2::SetDepressionRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::SetDepressionResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(38, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -2054,7 +2054,7 @@ class OrgService final {
       ::grpc::Service::RequestAsyncUnary(42, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_AddOrg<WithAsyncMethod_RemoveOrg<WithAsyncMethod_AddAgent<WithAsyncMethod_RemoveAgent<WithAsyncMethod_GetNominalGDP<WithAsyncMethod_SetNominalGDP<WithAsyncMethod_GetRealGDP<WithAsyncMethod_SetRealGDP<WithAsyncMethod_GetUnemployment<WithAsyncMethod_SetUnemployment<WithAsyncMethod_GetWages<WithAsyncMethod_SetWages<WithAsyncMethod_GetPrices<WithAsyncMethod_SetPrices<WithAsyncMethod_GetInventory<WithAsyncMethod_SetInventory<WithAsyncMethod_GetPrice<WithAsyncMethod_SetPrice<WithAsyncMethod_GetCurrency<WithAsyncMethod_SetCurrency<WithAsyncMethod_GetInterestRate<WithAsyncMethod_SetInterestRate<WithAsyncMethod_GetBracketCutoffs<WithAsyncMethod_SetBracketCutoffs<WithAsyncMethod_GetBracketRates<WithAsyncMethod_SetBracketRates<WithAsyncMethod_CalculateTaxesDue<WithAsyncMethod_CalculateConsumption<WithAsyncMethod_CalculateInterest<WithAsyncMethod_SaveEconomyEntities<WithAsyncMethod_LoadEconomyEntities<WithAsyncMethod_GetConsumptionCurrency<WithAsyncMethod_SetConsumptionCurrency<WithAsyncMethod_GetConsumptionPropensity<WithAsyncMethod_SetConsumptionPropensity<WithAsyncMethod_GetIncomeCurrency<WithAsyncMethod_SetIncomeCurrency<WithAsyncMethod_GetDepressionStatus<WithAsyncMethod_SetDepressionStatus<WithAsyncMethod_GetLocusControl<WithAsyncMethod_SetLocusControl<WithAsyncMethod_GetWorkingHours<WithAsyncMethod_SetWorkingHours<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > AsyncService;
+  typedef WithAsyncMethod_AddOrg<WithAsyncMethod_RemoveOrg<WithAsyncMethod_AddAgent<WithAsyncMethod_RemoveAgent<WithAsyncMethod_GetNominalGDP<WithAsyncMethod_SetNominalGDP<WithAsyncMethod_GetRealGDP<WithAsyncMethod_SetRealGDP<WithAsyncMethod_GetUnemployment<WithAsyncMethod_SetUnemployment<WithAsyncMethod_GetWages<WithAsyncMethod_SetWages<WithAsyncMethod_GetPrices<WithAsyncMethod_SetPrices<WithAsyncMethod_GetInventory<WithAsyncMethod_SetInventory<WithAsyncMethod_GetPrice<WithAsyncMethod_SetPrice<WithAsyncMethod_GetCurrency<WithAsyncMethod_SetCurrency<WithAsyncMethod_GetInterestRate<WithAsyncMethod_SetInterestRate<WithAsyncMethod_GetBracketCutoffs<WithAsyncMethod_SetBracketCutoffs<WithAsyncMethod_GetBracketRates<WithAsyncMethod_SetBracketRates<WithAsyncMethod_CalculateTaxesDue<WithAsyncMethod_CalculateConsumption<WithAsyncMethod_CalculateInterest<WithAsyncMethod_SaveEconomyEntities<WithAsyncMethod_LoadEconomyEntities<WithAsyncMethod_GetConsumptionCurrency<WithAsyncMethod_SetConsumptionCurrency<WithAsyncMethod_GetConsumptionPropensity<WithAsyncMethod_SetConsumptionPropensity<WithAsyncMethod_GetIncomeCurrency<WithAsyncMethod_SetIncomeCurrency<WithAsyncMethod_GetDepression<WithAsyncMethod_SetDepression<WithAsyncMethod_GetLocusControl<WithAsyncMethod_SetLocusControl<WithAsyncMethod_GetWorkingHours<WithAsyncMethod_SetWorkingHours<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > AsyncService;
   template <class BaseClass>
   class WithCallbackMethod_AddOrg : public BaseClass {
    private:
@@ -3055,58 +3055,58 @@ class OrgService final {
       ::grpc::CallbackServerContext* /*context*/, const ::city::economy::v2::SetIncomeCurrencyRequest* /*request*/, ::city::economy::v2::SetIncomeCurrencyResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_GetDepressionStatus : public BaseClass {
+  class WithCallbackMethod_GetDepression : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_GetDepressionStatus() {
+    WithCallbackMethod_GetDepression() {
       ::grpc::Service::MarkMethodCallback(37,
-          new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::GetDepressionStatusRequest, ::city::economy::v2::GetDepressionStatusResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::GetDepressionRequest, ::city::economy::v2::GetDepressionResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::city::economy::v2::GetDepressionStatusRequest* request, ::city::economy::v2::GetDepressionStatusResponse* response) { return this->GetDepressionStatus(context, request, response); }));}
-    void SetMessageAllocatorFor_GetDepressionStatus(
-        ::grpc::MessageAllocator< ::city::economy::v2::GetDepressionStatusRequest, ::city::economy::v2::GetDepressionStatusResponse>* allocator) {
+                   ::grpc::CallbackServerContext* context, const ::city::economy::v2::GetDepressionRequest* request, ::city::economy::v2::GetDepressionResponse* response) { return this->GetDepression(context, request, response); }));}
+    void SetMessageAllocatorFor_GetDepression(
+        ::grpc::MessageAllocator< ::city::economy::v2::GetDepressionRequest, ::city::economy::v2::GetDepressionResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(37);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::GetDepressionStatusRequest, ::city::economy::v2::GetDepressionStatusResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::GetDepressionRequest, ::city::economy::v2::GetDepressionResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_GetDepressionStatus() override {
+    ~WithCallbackMethod_GetDepression() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetDepressionStatus(::grpc::ServerContext* /*context*/, const ::city::economy::v2::GetDepressionStatusRequest* /*request*/, ::city::economy::v2::GetDepressionStatusResponse* /*response*/) override {
+    ::grpc::Status GetDepression(::grpc::ServerContext* /*context*/, const ::city::economy::v2::GetDepressionRequest* /*request*/, ::city::economy::v2::GetDepressionResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::ServerUnaryReactor* GetDepressionStatus(
-      ::grpc::CallbackServerContext* /*context*/, const ::city::economy::v2::GetDepressionStatusRequest* /*request*/, ::city::economy::v2::GetDepressionStatusResponse* /*response*/)  { return nullptr; }
+    virtual ::grpc::ServerUnaryReactor* GetDepression(
+      ::grpc::CallbackServerContext* /*context*/, const ::city::economy::v2::GetDepressionRequest* /*request*/, ::city::economy::v2::GetDepressionResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_SetDepressionStatus : public BaseClass {
+  class WithCallbackMethod_SetDepression : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_SetDepressionStatus() {
+    WithCallbackMethod_SetDepression() {
       ::grpc::Service::MarkMethodCallback(38,
-          new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::SetDepressionStatusRequest, ::city::economy::v2::SetDepressionStatusResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::SetDepressionRequest, ::city::economy::v2::SetDepressionResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::city::economy::v2::SetDepressionStatusRequest* request, ::city::economy::v2::SetDepressionStatusResponse* response) { return this->SetDepressionStatus(context, request, response); }));}
-    void SetMessageAllocatorFor_SetDepressionStatus(
-        ::grpc::MessageAllocator< ::city::economy::v2::SetDepressionStatusRequest, ::city::economy::v2::SetDepressionStatusResponse>* allocator) {
+                   ::grpc::CallbackServerContext* context, const ::city::economy::v2::SetDepressionRequest* request, ::city::economy::v2::SetDepressionResponse* response) { return this->SetDepression(context, request, response); }));}
+    void SetMessageAllocatorFor_SetDepression(
+        ::grpc::MessageAllocator< ::city::economy::v2::SetDepressionRequest, ::city::economy::v2::SetDepressionResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(38);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::SetDepressionStatusRequest, ::city::economy::v2::SetDepressionStatusResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::SetDepressionRequest, ::city::economy::v2::SetDepressionResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_SetDepressionStatus() override {
+    ~WithCallbackMethod_SetDepression() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status SetDepressionStatus(::grpc::ServerContext* /*context*/, const ::city::economy::v2::SetDepressionStatusRequest* /*request*/, ::city::economy::v2::SetDepressionStatusResponse* /*response*/) override {
+    ::grpc::Status SetDepression(::grpc::ServerContext* /*context*/, const ::city::economy::v2::SetDepressionRequest* /*request*/, ::city::economy::v2::SetDepressionResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::ServerUnaryReactor* SetDepressionStatus(
-      ::grpc::CallbackServerContext* /*context*/, const ::city::economy::v2::SetDepressionStatusRequest* /*request*/, ::city::economy::v2::SetDepressionStatusResponse* /*response*/)  { return nullptr; }
+    virtual ::grpc::ServerUnaryReactor* SetDepression(
+      ::grpc::CallbackServerContext* /*context*/, const ::city::economy::v2::SetDepressionRequest* /*request*/, ::city::economy::v2::SetDepressionResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
   class WithCallbackMethod_GetLocusControl : public BaseClass {
@@ -3216,7 +3216,7 @@ class OrgService final {
     virtual ::grpc::ServerUnaryReactor* SetWorkingHours(
       ::grpc::CallbackServerContext* /*context*/, const ::city::economy::v2::SetWorkingHoursRequest* /*request*/, ::city::economy::v2::SetWorkingHoursResponse* /*response*/)  { return nullptr; }
   };
-  typedef WithCallbackMethod_AddOrg<WithCallbackMethod_RemoveOrg<WithCallbackMethod_AddAgent<WithCallbackMethod_RemoveAgent<WithCallbackMethod_GetNominalGDP<WithCallbackMethod_SetNominalGDP<WithCallbackMethod_GetRealGDP<WithCallbackMethod_SetRealGDP<WithCallbackMethod_GetUnemployment<WithCallbackMethod_SetUnemployment<WithCallbackMethod_GetWages<WithCallbackMethod_SetWages<WithCallbackMethod_GetPrices<WithCallbackMethod_SetPrices<WithCallbackMethod_GetInventory<WithCallbackMethod_SetInventory<WithCallbackMethod_GetPrice<WithCallbackMethod_SetPrice<WithCallbackMethod_GetCurrency<WithCallbackMethod_SetCurrency<WithCallbackMethod_GetInterestRate<WithCallbackMethod_SetInterestRate<WithCallbackMethod_GetBracketCutoffs<WithCallbackMethod_SetBracketCutoffs<WithCallbackMethod_GetBracketRates<WithCallbackMethod_SetBracketRates<WithCallbackMethod_CalculateTaxesDue<WithCallbackMethod_CalculateConsumption<WithCallbackMethod_CalculateInterest<WithCallbackMethod_SaveEconomyEntities<WithCallbackMethod_LoadEconomyEntities<WithCallbackMethod_GetConsumptionCurrency<WithCallbackMethod_SetConsumptionCurrency<WithCallbackMethod_GetConsumptionPropensity<WithCallbackMethod_SetConsumptionPropensity<WithCallbackMethod_GetIncomeCurrency<WithCallbackMethod_SetIncomeCurrency<WithCallbackMethod_GetDepressionStatus<WithCallbackMethod_SetDepressionStatus<WithCallbackMethod_GetLocusControl<WithCallbackMethod_SetLocusControl<WithCallbackMethod_GetWorkingHours<WithCallbackMethod_SetWorkingHours<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > CallbackService;
+  typedef WithCallbackMethod_AddOrg<WithCallbackMethod_RemoveOrg<WithCallbackMethod_AddAgent<WithCallbackMethod_RemoveAgent<WithCallbackMethod_GetNominalGDP<WithCallbackMethod_SetNominalGDP<WithCallbackMethod_GetRealGDP<WithCallbackMethod_SetRealGDP<WithCallbackMethod_GetUnemployment<WithCallbackMethod_SetUnemployment<WithCallbackMethod_GetWages<WithCallbackMethod_SetWages<WithCallbackMethod_GetPrices<WithCallbackMethod_SetPrices<WithCallbackMethod_GetInventory<WithCallbackMethod_SetInventory<WithCallbackMethod_GetPrice<WithCallbackMethod_SetPrice<WithCallbackMethod_GetCurrency<WithCallbackMethod_SetCurrency<WithCallbackMethod_GetInterestRate<WithCallbackMethod_SetInterestRate<WithCallbackMethod_GetBracketCutoffs<WithCallbackMethod_SetBracketCutoffs<WithCallbackMethod_GetBracketRates<WithCallbackMethod_SetBracketRates<WithCallbackMethod_CalculateTaxesDue<WithCallbackMethod_CalculateConsumption<WithCallbackMethod_CalculateInterest<WithCallbackMethod_SaveEconomyEntities<WithCallbackMethod_LoadEconomyEntities<WithCallbackMethod_GetConsumptionCurrency<WithCallbackMethod_SetConsumptionCurrency<WithCallbackMethod_GetConsumptionPropensity<WithCallbackMethod_SetConsumptionPropensity<WithCallbackMethod_GetIncomeCurrency<WithCallbackMethod_SetIncomeCurrency<WithCallbackMethod_GetDepression<WithCallbackMethod_SetDepression<WithCallbackMethod_GetLocusControl<WithCallbackMethod_SetLocusControl<WithCallbackMethod_GetWorkingHours<WithCallbackMethod_SetWorkingHours<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > CallbackService;
   typedef CallbackService ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_AddOrg : public BaseClass {
@@ -3848,35 +3848,35 @@ class OrgService final {
     }
   };
   template <class BaseClass>
-  class WithGenericMethod_GetDepressionStatus : public BaseClass {
+  class WithGenericMethod_GetDepression : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithGenericMethod_GetDepressionStatus() {
+    WithGenericMethod_GetDepression() {
       ::grpc::Service::MarkMethodGeneric(37);
     }
-    ~WithGenericMethod_GetDepressionStatus() override {
+    ~WithGenericMethod_GetDepression() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetDepressionStatus(::grpc::ServerContext* /*context*/, const ::city::economy::v2::GetDepressionStatusRequest* /*request*/, ::city::economy::v2::GetDepressionStatusResponse* /*response*/) override {
+    ::grpc::Status GetDepression(::grpc::ServerContext* /*context*/, const ::city::economy::v2::GetDepressionRequest* /*request*/, ::city::economy::v2::GetDepressionResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
   };
   template <class BaseClass>
-  class WithGenericMethod_SetDepressionStatus : public BaseClass {
+  class WithGenericMethod_SetDepression : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithGenericMethod_SetDepressionStatus() {
+    WithGenericMethod_SetDepression() {
       ::grpc::Service::MarkMethodGeneric(38);
     }
-    ~WithGenericMethod_SetDepressionStatus() override {
+    ~WithGenericMethod_SetDepression() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status SetDepressionStatus(::grpc::ServerContext* /*context*/, const ::city::economy::v2::SetDepressionStatusRequest* /*request*/, ::city::economy::v2::SetDepressionStatusResponse* /*response*/) override {
+    ::grpc::Status SetDepression(::grpc::ServerContext* /*context*/, const ::city::economy::v2::SetDepressionRequest* /*request*/, ::city::economy::v2::SetDepressionResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -4690,42 +4690,42 @@ class OrgService final {
     }
   };
   template <class BaseClass>
-  class WithRawMethod_GetDepressionStatus : public BaseClass {
+  class WithRawMethod_GetDepression : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawMethod_GetDepressionStatus() {
+    WithRawMethod_GetDepression() {
       ::grpc::Service::MarkMethodRaw(37);
     }
-    ~WithRawMethod_GetDepressionStatus() override {
+    ~WithRawMethod_GetDepression() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetDepressionStatus(::grpc::ServerContext* /*context*/, const ::city::economy::v2::GetDepressionStatusRequest* /*request*/, ::city::economy::v2::GetDepressionStatusResponse* /*response*/) override {
+    ::grpc::Status GetDepression(::grpc::ServerContext* /*context*/, const ::city::economy::v2::GetDepressionRequest* /*request*/, ::city::economy::v2::GetDepressionResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestGetDepressionStatus(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestGetDepression(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(37, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
-  class WithRawMethod_SetDepressionStatus : public BaseClass {
+  class WithRawMethod_SetDepression : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawMethod_SetDepressionStatus() {
+    WithRawMethod_SetDepression() {
       ::grpc::Service::MarkMethodRaw(38);
     }
-    ~WithRawMethod_SetDepressionStatus() override {
+    ~WithRawMethod_SetDepression() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status SetDepressionStatus(::grpc::ServerContext* /*context*/, const ::city::economy::v2::SetDepressionStatusRequest* /*request*/, ::city::economy::v2::SetDepressionStatusResponse* /*response*/) override {
+    ::grpc::Status SetDepression(::grpc::ServerContext* /*context*/, const ::city::economy::v2::SetDepressionRequest* /*request*/, ::city::economy::v2::SetDepressionResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestSetDepressionStatus(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestSetDepression(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(38, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -5624,47 +5624,47 @@ class OrgService final {
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_GetDepressionStatus : public BaseClass {
+  class WithRawCallbackMethod_GetDepression : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_GetDepressionStatus() {
+    WithRawCallbackMethod_GetDepression() {
       ::grpc::Service::MarkMethodRawCallback(37,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetDepressionStatus(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetDepression(context, request, response); }));
     }
-    ~WithRawCallbackMethod_GetDepressionStatus() override {
+    ~WithRawCallbackMethod_GetDepression() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetDepressionStatus(::grpc::ServerContext* /*context*/, const ::city::economy::v2::GetDepressionStatusRequest* /*request*/, ::city::economy::v2::GetDepressionStatusResponse* /*response*/) override {
+    ::grpc::Status GetDepression(::grpc::ServerContext* /*context*/, const ::city::economy::v2::GetDepressionRequest* /*request*/, ::city::economy::v2::GetDepressionResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::ServerUnaryReactor* GetDepressionStatus(
+    virtual ::grpc::ServerUnaryReactor* GetDepression(
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_SetDepressionStatus : public BaseClass {
+  class WithRawCallbackMethod_SetDepression : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_SetDepressionStatus() {
+    WithRawCallbackMethod_SetDepression() {
       ::grpc::Service::MarkMethodRawCallback(38,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->SetDepressionStatus(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->SetDepression(context, request, response); }));
     }
-    ~WithRawCallbackMethod_SetDepressionStatus() override {
+    ~WithRawCallbackMethod_SetDepression() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status SetDepressionStatus(::grpc::ServerContext* /*context*/, const ::city::economy::v2::SetDepressionStatusRequest* /*request*/, ::city::economy::v2::SetDepressionStatusResponse* /*response*/) override {
+    ::grpc::Status SetDepression(::grpc::ServerContext* /*context*/, const ::city::economy::v2::SetDepressionRequest* /*request*/, ::city::economy::v2::SetDepressionResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::ServerUnaryReactor* SetDepressionStatus(
+    virtual ::grpc::ServerUnaryReactor* SetDepression(
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
@@ -6755,58 +6755,58 @@ class OrgService final {
     virtual ::grpc::Status StreamedSetIncomeCurrency(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::city::economy::v2::SetIncomeCurrencyRequest,::city::economy::v2::SetIncomeCurrencyResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
-  class WithStreamedUnaryMethod_GetDepressionStatus : public BaseClass {
+  class WithStreamedUnaryMethod_GetDepression : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithStreamedUnaryMethod_GetDepressionStatus() {
+    WithStreamedUnaryMethod_GetDepression() {
       ::grpc::Service::MarkMethodStreamed(37,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::city::economy::v2::GetDepressionStatusRequest, ::city::economy::v2::GetDepressionStatusResponse>(
+          ::city::economy::v2::GetDepressionRequest, ::city::economy::v2::GetDepressionResponse>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::city::economy::v2::GetDepressionStatusRequest, ::city::economy::v2::GetDepressionStatusResponse>* streamer) {
-                       return this->StreamedGetDepressionStatus(context,
+                     ::city::economy::v2::GetDepressionRequest, ::city::economy::v2::GetDepressionResponse>* streamer) {
+                       return this->StreamedGetDepression(context,
                          streamer);
                   }));
     }
-    ~WithStreamedUnaryMethod_GetDepressionStatus() override {
+    ~WithStreamedUnaryMethod_GetDepression() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status GetDepressionStatus(::grpc::ServerContext* /*context*/, const ::city::economy::v2::GetDepressionStatusRequest* /*request*/, ::city::economy::v2::GetDepressionStatusResponse* /*response*/) override {
+    ::grpc::Status GetDepression(::grpc::ServerContext* /*context*/, const ::city::economy::v2::GetDepressionRequest* /*request*/, ::city::economy::v2::GetDepressionResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedGetDepressionStatus(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::city::economy::v2::GetDepressionStatusRequest,::city::economy::v2::GetDepressionStatusResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedGetDepression(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::city::economy::v2::GetDepressionRequest,::city::economy::v2::GetDepressionResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
-  class WithStreamedUnaryMethod_SetDepressionStatus : public BaseClass {
+  class WithStreamedUnaryMethod_SetDepression : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithStreamedUnaryMethod_SetDepressionStatus() {
+    WithStreamedUnaryMethod_SetDepression() {
       ::grpc::Service::MarkMethodStreamed(38,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::city::economy::v2::SetDepressionStatusRequest, ::city::economy::v2::SetDepressionStatusResponse>(
+          ::city::economy::v2::SetDepressionRequest, ::city::economy::v2::SetDepressionResponse>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::city::economy::v2::SetDepressionStatusRequest, ::city::economy::v2::SetDepressionStatusResponse>* streamer) {
-                       return this->StreamedSetDepressionStatus(context,
+                     ::city::economy::v2::SetDepressionRequest, ::city::economy::v2::SetDepressionResponse>* streamer) {
+                       return this->StreamedSetDepression(context,
                          streamer);
                   }));
     }
-    ~WithStreamedUnaryMethod_SetDepressionStatus() override {
+    ~WithStreamedUnaryMethod_SetDepression() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status SetDepressionStatus(::grpc::ServerContext* /*context*/, const ::city::economy::v2::SetDepressionStatusRequest* /*request*/, ::city::economy::v2::SetDepressionStatusResponse* /*response*/) override {
+    ::grpc::Status SetDepression(::grpc::ServerContext* /*context*/, const ::city::economy::v2::SetDepressionRequest* /*request*/, ::city::economy::v2::SetDepressionResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedSetDepressionStatus(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::city::economy::v2::SetDepressionStatusRequest,::city::economy::v2::SetDepressionStatusResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedSetDepression(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::city::economy::v2::SetDepressionRequest,::city::economy::v2::SetDepressionResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_GetLocusControl : public BaseClass {
@@ -6916,9 +6916,9 @@ class OrgService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedSetWorkingHours(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::city::economy::v2::SetWorkingHoursRequest,::city::economy::v2::SetWorkingHoursResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_AddOrg<WithStreamedUnaryMethod_RemoveOrg<WithStreamedUnaryMethod_AddAgent<WithStreamedUnaryMethod_RemoveAgent<WithStreamedUnaryMethod_GetNominalGDP<WithStreamedUnaryMethod_SetNominalGDP<WithStreamedUnaryMethod_GetRealGDP<WithStreamedUnaryMethod_SetRealGDP<WithStreamedUnaryMethod_GetUnemployment<WithStreamedUnaryMethod_SetUnemployment<WithStreamedUnaryMethod_GetWages<WithStreamedUnaryMethod_SetWages<WithStreamedUnaryMethod_GetPrices<WithStreamedUnaryMethod_SetPrices<WithStreamedUnaryMethod_GetInventory<WithStreamedUnaryMethod_SetInventory<WithStreamedUnaryMethod_GetPrice<WithStreamedUnaryMethod_SetPrice<WithStreamedUnaryMethod_GetCurrency<WithStreamedUnaryMethod_SetCurrency<WithStreamedUnaryMethod_GetInterestRate<WithStreamedUnaryMethod_SetInterestRate<WithStreamedUnaryMethod_GetBracketCutoffs<WithStreamedUnaryMethod_SetBracketCutoffs<WithStreamedUnaryMethod_GetBracketRates<WithStreamedUnaryMethod_SetBracketRates<WithStreamedUnaryMethod_CalculateTaxesDue<WithStreamedUnaryMethod_CalculateConsumption<WithStreamedUnaryMethod_CalculateInterest<WithStreamedUnaryMethod_SaveEconomyEntities<WithStreamedUnaryMethod_LoadEconomyEntities<WithStreamedUnaryMethod_GetConsumptionCurrency<WithStreamedUnaryMethod_SetConsumptionCurrency<WithStreamedUnaryMethod_GetConsumptionPropensity<WithStreamedUnaryMethod_SetConsumptionPropensity<WithStreamedUnaryMethod_GetIncomeCurrency<WithStreamedUnaryMethod_SetIncomeCurrency<WithStreamedUnaryMethod_GetDepressionStatus<WithStreamedUnaryMethod_SetDepressionStatus<WithStreamedUnaryMethod_GetLocusControl<WithStreamedUnaryMethod_SetLocusControl<WithStreamedUnaryMethod_GetWorkingHours<WithStreamedUnaryMethod_SetWorkingHours<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedUnaryService;
+  typedef WithStreamedUnaryMethod_AddOrg<WithStreamedUnaryMethod_RemoveOrg<WithStreamedUnaryMethod_AddAgent<WithStreamedUnaryMethod_RemoveAgent<WithStreamedUnaryMethod_GetNominalGDP<WithStreamedUnaryMethod_SetNominalGDP<WithStreamedUnaryMethod_GetRealGDP<WithStreamedUnaryMethod_SetRealGDP<WithStreamedUnaryMethod_GetUnemployment<WithStreamedUnaryMethod_SetUnemployment<WithStreamedUnaryMethod_GetWages<WithStreamedUnaryMethod_SetWages<WithStreamedUnaryMethod_GetPrices<WithStreamedUnaryMethod_SetPrices<WithStreamedUnaryMethod_GetInventory<WithStreamedUnaryMethod_SetInventory<WithStreamedUnaryMethod_GetPrice<WithStreamedUnaryMethod_SetPrice<WithStreamedUnaryMethod_GetCurrency<WithStreamedUnaryMethod_SetCurrency<WithStreamedUnaryMethod_GetInterestRate<WithStreamedUnaryMethod_SetInterestRate<WithStreamedUnaryMethod_GetBracketCutoffs<WithStreamedUnaryMethod_SetBracketCutoffs<WithStreamedUnaryMethod_GetBracketRates<WithStreamedUnaryMethod_SetBracketRates<WithStreamedUnaryMethod_CalculateTaxesDue<WithStreamedUnaryMethod_CalculateConsumption<WithStreamedUnaryMethod_CalculateInterest<WithStreamedUnaryMethod_SaveEconomyEntities<WithStreamedUnaryMethod_LoadEconomyEntities<WithStreamedUnaryMethod_GetConsumptionCurrency<WithStreamedUnaryMethod_SetConsumptionCurrency<WithStreamedUnaryMethod_GetConsumptionPropensity<WithStreamedUnaryMethod_SetConsumptionPropensity<WithStreamedUnaryMethod_GetIncomeCurrency<WithStreamedUnaryMethod_SetIncomeCurrency<WithStreamedUnaryMethod_GetDepression<WithStreamedUnaryMethod_SetDepression<WithStreamedUnaryMethod_GetLocusControl<WithStreamedUnaryMethod_SetLocusControl<WithStreamedUnaryMethod_GetWorkingHours<WithStreamedUnaryMethod_SetWorkingHours<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_AddOrg<WithStreamedUnaryMethod_RemoveOrg<WithStreamedUnaryMethod_AddAgent<WithStreamedUnaryMethod_RemoveAgent<WithStreamedUnaryMethod_GetNominalGDP<WithStreamedUnaryMethod_SetNominalGDP<WithStreamedUnaryMethod_GetRealGDP<WithStreamedUnaryMethod_SetRealGDP<WithStreamedUnaryMethod_GetUnemployment<WithStreamedUnaryMethod_SetUnemployment<WithStreamedUnaryMethod_GetWages<WithStreamedUnaryMethod_SetWages<WithStreamedUnaryMethod_GetPrices<WithStreamedUnaryMethod_SetPrices<WithStreamedUnaryMethod_GetInventory<WithStreamedUnaryMethod_SetInventory<WithStreamedUnaryMethod_GetPrice<WithStreamedUnaryMethod_SetPrice<WithStreamedUnaryMethod_GetCurrency<WithStreamedUnaryMethod_SetCurrency<WithStreamedUnaryMethod_GetInterestRate<WithStreamedUnaryMethod_SetInterestRate<WithStreamedUnaryMethod_GetBracketCutoffs<WithStreamedUnaryMethod_SetBracketCutoffs<WithStreamedUnaryMethod_GetBracketRates<WithStreamedUnaryMethod_SetBracketRates<WithStreamedUnaryMethod_CalculateTaxesDue<WithStreamedUnaryMethod_CalculateConsumption<WithStreamedUnaryMethod_CalculateInterest<WithStreamedUnaryMethod_SaveEconomyEntities<WithStreamedUnaryMethod_LoadEconomyEntities<WithStreamedUnaryMethod_GetConsumptionCurrency<WithStreamedUnaryMethod_SetConsumptionCurrency<WithStreamedUnaryMethod_GetConsumptionPropensity<WithStreamedUnaryMethod_SetConsumptionPropensity<WithStreamedUnaryMethod_GetIncomeCurrency<WithStreamedUnaryMethod_SetIncomeCurrency<WithStreamedUnaryMethod_GetDepressionStatus<WithStreamedUnaryMethod_SetDepressionStatus<WithStreamedUnaryMethod_GetLocusControl<WithStreamedUnaryMethod_SetLocusControl<WithStreamedUnaryMethod_GetWorkingHours<WithStreamedUnaryMethod_SetWorkingHours<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_AddOrg<WithStreamedUnaryMethod_RemoveOrg<WithStreamedUnaryMethod_AddAgent<WithStreamedUnaryMethod_RemoveAgent<WithStreamedUnaryMethod_GetNominalGDP<WithStreamedUnaryMethod_SetNominalGDP<WithStreamedUnaryMethod_GetRealGDP<WithStreamedUnaryMethod_SetRealGDP<WithStreamedUnaryMethod_GetUnemployment<WithStreamedUnaryMethod_SetUnemployment<WithStreamedUnaryMethod_GetWages<WithStreamedUnaryMethod_SetWages<WithStreamedUnaryMethod_GetPrices<WithStreamedUnaryMethod_SetPrices<WithStreamedUnaryMethod_GetInventory<WithStreamedUnaryMethod_SetInventory<WithStreamedUnaryMethod_GetPrice<WithStreamedUnaryMethod_SetPrice<WithStreamedUnaryMethod_GetCurrency<WithStreamedUnaryMethod_SetCurrency<WithStreamedUnaryMethod_GetInterestRate<WithStreamedUnaryMethod_SetInterestRate<WithStreamedUnaryMethod_GetBracketCutoffs<WithStreamedUnaryMethod_SetBracketCutoffs<WithStreamedUnaryMethod_GetBracketRates<WithStreamedUnaryMethod_SetBracketRates<WithStreamedUnaryMethod_CalculateTaxesDue<WithStreamedUnaryMethod_CalculateConsumption<WithStreamedUnaryMethod_CalculateInterest<WithStreamedUnaryMethod_SaveEconomyEntities<WithStreamedUnaryMethod_LoadEconomyEntities<WithStreamedUnaryMethod_GetConsumptionCurrency<WithStreamedUnaryMethod_SetConsumptionCurrency<WithStreamedUnaryMethod_GetConsumptionPropensity<WithStreamedUnaryMethod_SetConsumptionPropensity<WithStreamedUnaryMethod_GetIncomeCurrency<WithStreamedUnaryMethod_SetIncomeCurrency<WithStreamedUnaryMethod_GetDepression<WithStreamedUnaryMethod_SetDepression<WithStreamedUnaryMethod_GetLocusControl<WithStreamedUnaryMethod_SetLocusControl<WithStreamedUnaryMethod_GetWorkingHours<WithStreamedUnaryMethod_SetWorkingHours<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedService;
 };
 
 }  // namespace v2

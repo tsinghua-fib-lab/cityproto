@@ -169,7 +169,7 @@ type AddPersonResponse struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// 新增的person分配得到的ID
 	// The ID assigned to the newly added person
-	PersonId      int32 `protobuf:"varint,1,opt,name=person_id,json=personId,proto3" json:"person_id,omitempty" db:"person_id" yaml:"person_id" bson:"person_id"`
+	PersonId      int32 `protobuf:"varint,1,opt,name=person_id,json=personId,proto3" json:"person_id,omitempty" yaml:"person_id" bson:"person_id" db:"person_id"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -318,7 +318,7 @@ type GetPersonsRequest struct {
 	ExcludeStatuses []Status `protobuf:"varint,2,rep,packed,name=exclude_statuses,json=excludeStatuses,proto3,enum=city.person.v1.Status" json:"exclude_statuses,omitempty" yaml:"exclude_statuses" bson:"exclude_statuses" db:"exclude_statuses"`
 	// 设置是否返回base信息
 	// Set whether to return base information
-	ReturnBase    bool `protobuf:"varint,3,opt,name=return_base,json=returnBase,proto3" json:"return_base,omitempty" bson:"return_base" db:"return_base" yaml:"return_base"`
+	ReturnBase    bool `protobuf:"varint,3,opt,name=return_base,json=returnBase,proto3" json:"return_base,omitempty" db:"return_base" yaml:"return_base" bson:"return_base"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -582,7 +582,7 @@ type GetAllVehiclesResponse struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// 所有车辆的信息
 	// Information of all vehicles
-	Vehicles      []*VehicleRuntime `protobuf:"bytes,1,rep,name=vehicles,proto3" json:"vehicles,omitempty" db:"vehicles" yaml:"vehicles" bson:"vehicles"`
+	Vehicles      []*VehicleRuntime `protobuf:"bytes,1,rep,name=vehicles,proto3" json:"vehicles,omitempty" yaml:"vehicles" bson:"vehicles" db:"vehicles"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -632,7 +632,7 @@ type ResetPersonPositionRequest struct {
 	PersonId int32 `protobuf:"varint,1,opt,name=person_id,json=personId,proto3" json:"person_id,omitempty" bson:"person_id" db:"person_id" yaml:"person_id"`
 	// 重置位置
 	// reset position
-	Position      *v21.Position `protobuf:"bytes,2,opt,name=position,proto3" json:"position,omitempty" bson:"position" db:"position" yaml:"position"`
+	Position      *v21.Position `protobuf:"bytes,2,opt,name=position,proto3" json:"position,omitempty" yaml:"position" bson:"position" db:"position"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -725,7 +725,7 @@ type SetControlledVehicleIDsRequest struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// 由外部控制行为的vehicle id列表
 	// List of vehicle ids controlled by external behavior
-	VehicleIds    []int32 `protobuf:"varint,1,rep,packed,name=vehicle_ids,json=vehicleIds,proto3" json:"vehicle_ids,omitempty" yaml:"vehicle_ids" bson:"vehicle_ids" db:"vehicle_ids"`
+	VehicleIds    []int32 `protobuf:"varint,1,rep,packed,name=vehicle_ids,json=vehicleIds,proto3" json:"vehicle_ids,omitempty" db:"vehicle_ids" yaml:"vehicle_ids" bson:"vehicle_ids"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -897,7 +897,7 @@ type SetControlledVehicleActionsRequest struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// 由外部控制行为的vehicle的行为
 	// Behavior of vehicle controlled by external behavior
-	VehicleActions []*VehicleAction `protobuf:"bytes,1,rep,name=vehicle_actions,json=vehicleActions,proto3" json:"vehicle_actions,omitempty" db:"vehicle_actions" yaml:"vehicle_actions" bson:"vehicle_actions"`
+	VehicleActions []*VehicleAction `protobuf:"bytes,1,rep,name=vehicle_actions,json=vehicleActions,proto3" json:"vehicle_actions,omitempty" yaml:"vehicle_actions" bson:"vehicle_actions" db:"vehicle_actions"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }

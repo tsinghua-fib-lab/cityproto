@@ -611,7 +611,7 @@ class SetIncomeCurrencyResponse(_message.Message):
     def __init__(self) -> None:
         ...
 
-class GetDepressionStatusRequest(_message.Message):
+class GetDepressionRequest(_message.Message):
     __slots__ = ['org_id']
     ORG_ID_FIELD_NUMBER: _ClassVar[int]
     org_id: int
@@ -619,7 +619,7 @@ class GetDepressionStatusRequest(_message.Message):
     def __init__(self, org_id: _Optional[int]=...) -> None:
         ...
 
-class GetDepressionStatusResponse(_message.Message):
+class GetDepressionResponse(_message.Message):
     __slots__ = ['depression']
     DEPRESSION_FIELD_NUMBER: _ClassVar[int]
     depression: _containers.RepeatedScalarFieldContainer[float]
@@ -627,7 +627,7 @@ class GetDepressionStatusResponse(_message.Message):
     def __init__(self, depression: _Optional[_Iterable[float]]=...) -> None:
         ...
 
-class SetDepressionStatusRequest(_message.Message):
+class SetDepressionRequest(_message.Message):
     __slots__ = ['org_id', 'depression']
     ORG_ID_FIELD_NUMBER: _ClassVar[int]
     DEPRESSION_FIELD_NUMBER: _ClassVar[int]
@@ -637,7 +637,7 @@ class SetDepressionStatusRequest(_message.Message):
     def __init__(self, org_id: _Optional[int]=..., depression: _Optional[_Iterable[float]]=...) -> None:
         ...
 
-class SetDepressionStatusResponse(_message.Message):
+class SetDepressionResponse(_message.Message):
     __slots__ = []
 
     def __init__(self) -> None:

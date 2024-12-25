@@ -128,12 +128,12 @@ const (
 	// OrgServiceSetIncomeCurrencyProcedure is the fully-qualified name of the OrgService's
 	// SetIncomeCurrency RPC.
 	OrgServiceSetIncomeCurrencyProcedure = "/city.economy.v2.OrgService/SetIncomeCurrency"
-	// OrgServiceGetDepressionStatusProcedure is the fully-qualified name of the OrgService's
-	// GetDepressionStatus RPC.
-	OrgServiceGetDepressionStatusProcedure = "/city.economy.v2.OrgService/GetDepressionStatus"
-	// OrgServiceSetDepressionStatusProcedure is the fully-qualified name of the OrgService's
-	// SetDepressionStatus RPC.
-	OrgServiceSetDepressionStatusProcedure = "/city.economy.v2.OrgService/SetDepressionStatus"
+	// OrgServiceGetDepressionProcedure is the fully-qualified name of the OrgService's GetDepression
+	// RPC.
+	OrgServiceGetDepressionProcedure = "/city.economy.v2.OrgService/GetDepression"
+	// OrgServiceSetDepressionProcedure is the fully-qualified name of the OrgService's SetDepression
+	// RPC.
+	OrgServiceSetDepressionProcedure = "/city.economy.v2.OrgService/SetDepression"
 	// OrgServiceGetLocusControlProcedure is the fully-qualified name of the OrgService's
 	// GetLocusControl RPC.
 	OrgServiceGetLocusControlProcedure = "/city.economy.v2.OrgService/GetLocusControl"
@@ -188,8 +188,8 @@ var (
 	orgServiceSetConsumptionPropensityMethodDescriptor = orgServiceServiceDescriptor.Methods().ByName("SetConsumptionPropensity")
 	orgServiceGetIncomeCurrencyMethodDescriptor        = orgServiceServiceDescriptor.Methods().ByName("GetIncomeCurrency")
 	orgServiceSetIncomeCurrencyMethodDescriptor        = orgServiceServiceDescriptor.Methods().ByName("SetIncomeCurrency")
-	orgServiceGetDepressionStatusMethodDescriptor      = orgServiceServiceDescriptor.Methods().ByName("GetDepressionStatus")
-	orgServiceSetDepressionStatusMethodDescriptor      = orgServiceServiceDescriptor.Methods().ByName("SetDepressionStatus")
+	orgServiceGetDepressionMethodDescriptor            = orgServiceServiceDescriptor.Methods().ByName("GetDepression")
+	orgServiceSetDepressionMethodDescriptor            = orgServiceServiceDescriptor.Methods().ByName("SetDepression")
 	orgServiceGetLocusControlMethodDescriptor          = orgServiceServiceDescriptor.Methods().ByName("GetLocusControl")
 	orgServiceSetLocusControlMethodDescriptor          = orgServiceServiceDescriptor.Methods().ByName("SetLocusControl")
 	orgServiceGetWorkingHoursMethodDescriptor          = orgServiceServiceDescriptor.Methods().ByName("GetWorkingHours")
@@ -263,8 +263,8 @@ type OrgServiceClient interface {
 	GetIncomeCurrency(context.Context, *connect.Request[v2.GetIncomeCurrencyRequest]) (*connect.Response[v2.GetIncomeCurrencyResponse], error)
 	SetIncomeCurrency(context.Context, *connect.Request[v2.SetIncomeCurrencyRequest]) (*connect.Response[v2.SetIncomeCurrencyResponse], error)
 	// Depression
-	GetDepressionStatus(context.Context, *connect.Request[v2.GetDepressionStatusRequest]) (*connect.Response[v2.GetDepressionStatusResponse], error)
-	SetDepressionStatus(context.Context, *connect.Request[v2.SetDepressionStatusRequest]) (*connect.Response[v2.SetDepressionStatusResponse], error)
+	GetDepression(context.Context, *connect.Request[v2.GetDepressionRequest]) (*connect.Response[v2.GetDepressionResponse], error)
+	SetDepression(context.Context, *connect.Request[v2.SetDepressionRequest]) (*connect.Response[v2.SetDepressionResponse], error)
 	// Locus of Control
 	GetLocusControl(context.Context, *connect.Request[v2.GetLocusControlRequest]) (*connect.Response[v2.GetLocusControlResponse], error)
 	SetLocusControl(context.Context, *connect.Request[v2.SetLocusControlRequest]) (*connect.Response[v2.SetLocusControlResponse], error)
@@ -505,16 +505,16 @@ func NewOrgServiceClient(httpClient connect.HTTPClient, baseURL string, opts ...
 			connect.WithSchema(orgServiceSetIncomeCurrencyMethodDescriptor),
 			connect.WithClientOptions(opts...),
 		),
-		getDepressionStatus: connect.NewClient[v2.GetDepressionStatusRequest, v2.GetDepressionStatusResponse](
+		getDepression: connect.NewClient[v2.GetDepressionRequest, v2.GetDepressionResponse](
 			httpClient,
-			baseURL+OrgServiceGetDepressionStatusProcedure,
-			connect.WithSchema(orgServiceGetDepressionStatusMethodDescriptor),
+			baseURL+OrgServiceGetDepressionProcedure,
+			connect.WithSchema(orgServiceGetDepressionMethodDescriptor),
 			connect.WithClientOptions(opts...),
 		),
-		setDepressionStatus: connect.NewClient[v2.SetDepressionStatusRequest, v2.SetDepressionStatusResponse](
+		setDepression: connect.NewClient[v2.SetDepressionRequest, v2.SetDepressionResponse](
 			httpClient,
-			baseURL+OrgServiceSetDepressionStatusProcedure,
-			connect.WithSchema(orgServiceSetDepressionStatusMethodDescriptor),
+			baseURL+OrgServiceSetDepressionProcedure,
+			connect.WithSchema(orgServiceSetDepressionMethodDescriptor),
 			connect.WithClientOptions(opts...),
 		),
 		getLocusControl: connect.NewClient[v2.GetLocusControlRequest, v2.GetLocusControlResponse](
@@ -583,8 +583,8 @@ type orgServiceClient struct {
 	setConsumptionPropensity *connect.Client[v2.SetConsumptionPropensityRequest, v2.SetConsumptionPropensityResponse]
 	getIncomeCurrency        *connect.Client[v2.GetIncomeCurrencyRequest, v2.GetIncomeCurrencyResponse]
 	setIncomeCurrency        *connect.Client[v2.SetIncomeCurrencyRequest, v2.SetIncomeCurrencyResponse]
-	getDepressionStatus      *connect.Client[v2.GetDepressionStatusRequest, v2.GetDepressionStatusResponse]
-	setDepressionStatus      *connect.Client[v2.SetDepressionStatusRequest, v2.SetDepressionStatusResponse]
+	getDepression            *connect.Client[v2.GetDepressionRequest, v2.GetDepressionResponse]
+	setDepression            *connect.Client[v2.SetDepressionRequest, v2.SetDepressionResponse]
 	getLocusControl          *connect.Client[v2.GetLocusControlRequest, v2.GetLocusControlResponse]
 	setLocusControl          *connect.Client[v2.SetLocusControlRequest, v2.SetLocusControlResponse]
 	getWorkingHours          *connect.Client[v2.GetWorkingHoursRequest, v2.GetWorkingHoursResponse]
@@ -776,14 +776,14 @@ func (c *orgServiceClient) SetIncomeCurrency(ctx context.Context, req *connect.R
 	return c.setIncomeCurrency.CallUnary(ctx, req)
 }
 
-// GetDepressionStatus calls city.economy.v2.OrgService.GetDepressionStatus.
-func (c *orgServiceClient) GetDepressionStatus(ctx context.Context, req *connect.Request[v2.GetDepressionStatusRequest]) (*connect.Response[v2.GetDepressionStatusResponse], error) {
-	return c.getDepressionStatus.CallUnary(ctx, req)
+// GetDepression calls city.economy.v2.OrgService.GetDepression.
+func (c *orgServiceClient) GetDepression(ctx context.Context, req *connect.Request[v2.GetDepressionRequest]) (*connect.Response[v2.GetDepressionResponse], error) {
+	return c.getDepression.CallUnary(ctx, req)
 }
 
-// SetDepressionStatus calls city.economy.v2.OrgService.SetDepressionStatus.
-func (c *orgServiceClient) SetDepressionStatus(ctx context.Context, req *connect.Request[v2.SetDepressionStatusRequest]) (*connect.Response[v2.SetDepressionStatusResponse], error) {
-	return c.setDepressionStatus.CallUnary(ctx, req)
+// SetDepression calls city.economy.v2.OrgService.SetDepression.
+func (c *orgServiceClient) SetDepression(ctx context.Context, req *connect.Request[v2.SetDepressionRequest]) (*connect.Response[v2.SetDepressionResponse], error) {
+	return c.setDepression.CallUnary(ctx, req)
 }
 
 // GetLocusControl calls city.economy.v2.OrgService.GetLocusControl.
@@ -873,8 +873,8 @@ type OrgServiceHandler interface {
 	GetIncomeCurrency(context.Context, *connect.Request[v2.GetIncomeCurrencyRequest]) (*connect.Response[v2.GetIncomeCurrencyResponse], error)
 	SetIncomeCurrency(context.Context, *connect.Request[v2.SetIncomeCurrencyRequest]) (*connect.Response[v2.SetIncomeCurrencyResponse], error)
 	// Depression
-	GetDepressionStatus(context.Context, *connect.Request[v2.GetDepressionStatusRequest]) (*connect.Response[v2.GetDepressionStatusResponse], error)
-	SetDepressionStatus(context.Context, *connect.Request[v2.SetDepressionStatusRequest]) (*connect.Response[v2.SetDepressionStatusResponse], error)
+	GetDepression(context.Context, *connect.Request[v2.GetDepressionRequest]) (*connect.Response[v2.GetDepressionResponse], error)
+	SetDepression(context.Context, *connect.Request[v2.SetDepressionRequest]) (*connect.Response[v2.SetDepressionResponse], error)
 	// Locus of Control
 	GetLocusControl(context.Context, *connect.Request[v2.GetLocusControlRequest]) (*connect.Response[v2.GetLocusControlResponse], error)
 	SetLocusControl(context.Context, *connect.Request[v2.SetLocusControlRequest]) (*connect.Response[v2.SetLocusControlResponse], error)
@@ -1111,16 +1111,16 @@ func NewOrgServiceHandler(svc OrgServiceHandler, opts ...connect.HandlerOption) 
 		connect.WithSchema(orgServiceSetIncomeCurrencyMethodDescriptor),
 		connect.WithHandlerOptions(opts...),
 	)
-	orgServiceGetDepressionStatusHandler := connect.NewUnaryHandler(
-		OrgServiceGetDepressionStatusProcedure,
-		svc.GetDepressionStatus,
-		connect.WithSchema(orgServiceGetDepressionStatusMethodDescriptor),
+	orgServiceGetDepressionHandler := connect.NewUnaryHandler(
+		OrgServiceGetDepressionProcedure,
+		svc.GetDepression,
+		connect.WithSchema(orgServiceGetDepressionMethodDescriptor),
 		connect.WithHandlerOptions(opts...),
 	)
-	orgServiceSetDepressionStatusHandler := connect.NewUnaryHandler(
-		OrgServiceSetDepressionStatusProcedure,
-		svc.SetDepressionStatus,
-		connect.WithSchema(orgServiceSetDepressionStatusMethodDescriptor),
+	orgServiceSetDepressionHandler := connect.NewUnaryHandler(
+		OrgServiceSetDepressionProcedure,
+		svc.SetDepression,
+		connect.WithSchema(orgServiceSetDepressionMethodDescriptor),
 		connect.WithHandlerOptions(opts...),
 	)
 	orgServiceGetLocusControlHandler := connect.NewUnaryHandler(
@@ -1223,10 +1223,10 @@ func NewOrgServiceHandler(svc OrgServiceHandler, opts ...connect.HandlerOption) 
 			orgServiceGetIncomeCurrencyHandler.ServeHTTP(w, r)
 		case OrgServiceSetIncomeCurrencyProcedure:
 			orgServiceSetIncomeCurrencyHandler.ServeHTTP(w, r)
-		case OrgServiceGetDepressionStatusProcedure:
-			orgServiceGetDepressionStatusHandler.ServeHTTP(w, r)
-		case OrgServiceSetDepressionStatusProcedure:
-			orgServiceSetDepressionStatusHandler.ServeHTTP(w, r)
+		case OrgServiceGetDepressionProcedure:
+			orgServiceGetDepressionHandler.ServeHTTP(w, r)
+		case OrgServiceSetDepressionProcedure:
+			orgServiceSetDepressionHandler.ServeHTTP(w, r)
 		case OrgServiceGetLocusControlProcedure:
 			orgServiceGetLocusControlHandler.ServeHTTP(w, r)
 		case OrgServiceSetLocusControlProcedure:
@@ -1392,12 +1392,12 @@ func (UnimplementedOrgServiceHandler) SetIncomeCurrency(context.Context, *connec
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.SetIncomeCurrency is not implemented"))
 }
 
-func (UnimplementedOrgServiceHandler) GetDepressionStatus(context.Context, *connect.Request[v2.GetDepressionStatusRequest]) (*connect.Response[v2.GetDepressionStatusResponse], error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.GetDepressionStatus is not implemented"))
+func (UnimplementedOrgServiceHandler) GetDepression(context.Context, *connect.Request[v2.GetDepressionRequest]) (*connect.Response[v2.GetDepressionResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.GetDepression is not implemented"))
 }
 
-func (UnimplementedOrgServiceHandler) SetDepressionStatus(context.Context, *connect.Request[v2.SetDepressionStatusRequest]) (*connect.Response[v2.SetDepressionStatusResponse], error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.SetDepressionStatus is not implemented"))
+func (UnimplementedOrgServiceHandler) SetDepression(context.Context, *connect.Request[v2.SetDepressionRequest]) (*connect.Response[v2.SetDepressionResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.SetDepression is not implemented"))
 }
 
 func (UnimplementedOrgServiceHandler) GetLocusControl(context.Context, *connect.Request[v2.GetLocusControlRequest]) (*connect.Response[v2.GetLocusControlResponse], error) {

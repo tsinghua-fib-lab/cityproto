@@ -86,8 +86,8 @@ service OrgService {
   rpc SetIncomeCurrency(SetIncomeCurrencyRequest) returns (SetIncomeCurrencyResponse);
 
   // Depression
-  rpc GetDepressionStatus(GetDepressionStatusRequest) returns (GetDepressionStatusResponse);
-  rpc SetDepressionStatus(SetDepressionStatusRequest) returns (SetDepressionStatusResponse);
+  rpc GetDepression(GetDepressionRequest) returns (GetDepressionResponse);
+  rpc SetDepression(SetDepressionRequest) returns (SetDepressionResponse);
 
   // Locus of Control
   rpc GetLocusControl(GetLocusControlRequest) returns (GetLocusControlResponse);
@@ -373,18 +373,18 @@ message SetIncomeCurrencyRequest {
 message SetIncomeCurrencyResponse {}
 
 // Depression
-message GetDepressionStatusRequest {
+message GetDepressionRequest {
   int32 org_id = 1;
 }
-message GetDepressionStatusResponse {
+message GetDepressionResponse {
   repeated float depression = 1;
 }
 
-message SetDepressionStatusRequest {
+message SetDepressionRequest {
   int32 org_id = 1;
   repeated float depression = 2;
 }
-message SetDepressionStatusResponse {}
+message SetDepressionResponse {}
 
 // Locus of Control
 message GetLocusControlRequest {

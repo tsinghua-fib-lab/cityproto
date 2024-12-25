@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AddAgentRequest, AddAgentResponse, AddOrgRequest, AddOrgResponse, CalculateConsumptionRequest, CalculateConsumptionResponse, CalculateInterestRequest, CalculateInterestResponse, CalculateTaxesDueRequest, CalculateTaxesDueResponse, GetBracketCutoffsRequest, GetBracketCutoffsResponse, GetBracketRatesRequest, GetBracketRatesResponse, GetConsumptionCurrencyRequest, GetConsumptionCurrencyResponse, GetConsumptionPropensityRequest, GetConsumptionPropensityResponse, GetCurrencyRequest, GetCurrencyResponse, GetDepressionStatusRequest, GetDepressionStatusResponse, GetIncomeCurrencyRequest, GetIncomeCurrencyResponse, GetInterestRateRequest, GetInterestRateResponse, GetInventoryRequest, GetInventoryResponse, GetLocusControlRequest, GetLocusControlResponse, GetNominalGDPRequest, GetNominalGDPResponse, GetPriceRequest, GetPriceResponse, GetPricesRequest, GetPricesResponse, GetRealGDPRequest, GetRealGDPResponse, GetUnemploymentRequest, GetUnemploymentResponse, GetWagesRequest, GetWagesResponse, GetWorkingHoursRequest, GetWorkingHoursResponse, LoadEconomyEntitiesRequest, LoadEconomyEntitiesResponse, RemoveAgentRequest, RemoveAgentResponse, RemoveOrgRequest, RemoveOrgResponse, SaveEconomyEntitiesRequest, SaveEconomyEntitiesResponse, SetBracketCutoffsRequest, SetBracketCutoffsResponse, SetBracketRatesRequest, SetBracketRatesResponse, SetConsumptionCurrencyRequest, SetConsumptionCurrencyResponse, SetConsumptionPropensityRequest, SetConsumptionPropensityResponse, SetCurrencyRequest, SetCurrencyResponse, SetDepressionStatusRequest, SetDepressionStatusResponse, SetIncomeCurrencyRequest, SetIncomeCurrencyResponse, SetInterestRateRequest, SetInterestRateResponse, SetInventoryRequest, SetInventoryResponse, SetLocusControlRequest, SetLocusControlResponse, SetNominalGDPRequest, SetNominalGDPResponse, SetPriceRequest, SetPriceResponse, SetPricesRequest, SetPricesResponse, SetRealGDPRequest, SetRealGDPResponse, SetUnemploymentRequest, SetUnemploymentResponse, SetWagesRequest, SetWagesResponse, SetWorkingHoursRequest, SetWorkingHoursResponse } from "./org_service_pb.js";
+import { AddAgentRequest, AddAgentResponse, AddOrgRequest, AddOrgResponse, CalculateConsumptionRequest, CalculateConsumptionResponse, CalculateInterestRequest, CalculateInterestResponse, CalculateTaxesDueRequest, CalculateTaxesDueResponse, GetBracketCutoffsRequest, GetBracketCutoffsResponse, GetBracketRatesRequest, GetBracketRatesResponse, GetConsumptionCurrencyRequest, GetConsumptionCurrencyResponse, GetConsumptionPropensityRequest, GetConsumptionPropensityResponse, GetCurrencyRequest, GetCurrencyResponse, GetDepressionRequest, GetDepressionResponse, GetIncomeCurrencyRequest, GetIncomeCurrencyResponse, GetInterestRateRequest, GetInterestRateResponse, GetInventoryRequest, GetInventoryResponse, GetLocusControlRequest, GetLocusControlResponse, GetNominalGDPRequest, GetNominalGDPResponse, GetPriceRequest, GetPriceResponse, GetPricesRequest, GetPricesResponse, GetRealGDPRequest, GetRealGDPResponse, GetUnemploymentRequest, GetUnemploymentResponse, GetWagesRequest, GetWagesResponse, GetWorkingHoursRequest, GetWorkingHoursResponse, LoadEconomyEntitiesRequest, LoadEconomyEntitiesResponse, RemoveAgentRequest, RemoveAgentResponse, RemoveOrgRequest, RemoveOrgResponse, SaveEconomyEntitiesRequest, SaveEconomyEntitiesResponse, SetBracketCutoffsRequest, SetBracketCutoffsResponse, SetBracketRatesRequest, SetBracketRatesResponse, SetConsumptionCurrencyRequest, SetConsumptionCurrencyResponse, SetConsumptionPropensityRequest, SetConsumptionPropensityResponse, SetCurrencyRequest, SetCurrencyResponse, SetDepressionRequest, SetDepressionResponse, SetIncomeCurrencyRequest, SetIncomeCurrencyResponse, SetInterestRateRequest, SetInterestRateResponse, SetInventoryRequest, SetInventoryResponse, SetLocusControlRequest, SetLocusControlResponse, SetNominalGDPRequest, SetNominalGDPResponse, SetPriceRequest, SetPriceResponse, SetPricesRequest, SetPricesResponse, SetRealGDPRequest, SetRealGDPResponse, SetUnemploymentRequest, SetUnemploymentResponse, SetWagesRequest, SetWagesResponse, SetWorkingHoursRequest, SetWorkingHoursResponse } from "./org_service_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -400,21 +400,21 @@ export declare const OrgService: {
     /**
      * Depression
      *
-     * @generated from rpc city.economy.v2.OrgService.GetDepressionStatus
+     * @generated from rpc city.economy.v2.OrgService.GetDepression
      */
-    readonly getDepressionStatus: {
-      readonly name: "GetDepressionStatus",
-      readonly I: typeof GetDepressionStatusRequest,
-      readonly O: typeof GetDepressionStatusResponse,
+    readonly getDepression: {
+      readonly name: "GetDepression",
+      readonly I: typeof GetDepressionRequest,
+      readonly O: typeof GetDepressionResponse,
       readonly kind: MethodKind.Unary,
     },
     /**
-     * @generated from rpc city.economy.v2.OrgService.SetDepressionStatus
+     * @generated from rpc city.economy.v2.OrgService.SetDepression
      */
-    readonly setDepressionStatus: {
-      readonly name: "SetDepressionStatus",
-      readonly I: typeof SetDepressionStatusRequest,
-      readonly O: typeof SetDepressionStatusResponse,
+    readonly setDepression: {
+      readonly name: "SetDepression",
+      readonly I: typeof SetDepressionRequest,
+      readonly O: typeof SetDepressionResponse,
       readonly kind: MethodKind.Unary,
     },
     /**

@@ -35,7 +35,7 @@ type LaneState struct {
 	AvgV float64 `protobuf:"fixed64,3,opt,name=avg_v,json=avgV,proto3" json:"avg_v,omitempty" yaml:"avg_v" bson:"avg_v" db:"avg_v"`
 	// 是否限行
 	// whether restricted
-	Restriction bool `protobuf:"varint,4,opt,name=restriction,proto3" json:"restriction,omitempty" bson:"restriction" db:"restriction" yaml:"restriction"`
+	Restriction bool `protobuf:"varint,4,opt,name=restriction,proto3" json:"restriction,omitempty" db:"restriction" yaml:"restriction" bson:"restriction"`
 	// 交通灯状态
 	// traffic light state
 	LightState    LightState `protobuf:"varint,5,opt,name=light_state,json=lightState,proto3,enum=city.map.v2.LightState" json:"light_state,omitempty" yaml:"light_state" bson:"light_state" db:"light_state"`

@@ -744,30 +744,30 @@ export const SetIncomeCurrencyResponse = /*@__PURE__*/ proto3.makeMessageType(
 /**
  * Depression
  *
- * @generated from message city.economy.v2.GetDepressionStatusRequest
+ * @generated from message city.economy.v2.GetDepressionRequest
  */
-export const GetDepressionStatusRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.GetDepressionStatusRequest",
+export const GetDepressionRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.GetDepressionRequest",
   () => [
     { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
   ],
 );
 
 /**
- * @generated from message city.economy.v2.GetDepressionStatusResponse
+ * @generated from message city.economy.v2.GetDepressionResponse
  */
-export const GetDepressionStatusResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.GetDepressionStatusResponse",
+export const GetDepressionResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.GetDepressionResponse",
   () => [
     { no: 1, name: "depression", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
   ],
 );
 
 /**
- * @generated from message city.economy.v2.SetDepressionStatusRequest
+ * @generated from message city.economy.v2.SetDepressionRequest
  */
-export const SetDepressionStatusRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.SetDepressionStatusRequest",
+export const SetDepressionRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.SetDepressionRequest",
   () => [
     { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 2, name: "depression", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
@@ -775,10 +775,10 @@ export const SetDepressionStatusRequest = /*@__PURE__*/ proto3.makeMessageType(
 );
 
 /**
- * @generated from message city.economy.v2.SetDepressionStatusResponse
+ * @generated from message city.economy.v2.SetDepressionResponse
  */
-export const SetDepressionStatusResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.SetDepressionStatusResponse",
+export const SetDepressionResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.SetDepressionResponse",
   [],
 );
 

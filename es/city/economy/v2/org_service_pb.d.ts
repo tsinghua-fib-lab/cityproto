@@ -1851,57 +1851,57 @@ export declare class SetIncomeCurrencyResponse extends Message<SetIncomeCurrency
 /**
  * Depression
  *
- * @generated from message city.economy.v2.GetDepressionStatusRequest
+ * @generated from message city.economy.v2.GetDepressionRequest
  */
-export declare class GetDepressionStatusRequest extends Message<GetDepressionStatusRequest> {
+export declare class GetDepressionRequest extends Message<GetDepressionRequest> {
   /**
    * @generated from field: int32 org_id = 1;
    */
   orgId: number;
 
-  constructor(data?: PartialMessage<GetDepressionStatusRequest>);
+  constructor(data?: PartialMessage<GetDepressionRequest>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.GetDepressionStatusRequest";
+  static readonly typeName = "city.economy.v2.GetDepressionRequest";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetDepressionStatusRequest;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetDepressionRequest;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetDepressionStatusRequest;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetDepressionRequest;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetDepressionStatusRequest;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetDepressionRequest;
 
-  static equals(a: GetDepressionStatusRequest | PlainMessage<GetDepressionStatusRequest> | undefined, b: GetDepressionStatusRequest | PlainMessage<GetDepressionStatusRequest> | undefined): boolean;
+  static equals(a: GetDepressionRequest | PlainMessage<GetDepressionRequest> | undefined, b: GetDepressionRequest | PlainMessage<GetDepressionRequest> | undefined): boolean;
 }
 
 /**
- * @generated from message city.economy.v2.GetDepressionStatusResponse
+ * @generated from message city.economy.v2.GetDepressionResponse
  */
-export declare class GetDepressionStatusResponse extends Message<GetDepressionStatusResponse> {
+export declare class GetDepressionResponse extends Message<GetDepressionResponse> {
   /**
    * @generated from field: repeated float depression = 1;
    */
   depression: number[];
 
-  constructor(data?: PartialMessage<GetDepressionStatusResponse>);
+  constructor(data?: PartialMessage<GetDepressionResponse>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.GetDepressionStatusResponse";
+  static readonly typeName = "city.economy.v2.GetDepressionResponse";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetDepressionStatusResponse;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetDepressionResponse;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetDepressionStatusResponse;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetDepressionResponse;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetDepressionStatusResponse;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetDepressionResponse;
 
-  static equals(a: GetDepressionStatusResponse | PlainMessage<GetDepressionStatusResponse> | undefined, b: GetDepressionStatusResponse | PlainMessage<GetDepressionStatusResponse> | undefined): boolean;
+  static equals(a: GetDepressionResponse | PlainMessage<GetDepressionResponse> | undefined, b: GetDepressionResponse | PlainMessage<GetDepressionResponse> | undefined): boolean;
 }
 
 /**
- * @generated from message city.economy.v2.SetDepressionStatusRequest
+ * @generated from message city.economy.v2.SetDepressionRequest
  */
-export declare class SetDepressionStatusRequest extends Message<SetDepressionStatusRequest> {
+export declare class SetDepressionRequest extends Message<SetDepressionRequest> {
   /**
    * @generated from field: int32 org_id = 1;
    */
@@ -1912,38 +1912,38 @@ export declare class SetDepressionStatusRequest extends Message<SetDepressionSta
    */
   depression: number[];
 
-  constructor(data?: PartialMessage<SetDepressionStatusRequest>);
+  constructor(data?: PartialMessage<SetDepressionRequest>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.SetDepressionStatusRequest";
+  static readonly typeName = "city.economy.v2.SetDepressionRequest";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetDepressionStatusRequest;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetDepressionRequest;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetDepressionStatusRequest;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetDepressionRequest;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetDepressionStatusRequest;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetDepressionRequest;
 
-  static equals(a: SetDepressionStatusRequest | PlainMessage<SetDepressionStatusRequest> | undefined, b: SetDepressionStatusRequest | PlainMessage<SetDepressionStatusRequest> | undefined): boolean;
+  static equals(a: SetDepressionRequest | PlainMessage<SetDepressionRequest> | undefined, b: SetDepressionRequest | PlainMessage<SetDepressionRequest> | undefined): boolean;
 }
 
 /**
- * @generated from message city.economy.v2.SetDepressionStatusResponse
+ * @generated from message city.economy.v2.SetDepressionResponse
  */
-export declare class SetDepressionStatusResponse extends Message<SetDepressionStatusResponse> {
-  constructor(data?: PartialMessage<SetDepressionStatusResponse>);
+export declare class SetDepressionResponse extends Message<SetDepressionResponse> {
+  constructor(data?: PartialMessage<SetDepressionResponse>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.SetDepressionStatusResponse";
+  static readonly typeName = "city.economy.v2.SetDepressionResponse";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetDepressionStatusResponse;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetDepressionResponse;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetDepressionStatusResponse;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetDepressionResponse;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetDepressionStatusResponse;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetDepressionResponse;
 
-  static equals(a: SetDepressionStatusResponse | PlainMessage<SetDepressionStatusResponse> | undefined, b: SetDepressionStatusResponse | PlainMessage<SetDepressionStatusResponse> | undefined): boolean;
+  static equals(a: SetDepressionResponse | PlainMessage<SetDepressionResponse> | undefined, b: SetDepressionResponse | PlainMessage<SetDepressionResponse> | undefined): boolean;
 }
 
 /**

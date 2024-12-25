@@ -94,7 +94,7 @@ type XYPosition struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// x坐标，单位米，对应经度
 	// x coordinate, in meters, corresponding to longitude
-	X float64 `protobuf:"fixed64,1,opt,name=x,proto3" json:"x,omitempty" db:"x" yaml:"x" bson:"x"`
+	X float64 `protobuf:"fixed64,1,opt,name=x,proto3" json:"x,omitempty" yaml:"x" bson:"x" db:"x"`
 	// y坐标，单位米，对应纬度
 	// y coordinate, in meters, corresponding to latitude
 	Y float64 `protobuf:"fixed64,2,opt,name=y,proto3" json:"y,omitempty" yaml:"y" bson:"y" db:"y"`
@@ -162,10 +162,10 @@ type LanePosition struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// 车道id
 	// Lane ID
-	LaneId int32 `protobuf:"varint,1,opt,name=lane_id,json=laneId,proto3" json:"lane_id,omitempty" bson:"lane_id" db:"lane_id" yaml:"lane_id"`
+	LaneId int32 `protobuf:"varint,1,opt,name=lane_id,json=laneId,proto3" json:"lane_id,omitempty" yaml:"lane_id" bson:"lane_id" db:"lane_id"`
 	// s是车道上的点到车道起点的距离
 	// s is the distance from the point on the lane to the starting point of the lane
-	S             float64 `protobuf:"fixed64,2,opt,name=s,proto3" json:"s,omitempty" db:"s" yaml:"s" bson:"s"`
+	S             float64 `protobuf:"fixed64,2,opt,name=s,proto3" json:"s,omitempty" yaml:"s" bson:"s" db:"s"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -277,7 +277,7 @@ type Position struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// 地图坐标AOI（必须提供其中之一）
 	// Map coordinates AOI (one of these must be provided)
-	LanePosition *LanePosition `protobuf:"bytes,1,opt,name=lane_position,json=lanePosition,proto3,oneof" json:"lane_position,omitempty" yaml:"lane_position" bson:"lane_position" db:"lane_position"`
+	LanePosition *LanePosition `protobuf:"bytes,1,opt,name=lane_position,json=lanePosition,proto3,oneof" json:"lane_position,omitempty" db:"lane_position" yaml:"lane_position" bson:"lane_position"`
 	// 地图坐标Lane+S（必须提供其中之一）
 	// Map coordinates Lane+S (one of these must be provided)
 	AoiPosition *AoiPosition `protobuf:"bytes,2,opt,name=aoi_position,json=aoiPosition,proto3,oneof" json:"aoi_position,omitempty" yaml:"aoi_position" bson:"aoi_position" db:"aoi_position"`

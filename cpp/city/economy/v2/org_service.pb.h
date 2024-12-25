@@ -109,12 +109,12 @@ extern GetCurrencyRequestDefaultTypeInternal _GetCurrencyRequest_default_instanc
 class GetCurrencyResponse;
 struct GetCurrencyResponseDefaultTypeInternal;
 extern GetCurrencyResponseDefaultTypeInternal _GetCurrencyResponse_default_instance_;
-class GetDepressionStatusRequest;
-struct GetDepressionStatusRequestDefaultTypeInternal;
-extern GetDepressionStatusRequestDefaultTypeInternal _GetDepressionStatusRequest_default_instance_;
-class GetDepressionStatusResponse;
-struct GetDepressionStatusResponseDefaultTypeInternal;
-extern GetDepressionStatusResponseDefaultTypeInternal _GetDepressionStatusResponse_default_instance_;
+class GetDepressionRequest;
+struct GetDepressionRequestDefaultTypeInternal;
+extern GetDepressionRequestDefaultTypeInternal _GetDepressionRequest_default_instance_;
+class GetDepressionResponse;
+struct GetDepressionResponseDefaultTypeInternal;
+extern GetDepressionResponseDefaultTypeInternal _GetDepressionResponse_default_instance_;
 class GetIncomeCurrencyRequest;
 struct GetIncomeCurrencyRequestDefaultTypeInternal;
 extern GetIncomeCurrencyRequestDefaultTypeInternal _GetIncomeCurrencyRequest_default_instance_;
@@ -235,12 +235,12 @@ extern SetCurrencyRequestDefaultTypeInternal _SetCurrencyRequest_default_instanc
 class SetCurrencyResponse;
 struct SetCurrencyResponseDefaultTypeInternal;
 extern SetCurrencyResponseDefaultTypeInternal _SetCurrencyResponse_default_instance_;
-class SetDepressionStatusRequest;
-struct SetDepressionStatusRequestDefaultTypeInternal;
-extern SetDepressionStatusRequestDefaultTypeInternal _SetDepressionStatusRequest_default_instance_;
-class SetDepressionStatusResponse;
-struct SetDepressionStatusResponseDefaultTypeInternal;
-extern SetDepressionStatusResponseDefaultTypeInternal _SetDepressionStatusResponse_default_instance_;
+class SetDepressionRequest;
+struct SetDepressionRequestDefaultTypeInternal;
+extern SetDepressionRequestDefaultTypeInternal _SetDepressionRequest_default_instance_;
+class SetDepressionResponse;
+struct SetDepressionResponseDefaultTypeInternal;
+extern SetDepressionResponseDefaultTypeInternal _SetDepressionResponse_default_instance_;
 class SetIncomeCurrencyRequest;
 struct SetIncomeCurrencyRequestDefaultTypeInternal;
 extern SetIncomeCurrencyRequestDefaultTypeInternal _SetIncomeCurrencyRequest_default_instance_;
@@ -331,8 +331,8 @@ template<> ::city::economy::v2::GetConsumptionPropensityRequest* Arena::CreateMa
 template<> ::city::economy::v2::GetConsumptionPropensityResponse* Arena::CreateMaybeMessage<::city::economy::v2::GetConsumptionPropensityResponse>(Arena*);
 template<> ::city::economy::v2::GetCurrencyRequest* Arena::CreateMaybeMessage<::city::economy::v2::GetCurrencyRequest>(Arena*);
 template<> ::city::economy::v2::GetCurrencyResponse* Arena::CreateMaybeMessage<::city::economy::v2::GetCurrencyResponse>(Arena*);
-template<> ::city::economy::v2::GetDepressionStatusRequest* Arena::CreateMaybeMessage<::city::economy::v2::GetDepressionStatusRequest>(Arena*);
-template<> ::city::economy::v2::GetDepressionStatusResponse* Arena::CreateMaybeMessage<::city::economy::v2::GetDepressionStatusResponse>(Arena*);
+template<> ::city::economy::v2::GetDepressionRequest* Arena::CreateMaybeMessage<::city::economy::v2::GetDepressionRequest>(Arena*);
+template<> ::city::economy::v2::GetDepressionResponse* Arena::CreateMaybeMessage<::city::economy::v2::GetDepressionResponse>(Arena*);
 template<> ::city::economy::v2::GetIncomeCurrencyRequest* Arena::CreateMaybeMessage<::city::economy::v2::GetIncomeCurrencyRequest>(Arena*);
 template<> ::city::economy::v2::GetIncomeCurrencyResponse* Arena::CreateMaybeMessage<::city::economy::v2::GetIncomeCurrencyResponse>(Arena*);
 template<> ::city::economy::v2::GetInterestRateRequest* Arena::CreateMaybeMessage<::city::economy::v2::GetInterestRateRequest>(Arena*);
@@ -373,8 +373,8 @@ template<> ::city::economy::v2::SetConsumptionPropensityRequest* Arena::CreateMa
 template<> ::city::economy::v2::SetConsumptionPropensityResponse* Arena::CreateMaybeMessage<::city::economy::v2::SetConsumptionPropensityResponse>(Arena*);
 template<> ::city::economy::v2::SetCurrencyRequest* Arena::CreateMaybeMessage<::city::economy::v2::SetCurrencyRequest>(Arena*);
 template<> ::city::economy::v2::SetCurrencyResponse* Arena::CreateMaybeMessage<::city::economy::v2::SetCurrencyResponse>(Arena*);
-template<> ::city::economy::v2::SetDepressionStatusRequest* Arena::CreateMaybeMessage<::city::economy::v2::SetDepressionStatusRequest>(Arena*);
-template<> ::city::economy::v2::SetDepressionStatusResponse* Arena::CreateMaybeMessage<::city::economy::v2::SetDepressionStatusResponse>(Arena*);
+template<> ::city::economy::v2::SetDepressionRequest* Arena::CreateMaybeMessage<::city::economy::v2::SetDepressionRequest>(Arena*);
+template<> ::city::economy::v2::SetDepressionResponse* Arena::CreateMaybeMessage<::city::economy::v2::SetDepressionResponse>(Arena*);
 template<> ::city::economy::v2::SetIncomeCurrencyRequest* Arena::CreateMaybeMessage<::city::economy::v2::SetIncomeCurrencyRequest>(Arena*);
 template<> ::city::economy::v2::SetIncomeCurrencyResponse* Arena::CreateMaybeMessage<::city::economy::v2::SetIncomeCurrencyResponse>(Arena*);
 template<> ::city::economy::v2::SetInterestRateRequest* Arena::CreateMaybeMessage<::city::economy::v2::SetInterestRateRequest>(Arena*);
@@ -11543,24 +11543,24 @@ class SetIncomeCurrencyResponse final :
 };
 // -------------------------------------------------------------------
 
-class GetDepressionStatusRequest final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.economy.v2.GetDepressionStatusRequest) */ {
+class GetDepressionRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.economy.v2.GetDepressionRequest) */ {
  public:
-  inline GetDepressionStatusRequest() : GetDepressionStatusRequest(nullptr) {}
-  ~GetDepressionStatusRequest() override;
-  explicit PROTOBUF_CONSTEXPR GetDepressionStatusRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline GetDepressionRequest() : GetDepressionRequest(nullptr) {}
+  ~GetDepressionRequest() override;
+  explicit PROTOBUF_CONSTEXPR GetDepressionRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  GetDepressionStatusRequest(const GetDepressionStatusRequest& from);
-  GetDepressionStatusRequest(GetDepressionStatusRequest&& from) noexcept
-    : GetDepressionStatusRequest() {
+  GetDepressionRequest(const GetDepressionRequest& from);
+  GetDepressionRequest(GetDepressionRequest&& from) noexcept
+    : GetDepressionRequest() {
     *this = ::std::move(from);
   }
 
-  inline GetDepressionStatusRequest& operator=(const GetDepressionStatusRequest& from) {
+  inline GetDepressionRequest& operator=(const GetDepressionRequest& from) {
     CopyFrom(from);
     return *this;
   }
-  inline GetDepressionStatusRequest& operator=(GetDepressionStatusRequest&& from) noexcept {
+  inline GetDepressionRequest& operator=(GetDepressionRequest&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()
   #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -11583,20 +11583,20 @@ class GetDepressionStatusRequest final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const GetDepressionStatusRequest& default_instance() {
+  static const GetDepressionRequest& default_instance() {
     return *internal_default_instance();
   }
-  static inline const GetDepressionStatusRequest* internal_default_instance() {
-    return reinterpret_cast<const GetDepressionStatusRequest*>(
-               &_GetDepressionStatusRequest_default_instance_);
+  static inline const GetDepressionRequest* internal_default_instance() {
+    return reinterpret_cast<const GetDepressionRequest*>(
+               &_GetDepressionRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     74;
 
-  friend void swap(GetDepressionStatusRequest& a, GetDepressionStatusRequest& b) {
+  friend void swap(GetDepressionRequest& a, GetDepressionRequest& b) {
     a.Swap(&b);
   }
-  inline void Swap(GetDepressionStatusRequest* other) {
+  inline void Swap(GetDepressionRequest* other) {
     if (other == this) return;
   #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetOwningArena() != nullptr &&
@@ -11609,7 +11609,7 @@ class GetDepressionStatusRequest final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(GetDepressionStatusRequest* other) {
+  void UnsafeArenaSwap(GetDepressionRequest* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -11617,14 +11617,14 @@ class GetDepressionStatusRequest final :
 
   // implements Message ----------------------------------------------
 
-  GetDepressionStatusRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<GetDepressionStatusRequest>(arena);
+  GetDepressionRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<GetDepressionRequest>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const GetDepressionStatusRequest& from);
+  void CopyFrom(const GetDepressionRequest& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom( const GetDepressionStatusRequest& from) {
-    GetDepressionStatusRequest::MergeImpl(*this, from);
+  void MergeFrom( const GetDepressionRequest& from) {
+    GetDepressionRequest::MergeImpl(*this, from);
   }
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
@@ -11642,15 +11642,15 @@ class GetDepressionStatusRequest final :
   void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(GetDepressionStatusRequest* other);
+  void InternalSwap(GetDepressionRequest* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "city.economy.v2.GetDepressionStatusRequest";
+    return "city.economy.v2.GetDepressionRequest";
   }
   protected:
-  explicit GetDepressionStatusRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit GetDepressionRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   public:
 
@@ -11675,7 +11675,7 @@ class GetDepressionStatusRequest final :
   void _internal_set_org_id(int32_t value);
   public:
 
-  // @@protoc_insertion_point(class_scope:city.economy.v2.GetDepressionStatusRequest)
+  // @@protoc_insertion_point(class_scope:city.economy.v2.GetDepressionRequest)
  private:
   class _Internal;
 
@@ -11691,24 +11691,24 @@ class GetDepressionStatusRequest final :
 };
 // -------------------------------------------------------------------
 
-class GetDepressionStatusResponse final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.economy.v2.GetDepressionStatusResponse) */ {
+class GetDepressionResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.economy.v2.GetDepressionResponse) */ {
  public:
-  inline GetDepressionStatusResponse() : GetDepressionStatusResponse(nullptr) {}
-  ~GetDepressionStatusResponse() override;
-  explicit PROTOBUF_CONSTEXPR GetDepressionStatusResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline GetDepressionResponse() : GetDepressionResponse(nullptr) {}
+  ~GetDepressionResponse() override;
+  explicit PROTOBUF_CONSTEXPR GetDepressionResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  GetDepressionStatusResponse(const GetDepressionStatusResponse& from);
-  GetDepressionStatusResponse(GetDepressionStatusResponse&& from) noexcept
-    : GetDepressionStatusResponse() {
+  GetDepressionResponse(const GetDepressionResponse& from);
+  GetDepressionResponse(GetDepressionResponse&& from) noexcept
+    : GetDepressionResponse() {
     *this = ::std::move(from);
   }
 
-  inline GetDepressionStatusResponse& operator=(const GetDepressionStatusResponse& from) {
+  inline GetDepressionResponse& operator=(const GetDepressionResponse& from) {
     CopyFrom(from);
     return *this;
   }
-  inline GetDepressionStatusResponse& operator=(GetDepressionStatusResponse&& from) noexcept {
+  inline GetDepressionResponse& operator=(GetDepressionResponse&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()
   #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -11731,20 +11731,20 @@ class GetDepressionStatusResponse final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const GetDepressionStatusResponse& default_instance() {
+  static const GetDepressionResponse& default_instance() {
     return *internal_default_instance();
   }
-  static inline const GetDepressionStatusResponse* internal_default_instance() {
-    return reinterpret_cast<const GetDepressionStatusResponse*>(
-               &_GetDepressionStatusResponse_default_instance_);
+  static inline const GetDepressionResponse* internal_default_instance() {
+    return reinterpret_cast<const GetDepressionResponse*>(
+               &_GetDepressionResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     75;
 
-  friend void swap(GetDepressionStatusResponse& a, GetDepressionStatusResponse& b) {
+  friend void swap(GetDepressionResponse& a, GetDepressionResponse& b) {
     a.Swap(&b);
   }
-  inline void Swap(GetDepressionStatusResponse* other) {
+  inline void Swap(GetDepressionResponse* other) {
     if (other == this) return;
   #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetOwningArena() != nullptr &&
@@ -11757,7 +11757,7 @@ class GetDepressionStatusResponse final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(GetDepressionStatusResponse* other) {
+  void UnsafeArenaSwap(GetDepressionResponse* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -11765,14 +11765,14 @@ class GetDepressionStatusResponse final :
 
   // implements Message ----------------------------------------------
 
-  GetDepressionStatusResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<GetDepressionStatusResponse>(arena);
+  GetDepressionResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<GetDepressionResponse>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const GetDepressionStatusResponse& from);
+  void CopyFrom(const GetDepressionResponse& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom( const GetDepressionStatusResponse& from) {
-    GetDepressionStatusResponse::MergeImpl(*this, from);
+  void MergeFrom( const GetDepressionResponse& from) {
+    GetDepressionResponse::MergeImpl(*this, from);
   }
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
@@ -11790,15 +11790,15 @@ class GetDepressionStatusResponse final :
   void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(GetDepressionStatusResponse* other);
+  void InternalSwap(GetDepressionResponse* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "city.economy.v2.GetDepressionStatusResponse";
+    return "city.economy.v2.GetDepressionResponse";
   }
   protected:
-  explicit GetDepressionStatusResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit GetDepressionResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   public:
 
@@ -11836,7 +11836,7 @@ class GetDepressionStatusResponse final :
   ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
       mutable_depression();
 
-  // @@protoc_insertion_point(class_scope:city.economy.v2.GetDepressionStatusResponse)
+  // @@protoc_insertion_point(class_scope:city.economy.v2.GetDepressionResponse)
  private:
   class _Internal;
 
@@ -11852,24 +11852,24 @@ class GetDepressionStatusResponse final :
 };
 // -------------------------------------------------------------------
 
-class SetDepressionStatusRequest final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.economy.v2.SetDepressionStatusRequest) */ {
+class SetDepressionRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.economy.v2.SetDepressionRequest) */ {
  public:
-  inline SetDepressionStatusRequest() : SetDepressionStatusRequest(nullptr) {}
-  ~SetDepressionStatusRequest() override;
-  explicit PROTOBUF_CONSTEXPR SetDepressionStatusRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline SetDepressionRequest() : SetDepressionRequest(nullptr) {}
+  ~SetDepressionRequest() override;
+  explicit PROTOBUF_CONSTEXPR SetDepressionRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  SetDepressionStatusRequest(const SetDepressionStatusRequest& from);
-  SetDepressionStatusRequest(SetDepressionStatusRequest&& from) noexcept
-    : SetDepressionStatusRequest() {
+  SetDepressionRequest(const SetDepressionRequest& from);
+  SetDepressionRequest(SetDepressionRequest&& from) noexcept
+    : SetDepressionRequest() {
     *this = ::std::move(from);
   }
 
-  inline SetDepressionStatusRequest& operator=(const SetDepressionStatusRequest& from) {
+  inline SetDepressionRequest& operator=(const SetDepressionRequest& from) {
     CopyFrom(from);
     return *this;
   }
-  inline SetDepressionStatusRequest& operator=(SetDepressionStatusRequest&& from) noexcept {
+  inline SetDepressionRequest& operator=(SetDepressionRequest&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()
   #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -11892,20 +11892,20 @@ class SetDepressionStatusRequest final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const SetDepressionStatusRequest& default_instance() {
+  static const SetDepressionRequest& default_instance() {
     return *internal_default_instance();
   }
-  static inline const SetDepressionStatusRequest* internal_default_instance() {
-    return reinterpret_cast<const SetDepressionStatusRequest*>(
-               &_SetDepressionStatusRequest_default_instance_);
+  static inline const SetDepressionRequest* internal_default_instance() {
+    return reinterpret_cast<const SetDepressionRequest*>(
+               &_SetDepressionRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     76;
 
-  friend void swap(SetDepressionStatusRequest& a, SetDepressionStatusRequest& b) {
+  friend void swap(SetDepressionRequest& a, SetDepressionRequest& b) {
     a.Swap(&b);
   }
-  inline void Swap(SetDepressionStatusRequest* other) {
+  inline void Swap(SetDepressionRequest* other) {
     if (other == this) return;
   #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetOwningArena() != nullptr &&
@@ -11918,7 +11918,7 @@ class SetDepressionStatusRequest final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(SetDepressionStatusRequest* other) {
+  void UnsafeArenaSwap(SetDepressionRequest* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -11926,14 +11926,14 @@ class SetDepressionStatusRequest final :
 
   // implements Message ----------------------------------------------
 
-  SetDepressionStatusRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<SetDepressionStatusRequest>(arena);
+  SetDepressionRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<SetDepressionRequest>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const SetDepressionStatusRequest& from);
+  void CopyFrom(const SetDepressionRequest& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom( const SetDepressionStatusRequest& from) {
-    SetDepressionStatusRequest::MergeImpl(*this, from);
+  void MergeFrom( const SetDepressionRequest& from) {
+    SetDepressionRequest::MergeImpl(*this, from);
   }
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
@@ -11951,15 +11951,15 @@ class SetDepressionStatusRequest final :
   void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(SetDepressionStatusRequest* other);
+  void InternalSwap(SetDepressionRequest* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "city.economy.v2.SetDepressionStatusRequest";
+    return "city.economy.v2.SetDepressionRequest";
   }
   protected:
-  explicit SetDepressionStatusRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit SetDepressionRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   public:
 
@@ -12007,7 +12007,7 @@ class SetDepressionStatusRequest final :
   void _internal_set_org_id(int32_t value);
   public:
 
-  // @@protoc_insertion_point(class_scope:city.economy.v2.SetDepressionStatusRequest)
+  // @@protoc_insertion_point(class_scope:city.economy.v2.SetDepressionRequest)
  private:
   class _Internal;
 
@@ -12024,23 +12024,23 @@ class SetDepressionStatusRequest final :
 };
 // -------------------------------------------------------------------
 
-class SetDepressionStatusResponse final :
-    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:city.economy.v2.SetDepressionStatusResponse) */ {
+class SetDepressionResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:city.economy.v2.SetDepressionResponse) */ {
  public:
-  inline SetDepressionStatusResponse() : SetDepressionStatusResponse(nullptr) {}
-  explicit PROTOBUF_CONSTEXPR SetDepressionStatusResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline SetDepressionResponse() : SetDepressionResponse(nullptr) {}
+  explicit PROTOBUF_CONSTEXPR SetDepressionResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  SetDepressionStatusResponse(const SetDepressionStatusResponse& from);
-  SetDepressionStatusResponse(SetDepressionStatusResponse&& from) noexcept
-    : SetDepressionStatusResponse() {
+  SetDepressionResponse(const SetDepressionResponse& from);
+  SetDepressionResponse(SetDepressionResponse&& from) noexcept
+    : SetDepressionResponse() {
     *this = ::std::move(from);
   }
 
-  inline SetDepressionStatusResponse& operator=(const SetDepressionStatusResponse& from) {
+  inline SetDepressionResponse& operator=(const SetDepressionResponse& from) {
     CopyFrom(from);
     return *this;
   }
-  inline SetDepressionStatusResponse& operator=(SetDepressionStatusResponse&& from) noexcept {
+  inline SetDepressionResponse& operator=(SetDepressionResponse&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()
   #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -12063,20 +12063,20 @@ class SetDepressionStatusResponse final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const SetDepressionStatusResponse& default_instance() {
+  static const SetDepressionResponse& default_instance() {
     return *internal_default_instance();
   }
-  static inline const SetDepressionStatusResponse* internal_default_instance() {
-    return reinterpret_cast<const SetDepressionStatusResponse*>(
-               &_SetDepressionStatusResponse_default_instance_);
+  static inline const SetDepressionResponse* internal_default_instance() {
+    return reinterpret_cast<const SetDepressionResponse*>(
+               &_SetDepressionResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     77;
 
-  friend void swap(SetDepressionStatusResponse& a, SetDepressionStatusResponse& b) {
+  friend void swap(SetDepressionResponse& a, SetDepressionResponse& b) {
     a.Swap(&b);
   }
-  inline void Swap(SetDepressionStatusResponse* other) {
+  inline void Swap(SetDepressionResponse* other) {
     if (other == this) return;
   #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetOwningArena() != nullptr &&
@@ -12089,7 +12089,7 @@ class SetDepressionStatusResponse final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(SetDepressionStatusResponse* other) {
+  void UnsafeArenaSwap(SetDepressionResponse* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -12097,15 +12097,15 @@ class SetDepressionStatusResponse final :
 
   // implements Message ----------------------------------------------
 
-  SetDepressionStatusResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<SetDepressionStatusResponse>(arena);
+  SetDepressionResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<SetDepressionResponse>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
-  inline void CopyFrom(const SetDepressionStatusResponse& from) {
+  inline void CopyFrom(const SetDepressionResponse& from) {
     ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(*this, from);
   }
   using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
-  void MergeFrom(const SetDepressionStatusResponse& from) {
+  void MergeFrom(const SetDepressionResponse& from) {
     ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(*this, from);
   }
   public:
@@ -12113,10 +12113,10 @@ class SetDepressionStatusResponse final :
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "city.economy.v2.SetDepressionStatusResponse";
+    return "city.economy.v2.SetDepressionResponse";
   }
   protected:
-  explicit SetDepressionStatusResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit SetDepressionResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   public:
 
@@ -12129,7 +12129,7 @@ class SetDepressionStatusResponse final :
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:city.economy.v2.SetDepressionStatusResponse)
+  // @@protoc_insertion_point(class_scope:city.economy.v2.SetDepressionResponse)
  private:
   class _Internal;
 
@@ -16317,153 +16317,153 @@ SetIncomeCurrencyRequest::mutable_income_currency() {
 
 // -------------------------------------------------------------------
 
-// GetDepressionStatusRequest
+// GetDepressionRequest
 
 // int32 org_id = 1 [json_name = "orgId"];
-inline void GetDepressionStatusRequest::clear_org_id() {
+inline void GetDepressionRequest::clear_org_id() {
   _impl_.org_id_ = 0;
 }
-inline int32_t GetDepressionStatusRequest::_internal_org_id() const {
+inline int32_t GetDepressionRequest::_internal_org_id() const {
   return _impl_.org_id_;
 }
-inline int32_t GetDepressionStatusRequest::org_id() const {
-  // @@protoc_insertion_point(field_get:city.economy.v2.GetDepressionStatusRequest.org_id)
+inline int32_t GetDepressionRequest::org_id() const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.GetDepressionRequest.org_id)
   return _internal_org_id();
 }
-inline void GetDepressionStatusRequest::_internal_set_org_id(int32_t value) {
+inline void GetDepressionRequest::_internal_set_org_id(int32_t value) {
   
   _impl_.org_id_ = value;
 }
-inline void GetDepressionStatusRequest::set_org_id(int32_t value) {
+inline void GetDepressionRequest::set_org_id(int32_t value) {
   _internal_set_org_id(value);
-  // @@protoc_insertion_point(field_set:city.economy.v2.GetDepressionStatusRequest.org_id)
+  // @@protoc_insertion_point(field_set:city.economy.v2.GetDepressionRequest.org_id)
 }
 
 // -------------------------------------------------------------------
 
-// GetDepressionStatusResponse
+// GetDepressionResponse
 
 // repeated float depression = 1 [json_name = "depression"];
-inline int GetDepressionStatusResponse::_internal_depression_size() const {
+inline int GetDepressionResponse::_internal_depression_size() const {
   return _impl_.depression_.size();
 }
-inline int GetDepressionStatusResponse::depression_size() const {
+inline int GetDepressionResponse::depression_size() const {
   return _internal_depression_size();
 }
-inline void GetDepressionStatusResponse::clear_depression() {
+inline void GetDepressionResponse::clear_depression() {
   _impl_.depression_.Clear();
 }
-inline float GetDepressionStatusResponse::_internal_depression(int index) const {
+inline float GetDepressionResponse::_internal_depression(int index) const {
   return _impl_.depression_.Get(index);
 }
-inline float GetDepressionStatusResponse::depression(int index) const {
-  // @@protoc_insertion_point(field_get:city.economy.v2.GetDepressionStatusResponse.depression)
+inline float GetDepressionResponse::depression(int index) const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.GetDepressionResponse.depression)
   return _internal_depression(index);
 }
-inline void GetDepressionStatusResponse::set_depression(int index, float value) {
+inline void GetDepressionResponse::set_depression(int index, float value) {
   _impl_.depression_.Set(index, value);
-  // @@protoc_insertion_point(field_set:city.economy.v2.GetDepressionStatusResponse.depression)
+  // @@protoc_insertion_point(field_set:city.economy.v2.GetDepressionResponse.depression)
 }
-inline void GetDepressionStatusResponse::_internal_add_depression(float value) {
+inline void GetDepressionResponse::_internal_add_depression(float value) {
   _impl_.depression_.Add(value);
 }
-inline void GetDepressionStatusResponse::add_depression(float value) {
+inline void GetDepressionResponse::add_depression(float value) {
   _internal_add_depression(value);
-  // @@protoc_insertion_point(field_add:city.economy.v2.GetDepressionStatusResponse.depression)
+  // @@protoc_insertion_point(field_add:city.economy.v2.GetDepressionResponse.depression)
 }
 inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
-GetDepressionStatusResponse::_internal_depression() const {
+GetDepressionResponse::_internal_depression() const {
   return _impl_.depression_;
 }
 inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
-GetDepressionStatusResponse::depression() const {
-  // @@protoc_insertion_point(field_list:city.economy.v2.GetDepressionStatusResponse.depression)
+GetDepressionResponse::depression() const {
+  // @@protoc_insertion_point(field_list:city.economy.v2.GetDepressionResponse.depression)
   return _internal_depression();
 }
 inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
-GetDepressionStatusResponse::_internal_mutable_depression() {
+GetDepressionResponse::_internal_mutable_depression() {
   return &_impl_.depression_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
-GetDepressionStatusResponse::mutable_depression() {
-  // @@protoc_insertion_point(field_mutable_list:city.economy.v2.GetDepressionStatusResponse.depression)
+GetDepressionResponse::mutable_depression() {
+  // @@protoc_insertion_point(field_mutable_list:city.economy.v2.GetDepressionResponse.depression)
   return _internal_mutable_depression();
 }
 
 // -------------------------------------------------------------------
 
-// SetDepressionStatusRequest
+// SetDepressionRequest
 
 // int32 org_id = 1 [json_name = "orgId"];
-inline void SetDepressionStatusRequest::clear_org_id() {
+inline void SetDepressionRequest::clear_org_id() {
   _impl_.org_id_ = 0;
 }
-inline int32_t SetDepressionStatusRequest::_internal_org_id() const {
+inline int32_t SetDepressionRequest::_internal_org_id() const {
   return _impl_.org_id_;
 }
-inline int32_t SetDepressionStatusRequest::org_id() const {
-  // @@protoc_insertion_point(field_get:city.economy.v2.SetDepressionStatusRequest.org_id)
+inline int32_t SetDepressionRequest::org_id() const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.SetDepressionRequest.org_id)
   return _internal_org_id();
 }
-inline void SetDepressionStatusRequest::_internal_set_org_id(int32_t value) {
+inline void SetDepressionRequest::_internal_set_org_id(int32_t value) {
   
   _impl_.org_id_ = value;
 }
-inline void SetDepressionStatusRequest::set_org_id(int32_t value) {
+inline void SetDepressionRequest::set_org_id(int32_t value) {
   _internal_set_org_id(value);
-  // @@protoc_insertion_point(field_set:city.economy.v2.SetDepressionStatusRequest.org_id)
+  // @@protoc_insertion_point(field_set:city.economy.v2.SetDepressionRequest.org_id)
 }
 
 // repeated float depression = 2 [json_name = "depression"];
-inline int SetDepressionStatusRequest::_internal_depression_size() const {
+inline int SetDepressionRequest::_internal_depression_size() const {
   return _impl_.depression_.size();
 }
-inline int SetDepressionStatusRequest::depression_size() const {
+inline int SetDepressionRequest::depression_size() const {
   return _internal_depression_size();
 }
-inline void SetDepressionStatusRequest::clear_depression() {
+inline void SetDepressionRequest::clear_depression() {
   _impl_.depression_.Clear();
 }
-inline float SetDepressionStatusRequest::_internal_depression(int index) const {
+inline float SetDepressionRequest::_internal_depression(int index) const {
   return _impl_.depression_.Get(index);
 }
-inline float SetDepressionStatusRequest::depression(int index) const {
-  // @@protoc_insertion_point(field_get:city.economy.v2.SetDepressionStatusRequest.depression)
+inline float SetDepressionRequest::depression(int index) const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.SetDepressionRequest.depression)
   return _internal_depression(index);
 }
-inline void SetDepressionStatusRequest::set_depression(int index, float value) {
+inline void SetDepressionRequest::set_depression(int index, float value) {
   _impl_.depression_.Set(index, value);
-  // @@protoc_insertion_point(field_set:city.economy.v2.SetDepressionStatusRequest.depression)
+  // @@protoc_insertion_point(field_set:city.economy.v2.SetDepressionRequest.depression)
 }
-inline void SetDepressionStatusRequest::_internal_add_depression(float value) {
+inline void SetDepressionRequest::_internal_add_depression(float value) {
   _impl_.depression_.Add(value);
 }
-inline void SetDepressionStatusRequest::add_depression(float value) {
+inline void SetDepressionRequest::add_depression(float value) {
   _internal_add_depression(value);
-  // @@protoc_insertion_point(field_add:city.economy.v2.SetDepressionStatusRequest.depression)
+  // @@protoc_insertion_point(field_add:city.economy.v2.SetDepressionRequest.depression)
 }
 inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
-SetDepressionStatusRequest::_internal_depression() const {
+SetDepressionRequest::_internal_depression() const {
   return _impl_.depression_;
 }
 inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
-SetDepressionStatusRequest::depression() const {
-  // @@protoc_insertion_point(field_list:city.economy.v2.SetDepressionStatusRequest.depression)
+SetDepressionRequest::depression() const {
+  // @@protoc_insertion_point(field_list:city.economy.v2.SetDepressionRequest.depression)
   return _internal_depression();
 }
 inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
-SetDepressionStatusRequest::_internal_mutable_depression() {
+SetDepressionRequest::_internal_mutable_depression() {
   return &_impl_.depression_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
-SetDepressionStatusRequest::mutable_depression() {
-  // @@protoc_insertion_point(field_mutable_list:city.economy.v2.SetDepressionStatusRequest.depression)
+SetDepressionRequest::mutable_depression() {
+  // @@protoc_insertion_point(field_mutable_list:city.economy.v2.SetDepressionRequest.depression)
   return _internal_mutable_depression();
 }
 
 // -------------------------------------------------------------------
 
-// SetDepressionStatusResponse
+// SetDepressionResponse
 
 // -------------------------------------------------------------------
 

@@ -77,7 +77,7 @@ func (x *RainPeriod) GetRainfall() float64 {
 // 全天降雨情况，在数据库中体现为一条数据
 type Rain struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Rains         []*RainPeriod          `protobuf:"bytes,1,rep,name=rains,proto3" json:"rains,omitempty" bson:"rains" db:"rains" yaml:"rains"`
+	Rains         []*RainPeriod          `protobuf:"bytes,1,rep,name=rains,proto3" json:"rains,omitempty" yaml:"rains" bson:"rains" db:"rains"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }

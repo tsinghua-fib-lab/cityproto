@@ -84,7 +84,7 @@ func (x *Mongo) GetFacilities() *v1.MongoPath {
 type ControlStep struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Start         int32                  `protobuf:"varint,1,opt,name=start,proto3" json:"start,omitempty" yaml:"start" bson:"start" db:"start"`
-	Total         int32                  `protobuf:"varint,2,opt,name=total,proto3" json:"total,omitempty" bson:"total" db:"total" yaml:"total"`
+	Total         int32                  `protobuf:"varint,2,opt,name=total,proto3" json:"total,omitempty" db:"total" yaml:"total" bson:"total"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -135,7 +135,7 @@ func (x *ControlStep) GetTotal() int32 {
 
 type Control struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Step          *ControlStep           `protobuf:"bytes,1,opt,name=step,proto3" json:"step,omitempty" bson:"step" db:"step" yaml:"step"`
+	Step          *ControlStep           `protobuf:"bytes,1,opt,name=step,proto3" json:"step,omitempty" db:"step" yaml:"step" bson:"step"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -241,7 +241,7 @@ func (x *OutputSwitch) GetEvent() bool {
 
 type Output struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Target        *v1.OutputTarget       `protobuf:"bytes,1,opt,name=target,proto3" json:"target,omitempty" yaml:"target" bson:"target" db:"target"`
+	Target        *v1.OutputTarget       `protobuf:"bytes,1,opt,name=target,proto3" json:"target,omitempty" bson:"target" db:"target" yaml:"target"`
 	Switch        *OutputSwitch          `protobuf:"bytes,2,opt,name=switch,proto3" json:"switch,omitempty" yaml:"switch" bson:"switch" db:"switch"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache

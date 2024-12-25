@@ -70,7 +70,7 @@ func (x *GetPersonRequest) GetPersonIds() []int32 {
 type GetPersonResponse struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// 人的经济情况
-	Persons       []*Person `protobuf:"bytes,1,rep,name=persons,proto3" json:"persons,omitempty" yaml:"persons" bson:"persons" db:"persons"`
+	Persons       []*Person `protobuf:"bytes,1,rep,name=persons,proto3" json:"persons,omitempty" bson:"persons" db:"persons" yaml:"persons"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -116,7 +116,7 @@ func (x *GetPersonResponse) GetPersons() []*Person {
 type UpdatePersonMoneyRequest struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// 待修改的人员资金变动
-	Items         []*UpdatePersonMoneyRequestItem `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty" db:"items" yaml:"items" bson:"items"`
+	Items         []*UpdatePersonMoneyRequestItem `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty" yaml:"items" bson:"items" db:"items"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -164,7 +164,7 @@ type UpdatePersonMoneyRequestItem struct {
 	// 待修改的人员id
 	PersonId int32 `protobuf:"varint,1,opt,name=person_id,json=personId,proto3" json:"person_id,omitempty" yaml:"person_id" bson:"person_id" db:"person_id"`
 	// 资金变动（正数表示增加，负数表示减少）
-	Money         float64 `protobuf:"fixed64,2,opt,name=money,proto3" json:"money,omitempty" bson:"money" db:"money" yaml:"money"`
+	Money         float64 `protobuf:"fixed64,2,opt,name=money,proto3" json:"money,omitempty" db:"money" yaml:"money" bson:"money"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }

@@ -302,19 +302,19 @@ type PersonAttribute struct {
 	Width float64 `protobuf:"fixed64,3,opt,name=width,proto3" json:"width,omitempty" yaml:"width" bson:"width" db:"width"`
 	// 单位: m/s
 	// max speed: m/s
-	MaxSpeed float64 `protobuf:"fixed64,4,opt,name=max_speed,json=maxSpeed,proto3" json:"max_speed,omitempty" yaml:"max_speed" bson:"max_speed" db:"max_speed"`
+	MaxSpeed float64 `protobuf:"fixed64,4,opt,name=max_speed,json=maxSpeed,proto3" json:"max_speed,omitempty" bson:"max_speed" db:"max_speed" yaml:"max_speed"`
 	// 单位: m/s^2, 最大加速度（正值）
 	// max accelaration: m/s^2 (positive value)
-	MaxAcceleration float64 `protobuf:"fixed64,5,opt,name=max_acceleration,json=maxAcceleration,proto3" json:"max_acceleration,omitempty" bson:"max_acceleration" db:"max_acceleration" yaml:"max_acceleration"`
+	MaxAcceleration float64 `protobuf:"fixed64,5,opt,name=max_acceleration,json=maxAcceleration,proto3" json:"max_acceleration,omitempty" yaml:"max_acceleration" bson:"max_acceleration" db:"max_acceleration"`
 	// 单位: m/s^2, 最大减速度（负值）
 	// max deceleration: m/s^2 (negative value)
-	MaxBrakingAcceleration float64 `protobuf:"fixed64,6,opt,name=max_braking_acceleration,json=maxBrakingAcceleration,proto3" json:"max_braking_acceleration,omitempty" db:"max_braking_acceleration" yaml:"max_braking_acceleration" bson:"max_braking_acceleration"`
+	MaxBrakingAcceleration float64 `protobuf:"fixed64,6,opt,name=max_braking_acceleration,json=maxBrakingAcceleration,proto3" json:"max_braking_acceleration,omitempty" yaml:"max_braking_acceleration" bson:"max_braking_acceleration" db:"max_braking_acceleration"`
 	// 单位: m/s^2, 一般加速度（正值），要求小于最大加速度
 	// usual acceleration: m/s^2 (positive value), required to be less than the max acceleration
 	UsualAcceleration float64 `protobuf:"fixed64,7,opt,name=usual_acceleration,json=usualAcceleration,proto3" json:"usual_acceleration,omitempty" yaml:"usual_acceleration" bson:"usual_acceleration" db:"usual_acceleration"`
 	// 单位: m/s^2, 一般减速度（负值），要求大于最大减速度
 	// usual deceleration: m/s^2 (negative value), required to be greater than the max deceleration
-	UsualBrakingAcceleration float64 `protobuf:"fixed64,8,opt,name=usual_braking_acceleration,json=usualBrakingAcceleration,proto3" json:"usual_braking_acceleration,omitempty" yaml:"usual_braking_acceleration" bson:"usual_braking_acceleration" db:"usual_braking_acceleration"`
+	UsualBrakingAcceleration float64 `protobuf:"fixed64,8,opt,name=usual_braking_acceleration,json=usualBrakingAcceleration,proto3" json:"usual_braking_acceleration,omitempty" bson:"usual_braking_acceleration" db:"usual_braking_acceleration" yaml:"usual_braking_acceleration"`
 	unknownFields            protoimpl.UnknownFields
 	sizeCache                protoimpl.SizeCache
 }
@@ -404,7 +404,7 @@ type VehicleAttribute struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// 单位: m, 完成变道所需路程
 	// Distance required to complete lane change: m
-	LaneChangeLength float64 `protobuf:"fixed64,1,opt,name=lane_change_length,json=laneChangeLength,proto3" json:"lane_change_length,omitempty" yaml:"lane_change_length" bson:"lane_change_length" db:"lane_change_length"`
+	LaneChangeLength float64 `protobuf:"fixed64,1,opt,name=lane_change_length,json=laneChangeLength,proto3" json:"lane_change_length,omitempty" db:"lane_change_length" yaml:"lane_change_length" bson:"lane_change_length"`
 	// 单位：米，本车距离前车的最小距离
 	// The minimum distance between the vehicle and the vehicle in front: m
 	MinGap float64 `protobuf:"fixed64,2,opt,name=min_gap,json=minGap,proto3" json:"min_gap,omitempty" yaml:"min_gap" bson:"min_gap" db:"min_gap"`
@@ -472,13 +472,13 @@ type BusAttribute struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// 公交线路ID
 	// bus line ID
-	SublineId int32 `protobuf:"varint,1,opt,name=subline_id,json=sublineId,proto3" json:"subline_id,omitempty" db:"subline_id" yaml:"subline_id" bson:"subline_id"`
+	SublineId int32 `protobuf:"varint,1,opt,name=subline_id,json=sublineId,proto3" json:"subline_id,omitempty" yaml:"subline_id" bson:"subline_id" db:"subline_id"`
 	// 公交车容量
 	// bus capacity
 	Capacity int32 `protobuf:"varint,2,opt,name=capacity,proto3" json:"capacity,omitempty" yaml:"capacity" bson:"capacity" db:"capacity"`
 	// 公交车模型标签
 	// bus model tag
-	Model *string `protobuf:"bytes,3,opt,name=model,proto3,oneof" json:"model,omitempty" yaml:"model" bson:"model" db:"model"`
+	Model *string `protobuf:"bytes,3,opt,name=model,proto3,oneof" json:"model,omitempty" db:"model" yaml:"model" bson:"model"`
 	// 公交车类型
 	// type of bus
 	Type          BusType `protobuf:"varint,5,opt,name=type,proto3,enum=city.person.v1.BusType" json:"type,omitempty" yaml:"type" bson:"type" db:"type"`
@@ -669,13 +669,13 @@ type PersonProfile struct {
 	Age int32 `protobuf:"varint,1,opt,name=age,proto3" json:"age,omitempty" yaml:"age" bson:"age" db:"age"`
 	// 教育水平
 	// education level
-	Education Education `protobuf:"varint,2,opt,name=education,proto3,enum=city.person.v1.Education" json:"education,omitempty" db:"education" yaml:"education" bson:"education"`
+	Education Education `protobuf:"varint,2,opt,name=education,proto3,enum=city.person.v1.Education" json:"education,omitempty" yaml:"education" bson:"education" db:"education"`
 	// 性别
 	// gender
-	Gender Gender `protobuf:"varint,3,opt,name=gender,proto3,enum=city.person.v1.Gender" json:"gender,omitempty" db:"gender" yaml:"gender" bson:"gender"`
+	Gender Gender `protobuf:"varint,3,opt,name=gender,proto3,enum=city.person.v1.Gender" json:"gender,omitempty" yaml:"gender" bson:"gender" db:"gender"`
 	// 消费水平
 	// consumption level
-	Consumption Consumption `protobuf:"varint,4,opt,name=consumption,proto3,enum=city.person.v1.Consumption" json:"consumption,omitempty" bson:"consumption" db:"consumption" yaml:"consumption"`
+	Consumption Consumption `protobuf:"varint,4,opt,name=consumption,proto3,enum=city.person.v1.Consumption" json:"consumption,omitempty" db:"consumption" yaml:"consumption" bson:"consumption"`
 	// 房屋ID 区分不同家庭
 	// House ID, identify which family this person belongs to
 	HouseId       int32 `protobuf:"varint,5,opt,name=house_id,json=houseId,proto3" json:"house_id,omitempty" yaml:"house_id" bson:"house_id" db:"house_id"`
@@ -757,16 +757,16 @@ type Person struct {
 	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
 	// 参数
 	// attribute
-	Attribute *PersonAttribute `protobuf:"bytes,2,opt,name=attribute,proto3" json:"attribute,omitempty" db:"attribute" yaml:"attribute" bson:"attribute"`
+	Attribute *PersonAttribute `protobuf:"bytes,2,opt,name=attribute,proto3" json:"attribute,omitempty" yaml:"attribute" bson:"attribute" db:"attribute"`
 	// 初始位置
 	// initial position
-	Home *v2.Position `protobuf:"bytes,3,opt,name=home,proto3" json:"home,omitempty" db:"home" yaml:"home" bson:"home"`
+	Home *v2.Position `protobuf:"bytes,3,opt,name=home,proto3" json:"home,omitempty" bson:"home" db:"home" yaml:"home"`
 	// 初始日程
 	// initial schedules
 	Schedules []*v21.Schedule `protobuf:"bytes,4,rep,name=schedules,proto3" json:"schedules,omitempty" yaml:"schedules" bson:"schedules" db:"schedules"`
 	// 车辆附加属性
 	// vehicle addtional attribute
-	VehicleAttribute *VehicleAttribute `protobuf:"bytes,7,opt,name=vehicle_attribute,json=vehicleAttribute,proto3,oneof" json:"vehicle_attribute,omitempty" bson:"vehicle_attribute" db:"vehicle_attribute" yaml:"vehicle_attribute"`
+	VehicleAttribute *VehicleAttribute `protobuf:"bytes,7,opt,name=vehicle_attribute,json=vehicleAttribute,proto3,oneof" json:"vehicle_attribute,omitempty" yaml:"vehicle_attribute" bson:"vehicle_attribute" db:"vehicle_attribute"`
 	// 公交车附加属性
 	// bus additional attribute
 	BusAttribute *BusAttribute `protobuf:"bytes,8,opt,name=bus_attribute,json=busAttribute,proto3,oneof" json:"bus_attribute,omitempty" yaml:"bus_attribute" bson:"bus_attribute" db:"bus_attribute"`
@@ -775,7 +775,7 @@ type Person struct {
 	PedestrianAttribute *PedestrianAttribute `protobuf:"bytes,12,opt,name=pedestrian_attribute,json=pedestrianAttribute,proto3,oneof" json:"pedestrian_attribute,omitempty" yaml:"pedestrian_attribute" bson:"pedestrian_attribute" db:"pedestrian_attribute"`
 	// 自行车附加属性
 	// bike addition attribute
-	BikeAttribute *BikeAttribute `protobuf:"bytes,9,opt,name=bike_attribute,json=bikeAttribute,proto3,oneof" json:"bike_attribute,omitempty" yaml:"bike_attribute" bson:"bike_attribute" db:"bike_attribute"`
+	BikeAttribute *BikeAttribute `protobuf:"bytes,9,opt,name=bike_attribute,json=bikeAttribute,proto3,oneof" json:"bike_attribute,omitempty" db:"bike_attribute" yaml:"bike_attribute" bson:"bike_attribute"`
 	// [可空] 额外的标签（例如：抢修车类型->电网）
 	// [can be empty] additional tags (e.g. repair vehicle type -> power grid)
 	Labels map[string]string `protobuf:"bytes,10,rep,name=labels,proto3" json:"labels,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value" yaml:"labels" bson:"labels" db:"labels"`

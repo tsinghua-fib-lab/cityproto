@@ -22,7 +22,7 @@ const (
 
 type PublishRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Event         *Event                 `protobuf:"bytes,1,opt,name=event,proto3" json:"event,omitempty" yaml:"event" bson:"event" db:"event"`
+	Event         *Event                 `protobuf:"bytes,1,opt,name=event,proto3" json:"event,omitempty" bson:"event" db:"event" yaml:"event"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }

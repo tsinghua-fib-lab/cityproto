@@ -982,57 +982,57 @@ struct SetIncomeCurrencyResponseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SetIncomeCurrencyResponseDefaultTypeInternal _SetIncomeCurrencyResponse_default_instance_;
-PROTOBUF_CONSTEXPR GetDepressionStatusRequest::GetDepressionStatusRequest(
+PROTOBUF_CONSTEXPR GetDepressionRequest::GetDepressionRequest(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.org_id_)*/0
   , /*decltype(_impl_._cached_size_)*/{}} {}
-struct GetDepressionStatusRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR GetDepressionStatusRequestDefaultTypeInternal()
+struct GetDepressionRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR GetDepressionRequestDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
-  ~GetDepressionStatusRequestDefaultTypeInternal() {}
+  ~GetDepressionRequestDefaultTypeInternal() {}
   union {
-    GetDepressionStatusRequest _instance;
+    GetDepressionRequest _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetDepressionStatusRequestDefaultTypeInternal _GetDepressionStatusRequest_default_instance_;
-PROTOBUF_CONSTEXPR GetDepressionStatusResponse::GetDepressionStatusResponse(
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetDepressionRequestDefaultTypeInternal _GetDepressionRequest_default_instance_;
+PROTOBUF_CONSTEXPR GetDepressionResponse::GetDepressionResponse(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.depression_)*/{}
   , /*decltype(_impl_._cached_size_)*/{}} {}
-struct GetDepressionStatusResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR GetDepressionStatusResponseDefaultTypeInternal()
+struct GetDepressionResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR GetDepressionResponseDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
-  ~GetDepressionStatusResponseDefaultTypeInternal() {}
+  ~GetDepressionResponseDefaultTypeInternal() {}
   union {
-    GetDepressionStatusResponse _instance;
+    GetDepressionResponse _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetDepressionStatusResponseDefaultTypeInternal _GetDepressionStatusResponse_default_instance_;
-PROTOBUF_CONSTEXPR SetDepressionStatusRequest::SetDepressionStatusRequest(
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetDepressionResponseDefaultTypeInternal _GetDepressionResponse_default_instance_;
+PROTOBUF_CONSTEXPR SetDepressionRequest::SetDepressionRequest(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.depression_)*/{}
   , /*decltype(_impl_.org_id_)*/0
   , /*decltype(_impl_._cached_size_)*/{}} {}
-struct SetDepressionStatusRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR SetDepressionStatusRequestDefaultTypeInternal()
+struct SetDepressionRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR SetDepressionRequestDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
-  ~SetDepressionStatusRequestDefaultTypeInternal() {}
+  ~SetDepressionRequestDefaultTypeInternal() {}
   union {
-    SetDepressionStatusRequest _instance;
+    SetDepressionRequest _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SetDepressionStatusRequestDefaultTypeInternal _SetDepressionStatusRequest_default_instance_;
-PROTOBUF_CONSTEXPR SetDepressionStatusResponse::SetDepressionStatusResponse(
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SetDepressionRequestDefaultTypeInternal _SetDepressionRequest_default_instance_;
+PROTOBUF_CONSTEXPR SetDepressionResponse::SetDepressionResponse(
     ::_pbi::ConstantInitialized) {}
-struct SetDepressionStatusResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR SetDepressionStatusResponseDefaultTypeInternal()
+struct SetDepressionResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR SetDepressionResponseDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
-  ~SetDepressionStatusResponseDefaultTypeInternal() {}
+  ~SetDepressionResponseDefaultTypeInternal() {}
   union {
-    SetDepressionStatusResponse _instance;
+    SetDepressionResponse _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SetDepressionStatusResponseDefaultTypeInternal _SetDepressionStatusResponse_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SetDepressionResponseDefaultTypeInternal _SetDepressionResponse_default_instance_;
 PROTOBUF_CONSTEXPR GetLocusControlRequest::GetLocusControlRequest(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.org_id_)*/0
@@ -1669,29 +1669,29 @@ const uint32_t TableStruct_city_2feconomy_2fv2_2forg_5fservice_2eproto::offsets[
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::GetDepressionStatusRequest, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::GetDepressionRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::GetDepressionStatusRequest, _impl_.org_id_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::GetDepressionRequest, _impl_.org_id_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::GetDepressionStatusResponse, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::GetDepressionResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::GetDepressionStatusResponse, _impl_.depression_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::GetDepressionResponse, _impl_.depression_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::SetDepressionStatusRequest, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::SetDepressionRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::SetDepressionStatusRequest, _impl_.org_id_),
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::SetDepressionStatusRequest, _impl_.depression_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::SetDepressionRequest, _impl_.org_id_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::SetDepressionRequest, _impl_.depression_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::SetDepressionStatusResponse, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::SetDepressionResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
@@ -1828,10 +1828,10 @@ static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protode
   { 504, -1, -1, sizeof(::city::economy::v2::GetIncomeCurrencyResponse)},
   { 511, -1, -1, sizeof(::city::economy::v2::SetIncomeCurrencyRequest)},
   { 519, -1, -1, sizeof(::city::economy::v2::SetIncomeCurrencyResponse)},
-  { 525, -1, -1, sizeof(::city::economy::v2::GetDepressionStatusRequest)},
-  { 532, -1, -1, sizeof(::city::economy::v2::GetDepressionStatusResponse)},
-  { 539, -1, -1, sizeof(::city::economy::v2::SetDepressionStatusRequest)},
-  { 547, -1, -1, sizeof(::city::economy::v2::SetDepressionStatusResponse)},
+  { 525, -1, -1, sizeof(::city::economy::v2::GetDepressionRequest)},
+  { 532, -1, -1, sizeof(::city::economy::v2::GetDepressionResponse)},
+  { 539, -1, -1, sizeof(::city::economy::v2::SetDepressionRequest)},
+  { 547, -1, -1, sizeof(::city::economy::v2::SetDepressionResponse)},
   { 553, -1, -1, sizeof(::city::economy::v2::GetLocusControlRequest)},
   { 560, -1, -1, sizeof(::city::economy::v2::GetLocusControlResponse)},
   { 567, -1, -1, sizeof(::city::economy::v2::SetLocusControlRequest)},
@@ -1917,10 +1917,10 @@ static const ::_pb::Message* const file_default_instances[] = {
   &::city::economy::v2::_GetIncomeCurrencyResponse_default_instance_._instance,
   &::city::economy::v2::_SetIncomeCurrencyRequest_default_instance_._instance,
   &::city::economy::v2::_SetIncomeCurrencyResponse_default_instance_._instance,
-  &::city::economy::v2::_GetDepressionStatusRequest_default_instance_._instance,
-  &::city::economy::v2::_GetDepressionStatusResponse_default_instance_._instance,
-  &::city::economy::v2::_SetDepressionStatusRequest_default_instance_._instance,
-  &::city::economy::v2::_SetDepressionStatusResponse_default_instance_._instance,
+  &::city::economy::v2::_GetDepressionRequest_default_instance_._instance,
+  &::city::economy::v2::_GetDepressionResponse_default_instance_._instance,
+  &::city::economy::v2::_SetDepressionRequest_default_instance_._instance,
+  &::city::economy::v2::_SetDepressionResponse_default_instance_._instance,
   &::city::economy::v2::_GetLocusControlRequest_default_instance_._instance,
   &::city::economy::v2::_GetLocusControlResponse_default_instance_._instance,
   &::city::economy::v2::_SetLocusControlRequest_default_instance_._instance,
@@ -2042,144 +2042,142 @@ const char descriptor_table_protodef_city_2feconomy_2fv2_2forg_5fservice_2eproto
   "eCurrency\"Z\n\030SetIncomeCurrencyRequest\022\025\n"
   "\006org_id\030\001 \001(\005R\005orgId\022\'\n\017income_currency\030"
   "\002 \003(\002R\016incomeCurrency\"\033\n\031SetIncomeCurren"
-  "cyResponse\"3\n\032GetDepressionStatusRequest"
-  "\022\025\n\006org_id\030\001 \001(\005R\005orgId\"=\n\033GetDepression"
-  "StatusResponse\022\036\n\ndepression\030\001 \003(\002R\ndepr"
-  "ession\"S\n\032SetDepressionStatusRequest\022\025\n\006"
-  "org_id\030\001 \001(\005R\005orgId\022\036\n\ndepression\030\002 \003(\002R"
-  "\ndepression\"\035\n\033SetDepressionStatusRespon"
-  "se\"/\n\026GetLocusControlRequest\022\025\n\006org_id\030\001"
-  " \001(\005R\005orgId\">\n\027GetLocusControlResponse\022#"
-  "\n\rlocus_control\030\001 \003(\002R\014locusControl\"T\n\026S"
-  "etLocusControlRequest\022\025\n\006org_id\030\001 \001(\005R\005o"
-  "rgId\022#\n\rlocus_control\030\002 \003(\002R\014locusContro"
-  "l\"\031\n\027SetLocusControlResponse\"/\n\026GetWorki"
-  "ngHoursRequest\022\025\n\006org_id\030\001 \001(\005R\005orgId\">\n"
-  "\027GetWorkingHoursResponse\022#\n\rworking_hour"
-  "s\030\001 \003(\002R\014workingHours\"T\n\026SetWorkingHours"
-  "Request\022\025\n\006org_id\030\001 \001(\005R\005orgId\022#\n\rworkin"
-  "g_hours\030\002 \003(\002R\014workingHours\"\031\n\027SetWorkin"
-  "gHoursResponse2\327!\n\nOrgService\022I\n\006AddOrg\022"
-  "\036.city.economy.v2.AddOrgRequest\032\037.city.e"
-  "conomy.v2.AddOrgResponse\022R\n\tRemoveOrg\022!."
-  "city.economy.v2.RemoveOrgRequest\032\".city."
-  "economy.v2.RemoveOrgResponse\022O\n\010AddAgent"
-  "\022 .city.economy.v2.AddAgentRequest\032!.cit"
-  "y.economy.v2.AddAgentResponse\022X\n\013RemoveA"
-  "gent\022#.city.economy.v2.RemoveAgentReques"
-  "t\032$.city.economy.v2.RemoveAgentResponse\022"
-  "^\n\rGetNominalGDP\022%.city.economy.v2.GetNo"
-  "minalGDPRequest\032&.city.economy.v2.GetNom"
-  "inalGDPResponse\022^\n\rSetNominalGDP\022%.city."
-  "economy.v2.SetNominalGDPRequest\032&.city.e"
-  "conomy.v2.SetNominalGDPResponse\022U\n\nGetRe"
-  "alGDP\022\".city.economy.v2.GetRealGDPReques"
-  "t\032#.city.economy.v2.GetRealGDPResponse\022U"
-  "\n\nSetRealGDP\022\".city.economy.v2.SetRealGD"
-  "PRequest\032#.city.economy.v2.SetRealGDPRes"
-  "ponse\022d\n\017GetUnemployment\022\'.city.economy."
-  "v2.GetUnemploymentRequest\032(.city.economy"
-  ".v2.GetUnemploymentResponse\022d\n\017SetUnempl"
-  "oyment\022\'.city.economy.v2.SetUnemployment"
-  "Request\032(.city.economy.v2.SetUnemploymen"
-  "tResponse\022O\n\010GetWages\022 .city.economy.v2."
-  "GetWagesRequest\032!.city.economy.v2.GetWag"
-  "esResponse\022O\n\010SetWages\022 .city.economy.v2"
-  ".SetWagesRequest\032!.city.economy.v2.SetWa"
-  "gesResponse\022R\n\tGetPrices\022!.city.economy."
-  "v2.GetPricesRequest\032\".city.economy.v2.Ge"
-  "tPricesResponse\022R\n\tSetPrices\022!.city.econ"
-  "omy.v2.SetPricesRequest\032\".city.economy.v"
-  "2.SetPricesResponse\022[\n\014GetInventory\022$.ci"
-  "ty.economy.v2.GetInventoryRequest\032%.city"
-  ".economy.v2.GetInventoryResponse\022[\n\014SetI"
-  "nventory\022$.city.economy.v2.SetInventoryR"
-  "equest\032%.city.economy.v2.SetInventoryRes"
-  "ponse\022O\n\010GetPrice\022 .city.economy.v2.GetP"
-  "riceRequest\032!.city.economy.v2.GetPriceRe"
-  "sponse\022O\n\010SetPrice\022 .city.economy.v2.Set"
-  "PriceRequest\032!.city.economy.v2.SetPriceR"
-  "esponse\022X\n\013GetCurrency\022#.city.economy.v2"
-  ".GetCurrencyRequest\032$.city.economy.v2.Ge"
-  "tCurrencyResponse\022X\n\013SetCurrency\022#.city."
-  "economy.v2.SetCurrencyRequest\032$.city.eco"
-  "nomy.v2.SetCurrencyResponse\022d\n\017GetIntere"
-  "stRate\022\'.city.economy.v2.GetInterestRate"
-  "Request\032(.city.economy.v2.GetInterestRat"
-  "eResponse\022d\n\017SetInterestRate\022\'.city.econ"
-  "omy.v2.SetInterestRateRequest\032(.city.eco"
-  "nomy.v2.SetInterestRateResponse\022j\n\021GetBr"
-  "acketCutoffs\022).city.economy.v2.GetBracke"
-  "tCutoffsRequest\032*.city.economy.v2.GetBra"
-  "cketCutoffsResponse\022j\n\021SetBracketCutoffs"
-  "\022).city.economy.v2.SetBracketCutoffsRequ"
-  "est\032*.city.economy.v2.SetBracketCutoffsR"
-  "esponse\022d\n\017GetBracketRates\022\'.city.econom"
-  "y.v2.GetBracketRatesRequest\032(.city.econo"
-  "my.v2.GetBracketRatesResponse\022d\n\017SetBrac"
-  "ketRates\022\'.city.economy.v2.SetBracketRat"
-  "esRequest\032(.city.economy.v2.SetBracketRa"
-  "tesResponse\022j\n\021CalculateTaxesDue\022).city."
-  "economy.v2.CalculateTaxesDueRequest\032*.ci"
-  "ty.economy.v2.CalculateTaxesDueResponse\022"
-  "s\n\024CalculateConsumption\022,.city.economy.v"
-  "2.CalculateConsumptionRequest\032-.city.eco"
-  "nomy.v2.CalculateConsumptionResponse\022j\n\021"
-  "CalculateInterest\022).city.economy.v2.Calc"
-  "ulateInterestRequest\032*.city.economy.v2.C"
-  "alculateInterestResponse\022p\n\023SaveEconomyE"
-  "ntities\022+.city.economy.v2.SaveEconomyEnt"
-  "itiesRequest\032,.city.economy.v2.SaveEcono"
-  "myEntitiesResponse\022p\n\023LoadEconomyEntitie"
-  "s\022+.city.economy.v2.LoadEconomyEntitiesR"
-  "equest\032,.city.economy.v2.LoadEconomyEnti"
-  "tiesResponse\022y\n\026GetConsumptionCurrency\022."
-  ".city.economy.v2.GetConsumptionCurrencyR"
-  "equest\032/.city.economy.v2.GetConsumptionC"
-  "urrencyResponse\022y\n\026SetConsumptionCurrenc"
-  "y\022..city.economy.v2.SetConsumptionCurren"
-  "cyRequest\032/.city.economy.v2.SetConsumpti"
-  "onCurrencyResponse\022\177\n\030GetConsumptionProp"
-  "ensity\0220.city.economy.v2.GetConsumptionP"
-  "ropensityRequest\0321.city.economy.v2.GetCo"
-  "nsumptionPropensityResponse\022\177\n\030SetConsum"
-  "ptionPropensity\0220.city.economy.v2.SetCon"
-  "sumptionPropensityRequest\0321.city.economy"
-  ".v2.SetConsumptionPropensityResponse\022j\n\021"
-  "GetIncomeCurrency\022).city.economy.v2.GetI"
-  "ncomeCurrencyRequest\032*.city.economy.v2.G"
-  "etIncomeCurrencyResponse\022j\n\021SetIncomeCur"
-  "rency\022).city.economy.v2.SetIncomeCurrenc"
-  "yRequest\032*.city.economy.v2.SetIncomeCurr"
-  "encyResponse\022p\n\023GetDepressionStatus\022+.ci"
-  "ty.economy.v2.GetDepressionStatusRequest"
-  "\032,.city.economy.v2.GetDepressionStatusRe"
-  "sponse\022p\n\023SetDepressionStatus\022+.city.eco"
-  "nomy.v2.SetDepressionStatusRequest\032,.cit"
-  "y.economy.v2.SetDepressionStatusResponse"
-  "\022d\n\017GetLocusControl\022\'.city.economy.v2.Ge"
-  "tLocusControlRequest\032(.city.economy.v2.G"
-  "etLocusControlResponse\022d\n\017SetLocusContro"
-  "l\022\'.city.economy.v2.SetLocusControlReque"
-  "st\032(.city.economy.v2.SetLocusControlResp"
-  "onse\022d\n\017GetWorkingHours\022\'.city.economy.v"
-  "2.GetWorkingHoursRequest\032(.city.economy."
-  "v2.GetWorkingHoursResponse\022d\n\017SetWorking"
-  "Hours\022\'.city.economy.v2.SetWorkingHoursR"
-  "equest\032(.city.economy.v2.SetWorkingHours"
-  "ResponseB\277\001\n\023com.city.economy.v2B\017OrgSer"
-  "viceProtoP\001Z9git.fiblab.net/sim/protos/v"
-  "2/go/city/economy/v2;economyv2\242\002\003CEX\252\002\017C"
-  "ity.Economy.V2\312\002\017City\\Economy\\V2\342\002\033City\\"
-  "Economy\\V2\\GPBMetadata\352\002\021City::Economy::"
-  "V2b\006proto3"
+  "cyResponse\"-\n\024GetDepressionRequest\022\025\n\006or"
+  "g_id\030\001 \001(\005R\005orgId\"7\n\025GetDepressionRespon"
+  "se\022\036\n\ndepression\030\001 \003(\002R\ndepression\"M\n\024Se"
+  "tDepressionRequest\022\025\n\006org_id\030\001 \001(\005R\005orgI"
+  "d\022\036\n\ndepression\030\002 \003(\002R\ndepression\"\027\n\025Set"
+  "DepressionResponse\"/\n\026GetLocusControlReq"
+  "uest\022\025\n\006org_id\030\001 \001(\005R\005orgId\">\n\027GetLocusC"
+  "ontrolResponse\022#\n\rlocus_control\030\001 \003(\002R\014l"
+  "ocusControl\"T\n\026SetLocusControlRequest\022\025\n"
+  "\006org_id\030\001 \001(\005R\005orgId\022#\n\rlocus_control\030\002 "
+  "\003(\002R\014locusControl\"\031\n\027SetLocusControlResp"
+  "onse\"/\n\026GetWorkingHoursRequest\022\025\n\006org_id"
+  "\030\001 \001(\005R\005orgId\">\n\027GetWorkingHoursResponse"
+  "\022#\n\rworking_hours\030\001 \003(\002R\014workingHours\"T\n"
+  "\026SetWorkingHoursRequest\022\025\n\006org_id\030\001 \001(\005R"
+  "\005orgId\022#\n\rworking_hours\030\002 \003(\002R\014workingHo"
+  "urs\"\031\n\027SetWorkingHoursResponse2\263!\n\nOrgSe"
+  "rvice\022I\n\006AddOrg\022\036.city.economy.v2.AddOrg"
+  "Request\032\037.city.economy.v2.AddOrgResponse"
+  "\022R\n\tRemoveOrg\022!.city.economy.v2.RemoveOr"
+  "gRequest\032\".city.economy.v2.RemoveOrgResp"
+  "onse\022O\n\010AddAgent\022 .city.economy.v2.AddAg"
+  "entRequest\032!.city.economy.v2.AddAgentRes"
+  "ponse\022X\n\013RemoveAgent\022#.city.economy.v2.R"
+  "emoveAgentRequest\032$.city.economy.v2.Remo"
+  "veAgentResponse\022^\n\rGetNominalGDP\022%.city."
+  "economy.v2.GetNominalGDPRequest\032&.city.e"
+  "conomy.v2.GetNominalGDPResponse\022^\n\rSetNo"
+  "minalGDP\022%.city.economy.v2.SetNominalGDP"
+  "Request\032&.city.economy.v2.SetNominalGDPR"
+  "esponse\022U\n\nGetRealGDP\022\".city.economy.v2."
+  "GetRealGDPRequest\032#.city.economy.v2.GetR"
+  "ealGDPResponse\022U\n\nSetRealGDP\022\".city.econ"
+  "omy.v2.SetRealGDPRequest\032#.city.economy."
+  "v2.SetRealGDPResponse\022d\n\017GetUnemployment"
+  "\022\'.city.economy.v2.GetUnemploymentReques"
+  "t\032(.city.economy.v2.GetUnemploymentRespo"
+  "nse\022d\n\017SetUnemployment\022\'.city.economy.v2"
+  ".SetUnemploymentRequest\032(.city.economy.v"
+  "2.SetUnemploymentResponse\022O\n\010GetWages\022 ."
+  "city.economy.v2.GetWagesRequest\032!.city.e"
+  "conomy.v2.GetWagesResponse\022O\n\010SetWages\022 "
+  ".city.economy.v2.SetWagesRequest\032!.city."
+  "economy.v2.SetWagesResponse\022R\n\tGetPrices"
+  "\022!.city.economy.v2.GetPricesRequest\032\".ci"
+  "ty.economy.v2.GetPricesResponse\022R\n\tSetPr"
+  "ices\022!.city.economy.v2.SetPricesRequest\032"
+  "\".city.economy.v2.SetPricesResponse\022[\n\014G"
+  "etInventory\022$.city.economy.v2.GetInvento"
+  "ryRequest\032%.city.economy.v2.GetInventory"
+  "Response\022[\n\014SetInventory\022$.city.economy."
+  "v2.SetInventoryRequest\032%.city.economy.v2"
+  ".SetInventoryResponse\022O\n\010GetPrice\022 .city"
+  ".economy.v2.GetPriceRequest\032!.city.econo"
+  "my.v2.GetPriceResponse\022O\n\010SetPrice\022 .cit"
+  "y.economy.v2.SetPriceRequest\032!.city.econ"
+  "omy.v2.SetPriceResponse\022X\n\013GetCurrency\022#"
+  ".city.economy.v2.GetCurrencyRequest\032$.ci"
+  "ty.economy.v2.GetCurrencyResponse\022X\n\013Set"
+  "Currency\022#.city.economy.v2.SetCurrencyRe"
+  "quest\032$.city.economy.v2.SetCurrencyRespo"
+  "nse\022d\n\017GetInterestRate\022\'.city.economy.v2"
+  ".GetInterestRateRequest\032(.city.economy.v"
+  "2.GetInterestRateResponse\022d\n\017SetInterest"
+  "Rate\022\'.city.economy.v2.SetInterestRateRe"
+  "quest\032(.city.economy.v2.SetInterestRateR"
+  "esponse\022j\n\021GetBracketCutoffs\022).city.econ"
+  "omy.v2.GetBracketCutoffsRequest\032*.city.e"
+  "conomy.v2.GetBracketCutoffsResponse\022j\n\021S"
+  "etBracketCutoffs\022).city.economy.v2.SetBr"
+  "acketCutoffsRequest\032*.city.economy.v2.Se"
+  "tBracketCutoffsResponse\022d\n\017GetBracketRat"
+  "es\022\'.city.economy.v2.GetBracketRatesRequ"
+  "est\032(.city.economy.v2.GetBracketRatesRes"
+  "ponse\022d\n\017SetBracketRates\022\'.city.economy."
+  "v2.SetBracketRatesRequest\032(.city.economy"
+  ".v2.SetBracketRatesResponse\022j\n\021Calculate"
+  "TaxesDue\022).city.economy.v2.CalculateTaxe"
+  "sDueRequest\032*.city.economy.v2.CalculateT"
+  "axesDueResponse\022s\n\024CalculateConsumption\022"
+  ",.city.economy.v2.CalculateConsumptionRe"
+  "quest\032-.city.economy.v2.CalculateConsump"
+  "tionResponse\022j\n\021CalculateInterest\022).city"
+  ".economy.v2.CalculateInterestRequest\032*.c"
+  "ity.economy.v2.CalculateInterestResponse"
+  "\022p\n\023SaveEconomyEntities\022+.city.economy.v"
+  "2.SaveEconomyEntitiesRequest\032,.city.econ"
+  "omy.v2.SaveEconomyEntitiesResponse\022p\n\023Lo"
+  "adEconomyEntities\022+.city.economy.v2.Load"
+  "EconomyEntitiesRequest\032,.city.economy.v2"
+  ".LoadEconomyEntitiesResponse\022y\n\026GetConsu"
+  "mptionCurrency\022..city.economy.v2.GetCons"
+  "umptionCurrencyRequest\032/.city.economy.v2"
+  ".GetConsumptionCurrencyResponse\022y\n\026SetCo"
+  "nsumptionCurrency\022..city.economy.v2.SetC"
+  "onsumptionCurrencyRequest\032/.city.economy"
+  ".v2.SetConsumptionCurrencyResponse\022\177\n\030Ge"
+  "tConsumptionPropensity\0220.city.economy.v2"
+  ".GetConsumptionPropensityRequest\0321.city."
+  "economy.v2.GetConsumptionPropensityRespo"
+  "nse\022\177\n\030SetConsumptionPropensity\0220.city.e"
+  "conomy.v2.SetConsumptionPropensityReques"
+  "t\0321.city.economy.v2.SetConsumptionPropen"
+  "sityResponse\022j\n\021GetIncomeCurrency\022).city"
+  ".economy.v2.GetIncomeCurrencyRequest\032*.c"
+  "ity.economy.v2.GetIncomeCurrencyResponse"
+  "\022j\n\021SetIncomeCurrency\022).city.economy.v2."
+  "SetIncomeCurrencyRequest\032*.city.economy."
+  "v2.SetIncomeCurrencyResponse\022^\n\rGetDepre"
+  "ssion\022%.city.economy.v2.GetDepressionReq"
+  "uest\032&.city.economy.v2.GetDepressionResp"
+  "onse\022^\n\rSetDepression\022%.city.economy.v2."
+  "SetDepressionRequest\032&.city.economy.v2.S"
+  "etDepressionResponse\022d\n\017GetLocusControl\022"
+  "\'.city.economy.v2.GetLocusControlRequest"
+  "\032(.city.economy.v2.GetLocusControlRespon"
+  "se\022d\n\017SetLocusControl\022\'.city.economy.v2."
+  "SetLocusControlRequest\032(.city.economy.v2"
+  ".SetLocusControlResponse\022d\n\017GetWorkingHo"
+  "urs\022\'.city.economy.v2.GetWorkingHoursReq"
+  "uest\032(.city.economy.v2.GetWorkingHoursRe"
+  "sponse\022d\n\017SetWorkingHours\022\'.city.economy"
+  ".v2.SetWorkingHoursRequest\032(.city.econom"
+  "y.v2.SetWorkingHoursResponseB\277\001\n\023com.cit"
+  "y.economy.v2B\017OrgServiceProtoP\001Z9git.fib"
+  "lab.net/sim/protos/v2/go/city/economy/v2"
+  ";economyv2\242\002\003CEX\252\002\017City.Economy.V2\312\002\017Cit"
+  "y\\Economy\\V2\342\002\033City\\Economy\\V2\\GPBMetada"
+  "ta\352\002\021City::Economy::V2b\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_deps[1] = {
   &::descriptor_table_city_2feconomy_2fv2_2feconomy_2eproto,
 };
 static ::_pbi::once_flag descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto = {
-    false, false, 9610, descriptor_table_protodef_city_2feconomy_2fv2_2forg_5fservice_2eproto,
+    false, false, 9550, descriptor_table_protodef_city_2feconomy_2fv2_2forg_5fservice_2eproto,
     "city/economy/v2/org_service.proto",
     &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once, descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_deps, 1, 86,
     schemas, file_default_instances, TableStruct_city_2feconomy_2fv2_2forg_5fservice_2eproto::offsets,
@@ -14043,29 +14041,29 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SetIncomeCurrencyResponse::Get
 
 // ===================================================================
 
-class GetDepressionStatusRequest::_Internal {
+class GetDepressionRequest::_Internal {
  public:
 };
 
-GetDepressionStatusRequest::GetDepressionStatusRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+GetDepressionRequest::GetDepressionRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:city.economy.v2.GetDepressionStatusRequest)
+  // @@protoc_insertion_point(arena_constructor:city.economy.v2.GetDepressionRequest)
 }
-GetDepressionStatusRequest::GetDepressionStatusRequest(const GetDepressionStatusRequest& from)
+GetDepressionRequest::GetDepressionRequest(const GetDepressionRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  GetDepressionStatusRequest* const _this = this; (void)_this;
+  GetDepressionRequest* const _this = this; (void)_this;
   new (&_impl_) Impl_{
       decltype(_impl_.org_id_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   _this->_impl_.org_id_ = from._impl_.org_id_;
-  // @@protoc_insertion_point(copy_constructor:city.economy.v2.GetDepressionStatusRequest)
+  // @@protoc_insertion_point(copy_constructor:city.economy.v2.GetDepressionRequest)
 }
 
-inline void GetDepressionStatusRequest::SharedCtor(
+inline void GetDepressionRequest::SharedCtor(
     ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
   (void)is_message_owned;
@@ -14075,8 +14073,8 @@ inline void GetDepressionStatusRequest::SharedCtor(
   };
 }
 
-GetDepressionStatusRequest::~GetDepressionStatusRequest() {
-  // @@protoc_insertion_point(destructor:city.economy.v2.GetDepressionStatusRequest)
+GetDepressionRequest::~GetDepressionRequest() {
+  // @@protoc_insertion_point(destructor:city.economy.v2.GetDepressionRequest)
   if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
   (void)arena;
     return;
@@ -14084,16 +14082,16 @@ GetDepressionStatusRequest::~GetDepressionStatusRequest() {
   SharedDtor();
 }
 
-inline void GetDepressionStatusRequest::SharedDtor() {
+inline void GetDepressionRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
-void GetDepressionStatusRequest::SetCachedSize(int size) const {
+void GetDepressionRequest::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-void GetDepressionStatusRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:city.economy.v2.GetDepressionStatusRequest)
+void GetDepressionRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:city.economy.v2.GetDepressionRequest)
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -14102,7 +14100,7 @@ void GetDepressionStatusRequest::Clear() {
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* GetDepressionStatusRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* GetDepressionRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
@@ -14139,9 +14137,9 @@ failure:
 #undef CHK_
 }
 
-uint8_t* GetDepressionStatusRequest::_InternalSerialize(
+uint8_t* GetDepressionRequest::_InternalSerialize(
     uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:city.economy.v2.GetDepressionStatusRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:city.economy.v2.GetDepressionRequest)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -14155,12 +14153,12 @@ uint8_t* GetDepressionStatusRequest::_InternalSerialize(
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:city.economy.v2.GetDepressionStatusRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:city.economy.v2.GetDepressionRequest)
   return target;
 }
 
-size_t GetDepressionStatusRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:city.economy.v2.GetDepressionStatusRequest)
+size_t GetDepressionRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:city.economy.v2.GetDepressionRequest)
   size_t total_size = 0;
 
   uint32_t cached_has_bits = 0;
@@ -14175,17 +14173,17 @@ size_t GetDepressionStatusRequest::ByteSizeLong() const {
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetDepressionStatusRequest::_class_data_ = {
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetDepressionRequest::_class_data_ = {
     ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    GetDepressionStatusRequest::MergeImpl
+    GetDepressionRequest::MergeImpl
 };
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetDepressionStatusRequest::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetDepressionRequest::GetClassData() const { return &_class_data_; }
 
 
-void GetDepressionStatusRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<GetDepressionStatusRequest*>(&to_msg);
-  auto& from = static_cast<const GetDepressionStatusRequest&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:city.economy.v2.GetDepressionStatusRequest)
+void GetDepressionRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<GetDepressionRequest*>(&to_msg);
+  auto& from = static_cast<const GetDepressionRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:city.economy.v2.GetDepressionRequest)
   GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
@@ -14196,24 +14194,24 @@ void GetDepressionStatusRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
-void GetDepressionStatusRequest::CopyFrom(const GetDepressionStatusRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:city.economy.v2.GetDepressionStatusRequest)
+void GetDepressionRequest::CopyFrom(const GetDepressionRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:city.economy.v2.GetDepressionRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool GetDepressionStatusRequest::IsInitialized() const {
+bool GetDepressionRequest::IsInitialized() const {
   return true;
 }
 
-void GetDepressionStatusRequest::InternalSwap(GetDepressionStatusRequest* other) {
+void GetDepressionRequest::InternalSwap(GetDepressionRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_.org_id_, other->_impl_.org_id_);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata GetDepressionStatusRequest::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata GetDepressionRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
       file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[74]);
@@ -14221,28 +14219,28 @@ void GetDepressionStatusRequest::InternalSwap(GetDepressionStatusRequest* other)
 
 // ===================================================================
 
-class GetDepressionStatusResponse::_Internal {
+class GetDepressionResponse::_Internal {
  public:
 };
 
-GetDepressionStatusResponse::GetDepressionStatusResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+GetDepressionResponse::GetDepressionResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:city.economy.v2.GetDepressionStatusResponse)
+  // @@protoc_insertion_point(arena_constructor:city.economy.v2.GetDepressionResponse)
 }
-GetDepressionStatusResponse::GetDepressionStatusResponse(const GetDepressionStatusResponse& from)
+GetDepressionResponse::GetDepressionResponse(const GetDepressionResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  GetDepressionStatusResponse* const _this = this; (void)_this;
+  GetDepressionResponse* const _this = this; (void)_this;
   new (&_impl_) Impl_{
       decltype(_impl_.depression_){from._impl_.depression_}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:city.economy.v2.GetDepressionStatusResponse)
+  // @@protoc_insertion_point(copy_constructor:city.economy.v2.GetDepressionResponse)
 }
 
-inline void GetDepressionStatusResponse::SharedCtor(
+inline void GetDepressionResponse::SharedCtor(
     ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
   (void)is_message_owned;
@@ -14252,8 +14250,8 @@ inline void GetDepressionStatusResponse::SharedCtor(
   };
 }
 
-GetDepressionStatusResponse::~GetDepressionStatusResponse() {
-  // @@protoc_insertion_point(destructor:city.economy.v2.GetDepressionStatusResponse)
+GetDepressionResponse::~GetDepressionResponse() {
+  // @@protoc_insertion_point(destructor:city.economy.v2.GetDepressionResponse)
   if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
   (void)arena;
     return;
@@ -14261,17 +14259,17 @@ GetDepressionStatusResponse::~GetDepressionStatusResponse() {
   SharedDtor();
 }
 
-inline void GetDepressionStatusResponse::SharedDtor() {
+inline void GetDepressionResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.depression_.~RepeatedField();
 }
 
-void GetDepressionStatusResponse::SetCachedSize(int size) const {
+void GetDepressionResponse::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-void GetDepressionStatusResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:city.economy.v2.GetDepressionStatusResponse)
+void GetDepressionResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:city.economy.v2.GetDepressionResponse)
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -14280,7 +14278,7 @@ void GetDepressionStatusResponse::Clear() {
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* GetDepressionStatusResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* GetDepressionResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
@@ -14320,9 +14318,9 @@ failure:
 #undef CHK_
 }
 
-uint8_t* GetDepressionStatusResponse::_InternalSerialize(
+uint8_t* GetDepressionResponse::_InternalSerialize(
     uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:city.economy.v2.GetDepressionStatusResponse)
+  // @@protoc_insertion_point(serialize_to_array_start:city.economy.v2.GetDepressionResponse)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -14335,12 +14333,12 @@ uint8_t* GetDepressionStatusResponse::_InternalSerialize(
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:city.economy.v2.GetDepressionStatusResponse)
+  // @@protoc_insertion_point(serialize_to_array_end:city.economy.v2.GetDepressionResponse)
   return target;
 }
 
-size_t GetDepressionStatusResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:city.economy.v2.GetDepressionStatusResponse)
+size_t GetDepressionResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:city.economy.v2.GetDepressionResponse)
   size_t total_size = 0;
 
   uint32_t cached_has_bits = 0;
@@ -14361,17 +14359,17 @@ size_t GetDepressionStatusResponse::ByteSizeLong() const {
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetDepressionStatusResponse::_class_data_ = {
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetDepressionResponse::_class_data_ = {
     ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    GetDepressionStatusResponse::MergeImpl
+    GetDepressionResponse::MergeImpl
 };
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetDepressionStatusResponse::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetDepressionResponse::GetClassData() const { return &_class_data_; }
 
 
-void GetDepressionStatusResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<GetDepressionStatusResponse*>(&to_msg);
-  auto& from = static_cast<const GetDepressionStatusResponse&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:city.economy.v2.GetDepressionStatusResponse)
+void GetDepressionResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<GetDepressionResponse*>(&to_msg);
+  auto& from = static_cast<const GetDepressionResponse&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:city.economy.v2.GetDepressionResponse)
   GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
@@ -14380,24 +14378,24 @@ void GetDepressionStatusResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
-void GetDepressionStatusResponse::CopyFrom(const GetDepressionStatusResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:city.economy.v2.GetDepressionStatusResponse)
+void GetDepressionResponse::CopyFrom(const GetDepressionResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:city.economy.v2.GetDepressionResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool GetDepressionStatusResponse::IsInitialized() const {
+bool GetDepressionResponse::IsInitialized() const {
   return true;
 }
 
-void GetDepressionStatusResponse::InternalSwap(GetDepressionStatusResponse* other) {
+void GetDepressionResponse::InternalSwap(GetDepressionResponse* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   _impl_.depression_.InternalSwap(&other->_impl_.depression_);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata GetDepressionStatusResponse::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata GetDepressionResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
       file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[75]);
@@ -14405,19 +14403,19 @@ void GetDepressionStatusResponse::InternalSwap(GetDepressionStatusResponse* othe
 
 // ===================================================================
 
-class SetDepressionStatusRequest::_Internal {
+class SetDepressionRequest::_Internal {
  public:
 };
 
-SetDepressionStatusRequest::SetDepressionStatusRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+SetDepressionRequest::SetDepressionRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:city.economy.v2.SetDepressionStatusRequest)
+  // @@protoc_insertion_point(arena_constructor:city.economy.v2.SetDepressionRequest)
 }
-SetDepressionStatusRequest::SetDepressionStatusRequest(const SetDepressionStatusRequest& from)
+SetDepressionRequest::SetDepressionRequest(const SetDepressionRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  SetDepressionStatusRequest* const _this = this; (void)_this;
+  SetDepressionRequest* const _this = this; (void)_this;
   new (&_impl_) Impl_{
       decltype(_impl_.depression_){from._impl_.depression_}
     , decltype(_impl_.org_id_){}
@@ -14425,10 +14423,10 @@ SetDepressionStatusRequest::SetDepressionStatusRequest(const SetDepressionStatus
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   _this->_impl_.org_id_ = from._impl_.org_id_;
-  // @@protoc_insertion_point(copy_constructor:city.economy.v2.SetDepressionStatusRequest)
+  // @@protoc_insertion_point(copy_constructor:city.economy.v2.SetDepressionRequest)
 }
 
-inline void SetDepressionStatusRequest::SharedCtor(
+inline void SetDepressionRequest::SharedCtor(
     ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
   (void)is_message_owned;
@@ -14439,8 +14437,8 @@ inline void SetDepressionStatusRequest::SharedCtor(
   };
 }
 
-SetDepressionStatusRequest::~SetDepressionStatusRequest() {
-  // @@protoc_insertion_point(destructor:city.economy.v2.SetDepressionStatusRequest)
+SetDepressionRequest::~SetDepressionRequest() {
+  // @@protoc_insertion_point(destructor:city.economy.v2.SetDepressionRequest)
   if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
   (void)arena;
     return;
@@ -14448,17 +14446,17 @@ SetDepressionStatusRequest::~SetDepressionStatusRequest() {
   SharedDtor();
 }
 
-inline void SetDepressionStatusRequest::SharedDtor() {
+inline void SetDepressionRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.depression_.~RepeatedField();
 }
 
-void SetDepressionStatusRequest::SetCachedSize(int size) const {
+void SetDepressionRequest::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-void SetDepressionStatusRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:city.economy.v2.SetDepressionStatusRequest)
+void SetDepressionRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:city.economy.v2.SetDepressionRequest)
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -14468,7 +14466,7 @@ void SetDepressionStatusRequest::Clear() {
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* SetDepressionStatusRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* SetDepressionRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
@@ -14516,9 +14514,9 @@ failure:
 #undef CHK_
 }
 
-uint8_t* SetDepressionStatusRequest::_InternalSerialize(
+uint8_t* SetDepressionRequest::_InternalSerialize(
     uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:city.economy.v2.SetDepressionStatusRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:city.economy.v2.SetDepressionRequest)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -14537,12 +14535,12 @@ uint8_t* SetDepressionStatusRequest::_InternalSerialize(
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:city.economy.v2.SetDepressionStatusRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:city.economy.v2.SetDepressionRequest)
   return target;
 }
 
-size_t SetDepressionStatusRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:city.economy.v2.SetDepressionStatusRequest)
+size_t SetDepressionRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:city.economy.v2.SetDepressionRequest)
   size_t total_size = 0;
 
   uint32_t cached_has_bits = 0;
@@ -14568,17 +14566,17 @@ size_t SetDepressionStatusRequest::ByteSizeLong() const {
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData SetDepressionStatusRequest::_class_data_ = {
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData SetDepressionRequest::_class_data_ = {
     ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    SetDepressionStatusRequest::MergeImpl
+    SetDepressionRequest::MergeImpl
 };
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SetDepressionStatusRequest::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SetDepressionRequest::GetClassData() const { return &_class_data_; }
 
 
-void SetDepressionStatusRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<SetDepressionStatusRequest*>(&to_msg);
-  auto& from = static_cast<const SetDepressionStatusRequest&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:city.economy.v2.SetDepressionStatusRequest)
+void SetDepressionRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<SetDepressionRequest*>(&to_msg);
+  auto& from = static_cast<const SetDepressionRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:city.economy.v2.SetDepressionRequest)
   GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
@@ -14590,25 +14588,25 @@ void SetDepressionStatusRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
-void SetDepressionStatusRequest::CopyFrom(const SetDepressionStatusRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:city.economy.v2.SetDepressionStatusRequest)
+void SetDepressionRequest::CopyFrom(const SetDepressionRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:city.economy.v2.SetDepressionRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool SetDepressionStatusRequest::IsInitialized() const {
+bool SetDepressionRequest::IsInitialized() const {
   return true;
 }
 
-void SetDepressionStatusRequest::InternalSwap(SetDepressionStatusRequest* other) {
+void SetDepressionRequest::InternalSwap(SetDepressionRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   _impl_.depression_.InternalSwap(&other->_impl_.depression_);
   swap(_impl_.org_id_, other->_impl_.org_id_);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata SetDepressionStatusRequest::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata SetDepressionRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
       file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[76]);
@@ -14616,31 +14614,31 @@ void SetDepressionStatusRequest::InternalSwap(SetDepressionStatusRequest* other)
 
 // ===================================================================
 
-class SetDepressionStatusResponse::_Internal {
+class SetDepressionResponse::_Internal {
  public:
 };
 
-SetDepressionStatusResponse::SetDepressionStatusResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+SetDepressionResponse::SetDepressionResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
-  // @@protoc_insertion_point(arena_constructor:city.economy.v2.SetDepressionStatusResponse)
+  // @@protoc_insertion_point(arena_constructor:city.economy.v2.SetDepressionResponse)
 }
-SetDepressionStatusResponse::SetDepressionStatusResponse(const SetDepressionStatusResponse& from)
+SetDepressionResponse::SetDepressionResponse(const SetDepressionResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
-  SetDepressionStatusResponse* const _this = this; (void)_this;
+  SetDepressionResponse* const _this = this; (void)_this;
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:city.economy.v2.SetDepressionStatusResponse)
+  // @@protoc_insertion_point(copy_constructor:city.economy.v2.SetDepressionResponse)
 }
 
 
 
 
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData SetDepressionStatusResponse::_class_data_ = {
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData SetDepressionResponse::_class_data_ = {
     ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
     ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
 };
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SetDepressionStatusResponse::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SetDepressionResponse::GetClassData() const { return &_class_data_; }
 
 
 
@@ -14648,7 +14646,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SetDepressionStatusResponse::G
 
 
 
-::PROTOBUF_NAMESPACE_ID::Metadata SetDepressionStatusResponse::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata SetDepressionResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
       file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[77]);
@@ -16181,21 +16179,21 @@ template<> PROTOBUF_NOINLINE ::city::economy::v2::SetIncomeCurrencyResponse*
 Arena::CreateMaybeMessage< ::city::economy::v2::SetIncomeCurrencyResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::city::economy::v2::SetIncomeCurrencyResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::city::economy::v2::GetDepressionStatusRequest*
-Arena::CreateMaybeMessage< ::city::economy::v2::GetDepressionStatusRequest >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::city::economy::v2::GetDepressionStatusRequest >(arena);
+template<> PROTOBUF_NOINLINE ::city::economy::v2::GetDepressionRequest*
+Arena::CreateMaybeMessage< ::city::economy::v2::GetDepressionRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::economy::v2::GetDepressionRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::city::economy::v2::GetDepressionStatusResponse*
-Arena::CreateMaybeMessage< ::city::economy::v2::GetDepressionStatusResponse >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::city::economy::v2::GetDepressionStatusResponse >(arena);
+template<> PROTOBUF_NOINLINE ::city::economy::v2::GetDepressionResponse*
+Arena::CreateMaybeMessage< ::city::economy::v2::GetDepressionResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::economy::v2::GetDepressionResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::city::economy::v2::SetDepressionStatusRequest*
-Arena::CreateMaybeMessage< ::city::economy::v2::SetDepressionStatusRequest >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::city::economy::v2::SetDepressionStatusRequest >(arena);
+template<> PROTOBUF_NOINLINE ::city::economy::v2::SetDepressionRequest*
+Arena::CreateMaybeMessage< ::city::economy::v2::SetDepressionRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::economy::v2::SetDepressionRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::city::economy::v2::SetDepressionStatusResponse*
-Arena::CreateMaybeMessage< ::city::economy::v2::SetDepressionStatusResponse >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::city::economy::v2::SetDepressionStatusResponse >(arena);
+template<> PROTOBUF_NOINLINE ::city::economy::v2::SetDepressionResponse*
+Arena::CreateMaybeMessage< ::city::economy::v2::SetDepressionResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::economy::v2::SetDepressionResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::city::economy::v2::GetLocusControlRequest*
 Arena::CreateMaybeMessage< ::city::economy::v2::GetLocusControlRequest >(Arena* arena) {

@@ -61,8 +61,8 @@ static const char* OrgService_method_names[] = {
   "/city.economy.v2.OrgService/SetConsumptionPropensity",
   "/city.economy.v2.OrgService/GetIncomeCurrency",
   "/city.economy.v2.OrgService/SetIncomeCurrency",
-  "/city.economy.v2.OrgService/GetDepressionStatus",
-  "/city.economy.v2.OrgService/SetDepressionStatus",
+  "/city.economy.v2.OrgService/GetDepression",
+  "/city.economy.v2.OrgService/SetDepression",
   "/city.economy.v2.OrgService/GetLocusControl",
   "/city.economy.v2.OrgService/SetLocusControl",
   "/city.economy.v2.OrgService/GetWorkingHours",
@@ -113,8 +113,8 @@ OrgService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel
   , rpcmethod_SetConsumptionPropensity_(OrgService_method_names[34], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GetIncomeCurrency_(OrgService_method_names[35], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_SetIncomeCurrency_(OrgService_method_names[36], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetDepressionStatus_(OrgService_method_names[37], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_SetDepressionStatus_(OrgService_method_names[38], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetDepression_(OrgService_method_names[37], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_SetDepression_(OrgService_method_names[38], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GetLocusControl_(OrgService_method_names[39], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_SetLocusControl_(OrgService_method_names[40], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GetWorkingHours_(OrgService_method_names[41], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
@@ -972,48 +972,48 @@ void OrgService::Stub::async::SetIncomeCurrency(::grpc::ClientContext* context, 
   return result;
 }
 
-::grpc::Status OrgService::Stub::GetDepressionStatus(::grpc::ClientContext* context, const ::city::economy::v2::GetDepressionStatusRequest& request, ::city::economy::v2::GetDepressionStatusResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::GetDepressionStatusRequest, ::city::economy::v2::GetDepressionStatusResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetDepressionStatus_, context, request, response);
+::grpc::Status OrgService::Stub::GetDepression(::grpc::ClientContext* context, const ::city::economy::v2::GetDepressionRequest& request, ::city::economy::v2::GetDepressionResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::GetDepressionRequest, ::city::economy::v2::GetDepressionResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetDepression_, context, request, response);
 }
 
-void OrgService::Stub::async::GetDepressionStatus(::grpc::ClientContext* context, const ::city::economy::v2::GetDepressionStatusRequest* request, ::city::economy::v2::GetDepressionStatusResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::GetDepressionStatusRequest, ::city::economy::v2::GetDepressionStatusResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetDepressionStatus_, context, request, response, std::move(f));
+void OrgService::Stub::async::GetDepression(::grpc::ClientContext* context, const ::city::economy::v2::GetDepressionRequest* request, ::city::economy::v2::GetDepressionResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::GetDepressionRequest, ::city::economy::v2::GetDepressionResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetDepression_, context, request, response, std::move(f));
 }
 
-void OrgService::Stub::async::GetDepressionStatus(::grpc::ClientContext* context, const ::city::economy::v2::GetDepressionStatusRequest* request, ::city::economy::v2::GetDepressionStatusResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetDepressionStatus_, context, request, response, reactor);
+void OrgService::Stub::async::GetDepression(::grpc::ClientContext* context, const ::city::economy::v2::GetDepressionRequest* request, ::city::economy::v2::GetDepressionResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetDepression_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetDepressionStatusResponse>* OrgService::Stub::PrepareAsyncGetDepressionStatusRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetDepressionStatusRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::GetDepressionStatusResponse, ::city::economy::v2::GetDepressionStatusRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetDepressionStatus_, context, request);
+::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetDepressionResponse>* OrgService::Stub::PrepareAsyncGetDepressionRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetDepressionRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::GetDepressionResponse, ::city::economy::v2::GetDepressionRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetDepression_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetDepressionStatusResponse>* OrgService::Stub::AsyncGetDepressionStatusRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetDepressionStatusRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetDepressionResponse>* OrgService::Stub::AsyncGetDepressionRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetDepressionRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
-    this->PrepareAsyncGetDepressionStatusRaw(context, request, cq);
+    this->PrepareAsyncGetDepressionRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status OrgService::Stub::SetDepressionStatus(::grpc::ClientContext* context, const ::city::economy::v2::SetDepressionStatusRequest& request, ::city::economy::v2::SetDepressionStatusResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::SetDepressionStatusRequest, ::city::economy::v2::SetDepressionStatusResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_SetDepressionStatus_, context, request, response);
+::grpc::Status OrgService::Stub::SetDepression(::grpc::ClientContext* context, const ::city::economy::v2::SetDepressionRequest& request, ::city::economy::v2::SetDepressionResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::SetDepressionRequest, ::city::economy::v2::SetDepressionResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_SetDepression_, context, request, response);
 }
 
-void OrgService::Stub::async::SetDepressionStatus(::grpc::ClientContext* context, const ::city::economy::v2::SetDepressionStatusRequest* request, ::city::economy::v2::SetDepressionStatusResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::SetDepressionStatusRequest, ::city::economy::v2::SetDepressionStatusResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SetDepressionStatus_, context, request, response, std::move(f));
+void OrgService::Stub::async::SetDepression(::grpc::ClientContext* context, const ::city::economy::v2::SetDepressionRequest* request, ::city::economy::v2::SetDepressionResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::SetDepressionRequest, ::city::economy::v2::SetDepressionResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SetDepression_, context, request, response, std::move(f));
 }
 
-void OrgService::Stub::async::SetDepressionStatus(::grpc::ClientContext* context, const ::city::economy::v2::SetDepressionStatusRequest* request, ::city::economy::v2::SetDepressionStatusResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SetDepressionStatus_, context, request, response, reactor);
+void OrgService::Stub::async::SetDepression(::grpc::ClientContext* context, const ::city::economy::v2::SetDepressionRequest* request, ::city::economy::v2::SetDepressionResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SetDepression_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetDepressionStatusResponse>* OrgService::Stub::PrepareAsyncSetDepressionStatusRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetDepressionStatusRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::SetDepressionStatusResponse, ::city::economy::v2::SetDepressionStatusRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_SetDepressionStatus_, context, request);
+::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetDepressionResponse>* OrgService::Stub::PrepareAsyncSetDepressionRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetDepressionRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::SetDepressionResponse, ::city::economy::v2::SetDepressionRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_SetDepression_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetDepressionStatusResponse>* OrgService::Stub::AsyncSetDepressionStatusRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetDepressionStatusRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetDepressionResponse>* OrgService::Stub::AsyncSetDepressionRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetDepressionRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
-    this->PrepareAsyncSetDepressionStatusRaw(context, request, cq);
+    this->PrepareAsyncSetDepressionRaw(context, request, cq);
   result->StartCall();
   return result;
 }
@@ -1484,22 +1484,22 @@ OrgService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       OrgService_method_names[37],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::GetDepressionStatusRequest, ::city::economy::v2::GetDepressionStatusResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::GetDepressionRequest, ::city::economy::v2::GetDepressionResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](OrgService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::city::economy::v2::GetDepressionStatusRequest* req,
-             ::city::economy::v2::GetDepressionStatusResponse* resp) {
-               return service->GetDepressionStatus(ctx, req, resp);
+             const ::city::economy::v2::GetDepressionRequest* req,
+             ::city::economy::v2::GetDepressionResponse* resp) {
+               return service->GetDepression(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       OrgService_method_names[38],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::SetDepressionStatusRequest, ::city::economy::v2::SetDepressionStatusResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::SetDepressionRequest, ::city::economy::v2::SetDepressionResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](OrgService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::city::economy::v2::SetDepressionStatusRequest* req,
-             ::city::economy::v2::SetDepressionStatusResponse* resp) {
-               return service->SetDepressionStatus(ctx, req, resp);
+             const ::city::economy::v2::SetDepressionRequest* req,
+             ::city::economy::v2::SetDepressionResponse* resp) {
+               return service->SetDepression(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       OrgService_method_names[39],
@@ -1805,14 +1805,14 @@ OrgService::Service::~Service() {
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status OrgService::Service::GetDepressionStatus(::grpc::ServerContext* context, const ::city::economy::v2::GetDepressionStatusRequest* request, ::city::economy::v2::GetDepressionStatusResponse* response) {
+::grpc::Status OrgService::Service::GetDepression(::grpc::ServerContext* context, const ::city::economy::v2::GetDepressionRequest* request, ::city::economy::v2::GetDepressionResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status OrgService::Service::SetDepressionStatus(::grpc::ServerContext* context, const ::city::economy::v2::SetDepressionStatusRequest* request, ::city::economy::v2::SetDepressionStatusResponse* response) {
+::grpc::Status OrgService::Service::SetDepression(::grpc::ServerContext* context, const ::city::economy::v2::SetDepressionRequest* request, ::city::economy::v2::SetDepressionResponse* response) {
   (void) context;
   (void) request;
   (void) response;
