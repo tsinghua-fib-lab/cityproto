@@ -146,6 +146,9 @@ const (
 	// OrgServiceSetWorkingHoursProcedure is the fully-qualified name of the OrgService's
 	// SetWorkingHours RPC.
 	OrgServiceSetWorkingHoursProcedure = "/city.economy.v2.OrgService/SetWorkingHours"
+	// OrgServiceGetOrgEntityIdsProcedure is the fully-qualified name of the OrgService's
+	// GetOrgEntityIds RPC.
+	OrgServiceGetOrgEntityIdsProcedure = "/city.economy.v2.OrgService/GetOrgEntityIds"
 )
 
 // These variables are the protoreflect.Descriptor objects for the RPCs defined in this package.
@@ -194,6 +197,7 @@ var (
 	orgServiceSetLocusControlMethodDescriptor          = orgServiceServiceDescriptor.Methods().ByName("SetLocusControl")
 	orgServiceGetWorkingHoursMethodDescriptor          = orgServiceServiceDescriptor.Methods().ByName("GetWorkingHours")
 	orgServiceSetWorkingHoursMethodDescriptor          = orgServiceServiceDescriptor.Methods().ByName("SetWorkingHours")
+	orgServiceGetOrgEntityIdsMethodDescriptor          = orgServiceServiceDescriptor.Methods().ByName("GetOrgEntityIds")
 )
 
 // OrgServiceClient is a client for the city.economy.v2.OrgService service.
@@ -271,6 +275,8 @@ type OrgServiceClient interface {
 	// Working Hours
 	GetWorkingHours(context.Context, *connect.Request[v2.GetWorkingHoursRequest]) (*connect.Response[v2.GetWorkingHoursResponse], error)
 	SetWorkingHours(context.Context, *connect.Request[v2.SetWorkingHoursRequest]) (*connect.Response[v2.SetWorkingHoursResponse], error)
+	// Org Entity Ids
+	GetOrgEntityIds(context.Context, *connect.Request[v2.GetOrgEntityIdsRequest]) (*connect.Response[v2.GetOrgEntityIdsResponse], error)
 }
 
 // NewOrgServiceClient constructs a client for the city.economy.v2.OrgService service. By default,
@@ -541,6 +547,12 @@ func NewOrgServiceClient(httpClient connect.HTTPClient, baseURL string, opts ...
 			connect.WithSchema(orgServiceSetWorkingHoursMethodDescriptor),
 			connect.WithClientOptions(opts...),
 		),
+		getOrgEntityIds: connect.NewClient[v2.GetOrgEntityIdsRequest, v2.GetOrgEntityIdsResponse](
+			httpClient,
+			baseURL+OrgServiceGetOrgEntityIdsProcedure,
+			connect.WithSchema(orgServiceGetOrgEntityIdsMethodDescriptor),
+			connect.WithClientOptions(opts...),
+		),
 	}
 }
 
@@ -589,6 +601,7 @@ type orgServiceClient struct {
 	setLocusControl          *connect.Client[v2.SetLocusControlRequest, v2.SetLocusControlResponse]
 	getWorkingHours          *connect.Client[v2.GetWorkingHoursRequest, v2.GetWorkingHoursResponse]
 	setWorkingHours          *connect.Client[v2.SetWorkingHoursRequest, v2.SetWorkingHoursResponse]
+	getOrgEntityIds          *connect.Client[v2.GetOrgEntityIdsRequest, v2.GetOrgEntityIdsResponse]
 }
 
 // AddOrg calls city.economy.v2.OrgService.AddOrg.
@@ -806,6 +819,11 @@ func (c *orgServiceClient) SetWorkingHours(ctx context.Context, req *connect.Req
 	return c.setWorkingHours.CallUnary(ctx, req)
 }
 
+// GetOrgEntityIds calls city.economy.v2.OrgService.GetOrgEntityIds.
+func (c *orgServiceClient) GetOrgEntityIds(ctx context.Context, req *connect.Request[v2.GetOrgEntityIdsRequest]) (*connect.Response[v2.GetOrgEntityIdsResponse], error) {
+	return c.getOrgEntityIds.CallUnary(ctx, req)
+}
+
 // OrgServiceHandler is an implementation of the city.economy.v2.OrgService service.
 type OrgServiceHandler interface {
 	// 添加组织
@@ -881,6 +899,8 @@ type OrgServiceHandler interface {
 	// Working Hours
 	GetWorkingHours(context.Context, *connect.Request[v2.GetWorkingHoursRequest]) (*connect.Response[v2.GetWorkingHoursResponse], error)
 	SetWorkingHours(context.Context, *connect.Request[v2.SetWorkingHoursRequest]) (*connect.Response[v2.SetWorkingHoursResponse], error)
+	// Org Entity Ids
+	GetOrgEntityIds(context.Context, *connect.Request[v2.GetOrgEntityIdsRequest]) (*connect.Response[v2.GetOrgEntityIdsResponse], error)
 }
 
 // NewOrgServiceHandler builds an HTTP handler from the service implementation. It returns the path
@@ -1147,6 +1167,12 @@ func NewOrgServiceHandler(svc OrgServiceHandler, opts ...connect.HandlerOption) 
 		connect.WithSchema(orgServiceSetWorkingHoursMethodDescriptor),
 		connect.WithHandlerOptions(opts...),
 	)
+	orgServiceGetOrgEntityIdsHandler := connect.NewUnaryHandler(
+		OrgServiceGetOrgEntityIdsProcedure,
+		svc.GetOrgEntityIds,
+		connect.WithSchema(orgServiceGetOrgEntityIdsMethodDescriptor),
+		connect.WithHandlerOptions(opts...),
+	)
 	return "/city.economy.v2.OrgService/", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		switch r.URL.Path {
 		case OrgServiceAddOrgProcedure:
@@ -1235,6 +1261,8 @@ func NewOrgServiceHandler(svc OrgServiceHandler, opts ...connect.HandlerOption) 
 			orgServiceGetWorkingHoursHandler.ServeHTTP(w, r)
 		case OrgServiceSetWorkingHoursProcedure:
 			orgServiceSetWorkingHoursHandler.ServeHTTP(w, r)
+		case OrgServiceGetOrgEntityIdsProcedure:
+			orgServiceGetOrgEntityIdsHandler.ServeHTTP(w, r)
 		default:
 			http.NotFound(w, r)
 		}
@@ -1414,4 +1442,8 @@ func (UnimplementedOrgServiceHandler) GetWorkingHours(context.Context, *connect.
 
 func (UnimplementedOrgServiceHandler) SetWorkingHours(context.Context, *connect.Request[v2.SetWorkingHoursRequest]) (*connect.Response[v2.SetWorkingHoursResponse], error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.SetWorkingHours is not implemented"))
+}
+
+func (UnimplementedOrgServiceHandler) GetOrgEntityIds(context.Context, *connect.Request[v2.GetOrgEntityIdsRequest]) (*connect.Response[v2.GetOrgEntityIdsResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.GetOrgEntityIds is not implemented"))
 }

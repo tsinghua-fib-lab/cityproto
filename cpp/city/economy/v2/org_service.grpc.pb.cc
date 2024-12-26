@@ -67,6 +67,7 @@ static const char* OrgService_method_names[] = {
   "/city.economy.v2.OrgService/SetLocusControl",
   "/city.economy.v2.OrgService/GetWorkingHours",
   "/city.economy.v2.OrgService/SetWorkingHours",
+  "/city.economy.v2.OrgService/GetOrgEntityIds",
 };
 
 std::unique_ptr< OrgService::Stub> OrgService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -119,6 +120,7 @@ OrgService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel
   , rpcmethod_SetLocusControl_(OrgService_method_names[40], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GetWorkingHours_(OrgService_method_names[41], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_SetWorkingHours_(OrgService_method_names[42], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetOrgEntityIds_(OrgService_method_names[43], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status OrgService::Stub::AddOrg(::grpc::ClientContext* context, const ::city::economy::v2::AddOrgRequest& request, ::city::economy::v2::AddOrgResponse* response) {
@@ -1110,6 +1112,29 @@ void OrgService::Stub::async::SetWorkingHours(::grpc::ClientContext* context, co
   return result;
 }
 
+::grpc::Status OrgService::Stub::GetOrgEntityIds(::grpc::ClientContext* context, const ::city::economy::v2::GetOrgEntityIdsRequest& request, ::city::economy::v2::GetOrgEntityIdsResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::GetOrgEntityIdsRequest, ::city::economy::v2::GetOrgEntityIdsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetOrgEntityIds_, context, request, response);
+}
+
+void OrgService::Stub::async::GetOrgEntityIds(::grpc::ClientContext* context, const ::city::economy::v2::GetOrgEntityIdsRequest* request, ::city::economy::v2::GetOrgEntityIdsResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::GetOrgEntityIdsRequest, ::city::economy::v2::GetOrgEntityIdsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetOrgEntityIds_, context, request, response, std::move(f));
+}
+
+void OrgService::Stub::async::GetOrgEntityIds(::grpc::ClientContext* context, const ::city::economy::v2::GetOrgEntityIdsRequest* request, ::city::economy::v2::GetOrgEntityIdsResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetOrgEntityIds_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetOrgEntityIdsResponse>* OrgService::Stub::PrepareAsyncGetOrgEntityIdsRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetOrgEntityIdsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::GetOrgEntityIdsResponse, ::city::economy::v2::GetOrgEntityIdsRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetOrgEntityIds_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetOrgEntityIdsResponse>* OrgService::Stub::AsyncGetOrgEntityIdsRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetOrgEntityIdsRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncGetOrgEntityIdsRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
 OrgService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       OrgService_method_names[0],
@@ -1541,6 +1566,16 @@ OrgService::Service::Service() {
              ::city::economy::v2::SetWorkingHoursResponse* resp) {
                return service->SetWorkingHours(ctx, req, resp);
              }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      OrgService_method_names[43],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::GetOrgEntityIdsRequest, ::city::economy::v2::GetOrgEntityIdsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](OrgService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::city::economy::v2::GetOrgEntityIdsRequest* req,
+             ::city::economy::v2::GetOrgEntityIdsResponse* resp) {
+               return service->GetOrgEntityIds(ctx, req, resp);
+             }, this)));
 }
 
 OrgService::Service::~Service() {
@@ -1841,6 +1876,13 @@ OrgService::Service::~Service() {
 }
 
 ::grpc::Status OrgService::Service::SetWorkingHours(::grpc::ServerContext* context, const ::city::economy::v2::SetWorkingHoursRequest* request, ::city::economy::v2::SetWorkingHoursResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status OrgService::Service::GetOrgEntityIds(::grpc::ServerContext* context, const ::city::economy::v2::GetOrgEntityIdsRequest* request, ::city::economy::v2::GetOrgEntityIdsResponse* response) {
   (void) context;
   (void) request;
   (void) response;

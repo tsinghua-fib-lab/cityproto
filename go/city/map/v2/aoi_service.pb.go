@@ -132,7 +132,7 @@ type GetAoiResponse struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// AOI信息列表
 	// Lis of AOIs information
-	States        []*AoiState `protobuf:"bytes,1,rep,name=states,proto3" json:"states,omitempty" yaml:"states" bson:"states" db:"states"`
+	States        []*AoiState `protobuf:"bytes,1,rep,name=states,proto3" json:"states,omitempty" bson:"states" db:"states" yaml:"states"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }

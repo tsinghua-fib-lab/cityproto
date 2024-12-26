@@ -25,7 +25,7 @@ const (
 type VehicleCarbon struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// ID
-	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" db:"id" yaml:"id" bson:"id"`
+	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
 	// delta distance (m)
 	Ds float64 `protobuf:"fixed64,2,opt,name=ds,proto3" json:"ds,omitempty" yaml:"ds" bson:"ds" db:"ds"`
 	// vehicle speed (m/s)

@@ -706,3 +706,19 @@ class SetWorkingHoursResponse(_message.Message):
 
     def __init__(self) -> None:
         ...
+
+class GetOrgEntityIdsRequest(_message.Message):
+    __slots__ = ['type']
+    TYPE_FIELD_NUMBER: _ClassVar[int]
+    type: _economy_pb2.OrgType
+
+    def __init__(self, type: _Optional[_Union[_economy_pb2.OrgType, str]]=...) -> None:
+        ...
+
+class GetOrgEntityIdsResponse(_message.Message):
+    __slots__ = ['org_ids']
+    ORG_IDS_FIELD_NUMBER: _ClassVar[int]
+    org_ids: _containers.RepeatedScalarFieldContainer[int]
+
+    def __init__(self, org_ids: _Optional[_Iterable[int]]=...) -> None:
+        ...

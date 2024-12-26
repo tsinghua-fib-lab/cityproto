@@ -119,12 +119,12 @@ type PersonMotion struct {
 	Status Status `protobuf:"varint,2,opt,name=status,proto3,enum=city.person.v1.Status" json:"status,omitempty" yaml:"status" bson:"status" db:"status"`
 	// 位置（包含逻辑位置、XY位置、经纬度位置）
 	// Position (including logical position, XY position, longitude and latitude position)
-	Position *v2.Position `protobuf:"bytes,3,opt,name=position,proto3" json:"position,omitempty" bson:"position" db:"position" yaml:"position"`
+	Position *v2.Position `protobuf:"bytes,3,opt,name=position,proto3" json:"position,omitempty" yaml:"position" bson:"position" db:"position"`
 	// speed
-	V float64 `protobuf:"fixed64,4,opt,name=v,proto3" json:"v,omitempty" yaml:"v" bson:"v" db:"v"`
+	V float64 `protobuf:"fixed64,4,opt,name=v,proto3" json:"v,omitempty" bson:"v" db:"v" yaml:"v"`
 	// 方向角（atan2计算得到的弧度）
 	// Direction angle (radians calculated by atan2)
-	Direction float64 `protobuf:"fixed64,5,opt,name=direction,proto3" json:"direction,omitempty" yaml:"direction" bson:"direction" db:"direction"`
+	Direction float64 `protobuf:"fixed64,5,opt,name=direction,proto3" json:"direction,omitempty" db:"direction" yaml:"direction" bson:"direction"`
 	// 活动描述
 	// activity descriptions
 	Activity string `protobuf:"bytes,6,opt,name=activity,proto3" json:"activity,omitempty" yaml:"activity" bson:"activity" db:"activity"`

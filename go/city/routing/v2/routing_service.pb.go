@@ -36,7 +36,7 @@ type GetRouteRequest struct {
 	End *v2.Position `protobuf:"bytes,3,opt,name=end,proto3" json:"end,omitempty" yaml:"end" bson:"end" db:"end"`
 	// 发送导航请求的时间（目前仅在行车导航中使用）
 	// The time to send routing request (currently only used in driving routing)
-	Time          float64 `protobuf:"fixed64,5,opt,name=time,proto3" json:"time,omitempty" db:"time" yaml:"time" bson:"time"`
+	Time          float64 `protobuf:"fixed64,5,opt,name=time,proto3" json:"time,omitempty" yaml:"time" bson:"time" db:"time"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -103,7 +103,7 @@ func (x *GetRouteRequest) GetTime() float64 {
 // Response of getting routing path
 type GetRouteResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Journeys      []*Journey             `protobuf:"bytes,1,rep,name=journeys,proto3" json:"journeys,omitempty" yaml:"journeys" bson:"journeys" db:"journeys"`
+	Journeys      []*Journey             `protobuf:"bytes,1,rep,name=journeys,proto3" json:"journeys,omitempty" db:"journeys" yaml:"journeys" bson:"journeys"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }

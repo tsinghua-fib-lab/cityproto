@@ -32,7 +32,7 @@ type PersonRuntime struct {
 	Motion *PersonMotion `protobuf:"bytes,2,opt,name=motion,proto3" json:"motion,omitempty" yaml:"motion" bson:"motion" db:"motion"`
 	// 事件信息
 	// event information
-	Events        []*v2.Event `protobuf:"bytes,3,rep,name=events,proto3" json:"events,omitempty" yaml:"events" bson:"events" db:"events"`
+	Events        []*v2.Event `protobuf:"bytes,3,rep,name=events,proto3" json:"events,omitempty" db:"events" yaml:"events" bson:"events"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }

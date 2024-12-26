@@ -5,7 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { Agent, Org } from "./economy_pb.js";
+import type { Agent, Org, OrgType } from "./economy_pb.js";
 
 /**
  * @generated from message city.economy.v2.AddOrgRequest
@@ -2140,5 +2140,53 @@ export declare class SetWorkingHoursResponse extends Message<SetWorkingHoursResp
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetWorkingHoursResponse;
 
   static equals(a: SetWorkingHoursResponse | PlainMessage<SetWorkingHoursResponse> | undefined, b: SetWorkingHoursResponse | PlainMessage<SetWorkingHoursResponse> | undefined): boolean;
+}
+
+/**
+ * @generated from message city.economy.v2.GetOrgEntityIdsRequest
+ */
+export declare class GetOrgEntityIdsRequest extends Message<GetOrgEntityIdsRequest> {
+  /**
+   * @generated from field: city.economy.v2.OrgType type = 1;
+   */
+  type: OrgType;
+
+  constructor(data?: PartialMessage<GetOrgEntityIdsRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.economy.v2.GetOrgEntityIdsRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetOrgEntityIdsRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetOrgEntityIdsRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetOrgEntityIdsRequest;
+
+  static equals(a: GetOrgEntityIdsRequest | PlainMessage<GetOrgEntityIdsRequest> | undefined, b: GetOrgEntityIdsRequest | PlainMessage<GetOrgEntityIdsRequest> | undefined): boolean;
+}
+
+/**
+ * @generated from message city.economy.v2.GetOrgEntityIdsResponse
+ */
+export declare class GetOrgEntityIdsResponse extends Message<GetOrgEntityIdsResponse> {
+  /**
+   * @generated from field: repeated int32 org_ids = 1;
+   */
+  orgIds: number[];
+
+  constructor(data?: PartialMessage<GetOrgEntityIdsResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.economy.v2.GetOrgEntityIdsResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetOrgEntityIdsResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetOrgEntityIdsResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetOrgEntityIdsResponse;
+
+  static equals(a: GetOrgEntityIdsResponse | PlainMessage<GetOrgEntityIdsResponse> | undefined, b: GetOrgEntityIdsResponse | PlainMessage<GetOrgEntityIdsResponse> | undefined): boolean;
 }
 

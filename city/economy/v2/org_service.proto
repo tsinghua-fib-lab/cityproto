@@ -96,6 +96,9 @@ service OrgService {
   // Working Hours
   rpc GetWorkingHours(GetWorkingHoursRequest) returns (GetWorkingHoursResponse);
   rpc SetWorkingHours(SetWorkingHoursRequest) returns (SetWorkingHoursResponse);
+
+  // Org Entity Ids
+  rpc GetOrgEntityIds(GetOrgEntityIdsRequest) returns (GetOrgEntityIdsResponse);
 }
 
 message AddOrgRequest {
@@ -413,3 +416,10 @@ message SetWorkingHoursRequest {
   repeated float working_hours = 2;
 }
 message SetWorkingHoursResponse {}
+
+message GetOrgEntityIdsRequest {
+  OrgType type = 1;
+}
+message GetOrgEntityIdsResponse {
+  repeated int32 org_ids = 1;
+}

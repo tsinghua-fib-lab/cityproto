@@ -116,7 +116,7 @@ type TripStop struct {
 	LanePosition *v2.LanePosition `protobuf:"bytes,2,opt,name=lane_position,json=lanePosition,proto3" json:"lane_position,omitempty" yaml:"lane_position" bson:"lane_position" db:"lane_position"`
 	// 停车持续时间
 	// Parking duration time (s)
-	Duration      float64 `protobuf:"fixed64,3,opt,name=duration,proto3" json:"duration,omitempty" bson:"duration" db:"duration" yaml:"duration"`
+	Duration      float64 `protobuf:"fixed64,3,opt,name=duration,proto3" json:"duration,omitempty" yaml:"duration" bson:"duration" db:"duration"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -196,10 +196,10 @@ type Trip struct {
 	Activity *string `protobuf:"bytes,6,opt,name=activity,proto3,oneof" json:"activity,omitempty" yaml:"activity" bson:"activity" db:"activity"`
 	// 本次出行对应的可视化模型（覆盖Person Attribute中的默认模型）
 	// The visual model corresponding to this trip (overriding the default model in Person Attribute)
-	Model *string `protobuf:"bytes,8,opt,name=model,proto3,oneof" json:"model,omitempty" db:"model" yaml:"model" bson:"model"`
+	Model *string `protobuf:"bytes,8,opt,name=model,proto3,oneof" json:"model,omitempty" yaml:"model" bson:"model" db:"model"`
 	// 预计算的导航结果
 	// Pre calculated routing results
-	Routes []*v21.Journey `protobuf:"bytes,7,rep,name=routes,proto3" json:"routes,omitempty" yaml:"routes" bson:"routes" db:"routes"`
+	Routes []*v21.Journey `protobuf:"bytes,7,rep,name=routes,proto3" json:"routes,omitempty" bson:"routes" db:"routes" yaml:"routes"`
 	// 本次出行的所有停靠点
 	// stop points of this trip
 	TripStops     []*TripStop `protobuf:"bytes,9,rep,name=trip_stops,json=tripStops,proto3" json:"trip_stops,omitempty" yaml:"trip_stops" bson:"trip_stops" db:"trip_stops"`
@@ -342,7 +342,7 @@ type Schedule struct {
 	LoopCount int32 `protobuf:"varint,2,opt,name=loop_count,json=loopCount,proto3" json:"loop_count,omitempty" yaml:"loop_count" bson:"loop_count" db:"loop_count"`
 	// 期望的出发时间（单位: 秒）
 	// Expected departure time (in seconds)
-	DepartureTime *float64 `protobuf:"fixed64,3,opt,name=departure_time,json=departureTime,proto3,oneof" json:"departure_time,omitempty" yaml:"departure_time" bson:"departure_time" db:"departure_time"`
+	DepartureTime *float64 `protobuf:"fixed64,3,opt,name=departure_time,json=departureTime,proto3,oneof" json:"departure_time,omitempty" bson:"departure_time" db:"departure_time" yaml:"departure_time"`
 	// 期望的等待时间（单位：秒），如果departure_time为空则wait_time默认为0
 	// Expected waiting time (in seconds), if departure_time is empty, wait_time defaults to 0
 	WaitTime      *float64 `protobuf:"fixed64,4,opt,name=wait_time,json=waitTime,proto3,oneof" json:"wait_time,omitempty" yaml:"wait_time" bson:"wait_time" db:"wait_time"`

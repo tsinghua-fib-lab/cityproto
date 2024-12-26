@@ -1135,10 +1135,37 @@ struct SetWorkingHoursResponseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SetWorkingHoursResponseDefaultTypeInternal _SetWorkingHoursResponse_default_instance_;
+PROTOBUF_CONSTEXPR GetOrgEntityIdsRequest::GetOrgEntityIdsRequest(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.type_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct GetOrgEntityIdsRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR GetOrgEntityIdsRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~GetOrgEntityIdsRequestDefaultTypeInternal() {}
+  union {
+    GetOrgEntityIdsRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetOrgEntityIdsRequestDefaultTypeInternal _GetOrgEntityIdsRequest_default_instance_;
+PROTOBUF_CONSTEXPR GetOrgEntityIdsResponse::GetOrgEntityIdsResponse(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.org_ids_)*/{}
+  , /*decltype(_impl_._org_ids_cached_byte_size_)*/{0}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct GetOrgEntityIdsResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR GetOrgEntityIdsResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~GetOrgEntityIdsResponseDefaultTypeInternal() {}
+  union {
+    GetOrgEntityIdsResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetOrgEntityIdsResponseDefaultTypeInternal _GetOrgEntityIdsResponse_default_instance_;
 }  // namespace v2
 }  // namespace economy
 }  // namespace city
-static ::_pb::Metadata file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[86];
+static ::_pb::Metadata file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[88];
 static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_city_2feconomy_2fv2_2forg_5fservice_2eproto = nullptr;
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_city_2feconomy_2fv2_2forg_5fservice_2eproto = nullptr;
 
@@ -1752,6 +1779,20 @@ const uint32_t TableStruct_city_2feconomy_2fv2_2forg_5fservice_2eproto::offsets[
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::GetOrgEntityIdsRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::GetOrgEntityIdsRequest, _impl_.type_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::GetOrgEntityIdsResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::GetOrgEntityIdsResponse, _impl_.org_ids_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::city::economy::v2::AddOrgRequest)},
@@ -1840,6 +1881,8 @@ static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protode
   { 588, -1, -1, sizeof(::city::economy::v2::GetWorkingHoursResponse)},
   { 595, -1, -1, sizeof(::city::economy::v2::SetWorkingHoursRequest)},
   { 603, -1, -1, sizeof(::city::economy::v2::SetWorkingHoursResponse)},
+  { 609, -1, -1, sizeof(::city::economy::v2::GetOrgEntityIdsRequest)},
+  { 616, -1, -1, sizeof(::city::economy::v2::GetOrgEntityIdsResponse)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -1929,6 +1972,8 @@ static const ::_pb::Message* const file_default_instances[] = {
   &::city::economy::v2::_GetWorkingHoursResponse_default_instance_._instance,
   &::city::economy::v2::_SetWorkingHoursRequest_default_instance_._instance,
   &::city::economy::v2::_SetWorkingHoursResponse_default_instance_._instance,
+  &::city::economy::v2::_GetOrgEntityIdsRequest_default_instance_._instance,
+  &::city::economy::v2::_GetOrgEntityIdsResponse_default_instance_._instance,
 };
 
 const char descriptor_table_protodef_city_2feconomy_2fv2_2forg_5fservice_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -2058,128 +2103,134 @@ const char descriptor_table_protodef_city_2feconomy_2fv2_2forg_5fservice_2eproto
   "\022#\n\rworking_hours\030\001 \003(\002R\014workingHours\"T\n"
   "\026SetWorkingHoursRequest\022\025\n\006org_id\030\001 \001(\005R"
   "\005orgId\022#\n\rworking_hours\030\002 \003(\002R\014workingHo"
-  "urs\"\031\n\027SetWorkingHoursResponse2\263!\n\nOrgSe"
-  "rvice\022I\n\006AddOrg\022\036.city.economy.v2.AddOrg"
-  "Request\032\037.city.economy.v2.AddOrgResponse"
-  "\022R\n\tRemoveOrg\022!.city.economy.v2.RemoveOr"
-  "gRequest\032\".city.economy.v2.RemoveOrgResp"
-  "onse\022O\n\010AddAgent\022 .city.economy.v2.AddAg"
-  "entRequest\032!.city.economy.v2.AddAgentRes"
-  "ponse\022X\n\013RemoveAgent\022#.city.economy.v2.R"
-  "emoveAgentRequest\032$.city.economy.v2.Remo"
-  "veAgentResponse\022^\n\rGetNominalGDP\022%.city."
-  "economy.v2.GetNominalGDPRequest\032&.city.e"
-  "conomy.v2.GetNominalGDPResponse\022^\n\rSetNo"
-  "minalGDP\022%.city.economy.v2.SetNominalGDP"
-  "Request\032&.city.economy.v2.SetNominalGDPR"
-  "esponse\022U\n\nGetRealGDP\022\".city.economy.v2."
-  "GetRealGDPRequest\032#.city.economy.v2.GetR"
-  "ealGDPResponse\022U\n\nSetRealGDP\022\".city.econ"
-  "omy.v2.SetRealGDPRequest\032#.city.economy."
-  "v2.SetRealGDPResponse\022d\n\017GetUnemployment"
-  "\022\'.city.economy.v2.GetUnemploymentReques"
-  "t\032(.city.economy.v2.GetUnemploymentRespo"
-  "nse\022d\n\017SetUnemployment\022\'.city.economy.v2"
-  ".SetUnemploymentRequest\032(.city.economy.v"
-  "2.SetUnemploymentResponse\022O\n\010GetWages\022 ."
-  "city.economy.v2.GetWagesRequest\032!.city.e"
-  "conomy.v2.GetWagesResponse\022O\n\010SetWages\022 "
-  ".city.economy.v2.SetWagesRequest\032!.city."
-  "economy.v2.SetWagesResponse\022R\n\tGetPrices"
-  "\022!.city.economy.v2.GetPricesRequest\032\".ci"
-  "ty.economy.v2.GetPricesResponse\022R\n\tSetPr"
-  "ices\022!.city.economy.v2.SetPricesRequest\032"
-  "\".city.economy.v2.SetPricesResponse\022[\n\014G"
-  "etInventory\022$.city.economy.v2.GetInvento"
-  "ryRequest\032%.city.economy.v2.GetInventory"
-  "Response\022[\n\014SetInventory\022$.city.economy."
-  "v2.SetInventoryRequest\032%.city.economy.v2"
-  ".SetInventoryResponse\022O\n\010GetPrice\022 .city"
-  ".economy.v2.GetPriceRequest\032!.city.econo"
-  "my.v2.GetPriceResponse\022O\n\010SetPrice\022 .cit"
-  "y.economy.v2.SetPriceRequest\032!.city.econ"
-  "omy.v2.SetPriceResponse\022X\n\013GetCurrency\022#"
-  ".city.economy.v2.GetCurrencyRequest\032$.ci"
-  "ty.economy.v2.GetCurrencyResponse\022X\n\013Set"
-  "Currency\022#.city.economy.v2.SetCurrencyRe"
-  "quest\032$.city.economy.v2.SetCurrencyRespo"
-  "nse\022d\n\017GetInterestRate\022\'.city.economy.v2"
-  ".GetInterestRateRequest\032(.city.economy.v"
-  "2.GetInterestRateResponse\022d\n\017SetInterest"
-  "Rate\022\'.city.economy.v2.SetInterestRateRe"
-  "quest\032(.city.economy.v2.SetInterestRateR"
-  "esponse\022j\n\021GetBracketCutoffs\022).city.econ"
-  "omy.v2.GetBracketCutoffsRequest\032*.city.e"
-  "conomy.v2.GetBracketCutoffsResponse\022j\n\021S"
-  "etBracketCutoffs\022).city.economy.v2.SetBr"
-  "acketCutoffsRequest\032*.city.economy.v2.Se"
-  "tBracketCutoffsResponse\022d\n\017GetBracketRat"
-  "es\022\'.city.economy.v2.GetBracketRatesRequ"
-  "est\032(.city.economy.v2.GetBracketRatesRes"
-  "ponse\022d\n\017SetBracketRates\022\'.city.economy."
-  "v2.SetBracketRatesRequest\032(.city.economy"
-  ".v2.SetBracketRatesResponse\022j\n\021Calculate"
-  "TaxesDue\022).city.economy.v2.CalculateTaxe"
-  "sDueRequest\032*.city.economy.v2.CalculateT"
-  "axesDueResponse\022s\n\024CalculateConsumption\022"
-  ",.city.economy.v2.CalculateConsumptionRe"
-  "quest\032-.city.economy.v2.CalculateConsump"
-  "tionResponse\022j\n\021CalculateInterest\022).city"
-  ".economy.v2.CalculateInterestRequest\032*.c"
-  "ity.economy.v2.CalculateInterestResponse"
-  "\022p\n\023SaveEconomyEntities\022+.city.economy.v"
-  "2.SaveEconomyEntitiesRequest\032,.city.econ"
-  "omy.v2.SaveEconomyEntitiesResponse\022p\n\023Lo"
-  "adEconomyEntities\022+.city.economy.v2.Load"
-  "EconomyEntitiesRequest\032,.city.economy.v2"
-  ".LoadEconomyEntitiesResponse\022y\n\026GetConsu"
-  "mptionCurrency\022..city.economy.v2.GetCons"
-  "umptionCurrencyRequest\032/.city.economy.v2"
-  ".GetConsumptionCurrencyResponse\022y\n\026SetCo"
-  "nsumptionCurrency\022..city.economy.v2.SetC"
-  "onsumptionCurrencyRequest\032/.city.economy"
-  ".v2.SetConsumptionCurrencyResponse\022\177\n\030Ge"
-  "tConsumptionPropensity\0220.city.economy.v2"
-  ".GetConsumptionPropensityRequest\0321.city."
-  "economy.v2.GetConsumptionPropensityRespo"
-  "nse\022\177\n\030SetConsumptionPropensity\0220.city.e"
-  "conomy.v2.SetConsumptionPropensityReques"
-  "t\0321.city.economy.v2.SetConsumptionPropen"
-  "sityResponse\022j\n\021GetIncomeCurrency\022).city"
-  ".economy.v2.GetIncomeCurrencyRequest\032*.c"
-  "ity.economy.v2.GetIncomeCurrencyResponse"
-  "\022j\n\021SetIncomeCurrency\022).city.economy.v2."
-  "SetIncomeCurrencyRequest\032*.city.economy."
-  "v2.SetIncomeCurrencyResponse\022^\n\rGetDepre"
-  "ssion\022%.city.economy.v2.GetDepressionReq"
-  "uest\032&.city.economy.v2.GetDepressionResp"
-  "onse\022^\n\rSetDepression\022%.city.economy.v2."
-  "SetDepressionRequest\032&.city.economy.v2.S"
-  "etDepressionResponse\022d\n\017GetLocusControl\022"
-  "\'.city.economy.v2.GetLocusControlRequest"
-  "\032(.city.economy.v2.GetLocusControlRespon"
-  "se\022d\n\017SetLocusControl\022\'.city.economy.v2."
-  "SetLocusControlRequest\032(.city.economy.v2"
-  ".SetLocusControlResponse\022d\n\017GetWorkingHo"
-  "urs\022\'.city.economy.v2.GetWorkingHoursReq"
-  "uest\032(.city.economy.v2.GetWorkingHoursRe"
-  "sponse\022d\n\017SetWorkingHours\022\'.city.economy"
-  ".v2.SetWorkingHoursRequest\032(.city.econom"
-  "y.v2.SetWorkingHoursResponseB\277\001\n\023com.cit"
-  "y.economy.v2B\017OrgServiceProtoP\001Z9git.fib"
-  "lab.net/sim/protos/v2/go/city/economy/v2"
-  ";economyv2\242\002\003CEX\252\002\017City.Economy.V2\312\002\017Cit"
-  "y\\Economy\\V2\342\002\033City\\Economy\\V2\\GPBMetada"
-  "ta\352\002\021City::Economy::V2b\006proto3"
+  "urs\"\031\n\027SetWorkingHoursResponse\"F\n\026GetOrg"
+  "EntityIdsRequest\022,\n\004type\030\001 \001(\0162\030.city.ec"
+  "onomy.v2.OrgTypeR\004type\"2\n\027GetOrgEntityId"
+  "sResponse\022\027\n\007org_ids\030\001 \003(\005R\006orgIds2\231\"\n\nO"
+  "rgService\022I\n\006AddOrg\022\036.city.economy.v2.Ad"
+  "dOrgRequest\032\037.city.economy.v2.AddOrgResp"
+  "onse\022R\n\tRemoveOrg\022!.city.economy.v2.Remo"
+  "veOrgRequest\032\".city.economy.v2.RemoveOrg"
+  "Response\022O\n\010AddAgent\022 .city.economy.v2.A"
+  "ddAgentRequest\032!.city.economy.v2.AddAgen"
+  "tResponse\022X\n\013RemoveAgent\022#.city.economy."
+  "v2.RemoveAgentRequest\032$.city.economy.v2."
+  "RemoveAgentResponse\022^\n\rGetNominalGDP\022%.c"
+  "ity.economy.v2.GetNominalGDPRequest\032&.ci"
+  "ty.economy.v2.GetNominalGDPResponse\022^\n\rS"
+  "etNominalGDP\022%.city.economy.v2.SetNomina"
+  "lGDPRequest\032&.city.economy.v2.SetNominal"
+  "GDPResponse\022U\n\nGetRealGDP\022\".city.economy"
+  ".v2.GetRealGDPRequest\032#.city.economy.v2."
+  "GetRealGDPResponse\022U\n\nSetRealGDP\022\".city."
+  "economy.v2.SetRealGDPRequest\032#.city.econ"
+  "omy.v2.SetRealGDPResponse\022d\n\017GetUnemploy"
+  "ment\022\'.city.economy.v2.GetUnemploymentRe"
+  "quest\032(.city.economy.v2.GetUnemploymentR"
+  "esponse\022d\n\017SetUnemployment\022\'.city.econom"
+  "y.v2.SetUnemploymentRequest\032(.city.econo"
+  "my.v2.SetUnemploymentResponse\022O\n\010GetWage"
+  "s\022 .city.economy.v2.GetWagesRequest\032!.ci"
+  "ty.economy.v2.GetWagesResponse\022O\n\010SetWag"
+  "es\022 .city.economy.v2.SetWagesRequest\032!.c"
+  "ity.economy.v2.SetWagesResponse\022R\n\tGetPr"
+  "ices\022!.city.economy.v2.GetPricesRequest\032"
+  "\".city.economy.v2.GetPricesResponse\022R\n\tS"
+  "etPrices\022!.city.economy.v2.SetPricesRequ"
+  "est\032\".city.economy.v2.SetPricesResponse\022"
+  "[\n\014GetInventory\022$.city.economy.v2.GetInv"
+  "entoryRequest\032%.city.economy.v2.GetInven"
+  "toryResponse\022[\n\014SetInventory\022$.city.econ"
+  "omy.v2.SetInventoryRequest\032%.city.econom"
+  "y.v2.SetInventoryResponse\022O\n\010GetPrice\022 ."
+  "city.economy.v2.GetPriceRequest\032!.city.e"
+  "conomy.v2.GetPriceResponse\022O\n\010SetPrice\022 "
+  ".city.economy.v2.SetPriceRequest\032!.city."
+  "economy.v2.SetPriceResponse\022X\n\013GetCurren"
+  "cy\022#.city.economy.v2.GetCurrencyRequest\032"
+  "$.city.economy.v2.GetCurrencyResponse\022X\n"
+  "\013SetCurrency\022#.city.economy.v2.SetCurren"
+  "cyRequest\032$.city.economy.v2.SetCurrencyR"
+  "esponse\022d\n\017GetInterestRate\022\'.city.econom"
+  "y.v2.GetInterestRateRequest\032(.city.econo"
+  "my.v2.GetInterestRateResponse\022d\n\017SetInte"
+  "restRate\022\'.city.economy.v2.SetInterestRa"
+  "teRequest\032(.city.economy.v2.SetInterestR"
+  "ateResponse\022j\n\021GetBracketCutoffs\022).city."
+  "economy.v2.GetBracketCutoffsRequest\032*.ci"
+  "ty.economy.v2.GetBracketCutoffsResponse\022"
+  "j\n\021SetBracketCutoffs\022).city.economy.v2.S"
+  "etBracketCutoffsRequest\032*.city.economy.v"
+  "2.SetBracketCutoffsResponse\022d\n\017GetBracke"
+  "tRates\022\'.city.economy.v2.GetBracketRates"
+  "Request\032(.city.economy.v2.GetBracketRate"
+  "sResponse\022d\n\017SetBracketRates\022\'.city.econ"
+  "omy.v2.SetBracketRatesRequest\032(.city.eco"
+  "nomy.v2.SetBracketRatesResponse\022j\n\021Calcu"
+  "lateTaxesDue\022).city.economy.v2.Calculate"
+  "TaxesDueRequest\032*.city.economy.v2.Calcul"
+  "ateTaxesDueResponse\022s\n\024CalculateConsumpt"
+  "ion\022,.city.economy.v2.CalculateConsumpti"
+  "onRequest\032-.city.economy.v2.CalculateCon"
+  "sumptionResponse\022j\n\021CalculateInterest\022)."
+  "city.economy.v2.CalculateInterestRequest"
+  "\032*.city.economy.v2.CalculateInterestResp"
+  "onse\022p\n\023SaveEconomyEntities\022+.city.econo"
+  "my.v2.SaveEconomyEntitiesRequest\032,.city."
+  "economy.v2.SaveEconomyEntitiesResponse\022p"
+  "\n\023LoadEconomyEntities\022+.city.economy.v2."
+  "LoadEconomyEntitiesRequest\032,.city.econom"
+  "y.v2.LoadEconomyEntitiesResponse\022y\n\026GetC"
+  "onsumptionCurrency\022..city.economy.v2.Get"
+  "ConsumptionCurrencyRequest\032/.city.econom"
+  "y.v2.GetConsumptionCurrencyResponse\022y\n\026S"
+  "etConsumptionCurrency\022..city.economy.v2."
+  "SetConsumptionCurrencyRequest\032/.city.eco"
+  "nomy.v2.SetConsumptionCurrencyResponse\022\177"
+  "\n\030GetConsumptionPropensity\0220.city.econom"
+  "y.v2.GetConsumptionPropensityRequest\0321.c"
+  "ity.economy.v2.GetConsumptionPropensityR"
+  "esponse\022\177\n\030SetConsumptionPropensity\0220.ci"
+  "ty.economy.v2.SetConsumptionPropensityRe"
+  "quest\0321.city.economy.v2.SetConsumptionPr"
+  "opensityResponse\022j\n\021GetIncomeCurrency\022)."
+  "city.economy.v2.GetIncomeCurrencyRequest"
+  "\032*.city.economy.v2.GetIncomeCurrencyResp"
+  "onse\022j\n\021SetIncomeCurrency\022).city.economy"
+  ".v2.SetIncomeCurrencyRequest\032*.city.econ"
+  "omy.v2.SetIncomeCurrencyResponse\022^\n\rGetD"
+  "epression\022%.city.economy.v2.GetDepressio"
+  "nRequest\032&.city.economy.v2.GetDepression"
+  "Response\022^\n\rSetDepression\022%.city.economy"
+  ".v2.SetDepressionRequest\032&.city.economy."
+  "v2.SetDepressionResponse\022d\n\017GetLocusCont"
+  "rol\022\'.city.economy.v2.GetLocusControlReq"
+  "uest\032(.city.economy.v2.GetLocusControlRe"
+  "sponse\022d\n\017SetLocusControl\022\'.city.economy"
+  ".v2.SetLocusControlRequest\032(.city.econom"
+  "y.v2.SetLocusControlResponse\022d\n\017GetWorki"
+  "ngHours\022\'.city.economy.v2.GetWorkingHour"
+  "sRequest\032(.city.economy.v2.GetWorkingHou"
+  "rsResponse\022d\n\017SetWorkingHours\022\'.city.eco"
+  "nomy.v2.SetWorkingHoursRequest\032(.city.ec"
+  "onomy.v2.SetWorkingHoursResponse\022d\n\017GetO"
+  "rgEntityIds\022\'.city.economy.v2.GetOrgEnti"
+  "tyIdsRequest\032(.city.economy.v2.GetOrgEnt"
+  "ityIdsResponseB\277\001\n\023com.city.economy.v2B\017"
+  "OrgServiceProtoP\001Z9git.fiblab.net/sim/pr"
+  "otos/v2/go/city/economy/v2;economyv2\242\002\003C"
+  "EX\252\002\017City.Economy.V2\312\002\017City\\Economy\\V2\342\002"
+  "\033City\\Economy\\V2\\GPBMetadata\352\002\021City::Eco"
+  "nomy::V2b\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_deps[1] = {
   &::descriptor_table_city_2feconomy_2fv2_2feconomy_2eproto,
 };
 static ::_pbi::once_flag descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto = {
-    false, false, 9550, descriptor_table_protodef_city_2feconomy_2fv2_2forg_5fservice_2eproto,
+    false, false, 9776, descriptor_table_protodef_city_2feconomy_2fv2_2forg_5fservice_2eproto,
     "city/economy/v2/org_service.proto",
-    &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once, descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_deps, 1, 86,
+    &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once, descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_deps, 1, 88,
     schemas, file_default_instances, TableStruct_city_2feconomy_2fv2_2forg_5fservice_2eproto::offsets,
     file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto, file_level_enum_descriptors_city_2feconomy_2fv2_2forg_5fservice_2eproto,
     file_level_service_descriptors_city_2feconomy_2fv2_2forg_5fservice_2eproto,
@@ -15878,6 +15929,380 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SetWorkingHoursResponse::GetCl
       file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[85]);
 }
 
+// ===================================================================
+
+class GetOrgEntityIdsRequest::_Internal {
+ public:
+};
+
+GetOrgEntityIdsRequest::GetOrgEntityIdsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:city.economy.v2.GetOrgEntityIdsRequest)
+}
+GetOrgEntityIdsRequest::GetOrgEntityIdsRequest(const GetOrgEntityIdsRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  GetOrgEntityIdsRequest* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.type_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.type_ = from._impl_.type_;
+  // @@protoc_insertion_point(copy_constructor:city.economy.v2.GetOrgEntityIdsRequest)
+}
+
+inline void GetOrgEntityIdsRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.type_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+}
+
+GetOrgEntityIdsRequest::~GetOrgEntityIdsRequest() {
+  // @@protoc_insertion_point(destructor:city.economy.v2.GetOrgEntityIdsRequest)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void GetOrgEntityIdsRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void GetOrgEntityIdsRequest::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void GetOrgEntityIdsRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:city.economy.v2.GetOrgEntityIdsRequest)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.type_ = 0;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* GetOrgEntityIdsRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // .city.economy.v2.OrgType type = 1 [json_name = "type"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_set_type(static_cast<::city::economy::v2::OrgType>(val));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* GetOrgEntityIdsRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:city.economy.v2.GetOrgEntityIdsRequest)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .city.economy.v2.OrgType type = 1 [json_name = "type"];
+  if (this->_internal_type() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
+      1, this->_internal_type(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:city.economy.v2.GetOrgEntityIdsRequest)
+  return target;
+}
+
+size_t GetOrgEntityIdsRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:city.economy.v2.GetOrgEntityIdsRequest)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // .city.economy.v2.OrgType type = 1 [json_name = "type"];
+  if (this->_internal_type() != 0) {
+    total_size += 1 +
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_type());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetOrgEntityIdsRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    GetOrgEntityIdsRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetOrgEntityIdsRequest::GetClassData() const { return &_class_data_; }
+
+
+void GetOrgEntityIdsRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<GetOrgEntityIdsRequest*>(&to_msg);
+  auto& from = static_cast<const GetOrgEntityIdsRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:city.economy.v2.GetOrgEntityIdsRequest)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_type() != 0) {
+    _this->_internal_set_type(from._internal_type());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void GetOrgEntityIdsRequest::CopyFrom(const GetOrgEntityIdsRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:city.economy.v2.GetOrgEntityIdsRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetOrgEntityIdsRequest::IsInitialized() const {
+  return true;
+}
+
+void GetOrgEntityIdsRequest::InternalSwap(GetOrgEntityIdsRequest* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_.type_, other->_impl_.type_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetOrgEntityIdsRequest::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[86]);
+}
+
+// ===================================================================
+
+class GetOrgEntityIdsResponse::_Internal {
+ public:
+};
+
+GetOrgEntityIdsResponse::GetOrgEntityIdsResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:city.economy.v2.GetOrgEntityIdsResponse)
+}
+GetOrgEntityIdsResponse::GetOrgEntityIdsResponse(const GetOrgEntityIdsResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  GetOrgEntityIdsResponse* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.org_ids_){from._impl_.org_ids_}
+    , /*decltype(_impl_._org_ids_cached_byte_size_)*/{0}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:city.economy.v2.GetOrgEntityIdsResponse)
+}
+
+inline void GetOrgEntityIdsResponse::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.org_ids_){arena}
+    , /*decltype(_impl_._org_ids_cached_byte_size_)*/{0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+}
+
+GetOrgEntityIdsResponse::~GetOrgEntityIdsResponse() {
+  // @@protoc_insertion_point(destructor:city.economy.v2.GetOrgEntityIdsResponse)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void GetOrgEntityIdsResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.org_ids_.~RepeatedField();
+}
+
+void GetOrgEntityIdsResponse::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void GetOrgEntityIdsResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:city.economy.v2.GetOrgEntityIdsResponse)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.org_ids_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* GetOrgEntityIdsResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // repeated int32 org_ids = 1 [json_name = "orgIds"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_org_ids(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<uint8_t>(tag) == 8) {
+          _internal_add_org_ids(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* GetOrgEntityIdsResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:city.economy.v2.GetOrgEntityIdsResponse)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated int32 org_ids = 1 [json_name = "orgIds"];
+  {
+    int byte_size = _impl_._org_ids_cached_byte_size_.load(std::memory_order_relaxed);
+    if (byte_size > 0) {
+      target = stream->WriteInt32Packed(
+          1, _internal_org_ids(), byte_size, target);
+    }
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:city.economy.v2.GetOrgEntityIdsResponse)
+  return target;
+}
+
+size_t GetOrgEntityIdsResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:city.economy.v2.GetOrgEntityIdsResponse)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated int32 org_ids = 1 [json_name = "orgIds"];
+  {
+    size_t data_size = ::_pbi::WireFormatLite::
+      Int32Size(this->_impl_.org_ids_);
+    if (data_size > 0) {
+      total_size += 1 +
+        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
+    }
+    int cached_size = ::_pbi::ToCachedSize(data_size);
+    _impl_._org_ids_cached_byte_size_.store(cached_size,
+                                    std::memory_order_relaxed);
+    total_size += data_size;
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetOrgEntityIdsResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    GetOrgEntityIdsResponse::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetOrgEntityIdsResponse::GetClassData() const { return &_class_data_; }
+
+
+void GetOrgEntityIdsResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<GetOrgEntityIdsResponse*>(&to_msg);
+  auto& from = static_cast<const GetOrgEntityIdsResponse&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:city.economy.v2.GetOrgEntityIdsResponse)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_impl_.org_ids_.MergeFrom(from._impl_.org_ids_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void GetOrgEntityIdsResponse::CopyFrom(const GetOrgEntityIdsResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:city.economy.v2.GetOrgEntityIdsResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetOrgEntityIdsResponse::IsInitialized() const {
+  return true;
+}
+
+void GetOrgEntityIdsResponse::InternalSwap(GetOrgEntityIdsResponse* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _impl_.org_ids_.InternalSwap(&other->_impl_.org_ids_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetOrgEntityIdsResponse::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[87]);
+}
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace v2
 }  // namespace economy
@@ -16226,6 +16651,14 @@ Arena::CreateMaybeMessage< ::city::economy::v2::SetWorkingHoursRequest >(Arena* 
 template<> PROTOBUF_NOINLINE ::city::economy::v2::SetWorkingHoursResponse*
 Arena::CreateMaybeMessage< ::city::economy::v2::SetWorkingHoursResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::city::economy::v2::SetWorkingHoursResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::economy::v2::GetOrgEntityIdsRequest*
+Arena::CreateMaybeMessage< ::city::economy::v2::GetOrgEntityIdsRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::economy::v2::GetOrgEntityIdsRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::economy::v2::GetOrgEntityIdsResponse*
+Arena::CreateMaybeMessage< ::city::economy::v2::GetOrgEntityIdsResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::economy::v2::GetOrgEntityIdsResponse >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

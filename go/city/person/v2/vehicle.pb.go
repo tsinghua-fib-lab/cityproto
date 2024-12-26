@@ -174,7 +174,7 @@ type LC struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// 影子车道ID（变道前的车道）
 	// shadow lane id (lane before lane change)
-	ShadowLaneId int32 `protobuf:"varint,1,opt,name=shadow_lane_id,json=shadowLaneId,proto3" json:"shadow_lane_id,omitempty" bson:"shadow_lane_id" db:"shadow_lane_id" yaml:"shadow_lane_id"`
+	ShadowLaneId int32 `protobuf:"varint,1,opt,name=shadow_lane_id,json=shadowLaneId,proto3" json:"shadow_lane_id,omitempty" yaml:"shadow_lane_id" bson:"shadow_lane_id" db:"shadow_lane_id"`
 	// 投影到影子车道的坐标
 	// s coordinate projected to shadow lane
 	ShadowS float64 `protobuf:"fixed64,2,opt,name=shadow_s,json=shadowS,proto3" json:"shadow_s,omitempty" yaml:"shadow_s" bson:"shadow_s" db:"shadow_s"`
@@ -183,7 +183,7 @@ type LC struct {
 	Angle float64 `protobuf:"fixed64,3,opt,name=angle,proto3" json:"angle,omitempty" yaml:"angle" bson:"angle" db:"angle"`
 	// 已完成的变道比例
 	// completed ratio of lane change
-	CompletedRatio float64 `protobuf:"fixed64,4,opt,name=completed_ratio,json=completedRatio,proto3" json:"completed_ratio,omitempty" yaml:"completed_ratio" bson:"completed_ratio" db:"completed_ratio"`
+	CompletedRatio float64 `protobuf:"fixed64,4,opt,name=completed_ratio,json=completedRatio,proto3" json:"completed_ratio,omitempty" bson:"completed_ratio" db:"completed_ratio" yaml:"completed_ratio"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -258,10 +258,10 @@ type VehicleAction struct {
 	Acc float64 `protobuf:"fixed64,1,opt,name=acc,proto3" json:"acc,omitempty" yaml:"acc" bson:"acc" db:"acc"`
 	// 变道目标（可选，不设置代表不变道或保持变道状态）
 	// lane change target (optional, not set means no lane change)
-	LcTargetId *int32 `protobuf:"varint,2,opt,name=lc_target_id,json=lcTargetId,proto3,oneof" json:"lc_target_id,omitempty" yaml:"lc_target_id" bson:"lc_target_id" db:"lc_target_id"`
+	LcTargetId *int32 `protobuf:"varint,2,opt,name=lc_target_id,json=lcTargetId,proto3,oneof" json:"lc_target_id,omitempty" bson:"lc_target_id" db:"lc_target_id" yaml:"lc_target_id"`
 	// 变道过程的转向角度
 	// steering angle during lane change
-	Angle         float64 `protobuf:"fixed64,3,opt,name=angle,proto3" json:"angle,omitempty" yaml:"angle" bson:"angle" db:"angle"`
+	Angle         float64 `protobuf:"fixed64,3,opt,name=angle,proto3" json:"angle,omitempty" bson:"angle" db:"angle" yaml:"angle"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -330,10 +330,10 @@ type VehicleRouteAction struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// 车辆编号
 	// vehicle id
-	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" bson:"id" db:"id" yaml:"id"`
+	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
 	// 新的路径规划结果
 	// new routing result
-	Journey       *v2.Journey `protobuf:"bytes,2,opt,name=journey,proto3" json:"journey,omitempty" bson:"journey" db:"journey" yaml:"journey"`
+	Journey       *v2.Journey `protobuf:"bytes,2,opt,name=journey,proto3" json:"journey,omitempty" yaml:"journey" bson:"journey" db:"journey"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -386,16 +386,16 @@ type VehicleRuntime struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// 基本运行时信息
 	// basic runtime information
-	Base *PersonMotion `protobuf:"bytes,1,opt,name=base,proto3" json:"base,omitempty" bson:"base" db:"base" yaml:"base"`
+	Base *PersonMotion `protobuf:"bytes,1,opt,name=base,proto3" json:"base,omitempty" yaml:"base" bson:"base" db:"base"`
 	// 变道信息
 	// lane change information
 	Lc *LC `protobuf:"bytes,4,opt,name=lc,proto3,oneof" json:"lc,omitempty" yaml:"lc" bson:"lc" db:"lc"`
 	// 本轮车辆行为（获取车辆环境信息时不返回）
 	// vehicle action in the step (not returned when getting vehicle environment information)
-	Action *VehicleAction `protobuf:"bytes,5,opt,name=action,proto3,oneof" json:"action,omitempty" db:"action" yaml:"action" bson:"action"`
+	Action *VehicleAction `protobuf:"bytes,5,opt,name=action,proto3,oneof" json:"action,omitempty" bson:"action" db:"action" yaml:"action"`
 	// 走过的里程
 	// running distance
-	RunningDistance float64 `protobuf:"fixed64,6,opt,name=running_distance,json=runningDistance,proto3" json:"running_distance,omitempty" bson:"running_distance" db:"running_distance" yaml:"running_distance"`
+	RunningDistance float64 `protobuf:"fixed64,6,opt,name=running_distance,json=runningDistance,proto3" json:"running_distance,omitempty" yaml:"running_distance" bson:"running_distance" db:"running_distance"`
 	// 走错路次数
 	// number of going astray
 	NumGoingAstray int32 `protobuf:"varint,7,opt,name=num_going_astray,json=numGoingAstray,proto3" json:"num_going_astray,omitempty" bson:"num_going_astray" db:"num_going_astray" yaml:"num_going_astray"`
@@ -514,13 +514,13 @@ type ObservedVehicle struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// 车辆编号
 	// vehicle id
-	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
+	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" db:"id" yaml:"id" bson:"id"`
 	// 当前的车辆运行时信息
 	// current vehicle runtime information
 	Motion *PersonMotion `protobuf:"bytes,2,opt,name=motion,proto3" json:"motion,omitempty" yaml:"motion" bson:"motion" db:"motion"`
 	// 相对距离
 	// relative distance
-	RelativeDistance float64 `protobuf:"fixed64,3,opt,name=relative_distance,json=relativeDistance,proto3" json:"relative_distance,omitempty" db:"relative_distance" yaml:"relative_distance" bson:"relative_distance"`
+	RelativeDistance float64 `protobuf:"fixed64,3,opt,name=relative_distance,json=relativeDistance,proto3" json:"relative_distance,omitempty" yaml:"relative_distance" bson:"relative_distance" db:"relative_distance"`
 	// 关系枚举
 	// relation enumeration
 	Relation      VehicleRelation `protobuf:"varint,4,opt,name=relation,proto3,enum=city.person.v2.VehicleRelation" json:"relation,omitempty" yaml:"relation" bson:"relation" db:"relation"`
@@ -591,10 +591,10 @@ func (x *ObservedVehicle) GetRelation() VehicleRelation {
 type ObservedLane struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// Lane ID
-	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" bson:"id" db:"id" yaml:"id"`
+	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" yaml:"id" bson:"id" db:"id"`
 	// 是否限行
 	// whether restricted
-	Restriction bool `protobuf:"varint,2,opt,name=restriction,proto3" json:"restriction,omitempty" yaml:"restriction" bson:"restriction" db:"restriction"`
+	Restriction bool `protobuf:"varint,2,opt,name=restriction,proto3" json:"restriction,omitempty" bson:"restriction" db:"restriction" yaml:"restriction"`
 	// 交通灯状态
 	// traffic light state
 	LightState LightState `protobuf:"varint,3,opt,name=light_state,json=lightState,proto3,enum=city.person.v2.LightState" json:"light_state,omitempty" yaml:"light_state" bson:"light_state" db:"light_state"`
@@ -673,13 +673,13 @@ type VehicleEnv struct {
 	Runtime *VehicleRuntime `protobuf:"bytes,2,opt,name=runtime,proto3" json:"runtime,omitempty" yaml:"runtime" bson:"runtime" db:"runtime"`
 	// 当前的路径规划结果
 	// journey: current routing result
-	Journey *v2.Journey `protobuf:"bytes,3,opt,name=journey,proto3" json:"journey,omitempty" yaml:"journey" bson:"journey" db:"journey"`
+	Journey *v2.Journey `protobuf:"bytes,3,opt,name=journey,proto3" json:"journey,omitempty" db:"journey" yaml:"journey" bson:"journey"`
 	// 观测到的车辆
 	// observed vehicles
 	ObservedVehicles []*ObservedVehicle `protobuf:"bytes,4,rep,name=observed_vehicles,json=observedVehicles,proto3" json:"observed_vehicles,omitempty" yaml:"observed_vehicles" bson:"observed_vehicles" db:"observed_vehicles"`
 	// 观测到的车道状态
 	// observed lane states
-	ObservedLanes []*ObservedLane `protobuf:"bytes,5,rep,name=observed_lanes,json=observedLanes,proto3" json:"observed_lanes,omitempty" db:"observed_lanes" yaml:"observed_lanes" bson:"observed_lanes"`
+	ObservedLanes []*ObservedLane `protobuf:"bytes,5,rep,name=observed_lanes,json=observedLanes,proto3" json:"observed_lanes,omitempty" yaml:"observed_lanes" bson:"observed_lanes" db:"observed_lanes"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }

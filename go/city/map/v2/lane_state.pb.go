@@ -32,13 +32,13 @@ type LaneState struct {
 	Persons []*v2.PersonMotion `protobuf:"bytes,2,rep,name=persons,proto3" json:"persons,omitempty" yaml:"persons" bson:"persons" db:"persons"`
 	// 平均速度（m/s）
 	// average speed (m/s)
-	AvgV float64 `protobuf:"fixed64,3,opt,name=avg_v,json=avgV,proto3" json:"avg_v,omitempty" yaml:"avg_v" bson:"avg_v" db:"avg_v"`
+	AvgV float64 `protobuf:"fixed64,3,opt,name=avg_v,json=avgV,proto3" json:"avg_v,omitempty" bson:"avg_v" db:"avg_v" yaml:"avg_v"`
 	// 是否限行
 	// whether restricted
-	Restriction bool `protobuf:"varint,4,opt,name=restriction,proto3" json:"restriction,omitempty" db:"restriction" yaml:"restriction" bson:"restriction"`
+	Restriction bool `protobuf:"varint,4,opt,name=restriction,proto3" json:"restriction,omitempty" yaml:"restriction" bson:"restriction" db:"restriction"`
 	// 交通灯状态
 	// traffic light state
-	LightState    LightState `protobuf:"varint,5,opt,name=light_state,json=lightState,proto3,enum=city.map.v2.LightState" json:"light_state,omitempty" yaml:"light_state" bson:"light_state" db:"light_state"`
+	LightState    LightState `protobuf:"varint,5,opt,name=light_state,json=lightState,proto3,enum=city.map.v2.LightState" json:"light_state,omitempty" bson:"light_state" db:"light_state" yaml:"light_state"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }

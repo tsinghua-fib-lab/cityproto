@@ -116,7 +116,7 @@ func (x *GetOrgResponse) GetOrgs() []*Org {
 type UpdateOrgMoneyRequest struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// 待修改的组织资金变动
-	Items         []*UpdateOrgMoneyRequestItem `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty" db:"items" yaml:"items" bson:"items"`
+	Items         []*UpdateOrgMoneyRequestItem `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty" bson:"items" db:"items" yaml:"items"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -367,7 +367,7 @@ func (x *UpdateOrgGoodsRequestItem) GetGoods() []*Goods {
 type UpdateOrgGoodsResponse struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// 修改后的组织的经济情况
-	Orgs          []*Org `protobuf:"bytes,1,rep,name=orgs,proto3" json:"orgs,omitempty" yaml:"orgs" bson:"orgs" db:"orgs"`
+	Orgs          []*Org `protobuf:"bytes,1,rep,name=orgs,proto3" json:"orgs,omitempty" db:"orgs" yaml:"orgs" bson:"orgs"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -532,7 +532,7 @@ func (x *UpdateOrgEmployeeRequestItem) GetUpdates() []*Employee {
 type UpdateOrgEmployeeResponse struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// 修改后的组织的经济情况
-	Orgs          []*Org `protobuf:"bytes,1,rep,name=orgs,proto3" json:"orgs,omitempty" yaml:"orgs" bson:"orgs" db:"orgs"`
+	Orgs          []*Org `protobuf:"bytes,1,rep,name=orgs,proto3" json:"orgs,omitempty" db:"orgs" yaml:"orgs" bson:"orgs"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -578,7 +578,7 @@ func (x *UpdateOrgEmployeeResponse) GetOrgs() []*Org {
 type UpdateOrgJobRequest struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// 待修改的组织岗位变动
-	Items         []*UpdateOrgJobRequestItem `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty" db:"items" yaml:"items" bson:"items"`
+	Items         []*UpdateOrgJobRequestItem `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty" bson:"items" db:"items" yaml:"items"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -682,7 +682,7 @@ func (x *UpdateOrgJobRequestItem) GetJobs() []*Job {
 type UpdateOrgJobResponse struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// 修改后的组织的经济情况
-	Orgs          []*Org `protobuf:"bytes,1,rep,name=orgs,proto3" json:"orgs,omitempty" yaml:"orgs" bson:"orgs" db:"orgs"`
+	Orgs          []*Org `protobuf:"bytes,1,rep,name=orgs,proto3" json:"orgs,omitempty" bson:"orgs" db:"orgs" yaml:"orgs"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }

@@ -369,6 +369,14 @@ class OrgService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::SetWorkingHoursResponse>> PrepareAsyncSetWorkingHours(::grpc::ClientContext* context, const ::city::economy::v2::SetWorkingHoursRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::SetWorkingHoursResponse>>(PrepareAsyncSetWorkingHoursRaw(context, request, cq));
     }
+    // Org Entity Ids
+    virtual ::grpc::Status GetOrgEntityIds(::grpc::ClientContext* context, const ::city::economy::v2::GetOrgEntityIdsRequest& request, ::city::economy::v2::GetOrgEntityIdsResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::GetOrgEntityIdsResponse>> AsyncGetOrgEntityIds(::grpc::ClientContext* context, const ::city::economy::v2::GetOrgEntityIdsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::GetOrgEntityIdsResponse>>(AsyncGetOrgEntityIdsRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::GetOrgEntityIdsResponse>> PrepareAsyncGetOrgEntityIds(::grpc::ClientContext* context, const ::city::economy::v2::GetOrgEntityIdsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::GetOrgEntityIdsResponse>>(PrepareAsyncGetOrgEntityIdsRaw(context, request, cq));
+    }
     class async_interface {
      public:
       virtual ~async_interface() {}
@@ -488,6 +496,9 @@ class OrgService final {
       virtual void GetWorkingHours(::grpc::ClientContext* context, const ::city::economy::v2::GetWorkingHoursRequest* request, ::city::economy::v2::GetWorkingHoursResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       virtual void SetWorkingHours(::grpc::ClientContext* context, const ::city::economy::v2::SetWorkingHoursRequest* request, ::city::economy::v2::SetWorkingHoursResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void SetWorkingHours(::grpc::ClientContext* context, const ::city::economy::v2::SetWorkingHoursRequest* request, ::city::economy::v2::SetWorkingHoursResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Org Entity Ids
+      virtual void GetOrgEntityIds(::grpc::ClientContext* context, const ::city::economy::v2::GetOrgEntityIdsRequest* request, ::city::economy::v2::GetOrgEntityIdsResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetOrgEntityIds(::grpc::ClientContext* context, const ::city::economy::v2::GetOrgEntityIdsRequest* request, ::city::economy::v2::GetOrgEntityIdsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
     };
     typedef class async_interface experimental_async_interface;
     virtual class async_interface* async() { return nullptr; }
@@ -579,6 +590,8 @@ class OrgService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::GetWorkingHoursResponse>* PrepareAsyncGetWorkingHoursRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetWorkingHoursRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::SetWorkingHoursResponse>* AsyncSetWorkingHoursRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetWorkingHoursRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::SetWorkingHoursResponse>* PrepareAsyncSetWorkingHoursRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetWorkingHoursRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::GetOrgEntityIdsResponse>* AsyncGetOrgEntityIdsRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetOrgEntityIdsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::GetOrgEntityIdsResponse>* PrepareAsyncGetOrgEntityIdsRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetOrgEntityIdsRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -884,6 +897,13 @@ class OrgService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetWorkingHoursResponse>> PrepareAsyncSetWorkingHours(::grpc::ClientContext* context, const ::city::economy::v2::SetWorkingHoursRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetWorkingHoursResponse>>(PrepareAsyncSetWorkingHoursRaw(context, request, cq));
     }
+    ::grpc::Status GetOrgEntityIds(::grpc::ClientContext* context, const ::city::economy::v2::GetOrgEntityIdsRequest& request, ::city::economy::v2::GetOrgEntityIdsResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetOrgEntityIdsResponse>> AsyncGetOrgEntityIds(::grpc::ClientContext* context, const ::city::economy::v2::GetOrgEntityIdsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetOrgEntityIdsResponse>>(AsyncGetOrgEntityIdsRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetOrgEntityIdsResponse>> PrepareAsyncGetOrgEntityIds(::grpc::ClientContext* context, const ::city::economy::v2::GetOrgEntityIdsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetOrgEntityIdsResponse>>(PrepareAsyncGetOrgEntityIdsRaw(context, request, cq));
+    }
     class async final :
       public StubInterface::async_interface {
      public:
@@ -973,6 +993,8 @@ class OrgService final {
       void GetWorkingHours(::grpc::ClientContext* context, const ::city::economy::v2::GetWorkingHoursRequest* request, ::city::economy::v2::GetWorkingHoursResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       void SetWorkingHours(::grpc::ClientContext* context, const ::city::economy::v2::SetWorkingHoursRequest* request, ::city::economy::v2::SetWorkingHoursResponse* response, std::function<void(::grpc::Status)>) override;
       void SetWorkingHours(::grpc::ClientContext* context, const ::city::economy::v2::SetWorkingHoursRequest* request, ::city::economy::v2::SetWorkingHoursResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void GetOrgEntityIds(::grpc::ClientContext* context, const ::city::economy::v2::GetOrgEntityIdsRequest* request, ::city::economy::v2::GetOrgEntityIdsResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetOrgEntityIds(::grpc::ClientContext* context, const ::city::economy::v2::GetOrgEntityIdsRequest* request, ::city::economy::v2::GetOrgEntityIdsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
      private:
       friend class Stub;
       explicit async(Stub* stub): stub_(stub) { }
@@ -1070,6 +1092,8 @@ class OrgService final {
     ::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetWorkingHoursResponse>* PrepareAsyncGetWorkingHoursRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetWorkingHoursRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetWorkingHoursResponse>* AsyncSetWorkingHoursRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetWorkingHoursRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetWorkingHoursResponse>* PrepareAsyncSetWorkingHoursRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetWorkingHoursRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetOrgEntityIdsResponse>* AsyncGetOrgEntityIdsRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetOrgEntityIdsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetOrgEntityIdsResponse>* PrepareAsyncGetOrgEntityIdsRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetOrgEntityIdsRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_AddOrg_;
     const ::grpc::internal::RpcMethod rpcmethod_RemoveOrg_;
     const ::grpc::internal::RpcMethod rpcmethod_AddAgent_;
@@ -1113,6 +1137,7 @@ class OrgService final {
     const ::grpc::internal::RpcMethod rpcmethod_SetLocusControl_;
     const ::grpc::internal::RpcMethod rpcmethod_GetWorkingHours_;
     const ::grpc::internal::RpcMethod rpcmethod_SetWorkingHours_;
+    const ::grpc::internal::RpcMethod rpcmethod_GetOrgEntityIds_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -1193,6 +1218,8 @@ class OrgService final {
     // Working Hours
     virtual ::grpc::Status GetWorkingHours(::grpc::ServerContext* context, const ::city::economy::v2::GetWorkingHoursRequest* request, ::city::economy::v2::GetWorkingHoursResponse* response);
     virtual ::grpc::Status SetWorkingHours(::grpc::ServerContext* context, const ::city::economy::v2::SetWorkingHoursRequest* request, ::city::economy::v2::SetWorkingHoursResponse* response);
+    // Org Entity Ids
+    virtual ::grpc::Status GetOrgEntityIds(::grpc::ServerContext* context, const ::city::economy::v2::GetOrgEntityIdsRequest* request, ::city::economy::v2::GetOrgEntityIdsResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_AddOrg : public BaseClass {
@@ -2054,7 +2081,27 @@ class OrgService final {
       ::grpc::Service::RequestAsyncUnary(42, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_AddOrg<WithAsyncMethod_RemoveOrg<WithAsyncMethod_AddAgent<WithAsyncMethod_RemoveAgent<WithAsyncMethod_GetNominalGDP<WithAsyncMethod_SetNominalGDP<WithAsyncMethod_GetRealGDP<WithAsyncMethod_SetRealGDP<WithAsyncMethod_GetUnemployment<WithAsyncMethod_SetUnemployment<WithAsyncMethod_GetWages<WithAsyncMethod_SetWages<WithAsyncMethod_GetPrices<WithAsyncMethod_SetPrices<WithAsyncMethod_GetInventory<WithAsyncMethod_SetInventory<WithAsyncMethod_GetPrice<WithAsyncMethod_SetPrice<WithAsyncMethod_GetCurrency<WithAsyncMethod_SetCurrency<WithAsyncMethod_GetInterestRate<WithAsyncMethod_SetInterestRate<WithAsyncMethod_GetBracketCutoffs<WithAsyncMethod_SetBracketCutoffs<WithAsyncMethod_GetBracketRates<WithAsyncMethod_SetBracketRates<WithAsyncMethod_CalculateTaxesDue<WithAsyncMethod_CalculateConsumption<WithAsyncMethod_CalculateInterest<WithAsyncMethod_SaveEconomyEntities<WithAsyncMethod_LoadEconomyEntities<WithAsyncMethod_GetConsumptionCurrency<WithAsyncMethod_SetConsumptionCurrency<WithAsyncMethod_GetConsumptionPropensity<WithAsyncMethod_SetConsumptionPropensity<WithAsyncMethod_GetIncomeCurrency<WithAsyncMethod_SetIncomeCurrency<WithAsyncMethod_GetDepression<WithAsyncMethod_SetDepression<WithAsyncMethod_GetLocusControl<WithAsyncMethod_SetLocusControl<WithAsyncMethod_GetWorkingHours<WithAsyncMethod_SetWorkingHours<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_GetOrgEntityIds : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_GetOrgEntityIds() {
+      ::grpc::Service::MarkMethodAsync(43);
+    }
+    ~WithAsyncMethod_GetOrgEntityIds() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetOrgEntityIds(::grpc::ServerContext* /*context*/, const ::city::economy::v2::GetOrgEntityIdsRequest* /*request*/, ::city::economy::v2::GetOrgEntityIdsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetOrgEntityIds(::grpc::ServerContext* context, ::city::economy::v2::GetOrgEntityIdsRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::GetOrgEntityIdsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(43, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_AddOrg<WithAsyncMethod_RemoveOrg<WithAsyncMethod_AddAgent<WithAsyncMethod_RemoveAgent<WithAsyncMethod_GetNominalGDP<WithAsyncMethod_SetNominalGDP<WithAsyncMethod_GetRealGDP<WithAsyncMethod_SetRealGDP<WithAsyncMethod_GetUnemployment<WithAsyncMethod_SetUnemployment<WithAsyncMethod_GetWages<WithAsyncMethod_SetWages<WithAsyncMethod_GetPrices<WithAsyncMethod_SetPrices<WithAsyncMethod_GetInventory<WithAsyncMethod_SetInventory<WithAsyncMethod_GetPrice<WithAsyncMethod_SetPrice<WithAsyncMethod_GetCurrency<WithAsyncMethod_SetCurrency<WithAsyncMethod_GetInterestRate<WithAsyncMethod_SetInterestRate<WithAsyncMethod_GetBracketCutoffs<WithAsyncMethod_SetBracketCutoffs<WithAsyncMethod_GetBracketRates<WithAsyncMethod_SetBracketRates<WithAsyncMethod_CalculateTaxesDue<WithAsyncMethod_CalculateConsumption<WithAsyncMethod_CalculateInterest<WithAsyncMethod_SaveEconomyEntities<WithAsyncMethod_LoadEconomyEntities<WithAsyncMethod_GetConsumptionCurrency<WithAsyncMethod_SetConsumptionCurrency<WithAsyncMethod_GetConsumptionPropensity<WithAsyncMethod_SetConsumptionPropensity<WithAsyncMethod_GetIncomeCurrency<WithAsyncMethod_SetIncomeCurrency<WithAsyncMethod_GetDepression<WithAsyncMethod_SetDepression<WithAsyncMethod_GetLocusControl<WithAsyncMethod_SetLocusControl<WithAsyncMethod_GetWorkingHours<WithAsyncMethod_SetWorkingHours<WithAsyncMethod_GetOrgEntityIds<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > AsyncService;
   template <class BaseClass>
   class WithCallbackMethod_AddOrg : public BaseClass {
    private:
@@ -3216,7 +3263,34 @@ class OrgService final {
     virtual ::grpc::ServerUnaryReactor* SetWorkingHours(
       ::grpc::CallbackServerContext* /*context*/, const ::city::economy::v2::SetWorkingHoursRequest* /*request*/, ::city::economy::v2::SetWorkingHoursResponse* /*response*/)  { return nullptr; }
   };
-  typedef WithCallbackMethod_AddOrg<WithCallbackMethod_RemoveOrg<WithCallbackMethod_AddAgent<WithCallbackMethod_RemoveAgent<WithCallbackMethod_GetNominalGDP<WithCallbackMethod_SetNominalGDP<WithCallbackMethod_GetRealGDP<WithCallbackMethod_SetRealGDP<WithCallbackMethod_GetUnemployment<WithCallbackMethod_SetUnemployment<WithCallbackMethod_GetWages<WithCallbackMethod_SetWages<WithCallbackMethod_GetPrices<WithCallbackMethod_SetPrices<WithCallbackMethod_GetInventory<WithCallbackMethod_SetInventory<WithCallbackMethod_GetPrice<WithCallbackMethod_SetPrice<WithCallbackMethod_GetCurrency<WithCallbackMethod_SetCurrency<WithCallbackMethod_GetInterestRate<WithCallbackMethod_SetInterestRate<WithCallbackMethod_GetBracketCutoffs<WithCallbackMethod_SetBracketCutoffs<WithCallbackMethod_GetBracketRates<WithCallbackMethod_SetBracketRates<WithCallbackMethod_CalculateTaxesDue<WithCallbackMethod_CalculateConsumption<WithCallbackMethod_CalculateInterest<WithCallbackMethod_SaveEconomyEntities<WithCallbackMethod_LoadEconomyEntities<WithCallbackMethod_GetConsumptionCurrency<WithCallbackMethod_SetConsumptionCurrency<WithCallbackMethod_GetConsumptionPropensity<WithCallbackMethod_SetConsumptionPropensity<WithCallbackMethod_GetIncomeCurrency<WithCallbackMethod_SetIncomeCurrency<WithCallbackMethod_GetDepression<WithCallbackMethod_SetDepression<WithCallbackMethod_GetLocusControl<WithCallbackMethod_SetLocusControl<WithCallbackMethod_GetWorkingHours<WithCallbackMethod_SetWorkingHours<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > CallbackService;
+  template <class BaseClass>
+  class WithCallbackMethod_GetOrgEntityIds : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_GetOrgEntityIds() {
+      ::grpc::Service::MarkMethodCallback(43,
+          new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::GetOrgEntityIdsRequest, ::city::economy::v2::GetOrgEntityIdsResponse>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::city::economy::v2::GetOrgEntityIdsRequest* request, ::city::economy::v2::GetOrgEntityIdsResponse* response) { return this->GetOrgEntityIds(context, request, response); }));}
+    void SetMessageAllocatorFor_GetOrgEntityIds(
+        ::grpc::MessageAllocator< ::city::economy::v2::GetOrgEntityIdsRequest, ::city::economy::v2::GetOrgEntityIdsResponse>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(43);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::GetOrgEntityIdsRequest, ::city::economy::v2::GetOrgEntityIdsResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_GetOrgEntityIds() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetOrgEntityIds(::grpc::ServerContext* /*context*/, const ::city::economy::v2::GetOrgEntityIdsRequest* /*request*/, ::city::economy::v2::GetOrgEntityIdsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* GetOrgEntityIds(
+      ::grpc::CallbackServerContext* /*context*/, const ::city::economy::v2::GetOrgEntityIdsRequest* /*request*/, ::city::economy::v2::GetOrgEntityIdsResponse* /*response*/)  { return nullptr; }
+  };
+  typedef WithCallbackMethod_AddOrg<WithCallbackMethod_RemoveOrg<WithCallbackMethod_AddAgent<WithCallbackMethod_RemoveAgent<WithCallbackMethod_GetNominalGDP<WithCallbackMethod_SetNominalGDP<WithCallbackMethod_GetRealGDP<WithCallbackMethod_SetRealGDP<WithCallbackMethod_GetUnemployment<WithCallbackMethod_SetUnemployment<WithCallbackMethod_GetWages<WithCallbackMethod_SetWages<WithCallbackMethod_GetPrices<WithCallbackMethod_SetPrices<WithCallbackMethod_GetInventory<WithCallbackMethod_SetInventory<WithCallbackMethod_GetPrice<WithCallbackMethod_SetPrice<WithCallbackMethod_GetCurrency<WithCallbackMethod_SetCurrency<WithCallbackMethod_GetInterestRate<WithCallbackMethod_SetInterestRate<WithCallbackMethod_GetBracketCutoffs<WithCallbackMethod_SetBracketCutoffs<WithCallbackMethod_GetBracketRates<WithCallbackMethod_SetBracketRates<WithCallbackMethod_CalculateTaxesDue<WithCallbackMethod_CalculateConsumption<WithCallbackMethod_CalculateInterest<WithCallbackMethod_SaveEconomyEntities<WithCallbackMethod_LoadEconomyEntities<WithCallbackMethod_GetConsumptionCurrency<WithCallbackMethod_SetConsumptionCurrency<WithCallbackMethod_GetConsumptionPropensity<WithCallbackMethod_SetConsumptionPropensity<WithCallbackMethod_GetIncomeCurrency<WithCallbackMethod_SetIncomeCurrency<WithCallbackMethod_GetDepression<WithCallbackMethod_SetDepression<WithCallbackMethod_GetLocusControl<WithCallbackMethod_SetLocusControl<WithCallbackMethod_GetWorkingHours<WithCallbackMethod_SetWorkingHours<WithCallbackMethod_GetOrgEntityIds<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > CallbackService;
   typedef CallbackService ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_AddOrg : public BaseClass {
@@ -3945,6 +4019,23 @@ class OrgService final {
     }
     // disable synchronous version of this method
     ::grpc::Status SetWorkingHours(::grpc::ServerContext* /*context*/, const ::city::economy::v2::SetWorkingHoursRequest* /*request*/, ::city::economy::v2::SetWorkingHoursResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_GetOrgEntityIds : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_GetOrgEntityIds() {
+      ::grpc::Service::MarkMethodGeneric(43);
+    }
+    ~WithGenericMethod_GetOrgEntityIds() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetOrgEntityIds(::grpc::ServerContext* /*context*/, const ::city::economy::v2::GetOrgEntityIdsRequest* /*request*/, ::city::economy::v2::GetOrgEntityIdsResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -4807,6 +4898,26 @@ class OrgService final {
     }
     void RequestSetWorkingHours(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(42, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_GetOrgEntityIds : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_GetOrgEntityIds() {
+      ::grpc::Service::MarkMethodRaw(43);
+    }
+    ~WithRawMethod_GetOrgEntityIds() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetOrgEntityIds(::grpc::ServerContext* /*context*/, const ::city::economy::v2::GetOrgEntityIdsRequest* /*request*/, ::city::economy::v2::GetOrgEntityIdsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetOrgEntityIds(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(43, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -5753,6 +5864,28 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     virtual ::grpc::ServerUnaryReactor* SetWorkingHours(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_GetOrgEntityIds : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_GetOrgEntityIds() {
+      ::grpc::Service::MarkMethodRawCallback(43,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetOrgEntityIds(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_GetOrgEntityIds() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetOrgEntityIds(::grpc::ServerContext* /*context*/, const ::city::economy::v2::GetOrgEntityIdsRequest* /*request*/, ::city::economy::v2::GetOrgEntityIdsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* GetOrgEntityIds(
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
@@ -6916,9 +7049,36 @@ class OrgService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedSetWorkingHours(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::city::economy::v2::SetWorkingHoursRequest,::city::economy::v2::SetWorkingHoursResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_AddOrg<WithStreamedUnaryMethod_RemoveOrg<WithStreamedUnaryMethod_AddAgent<WithStreamedUnaryMethod_RemoveAgent<WithStreamedUnaryMethod_GetNominalGDP<WithStreamedUnaryMethod_SetNominalGDP<WithStreamedUnaryMethod_GetRealGDP<WithStreamedUnaryMethod_SetRealGDP<WithStreamedUnaryMethod_GetUnemployment<WithStreamedUnaryMethod_SetUnemployment<WithStreamedUnaryMethod_GetWages<WithStreamedUnaryMethod_SetWages<WithStreamedUnaryMethod_GetPrices<WithStreamedUnaryMethod_SetPrices<WithStreamedUnaryMethod_GetInventory<WithStreamedUnaryMethod_SetInventory<WithStreamedUnaryMethod_GetPrice<WithStreamedUnaryMethod_SetPrice<WithStreamedUnaryMethod_GetCurrency<WithStreamedUnaryMethod_SetCurrency<WithStreamedUnaryMethod_GetInterestRate<WithStreamedUnaryMethod_SetInterestRate<WithStreamedUnaryMethod_GetBracketCutoffs<WithStreamedUnaryMethod_SetBracketCutoffs<WithStreamedUnaryMethod_GetBracketRates<WithStreamedUnaryMethod_SetBracketRates<WithStreamedUnaryMethod_CalculateTaxesDue<WithStreamedUnaryMethod_CalculateConsumption<WithStreamedUnaryMethod_CalculateInterest<WithStreamedUnaryMethod_SaveEconomyEntities<WithStreamedUnaryMethod_LoadEconomyEntities<WithStreamedUnaryMethod_GetConsumptionCurrency<WithStreamedUnaryMethod_SetConsumptionCurrency<WithStreamedUnaryMethod_GetConsumptionPropensity<WithStreamedUnaryMethod_SetConsumptionPropensity<WithStreamedUnaryMethod_GetIncomeCurrency<WithStreamedUnaryMethod_SetIncomeCurrency<WithStreamedUnaryMethod_GetDepression<WithStreamedUnaryMethod_SetDepression<WithStreamedUnaryMethod_GetLocusControl<WithStreamedUnaryMethod_SetLocusControl<WithStreamedUnaryMethod_GetWorkingHours<WithStreamedUnaryMethod_SetWorkingHours<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_GetOrgEntityIds : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_GetOrgEntityIds() {
+      ::grpc::Service::MarkMethodStreamed(43,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::city::economy::v2::GetOrgEntityIdsRequest, ::city::economy::v2::GetOrgEntityIdsResponse>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::city::economy::v2::GetOrgEntityIdsRequest, ::city::economy::v2::GetOrgEntityIdsResponse>* streamer) {
+                       return this->StreamedGetOrgEntityIds(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_GetOrgEntityIds() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status GetOrgEntityIds(::grpc::ServerContext* /*context*/, const ::city::economy::v2::GetOrgEntityIdsRequest* /*request*/, ::city::economy::v2::GetOrgEntityIdsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedGetOrgEntityIds(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::city::economy::v2::GetOrgEntityIdsRequest,::city::economy::v2::GetOrgEntityIdsResponse>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_AddOrg<WithStreamedUnaryMethod_RemoveOrg<WithStreamedUnaryMethod_AddAgent<WithStreamedUnaryMethod_RemoveAgent<WithStreamedUnaryMethod_GetNominalGDP<WithStreamedUnaryMethod_SetNominalGDP<WithStreamedUnaryMethod_GetRealGDP<WithStreamedUnaryMethod_SetRealGDP<WithStreamedUnaryMethod_GetUnemployment<WithStreamedUnaryMethod_SetUnemployment<WithStreamedUnaryMethod_GetWages<WithStreamedUnaryMethod_SetWages<WithStreamedUnaryMethod_GetPrices<WithStreamedUnaryMethod_SetPrices<WithStreamedUnaryMethod_GetInventory<WithStreamedUnaryMethod_SetInventory<WithStreamedUnaryMethod_GetPrice<WithStreamedUnaryMethod_SetPrice<WithStreamedUnaryMethod_GetCurrency<WithStreamedUnaryMethod_SetCurrency<WithStreamedUnaryMethod_GetInterestRate<WithStreamedUnaryMethod_SetInterestRate<WithStreamedUnaryMethod_GetBracketCutoffs<WithStreamedUnaryMethod_SetBracketCutoffs<WithStreamedUnaryMethod_GetBracketRates<WithStreamedUnaryMethod_SetBracketRates<WithStreamedUnaryMethod_CalculateTaxesDue<WithStreamedUnaryMethod_CalculateConsumption<WithStreamedUnaryMethod_CalculateInterest<WithStreamedUnaryMethod_SaveEconomyEntities<WithStreamedUnaryMethod_LoadEconomyEntities<WithStreamedUnaryMethod_GetConsumptionCurrency<WithStreamedUnaryMethod_SetConsumptionCurrency<WithStreamedUnaryMethod_GetConsumptionPropensity<WithStreamedUnaryMethod_SetConsumptionPropensity<WithStreamedUnaryMethod_GetIncomeCurrency<WithStreamedUnaryMethod_SetIncomeCurrency<WithStreamedUnaryMethod_GetDepression<WithStreamedUnaryMethod_SetDepression<WithStreamedUnaryMethod_GetLocusControl<WithStreamedUnaryMethod_SetLocusControl<WithStreamedUnaryMethod_GetWorkingHours<WithStreamedUnaryMethod_SetWorkingHours<WithStreamedUnaryMethod_GetOrgEntityIds<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_AddOrg<WithStreamedUnaryMethod_RemoveOrg<WithStreamedUnaryMethod_AddAgent<WithStreamedUnaryMethod_RemoveAgent<WithStreamedUnaryMethod_GetNominalGDP<WithStreamedUnaryMethod_SetNominalGDP<WithStreamedUnaryMethod_GetRealGDP<WithStreamedUnaryMethod_SetRealGDP<WithStreamedUnaryMethod_GetUnemployment<WithStreamedUnaryMethod_SetUnemployment<WithStreamedUnaryMethod_GetWages<WithStreamedUnaryMethod_SetWages<WithStreamedUnaryMethod_GetPrices<WithStreamedUnaryMethod_SetPrices<WithStreamedUnaryMethod_GetInventory<WithStreamedUnaryMethod_SetInventory<WithStreamedUnaryMethod_GetPrice<WithStreamedUnaryMethod_SetPrice<WithStreamedUnaryMethod_GetCurrency<WithStreamedUnaryMethod_SetCurrency<WithStreamedUnaryMethod_GetInterestRate<WithStreamedUnaryMethod_SetInterestRate<WithStreamedUnaryMethod_GetBracketCutoffs<WithStreamedUnaryMethod_SetBracketCutoffs<WithStreamedUnaryMethod_GetBracketRates<WithStreamedUnaryMethod_SetBracketRates<WithStreamedUnaryMethod_CalculateTaxesDue<WithStreamedUnaryMethod_CalculateConsumption<WithStreamedUnaryMethod_CalculateInterest<WithStreamedUnaryMethod_SaveEconomyEntities<WithStreamedUnaryMethod_LoadEconomyEntities<WithStreamedUnaryMethod_GetConsumptionCurrency<WithStreamedUnaryMethod_SetConsumptionCurrency<WithStreamedUnaryMethod_GetConsumptionPropensity<WithStreamedUnaryMethod_SetConsumptionPropensity<WithStreamedUnaryMethod_GetIncomeCurrency<WithStreamedUnaryMethod_SetIncomeCurrency<WithStreamedUnaryMethod_GetDepression<WithStreamedUnaryMethod_SetDepression<WithStreamedUnaryMethod_GetLocusControl<WithStreamedUnaryMethod_SetLocusControl<WithStreamedUnaryMethod_GetWorkingHours<WithStreamedUnaryMethod_SetWorkingHours<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_AddOrg<WithStreamedUnaryMethod_RemoveOrg<WithStreamedUnaryMethod_AddAgent<WithStreamedUnaryMethod_RemoveAgent<WithStreamedUnaryMethod_GetNominalGDP<WithStreamedUnaryMethod_SetNominalGDP<WithStreamedUnaryMethod_GetRealGDP<WithStreamedUnaryMethod_SetRealGDP<WithStreamedUnaryMethod_GetUnemployment<WithStreamedUnaryMethod_SetUnemployment<WithStreamedUnaryMethod_GetWages<WithStreamedUnaryMethod_SetWages<WithStreamedUnaryMethod_GetPrices<WithStreamedUnaryMethod_SetPrices<WithStreamedUnaryMethod_GetInventory<WithStreamedUnaryMethod_SetInventory<WithStreamedUnaryMethod_GetPrice<WithStreamedUnaryMethod_SetPrice<WithStreamedUnaryMethod_GetCurrency<WithStreamedUnaryMethod_SetCurrency<WithStreamedUnaryMethod_GetInterestRate<WithStreamedUnaryMethod_SetInterestRate<WithStreamedUnaryMethod_GetBracketCutoffs<WithStreamedUnaryMethod_SetBracketCutoffs<WithStreamedUnaryMethod_GetBracketRates<WithStreamedUnaryMethod_SetBracketRates<WithStreamedUnaryMethod_CalculateTaxesDue<WithStreamedUnaryMethod_CalculateConsumption<WithStreamedUnaryMethod_CalculateInterest<WithStreamedUnaryMethod_SaveEconomyEntities<WithStreamedUnaryMethod_LoadEconomyEntities<WithStreamedUnaryMethod_GetConsumptionCurrency<WithStreamedUnaryMethod_SetConsumptionCurrency<WithStreamedUnaryMethod_GetConsumptionPropensity<WithStreamedUnaryMethod_SetConsumptionPropensity<WithStreamedUnaryMethod_GetIncomeCurrency<WithStreamedUnaryMethod_SetIncomeCurrency<WithStreamedUnaryMethod_GetDepression<WithStreamedUnaryMethod_SetDepression<WithStreamedUnaryMethod_GetLocusControl<WithStreamedUnaryMethod_SetLocusControl<WithStreamedUnaryMethod_GetWorkingHours<WithStreamedUnaryMethod_SetWorkingHours<WithStreamedUnaryMethod_GetOrgEntityIds<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedService;
 };
 
 }  // namespace v2

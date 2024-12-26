@@ -4,7 +4,7 @@
 // @ts-nocheck
 
 import { proto3 } from "@bufbuild/protobuf";
-import { Agent, Org } from "./economy_pb.js";
+import { Agent, Org, OrgType } from "./economy_pb.js";
 
 /**
  * @generated from message city.economy.v2.AddOrgRequest
@@ -862,5 +862,25 @@ export const SetWorkingHoursRequest = /*@__PURE__*/ proto3.makeMessageType(
 export const SetWorkingHoursResponse = /*@__PURE__*/ proto3.makeMessageType(
   "city.economy.v2.SetWorkingHoursResponse",
   [],
+);
+
+/**
+ * @generated from message city.economy.v2.GetOrgEntityIdsRequest
+ */
+export const GetOrgEntityIdsRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.GetOrgEntityIdsRequest",
+  () => [
+    { no: 1, name: "type", kind: "enum", T: proto3.getEnumType(OrgType) },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.GetOrgEntityIdsResponse
+ */
+export const GetOrgEntityIdsResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.GetOrgEntityIdsResponse",
+  () => [
+    { no: 1, name: "org_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+  ],
 );
 

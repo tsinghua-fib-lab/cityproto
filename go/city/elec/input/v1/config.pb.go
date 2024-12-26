@@ -84,7 +84,7 @@ func (x *Mongo) GetFacilities() *v1.MongoPath {
 type ControlStep struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Start         int32                  `protobuf:"varint,1,opt,name=start,proto3" json:"start,omitempty" yaml:"start" bson:"start" db:"start"`
-	Total         int32                  `protobuf:"varint,2,opt,name=total,proto3" json:"total,omitempty" db:"total" yaml:"total" bson:"total"`
+	Total         int32                  `protobuf:"varint,2,opt,name=total,proto3" json:"total,omitempty" yaml:"total" bson:"total" db:"total"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -135,7 +135,7 @@ func (x *ControlStep) GetTotal() int32 {
 
 type Control struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Step          *ControlStep           `protobuf:"bytes,1,opt,name=step,proto3" json:"step,omitempty" db:"step" yaml:"step" bson:"step"`
+	Step          *ControlStep           `protobuf:"bytes,1,opt,name=step,proto3" json:"step,omitempty" yaml:"step" bson:"step" db:"step"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -182,8 +182,8 @@ type OutputSwitch struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// 电网节点状态
 	Node          bool `protobuf:"varint,1,opt,name=node,proto3" json:"node,omitempty" yaml:"node" bson:"node" db:"node"`
-	Aoi           bool `protobuf:"varint,2,opt,name=aoi,proto3" json:"aoi,omitempty" yaml:"aoi" bson:"aoi" db:"aoi"`
-	Event         bool `protobuf:"varint,3,opt,name=event,proto3" json:"event,omitempty" yaml:"event" bson:"event" db:"event"`
+	Aoi           bool `protobuf:"varint,2,opt,name=aoi,proto3" json:"aoi,omitempty" bson:"aoi" db:"aoi" yaml:"aoi"`
+	Event         bool `protobuf:"varint,3,opt,name=event,proto3" json:"event,omitempty" db:"event" yaml:"event" bson:"event"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -241,7 +241,7 @@ func (x *OutputSwitch) GetEvent() bool {
 
 type Output struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Target        *v1.OutputTarget       `protobuf:"bytes,1,opt,name=target,proto3" json:"target,omitempty" bson:"target" db:"target" yaml:"target"`
+	Target        *v1.OutputTarget       `protobuf:"bytes,1,opt,name=target,proto3" json:"target,omitempty" yaml:"target" bson:"target" db:"target"`
 	Switch        *OutputSwitch          `protobuf:"bytes,2,opt,name=switch,proto3" json:"switch,omitempty" yaml:"switch" bson:"switch" db:"switch"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
