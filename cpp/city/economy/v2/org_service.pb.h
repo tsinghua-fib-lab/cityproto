@@ -55,12 +55,36 @@ extern AddAgentRequestDefaultTypeInternal _AddAgentRequest_default_instance_;
 class AddAgentResponse;
 struct AddAgentResponseDefaultTypeInternal;
 extern AddAgentResponseDefaultTypeInternal _AddAgentResponse_default_instance_;
+class AddCurrencyRequest;
+struct AddCurrencyRequestDefaultTypeInternal;
+extern AddCurrencyRequestDefaultTypeInternal _AddCurrencyRequest_default_instance_;
+class AddCurrencyResponse;
+struct AddCurrencyResponseDefaultTypeInternal;
+extern AddCurrencyResponseDefaultTypeInternal _AddCurrencyResponse_default_instance_;
+class AddInterestRateRequest;
+struct AddInterestRateRequestDefaultTypeInternal;
+extern AddInterestRateRequestDefaultTypeInternal _AddInterestRateRequest_default_instance_;
+class AddInterestRateResponse;
+struct AddInterestRateResponseDefaultTypeInternal;
+extern AddInterestRateResponseDefaultTypeInternal _AddInterestRateResponse_default_instance_;
+class AddInventoryRequest;
+struct AddInventoryRequestDefaultTypeInternal;
+extern AddInventoryRequestDefaultTypeInternal _AddInventoryRequest_default_instance_;
+class AddInventoryResponse;
+struct AddInventoryResponseDefaultTypeInternal;
+extern AddInventoryResponseDefaultTypeInternal _AddInventoryResponse_default_instance_;
 class AddOrgRequest;
 struct AddOrgRequestDefaultTypeInternal;
 extern AddOrgRequestDefaultTypeInternal _AddOrgRequest_default_instance_;
 class AddOrgResponse;
 struct AddOrgResponseDefaultTypeInternal;
 extern AddOrgResponseDefaultTypeInternal _AddOrgResponse_default_instance_;
+class AddPriceRequest;
+struct AddPriceRequestDefaultTypeInternal;
+extern AddPriceRequestDefaultTypeInternal _AddPriceRequest_default_instance_;
+class AddPriceResponse;
+struct AddPriceResponseDefaultTypeInternal;
+extern AddPriceResponseDefaultTypeInternal _AddPriceResponse_default_instance_;
 class CalculateConsumptionRequest;
 struct CalculateConsumptionRequestDefaultTypeInternal;
 extern CalculateConsumptionRequestDefaultTypeInternal _CalculateConsumptionRequest_default_instance_;
@@ -319,8 +343,16 @@ extern SetWorkingHoursResponseDefaultTypeInternal _SetWorkingHoursResponse_defau
 PROTOBUF_NAMESPACE_OPEN
 template<> ::city::economy::v2::AddAgentRequest* Arena::CreateMaybeMessage<::city::economy::v2::AddAgentRequest>(Arena*);
 template<> ::city::economy::v2::AddAgentResponse* Arena::CreateMaybeMessage<::city::economy::v2::AddAgentResponse>(Arena*);
+template<> ::city::economy::v2::AddCurrencyRequest* Arena::CreateMaybeMessage<::city::economy::v2::AddCurrencyRequest>(Arena*);
+template<> ::city::economy::v2::AddCurrencyResponse* Arena::CreateMaybeMessage<::city::economy::v2::AddCurrencyResponse>(Arena*);
+template<> ::city::economy::v2::AddInterestRateRequest* Arena::CreateMaybeMessage<::city::economy::v2::AddInterestRateRequest>(Arena*);
+template<> ::city::economy::v2::AddInterestRateResponse* Arena::CreateMaybeMessage<::city::economy::v2::AddInterestRateResponse>(Arena*);
+template<> ::city::economy::v2::AddInventoryRequest* Arena::CreateMaybeMessage<::city::economy::v2::AddInventoryRequest>(Arena*);
+template<> ::city::economy::v2::AddInventoryResponse* Arena::CreateMaybeMessage<::city::economy::v2::AddInventoryResponse>(Arena*);
 template<> ::city::economy::v2::AddOrgRequest* Arena::CreateMaybeMessage<::city::economy::v2::AddOrgRequest>(Arena*);
 template<> ::city::economy::v2::AddOrgResponse* Arena::CreateMaybeMessage<::city::economy::v2::AddOrgResponse>(Arena*);
+template<> ::city::economy::v2::AddPriceRequest* Arena::CreateMaybeMessage<::city::economy::v2::AddPriceRequest>(Arena*);
+template<> ::city::economy::v2::AddPriceResponse* Arena::CreateMaybeMessage<::city::economy::v2::AddPriceResponse>(Arena*);
 template<> ::city::economy::v2::CalculateConsumptionRequest* Arena::CreateMaybeMessage<::city::economy::v2::CalculateConsumptionRequest>(Arena*);
 template<> ::city::economy::v2::CalculateConsumptionResponse* Arena::CreateMaybeMessage<::city::economy::v2::CalculateConsumptionResponse>(Arena*);
 template<> ::city::economy::v2::CalculateInterestRequest* Arena::CreateMaybeMessage<::city::economy::v2::CalculateInterestRequest>(Arena*);
@@ -13656,6 +13688,1234 @@ class GetOrgEntityIdsResponse final :
   union { Impl_ _impl_; };
   friend struct ::TableStruct_city_2feconomy_2fv2_2forg_5fservice_2eproto;
 };
+// -------------------------------------------------------------------
+
+class AddInventoryRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.economy.v2.AddInventoryRequest) */ {
+ public:
+  inline AddInventoryRequest() : AddInventoryRequest(nullptr) {}
+  ~AddInventoryRequest() override;
+  explicit PROTOBUF_CONSTEXPR AddInventoryRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  AddInventoryRequest(const AddInventoryRequest& from);
+  AddInventoryRequest(AddInventoryRequest&& from) noexcept
+    : AddInventoryRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline AddInventoryRequest& operator=(const AddInventoryRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline AddInventoryRequest& operator=(AddInventoryRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const AddInventoryRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const AddInventoryRequest* internal_default_instance() {
+    return reinterpret_cast<const AddInventoryRequest*>(
+               &_AddInventoryRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    88;
+
+  friend void swap(AddInventoryRequest& a, AddInventoryRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(AddInventoryRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(AddInventoryRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  AddInventoryRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<AddInventoryRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const AddInventoryRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const AddInventoryRequest& from) {
+    AddInventoryRequest::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(AddInventoryRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.economy.v2.AddInventoryRequest";
+  }
+  protected:
+  explicit AddInventoryRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kOrgIdFieldNumber = 1,
+    kDeltaInventoryFieldNumber = 2,
+  };
+  // int32 org_id = 1 [json_name = "orgId"];
+  void clear_org_id();
+  int32_t org_id() const;
+  void set_org_id(int32_t value);
+  private:
+  int32_t _internal_org_id() const;
+  void _internal_set_org_id(int32_t value);
+  public:
+
+  // int32 delta_inventory = 2 [json_name = "deltaInventory"];
+  void clear_delta_inventory();
+  int32_t delta_inventory() const;
+  void set_delta_inventory(int32_t value);
+  private:
+  int32_t _internal_delta_inventory() const;
+  void _internal_set_delta_inventory(int32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:city.economy.v2.AddInventoryRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    int32_t org_id_;
+    int32_t delta_inventory_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_city_2feconomy_2fv2_2forg_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class AddInventoryResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.economy.v2.AddInventoryResponse) */ {
+ public:
+  inline AddInventoryResponse() : AddInventoryResponse(nullptr) {}
+  ~AddInventoryResponse() override;
+  explicit PROTOBUF_CONSTEXPR AddInventoryResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  AddInventoryResponse(const AddInventoryResponse& from);
+  AddInventoryResponse(AddInventoryResponse&& from) noexcept
+    : AddInventoryResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline AddInventoryResponse& operator=(const AddInventoryResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline AddInventoryResponse& operator=(AddInventoryResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const AddInventoryResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const AddInventoryResponse* internal_default_instance() {
+    return reinterpret_cast<const AddInventoryResponse*>(
+               &_AddInventoryResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    89;
+
+  friend void swap(AddInventoryResponse& a, AddInventoryResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(AddInventoryResponse* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(AddInventoryResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  AddInventoryResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<AddInventoryResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const AddInventoryResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const AddInventoryResponse& from) {
+    AddInventoryResponse::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(AddInventoryResponse* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.economy.v2.AddInventoryResponse";
+  }
+  protected:
+  explicit AddInventoryResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kInventoryFieldNumber = 1,
+  };
+  // int32 inventory = 1 [json_name = "inventory"];
+  void clear_inventory();
+  int32_t inventory() const;
+  void set_inventory(int32_t value);
+  private:
+  int32_t _internal_inventory() const;
+  void _internal_set_inventory(int32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:city.economy.v2.AddInventoryResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    int32_t inventory_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_city_2feconomy_2fv2_2forg_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class AddPriceRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.economy.v2.AddPriceRequest) */ {
+ public:
+  inline AddPriceRequest() : AddPriceRequest(nullptr) {}
+  ~AddPriceRequest() override;
+  explicit PROTOBUF_CONSTEXPR AddPriceRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  AddPriceRequest(const AddPriceRequest& from);
+  AddPriceRequest(AddPriceRequest&& from) noexcept
+    : AddPriceRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline AddPriceRequest& operator=(const AddPriceRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline AddPriceRequest& operator=(AddPriceRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const AddPriceRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const AddPriceRequest* internal_default_instance() {
+    return reinterpret_cast<const AddPriceRequest*>(
+               &_AddPriceRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    90;
+
+  friend void swap(AddPriceRequest& a, AddPriceRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(AddPriceRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(AddPriceRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  AddPriceRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<AddPriceRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const AddPriceRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const AddPriceRequest& from) {
+    AddPriceRequest::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(AddPriceRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.economy.v2.AddPriceRequest";
+  }
+  protected:
+  explicit AddPriceRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kOrgIdFieldNumber = 1,
+    kDeltaPriceFieldNumber = 2,
+  };
+  // int32 org_id = 1 [json_name = "orgId"];
+  void clear_org_id();
+  int32_t org_id() const;
+  void set_org_id(int32_t value);
+  private:
+  int32_t _internal_org_id() const;
+  void _internal_set_org_id(int32_t value);
+  public:
+
+  // float delta_price = 2 [json_name = "deltaPrice"];
+  void clear_delta_price();
+  float delta_price() const;
+  void set_delta_price(float value);
+  private:
+  float _internal_delta_price() const;
+  void _internal_set_delta_price(float value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:city.economy.v2.AddPriceRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    int32_t org_id_;
+    float delta_price_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_city_2feconomy_2fv2_2forg_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class AddPriceResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.economy.v2.AddPriceResponse) */ {
+ public:
+  inline AddPriceResponse() : AddPriceResponse(nullptr) {}
+  ~AddPriceResponse() override;
+  explicit PROTOBUF_CONSTEXPR AddPriceResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  AddPriceResponse(const AddPriceResponse& from);
+  AddPriceResponse(AddPriceResponse&& from) noexcept
+    : AddPriceResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline AddPriceResponse& operator=(const AddPriceResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline AddPriceResponse& operator=(AddPriceResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const AddPriceResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const AddPriceResponse* internal_default_instance() {
+    return reinterpret_cast<const AddPriceResponse*>(
+               &_AddPriceResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    91;
+
+  friend void swap(AddPriceResponse& a, AddPriceResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(AddPriceResponse* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(AddPriceResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  AddPriceResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<AddPriceResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const AddPriceResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const AddPriceResponse& from) {
+    AddPriceResponse::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(AddPriceResponse* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.economy.v2.AddPriceResponse";
+  }
+  protected:
+  explicit AddPriceResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kPriceFieldNumber = 1,
+  };
+  // float price = 1 [json_name = "price"];
+  void clear_price();
+  float price() const;
+  void set_price(float value);
+  private:
+  float _internal_price() const;
+  void _internal_set_price(float value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:city.economy.v2.AddPriceResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    float price_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_city_2feconomy_2fv2_2forg_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class AddCurrencyRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.economy.v2.AddCurrencyRequest) */ {
+ public:
+  inline AddCurrencyRequest() : AddCurrencyRequest(nullptr) {}
+  ~AddCurrencyRequest() override;
+  explicit PROTOBUF_CONSTEXPR AddCurrencyRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  AddCurrencyRequest(const AddCurrencyRequest& from);
+  AddCurrencyRequest(AddCurrencyRequest&& from) noexcept
+    : AddCurrencyRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline AddCurrencyRequest& operator=(const AddCurrencyRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline AddCurrencyRequest& operator=(AddCurrencyRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const AddCurrencyRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const AddCurrencyRequest* internal_default_instance() {
+    return reinterpret_cast<const AddCurrencyRequest*>(
+               &_AddCurrencyRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    92;
+
+  friend void swap(AddCurrencyRequest& a, AddCurrencyRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(AddCurrencyRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(AddCurrencyRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  AddCurrencyRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<AddCurrencyRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const AddCurrencyRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const AddCurrencyRequest& from) {
+    AddCurrencyRequest::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(AddCurrencyRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.economy.v2.AddCurrencyRequest";
+  }
+  protected:
+  explicit AddCurrencyRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kOrgIdFieldNumber = 1,
+    kDeltaCurrencyFieldNumber = 2,
+  };
+  // int32 org_id = 1 [json_name = "orgId"];
+  void clear_org_id();
+  int32_t org_id() const;
+  void set_org_id(int32_t value);
+  private:
+  int32_t _internal_org_id() const;
+  void _internal_set_org_id(int32_t value);
+  public:
+
+  // float delta_currency = 2 [json_name = "deltaCurrency"];
+  void clear_delta_currency();
+  float delta_currency() const;
+  void set_delta_currency(float value);
+  private:
+  float _internal_delta_currency() const;
+  void _internal_set_delta_currency(float value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:city.economy.v2.AddCurrencyRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    int32_t org_id_;
+    float delta_currency_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_city_2feconomy_2fv2_2forg_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class AddCurrencyResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.economy.v2.AddCurrencyResponse) */ {
+ public:
+  inline AddCurrencyResponse() : AddCurrencyResponse(nullptr) {}
+  ~AddCurrencyResponse() override;
+  explicit PROTOBUF_CONSTEXPR AddCurrencyResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  AddCurrencyResponse(const AddCurrencyResponse& from);
+  AddCurrencyResponse(AddCurrencyResponse&& from) noexcept
+    : AddCurrencyResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline AddCurrencyResponse& operator=(const AddCurrencyResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline AddCurrencyResponse& operator=(AddCurrencyResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const AddCurrencyResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const AddCurrencyResponse* internal_default_instance() {
+    return reinterpret_cast<const AddCurrencyResponse*>(
+               &_AddCurrencyResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    93;
+
+  friend void swap(AddCurrencyResponse& a, AddCurrencyResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(AddCurrencyResponse* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(AddCurrencyResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  AddCurrencyResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<AddCurrencyResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const AddCurrencyResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const AddCurrencyResponse& from) {
+    AddCurrencyResponse::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(AddCurrencyResponse* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.economy.v2.AddCurrencyResponse";
+  }
+  protected:
+  explicit AddCurrencyResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kCurrencyFieldNumber = 1,
+  };
+  // float currency = 1 [json_name = "currency"];
+  void clear_currency();
+  float currency() const;
+  void set_currency(float value);
+  private:
+  float _internal_currency() const;
+  void _internal_set_currency(float value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:city.economy.v2.AddCurrencyResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    float currency_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_city_2feconomy_2fv2_2forg_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class AddInterestRateRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.economy.v2.AddInterestRateRequest) */ {
+ public:
+  inline AddInterestRateRequest() : AddInterestRateRequest(nullptr) {}
+  ~AddInterestRateRequest() override;
+  explicit PROTOBUF_CONSTEXPR AddInterestRateRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  AddInterestRateRequest(const AddInterestRateRequest& from);
+  AddInterestRateRequest(AddInterestRateRequest&& from) noexcept
+    : AddInterestRateRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline AddInterestRateRequest& operator=(const AddInterestRateRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline AddInterestRateRequest& operator=(AddInterestRateRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const AddInterestRateRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const AddInterestRateRequest* internal_default_instance() {
+    return reinterpret_cast<const AddInterestRateRequest*>(
+               &_AddInterestRateRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    94;
+
+  friend void swap(AddInterestRateRequest& a, AddInterestRateRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(AddInterestRateRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(AddInterestRateRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  AddInterestRateRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<AddInterestRateRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const AddInterestRateRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const AddInterestRateRequest& from) {
+    AddInterestRateRequest::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(AddInterestRateRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.economy.v2.AddInterestRateRequest";
+  }
+  protected:
+  explicit AddInterestRateRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kOrgIdFieldNumber = 1,
+    kDeltaInterestRateFieldNumber = 2,
+  };
+  // int32 org_id = 1 [json_name = "orgId"];
+  void clear_org_id();
+  int32_t org_id() const;
+  void set_org_id(int32_t value);
+  private:
+  int32_t _internal_org_id() const;
+  void _internal_set_org_id(int32_t value);
+  public:
+
+  // float delta_interest_rate = 2 [json_name = "deltaInterestRate"];
+  void clear_delta_interest_rate();
+  float delta_interest_rate() const;
+  void set_delta_interest_rate(float value);
+  private:
+  float _internal_delta_interest_rate() const;
+  void _internal_set_delta_interest_rate(float value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:city.economy.v2.AddInterestRateRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    int32_t org_id_;
+    float delta_interest_rate_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_city_2feconomy_2fv2_2forg_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class AddInterestRateResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.economy.v2.AddInterestRateResponse) */ {
+ public:
+  inline AddInterestRateResponse() : AddInterestRateResponse(nullptr) {}
+  ~AddInterestRateResponse() override;
+  explicit PROTOBUF_CONSTEXPR AddInterestRateResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  AddInterestRateResponse(const AddInterestRateResponse& from);
+  AddInterestRateResponse(AddInterestRateResponse&& from) noexcept
+    : AddInterestRateResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline AddInterestRateResponse& operator=(const AddInterestRateResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline AddInterestRateResponse& operator=(AddInterestRateResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const AddInterestRateResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const AddInterestRateResponse* internal_default_instance() {
+    return reinterpret_cast<const AddInterestRateResponse*>(
+               &_AddInterestRateResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    95;
+
+  friend void swap(AddInterestRateResponse& a, AddInterestRateResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(AddInterestRateResponse* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(AddInterestRateResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  AddInterestRateResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<AddInterestRateResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const AddInterestRateResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const AddInterestRateResponse& from) {
+    AddInterestRateResponse::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(AddInterestRateResponse* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.economy.v2.AddInterestRateResponse";
+  }
+  protected:
+  explicit AddInterestRateResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kInterestRateFieldNumber = 1,
+  };
+  // float interest_rate = 1 [json_name = "interestRate"];
+  void clear_interest_rate();
+  float interest_rate() const;
+  void set_interest_rate(float value);
+  private:
+  float _internal_interest_rate() const;
+  void _internal_set_interest_rate(float value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:city.economy.v2.AddInterestRateResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    float interest_rate_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_city_2feconomy_2fv2_2forg_5fservice_2eproto;
+};
 // ===================================================================
 
 
@@ -17158,9 +18418,297 @@ GetOrgEntityIdsResponse::mutable_org_ids() {
   return _internal_mutable_org_ids();
 }
 
+// -------------------------------------------------------------------
+
+// AddInventoryRequest
+
+// int32 org_id = 1 [json_name = "orgId"];
+inline void AddInventoryRequest::clear_org_id() {
+  _impl_.org_id_ = 0;
+}
+inline int32_t AddInventoryRequest::_internal_org_id() const {
+  return _impl_.org_id_;
+}
+inline int32_t AddInventoryRequest::org_id() const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.AddInventoryRequest.org_id)
+  return _internal_org_id();
+}
+inline void AddInventoryRequest::_internal_set_org_id(int32_t value) {
+  
+  _impl_.org_id_ = value;
+}
+inline void AddInventoryRequest::set_org_id(int32_t value) {
+  _internal_set_org_id(value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.AddInventoryRequest.org_id)
+}
+
+// int32 delta_inventory = 2 [json_name = "deltaInventory"];
+inline void AddInventoryRequest::clear_delta_inventory() {
+  _impl_.delta_inventory_ = 0;
+}
+inline int32_t AddInventoryRequest::_internal_delta_inventory() const {
+  return _impl_.delta_inventory_;
+}
+inline int32_t AddInventoryRequest::delta_inventory() const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.AddInventoryRequest.delta_inventory)
+  return _internal_delta_inventory();
+}
+inline void AddInventoryRequest::_internal_set_delta_inventory(int32_t value) {
+  
+  _impl_.delta_inventory_ = value;
+}
+inline void AddInventoryRequest::set_delta_inventory(int32_t value) {
+  _internal_set_delta_inventory(value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.AddInventoryRequest.delta_inventory)
+}
+
+// -------------------------------------------------------------------
+
+// AddInventoryResponse
+
+// int32 inventory = 1 [json_name = "inventory"];
+inline void AddInventoryResponse::clear_inventory() {
+  _impl_.inventory_ = 0;
+}
+inline int32_t AddInventoryResponse::_internal_inventory() const {
+  return _impl_.inventory_;
+}
+inline int32_t AddInventoryResponse::inventory() const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.AddInventoryResponse.inventory)
+  return _internal_inventory();
+}
+inline void AddInventoryResponse::_internal_set_inventory(int32_t value) {
+  
+  _impl_.inventory_ = value;
+}
+inline void AddInventoryResponse::set_inventory(int32_t value) {
+  _internal_set_inventory(value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.AddInventoryResponse.inventory)
+}
+
+// -------------------------------------------------------------------
+
+// AddPriceRequest
+
+// int32 org_id = 1 [json_name = "orgId"];
+inline void AddPriceRequest::clear_org_id() {
+  _impl_.org_id_ = 0;
+}
+inline int32_t AddPriceRequest::_internal_org_id() const {
+  return _impl_.org_id_;
+}
+inline int32_t AddPriceRequest::org_id() const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.AddPriceRequest.org_id)
+  return _internal_org_id();
+}
+inline void AddPriceRequest::_internal_set_org_id(int32_t value) {
+  
+  _impl_.org_id_ = value;
+}
+inline void AddPriceRequest::set_org_id(int32_t value) {
+  _internal_set_org_id(value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.AddPriceRequest.org_id)
+}
+
+// float delta_price = 2 [json_name = "deltaPrice"];
+inline void AddPriceRequest::clear_delta_price() {
+  _impl_.delta_price_ = 0;
+}
+inline float AddPriceRequest::_internal_delta_price() const {
+  return _impl_.delta_price_;
+}
+inline float AddPriceRequest::delta_price() const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.AddPriceRequest.delta_price)
+  return _internal_delta_price();
+}
+inline void AddPriceRequest::_internal_set_delta_price(float value) {
+  
+  _impl_.delta_price_ = value;
+}
+inline void AddPriceRequest::set_delta_price(float value) {
+  _internal_set_delta_price(value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.AddPriceRequest.delta_price)
+}
+
+// -------------------------------------------------------------------
+
+// AddPriceResponse
+
+// float price = 1 [json_name = "price"];
+inline void AddPriceResponse::clear_price() {
+  _impl_.price_ = 0;
+}
+inline float AddPriceResponse::_internal_price() const {
+  return _impl_.price_;
+}
+inline float AddPriceResponse::price() const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.AddPriceResponse.price)
+  return _internal_price();
+}
+inline void AddPriceResponse::_internal_set_price(float value) {
+  
+  _impl_.price_ = value;
+}
+inline void AddPriceResponse::set_price(float value) {
+  _internal_set_price(value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.AddPriceResponse.price)
+}
+
+// -------------------------------------------------------------------
+
+// AddCurrencyRequest
+
+// int32 org_id = 1 [json_name = "orgId"];
+inline void AddCurrencyRequest::clear_org_id() {
+  _impl_.org_id_ = 0;
+}
+inline int32_t AddCurrencyRequest::_internal_org_id() const {
+  return _impl_.org_id_;
+}
+inline int32_t AddCurrencyRequest::org_id() const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.AddCurrencyRequest.org_id)
+  return _internal_org_id();
+}
+inline void AddCurrencyRequest::_internal_set_org_id(int32_t value) {
+  
+  _impl_.org_id_ = value;
+}
+inline void AddCurrencyRequest::set_org_id(int32_t value) {
+  _internal_set_org_id(value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.AddCurrencyRequest.org_id)
+}
+
+// float delta_currency = 2 [json_name = "deltaCurrency"];
+inline void AddCurrencyRequest::clear_delta_currency() {
+  _impl_.delta_currency_ = 0;
+}
+inline float AddCurrencyRequest::_internal_delta_currency() const {
+  return _impl_.delta_currency_;
+}
+inline float AddCurrencyRequest::delta_currency() const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.AddCurrencyRequest.delta_currency)
+  return _internal_delta_currency();
+}
+inline void AddCurrencyRequest::_internal_set_delta_currency(float value) {
+  
+  _impl_.delta_currency_ = value;
+}
+inline void AddCurrencyRequest::set_delta_currency(float value) {
+  _internal_set_delta_currency(value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.AddCurrencyRequest.delta_currency)
+}
+
+// -------------------------------------------------------------------
+
+// AddCurrencyResponse
+
+// float currency = 1 [json_name = "currency"];
+inline void AddCurrencyResponse::clear_currency() {
+  _impl_.currency_ = 0;
+}
+inline float AddCurrencyResponse::_internal_currency() const {
+  return _impl_.currency_;
+}
+inline float AddCurrencyResponse::currency() const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.AddCurrencyResponse.currency)
+  return _internal_currency();
+}
+inline void AddCurrencyResponse::_internal_set_currency(float value) {
+  
+  _impl_.currency_ = value;
+}
+inline void AddCurrencyResponse::set_currency(float value) {
+  _internal_set_currency(value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.AddCurrencyResponse.currency)
+}
+
+// -------------------------------------------------------------------
+
+// AddInterestRateRequest
+
+// int32 org_id = 1 [json_name = "orgId"];
+inline void AddInterestRateRequest::clear_org_id() {
+  _impl_.org_id_ = 0;
+}
+inline int32_t AddInterestRateRequest::_internal_org_id() const {
+  return _impl_.org_id_;
+}
+inline int32_t AddInterestRateRequest::org_id() const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.AddInterestRateRequest.org_id)
+  return _internal_org_id();
+}
+inline void AddInterestRateRequest::_internal_set_org_id(int32_t value) {
+  
+  _impl_.org_id_ = value;
+}
+inline void AddInterestRateRequest::set_org_id(int32_t value) {
+  _internal_set_org_id(value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.AddInterestRateRequest.org_id)
+}
+
+// float delta_interest_rate = 2 [json_name = "deltaInterestRate"];
+inline void AddInterestRateRequest::clear_delta_interest_rate() {
+  _impl_.delta_interest_rate_ = 0;
+}
+inline float AddInterestRateRequest::_internal_delta_interest_rate() const {
+  return _impl_.delta_interest_rate_;
+}
+inline float AddInterestRateRequest::delta_interest_rate() const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.AddInterestRateRequest.delta_interest_rate)
+  return _internal_delta_interest_rate();
+}
+inline void AddInterestRateRequest::_internal_set_delta_interest_rate(float value) {
+  
+  _impl_.delta_interest_rate_ = value;
+}
+inline void AddInterestRateRequest::set_delta_interest_rate(float value) {
+  _internal_set_delta_interest_rate(value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.AddInterestRateRequest.delta_interest_rate)
+}
+
+// -------------------------------------------------------------------
+
+// AddInterestRateResponse
+
+// float interest_rate = 1 [json_name = "interestRate"];
+inline void AddInterestRateResponse::clear_interest_rate() {
+  _impl_.interest_rate_ = 0;
+}
+inline float AddInterestRateResponse::_internal_interest_rate() const {
+  return _impl_.interest_rate_;
+}
+inline float AddInterestRateResponse::interest_rate() const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.AddInterestRateResponse.interest_rate)
+  return _internal_interest_rate();
+}
+inline void AddInterestRateResponse::_internal_set_interest_rate(float value) {
+  
+  _impl_.interest_rate_ = value;
+}
+inline void AddInterestRateResponse::set_interest_rate(float value) {
+  _internal_set_interest_rate(value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.AddInterestRateResponse.interest_rate)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

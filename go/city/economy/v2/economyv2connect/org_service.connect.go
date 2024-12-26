@@ -69,20 +69,29 @@ const (
 	OrgServiceGetInventoryProcedure = "/city.economy.v2.OrgService/GetInventory"
 	// OrgServiceSetInventoryProcedure is the fully-qualified name of the OrgService's SetInventory RPC.
 	OrgServiceSetInventoryProcedure = "/city.economy.v2.OrgService/SetInventory"
+	// OrgServiceAddInventoryProcedure is the fully-qualified name of the OrgService's AddInventory RPC.
+	OrgServiceAddInventoryProcedure = "/city.economy.v2.OrgService/AddInventory"
 	// OrgServiceGetPriceProcedure is the fully-qualified name of the OrgService's GetPrice RPC.
 	OrgServiceGetPriceProcedure = "/city.economy.v2.OrgService/GetPrice"
 	// OrgServiceSetPriceProcedure is the fully-qualified name of the OrgService's SetPrice RPC.
 	OrgServiceSetPriceProcedure = "/city.economy.v2.OrgService/SetPrice"
+	// OrgServiceAddPriceProcedure is the fully-qualified name of the OrgService's AddPrice RPC.
+	OrgServiceAddPriceProcedure = "/city.economy.v2.OrgService/AddPrice"
 	// OrgServiceGetCurrencyProcedure is the fully-qualified name of the OrgService's GetCurrency RPC.
 	OrgServiceGetCurrencyProcedure = "/city.economy.v2.OrgService/GetCurrency"
 	// OrgServiceSetCurrencyProcedure is the fully-qualified name of the OrgService's SetCurrency RPC.
 	OrgServiceSetCurrencyProcedure = "/city.economy.v2.OrgService/SetCurrency"
+	// OrgServiceAddCurrencyProcedure is the fully-qualified name of the OrgService's AddCurrency RPC.
+	OrgServiceAddCurrencyProcedure = "/city.economy.v2.OrgService/AddCurrency"
 	// OrgServiceGetInterestRateProcedure is the fully-qualified name of the OrgService's
 	// GetInterestRate RPC.
 	OrgServiceGetInterestRateProcedure = "/city.economy.v2.OrgService/GetInterestRate"
 	// OrgServiceSetInterestRateProcedure is the fully-qualified name of the OrgService's
 	// SetInterestRate RPC.
 	OrgServiceSetInterestRateProcedure = "/city.economy.v2.OrgService/SetInterestRate"
+	// OrgServiceAddInterestRateProcedure is the fully-qualified name of the OrgService's
+	// AddInterestRate RPC.
+	OrgServiceAddInterestRateProcedure = "/city.economy.v2.OrgService/AddInterestRate"
 	// OrgServiceGetBracketCutoffsProcedure is the fully-qualified name of the OrgService's
 	// GetBracketCutoffs RPC.
 	OrgServiceGetBracketCutoffsProcedure = "/city.economy.v2.OrgService/GetBracketCutoffs"
@@ -170,12 +179,16 @@ var (
 	orgServiceSetPricesMethodDescriptor                = orgServiceServiceDescriptor.Methods().ByName("SetPrices")
 	orgServiceGetInventoryMethodDescriptor             = orgServiceServiceDescriptor.Methods().ByName("GetInventory")
 	orgServiceSetInventoryMethodDescriptor             = orgServiceServiceDescriptor.Methods().ByName("SetInventory")
+	orgServiceAddInventoryMethodDescriptor             = orgServiceServiceDescriptor.Methods().ByName("AddInventory")
 	orgServiceGetPriceMethodDescriptor                 = orgServiceServiceDescriptor.Methods().ByName("GetPrice")
 	orgServiceSetPriceMethodDescriptor                 = orgServiceServiceDescriptor.Methods().ByName("SetPrice")
+	orgServiceAddPriceMethodDescriptor                 = orgServiceServiceDescriptor.Methods().ByName("AddPrice")
 	orgServiceGetCurrencyMethodDescriptor              = orgServiceServiceDescriptor.Methods().ByName("GetCurrency")
 	orgServiceSetCurrencyMethodDescriptor              = orgServiceServiceDescriptor.Methods().ByName("SetCurrency")
+	orgServiceAddCurrencyMethodDescriptor              = orgServiceServiceDescriptor.Methods().ByName("AddCurrency")
 	orgServiceGetInterestRateMethodDescriptor          = orgServiceServiceDescriptor.Methods().ByName("GetInterestRate")
 	orgServiceSetInterestRateMethodDescriptor          = orgServiceServiceDescriptor.Methods().ByName("SetInterestRate")
+	orgServiceAddInterestRateMethodDescriptor          = orgServiceServiceDescriptor.Methods().ByName("AddInterestRate")
 	orgServiceGetBracketCutoffsMethodDescriptor        = orgServiceServiceDescriptor.Methods().ByName("GetBracketCutoffs")
 	orgServiceSetBracketCutoffsMethodDescriptor        = orgServiceServiceDescriptor.Methods().ByName("SetBracketCutoffs")
 	orgServiceGetBracketRatesMethodDescriptor          = orgServiceServiceDescriptor.Methods().ByName("GetBracketRates")
@@ -232,15 +245,19 @@ type OrgServiceClient interface {
 	// Inventory
 	GetInventory(context.Context, *connect.Request[v2.GetInventoryRequest]) (*connect.Response[v2.GetInventoryResponse], error)
 	SetInventory(context.Context, *connect.Request[v2.SetInventoryRequest]) (*connect.Response[v2.SetInventoryResponse], error)
+	AddInventory(context.Context, *connect.Request[v2.AddInventoryRequest]) (*connect.Response[v2.AddInventoryResponse], error)
 	// Price
 	GetPrice(context.Context, *connect.Request[v2.GetPriceRequest]) (*connect.Response[v2.GetPriceResponse], error)
 	SetPrice(context.Context, *connect.Request[v2.SetPriceRequest]) (*connect.Response[v2.SetPriceResponse], error)
+	AddPrice(context.Context, *connect.Request[v2.AddPriceRequest]) (*connect.Response[v2.AddPriceResponse], error)
 	// Currency
 	GetCurrency(context.Context, *connect.Request[v2.GetCurrencyRequest]) (*connect.Response[v2.GetCurrencyResponse], error)
 	SetCurrency(context.Context, *connect.Request[v2.SetCurrencyRequest]) (*connect.Response[v2.SetCurrencyResponse], error)
+	AddCurrency(context.Context, *connect.Request[v2.AddCurrencyRequest]) (*connect.Response[v2.AddCurrencyResponse], error)
 	// Interest Rate
 	GetInterestRate(context.Context, *connect.Request[v2.GetInterestRateRequest]) (*connect.Response[v2.GetInterestRateResponse], error)
 	SetInterestRate(context.Context, *connect.Request[v2.SetInterestRateRequest]) (*connect.Response[v2.SetInterestRateResponse], error)
+	AddInterestRate(context.Context, *connect.Request[v2.AddInterestRateRequest]) (*connect.Response[v2.AddInterestRateResponse], error)
 	// Bracket Cutoffs
 	GetBracketCutoffs(context.Context, *connect.Request[v2.GetBracketCutoffsRequest]) (*connect.Response[v2.GetBracketCutoffsResponse], error)
 	SetBracketCutoffs(context.Context, *connect.Request[v2.SetBracketCutoffsRequest]) (*connect.Response[v2.SetBracketCutoffsResponse], error)
@@ -385,6 +402,12 @@ func NewOrgServiceClient(httpClient connect.HTTPClient, baseURL string, opts ...
 			connect.WithSchema(orgServiceSetInventoryMethodDescriptor),
 			connect.WithClientOptions(opts...),
 		),
+		addInventory: connect.NewClient[v2.AddInventoryRequest, v2.AddInventoryResponse](
+			httpClient,
+			baseURL+OrgServiceAddInventoryProcedure,
+			connect.WithSchema(orgServiceAddInventoryMethodDescriptor),
+			connect.WithClientOptions(opts...),
+		),
 		getPrice: connect.NewClient[v2.GetPriceRequest, v2.GetPriceResponse](
 			httpClient,
 			baseURL+OrgServiceGetPriceProcedure,
@@ -395,6 +418,12 @@ func NewOrgServiceClient(httpClient connect.HTTPClient, baseURL string, opts ...
 			httpClient,
 			baseURL+OrgServiceSetPriceProcedure,
 			connect.WithSchema(orgServiceSetPriceMethodDescriptor),
+			connect.WithClientOptions(opts...),
+		),
+		addPrice: connect.NewClient[v2.AddPriceRequest, v2.AddPriceResponse](
+			httpClient,
+			baseURL+OrgServiceAddPriceProcedure,
+			connect.WithSchema(orgServiceAddPriceMethodDescriptor),
 			connect.WithClientOptions(opts...),
 		),
 		getCurrency: connect.NewClient[v2.GetCurrencyRequest, v2.GetCurrencyResponse](
@@ -409,6 +438,12 @@ func NewOrgServiceClient(httpClient connect.HTTPClient, baseURL string, opts ...
 			connect.WithSchema(orgServiceSetCurrencyMethodDescriptor),
 			connect.WithClientOptions(opts...),
 		),
+		addCurrency: connect.NewClient[v2.AddCurrencyRequest, v2.AddCurrencyResponse](
+			httpClient,
+			baseURL+OrgServiceAddCurrencyProcedure,
+			connect.WithSchema(orgServiceAddCurrencyMethodDescriptor),
+			connect.WithClientOptions(opts...),
+		),
 		getInterestRate: connect.NewClient[v2.GetInterestRateRequest, v2.GetInterestRateResponse](
 			httpClient,
 			baseURL+OrgServiceGetInterestRateProcedure,
@@ -419,6 +454,12 @@ func NewOrgServiceClient(httpClient connect.HTTPClient, baseURL string, opts ...
 			httpClient,
 			baseURL+OrgServiceSetInterestRateProcedure,
 			connect.WithSchema(orgServiceSetInterestRateMethodDescriptor),
+			connect.WithClientOptions(opts...),
+		),
+		addInterestRate: connect.NewClient[v2.AddInterestRateRequest, v2.AddInterestRateResponse](
+			httpClient,
+			baseURL+OrgServiceAddInterestRateProcedure,
+			connect.WithSchema(orgServiceAddInterestRateMethodDescriptor),
 			connect.WithClientOptions(opts...),
 		),
 		getBracketCutoffs: connect.NewClient[v2.GetBracketCutoffsRequest, v2.GetBracketCutoffsResponse](
@@ -574,12 +615,16 @@ type orgServiceClient struct {
 	setPrices                *connect.Client[v2.SetPricesRequest, v2.SetPricesResponse]
 	getInventory             *connect.Client[v2.GetInventoryRequest, v2.GetInventoryResponse]
 	setInventory             *connect.Client[v2.SetInventoryRequest, v2.SetInventoryResponse]
+	addInventory             *connect.Client[v2.AddInventoryRequest, v2.AddInventoryResponse]
 	getPrice                 *connect.Client[v2.GetPriceRequest, v2.GetPriceResponse]
 	setPrice                 *connect.Client[v2.SetPriceRequest, v2.SetPriceResponse]
+	addPrice                 *connect.Client[v2.AddPriceRequest, v2.AddPriceResponse]
 	getCurrency              *connect.Client[v2.GetCurrencyRequest, v2.GetCurrencyResponse]
 	setCurrency              *connect.Client[v2.SetCurrencyRequest, v2.SetCurrencyResponse]
+	addCurrency              *connect.Client[v2.AddCurrencyRequest, v2.AddCurrencyResponse]
 	getInterestRate          *connect.Client[v2.GetInterestRateRequest, v2.GetInterestRateResponse]
 	setInterestRate          *connect.Client[v2.SetInterestRateRequest, v2.SetInterestRateResponse]
+	addInterestRate          *connect.Client[v2.AddInterestRateRequest, v2.AddInterestRateResponse]
 	getBracketCutoffs        *connect.Client[v2.GetBracketCutoffsRequest, v2.GetBracketCutoffsResponse]
 	setBracketCutoffs        *connect.Client[v2.SetBracketCutoffsRequest, v2.SetBracketCutoffsResponse]
 	getBracketRates          *connect.Client[v2.GetBracketRatesRequest, v2.GetBracketRatesResponse]
@@ -684,6 +729,11 @@ func (c *orgServiceClient) SetInventory(ctx context.Context, req *connect.Reques
 	return c.setInventory.CallUnary(ctx, req)
 }
 
+// AddInventory calls city.economy.v2.OrgService.AddInventory.
+func (c *orgServiceClient) AddInventory(ctx context.Context, req *connect.Request[v2.AddInventoryRequest]) (*connect.Response[v2.AddInventoryResponse], error) {
+	return c.addInventory.CallUnary(ctx, req)
+}
+
 // GetPrice calls city.economy.v2.OrgService.GetPrice.
 func (c *orgServiceClient) GetPrice(ctx context.Context, req *connect.Request[v2.GetPriceRequest]) (*connect.Response[v2.GetPriceResponse], error) {
 	return c.getPrice.CallUnary(ctx, req)
@@ -692,6 +742,11 @@ func (c *orgServiceClient) GetPrice(ctx context.Context, req *connect.Request[v2
 // SetPrice calls city.economy.v2.OrgService.SetPrice.
 func (c *orgServiceClient) SetPrice(ctx context.Context, req *connect.Request[v2.SetPriceRequest]) (*connect.Response[v2.SetPriceResponse], error) {
 	return c.setPrice.CallUnary(ctx, req)
+}
+
+// AddPrice calls city.economy.v2.OrgService.AddPrice.
+func (c *orgServiceClient) AddPrice(ctx context.Context, req *connect.Request[v2.AddPriceRequest]) (*connect.Response[v2.AddPriceResponse], error) {
+	return c.addPrice.CallUnary(ctx, req)
 }
 
 // GetCurrency calls city.economy.v2.OrgService.GetCurrency.
@@ -704,6 +759,11 @@ func (c *orgServiceClient) SetCurrency(ctx context.Context, req *connect.Request
 	return c.setCurrency.CallUnary(ctx, req)
 }
 
+// AddCurrency calls city.economy.v2.OrgService.AddCurrency.
+func (c *orgServiceClient) AddCurrency(ctx context.Context, req *connect.Request[v2.AddCurrencyRequest]) (*connect.Response[v2.AddCurrencyResponse], error) {
+	return c.addCurrency.CallUnary(ctx, req)
+}
+
 // GetInterestRate calls city.economy.v2.OrgService.GetInterestRate.
 func (c *orgServiceClient) GetInterestRate(ctx context.Context, req *connect.Request[v2.GetInterestRateRequest]) (*connect.Response[v2.GetInterestRateResponse], error) {
 	return c.getInterestRate.CallUnary(ctx, req)
@@ -712,6 +772,11 @@ func (c *orgServiceClient) GetInterestRate(ctx context.Context, req *connect.Req
 // SetInterestRate calls city.economy.v2.OrgService.SetInterestRate.
 func (c *orgServiceClient) SetInterestRate(ctx context.Context, req *connect.Request[v2.SetInterestRateRequest]) (*connect.Response[v2.SetInterestRateResponse], error) {
 	return c.setInterestRate.CallUnary(ctx, req)
+}
+
+// AddInterestRate calls city.economy.v2.OrgService.AddInterestRate.
+func (c *orgServiceClient) AddInterestRate(ctx context.Context, req *connect.Request[v2.AddInterestRateRequest]) (*connect.Response[v2.AddInterestRateResponse], error) {
+	return c.addInterestRate.CallUnary(ctx, req)
 }
 
 // GetBracketCutoffs calls city.economy.v2.OrgService.GetBracketCutoffs.
@@ -856,15 +921,19 @@ type OrgServiceHandler interface {
 	// Inventory
 	GetInventory(context.Context, *connect.Request[v2.GetInventoryRequest]) (*connect.Response[v2.GetInventoryResponse], error)
 	SetInventory(context.Context, *connect.Request[v2.SetInventoryRequest]) (*connect.Response[v2.SetInventoryResponse], error)
+	AddInventory(context.Context, *connect.Request[v2.AddInventoryRequest]) (*connect.Response[v2.AddInventoryResponse], error)
 	// Price
 	GetPrice(context.Context, *connect.Request[v2.GetPriceRequest]) (*connect.Response[v2.GetPriceResponse], error)
 	SetPrice(context.Context, *connect.Request[v2.SetPriceRequest]) (*connect.Response[v2.SetPriceResponse], error)
+	AddPrice(context.Context, *connect.Request[v2.AddPriceRequest]) (*connect.Response[v2.AddPriceResponse], error)
 	// Currency
 	GetCurrency(context.Context, *connect.Request[v2.GetCurrencyRequest]) (*connect.Response[v2.GetCurrencyResponse], error)
 	SetCurrency(context.Context, *connect.Request[v2.SetCurrencyRequest]) (*connect.Response[v2.SetCurrencyResponse], error)
+	AddCurrency(context.Context, *connect.Request[v2.AddCurrencyRequest]) (*connect.Response[v2.AddCurrencyResponse], error)
 	// Interest Rate
 	GetInterestRate(context.Context, *connect.Request[v2.GetInterestRateRequest]) (*connect.Response[v2.GetInterestRateResponse], error)
 	SetInterestRate(context.Context, *connect.Request[v2.SetInterestRateRequest]) (*connect.Response[v2.SetInterestRateResponse], error)
+	AddInterestRate(context.Context, *connect.Request[v2.AddInterestRateRequest]) (*connect.Response[v2.AddInterestRateResponse], error)
 	// Bracket Cutoffs
 	GetBracketCutoffs(context.Context, *connect.Request[v2.GetBracketCutoffsRequest]) (*connect.Response[v2.GetBracketCutoffsResponse], error)
 	SetBracketCutoffs(context.Context, *connect.Request[v2.SetBracketCutoffsRequest]) (*connect.Response[v2.SetBracketCutoffsResponse], error)
@@ -1005,6 +1074,12 @@ func NewOrgServiceHandler(svc OrgServiceHandler, opts ...connect.HandlerOption) 
 		connect.WithSchema(orgServiceSetInventoryMethodDescriptor),
 		connect.WithHandlerOptions(opts...),
 	)
+	orgServiceAddInventoryHandler := connect.NewUnaryHandler(
+		OrgServiceAddInventoryProcedure,
+		svc.AddInventory,
+		connect.WithSchema(orgServiceAddInventoryMethodDescriptor),
+		connect.WithHandlerOptions(opts...),
+	)
 	orgServiceGetPriceHandler := connect.NewUnaryHandler(
 		OrgServiceGetPriceProcedure,
 		svc.GetPrice,
@@ -1015,6 +1090,12 @@ func NewOrgServiceHandler(svc OrgServiceHandler, opts ...connect.HandlerOption) 
 		OrgServiceSetPriceProcedure,
 		svc.SetPrice,
 		connect.WithSchema(orgServiceSetPriceMethodDescriptor),
+		connect.WithHandlerOptions(opts...),
+	)
+	orgServiceAddPriceHandler := connect.NewUnaryHandler(
+		OrgServiceAddPriceProcedure,
+		svc.AddPrice,
+		connect.WithSchema(orgServiceAddPriceMethodDescriptor),
 		connect.WithHandlerOptions(opts...),
 	)
 	orgServiceGetCurrencyHandler := connect.NewUnaryHandler(
@@ -1029,6 +1110,12 @@ func NewOrgServiceHandler(svc OrgServiceHandler, opts ...connect.HandlerOption) 
 		connect.WithSchema(orgServiceSetCurrencyMethodDescriptor),
 		connect.WithHandlerOptions(opts...),
 	)
+	orgServiceAddCurrencyHandler := connect.NewUnaryHandler(
+		OrgServiceAddCurrencyProcedure,
+		svc.AddCurrency,
+		connect.WithSchema(orgServiceAddCurrencyMethodDescriptor),
+		connect.WithHandlerOptions(opts...),
+	)
 	orgServiceGetInterestRateHandler := connect.NewUnaryHandler(
 		OrgServiceGetInterestRateProcedure,
 		svc.GetInterestRate,
@@ -1039,6 +1126,12 @@ func NewOrgServiceHandler(svc OrgServiceHandler, opts ...connect.HandlerOption) 
 		OrgServiceSetInterestRateProcedure,
 		svc.SetInterestRate,
 		connect.WithSchema(orgServiceSetInterestRateMethodDescriptor),
+		connect.WithHandlerOptions(opts...),
+	)
+	orgServiceAddInterestRateHandler := connect.NewUnaryHandler(
+		OrgServiceAddInterestRateProcedure,
+		svc.AddInterestRate,
+		connect.WithSchema(orgServiceAddInterestRateMethodDescriptor),
 		connect.WithHandlerOptions(opts...),
 	)
 	orgServiceGetBracketCutoffsHandler := connect.NewUnaryHandler(
@@ -1207,18 +1300,26 @@ func NewOrgServiceHandler(svc OrgServiceHandler, opts ...connect.HandlerOption) 
 			orgServiceGetInventoryHandler.ServeHTTP(w, r)
 		case OrgServiceSetInventoryProcedure:
 			orgServiceSetInventoryHandler.ServeHTTP(w, r)
+		case OrgServiceAddInventoryProcedure:
+			orgServiceAddInventoryHandler.ServeHTTP(w, r)
 		case OrgServiceGetPriceProcedure:
 			orgServiceGetPriceHandler.ServeHTTP(w, r)
 		case OrgServiceSetPriceProcedure:
 			orgServiceSetPriceHandler.ServeHTTP(w, r)
+		case OrgServiceAddPriceProcedure:
+			orgServiceAddPriceHandler.ServeHTTP(w, r)
 		case OrgServiceGetCurrencyProcedure:
 			orgServiceGetCurrencyHandler.ServeHTTP(w, r)
 		case OrgServiceSetCurrencyProcedure:
 			orgServiceSetCurrencyHandler.ServeHTTP(w, r)
+		case OrgServiceAddCurrencyProcedure:
+			orgServiceAddCurrencyHandler.ServeHTTP(w, r)
 		case OrgServiceGetInterestRateProcedure:
 			orgServiceGetInterestRateHandler.ServeHTTP(w, r)
 		case OrgServiceSetInterestRateProcedure:
 			orgServiceSetInterestRateHandler.ServeHTTP(w, r)
+		case OrgServiceAddInterestRateProcedure:
+			orgServiceAddInterestRateHandler.ServeHTTP(w, r)
 		case OrgServiceGetBracketCutoffsProcedure:
 			orgServiceGetBracketCutoffsHandler.ServeHTTP(w, r)
 		case OrgServiceSetBracketCutoffsProcedure:
@@ -1336,12 +1437,20 @@ func (UnimplementedOrgServiceHandler) SetInventory(context.Context, *connect.Req
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.SetInventory is not implemented"))
 }
 
+func (UnimplementedOrgServiceHandler) AddInventory(context.Context, *connect.Request[v2.AddInventoryRequest]) (*connect.Response[v2.AddInventoryResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.AddInventory is not implemented"))
+}
+
 func (UnimplementedOrgServiceHandler) GetPrice(context.Context, *connect.Request[v2.GetPriceRequest]) (*connect.Response[v2.GetPriceResponse], error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.GetPrice is not implemented"))
 }
 
 func (UnimplementedOrgServiceHandler) SetPrice(context.Context, *connect.Request[v2.SetPriceRequest]) (*connect.Response[v2.SetPriceResponse], error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.SetPrice is not implemented"))
+}
+
+func (UnimplementedOrgServiceHandler) AddPrice(context.Context, *connect.Request[v2.AddPriceRequest]) (*connect.Response[v2.AddPriceResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.AddPrice is not implemented"))
 }
 
 func (UnimplementedOrgServiceHandler) GetCurrency(context.Context, *connect.Request[v2.GetCurrencyRequest]) (*connect.Response[v2.GetCurrencyResponse], error) {
@@ -1352,12 +1461,20 @@ func (UnimplementedOrgServiceHandler) SetCurrency(context.Context, *connect.Requ
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.SetCurrency is not implemented"))
 }
 
+func (UnimplementedOrgServiceHandler) AddCurrency(context.Context, *connect.Request[v2.AddCurrencyRequest]) (*connect.Response[v2.AddCurrencyResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.AddCurrency is not implemented"))
+}
+
 func (UnimplementedOrgServiceHandler) GetInterestRate(context.Context, *connect.Request[v2.GetInterestRateRequest]) (*connect.Response[v2.GetInterestRateResponse], error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.GetInterestRate is not implemented"))
 }
 
 func (UnimplementedOrgServiceHandler) SetInterestRate(context.Context, *connect.Request[v2.SetInterestRateRequest]) (*connect.Response[v2.SetInterestRateResponse], error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.SetInterestRate is not implemented"))
+}
+
+func (UnimplementedOrgServiceHandler) AddInterestRate(context.Context, *connect.Request[v2.AddInterestRateRequest]) (*connect.Response[v2.AddInterestRateResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.AddInterestRate is not implemented"))
 }
 
 func (UnimplementedOrgServiceHandler) GetBracketCutoffs(context.Context, *connect.Request[v2.GetBracketCutoffsRequest]) (*connect.Response[v2.GetBracketCutoffsResponse], error) {

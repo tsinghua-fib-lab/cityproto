@@ -41,18 +41,22 @@ service OrgService {
   // Inventory
   rpc GetInventory(GetInventoryRequest) returns (GetInventoryResponse);
   rpc SetInventory(SetInventoryRequest) returns (SetInventoryResponse);
+  rpc AddInventory(AddInventoryRequest) returns (AddInventoryResponse);
 
   // Price
   rpc GetPrice(GetPriceRequest) returns (GetPriceResponse);
   rpc SetPrice(SetPriceRequest) returns (SetPriceResponse);
+  rpc AddPrice(AddPriceRequest) returns (AddPriceResponse);
 
   // Currency
   rpc GetCurrency(GetCurrencyRequest) returns (GetCurrencyResponse);
   rpc SetCurrency(SetCurrencyRequest) returns (SetCurrencyResponse);
+  rpc AddCurrency(AddCurrencyRequest) returns (AddCurrencyResponse);
 
   // Interest Rate
   rpc GetInterestRate(GetInterestRateRequest) returns (GetInterestRateResponse);
   rpc SetInterestRate(SetInterestRateRequest) returns (SetInterestRateResponse);
+  rpc AddInterestRate(AddInterestRateRequest) returns (AddInterestRateResponse);
 
   // Bracket Cutoffs
   rpc GetBracketCutoffs(GetBracketCutoffsRequest) returns (GetBracketCutoffsResponse);
@@ -422,4 +426,39 @@ message GetOrgEntityIdsRequest {
 }
 message GetOrgEntityIdsResponse {
   repeated int32 org_ids = 1;
+}
+
+message AddInventoryRequest {
+  int32 org_id = 1;
+  int32 delta_inventory = 2;
+}
+
+message AddInventoryResponse {
+  int32 inventory = 1;
+}
+
+message AddPriceRequest {
+  int32 org_id = 1;
+  float delta_price = 2;
+}
+
+message AddPriceResponse {
+  float price = 1;
+}
+
+message AddCurrencyRequest {
+  int32 org_id = 1;
+  float delta_currency = 2;
+}
+
+message AddCurrencyResponse {
+  float currency = 1;
+}
+
+message AddInterestRateRequest {
+  int32 org_id = 1;
+  float delta_interest_rate = 2;
+}
+message AddInterestRateResponse {
+  float interest_rate = 1;
 }

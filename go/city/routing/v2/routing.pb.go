@@ -301,7 +301,7 @@ type WalkingRouteSegment struct {
 	LaneId int32 `protobuf:"varint,1,opt,name=lane_id,json=laneId,proto3" json:"lane_id,omitempty" yaml:"lane_id" bson:"lane_id" db:"lane_id"`
 	// 移动方向
 	// moving direction
-	MovingDirection MovingDirection `protobuf:"varint,2,opt,name=moving_direction,json=movingDirection,proto3,enum=city.routing.v2.MovingDirection" json:"moving_direction,omitempty" bson:"moving_direction" db:"moving_direction" yaml:"moving_direction"`
+	MovingDirection MovingDirection `protobuf:"varint,2,opt,name=moving_direction,json=movingDirection,proto3,enum=city.routing.v2.MovingDirection" json:"moving_direction,omitempty" yaml:"moving_direction" bson:"moving_direction" db:"moving_direction"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -356,10 +356,10 @@ type WalkingJourneyBody struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// 从起点到终点的（Lane+方向）序列
 	// The (Lane+direction) sequence from the origin to destination
-	Route []*WalkingRouteSegment `protobuf:"bytes,1,rep,name=route,proto3" json:"route,omitempty" yaml:"route" bson:"route" db:"route"`
+	Route []*WalkingRouteSegment `protobuf:"bytes,1,rep,name=route,proto3" json:"route,omitempty" bson:"route" db:"route" yaml:"route"`
 	// 从起点到终点预计的时间(estimation time of arrival)
 	// estimation time of arrival
-	Eta           float64 `protobuf:"fixed64,2,opt,name=eta,proto3" json:"eta,omitempty" yaml:"eta" bson:"eta" db:"eta"`
+	Eta           float64 `protobuf:"fixed64,2,opt,name=eta,proto3" json:"eta,omitempty" bson:"eta" db:"eta" yaml:"eta"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -415,9 +415,9 @@ func (x *WalkingJourneyBody) GetEta() float64 {
 //	}
 type TransferSegment struct {
 	state          protoimpl.MessageState `protogen:"open.v1"`
-	SublineId      int32                  `protobuf:"varint,1,opt,name=subline_id,json=sublineId,proto3" json:"subline_id,omitempty" bson:"subline_id" db:"subline_id" yaml:"subline_id"`
+	SublineId      int32                  `protobuf:"varint,1,opt,name=subline_id,json=sublineId,proto3" json:"subline_id,omitempty" yaml:"subline_id" bson:"subline_id" db:"subline_id"`
 	StartStationId int32                  `protobuf:"varint,2,opt,name=start_station_id,json=startStationId,proto3" json:"start_station_id,omitempty" yaml:"start_station_id" bson:"start_station_id" db:"start_station_id"`
-	EndStationId   int32                  `protobuf:"varint,3,opt,name=end_station_id,json=endStationId,proto3" json:"end_station_id,omitempty" yaml:"end_station_id" bson:"end_station_id" db:"end_station_id"`
+	EndStationId   int32                  `protobuf:"varint,3,opt,name=end_station_id,json=endStationId,proto3" json:"end_station_id,omitempty" bson:"end_station_id" db:"end_station_id" yaml:"end_station_id"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -478,7 +478,7 @@ type BusJourneyBody struct {
 	Transfers []*TransferSegment     `protobuf:"bytes,1,rep,name=transfers,proto3" json:"transfers,omitempty" yaml:"transfers" bson:"transfers" db:"transfers"`
 	// 从起点到终点预计的时间(estimation time of arrival)
 	// estimation time of arrival
-	Eta           float64 `protobuf:"fixed64,2,opt,name=eta,proto3" json:"eta,omitempty" yaml:"eta" bson:"eta" db:"eta"`
+	Eta           float64 `protobuf:"fixed64,2,opt,name=eta,proto3" json:"eta,omitempty" bson:"eta" db:"eta" yaml:"eta"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -533,7 +533,7 @@ type Journey struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// 出行方式
 	// journey traveling mode
-	Type JourneyType `protobuf:"varint,1,opt,name=type,proto3,enum=city.routing.v2.JourneyType" json:"type,omitempty" db:"type" yaml:"type" bson:"type"`
+	Type JourneyType `protobuf:"varint,1,opt,name=type,proto3,enum=city.routing.v2.JourneyType" json:"type,omitempty" yaml:"type" bson:"type" db:"type"`
 	// 驾车
 	// Routing results for driving journey
 	Driving *DrivingJourneyBody `protobuf:"bytes,2,opt,name=driving,proto3,oneof" json:"driving,omitempty" yaml:"driving" bson:"driving" db:"driving"`
@@ -667,7 +667,7 @@ func (x *RoadStatus) GetSpeed() []float64 {
 // Pre calculated road condition information set, corresponding to a pre calculated road condition information PB file or a pre calculated road condition information mongodb collection
 type RoadStatuses struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	RoadStatuses  []*RoadStatus          `protobuf:"bytes,1,rep,name=road_statuses,json=roadStatuses,proto3" json:"road_statuses,omitempty" yaml:"road_statuses" bson:"road_statuses" db:"road_statuses"`
+	RoadStatuses  []*RoadStatus          `protobuf:"bytes,1,rep,name=road_statuses,json=roadStatuses,proto3" json:"road_statuses,omitempty" bson:"road_statuses" db:"road_statuses" yaml:"road_statuses"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }

@@ -884,3 +884,87 @@ export const GetOrgEntityIdsResponse = /*@__PURE__*/ proto3.makeMessageType(
   ],
 );
 
+/**
+ * @generated from message city.economy.v2.AddInventoryRequest
+ */
+export const AddInventoryRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.AddInventoryRequest",
+  () => [
+    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "delta_inventory", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.AddInventoryResponse
+ */
+export const AddInventoryResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.AddInventoryResponse",
+  () => [
+    { no: 1, name: "inventory", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.AddPriceRequest
+ */
+export const AddPriceRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.AddPriceRequest",
+  () => [
+    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "delta_price", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.AddPriceResponse
+ */
+export const AddPriceResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.AddPriceResponse",
+  () => [
+    { no: 1, name: "price", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.AddCurrencyRequest
+ */
+export const AddCurrencyRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.AddCurrencyRequest",
+  () => [
+    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "delta_currency", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.AddCurrencyResponse
+ */
+export const AddCurrencyResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.AddCurrencyResponse",
+  () => [
+    { no: 1, name: "currency", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.AddInterestRateRequest
+ */
+export const AddInterestRateRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.AddInterestRateRequest",
+  () => [
+    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "delta_interest_rate", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.AddInterestRateResponse
+ */
+export const AddInterestRateResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.AddInterestRateResponse",
+  () => [
+    { no: 1, name: "interest_rate", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
+  ],
+);
+

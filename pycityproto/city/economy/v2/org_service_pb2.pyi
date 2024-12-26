@@ -722,3 +722,75 @@ class GetOrgEntityIdsResponse(_message.Message):
 
     def __init__(self, org_ids: _Optional[_Iterable[int]]=...) -> None:
         ...
+
+class AddInventoryRequest(_message.Message):
+    __slots__ = ['org_id', 'delta_inventory']
+    ORG_ID_FIELD_NUMBER: _ClassVar[int]
+    DELTA_INVENTORY_FIELD_NUMBER: _ClassVar[int]
+    org_id: int
+    delta_inventory: int
+
+    def __init__(self, org_id: _Optional[int]=..., delta_inventory: _Optional[int]=...) -> None:
+        ...
+
+class AddInventoryResponse(_message.Message):
+    __slots__ = ['inventory']
+    INVENTORY_FIELD_NUMBER: _ClassVar[int]
+    inventory: int
+
+    def __init__(self, inventory: _Optional[int]=...) -> None:
+        ...
+
+class AddPriceRequest(_message.Message):
+    __slots__ = ['org_id', 'delta_price']
+    ORG_ID_FIELD_NUMBER: _ClassVar[int]
+    DELTA_PRICE_FIELD_NUMBER: _ClassVar[int]
+    org_id: int
+    delta_price: float
+
+    def __init__(self, org_id: _Optional[int]=..., delta_price: _Optional[float]=...) -> None:
+        ...
+
+class AddPriceResponse(_message.Message):
+    __slots__ = ['price']
+    PRICE_FIELD_NUMBER: _ClassVar[int]
+    price: float
+
+    def __init__(self, price: _Optional[float]=...) -> None:
+        ...
+
+class AddCurrencyRequest(_message.Message):
+    __slots__ = ['org_id', 'delta_currency']
+    ORG_ID_FIELD_NUMBER: _ClassVar[int]
+    DELTA_CURRENCY_FIELD_NUMBER: _ClassVar[int]
+    org_id: int
+    delta_currency: float
+
+    def __init__(self, org_id: _Optional[int]=..., delta_currency: _Optional[float]=...) -> None:
+        ...
+
+class AddCurrencyResponse(_message.Message):
+    __slots__ = ['currency']
+    CURRENCY_FIELD_NUMBER: _ClassVar[int]
+    currency: float
+
+    def __init__(self, currency: _Optional[float]=...) -> None:
+        ...
+
+class AddInterestRateRequest(_message.Message):
+    __slots__ = ['org_id', 'delta_interest_rate']
+    ORG_ID_FIELD_NUMBER: _ClassVar[int]
+    DELTA_INTEREST_RATE_FIELD_NUMBER: _ClassVar[int]
+    org_id: int
+    delta_interest_rate: float
+
+    def __init__(self, org_id: _Optional[int]=..., delta_interest_rate: _Optional[float]=...) -> None:
+        ...
+
+class AddInterestRateResponse(_message.Message):
+    __slots__ = ['interest_rate']
+    INTEREST_RATE_FIELD_NUMBER: _ClassVar[int]
+    interest_rate: float
+
+    def __init__(self, interest_rate: _Optional[float]=...) -> None:
+        ...

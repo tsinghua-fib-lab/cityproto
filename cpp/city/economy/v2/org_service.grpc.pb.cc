@@ -40,12 +40,16 @@ static const char* OrgService_method_names[] = {
   "/city.economy.v2.OrgService/SetPrices",
   "/city.economy.v2.OrgService/GetInventory",
   "/city.economy.v2.OrgService/SetInventory",
+  "/city.economy.v2.OrgService/AddInventory",
   "/city.economy.v2.OrgService/GetPrice",
   "/city.economy.v2.OrgService/SetPrice",
+  "/city.economy.v2.OrgService/AddPrice",
   "/city.economy.v2.OrgService/GetCurrency",
   "/city.economy.v2.OrgService/SetCurrency",
+  "/city.economy.v2.OrgService/AddCurrency",
   "/city.economy.v2.OrgService/GetInterestRate",
   "/city.economy.v2.OrgService/SetInterestRate",
+  "/city.economy.v2.OrgService/AddInterestRate",
   "/city.economy.v2.OrgService/GetBracketCutoffs",
   "/city.economy.v2.OrgService/SetBracketCutoffs",
   "/city.economy.v2.OrgService/GetBracketRates",
@@ -93,34 +97,38 @@ OrgService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel
   , rpcmethod_SetPrices_(OrgService_method_names[13], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GetInventory_(OrgService_method_names[14], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_SetInventory_(OrgService_method_names[15], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetPrice_(OrgService_method_names[16], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_SetPrice_(OrgService_method_names[17], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetCurrency_(OrgService_method_names[18], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_SetCurrency_(OrgService_method_names[19], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetInterestRate_(OrgService_method_names[20], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_SetInterestRate_(OrgService_method_names[21], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetBracketCutoffs_(OrgService_method_names[22], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_SetBracketCutoffs_(OrgService_method_names[23], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetBracketRates_(OrgService_method_names[24], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_SetBracketRates_(OrgService_method_names[25], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_CalculateTaxesDue_(OrgService_method_names[26], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_CalculateConsumption_(OrgService_method_names[27], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_CalculateInterest_(OrgService_method_names[28], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_SaveEconomyEntities_(OrgService_method_names[29], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_LoadEconomyEntities_(OrgService_method_names[30], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetConsumptionCurrency_(OrgService_method_names[31], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_SetConsumptionCurrency_(OrgService_method_names[32], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetConsumptionPropensity_(OrgService_method_names[33], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_SetConsumptionPropensity_(OrgService_method_names[34], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetIncomeCurrency_(OrgService_method_names[35], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_SetIncomeCurrency_(OrgService_method_names[36], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetDepression_(OrgService_method_names[37], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_SetDepression_(OrgService_method_names[38], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetLocusControl_(OrgService_method_names[39], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_SetLocusControl_(OrgService_method_names[40], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetWorkingHours_(OrgService_method_names[41], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_SetWorkingHours_(OrgService_method_names[42], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetOrgEntityIds_(OrgService_method_names[43], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_AddInventory_(OrgService_method_names[16], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetPrice_(OrgService_method_names[17], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_SetPrice_(OrgService_method_names[18], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_AddPrice_(OrgService_method_names[19], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetCurrency_(OrgService_method_names[20], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_SetCurrency_(OrgService_method_names[21], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_AddCurrency_(OrgService_method_names[22], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetInterestRate_(OrgService_method_names[23], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_SetInterestRate_(OrgService_method_names[24], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_AddInterestRate_(OrgService_method_names[25], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetBracketCutoffs_(OrgService_method_names[26], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_SetBracketCutoffs_(OrgService_method_names[27], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetBracketRates_(OrgService_method_names[28], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_SetBracketRates_(OrgService_method_names[29], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_CalculateTaxesDue_(OrgService_method_names[30], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_CalculateConsumption_(OrgService_method_names[31], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_CalculateInterest_(OrgService_method_names[32], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_SaveEconomyEntities_(OrgService_method_names[33], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_LoadEconomyEntities_(OrgService_method_names[34], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetConsumptionCurrency_(OrgService_method_names[35], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_SetConsumptionCurrency_(OrgService_method_names[36], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetConsumptionPropensity_(OrgService_method_names[37], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_SetConsumptionPropensity_(OrgService_method_names[38], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetIncomeCurrency_(OrgService_method_names[39], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_SetIncomeCurrency_(OrgService_method_names[40], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetDepression_(OrgService_method_names[41], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_SetDepression_(OrgService_method_names[42], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetLocusControl_(OrgService_method_names[43], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_SetLocusControl_(OrgService_method_names[44], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetWorkingHours_(OrgService_method_names[45], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_SetWorkingHours_(OrgService_method_names[46], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetOrgEntityIds_(OrgService_method_names[47], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status OrgService::Stub::AddOrg(::grpc::ClientContext* context, const ::city::economy::v2::AddOrgRequest& request, ::city::economy::v2::AddOrgResponse* response) {
@@ -491,6 +499,29 @@ void OrgService::Stub::async::SetInventory(::grpc::ClientContext* context, const
   return result;
 }
 
+::grpc::Status OrgService::Stub::AddInventory(::grpc::ClientContext* context, const ::city::economy::v2::AddInventoryRequest& request, ::city::economy::v2::AddInventoryResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::AddInventoryRequest, ::city::economy::v2::AddInventoryResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_AddInventory_, context, request, response);
+}
+
+void OrgService::Stub::async::AddInventory(::grpc::ClientContext* context, const ::city::economy::v2::AddInventoryRequest* request, ::city::economy::v2::AddInventoryResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::AddInventoryRequest, ::city::economy::v2::AddInventoryResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_AddInventory_, context, request, response, std::move(f));
+}
+
+void OrgService::Stub::async::AddInventory(::grpc::ClientContext* context, const ::city::economy::v2::AddInventoryRequest* request, ::city::economy::v2::AddInventoryResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_AddInventory_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::city::economy::v2::AddInventoryResponse>* OrgService::Stub::PrepareAsyncAddInventoryRaw(::grpc::ClientContext* context, const ::city::economy::v2::AddInventoryRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::AddInventoryResponse, ::city::economy::v2::AddInventoryRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_AddInventory_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::city::economy::v2::AddInventoryResponse>* OrgService::Stub::AsyncAddInventoryRaw(::grpc::ClientContext* context, const ::city::economy::v2::AddInventoryRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncAddInventoryRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
 ::grpc::Status OrgService::Stub::GetPrice(::grpc::ClientContext* context, const ::city::economy::v2::GetPriceRequest& request, ::city::economy::v2::GetPriceResponse* response) {
   return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::GetPriceRequest, ::city::economy::v2::GetPriceResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetPrice_, context, request, response);
 }
@@ -533,6 +564,29 @@ void OrgService::Stub::async::SetPrice(::grpc::ClientContext* context, const ::c
 ::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetPriceResponse>* OrgService::Stub::AsyncSetPriceRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetPriceRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncSetPriceRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status OrgService::Stub::AddPrice(::grpc::ClientContext* context, const ::city::economy::v2::AddPriceRequest& request, ::city::economy::v2::AddPriceResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::AddPriceRequest, ::city::economy::v2::AddPriceResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_AddPrice_, context, request, response);
+}
+
+void OrgService::Stub::async::AddPrice(::grpc::ClientContext* context, const ::city::economy::v2::AddPriceRequest* request, ::city::economy::v2::AddPriceResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::AddPriceRequest, ::city::economy::v2::AddPriceResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_AddPrice_, context, request, response, std::move(f));
+}
+
+void OrgService::Stub::async::AddPrice(::grpc::ClientContext* context, const ::city::economy::v2::AddPriceRequest* request, ::city::economy::v2::AddPriceResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_AddPrice_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::city::economy::v2::AddPriceResponse>* OrgService::Stub::PrepareAsyncAddPriceRaw(::grpc::ClientContext* context, const ::city::economy::v2::AddPriceRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::AddPriceResponse, ::city::economy::v2::AddPriceRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_AddPrice_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::city::economy::v2::AddPriceResponse>* OrgService::Stub::AsyncAddPriceRaw(::grpc::ClientContext* context, const ::city::economy::v2::AddPriceRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncAddPriceRaw(context, request, cq);
   result->StartCall();
   return result;
 }
@@ -583,6 +637,29 @@ void OrgService::Stub::async::SetCurrency(::grpc::ClientContext* context, const 
   return result;
 }
 
+::grpc::Status OrgService::Stub::AddCurrency(::grpc::ClientContext* context, const ::city::economy::v2::AddCurrencyRequest& request, ::city::economy::v2::AddCurrencyResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::AddCurrencyRequest, ::city::economy::v2::AddCurrencyResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_AddCurrency_, context, request, response);
+}
+
+void OrgService::Stub::async::AddCurrency(::grpc::ClientContext* context, const ::city::economy::v2::AddCurrencyRequest* request, ::city::economy::v2::AddCurrencyResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::AddCurrencyRequest, ::city::economy::v2::AddCurrencyResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_AddCurrency_, context, request, response, std::move(f));
+}
+
+void OrgService::Stub::async::AddCurrency(::grpc::ClientContext* context, const ::city::economy::v2::AddCurrencyRequest* request, ::city::economy::v2::AddCurrencyResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_AddCurrency_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::city::economy::v2::AddCurrencyResponse>* OrgService::Stub::PrepareAsyncAddCurrencyRaw(::grpc::ClientContext* context, const ::city::economy::v2::AddCurrencyRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::AddCurrencyResponse, ::city::economy::v2::AddCurrencyRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_AddCurrency_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::city::economy::v2::AddCurrencyResponse>* OrgService::Stub::AsyncAddCurrencyRaw(::grpc::ClientContext* context, const ::city::economy::v2::AddCurrencyRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncAddCurrencyRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
 ::grpc::Status OrgService::Stub::GetInterestRate(::grpc::ClientContext* context, const ::city::economy::v2::GetInterestRateRequest& request, ::city::economy::v2::GetInterestRateResponse* response) {
   return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::GetInterestRateRequest, ::city::economy::v2::GetInterestRateResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetInterestRate_, context, request, response);
 }
@@ -625,6 +702,29 @@ void OrgService::Stub::async::SetInterestRate(::grpc::ClientContext* context, co
 ::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetInterestRateResponse>* OrgService::Stub::AsyncSetInterestRateRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetInterestRateRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncSetInterestRateRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status OrgService::Stub::AddInterestRate(::grpc::ClientContext* context, const ::city::economy::v2::AddInterestRateRequest& request, ::city::economy::v2::AddInterestRateResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::AddInterestRateRequest, ::city::economy::v2::AddInterestRateResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_AddInterestRate_, context, request, response);
+}
+
+void OrgService::Stub::async::AddInterestRate(::grpc::ClientContext* context, const ::city::economy::v2::AddInterestRateRequest* request, ::city::economy::v2::AddInterestRateResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::AddInterestRateRequest, ::city::economy::v2::AddInterestRateResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_AddInterestRate_, context, request, response, std::move(f));
+}
+
+void OrgService::Stub::async::AddInterestRate(::grpc::ClientContext* context, const ::city::economy::v2::AddInterestRateRequest* request, ::city::economy::v2::AddInterestRateResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_AddInterestRate_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::city::economy::v2::AddInterestRateResponse>* OrgService::Stub::PrepareAsyncAddInterestRateRaw(::grpc::ClientContext* context, const ::city::economy::v2::AddInterestRateRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::AddInterestRateResponse, ::city::economy::v2::AddInterestRateRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_AddInterestRate_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::city::economy::v2::AddInterestRateResponse>* OrgService::Stub::AsyncAddInterestRateRaw(::grpc::ClientContext* context, const ::city::economy::v2::AddInterestRateRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncAddInterestRateRaw(context, request, cq);
   result->StartCall();
   return result;
 }
@@ -1299,6 +1399,16 @@ OrgService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       OrgService_method_names[16],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::AddInventoryRequest, ::city::economy::v2::AddInventoryResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](OrgService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::city::economy::v2::AddInventoryRequest* req,
+             ::city::economy::v2::AddInventoryResponse* resp) {
+               return service->AddInventory(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      OrgService_method_names[17],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::GetPriceRequest, ::city::economy::v2::GetPriceResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](OrgService::Service* service,
              ::grpc::ServerContext* ctx,
@@ -1307,7 +1417,7 @@ OrgService::Service::Service() {
                return service->GetPrice(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[17],
+      OrgService_method_names[18],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::SetPriceRequest, ::city::economy::v2::SetPriceResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](OrgService::Service* service,
@@ -1317,7 +1427,17 @@ OrgService::Service::Service() {
                return service->SetPrice(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[18],
+      OrgService_method_names[19],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::AddPriceRequest, ::city::economy::v2::AddPriceResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](OrgService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::city::economy::v2::AddPriceRequest* req,
+             ::city::economy::v2::AddPriceResponse* resp) {
+               return service->AddPrice(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      OrgService_method_names[20],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::GetCurrencyRequest, ::city::economy::v2::GetCurrencyResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](OrgService::Service* service,
@@ -1327,7 +1447,7 @@ OrgService::Service::Service() {
                return service->GetCurrency(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[19],
+      OrgService_method_names[21],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::SetCurrencyRequest, ::city::economy::v2::SetCurrencyResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](OrgService::Service* service,
@@ -1337,7 +1457,17 @@ OrgService::Service::Service() {
                return service->SetCurrency(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[20],
+      OrgService_method_names[22],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::AddCurrencyRequest, ::city::economy::v2::AddCurrencyResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](OrgService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::city::economy::v2::AddCurrencyRequest* req,
+             ::city::economy::v2::AddCurrencyResponse* resp) {
+               return service->AddCurrency(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      OrgService_method_names[23],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::GetInterestRateRequest, ::city::economy::v2::GetInterestRateResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](OrgService::Service* service,
@@ -1347,7 +1477,7 @@ OrgService::Service::Service() {
                return service->GetInterestRate(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[21],
+      OrgService_method_names[24],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::SetInterestRateRequest, ::city::economy::v2::SetInterestRateResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](OrgService::Service* service,
@@ -1357,7 +1487,17 @@ OrgService::Service::Service() {
                return service->SetInterestRate(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[22],
+      OrgService_method_names[25],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::AddInterestRateRequest, ::city::economy::v2::AddInterestRateResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](OrgService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::city::economy::v2::AddInterestRateRequest* req,
+             ::city::economy::v2::AddInterestRateResponse* resp) {
+               return service->AddInterestRate(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      OrgService_method_names[26],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::GetBracketCutoffsRequest, ::city::economy::v2::GetBracketCutoffsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](OrgService::Service* service,
@@ -1367,7 +1507,7 @@ OrgService::Service::Service() {
                return service->GetBracketCutoffs(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[23],
+      OrgService_method_names[27],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::SetBracketCutoffsRequest, ::city::economy::v2::SetBracketCutoffsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](OrgService::Service* service,
@@ -1377,7 +1517,7 @@ OrgService::Service::Service() {
                return service->SetBracketCutoffs(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[24],
+      OrgService_method_names[28],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::GetBracketRatesRequest, ::city::economy::v2::GetBracketRatesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](OrgService::Service* service,
@@ -1387,7 +1527,7 @@ OrgService::Service::Service() {
                return service->GetBracketRates(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[25],
+      OrgService_method_names[29],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::SetBracketRatesRequest, ::city::economy::v2::SetBracketRatesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](OrgService::Service* service,
@@ -1397,7 +1537,7 @@ OrgService::Service::Service() {
                return service->SetBracketRates(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[26],
+      OrgService_method_names[30],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::CalculateTaxesDueRequest, ::city::economy::v2::CalculateTaxesDueResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](OrgService::Service* service,
@@ -1407,7 +1547,7 @@ OrgService::Service::Service() {
                return service->CalculateTaxesDue(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[27],
+      OrgService_method_names[31],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::CalculateConsumptionRequest, ::city::economy::v2::CalculateConsumptionResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](OrgService::Service* service,
@@ -1417,7 +1557,7 @@ OrgService::Service::Service() {
                return service->CalculateConsumption(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[28],
+      OrgService_method_names[32],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::CalculateInterestRequest, ::city::economy::v2::CalculateInterestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](OrgService::Service* service,
@@ -1427,7 +1567,7 @@ OrgService::Service::Service() {
                return service->CalculateInterest(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[29],
+      OrgService_method_names[33],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::SaveEconomyEntitiesRequest, ::city::economy::v2::SaveEconomyEntitiesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](OrgService::Service* service,
@@ -1437,7 +1577,7 @@ OrgService::Service::Service() {
                return service->SaveEconomyEntities(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[30],
+      OrgService_method_names[34],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::LoadEconomyEntitiesRequest, ::city::economy::v2::LoadEconomyEntitiesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](OrgService::Service* service,
@@ -1447,7 +1587,7 @@ OrgService::Service::Service() {
                return service->LoadEconomyEntities(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[31],
+      OrgService_method_names[35],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::GetConsumptionCurrencyRequest, ::city::economy::v2::GetConsumptionCurrencyResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](OrgService::Service* service,
@@ -1457,7 +1597,7 @@ OrgService::Service::Service() {
                return service->GetConsumptionCurrency(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[32],
+      OrgService_method_names[36],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::SetConsumptionCurrencyRequest, ::city::economy::v2::SetConsumptionCurrencyResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](OrgService::Service* service,
@@ -1467,7 +1607,7 @@ OrgService::Service::Service() {
                return service->SetConsumptionCurrency(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[33],
+      OrgService_method_names[37],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::GetConsumptionPropensityRequest, ::city::economy::v2::GetConsumptionPropensityResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](OrgService::Service* service,
@@ -1477,7 +1617,7 @@ OrgService::Service::Service() {
                return service->GetConsumptionPropensity(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[34],
+      OrgService_method_names[38],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::SetConsumptionPropensityRequest, ::city::economy::v2::SetConsumptionPropensityResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](OrgService::Service* service,
@@ -1487,7 +1627,7 @@ OrgService::Service::Service() {
                return service->SetConsumptionPropensity(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[35],
+      OrgService_method_names[39],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::GetIncomeCurrencyRequest, ::city::economy::v2::GetIncomeCurrencyResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](OrgService::Service* service,
@@ -1497,7 +1637,7 @@ OrgService::Service::Service() {
                return service->GetIncomeCurrency(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[36],
+      OrgService_method_names[40],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::SetIncomeCurrencyRequest, ::city::economy::v2::SetIncomeCurrencyResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](OrgService::Service* service,
@@ -1507,7 +1647,7 @@ OrgService::Service::Service() {
                return service->SetIncomeCurrency(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[37],
+      OrgService_method_names[41],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::GetDepressionRequest, ::city::economy::v2::GetDepressionResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](OrgService::Service* service,
@@ -1517,7 +1657,7 @@ OrgService::Service::Service() {
                return service->GetDepression(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[38],
+      OrgService_method_names[42],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::SetDepressionRequest, ::city::economy::v2::SetDepressionResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](OrgService::Service* service,
@@ -1527,7 +1667,7 @@ OrgService::Service::Service() {
                return service->SetDepression(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[39],
+      OrgService_method_names[43],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::GetLocusControlRequest, ::city::economy::v2::GetLocusControlResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](OrgService::Service* service,
@@ -1537,7 +1677,7 @@ OrgService::Service::Service() {
                return service->GetLocusControl(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[40],
+      OrgService_method_names[44],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::SetLocusControlRequest, ::city::economy::v2::SetLocusControlResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](OrgService::Service* service,
@@ -1547,7 +1687,7 @@ OrgService::Service::Service() {
                return service->SetLocusControl(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[41],
+      OrgService_method_names[45],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::GetWorkingHoursRequest, ::city::economy::v2::GetWorkingHoursResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](OrgService::Service* service,
@@ -1557,7 +1697,7 @@ OrgService::Service::Service() {
                return service->GetWorkingHours(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[42],
+      OrgService_method_names[46],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::SetWorkingHoursRequest, ::city::economy::v2::SetWorkingHoursResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](OrgService::Service* service,
@@ -1567,7 +1707,7 @@ OrgService::Service::Service() {
                return service->SetWorkingHours(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[43],
+      OrgService_method_names[47],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::GetOrgEntityIdsRequest, ::city::economy::v2::GetOrgEntityIdsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](OrgService::Service* service,
@@ -1693,6 +1833,13 @@ OrgService::Service::~Service() {
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
+::grpc::Status OrgService::Service::AddInventory(::grpc::ServerContext* context, const ::city::economy::v2::AddInventoryRequest* request, ::city::economy::v2::AddInventoryResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
 ::grpc::Status OrgService::Service::GetPrice(::grpc::ServerContext* context, const ::city::economy::v2::GetPriceRequest* request, ::city::economy::v2::GetPriceResponse* response) {
   (void) context;
   (void) request;
@@ -1701,6 +1848,13 @@ OrgService::Service::~Service() {
 }
 
 ::grpc::Status OrgService::Service::SetPrice(::grpc::ServerContext* context, const ::city::economy::v2::SetPriceRequest* request, ::city::economy::v2::SetPriceResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status OrgService::Service::AddPrice(::grpc::ServerContext* context, const ::city::economy::v2::AddPriceRequest* request, ::city::economy::v2::AddPriceResponse* response) {
   (void) context;
   (void) request;
   (void) response;
@@ -1721,6 +1875,13 @@ OrgService::Service::~Service() {
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
+::grpc::Status OrgService::Service::AddCurrency(::grpc::ServerContext* context, const ::city::economy::v2::AddCurrencyRequest* request, ::city::economy::v2::AddCurrencyResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
 ::grpc::Status OrgService::Service::GetInterestRate(::grpc::ServerContext* context, const ::city::economy::v2::GetInterestRateRequest* request, ::city::economy::v2::GetInterestRateResponse* response) {
   (void) context;
   (void) request;
@@ -1729,6 +1890,13 @@ OrgService::Service::~Service() {
 }
 
 ::grpc::Status OrgService::Service::SetInterestRate(::grpc::ServerContext* context, const ::city::economy::v2::SetInterestRateRequest* request, ::city::economy::v2::SetInterestRateResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status OrgService::Service::AddInterestRate(::grpc::ServerContext* context, const ::city::economy::v2::AddInterestRateRequest* request, ::city::economy::v2::AddInterestRateResponse* response) {
   (void) context;
   (void) request;
   (void) response;

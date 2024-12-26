@@ -29,10 +29,10 @@ type LongLatPosition struct {
 	Longitude float64 `protobuf:"fixed64,1,opt,name=longitude,proto3" json:"longitude,omitempty" yaml:"longitude" bson:"longitude" db:"longitude"`
 	// 纬度
 	// latitude
-	Latitude float64 `protobuf:"fixed64,2,opt,name=latitude,proto3" json:"latitude,omitempty" yaml:"latitude" bson:"latitude" db:"latitude"`
+	Latitude float64 `protobuf:"fixed64,2,opt,name=latitude,proto3" json:"latitude,omitempty" db:"latitude" yaml:"latitude" bson:"latitude"`
 	// 高程（单位：米）
 	// elevation (unit: meters)
-	Z             *float64 `protobuf:"fixed64,3,opt,name=z,proto3,oneof" json:"z,omitempty" yaml:"z" bson:"z" db:"z"`
+	Z             *float64 `protobuf:"fixed64,3,opt,name=z,proto3,oneof" json:"z,omitempty" db:"z" yaml:"z" bson:"z"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -100,7 +100,7 @@ type XYPosition struct {
 	Y float64 `protobuf:"fixed64,2,opt,name=y,proto3" json:"y,omitempty" yaml:"y" bson:"y" db:"y"`
 	// z坐标，单位米，对应高程
 	// z coordinate, in meters, corresponding to elevation
-	Z             *float64 `protobuf:"fixed64,3,opt,name=z,proto3,oneof" json:"z,omitempty" yaml:"z" bson:"z" db:"z"`
+	Z             *float64 `protobuf:"fixed64,3,opt,name=z,proto3,oneof" json:"z,omitempty" db:"z" yaml:"z" bson:"z"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -219,10 +219,10 @@ func (x *LanePosition) GetS() float64 {
 type AoiPosition struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// AOI ID
-	AoiId int32 `protobuf:"varint,1,opt,name=aoi_id,json=aoiId,proto3" json:"aoi_id,omitempty" yaml:"aoi_id" bson:"aoi_id" db:"aoi_id"`
+	AoiId int32 `protobuf:"varint,1,opt,name=aoi_id,json=aoiId,proto3" json:"aoi_id,omitempty" db:"aoi_id" yaml:"aoi_id" bson:"aoi_id"`
 	// POI ID，需要是aoi_id的子poi，否则该值无效
 	// POI ID, needs to be a sub-poi of aoi_id, otherwise the value is invalid
-	PoiId         *int32 `protobuf:"varint,2,opt,name=poi_id,json=poiId,proto3,oneof" json:"poi_id,omitempty" yaml:"poi_id" bson:"poi_id" db:"poi_id"`
+	PoiId         *int32 `protobuf:"varint,2,opt,name=poi_id,json=poiId,proto3,oneof" json:"poi_id,omitempty" db:"poi_id" yaml:"poi_id" bson:"poi_id"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -280,10 +280,10 @@ type Position struct {
 	LanePosition *LanePosition `protobuf:"bytes,1,opt,name=lane_position,json=lanePosition,proto3,oneof" json:"lane_position,omitempty" yaml:"lane_position" bson:"lane_position" db:"lane_position"`
 	// 地图坐标Lane+S（必须提供其中之一）
 	// Map coordinates Lane+S (one of these must be provided)
-	AoiPosition *AoiPosition `protobuf:"bytes,2,opt,name=aoi_position,json=aoiPosition,proto3,oneof" json:"aoi_position,omitempty" yaml:"aoi_position" bson:"aoi_position" db:"aoi_position"`
+	AoiPosition *AoiPosition `protobuf:"bytes,2,opt,name=aoi_position,json=aoiPosition,proto3,oneof" json:"aoi_position,omitempty" db:"aoi_position" yaml:"aoi_position" bson:"aoi_position"`
 	// WGS84经纬度坐标
 	// WGS84 longitute and latitude coordinates
-	LonglatPosition *LongLatPosition `protobuf:"bytes,3,opt,name=longlat_position,json=longlatPosition,proto3,oneof" json:"longlat_position,omitempty" bson:"longlat_position" db:"longlat_position" yaml:"longlat_position"`
+	LonglatPosition *LongLatPosition `protobuf:"bytes,3,opt,name=longlat_position,json=longlatPosition,proto3,oneof" json:"longlat_position,omitempty" yaml:"longlat_position" bson:"longlat_position" db:"longlat_position"`
 	// XY坐标
 	// XY coordinates
 	XyPosition    *XYPosition `protobuf:"bytes,4,opt,name=xy_position,json=xyPosition,proto3,oneof" json:"xy_position,omitempty" yaml:"xy_position" bson:"xy_position" db:"xy_position"`
@@ -364,7 +364,7 @@ type LongLatBBox struct {
 	MaxLongitude float64 `protobuf:"fixed64,3,opt,name=max_longitude,json=maxLongitude,proto3" json:"max_longitude,omitempty" yaml:"max_longitude" bson:"max_longitude" db:"max_longitude"`
 	// 最大纬度
 	// minimum longitude
-	MaxLatitude   float64 `protobuf:"fixed64,4,opt,name=max_latitude,json=maxLatitude,proto3" json:"max_latitude,omitempty" db:"max_latitude" yaml:"max_latitude" bson:"max_latitude"`
+	MaxLatitude   float64 `protobuf:"fixed64,4,opt,name=max_latitude,json=maxLatitude,proto3" json:"max_latitude,omitempty" yaml:"max_latitude" bson:"max_latitude" db:"max_latitude"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }

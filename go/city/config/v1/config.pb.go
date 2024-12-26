@@ -24,7 +24,7 @@ const (
 type MongoPath struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// 数据库名
-	Db string `protobuf:"bytes,1,opt,name=db,proto3" json:"db,omitempty" yaml:"db" bson:"db" db:"db"`
+	Db string `protobuf:"bytes,1,opt,name=db,proto3" json:"db,omitempty" bson:"db" db:"db" yaml:"db"`
 	// 集合名
 	Col           string `protobuf:"bytes,2,opt,name=col,proto3" json:"col,omitempty" yaml:"col" bson:"col" db:"col"`
 	unknownFields protoimpl.UnknownFields
