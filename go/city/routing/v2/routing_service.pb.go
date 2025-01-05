@@ -27,10 +27,10 @@ type GetRouteRequest struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// 导航类型
 	// routing type
-	Type RouteType `protobuf:"varint,1,opt,name=type,proto3,enum=city.routing.v2.RouteType" json:"type,omitempty" db:"type" yaml:"type" bson:"type"`
+	Type RouteType `protobuf:"varint,1,opt,name=type,proto3,enum=city.routing.v2.RouteType" json:"type,omitempty" bson:"type" db:"type" yaml:"type"`
 	// 起点，约定：包含LanePosition或AoiPosition中的一种
 	// Starting point, convention: as LanePosition or AoiPosition
-	Start *v2.Position `protobuf:"bytes,2,opt,name=start,proto3" json:"start,omitempty" yaml:"start" bson:"start" db:"start"`
+	Start *v2.Position `protobuf:"bytes,2,opt,name=start,proto3" json:"start,omitempty" bson:"start" db:"start" yaml:"start"`
 	// 终点，约定：包含LanePosition或AoiPosition中的一种
 	// Ending point, convention: as LanePosition or AoiPosition
 	End *v2.Position `protobuf:"bytes,3,opt,name=end,proto3" json:"end,omitempty" bson:"end" db:"end" yaml:"end"`
@@ -103,7 +103,7 @@ func (x *GetRouteRequest) GetTime() float64 {
 // Response of getting routing path
 type GetRouteResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Journeys      []*Journey             `protobuf:"bytes,1,rep,name=journeys,proto3" json:"journeys,omitempty" yaml:"journeys" bson:"journeys" db:"journeys"`
+	Journeys      []*Journey             `protobuf:"bytes,1,rep,name=journeys,proto3" json:"journeys,omitempty" bson:"journeys" db:"journeys" yaml:"journeys"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -237,7 +237,7 @@ type GetDrivingCostsRequest struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// 道路通行成本（按照给定的id和time进行查询）
 	// travelling cost (query via the given ID and time)
-	Costs         []*Cost `protobuf:"bytes,1,rep,name=costs,proto3" json:"costs,omitempty" yaml:"costs" bson:"costs" db:"costs"`
+	Costs         []*Cost `protobuf:"bytes,1,rep,name=costs,proto3" json:"costs,omitempty" bson:"costs" db:"costs" yaml:"costs"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }

@@ -25,6 +25,7 @@ export const NowRequest = /*@__PURE__*/ proto3.makeMessageType(
 export const NowResponse = /*@__PURE__*/ proto3.makeMessageType(
   "city.clock.v1.NowResponse",
   () => [
+    { no: 2, name: "day", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
     { no: 1, name: "t", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
   ],
 );

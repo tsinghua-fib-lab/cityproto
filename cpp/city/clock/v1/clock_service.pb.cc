@@ -36,8 +36,10 @@ struct NowRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 NowRequestDefaultTypeInternal _NowRequest_default_instance_;
 PROTOBUF_CONSTEXPR NowResponse::NowResponse(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.t_)*/0
-  , /*decltype(_impl_._cached_size_)*/{}} {}
+    /*decltype(_impl_._has_bits_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}
+  , /*decltype(_impl_.t_)*/0
+  , /*decltype(_impl_.day_)*/0} {}
 struct NowResponseDefaultTypeInternal {
   PROTOBUF_CONSTEXPR NowResponseDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -61,17 +63,20 @@ const uint32_t TableStruct_city_2fclock_2fv1_2fclock_5fservice_2eproto::offsets[
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::clock::v1::NowResponse, _impl_._has_bits_),
   PROTOBUF_FIELD_OFFSET(::city::clock::v1::NowResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::clock::v1::NowResponse, _impl_.day_),
   PROTOBUF_FIELD_OFFSET(::city::clock::v1::NowResponse, _impl_.t_),
+  0,
+  ~0u,
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::city::clock::v1::NowRequest)},
-  { 6, -1, -1, sizeof(::city::clock::v1::NowResponse)},
+  { 6, 14, -1, sizeof(::city::clock::v1::NowResponse)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -81,19 +86,19 @@ static const ::_pb::Message* const file_default_instances[] = {
 
 const char descriptor_table_protodef_city_2fclock_2fv1_2fclock_5fservice_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n!city/clock/v1/clock_service.proto\022\rcit"
-  "y.clock.v1\"\014\n\nNowRequest\"\033\n\013NowResponse\022"
-  "\014\n\001t\030\001 \001(\001R\001t2L\n\014ClockService\022<\n\003Now\022\031.c"
-  "ity.clock.v1.NowRequest\032\032.city.clock.v1."
-  "NowResponseB\263\001\n\021com.city.clock.v1B\021Clock"
-  "ServiceProtoP\001Z5git.fiblab.net/sim/proto"
-  "s/v2/go/city/clock/v1;clockv1\242\002\003CCX\252\002\rCi"
-  "ty.Clock.V1\312\002\rCity\\Clock\\V1\342\002\031City\\Clock"
-  "\\V1\\GPBMetadata\352\002\017City::Clock::V1b\006proto"
-  "3"
+  "y.clock.v1\"\014\n\nNowRequest\":\n\013NowResponse\022"
+  "\025\n\003day\030\002 \001(\005H\000R\003day\210\001\001\022\014\n\001t\030\001 \001(\001R\001tB\006\n\004"
+  "_day2L\n\014ClockService\022<\n\003Now\022\031.city.clock"
+  ".v1.NowRequest\032\032.city.clock.v1.NowRespon"
+  "seB\263\001\n\021com.city.clock.v1B\021ClockServicePr"
+  "otoP\001Z5git.fiblab.net/sim/protos/v2/go/c"
+  "ity/clock/v1;clockv1\242\002\003CCX\252\002\rCity.Clock."
+  "V1\312\002\rCity\\Clock\\V1\342\002\031City\\Clock\\V1\\GPBMe"
+  "tadata\352\002\017City::Clock::V1b\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_city_2fclock_2fv1_2fclock_5fservice_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2fclock_2fv1_2fclock_5fservice_2eproto = {
-    false, false, 361, descriptor_table_protodef_city_2fclock_2fv1_2fclock_5fservice_2eproto,
+    false, false, 392, descriptor_table_protodef_city_2fclock_2fv1_2fclock_5fservice_2eproto,
     "city/clock/v1/clock_service.proto",
     &descriptor_table_city_2fclock_2fv1_2fclock_5fservice_2eproto_once, nullptr, 0, 2,
     schemas, file_default_instances, TableStruct_city_2fclock_2fv1_2fclock_5fservice_2eproto::offsets,
@@ -154,6 +159,10 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*NowRequest::GetClassData() con
 
 class NowResponse::_Internal {
  public:
+  using HasBits = decltype(std::declval<NowResponse>()._impl_._has_bits_);
+  static void set_has_day(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
 };
 
 NowResponse::NowResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
@@ -166,11 +175,15 @@ NowResponse::NowResponse(const NowResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   NowResponse* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.t_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
+      decltype(_impl_._has_bits_){from._impl_._has_bits_}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.t_){}
+    , decltype(_impl_.day_){}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _this->_impl_.t_ = from._impl_.t_;
+  ::memcpy(&_impl_.t_, &from._impl_.t_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.day_) -
+    reinterpret_cast<char*>(&_impl_.t_)) + sizeof(_impl_.day_));
   // @@protoc_insertion_point(copy_constructor:city.clock.v1.NowResponse)
 }
 
@@ -179,8 +192,10 @@ inline void NowResponse::SharedCtor(
   (void)arena;
   (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.t_){0}
+      decltype(_impl_._has_bits_){}
     , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.t_){0}
+    , decltype(_impl_.day_){0}
   };
 }
 
@@ -208,11 +223,14 @@ void NowResponse::Clear() {
   (void) cached_has_bits;
 
   _impl_.t_ = 0;
+  _impl_.day_ = 0;
+  _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* NowResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
@@ -222,6 +240,15 @@ const char* NowResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* c
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 9)) {
           _impl_.t_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional int32 day = 2 [json_name = "day"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _Internal::set_has_day(&has_bits);
+          _impl_.day_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
@@ -241,6 +268,7 @@ const char* NowResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* c
     CHK_(ptr != nullptr);
   }  // while
 message_done:
+  _impl_._has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
@@ -262,6 +290,12 @@ uint8_t* NowResponse::_InternalSerialize(
   if (raw_t != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteDoubleToArray(1, this->_internal_t(), target);
+  }
+
+  // optional int32 day = 2 [json_name = "day"];
+  if (_internal_has_day()) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(2, this->_internal_day(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -289,6 +323,12 @@ size_t NowResponse::ByteSizeLong() const {
     total_size += 1 + 8;
   }
 
+  // optional int32 day = 2 [json_name = "day"];
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000001u) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_day());
+  }
+
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
@@ -314,6 +354,9 @@ void NowResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PR
   if (raw_t != 0) {
     _this->_internal_set_t(from._internal_t());
   }
+  if (from._internal_has_day()) {
+    _this->_internal_set_day(from._internal_day());
+  }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -331,7 +374,13 @@ bool NowResponse::IsInitialized() const {
 void NowResponse::InternalSwap(NowResponse* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_.t_, other->_impl_.t_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(NowResponse, _impl_.day_)
+      + sizeof(NowResponse::_impl_.day_)
+      - PROTOBUF_FIELD_OFFSET(NowResponse, _impl_.t_)>(
+          reinterpret_cast<char*>(&_impl_.t_),
+          reinterpret_cast<char*>(&other->_impl_.t_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata NowResponse::GetMetadata() const {

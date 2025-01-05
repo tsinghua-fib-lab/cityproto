@@ -60,11 +60,11 @@ func (*InitRequest) Descriptor() ([]byte, []int) {
 type InitResponse struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// 模拟器gRPC监听地址
-	Address string   `protobuf:"bytes,2,opt,name=address,proto3" json:"address,omitempty" yaml:"address" bson:"address" db:"address"`
+	Address string   `protobuf:"bytes,2,opt,name=address,proto3" json:"address,omitempty" bson:"address" db:"address" yaml:"address"`
 	Control *Control `protobuf:"bytes,3,opt,name=control,proto3" json:"control,omitempty" bson:"control" db:"control" yaml:"control"`
-	Rain    *Rain    `protobuf:"bytes,1,opt,name=rain,proto3" json:"rain,omitempty" yaml:"rain" bson:"rain" db:"rain"`
+	Rain    *Rain    `protobuf:"bytes,1,opt,name=rain,proto3" json:"rain,omitempty" bson:"rain" db:"rain" yaml:"rain"`
 	// 仅包括header与roads
-	Map           *v2.Map `protobuf:"bytes,4,opt,name=map,proto3" json:"map,omitempty" yaml:"map" bson:"map" db:"map"`
+	Map           *v2.Map `protobuf:"bytes,4,opt,name=map,proto3" json:"map,omitempty" bson:"map" db:"map" yaml:"map"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }

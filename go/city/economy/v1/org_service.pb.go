@@ -24,7 +24,7 @@ const (
 type GetOrgRequest struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// 待查询的组织的ID列表（为空时查询所有组织）
-	OrgIds        []int32 `protobuf:"varint,1,rep,packed,name=org_ids,json=orgIds,proto3" json:"org_ids,omitempty" yaml:"org_ids" bson:"org_ids" db:"org_ids"`
+	OrgIds        []int32 `protobuf:"varint,1,rep,packed,name=org_ids,json=orgIds,proto3" json:"org_ids,omitempty" bson:"org_ids" db:"org_ids" yaml:"org_ids"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -70,7 +70,7 @@ func (x *GetOrgRequest) GetOrgIds() []int32 {
 type GetOrgResponse struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// 组织的经济情况
-	Orgs          []*Org `protobuf:"bytes,1,rep,name=orgs,proto3" json:"orgs,omitempty" yaml:"orgs" bson:"orgs" db:"orgs"`
+	Orgs          []*Org `protobuf:"bytes,1,rep,name=orgs,proto3" json:"orgs,omitempty" bson:"orgs" db:"orgs" yaml:"orgs"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -164,7 +164,7 @@ type UpdateOrgMoneyRequestItem struct {
 	// 待修改的组织
 	OrgId int32 `protobuf:"varint,1,opt,name=org_id,json=orgId,proto3" json:"org_id,omitempty" bson:"org_id" db:"org_id" yaml:"org_id"`
 	// 正数表示增加，负数表示减少
-	Money         float64 `protobuf:"fixed64,2,opt,name=money,proto3" json:"money,omitempty" yaml:"money" bson:"money" db:"money"`
+	Money         float64 `protobuf:"fixed64,2,opt,name=money,proto3" json:"money,omitempty" bson:"money" db:"money" yaml:"money"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -263,7 +263,7 @@ func (x *UpdateOrgMoneyResponse) GetOrgs() []*Org {
 type UpdateOrgGoodsRequest struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// 待修改的组织货物变动
-	Items         []*UpdateOrgGoodsRequestItem `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty" yaml:"items" bson:"items" db:"items"`
+	Items         []*UpdateOrgGoodsRequestItem `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty" bson:"items" db:"items" yaml:"items"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -309,12 +309,12 @@ func (x *UpdateOrgGoodsRequest) GetItems() []*UpdateOrgGoodsRequestItem {
 type UpdateOrgGoodsRequestItem struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// 待修改的组织
-	OrgId int32 `protobuf:"varint,1,opt,name=org_id,json=orgId,proto3" json:"org_id,omitempty" yaml:"org_id" bson:"org_id" db:"org_id"`
+	OrgId int32 `protobuf:"varint,1,opt,name=org_id,json=orgId,proto3" json:"org_id,omitempty" bson:"org_id" db:"org_id" yaml:"org_id"`
 	// 货物变动
 	// 按照(type, name)相等来判断是否为同一种货物
 	// 货物数量为增量，正数表示增加，负数表示减少
 	// price如果未设定则沿用原来的价格，否则使用新的价格
-	Goods         []*Goods `protobuf:"bytes,2,rep,name=goods,proto3" json:"goods,omitempty" yaml:"goods" bson:"goods" db:"goods"`
+	Goods         []*Goods `protobuf:"bytes,2,rep,name=goods,proto3" json:"goods,omitempty" bson:"goods" db:"goods" yaml:"goods"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -367,7 +367,7 @@ func (x *UpdateOrgGoodsRequestItem) GetGoods() []*Goods {
 type UpdateOrgGoodsResponse struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// 修改后的组织的经济情况
-	Orgs          []*Org `protobuf:"bytes,1,rep,name=orgs,proto3" json:"orgs,omitempty" yaml:"orgs" bson:"orgs" db:"orgs"`
+	Orgs          []*Org `protobuf:"bytes,1,rep,name=orgs,proto3" json:"orgs,omitempty" bson:"orgs" db:"orgs" yaml:"orgs"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -413,7 +413,7 @@ func (x *UpdateOrgGoodsResponse) GetOrgs() []*Org {
 type UpdateOrgEmployeeRequest struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// 待修改的组织员工变动
-	Items         []*UpdateOrgEmployeeRequestItem `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty" yaml:"items" bson:"items" db:"items"`
+	Items         []*UpdateOrgEmployeeRequestItem `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty" bson:"items" db:"items" yaml:"items"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -459,13 +459,13 @@ func (x *UpdateOrgEmployeeRequest) GetItems() []*UpdateOrgEmployeeRequestItem {
 type UpdateOrgEmployeeRequestItem struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// 待修改的组织
-	OrgId int32 `protobuf:"varint,1,opt,name=org_id,json=orgId,proto3" json:"org_id,omitempty" yaml:"org_id" bson:"org_id" db:"org_id"`
+	OrgId int32 `protobuf:"varint,1,opt,name=org_id,json=orgId,proto3" json:"org_id,omitempty" bson:"org_id" db:"org_id" yaml:"org_id"`
 	// 新增的员工
-	Adds []*Employee `protobuf:"bytes,2,rep,name=adds,proto3" json:"adds,omitempty" yaml:"adds" bson:"adds" db:"adds"`
+	Adds []*Employee `protobuf:"bytes,2,rep,name=adds,proto3" json:"adds,omitempty" bson:"adds" db:"adds" yaml:"adds"`
 	// 删除的员工
-	Dels []int32 `protobuf:"varint,3,rep,packed,name=dels,proto3" json:"dels,omitempty" yaml:"dels" bson:"dels" db:"dels"`
+	Dels []int32 `protobuf:"varint,3,rep,packed,name=dels,proto3" json:"dels,omitempty" bson:"dels" db:"dels" yaml:"dels"`
 	// 修改薪水的员工
-	Updates       []*Employee `protobuf:"bytes,4,rep,name=updates,proto3" json:"updates,omitempty" yaml:"updates" bson:"updates" db:"updates"`
+	Updates       []*Employee `protobuf:"bytes,4,rep,name=updates,proto3" json:"updates,omitempty" bson:"updates" db:"updates" yaml:"updates"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -532,7 +532,7 @@ func (x *UpdateOrgEmployeeRequestItem) GetUpdates() []*Employee {
 type UpdateOrgEmployeeResponse struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// 修改后的组织的经济情况
-	Orgs          []*Org `protobuf:"bytes,1,rep,name=orgs,proto3" json:"orgs,omitempty" yaml:"orgs" bson:"orgs" db:"orgs"`
+	Orgs          []*Org `protobuf:"bytes,1,rep,name=orgs,proto3" json:"orgs,omitempty" bson:"orgs" db:"orgs" yaml:"orgs"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -578,7 +578,7 @@ func (x *UpdateOrgEmployeeResponse) GetOrgs() []*Org {
 type UpdateOrgJobRequest struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// 待修改的组织岗位变动
-	Items         []*UpdateOrgJobRequestItem `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty" yaml:"items" bson:"items" db:"items"`
+	Items         []*UpdateOrgJobRequestItem `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty" bson:"items" db:"items" yaml:"items"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -624,12 +624,12 @@ func (x *UpdateOrgJobRequest) GetItems() []*UpdateOrgJobRequestItem {
 type UpdateOrgJobRequestItem struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// 待修改的组织
-	OrgId int32 `protobuf:"varint,1,opt,name=org_id,json=orgId,proto3" json:"org_id,omitempty" yaml:"org_id" bson:"org_id" db:"org_id"`
+	OrgId int32 `protobuf:"varint,1,opt,name=org_id,json=orgId,proto3" json:"org_id,omitempty" bson:"org_id" db:"org_id" yaml:"org_id"`
 	// 岗位变动
 	// 按照name相等来判断是否为同一种岗位
 	// 岗位数量为增量，正数表示增加，负数表示减少
 	// salary如果未设定则沿用原来的薪水，否则使用新的薪水
-	Jobs          []*Job `protobuf:"bytes,2,rep,name=jobs,proto3" json:"jobs,omitempty" yaml:"jobs" bson:"jobs" db:"jobs"`
+	Jobs          []*Job `protobuf:"bytes,2,rep,name=jobs,proto3" json:"jobs,omitempty" bson:"jobs" db:"jobs" yaml:"jobs"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -682,7 +682,7 @@ func (x *UpdateOrgJobRequestItem) GetJobs() []*Job {
 type UpdateOrgJobResponse struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// 修改后的组织的经济情况
-	Orgs          []*Org `protobuf:"bytes,1,rep,name=orgs,proto3" json:"orgs,omitempty" yaml:"orgs" bson:"orgs" db:"orgs"`
+	Orgs          []*Org `protobuf:"bytes,1,rep,name=orgs,proto3" json:"orgs,omitempty" bson:"orgs" db:"orgs" yaml:"orgs"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }

@@ -24,7 +24,7 @@ const (
 type GetPersonRequest struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// 待查询的人的ID列表（为空时查询所有人）
-	PersonIds     []int32 `protobuf:"varint,1,rep,packed,name=person_ids,json=personIds,proto3" json:"person_ids,omitempty" yaml:"person_ids" bson:"person_ids" db:"person_ids"`
+	PersonIds     []int32 `protobuf:"varint,1,rep,packed,name=person_ids,json=personIds,proto3" json:"person_ids,omitempty" bson:"person_ids" db:"person_ids" yaml:"person_ids"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -70,7 +70,7 @@ func (x *GetPersonRequest) GetPersonIds() []int32 {
 type GetPersonResponse struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// 人的经济情况
-	Persons       []*Person `protobuf:"bytes,1,rep,name=persons,proto3" json:"persons,omitempty" db:"persons" yaml:"persons" bson:"persons"`
+	Persons       []*Person `protobuf:"bytes,1,rep,name=persons,proto3" json:"persons,omitempty" bson:"persons" db:"persons" yaml:"persons"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -116,7 +116,7 @@ func (x *GetPersonResponse) GetPersons() []*Person {
 type UpdatePersonMoneyRequest struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// 待修改的人员资金变动
-	Items         []*UpdatePersonMoneyRequestItem `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty" yaml:"items" bson:"items" db:"items"`
+	Items         []*UpdatePersonMoneyRequestItem `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty" bson:"items" db:"items" yaml:"items"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -164,7 +164,7 @@ type UpdatePersonMoneyRequestItem struct {
 	// 待修改的人员id
 	PersonId int32 `protobuf:"varint,1,opt,name=person_id,json=personId,proto3" json:"person_id,omitempty" bson:"person_id" db:"person_id" yaml:"person_id"`
 	// 资金变动（正数表示增加，负数表示减少）
-	Money         float64 `protobuf:"fixed64,2,opt,name=money,proto3" json:"money,omitempty" db:"money" yaml:"money" bson:"money"`
+	Money         float64 `protobuf:"fixed64,2,opt,name=money,proto3" json:"money,omitempty" bson:"money" db:"money" yaml:"money"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }

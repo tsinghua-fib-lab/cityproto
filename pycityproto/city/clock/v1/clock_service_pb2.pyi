@@ -10,9 +10,11 @@ class NowRequest(_message.Message):
         ...
 
 class NowResponse(_message.Message):
-    __slots__ = ['t']
+    __slots__ = ['day', 't']
+    DAY_FIELD_NUMBER: _ClassVar[int]
     T_FIELD_NUMBER: _ClassVar[int]
+    day: int
     t: float
 
-    def __init__(self, t: _Optional[float]=...) -> None:
+    def __init__(self, day: _Optional[int]=..., t: _Optional[float]=...) -> None:
         ...

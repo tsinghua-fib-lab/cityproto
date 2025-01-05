@@ -23,9 +23,9 @@ const (
 
 type Mongo struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Uri           string                 `protobuf:"bytes,1,opt,name=uri,proto3" json:"uri,omitempty" yaml:"uri" bson:"uri" db:"uri"`
-	Map           *v1.MongoPath          `protobuf:"bytes,2,opt,name=map,proto3" json:"map,omitempty" yaml:"map" bson:"map" db:"map"`
-	Rain          *v1.MongoPath          `protobuf:"bytes,3,opt,name=rain,proto3" json:"rain,omitempty" yaml:"rain" bson:"rain" db:"rain"`
+	Uri           string                 `protobuf:"bytes,1,opt,name=uri,proto3" json:"uri,omitempty" bson:"uri" db:"uri" yaml:"uri"`
+	Map           *v1.MongoPath          `protobuf:"bytes,2,opt,name=map,proto3" json:"map,omitempty" bson:"map" db:"map" yaml:"map"`
+	Rain          *v1.MongoPath          `protobuf:"bytes,3,opt,name=rain,proto3" json:"rain,omitempty" bson:"rain" db:"rain" yaml:"rain"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -83,9 +83,9 @@ func (x *Mongo) GetRain() *v1.MongoPath {
 
 type ControlStep struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Start         int32                  `protobuf:"varint,1,opt,name=start,proto3" json:"start,omitempty" yaml:"start" bson:"start" db:"start"`
-	Total         int32                  `protobuf:"varint,2,opt,name=total,proto3" json:"total,omitempty" yaml:"total" bson:"total" db:"total"`
-	Interval      float64                `protobuf:"fixed64,3,opt,name=interval,proto3" json:"interval,omitempty" yaml:"interval" bson:"interval" db:"interval"`
+	Start         int32                  `protobuf:"varint,1,opt,name=start,proto3" json:"start,omitempty" bson:"start" db:"start" yaml:"start"`
+	Total         int32                  `protobuf:"varint,2,opt,name=total,proto3" json:"total,omitempty" bson:"total" db:"total" yaml:"total"`
+	Interval      float64                `protobuf:"fixed64,3,opt,name=interval,proto3" json:"interval,omitempty" bson:"interval" db:"interval" yaml:"interval"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -143,7 +143,7 @@ func (x *ControlStep) GetInterval() float64 {
 
 type Control struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Step          *ControlStep           `protobuf:"bytes,1,opt,name=step,proto3" json:"step,omitempty" db:"step" yaml:"step" bson:"step"`
+	Step          *ControlStep           `protobuf:"bytes,1,opt,name=step,proto3" json:"step,omitempty" bson:"step" db:"step" yaml:"step"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -188,10 +188,10 @@ func (x *Control) GetStep() *ControlStep {
 // 是否输出各类数据
 type OutputSwitch struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Road          bool                   `protobuf:"varint,1,opt,name=road,proto3" json:"road,omitempty" db:"road" yaml:"road" bson:"road"`
-	Drainage      bool                   `protobuf:"varint,2,opt,name=drainage,proto3" json:"drainage,omitempty" yaml:"drainage" bson:"drainage" db:"drainage"`
+	Road          bool                   `protobuf:"varint,1,opt,name=road,proto3" json:"road,omitempty" bson:"road" db:"road" yaml:"road"`
+	Drainage      bool                   `protobuf:"varint,2,opt,name=drainage,proto3" json:"drainage,omitempty" bson:"drainage" db:"drainage" yaml:"drainage"`
 	Supply        bool                   `protobuf:"varint,3,opt,name=supply,proto3" json:"supply,omitempty" bson:"supply" db:"supply" yaml:"supply"`
-	Aoi           bool                   `protobuf:"varint,4,opt,name=aoi,proto3" json:"aoi,omitempty" yaml:"aoi" bson:"aoi" db:"aoi"`
+	Aoi           bool                   `protobuf:"varint,4,opt,name=aoi,proto3" json:"aoi,omitempty" bson:"aoi" db:"aoi" yaml:"aoi"`
 	Event         bool                   `protobuf:"varint,5,opt,name=event,proto3" json:"event,omitempty" bson:"event" db:"event" yaml:"event"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -265,8 +265,8 @@ func (x *OutputSwitch) GetEvent() bool {
 type Output struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// 统一的输出目标
-	Target        *v1.OutputTarget `protobuf:"bytes,1,opt,name=target,proto3" json:"target,omitempty" db:"target" yaml:"target" bson:"target"`
-	Switch        *OutputSwitch    `protobuf:"bytes,2,opt,name=switch,proto3" json:"switch,omitempty" yaml:"switch" bson:"switch" db:"switch"`
+	Target        *v1.OutputTarget `protobuf:"bytes,1,opt,name=target,proto3" json:"target,omitempty" bson:"target" db:"target" yaml:"target"`
+	Switch        *OutputSwitch    `protobuf:"bytes,2,opt,name=switch,proto3" json:"switch,omitempty" bson:"switch" db:"switch" yaml:"switch"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -317,9 +317,9 @@ func (x *Output) GetSwitch() *OutputSwitch {
 
 type Config struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Mongo         *Mongo                 `protobuf:"bytes,1,opt,name=mongo,proto3" json:"mongo,omitempty" yaml:"mongo" bson:"mongo" db:"mongo"`
-	Control       *Control               `protobuf:"bytes,2,opt,name=control,proto3" json:"control,omitempty" yaml:"control" bson:"control" db:"control"`
-	Output        *Output                `protobuf:"bytes,3,opt,name=output,proto3" json:"output,omitempty" yaml:"output" bson:"output" db:"output"`
+	Mongo         *Mongo                 `protobuf:"bytes,1,opt,name=mongo,proto3" json:"mongo,omitempty" bson:"mongo" db:"mongo" yaml:"mongo"`
+	Control       *Control               `protobuf:"bytes,2,opt,name=control,proto3" json:"control,omitempty" bson:"control" db:"control" yaml:"control"`
+	Output        *Output                `protobuf:"bytes,3,opt,name=output,proto3" json:"output,omitempty" bson:"output" db:"output" yaml:"output"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }

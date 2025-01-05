@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package city.pause.v1;
+
+service PauseService {
+  // 暂停程序
+  // Pause the program
+  rpc Pause(PauseRequest) returns (PauseResponse);
+  // 恢复程序
+  // Resume the program
+  rpc Resume(ResumeRequest) returns (ResumeResponse);
+}
+
+// 暂停程序请求
+// Pause program request
+message PauseRequest {
+  // 组件名，用于暂停某一特定组件的运行，不设置时暂停整个程序
+  // Component name, used to pause a specific component, pause the entire program when not set
+  optional string name = 1;
+}
+
+// 暂停程序响应
+// Pause program response
+message PauseResponse {}
+
+// 恢复程序请求
+// Resume program request
+message ResumeRequest {
+  // 组件名，用于恢复某一特定组件的运行，不设置时恢复整个程序
+  // Component name, used to resume a specific component, resume the entire program when not set
+  optional string name = 1;
+}
+
+// 恢复程序响应
+// Resume program response
+message ResumeResponse {}

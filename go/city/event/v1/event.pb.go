@@ -109,9 +109,9 @@ func (EventType) EnumDescriptor() ([]byte, []int) {
 
 type Event struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Type          EventType              `protobuf:"varint,1,opt,name=type,proto3,enum=city.event.v1.EventType" json:"type,omitempty" yaml:"type" bson:"type" db:"type"`
-	Level         int32                  `protobuf:"varint,2,opt,name=level,proto3" json:"level,omitempty" db:"level" yaml:"level" bson:"level"`
-	Step          int32                  `protobuf:"varint,3,opt,name=step,proto3" json:"step,omitempty" yaml:"step" bson:"step" db:"step"`
+	Type          EventType              `protobuf:"varint,1,opt,name=type,proto3,enum=city.event.v1.EventType" json:"type,omitempty" bson:"type" db:"type" yaml:"type"`
+	Level         int32                  `protobuf:"varint,2,opt,name=level,proto3" json:"level,omitempty" bson:"level" db:"level" yaml:"level"`
+	Step          int32                  `protobuf:"varint,3,opt,name=step,proto3" json:"step,omitempty" bson:"step" db:"step" yaml:"step"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -169,7 +169,7 @@ func (x *Event) GetStep() int32 {
 
 type Events struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Events        []*Event               `protobuf:"bytes,1,rep,name=events,proto3" json:"events,omitempty" yaml:"events" bson:"events" db:"events"`
+	Events        []*Event               `protobuf:"bytes,1,rep,name=events,proto3" json:"events,omitempty" bson:"events" db:"events" yaml:"events"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }

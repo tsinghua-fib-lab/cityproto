@@ -15,6 +15,9 @@ message NowRequest {}
 // 获取当前的模拟时间响应
 // response of getting current simulation clock
 message NowResponse {
+  // 当前模拟的天数
+  // current simulation day
+  optional int32 day = 2;
   // 当前的模拟时间，单位为秒
   // current simulation clock, in seconds
   double t = 1;

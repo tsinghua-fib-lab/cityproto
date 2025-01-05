@@ -1,4 +1,3 @@
-from . import agentcomm
 from . import clock
 from . import comm
 from . import config
@@ -7,6 +6,7 @@ from . import elec
 from . import event
 from . import geo
 from . import map
+from . import pause
 from . import person
 from . import ping
 from . import routing

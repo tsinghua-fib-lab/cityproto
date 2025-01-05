@@ -26,7 +26,7 @@ type MongoPath struct {
 	// 数据库名
 	Db string `protobuf:"bytes,1,opt,name=db,proto3" json:"db,omitempty" bson:"db" db:"db" yaml:"db"`
 	// 集合名
-	Col           string `protobuf:"bytes,2,opt,name=col,proto3" json:"col,omitempty" yaml:"col" bson:"col" db:"col"`
+	Col           string `protobuf:"bytes,2,opt,name=col,proto3" json:"col,omitempty" bson:"col" db:"col" yaml:"col"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -78,7 +78,7 @@ func (x *MongoPath) GetCol() string {
 // 输出目标PostgreSQL
 type OutputTarget struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Sql           string                 `protobuf:"bytes,1,opt,name=sql,proto3" json:"sql,omitempty" yaml:"sql" bson:"sql" db:"sql"`
+	Sql           string                 `protobuf:"bytes,1,opt,name=sql,proto3" json:"sql,omitempty" bson:"sql" db:"sql" yaml:"sql"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }

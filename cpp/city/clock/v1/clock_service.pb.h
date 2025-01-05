@@ -307,6 +307,7 @@ class NowResponse final :
 
   enum : int {
     kTFieldNumber = 1,
+    kDayFieldNumber = 2,
   };
   // double t = 1 [json_name = "t"];
   void clear_t();
@@ -317,6 +318,19 @@ class NowResponse final :
   void _internal_set_t(double value);
   public:
 
+  // optional int32 day = 2 [json_name = "day"];
+  bool has_day() const;
+  private:
+  bool _internal_has_day() const;
+  public:
+  void clear_day();
+  int32_t day() const;
+  void set_day(int32_t value);
+  private:
+  int32_t _internal_day() const;
+  void _internal_set_day(int32_t value);
+  public:
+
   // @@protoc_insertion_point(class_scope:city.clock.v1.NowResponse)
  private:
   class _Internal;
@@ -325,8 +339,10 @@ class NowResponse final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    double t_;
+    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+    double t_;
+    int32_t day_;
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_city_2fclock_2fv1_2fclock_5fservice_2eproto;
@@ -345,6 +361,34 @@ class NowResponse final :
 // -------------------------------------------------------------------
 
 // NowResponse
+
+// optional int32 day = 2 [json_name = "day"];
+inline bool NowResponse::_internal_has_day() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline bool NowResponse::has_day() const {
+  return _internal_has_day();
+}
+inline void NowResponse::clear_day() {
+  _impl_.day_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline int32_t NowResponse::_internal_day() const {
+  return _impl_.day_;
+}
+inline int32_t NowResponse::day() const {
+  // @@protoc_insertion_point(field_get:city.clock.v1.NowResponse.day)
+  return _internal_day();
+}
+inline void NowResponse::_internal_set_day(int32_t value) {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.day_ = value;
+}
+inline void NowResponse::set_day(int32_t value) {
+  _internal_set_day(value);
+  // @@protoc_insertion_point(field_set:city.clock.v1.NowResponse.day)
+}
 
 // double t = 1 [json_name = "t"];
 inline void NowResponse::clear_t() {

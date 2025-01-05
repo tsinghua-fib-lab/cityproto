@@ -175,29 +175,6 @@
         
           
           <li>
-            <a href="#city%2fagentcomm%2fv1%2fagent_service.proto">city/agentcomm/v1/agent_service.proto</a>
-            <ul>
-              
-                <li>
-                  <a href="#city.agentcomm.v1.CommunicateRequest"><span class="badge">M</span>CommunicateRequest</a>
-                </li>
-              
-                <li>
-                  <a href="#city.agentcomm.v1.CommunicateResponse"><span class="badge">M</span>CommunicateResponse</a>
-                </li>
-              
-              
-              
-              
-                <li>
-                  <a href="#city.agentcomm.v1.AgentService"><span class="badge">S</span>AgentService</a>
-                </li>
-              
-            </ul>
-          </li>
-        
-          
-          <li>
             <a href="#city%2fclock%2fv1%2fclock_service.proto">city/clock/v1/clock_service.proto</a>
             <ul>
               
@@ -1725,6 +1702,37 @@
         
           
           <li>
+            <a href="#city%2fpause%2fv1%2fpause_service.proto">city/pause/v1/pause_service.proto</a>
+            <ul>
+              
+                <li>
+                  <a href="#city.pause.v1.PauseRequest"><span class="badge">M</span>PauseRequest</a>
+                </li>
+              
+                <li>
+                  <a href="#city.pause.v1.PauseResponse"><span class="badge">M</span>PauseResponse</a>
+                </li>
+              
+                <li>
+                  <a href="#city.pause.v1.ResumeRequest"><span class="badge">M</span>ResumeRequest</a>
+                </li>
+              
+                <li>
+                  <a href="#city.pause.v1.ResumeResponse"><span class="badge">M</span>ResumeResponse</a>
+                </li>
+              
+              
+              
+              
+                <li>
+                  <a href="#city.pause.v1.PauseService"><span class="badge">S</span>PauseService</a>
+                </li>
+              
+            </ul>
+          </li>
+        
+          
+          <li>
             <a href="#city%2fperson%2fv1%2fmotion.proto">city/person/v1/motion.proto</a>
             <ul>
               
@@ -2729,101 +2737,6 @@
     
       
       <div class="file-heading">
-        <h2 id="city/agentcomm/v1/agent_service.proto">city/agentcomm/v1/agent_service.proto</h2><a href="#title">Top</a>
-      </div>
-      <p></p>
-
-      
-        <h3 id="city.agentcomm.v1.CommunicateRequest">CommunicateRequest</h3>
-        <p></p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>source_agent_id</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p>消息发送者 ID </p></td>
-                </tr>
-              
-                <tr>
-                  <td>target_agent_id</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p>消息目标 ID </p></td>
-                </tr>
-              
-                <tr>
-                  <td>data</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p>消息内容 </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-
-          
-
-        
-      
-        <h3 id="city.agentcomm.v1.CommunicateResponse">CommunicateResponse</h3>
-        <p></p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>message</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p>响应消息 </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-
-          
-
-        
-      
-
-      
-
-      
-
-      
-        <h3 id="city.agentcomm.v1.AgentService">AgentService</h3>
-        <p></p>
-        <table class="enum-table">
-          <thead>
-            <tr><td>Method Name</td><td>Request Type</td><td>Response Type</td><td>Description</td></tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td>Communicate</td>
-                <td><a href="#city.agentcomm.v1.CommunicateRequest">CommunicateRequest</a> stream</td>
-                <td><a href="#city.agentcomm.v1.CommunicateResponse">CommunicateResponse</a> stream</td>
-                <td><p></p></td>
-              </tr>
-            
-          </tbody>
-        </table>
-
-        
-    
-      
-      <div class="file-heading">
         <h2 id="city/clock/v1/clock_service.proto">city/clock/v1/clock_service.proto</h2><a href="#title">Top</a>
       </div>
       <p></p>
@@ -2845,6 +2758,14 @@
               <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
             </thead>
             <tbody>
+              
+                <tr>
+                  <td>day</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td>optional</td>
+                  <td><p>当前模拟的天数
+current simulation day </p></td>
+                </tr>
               
                 <tr>
                   <td>t</td>
@@ -12832,6 +12753,112 @@ Set traffic light phase</p></td>
                 <td><a href="#city.map.v2.SetTrafficLightStatusResponse">SetTrafficLightStatusResponse</a></td>
                 <td><p>设置路口的红绿灯状态
 Set traffic light status</p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+
+        
+    
+      
+      <div class="file-heading">
+        <h2 id="city/pause/v1/pause_service.proto">city/pause/v1/pause_service.proto</h2><a href="#title">Top</a>
+      </div>
+      <p></p>
+
+      
+        <h3 id="city.pause.v1.PauseRequest">PauseRequest</h3>
+        <p>暂停程序请求</p><p>Pause program request</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>name</td>
+                  <td><a href="#string">string</a></td>
+                  <td>optional</td>
+                  <td><p>组件名，用于暂停某一特定组件的运行，不设置时暂停整个程序
+Component name, used to pause a specific component, pause the entire program when not set </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="city.pause.v1.PauseResponse">PauseResponse</h3>
+        <p>暂停程序响应</p><p>Pause program response</p>
+
+        
+
+        
+      
+        <h3 id="city.pause.v1.ResumeRequest">ResumeRequest</h3>
+        <p>恢复程序请求</p><p>Resume program request</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>name</td>
+                  <td><a href="#string">string</a></td>
+                  <td>optional</td>
+                  <td><p>组件名，用于恢复某一特定组件的运行，不设置时恢复整个程序
+Component name, used to resume a specific component, resume the entire program when not set </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="city.pause.v1.ResumeResponse">ResumeResponse</h3>
+        <p>恢复程序响应</p><p>Resume program response</p>
+
+        
+
+        
+      
+
+      
+
+      
+
+      
+        <h3 id="city.pause.v1.PauseService">PauseService</h3>
+        <p></p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Method Name</td><td>Request Type</td><td>Response Type</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>Pause</td>
+                <td><a href="#city.pause.v1.PauseRequest">PauseRequest</a></td>
+                <td><a href="#city.pause.v1.PauseResponse">PauseResponse</a></td>
+                <td><p>暂停程序
+Pause the program</p></td>
+              </tr>
+            
+              <tr>
+                <td>Resume</td>
+                <td><a href="#city.pause.v1.ResumeRequest">ResumeRequest</a></td>
+                <td><a href="#city.pause.v1.ResumeResponse">ResumeResponse</a></td>
+                <td><p>恢复程序
+Resume the program</p></td>
               </tr>
             
           </tbody>

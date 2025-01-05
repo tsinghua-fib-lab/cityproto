@@ -36,6 +36,14 @@ export declare class NowRequest extends Message<NowRequest> {
  */
 export declare class NowResponse extends Message<NowResponse> {
   /**
+   * 当前模拟的天数
+   * current simulation day
+   *
+   * @generated from field: optional int32 day = 2;
+   */
+  day?: number;
+
+  /**
    * 当前的模拟时间，单位为秒
    * current simulation clock, in seconds
    *
