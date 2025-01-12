@@ -53,17 +53,6 @@ const (
 	WaterServiceGetRuinInfoProcedure = "/city.water.interaction.v1.WaterService/GetRuinInfo"
 )
 
-// These variables are the protoreflect.Descriptor objects for the RPCs defined in this package.
-var (
-	waterServiceServiceDescriptor                    = v1.File_city_water_interaction_v1_water_service_proto.Services().ByName("WaterService")
-	waterServiceSetPumpPowerStatusMethodDescriptor   = waterServiceServiceDescriptor.Methods().ByName("SetPumpPowerStatus")
-	waterServiceSetPumpNetworkStatusMethodDescriptor = waterServiceServiceDescriptor.Methods().ByName("SetPumpNetworkStatus")
-	waterServiceSetPumpStatusMethodDescriptor        = waterServiceServiceDescriptor.Methods().ByName("SetPumpStatus")
-	waterServiceGetPumpStatusMethodDescriptor        = waterServiceServiceDescriptor.Methods().ByName("GetPumpStatus")
-	waterServiceGetNoWaterAOIMethodDescriptor        = waterServiceServiceDescriptor.Methods().ByName("GetNoWaterAOI")
-	waterServiceGetRuinInfoMethodDescriptor          = waterServiceServiceDescriptor.Methods().ByName("GetRuinInfo")
-)
-
 // WaterServiceClient is a client for the city.water.interaction.v1.WaterService service.
 type WaterServiceClient interface {
 	SetPumpPowerStatus(context.Context, *connect.Request[v1.SetPumpPowerStatusRequest]) (*connect.Response[v1.SetPumpPowerStatusResponse], error)
@@ -83,41 +72,42 @@ type WaterServiceClient interface {
 // http://api.acme.com or https://acme.com/grpc).
 func NewWaterServiceClient(httpClient connect.HTTPClient, baseURL string, opts ...connect.ClientOption) WaterServiceClient {
 	baseURL = strings.TrimRight(baseURL, "/")
+	waterServiceMethods := v1.File_city_water_interaction_v1_water_service_proto.Services().ByName("WaterService").Methods()
 	return &waterServiceClient{
 		setPumpPowerStatus: connect.NewClient[v1.SetPumpPowerStatusRequest, v1.SetPumpPowerStatusResponse](
 			httpClient,
 			baseURL+WaterServiceSetPumpPowerStatusProcedure,
-			connect.WithSchema(waterServiceSetPumpPowerStatusMethodDescriptor),
+			connect.WithSchema(waterServiceMethods.ByName("SetPumpPowerStatus")),
 			connect.WithClientOptions(opts...),
 		),
 		setPumpNetworkStatus: connect.NewClient[v1.SetPumpNetworkStatusRequest, v1.SetPumpNetworkStatusResponse](
 			httpClient,
 			baseURL+WaterServiceSetPumpNetworkStatusProcedure,
-			connect.WithSchema(waterServiceSetPumpNetworkStatusMethodDescriptor),
+			connect.WithSchema(waterServiceMethods.ByName("SetPumpNetworkStatus")),
 			connect.WithClientOptions(opts...),
 		),
 		setPumpStatus: connect.NewClient[v1.SetPumpStatusRequest, v1.SetPumpStatusResponse](
 			httpClient,
 			baseURL+WaterServiceSetPumpStatusProcedure,
-			connect.WithSchema(waterServiceSetPumpStatusMethodDescriptor),
+			connect.WithSchema(waterServiceMethods.ByName("SetPumpStatus")),
 			connect.WithClientOptions(opts...),
 		),
 		getPumpStatus: connect.NewClient[v1.GetPumpStatusRequest, v1.GetPumpStatusResponse](
 			httpClient,
 			baseURL+WaterServiceGetPumpStatusProcedure,
-			connect.WithSchema(waterServiceGetPumpStatusMethodDescriptor),
+			connect.WithSchema(waterServiceMethods.ByName("GetPumpStatus")),
 			connect.WithClientOptions(opts...),
 		),
 		getNoWaterAOI: connect.NewClient[v1.GetNoWaterAOIRequest, v1.GetNoWaterAOIResponse](
 			httpClient,
 			baseURL+WaterServiceGetNoWaterAOIProcedure,
-			connect.WithSchema(waterServiceGetNoWaterAOIMethodDescriptor),
+			connect.WithSchema(waterServiceMethods.ByName("GetNoWaterAOI")),
 			connect.WithClientOptions(opts...),
 		),
 		getRuinInfo: connect.NewClient[v1.GetRuinInfoRequest, v1.GetRuinInfoResponse](
 			httpClient,
 			baseURL+WaterServiceGetRuinInfoProcedure,
-			connect.WithSchema(waterServiceGetRuinInfoMethodDescriptor),
+			connect.WithSchema(waterServiceMethods.ByName("GetRuinInfo")),
 			connect.WithClientOptions(opts...),
 		),
 	}
@@ -179,40 +169,41 @@ type WaterServiceHandler interface {
 // By default, handlers support the Connect, gRPC, and gRPC-Web protocols with the binary Protobuf
 // and JSON codecs. They also support gzip compression.
 func NewWaterServiceHandler(svc WaterServiceHandler, opts ...connect.HandlerOption) (string, http.Handler) {
+	waterServiceMethods := v1.File_city_water_interaction_v1_water_service_proto.Services().ByName("WaterService").Methods()
 	waterServiceSetPumpPowerStatusHandler := connect.NewUnaryHandler(
 		WaterServiceSetPumpPowerStatusProcedure,
 		svc.SetPumpPowerStatus,
-		connect.WithSchema(waterServiceSetPumpPowerStatusMethodDescriptor),
+		connect.WithSchema(waterServiceMethods.ByName("SetPumpPowerStatus")),
 		connect.WithHandlerOptions(opts...),
 	)
 	waterServiceSetPumpNetworkStatusHandler := connect.NewUnaryHandler(
 		WaterServiceSetPumpNetworkStatusProcedure,
 		svc.SetPumpNetworkStatus,
-		connect.WithSchema(waterServiceSetPumpNetworkStatusMethodDescriptor),
+		connect.WithSchema(waterServiceMethods.ByName("SetPumpNetworkStatus")),
 		connect.WithHandlerOptions(opts...),
 	)
 	waterServiceSetPumpStatusHandler := connect.NewUnaryHandler(
 		WaterServiceSetPumpStatusProcedure,
 		svc.SetPumpStatus,
-		connect.WithSchema(waterServiceSetPumpStatusMethodDescriptor),
+		connect.WithSchema(waterServiceMethods.ByName("SetPumpStatus")),
 		connect.WithHandlerOptions(opts...),
 	)
 	waterServiceGetPumpStatusHandler := connect.NewUnaryHandler(
 		WaterServiceGetPumpStatusProcedure,
 		svc.GetPumpStatus,
-		connect.WithSchema(waterServiceGetPumpStatusMethodDescriptor),
+		connect.WithSchema(waterServiceMethods.ByName("GetPumpStatus")),
 		connect.WithHandlerOptions(opts...),
 	)
 	waterServiceGetNoWaterAOIHandler := connect.NewUnaryHandler(
 		WaterServiceGetNoWaterAOIProcedure,
 		svc.GetNoWaterAOI,
-		connect.WithSchema(waterServiceGetNoWaterAOIMethodDescriptor),
+		connect.WithSchema(waterServiceMethods.ByName("GetNoWaterAOI")),
 		connect.WithHandlerOptions(opts...),
 	)
 	waterServiceGetRuinInfoHandler := connect.NewUnaryHandler(
 		WaterServiceGetRuinInfoProcedure,
 		svc.GetRuinInfo,
-		connect.WithSchema(waterServiceGetRuinInfoMethodDescriptor),
+		connect.WithSchema(waterServiceMethods.ByName("GetRuinInfo")),
 		connect.WithHandlerOptions(opts...),
 	)
 	return "/city.water.interaction.v1.WaterService/", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {

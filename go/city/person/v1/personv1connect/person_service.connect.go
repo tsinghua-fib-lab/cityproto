@@ -63,21 +63,6 @@ const (
 	PersonServiceSetControlledVehicleActionsProcedure = "/city.person.v1.PersonService/SetControlledVehicleActions"
 )
 
-// These variables are the protoreflect.Descriptor objects for the RPCs defined in this package.
-var (
-	personServiceServiceDescriptor                           = v1.File_city_person_v1_person_service_proto.Services().ByName("PersonService")
-	personServiceGetPersonMethodDescriptor                   = personServiceServiceDescriptor.Methods().ByName("GetPerson")
-	personServiceAddPersonMethodDescriptor                   = personServiceServiceDescriptor.Methods().ByName("AddPerson")
-	personServiceSetScheduleMethodDescriptor                 = personServiceServiceDescriptor.Methods().ByName("SetSchedule")
-	personServiceGetPersonsMethodDescriptor                  = personServiceServiceDescriptor.Methods().ByName("GetPersons")
-	personServiceGetPersonByLongLatBBoxMethodDescriptor      = personServiceServiceDescriptor.Methods().ByName("GetPersonByLongLatBBox")
-	personServiceGetAllVehiclesMethodDescriptor              = personServiceServiceDescriptor.Methods().ByName("GetAllVehicles")
-	personServiceResetPersonPositionMethodDescriptor         = personServiceServiceDescriptor.Methods().ByName("ResetPersonPosition")
-	personServiceSetControlledVehicleIDsMethodDescriptor     = personServiceServiceDescriptor.Methods().ByName("SetControlledVehicleIDs")
-	personServiceFetchControlledVehicleEnvsMethodDescriptor  = personServiceServiceDescriptor.Methods().ByName("FetchControlledVehicleEnvs")
-	personServiceSetControlledVehicleActionsMethodDescriptor = personServiceServiceDescriptor.Methods().ByName("SetControlledVehicleActions")
-)
-
 // PersonServiceClient is a client for the city.person.v1.PersonService service.
 type PersonServiceClient interface {
 	// 获取person信息
@@ -121,65 +106,66 @@ type PersonServiceClient interface {
 // http://api.acme.com or https://acme.com/grpc).
 func NewPersonServiceClient(httpClient connect.HTTPClient, baseURL string, opts ...connect.ClientOption) PersonServiceClient {
 	baseURL = strings.TrimRight(baseURL, "/")
+	personServiceMethods := v1.File_city_person_v1_person_service_proto.Services().ByName("PersonService").Methods()
 	return &personServiceClient{
 		getPerson: connect.NewClient[v1.GetPersonRequest, v1.GetPersonResponse](
 			httpClient,
 			baseURL+PersonServiceGetPersonProcedure,
-			connect.WithSchema(personServiceGetPersonMethodDescriptor),
+			connect.WithSchema(personServiceMethods.ByName("GetPerson")),
 			connect.WithClientOptions(opts...),
 		),
 		addPerson: connect.NewClient[v1.AddPersonRequest, v1.AddPersonResponse](
 			httpClient,
 			baseURL+PersonServiceAddPersonProcedure,
-			connect.WithSchema(personServiceAddPersonMethodDescriptor),
+			connect.WithSchema(personServiceMethods.ByName("AddPerson")),
 			connect.WithClientOptions(opts...),
 		),
 		setSchedule: connect.NewClient[v1.SetScheduleRequest, v1.SetScheduleResponse](
 			httpClient,
 			baseURL+PersonServiceSetScheduleProcedure,
-			connect.WithSchema(personServiceSetScheduleMethodDescriptor),
+			connect.WithSchema(personServiceMethods.ByName("SetSchedule")),
 			connect.WithClientOptions(opts...),
 		),
 		getPersons: connect.NewClient[v1.GetPersonsRequest, v1.GetPersonsResponse](
 			httpClient,
 			baseURL+PersonServiceGetPersonsProcedure,
-			connect.WithSchema(personServiceGetPersonsMethodDescriptor),
+			connect.WithSchema(personServiceMethods.ByName("GetPersons")),
 			connect.WithClientOptions(opts...),
 		),
 		getPersonByLongLatBBox: connect.NewClient[v1.GetPersonByLongLatBBoxRequest, v1.GetPersonByLongLatBBoxResponse](
 			httpClient,
 			baseURL+PersonServiceGetPersonByLongLatBBoxProcedure,
-			connect.WithSchema(personServiceGetPersonByLongLatBBoxMethodDescriptor),
+			connect.WithSchema(personServiceMethods.ByName("GetPersonByLongLatBBox")),
 			connect.WithClientOptions(opts...),
 		),
 		getAllVehicles: connect.NewClient[v1.GetAllVehiclesRequest, v1.GetAllVehiclesResponse](
 			httpClient,
 			baseURL+PersonServiceGetAllVehiclesProcedure,
-			connect.WithSchema(personServiceGetAllVehiclesMethodDescriptor),
+			connect.WithSchema(personServiceMethods.ByName("GetAllVehicles")),
 			connect.WithClientOptions(opts...),
 		),
 		resetPersonPosition: connect.NewClient[v1.ResetPersonPositionRequest, v1.ResetPersonPositionResponse](
 			httpClient,
 			baseURL+PersonServiceResetPersonPositionProcedure,
-			connect.WithSchema(personServiceResetPersonPositionMethodDescriptor),
+			connect.WithSchema(personServiceMethods.ByName("ResetPersonPosition")),
 			connect.WithClientOptions(opts...),
 		),
 		setControlledVehicleIDs: connect.NewClient[v1.SetControlledVehicleIDsRequest, v1.SetControlledVehicleIDsResponse](
 			httpClient,
 			baseURL+PersonServiceSetControlledVehicleIDsProcedure,
-			connect.WithSchema(personServiceSetControlledVehicleIDsMethodDescriptor),
+			connect.WithSchema(personServiceMethods.ByName("SetControlledVehicleIDs")),
 			connect.WithClientOptions(opts...),
 		),
 		fetchControlledVehicleEnvs: connect.NewClient[v1.FetchControlledVehicleEnvsRequest, v1.FetchControlledVehicleEnvsResponse](
 			httpClient,
 			baseURL+PersonServiceFetchControlledVehicleEnvsProcedure,
-			connect.WithSchema(personServiceFetchControlledVehicleEnvsMethodDescriptor),
+			connect.WithSchema(personServiceMethods.ByName("FetchControlledVehicleEnvs")),
 			connect.WithClientOptions(opts...),
 		),
 		setControlledVehicleActions: connect.NewClient[v1.SetControlledVehicleActionsRequest, v1.SetControlledVehicleActionsResponse](
 			httpClient,
 			baseURL+PersonServiceSetControlledVehicleActionsProcedure,
-			connect.WithSchema(personServiceSetControlledVehicleActionsMethodDescriptor),
+			connect.WithSchema(personServiceMethods.ByName("SetControlledVehicleActions")),
 			connect.WithClientOptions(opts...),
 		),
 	}
@@ -289,64 +275,65 @@ type PersonServiceHandler interface {
 // By default, handlers support the Connect, gRPC, and gRPC-Web protocols with the binary Protobuf
 // and JSON codecs. They also support gzip compression.
 func NewPersonServiceHandler(svc PersonServiceHandler, opts ...connect.HandlerOption) (string, http.Handler) {
+	personServiceMethods := v1.File_city_person_v1_person_service_proto.Services().ByName("PersonService").Methods()
 	personServiceGetPersonHandler := connect.NewUnaryHandler(
 		PersonServiceGetPersonProcedure,
 		svc.GetPerson,
-		connect.WithSchema(personServiceGetPersonMethodDescriptor),
+		connect.WithSchema(personServiceMethods.ByName("GetPerson")),
 		connect.WithHandlerOptions(opts...),
 	)
 	personServiceAddPersonHandler := connect.NewUnaryHandler(
 		PersonServiceAddPersonProcedure,
 		svc.AddPerson,
-		connect.WithSchema(personServiceAddPersonMethodDescriptor),
+		connect.WithSchema(personServiceMethods.ByName("AddPerson")),
 		connect.WithHandlerOptions(opts...),
 	)
 	personServiceSetScheduleHandler := connect.NewUnaryHandler(
 		PersonServiceSetScheduleProcedure,
 		svc.SetSchedule,
-		connect.WithSchema(personServiceSetScheduleMethodDescriptor),
+		connect.WithSchema(personServiceMethods.ByName("SetSchedule")),
 		connect.WithHandlerOptions(opts...),
 	)
 	personServiceGetPersonsHandler := connect.NewUnaryHandler(
 		PersonServiceGetPersonsProcedure,
 		svc.GetPersons,
-		connect.WithSchema(personServiceGetPersonsMethodDescriptor),
+		connect.WithSchema(personServiceMethods.ByName("GetPersons")),
 		connect.WithHandlerOptions(opts...),
 	)
 	personServiceGetPersonByLongLatBBoxHandler := connect.NewUnaryHandler(
 		PersonServiceGetPersonByLongLatBBoxProcedure,
 		svc.GetPersonByLongLatBBox,
-		connect.WithSchema(personServiceGetPersonByLongLatBBoxMethodDescriptor),
+		connect.WithSchema(personServiceMethods.ByName("GetPersonByLongLatBBox")),
 		connect.WithHandlerOptions(opts...),
 	)
 	personServiceGetAllVehiclesHandler := connect.NewUnaryHandler(
 		PersonServiceGetAllVehiclesProcedure,
 		svc.GetAllVehicles,
-		connect.WithSchema(personServiceGetAllVehiclesMethodDescriptor),
+		connect.WithSchema(personServiceMethods.ByName("GetAllVehicles")),
 		connect.WithHandlerOptions(opts...),
 	)
 	personServiceResetPersonPositionHandler := connect.NewUnaryHandler(
 		PersonServiceResetPersonPositionProcedure,
 		svc.ResetPersonPosition,
-		connect.WithSchema(personServiceResetPersonPositionMethodDescriptor),
+		connect.WithSchema(personServiceMethods.ByName("ResetPersonPosition")),
 		connect.WithHandlerOptions(opts...),
 	)
 	personServiceSetControlledVehicleIDsHandler := connect.NewUnaryHandler(
 		PersonServiceSetControlledVehicleIDsProcedure,
 		svc.SetControlledVehicleIDs,
-		connect.WithSchema(personServiceSetControlledVehicleIDsMethodDescriptor),
+		connect.WithSchema(personServiceMethods.ByName("SetControlledVehicleIDs")),
 		connect.WithHandlerOptions(opts...),
 	)
 	personServiceFetchControlledVehicleEnvsHandler := connect.NewUnaryHandler(
 		PersonServiceFetchControlledVehicleEnvsProcedure,
 		svc.FetchControlledVehicleEnvs,
-		connect.WithSchema(personServiceFetchControlledVehicleEnvsMethodDescriptor),
+		connect.WithSchema(personServiceMethods.ByName("FetchControlledVehicleEnvs")),
 		connect.WithHandlerOptions(opts...),
 	)
 	personServiceSetControlledVehicleActionsHandler := connect.NewUnaryHandler(
 		PersonServiceSetControlledVehicleActionsProcedure,
 		svc.SetControlledVehicleActions,
-		connect.WithSchema(personServiceSetControlledVehicleActionsMethodDescriptor),
+		connect.WithSchema(personServiceMethods.ByName("SetControlledVehicleActions")),
 		connect.WithHandlerOptions(opts...),
 	)
 	return "/city.person.v1.PersonService/", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {

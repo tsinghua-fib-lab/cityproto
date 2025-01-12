@@ -48,16 +48,6 @@ const (
 	OrgServiceUpdateOrgJobProcedure = "/city.economy.v1.OrgService/UpdateOrgJob"
 )
 
-// These variables are the protoreflect.Descriptor objects for the RPCs defined in this package.
-var (
-	orgServiceServiceDescriptor                 = v1.File_city_economy_v1_org_service_proto.Services().ByName("OrgService")
-	orgServiceGetOrgMethodDescriptor            = orgServiceServiceDescriptor.Methods().ByName("GetOrg")
-	orgServiceUpdateOrgMoneyMethodDescriptor    = orgServiceServiceDescriptor.Methods().ByName("UpdateOrgMoney")
-	orgServiceUpdateOrgGoodsMethodDescriptor    = orgServiceServiceDescriptor.Methods().ByName("UpdateOrgGoods")
-	orgServiceUpdateOrgEmployeeMethodDescriptor = orgServiceServiceDescriptor.Methods().ByName("UpdateOrgEmployee")
-	orgServiceUpdateOrgJobMethodDescriptor      = orgServiceServiceDescriptor.Methods().ByName("UpdateOrgJob")
-)
-
 // OrgServiceClient is a client for the city.economy.v1.OrgService service.
 type OrgServiceClient interface {
 	// 批量查询组织的经济情况（员工、岗位、资金、货物）
@@ -81,35 +71,36 @@ type OrgServiceClient interface {
 // http://api.acme.com or https://acme.com/grpc).
 func NewOrgServiceClient(httpClient connect.HTTPClient, baseURL string, opts ...connect.ClientOption) OrgServiceClient {
 	baseURL = strings.TrimRight(baseURL, "/")
+	orgServiceMethods := v1.File_city_economy_v1_org_service_proto.Services().ByName("OrgService").Methods()
 	return &orgServiceClient{
 		getOrg: connect.NewClient[v1.GetOrgRequest, v1.GetOrgResponse](
 			httpClient,
 			baseURL+OrgServiceGetOrgProcedure,
-			connect.WithSchema(orgServiceGetOrgMethodDescriptor),
+			connect.WithSchema(orgServiceMethods.ByName("GetOrg")),
 			connect.WithClientOptions(opts...),
 		),
 		updateOrgMoney: connect.NewClient[v1.UpdateOrgMoneyRequest, v1.UpdateOrgMoneyResponse](
 			httpClient,
 			baseURL+OrgServiceUpdateOrgMoneyProcedure,
-			connect.WithSchema(orgServiceUpdateOrgMoneyMethodDescriptor),
+			connect.WithSchema(orgServiceMethods.ByName("UpdateOrgMoney")),
 			connect.WithClientOptions(opts...),
 		),
 		updateOrgGoods: connect.NewClient[v1.UpdateOrgGoodsRequest, v1.UpdateOrgGoodsResponse](
 			httpClient,
 			baseURL+OrgServiceUpdateOrgGoodsProcedure,
-			connect.WithSchema(orgServiceUpdateOrgGoodsMethodDescriptor),
+			connect.WithSchema(orgServiceMethods.ByName("UpdateOrgGoods")),
 			connect.WithClientOptions(opts...),
 		),
 		updateOrgEmployee: connect.NewClient[v1.UpdateOrgEmployeeRequest, v1.UpdateOrgEmployeeResponse](
 			httpClient,
 			baseURL+OrgServiceUpdateOrgEmployeeProcedure,
-			connect.WithSchema(orgServiceUpdateOrgEmployeeMethodDescriptor),
+			connect.WithSchema(orgServiceMethods.ByName("UpdateOrgEmployee")),
 			connect.WithClientOptions(opts...),
 		),
 		updateOrgJob: connect.NewClient[v1.UpdateOrgJobRequest, v1.UpdateOrgJobResponse](
 			httpClient,
 			baseURL+OrgServiceUpdateOrgJobProcedure,
-			connect.WithSchema(orgServiceUpdateOrgJobMethodDescriptor),
+			connect.WithSchema(orgServiceMethods.ByName("UpdateOrgJob")),
 			connect.WithClientOptions(opts...),
 		),
 	}
@@ -169,34 +160,35 @@ type OrgServiceHandler interface {
 // By default, handlers support the Connect, gRPC, and gRPC-Web protocols with the binary Protobuf
 // and JSON codecs. They also support gzip compression.
 func NewOrgServiceHandler(svc OrgServiceHandler, opts ...connect.HandlerOption) (string, http.Handler) {
+	orgServiceMethods := v1.File_city_economy_v1_org_service_proto.Services().ByName("OrgService").Methods()
 	orgServiceGetOrgHandler := connect.NewUnaryHandler(
 		OrgServiceGetOrgProcedure,
 		svc.GetOrg,
-		connect.WithSchema(orgServiceGetOrgMethodDescriptor),
+		connect.WithSchema(orgServiceMethods.ByName("GetOrg")),
 		connect.WithHandlerOptions(opts...),
 	)
 	orgServiceUpdateOrgMoneyHandler := connect.NewUnaryHandler(
 		OrgServiceUpdateOrgMoneyProcedure,
 		svc.UpdateOrgMoney,
-		connect.WithSchema(orgServiceUpdateOrgMoneyMethodDescriptor),
+		connect.WithSchema(orgServiceMethods.ByName("UpdateOrgMoney")),
 		connect.WithHandlerOptions(opts...),
 	)
 	orgServiceUpdateOrgGoodsHandler := connect.NewUnaryHandler(
 		OrgServiceUpdateOrgGoodsProcedure,
 		svc.UpdateOrgGoods,
-		connect.WithSchema(orgServiceUpdateOrgGoodsMethodDescriptor),
+		connect.WithSchema(orgServiceMethods.ByName("UpdateOrgGoods")),
 		connect.WithHandlerOptions(opts...),
 	)
 	orgServiceUpdateOrgEmployeeHandler := connect.NewUnaryHandler(
 		OrgServiceUpdateOrgEmployeeProcedure,
 		svc.UpdateOrgEmployee,
-		connect.WithSchema(orgServiceUpdateOrgEmployeeMethodDescriptor),
+		connect.WithSchema(orgServiceMethods.ByName("UpdateOrgEmployee")),
 		connect.WithHandlerOptions(opts...),
 	)
 	orgServiceUpdateOrgJobHandler := connect.NewUnaryHandler(
 		OrgServiceUpdateOrgJobProcedure,
 		svc.UpdateOrgJob,
-		connect.WithSchema(orgServiceUpdateOrgJobMethodDescriptor),
+		connect.WithSchema(orgServiceMethods.ByName("UpdateOrgJob")),
 		connect.WithHandlerOptions(opts...),
 	)
 	return "/city.economy.v1.OrgService/", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {

@@ -50,17 +50,6 @@ const (
 	ElecServiceGetEdgeStatusProcedure = "/city.elec.interaction.v1.ElecService/GetEdgeStatus"
 )
 
-// These variables are the protoreflect.Descriptor objects for the RPCs defined in this package.
-var (
-	elecServiceServiceDescriptor              = v1.File_city_elec_interaction_v1_elec_service_proto.Services().ByName("ElecService")
-	elecServiceSetStatusMethodDescriptor      = elecServiceServiceDescriptor.Methods().ByName("SetStatus")
-	elecServiceGetPowerMethodDescriptor       = elecServiceServiceDescriptor.Methods().ByName("GetPower")
-	elecServiceGetPowerStatusMethodDescriptor = elecServiceServiceDescriptor.Methods().ByName("GetPowerStatus")
-	elecServiceGetNoPowerAOIMethodDescriptor  = elecServiceServiceDescriptor.Methods().ByName("GetNoPowerAOI")
-	elecServiceGetRuinInfoMethodDescriptor    = elecServiceServiceDescriptor.Methods().ByName("GetRuinInfo")
-	elecServiceGetEdgeStatusMethodDescriptor  = elecServiceServiceDescriptor.Methods().ByName("GetEdgeStatus")
-)
-
 // ElecServiceClient is a client for the city.elec.interaction.v1.ElecService service.
 type ElecServiceClient interface {
 	SetStatus(context.Context, *connect.Request[v1.SetStatusRequest]) (*connect.Response[v1.SetStatusResponse], error)
@@ -80,41 +69,42 @@ type ElecServiceClient interface {
 // http://api.acme.com or https://acme.com/grpc).
 func NewElecServiceClient(httpClient connect.HTTPClient, baseURL string, opts ...connect.ClientOption) ElecServiceClient {
 	baseURL = strings.TrimRight(baseURL, "/")
+	elecServiceMethods := v1.File_city_elec_interaction_v1_elec_service_proto.Services().ByName("ElecService").Methods()
 	return &elecServiceClient{
 		setStatus: connect.NewClient[v1.SetStatusRequest, v1.SetStatusResponse](
 			httpClient,
 			baseURL+ElecServiceSetStatusProcedure,
-			connect.WithSchema(elecServiceSetStatusMethodDescriptor),
+			connect.WithSchema(elecServiceMethods.ByName("SetStatus")),
 			connect.WithClientOptions(opts...),
 		),
 		getPower: connect.NewClient[v1.GetPowerRequest, v1.GetPowerResponse](
 			httpClient,
 			baseURL+ElecServiceGetPowerProcedure,
-			connect.WithSchema(elecServiceGetPowerMethodDescriptor),
+			connect.WithSchema(elecServiceMethods.ByName("GetPower")),
 			connect.WithClientOptions(opts...),
 		),
 		getPowerStatus: connect.NewClient[v1.GetPowerStatusRequest, v1.GetPowerStatusResponse](
 			httpClient,
 			baseURL+ElecServiceGetPowerStatusProcedure,
-			connect.WithSchema(elecServiceGetPowerStatusMethodDescriptor),
+			connect.WithSchema(elecServiceMethods.ByName("GetPowerStatus")),
 			connect.WithClientOptions(opts...),
 		),
 		getNoPowerAOI: connect.NewClient[v1.GetNoPowerAOIRequest, v1.GetNoPowerAOIResponse](
 			httpClient,
 			baseURL+ElecServiceGetNoPowerAOIProcedure,
-			connect.WithSchema(elecServiceGetNoPowerAOIMethodDescriptor),
+			connect.WithSchema(elecServiceMethods.ByName("GetNoPowerAOI")),
 			connect.WithClientOptions(opts...),
 		),
 		getRuinInfo: connect.NewClient[v1.GetRuinInfoRequest, v1.GetRuinInfoResponse](
 			httpClient,
 			baseURL+ElecServiceGetRuinInfoProcedure,
-			connect.WithSchema(elecServiceGetRuinInfoMethodDescriptor),
+			connect.WithSchema(elecServiceMethods.ByName("GetRuinInfo")),
 			connect.WithClientOptions(opts...),
 		),
 		getEdgeStatus: connect.NewClient[v1.GetEdgeStatusRequest, v1.GetEdgeStatusResponse](
 			httpClient,
 			baseURL+ElecServiceGetEdgeStatusProcedure,
-			connect.WithSchema(elecServiceGetEdgeStatusMethodDescriptor),
+			connect.WithSchema(elecServiceMethods.ByName("GetEdgeStatus")),
 			connect.WithClientOptions(opts...),
 		),
 	}
@@ -176,40 +166,41 @@ type ElecServiceHandler interface {
 // By default, handlers support the Connect, gRPC, and gRPC-Web protocols with the binary Protobuf
 // and JSON codecs. They also support gzip compression.
 func NewElecServiceHandler(svc ElecServiceHandler, opts ...connect.HandlerOption) (string, http.Handler) {
+	elecServiceMethods := v1.File_city_elec_interaction_v1_elec_service_proto.Services().ByName("ElecService").Methods()
 	elecServiceSetStatusHandler := connect.NewUnaryHandler(
 		ElecServiceSetStatusProcedure,
 		svc.SetStatus,
-		connect.WithSchema(elecServiceSetStatusMethodDescriptor),
+		connect.WithSchema(elecServiceMethods.ByName("SetStatus")),
 		connect.WithHandlerOptions(opts...),
 	)
 	elecServiceGetPowerHandler := connect.NewUnaryHandler(
 		ElecServiceGetPowerProcedure,
 		svc.GetPower,
-		connect.WithSchema(elecServiceGetPowerMethodDescriptor),
+		connect.WithSchema(elecServiceMethods.ByName("GetPower")),
 		connect.WithHandlerOptions(opts...),
 	)
 	elecServiceGetPowerStatusHandler := connect.NewUnaryHandler(
 		ElecServiceGetPowerStatusProcedure,
 		svc.GetPowerStatus,
-		connect.WithSchema(elecServiceGetPowerStatusMethodDescriptor),
+		connect.WithSchema(elecServiceMethods.ByName("GetPowerStatus")),
 		connect.WithHandlerOptions(opts...),
 	)
 	elecServiceGetNoPowerAOIHandler := connect.NewUnaryHandler(
 		ElecServiceGetNoPowerAOIProcedure,
 		svc.GetNoPowerAOI,
-		connect.WithSchema(elecServiceGetNoPowerAOIMethodDescriptor),
+		connect.WithSchema(elecServiceMethods.ByName("GetNoPowerAOI")),
 		connect.WithHandlerOptions(opts...),
 	)
 	elecServiceGetRuinInfoHandler := connect.NewUnaryHandler(
 		ElecServiceGetRuinInfoProcedure,
 		svc.GetRuinInfo,
-		connect.WithSchema(elecServiceGetRuinInfoMethodDescriptor),
+		connect.WithSchema(elecServiceMethods.ByName("GetRuinInfo")),
 		connect.WithHandlerOptions(opts...),
 	)
 	elecServiceGetEdgeStatusHandler := connect.NewUnaryHandler(
 		ElecServiceGetEdgeStatusProcedure,
 		svc.GetEdgeStatus,
-		connect.WithSchema(elecServiceGetEdgeStatusMethodDescriptor),
+		connect.WithSchema(elecServiceMethods.ByName("GetEdgeStatus")),
 		connect.WithHandlerOptions(opts...),
 	)
 	return "/city.elec.interaction.v1.ElecService/", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {

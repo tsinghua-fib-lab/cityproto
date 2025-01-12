@@ -37,12 +37,6 @@ const (
 	AoiServiceGetAoiProcedure = "/city.map.v2.AoiService/GetAoi"
 )
 
-// These variables are the protoreflect.Descriptor objects for the RPCs defined in this package.
-var (
-	aoiServiceServiceDescriptor      = v2.File_city_map_v2_aoi_service_proto.Services().ByName("AoiService")
-	aoiServiceGetAoiMethodDescriptor = aoiServiceServiceDescriptor.Methods().ByName("GetAoi")
-)
-
 // AoiServiceClient is a client for the city.map.v2.AoiService service.
 type AoiServiceClient interface {
 	// 获取AOI信息
@@ -59,11 +53,12 @@ type AoiServiceClient interface {
 // http://api.acme.com or https://acme.com/grpc).
 func NewAoiServiceClient(httpClient connect.HTTPClient, baseURL string, opts ...connect.ClientOption) AoiServiceClient {
 	baseURL = strings.TrimRight(baseURL, "/")
+	aoiServiceMethods := v2.File_city_map_v2_aoi_service_proto.Services().ByName("AoiService").Methods()
 	return &aoiServiceClient{
 		getAoi: connect.NewClient[v2.GetAoiRequest, v2.GetAoiResponse](
 			httpClient,
 			baseURL+AoiServiceGetAoiProcedure,
-			connect.WithSchema(aoiServiceGetAoiMethodDescriptor),
+			connect.WithSchema(aoiServiceMethods.ByName("GetAoi")),
 			connect.WithClientOptions(opts...),
 		),
 	}
@@ -92,10 +87,11 @@ type AoiServiceHandler interface {
 // By default, handlers support the Connect, gRPC, and gRPC-Web protocols with the binary Protobuf
 // and JSON codecs. They also support gzip compression.
 func NewAoiServiceHandler(svc AoiServiceHandler, opts ...connect.HandlerOption) (string, http.Handler) {
+	aoiServiceMethods := v2.File_city_map_v2_aoi_service_proto.Services().ByName("AoiService").Methods()
 	aoiServiceGetAoiHandler := connect.NewUnaryHandler(
 		AoiServiceGetAoiProcedure,
 		svc.GetAoi,
-		connect.WithSchema(aoiServiceGetAoiMethodDescriptor),
+		connect.WithSchema(aoiServiceMethods.ByName("GetAoi")),
 		connect.WithHandlerOptions(opts...),
 	)
 	return "/city.map.v2.AoiService/", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {

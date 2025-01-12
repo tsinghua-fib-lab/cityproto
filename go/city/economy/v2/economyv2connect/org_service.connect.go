@@ -160,59 +160,6 @@ const (
 	OrgServiceGetOrgEntityIdsProcedure = "/city.economy.v2.OrgService/GetOrgEntityIds"
 )
 
-// These variables are the protoreflect.Descriptor objects for the RPCs defined in this package.
-var (
-	orgServiceServiceDescriptor                        = v2.File_city_economy_v2_org_service_proto.Services().ByName("OrgService")
-	orgServiceAddOrgMethodDescriptor                   = orgServiceServiceDescriptor.Methods().ByName("AddOrg")
-	orgServiceRemoveOrgMethodDescriptor                = orgServiceServiceDescriptor.Methods().ByName("RemoveOrg")
-	orgServiceAddAgentMethodDescriptor                 = orgServiceServiceDescriptor.Methods().ByName("AddAgent")
-	orgServiceRemoveAgentMethodDescriptor              = orgServiceServiceDescriptor.Methods().ByName("RemoveAgent")
-	orgServiceGetNominalGDPMethodDescriptor            = orgServiceServiceDescriptor.Methods().ByName("GetNominalGDP")
-	orgServiceSetNominalGDPMethodDescriptor            = orgServiceServiceDescriptor.Methods().ByName("SetNominalGDP")
-	orgServiceGetRealGDPMethodDescriptor               = orgServiceServiceDescriptor.Methods().ByName("GetRealGDP")
-	orgServiceSetRealGDPMethodDescriptor               = orgServiceServiceDescriptor.Methods().ByName("SetRealGDP")
-	orgServiceGetUnemploymentMethodDescriptor          = orgServiceServiceDescriptor.Methods().ByName("GetUnemployment")
-	orgServiceSetUnemploymentMethodDescriptor          = orgServiceServiceDescriptor.Methods().ByName("SetUnemployment")
-	orgServiceGetWagesMethodDescriptor                 = orgServiceServiceDescriptor.Methods().ByName("GetWages")
-	orgServiceSetWagesMethodDescriptor                 = orgServiceServiceDescriptor.Methods().ByName("SetWages")
-	orgServiceGetPricesMethodDescriptor                = orgServiceServiceDescriptor.Methods().ByName("GetPrices")
-	orgServiceSetPricesMethodDescriptor                = orgServiceServiceDescriptor.Methods().ByName("SetPrices")
-	orgServiceGetInventoryMethodDescriptor             = orgServiceServiceDescriptor.Methods().ByName("GetInventory")
-	orgServiceSetInventoryMethodDescriptor             = orgServiceServiceDescriptor.Methods().ByName("SetInventory")
-	orgServiceAddInventoryMethodDescriptor             = orgServiceServiceDescriptor.Methods().ByName("AddInventory")
-	orgServiceGetPriceMethodDescriptor                 = orgServiceServiceDescriptor.Methods().ByName("GetPrice")
-	orgServiceSetPriceMethodDescriptor                 = orgServiceServiceDescriptor.Methods().ByName("SetPrice")
-	orgServiceAddPriceMethodDescriptor                 = orgServiceServiceDescriptor.Methods().ByName("AddPrice")
-	orgServiceGetCurrencyMethodDescriptor              = orgServiceServiceDescriptor.Methods().ByName("GetCurrency")
-	orgServiceSetCurrencyMethodDescriptor              = orgServiceServiceDescriptor.Methods().ByName("SetCurrency")
-	orgServiceAddCurrencyMethodDescriptor              = orgServiceServiceDescriptor.Methods().ByName("AddCurrency")
-	orgServiceGetInterestRateMethodDescriptor          = orgServiceServiceDescriptor.Methods().ByName("GetInterestRate")
-	orgServiceSetInterestRateMethodDescriptor          = orgServiceServiceDescriptor.Methods().ByName("SetInterestRate")
-	orgServiceAddInterestRateMethodDescriptor          = orgServiceServiceDescriptor.Methods().ByName("AddInterestRate")
-	orgServiceGetBracketCutoffsMethodDescriptor        = orgServiceServiceDescriptor.Methods().ByName("GetBracketCutoffs")
-	orgServiceSetBracketCutoffsMethodDescriptor        = orgServiceServiceDescriptor.Methods().ByName("SetBracketCutoffs")
-	orgServiceGetBracketRatesMethodDescriptor          = orgServiceServiceDescriptor.Methods().ByName("GetBracketRates")
-	orgServiceSetBracketRatesMethodDescriptor          = orgServiceServiceDescriptor.Methods().ByName("SetBracketRates")
-	orgServiceCalculateTaxesDueMethodDescriptor        = orgServiceServiceDescriptor.Methods().ByName("CalculateTaxesDue")
-	orgServiceCalculateConsumptionMethodDescriptor     = orgServiceServiceDescriptor.Methods().ByName("CalculateConsumption")
-	orgServiceCalculateInterestMethodDescriptor        = orgServiceServiceDescriptor.Methods().ByName("CalculateInterest")
-	orgServiceSaveEconomyEntitiesMethodDescriptor      = orgServiceServiceDescriptor.Methods().ByName("SaveEconomyEntities")
-	orgServiceLoadEconomyEntitiesMethodDescriptor      = orgServiceServiceDescriptor.Methods().ByName("LoadEconomyEntities")
-	orgServiceGetConsumptionCurrencyMethodDescriptor   = orgServiceServiceDescriptor.Methods().ByName("GetConsumptionCurrency")
-	orgServiceSetConsumptionCurrencyMethodDescriptor   = orgServiceServiceDescriptor.Methods().ByName("SetConsumptionCurrency")
-	orgServiceGetConsumptionPropensityMethodDescriptor = orgServiceServiceDescriptor.Methods().ByName("GetConsumptionPropensity")
-	orgServiceSetConsumptionPropensityMethodDescriptor = orgServiceServiceDescriptor.Methods().ByName("SetConsumptionPropensity")
-	orgServiceGetIncomeCurrencyMethodDescriptor        = orgServiceServiceDescriptor.Methods().ByName("GetIncomeCurrency")
-	orgServiceSetIncomeCurrencyMethodDescriptor        = orgServiceServiceDescriptor.Methods().ByName("SetIncomeCurrency")
-	orgServiceGetDepressionMethodDescriptor            = orgServiceServiceDescriptor.Methods().ByName("GetDepression")
-	orgServiceSetDepressionMethodDescriptor            = orgServiceServiceDescriptor.Methods().ByName("SetDepression")
-	orgServiceGetLocusControlMethodDescriptor          = orgServiceServiceDescriptor.Methods().ByName("GetLocusControl")
-	orgServiceSetLocusControlMethodDescriptor          = orgServiceServiceDescriptor.Methods().ByName("SetLocusControl")
-	orgServiceGetWorkingHoursMethodDescriptor          = orgServiceServiceDescriptor.Methods().ByName("GetWorkingHours")
-	orgServiceSetWorkingHoursMethodDescriptor          = orgServiceServiceDescriptor.Methods().ByName("SetWorkingHours")
-	orgServiceGetOrgEntityIdsMethodDescriptor          = orgServiceServiceDescriptor.Methods().ByName("GetOrgEntityIds")
-)
-
 // OrgServiceClient is a client for the city.economy.v2.OrgService service.
 type OrgServiceClient interface {
 	// 添加组织
@@ -305,293 +252,294 @@ type OrgServiceClient interface {
 // http://api.acme.com or https://acme.com/grpc).
 func NewOrgServiceClient(httpClient connect.HTTPClient, baseURL string, opts ...connect.ClientOption) OrgServiceClient {
 	baseURL = strings.TrimRight(baseURL, "/")
+	orgServiceMethods := v2.File_city_economy_v2_org_service_proto.Services().ByName("OrgService").Methods()
 	return &orgServiceClient{
 		addOrg: connect.NewClient[v2.AddOrgRequest, v2.AddOrgResponse](
 			httpClient,
 			baseURL+OrgServiceAddOrgProcedure,
-			connect.WithSchema(orgServiceAddOrgMethodDescriptor),
+			connect.WithSchema(orgServiceMethods.ByName("AddOrg")),
 			connect.WithClientOptions(opts...),
 		),
 		removeOrg: connect.NewClient[v2.RemoveOrgRequest, v2.RemoveOrgResponse](
 			httpClient,
 			baseURL+OrgServiceRemoveOrgProcedure,
-			connect.WithSchema(orgServiceRemoveOrgMethodDescriptor),
+			connect.WithSchema(orgServiceMethods.ByName("RemoveOrg")),
 			connect.WithClientOptions(opts...),
 		),
 		addAgent: connect.NewClient[v2.AddAgentRequest, v2.AddAgentResponse](
 			httpClient,
 			baseURL+OrgServiceAddAgentProcedure,
-			connect.WithSchema(orgServiceAddAgentMethodDescriptor),
+			connect.WithSchema(orgServiceMethods.ByName("AddAgent")),
 			connect.WithClientOptions(opts...),
 		),
 		removeAgent: connect.NewClient[v2.RemoveAgentRequest, v2.RemoveAgentResponse](
 			httpClient,
 			baseURL+OrgServiceRemoveAgentProcedure,
-			connect.WithSchema(orgServiceRemoveAgentMethodDescriptor),
+			connect.WithSchema(orgServiceMethods.ByName("RemoveAgent")),
 			connect.WithClientOptions(opts...),
 		),
 		getNominalGDP: connect.NewClient[v2.GetNominalGDPRequest, v2.GetNominalGDPResponse](
 			httpClient,
 			baseURL+OrgServiceGetNominalGDPProcedure,
-			connect.WithSchema(orgServiceGetNominalGDPMethodDescriptor),
+			connect.WithSchema(orgServiceMethods.ByName("GetNominalGDP")),
 			connect.WithClientOptions(opts...),
 		),
 		setNominalGDP: connect.NewClient[v2.SetNominalGDPRequest, v2.SetNominalGDPResponse](
 			httpClient,
 			baseURL+OrgServiceSetNominalGDPProcedure,
-			connect.WithSchema(orgServiceSetNominalGDPMethodDescriptor),
+			connect.WithSchema(orgServiceMethods.ByName("SetNominalGDP")),
 			connect.WithClientOptions(opts...),
 		),
 		getRealGDP: connect.NewClient[v2.GetRealGDPRequest, v2.GetRealGDPResponse](
 			httpClient,
 			baseURL+OrgServiceGetRealGDPProcedure,
-			connect.WithSchema(orgServiceGetRealGDPMethodDescriptor),
+			connect.WithSchema(orgServiceMethods.ByName("GetRealGDP")),
 			connect.WithClientOptions(opts...),
 		),
 		setRealGDP: connect.NewClient[v2.SetRealGDPRequest, v2.SetRealGDPResponse](
 			httpClient,
 			baseURL+OrgServiceSetRealGDPProcedure,
-			connect.WithSchema(orgServiceSetRealGDPMethodDescriptor),
+			connect.WithSchema(orgServiceMethods.ByName("SetRealGDP")),
 			connect.WithClientOptions(opts...),
 		),
 		getUnemployment: connect.NewClient[v2.GetUnemploymentRequest, v2.GetUnemploymentResponse](
 			httpClient,
 			baseURL+OrgServiceGetUnemploymentProcedure,
-			connect.WithSchema(orgServiceGetUnemploymentMethodDescriptor),
+			connect.WithSchema(orgServiceMethods.ByName("GetUnemployment")),
 			connect.WithClientOptions(opts...),
 		),
 		setUnemployment: connect.NewClient[v2.SetUnemploymentRequest, v2.SetUnemploymentResponse](
 			httpClient,
 			baseURL+OrgServiceSetUnemploymentProcedure,
-			connect.WithSchema(orgServiceSetUnemploymentMethodDescriptor),
+			connect.WithSchema(orgServiceMethods.ByName("SetUnemployment")),
 			connect.WithClientOptions(opts...),
 		),
 		getWages: connect.NewClient[v2.GetWagesRequest, v2.GetWagesResponse](
 			httpClient,
 			baseURL+OrgServiceGetWagesProcedure,
-			connect.WithSchema(orgServiceGetWagesMethodDescriptor),
+			connect.WithSchema(orgServiceMethods.ByName("GetWages")),
 			connect.WithClientOptions(opts...),
 		),
 		setWages: connect.NewClient[v2.SetWagesRequest, v2.SetWagesResponse](
 			httpClient,
 			baseURL+OrgServiceSetWagesProcedure,
-			connect.WithSchema(orgServiceSetWagesMethodDescriptor),
+			connect.WithSchema(orgServiceMethods.ByName("SetWages")),
 			connect.WithClientOptions(opts...),
 		),
 		getPrices: connect.NewClient[v2.GetPricesRequest, v2.GetPricesResponse](
 			httpClient,
 			baseURL+OrgServiceGetPricesProcedure,
-			connect.WithSchema(orgServiceGetPricesMethodDescriptor),
+			connect.WithSchema(orgServiceMethods.ByName("GetPrices")),
 			connect.WithClientOptions(opts...),
 		),
 		setPrices: connect.NewClient[v2.SetPricesRequest, v2.SetPricesResponse](
 			httpClient,
 			baseURL+OrgServiceSetPricesProcedure,
-			connect.WithSchema(orgServiceSetPricesMethodDescriptor),
+			connect.WithSchema(orgServiceMethods.ByName("SetPrices")),
 			connect.WithClientOptions(opts...),
 		),
 		getInventory: connect.NewClient[v2.GetInventoryRequest, v2.GetInventoryResponse](
 			httpClient,
 			baseURL+OrgServiceGetInventoryProcedure,
-			connect.WithSchema(orgServiceGetInventoryMethodDescriptor),
+			connect.WithSchema(orgServiceMethods.ByName("GetInventory")),
 			connect.WithClientOptions(opts...),
 		),
 		setInventory: connect.NewClient[v2.SetInventoryRequest, v2.SetInventoryResponse](
 			httpClient,
 			baseURL+OrgServiceSetInventoryProcedure,
-			connect.WithSchema(orgServiceSetInventoryMethodDescriptor),
+			connect.WithSchema(orgServiceMethods.ByName("SetInventory")),
 			connect.WithClientOptions(opts...),
 		),
 		addInventory: connect.NewClient[v2.AddInventoryRequest, v2.AddInventoryResponse](
 			httpClient,
 			baseURL+OrgServiceAddInventoryProcedure,
-			connect.WithSchema(orgServiceAddInventoryMethodDescriptor),
+			connect.WithSchema(orgServiceMethods.ByName("AddInventory")),
 			connect.WithClientOptions(opts...),
 		),
 		getPrice: connect.NewClient[v2.GetPriceRequest, v2.GetPriceResponse](
 			httpClient,
 			baseURL+OrgServiceGetPriceProcedure,
-			connect.WithSchema(orgServiceGetPriceMethodDescriptor),
+			connect.WithSchema(orgServiceMethods.ByName("GetPrice")),
 			connect.WithClientOptions(opts...),
 		),
 		setPrice: connect.NewClient[v2.SetPriceRequest, v2.SetPriceResponse](
 			httpClient,
 			baseURL+OrgServiceSetPriceProcedure,
-			connect.WithSchema(orgServiceSetPriceMethodDescriptor),
+			connect.WithSchema(orgServiceMethods.ByName("SetPrice")),
 			connect.WithClientOptions(opts...),
 		),
 		addPrice: connect.NewClient[v2.AddPriceRequest, v2.AddPriceResponse](
 			httpClient,
 			baseURL+OrgServiceAddPriceProcedure,
-			connect.WithSchema(orgServiceAddPriceMethodDescriptor),
+			connect.WithSchema(orgServiceMethods.ByName("AddPrice")),
 			connect.WithClientOptions(opts...),
 		),
 		getCurrency: connect.NewClient[v2.GetCurrencyRequest, v2.GetCurrencyResponse](
 			httpClient,
 			baseURL+OrgServiceGetCurrencyProcedure,
-			connect.WithSchema(orgServiceGetCurrencyMethodDescriptor),
+			connect.WithSchema(orgServiceMethods.ByName("GetCurrency")),
 			connect.WithClientOptions(opts...),
 		),
 		setCurrency: connect.NewClient[v2.SetCurrencyRequest, v2.SetCurrencyResponse](
 			httpClient,
 			baseURL+OrgServiceSetCurrencyProcedure,
-			connect.WithSchema(orgServiceSetCurrencyMethodDescriptor),
+			connect.WithSchema(orgServiceMethods.ByName("SetCurrency")),
 			connect.WithClientOptions(opts...),
 		),
 		addCurrency: connect.NewClient[v2.AddCurrencyRequest, v2.AddCurrencyResponse](
 			httpClient,
 			baseURL+OrgServiceAddCurrencyProcedure,
-			connect.WithSchema(orgServiceAddCurrencyMethodDescriptor),
+			connect.WithSchema(orgServiceMethods.ByName("AddCurrency")),
 			connect.WithClientOptions(opts...),
 		),
 		getInterestRate: connect.NewClient[v2.GetInterestRateRequest, v2.GetInterestRateResponse](
 			httpClient,
 			baseURL+OrgServiceGetInterestRateProcedure,
-			connect.WithSchema(orgServiceGetInterestRateMethodDescriptor),
+			connect.WithSchema(orgServiceMethods.ByName("GetInterestRate")),
 			connect.WithClientOptions(opts...),
 		),
 		setInterestRate: connect.NewClient[v2.SetInterestRateRequest, v2.SetInterestRateResponse](
 			httpClient,
 			baseURL+OrgServiceSetInterestRateProcedure,
-			connect.WithSchema(orgServiceSetInterestRateMethodDescriptor),
+			connect.WithSchema(orgServiceMethods.ByName("SetInterestRate")),
 			connect.WithClientOptions(opts...),
 		),
 		addInterestRate: connect.NewClient[v2.AddInterestRateRequest, v2.AddInterestRateResponse](
 			httpClient,
 			baseURL+OrgServiceAddInterestRateProcedure,
-			connect.WithSchema(orgServiceAddInterestRateMethodDescriptor),
+			connect.WithSchema(orgServiceMethods.ByName("AddInterestRate")),
 			connect.WithClientOptions(opts...),
 		),
 		getBracketCutoffs: connect.NewClient[v2.GetBracketCutoffsRequest, v2.GetBracketCutoffsResponse](
 			httpClient,
 			baseURL+OrgServiceGetBracketCutoffsProcedure,
-			connect.WithSchema(orgServiceGetBracketCutoffsMethodDescriptor),
+			connect.WithSchema(orgServiceMethods.ByName("GetBracketCutoffs")),
 			connect.WithClientOptions(opts...),
 		),
 		setBracketCutoffs: connect.NewClient[v2.SetBracketCutoffsRequest, v2.SetBracketCutoffsResponse](
 			httpClient,
 			baseURL+OrgServiceSetBracketCutoffsProcedure,
-			connect.WithSchema(orgServiceSetBracketCutoffsMethodDescriptor),
+			connect.WithSchema(orgServiceMethods.ByName("SetBracketCutoffs")),
 			connect.WithClientOptions(opts...),
 		),
 		getBracketRates: connect.NewClient[v2.GetBracketRatesRequest, v2.GetBracketRatesResponse](
 			httpClient,
 			baseURL+OrgServiceGetBracketRatesProcedure,
-			connect.WithSchema(orgServiceGetBracketRatesMethodDescriptor),
+			connect.WithSchema(orgServiceMethods.ByName("GetBracketRates")),
 			connect.WithClientOptions(opts...),
 		),
 		setBracketRates: connect.NewClient[v2.SetBracketRatesRequest, v2.SetBracketRatesResponse](
 			httpClient,
 			baseURL+OrgServiceSetBracketRatesProcedure,
-			connect.WithSchema(orgServiceSetBracketRatesMethodDescriptor),
+			connect.WithSchema(orgServiceMethods.ByName("SetBracketRates")),
 			connect.WithClientOptions(opts...),
 		),
 		calculateTaxesDue: connect.NewClient[v2.CalculateTaxesDueRequest, v2.CalculateTaxesDueResponse](
 			httpClient,
 			baseURL+OrgServiceCalculateTaxesDueProcedure,
-			connect.WithSchema(orgServiceCalculateTaxesDueMethodDescriptor),
+			connect.WithSchema(orgServiceMethods.ByName("CalculateTaxesDue")),
 			connect.WithClientOptions(opts...),
 		),
 		calculateConsumption: connect.NewClient[v2.CalculateConsumptionRequest, v2.CalculateConsumptionResponse](
 			httpClient,
 			baseURL+OrgServiceCalculateConsumptionProcedure,
-			connect.WithSchema(orgServiceCalculateConsumptionMethodDescriptor),
+			connect.WithSchema(orgServiceMethods.ByName("CalculateConsumption")),
 			connect.WithClientOptions(opts...),
 		),
 		calculateInterest: connect.NewClient[v2.CalculateInterestRequest, v2.CalculateInterestResponse](
 			httpClient,
 			baseURL+OrgServiceCalculateInterestProcedure,
-			connect.WithSchema(orgServiceCalculateInterestMethodDescriptor),
+			connect.WithSchema(orgServiceMethods.ByName("CalculateInterest")),
 			connect.WithClientOptions(opts...),
 		),
 		saveEconomyEntities: connect.NewClient[v2.SaveEconomyEntitiesRequest, v2.SaveEconomyEntitiesResponse](
 			httpClient,
 			baseURL+OrgServiceSaveEconomyEntitiesProcedure,
-			connect.WithSchema(orgServiceSaveEconomyEntitiesMethodDescriptor),
+			connect.WithSchema(orgServiceMethods.ByName("SaveEconomyEntities")),
 			connect.WithClientOptions(opts...),
 		),
 		loadEconomyEntities: connect.NewClient[v2.LoadEconomyEntitiesRequest, v2.LoadEconomyEntitiesResponse](
 			httpClient,
 			baseURL+OrgServiceLoadEconomyEntitiesProcedure,
-			connect.WithSchema(orgServiceLoadEconomyEntitiesMethodDescriptor),
+			connect.WithSchema(orgServiceMethods.ByName("LoadEconomyEntities")),
 			connect.WithClientOptions(opts...),
 		),
 		getConsumptionCurrency: connect.NewClient[v2.GetConsumptionCurrencyRequest, v2.GetConsumptionCurrencyResponse](
 			httpClient,
 			baseURL+OrgServiceGetConsumptionCurrencyProcedure,
-			connect.WithSchema(orgServiceGetConsumptionCurrencyMethodDescriptor),
+			connect.WithSchema(orgServiceMethods.ByName("GetConsumptionCurrency")),
 			connect.WithClientOptions(opts...),
 		),
 		setConsumptionCurrency: connect.NewClient[v2.SetConsumptionCurrencyRequest, v2.SetConsumptionCurrencyResponse](
 			httpClient,
 			baseURL+OrgServiceSetConsumptionCurrencyProcedure,
-			connect.WithSchema(orgServiceSetConsumptionCurrencyMethodDescriptor),
+			connect.WithSchema(orgServiceMethods.ByName("SetConsumptionCurrency")),
 			connect.WithClientOptions(opts...),
 		),
 		getConsumptionPropensity: connect.NewClient[v2.GetConsumptionPropensityRequest, v2.GetConsumptionPropensityResponse](
 			httpClient,
 			baseURL+OrgServiceGetConsumptionPropensityProcedure,
-			connect.WithSchema(orgServiceGetConsumptionPropensityMethodDescriptor),
+			connect.WithSchema(orgServiceMethods.ByName("GetConsumptionPropensity")),
 			connect.WithClientOptions(opts...),
 		),
 		setConsumptionPropensity: connect.NewClient[v2.SetConsumptionPropensityRequest, v2.SetConsumptionPropensityResponse](
 			httpClient,
 			baseURL+OrgServiceSetConsumptionPropensityProcedure,
-			connect.WithSchema(orgServiceSetConsumptionPropensityMethodDescriptor),
+			connect.WithSchema(orgServiceMethods.ByName("SetConsumptionPropensity")),
 			connect.WithClientOptions(opts...),
 		),
 		getIncomeCurrency: connect.NewClient[v2.GetIncomeCurrencyRequest, v2.GetIncomeCurrencyResponse](
 			httpClient,
 			baseURL+OrgServiceGetIncomeCurrencyProcedure,
-			connect.WithSchema(orgServiceGetIncomeCurrencyMethodDescriptor),
+			connect.WithSchema(orgServiceMethods.ByName("GetIncomeCurrency")),
 			connect.WithClientOptions(opts...),
 		),
 		setIncomeCurrency: connect.NewClient[v2.SetIncomeCurrencyRequest, v2.SetIncomeCurrencyResponse](
 			httpClient,
 			baseURL+OrgServiceSetIncomeCurrencyProcedure,
-			connect.WithSchema(orgServiceSetIncomeCurrencyMethodDescriptor),
+			connect.WithSchema(orgServiceMethods.ByName("SetIncomeCurrency")),
 			connect.WithClientOptions(opts...),
 		),
 		getDepression: connect.NewClient[v2.GetDepressionRequest, v2.GetDepressionResponse](
 			httpClient,
 			baseURL+OrgServiceGetDepressionProcedure,
-			connect.WithSchema(orgServiceGetDepressionMethodDescriptor),
+			connect.WithSchema(orgServiceMethods.ByName("GetDepression")),
 			connect.WithClientOptions(opts...),
 		),
 		setDepression: connect.NewClient[v2.SetDepressionRequest, v2.SetDepressionResponse](
 			httpClient,
 			baseURL+OrgServiceSetDepressionProcedure,
-			connect.WithSchema(orgServiceSetDepressionMethodDescriptor),
+			connect.WithSchema(orgServiceMethods.ByName("SetDepression")),
 			connect.WithClientOptions(opts...),
 		),
 		getLocusControl: connect.NewClient[v2.GetLocusControlRequest, v2.GetLocusControlResponse](
 			httpClient,
 			baseURL+OrgServiceGetLocusControlProcedure,
-			connect.WithSchema(orgServiceGetLocusControlMethodDescriptor),
+			connect.WithSchema(orgServiceMethods.ByName("GetLocusControl")),
 			connect.WithClientOptions(opts...),
 		),
 		setLocusControl: connect.NewClient[v2.SetLocusControlRequest, v2.SetLocusControlResponse](
 			httpClient,
 			baseURL+OrgServiceSetLocusControlProcedure,
-			connect.WithSchema(orgServiceSetLocusControlMethodDescriptor),
+			connect.WithSchema(orgServiceMethods.ByName("SetLocusControl")),
 			connect.WithClientOptions(opts...),
 		),
 		getWorkingHours: connect.NewClient[v2.GetWorkingHoursRequest, v2.GetWorkingHoursResponse](
 			httpClient,
 			baseURL+OrgServiceGetWorkingHoursProcedure,
-			connect.WithSchema(orgServiceGetWorkingHoursMethodDescriptor),
+			connect.WithSchema(orgServiceMethods.ByName("GetWorkingHours")),
 			connect.WithClientOptions(opts...),
 		),
 		setWorkingHours: connect.NewClient[v2.SetWorkingHoursRequest, v2.SetWorkingHoursResponse](
 			httpClient,
 			baseURL+OrgServiceSetWorkingHoursProcedure,
-			connect.WithSchema(orgServiceSetWorkingHoursMethodDescriptor),
+			connect.WithSchema(orgServiceMethods.ByName("SetWorkingHours")),
 			connect.WithClientOptions(opts...),
 		),
 		getOrgEntityIds: connect.NewClient[v2.GetOrgEntityIdsRequest, v2.GetOrgEntityIdsResponse](
 			httpClient,
 			baseURL+OrgServiceGetOrgEntityIdsProcedure,
-			connect.WithSchema(orgServiceGetOrgEntityIdsMethodDescriptor),
+			connect.WithSchema(orgServiceMethods.ByName("GetOrgEntityIds")),
 			connect.WithClientOptions(opts...),
 		),
 	}
@@ -978,292 +926,293 @@ type OrgServiceHandler interface {
 // By default, handlers support the Connect, gRPC, and gRPC-Web protocols with the binary Protobuf
 // and JSON codecs. They also support gzip compression.
 func NewOrgServiceHandler(svc OrgServiceHandler, opts ...connect.HandlerOption) (string, http.Handler) {
+	orgServiceMethods := v2.File_city_economy_v2_org_service_proto.Services().ByName("OrgService").Methods()
 	orgServiceAddOrgHandler := connect.NewUnaryHandler(
 		OrgServiceAddOrgProcedure,
 		svc.AddOrg,
-		connect.WithSchema(orgServiceAddOrgMethodDescriptor),
+		connect.WithSchema(orgServiceMethods.ByName("AddOrg")),
 		connect.WithHandlerOptions(opts...),
 	)
 	orgServiceRemoveOrgHandler := connect.NewUnaryHandler(
 		OrgServiceRemoveOrgProcedure,
 		svc.RemoveOrg,
-		connect.WithSchema(orgServiceRemoveOrgMethodDescriptor),
+		connect.WithSchema(orgServiceMethods.ByName("RemoveOrg")),
 		connect.WithHandlerOptions(opts...),
 	)
 	orgServiceAddAgentHandler := connect.NewUnaryHandler(
 		OrgServiceAddAgentProcedure,
 		svc.AddAgent,
-		connect.WithSchema(orgServiceAddAgentMethodDescriptor),
+		connect.WithSchema(orgServiceMethods.ByName("AddAgent")),
 		connect.WithHandlerOptions(opts...),
 	)
 	orgServiceRemoveAgentHandler := connect.NewUnaryHandler(
 		OrgServiceRemoveAgentProcedure,
 		svc.RemoveAgent,
-		connect.WithSchema(orgServiceRemoveAgentMethodDescriptor),
+		connect.WithSchema(orgServiceMethods.ByName("RemoveAgent")),
 		connect.WithHandlerOptions(opts...),
 	)
 	orgServiceGetNominalGDPHandler := connect.NewUnaryHandler(
 		OrgServiceGetNominalGDPProcedure,
 		svc.GetNominalGDP,
-		connect.WithSchema(orgServiceGetNominalGDPMethodDescriptor),
+		connect.WithSchema(orgServiceMethods.ByName("GetNominalGDP")),
 		connect.WithHandlerOptions(opts...),
 	)
 	orgServiceSetNominalGDPHandler := connect.NewUnaryHandler(
 		OrgServiceSetNominalGDPProcedure,
 		svc.SetNominalGDP,
-		connect.WithSchema(orgServiceSetNominalGDPMethodDescriptor),
+		connect.WithSchema(orgServiceMethods.ByName("SetNominalGDP")),
 		connect.WithHandlerOptions(opts...),
 	)
 	orgServiceGetRealGDPHandler := connect.NewUnaryHandler(
 		OrgServiceGetRealGDPProcedure,
 		svc.GetRealGDP,
-		connect.WithSchema(orgServiceGetRealGDPMethodDescriptor),
+		connect.WithSchema(orgServiceMethods.ByName("GetRealGDP")),
 		connect.WithHandlerOptions(opts...),
 	)
 	orgServiceSetRealGDPHandler := connect.NewUnaryHandler(
 		OrgServiceSetRealGDPProcedure,
 		svc.SetRealGDP,
-		connect.WithSchema(orgServiceSetRealGDPMethodDescriptor),
+		connect.WithSchema(orgServiceMethods.ByName("SetRealGDP")),
 		connect.WithHandlerOptions(opts...),
 	)
 	orgServiceGetUnemploymentHandler := connect.NewUnaryHandler(
 		OrgServiceGetUnemploymentProcedure,
 		svc.GetUnemployment,
-		connect.WithSchema(orgServiceGetUnemploymentMethodDescriptor),
+		connect.WithSchema(orgServiceMethods.ByName("GetUnemployment")),
 		connect.WithHandlerOptions(opts...),
 	)
 	orgServiceSetUnemploymentHandler := connect.NewUnaryHandler(
 		OrgServiceSetUnemploymentProcedure,
 		svc.SetUnemployment,
-		connect.WithSchema(orgServiceSetUnemploymentMethodDescriptor),
+		connect.WithSchema(orgServiceMethods.ByName("SetUnemployment")),
 		connect.WithHandlerOptions(opts...),
 	)
 	orgServiceGetWagesHandler := connect.NewUnaryHandler(
 		OrgServiceGetWagesProcedure,
 		svc.GetWages,
-		connect.WithSchema(orgServiceGetWagesMethodDescriptor),
+		connect.WithSchema(orgServiceMethods.ByName("GetWages")),
 		connect.WithHandlerOptions(opts...),
 	)
 	orgServiceSetWagesHandler := connect.NewUnaryHandler(
 		OrgServiceSetWagesProcedure,
 		svc.SetWages,
-		connect.WithSchema(orgServiceSetWagesMethodDescriptor),
+		connect.WithSchema(orgServiceMethods.ByName("SetWages")),
 		connect.WithHandlerOptions(opts...),
 	)
 	orgServiceGetPricesHandler := connect.NewUnaryHandler(
 		OrgServiceGetPricesProcedure,
 		svc.GetPrices,
-		connect.WithSchema(orgServiceGetPricesMethodDescriptor),
+		connect.WithSchema(orgServiceMethods.ByName("GetPrices")),
 		connect.WithHandlerOptions(opts...),
 	)
 	orgServiceSetPricesHandler := connect.NewUnaryHandler(
 		OrgServiceSetPricesProcedure,
 		svc.SetPrices,
-		connect.WithSchema(orgServiceSetPricesMethodDescriptor),
+		connect.WithSchema(orgServiceMethods.ByName("SetPrices")),
 		connect.WithHandlerOptions(opts...),
 	)
 	orgServiceGetInventoryHandler := connect.NewUnaryHandler(
 		OrgServiceGetInventoryProcedure,
 		svc.GetInventory,
-		connect.WithSchema(orgServiceGetInventoryMethodDescriptor),
+		connect.WithSchema(orgServiceMethods.ByName("GetInventory")),
 		connect.WithHandlerOptions(opts...),
 	)
 	orgServiceSetInventoryHandler := connect.NewUnaryHandler(
 		OrgServiceSetInventoryProcedure,
 		svc.SetInventory,
-		connect.WithSchema(orgServiceSetInventoryMethodDescriptor),
+		connect.WithSchema(orgServiceMethods.ByName("SetInventory")),
 		connect.WithHandlerOptions(opts...),
 	)
 	orgServiceAddInventoryHandler := connect.NewUnaryHandler(
 		OrgServiceAddInventoryProcedure,
 		svc.AddInventory,
-		connect.WithSchema(orgServiceAddInventoryMethodDescriptor),
+		connect.WithSchema(orgServiceMethods.ByName("AddInventory")),
 		connect.WithHandlerOptions(opts...),
 	)
 	orgServiceGetPriceHandler := connect.NewUnaryHandler(
 		OrgServiceGetPriceProcedure,
 		svc.GetPrice,
-		connect.WithSchema(orgServiceGetPriceMethodDescriptor),
+		connect.WithSchema(orgServiceMethods.ByName("GetPrice")),
 		connect.WithHandlerOptions(opts...),
 	)
 	orgServiceSetPriceHandler := connect.NewUnaryHandler(
 		OrgServiceSetPriceProcedure,
 		svc.SetPrice,
-		connect.WithSchema(orgServiceSetPriceMethodDescriptor),
+		connect.WithSchema(orgServiceMethods.ByName("SetPrice")),
 		connect.WithHandlerOptions(opts...),
 	)
 	orgServiceAddPriceHandler := connect.NewUnaryHandler(
 		OrgServiceAddPriceProcedure,
 		svc.AddPrice,
-		connect.WithSchema(orgServiceAddPriceMethodDescriptor),
+		connect.WithSchema(orgServiceMethods.ByName("AddPrice")),
 		connect.WithHandlerOptions(opts...),
 	)
 	orgServiceGetCurrencyHandler := connect.NewUnaryHandler(
 		OrgServiceGetCurrencyProcedure,
 		svc.GetCurrency,
-		connect.WithSchema(orgServiceGetCurrencyMethodDescriptor),
+		connect.WithSchema(orgServiceMethods.ByName("GetCurrency")),
 		connect.WithHandlerOptions(opts...),
 	)
 	orgServiceSetCurrencyHandler := connect.NewUnaryHandler(
 		OrgServiceSetCurrencyProcedure,
 		svc.SetCurrency,
-		connect.WithSchema(orgServiceSetCurrencyMethodDescriptor),
+		connect.WithSchema(orgServiceMethods.ByName("SetCurrency")),
 		connect.WithHandlerOptions(opts...),
 	)
 	orgServiceAddCurrencyHandler := connect.NewUnaryHandler(
 		OrgServiceAddCurrencyProcedure,
 		svc.AddCurrency,
-		connect.WithSchema(orgServiceAddCurrencyMethodDescriptor),
+		connect.WithSchema(orgServiceMethods.ByName("AddCurrency")),
 		connect.WithHandlerOptions(opts...),
 	)
 	orgServiceGetInterestRateHandler := connect.NewUnaryHandler(
 		OrgServiceGetInterestRateProcedure,
 		svc.GetInterestRate,
-		connect.WithSchema(orgServiceGetInterestRateMethodDescriptor),
+		connect.WithSchema(orgServiceMethods.ByName("GetInterestRate")),
 		connect.WithHandlerOptions(opts...),
 	)
 	orgServiceSetInterestRateHandler := connect.NewUnaryHandler(
 		OrgServiceSetInterestRateProcedure,
 		svc.SetInterestRate,
-		connect.WithSchema(orgServiceSetInterestRateMethodDescriptor),
+		connect.WithSchema(orgServiceMethods.ByName("SetInterestRate")),
 		connect.WithHandlerOptions(opts...),
 	)
 	orgServiceAddInterestRateHandler := connect.NewUnaryHandler(
 		OrgServiceAddInterestRateProcedure,
 		svc.AddInterestRate,
-		connect.WithSchema(orgServiceAddInterestRateMethodDescriptor),
+		connect.WithSchema(orgServiceMethods.ByName("AddInterestRate")),
 		connect.WithHandlerOptions(opts...),
 	)
 	orgServiceGetBracketCutoffsHandler := connect.NewUnaryHandler(
 		OrgServiceGetBracketCutoffsProcedure,
 		svc.GetBracketCutoffs,
-		connect.WithSchema(orgServiceGetBracketCutoffsMethodDescriptor),
+		connect.WithSchema(orgServiceMethods.ByName("GetBracketCutoffs")),
 		connect.WithHandlerOptions(opts...),
 	)
 	orgServiceSetBracketCutoffsHandler := connect.NewUnaryHandler(
 		OrgServiceSetBracketCutoffsProcedure,
 		svc.SetBracketCutoffs,
-		connect.WithSchema(orgServiceSetBracketCutoffsMethodDescriptor),
+		connect.WithSchema(orgServiceMethods.ByName("SetBracketCutoffs")),
 		connect.WithHandlerOptions(opts...),
 	)
 	orgServiceGetBracketRatesHandler := connect.NewUnaryHandler(
 		OrgServiceGetBracketRatesProcedure,
 		svc.GetBracketRates,
-		connect.WithSchema(orgServiceGetBracketRatesMethodDescriptor),
+		connect.WithSchema(orgServiceMethods.ByName("GetBracketRates")),
 		connect.WithHandlerOptions(opts...),
 	)
 	orgServiceSetBracketRatesHandler := connect.NewUnaryHandler(
 		OrgServiceSetBracketRatesProcedure,
 		svc.SetBracketRates,
-		connect.WithSchema(orgServiceSetBracketRatesMethodDescriptor),
+		connect.WithSchema(orgServiceMethods.ByName("SetBracketRates")),
 		connect.WithHandlerOptions(opts...),
 	)
 	orgServiceCalculateTaxesDueHandler := connect.NewUnaryHandler(
 		OrgServiceCalculateTaxesDueProcedure,
 		svc.CalculateTaxesDue,
-		connect.WithSchema(orgServiceCalculateTaxesDueMethodDescriptor),
+		connect.WithSchema(orgServiceMethods.ByName("CalculateTaxesDue")),
 		connect.WithHandlerOptions(opts...),
 	)
 	orgServiceCalculateConsumptionHandler := connect.NewUnaryHandler(
 		OrgServiceCalculateConsumptionProcedure,
 		svc.CalculateConsumption,
-		connect.WithSchema(orgServiceCalculateConsumptionMethodDescriptor),
+		connect.WithSchema(orgServiceMethods.ByName("CalculateConsumption")),
 		connect.WithHandlerOptions(opts...),
 	)
 	orgServiceCalculateInterestHandler := connect.NewUnaryHandler(
 		OrgServiceCalculateInterestProcedure,
 		svc.CalculateInterest,
-		connect.WithSchema(orgServiceCalculateInterestMethodDescriptor),
+		connect.WithSchema(orgServiceMethods.ByName("CalculateInterest")),
 		connect.WithHandlerOptions(opts...),
 	)
 	orgServiceSaveEconomyEntitiesHandler := connect.NewUnaryHandler(
 		OrgServiceSaveEconomyEntitiesProcedure,
 		svc.SaveEconomyEntities,
-		connect.WithSchema(orgServiceSaveEconomyEntitiesMethodDescriptor),
+		connect.WithSchema(orgServiceMethods.ByName("SaveEconomyEntities")),
 		connect.WithHandlerOptions(opts...),
 	)
 	orgServiceLoadEconomyEntitiesHandler := connect.NewUnaryHandler(
 		OrgServiceLoadEconomyEntitiesProcedure,
 		svc.LoadEconomyEntities,
-		connect.WithSchema(orgServiceLoadEconomyEntitiesMethodDescriptor),
+		connect.WithSchema(orgServiceMethods.ByName("LoadEconomyEntities")),
 		connect.WithHandlerOptions(opts...),
 	)
 	orgServiceGetConsumptionCurrencyHandler := connect.NewUnaryHandler(
 		OrgServiceGetConsumptionCurrencyProcedure,
 		svc.GetConsumptionCurrency,
-		connect.WithSchema(orgServiceGetConsumptionCurrencyMethodDescriptor),
+		connect.WithSchema(orgServiceMethods.ByName("GetConsumptionCurrency")),
 		connect.WithHandlerOptions(opts...),
 	)
 	orgServiceSetConsumptionCurrencyHandler := connect.NewUnaryHandler(
 		OrgServiceSetConsumptionCurrencyProcedure,
 		svc.SetConsumptionCurrency,
-		connect.WithSchema(orgServiceSetConsumptionCurrencyMethodDescriptor),
+		connect.WithSchema(orgServiceMethods.ByName("SetConsumptionCurrency")),
 		connect.WithHandlerOptions(opts...),
 	)
 	orgServiceGetConsumptionPropensityHandler := connect.NewUnaryHandler(
 		OrgServiceGetConsumptionPropensityProcedure,
 		svc.GetConsumptionPropensity,
-		connect.WithSchema(orgServiceGetConsumptionPropensityMethodDescriptor),
+		connect.WithSchema(orgServiceMethods.ByName("GetConsumptionPropensity")),
 		connect.WithHandlerOptions(opts...),
 	)
 	orgServiceSetConsumptionPropensityHandler := connect.NewUnaryHandler(
 		OrgServiceSetConsumptionPropensityProcedure,
 		svc.SetConsumptionPropensity,
-		connect.WithSchema(orgServiceSetConsumptionPropensityMethodDescriptor),
+		connect.WithSchema(orgServiceMethods.ByName("SetConsumptionPropensity")),
 		connect.WithHandlerOptions(opts...),
 	)
 	orgServiceGetIncomeCurrencyHandler := connect.NewUnaryHandler(
 		OrgServiceGetIncomeCurrencyProcedure,
 		svc.GetIncomeCurrency,
-		connect.WithSchema(orgServiceGetIncomeCurrencyMethodDescriptor),
+		connect.WithSchema(orgServiceMethods.ByName("GetIncomeCurrency")),
 		connect.WithHandlerOptions(opts...),
 	)
 	orgServiceSetIncomeCurrencyHandler := connect.NewUnaryHandler(
 		OrgServiceSetIncomeCurrencyProcedure,
 		svc.SetIncomeCurrency,
-		connect.WithSchema(orgServiceSetIncomeCurrencyMethodDescriptor),
+		connect.WithSchema(orgServiceMethods.ByName("SetIncomeCurrency")),
 		connect.WithHandlerOptions(opts...),
 	)
 	orgServiceGetDepressionHandler := connect.NewUnaryHandler(
 		OrgServiceGetDepressionProcedure,
 		svc.GetDepression,
-		connect.WithSchema(orgServiceGetDepressionMethodDescriptor),
+		connect.WithSchema(orgServiceMethods.ByName("GetDepression")),
 		connect.WithHandlerOptions(opts...),
 	)
 	orgServiceSetDepressionHandler := connect.NewUnaryHandler(
 		OrgServiceSetDepressionProcedure,
 		svc.SetDepression,
-		connect.WithSchema(orgServiceSetDepressionMethodDescriptor),
+		connect.WithSchema(orgServiceMethods.ByName("SetDepression")),
 		connect.WithHandlerOptions(opts...),
 	)
 	orgServiceGetLocusControlHandler := connect.NewUnaryHandler(
 		OrgServiceGetLocusControlProcedure,
 		svc.GetLocusControl,
-		connect.WithSchema(orgServiceGetLocusControlMethodDescriptor),
+		connect.WithSchema(orgServiceMethods.ByName("GetLocusControl")),
 		connect.WithHandlerOptions(opts...),
 	)
 	orgServiceSetLocusControlHandler := connect.NewUnaryHandler(
 		OrgServiceSetLocusControlProcedure,
 		svc.SetLocusControl,
-		connect.WithSchema(orgServiceSetLocusControlMethodDescriptor),
+		connect.WithSchema(orgServiceMethods.ByName("SetLocusControl")),
 		connect.WithHandlerOptions(opts...),
 	)
 	orgServiceGetWorkingHoursHandler := connect.NewUnaryHandler(
 		OrgServiceGetWorkingHoursProcedure,
 		svc.GetWorkingHours,
-		connect.WithSchema(orgServiceGetWorkingHoursMethodDescriptor),
+		connect.WithSchema(orgServiceMethods.ByName("GetWorkingHours")),
 		connect.WithHandlerOptions(opts...),
 	)
 	orgServiceSetWorkingHoursHandler := connect.NewUnaryHandler(
 		OrgServiceSetWorkingHoursProcedure,
 		svc.SetWorkingHours,
-		connect.WithSchema(orgServiceSetWorkingHoursMethodDescriptor),
+		connect.WithSchema(orgServiceMethods.ByName("SetWorkingHours")),
 		connect.WithHandlerOptions(opts...),
 	)
 	orgServiceGetOrgEntityIdsHandler := connect.NewUnaryHandler(
 		OrgServiceGetOrgEntityIdsProcedure,
 		svc.GetOrgEntityIds,
-		connect.WithSchema(orgServiceGetOrgEntityIdsMethodDescriptor),
+		connect.WithSchema(orgServiceMethods.ByName("GetOrgEntityIds")),
 		connect.WithHandlerOptions(opts...),
 	)
 	return "/city.economy.v2.OrgService/", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {

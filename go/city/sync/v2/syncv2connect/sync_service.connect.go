@@ -45,15 +45,6 @@ const (
 	SyncServiceExitStepSyncProcedure = "/city.sync.v2.SyncService/ExitStepSync"
 )
 
-// These variables are the protoreflect.Descriptor objects for the RPCs defined in this package.
-var (
-	syncServiceServiceDescriptor             = v2.File_city_sync_v2_sync_service_proto.Services().ByName("SyncService")
-	syncServiceSetURLMethodDescriptor        = syncServiceServiceDescriptor.Methods().ByName("SetURL")
-	syncServiceGetURLMethodDescriptor        = syncServiceServiceDescriptor.Methods().ByName("GetURL")
-	syncServiceEnterStepSyncMethodDescriptor = syncServiceServiceDescriptor.Methods().ByName("EnterStepSync")
-	syncServiceExitStepSyncMethodDescriptor  = syncServiceServiceDescriptor.Methods().ByName("ExitStepSync")
-)
-
 // SyncServiceClient is a client for the city.sync.v2.SyncService service.
 type SyncServiceClient interface {
 	// 注册程序URL
@@ -76,29 +67,30 @@ type SyncServiceClient interface {
 // http://api.acme.com or https://acme.com/grpc).
 func NewSyncServiceClient(httpClient connect.HTTPClient, baseURL string, opts ...connect.ClientOption) SyncServiceClient {
 	baseURL = strings.TrimRight(baseURL, "/")
+	syncServiceMethods := v2.File_city_sync_v2_sync_service_proto.Services().ByName("SyncService").Methods()
 	return &syncServiceClient{
 		setURL: connect.NewClient[v2.SetURLRequest, v2.SetURLResponse](
 			httpClient,
 			baseURL+SyncServiceSetURLProcedure,
-			connect.WithSchema(syncServiceSetURLMethodDescriptor),
+			connect.WithSchema(syncServiceMethods.ByName("SetURL")),
 			connect.WithClientOptions(opts...),
 		),
 		getURL: connect.NewClient[v2.GetURLRequest, v2.GetURLResponse](
 			httpClient,
 			baseURL+SyncServiceGetURLProcedure,
-			connect.WithSchema(syncServiceGetURLMethodDescriptor),
+			connect.WithSchema(syncServiceMethods.ByName("GetURL")),
 			connect.WithClientOptions(opts...),
 		),
 		enterStepSync: connect.NewClient[v2.EnterStepSyncRequest, v2.EnterStepSyncResponse](
 			httpClient,
 			baseURL+SyncServiceEnterStepSyncProcedure,
-			connect.WithSchema(syncServiceEnterStepSyncMethodDescriptor),
+			connect.WithSchema(syncServiceMethods.ByName("EnterStepSync")),
 			connect.WithClientOptions(opts...),
 		),
 		exitStepSync: connect.NewClient[v2.ExitStepSyncRequest, v2.ExitStepSyncResponse](
 			httpClient,
 			baseURL+SyncServiceExitStepSyncProcedure,
-			connect.WithSchema(syncServiceExitStepSyncMethodDescriptor),
+			connect.WithSchema(syncServiceMethods.ByName("ExitStepSync")),
 			connect.WithClientOptions(opts...),
 		),
 	}
@@ -151,28 +143,29 @@ type SyncServiceHandler interface {
 // By default, handlers support the Connect, gRPC, and gRPC-Web protocols with the binary Protobuf
 // and JSON codecs. They also support gzip compression.
 func NewSyncServiceHandler(svc SyncServiceHandler, opts ...connect.HandlerOption) (string, http.Handler) {
+	syncServiceMethods := v2.File_city_sync_v2_sync_service_proto.Services().ByName("SyncService").Methods()
 	syncServiceSetURLHandler := connect.NewUnaryHandler(
 		SyncServiceSetURLProcedure,
 		svc.SetURL,
-		connect.WithSchema(syncServiceSetURLMethodDescriptor),
+		connect.WithSchema(syncServiceMethods.ByName("SetURL")),
 		connect.WithHandlerOptions(opts...),
 	)
 	syncServiceGetURLHandler := connect.NewUnaryHandler(
 		SyncServiceGetURLProcedure,
 		svc.GetURL,
-		connect.WithSchema(syncServiceGetURLMethodDescriptor),
+		connect.WithSchema(syncServiceMethods.ByName("GetURL")),
 		connect.WithHandlerOptions(opts...),
 	)
 	syncServiceEnterStepSyncHandler := connect.NewUnaryHandler(
 		SyncServiceEnterStepSyncProcedure,
 		svc.EnterStepSync,
-		connect.WithSchema(syncServiceEnterStepSyncMethodDescriptor),
+		connect.WithSchema(syncServiceMethods.ByName("EnterStepSync")),
 		connect.WithHandlerOptions(opts...),
 	)
 	syncServiceExitStepSyncHandler := connect.NewUnaryHandler(
 		SyncServiceExitStepSyncProcedure,
 		svc.ExitStepSync,
-		connect.WithSchema(syncServiceExitStepSyncMethodDescriptor),
+		connect.WithSchema(syncServiceMethods.ByName("ExitStepSync")),
 		connect.WithHandlerOptions(opts...),
 	)
 	return "/city.sync.v2.SyncService/", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {

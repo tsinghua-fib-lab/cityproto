@@ -39,13 +39,6 @@ const (
 	EventServicePullProcedure = "/city.event.v1.EventService/Pull"
 )
 
-// These variables are the protoreflect.Descriptor objects for the RPCs defined in this package.
-var (
-	eventServiceServiceDescriptor       = v1.File_city_event_v1_event_service_proto.Services().ByName("EventService")
-	eventServicePublishMethodDescriptor = eventServiceServiceDescriptor.Methods().ByName("Publish")
-	eventServicePullMethodDescriptor    = eventServiceServiceDescriptor.Methods().ByName("Pull")
-)
-
 // EventServiceClient is a client for the city.event.v1.EventService service.
 type EventServiceClient interface {
 	// 发布事件
@@ -63,17 +56,18 @@ type EventServiceClient interface {
 // http://api.acme.com or https://acme.com/grpc).
 func NewEventServiceClient(httpClient connect.HTTPClient, baseURL string, opts ...connect.ClientOption) EventServiceClient {
 	baseURL = strings.TrimRight(baseURL, "/")
+	eventServiceMethods := v1.File_city_event_v1_event_service_proto.Services().ByName("EventService").Methods()
 	return &eventServiceClient{
 		publish: connect.NewClient[v1.PublishRequest, v1.PublishResponse](
 			httpClient,
 			baseURL+EventServicePublishProcedure,
-			connect.WithSchema(eventServicePublishMethodDescriptor),
+			connect.WithSchema(eventServiceMethods.ByName("Publish")),
 			connect.WithClientOptions(opts...),
 		),
 		pull: connect.NewClient[v1.PullRequest, v1.PullResponse](
 			httpClient,
 			baseURL+EventServicePullProcedure,
-			connect.WithSchema(eventServicePullMethodDescriptor),
+			connect.WithSchema(eventServiceMethods.ByName("Pull")),
 			connect.WithClientOptions(opts...),
 		),
 	}
@@ -109,16 +103,17 @@ type EventServiceHandler interface {
 // By default, handlers support the Connect, gRPC, and gRPC-Web protocols with the binary Protobuf
 // and JSON codecs. They also support gzip compression.
 func NewEventServiceHandler(svc EventServiceHandler, opts ...connect.HandlerOption) (string, http.Handler) {
+	eventServiceMethods := v1.File_city_event_v1_event_service_proto.Services().ByName("EventService").Methods()
 	eventServicePublishHandler := connect.NewUnaryHandler(
 		EventServicePublishProcedure,
 		svc.Publish,
-		connect.WithSchema(eventServicePublishMethodDescriptor),
+		connect.WithSchema(eventServiceMethods.ByName("Publish")),
 		connect.WithHandlerOptions(opts...),
 	)
 	eventServicePullHandler := connect.NewUnaryHandler(
 		EventServicePullProcedure,
 		svc.Pull,
-		connect.WithSchema(eventServicePullMethodDescriptor),
+		connect.WithSchema(eventServiceMethods.ByName("Pull")),
 		connect.WithHandlerOptions(opts...),
 	)
 	return "/city.event.v1.EventService/", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {

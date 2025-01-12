@@ -50,16 +50,6 @@ const (
 	GatewayServiceGetEventsProcedure = "/city.comm.interaction.gateway.v1.GatewayService/GetEvents"
 )
 
-// These variables are the protoreflect.Descriptor objects for the RPCs defined in this package.
-var (
-	gatewayServiceServiceDescriptor                     = v1.File_city_comm_interaction_gateway_v1_gateway_service_proto.Services().ByName("GatewayService")
-	gatewayServiceSetGatewayPowerStatusMethodDescriptor = gatewayServiceServiceDescriptor.Methods().ByName("SetGatewayPowerStatus")
-	gatewayServiceSetGatewayRuinStatusMethodDescriptor  = gatewayServiceServiceDescriptor.Methods().ByName("SetGatewayRuinStatus")
-	gatewayServiceGetAllStatusMethodDescriptor          = gatewayServiceServiceDescriptor.Methods().ByName("GetAllStatus")
-	gatewayServiceGetRuinInfoMethodDescriptor           = gatewayServiceServiceDescriptor.Methods().ByName("GetRuinInfo")
-	gatewayServiceGetEventsMethodDescriptor             = gatewayServiceServiceDescriptor.Methods().ByName("GetEvents")
-)
-
 // GatewayServiceClient is a client for the city.comm.interaction.gateway.v1.GatewayService service.
 type GatewayServiceClient interface {
 	SetGatewayPowerStatus(context.Context, *connect.Request[v1.SetGatewayPowerStatusRequest]) (*connect.Response[v1.SetGatewayPowerStatusResponse], error)
@@ -79,35 +69,36 @@ type GatewayServiceClient interface {
 // http://api.acme.com or https://acme.com/grpc).
 func NewGatewayServiceClient(httpClient connect.HTTPClient, baseURL string, opts ...connect.ClientOption) GatewayServiceClient {
 	baseURL = strings.TrimRight(baseURL, "/")
+	gatewayServiceMethods := v1.File_city_comm_interaction_gateway_v1_gateway_service_proto.Services().ByName("GatewayService").Methods()
 	return &gatewayServiceClient{
 		setGatewayPowerStatus: connect.NewClient[v1.SetGatewayPowerStatusRequest, v1.SetGatewayPowerStatusResponse](
 			httpClient,
 			baseURL+GatewayServiceSetGatewayPowerStatusProcedure,
-			connect.WithSchema(gatewayServiceSetGatewayPowerStatusMethodDescriptor),
+			connect.WithSchema(gatewayServiceMethods.ByName("SetGatewayPowerStatus")),
 			connect.WithClientOptions(opts...),
 		),
 		setGatewayRuinStatus: connect.NewClient[v1.SetGatewayRuinStatusRequest, v1.SetGatewayRuinStatusResponse](
 			httpClient,
 			baseURL+GatewayServiceSetGatewayRuinStatusProcedure,
-			connect.WithSchema(gatewayServiceSetGatewayRuinStatusMethodDescriptor),
+			connect.WithSchema(gatewayServiceMethods.ByName("SetGatewayRuinStatus")),
 			connect.WithClientOptions(opts...),
 		),
 		getAllStatus: connect.NewClient[v1.GetAllStatusRequest, v1.GetAllStatusResponse](
 			httpClient,
 			baseURL+GatewayServiceGetAllStatusProcedure,
-			connect.WithSchema(gatewayServiceGetAllStatusMethodDescriptor),
+			connect.WithSchema(gatewayServiceMethods.ByName("GetAllStatus")),
 			connect.WithClientOptions(opts...),
 		),
 		getRuinInfo: connect.NewClient[v1.GetRuinInfoRequest, v1.GetRuinInfoResponse](
 			httpClient,
 			baseURL+GatewayServiceGetRuinInfoProcedure,
-			connect.WithSchema(gatewayServiceGetRuinInfoMethodDescriptor),
+			connect.WithSchema(gatewayServiceMethods.ByName("GetRuinInfo")),
 			connect.WithClientOptions(opts...),
 		),
 		getEvents: connect.NewClient[v1.GetEventsRequest, v1.GetEventsResponse](
 			httpClient,
 			baseURL+GatewayServiceGetEventsProcedure,
-			connect.WithSchema(gatewayServiceGetEventsMethodDescriptor),
+			connect.WithSchema(gatewayServiceMethods.ByName("GetEvents")),
 			connect.WithClientOptions(opts...),
 		),
 	}
@@ -164,34 +155,35 @@ type GatewayServiceHandler interface {
 // By default, handlers support the Connect, gRPC, and gRPC-Web protocols with the binary Protobuf
 // and JSON codecs. They also support gzip compression.
 func NewGatewayServiceHandler(svc GatewayServiceHandler, opts ...connect.HandlerOption) (string, http.Handler) {
+	gatewayServiceMethods := v1.File_city_comm_interaction_gateway_v1_gateway_service_proto.Services().ByName("GatewayService").Methods()
 	gatewayServiceSetGatewayPowerStatusHandler := connect.NewUnaryHandler(
 		GatewayServiceSetGatewayPowerStatusProcedure,
 		svc.SetGatewayPowerStatus,
-		connect.WithSchema(gatewayServiceSetGatewayPowerStatusMethodDescriptor),
+		connect.WithSchema(gatewayServiceMethods.ByName("SetGatewayPowerStatus")),
 		connect.WithHandlerOptions(opts...),
 	)
 	gatewayServiceSetGatewayRuinStatusHandler := connect.NewUnaryHandler(
 		GatewayServiceSetGatewayRuinStatusProcedure,
 		svc.SetGatewayRuinStatus,
-		connect.WithSchema(gatewayServiceSetGatewayRuinStatusMethodDescriptor),
+		connect.WithSchema(gatewayServiceMethods.ByName("SetGatewayRuinStatus")),
 		connect.WithHandlerOptions(opts...),
 	)
 	gatewayServiceGetAllStatusHandler := connect.NewUnaryHandler(
 		GatewayServiceGetAllStatusProcedure,
 		svc.GetAllStatus,
-		connect.WithSchema(gatewayServiceGetAllStatusMethodDescriptor),
+		connect.WithSchema(gatewayServiceMethods.ByName("GetAllStatus")),
 		connect.WithHandlerOptions(opts...),
 	)
 	gatewayServiceGetRuinInfoHandler := connect.NewUnaryHandler(
 		GatewayServiceGetRuinInfoProcedure,
 		svc.GetRuinInfo,
-		connect.WithSchema(gatewayServiceGetRuinInfoMethodDescriptor),
+		connect.WithSchema(gatewayServiceMethods.ByName("GetRuinInfo")),
 		connect.WithHandlerOptions(opts...),
 	)
 	gatewayServiceGetEventsHandler := connect.NewUnaryHandler(
 		GatewayServiceGetEventsProcedure,
 		svc.GetEvents,
-		connect.WithSchema(gatewayServiceGetEventsMethodDescriptor),
+		connect.WithSchema(gatewayServiceMethods.ByName("GetEvents")),
 		connect.WithHandlerOptions(opts...),
 	)
 	return "/city.comm.interaction.gateway.v1.GatewayService/", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {

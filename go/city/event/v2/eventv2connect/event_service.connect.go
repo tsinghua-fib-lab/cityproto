@@ -41,13 +41,6 @@ const (
 	EventServiceResolveEventsProcedure = "/city.event.v2.EventService/ResolveEvents"
 )
 
-// These variables are the protoreflect.Descriptor objects for the RPCs defined in this package.
-var (
-	eventServiceServiceDescriptor                = v2.File_city_event_v2_event_service_proto.Services().ByName("EventService")
-	eventServiceGetEventsByTopicMethodDescriptor = eventServiceServiceDescriptor.Methods().ByName("GetEventsByTopic")
-	eventServiceResolveEventsMethodDescriptor    = eventServiceServiceDescriptor.Methods().ByName("ResolveEvents")
-)
-
 // EventServiceClient is a client for the city.event.v2.EventService service.
 type EventServiceClient interface {
 	// 按照topic查询事件
@@ -65,17 +58,18 @@ type EventServiceClient interface {
 // http://api.acme.com or https://acme.com/grpc).
 func NewEventServiceClient(httpClient connect.HTTPClient, baseURL string, opts ...connect.ClientOption) EventServiceClient {
 	baseURL = strings.TrimRight(baseURL, "/")
+	eventServiceMethods := v2.File_city_event_v2_event_service_proto.Services().ByName("EventService").Methods()
 	return &eventServiceClient{
 		getEventsByTopic: connect.NewClient[v2.GetEventsByTopicRequest, v2.GetEventsByTopicResponse](
 			httpClient,
 			baseURL+EventServiceGetEventsByTopicProcedure,
-			connect.WithSchema(eventServiceGetEventsByTopicMethodDescriptor),
+			connect.WithSchema(eventServiceMethods.ByName("GetEventsByTopic")),
 			connect.WithClientOptions(opts...),
 		),
 		resolveEvents: connect.NewClient[v2.ResolveEventsRequest, v2.ResolveEventsResponse](
 			httpClient,
 			baseURL+EventServiceResolveEventsProcedure,
-			connect.WithSchema(eventServiceResolveEventsMethodDescriptor),
+			connect.WithSchema(eventServiceMethods.ByName("ResolveEvents")),
 			connect.WithClientOptions(opts...),
 		),
 	}
@@ -111,16 +105,17 @@ type EventServiceHandler interface {
 // By default, handlers support the Connect, gRPC, and gRPC-Web protocols with the binary Protobuf
 // and JSON codecs. They also support gzip compression.
 func NewEventServiceHandler(svc EventServiceHandler, opts ...connect.HandlerOption) (string, http.Handler) {
+	eventServiceMethods := v2.File_city_event_v2_event_service_proto.Services().ByName("EventService").Methods()
 	eventServiceGetEventsByTopicHandler := connect.NewUnaryHandler(
 		EventServiceGetEventsByTopicProcedure,
 		svc.GetEventsByTopic,
-		connect.WithSchema(eventServiceGetEventsByTopicMethodDescriptor),
+		connect.WithSchema(eventServiceMethods.ByName("GetEventsByTopic")),
 		connect.WithHandlerOptions(opts...),
 	)
 	eventServiceResolveEventsHandler := connect.NewUnaryHandler(
 		EventServiceResolveEventsProcedure,
 		svc.ResolveEvents,
-		connect.WithSchema(eventServiceResolveEventsMethodDescriptor),
+		connect.WithSchema(eventServiceMethods.ByName("ResolveEvents")),
 		connect.WithHandlerOptions(opts...),
 	)
 	return "/city.event.v2.EventService/", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {

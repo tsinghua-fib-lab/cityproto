@@ -45,15 +45,6 @@ const (
 	LaneServiceGetLaneByLongLatBBoxProcedure = "/city.map.v2.LaneService/GetLaneByLongLatBBox"
 )
 
-// These variables are the protoreflect.Descriptor objects for the RPCs defined in this package.
-var (
-	laneServiceServiceDescriptor                    = v2.File_city_map_v2_lane_service_proto.Services().ByName("LaneService")
-	laneServiceSetLaneMaxVMethodDescriptor          = laneServiceServiceDescriptor.Methods().ByName("SetLaneMaxV")
-	laneServiceSetLaneRestrictionMethodDescriptor   = laneServiceServiceDescriptor.Methods().ByName("SetLaneRestriction")
-	laneServiceGetLaneMethodDescriptor              = laneServiceServiceDescriptor.Methods().ByName("GetLane")
-	laneServiceGetLaneByLongLatBBoxMethodDescriptor = laneServiceServiceDescriptor.Methods().ByName("GetLaneByLongLatBBox")
-)
-
 // LaneServiceClient is a client for the city.map.v2.LaneService service.
 type LaneServiceClient interface {
 	// 设置Lane的最大速度（限速）
@@ -79,29 +70,30 @@ type LaneServiceClient interface {
 // http://api.acme.com or https://acme.com/grpc).
 func NewLaneServiceClient(httpClient connect.HTTPClient, baseURL string, opts ...connect.ClientOption) LaneServiceClient {
 	baseURL = strings.TrimRight(baseURL, "/")
+	laneServiceMethods := v2.File_city_map_v2_lane_service_proto.Services().ByName("LaneService").Methods()
 	return &laneServiceClient{
 		setLaneMaxV: connect.NewClient[v2.SetLaneMaxVRequest, v2.SetLaneMaxVResponse](
 			httpClient,
 			baseURL+LaneServiceSetLaneMaxVProcedure,
-			connect.WithSchema(laneServiceSetLaneMaxVMethodDescriptor),
+			connect.WithSchema(laneServiceMethods.ByName("SetLaneMaxV")),
 			connect.WithClientOptions(opts...),
 		),
 		setLaneRestriction: connect.NewClient[v2.SetLaneRestrictionRequest, v2.SetLaneRestrictionResponse](
 			httpClient,
 			baseURL+LaneServiceSetLaneRestrictionProcedure,
-			connect.WithSchema(laneServiceSetLaneRestrictionMethodDescriptor),
+			connect.WithSchema(laneServiceMethods.ByName("SetLaneRestriction")),
 			connect.WithClientOptions(opts...),
 		),
 		getLane: connect.NewClient[v2.GetLaneRequest, v2.GetLaneResponse](
 			httpClient,
 			baseURL+LaneServiceGetLaneProcedure,
-			connect.WithSchema(laneServiceGetLaneMethodDescriptor),
+			connect.WithSchema(laneServiceMethods.ByName("GetLane")),
 			connect.WithClientOptions(opts...),
 		),
 		getLaneByLongLatBBox: connect.NewClient[v2.GetLaneByLongLatBBoxRequest, v2.GetLaneByLongLatBBoxResponse](
 			httpClient,
 			baseURL+LaneServiceGetLaneByLongLatBBoxProcedure,
-			connect.WithSchema(laneServiceGetLaneByLongLatBBoxMethodDescriptor),
+			connect.WithSchema(laneServiceMethods.ByName("GetLaneByLongLatBBox")),
 			connect.WithClientOptions(opts...),
 		),
 	}
@@ -157,28 +149,29 @@ type LaneServiceHandler interface {
 // By default, handlers support the Connect, gRPC, and gRPC-Web protocols with the binary Protobuf
 // and JSON codecs. They also support gzip compression.
 func NewLaneServiceHandler(svc LaneServiceHandler, opts ...connect.HandlerOption) (string, http.Handler) {
+	laneServiceMethods := v2.File_city_map_v2_lane_service_proto.Services().ByName("LaneService").Methods()
 	laneServiceSetLaneMaxVHandler := connect.NewUnaryHandler(
 		LaneServiceSetLaneMaxVProcedure,
 		svc.SetLaneMaxV,
-		connect.WithSchema(laneServiceSetLaneMaxVMethodDescriptor),
+		connect.WithSchema(laneServiceMethods.ByName("SetLaneMaxV")),
 		connect.WithHandlerOptions(opts...),
 	)
 	laneServiceSetLaneRestrictionHandler := connect.NewUnaryHandler(
 		LaneServiceSetLaneRestrictionProcedure,
 		svc.SetLaneRestriction,
-		connect.WithSchema(laneServiceSetLaneRestrictionMethodDescriptor),
+		connect.WithSchema(laneServiceMethods.ByName("SetLaneRestriction")),
 		connect.WithHandlerOptions(opts...),
 	)
 	laneServiceGetLaneHandler := connect.NewUnaryHandler(
 		LaneServiceGetLaneProcedure,
 		svc.GetLane,
-		connect.WithSchema(laneServiceGetLaneMethodDescriptor),
+		connect.WithSchema(laneServiceMethods.ByName("GetLane")),
 		connect.WithHandlerOptions(opts...),
 	)
 	laneServiceGetLaneByLongLatBBoxHandler := connect.NewUnaryHandler(
 		LaneServiceGetLaneByLongLatBBoxProcedure,
 		svc.GetLaneByLongLatBBox,
-		connect.WithSchema(laneServiceGetLaneByLongLatBBoxMethodDescriptor),
+		connect.WithSchema(laneServiceMethods.ByName("GetLaneByLongLatBBox")),
 		connect.WithHandlerOptions(opts...),
 	)
 	return "/city.map.v2.LaneService/", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {

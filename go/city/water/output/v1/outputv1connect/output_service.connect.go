@@ -37,12 +37,6 @@ const (
 	OutputServiceOutputProcedure = "/city.water.output.v1.OutputService/Output"
 )
 
-// These variables are the protoreflect.Descriptor objects for the RPCs defined in this package.
-var (
-	outputServiceServiceDescriptor      = v1.File_city_water_output_v1_output_service_proto.Services().ByName("OutputService")
-	outputServiceOutputMethodDescriptor = outputServiceServiceDescriptor.Methods().ByName("Output")
-)
-
 // OutputServiceClient is a client for the city.water.output.v1.OutputService service.
 type OutputServiceClient interface {
 	Output(context.Context, *connect.Request[v1.OutputRequest]) (*connect.Response[v1.OutputResponse], error)
@@ -57,11 +51,12 @@ type OutputServiceClient interface {
 // http://api.acme.com or https://acme.com/grpc).
 func NewOutputServiceClient(httpClient connect.HTTPClient, baseURL string, opts ...connect.ClientOption) OutputServiceClient {
 	baseURL = strings.TrimRight(baseURL, "/")
+	outputServiceMethods := v1.File_city_water_output_v1_output_service_proto.Services().ByName("OutputService").Methods()
 	return &outputServiceClient{
 		output: connect.NewClient[v1.OutputRequest, v1.OutputResponse](
 			httpClient,
 			baseURL+OutputServiceOutputProcedure,
-			connect.WithSchema(outputServiceOutputMethodDescriptor),
+			connect.WithSchema(outputServiceMethods.ByName("Output")),
 			connect.WithClientOptions(opts...),
 		),
 	}
@@ -88,10 +83,11 @@ type OutputServiceHandler interface {
 // By default, handlers support the Connect, gRPC, and gRPC-Web protocols with the binary Protobuf
 // and JSON codecs. They also support gzip compression.
 func NewOutputServiceHandler(svc OutputServiceHandler, opts ...connect.HandlerOption) (string, http.Handler) {
+	outputServiceMethods := v1.File_city_water_output_v1_output_service_proto.Services().ByName("OutputService").Methods()
 	outputServiceOutputHandler := connect.NewUnaryHandler(
 		OutputServiceOutputProcedure,
 		svc.Output,
-		connect.WithSchema(outputServiceOutputMethodDescriptor),
+		connect.WithSchema(outputServiceMethods.ByName("Output")),
 		connect.WithHandlerOptions(opts...),
 	)
 	return "/city.water.output.v1.OutputService/", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {

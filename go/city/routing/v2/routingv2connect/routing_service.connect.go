@@ -43,14 +43,6 @@ const (
 	RoutingServiceGetDrivingCostsProcedure = "/city.routing.v2.RoutingService/GetDrivingCosts"
 )
 
-// These variables are the protoreflect.Descriptor objects for the RPCs defined in this package.
-var (
-	routingServiceServiceDescriptor               = v2.File_city_routing_v2_routing_service_proto.Services().ByName("RoutingService")
-	routingServiceGetRouteMethodDescriptor        = routingServiceServiceDescriptor.Methods().ByName("GetRoute")
-	routingServiceSetDrivingCostsMethodDescriptor = routingServiceServiceDescriptor.Methods().ByName("SetDrivingCosts")
-	routingServiceGetDrivingCostsMethodDescriptor = routingServiceServiceDescriptor.Methods().ByName("GetDrivingCosts")
-)
-
 // RoutingServiceClient is a client for the city.routing.v2.RoutingService service.
 type RoutingServiceClient interface {
 	// 获取导航路线
@@ -73,23 +65,24 @@ type RoutingServiceClient interface {
 // http://api.acme.com or https://acme.com/grpc).
 func NewRoutingServiceClient(httpClient connect.HTTPClient, baseURL string, opts ...connect.ClientOption) RoutingServiceClient {
 	baseURL = strings.TrimRight(baseURL, "/")
+	routingServiceMethods := v2.File_city_routing_v2_routing_service_proto.Services().ByName("RoutingService").Methods()
 	return &routingServiceClient{
 		getRoute: connect.NewClient[v2.GetRouteRequest, v2.GetRouteResponse](
 			httpClient,
 			baseURL+RoutingServiceGetRouteProcedure,
-			connect.WithSchema(routingServiceGetRouteMethodDescriptor),
+			connect.WithSchema(routingServiceMethods.ByName("GetRoute")),
 			connect.WithClientOptions(opts...),
 		),
 		setDrivingCosts: connect.NewClient[v2.SetDrivingCostsRequest, v2.SetDrivingCostsResponse](
 			httpClient,
 			baseURL+RoutingServiceSetDrivingCostsProcedure,
-			connect.WithSchema(routingServiceSetDrivingCostsMethodDescriptor),
+			connect.WithSchema(routingServiceMethods.ByName("SetDrivingCosts")),
 			connect.WithClientOptions(opts...),
 		),
 		getDrivingCosts: connect.NewClient[v2.GetDrivingCostsRequest, v2.GetDrivingCostsResponse](
 			httpClient,
 			baseURL+RoutingServiceGetDrivingCostsProcedure,
-			connect.WithSchema(routingServiceGetDrivingCostsMethodDescriptor),
+			connect.WithSchema(routingServiceMethods.ByName("GetDrivingCosts")),
 			connect.WithClientOptions(opts...),
 		),
 	}
@@ -136,22 +129,23 @@ type RoutingServiceHandler interface {
 // By default, handlers support the Connect, gRPC, and gRPC-Web protocols with the binary Protobuf
 // and JSON codecs. They also support gzip compression.
 func NewRoutingServiceHandler(svc RoutingServiceHandler, opts ...connect.HandlerOption) (string, http.Handler) {
+	routingServiceMethods := v2.File_city_routing_v2_routing_service_proto.Services().ByName("RoutingService").Methods()
 	routingServiceGetRouteHandler := connect.NewUnaryHandler(
 		RoutingServiceGetRouteProcedure,
 		svc.GetRoute,
-		connect.WithSchema(routingServiceGetRouteMethodDescriptor),
+		connect.WithSchema(routingServiceMethods.ByName("GetRoute")),
 		connect.WithHandlerOptions(opts...),
 	)
 	routingServiceSetDrivingCostsHandler := connect.NewUnaryHandler(
 		RoutingServiceSetDrivingCostsProcedure,
 		svc.SetDrivingCosts,
-		connect.WithSchema(routingServiceSetDrivingCostsMethodDescriptor),
+		connect.WithSchema(routingServiceMethods.ByName("SetDrivingCosts")),
 		connect.WithHandlerOptions(opts...),
 	)
 	routingServiceGetDrivingCostsHandler := connect.NewUnaryHandler(
 		RoutingServiceGetDrivingCostsProcedure,
 		svc.GetDrivingCosts,
-		connect.WithSchema(routingServiceGetDrivingCostsMethodDescriptor),
+		connect.WithSchema(routingServiceMethods.ByName("GetDrivingCosts")),
 		connect.WithHandlerOptions(opts...),
 	)
 	return "/city.routing.v2.RoutingService/", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {

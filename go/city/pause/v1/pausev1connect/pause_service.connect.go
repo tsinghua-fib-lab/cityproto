@@ -39,13 +39,6 @@ const (
 	PauseServiceResumeProcedure = "/city.pause.v1.PauseService/Resume"
 )
 
-// These variables are the protoreflect.Descriptor objects for the RPCs defined in this package.
-var (
-	pauseServiceServiceDescriptor      = v1.File_city_pause_v1_pause_service_proto.Services().ByName("PauseService")
-	pauseServicePauseMethodDescriptor  = pauseServiceServiceDescriptor.Methods().ByName("Pause")
-	pauseServiceResumeMethodDescriptor = pauseServiceServiceDescriptor.Methods().ByName("Resume")
-)
-
 // PauseServiceClient is a client for the city.pause.v1.PauseService service.
 type PauseServiceClient interface {
 	// 暂停程序
@@ -65,17 +58,18 @@ type PauseServiceClient interface {
 // http://api.acme.com or https://acme.com/grpc).
 func NewPauseServiceClient(httpClient connect.HTTPClient, baseURL string, opts ...connect.ClientOption) PauseServiceClient {
 	baseURL = strings.TrimRight(baseURL, "/")
+	pauseServiceMethods := v1.File_city_pause_v1_pause_service_proto.Services().ByName("PauseService").Methods()
 	return &pauseServiceClient{
 		pause: connect.NewClient[v1.PauseRequest, v1.PauseResponse](
 			httpClient,
 			baseURL+PauseServicePauseProcedure,
-			connect.WithSchema(pauseServicePauseMethodDescriptor),
+			connect.WithSchema(pauseServiceMethods.ByName("Pause")),
 			connect.WithClientOptions(opts...),
 		),
 		resume: connect.NewClient[v1.ResumeRequest, v1.ResumeResponse](
 			httpClient,
 			baseURL+PauseServiceResumeProcedure,
-			connect.WithSchema(pauseServiceResumeMethodDescriptor),
+			connect.WithSchema(pauseServiceMethods.ByName("Resume")),
 			connect.WithClientOptions(opts...),
 		),
 	}
@@ -113,16 +107,17 @@ type PauseServiceHandler interface {
 // By default, handlers support the Connect, gRPC, and gRPC-Web protocols with the binary Protobuf
 // and JSON codecs. They also support gzip compression.
 func NewPauseServiceHandler(svc PauseServiceHandler, opts ...connect.HandlerOption) (string, http.Handler) {
+	pauseServiceMethods := v1.File_city_pause_v1_pause_service_proto.Services().ByName("PauseService").Methods()
 	pauseServicePauseHandler := connect.NewUnaryHandler(
 		PauseServicePauseProcedure,
 		svc.Pause,
-		connect.WithSchema(pauseServicePauseMethodDescriptor),
+		connect.WithSchema(pauseServiceMethods.ByName("Pause")),
 		connect.WithHandlerOptions(opts...),
 	)
 	pauseServiceResumeHandler := connect.NewUnaryHandler(
 		PauseServiceResumeProcedure,
 		svc.Resume,
-		connect.WithSchema(pauseServiceResumeMethodDescriptor),
+		connect.WithSchema(pauseServiceMethods.ByName("Resume")),
 		connect.WithHandlerOptions(opts...),
 	)
 	return "/city.pause.v1.PauseService/", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {

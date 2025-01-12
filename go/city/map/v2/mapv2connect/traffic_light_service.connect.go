@@ -47,15 +47,6 @@ const (
 	TrafficLightServiceSetTrafficLightStatusProcedure = "/city.map.v2.TrafficLightService/SetTrafficLightStatus"
 )
 
-// These variables are the protoreflect.Descriptor objects for the RPCs defined in this package.
-var (
-	trafficLightServiceServiceDescriptor                     = v2.File_city_map_v2_traffic_light_service_proto.Services().ByName("TrafficLightService")
-	trafficLightServiceGetTrafficLightMethodDescriptor       = trafficLightServiceServiceDescriptor.Methods().ByName("GetTrafficLight")
-	trafficLightServiceSetTrafficLightMethodDescriptor       = trafficLightServiceServiceDescriptor.Methods().ByName("SetTrafficLight")
-	trafficLightServiceSetTrafficLightPhaseMethodDescriptor  = trafficLightServiceServiceDescriptor.Methods().ByName("SetTrafficLightPhase")
-	trafficLightServiceSetTrafficLightStatusMethodDescriptor = trafficLightServiceServiceDescriptor.Methods().ByName("SetTrafficLightStatus")
-)
-
 // TrafficLightServiceClient is a client for the city.map.v2.TrafficLightService service.
 type TrafficLightServiceClient interface {
 	// 获取路口的红绿灯信息
@@ -81,29 +72,30 @@ type TrafficLightServiceClient interface {
 // http://api.acme.com or https://acme.com/grpc).
 func NewTrafficLightServiceClient(httpClient connect.HTTPClient, baseURL string, opts ...connect.ClientOption) TrafficLightServiceClient {
 	baseURL = strings.TrimRight(baseURL, "/")
+	trafficLightServiceMethods := v2.File_city_map_v2_traffic_light_service_proto.Services().ByName("TrafficLightService").Methods()
 	return &trafficLightServiceClient{
 		getTrafficLight: connect.NewClient[v2.GetTrafficLightRequest, v2.GetTrafficLightResponse](
 			httpClient,
 			baseURL+TrafficLightServiceGetTrafficLightProcedure,
-			connect.WithSchema(trafficLightServiceGetTrafficLightMethodDescriptor),
+			connect.WithSchema(trafficLightServiceMethods.ByName("GetTrafficLight")),
 			connect.WithClientOptions(opts...),
 		),
 		setTrafficLight: connect.NewClient[v2.SetTrafficLightRequest, v2.SetTrafficLightResponse](
 			httpClient,
 			baseURL+TrafficLightServiceSetTrafficLightProcedure,
-			connect.WithSchema(trafficLightServiceSetTrafficLightMethodDescriptor),
+			connect.WithSchema(trafficLightServiceMethods.ByName("SetTrafficLight")),
 			connect.WithClientOptions(opts...),
 		),
 		setTrafficLightPhase: connect.NewClient[v2.SetTrafficLightPhaseRequest, v2.SetTrafficLightPhaseResponse](
 			httpClient,
 			baseURL+TrafficLightServiceSetTrafficLightPhaseProcedure,
-			connect.WithSchema(trafficLightServiceSetTrafficLightPhaseMethodDescriptor),
+			connect.WithSchema(trafficLightServiceMethods.ByName("SetTrafficLightPhase")),
 			connect.WithClientOptions(opts...),
 		),
 		setTrafficLightStatus: connect.NewClient[v2.SetTrafficLightStatusRequest, v2.SetTrafficLightStatusResponse](
 			httpClient,
 			baseURL+TrafficLightServiceSetTrafficLightStatusProcedure,
-			connect.WithSchema(trafficLightServiceSetTrafficLightStatusMethodDescriptor),
+			connect.WithSchema(trafficLightServiceMethods.ByName("SetTrafficLightStatus")),
 			connect.WithClientOptions(opts...),
 		),
 	}
@@ -159,28 +151,29 @@ type TrafficLightServiceHandler interface {
 // By default, handlers support the Connect, gRPC, and gRPC-Web protocols with the binary Protobuf
 // and JSON codecs. They also support gzip compression.
 func NewTrafficLightServiceHandler(svc TrafficLightServiceHandler, opts ...connect.HandlerOption) (string, http.Handler) {
+	trafficLightServiceMethods := v2.File_city_map_v2_traffic_light_service_proto.Services().ByName("TrafficLightService").Methods()
 	trafficLightServiceGetTrafficLightHandler := connect.NewUnaryHandler(
 		TrafficLightServiceGetTrafficLightProcedure,
 		svc.GetTrafficLight,
-		connect.WithSchema(trafficLightServiceGetTrafficLightMethodDescriptor),
+		connect.WithSchema(trafficLightServiceMethods.ByName("GetTrafficLight")),
 		connect.WithHandlerOptions(opts...),
 	)
 	trafficLightServiceSetTrafficLightHandler := connect.NewUnaryHandler(
 		TrafficLightServiceSetTrafficLightProcedure,
 		svc.SetTrafficLight,
-		connect.WithSchema(trafficLightServiceSetTrafficLightMethodDescriptor),
+		connect.WithSchema(trafficLightServiceMethods.ByName("SetTrafficLight")),
 		connect.WithHandlerOptions(opts...),
 	)
 	trafficLightServiceSetTrafficLightPhaseHandler := connect.NewUnaryHandler(
 		TrafficLightServiceSetTrafficLightPhaseProcedure,
 		svc.SetTrafficLightPhase,
-		connect.WithSchema(trafficLightServiceSetTrafficLightPhaseMethodDescriptor),
+		connect.WithSchema(trafficLightServiceMethods.ByName("SetTrafficLightPhase")),
 		connect.WithHandlerOptions(opts...),
 	)
 	trafficLightServiceSetTrafficLightStatusHandler := connect.NewUnaryHandler(
 		TrafficLightServiceSetTrafficLightStatusProcedure,
 		svc.SetTrafficLightStatus,
-		connect.WithSchema(trafficLightServiceSetTrafficLightStatusMethodDescriptor),
+		connect.WithSchema(trafficLightServiceMethods.ByName("SetTrafficLightStatus")),
 		connect.WithHandlerOptions(opts...),
 	)
 	return "/city.map.v2.TrafficLightService/", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {

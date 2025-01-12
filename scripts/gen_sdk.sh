@@ -25,3 +25,6 @@ buf generate --template buf.gen.tag.yaml --include-imports \
     --path city/water/input/v1
 protol --create-package --in-place --python-out pycityproto/ \
     protoc --proto-path=./ $(find ./city -name "*.proto")
+
+pip install -r docs/requirements.txt
+LC_ALL=C.UTF-8 make html

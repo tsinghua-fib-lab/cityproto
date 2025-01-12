@@ -39,13 +39,6 @@ const (
 	SocialServiceReceiveProcedure = "/city.social.v1.SocialService/Receive"
 )
 
-// These variables are the protoreflect.Descriptor objects for the RPCs defined in this package.
-var (
-	socialServiceServiceDescriptor       = v1.File_city_social_v1_social_service_proto.Services().ByName("SocialService")
-	socialServiceSendMethodDescriptor    = socialServiceServiceDescriptor.Methods().ByName("Send")
-	socialServiceReceiveMethodDescriptor = socialServiceServiceDescriptor.Methods().ByName("Receive")
-)
-
 // SocialServiceClient is a client for the city.social.v1.SocialService service.
 type SocialServiceClient interface {
 	// 发送消息
@@ -65,17 +58,18 @@ type SocialServiceClient interface {
 // http://api.acme.com or https://acme.com/grpc).
 func NewSocialServiceClient(httpClient connect.HTTPClient, baseURL string, opts ...connect.ClientOption) SocialServiceClient {
 	baseURL = strings.TrimRight(baseURL, "/")
+	socialServiceMethods := v1.File_city_social_v1_social_service_proto.Services().ByName("SocialService").Methods()
 	return &socialServiceClient{
 		send: connect.NewClient[v1.SendRequest, v1.SendResponse](
 			httpClient,
 			baseURL+SocialServiceSendProcedure,
-			connect.WithSchema(socialServiceSendMethodDescriptor),
+			connect.WithSchema(socialServiceMethods.ByName("Send")),
 			connect.WithClientOptions(opts...),
 		),
 		receive: connect.NewClient[v1.ReceiveRequest, v1.ReceiveResponse](
 			httpClient,
 			baseURL+SocialServiceReceiveProcedure,
-			connect.WithSchema(socialServiceReceiveMethodDescriptor),
+			connect.WithSchema(socialServiceMethods.ByName("Receive")),
 			connect.WithClientOptions(opts...),
 		),
 	}
@@ -113,16 +107,17 @@ type SocialServiceHandler interface {
 // By default, handlers support the Connect, gRPC, and gRPC-Web protocols with the binary Protobuf
 // and JSON codecs. They also support gzip compression.
 func NewSocialServiceHandler(svc SocialServiceHandler, opts ...connect.HandlerOption) (string, http.Handler) {
+	socialServiceMethods := v1.File_city_social_v1_social_service_proto.Services().ByName("SocialService").Methods()
 	socialServiceSendHandler := connect.NewUnaryHandler(
 		SocialServiceSendProcedure,
 		svc.Send,
-		connect.WithSchema(socialServiceSendMethodDescriptor),
+		connect.WithSchema(socialServiceMethods.ByName("Send")),
 		connect.WithHandlerOptions(opts...),
 	)
 	socialServiceReceiveHandler := connect.NewUnaryHandler(
 		SocialServiceReceiveProcedure,
 		svc.Receive,
-		connect.WithSchema(socialServiceReceiveMethodDescriptor),
+		connect.WithSchema(socialServiceMethods.ByName("Receive")),
 		connect.WithHandlerOptions(opts...),
 	)
 	return "/city.social.v1.SocialService/", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {

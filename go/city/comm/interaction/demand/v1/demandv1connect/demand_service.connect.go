@@ -38,12 +38,6 @@ const (
 	DemandServiceSetDemandStatusProcedure = "/city.comm.interaction.demand.v1.DemandService/SetDemandStatus"
 )
 
-// These variables are the protoreflect.Descriptor objects for the RPCs defined in this package.
-var (
-	demandServiceServiceDescriptor               = v1.File_city_comm_interaction_demand_v1_demand_service_proto.Services().ByName("DemandService")
-	demandServiceSetDemandStatusMethodDescriptor = demandServiceServiceDescriptor.Methods().ByName("SetDemandStatus")
-)
-
 // DemandServiceClient is a client for the city.comm.interaction.demand.v1.DemandService service.
 type DemandServiceClient interface {
 	SetDemandStatus(context.Context, *connect.Request[v1.SetDemandStatusRequest]) (*connect.Response[v1.SetDemandStatusResponse], error)
@@ -58,11 +52,12 @@ type DemandServiceClient interface {
 // http://api.acme.com or https://acme.com/grpc).
 func NewDemandServiceClient(httpClient connect.HTTPClient, baseURL string, opts ...connect.ClientOption) DemandServiceClient {
 	baseURL = strings.TrimRight(baseURL, "/")
+	demandServiceMethods := v1.File_city_comm_interaction_demand_v1_demand_service_proto.Services().ByName("DemandService").Methods()
 	return &demandServiceClient{
 		setDemandStatus: connect.NewClient[v1.SetDemandStatusRequest, v1.SetDemandStatusResponse](
 			httpClient,
 			baseURL+DemandServiceSetDemandStatusProcedure,
-			connect.WithSchema(demandServiceSetDemandStatusMethodDescriptor),
+			connect.WithSchema(demandServiceMethods.ByName("SetDemandStatus")),
 			connect.WithClientOptions(opts...),
 		),
 	}
@@ -90,10 +85,11 @@ type DemandServiceHandler interface {
 // By default, handlers support the Connect, gRPC, and gRPC-Web protocols with the binary Protobuf
 // and JSON codecs. They also support gzip compression.
 func NewDemandServiceHandler(svc DemandServiceHandler, opts ...connect.HandlerOption) (string, http.Handler) {
+	demandServiceMethods := v1.File_city_comm_interaction_demand_v1_demand_service_proto.Services().ByName("DemandService").Methods()
 	demandServiceSetDemandStatusHandler := connect.NewUnaryHandler(
 		DemandServiceSetDemandStatusProcedure,
 		svc.SetDemandStatus,
-		connect.WithSchema(demandServiceSetDemandStatusMethodDescriptor),
+		connect.WithSchema(demandServiceMethods.ByName("SetDemandStatus")),
 		connect.WithHandlerOptions(opts...),
 	)
 	return "/city.comm.interaction.demand.v1.DemandService/", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {

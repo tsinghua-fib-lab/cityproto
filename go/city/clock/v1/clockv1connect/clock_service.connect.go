@@ -37,12 +37,6 @@ const (
 	ClockServiceNowProcedure = "/city.clock.v1.ClockService/Now"
 )
 
-// These variables are the protoreflect.Descriptor objects for the RPCs defined in this package.
-var (
-	clockServiceServiceDescriptor   = v1.File_city_clock_v1_clock_service_proto.Services().ByName("ClockService")
-	clockServiceNowMethodDescriptor = clockServiceServiceDescriptor.Methods().ByName("Now")
-)
-
 // ClockServiceClient is a client for the city.clock.v1.ClockService service.
 type ClockServiceClient interface {
 	// 获取当前的模拟时间
@@ -59,11 +53,12 @@ type ClockServiceClient interface {
 // http://api.acme.com or https://acme.com/grpc).
 func NewClockServiceClient(httpClient connect.HTTPClient, baseURL string, opts ...connect.ClientOption) ClockServiceClient {
 	baseURL = strings.TrimRight(baseURL, "/")
+	clockServiceMethods := v1.File_city_clock_v1_clock_service_proto.Services().ByName("ClockService").Methods()
 	return &clockServiceClient{
 		now: connect.NewClient[v1.NowRequest, v1.NowResponse](
 			httpClient,
 			baseURL+ClockServiceNowProcedure,
-			connect.WithSchema(clockServiceNowMethodDescriptor),
+			connect.WithSchema(clockServiceMethods.ByName("Now")),
 			connect.WithClientOptions(opts...),
 		),
 	}
@@ -92,10 +87,11 @@ type ClockServiceHandler interface {
 // By default, handlers support the Connect, gRPC, and gRPC-Web protocols with the binary Protobuf
 // and JSON codecs. They also support gzip compression.
 func NewClockServiceHandler(svc ClockServiceHandler, opts ...connect.HandlerOption) (string, http.Handler) {
+	clockServiceMethods := v1.File_city_clock_v1_clock_service_proto.Services().ByName("ClockService").Methods()
 	clockServiceNowHandler := connect.NewUnaryHandler(
 		ClockServiceNowProcedure,
 		svc.Now,
-		connect.WithSchema(clockServiceNowMethodDescriptor),
+		connect.WithSchema(clockServiceMethods.ByName("Now")),
 		connect.WithHandlerOptions(opts...),
 	)
 	return "/city.clock.v1.ClockService/", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {

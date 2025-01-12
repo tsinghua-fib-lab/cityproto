@@ -37,12 +37,6 @@ const (
 	InputServiceInitProcedure = "/city.water.input.v1.InputService/Init"
 )
 
-// These variables are the protoreflect.Descriptor objects for the RPCs defined in this package.
-var (
-	inputServiceServiceDescriptor    = v1.File_city_water_input_v1_input_service_proto.Services().ByName("InputService")
-	inputServiceInitMethodDescriptor = inputServiceServiceDescriptor.Methods().ByName("Init")
-)
-
 // InputServiceClient is a client for the city.water.input.v1.InputService service.
 type InputServiceClient interface {
 	Init(context.Context, *connect.Request[v1.InitRequest]) (*connect.Response[v1.InitResponse], error)
@@ -57,11 +51,12 @@ type InputServiceClient interface {
 // http://api.acme.com or https://acme.com/grpc).
 func NewInputServiceClient(httpClient connect.HTTPClient, baseURL string, opts ...connect.ClientOption) InputServiceClient {
 	baseURL = strings.TrimRight(baseURL, "/")
+	inputServiceMethods := v1.File_city_water_input_v1_input_service_proto.Services().ByName("InputService").Methods()
 	return &inputServiceClient{
 		init: connect.NewClient[v1.InitRequest, v1.InitResponse](
 			httpClient,
 			baseURL+InputServiceInitProcedure,
-			connect.WithSchema(inputServiceInitMethodDescriptor),
+			connect.WithSchema(inputServiceMethods.ByName("Init")),
 			connect.WithClientOptions(opts...),
 		),
 	}
@@ -88,10 +83,11 @@ type InputServiceHandler interface {
 // By default, handlers support the Connect, gRPC, and gRPC-Web protocols with the binary Protobuf
 // and JSON codecs. They also support gzip compression.
 func NewInputServiceHandler(svc InputServiceHandler, opts ...connect.HandlerOption) (string, http.Handler) {
+	inputServiceMethods := v1.File_city_water_input_v1_input_service_proto.Services().ByName("InputService").Methods()
 	inputServiceInitHandler := connect.NewUnaryHandler(
 		InputServiceInitProcedure,
 		svc.Init,
-		connect.WithSchema(inputServiceInitMethodDescriptor),
+		connect.WithSchema(inputServiceMethods.ByName("Init")),
 		connect.WithHandlerOptions(opts...),
 	)
 	return "/city.water.input.v1.InputService/", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {

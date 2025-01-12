@@ -9,4 +9,4 @@ set -x
 buf lint --path city
 buf format -w --path city
 ./scripts/gen_sdk.sh
-git add cpp/ go/ doc/ pycityproto/ es/
+git add cpp/ go/ docs/ pycityproto/ es/

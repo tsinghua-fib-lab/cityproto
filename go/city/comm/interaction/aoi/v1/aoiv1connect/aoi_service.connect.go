@@ -37,12 +37,6 @@ const (
 	AoiServiceGetBadAoiIDProcedure = "/city.comm.interaction.aoi.v1.AoiService/GetBadAoiID"
 )
 
-// These variables are the protoreflect.Descriptor objects for the RPCs defined in this package.
-var (
-	aoiServiceServiceDescriptor           = v1.File_city_comm_interaction_aoi_v1_aoi_service_proto.Services().ByName("AoiService")
-	aoiServiceGetBadAoiIDMethodDescriptor = aoiServiceServiceDescriptor.Methods().ByName("GetBadAoiID")
-)
-
 // AoiServiceClient is a client for the city.comm.interaction.aoi.v1.AoiService service.
 type AoiServiceClient interface {
 	GetBadAoiID(context.Context, *connect.Request[v1.GetBadAoiIDRequest]) (*connect.Response[v1.GetBadAoiIDResponse], error)
@@ -57,11 +51,12 @@ type AoiServiceClient interface {
 // http://api.acme.com or https://acme.com/grpc).
 func NewAoiServiceClient(httpClient connect.HTTPClient, baseURL string, opts ...connect.ClientOption) AoiServiceClient {
 	baseURL = strings.TrimRight(baseURL, "/")
+	aoiServiceMethods := v1.File_city_comm_interaction_aoi_v1_aoi_service_proto.Services().ByName("AoiService").Methods()
 	return &aoiServiceClient{
 		getBadAoiID: connect.NewClient[v1.GetBadAoiIDRequest, v1.GetBadAoiIDResponse](
 			httpClient,
 			baseURL+AoiServiceGetBadAoiIDProcedure,
-			connect.WithSchema(aoiServiceGetBadAoiIDMethodDescriptor),
+			connect.WithSchema(aoiServiceMethods.ByName("GetBadAoiID")),
 			connect.WithClientOptions(opts...),
 		),
 	}
@@ -88,10 +83,11 @@ type AoiServiceHandler interface {
 // By default, handlers support the Connect, gRPC, and gRPC-Web protocols with the binary Protobuf
 // and JSON codecs. They also support gzip compression.
 func NewAoiServiceHandler(svc AoiServiceHandler, opts ...connect.HandlerOption) (string, http.Handler) {
+	aoiServiceMethods := v1.File_city_comm_interaction_aoi_v1_aoi_service_proto.Services().ByName("AoiService").Methods()
 	aoiServiceGetBadAoiIDHandler := connect.NewUnaryHandler(
 		AoiServiceGetBadAoiIDProcedure,
 		svc.GetBadAoiID,
-		connect.WithSchema(aoiServiceGetBadAoiIDMethodDescriptor),
+		connect.WithSchema(aoiServiceMethods.ByName("GetBadAoiID")),
 		connect.WithHandlerOptions(opts...),
 	)
 	return "/city.comm.interaction.aoi.v1.AoiService/", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {

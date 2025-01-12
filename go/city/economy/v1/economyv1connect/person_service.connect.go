@@ -40,13 +40,6 @@ const (
 	PersonServiceUpdatePersonMoneyProcedure = "/city.economy.v1.PersonService/UpdatePersonMoney"
 )
 
-// These variables are the protoreflect.Descriptor objects for the RPCs defined in this package.
-var (
-	personServiceServiceDescriptor                 = v1.File_city_economy_v1_person_service_proto.Services().ByName("PersonService")
-	personServiceGetPersonMethodDescriptor         = personServiceServiceDescriptor.Methods().ByName("GetPerson")
-	personServiceUpdatePersonMoneyMethodDescriptor = personServiceServiceDescriptor.Methods().ByName("UpdatePersonMoney")
-)
-
 // PersonServiceClient is a client for the city.economy.v1.PersonService service.
 type PersonServiceClient interface {
 	// 批量查询人的经济情况（资金、雇佣关系）
@@ -64,17 +57,18 @@ type PersonServiceClient interface {
 // http://api.acme.com or https://acme.com/grpc).
 func NewPersonServiceClient(httpClient connect.HTTPClient, baseURL string, opts ...connect.ClientOption) PersonServiceClient {
 	baseURL = strings.TrimRight(baseURL, "/")
+	personServiceMethods := v1.File_city_economy_v1_person_service_proto.Services().ByName("PersonService").Methods()
 	return &personServiceClient{
 		getPerson: connect.NewClient[v1.GetPersonRequest, v1.GetPersonResponse](
 			httpClient,
 			baseURL+PersonServiceGetPersonProcedure,
-			connect.WithSchema(personServiceGetPersonMethodDescriptor),
+			connect.WithSchema(personServiceMethods.ByName("GetPerson")),
 			connect.WithClientOptions(opts...),
 		),
 		updatePersonMoney: connect.NewClient[v1.UpdatePersonMoneyRequest, v1.UpdatePersonMoneyResponse](
 			httpClient,
 			baseURL+PersonServiceUpdatePersonMoneyProcedure,
-			connect.WithSchema(personServiceUpdatePersonMoneyMethodDescriptor),
+			connect.WithSchema(personServiceMethods.ByName("UpdatePersonMoney")),
 			connect.WithClientOptions(opts...),
 		),
 	}
@@ -110,16 +104,17 @@ type PersonServiceHandler interface {
 // By default, handlers support the Connect, gRPC, and gRPC-Web protocols with the binary Protobuf
 // and JSON codecs. They also support gzip compression.
 func NewPersonServiceHandler(svc PersonServiceHandler, opts ...connect.HandlerOption) (string, http.Handler) {
+	personServiceMethods := v1.File_city_economy_v1_person_service_proto.Services().ByName("PersonService").Methods()
 	personServiceGetPersonHandler := connect.NewUnaryHandler(
 		PersonServiceGetPersonProcedure,
 		svc.GetPerson,
-		connect.WithSchema(personServiceGetPersonMethodDescriptor),
+		connect.WithSchema(personServiceMethods.ByName("GetPerson")),
 		connect.WithHandlerOptions(opts...),
 	)
 	personServiceUpdatePersonMoneyHandler := connect.NewUnaryHandler(
 		PersonServiceUpdatePersonMoneyProcedure,
 		svc.UpdatePersonMoney,
-		connect.WithSchema(personServiceUpdatePersonMoneyMethodDescriptor),
+		connect.WithSchema(personServiceMethods.ByName("UpdatePersonMoney")),
 		connect.WithHandlerOptions(opts...),
 	)
 	return "/city.economy.v1.PersonService/", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {

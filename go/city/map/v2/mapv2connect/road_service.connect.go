@@ -41,14 +41,6 @@ const (
 	RoadServiceGetEventsProcedure = "/city.map.v2.RoadService/GetEvents"
 )
 
-// These variables are the protoreflect.Descriptor objects for the RPCs defined in this package.
-var (
-	roadServiceServiceDescriptor           = v2.File_city_map_v2_road_service_proto.Services().ByName("RoadService")
-	roadServiceGetRoadMethodDescriptor     = roadServiceServiceDescriptor.Methods().ByName("GetRoad")
-	roadServiceGetRuinInfoMethodDescriptor = roadServiceServiceDescriptor.Methods().ByName("GetRuinInfo")
-	roadServiceGetEventsMethodDescriptor   = roadServiceServiceDescriptor.Methods().ByName("GetEvents")
-)
-
 // RoadServiceClient is a client for the city.map.v2.RoadService service.
 type RoadServiceClient interface {
 	// 查询道路信息
@@ -67,23 +59,24 @@ type RoadServiceClient interface {
 // http://api.acme.com or https://acme.com/grpc).
 func NewRoadServiceClient(httpClient connect.HTTPClient, baseURL string, opts ...connect.ClientOption) RoadServiceClient {
 	baseURL = strings.TrimRight(baseURL, "/")
+	roadServiceMethods := v2.File_city_map_v2_road_service_proto.Services().ByName("RoadService").Methods()
 	return &roadServiceClient{
 		getRoad: connect.NewClient[v2.GetRoadRequest, v2.GetRoadResponse](
 			httpClient,
 			baseURL+RoadServiceGetRoadProcedure,
-			connect.WithSchema(roadServiceGetRoadMethodDescriptor),
+			connect.WithSchema(roadServiceMethods.ByName("GetRoad")),
 			connect.WithClientOptions(opts...),
 		),
 		getRuinInfo: connect.NewClient[v2.GetRuinInfoRequest, v2.GetRuinInfoResponse](
 			httpClient,
 			baseURL+RoadServiceGetRuinInfoProcedure,
-			connect.WithSchema(roadServiceGetRuinInfoMethodDescriptor),
+			connect.WithSchema(roadServiceMethods.ByName("GetRuinInfo")),
 			connect.WithClientOptions(opts...),
 		),
 		getEvents: connect.NewClient[v2.GetEventsRequest, v2.GetEventsResponse](
 			httpClient,
 			baseURL+RoadServiceGetEventsProcedure,
-			connect.WithSchema(roadServiceGetEventsMethodDescriptor),
+			connect.WithSchema(roadServiceMethods.ByName("GetEvents")),
 			connect.WithClientOptions(opts...),
 		),
 	}
@@ -126,22 +119,23 @@ type RoadServiceHandler interface {
 // By default, handlers support the Connect, gRPC, and gRPC-Web protocols with the binary Protobuf
 // and JSON codecs. They also support gzip compression.
 func NewRoadServiceHandler(svc RoadServiceHandler, opts ...connect.HandlerOption) (string, http.Handler) {
+	roadServiceMethods := v2.File_city_map_v2_road_service_proto.Services().ByName("RoadService").Methods()
 	roadServiceGetRoadHandler := connect.NewUnaryHandler(
 		RoadServiceGetRoadProcedure,
 		svc.GetRoad,
-		connect.WithSchema(roadServiceGetRoadMethodDescriptor),
+		connect.WithSchema(roadServiceMethods.ByName("GetRoad")),
 		connect.WithHandlerOptions(opts...),
 	)
 	roadServiceGetRuinInfoHandler := connect.NewUnaryHandler(
 		RoadServiceGetRuinInfoProcedure,
 		svc.GetRuinInfo,
-		connect.WithSchema(roadServiceGetRuinInfoMethodDescriptor),
+		connect.WithSchema(roadServiceMethods.ByName("GetRuinInfo")),
 		connect.WithHandlerOptions(opts...),
 	)
 	roadServiceGetEventsHandler := connect.NewUnaryHandler(
 		RoadServiceGetEventsProcedure,
 		svc.GetEvents,
-		connect.WithSchema(roadServiceGetEventsMethodDescriptor),
+		connect.WithSchema(roadServiceMethods.ByName("GetEvents")),
 		connect.WithHandlerOptions(opts...),
 	)
 	return "/city.map.v2.RoadService/", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
