@@ -43,6 +43,46 @@ export const RemoveOrgResponse = /*@__PURE__*/ proto3.makeMessageType(
 );
 
 /**
+ * Org 相关消息
+ *
+ * @generated from message city.economy.v2.GetOrgRequest
+ */
+export const GetOrgRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.GetOrgRequest",
+  () => [
+    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.GetOrgResponse
+ */
+export const GetOrgResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.GetOrgResponse",
+  () => [
+    { no: 1, name: "org", kind: "message", T: Org },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.UpdateOrgRequest
+ */
+export const UpdateOrgRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.UpdateOrgRequest",
+  () => [
+    { no: 1, name: "org", kind: "message", T: Org },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.UpdateOrgResponse
+ */
+export const UpdateOrgResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.UpdateOrgResponse",
+  [],
+);
+
+/**
  * @generated from message city.economy.v2.AddAgentRequest
  */
 export const AddAgentRequest = /*@__PURE__*/ proto3.makeMessageType(
@@ -592,8 +632,8 @@ export const SaveEconomyEntitiesRequest = /*@__PURE__*/ proto3.makeMessageType(
 export const SaveEconomyEntitiesResponse = /*@__PURE__*/ proto3.makeMessageType(
   "city.economy.v2.SaveEconomyEntitiesResponse",
   () => [
-    { no: 1, name: "agent_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
-    { no: 2, name: "org_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 1, name: "org_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 2, name: "agent_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
   ],
 );
 
@@ -613,8 +653,8 @@ export const LoadEconomyEntitiesRequest = /*@__PURE__*/ proto3.makeMessageType(
 export const LoadEconomyEntitiesResponse = /*@__PURE__*/ proto3.makeMessageType(
   "city.economy.v2.LoadEconomyEntitiesResponse",
   () => [
-    { no: 1, name: "agent_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
-    { no: 2, name: "org_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 1, name: "org_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 2, name: "agent_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
   ],
 );
 
@@ -966,5 +1006,203 @@ export const AddInterestRateResponse = /*@__PURE__*/ proto3.makeMessageType(
   () => [
     { no: 1, name: "interest_rate", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
   ],
+);
+
+/**
+ * Employees 相关消息
+ *
+ * @generated from message city.economy.v2.GetEmployeesRequest
+ */
+export const GetEmployeesRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.GetEmployeesRequest",
+  () => [
+    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.GetEmployeesResponse
+ */
+export const GetEmployeesResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.GetEmployeesResponse",
+  () => [
+    { no: 1, name: "employee_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.SetEmployeesRequest
+ */
+export const SetEmployeesRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.SetEmployeesRequest",
+  () => [
+    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "employee_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.SetEmployeesResponse
+ */
+export const SetEmployeesResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.SetEmployeesResponse",
+  [],
+);
+
+/**
+ * @generated from message city.economy.v2.AddEmployeeRequest
+ */
+export const AddEmployeeRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.AddEmployeeRequest",
+  () => [
+    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "employee_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.AddEmployeeResponse
+ */
+export const AddEmployeeResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.AddEmployeeResponse",
+  [],
+);
+
+/**
+ * @generated from message city.economy.v2.RemoveEmployeeRequest
+ */
+export const RemoveEmployeeRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.RemoveEmployeeRequest",
+  () => [
+    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "employee_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.RemoveEmployeeResponse
+ */
+export const RemoveEmployeeResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.RemoveEmployeeResponse",
+  [],
+);
+
+/**
+ * Citizens 相关消息
+ *
+ * @generated from message city.economy.v2.GetCitizensRequest
+ */
+export const GetCitizensRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.GetCitizensRequest",
+  () => [
+    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.GetCitizensResponse
+ */
+export const GetCitizensResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.GetCitizensResponse",
+  () => [
+    { no: 1, name: "citizen_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.SetCitizensRequest
+ */
+export const SetCitizensRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.SetCitizensRequest",
+  () => [
+    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "citizen_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.SetCitizensResponse
+ */
+export const SetCitizensResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.SetCitizensResponse",
+  [],
+);
+
+/**
+ * @generated from message city.economy.v2.AddCitizenRequest
+ */
+export const AddCitizenRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.AddCitizenRequest",
+  () => [
+    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "citizen_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.AddCitizenResponse
+ */
+export const AddCitizenResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.AddCitizenResponse",
+  [],
+);
+
+/**
+ * @generated from message city.economy.v2.RemoveCitizenRequest
+ */
+export const RemoveCitizenRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.RemoveCitizenRequest",
+  () => [
+    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "citizen_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.RemoveCitizenResponse
+ */
+export const RemoveCitizenResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.RemoveCitizenResponse",
+  [],
+);
+
+/**
+ * Agent 相关消息
+ *
+ * @generated from message city.economy.v2.GetAgentRequest
+ */
+export const GetAgentRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.GetAgentRequest",
+  () => [
+    { no: 1, name: "agent_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.GetAgentResponse
+ */
+export const GetAgentResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.GetAgentResponse",
+  () => [
+    { no: 1, name: "agent", kind: "message", T: Agent },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.UpdateAgentRequest
+ */
+export const UpdateAgentRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.UpdateAgentRequest",
+  () => [
+    { no: 1, name: "agent", kind: "message", T: Agent },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.UpdateAgentResponse
+ */
+export const UpdateAgentResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.UpdateAgentResponse",
+  [],
 );
 

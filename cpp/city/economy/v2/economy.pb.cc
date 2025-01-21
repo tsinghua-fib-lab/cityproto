@@ -40,6 +40,10 @@ PROTOBUF_CONSTEXPR Org::Org(
   , /*decltype(_impl_.depression_)*/{}
   , /*decltype(_impl_.locus_control_)*/{}
   , /*decltype(_impl_.working_hours_)*/{}
+  , /*decltype(_impl_.employees_)*/{}
+  , /*decltype(_impl_._employees_cached_byte_size_)*/{0}
+  , /*decltype(_impl_.citizens_)*/{}
+  , /*decltype(_impl_._citizens_cached_byte_size_)*/{0}
   , /*decltype(_impl_.id_)*/0
   , /*decltype(_impl_.type_)*/0
   , /*decltype(_impl_.inventory_)*/0
@@ -60,7 +64,11 @@ PROTOBUF_CONSTEXPR Agent::Agent(
     /*decltype(_impl_._has_bits_)*/{}
   , /*decltype(_impl_._cached_size_)*/{}
   , /*decltype(_impl_.id_)*/0
-  , /*decltype(_impl_.currency_)*/0} {}
+  , /*decltype(_impl_.currency_)*/0
+  , /*decltype(_impl_.firm_id_)*/0
+  , /*decltype(_impl_.skill_)*/0
+  , /*decltype(_impl_.consumption_)*/0
+  , /*decltype(_impl_.income_)*/0} {}
 struct AgentDefaultTypeInternal {
   PROTOBUF_CONSTEXPR AgentDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -117,6 +125,8 @@ const uint32_t TableStruct_city_2feconomy_2fv2_2feconomy_2eproto::offsets[] PROT
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::Org, _impl_.depression_),
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::Org, _impl_.locus_control_),
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::Org, _impl_.working_hours_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::Org, _impl_.employees_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::Org, _impl_.citizens_),
   ~0u,
   ~0u,
   ~0u,
@@ -136,6 +146,8 @@ const uint32_t TableStruct_city_2feconomy_2fv2_2feconomy_2eproto::offsets[] PROT
   ~0u,
   ~0u,
   ~0u,
+  ~0u,
+  ~0u,
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::Agent, _impl_._has_bits_),
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::Agent, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -144,8 +156,16 @@ const uint32_t TableStruct_city_2feconomy_2fv2_2feconomy_2eproto::offsets[] PROT
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::Agent, _impl_.id_),
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::Agent, _impl_.currency_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::Agent, _impl_.firm_id_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::Agent, _impl_.skill_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::Agent, _impl_.consumption_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::Agent, _impl_.income_),
   ~0u,
   0,
+  1,
+  2,
+  3,
+  4,
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::EconomyEntities, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -156,9 +176,9 @@ const uint32_t TableStruct_city_2feconomy_2fv2_2feconomy_2eproto::offsets[] PROT
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::EconomyEntities, _impl_.agents_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, 25, -1, sizeof(::city::economy::v2::Org)},
-  { 44, 52, -1, sizeof(::city::economy::v2::Agent)},
-  { 54, -1, -1, sizeof(::city::economy::v2::EconomyEntities)},
+  { 0, 27, -1, sizeof(::city::economy::v2::Org)},
+  { 48, 60, -1, sizeof(::city::economy::v2::Agent)},
+  { 66, -1, -1, sizeof(::city::economy::v2::EconomyEntities)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -169,7 +189,7 @@ static const ::_pb::Message* const file_default_instances[] = {
 
 const char descriptor_table_protodef_city_2feconomy_2fv2_2feconomy_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\035city/economy/v2/economy.proto\022\017city.ec"
-  "onomy.v2\"\334\005\n\003Org\022\016\n\002id\030\001 \001(\005R\002id\022,\n\004type"
+  "onomy.v2\"\226\006\n\003Org\022\016\n\002id\030\001 \001(\005R\002id\022,\n\004type"
   "\030\002 \001(\0162\030.city.economy.v2.OrgTypeR\004type\022\037"
   "\n\013nominal_gdp\030\003 \003(\002R\nnominalGdp\022\031\n\010real_"
   "gdp\030\004 \003(\002R\007realGdp\022\"\n\014unemployment\030\005 \003(\002"
@@ -186,24 +206,30 @@ const char descriptor_table_protodef_city_2feconomy_2fv2_2feconomy_2eproto[] PRO
   "\030\020 \003(\002R\016incomeCurrency\022\036\n\ndepression\030\021 \003"
   "(\002R\ndepression\022#\n\rlocus_control\030\022 \003(\002R\014l"
   "ocusControl\022#\n\rworking_hours\030\023 \003(\002R\014work"
-  "ingHoursB\014\n\n_inventoryB\010\n\006_priceB\013\n\t_cur"
-  "rencyB\020\n\016_interest_rate\"E\n\005Agent\022\016\n\002id\030\001"
-  " \001(\005R\002id\022\037\n\010currency\030\002 \001(\002H\000R\010currency\210\001"
-  "\001B\013\n\t_currency\"k\n\017EconomyEntities\022(\n\004org"
-  "s\030\001 \003(\0132\024.city.economy.v2.OrgR\004orgs\022.\n\006a"
-  "gents\030\002 \003(\0132\026.city.economy.v2.AgentR\006age"
-  "nts*t\n\007OrgType\022\030\n\024ORG_TYPE_UNSPECIFIED\020\000"
-  "\022\020\n\014ORG_TYPE_NBS\020\001\022\021\n\rORG_TYPE_FIRM\020\002\022\021\n"
-  "\rORG_TYPE_BANK\020\003\022\027\n\023ORG_TYPE_GOVERNMENT\020"
-  "\004B\274\001\n\023com.city.economy.v2B\014EconomyProtoP"
-  "\001Z9git.fiblab.net/sim/protos/v2/go/city/"
-  "economy/v2;economyv2\242\002\003CEX\252\002\017City.Econom"
-  "y.V2\312\002\017City\\Economy\\V2\342\002\033City\\Economy\\V2"
-  "\\GPBMetadata\352\002\021City::Economy::V2b\006proto3"
+  "ingHours\022\034\n\temployees\030\024 \003(\005R\temployees\022\032"
+  "\n\010citizens\030\025 \003(\005R\010citizensB\014\n\n_inventory"
+  "B\010\n\006_priceB\013\n\t_currencyB\020\n\016_interest_rat"
+  "e\"\363\001\n\005Agent\022\016\n\002id\030\001 \001(\005R\002id\022\037\n\010currency\030"
+  "\002 \001(\002H\000R\010currency\210\001\001\022\034\n\007firm_id\030\003 \001(\005H\001R"
+  "\006firmId\210\001\001\022\031\n\005skill\030\004 \001(\002H\002R\005skill\210\001\001\022%\n"
+  "\013consumption\030\005 \001(\002H\003R\013consumption\210\001\001\022\033\n\006"
+  "income\030\006 \001(\002H\004R\006income\210\001\001B\013\n\t_currencyB\n"
+  "\n\010_firm_idB\010\n\006_skillB\016\n\014_consumptionB\t\n\007"
+  "_income\"k\n\017EconomyEntities\022(\n\004orgs\030\001 \003(\013"
+  "2\024.city.economy.v2.OrgR\004orgs\022.\n\006agents\030\002"
+  " \003(\0132\026.city.economy.v2.AgentR\006agents*t\n\007"
+  "OrgType\022\030\n\024ORG_TYPE_UNSPECIFIED\020\000\022\020\n\014ORG"
+  "_TYPE_NBS\020\001\022\021\n\rORG_TYPE_FIRM\020\002\022\021\n\rORG_TY"
+  "PE_BANK\020\003\022\027\n\023ORG_TYPE_GOVERNMENT\020\004B\274\001\n\023c"
+  "om.city.economy.v2B\014EconomyProtoP\001Z9git."
+  "fiblab.net/sim/protos/v2/go/city/economy"
+  "/v2;economyv2\242\002\003CEX\252\002\017City.Economy.V2\312\002\017"
+  "City\\Economy\\V2\342\002\033City\\Economy\\V2\\GPBMet"
+  "adata\352\002\021City::Economy::V2b\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_city_2feconomy_2fv2_2feconomy_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2feconomy_2fv2_2feconomy_2eproto = {
-    false, false, 1280, descriptor_table_protodef_city_2feconomy_2fv2_2feconomy_2eproto,
+    false, false, 1513, descriptor_table_protodef_city_2feconomy_2fv2_2feconomy_2eproto,
     "city/economy/v2/economy.proto",
     &descriptor_table_city_2feconomy_2fv2_2feconomy_2eproto_once, nullptr, 0, 3,
     schemas, file_default_instances, TableStruct_city_2feconomy_2fv2_2feconomy_2eproto::offsets,
@@ -281,6 +307,10 @@ Org::Org(const Org& from)
     , decltype(_impl_.depression_){from._impl_.depression_}
     , decltype(_impl_.locus_control_){from._impl_.locus_control_}
     , decltype(_impl_.working_hours_){from._impl_.working_hours_}
+    , decltype(_impl_.employees_){from._impl_.employees_}
+    , /*decltype(_impl_._employees_cached_byte_size_)*/{0}
+    , decltype(_impl_.citizens_){from._impl_.citizens_}
+    , /*decltype(_impl_._citizens_cached_byte_size_)*/{0}
     , decltype(_impl_.id_){}
     , decltype(_impl_.type_){}
     , decltype(_impl_.inventory_){}
@@ -315,6 +345,10 @@ inline void Org::SharedCtor(
     , decltype(_impl_.depression_){arena}
     , decltype(_impl_.locus_control_){arena}
     , decltype(_impl_.working_hours_){arena}
+    , decltype(_impl_.employees_){arena}
+    , /*decltype(_impl_._employees_cached_byte_size_)*/{0}
+    , decltype(_impl_.citizens_){arena}
+    , /*decltype(_impl_._citizens_cached_byte_size_)*/{0}
     , decltype(_impl_.id_){0}
     , decltype(_impl_.type_){0}
     , decltype(_impl_.inventory_){0}
@@ -348,6 +382,8 @@ inline void Org::SharedDtor() {
   _impl_.depression_.~RepeatedField();
   _impl_.locus_control_.~RepeatedField();
   _impl_.working_hours_.~RepeatedField();
+  _impl_.employees_.~RepeatedField();
+  _impl_.citizens_.~RepeatedField();
 }
 
 void Org::SetCachedSize(int size) const {
@@ -373,6 +409,8 @@ void Org::Clear() {
   _impl_.depression_.Clear();
   _impl_.locus_control_.Clear();
   _impl_.working_hours_.Clear();
+  _impl_.employees_.Clear();
+  _impl_.citizens_.Clear();
   ::memset(&_impl_.id_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_impl_.type_) -
       reinterpret_cast<char*>(&_impl_.id_)) + sizeof(_impl_.type_));
@@ -589,6 +627,28 @@ const char* Org::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
         } else
           goto handle_unusual;
         continue;
+      // repeated int32 employees = 20 [json_name = "employees"];
+      case 20:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 162)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_employees(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<uint8_t>(tag) == 160) {
+          _internal_add_employees(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated int32 citizens = 21 [json_name = "citizens"];
+      case 21:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 170)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_citizens(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<uint8_t>(tag) == 168) {
+          _internal_add_citizens(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
       default:
         goto handle_unusual;
     }  // switch
@@ -719,6 +779,24 @@ uint8_t* Org::_InternalSerialize(
   // repeated float working_hours = 19 [json_name = "workingHours"];
   if (this->_internal_working_hours_size() > 0) {
     target = stream->WriteFixedPacked(19, _internal_working_hours(), target);
+  }
+
+  // repeated int32 employees = 20 [json_name = "employees"];
+  {
+    int byte_size = _impl_._employees_cached_byte_size_.load(std::memory_order_relaxed);
+    if (byte_size > 0) {
+      target = stream->WriteInt32Packed(
+          20, _internal_employees(), byte_size, target);
+    }
+  }
+
+  // repeated int32 citizens = 21 [json_name = "citizens"];
+  {
+    int byte_size = _impl_._citizens_cached_byte_size_.load(std::memory_order_relaxed);
+    if (byte_size > 0) {
+      target = stream->WriteInt32Packed(
+          21, _internal_citizens(), byte_size, target);
+    }
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -880,6 +958,34 @@ size_t Org::ByteSizeLong() const {
     total_size += data_size;
   }
 
+  // repeated int32 employees = 20 [json_name = "employees"];
+  {
+    size_t data_size = ::_pbi::WireFormatLite::
+      Int32Size(this->_impl_.employees_);
+    if (data_size > 0) {
+      total_size += 2 +
+        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
+    }
+    int cached_size = ::_pbi::ToCachedSize(data_size);
+    _impl_._employees_cached_byte_size_.store(cached_size,
+                                    std::memory_order_relaxed);
+    total_size += data_size;
+  }
+
+  // repeated int32 citizens = 21 [json_name = "citizens"];
+  {
+    size_t data_size = ::_pbi::WireFormatLite::
+      Int32Size(this->_impl_.citizens_);
+    if (data_size > 0) {
+      total_size += 2 +
+        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
+    }
+    int cached_size = ::_pbi::ToCachedSize(data_size);
+    _impl_._citizens_cached_byte_size_.store(cached_size,
+                                    std::memory_order_relaxed);
+    total_size += data_size;
+  }
+
   // int32 id = 1 [json_name = "id"];
   if (this->_internal_id() != 0) {
     total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_id());
@@ -945,6 +1051,8 @@ void Org::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_N
   _this->_impl_.depression_.MergeFrom(from._impl_.depression_);
   _this->_impl_.locus_control_.MergeFrom(from._impl_.locus_control_);
   _this->_impl_.working_hours_.MergeFrom(from._impl_.working_hours_);
+  _this->_impl_.employees_.MergeFrom(from._impl_.employees_);
+  _this->_impl_.citizens_.MergeFrom(from._impl_.citizens_);
   if (from._internal_id() != 0) {
     _this->_internal_set_id(from._internal_id());
   }
@@ -998,6 +1106,8 @@ void Org::InternalSwap(Org* other) {
   _impl_.depression_.InternalSwap(&other->_impl_.depression_);
   _impl_.locus_control_.InternalSwap(&other->_impl_.locus_control_);
   _impl_.working_hours_.InternalSwap(&other->_impl_.working_hours_);
+  _impl_.employees_.InternalSwap(&other->_impl_.employees_);
+  _impl_.citizens_.InternalSwap(&other->_impl_.citizens_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(Org, _impl_.interest_rate_)
       + sizeof(Org::_impl_.interest_rate_)
@@ -1020,6 +1130,18 @@ class Agent::_Internal {
   static void set_has_currency(HasBits* has_bits) {
     (*has_bits)[0] |= 1u;
   }
+  static void set_has_firm_id(HasBits* has_bits) {
+    (*has_bits)[0] |= 2u;
+  }
+  static void set_has_skill(HasBits* has_bits) {
+    (*has_bits)[0] |= 4u;
+  }
+  static void set_has_consumption(HasBits* has_bits) {
+    (*has_bits)[0] |= 8u;
+  }
+  static void set_has_income(HasBits* has_bits) {
+    (*has_bits)[0] |= 16u;
+  }
 };
 
 Agent::Agent(::PROTOBUF_NAMESPACE_ID::Arena* arena,
@@ -1035,12 +1157,16 @@ Agent::Agent(const Agent& from)
       decltype(_impl_._has_bits_){from._impl_._has_bits_}
     , /*decltype(_impl_._cached_size_)*/{}
     , decltype(_impl_.id_){}
-    , decltype(_impl_.currency_){}};
+    , decltype(_impl_.currency_){}
+    , decltype(_impl_.firm_id_){}
+    , decltype(_impl_.skill_){}
+    , decltype(_impl_.consumption_){}
+    , decltype(_impl_.income_){}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&_impl_.id_, &from._impl_.id_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.currency_) -
-    reinterpret_cast<char*>(&_impl_.id_)) + sizeof(_impl_.currency_));
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.income_) -
+    reinterpret_cast<char*>(&_impl_.id_)) + sizeof(_impl_.income_));
   // @@protoc_insertion_point(copy_constructor:city.economy.v2.Agent)
 }
 
@@ -1053,6 +1179,10 @@ inline void Agent::SharedCtor(
     , /*decltype(_impl_._cached_size_)*/{}
     , decltype(_impl_.id_){0}
     , decltype(_impl_.currency_){0}
+    , decltype(_impl_.firm_id_){0}
+    , decltype(_impl_.skill_){0}
+    , decltype(_impl_.consumption_){0}
+    , decltype(_impl_.income_){0}
   };
 }
 
@@ -1080,7 +1210,12 @@ void Agent::Clear() {
   (void) cached_has_bits;
 
   _impl_.id_ = 0;
-  _impl_.currency_ = 0;
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x0000001fu) {
+    ::memset(&_impl_.currency_, 0, static_cast<size_t>(
+        reinterpret_cast<char*>(&_impl_.income_) -
+        reinterpret_cast<char*>(&_impl_.currency_)) + sizeof(_impl_.income_));
+  }
   _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -1105,6 +1240,42 @@ const char* Agent::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 21)) {
           _Internal::set_has_currency(&has_bits);
           _impl_.currency_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional int32 firm_id = 3 [json_name = "firmId"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+          _Internal::set_has_firm_id(&has_bits);
+          _impl_.firm_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional float skill = 4 [json_name = "skill"];
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 37)) {
+          _Internal::set_has_skill(&has_bits);
+          _impl_.skill_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional float consumption = 5 [json_name = "consumption"];
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 45)) {
+          _Internal::set_has_consumption(&has_bits);
+          _impl_.consumption_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional float income = 6 [json_name = "income"];
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 53)) {
+          _Internal::set_has_income(&has_bits);
+          _impl_.income_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
         } else
           goto handle_unusual;
@@ -1151,6 +1322,30 @@ uint8_t* Agent::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteFloatToArray(2, this->_internal_currency(), target);
   }
 
+  // optional int32 firm_id = 3 [json_name = "firmId"];
+  if (_internal_has_firm_id()) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(3, this->_internal_firm_id(), target);
+  }
+
+  // optional float skill = 4 [json_name = "skill"];
+  if (_internal_has_skill()) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(4, this->_internal_skill(), target);
+  }
+
+  // optional float consumption = 5 [json_name = "consumption"];
+  if (_internal_has_consumption()) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(5, this->_internal_consumption(), target);
+  }
+
+  // optional float income = 6 [json_name = "income"];
+  if (_internal_has_income()) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(6, this->_internal_income(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -1172,12 +1367,34 @@ size_t Agent::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_id());
   }
 
-  // optional float currency = 2 [json_name = "currency"];
   cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000001u) {
-    total_size += 1 + 4;
-  }
+  if (cached_has_bits & 0x0000001fu) {
+    // optional float currency = 2 [json_name = "currency"];
+    if (cached_has_bits & 0x00000001u) {
+      total_size += 1 + 4;
+    }
 
+    // optional int32 firm_id = 3 [json_name = "firmId"];
+    if (cached_has_bits & 0x00000002u) {
+      total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_firm_id());
+    }
+
+    // optional float skill = 4 [json_name = "skill"];
+    if (cached_has_bits & 0x00000004u) {
+      total_size += 1 + 4;
+    }
+
+    // optional float consumption = 5 [json_name = "consumption"];
+    if (cached_has_bits & 0x00000008u) {
+      total_size += 1 + 4;
+    }
+
+    // optional float income = 6 [json_name = "income"];
+    if (cached_has_bits & 0x00000010u) {
+      total_size += 1 + 4;
+    }
+
+  }
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
@@ -1199,8 +1416,24 @@ void Agent::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF
   if (from._internal_id() != 0) {
     _this->_internal_set_id(from._internal_id());
   }
-  if (from._internal_has_currency()) {
-    _this->_internal_set_currency(from._internal_currency());
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (cached_has_bits & 0x0000001fu) {
+    if (cached_has_bits & 0x00000001u) {
+      _this->_impl_.currency_ = from._impl_.currency_;
+    }
+    if (cached_has_bits & 0x00000002u) {
+      _this->_impl_.firm_id_ = from._impl_.firm_id_;
+    }
+    if (cached_has_bits & 0x00000004u) {
+      _this->_impl_.skill_ = from._impl_.skill_;
+    }
+    if (cached_has_bits & 0x00000008u) {
+      _this->_impl_.consumption_ = from._impl_.consumption_;
+    }
+    if (cached_has_bits & 0x00000010u) {
+      _this->_impl_.income_ = from._impl_.income_;
+    }
+    _this->_impl_._has_bits_[0] |= cached_has_bits;
   }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -1221,8 +1454,8 @@ void Agent::InternalSwap(Agent* other) {
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(Agent, _impl_.currency_)
-      + sizeof(Agent::_impl_.currency_)
+      PROTOBUF_FIELD_OFFSET(Agent, _impl_.income_)
+      + sizeof(Agent::_impl_.income_)
       - PROTOBUF_FIELD_OFFSET(Agent, _impl_.id_)>(
           reinterpret_cast<char*>(&_impl_.id_),
           reinterpret_cast<char*>(&other->_impl_.id_));

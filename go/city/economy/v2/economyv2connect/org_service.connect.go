@@ -37,6 +37,10 @@ const (
 	OrgServiceAddOrgProcedure = "/city.economy.v2.OrgService/AddOrg"
 	// OrgServiceRemoveOrgProcedure is the fully-qualified name of the OrgService's RemoveOrg RPC.
 	OrgServiceRemoveOrgProcedure = "/city.economy.v2.OrgService/RemoveOrg"
+	// OrgServiceGetOrgProcedure is the fully-qualified name of the OrgService's GetOrg RPC.
+	OrgServiceGetOrgProcedure = "/city.economy.v2.OrgService/GetOrg"
+	// OrgServiceUpdateOrgProcedure is the fully-qualified name of the OrgService's UpdateOrg RPC.
+	OrgServiceUpdateOrgProcedure = "/city.economy.v2.OrgService/UpdateOrg"
 	// OrgServiceAddAgentProcedure is the fully-qualified name of the OrgService's AddAgent RPC.
 	OrgServiceAddAgentProcedure = "/city.economy.v2.OrgService/AddAgent"
 	// OrgServiceRemoveAgentProcedure is the fully-qualified name of the OrgService's RemoveAgent RPC.
@@ -158,6 +162,28 @@ const (
 	// OrgServiceGetOrgEntityIdsProcedure is the fully-qualified name of the OrgService's
 	// GetOrgEntityIds RPC.
 	OrgServiceGetOrgEntityIdsProcedure = "/city.economy.v2.OrgService/GetOrgEntityIds"
+	// OrgServiceGetEmployeesProcedure is the fully-qualified name of the OrgService's GetEmployees RPC.
+	OrgServiceGetEmployeesProcedure = "/city.economy.v2.OrgService/GetEmployees"
+	// OrgServiceSetEmployeesProcedure is the fully-qualified name of the OrgService's SetEmployees RPC.
+	OrgServiceSetEmployeesProcedure = "/city.economy.v2.OrgService/SetEmployees"
+	// OrgServiceAddEmployeeProcedure is the fully-qualified name of the OrgService's AddEmployee RPC.
+	OrgServiceAddEmployeeProcedure = "/city.economy.v2.OrgService/AddEmployee"
+	// OrgServiceRemoveEmployeeProcedure is the fully-qualified name of the OrgService's RemoveEmployee
+	// RPC.
+	OrgServiceRemoveEmployeeProcedure = "/city.economy.v2.OrgService/RemoveEmployee"
+	// OrgServiceGetCitizensProcedure is the fully-qualified name of the OrgService's GetCitizens RPC.
+	OrgServiceGetCitizensProcedure = "/city.economy.v2.OrgService/GetCitizens"
+	// OrgServiceSetCitizensProcedure is the fully-qualified name of the OrgService's SetCitizens RPC.
+	OrgServiceSetCitizensProcedure = "/city.economy.v2.OrgService/SetCitizens"
+	// OrgServiceAddCitizenProcedure is the fully-qualified name of the OrgService's AddCitizen RPC.
+	OrgServiceAddCitizenProcedure = "/city.economy.v2.OrgService/AddCitizen"
+	// OrgServiceRemoveCitizenProcedure is the fully-qualified name of the OrgService's RemoveCitizen
+	// RPC.
+	OrgServiceRemoveCitizenProcedure = "/city.economy.v2.OrgService/RemoveCitizen"
+	// OrgServiceGetAgentProcedure is the fully-qualified name of the OrgService's GetAgent RPC.
+	OrgServiceGetAgentProcedure = "/city.economy.v2.OrgService/GetAgent"
+	// OrgServiceUpdateAgentProcedure is the fully-qualified name of the OrgService's UpdateAgent RPC.
+	OrgServiceUpdateAgentProcedure = "/city.economy.v2.OrgService/UpdateAgent"
 )
 
 // OrgServiceClient is a client for the city.economy.v2.OrgService service.
@@ -168,6 +194,12 @@ type OrgServiceClient interface {
 	// 移除组织
 	// remove org
 	RemoveOrg(context.Context, *connect.Request[v2.RemoveOrgRequest]) (*connect.Response[v2.RemoveOrgResponse], error)
+	// 获取组织
+	// get org
+	GetOrg(context.Context, *connect.Request[v2.GetOrgRequest]) (*connect.Response[v2.GetOrgResponse], error)
+	// 更新组织
+	// update org
+	UpdateOrg(context.Context, *connect.Request[v2.UpdateOrgRequest]) (*connect.Response[v2.UpdateOrgResponse], error)
 	// 添加Agent
 	// add agent
 	AddAgent(context.Context, *connect.Request[v2.AddAgentRequest]) (*connect.Response[v2.AddAgentResponse], error)
@@ -241,6 +273,19 @@ type OrgServiceClient interface {
 	SetWorkingHours(context.Context, *connect.Request[v2.SetWorkingHoursRequest]) (*connect.Response[v2.SetWorkingHoursResponse], error)
 	// Org Entity Ids
 	GetOrgEntityIds(context.Context, *connect.Request[v2.GetOrgEntityIdsRequest]) (*connect.Response[v2.GetOrgEntityIdsResponse], error)
+	// Employees 相关接口
+	GetEmployees(context.Context, *connect.Request[v2.GetEmployeesRequest]) (*connect.Response[v2.GetEmployeesResponse], error)
+	SetEmployees(context.Context, *connect.Request[v2.SetEmployeesRequest]) (*connect.Response[v2.SetEmployeesResponse], error)
+	AddEmployee(context.Context, *connect.Request[v2.AddEmployeeRequest]) (*connect.Response[v2.AddEmployeeResponse], error)
+	RemoveEmployee(context.Context, *connect.Request[v2.RemoveEmployeeRequest]) (*connect.Response[v2.RemoveEmployeeResponse], error)
+	// Citizens 相关接口
+	GetCitizens(context.Context, *connect.Request[v2.GetCitizensRequest]) (*connect.Response[v2.GetCitizensResponse], error)
+	SetCitizens(context.Context, *connect.Request[v2.SetCitizensRequest]) (*connect.Response[v2.SetCitizensResponse], error)
+	AddCitizen(context.Context, *connect.Request[v2.AddCitizenRequest]) (*connect.Response[v2.AddCitizenResponse], error)
+	RemoveCitizen(context.Context, *connect.Request[v2.RemoveCitizenRequest]) (*connect.Response[v2.RemoveCitizenResponse], error)
+	// Agent 相关接口
+	GetAgent(context.Context, *connect.Request[v2.GetAgentRequest]) (*connect.Response[v2.GetAgentResponse], error)
+	UpdateAgent(context.Context, *connect.Request[v2.UpdateAgentRequest]) (*connect.Response[v2.UpdateAgentResponse], error)
 }
 
 // NewOrgServiceClient constructs a client for the city.economy.v2.OrgService service. By default,
@@ -264,6 +309,18 @@ func NewOrgServiceClient(httpClient connect.HTTPClient, baseURL string, opts ...
 			httpClient,
 			baseURL+OrgServiceRemoveOrgProcedure,
 			connect.WithSchema(orgServiceMethods.ByName("RemoveOrg")),
+			connect.WithClientOptions(opts...),
+		),
+		getOrg: connect.NewClient[v2.GetOrgRequest, v2.GetOrgResponse](
+			httpClient,
+			baseURL+OrgServiceGetOrgProcedure,
+			connect.WithSchema(orgServiceMethods.ByName("GetOrg")),
+			connect.WithClientOptions(opts...),
+		),
+		updateOrg: connect.NewClient[v2.UpdateOrgRequest, v2.UpdateOrgResponse](
+			httpClient,
+			baseURL+OrgServiceUpdateOrgProcedure,
+			connect.WithSchema(orgServiceMethods.ByName("UpdateOrg")),
 			connect.WithClientOptions(opts...),
 		),
 		addAgent: connect.NewClient[v2.AddAgentRequest, v2.AddAgentResponse](
@@ -542,6 +599,66 @@ func NewOrgServiceClient(httpClient connect.HTTPClient, baseURL string, opts ...
 			connect.WithSchema(orgServiceMethods.ByName("GetOrgEntityIds")),
 			connect.WithClientOptions(opts...),
 		),
+		getEmployees: connect.NewClient[v2.GetEmployeesRequest, v2.GetEmployeesResponse](
+			httpClient,
+			baseURL+OrgServiceGetEmployeesProcedure,
+			connect.WithSchema(orgServiceMethods.ByName("GetEmployees")),
+			connect.WithClientOptions(opts...),
+		),
+		setEmployees: connect.NewClient[v2.SetEmployeesRequest, v2.SetEmployeesResponse](
+			httpClient,
+			baseURL+OrgServiceSetEmployeesProcedure,
+			connect.WithSchema(orgServiceMethods.ByName("SetEmployees")),
+			connect.WithClientOptions(opts...),
+		),
+		addEmployee: connect.NewClient[v2.AddEmployeeRequest, v2.AddEmployeeResponse](
+			httpClient,
+			baseURL+OrgServiceAddEmployeeProcedure,
+			connect.WithSchema(orgServiceMethods.ByName("AddEmployee")),
+			connect.WithClientOptions(opts...),
+		),
+		removeEmployee: connect.NewClient[v2.RemoveEmployeeRequest, v2.RemoveEmployeeResponse](
+			httpClient,
+			baseURL+OrgServiceRemoveEmployeeProcedure,
+			connect.WithSchema(orgServiceMethods.ByName("RemoveEmployee")),
+			connect.WithClientOptions(opts...),
+		),
+		getCitizens: connect.NewClient[v2.GetCitizensRequest, v2.GetCitizensResponse](
+			httpClient,
+			baseURL+OrgServiceGetCitizensProcedure,
+			connect.WithSchema(orgServiceMethods.ByName("GetCitizens")),
+			connect.WithClientOptions(opts...),
+		),
+		setCitizens: connect.NewClient[v2.SetCitizensRequest, v2.SetCitizensResponse](
+			httpClient,
+			baseURL+OrgServiceSetCitizensProcedure,
+			connect.WithSchema(orgServiceMethods.ByName("SetCitizens")),
+			connect.WithClientOptions(opts...),
+		),
+		addCitizen: connect.NewClient[v2.AddCitizenRequest, v2.AddCitizenResponse](
+			httpClient,
+			baseURL+OrgServiceAddCitizenProcedure,
+			connect.WithSchema(orgServiceMethods.ByName("AddCitizen")),
+			connect.WithClientOptions(opts...),
+		),
+		removeCitizen: connect.NewClient[v2.RemoveCitizenRequest, v2.RemoveCitizenResponse](
+			httpClient,
+			baseURL+OrgServiceRemoveCitizenProcedure,
+			connect.WithSchema(orgServiceMethods.ByName("RemoveCitizen")),
+			connect.WithClientOptions(opts...),
+		),
+		getAgent: connect.NewClient[v2.GetAgentRequest, v2.GetAgentResponse](
+			httpClient,
+			baseURL+OrgServiceGetAgentProcedure,
+			connect.WithSchema(orgServiceMethods.ByName("GetAgent")),
+			connect.WithClientOptions(opts...),
+		),
+		updateAgent: connect.NewClient[v2.UpdateAgentRequest, v2.UpdateAgentResponse](
+			httpClient,
+			baseURL+OrgServiceUpdateAgentProcedure,
+			connect.WithSchema(orgServiceMethods.ByName("UpdateAgent")),
+			connect.WithClientOptions(opts...),
+		),
 	}
 }
 
@@ -549,6 +666,8 @@ func NewOrgServiceClient(httpClient connect.HTTPClient, baseURL string, opts ...
 type orgServiceClient struct {
 	addOrg                   *connect.Client[v2.AddOrgRequest, v2.AddOrgResponse]
 	removeOrg                *connect.Client[v2.RemoveOrgRequest, v2.RemoveOrgResponse]
+	getOrg                   *connect.Client[v2.GetOrgRequest, v2.GetOrgResponse]
+	updateOrg                *connect.Client[v2.UpdateOrgRequest, v2.UpdateOrgResponse]
 	addAgent                 *connect.Client[v2.AddAgentRequest, v2.AddAgentResponse]
 	removeAgent              *connect.Client[v2.RemoveAgentRequest, v2.RemoveAgentResponse]
 	getNominalGDP            *connect.Client[v2.GetNominalGDPRequest, v2.GetNominalGDPResponse]
@@ -595,6 +714,16 @@ type orgServiceClient struct {
 	getWorkingHours          *connect.Client[v2.GetWorkingHoursRequest, v2.GetWorkingHoursResponse]
 	setWorkingHours          *connect.Client[v2.SetWorkingHoursRequest, v2.SetWorkingHoursResponse]
 	getOrgEntityIds          *connect.Client[v2.GetOrgEntityIdsRequest, v2.GetOrgEntityIdsResponse]
+	getEmployees             *connect.Client[v2.GetEmployeesRequest, v2.GetEmployeesResponse]
+	setEmployees             *connect.Client[v2.SetEmployeesRequest, v2.SetEmployeesResponse]
+	addEmployee              *connect.Client[v2.AddEmployeeRequest, v2.AddEmployeeResponse]
+	removeEmployee           *connect.Client[v2.RemoveEmployeeRequest, v2.RemoveEmployeeResponse]
+	getCitizens              *connect.Client[v2.GetCitizensRequest, v2.GetCitizensResponse]
+	setCitizens              *connect.Client[v2.SetCitizensRequest, v2.SetCitizensResponse]
+	addCitizen               *connect.Client[v2.AddCitizenRequest, v2.AddCitizenResponse]
+	removeCitizen            *connect.Client[v2.RemoveCitizenRequest, v2.RemoveCitizenResponse]
+	getAgent                 *connect.Client[v2.GetAgentRequest, v2.GetAgentResponse]
+	updateAgent              *connect.Client[v2.UpdateAgentRequest, v2.UpdateAgentResponse]
 }
 
 // AddOrg calls city.economy.v2.OrgService.AddOrg.
@@ -605,6 +734,16 @@ func (c *orgServiceClient) AddOrg(ctx context.Context, req *connect.Request[v2.A
 // RemoveOrg calls city.economy.v2.OrgService.RemoveOrg.
 func (c *orgServiceClient) RemoveOrg(ctx context.Context, req *connect.Request[v2.RemoveOrgRequest]) (*connect.Response[v2.RemoveOrgResponse], error) {
 	return c.removeOrg.CallUnary(ctx, req)
+}
+
+// GetOrg calls city.economy.v2.OrgService.GetOrg.
+func (c *orgServiceClient) GetOrg(ctx context.Context, req *connect.Request[v2.GetOrgRequest]) (*connect.Response[v2.GetOrgResponse], error) {
+	return c.getOrg.CallUnary(ctx, req)
+}
+
+// UpdateOrg calls city.economy.v2.OrgService.UpdateOrg.
+func (c *orgServiceClient) UpdateOrg(ctx context.Context, req *connect.Request[v2.UpdateOrgRequest]) (*connect.Response[v2.UpdateOrgResponse], error) {
+	return c.updateOrg.CallUnary(ctx, req)
 }
 
 // AddAgent calls city.economy.v2.OrgService.AddAgent.
@@ -837,6 +976,56 @@ func (c *orgServiceClient) GetOrgEntityIds(ctx context.Context, req *connect.Req
 	return c.getOrgEntityIds.CallUnary(ctx, req)
 }
 
+// GetEmployees calls city.economy.v2.OrgService.GetEmployees.
+func (c *orgServiceClient) GetEmployees(ctx context.Context, req *connect.Request[v2.GetEmployeesRequest]) (*connect.Response[v2.GetEmployeesResponse], error) {
+	return c.getEmployees.CallUnary(ctx, req)
+}
+
+// SetEmployees calls city.economy.v2.OrgService.SetEmployees.
+func (c *orgServiceClient) SetEmployees(ctx context.Context, req *connect.Request[v2.SetEmployeesRequest]) (*connect.Response[v2.SetEmployeesResponse], error) {
+	return c.setEmployees.CallUnary(ctx, req)
+}
+
+// AddEmployee calls city.economy.v2.OrgService.AddEmployee.
+func (c *orgServiceClient) AddEmployee(ctx context.Context, req *connect.Request[v2.AddEmployeeRequest]) (*connect.Response[v2.AddEmployeeResponse], error) {
+	return c.addEmployee.CallUnary(ctx, req)
+}
+
+// RemoveEmployee calls city.economy.v2.OrgService.RemoveEmployee.
+func (c *orgServiceClient) RemoveEmployee(ctx context.Context, req *connect.Request[v2.RemoveEmployeeRequest]) (*connect.Response[v2.RemoveEmployeeResponse], error) {
+	return c.removeEmployee.CallUnary(ctx, req)
+}
+
+// GetCitizens calls city.economy.v2.OrgService.GetCitizens.
+func (c *orgServiceClient) GetCitizens(ctx context.Context, req *connect.Request[v2.GetCitizensRequest]) (*connect.Response[v2.GetCitizensResponse], error) {
+	return c.getCitizens.CallUnary(ctx, req)
+}
+
+// SetCitizens calls city.economy.v2.OrgService.SetCitizens.
+func (c *orgServiceClient) SetCitizens(ctx context.Context, req *connect.Request[v2.SetCitizensRequest]) (*connect.Response[v2.SetCitizensResponse], error) {
+	return c.setCitizens.CallUnary(ctx, req)
+}
+
+// AddCitizen calls city.economy.v2.OrgService.AddCitizen.
+func (c *orgServiceClient) AddCitizen(ctx context.Context, req *connect.Request[v2.AddCitizenRequest]) (*connect.Response[v2.AddCitizenResponse], error) {
+	return c.addCitizen.CallUnary(ctx, req)
+}
+
+// RemoveCitizen calls city.economy.v2.OrgService.RemoveCitizen.
+func (c *orgServiceClient) RemoveCitizen(ctx context.Context, req *connect.Request[v2.RemoveCitizenRequest]) (*connect.Response[v2.RemoveCitizenResponse], error) {
+	return c.removeCitizen.CallUnary(ctx, req)
+}
+
+// GetAgent calls city.economy.v2.OrgService.GetAgent.
+func (c *orgServiceClient) GetAgent(ctx context.Context, req *connect.Request[v2.GetAgentRequest]) (*connect.Response[v2.GetAgentResponse], error) {
+	return c.getAgent.CallUnary(ctx, req)
+}
+
+// UpdateAgent calls city.economy.v2.OrgService.UpdateAgent.
+func (c *orgServiceClient) UpdateAgent(ctx context.Context, req *connect.Request[v2.UpdateAgentRequest]) (*connect.Response[v2.UpdateAgentResponse], error) {
+	return c.updateAgent.CallUnary(ctx, req)
+}
+
 // OrgServiceHandler is an implementation of the city.economy.v2.OrgService service.
 type OrgServiceHandler interface {
 	// 添加组织
@@ -845,6 +1034,12 @@ type OrgServiceHandler interface {
 	// 移除组织
 	// remove org
 	RemoveOrg(context.Context, *connect.Request[v2.RemoveOrgRequest]) (*connect.Response[v2.RemoveOrgResponse], error)
+	// 获取组织
+	// get org
+	GetOrg(context.Context, *connect.Request[v2.GetOrgRequest]) (*connect.Response[v2.GetOrgResponse], error)
+	// 更新组织
+	// update org
+	UpdateOrg(context.Context, *connect.Request[v2.UpdateOrgRequest]) (*connect.Response[v2.UpdateOrgResponse], error)
 	// 添加Agent
 	// add agent
 	AddAgent(context.Context, *connect.Request[v2.AddAgentRequest]) (*connect.Response[v2.AddAgentResponse], error)
@@ -918,6 +1113,19 @@ type OrgServiceHandler interface {
 	SetWorkingHours(context.Context, *connect.Request[v2.SetWorkingHoursRequest]) (*connect.Response[v2.SetWorkingHoursResponse], error)
 	// Org Entity Ids
 	GetOrgEntityIds(context.Context, *connect.Request[v2.GetOrgEntityIdsRequest]) (*connect.Response[v2.GetOrgEntityIdsResponse], error)
+	// Employees 相关接口
+	GetEmployees(context.Context, *connect.Request[v2.GetEmployeesRequest]) (*connect.Response[v2.GetEmployeesResponse], error)
+	SetEmployees(context.Context, *connect.Request[v2.SetEmployeesRequest]) (*connect.Response[v2.SetEmployeesResponse], error)
+	AddEmployee(context.Context, *connect.Request[v2.AddEmployeeRequest]) (*connect.Response[v2.AddEmployeeResponse], error)
+	RemoveEmployee(context.Context, *connect.Request[v2.RemoveEmployeeRequest]) (*connect.Response[v2.RemoveEmployeeResponse], error)
+	// Citizens 相关接口
+	GetCitizens(context.Context, *connect.Request[v2.GetCitizensRequest]) (*connect.Response[v2.GetCitizensResponse], error)
+	SetCitizens(context.Context, *connect.Request[v2.SetCitizensRequest]) (*connect.Response[v2.SetCitizensResponse], error)
+	AddCitizen(context.Context, *connect.Request[v2.AddCitizenRequest]) (*connect.Response[v2.AddCitizenResponse], error)
+	RemoveCitizen(context.Context, *connect.Request[v2.RemoveCitizenRequest]) (*connect.Response[v2.RemoveCitizenResponse], error)
+	// Agent 相关接口
+	GetAgent(context.Context, *connect.Request[v2.GetAgentRequest]) (*connect.Response[v2.GetAgentResponse], error)
+	UpdateAgent(context.Context, *connect.Request[v2.UpdateAgentRequest]) (*connect.Response[v2.UpdateAgentResponse], error)
 }
 
 // NewOrgServiceHandler builds an HTTP handler from the service implementation. It returns the path
@@ -937,6 +1145,18 @@ func NewOrgServiceHandler(svc OrgServiceHandler, opts ...connect.HandlerOption) 
 		OrgServiceRemoveOrgProcedure,
 		svc.RemoveOrg,
 		connect.WithSchema(orgServiceMethods.ByName("RemoveOrg")),
+		connect.WithHandlerOptions(opts...),
+	)
+	orgServiceGetOrgHandler := connect.NewUnaryHandler(
+		OrgServiceGetOrgProcedure,
+		svc.GetOrg,
+		connect.WithSchema(orgServiceMethods.ByName("GetOrg")),
+		connect.WithHandlerOptions(opts...),
+	)
+	orgServiceUpdateOrgHandler := connect.NewUnaryHandler(
+		OrgServiceUpdateOrgProcedure,
+		svc.UpdateOrg,
+		connect.WithSchema(orgServiceMethods.ByName("UpdateOrg")),
 		connect.WithHandlerOptions(opts...),
 	)
 	orgServiceAddAgentHandler := connect.NewUnaryHandler(
@@ -1215,12 +1435,76 @@ func NewOrgServiceHandler(svc OrgServiceHandler, opts ...connect.HandlerOption) 
 		connect.WithSchema(orgServiceMethods.ByName("GetOrgEntityIds")),
 		connect.WithHandlerOptions(opts...),
 	)
+	orgServiceGetEmployeesHandler := connect.NewUnaryHandler(
+		OrgServiceGetEmployeesProcedure,
+		svc.GetEmployees,
+		connect.WithSchema(orgServiceMethods.ByName("GetEmployees")),
+		connect.WithHandlerOptions(opts...),
+	)
+	orgServiceSetEmployeesHandler := connect.NewUnaryHandler(
+		OrgServiceSetEmployeesProcedure,
+		svc.SetEmployees,
+		connect.WithSchema(orgServiceMethods.ByName("SetEmployees")),
+		connect.WithHandlerOptions(opts...),
+	)
+	orgServiceAddEmployeeHandler := connect.NewUnaryHandler(
+		OrgServiceAddEmployeeProcedure,
+		svc.AddEmployee,
+		connect.WithSchema(orgServiceMethods.ByName("AddEmployee")),
+		connect.WithHandlerOptions(opts...),
+	)
+	orgServiceRemoveEmployeeHandler := connect.NewUnaryHandler(
+		OrgServiceRemoveEmployeeProcedure,
+		svc.RemoveEmployee,
+		connect.WithSchema(orgServiceMethods.ByName("RemoveEmployee")),
+		connect.WithHandlerOptions(opts...),
+	)
+	orgServiceGetCitizensHandler := connect.NewUnaryHandler(
+		OrgServiceGetCitizensProcedure,
+		svc.GetCitizens,
+		connect.WithSchema(orgServiceMethods.ByName("GetCitizens")),
+		connect.WithHandlerOptions(opts...),
+	)
+	orgServiceSetCitizensHandler := connect.NewUnaryHandler(
+		OrgServiceSetCitizensProcedure,
+		svc.SetCitizens,
+		connect.WithSchema(orgServiceMethods.ByName("SetCitizens")),
+		connect.WithHandlerOptions(opts...),
+	)
+	orgServiceAddCitizenHandler := connect.NewUnaryHandler(
+		OrgServiceAddCitizenProcedure,
+		svc.AddCitizen,
+		connect.WithSchema(orgServiceMethods.ByName("AddCitizen")),
+		connect.WithHandlerOptions(opts...),
+	)
+	orgServiceRemoveCitizenHandler := connect.NewUnaryHandler(
+		OrgServiceRemoveCitizenProcedure,
+		svc.RemoveCitizen,
+		connect.WithSchema(orgServiceMethods.ByName("RemoveCitizen")),
+		connect.WithHandlerOptions(opts...),
+	)
+	orgServiceGetAgentHandler := connect.NewUnaryHandler(
+		OrgServiceGetAgentProcedure,
+		svc.GetAgent,
+		connect.WithSchema(orgServiceMethods.ByName("GetAgent")),
+		connect.WithHandlerOptions(opts...),
+	)
+	orgServiceUpdateAgentHandler := connect.NewUnaryHandler(
+		OrgServiceUpdateAgentProcedure,
+		svc.UpdateAgent,
+		connect.WithSchema(orgServiceMethods.ByName("UpdateAgent")),
+		connect.WithHandlerOptions(opts...),
+	)
 	return "/city.economy.v2.OrgService/", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		switch r.URL.Path {
 		case OrgServiceAddOrgProcedure:
 			orgServiceAddOrgHandler.ServeHTTP(w, r)
 		case OrgServiceRemoveOrgProcedure:
 			orgServiceRemoveOrgHandler.ServeHTTP(w, r)
+		case OrgServiceGetOrgProcedure:
+			orgServiceGetOrgHandler.ServeHTTP(w, r)
+		case OrgServiceUpdateOrgProcedure:
+			orgServiceUpdateOrgHandler.ServeHTTP(w, r)
 		case OrgServiceAddAgentProcedure:
 			orgServiceAddAgentHandler.ServeHTTP(w, r)
 		case OrgServiceRemoveAgentProcedure:
@@ -1313,6 +1597,26 @@ func NewOrgServiceHandler(svc OrgServiceHandler, opts ...connect.HandlerOption) 
 			orgServiceSetWorkingHoursHandler.ServeHTTP(w, r)
 		case OrgServiceGetOrgEntityIdsProcedure:
 			orgServiceGetOrgEntityIdsHandler.ServeHTTP(w, r)
+		case OrgServiceGetEmployeesProcedure:
+			orgServiceGetEmployeesHandler.ServeHTTP(w, r)
+		case OrgServiceSetEmployeesProcedure:
+			orgServiceSetEmployeesHandler.ServeHTTP(w, r)
+		case OrgServiceAddEmployeeProcedure:
+			orgServiceAddEmployeeHandler.ServeHTTP(w, r)
+		case OrgServiceRemoveEmployeeProcedure:
+			orgServiceRemoveEmployeeHandler.ServeHTTP(w, r)
+		case OrgServiceGetCitizensProcedure:
+			orgServiceGetCitizensHandler.ServeHTTP(w, r)
+		case OrgServiceSetCitizensProcedure:
+			orgServiceSetCitizensHandler.ServeHTTP(w, r)
+		case OrgServiceAddCitizenProcedure:
+			orgServiceAddCitizenHandler.ServeHTTP(w, r)
+		case OrgServiceRemoveCitizenProcedure:
+			orgServiceRemoveCitizenHandler.ServeHTTP(w, r)
+		case OrgServiceGetAgentProcedure:
+			orgServiceGetAgentHandler.ServeHTTP(w, r)
+		case OrgServiceUpdateAgentProcedure:
+			orgServiceUpdateAgentHandler.ServeHTTP(w, r)
 		default:
 			http.NotFound(w, r)
 		}
@@ -1328,6 +1632,14 @@ func (UnimplementedOrgServiceHandler) AddOrg(context.Context, *connect.Request[v
 
 func (UnimplementedOrgServiceHandler) RemoveOrg(context.Context, *connect.Request[v2.RemoveOrgRequest]) (*connect.Response[v2.RemoveOrgResponse], error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.RemoveOrg is not implemented"))
+}
+
+func (UnimplementedOrgServiceHandler) GetOrg(context.Context, *connect.Request[v2.GetOrgRequest]) (*connect.Response[v2.GetOrgResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.GetOrg is not implemented"))
+}
+
+func (UnimplementedOrgServiceHandler) UpdateOrg(context.Context, *connect.Request[v2.UpdateOrgRequest]) (*connect.Response[v2.UpdateOrgResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.UpdateOrg is not implemented"))
 }
 
 func (UnimplementedOrgServiceHandler) AddAgent(context.Context, *connect.Request[v2.AddAgentRequest]) (*connect.Response[v2.AddAgentResponse], error) {
@@ -1512,4 +1824,44 @@ func (UnimplementedOrgServiceHandler) SetWorkingHours(context.Context, *connect.
 
 func (UnimplementedOrgServiceHandler) GetOrgEntityIds(context.Context, *connect.Request[v2.GetOrgEntityIdsRequest]) (*connect.Response[v2.GetOrgEntityIdsResponse], error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.GetOrgEntityIds is not implemented"))
+}
+
+func (UnimplementedOrgServiceHandler) GetEmployees(context.Context, *connect.Request[v2.GetEmployeesRequest]) (*connect.Response[v2.GetEmployeesResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.GetEmployees is not implemented"))
+}
+
+func (UnimplementedOrgServiceHandler) SetEmployees(context.Context, *connect.Request[v2.SetEmployeesRequest]) (*connect.Response[v2.SetEmployeesResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.SetEmployees is not implemented"))
+}
+
+func (UnimplementedOrgServiceHandler) AddEmployee(context.Context, *connect.Request[v2.AddEmployeeRequest]) (*connect.Response[v2.AddEmployeeResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.AddEmployee is not implemented"))
+}
+
+func (UnimplementedOrgServiceHandler) RemoveEmployee(context.Context, *connect.Request[v2.RemoveEmployeeRequest]) (*connect.Response[v2.RemoveEmployeeResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.RemoveEmployee is not implemented"))
+}
+
+func (UnimplementedOrgServiceHandler) GetCitizens(context.Context, *connect.Request[v2.GetCitizensRequest]) (*connect.Response[v2.GetCitizensResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.GetCitizens is not implemented"))
+}
+
+func (UnimplementedOrgServiceHandler) SetCitizens(context.Context, *connect.Request[v2.SetCitizensRequest]) (*connect.Response[v2.SetCitizensResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.SetCitizens is not implemented"))
+}
+
+func (UnimplementedOrgServiceHandler) AddCitizen(context.Context, *connect.Request[v2.AddCitizenRequest]) (*connect.Response[v2.AddCitizenResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.AddCitizen is not implemented"))
+}
+
+func (UnimplementedOrgServiceHandler) RemoveCitizen(context.Context, *connect.Request[v2.RemoveCitizenRequest]) (*connect.Response[v2.RemoveCitizenResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.RemoveCitizen is not implemented"))
+}
+
+func (UnimplementedOrgServiceHandler) GetAgent(context.Context, *connect.Request[v2.GetAgentRequest]) (*connect.Response[v2.GetAgentResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.GetAgent is not implemented"))
+}
+
+func (UnimplementedOrgServiceHandler) UpdateAgent(context.Context, *connect.Request[v2.UpdateAgentRequest]) (*connect.Response[v2.UpdateAgentResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.UpdateAgent is not implemented"))
 }

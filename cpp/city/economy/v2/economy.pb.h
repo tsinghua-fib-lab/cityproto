@@ -233,6 +233,8 @@ class Org final :
     kDepressionFieldNumber = 17,
     kLocusControlFieldNumber = 18,
     kWorkingHoursFieldNumber = 19,
+    kEmployeesFieldNumber = 20,
+    kCitizensFieldNumber = 21,
     kIdFieldNumber = 1,
     kTypeFieldNumber = 2,
     kInventoryFieldNumber = 8,
@@ -526,6 +528,50 @@ class Org final :
   ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
       mutable_working_hours();
 
+  // repeated int32 employees = 20 [json_name = "employees"];
+  int employees_size() const;
+  private:
+  int _internal_employees_size() const;
+  public:
+  void clear_employees();
+  private:
+  int32_t _internal_employees(int index) const;
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+      _internal_employees() const;
+  void _internal_add_employees(int32_t value);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+      _internal_mutable_employees();
+  public:
+  int32_t employees(int index) const;
+  void set_employees(int index, int32_t value);
+  void add_employees(int32_t value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+      employees() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+      mutable_employees();
+
+  // repeated int32 citizens = 21 [json_name = "citizens"];
+  int citizens_size() const;
+  private:
+  int _internal_citizens_size() const;
+  public:
+  void clear_citizens();
+  private:
+  int32_t _internal_citizens(int index) const;
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+      _internal_citizens() const;
+  void _internal_add_citizens(int32_t value);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+      _internal_mutable_citizens();
+  public:
+  int32_t citizens(int index) const;
+  void set_citizens(int index, int32_t value);
+  void add_citizens(int32_t value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+      citizens() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+      mutable_citizens();
+
   // int32 id = 1 [json_name = "id"];
   void clear_id();
   int32_t id() const;
@@ -619,6 +665,10 @@ class Org final :
     ::PROTOBUF_NAMESPACE_ID::RepeatedField< float > depression_;
     ::PROTOBUF_NAMESPACE_ID::RepeatedField< float > locus_control_;
     ::PROTOBUF_NAMESPACE_ID::RepeatedField< float > working_hours_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t > employees_;
+    mutable std::atomic<int> _employees_cached_byte_size_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t > citizens_;
+    mutable std::atomic<int> _citizens_cached_byte_size_;
     int32_t id_;
     int type_;
     int32_t inventory_;
@@ -754,6 +804,10 @@ class Agent final :
   enum : int {
     kIdFieldNumber = 1,
     kCurrencyFieldNumber = 2,
+    kFirmIdFieldNumber = 3,
+    kSkillFieldNumber = 4,
+    kConsumptionFieldNumber = 5,
+    kIncomeFieldNumber = 6,
   };
   // int32 id = 1 [json_name = "id"];
   void clear_id();
@@ -777,6 +831,58 @@ class Agent final :
   void _internal_set_currency(float value);
   public:
 
+  // optional int32 firm_id = 3 [json_name = "firmId"];
+  bool has_firm_id() const;
+  private:
+  bool _internal_has_firm_id() const;
+  public:
+  void clear_firm_id();
+  int32_t firm_id() const;
+  void set_firm_id(int32_t value);
+  private:
+  int32_t _internal_firm_id() const;
+  void _internal_set_firm_id(int32_t value);
+  public:
+
+  // optional float skill = 4 [json_name = "skill"];
+  bool has_skill() const;
+  private:
+  bool _internal_has_skill() const;
+  public:
+  void clear_skill();
+  float skill() const;
+  void set_skill(float value);
+  private:
+  float _internal_skill() const;
+  void _internal_set_skill(float value);
+  public:
+
+  // optional float consumption = 5 [json_name = "consumption"];
+  bool has_consumption() const;
+  private:
+  bool _internal_has_consumption() const;
+  public:
+  void clear_consumption();
+  float consumption() const;
+  void set_consumption(float value);
+  private:
+  float _internal_consumption() const;
+  void _internal_set_consumption(float value);
+  public:
+
+  // optional float income = 6 [json_name = "income"];
+  bool has_income() const;
+  private:
+  bool _internal_has_income() const;
+  public:
+  void clear_income();
+  float income() const;
+  void set_income(float value);
+  private:
+  float _internal_income() const;
+  void _internal_set_income(float value);
+  public:
+
   // @@protoc_insertion_point(class_scope:city.economy.v2.Agent)
  private:
   class _Internal;
@@ -789,6 +895,10 @@ class Agent final :
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
     int32_t id_;
     float currency_;
+    int32_t firm_id_;
+    float skill_;
+    float consumption_;
+    float income_;
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_city_2feconomy_2fv2_2feconomy_2eproto;
@@ -1744,6 +1854,100 @@ Org::mutable_working_hours() {
   return _internal_mutable_working_hours();
 }
 
+// repeated int32 employees = 20 [json_name = "employees"];
+inline int Org::_internal_employees_size() const {
+  return _impl_.employees_.size();
+}
+inline int Org::employees_size() const {
+  return _internal_employees_size();
+}
+inline void Org::clear_employees() {
+  _impl_.employees_.Clear();
+}
+inline int32_t Org::_internal_employees(int index) const {
+  return _impl_.employees_.Get(index);
+}
+inline int32_t Org::employees(int index) const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.Org.employees)
+  return _internal_employees(index);
+}
+inline void Org::set_employees(int index, int32_t value) {
+  _impl_.employees_.Set(index, value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.Org.employees)
+}
+inline void Org::_internal_add_employees(int32_t value) {
+  _impl_.employees_.Add(value);
+}
+inline void Org::add_employees(int32_t value) {
+  _internal_add_employees(value);
+  // @@protoc_insertion_point(field_add:city.economy.v2.Org.employees)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+Org::_internal_employees() const {
+  return _impl_.employees_;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+Org::employees() const {
+  // @@protoc_insertion_point(field_list:city.economy.v2.Org.employees)
+  return _internal_employees();
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+Org::_internal_mutable_employees() {
+  return &_impl_.employees_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+Org::mutable_employees() {
+  // @@protoc_insertion_point(field_mutable_list:city.economy.v2.Org.employees)
+  return _internal_mutable_employees();
+}
+
+// repeated int32 citizens = 21 [json_name = "citizens"];
+inline int Org::_internal_citizens_size() const {
+  return _impl_.citizens_.size();
+}
+inline int Org::citizens_size() const {
+  return _internal_citizens_size();
+}
+inline void Org::clear_citizens() {
+  _impl_.citizens_.Clear();
+}
+inline int32_t Org::_internal_citizens(int index) const {
+  return _impl_.citizens_.Get(index);
+}
+inline int32_t Org::citizens(int index) const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.Org.citizens)
+  return _internal_citizens(index);
+}
+inline void Org::set_citizens(int index, int32_t value) {
+  _impl_.citizens_.Set(index, value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.Org.citizens)
+}
+inline void Org::_internal_add_citizens(int32_t value) {
+  _impl_.citizens_.Add(value);
+}
+inline void Org::add_citizens(int32_t value) {
+  _internal_add_citizens(value);
+  // @@protoc_insertion_point(field_add:city.economy.v2.Org.citizens)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+Org::_internal_citizens() const {
+  return _impl_.citizens_;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+Org::citizens() const {
+  // @@protoc_insertion_point(field_list:city.economy.v2.Org.citizens)
+  return _internal_citizens();
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+Org::_internal_mutable_citizens() {
+  return &_impl_.citizens_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+Org::mutable_citizens() {
+  // @@protoc_insertion_point(field_mutable_list:city.economy.v2.Org.citizens)
+  return _internal_mutable_citizens();
+}
+
 // -------------------------------------------------------------------
 
 // Agent
@@ -1794,6 +1998,118 @@ inline void Agent::_internal_set_currency(float value) {
 inline void Agent::set_currency(float value) {
   _internal_set_currency(value);
   // @@protoc_insertion_point(field_set:city.economy.v2.Agent.currency)
+}
+
+// optional int32 firm_id = 3 [json_name = "firmId"];
+inline bool Agent::_internal_has_firm_id() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  return value;
+}
+inline bool Agent::has_firm_id() const {
+  return _internal_has_firm_id();
+}
+inline void Agent::clear_firm_id() {
+  _impl_.firm_id_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000002u;
+}
+inline int32_t Agent::_internal_firm_id() const {
+  return _impl_.firm_id_;
+}
+inline int32_t Agent::firm_id() const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.Agent.firm_id)
+  return _internal_firm_id();
+}
+inline void Agent::_internal_set_firm_id(int32_t value) {
+  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_.firm_id_ = value;
+}
+inline void Agent::set_firm_id(int32_t value) {
+  _internal_set_firm_id(value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.Agent.firm_id)
+}
+
+// optional float skill = 4 [json_name = "skill"];
+inline bool Agent::_internal_has_skill() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
+  return value;
+}
+inline bool Agent::has_skill() const {
+  return _internal_has_skill();
+}
+inline void Agent::clear_skill() {
+  _impl_.skill_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000004u;
+}
+inline float Agent::_internal_skill() const {
+  return _impl_.skill_;
+}
+inline float Agent::skill() const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.Agent.skill)
+  return _internal_skill();
+}
+inline void Agent::_internal_set_skill(float value) {
+  _impl_._has_bits_[0] |= 0x00000004u;
+  _impl_.skill_ = value;
+}
+inline void Agent::set_skill(float value) {
+  _internal_set_skill(value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.Agent.skill)
+}
+
+// optional float consumption = 5 [json_name = "consumption"];
+inline bool Agent::_internal_has_consumption() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000008u) != 0;
+  return value;
+}
+inline bool Agent::has_consumption() const {
+  return _internal_has_consumption();
+}
+inline void Agent::clear_consumption() {
+  _impl_.consumption_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000008u;
+}
+inline float Agent::_internal_consumption() const {
+  return _impl_.consumption_;
+}
+inline float Agent::consumption() const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.Agent.consumption)
+  return _internal_consumption();
+}
+inline void Agent::_internal_set_consumption(float value) {
+  _impl_._has_bits_[0] |= 0x00000008u;
+  _impl_.consumption_ = value;
+}
+inline void Agent::set_consumption(float value) {
+  _internal_set_consumption(value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.Agent.consumption)
+}
+
+// optional float income = 6 [json_name = "income"];
+inline bool Agent::_internal_has_income() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000010u) != 0;
+  return value;
+}
+inline bool Agent::has_income() const {
+  return _internal_has_income();
+}
+inline void Agent::clear_income() {
+  _impl_.income_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000010u;
+}
+inline float Agent::_internal_income() const {
+  return _impl_.income_;
+}
+inline float Agent::income() const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.Agent.income)
+  return _internal_income();
+}
+inline void Agent::_internal_set_income(float value) {
+  _impl_._has_bits_[0] |= 0x00000010u;
+  _impl_.income_ = value;
+}
+inline void Agent::set_income(float value) {
+  _internal_set_income(value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.Agent.income)
 }
 
 // -------------------------------------------------------------------

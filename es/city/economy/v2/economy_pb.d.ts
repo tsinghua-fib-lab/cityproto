@@ -177,6 +177,23 @@ export declare class Org extends Message<Org> {
    */
   workingHours: number[];
 
+  /**
+   * new：
+   * Firm: 企业的雇员列表
+   * employees list for firm
+   *
+   * @generated from field: repeated int32 employees = 20;
+   */
+  employees: number[];
+
+  /**
+   * NBS & Government: 公民列表
+   * citizens list for NBS and government
+   *
+   * @generated from field: repeated int32 citizens = 21;
+   */
+  citizens: number[];
+
   constructor(data?: PartialMessage<Org>);
 
   static readonly runtime: typeof proto3;
@@ -209,6 +226,34 @@ export declare class Agent extends Message<Agent> {
    * @generated from field: optional float currency = 2;
    */
   currency?: number;
+
+  /**
+   * 所属企业ID
+   *
+   * @generated from field: optional int32 firm_id = 3;
+   */
+  firmId?: number;
+
+  /**
+   * 技能水平
+   *
+   * @generated from field: optional float skill = 4;
+   */
+  skill?: number;
+
+  /**
+   * 消费
+   *
+   * @generated from field: optional float consumption = 5;
+   */
+  consumption?: number;
+
+  /**
+   * 收入
+   *
+   * @generated from field: optional float income = 6;
+   */
+  income?: number;
 
   constructor(data?: PartialMessage<Agent>);
 

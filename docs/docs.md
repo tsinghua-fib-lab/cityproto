@@ -133,8 +133,12 @@
 - [city/economy/v2/org_service.proto](#city_economy_v2_org_service-proto)
     - [AddAgentRequest](#city-economy-v2-AddAgentRequest)
     - [AddAgentResponse](#city-economy-v2-AddAgentResponse)
+    - [AddCitizenRequest](#city-economy-v2-AddCitizenRequest)
+    - [AddCitizenResponse](#city-economy-v2-AddCitizenResponse)
     - [AddCurrencyRequest](#city-economy-v2-AddCurrencyRequest)
     - [AddCurrencyResponse](#city-economy-v2-AddCurrencyResponse)
+    - [AddEmployeeRequest](#city-economy-v2-AddEmployeeRequest)
+    - [AddEmployeeResponse](#city-economy-v2-AddEmployeeResponse)
     - [AddInterestRateRequest](#city-economy-v2-AddInterestRateRequest)
     - [AddInterestRateResponse](#city-economy-v2-AddInterestRateResponse)
     - [AddInventoryRequest](#city-economy-v2-AddInventoryRequest)
@@ -149,10 +153,14 @@
     - [CalculateInterestResponse](#city-economy-v2-CalculateInterestResponse)
     - [CalculateTaxesDueRequest](#city-economy-v2-CalculateTaxesDueRequest)
     - [CalculateTaxesDueResponse](#city-economy-v2-CalculateTaxesDueResponse)
+    - [GetAgentRequest](#city-economy-v2-GetAgentRequest)
+    - [GetAgentResponse](#city-economy-v2-GetAgentResponse)
     - [GetBracketCutoffsRequest](#city-economy-v2-GetBracketCutoffsRequest)
     - [GetBracketCutoffsResponse](#city-economy-v2-GetBracketCutoffsResponse)
     - [GetBracketRatesRequest](#city-economy-v2-GetBracketRatesRequest)
     - [GetBracketRatesResponse](#city-economy-v2-GetBracketRatesResponse)
+    - [GetCitizensRequest](#city-economy-v2-GetCitizensRequest)
+    - [GetCitizensResponse](#city-economy-v2-GetCitizensResponse)
     - [GetConsumptionCurrencyRequest](#city-economy-v2-GetConsumptionCurrencyRequest)
     - [GetConsumptionCurrencyResponse](#city-economy-v2-GetConsumptionCurrencyResponse)
     - [GetConsumptionPropensityRequest](#city-economy-v2-GetConsumptionPropensityRequest)
@@ -161,6 +169,8 @@
     - [GetCurrencyResponse](#city-economy-v2-GetCurrencyResponse)
     - [GetDepressionRequest](#city-economy-v2-GetDepressionRequest)
     - [GetDepressionResponse](#city-economy-v2-GetDepressionResponse)
+    - [GetEmployeesRequest](#city-economy-v2-GetEmployeesRequest)
+    - [GetEmployeesResponse](#city-economy-v2-GetEmployeesResponse)
     - [GetIncomeCurrencyRequest](#city-economy-v2-GetIncomeCurrencyRequest)
     - [GetIncomeCurrencyResponse](#city-economy-v2-GetIncomeCurrencyResponse)
     - [GetInterestRateRequest](#city-economy-v2-GetInterestRateRequest)
@@ -173,6 +183,8 @@
     - [GetNominalGDPResponse](#city-economy-v2-GetNominalGDPResponse)
     - [GetOrgEntityIdsRequest](#city-economy-v2-GetOrgEntityIdsRequest)
     - [GetOrgEntityIdsResponse](#city-economy-v2-GetOrgEntityIdsResponse)
+    - [GetOrgRequest](#city-economy-v2-GetOrgRequest)
+    - [GetOrgResponse](#city-economy-v2-GetOrgResponse)
     - [GetPriceRequest](#city-economy-v2-GetPriceRequest)
     - [GetPriceResponse](#city-economy-v2-GetPriceResponse)
     - [GetPricesRequest](#city-economy-v2-GetPricesRequest)
@@ -189,6 +201,10 @@
     - [LoadEconomyEntitiesResponse](#city-economy-v2-LoadEconomyEntitiesResponse)
     - [RemoveAgentRequest](#city-economy-v2-RemoveAgentRequest)
     - [RemoveAgentResponse](#city-economy-v2-RemoveAgentResponse)
+    - [RemoveCitizenRequest](#city-economy-v2-RemoveCitizenRequest)
+    - [RemoveCitizenResponse](#city-economy-v2-RemoveCitizenResponse)
+    - [RemoveEmployeeRequest](#city-economy-v2-RemoveEmployeeRequest)
+    - [RemoveEmployeeResponse](#city-economy-v2-RemoveEmployeeResponse)
     - [RemoveOrgRequest](#city-economy-v2-RemoveOrgRequest)
     - [RemoveOrgResponse](#city-economy-v2-RemoveOrgResponse)
     - [SaveEconomyEntitiesRequest](#city-economy-v2-SaveEconomyEntitiesRequest)
@@ -197,6 +213,8 @@
     - [SetBracketCutoffsResponse](#city-economy-v2-SetBracketCutoffsResponse)
     - [SetBracketRatesRequest](#city-economy-v2-SetBracketRatesRequest)
     - [SetBracketRatesResponse](#city-economy-v2-SetBracketRatesResponse)
+    - [SetCitizensRequest](#city-economy-v2-SetCitizensRequest)
+    - [SetCitizensResponse](#city-economy-v2-SetCitizensResponse)
     - [SetConsumptionCurrencyRequest](#city-economy-v2-SetConsumptionCurrencyRequest)
     - [SetConsumptionCurrencyResponse](#city-economy-v2-SetConsumptionCurrencyResponse)
     - [SetConsumptionPropensityRequest](#city-economy-v2-SetConsumptionPropensityRequest)
@@ -205,6 +223,8 @@
     - [SetCurrencyResponse](#city-economy-v2-SetCurrencyResponse)
     - [SetDepressionRequest](#city-economy-v2-SetDepressionRequest)
     - [SetDepressionResponse](#city-economy-v2-SetDepressionResponse)
+    - [SetEmployeesRequest](#city-economy-v2-SetEmployeesRequest)
+    - [SetEmployeesResponse](#city-economy-v2-SetEmployeesResponse)
     - [SetIncomeCurrencyRequest](#city-economy-v2-SetIncomeCurrencyRequest)
     - [SetIncomeCurrencyResponse](#city-economy-v2-SetIncomeCurrencyResponse)
     - [SetInterestRateRequest](#city-economy-v2-SetInterestRateRequest)
@@ -227,6 +247,10 @@
     - [SetWagesResponse](#city-economy-v2-SetWagesResponse)
     - [SetWorkingHoursRequest](#city-economy-v2-SetWorkingHoursRequest)
     - [SetWorkingHoursResponse](#city-economy-v2-SetWorkingHoursResponse)
+    - [UpdateAgentRequest](#city-economy-v2-UpdateAgentRequest)
+    - [UpdateAgentResponse](#city-economy-v2-UpdateAgentResponse)
+    - [UpdateOrgRequest](#city-economy-v2-UpdateOrgRequest)
+    - [UpdateOrgResponse](#city-economy-v2-UpdateOrgResponse)
   
     - [OrgService](#city-economy-v2-OrgService)
   
@@ -2160,6 +2184,10 @@ MongoDB配置
 | ----- | ---- | ----- | ----------- |
 | id | [int32](#int32) |  | person ID |
 | currency | [float](#float) | optional | currency |
+| firm_id | [int32](#int32) | optional | 所属企业ID |
+| skill | [float](#float) | optional | 技能水平 |
+| consumption | [float](#float) | optional | 消费 |
+| income | [float](#float) | optional | 收入 |
 
 
 
@@ -2210,6 +2238,8 @@ Organization
 | depression | [float](#float) | repeated |  |
 | locus_control | [float](#float) | repeated |  |
 | working_hours | [float](#float) | repeated |  |
+| employees | [int32](#int32) | repeated | new： Firm: 企业的雇员列表 employees list for firm |
+| citizens | [int32](#int32) | repeated | NBS &amp; Government: 公民列表 citizens list for NBS and government |
 
 
 
@@ -2272,6 +2302,32 @@ Organization
 
 
 
+<a name="city-economy-v2-AddCitizenRequest"></a>
+
+### AddCitizenRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| org_id | [int32](#int32) |  |  |
+| citizen_id | [int32](#int32) |  |  |
+
+
+
+
+
+
+<a name="city-economy-v2-AddCitizenResponse"></a>
+
+### AddCitizenResponse
+
+
+
+
+
+
+
 <a name="city-economy-v2-AddCurrencyRequest"></a>
 
 ### AddCurrencyRequest
@@ -2297,6 +2353,32 @@ Organization
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | currency | [float](#float) |  |  |
+
+
+
+
+
+
+<a name="city-economy-v2-AddEmployeeRequest"></a>
+
+### AddEmployeeRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| org_id | [int32](#int32) |  |  |
+| employee_id | [int32](#int32) |  |  |
+
+
+
+
+
+
+<a name="city-economy-v2-AddEmployeeResponse"></a>
+
+### AddEmployeeResponse
+
 
 
 
@@ -2520,6 +2602,36 @@ Organization
 
 
 
+<a name="city-economy-v2-GetAgentRequest"></a>
+
+### GetAgentRequest
+Agent 相关消息
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| agent_id | [int32](#int32) |  |  |
+
+
+
+
+
+
+<a name="city-economy-v2-GetAgentResponse"></a>
+
+### GetAgentResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| agent | [Agent](#city-economy-v2-Agent) |  |  |
+
+
+
+
+
+
 <a name="city-economy-v2-GetBracketCutoffsRequest"></a>
 
 ### GetBracketCutoffsRequest
@@ -2574,6 +2686,36 @@ Organization
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | bracket_rates | [float](#float) | repeated |  |
+
+
+
+
+
+
+<a name="city-economy-v2-GetCitizensRequest"></a>
+
+### GetCitizensRequest
+Citizens 相关消息
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| org_id | [int32](#int32) |  |  |
+
+
+
+
+
+
+<a name="city-economy-v2-GetCitizensResponse"></a>
+
+### GetCitizensResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| citizen_ids | [int32](#int32) | repeated |  |
 
 
 
@@ -2694,6 +2836,36 @@ Depression
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | depression | [float](#float) | repeated |  |
+
+
+
+
+
+
+<a name="city-economy-v2-GetEmployeesRequest"></a>
+
+### GetEmployeesRequest
+Employees 相关消息
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| org_id | [int32](#int32) |  |  |
+
+
+
+
+
+
+<a name="city-economy-v2-GetEmployeesResponse"></a>
+
+### GetEmployeesResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| employee_ids | [int32](#int32) | repeated |  |
 
 
 
@@ -2874,6 +3046,36 @@ Locus of Control
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | org_ids | [int32](#int32) | repeated |  |
+
+
+
+
+
+
+<a name="city-economy-v2-GetOrgRequest"></a>
+
+### GetOrgRequest
+Org 相关消息
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| org_id | [int32](#int32) |  |  |
+
+
+
+
+
+
+<a name="city-economy-v2-GetOrgResponse"></a>
+
+### GetOrgResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| org | [Org](#city-economy-v2-Org) |  |  |
 
 
 
@@ -3083,8 +3285,8 @@ Working Hours
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| agent_ids | [int32](#int32) | repeated |  |
-| org_ids | [int32](#int32) | repeated |  |
+| org_ids | [int32](#int32) | repeated | 组织ID列表 |
+| agent_ids | [int32](#int32) | repeated | Agent ID列表 |
 
 
 
@@ -3109,6 +3311,58 @@ Working Hours
 <a name="city-economy-v2-RemoveAgentResponse"></a>
 
 ### RemoveAgentResponse
+
+
+
+
+
+
+
+<a name="city-economy-v2-RemoveCitizenRequest"></a>
+
+### RemoveCitizenRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| org_id | [int32](#int32) |  |  |
+| citizen_id | [int32](#int32) |  |  |
+
+
+
+
+
+
+<a name="city-economy-v2-RemoveCitizenResponse"></a>
+
+### RemoveCitizenResponse
+
+
+
+
+
+
+
+<a name="city-economy-v2-RemoveEmployeeRequest"></a>
+
+### RemoveEmployeeRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| org_id | [int32](#int32) |  |  |
+| employee_id | [int32](#int32) |  |  |
+
+
+
+
+
+
+<a name="city-economy-v2-RemoveEmployeeResponse"></a>
+
+### RemoveEmployeeResponse
 
 
 
@@ -3164,8 +3418,8 @@ Working Hours
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| agent_ids | [int32](#int32) | repeated |  |
-| org_ids | [int32](#int32) | repeated |  |
+| org_ids | [int32](#int32) | repeated | 组织ID列表 |
+| agent_ids | [int32](#int32) | repeated | Agent ID列表 |
 
 
 
@@ -3217,6 +3471,32 @@ Working Hours
 <a name="city-economy-v2-SetBracketRatesResponse"></a>
 
 ### SetBracketRatesResponse
+
+
+
+
+
+
+
+<a name="city-economy-v2-SetCitizensRequest"></a>
+
+### SetCitizensRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| org_id | [int32](#int32) |  |  |
+| citizen_ids | [int32](#int32) | repeated |  |
+
+
+
+
+
+
+<a name="city-economy-v2-SetCitizensResponse"></a>
+
+### SetCitizensResponse
 
 
 
@@ -3321,6 +3601,32 @@ Working Hours
 <a name="city-economy-v2-SetDepressionResponse"></a>
 
 ### SetDepressionResponse
+
+
+
+
+
+
+
+<a name="city-economy-v2-SetEmployeesRequest"></a>
+
+### SetEmployeesRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| org_id | [int32](#int32) |  |  |
+| employee_ids | [int32](#int32) | repeated |  |
+
+
+
+
+
+
+<a name="city-economy-v2-SetEmployeesResponse"></a>
+
+### SetEmployeesResponse
 
 
 
@@ -3613,6 +3919,56 @@ Working Hours
 
 
 
+
+<a name="city-economy-v2-UpdateAgentRequest"></a>
+
+### UpdateAgentRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| agent | [Agent](#city-economy-v2-Agent) |  |  |
+
+
+
+
+
+
+<a name="city-economy-v2-UpdateAgentResponse"></a>
+
+### UpdateAgentResponse
+
+
+
+
+
+
+
+<a name="city-economy-v2-UpdateOrgRequest"></a>
+
+### UpdateOrgRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| org | [Org](#city-economy-v2-Org) |  |  |
+
+
+
+
+
+
+<a name="city-economy-v2-UpdateOrgResponse"></a>
+
+### UpdateOrgResponse
+
+
+
+
+
+
  
 
  
@@ -3629,6 +3985,8 @@ Working Hours
 | ----------- | ------------ | ------------- | ------------|
 | AddOrg | [AddOrgRequest](#city-economy-v2-AddOrgRequest) | [AddOrgResponse](#city-economy-v2-AddOrgResponse) | 添加组织 add org |
 | RemoveOrg | [RemoveOrgRequest](#city-economy-v2-RemoveOrgRequest) | [RemoveOrgResponse](#city-economy-v2-RemoveOrgResponse) | 移除组织 remove org |
+| GetOrg | [GetOrgRequest](#city-economy-v2-GetOrgRequest) | [GetOrgResponse](#city-economy-v2-GetOrgResponse) | 获取组织 get org |
+| UpdateOrg | [UpdateOrgRequest](#city-economy-v2-UpdateOrgRequest) | [UpdateOrgResponse](#city-economy-v2-UpdateOrgResponse) | 更新组织 update org |
 | AddAgent | [AddAgentRequest](#city-economy-v2-AddAgentRequest) | [AddAgentResponse](#city-economy-v2-AddAgentResponse) | 添加Agent add agent |
 | RemoveAgent | [RemoveAgentRequest](#city-economy-v2-RemoveAgentRequest) | [RemoveAgentResponse](#city-economy-v2-RemoveAgentResponse) | 移除Agent remove agent |
 | GetNominalGDP | [GetNominalGDPRequest](#city-economy-v2-GetNominalGDPRequest) | [GetNominalGDPResponse](#city-economy-v2-GetNominalGDPResponse) | Nominal GDP |
@@ -3675,6 +4033,16 @@ Working Hours
 | GetWorkingHours | [GetWorkingHoursRequest](#city-economy-v2-GetWorkingHoursRequest) | [GetWorkingHoursResponse](#city-economy-v2-GetWorkingHoursResponse) | Working Hours |
 | SetWorkingHours | [SetWorkingHoursRequest](#city-economy-v2-SetWorkingHoursRequest) | [SetWorkingHoursResponse](#city-economy-v2-SetWorkingHoursResponse) |  |
 | GetOrgEntityIds | [GetOrgEntityIdsRequest](#city-economy-v2-GetOrgEntityIdsRequest) | [GetOrgEntityIdsResponse](#city-economy-v2-GetOrgEntityIdsResponse) | Org Entity Ids |
+| GetEmployees | [GetEmployeesRequest](#city-economy-v2-GetEmployeesRequest) | [GetEmployeesResponse](#city-economy-v2-GetEmployeesResponse) | Employees 相关接口 |
+| SetEmployees | [SetEmployeesRequest](#city-economy-v2-SetEmployeesRequest) | [SetEmployeesResponse](#city-economy-v2-SetEmployeesResponse) |  |
+| AddEmployee | [AddEmployeeRequest](#city-economy-v2-AddEmployeeRequest) | [AddEmployeeResponse](#city-economy-v2-AddEmployeeResponse) |  |
+| RemoveEmployee | [RemoveEmployeeRequest](#city-economy-v2-RemoveEmployeeRequest) | [RemoveEmployeeResponse](#city-economy-v2-RemoveEmployeeResponse) |  |
+| GetCitizens | [GetCitizensRequest](#city-economy-v2-GetCitizensRequest) | [GetCitizensResponse](#city-economy-v2-GetCitizensResponse) | Citizens 相关接口 |
+| SetCitizens | [SetCitizensRequest](#city-economy-v2-SetCitizensRequest) | [SetCitizensResponse](#city-economy-v2-SetCitizensResponse) |  |
+| AddCitizen | [AddCitizenRequest](#city-economy-v2-AddCitizenRequest) | [AddCitizenResponse](#city-economy-v2-AddCitizenResponse) |  |
+| RemoveCitizen | [RemoveCitizenRequest](#city-economy-v2-RemoveCitizenRequest) | [RemoveCitizenResponse](#city-economy-v2-RemoveCitizenResponse) |  |
+| GetAgent | [GetAgentRequest](#city-economy-v2-GetAgentRequest) | [GetAgentResponse](#city-economy-v2-GetAgentResponse) | Agent 相关接口 |
+| UpdateAgent | [UpdateAgentRequest](#city-economy-v2-UpdateAgentRequest) | [UpdateAgentResponse](#city-economy-v2-UpdateAgentResponse) |  |
 
  
 

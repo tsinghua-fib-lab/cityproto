@@ -68,6 +68,13 @@ message Org {
   repeated float locus_control = 18;
   //
   repeated float working_hours = 19;
+  // new：
+  // Firm: 企业的雇员列表
+  // employees list for firm
+  repeated int32 employees = 20;
+  // NBS & Government: 公民列表
+  // citizens list for NBS and government
+  repeated int32 citizens = 21;
 }
 
 message Agent {
@@ -75,6 +82,14 @@ message Agent {
   int32 id = 1;
   // currency
   optional float currency = 2;
+  // 所属企业ID
+  optional int32 firm_id = 3;
+  // 技能水平
+  optional float skill = 4;
+  // 消费
+  optional float consumption = 5;
+  // 收入
+  optional float income = 6;
 }
 
 message EconomyEntities {

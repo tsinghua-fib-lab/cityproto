@@ -12,6 +12,12 @@ service OrgService {
   // 移除组织
   // remove org
   rpc RemoveOrg(RemoveOrgRequest) returns (RemoveOrgResponse);
+  // 获取组织
+  // get org
+  rpc GetOrg(GetOrgRequest) returns (GetOrgResponse);
+  // 更新组织
+  // update org
+  rpc UpdateOrg(UpdateOrgRequest) returns (UpdateOrgResponse);
   // 添加Agent
   // add agent
   rpc AddAgent(AddAgentRequest) returns (AddAgentResponse);
@@ -103,6 +109,22 @@ service OrgService {
 
   // Org Entity Ids
   rpc GetOrgEntityIds(GetOrgEntityIdsRequest) returns (GetOrgEntityIdsResponse);
+
+  // Employees 相关接口
+  rpc GetEmployees(GetEmployeesRequest) returns (GetEmployeesResponse);
+  rpc SetEmployees(SetEmployeesRequest) returns (SetEmployeesResponse);
+  rpc AddEmployee(AddEmployeeRequest) returns (AddEmployeeResponse);
+  rpc RemoveEmployee(RemoveEmployeeRequest) returns (RemoveEmployeeResponse);
+
+  // Citizens 相关接口
+  rpc GetCitizens(GetCitizensRequest) returns (GetCitizensResponse);
+  rpc SetCitizens(SetCitizensRequest) returns (SetCitizensResponse);
+  rpc AddCitizen(AddCitizenRequest) returns (AddCitizenResponse);
+  rpc RemoveCitizen(RemoveCitizenRequest) returns (RemoveCitizenResponse);
+
+  // Agent 相关接口
+  rpc GetAgent(GetAgentRequest) returns (GetAgentResponse);
+  rpc UpdateAgent(UpdateAgentRequest) returns (UpdateAgentResponse);
 }
 
 message AddOrgRequest {
@@ -114,6 +136,19 @@ message RemoveOrgRequest {
   int32 org_id = 1;
 }
 message RemoveOrgResponse {}
+
+// Org 相关消息
+message GetOrgRequest {
+  int32 org_id = 1;
+}
+message GetOrgResponse {
+  Org org = 1;
+}
+
+message UpdateOrgRequest {
+  Org org = 1;
+}
+message UpdateOrgResponse {}
 
 message AddAgentRequest {
   Agent agent = 1;
@@ -324,8 +359,10 @@ message SaveEconomyEntitiesRequest {
 }
 
 message SaveEconomyEntitiesResponse {
-  repeated int32 agent_ids = 1;
-  repeated int32 org_ids = 2;
+  // 组织ID列表
+  repeated int32 org_ids = 1;
+  // Agent ID列表
+  repeated int32 agent_ids = 2;
 }
 
 message LoadEconomyEntitiesRequest {
@@ -333,8 +370,10 @@ message LoadEconomyEntitiesRequest {
 }
 
 message LoadEconomyEntitiesResponse {
-  repeated int32 agent_ids = 1;
-  repeated int32 org_ids = 2;
+  // 组织ID列表
+  repeated int32 org_ids = 1;
+  // Agent ID列表
+  repeated int32 agent_ids = 2;
 }
 
 // Consumption Currency
@@ -462,3 +501,70 @@ message AddInterestRateRequest {
 message AddInterestRateResponse {
   float interest_rate = 1;
 }
+
+// Employees 相关消息
+message GetEmployeesRequest {
+  int32 org_id = 1;
+}
+message GetEmployeesResponse {
+  repeated int32 employee_ids = 1;
+}
+
+message SetEmployeesRequest {
+  int32 org_id = 1;
+  repeated int32 employee_ids = 2;
+}
+message SetEmployeesResponse {}
+
+message AddEmployeeRequest {
+  int32 org_id = 1;
+  int32 employee_id = 2;
+}
+message AddEmployeeResponse {}
+
+message RemoveEmployeeRequest {
+  int32 org_id = 1;
+  int32 employee_id = 2;
+}
+message RemoveEmployeeResponse {}
+
+// Citizens 相关消息
+message GetCitizensRequest {
+  int32 org_id = 1;
+}
+message GetCitizensResponse {
+  repeated int32 citizen_ids = 1;
+}
+
+message SetCitizensRequest {
+  int32 org_id = 1;
+  repeated int32 citizen_ids = 2;
+}
+message SetCitizensResponse {}
+
+message AddCitizenRequest {
+  int32 org_id = 1;
+  int32 citizen_id = 2;
+}
+message AddCitizenResponse {}
+
+message RemoveCitizenRequest {
+  int32 org_id = 1;
+  int32 citizen_id = 2;
+}
+message RemoveCitizenResponse {}
+
+// Agent 相关消息
+message GetAgentRequest {
+  int32 agent_id = 1;
+}
+
+message GetAgentResponse {
+  Agent agent = 1;
+}
+
+message UpdateAgentRequest {
+  Agent agent = 1;
+}
+
+message UpdateAgentResponse {}

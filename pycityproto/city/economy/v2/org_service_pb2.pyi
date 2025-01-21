@@ -33,6 +33,36 @@ class RemoveOrgResponse(_message.Message):
     def __init__(self) -> None:
         ...
 
+class GetOrgRequest(_message.Message):
+    __slots__ = ['org_id']
+    ORG_ID_FIELD_NUMBER: _ClassVar[int]
+    org_id: int
+
+    def __init__(self, org_id: _Optional[int]=...) -> None:
+        ...
+
+class GetOrgResponse(_message.Message):
+    __slots__ = ['org']
+    ORG_FIELD_NUMBER: _ClassVar[int]
+    org: _economy_pb2.Org
+
+    def __init__(self, org: _Optional[_Union[_economy_pb2.Org, _Mapping]]=...) -> None:
+        ...
+
+class UpdateOrgRequest(_message.Message):
+    __slots__ = ['org']
+    ORG_FIELD_NUMBER: _ClassVar[int]
+    org: _economy_pb2.Org
+
+    def __init__(self, org: _Optional[_Union[_economy_pb2.Org, _Mapping]]=...) -> None:
+        ...
+
+class UpdateOrgResponse(_message.Message):
+    __slots__ = []
+
+    def __init__(self) -> None:
+        ...
+
 class AddAgentRequest(_message.Message):
     __slots__ = ['agent']
     AGENT_FIELD_NUMBER: _ClassVar[int]
@@ -488,13 +518,13 @@ class SaveEconomyEntitiesRequest(_message.Message):
         ...
 
 class SaveEconomyEntitiesResponse(_message.Message):
-    __slots__ = ['agent_ids', 'org_ids']
-    AGENT_IDS_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ['org_ids', 'agent_ids']
     ORG_IDS_FIELD_NUMBER: _ClassVar[int]
-    agent_ids: _containers.RepeatedScalarFieldContainer[int]
+    AGENT_IDS_FIELD_NUMBER: _ClassVar[int]
     org_ids: _containers.RepeatedScalarFieldContainer[int]
+    agent_ids: _containers.RepeatedScalarFieldContainer[int]
 
-    def __init__(self, agent_ids: _Optional[_Iterable[int]]=..., org_ids: _Optional[_Iterable[int]]=...) -> None:
+    def __init__(self, org_ids: _Optional[_Iterable[int]]=..., agent_ids: _Optional[_Iterable[int]]=...) -> None:
         ...
 
 class LoadEconomyEntitiesRequest(_message.Message):
@@ -506,13 +536,13 @@ class LoadEconomyEntitiesRequest(_message.Message):
         ...
 
 class LoadEconomyEntitiesResponse(_message.Message):
-    __slots__ = ['agent_ids', 'org_ids']
-    AGENT_IDS_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ['org_ids', 'agent_ids']
     ORG_IDS_FIELD_NUMBER: _ClassVar[int]
-    agent_ids: _containers.RepeatedScalarFieldContainer[int]
+    AGENT_IDS_FIELD_NUMBER: _ClassVar[int]
     org_ids: _containers.RepeatedScalarFieldContainer[int]
+    agent_ids: _containers.RepeatedScalarFieldContainer[int]
 
-    def __init__(self, agent_ids: _Optional[_Iterable[int]]=..., org_ids: _Optional[_Iterable[int]]=...) -> None:
+    def __init__(self, org_ids: _Optional[_Iterable[int]]=..., agent_ids: _Optional[_Iterable[int]]=...) -> None:
         ...
 
 class GetConsumptionCurrencyRequest(_message.Message):
@@ -793,4 +823,162 @@ class AddInterestRateResponse(_message.Message):
     interest_rate: float
 
     def __init__(self, interest_rate: _Optional[float]=...) -> None:
+        ...
+
+class GetEmployeesRequest(_message.Message):
+    __slots__ = ['org_id']
+    ORG_ID_FIELD_NUMBER: _ClassVar[int]
+    org_id: int
+
+    def __init__(self, org_id: _Optional[int]=...) -> None:
+        ...
+
+class GetEmployeesResponse(_message.Message):
+    __slots__ = ['employee_ids']
+    EMPLOYEE_IDS_FIELD_NUMBER: _ClassVar[int]
+    employee_ids: _containers.RepeatedScalarFieldContainer[int]
+
+    def __init__(self, employee_ids: _Optional[_Iterable[int]]=...) -> None:
+        ...
+
+class SetEmployeesRequest(_message.Message):
+    __slots__ = ['org_id', 'employee_ids']
+    ORG_ID_FIELD_NUMBER: _ClassVar[int]
+    EMPLOYEE_IDS_FIELD_NUMBER: _ClassVar[int]
+    org_id: int
+    employee_ids: _containers.RepeatedScalarFieldContainer[int]
+
+    def __init__(self, org_id: _Optional[int]=..., employee_ids: _Optional[_Iterable[int]]=...) -> None:
+        ...
+
+class SetEmployeesResponse(_message.Message):
+    __slots__ = []
+
+    def __init__(self) -> None:
+        ...
+
+class AddEmployeeRequest(_message.Message):
+    __slots__ = ['org_id', 'employee_id']
+    ORG_ID_FIELD_NUMBER: _ClassVar[int]
+    EMPLOYEE_ID_FIELD_NUMBER: _ClassVar[int]
+    org_id: int
+    employee_id: int
+
+    def __init__(self, org_id: _Optional[int]=..., employee_id: _Optional[int]=...) -> None:
+        ...
+
+class AddEmployeeResponse(_message.Message):
+    __slots__ = []
+
+    def __init__(self) -> None:
+        ...
+
+class RemoveEmployeeRequest(_message.Message):
+    __slots__ = ['org_id', 'employee_id']
+    ORG_ID_FIELD_NUMBER: _ClassVar[int]
+    EMPLOYEE_ID_FIELD_NUMBER: _ClassVar[int]
+    org_id: int
+    employee_id: int
+
+    def __init__(self, org_id: _Optional[int]=..., employee_id: _Optional[int]=...) -> None:
+        ...
+
+class RemoveEmployeeResponse(_message.Message):
+    __slots__ = []
+
+    def __init__(self) -> None:
+        ...
+
+class GetCitizensRequest(_message.Message):
+    __slots__ = ['org_id']
+    ORG_ID_FIELD_NUMBER: _ClassVar[int]
+    org_id: int
+
+    def __init__(self, org_id: _Optional[int]=...) -> None:
+        ...
+
+class GetCitizensResponse(_message.Message):
+    __slots__ = ['citizen_ids']
+    CITIZEN_IDS_FIELD_NUMBER: _ClassVar[int]
+    citizen_ids: _containers.RepeatedScalarFieldContainer[int]
+
+    def __init__(self, citizen_ids: _Optional[_Iterable[int]]=...) -> None:
+        ...
+
+class SetCitizensRequest(_message.Message):
+    __slots__ = ['org_id', 'citizen_ids']
+    ORG_ID_FIELD_NUMBER: _ClassVar[int]
+    CITIZEN_IDS_FIELD_NUMBER: _ClassVar[int]
+    org_id: int
+    citizen_ids: _containers.RepeatedScalarFieldContainer[int]
+
+    def __init__(self, org_id: _Optional[int]=..., citizen_ids: _Optional[_Iterable[int]]=...) -> None:
+        ...
+
+class SetCitizensResponse(_message.Message):
+    __slots__ = []
+
+    def __init__(self) -> None:
+        ...
+
+class AddCitizenRequest(_message.Message):
+    __slots__ = ['org_id', 'citizen_id']
+    ORG_ID_FIELD_NUMBER: _ClassVar[int]
+    CITIZEN_ID_FIELD_NUMBER: _ClassVar[int]
+    org_id: int
+    citizen_id: int
+
+    def __init__(self, org_id: _Optional[int]=..., citizen_id: _Optional[int]=...) -> None:
+        ...
+
+class AddCitizenResponse(_message.Message):
+    __slots__ = []
+
+    def __init__(self) -> None:
+        ...
+
+class RemoveCitizenRequest(_message.Message):
+    __slots__ = ['org_id', 'citizen_id']
+    ORG_ID_FIELD_NUMBER: _ClassVar[int]
+    CITIZEN_ID_FIELD_NUMBER: _ClassVar[int]
+    org_id: int
+    citizen_id: int
+
+    def __init__(self, org_id: _Optional[int]=..., citizen_id: _Optional[int]=...) -> None:
+        ...
+
+class RemoveCitizenResponse(_message.Message):
+    __slots__ = []
+
+    def __init__(self) -> None:
+        ...
+
+class GetAgentRequest(_message.Message):
+    __slots__ = ['agent_id']
+    AGENT_ID_FIELD_NUMBER: _ClassVar[int]
+    agent_id: int
+
+    def __init__(self, agent_id: _Optional[int]=...) -> None:
+        ...
+
+class GetAgentResponse(_message.Message):
+    __slots__ = ['agent']
+    AGENT_FIELD_NUMBER: _ClassVar[int]
+    agent: _economy_pb2.Agent
+
+    def __init__(self, agent: _Optional[_Union[_economy_pb2.Agent, _Mapping]]=...) -> None:
+        ...
+
+class UpdateAgentRequest(_message.Message):
+    __slots__ = ['agent']
+    AGENT_FIELD_NUMBER: _ClassVar[int]
+    agent: _economy_pb2.Agent
+
+    def __init__(self, agent: _Optional[_Union[_economy_pb2.Agent, _Mapping]]=...) -> None:
+        ...
+
+class UpdateAgentResponse(_message.Message):
+    __slots__ = []
+
+    def __init__(self) -> None:
         ...

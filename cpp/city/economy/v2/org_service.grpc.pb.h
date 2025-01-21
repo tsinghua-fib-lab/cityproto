@@ -56,6 +56,24 @@ class OrgService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::RemoveOrgResponse>> PrepareAsyncRemoveOrg(::grpc::ClientContext* context, const ::city::economy::v2::RemoveOrgRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::RemoveOrgResponse>>(PrepareAsyncRemoveOrgRaw(context, request, cq));
     }
+    // 获取组织
+    // get org
+    virtual ::grpc::Status GetOrg(::grpc::ClientContext* context, const ::city::economy::v2::GetOrgRequest& request, ::city::economy::v2::GetOrgResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::GetOrgResponse>> AsyncGetOrg(::grpc::ClientContext* context, const ::city::economy::v2::GetOrgRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::GetOrgResponse>>(AsyncGetOrgRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::GetOrgResponse>> PrepareAsyncGetOrg(::grpc::ClientContext* context, const ::city::economy::v2::GetOrgRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::GetOrgResponse>>(PrepareAsyncGetOrgRaw(context, request, cq));
+    }
+    // 更新组织
+    // update org
+    virtual ::grpc::Status UpdateOrg(::grpc::ClientContext* context, const ::city::economy::v2::UpdateOrgRequest& request, ::city::economy::v2::UpdateOrgResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::UpdateOrgResponse>> AsyncUpdateOrg(::grpc::ClientContext* context, const ::city::economy::v2::UpdateOrgRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::UpdateOrgResponse>>(AsyncUpdateOrgRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::UpdateOrgResponse>> PrepareAsyncUpdateOrg(::grpc::ClientContext* context, const ::city::economy::v2::UpdateOrgRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::UpdateOrgResponse>>(PrepareAsyncUpdateOrgRaw(context, request, cq));
+    }
     // 添加Agent
     // add agent
     virtual ::grpc::Status AddAgent(::grpc::ClientContext* context, const ::city::economy::v2::AddAgentRequest& request, ::city::economy::v2::AddAgentResponse* response) = 0;
@@ -405,6 +423,79 @@ class OrgService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::GetOrgEntityIdsResponse>> PrepareAsyncGetOrgEntityIds(::grpc::ClientContext* context, const ::city::economy::v2::GetOrgEntityIdsRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::GetOrgEntityIdsResponse>>(PrepareAsyncGetOrgEntityIdsRaw(context, request, cq));
     }
+    // Employees 相关接口
+    virtual ::grpc::Status GetEmployees(::grpc::ClientContext* context, const ::city::economy::v2::GetEmployeesRequest& request, ::city::economy::v2::GetEmployeesResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::GetEmployeesResponse>> AsyncGetEmployees(::grpc::ClientContext* context, const ::city::economy::v2::GetEmployeesRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::GetEmployeesResponse>>(AsyncGetEmployeesRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::GetEmployeesResponse>> PrepareAsyncGetEmployees(::grpc::ClientContext* context, const ::city::economy::v2::GetEmployeesRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::GetEmployeesResponse>>(PrepareAsyncGetEmployeesRaw(context, request, cq));
+    }
+    virtual ::grpc::Status SetEmployees(::grpc::ClientContext* context, const ::city::economy::v2::SetEmployeesRequest& request, ::city::economy::v2::SetEmployeesResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::SetEmployeesResponse>> AsyncSetEmployees(::grpc::ClientContext* context, const ::city::economy::v2::SetEmployeesRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::SetEmployeesResponse>>(AsyncSetEmployeesRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::SetEmployeesResponse>> PrepareAsyncSetEmployees(::grpc::ClientContext* context, const ::city::economy::v2::SetEmployeesRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::SetEmployeesResponse>>(PrepareAsyncSetEmployeesRaw(context, request, cq));
+    }
+    virtual ::grpc::Status AddEmployee(::grpc::ClientContext* context, const ::city::economy::v2::AddEmployeeRequest& request, ::city::economy::v2::AddEmployeeResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::AddEmployeeResponse>> AsyncAddEmployee(::grpc::ClientContext* context, const ::city::economy::v2::AddEmployeeRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::AddEmployeeResponse>>(AsyncAddEmployeeRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::AddEmployeeResponse>> PrepareAsyncAddEmployee(::grpc::ClientContext* context, const ::city::economy::v2::AddEmployeeRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::AddEmployeeResponse>>(PrepareAsyncAddEmployeeRaw(context, request, cq));
+    }
+    virtual ::grpc::Status RemoveEmployee(::grpc::ClientContext* context, const ::city::economy::v2::RemoveEmployeeRequest& request, ::city::economy::v2::RemoveEmployeeResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::RemoveEmployeeResponse>> AsyncRemoveEmployee(::grpc::ClientContext* context, const ::city::economy::v2::RemoveEmployeeRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::RemoveEmployeeResponse>>(AsyncRemoveEmployeeRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::RemoveEmployeeResponse>> PrepareAsyncRemoveEmployee(::grpc::ClientContext* context, const ::city::economy::v2::RemoveEmployeeRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::RemoveEmployeeResponse>>(PrepareAsyncRemoveEmployeeRaw(context, request, cq));
+    }
+    // Citizens 相关接口
+    virtual ::grpc::Status GetCitizens(::grpc::ClientContext* context, const ::city::economy::v2::GetCitizensRequest& request, ::city::economy::v2::GetCitizensResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::GetCitizensResponse>> AsyncGetCitizens(::grpc::ClientContext* context, const ::city::economy::v2::GetCitizensRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::GetCitizensResponse>>(AsyncGetCitizensRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::GetCitizensResponse>> PrepareAsyncGetCitizens(::grpc::ClientContext* context, const ::city::economy::v2::GetCitizensRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::GetCitizensResponse>>(PrepareAsyncGetCitizensRaw(context, request, cq));
+    }
+    virtual ::grpc::Status SetCitizens(::grpc::ClientContext* context, const ::city::economy::v2::SetCitizensRequest& request, ::city::economy::v2::SetCitizensResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::SetCitizensResponse>> AsyncSetCitizens(::grpc::ClientContext* context, const ::city::economy::v2::SetCitizensRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::SetCitizensResponse>>(AsyncSetCitizensRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::SetCitizensResponse>> PrepareAsyncSetCitizens(::grpc::ClientContext* context, const ::city::economy::v2::SetCitizensRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::SetCitizensResponse>>(PrepareAsyncSetCitizensRaw(context, request, cq));
+    }
+    virtual ::grpc::Status AddCitizen(::grpc::ClientContext* context, const ::city::economy::v2::AddCitizenRequest& request, ::city::economy::v2::AddCitizenResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::AddCitizenResponse>> AsyncAddCitizen(::grpc::ClientContext* context, const ::city::economy::v2::AddCitizenRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::AddCitizenResponse>>(AsyncAddCitizenRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::AddCitizenResponse>> PrepareAsyncAddCitizen(::grpc::ClientContext* context, const ::city::economy::v2::AddCitizenRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::AddCitizenResponse>>(PrepareAsyncAddCitizenRaw(context, request, cq));
+    }
+    virtual ::grpc::Status RemoveCitizen(::grpc::ClientContext* context, const ::city::economy::v2::RemoveCitizenRequest& request, ::city::economy::v2::RemoveCitizenResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::RemoveCitizenResponse>> AsyncRemoveCitizen(::grpc::ClientContext* context, const ::city::economy::v2::RemoveCitizenRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::RemoveCitizenResponse>>(AsyncRemoveCitizenRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::RemoveCitizenResponse>> PrepareAsyncRemoveCitizen(::grpc::ClientContext* context, const ::city::economy::v2::RemoveCitizenRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::RemoveCitizenResponse>>(PrepareAsyncRemoveCitizenRaw(context, request, cq));
+    }
+    // Agent 相关接口
+    virtual ::grpc::Status GetAgent(::grpc::ClientContext* context, const ::city::economy::v2::GetAgentRequest& request, ::city::economy::v2::GetAgentResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::GetAgentResponse>> AsyncGetAgent(::grpc::ClientContext* context, const ::city::economy::v2::GetAgentRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::GetAgentResponse>>(AsyncGetAgentRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::GetAgentResponse>> PrepareAsyncGetAgent(::grpc::ClientContext* context, const ::city::economy::v2::GetAgentRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::GetAgentResponse>>(PrepareAsyncGetAgentRaw(context, request, cq));
+    }
+    virtual ::grpc::Status UpdateAgent(::grpc::ClientContext* context, const ::city::economy::v2::UpdateAgentRequest& request, ::city::economy::v2::UpdateAgentResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::UpdateAgentResponse>> AsyncUpdateAgent(::grpc::ClientContext* context, const ::city::economy::v2::UpdateAgentRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::UpdateAgentResponse>>(AsyncUpdateAgentRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::UpdateAgentResponse>> PrepareAsyncUpdateAgent(::grpc::ClientContext* context, const ::city::economy::v2::UpdateAgentRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::UpdateAgentResponse>>(PrepareAsyncUpdateAgentRaw(context, request, cq));
+    }
     class async_interface {
      public:
       virtual ~async_interface() {}
@@ -416,6 +507,14 @@ class OrgService final {
       // remove org
       virtual void RemoveOrg(::grpc::ClientContext* context, const ::city::economy::v2::RemoveOrgRequest* request, ::city::economy::v2::RemoveOrgResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void RemoveOrg(::grpc::ClientContext* context, const ::city::economy::v2::RemoveOrgRequest* request, ::city::economy::v2::RemoveOrgResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // 获取组织
+      // get org
+      virtual void GetOrg(::grpc::ClientContext* context, const ::city::economy::v2::GetOrgRequest* request, ::city::economy::v2::GetOrgResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetOrg(::grpc::ClientContext* context, const ::city::economy::v2::GetOrgRequest* request, ::city::economy::v2::GetOrgResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // 更新组织
+      // update org
+      virtual void UpdateOrg(::grpc::ClientContext* context, const ::city::economy::v2::UpdateOrgRequest* request, ::city::economy::v2::UpdateOrgResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void UpdateOrg(::grpc::ClientContext* context, const ::city::economy::v2::UpdateOrgRequest* request, ::city::economy::v2::UpdateOrgResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       // 添加Agent
       // add agent
       virtual void AddAgent(::grpc::ClientContext* context, const ::city::economy::v2::AddAgentRequest* request, ::city::economy::v2::AddAgentResponse* response, std::function<void(::grpc::Status)>) = 0;
@@ -535,6 +634,29 @@ class OrgService final {
       // Org Entity Ids
       virtual void GetOrgEntityIds(::grpc::ClientContext* context, const ::city::economy::v2::GetOrgEntityIdsRequest* request, ::city::economy::v2::GetOrgEntityIdsResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetOrgEntityIds(::grpc::ClientContext* context, const ::city::economy::v2::GetOrgEntityIdsRequest* request, ::city::economy::v2::GetOrgEntityIdsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Employees 相关接口
+      virtual void GetEmployees(::grpc::ClientContext* context, const ::city::economy::v2::GetEmployeesRequest* request, ::city::economy::v2::GetEmployeesResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetEmployees(::grpc::ClientContext* context, const ::city::economy::v2::GetEmployeesRequest* request, ::city::economy::v2::GetEmployeesResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void SetEmployees(::grpc::ClientContext* context, const ::city::economy::v2::SetEmployeesRequest* request, ::city::economy::v2::SetEmployeesResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void SetEmployees(::grpc::ClientContext* context, const ::city::economy::v2::SetEmployeesRequest* request, ::city::economy::v2::SetEmployeesResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void AddEmployee(::grpc::ClientContext* context, const ::city::economy::v2::AddEmployeeRequest* request, ::city::economy::v2::AddEmployeeResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void AddEmployee(::grpc::ClientContext* context, const ::city::economy::v2::AddEmployeeRequest* request, ::city::economy::v2::AddEmployeeResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void RemoveEmployee(::grpc::ClientContext* context, const ::city::economy::v2::RemoveEmployeeRequest* request, ::city::economy::v2::RemoveEmployeeResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void RemoveEmployee(::grpc::ClientContext* context, const ::city::economy::v2::RemoveEmployeeRequest* request, ::city::economy::v2::RemoveEmployeeResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Citizens 相关接口
+      virtual void GetCitizens(::grpc::ClientContext* context, const ::city::economy::v2::GetCitizensRequest* request, ::city::economy::v2::GetCitizensResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetCitizens(::grpc::ClientContext* context, const ::city::economy::v2::GetCitizensRequest* request, ::city::economy::v2::GetCitizensResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void SetCitizens(::grpc::ClientContext* context, const ::city::economy::v2::SetCitizensRequest* request, ::city::economy::v2::SetCitizensResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void SetCitizens(::grpc::ClientContext* context, const ::city::economy::v2::SetCitizensRequest* request, ::city::economy::v2::SetCitizensResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void AddCitizen(::grpc::ClientContext* context, const ::city::economy::v2::AddCitizenRequest* request, ::city::economy::v2::AddCitizenResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void AddCitizen(::grpc::ClientContext* context, const ::city::economy::v2::AddCitizenRequest* request, ::city::economy::v2::AddCitizenResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void RemoveCitizen(::grpc::ClientContext* context, const ::city::economy::v2::RemoveCitizenRequest* request, ::city::economy::v2::RemoveCitizenResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void RemoveCitizen(::grpc::ClientContext* context, const ::city::economy::v2::RemoveCitizenRequest* request, ::city::economy::v2::RemoveCitizenResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Agent 相关接口
+      virtual void GetAgent(::grpc::ClientContext* context, const ::city::economy::v2::GetAgentRequest* request, ::city::economy::v2::GetAgentResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetAgent(::grpc::ClientContext* context, const ::city::economy::v2::GetAgentRequest* request, ::city::economy::v2::GetAgentResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void UpdateAgent(::grpc::ClientContext* context, const ::city::economy::v2::UpdateAgentRequest* request, ::city::economy::v2::UpdateAgentResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void UpdateAgent(::grpc::ClientContext* context, const ::city::economy::v2::UpdateAgentRequest* request, ::city::economy::v2::UpdateAgentResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
     };
     typedef class async_interface experimental_async_interface;
     virtual class async_interface* async() { return nullptr; }
@@ -544,6 +666,10 @@ class OrgService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::AddOrgResponse>* PrepareAsyncAddOrgRaw(::grpc::ClientContext* context, const ::city::economy::v2::AddOrgRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::RemoveOrgResponse>* AsyncRemoveOrgRaw(::grpc::ClientContext* context, const ::city::economy::v2::RemoveOrgRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::RemoveOrgResponse>* PrepareAsyncRemoveOrgRaw(::grpc::ClientContext* context, const ::city::economy::v2::RemoveOrgRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::GetOrgResponse>* AsyncGetOrgRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetOrgRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::GetOrgResponse>* PrepareAsyncGetOrgRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetOrgRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::UpdateOrgResponse>* AsyncUpdateOrgRaw(::grpc::ClientContext* context, const ::city::economy::v2::UpdateOrgRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::UpdateOrgResponse>* PrepareAsyncUpdateOrgRaw(::grpc::ClientContext* context, const ::city::economy::v2::UpdateOrgRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::AddAgentResponse>* AsyncAddAgentRaw(::grpc::ClientContext* context, const ::city::economy::v2::AddAgentRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::AddAgentResponse>* PrepareAsyncAddAgentRaw(::grpc::ClientContext* context, const ::city::economy::v2::AddAgentRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::RemoveAgentResponse>* AsyncRemoveAgentRaw(::grpc::ClientContext* context, const ::city::economy::v2::RemoveAgentRequest& request, ::grpc::CompletionQueue* cq) = 0;
@@ -636,6 +762,26 @@ class OrgService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::SetWorkingHoursResponse>* PrepareAsyncSetWorkingHoursRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetWorkingHoursRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::GetOrgEntityIdsResponse>* AsyncGetOrgEntityIdsRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetOrgEntityIdsRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::GetOrgEntityIdsResponse>* PrepareAsyncGetOrgEntityIdsRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetOrgEntityIdsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::GetEmployeesResponse>* AsyncGetEmployeesRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetEmployeesRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::GetEmployeesResponse>* PrepareAsyncGetEmployeesRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetEmployeesRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::SetEmployeesResponse>* AsyncSetEmployeesRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetEmployeesRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::SetEmployeesResponse>* PrepareAsyncSetEmployeesRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetEmployeesRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::AddEmployeeResponse>* AsyncAddEmployeeRaw(::grpc::ClientContext* context, const ::city::economy::v2::AddEmployeeRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::AddEmployeeResponse>* PrepareAsyncAddEmployeeRaw(::grpc::ClientContext* context, const ::city::economy::v2::AddEmployeeRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::RemoveEmployeeResponse>* AsyncRemoveEmployeeRaw(::grpc::ClientContext* context, const ::city::economy::v2::RemoveEmployeeRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::RemoveEmployeeResponse>* PrepareAsyncRemoveEmployeeRaw(::grpc::ClientContext* context, const ::city::economy::v2::RemoveEmployeeRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::GetCitizensResponse>* AsyncGetCitizensRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetCitizensRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::GetCitizensResponse>* PrepareAsyncGetCitizensRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetCitizensRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::SetCitizensResponse>* AsyncSetCitizensRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetCitizensRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::SetCitizensResponse>* PrepareAsyncSetCitizensRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetCitizensRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::AddCitizenResponse>* AsyncAddCitizenRaw(::grpc::ClientContext* context, const ::city::economy::v2::AddCitizenRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::AddCitizenResponse>* PrepareAsyncAddCitizenRaw(::grpc::ClientContext* context, const ::city::economy::v2::AddCitizenRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::RemoveCitizenResponse>* AsyncRemoveCitizenRaw(::grpc::ClientContext* context, const ::city::economy::v2::RemoveCitizenRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::RemoveCitizenResponse>* PrepareAsyncRemoveCitizenRaw(::grpc::ClientContext* context, const ::city::economy::v2::RemoveCitizenRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::GetAgentResponse>* AsyncGetAgentRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetAgentRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::GetAgentResponse>* PrepareAsyncGetAgentRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetAgentRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::UpdateAgentResponse>* AsyncUpdateAgentRaw(::grpc::ClientContext* context, const ::city::economy::v2::UpdateAgentRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::UpdateAgentResponse>* PrepareAsyncUpdateAgentRaw(::grpc::ClientContext* context, const ::city::economy::v2::UpdateAgentRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -653,6 +799,20 @@ class OrgService final {
     }
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::RemoveOrgResponse>> PrepareAsyncRemoveOrg(::grpc::ClientContext* context, const ::city::economy::v2::RemoveOrgRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::RemoveOrgResponse>>(PrepareAsyncRemoveOrgRaw(context, request, cq));
+    }
+    ::grpc::Status GetOrg(::grpc::ClientContext* context, const ::city::economy::v2::GetOrgRequest& request, ::city::economy::v2::GetOrgResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetOrgResponse>> AsyncGetOrg(::grpc::ClientContext* context, const ::city::economy::v2::GetOrgRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetOrgResponse>>(AsyncGetOrgRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetOrgResponse>> PrepareAsyncGetOrg(::grpc::ClientContext* context, const ::city::economy::v2::GetOrgRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetOrgResponse>>(PrepareAsyncGetOrgRaw(context, request, cq));
+    }
+    ::grpc::Status UpdateOrg(::grpc::ClientContext* context, const ::city::economy::v2::UpdateOrgRequest& request, ::city::economy::v2::UpdateOrgResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::UpdateOrgResponse>> AsyncUpdateOrg(::grpc::ClientContext* context, const ::city::economy::v2::UpdateOrgRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::UpdateOrgResponse>>(AsyncUpdateOrgRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::UpdateOrgResponse>> PrepareAsyncUpdateOrg(::grpc::ClientContext* context, const ::city::economy::v2::UpdateOrgRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::UpdateOrgResponse>>(PrepareAsyncUpdateOrgRaw(context, request, cq));
     }
     ::grpc::Status AddAgent(::grpc::ClientContext* context, const ::city::economy::v2::AddAgentRequest& request, ::city::economy::v2::AddAgentResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::AddAgentResponse>> AsyncAddAgent(::grpc::ClientContext* context, const ::city::economy::v2::AddAgentRequest& request, ::grpc::CompletionQueue* cq) {
@@ -976,6 +1136,76 @@ class OrgService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetOrgEntityIdsResponse>> PrepareAsyncGetOrgEntityIds(::grpc::ClientContext* context, const ::city::economy::v2::GetOrgEntityIdsRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetOrgEntityIdsResponse>>(PrepareAsyncGetOrgEntityIdsRaw(context, request, cq));
     }
+    ::grpc::Status GetEmployees(::grpc::ClientContext* context, const ::city::economy::v2::GetEmployeesRequest& request, ::city::economy::v2::GetEmployeesResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetEmployeesResponse>> AsyncGetEmployees(::grpc::ClientContext* context, const ::city::economy::v2::GetEmployeesRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetEmployeesResponse>>(AsyncGetEmployeesRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetEmployeesResponse>> PrepareAsyncGetEmployees(::grpc::ClientContext* context, const ::city::economy::v2::GetEmployeesRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetEmployeesResponse>>(PrepareAsyncGetEmployeesRaw(context, request, cq));
+    }
+    ::grpc::Status SetEmployees(::grpc::ClientContext* context, const ::city::economy::v2::SetEmployeesRequest& request, ::city::economy::v2::SetEmployeesResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetEmployeesResponse>> AsyncSetEmployees(::grpc::ClientContext* context, const ::city::economy::v2::SetEmployeesRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetEmployeesResponse>>(AsyncSetEmployeesRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetEmployeesResponse>> PrepareAsyncSetEmployees(::grpc::ClientContext* context, const ::city::economy::v2::SetEmployeesRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetEmployeesResponse>>(PrepareAsyncSetEmployeesRaw(context, request, cq));
+    }
+    ::grpc::Status AddEmployee(::grpc::ClientContext* context, const ::city::economy::v2::AddEmployeeRequest& request, ::city::economy::v2::AddEmployeeResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::AddEmployeeResponse>> AsyncAddEmployee(::grpc::ClientContext* context, const ::city::economy::v2::AddEmployeeRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::AddEmployeeResponse>>(AsyncAddEmployeeRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::AddEmployeeResponse>> PrepareAsyncAddEmployee(::grpc::ClientContext* context, const ::city::economy::v2::AddEmployeeRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::AddEmployeeResponse>>(PrepareAsyncAddEmployeeRaw(context, request, cq));
+    }
+    ::grpc::Status RemoveEmployee(::grpc::ClientContext* context, const ::city::economy::v2::RemoveEmployeeRequest& request, ::city::economy::v2::RemoveEmployeeResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::RemoveEmployeeResponse>> AsyncRemoveEmployee(::grpc::ClientContext* context, const ::city::economy::v2::RemoveEmployeeRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::RemoveEmployeeResponse>>(AsyncRemoveEmployeeRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::RemoveEmployeeResponse>> PrepareAsyncRemoveEmployee(::grpc::ClientContext* context, const ::city::economy::v2::RemoveEmployeeRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::RemoveEmployeeResponse>>(PrepareAsyncRemoveEmployeeRaw(context, request, cq));
+    }
+    ::grpc::Status GetCitizens(::grpc::ClientContext* context, const ::city::economy::v2::GetCitizensRequest& request, ::city::economy::v2::GetCitizensResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetCitizensResponse>> AsyncGetCitizens(::grpc::ClientContext* context, const ::city::economy::v2::GetCitizensRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetCitizensResponse>>(AsyncGetCitizensRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetCitizensResponse>> PrepareAsyncGetCitizens(::grpc::ClientContext* context, const ::city::economy::v2::GetCitizensRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetCitizensResponse>>(PrepareAsyncGetCitizensRaw(context, request, cq));
+    }
+    ::grpc::Status SetCitizens(::grpc::ClientContext* context, const ::city::economy::v2::SetCitizensRequest& request, ::city::economy::v2::SetCitizensResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetCitizensResponse>> AsyncSetCitizens(::grpc::ClientContext* context, const ::city::economy::v2::SetCitizensRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetCitizensResponse>>(AsyncSetCitizensRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetCitizensResponse>> PrepareAsyncSetCitizens(::grpc::ClientContext* context, const ::city::economy::v2::SetCitizensRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetCitizensResponse>>(PrepareAsyncSetCitizensRaw(context, request, cq));
+    }
+    ::grpc::Status AddCitizen(::grpc::ClientContext* context, const ::city::economy::v2::AddCitizenRequest& request, ::city::economy::v2::AddCitizenResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::AddCitizenResponse>> AsyncAddCitizen(::grpc::ClientContext* context, const ::city::economy::v2::AddCitizenRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::AddCitizenResponse>>(AsyncAddCitizenRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::AddCitizenResponse>> PrepareAsyncAddCitizen(::grpc::ClientContext* context, const ::city::economy::v2::AddCitizenRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::AddCitizenResponse>>(PrepareAsyncAddCitizenRaw(context, request, cq));
+    }
+    ::grpc::Status RemoveCitizen(::grpc::ClientContext* context, const ::city::economy::v2::RemoveCitizenRequest& request, ::city::economy::v2::RemoveCitizenResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::RemoveCitizenResponse>> AsyncRemoveCitizen(::grpc::ClientContext* context, const ::city::economy::v2::RemoveCitizenRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::RemoveCitizenResponse>>(AsyncRemoveCitizenRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::RemoveCitizenResponse>> PrepareAsyncRemoveCitizen(::grpc::ClientContext* context, const ::city::economy::v2::RemoveCitizenRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::RemoveCitizenResponse>>(PrepareAsyncRemoveCitizenRaw(context, request, cq));
+    }
+    ::grpc::Status GetAgent(::grpc::ClientContext* context, const ::city::economy::v2::GetAgentRequest& request, ::city::economy::v2::GetAgentResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetAgentResponse>> AsyncGetAgent(::grpc::ClientContext* context, const ::city::economy::v2::GetAgentRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetAgentResponse>>(AsyncGetAgentRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetAgentResponse>> PrepareAsyncGetAgent(::grpc::ClientContext* context, const ::city::economy::v2::GetAgentRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetAgentResponse>>(PrepareAsyncGetAgentRaw(context, request, cq));
+    }
+    ::grpc::Status UpdateAgent(::grpc::ClientContext* context, const ::city::economy::v2::UpdateAgentRequest& request, ::city::economy::v2::UpdateAgentResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::UpdateAgentResponse>> AsyncUpdateAgent(::grpc::ClientContext* context, const ::city::economy::v2::UpdateAgentRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::UpdateAgentResponse>>(AsyncUpdateAgentRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::UpdateAgentResponse>> PrepareAsyncUpdateAgent(::grpc::ClientContext* context, const ::city::economy::v2::UpdateAgentRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::UpdateAgentResponse>>(PrepareAsyncUpdateAgentRaw(context, request, cq));
+    }
     class async final :
       public StubInterface::async_interface {
      public:
@@ -983,6 +1213,10 @@ class OrgService final {
       void AddOrg(::grpc::ClientContext* context, const ::city::economy::v2::AddOrgRequest* request, ::city::economy::v2::AddOrgResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       void RemoveOrg(::grpc::ClientContext* context, const ::city::economy::v2::RemoveOrgRequest* request, ::city::economy::v2::RemoveOrgResponse* response, std::function<void(::grpc::Status)>) override;
       void RemoveOrg(::grpc::ClientContext* context, const ::city::economy::v2::RemoveOrgRequest* request, ::city::economy::v2::RemoveOrgResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void GetOrg(::grpc::ClientContext* context, const ::city::economy::v2::GetOrgRequest* request, ::city::economy::v2::GetOrgResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetOrg(::grpc::ClientContext* context, const ::city::economy::v2::GetOrgRequest* request, ::city::economy::v2::GetOrgResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void UpdateOrg(::grpc::ClientContext* context, const ::city::economy::v2::UpdateOrgRequest* request, ::city::economy::v2::UpdateOrgResponse* response, std::function<void(::grpc::Status)>) override;
+      void UpdateOrg(::grpc::ClientContext* context, const ::city::economy::v2::UpdateOrgRequest* request, ::city::economy::v2::UpdateOrgResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       void AddAgent(::grpc::ClientContext* context, const ::city::economy::v2::AddAgentRequest* request, ::city::economy::v2::AddAgentResponse* response, std::function<void(::grpc::Status)>) override;
       void AddAgent(::grpc::ClientContext* context, const ::city::economy::v2::AddAgentRequest* request, ::city::economy::v2::AddAgentResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       void RemoveAgent(::grpc::ClientContext* context, const ::city::economy::v2::RemoveAgentRequest* request, ::city::economy::v2::RemoveAgentResponse* response, std::function<void(::grpc::Status)>) override;
@@ -1075,6 +1309,26 @@ class OrgService final {
       void SetWorkingHours(::grpc::ClientContext* context, const ::city::economy::v2::SetWorkingHoursRequest* request, ::city::economy::v2::SetWorkingHoursResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       void GetOrgEntityIds(::grpc::ClientContext* context, const ::city::economy::v2::GetOrgEntityIdsRequest* request, ::city::economy::v2::GetOrgEntityIdsResponse* response, std::function<void(::grpc::Status)>) override;
       void GetOrgEntityIds(::grpc::ClientContext* context, const ::city::economy::v2::GetOrgEntityIdsRequest* request, ::city::economy::v2::GetOrgEntityIdsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void GetEmployees(::grpc::ClientContext* context, const ::city::economy::v2::GetEmployeesRequest* request, ::city::economy::v2::GetEmployeesResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetEmployees(::grpc::ClientContext* context, const ::city::economy::v2::GetEmployeesRequest* request, ::city::economy::v2::GetEmployeesResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void SetEmployees(::grpc::ClientContext* context, const ::city::economy::v2::SetEmployeesRequest* request, ::city::economy::v2::SetEmployeesResponse* response, std::function<void(::grpc::Status)>) override;
+      void SetEmployees(::grpc::ClientContext* context, const ::city::economy::v2::SetEmployeesRequest* request, ::city::economy::v2::SetEmployeesResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void AddEmployee(::grpc::ClientContext* context, const ::city::economy::v2::AddEmployeeRequest* request, ::city::economy::v2::AddEmployeeResponse* response, std::function<void(::grpc::Status)>) override;
+      void AddEmployee(::grpc::ClientContext* context, const ::city::economy::v2::AddEmployeeRequest* request, ::city::economy::v2::AddEmployeeResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void RemoveEmployee(::grpc::ClientContext* context, const ::city::economy::v2::RemoveEmployeeRequest* request, ::city::economy::v2::RemoveEmployeeResponse* response, std::function<void(::grpc::Status)>) override;
+      void RemoveEmployee(::grpc::ClientContext* context, const ::city::economy::v2::RemoveEmployeeRequest* request, ::city::economy::v2::RemoveEmployeeResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void GetCitizens(::grpc::ClientContext* context, const ::city::economy::v2::GetCitizensRequest* request, ::city::economy::v2::GetCitizensResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetCitizens(::grpc::ClientContext* context, const ::city::economy::v2::GetCitizensRequest* request, ::city::economy::v2::GetCitizensResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void SetCitizens(::grpc::ClientContext* context, const ::city::economy::v2::SetCitizensRequest* request, ::city::economy::v2::SetCitizensResponse* response, std::function<void(::grpc::Status)>) override;
+      void SetCitizens(::grpc::ClientContext* context, const ::city::economy::v2::SetCitizensRequest* request, ::city::economy::v2::SetCitizensResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void AddCitizen(::grpc::ClientContext* context, const ::city::economy::v2::AddCitizenRequest* request, ::city::economy::v2::AddCitizenResponse* response, std::function<void(::grpc::Status)>) override;
+      void AddCitizen(::grpc::ClientContext* context, const ::city::economy::v2::AddCitizenRequest* request, ::city::economy::v2::AddCitizenResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void RemoveCitizen(::grpc::ClientContext* context, const ::city::economy::v2::RemoveCitizenRequest* request, ::city::economy::v2::RemoveCitizenResponse* response, std::function<void(::grpc::Status)>) override;
+      void RemoveCitizen(::grpc::ClientContext* context, const ::city::economy::v2::RemoveCitizenRequest* request, ::city::economy::v2::RemoveCitizenResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void GetAgent(::grpc::ClientContext* context, const ::city::economy::v2::GetAgentRequest* request, ::city::economy::v2::GetAgentResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetAgent(::grpc::ClientContext* context, const ::city::economy::v2::GetAgentRequest* request, ::city::economy::v2::GetAgentResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void UpdateAgent(::grpc::ClientContext* context, const ::city::economy::v2::UpdateAgentRequest* request, ::city::economy::v2::UpdateAgentResponse* response, std::function<void(::grpc::Status)>) override;
+      void UpdateAgent(::grpc::ClientContext* context, const ::city::economy::v2::UpdateAgentRequest* request, ::city::economy::v2::UpdateAgentResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
      private:
       friend class Stub;
       explicit async(Stub* stub): stub_(stub) { }
@@ -1090,6 +1344,10 @@ class OrgService final {
     ::grpc::ClientAsyncResponseReader< ::city::economy::v2::AddOrgResponse>* PrepareAsyncAddOrgRaw(::grpc::ClientContext* context, const ::city::economy::v2::AddOrgRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::city::economy::v2::RemoveOrgResponse>* AsyncRemoveOrgRaw(::grpc::ClientContext* context, const ::city::economy::v2::RemoveOrgRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::city::economy::v2::RemoveOrgResponse>* PrepareAsyncRemoveOrgRaw(::grpc::ClientContext* context, const ::city::economy::v2::RemoveOrgRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetOrgResponse>* AsyncGetOrgRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetOrgRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetOrgResponse>* PrepareAsyncGetOrgRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetOrgRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::city::economy::v2::UpdateOrgResponse>* AsyncUpdateOrgRaw(::grpc::ClientContext* context, const ::city::economy::v2::UpdateOrgRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::city::economy::v2::UpdateOrgResponse>* PrepareAsyncUpdateOrgRaw(::grpc::ClientContext* context, const ::city::economy::v2::UpdateOrgRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::city::economy::v2::AddAgentResponse>* AsyncAddAgentRaw(::grpc::ClientContext* context, const ::city::economy::v2::AddAgentRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::city::economy::v2::AddAgentResponse>* PrepareAsyncAddAgentRaw(::grpc::ClientContext* context, const ::city::economy::v2::AddAgentRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::city::economy::v2::RemoveAgentResponse>* AsyncRemoveAgentRaw(::grpc::ClientContext* context, const ::city::economy::v2::RemoveAgentRequest& request, ::grpc::CompletionQueue* cq) override;
@@ -1182,8 +1440,30 @@ class OrgService final {
     ::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetWorkingHoursResponse>* PrepareAsyncSetWorkingHoursRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetWorkingHoursRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetOrgEntityIdsResponse>* AsyncGetOrgEntityIdsRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetOrgEntityIdsRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetOrgEntityIdsResponse>* PrepareAsyncGetOrgEntityIdsRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetOrgEntityIdsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetEmployeesResponse>* AsyncGetEmployeesRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetEmployeesRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetEmployeesResponse>* PrepareAsyncGetEmployeesRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetEmployeesRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetEmployeesResponse>* AsyncSetEmployeesRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetEmployeesRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetEmployeesResponse>* PrepareAsyncSetEmployeesRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetEmployeesRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::city::economy::v2::AddEmployeeResponse>* AsyncAddEmployeeRaw(::grpc::ClientContext* context, const ::city::economy::v2::AddEmployeeRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::city::economy::v2::AddEmployeeResponse>* PrepareAsyncAddEmployeeRaw(::grpc::ClientContext* context, const ::city::economy::v2::AddEmployeeRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::city::economy::v2::RemoveEmployeeResponse>* AsyncRemoveEmployeeRaw(::grpc::ClientContext* context, const ::city::economy::v2::RemoveEmployeeRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::city::economy::v2::RemoveEmployeeResponse>* PrepareAsyncRemoveEmployeeRaw(::grpc::ClientContext* context, const ::city::economy::v2::RemoveEmployeeRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetCitizensResponse>* AsyncGetCitizensRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetCitizensRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetCitizensResponse>* PrepareAsyncGetCitizensRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetCitizensRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetCitizensResponse>* AsyncSetCitizensRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetCitizensRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetCitizensResponse>* PrepareAsyncSetCitizensRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetCitizensRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::city::economy::v2::AddCitizenResponse>* AsyncAddCitizenRaw(::grpc::ClientContext* context, const ::city::economy::v2::AddCitizenRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::city::economy::v2::AddCitizenResponse>* PrepareAsyncAddCitizenRaw(::grpc::ClientContext* context, const ::city::economy::v2::AddCitizenRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::city::economy::v2::RemoveCitizenResponse>* AsyncRemoveCitizenRaw(::grpc::ClientContext* context, const ::city::economy::v2::RemoveCitizenRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::city::economy::v2::RemoveCitizenResponse>* PrepareAsyncRemoveCitizenRaw(::grpc::ClientContext* context, const ::city::economy::v2::RemoveCitizenRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetAgentResponse>* AsyncGetAgentRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetAgentRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetAgentResponse>* PrepareAsyncGetAgentRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetAgentRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::city::economy::v2::UpdateAgentResponse>* AsyncUpdateAgentRaw(::grpc::ClientContext* context, const ::city::economy::v2::UpdateAgentRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::city::economy::v2::UpdateAgentResponse>* PrepareAsyncUpdateAgentRaw(::grpc::ClientContext* context, const ::city::economy::v2::UpdateAgentRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_AddOrg_;
     const ::grpc::internal::RpcMethod rpcmethod_RemoveOrg_;
+    const ::grpc::internal::RpcMethod rpcmethod_GetOrg_;
+    const ::grpc::internal::RpcMethod rpcmethod_UpdateOrg_;
     const ::grpc::internal::RpcMethod rpcmethod_AddAgent_;
     const ::grpc::internal::RpcMethod rpcmethod_RemoveAgent_;
     const ::grpc::internal::RpcMethod rpcmethod_GetNominalGDP_;
@@ -1230,6 +1510,16 @@ class OrgService final {
     const ::grpc::internal::RpcMethod rpcmethod_GetWorkingHours_;
     const ::grpc::internal::RpcMethod rpcmethod_SetWorkingHours_;
     const ::grpc::internal::RpcMethod rpcmethod_GetOrgEntityIds_;
+    const ::grpc::internal::RpcMethod rpcmethod_GetEmployees_;
+    const ::grpc::internal::RpcMethod rpcmethod_SetEmployees_;
+    const ::grpc::internal::RpcMethod rpcmethod_AddEmployee_;
+    const ::grpc::internal::RpcMethod rpcmethod_RemoveEmployee_;
+    const ::grpc::internal::RpcMethod rpcmethod_GetCitizens_;
+    const ::grpc::internal::RpcMethod rpcmethod_SetCitizens_;
+    const ::grpc::internal::RpcMethod rpcmethod_AddCitizen_;
+    const ::grpc::internal::RpcMethod rpcmethod_RemoveCitizen_;
+    const ::grpc::internal::RpcMethod rpcmethod_GetAgent_;
+    const ::grpc::internal::RpcMethod rpcmethod_UpdateAgent_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -1243,6 +1533,12 @@ class OrgService final {
     // 移除组织
     // remove org
     virtual ::grpc::Status RemoveOrg(::grpc::ServerContext* context, const ::city::economy::v2::RemoveOrgRequest* request, ::city::economy::v2::RemoveOrgResponse* response);
+    // 获取组织
+    // get org
+    virtual ::grpc::Status GetOrg(::grpc::ServerContext* context, const ::city::economy::v2::GetOrgRequest* request, ::city::economy::v2::GetOrgResponse* response);
+    // 更新组织
+    // update org
+    virtual ::grpc::Status UpdateOrg(::grpc::ServerContext* context, const ::city::economy::v2::UpdateOrgRequest* request, ::city::economy::v2::UpdateOrgResponse* response);
     // 添加Agent
     // add agent
     virtual ::grpc::Status AddAgent(::grpc::ServerContext* context, const ::city::economy::v2::AddAgentRequest* request, ::city::economy::v2::AddAgentResponse* response);
@@ -1316,6 +1612,19 @@ class OrgService final {
     virtual ::grpc::Status SetWorkingHours(::grpc::ServerContext* context, const ::city::economy::v2::SetWorkingHoursRequest* request, ::city::economy::v2::SetWorkingHoursResponse* response);
     // Org Entity Ids
     virtual ::grpc::Status GetOrgEntityIds(::grpc::ServerContext* context, const ::city::economy::v2::GetOrgEntityIdsRequest* request, ::city::economy::v2::GetOrgEntityIdsResponse* response);
+    // Employees 相关接口
+    virtual ::grpc::Status GetEmployees(::grpc::ServerContext* context, const ::city::economy::v2::GetEmployeesRequest* request, ::city::economy::v2::GetEmployeesResponse* response);
+    virtual ::grpc::Status SetEmployees(::grpc::ServerContext* context, const ::city::economy::v2::SetEmployeesRequest* request, ::city::economy::v2::SetEmployeesResponse* response);
+    virtual ::grpc::Status AddEmployee(::grpc::ServerContext* context, const ::city::economy::v2::AddEmployeeRequest* request, ::city::economy::v2::AddEmployeeResponse* response);
+    virtual ::grpc::Status RemoveEmployee(::grpc::ServerContext* context, const ::city::economy::v2::RemoveEmployeeRequest* request, ::city::economy::v2::RemoveEmployeeResponse* response);
+    // Citizens 相关接口
+    virtual ::grpc::Status GetCitizens(::grpc::ServerContext* context, const ::city::economy::v2::GetCitizensRequest* request, ::city::economy::v2::GetCitizensResponse* response);
+    virtual ::grpc::Status SetCitizens(::grpc::ServerContext* context, const ::city::economy::v2::SetCitizensRequest* request, ::city::economy::v2::SetCitizensResponse* response);
+    virtual ::grpc::Status AddCitizen(::grpc::ServerContext* context, const ::city::economy::v2::AddCitizenRequest* request, ::city::economy::v2::AddCitizenResponse* response);
+    virtual ::grpc::Status RemoveCitizen(::grpc::ServerContext* context, const ::city::economy::v2::RemoveCitizenRequest* request, ::city::economy::v2::RemoveCitizenResponse* response);
+    // Agent 相关接口
+    virtual ::grpc::Status GetAgent(::grpc::ServerContext* context, const ::city::economy::v2::GetAgentRequest* request, ::city::economy::v2::GetAgentResponse* response);
+    virtual ::grpc::Status UpdateAgent(::grpc::ServerContext* context, const ::city::economy::v2::UpdateAgentRequest* request, ::city::economy::v2::UpdateAgentResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_AddOrg : public BaseClass {
@@ -1358,12 +1667,52 @@ class OrgService final {
     }
   };
   template <class BaseClass>
+  class WithAsyncMethod_GetOrg : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_GetOrg() {
+      ::grpc::Service::MarkMethodAsync(2);
+    }
+    ~WithAsyncMethod_GetOrg() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetOrg(::grpc::ServerContext* /*context*/, const ::city::economy::v2::GetOrgRequest* /*request*/, ::city::economy::v2::GetOrgResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetOrg(::grpc::ServerContext* context, ::city::economy::v2::GetOrgRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::GetOrgResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_UpdateOrg : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_UpdateOrg() {
+      ::grpc::Service::MarkMethodAsync(3);
+    }
+    ~WithAsyncMethod_UpdateOrg() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status UpdateOrg(::grpc::ServerContext* /*context*/, const ::city::economy::v2::UpdateOrgRequest* /*request*/, ::city::economy::v2::UpdateOrgResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestUpdateOrg(::grpc::ServerContext* context, ::city::economy::v2::UpdateOrgRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::UpdateOrgResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithAsyncMethod_AddAgent : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_AddAgent() {
-      ::grpc::Service::MarkMethodAsync(2);
+      ::grpc::Service::MarkMethodAsync(4);
     }
     ~WithAsyncMethod_AddAgent() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1374,7 +1723,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestAddAgent(::grpc::ServerContext* context, ::city::economy::v2::AddAgentRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::AddAgentResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1383,7 +1732,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_RemoveAgent() {
-      ::grpc::Service::MarkMethodAsync(3);
+      ::grpc::Service::MarkMethodAsync(5);
     }
     ~WithAsyncMethod_RemoveAgent() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1394,7 +1743,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestRemoveAgent(::grpc::ServerContext* context, ::city::economy::v2::RemoveAgentRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::RemoveAgentResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1403,7 +1752,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_GetNominalGDP() {
-      ::grpc::Service::MarkMethodAsync(4);
+      ::grpc::Service::MarkMethodAsync(6);
     }
     ~WithAsyncMethod_GetNominalGDP() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1414,7 +1763,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetNominalGDP(::grpc::ServerContext* context, ::city::economy::v2::GetNominalGDPRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::GetNominalGDPResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1423,7 +1772,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_SetNominalGDP() {
-      ::grpc::Service::MarkMethodAsync(5);
+      ::grpc::Service::MarkMethodAsync(7);
     }
     ~WithAsyncMethod_SetNominalGDP() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1434,7 +1783,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestSetNominalGDP(::grpc::ServerContext* context, ::city::economy::v2::SetNominalGDPRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::SetNominalGDPResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1443,7 +1792,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_GetRealGDP() {
-      ::grpc::Service::MarkMethodAsync(6);
+      ::grpc::Service::MarkMethodAsync(8);
     }
     ~WithAsyncMethod_GetRealGDP() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1454,7 +1803,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetRealGDP(::grpc::ServerContext* context, ::city::economy::v2::GetRealGDPRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::GetRealGDPResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1463,7 +1812,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_SetRealGDP() {
-      ::grpc::Service::MarkMethodAsync(7);
+      ::grpc::Service::MarkMethodAsync(9);
     }
     ~WithAsyncMethod_SetRealGDP() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1474,7 +1823,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestSetRealGDP(::grpc::ServerContext* context, ::city::economy::v2::SetRealGDPRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::SetRealGDPResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(9, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1483,7 +1832,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_GetUnemployment() {
-      ::grpc::Service::MarkMethodAsync(8);
+      ::grpc::Service::MarkMethodAsync(10);
     }
     ~WithAsyncMethod_GetUnemployment() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1494,7 +1843,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetUnemployment(::grpc::ServerContext* context, ::city::economy::v2::GetUnemploymentRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::GetUnemploymentResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(10, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1503,7 +1852,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_SetUnemployment() {
-      ::grpc::Service::MarkMethodAsync(9);
+      ::grpc::Service::MarkMethodAsync(11);
     }
     ~WithAsyncMethod_SetUnemployment() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1514,7 +1863,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestSetUnemployment(::grpc::ServerContext* context, ::city::economy::v2::SetUnemploymentRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::SetUnemploymentResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(9, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(11, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1523,7 +1872,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_GetWages() {
-      ::grpc::Service::MarkMethodAsync(10);
+      ::grpc::Service::MarkMethodAsync(12);
     }
     ~WithAsyncMethod_GetWages() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1534,7 +1883,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetWages(::grpc::ServerContext* context, ::city::economy::v2::GetWagesRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::GetWagesResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(10, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(12, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1543,7 +1892,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_SetWages() {
-      ::grpc::Service::MarkMethodAsync(11);
+      ::grpc::Service::MarkMethodAsync(13);
     }
     ~WithAsyncMethod_SetWages() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1554,7 +1903,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestSetWages(::grpc::ServerContext* context, ::city::economy::v2::SetWagesRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::SetWagesResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(11, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(13, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1563,7 +1912,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_GetPrices() {
-      ::grpc::Service::MarkMethodAsync(12);
+      ::grpc::Service::MarkMethodAsync(14);
     }
     ~WithAsyncMethod_GetPrices() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1574,7 +1923,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetPrices(::grpc::ServerContext* context, ::city::economy::v2::GetPricesRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::GetPricesResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(12, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(14, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1583,7 +1932,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_SetPrices() {
-      ::grpc::Service::MarkMethodAsync(13);
+      ::grpc::Service::MarkMethodAsync(15);
     }
     ~WithAsyncMethod_SetPrices() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1594,7 +1943,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestSetPrices(::grpc::ServerContext* context, ::city::economy::v2::SetPricesRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::SetPricesResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(13, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(15, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1603,7 +1952,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_GetInventory() {
-      ::grpc::Service::MarkMethodAsync(14);
+      ::grpc::Service::MarkMethodAsync(16);
     }
     ~WithAsyncMethod_GetInventory() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1614,7 +1963,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetInventory(::grpc::ServerContext* context, ::city::economy::v2::GetInventoryRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::GetInventoryResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(14, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(16, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1623,7 +1972,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_SetInventory() {
-      ::grpc::Service::MarkMethodAsync(15);
+      ::grpc::Service::MarkMethodAsync(17);
     }
     ~WithAsyncMethod_SetInventory() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1634,7 +1983,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestSetInventory(::grpc::ServerContext* context, ::city::economy::v2::SetInventoryRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::SetInventoryResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(15, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(17, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1643,7 +1992,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_AddInventory() {
-      ::grpc::Service::MarkMethodAsync(16);
+      ::grpc::Service::MarkMethodAsync(18);
     }
     ~WithAsyncMethod_AddInventory() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1654,7 +2003,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestAddInventory(::grpc::ServerContext* context, ::city::economy::v2::AddInventoryRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::AddInventoryResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(16, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(18, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1663,7 +2012,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_GetPrice() {
-      ::grpc::Service::MarkMethodAsync(17);
+      ::grpc::Service::MarkMethodAsync(19);
     }
     ~WithAsyncMethod_GetPrice() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1674,7 +2023,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetPrice(::grpc::ServerContext* context, ::city::economy::v2::GetPriceRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::GetPriceResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(17, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(19, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1683,7 +2032,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_SetPrice() {
-      ::grpc::Service::MarkMethodAsync(18);
+      ::grpc::Service::MarkMethodAsync(20);
     }
     ~WithAsyncMethod_SetPrice() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1694,7 +2043,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestSetPrice(::grpc::ServerContext* context, ::city::economy::v2::SetPriceRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::SetPriceResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(18, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(20, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1703,7 +2052,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_AddPrice() {
-      ::grpc::Service::MarkMethodAsync(19);
+      ::grpc::Service::MarkMethodAsync(21);
     }
     ~WithAsyncMethod_AddPrice() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1714,7 +2063,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestAddPrice(::grpc::ServerContext* context, ::city::economy::v2::AddPriceRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::AddPriceResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(19, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(21, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1723,7 +2072,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_GetCurrency() {
-      ::grpc::Service::MarkMethodAsync(20);
+      ::grpc::Service::MarkMethodAsync(22);
     }
     ~WithAsyncMethod_GetCurrency() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1734,7 +2083,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetCurrency(::grpc::ServerContext* context, ::city::economy::v2::GetCurrencyRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::GetCurrencyResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(20, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(22, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1743,7 +2092,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_SetCurrency() {
-      ::grpc::Service::MarkMethodAsync(21);
+      ::grpc::Service::MarkMethodAsync(23);
     }
     ~WithAsyncMethod_SetCurrency() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1754,7 +2103,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestSetCurrency(::grpc::ServerContext* context, ::city::economy::v2::SetCurrencyRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::SetCurrencyResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(21, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(23, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1763,7 +2112,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_AddCurrency() {
-      ::grpc::Service::MarkMethodAsync(22);
+      ::grpc::Service::MarkMethodAsync(24);
     }
     ~WithAsyncMethod_AddCurrency() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1774,7 +2123,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestAddCurrency(::grpc::ServerContext* context, ::city::economy::v2::AddCurrencyRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::AddCurrencyResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(22, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(24, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1783,7 +2132,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_GetInterestRate() {
-      ::grpc::Service::MarkMethodAsync(23);
+      ::grpc::Service::MarkMethodAsync(25);
     }
     ~WithAsyncMethod_GetInterestRate() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1794,7 +2143,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetInterestRate(::grpc::ServerContext* context, ::city::economy::v2::GetInterestRateRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::GetInterestRateResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(23, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(25, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1803,7 +2152,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_SetInterestRate() {
-      ::grpc::Service::MarkMethodAsync(24);
+      ::grpc::Service::MarkMethodAsync(26);
     }
     ~WithAsyncMethod_SetInterestRate() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1814,7 +2163,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestSetInterestRate(::grpc::ServerContext* context, ::city::economy::v2::SetInterestRateRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::SetInterestRateResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(24, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(26, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1823,7 +2172,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_AddInterestRate() {
-      ::grpc::Service::MarkMethodAsync(25);
+      ::grpc::Service::MarkMethodAsync(27);
     }
     ~WithAsyncMethod_AddInterestRate() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1834,7 +2183,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestAddInterestRate(::grpc::ServerContext* context, ::city::economy::v2::AddInterestRateRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::AddInterestRateResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(25, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(27, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1843,7 +2192,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_GetBracketCutoffs() {
-      ::grpc::Service::MarkMethodAsync(26);
+      ::grpc::Service::MarkMethodAsync(28);
     }
     ~WithAsyncMethod_GetBracketCutoffs() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1854,7 +2203,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetBracketCutoffs(::grpc::ServerContext* context, ::city::economy::v2::GetBracketCutoffsRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::GetBracketCutoffsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(26, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(28, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1863,7 +2212,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_SetBracketCutoffs() {
-      ::grpc::Service::MarkMethodAsync(27);
+      ::grpc::Service::MarkMethodAsync(29);
     }
     ~WithAsyncMethod_SetBracketCutoffs() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1874,7 +2223,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestSetBracketCutoffs(::grpc::ServerContext* context, ::city::economy::v2::SetBracketCutoffsRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::SetBracketCutoffsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(27, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(29, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1883,7 +2232,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_GetBracketRates() {
-      ::grpc::Service::MarkMethodAsync(28);
+      ::grpc::Service::MarkMethodAsync(30);
     }
     ~WithAsyncMethod_GetBracketRates() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1894,7 +2243,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetBracketRates(::grpc::ServerContext* context, ::city::economy::v2::GetBracketRatesRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::GetBracketRatesResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(28, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(30, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1903,7 +2252,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_SetBracketRates() {
-      ::grpc::Service::MarkMethodAsync(29);
+      ::grpc::Service::MarkMethodAsync(31);
     }
     ~WithAsyncMethod_SetBracketRates() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1914,7 +2263,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestSetBracketRates(::grpc::ServerContext* context, ::city::economy::v2::SetBracketRatesRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::SetBracketRatesResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(29, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(31, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1923,7 +2272,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_CalculateTaxesDue() {
-      ::grpc::Service::MarkMethodAsync(30);
+      ::grpc::Service::MarkMethodAsync(32);
     }
     ~WithAsyncMethod_CalculateTaxesDue() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1934,7 +2283,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestCalculateTaxesDue(::grpc::ServerContext* context, ::city::economy::v2::CalculateTaxesDueRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::CalculateTaxesDueResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(30, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(32, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1943,7 +2292,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_CalculateConsumption() {
-      ::grpc::Service::MarkMethodAsync(31);
+      ::grpc::Service::MarkMethodAsync(33);
     }
     ~WithAsyncMethod_CalculateConsumption() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1954,7 +2303,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestCalculateConsumption(::grpc::ServerContext* context, ::city::economy::v2::CalculateConsumptionRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::CalculateConsumptionResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(31, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(33, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1963,7 +2312,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_CalculateInterest() {
-      ::grpc::Service::MarkMethodAsync(32);
+      ::grpc::Service::MarkMethodAsync(34);
     }
     ~WithAsyncMethod_CalculateInterest() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1974,7 +2323,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestCalculateInterest(::grpc::ServerContext* context, ::city::economy::v2::CalculateInterestRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::CalculateInterestResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(32, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(34, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1983,7 +2332,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_SaveEconomyEntities() {
-      ::grpc::Service::MarkMethodAsync(33);
+      ::grpc::Service::MarkMethodAsync(35);
     }
     ~WithAsyncMethod_SaveEconomyEntities() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1994,7 +2343,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestSaveEconomyEntities(::grpc::ServerContext* context, ::city::economy::v2::SaveEconomyEntitiesRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::SaveEconomyEntitiesResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(33, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(35, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2003,7 +2352,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_LoadEconomyEntities() {
-      ::grpc::Service::MarkMethodAsync(34);
+      ::grpc::Service::MarkMethodAsync(36);
     }
     ~WithAsyncMethod_LoadEconomyEntities() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2014,7 +2363,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestLoadEconomyEntities(::grpc::ServerContext* context, ::city::economy::v2::LoadEconomyEntitiesRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::LoadEconomyEntitiesResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(34, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(36, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2023,7 +2372,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_GetConsumptionCurrency() {
-      ::grpc::Service::MarkMethodAsync(35);
+      ::grpc::Service::MarkMethodAsync(37);
     }
     ~WithAsyncMethod_GetConsumptionCurrency() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2034,7 +2383,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetConsumptionCurrency(::grpc::ServerContext* context, ::city::economy::v2::GetConsumptionCurrencyRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::GetConsumptionCurrencyResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(35, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(37, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2043,7 +2392,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_SetConsumptionCurrency() {
-      ::grpc::Service::MarkMethodAsync(36);
+      ::grpc::Service::MarkMethodAsync(38);
     }
     ~WithAsyncMethod_SetConsumptionCurrency() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2054,7 +2403,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestSetConsumptionCurrency(::grpc::ServerContext* context, ::city::economy::v2::SetConsumptionCurrencyRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::SetConsumptionCurrencyResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(36, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(38, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2063,7 +2412,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_GetConsumptionPropensity() {
-      ::grpc::Service::MarkMethodAsync(37);
+      ::grpc::Service::MarkMethodAsync(39);
     }
     ~WithAsyncMethod_GetConsumptionPropensity() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2074,7 +2423,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetConsumptionPropensity(::grpc::ServerContext* context, ::city::economy::v2::GetConsumptionPropensityRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::GetConsumptionPropensityResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(37, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(39, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2083,7 +2432,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_SetConsumptionPropensity() {
-      ::grpc::Service::MarkMethodAsync(38);
+      ::grpc::Service::MarkMethodAsync(40);
     }
     ~WithAsyncMethod_SetConsumptionPropensity() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2094,7 +2443,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestSetConsumptionPropensity(::grpc::ServerContext* context, ::city::economy::v2::SetConsumptionPropensityRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::SetConsumptionPropensityResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(38, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(40, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2103,7 +2452,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_GetIncomeCurrency() {
-      ::grpc::Service::MarkMethodAsync(39);
+      ::grpc::Service::MarkMethodAsync(41);
     }
     ~WithAsyncMethod_GetIncomeCurrency() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2114,7 +2463,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetIncomeCurrency(::grpc::ServerContext* context, ::city::economy::v2::GetIncomeCurrencyRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::GetIncomeCurrencyResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(39, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(41, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2123,7 +2472,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_SetIncomeCurrency() {
-      ::grpc::Service::MarkMethodAsync(40);
+      ::grpc::Service::MarkMethodAsync(42);
     }
     ~WithAsyncMethod_SetIncomeCurrency() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2134,7 +2483,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestSetIncomeCurrency(::grpc::ServerContext* context, ::city::economy::v2::SetIncomeCurrencyRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::SetIncomeCurrencyResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(40, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(42, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2143,7 +2492,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_GetDepression() {
-      ::grpc::Service::MarkMethodAsync(41);
+      ::grpc::Service::MarkMethodAsync(43);
     }
     ~WithAsyncMethod_GetDepression() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2154,7 +2503,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetDepression(::grpc::ServerContext* context, ::city::economy::v2::GetDepressionRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::GetDepressionResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(41, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(43, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2163,7 +2512,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_SetDepression() {
-      ::grpc::Service::MarkMethodAsync(42);
+      ::grpc::Service::MarkMethodAsync(44);
     }
     ~WithAsyncMethod_SetDepression() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2174,7 +2523,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestSetDepression(::grpc::ServerContext* context, ::city::economy::v2::SetDepressionRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::SetDepressionResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(42, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(44, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2183,7 +2532,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_GetLocusControl() {
-      ::grpc::Service::MarkMethodAsync(43);
+      ::grpc::Service::MarkMethodAsync(45);
     }
     ~WithAsyncMethod_GetLocusControl() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2194,7 +2543,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetLocusControl(::grpc::ServerContext* context, ::city::economy::v2::GetLocusControlRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::GetLocusControlResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(43, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(45, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2203,7 +2552,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_SetLocusControl() {
-      ::grpc::Service::MarkMethodAsync(44);
+      ::grpc::Service::MarkMethodAsync(46);
     }
     ~WithAsyncMethod_SetLocusControl() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2214,7 +2563,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestSetLocusControl(::grpc::ServerContext* context, ::city::economy::v2::SetLocusControlRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::SetLocusControlResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(44, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(46, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2223,7 +2572,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_GetWorkingHours() {
-      ::grpc::Service::MarkMethodAsync(45);
+      ::grpc::Service::MarkMethodAsync(47);
     }
     ~WithAsyncMethod_GetWorkingHours() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2234,7 +2583,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetWorkingHours(::grpc::ServerContext* context, ::city::economy::v2::GetWorkingHoursRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::GetWorkingHoursResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(45, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(47, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2243,7 +2592,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_SetWorkingHours() {
-      ::grpc::Service::MarkMethodAsync(46);
+      ::grpc::Service::MarkMethodAsync(48);
     }
     ~WithAsyncMethod_SetWorkingHours() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2254,7 +2603,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestSetWorkingHours(::grpc::ServerContext* context, ::city::economy::v2::SetWorkingHoursRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::SetWorkingHoursResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(46, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(48, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2263,7 +2612,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_GetOrgEntityIds() {
-      ::grpc::Service::MarkMethodAsync(47);
+      ::grpc::Service::MarkMethodAsync(49);
     }
     ~WithAsyncMethod_GetOrgEntityIds() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2274,10 +2623,210 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetOrgEntityIds(::grpc::ServerContext* context, ::city::economy::v2::GetOrgEntityIdsRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::GetOrgEntityIdsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(47, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(49, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_AddOrg<WithAsyncMethod_RemoveOrg<WithAsyncMethod_AddAgent<WithAsyncMethod_RemoveAgent<WithAsyncMethod_GetNominalGDP<WithAsyncMethod_SetNominalGDP<WithAsyncMethod_GetRealGDP<WithAsyncMethod_SetRealGDP<WithAsyncMethod_GetUnemployment<WithAsyncMethod_SetUnemployment<WithAsyncMethod_GetWages<WithAsyncMethod_SetWages<WithAsyncMethod_GetPrices<WithAsyncMethod_SetPrices<WithAsyncMethod_GetInventory<WithAsyncMethod_SetInventory<WithAsyncMethod_AddInventory<WithAsyncMethod_GetPrice<WithAsyncMethod_SetPrice<WithAsyncMethod_AddPrice<WithAsyncMethod_GetCurrency<WithAsyncMethod_SetCurrency<WithAsyncMethod_AddCurrency<WithAsyncMethod_GetInterestRate<WithAsyncMethod_SetInterestRate<WithAsyncMethod_AddInterestRate<WithAsyncMethod_GetBracketCutoffs<WithAsyncMethod_SetBracketCutoffs<WithAsyncMethod_GetBracketRates<WithAsyncMethod_SetBracketRates<WithAsyncMethod_CalculateTaxesDue<WithAsyncMethod_CalculateConsumption<WithAsyncMethod_CalculateInterest<WithAsyncMethod_SaveEconomyEntities<WithAsyncMethod_LoadEconomyEntities<WithAsyncMethod_GetConsumptionCurrency<WithAsyncMethod_SetConsumptionCurrency<WithAsyncMethod_GetConsumptionPropensity<WithAsyncMethod_SetConsumptionPropensity<WithAsyncMethod_GetIncomeCurrency<WithAsyncMethod_SetIncomeCurrency<WithAsyncMethod_GetDepression<WithAsyncMethod_SetDepression<WithAsyncMethod_GetLocusControl<WithAsyncMethod_SetLocusControl<WithAsyncMethod_GetWorkingHours<WithAsyncMethod_SetWorkingHours<WithAsyncMethod_GetOrgEntityIds<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_GetEmployees : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_GetEmployees() {
+      ::grpc::Service::MarkMethodAsync(50);
+    }
+    ~WithAsyncMethod_GetEmployees() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetEmployees(::grpc::ServerContext* /*context*/, const ::city::economy::v2::GetEmployeesRequest* /*request*/, ::city::economy::v2::GetEmployeesResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetEmployees(::grpc::ServerContext* context, ::city::economy::v2::GetEmployeesRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::GetEmployeesResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(50, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_SetEmployees : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_SetEmployees() {
+      ::grpc::Service::MarkMethodAsync(51);
+    }
+    ~WithAsyncMethod_SetEmployees() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SetEmployees(::grpc::ServerContext* /*context*/, const ::city::economy::v2::SetEmployeesRequest* /*request*/, ::city::economy::v2::SetEmployeesResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestSetEmployees(::grpc::ServerContext* context, ::city::economy::v2::SetEmployeesRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::SetEmployeesResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(51, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_AddEmployee : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_AddEmployee() {
+      ::grpc::Service::MarkMethodAsync(52);
+    }
+    ~WithAsyncMethod_AddEmployee() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status AddEmployee(::grpc::ServerContext* /*context*/, const ::city::economy::v2::AddEmployeeRequest* /*request*/, ::city::economy::v2::AddEmployeeResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestAddEmployee(::grpc::ServerContext* context, ::city::economy::v2::AddEmployeeRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::AddEmployeeResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(52, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_RemoveEmployee : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_RemoveEmployee() {
+      ::grpc::Service::MarkMethodAsync(53);
+    }
+    ~WithAsyncMethod_RemoveEmployee() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status RemoveEmployee(::grpc::ServerContext* /*context*/, const ::city::economy::v2::RemoveEmployeeRequest* /*request*/, ::city::economy::v2::RemoveEmployeeResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestRemoveEmployee(::grpc::ServerContext* context, ::city::economy::v2::RemoveEmployeeRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::RemoveEmployeeResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(53, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_GetCitizens : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_GetCitizens() {
+      ::grpc::Service::MarkMethodAsync(54);
+    }
+    ~WithAsyncMethod_GetCitizens() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetCitizens(::grpc::ServerContext* /*context*/, const ::city::economy::v2::GetCitizensRequest* /*request*/, ::city::economy::v2::GetCitizensResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetCitizens(::grpc::ServerContext* context, ::city::economy::v2::GetCitizensRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::GetCitizensResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(54, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_SetCitizens : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_SetCitizens() {
+      ::grpc::Service::MarkMethodAsync(55);
+    }
+    ~WithAsyncMethod_SetCitizens() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SetCitizens(::grpc::ServerContext* /*context*/, const ::city::economy::v2::SetCitizensRequest* /*request*/, ::city::economy::v2::SetCitizensResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestSetCitizens(::grpc::ServerContext* context, ::city::economy::v2::SetCitizensRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::SetCitizensResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(55, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_AddCitizen : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_AddCitizen() {
+      ::grpc::Service::MarkMethodAsync(56);
+    }
+    ~WithAsyncMethod_AddCitizen() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status AddCitizen(::grpc::ServerContext* /*context*/, const ::city::economy::v2::AddCitizenRequest* /*request*/, ::city::economy::v2::AddCitizenResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestAddCitizen(::grpc::ServerContext* context, ::city::economy::v2::AddCitizenRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::AddCitizenResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(56, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_RemoveCitizen : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_RemoveCitizen() {
+      ::grpc::Service::MarkMethodAsync(57);
+    }
+    ~WithAsyncMethod_RemoveCitizen() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status RemoveCitizen(::grpc::ServerContext* /*context*/, const ::city::economy::v2::RemoveCitizenRequest* /*request*/, ::city::economy::v2::RemoveCitizenResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestRemoveCitizen(::grpc::ServerContext* context, ::city::economy::v2::RemoveCitizenRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::RemoveCitizenResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(57, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_GetAgent : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_GetAgent() {
+      ::grpc::Service::MarkMethodAsync(58);
+    }
+    ~WithAsyncMethod_GetAgent() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetAgent(::grpc::ServerContext* /*context*/, const ::city::economy::v2::GetAgentRequest* /*request*/, ::city::economy::v2::GetAgentResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetAgent(::grpc::ServerContext* context, ::city::economy::v2::GetAgentRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::GetAgentResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(58, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_UpdateAgent : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_UpdateAgent() {
+      ::grpc::Service::MarkMethodAsync(59);
+    }
+    ~WithAsyncMethod_UpdateAgent() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status UpdateAgent(::grpc::ServerContext* /*context*/, const ::city::economy::v2::UpdateAgentRequest* /*request*/, ::city::economy::v2::UpdateAgentResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestUpdateAgent(::grpc::ServerContext* context, ::city::economy::v2::UpdateAgentRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::UpdateAgentResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(59, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_AddOrg<WithAsyncMethod_RemoveOrg<WithAsyncMethod_GetOrg<WithAsyncMethod_UpdateOrg<WithAsyncMethod_AddAgent<WithAsyncMethod_RemoveAgent<WithAsyncMethod_GetNominalGDP<WithAsyncMethod_SetNominalGDP<WithAsyncMethod_GetRealGDP<WithAsyncMethod_SetRealGDP<WithAsyncMethod_GetUnemployment<WithAsyncMethod_SetUnemployment<WithAsyncMethod_GetWages<WithAsyncMethod_SetWages<WithAsyncMethod_GetPrices<WithAsyncMethod_SetPrices<WithAsyncMethod_GetInventory<WithAsyncMethod_SetInventory<WithAsyncMethod_AddInventory<WithAsyncMethod_GetPrice<WithAsyncMethod_SetPrice<WithAsyncMethod_AddPrice<WithAsyncMethod_GetCurrency<WithAsyncMethod_SetCurrency<WithAsyncMethod_AddCurrency<WithAsyncMethod_GetInterestRate<WithAsyncMethod_SetInterestRate<WithAsyncMethod_AddInterestRate<WithAsyncMethod_GetBracketCutoffs<WithAsyncMethod_SetBracketCutoffs<WithAsyncMethod_GetBracketRates<WithAsyncMethod_SetBracketRates<WithAsyncMethod_CalculateTaxesDue<WithAsyncMethod_CalculateConsumption<WithAsyncMethod_CalculateInterest<WithAsyncMethod_SaveEconomyEntities<WithAsyncMethod_LoadEconomyEntities<WithAsyncMethod_GetConsumptionCurrency<WithAsyncMethod_SetConsumptionCurrency<WithAsyncMethod_GetConsumptionPropensity<WithAsyncMethod_SetConsumptionPropensity<WithAsyncMethod_GetIncomeCurrency<WithAsyncMethod_SetIncomeCurrency<WithAsyncMethod_GetDepression<WithAsyncMethod_SetDepression<WithAsyncMethod_GetLocusControl<WithAsyncMethod_SetLocusControl<WithAsyncMethod_GetWorkingHours<WithAsyncMethod_SetWorkingHours<WithAsyncMethod_GetOrgEntityIds<WithAsyncMethod_GetEmployees<WithAsyncMethod_SetEmployees<WithAsyncMethod_AddEmployee<WithAsyncMethod_RemoveEmployee<WithAsyncMethod_GetCitizens<WithAsyncMethod_SetCitizens<WithAsyncMethod_AddCitizen<WithAsyncMethod_RemoveCitizen<WithAsyncMethod_GetAgent<WithAsyncMethod_UpdateAgent<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > AsyncService;
   template <class BaseClass>
   class WithCallbackMethod_AddOrg : public BaseClass {
    private:
@@ -2333,18 +2882,72 @@ class OrgService final {
       ::grpc::CallbackServerContext* /*context*/, const ::city::economy::v2::RemoveOrgRequest* /*request*/, ::city::economy::v2::RemoveOrgResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
+  class WithCallbackMethod_GetOrg : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_GetOrg() {
+      ::grpc::Service::MarkMethodCallback(2,
+          new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::GetOrgRequest, ::city::economy::v2::GetOrgResponse>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::city::economy::v2::GetOrgRequest* request, ::city::economy::v2::GetOrgResponse* response) { return this->GetOrg(context, request, response); }));}
+    void SetMessageAllocatorFor_GetOrg(
+        ::grpc::MessageAllocator< ::city::economy::v2::GetOrgRequest, ::city::economy::v2::GetOrgResponse>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(2);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::GetOrgRequest, ::city::economy::v2::GetOrgResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_GetOrg() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetOrg(::grpc::ServerContext* /*context*/, const ::city::economy::v2::GetOrgRequest* /*request*/, ::city::economy::v2::GetOrgResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* GetOrg(
+      ::grpc::CallbackServerContext* /*context*/, const ::city::economy::v2::GetOrgRequest* /*request*/, ::city::economy::v2::GetOrgResponse* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithCallbackMethod_UpdateOrg : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_UpdateOrg() {
+      ::grpc::Service::MarkMethodCallback(3,
+          new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::UpdateOrgRequest, ::city::economy::v2::UpdateOrgResponse>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::city::economy::v2::UpdateOrgRequest* request, ::city::economy::v2::UpdateOrgResponse* response) { return this->UpdateOrg(context, request, response); }));}
+    void SetMessageAllocatorFor_UpdateOrg(
+        ::grpc::MessageAllocator< ::city::economy::v2::UpdateOrgRequest, ::city::economy::v2::UpdateOrgResponse>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(3);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::UpdateOrgRequest, ::city::economy::v2::UpdateOrgResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_UpdateOrg() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status UpdateOrg(::grpc::ServerContext* /*context*/, const ::city::economy::v2::UpdateOrgRequest* /*request*/, ::city::economy::v2::UpdateOrgResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* UpdateOrg(
+      ::grpc::CallbackServerContext* /*context*/, const ::city::economy::v2::UpdateOrgRequest* /*request*/, ::city::economy::v2::UpdateOrgResponse* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
   class WithCallbackMethod_AddAgent : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_AddAgent() {
-      ::grpc::Service::MarkMethodCallback(2,
+      ::grpc::Service::MarkMethodCallback(4,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::AddAgentRequest, ::city::economy::v2::AddAgentResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::AddAgentRequest* request, ::city::economy::v2::AddAgentResponse* response) { return this->AddAgent(context, request, response); }));}
     void SetMessageAllocatorFor_AddAgent(
         ::grpc::MessageAllocator< ::city::economy::v2::AddAgentRequest, ::city::economy::v2::AddAgentResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(2);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(4);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::AddAgentRequest, ::city::economy::v2::AddAgentResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -2365,13 +2968,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_RemoveAgent() {
-      ::grpc::Service::MarkMethodCallback(3,
+      ::grpc::Service::MarkMethodCallback(5,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::RemoveAgentRequest, ::city::economy::v2::RemoveAgentResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::RemoveAgentRequest* request, ::city::economy::v2::RemoveAgentResponse* response) { return this->RemoveAgent(context, request, response); }));}
     void SetMessageAllocatorFor_RemoveAgent(
         ::grpc::MessageAllocator< ::city::economy::v2::RemoveAgentRequest, ::city::economy::v2::RemoveAgentResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(3);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(5);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::RemoveAgentRequest, ::city::economy::v2::RemoveAgentResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -2392,13 +2995,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_GetNominalGDP() {
-      ::grpc::Service::MarkMethodCallback(4,
+      ::grpc::Service::MarkMethodCallback(6,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::GetNominalGDPRequest, ::city::economy::v2::GetNominalGDPResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::GetNominalGDPRequest* request, ::city::economy::v2::GetNominalGDPResponse* response) { return this->GetNominalGDP(context, request, response); }));}
     void SetMessageAllocatorFor_GetNominalGDP(
         ::grpc::MessageAllocator< ::city::economy::v2::GetNominalGDPRequest, ::city::economy::v2::GetNominalGDPResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(4);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(6);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::GetNominalGDPRequest, ::city::economy::v2::GetNominalGDPResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -2419,13 +3022,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_SetNominalGDP() {
-      ::grpc::Service::MarkMethodCallback(5,
+      ::grpc::Service::MarkMethodCallback(7,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::SetNominalGDPRequest, ::city::economy::v2::SetNominalGDPResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::SetNominalGDPRequest* request, ::city::economy::v2::SetNominalGDPResponse* response) { return this->SetNominalGDP(context, request, response); }));}
     void SetMessageAllocatorFor_SetNominalGDP(
         ::grpc::MessageAllocator< ::city::economy::v2::SetNominalGDPRequest, ::city::economy::v2::SetNominalGDPResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(5);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(7);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::SetNominalGDPRequest, ::city::economy::v2::SetNominalGDPResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -2446,13 +3049,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_GetRealGDP() {
-      ::grpc::Service::MarkMethodCallback(6,
+      ::grpc::Service::MarkMethodCallback(8,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::GetRealGDPRequest, ::city::economy::v2::GetRealGDPResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::GetRealGDPRequest* request, ::city::economy::v2::GetRealGDPResponse* response) { return this->GetRealGDP(context, request, response); }));}
     void SetMessageAllocatorFor_GetRealGDP(
         ::grpc::MessageAllocator< ::city::economy::v2::GetRealGDPRequest, ::city::economy::v2::GetRealGDPResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(6);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(8);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::GetRealGDPRequest, ::city::economy::v2::GetRealGDPResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -2473,13 +3076,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_SetRealGDP() {
-      ::grpc::Service::MarkMethodCallback(7,
+      ::grpc::Service::MarkMethodCallback(9,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::SetRealGDPRequest, ::city::economy::v2::SetRealGDPResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::SetRealGDPRequest* request, ::city::economy::v2::SetRealGDPResponse* response) { return this->SetRealGDP(context, request, response); }));}
     void SetMessageAllocatorFor_SetRealGDP(
         ::grpc::MessageAllocator< ::city::economy::v2::SetRealGDPRequest, ::city::economy::v2::SetRealGDPResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(7);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(9);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::SetRealGDPRequest, ::city::economy::v2::SetRealGDPResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -2500,13 +3103,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_GetUnemployment() {
-      ::grpc::Service::MarkMethodCallback(8,
+      ::grpc::Service::MarkMethodCallback(10,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::GetUnemploymentRequest, ::city::economy::v2::GetUnemploymentResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::GetUnemploymentRequest* request, ::city::economy::v2::GetUnemploymentResponse* response) { return this->GetUnemployment(context, request, response); }));}
     void SetMessageAllocatorFor_GetUnemployment(
         ::grpc::MessageAllocator< ::city::economy::v2::GetUnemploymentRequest, ::city::economy::v2::GetUnemploymentResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(8);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(10);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::GetUnemploymentRequest, ::city::economy::v2::GetUnemploymentResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -2527,13 +3130,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_SetUnemployment() {
-      ::grpc::Service::MarkMethodCallback(9,
+      ::grpc::Service::MarkMethodCallback(11,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::SetUnemploymentRequest, ::city::economy::v2::SetUnemploymentResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::SetUnemploymentRequest* request, ::city::economy::v2::SetUnemploymentResponse* response) { return this->SetUnemployment(context, request, response); }));}
     void SetMessageAllocatorFor_SetUnemployment(
         ::grpc::MessageAllocator< ::city::economy::v2::SetUnemploymentRequest, ::city::economy::v2::SetUnemploymentResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(9);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(11);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::SetUnemploymentRequest, ::city::economy::v2::SetUnemploymentResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -2554,13 +3157,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_GetWages() {
-      ::grpc::Service::MarkMethodCallback(10,
+      ::grpc::Service::MarkMethodCallback(12,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::GetWagesRequest, ::city::economy::v2::GetWagesResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::GetWagesRequest* request, ::city::economy::v2::GetWagesResponse* response) { return this->GetWages(context, request, response); }));}
     void SetMessageAllocatorFor_GetWages(
         ::grpc::MessageAllocator< ::city::economy::v2::GetWagesRequest, ::city::economy::v2::GetWagesResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(10);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(12);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::GetWagesRequest, ::city::economy::v2::GetWagesResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -2581,13 +3184,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_SetWages() {
-      ::grpc::Service::MarkMethodCallback(11,
+      ::grpc::Service::MarkMethodCallback(13,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::SetWagesRequest, ::city::economy::v2::SetWagesResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::SetWagesRequest* request, ::city::economy::v2::SetWagesResponse* response) { return this->SetWages(context, request, response); }));}
     void SetMessageAllocatorFor_SetWages(
         ::grpc::MessageAllocator< ::city::economy::v2::SetWagesRequest, ::city::economy::v2::SetWagesResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(11);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(13);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::SetWagesRequest, ::city::economy::v2::SetWagesResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -2608,13 +3211,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_GetPrices() {
-      ::grpc::Service::MarkMethodCallback(12,
+      ::grpc::Service::MarkMethodCallback(14,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::GetPricesRequest, ::city::economy::v2::GetPricesResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::GetPricesRequest* request, ::city::economy::v2::GetPricesResponse* response) { return this->GetPrices(context, request, response); }));}
     void SetMessageAllocatorFor_GetPrices(
         ::grpc::MessageAllocator< ::city::economy::v2::GetPricesRequest, ::city::economy::v2::GetPricesResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(12);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(14);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::GetPricesRequest, ::city::economy::v2::GetPricesResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -2635,13 +3238,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_SetPrices() {
-      ::grpc::Service::MarkMethodCallback(13,
+      ::grpc::Service::MarkMethodCallback(15,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::SetPricesRequest, ::city::economy::v2::SetPricesResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::SetPricesRequest* request, ::city::economy::v2::SetPricesResponse* response) { return this->SetPrices(context, request, response); }));}
     void SetMessageAllocatorFor_SetPrices(
         ::grpc::MessageAllocator< ::city::economy::v2::SetPricesRequest, ::city::economy::v2::SetPricesResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(13);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(15);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::SetPricesRequest, ::city::economy::v2::SetPricesResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -2662,13 +3265,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_GetInventory() {
-      ::grpc::Service::MarkMethodCallback(14,
+      ::grpc::Service::MarkMethodCallback(16,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::GetInventoryRequest, ::city::economy::v2::GetInventoryResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::GetInventoryRequest* request, ::city::economy::v2::GetInventoryResponse* response) { return this->GetInventory(context, request, response); }));}
     void SetMessageAllocatorFor_GetInventory(
         ::grpc::MessageAllocator< ::city::economy::v2::GetInventoryRequest, ::city::economy::v2::GetInventoryResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(14);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(16);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::GetInventoryRequest, ::city::economy::v2::GetInventoryResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -2689,13 +3292,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_SetInventory() {
-      ::grpc::Service::MarkMethodCallback(15,
+      ::grpc::Service::MarkMethodCallback(17,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::SetInventoryRequest, ::city::economy::v2::SetInventoryResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::SetInventoryRequest* request, ::city::economy::v2::SetInventoryResponse* response) { return this->SetInventory(context, request, response); }));}
     void SetMessageAllocatorFor_SetInventory(
         ::grpc::MessageAllocator< ::city::economy::v2::SetInventoryRequest, ::city::economy::v2::SetInventoryResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(15);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(17);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::SetInventoryRequest, ::city::economy::v2::SetInventoryResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -2716,13 +3319,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_AddInventory() {
-      ::grpc::Service::MarkMethodCallback(16,
+      ::grpc::Service::MarkMethodCallback(18,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::AddInventoryRequest, ::city::economy::v2::AddInventoryResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::AddInventoryRequest* request, ::city::economy::v2::AddInventoryResponse* response) { return this->AddInventory(context, request, response); }));}
     void SetMessageAllocatorFor_AddInventory(
         ::grpc::MessageAllocator< ::city::economy::v2::AddInventoryRequest, ::city::economy::v2::AddInventoryResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(16);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(18);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::AddInventoryRequest, ::city::economy::v2::AddInventoryResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -2743,13 +3346,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_GetPrice() {
-      ::grpc::Service::MarkMethodCallback(17,
+      ::grpc::Service::MarkMethodCallback(19,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::GetPriceRequest, ::city::economy::v2::GetPriceResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::GetPriceRequest* request, ::city::economy::v2::GetPriceResponse* response) { return this->GetPrice(context, request, response); }));}
     void SetMessageAllocatorFor_GetPrice(
         ::grpc::MessageAllocator< ::city::economy::v2::GetPriceRequest, ::city::economy::v2::GetPriceResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(17);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(19);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::GetPriceRequest, ::city::economy::v2::GetPriceResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -2770,13 +3373,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_SetPrice() {
-      ::grpc::Service::MarkMethodCallback(18,
+      ::grpc::Service::MarkMethodCallback(20,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::SetPriceRequest, ::city::economy::v2::SetPriceResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::SetPriceRequest* request, ::city::economy::v2::SetPriceResponse* response) { return this->SetPrice(context, request, response); }));}
     void SetMessageAllocatorFor_SetPrice(
         ::grpc::MessageAllocator< ::city::economy::v2::SetPriceRequest, ::city::economy::v2::SetPriceResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(18);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(20);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::SetPriceRequest, ::city::economy::v2::SetPriceResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -2797,13 +3400,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_AddPrice() {
-      ::grpc::Service::MarkMethodCallback(19,
+      ::grpc::Service::MarkMethodCallback(21,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::AddPriceRequest, ::city::economy::v2::AddPriceResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::AddPriceRequest* request, ::city::economy::v2::AddPriceResponse* response) { return this->AddPrice(context, request, response); }));}
     void SetMessageAllocatorFor_AddPrice(
         ::grpc::MessageAllocator< ::city::economy::v2::AddPriceRequest, ::city::economy::v2::AddPriceResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(19);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(21);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::AddPriceRequest, ::city::economy::v2::AddPriceResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -2824,13 +3427,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_GetCurrency() {
-      ::grpc::Service::MarkMethodCallback(20,
+      ::grpc::Service::MarkMethodCallback(22,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::GetCurrencyRequest, ::city::economy::v2::GetCurrencyResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::GetCurrencyRequest* request, ::city::economy::v2::GetCurrencyResponse* response) { return this->GetCurrency(context, request, response); }));}
     void SetMessageAllocatorFor_GetCurrency(
         ::grpc::MessageAllocator< ::city::economy::v2::GetCurrencyRequest, ::city::economy::v2::GetCurrencyResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(20);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(22);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::GetCurrencyRequest, ::city::economy::v2::GetCurrencyResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -2851,13 +3454,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_SetCurrency() {
-      ::grpc::Service::MarkMethodCallback(21,
+      ::grpc::Service::MarkMethodCallback(23,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::SetCurrencyRequest, ::city::economy::v2::SetCurrencyResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::SetCurrencyRequest* request, ::city::economy::v2::SetCurrencyResponse* response) { return this->SetCurrency(context, request, response); }));}
     void SetMessageAllocatorFor_SetCurrency(
         ::grpc::MessageAllocator< ::city::economy::v2::SetCurrencyRequest, ::city::economy::v2::SetCurrencyResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(21);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(23);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::SetCurrencyRequest, ::city::economy::v2::SetCurrencyResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -2878,13 +3481,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_AddCurrency() {
-      ::grpc::Service::MarkMethodCallback(22,
+      ::grpc::Service::MarkMethodCallback(24,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::AddCurrencyRequest, ::city::economy::v2::AddCurrencyResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::AddCurrencyRequest* request, ::city::economy::v2::AddCurrencyResponse* response) { return this->AddCurrency(context, request, response); }));}
     void SetMessageAllocatorFor_AddCurrency(
         ::grpc::MessageAllocator< ::city::economy::v2::AddCurrencyRequest, ::city::economy::v2::AddCurrencyResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(22);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(24);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::AddCurrencyRequest, ::city::economy::v2::AddCurrencyResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -2905,13 +3508,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_GetInterestRate() {
-      ::grpc::Service::MarkMethodCallback(23,
+      ::grpc::Service::MarkMethodCallback(25,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::GetInterestRateRequest, ::city::economy::v2::GetInterestRateResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::GetInterestRateRequest* request, ::city::economy::v2::GetInterestRateResponse* response) { return this->GetInterestRate(context, request, response); }));}
     void SetMessageAllocatorFor_GetInterestRate(
         ::grpc::MessageAllocator< ::city::economy::v2::GetInterestRateRequest, ::city::economy::v2::GetInterestRateResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(23);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(25);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::GetInterestRateRequest, ::city::economy::v2::GetInterestRateResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -2932,13 +3535,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_SetInterestRate() {
-      ::grpc::Service::MarkMethodCallback(24,
+      ::grpc::Service::MarkMethodCallback(26,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::SetInterestRateRequest, ::city::economy::v2::SetInterestRateResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::SetInterestRateRequest* request, ::city::economy::v2::SetInterestRateResponse* response) { return this->SetInterestRate(context, request, response); }));}
     void SetMessageAllocatorFor_SetInterestRate(
         ::grpc::MessageAllocator< ::city::economy::v2::SetInterestRateRequest, ::city::economy::v2::SetInterestRateResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(24);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(26);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::SetInterestRateRequest, ::city::economy::v2::SetInterestRateResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -2959,13 +3562,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_AddInterestRate() {
-      ::grpc::Service::MarkMethodCallback(25,
+      ::grpc::Service::MarkMethodCallback(27,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::AddInterestRateRequest, ::city::economy::v2::AddInterestRateResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::AddInterestRateRequest* request, ::city::economy::v2::AddInterestRateResponse* response) { return this->AddInterestRate(context, request, response); }));}
     void SetMessageAllocatorFor_AddInterestRate(
         ::grpc::MessageAllocator< ::city::economy::v2::AddInterestRateRequest, ::city::economy::v2::AddInterestRateResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(25);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(27);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::AddInterestRateRequest, ::city::economy::v2::AddInterestRateResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -2986,13 +3589,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_GetBracketCutoffs() {
-      ::grpc::Service::MarkMethodCallback(26,
+      ::grpc::Service::MarkMethodCallback(28,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::GetBracketCutoffsRequest, ::city::economy::v2::GetBracketCutoffsResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::GetBracketCutoffsRequest* request, ::city::economy::v2::GetBracketCutoffsResponse* response) { return this->GetBracketCutoffs(context, request, response); }));}
     void SetMessageAllocatorFor_GetBracketCutoffs(
         ::grpc::MessageAllocator< ::city::economy::v2::GetBracketCutoffsRequest, ::city::economy::v2::GetBracketCutoffsResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(26);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(28);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::GetBracketCutoffsRequest, ::city::economy::v2::GetBracketCutoffsResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -3013,13 +3616,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_SetBracketCutoffs() {
-      ::grpc::Service::MarkMethodCallback(27,
+      ::grpc::Service::MarkMethodCallback(29,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::SetBracketCutoffsRequest, ::city::economy::v2::SetBracketCutoffsResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::SetBracketCutoffsRequest* request, ::city::economy::v2::SetBracketCutoffsResponse* response) { return this->SetBracketCutoffs(context, request, response); }));}
     void SetMessageAllocatorFor_SetBracketCutoffs(
         ::grpc::MessageAllocator< ::city::economy::v2::SetBracketCutoffsRequest, ::city::economy::v2::SetBracketCutoffsResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(27);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(29);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::SetBracketCutoffsRequest, ::city::economy::v2::SetBracketCutoffsResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -3040,13 +3643,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_GetBracketRates() {
-      ::grpc::Service::MarkMethodCallback(28,
+      ::grpc::Service::MarkMethodCallback(30,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::GetBracketRatesRequest, ::city::economy::v2::GetBracketRatesResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::GetBracketRatesRequest* request, ::city::economy::v2::GetBracketRatesResponse* response) { return this->GetBracketRates(context, request, response); }));}
     void SetMessageAllocatorFor_GetBracketRates(
         ::grpc::MessageAllocator< ::city::economy::v2::GetBracketRatesRequest, ::city::economy::v2::GetBracketRatesResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(28);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(30);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::GetBracketRatesRequest, ::city::economy::v2::GetBracketRatesResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -3067,13 +3670,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_SetBracketRates() {
-      ::grpc::Service::MarkMethodCallback(29,
+      ::grpc::Service::MarkMethodCallback(31,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::SetBracketRatesRequest, ::city::economy::v2::SetBracketRatesResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::SetBracketRatesRequest* request, ::city::economy::v2::SetBracketRatesResponse* response) { return this->SetBracketRates(context, request, response); }));}
     void SetMessageAllocatorFor_SetBracketRates(
         ::grpc::MessageAllocator< ::city::economy::v2::SetBracketRatesRequest, ::city::economy::v2::SetBracketRatesResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(29);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(31);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::SetBracketRatesRequest, ::city::economy::v2::SetBracketRatesResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -3094,13 +3697,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_CalculateTaxesDue() {
-      ::grpc::Service::MarkMethodCallback(30,
+      ::grpc::Service::MarkMethodCallback(32,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::CalculateTaxesDueRequest, ::city::economy::v2::CalculateTaxesDueResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::CalculateTaxesDueRequest* request, ::city::economy::v2::CalculateTaxesDueResponse* response) { return this->CalculateTaxesDue(context, request, response); }));}
     void SetMessageAllocatorFor_CalculateTaxesDue(
         ::grpc::MessageAllocator< ::city::economy::v2::CalculateTaxesDueRequest, ::city::economy::v2::CalculateTaxesDueResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(30);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(32);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::CalculateTaxesDueRequest, ::city::economy::v2::CalculateTaxesDueResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -3121,13 +3724,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_CalculateConsumption() {
-      ::grpc::Service::MarkMethodCallback(31,
+      ::grpc::Service::MarkMethodCallback(33,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::CalculateConsumptionRequest, ::city::economy::v2::CalculateConsumptionResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::CalculateConsumptionRequest* request, ::city::economy::v2::CalculateConsumptionResponse* response) { return this->CalculateConsumption(context, request, response); }));}
     void SetMessageAllocatorFor_CalculateConsumption(
         ::grpc::MessageAllocator< ::city::economy::v2::CalculateConsumptionRequest, ::city::economy::v2::CalculateConsumptionResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(31);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(33);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::CalculateConsumptionRequest, ::city::economy::v2::CalculateConsumptionResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -3148,13 +3751,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_CalculateInterest() {
-      ::grpc::Service::MarkMethodCallback(32,
+      ::grpc::Service::MarkMethodCallback(34,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::CalculateInterestRequest, ::city::economy::v2::CalculateInterestResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::CalculateInterestRequest* request, ::city::economy::v2::CalculateInterestResponse* response) { return this->CalculateInterest(context, request, response); }));}
     void SetMessageAllocatorFor_CalculateInterest(
         ::grpc::MessageAllocator< ::city::economy::v2::CalculateInterestRequest, ::city::economy::v2::CalculateInterestResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(32);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(34);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::CalculateInterestRequest, ::city::economy::v2::CalculateInterestResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -3175,13 +3778,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_SaveEconomyEntities() {
-      ::grpc::Service::MarkMethodCallback(33,
+      ::grpc::Service::MarkMethodCallback(35,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::SaveEconomyEntitiesRequest, ::city::economy::v2::SaveEconomyEntitiesResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::SaveEconomyEntitiesRequest* request, ::city::economy::v2::SaveEconomyEntitiesResponse* response) { return this->SaveEconomyEntities(context, request, response); }));}
     void SetMessageAllocatorFor_SaveEconomyEntities(
         ::grpc::MessageAllocator< ::city::economy::v2::SaveEconomyEntitiesRequest, ::city::economy::v2::SaveEconomyEntitiesResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(33);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(35);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::SaveEconomyEntitiesRequest, ::city::economy::v2::SaveEconomyEntitiesResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -3202,13 +3805,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_LoadEconomyEntities() {
-      ::grpc::Service::MarkMethodCallback(34,
+      ::grpc::Service::MarkMethodCallback(36,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::LoadEconomyEntitiesRequest, ::city::economy::v2::LoadEconomyEntitiesResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::LoadEconomyEntitiesRequest* request, ::city::economy::v2::LoadEconomyEntitiesResponse* response) { return this->LoadEconomyEntities(context, request, response); }));}
     void SetMessageAllocatorFor_LoadEconomyEntities(
         ::grpc::MessageAllocator< ::city::economy::v2::LoadEconomyEntitiesRequest, ::city::economy::v2::LoadEconomyEntitiesResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(34);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(36);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::LoadEconomyEntitiesRequest, ::city::economy::v2::LoadEconomyEntitiesResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -3229,13 +3832,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_GetConsumptionCurrency() {
-      ::grpc::Service::MarkMethodCallback(35,
+      ::grpc::Service::MarkMethodCallback(37,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::GetConsumptionCurrencyRequest, ::city::economy::v2::GetConsumptionCurrencyResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::GetConsumptionCurrencyRequest* request, ::city::economy::v2::GetConsumptionCurrencyResponse* response) { return this->GetConsumptionCurrency(context, request, response); }));}
     void SetMessageAllocatorFor_GetConsumptionCurrency(
         ::grpc::MessageAllocator< ::city::economy::v2::GetConsumptionCurrencyRequest, ::city::economy::v2::GetConsumptionCurrencyResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(35);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(37);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::GetConsumptionCurrencyRequest, ::city::economy::v2::GetConsumptionCurrencyResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -3256,13 +3859,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_SetConsumptionCurrency() {
-      ::grpc::Service::MarkMethodCallback(36,
+      ::grpc::Service::MarkMethodCallback(38,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::SetConsumptionCurrencyRequest, ::city::economy::v2::SetConsumptionCurrencyResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::SetConsumptionCurrencyRequest* request, ::city::economy::v2::SetConsumptionCurrencyResponse* response) { return this->SetConsumptionCurrency(context, request, response); }));}
     void SetMessageAllocatorFor_SetConsumptionCurrency(
         ::grpc::MessageAllocator< ::city::economy::v2::SetConsumptionCurrencyRequest, ::city::economy::v2::SetConsumptionCurrencyResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(36);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(38);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::SetConsumptionCurrencyRequest, ::city::economy::v2::SetConsumptionCurrencyResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -3283,13 +3886,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_GetConsumptionPropensity() {
-      ::grpc::Service::MarkMethodCallback(37,
+      ::grpc::Service::MarkMethodCallback(39,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::GetConsumptionPropensityRequest, ::city::economy::v2::GetConsumptionPropensityResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::GetConsumptionPropensityRequest* request, ::city::economy::v2::GetConsumptionPropensityResponse* response) { return this->GetConsumptionPropensity(context, request, response); }));}
     void SetMessageAllocatorFor_GetConsumptionPropensity(
         ::grpc::MessageAllocator< ::city::economy::v2::GetConsumptionPropensityRequest, ::city::economy::v2::GetConsumptionPropensityResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(37);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(39);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::GetConsumptionPropensityRequest, ::city::economy::v2::GetConsumptionPropensityResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -3310,13 +3913,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_SetConsumptionPropensity() {
-      ::grpc::Service::MarkMethodCallback(38,
+      ::grpc::Service::MarkMethodCallback(40,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::SetConsumptionPropensityRequest, ::city::economy::v2::SetConsumptionPropensityResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::SetConsumptionPropensityRequest* request, ::city::economy::v2::SetConsumptionPropensityResponse* response) { return this->SetConsumptionPropensity(context, request, response); }));}
     void SetMessageAllocatorFor_SetConsumptionPropensity(
         ::grpc::MessageAllocator< ::city::economy::v2::SetConsumptionPropensityRequest, ::city::economy::v2::SetConsumptionPropensityResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(38);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(40);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::SetConsumptionPropensityRequest, ::city::economy::v2::SetConsumptionPropensityResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -3337,13 +3940,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_GetIncomeCurrency() {
-      ::grpc::Service::MarkMethodCallback(39,
+      ::grpc::Service::MarkMethodCallback(41,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::GetIncomeCurrencyRequest, ::city::economy::v2::GetIncomeCurrencyResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::GetIncomeCurrencyRequest* request, ::city::economy::v2::GetIncomeCurrencyResponse* response) { return this->GetIncomeCurrency(context, request, response); }));}
     void SetMessageAllocatorFor_GetIncomeCurrency(
         ::grpc::MessageAllocator< ::city::economy::v2::GetIncomeCurrencyRequest, ::city::economy::v2::GetIncomeCurrencyResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(39);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(41);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::GetIncomeCurrencyRequest, ::city::economy::v2::GetIncomeCurrencyResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -3364,13 +3967,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_SetIncomeCurrency() {
-      ::grpc::Service::MarkMethodCallback(40,
+      ::grpc::Service::MarkMethodCallback(42,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::SetIncomeCurrencyRequest, ::city::economy::v2::SetIncomeCurrencyResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::SetIncomeCurrencyRequest* request, ::city::economy::v2::SetIncomeCurrencyResponse* response) { return this->SetIncomeCurrency(context, request, response); }));}
     void SetMessageAllocatorFor_SetIncomeCurrency(
         ::grpc::MessageAllocator< ::city::economy::v2::SetIncomeCurrencyRequest, ::city::economy::v2::SetIncomeCurrencyResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(40);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(42);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::SetIncomeCurrencyRequest, ::city::economy::v2::SetIncomeCurrencyResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -3391,13 +3994,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_GetDepression() {
-      ::grpc::Service::MarkMethodCallback(41,
+      ::grpc::Service::MarkMethodCallback(43,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::GetDepressionRequest, ::city::economy::v2::GetDepressionResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::GetDepressionRequest* request, ::city::economy::v2::GetDepressionResponse* response) { return this->GetDepression(context, request, response); }));}
     void SetMessageAllocatorFor_GetDepression(
         ::grpc::MessageAllocator< ::city::economy::v2::GetDepressionRequest, ::city::economy::v2::GetDepressionResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(41);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(43);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::GetDepressionRequest, ::city::economy::v2::GetDepressionResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -3418,13 +4021,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_SetDepression() {
-      ::grpc::Service::MarkMethodCallback(42,
+      ::grpc::Service::MarkMethodCallback(44,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::SetDepressionRequest, ::city::economy::v2::SetDepressionResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::SetDepressionRequest* request, ::city::economy::v2::SetDepressionResponse* response) { return this->SetDepression(context, request, response); }));}
     void SetMessageAllocatorFor_SetDepression(
         ::grpc::MessageAllocator< ::city::economy::v2::SetDepressionRequest, ::city::economy::v2::SetDepressionResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(42);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(44);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::SetDepressionRequest, ::city::economy::v2::SetDepressionResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -3445,13 +4048,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_GetLocusControl() {
-      ::grpc::Service::MarkMethodCallback(43,
+      ::grpc::Service::MarkMethodCallback(45,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::GetLocusControlRequest, ::city::economy::v2::GetLocusControlResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::GetLocusControlRequest* request, ::city::economy::v2::GetLocusControlResponse* response) { return this->GetLocusControl(context, request, response); }));}
     void SetMessageAllocatorFor_GetLocusControl(
         ::grpc::MessageAllocator< ::city::economy::v2::GetLocusControlRequest, ::city::economy::v2::GetLocusControlResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(43);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(45);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::GetLocusControlRequest, ::city::economy::v2::GetLocusControlResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -3472,13 +4075,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_SetLocusControl() {
-      ::grpc::Service::MarkMethodCallback(44,
+      ::grpc::Service::MarkMethodCallback(46,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::SetLocusControlRequest, ::city::economy::v2::SetLocusControlResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::SetLocusControlRequest* request, ::city::economy::v2::SetLocusControlResponse* response) { return this->SetLocusControl(context, request, response); }));}
     void SetMessageAllocatorFor_SetLocusControl(
         ::grpc::MessageAllocator< ::city::economy::v2::SetLocusControlRequest, ::city::economy::v2::SetLocusControlResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(44);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(46);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::SetLocusControlRequest, ::city::economy::v2::SetLocusControlResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -3499,13 +4102,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_GetWorkingHours() {
-      ::grpc::Service::MarkMethodCallback(45,
+      ::grpc::Service::MarkMethodCallback(47,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::GetWorkingHoursRequest, ::city::economy::v2::GetWorkingHoursResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::GetWorkingHoursRequest* request, ::city::economy::v2::GetWorkingHoursResponse* response) { return this->GetWorkingHours(context, request, response); }));}
     void SetMessageAllocatorFor_GetWorkingHours(
         ::grpc::MessageAllocator< ::city::economy::v2::GetWorkingHoursRequest, ::city::economy::v2::GetWorkingHoursResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(45);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(47);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::GetWorkingHoursRequest, ::city::economy::v2::GetWorkingHoursResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -3526,13 +4129,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_SetWorkingHours() {
-      ::grpc::Service::MarkMethodCallback(46,
+      ::grpc::Service::MarkMethodCallback(48,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::SetWorkingHoursRequest, ::city::economy::v2::SetWorkingHoursResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::SetWorkingHoursRequest* request, ::city::economy::v2::SetWorkingHoursResponse* response) { return this->SetWorkingHours(context, request, response); }));}
     void SetMessageAllocatorFor_SetWorkingHours(
         ::grpc::MessageAllocator< ::city::economy::v2::SetWorkingHoursRequest, ::city::economy::v2::SetWorkingHoursResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(46);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(48);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::SetWorkingHoursRequest, ::city::economy::v2::SetWorkingHoursResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -3553,13 +4156,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_GetOrgEntityIds() {
-      ::grpc::Service::MarkMethodCallback(47,
+      ::grpc::Service::MarkMethodCallback(49,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::GetOrgEntityIdsRequest, ::city::economy::v2::GetOrgEntityIdsResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::GetOrgEntityIdsRequest* request, ::city::economy::v2::GetOrgEntityIdsResponse* response) { return this->GetOrgEntityIds(context, request, response); }));}
     void SetMessageAllocatorFor_GetOrgEntityIds(
         ::grpc::MessageAllocator< ::city::economy::v2::GetOrgEntityIdsRequest, ::city::economy::v2::GetOrgEntityIdsResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(47);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(49);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::GetOrgEntityIdsRequest, ::city::economy::v2::GetOrgEntityIdsResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -3574,7 +4177,277 @@ class OrgService final {
     virtual ::grpc::ServerUnaryReactor* GetOrgEntityIds(
       ::grpc::CallbackServerContext* /*context*/, const ::city::economy::v2::GetOrgEntityIdsRequest* /*request*/, ::city::economy::v2::GetOrgEntityIdsResponse* /*response*/)  { return nullptr; }
   };
-  typedef WithCallbackMethod_AddOrg<WithCallbackMethod_RemoveOrg<WithCallbackMethod_AddAgent<WithCallbackMethod_RemoveAgent<WithCallbackMethod_GetNominalGDP<WithCallbackMethod_SetNominalGDP<WithCallbackMethod_GetRealGDP<WithCallbackMethod_SetRealGDP<WithCallbackMethod_GetUnemployment<WithCallbackMethod_SetUnemployment<WithCallbackMethod_GetWages<WithCallbackMethod_SetWages<WithCallbackMethod_GetPrices<WithCallbackMethod_SetPrices<WithCallbackMethod_GetInventory<WithCallbackMethod_SetInventory<WithCallbackMethod_AddInventory<WithCallbackMethod_GetPrice<WithCallbackMethod_SetPrice<WithCallbackMethod_AddPrice<WithCallbackMethod_GetCurrency<WithCallbackMethod_SetCurrency<WithCallbackMethod_AddCurrency<WithCallbackMethod_GetInterestRate<WithCallbackMethod_SetInterestRate<WithCallbackMethod_AddInterestRate<WithCallbackMethod_GetBracketCutoffs<WithCallbackMethod_SetBracketCutoffs<WithCallbackMethod_GetBracketRates<WithCallbackMethod_SetBracketRates<WithCallbackMethod_CalculateTaxesDue<WithCallbackMethod_CalculateConsumption<WithCallbackMethod_CalculateInterest<WithCallbackMethod_SaveEconomyEntities<WithCallbackMethod_LoadEconomyEntities<WithCallbackMethod_GetConsumptionCurrency<WithCallbackMethod_SetConsumptionCurrency<WithCallbackMethod_GetConsumptionPropensity<WithCallbackMethod_SetConsumptionPropensity<WithCallbackMethod_GetIncomeCurrency<WithCallbackMethod_SetIncomeCurrency<WithCallbackMethod_GetDepression<WithCallbackMethod_SetDepression<WithCallbackMethod_GetLocusControl<WithCallbackMethod_SetLocusControl<WithCallbackMethod_GetWorkingHours<WithCallbackMethod_SetWorkingHours<WithCallbackMethod_GetOrgEntityIds<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > CallbackService;
+  template <class BaseClass>
+  class WithCallbackMethod_GetEmployees : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_GetEmployees() {
+      ::grpc::Service::MarkMethodCallback(50,
+          new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::GetEmployeesRequest, ::city::economy::v2::GetEmployeesResponse>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::city::economy::v2::GetEmployeesRequest* request, ::city::economy::v2::GetEmployeesResponse* response) { return this->GetEmployees(context, request, response); }));}
+    void SetMessageAllocatorFor_GetEmployees(
+        ::grpc::MessageAllocator< ::city::economy::v2::GetEmployeesRequest, ::city::economy::v2::GetEmployeesResponse>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(50);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::GetEmployeesRequest, ::city::economy::v2::GetEmployeesResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_GetEmployees() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetEmployees(::grpc::ServerContext* /*context*/, const ::city::economy::v2::GetEmployeesRequest* /*request*/, ::city::economy::v2::GetEmployeesResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* GetEmployees(
+      ::grpc::CallbackServerContext* /*context*/, const ::city::economy::v2::GetEmployeesRequest* /*request*/, ::city::economy::v2::GetEmployeesResponse* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithCallbackMethod_SetEmployees : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_SetEmployees() {
+      ::grpc::Service::MarkMethodCallback(51,
+          new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::SetEmployeesRequest, ::city::economy::v2::SetEmployeesResponse>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::city::economy::v2::SetEmployeesRequest* request, ::city::economy::v2::SetEmployeesResponse* response) { return this->SetEmployees(context, request, response); }));}
+    void SetMessageAllocatorFor_SetEmployees(
+        ::grpc::MessageAllocator< ::city::economy::v2::SetEmployeesRequest, ::city::economy::v2::SetEmployeesResponse>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(51);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::SetEmployeesRequest, ::city::economy::v2::SetEmployeesResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_SetEmployees() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SetEmployees(::grpc::ServerContext* /*context*/, const ::city::economy::v2::SetEmployeesRequest* /*request*/, ::city::economy::v2::SetEmployeesResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* SetEmployees(
+      ::grpc::CallbackServerContext* /*context*/, const ::city::economy::v2::SetEmployeesRequest* /*request*/, ::city::economy::v2::SetEmployeesResponse* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithCallbackMethod_AddEmployee : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_AddEmployee() {
+      ::grpc::Service::MarkMethodCallback(52,
+          new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::AddEmployeeRequest, ::city::economy::v2::AddEmployeeResponse>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::city::economy::v2::AddEmployeeRequest* request, ::city::economy::v2::AddEmployeeResponse* response) { return this->AddEmployee(context, request, response); }));}
+    void SetMessageAllocatorFor_AddEmployee(
+        ::grpc::MessageAllocator< ::city::economy::v2::AddEmployeeRequest, ::city::economy::v2::AddEmployeeResponse>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(52);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::AddEmployeeRequest, ::city::economy::v2::AddEmployeeResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_AddEmployee() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status AddEmployee(::grpc::ServerContext* /*context*/, const ::city::economy::v2::AddEmployeeRequest* /*request*/, ::city::economy::v2::AddEmployeeResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* AddEmployee(
+      ::grpc::CallbackServerContext* /*context*/, const ::city::economy::v2::AddEmployeeRequest* /*request*/, ::city::economy::v2::AddEmployeeResponse* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithCallbackMethod_RemoveEmployee : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_RemoveEmployee() {
+      ::grpc::Service::MarkMethodCallback(53,
+          new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::RemoveEmployeeRequest, ::city::economy::v2::RemoveEmployeeResponse>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::city::economy::v2::RemoveEmployeeRequest* request, ::city::economy::v2::RemoveEmployeeResponse* response) { return this->RemoveEmployee(context, request, response); }));}
+    void SetMessageAllocatorFor_RemoveEmployee(
+        ::grpc::MessageAllocator< ::city::economy::v2::RemoveEmployeeRequest, ::city::economy::v2::RemoveEmployeeResponse>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(53);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::RemoveEmployeeRequest, ::city::economy::v2::RemoveEmployeeResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_RemoveEmployee() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status RemoveEmployee(::grpc::ServerContext* /*context*/, const ::city::economy::v2::RemoveEmployeeRequest* /*request*/, ::city::economy::v2::RemoveEmployeeResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* RemoveEmployee(
+      ::grpc::CallbackServerContext* /*context*/, const ::city::economy::v2::RemoveEmployeeRequest* /*request*/, ::city::economy::v2::RemoveEmployeeResponse* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithCallbackMethod_GetCitizens : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_GetCitizens() {
+      ::grpc::Service::MarkMethodCallback(54,
+          new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::GetCitizensRequest, ::city::economy::v2::GetCitizensResponse>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::city::economy::v2::GetCitizensRequest* request, ::city::economy::v2::GetCitizensResponse* response) { return this->GetCitizens(context, request, response); }));}
+    void SetMessageAllocatorFor_GetCitizens(
+        ::grpc::MessageAllocator< ::city::economy::v2::GetCitizensRequest, ::city::economy::v2::GetCitizensResponse>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(54);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::GetCitizensRequest, ::city::economy::v2::GetCitizensResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_GetCitizens() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetCitizens(::grpc::ServerContext* /*context*/, const ::city::economy::v2::GetCitizensRequest* /*request*/, ::city::economy::v2::GetCitizensResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* GetCitizens(
+      ::grpc::CallbackServerContext* /*context*/, const ::city::economy::v2::GetCitizensRequest* /*request*/, ::city::economy::v2::GetCitizensResponse* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithCallbackMethod_SetCitizens : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_SetCitizens() {
+      ::grpc::Service::MarkMethodCallback(55,
+          new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::SetCitizensRequest, ::city::economy::v2::SetCitizensResponse>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::city::economy::v2::SetCitizensRequest* request, ::city::economy::v2::SetCitizensResponse* response) { return this->SetCitizens(context, request, response); }));}
+    void SetMessageAllocatorFor_SetCitizens(
+        ::grpc::MessageAllocator< ::city::economy::v2::SetCitizensRequest, ::city::economy::v2::SetCitizensResponse>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(55);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::SetCitizensRequest, ::city::economy::v2::SetCitizensResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_SetCitizens() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SetCitizens(::grpc::ServerContext* /*context*/, const ::city::economy::v2::SetCitizensRequest* /*request*/, ::city::economy::v2::SetCitizensResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* SetCitizens(
+      ::grpc::CallbackServerContext* /*context*/, const ::city::economy::v2::SetCitizensRequest* /*request*/, ::city::economy::v2::SetCitizensResponse* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithCallbackMethod_AddCitizen : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_AddCitizen() {
+      ::grpc::Service::MarkMethodCallback(56,
+          new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::AddCitizenRequest, ::city::economy::v2::AddCitizenResponse>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::city::economy::v2::AddCitizenRequest* request, ::city::economy::v2::AddCitizenResponse* response) { return this->AddCitizen(context, request, response); }));}
+    void SetMessageAllocatorFor_AddCitizen(
+        ::grpc::MessageAllocator< ::city::economy::v2::AddCitizenRequest, ::city::economy::v2::AddCitizenResponse>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(56);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::AddCitizenRequest, ::city::economy::v2::AddCitizenResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_AddCitizen() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status AddCitizen(::grpc::ServerContext* /*context*/, const ::city::economy::v2::AddCitizenRequest* /*request*/, ::city::economy::v2::AddCitizenResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* AddCitizen(
+      ::grpc::CallbackServerContext* /*context*/, const ::city::economy::v2::AddCitizenRequest* /*request*/, ::city::economy::v2::AddCitizenResponse* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithCallbackMethod_RemoveCitizen : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_RemoveCitizen() {
+      ::grpc::Service::MarkMethodCallback(57,
+          new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::RemoveCitizenRequest, ::city::economy::v2::RemoveCitizenResponse>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::city::economy::v2::RemoveCitizenRequest* request, ::city::economy::v2::RemoveCitizenResponse* response) { return this->RemoveCitizen(context, request, response); }));}
+    void SetMessageAllocatorFor_RemoveCitizen(
+        ::grpc::MessageAllocator< ::city::economy::v2::RemoveCitizenRequest, ::city::economy::v2::RemoveCitizenResponse>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(57);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::RemoveCitizenRequest, ::city::economy::v2::RemoveCitizenResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_RemoveCitizen() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status RemoveCitizen(::grpc::ServerContext* /*context*/, const ::city::economy::v2::RemoveCitizenRequest* /*request*/, ::city::economy::v2::RemoveCitizenResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* RemoveCitizen(
+      ::grpc::CallbackServerContext* /*context*/, const ::city::economy::v2::RemoveCitizenRequest* /*request*/, ::city::economy::v2::RemoveCitizenResponse* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithCallbackMethod_GetAgent : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_GetAgent() {
+      ::grpc::Service::MarkMethodCallback(58,
+          new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::GetAgentRequest, ::city::economy::v2::GetAgentResponse>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::city::economy::v2::GetAgentRequest* request, ::city::economy::v2::GetAgentResponse* response) { return this->GetAgent(context, request, response); }));}
+    void SetMessageAllocatorFor_GetAgent(
+        ::grpc::MessageAllocator< ::city::economy::v2::GetAgentRequest, ::city::economy::v2::GetAgentResponse>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(58);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::GetAgentRequest, ::city::economy::v2::GetAgentResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_GetAgent() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetAgent(::grpc::ServerContext* /*context*/, const ::city::economy::v2::GetAgentRequest* /*request*/, ::city::economy::v2::GetAgentResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* GetAgent(
+      ::grpc::CallbackServerContext* /*context*/, const ::city::economy::v2::GetAgentRequest* /*request*/, ::city::economy::v2::GetAgentResponse* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithCallbackMethod_UpdateAgent : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_UpdateAgent() {
+      ::grpc::Service::MarkMethodCallback(59,
+          new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::UpdateAgentRequest, ::city::economy::v2::UpdateAgentResponse>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::city::economy::v2::UpdateAgentRequest* request, ::city::economy::v2::UpdateAgentResponse* response) { return this->UpdateAgent(context, request, response); }));}
+    void SetMessageAllocatorFor_UpdateAgent(
+        ::grpc::MessageAllocator< ::city::economy::v2::UpdateAgentRequest, ::city::economy::v2::UpdateAgentResponse>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(59);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::UpdateAgentRequest, ::city::economy::v2::UpdateAgentResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_UpdateAgent() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status UpdateAgent(::grpc::ServerContext* /*context*/, const ::city::economy::v2::UpdateAgentRequest* /*request*/, ::city::economy::v2::UpdateAgentResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* UpdateAgent(
+      ::grpc::CallbackServerContext* /*context*/, const ::city::economy::v2::UpdateAgentRequest* /*request*/, ::city::economy::v2::UpdateAgentResponse* /*response*/)  { return nullptr; }
+  };
+  typedef WithCallbackMethod_AddOrg<WithCallbackMethod_RemoveOrg<WithCallbackMethod_GetOrg<WithCallbackMethod_UpdateOrg<WithCallbackMethod_AddAgent<WithCallbackMethod_RemoveAgent<WithCallbackMethod_GetNominalGDP<WithCallbackMethod_SetNominalGDP<WithCallbackMethod_GetRealGDP<WithCallbackMethod_SetRealGDP<WithCallbackMethod_GetUnemployment<WithCallbackMethod_SetUnemployment<WithCallbackMethod_GetWages<WithCallbackMethod_SetWages<WithCallbackMethod_GetPrices<WithCallbackMethod_SetPrices<WithCallbackMethod_GetInventory<WithCallbackMethod_SetInventory<WithCallbackMethod_AddInventory<WithCallbackMethod_GetPrice<WithCallbackMethod_SetPrice<WithCallbackMethod_AddPrice<WithCallbackMethod_GetCurrency<WithCallbackMethod_SetCurrency<WithCallbackMethod_AddCurrency<WithCallbackMethod_GetInterestRate<WithCallbackMethod_SetInterestRate<WithCallbackMethod_AddInterestRate<WithCallbackMethod_GetBracketCutoffs<WithCallbackMethod_SetBracketCutoffs<WithCallbackMethod_GetBracketRates<WithCallbackMethod_SetBracketRates<WithCallbackMethod_CalculateTaxesDue<WithCallbackMethod_CalculateConsumption<WithCallbackMethod_CalculateInterest<WithCallbackMethod_SaveEconomyEntities<WithCallbackMethod_LoadEconomyEntities<WithCallbackMethod_GetConsumptionCurrency<WithCallbackMethod_SetConsumptionCurrency<WithCallbackMethod_GetConsumptionPropensity<WithCallbackMethod_SetConsumptionPropensity<WithCallbackMethod_GetIncomeCurrency<WithCallbackMethod_SetIncomeCurrency<WithCallbackMethod_GetDepression<WithCallbackMethod_SetDepression<WithCallbackMethod_GetLocusControl<WithCallbackMethod_SetLocusControl<WithCallbackMethod_GetWorkingHours<WithCallbackMethod_SetWorkingHours<WithCallbackMethod_GetOrgEntityIds<WithCallbackMethod_GetEmployees<WithCallbackMethod_SetEmployees<WithCallbackMethod_AddEmployee<WithCallbackMethod_RemoveEmployee<WithCallbackMethod_GetCitizens<WithCallbackMethod_SetCitizens<WithCallbackMethod_AddCitizen<WithCallbackMethod_RemoveCitizen<WithCallbackMethod_GetAgent<WithCallbackMethod_UpdateAgent<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > CallbackService;
   typedef CallbackService ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_AddOrg : public BaseClass {
@@ -3611,12 +4484,46 @@ class OrgService final {
     }
   };
   template <class BaseClass>
+  class WithGenericMethod_GetOrg : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_GetOrg() {
+      ::grpc::Service::MarkMethodGeneric(2);
+    }
+    ~WithGenericMethod_GetOrg() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetOrg(::grpc::ServerContext* /*context*/, const ::city::economy::v2::GetOrgRequest* /*request*/, ::city::economy::v2::GetOrgResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_UpdateOrg : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_UpdateOrg() {
+      ::grpc::Service::MarkMethodGeneric(3);
+    }
+    ~WithGenericMethod_UpdateOrg() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status UpdateOrg(::grpc::ServerContext* /*context*/, const ::city::economy::v2::UpdateOrgRequest* /*request*/, ::city::economy::v2::UpdateOrgResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
   class WithGenericMethod_AddAgent : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_AddAgent() {
-      ::grpc::Service::MarkMethodGeneric(2);
+      ::grpc::Service::MarkMethodGeneric(4);
     }
     ~WithGenericMethod_AddAgent() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3633,7 +4540,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_RemoveAgent() {
-      ::grpc::Service::MarkMethodGeneric(3);
+      ::grpc::Service::MarkMethodGeneric(5);
     }
     ~WithGenericMethod_RemoveAgent() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3650,7 +4557,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_GetNominalGDP() {
-      ::grpc::Service::MarkMethodGeneric(4);
+      ::grpc::Service::MarkMethodGeneric(6);
     }
     ~WithGenericMethod_GetNominalGDP() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3667,7 +4574,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_SetNominalGDP() {
-      ::grpc::Service::MarkMethodGeneric(5);
+      ::grpc::Service::MarkMethodGeneric(7);
     }
     ~WithGenericMethod_SetNominalGDP() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3684,7 +4591,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_GetRealGDP() {
-      ::grpc::Service::MarkMethodGeneric(6);
+      ::grpc::Service::MarkMethodGeneric(8);
     }
     ~WithGenericMethod_GetRealGDP() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3701,7 +4608,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_SetRealGDP() {
-      ::grpc::Service::MarkMethodGeneric(7);
+      ::grpc::Service::MarkMethodGeneric(9);
     }
     ~WithGenericMethod_SetRealGDP() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3718,7 +4625,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_GetUnemployment() {
-      ::grpc::Service::MarkMethodGeneric(8);
+      ::grpc::Service::MarkMethodGeneric(10);
     }
     ~WithGenericMethod_GetUnemployment() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3735,7 +4642,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_SetUnemployment() {
-      ::grpc::Service::MarkMethodGeneric(9);
+      ::grpc::Service::MarkMethodGeneric(11);
     }
     ~WithGenericMethod_SetUnemployment() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3752,7 +4659,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_GetWages() {
-      ::grpc::Service::MarkMethodGeneric(10);
+      ::grpc::Service::MarkMethodGeneric(12);
     }
     ~WithGenericMethod_GetWages() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3769,7 +4676,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_SetWages() {
-      ::grpc::Service::MarkMethodGeneric(11);
+      ::grpc::Service::MarkMethodGeneric(13);
     }
     ~WithGenericMethod_SetWages() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3786,7 +4693,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_GetPrices() {
-      ::grpc::Service::MarkMethodGeneric(12);
+      ::grpc::Service::MarkMethodGeneric(14);
     }
     ~WithGenericMethod_GetPrices() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3803,7 +4710,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_SetPrices() {
-      ::grpc::Service::MarkMethodGeneric(13);
+      ::grpc::Service::MarkMethodGeneric(15);
     }
     ~WithGenericMethod_SetPrices() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3820,7 +4727,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_GetInventory() {
-      ::grpc::Service::MarkMethodGeneric(14);
+      ::grpc::Service::MarkMethodGeneric(16);
     }
     ~WithGenericMethod_GetInventory() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3837,7 +4744,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_SetInventory() {
-      ::grpc::Service::MarkMethodGeneric(15);
+      ::grpc::Service::MarkMethodGeneric(17);
     }
     ~WithGenericMethod_SetInventory() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3854,7 +4761,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_AddInventory() {
-      ::grpc::Service::MarkMethodGeneric(16);
+      ::grpc::Service::MarkMethodGeneric(18);
     }
     ~WithGenericMethod_AddInventory() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3871,7 +4778,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_GetPrice() {
-      ::grpc::Service::MarkMethodGeneric(17);
+      ::grpc::Service::MarkMethodGeneric(19);
     }
     ~WithGenericMethod_GetPrice() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3888,7 +4795,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_SetPrice() {
-      ::grpc::Service::MarkMethodGeneric(18);
+      ::grpc::Service::MarkMethodGeneric(20);
     }
     ~WithGenericMethod_SetPrice() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3905,7 +4812,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_AddPrice() {
-      ::grpc::Service::MarkMethodGeneric(19);
+      ::grpc::Service::MarkMethodGeneric(21);
     }
     ~WithGenericMethod_AddPrice() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3922,7 +4829,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_GetCurrency() {
-      ::grpc::Service::MarkMethodGeneric(20);
+      ::grpc::Service::MarkMethodGeneric(22);
     }
     ~WithGenericMethod_GetCurrency() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3939,7 +4846,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_SetCurrency() {
-      ::grpc::Service::MarkMethodGeneric(21);
+      ::grpc::Service::MarkMethodGeneric(23);
     }
     ~WithGenericMethod_SetCurrency() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3956,7 +4863,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_AddCurrency() {
-      ::grpc::Service::MarkMethodGeneric(22);
+      ::grpc::Service::MarkMethodGeneric(24);
     }
     ~WithGenericMethod_AddCurrency() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3973,7 +4880,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_GetInterestRate() {
-      ::grpc::Service::MarkMethodGeneric(23);
+      ::grpc::Service::MarkMethodGeneric(25);
     }
     ~WithGenericMethod_GetInterestRate() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3990,7 +4897,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_SetInterestRate() {
-      ::grpc::Service::MarkMethodGeneric(24);
+      ::grpc::Service::MarkMethodGeneric(26);
     }
     ~WithGenericMethod_SetInterestRate() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4007,7 +4914,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_AddInterestRate() {
-      ::grpc::Service::MarkMethodGeneric(25);
+      ::grpc::Service::MarkMethodGeneric(27);
     }
     ~WithGenericMethod_AddInterestRate() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4024,7 +4931,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_GetBracketCutoffs() {
-      ::grpc::Service::MarkMethodGeneric(26);
+      ::grpc::Service::MarkMethodGeneric(28);
     }
     ~WithGenericMethod_GetBracketCutoffs() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4041,7 +4948,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_SetBracketCutoffs() {
-      ::grpc::Service::MarkMethodGeneric(27);
+      ::grpc::Service::MarkMethodGeneric(29);
     }
     ~WithGenericMethod_SetBracketCutoffs() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4058,7 +4965,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_GetBracketRates() {
-      ::grpc::Service::MarkMethodGeneric(28);
+      ::grpc::Service::MarkMethodGeneric(30);
     }
     ~WithGenericMethod_GetBracketRates() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4075,7 +4982,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_SetBracketRates() {
-      ::grpc::Service::MarkMethodGeneric(29);
+      ::grpc::Service::MarkMethodGeneric(31);
     }
     ~WithGenericMethod_SetBracketRates() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4092,7 +4999,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_CalculateTaxesDue() {
-      ::grpc::Service::MarkMethodGeneric(30);
+      ::grpc::Service::MarkMethodGeneric(32);
     }
     ~WithGenericMethod_CalculateTaxesDue() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4109,7 +5016,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_CalculateConsumption() {
-      ::grpc::Service::MarkMethodGeneric(31);
+      ::grpc::Service::MarkMethodGeneric(33);
     }
     ~WithGenericMethod_CalculateConsumption() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4126,7 +5033,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_CalculateInterest() {
-      ::grpc::Service::MarkMethodGeneric(32);
+      ::grpc::Service::MarkMethodGeneric(34);
     }
     ~WithGenericMethod_CalculateInterest() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4143,7 +5050,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_SaveEconomyEntities() {
-      ::grpc::Service::MarkMethodGeneric(33);
+      ::grpc::Service::MarkMethodGeneric(35);
     }
     ~WithGenericMethod_SaveEconomyEntities() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4160,7 +5067,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_LoadEconomyEntities() {
-      ::grpc::Service::MarkMethodGeneric(34);
+      ::grpc::Service::MarkMethodGeneric(36);
     }
     ~WithGenericMethod_LoadEconomyEntities() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4177,7 +5084,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_GetConsumptionCurrency() {
-      ::grpc::Service::MarkMethodGeneric(35);
+      ::grpc::Service::MarkMethodGeneric(37);
     }
     ~WithGenericMethod_GetConsumptionCurrency() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4194,7 +5101,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_SetConsumptionCurrency() {
-      ::grpc::Service::MarkMethodGeneric(36);
+      ::grpc::Service::MarkMethodGeneric(38);
     }
     ~WithGenericMethod_SetConsumptionCurrency() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4211,7 +5118,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_GetConsumptionPropensity() {
-      ::grpc::Service::MarkMethodGeneric(37);
+      ::grpc::Service::MarkMethodGeneric(39);
     }
     ~WithGenericMethod_GetConsumptionPropensity() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4228,7 +5135,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_SetConsumptionPropensity() {
-      ::grpc::Service::MarkMethodGeneric(38);
+      ::grpc::Service::MarkMethodGeneric(40);
     }
     ~WithGenericMethod_SetConsumptionPropensity() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4245,7 +5152,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_GetIncomeCurrency() {
-      ::grpc::Service::MarkMethodGeneric(39);
+      ::grpc::Service::MarkMethodGeneric(41);
     }
     ~WithGenericMethod_GetIncomeCurrency() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4262,7 +5169,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_SetIncomeCurrency() {
-      ::grpc::Service::MarkMethodGeneric(40);
+      ::grpc::Service::MarkMethodGeneric(42);
     }
     ~WithGenericMethod_SetIncomeCurrency() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4279,7 +5186,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_GetDepression() {
-      ::grpc::Service::MarkMethodGeneric(41);
+      ::grpc::Service::MarkMethodGeneric(43);
     }
     ~WithGenericMethod_GetDepression() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4296,7 +5203,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_SetDepression() {
-      ::grpc::Service::MarkMethodGeneric(42);
+      ::grpc::Service::MarkMethodGeneric(44);
     }
     ~WithGenericMethod_SetDepression() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4313,7 +5220,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_GetLocusControl() {
-      ::grpc::Service::MarkMethodGeneric(43);
+      ::grpc::Service::MarkMethodGeneric(45);
     }
     ~WithGenericMethod_GetLocusControl() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4330,7 +5237,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_SetLocusControl() {
-      ::grpc::Service::MarkMethodGeneric(44);
+      ::grpc::Service::MarkMethodGeneric(46);
     }
     ~WithGenericMethod_SetLocusControl() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4347,7 +5254,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_GetWorkingHours() {
-      ::grpc::Service::MarkMethodGeneric(45);
+      ::grpc::Service::MarkMethodGeneric(47);
     }
     ~WithGenericMethod_GetWorkingHours() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4364,7 +5271,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_SetWorkingHours() {
-      ::grpc::Service::MarkMethodGeneric(46);
+      ::grpc::Service::MarkMethodGeneric(48);
     }
     ~WithGenericMethod_SetWorkingHours() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4381,13 +5288,183 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_GetOrgEntityIds() {
-      ::grpc::Service::MarkMethodGeneric(47);
+      ::grpc::Service::MarkMethodGeneric(49);
     }
     ~WithGenericMethod_GetOrgEntityIds() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
     ::grpc::Status GetOrgEntityIds(::grpc::ServerContext* /*context*/, const ::city::economy::v2::GetOrgEntityIdsRequest* /*request*/, ::city::economy::v2::GetOrgEntityIdsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_GetEmployees : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_GetEmployees() {
+      ::grpc::Service::MarkMethodGeneric(50);
+    }
+    ~WithGenericMethod_GetEmployees() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetEmployees(::grpc::ServerContext* /*context*/, const ::city::economy::v2::GetEmployeesRequest* /*request*/, ::city::economy::v2::GetEmployeesResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_SetEmployees : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_SetEmployees() {
+      ::grpc::Service::MarkMethodGeneric(51);
+    }
+    ~WithGenericMethod_SetEmployees() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SetEmployees(::grpc::ServerContext* /*context*/, const ::city::economy::v2::SetEmployeesRequest* /*request*/, ::city::economy::v2::SetEmployeesResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_AddEmployee : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_AddEmployee() {
+      ::grpc::Service::MarkMethodGeneric(52);
+    }
+    ~WithGenericMethod_AddEmployee() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status AddEmployee(::grpc::ServerContext* /*context*/, const ::city::economy::v2::AddEmployeeRequest* /*request*/, ::city::economy::v2::AddEmployeeResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_RemoveEmployee : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_RemoveEmployee() {
+      ::grpc::Service::MarkMethodGeneric(53);
+    }
+    ~WithGenericMethod_RemoveEmployee() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status RemoveEmployee(::grpc::ServerContext* /*context*/, const ::city::economy::v2::RemoveEmployeeRequest* /*request*/, ::city::economy::v2::RemoveEmployeeResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_GetCitizens : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_GetCitizens() {
+      ::grpc::Service::MarkMethodGeneric(54);
+    }
+    ~WithGenericMethod_GetCitizens() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetCitizens(::grpc::ServerContext* /*context*/, const ::city::economy::v2::GetCitizensRequest* /*request*/, ::city::economy::v2::GetCitizensResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_SetCitizens : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_SetCitizens() {
+      ::grpc::Service::MarkMethodGeneric(55);
+    }
+    ~WithGenericMethod_SetCitizens() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SetCitizens(::grpc::ServerContext* /*context*/, const ::city::economy::v2::SetCitizensRequest* /*request*/, ::city::economy::v2::SetCitizensResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_AddCitizen : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_AddCitizen() {
+      ::grpc::Service::MarkMethodGeneric(56);
+    }
+    ~WithGenericMethod_AddCitizen() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status AddCitizen(::grpc::ServerContext* /*context*/, const ::city::economy::v2::AddCitizenRequest* /*request*/, ::city::economy::v2::AddCitizenResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_RemoveCitizen : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_RemoveCitizen() {
+      ::grpc::Service::MarkMethodGeneric(57);
+    }
+    ~WithGenericMethod_RemoveCitizen() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status RemoveCitizen(::grpc::ServerContext* /*context*/, const ::city::economy::v2::RemoveCitizenRequest* /*request*/, ::city::economy::v2::RemoveCitizenResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_GetAgent : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_GetAgent() {
+      ::grpc::Service::MarkMethodGeneric(58);
+    }
+    ~WithGenericMethod_GetAgent() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetAgent(::grpc::ServerContext* /*context*/, const ::city::economy::v2::GetAgentRequest* /*request*/, ::city::economy::v2::GetAgentResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_UpdateAgent : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_UpdateAgent() {
+      ::grpc::Service::MarkMethodGeneric(59);
+    }
+    ~WithGenericMethod_UpdateAgent() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status UpdateAgent(::grpc::ServerContext* /*context*/, const ::city::economy::v2::UpdateAgentRequest* /*request*/, ::city::economy::v2::UpdateAgentResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -4433,12 +5510,52 @@ class OrgService final {
     }
   };
   template <class BaseClass>
+  class WithRawMethod_GetOrg : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_GetOrg() {
+      ::grpc::Service::MarkMethodRaw(2);
+    }
+    ~WithRawMethod_GetOrg() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetOrg(::grpc::ServerContext* /*context*/, const ::city::economy::v2::GetOrgRequest* /*request*/, ::city::economy::v2::GetOrgResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetOrg(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_UpdateOrg : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_UpdateOrg() {
+      ::grpc::Service::MarkMethodRaw(3);
+    }
+    ~WithRawMethod_UpdateOrg() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status UpdateOrg(::grpc::ServerContext* /*context*/, const ::city::economy::v2::UpdateOrgRequest* /*request*/, ::city::economy::v2::UpdateOrgResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestUpdateOrg(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithRawMethod_AddAgent : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_AddAgent() {
-      ::grpc::Service::MarkMethodRaw(2);
+      ::grpc::Service::MarkMethodRaw(4);
     }
     ~WithRawMethod_AddAgent() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4449,7 +5566,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestAddAgent(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4458,7 +5575,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_RemoveAgent() {
-      ::grpc::Service::MarkMethodRaw(3);
+      ::grpc::Service::MarkMethodRaw(5);
     }
     ~WithRawMethod_RemoveAgent() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4469,7 +5586,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestRemoveAgent(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4478,7 +5595,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_GetNominalGDP() {
-      ::grpc::Service::MarkMethodRaw(4);
+      ::grpc::Service::MarkMethodRaw(6);
     }
     ~WithRawMethod_GetNominalGDP() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4489,7 +5606,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetNominalGDP(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4498,7 +5615,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_SetNominalGDP() {
-      ::grpc::Service::MarkMethodRaw(5);
+      ::grpc::Service::MarkMethodRaw(7);
     }
     ~WithRawMethod_SetNominalGDP() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4509,7 +5626,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestSetNominalGDP(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4518,7 +5635,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_GetRealGDP() {
-      ::grpc::Service::MarkMethodRaw(6);
+      ::grpc::Service::MarkMethodRaw(8);
     }
     ~WithRawMethod_GetRealGDP() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4529,7 +5646,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetRealGDP(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4538,7 +5655,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_SetRealGDP() {
-      ::grpc::Service::MarkMethodRaw(7);
+      ::grpc::Service::MarkMethodRaw(9);
     }
     ~WithRawMethod_SetRealGDP() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4549,7 +5666,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestSetRealGDP(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(9, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4558,7 +5675,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_GetUnemployment() {
-      ::grpc::Service::MarkMethodRaw(8);
+      ::grpc::Service::MarkMethodRaw(10);
     }
     ~WithRawMethod_GetUnemployment() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4569,7 +5686,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetUnemployment(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(10, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4578,7 +5695,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_SetUnemployment() {
-      ::grpc::Service::MarkMethodRaw(9);
+      ::grpc::Service::MarkMethodRaw(11);
     }
     ~WithRawMethod_SetUnemployment() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4589,7 +5706,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestSetUnemployment(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(9, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(11, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4598,7 +5715,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_GetWages() {
-      ::grpc::Service::MarkMethodRaw(10);
+      ::grpc::Service::MarkMethodRaw(12);
     }
     ~WithRawMethod_GetWages() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4609,7 +5726,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetWages(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(10, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(12, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4618,7 +5735,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_SetWages() {
-      ::grpc::Service::MarkMethodRaw(11);
+      ::grpc::Service::MarkMethodRaw(13);
     }
     ~WithRawMethod_SetWages() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4629,7 +5746,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestSetWages(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(11, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(13, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4638,7 +5755,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_GetPrices() {
-      ::grpc::Service::MarkMethodRaw(12);
+      ::grpc::Service::MarkMethodRaw(14);
     }
     ~WithRawMethod_GetPrices() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4649,7 +5766,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetPrices(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(12, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(14, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4658,7 +5775,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_SetPrices() {
-      ::grpc::Service::MarkMethodRaw(13);
+      ::grpc::Service::MarkMethodRaw(15);
     }
     ~WithRawMethod_SetPrices() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4669,7 +5786,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestSetPrices(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(13, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(15, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4678,7 +5795,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_GetInventory() {
-      ::grpc::Service::MarkMethodRaw(14);
+      ::grpc::Service::MarkMethodRaw(16);
     }
     ~WithRawMethod_GetInventory() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4689,7 +5806,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetInventory(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(14, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(16, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4698,7 +5815,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_SetInventory() {
-      ::grpc::Service::MarkMethodRaw(15);
+      ::grpc::Service::MarkMethodRaw(17);
     }
     ~WithRawMethod_SetInventory() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4709,7 +5826,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestSetInventory(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(15, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(17, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4718,7 +5835,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_AddInventory() {
-      ::grpc::Service::MarkMethodRaw(16);
+      ::grpc::Service::MarkMethodRaw(18);
     }
     ~WithRawMethod_AddInventory() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4729,7 +5846,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestAddInventory(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(16, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(18, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4738,7 +5855,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_GetPrice() {
-      ::grpc::Service::MarkMethodRaw(17);
+      ::grpc::Service::MarkMethodRaw(19);
     }
     ~WithRawMethod_GetPrice() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4749,7 +5866,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetPrice(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(17, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(19, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4758,7 +5875,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_SetPrice() {
-      ::grpc::Service::MarkMethodRaw(18);
+      ::grpc::Service::MarkMethodRaw(20);
     }
     ~WithRawMethod_SetPrice() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4769,7 +5886,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestSetPrice(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(18, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(20, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4778,7 +5895,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_AddPrice() {
-      ::grpc::Service::MarkMethodRaw(19);
+      ::grpc::Service::MarkMethodRaw(21);
     }
     ~WithRawMethod_AddPrice() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4789,7 +5906,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestAddPrice(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(19, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(21, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4798,7 +5915,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_GetCurrency() {
-      ::grpc::Service::MarkMethodRaw(20);
+      ::grpc::Service::MarkMethodRaw(22);
     }
     ~WithRawMethod_GetCurrency() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4809,7 +5926,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetCurrency(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(20, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(22, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4818,7 +5935,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_SetCurrency() {
-      ::grpc::Service::MarkMethodRaw(21);
+      ::grpc::Service::MarkMethodRaw(23);
     }
     ~WithRawMethod_SetCurrency() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4829,7 +5946,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestSetCurrency(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(21, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(23, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4838,7 +5955,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_AddCurrency() {
-      ::grpc::Service::MarkMethodRaw(22);
+      ::grpc::Service::MarkMethodRaw(24);
     }
     ~WithRawMethod_AddCurrency() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4849,7 +5966,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestAddCurrency(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(22, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(24, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4858,7 +5975,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_GetInterestRate() {
-      ::grpc::Service::MarkMethodRaw(23);
+      ::grpc::Service::MarkMethodRaw(25);
     }
     ~WithRawMethod_GetInterestRate() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4869,7 +5986,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetInterestRate(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(23, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(25, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4878,7 +5995,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_SetInterestRate() {
-      ::grpc::Service::MarkMethodRaw(24);
+      ::grpc::Service::MarkMethodRaw(26);
     }
     ~WithRawMethod_SetInterestRate() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4889,7 +6006,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestSetInterestRate(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(24, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(26, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4898,7 +6015,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_AddInterestRate() {
-      ::grpc::Service::MarkMethodRaw(25);
+      ::grpc::Service::MarkMethodRaw(27);
     }
     ~WithRawMethod_AddInterestRate() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4909,7 +6026,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestAddInterestRate(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(25, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(27, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4918,7 +6035,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_GetBracketCutoffs() {
-      ::grpc::Service::MarkMethodRaw(26);
+      ::grpc::Service::MarkMethodRaw(28);
     }
     ~WithRawMethod_GetBracketCutoffs() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4929,7 +6046,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetBracketCutoffs(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(26, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(28, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4938,7 +6055,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_SetBracketCutoffs() {
-      ::grpc::Service::MarkMethodRaw(27);
+      ::grpc::Service::MarkMethodRaw(29);
     }
     ~WithRawMethod_SetBracketCutoffs() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4949,7 +6066,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestSetBracketCutoffs(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(27, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(29, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4958,7 +6075,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_GetBracketRates() {
-      ::grpc::Service::MarkMethodRaw(28);
+      ::grpc::Service::MarkMethodRaw(30);
     }
     ~WithRawMethod_GetBracketRates() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4969,7 +6086,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetBracketRates(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(28, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(30, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4978,7 +6095,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_SetBracketRates() {
-      ::grpc::Service::MarkMethodRaw(29);
+      ::grpc::Service::MarkMethodRaw(31);
     }
     ~WithRawMethod_SetBracketRates() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4989,7 +6106,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestSetBracketRates(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(29, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(31, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4998,7 +6115,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_CalculateTaxesDue() {
-      ::grpc::Service::MarkMethodRaw(30);
+      ::grpc::Service::MarkMethodRaw(32);
     }
     ~WithRawMethod_CalculateTaxesDue() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5009,7 +6126,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestCalculateTaxesDue(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(30, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(32, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -5018,7 +6135,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_CalculateConsumption() {
-      ::grpc::Service::MarkMethodRaw(31);
+      ::grpc::Service::MarkMethodRaw(33);
     }
     ~WithRawMethod_CalculateConsumption() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5029,7 +6146,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestCalculateConsumption(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(31, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(33, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -5038,7 +6155,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_CalculateInterest() {
-      ::grpc::Service::MarkMethodRaw(32);
+      ::grpc::Service::MarkMethodRaw(34);
     }
     ~WithRawMethod_CalculateInterest() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5049,7 +6166,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestCalculateInterest(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(32, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(34, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -5058,7 +6175,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_SaveEconomyEntities() {
-      ::grpc::Service::MarkMethodRaw(33);
+      ::grpc::Service::MarkMethodRaw(35);
     }
     ~WithRawMethod_SaveEconomyEntities() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5069,7 +6186,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestSaveEconomyEntities(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(33, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(35, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -5078,7 +6195,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_LoadEconomyEntities() {
-      ::grpc::Service::MarkMethodRaw(34);
+      ::grpc::Service::MarkMethodRaw(36);
     }
     ~WithRawMethod_LoadEconomyEntities() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5089,7 +6206,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestLoadEconomyEntities(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(34, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(36, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -5098,7 +6215,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_GetConsumptionCurrency() {
-      ::grpc::Service::MarkMethodRaw(35);
+      ::grpc::Service::MarkMethodRaw(37);
     }
     ~WithRawMethod_GetConsumptionCurrency() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5109,7 +6226,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetConsumptionCurrency(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(35, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(37, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -5118,7 +6235,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_SetConsumptionCurrency() {
-      ::grpc::Service::MarkMethodRaw(36);
+      ::grpc::Service::MarkMethodRaw(38);
     }
     ~WithRawMethod_SetConsumptionCurrency() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5129,7 +6246,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestSetConsumptionCurrency(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(36, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(38, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -5138,7 +6255,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_GetConsumptionPropensity() {
-      ::grpc::Service::MarkMethodRaw(37);
+      ::grpc::Service::MarkMethodRaw(39);
     }
     ~WithRawMethod_GetConsumptionPropensity() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5149,7 +6266,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetConsumptionPropensity(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(37, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(39, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -5158,7 +6275,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_SetConsumptionPropensity() {
-      ::grpc::Service::MarkMethodRaw(38);
+      ::grpc::Service::MarkMethodRaw(40);
     }
     ~WithRawMethod_SetConsumptionPropensity() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5169,7 +6286,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestSetConsumptionPropensity(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(38, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(40, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -5178,7 +6295,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_GetIncomeCurrency() {
-      ::grpc::Service::MarkMethodRaw(39);
+      ::grpc::Service::MarkMethodRaw(41);
     }
     ~WithRawMethod_GetIncomeCurrency() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5189,7 +6306,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetIncomeCurrency(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(39, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(41, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -5198,7 +6315,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_SetIncomeCurrency() {
-      ::grpc::Service::MarkMethodRaw(40);
+      ::grpc::Service::MarkMethodRaw(42);
     }
     ~WithRawMethod_SetIncomeCurrency() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5209,7 +6326,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestSetIncomeCurrency(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(40, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(42, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -5218,7 +6335,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_GetDepression() {
-      ::grpc::Service::MarkMethodRaw(41);
+      ::grpc::Service::MarkMethodRaw(43);
     }
     ~WithRawMethod_GetDepression() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5229,7 +6346,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetDepression(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(41, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(43, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -5238,7 +6355,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_SetDepression() {
-      ::grpc::Service::MarkMethodRaw(42);
+      ::grpc::Service::MarkMethodRaw(44);
     }
     ~WithRawMethod_SetDepression() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5249,7 +6366,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestSetDepression(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(42, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(44, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -5258,7 +6375,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_GetLocusControl() {
-      ::grpc::Service::MarkMethodRaw(43);
+      ::grpc::Service::MarkMethodRaw(45);
     }
     ~WithRawMethod_GetLocusControl() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5269,7 +6386,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetLocusControl(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(43, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(45, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -5278,7 +6395,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_SetLocusControl() {
-      ::grpc::Service::MarkMethodRaw(44);
+      ::grpc::Service::MarkMethodRaw(46);
     }
     ~WithRawMethod_SetLocusControl() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5289,7 +6406,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestSetLocusControl(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(44, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(46, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -5298,7 +6415,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_GetWorkingHours() {
-      ::grpc::Service::MarkMethodRaw(45);
+      ::grpc::Service::MarkMethodRaw(47);
     }
     ~WithRawMethod_GetWorkingHours() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5309,7 +6426,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetWorkingHours(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(45, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(47, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -5318,7 +6435,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_SetWorkingHours() {
-      ::grpc::Service::MarkMethodRaw(46);
+      ::grpc::Service::MarkMethodRaw(48);
     }
     ~WithRawMethod_SetWorkingHours() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5329,7 +6446,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestSetWorkingHours(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(46, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(48, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -5338,7 +6455,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_GetOrgEntityIds() {
-      ::grpc::Service::MarkMethodRaw(47);
+      ::grpc::Service::MarkMethodRaw(49);
     }
     ~WithRawMethod_GetOrgEntityIds() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5349,7 +6466,207 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetOrgEntityIds(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(47, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(49, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_GetEmployees : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_GetEmployees() {
+      ::grpc::Service::MarkMethodRaw(50);
+    }
+    ~WithRawMethod_GetEmployees() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetEmployees(::grpc::ServerContext* /*context*/, const ::city::economy::v2::GetEmployeesRequest* /*request*/, ::city::economy::v2::GetEmployeesResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetEmployees(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(50, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_SetEmployees : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_SetEmployees() {
+      ::grpc::Service::MarkMethodRaw(51);
+    }
+    ~WithRawMethod_SetEmployees() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SetEmployees(::grpc::ServerContext* /*context*/, const ::city::economy::v2::SetEmployeesRequest* /*request*/, ::city::economy::v2::SetEmployeesResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestSetEmployees(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(51, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_AddEmployee : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_AddEmployee() {
+      ::grpc::Service::MarkMethodRaw(52);
+    }
+    ~WithRawMethod_AddEmployee() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status AddEmployee(::grpc::ServerContext* /*context*/, const ::city::economy::v2::AddEmployeeRequest* /*request*/, ::city::economy::v2::AddEmployeeResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestAddEmployee(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(52, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_RemoveEmployee : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_RemoveEmployee() {
+      ::grpc::Service::MarkMethodRaw(53);
+    }
+    ~WithRawMethod_RemoveEmployee() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status RemoveEmployee(::grpc::ServerContext* /*context*/, const ::city::economy::v2::RemoveEmployeeRequest* /*request*/, ::city::economy::v2::RemoveEmployeeResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestRemoveEmployee(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(53, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_GetCitizens : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_GetCitizens() {
+      ::grpc::Service::MarkMethodRaw(54);
+    }
+    ~WithRawMethod_GetCitizens() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetCitizens(::grpc::ServerContext* /*context*/, const ::city::economy::v2::GetCitizensRequest* /*request*/, ::city::economy::v2::GetCitizensResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetCitizens(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(54, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_SetCitizens : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_SetCitizens() {
+      ::grpc::Service::MarkMethodRaw(55);
+    }
+    ~WithRawMethod_SetCitizens() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SetCitizens(::grpc::ServerContext* /*context*/, const ::city::economy::v2::SetCitizensRequest* /*request*/, ::city::economy::v2::SetCitizensResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestSetCitizens(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(55, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_AddCitizen : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_AddCitizen() {
+      ::grpc::Service::MarkMethodRaw(56);
+    }
+    ~WithRawMethod_AddCitizen() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status AddCitizen(::grpc::ServerContext* /*context*/, const ::city::economy::v2::AddCitizenRequest* /*request*/, ::city::economy::v2::AddCitizenResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestAddCitizen(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(56, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_RemoveCitizen : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_RemoveCitizen() {
+      ::grpc::Service::MarkMethodRaw(57);
+    }
+    ~WithRawMethod_RemoveCitizen() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status RemoveCitizen(::grpc::ServerContext* /*context*/, const ::city::economy::v2::RemoveCitizenRequest* /*request*/, ::city::economy::v2::RemoveCitizenResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestRemoveCitizen(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(57, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_GetAgent : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_GetAgent() {
+      ::grpc::Service::MarkMethodRaw(58);
+    }
+    ~WithRawMethod_GetAgent() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetAgent(::grpc::ServerContext* /*context*/, const ::city::economy::v2::GetAgentRequest* /*request*/, ::city::economy::v2::GetAgentResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetAgent(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(58, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_UpdateAgent : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_UpdateAgent() {
+      ::grpc::Service::MarkMethodRaw(59);
+    }
+    ~WithRawMethod_UpdateAgent() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status UpdateAgent(::grpc::ServerContext* /*context*/, const ::city::economy::v2::UpdateAgentRequest* /*request*/, ::city::economy::v2::UpdateAgentResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestUpdateAgent(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(59, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -5397,12 +6714,56 @@ class OrgService final {
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
+  class WithRawCallbackMethod_GetOrg : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_GetOrg() {
+      ::grpc::Service::MarkMethodRawCallback(2,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetOrg(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_GetOrg() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetOrg(::grpc::ServerContext* /*context*/, const ::city::economy::v2::GetOrgRequest* /*request*/, ::city::economy::v2::GetOrgResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* GetOrg(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_UpdateOrg : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_UpdateOrg() {
+      ::grpc::Service::MarkMethodRawCallback(3,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->UpdateOrg(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_UpdateOrg() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status UpdateOrg(::grpc::ServerContext* /*context*/, const ::city::economy::v2::UpdateOrgRequest* /*request*/, ::city::economy::v2::UpdateOrgResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* UpdateOrg(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
   class WithRawCallbackMethod_AddAgent : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_AddAgent() {
-      ::grpc::Service::MarkMethodRawCallback(2,
+      ::grpc::Service::MarkMethodRawCallback(4,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->AddAgent(context, request, response); }));
@@ -5424,7 +6785,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_RemoveAgent() {
-      ::grpc::Service::MarkMethodRawCallback(3,
+      ::grpc::Service::MarkMethodRawCallback(5,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->RemoveAgent(context, request, response); }));
@@ -5446,7 +6807,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_GetNominalGDP() {
-      ::grpc::Service::MarkMethodRawCallback(4,
+      ::grpc::Service::MarkMethodRawCallback(6,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetNominalGDP(context, request, response); }));
@@ -5468,7 +6829,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_SetNominalGDP() {
-      ::grpc::Service::MarkMethodRawCallback(5,
+      ::grpc::Service::MarkMethodRawCallback(7,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->SetNominalGDP(context, request, response); }));
@@ -5490,7 +6851,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_GetRealGDP() {
-      ::grpc::Service::MarkMethodRawCallback(6,
+      ::grpc::Service::MarkMethodRawCallback(8,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetRealGDP(context, request, response); }));
@@ -5512,7 +6873,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_SetRealGDP() {
-      ::grpc::Service::MarkMethodRawCallback(7,
+      ::grpc::Service::MarkMethodRawCallback(9,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->SetRealGDP(context, request, response); }));
@@ -5534,7 +6895,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_GetUnemployment() {
-      ::grpc::Service::MarkMethodRawCallback(8,
+      ::grpc::Service::MarkMethodRawCallback(10,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetUnemployment(context, request, response); }));
@@ -5556,7 +6917,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_SetUnemployment() {
-      ::grpc::Service::MarkMethodRawCallback(9,
+      ::grpc::Service::MarkMethodRawCallback(11,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->SetUnemployment(context, request, response); }));
@@ -5578,7 +6939,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_GetWages() {
-      ::grpc::Service::MarkMethodRawCallback(10,
+      ::grpc::Service::MarkMethodRawCallback(12,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetWages(context, request, response); }));
@@ -5600,7 +6961,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_SetWages() {
-      ::grpc::Service::MarkMethodRawCallback(11,
+      ::grpc::Service::MarkMethodRawCallback(13,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->SetWages(context, request, response); }));
@@ -5622,7 +6983,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_GetPrices() {
-      ::grpc::Service::MarkMethodRawCallback(12,
+      ::grpc::Service::MarkMethodRawCallback(14,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetPrices(context, request, response); }));
@@ -5644,7 +7005,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_SetPrices() {
-      ::grpc::Service::MarkMethodRawCallback(13,
+      ::grpc::Service::MarkMethodRawCallback(15,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->SetPrices(context, request, response); }));
@@ -5666,7 +7027,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_GetInventory() {
-      ::grpc::Service::MarkMethodRawCallback(14,
+      ::grpc::Service::MarkMethodRawCallback(16,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetInventory(context, request, response); }));
@@ -5688,7 +7049,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_SetInventory() {
-      ::grpc::Service::MarkMethodRawCallback(15,
+      ::grpc::Service::MarkMethodRawCallback(17,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->SetInventory(context, request, response); }));
@@ -5710,7 +7071,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_AddInventory() {
-      ::grpc::Service::MarkMethodRawCallback(16,
+      ::grpc::Service::MarkMethodRawCallback(18,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->AddInventory(context, request, response); }));
@@ -5732,7 +7093,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_GetPrice() {
-      ::grpc::Service::MarkMethodRawCallback(17,
+      ::grpc::Service::MarkMethodRawCallback(19,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetPrice(context, request, response); }));
@@ -5754,7 +7115,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_SetPrice() {
-      ::grpc::Service::MarkMethodRawCallback(18,
+      ::grpc::Service::MarkMethodRawCallback(20,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->SetPrice(context, request, response); }));
@@ -5776,7 +7137,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_AddPrice() {
-      ::grpc::Service::MarkMethodRawCallback(19,
+      ::grpc::Service::MarkMethodRawCallback(21,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->AddPrice(context, request, response); }));
@@ -5798,7 +7159,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_GetCurrency() {
-      ::grpc::Service::MarkMethodRawCallback(20,
+      ::grpc::Service::MarkMethodRawCallback(22,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetCurrency(context, request, response); }));
@@ -5820,7 +7181,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_SetCurrency() {
-      ::grpc::Service::MarkMethodRawCallback(21,
+      ::grpc::Service::MarkMethodRawCallback(23,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->SetCurrency(context, request, response); }));
@@ -5842,7 +7203,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_AddCurrency() {
-      ::grpc::Service::MarkMethodRawCallback(22,
+      ::grpc::Service::MarkMethodRawCallback(24,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->AddCurrency(context, request, response); }));
@@ -5864,7 +7225,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_GetInterestRate() {
-      ::grpc::Service::MarkMethodRawCallback(23,
+      ::grpc::Service::MarkMethodRawCallback(25,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetInterestRate(context, request, response); }));
@@ -5886,7 +7247,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_SetInterestRate() {
-      ::grpc::Service::MarkMethodRawCallback(24,
+      ::grpc::Service::MarkMethodRawCallback(26,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->SetInterestRate(context, request, response); }));
@@ -5908,7 +7269,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_AddInterestRate() {
-      ::grpc::Service::MarkMethodRawCallback(25,
+      ::grpc::Service::MarkMethodRawCallback(27,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->AddInterestRate(context, request, response); }));
@@ -5930,7 +7291,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_GetBracketCutoffs() {
-      ::grpc::Service::MarkMethodRawCallback(26,
+      ::grpc::Service::MarkMethodRawCallback(28,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetBracketCutoffs(context, request, response); }));
@@ -5952,7 +7313,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_SetBracketCutoffs() {
-      ::grpc::Service::MarkMethodRawCallback(27,
+      ::grpc::Service::MarkMethodRawCallback(29,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->SetBracketCutoffs(context, request, response); }));
@@ -5974,7 +7335,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_GetBracketRates() {
-      ::grpc::Service::MarkMethodRawCallback(28,
+      ::grpc::Service::MarkMethodRawCallback(30,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetBracketRates(context, request, response); }));
@@ -5996,7 +7357,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_SetBracketRates() {
-      ::grpc::Service::MarkMethodRawCallback(29,
+      ::grpc::Service::MarkMethodRawCallback(31,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->SetBracketRates(context, request, response); }));
@@ -6018,7 +7379,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_CalculateTaxesDue() {
-      ::grpc::Service::MarkMethodRawCallback(30,
+      ::grpc::Service::MarkMethodRawCallback(32,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->CalculateTaxesDue(context, request, response); }));
@@ -6040,7 +7401,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_CalculateConsumption() {
-      ::grpc::Service::MarkMethodRawCallback(31,
+      ::grpc::Service::MarkMethodRawCallback(33,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->CalculateConsumption(context, request, response); }));
@@ -6062,7 +7423,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_CalculateInterest() {
-      ::grpc::Service::MarkMethodRawCallback(32,
+      ::grpc::Service::MarkMethodRawCallback(34,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->CalculateInterest(context, request, response); }));
@@ -6084,7 +7445,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_SaveEconomyEntities() {
-      ::grpc::Service::MarkMethodRawCallback(33,
+      ::grpc::Service::MarkMethodRawCallback(35,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->SaveEconomyEntities(context, request, response); }));
@@ -6106,7 +7467,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_LoadEconomyEntities() {
-      ::grpc::Service::MarkMethodRawCallback(34,
+      ::grpc::Service::MarkMethodRawCallback(36,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->LoadEconomyEntities(context, request, response); }));
@@ -6128,7 +7489,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_GetConsumptionCurrency() {
-      ::grpc::Service::MarkMethodRawCallback(35,
+      ::grpc::Service::MarkMethodRawCallback(37,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetConsumptionCurrency(context, request, response); }));
@@ -6150,7 +7511,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_SetConsumptionCurrency() {
-      ::grpc::Service::MarkMethodRawCallback(36,
+      ::grpc::Service::MarkMethodRawCallback(38,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->SetConsumptionCurrency(context, request, response); }));
@@ -6172,7 +7533,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_GetConsumptionPropensity() {
-      ::grpc::Service::MarkMethodRawCallback(37,
+      ::grpc::Service::MarkMethodRawCallback(39,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetConsumptionPropensity(context, request, response); }));
@@ -6194,7 +7555,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_SetConsumptionPropensity() {
-      ::grpc::Service::MarkMethodRawCallback(38,
+      ::grpc::Service::MarkMethodRawCallback(40,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->SetConsumptionPropensity(context, request, response); }));
@@ -6216,7 +7577,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_GetIncomeCurrency() {
-      ::grpc::Service::MarkMethodRawCallback(39,
+      ::grpc::Service::MarkMethodRawCallback(41,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetIncomeCurrency(context, request, response); }));
@@ -6238,7 +7599,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_SetIncomeCurrency() {
-      ::grpc::Service::MarkMethodRawCallback(40,
+      ::grpc::Service::MarkMethodRawCallback(42,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->SetIncomeCurrency(context, request, response); }));
@@ -6260,7 +7621,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_GetDepression() {
-      ::grpc::Service::MarkMethodRawCallback(41,
+      ::grpc::Service::MarkMethodRawCallback(43,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetDepression(context, request, response); }));
@@ -6282,7 +7643,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_SetDepression() {
-      ::grpc::Service::MarkMethodRawCallback(42,
+      ::grpc::Service::MarkMethodRawCallback(44,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->SetDepression(context, request, response); }));
@@ -6304,7 +7665,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_GetLocusControl() {
-      ::grpc::Service::MarkMethodRawCallback(43,
+      ::grpc::Service::MarkMethodRawCallback(45,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetLocusControl(context, request, response); }));
@@ -6326,7 +7687,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_SetLocusControl() {
-      ::grpc::Service::MarkMethodRawCallback(44,
+      ::grpc::Service::MarkMethodRawCallback(46,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->SetLocusControl(context, request, response); }));
@@ -6348,7 +7709,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_GetWorkingHours() {
-      ::grpc::Service::MarkMethodRawCallback(45,
+      ::grpc::Service::MarkMethodRawCallback(47,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetWorkingHours(context, request, response); }));
@@ -6370,7 +7731,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_SetWorkingHours() {
-      ::grpc::Service::MarkMethodRawCallback(46,
+      ::grpc::Service::MarkMethodRawCallback(48,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->SetWorkingHours(context, request, response); }));
@@ -6392,7 +7753,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_GetOrgEntityIds() {
-      ::grpc::Service::MarkMethodRawCallback(47,
+      ::grpc::Service::MarkMethodRawCallback(49,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetOrgEntityIds(context, request, response); }));
@@ -6406,6 +7767,226 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     virtual ::grpc::ServerUnaryReactor* GetOrgEntityIds(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_GetEmployees : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_GetEmployees() {
+      ::grpc::Service::MarkMethodRawCallback(50,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetEmployees(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_GetEmployees() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetEmployees(::grpc::ServerContext* /*context*/, const ::city::economy::v2::GetEmployeesRequest* /*request*/, ::city::economy::v2::GetEmployeesResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* GetEmployees(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_SetEmployees : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_SetEmployees() {
+      ::grpc::Service::MarkMethodRawCallback(51,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->SetEmployees(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_SetEmployees() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SetEmployees(::grpc::ServerContext* /*context*/, const ::city::economy::v2::SetEmployeesRequest* /*request*/, ::city::economy::v2::SetEmployeesResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* SetEmployees(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_AddEmployee : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_AddEmployee() {
+      ::grpc::Service::MarkMethodRawCallback(52,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->AddEmployee(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_AddEmployee() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status AddEmployee(::grpc::ServerContext* /*context*/, const ::city::economy::v2::AddEmployeeRequest* /*request*/, ::city::economy::v2::AddEmployeeResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* AddEmployee(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_RemoveEmployee : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_RemoveEmployee() {
+      ::grpc::Service::MarkMethodRawCallback(53,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->RemoveEmployee(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_RemoveEmployee() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status RemoveEmployee(::grpc::ServerContext* /*context*/, const ::city::economy::v2::RemoveEmployeeRequest* /*request*/, ::city::economy::v2::RemoveEmployeeResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* RemoveEmployee(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_GetCitizens : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_GetCitizens() {
+      ::grpc::Service::MarkMethodRawCallback(54,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetCitizens(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_GetCitizens() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetCitizens(::grpc::ServerContext* /*context*/, const ::city::economy::v2::GetCitizensRequest* /*request*/, ::city::economy::v2::GetCitizensResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* GetCitizens(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_SetCitizens : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_SetCitizens() {
+      ::grpc::Service::MarkMethodRawCallback(55,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->SetCitizens(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_SetCitizens() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SetCitizens(::grpc::ServerContext* /*context*/, const ::city::economy::v2::SetCitizensRequest* /*request*/, ::city::economy::v2::SetCitizensResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* SetCitizens(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_AddCitizen : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_AddCitizen() {
+      ::grpc::Service::MarkMethodRawCallback(56,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->AddCitizen(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_AddCitizen() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status AddCitizen(::grpc::ServerContext* /*context*/, const ::city::economy::v2::AddCitizenRequest* /*request*/, ::city::economy::v2::AddCitizenResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* AddCitizen(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_RemoveCitizen : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_RemoveCitizen() {
+      ::grpc::Service::MarkMethodRawCallback(57,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->RemoveCitizen(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_RemoveCitizen() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status RemoveCitizen(::grpc::ServerContext* /*context*/, const ::city::economy::v2::RemoveCitizenRequest* /*request*/, ::city::economy::v2::RemoveCitizenResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* RemoveCitizen(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_GetAgent : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_GetAgent() {
+      ::grpc::Service::MarkMethodRawCallback(58,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetAgent(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_GetAgent() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetAgent(::grpc::ServerContext* /*context*/, const ::city::economy::v2::GetAgentRequest* /*request*/, ::city::economy::v2::GetAgentResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* GetAgent(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_UpdateAgent : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_UpdateAgent() {
+      ::grpc::Service::MarkMethodRawCallback(59,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->UpdateAgent(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_UpdateAgent() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status UpdateAgent(::grpc::ServerContext* /*context*/, const ::city::economy::v2::UpdateAgentRequest* /*request*/, ::city::economy::v2::UpdateAgentResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* UpdateAgent(
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
@@ -6463,12 +8044,66 @@ class OrgService final {
     virtual ::grpc::Status StreamedRemoveOrg(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::city::economy::v2::RemoveOrgRequest,::city::economy::v2::RemoveOrgResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
+  class WithStreamedUnaryMethod_GetOrg : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_GetOrg() {
+      ::grpc::Service::MarkMethodStreamed(2,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::city::economy::v2::GetOrgRequest, ::city::economy::v2::GetOrgResponse>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::city::economy::v2::GetOrgRequest, ::city::economy::v2::GetOrgResponse>* streamer) {
+                       return this->StreamedGetOrg(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_GetOrg() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status GetOrg(::grpc::ServerContext* /*context*/, const ::city::economy::v2::GetOrgRequest* /*request*/, ::city::economy::v2::GetOrgResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedGetOrg(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::city::economy::v2::GetOrgRequest,::city::economy::v2::GetOrgResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_UpdateOrg : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_UpdateOrg() {
+      ::grpc::Service::MarkMethodStreamed(3,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::city::economy::v2::UpdateOrgRequest, ::city::economy::v2::UpdateOrgResponse>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::city::economy::v2::UpdateOrgRequest, ::city::economy::v2::UpdateOrgResponse>* streamer) {
+                       return this->StreamedUpdateOrg(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_UpdateOrg() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status UpdateOrg(::grpc::ServerContext* /*context*/, const ::city::economy::v2::UpdateOrgRequest* /*request*/, ::city::economy::v2::UpdateOrgResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedUpdateOrg(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::city::economy::v2::UpdateOrgRequest,::city::economy::v2::UpdateOrgResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_AddAgent : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_AddAgent() {
-      ::grpc::Service::MarkMethodStreamed(2,
+      ::grpc::Service::MarkMethodStreamed(4,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::AddAgentRequest, ::city::economy::v2::AddAgentResponse>(
             [this](::grpc::ServerContext* context,
@@ -6495,7 +8130,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_RemoveAgent() {
-      ::grpc::Service::MarkMethodStreamed(3,
+      ::grpc::Service::MarkMethodStreamed(5,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::RemoveAgentRequest, ::city::economy::v2::RemoveAgentResponse>(
             [this](::grpc::ServerContext* context,
@@ -6522,7 +8157,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_GetNominalGDP() {
-      ::grpc::Service::MarkMethodStreamed(4,
+      ::grpc::Service::MarkMethodStreamed(6,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::GetNominalGDPRequest, ::city::economy::v2::GetNominalGDPResponse>(
             [this](::grpc::ServerContext* context,
@@ -6549,7 +8184,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_SetNominalGDP() {
-      ::grpc::Service::MarkMethodStreamed(5,
+      ::grpc::Service::MarkMethodStreamed(7,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::SetNominalGDPRequest, ::city::economy::v2::SetNominalGDPResponse>(
             [this](::grpc::ServerContext* context,
@@ -6576,7 +8211,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_GetRealGDP() {
-      ::grpc::Service::MarkMethodStreamed(6,
+      ::grpc::Service::MarkMethodStreamed(8,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::GetRealGDPRequest, ::city::economy::v2::GetRealGDPResponse>(
             [this](::grpc::ServerContext* context,
@@ -6603,7 +8238,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_SetRealGDP() {
-      ::grpc::Service::MarkMethodStreamed(7,
+      ::grpc::Service::MarkMethodStreamed(9,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::SetRealGDPRequest, ::city::economy::v2::SetRealGDPResponse>(
             [this](::grpc::ServerContext* context,
@@ -6630,7 +8265,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_GetUnemployment() {
-      ::grpc::Service::MarkMethodStreamed(8,
+      ::grpc::Service::MarkMethodStreamed(10,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::GetUnemploymentRequest, ::city::economy::v2::GetUnemploymentResponse>(
             [this](::grpc::ServerContext* context,
@@ -6657,7 +8292,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_SetUnemployment() {
-      ::grpc::Service::MarkMethodStreamed(9,
+      ::grpc::Service::MarkMethodStreamed(11,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::SetUnemploymentRequest, ::city::economy::v2::SetUnemploymentResponse>(
             [this](::grpc::ServerContext* context,
@@ -6684,7 +8319,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_GetWages() {
-      ::grpc::Service::MarkMethodStreamed(10,
+      ::grpc::Service::MarkMethodStreamed(12,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::GetWagesRequest, ::city::economy::v2::GetWagesResponse>(
             [this](::grpc::ServerContext* context,
@@ -6711,7 +8346,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_SetWages() {
-      ::grpc::Service::MarkMethodStreamed(11,
+      ::grpc::Service::MarkMethodStreamed(13,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::SetWagesRequest, ::city::economy::v2::SetWagesResponse>(
             [this](::grpc::ServerContext* context,
@@ -6738,7 +8373,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_GetPrices() {
-      ::grpc::Service::MarkMethodStreamed(12,
+      ::grpc::Service::MarkMethodStreamed(14,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::GetPricesRequest, ::city::economy::v2::GetPricesResponse>(
             [this](::grpc::ServerContext* context,
@@ -6765,7 +8400,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_SetPrices() {
-      ::grpc::Service::MarkMethodStreamed(13,
+      ::grpc::Service::MarkMethodStreamed(15,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::SetPricesRequest, ::city::economy::v2::SetPricesResponse>(
             [this](::grpc::ServerContext* context,
@@ -6792,7 +8427,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_GetInventory() {
-      ::grpc::Service::MarkMethodStreamed(14,
+      ::grpc::Service::MarkMethodStreamed(16,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::GetInventoryRequest, ::city::economy::v2::GetInventoryResponse>(
             [this](::grpc::ServerContext* context,
@@ -6819,7 +8454,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_SetInventory() {
-      ::grpc::Service::MarkMethodStreamed(15,
+      ::grpc::Service::MarkMethodStreamed(17,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::SetInventoryRequest, ::city::economy::v2::SetInventoryResponse>(
             [this](::grpc::ServerContext* context,
@@ -6846,7 +8481,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_AddInventory() {
-      ::grpc::Service::MarkMethodStreamed(16,
+      ::grpc::Service::MarkMethodStreamed(18,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::AddInventoryRequest, ::city::economy::v2::AddInventoryResponse>(
             [this](::grpc::ServerContext* context,
@@ -6873,7 +8508,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_GetPrice() {
-      ::grpc::Service::MarkMethodStreamed(17,
+      ::grpc::Service::MarkMethodStreamed(19,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::GetPriceRequest, ::city::economy::v2::GetPriceResponse>(
             [this](::grpc::ServerContext* context,
@@ -6900,7 +8535,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_SetPrice() {
-      ::grpc::Service::MarkMethodStreamed(18,
+      ::grpc::Service::MarkMethodStreamed(20,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::SetPriceRequest, ::city::economy::v2::SetPriceResponse>(
             [this](::grpc::ServerContext* context,
@@ -6927,7 +8562,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_AddPrice() {
-      ::grpc::Service::MarkMethodStreamed(19,
+      ::grpc::Service::MarkMethodStreamed(21,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::AddPriceRequest, ::city::economy::v2::AddPriceResponse>(
             [this](::grpc::ServerContext* context,
@@ -6954,7 +8589,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_GetCurrency() {
-      ::grpc::Service::MarkMethodStreamed(20,
+      ::grpc::Service::MarkMethodStreamed(22,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::GetCurrencyRequest, ::city::economy::v2::GetCurrencyResponse>(
             [this](::grpc::ServerContext* context,
@@ -6981,7 +8616,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_SetCurrency() {
-      ::grpc::Service::MarkMethodStreamed(21,
+      ::grpc::Service::MarkMethodStreamed(23,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::SetCurrencyRequest, ::city::economy::v2::SetCurrencyResponse>(
             [this](::grpc::ServerContext* context,
@@ -7008,7 +8643,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_AddCurrency() {
-      ::grpc::Service::MarkMethodStreamed(22,
+      ::grpc::Service::MarkMethodStreamed(24,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::AddCurrencyRequest, ::city::economy::v2::AddCurrencyResponse>(
             [this](::grpc::ServerContext* context,
@@ -7035,7 +8670,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_GetInterestRate() {
-      ::grpc::Service::MarkMethodStreamed(23,
+      ::grpc::Service::MarkMethodStreamed(25,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::GetInterestRateRequest, ::city::economy::v2::GetInterestRateResponse>(
             [this](::grpc::ServerContext* context,
@@ -7062,7 +8697,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_SetInterestRate() {
-      ::grpc::Service::MarkMethodStreamed(24,
+      ::grpc::Service::MarkMethodStreamed(26,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::SetInterestRateRequest, ::city::economy::v2::SetInterestRateResponse>(
             [this](::grpc::ServerContext* context,
@@ -7089,7 +8724,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_AddInterestRate() {
-      ::grpc::Service::MarkMethodStreamed(25,
+      ::grpc::Service::MarkMethodStreamed(27,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::AddInterestRateRequest, ::city::economy::v2::AddInterestRateResponse>(
             [this](::grpc::ServerContext* context,
@@ -7116,7 +8751,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_GetBracketCutoffs() {
-      ::grpc::Service::MarkMethodStreamed(26,
+      ::grpc::Service::MarkMethodStreamed(28,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::GetBracketCutoffsRequest, ::city::economy::v2::GetBracketCutoffsResponse>(
             [this](::grpc::ServerContext* context,
@@ -7143,7 +8778,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_SetBracketCutoffs() {
-      ::grpc::Service::MarkMethodStreamed(27,
+      ::grpc::Service::MarkMethodStreamed(29,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::SetBracketCutoffsRequest, ::city::economy::v2::SetBracketCutoffsResponse>(
             [this](::grpc::ServerContext* context,
@@ -7170,7 +8805,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_GetBracketRates() {
-      ::grpc::Service::MarkMethodStreamed(28,
+      ::grpc::Service::MarkMethodStreamed(30,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::GetBracketRatesRequest, ::city::economy::v2::GetBracketRatesResponse>(
             [this](::grpc::ServerContext* context,
@@ -7197,7 +8832,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_SetBracketRates() {
-      ::grpc::Service::MarkMethodStreamed(29,
+      ::grpc::Service::MarkMethodStreamed(31,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::SetBracketRatesRequest, ::city::economy::v2::SetBracketRatesResponse>(
             [this](::grpc::ServerContext* context,
@@ -7224,7 +8859,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_CalculateTaxesDue() {
-      ::grpc::Service::MarkMethodStreamed(30,
+      ::grpc::Service::MarkMethodStreamed(32,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::CalculateTaxesDueRequest, ::city::economy::v2::CalculateTaxesDueResponse>(
             [this](::grpc::ServerContext* context,
@@ -7251,7 +8886,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_CalculateConsumption() {
-      ::grpc::Service::MarkMethodStreamed(31,
+      ::grpc::Service::MarkMethodStreamed(33,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::CalculateConsumptionRequest, ::city::economy::v2::CalculateConsumptionResponse>(
             [this](::grpc::ServerContext* context,
@@ -7278,7 +8913,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_CalculateInterest() {
-      ::grpc::Service::MarkMethodStreamed(32,
+      ::grpc::Service::MarkMethodStreamed(34,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::CalculateInterestRequest, ::city::economy::v2::CalculateInterestResponse>(
             [this](::grpc::ServerContext* context,
@@ -7305,7 +8940,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_SaveEconomyEntities() {
-      ::grpc::Service::MarkMethodStreamed(33,
+      ::grpc::Service::MarkMethodStreamed(35,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::SaveEconomyEntitiesRequest, ::city::economy::v2::SaveEconomyEntitiesResponse>(
             [this](::grpc::ServerContext* context,
@@ -7332,7 +8967,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_LoadEconomyEntities() {
-      ::grpc::Service::MarkMethodStreamed(34,
+      ::grpc::Service::MarkMethodStreamed(36,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::LoadEconomyEntitiesRequest, ::city::economy::v2::LoadEconomyEntitiesResponse>(
             [this](::grpc::ServerContext* context,
@@ -7359,7 +8994,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_GetConsumptionCurrency() {
-      ::grpc::Service::MarkMethodStreamed(35,
+      ::grpc::Service::MarkMethodStreamed(37,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::GetConsumptionCurrencyRequest, ::city::economy::v2::GetConsumptionCurrencyResponse>(
             [this](::grpc::ServerContext* context,
@@ -7386,7 +9021,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_SetConsumptionCurrency() {
-      ::grpc::Service::MarkMethodStreamed(36,
+      ::grpc::Service::MarkMethodStreamed(38,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::SetConsumptionCurrencyRequest, ::city::economy::v2::SetConsumptionCurrencyResponse>(
             [this](::grpc::ServerContext* context,
@@ -7413,7 +9048,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_GetConsumptionPropensity() {
-      ::grpc::Service::MarkMethodStreamed(37,
+      ::grpc::Service::MarkMethodStreamed(39,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::GetConsumptionPropensityRequest, ::city::economy::v2::GetConsumptionPropensityResponse>(
             [this](::grpc::ServerContext* context,
@@ -7440,7 +9075,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_SetConsumptionPropensity() {
-      ::grpc::Service::MarkMethodStreamed(38,
+      ::grpc::Service::MarkMethodStreamed(40,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::SetConsumptionPropensityRequest, ::city::economy::v2::SetConsumptionPropensityResponse>(
             [this](::grpc::ServerContext* context,
@@ -7467,7 +9102,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_GetIncomeCurrency() {
-      ::grpc::Service::MarkMethodStreamed(39,
+      ::grpc::Service::MarkMethodStreamed(41,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::GetIncomeCurrencyRequest, ::city::economy::v2::GetIncomeCurrencyResponse>(
             [this](::grpc::ServerContext* context,
@@ -7494,7 +9129,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_SetIncomeCurrency() {
-      ::grpc::Service::MarkMethodStreamed(40,
+      ::grpc::Service::MarkMethodStreamed(42,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::SetIncomeCurrencyRequest, ::city::economy::v2::SetIncomeCurrencyResponse>(
             [this](::grpc::ServerContext* context,
@@ -7521,7 +9156,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_GetDepression() {
-      ::grpc::Service::MarkMethodStreamed(41,
+      ::grpc::Service::MarkMethodStreamed(43,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::GetDepressionRequest, ::city::economy::v2::GetDepressionResponse>(
             [this](::grpc::ServerContext* context,
@@ -7548,7 +9183,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_SetDepression() {
-      ::grpc::Service::MarkMethodStreamed(42,
+      ::grpc::Service::MarkMethodStreamed(44,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::SetDepressionRequest, ::city::economy::v2::SetDepressionResponse>(
             [this](::grpc::ServerContext* context,
@@ -7575,7 +9210,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_GetLocusControl() {
-      ::grpc::Service::MarkMethodStreamed(43,
+      ::grpc::Service::MarkMethodStreamed(45,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::GetLocusControlRequest, ::city::economy::v2::GetLocusControlResponse>(
             [this](::grpc::ServerContext* context,
@@ -7602,7 +9237,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_SetLocusControl() {
-      ::grpc::Service::MarkMethodStreamed(44,
+      ::grpc::Service::MarkMethodStreamed(46,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::SetLocusControlRequest, ::city::economy::v2::SetLocusControlResponse>(
             [this](::grpc::ServerContext* context,
@@ -7629,7 +9264,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_GetWorkingHours() {
-      ::grpc::Service::MarkMethodStreamed(45,
+      ::grpc::Service::MarkMethodStreamed(47,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::GetWorkingHoursRequest, ::city::economy::v2::GetWorkingHoursResponse>(
             [this](::grpc::ServerContext* context,
@@ -7656,7 +9291,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_SetWorkingHours() {
-      ::grpc::Service::MarkMethodStreamed(46,
+      ::grpc::Service::MarkMethodStreamed(48,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::SetWorkingHoursRequest, ::city::economy::v2::SetWorkingHoursResponse>(
             [this](::grpc::ServerContext* context,
@@ -7683,7 +9318,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_GetOrgEntityIds() {
-      ::grpc::Service::MarkMethodStreamed(47,
+      ::grpc::Service::MarkMethodStreamed(49,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::GetOrgEntityIdsRequest, ::city::economy::v2::GetOrgEntityIdsResponse>(
             [this](::grpc::ServerContext* context,
@@ -7704,9 +9339,279 @@ class OrgService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedGetOrgEntityIds(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::city::economy::v2::GetOrgEntityIdsRequest,::city::economy::v2::GetOrgEntityIdsResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_AddOrg<WithStreamedUnaryMethod_RemoveOrg<WithStreamedUnaryMethod_AddAgent<WithStreamedUnaryMethod_RemoveAgent<WithStreamedUnaryMethod_GetNominalGDP<WithStreamedUnaryMethod_SetNominalGDP<WithStreamedUnaryMethod_GetRealGDP<WithStreamedUnaryMethod_SetRealGDP<WithStreamedUnaryMethod_GetUnemployment<WithStreamedUnaryMethod_SetUnemployment<WithStreamedUnaryMethod_GetWages<WithStreamedUnaryMethod_SetWages<WithStreamedUnaryMethod_GetPrices<WithStreamedUnaryMethod_SetPrices<WithStreamedUnaryMethod_GetInventory<WithStreamedUnaryMethod_SetInventory<WithStreamedUnaryMethod_AddInventory<WithStreamedUnaryMethod_GetPrice<WithStreamedUnaryMethod_SetPrice<WithStreamedUnaryMethod_AddPrice<WithStreamedUnaryMethod_GetCurrency<WithStreamedUnaryMethod_SetCurrency<WithStreamedUnaryMethod_AddCurrency<WithStreamedUnaryMethod_GetInterestRate<WithStreamedUnaryMethod_SetInterestRate<WithStreamedUnaryMethod_AddInterestRate<WithStreamedUnaryMethod_GetBracketCutoffs<WithStreamedUnaryMethod_SetBracketCutoffs<WithStreamedUnaryMethod_GetBracketRates<WithStreamedUnaryMethod_SetBracketRates<WithStreamedUnaryMethod_CalculateTaxesDue<WithStreamedUnaryMethod_CalculateConsumption<WithStreamedUnaryMethod_CalculateInterest<WithStreamedUnaryMethod_SaveEconomyEntities<WithStreamedUnaryMethod_LoadEconomyEntities<WithStreamedUnaryMethod_GetConsumptionCurrency<WithStreamedUnaryMethod_SetConsumptionCurrency<WithStreamedUnaryMethod_GetConsumptionPropensity<WithStreamedUnaryMethod_SetConsumptionPropensity<WithStreamedUnaryMethod_GetIncomeCurrency<WithStreamedUnaryMethod_SetIncomeCurrency<WithStreamedUnaryMethod_GetDepression<WithStreamedUnaryMethod_SetDepression<WithStreamedUnaryMethod_GetLocusControl<WithStreamedUnaryMethod_SetLocusControl<WithStreamedUnaryMethod_GetWorkingHours<WithStreamedUnaryMethod_SetWorkingHours<WithStreamedUnaryMethod_GetOrgEntityIds<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_GetEmployees : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_GetEmployees() {
+      ::grpc::Service::MarkMethodStreamed(50,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::city::economy::v2::GetEmployeesRequest, ::city::economy::v2::GetEmployeesResponse>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::city::economy::v2::GetEmployeesRequest, ::city::economy::v2::GetEmployeesResponse>* streamer) {
+                       return this->StreamedGetEmployees(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_GetEmployees() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status GetEmployees(::grpc::ServerContext* /*context*/, const ::city::economy::v2::GetEmployeesRequest* /*request*/, ::city::economy::v2::GetEmployeesResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedGetEmployees(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::city::economy::v2::GetEmployeesRequest,::city::economy::v2::GetEmployeesResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_SetEmployees : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_SetEmployees() {
+      ::grpc::Service::MarkMethodStreamed(51,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::city::economy::v2::SetEmployeesRequest, ::city::economy::v2::SetEmployeesResponse>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::city::economy::v2::SetEmployeesRequest, ::city::economy::v2::SetEmployeesResponse>* streamer) {
+                       return this->StreamedSetEmployees(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_SetEmployees() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status SetEmployees(::grpc::ServerContext* /*context*/, const ::city::economy::v2::SetEmployeesRequest* /*request*/, ::city::economy::v2::SetEmployeesResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedSetEmployees(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::city::economy::v2::SetEmployeesRequest,::city::economy::v2::SetEmployeesResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_AddEmployee : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_AddEmployee() {
+      ::grpc::Service::MarkMethodStreamed(52,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::city::economy::v2::AddEmployeeRequest, ::city::economy::v2::AddEmployeeResponse>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::city::economy::v2::AddEmployeeRequest, ::city::economy::v2::AddEmployeeResponse>* streamer) {
+                       return this->StreamedAddEmployee(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_AddEmployee() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status AddEmployee(::grpc::ServerContext* /*context*/, const ::city::economy::v2::AddEmployeeRequest* /*request*/, ::city::economy::v2::AddEmployeeResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedAddEmployee(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::city::economy::v2::AddEmployeeRequest,::city::economy::v2::AddEmployeeResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_RemoveEmployee : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_RemoveEmployee() {
+      ::grpc::Service::MarkMethodStreamed(53,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::city::economy::v2::RemoveEmployeeRequest, ::city::economy::v2::RemoveEmployeeResponse>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::city::economy::v2::RemoveEmployeeRequest, ::city::economy::v2::RemoveEmployeeResponse>* streamer) {
+                       return this->StreamedRemoveEmployee(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_RemoveEmployee() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status RemoveEmployee(::grpc::ServerContext* /*context*/, const ::city::economy::v2::RemoveEmployeeRequest* /*request*/, ::city::economy::v2::RemoveEmployeeResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedRemoveEmployee(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::city::economy::v2::RemoveEmployeeRequest,::city::economy::v2::RemoveEmployeeResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_GetCitizens : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_GetCitizens() {
+      ::grpc::Service::MarkMethodStreamed(54,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::city::economy::v2::GetCitizensRequest, ::city::economy::v2::GetCitizensResponse>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::city::economy::v2::GetCitizensRequest, ::city::economy::v2::GetCitizensResponse>* streamer) {
+                       return this->StreamedGetCitizens(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_GetCitizens() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status GetCitizens(::grpc::ServerContext* /*context*/, const ::city::economy::v2::GetCitizensRequest* /*request*/, ::city::economy::v2::GetCitizensResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedGetCitizens(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::city::economy::v2::GetCitizensRequest,::city::economy::v2::GetCitizensResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_SetCitizens : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_SetCitizens() {
+      ::grpc::Service::MarkMethodStreamed(55,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::city::economy::v2::SetCitizensRequest, ::city::economy::v2::SetCitizensResponse>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::city::economy::v2::SetCitizensRequest, ::city::economy::v2::SetCitizensResponse>* streamer) {
+                       return this->StreamedSetCitizens(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_SetCitizens() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status SetCitizens(::grpc::ServerContext* /*context*/, const ::city::economy::v2::SetCitizensRequest* /*request*/, ::city::economy::v2::SetCitizensResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedSetCitizens(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::city::economy::v2::SetCitizensRequest,::city::economy::v2::SetCitizensResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_AddCitizen : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_AddCitizen() {
+      ::grpc::Service::MarkMethodStreamed(56,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::city::economy::v2::AddCitizenRequest, ::city::economy::v2::AddCitizenResponse>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::city::economy::v2::AddCitizenRequest, ::city::economy::v2::AddCitizenResponse>* streamer) {
+                       return this->StreamedAddCitizen(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_AddCitizen() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status AddCitizen(::grpc::ServerContext* /*context*/, const ::city::economy::v2::AddCitizenRequest* /*request*/, ::city::economy::v2::AddCitizenResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedAddCitizen(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::city::economy::v2::AddCitizenRequest,::city::economy::v2::AddCitizenResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_RemoveCitizen : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_RemoveCitizen() {
+      ::grpc::Service::MarkMethodStreamed(57,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::city::economy::v2::RemoveCitizenRequest, ::city::economy::v2::RemoveCitizenResponse>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::city::economy::v2::RemoveCitizenRequest, ::city::economy::v2::RemoveCitizenResponse>* streamer) {
+                       return this->StreamedRemoveCitizen(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_RemoveCitizen() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status RemoveCitizen(::grpc::ServerContext* /*context*/, const ::city::economy::v2::RemoveCitizenRequest* /*request*/, ::city::economy::v2::RemoveCitizenResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedRemoveCitizen(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::city::economy::v2::RemoveCitizenRequest,::city::economy::v2::RemoveCitizenResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_GetAgent : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_GetAgent() {
+      ::grpc::Service::MarkMethodStreamed(58,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::city::economy::v2::GetAgentRequest, ::city::economy::v2::GetAgentResponse>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::city::economy::v2::GetAgentRequest, ::city::economy::v2::GetAgentResponse>* streamer) {
+                       return this->StreamedGetAgent(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_GetAgent() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status GetAgent(::grpc::ServerContext* /*context*/, const ::city::economy::v2::GetAgentRequest* /*request*/, ::city::economy::v2::GetAgentResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedGetAgent(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::city::economy::v2::GetAgentRequest,::city::economy::v2::GetAgentResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_UpdateAgent : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_UpdateAgent() {
+      ::grpc::Service::MarkMethodStreamed(59,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::city::economy::v2::UpdateAgentRequest, ::city::economy::v2::UpdateAgentResponse>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::city::economy::v2::UpdateAgentRequest, ::city::economy::v2::UpdateAgentResponse>* streamer) {
+                       return this->StreamedUpdateAgent(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_UpdateAgent() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status UpdateAgent(::grpc::ServerContext* /*context*/, const ::city::economy::v2::UpdateAgentRequest* /*request*/, ::city::economy::v2::UpdateAgentResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedUpdateAgent(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::city::economy::v2::UpdateAgentRequest,::city::economy::v2::UpdateAgentResponse>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_AddOrg<WithStreamedUnaryMethod_RemoveOrg<WithStreamedUnaryMethod_GetOrg<WithStreamedUnaryMethod_UpdateOrg<WithStreamedUnaryMethod_AddAgent<WithStreamedUnaryMethod_RemoveAgent<WithStreamedUnaryMethod_GetNominalGDP<WithStreamedUnaryMethod_SetNominalGDP<WithStreamedUnaryMethod_GetRealGDP<WithStreamedUnaryMethod_SetRealGDP<WithStreamedUnaryMethod_GetUnemployment<WithStreamedUnaryMethod_SetUnemployment<WithStreamedUnaryMethod_GetWages<WithStreamedUnaryMethod_SetWages<WithStreamedUnaryMethod_GetPrices<WithStreamedUnaryMethod_SetPrices<WithStreamedUnaryMethod_GetInventory<WithStreamedUnaryMethod_SetInventory<WithStreamedUnaryMethod_AddInventory<WithStreamedUnaryMethod_GetPrice<WithStreamedUnaryMethod_SetPrice<WithStreamedUnaryMethod_AddPrice<WithStreamedUnaryMethod_GetCurrency<WithStreamedUnaryMethod_SetCurrency<WithStreamedUnaryMethod_AddCurrency<WithStreamedUnaryMethod_GetInterestRate<WithStreamedUnaryMethod_SetInterestRate<WithStreamedUnaryMethod_AddInterestRate<WithStreamedUnaryMethod_GetBracketCutoffs<WithStreamedUnaryMethod_SetBracketCutoffs<WithStreamedUnaryMethod_GetBracketRates<WithStreamedUnaryMethod_SetBracketRates<WithStreamedUnaryMethod_CalculateTaxesDue<WithStreamedUnaryMethod_CalculateConsumption<WithStreamedUnaryMethod_CalculateInterest<WithStreamedUnaryMethod_SaveEconomyEntities<WithStreamedUnaryMethod_LoadEconomyEntities<WithStreamedUnaryMethod_GetConsumptionCurrency<WithStreamedUnaryMethod_SetConsumptionCurrency<WithStreamedUnaryMethod_GetConsumptionPropensity<WithStreamedUnaryMethod_SetConsumptionPropensity<WithStreamedUnaryMethod_GetIncomeCurrency<WithStreamedUnaryMethod_SetIncomeCurrency<WithStreamedUnaryMethod_GetDepression<WithStreamedUnaryMethod_SetDepression<WithStreamedUnaryMethod_GetLocusControl<WithStreamedUnaryMethod_SetLocusControl<WithStreamedUnaryMethod_GetWorkingHours<WithStreamedUnaryMethod_SetWorkingHours<WithStreamedUnaryMethod_GetOrgEntityIds<WithStreamedUnaryMethod_GetEmployees<WithStreamedUnaryMethod_SetEmployees<WithStreamedUnaryMethod_AddEmployee<WithStreamedUnaryMethod_RemoveEmployee<WithStreamedUnaryMethod_GetCitizens<WithStreamedUnaryMethod_SetCitizens<WithStreamedUnaryMethod_AddCitizen<WithStreamedUnaryMethod_RemoveCitizen<WithStreamedUnaryMethod_GetAgent<WithStreamedUnaryMethod_UpdateAgent<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_AddOrg<WithStreamedUnaryMethod_RemoveOrg<WithStreamedUnaryMethod_AddAgent<WithStreamedUnaryMethod_RemoveAgent<WithStreamedUnaryMethod_GetNominalGDP<WithStreamedUnaryMethod_SetNominalGDP<WithStreamedUnaryMethod_GetRealGDP<WithStreamedUnaryMethod_SetRealGDP<WithStreamedUnaryMethod_GetUnemployment<WithStreamedUnaryMethod_SetUnemployment<WithStreamedUnaryMethod_GetWages<WithStreamedUnaryMethod_SetWages<WithStreamedUnaryMethod_GetPrices<WithStreamedUnaryMethod_SetPrices<WithStreamedUnaryMethod_GetInventory<WithStreamedUnaryMethod_SetInventory<WithStreamedUnaryMethod_AddInventory<WithStreamedUnaryMethod_GetPrice<WithStreamedUnaryMethod_SetPrice<WithStreamedUnaryMethod_AddPrice<WithStreamedUnaryMethod_GetCurrency<WithStreamedUnaryMethod_SetCurrency<WithStreamedUnaryMethod_AddCurrency<WithStreamedUnaryMethod_GetInterestRate<WithStreamedUnaryMethod_SetInterestRate<WithStreamedUnaryMethod_AddInterestRate<WithStreamedUnaryMethod_GetBracketCutoffs<WithStreamedUnaryMethod_SetBracketCutoffs<WithStreamedUnaryMethod_GetBracketRates<WithStreamedUnaryMethod_SetBracketRates<WithStreamedUnaryMethod_CalculateTaxesDue<WithStreamedUnaryMethod_CalculateConsumption<WithStreamedUnaryMethod_CalculateInterest<WithStreamedUnaryMethod_SaveEconomyEntities<WithStreamedUnaryMethod_LoadEconomyEntities<WithStreamedUnaryMethod_GetConsumptionCurrency<WithStreamedUnaryMethod_SetConsumptionCurrency<WithStreamedUnaryMethod_GetConsumptionPropensity<WithStreamedUnaryMethod_SetConsumptionPropensity<WithStreamedUnaryMethod_GetIncomeCurrency<WithStreamedUnaryMethod_SetIncomeCurrency<WithStreamedUnaryMethod_GetDepression<WithStreamedUnaryMethod_SetDepression<WithStreamedUnaryMethod_GetLocusControl<WithStreamedUnaryMethod_SetLocusControl<WithStreamedUnaryMethod_GetWorkingHours<WithStreamedUnaryMethod_SetWorkingHours<WithStreamedUnaryMethod_GetOrgEntityIds<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_AddOrg<WithStreamedUnaryMethod_RemoveOrg<WithStreamedUnaryMethod_GetOrg<WithStreamedUnaryMethod_UpdateOrg<WithStreamedUnaryMethod_AddAgent<WithStreamedUnaryMethod_RemoveAgent<WithStreamedUnaryMethod_GetNominalGDP<WithStreamedUnaryMethod_SetNominalGDP<WithStreamedUnaryMethod_GetRealGDP<WithStreamedUnaryMethod_SetRealGDP<WithStreamedUnaryMethod_GetUnemployment<WithStreamedUnaryMethod_SetUnemployment<WithStreamedUnaryMethod_GetWages<WithStreamedUnaryMethod_SetWages<WithStreamedUnaryMethod_GetPrices<WithStreamedUnaryMethod_SetPrices<WithStreamedUnaryMethod_GetInventory<WithStreamedUnaryMethod_SetInventory<WithStreamedUnaryMethod_AddInventory<WithStreamedUnaryMethod_GetPrice<WithStreamedUnaryMethod_SetPrice<WithStreamedUnaryMethod_AddPrice<WithStreamedUnaryMethod_GetCurrency<WithStreamedUnaryMethod_SetCurrency<WithStreamedUnaryMethod_AddCurrency<WithStreamedUnaryMethod_GetInterestRate<WithStreamedUnaryMethod_SetInterestRate<WithStreamedUnaryMethod_AddInterestRate<WithStreamedUnaryMethod_GetBracketCutoffs<WithStreamedUnaryMethod_SetBracketCutoffs<WithStreamedUnaryMethod_GetBracketRates<WithStreamedUnaryMethod_SetBracketRates<WithStreamedUnaryMethod_CalculateTaxesDue<WithStreamedUnaryMethod_CalculateConsumption<WithStreamedUnaryMethod_CalculateInterest<WithStreamedUnaryMethod_SaveEconomyEntities<WithStreamedUnaryMethod_LoadEconomyEntities<WithStreamedUnaryMethod_GetConsumptionCurrency<WithStreamedUnaryMethod_SetConsumptionCurrency<WithStreamedUnaryMethod_GetConsumptionPropensity<WithStreamedUnaryMethod_SetConsumptionPropensity<WithStreamedUnaryMethod_GetIncomeCurrency<WithStreamedUnaryMethod_SetIncomeCurrency<WithStreamedUnaryMethod_GetDepression<WithStreamedUnaryMethod_SetDepression<WithStreamedUnaryMethod_GetLocusControl<WithStreamedUnaryMethod_SetLocusControl<WithStreamedUnaryMethod_GetWorkingHours<WithStreamedUnaryMethod_SetWorkingHours<WithStreamedUnaryMethod_GetOrgEntityIds<WithStreamedUnaryMethod_GetEmployees<WithStreamedUnaryMethod_SetEmployees<WithStreamedUnaryMethod_AddEmployee<WithStreamedUnaryMethod_RemoveEmployee<WithStreamedUnaryMethod_GetCitizens<WithStreamedUnaryMethod_SetCitizens<WithStreamedUnaryMethod_AddCitizen<WithStreamedUnaryMethod_RemoveCitizen<WithStreamedUnaryMethod_GetAgent<WithStreamedUnaryMethod_UpdateAgent<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedService;
 };
 
 }  // namespace v2

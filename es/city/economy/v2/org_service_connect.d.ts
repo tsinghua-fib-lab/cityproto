@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AddAgentRequest, AddAgentResponse, AddCurrencyRequest, AddCurrencyResponse, AddInterestRateRequest, AddInterestRateResponse, AddInventoryRequest, AddInventoryResponse, AddOrgRequest, AddOrgResponse, AddPriceRequest, AddPriceResponse, CalculateConsumptionRequest, CalculateConsumptionResponse, CalculateInterestRequest, CalculateInterestResponse, CalculateTaxesDueRequest, CalculateTaxesDueResponse, GetBracketCutoffsRequest, GetBracketCutoffsResponse, GetBracketRatesRequest, GetBracketRatesResponse, GetConsumptionCurrencyRequest, GetConsumptionCurrencyResponse, GetConsumptionPropensityRequest, GetConsumptionPropensityResponse, GetCurrencyRequest, GetCurrencyResponse, GetDepressionRequest, GetDepressionResponse, GetIncomeCurrencyRequest, GetIncomeCurrencyResponse, GetInterestRateRequest, GetInterestRateResponse, GetInventoryRequest, GetInventoryResponse, GetLocusControlRequest, GetLocusControlResponse, GetNominalGDPRequest, GetNominalGDPResponse, GetOrgEntityIdsRequest, GetOrgEntityIdsResponse, GetPriceRequest, GetPriceResponse, GetPricesRequest, GetPricesResponse, GetRealGDPRequest, GetRealGDPResponse, GetUnemploymentRequest, GetUnemploymentResponse, GetWagesRequest, GetWagesResponse, GetWorkingHoursRequest, GetWorkingHoursResponse, LoadEconomyEntitiesRequest, LoadEconomyEntitiesResponse, RemoveAgentRequest, RemoveAgentResponse, RemoveOrgRequest, RemoveOrgResponse, SaveEconomyEntitiesRequest, SaveEconomyEntitiesResponse, SetBracketCutoffsRequest, SetBracketCutoffsResponse, SetBracketRatesRequest, SetBracketRatesResponse, SetConsumptionCurrencyRequest, SetConsumptionCurrencyResponse, SetConsumptionPropensityRequest, SetConsumptionPropensityResponse, SetCurrencyRequest, SetCurrencyResponse, SetDepressionRequest, SetDepressionResponse, SetIncomeCurrencyRequest, SetIncomeCurrencyResponse, SetInterestRateRequest, SetInterestRateResponse, SetInventoryRequest, SetInventoryResponse, SetLocusControlRequest, SetLocusControlResponse, SetNominalGDPRequest, SetNominalGDPResponse, SetPriceRequest, SetPriceResponse, SetPricesRequest, SetPricesResponse, SetRealGDPRequest, SetRealGDPResponse, SetUnemploymentRequest, SetUnemploymentResponse, SetWagesRequest, SetWagesResponse, SetWorkingHoursRequest, SetWorkingHoursResponse } from "./org_service_pb.js";
+import { AddAgentRequest, AddAgentResponse, AddCitizenRequest, AddCitizenResponse, AddCurrencyRequest, AddCurrencyResponse, AddEmployeeRequest, AddEmployeeResponse, AddInterestRateRequest, AddInterestRateResponse, AddInventoryRequest, AddInventoryResponse, AddOrgRequest, AddOrgResponse, AddPriceRequest, AddPriceResponse, CalculateConsumptionRequest, CalculateConsumptionResponse, CalculateInterestRequest, CalculateInterestResponse, CalculateTaxesDueRequest, CalculateTaxesDueResponse, GetAgentRequest, GetAgentResponse, GetBracketCutoffsRequest, GetBracketCutoffsResponse, GetBracketRatesRequest, GetBracketRatesResponse, GetCitizensRequest, GetCitizensResponse, GetConsumptionCurrencyRequest, GetConsumptionCurrencyResponse, GetConsumptionPropensityRequest, GetConsumptionPropensityResponse, GetCurrencyRequest, GetCurrencyResponse, GetDepressionRequest, GetDepressionResponse, GetEmployeesRequest, GetEmployeesResponse, GetIncomeCurrencyRequest, GetIncomeCurrencyResponse, GetInterestRateRequest, GetInterestRateResponse, GetInventoryRequest, GetInventoryResponse, GetLocusControlRequest, GetLocusControlResponse, GetNominalGDPRequest, GetNominalGDPResponse, GetOrgEntityIdsRequest, GetOrgEntityIdsResponse, GetOrgRequest, GetOrgResponse, GetPriceRequest, GetPriceResponse, GetPricesRequest, GetPricesResponse, GetRealGDPRequest, GetRealGDPResponse, GetUnemploymentRequest, GetUnemploymentResponse, GetWagesRequest, GetWagesResponse, GetWorkingHoursRequest, GetWorkingHoursResponse, LoadEconomyEntitiesRequest, LoadEconomyEntitiesResponse, RemoveAgentRequest, RemoveAgentResponse, RemoveCitizenRequest, RemoveCitizenResponse, RemoveEmployeeRequest, RemoveEmployeeResponse, RemoveOrgRequest, RemoveOrgResponse, SaveEconomyEntitiesRequest, SaveEconomyEntitiesResponse, SetBracketCutoffsRequest, SetBracketCutoffsResponse, SetBracketRatesRequest, SetBracketRatesResponse, SetCitizensRequest, SetCitizensResponse, SetConsumptionCurrencyRequest, SetConsumptionCurrencyResponse, SetConsumptionPropensityRequest, SetConsumptionPropensityResponse, SetCurrencyRequest, SetCurrencyResponse, SetDepressionRequest, SetDepressionResponse, SetEmployeesRequest, SetEmployeesResponse, SetIncomeCurrencyRequest, SetIncomeCurrencyResponse, SetInterestRateRequest, SetInterestRateResponse, SetInventoryRequest, SetInventoryResponse, SetLocusControlRequest, SetLocusControlResponse, SetNominalGDPRequest, SetNominalGDPResponse, SetPriceRequest, SetPriceResponse, SetPricesRequest, SetPricesResponse, SetRealGDPRequest, SetRealGDPResponse, SetUnemploymentRequest, SetUnemploymentResponse, SetWagesRequest, SetWagesResponse, SetWorkingHoursRequest, SetWorkingHoursResponse, UpdateAgentRequest, UpdateAgentResponse, UpdateOrgRequest, UpdateOrgResponse } from "./org_service_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -36,6 +36,30 @@ export declare const OrgService: {
       readonly name: "RemoveOrg",
       readonly I: typeof RemoveOrgRequest,
       readonly O: typeof RemoveOrgResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * 获取组织
+     * get org
+     *
+     * @generated from rpc city.economy.v2.OrgService.GetOrg
+     */
+    readonly getOrg: {
+      readonly name: "GetOrg",
+      readonly I: typeof GetOrgRequest,
+      readonly O: typeof GetOrgResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * 更新组织
+     * update org
+     *
+     * @generated from rpc city.economy.v2.OrgService.UpdateOrg
+     */
+    readonly updateOrg: {
+      readonly name: "UpdateOrg",
+      readonly I: typeof UpdateOrgRequest,
+      readonly O: typeof UpdateOrgResponse,
       readonly kind: MethodKind.Unary,
     },
     /**
@@ -502,6 +526,102 @@ export declare const OrgService: {
       readonly name: "GetOrgEntityIds",
       readonly I: typeof GetOrgEntityIdsRequest,
       readonly O: typeof GetOrgEntityIdsResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * Employees 相关接口
+     *
+     * @generated from rpc city.economy.v2.OrgService.GetEmployees
+     */
+    readonly getEmployees: {
+      readonly name: "GetEmployees",
+      readonly I: typeof GetEmployeesRequest,
+      readonly O: typeof GetEmployeesResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc city.economy.v2.OrgService.SetEmployees
+     */
+    readonly setEmployees: {
+      readonly name: "SetEmployees",
+      readonly I: typeof SetEmployeesRequest,
+      readonly O: typeof SetEmployeesResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc city.economy.v2.OrgService.AddEmployee
+     */
+    readonly addEmployee: {
+      readonly name: "AddEmployee",
+      readonly I: typeof AddEmployeeRequest,
+      readonly O: typeof AddEmployeeResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc city.economy.v2.OrgService.RemoveEmployee
+     */
+    readonly removeEmployee: {
+      readonly name: "RemoveEmployee",
+      readonly I: typeof RemoveEmployeeRequest,
+      readonly O: typeof RemoveEmployeeResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * Citizens 相关接口
+     *
+     * @generated from rpc city.economy.v2.OrgService.GetCitizens
+     */
+    readonly getCitizens: {
+      readonly name: "GetCitizens",
+      readonly I: typeof GetCitizensRequest,
+      readonly O: typeof GetCitizensResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc city.economy.v2.OrgService.SetCitizens
+     */
+    readonly setCitizens: {
+      readonly name: "SetCitizens",
+      readonly I: typeof SetCitizensRequest,
+      readonly O: typeof SetCitizensResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc city.economy.v2.OrgService.AddCitizen
+     */
+    readonly addCitizen: {
+      readonly name: "AddCitizen",
+      readonly I: typeof AddCitizenRequest,
+      readonly O: typeof AddCitizenResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc city.economy.v2.OrgService.RemoveCitizen
+     */
+    readonly removeCitizen: {
+      readonly name: "RemoveCitizen",
+      readonly I: typeof RemoveCitizenRequest,
+      readonly O: typeof RemoveCitizenResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * Agent 相关接口
+     *
+     * @generated from rpc city.economy.v2.OrgService.GetAgent
+     */
+    readonly getAgent: {
+      readonly name: "GetAgent",
+      readonly I: typeof GetAgentRequest,
+      readonly O: typeof GetAgentResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc city.economy.v2.OrgService.UpdateAgent
+     */
+    readonly updateAgent: {
+      readonly name: "UpdateAgent",
+      readonly I: typeof UpdateAgentRequest,
+      readonly O: typeof UpdateAgentResponse,
       readonly kind: MethodKind.Unary,
     },
   }
