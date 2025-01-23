@@ -241,6 +241,8 @@ class Org final :
     kPriceFieldNumber = 9,
     kCurrencyFieldNumber = 10,
     kInterestRateFieldNumber = 11,
+    kDemandFieldNumber = 22,
+    kSalesFieldNumber = 23,
   };
   // repeated float nominal_gdp = 3 [json_name = "nominalGdp"];
   int nominal_gdp_size() const;
@@ -642,6 +644,32 @@ class Org final :
   void _internal_set_interest_rate(float value);
   public:
 
+  // optional int32 demand = 22 [json_name = "demand"];
+  bool has_demand() const;
+  private:
+  bool _internal_has_demand() const;
+  public:
+  void clear_demand();
+  int32_t demand() const;
+  void set_demand(int32_t value);
+  private:
+  int32_t _internal_demand() const;
+  void _internal_set_demand(int32_t value);
+  public:
+
+  // optional int32 sales = 23 [json_name = "sales"];
+  bool has_sales() const;
+  private:
+  bool _internal_has_sales() const;
+  public:
+  void clear_sales();
+  int32_t sales() const;
+  void set_sales(int32_t value);
+  private:
+  int32_t _internal_sales() const;
+  void _internal_set_sales(int32_t value);
+  public:
+
   // @@protoc_insertion_point(class_scope:city.economy.v2.Org)
  private:
   class _Internal;
@@ -675,6 +703,8 @@ class Org final :
     float price_;
     float currency_;
     float interest_rate_;
+    int32_t demand_;
+    int32_t sales_;
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_city_2feconomy_2fv2_2feconomy_2eproto;
@@ -1946,6 +1976,62 @@ inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
 Org::mutable_citizens() {
   // @@protoc_insertion_point(field_mutable_list:city.economy.v2.Org.citizens)
   return _internal_mutable_citizens();
+}
+
+// optional int32 demand = 22 [json_name = "demand"];
+inline bool Org::_internal_has_demand() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000010u) != 0;
+  return value;
+}
+inline bool Org::has_demand() const {
+  return _internal_has_demand();
+}
+inline void Org::clear_demand() {
+  _impl_.demand_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000010u;
+}
+inline int32_t Org::_internal_demand() const {
+  return _impl_.demand_;
+}
+inline int32_t Org::demand() const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.Org.demand)
+  return _internal_demand();
+}
+inline void Org::_internal_set_demand(int32_t value) {
+  _impl_._has_bits_[0] |= 0x00000010u;
+  _impl_.demand_ = value;
+}
+inline void Org::set_demand(int32_t value) {
+  _internal_set_demand(value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.Org.demand)
+}
+
+// optional int32 sales = 23 [json_name = "sales"];
+inline bool Org::_internal_has_sales() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000020u) != 0;
+  return value;
+}
+inline bool Org::has_sales() const {
+  return _internal_has_sales();
+}
+inline void Org::clear_sales() {
+  _impl_.sales_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000020u;
+}
+inline int32_t Org::_internal_sales() const {
+  return _impl_.sales_;
+}
+inline int32_t Org::sales() const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.Org.sales)
+  return _internal_sales();
+}
+inline void Org::_internal_set_sales(int32_t value) {
+  _impl_._has_bits_[0] |= 0x00000020u;
+  _impl_.sales_ = value;
+}
+inline void Org::set_sales(int32_t value) {
+  _internal_set_sales(value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.Org.sales)
 }
 
 // -------------------------------------------------------------------

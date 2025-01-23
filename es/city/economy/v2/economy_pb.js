@@ -49,6 +49,8 @@ export const Org = /*@__PURE__*/ proto3.makeMessageType(
     { no: 19, name: "working_hours", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
     { no: 20, name: "employees", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
     { no: 21, name: "citizens", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 22, name: "demand", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
+    { no: 23, name: "sales", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
   ],
 );
 

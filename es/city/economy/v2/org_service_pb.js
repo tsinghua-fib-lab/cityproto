@@ -577,8 +577,8 @@ export const CalculateTaxesDueResponse = /*@__PURE__*/ proto3.makeMessageType(
 export const CalculateConsumptionRequest = /*@__PURE__*/ proto3.makeMessageType(
   "city.economy.v2.CalculateConsumptionRequest",
   () => [
-    { no: 1, name: "firm_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 2, name: "agent_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 1, name: "firm_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 2, name: "agent_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 3, name: "demands", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
   ],
 );
@@ -589,8 +589,7 @@ export const CalculateConsumptionRequest = /*@__PURE__*/ proto3.makeMessageType(
 export const CalculateConsumptionResponse = /*@__PURE__*/ proto3.makeMessageType(
   "city.economy.v2.CalculateConsumptionResponse",
   () => [
-    { no: 1, name: "remain_inventory", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 2, name: "updated_currencies", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
+    { no: 1, name: "actual_consumption", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
   ],
 );
 
@@ -1203,6 +1202,49 @@ export const UpdateAgentRequest = /*@__PURE__*/ proto3.makeMessageType(
  */
 export const UpdateAgentResponse = /*@__PURE__*/ proto3.makeMessageType(
   "city.economy.v2.UpdateAgentResponse",
+  [],
+);
+
+/**
+ * 批量获取和更新
+ *
+ * @generated from message city.economy.v2.BatchGetRequest
+ */
+export const BatchGetRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.BatchGetRequest",
+  () => [
+    { no: 1, name: "ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 2, name: "type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.BatchGetResponse
+ */
+export const BatchGetResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.BatchGetResponse",
+  () => [
+    { no: 1, name: "orgs", kind: "message", T: Org, repeated: true },
+    { no: 2, name: "agents", kind: "message", T: Agent, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.BatchUpdateRequest
+ */
+export const BatchUpdateRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.BatchUpdateRequest",
+  () => [
+    { no: 1, name: "orgs", kind: "message", T: Org, repeated: true },
+    { no: 2, name: "agents", kind: "message", T: Agent, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.BatchUpdateResponse
+ */
+export const BatchUpdateResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.BatchUpdateResponse",
   [],
 );
 

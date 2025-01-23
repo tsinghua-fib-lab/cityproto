@@ -97,6 +97,18 @@ extern AddPriceRequestDefaultTypeInternal _AddPriceRequest_default_instance_;
 class AddPriceResponse;
 struct AddPriceResponseDefaultTypeInternal;
 extern AddPriceResponseDefaultTypeInternal _AddPriceResponse_default_instance_;
+class BatchGetRequest;
+struct BatchGetRequestDefaultTypeInternal;
+extern BatchGetRequestDefaultTypeInternal _BatchGetRequest_default_instance_;
+class BatchGetResponse;
+struct BatchGetResponseDefaultTypeInternal;
+extern BatchGetResponseDefaultTypeInternal _BatchGetResponse_default_instance_;
+class BatchUpdateRequest;
+struct BatchUpdateRequestDefaultTypeInternal;
+extern BatchUpdateRequestDefaultTypeInternal _BatchUpdateRequest_default_instance_;
+class BatchUpdateResponse;
+struct BatchUpdateResponseDefaultTypeInternal;
+extern BatchUpdateResponseDefaultTypeInternal _BatchUpdateResponse_default_instance_;
 class CalculateConsumptionRequest;
 struct CalculateConsumptionRequestDefaultTypeInternal;
 extern CalculateConsumptionRequestDefaultTypeInternal _CalculateConsumptionRequest_default_instance_;
@@ -429,6 +441,10 @@ template<> ::city::economy::v2::AddOrgRequest* Arena::CreateMaybeMessage<::city:
 template<> ::city::economy::v2::AddOrgResponse* Arena::CreateMaybeMessage<::city::economy::v2::AddOrgResponse>(Arena*);
 template<> ::city::economy::v2::AddPriceRequest* Arena::CreateMaybeMessage<::city::economy::v2::AddPriceRequest>(Arena*);
 template<> ::city::economy::v2::AddPriceResponse* Arena::CreateMaybeMessage<::city::economy::v2::AddPriceResponse>(Arena*);
+template<> ::city::economy::v2::BatchGetRequest* Arena::CreateMaybeMessage<::city::economy::v2::BatchGetRequest>(Arena*);
+template<> ::city::economy::v2::BatchGetResponse* Arena::CreateMaybeMessage<::city::economy::v2::BatchGetResponse>(Arena*);
+template<> ::city::economy::v2::BatchUpdateRequest* Arena::CreateMaybeMessage<::city::economy::v2::BatchUpdateRequest>(Arena*);
+template<> ::city::economy::v2::BatchUpdateResponse* Arena::CreateMaybeMessage<::city::economy::v2::BatchUpdateResponse>(Arena*);
 template<> ::city::economy::v2::CalculateConsumptionRequest* Arena::CreateMaybeMessage<::city::economy::v2::CalculateConsumptionRequest>(Arena*);
 template<> ::city::economy::v2::CalculateConsumptionResponse* Arena::CreateMaybeMessage<::city::economy::v2::CalculateConsumptionResponse>(Arena*);
 template<> ::city::economy::v2::CalculateInterestRequest* Arena::CreateMaybeMessage<::city::economy::v2::CalculateInterestRequest>(Arena*);
@@ -9188,31 +9204,31 @@ class CalculateConsumptionRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kAgentIdsFieldNumber = 2,
+    kFirmIdsFieldNumber = 1,
     kDemandsFieldNumber = 3,
-    kFirmIdFieldNumber = 1,
+    kAgentIdFieldNumber = 2,
   };
-  // repeated int32 agent_ids = 2 [json_name = "agentIds"];
-  int agent_ids_size() const;
+  // repeated int32 firm_ids = 1 [json_name = "firmIds"];
+  int firm_ids_size() const;
   private:
-  int _internal_agent_ids_size() const;
+  int _internal_firm_ids_size() const;
   public:
-  void clear_agent_ids();
+  void clear_firm_ids();
   private:
-  int32_t _internal_agent_ids(int index) const;
+  int32_t _internal_firm_ids(int index) const;
   const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
-      _internal_agent_ids() const;
-  void _internal_add_agent_ids(int32_t value);
+      _internal_firm_ids() const;
+  void _internal_add_firm_ids(int32_t value);
   ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
-      _internal_mutable_agent_ids();
+      _internal_mutable_firm_ids();
   public:
-  int32_t agent_ids(int index) const;
-  void set_agent_ids(int index, int32_t value);
-  void add_agent_ids(int32_t value);
+  int32_t firm_ids(int index) const;
+  void set_firm_ids(int index, int32_t value);
+  void add_firm_ids(int32_t value);
   const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
-      agent_ids() const;
+      firm_ids() const;
   ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
-      mutable_agent_ids();
+      mutable_firm_ids();
 
   // repeated int32 demands = 3 [json_name = "demands"];
   int demands_size() const;
@@ -9236,13 +9252,13 @@ class CalculateConsumptionRequest final :
   ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
       mutable_demands();
 
-  // int32 firm_id = 1 [json_name = "firmId"];
-  void clear_firm_id();
-  int32_t firm_id() const;
-  void set_firm_id(int32_t value);
+  // int32 agent_id = 2 [json_name = "agentId"];
+  void clear_agent_id();
+  int32_t agent_id() const;
+  void set_agent_id(int32_t value);
   private:
-  int32_t _internal_firm_id() const;
-  void _internal_set_firm_id(int32_t value);
+  int32_t _internal_agent_id() const;
+  void _internal_set_agent_id(int32_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:city.economy.v2.CalculateConsumptionRequest)
@@ -9253,11 +9269,11 @@ class CalculateConsumptionRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t > agent_ids_;
-    mutable std::atomic<int> _agent_ids_cached_byte_size_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t > firm_ids_;
+    mutable std::atomic<int> _firm_ids_cached_byte_size_;
     ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t > demands_;
     mutable std::atomic<int> _demands_cached_byte_size_;
-    int32_t firm_id_;
+    int32_t agent_id_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -9386,38 +9402,15 @@ class CalculateConsumptionResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kUpdatedCurrenciesFieldNumber = 2,
-    kRemainInventoryFieldNumber = 1,
+    kActualConsumptionFieldNumber = 1,
   };
-  // repeated float updated_currencies = 2 [json_name = "updatedCurrencies"];
-  int updated_currencies_size() const;
+  // float actual_consumption = 1 [json_name = "actualConsumption"];
+  void clear_actual_consumption();
+  float actual_consumption() const;
+  void set_actual_consumption(float value);
   private:
-  int _internal_updated_currencies_size() const;
-  public:
-  void clear_updated_currencies();
-  private:
-  float _internal_updated_currencies(int index) const;
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
-      _internal_updated_currencies() const;
-  void _internal_add_updated_currencies(float value);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
-      _internal_mutable_updated_currencies();
-  public:
-  float updated_currencies(int index) const;
-  void set_updated_currencies(int index, float value);
-  void add_updated_currencies(float value);
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
-      updated_currencies() const;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
-      mutable_updated_currencies();
-
-  // int32 remain_inventory = 1 [json_name = "remainInventory"];
-  void clear_remain_inventory();
-  int32_t remain_inventory() const;
-  void set_remain_inventory(int32_t value);
-  private:
-  int32_t _internal_remain_inventory() const;
-  void _internal_set_remain_inventory(int32_t value);
+  float _internal_actual_consumption() const;
+  void _internal_set_actual_consumption(float value);
   public:
 
   // @@protoc_insertion_point(class_scope:city.economy.v2.CalculateConsumptionResponse)
@@ -9428,8 +9421,7 @@ class CalculateConsumptionResponse final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::RepeatedField< float > updated_currencies_;
-    int32_t remain_inventory_;
+    float actual_consumption_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -18482,6 +18474,656 @@ class UpdateAgentResponse final :
   };
   friend struct ::TableStruct_city_2feconomy_2fv2_2forg_5fservice_2eproto;
 };
+// -------------------------------------------------------------------
+
+class BatchGetRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.economy.v2.BatchGetRequest) */ {
+ public:
+  inline BatchGetRequest() : BatchGetRequest(nullptr) {}
+  ~BatchGetRequest() override;
+  explicit PROTOBUF_CONSTEXPR BatchGetRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  BatchGetRequest(const BatchGetRequest& from);
+  BatchGetRequest(BatchGetRequest&& from) noexcept
+    : BatchGetRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline BatchGetRequest& operator=(const BatchGetRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline BatchGetRequest& operator=(BatchGetRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const BatchGetRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const BatchGetRequest* internal_default_instance() {
+    return reinterpret_cast<const BatchGetRequest*>(
+               &_BatchGetRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    120;
+
+  friend void swap(BatchGetRequest& a, BatchGetRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(BatchGetRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(BatchGetRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  BatchGetRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<BatchGetRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const BatchGetRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const BatchGetRequest& from) {
+    BatchGetRequest::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(BatchGetRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.economy.v2.BatchGetRequest";
+  }
+  protected:
+  explicit BatchGetRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kIdsFieldNumber = 1,
+    kTypeFieldNumber = 2,
+  };
+  // repeated int32 ids = 1 [json_name = "ids"];
+  int ids_size() const;
+  private:
+  int _internal_ids_size() const;
+  public:
+  void clear_ids();
+  private:
+  int32_t _internal_ids(int index) const;
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+      _internal_ids() const;
+  void _internal_add_ids(int32_t value);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+      _internal_mutable_ids();
+  public:
+  int32_t ids(int index) const;
+  void set_ids(int index, int32_t value);
+  void add_ids(int32_t value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+      ids() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+      mutable_ids();
+
+  // string type = 2 [json_name = "type"];
+  void clear_type();
+  const std::string& type() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_type(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_type();
+  PROTOBUF_NODISCARD std::string* release_type();
+  void set_allocated_type(std::string* type);
+  private:
+  const std::string& _internal_type() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_type(const std::string& value);
+  std::string* _internal_mutable_type();
+  public:
+
+  // @@protoc_insertion_point(class_scope:city.economy.v2.BatchGetRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t > ids_;
+    mutable std::atomic<int> _ids_cached_byte_size_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr type_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_city_2feconomy_2fv2_2forg_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class BatchGetResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.economy.v2.BatchGetResponse) */ {
+ public:
+  inline BatchGetResponse() : BatchGetResponse(nullptr) {}
+  ~BatchGetResponse() override;
+  explicit PROTOBUF_CONSTEXPR BatchGetResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  BatchGetResponse(const BatchGetResponse& from);
+  BatchGetResponse(BatchGetResponse&& from) noexcept
+    : BatchGetResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline BatchGetResponse& operator=(const BatchGetResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline BatchGetResponse& operator=(BatchGetResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const BatchGetResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const BatchGetResponse* internal_default_instance() {
+    return reinterpret_cast<const BatchGetResponse*>(
+               &_BatchGetResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    121;
+
+  friend void swap(BatchGetResponse& a, BatchGetResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(BatchGetResponse* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(BatchGetResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  BatchGetResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<BatchGetResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const BatchGetResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const BatchGetResponse& from) {
+    BatchGetResponse::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(BatchGetResponse* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.economy.v2.BatchGetResponse";
+  }
+  protected:
+  explicit BatchGetResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kOrgsFieldNumber = 1,
+    kAgentsFieldNumber = 2,
+  };
+  // repeated .city.economy.v2.Org orgs = 1 [json_name = "orgs"];
+  int orgs_size() const;
+  private:
+  int _internal_orgs_size() const;
+  public:
+  void clear_orgs();
+  ::city::economy::v2::Org* mutable_orgs(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::economy::v2::Org >*
+      mutable_orgs();
+  private:
+  const ::city::economy::v2::Org& _internal_orgs(int index) const;
+  ::city::economy::v2::Org* _internal_add_orgs();
+  public:
+  const ::city::economy::v2::Org& orgs(int index) const;
+  ::city::economy::v2::Org* add_orgs();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::economy::v2::Org >&
+      orgs() const;
+
+  // repeated .city.economy.v2.Agent agents = 2 [json_name = "agents"];
+  int agents_size() const;
+  private:
+  int _internal_agents_size() const;
+  public:
+  void clear_agents();
+  ::city::economy::v2::Agent* mutable_agents(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::economy::v2::Agent >*
+      mutable_agents();
+  private:
+  const ::city::economy::v2::Agent& _internal_agents(int index) const;
+  ::city::economy::v2::Agent* _internal_add_agents();
+  public:
+  const ::city::economy::v2::Agent& agents(int index) const;
+  ::city::economy::v2::Agent* add_agents();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::economy::v2::Agent >&
+      agents() const;
+
+  // @@protoc_insertion_point(class_scope:city.economy.v2.BatchGetResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::economy::v2::Org > orgs_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::economy::v2::Agent > agents_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_city_2feconomy_2fv2_2forg_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class BatchUpdateRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.economy.v2.BatchUpdateRequest) */ {
+ public:
+  inline BatchUpdateRequest() : BatchUpdateRequest(nullptr) {}
+  ~BatchUpdateRequest() override;
+  explicit PROTOBUF_CONSTEXPR BatchUpdateRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  BatchUpdateRequest(const BatchUpdateRequest& from);
+  BatchUpdateRequest(BatchUpdateRequest&& from) noexcept
+    : BatchUpdateRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline BatchUpdateRequest& operator=(const BatchUpdateRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline BatchUpdateRequest& operator=(BatchUpdateRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const BatchUpdateRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const BatchUpdateRequest* internal_default_instance() {
+    return reinterpret_cast<const BatchUpdateRequest*>(
+               &_BatchUpdateRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    122;
+
+  friend void swap(BatchUpdateRequest& a, BatchUpdateRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(BatchUpdateRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(BatchUpdateRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  BatchUpdateRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<BatchUpdateRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const BatchUpdateRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const BatchUpdateRequest& from) {
+    BatchUpdateRequest::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(BatchUpdateRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.economy.v2.BatchUpdateRequest";
+  }
+  protected:
+  explicit BatchUpdateRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kOrgsFieldNumber = 1,
+    kAgentsFieldNumber = 2,
+  };
+  // repeated .city.economy.v2.Org orgs = 1 [json_name = "orgs"];
+  int orgs_size() const;
+  private:
+  int _internal_orgs_size() const;
+  public:
+  void clear_orgs();
+  ::city::economy::v2::Org* mutable_orgs(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::economy::v2::Org >*
+      mutable_orgs();
+  private:
+  const ::city::economy::v2::Org& _internal_orgs(int index) const;
+  ::city::economy::v2::Org* _internal_add_orgs();
+  public:
+  const ::city::economy::v2::Org& orgs(int index) const;
+  ::city::economy::v2::Org* add_orgs();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::economy::v2::Org >&
+      orgs() const;
+
+  // repeated .city.economy.v2.Agent agents = 2 [json_name = "agents"];
+  int agents_size() const;
+  private:
+  int _internal_agents_size() const;
+  public:
+  void clear_agents();
+  ::city::economy::v2::Agent* mutable_agents(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::economy::v2::Agent >*
+      mutable_agents();
+  private:
+  const ::city::economy::v2::Agent& _internal_agents(int index) const;
+  ::city::economy::v2::Agent* _internal_add_agents();
+  public:
+  const ::city::economy::v2::Agent& agents(int index) const;
+  ::city::economy::v2::Agent* add_agents();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::economy::v2::Agent >&
+      agents() const;
+
+  // @@protoc_insertion_point(class_scope:city.economy.v2.BatchUpdateRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::economy::v2::Org > orgs_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::economy::v2::Agent > agents_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_city_2feconomy_2fv2_2forg_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class BatchUpdateResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:city.economy.v2.BatchUpdateResponse) */ {
+ public:
+  inline BatchUpdateResponse() : BatchUpdateResponse(nullptr) {}
+  explicit PROTOBUF_CONSTEXPR BatchUpdateResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  BatchUpdateResponse(const BatchUpdateResponse& from);
+  BatchUpdateResponse(BatchUpdateResponse&& from) noexcept
+    : BatchUpdateResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline BatchUpdateResponse& operator=(const BatchUpdateResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline BatchUpdateResponse& operator=(BatchUpdateResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const BatchUpdateResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const BatchUpdateResponse* internal_default_instance() {
+    return reinterpret_cast<const BatchUpdateResponse*>(
+               &_BatchUpdateResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    123;
+
+  friend void swap(BatchUpdateResponse& a, BatchUpdateResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(BatchUpdateResponse* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(BatchUpdateResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  BatchUpdateResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<BatchUpdateResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
+  inline void CopyFrom(const BatchUpdateResponse& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(*this, from);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
+  void MergeFrom(const BatchUpdateResponse& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(*this, from);
+  }
+  public:
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.economy.v2.BatchUpdateResponse";
+  }
+  protected:
+  explicit BatchUpdateResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:city.economy.v2.BatchUpdateResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+  };
+  friend struct ::TableStruct_city_2feconomy_2fv2_2forg_5fservice_2eproto;
+};
 // ===================================================================
 
 
@@ -20584,71 +21226,71 @@ CalculateTaxesDueResponse::mutable_updated_incomes() {
 
 // CalculateConsumptionRequest
 
-// int32 firm_id = 1 [json_name = "firmId"];
-inline void CalculateConsumptionRequest::clear_firm_id() {
-  _impl_.firm_id_ = 0;
+// repeated int32 firm_ids = 1 [json_name = "firmIds"];
+inline int CalculateConsumptionRequest::_internal_firm_ids_size() const {
+  return _impl_.firm_ids_.size();
 }
-inline int32_t CalculateConsumptionRequest::_internal_firm_id() const {
-  return _impl_.firm_id_;
+inline int CalculateConsumptionRequest::firm_ids_size() const {
+  return _internal_firm_ids_size();
 }
-inline int32_t CalculateConsumptionRequest::firm_id() const {
-  // @@protoc_insertion_point(field_get:city.economy.v2.CalculateConsumptionRequest.firm_id)
-  return _internal_firm_id();
+inline void CalculateConsumptionRequest::clear_firm_ids() {
+  _impl_.firm_ids_.Clear();
 }
-inline void CalculateConsumptionRequest::_internal_set_firm_id(int32_t value) {
-  
-  _impl_.firm_id_ = value;
+inline int32_t CalculateConsumptionRequest::_internal_firm_ids(int index) const {
+  return _impl_.firm_ids_.Get(index);
 }
-inline void CalculateConsumptionRequest::set_firm_id(int32_t value) {
-  _internal_set_firm_id(value);
-  // @@protoc_insertion_point(field_set:city.economy.v2.CalculateConsumptionRequest.firm_id)
+inline int32_t CalculateConsumptionRequest::firm_ids(int index) const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.CalculateConsumptionRequest.firm_ids)
+  return _internal_firm_ids(index);
+}
+inline void CalculateConsumptionRequest::set_firm_ids(int index, int32_t value) {
+  _impl_.firm_ids_.Set(index, value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.CalculateConsumptionRequest.firm_ids)
+}
+inline void CalculateConsumptionRequest::_internal_add_firm_ids(int32_t value) {
+  _impl_.firm_ids_.Add(value);
+}
+inline void CalculateConsumptionRequest::add_firm_ids(int32_t value) {
+  _internal_add_firm_ids(value);
+  // @@protoc_insertion_point(field_add:city.economy.v2.CalculateConsumptionRequest.firm_ids)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+CalculateConsumptionRequest::_internal_firm_ids() const {
+  return _impl_.firm_ids_;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+CalculateConsumptionRequest::firm_ids() const {
+  // @@protoc_insertion_point(field_list:city.economy.v2.CalculateConsumptionRequest.firm_ids)
+  return _internal_firm_ids();
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+CalculateConsumptionRequest::_internal_mutable_firm_ids() {
+  return &_impl_.firm_ids_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+CalculateConsumptionRequest::mutable_firm_ids() {
+  // @@protoc_insertion_point(field_mutable_list:city.economy.v2.CalculateConsumptionRequest.firm_ids)
+  return _internal_mutable_firm_ids();
 }
 
-// repeated int32 agent_ids = 2 [json_name = "agentIds"];
-inline int CalculateConsumptionRequest::_internal_agent_ids_size() const {
-  return _impl_.agent_ids_.size();
+// int32 agent_id = 2 [json_name = "agentId"];
+inline void CalculateConsumptionRequest::clear_agent_id() {
+  _impl_.agent_id_ = 0;
 }
-inline int CalculateConsumptionRequest::agent_ids_size() const {
-  return _internal_agent_ids_size();
+inline int32_t CalculateConsumptionRequest::_internal_agent_id() const {
+  return _impl_.agent_id_;
 }
-inline void CalculateConsumptionRequest::clear_agent_ids() {
-  _impl_.agent_ids_.Clear();
+inline int32_t CalculateConsumptionRequest::agent_id() const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.CalculateConsumptionRequest.agent_id)
+  return _internal_agent_id();
 }
-inline int32_t CalculateConsumptionRequest::_internal_agent_ids(int index) const {
-  return _impl_.agent_ids_.Get(index);
+inline void CalculateConsumptionRequest::_internal_set_agent_id(int32_t value) {
+  
+  _impl_.agent_id_ = value;
 }
-inline int32_t CalculateConsumptionRequest::agent_ids(int index) const {
-  // @@protoc_insertion_point(field_get:city.economy.v2.CalculateConsumptionRequest.agent_ids)
-  return _internal_agent_ids(index);
-}
-inline void CalculateConsumptionRequest::set_agent_ids(int index, int32_t value) {
-  _impl_.agent_ids_.Set(index, value);
-  // @@protoc_insertion_point(field_set:city.economy.v2.CalculateConsumptionRequest.agent_ids)
-}
-inline void CalculateConsumptionRequest::_internal_add_agent_ids(int32_t value) {
-  _impl_.agent_ids_.Add(value);
-}
-inline void CalculateConsumptionRequest::add_agent_ids(int32_t value) {
-  _internal_add_agent_ids(value);
-  // @@protoc_insertion_point(field_add:city.economy.v2.CalculateConsumptionRequest.agent_ids)
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
-CalculateConsumptionRequest::_internal_agent_ids() const {
-  return _impl_.agent_ids_;
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
-CalculateConsumptionRequest::agent_ids() const {
-  // @@protoc_insertion_point(field_list:city.economy.v2.CalculateConsumptionRequest.agent_ids)
-  return _internal_agent_ids();
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
-CalculateConsumptionRequest::_internal_mutable_agent_ids() {
-  return &_impl_.agent_ids_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
-CalculateConsumptionRequest::mutable_agent_ids() {
-  // @@protoc_insertion_point(field_mutable_list:city.economy.v2.CalculateConsumptionRequest.agent_ids)
-  return _internal_mutable_agent_ids();
+inline void CalculateConsumptionRequest::set_agent_id(int32_t value) {
+  _internal_set_agent_id(value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.CalculateConsumptionRequest.agent_id)
 }
 
 // repeated int32 demands = 3 [json_name = "demands"];
@@ -20702,71 +21344,24 @@ CalculateConsumptionRequest::mutable_demands() {
 
 // CalculateConsumptionResponse
 
-// int32 remain_inventory = 1 [json_name = "remainInventory"];
-inline void CalculateConsumptionResponse::clear_remain_inventory() {
-  _impl_.remain_inventory_ = 0;
+// float actual_consumption = 1 [json_name = "actualConsumption"];
+inline void CalculateConsumptionResponse::clear_actual_consumption() {
+  _impl_.actual_consumption_ = 0;
 }
-inline int32_t CalculateConsumptionResponse::_internal_remain_inventory() const {
-  return _impl_.remain_inventory_;
+inline float CalculateConsumptionResponse::_internal_actual_consumption() const {
+  return _impl_.actual_consumption_;
 }
-inline int32_t CalculateConsumptionResponse::remain_inventory() const {
-  // @@protoc_insertion_point(field_get:city.economy.v2.CalculateConsumptionResponse.remain_inventory)
-  return _internal_remain_inventory();
+inline float CalculateConsumptionResponse::actual_consumption() const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.CalculateConsumptionResponse.actual_consumption)
+  return _internal_actual_consumption();
 }
-inline void CalculateConsumptionResponse::_internal_set_remain_inventory(int32_t value) {
+inline void CalculateConsumptionResponse::_internal_set_actual_consumption(float value) {
   
-  _impl_.remain_inventory_ = value;
+  _impl_.actual_consumption_ = value;
 }
-inline void CalculateConsumptionResponse::set_remain_inventory(int32_t value) {
-  _internal_set_remain_inventory(value);
-  // @@protoc_insertion_point(field_set:city.economy.v2.CalculateConsumptionResponse.remain_inventory)
-}
-
-// repeated float updated_currencies = 2 [json_name = "updatedCurrencies"];
-inline int CalculateConsumptionResponse::_internal_updated_currencies_size() const {
-  return _impl_.updated_currencies_.size();
-}
-inline int CalculateConsumptionResponse::updated_currencies_size() const {
-  return _internal_updated_currencies_size();
-}
-inline void CalculateConsumptionResponse::clear_updated_currencies() {
-  _impl_.updated_currencies_.Clear();
-}
-inline float CalculateConsumptionResponse::_internal_updated_currencies(int index) const {
-  return _impl_.updated_currencies_.Get(index);
-}
-inline float CalculateConsumptionResponse::updated_currencies(int index) const {
-  // @@protoc_insertion_point(field_get:city.economy.v2.CalculateConsumptionResponse.updated_currencies)
-  return _internal_updated_currencies(index);
-}
-inline void CalculateConsumptionResponse::set_updated_currencies(int index, float value) {
-  _impl_.updated_currencies_.Set(index, value);
-  // @@protoc_insertion_point(field_set:city.economy.v2.CalculateConsumptionResponse.updated_currencies)
-}
-inline void CalculateConsumptionResponse::_internal_add_updated_currencies(float value) {
-  _impl_.updated_currencies_.Add(value);
-}
-inline void CalculateConsumptionResponse::add_updated_currencies(float value) {
-  _internal_add_updated_currencies(value);
-  // @@protoc_insertion_point(field_add:city.economy.v2.CalculateConsumptionResponse.updated_currencies)
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
-CalculateConsumptionResponse::_internal_updated_currencies() const {
-  return _impl_.updated_currencies_;
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
-CalculateConsumptionResponse::updated_currencies() const {
-  // @@protoc_insertion_point(field_list:city.economy.v2.CalculateConsumptionResponse.updated_currencies)
-  return _internal_updated_currencies();
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
-CalculateConsumptionResponse::_internal_mutable_updated_currencies() {
-  return &_impl_.updated_currencies_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
-CalculateConsumptionResponse::mutable_updated_currencies() {
-  // @@protoc_insertion_point(field_mutable_list:city.economy.v2.CalculateConsumptionResponse.updated_currencies)
-  return _internal_mutable_updated_currencies();
+inline void CalculateConsumptionResponse::set_actual_consumption(float value) {
+  _internal_set_actual_consumption(value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.CalculateConsumptionResponse.actual_consumption)
 }
 
 // -------------------------------------------------------------------
@@ -23160,9 +23755,278 @@ inline void UpdateAgentRequest::set_allocated_agent(::city::economy::v2::Agent* 
 
 // UpdateAgentResponse
 
+// -------------------------------------------------------------------
+
+// BatchGetRequest
+
+// repeated int32 ids = 1 [json_name = "ids"];
+inline int BatchGetRequest::_internal_ids_size() const {
+  return _impl_.ids_.size();
+}
+inline int BatchGetRequest::ids_size() const {
+  return _internal_ids_size();
+}
+inline void BatchGetRequest::clear_ids() {
+  _impl_.ids_.Clear();
+}
+inline int32_t BatchGetRequest::_internal_ids(int index) const {
+  return _impl_.ids_.Get(index);
+}
+inline int32_t BatchGetRequest::ids(int index) const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.BatchGetRequest.ids)
+  return _internal_ids(index);
+}
+inline void BatchGetRequest::set_ids(int index, int32_t value) {
+  _impl_.ids_.Set(index, value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.BatchGetRequest.ids)
+}
+inline void BatchGetRequest::_internal_add_ids(int32_t value) {
+  _impl_.ids_.Add(value);
+}
+inline void BatchGetRequest::add_ids(int32_t value) {
+  _internal_add_ids(value);
+  // @@protoc_insertion_point(field_add:city.economy.v2.BatchGetRequest.ids)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+BatchGetRequest::_internal_ids() const {
+  return _impl_.ids_;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+BatchGetRequest::ids() const {
+  // @@protoc_insertion_point(field_list:city.economy.v2.BatchGetRequest.ids)
+  return _internal_ids();
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+BatchGetRequest::_internal_mutable_ids() {
+  return &_impl_.ids_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+BatchGetRequest::mutable_ids() {
+  // @@protoc_insertion_point(field_mutable_list:city.economy.v2.BatchGetRequest.ids)
+  return _internal_mutable_ids();
+}
+
+// string type = 2 [json_name = "type"];
+inline void BatchGetRequest::clear_type() {
+  _impl_.type_.ClearToEmpty();
+}
+inline const std::string& BatchGetRequest::type() const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.BatchGetRequest.type)
+  return _internal_type();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void BatchGetRequest::set_type(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.type_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:city.economy.v2.BatchGetRequest.type)
+}
+inline std::string* BatchGetRequest::mutable_type() {
+  std::string* _s = _internal_mutable_type();
+  // @@protoc_insertion_point(field_mutable:city.economy.v2.BatchGetRequest.type)
+  return _s;
+}
+inline const std::string& BatchGetRequest::_internal_type() const {
+  return _impl_.type_.Get();
+}
+inline void BatchGetRequest::_internal_set_type(const std::string& value) {
+  
+  _impl_.type_.Set(value, GetArenaForAllocation());
+}
+inline std::string* BatchGetRequest::_internal_mutable_type() {
+  
+  return _impl_.type_.Mutable(GetArenaForAllocation());
+}
+inline std::string* BatchGetRequest::release_type() {
+  // @@protoc_insertion_point(field_release:city.economy.v2.BatchGetRequest.type)
+  return _impl_.type_.Release();
+}
+inline void BatchGetRequest::set_allocated_type(std::string* type) {
+  if (type != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.type_.SetAllocated(type, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.type_.IsDefault()) {
+    _impl_.type_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:city.economy.v2.BatchGetRequest.type)
+}
+
+// -------------------------------------------------------------------
+
+// BatchGetResponse
+
+// repeated .city.economy.v2.Org orgs = 1 [json_name = "orgs"];
+inline int BatchGetResponse::_internal_orgs_size() const {
+  return _impl_.orgs_.size();
+}
+inline int BatchGetResponse::orgs_size() const {
+  return _internal_orgs_size();
+}
+inline ::city::economy::v2::Org* BatchGetResponse::mutable_orgs(int index) {
+  // @@protoc_insertion_point(field_mutable:city.economy.v2.BatchGetResponse.orgs)
+  return _impl_.orgs_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::economy::v2::Org >*
+BatchGetResponse::mutable_orgs() {
+  // @@protoc_insertion_point(field_mutable_list:city.economy.v2.BatchGetResponse.orgs)
+  return &_impl_.orgs_;
+}
+inline const ::city::economy::v2::Org& BatchGetResponse::_internal_orgs(int index) const {
+  return _impl_.orgs_.Get(index);
+}
+inline const ::city::economy::v2::Org& BatchGetResponse::orgs(int index) const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.BatchGetResponse.orgs)
+  return _internal_orgs(index);
+}
+inline ::city::economy::v2::Org* BatchGetResponse::_internal_add_orgs() {
+  return _impl_.orgs_.Add();
+}
+inline ::city::economy::v2::Org* BatchGetResponse::add_orgs() {
+  ::city::economy::v2::Org* _add = _internal_add_orgs();
+  // @@protoc_insertion_point(field_add:city.economy.v2.BatchGetResponse.orgs)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::economy::v2::Org >&
+BatchGetResponse::orgs() const {
+  // @@protoc_insertion_point(field_list:city.economy.v2.BatchGetResponse.orgs)
+  return _impl_.orgs_;
+}
+
+// repeated .city.economy.v2.Agent agents = 2 [json_name = "agents"];
+inline int BatchGetResponse::_internal_agents_size() const {
+  return _impl_.agents_.size();
+}
+inline int BatchGetResponse::agents_size() const {
+  return _internal_agents_size();
+}
+inline ::city::economy::v2::Agent* BatchGetResponse::mutable_agents(int index) {
+  // @@protoc_insertion_point(field_mutable:city.economy.v2.BatchGetResponse.agents)
+  return _impl_.agents_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::economy::v2::Agent >*
+BatchGetResponse::mutable_agents() {
+  // @@protoc_insertion_point(field_mutable_list:city.economy.v2.BatchGetResponse.agents)
+  return &_impl_.agents_;
+}
+inline const ::city::economy::v2::Agent& BatchGetResponse::_internal_agents(int index) const {
+  return _impl_.agents_.Get(index);
+}
+inline const ::city::economy::v2::Agent& BatchGetResponse::agents(int index) const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.BatchGetResponse.agents)
+  return _internal_agents(index);
+}
+inline ::city::economy::v2::Agent* BatchGetResponse::_internal_add_agents() {
+  return _impl_.agents_.Add();
+}
+inline ::city::economy::v2::Agent* BatchGetResponse::add_agents() {
+  ::city::economy::v2::Agent* _add = _internal_add_agents();
+  // @@protoc_insertion_point(field_add:city.economy.v2.BatchGetResponse.agents)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::economy::v2::Agent >&
+BatchGetResponse::agents() const {
+  // @@protoc_insertion_point(field_list:city.economy.v2.BatchGetResponse.agents)
+  return _impl_.agents_;
+}
+
+// -------------------------------------------------------------------
+
+// BatchUpdateRequest
+
+// repeated .city.economy.v2.Org orgs = 1 [json_name = "orgs"];
+inline int BatchUpdateRequest::_internal_orgs_size() const {
+  return _impl_.orgs_.size();
+}
+inline int BatchUpdateRequest::orgs_size() const {
+  return _internal_orgs_size();
+}
+inline ::city::economy::v2::Org* BatchUpdateRequest::mutable_orgs(int index) {
+  // @@protoc_insertion_point(field_mutable:city.economy.v2.BatchUpdateRequest.orgs)
+  return _impl_.orgs_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::economy::v2::Org >*
+BatchUpdateRequest::mutable_orgs() {
+  // @@protoc_insertion_point(field_mutable_list:city.economy.v2.BatchUpdateRequest.orgs)
+  return &_impl_.orgs_;
+}
+inline const ::city::economy::v2::Org& BatchUpdateRequest::_internal_orgs(int index) const {
+  return _impl_.orgs_.Get(index);
+}
+inline const ::city::economy::v2::Org& BatchUpdateRequest::orgs(int index) const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.BatchUpdateRequest.orgs)
+  return _internal_orgs(index);
+}
+inline ::city::economy::v2::Org* BatchUpdateRequest::_internal_add_orgs() {
+  return _impl_.orgs_.Add();
+}
+inline ::city::economy::v2::Org* BatchUpdateRequest::add_orgs() {
+  ::city::economy::v2::Org* _add = _internal_add_orgs();
+  // @@protoc_insertion_point(field_add:city.economy.v2.BatchUpdateRequest.orgs)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::economy::v2::Org >&
+BatchUpdateRequest::orgs() const {
+  // @@protoc_insertion_point(field_list:city.economy.v2.BatchUpdateRequest.orgs)
+  return _impl_.orgs_;
+}
+
+// repeated .city.economy.v2.Agent agents = 2 [json_name = "agents"];
+inline int BatchUpdateRequest::_internal_agents_size() const {
+  return _impl_.agents_.size();
+}
+inline int BatchUpdateRequest::agents_size() const {
+  return _internal_agents_size();
+}
+inline ::city::economy::v2::Agent* BatchUpdateRequest::mutable_agents(int index) {
+  // @@protoc_insertion_point(field_mutable:city.economy.v2.BatchUpdateRequest.agents)
+  return _impl_.agents_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::economy::v2::Agent >*
+BatchUpdateRequest::mutable_agents() {
+  // @@protoc_insertion_point(field_mutable_list:city.economy.v2.BatchUpdateRequest.agents)
+  return &_impl_.agents_;
+}
+inline const ::city::economy::v2::Agent& BatchUpdateRequest::_internal_agents(int index) const {
+  return _impl_.agents_.Get(index);
+}
+inline const ::city::economy::v2::Agent& BatchUpdateRequest::agents(int index) const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.BatchUpdateRequest.agents)
+  return _internal_agents(index);
+}
+inline ::city::economy::v2::Agent* BatchUpdateRequest::_internal_add_agents() {
+  return _impl_.agents_.Add();
+}
+inline ::city::economy::v2::Agent* BatchUpdateRequest::add_agents() {
+  ::city::economy::v2::Agent* _add = _internal_add_agents();
+  // @@protoc_insertion_point(field_add:city.economy.v2.BatchUpdateRequest.agents)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::economy::v2::Agent >&
+BatchUpdateRequest::agents() const {
+  // @@protoc_insertion_point(field_list:city.economy.v2.BatchUpdateRequest.agents)
+  return _impl_.agents_;
+}
+
+// -------------------------------------------------------------------
+
+// BatchUpdateResponse
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

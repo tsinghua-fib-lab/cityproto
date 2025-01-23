@@ -763,11 +763,11 @@ struct CalculateTaxesDueResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CalculateTaxesDueResponseDefaultTypeInternal _CalculateTaxesDueResponse_default_instance_;
 PROTOBUF_CONSTEXPR CalculateConsumptionRequest::CalculateConsumptionRequest(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.agent_ids_)*/{}
-  , /*decltype(_impl_._agent_ids_cached_byte_size_)*/{0}
+    /*decltype(_impl_.firm_ids_)*/{}
+  , /*decltype(_impl_._firm_ids_cached_byte_size_)*/{0}
   , /*decltype(_impl_.demands_)*/{}
   , /*decltype(_impl_._demands_cached_byte_size_)*/{0}
-  , /*decltype(_impl_.firm_id_)*/0
+  , /*decltype(_impl_.agent_id_)*/0
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct CalculateConsumptionRequestDefaultTypeInternal {
   PROTOBUF_CONSTEXPR CalculateConsumptionRequestDefaultTypeInternal()
@@ -780,8 +780,7 @@ struct CalculateConsumptionRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CalculateConsumptionRequestDefaultTypeInternal _CalculateConsumptionRequest_default_instance_;
 PROTOBUF_CONSTEXPR CalculateConsumptionResponse::CalculateConsumptionResponse(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.updated_currencies_)*/{}
-  , /*decltype(_impl_.remain_inventory_)*/0
+    /*decltype(_impl_.actual_consumption_)*/0
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct CalculateConsumptionResponseDefaultTypeInternal {
   PROTOBUF_CONSTEXPR CalculateConsumptionResponseDefaultTypeInternal()
@@ -1576,10 +1575,64 @@ struct UpdateAgentResponseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 UpdateAgentResponseDefaultTypeInternal _UpdateAgentResponse_default_instance_;
+PROTOBUF_CONSTEXPR BatchGetRequest::BatchGetRequest(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.ids_)*/{}
+  , /*decltype(_impl_._ids_cached_byte_size_)*/{0}
+  , /*decltype(_impl_.type_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct BatchGetRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR BatchGetRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~BatchGetRequestDefaultTypeInternal() {}
+  union {
+    BatchGetRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BatchGetRequestDefaultTypeInternal _BatchGetRequest_default_instance_;
+PROTOBUF_CONSTEXPR BatchGetResponse::BatchGetResponse(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.orgs_)*/{}
+  , /*decltype(_impl_.agents_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct BatchGetResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR BatchGetResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~BatchGetResponseDefaultTypeInternal() {}
+  union {
+    BatchGetResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BatchGetResponseDefaultTypeInternal _BatchGetResponse_default_instance_;
+PROTOBUF_CONSTEXPR BatchUpdateRequest::BatchUpdateRequest(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.orgs_)*/{}
+  , /*decltype(_impl_.agents_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct BatchUpdateRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR BatchUpdateRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~BatchUpdateRequestDefaultTypeInternal() {}
+  union {
+    BatchUpdateRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BatchUpdateRequestDefaultTypeInternal _BatchUpdateRequest_default_instance_;
+PROTOBUF_CONSTEXPR BatchUpdateResponse::BatchUpdateResponse(
+    ::_pbi::ConstantInitialized) {}
+struct BatchUpdateResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR BatchUpdateResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~BatchUpdateResponseDefaultTypeInternal() {}
+  union {
+    BatchUpdateResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BatchUpdateResponseDefaultTypeInternal _BatchUpdateResponse_default_instance_;
 }  // namespace v2
 }  // namespace economy
 }  // namespace city
-static ::_pb::Metadata file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[120];
+static ::_pb::Metadata file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[124];
 static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_city_2feconomy_2fv2_2forg_5fservice_2eproto = nullptr;
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_city_2feconomy_2fv2_2forg_5fservice_2eproto = nullptr;
 
@@ -1995,8 +2048,8 @@ const uint32_t TableStruct_city_2feconomy_2fv2_2forg_5fservice_2eproto::offsets[
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::CalculateConsumptionRequest, _impl_.firm_id_),
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::CalculateConsumptionRequest, _impl_.agent_ids_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::CalculateConsumptionRequest, _impl_.firm_ids_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::CalculateConsumptionRequest, _impl_.agent_id_),
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::CalculateConsumptionRequest, _impl_.demands_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::CalculateConsumptionResponse, _internal_metadata_),
@@ -2004,8 +2057,7 @@ const uint32_t TableStruct_city_2feconomy_2fv2_2forg_5fservice_2eproto::offsets[
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::CalculateConsumptionResponse, _impl_.remain_inventory_),
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::CalculateConsumptionResponse, _impl_.updated_currencies_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::CalculateConsumptionResponse, _impl_.actual_consumption_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::CalculateInterestRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -2433,6 +2485,36 @@ const uint32_t TableStruct_city_2feconomy_2fv2_2forg_5fservice_2eproto::offsets[
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::BatchGetRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::BatchGetRequest, _impl_.ids_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::BatchGetRequest, _impl_.type_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::BatchGetResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::BatchGetResponse, _impl_.orgs_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::BatchGetResponse, _impl_.agents_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::BatchUpdateRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::BatchUpdateRequest, _impl_.orgs_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::BatchUpdateRequest, _impl_.agents_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::BatchUpdateResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::city::economy::v2::AddOrgRequest)},
@@ -2495,66 +2577,70 @@ static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protode
   { 397, -1, -1, sizeof(::city::economy::v2::CalculateTaxesDueResponse)},
   { 405, -1, -1, sizeof(::city::economy::v2::CalculateConsumptionRequest)},
   { 414, -1, -1, sizeof(::city::economy::v2::CalculateConsumptionResponse)},
-  { 422, -1, -1, sizeof(::city::economy::v2::CalculateInterestRequest)},
-  { 430, -1, -1, sizeof(::city::economy::v2::CalculateInterestResponse)},
-  { 438, -1, -1, sizeof(::city::economy::v2::SaveEconomyEntitiesRequest)},
-  { 445, -1, -1, sizeof(::city::economy::v2::SaveEconomyEntitiesResponse)},
-  { 453, -1, -1, sizeof(::city::economy::v2::LoadEconomyEntitiesRequest)},
-  { 460, -1, -1, sizeof(::city::economy::v2::LoadEconomyEntitiesResponse)},
-  { 468, -1, -1, sizeof(::city::economy::v2::GetConsumptionCurrencyRequest)},
-  { 475, -1, -1, sizeof(::city::economy::v2::GetConsumptionCurrencyResponse)},
-  { 482, -1, -1, sizeof(::city::economy::v2::SetConsumptionCurrencyRequest)},
-  { 490, -1, -1, sizeof(::city::economy::v2::SetConsumptionCurrencyResponse)},
-  { 496, -1, -1, sizeof(::city::economy::v2::GetConsumptionPropensityRequest)},
-  { 503, -1, -1, sizeof(::city::economy::v2::GetConsumptionPropensityResponse)},
-  { 510, -1, -1, sizeof(::city::economy::v2::SetConsumptionPropensityRequest)},
-  { 518, -1, -1, sizeof(::city::economy::v2::SetConsumptionPropensityResponse)},
-  { 524, -1, -1, sizeof(::city::economy::v2::GetIncomeCurrencyRequest)},
-  { 531, -1, -1, sizeof(::city::economy::v2::GetIncomeCurrencyResponse)},
-  { 538, -1, -1, sizeof(::city::economy::v2::SetIncomeCurrencyRequest)},
-  { 546, -1, -1, sizeof(::city::economy::v2::SetIncomeCurrencyResponse)},
-  { 552, -1, -1, sizeof(::city::economy::v2::GetDepressionRequest)},
-  { 559, -1, -1, sizeof(::city::economy::v2::GetDepressionResponse)},
-  { 566, -1, -1, sizeof(::city::economy::v2::SetDepressionRequest)},
-  { 574, -1, -1, sizeof(::city::economy::v2::SetDepressionResponse)},
-  { 580, -1, -1, sizeof(::city::economy::v2::GetLocusControlRequest)},
-  { 587, -1, -1, sizeof(::city::economy::v2::GetLocusControlResponse)},
-  { 594, -1, -1, sizeof(::city::economy::v2::SetLocusControlRequest)},
-  { 602, -1, -1, sizeof(::city::economy::v2::SetLocusControlResponse)},
-  { 608, -1, -1, sizeof(::city::economy::v2::GetWorkingHoursRequest)},
-  { 615, -1, -1, sizeof(::city::economy::v2::GetWorkingHoursResponse)},
-  { 622, -1, -1, sizeof(::city::economy::v2::SetWorkingHoursRequest)},
-  { 630, -1, -1, sizeof(::city::economy::v2::SetWorkingHoursResponse)},
-  { 636, -1, -1, sizeof(::city::economy::v2::GetOrgEntityIdsRequest)},
-  { 643, -1, -1, sizeof(::city::economy::v2::GetOrgEntityIdsResponse)},
-  { 650, -1, -1, sizeof(::city::economy::v2::AddInventoryRequest)},
-  { 658, -1, -1, sizeof(::city::economy::v2::AddInventoryResponse)},
-  { 665, -1, -1, sizeof(::city::economy::v2::AddPriceRequest)},
-  { 673, -1, -1, sizeof(::city::economy::v2::AddPriceResponse)},
-  { 680, -1, -1, sizeof(::city::economy::v2::AddCurrencyRequest)},
-  { 688, -1, -1, sizeof(::city::economy::v2::AddCurrencyResponse)},
-  { 695, -1, -1, sizeof(::city::economy::v2::AddInterestRateRequest)},
-  { 703, -1, -1, sizeof(::city::economy::v2::AddInterestRateResponse)},
-  { 710, -1, -1, sizeof(::city::economy::v2::GetEmployeesRequest)},
-  { 717, -1, -1, sizeof(::city::economy::v2::GetEmployeesResponse)},
-  { 724, -1, -1, sizeof(::city::economy::v2::SetEmployeesRequest)},
-  { 732, -1, -1, sizeof(::city::economy::v2::SetEmployeesResponse)},
-  { 738, -1, -1, sizeof(::city::economy::v2::AddEmployeeRequest)},
-  { 746, -1, -1, sizeof(::city::economy::v2::AddEmployeeResponse)},
-  { 752, -1, -1, sizeof(::city::economy::v2::RemoveEmployeeRequest)},
-  { 760, -1, -1, sizeof(::city::economy::v2::RemoveEmployeeResponse)},
-  { 766, -1, -1, sizeof(::city::economy::v2::GetCitizensRequest)},
-  { 773, -1, -1, sizeof(::city::economy::v2::GetCitizensResponse)},
-  { 780, -1, -1, sizeof(::city::economy::v2::SetCitizensRequest)},
-  { 788, -1, -1, sizeof(::city::economy::v2::SetCitizensResponse)},
-  { 794, -1, -1, sizeof(::city::economy::v2::AddCitizenRequest)},
-  { 802, -1, -1, sizeof(::city::economy::v2::AddCitizenResponse)},
-  { 808, -1, -1, sizeof(::city::economy::v2::RemoveCitizenRequest)},
-  { 816, -1, -1, sizeof(::city::economy::v2::RemoveCitizenResponse)},
-  { 822, -1, -1, sizeof(::city::economy::v2::GetAgentRequest)},
-  { 829, -1, -1, sizeof(::city::economy::v2::GetAgentResponse)},
-  { 836, -1, -1, sizeof(::city::economy::v2::UpdateAgentRequest)},
-  { 843, -1, -1, sizeof(::city::economy::v2::UpdateAgentResponse)},
+  { 421, -1, -1, sizeof(::city::economy::v2::CalculateInterestRequest)},
+  { 429, -1, -1, sizeof(::city::economy::v2::CalculateInterestResponse)},
+  { 437, -1, -1, sizeof(::city::economy::v2::SaveEconomyEntitiesRequest)},
+  { 444, -1, -1, sizeof(::city::economy::v2::SaveEconomyEntitiesResponse)},
+  { 452, -1, -1, sizeof(::city::economy::v2::LoadEconomyEntitiesRequest)},
+  { 459, -1, -1, sizeof(::city::economy::v2::LoadEconomyEntitiesResponse)},
+  { 467, -1, -1, sizeof(::city::economy::v2::GetConsumptionCurrencyRequest)},
+  { 474, -1, -1, sizeof(::city::economy::v2::GetConsumptionCurrencyResponse)},
+  { 481, -1, -1, sizeof(::city::economy::v2::SetConsumptionCurrencyRequest)},
+  { 489, -1, -1, sizeof(::city::economy::v2::SetConsumptionCurrencyResponse)},
+  { 495, -1, -1, sizeof(::city::economy::v2::GetConsumptionPropensityRequest)},
+  { 502, -1, -1, sizeof(::city::economy::v2::GetConsumptionPropensityResponse)},
+  { 509, -1, -1, sizeof(::city::economy::v2::SetConsumptionPropensityRequest)},
+  { 517, -1, -1, sizeof(::city::economy::v2::SetConsumptionPropensityResponse)},
+  { 523, -1, -1, sizeof(::city::economy::v2::GetIncomeCurrencyRequest)},
+  { 530, -1, -1, sizeof(::city::economy::v2::GetIncomeCurrencyResponse)},
+  { 537, -1, -1, sizeof(::city::economy::v2::SetIncomeCurrencyRequest)},
+  { 545, -1, -1, sizeof(::city::economy::v2::SetIncomeCurrencyResponse)},
+  { 551, -1, -1, sizeof(::city::economy::v2::GetDepressionRequest)},
+  { 558, -1, -1, sizeof(::city::economy::v2::GetDepressionResponse)},
+  { 565, -1, -1, sizeof(::city::economy::v2::SetDepressionRequest)},
+  { 573, -1, -1, sizeof(::city::economy::v2::SetDepressionResponse)},
+  { 579, -1, -1, sizeof(::city::economy::v2::GetLocusControlRequest)},
+  { 586, -1, -1, sizeof(::city::economy::v2::GetLocusControlResponse)},
+  { 593, -1, -1, sizeof(::city::economy::v2::SetLocusControlRequest)},
+  { 601, -1, -1, sizeof(::city::economy::v2::SetLocusControlResponse)},
+  { 607, -1, -1, sizeof(::city::economy::v2::GetWorkingHoursRequest)},
+  { 614, -1, -1, sizeof(::city::economy::v2::GetWorkingHoursResponse)},
+  { 621, -1, -1, sizeof(::city::economy::v2::SetWorkingHoursRequest)},
+  { 629, -1, -1, sizeof(::city::economy::v2::SetWorkingHoursResponse)},
+  { 635, -1, -1, sizeof(::city::economy::v2::GetOrgEntityIdsRequest)},
+  { 642, -1, -1, sizeof(::city::economy::v2::GetOrgEntityIdsResponse)},
+  { 649, -1, -1, sizeof(::city::economy::v2::AddInventoryRequest)},
+  { 657, -1, -1, sizeof(::city::economy::v2::AddInventoryResponse)},
+  { 664, -1, -1, sizeof(::city::economy::v2::AddPriceRequest)},
+  { 672, -1, -1, sizeof(::city::economy::v2::AddPriceResponse)},
+  { 679, -1, -1, sizeof(::city::economy::v2::AddCurrencyRequest)},
+  { 687, -1, -1, sizeof(::city::economy::v2::AddCurrencyResponse)},
+  { 694, -1, -1, sizeof(::city::economy::v2::AddInterestRateRequest)},
+  { 702, -1, -1, sizeof(::city::economy::v2::AddInterestRateResponse)},
+  { 709, -1, -1, sizeof(::city::economy::v2::GetEmployeesRequest)},
+  { 716, -1, -1, sizeof(::city::economy::v2::GetEmployeesResponse)},
+  { 723, -1, -1, sizeof(::city::economy::v2::SetEmployeesRequest)},
+  { 731, -1, -1, sizeof(::city::economy::v2::SetEmployeesResponse)},
+  { 737, -1, -1, sizeof(::city::economy::v2::AddEmployeeRequest)},
+  { 745, -1, -1, sizeof(::city::economy::v2::AddEmployeeResponse)},
+  { 751, -1, -1, sizeof(::city::economy::v2::RemoveEmployeeRequest)},
+  { 759, -1, -1, sizeof(::city::economy::v2::RemoveEmployeeResponse)},
+  { 765, -1, -1, sizeof(::city::economy::v2::GetCitizensRequest)},
+  { 772, -1, -1, sizeof(::city::economy::v2::GetCitizensResponse)},
+  { 779, -1, -1, sizeof(::city::economy::v2::SetCitizensRequest)},
+  { 787, -1, -1, sizeof(::city::economy::v2::SetCitizensResponse)},
+  { 793, -1, -1, sizeof(::city::economy::v2::AddCitizenRequest)},
+  { 801, -1, -1, sizeof(::city::economy::v2::AddCitizenResponse)},
+  { 807, -1, -1, sizeof(::city::economy::v2::RemoveCitizenRequest)},
+  { 815, -1, -1, sizeof(::city::economy::v2::RemoveCitizenResponse)},
+  { 821, -1, -1, sizeof(::city::economy::v2::GetAgentRequest)},
+  { 828, -1, -1, sizeof(::city::economy::v2::GetAgentResponse)},
+  { 835, -1, -1, sizeof(::city::economy::v2::UpdateAgentRequest)},
+  { 842, -1, -1, sizeof(::city::economy::v2::UpdateAgentResponse)},
+  { 848, -1, -1, sizeof(::city::economy::v2::BatchGetRequest)},
+  { 856, -1, -1, sizeof(::city::economy::v2::BatchGetResponse)},
+  { 864, -1, -1, sizeof(::city::economy::v2::BatchUpdateRequest)},
+  { 872, -1, -1, sizeof(::city::economy::v2::BatchUpdateResponse)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -2678,6 +2764,10 @@ static const ::_pb::Message* const file_default_instances[] = {
   &::city::economy::v2::_GetAgentResponse_default_instance_._instance,
   &::city::economy::v2::_UpdateAgentRequest_default_instance_._instance,
   &::city::economy::v2::_UpdateAgentResponse_default_instance_._instance,
+  &::city::economy::v2::_BatchGetRequest_default_instance_._instance,
+  &::city::economy::v2::_BatchGetResponse_default_instance_._instance,
+  &::city::economy::v2::_BatchUpdateRequest_default_instance_._instance,
+  &::city::economy::v2::_BatchUpdateResponse_default_instance_._instance,
 };
 
 const char descriptor_table_protodef_city_2feconomy_2fv2_2forg_5fservice_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -2758,263 +2848,273 @@ const char descriptor_table_protodef_city_2feconomy_2fv2_2forg_5fservice_2eproto
   "ateTaxesDueResponse\022\033\n\ttaxes_due\030\001 \001(\002R\010"
   "taxesDue\022\'\n\017updated_incomes\030\002 \003(\002R\016updat"
   "edIncomes\"m\n\033CalculateConsumptionRequest"
-  "\022\027\n\007firm_id\030\001 \001(\005R\006firmId\022\033\n\tagent_ids\030\002"
-  " \003(\005R\010agentIds\022\030\n\007demands\030\003 \003(\005R\007demands"
-  "\"x\n\034CalculateConsumptionResponse\022)\n\020rema"
-  "in_inventory\030\001 \001(\005R\017remainInventory\022-\n\022u"
-  "pdated_currencies\030\002 \003(\002R\021updatedCurrenci"
-  "es\"P\n\030CalculateInterestRequest\022\027\n\007bank_i"
-  "d\030\001 \001(\005R\006bankId\022\033\n\tagent_ids\030\002 \003(\005R\010agen"
-  "tIds\"q\n\031CalculateInterestResponse\022%\n\016tot"
-  "al_interest\030\001 \001(\002R\rtotalInterest\022-\n\022upda"
-  "ted_currencies\030\002 \003(\002R\021updatedCurrencies\""
-  "9\n\032SaveEconomyEntitiesRequest\022\033\n\tfile_pa"
-  "th\030\001 \001(\tR\010filePath\"S\n\033SaveEconomyEntitie"
-  "sResponse\022\027\n\007org_ids\030\001 \003(\005R\006orgIds\022\033\n\tag"
-  "ent_ids\030\002 \003(\005R\010agentIds\"9\n\032LoadEconomyEn"
-  "titiesRequest\022\033\n\tfile_path\030\001 \001(\tR\010filePa"
-  "th\"S\n\033LoadEconomyEntitiesResponse\022\027\n\007org"
-  "_ids\030\001 \003(\005R\006orgIds\022\033\n\tagent_ids\030\002 \003(\005R\010a"
-  "gentIds\"6\n\035GetConsumptionCurrencyRequest"
-  "\022\025\n\006org_id\030\001 \001(\005R\005orgId\"S\n\036GetConsumptio"
-  "nCurrencyResponse\0221\n\024consumption_currenc"
-  "y\030\001 \003(\002R\023consumptionCurrency\"i\n\035SetConsu"
-  "mptionCurrencyRequest\022\025\n\006org_id\030\001 \001(\005R\005o"
-  "rgId\0221\n\024consumption_currency\030\002 \003(\002R\023cons"
-  "umptionCurrency\" \n\036SetConsumptionCurrenc"
-  "yResponse\"8\n\037GetConsumptionPropensityReq"
-  "uest\022\025\n\006org_id\030\001 \001(\005R\005orgId\"Y\n GetConsum"
-  "ptionPropensityResponse\0225\n\026consumption_p"
-  "ropensity\030\001 \003(\002R\025consumptionPropensity\"o"
-  "\n\037SetConsumptionPropensityRequest\022\025\n\006org"
-  "_id\030\001 \001(\005R\005orgId\0225\n\026consumption_propensi"
-  "ty\030\002 \003(\002R\025consumptionPropensity\"\"\n SetCo"
-  "nsumptionPropensityResponse\"1\n\030GetIncome"
-  "CurrencyRequest\022\025\n\006org_id\030\001 \001(\005R\005orgId\"D"
-  "\n\031GetIncomeCurrencyResponse\022\'\n\017income_cu"
-  "rrency\030\001 \003(\002R\016incomeCurrency\"Z\n\030SetIncom"
-  "eCurrencyRequest\022\025\n\006org_id\030\001 \001(\005R\005orgId\022"
-  "\'\n\017income_currency\030\002 \003(\002R\016incomeCurrency"
-  "\"\033\n\031SetIncomeCurrencyResponse\"-\n\024GetDepr"
-  "essionRequest\022\025\n\006org_id\030\001 \001(\005R\005orgId\"7\n\025"
-  "GetDepressionResponse\022\036\n\ndepression\030\001 \003("
-  "\002R\ndepression\"M\n\024SetDepressionRequest\022\025\n"
-  "\006org_id\030\001 \001(\005R\005orgId\022\036\n\ndepression\030\002 \003(\002"
-  "R\ndepression\"\027\n\025SetDepressionResponse\"/\n"
-  "\026GetLocusControlRequest\022\025\n\006org_id\030\001 \001(\005R"
-  "\005orgId\">\n\027GetLocusControlResponse\022#\n\rloc"
-  "us_control\030\001 \003(\002R\014locusControl\"T\n\026SetLoc"
-  "usControlRequest\022\025\n\006org_id\030\001 \001(\005R\005orgId\022"
-  "#\n\rlocus_control\030\002 \003(\002R\014locusControl\"\031\n\027"
-  "SetLocusControlResponse\"/\n\026GetWorkingHou"
-  "rsRequest\022\025\n\006org_id\030\001 \001(\005R\005orgId\">\n\027GetW"
-  "orkingHoursResponse\022#\n\rworking_hours\030\001 \003"
-  "(\002R\014workingHours\"T\n\026SetWorkingHoursReque"
-  "st\022\025\n\006org_id\030\001 \001(\005R\005orgId\022#\n\rworking_hou"
-  "rs\030\002 \003(\002R\014workingHours\"\031\n\027SetWorkingHour"
-  "sResponse\"F\n\026GetOrgEntityIdsRequest\022,\n\004t"
-  "ype\030\001 \001(\0162\030.city.economy.v2.OrgTypeR\004typ"
-  "e\"2\n\027GetOrgEntityIdsResponse\022\027\n\007org_ids\030"
-  "\001 \003(\005R\006orgIds\"U\n\023AddInventoryRequest\022\025\n\006"
-  "org_id\030\001 \001(\005R\005orgId\022\'\n\017delta_inventory\030\002"
-  " \001(\005R\016deltaInventory\"4\n\024AddInventoryResp"
-  "onse\022\034\n\tinventory\030\001 \001(\005R\tinventory\"I\n\017Ad"
-  "dPriceRequest\022\025\n\006org_id\030\001 \001(\005R\005orgId\022\037\n\013"
-  "delta_price\030\002 \001(\002R\ndeltaPrice\"(\n\020AddPric"
-  "eResponse\022\024\n\005price\030\001 \001(\002R\005price\"R\n\022AddCu"
-  "rrencyRequest\022\025\n\006org_id\030\001 \001(\005R\005orgId\022%\n\016"
-  "delta_currency\030\002 \001(\002R\rdeltaCurrency\"1\n\023A"
-  "ddCurrencyResponse\022\032\n\010currency\030\001 \001(\002R\010cu"
-  "rrency\"_\n\026AddInterestRateRequest\022\025\n\006org_"
-  "id\030\001 \001(\005R\005orgId\022.\n\023delta_interest_rate\030\002"
-  " \001(\002R\021deltaInterestRate\">\n\027AddInterestRa"
-  "teResponse\022#\n\rinterest_rate\030\001 \001(\002R\014inter"
-  "estRate\",\n\023GetEmployeesRequest\022\025\n\006org_id"
-  "\030\001 \001(\005R\005orgId\"9\n\024GetEmployeesResponse\022!\n"
-  "\014employee_ids\030\001 \003(\005R\013employeeIds\"O\n\023SetE"
-  "mployeesRequest\022\025\n\006org_id\030\001 \001(\005R\005orgId\022!"
-  "\n\014employee_ids\030\002 \003(\005R\013employeeIds\"\026\n\024Set"
-  "EmployeesResponse\"L\n\022AddEmployeeRequest\022"
-  "\025\n\006org_id\030\001 \001(\005R\005orgId\022\037\n\013employee_id\030\002 "
-  "\001(\005R\nemployeeId\"\025\n\023AddEmployeeResponse\"O"
-  "\n\025RemoveEmployeeRequest\022\025\n\006org_id\030\001 \001(\005R"
-  "\005orgId\022\037\n\013employee_id\030\002 \001(\005R\nemployeeId\""
-  "\030\n\026RemoveEmployeeResponse\"+\n\022GetCitizens"
-  "Request\022\025\n\006org_id\030\001 \001(\005R\005orgId\"6\n\023GetCit"
-  "izensResponse\022\037\n\013citizen_ids\030\001 \003(\005R\nciti"
-  "zenIds\"L\n\022SetCitizensRequest\022\025\n\006org_id\030\001"
-  " \001(\005R\005orgId\022\037\n\013citizen_ids\030\002 \003(\005R\ncitize"
-  "nIds\"\025\n\023SetCitizensResponse\"I\n\021AddCitize"
-  "nRequest\022\025\n\006org_id\030\001 \001(\005R\005orgId\022\035\n\ncitiz"
-  "en_id\030\002 \001(\005R\tcitizenId\"\024\n\022AddCitizenResp"
-  "onse\"L\n\024RemoveCitizenRequest\022\025\n\006org_id\030\001"
-  " \001(\005R\005orgId\022\035\n\ncitizen_id\030\002 \001(\005R\tcitizen"
-  "Id\"\027\n\025RemoveCitizenResponse\",\n\017GetAgentR"
-  "equest\022\031\n\010agent_id\030\001 \001(\005R\007agentId\"@\n\020Get"
-  "AgentResponse\022,\n\005agent\030\001 \001(\0132\026.city.econ"
-  "omy.v2.AgentR\005agent\"B\n\022UpdateAgentReques"
-  "t\022,\n\005agent\030\001 \001(\0132\026.city.economy.v2.Agent"
-  "R\005agent\"\025\n\023UpdateAgentResponse2\263-\n\nOrgSe"
-  "rvice\022I\n\006AddOrg\022\036.city.economy.v2.AddOrg"
-  "Request\032\037.city.economy.v2.AddOrgResponse"
-  "\022R\n\tRemoveOrg\022!.city.economy.v2.RemoveOr"
-  "gRequest\032\".city.economy.v2.RemoveOrgResp"
-  "onse\022I\n\006GetOrg\022\036.city.economy.v2.GetOrgR"
-  "equest\032\037.city.economy.v2.GetOrgResponse\022"
-  "R\n\tUpdateOrg\022!.city.economy.v2.UpdateOrg"
-  "Request\032\".city.economy.v2.UpdateOrgRespo"
-  "nse\022O\n\010AddAgent\022 .city.economy.v2.AddAge"
-  "ntRequest\032!.city.economy.v2.AddAgentResp"
-  "onse\022X\n\013RemoveAgent\022#.city.economy.v2.Re"
-  "moveAgentRequest\032$.city.economy.v2.Remov"
-  "eAgentResponse\022^\n\rGetNominalGDP\022%.city.e"
-  "conomy.v2.GetNominalGDPRequest\032&.city.ec"
-  "onomy.v2.GetNominalGDPResponse\022^\n\rSetNom"
-  "inalGDP\022%.city.economy.v2.SetNominalGDPR"
-  "equest\032&.city.economy.v2.SetNominalGDPRe"
-  "sponse\022U\n\nGetRealGDP\022\".city.economy.v2.G"
-  "etRealGDPRequest\032#.city.economy.v2.GetRe"
-  "alGDPResponse\022U\n\nSetRealGDP\022\".city.econo"
-  "my.v2.SetRealGDPRequest\032#.city.economy.v"
-  "2.SetRealGDPResponse\022d\n\017GetUnemployment\022"
-  "\'.city.economy.v2.GetUnemploymentRequest"
-  "\032(.city.economy.v2.GetUnemploymentRespon"
-  "se\022d\n\017SetUnemployment\022\'.city.economy.v2."
-  "SetUnemploymentRequest\032(.city.economy.v2"
-  ".SetUnemploymentResponse\022O\n\010GetWages\022 .c"
-  "ity.economy.v2.GetWagesRequest\032!.city.ec"
-  "onomy.v2.GetWagesResponse\022O\n\010SetWages\022 ."
-  "city.economy.v2.SetWagesRequest\032!.city.e"
-  "conomy.v2.SetWagesResponse\022R\n\tGetPrices\022"
-  "!.city.economy.v2.GetPricesRequest\032\".cit"
-  "y.economy.v2.GetPricesResponse\022R\n\tSetPri"
-  "ces\022!.city.economy.v2.SetPricesRequest\032\""
-  ".city.economy.v2.SetPricesResponse\022[\n\014Ge"
-  "tInventory\022$.city.economy.v2.GetInventor"
-  "yRequest\032%.city.economy.v2.GetInventoryR"
-  "esponse\022[\n\014SetInventory\022$.city.economy.v"
-  "2.SetInventoryRequest\032%.city.economy.v2."
-  "SetInventoryResponse\022[\n\014AddInventory\022$.c"
-  "ity.economy.v2.AddInventoryRequest\032%.cit"
-  "y.economy.v2.AddInventoryResponse\022O\n\010Get"
-  "Price\022 .city.economy.v2.GetPriceRequest\032"
-  "!.city.economy.v2.GetPriceResponse\022O\n\010Se"
-  "tPrice\022 .city.economy.v2.SetPriceRequest"
-  "\032!.city.economy.v2.SetPriceResponse\022O\n\010A"
-  "ddPrice\022 .city.economy.v2.AddPriceReques"
-  "t\032!.city.economy.v2.AddPriceResponse\022X\n\013"
-  "GetCurrency\022#.city.economy.v2.GetCurrenc"
-  "yRequest\032$.city.economy.v2.GetCurrencyRe"
-  "sponse\022X\n\013SetCurrency\022#.city.economy.v2."
-  "SetCurrencyRequest\032$.city.economy.v2.Set"
-  "CurrencyResponse\022X\n\013AddCurrency\022#.city.e"
-  "conomy.v2.AddCurrencyRequest\032$.city.econ"
-  "omy.v2.AddCurrencyResponse\022d\n\017GetInteres"
-  "tRate\022\'.city.economy.v2.GetInterestRateR"
-  "equest\032(.city.economy.v2.GetInterestRate"
-  "Response\022d\n\017SetInterestRate\022\'.city.econo"
-  "my.v2.SetInterestRateRequest\032(.city.econ"
-  "omy.v2.SetInterestRateResponse\022d\n\017AddInt"
-  "erestRate\022\'.city.economy.v2.AddInterestR"
-  "ateRequest\032(.city.economy.v2.AddInterest"
-  "RateResponse\022j\n\021GetBracketCutoffs\022).city"
-  ".economy.v2.GetBracketCutoffsRequest\032*.c"
-  "ity.economy.v2.GetBracketCutoffsResponse"
-  "\022j\n\021SetBracketCutoffs\022).city.economy.v2."
-  "SetBracketCutoffsRequest\032*.city.economy."
-  "v2.SetBracketCutoffsResponse\022d\n\017GetBrack"
-  "etRates\022\'.city.economy.v2.GetBracketRate"
-  "sRequest\032(.city.economy.v2.GetBracketRat"
-  "esResponse\022d\n\017SetBracketRates\022\'.city.eco"
-  "nomy.v2.SetBracketRatesRequest\032(.city.ec"
-  "onomy.v2.SetBracketRatesResponse\022j\n\021Calc"
-  "ulateTaxesDue\022).city.economy.v2.Calculat"
-  "eTaxesDueRequest\032*.city.economy.v2.Calcu"
-  "lateTaxesDueResponse\022s\n\024CalculateConsump"
-  "tion\022,.city.economy.v2.CalculateConsumpt"
-  "ionRequest\032-.city.economy.v2.CalculateCo"
-  "nsumptionResponse\022j\n\021CalculateInterest\022)"
-  ".city.economy.v2.CalculateInterestReques"
-  "t\032*.city.economy.v2.CalculateInterestRes"
-  "ponse\022p\n\023SaveEconomyEntities\022+.city.econ"
-  "omy.v2.SaveEconomyEntitiesRequest\032,.city"
-  ".economy.v2.SaveEconomyEntitiesResponse\022"
-  "p\n\023LoadEconomyEntities\022+.city.economy.v2"
-  ".LoadEconomyEntitiesRequest\032,.city.econo"
-  "my.v2.LoadEconomyEntitiesResponse\022y\n\026Get"
-  "ConsumptionCurrency\022..city.economy.v2.Ge"
-  "tConsumptionCurrencyRequest\032/.city.econo"
-  "my.v2.GetConsumptionCurrencyResponse\022y\n\026"
-  "SetConsumptionCurrency\022..city.economy.v2"
-  ".SetConsumptionCurrencyRequest\032/.city.ec"
-  "onomy.v2.SetConsumptionCurrencyResponse\022"
-  "\177\n\030GetConsumptionPropensity\0220.city.econo"
-  "my.v2.GetConsumptionPropensityRequest\0321."
-  "city.economy.v2.GetConsumptionPropensity"
-  "Response\022\177\n\030SetConsumptionPropensity\0220.c"
-  "ity.economy.v2.SetConsumptionPropensityR"
-  "equest\0321.city.economy.v2.SetConsumptionP"
-  "ropensityResponse\022j\n\021GetIncomeCurrency\022)"
-  ".city.economy.v2.GetIncomeCurrencyReques"
-  "t\032*.city.economy.v2.GetIncomeCurrencyRes"
-  "ponse\022j\n\021SetIncomeCurrency\022).city.econom"
-  "y.v2.SetIncomeCurrencyRequest\032*.city.eco"
-  "nomy.v2.SetIncomeCurrencyResponse\022^\n\rGet"
-  "Depression\022%.city.economy.v2.GetDepressi"
-  "onRequest\032&.city.economy.v2.GetDepressio"
-  "nResponse\022^\n\rSetDepression\022%.city.econom"
-  "y.v2.SetDepressionRequest\032&.city.economy"
-  ".v2.SetDepressionResponse\022d\n\017GetLocusCon"
-  "trol\022\'.city.economy.v2.GetLocusControlRe"
-  "quest\032(.city.economy.v2.GetLocusControlR"
-  "esponse\022d\n\017SetLocusControl\022\'.city.econom"
-  "y.v2.SetLocusControlRequest\032(.city.econo"
-  "my.v2.SetLocusControlResponse\022d\n\017GetWork"
-  "ingHours\022\'.city.economy.v2.GetWorkingHou"
-  "rsRequest\032(.city.economy.v2.GetWorkingHo"
-  "ursResponse\022d\n\017SetWorkingHours\022\'.city.ec"
-  "onomy.v2.SetWorkingHoursRequest\032(.city.e"
-  "conomy.v2.SetWorkingHoursResponse\022d\n\017Get"
-  "OrgEntityIds\022\'.city.economy.v2.GetOrgEnt"
-  "ityIdsRequest\032(.city.economy.v2.GetOrgEn"
-  "tityIdsResponse\022[\n\014GetEmployees\022$.city.e"
-  "conomy.v2.GetEmployeesRequest\032%.city.eco"
-  "nomy.v2.GetEmployeesResponse\022[\n\014SetEmplo"
-  "yees\022$.city.economy.v2.SetEmployeesReque"
-  "st\032%.city.economy.v2.SetEmployeesRespons"
-  "e\022X\n\013AddEmployee\022#.city.economy.v2.AddEm"
-  "ployeeRequest\032$.city.economy.v2.AddEmplo"
-  "yeeResponse\022a\n\016RemoveEmployee\022&.city.eco"
-  "nomy.v2.RemoveEmployeeRequest\032\'.city.eco"
-  "nomy.v2.RemoveEmployeeResponse\022X\n\013GetCit"
-  "izens\022#.city.economy.v2.GetCitizensReque"
-  "st\032$.city.economy.v2.GetCitizensResponse"
-  "\022X\n\013SetCitizens\022#.city.economy.v2.SetCit"
-  "izensRequest\032$.city.economy.v2.SetCitize"
-  "nsResponse\022U\n\nAddCitizen\022\".city.economy."
-  "v2.AddCitizenRequest\032#.city.economy.v2.A"
-  "ddCitizenResponse\022^\n\rRemoveCitizen\022%.cit"
-  "y.economy.v2.RemoveCitizenRequest\032&.city"
-  ".economy.v2.RemoveCitizenResponse\022O\n\010Get"
-  "Agent\022 .city.economy.v2.GetAgentRequest\032"
-  "!.city.economy.v2.GetAgentResponse\022X\n\013Up"
-  "dateAgent\022#.city.economy.v2.UpdateAgentR"
-  "equest\032$.city.economy.v2.UpdateAgentResp"
-  "onseB\277\001\n\023com.city.economy.v2B\017OrgService"
-  "ProtoP\001Z9git.fiblab.net/sim/protos/v2/go"
-  "/city/economy/v2;economyv2\242\002\003CEX\252\002\017City."
-  "Economy.V2\312\002\017City\\Economy\\V2\342\002\033City\\Econ"
-  "omy\\V2\\GPBMetadata\352\002\021City::Economy::V2b\006"
-  "proto3"
+  "\022\031\n\010firm_ids\030\001 \003(\005R\007firmIds\022\031\n\010agent_id\030"
+  "\002 \001(\005R\007agentId\022\030\n\007demands\030\003 \003(\005R\007demands"
+  "\"M\n\034CalculateConsumptionResponse\022-\n\022actu"
+  "al_consumption\030\001 \001(\002R\021actualConsumption\""
+  "P\n\030CalculateInterestRequest\022\027\n\007bank_id\030\001"
+  " \001(\005R\006bankId\022\033\n\tagent_ids\030\002 \003(\005R\010agentId"
+  "s\"q\n\031CalculateInterestResponse\022%\n\016total_"
+  "interest\030\001 \001(\002R\rtotalInterest\022-\n\022updated"
+  "_currencies\030\002 \003(\002R\021updatedCurrencies\"9\n\032"
+  "SaveEconomyEntitiesRequest\022\033\n\tfile_path\030"
+  "\001 \001(\tR\010filePath\"S\n\033SaveEconomyEntitiesRe"
+  "sponse\022\027\n\007org_ids\030\001 \003(\005R\006orgIds\022\033\n\tagent"
+  "_ids\030\002 \003(\005R\010agentIds\"9\n\032LoadEconomyEntit"
+  "iesRequest\022\033\n\tfile_path\030\001 \001(\tR\010filePath\""
+  "S\n\033LoadEconomyEntitiesResponse\022\027\n\007org_id"
+  "s\030\001 \003(\005R\006orgIds\022\033\n\tagent_ids\030\002 \003(\005R\010agen"
+  "tIds\"6\n\035GetConsumptionCurrencyRequest\022\025\n"
+  "\006org_id\030\001 \001(\005R\005orgId\"S\n\036GetConsumptionCu"
+  "rrencyResponse\0221\n\024consumption_currency\030\001"
+  " \003(\002R\023consumptionCurrency\"i\n\035SetConsumpt"
+  "ionCurrencyRequest\022\025\n\006org_id\030\001 \001(\005R\005orgI"
+  "d\0221\n\024consumption_currency\030\002 \003(\002R\023consump"
+  "tionCurrency\" \n\036SetConsumptionCurrencyRe"
+  "sponse\"8\n\037GetConsumptionPropensityReques"
+  "t\022\025\n\006org_id\030\001 \001(\005R\005orgId\"Y\n GetConsumpti"
+  "onPropensityResponse\0225\n\026consumption_prop"
+  "ensity\030\001 \003(\002R\025consumptionPropensity\"o\n\037S"
+  "etConsumptionPropensityRequest\022\025\n\006org_id"
+  "\030\001 \001(\005R\005orgId\0225\n\026consumption_propensity\030"
+  "\002 \003(\002R\025consumptionPropensity\"\"\n SetConsu"
+  "mptionPropensityResponse\"1\n\030GetIncomeCur"
+  "rencyRequest\022\025\n\006org_id\030\001 \001(\005R\005orgId\"D\n\031G"
+  "etIncomeCurrencyResponse\022\'\n\017income_curre"
+  "ncy\030\001 \003(\002R\016incomeCurrency\"Z\n\030SetIncomeCu"
+  "rrencyRequest\022\025\n\006org_id\030\001 \001(\005R\005orgId\022\'\n\017"
+  "income_currency\030\002 \003(\002R\016incomeCurrency\"\033\n"
+  "\031SetIncomeCurrencyResponse\"-\n\024GetDepress"
+  "ionRequest\022\025\n\006org_id\030\001 \001(\005R\005orgId\"7\n\025Get"
+  "DepressionResponse\022\036\n\ndepression\030\001 \003(\002R\n"
+  "depression\"M\n\024SetDepressionRequest\022\025\n\006or"
+  "g_id\030\001 \001(\005R\005orgId\022\036\n\ndepression\030\002 \003(\002R\nd"
+  "epression\"\027\n\025SetDepressionResponse\"/\n\026Ge"
+  "tLocusControlRequest\022\025\n\006org_id\030\001 \001(\005R\005or"
+  "gId\">\n\027GetLocusControlResponse\022#\n\rlocus_"
+  "control\030\001 \003(\002R\014locusControl\"T\n\026SetLocusC"
+  "ontrolRequest\022\025\n\006org_id\030\001 \001(\005R\005orgId\022#\n\r"
+  "locus_control\030\002 \003(\002R\014locusControl\"\031\n\027Set"
+  "LocusControlResponse\"/\n\026GetWorkingHoursR"
+  "equest\022\025\n\006org_id\030\001 \001(\005R\005orgId\">\n\027GetWork"
+  "ingHoursResponse\022#\n\rworking_hours\030\001 \003(\002R"
+  "\014workingHours\"T\n\026SetWorkingHoursRequest\022"
+  "\025\n\006org_id\030\001 \001(\005R\005orgId\022#\n\rworking_hours\030"
+  "\002 \003(\002R\014workingHours\"\031\n\027SetWorkingHoursRe"
+  "sponse\"F\n\026GetOrgEntityIdsRequest\022,\n\004type"
+  "\030\001 \001(\0162\030.city.economy.v2.OrgTypeR\004type\"2"
+  "\n\027GetOrgEntityIdsResponse\022\027\n\007org_ids\030\001 \003"
+  "(\005R\006orgIds\"U\n\023AddInventoryRequest\022\025\n\006org"
+  "_id\030\001 \001(\005R\005orgId\022\'\n\017delta_inventory\030\002 \001("
+  "\005R\016deltaInventory\"4\n\024AddInventoryRespons"
+  "e\022\034\n\tinventory\030\001 \001(\005R\tinventory\"I\n\017AddPr"
+  "iceRequest\022\025\n\006org_id\030\001 \001(\005R\005orgId\022\037\n\013del"
+  "ta_price\030\002 \001(\002R\ndeltaPrice\"(\n\020AddPriceRe"
+  "sponse\022\024\n\005price\030\001 \001(\002R\005price\"R\n\022AddCurre"
+  "ncyRequest\022\025\n\006org_id\030\001 \001(\005R\005orgId\022%\n\016del"
+  "ta_currency\030\002 \001(\002R\rdeltaCurrency\"1\n\023AddC"
+  "urrencyResponse\022\032\n\010currency\030\001 \001(\002R\010curre"
+  "ncy\"_\n\026AddInterestRateRequest\022\025\n\006org_id\030"
+  "\001 \001(\005R\005orgId\022.\n\023delta_interest_rate\030\002 \001("
+  "\002R\021deltaInterestRate\">\n\027AddInterestRateR"
+  "esponse\022#\n\rinterest_rate\030\001 \001(\002R\014interest"
+  "Rate\",\n\023GetEmployeesRequest\022\025\n\006org_id\030\001 "
+  "\001(\005R\005orgId\"9\n\024GetEmployeesResponse\022!\n\014em"
+  "ployee_ids\030\001 \003(\005R\013employeeIds\"O\n\023SetEmpl"
+  "oyeesRequest\022\025\n\006org_id\030\001 \001(\005R\005orgId\022!\n\014e"
+  "mployee_ids\030\002 \003(\005R\013employeeIds\"\026\n\024SetEmp"
+  "loyeesResponse\"L\n\022AddEmployeeRequest\022\025\n\006"
+  "org_id\030\001 \001(\005R\005orgId\022\037\n\013employee_id\030\002 \001(\005"
+  "R\nemployeeId\"\025\n\023AddEmployeeResponse\"O\n\025R"
+  "emoveEmployeeRequest\022\025\n\006org_id\030\001 \001(\005R\005or"
+  "gId\022\037\n\013employee_id\030\002 \001(\005R\nemployeeId\"\030\n\026"
+  "RemoveEmployeeResponse\"+\n\022GetCitizensReq"
+  "uest\022\025\n\006org_id\030\001 \001(\005R\005orgId\"6\n\023GetCitize"
+  "nsResponse\022\037\n\013citizen_ids\030\001 \003(\005R\ncitizen"
+  "Ids\"L\n\022SetCitizensRequest\022\025\n\006org_id\030\001 \001("
+  "\005R\005orgId\022\037\n\013citizen_ids\030\002 \003(\005R\ncitizenId"
+  "s\"\025\n\023SetCitizensResponse\"I\n\021AddCitizenRe"
+  "quest\022\025\n\006org_id\030\001 \001(\005R\005orgId\022\035\n\ncitizen_"
+  "id\030\002 \001(\005R\tcitizenId\"\024\n\022AddCitizenRespons"
+  "e\"L\n\024RemoveCitizenRequest\022\025\n\006org_id\030\001 \001("
+  "\005R\005orgId\022\035\n\ncitizen_id\030\002 \001(\005R\tcitizenId\""
+  "\027\n\025RemoveCitizenResponse\",\n\017GetAgentRequ"
+  "est\022\031\n\010agent_id\030\001 \001(\005R\007agentId\"@\n\020GetAge"
+  "ntResponse\022,\n\005agent\030\001 \001(\0132\026.city.economy"
+  ".v2.AgentR\005agent\"B\n\022UpdateAgentRequest\022,"
+  "\n\005agent\030\001 \001(\0132\026.city.economy.v2.AgentR\005a"
+  "gent\"\025\n\023UpdateAgentResponse\"7\n\017BatchGetR"
+  "equest\022\020\n\003ids\030\001 \003(\005R\003ids\022\022\n\004type\030\002 \001(\tR\004"
+  "type\"l\n\020BatchGetResponse\022(\n\004orgs\030\001 \003(\0132\024"
+  ".city.economy.v2.OrgR\004orgs\022.\n\006agents\030\002 \003"
+  "(\0132\026.city.economy.v2.AgentR\006agents\"n\n\022Ba"
+  "tchUpdateRequest\022(\n\004orgs\030\001 \003(\0132\024.city.ec"
+  "onomy.v2.OrgR\004orgs\022.\n\006agents\030\002 \003(\0132\026.cit"
+  "y.economy.v2.AgentR\006agents\"\025\n\023BatchUpdat"
+  "eResponse2\342.\n\nOrgService\022I\n\006AddOrg\022\036.cit"
+  "y.economy.v2.AddOrgRequest\032\037.city.econom"
+  "y.v2.AddOrgResponse\022R\n\tRemoveOrg\022!.city."
+  "economy.v2.RemoveOrgRequest\032\".city.econo"
+  "my.v2.RemoveOrgResponse\022I\n\006GetOrg\022\036.city"
+  ".economy.v2.GetOrgRequest\032\037.city.economy"
+  ".v2.GetOrgResponse\022R\n\tUpdateOrg\022!.city.e"
+  "conomy.v2.UpdateOrgRequest\032\".city.econom"
+  "y.v2.UpdateOrgResponse\022O\n\010AddAgent\022 .cit"
+  "y.economy.v2.AddAgentRequest\032!.city.econ"
+  "omy.v2.AddAgentResponse\022X\n\013RemoveAgent\022#"
+  ".city.economy.v2.RemoveAgentRequest\032$.ci"
+  "ty.economy.v2.RemoveAgentResponse\022^\n\rGet"
+  "NominalGDP\022%.city.economy.v2.GetNominalG"
+  "DPRequest\032&.city.economy.v2.GetNominalGD"
+  "PResponse\022^\n\rSetNominalGDP\022%.city.econom"
+  "y.v2.SetNominalGDPRequest\032&.city.economy"
+  ".v2.SetNominalGDPResponse\022U\n\nGetRealGDP\022"
+  "\".city.economy.v2.GetRealGDPRequest\032#.ci"
+  "ty.economy.v2.GetRealGDPResponse\022U\n\nSetR"
+  "ealGDP\022\".city.economy.v2.SetRealGDPReque"
+  "st\032#.city.economy.v2.SetRealGDPResponse\022"
+  "d\n\017GetUnemployment\022\'.city.economy.v2.Get"
+  "UnemploymentRequest\032(.city.economy.v2.Ge"
+  "tUnemploymentResponse\022d\n\017SetUnemployment"
+  "\022\'.city.economy.v2.SetUnemploymentReques"
+  "t\032(.city.economy.v2.SetUnemploymentRespo"
+  "nse\022O\n\010GetWages\022 .city.economy.v2.GetWag"
+  "esRequest\032!.city.economy.v2.GetWagesResp"
+  "onse\022O\n\010SetWages\022 .city.economy.v2.SetWa"
+  "gesRequest\032!.city.economy.v2.SetWagesRes"
+  "ponse\022R\n\tGetPrices\022!.city.economy.v2.Get"
+  "PricesRequest\032\".city.economy.v2.GetPrice"
+  "sResponse\022R\n\tSetPrices\022!.city.economy.v2"
+  ".SetPricesRequest\032\".city.economy.v2.SetP"
+  "ricesResponse\022[\n\014GetInventory\022$.city.eco"
+  "nomy.v2.GetInventoryRequest\032%.city.econo"
+  "my.v2.GetInventoryResponse\022[\n\014SetInvento"
+  "ry\022$.city.economy.v2.SetInventoryRequest"
+  "\032%.city.economy.v2.SetInventoryResponse\022"
+  "[\n\014AddInventory\022$.city.economy.v2.AddInv"
+  "entoryRequest\032%.city.economy.v2.AddInven"
+  "toryResponse\022O\n\010GetPrice\022 .city.economy."
+  "v2.GetPriceRequest\032!.city.economy.v2.Get"
+  "PriceResponse\022O\n\010SetPrice\022 .city.economy"
+  ".v2.SetPriceRequest\032!.city.economy.v2.Se"
+  "tPriceResponse\022O\n\010AddPrice\022 .city.econom"
+  "y.v2.AddPriceRequest\032!.city.economy.v2.A"
+  "ddPriceResponse\022X\n\013GetCurrency\022#.city.ec"
+  "onomy.v2.GetCurrencyRequest\032$.city.econo"
+  "my.v2.GetCurrencyResponse\022X\n\013SetCurrency"
+  "\022#.city.economy.v2.SetCurrencyRequest\032$."
+  "city.economy.v2.SetCurrencyResponse\022X\n\013A"
+  "ddCurrency\022#.city.economy.v2.AddCurrency"
+  "Request\032$.city.economy.v2.AddCurrencyRes"
+  "ponse\022d\n\017GetInterestRate\022\'.city.economy."
+  "v2.GetInterestRateRequest\032(.city.economy"
+  ".v2.GetInterestRateResponse\022d\n\017SetIntere"
+  "stRate\022\'.city.economy.v2.SetInterestRate"
+  "Request\032(.city.economy.v2.SetInterestRat"
+  "eResponse\022d\n\017AddInterestRate\022\'.city.econ"
+  "omy.v2.AddInterestRateRequest\032(.city.eco"
+  "nomy.v2.AddInterestRateResponse\022j\n\021GetBr"
+  "acketCutoffs\022).city.economy.v2.GetBracke"
+  "tCutoffsRequest\032*.city.economy.v2.GetBra"
+  "cketCutoffsResponse\022j\n\021SetBracketCutoffs"
+  "\022).city.economy.v2.SetBracketCutoffsRequ"
+  "est\032*.city.economy.v2.SetBracketCutoffsR"
+  "esponse\022d\n\017GetBracketRates\022\'.city.econom"
+  "y.v2.GetBracketRatesRequest\032(.city.econo"
+  "my.v2.GetBracketRatesResponse\022d\n\017SetBrac"
+  "ketRates\022\'.city.economy.v2.SetBracketRat"
+  "esRequest\032(.city.economy.v2.SetBracketRa"
+  "tesResponse\022j\n\021CalculateTaxesDue\022).city."
+  "economy.v2.CalculateTaxesDueRequest\032*.ci"
+  "ty.economy.v2.CalculateTaxesDueResponse\022"
+  "s\n\024CalculateConsumption\022,.city.economy.v"
+  "2.CalculateConsumptionRequest\032-.city.eco"
+  "nomy.v2.CalculateConsumptionResponse\022j\n\021"
+  "CalculateInterest\022).city.economy.v2.Calc"
+  "ulateInterestRequest\032*.city.economy.v2.C"
+  "alculateInterestResponse\022p\n\023SaveEconomyE"
+  "ntities\022+.city.economy.v2.SaveEconomyEnt"
+  "itiesRequest\032,.city.economy.v2.SaveEcono"
+  "myEntitiesResponse\022p\n\023LoadEconomyEntitie"
+  "s\022+.city.economy.v2.LoadEconomyEntitiesR"
+  "equest\032,.city.economy.v2.LoadEconomyEnti"
+  "tiesResponse\022y\n\026GetConsumptionCurrency\022."
+  ".city.economy.v2.GetConsumptionCurrencyR"
+  "equest\032/.city.economy.v2.GetConsumptionC"
+  "urrencyResponse\022y\n\026SetConsumptionCurrenc"
+  "y\022..city.economy.v2.SetConsumptionCurren"
+  "cyRequest\032/.city.economy.v2.SetConsumpti"
+  "onCurrencyResponse\022\177\n\030GetConsumptionProp"
+  "ensity\0220.city.economy.v2.GetConsumptionP"
+  "ropensityRequest\0321.city.economy.v2.GetCo"
+  "nsumptionPropensityResponse\022\177\n\030SetConsum"
+  "ptionPropensity\0220.city.economy.v2.SetCon"
+  "sumptionPropensityRequest\0321.city.economy"
+  ".v2.SetConsumptionPropensityResponse\022j\n\021"
+  "GetIncomeCurrency\022).city.economy.v2.GetI"
+  "ncomeCurrencyRequest\032*.city.economy.v2.G"
+  "etIncomeCurrencyResponse\022j\n\021SetIncomeCur"
+  "rency\022).city.economy.v2.SetIncomeCurrenc"
+  "yRequest\032*.city.economy.v2.SetIncomeCurr"
+  "encyResponse\022^\n\rGetDepression\022%.city.eco"
+  "nomy.v2.GetDepressionRequest\032&.city.econ"
+  "omy.v2.GetDepressionResponse\022^\n\rSetDepre"
+  "ssion\022%.city.economy.v2.SetDepressionReq"
+  "uest\032&.city.economy.v2.SetDepressionResp"
+  "onse\022d\n\017GetLocusControl\022\'.city.economy.v"
+  "2.GetLocusControlRequest\032(.city.economy."
+  "v2.GetLocusControlResponse\022d\n\017SetLocusCo"
+  "ntrol\022\'.city.economy.v2.SetLocusControlR"
+  "equest\032(.city.economy.v2.SetLocusControl"
+  "Response\022d\n\017GetWorkingHours\022\'.city.econo"
+  "my.v2.GetWorkingHoursRequest\032(.city.econ"
+  "omy.v2.GetWorkingHoursResponse\022d\n\017SetWor"
+  "kingHours\022\'.city.economy.v2.SetWorkingHo"
+  "ursRequest\032(.city.economy.v2.SetWorkingH"
+  "oursResponse\022d\n\017GetOrgEntityIds\022\'.city.e"
+  "conomy.v2.GetOrgEntityIdsRequest\032(.city."
+  "economy.v2.GetOrgEntityIdsResponse\022[\n\014Ge"
+  "tEmployees\022$.city.economy.v2.GetEmployee"
+  "sRequest\032%.city.economy.v2.GetEmployeesR"
+  "esponse\022[\n\014SetEmployees\022$.city.economy.v"
+  "2.SetEmployeesRequest\032%.city.economy.v2."
+  "SetEmployeesResponse\022X\n\013AddEmployee\022#.ci"
+  "ty.economy.v2.AddEmployeeRequest\032$.city."
+  "economy.v2.AddEmployeeResponse\022a\n\016Remove"
+  "Employee\022&.city.economy.v2.RemoveEmploye"
+  "eRequest\032\'.city.economy.v2.RemoveEmploye"
+  "eResponse\022X\n\013GetCitizens\022#.city.economy."
+  "v2.GetCitizensRequest\032$.city.economy.v2."
+  "GetCitizensResponse\022X\n\013SetCitizens\022#.cit"
+  "y.economy.v2.SetCitizensRequest\032$.city.e"
+  "conomy.v2.SetCitizensResponse\022U\n\nAddCiti"
+  "zen\022\".city.economy.v2.AddCitizenRequest\032"
+  "#.city.economy.v2.AddCitizenResponse\022^\n\r"
+  "RemoveCitizen\022%.city.economy.v2.RemoveCi"
+  "tizenRequest\032&.city.economy.v2.RemoveCit"
+  "izenResponse\022O\n\010GetAgent\022 .city.economy."
+  "v2.GetAgentRequest\032!.city.economy.v2.Get"
+  "AgentResponse\022X\n\013UpdateAgent\022#.city.econ"
+  "omy.v2.UpdateAgentRequest\032$.city.economy"
+  ".v2.UpdateAgentResponse\022Q\n\010BatchGet\022 .ci"
+  "ty.economy.v2.BatchGetRequest\032!.city.eco"
+  "nomy.v2.BatchGetResponse\"\000\022Z\n\013BatchUpdat"
+  "e\022#.city.economy.v2.BatchUpdateRequest\032$"
+  ".city.economy.v2.BatchUpdateResponse\"\000B\277"
+  "\001\n\023com.city.economy.v2B\017OrgServiceProtoP"
+  "\001Z9git.fiblab.net/sim/protos/v2/go/city/"
+  "economy/v2;economyv2\242\002\003CEX\252\002\017City.Econom"
+  "y.V2\312\002\017City\\Economy\\V2\342\002\033City\\Economy\\V2"
+  "\\GPBMetadata\352\002\021City::Economy::V2b\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_deps[1] = {
   &::descriptor_table_city_2feconomy_2fv2_2feconomy_2eproto,
 };
 static ::_pbi::once_flag descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto = {
-    false, false, 12966, descriptor_table_protodef_city_2feconomy_2fv2_2forg_5fservice_2eproto,
+    false, false, 13400, descriptor_table_protodef_city_2feconomy_2fv2_2forg_5fservice_2eproto,
     "city/economy/v2/org_service.proto",
-    &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once, descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_deps, 1, 120,
+    &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once, descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_deps, 1, 124,
     schemas, file_default_instances, TableStruct_city_2feconomy_2fv2_2forg_5fservice_2eproto::offsets,
     file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto, file_level_enum_descriptors_city_2feconomy_2fv2_2forg_5fservice_2eproto,
     file_level_service_descriptors_city_2feconomy_2fv2_2forg_5fservice_2eproto,
@@ -11875,15 +11975,15 @@ CalculateConsumptionRequest::CalculateConsumptionRequest(const CalculateConsumpt
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   CalculateConsumptionRequest* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.agent_ids_){from._impl_.agent_ids_}
-    , /*decltype(_impl_._agent_ids_cached_byte_size_)*/{0}
+      decltype(_impl_.firm_ids_){from._impl_.firm_ids_}
+    , /*decltype(_impl_._firm_ids_cached_byte_size_)*/{0}
     , decltype(_impl_.demands_){from._impl_.demands_}
     , /*decltype(_impl_._demands_cached_byte_size_)*/{0}
-    , decltype(_impl_.firm_id_){}
+    , decltype(_impl_.agent_id_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _this->_impl_.firm_id_ = from._impl_.firm_id_;
+  _this->_impl_.agent_id_ = from._impl_.agent_id_;
   // @@protoc_insertion_point(copy_constructor:city.economy.v2.CalculateConsumptionRequest)
 }
 
@@ -11892,11 +11992,11 @@ inline void CalculateConsumptionRequest::SharedCtor(
   (void)arena;
   (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.agent_ids_){arena}
-    , /*decltype(_impl_._agent_ids_cached_byte_size_)*/{0}
+      decltype(_impl_.firm_ids_){arena}
+    , /*decltype(_impl_._firm_ids_cached_byte_size_)*/{0}
     , decltype(_impl_.demands_){arena}
     , /*decltype(_impl_._demands_cached_byte_size_)*/{0}
-    , decltype(_impl_.firm_id_){0}
+    , decltype(_impl_.agent_id_){0}
     , /*decltype(_impl_._cached_size_)*/{}
   };
 }
@@ -11912,7 +12012,7 @@ CalculateConsumptionRequest::~CalculateConsumptionRequest() {
 
 inline void CalculateConsumptionRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.agent_ids_.~RepeatedField();
+  _impl_.firm_ids_.~RepeatedField();
   _impl_.demands_.~RepeatedField();
 }
 
@@ -11926,9 +12026,9 @@ void CalculateConsumptionRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.agent_ids_.Clear();
+  _impl_.firm_ids_.Clear();
   _impl_.demands_.Clear();
-  _impl_.firm_id_ = 0;
+  _impl_.agent_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -11938,21 +12038,21 @@ const char* CalculateConsumptionRequest::_InternalParse(const char* ptr, ::_pbi:
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // int32 firm_id = 1 [json_name = "firmId"];
+      // repeated int32 firm_ids = 1 [json_name = "firmIds"];
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.firm_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_firm_ids(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<uint8_t>(tag) == 8) {
+          _internal_add_firm_ids(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // repeated int32 agent_ids = 2 [json_name = "agentIds"];
+      // int32 agent_id = 2 [json_name = "agentId"];
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_agent_ids(), ptr, ctx);
-          CHK_(ptr);
-        } else if (static_cast<uint8_t>(tag) == 16) {
-          _internal_add_agent_ids(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _impl_.agent_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -11997,19 +12097,19 @@ uint8_t* CalculateConsumptionRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // int32 firm_id = 1 [json_name = "firmId"];
-  if (this->_internal_firm_id() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_firm_id(), target);
-  }
-
-  // repeated int32 agent_ids = 2 [json_name = "agentIds"];
+  // repeated int32 firm_ids = 1 [json_name = "firmIds"];
   {
-    int byte_size = _impl_._agent_ids_cached_byte_size_.load(std::memory_order_relaxed);
+    int byte_size = _impl_._firm_ids_cached_byte_size_.load(std::memory_order_relaxed);
     if (byte_size > 0) {
       target = stream->WriteInt32Packed(
-          2, _internal_agent_ids(), byte_size, target);
+          1, _internal_firm_ids(), byte_size, target);
     }
+  }
+
+  // int32 agent_id = 2 [json_name = "agentId"];
+  if (this->_internal_agent_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(2, this->_internal_agent_id(), target);
   }
 
   // repeated int32 demands = 3 [json_name = "demands"];
@@ -12037,16 +12137,16 @@ size_t CalculateConsumptionRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated int32 agent_ids = 2 [json_name = "agentIds"];
+  // repeated int32 firm_ids = 1 [json_name = "firmIds"];
   {
     size_t data_size = ::_pbi::WireFormatLite::
-      Int32Size(this->_impl_.agent_ids_);
+      Int32Size(this->_impl_.firm_ids_);
     if (data_size > 0) {
       total_size += 1 +
         ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
     }
     int cached_size = ::_pbi::ToCachedSize(data_size);
-    _impl_._agent_ids_cached_byte_size_.store(cached_size,
+    _impl_._firm_ids_cached_byte_size_.store(cached_size,
                                     std::memory_order_relaxed);
     total_size += data_size;
   }
@@ -12065,9 +12165,9 @@ size_t CalculateConsumptionRequest::ByteSizeLong() const {
     total_size += data_size;
   }
 
-  // int32 firm_id = 1 [json_name = "firmId"];
-  if (this->_internal_firm_id() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_firm_id());
+  // int32 agent_id = 2 [json_name = "agentId"];
+  if (this->_internal_agent_id() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_agent_id());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -12088,10 +12188,10 @@ void CalculateConsumptionRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  _this->_impl_.agent_ids_.MergeFrom(from._impl_.agent_ids_);
+  _this->_impl_.firm_ids_.MergeFrom(from._impl_.firm_ids_);
   _this->_impl_.demands_.MergeFrom(from._impl_.demands_);
-  if (from._internal_firm_id() != 0) {
-    _this->_internal_set_firm_id(from._internal_firm_id());
+  if (from._internal_agent_id() != 0) {
+    _this->_internal_set_agent_id(from._internal_agent_id());
   }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -12110,9 +12210,9 @@ bool CalculateConsumptionRequest::IsInitialized() const {
 void CalculateConsumptionRequest::InternalSwap(CalculateConsumptionRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  _impl_.agent_ids_.InternalSwap(&other->_impl_.agent_ids_);
+  _impl_.firm_ids_.InternalSwap(&other->_impl_.firm_ids_);
   _impl_.demands_.InternalSwap(&other->_impl_.demands_);
-  swap(_impl_.firm_id_, other->_impl_.firm_id_);
+  swap(_impl_.agent_id_, other->_impl_.agent_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata CalculateConsumptionRequest::GetMetadata() const {
@@ -12137,12 +12237,11 @@ CalculateConsumptionResponse::CalculateConsumptionResponse(const CalculateConsum
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   CalculateConsumptionResponse* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.updated_currencies_){from._impl_.updated_currencies_}
-    , decltype(_impl_.remain_inventory_){}
+      decltype(_impl_.actual_consumption_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _this->_impl_.remain_inventory_ = from._impl_.remain_inventory_;
+  _this->_impl_.actual_consumption_ = from._impl_.actual_consumption_;
   // @@protoc_insertion_point(copy_constructor:city.economy.v2.CalculateConsumptionResponse)
 }
 
@@ -12151,8 +12250,7 @@ inline void CalculateConsumptionResponse::SharedCtor(
   (void)arena;
   (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.updated_currencies_){arena}
-    , decltype(_impl_.remain_inventory_){0}
+      decltype(_impl_.actual_consumption_){0}
     , /*decltype(_impl_._cached_size_)*/{}
   };
 }
@@ -12168,7 +12266,6 @@ CalculateConsumptionResponse::~CalculateConsumptionResponse() {
 
 inline void CalculateConsumptionResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.updated_currencies_.~RepeatedField();
 }
 
 void CalculateConsumptionResponse::SetCachedSize(int size) const {
@@ -12181,8 +12278,7 @@ void CalculateConsumptionResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.updated_currencies_.Clear();
-  _impl_.remain_inventory_ = 0;
+  _impl_.actual_consumption_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -12192,21 +12288,10 @@ const char* CalculateConsumptionResponse::_InternalParse(const char* ptr, ::_pbi
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // int32 remain_inventory = 1 [json_name = "remainInventory"];
+      // float actual_consumption = 1 [json_name = "actualConsumption"];
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.remain_inventory_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // repeated float updated_currencies = 2 [json_name = "updatedCurrencies"];
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedFloatParser(_internal_mutable_updated_currencies(), ptr, ctx);
-          CHK_(ptr);
-        } else if (static_cast<uint8_t>(tag) == 21) {
-          _internal_add_updated_currencies(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 13)) {
+          _impl_.actual_consumption_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
         } else
           goto handle_unusual;
@@ -12240,15 +12325,14 @@ uint8_t* CalculateConsumptionResponse::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // int32 remain_inventory = 1 [json_name = "remainInventory"];
-  if (this->_internal_remain_inventory() != 0) {
+  // float actual_consumption = 1 [json_name = "actualConsumption"];
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_actual_consumption = this->_internal_actual_consumption();
+  uint32_t raw_actual_consumption;
+  memcpy(&raw_actual_consumption, &tmp_actual_consumption, sizeof(tmp_actual_consumption));
+  if (raw_actual_consumption != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_remain_inventory(), target);
-  }
-
-  // repeated float updated_currencies = 2 [json_name = "updatedCurrencies"];
-  if (this->_internal_updated_currencies_size() > 0) {
-    target = stream->WriteFixedPacked(2, _internal_updated_currencies(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(1, this->_internal_actual_consumption(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -12267,20 +12351,13 @@ size_t CalculateConsumptionResponse::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated float updated_currencies = 2 [json_name = "updatedCurrencies"];
-  {
-    unsigned int count = static_cast<unsigned int>(this->_internal_updated_currencies_size());
-    size_t data_size = 4UL * count;
-    if (data_size > 0) {
-      total_size += 1 +
-        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
-    }
-    total_size += data_size;
-  }
-
-  // int32 remain_inventory = 1 [json_name = "remainInventory"];
-  if (this->_internal_remain_inventory() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_remain_inventory());
+  // float actual_consumption = 1 [json_name = "actualConsumption"];
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_actual_consumption = this->_internal_actual_consumption();
+  uint32_t raw_actual_consumption;
+  memcpy(&raw_actual_consumption, &tmp_actual_consumption, sizeof(tmp_actual_consumption));
+  if (raw_actual_consumption != 0) {
+    total_size += 1 + 4;
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -12301,9 +12378,12 @@ void CalculateConsumptionResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& t
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  _this->_impl_.updated_currencies_.MergeFrom(from._impl_.updated_currencies_);
-  if (from._internal_remain_inventory() != 0) {
-    _this->_internal_set_remain_inventory(from._internal_remain_inventory());
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_actual_consumption = from._internal_actual_consumption();
+  uint32_t raw_actual_consumption;
+  memcpy(&raw_actual_consumption, &tmp_actual_consumption, sizeof(tmp_actual_consumption));
+  if (raw_actual_consumption != 0) {
+    _this->_internal_set_actual_consumption(from._internal_actual_consumption());
   }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -12322,8 +12402,7 @@ bool CalculateConsumptionResponse::IsInitialized() const {
 void CalculateConsumptionResponse::InternalSwap(CalculateConsumptionResponse* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  _impl_.updated_currencies_.InternalSwap(&other->_impl_.updated_currencies_);
-  swap(_impl_.remain_inventory_, other->_impl_.remain_inventory_);
+  swap(_impl_.actual_consumption_, other->_impl_.actual_consumption_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata CalculateConsumptionResponse::GetMetadata() const {
@@ -22213,6 +22292,741 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*UpdateAgentResponse::GetClassD
       file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[119]);
 }
 
+// ===================================================================
+
+class BatchGetRequest::_Internal {
+ public:
+};
+
+BatchGetRequest::BatchGetRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:city.economy.v2.BatchGetRequest)
+}
+BatchGetRequest::BatchGetRequest(const BatchGetRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  BatchGetRequest* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.ids_){from._impl_.ids_}
+    , /*decltype(_impl_._ids_cached_byte_size_)*/{0}
+    , decltype(_impl_.type_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _impl_.type_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.type_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_type().empty()) {
+    _this->_impl_.type_.Set(from._internal_type(), 
+      _this->GetArenaForAllocation());
+  }
+  // @@protoc_insertion_point(copy_constructor:city.economy.v2.BatchGetRequest)
+}
+
+inline void BatchGetRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.ids_){arena}
+    , /*decltype(_impl_._ids_cached_byte_size_)*/{0}
+    , decltype(_impl_.type_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.type_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.type_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+BatchGetRequest::~BatchGetRequest() {
+  // @@protoc_insertion_point(destructor:city.economy.v2.BatchGetRequest)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void BatchGetRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.ids_.~RepeatedField();
+  _impl_.type_.Destroy();
+}
+
+void BatchGetRequest::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void BatchGetRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:city.economy.v2.BatchGetRequest)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.ids_.Clear();
+  _impl_.type_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* BatchGetRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // repeated int32 ids = 1 [json_name = "ids"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_ids(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<uint8_t>(tag) == 8) {
+          _internal_add_ids(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // string type = 2 [json_name = "type"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_type();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "city.economy.v2.BatchGetRequest.type"));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* BatchGetRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:city.economy.v2.BatchGetRequest)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated int32 ids = 1 [json_name = "ids"];
+  {
+    int byte_size = _impl_._ids_cached_byte_size_.load(std::memory_order_relaxed);
+    if (byte_size > 0) {
+      target = stream->WriteInt32Packed(
+          1, _internal_ids(), byte_size, target);
+    }
+  }
+
+  // string type = 2 [json_name = "type"];
+  if (!this->_internal_type().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_type().data(), static_cast<int>(this->_internal_type().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "city.economy.v2.BatchGetRequest.type");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_type(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:city.economy.v2.BatchGetRequest)
+  return target;
+}
+
+size_t BatchGetRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:city.economy.v2.BatchGetRequest)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated int32 ids = 1 [json_name = "ids"];
+  {
+    size_t data_size = ::_pbi::WireFormatLite::
+      Int32Size(this->_impl_.ids_);
+    if (data_size > 0) {
+      total_size += 1 +
+        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
+    }
+    int cached_size = ::_pbi::ToCachedSize(data_size);
+    _impl_._ids_cached_byte_size_.store(cached_size,
+                                    std::memory_order_relaxed);
+    total_size += data_size;
+  }
+
+  // string type = 2 [json_name = "type"];
+  if (!this->_internal_type().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_type());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BatchGetRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    BatchGetRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BatchGetRequest::GetClassData() const { return &_class_data_; }
+
+
+void BatchGetRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<BatchGetRequest*>(&to_msg);
+  auto& from = static_cast<const BatchGetRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:city.economy.v2.BatchGetRequest)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_impl_.ids_.MergeFrom(from._impl_.ids_);
+  if (!from._internal_type().empty()) {
+    _this->_internal_set_type(from._internal_type());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void BatchGetRequest::CopyFrom(const BatchGetRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:city.economy.v2.BatchGetRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool BatchGetRequest::IsInitialized() const {
+  return true;
+}
+
+void BatchGetRequest::InternalSwap(BatchGetRequest* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _impl_.ids_.InternalSwap(&other->_impl_.ids_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.type_, lhs_arena,
+      &other->_impl_.type_, rhs_arena
+  );
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata BatchGetRequest::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[120]);
+}
+
+// ===================================================================
+
+class BatchGetResponse::_Internal {
+ public:
+};
+
+void BatchGetResponse::clear_orgs() {
+  _impl_.orgs_.Clear();
+}
+void BatchGetResponse::clear_agents() {
+  _impl_.agents_.Clear();
+}
+BatchGetResponse::BatchGetResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:city.economy.v2.BatchGetResponse)
+}
+BatchGetResponse::BatchGetResponse(const BatchGetResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  BatchGetResponse* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.orgs_){from._impl_.orgs_}
+    , decltype(_impl_.agents_){from._impl_.agents_}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:city.economy.v2.BatchGetResponse)
+}
+
+inline void BatchGetResponse::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.orgs_){arena}
+    , decltype(_impl_.agents_){arena}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+}
+
+BatchGetResponse::~BatchGetResponse() {
+  // @@protoc_insertion_point(destructor:city.economy.v2.BatchGetResponse)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void BatchGetResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.orgs_.~RepeatedPtrField();
+  _impl_.agents_.~RepeatedPtrField();
+}
+
+void BatchGetResponse::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void BatchGetResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:city.economy.v2.BatchGetResponse)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.orgs_.Clear();
+  _impl_.agents_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* BatchGetResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // repeated .city.economy.v2.Org orgs = 1 [json_name = "orgs"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_orgs(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated .city.economy.v2.Agent agents = 2 [json_name = "agents"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_agents(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* BatchGetResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:city.economy.v2.BatchGetResponse)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated .city.economy.v2.Org orgs = 1 [json_name = "orgs"];
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_orgs_size()); i < n; i++) {
+    const auto& repfield = this->_internal_orgs(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
+  }
+
+  // repeated .city.economy.v2.Agent agents = 2 [json_name = "agents"];
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_agents_size()); i < n; i++) {
+    const auto& repfield = this->_internal_agents(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        InternalWriteMessage(2, repfield, repfield.GetCachedSize(), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:city.economy.v2.BatchGetResponse)
+  return target;
+}
+
+size_t BatchGetResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:city.economy.v2.BatchGetResponse)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated .city.economy.v2.Org orgs = 1 [json_name = "orgs"];
+  total_size += 1UL * this->_internal_orgs_size();
+  for (const auto& msg : this->_impl_.orgs_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // repeated .city.economy.v2.Agent agents = 2 [json_name = "agents"];
+  total_size += 1UL * this->_internal_agents_size();
+  for (const auto& msg : this->_impl_.agents_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BatchGetResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    BatchGetResponse::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BatchGetResponse::GetClassData() const { return &_class_data_; }
+
+
+void BatchGetResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<BatchGetResponse*>(&to_msg);
+  auto& from = static_cast<const BatchGetResponse&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:city.economy.v2.BatchGetResponse)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_impl_.orgs_.MergeFrom(from._impl_.orgs_);
+  _this->_impl_.agents_.MergeFrom(from._impl_.agents_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void BatchGetResponse::CopyFrom(const BatchGetResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:city.economy.v2.BatchGetResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool BatchGetResponse::IsInitialized() const {
+  return true;
+}
+
+void BatchGetResponse::InternalSwap(BatchGetResponse* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _impl_.orgs_.InternalSwap(&other->_impl_.orgs_);
+  _impl_.agents_.InternalSwap(&other->_impl_.agents_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata BatchGetResponse::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[121]);
+}
+
+// ===================================================================
+
+class BatchUpdateRequest::_Internal {
+ public:
+};
+
+void BatchUpdateRequest::clear_orgs() {
+  _impl_.orgs_.Clear();
+}
+void BatchUpdateRequest::clear_agents() {
+  _impl_.agents_.Clear();
+}
+BatchUpdateRequest::BatchUpdateRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:city.economy.v2.BatchUpdateRequest)
+}
+BatchUpdateRequest::BatchUpdateRequest(const BatchUpdateRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  BatchUpdateRequest* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.orgs_){from._impl_.orgs_}
+    , decltype(_impl_.agents_){from._impl_.agents_}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:city.economy.v2.BatchUpdateRequest)
+}
+
+inline void BatchUpdateRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.orgs_){arena}
+    , decltype(_impl_.agents_){arena}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+}
+
+BatchUpdateRequest::~BatchUpdateRequest() {
+  // @@protoc_insertion_point(destructor:city.economy.v2.BatchUpdateRequest)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void BatchUpdateRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.orgs_.~RepeatedPtrField();
+  _impl_.agents_.~RepeatedPtrField();
+}
+
+void BatchUpdateRequest::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void BatchUpdateRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:city.economy.v2.BatchUpdateRequest)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.orgs_.Clear();
+  _impl_.agents_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* BatchUpdateRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // repeated .city.economy.v2.Org orgs = 1 [json_name = "orgs"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_orgs(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated .city.economy.v2.Agent agents = 2 [json_name = "agents"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_agents(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* BatchUpdateRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:city.economy.v2.BatchUpdateRequest)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated .city.economy.v2.Org orgs = 1 [json_name = "orgs"];
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_orgs_size()); i < n; i++) {
+    const auto& repfield = this->_internal_orgs(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
+  }
+
+  // repeated .city.economy.v2.Agent agents = 2 [json_name = "agents"];
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_agents_size()); i < n; i++) {
+    const auto& repfield = this->_internal_agents(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        InternalWriteMessage(2, repfield, repfield.GetCachedSize(), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:city.economy.v2.BatchUpdateRequest)
+  return target;
+}
+
+size_t BatchUpdateRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:city.economy.v2.BatchUpdateRequest)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated .city.economy.v2.Org orgs = 1 [json_name = "orgs"];
+  total_size += 1UL * this->_internal_orgs_size();
+  for (const auto& msg : this->_impl_.orgs_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // repeated .city.economy.v2.Agent agents = 2 [json_name = "agents"];
+  total_size += 1UL * this->_internal_agents_size();
+  for (const auto& msg : this->_impl_.agents_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BatchUpdateRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    BatchUpdateRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BatchUpdateRequest::GetClassData() const { return &_class_data_; }
+
+
+void BatchUpdateRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<BatchUpdateRequest*>(&to_msg);
+  auto& from = static_cast<const BatchUpdateRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:city.economy.v2.BatchUpdateRequest)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_impl_.orgs_.MergeFrom(from._impl_.orgs_);
+  _this->_impl_.agents_.MergeFrom(from._impl_.agents_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void BatchUpdateRequest::CopyFrom(const BatchUpdateRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:city.economy.v2.BatchUpdateRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool BatchUpdateRequest::IsInitialized() const {
+  return true;
+}
+
+void BatchUpdateRequest::InternalSwap(BatchUpdateRequest* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _impl_.orgs_.InternalSwap(&other->_impl_.orgs_);
+  _impl_.agents_.InternalSwap(&other->_impl_.agents_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata BatchUpdateRequest::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[122]);
+}
+
+// ===================================================================
+
+class BatchUpdateResponse::_Internal {
+ public:
+};
+
+BatchUpdateResponse::BatchUpdateResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
+  // @@protoc_insertion_point(arena_constructor:city.economy.v2.BatchUpdateResponse)
+}
+BatchUpdateResponse::BatchUpdateResponse(const BatchUpdateResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
+  BatchUpdateResponse* const _this = this; (void)_this;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:city.economy.v2.BatchUpdateResponse)
+}
+
+
+
+
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BatchUpdateResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BatchUpdateResponse::GetClassData() const { return &_class_data_; }
+
+
+
+
+
+
+
+::PROTOBUF_NAMESPACE_ID::Metadata BatchUpdateResponse::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[123]);
+}
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace v2
 }  // namespace economy
@@ -22697,6 +23511,22 @@ Arena::CreateMaybeMessage< ::city::economy::v2::UpdateAgentRequest >(Arena* aren
 template<> PROTOBUF_NOINLINE ::city::economy::v2::UpdateAgentResponse*
 Arena::CreateMaybeMessage< ::city::economy::v2::UpdateAgentResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::city::economy::v2::UpdateAgentResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::economy::v2::BatchGetRequest*
+Arena::CreateMaybeMessage< ::city::economy::v2::BatchGetRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::economy::v2::BatchGetRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::economy::v2::BatchGetResponse*
+Arena::CreateMaybeMessage< ::city::economy::v2::BatchGetResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::economy::v2::BatchGetResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::economy::v2::BatchUpdateRequest*
+Arena::CreateMaybeMessage< ::city::economy::v2::BatchUpdateRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::economy::v2::BatchUpdateRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::economy::v2::BatchUpdateResponse*
+Arena::CreateMaybeMessage< ::city::economy::v2::BatchUpdateResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::economy::v2::BatchUpdateResponse >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

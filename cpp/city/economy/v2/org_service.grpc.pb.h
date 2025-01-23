@@ -496,6 +496,22 @@ class OrgService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::UpdateAgentResponse>> PrepareAsyncUpdateAgent(::grpc::ClientContext* context, const ::city::economy::v2::UpdateAgentRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::UpdateAgentResponse>>(PrepareAsyncUpdateAgentRaw(context, request, cq));
     }
+    // 批量获取
+    virtual ::grpc::Status BatchGet(::grpc::ClientContext* context, const ::city::economy::v2::BatchGetRequest& request, ::city::economy::v2::BatchGetResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchGetResponse>> AsyncBatchGet(::grpc::ClientContext* context, const ::city::economy::v2::BatchGetRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchGetResponse>>(AsyncBatchGetRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchGetResponse>> PrepareAsyncBatchGet(::grpc::ClientContext* context, const ::city::economy::v2::BatchGetRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchGetResponse>>(PrepareAsyncBatchGetRaw(context, request, cq));
+    }
+    // 批量更新
+    virtual ::grpc::Status BatchUpdate(::grpc::ClientContext* context, const ::city::economy::v2::BatchUpdateRequest& request, ::city::economy::v2::BatchUpdateResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchUpdateResponse>> AsyncBatchUpdate(::grpc::ClientContext* context, const ::city::economy::v2::BatchUpdateRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchUpdateResponse>>(AsyncBatchUpdateRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchUpdateResponse>> PrepareAsyncBatchUpdate(::grpc::ClientContext* context, const ::city::economy::v2::BatchUpdateRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchUpdateResponse>>(PrepareAsyncBatchUpdateRaw(context, request, cq));
+    }
     class async_interface {
      public:
       virtual ~async_interface() {}
@@ -657,6 +673,12 @@ class OrgService final {
       virtual void GetAgent(::grpc::ClientContext* context, const ::city::economy::v2::GetAgentRequest* request, ::city::economy::v2::GetAgentResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       virtual void UpdateAgent(::grpc::ClientContext* context, const ::city::economy::v2::UpdateAgentRequest* request, ::city::economy::v2::UpdateAgentResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void UpdateAgent(::grpc::ClientContext* context, const ::city::economy::v2::UpdateAgentRequest* request, ::city::economy::v2::UpdateAgentResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // 批量获取
+      virtual void BatchGet(::grpc::ClientContext* context, const ::city::economy::v2::BatchGetRequest* request, ::city::economy::v2::BatchGetResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void BatchGet(::grpc::ClientContext* context, const ::city::economy::v2::BatchGetRequest* request, ::city::economy::v2::BatchGetResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // 批量更新
+      virtual void BatchUpdate(::grpc::ClientContext* context, const ::city::economy::v2::BatchUpdateRequest* request, ::city::economy::v2::BatchUpdateResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void BatchUpdate(::grpc::ClientContext* context, const ::city::economy::v2::BatchUpdateRequest* request, ::city::economy::v2::BatchUpdateResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
     };
     typedef class async_interface experimental_async_interface;
     virtual class async_interface* async() { return nullptr; }
@@ -782,6 +804,10 @@ class OrgService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::GetAgentResponse>* PrepareAsyncGetAgentRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetAgentRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::UpdateAgentResponse>* AsyncUpdateAgentRaw(::grpc::ClientContext* context, const ::city::economy::v2::UpdateAgentRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::UpdateAgentResponse>* PrepareAsyncUpdateAgentRaw(::grpc::ClientContext* context, const ::city::economy::v2::UpdateAgentRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchGetResponse>* AsyncBatchGetRaw(::grpc::ClientContext* context, const ::city::economy::v2::BatchGetRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchGetResponse>* PrepareAsyncBatchGetRaw(::grpc::ClientContext* context, const ::city::economy::v2::BatchGetRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchUpdateResponse>* AsyncBatchUpdateRaw(::grpc::ClientContext* context, const ::city::economy::v2::BatchUpdateRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchUpdateResponse>* PrepareAsyncBatchUpdateRaw(::grpc::ClientContext* context, const ::city::economy::v2::BatchUpdateRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -1206,6 +1232,20 @@ class OrgService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::UpdateAgentResponse>> PrepareAsyncUpdateAgent(::grpc::ClientContext* context, const ::city::economy::v2::UpdateAgentRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::UpdateAgentResponse>>(PrepareAsyncUpdateAgentRaw(context, request, cq));
     }
+    ::grpc::Status BatchGet(::grpc::ClientContext* context, const ::city::economy::v2::BatchGetRequest& request, ::city::economy::v2::BatchGetResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchGetResponse>> AsyncBatchGet(::grpc::ClientContext* context, const ::city::economy::v2::BatchGetRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchGetResponse>>(AsyncBatchGetRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchGetResponse>> PrepareAsyncBatchGet(::grpc::ClientContext* context, const ::city::economy::v2::BatchGetRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchGetResponse>>(PrepareAsyncBatchGetRaw(context, request, cq));
+    }
+    ::grpc::Status BatchUpdate(::grpc::ClientContext* context, const ::city::economy::v2::BatchUpdateRequest& request, ::city::economy::v2::BatchUpdateResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchUpdateResponse>> AsyncBatchUpdate(::grpc::ClientContext* context, const ::city::economy::v2::BatchUpdateRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchUpdateResponse>>(AsyncBatchUpdateRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchUpdateResponse>> PrepareAsyncBatchUpdate(::grpc::ClientContext* context, const ::city::economy::v2::BatchUpdateRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchUpdateResponse>>(PrepareAsyncBatchUpdateRaw(context, request, cq));
+    }
     class async final :
       public StubInterface::async_interface {
      public:
@@ -1329,6 +1369,10 @@ class OrgService final {
       void GetAgent(::grpc::ClientContext* context, const ::city::economy::v2::GetAgentRequest* request, ::city::economy::v2::GetAgentResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       void UpdateAgent(::grpc::ClientContext* context, const ::city::economy::v2::UpdateAgentRequest* request, ::city::economy::v2::UpdateAgentResponse* response, std::function<void(::grpc::Status)>) override;
       void UpdateAgent(::grpc::ClientContext* context, const ::city::economy::v2::UpdateAgentRequest* request, ::city::economy::v2::UpdateAgentResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void BatchGet(::grpc::ClientContext* context, const ::city::economy::v2::BatchGetRequest* request, ::city::economy::v2::BatchGetResponse* response, std::function<void(::grpc::Status)>) override;
+      void BatchGet(::grpc::ClientContext* context, const ::city::economy::v2::BatchGetRequest* request, ::city::economy::v2::BatchGetResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void BatchUpdate(::grpc::ClientContext* context, const ::city::economy::v2::BatchUpdateRequest* request, ::city::economy::v2::BatchUpdateResponse* response, std::function<void(::grpc::Status)>) override;
+      void BatchUpdate(::grpc::ClientContext* context, const ::city::economy::v2::BatchUpdateRequest* request, ::city::economy::v2::BatchUpdateResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
      private:
       friend class Stub;
       explicit async(Stub* stub): stub_(stub) { }
@@ -1460,6 +1504,10 @@ class OrgService final {
     ::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetAgentResponse>* PrepareAsyncGetAgentRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetAgentRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::city::economy::v2::UpdateAgentResponse>* AsyncUpdateAgentRaw(::grpc::ClientContext* context, const ::city::economy::v2::UpdateAgentRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::city::economy::v2::UpdateAgentResponse>* PrepareAsyncUpdateAgentRaw(::grpc::ClientContext* context, const ::city::economy::v2::UpdateAgentRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchGetResponse>* AsyncBatchGetRaw(::grpc::ClientContext* context, const ::city::economy::v2::BatchGetRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchGetResponse>* PrepareAsyncBatchGetRaw(::grpc::ClientContext* context, const ::city::economy::v2::BatchGetRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchUpdateResponse>* AsyncBatchUpdateRaw(::grpc::ClientContext* context, const ::city::economy::v2::BatchUpdateRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchUpdateResponse>* PrepareAsyncBatchUpdateRaw(::grpc::ClientContext* context, const ::city::economy::v2::BatchUpdateRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_AddOrg_;
     const ::grpc::internal::RpcMethod rpcmethod_RemoveOrg_;
     const ::grpc::internal::RpcMethod rpcmethod_GetOrg_;
@@ -1520,6 +1568,8 @@ class OrgService final {
     const ::grpc::internal::RpcMethod rpcmethod_RemoveCitizen_;
     const ::grpc::internal::RpcMethod rpcmethod_GetAgent_;
     const ::grpc::internal::RpcMethod rpcmethod_UpdateAgent_;
+    const ::grpc::internal::RpcMethod rpcmethod_BatchGet_;
+    const ::grpc::internal::RpcMethod rpcmethod_BatchUpdate_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -1625,6 +1675,10 @@ class OrgService final {
     // Agent 相关接口
     virtual ::grpc::Status GetAgent(::grpc::ServerContext* context, const ::city::economy::v2::GetAgentRequest* request, ::city::economy::v2::GetAgentResponse* response);
     virtual ::grpc::Status UpdateAgent(::grpc::ServerContext* context, const ::city::economy::v2::UpdateAgentRequest* request, ::city::economy::v2::UpdateAgentResponse* response);
+    // 批量获取
+    virtual ::grpc::Status BatchGet(::grpc::ServerContext* context, const ::city::economy::v2::BatchGetRequest* request, ::city::economy::v2::BatchGetResponse* response);
+    // 批量更新
+    virtual ::grpc::Status BatchUpdate(::grpc::ServerContext* context, const ::city::economy::v2::BatchUpdateRequest* request, ::city::economy::v2::BatchUpdateResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_AddOrg : public BaseClass {
@@ -2826,7 +2880,47 @@ class OrgService final {
       ::grpc::Service::RequestAsyncUnary(59, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_AddOrg<WithAsyncMethod_RemoveOrg<WithAsyncMethod_GetOrg<WithAsyncMethod_UpdateOrg<WithAsyncMethod_AddAgent<WithAsyncMethod_RemoveAgent<WithAsyncMethod_GetNominalGDP<WithAsyncMethod_SetNominalGDP<WithAsyncMethod_GetRealGDP<WithAsyncMethod_SetRealGDP<WithAsyncMethod_GetUnemployment<WithAsyncMethod_SetUnemployment<WithAsyncMethod_GetWages<WithAsyncMethod_SetWages<WithAsyncMethod_GetPrices<WithAsyncMethod_SetPrices<WithAsyncMethod_GetInventory<WithAsyncMethod_SetInventory<WithAsyncMethod_AddInventory<WithAsyncMethod_GetPrice<WithAsyncMethod_SetPrice<WithAsyncMethod_AddPrice<WithAsyncMethod_GetCurrency<WithAsyncMethod_SetCurrency<WithAsyncMethod_AddCurrency<WithAsyncMethod_GetInterestRate<WithAsyncMethod_SetInterestRate<WithAsyncMethod_AddInterestRate<WithAsyncMethod_GetBracketCutoffs<WithAsyncMethod_SetBracketCutoffs<WithAsyncMethod_GetBracketRates<WithAsyncMethod_SetBracketRates<WithAsyncMethod_CalculateTaxesDue<WithAsyncMethod_CalculateConsumption<WithAsyncMethod_CalculateInterest<WithAsyncMethod_SaveEconomyEntities<WithAsyncMethod_LoadEconomyEntities<WithAsyncMethod_GetConsumptionCurrency<WithAsyncMethod_SetConsumptionCurrency<WithAsyncMethod_GetConsumptionPropensity<WithAsyncMethod_SetConsumptionPropensity<WithAsyncMethod_GetIncomeCurrency<WithAsyncMethod_SetIncomeCurrency<WithAsyncMethod_GetDepression<WithAsyncMethod_SetDepression<WithAsyncMethod_GetLocusControl<WithAsyncMethod_SetLocusControl<WithAsyncMethod_GetWorkingHours<WithAsyncMethod_SetWorkingHours<WithAsyncMethod_GetOrgEntityIds<WithAsyncMethod_GetEmployees<WithAsyncMethod_SetEmployees<WithAsyncMethod_AddEmployee<WithAsyncMethod_RemoveEmployee<WithAsyncMethod_GetCitizens<WithAsyncMethod_SetCitizens<WithAsyncMethod_AddCitizen<WithAsyncMethod_RemoveCitizen<WithAsyncMethod_GetAgent<WithAsyncMethod_UpdateAgent<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_BatchGet : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_BatchGet() {
+      ::grpc::Service::MarkMethodAsync(60);
+    }
+    ~WithAsyncMethod_BatchGet() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status BatchGet(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchGetRequest* /*request*/, ::city::economy::v2::BatchGetResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestBatchGet(::grpc::ServerContext* context, ::city::economy::v2::BatchGetRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::BatchGetResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(60, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_BatchUpdate : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_BatchUpdate() {
+      ::grpc::Service::MarkMethodAsync(61);
+    }
+    ~WithAsyncMethod_BatchUpdate() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status BatchUpdate(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchUpdateRequest* /*request*/, ::city::economy::v2::BatchUpdateResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestBatchUpdate(::grpc::ServerContext* context, ::city::economy::v2::BatchUpdateRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::BatchUpdateResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(61, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_AddOrg<WithAsyncMethod_RemoveOrg<WithAsyncMethod_GetOrg<WithAsyncMethod_UpdateOrg<WithAsyncMethod_AddAgent<WithAsyncMethod_RemoveAgent<WithAsyncMethod_GetNominalGDP<WithAsyncMethod_SetNominalGDP<WithAsyncMethod_GetRealGDP<WithAsyncMethod_SetRealGDP<WithAsyncMethod_GetUnemployment<WithAsyncMethod_SetUnemployment<WithAsyncMethod_GetWages<WithAsyncMethod_SetWages<WithAsyncMethod_GetPrices<WithAsyncMethod_SetPrices<WithAsyncMethod_GetInventory<WithAsyncMethod_SetInventory<WithAsyncMethod_AddInventory<WithAsyncMethod_GetPrice<WithAsyncMethod_SetPrice<WithAsyncMethod_AddPrice<WithAsyncMethod_GetCurrency<WithAsyncMethod_SetCurrency<WithAsyncMethod_AddCurrency<WithAsyncMethod_GetInterestRate<WithAsyncMethod_SetInterestRate<WithAsyncMethod_AddInterestRate<WithAsyncMethod_GetBracketCutoffs<WithAsyncMethod_SetBracketCutoffs<WithAsyncMethod_GetBracketRates<WithAsyncMethod_SetBracketRates<WithAsyncMethod_CalculateTaxesDue<WithAsyncMethod_CalculateConsumption<WithAsyncMethod_CalculateInterest<WithAsyncMethod_SaveEconomyEntities<WithAsyncMethod_LoadEconomyEntities<WithAsyncMethod_GetConsumptionCurrency<WithAsyncMethod_SetConsumptionCurrency<WithAsyncMethod_GetConsumptionPropensity<WithAsyncMethod_SetConsumptionPropensity<WithAsyncMethod_GetIncomeCurrency<WithAsyncMethod_SetIncomeCurrency<WithAsyncMethod_GetDepression<WithAsyncMethod_SetDepression<WithAsyncMethod_GetLocusControl<WithAsyncMethod_SetLocusControl<WithAsyncMethod_GetWorkingHours<WithAsyncMethod_SetWorkingHours<WithAsyncMethod_GetOrgEntityIds<WithAsyncMethod_GetEmployees<WithAsyncMethod_SetEmployees<WithAsyncMethod_AddEmployee<WithAsyncMethod_RemoveEmployee<WithAsyncMethod_GetCitizens<WithAsyncMethod_SetCitizens<WithAsyncMethod_AddCitizen<WithAsyncMethod_RemoveCitizen<WithAsyncMethod_GetAgent<WithAsyncMethod_UpdateAgent<WithAsyncMethod_BatchGet<WithAsyncMethod_BatchUpdate<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > AsyncService;
   template <class BaseClass>
   class WithCallbackMethod_AddOrg : public BaseClass {
    private:
@@ -4447,7 +4541,61 @@ class OrgService final {
     virtual ::grpc::ServerUnaryReactor* UpdateAgent(
       ::grpc::CallbackServerContext* /*context*/, const ::city::economy::v2::UpdateAgentRequest* /*request*/, ::city::economy::v2::UpdateAgentResponse* /*response*/)  { return nullptr; }
   };
-  typedef WithCallbackMethod_AddOrg<WithCallbackMethod_RemoveOrg<WithCallbackMethod_GetOrg<WithCallbackMethod_UpdateOrg<WithCallbackMethod_AddAgent<WithCallbackMethod_RemoveAgent<WithCallbackMethod_GetNominalGDP<WithCallbackMethod_SetNominalGDP<WithCallbackMethod_GetRealGDP<WithCallbackMethod_SetRealGDP<WithCallbackMethod_GetUnemployment<WithCallbackMethod_SetUnemployment<WithCallbackMethod_GetWages<WithCallbackMethod_SetWages<WithCallbackMethod_GetPrices<WithCallbackMethod_SetPrices<WithCallbackMethod_GetInventory<WithCallbackMethod_SetInventory<WithCallbackMethod_AddInventory<WithCallbackMethod_GetPrice<WithCallbackMethod_SetPrice<WithCallbackMethod_AddPrice<WithCallbackMethod_GetCurrency<WithCallbackMethod_SetCurrency<WithCallbackMethod_AddCurrency<WithCallbackMethod_GetInterestRate<WithCallbackMethod_SetInterestRate<WithCallbackMethod_AddInterestRate<WithCallbackMethod_GetBracketCutoffs<WithCallbackMethod_SetBracketCutoffs<WithCallbackMethod_GetBracketRates<WithCallbackMethod_SetBracketRates<WithCallbackMethod_CalculateTaxesDue<WithCallbackMethod_CalculateConsumption<WithCallbackMethod_CalculateInterest<WithCallbackMethod_SaveEconomyEntities<WithCallbackMethod_LoadEconomyEntities<WithCallbackMethod_GetConsumptionCurrency<WithCallbackMethod_SetConsumptionCurrency<WithCallbackMethod_GetConsumptionPropensity<WithCallbackMethod_SetConsumptionPropensity<WithCallbackMethod_GetIncomeCurrency<WithCallbackMethod_SetIncomeCurrency<WithCallbackMethod_GetDepression<WithCallbackMethod_SetDepression<WithCallbackMethod_GetLocusControl<WithCallbackMethod_SetLocusControl<WithCallbackMethod_GetWorkingHours<WithCallbackMethod_SetWorkingHours<WithCallbackMethod_GetOrgEntityIds<WithCallbackMethod_GetEmployees<WithCallbackMethod_SetEmployees<WithCallbackMethod_AddEmployee<WithCallbackMethod_RemoveEmployee<WithCallbackMethod_GetCitizens<WithCallbackMethod_SetCitizens<WithCallbackMethod_AddCitizen<WithCallbackMethod_RemoveCitizen<WithCallbackMethod_GetAgent<WithCallbackMethod_UpdateAgent<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > CallbackService;
+  template <class BaseClass>
+  class WithCallbackMethod_BatchGet : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_BatchGet() {
+      ::grpc::Service::MarkMethodCallback(60,
+          new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::BatchGetRequest, ::city::economy::v2::BatchGetResponse>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::city::economy::v2::BatchGetRequest* request, ::city::economy::v2::BatchGetResponse* response) { return this->BatchGet(context, request, response); }));}
+    void SetMessageAllocatorFor_BatchGet(
+        ::grpc::MessageAllocator< ::city::economy::v2::BatchGetRequest, ::city::economy::v2::BatchGetResponse>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(60);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::BatchGetRequest, ::city::economy::v2::BatchGetResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_BatchGet() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status BatchGet(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchGetRequest* /*request*/, ::city::economy::v2::BatchGetResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* BatchGet(
+      ::grpc::CallbackServerContext* /*context*/, const ::city::economy::v2::BatchGetRequest* /*request*/, ::city::economy::v2::BatchGetResponse* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithCallbackMethod_BatchUpdate : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_BatchUpdate() {
+      ::grpc::Service::MarkMethodCallback(61,
+          new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::BatchUpdateRequest, ::city::economy::v2::BatchUpdateResponse>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::city::economy::v2::BatchUpdateRequest* request, ::city::economy::v2::BatchUpdateResponse* response) { return this->BatchUpdate(context, request, response); }));}
+    void SetMessageAllocatorFor_BatchUpdate(
+        ::grpc::MessageAllocator< ::city::economy::v2::BatchUpdateRequest, ::city::economy::v2::BatchUpdateResponse>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(61);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::BatchUpdateRequest, ::city::economy::v2::BatchUpdateResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_BatchUpdate() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status BatchUpdate(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchUpdateRequest* /*request*/, ::city::economy::v2::BatchUpdateResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* BatchUpdate(
+      ::grpc::CallbackServerContext* /*context*/, const ::city::economy::v2::BatchUpdateRequest* /*request*/, ::city::economy::v2::BatchUpdateResponse* /*response*/)  { return nullptr; }
+  };
+  typedef WithCallbackMethod_AddOrg<WithCallbackMethod_RemoveOrg<WithCallbackMethod_GetOrg<WithCallbackMethod_UpdateOrg<WithCallbackMethod_AddAgent<WithCallbackMethod_RemoveAgent<WithCallbackMethod_GetNominalGDP<WithCallbackMethod_SetNominalGDP<WithCallbackMethod_GetRealGDP<WithCallbackMethod_SetRealGDP<WithCallbackMethod_GetUnemployment<WithCallbackMethod_SetUnemployment<WithCallbackMethod_GetWages<WithCallbackMethod_SetWages<WithCallbackMethod_GetPrices<WithCallbackMethod_SetPrices<WithCallbackMethod_GetInventory<WithCallbackMethod_SetInventory<WithCallbackMethod_AddInventory<WithCallbackMethod_GetPrice<WithCallbackMethod_SetPrice<WithCallbackMethod_AddPrice<WithCallbackMethod_GetCurrency<WithCallbackMethod_SetCurrency<WithCallbackMethod_AddCurrency<WithCallbackMethod_GetInterestRate<WithCallbackMethod_SetInterestRate<WithCallbackMethod_AddInterestRate<WithCallbackMethod_GetBracketCutoffs<WithCallbackMethod_SetBracketCutoffs<WithCallbackMethod_GetBracketRates<WithCallbackMethod_SetBracketRates<WithCallbackMethod_CalculateTaxesDue<WithCallbackMethod_CalculateConsumption<WithCallbackMethod_CalculateInterest<WithCallbackMethod_SaveEconomyEntities<WithCallbackMethod_LoadEconomyEntities<WithCallbackMethod_GetConsumptionCurrency<WithCallbackMethod_SetConsumptionCurrency<WithCallbackMethod_GetConsumptionPropensity<WithCallbackMethod_SetConsumptionPropensity<WithCallbackMethod_GetIncomeCurrency<WithCallbackMethod_SetIncomeCurrency<WithCallbackMethod_GetDepression<WithCallbackMethod_SetDepression<WithCallbackMethod_GetLocusControl<WithCallbackMethod_SetLocusControl<WithCallbackMethod_GetWorkingHours<WithCallbackMethod_SetWorkingHours<WithCallbackMethod_GetOrgEntityIds<WithCallbackMethod_GetEmployees<WithCallbackMethod_SetEmployees<WithCallbackMethod_AddEmployee<WithCallbackMethod_RemoveEmployee<WithCallbackMethod_GetCitizens<WithCallbackMethod_SetCitizens<WithCallbackMethod_AddCitizen<WithCallbackMethod_RemoveCitizen<WithCallbackMethod_GetAgent<WithCallbackMethod_UpdateAgent<WithCallbackMethod_BatchGet<WithCallbackMethod_BatchUpdate<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > CallbackService;
   typedef CallbackService ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_AddOrg : public BaseClass {
@@ -5465,6 +5613,40 @@ class OrgService final {
     }
     // disable synchronous version of this method
     ::grpc::Status UpdateAgent(::grpc::ServerContext* /*context*/, const ::city::economy::v2::UpdateAgentRequest* /*request*/, ::city::economy::v2::UpdateAgentResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_BatchGet : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_BatchGet() {
+      ::grpc::Service::MarkMethodGeneric(60);
+    }
+    ~WithGenericMethod_BatchGet() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status BatchGet(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchGetRequest* /*request*/, ::city::economy::v2::BatchGetResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_BatchUpdate : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_BatchUpdate() {
+      ::grpc::Service::MarkMethodGeneric(61);
+    }
+    ~WithGenericMethod_BatchUpdate() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status BatchUpdate(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchUpdateRequest* /*request*/, ::city::economy::v2::BatchUpdateResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -6667,6 +6849,46 @@ class OrgService final {
     }
     void RequestUpdateAgent(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(59, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_BatchGet : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_BatchGet() {
+      ::grpc::Service::MarkMethodRaw(60);
+    }
+    ~WithRawMethod_BatchGet() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status BatchGet(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchGetRequest* /*request*/, ::city::economy::v2::BatchGetResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestBatchGet(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(60, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_BatchUpdate : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_BatchUpdate() {
+      ::grpc::Service::MarkMethodRaw(61);
+    }
+    ~WithRawMethod_BatchUpdate() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status BatchUpdate(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchUpdateRequest* /*request*/, ::city::economy::v2::BatchUpdateResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestBatchUpdate(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(61, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -7987,6 +8209,50 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     virtual ::grpc::ServerUnaryReactor* UpdateAgent(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_BatchGet : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_BatchGet() {
+      ::grpc::Service::MarkMethodRawCallback(60,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->BatchGet(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_BatchGet() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status BatchGet(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchGetRequest* /*request*/, ::city::economy::v2::BatchGetResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* BatchGet(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_BatchUpdate : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_BatchUpdate() {
+      ::grpc::Service::MarkMethodRawCallback(61,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->BatchUpdate(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_BatchUpdate() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status BatchUpdate(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchUpdateRequest* /*request*/, ::city::economy::v2::BatchUpdateResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* BatchUpdate(
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
@@ -9609,9 +9875,63 @@ class OrgService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedUpdateAgent(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::city::economy::v2::UpdateAgentRequest,::city::economy::v2::UpdateAgentResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_AddOrg<WithStreamedUnaryMethod_RemoveOrg<WithStreamedUnaryMethod_GetOrg<WithStreamedUnaryMethod_UpdateOrg<WithStreamedUnaryMethod_AddAgent<WithStreamedUnaryMethod_RemoveAgent<WithStreamedUnaryMethod_GetNominalGDP<WithStreamedUnaryMethod_SetNominalGDP<WithStreamedUnaryMethod_GetRealGDP<WithStreamedUnaryMethod_SetRealGDP<WithStreamedUnaryMethod_GetUnemployment<WithStreamedUnaryMethod_SetUnemployment<WithStreamedUnaryMethod_GetWages<WithStreamedUnaryMethod_SetWages<WithStreamedUnaryMethod_GetPrices<WithStreamedUnaryMethod_SetPrices<WithStreamedUnaryMethod_GetInventory<WithStreamedUnaryMethod_SetInventory<WithStreamedUnaryMethod_AddInventory<WithStreamedUnaryMethod_GetPrice<WithStreamedUnaryMethod_SetPrice<WithStreamedUnaryMethod_AddPrice<WithStreamedUnaryMethod_GetCurrency<WithStreamedUnaryMethod_SetCurrency<WithStreamedUnaryMethod_AddCurrency<WithStreamedUnaryMethod_GetInterestRate<WithStreamedUnaryMethod_SetInterestRate<WithStreamedUnaryMethod_AddInterestRate<WithStreamedUnaryMethod_GetBracketCutoffs<WithStreamedUnaryMethod_SetBracketCutoffs<WithStreamedUnaryMethod_GetBracketRates<WithStreamedUnaryMethod_SetBracketRates<WithStreamedUnaryMethod_CalculateTaxesDue<WithStreamedUnaryMethod_CalculateConsumption<WithStreamedUnaryMethod_CalculateInterest<WithStreamedUnaryMethod_SaveEconomyEntities<WithStreamedUnaryMethod_LoadEconomyEntities<WithStreamedUnaryMethod_GetConsumptionCurrency<WithStreamedUnaryMethod_SetConsumptionCurrency<WithStreamedUnaryMethod_GetConsumptionPropensity<WithStreamedUnaryMethod_SetConsumptionPropensity<WithStreamedUnaryMethod_GetIncomeCurrency<WithStreamedUnaryMethod_SetIncomeCurrency<WithStreamedUnaryMethod_GetDepression<WithStreamedUnaryMethod_SetDepression<WithStreamedUnaryMethod_GetLocusControl<WithStreamedUnaryMethod_SetLocusControl<WithStreamedUnaryMethod_GetWorkingHours<WithStreamedUnaryMethod_SetWorkingHours<WithStreamedUnaryMethod_GetOrgEntityIds<WithStreamedUnaryMethod_GetEmployees<WithStreamedUnaryMethod_SetEmployees<WithStreamedUnaryMethod_AddEmployee<WithStreamedUnaryMethod_RemoveEmployee<WithStreamedUnaryMethod_GetCitizens<WithStreamedUnaryMethod_SetCitizens<WithStreamedUnaryMethod_AddCitizen<WithStreamedUnaryMethod_RemoveCitizen<WithStreamedUnaryMethod_GetAgent<WithStreamedUnaryMethod_UpdateAgent<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_BatchGet : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_BatchGet() {
+      ::grpc::Service::MarkMethodStreamed(60,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::city::economy::v2::BatchGetRequest, ::city::economy::v2::BatchGetResponse>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::city::economy::v2::BatchGetRequest, ::city::economy::v2::BatchGetResponse>* streamer) {
+                       return this->StreamedBatchGet(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_BatchGet() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status BatchGet(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchGetRequest* /*request*/, ::city::economy::v2::BatchGetResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedBatchGet(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::city::economy::v2::BatchGetRequest,::city::economy::v2::BatchGetResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_BatchUpdate : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_BatchUpdate() {
+      ::grpc::Service::MarkMethodStreamed(61,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::city::economy::v2::BatchUpdateRequest, ::city::economy::v2::BatchUpdateResponse>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::city::economy::v2::BatchUpdateRequest, ::city::economy::v2::BatchUpdateResponse>* streamer) {
+                       return this->StreamedBatchUpdate(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_BatchUpdate() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status BatchUpdate(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchUpdateRequest* /*request*/, ::city::economy::v2::BatchUpdateResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedBatchUpdate(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::city::economy::v2::BatchUpdateRequest,::city::economy::v2::BatchUpdateResponse>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_AddOrg<WithStreamedUnaryMethod_RemoveOrg<WithStreamedUnaryMethod_GetOrg<WithStreamedUnaryMethod_UpdateOrg<WithStreamedUnaryMethod_AddAgent<WithStreamedUnaryMethod_RemoveAgent<WithStreamedUnaryMethod_GetNominalGDP<WithStreamedUnaryMethod_SetNominalGDP<WithStreamedUnaryMethod_GetRealGDP<WithStreamedUnaryMethod_SetRealGDP<WithStreamedUnaryMethod_GetUnemployment<WithStreamedUnaryMethod_SetUnemployment<WithStreamedUnaryMethod_GetWages<WithStreamedUnaryMethod_SetWages<WithStreamedUnaryMethod_GetPrices<WithStreamedUnaryMethod_SetPrices<WithStreamedUnaryMethod_GetInventory<WithStreamedUnaryMethod_SetInventory<WithStreamedUnaryMethod_AddInventory<WithStreamedUnaryMethod_GetPrice<WithStreamedUnaryMethod_SetPrice<WithStreamedUnaryMethod_AddPrice<WithStreamedUnaryMethod_GetCurrency<WithStreamedUnaryMethod_SetCurrency<WithStreamedUnaryMethod_AddCurrency<WithStreamedUnaryMethod_GetInterestRate<WithStreamedUnaryMethod_SetInterestRate<WithStreamedUnaryMethod_AddInterestRate<WithStreamedUnaryMethod_GetBracketCutoffs<WithStreamedUnaryMethod_SetBracketCutoffs<WithStreamedUnaryMethod_GetBracketRates<WithStreamedUnaryMethod_SetBracketRates<WithStreamedUnaryMethod_CalculateTaxesDue<WithStreamedUnaryMethod_CalculateConsumption<WithStreamedUnaryMethod_CalculateInterest<WithStreamedUnaryMethod_SaveEconomyEntities<WithStreamedUnaryMethod_LoadEconomyEntities<WithStreamedUnaryMethod_GetConsumptionCurrency<WithStreamedUnaryMethod_SetConsumptionCurrency<WithStreamedUnaryMethod_GetConsumptionPropensity<WithStreamedUnaryMethod_SetConsumptionPropensity<WithStreamedUnaryMethod_GetIncomeCurrency<WithStreamedUnaryMethod_SetIncomeCurrency<WithStreamedUnaryMethod_GetDepression<WithStreamedUnaryMethod_SetDepression<WithStreamedUnaryMethod_GetLocusControl<WithStreamedUnaryMethod_SetLocusControl<WithStreamedUnaryMethod_GetWorkingHours<WithStreamedUnaryMethod_SetWorkingHours<WithStreamedUnaryMethod_GetOrgEntityIds<WithStreamedUnaryMethod_GetEmployees<WithStreamedUnaryMethod_SetEmployees<WithStreamedUnaryMethod_AddEmployee<WithStreamedUnaryMethod_RemoveEmployee<WithStreamedUnaryMethod_GetCitizens<WithStreamedUnaryMethod_SetCitizens<WithStreamedUnaryMethod_AddCitizen<WithStreamedUnaryMethod_RemoveCitizen<WithStreamedUnaryMethod_GetAgent<WithStreamedUnaryMethod_UpdateAgent<WithStreamedUnaryMethod_BatchGet<WithStreamedUnaryMethod_BatchUpdate<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_AddOrg<WithStreamedUnaryMethod_RemoveOrg<WithStreamedUnaryMethod_GetOrg<WithStreamedUnaryMethod_UpdateOrg<WithStreamedUnaryMethod_AddAgent<WithStreamedUnaryMethod_RemoveAgent<WithStreamedUnaryMethod_GetNominalGDP<WithStreamedUnaryMethod_SetNominalGDP<WithStreamedUnaryMethod_GetRealGDP<WithStreamedUnaryMethod_SetRealGDP<WithStreamedUnaryMethod_GetUnemployment<WithStreamedUnaryMethod_SetUnemployment<WithStreamedUnaryMethod_GetWages<WithStreamedUnaryMethod_SetWages<WithStreamedUnaryMethod_GetPrices<WithStreamedUnaryMethod_SetPrices<WithStreamedUnaryMethod_GetInventory<WithStreamedUnaryMethod_SetInventory<WithStreamedUnaryMethod_AddInventory<WithStreamedUnaryMethod_GetPrice<WithStreamedUnaryMethod_SetPrice<WithStreamedUnaryMethod_AddPrice<WithStreamedUnaryMethod_GetCurrency<WithStreamedUnaryMethod_SetCurrency<WithStreamedUnaryMethod_AddCurrency<WithStreamedUnaryMethod_GetInterestRate<WithStreamedUnaryMethod_SetInterestRate<WithStreamedUnaryMethod_AddInterestRate<WithStreamedUnaryMethod_GetBracketCutoffs<WithStreamedUnaryMethod_SetBracketCutoffs<WithStreamedUnaryMethod_GetBracketRates<WithStreamedUnaryMethod_SetBracketRates<WithStreamedUnaryMethod_CalculateTaxesDue<WithStreamedUnaryMethod_CalculateConsumption<WithStreamedUnaryMethod_CalculateInterest<WithStreamedUnaryMethod_SaveEconomyEntities<WithStreamedUnaryMethod_LoadEconomyEntities<WithStreamedUnaryMethod_GetConsumptionCurrency<WithStreamedUnaryMethod_SetConsumptionCurrency<WithStreamedUnaryMethod_GetConsumptionPropensity<WithStreamedUnaryMethod_SetConsumptionPropensity<WithStreamedUnaryMethod_GetIncomeCurrency<WithStreamedUnaryMethod_SetIncomeCurrency<WithStreamedUnaryMethod_GetDepression<WithStreamedUnaryMethod_SetDepression<WithStreamedUnaryMethod_GetLocusControl<WithStreamedUnaryMethod_SetLocusControl<WithStreamedUnaryMethod_GetWorkingHours<WithStreamedUnaryMethod_SetWorkingHours<WithStreamedUnaryMethod_GetOrgEntityIds<WithStreamedUnaryMethod_GetEmployees<WithStreamedUnaryMethod_SetEmployees<WithStreamedUnaryMethod_AddEmployee<WithStreamedUnaryMethod_RemoveEmployee<WithStreamedUnaryMethod_GetCitizens<WithStreamedUnaryMethod_SetCitizens<WithStreamedUnaryMethod_AddCitizen<WithStreamedUnaryMethod_RemoveCitizen<WithStreamedUnaryMethod_GetAgent<WithStreamedUnaryMethod_UpdateAgent<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_AddOrg<WithStreamedUnaryMethod_RemoveOrg<WithStreamedUnaryMethod_GetOrg<WithStreamedUnaryMethod_UpdateOrg<WithStreamedUnaryMethod_AddAgent<WithStreamedUnaryMethod_RemoveAgent<WithStreamedUnaryMethod_GetNominalGDP<WithStreamedUnaryMethod_SetNominalGDP<WithStreamedUnaryMethod_GetRealGDP<WithStreamedUnaryMethod_SetRealGDP<WithStreamedUnaryMethod_GetUnemployment<WithStreamedUnaryMethod_SetUnemployment<WithStreamedUnaryMethod_GetWages<WithStreamedUnaryMethod_SetWages<WithStreamedUnaryMethod_GetPrices<WithStreamedUnaryMethod_SetPrices<WithStreamedUnaryMethod_GetInventory<WithStreamedUnaryMethod_SetInventory<WithStreamedUnaryMethod_AddInventory<WithStreamedUnaryMethod_GetPrice<WithStreamedUnaryMethod_SetPrice<WithStreamedUnaryMethod_AddPrice<WithStreamedUnaryMethod_GetCurrency<WithStreamedUnaryMethod_SetCurrency<WithStreamedUnaryMethod_AddCurrency<WithStreamedUnaryMethod_GetInterestRate<WithStreamedUnaryMethod_SetInterestRate<WithStreamedUnaryMethod_AddInterestRate<WithStreamedUnaryMethod_GetBracketCutoffs<WithStreamedUnaryMethod_SetBracketCutoffs<WithStreamedUnaryMethod_GetBracketRates<WithStreamedUnaryMethod_SetBracketRates<WithStreamedUnaryMethod_CalculateTaxesDue<WithStreamedUnaryMethod_CalculateConsumption<WithStreamedUnaryMethod_CalculateInterest<WithStreamedUnaryMethod_SaveEconomyEntities<WithStreamedUnaryMethod_LoadEconomyEntities<WithStreamedUnaryMethod_GetConsumptionCurrency<WithStreamedUnaryMethod_SetConsumptionCurrency<WithStreamedUnaryMethod_GetConsumptionPropensity<WithStreamedUnaryMethod_SetConsumptionPropensity<WithStreamedUnaryMethod_GetIncomeCurrency<WithStreamedUnaryMethod_SetIncomeCurrency<WithStreamedUnaryMethod_GetDepression<WithStreamedUnaryMethod_SetDepression<WithStreamedUnaryMethod_GetLocusControl<WithStreamedUnaryMethod_SetLocusControl<WithStreamedUnaryMethod_GetWorkingHours<WithStreamedUnaryMethod_SetWorkingHours<WithStreamedUnaryMethod_GetOrgEntityIds<WithStreamedUnaryMethod_GetEmployees<WithStreamedUnaryMethod_SetEmployees<WithStreamedUnaryMethod_AddEmployee<WithStreamedUnaryMethod_RemoveEmployee<WithStreamedUnaryMethod_GetCitizens<WithStreamedUnaryMethod_SetCitizens<WithStreamedUnaryMethod_AddCitizen<WithStreamedUnaryMethod_RemoveCitizen<WithStreamedUnaryMethod_GetAgent<WithStreamedUnaryMethod_UpdateAgent<WithStreamedUnaryMethod_BatchGet<WithStreamedUnaryMethod_BatchUpdate<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedService;
 };
 
 }  // namespace v2

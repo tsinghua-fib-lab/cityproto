@@ -147,6 +147,10 @@
     - [AddOrgResponse](#city-economy-v2-AddOrgResponse)
     - [AddPriceRequest](#city-economy-v2-AddPriceRequest)
     - [AddPriceResponse](#city-economy-v2-AddPriceResponse)
+    - [BatchGetRequest](#city-economy-v2-BatchGetRequest)
+    - [BatchGetResponse](#city-economy-v2-BatchGetResponse)
+    - [BatchUpdateRequest](#city-economy-v2-BatchUpdateRequest)
+    - [BatchUpdateResponse](#city-economy-v2-BatchUpdateResponse)
     - [CalculateConsumptionRequest](#city-economy-v2-CalculateConsumptionRequest)
     - [CalculateConsumptionResponse](#city-economy-v2-CalculateConsumptionResponse)
     - [CalculateInterestRequest](#city-economy-v2-CalculateInterestRequest)
@@ -2238,8 +2242,10 @@ Organization
 | depression | [float](#float) | repeated |  |
 | locus_control | [float](#float) | repeated |  |
 | working_hours | [float](#float) | repeated |  |
-| employees | [int32](#int32) | repeated | new： Firm: 企业的雇员列表 employees list for firm |
+| employees | [int32](#int32) | repeated | Firm: 企业的雇员列表 employees list for firm |
 | citizens | [int32](#int32) | repeated | NBS &amp; Government: 公民列表 citizens list for NBS and government |
+| demand | [int32](#int32) | optional | Firm: 总需求量 total demand for firm |
+| sales | [int32](#int32) | optional | Firm: 总销售量 total sales for firm |
 
 
 
@@ -2503,6 +2509,64 @@ Organization
 
 
 
+<a name="city-economy-v2-BatchGetRequest"></a>
+
+### BatchGetRequest
+批量获取和更新
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ids | [int32](#int32) | repeated | 要获取的 ID 列表 |
+| type | [string](#string) |  | &#34;org&#34; 或 &#34;agent&#34; |
+
+
+
+
+
+
+<a name="city-economy-v2-BatchGetResponse"></a>
+
+### BatchGetResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| orgs | [Org](#city-economy-v2-Org) | repeated |  |
+| agents | [Agent](#city-economy-v2-Agent) | repeated |  |
+
+
+
+
+
+
+<a name="city-economy-v2-BatchUpdateRequest"></a>
+
+### BatchUpdateRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| orgs | [Org](#city-economy-v2-Org) | repeated |  |
+| agents | [Agent](#city-economy-v2-Agent) | repeated |  |
+
+
+
+
+
+
+<a name="city-economy-v2-BatchUpdateResponse"></a>
+
+### BatchUpdateResponse
+
+
+
+
+
+
+
 <a name="city-economy-v2-CalculateConsumptionRequest"></a>
 
 ### CalculateConsumptionRequest
@@ -2511,9 +2575,9 @@ Organization
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| firm_id | [int32](#int32) |  |  |
-| agent_ids | [int32](#int32) | repeated | id of agents who has demand to consume at this firm |
-| demands | [int32](#int32) | repeated | item demand number of each agents, corresponds one-to-one with `agent_ids` by index |
+| firm_ids | [int32](#int32) | repeated | 多个公司ID |
+| agent_id | [int32](#int32) |  | 代理ID |
+| demands | [int32](#int32) | repeated | 对应每个公司的需求量 |
 
 
 
@@ -2528,8 +2592,7 @@ Organization
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| remain_inventory | [int32](#int32) |  | the item remaining count |
-| updated_currencies | [float](#float) | repeated | currencies after consumption of each agents, corresponds one-to-one with `agent_ids` by index |
+| actual_consumption | [float](#float) |  | 代理实际消费的钱 |
 
 
 
@@ -4043,6 +4106,8 @@ Working Hours
 | RemoveCitizen | [RemoveCitizenRequest](#city-economy-v2-RemoveCitizenRequest) | [RemoveCitizenResponse](#city-economy-v2-RemoveCitizenResponse) |  |
 | GetAgent | [GetAgentRequest](#city-economy-v2-GetAgentRequest) | [GetAgentResponse](#city-economy-v2-GetAgentResponse) | Agent 相关接口 |
 | UpdateAgent | [UpdateAgentRequest](#city-economy-v2-UpdateAgentRequest) | [UpdateAgentResponse](#city-economy-v2-UpdateAgentResponse) |  |
+| BatchGet | [BatchGetRequest](#city-economy-v2-BatchGetRequest) | [BatchGetResponse](#city-economy-v2-BatchGetResponse) | 批量获取 |
+| BatchUpdate | [BatchUpdateRequest](#city-economy-v2-BatchUpdateRequest) | [BatchUpdateResponse](#city-economy-v2-BatchUpdateResponse) | 批量更新 |
 
  
 

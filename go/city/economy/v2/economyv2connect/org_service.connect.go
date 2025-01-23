@@ -184,6 +184,10 @@ const (
 	OrgServiceGetAgentProcedure = "/city.economy.v2.OrgService/GetAgent"
 	// OrgServiceUpdateAgentProcedure is the fully-qualified name of the OrgService's UpdateAgent RPC.
 	OrgServiceUpdateAgentProcedure = "/city.economy.v2.OrgService/UpdateAgent"
+	// OrgServiceBatchGetProcedure is the fully-qualified name of the OrgService's BatchGet RPC.
+	OrgServiceBatchGetProcedure = "/city.economy.v2.OrgService/BatchGet"
+	// OrgServiceBatchUpdateProcedure is the fully-qualified name of the OrgService's BatchUpdate RPC.
+	OrgServiceBatchUpdateProcedure = "/city.economy.v2.OrgService/BatchUpdate"
 )
 
 // OrgServiceClient is a client for the city.economy.v2.OrgService service.
@@ -286,6 +290,10 @@ type OrgServiceClient interface {
 	// Agent 相关接口
 	GetAgent(context.Context, *connect.Request[v2.GetAgentRequest]) (*connect.Response[v2.GetAgentResponse], error)
 	UpdateAgent(context.Context, *connect.Request[v2.UpdateAgentRequest]) (*connect.Response[v2.UpdateAgentResponse], error)
+	// 批量获取
+	BatchGet(context.Context, *connect.Request[v2.BatchGetRequest]) (*connect.Response[v2.BatchGetResponse], error)
+	// 批量更新
+	BatchUpdate(context.Context, *connect.Request[v2.BatchUpdateRequest]) (*connect.Response[v2.BatchUpdateResponse], error)
 }
 
 // NewOrgServiceClient constructs a client for the city.economy.v2.OrgService service. By default,
@@ -659,6 +667,18 @@ func NewOrgServiceClient(httpClient connect.HTTPClient, baseURL string, opts ...
 			connect.WithSchema(orgServiceMethods.ByName("UpdateAgent")),
 			connect.WithClientOptions(opts...),
 		),
+		batchGet: connect.NewClient[v2.BatchGetRequest, v2.BatchGetResponse](
+			httpClient,
+			baseURL+OrgServiceBatchGetProcedure,
+			connect.WithSchema(orgServiceMethods.ByName("BatchGet")),
+			connect.WithClientOptions(opts...),
+		),
+		batchUpdate: connect.NewClient[v2.BatchUpdateRequest, v2.BatchUpdateResponse](
+			httpClient,
+			baseURL+OrgServiceBatchUpdateProcedure,
+			connect.WithSchema(orgServiceMethods.ByName("BatchUpdate")),
+			connect.WithClientOptions(opts...),
+		),
 	}
 }
 
@@ -724,6 +744,8 @@ type orgServiceClient struct {
 	removeCitizen            *connect.Client[v2.RemoveCitizenRequest, v2.RemoveCitizenResponse]
 	getAgent                 *connect.Client[v2.GetAgentRequest, v2.GetAgentResponse]
 	updateAgent              *connect.Client[v2.UpdateAgentRequest, v2.UpdateAgentResponse]
+	batchGet                 *connect.Client[v2.BatchGetRequest, v2.BatchGetResponse]
+	batchUpdate              *connect.Client[v2.BatchUpdateRequest, v2.BatchUpdateResponse]
 }
 
 // AddOrg calls city.economy.v2.OrgService.AddOrg.
@@ -1026,6 +1048,16 @@ func (c *orgServiceClient) UpdateAgent(ctx context.Context, req *connect.Request
 	return c.updateAgent.CallUnary(ctx, req)
 }
 
+// BatchGet calls city.economy.v2.OrgService.BatchGet.
+func (c *orgServiceClient) BatchGet(ctx context.Context, req *connect.Request[v2.BatchGetRequest]) (*connect.Response[v2.BatchGetResponse], error) {
+	return c.batchGet.CallUnary(ctx, req)
+}
+
+// BatchUpdate calls city.economy.v2.OrgService.BatchUpdate.
+func (c *orgServiceClient) BatchUpdate(ctx context.Context, req *connect.Request[v2.BatchUpdateRequest]) (*connect.Response[v2.BatchUpdateResponse], error) {
+	return c.batchUpdate.CallUnary(ctx, req)
+}
+
 // OrgServiceHandler is an implementation of the city.economy.v2.OrgService service.
 type OrgServiceHandler interface {
 	// 添加组织
@@ -1126,6 +1158,10 @@ type OrgServiceHandler interface {
 	// Agent 相关接口
 	GetAgent(context.Context, *connect.Request[v2.GetAgentRequest]) (*connect.Response[v2.GetAgentResponse], error)
 	UpdateAgent(context.Context, *connect.Request[v2.UpdateAgentRequest]) (*connect.Response[v2.UpdateAgentResponse], error)
+	// 批量获取
+	BatchGet(context.Context, *connect.Request[v2.BatchGetRequest]) (*connect.Response[v2.BatchGetResponse], error)
+	// 批量更新
+	BatchUpdate(context.Context, *connect.Request[v2.BatchUpdateRequest]) (*connect.Response[v2.BatchUpdateResponse], error)
 }
 
 // NewOrgServiceHandler builds an HTTP handler from the service implementation. It returns the path
@@ -1495,6 +1531,18 @@ func NewOrgServiceHandler(svc OrgServiceHandler, opts ...connect.HandlerOption) 
 		connect.WithSchema(orgServiceMethods.ByName("UpdateAgent")),
 		connect.WithHandlerOptions(opts...),
 	)
+	orgServiceBatchGetHandler := connect.NewUnaryHandler(
+		OrgServiceBatchGetProcedure,
+		svc.BatchGet,
+		connect.WithSchema(orgServiceMethods.ByName("BatchGet")),
+		connect.WithHandlerOptions(opts...),
+	)
+	orgServiceBatchUpdateHandler := connect.NewUnaryHandler(
+		OrgServiceBatchUpdateProcedure,
+		svc.BatchUpdate,
+		connect.WithSchema(orgServiceMethods.ByName("BatchUpdate")),
+		connect.WithHandlerOptions(opts...),
+	)
 	return "/city.economy.v2.OrgService/", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		switch r.URL.Path {
 		case OrgServiceAddOrgProcedure:
@@ -1617,6 +1665,10 @@ func NewOrgServiceHandler(svc OrgServiceHandler, opts ...connect.HandlerOption) 
 			orgServiceGetAgentHandler.ServeHTTP(w, r)
 		case OrgServiceUpdateAgentProcedure:
 			orgServiceUpdateAgentHandler.ServeHTTP(w, r)
+		case OrgServiceBatchGetProcedure:
+			orgServiceBatchGetHandler.ServeHTTP(w, r)
+		case OrgServiceBatchUpdateProcedure:
+			orgServiceBatchUpdateHandler.ServeHTTP(w, r)
 		default:
 			http.NotFound(w, r)
 		}
@@ -1864,4 +1916,12 @@ func (UnimplementedOrgServiceHandler) GetAgent(context.Context, *connect.Request
 
 func (UnimplementedOrgServiceHandler) UpdateAgent(context.Context, *connect.Request[v2.UpdateAgentRequest]) (*connect.Response[v2.UpdateAgentResponse], error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.UpdateAgent is not implemented"))
+}
+
+func (UnimplementedOrgServiceHandler) BatchGet(context.Context, *connect.Request[v2.BatchGetRequest]) (*connect.Response[v2.BatchGetResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.BatchGet is not implemented"))
+}
+
+func (UnimplementedOrgServiceHandler) BatchUpdate(context.Context, *connect.Request[v2.BatchUpdateRequest]) (*connect.Response[v2.BatchUpdateResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.BatchUpdate is not implemented"))
 }

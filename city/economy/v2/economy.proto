@@ -68,13 +68,18 @@ message Org {
   repeated float locus_control = 18;
   //
   repeated float working_hours = 19;
-  // new：
   // Firm: 企业的雇员列表
   // employees list for firm
   repeated int32 employees = 20;
   // NBS & Government: 公民列表
   // citizens list for NBS and government
   repeated int32 citizens = 21;
+  // Firm: 总需求量
+  // total demand for firm
+  optional int32 demand = 22;
+  // Firm: 总销售量
+  // total sales for firm
+  optional int32 sales = 23;
 }
 
 message Agent {

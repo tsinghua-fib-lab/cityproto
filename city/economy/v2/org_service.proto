@@ -125,6 +125,12 @@ service OrgService {
   // Agent 相关接口
   rpc GetAgent(GetAgentRequest) returns (GetAgentResponse);
   rpc UpdateAgent(UpdateAgentRequest) returns (UpdateAgentResponse);
+
+  // 批量获取
+  rpc BatchGet(BatchGetRequest) returns (BatchGetResponse) {}
+  
+  // 批量更新
+  rpc BatchUpdate(BatchUpdateRequest) returns (BatchUpdateResponse) {}
 }
 
 message AddOrgRequest {
@@ -325,18 +331,13 @@ message CalculateTaxesDueResponse {
 // consumption
 
 message CalculateConsumptionRequest {
-  int32 firm_id = 1;
-  // id of agents who has demand to consume at this firm
-  repeated int32 agent_ids = 2;
-  // item demand number of each agents, corresponds one-to-one with `agent_ids` by index
-  repeated int32 demands = 3;
+  repeated int32 firm_ids = 1;  // 多个公司ID
+  int32 agent_id = 2;          // 代理ID
+  repeated int32 demands = 3;   // 对应每个公司的需求量
 }
 
 message CalculateConsumptionResponse {
-  // the item remaining count
-  int32 remain_inventory = 1;
-  // currencies after consumption of each agents, corresponds one-to-one with `agent_ids` by index
-  repeated float updated_currencies = 2;
+  float actual_consumption = 1;  // 代理实际消费的钱
 }
 
 // bank interest calculation
@@ -568,3 +569,21 @@ message UpdateAgentRequest {
 }
 
 message UpdateAgentResponse {}
+
+// 批量获取和更新
+message BatchGetRequest {
+  repeated int32 ids = 1;  // 要获取的 ID 列表
+  string type = 2;        // "org" 或 "agent"
+}
+
+message BatchGetResponse {
+  repeated Org orgs = 1;
+  repeated Agent agents = 2;
+}
+
+message BatchUpdateRequest {
+  repeated Org orgs = 1;
+  repeated Agent agents = 2;
+}
+
+message BatchUpdateResponse {}

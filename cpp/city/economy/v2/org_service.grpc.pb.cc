@@ -84,6 +84,8 @@ static const char* OrgService_method_names[] = {
   "/city.economy.v2.OrgService/RemoveCitizen",
   "/city.economy.v2.OrgService/GetAgent",
   "/city.economy.v2.OrgService/UpdateAgent",
+  "/city.economy.v2.OrgService/BatchGet",
+  "/city.economy.v2.OrgService/BatchUpdate",
 };
 
 std::unique_ptr< OrgService::Stub> OrgService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -153,6 +155,8 @@ OrgService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel
   , rpcmethod_RemoveCitizen_(OrgService_method_names[57], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GetAgent_(OrgService_method_names[58], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_UpdateAgent_(OrgService_method_names[59], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_BatchGet_(OrgService_method_names[60], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_BatchUpdate_(OrgService_method_names[61], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status OrgService::Stub::AddOrg(::grpc::ClientContext* context, const ::city::economy::v2::AddOrgRequest& request, ::city::economy::v2::AddOrgResponse* response) {
@@ -1535,6 +1539,52 @@ void OrgService::Stub::async::UpdateAgent(::grpc::ClientContext* context, const 
   return result;
 }
 
+::grpc::Status OrgService::Stub::BatchGet(::grpc::ClientContext* context, const ::city::economy::v2::BatchGetRequest& request, ::city::economy::v2::BatchGetResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::BatchGetRequest, ::city::economy::v2::BatchGetResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_BatchGet_, context, request, response);
+}
+
+void OrgService::Stub::async::BatchGet(::grpc::ClientContext* context, const ::city::economy::v2::BatchGetRequest* request, ::city::economy::v2::BatchGetResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::BatchGetRequest, ::city::economy::v2::BatchGetResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_BatchGet_, context, request, response, std::move(f));
+}
+
+void OrgService::Stub::async::BatchGet(::grpc::ClientContext* context, const ::city::economy::v2::BatchGetRequest* request, ::city::economy::v2::BatchGetResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_BatchGet_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchGetResponse>* OrgService::Stub::PrepareAsyncBatchGetRaw(::grpc::ClientContext* context, const ::city::economy::v2::BatchGetRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::BatchGetResponse, ::city::economy::v2::BatchGetRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_BatchGet_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchGetResponse>* OrgService::Stub::AsyncBatchGetRaw(::grpc::ClientContext* context, const ::city::economy::v2::BatchGetRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncBatchGetRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status OrgService::Stub::BatchUpdate(::grpc::ClientContext* context, const ::city::economy::v2::BatchUpdateRequest& request, ::city::economy::v2::BatchUpdateResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::BatchUpdateRequest, ::city::economy::v2::BatchUpdateResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_BatchUpdate_, context, request, response);
+}
+
+void OrgService::Stub::async::BatchUpdate(::grpc::ClientContext* context, const ::city::economy::v2::BatchUpdateRequest* request, ::city::economy::v2::BatchUpdateResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::BatchUpdateRequest, ::city::economy::v2::BatchUpdateResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_BatchUpdate_, context, request, response, std::move(f));
+}
+
+void OrgService::Stub::async::BatchUpdate(::grpc::ClientContext* context, const ::city::economy::v2::BatchUpdateRequest* request, ::city::economy::v2::BatchUpdateResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_BatchUpdate_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchUpdateResponse>* OrgService::Stub::PrepareAsyncBatchUpdateRaw(::grpc::ClientContext* context, const ::city::economy::v2::BatchUpdateRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::BatchUpdateResponse, ::city::economy::v2::BatchUpdateRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_BatchUpdate_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchUpdateResponse>* OrgService::Stub::AsyncBatchUpdateRaw(::grpc::ClientContext* context, const ::city::economy::v2::BatchUpdateRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncBatchUpdateRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
 OrgService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       OrgService_method_names[0],
@@ -2136,6 +2186,26 @@ OrgService::Service::Service() {
              ::city::economy::v2::UpdateAgentResponse* resp) {
                return service->UpdateAgent(ctx, req, resp);
              }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      OrgService_method_names[60],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::BatchGetRequest, ::city::economy::v2::BatchGetResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](OrgService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::city::economy::v2::BatchGetRequest* req,
+             ::city::economy::v2::BatchGetResponse* resp) {
+               return service->BatchGet(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      OrgService_method_names[61],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::BatchUpdateRequest, ::city::economy::v2::BatchUpdateResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](OrgService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::city::economy::v2::BatchUpdateRequest* req,
+             ::city::economy::v2::BatchUpdateResponse* resp) {
+               return service->BatchUpdate(ctx, req, resp);
+             }, this)));
 }
 
 OrgService::Service::~Service() {
@@ -2555,6 +2625,20 @@ OrgService::Service::~Service() {
 }
 
 ::grpc::Status OrgService::Service::UpdateAgent(::grpc::ServerContext* context, const ::city::economy::v2::UpdateAgentRequest* request, ::city::economy::v2::UpdateAgentResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status OrgService::Service::BatchGet(::grpc::ServerContext* context, const ::city::economy::v2::BatchGetRequest* request, ::city::economy::v2::BatchGetResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status OrgService::Service::BatchUpdate(::grpc::ServerContext* context, const ::city::economy::v2::BatchUpdateRequest* request, ::city::economy::v2::BatchUpdateResponse* response) {
   (void) context;
   (void) request;
   (void) response;

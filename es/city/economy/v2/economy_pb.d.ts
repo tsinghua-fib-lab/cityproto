@@ -178,7 +178,6 @@ export declare class Org extends Message<Org> {
   workingHours: number[];
 
   /**
-   * new：
    * Firm: 企业的雇员列表
    * employees list for firm
    *
@@ -193,6 +192,22 @@ export declare class Org extends Message<Org> {
    * @generated from field: repeated int32 citizens = 21;
    */
   citizens: number[];
+
+  /**
+   * Firm: 总需求量
+   * total demand for firm
+   *
+   * @generated from field: optional int32 demand = 22;
+   */
+  demand?: number;
+
+  /**
+   * Firm: 总销售量
+   * total sales for firm
+   *
+   * @generated from field: optional int32 sales = 23;
+   */
+  sales?: number;
 
   constructor(data?: PartialMessage<Org>);
 

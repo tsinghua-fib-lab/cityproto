@@ -468,25 +468,23 @@ class CalculateTaxesDueResponse(_message.Message):
         ...
 
 class CalculateConsumptionRequest(_message.Message):
-    __slots__ = ['firm_id', 'agent_ids', 'demands']
-    FIRM_ID_FIELD_NUMBER: _ClassVar[int]
-    AGENT_IDS_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ['firm_ids', 'agent_id', 'demands']
+    FIRM_IDS_FIELD_NUMBER: _ClassVar[int]
+    AGENT_ID_FIELD_NUMBER: _ClassVar[int]
     DEMANDS_FIELD_NUMBER: _ClassVar[int]
-    firm_id: int
-    agent_ids: _containers.RepeatedScalarFieldContainer[int]
+    firm_ids: _containers.RepeatedScalarFieldContainer[int]
+    agent_id: int
     demands: _containers.RepeatedScalarFieldContainer[int]
 
-    def __init__(self, firm_id: _Optional[int]=..., agent_ids: _Optional[_Iterable[int]]=..., demands: _Optional[_Iterable[int]]=...) -> None:
+    def __init__(self, firm_ids: _Optional[_Iterable[int]]=..., agent_id: _Optional[int]=..., demands: _Optional[_Iterable[int]]=...) -> None:
         ...
 
 class CalculateConsumptionResponse(_message.Message):
-    __slots__ = ['remain_inventory', 'updated_currencies']
-    REMAIN_INVENTORY_FIELD_NUMBER: _ClassVar[int]
-    UPDATED_CURRENCIES_FIELD_NUMBER: _ClassVar[int]
-    remain_inventory: int
-    updated_currencies: _containers.RepeatedScalarFieldContainer[float]
+    __slots__ = ['actual_consumption']
+    ACTUAL_CONSUMPTION_FIELD_NUMBER: _ClassVar[int]
+    actual_consumption: float
 
-    def __init__(self, remain_inventory: _Optional[int]=..., updated_currencies: _Optional[_Iterable[float]]=...) -> None:
+    def __init__(self, actual_consumption: _Optional[float]=...) -> None:
         ...
 
 class CalculateInterestRequest(_message.Message):
@@ -978,6 +976,42 @@ class UpdateAgentRequest(_message.Message):
         ...
 
 class UpdateAgentResponse(_message.Message):
+    __slots__ = []
+
+    def __init__(self) -> None:
+        ...
+
+class BatchGetRequest(_message.Message):
+    __slots__ = ['ids', 'type']
+    IDS_FIELD_NUMBER: _ClassVar[int]
+    TYPE_FIELD_NUMBER: _ClassVar[int]
+    ids: _containers.RepeatedScalarFieldContainer[int]
+    type: str
+
+    def __init__(self, ids: _Optional[_Iterable[int]]=..., type: _Optional[str]=...) -> None:
+        ...
+
+class BatchGetResponse(_message.Message):
+    __slots__ = ['orgs', 'agents']
+    ORGS_FIELD_NUMBER: _ClassVar[int]
+    AGENTS_FIELD_NUMBER: _ClassVar[int]
+    orgs: _containers.RepeatedCompositeFieldContainer[_economy_pb2.Org]
+    agents: _containers.RepeatedCompositeFieldContainer[_economy_pb2.Agent]
+
+    def __init__(self, orgs: _Optional[_Iterable[_Union[_economy_pb2.Org, _Mapping]]]=..., agents: _Optional[_Iterable[_Union[_economy_pb2.Agent, _Mapping]]]=...) -> None:
+        ...
+
+class BatchUpdateRequest(_message.Message):
+    __slots__ = ['orgs', 'agents']
+    ORGS_FIELD_NUMBER: _ClassVar[int]
+    AGENTS_FIELD_NUMBER: _ClassVar[int]
+    orgs: _containers.RepeatedCompositeFieldContainer[_economy_pb2.Org]
+    agents: _containers.RepeatedCompositeFieldContainer[_economy_pb2.Agent]
+
+    def __init__(self, orgs: _Optional[_Iterable[_Union[_economy_pb2.Org, _Mapping]]]=..., agents: _Optional[_Iterable[_Union[_economy_pb2.Agent, _Mapping]]]=...) -> None:
+        ...
+
+class BatchUpdateResponse(_message.Message):
     __slots__ = []
 
     def __init__(self) -> None:
