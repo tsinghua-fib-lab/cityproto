@@ -135,7 +135,7 @@ service OrgService {
   // 增量更新
   rpc DeltaUpdateOrg(DeltaUpdateOrgRequest) returns (DeltaUpdateOrgResponse) {}
   rpc DeltaUpdateAgent(DeltaUpdateAgentRequest) returns (DeltaUpdateAgentResponse) {}
-  
+
   // 批量增量更新
   rpc BatchDeltaUpdate(BatchDeltaUpdateRequest) returns (BatchDeltaUpdateResponse) {}
 
@@ -348,6 +348,7 @@ message CalculateConsumptionRequest {
 
 message CalculateConsumptionResponse {
   float actual_consumption = 1; // 代理实际消费的钱
+  bool success = 2;            // 消费是否成功
 }
 
 // bank interest calculation
@@ -631,9 +632,9 @@ message BatchDeltaUpdateResponse {}
 
 // 计算实际GDP的请求和响应消息
 message CalculateRealGDPRequest {
-  int32 nbs_agent_id = 1;  // NBS Agent的ID
+  int32 nbs_agent_id = 1; // NBS Agent的ID
 }
 
 message CalculateRealGDPResponse {
-  float real_gdp = 1;      // 计算得到的实际GDP
+  float real_gdp = 1; // 计算得到的实际GDP
 }

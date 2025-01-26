@@ -480,11 +480,13 @@ class CalculateConsumptionRequest(_message.Message):
         ...
 
 class CalculateConsumptionResponse(_message.Message):
-    __slots__ = ['actual_consumption']
+    __slots__ = ['actual_consumption', 'success']
     ACTUAL_CONSUMPTION_FIELD_NUMBER: _ClassVar[int]
+    SUCCESS_FIELD_NUMBER: _ClassVar[int]
     actual_consumption: float
+    success: bool
 
-    def __init__(self, actual_consumption: _Optional[float]=...) -> None:
+    def __init__(self, actual_consumption: _Optional[float]=..., success: bool=...) -> None:
         ...
 
 class CalculateInterestRequest(_message.Message):

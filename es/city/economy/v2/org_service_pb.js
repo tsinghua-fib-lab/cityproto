@@ -590,6 +590,7 @@ export const CalculateConsumptionResponse = /*@__PURE__*/ proto3.makeMessageType
   "city.economy.v2.CalculateConsumptionResponse",
   () => [
     { no: 1, name: "actual_consumption", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
+    { no: 2, name: "success", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 

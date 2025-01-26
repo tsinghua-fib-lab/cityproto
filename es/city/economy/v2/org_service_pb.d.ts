@@ -1457,6 +1457,13 @@ export declare class CalculateConsumptionResponse extends Message<CalculateConsu
    */
   actualConsumption: number;
 
+  /**
+   * 消费是否成功
+   *
+   * @generated from field: bool success = 2;
+   */
+  success: boolean;
+
   constructor(data?: PartialMessage<CalculateConsumptionResponse>);
 
   static readonly runtime: typeof proto3;

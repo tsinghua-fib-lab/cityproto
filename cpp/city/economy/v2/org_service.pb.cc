@@ -781,6 +781,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORIT
 PROTOBUF_CONSTEXPR CalculateConsumptionResponse::CalculateConsumptionResponse(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.actual_consumption_)*/0
+  , /*decltype(_impl_.success_)*/false
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct CalculateConsumptionResponseDefaultTypeInternal {
   PROTOBUF_CONSTEXPR CalculateConsumptionResponseDefaultTypeInternal()
@@ -2171,6 +2172,7 @@ const uint32_t TableStruct_city_2feconomy_2fv2_2forg_5fservice_2eproto::offsets[
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::CalculateConsumptionResponse, _impl_.actual_consumption_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::CalculateConsumptionResponse, _impl_.success_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::CalculateInterestRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -2766,78 +2768,78 @@ static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protode
   { 397, -1, -1, sizeof(::city::economy::v2::CalculateTaxesDueResponse)},
   { 405, -1, -1, sizeof(::city::economy::v2::CalculateConsumptionRequest)},
   { 414, -1, -1, sizeof(::city::economy::v2::CalculateConsumptionResponse)},
-  { 421, -1, -1, sizeof(::city::economy::v2::CalculateInterestRequest)},
-  { 429, -1, -1, sizeof(::city::economy::v2::CalculateInterestResponse)},
-  { 437, -1, -1, sizeof(::city::economy::v2::SaveEconomyEntitiesRequest)},
-  { 444, -1, -1, sizeof(::city::economy::v2::SaveEconomyEntitiesResponse)},
-  { 452, -1, -1, sizeof(::city::economy::v2::LoadEconomyEntitiesRequest)},
-  { 459, -1, -1, sizeof(::city::economy::v2::LoadEconomyEntitiesResponse)},
-  { 467, -1, -1, sizeof(::city::economy::v2::GetConsumptionCurrencyRequest)},
-  { 474, -1, -1, sizeof(::city::economy::v2::GetConsumptionCurrencyResponse)},
-  { 481, -1, -1, sizeof(::city::economy::v2::SetConsumptionCurrencyRequest)},
-  { 489, -1, -1, sizeof(::city::economy::v2::SetConsumptionCurrencyResponse)},
-  { 495, -1, -1, sizeof(::city::economy::v2::GetConsumptionPropensityRequest)},
-  { 502, -1, -1, sizeof(::city::economy::v2::GetConsumptionPropensityResponse)},
-  { 509, -1, -1, sizeof(::city::economy::v2::SetConsumptionPropensityRequest)},
-  { 517, -1, -1, sizeof(::city::economy::v2::SetConsumptionPropensityResponse)},
-  { 523, -1, -1, sizeof(::city::economy::v2::GetIncomeCurrencyRequest)},
-  { 530, -1, -1, sizeof(::city::economy::v2::GetIncomeCurrencyResponse)},
-  { 537, -1, -1, sizeof(::city::economy::v2::SetIncomeCurrencyRequest)},
-  { 545, -1, -1, sizeof(::city::economy::v2::SetIncomeCurrencyResponse)},
-  { 551, -1, -1, sizeof(::city::economy::v2::GetDepressionRequest)},
-  { 558, -1, -1, sizeof(::city::economy::v2::GetDepressionResponse)},
-  { 565, -1, -1, sizeof(::city::economy::v2::SetDepressionRequest)},
-  { 573, -1, -1, sizeof(::city::economy::v2::SetDepressionResponse)},
-  { 579, -1, -1, sizeof(::city::economy::v2::GetLocusControlRequest)},
-  { 586, -1, -1, sizeof(::city::economy::v2::GetLocusControlResponse)},
-  { 593, -1, -1, sizeof(::city::economy::v2::SetLocusControlRequest)},
-  { 601, -1, -1, sizeof(::city::economy::v2::SetLocusControlResponse)},
-  { 607, -1, -1, sizeof(::city::economy::v2::GetWorkingHoursRequest)},
-  { 614, -1, -1, sizeof(::city::economy::v2::GetWorkingHoursResponse)},
-  { 621, -1, -1, sizeof(::city::economy::v2::SetWorkingHoursRequest)},
-  { 629, -1, -1, sizeof(::city::economy::v2::SetWorkingHoursResponse)},
-  { 635, -1, -1, sizeof(::city::economy::v2::GetOrgEntityIdsRequest)},
-  { 642, -1, -1, sizeof(::city::economy::v2::GetOrgEntityIdsResponse)},
-  { 649, -1, -1, sizeof(::city::economy::v2::AddInventoryRequest)},
-  { 657, -1, -1, sizeof(::city::economy::v2::AddInventoryResponse)},
-  { 664, -1, -1, sizeof(::city::economy::v2::AddPriceRequest)},
-  { 672, -1, -1, sizeof(::city::economy::v2::AddPriceResponse)},
-  { 679, -1, -1, sizeof(::city::economy::v2::AddCurrencyRequest)},
-  { 687, -1, -1, sizeof(::city::economy::v2::AddCurrencyResponse)},
-  { 694, -1, -1, sizeof(::city::economy::v2::AddInterestRateRequest)},
-  { 702, -1, -1, sizeof(::city::economy::v2::AddInterestRateResponse)},
-  { 709, -1, -1, sizeof(::city::economy::v2::GetEmployeesRequest)},
-  { 716, -1, -1, sizeof(::city::economy::v2::GetEmployeesResponse)},
-  { 723, -1, -1, sizeof(::city::economy::v2::SetEmployeesRequest)},
-  { 731, -1, -1, sizeof(::city::economy::v2::SetEmployeesResponse)},
-  { 737, -1, -1, sizeof(::city::economy::v2::AddEmployeeRequest)},
-  { 745, -1, -1, sizeof(::city::economy::v2::AddEmployeeResponse)},
-  { 751, -1, -1, sizeof(::city::economy::v2::RemoveEmployeeRequest)},
-  { 759, -1, -1, sizeof(::city::economy::v2::RemoveEmployeeResponse)},
-  { 765, -1, -1, sizeof(::city::economy::v2::GetCitizensRequest)},
-  { 772, -1, -1, sizeof(::city::economy::v2::GetCitizensResponse)},
-  { 779, -1, -1, sizeof(::city::economy::v2::SetCitizensRequest)},
-  { 787, -1, -1, sizeof(::city::economy::v2::SetCitizensResponse)},
-  { 793, -1, -1, sizeof(::city::economy::v2::AddCitizenRequest)},
-  { 801, -1, -1, sizeof(::city::economy::v2::AddCitizenResponse)},
-  { 807, -1, -1, sizeof(::city::economy::v2::RemoveCitizenRequest)},
-  { 815, -1, -1, sizeof(::city::economy::v2::RemoveCitizenResponse)},
-  { 821, -1, -1, sizeof(::city::economy::v2::GetAgentRequest)},
-  { 828, -1, -1, sizeof(::city::economy::v2::GetAgentResponse)},
-  { 835, -1, -1, sizeof(::city::economy::v2::UpdateAgentRequest)},
-  { 842, -1, -1, sizeof(::city::economy::v2::UpdateAgentResponse)},
-  { 848, -1, -1, sizeof(::city::economy::v2::BatchGetRequest)},
-  { 856, -1, -1, sizeof(::city::economy::v2::BatchGetResponse)},
-  { 864, -1, -1, sizeof(::city::economy::v2::BatchUpdateRequest)},
-  { 872, -1, -1, sizeof(::city::economy::v2::BatchUpdateResponse)},
-  { 878, 891, -1, sizeof(::city::economy::v2::DeltaUpdateOrgRequest)},
-  { 898, -1, -1, sizeof(::city::economy::v2::DeltaUpdateOrgResponse)},
-  { 904, 915, -1, sizeof(::city::economy::v2::DeltaUpdateAgentRequest)},
-  { 920, -1, -1, sizeof(::city::economy::v2::DeltaUpdateAgentResponse)},
-  { 926, -1, -1, sizeof(::city::economy::v2::BatchDeltaUpdateRequest)},
-  { 934, -1, -1, sizeof(::city::economy::v2::BatchDeltaUpdateResponse)},
-  { 940, -1, -1, sizeof(::city::economy::v2::CalculateRealGDPRequest)},
-  { 947, -1, -1, sizeof(::city::economy::v2::CalculateRealGDPResponse)},
+  { 422, -1, -1, sizeof(::city::economy::v2::CalculateInterestRequest)},
+  { 430, -1, -1, sizeof(::city::economy::v2::CalculateInterestResponse)},
+  { 438, -1, -1, sizeof(::city::economy::v2::SaveEconomyEntitiesRequest)},
+  { 445, -1, -1, sizeof(::city::economy::v2::SaveEconomyEntitiesResponse)},
+  { 453, -1, -1, sizeof(::city::economy::v2::LoadEconomyEntitiesRequest)},
+  { 460, -1, -1, sizeof(::city::economy::v2::LoadEconomyEntitiesResponse)},
+  { 468, -1, -1, sizeof(::city::economy::v2::GetConsumptionCurrencyRequest)},
+  { 475, -1, -1, sizeof(::city::economy::v2::GetConsumptionCurrencyResponse)},
+  { 482, -1, -1, sizeof(::city::economy::v2::SetConsumptionCurrencyRequest)},
+  { 490, -1, -1, sizeof(::city::economy::v2::SetConsumptionCurrencyResponse)},
+  { 496, -1, -1, sizeof(::city::economy::v2::GetConsumptionPropensityRequest)},
+  { 503, -1, -1, sizeof(::city::economy::v2::GetConsumptionPropensityResponse)},
+  { 510, -1, -1, sizeof(::city::economy::v2::SetConsumptionPropensityRequest)},
+  { 518, -1, -1, sizeof(::city::economy::v2::SetConsumptionPropensityResponse)},
+  { 524, -1, -1, sizeof(::city::economy::v2::GetIncomeCurrencyRequest)},
+  { 531, -1, -1, sizeof(::city::economy::v2::GetIncomeCurrencyResponse)},
+  { 538, -1, -1, sizeof(::city::economy::v2::SetIncomeCurrencyRequest)},
+  { 546, -1, -1, sizeof(::city::economy::v2::SetIncomeCurrencyResponse)},
+  { 552, -1, -1, sizeof(::city::economy::v2::GetDepressionRequest)},
+  { 559, -1, -1, sizeof(::city::economy::v2::GetDepressionResponse)},
+  { 566, -1, -1, sizeof(::city::economy::v2::SetDepressionRequest)},
+  { 574, -1, -1, sizeof(::city::economy::v2::SetDepressionResponse)},
+  { 580, -1, -1, sizeof(::city::economy::v2::GetLocusControlRequest)},
+  { 587, -1, -1, sizeof(::city::economy::v2::GetLocusControlResponse)},
+  { 594, -1, -1, sizeof(::city::economy::v2::SetLocusControlRequest)},
+  { 602, -1, -1, sizeof(::city::economy::v2::SetLocusControlResponse)},
+  { 608, -1, -1, sizeof(::city::economy::v2::GetWorkingHoursRequest)},
+  { 615, -1, -1, sizeof(::city::economy::v2::GetWorkingHoursResponse)},
+  { 622, -1, -1, sizeof(::city::economy::v2::SetWorkingHoursRequest)},
+  { 630, -1, -1, sizeof(::city::economy::v2::SetWorkingHoursResponse)},
+  { 636, -1, -1, sizeof(::city::economy::v2::GetOrgEntityIdsRequest)},
+  { 643, -1, -1, sizeof(::city::economy::v2::GetOrgEntityIdsResponse)},
+  { 650, -1, -1, sizeof(::city::economy::v2::AddInventoryRequest)},
+  { 658, -1, -1, sizeof(::city::economy::v2::AddInventoryResponse)},
+  { 665, -1, -1, sizeof(::city::economy::v2::AddPriceRequest)},
+  { 673, -1, -1, sizeof(::city::economy::v2::AddPriceResponse)},
+  { 680, -1, -1, sizeof(::city::economy::v2::AddCurrencyRequest)},
+  { 688, -1, -1, sizeof(::city::economy::v2::AddCurrencyResponse)},
+  { 695, -1, -1, sizeof(::city::economy::v2::AddInterestRateRequest)},
+  { 703, -1, -1, sizeof(::city::economy::v2::AddInterestRateResponse)},
+  { 710, -1, -1, sizeof(::city::economy::v2::GetEmployeesRequest)},
+  { 717, -1, -1, sizeof(::city::economy::v2::GetEmployeesResponse)},
+  { 724, -1, -1, sizeof(::city::economy::v2::SetEmployeesRequest)},
+  { 732, -1, -1, sizeof(::city::economy::v2::SetEmployeesResponse)},
+  { 738, -1, -1, sizeof(::city::economy::v2::AddEmployeeRequest)},
+  { 746, -1, -1, sizeof(::city::economy::v2::AddEmployeeResponse)},
+  { 752, -1, -1, sizeof(::city::economy::v2::RemoveEmployeeRequest)},
+  { 760, -1, -1, sizeof(::city::economy::v2::RemoveEmployeeResponse)},
+  { 766, -1, -1, sizeof(::city::economy::v2::GetCitizensRequest)},
+  { 773, -1, -1, sizeof(::city::economy::v2::GetCitizensResponse)},
+  { 780, -1, -1, sizeof(::city::economy::v2::SetCitizensRequest)},
+  { 788, -1, -1, sizeof(::city::economy::v2::SetCitizensResponse)},
+  { 794, -1, -1, sizeof(::city::economy::v2::AddCitizenRequest)},
+  { 802, -1, -1, sizeof(::city::economy::v2::AddCitizenResponse)},
+  { 808, -1, -1, sizeof(::city::economy::v2::RemoveCitizenRequest)},
+  { 816, -1, -1, sizeof(::city::economy::v2::RemoveCitizenResponse)},
+  { 822, -1, -1, sizeof(::city::economy::v2::GetAgentRequest)},
+  { 829, -1, -1, sizeof(::city::economy::v2::GetAgentResponse)},
+  { 836, -1, -1, sizeof(::city::economy::v2::UpdateAgentRequest)},
+  { 843, -1, -1, sizeof(::city::economy::v2::UpdateAgentResponse)},
+  { 849, -1, -1, sizeof(::city::economy::v2::BatchGetRequest)},
+  { 857, -1, -1, sizeof(::city::economy::v2::BatchGetResponse)},
+  { 865, -1, -1, sizeof(::city::economy::v2::BatchUpdateRequest)},
+  { 873, -1, -1, sizeof(::city::economy::v2::BatchUpdateResponse)},
+  { 879, 892, -1, sizeof(::city::economy::v2::DeltaUpdateOrgRequest)},
+  { 899, -1, -1, sizeof(::city::economy::v2::DeltaUpdateOrgResponse)},
+  { 905, 916, -1, sizeof(::city::economy::v2::DeltaUpdateAgentRequest)},
+  { 921, -1, -1, sizeof(::city::economy::v2::DeltaUpdateAgentResponse)},
+  { 927, -1, -1, sizeof(::city::economy::v2::BatchDeltaUpdateRequest)},
+  { 935, -1, -1, sizeof(::city::economy::v2::BatchDeltaUpdateResponse)},
+  { 941, -1, -1, sizeof(::city::economy::v2::CalculateRealGDPRequest)},
+  { 948, -1, -1, sizeof(::city::economy::v2::CalculateRealGDPResponse)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -3055,306 +3057,307 @@ const char descriptor_table_protodef_city_2feconomy_2fv2_2forg_5fservice_2eproto
   "edIncomes\"m\n\033CalculateConsumptionRequest"
   "\022\031\n\010firm_ids\030\001 \003(\005R\007firmIds\022\031\n\010agent_id\030"
   "\002 \001(\005R\007agentId\022\030\n\007demands\030\003 \003(\005R\007demands"
-  "\"M\n\034CalculateConsumptionResponse\022-\n\022actu"
-  "al_consumption\030\001 \001(\002R\021actualConsumption\""
-  "P\n\030CalculateInterestRequest\022\027\n\007bank_id\030\001"
-  " \001(\005R\006bankId\022\033\n\tagent_ids\030\002 \003(\005R\010agentId"
-  "s\"q\n\031CalculateInterestResponse\022%\n\016total_"
-  "interest\030\001 \001(\002R\rtotalInterest\022-\n\022updated"
-  "_currencies\030\002 \003(\002R\021updatedCurrencies\"9\n\032"
-  "SaveEconomyEntitiesRequest\022\033\n\tfile_path\030"
-  "\001 \001(\tR\010filePath\"S\n\033SaveEconomyEntitiesRe"
-  "sponse\022\027\n\007org_ids\030\001 \003(\005R\006orgIds\022\033\n\tagent"
-  "_ids\030\002 \003(\005R\010agentIds\"9\n\032LoadEconomyEntit"
-  "iesRequest\022\033\n\tfile_path\030\001 \001(\tR\010filePath\""
-  "S\n\033LoadEconomyEntitiesResponse\022\027\n\007org_id"
-  "s\030\001 \003(\005R\006orgIds\022\033\n\tagent_ids\030\002 \003(\005R\010agen"
-  "tIds\"6\n\035GetConsumptionCurrencyRequest\022\025\n"
-  "\006org_id\030\001 \001(\005R\005orgId\"S\n\036GetConsumptionCu"
-  "rrencyResponse\0221\n\024consumption_currency\030\001"
-  " \003(\002R\023consumptionCurrency\"i\n\035SetConsumpt"
-  "ionCurrencyRequest\022\025\n\006org_id\030\001 \001(\005R\005orgI"
-  "d\0221\n\024consumption_currency\030\002 \003(\002R\023consump"
-  "tionCurrency\" \n\036SetConsumptionCurrencyRe"
-  "sponse\"8\n\037GetConsumptionPropensityReques"
-  "t\022\025\n\006org_id\030\001 \001(\005R\005orgId\"Y\n GetConsumpti"
-  "onPropensityResponse\0225\n\026consumption_prop"
-  "ensity\030\001 \003(\002R\025consumptionPropensity\"o\n\037S"
-  "etConsumptionPropensityRequest\022\025\n\006org_id"
-  "\030\001 \001(\005R\005orgId\0225\n\026consumption_propensity\030"
-  "\002 \003(\002R\025consumptionPropensity\"\"\n SetConsu"
-  "mptionPropensityResponse\"1\n\030GetIncomeCur"
-  "rencyRequest\022\025\n\006org_id\030\001 \001(\005R\005orgId\"D\n\031G"
-  "etIncomeCurrencyResponse\022\'\n\017income_curre"
-  "ncy\030\001 \003(\002R\016incomeCurrency\"Z\n\030SetIncomeCu"
-  "rrencyRequest\022\025\n\006org_id\030\001 \001(\005R\005orgId\022\'\n\017"
-  "income_currency\030\002 \003(\002R\016incomeCurrency\"\033\n"
-  "\031SetIncomeCurrencyResponse\"-\n\024GetDepress"
-  "ionRequest\022\025\n\006org_id\030\001 \001(\005R\005orgId\"7\n\025Get"
-  "DepressionResponse\022\036\n\ndepression\030\001 \003(\002R\n"
-  "depression\"M\n\024SetDepressionRequest\022\025\n\006or"
-  "g_id\030\001 \001(\005R\005orgId\022\036\n\ndepression\030\002 \003(\002R\nd"
-  "epression\"\027\n\025SetDepressionResponse\"/\n\026Ge"
-  "tLocusControlRequest\022\025\n\006org_id\030\001 \001(\005R\005or"
-  "gId\">\n\027GetLocusControlResponse\022#\n\rlocus_"
-  "control\030\001 \003(\002R\014locusControl\"T\n\026SetLocusC"
-  "ontrolRequest\022\025\n\006org_id\030\001 \001(\005R\005orgId\022#\n\r"
-  "locus_control\030\002 \003(\002R\014locusControl\"\031\n\027Set"
-  "LocusControlResponse\"/\n\026GetWorkingHoursR"
-  "equest\022\025\n\006org_id\030\001 \001(\005R\005orgId\">\n\027GetWork"
-  "ingHoursResponse\022#\n\rworking_hours\030\001 \003(\002R"
-  "\014workingHours\"T\n\026SetWorkingHoursRequest\022"
-  "\025\n\006org_id\030\001 \001(\005R\005orgId\022#\n\rworking_hours\030"
-  "\002 \003(\002R\014workingHours\"\031\n\027SetWorkingHoursRe"
-  "sponse\"F\n\026GetOrgEntityIdsRequest\022,\n\004type"
-  "\030\001 \001(\0162\030.city.economy.v2.OrgTypeR\004type\"2"
-  "\n\027GetOrgEntityIdsResponse\022\027\n\007org_ids\030\001 \003"
-  "(\005R\006orgIds\"U\n\023AddInventoryRequest\022\025\n\006org"
-  "_id\030\001 \001(\005R\005orgId\022\'\n\017delta_inventory\030\002 \001("
-  "\005R\016deltaInventory\"4\n\024AddInventoryRespons"
-  "e\022\034\n\tinventory\030\001 \001(\005R\tinventory\"I\n\017AddPr"
-  "iceRequest\022\025\n\006org_id\030\001 \001(\005R\005orgId\022\037\n\013del"
-  "ta_price\030\002 \001(\002R\ndeltaPrice\"(\n\020AddPriceRe"
-  "sponse\022\024\n\005price\030\001 \001(\002R\005price\"R\n\022AddCurre"
-  "ncyRequest\022\025\n\006org_id\030\001 \001(\005R\005orgId\022%\n\016del"
-  "ta_currency\030\002 \001(\002R\rdeltaCurrency\"1\n\023AddC"
-  "urrencyResponse\022\032\n\010currency\030\001 \001(\002R\010curre"
-  "ncy\"_\n\026AddInterestRateRequest\022\025\n\006org_id\030"
-  "\001 \001(\005R\005orgId\022.\n\023delta_interest_rate\030\002 \001("
-  "\002R\021deltaInterestRate\">\n\027AddInterestRateR"
-  "esponse\022#\n\rinterest_rate\030\001 \001(\002R\014interest"
-  "Rate\",\n\023GetEmployeesRequest\022\025\n\006org_id\030\001 "
-  "\001(\005R\005orgId\"9\n\024GetEmployeesResponse\022!\n\014em"
-  "ployee_ids\030\001 \003(\005R\013employeeIds\"O\n\023SetEmpl"
-  "oyeesRequest\022\025\n\006org_id\030\001 \001(\005R\005orgId\022!\n\014e"
-  "mployee_ids\030\002 \003(\005R\013employeeIds\"\026\n\024SetEmp"
-  "loyeesResponse\"L\n\022AddEmployeeRequest\022\025\n\006"
-  "org_id\030\001 \001(\005R\005orgId\022\037\n\013employee_id\030\002 \001(\005"
-  "R\nemployeeId\"\025\n\023AddEmployeeResponse\"O\n\025R"
-  "emoveEmployeeRequest\022\025\n\006org_id\030\001 \001(\005R\005or"
-  "gId\022\037\n\013employee_id\030\002 \001(\005R\nemployeeId\"\030\n\026"
-  "RemoveEmployeeResponse\"+\n\022GetCitizensReq"
-  "uest\022\025\n\006org_id\030\001 \001(\005R\005orgId\"6\n\023GetCitize"
-  "nsResponse\022\037\n\013citizen_ids\030\001 \003(\005R\ncitizen"
-  "Ids\"L\n\022SetCitizensRequest\022\025\n\006org_id\030\001 \001("
-  "\005R\005orgId\022\037\n\013citizen_ids\030\002 \003(\005R\ncitizenId"
-  "s\"\025\n\023SetCitizensResponse\"I\n\021AddCitizenRe"
-  "quest\022\025\n\006org_id\030\001 \001(\005R\005orgId\022\035\n\ncitizen_"
-  "id\030\002 \001(\005R\tcitizenId\"\024\n\022AddCitizenRespons"
-  "e\"L\n\024RemoveCitizenRequest\022\025\n\006org_id\030\001 \001("
-  "\005R\005orgId\022\035\n\ncitizen_id\030\002 \001(\005R\tcitizenId\""
-  "\027\n\025RemoveCitizenResponse\",\n\017GetAgentRequ"
-  "est\022\031\n\010agent_id\030\001 \001(\005R\007agentId\"@\n\020GetAge"
-  "ntResponse\022,\n\005agent\030\001 \001(\0132\026.city.economy"
-  ".v2.AgentR\005agent\"B\n\022UpdateAgentRequest\022,"
-  "\n\005agent\030\001 \001(\0132\026.city.economy.v2.AgentR\005a"
-  "gent\"\025\n\023UpdateAgentResponse\"7\n\017BatchGetR"
-  "equest\022\020\n\003ids\030\001 \003(\005R\003ids\022\022\n\004type\030\002 \001(\tR\004"
-  "type\"l\n\020BatchGetResponse\022(\n\004orgs\030\001 \003(\0132\024"
-  ".city.economy.v2.OrgR\004orgs\022.\n\006agents\030\002 \003"
-  "(\0132\026.city.economy.v2.AgentR\006agents\"n\n\022Ba"
-  "tchUpdateRequest\022(\n\004orgs\030\001 \003(\0132\024.city.ec"
-  "onomy.v2.OrgR\004orgs\022.\n\006agents\030\002 \003(\0132\026.cit"
-  "y.economy.v2.AgentR\006agents\"\025\n\023BatchUpdat"
-  "eResponse\"\202\003\n\025DeltaUpdateOrgRequest\022\025\n\006o"
-  "rg_id\030\001 \001(\005R\005orgId\022,\n\017delta_inventory\030\002 "
-  "\001(\002H\000R\016deltaInventory\210\001\001\022$\n\013delta_price\030"
-  "\003 \001(\002H\001R\ndeltaPrice\210\001\001\022*\n\016delta_currency"
-  "\030\004 \001(\002H\002R\rdeltaCurrency\210\001\001\0223\n\023delta_inte"
-  "rest_rate\030\005 \001(\002H\003R\021deltaInterestRate\210\001\001\022"
-  "#\n\radd_employees\030\006 \003(\005R\014addEmployees\022)\n\020"
-  "remove_employees\030\007 \003(\005R\017removeEmployeesB"
-  "\022\n\020_delta_inventoryB\016\n\014_delta_priceB\021\n\017_"
-  "delta_currencyB\026\n\024_delta_interest_rate\"\030"
-  "\n\026DeltaUpdateOrgResponse\"\252\002\n\027DeltaUpdate"
-  "AgentRequest\022\031\n\010agent_id\030\001 \001(\005R\007agentId\022"
-  "*\n\016delta_currency\030\002 \001(\002H\000R\rdeltaCurrency"
-  "\210\001\001\022$\n\013delta_skill\030\003 \001(\002H\001R\ndeltaSkill\210\001"
-  "\001\0220\n\021delta_consumption\030\004 \001(\002H\002R\020deltaCon"
-  "sumption\210\001\001\022&\n\014delta_income\030\005 \001(\002H\003R\013del"
-  "taIncome\210\001\001B\021\n\017_delta_currencyB\016\n\014_delta"
-  "_skillB\024\n\022_delta_consumptionB\017\n\r_delta_i"
-  "ncome\"\032\n\030DeltaUpdateAgentResponse\"\227\001\n\027Ba"
-  "tchDeltaUpdateRequest\022:\n\004orgs\030\001 \003(\0132&.ci"
-  "ty.economy.v2.DeltaUpdateOrgRequestR\004org"
-  "s\022@\n\006agents\030\002 \003(\0132(.city.economy.v2.Delt"
-  "aUpdateAgentRequestR\006agents\"\032\n\030BatchDelt"
-  "aUpdateResponse\";\n\027CalculateRealGDPReque"
-  "st\022 \n\014nbs_agent_id\030\001 \001(\005R\nnbsAgentId\"5\n\030"
-  "CalculateRealGDPResponse\022\031\n\010real_gdp\030\001 \001"
-  "(\002R\007realGdp2\2102\n\nOrgService\022I\n\006AddOrg\022\036.c"
-  "ity.economy.v2.AddOrgRequest\032\037.city.econ"
-  "omy.v2.AddOrgResponse\022R\n\tRemoveOrg\022!.cit"
-  "y.economy.v2.RemoveOrgRequest\032\".city.eco"
-  "nomy.v2.RemoveOrgResponse\022I\n\006GetOrg\022\036.ci"
-  "ty.economy.v2.GetOrgRequest\032\037.city.econo"
-  "my.v2.GetOrgResponse\022R\n\tUpdateOrg\022!.city"
-  ".economy.v2.UpdateOrgRequest\032\".city.econ"
-  "omy.v2.UpdateOrgResponse\022O\n\010AddAgent\022 .c"
-  "ity.economy.v2.AddAgentRequest\032!.city.ec"
-  "onomy.v2.AddAgentResponse\022X\n\013RemoveAgent"
-  "\022#.city.economy.v2.RemoveAgentRequest\032$."
-  "city.economy.v2.RemoveAgentResponse\022^\n\rG"
-  "etNominalGDP\022%.city.economy.v2.GetNomina"
-  "lGDPRequest\032&.city.economy.v2.GetNominal"
-  "GDPResponse\022^\n\rSetNominalGDP\022%.city.econ"
-  "omy.v2.SetNominalGDPRequest\032&.city.econo"
-  "my.v2.SetNominalGDPResponse\022U\n\nGetRealGD"
-  "P\022\".city.economy.v2.GetRealGDPRequest\032#."
-  "city.economy.v2.GetRealGDPResponse\022U\n\nSe"
-  "tRealGDP\022\".city.economy.v2.SetRealGDPReq"
-  "uest\032#.city.economy.v2.SetRealGDPRespons"
-  "e\022d\n\017GetUnemployment\022\'.city.economy.v2.G"
-  "etUnemploymentRequest\032(.city.economy.v2."
-  "GetUnemploymentResponse\022d\n\017SetUnemployme"
-  "nt\022\'.city.economy.v2.SetUnemploymentRequ"
-  "est\032(.city.economy.v2.SetUnemploymentRes"
-  "ponse\022O\n\010GetWages\022 .city.economy.v2.GetW"
-  "agesRequest\032!.city.economy.v2.GetWagesRe"
-  "sponse\022O\n\010SetWages\022 .city.economy.v2.Set"
-  "WagesRequest\032!.city.economy.v2.SetWagesR"
-  "esponse\022R\n\tGetPrices\022!.city.economy.v2.G"
-  "etPricesRequest\032\".city.economy.v2.GetPri"
-  "cesResponse\022R\n\tSetPrices\022!.city.economy."
-  "v2.SetPricesRequest\032\".city.economy.v2.Se"
-  "tPricesResponse\022[\n\014GetInventory\022$.city.e"
-  "conomy.v2.GetInventoryRequest\032%.city.eco"
-  "nomy.v2.GetInventoryResponse\022[\n\014SetInven"
-  "tory\022$.city.economy.v2.SetInventoryReque"
-  "st\032%.city.economy.v2.SetInventoryRespons"
-  "e\022[\n\014AddInventory\022$.city.economy.v2.AddI"
-  "nventoryRequest\032%.city.economy.v2.AddInv"
-  "entoryResponse\022O\n\010GetPrice\022 .city.econom"
-  "y.v2.GetPriceRequest\032!.city.economy.v2.G"
-  "etPriceResponse\022O\n\010SetPrice\022 .city.econo"
-  "my.v2.SetPriceRequest\032!.city.economy.v2."
-  "SetPriceResponse\022O\n\010AddPrice\022 .city.econ"
-  "omy.v2.AddPriceRequest\032!.city.economy.v2"
-  ".AddPriceResponse\022X\n\013GetCurrency\022#.city."
-  "economy.v2.GetCurrencyRequest\032$.city.eco"
-  "nomy.v2.GetCurrencyResponse\022X\n\013SetCurren"
-  "cy\022#.city.economy.v2.SetCurrencyRequest\032"
-  "$.city.economy.v2.SetCurrencyResponse\022X\n"
-  "\013AddCurrency\022#.city.economy.v2.AddCurren"
-  "cyRequest\032$.city.economy.v2.AddCurrencyR"
-  "esponse\022d\n\017GetInterestRate\022\'.city.econom"
-  "y.v2.GetInterestRateRequest\032(.city.econo"
-  "my.v2.GetInterestRateResponse\022d\n\017SetInte"
-  "restRate\022\'.city.economy.v2.SetInterestRa"
-  "teRequest\032(.city.economy.v2.SetInterestR"
-  "ateResponse\022d\n\017AddInterestRate\022\'.city.ec"
-  "onomy.v2.AddInterestRateRequest\032(.city.e"
-  "conomy.v2.AddInterestRateResponse\022j\n\021Get"
-  "BracketCutoffs\022).city.economy.v2.GetBrac"
-  "ketCutoffsRequest\032*.city.economy.v2.GetB"
-  "racketCutoffsResponse\022j\n\021SetBracketCutof"
-  "fs\022).city.economy.v2.SetBracketCutoffsRe"
-  "quest\032*.city.economy.v2.SetBracketCutoff"
-  "sResponse\022d\n\017GetBracketRates\022\'.city.econ"
-  "omy.v2.GetBracketRatesRequest\032(.city.eco"
-  "nomy.v2.GetBracketRatesResponse\022d\n\017SetBr"
-  "acketRates\022\'.city.economy.v2.SetBracketR"
-  "atesRequest\032(.city.economy.v2.SetBracket"
-  "RatesResponse\022j\n\021CalculateTaxesDue\022).cit"
-  "y.economy.v2.CalculateTaxesDueRequest\032*."
-  "city.economy.v2.CalculateTaxesDueRespons"
-  "e\022s\n\024CalculateConsumption\022,.city.economy"
-  ".v2.CalculateConsumptionRequest\032-.city.e"
-  "conomy.v2.CalculateConsumptionResponse\022j"
-  "\n\021CalculateInterest\022).city.economy.v2.Ca"
-  "lculateInterestRequest\032*.city.economy.v2"
-  ".CalculateInterestResponse\022p\n\023SaveEconom"
-  "yEntities\022+.city.economy.v2.SaveEconomyE"
-  "ntitiesRequest\032,.city.economy.v2.SaveEco"
-  "nomyEntitiesResponse\022p\n\023LoadEconomyEntit"
-  "ies\022+.city.economy.v2.LoadEconomyEntitie"
-  "sRequest\032,.city.economy.v2.LoadEconomyEn"
-  "titiesResponse\022y\n\026GetConsumptionCurrency"
-  "\022..city.economy.v2.GetConsumptionCurrenc"
-  "yRequest\032/.city.economy.v2.GetConsumptio"
-  "nCurrencyResponse\022y\n\026SetConsumptionCurre"
-  "ncy\022..city.economy.v2.SetConsumptionCurr"
-  "encyRequest\032/.city.economy.v2.SetConsump"
-  "tionCurrencyResponse\022\177\n\030GetConsumptionPr"
-  "opensity\0220.city.economy.v2.GetConsumptio"
-  "nPropensityRequest\0321.city.economy.v2.Get"
-  "ConsumptionPropensityResponse\022\177\n\030SetCons"
-  "umptionPropensity\0220.city.economy.v2.SetC"
-  "onsumptionPropensityRequest\0321.city.econo"
-  "my.v2.SetConsumptionPropensityResponse\022j"
-  "\n\021GetIncomeCurrency\022).city.economy.v2.Ge"
-  "tIncomeCurrencyRequest\032*.city.economy.v2"
-  ".GetIncomeCurrencyResponse\022j\n\021SetIncomeC"
-  "urrency\022).city.economy.v2.SetIncomeCurre"
-  "ncyRequest\032*.city.economy.v2.SetIncomeCu"
-  "rrencyResponse\022^\n\rGetDepression\022%.city.e"
-  "conomy.v2.GetDepressionRequest\032&.city.ec"
-  "onomy.v2.GetDepressionResponse\022^\n\rSetDep"
-  "ression\022%.city.economy.v2.SetDepressionR"
-  "equest\032&.city.economy.v2.SetDepressionRe"
-  "sponse\022d\n\017GetLocusControl\022\'.city.economy"
-  ".v2.GetLocusControlRequest\032(.city.econom"
-  "y.v2.GetLocusControlResponse\022d\n\017SetLocus"
-  "Control\022\'.city.economy.v2.SetLocusContro"
-  "lRequest\032(.city.economy.v2.SetLocusContr"
-  "olResponse\022d\n\017GetWorkingHours\022\'.city.eco"
-  "nomy.v2.GetWorkingHoursRequest\032(.city.ec"
-  "onomy.v2.GetWorkingHoursResponse\022d\n\017SetW"
-  "orkingHours\022\'.city.economy.v2.SetWorking"
-  "HoursRequest\032(.city.economy.v2.SetWorkin"
-  "gHoursResponse\022d\n\017GetOrgEntityIds\022\'.city"
-  ".economy.v2.GetOrgEntityIdsRequest\032(.cit"
-  "y.economy.v2.GetOrgEntityIdsResponse\022[\n\014"
-  "GetEmployees\022$.city.economy.v2.GetEmploy"
-  "eesRequest\032%.city.economy.v2.GetEmployee"
-  "sResponse\022[\n\014SetEmployees\022$.city.economy"
-  ".v2.SetEmployeesRequest\032%.city.economy.v"
-  "2.SetEmployeesResponse\022X\n\013AddEmployee\022#."
-  "city.economy.v2.AddEmployeeRequest\032$.cit"
-  "y.economy.v2.AddEmployeeResponse\022a\n\016Remo"
-  "veEmployee\022&.city.economy.v2.RemoveEmplo"
-  "yeeRequest\032\'.city.economy.v2.RemoveEmplo"
-  "yeeResponse\022X\n\013GetCitizens\022#.city.econom"
-  "y.v2.GetCitizensRequest\032$.city.economy.v"
-  "2.GetCitizensResponse\022X\n\013SetCitizens\022#.c"
-  "ity.economy.v2.SetCitizensRequest\032$.city"
-  ".economy.v2.SetCitizensResponse\022U\n\nAddCi"
-  "tizen\022\".city.economy.v2.AddCitizenReques"
-  "t\032#.city.economy.v2.AddCitizenResponse\022^"
-  "\n\rRemoveCitizen\022%.city.economy.v2.Remove"
-  "CitizenRequest\032&.city.economy.v2.RemoveC"
-  "itizenResponse\022O\n\010GetAgent\022 .city.econom"
-  "y.v2.GetAgentRequest\032!.city.economy.v2.G"
-  "etAgentResponse\022X\n\013UpdateAgent\022#.city.ec"
-  "onomy.v2.UpdateAgentRequest\032$.city.econo"
-  "my.v2.UpdateAgentResponse\022Q\n\010BatchGet\022 ."
-  "city.economy.v2.BatchGetRequest\032!.city.e"
-  "conomy.v2.BatchGetResponse\"\000\022Z\n\013BatchUpd"
-  "ate\022#.city.economy.v2.BatchUpdateRequest"
-  "\032$.city.economy.v2.BatchUpdateResponse\"\000"
-  "\022c\n\016DeltaUpdateOrg\022&.city.economy.v2.Del"
-  "taUpdateOrgRequest\032\'.city.economy.v2.Del"
-  "taUpdateOrgResponse\"\000\022i\n\020DeltaUpdateAgen"
-  "t\022(.city.economy.v2.DeltaUpdateAgentRequ"
-  "est\032).city.economy.v2.DeltaUpdateAgentRe"
-  "sponse\"\000\022i\n\020BatchDeltaUpdate\022(.city.econ"
-  "omy.v2.BatchDeltaUpdateRequest\032).city.ec"
-  "onomy.v2.BatchDeltaUpdateResponse\"\000\022i\n\020C"
-  "alculateRealGDP\022(.city.economy.v2.Calcul"
-  "ateRealGDPRequest\032).city.economy.v2.Calc"
-  "ulateRealGDPResponse\"\000B\277\001\n\023com.city.econ"
-  "omy.v2B\017OrgServiceProtoP\001Z9git.fiblab.ne"
-  "t/sim/protos/v2/go/city/economy/v2;econo"
-  "myv2\242\002\003CEX\252\002\017City.Economy.V2\312\002\017City\\Econ"
-  "omy\\V2\342\002\033City\\Economy\\V2\\GPBMetadata\352\002\021C"
-  "ity::Economy::V2b\006proto3"
+  "\"g\n\034CalculateConsumptionResponse\022-\n\022actu"
+  "al_consumption\030\001 \001(\002R\021actualConsumption\022"
+  "\030\n\007success\030\002 \001(\010R\007success\"P\n\030CalculateIn"
+  "terestRequest\022\027\n\007bank_id\030\001 \001(\005R\006bankId\022\033"
+  "\n\tagent_ids\030\002 \003(\005R\010agentIds\"q\n\031Calculate"
+  "InterestResponse\022%\n\016total_interest\030\001 \001(\002"
+  "R\rtotalInterest\022-\n\022updated_currencies\030\002 "
+  "\003(\002R\021updatedCurrencies\"9\n\032SaveEconomyEnt"
+  "itiesRequest\022\033\n\tfile_path\030\001 \001(\tR\010filePat"
+  "h\"S\n\033SaveEconomyEntitiesResponse\022\027\n\007org_"
+  "ids\030\001 \003(\005R\006orgIds\022\033\n\tagent_ids\030\002 \003(\005R\010ag"
+  "entIds\"9\n\032LoadEconomyEntitiesRequest\022\033\n\t"
+  "file_path\030\001 \001(\tR\010filePath\"S\n\033LoadEconomy"
+  "EntitiesResponse\022\027\n\007org_ids\030\001 \003(\005R\006orgId"
+  "s\022\033\n\tagent_ids\030\002 \003(\005R\010agentIds\"6\n\035GetCon"
+  "sumptionCurrencyRequest\022\025\n\006org_id\030\001 \001(\005R"
+  "\005orgId\"S\n\036GetConsumptionCurrencyResponse"
+  "\0221\n\024consumption_currency\030\001 \003(\002R\023consumpt"
+  "ionCurrency\"i\n\035SetConsumptionCurrencyReq"
+  "uest\022\025\n\006org_id\030\001 \001(\005R\005orgId\0221\n\024consumpti"
+  "on_currency\030\002 \003(\002R\023consumptionCurrency\" "
+  "\n\036SetConsumptionCurrencyResponse\"8\n\037GetC"
+  "onsumptionPropensityRequest\022\025\n\006org_id\030\001 "
+  "\001(\005R\005orgId\"Y\n GetConsumptionPropensityRe"
+  "sponse\0225\n\026consumption_propensity\030\001 \003(\002R\025"
+  "consumptionPropensity\"o\n\037SetConsumptionP"
+  "ropensityRequest\022\025\n\006org_id\030\001 \001(\005R\005orgId\022"
+  "5\n\026consumption_propensity\030\002 \003(\002R\025consump"
+  "tionPropensity\"\"\n SetConsumptionPropensi"
+  "tyResponse\"1\n\030GetIncomeCurrencyRequest\022\025"
+  "\n\006org_id\030\001 \001(\005R\005orgId\"D\n\031GetIncomeCurren"
+  "cyResponse\022\'\n\017income_currency\030\001 \003(\002R\016inc"
+  "omeCurrency\"Z\n\030SetIncomeCurrencyRequest\022"
+  "\025\n\006org_id\030\001 \001(\005R\005orgId\022\'\n\017income_currenc"
+  "y\030\002 \003(\002R\016incomeCurrency\"\033\n\031SetIncomeCurr"
+  "encyResponse\"-\n\024GetDepressionRequest\022\025\n\006"
+  "org_id\030\001 \001(\005R\005orgId\"7\n\025GetDepressionResp"
+  "onse\022\036\n\ndepression\030\001 \003(\002R\ndepression\"M\n\024"
+  "SetDepressionRequest\022\025\n\006org_id\030\001 \001(\005R\005or"
+  "gId\022\036\n\ndepression\030\002 \003(\002R\ndepression\"\027\n\025S"
+  "etDepressionResponse\"/\n\026GetLocusControlR"
+  "equest\022\025\n\006org_id\030\001 \001(\005R\005orgId\">\n\027GetLocu"
+  "sControlResponse\022#\n\rlocus_control\030\001 \003(\002R"
+  "\014locusControl\"T\n\026SetLocusControlRequest\022"
+  "\025\n\006org_id\030\001 \001(\005R\005orgId\022#\n\rlocus_control\030"
+  "\002 \003(\002R\014locusControl\"\031\n\027SetLocusControlRe"
+  "sponse\"/\n\026GetWorkingHoursRequest\022\025\n\006org_"
+  "id\030\001 \001(\005R\005orgId\">\n\027GetWorkingHoursRespon"
+  "se\022#\n\rworking_hours\030\001 \003(\002R\014workingHours\""
+  "T\n\026SetWorkingHoursRequest\022\025\n\006org_id\030\001 \001("
+  "\005R\005orgId\022#\n\rworking_hours\030\002 \003(\002R\014working"
+  "Hours\"\031\n\027SetWorkingHoursResponse\"F\n\026GetO"
+  "rgEntityIdsRequest\022,\n\004type\030\001 \001(\0162\030.city."
+  "economy.v2.OrgTypeR\004type\"2\n\027GetOrgEntity"
+  "IdsResponse\022\027\n\007org_ids\030\001 \003(\005R\006orgIds\"U\n\023"
+  "AddInventoryRequest\022\025\n\006org_id\030\001 \001(\005R\005org"
+  "Id\022\'\n\017delta_inventory\030\002 \001(\005R\016deltaInvent"
+  "ory\"4\n\024AddInventoryResponse\022\034\n\tinventory"
+  "\030\001 \001(\005R\tinventory\"I\n\017AddPriceRequest\022\025\n\006"
+  "org_id\030\001 \001(\005R\005orgId\022\037\n\013delta_price\030\002 \001(\002"
+  "R\ndeltaPrice\"(\n\020AddPriceResponse\022\024\n\005pric"
+  "e\030\001 \001(\002R\005price\"R\n\022AddCurrencyRequest\022\025\n\006"
+  "org_id\030\001 \001(\005R\005orgId\022%\n\016delta_currency\030\002 "
+  "\001(\002R\rdeltaCurrency\"1\n\023AddCurrencyRespons"
+  "e\022\032\n\010currency\030\001 \001(\002R\010currency\"_\n\026AddInte"
+  "restRateRequest\022\025\n\006org_id\030\001 \001(\005R\005orgId\022."
+  "\n\023delta_interest_rate\030\002 \001(\002R\021deltaIntere"
+  "stRate\">\n\027AddInterestRateResponse\022#\n\rint"
+  "erest_rate\030\001 \001(\002R\014interestRate\",\n\023GetEmp"
+  "loyeesRequest\022\025\n\006org_id\030\001 \001(\005R\005orgId\"9\n\024"
+  "GetEmployeesResponse\022!\n\014employee_ids\030\001 \003"
+  "(\005R\013employeeIds\"O\n\023SetEmployeesRequest\022\025"
+  "\n\006org_id\030\001 \001(\005R\005orgId\022!\n\014employee_ids\030\002 "
+  "\003(\005R\013employeeIds\"\026\n\024SetEmployeesResponse"
+  "\"L\n\022AddEmployeeRequest\022\025\n\006org_id\030\001 \001(\005R\005"
+  "orgId\022\037\n\013employee_id\030\002 \001(\005R\nemployeeId\"\025"
+  "\n\023AddEmployeeResponse\"O\n\025RemoveEmployeeR"
+  "equest\022\025\n\006org_id\030\001 \001(\005R\005orgId\022\037\n\013employe"
+  "e_id\030\002 \001(\005R\nemployeeId\"\030\n\026RemoveEmployee"
+  "Response\"+\n\022GetCitizensRequest\022\025\n\006org_id"
+  "\030\001 \001(\005R\005orgId\"6\n\023GetCitizensResponse\022\037\n\013"
+  "citizen_ids\030\001 \003(\005R\ncitizenIds\"L\n\022SetCiti"
+  "zensRequest\022\025\n\006org_id\030\001 \001(\005R\005orgId\022\037\n\013ci"
+  "tizen_ids\030\002 \003(\005R\ncitizenIds\"\025\n\023SetCitize"
+  "nsResponse\"I\n\021AddCitizenRequest\022\025\n\006org_i"
+  "d\030\001 \001(\005R\005orgId\022\035\n\ncitizen_id\030\002 \001(\005R\tciti"
+  "zenId\"\024\n\022AddCitizenResponse\"L\n\024RemoveCit"
+  "izenRequest\022\025\n\006org_id\030\001 \001(\005R\005orgId\022\035\n\nci"
+  "tizen_id\030\002 \001(\005R\tcitizenId\"\027\n\025RemoveCitiz"
+  "enResponse\",\n\017GetAgentRequest\022\031\n\010agent_i"
+  "d\030\001 \001(\005R\007agentId\"@\n\020GetAgentResponse\022,\n\005"
+  "agent\030\001 \001(\0132\026.city.economy.v2.AgentR\005age"
+  "nt\"B\n\022UpdateAgentRequest\022,\n\005agent\030\001 \001(\0132"
+  "\026.city.economy.v2.AgentR\005agent\"\025\n\023Update"
+  "AgentResponse\"7\n\017BatchGetRequest\022\020\n\003ids\030"
+  "\001 \003(\005R\003ids\022\022\n\004type\030\002 \001(\tR\004type\"l\n\020BatchG"
+  "etResponse\022(\n\004orgs\030\001 \003(\0132\024.city.economy."
+  "v2.OrgR\004orgs\022.\n\006agents\030\002 \003(\0132\026.city.econ"
+  "omy.v2.AgentR\006agents\"n\n\022BatchUpdateReque"
+  "st\022(\n\004orgs\030\001 \003(\0132\024.city.economy.v2.OrgR\004"
+  "orgs\022.\n\006agents\030\002 \003(\0132\026.city.economy.v2.A"
+  "gentR\006agents\"\025\n\023BatchUpdateResponse\"\202\003\n\025"
+  "DeltaUpdateOrgRequest\022\025\n\006org_id\030\001 \001(\005R\005o"
+  "rgId\022,\n\017delta_inventory\030\002 \001(\002H\000R\016deltaIn"
+  "ventory\210\001\001\022$\n\013delta_price\030\003 \001(\002H\001R\ndelta"
+  "Price\210\001\001\022*\n\016delta_currency\030\004 \001(\002H\002R\rdelt"
+  "aCurrency\210\001\001\0223\n\023delta_interest_rate\030\005 \001("
+  "\002H\003R\021deltaInterestRate\210\001\001\022#\n\radd_employe"
+  "es\030\006 \003(\005R\014addEmployees\022)\n\020remove_employe"
+  "es\030\007 \003(\005R\017removeEmployeesB\022\n\020_delta_inve"
+  "ntoryB\016\n\014_delta_priceB\021\n\017_delta_currency"
+  "B\026\n\024_delta_interest_rate\"\030\n\026DeltaUpdateO"
+  "rgResponse\"\252\002\n\027DeltaUpdateAgentRequest\022\031"
+  "\n\010agent_id\030\001 \001(\005R\007agentId\022*\n\016delta_curre"
+  "ncy\030\002 \001(\002H\000R\rdeltaCurrency\210\001\001\022$\n\013delta_s"
+  "kill\030\003 \001(\002H\001R\ndeltaSkill\210\001\001\0220\n\021delta_con"
+  "sumption\030\004 \001(\002H\002R\020deltaConsumption\210\001\001\022&\n"
+  "\014delta_income\030\005 \001(\002H\003R\013deltaIncome\210\001\001B\021\n"
+  "\017_delta_currencyB\016\n\014_delta_skillB\024\n\022_del"
+  "ta_consumptionB\017\n\r_delta_income\"\032\n\030Delta"
+  "UpdateAgentResponse\"\227\001\n\027BatchDeltaUpdate"
+  "Request\022:\n\004orgs\030\001 \003(\0132&.city.economy.v2."
+  "DeltaUpdateOrgRequestR\004orgs\022@\n\006agents\030\002 "
+  "\003(\0132(.city.economy.v2.DeltaUpdateAgentRe"
+  "questR\006agents\"\032\n\030BatchDeltaUpdateRespons"
+  "e\";\n\027CalculateRealGDPRequest\022 \n\014nbs_agen"
+  "t_id\030\001 \001(\005R\nnbsAgentId\"5\n\030CalculateRealG"
+  "DPResponse\022\031\n\010real_gdp\030\001 \001(\002R\007realGdp2\2102"
+  "\n\nOrgService\022I\n\006AddOrg\022\036.city.economy.v2"
+  ".AddOrgRequest\032\037.city.economy.v2.AddOrgR"
+  "esponse\022R\n\tRemoveOrg\022!.city.economy.v2.R"
+  "emoveOrgRequest\032\".city.economy.v2.Remove"
+  "OrgResponse\022I\n\006GetOrg\022\036.city.economy.v2."
+  "GetOrgRequest\032\037.city.economy.v2.GetOrgRe"
+  "sponse\022R\n\tUpdateOrg\022!.city.economy.v2.Up"
+  "dateOrgRequest\032\".city.economy.v2.UpdateO"
+  "rgResponse\022O\n\010AddAgent\022 .city.economy.v2"
+  ".AddAgentRequest\032!.city.economy.v2.AddAg"
+  "entResponse\022X\n\013RemoveAgent\022#.city.econom"
+  "y.v2.RemoveAgentRequest\032$.city.economy.v"
+  "2.RemoveAgentResponse\022^\n\rGetNominalGDP\022%"
+  ".city.economy.v2.GetNominalGDPRequest\032&."
+  "city.economy.v2.GetNominalGDPResponse\022^\n"
+  "\rSetNominalGDP\022%.city.economy.v2.SetNomi"
+  "nalGDPRequest\032&.city.economy.v2.SetNomin"
+  "alGDPResponse\022U\n\nGetRealGDP\022\".city.econo"
+  "my.v2.GetRealGDPRequest\032#.city.economy.v"
+  "2.GetRealGDPResponse\022U\n\nSetRealGDP\022\".cit"
+  "y.economy.v2.SetRealGDPRequest\032#.city.ec"
+  "onomy.v2.SetRealGDPResponse\022d\n\017GetUnempl"
+  "oyment\022\'.city.economy.v2.GetUnemployment"
+  "Request\032(.city.economy.v2.GetUnemploymen"
+  "tResponse\022d\n\017SetUnemployment\022\'.city.econ"
+  "omy.v2.SetUnemploymentRequest\032(.city.eco"
+  "nomy.v2.SetUnemploymentResponse\022O\n\010GetWa"
+  "ges\022 .city.economy.v2.GetWagesRequest\032!."
+  "city.economy.v2.GetWagesResponse\022O\n\010SetW"
+  "ages\022 .city.economy.v2.SetWagesRequest\032!"
+  ".city.economy.v2.SetWagesResponse\022R\n\tGet"
+  "Prices\022!.city.economy.v2.GetPricesReques"
+  "t\032\".city.economy.v2.GetPricesResponse\022R\n"
+  "\tSetPrices\022!.city.economy.v2.SetPricesRe"
+  "quest\032\".city.economy.v2.SetPricesRespons"
+  "e\022[\n\014GetInventory\022$.city.economy.v2.GetI"
+  "nventoryRequest\032%.city.economy.v2.GetInv"
+  "entoryResponse\022[\n\014SetInventory\022$.city.ec"
+  "onomy.v2.SetInventoryRequest\032%.city.econ"
+  "omy.v2.SetInventoryResponse\022[\n\014AddInvent"
+  "ory\022$.city.economy.v2.AddInventoryReques"
+  "t\032%.city.economy.v2.AddInventoryResponse"
+  "\022O\n\010GetPrice\022 .city.economy.v2.GetPriceR"
+  "equest\032!.city.economy.v2.GetPriceRespons"
+  "e\022O\n\010SetPrice\022 .city.economy.v2.SetPrice"
+  "Request\032!.city.economy.v2.SetPriceRespon"
+  "se\022O\n\010AddPrice\022 .city.economy.v2.AddPric"
+  "eRequest\032!.city.economy.v2.AddPriceRespo"
+  "nse\022X\n\013GetCurrency\022#.city.economy.v2.Get"
+  "CurrencyRequest\032$.city.economy.v2.GetCur"
+  "rencyResponse\022X\n\013SetCurrency\022#.city.econ"
+  "omy.v2.SetCurrencyRequest\032$.city.economy"
+  ".v2.SetCurrencyResponse\022X\n\013AddCurrency\022#"
+  ".city.economy.v2.AddCurrencyRequest\032$.ci"
+  "ty.economy.v2.AddCurrencyResponse\022d\n\017Get"
+  "InterestRate\022\'.city.economy.v2.GetIntere"
+  "stRateRequest\032(.city.economy.v2.GetInter"
+  "estRateResponse\022d\n\017SetInterestRate\022\'.cit"
+  "y.economy.v2.SetInterestRateRequest\032(.ci"
+  "ty.economy.v2.SetInterestRateResponse\022d\n"
+  "\017AddInterestRate\022\'.city.economy.v2.AddIn"
+  "terestRateRequest\032(.city.economy.v2.AddI"
+  "nterestRateResponse\022j\n\021GetBracketCutoffs"
+  "\022).city.economy.v2.GetBracketCutoffsRequ"
+  "est\032*.city.economy.v2.GetBracketCutoffsR"
+  "esponse\022j\n\021SetBracketCutoffs\022).city.econ"
+  "omy.v2.SetBracketCutoffsRequest\032*.city.e"
+  "conomy.v2.SetBracketCutoffsResponse\022d\n\017G"
+  "etBracketRates\022\'.city.economy.v2.GetBrac"
+  "ketRatesRequest\032(.city.economy.v2.GetBra"
+  "cketRatesResponse\022d\n\017SetBracketRates\022\'.c"
+  "ity.economy.v2.SetBracketRatesRequest\032(."
+  "city.economy.v2.SetBracketRatesResponse\022"
+  "j\n\021CalculateTaxesDue\022).city.economy.v2.C"
+  "alculateTaxesDueRequest\032*.city.economy.v"
+  "2.CalculateTaxesDueResponse\022s\n\024Calculate"
+  "Consumption\022,.city.economy.v2.CalculateC"
+  "onsumptionRequest\032-.city.economy.v2.Calc"
+  "ulateConsumptionResponse\022j\n\021CalculateInt"
+  "erest\022).city.economy.v2.CalculateInteres"
+  "tRequest\032*.city.economy.v2.CalculateInte"
+  "restResponse\022p\n\023SaveEconomyEntities\022+.ci"
+  "ty.economy.v2.SaveEconomyEntitiesRequest"
+  "\032,.city.economy.v2.SaveEconomyEntitiesRe"
+  "sponse\022p\n\023LoadEconomyEntities\022+.city.eco"
+  "nomy.v2.LoadEconomyEntitiesRequest\032,.cit"
+  "y.economy.v2.LoadEconomyEntitiesResponse"
+  "\022y\n\026GetConsumptionCurrency\022..city.econom"
+  "y.v2.GetConsumptionCurrencyRequest\032/.cit"
+  "y.economy.v2.GetConsumptionCurrencyRespo"
+  "nse\022y\n\026SetConsumptionCurrency\022..city.eco"
+  "nomy.v2.SetConsumptionCurrencyRequest\032/."
+  "city.economy.v2.SetConsumptionCurrencyRe"
+  "sponse\022\177\n\030GetConsumptionPropensity\0220.cit"
+  "y.economy.v2.GetConsumptionPropensityReq"
+  "uest\0321.city.economy.v2.GetConsumptionPro"
+  "pensityResponse\022\177\n\030SetConsumptionPropens"
+  "ity\0220.city.economy.v2.SetConsumptionProp"
+  "ensityRequest\0321.city.economy.v2.SetConsu"
+  "mptionPropensityResponse\022j\n\021GetIncomeCur"
+  "rency\022).city.economy.v2.GetIncomeCurrenc"
+  "yRequest\032*.city.economy.v2.GetIncomeCurr"
+  "encyResponse\022j\n\021SetIncomeCurrency\022).city"
+  ".economy.v2.SetIncomeCurrencyRequest\032*.c"
+  "ity.economy.v2.SetIncomeCurrencyResponse"
+  "\022^\n\rGetDepression\022%.city.economy.v2.GetD"
+  "epressionRequest\032&.city.economy.v2.GetDe"
+  "pressionResponse\022^\n\rSetDepression\022%.city"
+  ".economy.v2.SetDepressionRequest\032&.city."
+  "economy.v2.SetDepressionResponse\022d\n\017GetL"
+  "ocusControl\022\'.city.economy.v2.GetLocusCo"
+  "ntrolRequest\032(.city.economy.v2.GetLocusC"
+  "ontrolResponse\022d\n\017SetLocusControl\022\'.city"
+  ".economy.v2.SetLocusControlRequest\032(.cit"
+  "y.economy.v2.SetLocusControlResponse\022d\n\017"
+  "GetWorkingHours\022\'.city.economy.v2.GetWor"
+  "kingHoursRequest\032(.city.economy.v2.GetWo"
+  "rkingHoursResponse\022d\n\017SetWorkingHours\022\'."
+  "city.economy.v2.SetWorkingHoursRequest\032("
+  ".city.economy.v2.SetWorkingHoursResponse"
+  "\022d\n\017GetOrgEntityIds\022\'.city.economy.v2.Ge"
+  "tOrgEntityIdsRequest\032(.city.economy.v2.G"
+  "etOrgEntityIdsResponse\022[\n\014GetEmployees\022$"
+  ".city.economy.v2.GetEmployeesRequest\032%.c"
+  "ity.economy.v2.GetEmployeesResponse\022[\n\014S"
+  "etEmployees\022$.city.economy.v2.SetEmploye"
+  "esRequest\032%.city.economy.v2.SetEmployees"
+  "Response\022X\n\013AddEmployee\022#.city.economy.v"
+  "2.AddEmployeeRequest\032$.city.economy.v2.A"
+  "ddEmployeeResponse\022a\n\016RemoveEmployee\022&.c"
+  "ity.economy.v2.RemoveEmployeeRequest\032\'.c"
+  "ity.economy.v2.RemoveEmployeeResponse\022X\n"
+  "\013GetCitizens\022#.city.economy.v2.GetCitize"
+  "nsRequest\032$.city.economy.v2.GetCitizensR"
+  "esponse\022X\n\013SetCitizens\022#.city.economy.v2"
+  ".SetCitizensRequest\032$.city.economy.v2.Se"
+  "tCitizensResponse\022U\n\nAddCitizen\022\".city.e"
+  "conomy.v2.AddCitizenRequest\032#.city.econo"
+  "my.v2.AddCitizenResponse\022^\n\rRemoveCitize"
+  "n\022%.city.economy.v2.RemoveCitizenRequest"
+  "\032&.city.economy.v2.RemoveCitizenResponse"
+  "\022O\n\010GetAgent\022 .city.economy.v2.GetAgentR"
+  "equest\032!.city.economy.v2.GetAgentRespons"
+  "e\022X\n\013UpdateAgent\022#.city.economy.v2.Updat"
+  "eAgentRequest\032$.city.economy.v2.UpdateAg"
+  "entResponse\022Q\n\010BatchGet\022 .city.economy.v"
+  "2.BatchGetRequest\032!.city.economy.v2.Batc"
+  "hGetResponse\"\000\022Z\n\013BatchUpdate\022#.city.eco"
+  "nomy.v2.BatchUpdateRequest\032$.city.econom"
+  "y.v2.BatchUpdateResponse\"\000\022c\n\016DeltaUpdat"
+  "eOrg\022&.city.economy.v2.DeltaUpdateOrgReq"
+  "uest\032\'.city.economy.v2.DeltaUpdateOrgRes"
+  "ponse\"\000\022i\n\020DeltaUpdateAgent\022(.city.econo"
+  "my.v2.DeltaUpdateAgentRequest\032).city.eco"
+  "nomy.v2.DeltaUpdateAgentResponse\"\000\022i\n\020Ba"
+  "tchDeltaUpdate\022(.city.economy.v2.BatchDe"
+  "ltaUpdateRequest\032).city.economy.v2.Batch"
+  "DeltaUpdateResponse\"\000\022i\n\020CalculateRealGD"
+  "P\022(.city.economy.v2.CalculateRealGDPRequ"
+  "est\032).city.economy.v2.CalculateRealGDPRe"
+  "sponse\"\000B\277\001\n\023com.city.economy.v2B\017OrgSer"
+  "viceProtoP\001Z9git.fiblab.net/sim/protos/v"
+  "2/go/city/economy/v2;economyv2\242\002\003CEX\252\002\017C"
+  "ity.Economy.V2\312\002\017City\\Economy\\V2\342\002\033City\\"
+  "Economy\\V2\\GPBMetadata\352\002\021City::Economy::"
+  "V2b\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_deps[1] = {
   &::descriptor_table_city_2feconomy_2fv2_2feconomy_2eproto,
 };
 static ::_pbi::once_flag descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto = {
-    false, false, 14864, descriptor_table_protodef_city_2feconomy_2fv2_2forg_5fservice_2eproto,
+    false, false, 14890, descriptor_table_protodef_city_2feconomy_2fv2_2forg_5fservice_2eproto,
     "city/economy/v2/org_service.proto",
     &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once, descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_deps, 1, 132,
     schemas, file_default_instances, TableStruct_city_2feconomy_2fv2_2forg_5fservice_2eproto::offsets,
@@ -12480,10 +12483,13 @@ CalculateConsumptionResponse::CalculateConsumptionResponse(const CalculateConsum
   CalculateConsumptionResponse* const _this = this; (void)_this;
   new (&_impl_) Impl_{
       decltype(_impl_.actual_consumption_){}
+    , decltype(_impl_.success_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _this->_impl_.actual_consumption_ = from._impl_.actual_consumption_;
+  ::memcpy(&_impl_.actual_consumption_, &from._impl_.actual_consumption_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.success_) -
+    reinterpret_cast<char*>(&_impl_.actual_consumption_)) + sizeof(_impl_.success_));
   // @@protoc_insertion_point(copy_constructor:city.economy.v2.CalculateConsumptionResponse)
 }
 
@@ -12493,6 +12499,7 @@ inline void CalculateConsumptionResponse::SharedCtor(
   (void)is_message_owned;
   new (&_impl_) Impl_{
       decltype(_impl_.actual_consumption_){0}
+    , decltype(_impl_.success_){false}
     , /*decltype(_impl_._cached_size_)*/{}
   };
 }
@@ -12520,7 +12527,9 @@ void CalculateConsumptionResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.actual_consumption_ = 0;
+  ::memset(&_impl_.actual_consumption_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.success_) -
+      reinterpret_cast<char*>(&_impl_.actual_consumption_)) + sizeof(_impl_.success_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -12535,6 +12544,14 @@ const char* CalculateConsumptionResponse::_InternalParse(const char* ptr, ::_pbi
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 13)) {
           _impl_.actual_consumption_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      // bool success = 2 [json_name = "success"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _impl_.success_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
@@ -12577,6 +12594,12 @@ uint8_t* CalculateConsumptionResponse::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteFloatToArray(1, this->_internal_actual_consumption(), target);
   }
 
+  // bool success = 2 [json_name = "success"];
+  if (this->_internal_success() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(2, this->_internal_success(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -12600,6 +12623,11 @@ size_t CalculateConsumptionResponse::ByteSizeLong() const {
   memcpy(&raw_actual_consumption, &tmp_actual_consumption, sizeof(tmp_actual_consumption));
   if (raw_actual_consumption != 0) {
     total_size += 1 + 4;
+  }
+
+  // bool success = 2 [json_name = "success"];
+  if (this->_internal_success() != 0) {
+    total_size += 1 + 1;
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -12627,6 +12655,9 @@ void CalculateConsumptionResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& t
   if (raw_actual_consumption != 0) {
     _this->_internal_set_actual_consumption(from._internal_actual_consumption());
   }
+  if (from._internal_success() != 0) {
+    _this->_internal_set_success(from._internal_success());
+  }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -12644,7 +12675,12 @@ bool CalculateConsumptionResponse::IsInitialized() const {
 void CalculateConsumptionResponse::InternalSwap(CalculateConsumptionResponse* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_.actual_consumption_, other->_impl_.actual_consumption_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(CalculateConsumptionResponse, _impl_.success_)
+      + sizeof(CalculateConsumptionResponse::_impl_.success_)
+      - PROTOBUF_FIELD_OFFSET(CalculateConsumptionResponse, _impl_.actual_consumption_)>(
+          reinterpret_cast<char*>(&_impl_.actual_consumption_),
+          reinterpret_cast<char*>(&other->_impl_.actual_consumption_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata CalculateConsumptionResponse::GetMetadata() const {

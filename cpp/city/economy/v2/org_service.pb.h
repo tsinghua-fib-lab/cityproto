@@ -9435,6 +9435,7 @@ class CalculateConsumptionResponse final :
 
   enum : int {
     kActualConsumptionFieldNumber = 1,
+    kSuccessFieldNumber = 2,
   };
   // float actual_consumption = 1 [json_name = "actualConsumption"];
   void clear_actual_consumption();
@@ -9443,6 +9444,15 @@ class CalculateConsumptionResponse final :
   private:
   float _internal_actual_consumption() const;
   void _internal_set_actual_consumption(float value);
+  public:
+
+  // bool success = 2 [json_name = "success"];
+  void clear_success();
+  bool success() const;
+  void set_success(bool value);
+  private:
+  bool _internal_success() const;
+  void _internal_set_success(bool value);
   public:
 
   // @@protoc_insertion_point(class_scope:city.economy.v2.CalculateConsumptionResponse)
@@ -9454,6 +9464,7 @@ class CalculateConsumptionResponse final :
   typedef void DestructorSkippable_;
   struct Impl_ {
     float actual_consumption_;
+    bool success_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -22689,6 +22700,26 @@ inline void CalculateConsumptionResponse::_internal_set_actual_consumption(float
 inline void CalculateConsumptionResponse::set_actual_consumption(float value) {
   _internal_set_actual_consumption(value);
   // @@protoc_insertion_point(field_set:city.economy.v2.CalculateConsumptionResponse.actual_consumption)
+}
+
+// bool success = 2 [json_name = "success"];
+inline void CalculateConsumptionResponse::clear_success() {
+  _impl_.success_ = false;
+}
+inline bool CalculateConsumptionResponse::_internal_success() const {
+  return _impl_.success_;
+}
+inline bool CalculateConsumptionResponse::success() const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.CalculateConsumptionResponse.success)
+  return _internal_success();
+}
+inline void CalculateConsumptionResponse::_internal_set_success(bool value) {
+  
+  _impl_.success_ = value;
+}
+inline void CalculateConsumptionResponse::set_success(bool value) {
+  _internal_set_success(value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.CalculateConsumptionResponse.success)
 }
 
 // -------------------------------------------------------------------

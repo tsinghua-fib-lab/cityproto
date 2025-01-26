@@ -2627,6 +2627,7 @@ Organization
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | actual_consumption | [float](#float) |  | 代理实际消费的钱 |
+| success | [bool](#bool) |  | 消费是否成功 |
 
 
 
