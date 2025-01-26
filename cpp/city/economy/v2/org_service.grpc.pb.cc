@@ -86,6 +86,10 @@ static const char* OrgService_method_names[] = {
   "/city.economy.v2.OrgService/UpdateAgent",
   "/city.economy.v2.OrgService/BatchGet",
   "/city.economy.v2.OrgService/BatchUpdate",
+  "/city.economy.v2.OrgService/DeltaUpdateOrg",
+  "/city.economy.v2.OrgService/DeltaUpdateAgent",
+  "/city.economy.v2.OrgService/BatchDeltaUpdate",
+  "/city.economy.v2.OrgService/CalculateRealGDP",
 };
 
 std::unique_ptr< OrgService::Stub> OrgService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -157,6 +161,10 @@ OrgService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel
   , rpcmethod_UpdateAgent_(OrgService_method_names[59], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_BatchGet_(OrgService_method_names[60], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_BatchUpdate_(OrgService_method_names[61], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_DeltaUpdateOrg_(OrgService_method_names[62], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_DeltaUpdateAgent_(OrgService_method_names[63], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_BatchDeltaUpdate_(OrgService_method_names[64], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_CalculateRealGDP_(OrgService_method_names[65], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status OrgService::Stub::AddOrg(::grpc::ClientContext* context, const ::city::economy::v2::AddOrgRequest& request, ::city::economy::v2::AddOrgResponse* response) {
@@ -1585,6 +1593,98 @@ void OrgService::Stub::async::BatchUpdate(::grpc::ClientContext* context, const 
   return result;
 }
 
+::grpc::Status OrgService::Stub::DeltaUpdateOrg(::grpc::ClientContext* context, const ::city::economy::v2::DeltaUpdateOrgRequest& request, ::city::economy::v2::DeltaUpdateOrgResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::DeltaUpdateOrgRequest, ::city::economy::v2::DeltaUpdateOrgResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_DeltaUpdateOrg_, context, request, response);
+}
+
+void OrgService::Stub::async::DeltaUpdateOrg(::grpc::ClientContext* context, const ::city::economy::v2::DeltaUpdateOrgRequest* request, ::city::economy::v2::DeltaUpdateOrgResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::DeltaUpdateOrgRequest, ::city::economy::v2::DeltaUpdateOrgResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_DeltaUpdateOrg_, context, request, response, std::move(f));
+}
+
+void OrgService::Stub::async::DeltaUpdateOrg(::grpc::ClientContext* context, const ::city::economy::v2::DeltaUpdateOrgRequest* request, ::city::economy::v2::DeltaUpdateOrgResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_DeltaUpdateOrg_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::city::economy::v2::DeltaUpdateOrgResponse>* OrgService::Stub::PrepareAsyncDeltaUpdateOrgRaw(::grpc::ClientContext* context, const ::city::economy::v2::DeltaUpdateOrgRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::DeltaUpdateOrgResponse, ::city::economy::v2::DeltaUpdateOrgRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_DeltaUpdateOrg_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::city::economy::v2::DeltaUpdateOrgResponse>* OrgService::Stub::AsyncDeltaUpdateOrgRaw(::grpc::ClientContext* context, const ::city::economy::v2::DeltaUpdateOrgRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncDeltaUpdateOrgRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status OrgService::Stub::DeltaUpdateAgent(::grpc::ClientContext* context, const ::city::economy::v2::DeltaUpdateAgentRequest& request, ::city::economy::v2::DeltaUpdateAgentResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::DeltaUpdateAgentRequest, ::city::economy::v2::DeltaUpdateAgentResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_DeltaUpdateAgent_, context, request, response);
+}
+
+void OrgService::Stub::async::DeltaUpdateAgent(::grpc::ClientContext* context, const ::city::economy::v2::DeltaUpdateAgentRequest* request, ::city::economy::v2::DeltaUpdateAgentResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::DeltaUpdateAgentRequest, ::city::economy::v2::DeltaUpdateAgentResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_DeltaUpdateAgent_, context, request, response, std::move(f));
+}
+
+void OrgService::Stub::async::DeltaUpdateAgent(::grpc::ClientContext* context, const ::city::economy::v2::DeltaUpdateAgentRequest* request, ::city::economy::v2::DeltaUpdateAgentResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_DeltaUpdateAgent_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::city::economy::v2::DeltaUpdateAgentResponse>* OrgService::Stub::PrepareAsyncDeltaUpdateAgentRaw(::grpc::ClientContext* context, const ::city::economy::v2::DeltaUpdateAgentRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::DeltaUpdateAgentResponse, ::city::economy::v2::DeltaUpdateAgentRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_DeltaUpdateAgent_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::city::economy::v2::DeltaUpdateAgentResponse>* OrgService::Stub::AsyncDeltaUpdateAgentRaw(::grpc::ClientContext* context, const ::city::economy::v2::DeltaUpdateAgentRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncDeltaUpdateAgentRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status OrgService::Stub::BatchDeltaUpdate(::grpc::ClientContext* context, const ::city::economy::v2::BatchDeltaUpdateRequest& request, ::city::economy::v2::BatchDeltaUpdateResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::BatchDeltaUpdateRequest, ::city::economy::v2::BatchDeltaUpdateResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_BatchDeltaUpdate_, context, request, response);
+}
+
+void OrgService::Stub::async::BatchDeltaUpdate(::grpc::ClientContext* context, const ::city::economy::v2::BatchDeltaUpdateRequest* request, ::city::economy::v2::BatchDeltaUpdateResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::BatchDeltaUpdateRequest, ::city::economy::v2::BatchDeltaUpdateResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_BatchDeltaUpdate_, context, request, response, std::move(f));
+}
+
+void OrgService::Stub::async::BatchDeltaUpdate(::grpc::ClientContext* context, const ::city::economy::v2::BatchDeltaUpdateRequest* request, ::city::economy::v2::BatchDeltaUpdateResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_BatchDeltaUpdate_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchDeltaUpdateResponse>* OrgService::Stub::PrepareAsyncBatchDeltaUpdateRaw(::grpc::ClientContext* context, const ::city::economy::v2::BatchDeltaUpdateRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::BatchDeltaUpdateResponse, ::city::economy::v2::BatchDeltaUpdateRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_BatchDeltaUpdate_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchDeltaUpdateResponse>* OrgService::Stub::AsyncBatchDeltaUpdateRaw(::grpc::ClientContext* context, const ::city::economy::v2::BatchDeltaUpdateRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncBatchDeltaUpdateRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status OrgService::Stub::CalculateRealGDP(::grpc::ClientContext* context, const ::city::economy::v2::CalculateRealGDPRequest& request, ::city::economy::v2::CalculateRealGDPResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::CalculateRealGDPRequest, ::city::economy::v2::CalculateRealGDPResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_CalculateRealGDP_, context, request, response);
+}
+
+void OrgService::Stub::async::CalculateRealGDP(::grpc::ClientContext* context, const ::city::economy::v2::CalculateRealGDPRequest* request, ::city::economy::v2::CalculateRealGDPResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::CalculateRealGDPRequest, ::city::economy::v2::CalculateRealGDPResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_CalculateRealGDP_, context, request, response, std::move(f));
+}
+
+void OrgService::Stub::async::CalculateRealGDP(::grpc::ClientContext* context, const ::city::economy::v2::CalculateRealGDPRequest* request, ::city::economy::v2::CalculateRealGDPResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_CalculateRealGDP_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::city::economy::v2::CalculateRealGDPResponse>* OrgService::Stub::PrepareAsyncCalculateRealGDPRaw(::grpc::ClientContext* context, const ::city::economy::v2::CalculateRealGDPRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::CalculateRealGDPResponse, ::city::economy::v2::CalculateRealGDPRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_CalculateRealGDP_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::city::economy::v2::CalculateRealGDPResponse>* OrgService::Stub::AsyncCalculateRealGDPRaw(::grpc::ClientContext* context, const ::city::economy::v2::CalculateRealGDPRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncCalculateRealGDPRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
 OrgService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       OrgService_method_names[0],
@@ -2206,6 +2306,46 @@ OrgService::Service::Service() {
              ::city::economy::v2::BatchUpdateResponse* resp) {
                return service->BatchUpdate(ctx, req, resp);
              }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      OrgService_method_names[62],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::DeltaUpdateOrgRequest, ::city::economy::v2::DeltaUpdateOrgResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](OrgService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::city::economy::v2::DeltaUpdateOrgRequest* req,
+             ::city::economy::v2::DeltaUpdateOrgResponse* resp) {
+               return service->DeltaUpdateOrg(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      OrgService_method_names[63],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::DeltaUpdateAgentRequest, ::city::economy::v2::DeltaUpdateAgentResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](OrgService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::city::economy::v2::DeltaUpdateAgentRequest* req,
+             ::city::economy::v2::DeltaUpdateAgentResponse* resp) {
+               return service->DeltaUpdateAgent(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      OrgService_method_names[64],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::BatchDeltaUpdateRequest, ::city::economy::v2::BatchDeltaUpdateResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](OrgService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::city::economy::v2::BatchDeltaUpdateRequest* req,
+             ::city::economy::v2::BatchDeltaUpdateResponse* resp) {
+               return service->BatchDeltaUpdate(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      OrgService_method_names[65],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::CalculateRealGDPRequest, ::city::economy::v2::CalculateRealGDPResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](OrgService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::city::economy::v2::CalculateRealGDPRequest* req,
+             ::city::economy::v2::CalculateRealGDPResponse* resp) {
+               return service->CalculateRealGDP(ctx, req, resp);
+             }, this)));
 }
 
 OrgService::Service::~Service() {
@@ -2639,6 +2779,34 @@ OrgService::Service::~Service() {
 }
 
 ::grpc::Status OrgService::Service::BatchUpdate(::grpc::ServerContext* context, const ::city::economy::v2::BatchUpdateRequest* request, ::city::economy::v2::BatchUpdateResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status OrgService::Service::DeltaUpdateOrg(::grpc::ServerContext* context, const ::city::economy::v2::DeltaUpdateOrgRequest* request, ::city::economy::v2::DeltaUpdateOrgResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status OrgService::Service::DeltaUpdateAgent(::grpc::ServerContext* context, const ::city::economy::v2::DeltaUpdateAgentRequest* request, ::city::economy::v2::DeltaUpdateAgentResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status OrgService::Service::BatchDeltaUpdate(::grpc::ServerContext* context, const ::city::economy::v2::BatchDeltaUpdateRequest* request, ::city::economy::v2::BatchDeltaUpdateResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status OrgService::Service::CalculateRealGDP(::grpc::ServerContext* context, const ::city::economy::v2::CalculateRealGDPRequest* request, ::city::economy::v2::CalculateRealGDPResponse* response) {
   (void) context;
   (void) request;
   (void) response;

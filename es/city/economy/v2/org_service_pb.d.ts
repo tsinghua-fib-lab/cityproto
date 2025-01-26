@@ -3091,3 +3091,245 @@ export declare class BatchUpdateResponse extends Message<BatchUpdateResponse> {
   static equals(a: BatchUpdateResponse | PlainMessage<BatchUpdateResponse> | undefined, b: BatchUpdateResponse | PlainMessage<BatchUpdateResponse> | undefined): boolean;
 }
 
+/**
+ * 增量更新请求
+ *
+ * @generated from message city.economy.v2.DeltaUpdateOrgRequest
+ */
+export declare class DeltaUpdateOrgRequest extends Message<DeltaUpdateOrgRequest> {
+  /**
+   * @generated from field: int32 org_id = 1;
+   */
+  orgId: number;
+
+  /**
+   * @generated from field: optional float delta_inventory = 2;
+   */
+  deltaInventory?: number;
+
+  /**
+   * @generated from field: optional float delta_price = 3;
+   */
+  deltaPrice?: number;
+
+  /**
+   * @generated from field: optional float delta_currency = 4;
+   */
+  deltaCurrency?: number;
+
+  /**
+   * @generated from field: optional float delta_interest_rate = 5;
+   */
+  deltaInterestRate?: number;
+
+  /**
+   * @generated from field: repeated int32 add_employees = 6;
+   */
+  addEmployees: number[];
+
+  /**
+   * @generated from field: repeated int32 remove_employees = 7;
+   */
+  removeEmployees: number[];
+
+  constructor(data?: PartialMessage<DeltaUpdateOrgRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.economy.v2.DeltaUpdateOrgRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeltaUpdateOrgRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeltaUpdateOrgRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeltaUpdateOrgRequest;
+
+  static equals(a: DeltaUpdateOrgRequest | PlainMessage<DeltaUpdateOrgRequest> | undefined, b: DeltaUpdateOrgRequest | PlainMessage<DeltaUpdateOrgRequest> | undefined): boolean;
+}
+
+/**
+ * @generated from message city.economy.v2.DeltaUpdateOrgResponse
+ */
+export declare class DeltaUpdateOrgResponse extends Message<DeltaUpdateOrgResponse> {
+  constructor(data?: PartialMessage<DeltaUpdateOrgResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.economy.v2.DeltaUpdateOrgResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeltaUpdateOrgResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeltaUpdateOrgResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeltaUpdateOrgResponse;
+
+  static equals(a: DeltaUpdateOrgResponse | PlainMessage<DeltaUpdateOrgResponse> | undefined, b: DeltaUpdateOrgResponse | PlainMessage<DeltaUpdateOrgResponse> | undefined): boolean;
+}
+
+/**
+ * @generated from message city.economy.v2.DeltaUpdateAgentRequest
+ */
+export declare class DeltaUpdateAgentRequest extends Message<DeltaUpdateAgentRequest> {
+  /**
+   * @generated from field: int32 agent_id = 1;
+   */
+  agentId: number;
+
+  /**
+   * @generated from field: optional float delta_currency = 2;
+   */
+  deltaCurrency?: number;
+
+  /**
+   * @generated from field: optional float delta_skill = 3;
+   */
+  deltaSkill?: number;
+
+  /**
+   * @generated from field: optional float delta_consumption = 4;
+   */
+  deltaConsumption?: number;
+
+  /**
+   * @generated from field: optional float delta_income = 5;
+   */
+  deltaIncome?: number;
+
+  constructor(data?: PartialMessage<DeltaUpdateAgentRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.economy.v2.DeltaUpdateAgentRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeltaUpdateAgentRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeltaUpdateAgentRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeltaUpdateAgentRequest;
+
+  static equals(a: DeltaUpdateAgentRequest | PlainMessage<DeltaUpdateAgentRequest> | undefined, b: DeltaUpdateAgentRequest | PlainMessage<DeltaUpdateAgentRequest> | undefined): boolean;
+}
+
+/**
+ * @generated from message city.economy.v2.DeltaUpdateAgentResponse
+ */
+export declare class DeltaUpdateAgentResponse extends Message<DeltaUpdateAgentResponse> {
+  constructor(data?: PartialMessage<DeltaUpdateAgentResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.economy.v2.DeltaUpdateAgentResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeltaUpdateAgentResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeltaUpdateAgentResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeltaUpdateAgentResponse;
+
+  static equals(a: DeltaUpdateAgentResponse | PlainMessage<DeltaUpdateAgentResponse> | undefined, b: DeltaUpdateAgentResponse | PlainMessage<DeltaUpdateAgentResponse> | undefined): boolean;
+}
+
+/**
+ * 批量增量更新请求
+ *
+ * @generated from message city.economy.v2.BatchDeltaUpdateRequest
+ */
+export declare class BatchDeltaUpdateRequest extends Message<BatchDeltaUpdateRequest> {
+  /**
+   * @generated from field: repeated city.economy.v2.DeltaUpdateOrgRequest orgs = 1;
+   */
+  orgs: DeltaUpdateOrgRequest[];
+
+  /**
+   * @generated from field: repeated city.economy.v2.DeltaUpdateAgentRequest agents = 2;
+   */
+  agents: DeltaUpdateAgentRequest[];
+
+  constructor(data?: PartialMessage<BatchDeltaUpdateRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.economy.v2.BatchDeltaUpdateRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): BatchDeltaUpdateRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): BatchDeltaUpdateRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): BatchDeltaUpdateRequest;
+
+  static equals(a: BatchDeltaUpdateRequest | PlainMessage<BatchDeltaUpdateRequest> | undefined, b: BatchDeltaUpdateRequest | PlainMessage<BatchDeltaUpdateRequest> | undefined): boolean;
+}
+
+/**
+ * @generated from message city.economy.v2.BatchDeltaUpdateResponse
+ */
+export declare class BatchDeltaUpdateResponse extends Message<BatchDeltaUpdateResponse> {
+  constructor(data?: PartialMessage<BatchDeltaUpdateResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.economy.v2.BatchDeltaUpdateResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): BatchDeltaUpdateResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): BatchDeltaUpdateResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): BatchDeltaUpdateResponse;
+
+  static equals(a: BatchDeltaUpdateResponse | PlainMessage<BatchDeltaUpdateResponse> | undefined, b: BatchDeltaUpdateResponse | PlainMessage<BatchDeltaUpdateResponse> | undefined): boolean;
+}
+
+/**
+ * 计算实际GDP的请求和响应消息
+ *
+ * @generated from message city.economy.v2.CalculateRealGDPRequest
+ */
+export declare class CalculateRealGDPRequest extends Message<CalculateRealGDPRequest> {
+  /**
+   * NBS Agent的ID
+   *
+   * @generated from field: int32 nbs_agent_id = 1;
+   */
+  nbsAgentId: number;
+
+  constructor(data?: PartialMessage<CalculateRealGDPRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.economy.v2.CalculateRealGDPRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CalculateRealGDPRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CalculateRealGDPRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CalculateRealGDPRequest;
+
+  static equals(a: CalculateRealGDPRequest | PlainMessage<CalculateRealGDPRequest> | undefined, b: CalculateRealGDPRequest | PlainMessage<CalculateRealGDPRequest> | undefined): boolean;
+}
+
+/**
+ * @generated from message city.economy.v2.CalculateRealGDPResponse
+ */
+export declare class CalculateRealGDPResponse extends Message<CalculateRealGDPResponse> {
+  /**
+   * 计算得到的实际GDP
+   *
+   * @generated from field: float real_gdp = 1;
+   */
+  realGdp: number;
+
+  constructor(data?: PartialMessage<CalculateRealGDPResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.economy.v2.CalculateRealGDPResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CalculateRealGDPResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CalculateRealGDPResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CalculateRealGDPResponse;
+
+  static equals(a: CalculateRealGDPResponse | PlainMessage<CalculateRealGDPResponse> | undefined, b: CalculateRealGDPResponse | PlainMessage<CalculateRealGDPResponse> | undefined): boolean;
+}
+

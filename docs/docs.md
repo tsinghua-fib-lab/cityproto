@@ -147,6 +147,8 @@
     - [AddOrgResponse](#city-economy-v2-AddOrgResponse)
     - [AddPriceRequest](#city-economy-v2-AddPriceRequest)
     - [AddPriceResponse](#city-economy-v2-AddPriceResponse)
+    - [BatchDeltaUpdateRequest](#city-economy-v2-BatchDeltaUpdateRequest)
+    - [BatchDeltaUpdateResponse](#city-economy-v2-BatchDeltaUpdateResponse)
     - [BatchGetRequest](#city-economy-v2-BatchGetRequest)
     - [BatchGetResponse](#city-economy-v2-BatchGetResponse)
     - [BatchUpdateRequest](#city-economy-v2-BatchUpdateRequest)
@@ -155,8 +157,14 @@
     - [CalculateConsumptionResponse](#city-economy-v2-CalculateConsumptionResponse)
     - [CalculateInterestRequest](#city-economy-v2-CalculateInterestRequest)
     - [CalculateInterestResponse](#city-economy-v2-CalculateInterestResponse)
+    - [CalculateRealGDPRequest](#city-economy-v2-CalculateRealGDPRequest)
+    - [CalculateRealGDPResponse](#city-economy-v2-CalculateRealGDPResponse)
     - [CalculateTaxesDueRequest](#city-economy-v2-CalculateTaxesDueRequest)
     - [CalculateTaxesDueResponse](#city-economy-v2-CalculateTaxesDueResponse)
+    - [DeltaUpdateAgentRequest](#city-economy-v2-DeltaUpdateAgentRequest)
+    - [DeltaUpdateAgentResponse](#city-economy-v2-DeltaUpdateAgentResponse)
+    - [DeltaUpdateOrgRequest](#city-economy-v2-DeltaUpdateOrgRequest)
+    - [DeltaUpdateOrgResponse](#city-economy-v2-DeltaUpdateOrgResponse)
     - [GetAgentRequest](#city-economy-v2-GetAgentRequest)
     - [GetAgentResponse](#city-economy-v2-GetAgentResponse)
     - [GetBracketCutoffsRequest](#city-economy-v2-GetBracketCutoffsRequest)
@@ -2509,6 +2517,32 @@ Organization
 
 
 
+<a name="city-economy-v2-BatchDeltaUpdateRequest"></a>
+
+### BatchDeltaUpdateRequest
+批量增量更新请求
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| orgs | [DeltaUpdateOrgRequest](#city-economy-v2-DeltaUpdateOrgRequest) | repeated |  |
+| agents | [DeltaUpdateAgentRequest](#city-economy-v2-DeltaUpdateAgentRequest) | repeated |  |
+
+
+
+
+
+
+<a name="city-economy-v2-BatchDeltaUpdateResponse"></a>
+
+### BatchDeltaUpdateResponse
+
+
+
+
+
+
+
 <a name="city-economy-v2-BatchGetRequest"></a>
 
 ### BatchGetRequest
@@ -2631,6 +2665,36 @@ Organization
 
 
 
+<a name="city-economy-v2-CalculateRealGDPRequest"></a>
+
+### CalculateRealGDPRequest
+计算实际GDP的请求和响应消息
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| nbs_agent_id | [int32](#int32) |  | NBS Agent的ID |
+
+
+
+
+
+
+<a name="city-economy-v2-CalculateRealGDPResponse"></a>
+
+### CalculateRealGDPResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| real_gdp | [float](#float) |  | 计算得到的实际GDP |
+
+
+
+
+
+
 <a name="city-economy-v2-CalculateTaxesDueRequest"></a>
 
 ### CalculateTaxesDueRequest
@@ -2659,6 +2723,66 @@ Organization
 | ----- | ---- | ----- | ----------- |
 | taxes_due | [float](#float) |  | total taxes from agents |
 | updated_incomes | [float](#float) | repeated | after-tax income of agents, corresponds one-to-one with `agent_ids` by index |
+
+
+
+
+
+
+<a name="city-economy-v2-DeltaUpdateAgentRequest"></a>
+
+### DeltaUpdateAgentRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| agent_id | [int32](#int32) |  |  |
+| delta_currency | [float](#float) | optional |  |
+| delta_skill | [float](#float) | optional |  |
+| delta_consumption | [float](#float) | optional |  |
+| delta_income | [float](#float) | optional |  |
+
+
+
+
+
+
+<a name="city-economy-v2-DeltaUpdateAgentResponse"></a>
+
+### DeltaUpdateAgentResponse
+
+
+
+
+
+
+
+<a name="city-economy-v2-DeltaUpdateOrgRequest"></a>
+
+### DeltaUpdateOrgRequest
+增量更新请求
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| org_id | [int32](#int32) |  |  |
+| delta_inventory | [float](#float) | optional |  |
+| delta_price | [float](#float) | optional |  |
+| delta_currency | [float](#float) | optional |  |
+| delta_interest_rate | [float](#float) | optional |  |
+| add_employees | [int32](#int32) | repeated |  |
+| remove_employees | [int32](#int32) | repeated |  |
+
+
+
+
+
+
+<a name="city-economy-v2-DeltaUpdateOrgResponse"></a>
+
+### DeltaUpdateOrgResponse
+
 
 
 
@@ -4108,6 +4232,10 @@ Working Hours
 | UpdateAgent | [UpdateAgentRequest](#city-economy-v2-UpdateAgentRequest) | [UpdateAgentResponse](#city-economy-v2-UpdateAgentResponse) |  |
 | BatchGet | [BatchGetRequest](#city-economy-v2-BatchGetRequest) | [BatchGetResponse](#city-economy-v2-BatchGetResponse) | 批量获取 |
 | BatchUpdate | [BatchUpdateRequest](#city-economy-v2-BatchUpdateRequest) | [BatchUpdateResponse](#city-economy-v2-BatchUpdateResponse) | 批量更新 |
+| DeltaUpdateOrg | [DeltaUpdateOrgRequest](#city-economy-v2-DeltaUpdateOrgRequest) | [DeltaUpdateOrgResponse](#city-economy-v2-DeltaUpdateOrgResponse) | 增量更新 |
+| DeltaUpdateAgent | [DeltaUpdateAgentRequest](#city-economy-v2-DeltaUpdateAgentRequest) | [DeltaUpdateAgentResponse](#city-economy-v2-DeltaUpdateAgentResponse) |  |
+| BatchDeltaUpdate | [BatchDeltaUpdateRequest](#city-economy-v2-BatchDeltaUpdateRequest) | [BatchDeltaUpdateResponse](#city-economy-v2-BatchDeltaUpdateResponse) | 批量增量更新 |
+| CalculateRealGDP | [CalculateRealGDPRequest](#city-economy-v2-CalculateRealGDPRequest) | [CalculateRealGDPResponse](#city-economy-v2-CalculateRealGDPResponse) | 计算实际GDP |
 
  
 

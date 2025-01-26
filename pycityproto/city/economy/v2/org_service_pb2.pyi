@@ -1016,3 +1016,83 @@ class BatchUpdateResponse(_message.Message):
 
     def __init__(self) -> None:
         ...
+
+class DeltaUpdateOrgRequest(_message.Message):
+    __slots__ = ['org_id', 'delta_inventory', 'delta_price', 'delta_currency', 'delta_interest_rate', 'add_employees', 'remove_employees']
+    ORG_ID_FIELD_NUMBER: _ClassVar[int]
+    DELTA_INVENTORY_FIELD_NUMBER: _ClassVar[int]
+    DELTA_PRICE_FIELD_NUMBER: _ClassVar[int]
+    DELTA_CURRENCY_FIELD_NUMBER: _ClassVar[int]
+    DELTA_INTEREST_RATE_FIELD_NUMBER: _ClassVar[int]
+    ADD_EMPLOYEES_FIELD_NUMBER: _ClassVar[int]
+    REMOVE_EMPLOYEES_FIELD_NUMBER: _ClassVar[int]
+    org_id: int
+    delta_inventory: float
+    delta_price: float
+    delta_currency: float
+    delta_interest_rate: float
+    add_employees: _containers.RepeatedScalarFieldContainer[int]
+    remove_employees: _containers.RepeatedScalarFieldContainer[int]
+
+    def __init__(self, org_id: _Optional[int]=..., delta_inventory: _Optional[float]=..., delta_price: _Optional[float]=..., delta_currency: _Optional[float]=..., delta_interest_rate: _Optional[float]=..., add_employees: _Optional[_Iterable[int]]=..., remove_employees: _Optional[_Iterable[int]]=...) -> None:
+        ...
+
+class DeltaUpdateOrgResponse(_message.Message):
+    __slots__ = []
+
+    def __init__(self) -> None:
+        ...
+
+class DeltaUpdateAgentRequest(_message.Message):
+    __slots__ = ['agent_id', 'delta_currency', 'delta_skill', 'delta_consumption', 'delta_income']
+    AGENT_ID_FIELD_NUMBER: _ClassVar[int]
+    DELTA_CURRENCY_FIELD_NUMBER: _ClassVar[int]
+    DELTA_SKILL_FIELD_NUMBER: _ClassVar[int]
+    DELTA_CONSUMPTION_FIELD_NUMBER: _ClassVar[int]
+    DELTA_INCOME_FIELD_NUMBER: _ClassVar[int]
+    agent_id: int
+    delta_currency: float
+    delta_skill: float
+    delta_consumption: float
+    delta_income: float
+
+    def __init__(self, agent_id: _Optional[int]=..., delta_currency: _Optional[float]=..., delta_skill: _Optional[float]=..., delta_consumption: _Optional[float]=..., delta_income: _Optional[float]=...) -> None:
+        ...
+
+class DeltaUpdateAgentResponse(_message.Message):
+    __slots__ = []
+
+    def __init__(self) -> None:
+        ...
+
+class BatchDeltaUpdateRequest(_message.Message):
+    __slots__ = ['orgs', 'agents']
+    ORGS_FIELD_NUMBER: _ClassVar[int]
+    AGENTS_FIELD_NUMBER: _ClassVar[int]
+    orgs: _containers.RepeatedCompositeFieldContainer[DeltaUpdateOrgRequest]
+    agents: _containers.RepeatedCompositeFieldContainer[DeltaUpdateAgentRequest]
+
+    def __init__(self, orgs: _Optional[_Iterable[_Union[DeltaUpdateOrgRequest, _Mapping]]]=..., agents: _Optional[_Iterable[_Union[DeltaUpdateAgentRequest, _Mapping]]]=...) -> None:
+        ...
+
+class BatchDeltaUpdateResponse(_message.Message):
+    __slots__ = []
+
+    def __init__(self) -> None:
+        ...
+
+class CalculateRealGDPRequest(_message.Message):
+    __slots__ = ['nbs_agent_id']
+    NBS_AGENT_ID_FIELD_NUMBER: _ClassVar[int]
+    nbs_agent_id: int
+
+    def __init__(self, nbs_agent_id: _Optional[int]=...) -> None:
+        ...
+
+class CalculateRealGDPResponse(_message.Message):
+    __slots__ = ['real_gdp']
+    REAL_GDP_FIELD_NUMBER: _ClassVar[int]
+    real_gdp: float
+
+    def __init__(self, real_gdp: _Optional[float]=...) -> None:
+        ...

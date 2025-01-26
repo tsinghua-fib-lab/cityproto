@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AddAgentRequest, AddAgentResponse, AddCitizenRequest, AddCitizenResponse, AddCurrencyRequest, AddCurrencyResponse, AddEmployeeRequest, AddEmployeeResponse, AddInterestRateRequest, AddInterestRateResponse, AddInventoryRequest, AddInventoryResponse, AddOrgRequest, AddOrgResponse, AddPriceRequest, AddPriceResponse, BatchGetRequest, BatchGetResponse, BatchUpdateRequest, BatchUpdateResponse, CalculateConsumptionRequest, CalculateConsumptionResponse, CalculateInterestRequest, CalculateInterestResponse, CalculateTaxesDueRequest, CalculateTaxesDueResponse, GetAgentRequest, GetAgentResponse, GetBracketCutoffsRequest, GetBracketCutoffsResponse, GetBracketRatesRequest, GetBracketRatesResponse, GetCitizensRequest, GetCitizensResponse, GetConsumptionCurrencyRequest, GetConsumptionCurrencyResponse, GetConsumptionPropensityRequest, GetConsumptionPropensityResponse, GetCurrencyRequest, GetCurrencyResponse, GetDepressionRequest, GetDepressionResponse, GetEmployeesRequest, GetEmployeesResponse, GetIncomeCurrencyRequest, GetIncomeCurrencyResponse, GetInterestRateRequest, GetInterestRateResponse, GetInventoryRequest, GetInventoryResponse, GetLocusControlRequest, GetLocusControlResponse, GetNominalGDPRequest, GetNominalGDPResponse, GetOrgEntityIdsRequest, GetOrgEntityIdsResponse, GetOrgRequest, GetOrgResponse, GetPriceRequest, GetPriceResponse, GetPricesRequest, GetPricesResponse, GetRealGDPRequest, GetRealGDPResponse, GetUnemploymentRequest, GetUnemploymentResponse, GetWagesRequest, GetWagesResponse, GetWorkingHoursRequest, GetWorkingHoursResponse, LoadEconomyEntitiesRequest, LoadEconomyEntitiesResponse, RemoveAgentRequest, RemoveAgentResponse, RemoveCitizenRequest, RemoveCitizenResponse, RemoveEmployeeRequest, RemoveEmployeeResponse, RemoveOrgRequest, RemoveOrgResponse, SaveEconomyEntitiesRequest, SaveEconomyEntitiesResponse, SetBracketCutoffsRequest, SetBracketCutoffsResponse, SetBracketRatesRequest, SetBracketRatesResponse, SetCitizensRequest, SetCitizensResponse, SetConsumptionCurrencyRequest, SetConsumptionCurrencyResponse, SetConsumptionPropensityRequest, SetConsumptionPropensityResponse, SetCurrencyRequest, SetCurrencyResponse, SetDepressionRequest, SetDepressionResponse, SetEmployeesRequest, SetEmployeesResponse, SetIncomeCurrencyRequest, SetIncomeCurrencyResponse, SetInterestRateRequest, SetInterestRateResponse, SetInventoryRequest, SetInventoryResponse, SetLocusControlRequest, SetLocusControlResponse, SetNominalGDPRequest, SetNominalGDPResponse, SetPriceRequest, SetPriceResponse, SetPricesRequest, SetPricesResponse, SetRealGDPRequest, SetRealGDPResponse, SetUnemploymentRequest, SetUnemploymentResponse, SetWagesRequest, SetWagesResponse, SetWorkingHoursRequest, SetWorkingHoursResponse, UpdateAgentRequest, UpdateAgentResponse, UpdateOrgRequest, UpdateOrgResponse } from "./org_service_pb.js";
+import { AddAgentRequest, AddAgentResponse, AddCitizenRequest, AddCitizenResponse, AddCurrencyRequest, AddCurrencyResponse, AddEmployeeRequest, AddEmployeeResponse, AddInterestRateRequest, AddInterestRateResponse, AddInventoryRequest, AddInventoryResponse, AddOrgRequest, AddOrgResponse, AddPriceRequest, AddPriceResponse, BatchDeltaUpdateRequest, BatchDeltaUpdateResponse, BatchGetRequest, BatchGetResponse, BatchUpdateRequest, BatchUpdateResponse, CalculateConsumptionRequest, CalculateConsumptionResponse, CalculateInterestRequest, CalculateInterestResponse, CalculateRealGDPRequest, CalculateRealGDPResponse, CalculateTaxesDueRequest, CalculateTaxesDueResponse, DeltaUpdateAgentRequest, DeltaUpdateAgentResponse, DeltaUpdateOrgRequest, DeltaUpdateOrgResponse, GetAgentRequest, GetAgentResponse, GetBracketCutoffsRequest, GetBracketCutoffsResponse, GetBracketRatesRequest, GetBracketRatesResponse, GetCitizensRequest, GetCitizensResponse, GetConsumptionCurrencyRequest, GetConsumptionCurrencyResponse, GetConsumptionPropensityRequest, GetConsumptionPropensityResponse, GetCurrencyRequest, GetCurrencyResponse, GetDepressionRequest, GetDepressionResponse, GetEmployeesRequest, GetEmployeesResponse, GetIncomeCurrencyRequest, GetIncomeCurrencyResponse, GetInterestRateRequest, GetInterestRateResponse, GetInventoryRequest, GetInventoryResponse, GetLocusControlRequest, GetLocusControlResponse, GetNominalGDPRequest, GetNominalGDPResponse, GetOrgEntityIdsRequest, GetOrgEntityIdsResponse, GetOrgRequest, GetOrgResponse, GetPriceRequest, GetPriceResponse, GetPricesRequest, GetPricesResponse, GetRealGDPRequest, GetRealGDPResponse, GetUnemploymentRequest, GetUnemploymentResponse, GetWagesRequest, GetWagesResponse, GetWorkingHoursRequest, GetWorkingHoursResponse, LoadEconomyEntitiesRequest, LoadEconomyEntitiesResponse, RemoveAgentRequest, RemoveAgentResponse, RemoveCitizenRequest, RemoveCitizenResponse, RemoveEmployeeRequest, RemoveEmployeeResponse, RemoveOrgRequest, RemoveOrgResponse, SaveEconomyEntitiesRequest, SaveEconomyEntitiesResponse, SetBracketCutoffsRequest, SetBracketCutoffsResponse, SetBracketRatesRequest, SetBracketRatesResponse, SetCitizensRequest, SetCitizensResponse, SetConsumptionCurrencyRequest, SetConsumptionCurrencyResponse, SetConsumptionPropensityRequest, SetConsumptionPropensityResponse, SetCurrencyRequest, SetCurrencyResponse, SetDepressionRequest, SetDepressionResponse, SetEmployeesRequest, SetEmployeesResponse, SetIncomeCurrencyRequest, SetIncomeCurrencyResponse, SetInterestRateRequest, SetInterestRateResponse, SetInventoryRequest, SetInventoryResponse, SetLocusControlRequest, SetLocusControlResponse, SetNominalGDPRequest, SetNominalGDPResponse, SetPriceRequest, SetPriceResponse, SetPricesRequest, SetPricesResponse, SetRealGDPRequest, SetRealGDPResponse, SetUnemploymentRequest, SetUnemploymentResponse, SetWagesRequest, SetWagesResponse, SetWorkingHoursRequest, SetWorkingHoursResponse, UpdateAgentRequest, UpdateAgentResponse, UpdateOrgRequest, UpdateOrgResponse } from "./org_service_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -644,6 +644,48 @@ export const OrgService = {
       name: "BatchUpdate",
       I: BatchUpdateRequest,
       O: BatchUpdateResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * 增量更新
+     *
+     * @generated from rpc city.economy.v2.OrgService.DeltaUpdateOrg
+     */
+    deltaUpdateOrg: {
+      name: "DeltaUpdateOrg",
+      I: DeltaUpdateOrgRequest,
+      O: DeltaUpdateOrgResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc city.economy.v2.OrgService.DeltaUpdateAgent
+     */
+    deltaUpdateAgent: {
+      name: "DeltaUpdateAgent",
+      I: DeltaUpdateAgentRequest,
+      O: DeltaUpdateAgentResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * 批量增量更新
+     *
+     * @generated from rpc city.economy.v2.OrgService.BatchDeltaUpdate
+     */
+    batchDeltaUpdate: {
+      name: "BatchDeltaUpdate",
+      I: BatchDeltaUpdateRequest,
+      O: BatchDeltaUpdateResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * 计算实际GDP
+     *
+     * @generated from rpc city.economy.v2.OrgService.CalculateRealGDP
+     */
+    calculateRealGDP: {
+      name: "CalculateRealGDP",
+      I: CalculateRealGDPRequest,
+      O: CalculateRealGDPResponse,
       kind: MethodKind.Unary,
     },
   }

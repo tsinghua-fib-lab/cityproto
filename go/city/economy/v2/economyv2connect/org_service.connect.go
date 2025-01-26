@@ -188,6 +188,18 @@ const (
 	OrgServiceBatchGetProcedure = "/city.economy.v2.OrgService/BatchGet"
 	// OrgServiceBatchUpdateProcedure is the fully-qualified name of the OrgService's BatchUpdate RPC.
 	OrgServiceBatchUpdateProcedure = "/city.economy.v2.OrgService/BatchUpdate"
+	// OrgServiceDeltaUpdateOrgProcedure is the fully-qualified name of the OrgService's DeltaUpdateOrg
+	// RPC.
+	OrgServiceDeltaUpdateOrgProcedure = "/city.economy.v2.OrgService/DeltaUpdateOrg"
+	// OrgServiceDeltaUpdateAgentProcedure is the fully-qualified name of the OrgService's
+	// DeltaUpdateAgent RPC.
+	OrgServiceDeltaUpdateAgentProcedure = "/city.economy.v2.OrgService/DeltaUpdateAgent"
+	// OrgServiceBatchDeltaUpdateProcedure is the fully-qualified name of the OrgService's
+	// BatchDeltaUpdate RPC.
+	OrgServiceBatchDeltaUpdateProcedure = "/city.economy.v2.OrgService/BatchDeltaUpdate"
+	// OrgServiceCalculateRealGDPProcedure is the fully-qualified name of the OrgService's
+	// CalculateRealGDP RPC.
+	OrgServiceCalculateRealGDPProcedure = "/city.economy.v2.OrgService/CalculateRealGDP"
 )
 
 // OrgServiceClient is a client for the city.economy.v2.OrgService service.
@@ -294,6 +306,13 @@ type OrgServiceClient interface {
 	BatchGet(context.Context, *connect.Request[v2.BatchGetRequest]) (*connect.Response[v2.BatchGetResponse], error)
 	// 批量更新
 	BatchUpdate(context.Context, *connect.Request[v2.BatchUpdateRequest]) (*connect.Response[v2.BatchUpdateResponse], error)
+	// 增量更新
+	DeltaUpdateOrg(context.Context, *connect.Request[v2.DeltaUpdateOrgRequest]) (*connect.Response[v2.DeltaUpdateOrgResponse], error)
+	DeltaUpdateAgent(context.Context, *connect.Request[v2.DeltaUpdateAgentRequest]) (*connect.Response[v2.DeltaUpdateAgentResponse], error)
+	// 批量增量更新
+	BatchDeltaUpdate(context.Context, *connect.Request[v2.BatchDeltaUpdateRequest]) (*connect.Response[v2.BatchDeltaUpdateResponse], error)
+	// 计算实际GDP
+	CalculateRealGDP(context.Context, *connect.Request[v2.CalculateRealGDPRequest]) (*connect.Response[v2.CalculateRealGDPResponse], error)
 }
 
 // NewOrgServiceClient constructs a client for the city.economy.v2.OrgService service. By default,
@@ -679,6 +698,30 @@ func NewOrgServiceClient(httpClient connect.HTTPClient, baseURL string, opts ...
 			connect.WithSchema(orgServiceMethods.ByName("BatchUpdate")),
 			connect.WithClientOptions(opts...),
 		),
+		deltaUpdateOrg: connect.NewClient[v2.DeltaUpdateOrgRequest, v2.DeltaUpdateOrgResponse](
+			httpClient,
+			baseURL+OrgServiceDeltaUpdateOrgProcedure,
+			connect.WithSchema(orgServiceMethods.ByName("DeltaUpdateOrg")),
+			connect.WithClientOptions(opts...),
+		),
+		deltaUpdateAgent: connect.NewClient[v2.DeltaUpdateAgentRequest, v2.DeltaUpdateAgentResponse](
+			httpClient,
+			baseURL+OrgServiceDeltaUpdateAgentProcedure,
+			connect.WithSchema(orgServiceMethods.ByName("DeltaUpdateAgent")),
+			connect.WithClientOptions(opts...),
+		),
+		batchDeltaUpdate: connect.NewClient[v2.BatchDeltaUpdateRequest, v2.BatchDeltaUpdateResponse](
+			httpClient,
+			baseURL+OrgServiceBatchDeltaUpdateProcedure,
+			connect.WithSchema(orgServiceMethods.ByName("BatchDeltaUpdate")),
+			connect.WithClientOptions(opts...),
+		),
+		calculateRealGDP: connect.NewClient[v2.CalculateRealGDPRequest, v2.CalculateRealGDPResponse](
+			httpClient,
+			baseURL+OrgServiceCalculateRealGDPProcedure,
+			connect.WithSchema(orgServiceMethods.ByName("CalculateRealGDP")),
+			connect.WithClientOptions(opts...),
+		),
 	}
 }
 
@@ -746,6 +789,10 @@ type orgServiceClient struct {
 	updateAgent              *connect.Client[v2.UpdateAgentRequest, v2.UpdateAgentResponse]
 	batchGet                 *connect.Client[v2.BatchGetRequest, v2.BatchGetResponse]
 	batchUpdate              *connect.Client[v2.BatchUpdateRequest, v2.BatchUpdateResponse]
+	deltaUpdateOrg           *connect.Client[v2.DeltaUpdateOrgRequest, v2.DeltaUpdateOrgResponse]
+	deltaUpdateAgent         *connect.Client[v2.DeltaUpdateAgentRequest, v2.DeltaUpdateAgentResponse]
+	batchDeltaUpdate         *connect.Client[v2.BatchDeltaUpdateRequest, v2.BatchDeltaUpdateResponse]
+	calculateRealGDP         *connect.Client[v2.CalculateRealGDPRequest, v2.CalculateRealGDPResponse]
 }
 
 // AddOrg calls city.economy.v2.OrgService.AddOrg.
@@ -1058,6 +1105,26 @@ func (c *orgServiceClient) BatchUpdate(ctx context.Context, req *connect.Request
 	return c.batchUpdate.CallUnary(ctx, req)
 }
 
+// DeltaUpdateOrg calls city.economy.v2.OrgService.DeltaUpdateOrg.
+func (c *orgServiceClient) DeltaUpdateOrg(ctx context.Context, req *connect.Request[v2.DeltaUpdateOrgRequest]) (*connect.Response[v2.DeltaUpdateOrgResponse], error) {
+	return c.deltaUpdateOrg.CallUnary(ctx, req)
+}
+
+// DeltaUpdateAgent calls city.economy.v2.OrgService.DeltaUpdateAgent.
+func (c *orgServiceClient) DeltaUpdateAgent(ctx context.Context, req *connect.Request[v2.DeltaUpdateAgentRequest]) (*connect.Response[v2.DeltaUpdateAgentResponse], error) {
+	return c.deltaUpdateAgent.CallUnary(ctx, req)
+}
+
+// BatchDeltaUpdate calls city.economy.v2.OrgService.BatchDeltaUpdate.
+func (c *orgServiceClient) BatchDeltaUpdate(ctx context.Context, req *connect.Request[v2.BatchDeltaUpdateRequest]) (*connect.Response[v2.BatchDeltaUpdateResponse], error) {
+	return c.batchDeltaUpdate.CallUnary(ctx, req)
+}
+
+// CalculateRealGDP calls city.economy.v2.OrgService.CalculateRealGDP.
+func (c *orgServiceClient) CalculateRealGDP(ctx context.Context, req *connect.Request[v2.CalculateRealGDPRequest]) (*connect.Response[v2.CalculateRealGDPResponse], error) {
+	return c.calculateRealGDP.CallUnary(ctx, req)
+}
+
 // OrgServiceHandler is an implementation of the city.economy.v2.OrgService service.
 type OrgServiceHandler interface {
 	// 添加组织
@@ -1162,6 +1229,13 @@ type OrgServiceHandler interface {
 	BatchGet(context.Context, *connect.Request[v2.BatchGetRequest]) (*connect.Response[v2.BatchGetResponse], error)
 	// 批量更新
 	BatchUpdate(context.Context, *connect.Request[v2.BatchUpdateRequest]) (*connect.Response[v2.BatchUpdateResponse], error)
+	// 增量更新
+	DeltaUpdateOrg(context.Context, *connect.Request[v2.DeltaUpdateOrgRequest]) (*connect.Response[v2.DeltaUpdateOrgResponse], error)
+	DeltaUpdateAgent(context.Context, *connect.Request[v2.DeltaUpdateAgentRequest]) (*connect.Response[v2.DeltaUpdateAgentResponse], error)
+	// 批量增量更新
+	BatchDeltaUpdate(context.Context, *connect.Request[v2.BatchDeltaUpdateRequest]) (*connect.Response[v2.BatchDeltaUpdateResponse], error)
+	// 计算实际GDP
+	CalculateRealGDP(context.Context, *connect.Request[v2.CalculateRealGDPRequest]) (*connect.Response[v2.CalculateRealGDPResponse], error)
 }
 
 // NewOrgServiceHandler builds an HTTP handler from the service implementation. It returns the path
@@ -1543,6 +1617,30 @@ func NewOrgServiceHandler(svc OrgServiceHandler, opts ...connect.HandlerOption) 
 		connect.WithSchema(orgServiceMethods.ByName("BatchUpdate")),
 		connect.WithHandlerOptions(opts...),
 	)
+	orgServiceDeltaUpdateOrgHandler := connect.NewUnaryHandler(
+		OrgServiceDeltaUpdateOrgProcedure,
+		svc.DeltaUpdateOrg,
+		connect.WithSchema(orgServiceMethods.ByName("DeltaUpdateOrg")),
+		connect.WithHandlerOptions(opts...),
+	)
+	orgServiceDeltaUpdateAgentHandler := connect.NewUnaryHandler(
+		OrgServiceDeltaUpdateAgentProcedure,
+		svc.DeltaUpdateAgent,
+		connect.WithSchema(orgServiceMethods.ByName("DeltaUpdateAgent")),
+		connect.WithHandlerOptions(opts...),
+	)
+	orgServiceBatchDeltaUpdateHandler := connect.NewUnaryHandler(
+		OrgServiceBatchDeltaUpdateProcedure,
+		svc.BatchDeltaUpdate,
+		connect.WithSchema(orgServiceMethods.ByName("BatchDeltaUpdate")),
+		connect.WithHandlerOptions(opts...),
+	)
+	orgServiceCalculateRealGDPHandler := connect.NewUnaryHandler(
+		OrgServiceCalculateRealGDPProcedure,
+		svc.CalculateRealGDP,
+		connect.WithSchema(orgServiceMethods.ByName("CalculateRealGDP")),
+		connect.WithHandlerOptions(opts...),
+	)
 	return "/city.economy.v2.OrgService/", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		switch r.URL.Path {
 		case OrgServiceAddOrgProcedure:
@@ -1669,6 +1767,14 @@ func NewOrgServiceHandler(svc OrgServiceHandler, opts ...connect.HandlerOption) 
 			orgServiceBatchGetHandler.ServeHTTP(w, r)
 		case OrgServiceBatchUpdateProcedure:
 			orgServiceBatchUpdateHandler.ServeHTTP(w, r)
+		case OrgServiceDeltaUpdateOrgProcedure:
+			orgServiceDeltaUpdateOrgHandler.ServeHTTP(w, r)
+		case OrgServiceDeltaUpdateAgentProcedure:
+			orgServiceDeltaUpdateAgentHandler.ServeHTTP(w, r)
+		case OrgServiceBatchDeltaUpdateProcedure:
+			orgServiceBatchDeltaUpdateHandler.ServeHTTP(w, r)
+		case OrgServiceCalculateRealGDPProcedure:
+			orgServiceCalculateRealGDPHandler.ServeHTTP(w, r)
 		default:
 			http.NotFound(w, r)
 		}
@@ -1924,4 +2030,20 @@ func (UnimplementedOrgServiceHandler) BatchGet(context.Context, *connect.Request
 
 func (UnimplementedOrgServiceHandler) BatchUpdate(context.Context, *connect.Request[v2.BatchUpdateRequest]) (*connect.Response[v2.BatchUpdateResponse], error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.BatchUpdate is not implemented"))
+}
+
+func (UnimplementedOrgServiceHandler) DeltaUpdateOrg(context.Context, *connect.Request[v2.DeltaUpdateOrgRequest]) (*connect.Response[v2.DeltaUpdateOrgResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.DeltaUpdateOrg is not implemented"))
+}
+
+func (UnimplementedOrgServiceHandler) DeltaUpdateAgent(context.Context, *connect.Request[v2.DeltaUpdateAgentRequest]) (*connect.Response[v2.DeltaUpdateAgentResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.DeltaUpdateAgent is not implemented"))
+}
+
+func (UnimplementedOrgServiceHandler) BatchDeltaUpdate(context.Context, *connect.Request[v2.BatchDeltaUpdateRequest]) (*connect.Response[v2.BatchDeltaUpdateResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.BatchDeltaUpdate is not implemented"))
+}
+
+func (UnimplementedOrgServiceHandler) CalculateRealGDP(context.Context, *connect.Request[v2.CalculateRealGDPRequest]) (*connect.Response[v2.CalculateRealGDPResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.CalculateRealGDP is not implemented"))
 }

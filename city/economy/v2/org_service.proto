@@ -128,9 +128,19 @@ service OrgService {
 
   // 批量获取
   rpc BatchGet(BatchGetRequest) returns (BatchGetResponse) {}
-  
+
   // 批量更新
   rpc BatchUpdate(BatchUpdateRequest) returns (BatchUpdateResponse) {}
+
+  // 增量更新
+  rpc DeltaUpdateOrg(DeltaUpdateOrgRequest) returns (DeltaUpdateOrgResponse) {}
+  rpc DeltaUpdateAgent(DeltaUpdateAgentRequest) returns (DeltaUpdateAgentResponse) {}
+  
+  // 批量增量更新
+  rpc BatchDeltaUpdate(BatchDeltaUpdateRequest) returns (BatchDeltaUpdateResponse) {}
+
+  // 计算实际GDP
+  rpc CalculateRealGDP(CalculateRealGDPRequest) returns (CalculateRealGDPResponse) {}
 }
 
 message AddOrgRequest {
@@ -331,13 +341,13 @@ message CalculateTaxesDueResponse {
 // consumption
 
 message CalculateConsumptionRequest {
-  repeated int32 firm_ids = 1;  // 多个公司ID
-  int32 agent_id = 2;          // 代理ID
-  repeated int32 demands = 3;   // 对应每个公司的需求量
+  repeated int32 firm_ids = 1; // 多个公司ID
+  int32 agent_id = 2; // 代理ID
+  repeated int32 demands = 3; // 对应每个公司的需求量
 }
 
 message CalculateConsumptionResponse {
-  float actual_consumption = 1;  // 代理实际消费的钱
+  float actual_consumption = 1; // 代理实际消费的钱
 }
 
 // bank interest calculation
@@ -572,8 +582,8 @@ message UpdateAgentResponse {}
 
 // 批量获取和更新
 message BatchGetRequest {
-  repeated int32 ids = 1;  // 要获取的 ID 列表
-  string type = 2;        // "org" 或 "agent"
+  repeated int32 ids = 1; // 要获取的 ID 列表
+  string type = 2; // "org" 或 "agent"
 }
 
 message BatchGetResponse {
@@ -587,3 +597,43 @@ message BatchUpdateRequest {
 }
 
 message BatchUpdateResponse {}
+
+// 增量更新请求
+message DeltaUpdateOrgRequest {
+  int32 org_id = 1;
+  optional float delta_inventory = 2;
+  optional float delta_price = 3;
+  optional float delta_currency = 4;
+  optional float delta_interest_rate = 5;
+  repeated int32 add_employees = 6;
+  repeated int32 remove_employees = 7;
+}
+
+message DeltaUpdateOrgResponse {}
+
+message DeltaUpdateAgentRequest {
+  int32 agent_id = 1;
+  optional float delta_currency = 2;
+  optional float delta_skill = 3;
+  optional float delta_consumption = 4;
+  optional float delta_income = 5;
+}
+
+message DeltaUpdateAgentResponse {}
+
+// 批量增量更新请求
+message BatchDeltaUpdateRequest {
+  repeated DeltaUpdateOrgRequest orgs = 1;
+  repeated DeltaUpdateAgentRequest agents = 2;
+}
+
+message BatchDeltaUpdateResponse {}
+
+// 计算实际GDP的请求和响应消息
+message CalculateRealGDPRequest {
+  int32 nbs_agent_id = 1;  // NBS Agent的ID
+}
+
+message CalculateRealGDPResponse {
+  float real_gdp = 1;      // 计算得到的实际GDP
+}

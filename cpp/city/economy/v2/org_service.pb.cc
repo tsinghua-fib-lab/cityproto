@@ -1629,10 +1629,123 @@ struct BatchUpdateResponseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BatchUpdateResponseDefaultTypeInternal _BatchUpdateResponse_default_instance_;
+PROTOBUF_CONSTEXPR DeltaUpdateOrgRequest::DeltaUpdateOrgRequest(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_._has_bits_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}
+  , /*decltype(_impl_.add_employees_)*/{}
+  , /*decltype(_impl_._add_employees_cached_byte_size_)*/{0}
+  , /*decltype(_impl_.remove_employees_)*/{}
+  , /*decltype(_impl_._remove_employees_cached_byte_size_)*/{0}
+  , /*decltype(_impl_.org_id_)*/0
+  , /*decltype(_impl_.delta_inventory_)*/0
+  , /*decltype(_impl_.delta_price_)*/0
+  , /*decltype(_impl_.delta_currency_)*/0
+  , /*decltype(_impl_.delta_interest_rate_)*/0} {}
+struct DeltaUpdateOrgRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR DeltaUpdateOrgRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~DeltaUpdateOrgRequestDefaultTypeInternal() {}
+  union {
+    DeltaUpdateOrgRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 DeltaUpdateOrgRequestDefaultTypeInternal _DeltaUpdateOrgRequest_default_instance_;
+PROTOBUF_CONSTEXPR DeltaUpdateOrgResponse::DeltaUpdateOrgResponse(
+    ::_pbi::ConstantInitialized) {}
+struct DeltaUpdateOrgResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR DeltaUpdateOrgResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~DeltaUpdateOrgResponseDefaultTypeInternal() {}
+  union {
+    DeltaUpdateOrgResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 DeltaUpdateOrgResponseDefaultTypeInternal _DeltaUpdateOrgResponse_default_instance_;
+PROTOBUF_CONSTEXPR DeltaUpdateAgentRequest::DeltaUpdateAgentRequest(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_._has_bits_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}
+  , /*decltype(_impl_.agent_id_)*/0
+  , /*decltype(_impl_.delta_currency_)*/0
+  , /*decltype(_impl_.delta_skill_)*/0
+  , /*decltype(_impl_.delta_consumption_)*/0
+  , /*decltype(_impl_.delta_income_)*/0} {}
+struct DeltaUpdateAgentRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR DeltaUpdateAgentRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~DeltaUpdateAgentRequestDefaultTypeInternal() {}
+  union {
+    DeltaUpdateAgentRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 DeltaUpdateAgentRequestDefaultTypeInternal _DeltaUpdateAgentRequest_default_instance_;
+PROTOBUF_CONSTEXPR DeltaUpdateAgentResponse::DeltaUpdateAgentResponse(
+    ::_pbi::ConstantInitialized) {}
+struct DeltaUpdateAgentResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR DeltaUpdateAgentResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~DeltaUpdateAgentResponseDefaultTypeInternal() {}
+  union {
+    DeltaUpdateAgentResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 DeltaUpdateAgentResponseDefaultTypeInternal _DeltaUpdateAgentResponse_default_instance_;
+PROTOBUF_CONSTEXPR BatchDeltaUpdateRequest::BatchDeltaUpdateRequest(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.orgs_)*/{}
+  , /*decltype(_impl_.agents_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct BatchDeltaUpdateRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR BatchDeltaUpdateRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~BatchDeltaUpdateRequestDefaultTypeInternal() {}
+  union {
+    BatchDeltaUpdateRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BatchDeltaUpdateRequestDefaultTypeInternal _BatchDeltaUpdateRequest_default_instance_;
+PROTOBUF_CONSTEXPR BatchDeltaUpdateResponse::BatchDeltaUpdateResponse(
+    ::_pbi::ConstantInitialized) {}
+struct BatchDeltaUpdateResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR BatchDeltaUpdateResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~BatchDeltaUpdateResponseDefaultTypeInternal() {}
+  union {
+    BatchDeltaUpdateResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BatchDeltaUpdateResponseDefaultTypeInternal _BatchDeltaUpdateResponse_default_instance_;
+PROTOBUF_CONSTEXPR CalculateRealGDPRequest::CalculateRealGDPRequest(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.nbs_agent_id_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct CalculateRealGDPRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR CalculateRealGDPRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~CalculateRealGDPRequestDefaultTypeInternal() {}
+  union {
+    CalculateRealGDPRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CalculateRealGDPRequestDefaultTypeInternal _CalculateRealGDPRequest_default_instance_;
+PROTOBUF_CONSTEXPR CalculateRealGDPResponse::CalculateRealGDPResponse(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.real_gdp_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct CalculateRealGDPResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR CalculateRealGDPResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~CalculateRealGDPResponseDefaultTypeInternal() {}
+  union {
+    CalculateRealGDPResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CalculateRealGDPResponseDefaultTypeInternal _CalculateRealGDPResponse_default_instance_;
 }  // namespace v2
 }  // namespace economy
 }  // namespace city
-static ::_pb::Metadata file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[124];
+static ::_pb::Metadata file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[132];
 static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_city_2feconomy_2fv2_2forg_5fservice_2eproto = nullptr;
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_city_2feconomy_2fv2_2forg_5fservice_2eproto = nullptr;
 
@@ -2515,6 +2628,82 @@ const uint32_t TableStruct_city_2feconomy_2fv2_2forg_5fservice_2eproto::offsets[
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::DeltaUpdateOrgRequest, _impl_._has_bits_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::DeltaUpdateOrgRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::DeltaUpdateOrgRequest, _impl_.org_id_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::DeltaUpdateOrgRequest, _impl_.delta_inventory_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::DeltaUpdateOrgRequest, _impl_.delta_price_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::DeltaUpdateOrgRequest, _impl_.delta_currency_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::DeltaUpdateOrgRequest, _impl_.delta_interest_rate_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::DeltaUpdateOrgRequest, _impl_.add_employees_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::DeltaUpdateOrgRequest, _impl_.remove_employees_),
+  ~0u,
+  0,
+  1,
+  2,
+  3,
+  ~0u,
+  ~0u,
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::DeltaUpdateOrgResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::DeltaUpdateAgentRequest, _impl_._has_bits_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::DeltaUpdateAgentRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::DeltaUpdateAgentRequest, _impl_.agent_id_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::DeltaUpdateAgentRequest, _impl_.delta_currency_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::DeltaUpdateAgentRequest, _impl_.delta_skill_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::DeltaUpdateAgentRequest, _impl_.delta_consumption_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::DeltaUpdateAgentRequest, _impl_.delta_income_),
+  ~0u,
+  0,
+  1,
+  2,
+  3,
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::DeltaUpdateAgentResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::BatchDeltaUpdateRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::BatchDeltaUpdateRequest, _impl_.orgs_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::BatchDeltaUpdateRequest, _impl_.agents_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::BatchDeltaUpdateResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::CalculateRealGDPRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::CalculateRealGDPRequest, _impl_.nbs_agent_id_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::CalculateRealGDPResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::CalculateRealGDPResponse, _impl_.real_gdp_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::city::economy::v2::AddOrgRequest)},
@@ -2641,6 +2830,14 @@ static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protode
   { 856, -1, -1, sizeof(::city::economy::v2::BatchGetResponse)},
   { 864, -1, -1, sizeof(::city::economy::v2::BatchUpdateRequest)},
   { 872, -1, -1, sizeof(::city::economy::v2::BatchUpdateResponse)},
+  { 878, 891, -1, sizeof(::city::economy::v2::DeltaUpdateOrgRequest)},
+  { 898, -1, -1, sizeof(::city::economy::v2::DeltaUpdateOrgResponse)},
+  { 904, 915, -1, sizeof(::city::economy::v2::DeltaUpdateAgentRequest)},
+  { 920, -1, -1, sizeof(::city::economy::v2::DeltaUpdateAgentResponse)},
+  { 926, -1, -1, sizeof(::city::economy::v2::BatchDeltaUpdateRequest)},
+  { 934, -1, -1, sizeof(::city::economy::v2::BatchDeltaUpdateResponse)},
+  { 940, -1, -1, sizeof(::city::economy::v2::CalculateRealGDPRequest)},
+  { 947, -1, -1, sizeof(::city::economy::v2::CalculateRealGDPResponse)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -2768,6 +2965,14 @@ static const ::_pb::Message* const file_default_instances[] = {
   &::city::economy::v2::_BatchGetResponse_default_instance_._instance,
   &::city::economy::v2::_BatchUpdateRequest_default_instance_._instance,
   &::city::economy::v2::_BatchUpdateResponse_default_instance_._instance,
+  &::city::economy::v2::_DeltaUpdateOrgRequest_default_instance_._instance,
+  &::city::economy::v2::_DeltaUpdateOrgResponse_default_instance_._instance,
+  &::city::economy::v2::_DeltaUpdateAgentRequest_default_instance_._instance,
+  &::city::economy::v2::_DeltaUpdateAgentResponse_default_instance_._instance,
+  &::city::economy::v2::_BatchDeltaUpdateRequest_default_instance_._instance,
+  &::city::economy::v2::_BatchDeltaUpdateResponse_default_instance_._instance,
+  &::city::economy::v2::_CalculateRealGDPRequest_default_instance_._instance,
+  &::city::economy::v2::_CalculateRealGDPResponse_default_instance_._instance,
 };
 
 const char descriptor_table_protodef_city_2feconomy_2fv2_2forg_5fservice_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -2951,170 +3156,207 @@ const char descriptor_table_protodef_city_2feconomy_2fv2_2forg_5fservice_2eproto
   "tchUpdateRequest\022(\n\004orgs\030\001 \003(\0132\024.city.ec"
   "onomy.v2.OrgR\004orgs\022.\n\006agents\030\002 \003(\0132\026.cit"
   "y.economy.v2.AgentR\006agents\"\025\n\023BatchUpdat"
-  "eResponse2\342.\n\nOrgService\022I\n\006AddOrg\022\036.cit"
-  "y.economy.v2.AddOrgRequest\032\037.city.econom"
-  "y.v2.AddOrgResponse\022R\n\tRemoveOrg\022!.city."
-  "economy.v2.RemoveOrgRequest\032\".city.econo"
-  "my.v2.RemoveOrgResponse\022I\n\006GetOrg\022\036.city"
-  ".economy.v2.GetOrgRequest\032\037.city.economy"
-  ".v2.GetOrgResponse\022R\n\tUpdateOrg\022!.city.e"
-  "conomy.v2.UpdateOrgRequest\032\".city.econom"
-  "y.v2.UpdateOrgResponse\022O\n\010AddAgent\022 .cit"
-  "y.economy.v2.AddAgentRequest\032!.city.econ"
-  "omy.v2.AddAgentResponse\022X\n\013RemoveAgent\022#"
-  ".city.economy.v2.RemoveAgentRequest\032$.ci"
-  "ty.economy.v2.RemoveAgentResponse\022^\n\rGet"
-  "NominalGDP\022%.city.economy.v2.GetNominalG"
-  "DPRequest\032&.city.economy.v2.GetNominalGD"
-  "PResponse\022^\n\rSetNominalGDP\022%.city.econom"
-  "y.v2.SetNominalGDPRequest\032&.city.economy"
-  ".v2.SetNominalGDPResponse\022U\n\nGetRealGDP\022"
-  "\".city.economy.v2.GetRealGDPRequest\032#.ci"
-  "ty.economy.v2.GetRealGDPResponse\022U\n\nSetR"
-  "ealGDP\022\".city.economy.v2.SetRealGDPReque"
-  "st\032#.city.economy.v2.SetRealGDPResponse\022"
-  "d\n\017GetUnemployment\022\'.city.economy.v2.Get"
-  "UnemploymentRequest\032(.city.economy.v2.Ge"
-  "tUnemploymentResponse\022d\n\017SetUnemployment"
-  "\022\'.city.economy.v2.SetUnemploymentReques"
-  "t\032(.city.economy.v2.SetUnemploymentRespo"
-  "nse\022O\n\010GetWages\022 .city.economy.v2.GetWag"
-  "esRequest\032!.city.economy.v2.GetWagesResp"
-  "onse\022O\n\010SetWages\022 .city.economy.v2.SetWa"
-  "gesRequest\032!.city.economy.v2.SetWagesRes"
-  "ponse\022R\n\tGetPrices\022!.city.economy.v2.Get"
-  "PricesRequest\032\".city.economy.v2.GetPrice"
-  "sResponse\022R\n\tSetPrices\022!.city.economy.v2"
-  ".SetPricesRequest\032\".city.economy.v2.SetP"
-  "ricesResponse\022[\n\014GetInventory\022$.city.eco"
-  "nomy.v2.GetInventoryRequest\032%.city.econo"
-  "my.v2.GetInventoryResponse\022[\n\014SetInvento"
-  "ry\022$.city.economy.v2.SetInventoryRequest"
-  "\032%.city.economy.v2.SetInventoryResponse\022"
-  "[\n\014AddInventory\022$.city.economy.v2.AddInv"
-  "entoryRequest\032%.city.economy.v2.AddInven"
-  "toryResponse\022O\n\010GetPrice\022 .city.economy."
-  "v2.GetPriceRequest\032!.city.economy.v2.Get"
-  "PriceResponse\022O\n\010SetPrice\022 .city.economy"
-  ".v2.SetPriceRequest\032!.city.economy.v2.Se"
-  "tPriceResponse\022O\n\010AddPrice\022 .city.econom"
-  "y.v2.AddPriceRequest\032!.city.economy.v2.A"
-  "ddPriceResponse\022X\n\013GetCurrency\022#.city.ec"
-  "onomy.v2.GetCurrencyRequest\032$.city.econo"
-  "my.v2.GetCurrencyResponse\022X\n\013SetCurrency"
-  "\022#.city.economy.v2.SetCurrencyRequest\032$."
-  "city.economy.v2.SetCurrencyResponse\022X\n\013A"
-  "ddCurrency\022#.city.economy.v2.AddCurrency"
-  "Request\032$.city.economy.v2.AddCurrencyRes"
-  "ponse\022d\n\017GetInterestRate\022\'.city.economy."
-  "v2.GetInterestRateRequest\032(.city.economy"
-  ".v2.GetInterestRateResponse\022d\n\017SetIntere"
-  "stRate\022\'.city.economy.v2.SetInterestRate"
-  "Request\032(.city.economy.v2.SetInterestRat"
-  "eResponse\022d\n\017AddInterestRate\022\'.city.econ"
-  "omy.v2.AddInterestRateRequest\032(.city.eco"
-  "nomy.v2.AddInterestRateResponse\022j\n\021GetBr"
-  "acketCutoffs\022).city.economy.v2.GetBracke"
-  "tCutoffsRequest\032*.city.economy.v2.GetBra"
-  "cketCutoffsResponse\022j\n\021SetBracketCutoffs"
-  "\022).city.economy.v2.SetBracketCutoffsRequ"
-  "est\032*.city.economy.v2.SetBracketCutoffsR"
-  "esponse\022d\n\017GetBracketRates\022\'.city.econom"
-  "y.v2.GetBracketRatesRequest\032(.city.econo"
-  "my.v2.GetBracketRatesResponse\022d\n\017SetBrac"
-  "ketRates\022\'.city.economy.v2.SetBracketRat"
-  "esRequest\032(.city.economy.v2.SetBracketRa"
-  "tesResponse\022j\n\021CalculateTaxesDue\022).city."
-  "economy.v2.CalculateTaxesDueRequest\032*.ci"
-  "ty.economy.v2.CalculateTaxesDueResponse\022"
-  "s\n\024CalculateConsumption\022,.city.economy.v"
-  "2.CalculateConsumptionRequest\032-.city.eco"
-  "nomy.v2.CalculateConsumptionResponse\022j\n\021"
-  "CalculateInterest\022).city.economy.v2.Calc"
-  "ulateInterestRequest\032*.city.economy.v2.C"
-  "alculateInterestResponse\022p\n\023SaveEconomyE"
-  "ntities\022+.city.economy.v2.SaveEconomyEnt"
-  "itiesRequest\032,.city.economy.v2.SaveEcono"
-  "myEntitiesResponse\022p\n\023LoadEconomyEntitie"
-  "s\022+.city.economy.v2.LoadEconomyEntitiesR"
-  "equest\032,.city.economy.v2.LoadEconomyEnti"
-  "tiesResponse\022y\n\026GetConsumptionCurrency\022."
-  ".city.economy.v2.GetConsumptionCurrencyR"
-  "equest\032/.city.economy.v2.GetConsumptionC"
-  "urrencyResponse\022y\n\026SetConsumptionCurrenc"
-  "y\022..city.economy.v2.SetConsumptionCurren"
-  "cyRequest\032/.city.economy.v2.SetConsumpti"
-  "onCurrencyResponse\022\177\n\030GetConsumptionProp"
-  "ensity\0220.city.economy.v2.GetConsumptionP"
-  "ropensityRequest\0321.city.economy.v2.GetCo"
-  "nsumptionPropensityResponse\022\177\n\030SetConsum"
-  "ptionPropensity\0220.city.economy.v2.SetCon"
-  "sumptionPropensityRequest\0321.city.economy"
-  ".v2.SetConsumptionPropensityResponse\022j\n\021"
-  "GetIncomeCurrency\022).city.economy.v2.GetI"
-  "ncomeCurrencyRequest\032*.city.economy.v2.G"
-  "etIncomeCurrencyResponse\022j\n\021SetIncomeCur"
-  "rency\022).city.economy.v2.SetIncomeCurrenc"
-  "yRequest\032*.city.economy.v2.SetIncomeCurr"
-  "encyResponse\022^\n\rGetDepression\022%.city.eco"
-  "nomy.v2.GetDepressionRequest\032&.city.econ"
-  "omy.v2.GetDepressionResponse\022^\n\rSetDepre"
-  "ssion\022%.city.economy.v2.SetDepressionReq"
-  "uest\032&.city.economy.v2.SetDepressionResp"
-  "onse\022d\n\017GetLocusControl\022\'.city.economy.v"
-  "2.GetLocusControlRequest\032(.city.economy."
-  "v2.GetLocusControlResponse\022d\n\017SetLocusCo"
-  "ntrol\022\'.city.economy.v2.SetLocusControlR"
-  "equest\032(.city.economy.v2.SetLocusControl"
-  "Response\022d\n\017GetWorkingHours\022\'.city.econo"
-  "my.v2.GetWorkingHoursRequest\032(.city.econ"
-  "omy.v2.GetWorkingHoursResponse\022d\n\017SetWor"
-  "kingHours\022\'.city.economy.v2.SetWorkingHo"
-  "ursRequest\032(.city.economy.v2.SetWorkingH"
-  "oursResponse\022d\n\017GetOrgEntityIds\022\'.city.e"
-  "conomy.v2.GetOrgEntityIdsRequest\032(.city."
-  "economy.v2.GetOrgEntityIdsResponse\022[\n\014Ge"
-  "tEmployees\022$.city.economy.v2.GetEmployee"
-  "sRequest\032%.city.economy.v2.GetEmployeesR"
-  "esponse\022[\n\014SetEmployees\022$.city.economy.v"
-  "2.SetEmployeesRequest\032%.city.economy.v2."
-  "SetEmployeesResponse\022X\n\013AddEmployee\022#.ci"
-  "ty.economy.v2.AddEmployeeRequest\032$.city."
-  "economy.v2.AddEmployeeResponse\022a\n\016Remove"
-  "Employee\022&.city.economy.v2.RemoveEmploye"
-  "eRequest\032\'.city.economy.v2.RemoveEmploye"
-  "eResponse\022X\n\013GetCitizens\022#.city.economy."
-  "v2.GetCitizensRequest\032$.city.economy.v2."
-  "GetCitizensResponse\022X\n\013SetCitizens\022#.cit"
-  "y.economy.v2.SetCitizensRequest\032$.city.e"
-  "conomy.v2.SetCitizensResponse\022U\n\nAddCiti"
-  "zen\022\".city.economy.v2.AddCitizenRequest\032"
-  "#.city.economy.v2.AddCitizenResponse\022^\n\r"
-  "RemoveCitizen\022%.city.economy.v2.RemoveCi"
-  "tizenRequest\032&.city.economy.v2.RemoveCit"
-  "izenResponse\022O\n\010GetAgent\022 .city.economy."
-  "v2.GetAgentRequest\032!.city.economy.v2.Get"
-  "AgentResponse\022X\n\013UpdateAgent\022#.city.econ"
-  "omy.v2.UpdateAgentRequest\032$.city.economy"
-  ".v2.UpdateAgentResponse\022Q\n\010BatchGet\022 .ci"
-  "ty.economy.v2.BatchGetRequest\032!.city.eco"
-  "nomy.v2.BatchGetResponse\"\000\022Z\n\013BatchUpdat"
-  "e\022#.city.economy.v2.BatchUpdateRequest\032$"
-  ".city.economy.v2.BatchUpdateResponse\"\000B\277"
-  "\001\n\023com.city.economy.v2B\017OrgServiceProtoP"
-  "\001Z9git.fiblab.net/sim/protos/v2/go/city/"
-  "economy/v2;economyv2\242\002\003CEX\252\002\017City.Econom"
-  "y.V2\312\002\017City\\Economy\\V2\342\002\033City\\Economy\\V2"
-  "\\GPBMetadata\352\002\021City::Economy::V2b\006proto3"
+  "eResponse\"\202\003\n\025DeltaUpdateOrgRequest\022\025\n\006o"
+  "rg_id\030\001 \001(\005R\005orgId\022,\n\017delta_inventory\030\002 "
+  "\001(\002H\000R\016deltaInventory\210\001\001\022$\n\013delta_price\030"
+  "\003 \001(\002H\001R\ndeltaPrice\210\001\001\022*\n\016delta_currency"
+  "\030\004 \001(\002H\002R\rdeltaCurrency\210\001\001\0223\n\023delta_inte"
+  "rest_rate\030\005 \001(\002H\003R\021deltaInterestRate\210\001\001\022"
+  "#\n\radd_employees\030\006 \003(\005R\014addEmployees\022)\n\020"
+  "remove_employees\030\007 \003(\005R\017removeEmployeesB"
+  "\022\n\020_delta_inventoryB\016\n\014_delta_priceB\021\n\017_"
+  "delta_currencyB\026\n\024_delta_interest_rate\"\030"
+  "\n\026DeltaUpdateOrgResponse\"\252\002\n\027DeltaUpdate"
+  "AgentRequest\022\031\n\010agent_id\030\001 \001(\005R\007agentId\022"
+  "*\n\016delta_currency\030\002 \001(\002H\000R\rdeltaCurrency"
+  "\210\001\001\022$\n\013delta_skill\030\003 \001(\002H\001R\ndeltaSkill\210\001"
+  "\001\0220\n\021delta_consumption\030\004 \001(\002H\002R\020deltaCon"
+  "sumption\210\001\001\022&\n\014delta_income\030\005 \001(\002H\003R\013del"
+  "taIncome\210\001\001B\021\n\017_delta_currencyB\016\n\014_delta"
+  "_skillB\024\n\022_delta_consumptionB\017\n\r_delta_i"
+  "ncome\"\032\n\030DeltaUpdateAgentResponse\"\227\001\n\027Ba"
+  "tchDeltaUpdateRequest\022:\n\004orgs\030\001 \003(\0132&.ci"
+  "ty.economy.v2.DeltaUpdateOrgRequestR\004org"
+  "s\022@\n\006agents\030\002 \003(\0132(.city.economy.v2.Delt"
+  "aUpdateAgentRequestR\006agents\"\032\n\030BatchDelt"
+  "aUpdateResponse\";\n\027CalculateRealGDPReque"
+  "st\022 \n\014nbs_agent_id\030\001 \001(\005R\nnbsAgentId\"5\n\030"
+  "CalculateRealGDPResponse\022\031\n\010real_gdp\030\001 \001"
+  "(\002R\007realGdp2\2102\n\nOrgService\022I\n\006AddOrg\022\036.c"
+  "ity.economy.v2.AddOrgRequest\032\037.city.econ"
+  "omy.v2.AddOrgResponse\022R\n\tRemoveOrg\022!.cit"
+  "y.economy.v2.RemoveOrgRequest\032\".city.eco"
+  "nomy.v2.RemoveOrgResponse\022I\n\006GetOrg\022\036.ci"
+  "ty.economy.v2.GetOrgRequest\032\037.city.econo"
+  "my.v2.GetOrgResponse\022R\n\tUpdateOrg\022!.city"
+  ".economy.v2.UpdateOrgRequest\032\".city.econ"
+  "omy.v2.UpdateOrgResponse\022O\n\010AddAgent\022 .c"
+  "ity.economy.v2.AddAgentRequest\032!.city.ec"
+  "onomy.v2.AddAgentResponse\022X\n\013RemoveAgent"
+  "\022#.city.economy.v2.RemoveAgentRequest\032$."
+  "city.economy.v2.RemoveAgentResponse\022^\n\rG"
+  "etNominalGDP\022%.city.economy.v2.GetNomina"
+  "lGDPRequest\032&.city.economy.v2.GetNominal"
+  "GDPResponse\022^\n\rSetNominalGDP\022%.city.econ"
+  "omy.v2.SetNominalGDPRequest\032&.city.econo"
+  "my.v2.SetNominalGDPResponse\022U\n\nGetRealGD"
+  "P\022\".city.economy.v2.GetRealGDPRequest\032#."
+  "city.economy.v2.GetRealGDPResponse\022U\n\nSe"
+  "tRealGDP\022\".city.economy.v2.SetRealGDPReq"
+  "uest\032#.city.economy.v2.SetRealGDPRespons"
+  "e\022d\n\017GetUnemployment\022\'.city.economy.v2.G"
+  "etUnemploymentRequest\032(.city.economy.v2."
+  "GetUnemploymentResponse\022d\n\017SetUnemployme"
+  "nt\022\'.city.economy.v2.SetUnemploymentRequ"
+  "est\032(.city.economy.v2.SetUnemploymentRes"
+  "ponse\022O\n\010GetWages\022 .city.economy.v2.GetW"
+  "agesRequest\032!.city.economy.v2.GetWagesRe"
+  "sponse\022O\n\010SetWages\022 .city.economy.v2.Set"
+  "WagesRequest\032!.city.economy.v2.SetWagesR"
+  "esponse\022R\n\tGetPrices\022!.city.economy.v2.G"
+  "etPricesRequest\032\".city.economy.v2.GetPri"
+  "cesResponse\022R\n\tSetPrices\022!.city.economy."
+  "v2.SetPricesRequest\032\".city.economy.v2.Se"
+  "tPricesResponse\022[\n\014GetInventory\022$.city.e"
+  "conomy.v2.GetInventoryRequest\032%.city.eco"
+  "nomy.v2.GetInventoryResponse\022[\n\014SetInven"
+  "tory\022$.city.economy.v2.SetInventoryReque"
+  "st\032%.city.economy.v2.SetInventoryRespons"
+  "e\022[\n\014AddInventory\022$.city.economy.v2.AddI"
+  "nventoryRequest\032%.city.economy.v2.AddInv"
+  "entoryResponse\022O\n\010GetPrice\022 .city.econom"
+  "y.v2.GetPriceRequest\032!.city.economy.v2.G"
+  "etPriceResponse\022O\n\010SetPrice\022 .city.econo"
+  "my.v2.SetPriceRequest\032!.city.economy.v2."
+  "SetPriceResponse\022O\n\010AddPrice\022 .city.econ"
+  "omy.v2.AddPriceRequest\032!.city.economy.v2"
+  ".AddPriceResponse\022X\n\013GetCurrency\022#.city."
+  "economy.v2.GetCurrencyRequest\032$.city.eco"
+  "nomy.v2.GetCurrencyResponse\022X\n\013SetCurren"
+  "cy\022#.city.economy.v2.SetCurrencyRequest\032"
+  "$.city.economy.v2.SetCurrencyResponse\022X\n"
+  "\013AddCurrency\022#.city.economy.v2.AddCurren"
+  "cyRequest\032$.city.economy.v2.AddCurrencyR"
+  "esponse\022d\n\017GetInterestRate\022\'.city.econom"
+  "y.v2.GetInterestRateRequest\032(.city.econo"
+  "my.v2.GetInterestRateResponse\022d\n\017SetInte"
+  "restRate\022\'.city.economy.v2.SetInterestRa"
+  "teRequest\032(.city.economy.v2.SetInterestR"
+  "ateResponse\022d\n\017AddInterestRate\022\'.city.ec"
+  "onomy.v2.AddInterestRateRequest\032(.city.e"
+  "conomy.v2.AddInterestRateResponse\022j\n\021Get"
+  "BracketCutoffs\022).city.economy.v2.GetBrac"
+  "ketCutoffsRequest\032*.city.economy.v2.GetB"
+  "racketCutoffsResponse\022j\n\021SetBracketCutof"
+  "fs\022).city.economy.v2.SetBracketCutoffsRe"
+  "quest\032*.city.economy.v2.SetBracketCutoff"
+  "sResponse\022d\n\017GetBracketRates\022\'.city.econ"
+  "omy.v2.GetBracketRatesRequest\032(.city.eco"
+  "nomy.v2.GetBracketRatesResponse\022d\n\017SetBr"
+  "acketRates\022\'.city.economy.v2.SetBracketR"
+  "atesRequest\032(.city.economy.v2.SetBracket"
+  "RatesResponse\022j\n\021CalculateTaxesDue\022).cit"
+  "y.economy.v2.CalculateTaxesDueRequest\032*."
+  "city.economy.v2.CalculateTaxesDueRespons"
+  "e\022s\n\024CalculateConsumption\022,.city.economy"
+  ".v2.CalculateConsumptionRequest\032-.city.e"
+  "conomy.v2.CalculateConsumptionResponse\022j"
+  "\n\021CalculateInterest\022).city.economy.v2.Ca"
+  "lculateInterestRequest\032*.city.economy.v2"
+  ".CalculateInterestResponse\022p\n\023SaveEconom"
+  "yEntities\022+.city.economy.v2.SaveEconomyE"
+  "ntitiesRequest\032,.city.economy.v2.SaveEco"
+  "nomyEntitiesResponse\022p\n\023LoadEconomyEntit"
+  "ies\022+.city.economy.v2.LoadEconomyEntitie"
+  "sRequest\032,.city.economy.v2.LoadEconomyEn"
+  "titiesResponse\022y\n\026GetConsumptionCurrency"
+  "\022..city.economy.v2.GetConsumptionCurrenc"
+  "yRequest\032/.city.economy.v2.GetConsumptio"
+  "nCurrencyResponse\022y\n\026SetConsumptionCurre"
+  "ncy\022..city.economy.v2.SetConsumptionCurr"
+  "encyRequest\032/.city.economy.v2.SetConsump"
+  "tionCurrencyResponse\022\177\n\030GetConsumptionPr"
+  "opensity\0220.city.economy.v2.GetConsumptio"
+  "nPropensityRequest\0321.city.economy.v2.Get"
+  "ConsumptionPropensityResponse\022\177\n\030SetCons"
+  "umptionPropensity\0220.city.economy.v2.SetC"
+  "onsumptionPropensityRequest\0321.city.econo"
+  "my.v2.SetConsumptionPropensityResponse\022j"
+  "\n\021GetIncomeCurrency\022).city.economy.v2.Ge"
+  "tIncomeCurrencyRequest\032*.city.economy.v2"
+  ".GetIncomeCurrencyResponse\022j\n\021SetIncomeC"
+  "urrency\022).city.economy.v2.SetIncomeCurre"
+  "ncyRequest\032*.city.economy.v2.SetIncomeCu"
+  "rrencyResponse\022^\n\rGetDepression\022%.city.e"
+  "conomy.v2.GetDepressionRequest\032&.city.ec"
+  "onomy.v2.GetDepressionResponse\022^\n\rSetDep"
+  "ression\022%.city.economy.v2.SetDepressionR"
+  "equest\032&.city.economy.v2.SetDepressionRe"
+  "sponse\022d\n\017GetLocusControl\022\'.city.economy"
+  ".v2.GetLocusControlRequest\032(.city.econom"
+  "y.v2.GetLocusControlResponse\022d\n\017SetLocus"
+  "Control\022\'.city.economy.v2.SetLocusContro"
+  "lRequest\032(.city.economy.v2.SetLocusContr"
+  "olResponse\022d\n\017GetWorkingHours\022\'.city.eco"
+  "nomy.v2.GetWorkingHoursRequest\032(.city.ec"
+  "onomy.v2.GetWorkingHoursResponse\022d\n\017SetW"
+  "orkingHours\022\'.city.economy.v2.SetWorking"
+  "HoursRequest\032(.city.economy.v2.SetWorkin"
+  "gHoursResponse\022d\n\017GetOrgEntityIds\022\'.city"
+  ".economy.v2.GetOrgEntityIdsRequest\032(.cit"
+  "y.economy.v2.GetOrgEntityIdsResponse\022[\n\014"
+  "GetEmployees\022$.city.economy.v2.GetEmploy"
+  "eesRequest\032%.city.economy.v2.GetEmployee"
+  "sResponse\022[\n\014SetEmployees\022$.city.economy"
+  ".v2.SetEmployeesRequest\032%.city.economy.v"
+  "2.SetEmployeesResponse\022X\n\013AddEmployee\022#."
+  "city.economy.v2.AddEmployeeRequest\032$.cit"
+  "y.economy.v2.AddEmployeeResponse\022a\n\016Remo"
+  "veEmployee\022&.city.economy.v2.RemoveEmplo"
+  "yeeRequest\032\'.city.economy.v2.RemoveEmplo"
+  "yeeResponse\022X\n\013GetCitizens\022#.city.econom"
+  "y.v2.GetCitizensRequest\032$.city.economy.v"
+  "2.GetCitizensResponse\022X\n\013SetCitizens\022#.c"
+  "ity.economy.v2.SetCitizensRequest\032$.city"
+  ".economy.v2.SetCitizensResponse\022U\n\nAddCi"
+  "tizen\022\".city.economy.v2.AddCitizenReques"
+  "t\032#.city.economy.v2.AddCitizenResponse\022^"
+  "\n\rRemoveCitizen\022%.city.economy.v2.Remove"
+  "CitizenRequest\032&.city.economy.v2.RemoveC"
+  "itizenResponse\022O\n\010GetAgent\022 .city.econom"
+  "y.v2.GetAgentRequest\032!.city.economy.v2.G"
+  "etAgentResponse\022X\n\013UpdateAgent\022#.city.ec"
+  "onomy.v2.UpdateAgentRequest\032$.city.econo"
+  "my.v2.UpdateAgentResponse\022Q\n\010BatchGet\022 ."
+  "city.economy.v2.BatchGetRequest\032!.city.e"
+  "conomy.v2.BatchGetResponse\"\000\022Z\n\013BatchUpd"
+  "ate\022#.city.economy.v2.BatchUpdateRequest"
+  "\032$.city.economy.v2.BatchUpdateResponse\"\000"
+  "\022c\n\016DeltaUpdateOrg\022&.city.economy.v2.Del"
+  "taUpdateOrgRequest\032\'.city.economy.v2.Del"
+  "taUpdateOrgResponse\"\000\022i\n\020DeltaUpdateAgen"
+  "t\022(.city.economy.v2.DeltaUpdateAgentRequ"
+  "est\032).city.economy.v2.DeltaUpdateAgentRe"
+  "sponse\"\000\022i\n\020BatchDeltaUpdate\022(.city.econ"
+  "omy.v2.BatchDeltaUpdateRequest\032).city.ec"
+  "onomy.v2.BatchDeltaUpdateResponse\"\000\022i\n\020C"
+  "alculateRealGDP\022(.city.economy.v2.Calcul"
+  "ateRealGDPRequest\032).city.economy.v2.Calc"
+  "ulateRealGDPResponse\"\000B\277\001\n\023com.city.econ"
+  "omy.v2B\017OrgServiceProtoP\001Z9git.fiblab.ne"
+  "t/sim/protos/v2/go/city/economy/v2;econo"
+  "myv2\242\002\003CEX\252\002\017City.Economy.V2\312\002\017City\\Econ"
+  "omy\\V2\342\002\033City\\Economy\\V2\\GPBMetadata\352\002\021C"
+  "ity::Economy::V2b\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_deps[1] = {
   &::descriptor_table_city_2feconomy_2fv2_2feconomy_2eproto,
 };
 static ::_pbi::once_flag descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto = {
-    false, false, 13400, descriptor_table_protodef_city_2feconomy_2fv2_2forg_5fservice_2eproto,
+    false, false, 14864, descriptor_table_protodef_city_2feconomy_2fv2_2forg_5fservice_2eproto,
     "city/economy/v2/org_service.proto",
-    &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once, descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_deps, 1, 124,
+    &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once, descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_deps, 1, 132,
     schemas, file_default_instances, TableStruct_city_2feconomy_2fv2_2forg_5fservice_2eproto::offsets,
     file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto, file_level_enum_descriptors_city_2feconomy_2fv2_2forg_5fservice_2eproto,
     file_level_service_descriptors_city_2feconomy_2fv2_2forg_5fservice_2eproto,
@@ -23027,6 +23269,1431 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BatchUpdateResponse::GetClassD
       file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[123]);
 }
 
+// ===================================================================
+
+class DeltaUpdateOrgRequest::_Internal {
+ public:
+  using HasBits = decltype(std::declval<DeltaUpdateOrgRequest>()._impl_._has_bits_);
+  static void set_has_delta_inventory(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
+  static void set_has_delta_price(HasBits* has_bits) {
+    (*has_bits)[0] |= 2u;
+  }
+  static void set_has_delta_currency(HasBits* has_bits) {
+    (*has_bits)[0] |= 4u;
+  }
+  static void set_has_delta_interest_rate(HasBits* has_bits) {
+    (*has_bits)[0] |= 8u;
+  }
+};
+
+DeltaUpdateOrgRequest::DeltaUpdateOrgRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:city.economy.v2.DeltaUpdateOrgRequest)
+}
+DeltaUpdateOrgRequest::DeltaUpdateOrgRequest(const DeltaUpdateOrgRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  DeltaUpdateOrgRequest* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){from._impl_._has_bits_}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.add_employees_){from._impl_.add_employees_}
+    , /*decltype(_impl_._add_employees_cached_byte_size_)*/{0}
+    , decltype(_impl_.remove_employees_){from._impl_.remove_employees_}
+    , /*decltype(_impl_._remove_employees_cached_byte_size_)*/{0}
+    , decltype(_impl_.org_id_){}
+    , decltype(_impl_.delta_inventory_){}
+    , decltype(_impl_.delta_price_){}
+    , decltype(_impl_.delta_currency_){}
+    , decltype(_impl_.delta_interest_rate_){}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&_impl_.org_id_, &from._impl_.org_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.delta_interest_rate_) -
+    reinterpret_cast<char*>(&_impl_.org_id_)) + sizeof(_impl_.delta_interest_rate_));
+  // @@protoc_insertion_point(copy_constructor:city.economy.v2.DeltaUpdateOrgRequest)
+}
+
+inline void DeltaUpdateOrgRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.add_employees_){arena}
+    , /*decltype(_impl_._add_employees_cached_byte_size_)*/{0}
+    , decltype(_impl_.remove_employees_){arena}
+    , /*decltype(_impl_._remove_employees_cached_byte_size_)*/{0}
+    , decltype(_impl_.org_id_){0}
+    , decltype(_impl_.delta_inventory_){0}
+    , decltype(_impl_.delta_price_){0}
+    , decltype(_impl_.delta_currency_){0}
+    , decltype(_impl_.delta_interest_rate_){0}
+  };
+}
+
+DeltaUpdateOrgRequest::~DeltaUpdateOrgRequest() {
+  // @@protoc_insertion_point(destructor:city.economy.v2.DeltaUpdateOrgRequest)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void DeltaUpdateOrgRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.add_employees_.~RepeatedField();
+  _impl_.remove_employees_.~RepeatedField();
+}
+
+void DeltaUpdateOrgRequest::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void DeltaUpdateOrgRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:city.economy.v2.DeltaUpdateOrgRequest)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.add_employees_.Clear();
+  _impl_.remove_employees_.Clear();
+  _impl_.org_id_ = 0;
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x0000000fu) {
+    ::memset(&_impl_.delta_inventory_, 0, static_cast<size_t>(
+        reinterpret_cast<char*>(&_impl_.delta_interest_rate_) -
+        reinterpret_cast<char*>(&_impl_.delta_inventory_)) + sizeof(_impl_.delta_interest_rate_));
+  }
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* DeltaUpdateOrgRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  _Internal::HasBits has_bits{};
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 org_id = 1 [json_name = "orgId"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.org_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional float delta_inventory = 2 [json_name = "deltaInventory"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 21)) {
+          _Internal::set_has_delta_inventory(&has_bits);
+          _impl_.delta_inventory_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional float delta_price = 3 [json_name = "deltaPrice"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 29)) {
+          _Internal::set_has_delta_price(&has_bits);
+          _impl_.delta_price_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional float delta_currency = 4 [json_name = "deltaCurrency"];
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 37)) {
+          _Internal::set_has_delta_currency(&has_bits);
+          _impl_.delta_currency_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional float delta_interest_rate = 5 [json_name = "deltaInterestRate"];
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 45)) {
+          _Internal::set_has_delta_interest_rate(&has_bits);
+          _impl_.delta_interest_rate_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated int32 add_employees = 6 [json_name = "addEmployees"];
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 50)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_add_employees(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<uint8_t>(tag) == 48) {
+          _internal_add_add_employees(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated int32 remove_employees = 7 [json_name = "removeEmployees"];
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 58)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_remove_employees(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<uint8_t>(tag) == 56) {
+          _internal_add_remove_employees(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  _impl_._has_bits_.Or(has_bits);
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* DeltaUpdateOrgRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:city.economy.v2.DeltaUpdateOrgRequest)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 org_id = 1 [json_name = "orgId"];
+  if (this->_internal_org_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_org_id(), target);
+  }
+
+  // optional float delta_inventory = 2 [json_name = "deltaInventory"];
+  if (_internal_has_delta_inventory()) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(2, this->_internal_delta_inventory(), target);
+  }
+
+  // optional float delta_price = 3 [json_name = "deltaPrice"];
+  if (_internal_has_delta_price()) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(3, this->_internal_delta_price(), target);
+  }
+
+  // optional float delta_currency = 4 [json_name = "deltaCurrency"];
+  if (_internal_has_delta_currency()) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(4, this->_internal_delta_currency(), target);
+  }
+
+  // optional float delta_interest_rate = 5 [json_name = "deltaInterestRate"];
+  if (_internal_has_delta_interest_rate()) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(5, this->_internal_delta_interest_rate(), target);
+  }
+
+  // repeated int32 add_employees = 6 [json_name = "addEmployees"];
+  {
+    int byte_size = _impl_._add_employees_cached_byte_size_.load(std::memory_order_relaxed);
+    if (byte_size > 0) {
+      target = stream->WriteInt32Packed(
+          6, _internal_add_employees(), byte_size, target);
+    }
+  }
+
+  // repeated int32 remove_employees = 7 [json_name = "removeEmployees"];
+  {
+    int byte_size = _impl_._remove_employees_cached_byte_size_.load(std::memory_order_relaxed);
+    if (byte_size > 0) {
+      target = stream->WriteInt32Packed(
+          7, _internal_remove_employees(), byte_size, target);
+    }
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:city.economy.v2.DeltaUpdateOrgRequest)
+  return target;
+}
+
+size_t DeltaUpdateOrgRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:city.economy.v2.DeltaUpdateOrgRequest)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated int32 add_employees = 6 [json_name = "addEmployees"];
+  {
+    size_t data_size = ::_pbi::WireFormatLite::
+      Int32Size(this->_impl_.add_employees_);
+    if (data_size > 0) {
+      total_size += 1 +
+        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
+    }
+    int cached_size = ::_pbi::ToCachedSize(data_size);
+    _impl_._add_employees_cached_byte_size_.store(cached_size,
+                                    std::memory_order_relaxed);
+    total_size += data_size;
+  }
+
+  // repeated int32 remove_employees = 7 [json_name = "removeEmployees"];
+  {
+    size_t data_size = ::_pbi::WireFormatLite::
+      Int32Size(this->_impl_.remove_employees_);
+    if (data_size > 0) {
+      total_size += 1 +
+        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
+    }
+    int cached_size = ::_pbi::ToCachedSize(data_size);
+    _impl_._remove_employees_cached_byte_size_.store(cached_size,
+                                    std::memory_order_relaxed);
+    total_size += data_size;
+  }
+
+  // int32 org_id = 1 [json_name = "orgId"];
+  if (this->_internal_org_id() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_org_id());
+  }
+
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x0000000fu) {
+    // optional float delta_inventory = 2 [json_name = "deltaInventory"];
+    if (cached_has_bits & 0x00000001u) {
+      total_size += 1 + 4;
+    }
+
+    // optional float delta_price = 3 [json_name = "deltaPrice"];
+    if (cached_has_bits & 0x00000002u) {
+      total_size += 1 + 4;
+    }
+
+    // optional float delta_currency = 4 [json_name = "deltaCurrency"];
+    if (cached_has_bits & 0x00000004u) {
+      total_size += 1 + 4;
+    }
+
+    // optional float delta_interest_rate = 5 [json_name = "deltaInterestRate"];
+    if (cached_has_bits & 0x00000008u) {
+      total_size += 1 + 4;
+    }
+
+  }
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData DeltaUpdateOrgRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    DeltaUpdateOrgRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*DeltaUpdateOrgRequest::GetClassData() const { return &_class_data_; }
+
+
+void DeltaUpdateOrgRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<DeltaUpdateOrgRequest*>(&to_msg);
+  auto& from = static_cast<const DeltaUpdateOrgRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:city.economy.v2.DeltaUpdateOrgRequest)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_impl_.add_employees_.MergeFrom(from._impl_.add_employees_);
+  _this->_impl_.remove_employees_.MergeFrom(from._impl_.remove_employees_);
+  if (from._internal_org_id() != 0) {
+    _this->_internal_set_org_id(from._internal_org_id());
+  }
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (cached_has_bits & 0x0000000fu) {
+    if (cached_has_bits & 0x00000001u) {
+      _this->_impl_.delta_inventory_ = from._impl_.delta_inventory_;
+    }
+    if (cached_has_bits & 0x00000002u) {
+      _this->_impl_.delta_price_ = from._impl_.delta_price_;
+    }
+    if (cached_has_bits & 0x00000004u) {
+      _this->_impl_.delta_currency_ = from._impl_.delta_currency_;
+    }
+    if (cached_has_bits & 0x00000008u) {
+      _this->_impl_.delta_interest_rate_ = from._impl_.delta_interest_rate_;
+    }
+    _this->_impl_._has_bits_[0] |= cached_has_bits;
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void DeltaUpdateOrgRequest::CopyFrom(const DeltaUpdateOrgRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:city.economy.v2.DeltaUpdateOrgRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool DeltaUpdateOrgRequest::IsInitialized() const {
+  return true;
+}
+
+void DeltaUpdateOrgRequest::InternalSwap(DeltaUpdateOrgRequest* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  _impl_.add_employees_.InternalSwap(&other->_impl_.add_employees_);
+  _impl_.remove_employees_.InternalSwap(&other->_impl_.remove_employees_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(DeltaUpdateOrgRequest, _impl_.delta_interest_rate_)
+      + sizeof(DeltaUpdateOrgRequest::_impl_.delta_interest_rate_)
+      - PROTOBUF_FIELD_OFFSET(DeltaUpdateOrgRequest, _impl_.org_id_)>(
+          reinterpret_cast<char*>(&_impl_.org_id_),
+          reinterpret_cast<char*>(&other->_impl_.org_id_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata DeltaUpdateOrgRequest::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[124]);
+}
+
+// ===================================================================
+
+class DeltaUpdateOrgResponse::_Internal {
+ public:
+};
+
+DeltaUpdateOrgResponse::DeltaUpdateOrgResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
+  // @@protoc_insertion_point(arena_constructor:city.economy.v2.DeltaUpdateOrgResponse)
+}
+DeltaUpdateOrgResponse::DeltaUpdateOrgResponse(const DeltaUpdateOrgResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
+  DeltaUpdateOrgResponse* const _this = this; (void)_this;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:city.economy.v2.DeltaUpdateOrgResponse)
+}
+
+
+
+
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData DeltaUpdateOrgResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*DeltaUpdateOrgResponse::GetClassData() const { return &_class_data_; }
+
+
+
+
+
+
+
+::PROTOBUF_NAMESPACE_ID::Metadata DeltaUpdateOrgResponse::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[125]);
+}
+
+// ===================================================================
+
+class DeltaUpdateAgentRequest::_Internal {
+ public:
+  using HasBits = decltype(std::declval<DeltaUpdateAgentRequest>()._impl_._has_bits_);
+  static void set_has_delta_currency(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
+  static void set_has_delta_skill(HasBits* has_bits) {
+    (*has_bits)[0] |= 2u;
+  }
+  static void set_has_delta_consumption(HasBits* has_bits) {
+    (*has_bits)[0] |= 4u;
+  }
+  static void set_has_delta_income(HasBits* has_bits) {
+    (*has_bits)[0] |= 8u;
+  }
+};
+
+DeltaUpdateAgentRequest::DeltaUpdateAgentRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:city.economy.v2.DeltaUpdateAgentRequest)
+}
+DeltaUpdateAgentRequest::DeltaUpdateAgentRequest(const DeltaUpdateAgentRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  DeltaUpdateAgentRequest* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){from._impl_._has_bits_}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.agent_id_){}
+    , decltype(_impl_.delta_currency_){}
+    , decltype(_impl_.delta_skill_){}
+    , decltype(_impl_.delta_consumption_){}
+    , decltype(_impl_.delta_income_){}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&_impl_.agent_id_, &from._impl_.agent_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.delta_income_) -
+    reinterpret_cast<char*>(&_impl_.agent_id_)) + sizeof(_impl_.delta_income_));
+  // @@protoc_insertion_point(copy_constructor:city.economy.v2.DeltaUpdateAgentRequest)
+}
+
+inline void DeltaUpdateAgentRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.agent_id_){0}
+    , decltype(_impl_.delta_currency_){0}
+    , decltype(_impl_.delta_skill_){0}
+    , decltype(_impl_.delta_consumption_){0}
+    , decltype(_impl_.delta_income_){0}
+  };
+}
+
+DeltaUpdateAgentRequest::~DeltaUpdateAgentRequest() {
+  // @@protoc_insertion_point(destructor:city.economy.v2.DeltaUpdateAgentRequest)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void DeltaUpdateAgentRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void DeltaUpdateAgentRequest::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void DeltaUpdateAgentRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:city.economy.v2.DeltaUpdateAgentRequest)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.agent_id_ = 0;
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x0000000fu) {
+    ::memset(&_impl_.delta_currency_, 0, static_cast<size_t>(
+        reinterpret_cast<char*>(&_impl_.delta_income_) -
+        reinterpret_cast<char*>(&_impl_.delta_currency_)) + sizeof(_impl_.delta_income_));
+  }
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* DeltaUpdateAgentRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  _Internal::HasBits has_bits{};
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 agent_id = 1 [json_name = "agentId"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.agent_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional float delta_currency = 2 [json_name = "deltaCurrency"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 21)) {
+          _Internal::set_has_delta_currency(&has_bits);
+          _impl_.delta_currency_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional float delta_skill = 3 [json_name = "deltaSkill"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 29)) {
+          _Internal::set_has_delta_skill(&has_bits);
+          _impl_.delta_skill_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional float delta_consumption = 4 [json_name = "deltaConsumption"];
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 37)) {
+          _Internal::set_has_delta_consumption(&has_bits);
+          _impl_.delta_consumption_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional float delta_income = 5 [json_name = "deltaIncome"];
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 45)) {
+          _Internal::set_has_delta_income(&has_bits);
+          _impl_.delta_income_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  _impl_._has_bits_.Or(has_bits);
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* DeltaUpdateAgentRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:city.economy.v2.DeltaUpdateAgentRequest)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 agent_id = 1 [json_name = "agentId"];
+  if (this->_internal_agent_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_agent_id(), target);
+  }
+
+  // optional float delta_currency = 2 [json_name = "deltaCurrency"];
+  if (_internal_has_delta_currency()) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(2, this->_internal_delta_currency(), target);
+  }
+
+  // optional float delta_skill = 3 [json_name = "deltaSkill"];
+  if (_internal_has_delta_skill()) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(3, this->_internal_delta_skill(), target);
+  }
+
+  // optional float delta_consumption = 4 [json_name = "deltaConsumption"];
+  if (_internal_has_delta_consumption()) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(4, this->_internal_delta_consumption(), target);
+  }
+
+  // optional float delta_income = 5 [json_name = "deltaIncome"];
+  if (_internal_has_delta_income()) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(5, this->_internal_delta_income(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:city.economy.v2.DeltaUpdateAgentRequest)
+  return target;
+}
+
+size_t DeltaUpdateAgentRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:city.economy.v2.DeltaUpdateAgentRequest)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // int32 agent_id = 1 [json_name = "agentId"];
+  if (this->_internal_agent_id() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_agent_id());
+  }
+
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x0000000fu) {
+    // optional float delta_currency = 2 [json_name = "deltaCurrency"];
+    if (cached_has_bits & 0x00000001u) {
+      total_size += 1 + 4;
+    }
+
+    // optional float delta_skill = 3 [json_name = "deltaSkill"];
+    if (cached_has_bits & 0x00000002u) {
+      total_size += 1 + 4;
+    }
+
+    // optional float delta_consumption = 4 [json_name = "deltaConsumption"];
+    if (cached_has_bits & 0x00000004u) {
+      total_size += 1 + 4;
+    }
+
+    // optional float delta_income = 5 [json_name = "deltaIncome"];
+    if (cached_has_bits & 0x00000008u) {
+      total_size += 1 + 4;
+    }
+
+  }
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData DeltaUpdateAgentRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    DeltaUpdateAgentRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*DeltaUpdateAgentRequest::GetClassData() const { return &_class_data_; }
+
+
+void DeltaUpdateAgentRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<DeltaUpdateAgentRequest*>(&to_msg);
+  auto& from = static_cast<const DeltaUpdateAgentRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:city.economy.v2.DeltaUpdateAgentRequest)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_agent_id() != 0) {
+    _this->_internal_set_agent_id(from._internal_agent_id());
+  }
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (cached_has_bits & 0x0000000fu) {
+    if (cached_has_bits & 0x00000001u) {
+      _this->_impl_.delta_currency_ = from._impl_.delta_currency_;
+    }
+    if (cached_has_bits & 0x00000002u) {
+      _this->_impl_.delta_skill_ = from._impl_.delta_skill_;
+    }
+    if (cached_has_bits & 0x00000004u) {
+      _this->_impl_.delta_consumption_ = from._impl_.delta_consumption_;
+    }
+    if (cached_has_bits & 0x00000008u) {
+      _this->_impl_.delta_income_ = from._impl_.delta_income_;
+    }
+    _this->_impl_._has_bits_[0] |= cached_has_bits;
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void DeltaUpdateAgentRequest::CopyFrom(const DeltaUpdateAgentRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:city.economy.v2.DeltaUpdateAgentRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool DeltaUpdateAgentRequest::IsInitialized() const {
+  return true;
+}
+
+void DeltaUpdateAgentRequest::InternalSwap(DeltaUpdateAgentRequest* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(DeltaUpdateAgentRequest, _impl_.delta_income_)
+      + sizeof(DeltaUpdateAgentRequest::_impl_.delta_income_)
+      - PROTOBUF_FIELD_OFFSET(DeltaUpdateAgentRequest, _impl_.agent_id_)>(
+          reinterpret_cast<char*>(&_impl_.agent_id_),
+          reinterpret_cast<char*>(&other->_impl_.agent_id_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata DeltaUpdateAgentRequest::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[126]);
+}
+
+// ===================================================================
+
+class DeltaUpdateAgentResponse::_Internal {
+ public:
+};
+
+DeltaUpdateAgentResponse::DeltaUpdateAgentResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
+  // @@protoc_insertion_point(arena_constructor:city.economy.v2.DeltaUpdateAgentResponse)
+}
+DeltaUpdateAgentResponse::DeltaUpdateAgentResponse(const DeltaUpdateAgentResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
+  DeltaUpdateAgentResponse* const _this = this; (void)_this;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:city.economy.v2.DeltaUpdateAgentResponse)
+}
+
+
+
+
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData DeltaUpdateAgentResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*DeltaUpdateAgentResponse::GetClassData() const { return &_class_data_; }
+
+
+
+
+
+
+
+::PROTOBUF_NAMESPACE_ID::Metadata DeltaUpdateAgentResponse::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[127]);
+}
+
+// ===================================================================
+
+class BatchDeltaUpdateRequest::_Internal {
+ public:
+};
+
+BatchDeltaUpdateRequest::BatchDeltaUpdateRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:city.economy.v2.BatchDeltaUpdateRequest)
+}
+BatchDeltaUpdateRequest::BatchDeltaUpdateRequest(const BatchDeltaUpdateRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  BatchDeltaUpdateRequest* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.orgs_){from._impl_.orgs_}
+    , decltype(_impl_.agents_){from._impl_.agents_}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:city.economy.v2.BatchDeltaUpdateRequest)
+}
+
+inline void BatchDeltaUpdateRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.orgs_){arena}
+    , decltype(_impl_.agents_){arena}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+}
+
+BatchDeltaUpdateRequest::~BatchDeltaUpdateRequest() {
+  // @@protoc_insertion_point(destructor:city.economy.v2.BatchDeltaUpdateRequest)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void BatchDeltaUpdateRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.orgs_.~RepeatedPtrField();
+  _impl_.agents_.~RepeatedPtrField();
+}
+
+void BatchDeltaUpdateRequest::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void BatchDeltaUpdateRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:city.economy.v2.BatchDeltaUpdateRequest)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.orgs_.Clear();
+  _impl_.agents_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* BatchDeltaUpdateRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // repeated .city.economy.v2.DeltaUpdateOrgRequest orgs = 1 [json_name = "orgs"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_orgs(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated .city.economy.v2.DeltaUpdateAgentRequest agents = 2 [json_name = "agents"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_agents(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* BatchDeltaUpdateRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:city.economy.v2.BatchDeltaUpdateRequest)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated .city.economy.v2.DeltaUpdateOrgRequest orgs = 1 [json_name = "orgs"];
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_orgs_size()); i < n; i++) {
+    const auto& repfield = this->_internal_orgs(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
+  }
+
+  // repeated .city.economy.v2.DeltaUpdateAgentRequest agents = 2 [json_name = "agents"];
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_agents_size()); i < n; i++) {
+    const auto& repfield = this->_internal_agents(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        InternalWriteMessage(2, repfield, repfield.GetCachedSize(), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:city.economy.v2.BatchDeltaUpdateRequest)
+  return target;
+}
+
+size_t BatchDeltaUpdateRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:city.economy.v2.BatchDeltaUpdateRequest)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated .city.economy.v2.DeltaUpdateOrgRequest orgs = 1 [json_name = "orgs"];
+  total_size += 1UL * this->_internal_orgs_size();
+  for (const auto& msg : this->_impl_.orgs_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // repeated .city.economy.v2.DeltaUpdateAgentRequest agents = 2 [json_name = "agents"];
+  total_size += 1UL * this->_internal_agents_size();
+  for (const auto& msg : this->_impl_.agents_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BatchDeltaUpdateRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    BatchDeltaUpdateRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BatchDeltaUpdateRequest::GetClassData() const { return &_class_data_; }
+
+
+void BatchDeltaUpdateRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<BatchDeltaUpdateRequest*>(&to_msg);
+  auto& from = static_cast<const BatchDeltaUpdateRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:city.economy.v2.BatchDeltaUpdateRequest)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_impl_.orgs_.MergeFrom(from._impl_.orgs_);
+  _this->_impl_.agents_.MergeFrom(from._impl_.agents_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void BatchDeltaUpdateRequest::CopyFrom(const BatchDeltaUpdateRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:city.economy.v2.BatchDeltaUpdateRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool BatchDeltaUpdateRequest::IsInitialized() const {
+  return true;
+}
+
+void BatchDeltaUpdateRequest::InternalSwap(BatchDeltaUpdateRequest* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _impl_.orgs_.InternalSwap(&other->_impl_.orgs_);
+  _impl_.agents_.InternalSwap(&other->_impl_.agents_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata BatchDeltaUpdateRequest::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[128]);
+}
+
+// ===================================================================
+
+class BatchDeltaUpdateResponse::_Internal {
+ public:
+};
+
+BatchDeltaUpdateResponse::BatchDeltaUpdateResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
+  // @@protoc_insertion_point(arena_constructor:city.economy.v2.BatchDeltaUpdateResponse)
+}
+BatchDeltaUpdateResponse::BatchDeltaUpdateResponse(const BatchDeltaUpdateResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
+  BatchDeltaUpdateResponse* const _this = this; (void)_this;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:city.economy.v2.BatchDeltaUpdateResponse)
+}
+
+
+
+
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BatchDeltaUpdateResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BatchDeltaUpdateResponse::GetClassData() const { return &_class_data_; }
+
+
+
+
+
+
+
+::PROTOBUF_NAMESPACE_ID::Metadata BatchDeltaUpdateResponse::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[129]);
+}
+
+// ===================================================================
+
+class CalculateRealGDPRequest::_Internal {
+ public:
+};
+
+CalculateRealGDPRequest::CalculateRealGDPRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:city.economy.v2.CalculateRealGDPRequest)
+}
+CalculateRealGDPRequest::CalculateRealGDPRequest(const CalculateRealGDPRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  CalculateRealGDPRequest* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.nbs_agent_id_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.nbs_agent_id_ = from._impl_.nbs_agent_id_;
+  // @@protoc_insertion_point(copy_constructor:city.economy.v2.CalculateRealGDPRequest)
+}
+
+inline void CalculateRealGDPRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.nbs_agent_id_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+}
+
+CalculateRealGDPRequest::~CalculateRealGDPRequest() {
+  // @@protoc_insertion_point(destructor:city.economy.v2.CalculateRealGDPRequest)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void CalculateRealGDPRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void CalculateRealGDPRequest::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void CalculateRealGDPRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:city.economy.v2.CalculateRealGDPRequest)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.nbs_agent_id_ = 0;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* CalculateRealGDPRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 nbs_agent_id = 1 [json_name = "nbsAgentId"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.nbs_agent_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* CalculateRealGDPRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:city.economy.v2.CalculateRealGDPRequest)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 nbs_agent_id = 1 [json_name = "nbsAgentId"];
+  if (this->_internal_nbs_agent_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_nbs_agent_id(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:city.economy.v2.CalculateRealGDPRequest)
+  return target;
+}
+
+size_t CalculateRealGDPRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:city.economy.v2.CalculateRealGDPRequest)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // int32 nbs_agent_id = 1 [json_name = "nbsAgentId"];
+  if (this->_internal_nbs_agent_id() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_nbs_agent_id());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData CalculateRealGDPRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    CalculateRealGDPRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*CalculateRealGDPRequest::GetClassData() const { return &_class_data_; }
+
+
+void CalculateRealGDPRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<CalculateRealGDPRequest*>(&to_msg);
+  auto& from = static_cast<const CalculateRealGDPRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:city.economy.v2.CalculateRealGDPRequest)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_nbs_agent_id() != 0) {
+    _this->_internal_set_nbs_agent_id(from._internal_nbs_agent_id());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void CalculateRealGDPRequest::CopyFrom(const CalculateRealGDPRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:city.economy.v2.CalculateRealGDPRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CalculateRealGDPRequest::IsInitialized() const {
+  return true;
+}
+
+void CalculateRealGDPRequest::InternalSwap(CalculateRealGDPRequest* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_.nbs_agent_id_, other->_impl_.nbs_agent_id_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata CalculateRealGDPRequest::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[130]);
+}
+
+// ===================================================================
+
+class CalculateRealGDPResponse::_Internal {
+ public:
+};
+
+CalculateRealGDPResponse::CalculateRealGDPResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:city.economy.v2.CalculateRealGDPResponse)
+}
+CalculateRealGDPResponse::CalculateRealGDPResponse(const CalculateRealGDPResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  CalculateRealGDPResponse* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.real_gdp_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.real_gdp_ = from._impl_.real_gdp_;
+  // @@protoc_insertion_point(copy_constructor:city.economy.v2.CalculateRealGDPResponse)
+}
+
+inline void CalculateRealGDPResponse::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.real_gdp_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+}
+
+CalculateRealGDPResponse::~CalculateRealGDPResponse() {
+  // @@protoc_insertion_point(destructor:city.economy.v2.CalculateRealGDPResponse)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void CalculateRealGDPResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void CalculateRealGDPResponse::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void CalculateRealGDPResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:city.economy.v2.CalculateRealGDPResponse)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.real_gdp_ = 0;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* CalculateRealGDPResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // float real_gdp = 1 [json_name = "realGdp"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 13)) {
+          _impl_.real_gdp_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* CalculateRealGDPResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:city.economy.v2.CalculateRealGDPResponse)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // float real_gdp = 1 [json_name = "realGdp"];
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_real_gdp = this->_internal_real_gdp();
+  uint32_t raw_real_gdp;
+  memcpy(&raw_real_gdp, &tmp_real_gdp, sizeof(tmp_real_gdp));
+  if (raw_real_gdp != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(1, this->_internal_real_gdp(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:city.economy.v2.CalculateRealGDPResponse)
+  return target;
+}
+
+size_t CalculateRealGDPResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:city.economy.v2.CalculateRealGDPResponse)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // float real_gdp = 1 [json_name = "realGdp"];
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_real_gdp = this->_internal_real_gdp();
+  uint32_t raw_real_gdp;
+  memcpy(&raw_real_gdp, &tmp_real_gdp, sizeof(tmp_real_gdp));
+  if (raw_real_gdp != 0) {
+    total_size += 1 + 4;
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData CalculateRealGDPResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    CalculateRealGDPResponse::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*CalculateRealGDPResponse::GetClassData() const { return &_class_data_; }
+
+
+void CalculateRealGDPResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<CalculateRealGDPResponse*>(&to_msg);
+  auto& from = static_cast<const CalculateRealGDPResponse&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:city.economy.v2.CalculateRealGDPResponse)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_real_gdp = from._internal_real_gdp();
+  uint32_t raw_real_gdp;
+  memcpy(&raw_real_gdp, &tmp_real_gdp, sizeof(tmp_real_gdp));
+  if (raw_real_gdp != 0) {
+    _this->_internal_set_real_gdp(from._internal_real_gdp());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void CalculateRealGDPResponse::CopyFrom(const CalculateRealGDPResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:city.economy.v2.CalculateRealGDPResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CalculateRealGDPResponse::IsInitialized() const {
+  return true;
+}
+
+void CalculateRealGDPResponse::InternalSwap(CalculateRealGDPResponse* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_.real_gdp_, other->_impl_.real_gdp_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata CalculateRealGDPResponse::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[131]);
+}
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace v2
 }  // namespace economy
@@ -23527,6 +25194,38 @@ Arena::CreateMaybeMessage< ::city::economy::v2::BatchUpdateRequest >(Arena* aren
 template<> PROTOBUF_NOINLINE ::city::economy::v2::BatchUpdateResponse*
 Arena::CreateMaybeMessage< ::city::economy::v2::BatchUpdateResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::city::economy::v2::BatchUpdateResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::economy::v2::DeltaUpdateOrgRequest*
+Arena::CreateMaybeMessage< ::city::economy::v2::DeltaUpdateOrgRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::economy::v2::DeltaUpdateOrgRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::economy::v2::DeltaUpdateOrgResponse*
+Arena::CreateMaybeMessage< ::city::economy::v2::DeltaUpdateOrgResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::economy::v2::DeltaUpdateOrgResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::economy::v2::DeltaUpdateAgentRequest*
+Arena::CreateMaybeMessage< ::city::economy::v2::DeltaUpdateAgentRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::economy::v2::DeltaUpdateAgentRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::economy::v2::DeltaUpdateAgentResponse*
+Arena::CreateMaybeMessage< ::city::economy::v2::DeltaUpdateAgentResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::economy::v2::DeltaUpdateAgentResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::economy::v2::BatchDeltaUpdateRequest*
+Arena::CreateMaybeMessage< ::city::economy::v2::BatchDeltaUpdateRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::economy::v2::BatchDeltaUpdateRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::economy::v2::BatchDeltaUpdateResponse*
+Arena::CreateMaybeMessage< ::city::economy::v2::BatchDeltaUpdateResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::economy::v2::BatchDeltaUpdateResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::economy::v2::CalculateRealGDPRequest*
+Arena::CreateMaybeMessage< ::city::economy::v2::CalculateRealGDPRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::economy::v2::CalculateRealGDPRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::economy::v2::CalculateRealGDPResponse*
+Arena::CreateMaybeMessage< ::city::economy::v2::CalculateRealGDPResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::economy::v2::CalculateRealGDPResponse >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

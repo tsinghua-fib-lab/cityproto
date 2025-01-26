@@ -1248,3 +1248,94 @@ export const BatchUpdateResponse = /*@__PURE__*/ proto3.makeMessageType(
   [],
 );
 
+/**
+ * 增量更新请求
+ *
+ * @generated from message city.economy.v2.DeltaUpdateOrgRequest
+ */
+export const DeltaUpdateOrgRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.DeltaUpdateOrgRequest",
+  () => [
+    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "delta_inventory", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
+    { no: 3, name: "delta_price", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
+    { no: 4, name: "delta_currency", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
+    { no: 5, name: "delta_interest_rate", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
+    { no: 6, name: "add_employees", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 7, name: "remove_employees", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.DeltaUpdateOrgResponse
+ */
+export const DeltaUpdateOrgResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.DeltaUpdateOrgResponse",
+  [],
+);
+
+/**
+ * @generated from message city.economy.v2.DeltaUpdateAgentRequest
+ */
+export const DeltaUpdateAgentRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.DeltaUpdateAgentRequest",
+  () => [
+    { no: 1, name: "agent_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "delta_currency", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
+    { no: 3, name: "delta_skill", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
+    { no: 4, name: "delta_consumption", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
+    { no: 5, name: "delta_income", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.DeltaUpdateAgentResponse
+ */
+export const DeltaUpdateAgentResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.DeltaUpdateAgentResponse",
+  [],
+);
+
+/**
+ * 批量增量更新请求
+ *
+ * @generated from message city.economy.v2.BatchDeltaUpdateRequest
+ */
+export const BatchDeltaUpdateRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.BatchDeltaUpdateRequest",
+  () => [
+    { no: 1, name: "orgs", kind: "message", T: DeltaUpdateOrgRequest, repeated: true },
+    { no: 2, name: "agents", kind: "message", T: DeltaUpdateAgentRequest, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.BatchDeltaUpdateResponse
+ */
+export const BatchDeltaUpdateResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.BatchDeltaUpdateResponse",
+  [],
+);
+
+/**
+ * 计算实际GDP的请求和响应消息
+ *
+ * @generated from message city.economy.v2.CalculateRealGDPRequest
+ */
+export const CalculateRealGDPRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.CalculateRealGDPRequest",
+  () => [
+    { no: 1, name: "nbs_agent_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.CalculateRealGDPResponse
+ */
+export const CalculateRealGDPResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.CalculateRealGDPResponse",
+  () => [
+    { no: 1, name: "real_gdp", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
+  ],
+);
+
