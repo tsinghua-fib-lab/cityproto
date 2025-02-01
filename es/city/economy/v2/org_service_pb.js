@@ -580,6 +580,7 @@ export const CalculateConsumptionRequest = /*@__PURE__*/ proto3.makeMessageType(
     { no: 1, name: "firm_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
     { no: 2, name: "agent_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 3, name: "demands", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 4, name: "consumption_accumulation", kind: "scalar", T: 8 /* ScalarType.BOOL */, opt: true },
   ],
 );
 

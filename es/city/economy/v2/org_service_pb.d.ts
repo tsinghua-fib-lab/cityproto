@@ -1431,6 +1431,13 @@ export declare class CalculateConsumptionRequest extends Message<CalculateConsum
    */
   demands: number[];
 
+  /**
+   * 是否累加消费，默认为true
+   *
+   * @generated from field: optional bool consumption_accumulation = 4;
+   */
+  consumptionAccumulation?: boolean;
+
   constructor(data?: PartialMessage<CalculateConsumptionRequest>);
 
   static readonly runtime: typeof proto3;

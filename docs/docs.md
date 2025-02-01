@@ -2612,6 +2612,7 @@ Organization
 | firm_ids | [int32](#int32) | repeated | 多个公司ID |
 | agent_id | [int32](#int32) |  | 代理ID |
 | demands | [int32](#int32) | repeated | 对应每个公司的需求量 |
+| consumption_accumulation | [bool](#bool) | optional | 是否累加消费，默认为true |
 
 
 

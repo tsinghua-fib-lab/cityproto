@@ -468,15 +468,17 @@ class CalculateTaxesDueResponse(_message.Message):
         ...
 
 class CalculateConsumptionRequest(_message.Message):
-    __slots__ = ['firm_ids', 'agent_id', 'demands']
+    __slots__ = ['firm_ids', 'agent_id', 'demands', 'consumption_accumulation']
     FIRM_IDS_FIELD_NUMBER: _ClassVar[int]
     AGENT_ID_FIELD_NUMBER: _ClassVar[int]
     DEMANDS_FIELD_NUMBER: _ClassVar[int]
+    CONSUMPTION_ACCUMULATION_FIELD_NUMBER: _ClassVar[int]
     firm_ids: _containers.RepeatedScalarFieldContainer[int]
     agent_id: int
     demands: _containers.RepeatedScalarFieldContainer[int]
+    consumption_accumulation: bool
 
-    def __init__(self, firm_ids: _Optional[_Iterable[int]]=..., agent_id: _Optional[int]=..., demands: _Optional[_Iterable[int]]=...) -> None:
+    def __init__(self, firm_ids: _Optional[_Iterable[int]]=..., agent_id: _Optional[int]=..., demands: _Optional[_Iterable[int]]=..., consumption_accumulation: bool=...) -> None:
         ...
 
 class CalculateConsumptionResponse(_message.Message):

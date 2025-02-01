@@ -9239,6 +9239,7 @@ class CalculateConsumptionRequest final :
     kFirmIdsFieldNumber = 1,
     kDemandsFieldNumber = 3,
     kAgentIdFieldNumber = 2,
+    kConsumptionAccumulationFieldNumber = 4,
   };
   // repeated int32 firm_ids = 1 [json_name = "firmIds"];
   int firm_ids_size() const;
@@ -9293,6 +9294,19 @@ class CalculateConsumptionRequest final :
   void _internal_set_agent_id(int32_t value);
   public:
 
+  // optional bool consumption_accumulation = 4 [json_name = "consumptionAccumulation"];
+  bool has_consumption_accumulation() const;
+  private:
+  bool _internal_has_consumption_accumulation() const;
+  public:
+  void clear_consumption_accumulation();
+  bool consumption_accumulation() const;
+  void set_consumption_accumulation(bool value);
+  private:
+  bool _internal_consumption_accumulation() const;
+  void _internal_set_consumption_accumulation(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:city.economy.v2.CalculateConsumptionRequest)
  private:
   class _Internal;
@@ -9301,12 +9315,14 @@ class CalculateConsumptionRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
     ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t > firm_ids_;
     mutable std::atomic<int> _firm_ids_cached_byte_size_;
     ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t > demands_;
     mutable std::atomic<int> _demands_cached_byte_size_;
     int32_t agent_id_;
-    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+    bool consumption_accumulation_;
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_city_2feconomy_2fv2_2forg_5fservice_2eproto;
@@ -22676,6 +22692,34 @@ inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
 CalculateConsumptionRequest::mutable_demands() {
   // @@protoc_insertion_point(field_mutable_list:city.economy.v2.CalculateConsumptionRequest.demands)
   return _internal_mutable_demands();
+}
+
+// optional bool consumption_accumulation = 4 [json_name = "consumptionAccumulation"];
+inline bool CalculateConsumptionRequest::_internal_has_consumption_accumulation() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline bool CalculateConsumptionRequest::has_consumption_accumulation() const {
+  return _internal_has_consumption_accumulation();
+}
+inline void CalculateConsumptionRequest::clear_consumption_accumulation() {
+  _impl_.consumption_accumulation_ = false;
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline bool CalculateConsumptionRequest::_internal_consumption_accumulation() const {
+  return _impl_.consumption_accumulation_;
+}
+inline bool CalculateConsumptionRequest::consumption_accumulation() const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.CalculateConsumptionRequest.consumption_accumulation)
+  return _internal_consumption_accumulation();
+}
+inline void CalculateConsumptionRequest::_internal_set_consumption_accumulation(bool value) {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.consumption_accumulation_ = value;
+}
+inline void CalculateConsumptionRequest::set_consumption_accumulation(bool value) {
+  _internal_set_consumption_accumulation(value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.CalculateConsumptionRequest.consumption_accumulation)
 }
 
 // -------------------------------------------------------------------

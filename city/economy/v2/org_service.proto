@@ -344,6 +344,7 @@ message CalculateConsumptionRequest {
   repeated int32 firm_ids = 1; // 多个公司ID
   int32 agent_id = 2; // 代理ID
   repeated int32 demands = 3; // 对应每个公司的需求量
+  optional bool consumption_accumulation = 4; // 是否累加消费，默认为true
 }
 
 message CalculateConsumptionResponse {
