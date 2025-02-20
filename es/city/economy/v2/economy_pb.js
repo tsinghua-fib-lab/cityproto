@@ -6,6 +6,8 @@
 import { proto3 } from "@bufbuild/protobuf";
 
 /**
+ * 组织类型
+ *
  * @generated from enum city.economy.v2.OrgType
  */
 export const OrgType = /*@__PURE__*/ proto3.makeEnum(
@@ -21,7 +23,6 @@ export const OrgType = /*@__PURE__*/ proto3.makeEnum(
 
 /**
  * 组织
- * Organization
  *
  * @generated from message city.economy.v2.Org
  */
@@ -41,20 +42,22 @@ export const Org = /*@__PURE__*/ proto3.makeMessageType(
     { no: 11, name: "interest_rate", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
     { no: 12, name: "bracket_cutoffs", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
     { no: 13, name: "bracket_rates", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
-    { no: 14, name: "consumption_currency", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
-    { no: 15, name: "consumption_propensity", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
-    { no: 16, name: "income_currency", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
-    { no: 17, name: "depression", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
-    { no: 18, name: "locus_control", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
-    { no: 19, name: "working_hours", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
-    { no: 20, name: "employees", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
-    { no: 21, name: "citizens", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
-    { no: 22, name: "demand", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
-    { no: 23, name: "sales", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
+    { no: 14, name: "demand", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
+    { no: 15, name: "sales", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
+    { no: 16, name: "employees", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 17, name: "citizens", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 18, name: "consumption_currency", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
+    { no: 19, name: "consumption_propensity", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
+    { no: 20, name: "income_currency", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
+    { no: 21, name: "depression", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
+    { no: 22, name: "locus_control", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
+    { no: 23, name: "working_hours", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
   ],
 );
 
 /**
+ * 代理
+ *
  * @generated from message city.economy.v2.Agent
  */
 export const Agent = /*@__PURE__*/ proto3.makeMessageType(
@@ -70,6 +73,8 @@ export const Agent = /*@__PURE__*/ proto3.makeMessageType(
 );
 
 /**
+ * 经济实体
+ *
  * @generated from message city.economy.v2.EconomyEntities
  */
 export const EconomyEntities = /*@__PURE__*/ proto3.makeMessageType(

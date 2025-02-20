@@ -30,66 +30,20 @@ static const char* OrgService_method_names[] = {
   "/city.economy.v2.OrgService/UpdateOrg",
   "/city.economy.v2.OrgService/AddAgent",
   "/city.economy.v2.OrgService/RemoveAgent",
-  "/city.economy.v2.OrgService/GetNominalGDP",
-  "/city.economy.v2.OrgService/SetNominalGDP",
-  "/city.economy.v2.OrgService/GetRealGDP",
-  "/city.economy.v2.OrgService/SetRealGDP",
-  "/city.economy.v2.OrgService/GetUnemployment",
-  "/city.economy.v2.OrgService/SetUnemployment",
-  "/city.economy.v2.OrgService/GetWages",
-  "/city.economy.v2.OrgService/SetWages",
-  "/city.economy.v2.OrgService/GetPrices",
-  "/city.economy.v2.OrgService/SetPrices",
-  "/city.economy.v2.OrgService/GetInventory",
-  "/city.economy.v2.OrgService/SetInventory",
-  "/city.economy.v2.OrgService/AddInventory",
-  "/city.economy.v2.OrgService/GetPrice",
-  "/city.economy.v2.OrgService/SetPrice",
-  "/city.economy.v2.OrgService/AddPrice",
-  "/city.economy.v2.OrgService/GetCurrency",
-  "/city.economy.v2.OrgService/SetCurrency",
-  "/city.economy.v2.OrgService/AddCurrency",
-  "/city.economy.v2.OrgService/GetInterestRate",
-  "/city.economy.v2.OrgService/SetInterestRate",
-  "/city.economy.v2.OrgService/AddInterestRate",
-  "/city.economy.v2.OrgService/GetBracketCutoffs",
-  "/city.economy.v2.OrgService/SetBracketCutoffs",
-  "/city.economy.v2.OrgService/GetBracketRates",
-  "/city.economy.v2.OrgService/SetBracketRates",
-  "/city.economy.v2.OrgService/CalculateTaxesDue",
-  "/city.economy.v2.OrgService/CalculateConsumption",
-  "/city.economy.v2.OrgService/CalculateInterest",
-  "/city.economy.v2.OrgService/SaveEconomyEntities",
-  "/city.economy.v2.OrgService/LoadEconomyEntities",
-  "/city.economy.v2.OrgService/GetConsumptionCurrency",
-  "/city.economy.v2.OrgService/SetConsumptionCurrency",
-  "/city.economy.v2.OrgService/GetConsumptionPropensity",
-  "/city.economy.v2.OrgService/SetConsumptionPropensity",
-  "/city.economy.v2.OrgService/GetIncomeCurrency",
-  "/city.economy.v2.OrgService/SetIncomeCurrency",
-  "/city.economy.v2.OrgService/GetDepression",
-  "/city.economy.v2.OrgService/SetDepression",
-  "/city.economy.v2.OrgService/GetLocusControl",
-  "/city.economy.v2.OrgService/SetLocusControl",
-  "/city.economy.v2.OrgService/GetWorkingHours",
-  "/city.economy.v2.OrgService/SetWorkingHours",
-  "/city.economy.v2.OrgService/GetOrgEntityIds",
-  "/city.economy.v2.OrgService/GetEmployees",
-  "/city.economy.v2.OrgService/SetEmployees",
-  "/city.economy.v2.OrgService/AddEmployee",
-  "/city.economy.v2.OrgService/RemoveEmployee",
-  "/city.economy.v2.OrgService/GetCitizens",
-  "/city.economy.v2.OrgService/SetCitizens",
-  "/city.economy.v2.OrgService/AddCitizen",
-  "/city.economy.v2.OrgService/RemoveCitizen",
   "/city.economy.v2.OrgService/GetAgent",
   "/city.economy.v2.OrgService/UpdateAgent",
   "/city.economy.v2.OrgService/BatchGet",
   "/city.economy.v2.OrgService/BatchUpdate",
+  "/city.economy.v2.OrgService/BatchSet",
   "/city.economy.v2.OrgService/DeltaUpdateOrg",
   "/city.economy.v2.OrgService/DeltaUpdateAgent",
   "/city.economy.v2.OrgService/BatchDeltaUpdate",
+  "/city.economy.v2.OrgService/CalculateTaxesDue",
+  "/city.economy.v2.OrgService/CalculateConsumption",
+  "/city.economy.v2.OrgService/CalculateInterest",
   "/city.economy.v2.OrgService/CalculateRealGDP",
+  "/city.economy.v2.OrgService/SaveEconomyEntities",
+  "/city.economy.v2.OrgService/LoadEconomyEntities",
 };
 
 std::unique_ptr< OrgService::Stub> OrgService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -105,66 +59,20 @@ OrgService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel
   , rpcmethod_UpdateOrg_(OrgService_method_names[3], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_AddAgent_(OrgService_method_names[4], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_RemoveAgent_(OrgService_method_names[5], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetNominalGDP_(OrgService_method_names[6], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_SetNominalGDP_(OrgService_method_names[7], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetRealGDP_(OrgService_method_names[8], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_SetRealGDP_(OrgService_method_names[9], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetUnemployment_(OrgService_method_names[10], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_SetUnemployment_(OrgService_method_names[11], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetWages_(OrgService_method_names[12], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_SetWages_(OrgService_method_names[13], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetPrices_(OrgService_method_names[14], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_SetPrices_(OrgService_method_names[15], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetInventory_(OrgService_method_names[16], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_SetInventory_(OrgService_method_names[17], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_AddInventory_(OrgService_method_names[18], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetPrice_(OrgService_method_names[19], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_SetPrice_(OrgService_method_names[20], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_AddPrice_(OrgService_method_names[21], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetCurrency_(OrgService_method_names[22], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_SetCurrency_(OrgService_method_names[23], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_AddCurrency_(OrgService_method_names[24], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetInterestRate_(OrgService_method_names[25], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_SetInterestRate_(OrgService_method_names[26], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_AddInterestRate_(OrgService_method_names[27], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetBracketCutoffs_(OrgService_method_names[28], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_SetBracketCutoffs_(OrgService_method_names[29], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetBracketRates_(OrgService_method_names[30], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_SetBracketRates_(OrgService_method_names[31], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_CalculateTaxesDue_(OrgService_method_names[32], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_CalculateConsumption_(OrgService_method_names[33], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_CalculateInterest_(OrgService_method_names[34], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_SaveEconomyEntities_(OrgService_method_names[35], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_LoadEconomyEntities_(OrgService_method_names[36], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetConsumptionCurrency_(OrgService_method_names[37], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_SetConsumptionCurrency_(OrgService_method_names[38], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetConsumptionPropensity_(OrgService_method_names[39], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_SetConsumptionPropensity_(OrgService_method_names[40], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetIncomeCurrency_(OrgService_method_names[41], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_SetIncomeCurrency_(OrgService_method_names[42], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetDepression_(OrgService_method_names[43], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_SetDepression_(OrgService_method_names[44], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetLocusControl_(OrgService_method_names[45], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_SetLocusControl_(OrgService_method_names[46], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetWorkingHours_(OrgService_method_names[47], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_SetWorkingHours_(OrgService_method_names[48], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetOrgEntityIds_(OrgService_method_names[49], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetEmployees_(OrgService_method_names[50], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_SetEmployees_(OrgService_method_names[51], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_AddEmployee_(OrgService_method_names[52], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_RemoveEmployee_(OrgService_method_names[53], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetCitizens_(OrgService_method_names[54], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_SetCitizens_(OrgService_method_names[55], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_AddCitizen_(OrgService_method_names[56], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_RemoveCitizen_(OrgService_method_names[57], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetAgent_(OrgService_method_names[58], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_UpdateAgent_(OrgService_method_names[59], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_BatchGet_(OrgService_method_names[60], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_BatchUpdate_(OrgService_method_names[61], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_DeltaUpdateOrg_(OrgService_method_names[62], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_DeltaUpdateAgent_(OrgService_method_names[63], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_BatchDeltaUpdate_(OrgService_method_names[64], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_CalculateRealGDP_(OrgService_method_names[65], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetAgent_(OrgService_method_names[6], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_UpdateAgent_(OrgService_method_names[7], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_BatchGet_(OrgService_method_names[8], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_BatchUpdate_(OrgService_method_names[9], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_BatchSet_(OrgService_method_names[10], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_DeltaUpdateOrg_(OrgService_method_names[11], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_DeltaUpdateAgent_(OrgService_method_names[12], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_BatchDeltaUpdate_(OrgService_method_names[13], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_CalculateTaxesDue_(OrgService_method_names[14], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_CalculateConsumption_(OrgService_method_names[15], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_CalculateInterest_(OrgService_method_names[16], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_CalculateRealGDP_(OrgService_method_names[17], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_SaveEconomyEntities_(OrgService_method_names[18], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_LoadEconomyEntities_(OrgService_method_names[19], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status OrgService::Stub::AddOrg(::grpc::ClientContext* context, const ::city::economy::v2::AddOrgRequest& request, ::city::economy::v2::AddOrgResponse* response) {
@@ -305,1202 +213,6 @@ void OrgService::Stub::async::RemoveAgent(::grpc::ClientContext* context, const 
   return result;
 }
 
-::grpc::Status OrgService::Stub::GetNominalGDP(::grpc::ClientContext* context, const ::city::economy::v2::GetNominalGDPRequest& request, ::city::economy::v2::GetNominalGDPResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::GetNominalGDPRequest, ::city::economy::v2::GetNominalGDPResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetNominalGDP_, context, request, response);
-}
-
-void OrgService::Stub::async::GetNominalGDP(::grpc::ClientContext* context, const ::city::economy::v2::GetNominalGDPRequest* request, ::city::economy::v2::GetNominalGDPResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::GetNominalGDPRequest, ::city::economy::v2::GetNominalGDPResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetNominalGDP_, context, request, response, std::move(f));
-}
-
-void OrgService::Stub::async::GetNominalGDP(::grpc::ClientContext* context, const ::city::economy::v2::GetNominalGDPRequest* request, ::city::economy::v2::GetNominalGDPResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetNominalGDP_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetNominalGDPResponse>* OrgService::Stub::PrepareAsyncGetNominalGDPRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetNominalGDPRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::GetNominalGDPResponse, ::city::economy::v2::GetNominalGDPRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetNominalGDP_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetNominalGDPResponse>* OrgService::Stub::AsyncGetNominalGDPRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetNominalGDPRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncGetNominalGDPRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
-::grpc::Status OrgService::Stub::SetNominalGDP(::grpc::ClientContext* context, const ::city::economy::v2::SetNominalGDPRequest& request, ::city::economy::v2::SetNominalGDPResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::SetNominalGDPRequest, ::city::economy::v2::SetNominalGDPResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_SetNominalGDP_, context, request, response);
-}
-
-void OrgService::Stub::async::SetNominalGDP(::grpc::ClientContext* context, const ::city::economy::v2::SetNominalGDPRequest* request, ::city::economy::v2::SetNominalGDPResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::SetNominalGDPRequest, ::city::economy::v2::SetNominalGDPResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SetNominalGDP_, context, request, response, std::move(f));
-}
-
-void OrgService::Stub::async::SetNominalGDP(::grpc::ClientContext* context, const ::city::economy::v2::SetNominalGDPRequest* request, ::city::economy::v2::SetNominalGDPResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SetNominalGDP_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetNominalGDPResponse>* OrgService::Stub::PrepareAsyncSetNominalGDPRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetNominalGDPRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::SetNominalGDPResponse, ::city::economy::v2::SetNominalGDPRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_SetNominalGDP_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetNominalGDPResponse>* OrgService::Stub::AsyncSetNominalGDPRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetNominalGDPRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncSetNominalGDPRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
-::grpc::Status OrgService::Stub::GetRealGDP(::grpc::ClientContext* context, const ::city::economy::v2::GetRealGDPRequest& request, ::city::economy::v2::GetRealGDPResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::GetRealGDPRequest, ::city::economy::v2::GetRealGDPResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetRealGDP_, context, request, response);
-}
-
-void OrgService::Stub::async::GetRealGDP(::grpc::ClientContext* context, const ::city::economy::v2::GetRealGDPRequest* request, ::city::economy::v2::GetRealGDPResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::GetRealGDPRequest, ::city::economy::v2::GetRealGDPResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetRealGDP_, context, request, response, std::move(f));
-}
-
-void OrgService::Stub::async::GetRealGDP(::grpc::ClientContext* context, const ::city::economy::v2::GetRealGDPRequest* request, ::city::economy::v2::GetRealGDPResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetRealGDP_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetRealGDPResponse>* OrgService::Stub::PrepareAsyncGetRealGDPRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetRealGDPRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::GetRealGDPResponse, ::city::economy::v2::GetRealGDPRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetRealGDP_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetRealGDPResponse>* OrgService::Stub::AsyncGetRealGDPRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetRealGDPRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncGetRealGDPRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
-::grpc::Status OrgService::Stub::SetRealGDP(::grpc::ClientContext* context, const ::city::economy::v2::SetRealGDPRequest& request, ::city::economy::v2::SetRealGDPResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::SetRealGDPRequest, ::city::economy::v2::SetRealGDPResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_SetRealGDP_, context, request, response);
-}
-
-void OrgService::Stub::async::SetRealGDP(::grpc::ClientContext* context, const ::city::economy::v2::SetRealGDPRequest* request, ::city::economy::v2::SetRealGDPResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::SetRealGDPRequest, ::city::economy::v2::SetRealGDPResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SetRealGDP_, context, request, response, std::move(f));
-}
-
-void OrgService::Stub::async::SetRealGDP(::grpc::ClientContext* context, const ::city::economy::v2::SetRealGDPRequest* request, ::city::economy::v2::SetRealGDPResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SetRealGDP_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetRealGDPResponse>* OrgService::Stub::PrepareAsyncSetRealGDPRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetRealGDPRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::SetRealGDPResponse, ::city::economy::v2::SetRealGDPRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_SetRealGDP_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetRealGDPResponse>* OrgService::Stub::AsyncSetRealGDPRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetRealGDPRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncSetRealGDPRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
-::grpc::Status OrgService::Stub::GetUnemployment(::grpc::ClientContext* context, const ::city::economy::v2::GetUnemploymentRequest& request, ::city::economy::v2::GetUnemploymentResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::GetUnemploymentRequest, ::city::economy::v2::GetUnemploymentResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetUnemployment_, context, request, response);
-}
-
-void OrgService::Stub::async::GetUnemployment(::grpc::ClientContext* context, const ::city::economy::v2::GetUnemploymentRequest* request, ::city::economy::v2::GetUnemploymentResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::GetUnemploymentRequest, ::city::economy::v2::GetUnemploymentResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetUnemployment_, context, request, response, std::move(f));
-}
-
-void OrgService::Stub::async::GetUnemployment(::grpc::ClientContext* context, const ::city::economy::v2::GetUnemploymentRequest* request, ::city::economy::v2::GetUnemploymentResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetUnemployment_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetUnemploymentResponse>* OrgService::Stub::PrepareAsyncGetUnemploymentRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetUnemploymentRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::GetUnemploymentResponse, ::city::economy::v2::GetUnemploymentRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetUnemployment_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetUnemploymentResponse>* OrgService::Stub::AsyncGetUnemploymentRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetUnemploymentRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncGetUnemploymentRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
-::grpc::Status OrgService::Stub::SetUnemployment(::grpc::ClientContext* context, const ::city::economy::v2::SetUnemploymentRequest& request, ::city::economy::v2::SetUnemploymentResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::SetUnemploymentRequest, ::city::economy::v2::SetUnemploymentResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_SetUnemployment_, context, request, response);
-}
-
-void OrgService::Stub::async::SetUnemployment(::grpc::ClientContext* context, const ::city::economy::v2::SetUnemploymentRequest* request, ::city::economy::v2::SetUnemploymentResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::SetUnemploymentRequest, ::city::economy::v2::SetUnemploymentResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SetUnemployment_, context, request, response, std::move(f));
-}
-
-void OrgService::Stub::async::SetUnemployment(::grpc::ClientContext* context, const ::city::economy::v2::SetUnemploymentRequest* request, ::city::economy::v2::SetUnemploymentResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SetUnemployment_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetUnemploymentResponse>* OrgService::Stub::PrepareAsyncSetUnemploymentRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetUnemploymentRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::SetUnemploymentResponse, ::city::economy::v2::SetUnemploymentRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_SetUnemployment_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetUnemploymentResponse>* OrgService::Stub::AsyncSetUnemploymentRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetUnemploymentRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncSetUnemploymentRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
-::grpc::Status OrgService::Stub::GetWages(::grpc::ClientContext* context, const ::city::economy::v2::GetWagesRequest& request, ::city::economy::v2::GetWagesResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::GetWagesRequest, ::city::economy::v2::GetWagesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetWages_, context, request, response);
-}
-
-void OrgService::Stub::async::GetWages(::grpc::ClientContext* context, const ::city::economy::v2::GetWagesRequest* request, ::city::economy::v2::GetWagesResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::GetWagesRequest, ::city::economy::v2::GetWagesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetWages_, context, request, response, std::move(f));
-}
-
-void OrgService::Stub::async::GetWages(::grpc::ClientContext* context, const ::city::economy::v2::GetWagesRequest* request, ::city::economy::v2::GetWagesResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetWages_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetWagesResponse>* OrgService::Stub::PrepareAsyncGetWagesRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetWagesRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::GetWagesResponse, ::city::economy::v2::GetWagesRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetWages_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetWagesResponse>* OrgService::Stub::AsyncGetWagesRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetWagesRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncGetWagesRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
-::grpc::Status OrgService::Stub::SetWages(::grpc::ClientContext* context, const ::city::economy::v2::SetWagesRequest& request, ::city::economy::v2::SetWagesResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::SetWagesRequest, ::city::economy::v2::SetWagesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_SetWages_, context, request, response);
-}
-
-void OrgService::Stub::async::SetWages(::grpc::ClientContext* context, const ::city::economy::v2::SetWagesRequest* request, ::city::economy::v2::SetWagesResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::SetWagesRequest, ::city::economy::v2::SetWagesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SetWages_, context, request, response, std::move(f));
-}
-
-void OrgService::Stub::async::SetWages(::grpc::ClientContext* context, const ::city::economy::v2::SetWagesRequest* request, ::city::economy::v2::SetWagesResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SetWages_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetWagesResponse>* OrgService::Stub::PrepareAsyncSetWagesRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetWagesRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::SetWagesResponse, ::city::economy::v2::SetWagesRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_SetWages_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetWagesResponse>* OrgService::Stub::AsyncSetWagesRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetWagesRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncSetWagesRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
-::grpc::Status OrgService::Stub::GetPrices(::grpc::ClientContext* context, const ::city::economy::v2::GetPricesRequest& request, ::city::economy::v2::GetPricesResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::GetPricesRequest, ::city::economy::v2::GetPricesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetPrices_, context, request, response);
-}
-
-void OrgService::Stub::async::GetPrices(::grpc::ClientContext* context, const ::city::economy::v2::GetPricesRequest* request, ::city::economy::v2::GetPricesResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::GetPricesRequest, ::city::economy::v2::GetPricesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetPrices_, context, request, response, std::move(f));
-}
-
-void OrgService::Stub::async::GetPrices(::grpc::ClientContext* context, const ::city::economy::v2::GetPricesRequest* request, ::city::economy::v2::GetPricesResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetPrices_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetPricesResponse>* OrgService::Stub::PrepareAsyncGetPricesRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetPricesRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::GetPricesResponse, ::city::economy::v2::GetPricesRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetPrices_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetPricesResponse>* OrgService::Stub::AsyncGetPricesRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetPricesRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncGetPricesRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
-::grpc::Status OrgService::Stub::SetPrices(::grpc::ClientContext* context, const ::city::economy::v2::SetPricesRequest& request, ::city::economy::v2::SetPricesResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::SetPricesRequest, ::city::economy::v2::SetPricesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_SetPrices_, context, request, response);
-}
-
-void OrgService::Stub::async::SetPrices(::grpc::ClientContext* context, const ::city::economy::v2::SetPricesRequest* request, ::city::economy::v2::SetPricesResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::SetPricesRequest, ::city::economy::v2::SetPricesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SetPrices_, context, request, response, std::move(f));
-}
-
-void OrgService::Stub::async::SetPrices(::grpc::ClientContext* context, const ::city::economy::v2::SetPricesRequest* request, ::city::economy::v2::SetPricesResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SetPrices_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetPricesResponse>* OrgService::Stub::PrepareAsyncSetPricesRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetPricesRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::SetPricesResponse, ::city::economy::v2::SetPricesRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_SetPrices_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetPricesResponse>* OrgService::Stub::AsyncSetPricesRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetPricesRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncSetPricesRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
-::grpc::Status OrgService::Stub::GetInventory(::grpc::ClientContext* context, const ::city::economy::v2::GetInventoryRequest& request, ::city::economy::v2::GetInventoryResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::GetInventoryRequest, ::city::economy::v2::GetInventoryResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetInventory_, context, request, response);
-}
-
-void OrgService::Stub::async::GetInventory(::grpc::ClientContext* context, const ::city::economy::v2::GetInventoryRequest* request, ::city::economy::v2::GetInventoryResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::GetInventoryRequest, ::city::economy::v2::GetInventoryResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetInventory_, context, request, response, std::move(f));
-}
-
-void OrgService::Stub::async::GetInventory(::grpc::ClientContext* context, const ::city::economy::v2::GetInventoryRequest* request, ::city::economy::v2::GetInventoryResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetInventory_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetInventoryResponse>* OrgService::Stub::PrepareAsyncGetInventoryRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetInventoryRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::GetInventoryResponse, ::city::economy::v2::GetInventoryRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetInventory_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetInventoryResponse>* OrgService::Stub::AsyncGetInventoryRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetInventoryRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncGetInventoryRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
-::grpc::Status OrgService::Stub::SetInventory(::grpc::ClientContext* context, const ::city::economy::v2::SetInventoryRequest& request, ::city::economy::v2::SetInventoryResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::SetInventoryRequest, ::city::economy::v2::SetInventoryResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_SetInventory_, context, request, response);
-}
-
-void OrgService::Stub::async::SetInventory(::grpc::ClientContext* context, const ::city::economy::v2::SetInventoryRequest* request, ::city::economy::v2::SetInventoryResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::SetInventoryRequest, ::city::economy::v2::SetInventoryResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SetInventory_, context, request, response, std::move(f));
-}
-
-void OrgService::Stub::async::SetInventory(::grpc::ClientContext* context, const ::city::economy::v2::SetInventoryRequest* request, ::city::economy::v2::SetInventoryResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SetInventory_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetInventoryResponse>* OrgService::Stub::PrepareAsyncSetInventoryRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetInventoryRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::SetInventoryResponse, ::city::economy::v2::SetInventoryRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_SetInventory_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetInventoryResponse>* OrgService::Stub::AsyncSetInventoryRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetInventoryRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncSetInventoryRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
-::grpc::Status OrgService::Stub::AddInventory(::grpc::ClientContext* context, const ::city::economy::v2::AddInventoryRequest& request, ::city::economy::v2::AddInventoryResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::AddInventoryRequest, ::city::economy::v2::AddInventoryResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_AddInventory_, context, request, response);
-}
-
-void OrgService::Stub::async::AddInventory(::grpc::ClientContext* context, const ::city::economy::v2::AddInventoryRequest* request, ::city::economy::v2::AddInventoryResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::AddInventoryRequest, ::city::economy::v2::AddInventoryResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_AddInventory_, context, request, response, std::move(f));
-}
-
-void OrgService::Stub::async::AddInventory(::grpc::ClientContext* context, const ::city::economy::v2::AddInventoryRequest* request, ::city::economy::v2::AddInventoryResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_AddInventory_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::AddInventoryResponse>* OrgService::Stub::PrepareAsyncAddInventoryRaw(::grpc::ClientContext* context, const ::city::economy::v2::AddInventoryRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::AddInventoryResponse, ::city::economy::v2::AddInventoryRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_AddInventory_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::AddInventoryResponse>* OrgService::Stub::AsyncAddInventoryRaw(::grpc::ClientContext* context, const ::city::economy::v2::AddInventoryRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncAddInventoryRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
-::grpc::Status OrgService::Stub::GetPrice(::grpc::ClientContext* context, const ::city::economy::v2::GetPriceRequest& request, ::city::economy::v2::GetPriceResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::GetPriceRequest, ::city::economy::v2::GetPriceResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetPrice_, context, request, response);
-}
-
-void OrgService::Stub::async::GetPrice(::grpc::ClientContext* context, const ::city::economy::v2::GetPriceRequest* request, ::city::economy::v2::GetPriceResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::GetPriceRequest, ::city::economy::v2::GetPriceResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetPrice_, context, request, response, std::move(f));
-}
-
-void OrgService::Stub::async::GetPrice(::grpc::ClientContext* context, const ::city::economy::v2::GetPriceRequest* request, ::city::economy::v2::GetPriceResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetPrice_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetPriceResponse>* OrgService::Stub::PrepareAsyncGetPriceRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetPriceRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::GetPriceResponse, ::city::economy::v2::GetPriceRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetPrice_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetPriceResponse>* OrgService::Stub::AsyncGetPriceRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetPriceRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncGetPriceRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
-::grpc::Status OrgService::Stub::SetPrice(::grpc::ClientContext* context, const ::city::economy::v2::SetPriceRequest& request, ::city::economy::v2::SetPriceResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::SetPriceRequest, ::city::economy::v2::SetPriceResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_SetPrice_, context, request, response);
-}
-
-void OrgService::Stub::async::SetPrice(::grpc::ClientContext* context, const ::city::economy::v2::SetPriceRequest* request, ::city::economy::v2::SetPriceResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::SetPriceRequest, ::city::economy::v2::SetPriceResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SetPrice_, context, request, response, std::move(f));
-}
-
-void OrgService::Stub::async::SetPrice(::grpc::ClientContext* context, const ::city::economy::v2::SetPriceRequest* request, ::city::economy::v2::SetPriceResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SetPrice_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetPriceResponse>* OrgService::Stub::PrepareAsyncSetPriceRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetPriceRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::SetPriceResponse, ::city::economy::v2::SetPriceRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_SetPrice_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetPriceResponse>* OrgService::Stub::AsyncSetPriceRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetPriceRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncSetPriceRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
-::grpc::Status OrgService::Stub::AddPrice(::grpc::ClientContext* context, const ::city::economy::v2::AddPriceRequest& request, ::city::economy::v2::AddPriceResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::AddPriceRequest, ::city::economy::v2::AddPriceResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_AddPrice_, context, request, response);
-}
-
-void OrgService::Stub::async::AddPrice(::grpc::ClientContext* context, const ::city::economy::v2::AddPriceRequest* request, ::city::economy::v2::AddPriceResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::AddPriceRequest, ::city::economy::v2::AddPriceResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_AddPrice_, context, request, response, std::move(f));
-}
-
-void OrgService::Stub::async::AddPrice(::grpc::ClientContext* context, const ::city::economy::v2::AddPriceRequest* request, ::city::economy::v2::AddPriceResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_AddPrice_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::AddPriceResponse>* OrgService::Stub::PrepareAsyncAddPriceRaw(::grpc::ClientContext* context, const ::city::economy::v2::AddPriceRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::AddPriceResponse, ::city::economy::v2::AddPriceRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_AddPrice_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::AddPriceResponse>* OrgService::Stub::AsyncAddPriceRaw(::grpc::ClientContext* context, const ::city::economy::v2::AddPriceRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncAddPriceRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
-::grpc::Status OrgService::Stub::GetCurrency(::grpc::ClientContext* context, const ::city::economy::v2::GetCurrencyRequest& request, ::city::economy::v2::GetCurrencyResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::GetCurrencyRequest, ::city::economy::v2::GetCurrencyResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetCurrency_, context, request, response);
-}
-
-void OrgService::Stub::async::GetCurrency(::grpc::ClientContext* context, const ::city::economy::v2::GetCurrencyRequest* request, ::city::economy::v2::GetCurrencyResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::GetCurrencyRequest, ::city::economy::v2::GetCurrencyResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetCurrency_, context, request, response, std::move(f));
-}
-
-void OrgService::Stub::async::GetCurrency(::grpc::ClientContext* context, const ::city::economy::v2::GetCurrencyRequest* request, ::city::economy::v2::GetCurrencyResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetCurrency_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetCurrencyResponse>* OrgService::Stub::PrepareAsyncGetCurrencyRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetCurrencyRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::GetCurrencyResponse, ::city::economy::v2::GetCurrencyRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetCurrency_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetCurrencyResponse>* OrgService::Stub::AsyncGetCurrencyRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetCurrencyRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncGetCurrencyRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
-::grpc::Status OrgService::Stub::SetCurrency(::grpc::ClientContext* context, const ::city::economy::v2::SetCurrencyRequest& request, ::city::economy::v2::SetCurrencyResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::SetCurrencyRequest, ::city::economy::v2::SetCurrencyResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_SetCurrency_, context, request, response);
-}
-
-void OrgService::Stub::async::SetCurrency(::grpc::ClientContext* context, const ::city::economy::v2::SetCurrencyRequest* request, ::city::economy::v2::SetCurrencyResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::SetCurrencyRequest, ::city::economy::v2::SetCurrencyResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SetCurrency_, context, request, response, std::move(f));
-}
-
-void OrgService::Stub::async::SetCurrency(::grpc::ClientContext* context, const ::city::economy::v2::SetCurrencyRequest* request, ::city::economy::v2::SetCurrencyResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SetCurrency_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetCurrencyResponse>* OrgService::Stub::PrepareAsyncSetCurrencyRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetCurrencyRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::SetCurrencyResponse, ::city::economy::v2::SetCurrencyRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_SetCurrency_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetCurrencyResponse>* OrgService::Stub::AsyncSetCurrencyRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetCurrencyRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncSetCurrencyRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
-::grpc::Status OrgService::Stub::AddCurrency(::grpc::ClientContext* context, const ::city::economy::v2::AddCurrencyRequest& request, ::city::economy::v2::AddCurrencyResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::AddCurrencyRequest, ::city::economy::v2::AddCurrencyResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_AddCurrency_, context, request, response);
-}
-
-void OrgService::Stub::async::AddCurrency(::grpc::ClientContext* context, const ::city::economy::v2::AddCurrencyRequest* request, ::city::economy::v2::AddCurrencyResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::AddCurrencyRequest, ::city::economy::v2::AddCurrencyResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_AddCurrency_, context, request, response, std::move(f));
-}
-
-void OrgService::Stub::async::AddCurrency(::grpc::ClientContext* context, const ::city::economy::v2::AddCurrencyRequest* request, ::city::economy::v2::AddCurrencyResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_AddCurrency_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::AddCurrencyResponse>* OrgService::Stub::PrepareAsyncAddCurrencyRaw(::grpc::ClientContext* context, const ::city::economy::v2::AddCurrencyRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::AddCurrencyResponse, ::city::economy::v2::AddCurrencyRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_AddCurrency_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::AddCurrencyResponse>* OrgService::Stub::AsyncAddCurrencyRaw(::grpc::ClientContext* context, const ::city::economy::v2::AddCurrencyRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncAddCurrencyRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
-::grpc::Status OrgService::Stub::GetInterestRate(::grpc::ClientContext* context, const ::city::economy::v2::GetInterestRateRequest& request, ::city::economy::v2::GetInterestRateResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::GetInterestRateRequest, ::city::economy::v2::GetInterestRateResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetInterestRate_, context, request, response);
-}
-
-void OrgService::Stub::async::GetInterestRate(::grpc::ClientContext* context, const ::city::economy::v2::GetInterestRateRequest* request, ::city::economy::v2::GetInterestRateResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::GetInterestRateRequest, ::city::economy::v2::GetInterestRateResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetInterestRate_, context, request, response, std::move(f));
-}
-
-void OrgService::Stub::async::GetInterestRate(::grpc::ClientContext* context, const ::city::economy::v2::GetInterestRateRequest* request, ::city::economy::v2::GetInterestRateResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetInterestRate_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetInterestRateResponse>* OrgService::Stub::PrepareAsyncGetInterestRateRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetInterestRateRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::GetInterestRateResponse, ::city::economy::v2::GetInterestRateRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetInterestRate_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetInterestRateResponse>* OrgService::Stub::AsyncGetInterestRateRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetInterestRateRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncGetInterestRateRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
-::grpc::Status OrgService::Stub::SetInterestRate(::grpc::ClientContext* context, const ::city::economy::v2::SetInterestRateRequest& request, ::city::economy::v2::SetInterestRateResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::SetInterestRateRequest, ::city::economy::v2::SetInterestRateResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_SetInterestRate_, context, request, response);
-}
-
-void OrgService::Stub::async::SetInterestRate(::grpc::ClientContext* context, const ::city::economy::v2::SetInterestRateRequest* request, ::city::economy::v2::SetInterestRateResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::SetInterestRateRequest, ::city::economy::v2::SetInterestRateResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SetInterestRate_, context, request, response, std::move(f));
-}
-
-void OrgService::Stub::async::SetInterestRate(::grpc::ClientContext* context, const ::city::economy::v2::SetInterestRateRequest* request, ::city::economy::v2::SetInterestRateResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SetInterestRate_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetInterestRateResponse>* OrgService::Stub::PrepareAsyncSetInterestRateRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetInterestRateRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::SetInterestRateResponse, ::city::economy::v2::SetInterestRateRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_SetInterestRate_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetInterestRateResponse>* OrgService::Stub::AsyncSetInterestRateRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetInterestRateRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncSetInterestRateRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
-::grpc::Status OrgService::Stub::AddInterestRate(::grpc::ClientContext* context, const ::city::economy::v2::AddInterestRateRequest& request, ::city::economy::v2::AddInterestRateResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::AddInterestRateRequest, ::city::economy::v2::AddInterestRateResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_AddInterestRate_, context, request, response);
-}
-
-void OrgService::Stub::async::AddInterestRate(::grpc::ClientContext* context, const ::city::economy::v2::AddInterestRateRequest* request, ::city::economy::v2::AddInterestRateResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::AddInterestRateRequest, ::city::economy::v2::AddInterestRateResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_AddInterestRate_, context, request, response, std::move(f));
-}
-
-void OrgService::Stub::async::AddInterestRate(::grpc::ClientContext* context, const ::city::economy::v2::AddInterestRateRequest* request, ::city::economy::v2::AddInterestRateResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_AddInterestRate_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::AddInterestRateResponse>* OrgService::Stub::PrepareAsyncAddInterestRateRaw(::grpc::ClientContext* context, const ::city::economy::v2::AddInterestRateRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::AddInterestRateResponse, ::city::economy::v2::AddInterestRateRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_AddInterestRate_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::AddInterestRateResponse>* OrgService::Stub::AsyncAddInterestRateRaw(::grpc::ClientContext* context, const ::city::economy::v2::AddInterestRateRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncAddInterestRateRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
-::grpc::Status OrgService::Stub::GetBracketCutoffs(::grpc::ClientContext* context, const ::city::economy::v2::GetBracketCutoffsRequest& request, ::city::economy::v2::GetBracketCutoffsResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::GetBracketCutoffsRequest, ::city::economy::v2::GetBracketCutoffsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetBracketCutoffs_, context, request, response);
-}
-
-void OrgService::Stub::async::GetBracketCutoffs(::grpc::ClientContext* context, const ::city::economy::v2::GetBracketCutoffsRequest* request, ::city::economy::v2::GetBracketCutoffsResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::GetBracketCutoffsRequest, ::city::economy::v2::GetBracketCutoffsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetBracketCutoffs_, context, request, response, std::move(f));
-}
-
-void OrgService::Stub::async::GetBracketCutoffs(::grpc::ClientContext* context, const ::city::economy::v2::GetBracketCutoffsRequest* request, ::city::economy::v2::GetBracketCutoffsResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetBracketCutoffs_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetBracketCutoffsResponse>* OrgService::Stub::PrepareAsyncGetBracketCutoffsRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetBracketCutoffsRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::GetBracketCutoffsResponse, ::city::economy::v2::GetBracketCutoffsRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetBracketCutoffs_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetBracketCutoffsResponse>* OrgService::Stub::AsyncGetBracketCutoffsRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetBracketCutoffsRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncGetBracketCutoffsRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
-::grpc::Status OrgService::Stub::SetBracketCutoffs(::grpc::ClientContext* context, const ::city::economy::v2::SetBracketCutoffsRequest& request, ::city::economy::v2::SetBracketCutoffsResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::SetBracketCutoffsRequest, ::city::economy::v2::SetBracketCutoffsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_SetBracketCutoffs_, context, request, response);
-}
-
-void OrgService::Stub::async::SetBracketCutoffs(::grpc::ClientContext* context, const ::city::economy::v2::SetBracketCutoffsRequest* request, ::city::economy::v2::SetBracketCutoffsResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::SetBracketCutoffsRequest, ::city::economy::v2::SetBracketCutoffsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SetBracketCutoffs_, context, request, response, std::move(f));
-}
-
-void OrgService::Stub::async::SetBracketCutoffs(::grpc::ClientContext* context, const ::city::economy::v2::SetBracketCutoffsRequest* request, ::city::economy::v2::SetBracketCutoffsResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SetBracketCutoffs_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetBracketCutoffsResponse>* OrgService::Stub::PrepareAsyncSetBracketCutoffsRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetBracketCutoffsRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::SetBracketCutoffsResponse, ::city::economy::v2::SetBracketCutoffsRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_SetBracketCutoffs_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetBracketCutoffsResponse>* OrgService::Stub::AsyncSetBracketCutoffsRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetBracketCutoffsRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncSetBracketCutoffsRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
-::grpc::Status OrgService::Stub::GetBracketRates(::grpc::ClientContext* context, const ::city::economy::v2::GetBracketRatesRequest& request, ::city::economy::v2::GetBracketRatesResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::GetBracketRatesRequest, ::city::economy::v2::GetBracketRatesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetBracketRates_, context, request, response);
-}
-
-void OrgService::Stub::async::GetBracketRates(::grpc::ClientContext* context, const ::city::economy::v2::GetBracketRatesRequest* request, ::city::economy::v2::GetBracketRatesResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::GetBracketRatesRequest, ::city::economy::v2::GetBracketRatesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetBracketRates_, context, request, response, std::move(f));
-}
-
-void OrgService::Stub::async::GetBracketRates(::grpc::ClientContext* context, const ::city::economy::v2::GetBracketRatesRequest* request, ::city::economy::v2::GetBracketRatesResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetBracketRates_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetBracketRatesResponse>* OrgService::Stub::PrepareAsyncGetBracketRatesRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetBracketRatesRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::GetBracketRatesResponse, ::city::economy::v2::GetBracketRatesRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetBracketRates_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetBracketRatesResponse>* OrgService::Stub::AsyncGetBracketRatesRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetBracketRatesRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncGetBracketRatesRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
-::grpc::Status OrgService::Stub::SetBracketRates(::grpc::ClientContext* context, const ::city::economy::v2::SetBracketRatesRequest& request, ::city::economy::v2::SetBracketRatesResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::SetBracketRatesRequest, ::city::economy::v2::SetBracketRatesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_SetBracketRates_, context, request, response);
-}
-
-void OrgService::Stub::async::SetBracketRates(::grpc::ClientContext* context, const ::city::economy::v2::SetBracketRatesRequest* request, ::city::economy::v2::SetBracketRatesResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::SetBracketRatesRequest, ::city::economy::v2::SetBracketRatesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SetBracketRates_, context, request, response, std::move(f));
-}
-
-void OrgService::Stub::async::SetBracketRates(::grpc::ClientContext* context, const ::city::economy::v2::SetBracketRatesRequest* request, ::city::economy::v2::SetBracketRatesResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SetBracketRates_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetBracketRatesResponse>* OrgService::Stub::PrepareAsyncSetBracketRatesRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetBracketRatesRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::SetBracketRatesResponse, ::city::economy::v2::SetBracketRatesRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_SetBracketRates_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetBracketRatesResponse>* OrgService::Stub::AsyncSetBracketRatesRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetBracketRatesRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncSetBracketRatesRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
-::grpc::Status OrgService::Stub::CalculateTaxesDue(::grpc::ClientContext* context, const ::city::economy::v2::CalculateTaxesDueRequest& request, ::city::economy::v2::CalculateTaxesDueResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::CalculateTaxesDueRequest, ::city::economy::v2::CalculateTaxesDueResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_CalculateTaxesDue_, context, request, response);
-}
-
-void OrgService::Stub::async::CalculateTaxesDue(::grpc::ClientContext* context, const ::city::economy::v2::CalculateTaxesDueRequest* request, ::city::economy::v2::CalculateTaxesDueResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::CalculateTaxesDueRequest, ::city::economy::v2::CalculateTaxesDueResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_CalculateTaxesDue_, context, request, response, std::move(f));
-}
-
-void OrgService::Stub::async::CalculateTaxesDue(::grpc::ClientContext* context, const ::city::economy::v2::CalculateTaxesDueRequest* request, ::city::economy::v2::CalculateTaxesDueResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_CalculateTaxesDue_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::CalculateTaxesDueResponse>* OrgService::Stub::PrepareAsyncCalculateTaxesDueRaw(::grpc::ClientContext* context, const ::city::economy::v2::CalculateTaxesDueRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::CalculateTaxesDueResponse, ::city::economy::v2::CalculateTaxesDueRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_CalculateTaxesDue_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::CalculateTaxesDueResponse>* OrgService::Stub::AsyncCalculateTaxesDueRaw(::grpc::ClientContext* context, const ::city::economy::v2::CalculateTaxesDueRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncCalculateTaxesDueRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
-::grpc::Status OrgService::Stub::CalculateConsumption(::grpc::ClientContext* context, const ::city::economy::v2::CalculateConsumptionRequest& request, ::city::economy::v2::CalculateConsumptionResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::CalculateConsumptionRequest, ::city::economy::v2::CalculateConsumptionResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_CalculateConsumption_, context, request, response);
-}
-
-void OrgService::Stub::async::CalculateConsumption(::grpc::ClientContext* context, const ::city::economy::v2::CalculateConsumptionRequest* request, ::city::economy::v2::CalculateConsumptionResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::CalculateConsumptionRequest, ::city::economy::v2::CalculateConsumptionResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_CalculateConsumption_, context, request, response, std::move(f));
-}
-
-void OrgService::Stub::async::CalculateConsumption(::grpc::ClientContext* context, const ::city::economy::v2::CalculateConsumptionRequest* request, ::city::economy::v2::CalculateConsumptionResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_CalculateConsumption_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::CalculateConsumptionResponse>* OrgService::Stub::PrepareAsyncCalculateConsumptionRaw(::grpc::ClientContext* context, const ::city::economy::v2::CalculateConsumptionRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::CalculateConsumptionResponse, ::city::economy::v2::CalculateConsumptionRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_CalculateConsumption_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::CalculateConsumptionResponse>* OrgService::Stub::AsyncCalculateConsumptionRaw(::grpc::ClientContext* context, const ::city::economy::v2::CalculateConsumptionRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncCalculateConsumptionRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
-::grpc::Status OrgService::Stub::CalculateInterest(::grpc::ClientContext* context, const ::city::economy::v2::CalculateInterestRequest& request, ::city::economy::v2::CalculateInterestResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::CalculateInterestRequest, ::city::economy::v2::CalculateInterestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_CalculateInterest_, context, request, response);
-}
-
-void OrgService::Stub::async::CalculateInterest(::grpc::ClientContext* context, const ::city::economy::v2::CalculateInterestRequest* request, ::city::economy::v2::CalculateInterestResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::CalculateInterestRequest, ::city::economy::v2::CalculateInterestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_CalculateInterest_, context, request, response, std::move(f));
-}
-
-void OrgService::Stub::async::CalculateInterest(::grpc::ClientContext* context, const ::city::economy::v2::CalculateInterestRequest* request, ::city::economy::v2::CalculateInterestResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_CalculateInterest_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::CalculateInterestResponse>* OrgService::Stub::PrepareAsyncCalculateInterestRaw(::grpc::ClientContext* context, const ::city::economy::v2::CalculateInterestRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::CalculateInterestResponse, ::city::economy::v2::CalculateInterestRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_CalculateInterest_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::CalculateInterestResponse>* OrgService::Stub::AsyncCalculateInterestRaw(::grpc::ClientContext* context, const ::city::economy::v2::CalculateInterestRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncCalculateInterestRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
-::grpc::Status OrgService::Stub::SaveEconomyEntities(::grpc::ClientContext* context, const ::city::economy::v2::SaveEconomyEntitiesRequest& request, ::city::economy::v2::SaveEconomyEntitiesResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::SaveEconomyEntitiesRequest, ::city::economy::v2::SaveEconomyEntitiesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_SaveEconomyEntities_, context, request, response);
-}
-
-void OrgService::Stub::async::SaveEconomyEntities(::grpc::ClientContext* context, const ::city::economy::v2::SaveEconomyEntitiesRequest* request, ::city::economy::v2::SaveEconomyEntitiesResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::SaveEconomyEntitiesRequest, ::city::economy::v2::SaveEconomyEntitiesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SaveEconomyEntities_, context, request, response, std::move(f));
-}
-
-void OrgService::Stub::async::SaveEconomyEntities(::grpc::ClientContext* context, const ::city::economy::v2::SaveEconomyEntitiesRequest* request, ::city::economy::v2::SaveEconomyEntitiesResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SaveEconomyEntities_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::SaveEconomyEntitiesResponse>* OrgService::Stub::PrepareAsyncSaveEconomyEntitiesRaw(::grpc::ClientContext* context, const ::city::economy::v2::SaveEconomyEntitiesRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::SaveEconomyEntitiesResponse, ::city::economy::v2::SaveEconomyEntitiesRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_SaveEconomyEntities_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::SaveEconomyEntitiesResponse>* OrgService::Stub::AsyncSaveEconomyEntitiesRaw(::grpc::ClientContext* context, const ::city::economy::v2::SaveEconomyEntitiesRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncSaveEconomyEntitiesRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
-::grpc::Status OrgService::Stub::LoadEconomyEntities(::grpc::ClientContext* context, const ::city::economy::v2::LoadEconomyEntitiesRequest& request, ::city::economy::v2::LoadEconomyEntitiesResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::LoadEconomyEntitiesRequest, ::city::economy::v2::LoadEconomyEntitiesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_LoadEconomyEntities_, context, request, response);
-}
-
-void OrgService::Stub::async::LoadEconomyEntities(::grpc::ClientContext* context, const ::city::economy::v2::LoadEconomyEntitiesRequest* request, ::city::economy::v2::LoadEconomyEntitiesResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::LoadEconomyEntitiesRequest, ::city::economy::v2::LoadEconomyEntitiesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_LoadEconomyEntities_, context, request, response, std::move(f));
-}
-
-void OrgService::Stub::async::LoadEconomyEntities(::grpc::ClientContext* context, const ::city::economy::v2::LoadEconomyEntitiesRequest* request, ::city::economy::v2::LoadEconomyEntitiesResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_LoadEconomyEntities_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::LoadEconomyEntitiesResponse>* OrgService::Stub::PrepareAsyncLoadEconomyEntitiesRaw(::grpc::ClientContext* context, const ::city::economy::v2::LoadEconomyEntitiesRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::LoadEconomyEntitiesResponse, ::city::economy::v2::LoadEconomyEntitiesRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_LoadEconomyEntities_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::LoadEconomyEntitiesResponse>* OrgService::Stub::AsyncLoadEconomyEntitiesRaw(::grpc::ClientContext* context, const ::city::economy::v2::LoadEconomyEntitiesRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncLoadEconomyEntitiesRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
-::grpc::Status OrgService::Stub::GetConsumptionCurrency(::grpc::ClientContext* context, const ::city::economy::v2::GetConsumptionCurrencyRequest& request, ::city::economy::v2::GetConsumptionCurrencyResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::GetConsumptionCurrencyRequest, ::city::economy::v2::GetConsumptionCurrencyResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetConsumptionCurrency_, context, request, response);
-}
-
-void OrgService::Stub::async::GetConsumptionCurrency(::grpc::ClientContext* context, const ::city::economy::v2::GetConsumptionCurrencyRequest* request, ::city::economy::v2::GetConsumptionCurrencyResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::GetConsumptionCurrencyRequest, ::city::economy::v2::GetConsumptionCurrencyResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetConsumptionCurrency_, context, request, response, std::move(f));
-}
-
-void OrgService::Stub::async::GetConsumptionCurrency(::grpc::ClientContext* context, const ::city::economy::v2::GetConsumptionCurrencyRequest* request, ::city::economy::v2::GetConsumptionCurrencyResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetConsumptionCurrency_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetConsumptionCurrencyResponse>* OrgService::Stub::PrepareAsyncGetConsumptionCurrencyRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetConsumptionCurrencyRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::GetConsumptionCurrencyResponse, ::city::economy::v2::GetConsumptionCurrencyRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetConsumptionCurrency_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetConsumptionCurrencyResponse>* OrgService::Stub::AsyncGetConsumptionCurrencyRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetConsumptionCurrencyRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncGetConsumptionCurrencyRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
-::grpc::Status OrgService::Stub::SetConsumptionCurrency(::grpc::ClientContext* context, const ::city::economy::v2::SetConsumptionCurrencyRequest& request, ::city::economy::v2::SetConsumptionCurrencyResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::SetConsumptionCurrencyRequest, ::city::economy::v2::SetConsumptionCurrencyResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_SetConsumptionCurrency_, context, request, response);
-}
-
-void OrgService::Stub::async::SetConsumptionCurrency(::grpc::ClientContext* context, const ::city::economy::v2::SetConsumptionCurrencyRequest* request, ::city::economy::v2::SetConsumptionCurrencyResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::SetConsumptionCurrencyRequest, ::city::economy::v2::SetConsumptionCurrencyResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SetConsumptionCurrency_, context, request, response, std::move(f));
-}
-
-void OrgService::Stub::async::SetConsumptionCurrency(::grpc::ClientContext* context, const ::city::economy::v2::SetConsumptionCurrencyRequest* request, ::city::economy::v2::SetConsumptionCurrencyResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SetConsumptionCurrency_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetConsumptionCurrencyResponse>* OrgService::Stub::PrepareAsyncSetConsumptionCurrencyRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetConsumptionCurrencyRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::SetConsumptionCurrencyResponse, ::city::economy::v2::SetConsumptionCurrencyRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_SetConsumptionCurrency_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetConsumptionCurrencyResponse>* OrgService::Stub::AsyncSetConsumptionCurrencyRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetConsumptionCurrencyRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncSetConsumptionCurrencyRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
-::grpc::Status OrgService::Stub::GetConsumptionPropensity(::grpc::ClientContext* context, const ::city::economy::v2::GetConsumptionPropensityRequest& request, ::city::economy::v2::GetConsumptionPropensityResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::GetConsumptionPropensityRequest, ::city::economy::v2::GetConsumptionPropensityResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetConsumptionPropensity_, context, request, response);
-}
-
-void OrgService::Stub::async::GetConsumptionPropensity(::grpc::ClientContext* context, const ::city::economy::v2::GetConsumptionPropensityRequest* request, ::city::economy::v2::GetConsumptionPropensityResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::GetConsumptionPropensityRequest, ::city::economy::v2::GetConsumptionPropensityResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetConsumptionPropensity_, context, request, response, std::move(f));
-}
-
-void OrgService::Stub::async::GetConsumptionPropensity(::grpc::ClientContext* context, const ::city::economy::v2::GetConsumptionPropensityRequest* request, ::city::economy::v2::GetConsumptionPropensityResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetConsumptionPropensity_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetConsumptionPropensityResponse>* OrgService::Stub::PrepareAsyncGetConsumptionPropensityRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetConsumptionPropensityRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::GetConsumptionPropensityResponse, ::city::economy::v2::GetConsumptionPropensityRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetConsumptionPropensity_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetConsumptionPropensityResponse>* OrgService::Stub::AsyncGetConsumptionPropensityRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetConsumptionPropensityRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncGetConsumptionPropensityRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
-::grpc::Status OrgService::Stub::SetConsumptionPropensity(::grpc::ClientContext* context, const ::city::economy::v2::SetConsumptionPropensityRequest& request, ::city::economy::v2::SetConsumptionPropensityResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::SetConsumptionPropensityRequest, ::city::economy::v2::SetConsumptionPropensityResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_SetConsumptionPropensity_, context, request, response);
-}
-
-void OrgService::Stub::async::SetConsumptionPropensity(::grpc::ClientContext* context, const ::city::economy::v2::SetConsumptionPropensityRequest* request, ::city::economy::v2::SetConsumptionPropensityResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::SetConsumptionPropensityRequest, ::city::economy::v2::SetConsumptionPropensityResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SetConsumptionPropensity_, context, request, response, std::move(f));
-}
-
-void OrgService::Stub::async::SetConsumptionPropensity(::grpc::ClientContext* context, const ::city::economy::v2::SetConsumptionPropensityRequest* request, ::city::economy::v2::SetConsumptionPropensityResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SetConsumptionPropensity_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetConsumptionPropensityResponse>* OrgService::Stub::PrepareAsyncSetConsumptionPropensityRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetConsumptionPropensityRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::SetConsumptionPropensityResponse, ::city::economy::v2::SetConsumptionPropensityRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_SetConsumptionPropensity_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetConsumptionPropensityResponse>* OrgService::Stub::AsyncSetConsumptionPropensityRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetConsumptionPropensityRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncSetConsumptionPropensityRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
-::grpc::Status OrgService::Stub::GetIncomeCurrency(::grpc::ClientContext* context, const ::city::economy::v2::GetIncomeCurrencyRequest& request, ::city::economy::v2::GetIncomeCurrencyResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::GetIncomeCurrencyRequest, ::city::economy::v2::GetIncomeCurrencyResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetIncomeCurrency_, context, request, response);
-}
-
-void OrgService::Stub::async::GetIncomeCurrency(::grpc::ClientContext* context, const ::city::economy::v2::GetIncomeCurrencyRequest* request, ::city::economy::v2::GetIncomeCurrencyResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::GetIncomeCurrencyRequest, ::city::economy::v2::GetIncomeCurrencyResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetIncomeCurrency_, context, request, response, std::move(f));
-}
-
-void OrgService::Stub::async::GetIncomeCurrency(::grpc::ClientContext* context, const ::city::economy::v2::GetIncomeCurrencyRequest* request, ::city::economy::v2::GetIncomeCurrencyResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetIncomeCurrency_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetIncomeCurrencyResponse>* OrgService::Stub::PrepareAsyncGetIncomeCurrencyRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetIncomeCurrencyRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::GetIncomeCurrencyResponse, ::city::economy::v2::GetIncomeCurrencyRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetIncomeCurrency_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetIncomeCurrencyResponse>* OrgService::Stub::AsyncGetIncomeCurrencyRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetIncomeCurrencyRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncGetIncomeCurrencyRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
-::grpc::Status OrgService::Stub::SetIncomeCurrency(::grpc::ClientContext* context, const ::city::economy::v2::SetIncomeCurrencyRequest& request, ::city::economy::v2::SetIncomeCurrencyResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::SetIncomeCurrencyRequest, ::city::economy::v2::SetIncomeCurrencyResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_SetIncomeCurrency_, context, request, response);
-}
-
-void OrgService::Stub::async::SetIncomeCurrency(::grpc::ClientContext* context, const ::city::economy::v2::SetIncomeCurrencyRequest* request, ::city::economy::v2::SetIncomeCurrencyResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::SetIncomeCurrencyRequest, ::city::economy::v2::SetIncomeCurrencyResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SetIncomeCurrency_, context, request, response, std::move(f));
-}
-
-void OrgService::Stub::async::SetIncomeCurrency(::grpc::ClientContext* context, const ::city::economy::v2::SetIncomeCurrencyRequest* request, ::city::economy::v2::SetIncomeCurrencyResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SetIncomeCurrency_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetIncomeCurrencyResponse>* OrgService::Stub::PrepareAsyncSetIncomeCurrencyRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetIncomeCurrencyRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::SetIncomeCurrencyResponse, ::city::economy::v2::SetIncomeCurrencyRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_SetIncomeCurrency_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetIncomeCurrencyResponse>* OrgService::Stub::AsyncSetIncomeCurrencyRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetIncomeCurrencyRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncSetIncomeCurrencyRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
-::grpc::Status OrgService::Stub::GetDepression(::grpc::ClientContext* context, const ::city::economy::v2::GetDepressionRequest& request, ::city::economy::v2::GetDepressionResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::GetDepressionRequest, ::city::economy::v2::GetDepressionResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetDepression_, context, request, response);
-}
-
-void OrgService::Stub::async::GetDepression(::grpc::ClientContext* context, const ::city::economy::v2::GetDepressionRequest* request, ::city::economy::v2::GetDepressionResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::GetDepressionRequest, ::city::economy::v2::GetDepressionResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetDepression_, context, request, response, std::move(f));
-}
-
-void OrgService::Stub::async::GetDepression(::grpc::ClientContext* context, const ::city::economy::v2::GetDepressionRequest* request, ::city::economy::v2::GetDepressionResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetDepression_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetDepressionResponse>* OrgService::Stub::PrepareAsyncGetDepressionRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetDepressionRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::GetDepressionResponse, ::city::economy::v2::GetDepressionRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetDepression_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetDepressionResponse>* OrgService::Stub::AsyncGetDepressionRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetDepressionRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncGetDepressionRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
-::grpc::Status OrgService::Stub::SetDepression(::grpc::ClientContext* context, const ::city::economy::v2::SetDepressionRequest& request, ::city::economy::v2::SetDepressionResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::SetDepressionRequest, ::city::economy::v2::SetDepressionResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_SetDepression_, context, request, response);
-}
-
-void OrgService::Stub::async::SetDepression(::grpc::ClientContext* context, const ::city::economy::v2::SetDepressionRequest* request, ::city::economy::v2::SetDepressionResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::SetDepressionRequest, ::city::economy::v2::SetDepressionResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SetDepression_, context, request, response, std::move(f));
-}
-
-void OrgService::Stub::async::SetDepression(::grpc::ClientContext* context, const ::city::economy::v2::SetDepressionRequest* request, ::city::economy::v2::SetDepressionResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SetDepression_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetDepressionResponse>* OrgService::Stub::PrepareAsyncSetDepressionRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetDepressionRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::SetDepressionResponse, ::city::economy::v2::SetDepressionRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_SetDepression_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetDepressionResponse>* OrgService::Stub::AsyncSetDepressionRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetDepressionRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncSetDepressionRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
-::grpc::Status OrgService::Stub::GetLocusControl(::grpc::ClientContext* context, const ::city::economy::v2::GetLocusControlRequest& request, ::city::economy::v2::GetLocusControlResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::GetLocusControlRequest, ::city::economy::v2::GetLocusControlResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetLocusControl_, context, request, response);
-}
-
-void OrgService::Stub::async::GetLocusControl(::grpc::ClientContext* context, const ::city::economy::v2::GetLocusControlRequest* request, ::city::economy::v2::GetLocusControlResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::GetLocusControlRequest, ::city::economy::v2::GetLocusControlResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetLocusControl_, context, request, response, std::move(f));
-}
-
-void OrgService::Stub::async::GetLocusControl(::grpc::ClientContext* context, const ::city::economy::v2::GetLocusControlRequest* request, ::city::economy::v2::GetLocusControlResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetLocusControl_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetLocusControlResponse>* OrgService::Stub::PrepareAsyncGetLocusControlRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetLocusControlRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::GetLocusControlResponse, ::city::economy::v2::GetLocusControlRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetLocusControl_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetLocusControlResponse>* OrgService::Stub::AsyncGetLocusControlRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetLocusControlRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncGetLocusControlRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
-::grpc::Status OrgService::Stub::SetLocusControl(::grpc::ClientContext* context, const ::city::economy::v2::SetLocusControlRequest& request, ::city::economy::v2::SetLocusControlResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::SetLocusControlRequest, ::city::economy::v2::SetLocusControlResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_SetLocusControl_, context, request, response);
-}
-
-void OrgService::Stub::async::SetLocusControl(::grpc::ClientContext* context, const ::city::economy::v2::SetLocusControlRequest* request, ::city::economy::v2::SetLocusControlResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::SetLocusControlRequest, ::city::economy::v2::SetLocusControlResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SetLocusControl_, context, request, response, std::move(f));
-}
-
-void OrgService::Stub::async::SetLocusControl(::grpc::ClientContext* context, const ::city::economy::v2::SetLocusControlRequest* request, ::city::economy::v2::SetLocusControlResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SetLocusControl_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetLocusControlResponse>* OrgService::Stub::PrepareAsyncSetLocusControlRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetLocusControlRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::SetLocusControlResponse, ::city::economy::v2::SetLocusControlRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_SetLocusControl_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetLocusControlResponse>* OrgService::Stub::AsyncSetLocusControlRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetLocusControlRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncSetLocusControlRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
-::grpc::Status OrgService::Stub::GetWorkingHours(::grpc::ClientContext* context, const ::city::economy::v2::GetWorkingHoursRequest& request, ::city::economy::v2::GetWorkingHoursResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::GetWorkingHoursRequest, ::city::economy::v2::GetWorkingHoursResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetWorkingHours_, context, request, response);
-}
-
-void OrgService::Stub::async::GetWorkingHours(::grpc::ClientContext* context, const ::city::economy::v2::GetWorkingHoursRequest* request, ::city::economy::v2::GetWorkingHoursResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::GetWorkingHoursRequest, ::city::economy::v2::GetWorkingHoursResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetWorkingHours_, context, request, response, std::move(f));
-}
-
-void OrgService::Stub::async::GetWorkingHours(::grpc::ClientContext* context, const ::city::economy::v2::GetWorkingHoursRequest* request, ::city::economy::v2::GetWorkingHoursResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetWorkingHours_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetWorkingHoursResponse>* OrgService::Stub::PrepareAsyncGetWorkingHoursRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetWorkingHoursRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::GetWorkingHoursResponse, ::city::economy::v2::GetWorkingHoursRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetWorkingHours_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetWorkingHoursResponse>* OrgService::Stub::AsyncGetWorkingHoursRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetWorkingHoursRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncGetWorkingHoursRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
-::grpc::Status OrgService::Stub::SetWorkingHours(::grpc::ClientContext* context, const ::city::economy::v2::SetWorkingHoursRequest& request, ::city::economy::v2::SetWorkingHoursResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::SetWorkingHoursRequest, ::city::economy::v2::SetWorkingHoursResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_SetWorkingHours_, context, request, response);
-}
-
-void OrgService::Stub::async::SetWorkingHours(::grpc::ClientContext* context, const ::city::economy::v2::SetWorkingHoursRequest* request, ::city::economy::v2::SetWorkingHoursResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::SetWorkingHoursRequest, ::city::economy::v2::SetWorkingHoursResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SetWorkingHours_, context, request, response, std::move(f));
-}
-
-void OrgService::Stub::async::SetWorkingHours(::grpc::ClientContext* context, const ::city::economy::v2::SetWorkingHoursRequest* request, ::city::economy::v2::SetWorkingHoursResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SetWorkingHours_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetWorkingHoursResponse>* OrgService::Stub::PrepareAsyncSetWorkingHoursRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetWorkingHoursRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::SetWorkingHoursResponse, ::city::economy::v2::SetWorkingHoursRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_SetWorkingHours_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetWorkingHoursResponse>* OrgService::Stub::AsyncSetWorkingHoursRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetWorkingHoursRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncSetWorkingHoursRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
-::grpc::Status OrgService::Stub::GetOrgEntityIds(::grpc::ClientContext* context, const ::city::economy::v2::GetOrgEntityIdsRequest& request, ::city::economy::v2::GetOrgEntityIdsResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::GetOrgEntityIdsRequest, ::city::economy::v2::GetOrgEntityIdsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetOrgEntityIds_, context, request, response);
-}
-
-void OrgService::Stub::async::GetOrgEntityIds(::grpc::ClientContext* context, const ::city::economy::v2::GetOrgEntityIdsRequest* request, ::city::economy::v2::GetOrgEntityIdsResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::GetOrgEntityIdsRequest, ::city::economy::v2::GetOrgEntityIdsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetOrgEntityIds_, context, request, response, std::move(f));
-}
-
-void OrgService::Stub::async::GetOrgEntityIds(::grpc::ClientContext* context, const ::city::economy::v2::GetOrgEntityIdsRequest* request, ::city::economy::v2::GetOrgEntityIdsResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetOrgEntityIds_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetOrgEntityIdsResponse>* OrgService::Stub::PrepareAsyncGetOrgEntityIdsRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetOrgEntityIdsRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::GetOrgEntityIdsResponse, ::city::economy::v2::GetOrgEntityIdsRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetOrgEntityIds_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetOrgEntityIdsResponse>* OrgService::Stub::AsyncGetOrgEntityIdsRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetOrgEntityIdsRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncGetOrgEntityIdsRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
-::grpc::Status OrgService::Stub::GetEmployees(::grpc::ClientContext* context, const ::city::economy::v2::GetEmployeesRequest& request, ::city::economy::v2::GetEmployeesResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::GetEmployeesRequest, ::city::economy::v2::GetEmployeesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetEmployees_, context, request, response);
-}
-
-void OrgService::Stub::async::GetEmployees(::grpc::ClientContext* context, const ::city::economy::v2::GetEmployeesRequest* request, ::city::economy::v2::GetEmployeesResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::GetEmployeesRequest, ::city::economy::v2::GetEmployeesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetEmployees_, context, request, response, std::move(f));
-}
-
-void OrgService::Stub::async::GetEmployees(::grpc::ClientContext* context, const ::city::economy::v2::GetEmployeesRequest* request, ::city::economy::v2::GetEmployeesResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetEmployees_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetEmployeesResponse>* OrgService::Stub::PrepareAsyncGetEmployeesRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetEmployeesRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::GetEmployeesResponse, ::city::economy::v2::GetEmployeesRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetEmployees_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetEmployeesResponse>* OrgService::Stub::AsyncGetEmployeesRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetEmployeesRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncGetEmployeesRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
-::grpc::Status OrgService::Stub::SetEmployees(::grpc::ClientContext* context, const ::city::economy::v2::SetEmployeesRequest& request, ::city::economy::v2::SetEmployeesResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::SetEmployeesRequest, ::city::economy::v2::SetEmployeesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_SetEmployees_, context, request, response);
-}
-
-void OrgService::Stub::async::SetEmployees(::grpc::ClientContext* context, const ::city::economy::v2::SetEmployeesRequest* request, ::city::economy::v2::SetEmployeesResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::SetEmployeesRequest, ::city::economy::v2::SetEmployeesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SetEmployees_, context, request, response, std::move(f));
-}
-
-void OrgService::Stub::async::SetEmployees(::grpc::ClientContext* context, const ::city::economy::v2::SetEmployeesRequest* request, ::city::economy::v2::SetEmployeesResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SetEmployees_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetEmployeesResponse>* OrgService::Stub::PrepareAsyncSetEmployeesRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetEmployeesRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::SetEmployeesResponse, ::city::economy::v2::SetEmployeesRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_SetEmployees_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetEmployeesResponse>* OrgService::Stub::AsyncSetEmployeesRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetEmployeesRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncSetEmployeesRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
-::grpc::Status OrgService::Stub::AddEmployee(::grpc::ClientContext* context, const ::city::economy::v2::AddEmployeeRequest& request, ::city::economy::v2::AddEmployeeResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::AddEmployeeRequest, ::city::economy::v2::AddEmployeeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_AddEmployee_, context, request, response);
-}
-
-void OrgService::Stub::async::AddEmployee(::grpc::ClientContext* context, const ::city::economy::v2::AddEmployeeRequest* request, ::city::economy::v2::AddEmployeeResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::AddEmployeeRequest, ::city::economy::v2::AddEmployeeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_AddEmployee_, context, request, response, std::move(f));
-}
-
-void OrgService::Stub::async::AddEmployee(::grpc::ClientContext* context, const ::city::economy::v2::AddEmployeeRequest* request, ::city::economy::v2::AddEmployeeResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_AddEmployee_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::AddEmployeeResponse>* OrgService::Stub::PrepareAsyncAddEmployeeRaw(::grpc::ClientContext* context, const ::city::economy::v2::AddEmployeeRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::AddEmployeeResponse, ::city::economy::v2::AddEmployeeRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_AddEmployee_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::AddEmployeeResponse>* OrgService::Stub::AsyncAddEmployeeRaw(::grpc::ClientContext* context, const ::city::economy::v2::AddEmployeeRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncAddEmployeeRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
-::grpc::Status OrgService::Stub::RemoveEmployee(::grpc::ClientContext* context, const ::city::economy::v2::RemoveEmployeeRequest& request, ::city::economy::v2::RemoveEmployeeResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::RemoveEmployeeRequest, ::city::economy::v2::RemoveEmployeeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_RemoveEmployee_, context, request, response);
-}
-
-void OrgService::Stub::async::RemoveEmployee(::grpc::ClientContext* context, const ::city::economy::v2::RemoveEmployeeRequest* request, ::city::economy::v2::RemoveEmployeeResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::RemoveEmployeeRequest, ::city::economy::v2::RemoveEmployeeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_RemoveEmployee_, context, request, response, std::move(f));
-}
-
-void OrgService::Stub::async::RemoveEmployee(::grpc::ClientContext* context, const ::city::economy::v2::RemoveEmployeeRequest* request, ::city::economy::v2::RemoveEmployeeResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_RemoveEmployee_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::RemoveEmployeeResponse>* OrgService::Stub::PrepareAsyncRemoveEmployeeRaw(::grpc::ClientContext* context, const ::city::economy::v2::RemoveEmployeeRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::RemoveEmployeeResponse, ::city::economy::v2::RemoveEmployeeRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_RemoveEmployee_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::RemoveEmployeeResponse>* OrgService::Stub::AsyncRemoveEmployeeRaw(::grpc::ClientContext* context, const ::city::economy::v2::RemoveEmployeeRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncRemoveEmployeeRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
-::grpc::Status OrgService::Stub::GetCitizens(::grpc::ClientContext* context, const ::city::economy::v2::GetCitizensRequest& request, ::city::economy::v2::GetCitizensResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::GetCitizensRequest, ::city::economy::v2::GetCitizensResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetCitizens_, context, request, response);
-}
-
-void OrgService::Stub::async::GetCitizens(::grpc::ClientContext* context, const ::city::economy::v2::GetCitizensRequest* request, ::city::economy::v2::GetCitizensResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::GetCitizensRequest, ::city::economy::v2::GetCitizensResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetCitizens_, context, request, response, std::move(f));
-}
-
-void OrgService::Stub::async::GetCitizens(::grpc::ClientContext* context, const ::city::economy::v2::GetCitizensRequest* request, ::city::economy::v2::GetCitizensResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetCitizens_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetCitizensResponse>* OrgService::Stub::PrepareAsyncGetCitizensRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetCitizensRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::GetCitizensResponse, ::city::economy::v2::GetCitizensRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetCitizens_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::GetCitizensResponse>* OrgService::Stub::AsyncGetCitizensRaw(::grpc::ClientContext* context, const ::city::economy::v2::GetCitizensRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncGetCitizensRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
-::grpc::Status OrgService::Stub::SetCitizens(::grpc::ClientContext* context, const ::city::economy::v2::SetCitizensRequest& request, ::city::economy::v2::SetCitizensResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::SetCitizensRequest, ::city::economy::v2::SetCitizensResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_SetCitizens_, context, request, response);
-}
-
-void OrgService::Stub::async::SetCitizens(::grpc::ClientContext* context, const ::city::economy::v2::SetCitizensRequest* request, ::city::economy::v2::SetCitizensResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::SetCitizensRequest, ::city::economy::v2::SetCitizensResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SetCitizens_, context, request, response, std::move(f));
-}
-
-void OrgService::Stub::async::SetCitizens(::grpc::ClientContext* context, const ::city::economy::v2::SetCitizensRequest* request, ::city::economy::v2::SetCitizensResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SetCitizens_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetCitizensResponse>* OrgService::Stub::PrepareAsyncSetCitizensRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetCitizensRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::SetCitizensResponse, ::city::economy::v2::SetCitizensRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_SetCitizens_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::SetCitizensResponse>* OrgService::Stub::AsyncSetCitizensRaw(::grpc::ClientContext* context, const ::city::economy::v2::SetCitizensRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncSetCitizensRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
-::grpc::Status OrgService::Stub::AddCitizen(::grpc::ClientContext* context, const ::city::economy::v2::AddCitizenRequest& request, ::city::economy::v2::AddCitizenResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::AddCitizenRequest, ::city::economy::v2::AddCitizenResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_AddCitizen_, context, request, response);
-}
-
-void OrgService::Stub::async::AddCitizen(::grpc::ClientContext* context, const ::city::economy::v2::AddCitizenRequest* request, ::city::economy::v2::AddCitizenResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::AddCitizenRequest, ::city::economy::v2::AddCitizenResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_AddCitizen_, context, request, response, std::move(f));
-}
-
-void OrgService::Stub::async::AddCitizen(::grpc::ClientContext* context, const ::city::economy::v2::AddCitizenRequest* request, ::city::economy::v2::AddCitizenResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_AddCitizen_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::AddCitizenResponse>* OrgService::Stub::PrepareAsyncAddCitizenRaw(::grpc::ClientContext* context, const ::city::economy::v2::AddCitizenRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::AddCitizenResponse, ::city::economy::v2::AddCitizenRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_AddCitizen_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::AddCitizenResponse>* OrgService::Stub::AsyncAddCitizenRaw(::grpc::ClientContext* context, const ::city::economy::v2::AddCitizenRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncAddCitizenRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
-::grpc::Status OrgService::Stub::RemoveCitizen(::grpc::ClientContext* context, const ::city::economy::v2::RemoveCitizenRequest& request, ::city::economy::v2::RemoveCitizenResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::RemoveCitizenRequest, ::city::economy::v2::RemoveCitizenResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_RemoveCitizen_, context, request, response);
-}
-
-void OrgService::Stub::async::RemoveCitizen(::grpc::ClientContext* context, const ::city::economy::v2::RemoveCitizenRequest* request, ::city::economy::v2::RemoveCitizenResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::RemoveCitizenRequest, ::city::economy::v2::RemoveCitizenResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_RemoveCitizen_, context, request, response, std::move(f));
-}
-
-void OrgService::Stub::async::RemoveCitizen(::grpc::ClientContext* context, const ::city::economy::v2::RemoveCitizenRequest* request, ::city::economy::v2::RemoveCitizenResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_RemoveCitizen_, context, request, response, reactor);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::RemoveCitizenResponse>* OrgService::Stub::PrepareAsyncRemoveCitizenRaw(::grpc::ClientContext* context, const ::city::economy::v2::RemoveCitizenRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::RemoveCitizenResponse, ::city::economy::v2::RemoveCitizenRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_RemoveCitizen_, context, request);
-}
-
-::grpc::ClientAsyncResponseReader< ::city::economy::v2::RemoveCitizenResponse>* OrgService::Stub::AsyncRemoveCitizenRaw(::grpc::ClientContext* context, const ::city::economy::v2::RemoveCitizenRequest& request, ::grpc::CompletionQueue* cq) {
-  auto* result =
-    this->PrepareAsyncRemoveCitizenRaw(context, request, cq);
-  result->StartCall();
-  return result;
-}
-
 ::grpc::Status OrgService::Stub::GetAgent(::grpc::ClientContext* context, const ::city::economy::v2::GetAgentRequest& request, ::city::economy::v2::GetAgentResponse* response) {
   return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::GetAgentRequest, ::city::economy::v2::GetAgentResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetAgent_, context, request, response);
 }
@@ -1593,6 +305,29 @@ void OrgService::Stub::async::BatchUpdate(::grpc::ClientContext* context, const 
   return result;
 }
 
+::grpc::Status OrgService::Stub::BatchSet(::grpc::ClientContext* context, const ::city::economy::v2::BatchSetRequest& request, ::city::economy::v2::BatchSetResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::BatchSetRequest, ::city::economy::v2::BatchSetResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_BatchSet_, context, request, response);
+}
+
+void OrgService::Stub::async::BatchSet(::grpc::ClientContext* context, const ::city::economy::v2::BatchSetRequest* request, ::city::economy::v2::BatchSetResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::BatchSetRequest, ::city::economy::v2::BatchSetResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_BatchSet_, context, request, response, std::move(f));
+}
+
+void OrgService::Stub::async::BatchSet(::grpc::ClientContext* context, const ::city::economy::v2::BatchSetRequest* request, ::city::economy::v2::BatchSetResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_BatchSet_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchSetResponse>* OrgService::Stub::PrepareAsyncBatchSetRaw(::grpc::ClientContext* context, const ::city::economy::v2::BatchSetRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::BatchSetResponse, ::city::economy::v2::BatchSetRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_BatchSet_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchSetResponse>* OrgService::Stub::AsyncBatchSetRaw(::grpc::ClientContext* context, const ::city::economy::v2::BatchSetRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncBatchSetRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
 ::grpc::Status OrgService::Stub::DeltaUpdateOrg(::grpc::ClientContext* context, const ::city::economy::v2::DeltaUpdateOrgRequest& request, ::city::economy::v2::DeltaUpdateOrgResponse* response) {
   return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::DeltaUpdateOrgRequest, ::city::economy::v2::DeltaUpdateOrgResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_DeltaUpdateOrg_, context, request, response);
 }
@@ -1662,6 +397,75 @@ void OrgService::Stub::async::BatchDeltaUpdate(::grpc::ClientContext* context, c
   return result;
 }
 
+::grpc::Status OrgService::Stub::CalculateTaxesDue(::grpc::ClientContext* context, const ::city::economy::v2::CalculateTaxesDueRequest& request, ::city::economy::v2::CalculateTaxesDueResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::CalculateTaxesDueRequest, ::city::economy::v2::CalculateTaxesDueResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_CalculateTaxesDue_, context, request, response);
+}
+
+void OrgService::Stub::async::CalculateTaxesDue(::grpc::ClientContext* context, const ::city::economy::v2::CalculateTaxesDueRequest* request, ::city::economy::v2::CalculateTaxesDueResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::CalculateTaxesDueRequest, ::city::economy::v2::CalculateTaxesDueResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_CalculateTaxesDue_, context, request, response, std::move(f));
+}
+
+void OrgService::Stub::async::CalculateTaxesDue(::grpc::ClientContext* context, const ::city::economy::v2::CalculateTaxesDueRequest* request, ::city::economy::v2::CalculateTaxesDueResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_CalculateTaxesDue_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::city::economy::v2::CalculateTaxesDueResponse>* OrgService::Stub::PrepareAsyncCalculateTaxesDueRaw(::grpc::ClientContext* context, const ::city::economy::v2::CalculateTaxesDueRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::CalculateTaxesDueResponse, ::city::economy::v2::CalculateTaxesDueRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_CalculateTaxesDue_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::city::economy::v2::CalculateTaxesDueResponse>* OrgService::Stub::AsyncCalculateTaxesDueRaw(::grpc::ClientContext* context, const ::city::economy::v2::CalculateTaxesDueRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncCalculateTaxesDueRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status OrgService::Stub::CalculateConsumption(::grpc::ClientContext* context, const ::city::economy::v2::CalculateConsumptionRequest& request, ::city::economy::v2::CalculateConsumptionResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::CalculateConsumptionRequest, ::city::economy::v2::CalculateConsumptionResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_CalculateConsumption_, context, request, response);
+}
+
+void OrgService::Stub::async::CalculateConsumption(::grpc::ClientContext* context, const ::city::economy::v2::CalculateConsumptionRequest* request, ::city::economy::v2::CalculateConsumptionResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::CalculateConsumptionRequest, ::city::economy::v2::CalculateConsumptionResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_CalculateConsumption_, context, request, response, std::move(f));
+}
+
+void OrgService::Stub::async::CalculateConsumption(::grpc::ClientContext* context, const ::city::economy::v2::CalculateConsumptionRequest* request, ::city::economy::v2::CalculateConsumptionResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_CalculateConsumption_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::city::economy::v2::CalculateConsumptionResponse>* OrgService::Stub::PrepareAsyncCalculateConsumptionRaw(::grpc::ClientContext* context, const ::city::economy::v2::CalculateConsumptionRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::CalculateConsumptionResponse, ::city::economy::v2::CalculateConsumptionRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_CalculateConsumption_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::city::economy::v2::CalculateConsumptionResponse>* OrgService::Stub::AsyncCalculateConsumptionRaw(::grpc::ClientContext* context, const ::city::economy::v2::CalculateConsumptionRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncCalculateConsumptionRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status OrgService::Stub::CalculateInterest(::grpc::ClientContext* context, const ::city::economy::v2::CalculateInterestRequest& request, ::city::economy::v2::CalculateInterestResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::CalculateInterestRequest, ::city::economy::v2::CalculateInterestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_CalculateInterest_, context, request, response);
+}
+
+void OrgService::Stub::async::CalculateInterest(::grpc::ClientContext* context, const ::city::economy::v2::CalculateInterestRequest* request, ::city::economy::v2::CalculateInterestResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::CalculateInterestRequest, ::city::economy::v2::CalculateInterestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_CalculateInterest_, context, request, response, std::move(f));
+}
+
+void OrgService::Stub::async::CalculateInterest(::grpc::ClientContext* context, const ::city::economy::v2::CalculateInterestRequest* request, ::city::economy::v2::CalculateInterestResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_CalculateInterest_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::city::economy::v2::CalculateInterestResponse>* OrgService::Stub::PrepareAsyncCalculateInterestRaw(::grpc::ClientContext* context, const ::city::economy::v2::CalculateInterestRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::CalculateInterestResponse, ::city::economy::v2::CalculateInterestRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_CalculateInterest_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::city::economy::v2::CalculateInterestResponse>* OrgService::Stub::AsyncCalculateInterestRaw(::grpc::ClientContext* context, const ::city::economy::v2::CalculateInterestRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncCalculateInterestRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
 ::grpc::Status OrgService::Stub::CalculateRealGDP(::grpc::ClientContext* context, const ::city::economy::v2::CalculateRealGDPRequest& request, ::city::economy::v2::CalculateRealGDPResponse* response) {
   return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::CalculateRealGDPRequest, ::city::economy::v2::CalculateRealGDPResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_CalculateRealGDP_, context, request, response);
 }
@@ -1681,6 +485,52 @@ void OrgService::Stub::async::CalculateRealGDP(::grpc::ClientContext* context, c
 ::grpc::ClientAsyncResponseReader< ::city::economy::v2::CalculateRealGDPResponse>* OrgService::Stub::AsyncCalculateRealGDPRaw(::grpc::ClientContext* context, const ::city::economy::v2::CalculateRealGDPRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncCalculateRealGDPRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status OrgService::Stub::SaveEconomyEntities(::grpc::ClientContext* context, const ::city::economy::v2::SaveEconomyEntitiesRequest& request, ::city::economy::v2::SaveEconomyEntitiesResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::SaveEconomyEntitiesRequest, ::city::economy::v2::SaveEconomyEntitiesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_SaveEconomyEntities_, context, request, response);
+}
+
+void OrgService::Stub::async::SaveEconomyEntities(::grpc::ClientContext* context, const ::city::economy::v2::SaveEconomyEntitiesRequest* request, ::city::economy::v2::SaveEconomyEntitiesResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::SaveEconomyEntitiesRequest, ::city::economy::v2::SaveEconomyEntitiesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SaveEconomyEntities_, context, request, response, std::move(f));
+}
+
+void OrgService::Stub::async::SaveEconomyEntities(::grpc::ClientContext* context, const ::city::economy::v2::SaveEconomyEntitiesRequest* request, ::city::economy::v2::SaveEconomyEntitiesResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SaveEconomyEntities_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::city::economy::v2::SaveEconomyEntitiesResponse>* OrgService::Stub::PrepareAsyncSaveEconomyEntitiesRaw(::grpc::ClientContext* context, const ::city::economy::v2::SaveEconomyEntitiesRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::SaveEconomyEntitiesResponse, ::city::economy::v2::SaveEconomyEntitiesRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_SaveEconomyEntities_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::city::economy::v2::SaveEconomyEntitiesResponse>* OrgService::Stub::AsyncSaveEconomyEntitiesRaw(::grpc::ClientContext* context, const ::city::economy::v2::SaveEconomyEntitiesRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncSaveEconomyEntitiesRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status OrgService::Stub::LoadEconomyEntities(::grpc::ClientContext* context, const ::city::economy::v2::LoadEconomyEntitiesRequest& request, ::city::economy::v2::LoadEconomyEntitiesResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::city::economy::v2::LoadEconomyEntitiesRequest, ::city::economy::v2::LoadEconomyEntitiesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_LoadEconomyEntities_, context, request, response);
+}
+
+void OrgService::Stub::async::LoadEconomyEntities(::grpc::ClientContext* context, const ::city::economy::v2::LoadEconomyEntitiesRequest* request, ::city::economy::v2::LoadEconomyEntitiesResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::city::economy::v2::LoadEconomyEntitiesRequest, ::city::economy::v2::LoadEconomyEntitiesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_LoadEconomyEntities_, context, request, response, std::move(f));
+}
+
+void OrgService::Stub::async::LoadEconomyEntities(::grpc::ClientContext* context, const ::city::economy::v2::LoadEconomyEntitiesRequest* request, ::city::economy::v2::LoadEconomyEntitiesResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_LoadEconomyEntities_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::city::economy::v2::LoadEconomyEntitiesResponse>* OrgService::Stub::PrepareAsyncLoadEconomyEntitiesRaw(::grpc::ClientContext* context, const ::city::economy::v2::LoadEconomyEntitiesRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::economy::v2::LoadEconomyEntitiesResponse, ::city::economy::v2::LoadEconomyEntitiesRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_LoadEconomyEntities_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::city::economy::v2::LoadEconomyEntitiesResponse>* OrgService::Stub::AsyncLoadEconomyEntitiesRaw(::grpc::ClientContext* context, const ::city::economy::v2::LoadEconomyEntitiesRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncLoadEconomyEntitiesRaw(context, request, cq);
   result->StartCall();
   return result;
 }
@@ -1749,526 +599,6 @@ OrgService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       OrgService_method_names[6],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::GetNominalGDPRequest, ::city::economy::v2::GetNominalGDPResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](OrgService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::city::economy::v2::GetNominalGDPRequest* req,
-             ::city::economy::v2::GetNominalGDPResponse* resp) {
-               return service->GetNominalGDP(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[7],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::SetNominalGDPRequest, ::city::economy::v2::SetNominalGDPResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](OrgService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::city::economy::v2::SetNominalGDPRequest* req,
-             ::city::economy::v2::SetNominalGDPResponse* resp) {
-               return service->SetNominalGDP(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[8],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::GetRealGDPRequest, ::city::economy::v2::GetRealGDPResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](OrgService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::city::economy::v2::GetRealGDPRequest* req,
-             ::city::economy::v2::GetRealGDPResponse* resp) {
-               return service->GetRealGDP(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[9],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::SetRealGDPRequest, ::city::economy::v2::SetRealGDPResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](OrgService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::city::economy::v2::SetRealGDPRequest* req,
-             ::city::economy::v2::SetRealGDPResponse* resp) {
-               return service->SetRealGDP(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[10],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::GetUnemploymentRequest, ::city::economy::v2::GetUnemploymentResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](OrgService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::city::economy::v2::GetUnemploymentRequest* req,
-             ::city::economy::v2::GetUnemploymentResponse* resp) {
-               return service->GetUnemployment(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[11],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::SetUnemploymentRequest, ::city::economy::v2::SetUnemploymentResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](OrgService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::city::economy::v2::SetUnemploymentRequest* req,
-             ::city::economy::v2::SetUnemploymentResponse* resp) {
-               return service->SetUnemployment(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[12],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::GetWagesRequest, ::city::economy::v2::GetWagesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](OrgService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::city::economy::v2::GetWagesRequest* req,
-             ::city::economy::v2::GetWagesResponse* resp) {
-               return service->GetWages(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[13],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::SetWagesRequest, ::city::economy::v2::SetWagesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](OrgService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::city::economy::v2::SetWagesRequest* req,
-             ::city::economy::v2::SetWagesResponse* resp) {
-               return service->SetWages(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[14],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::GetPricesRequest, ::city::economy::v2::GetPricesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](OrgService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::city::economy::v2::GetPricesRequest* req,
-             ::city::economy::v2::GetPricesResponse* resp) {
-               return service->GetPrices(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[15],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::SetPricesRequest, ::city::economy::v2::SetPricesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](OrgService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::city::economy::v2::SetPricesRequest* req,
-             ::city::economy::v2::SetPricesResponse* resp) {
-               return service->SetPrices(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[16],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::GetInventoryRequest, ::city::economy::v2::GetInventoryResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](OrgService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::city::economy::v2::GetInventoryRequest* req,
-             ::city::economy::v2::GetInventoryResponse* resp) {
-               return service->GetInventory(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[17],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::SetInventoryRequest, ::city::economy::v2::SetInventoryResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](OrgService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::city::economy::v2::SetInventoryRequest* req,
-             ::city::economy::v2::SetInventoryResponse* resp) {
-               return service->SetInventory(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[18],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::AddInventoryRequest, ::city::economy::v2::AddInventoryResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](OrgService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::city::economy::v2::AddInventoryRequest* req,
-             ::city::economy::v2::AddInventoryResponse* resp) {
-               return service->AddInventory(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[19],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::GetPriceRequest, ::city::economy::v2::GetPriceResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](OrgService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::city::economy::v2::GetPriceRequest* req,
-             ::city::economy::v2::GetPriceResponse* resp) {
-               return service->GetPrice(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[20],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::SetPriceRequest, ::city::economy::v2::SetPriceResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](OrgService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::city::economy::v2::SetPriceRequest* req,
-             ::city::economy::v2::SetPriceResponse* resp) {
-               return service->SetPrice(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[21],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::AddPriceRequest, ::city::economy::v2::AddPriceResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](OrgService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::city::economy::v2::AddPriceRequest* req,
-             ::city::economy::v2::AddPriceResponse* resp) {
-               return service->AddPrice(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[22],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::GetCurrencyRequest, ::city::economy::v2::GetCurrencyResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](OrgService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::city::economy::v2::GetCurrencyRequest* req,
-             ::city::economy::v2::GetCurrencyResponse* resp) {
-               return service->GetCurrency(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[23],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::SetCurrencyRequest, ::city::economy::v2::SetCurrencyResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](OrgService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::city::economy::v2::SetCurrencyRequest* req,
-             ::city::economy::v2::SetCurrencyResponse* resp) {
-               return service->SetCurrency(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[24],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::AddCurrencyRequest, ::city::economy::v2::AddCurrencyResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](OrgService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::city::economy::v2::AddCurrencyRequest* req,
-             ::city::economy::v2::AddCurrencyResponse* resp) {
-               return service->AddCurrency(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[25],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::GetInterestRateRequest, ::city::economy::v2::GetInterestRateResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](OrgService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::city::economy::v2::GetInterestRateRequest* req,
-             ::city::economy::v2::GetInterestRateResponse* resp) {
-               return service->GetInterestRate(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[26],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::SetInterestRateRequest, ::city::economy::v2::SetInterestRateResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](OrgService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::city::economy::v2::SetInterestRateRequest* req,
-             ::city::economy::v2::SetInterestRateResponse* resp) {
-               return service->SetInterestRate(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[27],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::AddInterestRateRequest, ::city::economy::v2::AddInterestRateResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](OrgService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::city::economy::v2::AddInterestRateRequest* req,
-             ::city::economy::v2::AddInterestRateResponse* resp) {
-               return service->AddInterestRate(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[28],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::GetBracketCutoffsRequest, ::city::economy::v2::GetBracketCutoffsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](OrgService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::city::economy::v2::GetBracketCutoffsRequest* req,
-             ::city::economy::v2::GetBracketCutoffsResponse* resp) {
-               return service->GetBracketCutoffs(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[29],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::SetBracketCutoffsRequest, ::city::economy::v2::SetBracketCutoffsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](OrgService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::city::economy::v2::SetBracketCutoffsRequest* req,
-             ::city::economy::v2::SetBracketCutoffsResponse* resp) {
-               return service->SetBracketCutoffs(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[30],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::GetBracketRatesRequest, ::city::economy::v2::GetBracketRatesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](OrgService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::city::economy::v2::GetBracketRatesRequest* req,
-             ::city::economy::v2::GetBracketRatesResponse* resp) {
-               return service->GetBracketRates(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[31],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::SetBracketRatesRequest, ::city::economy::v2::SetBracketRatesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](OrgService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::city::economy::v2::SetBracketRatesRequest* req,
-             ::city::economy::v2::SetBracketRatesResponse* resp) {
-               return service->SetBracketRates(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[32],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::CalculateTaxesDueRequest, ::city::economy::v2::CalculateTaxesDueResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](OrgService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::city::economy::v2::CalculateTaxesDueRequest* req,
-             ::city::economy::v2::CalculateTaxesDueResponse* resp) {
-               return service->CalculateTaxesDue(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[33],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::CalculateConsumptionRequest, ::city::economy::v2::CalculateConsumptionResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](OrgService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::city::economy::v2::CalculateConsumptionRequest* req,
-             ::city::economy::v2::CalculateConsumptionResponse* resp) {
-               return service->CalculateConsumption(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[34],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::CalculateInterestRequest, ::city::economy::v2::CalculateInterestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](OrgService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::city::economy::v2::CalculateInterestRequest* req,
-             ::city::economy::v2::CalculateInterestResponse* resp) {
-               return service->CalculateInterest(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[35],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::SaveEconomyEntitiesRequest, ::city::economy::v2::SaveEconomyEntitiesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](OrgService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::city::economy::v2::SaveEconomyEntitiesRequest* req,
-             ::city::economy::v2::SaveEconomyEntitiesResponse* resp) {
-               return service->SaveEconomyEntities(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[36],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::LoadEconomyEntitiesRequest, ::city::economy::v2::LoadEconomyEntitiesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](OrgService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::city::economy::v2::LoadEconomyEntitiesRequest* req,
-             ::city::economy::v2::LoadEconomyEntitiesResponse* resp) {
-               return service->LoadEconomyEntities(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[37],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::GetConsumptionCurrencyRequest, ::city::economy::v2::GetConsumptionCurrencyResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](OrgService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::city::economy::v2::GetConsumptionCurrencyRequest* req,
-             ::city::economy::v2::GetConsumptionCurrencyResponse* resp) {
-               return service->GetConsumptionCurrency(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[38],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::SetConsumptionCurrencyRequest, ::city::economy::v2::SetConsumptionCurrencyResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](OrgService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::city::economy::v2::SetConsumptionCurrencyRequest* req,
-             ::city::economy::v2::SetConsumptionCurrencyResponse* resp) {
-               return service->SetConsumptionCurrency(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[39],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::GetConsumptionPropensityRequest, ::city::economy::v2::GetConsumptionPropensityResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](OrgService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::city::economy::v2::GetConsumptionPropensityRequest* req,
-             ::city::economy::v2::GetConsumptionPropensityResponse* resp) {
-               return service->GetConsumptionPropensity(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[40],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::SetConsumptionPropensityRequest, ::city::economy::v2::SetConsumptionPropensityResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](OrgService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::city::economy::v2::SetConsumptionPropensityRequest* req,
-             ::city::economy::v2::SetConsumptionPropensityResponse* resp) {
-               return service->SetConsumptionPropensity(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[41],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::GetIncomeCurrencyRequest, ::city::economy::v2::GetIncomeCurrencyResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](OrgService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::city::economy::v2::GetIncomeCurrencyRequest* req,
-             ::city::economy::v2::GetIncomeCurrencyResponse* resp) {
-               return service->GetIncomeCurrency(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[42],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::SetIncomeCurrencyRequest, ::city::economy::v2::SetIncomeCurrencyResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](OrgService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::city::economy::v2::SetIncomeCurrencyRequest* req,
-             ::city::economy::v2::SetIncomeCurrencyResponse* resp) {
-               return service->SetIncomeCurrency(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[43],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::GetDepressionRequest, ::city::economy::v2::GetDepressionResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](OrgService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::city::economy::v2::GetDepressionRequest* req,
-             ::city::economy::v2::GetDepressionResponse* resp) {
-               return service->GetDepression(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[44],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::SetDepressionRequest, ::city::economy::v2::SetDepressionResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](OrgService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::city::economy::v2::SetDepressionRequest* req,
-             ::city::economy::v2::SetDepressionResponse* resp) {
-               return service->SetDepression(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[45],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::GetLocusControlRequest, ::city::economy::v2::GetLocusControlResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](OrgService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::city::economy::v2::GetLocusControlRequest* req,
-             ::city::economy::v2::GetLocusControlResponse* resp) {
-               return service->GetLocusControl(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[46],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::SetLocusControlRequest, ::city::economy::v2::SetLocusControlResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](OrgService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::city::economy::v2::SetLocusControlRequest* req,
-             ::city::economy::v2::SetLocusControlResponse* resp) {
-               return service->SetLocusControl(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[47],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::GetWorkingHoursRequest, ::city::economy::v2::GetWorkingHoursResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](OrgService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::city::economy::v2::GetWorkingHoursRequest* req,
-             ::city::economy::v2::GetWorkingHoursResponse* resp) {
-               return service->GetWorkingHours(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[48],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::SetWorkingHoursRequest, ::city::economy::v2::SetWorkingHoursResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](OrgService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::city::economy::v2::SetWorkingHoursRequest* req,
-             ::city::economy::v2::SetWorkingHoursResponse* resp) {
-               return service->SetWorkingHours(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[49],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::GetOrgEntityIdsRequest, ::city::economy::v2::GetOrgEntityIdsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](OrgService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::city::economy::v2::GetOrgEntityIdsRequest* req,
-             ::city::economy::v2::GetOrgEntityIdsResponse* resp) {
-               return service->GetOrgEntityIds(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[50],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::GetEmployeesRequest, ::city::economy::v2::GetEmployeesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](OrgService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::city::economy::v2::GetEmployeesRequest* req,
-             ::city::economy::v2::GetEmployeesResponse* resp) {
-               return service->GetEmployees(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[51],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::SetEmployeesRequest, ::city::economy::v2::SetEmployeesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](OrgService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::city::economy::v2::SetEmployeesRequest* req,
-             ::city::economy::v2::SetEmployeesResponse* resp) {
-               return service->SetEmployees(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[52],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::AddEmployeeRequest, ::city::economy::v2::AddEmployeeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](OrgService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::city::economy::v2::AddEmployeeRequest* req,
-             ::city::economy::v2::AddEmployeeResponse* resp) {
-               return service->AddEmployee(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[53],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::RemoveEmployeeRequest, ::city::economy::v2::RemoveEmployeeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](OrgService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::city::economy::v2::RemoveEmployeeRequest* req,
-             ::city::economy::v2::RemoveEmployeeResponse* resp) {
-               return service->RemoveEmployee(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[54],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::GetCitizensRequest, ::city::economy::v2::GetCitizensResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](OrgService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::city::economy::v2::GetCitizensRequest* req,
-             ::city::economy::v2::GetCitizensResponse* resp) {
-               return service->GetCitizens(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[55],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::SetCitizensRequest, ::city::economy::v2::SetCitizensResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](OrgService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::city::economy::v2::SetCitizensRequest* req,
-             ::city::economy::v2::SetCitizensResponse* resp) {
-               return service->SetCitizens(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[56],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::AddCitizenRequest, ::city::economy::v2::AddCitizenResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](OrgService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::city::economy::v2::AddCitizenRequest* req,
-             ::city::economy::v2::AddCitizenResponse* resp) {
-               return service->AddCitizen(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[57],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::RemoveCitizenRequest, ::city::economy::v2::RemoveCitizenResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-          [](OrgService::Service* service,
-             ::grpc::ServerContext* ctx,
-             const ::city::economy::v2::RemoveCitizenRequest* req,
-             ::city::economy::v2::RemoveCitizenResponse* resp) {
-               return service->RemoveCitizen(ctx, req, resp);
-             }, this)));
-  AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[58],
-      ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::GetAgentRequest, ::city::economy::v2::GetAgentResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](OrgService::Service* service,
              ::grpc::ServerContext* ctx,
@@ -2277,7 +607,7 @@ OrgService::Service::Service() {
                return service->GetAgent(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[59],
+      OrgService_method_names[7],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::UpdateAgentRequest, ::city::economy::v2::UpdateAgentResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](OrgService::Service* service,
@@ -2287,7 +617,7 @@ OrgService::Service::Service() {
                return service->UpdateAgent(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[60],
+      OrgService_method_names[8],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::BatchGetRequest, ::city::economy::v2::BatchGetResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](OrgService::Service* service,
@@ -2297,7 +627,7 @@ OrgService::Service::Service() {
                return service->BatchGet(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[61],
+      OrgService_method_names[9],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::BatchUpdateRequest, ::city::economy::v2::BatchUpdateResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](OrgService::Service* service,
@@ -2307,7 +637,17 @@ OrgService::Service::Service() {
                return service->BatchUpdate(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[62],
+      OrgService_method_names[10],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::BatchSetRequest, ::city::economy::v2::BatchSetResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](OrgService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::city::economy::v2::BatchSetRequest* req,
+             ::city::economy::v2::BatchSetResponse* resp) {
+               return service->BatchSet(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      OrgService_method_names[11],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::DeltaUpdateOrgRequest, ::city::economy::v2::DeltaUpdateOrgResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](OrgService::Service* service,
@@ -2317,7 +657,7 @@ OrgService::Service::Service() {
                return service->DeltaUpdateOrg(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[63],
+      OrgService_method_names[12],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::DeltaUpdateAgentRequest, ::city::economy::v2::DeltaUpdateAgentResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](OrgService::Service* service,
@@ -2327,7 +667,7 @@ OrgService::Service::Service() {
                return service->DeltaUpdateAgent(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[64],
+      OrgService_method_names[13],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::BatchDeltaUpdateRequest, ::city::economy::v2::BatchDeltaUpdateResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](OrgService::Service* service,
@@ -2337,7 +677,37 @@ OrgService::Service::Service() {
                return service->BatchDeltaUpdate(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      OrgService_method_names[65],
+      OrgService_method_names[14],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::CalculateTaxesDueRequest, ::city::economy::v2::CalculateTaxesDueResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](OrgService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::city::economy::v2::CalculateTaxesDueRequest* req,
+             ::city::economy::v2::CalculateTaxesDueResponse* resp) {
+               return service->CalculateTaxesDue(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      OrgService_method_names[15],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::CalculateConsumptionRequest, ::city::economy::v2::CalculateConsumptionResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](OrgService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::city::economy::v2::CalculateConsumptionRequest* req,
+             ::city::economy::v2::CalculateConsumptionResponse* resp) {
+               return service->CalculateConsumption(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      OrgService_method_names[16],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::CalculateInterestRequest, ::city::economy::v2::CalculateInterestResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](OrgService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::city::economy::v2::CalculateInterestRequest* req,
+             ::city::economy::v2::CalculateInterestResponse* resp) {
+               return service->CalculateInterest(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      OrgService_method_names[17],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::CalculateRealGDPRequest, ::city::economy::v2::CalculateRealGDPResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](OrgService::Service* service,
@@ -2345,6 +715,26 @@ OrgService::Service::Service() {
              const ::city::economy::v2::CalculateRealGDPRequest* req,
              ::city::economy::v2::CalculateRealGDPResponse* resp) {
                return service->CalculateRealGDP(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      OrgService_method_names[18],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::SaveEconomyEntitiesRequest, ::city::economy::v2::SaveEconomyEntitiesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](OrgService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::city::economy::v2::SaveEconomyEntitiesRequest* req,
+             ::city::economy::v2::SaveEconomyEntitiesResponse* resp) {
+               return service->SaveEconomyEntities(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      OrgService_method_names[19],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< OrgService::Service, ::city::economy::v2::LoadEconomyEntitiesRequest, ::city::economy::v2::LoadEconomyEntitiesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](OrgService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::city::economy::v2::LoadEconomyEntitiesRequest* req,
+             ::city::economy::v2::LoadEconomyEntitiesResponse* resp) {
+               return service->LoadEconomyEntities(ctx, req, resp);
              }, this)));
 }
 
@@ -2393,370 +783,6 @@ OrgService::Service::~Service() {
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status OrgService::Service::GetNominalGDP(::grpc::ServerContext* context, const ::city::economy::v2::GetNominalGDPRequest* request, ::city::economy::v2::GetNominalGDPResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status OrgService::Service::SetNominalGDP(::grpc::ServerContext* context, const ::city::economy::v2::SetNominalGDPRequest* request, ::city::economy::v2::SetNominalGDPResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status OrgService::Service::GetRealGDP(::grpc::ServerContext* context, const ::city::economy::v2::GetRealGDPRequest* request, ::city::economy::v2::GetRealGDPResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status OrgService::Service::SetRealGDP(::grpc::ServerContext* context, const ::city::economy::v2::SetRealGDPRequest* request, ::city::economy::v2::SetRealGDPResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status OrgService::Service::GetUnemployment(::grpc::ServerContext* context, const ::city::economy::v2::GetUnemploymentRequest* request, ::city::economy::v2::GetUnemploymentResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status OrgService::Service::SetUnemployment(::grpc::ServerContext* context, const ::city::economy::v2::SetUnemploymentRequest* request, ::city::economy::v2::SetUnemploymentResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status OrgService::Service::GetWages(::grpc::ServerContext* context, const ::city::economy::v2::GetWagesRequest* request, ::city::economy::v2::GetWagesResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status OrgService::Service::SetWages(::grpc::ServerContext* context, const ::city::economy::v2::SetWagesRequest* request, ::city::economy::v2::SetWagesResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status OrgService::Service::GetPrices(::grpc::ServerContext* context, const ::city::economy::v2::GetPricesRequest* request, ::city::economy::v2::GetPricesResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status OrgService::Service::SetPrices(::grpc::ServerContext* context, const ::city::economy::v2::SetPricesRequest* request, ::city::economy::v2::SetPricesResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status OrgService::Service::GetInventory(::grpc::ServerContext* context, const ::city::economy::v2::GetInventoryRequest* request, ::city::economy::v2::GetInventoryResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status OrgService::Service::SetInventory(::grpc::ServerContext* context, const ::city::economy::v2::SetInventoryRequest* request, ::city::economy::v2::SetInventoryResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status OrgService::Service::AddInventory(::grpc::ServerContext* context, const ::city::economy::v2::AddInventoryRequest* request, ::city::economy::v2::AddInventoryResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status OrgService::Service::GetPrice(::grpc::ServerContext* context, const ::city::economy::v2::GetPriceRequest* request, ::city::economy::v2::GetPriceResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status OrgService::Service::SetPrice(::grpc::ServerContext* context, const ::city::economy::v2::SetPriceRequest* request, ::city::economy::v2::SetPriceResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status OrgService::Service::AddPrice(::grpc::ServerContext* context, const ::city::economy::v2::AddPriceRequest* request, ::city::economy::v2::AddPriceResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status OrgService::Service::GetCurrency(::grpc::ServerContext* context, const ::city::economy::v2::GetCurrencyRequest* request, ::city::economy::v2::GetCurrencyResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status OrgService::Service::SetCurrency(::grpc::ServerContext* context, const ::city::economy::v2::SetCurrencyRequest* request, ::city::economy::v2::SetCurrencyResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status OrgService::Service::AddCurrency(::grpc::ServerContext* context, const ::city::economy::v2::AddCurrencyRequest* request, ::city::economy::v2::AddCurrencyResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status OrgService::Service::GetInterestRate(::grpc::ServerContext* context, const ::city::economy::v2::GetInterestRateRequest* request, ::city::economy::v2::GetInterestRateResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status OrgService::Service::SetInterestRate(::grpc::ServerContext* context, const ::city::economy::v2::SetInterestRateRequest* request, ::city::economy::v2::SetInterestRateResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status OrgService::Service::AddInterestRate(::grpc::ServerContext* context, const ::city::economy::v2::AddInterestRateRequest* request, ::city::economy::v2::AddInterestRateResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status OrgService::Service::GetBracketCutoffs(::grpc::ServerContext* context, const ::city::economy::v2::GetBracketCutoffsRequest* request, ::city::economy::v2::GetBracketCutoffsResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status OrgService::Service::SetBracketCutoffs(::grpc::ServerContext* context, const ::city::economy::v2::SetBracketCutoffsRequest* request, ::city::economy::v2::SetBracketCutoffsResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status OrgService::Service::GetBracketRates(::grpc::ServerContext* context, const ::city::economy::v2::GetBracketRatesRequest* request, ::city::economy::v2::GetBracketRatesResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status OrgService::Service::SetBracketRates(::grpc::ServerContext* context, const ::city::economy::v2::SetBracketRatesRequest* request, ::city::economy::v2::SetBracketRatesResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status OrgService::Service::CalculateTaxesDue(::grpc::ServerContext* context, const ::city::economy::v2::CalculateTaxesDueRequest* request, ::city::economy::v2::CalculateTaxesDueResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status OrgService::Service::CalculateConsumption(::grpc::ServerContext* context, const ::city::economy::v2::CalculateConsumptionRequest* request, ::city::economy::v2::CalculateConsumptionResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status OrgService::Service::CalculateInterest(::grpc::ServerContext* context, const ::city::economy::v2::CalculateInterestRequest* request, ::city::economy::v2::CalculateInterestResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status OrgService::Service::SaveEconomyEntities(::grpc::ServerContext* context, const ::city::economy::v2::SaveEconomyEntitiesRequest* request, ::city::economy::v2::SaveEconomyEntitiesResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status OrgService::Service::LoadEconomyEntities(::grpc::ServerContext* context, const ::city::economy::v2::LoadEconomyEntitiesRequest* request, ::city::economy::v2::LoadEconomyEntitiesResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status OrgService::Service::GetConsumptionCurrency(::grpc::ServerContext* context, const ::city::economy::v2::GetConsumptionCurrencyRequest* request, ::city::economy::v2::GetConsumptionCurrencyResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status OrgService::Service::SetConsumptionCurrency(::grpc::ServerContext* context, const ::city::economy::v2::SetConsumptionCurrencyRequest* request, ::city::economy::v2::SetConsumptionCurrencyResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status OrgService::Service::GetConsumptionPropensity(::grpc::ServerContext* context, const ::city::economy::v2::GetConsumptionPropensityRequest* request, ::city::economy::v2::GetConsumptionPropensityResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status OrgService::Service::SetConsumptionPropensity(::grpc::ServerContext* context, const ::city::economy::v2::SetConsumptionPropensityRequest* request, ::city::economy::v2::SetConsumptionPropensityResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status OrgService::Service::GetIncomeCurrency(::grpc::ServerContext* context, const ::city::economy::v2::GetIncomeCurrencyRequest* request, ::city::economy::v2::GetIncomeCurrencyResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status OrgService::Service::SetIncomeCurrency(::grpc::ServerContext* context, const ::city::economy::v2::SetIncomeCurrencyRequest* request, ::city::economy::v2::SetIncomeCurrencyResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status OrgService::Service::GetDepression(::grpc::ServerContext* context, const ::city::economy::v2::GetDepressionRequest* request, ::city::economy::v2::GetDepressionResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status OrgService::Service::SetDepression(::grpc::ServerContext* context, const ::city::economy::v2::SetDepressionRequest* request, ::city::economy::v2::SetDepressionResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status OrgService::Service::GetLocusControl(::grpc::ServerContext* context, const ::city::economy::v2::GetLocusControlRequest* request, ::city::economy::v2::GetLocusControlResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status OrgService::Service::SetLocusControl(::grpc::ServerContext* context, const ::city::economy::v2::SetLocusControlRequest* request, ::city::economy::v2::SetLocusControlResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status OrgService::Service::GetWorkingHours(::grpc::ServerContext* context, const ::city::economy::v2::GetWorkingHoursRequest* request, ::city::economy::v2::GetWorkingHoursResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status OrgService::Service::SetWorkingHours(::grpc::ServerContext* context, const ::city::economy::v2::SetWorkingHoursRequest* request, ::city::economy::v2::SetWorkingHoursResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status OrgService::Service::GetOrgEntityIds(::grpc::ServerContext* context, const ::city::economy::v2::GetOrgEntityIdsRequest* request, ::city::economy::v2::GetOrgEntityIdsResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status OrgService::Service::GetEmployees(::grpc::ServerContext* context, const ::city::economy::v2::GetEmployeesRequest* request, ::city::economy::v2::GetEmployeesResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status OrgService::Service::SetEmployees(::grpc::ServerContext* context, const ::city::economy::v2::SetEmployeesRequest* request, ::city::economy::v2::SetEmployeesResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status OrgService::Service::AddEmployee(::grpc::ServerContext* context, const ::city::economy::v2::AddEmployeeRequest* request, ::city::economy::v2::AddEmployeeResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status OrgService::Service::RemoveEmployee(::grpc::ServerContext* context, const ::city::economy::v2::RemoveEmployeeRequest* request, ::city::economy::v2::RemoveEmployeeResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status OrgService::Service::GetCitizens(::grpc::ServerContext* context, const ::city::economy::v2::GetCitizensRequest* request, ::city::economy::v2::GetCitizensResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status OrgService::Service::SetCitizens(::grpc::ServerContext* context, const ::city::economy::v2::SetCitizensRequest* request, ::city::economy::v2::SetCitizensResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status OrgService::Service::AddCitizen(::grpc::ServerContext* context, const ::city::economy::v2::AddCitizenRequest* request, ::city::economy::v2::AddCitizenResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
-::grpc::Status OrgService::Service::RemoveCitizen(::grpc::ServerContext* context, const ::city::economy::v2::RemoveCitizenRequest* request, ::city::economy::v2::RemoveCitizenResponse* response) {
-  (void) context;
-  (void) request;
-  (void) response;
-  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-}
-
 ::grpc::Status OrgService::Service::GetAgent(::grpc::ServerContext* context, const ::city::economy::v2::GetAgentRequest* request, ::city::economy::v2::GetAgentResponse* response) {
   (void) context;
   (void) request;
@@ -2785,6 +811,13 @@ OrgService::Service::~Service() {
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
+::grpc::Status OrgService::Service::BatchSet(::grpc::ServerContext* context, const ::city::economy::v2::BatchSetRequest* request, ::city::economy::v2::BatchSetResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
 ::grpc::Status OrgService::Service::DeltaUpdateOrg(::grpc::ServerContext* context, const ::city::economy::v2::DeltaUpdateOrgRequest* request, ::city::economy::v2::DeltaUpdateOrgResponse* response) {
   (void) context;
   (void) request;
@@ -2806,7 +839,42 @@ OrgService::Service::~Service() {
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
+::grpc::Status OrgService::Service::CalculateTaxesDue(::grpc::ServerContext* context, const ::city::economy::v2::CalculateTaxesDueRequest* request, ::city::economy::v2::CalculateTaxesDueResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status OrgService::Service::CalculateConsumption(::grpc::ServerContext* context, const ::city::economy::v2::CalculateConsumptionRequest* request, ::city::economy::v2::CalculateConsumptionResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status OrgService::Service::CalculateInterest(::grpc::ServerContext* context, const ::city::economy::v2::CalculateInterestRequest* request, ::city::economy::v2::CalculateInterestResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
 ::grpc::Status OrgService::Service::CalculateRealGDP(::grpc::ServerContext* context, const ::city::economy::v2::CalculateRealGDPRequest* request, ::city::economy::v2::CalculateRealGDPResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status OrgService::Service::SaveEconomyEntities(::grpc::ServerContext* context, const ::city::economy::v2::SaveEconomyEntitiesRequest* request, ::city::economy::v2::SaveEconomyEntitiesResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status OrgService::Service::LoadEconomyEntities(::grpc::ServerContext* context, const ::city::economy::v2::LoadEconomyEntitiesRequest* request, ::city::economy::v2::LoadEconomyEntitiesResponse* response) {
   (void) context;
   (void) request;
   (void) response;

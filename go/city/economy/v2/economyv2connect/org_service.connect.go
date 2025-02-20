@@ -45,141 +45,6 @@ const (
 	OrgServiceAddAgentProcedure = "/city.economy.v2.OrgService/AddAgent"
 	// OrgServiceRemoveAgentProcedure is the fully-qualified name of the OrgService's RemoveAgent RPC.
 	OrgServiceRemoveAgentProcedure = "/city.economy.v2.OrgService/RemoveAgent"
-	// OrgServiceGetNominalGDPProcedure is the fully-qualified name of the OrgService's GetNominalGDP
-	// RPC.
-	OrgServiceGetNominalGDPProcedure = "/city.economy.v2.OrgService/GetNominalGDP"
-	// OrgServiceSetNominalGDPProcedure is the fully-qualified name of the OrgService's SetNominalGDP
-	// RPC.
-	OrgServiceSetNominalGDPProcedure = "/city.economy.v2.OrgService/SetNominalGDP"
-	// OrgServiceGetRealGDPProcedure is the fully-qualified name of the OrgService's GetRealGDP RPC.
-	OrgServiceGetRealGDPProcedure = "/city.economy.v2.OrgService/GetRealGDP"
-	// OrgServiceSetRealGDPProcedure is the fully-qualified name of the OrgService's SetRealGDP RPC.
-	OrgServiceSetRealGDPProcedure = "/city.economy.v2.OrgService/SetRealGDP"
-	// OrgServiceGetUnemploymentProcedure is the fully-qualified name of the OrgService's
-	// GetUnemployment RPC.
-	OrgServiceGetUnemploymentProcedure = "/city.economy.v2.OrgService/GetUnemployment"
-	// OrgServiceSetUnemploymentProcedure is the fully-qualified name of the OrgService's
-	// SetUnemployment RPC.
-	OrgServiceSetUnemploymentProcedure = "/city.economy.v2.OrgService/SetUnemployment"
-	// OrgServiceGetWagesProcedure is the fully-qualified name of the OrgService's GetWages RPC.
-	OrgServiceGetWagesProcedure = "/city.economy.v2.OrgService/GetWages"
-	// OrgServiceSetWagesProcedure is the fully-qualified name of the OrgService's SetWages RPC.
-	OrgServiceSetWagesProcedure = "/city.economy.v2.OrgService/SetWages"
-	// OrgServiceGetPricesProcedure is the fully-qualified name of the OrgService's GetPrices RPC.
-	OrgServiceGetPricesProcedure = "/city.economy.v2.OrgService/GetPrices"
-	// OrgServiceSetPricesProcedure is the fully-qualified name of the OrgService's SetPrices RPC.
-	OrgServiceSetPricesProcedure = "/city.economy.v2.OrgService/SetPrices"
-	// OrgServiceGetInventoryProcedure is the fully-qualified name of the OrgService's GetInventory RPC.
-	OrgServiceGetInventoryProcedure = "/city.economy.v2.OrgService/GetInventory"
-	// OrgServiceSetInventoryProcedure is the fully-qualified name of the OrgService's SetInventory RPC.
-	OrgServiceSetInventoryProcedure = "/city.economy.v2.OrgService/SetInventory"
-	// OrgServiceAddInventoryProcedure is the fully-qualified name of the OrgService's AddInventory RPC.
-	OrgServiceAddInventoryProcedure = "/city.economy.v2.OrgService/AddInventory"
-	// OrgServiceGetPriceProcedure is the fully-qualified name of the OrgService's GetPrice RPC.
-	OrgServiceGetPriceProcedure = "/city.economy.v2.OrgService/GetPrice"
-	// OrgServiceSetPriceProcedure is the fully-qualified name of the OrgService's SetPrice RPC.
-	OrgServiceSetPriceProcedure = "/city.economy.v2.OrgService/SetPrice"
-	// OrgServiceAddPriceProcedure is the fully-qualified name of the OrgService's AddPrice RPC.
-	OrgServiceAddPriceProcedure = "/city.economy.v2.OrgService/AddPrice"
-	// OrgServiceGetCurrencyProcedure is the fully-qualified name of the OrgService's GetCurrency RPC.
-	OrgServiceGetCurrencyProcedure = "/city.economy.v2.OrgService/GetCurrency"
-	// OrgServiceSetCurrencyProcedure is the fully-qualified name of the OrgService's SetCurrency RPC.
-	OrgServiceSetCurrencyProcedure = "/city.economy.v2.OrgService/SetCurrency"
-	// OrgServiceAddCurrencyProcedure is the fully-qualified name of the OrgService's AddCurrency RPC.
-	OrgServiceAddCurrencyProcedure = "/city.economy.v2.OrgService/AddCurrency"
-	// OrgServiceGetInterestRateProcedure is the fully-qualified name of the OrgService's
-	// GetInterestRate RPC.
-	OrgServiceGetInterestRateProcedure = "/city.economy.v2.OrgService/GetInterestRate"
-	// OrgServiceSetInterestRateProcedure is the fully-qualified name of the OrgService's
-	// SetInterestRate RPC.
-	OrgServiceSetInterestRateProcedure = "/city.economy.v2.OrgService/SetInterestRate"
-	// OrgServiceAddInterestRateProcedure is the fully-qualified name of the OrgService's
-	// AddInterestRate RPC.
-	OrgServiceAddInterestRateProcedure = "/city.economy.v2.OrgService/AddInterestRate"
-	// OrgServiceGetBracketCutoffsProcedure is the fully-qualified name of the OrgService's
-	// GetBracketCutoffs RPC.
-	OrgServiceGetBracketCutoffsProcedure = "/city.economy.v2.OrgService/GetBracketCutoffs"
-	// OrgServiceSetBracketCutoffsProcedure is the fully-qualified name of the OrgService's
-	// SetBracketCutoffs RPC.
-	OrgServiceSetBracketCutoffsProcedure = "/city.economy.v2.OrgService/SetBracketCutoffs"
-	// OrgServiceGetBracketRatesProcedure is the fully-qualified name of the OrgService's
-	// GetBracketRates RPC.
-	OrgServiceGetBracketRatesProcedure = "/city.economy.v2.OrgService/GetBracketRates"
-	// OrgServiceSetBracketRatesProcedure is the fully-qualified name of the OrgService's
-	// SetBracketRates RPC.
-	OrgServiceSetBracketRatesProcedure = "/city.economy.v2.OrgService/SetBracketRates"
-	// OrgServiceCalculateTaxesDueProcedure is the fully-qualified name of the OrgService's
-	// CalculateTaxesDue RPC.
-	OrgServiceCalculateTaxesDueProcedure = "/city.economy.v2.OrgService/CalculateTaxesDue"
-	// OrgServiceCalculateConsumptionProcedure is the fully-qualified name of the OrgService's
-	// CalculateConsumption RPC.
-	OrgServiceCalculateConsumptionProcedure = "/city.economy.v2.OrgService/CalculateConsumption"
-	// OrgServiceCalculateInterestProcedure is the fully-qualified name of the OrgService's
-	// CalculateInterest RPC.
-	OrgServiceCalculateInterestProcedure = "/city.economy.v2.OrgService/CalculateInterest"
-	// OrgServiceSaveEconomyEntitiesProcedure is the fully-qualified name of the OrgService's
-	// SaveEconomyEntities RPC.
-	OrgServiceSaveEconomyEntitiesProcedure = "/city.economy.v2.OrgService/SaveEconomyEntities"
-	// OrgServiceLoadEconomyEntitiesProcedure is the fully-qualified name of the OrgService's
-	// LoadEconomyEntities RPC.
-	OrgServiceLoadEconomyEntitiesProcedure = "/city.economy.v2.OrgService/LoadEconomyEntities"
-	// OrgServiceGetConsumptionCurrencyProcedure is the fully-qualified name of the OrgService's
-	// GetConsumptionCurrency RPC.
-	OrgServiceGetConsumptionCurrencyProcedure = "/city.economy.v2.OrgService/GetConsumptionCurrency"
-	// OrgServiceSetConsumptionCurrencyProcedure is the fully-qualified name of the OrgService's
-	// SetConsumptionCurrency RPC.
-	OrgServiceSetConsumptionCurrencyProcedure = "/city.economy.v2.OrgService/SetConsumptionCurrency"
-	// OrgServiceGetConsumptionPropensityProcedure is the fully-qualified name of the OrgService's
-	// GetConsumptionPropensity RPC.
-	OrgServiceGetConsumptionPropensityProcedure = "/city.economy.v2.OrgService/GetConsumptionPropensity"
-	// OrgServiceSetConsumptionPropensityProcedure is the fully-qualified name of the OrgService's
-	// SetConsumptionPropensity RPC.
-	OrgServiceSetConsumptionPropensityProcedure = "/city.economy.v2.OrgService/SetConsumptionPropensity"
-	// OrgServiceGetIncomeCurrencyProcedure is the fully-qualified name of the OrgService's
-	// GetIncomeCurrency RPC.
-	OrgServiceGetIncomeCurrencyProcedure = "/city.economy.v2.OrgService/GetIncomeCurrency"
-	// OrgServiceSetIncomeCurrencyProcedure is the fully-qualified name of the OrgService's
-	// SetIncomeCurrency RPC.
-	OrgServiceSetIncomeCurrencyProcedure = "/city.economy.v2.OrgService/SetIncomeCurrency"
-	// OrgServiceGetDepressionProcedure is the fully-qualified name of the OrgService's GetDepression
-	// RPC.
-	OrgServiceGetDepressionProcedure = "/city.economy.v2.OrgService/GetDepression"
-	// OrgServiceSetDepressionProcedure is the fully-qualified name of the OrgService's SetDepression
-	// RPC.
-	OrgServiceSetDepressionProcedure = "/city.economy.v2.OrgService/SetDepression"
-	// OrgServiceGetLocusControlProcedure is the fully-qualified name of the OrgService's
-	// GetLocusControl RPC.
-	OrgServiceGetLocusControlProcedure = "/city.economy.v2.OrgService/GetLocusControl"
-	// OrgServiceSetLocusControlProcedure is the fully-qualified name of the OrgService's
-	// SetLocusControl RPC.
-	OrgServiceSetLocusControlProcedure = "/city.economy.v2.OrgService/SetLocusControl"
-	// OrgServiceGetWorkingHoursProcedure is the fully-qualified name of the OrgService's
-	// GetWorkingHours RPC.
-	OrgServiceGetWorkingHoursProcedure = "/city.economy.v2.OrgService/GetWorkingHours"
-	// OrgServiceSetWorkingHoursProcedure is the fully-qualified name of the OrgService's
-	// SetWorkingHours RPC.
-	OrgServiceSetWorkingHoursProcedure = "/city.economy.v2.OrgService/SetWorkingHours"
-	// OrgServiceGetOrgEntityIdsProcedure is the fully-qualified name of the OrgService's
-	// GetOrgEntityIds RPC.
-	OrgServiceGetOrgEntityIdsProcedure = "/city.economy.v2.OrgService/GetOrgEntityIds"
-	// OrgServiceGetEmployeesProcedure is the fully-qualified name of the OrgService's GetEmployees RPC.
-	OrgServiceGetEmployeesProcedure = "/city.economy.v2.OrgService/GetEmployees"
-	// OrgServiceSetEmployeesProcedure is the fully-qualified name of the OrgService's SetEmployees RPC.
-	OrgServiceSetEmployeesProcedure = "/city.economy.v2.OrgService/SetEmployees"
-	// OrgServiceAddEmployeeProcedure is the fully-qualified name of the OrgService's AddEmployee RPC.
-	OrgServiceAddEmployeeProcedure = "/city.economy.v2.OrgService/AddEmployee"
-	// OrgServiceRemoveEmployeeProcedure is the fully-qualified name of the OrgService's RemoveEmployee
-	// RPC.
-	OrgServiceRemoveEmployeeProcedure = "/city.economy.v2.OrgService/RemoveEmployee"
-	// OrgServiceGetCitizensProcedure is the fully-qualified name of the OrgService's GetCitizens RPC.
-	OrgServiceGetCitizensProcedure = "/city.economy.v2.OrgService/GetCitizens"
-	// OrgServiceSetCitizensProcedure is the fully-qualified name of the OrgService's SetCitizens RPC.
-	OrgServiceSetCitizensProcedure = "/city.economy.v2.OrgService/SetCitizens"
-	// OrgServiceAddCitizenProcedure is the fully-qualified name of the OrgService's AddCitizen RPC.
-	OrgServiceAddCitizenProcedure = "/city.economy.v2.OrgService/AddCitizen"
-	// OrgServiceRemoveCitizenProcedure is the fully-qualified name of the OrgService's RemoveCitizen
-	// RPC.
-	OrgServiceRemoveCitizenProcedure = "/city.economy.v2.OrgService/RemoveCitizen"
 	// OrgServiceGetAgentProcedure is the fully-qualified name of the OrgService's GetAgent RPC.
 	OrgServiceGetAgentProcedure = "/city.economy.v2.OrgService/GetAgent"
 	// OrgServiceUpdateAgentProcedure is the fully-qualified name of the OrgService's UpdateAgent RPC.
@@ -188,6 +53,8 @@ const (
 	OrgServiceBatchGetProcedure = "/city.economy.v2.OrgService/BatchGet"
 	// OrgServiceBatchUpdateProcedure is the fully-qualified name of the OrgService's BatchUpdate RPC.
 	OrgServiceBatchUpdateProcedure = "/city.economy.v2.OrgService/BatchUpdate"
+	// OrgServiceBatchSetProcedure is the fully-qualified name of the OrgService's BatchSet RPC.
+	OrgServiceBatchSetProcedure = "/city.economy.v2.OrgService/BatchSet"
 	// OrgServiceDeltaUpdateOrgProcedure is the fully-qualified name of the OrgService's DeltaUpdateOrg
 	// RPC.
 	OrgServiceDeltaUpdateOrgProcedure = "/city.economy.v2.OrgService/DeltaUpdateOrg"
@@ -197,122 +64,68 @@ const (
 	// OrgServiceBatchDeltaUpdateProcedure is the fully-qualified name of the OrgService's
 	// BatchDeltaUpdate RPC.
 	OrgServiceBatchDeltaUpdateProcedure = "/city.economy.v2.OrgService/BatchDeltaUpdate"
+	// OrgServiceCalculateTaxesDueProcedure is the fully-qualified name of the OrgService's
+	// CalculateTaxesDue RPC.
+	OrgServiceCalculateTaxesDueProcedure = "/city.economy.v2.OrgService/CalculateTaxesDue"
+	// OrgServiceCalculateConsumptionProcedure is the fully-qualified name of the OrgService's
+	// CalculateConsumption RPC.
+	OrgServiceCalculateConsumptionProcedure = "/city.economy.v2.OrgService/CalculateConsumption"
+	// OrgServiceCalculateInterestProcedure is the fully-qualified name of the OrgService's
+	// CalculateInterest RPC.
+	OrgServiceCalculateInterestProcedure = "/city.economy.v2.OrgService/CalculateInterest"
 	// OrgServiceCalculateRealGDPProcedure is the fully-qualified name of the OrgService's
 	// CalculateRealGDP RPC.
 	OrgServiceCalculateRealGDPProcedure = "/city.economy.v2.OrgService/CalculateRealGDP"
+	// OrgServiceSaveEconomyEntitiesProcedure is the fully-qualified name of the OrgService's
+	// SaveEconomyEntities RPC.
+	OrgServiceSaveEconomyEntitiesProcedure = "/city.economy.v2.OrgService/SaveEconomyEntities"
+	// OrgServiceLoadEconomyEntitiesProcedure is the fully-qualified name of the OrgService's
+	// LoadEconomyEntities RPC.
+	OrgServiceLoadEconomyEntitiesProcedure = "/city.economy.v2.OrgService/LoadEconomyEntities"
 )
 
 // OrgServiceClient is a client for the city.economy.v2.OrgService service.
 type OrgServiceClient interface {
-	// 添加组织
-	// add org
+	// AddOrg 添加一个新的组织到系统中
 	AddOrg(context.Context, *connect.Request[v2.AddOrgRequest]) (*connect.Response[v2.AddOrgResponse], error)
-	// 移除组织
-	// remove org
+	// RemoveOrg 从系统中移除指定的组织
 	RemoveOrg(context.Context, *connect.Request[v2.RemoveOrgRequest]) (*connect.Response[v2.RemoveOrgResponse], error)
-	// 获取组织
-	// get org
+	// GetOrg 获取指定组织的完整信息
 	GetOrg(context.Context, *connect.Request[v2.GetOrgRequest]) (*connect.Response[v2.GetOrgResponse], error)
-	// 更新组织
-	// update org
+	// UpdateOrg 更新指定组织的信息
 	UpdateOrg(context.Context, *connect.Request[v2.UpdateOrgRequest]) (*connect.Response[v2.UpdateOrgResponse], error)
-	// 添加Agent
-	// add agent
+	// AddAgent 添加一个新的代理到系统中
 	AddAgent(context.Context, *connect.Request[v2.AddAgentRequest]) (*connect.Response[v2.AddAgentResponse], error)
-	// 移除Agent
-	// remove agent
+	// RemoveAgent 从系统中移除指定的代理
 	RemoveAgent(context.Context, *connect.Request[v2.RemoveAgentRequest]) (*connect.Response[v2.RemoveAgentResponse], error)
-	// Nominal GDP
-	GetNominalGDP(context.Context, *connect.Request[v2.GetNominalGDPRequest]) (*connect.Response[v2.GetNominalGDPResponse], error)
-	SetNominalGDP(context.Context, *connect.Request[v2.SetNominalGDPRequest]) (*connect.Response[v2.SetNominalGDPResponse], error)
-	// Real GDP
-	GetRealGDP(context.Context, *connect.Request[v2.GetRealGDPRequest]) (*connect.Response[v2.GetRealGDPResponse], error)
-	SetRealGDP(context.Context, *connect.Request[v2.SetRealGDPRequest]) (*connect.Response[v2.SetRealGDPResponse], error)
-	// Unemployment
-	GetUnemployment(context.Context, *connect.Request[v2.GetUnemploymentRequest]) (*connect.Response[v2.GetUnemploymentResponse], error)
-	SetUnemployment(context.Context, *connect.Request[v2.SetUnemploymentRequest]) (*connect.Response[v2.SetUnemploymentResponse], error)
-	// Wages
-	GetWages(context.Context, *connect.Request[v2.GetWagesRequest]) (*connect.Response[v2.GetWagesResponse], error)
-	SetWages(context.Context, *connect.Request[v2.SetWagesRequest]) (*connect.Response[v2.SetWagesResponse], error)
-	// Prices
-	GetPrices(context.Context, *connect.Request[v2.GetPricesRequest]) (*connect.Response[v2.GetPricesResponse], error)
-	SetPrices(context.Context, *connect.Request[v2.SetPricesRequest]) (*connect.Response[v2.SetPricesResponse], error)
-	// Inventory
-	GetInventory(context.Context, *connect.Request[v2.GetInventoryRequest]) (*connect.Response[v2.GetInventoryResponse], error)
-	SetInventory(context.Context, *connect.Request[v2.SetInventoryRequest]) (*connect.Response[v2.SetInventoryResponse], error)
-	AddInventory(context.Context, *connect.Request[v2.AddInventoryRequest]) (*connect.Response[v2.AddInventoryResponse], error)
-	// Price
-	GetPrice(context.Context, *connect.Request[v2.GetPriceRequest]) (*connect.Response[v2.GetPriceResponse], error)
-	SetPrice(context.Context, *connect.Request[v2.SetPriceRequest]) (*connect.Response[v2.SetPriceResponse], error)
-	AddPrice(context.Context, *connect.Request[v2.AddPriceRequest]) (*connect.Response[v2.AddPriceResponse], error)
-	// Currency
-	GetCurrency(context.Context, *connect.Request[v2.GetCurrencyRequest]) (*connect.Response[v2.GetCurrencyResponse], error)
-	SetCurrency(context.Context, *connect.Request[v2.SetCurrencyRequest]) (*connect.Response[v2.SetCurrencyResponse], error)
-	AddCurrency(context.Context, *connect.Request[v2.AddCurrencyRequest]) (*connect.Response[v2.AddCurrencyResponse], error)
-	// Interest Rate
-	GetInterestRate(context.Context, *connect.Request[v2.GetInterestRateRequest]) (*connect.Response[v2.GetInterestRateResponse], error)
-	SetInterestRate(context.Context, *connect.Request[v2.SetInterestRateRequest]) (*connect.Response[v2.SetInterestRateResponse], error)
-	AddInterestRate(context.Context, *connect.Request[v2.AddInterestRateRequest]) (*connect.Response[v2.AddInterestRateResponse], error)
-	// Bracket Cutoffs
-	GetBracketCutoffs(context.Context, *connect.Request[v2.GetBracketCutoffsRequest]) (*connect.Response[v2.GetBracketCutoffsResponse], error)
-	SetBracketCutoffs(context.Context, *connect.Request[v2.SetBracketCutoffsRequest]) (*connect.Response[v2.SetBracketCutoffsResponse], error)
-	// Bracket Rates
-	GetBracketRates(context.Context, *connect.Request[v2.GetBracketRatesRequest]) (*connect.Response[v2.GetBracketRatesResponse], error)
-	SetBracketRates(context.Context, *connect.Request[v2.SetBracketRatesRequest]) (*connect.Response[v2.SetBracketRatesResponse], error)
-	// Taxes Due
-	CalculateTaxesDue(context.Context, *connect.Request[v2.CalculateTaxesDueRequest]) (*connect.Response[v2.CalculateTaxesDueResponse], error)
-	// Consumption
-	CalculateConsumption(context.Context, *connect.Request[v2.CalculateConsumptionRequest]) (*connect.Response[v2.CalculateConsumptionResponse], error)
-	// Consumption
-	CalculateInterest(context.Context, *connect.Request[v2.CalculateInterestRequest]) (*connect.Response[v2.CalculateInterestResponse], error)
-	// Save
-	SaveEconomyEntities(context.Context, *connect.Request[v2.SaveEconomyEntitiesRequest]) (*connect.Response[v2.SaveEconomyEntitiesResponse], error)
-	// Load
-	LoadEconomyEntities(context.Context, *connect.Request[v2.LoadEconomyEntitiesRequest]) (*connect.Response[v2.LoadEconomyEntitiesResponse], error)
-	// Consumption Currency
-	GetConsumptionCurrency(context.Context, *connect.Request[v2.GetConsumptionCurrencyRequest]) (*connect.Response[v2.GetConsumptionCurrencyResponse], error)
-	SetConsumptionCurrency(context.Context, *connect.Request[v2.SetConsumptionCurrencyRequest]) (*connect.Response[v2.SetConsumptionCurrencyResponse], error)
-	// Consumption Propensity
-	GetConsumptionPropensity(context.Context, *connect.Request[v2.GetConsumptionPropensityRequest]) (*connect.Response[v2.GetConsumptionPropensityResponse], error)
-	SetConsumptionPropensity(context.Context, *connect.Request[v2.SetConsumptionPropensityRequest]) (*connect.Response[v2.SetConsumptionPropensityResponse], error)
-	// Income Currency
-	GetIncomeCurrency(context.Context, *connect.Request[v2.GetIncomeCurrencyRequest]) (*connect.Response[v2.GetIncomeCurrencyResponse], error)
-	SetIncomeCurrency(context.Context, *connect.Request[v2.SetIncomeCurrencyRequest]) (*connect.Response[v2.SetIncomeCurrencyResponse], error)
-	// Depression
-	GetDepression(context.Context, *connect.Request[v2.GetDepressionRequest]) (*connect.Response[v2.GetDepressionResponse], error)
-	SetDepression(context.Context, *connect.Request[v2.SetDepressionRequest]) (*connect.Response[v2.SetDepressionResponse], error)
-	// Locus of Control
-	GetLocusControl(context.Context, *connect.Request[v2.GetLocusControlRequest]) (*connect.Response[v2.GetLocusControlResponse], error)
-	SetLocusControl(context.Context, *connect.Request[v2.SetLocusControlRequest]) (*connect.Response[v2.SetLocusControlResponse], error)
-	// Working Hours
-	GetWorkingHours(context.Context, *connect.Request[v2.GetWorkingHoursRequest]) (*connect.Response[v2.GetWorkingHoursResponse], error)
-	SetWorkingHours(context.Context, *connect.Request[v2.SetWorkingHoursRequest]) (*connect.Response[v2.SetWorkingHoursResponse], error)
-	// Org Entity Ids
-	GetOrgEntityIds(context.Context, *connect.Request[v2.GetOrgEntityIdsRequest]) (*connect.Response[v2.GetOrgEntityIdsResponse], error)
-	// Employees 相关接口
-	GetEmployees(context.Context, *connect.Request[v2.GetEmployeesRequest]) (*connect.Response[v2.GetEmployeesResponse], error)
-	SetEmployees(context.Context, *connect.Request[v2.SetEmployeesRequest]) (*connect.Response[v2.SetEmployeesResponse], error)
-	AddEmployee(context.Context, *connect.Request[v2.AddEmployeeRequest]) (*connect.Response[v2.AddEmployeeResponse], error)
-	RemoveEmployee(context.Context, *connect.Request[v2.RemoveEmployeeRequest]) (*connect.Response[v2.RemoveEmployeeResponse], error)
-	// Citizens 相关接口
-	GetCitizens(context.Context, *connect.Request[v2.GetCitizensRequest]) (*connect.Response[v2.GetCitizensResponse], error)
-	SetCitizens(context.Context, *connect.Request[v2.SetCitizensRequest]) (*connect.Response[v2.SetCitizensResponse], error)
-	AddCitizen(context.Context, *connect.Request[v2.AddCitizenRequest]) (*connect.Response[v2.AddCitizenResponse], error)
-	RemoveCitizen(context.Context, *connect.Request[v2.RemoveCitizenRequest]) (*connect.Response[v2.RemoveCitizenResponse], error)
-	// Agent 相关接口
+	// GetAgent 获取指定代理的完整信息
 	GetAgent(context.Context, *connect.Request[v2.GetAgentRequest]) (*connect.Response[v2.GetAgentResponse], error)
+	// UpdateAgent 更新指定代理的信息
 	UpdateAgent(context.Context, *connect.Request[v2.UpdateAgentRequest]) (*connect.Response[v2.UpdateAgentResponse], error)
-	// 批量获取
+	// BatchGet 批量获取多个组织或代理的信息
 	BatchGet(context.Context, *connect.Request[v2.BatchGetRequest]) (*connect.Response[v2.BatchGetResponse], error)
-	// 批量更新
+	// BatchUpdate 批量更新多个组织或代理的信息，只更新请求中指定的字段
 	BatchUpdate(context.Context, *connect.Request[v2.BatchUpdateRequest]) (*connect.Response[v2.BatchUpdateResponse], error)
-	// 增量更新
+	// BatchSet 批量设置多个组织或代理的信息，完全替换所有字段
+	BatchSet(context.Context, *connect.Request[v2.BatchSetRequest]) (*connect.Response[v2.BatchSetResponse], error)
+	// DeltaUpdateOrg 对组织进行增量更新
 	DeltaUpdateOrg(context.Context, *connect.Request[v2.DeltaUpdateOrgRequest]) (*connect.Response[v2.DeltaUpdateOrgResponse], error)
+	// DeltaUpdateAgent 对代理进行增量更新
 	DeltaUpdateAgent(context.Context, *connect.Request[v2.DeltaUpdateAgentRequest]) (*connect.Response[v2.DeltaUpdateAgentResponse], error)
-	// 批量增量更新
+	// BatchDeltaUpdate 批量进行增量更新
 	BatchDeltaUpdate(context.Context, *connect.Request[v2.BatchDeltaUpdateRequest]) (*connect.Response[v2.BatchDeltaUpdateResponse], error)
-	// 计算实际GDP
+	// CalculateTaxesDue 计算应缴税额并可选择进行再分配
+	CalculateTaxesDue(context.Context, *connect.Request[v2.CalculateTaxesDueRequest]) (*connect.Response[v2.CalculateTaxesDueResponse], error)
+	// CalculateConsumption 计算代理的消费情况
+	CalculateConsumption(context.Context, *connect.Request[v2.CalculateConsumptionRequest]) (*connect.Response[v2.CalculateConsumptionResponse], error)
+	// CalculateInterest 计算银行利息
+	CalculateInterest(context.Context, *connect.Request[v2.CalculateInterestRequest]) (*connect.Response[v2.CalculateInterestResponse], error)
+	// CalculateRealGDP 计算实际GDP
 	CalculateRealGDP(context.Context, *connect.Request[v2.CalculateRealGDPRequest]) (*connect.Response[v2.CalculateRealGDPResponse], error)
+	// SaveEconomyEntities 保存经济系统的当前状态
+	SaveEconomyEntities(context.Context, *connect.Request[v2.SaveEconomyEntitiesRequest]) (*connect.Response[v2.SaveEconomyEntitiesResponse], error)
+	// LoadEconomyEntities 加载经济系统的状态
+	LoadEconomyEntities(context.Context, *connect.Request[v2.LoadEconomyEntitiesRequest]) (*connect.Response[v2.LoadEconomyEntitiesResponse], error)
 }
 
 // NewOrgServiceClient constructs a client for the city.economy.v2.OrgService service. By default,
@@ -362,318 +175,6 @@ func NewOrgServiceClient(httpClient connect.HTTPClient, baseURL string, opts ...
 			connect.WithSchema(orgServiceMethods.ByName("RemoveAgent")),
 			connect.WithClientOptions(opts...),
 		),
-		getNominalGDP: connect.NewClient[v2.GetNominalGDPRequest, v2.GetNominalGDPResponse](
-			httpClient,
-			baseURL+OrgServiceGetNominalGDPProcedure,
-			connect.WithSchema(orgServiceMethods.ByName("GetNominalGDP")),
-			connect.WithClientOptions(opts...),
-		),
-		setNominalGDP: connect.NewClient[v2.SetNominalGDPRequest, v2.SetNominalGDPResponse](
-			httpClient,
-			baseURL+OrgServiceSetNominalGDPProcedure,
-			connect.WithSchema(orgServiceMethods.ByName("SetNominalGDP")),
-			connect.WithClientOptions(opts...),
-		),
-		getRealGDP: connect.NewClient[v2.GetRealGDPRequest, v2.GetRealGDPResponse](
-			httpClient,
-			baseURL+OrgServiceGetRealGDPProcedure,
-			connect.WithSchema(orgServiceMethods.ByName("GetRealGDP")),
-			connect.WithClientOptions(opts...),
-		),
-		setRealGDP: connect.NewClient[v2.SetRealGDPRequest, v2.SetRealGDPResponse](
-			httpClient,
-			baseURL+OrgServiceSetRealGDPProcedure,
-			connect.WithSchema(orgServiceMethods.ByName("SetRealGDP")),
-			connect.WithClientOptions(opts...),
-		),
-		getUnemployment: connect.NewClient[v2.GetUnemploymentRequest, v2.GetUnemploymentResponse](
-			httpClient,
-			baseURL+OrgServiceGetUnemploymentProcedure,
-			connect.WithSchema(orgServiceMethods.ByName("GetUnemployment")),
-			connect.WithClientOptions(opts...),
-		),
-		setUnemployment: connect.NewClient[v2.SetUnemploymentRequest, v2.SetUnemploymentResponse](
-			httpClient,
-			baseURL+OrgServiceSetUnemploymentProcedure,
-			connect.WithSchema(orgServiceMethods.ByName("SetUnemployment")),
-			connect.WithClientOptions(opts...),
-		),
-		getWages: connect.NewClient[v2.GetWagesRequest, v2.GetWagesResponse](
-			httpClient,
-			baseURL+OrgServiceGetWagesProcedure,
-			connect.WithSchema(orgServiceMethods.ByName("GetWages")),
-			connect.WithClientOptions(opts...),
-		),
-		setWages: connect.NewClient[v2.SetWagesRequest, v2.SetWagesResponse](
-			httpClient,
-			baseURL+OrgServiceSetWagesProcedure,
-			connect.WithSchema(orgServiceMethods.ByName("SetWages")),
-			connect.WithClientOptions(opts...),
-		),
-		getPrices: connect.NewClient[v2.GetPricesRequest, v2.GetPricesResponse](
-			httpClient,
-			baseURL+OrgServiceGetPricesProcedure,
-			connect.WithSchema(orgServiceMethods.ByName("GetPrices")),
-			connect.WithClientOptions(opts...),
-		),
-		setPrices: connect.NewClient[v2.SetPricesRequest, v2.SetPricesResponse](
-			httpClient,
-			baseURL+OrgServiceSetPricesProcedure,
-			connect.WithSchema(orgServiceMethods.ByName("SetPrices")),
-			connect.WithClientOptions(opts...),
-		),
-		getInventory: connect.NewClient[v2.GetInventoryRequest, v2.GetInventoryResponse](
-			httpClient,
-			baseURL+OrgServiceGetInventoryProcedure,
-			connect.WithSchema(orgServiceMethods.ByName("GetInventory")),
-			connect.WithClientOptions(opts...),
-		),
-		setInventory: connect.NewClient[v2.SetInventoryRequest, v2.SetInventoryResponse](
-			httpClient,
-			baseURL+OrgServiceSetInventoryProcedure,
-			connect.WithSchema(orgServiceMethods.ByName("SetInventory")),
-			connect.WithClientOptions(opts...),
-		),
-		addInventory: connect.NewClient[v2.AddInventoryRequest, v2.AddInventoryResponse](
-			httpClient,
-			baseURL+OrgServiceAddInventoryProcedure,
-			connect.WithSchema(orgServiceMethods.ByName("AddInventory")),
-			connect.WithClientOptions(opts...),
-		),
-		getPrice: connect.NewClient[v2.GetPriceRequest, v2.GetPriceResponse](
-			httpClient,
-			baseURL+OrgServiceGetPriceProcedure,
-			connect.WithSchema(orgServiceMethods.ByName("GetPrice")),
-			connect.WithClientOptions(opts...),
-		),
-		setPrice: connect.NewClient[v2.SetPriceRequest, v2.SetPriceResponse](
-			httpClient,
-			baseURL+OrgServiceSetPriceProcedure,
-			connect.WithSchema(orgServiceMethods.ByName("SetPrice")),
-			connect.WithClientOptions(opts...),
-		),
-		addPrice: connect.NewClient[v2.AddPriceRequest, v2.AddPriceResponse](
-			httpClient,
-			baseURL+OrgServiceAddPriceProcedure,
-			connect.WithSchema(orgServiceMethods.ByName("AddPrice")),
-			connect.WithClientOptions(opts...),
-		),
-		getCurrency: connect.NewClient[v2.GetCurrencyRequest, v2.GetCurrencyResponse](
-			httpClient,
-			baseURL+OrgServiceGetCurrencyProcedure,
-			connect.WithSchema(orgServiceMethods.ByName("GetCurrency")),
-			connect.WithClientOptions(opts...),
-		),
-		setCurrency: connect.NewClient[v2.SetCurrencyRequest, v2.SetCurrencyResponse](
-			httpClient,
-			baseURL+OrgServiceSetCurrencyProcedure,
-			connect.WithSchema(orgServiceMethods.ByName("SetCurrency")),
-			connect.WithClientOptions(opts...),
-		),
-		addCurrency: connect.NewClient[v2.AddCurrencyRequest, v2.AddCurrencyResponse](
-			httpClient,
-			baseURL+OrgServiceAddCurrencyProcedure,
-			connect.WithSchema(orgServiceMethods.ByName("AddCurrency")),
-			connect.WithClientOptions(opts...),
-		),
-		getInterestRate: connect.NewClient[v2.GetInterestRateRequest, v2.GetInterestRateResponse](
-			httpClient,
-			baseURL+OrgServiceGetInterestRateProcedure,
-			connect.WithSchema(orgServiceMethods.ByName("GetInterestRate")),
-			connect.WithClientOptions(opts...),
-		),
-		setInterestRate: connect.NewClient[v2.SetInterestRateRequest, v2.SetInterestRateResponse](
-			httpClient,
-			baseURL+OrgServiceSetInterestRateProcedure,
-			connect.WithSchema(orgServiceMethods.ByName("SetInterestRate")),
-			connect.WithClientOptions(opts...),
-		),
-		addInterestRate: connect.NewClient[v2.AddInterestRateRequest, v2.AddInterestRateResponse](
-			httpClient,
-			baseURL+OrgServiceAddInterestRateProcedure,
-			connect.WithSchema(orgServiceMethods.ByName("AddInterestRate")),
-			connect.WithClientOptions(opts...),
-		),
-		getBracketCutoffs: connect.NewClient[v2.GetBracketCutoffsRequest, v2.GetBracketCutoffsResponse](
-			httpClient,
-			baseURL+OrgServiceGetBracketCutoffsProcedure,
-			connect.WithSchema(orgServiceMethods.ByName("GetBracketCutoffs")),
-			connect.WithClientOptions(opts...),
-		),
-		setBracketCutoffs: connect.NewClient[v2.SetBracketCutoffsRequest, v2.SetBracketCutoffsResponse](
-			httpClient,
-			baseURL+OrgServiceSetBracketCutoffsProcedure,
-			connect.WithSchema(orgServiceMethods.ByName("SetBracketCutoffs")),
-			connect.WithClientOptions(opts...),
-		),
-		getBracketRates: connect.NewClient[v2.GetBracketRatesRequest, v2.GetBracketRatesResponse](
-			httpClient,
-			baseURL+OrgServiceGetBracketRatesProcedure,
-			connect.WithSchema(orgServiceMethods.ByName("GetBracketRates")),
-			connect.WithClientOptions(opts...),
-		),
-		setBracketRates: connect.NewClient[v2.SetBracketRatesRequest, v2.SetBracketRatesResponse](
-			httpClient,
-			baseURL+OrgServiceSetBracketRatesProcedure,
-			connect.WithSchema(orgServiceMethods.ByName("SetBracketRates")),
-			connect.WithClientOptions(opts...),
-		),
-		calculateTaxesDue: connect.NewClient[v2.CalculateTaxesDueRequest, v2.CalculateTaxesDueResponse](
-			httpClient,
-			baseURL+OrgServiceCalculateTaxesDueProcedure,
-			connect.WithSchema(orgServiceMethods.ByName("CalculateTaxesDue")),
-			connect.WithClientOptions(opts...),
-		),
-		calculateConsumption: connect.NewClient[v2.CalculateConsumptionRequest, v2.CalculateConsumptionResponse](
-			httpClient,
-			baseURL+OrgServiceCalculateConsumptionProcedure,
-			connect.WithSchema(orgServiceMethods.ByName("CalculateConsumption")),
-			connect.WithClientOptions(opts...),
-		),
-		calculateInterest: connect.NewClient[v2.CalculateInterestRequest, v2.CalculateInterestResponse](
-			httpClient,
-			baseURL+OrgServiceCalculateInterestProcedure,
-			connect.WithSchema(orgServiceMethods.ByName("CalculateInterest")),
-			connect.WithClientOptions(opts...),
-		),
-		saveEconomyEntities: connect.NewClient[v2.SaveEconomyEntitiesRequest, v2.SaveEconomyEntitiesResponse](
-			httpClient,
-			baseURL+OrgServiceSaveEconomyEntitiesProcedure,
-			connect.WithSchema(orgServiceMethods.ByName("SaveEconomyEntities")),
-			connect.WithClientOptions(opts...),
-		),
-		loadEconomyEntities: connect.NewClient[v2.LoadEconomyEntitiesRequest, v2.LoadEconomyEntitiesResponse](
-			httpClient,
-			baseURL+OrgServiceLoadEconomyEntitiesProcedure,
-			connect.WithSchema(orgServiceMethods.ByName("LoadEconomyEntities")),
-			connect.WithClientOptions(opts...),
-		),
-		getConsumptionCurrency: connect.NewClient[v2.GetConsumptionCurrencyRequest, v2.GetConsumptionCurrencyResponse](
-			httpClient,
-			baseURL+OrgServiceGetConsumptionCurrencyProcedure,
-			connect.WithSchema(orgServiceMethods.ByName("GetConsumptionCurrency")),
-			connect.WithClientOptions(opts...),
-		),
-		setConsumptionCurrency: connect.NewClient[v2.SetConsumptionCurrencyRequest, v2.SetConsumptionCurrencyResponse](
-			httpClient,
-			baseURL+OrgServiceSetConsumptionCurrencyProcedure,
-			connect.WithSchema(orgServiceMethods.ByName("SetConsumptionCurrency")),
-			connect.WithClientOptions(opts...),
-		),
-		getConsumptionPropensity: connect.NewClient[v2.GetConsumptionPropensityRequest, v2.GetConsumptionPropensityResponse](
-			httpClient,
-			baseURL+OrgServiceGetConsumptionPropensityProcedure,
-			connect.WithSchema(orgServiceMethods.ByName("GetConsumptionPropensity")),
-			connect.WithClientOptions(opts...),
-		),
-		setConsumptionPropensity: connect.NewClient[v2.SetConsumptionPropensityRequest, v2.SetConsumptionPropensityResponse](
-			httpClient,
-			baseURL+OrgServiceSetConsumptionPropensityProcedure,
-			connect.WithSchema(orgServiceMethods.ByName("SetConsumptionPropensity")),
-			connect.WithClientOptions(opts...),
-		),
-		getIncomeCurrency: connect.NewClient[v2.GetIncomeCurrencyRequest, v2.GetIncomeCurrencyResponse](
-			httpClient,
-			baseURL+OrgServiceGetIncomeCurrencyProcedure,
-			connect.WithSchema(orgServiceMethods.ByName("GetIncomeCurrency")),
-			connect.WithClientOptions(opts...),
-		),
-		setIncomeCurrency: connect.NewClient[v2.SetIncomeCurrencyRequest, v2.SetIncomeCurrencyResponse](
-			httpClient,
-			baseURL+OrgServiceSetIncomeCurrencyProcedure,
-			connect.WithSchema(orgServiceMethods.ByName("SetIncomeCurrency")),
-			connect.WithClientOptions(opts...),
-		),
-		getDepression: connect.NewClient[v2.GetDepressionRequest, v2.GetDepressionResponse](
-			httpClient,
-			baseURL+OrgServiceGetDepressionProcedure,
-			connect.WithSchema(orgServiceMethods.ByName("GetDepression")),
-			connect.WithClientOptions(opts...),
-		),
-		setDepression: connect.NewClient[v2.SetDepressionRequest, v2.SetDepressionResponse](
-			httpClient,
-			baseURL+OrgServiceSetDepressionProcedure,
-			connect.WithSchema(orgServiceMethods.ByName("SetDepression")),
-			connect.WithClientOptions(opts...),
-		),
-		getLocusControl: connect.NewClient[v2.GetLocusControlRequest, v2.GetLocusControlResponse](
-			httpClient,
-			baseURL+OrgServiceGetLocusControlProcedure,
-			connect.WithSchema(orgServiceMethods.ByName("GetLocusControl")),
-			connect.WithClientOptions(opts...),
-		),
-		setLocusControl: connect.NewClient[v2.SetLocusControlRequest, v2.SetLocusControlResponse](
-			httpClient,
-			baseURL+OrgServiceSetLocusControlProcedure,
-			connect.WithSchema(orgServiceMethods.ByName("SetLocusControl")),
-			connect.WithClientOptions(opts...),
-		),
-		getWorkingHours: connect.NewClient[v2.GetWorkingHoursRequest, v2.GetWorkingHoursResponse](
-			httpClient,
-			baseURL+OrgServiceGetWorkingHoursProcedure,
-			connect.WithSchema(orgServiceMethods.ByName("GetWorkingHours")),
-			connect.WithClientOptions(opts...),
-		),
-		setWorkingHours: connect.NewClient[v2.SetWorkingHoursRequest, v2.SetWorkingHoursResponse](
-			httpClient,
-			baseURL+OrgServiceSetWorkingHoursProcedure,
-			connect.WithSchema(orgServiceMethods.ByName("SetWorkingHours")),
-			connect.WithClientOptions(opts...),
-		),
-		getOrgEntityIds: connect.NewClient[v2.GetOrgEntityIdsRequest, v2.GetOrgEntityIdsResponse](
-			httpClient,
-			baseURL+OrgServiceGetOrgEntityIdsProcedure,
-			connect.WithSchema(orgServiceMethods.ByName("GetOrgEntityIds")),
-			connect.WithClientOptions(opts...),
-		),
-		getEmployees: connect.NewClient[v2.GetEmployeesRequest, v2.GetEmployeesResponse](
-			httpClient,
-			baseURL+OrgServiceGetEmployeesProcedure,
-			connect.WithSchema(orgServiceMethods.ByName("GetEmployees")),
-			connect.WithClientOptions(opts...),
-		),
-		setEmployees: connect.NewClient[v2.SetEmployeesRequest, v2.SetEmployeesResponse](
-			httpClient,
-			baseURL+OrgServiceSetEmployeesProcedure,
-			connect.WithSchema(orgServiceMethods.ByName("SetEmployees")),
-			connect.WithClientOptions(opts...),
-		),
-		addEmployee: connect.NewClient[v2.AddEmployeeRequest, v2.AddEmployeeResponse](
-			httpClient,
-			baseURL+OrgServiceAddEmployeeProcedure,
-			connect.WithSchema(orgServiceMethods.ByName("AddEmployee")),
-			connect.WithClientOptions(opts...),
-		),
-		removeEmployee: connect.NewClient[v2.RemoveEmployeeRequest, v2.RemoveEmployeeResponse](
-			httpClient,
-			baseURL+OrgServiceRemoveEmployeeProcedure,
-			connect.WithSchema(orgServiceMethods.ByName("RemoveEmployee")),
-			connect.WithClientOptions(opts...),
-		),
-		getCitizens: connect.NewClient[v2.GetCitizensRequest, v2.GetCitizensResponse](
-			httpClient,
-			baseURL+OrgServiceGetCitizensProcedure,
-			connect.WithSchema(orgServiceMethods.ByName("GetCitizens")),
-			connect.WithClientOptions(opts...),
-		),
-		setCitizens: connect.NewClient[v2.SetCitizensRequest, v2.SetCitizensResponse](
-			httpClient,
-			baseURL+OrgServiceSetCitizensProcedure,
-			connect.WithSchema(orgServiceMethods.ByName("SetCitizens")),
-			connect.WithClientOptions(opts...),
-		),
-		addCitizen: connect.NewClient[v2.AddCitizenRequest, v2.AddCitizenResponse](
-			httpClient,
-			baseURL+OrgServiceAddCitizenProcedure,
-			connect.WithSchema(orgServiceMethods.ByName("AddCitizen")),
-			connect.WithClientOptions(opts...),
-		),
-		removeCitizen: connect.NewClient[v2.RemoveCitizenRequest, v2.RemoveCitizenResponse](
-			httpClient,
-			baseURL+OrgServiceRemoveCitizenProcedure,
-			connect.WithSchema(orgServiceMethods.ByName("RemoveCitizen")),
-			connect.WithClientOptions(opts...),
-		),
 		getAgent: connect.NewClient[v2.GetAgentRequest, v2.GetAgentResponse](
 			httpClient,
 			baseURL+OrgServiceGetAgentProcedure,
@@ -698,6 +199,12 @@ func NewOrgServiceClient(httpClient connect.HTTPClient, baseURL string, opts ...
 			connect.WithSchema(orgServiceMethods.ByName("BatchUpdate")),
 			connect.WithClientOptions(opts...),
 		),
+		batchSet: connect.NewClient[v2.BatchSetRequest, v2.BatchSetResponse](
+			httpClient,
+			baseURL+OrgServiceBatchSetProcedure,
+			connect.WithSchema(orgServiceMethods.ByName("BatchSet")),
+			connect.WithClientOptions(opts...),
+		),
 		deltaUpdateOrg: connect.NewClient[v2.DeltaUpdateOrgRequest, v2.DeltaUpdateOrgResponse](
 			httpClient,
 			baseURL+OrgServiceDeltaUpdateOrgProcedure,
@@ -716,10 +223,40 @@ func NewOrgServiceClient(httpClient connect.HTTPClient, baseURL string, opts ...
 			connect.WithSchema(orgServiceMethods.ByName("BatchDeltaUpdate")),
 			connect.WithClientOptions(opts...),
 		),
+		calculateTaxesDue: connect.NewClient[v2.CalculateTaxesDueRequest, v2.CalculateTaxesDueResponse](
+			httpClient,
+			baseURL+OrgServiceCalculateTaxesDueProcedure,
+			connect.WithSchema(orgServiceMethods.ByName("CalculateTaxesDue")),
+			connect.WithClientOptions(opts...),
+		),
+		calculateConsumption: connect.NewClient[v2.CalculateConsumptionRequest, v2.CalculateConsumptionResponse](
+			httpClient,
+			baseURL+OrgServiceCalculateConsumptionProcedure,
+			connect.WithSchema(orgServiceMethods.ByName("CalculateConsumption")),
+			connect.WithClientOptions(opts...),
+		),
+		calculateInterest: connect.NewClient[v2.CalculateInterestRequest, v2.CalculateInterestResponse](
+			httpClient,
+			baseURL+OrgServiceCalculateInterestProcedure,
+			connect.WithSchema(orgServiceMethods.ByName("CalculateInterest")),
+			connect.WithClientOptions(opts...),
+		),
 		calculateRealGDP: connect.NewClient[v2.CalculateRealGDPRequest, v2.CalculateRealGDPResponse](
 			httpClient,
 			baseURL+OrgServiceCalculateRealGDPProcedure,
 			connect.WithSchema(orgServiceMethods.ByName("CalculateRealGDP")),
+			connect.WithClientOptions(opts...),
+		),
+		saveEconomyEntities: connect.NewClient[v2.SaveEconomyEntitiesRequest, v2.SaveEconomyEntitiesResponse](
+			httpClient,
+			baseURL+OrgServiceSaveEconomyEntitiesProcedure,
+			connect.WithSchema(orgServiceMethods.ByName("SaveEconomyEntities")),
+			connect.WithClientOptions(opts...),
+		),
+		loadEconomyEntities: connect.NewClient[v2.LoadEconomyEntitiesRequest, v2.LoadEconomyEntitiesResponse](
+			httpClient,
+			baseURL+OrgServiceLoadEconomyEntitiesProcedure,
+			connect.WithSchema(orgServiceMethods.ByName("LoadEconomyEntities")),
 			connect.WithClientOptions(opts...),
 		),
 	}
@@ -727,72 +264,26 @@ func NewOrgServiceClient(httpClient connect.HTTPClient, baseURL string, opts ...
 
 // orgServiceClient implements OrgServiceClient.
 type orgServiceClient struct {
-	addOrg                   *connect.Client[v2.AddOrgRequest, v2.AddOrgResponse]
-	removeOrg                *connect.Client[v2.RemoveOrgRequest, v2.RemoveOrgResponse]
-	getOrg                   *connect.Client[v2.GetOrgRequest, v2.GetOrgResponse]
-	updateOrg                *connect.Client[v2.UpdateOrgRequest, v2.UpdateOrgResponse]
-	addAgent                 *connect.Client[v2.AddAgentRequest, v2.AddAgentResponse]
-	removeAgent              *connect.Client[v2.RemoveAgentRequest, v2.RemoveAgentResponse]
-	getNominalGDP            *connect.Client[v2.GetNominalGDPRequest, v2.GetNominalGDPResponse]
-	setNominalGDP            *connect.Client[v2.SetNominalGDPRequest, v2.SetNominalGDPResponse]
-	getRealGDP               *connect.Client[v2.GetRealGDPRequest, v2.GetRealGDPResponse]
-	setRealGDP               *connect.Client[v2.SetRealGDPRequest, v2.SetRealGDPResponse]
-	getUnemployment          *connect.Client[v2.GetUnemploymentRequest, v2.GetUnemploymentResponse]
-	setUnemployment          *connect.Client[v2.SetUnemploymentRequest, v2.SetUnemploymentResponse]
-	getWages                 *connect.Client[v2.GetWagesRequest, v2.GetWagesResponse]
-	setWages                 *connect.Client[v2.SetWagesRequest, v2.SetWagesResponse]
-	getPrices                *connect.Client[v2.GetPricesRequest, v2.GetPricesResponse]
-	setPrices                *connect.Client[v2.SetPricesRequest, v2.SetPricesResponse]
-	getInventory             *connect.Client[v2.GetInventoryRequest, v2.GetInventoryResponse]
-	setInventory             *connect.Client[v2.SetInventoryRequest, v2.SetInventoryResponse]
-	addInventory             *connect.Client[v2.AddInventoryRequest, v2.AddInventoryResponse]
-	getPrice                 *connect.Client[v2.GetPriceRequest, v2.GetPriceResponse]
-	setPrice                 *connect.Client[v2.SetPriceRequest, v2.SetPriceResponse]
-	addPrice                 *connect.Client[v2.AddPriceRequest, v2.AddPriceResponse]
-	getCurrency              *connect.Client[v2.GetCurrencyRequest, v2.GetCurrencyResponse]
-	setCurrency              *connect.Client[v2.SetCurrencyRequest, v2.SetCurrencyResponse]
-	addCurrency              *connect.Client[v2.AddCurrencyRequest, v2.AddCurrencyResponse]
-	getInterestRate          *connect.Client[v2.GetInterestRateRequest, v2.GetInterestRateResponse]
-	setInterestRate          *connect.Client[v2.SetInterestRateRequest, v2.SetInterestRateResponse]
-	addInterestRate          *connect.Client[v2.AddInterestRateRequest, v2.AddInterestRateResponse]
-	getBracketCutoffs        *connect.Client[v2.GetBracketCutoffsRequest, v2.GetBracketCutoffsResponse]
-	setBracketCutoffs        *connect.Client[v2.SetBracketCutoffsRequest, v2.SetBracketCutoffsResponse]
-	getBracketRates          *connect.Client[v2.GetBracketRatesRequest, v2.GetBracketRatesResponse]
-	setBracketRates          *connect.Client[v2.SetBracketRatesRequest, v2.SetBracketRatesResponse]
-	calculateTaxesDue        *connect.Client[v2.CalculateTaxesDueRequest, v2.CalculateTaxesDueResponse]
-	calculateConsumption     *connect.Client[v2.CalculateConsumptionRequest, v2.CalculateConsumptionResponse]
-	calculateInterest        *connect.Client[v2.CalculateInterestRequest, v2.CalculateInterestResponse]
-	saveEconomyEntities      *connect.Client[v2.SaveEconomyEntitiesRequest, v2.SaveEconomyEntitiesResponse]
-	loadEconomyEntities      *connect.Client[v2.LoadEconomyEntitiesRequest, v2.LoadEconomyEntitiesResponse]
-	getConsumptionCurrency   *connect.Client[v2.GetConsumptionCurrencyRequest, v2.GetConsumptionCurrencyResponse]
-	setConsumptionCurrency   *connect.Client[v2.SetConsumptionCurrencyRequest, v2.SetConsumptionCurrencyResponse]
-	getConsumptionPropensity *connect.Client[v2.GetConsumptionPropensityRequest, v2.GetConsumptionPropensityResponse]
-	setConsumptionPropensity *connect.Client[v2.SetConsumptionPropensityRequest, v2.SetConsumptionPropensityResponse]
-	getIncomeCurrency        *connect.Client[v2.GetIncomeCurrencyRequest, v2.GetIncomeCurrencyResponse]
-	setIncomeCurrency        *connect.Client[v2.SetIncomeCurrencyRequest, v2.SetIncomeCurrencyResponse]
-	getDepression            *connect.Client[v2.GetDepressionRequest, v2.GetDepressionResponse]
-	setDepression            *connect.Client[v2.SetDepressionRequest, v2.SetDepressionResponse]
-	getLocusControl          *connect.Client[v2.GetLocusControlRequest, v2.GetLocusControlResponse]
-	setLocusControl          *connect.Client[v2.SetLocusControlRequest, v2.SetLocusControlResponse]
-	getWorkingHours          *connect.Client[v2.GetWorkingHoursRequest, v2.GetWorkingHoursResponse]
-	setWorkingHours          *connect.Client[v2.SetWorkingHoursRequest, v2.SetWorkingHoursResponse]
-	getOrgEntityIds          *connect.Client[v2.GetOrgEntityIdsRequest, v2.GetOrgEntityIdsResponse]
-	getEmployees             *connect.Client[v2.GetEmployeesRequest, v2.GetEmployeesResponse]
-	setEmployees             *connect.Client[v2.SetEmployeesRequest, v2.SetEmployeesResponse]
-	addEmployee              *connect.Client[v2.AddEmployeeRequest, v2.AddEmployeeResponse]
-	removeEmployee           *connect.Client[v2.RemoveEmployeeRequest, v2.RemoveEmployeeResponse]
-	getCitizens              *connect.Client[v2.GetCitizensRequest, v2.GetCitizensResponse]
-	setCitizens              *connect.Client[v2.SetCitizensRequest, v2.SetCitizensResponse]
-	addCitizen               *connect.Client[v2.AddCitizenRequest, v2.AddCitizenResponse]
-	removeCitizen            *connect.Client[v2.RemoveCitizenRequest, v2.RemoveCitizenResponse]
-	getAgent                 *connect.Client[v2.GetAgentRequest, v2.GetAgentResponse]
-	updateAgent              *connect.Client[v2.UpdateAgentRequest, v2.UpdateAgentResponse]
-	batchGet                 *connect.Client[v2.BatchGetRequest, v2.BatchGetResponse]
-	batchUpdate              *connect.Client[v2.BatchUpdateRequest, v2.BatchUpdateResponse]
-	deltaUpdateOrg           *connect.Client[v2.DeltaUpdateOrgRequest, v2.DeltaUpdateOrgResponse]
-	deltaUpdateAgent         *connect.Client[v2.DeltaUpdateAgentRequest, v2.DeltaUpdateAgentResponse]
-	batchDeltaUpdate         *connect.Client[v2.BatchDeltaUpdateRequest, v2.BatchDeltaUpdateResponse]
-	calculateRealGDP         *connect.Client[v2.CalculateRealGDPRequest, v2.CalculateRealGDPResponse]
+	addOrg               *connect.Client[v2.AddOrgRequest, v2.AddOrgResponse]
+	removeOrg            *connect.Client[v2.RemoveOrgRequest, v2.RemoveOrgResponse]
+	getOrg               *connect.Client[v2.GetOrgRequest, v2.GetOrgResponse]
+	updateOrg            *connect.Client[v2.UpdateOrgRequest, v2.UpdateOrgResponse]
+	addAgent             *connect.Client[v2.AddAgentRequest, v2.AddAgentResponse]
+	removeAgent          *connect.Client[v2.RemoveAgentRequest, v2.RemoveAgentResponse]
+	getAgent             *connect.Client[v2.GetAgentRequest, v2.GetAgentResponse]
+	updateAgent          *connect.Client[v2.UpdateAgentRequest, v2.UpdateAgentResponse]
+	batchGet             *connect.Client[v2.BatchGetRequest, v2.BatchGetResponse]
+	batchUpdate          *connect.Client[v2.BatchUpdateRequest, v2.BatchUpdateResponse]
+	batchSet             *connect.Client[v2.BatchSetRequest, v2.BatchSetResponse]
+	deltaUpdateOrg       *connect.Client[v2.DeltaUpdateOrgRequest, v2.DeltaUpdateOrgResponse]
+	deltaUpdateAgent     *connect.Client[v2.DeltaUpdateAgentRequest, v2.DeltaUpdateAgentResponse]
+	batchDeltaUpdate     *connect.Client[v2.BatchDeltaUpdateRequest, v2.BatchDeltaUpdateResponse]
+	calculateTaxesDue    *connect.Client[v2.CalculateTaxesDueRequest, v2.CalculateTaxesDueResponse]
+	calculateConsumption *connect.Client[v2.CalculateConsumptionRequest, v2.CalculateConsumptionResponse]
+	calculateInterest    *connect.Client[v2.CalculateInterestRequest, v2.CalculateInterestResponse]
+	calculateRealGDP     *connect.Client[v2.CalculateRealGDPRequest, v2.CalculateRealGDPResponse]
+	saveEconomyEntities  *connect.Client[v2.SaveEconomyEntitiesRequest, v2.SaveEconomyEntitiesResponse]
+	loadEconomyEntities  *connect.Client[v2.LoadEconomyEntitiesRequest, v2.LoadEconomyEntitiesResponse]
 }
 
 // AddOrg calls city.economy.v2.OrgService.AddOrg.
@@ -825,266 +316,6 @@ func (c *orgServiceClient) RemoveAgent(ctx context.Context, req *connect.Request
 	return c.removeAgent.CallUnary(ctx, req)
 }
 
-// GetNominalGDP calls city.economy.v2.OrgService.GetNominalGDP.
-func (c *orgServiceClient) GetNominalGDP(ctx context.Context, req *connect.Request[v2.GetNominalGDPRequest]) (*connect.Response[v2.GetNominalGDPResponse], error) {
-	return c.getNominalGDP.CallUnary(ctx, req)
-}
-
-// SetNominalGDP calls city.economy.v2.OrgService.SetNominalGDP.
-func (c *orgServiceClient) SetNominalGDP(ctx context.Context, req *connect.Request[v2.SetNominalGDPRequest]) (*connect.Response[v2.SetNominalGDPResponse], error) {
-	return c.setNominalGDP.CallUnary(ctx, req)
-}
-
-// GetRealGDP calls city.economy.v2.OrgService.GetRealGDP.
-func (c *orgServiceClient) GetRealGDP(ctx context.Context, req *connect.Request[v2.GetRealGDPRequest]) (*connect.Response[v2.GetRealGDPResponse], error) {
-	return c.getRealGDP.CallUnary(ctx, req)
-}
-
-// SetRealGDP calls city.economy.v2.OrgService.SetRealGDP.
-func (c *orgServiceClient) SetRealGDP(ctx context.Context, req *connect.Request[v2.SetRealGDPRequest]) (*connect.Response[v2.SetRealGDPResponse], error) {
-	return c.setRealGDP.CallUnary(ctx, req)
-}
-
-// GetUnemployment calls city.economy.v2.OrgService.GetUnemployment.
-func (c *orgServiceClient) GetUnemployment(ctx context.Context, req *connect.Request[v2.GetUnemploymentRequest]) (*connect.Response[v2.GetUnemploymentResponse], error) {
-	return c.getUnemployment.CallUnary(ctx, req)
-}
-
-// SetUnemployment calls city.economy.v2.OrgService.SetUnemployment.
-func (c *orgServiceClient) SetUnemployment(ctx context.Context, req *connect.Request[v2.SetUnemploymentRequest]) (*connect.Response[v2.SetUnemploymentResponse], error) {
-	return c.setUnemployment.CallUnary(ctx, req)
-}
-
-// GetWages calls city.economy.v2.OrgService.GetWages.
-func (c *orgServiceClient) GetWages(ctx context.Context, req *connect.Request[v2.GetWagesRequest]) (*connect.Response[v2.GetWagesResponse], error) {
-	return c.getWages.CallUnary(ctx, req)
-}
-
-// SetWages calls city.economy.v2.OrgService.SetWages.
-func (c *orgServiceClient) SetWages(ctx context.Context, req *connect.Request[v2.SetWagesRequest]) (*connect.Response[v2.SetWagesResponse], error) {
-	return c.setWages.CallUnary(ctx, req)
-}
-
-// GetPrices calls city.economy.v2.OrgService.GetPrices.
-func (c *orgServiceClient) GetPrices(ctx context.Context, req *connect.Request[v2.GetPricesRequest]) (*connect.Response[v2.GetPricesResponse], error) {
-	return c.getPrices.CallUnary(ctx, req)
-}
-
-// SetPrices calls city.economy.v2.OrgService.SetPrices.
-func (c *orgServiceClient) SetPrices(ctx context.Context, req *connect.Request[v2.SetPricesRequest]) (*connect.Response[v2.SetPricesResponse], error) {
-	return c.setPrices.CallUnary(ctx, req)
-}
-
-// GetInventory calls city.economy.v2.OrgService.GetInventory.
-func (c *orgServiceClient) GetInventory(ctx context.Context, req *connect.Request[v2.GetInventoryRequest]) (*connect.Response[v2.GetInventoryResponse], error) {
-	return c.getInventory.CallUnary(ctx, req)
-}
-
-// SetInventory calls city.economy.v2.OrgService.SetInventory.
-func (c *orgServiceClient) SetInventory(ctx context.Context, req *connect.Request[v2.SetInventoryRequest]) (*connect.Response[v2.SetInventoryResponse], error) {
-	return c.setInventory.CallUnary(ctx, req)
-}
-
-// AddInventory calls city.economy.v2.OrgService.AddInventory.
-func (c *orgServiceClient) AddInventory(ctx context.Context, req *connect.Request[v2.AddInventoryRequest]) (*connect.Response[v2.AddInventoryResponse], error) {
-	return c.addInventory.CallUnary(ctx, req)
-}
-
-// GetPrice calls city.economy.v2.OrgService.GetPrice.
-func (c *orgServiceClient) GetPrice(ctx context.Context, req *connect.Request[v2.GetPriceRequest]) (*connect.Response[v2.GetPriceResponse], error) {
-	return c.getPrice.CallUnary(ctx, req)
-}
-
-// SetPrice calls city.economy.v2.OrgService.SetPrice.
-func (c *orgServiceClient) SetPrice(ctx context.Context, req *connect.Request[v2.SetPriceRequest]) (*connect.Response[v2.SetPriceResponse], error) {
-	return c.setPrice.CallUnary(ctx, req)
-}
-
-// AddPrice calls city.economy.v2.OrgService.AddPrice.
-func (c *orgServiceClient) AddPrice(ctx context.Context, req *connect.Request[v2.AddPriceRequest]) (*connect.Response[v2.AddPriceResponse], error) {
-	return c.addPrice.CallUnary(ctx, req)
-}
-
-// GetCurrency calls city.economy.v2.OrgService.GetCurrency.
-func (c *orgServiceClient) GetCurrency(ctx context.Context, req *connect.Request[v2.GetCurrencyRequest]) (*connect.Response[v2.GetCurrencyResponse], error) {
-	return c.getCurrency.CallUnary(ctx, req)
-}
-
-// SetCurrency calls city.economy.v2.OrgService.SetCurrency.
-func (c *orgServiceClient) SetCurrency(ctx context.Context, req *connect.Request[v2.SetCurrencyRequest]) (*connect.Response[v2.SetCurrencyResponse], error) {
-	return c.setCurrency.CallUnary(ctx, req)
-}
-
-// AddCurrency calls city.economy.v2.OrgService.AddCurrency.
-func (c *orgServiceClient) AddCurrency(ctx context.Context, req *connect.Request[v2.AddCurrencyRequest]) (*connect.Response[v2.AddCurrencyResponse], error) {
-	return c.addCurrency.CallUnary(ctx, req)
-}
-
-// GetInterestRate calls city.economy.v2.OrgService.GetInterestRate.
-func (c *orgServiceClient) GetInterestRate(ctx context.Context, req *connect.Request[v2.GetInterestRateRequest]) (*connect.Response[v2.GetInterestRateResponse], error) {
-	return c.getInterestRate.CallUnary(ctx, req)
-}
-
-// SetInterestRate calls city.economy.v2.OrgService.SetInterestRate.
-func (c *orgServiceClient) SetInterestRate(ctx context.Context, req *connect.Request[v2.SetInterestRateRequest]) (*connect.Response[v2.SetInterestRateResponse], error) {
-	return c.setInterestRate.CallUnary(ctx, req)
-}
-
-// AddInterestRate calls city.economy.v2.OrgService.AddInterestRate.
-func (c *orgServiceClient) AddInterestRate(ctx context.Context, req *connect.Request[v2.AddInterestRateRequest]) (*connect.Response[v2.AddInterestRateResponse], error) {
-	return c.addInterestRate.CallUnary(ctx, req)
-}
-
-// GetBracketCutoffs calls city.economy.v2.OrgService.GetBracketCutoffs.
-func (c *orgServiceClient) GetBracketCutoffs(ctx context.Context, req *connect.Request[v2.GetBracketCutoffsRequest]) (*connect.Response[v2.GetBracketCutoffsResponse], error) {
-	return c.getBracketCutoffs.CallUnary(ctx, req)
-}
-
-// SetBracketCutoffs calls city.economy.v2.OrgService.SetBracketCutoffs.
-func (c *orgServiceClient) SetBracketCutoffs(ctx context.Context, req *connect.Request[v2.SetBracketCutoffsRequest]) (*connect.Response[v2.SetBracketCutoffsResponse], error) {
-	return c.setBracketCutoffs.CallUnary(ctx, req)
-}
-
-// GetBracketRates calls city.economy.v2.OrgService.GetBracketRates.
-func (c *orgServiceClient) GetBracketRates(ctx context.Context, req *connect.Request[v2.GetBracketRatesRequest]) (*connect.Response[v2.GetBracketRatesResponse], error) {
-	return c.getBracketRates.CallUnary(ctx, req)
-}
-
-// SetBracketRates calls city.economy.v2.OrgService.SetBracketRates.
-func (c *orgServiceClient) SetBracketRates(ctx context.Context, req *connect.Request[v2.SetBracketRatesRequest]) (*connect.Response[v2.SetBracketRatesResponse], error) {
-	return c.setBracketRates.CallUnary(ctx, req)
-}
-
-// CalculateTaxesDue calls city.economy.v2.OrgService.CalculateTaxesDue.
-func (c *orgServiceClient) CalculateTaxesDue(ctx context.Context, req *connect.Request[v2.CalculateTaxesDueRequest]) (*connect.Response[v2.CalculateTaxesDueResponse], error) {
-	return c.calculateTaxesDue.CallUnary(ctx, req)
-}
-
-// CalculateConsumption calls city.economy.v2.OrgService.CalculateConsumption.
-func (c *orgServiceClient) CalculateConsumption(ctx context.Context, req *connect.Request[v2.CalculateConsumptionRequest]) (*connect.Response[v2.CalculateConsumptionResponse], error) {
-	return c.calculateConsumption.CallUnary(ctx, req)
-}
-
-// CalculateInterest calls city.economy.v2.OrgService.CalculateInterest.
-func (c *orgServiceClient) CalculateInterest(ctx context.Context, req *connect.Request[v2.CalculateInterestRequest]) (*connect.Response[v2.CalculateInterestResponse], error) {
-	return c.calculateInterest.CallUnary(ctx, req)
-}
-
-// SaveEconomyEntities calls city.economy.v2.OrgService.SaveEconomyEntities.
-func (c *orgServiceClient) SaveEconomyEntities(ctx context.Context, req *connect.Request[v2.SaveEconomyEntitiesRequest]) (*connect.Response[v2.SaveEconomyEntitiesResponse], error) {
-	return c.saveEconomyEntities.CallUnary(ctx, req)
-}
-
-// LoadEconomyEntities calls city.economy.v2.OrgService.LoadEconomyEntities.
-func (c *orgServiceClient) LoadEconomyEntities(ctx context.Context, req *connect.Request[v2.LoadEconomyEntitiesRequest]) (*connect.Response[v2.LoadEconomyEntitiesResponse], error) {
-	return c.loadEconomyEntities.CallUnary(ctx, req)
-}
-
-// GetConsumptionCurrency calls city.economy.v2.OrgService.GetConsumptionCurrency.
-func (c *orgServiceClient) GetConsumptionCurrency(ctx context.Context, req *connect.Request[v2.GetConsumptionCurrencyRequest]) (*connect.Response[v2.GetConsumptionCurrencyResponse], error) {
-	return c.getConsumptionCurrency.CallUnary(ctx, req)
-}
-
-// SetConsumptionCurrency calls city.economy.v2.OrgService.SetConsumptionCurrency.
-func (c *orgServiceClient) SetConsumptionCurrency(ctx context.Context, req *connect.Request[v2.SetConsumptionCurrencyRequest]) (*connect.Response[v2.SetConsumptionCurrencyResponse], error) {
-	return c.setConsumptionCurrency.CallUnary(ctx, req)
-}
-
-// GetConsumptionPropensity calls city.economy.v2.OrgService.GetConsumptionPropensity.
-func (c *orgServiceClient) GetConsumptionPropensity(ctx context.Context, req *connect.Request[v2.GetConsumptionPropensityRequest]) (*connect.Response[v2.GetConsumptionPropensityResponse], error) {
-	return c.getConsumptionPropensity.CallUnary(ctx, req)
-}
-
-// SetConsumptionPropensity calls city.economy.v2.OrgService.SetConsumptionPropensity.
-func (c *orgServiceClient) SetConsumptionPropensity(ctx context.Context, req *connect.Request[v2.SetConsumptionPropensityRequest]) (*connect.Response[v2.SetConsumptionPropensityResponse], error) {
-	return c.setConsumptionPropensity.CallUnary(ctx, req)
-}
-
-// GetIncomeCurrency calls city.economy.v2.OrgService.GetIncomeCurrency.
-func (c *orgServiceClient) GetIncomeCurrency(ctx context.Context, req *connect.Request[v2.GetIncomeCurrencyRequest]) (*connect.Response[v2.GetIncomeCurrencyResponse], error) {
-	return c.getIncomeCurrency.CallUnary(ctx, req)
-}
-
-// SetIncomeCurrency calls city.economy.v2.OrgService.SetIncomeCurrency.
-func (c *orgServiceClient) SetIncomeCurrency(ctx context.Context, req *connect.Request[v2.SetIncomeCurrencyRequest]) (*connect.Response[v2.SetIncomeCurrencyResponse], error) {
-	return c.setIncomeCurrency.CallUnary(ctx, req)
-}
-
-// GetDepression calls city.economy.v2.OrgService.GetDepression.
-func (c *orgServiceClient) GetDepression(ctx context.Context, req *connect.Request[v2.GetDepressionRequest]) (*connect.Response[v2.GetDepressionResponse], error) {
-	return c.getDepression.CallUnary(ctx, req)
-}
-
-// SetDepression calls city.economy.v2.OrgService.SetDepression.
-func (c *orgServiceClient) SetDepression(ctx context.Context, req *connect.Request[v2.SetDepressionRequest]) (*connect.Response[v2.SetDepressionResponse], error) {
-	return c.setDepression.CallUnary(ctx, req)
-}
-
-// GetLocusControl calls city.economy.v2.OrgService.GetLocusControl.
-func (c *orgServiceClient) GetLocusControl(ctx context.Context, req *connect.Request[v2.GetLocusControlRequest]) (*connect.Response[v2.GetLocusControlResponse], error) {
-	return c.getLocusControl.CallUnary(ctx, req)
-}
-
-// SetLocusControl calls city.economy.v2.OrgService.SetLocusControl.
-func (c *orgServiceClient) SetLocusControl(ctx context.Context, req *connect.Request[v2.SetLocusControlRequest]) (*connect.Response[v2.SetLocusControlResponse], error) {
-	return c.setLocusControl.CallUnary(ctx, req)
-}
-
-// GetWorkingHours calls city.economy.v2.OrgService.GetWorkingHours.
-func (c *orgServiceClient) GetWorkingHours(ctx context.Context, req *connect.Request[v2.GetWorkingHoursRequest]) (*connect.Response[v2.GetWorkingHoursResponse], error) {
-	return c.getWorkingHours.CallUnary(ctx, req)
-}
-
-// SetWorkingHours calls city.economy.v2.OrgService.SetWorkingHours.
-func (c *orgServiceClient) SetWorkingHours(ctx context.Context, req *connect.Request[v2.SetWorkingHoursRequest]) (*connect.Response[v2.SetWorkingHoursResponse], error) {
-	return c.setWorkingHours.CallUnary(ctx, req)
-}
-
-// GetOrgEntityIds calls city.economy.v2.OrgService.GetOrgEntityIds.
-func (c *orgServiceClient) GetOrgEntityIds(ctx context.Context, req *connect.Request[v2.GetOrgEntityIdsRequest]) (*connect.Response[v2.GetOrgEntityIdsResponse], error) {
-	return c.getOrgEntityIds.CallUnary(ctx, req)
-}
-
-// GetEmployees calls city.economy.v2.OrgService.GetEmployees.
-func (c *orgServiceClient) GetEmployees(ctx context.Context, req *connect.Request[v2.GetEmployeesRequest]) (*connect.Response[v2.GetEmployeesResponse], error) {
-	return c.getEmployees.CallUnary(ctx, req)
-}
-
-// SetEmployees calls city.economy.v2.OrgService.SetEmployees.
-func (c *orgServiceClient) SetEmployees(ctx context.Context, req *connect.Request[v2.SetEmployeesRequest]) (*connect.Response[v2.SetEmployeesResponse], error) {
-	return c.setEmployees.CallUnary(ctx, req)
-}
-
-// AddEmployee calls city.economy.v2.OrgService.AddEmployee.
-func (c *orgServiceClient) AddEmployee(ctx context.Context, req *connect.Request[v2.AddEmployeeRequest]) (*connect.Response[v2.AddEmployeeResponse], error) {
-	return c.addEmployee.CallUnary(ctx, req)
-}
-
-// RemoveEmployee calls city.economy.v2.OrgService.RemoveEmployee.
-func (c *orgServiceClient) RemoveEmployee(ctx context.Context, req *connect.Request[v2.RemoveEmployeeRequest]) (*connect.Response[v2.RemoveEmployeeResponse], error) {
-	return c.removeEmployee.CallUnary(ctx, req)
-}
-
-// GetCitizens calls city.economy.v2.OrgService.GetCitizens.
-func (c *orgServiceClient) GetCitizens(ctx context.Context, req *connect.Request[v2.GetCitizensRequest]) (*connect.Response[v2.GetCitizensResponse], error) {
-	return c.getCitizens.CallUnary(ctx, req)
-}
-
-// SetCitizens calls city.economy.v2.OrgService.SetCitizens.
-func (c *orgServiceClient) SetCitizens(ctx context.Context, req *connect.Request[v2.SetCitizensRequest]) (*connect.Response[v2.SetCitizensResponse], error) {
-	return c.setCitizens.CallUnary(ctx, req)
-}
-
-// AddCitizen calls city.economy.v2.OrgService.AddCitizen.
-func (c *orgServiceClient) AddCitizen(ctx context.Context, req *connect.Request[v2.AddCitizenRequest]) (*connect.Response[v2.AddCitizenResponse], error) {
-	return c.addCitizen.CallUnary(ctx, req)
-}
-
-// RemoveCitizen calls city.economy.v2.OrgService.RemoveCitizen.
-func (c *orgServiceClient) RemoveCitizen(ctx context.Context, req *connect.Request[v2.RemoveCitizenRequest]) (*connect.Response[v2.RemoveCitizenResponse], error) {
-	return c.removeCitizen.CallUnary(ctx, req)
-}
-
 // GetAgent calls city.economy.v2.OrgService.GetAgent.
 func (c *orgServiceClient) GetAgent(ctx context.Context, req *connect.Request[v2.GetAgentRequest]) (*connect.Response[v2.GetAgentResponse], error) {
 	return c.getAgent.CallUnary(ctx, req)
@@ -1105,6 +336,11 @@ func (c *orgServiceClient) BatchUpdate(ctx context.Context, req *connect.Request
 	return c.batchUpdate.CallUnary(ctx, req)
 }
 
+// BatchSet calls city.economy.v2.OrgService.BatchSet.
+func (c *orgServiceClient) BatchSet(ctx context.Context, req *connect.Request[v2.BatchSetRequest]) (*connect.Response[v2.BatchSetResponse], error) {
+	return c.batchSet.CallUnary(ctx, req)
+}
+
 // DeltaUpdateOrg calls city.economy.v2.OrgService.DeltaUpdateOrg.
 func (c *orgServiceClient) DeltaUpdateOrg(ctx context.Context, req *connect.Request[v2.DeltaUpdateOrgRequest]) (*connect.Response[v2.DeltaUpdateOrgResponse], error) {
 	return c.deltaUpdateOrg.CallUnary(ctx, req)
@@ -1120,122 +356,78 @@ func (c *orgServiceClient) BatchDeltaUpdate(ctx context.Context, req *connect.Re
 	return c.batchDeltaUpdate.CallUnary(ctx, req)
 }
 
+// CalculateTaxesDue calls city.economy.v2.OrgService.CalculateTaxesDue.
+func (c *orgServiceClient) CalculateTaxesDue(ctx context.Context, req *connect.Request[v2.CalculateTaxesDueRequest]) (*connect.Response[v2.CalculateTaxesDueResponse], error) {
+	return c.calculateTaxesDue.CallUnary(ctx, req)
+}
+
+// CalculateConsumption calls city.economy.v2.OrgService.CalculateConsumption.
+func (c *orgServiceClient) CalculateConsumption(ctx context.Context, req *connect.Request[v2.CalculateConsumptionRequest]) (*connect.Response[v2.CalculateConsumptionResponse], error) {
+	return c.calculateConsumption.CallUnary(ctx, req)
+}
+
+// CalculateInterest calls city.economy.v2.OrgService.CalculateInterest.
+func (c *orgServiceClient) CalculateInterest(ctx context.Context, req *connect.Request[v2.CalculateInterestRequest]) (*connect.Response[v2.CalculateInterestResponse], error) {
+	return c.calculateInterest.CallUnary(ctx, req)
+}
+
 // CalculateRealGDP calls city.economy.v2.OrgService.CalculateRealGDP.
 func (c *orgServiceClient) CalculateRealGDP(ctx context.Context, req *connect.Request[v2.CalculateRealGDPRequest]) (*connect.Response[v2.CalculateRealGDPResponse], error) {
 	return c.calculateRealGDP.CallUnary(ctx, req)
 }
 
+// SaveEconomyEntities calls city.economy.v2.OrgService.SaveEconomyEntities.
+func (c *orgServiceClient) SaveEconomyEntities(ctx context.Context, req *connect.Request[v2.SaveEconomyEntitiesRequest]) (*connect.Response[v2.SaveEconomyEntitiesResponse], error) {
+	return c.saveEconomyEntities.CallUnary(ctx, req)
+}
+
+// LoadEconomyEntities calls city.economy.v2.OrgService.LoadEconomyEntities.
+func (c *orgServiceClient) LoadEconomyEntities(ctx context.Context, req *connect.Request[v2.LoadEconomyEntitiesRequest]) (*connect.Response[v2.LoadEconomyEntitiesResponse], error) {
+	return c.loadEconomyEntities.CallUnary(ctx, req)
+}
+
 // OrgServiceHandler is an implementation of the city.economy.v2.OrgService service.
 type OrgServiceHandler interface {
-	// 添加组织
-	// add org
+	// AddOrg 添加一个新的组织到系统中
 	AddOrg(context.Context, *connect.Request[v2.AddOrgRequest]) (*connect.Response[v2.AddOrgResponse], error)
-	// 移除组织
-	// remove org
+	// RemoveOrg 从系统中移除指定的组织
 	RemoveOrg(context.Context, *connect.Request[v2.RemoveOrgRequest]) (*connect.Response[v2.RemoveOrgResponse], error)
-	// 获取组织
-	// get org
+	// GetOrg 获取指定组织的完整信息
 	GetOrg(context.Context, *connect.Request[v2.GetOrgRequest]) (*connect.Response[v2.GetOrgResponse], error)
-	// 更新组织
-	// update org
+	// UpdateOrg 更新指定组织的信息
 	UpdateOrg(context.Context, *connect.Request[v2.UpdateOrgRequest]) (*connect.Response[v2.UpdateOrgResponse], error)
-	// 添加Agent
-	// add agent
+	// AddAgent 添加一个新的代理到系统中
 	AddAgent(context.Context, *connect.Request[v2.AddAgentRequest]) (*connect.Response[v2.AddAgentResponse], error)
-	// 移除Agent
-	// remove agent
+	// RemoveAgent 从系统中移除指定的代理
 	RemoveAgent(context.Context, *connect.Request[v2.RemoveAgentRequest]) (*connect.Response[v2.RemoveAgentResponse], error)
-	// Nominal GDP
-	GetNominalGDP(context.Context, *connect.Request[v2.GetNominalGDPRequest]) (*connect.Response[v2.GetNominalGDPResponse], error)
-	SetNominalGDP(context.Context, *connect.Request[v2.SetNominalGDPRequest]) (*connect.Response[v2.SetNominalGDPResponse], error)
-	// Real GDP
-	GetRealGDP(context.Context, *connect.Request[v2.GetRealGDPRequest]) (*connect.Response[v2.GetRealGDPResponse], error)
-	SetRealGDP(context.Context, *connect.Request[v2.SetRealGDPRequest]) (*connect.Response[v2.SetRealGDPResponse], error)
-	// Unemployment
-	GetUnemployment(context.Context, *connect.Request[v2.GetUnemploymentRequest]) (*connect.Response[v2.GetUnemploymentResponse], error)
-	SetUnemployment(context.Context, *connect.Request[v2.SetUnemploymentRequest]) (*connect.Response[v2.SetUnemploymentResponse], error)
-	// Wages
-	GetWages(context.Context, *connect.Request[v2.GetWagesRequest]) (*connect.Response[v2.GetWagesResponse], error)
-	SetWages(context.Context, *connect.Request[v2.SetWagesRequest]) (*connect.Response[v2.SetWagesResponse], error)
-	// Prices
-	GetPrices(context.Context, *connect.Request[v2.GetPricesRequest]) (*connect.Response[v2.GetPricesResponse], error)
-	SetPrices(context.Context, *connect.Request[v2.SetPricesRequest]) (*connect.Response[v2.SetPricesResponse], error)
-	// Inventory
-	GetInventory(context.Context, *connect.Request[v2.GetInventoryRequest]) (*connect.Response[v2.GetInventoryResponse], error)
-	SetInventory(context.Context, *connect.Request[v2.SetInventoryRequest]) (*connect.Response[v2.SetInventoryResponse], error)
-	AddInventory(context.Context, *connect.Request[v2.AddInventoryRequest]) (*connect.Response[v2.AddInventoryResponse], error)
-	// Price
-	GetPrice(context.Context, *connect.Request[v2.GetPriceRequest]) (*connect.Response[v2.GetPriceResponse], error)
-	SetPrice(context.Context, *connect.Request[v2.SetPriceRequest]) (*connect.Response[v2.SetPriceResponse], error)
-	AddPrice(context.Context, *connect.Request[v2.AddPriceRequest]) (*connect.Response[v2.AddPriceResponse], error)
-	// Currency
-	GetCurrency(context.Context, *connect.Request[v2.GetCurrencyRequest]) (*connect.Response[v2.GetCurrencyResponse], error)
-	SetCurrency(context.Context, *connect.Request[v2.SetCurrencyRequest]) (*connect.Response[v2.SetCurrencyResponse], error)
-	AddCurrency(context.Context, *connect.Request[v2.AddCurrencyRequest]) (*connect.Response[v2.AddCurrencyResponse], error)
-	// Interest Rate
-	GetInterestRate(context.Context, *connect.Request[v2.GetInterestRateRequest]) (*connect.Response[v2.GetInterestRateResponse], error)
-	SetInterestRate(context.Context, *connect.Request[v2.SetInterestRateRequest]) (*connect.Response[v2.SetInterestRateResponse], error)
-	AddInterestRate(context.Context, *connect.Request[v2.AddInterestRateRequest]) (*connect.Response[v2.AddInterestRateResponse], error)
-	// Bracket Cutoffs
-	GetBracketCutoffs(context.Context, *connect.Request[v2.GetBracketCutoffsRequest]) (*connect.Response[v2.GetBracketCutoffsResponse], error)
-	SetBracketCutoffs(context.Context, *connect.Request[v2.SetBracketCutoffsRequest]) (*connect.Response[v2.SetBracketCutoffsResponse], error)
-	// Bracket Rates
-	GetBracketRates(context.Context, *connect.Request[v2.GetBracketRatesRequest]) (*connect.Response[v2.GetBracketRatesResponse], error)
-	SetBracketRates(context.Context, *connect.Request[v2.SetBracketRatesRequest]) (*connect.Response[v2.SetBracketRatesResponse], error)
-	// Taxes Due
-	CalculateTaxesDue(context.Context, *connect.Request[v2.CalculateTaxesDueRequest]) (*connect.Response[v2.CalculateTaxesDueResponse], error)
-	// Consumption
-	CalculateConsumption(context.Context, *connect.Request[v2.CalculateConsumptionRequest]) (*connect.Response[v2.CalculateConsumptionResponse], error)
-	// Consumption
-	CalculateInterest(context.Context, *connect.Request[v2.CalculateInterestRequest]) (*connect.Response[v2.CalculateInterestResponse], error)
-	// Save
-	SaveEconomyEntities(context.Context, *connect.Request[v2.SaveEconomyEntitiesRequest]) (*connect.Response[v2.SaveEconomyEntitiesResponse], error)
-	// Load
-	LoadEconomyEntities(context.Context, *connect.Request[v2.LoadEconomyEntitiesRequest]) (*connect.Response[v2.LoadEconomyEntitiesResponse], error)
-	// Consumption Currency
-	GetConsumptionCurrency(context.Context, *connect.Request[v2.GetConsumptionCurrencyRequest]) (*connect.Response[v2.GetConsumptionCurrencyResponse], error)
-	SetConsumptionCurrency(context.Context, *connect.Request[v2.SetConsumptionCurrencyRequest]) (*connect.Response[v2.SetConsumptionCurrencyResponse], error)
-	// Consumption Propensity
-	GetConsumptionPropensity(context.Context, *connect.Request[v2.GetConsumptionPropensityRequest]) (*connect.Response[v2.GetConsumptionPropensityResponse], error)
-	SetConsumptionPropensity(context.Context, *connect.Request[v2.SetConsumptionPropensityRequest]) (*connect.Response[v2.SetConsumptionPropensityResponse], error)
-	// Income Currency
-	GetIncomeCurrency(context.Context, *connect.Request[v2.GetIncomeCurrencyRequest]) (*connect.Response[v2.GetIncomeCurrencyResponse], error)
-	SetIncomeCurrency(context.Context, *connect.Request[v2.SetIncomeCurrencyRequest]) (*connect.Response[v2.SetIncomeCurrencyResponse], error)
-	// Depression
-	GetDepression(context.Context, *connect.Request[v2.GetDepressionRequest]) (*connect.Response[v2.GetDepressionResponse], error)
-	SetDepression(context.Context, *connect.Request[v2.SetDepressionRequest]) (*connect.Response[v2.SetDepressionResponse], error)
-	// Locus of Control
-	GetLocusControl(context.Context, *connect.Request[v2.GetLocusControlRequest]) (*connect.Response[v2.GetLocusControlResponse], error)
-	SetLocusControl(context.Context, *connect.Request[v2.SetLocusControlRequest]) (*connect.Response[v2.SetLocusControlResponse], error)
-	// Working Hours
-	GetWorkingHours(context.Context, *connect.Request[v2.GetWorkingHoursRequest]) (*connect.Response[v2.GetWorkingHoursResponse], error)
-	SetWorkingHours(context.Context, *connect.Request[v2.SetWorkingHoursRequest]) (*connect.Response[v2.SetWorkingHoursResponse], error)
-	// Org Entity Ids
-	GetOrgEntityIds(context.Context, *connect.Request[v2.GetOrgEntityIdsRequest]) (*connect.Response[v2.GetOrgEntityIdsResponse], error)
-	// Employees 相关接口
-	GetEmployees(context.Context, *connect.Request[v2.GetEmployeesRequest]) (*connect.Response[v2.GetEmployeesResponse], error)
-	SetEmployees(context.Context, *connect.Request[v2.SetEmployeesRequest]) (*connect.Response[v2.SetEmployeesResponse], error)
-	AddEmployee(context.Context, *connect.Request[v2.AddEmployeeRequest]) (*connect.Response[v2.AddEmployeeResponse], error)
-	RemoveEmployee(context.Context, *connect.Request[v2.RemoveEmployeeRequest]) (*connect.Response[v2.RemoveEmployeeResponse], error)
-	// Citizens 相关接口
-	GetCitizens(context.Context, *connect.Request[v2.GetCitizensRequest]) (*connect.Response[v2.GetCitizensResponse], error)
-	SetCitizens(context.Context, *connect.Request[v2.SetCitizensRequest]) (*connect.Response[v2.SetCitizensResponse], error)
-	AddCitizen(context.Context, *connect.Request[v2.AddCitizenRequest]) (*connect.Response[v2.AddCitizenResponse], error)
-	RemoveCitizen(context.Context, *connect.Request[v2.RemoveCitizenRequest]) (*connect.Response[v2.RemoveCitizenResponse], error)
-	// Agent 相关接口
+	// GetAgent 获取指定代理的完整信息
 	GetAgent(context.Context, *connect.Request[v2.GetAgentRequest]) (*connect.Response[v2.GetAgentResponse], error)
+	// UpdateAgent 更新指定代理的信息
 	UpdateAgent(context.Context, *connect.Request[v2.UpdateAgentRequest]) (*connect.Response[v2.UpdateAgentResponse], error)
-	// 批量获取
+	// BatchGet 批量获取多个组织或代理的信息
 	BatchGet(context.Context, *connect.Request[v2.BatchGetRequest]) (*connect.Response[v2.BatchGetResponse], error)
-	// 批量更新
+	// BatchUpdate 批量更新多个组织或代理的信息，只更新请求中指定的字段
 	BatchUpdate(context.Context, *connect.Request[v2.BatchUpdateRequest]) (*connect.Response[v2.BatchUpdateResponse], error)
-	// 增量更新
+	// BatchSet 批量设置多个组织或代理的信息，完全替换所有字段
+	BatchSet(context.Context, *connect.Request[v2.BatchSetRequest]) (*connect.Response[v2.BatchSetResponse], error)
+	// DeltaUpdateOrg 对组织进行增量更新
 	DeltaUpdateOrg(context.Context, *connect.Request[v2.DeltaUpdateOrgRequest]) (*connect.Response[v2.DeltaUpdateOrgResponse], error)
+	// DeltaUpdateAgent 对代理进行增量更新
 	DeltaUpdateAgent(context.Context, *connect.Request[v2.DeltaUpdateAgentRequest]) (*connect.Response[v2.DeltaUpdateAgentResponse], error)
-	// 批量增量更新
+	// BatchDeltaUpdate 批量进行增量更新
 	BatchDeltaUpdate(context.Context, *connect.Request[v2.BatchDeltaUpdateRequest]) (*connect.Response[v2.BatchDeltaUpdateResponse], error)
-	// 计算实际GDP
+	// CalculateTaxesDue 计算应缴税额并可选择进行再分配
+	CalculateTaxesDue(context.Context, *connect.Request[v2.CalculateTaxesDueRequest]) (*connect.Response[v2.CalculateTaxesDueResponse], error)
+	// CalculateConsumption 计算代理的消费情况
+	CalculateConsumption(context.Context, *connect.Request[v2.CalculateConsumptionRequest]) (*connect.Response[v2.CalculateConsumptionResponse], error)
+	// CalculateInterest 计算银行利息
+	CalculateInterest(context.Context, *connect.Request[v2.CalculateInterestRequest]) (*connect.Response[v2.CalculateInterestResponse], error)
+	// CalculateRealGDP 计算实际GDP
 	CalculateRealGDP(context.Context, *connect.Request[v2.CalculateRealGDPRequest]) (*connect.Response[v2.CalculateRealGDPResponse], error)
+	// SaveEconomyEntities 保存经济系统的当前状态
+	SaveEconomyEntities(context.Context, *connect.Request[v2.SaveEconomyEntitiesRequest]) (*connect.Response[v2.SaveEconomyEntitiesResponse], error)
+	// LoadEconomyEntities 加载经济系统的状态
+	LoadEconomyEntities(context.Context, *connect.Request[v2.LoadEconomyEntitiesRequest]) (*connect.Response[v2.LoadEconomyEntitiesResponse], error)
 }
 
 // NewOrgServiceHandler builds an HTTP handler from the service implementation. It returns the path
@@ -1281,318 +473,6 @@ func NewOrgServiceHandler(svc OrgServiceHandler, opts ...connect.HandlerOption) 
 		connect.WithSchema(orgServiceMethods.ByName("RemoveAgent")),
 		connect.WithHandlerOptions(opts...),
 	)
-	orgServiceGetNominalGDPHandler := connect.NewUnaryHandler(
-		OrgServiceGetNominalGDPProcedure,
-		svc.GetNominalGDP,
-		connect.WithSchema(orgServiceMethods.ByName("GetNominalGDP")),
-		connect.WithHandlerOptions(opts...),
-	)
-	orgServiceSetNominalGDPHandler := connect.NewUnaryHandler(
-		OrgServiceSetNominalGDPProcedure,
-		svc.SetNominalGDP,
-		connect.WithSchema(orgServiceMethods.ByName("SetNominalGDP")),
-		connect.WithHandlerOptions(opts...),
-	)
-	orgServiceGetRealGDPHandler := connect.NewUnaryHandler(
-		OrgServiceGetRealGDPProcedure,
-		svc.GetRealGDP,
-		connect.WithSchema(orgServiceMethods.ByName("GetRealGDP")),
-		connect.WithHandlerOptions(opts...),
-	)
-	orgServiceSetRealGDPHandler := connect.NewUnaryHandler(
-		OrgServiceSetRealGDPProcedure,
-		svc.SetRealGDP,
-		connect.WithSchema(orgServiceMethods.ByName("SetRealGDP")),
-		connect.WithHandlerOptions(opts...),
-	)
-	orgServiceGetUnemploymentHandler := connect.NewUnaryHandler(
-		OrgServiceGetUnemploymentProcedure,
-		svc.GetUnemployment,
-		connect.WithSchema(orgServiceMethods.ByName("GetUnemployment")),
-		connect.WithHandlerOptions(opts...),
-	)
-	orgServiceSetUnemploymentHandler := connect.NewUnaryHandler(
-		OrgServiceSetUnemploymentProcedure,
-		svc.SetUnemployment,
-		connect.WithSchema(orgServiceMethods.ByName("SetUnemployment")),
-		connect.WithHandlerOptions(opts...),
-	)
-	orgServiceGetWagesHandler := connect.NewUnaryHandler(
-		OrgServiceGetWagesProcedure,
-		svc.GetWages,
-		connect.WithSchema(orgServiceMethods.ByName("GetWages")),
-		connect.WithHandlerOptions(opts...),
-	)
-	orgServiceSetWagesHandler := connect.NewUnaryHandler(
-		OrgServiceSetWagesProcedure,
-		svc.SetWages,
-		connect.WithSchema(orgServiceMethods.ByName("SetWages")),
-		connect.WithHandlerOptions(opts...),
-	)
-	orgServiceGetPricesHandler := connect.NewUnaryHandler(
-		OrgServiceGetPricesProcedure,
-		svc.GetPrices,
-		connect.WithSchema(orgServiceMethods.ByName("GetPrices")),
-		connect.WithHandlerOptions(opts...),
-	)
-	orgServiceSetPricesHandler := connect.NewUnaryHandler(
-		OrgServiceSetPricesProcedure,
-		svc.SetPrices,
-		connect.WithSchema(orgServiceMethods.ByName("SetPrices")),
-		connect.WithHandlerOptions(opts...),
-	)
-	orgServiceGetInventoryHandler := connect.NewUnaryHandler(
-		OrgServiceGetInventoryProcedure,
-		svc.GetInventory,
-		connect.WithSchema(orgServiceMethods.ByName("GetInventory")),
-		connect.WithHandlerOptions(opts...),
-	)
-	orgServiceSetInventoryHandler := connect.NewUnaryHandler(
-		OrgServiceSetInventoryProcedure,
-		svc.SetInventory,
-		connect.WithSchema(orgServiceMethods.ByName("SetInventory")),
-		connect.WithHandlerOptions(opts...),
-	)
-	orgServiceAddInventoryHandler := connect.NewUnaryHandler(
-		OrgServiceAddInventoryProcedure,
-		svc.AddInventory,
-		connect.WithSchema(orgServiceMethods.ByName("AddInventory")),
-		connect.WithHandlerOptions(opts...),
-	)
-	orgServiceGetPriceHandler := connect.NewUnaryHandler(
-		OrgServiceGetPriceProcedure,
-		svc.GetPrice,
-		connect.WithSchema(orgServiceMethods.ByName("GetPrice")),
-		connect.WithHandlerOptions(opts...),
-	)
-	orgServiceSetPriceHandler := connect.NewUnaryHandler(
-		OrgServiceSetPriceProcedure,
-		svc.SetPrice,
-		connect.WithSchema(orgServiceMethods.ByName("SetPrice")),
-		connect.WithHandlerOptions(opts...),
-	)
-	orgServiceAddPriceHandler := connect.NewUnaryHandler(
-		OrgServiceAddPriceProcedure,
-		svc.AddPrice,
-		connect.WithSchema(orgServiceMethods.ByName("AddPrice")),
-		connect.WithHandlerOptions(opts...),
-	)
-	orgServiceGetCurrencyHandler := connect.NewUnaryHandler(
-		OrgServiceGetCurrencyProcedure,
-		svc.GetCurrency,
-		connect.WithSchema(orgServiceMethods.ByName("GetCurrency")),
-		connect.WithHandlerOptions(opts...),
-	)
-	orgServiceSetCurrencyHandler := connect.NewUnaryHandler(
-		OrgServiceSetCurrencyProcedure,
-		svc.SetCurrency,
-		connect.WithSchema(orgServiceMethods.ByName("SetCurrency")),
-		connect.WithHandlerOptions(opts...),
-	)
-	orgServiceAddCurrencyHandler := connect.NewUnaryHandler(
-		OrgServiceAddCurrencyProcedure,
-		svc.AddCurrency,
-		connect.WithSchema(orgServiceMethods.ByName("AddCurrency")),
-		connect.WithHandlerOptions(opts...),
-	)
-	orgServiceGetInterestRateHandler := connect.NewUnaryHandler(
-		OrgServiceGetInterestRateProcedure,
-		svc.GetInterestRate,
-		connect.WithSchema(orgServiceMethods.ByName("GetInterestRate")),
-		connect.WithHandlerOptions(opts...),
-	)
-	orgServiceSetInterestRateHandler := connect.NewUnaryHandler(
-		OrgServiceSetInterestRateProcedure,
-		svc.SetInterestRate,
-		connect.WithSchema(orgServiceMethods.ByName("SetInterestRate")),
-		connect.WithHandlerOptions(opts...),
-	)
-	orgServiceAddInterestRateHandler := connect.NewUnaryHandler(
-		OrgServiceAddInterestRateProcedure,
-		svc.AddInterestRate,
-		connect.WithSchema(orgServiceMethods.ByName("AddInterestRate")),
-		connect.WithHandlerOptions(opts...),
-	)
-	orgServiceGetBracketCutoffsHandler := connect.NewUnaryHandler(
-		OrgServiceGetBracketCutoffsProcedure,
-		svc.GetBracketCutoffs,
-		connect.WithSchema(orgServiceMethods.ByName("GetBracketCutoffs")),
-		connect.WithHandlerOptions(opts...),
-	)
-	orgServiceSetBracketCutoffsHandler := connect.NewUnaryHandler(
-		OrgServiceSetBracketCutoffsProcedure,
-		svc.SetBracketCutoffs,
-		connect.WithSchema(orgServiceMethods.ByName("SetBracketCutoffs")),
-		connect.WithHandlerOptions(opts...),
-	)
-	orgServiceGetBracketRatesHandler := connect.NewUnaryHandler(
-		OrgServiceGetBracketRatesProcedure,
-		svc.GetBracketRates,
-		connect.WithSchema(orgServiceMethods.ByName("GetBracketRates")),
-		connect.WithHandlerOptions(opts...),
-	)
-	orgServiceSetBracketRatesHandler := connect.NewUnaryHandler(
-		OrgServiceSetBracketRatesProcedure,
-		svc.SetBracketRates,
-		connect.WithSchema(orgServiceMethods.ByName("SetBracketRates")),
-		connect.WithHandlerOptions(opts...),
-	)
-	orgServiceCalculateTaxesDueHandler := connect.NewUnaryHandler(
-		OrgServiceCalculateTaxesDueProcedure,
-		svc.CalculateTaxesDue,
-		connect.WithSchema(orgServiceMethods.ByName("CalculateTaxesDue")),
-		connect.WithHandlerOptions(opts...),
-	)
-	orgServiceCalculateConsumptionHandler := connect.NewUnaryHandler(
-		OrgServiceCalculateConsumptionProcedure,
-		svc.CalculateConsumption,
-		connect.WithSchema(orgServiceMethods.ByName("CalculateConsumption")),
-		connect.WithHandlerOptions(opts...),
-	)
-	orgServiceCalculateInterestHandler := connect.NewUnaryHandler(
-		OrgServiceCalculateInterestProcedure,
-		svc.CalculateInterest,
-		connect.WithSchema(orgServiceMethods.ByName("CalculateInterest")),
-		connect.WithHandlerOptions(opts...),
-	)
-	orgServiceSaveEconomyEntitiesHandler := connect.NewUnaryHandler(
-		OrgServiceSaveEconomyEntitiesProcedure,
-		svc.SaveEconomyEntities,
-		connect.WithSchema(orgServiceMethods.ByName("SaveEconomyEntities")),
-		connect.WithHandlerOptions(opts...),
-	)
-	orgServiceLoadEconomyEntitiesHandler := connect.NewUnaryHandler(
-		OrgServiceLoadEconomyEntitiesProcedure,
-		svc.LoadEconomyEntities,
-		connect.WithSchema(orgServiceMethods.ByName("LoadEconomyEntities")),
-		connect.WithHandlerOptions(opts...),
-	)
-	orgServiceGetConsumptionCurrencyHandler := connect.NewUnaryHandler(
-		OrgServiceGetConsumptionCurrencyProcedure,
-		svc.GetConsumptionCurrency,
-		connect.WithSchema(orgServiceMethods.ByName("GetConsumptionCurrency")),
-		connect.WithHandlerOptions(opts...),
-	)
-	orgServiceSetConsumptionCurrencyHandler := connect.NewUnaryHandler(
-		OrgServiceSetConsumptionCurrencyProcedure,
-		svc.SetConsumptionCurrency,
-		connect.WithSchema(orgServiceMethods.ByName("SetConsumptionCurrency")),
-		connect.WithHandlerOptions(opts...),
-	)
-	orgServiceGetConsumptionPropensityHandler := connect.NewUnaryHandler(
-		OrgServiceGetConsumptionPropensityProcedure,
-		svc.GetConsumptionPropensity,
-		connect.WithSchema(orgServiceMethods.ByName("GetConsumptionPropensity")),
-		connect.WithHandlerOptions(opts...),
-	)
-	orgServiceSetConsumptionPropensityHandler := connect.NewUnaryHandler(
-		OrgServiceSetConsumptionPropensityProcedure,
-		svc.SetConsumptionPropensity,
-		connect.WithSchema(orgServiceMethods.ByName("SetConsumptionPropensity")),
-		connect.WithHandlerOptions(opts...),
-	)
-	orgServiceGetIncomeCurrencyHandler := connect.NewUnaryHandler(
-		OrgServiceGetIncomeCurrencyProcedure,
-		svc.GetIncomeCurrency,
-		connect.WithSchema(orgServiceMethods.ByName("GetIncomeCurrency")),
-		connect.WithHandlerOptions(opts...),
-	)
-	orgServiceSetIncomeCurrencyHandler := connect.NewUnaryHandler(
-		OrgServiceSetIncomeCurrencyProcedure,
-		svc.SetIncomeCurrency,
-		connect.WithSchema(orgServiceMethods.ByName("SetIncomeCurrency")),
-		connect.WithHandlerOptions(opts...),
-	)
-	orgServiceGetDepressionHandler := connect.NewUnaryHandler(
-		OrgServiceGetDepressionProcedure,
-		svc.GetDepression,
-		connect.WithSchema(orgServiceMethods.ByName("GetDepression")),
-		connect.WithHandlerOptions(opts...),
-	)
-	orgServiceSetDepressionHandler := connect.NewUnaryHandler(
-		OrgServiceSetDepressionProcedure,
-		svc.SetDepression,
-		connect.WithSchema(orgServiceMethods.ByName("SetDepression")),
-		connect.WithHandlerOptions(opts...),
-	)
-	orgServiceGetLocusControlHandler := connect.NewUnaryHandler(
-		OrgServiceGetLocusControlProcedure,
-		svc.GetLocusControl,
-		connect.WithSchema(orgServiceMethods.ByName("GetLocusControl")),
-		connect.WithHandlerOptions(opts...),
-	)
-	orgServiceSetLocusControlHandler := connect.NewUnaryHandler(
-		OrgServiceSetLocusControlProcedure,
-		svc.SetLocusControl,
-		connect.WithSchema(orgServiceMethods.ByName("SetLocusControl")),
-		connect.WithHandlerOptions(opts...),
-	)
-	orgServiceGetWorkingHoursHandler := connect.NewUnaryHandler(
-		OrgServiceGetWorkingHoursProcedure,
-		svc.GetWorkingHours,
-		connect.WithSchema(orgServiceMethods.ByName("GetWorkingHours")),
-		connect.WithHandlerOptions(opts...),
-	)
-	orgServiceSetWorkingHoursHandler := connect.NewUnaryHandler(
-		OrgServiceSetWorkingHoursProcedure,
-		svc.SetWorkingHours,
-		connect.WithSchema(orgServiceMethods.ByName("SetWorkingHours")),
-		connect.WithHandlerOptions(opts...),
-	)
-	orgServiceGetOrgEntityIdsHandler := connect.NewUnaryHandler(
-		OrgServiceGetOrgEntityIdsProcedure,
-		svc.GetOrgEntityIds,
-		connect.WithSchema(orgServiceMethods.ByName("GetOrgEntityIds")),
-		connect.WithHandlerOptions(opts...),
-	)
-	orgServiceGetEmployeesHandler := connect.NewUnaryHandler(
-		OrgServiceGetEmployeesProcedure,
-		svc.GetEmployees,
-		connect.WithSchema(orgServiceMethods.ByName("GetEmployees")),
-		connect.WithHandlerOptions(opts...),
-	)
-	orgServiceSetEmployeesHandler := connect.NewUnaryHandler(
-		OrgServiceSetEmployeesProcedure,
-		svc.SetEmployees,
-		connect.WithSchema(orgServiceMethods.ByName("SetEmployees")),
-		connect.WithHandlerOptions(opts...),
-	)
-	orgServiceAddEmployeeHandler := connect.NewUnaryHandler(
-		OrgServiceAddEmployeeProcedure,
-		svc.AddEmployee,
-		connect.WithSchema(orgServiceMethods.ByName("AddEmployee")),
-		connect.WithHandlerOptions(opts...),
-	)
-	orgServiceRemoveEmployeeHandler := connect.NewUnaryHandler(
-		OrgServiceRemoveEmployeeProcedure,
-		svc.RemoveEmployee,
-		connect.WithSchema(orgServiceMethods.ByName("RemoveEmployee")),
-		connect.WithHandlerOptions(opts...),
-	)
-	orgServiceGetCitizensHandler := connect.NewUnaryHandler(
-		OrgServiceGetCitizensProcedure,
-		svc.GetCitizens,
-		connect.WithSchema(orgServiceMethods.ByName("GetCitizens")),
-		connect.WithHandlerOptions(opts...),
-	)
-	orgServiceSetCitizensHandler := connect.NewUnaryHandler(
-		OrgServiceSetCitizensProcedure,
-		svc.SetCitizens,
-		connect.WithSchema(orgServiceMethods.ByName("SetCitizens")),
-		connect.WithHandlerOptions(opts...),
-	)
-	orgServiceAddCitizenHandler := connect.NewUnaryHandler(
-		OrgServiceAddCitizenProcedure,
-		svc.AddCitizen,
-		connect.WithSchema(orgServiceMethods.ByName("AddCitizen")),
-		connect.WithHandlerOptions(opts...),
-	)
-	orgServiceRemoveCitizenHandler := connect.NewUnaryHandler(
-		OrgServiceRemoveCitizenProcedure,
-		svc.RemoveCitizen,
-		connect.WithSchema(orgServiceMethods.ByName("RemoveCitizen")),
-		connect.WithHandlerOptions(opts...),
-	)
 	orgServiceGetAgentHandler := connect.NewUnaryHandler(
 		OrgServiceGetAgentProcedure,
 		svc.GetAgent,
@@ -1617,6 +497,12 @@ func NewOrgServiceHandler(svc OrgServiceHandler, opts ...connect.HandlerOption) 
 		connect.WithSchema(orgServiceMethods.ByName("BatchUpdate")),
 		connect.WithHandlerOptions(opts...),
 	)
+	orgServiceBatchSetHandler := connect.NewUnaryHandler(
+		OrgServiceBatchSetProcedure,
+		svc.BatchSet,
+		connect.WithSchema(orgServiceMethods.ByName("BatchSet")),
+		connect.WithHandlerOptions(opts...),
+	)
 	orgServiceDeltaUpdateOrgHandler := connect.NewUnaryHandler(
 		OrgServiceDeltaUpdateOrgProcedure,
 		svc.DeltaUpdateOrg,
@@ -1635,10 +521,40 @@ func NewOrgServiceHandler(svc OrgServiceHandler, opts ...connect.HandlerOption) 
 		connect.WithSchema(orgServiceMethods.ByName("BatchDeltaUpdate")),
 		connect.WithHandlerOptions(opts...),
 	)
+	orgServiceCalculateTaxesDueHandler := connect.NewUnaryHandler(
+		OrgServiceCalculateTaxesDueProcedure,
+		svc.CalculateTaxesDue,
+		connect.WithSchema(orgServiceMethods.ByName("CalculateTaxesDue")),
+		connect.WithHandlerOptions(opts...),
+	)
+	orgServiceCalculateConsumptionHandler := connect.NewUnaryHandler(
+		OrgServiceCalculateConsumptionProcedure,
+		svc.CalculateConsumption,
+		connect.WithSchema(orgServiceMethods.ByName("CalculateConsumption")),
+		connect.WithHandlerOptions(opts...),
+	)
+	orgServiceCalculateInterestHandler := connect.NewUnaryHandler(
+		OrgServiceCalculateInterestProcedure,
+		svc.CalculateInterest,
+		connect.WithSchema(orgServiceMethods.ByName("CalculateInterest")),
+		connect.WithHandlerOptions(opts...),
+	)
 	orgServiceCalculateRealGDPHandler := connect.NewUnaryHandler(
 		OrgServiceCalculateRealGDPProcedure,
 		svc.CalculateRealGDP,
 		connect.WithSchema(orgServiceMethods.ByName("CalculateRealGDP")),
+		connect.WithHandlerOptions(opts...),
+	)
+	orgServiceSaveEconomyEntitiesHandler := connect.NewUnaryHandler(
+		OrgServiceSaveEconomyEntitiesProcedure,
+		svc.SaveEconomyEntities,
+		connect.WithSchema(orgServiceMethods.ByName("SaveEconomyEntities")),
+		connect.WithHandlerOptions(opts...),
+	)
+	orgServiceLoadEconomyEntitiesHandler := connect.NewUnaryHandler(
+		OrgServiceLoadEconomyEntitiesProcedure,
+		svc.LoadEconomyEntities,
+		connect.WithSchema(orgServiceMethods.ByName("LoadEconomyEntities")),
 		connect.WithHandlerOptions(opts...),
 	)
 	return "/city.economy.v2.OrgService/", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
@@ -1655,110 +571,6 @@ func NewOrgServiceHandler(svc OrgServiceHandler, opts ...connect.HandlerOption) 
 			orgServiceAddAgentHandler.ServeHTTP(w, r)
 		case OrgServiceRemoveAgentProcedure:
 			orgServiceRemoveAgentHandler.ServeHTTP(w, r)
-		case OrgServiceGetNominalGDPProcedure:
-			orgServiceGetNominalGDPHandler.ServeHTTP(w, r)
-		case OrgServiceSetNominalGDPProcedure:
-			orgServiceSetNominalGDPHandler.ServeHTTP(w, r)
-		case OrgServiceGetRealGDPProcedure:
-			orgServiceGetRealGDPHandler.ServeHTTP(w, r)
-		case OrgServiceSetRealGDPProcedure:
-			orgServiceSetRealGDPHandler.ServeHTTP(w, r)
-		case OrgServiceGetUnemploymentProcedure:
-			orgServiceGetUnemploymentHandler.ServeHTTP(w, r)
-		case OrgServiceSetUnemploymentProcedure:
-			orgServiceSetUnemploymentHandler.ServeHTTP(w, r)
-		case OrgServiceGetWagesProcedure:
-			orgServiceGetWagesHandler.ServeHTTP(w, r)
-		case OrgServiceSetWagesProcedure:
-			orgServiceSetWagesHandler.ServeHTTP(w, r)
-		case OrgServiceGetPricesProcedure:
-			orgServiceGetPricesHandler.ServeHTTP(w, r)
-		case OrgServiceSetPricesProcedure:
-			orgServiceSetPricesHandler.ServeHTTP(w, r)
-		case OrgServiceGetInventoryProcedure:
-			orgServiceGetInventoryHandler.ServeHTTP(w, r)
-		case OrgServiceSetInventoryProcedure:
-			orgServiceSetInventoryHandler.ServeHTTP(w, r)
-		case OrgServiceAddInventoryProcedure:
-			orgServiceAddInventoryHandler.ServeHTTP(w, r)
-		case OrgServiceGetPriceProcedure:
-			orgServiceGetPriceHandler.ServeHTTP(w, r)
-		case OrgServiceSetPriceProcedure:
-			orgServiceSetPriceHandler.ServeHTTP(w, r)
-		case OrgServiceAddPriceProcedure:
-			orgServiceAddPriceHandler.ServeHTTP(w, r)
-		case OrgServiceGetCurrencyProcedure:
-			orgServiceGetCurrencyHandler.ServeHTTP(w, r)
-		case OrgServiceSetCurrencyProcedure:
-			orgServiceSetCurrencyHandler.ServeHTTP(w, r)
-		case OrgServiceAddCurrencyProcedure:
-			orgServiceAddCurrencyHandler.ServeHTTP(w, r)
-		case OrgServiceGetInterestRateProcedure:
-			orgServiceGetInterestRateHandler.ServeHTTP(w, r)
-		case OrgServiceSetInterestRateProcedure:
-			orgServiceSetInterestRateHandler.ServeHTTP(w, r)
-		case OrgServiceAddInterestRateProcedure:
-			orgServiceAddInterestRateHandler.ServeHTTP(w, r)
-		case OrgServiceGetBracketCutoffsProcedure:
-			orgServiceGetBracketCutoffsHandler.ServeHTTP(w, r)
-		case OrgServiceSetBracketCutoffsProcedure:
-			orgServiceSetBracketCutoffsHandler.ServeHTTP(w, r)
-		case OrgServiceGetBracketRatesProcedure:
-			orgServiceGetBracketRatesHandler.ServeHTTP(w, r)
-		case OrgServiceSetBracketRatesProcedure:
-			orgServiceSetBracketRatesHandler.ServeHTTP(w, r)
-		case OrgServiceCalculateTaxesDueProcedure:
-			orgServiceCalculateTaxesDueHandler.ServeHTTP(w, r)
-		case OrgServiceCalculateConsumptionProcedure:
-			orgServiceCalculateConsumptionHandler.ServeHTTP(w, r)
-		case OrgServiceCalculateInterestProcedure:
-			orgServiceCalculateInterestHandler.ServeHTTP(w, r)
-		case OrgServiceSaveEconomyEntitiesProcedure:
-			orgServiceSaveEconomyEntitiesHandler.ServeHTTP(w, r)
-		case OrgServiceLoadEconomyEntitiesProcedure:
-			orgServiceLoadEconomyEntitiesHandler.ServeHTTP(w, r)
-		case OrgServiceGetConsumptionCurrencyProcedure:
-			orgServiceGetConsumptionCurrencyHandler.ServeHTTP(w, r)
-		case OrgServiceSetConsumptionCurrencyProcedure:
-			orgServiceSetConsumptionCurrencyHandler.ServeHTTP(w, r)
-		case OrgServiceGetConsumptionPropensityProcedure:
-			orgServiceGetConsumptionPropensityHandler.ServeHTTP(w, r)
-		case OrgServiceSetConsumptionPropensityProcedure:
-			orgServiceSetConsumptionPropensityHandler.ServeHTTP(w, r)
-		case OrgServiceGetIncomeCurrencyProcedure:
-			orgServiceGetIncomeCurrencyHandler.ServeHTTP(w, r)
-		case OrgServiceSetIncomeCurrencyProcedure:
-			orgServiceSetIncomeCurrencyHandler.ServeHTTP(w, r)
-		case OrgServiceGetDepressionProcedure:
-			orgServiceGetDepressionHandler.ServeHTTP(w, r)
-		case OrgServiceSetDepressionProcedure:
-			orgServiceSetDepressionHandler.ServeHTTP(w, r)
-		case OrgServiceGetLocusControlProcedure:
-			orgServiceGetLocusControlHandler.ServeHTTP(w, r)
-		case OrgServiceSetLocusControlProcedure:
-			orgServiceSetLocusControlHandler.ServeHTTP(w, r)
-		case OrgServiceGetWorkingHoursProcedure:
-			orgServiceGetWorkingHoursHandler.ServeHTTP(w, r)
-		case OrgServiceSetWorkingHoursProcedure:
-			orgServiceSetWorkingHoursHandler.ServeHTTP(w, r)
-		case OrgServiceGetOrgEntityIdsProcedure:
-			orgServiceGetOrgEntityIdsHandler.ServeHTTP(w, r)
-		case OrgServiceGetEmployeesProcedure:
-			orgServiceGetEmployeesHandler.ServeHTTP(w, r)
-		case OrgServiceSetEmployeesProcedure:
-			orgServiceSetEmployeesHandler.ServeHTTP(w, r)
-		case OrgServiceAddEmployeeProcedure:
-			orgServiceAddEmployeeHandler.ServeHTTP(w, r)
-		case OrgServiceRemoveEmployeeProcedure:
-			orgServiceRemoveEmployeeHandler.ServeHTTP(w, r)
-		case OrgServiceGetCitizensProcedure:
-			orgServiceGetCitizensHandler.ServeHTTP(w, r)
-		case OrgServiceSetCitizensProcedure:
-			orgServiceSetCitizensHandler.ServeHTTP(w, r)
-		case OrgServiceAddCitizenProcedure:
-			orgServiceAddCitizenHandler.ServeHTTP(w, r)
-		case OrgServiceRemoveCitizenProcedure:
-			orgServiceRemoveCitizenHandler.ServeHTTP(w, r)
 		case OrgServiceGetAgentProcedure:
 			orgServiceGetAgentHandler.ServeHTTP(w, r)
 		case OrgServiceUpdateAgentProcedure:
@@ -1767,14 +579,26 @@ func NewOrgServiceHandler(svc OrgServiceHandler, opts ...connect.HandlerOption) 
 			orgServiceBatchGetHandler.ServeHTTP(w, r)
 		case OrgServiceBatchUpdateProcedure:
 			orgServiceBatchUpdateHandler.ServeHTTP(w, r)
+		case OrgServiceBatchSetProcedure:
+			orgServiceBatchSetHandler.ServeHTTP(w, r)
 		case OrgServiceDeltaUpdateOrgProcedure:
 			orgServiceDeltaUpdateOrgHandler.ServeHTTP(w, r)
 		case OrgServiceDeltaUpdateAgentProcedure:
 			orgServiceDeltaUpdateAgentHandler.ServeHTTP(w, r)
 		case OrgServiceBatchDeltaUpdateProcedure:
 			orgServiceBatchDeltaUpdateHandler.ServeHTTP(w, r)
+		case OrgServiceCalculateTaxesDueProcedure:
+			orgServiceCalculateTaxesDueHandler.ServeHTTP(w, r)
+		case OrgServiceCalculateConsumptionProcedure:
+			orgServiceCalculateConsumptionHandler.ServeHTTP(w, r)
+		case OrgServiceCalculateInterestProcedure:
+			orgServiceCalculateInterestHandler.ServeHTTP(w, r)
 		case OrgServiceCalculateRealGDPProcedure:
 			orgServiceCalculateRealGDPHandler.ServeHTTP(w, r)
+		case OrgServiceSaveEconomyEntitiesProcedure:
+			orgServiceSaveEconomyEntitiesHandler.ServeHTTP(w, r)
+		case OrgServiceLoadEconomyEntitiesProcedure:
+			orgServiceLoadEconomyEntitiesHandler.ServeHTTP(w, r)
 		default:
 			http.NotFound(w, r)
 		}
@@ -1808,214 +632,6 @@ func (UnimplementedOrgServiceHandler) RemoveAgent(context.Context, *connect.Requ
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.RemoveAgent is not implemented"))
 }
 
-func (UnimplementedOrgServiceHandler) GetNominalGDP(context.Context, *connect.Request[v2.GetNominalGDPRequest]) (*connect.Response[v2.GetNominalGDPResponse], error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.GetNominalGDP is not implemented"))
-}
-
-func (UnimplementedOrgServiceHandler) SetNominalGDP(context.Context, *connect.Request[v2.SetNominalGDPRequest]) (*connect.Response[v2.SetNominalGDPResponse], error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.SetNominalGDP is not implemented"))
-}
-
-func (UnimplementedOrgServiceHandler) GetRealGDP(context.Context, *connect.Request[v2.GetRealGDPRequest]) (*connect.Response[v2.GetRealGDPResponse], error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.GetRealGDP is not implemented"))
-}
-
-func (UnimplementedOrgServiceHandler) SetRealGDP(context.Context, *connect.Request[v2.SetRealGDPRequest]) (*connect.Response[v2.SetRealGDPResponse], error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.SetRealGDP is not implemented"))
-}
-
-func (UnimplementedOrgServiceHandler) GetUnemployment(context.Context, *connect.Request[v2.GetUnemploymentRequest]) (*connect.Response[v2.GetUnemploymentResponse], error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.GetUnemployment is not implemented"))
-}
-
-func (UnimplementedOrgServiceHandler) SetUnemployment(context.Context, *connect.Request[v2.SetUnemploymentRequest]) (*connect.Response[v2.SetUnemploymentResponse], error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.SetUnemployment is not implemented"))
-}
-
-func (UnimplementedOrgServiceHandler) GetWages(context.Context, *connect.Request[v2.GetWagesRequest]) (*connect.Response[v2.GetWagesResponse], error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.GetWages is not implemented"))
-}
-
-func (UnimplementedOrgServiceHandler) SetWages(context.Context, *connect.Request[v2.SetWagesRequest]) (*connect.Response[v2.SetWagesResponse], error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.SetWages is not implemented"))
-}
-
-func (UnimplementedOrgServiceHandler) GetPrices(context.Context, *connect.Request[v2.GetPricesRequest]) (*connect.Response[v2.GetPricesResponse], error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.GetPrices is not implemented"))
-}
-
-func (UnimplementedOrgServiceHandler) SetPrices(context.Context, *connect.Request[v2.SetPricesRequest]) (*connect.Response[v2.SetPricesResponse], error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.SetPrices is not implemented"))
-}
-
-func (UnimplementedOrgServiceHandler) GetInventory(context.Context, *connect.Request[v2.GetInventoryRequest]) (*connect.Response[v2.GetInventoryResponse], error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.GetInventory is not implemented"))
-}
-
-func (UnimplementedOrgServiceHandler) SetInventory(context.Context, *connect.Request[v2.SetInventoryRequest]) (*connect.Response[v2.SetInventoryResponse], error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.SetInventory is not implemented"))
-}
-
-func (UnimplementedOrgServiceHandler) AddInventory(context.Context, *connect.Request[v2.AddInventoryRequest]) (*connect.Response[v2.AddInventoryResponse], error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.AddInventory is not implemented"))
-}
-
-func (UnimplementedOrgServiceHandler) GetPrice(context.Context, *connect.Request[v2.GetPriceRequest]) (*connect.Response[v2.GetPriceResponse], error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.GetPrice is not implemented"))
-}
-
-func (UnimplementedOrgServiceHandler) SetPrice(context.Context, *connect.Request[v2.SetPriceRequest]) (*connect.Response[v2.SetPriceResponse], error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.SetPrice is not implemented"))
-}
-
-func (UnimplementedOrgServiceHandler) AddPrice(context.Context, *connect.Request[v2.AddPriceRequest]) (*connect.Response[v2.AddPriceResponse], error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.AddPrice is not implemented"))
-}
-
-func (UnimplementedOrgServiceHandler) GetCurrency(context.Context, *connect.Request[v2.GetCurrencyRequest]) (*connect.Response[v2.GetCurrencyResponse], error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.GetCurrency is not implemented"))
-}
-
-func (UnimplementedOrgServiceHandler) SetCurrency(context.Context, *connect.Request[v2.SetCurrencyRequest]) (*connect.Response[v2.SetCurrencyResponse], error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.SetCurrency is not implemented"))
-}
-
-func (UnimplementedOrgServiceHandler) AddCurrency(context.Context, *connect.Request[v2.AddCurrencyRequest]) (*connect.Response[v2.AddCurrencyResponse], error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.AddCurrency is not implemented"))
-}
-
-func (UnimplementedOrgServiceHandler) GetInterestRate(context.Context, *connect.Request[v2.GetInterestRateRequest]) (*connect.Response[v2.GetInterestRateResponse], error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.GetInterestRate is not implemented"))
-}
-
-func (UnimplementedOrgServiceHandler) SetInterestRate(context.Context, *connect.Request[v2.SetInterestRateRequest]) (*connect.Response[v2.SetInterestRateResponse], error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.SetInterestRate is not implemented"))
-}
-
-func (UnimplementedOrgServiceHandler) AddInterestRate(context.Context, *connect.Request[v2.AddInterestRateRequest]) (*connect.Response[v2.AddInterestRateResponse], error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.AddInterestRate is not implemented"))
-}
-
-func (UnimplementedOrgServiceHandler) GetBracketCutoffs(context.Context, *connect.Request[v2.GetBracketCutoffsRequest]) (*connect.Response[v2.GetBracketCutoffsResponse], error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.GetBracketCutoffs is not implemented"))
-}
-
-func (UnimplementedOrgServiceHandler) SetBracketCutoffs(context.Context, *connect.Request[v2.SetBracketCutoffsRequest]) (*connect.Response[v2.SetBracketCutoffsResponse], error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.SetBracketCutoffs is not implemented"))
-}
-
-func (UnimplementedOrgServiceHandler) GetBracketRates(context.Context, *connect.Request[v2.GetBracketRatesRequest]) (*connect.Response[v2.GetBracketRatesResponse], error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.GetBracketRates is not implemented"))
-}
-
-func (UnimplementedOrgServiceHandler) SetBracketRates(context.Context, *connect.Request[v2.SetBracketRatesRequest]) (*connect.Response[v2.SetBracketRatesResponse], error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.SetBracketRates is not implemented"))
-}
-
-func (UnimplementedOrgServiceHandler) CalculateTaxesDue(context.Context, *connect.Request[v2.CalculateTaxesDueRequest]) (*connect.Response[v2.CalculateTaxesDueResponse], error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.CalculateTaxesDue is not implemented"))
-}
-
-func (UnimplementedOrgServiceHandler) CalculateConsumption(context.Context, *connect.Request[v2.CalculateConsumptionRequest]) (*connect.Response[v2.CalculateConsumptionResponse], error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.CalculateConsumption is not implemented"))
-}
-
-func (UnimplementedOrgServiceHandler) CalculateInterest(context.Context, *connect.Request[v2.CalculateInterestRequest]) (*connect.Response[v2.CalculateInterestResponse], error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.CalculateInterest is not implemented"))
-}
-
-func (UnimplementedOrgServiceHandler) SaveEconomyEntities(context.Context, *connect.Request[v2.SaveEconomyEntitiesRequest]) (*connect.Response[v2.SaveEconomyEntitiesResponse], error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.SaveEconomyEntities is not implemented"))
-}
-
-func (UnimplementedOrgServiceHandler) LoadEconomyEntities(context.Context, *connect.Request[v2.LoadEconomyEntitiesRequest]) (*connect.Response[v2.LoadEconomyEntitiesResponse], error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.LoadEconomyEntities is not implemented"))
-}
-
-func (UnimplementedOrgServiceHandler) GetConsumptionCurrency(context.Context, *connect.Request[v2.GetConsumptionCurrencyRequest]) (*connect.Response[v2.GetConsumptionCurrencyResponse], error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.GetConsumptionCurrency is not implemented"))
-}
-
-func (UnimplementedOrgServiceHandler) SetConsumptionCurrency(context.Context, *connect.Request[v2.SetConsumptionCurrencyRequest]) (*connect.Response[v2.SetConsumptionCurrencyResponse], error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.SetConsumptionCurrency is not implemented"))
-}
-
-func (UnimplementedOrgServiceHandler) GetConsumptionPropensity(context.Context, *connect.Request[v2.GetConsumptionPropensityRequest]) (*connect.Response[v2.GetConsumptionPropensityResponse], error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.GetConsumptionPropensity is not implemented"))
-}
-
-func (UnimplementedOrgServiceHandler) SetConsumptionPropensity(context.Context, *connect.Request[v2.SetConsumptionPropensityRequest]) (*connect.Response[v2.SetConsumptionPropensityResponse], error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.SetConsumptionPropensity is not implemented"))
-}
-
-func (UnimplementedOrgServiceHandler) GetIncomeCurrency(context.Context, *connect.Request[v2.GetIncomeCurrencyRequest]) (*connect.Response[v2.GetIncomeCurrencyResponse], error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.GetIncomeCurrency is not implemented"))
-}
-
-func (UnimplementedOrgServiceHandler) SetIncomeCurrency(context.Context, *connect.Request[v2.SetIncomeCurrencyRequest]) (*connect.Response[v2.SetIncomeCurrencyResponse], error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.SetIncomeCurrency is not implemented"))
-}
-
-func (UnimplementedOrgServiceHandler) GetDepression(context.Context, *connect.Request[v2.GetDepressionRequest]) (*connect.Response[v2.GetDepressionResponse], error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.GetDepression is not implemented"))
-}
-
-func (UnimplementedOrgServiceHandler) SetDepression(context.Context, *connect.Request[v2.SetDepressionRequest]) (*connect.Response[v2.SetDepressionResponse], error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.SetDepression is not implemented"))
-}
-
-func (UnimplementedOrgServiceHandler) GetLocusControl(context.Context, *connect.Request[v2.GetLocusControlRequest]) (*connect.Response[v2.GetLocusControlResponse], error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.GetLocusControl is not implemented"))
-}
-
-func (UnimplementedOrgServiceHandler) SetLocusControl(context.Context, *connect.Request[v2.SetLocusControlRequest]) (*connect.Response[v2.SetLocusControlResponse], error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.SetLocusControl is not implemented"))
-}
-
-func (UnimplementedOrgServiceHandler) GetWorkingHours(context.Context, *connect.Request[v2.GetWorkingHoursRequest]) (*connect.Response[v2.GetWorkingHoursResponse], error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.GetWorkingHours is not implemented"))
-}
-
-func (UnimplementedOrgServiceHandler) SetWorkingHours(context.Context, *connect.Request[v2.SetWorkingHoursRequest]) (*connect.Response[v2.SetWorkingHoursResponse], error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.SetWorkingHours is not implemented"))
-}
-
-func (UnimplementedOrgServiceHandler) GetOrgEntityIds(context.Context, *connect.Request[v2.GetOrgEntityIdsRequest]) (*connect.Response[v2.GetOrgEntityIdsResponse], error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.GetOrgEntityIds is not implemented"))
-}
-
-func (UnimplementedOrgServiceHandler) GetEmployees(context.Context, *connect.Request[v2.GetEmployeesRequest]) (*connect.Response[v2.GetEmployeesResponse], error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.GetEmployees is not implemented"))
-}
-
-func (UnimplementedOrgServiceHandler) SetEmployees(context.Context, *connect.Request[v2.SetEmployeesRequest]) (*connect.Response[v2.SetEmployeesResponse], error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.SetEmployees is not implemented"))
-}
-
-func (UnimplementedOrgServiceHandler) AddEmployee(context.Context, *connect.Request[v2.AddEmployeeRequest]) (*connect.Response[v2.AddEmployeeResponse], error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.AddEmployee is not implemented"))
-}
-
-func (UnimplementedOrgServiceHandler) RemoveEmployee(context.Context, *connect.Request[v2.RemoveEmployeeRequest]) (*connect.Response[v2.RemoveEmployeeResponse], error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.RemoveEmployee is not implemented"))
-}
-
-func (UnimplementedOrgServiceHandler) GetCitizens(context.Context, *connect.Request[v2.GetCitizensRequest]) (*connect.Response[v2.GetCitizensResponse], error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.GetCitizens is not implemented"))
-}
-
-func (UnimplementedOrgServiceHandler) SetCitizens(context.Context, *connect.Request[v2.SetCitizensRequest]) (*connect.Response[v2.SetCitizensResponse], error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.SetCitizens is not implemented"))
-}
-
-func (UnimplementedOrgServiceHandler) AddCitizen(context.Context, *connect.Request[v2.AddCitizenRequest]) (*connect.Response[v2.AddCitizenResponse], error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.AddCitizen is not implemented"))
-}
-
-func (UnimplementedOrgServiceHandler) RemoveCitizen(context.Context, *connect.Request[v2.RemoveCitizenRequest]) (*connect.Response[v2.RemoveCitizenResponse], error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.RemoveCitizen is not implemented"))
-}
-
 func (UnimplementedOrgServiceHandler) GetAgent(context.Context, *connect.Request[v2.GetAgentRequest]) (*connect.Response[v2.GetAgentResponse], error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.GetAgent is not implemented"))
 }
@@ -2032,6 +648,10 @@ func (UnimplementedOrgServiceHandler) BatchUpdate(context.Context, *connect.Requ
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.BatchUpdate is not implemented"))
 }
 
+func (UnimplementedOrgServiceHandler) BatchSet(context.Context, *connect.Request[v2.BatchSetRequest]) (*connect.Response[v2.BatchSetResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.BatchSet is not implemented"))
+}
+
 func (UnimplementedOrgServiceHandler) DeltaUpdateOrg(context.Context, *connect.Request[v2.DeltaUpdateOrgRequest]) (*connect.Response[v2.DeltaUpdateOrgResponse], error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.DeltaUpdateOrg is not implemented"))
 }
@@ -2044,6 +664,26 @@ func (UnimplementedOrgServiceHandler) BatchDeltaUpdate(context.Context, *connect
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.BatchDeltaUpdate is not implemented"))
 }
 
+func (UnimplementedOrgServiceHandler) CalculateTaxesDue(context.Context, *connect.Request[v2.CalculateTaxesDueRequest]) (*connect.Response[v2.CalculateTaxesDueResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.CalculateTaxesDue is not implemented"))
+}
+
+func (UnimplementedOrgServiceHandler) CalculateConsumption(context.Context, *connect.Request[v2.CalculateConsumptionRequest]) (*connect.Response[v2.CalculateConsumptionResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.CalculateConsumption is not implemented"))
+}
+
+func (UnimplementedOrgServiceHandler) CalculateInterest(context.Context, *connect.Request[v2.CalculateInterestRequest]) (*connect.Response[v2.CalculateInterestResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.CalculateInterest is not implemented"))
+}
+
 func (UnimplementedOrgServiceHandler) CalculateRealGDP(context.Context, *connect.Request[v2.CalculateRealGDPRequest]) (*connect.Response[v2.CalculateRealGDPResponse], error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.CalculateRealGDP is not implemented"))
+}
+
+func (UnimplementedOrgServiceHandler) SaveEconomyEntities(context.Context, *connect.Request[v2.SaveEconomyEntitiesRequest]) (*connect.Response[v2.SaveEconomyEntitiesResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.SaveEconomyEntities is not implemented"))
+}
+
+func (UnimplementedOrgServiceHandler) LoadEconomyEntities(context.Context, *connect.Request[v2.LoadEconomyEntitiesRequest]) (*connect.Response[v2.LoadEconomyEntitiesResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.LoadEconomyEntities is not implemented"))
 }

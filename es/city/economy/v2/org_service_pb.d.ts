@@ -5,13 +5,17 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { Agent, Org, OrgType } from "./economy_pb.js";
+import type { Agent, Org } from "./economy_pb.js";
 
 /**
+ * 添加组织的请求消息
+ *
  * @generated from message city.economy.v2.AddOrgRequest
  */
 export declare class AddOrgRequest extends Message<AddOrgRequest> {
   /**
+   * 要添加的组织信息
+   *
    * @generated from field: city.economy.v2.Org org = 1;
    */
   org?: Org;
@@ -32,6 +36,8 @@ export declare class AddOrgRequest extends Message<AddOrgRequest> {
 }
 
 /**
+ * 添加组织的响应消息
+ *
  * @generated from message city.economy.v2.AddOrgResponse
  */
 export declare class AddOrgResponse extends Message<AddOrgResponse> {
@@ -51,10 +57,14 @@ export declare class AddOrgResponse extends Message<AddOrgResponse> {
 }
 
 /**
+ * 移除组织的请求消息
+ *
  * @generated from message city.economy.v2.RemoveOrgRequest
  */
 export declare class RemoveOrgRequest extends Message<RemoveOrgRequest> {
   /**
+   * 要移除的组织ID
+   *
    * @generated from field: int32 org_id = 1;
    */
   orgId: number;
@@ -75,6 +85,8 @@ export declare class RemoveOrgRequest extends Message<RemoveOrgRequest> {
 }
 
 /**
+ * 移除组织的响应消息
+ *
  * @generated from message city.economy.v2.RemoveOrgResponse
  */
 export declare class RemoveOrgResponse extends Message<RemoveOrgResponse> {
@@ -94,12 +106,14 @@ export declare class RemoveOrgResponse extends Message<RemoveOrgResponse> {
 }
 
 /**
- * Org 相关消息
+ * 获取组织的请求消息
  *
  * @generated from message city.economy.v2.GetOrgRequest
  */
 export declare class GetOrgRequest extends Message<GetOrgRequest> {
   /**
+   * 要获取的组织ID
+   *
    * @generated from field: int32 org_id = 1;
    */
   orgId: number;
@@ -120,10 +134,14 @@ export declare class GetOrgRequest extends Message<GetOrgRequest> {
 }
 
 /**
+ * 获取组织的响应消息
+ *
  * @generated from message city.economy.v2.GetOrgResponse
  */
 export declare class GetOrgResponse extends Message<GetOrgResponse> {
   /**
+   * 获取到的组织信息
+   *
    * @generated from field: city.economy.v2.Org org = 1;
    */
   org?: Org;
@@ -144,10 +162,14 @@ export declare class GetOrgResponse extends Message<GetOrgResponse> {
 }
 
 /**
+ * 更新组织的请求消息
+ *
  * @generated from message city.economy.v2.UpdateOrgRequest
  */
 export declare class UpdateOrgRequest extends Message<UpdateOrgRequest> {
   /**
+   * 更新后的组织信息
+   *
    * @generated from field: city.economy.v2.Org org = 1;
    */
   org?: Org;
@@ -168,6 +190,8 @@ export declare class UpdateOrgRequest extends Message<UpdateOrgRequest> {
 }
 
 /**
+ * 更新组织的响应消息
+ *
  * @generated from message city.economy.v2.UpdateOrgResponse
  */
 export declare class UpdateOrgResponse extends Message<UpdateOrgResponse> {
@@ -187,10 +211,14 @@ export declare class UpdateOrgResponse extends Message<UpdateOrgResponse> {
 }
 
 /**
+ * 添加代理的请求消息
+ *
  * @generated from message city.economy.v2.AddAgentRequest
  */
 export declare class AddAgentRequest extends Message<AddAgentRequest> {
   /**
+   * 要添加的代理信息
+   *
    * @generated from field: city.economy.v2.Agent agent = 1;
    */
   agent?: Agent;
@@ -211,6 +239,8 @@ export declare class AddAgentRequest extends Message<AddAgentRequest> {
 }
 
 /**
+ * 添加代理的响应消息
+ *
  * @generated from message city.economy.v2.AddAgentResponse
  */
 export declare class AddAgentResponse extends Message<AddAgentResponse> {
@@ -230,10 +260,14 @@ export declare class AddAgentResponse extends Message<AddAgentResponse> {
 }
 
 /**
+ * 移除代理的请求消息
+ *
  * @generated from message city.economy.v2.RemoveAgentRequest
  */
 export declare class RemoveAgentRequest extends Message<RemoveAgentRequest> {
   /**
+   * 要移除的代理ID
+   *
    * @generated from field: int32 agent_id = 1;
    */
   agentId: number;
@@ -254,6 +288,8 @@ export declare class RemoveAgentRequest extends Message<RemoveAgentRequest> {
 }
 
 /**
+ * 移除代理的响应消息
+ *
  * @generated from message city.economy.v2.RemoveAgentResponse
  */
 export declare class RemoveAgentResponse extends Message<RemoveAgentResponse> {
@@ -273,1086 +309,139 @@ export declare class RemoveAgentResponse extends Message<RemoveAgentResponse> {
 }
 
 /**
- * @generated from message city.economy.v2.GetNominalGDPRequest
+ * 获取代理的请求消息
+ *
+ * @generated from message city.economy.v2.GetAgentRequest
  */
-export declare class GetNominalGDPRequest extends Message<GetNominalGDPRequest> {
+export declare class GetAgentRequest extends Message<GetAgentRequest> {
   /**
-   * @generated from field: int32 org_id = 1;
+   * 要获取的代理ID
+   *
+   * @generated from field: int32 agent_id = 1;
    */
-  orgId: number;
+  agentId: number;
 
-  constructor(data?: PartialMessage<GetNominalGDPRequest>);
+  constructor(data?: PartialMessage<GetAgentRequest>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.GetNominalGDPRequest";
+  static readonly typeName = "city.economy.v2.GetAgentRequest";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetNominalGDPRequest;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetAgentRequest;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetNominalGDPRequest;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetAgentRequest;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetNominalGDPRequest;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetAgentRequest;
 
-  static equals(a: GetNominalGDPRequest | PlainMessage<GetNominalGDPRequest> | undefined, b: GetNominalGDPRequest | PlainMessage<GetNominalGDPRequest> | undefined): boolean;
+  static equals(a: GetAgentRequest | PlainMessage<GetAgentRequest> | undefined, b: GetAgentRequest | PlainMessage<GetAgentRequest> | undefined): boolean;
 }
 
 /**
- * @generated from message city.economy.v2.GetNominalGDPResponse
+ * 获取代理的响应消息
+ *
+ * @generated from message city.economy.v2.GetAgentResponse
  */
-export declare class GetNominalGDPResponse extends Message<GetNominalGDPResponse> {
+export declare class GetAgentResponse extends Message<GetAgentResponse> {
   /**
-   * @generated from field: repeated float nominal_gdp = 1;
+   * 获取到的代理信息
+   *
+   * @generated from field: city.economy.v2.Agent agent = 1;
    */
-  nominalGdp: number[];
+  agent?: Agent;
 
-  constructor(data?: PartialMessage<GetNominalGDPResponse>);
+  constructor(data?: PartialMessage<GetAgentResponse>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.GetNominalGDPResponse";
+  static readonly typeName = "city.economy.v2.GetAgentResponse";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetNominalGDPResponse;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetAgentResponse;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetNominalGDPResponse;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetAgentResponse;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetNominalGDPResponse;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetAgentResponse;
 
-  static equals(a: GetNominalGDPResponse | PlainMessage<GetNominalGDPResponse> | undefined, b: GetNominalGDPResponse | PlainMessage<GetNominalGDPResponse> | undefined): boolean;
+  static equals(a: GetAgentResponse | PlainMessage<GetAgentResponse> | undefined, b: GetAgentResponse | PlainMessage<GetAgentResponse> | undefined): boolean;
 }
 
 /**
- * @generated from message city.economy.v2.SetNominalGDPRequest
+ * 更新代理的请求消息
+ *
+ * @generated from message city.economy.v2.UpdateAgentRequest
  */
-export declare class SetNominalGDPRequest extends Message<SetNominalGDPRequest> {
+export declare class UpdateAgentRequest extends Message<UpdateAgentRequest> {
   /**
-   * @generated from field: int32 org_id = 1;
+   * 更新后的代理信息
+   *
+   * @generated from field: city.economy.v2.Agent agent = 1;
    */
-  orgId: number;
+  agent?: Agent;
 
-  /**
-   * @generated from field: repeated float nominal_gdp = 2;
-   */
-  nominalGdp: number[];
-
-  constructor(data?: PartialMessage<SetNominalGDPRequest>);
+  constructor(data?: PartialMessage<UpdateAgentRequest>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.SetNominalGDPRequest";
+  static readonly typeName = "city.economy.v2.UpdateAgentRequest";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetNominalGDPRequest;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateAgentRequest;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetNominalGDPRequest;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateAgentRequest;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetNominalGDPRequest;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateAgentRequest;
 
-  static equals(a: SetNominalGDPRequest | PlainMessage<SetNominalGDPRequest> | undefined, b: SetNominalGDPRequest | PlainMessage<SetNominalGDPRequest> | undefined): boolean;
+  static equals(a: UpdateAgentRequest | PlainMessage<UpdateAgentRequest> | undefined, b: UpdateAgentRequest | PlainMessage<UpdateAgentRequest> | undefined): boolean;
 }
 
 /**
- * @generated from message city.economy.v2.SetNominalGDPResponse
+ * 更新代理的响应消息
+ *
+ * @generated from message city.economy.v2.UpdateAgentResponse
  */
-export declare class SetNominalGDPResponse extends Message<SetNominalGDPResponse> {
-  constructor(data?: PartialMessage<SetNominalGDPResponse>);
+export declare class UpdateAgentResponse extends Message<UpdateAgentResponse> {
+  constructor(data?: PartialMessage<UpdateAgentResponse>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.SetNominalGDPResponse";
+  static readonly typeName = "city.economy.v2.UpdateAgentResponse";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetNominalGDPResponse;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateAgentResponse;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetNominalGDPResponse;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateAgentResponse;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetNominalGDPResponse;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateAgentResponse;
 
-  static equals(a: SetNominalGDPResponse | PlainMessage<SetNominalGDPResponse> | undefined, b: SetNominalGDPResponse | PlainMessage<SetNominalGDPResponse> | undefined): boolean;
+  static equals(a: UpdateAgentResponse | PlainMessage<UpdateAgentResponse> | undefined, b: UpdateAgentResponse | PlainMessage<UpdateAgentResponse> | undefined): boolean;
 }
 
 /**
- * @generated from message city.economy.v2.GetRealGDPRequest
- */
-export declare class GetRealGDPRequest extends Message<GetRealGDPRequest> {
-  /**
-   * @generated from field: int32 org_id = 1;
-   */
-  orgId: number;
-
-  constructor(data?: PartialMessage<GetRealGDPRequest>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.GetRealGDPRequest";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetRealGDPRequest;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetRealGDPRequest;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetRealGDPRequest;
-
-  static equals(a: GetRealGDPRequest | PlainMessage<GetRealGDPRequest> | undefined, b: GetRealGDPRequest | PlainMessage<GetRealGDPRequest> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.GetRealGDPResponse
- */
-export declare class GetRealGDPResponse extends Message<GetRealGDPResponse> {
-  /**
-   * @generated from field: repeated float real_gdp = 1;
-   */
-  realGdp: number[];
-
-  constructor(data?: PartialMessage<GetRealGDPResponse>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.GetRealGDPResponse";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetRealGDPResponse;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetRealGDPResponse;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetRealGDPResponse;
-
-  static equals(a: GetRealGDPResponse | PlainMessage<GetRealGDPResponse> | undefined, b: GetRealGDPResponse | PlainMessage<GetRealGDPResponse> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.SetRealGDPRequest
- */
-export declare class SetRealGDPRequest extends Message<SetRealGDPRequest> {
-  /**
-   * @generated from field: int32 org_id = 1;
-   */
-  orgId: number;
-
-  /**
-   * @generated from field: repeated float real_gdp = 2;
-   */
-  realGdp: number[];
-
-  constructor(data?: PartialMessage<SetRealGDPRequest>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.SetRealGDPRequest";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetRealGDPRequest;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetRealGDPRequest;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetRealGDPRequest;
-
-  static equals(a: SetRealGDPRequest | PlainMessage<SetRealGDPRequest> | undefined, b: SetRealGDPRequest | PlainMessage<SetRealGDPRequest> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.SetRealGDPResponse
- */
-export declare class SetRealGDPResponse extends Message<SetRealGDPResponse> {
-  constructor(data?: PartialMessage<SetRealGDPResponse>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.SetRealGDPResponse";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetRealGDPResponse;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetRealGDPResponse;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetRealGDPResponse;
-
-  static equals(a: SetRealGDPResponse | PlainMessage<SetRealGDPResponse> | undefined, b: SetRealGDPResponse | PlainMessage<SetRealGDPResponse> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.GetUnemploymentRequest
- */
-export declare class GetUnemploymentRequest extends Message<GetUnemploymentRequest> {
-  /**
-   * @generated from field: int32 org_id = 1;
-   */
-  orgId: number;
-
-  constructor(data?: PartialMessage<GetUnemploymentRequest>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.GetUnemploymentRequest";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetUnemploymentRequest;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetUnemploymentRequest;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetUnemploymentRequest;
-
-  static equals(a: GetUnemploymentRequest | PlainMessage<GetUnemploymentRequest> | undefined, b: GetUnemploymentRequest | PlainMessage<GetUnemploymentRequest> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.GetUnemploymentResponse
- */
-export declare class GetUnemploymentResponse extends Message<GetUnemploymentResponse> {
-  /**
-   * @generated from field: repeated float unemployment = 1;
-   */
-  unemployment: number[];
-
-  constructor(data?: PartialMessage<GetUnemploymentResponse>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.GetUnemploymentResponse";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetUnemploymentResponse;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetUnemploymentResponse;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetUnemploymentResponse;
-
-  static equals(a: GetUnemploymentResponse | PlainMessage<GetUnemploymentResponse> | undefined, b: GetUnemploymentResponse | PlainMessage<GetUnemploymentResponse> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.SetUnemploymentRequest
- */
-export declare class SetUnemploymentRequest extends Message<SetUnemploymentRequest> {
-  /**
-   * @generated from field: int32 org_id = 1;
-   */
-  orgId: number;
-
-  /**
-   * @generated from field: repeated float unemployment = 2;
-   */
-  unemployment: number[];
-
-  constructor(data?: PartialMessage<SetUnemploymentRequest>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.SetUnemploymentRequest";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetUnemploymentRequest;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetUnemploymentRequest;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetUnemploymentRequest;
-
-  static equals(a: SetUnemploymentRequest | PlainMessage<SetUnemploymentRequest> | undefined, b: SetUnemploymentRequest | PlainMessage<SetUnemploymentRequest> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.SetUnemploymentResponse
- */
-export declare class SetUnemploymentResponse extends Message<SetUnemploymentResponse> {
-  constructor(data?: PartialMessage<SetUnemploymentResponse>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.SetUnemploymentResponse";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetUnemploymentResponse;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetUnemploymentResponse;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetUnemploymentResponse;
-
-  static equals(a: SetUnemploymentResponse | PlainMessage<SetUnemploymentResponse> | undefined, b: SetUnemploymentResponse | PlainMessage<SetUnemploymentResponse> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.GetWagesRequest
- */
-export declare class GetWagesRequest extends Message<GetWagesRequest> {
-  /**
-   * @generated from field: int32 org_id = 1;
-   */
-  orgId: number;
-
-  constructor(data?: PartialMessage<GetWagesRequest>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.GetWagesRequest";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetWagesRequest;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetWagesRequest;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetWagesRequest;
-
-  static equals(a: GetWagesRequest | PlainMessage<GetWagesRequest> | undefined, b: GetWagesRequest | PlainMessage<GetWagesRequest> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.GetWagesResponse
- */
-export declare class GetWagesResponse extends Message<GetWagesResponse> {
-  /**
-   * @generated from field: repeated float wages = 1;
-   */
-  wages: number[];
-
-  constructor(data?: PartialMessage<GetWagesResponse>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.GetWagesResponse";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetWagesResponse;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetWagesResponse;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetWagesResponse;
-
-  static equals(a: GetWagesResponse | PlainMessage<GetWagesResponse> | undefined, b: GetWagesResponse | PlainMessage<GetWagesResponse> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.SetWagesRequest
- */
-export declare class SetWagesRequest extends Message<SetWagesRequest> {
-  /**
-   * @generated from field: int32 org_id = 1;
-   */
-  orgId: number;
-
-  /**
-   * @generated from field: repeated float wages = 2;
-   */
-  wages: number[];
-
-  constructor(data?: PartialMessage<SetWagesRequest>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.SetWagesRequest";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetWagesRequest;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetWagesRequest;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetWagesRequest;
-
-  static equals(a: SetWagesRequest | PlainMessage<SetWagesRequest> | undefined, b: SetWagesRequest | PlainMessage<SetWagesRequest> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.SetWagesResponse
- */
-export declare class SetWagesResponse extends Message<SetWagesResponse> {
-  constructor(data?: PartialMessage<SetWagesResponse>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.SetWagesResponse";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetWagesResponse;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetWagesResponse;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetWagesResponse;
-
-  static equals(a: SetWagesResponse | PlainMessage<SetWagesResponse> | undefined, b: SetWagesResponse | PlainMessage<SetWagesResponse> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.GetPricesRequest
- */
-export declare class GetPricesRequest extends Message<GetPricesRequest> {
-  /**
-   * @generated from field: int32 org_id = 1;
-   */
-  orgId: number;
-
-  constructor(data?: PartialMessage<GetPricesRequest>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.GetPricesRequest";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetPricesRequest;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetPricesRequest;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetPricesRequest;
-
-  static equals(a: GetPricesRequest | PlainMessage<GetPricesRequest> | undefined, b: GetPricesRequest | PlainMessage<GetPricesRequest> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.GetPricesResponse
- */
-export declare class GetPricesResponse extends Message<GetPricesResponse> {
-  /**
-   * @generated from field: repeated float prices = 1;
-   */
-  prices: number[];
-
-  constructor(data?: PartialMessage<GetPricesResponse>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.GetPricesResponse";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetPricesResponse;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetPricesResponse;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetPricesResponse;
-
-  static equals(a: GetPricesResponse | PlainMessage<GetPricesResponse> | undefined, b: GetPricesResponse | PlainMessage<GetPricesResponse> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.SetPricesRequest
- */
-export declare class SetPricesRequest extends Message<SetPricesRequest> {
-  /**
-   * @generated from field: int32 org_id = 1;
-   */
-  orgId: number;
-
-  /**
-   * @generated from field: repeated float prices = 2;
-   */
-  prices: number[];
-
-  constructor(data?: PartialMessage<SetPricesRequest>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.SetPricesRequest";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetPricesRequest;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetPricesRequest;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetPricesRequest;
-
-  static equals(a: SetPricesRequest | PlainMessage<SetPricesRequest> | undefined, b: SetPricesRequest | PlainMessage<SetPricesRequest> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.SetPricesResponse
- */
-export declare class SetPricesResponse extends Message<SetPricesResponse> {
-  constructor(data?: PartialMessage<SetPricesResponse>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.SetPricesResponse";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetPricesResponse;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetPricesResponse;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetPricesResponse;
-
-  static equals(a: SetPricesResponse | PlainMessage<SetPricesResponse> | undefined, b: SetPricesResponse | PlainMessage<SetPricesResponse> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.GetInventoryRequest
- */
-export declare class GetInventoryRequest extends Message<GetInventoryRequest> {
-  /**
-   * @generated from field: int32 org_id = 1;
-   */
-  orgId: number;
-
-  constructor(data?: PartialMessage<GetInventoryRequest>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.GetInventoryRequest";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetInventoryRequest;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetInventoryRequest;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetInventoryRequest;
-
-  static equals(a: GetInventoryRequest | PlainMessage<GetInventoryRequest> | undefined, b: GetInventoryRequest | PlainMessage<GetInventoryRequest> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.GetInventoryResponse
- */
-export declare class GetInventoryResponse extends Message<GetInventoryResponse> {
-  /**
-   * @generated from field: int32 inventory = 1;
-   */
-  inventory: number;
-
-  constructor(data?: PartialMessage<GetInventoryResponse>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.GetInventoryResponse";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetInventoryResponse;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetInventoryResponse;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetInventoryResponse;
-
-  static equals(a: GetInventoryResponse | PlainMessage<GetInventoryResponse> | undefined, b: GetInventoryResponse | PlainMessage<GetInventoryResponse> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.SetInventoryRequest
- */
-export declare class SetInventoryRequest extends Message<SetInventoryRequest> {
-  /**
-   * @generated from field: int32 org_id = 1;
-   */
-  orgId: number;
-
-  /**
-   * @generated from field: int32 inventory = 2;
-   */
-  inventory: number;
-
-  constructor(data?: PartialMessage<SetInventoryRequest>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.SetInventoryRequest";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetInventoryRequest;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetInventoryRequest;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetInventoryRequest;
-
-  static equals(a: SetInventoryRequest | PlainMessage<SetInventoryRequest> | undefined, b: SetInventoryRequest | PlainMessage<SetInventoryRequest> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.SetInventoryResponse
- */
-export declare class SetInventoryResponse extends Message<SetInventoryResponse> {
-  constructor(data?: PartialMessage<SetInventoryResponse>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.SetInventoryResponse";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetInventoryResponse;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetInventoryResponse;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetInventoryResponse;
-
-  static equals(a: SetInventoryResponse | PlainMessage<SetInventoryResponse> | undefined, b: SetInventoryResponse | PlainMessage<SetInventoryResponse> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.GetPriceRequest
- */
-export declare class GetPriceRequest extends Message<GetPriceRequest> {
-  /**
-   * @generated from field: int32 org_id = 1;
-   */
-  orgId: number;
-
-  constructor(data?: PartialMessage<GetPriceRequest>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.GetPriceRequest";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetPriceRequest;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetPriceRequest;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetPriceRequest;
-
-  static equals(a: GetPriceRequest | PlainMessage<GetPriceRequest> | undefined, b: GetPriceRequest | PlainMessage<GetPriceRequest> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.GetPriceResponse
- */
-export declare class GetPriceResponse extends Message<GetPriceResponse> {
-  /**
-   * @generated from field: float price = 1;
-   */
-  price: number;
-
-  constructor(data?: PartialMessage<GetPriceResponse>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.GetPriceResponse";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetPriceResponse;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetPriceResponse;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetPriceResponse;
-
-  static equals(a: GetPriceResponse | PlainMessage<GetPriceResponse> | undefined, b: GetPriceResponse | PlainMessage<GetPriceResponse> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.SetPriceRequest
- */
-export declare class SetPriceRequest extends Message<SetPriceRequest> {
-  /**
-   * @generated from field: int32 org_id = 1;
-   */
-  orgId: number;
-
-  /**
-   * @generated from field: float price = 2;
-   */
-  price: number;
-
-  constructor(data?: PartialMessage<SetPriceRequest>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.SetPriceRequest";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetPriceRequest;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetPriceRequest;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetPriceRequest;
-
-  static equals(a: SetPriceRequest | PlainMessage<SetPriceRequest> | undefined, b: SetPriceRequest | PlainMessage<SetPriceRequest> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.SetPriceResponse
- */
-export declare class SetPriceResponse extends Message<SetPriceResponse> {
-  constructor(data?: PartialMessage<SetPriceResponse>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.SetPriceResponse";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetPriceResponse;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetPriceResponse;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetPriceResponse;
-
-  static equals(a: SetPriceResponse | PlainMessage<SetPriceResponse> | undefined, b: SetPriceResponse | PlainMessage<SetPriceResponse> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.GetCurrencyRequest
- */
-export declare class GetCurrencyRequest extends Message<GetCurrencyRequest> {
-  /**
-   * @generated from field: int32 org_id = 1;
-   */
-  orgId: number;
-
-  constructor(data?: PartialMessage<GetCurrencyRequest>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.GetCurrencyRequest";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetCurrencyRequest;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetCurrencyRequest;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetCurrencyRequest;
-
-  static equals(a: GetCurrencyRequest | PlainMessage<GetCurrencyRequest> | undefined, b: GetCurrencyRequest | PlainMessage<GetCurrencyRequest> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.GetCurrencyResponse
- */
-export declare class GetCurrencyResponse extends Message<GetCurrencyResponse> {
-  /**
-   * @generated from field: float currency = 1;
-   */
-  currency: number;
-
-  constructor(data?: PartialMessage<GetCurrencyResponse>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.GetCurrencyResponse";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetCurrencyResponse;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetCurrencyResponse;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetCurrencyResponse;
-
-  static equals(a: GetCurrencyResponse | PlainMessage<GetCurrencyResponse> | undefined, b: GetCurrencyResponse | PlainMessage<GetCurrencyResponse> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.SetCurrencyRequest
- */
-export declare class SetCurrencyRequest extends Message<SetCurrencyRequest> {
-  /**
-   * @generated from field: int32 org_id = 1;
-   */
-  orgId: number;
-
-  /**
-   * @generated from field: float currency = 2;
-   */
-  currency: number;
-
-  constructor(data?: PartialMessage<SetCurrencyRequest>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.SetCurrencyRequest";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetCurrencyRequest;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetCurrencyRequest;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetCurrencyRequest;
-
-  static equals(a: SetCurrencyRequest | PlainMessage<SetCurrencyRequest> | undefined, b: SetCurrencyRequest | PlainMessage<SetCurrencyRequest> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.SetCurrencyResponse
- */
-export declare class SetCurrencyResponse extends Message<SetCurrencyResponse> {
-  constructor(data?: PartialMessage<SetCurrencyResponse>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.SetCurrencyResponse";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetCurrencyResponse;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetCurrencyResponse;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetCurrencyResponse;
-
-  static equals(a: SetCurrencyResponse | PlainMessage<SetCurrencyResponse> | undefined, b: SetCurrencyResponse | PlainMessage<SetCurrencyResponse> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.GetInterestRateRequest
- */
-export declare class GetInterestRateRequest extends Message<GetInterestRateRequest> {
-  /**
-   * @generated from field: int32 org_id = 1;
-   */
-  orgId: number;
-
-  constructor(data?: PartialMessage<GetInterestRateRequest>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.GetInterestRateRequest";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetInterestRateRequest;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetInterestRateRequest;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetInterestRateRequest;
-
-  static equals(a: GetInterestRateRequest | PlainMessage<GetInterestRateRequest> | undefined, b: GetInterestRateRequest | PlainMessage<GetInterestRateRequest> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.GetInterestRateResponse
- */
-export declare class GetInterestRateResponse extends Message<GetInterestRateResponse> {
-  /**
-   * @generated from field: float interest_rate = 1;
-   */
-  interestRate: number;
-
-  constructor(data?: PartialMessage<GetInterestRateResponse>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.GetInterestRateResponse";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetInterestRateResponse;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetInterestRateResponse;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetInterestRateResponse;
-
-  static equals(a: GetInterestRateResponse | PlainMessage<GetInterestRateResponse> | undefined, b: GetInterestRateResponse | PlainMessage<GetInterestRateResponse> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.SetInterestRateRequest
- */
-export declare class SetInterestRateRequest extends Message<SetInterestRateRequest> {
-  /**
-   * @generated from field: int32 org_id = 1;
-   */
-  orgId: number;
-
-  /**
-   * @generated from field: float interest_rate = 2;
-   */
-  interestRate: number;
-
-  constructor(data?: PartialMessage<SetInterestRateRequest>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.SetInterestRateRequest";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetInterestRateRequest;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetInterestRateRequest;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetInterestRateRequest;
-
-  static equals(a: SetInterestRateRequest | PlainMessage<SetInterestRateRequest> | undefined, b: SetInterestRateRequest | PlainMessage<SetInterestRateRequest> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.SetInterestRateResponse
- */
-export declare class SetInterestRateResponse extends Message<SetInterestRateResponse> {
-  constructor(data?: PartialMessage<SetInterestRateResponse>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.SetInterestRateResponse";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetInterestRateResponse;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetInterestRateResponse;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetInterestRateResponse;
-
-  static equals(a: SetInterestRateResponse | PlainMessage<SetInterestRateResponse> | undefined, b: SetInterestRateResponse | PlainMessage<SetInterestRateResponse> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.GetBracketCutoffsRequest
- */
-export declare class GetBracketCutoffsRequest extends Message<GetBracketCutoffsRequest> {
-  /**
-   * @generated from field: int32 org_id = 1;
-   */
-  orgId: number;
-
-  constructor(data?: PartialMessage<GetBracketCutoffsRequest>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.GetBracketCutoffsRequest";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetBracketCutoffsRequest;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetBracketCutoffsRequest;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetBracketCutoffsRequest;
-
-  static equals(a: GetBracketCutoffsRequest | PlainMessage<GetBracketCutoffsRequest> | undefined, b: GetBracketCutoffsRequest | PlainMessage<GetBracketCutoffsRequest> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.GetBracketCutoffsResponse
- */
-export declare class GetBracketCutoffsResponse extends Message<GetBracketCutoffsResponse> {
-  /**
-   * @generated from field: repeated float bracket_cutoffs = 1;
-   */
-  bracketCutoffs: number[];
-
-  constructor(data?: PartialMessage<GetBracketCutoffsResponse>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.GetBracketCutoffsResponse";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetBracketCutoffsResponse;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetBracketCutoffsResponse;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetBracketCutoffsResponse;
-
-  static equals(a: GetBracketCutoffsResponse | PlainMessage<GetBracketCutoffsResponse> | undefined, b: GetBracketCutoffsResponse | PlainMessage<GetBracketCutoffsResponse> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.SetBracketCutoffsRequest
- */
-export declare class SetBracketCutoffsRequest extends Message<SetBracketCutoffsRequest> {
-  /**
-   * @generated from field: int32 org_id = 1;
-   */
-  orgId: number;
-
-  /**
-   * @generated from field: repeated float bracket_cutoffs = 2;
-   */
-  bracketCutoffs: number[];
-
-  constructor(data?: PartialMessage<SetBracketCutoffsRequest>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.SetBracketCutoffsRequest";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetBracketCutoffsRequest;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetBracketCutoffsRequest;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetBracketCutoffsRequest;
-
-  static equals(a: SetBracketCutoffsRequest | PlainMessage<SetBracketCutoffsRequest> | undefined, b: SetBracketCutoffsRequest | PlainMessage<SetBracketCutoffsRequest> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.SetBracketCutoffsResponse
- */
-export declare class SetBracketCutoffsResponse extends Message<SetBracketCutoffsResponse> {
-  constructor(data?: PartialMessage<SetBracketCutoffsResponse>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.SetBracketCutoffsResponse";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetBracketCutoffsResponse;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetBracketCutoffsResponse;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetBracketCutoffsResponse;
-
-  static equals(a: SetBracketCutoffsResponse | PlainMessage<SetBracketCutoffsResponse> | undefined, b: SetBracketCutoffsResponse | PlainMessage<SetBracketCutoffsResponse> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.GetBracketRatesRequest
- */
-export declare class GetBracketRatesRequest extends Message<GetBracketRatesRequest> {
-  /**
-   * @generated from field: int32 org_id = 1;
-   */
-  orgId: number;
-
-  constructor(data?: PartialMessage<GetBracketRatesRequest>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.GetBracketRatesRequest";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetBracketRatesRequest;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetBracketRatesRequest;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetBracketRatesRequest;
-
-  static equals(a: GetBracketRatesRequest | PlainMessage<GetBracketRatesRequest> | undefined, b: GetBracketRatesRequest | PlainMessage<GetBracketRatesRequest> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.GetBracketRatesResponse
- */
-export declare class GetBracketRatesResponse extends Message<GetBracketRatesResponse> {
-  /**
-   * @generated from field: repeated float bracket_rates = 1;
-   */
-  bracketRates: number[];
-
-  constructor(data?: PartialMessage<GetBracketRatesResponse>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.GetBracketRatesResponse";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetBracketRatesResponse;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetBracketRatesResponse;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetBracketRatesResponse;
-
-  static equals(a: GetBracketRatesResponse | PlainMessage<GetBracketRatesResponse> | undefined, b: GetBracketRatesResponse | PlainMessage<GetBracketRatesResponse> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.SetBracketRatesRequest
- */
-export declare class SetBracketRatesRequest extends Message<SetBracketRatesRequest> {
-  /**
-   * @generated from field: int32 org_id = 1;
-   */
-  orgId: number;
-
-  /**
-   * @generated from field: repeated float bracket_rates = 2;
-   */
-  bracketRates: number[];
-
-  constructor(data?: PartialMessage<SetBracketRatesRequest>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.SetBracketRatesRequest";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetBracketRatesRequest;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetBracketRatesRequest;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetBracketRatesRequest;
-
-  static equals(a: SetBracketRatesRequest | PlainMessage<SetBracketRatesRequest> | undefined, b: SetBracketRatesRequest | PlainMessage<SetBracketRatesRequest> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.SetBracketRatesResponse
- */
-export declare class SetBracketRatesResponse extends Message<SetBracketRatesResponse> {
-  constructor(data?: PartialMessage<SetBracketRatesResponse>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.SetBracketRatesResponse";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetBracketRatesResponse;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetBracketRatesResponse;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetBracketRatesResponse;
-
-  static equals(a: SetBracketRatesResponse | PlainMessage<SetBracketRatesResponse> | undefined, b: SetBracketRatesResponse | PlainMessage<SetBracketRatesResponse> | undefined): boolean;
-}
-
-/**
+ * 计算税收的请求消息
+ *
  * @generated from message city.economy.v2.CalculateTaxesDueRequest
  */
 export declare class CalculateTaxesDueRequest extends Message<CalculateTaxesDueRequest> {
   /**
+   * 政府组织的ID
+   *
    * @generated from field: int32 government_id = 1;
    */
   governmentId: number;
 
   /**
-   * id of agents who needs to pay tax
+   * 需要缴税的代理ID列表
    *
    * @generated from field: repeated int32 agent_ids = 2;
    */
   agentIds: number[];
 
   /**
-   * income of agents who needs to pay tax, corresponds one-to-one with `agent_ids` by index
+   * 代理的收入列表，与agent_ids一一对应
    *
    * @generated from field: repeated float incomes = 3;
    */
   incomes: number[];
 
   /**
-   * Whether redistribute the taxes to all agents or not
+   * 是否将税收重新分配给所有代理
    *
    * @generated from field: bool enable_redistribution = 4;
    */
@@ -1374,18 +463,20 @@ export declare class CalculateTaxesDueRequest extends Message<CalculateTaxesDueR
 }
 
 /**
+ * 计算税收的响应消息
+ *
  * @generated from message city.economy.v2.CalculateTaxesDueResponse
  */
 export declare class CalculateTaxesDueResponse extends Message<CalculateTaxesDueResponse> {
   /**
-   * total taxes from agents
+   * 总税收金额
    *
    * @generated from field: float taxes_due = 1;
    */
   taxesDue: number;
 
   /**
-   * after-tax income of agents, corresponds one-to-one with `agent_ids` by index
+   * 更新后的收入列表，与请求中的agent_ids一一对应
    *
    * @generated from field: repeated float updated_incomes = 2;
    */
@@ -1407,32 +498,34 @@ export declare class CalculateTaxesDueResponse extends Message<CalculateTaxesDue
 }
 
 /**
+ * 计算消费的请求消息
+ *
  * @generated from message city.economy.v2.CalculateConsumptionRequest
  */
 export declare class CalculateConsumptionRequest extends Message<CalculateConsumptionRequest> {
   /**
-   * 多个公司ID
+   * 可供消费的公司ID列表
    *
    * @generated from field: repeated int32 firm_ids = 1;
    */
   firmIds: number[];
 
   /**
-   * 代理ID
+   * 进行消费的代理ID
    *
    * @generated from field: int32 agent_id = 2;
    */
   agentId: number;
 
   /**
-   * 对应每个公司的需求量
+   * 对每个公司的需求量，与firm_ids一一对应
    *
    * @generated from field: repeated int32 demands = 3;
    */
   demands: number[];
 
   /**
-   * 是否累加消费，默认为true
+   * 是否累加消费值
    *
    * @generated from field: optional bool consumption_accumulation = 4;
    */
@@ -1454,11 +547,13 @@ export declare class CalculateConsumptionRequest extends Message<CalculateConsum
 }
 
 /**
+ * 计算消费的响应消息
+ *
  * @generated from message city.economy.v2.CalculateConsumptionResponse
  */
 export declare class CalculateConsumptionResponse extends Message<CalculateConsumptionResponse> {
   /**
-   * 代理实际消费的钱
+   * 实际消费金额
    *
    * @generated from field: float actual_consumption = 1;
    */
@@ -1487,16 +582,20 @@ export declare class CalculateConsumptionResponse extends Message<CalculateConsu
 }
 
 /**
+ * 计算利息的请求消息
+ *
  * @generated from message city.economy.v2.CalculateInterestRequest
  */
 export declare class CalculateInterestRequest extends Message<CalculateInterestRequest> {
   /**
+   * 银行组织的ID
+   *
    * @generated from field: int32 bank_id = 1;
    */
   bankId: number;
 
   /**
-   * id of agents who has currency stored in the bank
+   * 存款代理的ID列表
    *
    * @generated from field: repeated int32 agent_ids = 2;
    */
@@ -1518,18 +617,20 @@ export declare class CalculateInterestRequest extends Message<CalculateInterestR
 }
 
 /**
+ * 计算利息的响应消息
+ *
  * @generated from message city.economy.v2.CalculateInterestResponse
  */
 export declare class CalculateInterestResponse extends Message<CalculateInterestResponse> {
   /**
-   * total interest that the agents got from the bank
+   * 总利息金额
    *
    * @generated from field: float total_interest = 1;
    */
   totalInterest: number;
 
   /**
-   * currencies with interest of each agents, corresponds one-to-one with `agent_ids` by index
+   * 更新后的货币数量列表，与请求中的agent_ids一一对应
    *
    * @generated from field: repeated float updated_currencies = 2;
    */
@@ -1551,1756 +652,13 @@ export declare class CalculateInterestResponse extends Message<CalculateInterest
 }
 
 /**
- * @generated from message city.economy.v2.SaveEconomyEntitiesRequest
- */
-export declare class SaveEconomyEntitiesRequest extends Message<SaveEconomyEntitiesRequest> {
-  /**
-   * @generated from field: string file_path = 1;
-   */
-  filePath: string;
-
-  constructor(data?: PartialMessage<SaveEconomyEntitiesRequest>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.SaveEconomyEntitiesRequest";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveEconomyEntitiesRequest;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveEconomyEntitiesRequest;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveEconomyEntitiesRequest;
-
-  static equals(a: SaveEconomyEntitiesRequest | PlainMessage<SaveEconomyEntitiesRequest> | undefined, b: SaveEconomyEntitiesRequest | PlainMessage<SaveEconomyEntitiesRequest> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.SaveEconomyEntitiesResponse
- */
-export declare class SaveEconomyEntitiesResponse extends Message<SaveEconomyEntitiesResponse> {
-  /**
-   * 组织ID列表
-   *
-   * @generated from field: repeated int32 org_ids = 1;
-   */
-  orgIds: number[];
-
-  /**
-   * Agent ID列表
-   *
-   * @generated from field: repeated int32 agent_ids = 2;
-   */
-  agentIds: number[];
-
-  constructor(data?: PartialMessage<SaveEconomyEntitiesResponse>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.SaveEconomyEntitiesResponse";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveEconomyEntitiesResponse;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveEconomyEntitiesResponse;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveEconomyEntitiesResponse;
-
-  static equals(a: SaveEconomyEntitiesResponse | PlainMessage<SaveEconomyEntitiesResponse> | undefined, b: SaveEconomyEntitiesResponse | PlainMessage<SaveEconomyEntitiesResponse> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.LoadEconomyEntitiesRequest
- */
-export declare class LoadEconomyEntitiesRequest extends Message<LoadEconomyEntitiesRequest> {
-  /**
-   * @generated from field: string file_path = 1;
-   */
-  filePath: string;
-
-  constructor(data?: PartialMessage<LoadEconomyEntitiesRequest>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.LoadEconomyEntitiesRequest";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LoadEconomyEntitiesRequest;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LoadEconomyEntitiesRequest;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LoadEconomyEntitiesRequest;
-
-  static equals(a: LoadEconomyEntitiesRequest | PlainMessage<LoadEconomyEntitiesRequest> | undefined, b: LoadEconomyEntitiesRequest | PlainMessage<LoadEconomyEntitiesRequest> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.LoadEconomyEntitiesResponse
- */
-export declare class LoadEconomyEntitiesResponse extends Message<LoadEconomyEntitiesResponse> {
-  /**
-   * 组织ID列表
-   *
-   * @generated from field: repeated int32 org_ids = 1;
-   */
-  orgIds: number[];
-
-  /**
-   * Agent ID列表
-   *
-   * @generated from field: repeated int32 agent_ids = 2;
-   */
-  agentIds: number[];
-
-  constructor(data?: PartialMessage<LoadEconomyEntitiesResponse>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.LoadEconomyEntitiesResponse";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LoadEconomyEntitiesResponse;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LoadEconomyEntitiesResponse;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LoadEconomyEntitiesResponse;
-
-  static equals(a: LoadEconomyEntitiesResponse | PlainMessage<LoadEconomyEntitiesResponse> | undefined, b: LoadEconomyEntitiesResponse | PlainMessage<LoadEconomyEntitiesResponse> | undefined): boolean;
-}
-
-/**
- * Consumption Currency
- *
- * @generated from message city.economy.v2.GetConsumptionCurrencyRequest
- */
-export declare class GetConsumptionCurrencyRequest extends Message<GetConsumptionCurrencyRequest> {
-  /**
-   * @generated from field: int32 org_id = 1;
-   */
-  orgId: number;
-
-  constructor(data?: PartialMessage<GetConsumptionCurrencyRequest>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.GetConsumptionCurrencyRequest";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetConsumptionCurrencyRequest;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetConsumptionCurrencyRequest;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetConsumptionCurrencyRequest;
-
-  static equals(a: GetConsumptionCurrencyRequest | PlainMessage<GetConsumptionCurrencyRequest> | undefined, b: GetConsumptionCurrencyRequest | PlainMessage<GetConsumptionCurrencyRequest> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.GetConsumptionCurrencyResponse
- */
-export declare class GetConsumptionCurrencyResponse extends Message<GetConsumptionCurrencyResponse> {
-  /**
-   * @generated from field: repeated float consumption_currency = 1;
-   */
-  consumptionCurrency: number[];
-
-  constructor(data?: PartialMessage<GetConsumptionCurrencyResponse>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.GetConsumptionCurrencyResponse";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetConsumptionCurrencyResponse;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetConsumptionCurrencyResponse;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetConsumptionCurrencyResponse;
-
-  static equals(a: GetConsumptionCurrencyResponse | PlainMessage<GetConsumptionCurrencyResponse> | undefined, b: GetConsumptionCurrencyResponse | PlainMessage<GetConsumptionCurrencyResponse> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.SetConsumptionCurrencyRequest
- */
-export declare class SetConsumptionCurrencyRequest extends Message<SetConsumptionCurrencyRequest> {
-  /**
-   * @generated from field: int32 org_id = 1;
-   */
-  orgId: number;
-
-  /**
-   * @generated from field: repeated float consumption_currency = 2;
-   */
-  consumptionCurrency: number[];
-
-  constructor(data?: PartialMessage<SetConsumptionCurrencyRequest>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.SetConsumptionCurrencyRequest";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetConsumptionCurrencyRequest;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetConsumptionCurrencyRequest;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetConsumptionCurrencyRequest;
-
-  static equals(a: SetConsumptionCurrencyRequest | PlainMessage<SetConsumptionCurrencyRequest> | undefined, b: SetConsumptionCurrencyRequest | PlainMessage<SetConsumptionCurrencyRequest> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.SetConsumptionCurrencyResponse
- */
-export declare class SetConsumptionCurrencyResponse extends Message<SetConsumptionCurrencyResponse> {
-  constructor(data?: PartialMessage<SetConsumptionCurrencyResponse>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.SetConsumptionCurrencyResponse";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetConsumptionCurrencyResponse;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetConsumptionCurrencyResponse;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetConsumptionCurrencyResponse;
-
-  static equals(a: SetConsumptionCurrencyResponse | PlainMessage<SetConsumptionCurrencyResponse> | undefined, b: SetConsumptionCurrencyResponse | PlainMessage<SetConsumptionCurrencyResponse> | undefined): boolean;
-}
-
-/**
- * Consumption Propensity
- *
- * @generated from message city.economy.v2.GetConsumptionPropensityRequest
- */
-export declare class GetConsumptionPropensityRequest extends Message<GetConsumptionPropensityRequest> {
-  /**
-   * @generated from field: int32 org_id = 1;
-   */
-  orgId: number;
-
-  constructor(data?: PartialMessage<GetConsumptionPropensityRequest>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.GetConsumptionPropensityRequest";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetConsumptionPropensityRequest;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetConsumptionPropensityRequest;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetConsumptionPropensityRequest;
-
-  static equals(a: GetConsumptionPropensityRequest | PlainMessage<GetConsumptionPropensityRequest> | undefined, b: GetConsumptionPropensityRequest | PlainMessage<GetConsumptionPropensityRequest> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.GetConsumptionPropensityResponse
- */
-export declare class GetConsumptionPropensityResponse extends Message<GetConsumptionPropensityResponse> {
-  /**
-   * @generated from field: repeated float consumption_propensity = 1;
-   */
-  consumptionPropensity: number[];
-
-  constructor(data?: PartialMessage<GetConsumptionPropensityResponse>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.GetConsumptionPropensityResponse";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetConsumptionPropensityResponse;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetConsumptionPropensityResponse;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetConsumptionPropensityResponse;
-
-  static equals(a: GetConsumptionPropensityResponse | PlainMessage<GetConsumptionPropensityResponse> | undefined, b: GetConsumptionPropensityResponse | PlainMessage<GetConsumptionPropensityResponse> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.SetConsumptionPropensityRequest
- */
-export declare class SetConsumptionPropensityRequest extends Message<SetConsumptionPropensityRequest> {
-  /**
-   * @generated from field: int32 org_id = 1;
-   */
-  orgId: number;
-
-  /**
-   * @generated from field: repeated float consumption_propensity = 2;
-   */
-  consumptionPropensity: number[];
-
-  constructor(data?: PartialMessage<SetConsumptionPropensityRequest>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.SetConsumptionPropensityRequest";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetConsumptionPropensityRequest;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetConsumptionPropensityRequest;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetConsumptionPropensityRequest;
-
-  static equals(a: SetConsumptionPropensityRequest | PlainMessage<SetConsumptionPropensityRequest> | undefined, b: SetConsumptionPropensityRequest | PlainMessage<SetConsumptionPropensityRequest> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.SetConsumptionPropensityResponse
- */
-export declare class SetConsumptionPropensityResponse extends Message<SetConsumptionPropensityResponse> {
-  constructor(data?: PartialMessage<SetConsumptionPropensityResponse>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.SetConsumptionPropensityResponse";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetConsumptionPropensityResponse;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetConsumptionPropensityResponse;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetConsumptionPropensityResponse;
-
-  static equals(a: SetConsumptionPropensityResponse | PlainMessage<SetConsumptionPropensityResponse> | undefined, b: SetConsumptionPropensityResponse | PlainMessage<SetConsumptionPropensityResponse> | undefined): boolean;
-}
-
-/**
- * Income Currency
- *
- * @generated from message city.economy.v2.GetIncomeCurrencyRequest
- */
-export declare class GetIncomeCurrencyRequest extends Message<GetIncomeCurrencyRequest> {
-  /**
-   * @generated from field: int32 org_id = 1;
-   */
-  orgId: number;
-
-  constructor(data?: PartialMessage<GetIncomeCurrencyRequest>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.GetIncomeCurrencyRequest";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetIncomeCurrencyRequest;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetIncomeCurrencyRequest;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetIncomeCurrencyRequest;
-
-  static equals(a: GetIncomeCurrencyRequest | PlainMessage<GetIncomeCurrencyRequest> | undefined, b: GetIncomeCurrencyRequest | PlainMessage<GetIncomeCurrencyRequest> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.GetIncomeCurrencyResponse
- */
-export declare class GetIncomeCurrencyResponse extends Message<GetIncomeCurrencyResponse> {
-  /**
-   * @generated from field: repeated float income_currency = 1;
-   */
-  incomeCurrency: number[];
-
-  constructor(data?: PartialMessage<GetIncomeCurrencyResponse>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.GetIncomeCurrencyResponse";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetIncomeCurrencyResponse;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetIncomeCurrencyResponse;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetIncomeCurrencyResponse;
-
-  static equals(a: GetIncomeCurrencyResponse | PlainMessage<GetIncomeCurrencyResponse> | undefined, b: GetIncomeCurrencyResponse | PlainMessage<GetIncomeCurrencyResponse> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.SetIncomeCurrencyRequest
- */
-export declare class SetIncomeCurrencyRequest extends Message<SetIncomeCurrencyRequest> {
-  /**
-   * @generated from field: int32 org_id = 1;
-   */
-  orgId: number;
-
-  /**
-   * @generated from field: repeated float income_currency = 2;
-   */
-  incomeCurrency: number[];
-
-  constructor(data?: PartialMessage<SetIncomeCurrencyRequest>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.SetIncomeCurrencyRequest";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetIncomeCurrencyRequest;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetIncomeCurrencyRequest;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetIncomeCurrencyRequest;
-
-  static equals(a: SetIncomeCurrencyRequest | PlainMessage<SetIncomeCurrencyRequest> | undefined, b: SetIncomeCurrencyRequest | PlainMessage<SetIncomeCurrencyRequest> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.SetIncomeCurrencyResponse
- */
-export declare class SetIncomeCurrencyResponse extends Message<SetIncomeCurrencyResponse> {
-  constructor(data?: PartialMessage<SetIncomeCurrencyResponse>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.SetIncomeCurrencyResponse";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetIncomeCurrencyResponse;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetIncomeCurrencyResponse;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetIncomeCurrencyResponse;
-
-  static equals(a: SetIncomeCurrencyResponse | PlainMessage<SetIncomeCurrencyResponse> | undefined, b: SetIncomeCurrencyResponse | PlainMessage<SetIncomeCurrencyResponse> | undefined): boolean;
-}
-
-/**
- * Depression
- *
- * @generated from message city.economy.v2.GetDepressionRequest
- */
-export declare class GetDepressionRequest extends Message<GetDepressionRequest> {
-  /**
-   * @generated from field: int32 org_id = 1;
-   */
-  orgId: number;
-
-  constructor(data?: PartialMessage<GetDepressionRequest>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.GetDepressionRequest";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetDepressionRequest;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetDepressionRequest;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetDepressionRequest;
-
-  static equals(a: GetDepressionRequest | PlainMessage<GetDepressionRequest> | undefined, b: GetDepressionRequest | PlainMessage<GetDepressionRequest> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.GetDepressionResponse
- */
-export declare class GetDepressionResponse extends Message<GetDepressionResponse> {
-  /**
-   * @generated from field: repeated float depression = 1;
-   */
-  depression: number[];
-
-  constructor(data?: PartialMessage<GetDepressionResponse>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.GetDepressionResponse";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetDepressionResponse;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetDepressionResponse;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetDepressionResponse;
-
-  static equals(a: GetDepressionResponse | PlainMessage<GetDepressionResponse> | undefined, b: GetDepressionResponse | PlainMessage<GetDepressionResponse> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.SetDepressionRequest
- */
-export declare class SetDepressionRequest extends Message<SetDepressionRequest> {
-  /**
-   * @generated from field: int32 org_id = 1;
-   */
-  orgId: number;
-
-  /**
-   * @generated from field: repeated float depression = 2;
-   */
-  depression: number[];
-
-  constructor(data?: PartialMessage<SetDepressionRequest>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.SetDepressionRequest";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetDepressionRequest;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetDepressionRequest;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetDepressionRequest;
-
-  static equals(a: SetDepressionRequest | PlainMessage<SetDepressionRequest> | undefined, b: SetDepressionRequest | PlainMessage<SetDepressionRequest> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.SetDepressionResponse
- */
-export declare class SetDepressionResponse extends Message<SetDepressionResponse> {
-  constructor(data?: PartialMessage<SetDepressionResponse>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.SetDepressionResponse";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetDepressionResponse;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetDepressionResponse;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetDepressionResponse;
-
-  static equals(a: SetDepressionResponse | PlainMessage<SetDepressionResponse> | undefined, b: SetDepressionResponse | PlainMessage<SetDepressionResponse> | undefined): boolean;
-}
-
-/**
- * Locus of Control
- *
- * @generated from message city.economy.v2.GetLocusControlRequest
- */
-export declare class GetLocusControlRequest extends Message<GetLocusControlRequest> {
-  /**
-   * @generated from field: int32 org_id = 1;
-   */
-  orgId: number;
-
-  constructor(data?: PartialMessage<GetLocusControlRequest>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.GetLocusControlRequest";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetLocusControlRequest;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetLocusControlRequest;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetLocusControlRequest;
-
-  static equals(a: GetLocusControlRequest | PlainMessage<GetLocusControlRequest> | undefined, b: GetLocusControlRequest | PlainMessage<GetLocusControlRequest> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.GetLocusControlResponse
- */
-export declare class GetLocusControlResponse extends Message<GetLocusControlResponse> {
-  /**
-   * @generated from field: repeated float locus_control = 1;
-   */
-  locusControl: number[];
-
-  constructor(data?: PartialMessage<GetLocusControlResponse>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.GetLocusControlResponse";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetLocusControlResponse;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetLocusControlResponse;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetLocusControlResponse;
-
-  static equals(a: GetLocusControlResponse | PlainMessage<GetLocusControlResponse> | undefined, b: GetLocusControlResponse | PlainMessage<GetLocusControlResponse> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.SetLocusControlRequest
- */
-export declare class SetLocusControlRequest extends Message<SetLocusControlRequest> {
-  /**
-   * @generated from field: int32 org_id = 1;
-   */
-  orgId: number;
-
-  /**
-   * @generated from field: repeated float locus_control = 2;
-   */
-  locusControl: number[];
-
-  constructor(data?: PartialMessage<SetLocusControlRequest>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.SetLocusControlRequest";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetLocusControlRequest;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetLocusControlRequest;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetLocusControlRequest;
-
-  static equals(a: SetLocusControlRequest | PlainMessage<SetLocusControlRequest> | undefined, b: SetLocusControlRequest | PlainMessage<SetLocusControlRequest> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.SetLocusControlResponse
- */
-export declare class SetLocusControlResponse extends Message<SetLocusControlResponse> {
-  constructor(data?: PartialMessage<SetLocusControlResponse>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.SetLocusControlResponse";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetLocusControlResponse;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetLocusControlResponse;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetLocusControlResponse;
-
-  static equals(a: SetLocusControlResponse | PlainMessage<SetLocusControlResponse> | undefined, b: SetLocusControlResponse | PlainMessage<SetLocusControlResponse> | undefined): boolean;
-}
-
-/**
- * Working Hours
- *
- * @generated from message city.economy.v2.GetWorkingHoursRequest
- */
-export declare class GetWorkingHoursRequest extends Message<GetWorkingHoursRequest> {
-  /**
-   * @generated from field: int32 org_id = 1;
-   */
-  orgId: number;
-
-  constructor(data?: PartialMessage<GetWorkingHoursRequest>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.GetWorkingHoursRequest";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetWorkingHoursRequest;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetWorkingHoursRequest;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetWorkingHoursRequest;
-
-  static equals(a: GetWorkingHoursRequest | PlainMessage<GetWorkingHoursRequest> | undefined, b: GetWorkingHoursRequest | PlainMessage<GetWorkingHoursRequest> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.GetWorkingHoursResponse
- */
-export declare class GetWorkingHoursResponse extends Message<GetWorkingHoursResponse> {
-  /**
-   * @generated from field: repeated float working_hours = 1;
-   */
-  workingHours: number[];
-
-  constructor(data?: PartialMessage<GetWorkingHoursResponse>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.GetWorkingHoursResponse";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetWorkingHoursResponse;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetWorkingHoursResponse;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetWorkingHoursResponse;
-
-  static equals(a: GetWorkingHoursResponse | PlainMessage<GetWorkingHoursResponse> | undefined, b: GetWorkingHoursResponse | PlainMessage<GetWorkingHoursResponse> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.SetWorkingHoursRequest
- */
-export declare class SetWorkingHoursRequest extends Message<SetWorkingHoursRequest> {
-  /**
-   * @generated from field: int32 org_id = 1;
-   */
-  orgId: number;
-
-  /**
-   * @generated from field: repeated float working_hours = 2;
-   */
-  workingHours: number[];
-
-  constructor(data?: PartialMessage<SetWorkingHoursRequest>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.SetWorkingHoursRequest";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetWorkingHoursRequest;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetWorkingHoursRequest;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetWorkingHoursRequest;
-
-  static equals(a: SetWorkingHoursRequest | PlainMessage<SetWorkingHoursRequest> | undefined, b: SetWorkingHoursRequest | PlainMessage<SetWorkingHoursRequest> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.SetWorkingHoursResponse
- */
-export declare class SetWorkingHoursResponse extends Message<SetWorkingHoursResponse> {
-  constructor(data?: PartialMessage<SetWorkingHoursResponse>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.SetWorkingHoursResponse";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetWorkingHoursResponse;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetWorkingHoursResponse;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetWorkingHoursResponse;
-
-  static equals(a: SetWorkingHoursResponse | PlainMessage<SetWorkingHoursResponse> | undefined, b: SetWorkingHoursResponse | PlainMessage<SetWorkingHoursResponse> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.GetOrgEntityIdsRequest
- */
-export declare class GetOrgEntityIdsRequest extends Message<GetOrgEntityIdsRequest> {
-  /**
-   * @generated from field: city.economy.v2.OrgType type = 1;
-   */
-  type: OrgType;
-
-  constructor(data?: PartialMessage<GetOrgEntityIdsRequest>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.GetOrgEntityIdsRequest";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetOrgEntityIdsRequest;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetOrgEntityIdsRequest;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetOrgEntityIdsRequest;
-
-  static equals(a: GetOrgEntityIdsRequest | PlainMessage<GetOrgEntityIdsRequest> | undefined, b: GetOrgEntityIdsRequest | PlainMessage<GetOrgEntityIdsRequest> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.GetOrgEntityIdsResponse
- */
-export declare class GetOrgEntityIdsResponse extends Message<GetOrgEntityIdsResponse> {
-  /**
-   * @generated from field: repeated int32 org_ids = 1;
-   */
-  orgIds: number[];
-
-  constructor(data?: PartialMessage<GetOrgEntityIdsResponse>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.GetOrgEntityIdsResponse";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetOrgEntityIdsResponse;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetOrgEntityIdsResponse;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetOrgEntityIdsResponse;
-
-  static equals(a: GetOrgEntityIdsResponse | PlainMessage<GetOrgEntityIdsResponse> | undefined, b: GetOrgEntityIdsResponse | PlainMessage<GetOrgEntityIdsResponse> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.AddInventoryRequest
- */
-export declare class AddInventoryRequest extends Message<AddInventoryRequest> {
-  /**
-   * @generated from field: int32 org_id = 1;
-   */
-  orgId: number;
-
-  /**
-   * @generated from field: int32 delta_inventory = 2;
-   */
-  deltaInventory: number;
-
-  constructor(data?: PartialMessage<AddInventoryRequest>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.AddInventoryRequest";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AddInventoryRequest;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AddInventoryRequest;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AddInventoryRequest;
-
-  static equals(a: AddInventoryRequest | PlainMessage<AddInventoryRequest> | undefined, b: AddInventoryRequest | PlainMessage<AddInventoryRequest> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.AddInventoryResponse
- */
-export declare class AddInventoryResponse extends Message<AddInventoryResponse> {
-  /**
-   * @generated from field: int32 inventory = 1;
-   */
-  inventory: number;
-
-  constructor(data?: PartialMessage<AddInventoryResponse>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.AddInventoryResponse";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AddInventoryResponse;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AddInventoryResponse;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AddInventoryResponse;
-
-  static equals(a: AddInventoryResponse | PlainMessage<AddInventoryResponse> | undefined, b: AddInventoryResponse | PlainMessage<AddInventoryResponse> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.AddPriceRequest
- */
-export declare class AddPriceRequest extends Message<AddPriceRequest> {
-  /**
-   * @generated from field: int32 org_id = 1;
-   */
-  orgId: number;
-
-  /**
-   * @generated from field: float delta_price = 2;
-   */
-  deltaPrice: number;
-
-  constructor(data?: PartialMessage<AddPriceRequest>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.AddPriceRequest";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AddPriceRequest;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AddPriceRequest;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AddPriceRequest;
-
-  static equals(a: AddPriceRequest | PlainMessage<AddPriceRequest> | undefined, b: AddPriceRequest | PlainMessage<AddPriceRequest> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.AddPriceResponse
- */
-export declare class AddPriceResponse extends Message<AddPriceResponse> {
-  /**
-   * @generated from field: float price = 1;
-   */
-  price: number;
-
-  constructor(data?: PartialMessage<AddPriceResponse>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.AddPriceResponse";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AddPriceResponse;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AddPriceResponse;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AddPriceResponse;
-
-  static equals(a: AddPriceResponse | PlainMessage<AddPriceResponse> | undefined, b: AddPriceResponse | PlainMessage<AddPriceResponse> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.AddCurrencyRequest
- */
-export declare class AddCurrencyRequest extends Message<AddCurrencyRequest> {
-  /**
-   * @generated from field: int32 org_id = 1;
-   */
-  orgId: number;
-
-  /**
-   * @generated from field: float delta_currency = 2;
-   */
-  deltaCurrency: number;
-
-  constructor(data?: PartialMessage<AddCurrencyRequest>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.AddCurrencyRequest";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AddCurrencyRequest;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AddCurrencyRequest;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AddCurrencyRequest;
-
-  static equals(a: AddCurrencyRequest | PlainMessage<AddCurrencyRequest> | undefined, b: AddCurrencyRequest | PlainMessage<AddCurrencyRequest> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.AddCurrencyResponse
- */
-export declare class AddCurrencyResponse extends Message<AddCurrencyResponse> {
-  /**
-   * @generated from field: float currency = 1;
-   */
-  currency: number;
-
-  constructor(data?: PartialMessage<AddCurrencyResponse>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.AddCurrencyResponse";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AddCurrencyResponse;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AddCurrencyResponse;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AddCurrencyResponse;
-
-  static equals(a: AddCurrencyResponse | PlainMessage<AddCurrencyResponse> | undefined, b: AddCurrencyResponse | PlainMessage<AddCurrencyResponse> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.AddInterestRateRequest
- */
-export declare class AddInterestRateRequest extends Message<AddInterestRateRequest> {
-  /**
-   * @generated from field: int32 org_id = 1;
-   */
-  orgId: number;
-
-  /**
-   * @generated from field: float delta_interest_rate = 2;
-   */
-  deltaInterestRate: number;
-
-  constructor(data?: PartialMessage<AddInterestRateRequest>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.AddInterestRateRequest";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AddInterestRateRequest;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AddInterestRateRequest;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AddInterestRateRequest;
-
-  static equals(a: AddInterestRateRequest | PlainMessage<AddInterestRateRequest> | undefined, b: AddInterestRateRequest | PlainMessage<AddInterestRateRequest> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.AddInterestRateResponse
- */
-export declare class AddInterestRateResponse extends Message<AddInterestRateResponse> {
-  /**
-   * @generated from field: float interest_rate = 1;
-   */
-  interestRate: number;
-
-  constructor(data?: PartialMessage<AddInterestRateResponse>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.AddInterestRateResponse";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AddInterestRateResponse;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AddInterestRateResponse;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AddInterestRateResponse;
-
-  static equals(a: AddInterestRateResponse | PlainMessage<AddInterestRateResponse> | undefined, b: AddInterestRateResponse | PlainMessage<AddInterestRateResponse> | undefined): boolean;
-}
-
-/**
- * Employees 相关消息
- *
- * @generated from message city.economy.v2.GetEmployeesRequest
- */
-export declare class GetEmployeesRequest extends Message<GetEmployeesRequest> {
-  /**
-   * @generated from field: int32 org_id = 1;
-   */
-  orgId: number;
-
-  constructor(data?: PartialMessage<GetEmployeesRequest>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.GetEmployeesRequest";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetEmployeesRequest;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetEmployeesRequest;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetEmployeesRequest;
-
-  static equals(a: GetEmployeesRequest | PlainMessage<GetEmployeesRequest> | undefined, b: GetEmployeesRequest | PlainMessage<GetEmployeesRequest> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.GetEmployeesResponse
- */
-export declare class GetEmployeesResponse extends Message<GetEmployeesResponse> {
-  /**
-   * @generated from field: repeated int32 employee_ids = 1;
-   */
-  employeeIds: number[];
-
-  constructor(data?: PartialMessage<GetEmployeesResponse>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.GetEmployeesResponse";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetEmployeesResponse;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetEmployeesResponse;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetEmployeesResponse;
-
-  static equals(a: GetEmployeesResponse | PlainMessage<GetEmployeesResponse> | undefined, b: GetEmployeesResponse | PlainMessage<GetEmployeesResponse> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.SetEmployeesRequest
- */
-export declare class SetEmployeesRequest extends Message<SetEmployeesRequest> {
-  /**
-   * @generated from field: int32 org_id = 1;
-   */
-  orgId: number;
-
-  /**
-   * @generated from field: repeated int32 employee_ids = 2;
-   */
-  employeeIds: number[];
-
-  constructor(data?: PartialMessage<SetEmployeesRequest>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.SetEmployeesRequest";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetEmployeesRequest;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetEmployeesRequest;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetEmployeesRequest;
-
-  static equals(a: SetEmployeesRequest | PlainMessage<SetEmployeesRequest> | undefined, b: SetEmployeesRequest | PlainMessage<SetEmployeesRequest> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.SetEmployeesResponse
- */
-export declare class SetEmployeesResponse extends Message<SetEmployeesResponse> {
-  constructor(data?: PartialMessage<SetEmployeesResponse>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.SetEmployeesResponse";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetEmployeesResponse;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetEmployeesResponse;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetEmployeesResponse;
-
-  static equals(a: SetEmployeesResponse | PlainMessage<SetEmployeesResponse> | undefined, b: SetEmployeesResponse | PlainMessage<SetEmployeesResponse> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.AddEmployeeRequest
- */
-export declare class AddEmployeeRequest extends Message<AddEmployeeRequest> {
-  /**
-   * @generated from field: int32 org_id = 1;
-   */
-  orgId: number;
-
-  /**
-   * @generated from field: int32 employee_id = 2;
-   */
-  employeeId: number;
-
-  constructor(data?: PartialMessage<AddEmployeeRequest>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.AddEmployeeRequest";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AddEmployeeRequest;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AddEmployeeRequest;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AddEmployeeRequest;
-
-  static equals(a: AddEmployeeRequest | PlainMessage<AddEmployeeRequest> | undefined, b: AddEmployeeRequest | PlainMessage<AddEmployeeRequest> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.AddEmployeeResponse
- */
-export declare class AddEmployeeResponse extends Message<AddEmployeeResponse> {
-  constructor(data?: PartialMessage<AddEmployeeResponse>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.AddEmployeeResponse";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AddEmployeeResponse;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AddEmployeeResponse;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AddEmployeeResponse;
-
-  static equals(a: AddEmployeeResponse | PlainMessage<AddEmployeeResponse> | undefined, b: AddEmployeeResponse | PlainMessage<AddEmployeeResponse> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.RemoveEmployeeRequest
- */
-export declare class RemoveEmployeeRequest extends Message<RemoveEmployeeRequest> {
-  /**
-   * @generated from field: int32 org_id = 1;
-   */
-  orgId: number;
-
-  /**
-   * @generated from field: int32 employee_id = 2;
-   */
-  employeeId: number;
-
-  constructor(data?: PartialMessage<RemoveEmployeeRequest>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.RemoveEmployeeRequest";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RemoveEmployeeRequest;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RemoveEmployeeRequest;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RemoveEmployeeRequest;
-
-  static equals(a: RemoveEmployeeRequest | PlainMessage<RemoveEmployeeRequest> | undefined, b: RemoveEmployeeRequest | PlainMessage<RemoveEmployeeRequest> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.RemoveEmployeeResponse
- */
-export declare class RemoveEmployeeResponse extends Message<RemoveEmployeeResponse> {
-  constructor(data?: PartialMessage<RemoveEmployeeResponse>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.RemoveEmployeeResponse";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RemoveEmployeeResponse;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RemoveEmployeeResponse;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RemoveEmployeeResponse;
-
-  static equals(a: RemoveEmployeeResponse | PlainMessage<RemoveEmployeeResponse> | undefined, b: RemoveEmployeeResponse | PlainMessage<RemoveEmployeeResponse> | undefined): boolean;
-}
-
-/**
- * Citizens 相关消息
- *
- * @generated from message city.economy.v2.GetCitizensRequest
- */
-export declare class GetCitizensRequest extends Message<GetCitizensRequest> {
-  /**
-   * @generated from field: int32 org_id = 1;
-   */
-  orgId: number;
-
-  constructor(data?: PartialMessage<GetCitizensRequest>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.GetCitizensRequest";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetCitizensRequest;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetCitizensRequest;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetCitizensRequest;
-
-  static equals(a: GetCitizensRequest | PlainMessage<GetCitizensRequest> | undefined, b: GetCitizensRequest | PlainMessage<GetCitizensRequest> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.GetCitizensResponse
- */
-export declare class GetCitizensResponse extends Message<GetCitizensResponse> {
-  /**
-   * @generated from field: repeated int32 citizen_ids = 1;
-   */
-  citizenIds: number[];
-
-  constructor(data?: PartialMessage<GetCitizensResponse>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.GetCitizensResponse";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetCitizensResponse;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetCitizensResponse;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetCitizensResponse;
-
-  static equals(a: GetCitizensResponse | PlainMessage<GetCitizensResponse> | undefined, b: GetCitizensResponse | PlainMessage<GetCitizensResponse> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.SetCitizensRequest
- */
-export declare class SetCitizensRequest extends Message<SetCitizensRequest> {
-  /**
-   * @generated from field: int32 org_id = 1;
-   */
-  orgId: number;
-
-  /**
-   * @generated from field: repeated int32 citizen_ids = 2;
-   */
-  citizenIds: number[];
-
-  constructor(data?: PartialMessage<SetCitizensRequest>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.SetCitizensRequest";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetCitizensRequest;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetCitizensRequest;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetCitizensRequest;
-
-  static equals(a: SetCitizensRequest | PlainMessage<SetCitizensRequest> | undefined, b: SetCitizensRequest | PlainMessage<SetCitizensRequest> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.SetCitizensResponse
- */
-export declare class SetCitizensResponse extends Message<SetCitizensResponse> {
-  constructor(data?: PartialMessage<SetCitizensResponse>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.SetCitizensResponse";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetCitizensResponse;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetCitizensResponse;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetCitizensResponse;
-
-  static equals(a: SetCitizensResponse | PlainMessage<SetCitizensResponse> | undefined, b: SetCitizensResponse | PlainMessage<SetCitizensResponse> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.AddCitizenRequest
- */
-export declare class AddCitizenRequest extends Message<AddCitizenRequest> {
-  /**
-   * @generated from field: int32 org_id = 1;
-   */
-  orgId: number;
-
-  /**
-   * @generated from field: int32 citizen_id = 2;
-   */
-  citizenId: number;
-
-  constructor(data?: PartialMessage<AddCitizenRequest>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.AddCitizenRequest";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AddCitizenRequest;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AddCitizenRequest;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AddCitizenRequest;
-
-  static equals(a: AddCitizenRequest | PlainMessage<AddCitizenRequest> | undefined, b: AddCitizenRequest | PlainMessage<AddCitizenRequest> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.AddCitizenResponse
- */
-export declare class AddCitizenResponse extends Message<AddCitizenResponse> {
-  constructor(data?: PartialMessage<AddCitizenResponse>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.AddCitizenResponse";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AddCitizenResponse;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AddCitizenResponse;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AddCitizenResponse;
-
-  static equals(a: AddCitizenResponse | PlainMessage<AddCitizenResponse> | undefined, b: AddCitizenResponse | PlainMessage<AddCitizenResponse> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.RemoveCitizenRequest
- */
-export declare class RemoveCitizenRequest extends Message<RemoveCitizenRequest> {
-  /**
-   * @generated from field: int32 org_id = 1;
-   */
-  orgId: number;
-
-  /**
-   * @generated from field: int32 citizen_id = 2;
-   */
-  citizenId: number;
-
-  constructor(data?: PartialMessage<RemoveCitizenRequest>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.RemoveCitizenRequest";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RemoveCitizenRequest;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RemoveCitizenRequest;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RemoveCitizenRequest;
-
-  static equals(a: RemoveCitizenRequest | PlainMessage<RemoveCitizenRequest> | undefined, b: RemoveCitizenRequest | PlainMessage<RemoveCitizenRequest> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.RemoveCitizenResponse
- */
-export declare class RemoveCitizenResponse extends Message<RemoveCitizenResponse> {
-  constructor(data?: PartialMessage<RemoveCitizenResponse>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.RemoveCitizenResponse";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RemoveCitizenResponse;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RemoveCitizenResponse;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RemoveCitizenResponse;
-
-  static equals(a: RemoveCitizenResponse | PlainMessage<RemoveCitizenResponse> | undefined, b: RemoveCitizenResponse | PlainMessage<RemoveCitizenResponse> | undefined): boolean;
-}
-
-/**
- * Agent 相关消息
- *
- * @generated from message city.economy.v2.GetAgentRequest
- */
-export declare class GetAgentRequest extends Message<GetAgentRequest> {
-  /**
-   * @generated from field: int32 agent_id = 1;
-   */
-  agentId: number;
-
-  constructor(data?: PartialMessage<GetAgentRequest>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.GetAgentRequest";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetAgentRequest;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetAgentRequest;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetAgentRequest;
-
-  static equals(a: GetAgentRequest | PlainMessage<GetAgentRequest> | undefined, b: GetAgentRequest | PlainMessage<GetAgentRequest> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.GetAgentResponse
- */
-export declare class GetAgentResponse extends Message<GetAgentResponse> {
-  /**
-   * @generated from field: city.economy.v2.Agent agent = 1;
-   */
-  agent?: Agent;
-
-  constructor(data?: PartialMessage<GetAgentResponse>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.GetAgentResponse";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetAgentResponse;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetAgentResponse;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetAgentResponse;
-
-  static equals(a: GetAgentResponse | PlainMessage<GetAgentResponse> | undefined, b: GetAgentResponse | PlainMessage<GetAgentResponse> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.UpdateAgentRequest
- */
-export declare class UpdateAgentRequest extends Message<UpdateAgentRequest> {
-  /**
-   * @generated from field: city.economy.v2.Agent agent = 1;
-   */
-  agent?: Agent;
-
-  constructor(data?: PartialMessage<UpdateAgentRequest>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.UpdateAgentRequest";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateAgentRequest;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateAgentRequest;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateAgentRequest;
-
-  static equals(a: UpdateAgentRequest | PlainMessage<UpdateAgentRequest> | undefined, b: UpdateAgentRequest | PlainMessage<UpdateAgentRequest> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.UpdateAgentResponse
- */
-export declare class UpdateAgentResponse extends Message<UpdateAgentResponse> {
-  constructor(data?: PartialMessage<UpdateAgentResponse>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.UpdateAgentResponse";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateAgentResponse;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateAgentResponse;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateAgentResponse;
-
-  static equals(a: UpdateAgentResponse | PlainMessage<UpdateAgentResponse> | undefined, b: UpdateAgentResponse | PlainMessage<UpdateAgentResponse> | undefined): boolean;
-}
-
-/**
- * 批量获取和更新
- *
- * @generated from message city.economy.v2.BatchGetRequest
- */
-export declare class BatchGetRequest extends Message<BatchGetRequest> {
-  /**
-   * 要获取的 ID 列表
-   *
-   * @generated from field: repeated int32 ids = 1;
-   */
-  ids: number[];
-
-  /**
-   * "org" 或 "agent"
-   *
-   * @generated from field: string type = 2;
-   */
-  type: string;
-
-  constructor(data?: PartialMessage<BatchGetRequest>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.BatchGetRequest";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): BatchGetRequest;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): BatchGetRequest;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): BatchGetRequest;
-
-  static equals(a: BatchGetRequest | PlainMessage<BatchGetRequest> | undefined, b: BatchGetRequest | PlainMessage<BatchGetRequest> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.BatchGetResponse
- */
-export declare class BatchGetResponse extends Message<BatchGetResponse> {
-  /**
-   * @generated from field: repeated city.economy.v2.Org orgs = 1;
-   */
-  orgs: Org[];
-
-  /**
-   * @generated from field: repeated city.economy.v2.Agent agents = 2;
-   */
-  agents: Agent[];
-
-  constructor(data?: PartialMessage<BatchGetResponse>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.BatchGetResponse";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): BatchGetResponse;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): BatchGetResponse;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): BatchGetResponse;
-
-  static equals(a: BatchGetResponse | PlainMessage<BatchGetResponse> | undefined, b: BatchGetResponse | PlainMessage<BatchGetResponse> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.BatchUpdateRequest
- */
-export declare class BatchUpdateRequest extends Message<BatchUpdateRequest> {
-  /**
-   * @generated from field: repeated city.economy.v2.Org orgs = 1;
-   */
-  orgs: Org[];
-
-  /**
-   * @generated from field: repeated city.economy.v2.Agent agents = 2;
-   */
-  agents: Agent[];
-
-  constructor(data?: PartialMessage<BatchUpdateRequest>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.BatchUpdateRequest";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): BatchUpdateRequest;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): BatchUpdateRequest;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): BatchUpdateRequest;
-
-  static equals(a: BatchUpdateRequest | PlainMessage<BatchUpdateRequest> | undefined, b: BatchUpdateRequest | PlainMessage<BatchUpdateRequest> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.BatchUpdateResponse
- */
-export declare class BatchUpdateResponse extends Message<BatchUpdateResponse> {
-  constructor(data?: PartialMessage<BatchUpdateResponse>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.BatchUpdateResponse";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): BatchUpdateResponse;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): BatchUpdateResponse;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): BatchUpdateResponse;
-
-  static equals(a: BatchUpdateResponse | PlainMessage<BatchUpdateResponse> | undefined, b: BatchUpdateResponse | PlainMessage<BatchUpdateResponse> | undefined): boolean;
-}
-
-/**
- * 增量更新请求
- *
- * @generated from message city.economy.v2.DeltaUpdateOrgRequest
- */
-export declare class DeltaUpdateOrgRequest extends Message<DeltaUpdateOrgRequest> {
-  /**
-   * @generated from field: int32 org_id = 1;
-   */
-  orgId: number;
-
-  /**
-   * @generated from field: optional float delta_inventory = 2;
-   */
-  deltaInventory?: number;
-
-  /**
-   * @generated from field: optional float delta_price = 3;
-   */
-  deltaPrice?: number;
-
-  /**
-   * @generated from field: optional float delta_currency = 4;
-   */
-  deltaCurrency?: number;
-
-  /**
-   * @generated from field: optional float delta_interest_rate = 5;
-   */
-  deltaInterestRate?: number;
-
-  /**
-   * @generated from field: repeated int32 add_employees = 6;
-   */
-  addEmployees: number[];
-
-  /**
-   * @generated from field: repeated int32 remove_employees = 7;
-   */
-  removeEmployees: number[];
-
-  constructor(data?: PartialMessage<DeltaUpdateOrgRequest>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.DeltaUpdateOrgRequest";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeltaUpdateOrgRequest;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeltaUpdateOrgRequest;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeltaUpdateOrgRequest;
-
-  static equals(a: DeltaUpdateOrgRequest | PlainMessage<DeltaUpdateOrgRequest> | undefined, b: DeltaUpdateOrgRequest | PlainMessage<DeltaUpdateOrgRequest> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.DeltaUpdateOrgResponse
- */
-export declare class DeltaUpdateOrgResponse extends Message<DeltaUpdateOrgResponse> {
-  constructor(data?: PartialMessage<DeltaUpdateOrgResponse>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.DeltaUpdateOrgResponse";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeltaUpdateOrgResponse;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeltaUpdateOrgResponse;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeltaUpdateOrgResponse;
-
-  static equals(a: DeltaUpdateOrgResponse | PlainMessage<DeltaUpdateOrgResponse> | undefined, b: DeltaUpdateOrgResponse | PlainMessage<DeltaUpdateOrgResponse> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.DeltaUpdateAgentRequest
- */
-export declare class DeltaUpdateAgentRequest extends Message<DeltaUpdateAgentRequest> {
-  /**
-   * @generated from field: int32 agent_id = 1;
-   */
-  agentId: number;
-
-  /**
-   * @generated from field: optional float delta_currency = 2;
-   */
-  deltaCurrency?: number;
-
-  /**
-   * @generated from field: optional float delta_skill = 3;
-   */
-  deltaSkill?: number;
-
-  /**
-   * @generated from field: optional float delta_consumption = 4;
-   */
-  deltaConsumption?: number;
-
-  /**
-   * @generated from field: optional float delta_income = 5;
-   */
-  deltaIncome?: number;
-
-  constructor(data?: PartialMessage<DeltaUpdateAgentRequest>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.DeltaUpdateAgentRequest";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeltaUpdateAgentRequest;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeltaUpdateAgentRequest;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeltaUpdateAgentRequest;
-
-  static equals(a: DeltaUpdateAgentRequest | PlainMessage<DeltaUpdateAgentRequest> | undefined, b: DeltaUpdateAgentRequest | PlainMessage<DeltaUpdateAgentRequest> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.DeltaUpdateAgentResponse
- */
-export declare class DeltaUpdateAgentResponse extends Message<DeltaUpdateAgentResponse> {
-  constructor(data?: PartialMessage<DeltaUpdateAgentResponse>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.DeltaUpdateAgentResponse";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeltaUpdateAgentResponse;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeltaUpdateAgentResponse;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeltaUpdateAgentResponse;
-
-  static equals(a: DeltaUpdateAgentResponse | PlainMessage<DeltaUpdateAgentResponse> | undefined, b: DeltaUpdateAgentResponse | PlainMessage<DeltaUpdateAgentResponse> | undefined): boolean;
-}
-
-/**
- * 批量增量更新请求
- *
- * @generated from message city.economy.v2.BatchDeltaUpdateRequest
- */
-export declare class BatchDeltaUpdateRequest extends Message<BatchDeltaUpdateRequest> {
-  /**
-   * @generated from field: repeated city.economy.v2.DeltaUpdateOrgRequest orgs = 1;
-   */
-  orgs: DeltaUpdateOrgRequest[];
-
-  /**
-   * @generated from field: repeated city.economy.v2.DeltaUpdateAgentRequest agents = 2;
-   */
-  agents: DeltaUpdateAgentRequest[];
-
-  constructor(data?: PartialMessage<BatchDeltaUpdateRequest>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.BatchDeltaUpdateRequest";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): BatchDeltaUpdateRequest;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): BatchDeltaUpdateRequest;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): BatchDeltaUpdateRequest;
-
-  static equals(a: BatchDeltaUpdateRequest | PlainMessage<BatchDeltaUpdateRequest> | undefined, b: BatchDeltaUpdateRequest | PlainMessage<BatchDeltaUpdateRequest> | undefined): boolean;
-}
-
-/**
- * @generated from message city.economy.v2.BatchDeltaUpdateResponse
- */
-export declare class BatchDeltaUpdateResponse extends Message<BatchDeltaUpdateResponse> {
-  constructor(data?: PartialMessage<BatchDeltaUpdateResponse>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.BatchDeltaUpdateResponse";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): BatchDeltaUpdateResponse;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): BatchDeltaUpdateResponse;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): BatchDeltaUpdateResponse;
-
-  static equals(a: BatchDeltaUpdateResponse | PlainMessage<BatchDeltaUpdateResponse> | undefined, b: BatchDeltaUpdateResponse | PlainMessage<BatchDeltaUpdateResponse> | undefined): boolean;
-}
-
-/**
- * 计算实际GDP的请求和响应消息
+ * 计算实际GDP的请求消息
  *
  * @generated from message city.economy.v2.CalculateRealGDPRequest
  */
 export declare class CalculateRealGDPRequest extends Message<CalculateRealGDPRequest> {
   /**
-   * NBS Agent的ID
+   * 国家统计局组织的ID
    *
    * @generated from field: int32 nbs_agent_id = 1;
    */
@@ -3322,11 +680,13 @@ export declare class CalculateRealGDPRequest extends Message<CalculateRealGDPReq
 }
 
 /**
+ * 计算实际GDP的响应消息
+ *
  * @generated from message city.economy.v2.CalculateRealGDPResponse
  */
 export declare class CalculateRealGDPResponse extends Message<CalculateRealGDPResponse> {
   /**
-   * 计算得到的实际GDP
+   * 计算得到的实际GDP值
    *
    * @generated from field: float real_gdp = 1;
    */
@@ -3345,5 +705,663 @@ export declare class CalculateRealGDPResponse extends Message<CalculateRealGDPRe
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CalculateRealGDPResponse;
 
   static equals(a: CalculateRealGDPResponse | PlainMessage<CalculateRealGDPResponse> | undefined, b: CalculateRealGDPResponse | PlainMessage<CalculateRealGDPResponse> | undefined): boolean;
+}
+
+/**
+ * 批量获取的请求消息
+ *
+ * @generated from message city.economy.v2.BatchGetRequest
+ */
+export declare class BatchGetRequest extends Message<BatchGetRequest> {
+  /**
+   * 要获取的ID列表
+   *
+   * @generated from field: repeated int32 ids = 1;
+   */
+  ids: number[];
+
+  /**
+   * 要获取的对象类型，可以是"org"或"agent"
+   *
+   * @generated from field: string type = 2;
+   */
+  type: string;
+
+  constructor(data?: PartialMessage<BatchGetRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.economy.v2.BatchGetRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): BatchGetRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): BatchGetRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): BatchGetRequest;
+
+  static equals(a: BatchGetRequest | PlainMessage<BatchGetRequest> | undefined, b: BatchGetRequest | PlainMessage<BatchGetRequest> | undefined): boolean;
+}
+
+/**
+ * 批量获取的响应消息
+ *
+ * @generated from message city.economy.v2.BatchGetResponse
+ */
+export declare class BatchGetResponse extends Message<BatchGetResponse> {
+  /**
+   * 获取到的组织列表
+   *
+   * @generated from field: repeated city.economy.v2.Org orgs = 1;
+   */
+  orgs: Org[];
+
+  /**
+   * 获取到的代理列表
+   *
+   * @generated from field: repeated city.economy.v2.Agent agents = 2;
+   */
+  agents: Agent[];
+
+  constructor(data?: PartialMessage<BatchGetResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.economy.v2.BatchGetResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): BatchGetResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): BatchGetResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): BatchGetResponse;
+
+  static equals(a: BatchGetResponse | PlainMessage<BatchGetResponse> | undefined, b: BatchGetResponse | PlainMessage<BatchGetResponse> | undefined): boolean;
+}
+
+/**
+ * 批量更新的请求消息
+ *
+ * @generated from message city.economy.v2.BatchUpdateRequest
+ */
+export declare class BatchUpdateRequest extends Message<BatchUpdateRequest> {
+  /**
+   * 要更新的组织列表，只更新请求中指定的字段
+   *
+   * @generated from field: repeated city.economy.v2.Org orgs = 1;
+   */
+  orgs: Org[];
+
+  /**
+   * 要更新的代理列表，只更新请求中指定的字段
+   *
+   * @generated from field: repeated city.economy.v2.Agent agents = 2;
+   */
+  agents: Agent[];
+
+  constructor(data?: PartialMessage<BatchUpdateRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.economy.v2.BatchUpdateRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): BatchUpdateRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): BatchUpdateRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): BatchUpdateRequest;
+
+  static equals(a: BatchUpdateRequest | PlainMessage<BatchUpdateRequest> | undefined, b: BatchUpdateRequest | PlainMessage<BatchUpdateRequest> | undefined): boolean;
+}
+
+/**
+ * 批量更新的响应消息
+ *
+ * @generated from message city.economy.v2.BatchUpdateResponse
+ */
+export declare class BatchUpdateResponse extends Message<BatchUpdateResponse> {
+  constructor(data?: PartialMessage<BatchUpdateResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.economy.v2.BatchUpdateResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): BatchUpdateResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): BatchUpdateResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): BatchUpdateResponse;
+
+  static equals(a: BatchUpdateResponse | PlainMessage<BatchUpdateResponse> | undefined, b: BatchUpdateResponse | PlainMessage<BatchUpdateResponse> | undefined): boolean;
+}
+
+/**
+ * 批量设置的请求消息
+ *
+ * @generated from message city.economy.v2.BatchSetRequest
+ */
+export declare class BatchSetRequest extends Message<BatchSetRequest> {
+  /**
+   * 要设置的组织列表，将完全替换目标组织的所有字段
+   *
+   * @generated from field: repeated city.economy.v2.Org orgs = 1;
+   */
+  orgs: Org[];
+
+  /**
+   * 要设置的代理列表，将完全替换目标代理的所有字段
+   *
+   * @generated from field: repeated city.economy.v2.Agent agents = 2;
+   */
+  agents: Agent[];
+
+  constructor(data?: PartialMessage<BatchSetRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.economy.v2.BatchSetRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): BatchSetRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): BatchSetRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): BatchSetRequest;
+
+  static equals(a: BatchSetRequest | PlainMessage<BatchSetRequest> | undefined, b: BatchSetRequest | PlainMessage<BatchSetRequest> | undefined): boolean;
+}
+
+/**
+ * 批量设置的响应消息
+ *
+ * @generated from message city.economy.v2.BatchSetResponse
+ */
+export declare class BatchSetResponse extends Message<BatchSetResponse> {
+  constructor(data?: PartialMessage<BatchSetResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.economy.v2.BatchSetResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): BatchSetResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): BatchSetResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): BatchSetResponse;
+
+  static equals(a: BatchSetResponse | PlainMessage<BatchSetResponse> | undefined, b: BatchSetResponse | PlainMessage<BatchSetResponse> | undefined): boolean;
+}
+
+/**
+ * 组织增量更新的请求消息
+ *
+ * @generated from message city.economy.v2.DeltaUpdateOrgRequest
+ */
+export declare class DeltaUpdateOrgRequest extends Message<DeltaUpdateOrgRequest> {
+  /**
+   * 要更新的组织ID
+   *
+   * @generated from field: int32 org_id = 1;
+   */
+  orgId: number;
+
+  /**
+   * 名义GDP的增量变化
+   *
+   * @generated from field: repeated float delta_nominal_gdp = 2;
+   */
+  deltaNominalGdp: number[];
+
+  /**
+   * 实际GDP的增量变化
+   *
+   * @generated from field: repeated float delta_real_gdp = 3;
+   */
+  deltaRealGdp: number[];
+
+  /**
+   * 失业率的增量变化
+   *
+   * @generated from field: repeated float delta_unemployment = 4;
+   */
+  deltaUnemployment: number[];
+
+  /**
+   * 工资的增量变化
+   *
+   * @generated from field: repeated float delta_wages = 5;
+   */
+  deltaWages: number[];
+
+  /**
+   * 价格序列的增量变化
+   *
+   * @generated from field: repeated float delta_prices = 6;
+   */
+  deltaPrices: number[];
+
+  /**
+   * 库存的增量变化
+   *
+   * @generated from field: optional int32 delta_inventory = 7;
+   */
+  deltaInventory?: number;
+
+  /**
+   * 价格的增量变化
+   *
+   * @generated from field: optional float delta_price = 8;
+   */
+  deltaPrice?: number;
+
+  /**
+   * 货币的增量变化
+   *
+   * @generated from field: optional float delta_currency = 9;
+   */
+  deltaCurrency?: number;
+
+  /**
+   * 利率的增量变化
+   *
+   * @generated from field: optional float delta_interest_rate = 10;
+   */
+  deltaInterestRate?: number;
+
+  /**
+   * 税率档位切分点的增量变化
+   *
+   * @generated from field: repeated float delta_bracket_cutoffs = 11;
+   */
+  deltaBracketCutoffs: number[];
+
+  /**
+   * 税率档位的增量变化
+   *
+   * @generated from field: repeated float delta_bracket_rates = 12;
+   */
+  deltaBracketRates: number[];
+
+  /**
+   * 总需求量的增量变化
+   *
+   * @generated from field: optional int32 delta_demand = 13;
+   */
+  deltaDemand?: number;
+
+  /**
+   * 总销售量的增量变化
+   *
+   * @generated from field: optional int32 delta_sales = 14;
+   */
+  deltaSales?: number;
+
+  /**
+   * 要添加的员工ID列表
+   *
+   * @generated from field: repeated int32 add_employees = 15;
+   */
+  addEmployees: number[];
+
+  /**
+   * 要移除的员工ID列表
+   *
+   * @generated from field: repeated int32 remove_employees = 16;
+   */
+  removeEmployees: number[];
+
+  /**
+   * 要添加的公民ID列表
+   *
+   * @generated from field: repeated int32 add_citizens = 17;
+   */
+  addCitizens: number[];
+
+  /**
+   * 要移除的公民ID列表
+   *
+   * @generated from field: repeated int32 remove_citizens = 18;
+   */
+  removeCitizens: number[];
+
+  /**
+   * 消费货币的增量变化
+   *
+   * @generated from field: repeated float delta_consumption_currency = 19;
+   */
+  deltaConsumptionCurrency: number[];
+
+  /**
+   * 消费倾向的增量变化
+   *
+   * @generated from field: repeated float delta_consumption_propensity = 20;
+   */
+  deltaConsumptionPropensity: number[];
+
+  /**
+   * 收入货币的增量变化
+   *
+   * @generated from field: repeated float delta_income_currency = 21;
+   */
+  deltaIncomeCurrency: number[];
+
+  /**
+   * 抑郁指数的增量变化
+   *
+   * @generated from field: repeated float delta_depression = 22;
+   */
+  deltaDepression: number[];
+
+  /**
+   * 控制点的增量变化
+   *
+   * @generated from field: repeated float delta_locus_control = 23;
+   */
+  deltaLocusControl: number[];
+
+  /**
+   * 工作时间的增量变化
+   *
+   * @generated from field: repeated float delta_working_hours = 24;
+   */
+  deltaWorkingHours: number[];
+
+  constructor(data?: PartialMessage<DeltaUpdateOrgRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.economy.v2.DeltaUpdateOrgRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeltaUpdateOrgRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeltaUpdateOrgRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeltaUpdateOrgRequest;
+
+  static equals(a: DeltaUpdateOrgRequest | PlainMessage<DeltaUpdateOrgRequest> | undefined, b: DeltaUpdateOrgRequest | PlainMessage<DeltaUpdateOrgRequest> | undefined): boolean;
+}
+
+/**
+ * 组织增量更新的响应消息
+ *
+ * @generated from message city.economy.v2.DeltaUpdateOrgResponse
+ */
+export declare class DeltaUpdateOrgResponse extends Message<DeltaUpdateOrgResponse> {
+  constructor(data?: PartialMessage<DeltaUpdateOrgResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.economy.v2.DeltaUpdateOrgResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeltaUpdateOrgResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeltaUpdateOrgResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeltaUpdateOrgResponse;
+
+  static equals(a: DeltaUpdateOrgResponse | PlainMessage<DeltaUpdateOrgResponse> | undefined, b: DeltaUpdateOrgResponse | PlainMessage<DeltaUpdateOrgResponse> | undefined): boolean;
+}
+
+/**
+ * 代理增量更新的请求消息
+ *
+ * @generated from message city.economy.v2.DeltaUpdateAgentRequest
+ */
+export declare class DeltaUpdateAgentRequest extends Message<DeltaUpdateAgentRequest> {
+  /**
+   * 要更新的代理ID
+   *
+   * @generated from field: int32 agent_id = 1;
+   */
+  agentId: number;
+
+  /**
+   * 货币的增量变化
+   *
+   * @generated from field: optional float delta_currency = 2;
+   */
+  deltaCurrency?: number;
+
+  /**
+   * 所属公司ID的变更
+   *
+   * @generated from field: optional int32 new_firm_id = 3;
+   */
+  newFirmId?: number;
+
+  /**
+   * 技能的增量变化
+   *
+   * @generated from field: optional float delta_skill = 4;
+   */
+  deltaSkill?: number;
+
+  /**
+   * 消费的增量变化
+   *
+   * @generated from field: optional float delta_consumption = 5;
+   */
+  deltaConsumption?: number;
+
+  /**
+   * 收入的增量变化
+   *
+   * @generated from field: optional float delta_income = 6;
+   */
+  deltaIncome?: number;
+
+  constructor(data?: PartialMessage<DeltaUpdateAgentRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.economy.v2.DeltaUpdateAgentRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeltaUpdateAgentRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeltaUpdateAgentRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeltaUpdateAgentRequest;
+
+  static equals(a: DeltaUpdateAgentRequest | PlainMessage<DeltaUpdateAgentRequest> | undefined, b: DeltaUpdateAgentRequest | PlainMessage<DeltaUpdateAgentRequest> | undefined): boolean;
+}
+
+/**
+ * 代理增量更新的响应消息
+ *
+ * @generated from message city.economy.v2.DeltaUpdateAgentResponse
+ */
+export declare class DeltaUpdateAgentResponse extends Message<DeltaUpdateAgentResponse> {
+  constructor(data?: PartialMessage<DeltaUpdateAgentResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.economy.v2.DeltaUpdateAgentResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeltaUpdateAgentResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeltaUpdateAgentResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeltaUpdateAgentResponse;
+
+  static equals(a: DeltaUpdateAgentResponse | PlainMessage<DeltaUpdateAgentResponse> | undefined, b: DeltaUpdateAgentResponse | PlainMessage<DeltaUpdateAgentResponse> | undefined): boolean;
+}
+
+/**
+ * 批量增量更新的请求消息
+ *
+ * @generated from message city.economy.v2.BatchDeltaUpdateRequest
+ */
+export declare class BatchDeltaUpdateRequest extends Message<BatchDeltaUpdateRequest> {
+  /**
+   * 要增量更新的组织列表
+   *
+   * @generated from field: repeated city.economy.v2.DeltaUpdateOrgRequest orgs = 1;
+   */
+  orgs: DeltaUpdateOrgRequest[];
+
+  /**
+   * 要增量更新的代理列表
+   *
+   * @generated from field: repeated city.economy.v2.DeltaUpdateAgentRequest agents = 2;
+   */
+  agents: DeltaUpdateAgentRequest[];
+
+  constructor(data?: PartialMessage<BatchDeltaUpdateRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.economy.v2.BatchDeltaUpdateRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): BatchDeltaUpdateRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): BatchDeltaUpdateRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): BatchDeltaUpdateRequest;
+
+  static equals(a: BatchDeltaUpdateRequest | PlainMessage<BatchDeltaUpdateRequest> | undefined, b: BatchDeltaUpdateRequest | PlainMessage<BatchDeltaUpdateRequest> | undefined): boolean;
+}
+
+/**
+ * 批量增量更新的响应消息
+ *
+ * @generated from message city.economy.v2.BatchDeltaUpdateResponse
+ */
+export declare class BatchDeltaUpdateResponse extends Message<BatchDeltaUpdateResponse> {
+  constructor(data?: PartialMessage<BatchDeltaUpdateResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.economy.v2.BatchDeltaUpdateResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): BatchDeltaUpdateResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): BatchDeltaUpdateResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): BatchDeltaUpdateResponse;
+
+  static equals(a: BatchDeltaUpdateResponse | PlainMessage<BatchDeltaUpdateResponse> | undefined, b: BatchDeltaUpdateResponse | PlainMessage<BatchDeltaUpdateResponse> | undefined): boolean;
+}
+
+/**
+ * 保存经济实体的请求消息
+ *
+ * @generated from message city.economy.v2.SaveEconomyEntitiesRequest
+ */
+export declare class SaveEconomyEntitiesRequest extends Message<SaveEconomyEntitiesRequest> {
+  /**
+   * 保存文件的路径
+   *
+   * @generated from field: string file_path = 1;
+   */
+  filePath: string;
+
+  constructor(data?: PartialMessage<SaveEconomyEntitiesRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.economy.v2.SaveEconomyEntitiesRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveEconomyEntitiesRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveEconomyEntitiesRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveEconomyEntitiesRequest;
+
+  static equals(a: SaveEconomyEntitiesRequest | PlainMessage<SaveEconomyEntitiesRequest> | undefined, b: SaveEconomyEntitiesRequest | PlainMessage<SaveEconomyEntitiesRequest> | undefined): boolean;
+}
+
+/**
+ * 保存经济实体的响应消息
+ *
+ * @generated from message city.economy.v2.SaveEconomyEntitiesResponse
+ */
+export declare class SaveEconomyEntitiesResponse extends Message<SaveEconomyEntitiesResponse> {
+  /**
+   * 保存的组织ID列表
+   *
+   * @generated from field: repeated int32 org_ids = 1;
+   */
+  orgIds: number[];
+
+  /**
+   * 保存的代理ID列表
+   *
+   * @generated from field: repeated int32 agent_ids = 2;
+   */
+  agentIds: number[];
+
+  constructor(data?: PartialMessage<SaveEconomyEntitiesResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.economy.v2.SaveEconomyEntitiesResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveEconomyEntitiesResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveEconomyEntitiesResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveEconomyEntitiesResponse;
+
+  static equals(a: SaveEconomyEntitiesResponse | PlainMessage<SaveEconomyEntitiesResponse> | undefined, b: SaveEconomyEntitiesResponse | PlainMessage<SaveEconomyEntitiesResponse> | undefined): boolean;
+}
+
+/**
+ * 加载经济实体的请求消息
+ *
+ * @generated from message city.economy.v2.LoadEconomyEntitiesRequest
+ */
+export declare class LoadEconomyEntitiesRequest extends Message<LoadEconomyEntitiesRequest> {
+  /**
+   * 要加载的文件路径
+   *
+   * @generated from field: string file_path = 1;
+   */
+  filePath: string;
+
+  constructor(data?: PartialMessage<LoadEconomyEntitiesRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.economy.v2.LoadEconomyEntitiesRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LoadEconomyEntitiesRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LoadEconomyEntitiesRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LoadEconomyEntitiesRequest;
+
+  static equals(a: LoadEconomyEntitiesRequest | PlainMessage<LoadEconomyEntitiesRequest> | undefined, b: LoadEconomyEntitiesRequest | PlainMessage<LoadEconomyEntitiesRequest> | undefined): boolean;
+}
+
+/**
+ * 加载经济实体的响应消息
+ *
+ * @generated from message city.economy.v2.LoadEconomyEntitiesResponse
+ */
+export declare class LoadEconomyEntitiesResponse extends Message<LoadEconomyEntitiesResponse> {
+  /**
+   * 加载的组织ID列表
+   *
+   * @generated from field: repeated int32 org_ids = 1;
+   */
+  orgIds: number[];
+
+  /**
+   * 加载的代理ID列表
+   *
+   * @generated from field: repeated int32 agent_ids = 2;
+   */
+  agentIds: number[];
+
+  constructor(data?: PartialMessage<LoadEconomyEntitiesResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.economy.v2.LoadEconomyEntitiesResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LoadEconomyEntitiesResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LoadEconomyEntitiesResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LoadEconomyEntitiesResponse;
+
+  static equals(a: LoadEconomyEntitiesResponse | PlainMessage<LoadEconomyEntitiesResponse> | undefined, b: LoadEconomyEntitiesResponse | PlainMessage<LoadEconomyEntitiesResponse> | undefined): boolean;
 }
 

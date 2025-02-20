@@ -1,95 +1,80 @@
 syntax = "proto3";
 
 package city.economy.v2;
+
+// 组织类型
 enum OrgType {
   // 未指定
-  // unspecified
   ORG_TYPE_UNSPECIFIED = 0;
   // 国家统计局
-  // NBS
   ORG_TYPE_NBS = 1;
   // 公司
-  // firm
   ORG_TYPE_FIRM = 2;
   // 银行
-  // bank
   ORG_TYPE_BANK = 3;
   // 政府
-  // government
   ORG_TYPE_GOVERNMENT = 4;
 }
 
 // 组织
-// Organization
 message Org {
   // 组织ID
-  // organization id
   int32 id = 1;
-  // 组织类别
-  // organization type
+  // 组织类型
   OrgType type = 2;
-  // NBS
-  //
+  // 名义GDP
   repeated float nominal_gdp = 3;
-  //
+  // 实际GDP
   repeated float real_gdp = 4;
-  //
+  // 失业率
   repeated float unemployment = 5;
-  //
+  // 工资
   repeated float wages = 6;
-  //
+  // 价格序列
   repeated float prices = 7;
-  // Firm
-  //
+  // 库存
   optional int32 inventory = 8;
-  //
+  // 价格
   optional float price = 9;
-  // Firm & Bank & Government
-  //
+  // 货币
   optional float currency = 10;
-  // Bank
-  //
+  // 利率
   optional float interest_rate = 11;
-  // Government
-  //
+  // 税率档位切分点
   repeated float bracket_cutoffs = 12;
-  //
+  // 税率档位
   repeated float bracket_rates = 13;
-  // NBS
-  //
-  repeated float consumption_currency = 14;
-  //
-  repeated float consumption_propensity = 15;
-  //
-  repeated float income_currency = 16;
-  //
-  repeated float depression = 17;
-  //
-  repeated float locus_control = 18;
-  //
-  repeated float working_hours = 19;
-  // Firm: 企业的雇员列表
-  // employees list for firm
-  repeated int32 employees = 20;
-  // NBS & Government: 公民列表
-  // citizens list for NBS and government
-  repeated int32 citizens = 21;
-  // Firm: 总需求量
-  // total demand for firm
-  optional int32 demand = 22;
-  // Firm: 总销售量
-  // total sales for firm
-  optional int32 sales = 23;
+  // 总需求量
+  optional int32 demand = 14;
+  // 总销售量
+  optional int32 sales = 15;
+  // 员工列表
+  repeated int32 employees = 16;
+  // 公民列表
+  repeated int32 citizens = 17;
+  // 消费货币
+  repeated float consumption_currency = 18;
+  // 消费倾向
+  repeated float consumption_propensity = 19;
+  // 收入货币
+  repeated float income_currency = 20;
+  // 抑郁指数
+  repeated float depression = 21;
+  // 控制点
+  repeated float locus_control = 22;
+  // 工作时间
+  repeated float working_hours = 23;
 }
 
+// 代理
 message Agent {
-  // person ID
+  // 代理ID
   int32 id = 1;
-  // currency
+  // 货币
   optional float currency = 2;
-  // 所属企业ID
+  // 所属公司ID
   optional int32 firm_id = 3;
-  // 技能水平
+  // 技能
   optional float skill = 4;
   // 消费
   optional float consumption = 5;
@@ -97,7 +82,10 @@ message Agent {
   optional float income = 6;
 }
 
+// 经济实体
 message EconomyEntities {
+  // 组织列表
   repeated Org orgs = 1;
+  // 代理列表
   repeated Agent agents = 2;
 }

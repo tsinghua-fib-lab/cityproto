@@ -34,16 +34,16 @@ PROTOBUF_CONSTEXPR Org::Org(
   , /*decltype(_impl_.prices_)*/{}
   , /*decltype(_impl_.bracket_cutoffs_)*/{}
   , /*decltype(_impl_.bracket_rates_)*/{}
+  , /*decltype(_impl_.employees_)*/{}
+  , /*decltype(_impl_._employees_cached_byte_size_)*/{0}
+  , /*decltype(_impl_.citizens_)*/{}
+  , /*decltype(_impl_._citizens_cached_byte_size_)*/{0}
   , /*decltype(_impl_.consumption_currency_)*/{}
   , /*decltype(_impl_.consumption_propensity_)*/{}
   , /*decltype(_impl_.income_currency_)*/{}
   , /*decltype(_impl_.depression_)*/{}
   , /*decltype(_impl_.locus_control_)*/{}
   , /*decltype(_impl_.working_hours_)*/{}
-  , /*decltype(_impl_.employees_)*/{}
-  , /*decltype(_impl_._employees_cached_byte_size_)*/{0}
-  , /*decltype(_impl_.citizens_)*/{}
-  , /*decltype(_impl_._citizens_cached_byte_size_)*/{0}
   , /*decltype(_impl_.id_)*/0
   , /*decltype(_impl_.type_)*/0
   , /*decltype(_impl_.inventory_)*/0
@@ -121,16 +121,16 @@ const uint32_t TableStruct_city_2feconomy_2fv2_2feconomy_2eproto::offsets[] PROT
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::Org, _impl_.interest_rate_),
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::Org, _impl_.bracket_cutoffs_),
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::Org, _impl_.bracket_rates_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::Org, _impl_.demand_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::Org, _impl_.sales_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::Org, _impl_.employees_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::Org, _impl_.citizens_),
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::Org, _impl_.consumption_currency_),
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::Org, _impl_.consumption_propensity_),
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::Org, _impl_.income_currency_),
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::Org, _impl_.depression_),
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::Org, _impl_.locus_control_),
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::Org, _impl_.working_hours_),
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::Org, _impl_.employees_),
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::Org, _impl_.citizens_),
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::Org, _impl_.demand_),
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::Org, _impl_.sales_),
   ~0u,
   ~0u,
   ~0u,
@@ -144,16 +144,16 @@ const uint32_t TableStruct_city_2feconomy_2fv2_2feconomy_2eproto::offsets[] PROT
   3,
   ~0u,
   ~0u,
-  ~0u,
-  ~0u,
-  ~0u,
-  ~0u,
-  ~0u,
-  ~0u,
-  ~0u,
-  ~0u,
   4,
   5,
+  ~0u,
+  ~0u,
+  ~0u,
+  ~0u,
+  ~0u,
+  ~0u,
+  ~0u,
+  ~0u,
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::Agent, _impl_._has_bits_),
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::Agent, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -205,17 +205,17 @@ const char descriptor_table_protodef_city_2feconomy_2fv2_2feconomy_2eproto[] PRO
   "\001\001\022\037\n\010currency\030\n \001(\002H\002R\010currency\210\001\001\022(\n\ri"
   "nterest_rate\030\013 \001(\002H\003R\014interestRate\210\001\001\022\'\n"
   "\017bracket_cutoffs\030\014 \003(\002R\016bracketCutoffs\022#"
-  "\n\rbracket_rates\030\r \003(\002R\014bracketRates\0221\n\024c"
-  "onsumption_currency\030\016 \003(\002R\023consumptionCu"
-  "rrency\0225\n\026consumption_propensity\030\017 \003(\002R\025"
-  "consumptionPropensity\022\'\n\017income_currency"
-  "\030\020 \003(\002R\016incomeCurrency\022\036\n\ndepression\030\021 \003"
-  "(\002R\ndepression\022#\n\rlocus_control\030\022 \003(\002R\014l"
-  "ocusControl\022#\n\rworking_hours\030\023 \003(\002R\014work"
-  "ingHours\022\034\n\temployees\030\024 \003(\005R\temployees\022\032"
-  "\n\010citizens\030\025 \003(\005R\010citizens\022\033\n\006demand\030\026 \001"
-  "(\005H\004R\006demand\210\001\001\022\031\n\005sales\030\027 \001(\005H\005R\005sales\210"
-  "\001\001B\014\n\n_inventoryB\010\n\006_priceB\013\n\t_currencyB"
+  "\n\rbracket_rates\030\r \003(\002R\014bracketRates\022\033\n\006d"
+  "emand\030\016 \001(\005H\004R\006demand\210\001\001\022\031\n\005sales\030\017 \001(\005H"
+  "\005R\005sales\210\001\001\022\034\n\temployees\030\020 \003(\005R\temployee"
+  "s\022\032\n\010citizens\030\021 \003(\005R\010citizens\0221\n\024consump"
+  "tion_currency\030\022 \003(\002R\023consumptionCurrency"
+  "\0225\n\026consumption_propensity\030\023 \003(\002R\025consum"
+  "ptionPropensity\022\'\n\017income_currency\030\024 \003(\002"
+  "R\016incomeCurrency\022\036\n\ndepression\030\025 \003(\002R\nde"
+  "pression\022#\n\rlocus_control\030\026 \003(\002R\014locusCo"
+  "ntrol\022#\n\rworking_hours\030\027 \003(\002R\014workingHou"
+  "rsB\014\n\n_inventoryB\010\n\006_priceB\013\n\t_currencyB"
   "\020\n\016_interest_rateB\t\n\007_demandB\010\n\006_sales\"\363"
   "\001\n\005Agent\022\016\n\002id\030\001 \001(\005R\002id\022\037\n\010currency\030\002 \001"
   "(\002H\000R\010currency\210\001\001\022\034\n\007firm_id\030\003 \001(\005H\001R\006fi"
@@ -315,16 +315,16 @@ Org::Org(const Org& from)
     , decltype(_impl_.prices_){from._impl_.prices_}
     , decltype(_impl_.bracket_cutoffs_){from._impl_.bracket_cutoffs_}
     , decltype(_impl_.bracket_rates_){from._impl_.bracket_rates_}
+    , decltype(_impl_.employees_){from._impl_.employees_}
+    , /*decltype(_impl_._employees_cached_byte_size_)*/{0}
+    , decltype(_impl_.citizens_){from._impl_.citizens_}
+    , /*decltype(_impl_._citizens_cached_byte_size_)*/{0}
     , decltype(_impl_.consumption_currency_){from._impl_.consumption_currency_}
     , decltype(_impl_.consumption_propensity_){from._impl_.consumption_propensity_}
     , decltype(_impl_.income_currency_){from._impl_.income_currency_}
     , decltype(_impl_.depression_){from._impl_.depression_}
     , decltype(_impl_.locus_control_){from._impl_.locus_control_}
     , decltype(_impl_.working_hours_){from._impl_.working_hours_}
-    , decltype(_impl_.employees_){from._impl_.employees_}
-    , /*decltype(_impl_._employees_cached_byte_size_)*/{0}
-    , decltype(_impl_.citizens_){from._impl_.citizens_}
-    , /*decltype(_impl_._citizens_cached_byte_size_)*/{0}
     , decltype(_impl_.id_){}
     , decltype(_impl_.type_){}
     , decltype(_impl_.inventory_){}
@@ -355,16 +355,16 @@ inline void Org::SharedCtor(
     , decltype(_impl_.prices_){arena}
     , decltype(_impl_.bracket_cutoffs_){arena}
     , decltype(_impl_.bracket_rates_){arena}
+    , decltype(_impl_.employees_){arena}
+    , /*decltype(_impl_._employees_cached_byte_size_)*/{0}
+    , decltype(_impl_.citizens_){arena}
+    , /*decltype(_impl_._citizens_cached_byte_size_)*/{0}
     , decltype(_impl_.consumption_currency_){arena}
     , decltype(_impl_.consumption_propensity_){arena}
     , decltype(_impl_.income_currency_){arena}
     , decltype(_impl_.depression_){arena}
     , decltype(_impl_.locus_control_){arena}
     , decltype(_impl_.working_hours_){arena}
-    , decltype(_impl_.employees_){arena}
-    , /*decltype(_impl_._employees_cached_byte_size_)*/{0}
-    , decltype(_impl_.citizens_){arena}
-    , /*decltype(_impl_._citizens_cached_byte_size_)*/{0}
     , decltype(_impl_.id_){0}
     , decltype(_impl_.type_){0}
     , decltype(_impl_.inventory_){0}
@@ -394,14 +394,14 @@ inline void Org::SharedDtor() {
   _impl_.prices_.~RepeatedField();
   _impl_.bracket_cutoffs_.~RepeatedField();
   _impl_.bracket_rates_.~RepeatedField();
+  _impl_.employees_.~RepeatedField();
+  _impl_.citizens_.~RepeatedField();
   _impl_.consumption_currency_.~RepeatedField();
   _impl_.consumption_propensity_.~RepeatedField();
   _impl_.income_currency_.~RepeatedField();
   _impl_.depression_.~RepeatedField();
   _impl_.locus_control_.~RepeatedField();
   _impl_.working_hours_.~RepeatedField();
-  _impl_.employees_.~RepeatedField();
-  _impl_.citizens_.~RepeatedField();
 }
 
 void Org::SetCachedSize(int size) const {
@@ -421,14 +421,14 @@ void Org::Clear() {
   _impl_.prices_.Clear();
   _impl_.bracket_cutoffs_.Clear();
   _impl_.bracket_rates_.Clear();
+  _impl_.employees_.Clear();
+  _impl_.citizens_.Clear();
   _impl_.consumption_currency_.Clear();
   _impl_.consumption_propensity_.Clear();
   _impl_.income_currency_.Clear();
   _impl_.depression_.Clear();
   _impl_.locus_control_.Clear();
   _impl_.working_hours_.Clear();
-  _impl_.employees_.Clear();
-  _impl_.citizens_.Clear();
   ::memset(&_impl_.id_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_impl_.type_) -
       reinterpret_cast<char*>(&_impl_.id_)) + sizeof(_impl_.type_));
@@ -579,109 +579,109 @@ const char* Org::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
         } else
           goto handle_unusual;
         continue;
-      // repeated float consumption_currency = 14 [json_name = "consumptionCurrency"];
+      // optional int32 demand = 14 [json_name = "demand"];
       case 14:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 114)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedFloatParser(_internal_mutable_consumption_currency(), ptr, ctx);
-          CHK_(ptr);
-        } else if (static_cast<uint8_t>(tag) == 117) {
-          _internal_add_consumption_currency(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // repeated float consumption_propensity = 15 [json_name = "consumptionPropensity"];
-      case 15:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 122)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedFloatParser(_internal_mutable_consumption_propensity(), ptr, ctx);
-          CHK_(ptr);
-        } else if (static_cast<uint8_t>(tag) == 125) {
-          _internal_add_consumption_propensity(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // repeated float income_currency = 16 [json_name = "incomeCurrency"];
-      case 16:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 130)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedFloatParser(_internal_mutable_income_currency(), ptr, ctx);
-          CHK_(ptr);
-        } else if (static_cast<uint8_t>(tag) == 133) {
-          _internal_add_income_currency(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // repeated float depression = 17 [json_name = "depression"];
-      case 17:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 138)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedFloatParser(_internal_mutable_depression(), ptr, ctx);
-          CHK_(ptr);
-        } else if (static_cast<uint8_t>(tag) == 141) {
-          _internal_add_depression(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // repeated float locus_control = 18 [json_name = "locusControl"];
-      case 18:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 146)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedFloatParser(_internal_mutable_locus_control(), ptr, ctx);
-          CHK_(ptr);
-        } else if (static_cast<uint8_t>(tag) == 149) {
-          _internal_add_locus_control(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // repeated float working_hours = 19 [json_name = "workingHours"];
-      case 19:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 154)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedFloatParser(_internal_mutable_working_hours(), ptr, ctx);
-          CHK_(ptr);
-        } else if (static_cast<uint8_t>(tag) == 157) {
-          _internal_add_working_hours(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // repeated int32 employees = 20 [json_name = "employees"];
-      case 20:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 162)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_employees(), ptr, ctx);
-          CHK_(ptr);
-        } else if (static_cast<uint8_t>(tag) == 160) {
-          _internal_add_employees(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // repeated int32 citizens = 21 [json_name = "citizens"];
-      case 21:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 170)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_citizens(), ptr, ctx);
-          CHK_(ptr);
-        } else if (static_cast<uint8_t>(tag) == 168) {
-          _internal_add_citizens(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // optional int32 demand = 22 [json_name = "demand"];
-      case 22:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 176)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 112)) {
           _Internal::set_has_demand(&has_bits);
           _impl_.demand_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // optional int32 sales = 23 [json_name = "sales"];
-      case 23:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 184)) {
+      // optional int32 sales = 15 [json_name = "sales"];
+      case 15:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 120)) {
           _Internal::set_has_sales(&has_bits);
           _impl_.sales_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated int32 employees = 16 [json_name = "employees"];
+      case 16:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 130)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_employees(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<uint8_t>(tag) == 128) {
+          _internal_add_employees(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated int32 citizens = 17 [json_name = "citizens"];
+      case 17:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 138)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_citizens(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<uint8_t>(tag) == 136) {
+          _internal_add_citizens(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated float consumption_currency = 18 [json_name = "consumptionCurrency"];
+      case 18:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 146)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedFloatParser(_internal_mutable_consumption_currency(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<uint8_t>(tag) == 149) {
+          _internal_add_consumption_currency(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated float consumption_propensity = 19 [json_name = "consumptionPropensity"];
+      case 19:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 154)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedFloatParser(_internal_mutable_consumption_propensity(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<uint8_t>(tag) == 157) {
+          _internal_add_consumption_propensity(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated float income_currency = 20 [json_name = "incomeCurrency"];
+      case 20:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 162)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedFloatParser(_internal_mutable_income_currency(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<uint8_t>(tag) == 165) {
+          _internal_add_income_currency(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated float depression = 21 [json_name = "depression"];
+      case 21:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 170)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedFloatParser(_internal_mutable_depression(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<uint8_t>(tag) == 173) {
+          _internal_add_depression(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated float locus_control = 22 [json_name = "locusControl"];
+      case 22:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 178)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedFloatParser(_internal_mutable_locus_control(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<uint8_t>(tag) == 181) {
+          _internal_add_locus_control(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated float working_hours = 23 [json_name = "workingHours"];
+      case 23:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 186)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedFloatParser(_internal_mutable_working_hours(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<uint8_t>(tag) == 189) {
+          _internal_add_working_hours(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
+          ptr += sizeof(float);
         } else
           goto handle_unusual;
         continue;
@@ -787,64 +787,64 @@ uint8_t* Org::_InternalSerialize(
     target = stream->WriteFixedPacked(13, _internal_bracket_rates(), target);
   }
 
-  // repeated float consumption_currency = 14 [json_name = "consumptionCurrency"];
-  if (this->_internal_consumption_currency_size() > 0) {
-    target = stream->WriteFixedPacked(14, _internal_consumption_currency(), target);
+  // optional int32 demand = 14 [json_name = "demand"];
+  if (_internal_has_demand()) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(14, this->_internal_demand(), target);
   }
 
-  // repeated float consumption_propensity = 15 [json_name = "consumptionPropensity"];
-  if (this->_internal_consumption_propensity_size() > 0) {
-    target = stream->WriteFixedPacked(15, _internal_consumption_propensity(), target);
+  // optional int32 sales = 15 [json_name = "sales"];
+  if (_internal_has_sales()) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(15, this->_internal_sales(), target);
   }
 
-  // repeated float income_currency = 16 [json_name = "incomeCurrency"];
-  if (this->_internal_income_currency_size() > 0) {
-    target = stream->WriteFixedPacked(16, _internal_income_currency(), target);
-  }
-
-  // repeated float depression = 17 [json_name = "depression"];
-  if (this->_internal_depression_size() > 0) {
-    target = stream->WriteFixedPacked(17, _internal_depression(), target);
-  }
-
-  // repeated float locus_control = 18 [json_name = "locusControl"];
-  if (this->_internal_locus_control_size() > 0) {
-    target = stream->WriteFixedPacked(18, _internal_locus_control(), target);
-  }
-
-  // repeated float working_hours = 19 [json_name = "workingHours"];
-  if (this->_internal_working_hours_size() > 0) {
-    target = stream->WriteFixedPacked(19, _internal_working_hours(), target);
-  }
-
-  // repeated int32 employees = 20 [json_name = "employees"];
+  // repeated int32 employees = 16 [json_name = "employees"];
   {
     int byte_size = _impl_._employees_cached_byte_size_.load(std::memory_order_relaxed);
     if (byte_size > 0) {
       target = stream->WriteInt32Packed(
-          20, _internal_employees(), byte_size, target);
+          16, _internal_employees(), byte_size, target);
     }
   }
 
-  // repeated int32 citizens = 21 [json_name = "citizens"];
+  // repeated int32 citizens = 17 [json_name = "citizens"];
   {
     int byte_size = _impl_._citizens_cached_byte_size_.load(std::memory_order_relaxed);
     if (byte_size > 0) {
       target = stream->WriteInt32Packed(
-          21, _internal_citizens(), byte_size, target);
+          17, _internal_citizens(), byte_size, target);
     }
   }
 
-  // optional int32 demand = 22 [json_name = "demand"];
-  if (_internal_has_demand()) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteInt32ToArray(22, this->_internal_demand(), target);
+  // repeated float consumption_currency = 18 [json_name = "consumptionCurrency"];
+  if (this->_internal_consumption_currency_size() > 0) {
+    target = stream->WriteFixedPacked(18, _internal_consumption_currency(), target);
   }
 
-  // optional int32 sales = 23 [json_name = "sales"];
-  if (_internal_has_sales()) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteInt32ToArray(23, this->_internal_sales(), target);
+  // repeated float consumption_propensity = 19 [json_name = "consumptionPropensity"];
+  if (this->_internal_consumption_propensity_size() > 0) {
+    target = stream->WriteFixedPacked(19, _internal_consumption_propensity(), target);
+  }
+
+  // repeated float income_currency = 20 [json_name = "incomeCurrency"];
+  if (this->_internal_income_currency_size() > 0) {
+    target = stream->WriteFixedPacked(20, _internal_income_currency(), target);
+  }
+
+  // repeated float depression = 21 [json_name = "depression"];
+  if (this->_internal_depression_size() > 0) {
+    target = stream->WriteFixedPacked(21, _internal_depression(), target);
+  }
+
+  // repeated float locus_control = 22 [json_name = "locusControl"];
+  if (this->_internal_locus_control_size() > 0) {
+    target = stream->WriteFixedPacked(22, _internal_locus_control(), target);
+  }
+
+  // repeated float working_hours = 23 [json_name = "workingHours"];
+  if (this->_internal_working_hours_size() > 0) {
+    target = stream->WriteFixedPacked(23, _internal_working_hours(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -940,73 +940,7 @@ size_t Org::ByteSizeLong() const {
     total_size += data_size;
   }
 
-  // repeated float consumption_currency = 14 [json_name = "consumptionCurrency"];
-  {
-    unsigned int count = static_cast<unsigned int>(this->_internal_consumption_currency_size());
-    size_t data_size = 4UL * count;
-    if (data_size > 0) {
-      total_size += 1 +
-        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
-    }
-    total_size += data_size;
-  }
-
-  // repeated float consumption_propensity = 15 [json_name = "consumptionPropensity"];
-  {
-    unsigned int count = static_cast<unsigned int>(this->_internal_consumption_propensity_size());
-    size_t data_size = 4UL * count;
-    if (data_size > 0) {
-      total_size += 1 +
-        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
-    }
-    total_size += data_size;
-  }
-
-  // repeated float income_currency = 16 [json_name = "incomeCurrency"];
-  {
-    unsigned int count = static_cast<unsigned int>(this->_internal_income_currency_size());
-    size_t data_size = 4UL * count;
-    if (data_size > 0) {
-      total_size += 2 +
-        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
-    }
-    total_size += data_size;
-  }
-
-  // repeated float depression = 17 [json_name = "depression"];
-  {
-    unsigned int count = static_cast<unsigned int>(this->_internal_depression_size());
-    size_t data_size = 4UL * count;
-    if (data_size > 0) {
-      total_size += 2 +
-        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
-    }
-    total_size += data_size;
-  }
-
-  // repeated float locus_control = 18 [json_name = "locusControl"];
-  {
-    unsigned int count = static_cast<unsigned int>(this->_internal_locus_control_size());
-    size_t data_size = 4UL * count;
-    if (data_size > 0) {
-      total_size += 2 +
-        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
-    }
-    total_size += data_size;
-  }
-
-  // repeated float working_hours = 19 [json_name = "workingHours"];
-  {
-    unsigned int count = static_cast<unsigned int>(this->_internal_working_hours_size());
-    size_t data_size = 4UL * count;
-    if (data_size > 0) {
-      total_size += 2 +
-        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
-    }
-    total_size += data_size;
-  }
-
-  // repeated int32 employees = 20 [json_name = "employees"];
+  // repeated int32 employees = 16 [json_name = "employees"];
   {
     size_t data_size = ::_pbi::WireFormatLite::
       Int32Size(this->_impl_.employees_);
@@ -1020,7 +954,7 @@ size_t Org::ByteSizeLong() const {
     total_size += data_size;
   }
 
-  // repeated int32 citizens = 21 [json_name = "citizens"];
+  // repeated int32 citizens = 17 [json_name = "citizens"];
   {
     size_t data_size = ::_pbi::WireFormatLite::
       Int32Size(this->_impl_.citizens_);
@@ -1031,6 +965,72 @@ size_t Org::ByteSizeLong() const {
     int cached_size = ::_pbi::ToCachedSize(data_size);
     _impl_._citizens_cached_byte_size_.store(cached_size,
                                     std::memory_order_relaxed);
+    total_size += data_size;
+  }
+
+  // repeated float consumption_currency = 18 [json_name = "consumptionCurrency"];
+  {
+    unsigned int count = static_cast<unsigned int>(this->_internal_consumption_currency_size());
+    size_t data_size = 4UL * count;
+    if (data_size > 0) {
+      total_size += 2 +
+        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
+    }
+    total_size += data_size;
+  }
+
+  // repeated float consumption_propensity = 19 [json_name = "consumptionPropensity"];
+  {
+    unsigned int count = static_cast<unsigned int>(this->_internal_consumption_propensity_size());
+    size_t data_size = 4UL * count;
+    if (data_size > 0) {
+      total_size += 2 +
+        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
+    }
+    total_size += data_size;
+  }
+
+  // repeated float income_currency = 20 [json_name = "incomeCurrency"];
+  {
+    unsigned int count = static_cast<unsigned int>(this->_internal_income_currency_size());
+    size_t data_size = 4UL * count;
+    if (data_size > 0) {
+      total_size += 2 +
+        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
+    }
+    total_size += data_size;
+  }
+
+  // repeated float depression = 21 [json_name = "depression"];
+  {
+    unsigned int count = static_cast<unsigned int>(this->_internal_depression_size());
+    size_t data_size = 4UL * count;
+    if (data_size > 0) {
+      total_size += 2 +
+        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
+    }
+    total_size += data_size;
+  }
+
+  // repeated float locus_control = 22 [json_name = "locusControl"];
+  {
+    unsigned int count = static_cast<unsigned int>(this->_internal_locus_control_size());
+    size_t data_size = 4UL * count;
+    if (data_size > 0) {
+      total_size += 2 +
+        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
+    }
+    total_size += data_size;
+  }
+
+  // repeated float working_hours = 23 [json_name = "workingHours"];
+  {
+    unsigned int count = static_cast<unsigned int>(this->_internal_working_hours_size());
+    size_t data_size = 4UL * count;
+    if (data_size > 0) {
+      total_size += 2 +
+        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
+    }
     total_size += data_size;
   }
 
@@ -1067,18 +1067,14 @@ size_t Org::ByteSizeLong() const {
       total_size += 1 + 4;
     }
 
-    // optional int32 demand = 22 [json_name = "demand"];
+    // optional int32 demand = 14 [json_name = "demand"];
     if (cached_has_bits & 0x00000010u) {
-      total_size += 2 +
-        ::_pbi::WireFormatLite::Int32Size(
-          this->_internal_demand());
+      total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_demand());
     }
 
-    // optional int32 sales = 23 [json_name = "sales"];
+    // optional int32 sales = 15 [json_name = "sales"];
     if (cached_has_bits & 0x00000020u) {
-      total_size += 2 +
-        ::_pbi::WireFormatLite::Int32Size(
-          this->_internal_sales());
+      total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_sales());
     }
 
   }
@@ -1107,14 +1103,14 @@ void Org::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_N
   _this->_impl_.prices_.MergeFrom(from._impl_.prices_);
   _this->_impl_.bracket_cutoffs_.MergeFrom(from._impl_.bracket_cutoffs_);
   _this->_impl_.bracket_rates_.MergeFrom(from._impl_.bracket_rates_);
+  _this->_impl_.employees_.MergeFrom(from._impl_.employees_);
+  _this->_impl_.citizens_.MergeFrom(from._impl_.citizens_);
   _this->_impl_.consumption_currency_.MergeFrom(from._impl_.consumption_currency_);
   _this->_impl_.consumption_propensity_.MergeFrom(from._impl_.consumption_propensity_);
   _this->_impl_.income_currency_.MergeFrom(from._impl_.income_currency_);
   _this->_impl_.depression_.MergeFrom(from._impl_.depression_);
   _this->_impl_.locus_control_.MergeFrom(from._impl_.locus_control_);
   _this->_impl_.working_hours_.MergeFrom(from._impl_.working_hours_);
-  _this->_impl_.employees_.MergeFrom(from._impl_.employees_);
-  _this->_impl_.citizens_.MergeFrom(from._impl_.citizens_);
   if (from._internal_id() != 0) {
     _this->_internal_set_id(from._internal_id());
   }
@@ -1168,14 +1164,14 @@ void Org::InternalSwap(Org* other) {
   _impl_.prices_.InternalSwap(&other->_impl_.prices_);
   _impl_.bracket_cutoffs_.InternalSwap(&other->_impl_.bracket_cutoffs_);
   _impl_.bracket_rates_.InternalSwap(&other->_impl_.bracket_rates_);
+  _impl_.employees_.InternalSwap(&other->_impl_.employees_);
+  _impl_.citizens_.InternalSwap(&other->_impl_.citizens_);
   _impl_.consumption_currency_.InternalSwap(&other->_impl_.consumption_currency_);
   _impl_.consumption_propensity_.InternalSwap(&other->_impl_.consumption_propensity_);
   _impl_.income_currency_.InternalSwap(&other->_impl_.income_currency_);
   _impl_.depression_.InternalSwap(&other->_impl_.depression_);
   _impl_.locus_control_.InternalSwap(&other->_impl_.locus_control_);
   _impl_.working_hours_.InternalSwap(&other->_impl_.working_hours_);
-  _impl_.employees_.InternalSwap(&other->_impl_.employees_);
-  _impl_.citizens_.InternalSwap(&other->_impl_.citizens_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(Org, _impl_.sales_)
       + sizeof(Org::_impl_.sales_)

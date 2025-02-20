@@ -4,9 +4,11 @@
 // @ts-nocheck
 
 import { proto3 } from "@bufbuild/protobuf";
-import { Agent, Org, OrgType } from "./economy_pb.js";
+import { Agent, Org } from "./economy_pb.js";
 
 /**
+ * 添加组织的请求消息
+ *
  * @generated from message city.economy.v2.AddOrgRequest
  */
 export const AddOrgRequest = /*@__PURE__*/ proto3.makeMessageType(
@@ -17,6 +19,8 @@ export const AddOrgRequest = /*@__PURE__*/ proto3.makeMessageType(
 );
 
 /**
+ * 添加组织的响应消息
+ *
  * @generated from message city.economy.v2.AddOrgResponse
  */
 export const AddOrgResponse = /*@__PURE__*/ proto3.makeMessageType(
@@ -25,6 +29,8 @@ export const AddOrgResponse = /*@__PURE__*/ proto3.makeMessageType(
 );
 
 /**
+ * 移除组织的请求消息
+ *
  * @generated from message city.economy.v2.RemoveOrgRequest
  */
 export const RemoveOrgRequest = /*@__PURE__*/ proto3.makeMessageType(
@@ -35,6 +41,8 @@ export const RemoveOrgRequest = /*@__PURE__*/ proto3.makeMessageType(
 );
 
 /**
+ * 移除组织的响应消息
+ *
  * @generated from message city.economy.v2.RemoveOrgResponse
  */
 export const RemoveOrgResponse = /*@__PURE__*/ proto3.makeMessageType(
@@ -43,7 +51,7 @@ export const RemoveOrgResponse = /*@__PURE__*/ proto3.makeMessageType(
 );
 
 /**
- * Org 相关消息
+ * 获取组织的请求消息
  *
  * @generated from message city.economy.v2.GetOrgRequest
  */
@@ -55,6 +63,8 @@ export const GetOrgRequest = /*@__PURE__*/ proto3.makeMessageType(
 );
 
 /**
+ * 获取组织的响应消息
+ *
  * @generated from message city.economy.v2.GetOrgResponse
  */
 export const GetOrgResponse = /*@__PURE__*/ proto3.makeMessageType(
@@ -65,6 +75,8 @@ export const GetOrgResponse = /*@__PURE__*/ proto3.makeMessageType(
 );
 
 /**
+ * 更新组织的请求消息
+ *
  * @generated from message city.economy.v2.UpdateOrgRequest
  */
 export const UpdateOrgRequest = /*@__PURE__*/ proto3.makeMessageType(
@@ -75,6 +87,8 @@ export const UpdateOrgRequest = /*@__PURE__*/ proto3.makeMessageType(
 );
 
 /**
+ * 更新组织的响应消息
+ *
  * @generated from message city.economy.v2.UpdateOrgResponse
  */
 export const UpdateOrgResponse = /*@__PURE__*/ proto3.makeMessageType(
@@ -83,6 +97,8 @@ export const UpdateOrgResponse = /*@__PURE__*/ proto3.makeMessageType(
 );
 
 /**
+ * 添加代理的请求消息
+ *
  * @generated from message city.economy.v2.AddAgentRequest
  */
 export const AddAgentRequest = /*@__PURE__*/ proto3.makeMessageType(
@@ -93,6 +109,8 @@ export const AddAgentRequest = /*@__PURE__*/ proto3.makeMessageType(
 );
 
 /**
+ * 添加代理的响应消息
+ *
  * @generated from message city.economy.v2.AddAgentResponse
  */
 export const AddAgentResponse = /*@__PURE__*/ proto3.makeMessageType(
@@ -101,6 +119,8 @@ export const AddAgentResponse = /*@__PURE__*/ proto3.makeMessageType(
 );
 
 /**
+ * 移除代理的请求消息
+ *
  * @generated from message city.economy.v2.RemoveAgentRequest
  */
 export const RemoveAgentRequest = /*@__PURE__*/ proto3.makeMessageType(
@@ -111,6 +131,8 @@ export const RemoveAgentRequest = /*@__PURE__*/ proto3.makeMessageType(
 );
 
 /**
+ * 移除代理的响应消息
+ *
  * @generated from message city.economy.v2.RemoveAgentResponse
  */
 export const RemoveAgentResponse = /*@__PURE__*/ proto3.makeMessageType(
@@ -119,435 +141,54 @@ export const RemoveAgentResponse = /*@__PURE__*/ proto3.makeMessageType(
 );
 
 /**
- * @generated from message city.economy.v2.GetNominalGDPRequest
+ * 获取代理的请求消息
+ *
+ * @generated from message city.economy.v2.GetAgentRequest
  */
-export const GetNominalGDPRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.GetNominalGDPRequest",
+export const GetAgentRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.GetAgentRequest",
   () => [
-    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 1, name: "agent_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
   ],
 );
 
 /**
- * @generated from message city.economy.v2.GetNominalGDPResponse
+ * 获取代理的响应消息
+ *
+ * @generated from message city.economy.v2.GetAgentResponse
  */
-export const GetNominalGDPResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.GetNominalGDPResponse",
+export const GetAgentResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.GetAgentResponse",
   () => [
-    { no: 1, name: "nominal_gdp", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
+    { no: 1, name: "agent", kind: "message", T: Agent },
   ],
 );
 
 /**
- * @generated from message city.economy.v2.SetNominalGDPRequest
+ * 更新代理的请求消息
+ *
+ * @generated from message city.economy.v2.UpdateAgentRequest
  */
-export const SetNominalGDPRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.SetNominalGDPRequest",
+export const UpdateAgentRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.UpdateAgentRequest",
   () => [
-    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 2, name: "nominal_gdp", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
+    { no: 1, name: "agent", kind: "message", T: Agent },
   ],
 );
 
 /**
- * @generated from message city.economy.v2.SetNominalGDPResponse
+ * 更新代理的响应消息
+ *
+ * @generated from message city.economy.v2.UpdateAgentResponse
  */
-export const SetNominalGDPResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.SetNominalGDPResponse",
+export const UpdateAgentResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.UpdateAgentResponse",
   [],
 );
 
 /**
- * @generated from message city.economy.v2.GetRealGDPRequest
- */
-export const GetRealGDPRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.GetRealGDPRequest",
-  () => [
-    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.GetRealGDPResponse
- */
-export const GetRealGDPResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.GetRealGDPResponse",
-  () => [
-    { no: 1, name: "real_gdp", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.SetRealGDPRequest
- */
-export const SetRealGDPRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.SetRealGDPRequest",
-  () => [
-    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 2, name: "real_gdp", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.SetRealGDPResponse
- */
-export const SetRealGDPResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.SetRealGDPResponse",
-  [],
-);
-
-/**
- * @generated from message city.economy.v2.GetUnemploymentRequest
- */
-export const GetUnemploymentRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.GetUnemploymentRequest",
-  () => [
-    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.GetUnemploymentResponse
- */
-export const GetUnemploymentResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.GetUnemploymentResponse",
-  () => [
-    { no: 1, name: "unemployment", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.SetUnemploymentRequest
- */
-export const SetUnemploymentRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.SetUnemploymentRequest",
-  () => [
-    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 2, name: "unemployment", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.SetUnemploymentResponse
- */
-export const SetUnemploymentResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.SetUnemploymentResponse",
-  [],
-);
-
-/**
- * @generated from message city.economy.v2.GetWagesRequest
- */
-export const GetWagesRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.GetWagesRequest",
-  () => [
-    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.GetWagesResponse
- */
-export const GetWagesResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.GetWagesResponse",
-  () => [
-    { no: 1, name: "wages", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.SetWagesRequest
- */
-export const SetWagesRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.SetWagesRequest",
-  () => [
-    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 2, name: "wages", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.SetWagesResponse
- */
-export const SetWagesResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.SetWagesResponse",
-  [],
-);
-
-/**
- * @generated from message city.economy.v2.GetPricesRequest
- */
-export const GetPricesRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.GetPricesRequest",
-  () => [
-    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.GetPricesResponse
- */
-export const GetPricesResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.GetPricesResponse",
-  () => [
-    { no: 1, name: "prices", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.SetPricesRequest
- */
-export const SetPricesRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.SetPricesRequest",
-  () => [
-    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 2, name: "prices", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.SetPricesResponse
- */
-export const SetPricesResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.SetPricesResponse",
-  [],
-);
-
-/**
- * @generated from message city.economy.v2.GetInventoryRequest
- */
-export const GetInventoryRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.GetInventoryRequest",
-  () => [
-    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.GetInventoryResponse
- */
-export const GetInventoryResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.GetInventoryResponse",
-  () => [
-    { no: 1, name: "inventory", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.SetInventoryRequest
- */
-export const SetInventoryRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.SetInventoryRequest",
-  () => [
-    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 2, name: "inventory", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.SetInventoryResponse
- */
-export const SetInventoryResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.SetInventoryResponse",
-  [],
-);
-
-/**
- * @generated from message city.economy.v2.GetPriceRequest
- */
-export const GetPriceRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.GetPriceRequest",
-  () => [
-    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.GetPriceResponse
- */
-export const GetPriceResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.GetPriceResponse",
-  () => [
-    { no: 1, name: "price", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.SetPriceRequest
- */
-export const SetPriceRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.SetPriceRequest",
-  () => [
-    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 2, name: "price", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.SetPriceResponse
- */
-export const SetPriceResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.SetPriceResponse",
-  [],
-);
-
-/**
- * @generated from message city.economy.v2.GetCurrencyRequest
- */
-export const GetCurrencyRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.GetCurrencyRequest",
-  () => [
-    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.GetCurrencyResponse
- */
-export const GetCurrencyResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.GetCurrencyResponse",
-  () => [
-    { no: 1, name: "currency", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.SetCurrencyRequest
- */
-export const SetCurrencyRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.SetCurrencyRequest",
-  () => [
-    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 2, name: "currency", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.SetCurrencyResponse
- */
-export const SetCurrencyResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.SetCurrencyResponse",
-  [],
-);
-
-/**
- * @generated from message city.economy.v2.GetInterestRateRequest
- */
-export const GetInterestRateRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.GetInterestRateRequest",
-  () => [
-    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.GetInterestRateResponse
- */
-export const GetInterestRateResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.GetInterestRateResponse",
-  () => [
-    { no: 1, name: "interest_rate", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.SetInterestRateRequest
- */
-export const SetInterestRateRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.SetInterestRateRequest",
-  () => [
-    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 2, name: "interest_rate", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.SetInterestRateResponse
- */
-export const SetInterestRateResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.SetInterestRateResponse",
-  [],
-);
-
-/**
- * @generated from message city.economy.v2.GetBracketCutoffsRequest
- */
-export const GetBracketCutoffsRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.GetBracketCutoffsRequest",
-  () => [
-    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.GetBracketCutoffsResponse
- */
-export const GetBracketCutoffsResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.GetBracketCutoffsResponse",
-  () => [
-    { no: 1, name: "bracket_cutoffs", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.SetBracketCutoffsRequest
- */
-export const SetBracketCutoffsRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.SetBracketCutoffsRequest",
-  () => [
-    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 2, name: "bracket_cutoffs", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.SetBracketCutoffsResponse
- */
-export const SetBracketCutoffsResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.SetBracketCutoffsResponse",
-  [],
-);
-
-/**
- * @generated from message city.economy.v2.GetBracketRatesRequest
- */
-export const GetBracketRatesRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.GetBracketRatesRequest",
-  () => [
-    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.GetBracketRatesResponse
- */
-export const GetBracketRatesResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.GetBracketRatesResponse",
-  () => [
-    { no: 1, name: "bracket_rates", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.SetBracketRatesRequest
- */
-export const SetBracketRatesRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.SetBracketRatesRequest",
-  () => [
-    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 2, name: "bracket_rates", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.SetBracketRatesResponse
- */
-export const SetBracketRatesResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.SetBracketRatesResponse",
-  [],
-);
-
-/**
+ * 计算税收的请求消息
+ *
  * @generated from message city.economy.v2.CalculateTaxesDueRequest
  */
 export const CalculateTaxesDueRequest = /*@__PURE__*/ proto3.makeMessageType(
@@ -561,6 +202,8 @@ export const CalculateTaxesDueRequest = /*@__PURE__*/ proto3.makeMessageType(
 );
 
 /**
+ * 计算税收的响应消息
+ *
  * @generated from message city.economy.v2.CalculateTaxesDueResponse
  */
 export const CalculateTaxesDueResponse = /*@__PURE__*/ proto3.makeMessageType(
@@ -572,6 +215,8 @@ export const CalculateTaxesDueResponse = /*@__PURE__*/ proto3.makeMessageType(
 );
 
 /**
+ * 计算消费的请求消息
+ *
  * @generated from message city.economy.v2.CalculateConsumptionRequest
  */
 export const CalculateConsumptionRequest = /*@__PURE__*/ proto3.makeMessageType(
@@ -585,6 +230,8 @@ export const CalculateConsumptionRequest = /*@__PURE__*/ proto3.makeMessageType(
 );
 
 /**
+ * 计算消费的响应消息
+ *
  * @generated from message city.economy.v2.CalculateConsumptionResponse
  */
 export const CalculateConsumptionResponse = /*@__PURE__*/ proto3.makeMessageType(
@@ -596,6 +243,8 @@ export const CalculateConsumptionResponse = /*@__PURE__*/ proto3.makeMessageType
 );
 
 /**
+ * 计算利息的请求消息
+ *
  * @generated from message city.economy.v2.CalculateInterestRequest
  */
 export const CalculateInterestRequest = /*@__PURE__*/ proto3.makeMessageType(
@@ -607,6 +256,8 @@ export const CalculateInterestRequest = /*@__PURE__*/ proto3.makeMessageType(
 );
 
 /**
+ * 计算利息的响应消息
+ *
  * @generated from message city.economy.v2.CalculateInterestResponse
  */
 export const CalculateInterestResponse = /*@__PURE__*/ proto3.makeMessageType(
@@ -618,597 +269,31 @@ export const CalculateInterestResponse = /*@__PURE__*/ proto3.makeMessageType(
 );
 
 /**
- * @generated from message city.economy.v2.SaveEconomyEntitiesRequest
- */
-export const SaveEconomyEntitiesRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.SaveEconomyEntitiesRequest",
-  () => [
-    { no: 1, name: "file_path", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.SaveEconomyEntitiesResponse
- */
-export const SaveEconomyEntitiesResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.SaveEconomyEntitiesResponse",
-  () => [
-    { no: 1, name: "org_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
-    { no: 2, name: "agent_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.LoadEconomyEntitiesRequest
- */
-export const LoadEconomyEntitiesRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.LoadEconomyEntitiesRequest",
-  () => [
-    { no: 1, name: "file_path", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.LoadEconomyEntitiesResponse
- */
-export const LoadEconomyEntitiesResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.LoadEconomyEntitiesResponse",
-  () => [
-    { no: 1, name: "org_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
-    { no: 2, name: "agent_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
-  ],
-);
-
-/**
- * Consumption Currency
+ * 计算实际GDP的请求消息
  *
- * @generated from message city.economy.v2.GetConsumptionCurrencyRequest
+ * @generated from message city.economy.v2.CalculateRealGDPRequest
  */
-export const GetConsumptionCurrencyRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.GetConsumptionCurrencyRequest",
+export const CalculateRealGDPRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.CalculateRealGDPRequest",
   () => [
-    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 1, name: "nbs_agent_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
   ],
 );
 
 /**
- * @generated from message city.economy.v2.GetConsumptionCurrencyResponse
- */
-export const GetConsumptionCurrencyResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.GetConsumptionCurrencyResponse",
-  () => [
-    { no: 1, name: "consumption_currency", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.SetConsumptionCurrencyRequest
- */
-export const SetConsumptionCurrencyRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.SetConsumptionCurrencyRequest",
-  () => [
-    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 2, name: "consumption_currency", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.SetConsumptionCurrencyResponse
- */
-export const SetConsumptionCurrencyResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.SetConsumptionCurrencyResponse",
-  [],
-);
-
-/**
- * Consumption Propensity
+ * 计算实际GDP的响应消息
  *
- * @generated from message city.economy.v2.GetConsumptionPropensityRequest
+ * @generated from message city.economy.v2.CalculateRealGDPResponse
  */
-export const GetConsumptionPropensityRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.GetConsumptionPropensityRequest",
+export const CalculateRealGDPResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.CalculateRealGDPResponse",
   () => [
-    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 1, name: "real_gdp", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
   ],
 );
 
 /**
- * @generated from message city.economy.v2.GetConsumptionPropensityResponse
- */
-export const GetConsumptionPropensityResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.GetConsumptionPropensityResponse",
-  () => [
-    { no: 1, name: "consumption_propensity", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.SetConsumptionPropensityRequest
- */
-export const SetConsumptionPropensityRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.SetConsumptionPropensityRequest",
-  () => [
-    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 2, name: "consumption_propensity", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.SetConsumptionPropensityResponse
- */
-export const SetConsumptionPropensityResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.SetConsumptionPropensityResponse",
-  [],
-);
-
-/**
- * Income Currency
- *
- * @generated from message city.economy.v2.GetIncomeCurrencyRequest
- */
-export const GetIncomeCurrencyRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.GetIncomeCurrencyRequest",
-  () => [
-    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.GetIncomeCurrencyResponse
- */
-export const GetIncomeCurrencyResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.GetIncomeCurrencyResponse",
-  () => [
-    { no: 1, name: "income_currency", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.SetIncomeCurrencyRequest
- */
-export const SetIncomeCurrencyRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.SetIncomeCurrencyRequest",
-  () => [
-    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 2, name: "income_currency", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.SetIncomeCurrencyResponse
- */
-export const SetIncomeCurrencyResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.SetIncomeCurrencyResponse",
-  [],
-);
-
-/**
- * Depression
- *
- * @generated from message city.economy.v2.GetDepressionRequest
- */
-export const GetDepressionRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.GetDepressionRequest",
-  () => [
-    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.GetDepressionResponse
- */
-export const GetDepressionResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.GetDepressionResponse",
-  () => [
-    { no: 1, name: "depression", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.SetDepressionRequest
- */
-export const SetDepressionRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.SetDepressionRequest",
-  () => [
-    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 2, name: "depression", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.SetDepressionResponse
- */
-export const SetDepressionResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.SetDepressionResponse",
-  [],
-);
-
-/**
- * Locus of Control
- *
- * @generated from message city.economy.v2.GetLocusControlRequest
- */
-export const GetLocusControlRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.GetLocusControlRequest",
-  () => [
-    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.GetLocusControlResponse
- */
-export const GetLocusControlResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.GetLocusControlResponse",
-  () => [
-    { no: 1, name: "locus_control", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.SetLocusControlRequest
- */
-export const SetLocusControlRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.SetLocusControlRequest",
-  () => [
-    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 2, name: "locus_control", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.SetLocusControlResponse
- */
-export const SetLocusControlResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.SetLocusControlResponse",
-  [],
-);
-
-/**
- * Working Hours
- *
- * @generated from message city.economy.v2.GetWorkingHoursRequest
- */
-export const GetWorkingHoursRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.GetWorkingHoursRequest",
-  () => [
-    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.GetWorkingHoursResponse
- */
-export const GetWorkingHoursResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.GetWorkingHoursResponse",
-  () => [
-    { no: 1, name: "working_hours", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.SetWorkingHoursRequest
- */
-export const SetWorkingHoursRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.SetWorkingHoursRequest",
-  () => [
-    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 2, name: "working_hours", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.SetWorkingHoursResponse
- */
-export const SetWorkingHoursResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.SetWorkingHoursResponse",
-  [],
-);
-
-/**
- * @generated from message city.economy.v2.GetOrgEntityIdsRequest
- */
-export const GetOrgEntityIdsRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.GetOrgEntityIdsRequest",
-  () => [
-    { no: 1, name: "type", kind: "enum", T: proto3.getEnumType(OrgType) },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.GetOrgEntityIdsResponse
- */
-export const GetOrgEntityIdsResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.GetOrgEntityIdsResponse",
-  () => [
-    { no: 1, name: "org_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.AddInventoryRequest
- */
-export const AddInventoryRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.AddInventoryRequest",
-  () => [
-    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 2, name: "delta_inventory", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.AddInventoryResponse
- */
-export const AddInventoryResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.AddInventoryResponse",
-  () => [
-    { no: 1, name: "inventory", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.AddPriceRequest
- */
-export const AddPriceRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.AddPriceRequest",
-  () => [
-    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 2, name: "delta_price", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.AddPriceResponse
- */
-export const AddPriceResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.AddPriceResponse",
-  () => [
-    { no: 1, name: "price", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.AddCurrencyRequest
- */
-export const AddCurrencyRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.AddCurrencyRequest",
-  () => [
-    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 2, name: "delta_currency", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.AddCurrencyResponse
- */
-export const AddCurrencyResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.AddCurrencyResponse",
-  () => [
-    { no: 1, name: "currency", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.AddInterestRateRequest
- */
-export const AddInterestRateRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.AddInterestRateRequest",
-  () => [
-    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 2, name: "delta_interest_rate", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.AddInterestRateResponse
- */
-export const AddInterestRateResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.AddInterestRateResponse",
-  () => [
-    { no: 1, name: "interest_rate", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
-  ],
-);
-
-/**
- * Employees 相关消息
- *
- * @generated from message city.economy.v2.GetEmployeesRequest
- */
-export const GetEmployeesRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.GetEmployeesRequest",
-  () => [
-    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.GetEmployeesResponse
- */
-export const GetEmployeesResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.GetEmployeesResponse",
-  () => [
-    { no: 1, name: "employee_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.SetEmployeesRequest
- */
-export const SetEmployeesRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.SetEmployeesRequest",
-  () => [
-    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 2, name: "employee_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.SetEmployeesResponse
- */
-export const SetEmployeesResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.SetEmployeesResponse",
-  [],
-);
-
-/**
- * @generated from message city.economy.v2.AddEmployeeRequest
- */
-export const AddEmployeeRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.AddEmployeeRequest",
-  () => [
-    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 2, name: "employee_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.AddEmployeeResponse
- */
-export const AddEmployeeResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.AddEmployeeResponse",
-  [],
-);
-
-/**
- * @generated from message city.economy.v2.RemoveEmployeeRequest
- */
-export const RemoveEmployeeRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.RemoveEmployeeRequest",
-  () => [
-    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 2, name: "employee_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.RemoveEmployeeResponse
- */
-export const RemoveEmployeeResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.RemoveEmployeeResponse",
-  [],
-);
-
-/**
- * Citizens 相关消息
- *
- * @generated from message city.economy.v2.GetCitizensRequest
- */
-export const GetCitizensRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.GetCitizensRequest",
-  () => [
-    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.GetCitizensResponse
- */
-export const GetCitizensResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.GetCitizensResponse",
-  () => [
-    { no: 1, name: "citizen_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.SetCitizensRequest
- */
-export const SetCitizensRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.SetCitizensRequest",
-  () => [
-    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 2, name: "citizen_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.SetCitizensResponse
- */
-export const SetCitizensResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.SetCitizensResponse",
-  [],
-);
-
-/**
- * @generated from message city.economy.v2.AddCitizenRequest
- */
-export const AddCitizenRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.AddCitizenRequest",
-  () => [
-    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 2, name: "citizen_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.AddCitizenResponse
- */
-export const AddCitizenResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.AddCitizenResponse",
-  [],
-);
-
-/**
- * @generated from message city.economy.v2.RemoveCitizenRequest
- */
-export const RemoveCitizenRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.RemoveCitizenRequest",
-  () => [
-    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 2, name: "citizen_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.RemoveCitizenResponse
- */
-export const RemoveCitizenResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.RemoveCitizenResponse",
-  [],
-);
-
-/**
- * Agent 相关消息
- *
- * @generated from message city.economy.v2.GetAgentRequest
- */
-export const GetAgentRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.GetAgentRequest",
-  () => [
-    { no: 1, name: "agent_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.GetAgentResponse
- */
-export const GetAgentResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.GetAgentResponse",
-  () => [
-    { no: 1, name: "agent", kind: "message", T: Agent },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.UpdateAgentRequest
- */
-export const UpdateAgentRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.UpdateAgentRequest",
-  () => [
-    { no: 1, name: "agent", kind: "message", T: Agent },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.UpdateAgentResponse
- */
-export const UpdateAgentResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.UpdateAgentResponse",
-  [],
-);
-
-/**
- * 批量获取和更新
+ * 批量获取的请求消息
  *
  * @generated from message city.economy.v2.BatchGetRequest
  */
@@ -1221,6 +306,8 @@ export const BatchGetRequest = /*@__PURE__*/ proto3.makeMessageType(
 );
 
 /**
+ * 批量获取的响应消息
+ *
  * @generated from message city.economy.v2.BatchGetResponse
  */
 export const BatchGetResponse = /*@__PURE__*/ proto3.makeMessageType(
@@ -1232,6 +319,8 @@ export const BatchGetResponse = /*@__PURE__*/ proto3.makeMessageType(
 );
 
 /**
+ * 批量更新的请求消息
+ *
  * @generated from message city.economy.v2.BatchUpdateRequest
  */
 export const BatchUpdateRequest = /*@__PURE__*/ proto3.makeMessageType(
@@ -1243,6 +332,8 @@ export const BatchUpdateRequest = /*@__PURE__*/ proto3.makeMessageType(
 );
 
 /**
+ * 批量更新的响应消息
+ *
  * @generated from message city.economy.v2.BatchUpdateResponse
  */
 export const BatchUpdateResponse = /*@__PURE__*/ proto3.makeMessageType(
@@ -1251,7 +342,30 @@ export const BatchUpdateResponse = /*@__PURE__*/ proto3.makeMessageType(
 );
 
 /**
- * 增量更新请求
+ * 批量设置的请求消息
+ *
+ * @generated from message city.economy.v2.BatchSetRequest
+ */
+export const BatchSetRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.BatchSetRequest",
+  () => [
+    { no: 1, name: "orgs", kind: "message", T: Org, repeated: true },
+    { no: 2, name: "agents", kind: "message", T: Agent, repeated: true },
+  ],
+);
+
+/**
+ * 批量设置的响应消息
+ *
+ * @generated from message city.economy.v2.BatchSetResponse
+ */
+export const BatchSetResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.BatchSetResponse",
+  [],
+);
+
+/**
+ * 组织增量更新的请求消息
  *
  * @generated from message city.economy.v2.DeltaUpdateOrgRequest
  */
@@ -1259,16 +373,35 @@ export const DeltaUpdateOrgRequest = /*@__PURE__*/ proto3.makeMessageType(
   "city.economy.v2.DeltaUpdateOrgRequest",
   () => [
     { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 2, name: "delta_inventory", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
-    { no: 3, name: "delta_price", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
-    { no: 4, name: "delta_currency", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
-    { no: 5, name: "delta_interest_rate", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
-    { no: 6, name: "add_employees", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
-    { no: 7, name: "remove_employees", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 2, name: "delta_nominal_gdp", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
+    { no: 3, name: "delta_real_gdp", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
+    { no: 4, name: "delta_unemployment", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
+    { no: 5, name: "delta_wages", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
+    { no: 6, name: "delta_prices", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
+    { no: 7, name: "delta_inventory", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
+    { no: 8, name: "delta_price", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
+    { no: 9, name: "delta_currency", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
+    { no: 10, name: "delta_interest_rate", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
+    { no: 11, name: "delta_bracket_cutoffs", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
+    { no: 12, name: "delta_bracket_rates", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
+    { no: 13, name: "delta_demand", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
+    { no: 14, name: "delta_sales", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
+    { no: 15, name: "add_employees", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 16, name: "remove_employees", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 17, name: "add_citizens", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 18, name: "remove_citizens", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 19, name: "delta_consumption_currency", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
+    { no: 20, name: "delta_consumption_propensity", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
+    { no: 21, name: "delta_income_currency", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
+    { no: 22, name: "delta_depression", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
+    { no: 23, name: "delta_locus_control", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
+    { no: 24, name: "delta_working_hours", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
   ],
 );
 
 /**
+ * 组织增量更新的响应消息
+ *
  * @generated from message city.economy.v2.DeltaUpdateOrgResponse
  */
 export const DeltaUpdateOrgResponse = /*@__PURE__*/ proto3.makeMessageType(
@@ -1277,6 +410,8 @@ export const DeltaUpdateOrgResponse = /*@__PURE__*/ proto3.makeMessageType(
 );
 
 /**
+ * 代理增量更新的请求消息
+ *
  * @generated from message city.economy.v2.DeltaUpdateAgentRequest
  */
 export const DeltaUpdateAgentRequest = /*@__PURE__*/ proto3.makeMessageType(
@@ -1284,13 +419,16 @@ export const DeltaUpdateAgentRequest = /*@__PURE__*/ proto3.makeMessageType(
   () => [
     { no: 1, name: "agent_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 2, name: "delta_currency", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
-    { no: 3, name: "delta_skill", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
-    { no: 4, name: "delta_consumption", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
-    { no: 5, name: "delta_income", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
+    { no: 3, name: "new_firm_id", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
+    { no: 4, name: "delta_skill", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
+    { no: 5, name: "delta_consumption", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
+    { no: 6, name: "delta_income", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
   ],
 );
 
 /**
+ * 代理增量更新的响应消息
+ *
  * @generated from message city.economy.v2.DeltaUpdateAgentResponse
  */
 export const DeltaUpdateAgentResponse = /*@__PURE__*/ proto3.makeMessageType(
@@ -1299,7 +437,7 @@ export const DeltaUpdateAgentResponse = /*@__PURE__*/ proto3.makeMessageType(
 );
 
 /**
- * 批量增量更新请求
+ * 批量增量更新的请求消息
  *
  * @generated from message city.economy.v2.BatchDeltaUpdateRequest
  */
@@ -1312,6 +450,8 @@ export const BatchDeltaUpdateRequest = /*@__PURE__*/ proto3.makeMessageType(
 );
 
 /**
+ * 批量增量更新的响应消息
+ *
  * @generated from message city.economy.v2.BatchDeltaUpdateResponse
  */
 export const BatchDeltaUpdateResponse = /*@__PURE__*/ proto3.makeMessageType(
@@ -1320,24 +460,52 @@ export const BatchDeltaUpdateResponse = /*@__PURE__*/ proto3.makeMessageType(
 );
 
 /**
- * 计算实际GDP的请求和响应消息
+ * 保存经济实体的请求消息
  *
- * @generated from message city.economy.v2.CalculateRealGDPRequest
+ * @generated from message city.economy.v2.SaveEconomyEntitiesRequest
  */
-export const CalculateRealGDPRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.CalculateRealGDPRequest",
+export const SaveEconomyEntitiesRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.SaveEconomyEntitiesRequest",
   () => [
-    { no: 1, name: "nbs_agent_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 1, name: "file_path", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
 /**
- * @generated from message city.economy.v2.CalculateRealGDPResponse
+ * 保存经济实体的响应消息
+ *
+ * @generated from message city.economy.v2.SaveEconomyEntitiesResponse
  */
-export const CalculateRealGDPResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.CalculateRealGDPResponse",
+export const SaveEconomyEntitiesResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.SaveEconomyEntitiesResponse",
   () => [
-    { no: 1, name: "real_gdp", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
+    { no: 1, name: "org_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 2, name: "agent_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+  ],
+);
+
+/**
+ * 加载经济实体的请求消息
+ *
+ * @generated from message city.economy.v2.LoadEconomyEntitiesRequest
+ */
+export const LoadEconomyEntitiesRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.LoadEconomyEntitiesRequest",
+  () => [
+    { no: 1, name: "file_path", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * 加载经济实体的响应消息
+ *
+ * @generated from message city.economy.v2.LoadEconomyEntitiesResponse
+ */
+export const LoadEconomyEntitiesResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.LoadEconomyEntitiesResponse",
+  () => [
+    { no: 1, name: "org_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 2, name: "agent_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
   ],
 );
 

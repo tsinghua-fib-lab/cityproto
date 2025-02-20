@@ -7,12 +7,13 @@ import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialM
 import { Message, proto3 } from "@bufbuild/protobuf";
 
 /**
+ * 组织类型
+ *
  * @generated from enum city.economy.v2.OrgType
  */
 export declare enum OrgType {
   /**
    * 未指定
-   * unspecified
    *
    * @generated from enum value: ORG_TYPE_UNSPECIFIED = 0;
    */
@@ -20,7 +21,6 @@ export declare enum OrgType {
 
   /**
    * 国家统计局
-   * NBS
    *
    * @generated from enum value: ORG_TYPE_NBS = 1;
    */
@@ -28,7 +28,6 @@ export declare enum OrgType {
 
   /**
    * 公司
-   * firm
    *
    * @generated from enum value: ORG_TYPE_FIRM = 2;
    */
@@ -36,7 +35,6 @@ export declare enum OrgType {
 
   /**
    * 银行
-   * bank
    *
    * @generated from enum value: ORG_TYPE_BANK = 3;
    */
@@ -44,7 +42,6 @@ export declare enum OrgType {
 
   /**
    * 政府
-   * government
    *
    * @generated from enum value: ORG_TYPE_GOVERNMENT = 4;
    */
@@ -53,161 +50,170 @@ export declare enum OrgType {
 
 /**
  * 组织
- * Organization
  *
  * @generated from message city.economy.v2.Org
  */
 export declare class Org extends Message<Org> {
   /**
    * 组织ID
-   * organization id
    *
    * @generated from field: int32 id = 1;
    */
   id: number;
 
   /**
-   * 组织类别
-   * organization type
+   * 组织类型
    *
    * @generated from field: city.economy.v2.OrgType type = 2;
    */
   type: OrgType;
 
   /**
-   * NBS
-   *
+   * 名义GDP
    *
    * @generated from field: repeated float nominal_gdp = 3;
    */
   nominalGdp: number[];
 
   /**
+   * 实际GDP
+   *
    * @generated from field: repeated float real_gdp = 4;
    */
   realGdp: number[];
 
   /**
+   * 失业率
+   *
    * @generated from field: repeated float unemployment = 5;
    */
   unemployment: number[];
 
   /**
+   * 工资
+   *
    * @generated from field: repeated float wages = 6;
    */
   wages: number[];
 
   /**
+   * 价格序列
+   *
    * @generated from field: repeated float prices = 7;
    */
   prices: number[];
 
   /**
-   * Firm
-   *
+   * 库存
    *
    * @generated from field: optional int32 inventory = 8;
    */
   inventory?: number;
 
   /**
+   * 价格
+   *
    * @generated from field: optional float price = 9;
    */
   price?: number;
 
   /**
-   * Firm & Bank & Government
-   *
+   * 货币
    *
    * @generated from field: optional float currency = 10;
    */
   currency?: number;
 
   /**
-   * Bank
-   *
+   * 利率
    *
    * @generated from field: optional float interest_rate = 11;
    */
   interestRate?: number;
 
   /**
-   * Government
-   *
+   * 税率档位切分点
    *
    * @generated from field: repeated float bracket_cutoffs = 12;
    */
   bracketCutoffs: number[];
 
   /**
+   * 税率档位
+   *
    * @generated from field: repeated float bracket_rates = 13;
    */
   bracketRates: number[];
 
   /**
-   * NBS
+   * 总需求量
    *
-   *
-   * @generated from field: repeated float consumption_currency = 14;
-   */
-  consumptionCurrency: number[];
-
-  /**
-   * @generated from field: repeated float consumption_propensity = 15;
-   */
-  consumptionPropensity: number[];
-
-  /**
-   * @generated from field: repeated float income_currency = 16;
-   */
-  incomeCurrency: number[];
-
-  /**
-   * @generated from field: repeated float depression = 17;
-   */
-  depression: number[];
-
-  /**
-   * @generated from field: repeated float locus_control = 18;
-   */
-  locusControl: number[];
-
-  /**
-   * @generated from field: repeated float working_hours = 19;
-   */
-  workingHours: number[];
-
-  /**
-   * Firm: 企业的雇员列表
-   * employees list for firm
-   *
-   * @generated from field: repeated int32 employees = 20;
-   */
-  employees: number[];
-
-  /**
-   * NBS & Government: 公民列表
-   * citizens list for NBS and government
-   *
-   * @generated from field: repeated int32 citizens = 21;
-   */
-  citizens: number[];
-
-  /**
-   * Firm: 总需求量
-   * total demand for firm
-   *
-   * @generated from field: optional int32 demand = 22;
+   * @generated from field: optional int32 demand = 14;
    */
   demand?: number;
 
   /**
-   * Firm: 总销售量
-   * total sales for firm
+   * 总销售量
    *
-   * @generated from field: optional int32 sales = 23;
+   * @generated from field: optional int32 sales = 15;
    */
   sales?: number;
+
+  /**
+   * 员工列表
+   *
+   * @generated from field: repeated int32 employees = 16;
+   */
+  employees: number[];
+
+  /**
+   * 公民列表
+   *
+   * @generated from field: repeated int32 citizens = 17;
+   */
+  citizens: number[];
+
+  /**
+   * 消费货币
+   *
+   * @generated from field: repeated float consumption_currency = 18;
+   */
+  consumptionCurrency: number[];
+
+  /**
+   * 消费倾向
+   *
+   * @generated from field: repeated float consumption_propensity = 19;
+   */
+  consumptionPropensity: number[];
+
+  /**
+   * 收入货币
+   *
+   * @generated from field: repeated float income_currency = 20;
+   */
+  incomeCurrency: number[];
+
+  /**
+   * 抑郁指数
+   *
+   * @generated from field: repeated float depression = 21;
+   */
+  depression: number[];
+
+  /**
+   * 控制点
+   *
+   * @generated from field: repeated float locus_control = 22;
+   */
+  locusControl: number[];
+
+  /**
+   * 工作时间
+   *
+   * @generated from field: repeated float working_hours = 23;
+   */
+  workingHours: number[];
 
   constructor(data?: PartialMessage<Org>);
 
@@ -225,32 +231,34 @@ export declare class Org extends Message<Org> {
 }
 
 /**
+ * 代理
+ *
  * @generated from message city.economy.v2.Agent
  */
 export declare class Agent extends Message<Agent> {
   /**
-   * person ID
+   * 代理ID
    *
    * @generated from field: int32 id = 1;
    */
   id: number;
 
   /**
-   * currency
+   * 货币
    *
    * @generated from field: optional float currency = 2;
    */
   currency?: number;
 
   /**
-   * 所属企业ID
+   * 所属公司ID
    *
    * @generated from field: optional int32 firm_id = 3;
    */
   firmId?: number;
 
   /**
-   * 技能水平
+   * 技能
    *
    * @generated from field: optional float skill = 4;
    */
@@ -286,15 +294,21 @@ export declare class Agent extends Message<Agent> {
 }
 
 /**
+ * 经济实体
+ *
  * @generated from message city.economy.v2.EconomyEntities
  */
 export declare class EconomyEntities extends Message<EconomyEntities> {
   /**
+   * 组织列表
+   *
    * @generated from field: repeated city.economy.v2.Org orgs = 1;
    */
   orgs: Org[];
 
   /**
+   * 代理列表
+   *
    * @generated from field: repeated city.economy.v2.Agent agents = 2;
    */
   agents: Agent[];

@@ -19,7 +19,7 @@ ORG_TYPE_BANK: OrgType
 ORG_TYPE_GOVERNMENT: OrgType
 
 class Org(_message.Message):
-    __slots__ = ['id', 'type', 'nominal_gdp', 'real_gdp', 'unemployment', 'wages', 'prices', 'inventory', 'price', 'currency', 'interest_rate', 'bracket_cutoffs', 'bracket_rates', 'consumption_currency', 'consumption_propensity', 'income_currency', 'depression', 'locus_control', 'working_hours', 'employees', 'citizens', 'demand', 'sales']
+    __slots__ = ['id', 'type', 'nominal_gdp', 'real_gdp', 'unemployment', 'wages', 'prices', 'inventory', 'price', 'currency', 'interest_rate', 'bracket_cutoffs', 'bracket_rates', 'demand', 'sales', 'employees', 'citizens', 'consumption_currency', 'consumption_propensity', 'income_currency', 'depression', 'locus_control', 'working_hours']
     ID_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
     NOMINAL_GDP_FIELD_NUMBER: _ClassVar[int]
@@ -33,16 +33,16 @@ class Org(_message.Message):
     INTEREST_RATE_FIELD_NUMBER: _ClassVar[int]
     BRACKET_CUTOFFS_FIELD_NUMBER: _ClassVar[int]
     BRACKET_RATES_FIELD_NUMBER: _ClassVar[int]
+    DEMAND_FIELD_NUMBER: _ClassVar[int]
+    SALES_FIELD_NUMBER: _ClassVar[int]
+    EMPLOYEES_FIELD_NUMBER: _ClassVar[int]
+    CITIZENS_FIELD_NUMBER: _ClassVar[int]
     CONSUMPTION_CURRENCY_FIELD_NUMBER: _ClassVar[int]
     CONSUMPTION_PROPENSITY_FIELD_NUMBER: _ClassVar[int]
     INCOME_CURRENCY_FIELD_NUMBER: _ClassVar[int]
     DEPRESSION_FIELD_NUMBER: _ClassVar[int]
     LOCUS_CONTROL_FIELD_NUMBER: _ClassVar[int]
     WORKING_HOURS_FIELD_NUMBER: _ClassVar[int]
-    EMPLOYEES_FIELD_NUMBER: _ClassVar[int]
-    CITIZENS_FIELD_NUMBER: _ClassVar[int]
-    DEMAND_FIELD_NUMBER: _ClassVar[int]
-    SALES_FIELD_NUMBER: _ClassVar[int]
     id: int
     type: OrgType
     nominal_gdp: _containers.RepeatedScalarFieldContainer[float]
@@ -56,18 +56,18 @@ class Org(_message.Message):
     interest_rate: float
     bracket_cutoffs: _containers.RepeatedScalarFieldContainer[float]
     bracket_rates: _containers.RepeatedScalarFieldContainer[float]
+    demand: int
+    sales: int
+    employees: _containers.RepeatedScalarFieldContainer[int]
+    citizens: _containers.RepeatedScalarFieldContainer[int]
     consumption_currency: _containers.RepeatedScalarFieldContainer[float]
     consumption_propensity: _containers.RepeatedScalarFieldContainer[float]
     income_currency: _containers.RepeatedScalarFieldContainer[float]
     depression: _containers.RepeatedScalarFieldContainer[float]
     locus_control: _containers.RepeatedScalarFieldContainer[float]
     working_hours: _containers.RepeatedScalarFieldContainer[float]
-    employees: _containers.RepeatedScalarFieldContainer[int]
-    citizens: _containers.RepeatedScalarFieldContainer[int]
-    demand: int
-    sales: int
 
-    def __init__(self, id: _Optional[int]=..., type: _Optional[_Union[OrgType, str]]=..., nominal_gdp: _Optional[_Iterable[float]]=..., real_gdp: _Optional[_Iterable[float]]=..., unemployment: _Optional[_Iterable[float]]=..., wages: _Optional[_Iterable[float]]=..., prices: _Optional[_Iterable[float]]=..., inventory: _Optional[int]=..., price: _Optional[float]=..., currency: _Optional[float]=..., interest_rate: _Optional[float]=..., bracket_cutoffs: _Optional[_Iterable[float]]=..., bracket_rates: _Optional[_Iterable[float]]=..., consumption_currency: _Optional[_Iterable[float]]=..., consumption_propensity: _Optional[_Iterable[float]]=..., income_currency: _Optional[_Iterable[float]]=..., depression: _Optional[_Iterable[float]]=..., locus_control: _Optional[_Iterable[float]]=..., working_hours: _Optional[_Iterable[float]]=..., employees: _Optional[_Iterable[int]]=..., citizens: _Optional[_Iterable[int]]=..., demand: _Optional[int]=..., sales: _Optional[int]=...) -> None:
+    def __init__(self, id: _Optional[int]=..., type: _Optional[_Union[OrgType, str]]=..., nominal_gdp: _Optional[_Iterable[float]]=..., real_gdp: _Optional[_Iterable[float]]=..., unemployment: _Optional[_Iterable[float]]=..., wages: _Optional[_Iterable[float]]=..., prices: _Optional[_Iterable[float]]=..., inventory: _Optional[int]=..., price: _Optional[float]=..., currency: _Optional[float]=..., interest_rate: _Optional[float]=..., bracket_cutoffs: _Optional[_Iterable[float]]=..., bracket_rates: _Optional[_Iterable[float]]=..., demand: _Optional[int]=..., sales: _Optional[int]=..., employees: _Optional[_Iterable[int]]=..., citizens: _Optional[_Iterable[int]]=..., consumption_currency: _Optional[_Iterable[float]]=..., consumption_propensity: _Optional[_Iterable[float]]=..., income_currency: _Optional[_Iterable[float]]=..., depression: _Optional[_Iterable[float]]=..., locus_control: _Optional[_Iterable[float]]=..., working_hours: _Optional[_Iterable[float]]=...) -> None:
         ...
 
 class Agent(_message.Message):
