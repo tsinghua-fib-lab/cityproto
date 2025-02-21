@@ -23,44 +23,199 @@ namespace _pbi = _pb::internal;
 namespace city {
 namespace economy {
 namespace v2 {
-PROTOBUF_CONSTEXPR Org::Org(
+PROTOBUF_CONSTEXPR Firm::Firm(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_._has_bits_)*/{}
-  , /*decltype(_impl_._cached_size_)*/{}
-  , /*decltype(_impl_.nominal_gdp_)*/{}
-  , /*decltype(_impl_.real_gdp_)*/{}
-  , /*decltype(_impl_.unemployment_)*/{}
-  , /*decltype(_impl_.wages_)*/{}
-  , /*decltype(_impl_.prices_)*/{}
-  , /*decltype(_impl_.bracket_cutoffs_)*/{}
-  , /*decltype(_impl_.bracket_rates_)*/{}
-  , /*decltype(_impl_.employees_)*/{}
+    /*decltype(_impl_.employees_)*/{}
   , /*decltype(_impl_._employees_cached_byte_size_)*/{0}
-  , /*decltype(_impl_.citizens_)*/{}
-  , /*decltype(_impl_._citizens_cached_byte_size_)*/{0}
-  , /*decltype(_impl_.consumption_currency_)*/{}
-  , /*decltype(_impl_.consumption_propensity_)*/{}
-  , /*decltype(_impl_.income_currency_)*/{}
-  , /*decltype(_impl_.depression_)*/{}
-  , /*decltype(_impl_.locus_control_)*/{}
-  , /*decltype(_impl_.working_hours_)*/{}
   , /*decltype(_impl_.id_)*/0
-  , /*decltype(_impl_.type_)*/0
-  , /*decltype(_impl_.inventory_)*/0
   , /*decltype(_impl_.price_)*/0
-  , /*decltype(_impl_.currency_)*/0
-  , /*decltype(_impl_.interest_rate_)*/0
+  , /*decltype(_impl_.inventory_)*/0
   , /*decltype(_impl_.demand_)*/0
-  , /*decltype(_impl_.sales_)*/0} {}
-struct OrgDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR OrgDefaultTypeInternal()
+  , /*decltype(_impl_.sales_)*/0
+  , /*decltype(_impl_.currency_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct FirmDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR FirmDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
-  ~OrgDefaultTypeInternal() {}
+  ~FirmDefaultTypeInternal() {}
   union {
-    Org _instance;
+    Firm _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 OrgDefaultTypeInternal _Org_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 FirmDefaultTypeInternal _Firm_default_instance_;
+PROTOBUF_CONSTEXPR NBS_NominalGdpEntry_DoNotUse::NBS_NominalGdpEntry_DoNotUse(
+    ::_pbi::ConstantInitialized) {}
+struct NBS_NominalGdpEntry_DoNotUseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR NBS_NominalGdpEntry_DoNotUseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~NBS_NominalGdpEntry_DoNotUseDefaultTypeInternal() {}
+  union {
+    NBS_NominalGdpEntry_DoNotUse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 NBS_NominalGdpEntry_DoNotUseDefaultTypeInternal _NBS_NominalGdpEntry_DoNotUse_default_instance_;
+PROTOBUF_CONSTEXPR NBS_RealGdpEntry_DoNotUse::NBS_RealGdpEntry_DoNotUse(
+    ::_pbi::ConstantInitialized) {}
+struct NBS_RealGdpEntry_DoNotUseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR NBS_RealGdpEntry_DoNotUseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~NBS_RealGdpEntry_DoNotUseDefaultTypeInternal() {}
+  union {
+    NBS_RealGdpEntry_DoNotUse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 NBS_RealGdpEntry_DoNotUseDefaultTypeInternal _NBS_RealGdpEntry_DoNotUse_default_instance_;
+PROTOBUF_CONSTEXPR NBS_UnemploymentEntry_DoNotUse::NBS_UnemploymentEntry_DoNotUse(
+    ::_pbi::ConstantInitialized) {}
+struct NBS_UnemploymentEntry_DoNotUseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR NBS_UnemploymentEntry_DoNotUseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~NBS_UnemploymentEntry_DoNotUseDefaultTypeInternal() {}
+  union {
+    NBS_UnemploymentEntry_DoNotUse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 NBS_UnemploymentEntry_DoNotUseDefaultTypeInternal _NBS_UnemploymentEntry_DoNotUse_default_instance_;
+PROTOBUF_CONSTEXPR NBS_WagesEntry_DoNotUse::NBS_WagesEntry_DoNotUse(
+    ::_pbi::ConstantInitialized) {}
+struct NBS_WagesEntry_DoNotUseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR NBS_WagesEntry_DoNotUseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~NBS_WagesEntry_DoNotUseDefaultTypeInternal() {}
+  union {
+    NBS_WagesEntry_DoNotUse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 NBS_WagesEntry_DoNotUseDefaultTypeInternal _NBS_WagesEntry_DoNotUse_default_instance_;
+PROTOBUF_CONSTEXPR NBS_PricesEntry_DoNotUse::NBS_PricesEntry_DoNotUse(
+    ::_pbi::ConstantInitialized) {}
+struct NBS_PricesEntry_DoNotUseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR NBS_PricesEntry_DoNotUseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~NBS_PricesEntry_DoNotUseDefaultTypeInternal() {}
+  union {
+    NBS_PricesEntry_DoNotUse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 NBS_PricesEntry_DoNotUseDefaultTypeInternal _NBS_PricesEntry_DoNotUse_default_instance_;
+PROTOBUF_CONSTEXPR NBS_WorkingHoursEntry_DoNotUse::NBS_WorkingHoursEntry_DoNotUse(
+    ::_pbi::ConstantInitialized) {}
+struct NBS_WorkingHoursEntry_DoNotUseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR NBS_WorkingHoursEntry_DoNotUseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~NBS_WorkingHoursEntry_DoNotUseDefaultTypeInternal() {}
+  union {
+    NBS_WorkingHoursEntry_DoNotUse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 NBS_WorkingHoursEntry_DoNotUseDefaultTypeInternal _NBS_WorkingHoursEntry_DoNotUse_default_instance_;
+PROTOBUF_CONSTEXPR NBS_DepressionEntry_DoNotUse::NBS_DepressionEntry_DoNotUse(
+    ::_pbi::ConstantInitialized) {}
+struct NBS_DepressionEntry_DoNotUseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR NBS_DepressionEntry_DoNotUseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~NBS_DepressionEntry_DoNotUseDefaultTypeInternal() {}
+  union {
+    NBS_DepressionEntry_DoNotUse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 NBS_DepressionEntry_DoNotUseDefaultTypeInternal _NBS_DepressionEntry_DoNotUse_default_instance_;
+PROTOBUF_CONSTEXPR NBS_ConsumptionCurrencyEntry_DoNotUse::NBS_ConsumptionCurrencyEntry_DoNotUse(
+    ::_pbi::ConstantInitialized) {}
+struct NBS_ConsumptionCurrencyEntry_DoNotUseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR NBS_ConsumptionCurrencyEntry_DoNotUseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~NBS_ConsumptionCurrencyEntry_DoNotUseDefaultTypeInternal() {}
+  union {
+    NBS_ConsumptionCurrencyEntry_DoNotUse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 NBS_ConsumptionCurrencyEntry_DoNotUseDefaultTypeInternal _NBS_ConsumptionCurrencyEntry_DoNotUse_default_instance_;
+PROTOBUF_CONSTEXPR NBS_IncomeCurrencyEntry_DoNotUse::NBS_IncomeCurrencyEntry_DoNotUse(
+    ::_pbi::ConstantInitialized) {}
+struct NBS_IncomeCurrencyEntry_DoNotUseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR NBS_IncomeCurrencyEntry_DoNotUseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~NBS_IncomeCurrencyEntry_DoNotUseDefaultTypeInternal() {}
+  union {
+    NBS_IncomeCurrencyEntry_DoNotUse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 NBS_IncomeCurrencyEntry_DoNotUseDefaultTypeInternal _NBS_IncomeCurrencyEntry_DoNotUse_default_instance_;
+PROTOBUF_CONSTEXPR NBS_LocusControlEntry_DoNotUse::NBS_LocusControlEntry_DoNotUse(
+    ::_pbi::ConstantInitialized) {}
+struct NBS_LocusControlEntry_DoNotUseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR NBS_LocusControlEntry_DoNotUseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~NBS_LocusControlEntry_DoNotUseDefaultTypeInternal() {}
+  union {
+    NBS_LocusControlEntry_DoNotUse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 NBS_LocusControlEntry_DoNotUseDefaultTypeInternal _NBS_LocusControlEntry_DoNotUse_default_instance_;
+PROTOBUF_CONSTEXPR NBS::NBS(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.citizens_)*/{}
+  , /*decltype(_impl_._citizens_cached_byte_size_)*/{0}
+  , /*decltype(_impl_.nominal_gdp_)*/{::_pbi::ConstantInitialized()}
+  , /*decltype(_impl_.real_gdp_)*/{::_pbi::ConstantInitialized()}
+  , /*decltype(_impl_.unemployment_)*/{::_pbi::ConstantInitialized()}
+  , /*decltype(_impl_.wages_)*/{::_pbi::ConstantInitialized()}
+  , /*decltype(_impl_.prices_)*/{::_pbi::ConstantInitialized()}
+  , /*decltype(_impl_.working_hours_)*/{::_pbi::ConstantInitialized()}
+  , /*decltype(_impl_.depression_)*/{::_pbi::ConstantInitialized()}
+  , /*decltype(_impl_.consumption_currency_)*/{::_pbi::ConstantInitialized()}
+  , /*decltype(_impl_.income_currency_)*/{::_pbi::ConstantInitialized()}
+  , /*decltype(_impl_.locus_control_)*/{::_pbi::ConstantInitialized()}
+  , /*decltype(_impl_.citizens_agent_id_)*/{}
+  , /*decltype(_impl_._citizens_agent_id_cached_byte_size_)*/{0}
+  , /*decltype(_impl_.id_)*/0
+  , /*decltype(_impl_.currency_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct NBSDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR NBSDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~NBSDefaultTypeInternal() {}
+  union {
+    NBS _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 NBSDefaultTypeInternal _NBS_default_instance_;
+PROTOBUF_CONSTEXPR Government::Government(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.citizens_)*/{}
+  , /*decltype(_impl_._citizens_cached_byte_size_)*/{0}
+  , /*decltype(_impl_.bracket_cutoffs_)*/{}
+  , /*decltype(_impl_.bracket_rates_)*/{}
+  , /*decltype(_impl_.id_)*/0
+  , /*decltype(_impl_.currency_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct GovernmentDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR GovernmentDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~GovernmentDefaultTypeInternal() {}
+  union {
+    Government _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GovernmentDefaultTypeInternal _Government_default_instance_;
+PROTOBUF_CONSTEXPR Bank::Bank(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.citizens_)*/{}
+  , /*decltype(_impl_._citizens_cached_byte_size_)*/{0}
+  , /*decltype(_impl_.id_)*/0
+  , /*decltype(_impl_.interest_rate_)*/0
+  , /*decltype(_impl_.currency_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct BankDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR BankDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~BankDefaultTypeInternal() {}
+  union {
+    Bank _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BankDefaultTypeInternal _Bank_default_instance_;
 PROTOBUF_CONSTEXPR Agent::Agent(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_._has_bits_)*/{}
@@ -82,7 +237,10 @@ struct AgentDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 AgentDefaultTypeInternal _Agent_default_instance_;
 PROTOBUF_CONSTEXPR EconomyEntities::EconomyEntities(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.orgs_)*/{}
+    /*decltype(_impl_.firms_)*/{}
+  , /*decltype(_impl_.nbs_)*/{}
+  , /*decltype(_impl_.governments_)*/{}
+  , /*decltype(_impl_.banks_)*/{}
   , /*decltype(_impl_.agents_)*/{}
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct EconomyEntitiesDefaultTypeInternal {
@@ -97,63 +255,165 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORIT
 }  // namespace v2
 }  // namespace economy
 }  // namespace city
-static ::_pb::Metadata file_level_metadata_city_2feconomy_2fv2_2feconomy_2eproto[3];
-static const ::_pb::EnumDescriptor* file_level_enum_descriptors_city_2feconomy_2fv2_2feconomy_2eproto[1];
+static ::_pb::Metadata file_level_metadata_city_2feconomy_2fv2_2feconomy_2eproto[16];
+static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_city_2feconomy_2fv2_2feconomy_2eproto = nullptr;
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_city_2feconomy_2fv2_2feconomy_2eproto = nullptr;
 
 const uint32_t TableStruct_city_2feconomy_2fv2_2feconomy_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::Org, _impl_._has_bits_),
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::Org, _internal_metadata_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::Firm, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::Org, _impl_.id_),
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::Org, _impl_.type_),
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::Org, _impl_.nominal_gdp_),
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::Org, _impl_.real_gdp_),
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::Org, _impl_.unemployment_),
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::Org, _impl_.wages_),
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::Org, _impl_.prices_),
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::Org, _impl_.inventory_),
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::Org, _impl_.price_),
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::Org, _impl_.currency_),
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::Org, _impl_.interest_rate_),
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::Org, _impl_.bracket_cutoffs_),
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::Org, _impl_.bracket_rates_),
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::Org, _impl_.demand_),
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::Org, _impl_.sales_),
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::Org, _impl_.employees_),
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::Org, _impl_.citizens_),
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::Org, _impl_.consumption_currency_),
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::Org, _impl_.consumption_propensity_),
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::Org, _impl_.income_currency_),
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::Org, _impl_.depression_),
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::Org, _impl_.locus_control_),
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::Org, _impl_.working_hours_),
-  ~0u,
-  ~0u,
-  ~0u,
-  ~0u,
-  ~0u,
-  ~0u,
-  ~0u,
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::Firm, _impl_.id_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::Firm, _impl_.employees_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::Firm, _impl_.price_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::Firm, _impl_.inventory_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::Firm, _impl_.demand_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::Firm, _impl_.sales_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::Firm, _impl_.currency_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::NBS_NominalGdpEntry_DoNotUse, _has_bits_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::NBS_NominalGdpEntry_DoNotUse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::NBS_NominalGdpEntry_DoNotUse, key_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::NBS_NominalGdpEntry_DoNotUse, value_),
   0,
   1,
-  2,
-  3,
-  ~0u,
-  ~0u,
-  4,
-  5,
-  ~0u,
-  ~0u,
-  ~0u,
-  ~0u,
-  ~0u,
-  ~0u,
-  ~0u,
-  ~0u,
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::NBS_RealGdpEntry_DoNotUse, _has_bits_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::NBS_RealGdpEntry_DoNotUse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::NBS_RealGdpEntry_DoNotUse, key_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::NBS_RealGdpEntry_DoNotUse, value_),
+  0,
+  1,
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::NBS_UnemploymentEntry_DoNotUse, _has_bits_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::NBS_UnemploymentEntry_DoNotUse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::NBS_UnemploymentEntry_DoNotUse, key_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::NBS_UnemploymentEntry_DoNotUse, value_),
+  0,
+  1,
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::NBS_WagesEntry_DoNotUse, _has_bits_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::NBS_WagesEntry_DoNotUse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::NBS_WagesEntry_DoNotUse, key_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::NBS_WagesEntry_DoNotUse, value_),
+  0,
+  1,
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::NBS_PricesEntry_DoNotUse, _has_bits_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::NBS_PricesEntry_DoNotUse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::NBS_PricesEntry_DoNotUse, key_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::NBS_PricesEntry_DoNotUse, value_),
+  0,
+  1,
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::NBS_WorkingHoursEntry_DoNotUse, _has_bits_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::NBS_WorkingHoursEntry_DoNotUse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::NBS_WorkingHoursEntry_DoNotUse, key_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::NBS_WorkingHoursEntry_DoNotUse, value_),
+  0,
+  1,
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::NBS_DepressionEntry_DoNotUse, _has_bits_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::NBS_DepressionEntry_DoNotUse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::NBS_DepressionEntry_DoNotUse, key_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::NBS_DepressionEntry_DoNotUse, value_),
+  0,
+  1,
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::NBS_ConsumptionCurrencyEntry_DoNotUse, _has_bits_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::NBS_ConsumptionCurrencyEntry_DoNotUse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::NBS_ConsumptionCurrencyEntry_DoNotUse, key_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::NBS_ConsumptionCurrencyEntry_DoNotUse, value_),
+  0,
+  1,
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::NBS_IncomeCurrencyEntry_DoNotUse, _has_bits_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::NBS_IncomeCurrencyEntry_DoNotUse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::NBS_IncomeCurrencyEntry_DoNotUse, key_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::NBS_IncomeCurrencyEntry_DoNotUse, value_),
+  0,
+  1,
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::NBS_LocusControlEntry_DoNotUse, _has_bits_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::NBS_LocusControlEntry_DoNotUse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::NBS_LocusControlEntry_DoNotUse, key_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::NBS_LocusControlEntry_DoNotUse, value_),
+  0,
+  1,
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::NBS, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::NBS, _impl_.id_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::NBS, _impl_.citizens_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::NBS, _impl_.nominal_gdp_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::NBS, _impl_.real_gdp_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::NBS, _impl_.unemployment_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::NBS, _impl_.wages_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::NBS, _impl_.prices_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::NBS, _impl_.working_hours_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::NBS, _impl_.depression_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::NBS, _impl_.consumption_currency_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::NBS, _impl_.income_currency_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::NBS, _impl_.locus_control_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::NBS, _impl_.citizens_agent_id_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::NBS, _impl_.currency_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::Government, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::Government, _impl_.id_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::Government, _impl_.citizens_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::Government, _impl_.bracket_cutoffs_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::Government, _impl_.bracket_rates_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::Government, _impl_.currency_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::Bank, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::Bank, _impl_.id_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::Bank, _impl_.citizens_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::Bank, _impl_.interest_rate_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::Bank, _impl_.currency_),
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::Agent, _impl_._has_bits_),
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::Agent, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -178,68 +438,125 @@ const uint32_t TableStruct_city_2feconomy_2fv2_2feconomy_2eproto::offsets[] PROT
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::EconomyEntities, _impl_.orgs_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::EconomyEntities, _impl_.firms_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::EconomyEntities, _impl_.nbs_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::EconomyEntities, _impl_.governments_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::EconomyEntities, _impl_.banks_),
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::EconomyEntities, _impl_.agents_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, 29, -1, sizeof(::city::economy::v2::Org)},
-  { 52, 64, -1, sizeof(::city::economy::v2::Agent)},
-  { 70, -1, -1, sizeof(::city::economy::v2::EconomyEntities)},
+  { 0, -1, -1, sizeof(::city::economy::v2::Firm)},
+  { 13, 21, -1, sizeof(::city::economy::v2::NBS_NominalGdpEntry_DoNotUse)},
+  { 23, 31, -1, sizeof(::city::economy::v2::NBS_RealGdpEntry_DoNotUse)},
+  { 33, 41, -1, sizeof(::city::economy::v2::NBS_UnemploymentEntry_DoNotUse)},
+  { 43, 51, -1, sizeof(::city::economy::v2::NBS_WagesEntry_DoNotUse)},
+  { 53, 61, -1, sizeof(::city::economy::v2::NBS_PricesEntry_DoNotUse)},
+  { 63, 71, -1, sizeof(::city::economy::v2::NBS_WorkingHoursEntry_DoNotUse)},
+  { 73, 81, -1, sizeof(::city::economy::v2::NBS_DepressionEntry_DoNotUse)},
+  { 83, 91, -1, sizeof(::city::economy::v2::NBS_ConsumptionCurrencyEntry_DoNotUse)},
+  { 93, 101, -1, sizeof(::city::economy::v2::NBS_IncomeCurrencyEntry_DoNotUse)},
+  { 103, 111, -1, sizeof(::city::economy::v2::NBS_LocusControlEntry_DoNotUse)},
+  { 113, -1, -1, sizeof(::city::economy::v2::NBS)},
+  { 133, -1, -1, sizeof(::city::economy::v2::Government)},
+  { 144, -1, -1, sizeof(::city::economy::v2::Bank)},
+  { 154, 166, -1, sizeof(::city::economy::v2::Agent)},
+  { 172, -1, -1, sizeof(::city::economy::v2::EconomyEntities)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
-  &::city::economy::v2::_Org_default_instance_._instance,
+  &::city::economy::v2::_Firm_default_instance_._instance,
+  &::city::economy::v2::_NBS_NominalGdpEntry_DoNotUse_default_instance_._instance,
+  &::city::economy::v2::_NBS_RealGdpEntry_DoNotUse_default_instance_._instance,
+  &::city::economy::v2::_NBS_UnemploymentEntry_DoNotUse_default_instance_._instance,
+  &::city::economy::v2::_NBS_WagesEntry_DoNotUse_default_instance_._instance,
+  &::city::economy::v2::_NBS_PricesEntry_DoNotUse_default_instance_._instance,
+  &::city::economy::v2::_NBS_WorkingHoursEntry_DoNotUse_default_instance_._instance,
+  &::city::economy::v2::_NBS_DepressionEntry_DoNotUse_default_instance_._instance,
+  &::city::economy::v2::_NBS_ConsumptionCurrencyEntry_DoNotUse_default_instance_._instance,
+  &::city::economy::v2::_NBS_IncomeCurrencyEntry_DoNotUse_default_instance_._instance,
+  &::city::economy::v2::_NBS_LocusControlEntry_DoNotUse_default_instance_._instance,
+  &::city::economy::v2::_NBS_default_instance_._instance,
+  &::city::economy::v2::_Government_default_instance_._instance,
+  &::city::economy::v2::_Bank_default_instance_._instance,
   &::city::economy::v2::_Agent_default_instance_._instance,
   &::city::economy::v2::_EconomyEntities_default_instance_._instance,
 };
 
 const char descriptor_table_protodef_city_2feconomy_2fv2_2feconomy_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\035city/economy/v2/economy.proto\022\017city.ec"
-  "onomy.v2\"\343\006\n\003Org\022\016\n\002id\030\001 \001(\005R\002id\022,\n\004type"
-  "\030\002 \001(\0162\030.city.economy.v2.OrgTypeR\004type\022\037"
-  "\n\013nominal_gdp\030\003 \003(\002R\nnominalGdp\022\031\n\010real_"
-  "gdp\030\004 \003(\002R\007realGdp\022\"\n\014unemployment\030\005 \003(\002"
-  "R\014unemployment\022\024\n\005wages\030\006 \003(\002R\005wages\022\026\n\006"
-  "prices\030\007 \003(\002R\006prices\022!\n\tinventory\030\010 \001(\005H"
-  "\000R\tinventory\210\001\001\022\031\n\005price\030\t \001(\002H\001R\005price\210"
-  "\001\001\022\037\n\010currency\030\n \001(\002H\002R\010currency\210\001\001\022(\n\ri"
-  "nterest_rate\030\013 \001(\002H\003R\014interestRate\210\001\001\022\'\n"
-  "\017bracket_cutoffs\030\014 \003(\002R\016bracketCutoffs\022#"
-  "\n\rbracket_rates\030\r \003(\002R\014bracketRates\022\033\n\006d"
-  "emand\030\016 \001(\005H\004R\006demand\210\001\001\022\031\n\005sales\030\017 \001(\005H"
-  "\005R\005sales\210\001\001\022\034\n\temployees\030\020 \003(\005R\temployee"
-  "s\022\032\n\010citizens\030\021 \003(\005R\010citizens\0221\n\024consump"
-  "tion_currency\030\022 \003(\002R\023consumptionCurrency"
-  "\0225\n\026consumption_propensity\030\023 \003(\002R\025consum"
-  "ptionPropensity\022\'\n\017income_currency\030\024 \003(\002"
-  "R\016incomeCurrency\022\036\n\ndepression\030\025 \003(\002R\nde"
-  "pression\022#\n\rlocus_control\030\026 \003(\002R\014locusCo"
-  "ntrol\022#\n\rworking_hours\030\027 \003(\002R\014workingHou"
-  "rsB\014\n\n_inventoryB\010\n\006_priceB\013\n\t_currencyB"
-  "\020\n\016_interest_rateB\t\n\007_demandB\010\n\006_sales\"\363"
-  "\001\n\005Agent\022\016\n\002id\030\001 \001(\005R\002id\022\037\n\010currency\030\002 \001"
-  "(\002H\000R\010currency\210\001\001\022\034\n\007firm_id\030\003 \001(\005H\001R\006fi"
-  "rmId\210\001\001\022\031\n\005skill\030\004 \001(\002H\002R\005skill\210\001\001\022%\n\013co"
-  "nsumption\030\005 \001(\002H\003R\013consumption\210\001\001\022\033\n\006inc"
-  "ome\030\006 \001(\002H\004R\006income\210\001\001B\013\n\t_currencyB\n\n\010_"
-  "firm_idB\010\n\006_skillB\016\n\014_consumptionB\t\n\007_in"
-  "come\"k\n\017EconomyEntities\022(\n\004orgs\030\001 \003(\0132\024."
-  "city.economy.v2.OrgR\004orgs\022.\n\006agents\030\002 \003("
-  "\0132\026.city.economy.v2.AgentR\006agents*t\n\007Org"
-  "Type\022\030\n\024ORG_TYPE_UNSPECIFIED\020\000\022\020\n\014ORG_TY"
-  "PE_NBS\020\001\022\021\n\rORG_TYPE_FIRM\020\002\022\021\n\rORG_TYPE_"
-  "BANK\020\003\022\027\n\023ORG_TYPE_GOVERNMENT\020\004B\274\001\n\023com."
-  "city.economy.v2B\014EconomyProtoP\001Z9git.fib"
-  "lab.net/sim/protos/v2/go/city/economy/v2"
-  ";economyv2\242\002\003CEX\252\002\017City.Economy.V2\312\002\017Cit"
-  "y\\Economy\\V2\342\002\033City\\Economy\\V2\\GPBMetada"
-  "ta\352\002\021City::Economy::V2b\006proto3"
+  "onomy.v2\"\262\001\n\004Firm\022\016\n\002id\030\001 \001(\005R\002id\022\034\n\temp"
+  "loyees\030\002 \003(\005R\temployees\022\024\n\005price\030\003 \001(\002R\005"
+  "price\022\034\n\tinventory\030\004 \001(\005R\tinventory\022\026\n\006d"
+  "emand\030\005 \001(\002R\006demand\022\024\n\005sales\030\006 \001(\002R\005sale"
+  "s\022\032\n\010currency\030\007 \001(\002R\010currency\"\315\013\n\003NBS\022\016\n"
+  "\002id\030\001 \001(\005R\002id\022\032\n\010citizens\030\002 \003(\005R\010citizen"
+  "s\022E\n\013nominal_gdp\030\003 \003(\0132$.city.economy.v2"
+  ".NBS.NominalGdpEntryR\nnominalGdp\022<\n\010real"
+  "_gdp\030\004 \003(\0132!.city.economy.v2.NBS.RealGdp"
+  "EntryR\007realGdp\022J\n\014unemployment\030\005 \003(\0132&.c"
+  "ity.economy.v2.NBS.UnemploymentEntryR\014un"
+  "employment\0225\n\005wages\030\006 \003(\0132\037.city.economy"
+  ".v2.NBS.WagesEntryR\005wages\0228\n\006prices\030\007 \003("
+  "\0132 .city.economy.v2.NBS.PricesEntryR\006pri"
+  "ces\022K\n\rworking_hours\030\010 \003(\0132&.city.econom"
+  "y.v2.NBS.WorkingHoursEntryR\014workingHours"
+  "\022D\n\ndepression\030\t \003(\0132$.city.economy.v2.N"
+  "BS.DepressionEntryR\ndepression\022`\n\024consum"
+  "ption_currency\030\n \003(\0132-.city.economy.v2.N"
+  "BS.ConsumptionCurrencyEntryR\023consumption"
+  "Currency\022Q\n\017income_currency\030\013 \003(\0132(.city"
+  ".economy.v2.NBS.IncomeCurrencyEntryR\016inc"
+  "omeCurrency\022K\n\rlocus_control\030\014 \003(\0132&.cit"
+  "y.economy.v2.NBS.LocusControlEntryR\014locu"
+  "sControl\022*\n\021citizens_agent_id\030\r \003(\005R\017cit"
+  "izensAgentId\022\032\n\010currency\030\016 \001(\002R\010currency"
+  "\032=\n\017NominalGdpEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n"
+  "\005value\030\002 \001(\002R\005value:\0028\001\032:\n\014RealGdpEntry\022"
+  "\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\002R\005value:"
+  "\0028\001\032\?\n\021UnemploymentEntry\022\020\n\003key\030\001 \001(\tR\003k"
+  "ey\022\024\n\005value\030\002 \001(\002R\005value:\0028\001\0328\n\nWagesEnt"
+  "ry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\002R\005val"
+  "ue:\0028\001\0329\n\013PricesEntry\022\020\n\003key\030\001 \001(\tR\003key\022"
+  "\024\n\005value\030\002 \001(\002R\005value:\0028\001\032\?\n\021WorkingHour"
+  "sEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\002R"
+  "\005value:\0028\001\032=\n\017DepressionEntry\022\020\n\003key\030\001 \001"
+  "(\tR\003key\022\024\n\005value\030\002 \001(\002R\005value:\0028\001\032F\n\030Con"
+  "sumptionCurrencyEntry\022\020\n\003key\030\001 \001(\tR\003key\022"
+  "\024\n\005value\030\002 \001(\002R\005value:\0028\001\032A\n\023IncomeCurre"
+  "ncyEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001("
+  "\002R\005value:\0028\001\032\?\n\021LocusControlEntry\022\020\n\003key"
+  "\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\002R\005value:\0028\001\"\242\001"
+  "\n\nGovernment\022\016\n\002id\030\001 \001(\005R\002id\022\032\n\010citizens"
+  "\030\002 \003(\005R\010citizens\022\'\n\017bracket_cutoffs\030\003 \003("
+  "\002R\016bracketCutoffs\022#\n\rbracket_rates\030\004 \003(\002"
+  "R\014bracketRates\022\032\n\010currency\030\005 \001(\002R\010curren"
+  "cy\"s\n\004Bank\022\016\n\002id\030\001 \001(\005R\002id\022\032\n\010citizens\030\002"
+  " \003(\005R\010citizens\022#\n\rinterest_rate\030\003 \001(\002R\014i"
+  "nterestRate\022\032\n\010currency\030\004 \001(\002R\010currency\""
+  "\363\001\n\005Agent\022\016\n\002id\030\001 \001(\005R\002id\022\037\n\010currency\030\002 "
+  "\001(\002H\000R\010currency\210\001\001\022\034\n\007firm_id\030\003 \001(\005H\001R\006f"
+  "irmId\210\001\001\022\031\n\005skill\030\004 \001(\002H\002R\005skill\210\001\001\022%\n\013c"
+  "onsumption\030\005 \001(\002H\003R\013consumption\210\001\001\022\033\n\006in"
+  "come\030\006 \001(\002H\004R\006income\210\001\001B\013\n\t_currencyB\n\n\010"
+  "_firm_idB\010\n\006_skillB\016\n\014_consumptionB\t\n\007_i"
+  "ncome\"\202\002\n\017EconomyEntities\022+\n\005firms\030\001 \003(\013"
+  "2\025.city.economy.v2.FirmR\005firms\022&\n\003nbs\030\002 "
+  "\003(\0132\024.city.economy.v2.NBSR\003nbs\022=\n\013govern"
+  "ments\030\003 \003(\0132\033.city.economy.v2.Government"
+  "R\013governments\022+\n\005banks\030\004 \003(\0132\025.city.econ"
+  "omy.v2.BankR\005banks\022.\n\006agents\030\005 \003(\0132\026.cit"
+  "y.economy.v2.AgentR\006agentsB\274\001\n\023com.city."
+  "economy.v2B\014EconomyProtoP\001Z9git.fiblab.n"
+  "et/sim/protos/v2/go/city/economy/v2;econ"
+  "omyv2\242\002\003CEX\252\002\017City.Economy.V2\312\002\017City\\Eco"
+  "nomy\\V2\342\002\033City\\Economy\\V2\\GPBMetadata\352\002\021"
+  "City::Economy::V2b\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_city_2feconomy_2fv2_2feconomy_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2feconomy_2fv2_2feconomy_2eproto = {
-    false, false, 1590, descriptor_table_protodef_city_2feconomy_2fv2_2feconomy_2eproto,
+    false, false, 2705, descriptor_table_protodef_city_2feconomy_2fv2_2feconomy_2eproto,
     "city/economy/v2/economy.proto",
-    &descriptor_table_city_2feconomy_2fv2_2feconomy_2eproto_once, nullptr, 0, 3,
+    &descriptor_table_city_2feconomy_2fv2_2feconomy_2eproto_once, nullptr, 0, 16,
     schemas, file_default_instances, TableStruct_city_2feconomy_2fv2_2feconomy_2eproto::offsets,
     file_level_metadata_city_2feconomy_2fv2_2feconomy_2eproto, file_level_enum_descriptors_city_2feconomy_2fv2_2feconomy_2eproto,
     file_level_service_descriptors_city_2feconomy_2fv2_2feconomy_2eproto,
@@ -253,131 +570,59 @@ PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_in
 namespace city {
 namespace economy {
 namespace v2 {
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* OrgType_descriptor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_city_2feconomy_2fv2_2feconomy_2eproto);
-  return file_level_enum_descriptors_city_2feconomy_2fv2_2feconomy_2eproto[0];
-}
-bool OrgType_IsValid(int value) {
-  switch (value) {
-    case 0:
-    case 1:
-    case 2:
-    case 3:
-    case 4:
-      return true;
-    default:
-      return false;
-  }
-}
-
 
 // ===================================================================
 
-class Org::_Internal {
+class Firm::_Internal {
  public:
-  using HasBits = decltype(std::declval<Org>()._impl_._has_bits_);
-  static void set_has_inventory(HasBits* has_bits) {
-    (*has_bits)[0] |= 1u;
-  }
-  static void set_has_price(HasBits* has_bits) {
-    (*has_bits)[0] |= 2u;
-  }
-  static void set_has_currency(HasBits* has_bits) {
-    (*has_bits)[0] |= 4u;
-  }
-  static void set_has_interest_rate(HasBits* has_bits) {
-    (*has_bits)[0] |= 8u;
-  }
-  static void set_has_demand(HasBits* has_bits) {
-    (*has_bits)[0] |= 16u;
-  }
-  static void set_has_sales(HasBits* has_bits) {
-    (*has_bits)[0] |= 32u;
-  }
 };
 
-Org::Org(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+Firm::Firm(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:city.economy.v2.Org)
+  // @@protoc_insertion_point(arena_constructor:city.economy.v2.Firm)
 }
-Org::Org(const Org& from)
+Firm::Firm(const Firm& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  Org* const _this = this; (void)_this;
+  Firm* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){from._impl_._has_bits_}
-    , /*decltype(_impl_._cached_size_)*/{}
-    , decltype(_impl_.nominal_gdp_){from._impl_.nominal_gdp_}
-    , decltype(_impl_.real_gdp_){from._impl_.real_gdp_}
-    , decltype(_impl_.unemployment_){from._impl_.unemployment_}
-    , decltype(_impl_.wages_){from._impl_.wages_}
-    , decltype(_impl_.prices_){from._impl_.prices_}
-    , decltype(_impl_.bracket_cutoffs_){from._impl_.bracket_cutoffs_}
-    , decltype(_impl_.bracket_rates_){from._impl_.bracket_rates_}
-    , decltype(_impl_.employees_){from._impl_.employees_}
+      decltype(_impl_.employees_){from._impl_.employees_}
     , /*decltype(_impl_._employees_cached_byte_size_)*/{0}
-    , decltype(_impl_.citizens_){from._impl_.citizens_}
-    , /*decltype(_impl_._citizens_cached_byte_size_)*/{0}
-    , decltype(_impl_.consumption_currency_){from._impl_.consumption_currency_}
-    , decltype(_impl_.consumption_propensity_){from._impl_.consumption_propensity_}
-    , decltype(_impl_.income_currency_){from._impl_.income_currency_}
-    , decltype(_impl_.depression_){from._impl_.depression_}
-    , decltype(_impl_.locus_control_){from._impl_.locus_control_}
-    , decltype(_impl_.working_hours_){from._impl_.working_hours_}
     , decltype(_impl_.id_){}
-    , decltype(_impl_.type_){}
-    , decltype(_impl_.inventory_){}
     , decltype(_impl_.price_){}
-    , decltype(_impl_.currency_){}
-    , decltype(_impl_.interest_rate_){}
+    , decltype(_impl_.inventory_){}
     , decltype(_impl_.demand_){}
-    , decltype(_impl_.sales_){}};
+    , decltype(_impl_.sales_){}
+    , decltype(_impl_.currency_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&_impl_.id_, &from._impl_.id_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.sales_) -
-    reinterpret_cast<char*>(&_impl_.id_)) + sizeof(_impl_.sales_));
-  // @@protoc_insertion_point(copy_constructor:city.economy.v2.Org)
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.currency_) -
+    reinterpret_cast<char*>(&_impl_.id_)) + sizeof(_impl_.currency_));
+  // @@protoc_insertion_point(copy_constructor:city.economy.v2.Firm)
 }
 
-inline void Org::SharedCtor(
+inline void Firm::SharedCtor(
     ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
   (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){}
-    , /*decltype(_impl_._cached_size_)*/{}
-    , decltype(_impl_.nominal_gdp_){arena}
-    , decltype(_impl_.real_gdp_){arena}
-    , decltype(_impl_.unemployment_){arena}
-    , decltype(_impl_.wages_){arena}
-    , decltype(_impl_.prices_){arena}
-    , decltype(_impl_.bracket_cutoffs_){arena}
-    , decltype(_impl_.bracket_rates_){arena}
-    , decltype(_impl_.employees_){arena}
+      decltype(_impl_.employees_){arena}
     , /*decltype(_impl_._employees_cached_byte_size_)*/{0}
-    , decltype(_impl_.citizens_){arena}
-    , /*decltype(_impl_._citizens_cached_byte_size_)*/{0}
-    , decltype(_impl_.consumption_currency_){arena}
-    , decltype(_impl_.consumption_propensity_){arena}
-    , decltype(_impl_.income_currency_){arena}
-    , decltype(_impl_.depression_){arena}
-    , decltype(_impl_.locus_control_){arena}
-    , decltype(_impl_.working_hours_){arena}
     , decltype(_impl_.id_){0}
-    , decltype(_impl_.type_){0}
-    , decltype(_impl_.inventory_){0}
     , decltype(_impl_.price_){0}
-    , decltype(_impl_.currency_){0}
-    , decltype(_impl_.interest_rate_){0}
+    , decltype(_impl_.inventory_){0}
     , decltype(_impl_.demand_){0}
     , decltype(_impl_.sales_){0}
+    , decltype(_impl_.currency_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
 
-Org::~Org() {
-  // @@protoc_insertion_point(destructor:city.economy.v2.Org)
+Firm::~Firm() {
+  // @@protoc_insertion_point(destructor:city.economy.v2.Firm)
   if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
   (void)arena;
     return;
@@ -385,66 +630,30 @@ Org::~Org() {
   SharedDtor();
 }
 
-inline void Org::SharedDtor() {
+inline void Firm::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.nominal_gdp_.~RepeatedField();
-  _impl_.real_gdp_.~RepeatedField();
-  _impl_.unemployment_.~RepeatedField();
-  _impl_.wages_.~RepeatedField();
-  _impl_.prices_.~RepeatedField();
-  _impl_.bracket_cutoffs_.~RepeatedField();
-  _impl_.bracket_rates_.~RepeatedField();
   _impl_.employees_.~RepeatedField();
-  _impl_.citizens_.~RepeatedField();
-  _impl_.consumption_currency_.~RepeatedField();
-  _impl_.consumption_propensity_.~RepeatedField();
-  _impl_.income_currency_.~RepeatedField();
-  _impl_.depression_.~RepeatedField();
-  _impl_.locus_control_.~RepeatedField();
-  _impl_.working_hours_.~RepeatedField();
 }
 
-void Org::SetCachedSize(int size) const {
+void Firm::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-void Org::Clear() {
-// @@protoc_insertion_point(message_clear_start:city.economy.v2.Org)
+void Firm::Clear() {
+// @@protoc_insertion_point(message_clear_start:city.economy.v2.Firm)
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.nominal_gdp_.Clear();
-  _impl_.real_gdp_.Clear();
-  _impl_.unemployment_.Clear();
-  _impl_.wages_.Clear();
-  _impl_.prices_.Clear();
-  _impl_.bracket_cutoffs_.Clear();
-  _impl_.bracket_rates_.Clear();
   _impl_.employees_.Clear();
-  _impl_.citizens_.Clear();
-  _impl_.consumption_currency_.Clear();
-  _impl_.consumption_propensity_.Clear();
-  _impl_.income_currency_.Clear();
-  _impl_.depression_.Clear();
-  _impl_.locus_control_.Clear();
-  _impl_.working_hours_.Clear();
   ::memset(&_impl_.id_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_impl_.type_) -
-      reinterpret_cast<char*>(&_impl_.id_)) + sizeof(_impl_.type_));
-  cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x0000003fu) {
-    ::memset(&_impl_.inventory_, 0, static_cast<size_t>(
-        reinterpret_cast<char*>(&_impl_.sales_) -
-        reinterpret_cast<char*>(&_impl_.inventory_)) + sizeof(_impl_.sales_));
-  }
-  _impl_._has_bits_.Clear();
+      reinterpret_cast<char*>(&_impl_.currency_) -
+      reinterpret_cast<char*>(&_impl_.id_)) + sizeof(_impl_.currency_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* Org::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* Firm::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
@@ -457,230 +666,53 @@ const char* Org::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
         } else
           goto handle_unusual;
         continue;
-      // .city.economy.v2.OrgType type = 2 [json_name = "type"];
+      // repeated int32 employees = 2 [json_name = "employees"];
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-          _internal_set_type(static_cast<::city::economy::v2::OrgType>(val));
-        } else
-          goto handle_unusual;
-        continue;
-      // repeated float nominal_gdp = 3 [json_name = "nominalGdp"];
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedFloatParser(_internal_mutable_nominal_gdp(), ptr, ctx);
-          CHK_(ptr);
-        } else if (static_cast<uint8_t>(tag) == 29) {
-          _internal_add_nominal_gdp(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // repeated float real_gdp = 4 [json_name = "realGdp"];
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedFloatParser(_internal_mutable_real_gdp(), ptr, ctx);
-          CHK_(ptr);
-        } else if (static_cast<uint8_t>(tag) == 37) {
-          _internal_add_real_gdp(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // repeated float unemployment = 5 [json_name = "unemployment"];
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedFloatParser(_internal_mutable_unemployment(), ptr, ctx);
-          CHK_(ptr);
-        } else if (static_cast<uint8_t>(tag) == 45) {
-          _internal_add_unemployment(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // repeated float wages = 6 [json_name = "wages"];
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 50)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedFloatParser(_internal_mutable_wages(), ptr, ctx);
-          CHK_(ptr);
-        } else if (static_cast<uint8_t>(tag) == 53) {
-          _internal_add_wages(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // repeated float prices = 7 [json_name = "prices"];
-      case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 58)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedFloatParser(_internal_mutable_prices(), ptr, ctx);
-          CHK_(ptr);
-        } else if (static_cast<uint8_t>(tag) == 61) {
-          _internal_add_prices(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // optional int32 inventory = 8 [json_name = "inventory"];
-      case 8:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 64)) {
-          _Internal::set_has_inventory(&has_bits);
-          _impl_.inventory_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // optional float price = 9 [json_name = "price"];
-      case 9:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 77)) {
-          _Internal::set_has_price(&has_bits);
-          _impl_.price_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // optional float currency = 10 [json_name = "currency"];
-      case 10:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 85)) {
-          _Internal::set_has_currency(&has_bits);
-          _impl_.currency_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // optional float interest_rate = 11 [json_name = "interestRate"];
-      case 11:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 93)) {
-          _Internal::set_has_interest_rate(&has_bits);
-          _impl_.interest_rate_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // repeated float bracket_cutoffs = 12 [json_name = "bracketCutoffs"];
-      case 12:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 98)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedFloatParser(_internal_mutable_bracket_cutoffs(), ptr, ctx);
-          CHK_(ptr);
-        } else if (static_cast<uint8_t>(tag) == 101) {
-          _internal_add_bracket_cutoffs(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // repeated float bracket_rates = 13 [json_name = "bracketRates"];
-      case 13:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 106)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedFloatParser(_internal_mutable_bracket_rates(), ptr, ctx);
-          CHK_(ptr);
-        } else if (static_cast<uint8_t>(tag) == 109) {
-          _internal_add_bracket_rates(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // optional int32 demand = 14 [json_name = "demand"];
-      case 14:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 112)) {
-          _Internal::set_has_demand(&has_bits);
-          _impl_.demand_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // optional int32 sales = 15 [json_name = "sales"];
-      case 15:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 120)) {
-          _Internal::set_has_sales(&has_bits);
-          _impl_.sales_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // repeated int32 employees = 16 [json_name = "employees"];
-      case 16:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 130)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_employees(), ptr, ctx);
           CHK_(ptr);
-        } else if (static_cast<uint8_t>(tag) == 128) {
+        } else if (static_cast<uint8_t>(tag) == 16) {
           _internal_add_employees(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // repeated int32 citizens = 17 [json_name = "citizens"];
-      case 17:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 138)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_citizens(), ptr, ctx);
-          CHK_(ptr);
-        } else if (static_cast<uint8_t>(tag) == 136) {
-          _internal_add_citizens(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // repeated float consumption_currency = 18 [json_name = "consumptionCurrency"];
-      case 18:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 146)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedFloatParser(_internal_mutable_consumption_currency(), ptr, ctx);
-          CHK_(ptr);
-        } else if (static_cast<uint8_t>(tag) == 149) {
-          _internal_add_consumption_currency(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
+      // float price = 3 [json_name = "price"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 29)) {
+          _impl_.price_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
         } else
           goto handle_unusual;
         continue;
-      // repeated float consumption_propensity = 19 [json_name = "consumptionPropensity"];
-      case 19:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 154)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedFloatParser(_internal_mutable_consumption_propensity(), ptr, ctx);
+      // int32 inventory = 4 [json_name = "inventory"];
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
+          _impl_.inventory_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-        } else if (static_cast<uint8_t>(tag) == 157) {
-          _internal_add_consumption_propensity(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      // float demand = 5 [json_name = "demand"];
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 45)) {
+          _impl_.demand_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
         } else
           goto handle_unusual;
         continue;
-      // repeated float income_currency = 20 [json_name = "incomeCurrency"];
-      case 20:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 162)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedFloatParser(_internal_mutable_income_currency(), ptr, ctx);
-          CHK_(ptr);
-        } else if (static_cast<uint8_t>(tag) == 165) {
-          _internal_add_income_currency(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
+      // float sales = 6 [json_name = "sales"];
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 53)) {
+          _impl_.sales_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
         } else
           goto handle_unusual;
         continue;
-      // repeated float depression = 21 [json_name = "depression"];
-      case 21:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 170)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedFloatParser(_internal_mutable_depression(), ptr, ctx);
-          CHK_(ptr);
-        } else if (static_cast<uint8_t>(tag) == 173) {
-          _internal_add_depression(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // repeated float locus_control = 22 [json_name = "locusControl"];
-      case 22:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 178)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedFloatParser(_internal_mutable_locus_control(), ptr, ctx);
-          CHK_(ptr);
-        } else if (static_cast<uint8_t>(tag) == 181) {
-          _internal_add_locus_control(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // repeated float working_hours = 23 [json_name = "workingHours"];
-      case 23:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 186)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedFloatParser(_internal_mutable_working_hours(), ptr, ctx);
-          CHK_(ptr);
-        } else if (static_cast<uint8_t>(tag) == 189) {
-          _internal_add_working_hours(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
+      // float currency = 7 [json_name = "currency"];
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 61)) {
+          _impl_.currency_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
         } else
           goto handle_unusual;
@@ -701,7 +733,6 @@ const char* Org::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
     CHK_(ptr != nullptr);
   }  // while
 message_done:
-  _impl_._has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
@@ -709,9 +740,9 @@ failure:
 #undef CHK_
 }
 
-uint8_t* Org::_InternalSerialize(
+uint8_t* Firm::_InternalSerialize(
     uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:city.economy.v2.Org)
+  // @@protoc_insertion_point(serialize_to_array_start:city.economy.v2.Firm)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -721,204 +752,1477 @@ uint8_t* Org::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_id(), target);
   }
 
-  // .city.economy.v2.OrgType type = 2 [json_name = "type"];
-  if (this->_internal_type() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteEnumToArray(
-      2, this->_internal_type(), target);
-  }
-
-  // repeated float nominal_gdp = 3 [json_name = "nominalGdp"];
-  if (this->_internal_nominal_gdp_size() > 0) {
-    target = stream->WriteFixedPacked(3, _internal_nominal_gdp(), target);
-  }
-
-  // repeated float real_gdp = 4 [json_name = "realGdp"];
-  if (this->_internal_real_gdp_size() > 0) {
-    target = stream->WriteFixedPacked(4, _internal_real_gdp(), target);
-  }
-
-  // repeated float unemployment = 5 [json_name = "unemployment"];
-  if (this->_internal_unemployment_size() > 0) {
-    target = stream->WriteFixedPacked(5, _internal_unemployment(), target);
-  }
-
-  // repeated float wages = 6 [json_name = "wages"];
-  if (this->_internal_wages_size() > 0) {
-    target = stream->WriteFixedPacked(6, _internal_wages(), target);
-  }
-
-  // repeated float prices = 7 [json_name = "prices"];
-  if (this->_internal_prices_size() > 0) {
-    target = stream->WriteFixedPacked(7, _internal_prices(), target);
-  }
-
-  // optional int32 inventory = 8 [json_name = "inventory"];
-  if (_internal_has_inventory()) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteInt32ToArray(8, this->_internal_inventory(), target);
-  }
-
-  // optional float price = 9 [json_name = "price"];
-  if (_internal_has_price()) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(9, this->_internal_price(), target);
-  }
-
-  // optional float currency = 10 [json_name = "currency"];
-  if (_internal_has_currency()) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(10, this->_internal_currency(), target);
-  }
-
-  // optional float interest_rate = 11 [json_name = "interestRate"];
-  if (_internal_has_interest_rate()) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(11, this->_internal_interest_rate(), target);
-  }
-
-  // repeated float bracket_cutoffs = 12 [json_name = "bracketCutoffs"];
-  if (this->_internal_bracket_cutoffs_size() > 0) {
-    target = stream->WriteFixedPacked(12, _internal_bracket_cutoffs(), target);
-  }
-
-  // repeated float bracket_rates = 13 [json_name = "bracketRates"];
-  if (this->_internal_bracket_rates_size() > 0) {
-    target = stream->WriteFixedPacked(13, _internal_bracket_rates(), target);
-  }
-
-  // optional int32 demand = 14 [json_name = "demand"];
-  if (_internal_has_demand()) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteInt32ToArray(14, this->_internal_demand(), target);
-  }
-
-  // optional int32 sales = 15 [json_name = "sales"];
-  if (_internal_has_sales()) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteInt32ToArray(15, this->_internal_sales(), target);
-  }
-
-  // repeated int32 employees = 16 [json_name = "employees"];
+  // repeated int32 employees = 2 [json_name = "employees"];
   {
     int byte_size = _impl_._employees_cached_byte_size_.load(std::memory_order_relaxed);
     if (byte_size > 0) {
       target = stream->WriteInt32Packed(
-          16, _internal_employees(), byte_size, target);
+          2, _internal_employees(), byte_size, target);
     }
   }
 
-  // repeated int32 citizens = 17 [json_name = "citizens"];
-  {
-    int byte_size = _impl_._citizens_cached_byte_size_.load(std::memory_order_relaxed);
-    if (byte_size > 0) {
-      target = stream->WriteInt32Packed(
-          17, _internal_citizens(), byte_size, target);
-    }
+  // float price = 3 [json_name = "price"];
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_price = this->_internal_price();
+  uint32_t raw_price;
+  memcpy(&raw_price, &tmp_price, sizeof(tmp_price));
+  if (raw_price != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(3, this->_internal_price(), target);
   }
 
-  // repeated float consumption_currency = 18 [json_name = "consumptionCurrency"];
-  if (this->_internal_consumption_currency_size() > 0) {
-    target = stream->WriteFixedPacked(18, _internal_consumption_currency(), target);
+  // int32 inventory = 4 [json_name = "inventory"];
+  if (this->_internal_inventory() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(4, this->_internal_inventory(), target);
   }
 
-  // repeated float consumption_propensity = 19 [json_name = "consumptionPropensity"];
-  if (this->_internal_consumption_propensity_size() > 0) {
-    target = stream->WriteFixedPacked(19, _internal_consumption_propensity(), target);
+  // float demand = 5 [json_name = "demand"];
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_demand = this->_internal_demand();
+  uint32_t raw_demand;
+  memcpy(&raw_demand, &tmp_demand, sizeof(tmp_demand));
+  if (raw_demand != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(5, this->_internal_demand(), target);
   }
 
-  // repeated float income_currency = 20 [json_name = "incomeCurrency"];
-  if (this->_internal_income_currency_size() > 0) {
-    target = stream->WriteFixedPacked(20, _internal_income_currency(), target);
+  // float sales = 6 [json_name = "sales"];
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_sales = this->_internal_sales();
+  uint32_t raw_sales;
+  memcpy(&raw_sales, &tmp_sales, sizeof(tmp_sales));
+  if (raw_sales != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(6, this->_internal_sales(), target);
   }
 
-  // repeated float depression = 21 [json_name = "depression"];
-  if (this->_internal_depression_size() > 0) {
-    target = stream->WriteFixedPacked(21, _internal_depression(), target);
-  }
-
-  // repeated float locus_control = 22 [json_name = "locusControl"];
-  if (this->_internal_locus_control_size() > 0) {
-    target = stream->WriteFixedPacked(22, _internal_locus_control(), target);
-  }
-
-  // repeated float working_hours = 23 [json_name = "workingHours"];
-  if (this->_internal_working_hours_size() > 0) {
-    target = stream->WriteFixedPacked(23, _internal_working_hours(), target);
+  // float currency = 7 [json_name = "currency"];
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_currency = this->_internal_currency();
+  uint32_t raw_currency;
+  memcpy(&raw_currency, &tmp_currency, sizeof(tmp_currency));
+  if (raw_currency != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(7, this->_internal_currency(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:city.economy.v2.Org)
+  // @@protoc_insertion_point(serialize_to_array_end:city.economy.v2.Firm)
   return target;
 }
 
-size_t Org::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:city.economy.v2.Org)
+size_t Firm::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:city.economy.v2.Firm)
   size_t total_size = 0;
 
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated float nominal_gdp = 3 [json_name = "nominalGdp"];
+  // repeated int32 employees = 2 [json_name = "employees"];
   {
-    unsigned int count = static_cast<unsigned int>(this->_internal_nominal_gdp_size());
-    size_t data_size = 4UL * count;
+    size_t data_size = ::_pbi::WireFormatLite::
+      Int32Size(this->_impl_.employees_);
     if (data_size > 0) {
       total_size += 1 +
         ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
     }
+    int cached_size = ::_pbi::ToCachedSize(data_size);
+    _impl_._employees_cached_byte_size_.store(cached_size,
+                                    std::memory_order_relaxed);
     total_size += data_size;
   }
 
-  // repeated float real_gdp = 4 [json_name = "realGdp"];
+  // int32 id = 1 [json_name = "id"];
+  if (this->_internal_id() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_id());
+  }
+
+  // float price = 3 [json_name = "price"];
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_price = this->_internal_price();
+  uint32_t raw_price;
+  memcpy(&raw_price, &tmp_price, sizeof(tmp_price));
+  if (raw_price != 0) {
+    total_size += 1 + 4;
+  }
+
+  // int32 inventory = 4 [json_name = "inventory"];
+  if (this->_internal_inventory() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_inventory());
+  }
+
+  // float demand = 5 [json_name = "demand"];
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_demand = this->_internal_demand();
+  uint32_t raw_demand;
+  memcpy(&raw_demand, &tmp_demand, sizeof(tmp_demand));
+  if (raw_demand != 0) {
+    total_size += 1 + 4;
+  }
+
+  // float sales = 6 [json_name = "sales"];
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_sales = this->_internal_sales();
+  uint32_t raw_sales;
+  memcpy(&raw_sales, &tmp_sales, sizeof(tmp_sales));
+  if (raw_sales != 0) {
+    total_size += 1 + 4;
+  }
+
+  // float currency = 7 [json_name = "currency"];
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_currency = this->_internal_currency();
+  uint32_t raw_currency;
+  memcpy(&raw_currency, &tmp_currency, sizeof(tmp_currency));
+  if (raw_currency != 0) {
+    total_size += 1 + 4;
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Firm::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    Firm::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Firm::GetClassData() const { return &_class_data_; }
+
+
+void Firm::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<Firm*>(&to_msg);
+  auto& from = static_cast<const Firm&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:city.economy.v2.Firm)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_impl_.employees_.MergeFrom(from._impl_.employees_);
+  if (from._internal_id() != 0) {
+    _this->_internal_set_id(from._internal_id());
+  }
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_price = from._internal_price();
+  uint32_t raw_price;
+  memcpy(&raw_price, &tmp_price, sizeof(tmp_price));
+  if (raw_price != 0) {
+    _this->_internal_set_price(from._internal_price());
+  }
+  if (from._internal_inventory() != 0) {
+    _this->_internal_set_inventory(from._internal_inventory());
+  }
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_demand = from._internal_demand();
+  uint32_t raw_demand;
+  memcpy(&raw_demand, &tmp_demand, sizeof(tmp_demand));
+  if (raw_demand != 0) {
+    _this->_internal_set_demand(from._internal_demand());
+  }
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_sales = from._internal_sales();
+  uint32_t raw_sales;
+  memcpy(&raw_sales, &tmp_sales, sizeof(tmp_sales));
+  if (raw_sales != 0) {
+    _this->_internal_set_sales(from._internal_sales());
+  }
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_currency = from._internal_currency();
+  uint32_t raw_currency;
+  memcpy(&raw_currency, &tmp_currency, sizeof(tmp_currency));
+  if (raw_currency != 0) {
+    _this->_internal_set_currency(from._internal_currency());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void Firm::CopyFrom(const Firm& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:city.economy.v2.Firm)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool Firm::IsInitialized() const {
+  return true;
+}
+
+void Firm::InternalSwap(Firm* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _impl_.employees_.InternalSwap(&other->_impl_.employees_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(Firm, _impl_.currency_)
+      + sizeof(Firm::_impl_.currency_)
+      - PROTOBUF_FIELD_OFFSET(Firm, _impl_.id_)>(
+          reinterpret_cast<char*>(&_impl_.id_),
+          reinterpret_cast<char*>(&other->_impl_.id_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata Firm::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2feconomy_2fv2_2feconomy_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2feconomy_2eproto_once,
+      file_level_metadata_city_2feconomy_2fv2_2feconomy_2eproto[0]);
+}
+
+// ===================================================================
+
+NBS_NominalGdpEntry_DoNotUse::NBS_NominalGdpEntry_DoNotUse() {}
+NBS_NominalGdpEntry_DoNotUse::NBS_NominalGdpEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+    : SuperType(arena) {}
+void NBS_NominalGdpEntry_DoNotUse::MergeFrom(const NBS_NominalGdpEntry_DoNotUse& other) {
+  MergeFromInternal(other);
+}
+::PROTOBUF_NAMESPACE_ID::Metadata NBS_NominalGdpEntry_DoNotUse::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2feconomy_2fv2_2feconomy_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2feconomy_2eproto_once,
+      file_level_metadata_city_2feconomy_2fv2_2feconomy_2eproto[1]);
+}
+
+// ===================================================================
+
+NBS_RealGdpEntry_DoNotUse::NBS_RealGdpEntry_DoNotUse() {}
+NBS_RealGdpEntry_DoNotUse::NBS_RealGdpEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+    : SuperType(arena) {}
+void NBS_RealGdpEntry_DoNotUse::MergeFrom(const NBS_RealGdpEntry_DoNotUse& other) {
+  MergeFromInternal(other);
+}
+::PROTOBUF_NAMESPACE_ID::Metadata NBS_RealGdpEntry_DoNotUse::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2feconomy_2fv2_2feconomy_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2feconomy_2eproto_once,
+      file_level_metadata_city_2feconomy_2fv2_2feconomy_2eproto[2]);
+}
+
+// ===================================================================
+
+NBS_UnemploymentEntry_DoNotUse::NBS_UnemploymentEntry_DoNotUse() {}
+NBS_UnemploymentEntry_DoNotUse::NBS_UnemploymentEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+    : SuperType(arena) {}
+void NBS_UnemploymentEntry_DoNotUse::MergeFrom(const NBS_UnemploymentEntry_DoNotUse& other) {
+  MergeFromInternal(other);
+}
+::PROTOBUF_NAMESPACE_ID::Metadata NBS_UnemploymentEntry_DoNotUse::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2feconomy_2fv2_2feconomy_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2feconomy_2eproto_once,
+      file_level_metadata_city_2feconomy_2fv2_2feconomy_2eproto[3]);
+}
+
+// ===================================================================
+
+NBS_WagesEntry_DoNotUse::NBS_WagesEntry_DoNotUse() {}
+NBS_WagesEntry_DoNotUse::NBS_WagesEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+    : SuperType(arena) {}
+void NBS_WagesEntry_DoNotUse::MergeFrom(const NBS_WagesEntry_DoNotUse& other) {
+  MergeFromInternal(other);
+}
+::PROTOBUF_NAMESPACE_ID::Metadata NBS_WagesEntry_DoNotUse::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2feconomy_2fv2_2feconomy_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2feconomy_2eproto_once,
+      file_level_metadata_city_2feconomy_2fv2_2feconomy_2eproto[4]);
+}
+
+// ===================================================================
+
+NBS_PricesEntry_DoNotUse::NBS_PricesEntry_DoNotUse() {}
+NBS_PricesEntry_DoNotUse::NBS_PricesEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+    : SuperType(arena) {}
+void NBS_PricesEntry_DoNotUse::MergeFrom(const NBS_PricesEntry_DoNotUse& other) {
+  MergeFromInternal(other);
+}
+::PROTOBUF_NAMESPACE_ID::Metadata NBS_PricesEntry_DoNotUse::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2feconomy_2fv2_2feconomy_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2feconomy_2eproto_once,
+      file_level_metadata_city_2feconomy_2fv2_2feconomy_2eproto[5]);
+}
+
+// ===================================================================
+
+NBS_WorkingHoursEntry_DoNotUse::NBS_WorkingHoursEntry_DoNotUse() {}
+NBS_WorkingHoursEntry_DoNotUse::NBS_WorkingHoursEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+    : SuperType(arena) {}
+void NBS_WorkingHoursEntry_DoNotUse::MergeFrom(const NBS_WorkingHoursEntry_DoNotUse& other) {
+  MergeFromInternal(other);
+}
+::PROTOBUF_NAMESPACE_ID::Metadata NBS_WorkingHoursEntry_DoNotUse::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2feconomy_2fv2_2feconomy_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2feconomy_2eproto_once,
+      file_level_metadata_city_2feconomy_2fv2_2feconomy_2eproto[6]);
+}
+
+// ===================================================================
+
+NBS_DepressionEntry_DoNotUse::NBS_DepressionEntry_DoNotUse() {}
+NBS_DepressionEntry_DoNotUse::NBS_DepressionEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+    : SuperType(arena) {}
+void NBS_DepressionEntry_DoNotUse::MergeFrom(const NBS_DepressionEntry_DoNotUse& other) {
+  MergeFromInternal(other);
+}
+::PROTOBUF_NAMESPACE_ID::Metadata NBS_DepressionEntry_DoNotUse::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2feconomy_2fv2_2feconomy_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2feconomy_2eproto_once,
+      file_level_metadata_city_2feconomy_2fv2_2feconomy_2eproto[7]);
+}
+
+// ===================================================================
+
+NBS_ConsumptionCurrencyEntry_DoNotUse::NBS_ConsumptionCurrencyEntry_DoNotUse() {}
+NBS_ConsumptionCurrencyEntry_DoNotUse::NBS_ConsumptionCurrencyEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+    : SuperType(arena) {}
+void NBS_ConsumptionCurrencyEntry_DoNotUse::MergeFrom(const NBS_ConsumptionCurrencyEntry_DoNotUse& other) {
+  MergeFromInternal(other);
+}
+::PROTOBUF_NAMESPACE_ID::Metadata NBS_ConsumptionCurrencyEntry_DoNotUse::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2feconomy_2fv2_2feconomy_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2feconomy_2eproto_once,
+      file_level_metadata_city_2feconomy_2fv2_2feconomy_2eproto[8]);
+}
+
+// ===================================================================
+
+NBS_IncomeCurrencyEntry_DoNotUse::NBS_IncomeCurrencyEntry_DoNotUse() {}
+NBS_IncomeCurrencyEntry_DoNotUse::NBS_IncomeCurrencyEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+    : SuperType(arena) {}
+void NBS_IncomeCurrencyEntry_DoNotUse::MergeFrom(const NBS_IncomeCurrencyEntry_DoNotUse& other) {
+  MergeFromInternal(other);
+}
+::PROTOBUF_NAMESPACE_ID::Metadata NBS_IncomeCurrencyEntry_DoNotUse::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2feconomy_2fv2_2feconomy_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2feconomy_2eproto_once,
+      file_level_metadata_city_2feconomy_2fv2_2feconomy_2eproto[9]);
+}
+
+// ===================================================================
+
+NBS_LocusControlEntry_DoNotUse::NBS_LocusControlEntry_DoNotUse() {}
+NBS_LocusControlEntry_DoNotUse::NBS_LocusControlEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+    : SuperType(arena) {}
+void NBS_LocusControlEntry_DoNotUse::MergeFrom(const NBS_LocusControlEntry_DoNotUse& other) {
+  MergeFromInternal(other);
+}
+::PROTOBUF_NAMESPACE_ID::Metadata NBS_LocusControlEntry_DoNotUse::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2feconomy_2fv2_2feconomy_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2feconomy_2eproto_once,
+      file_level_metadata_city_2feconomy_2fv2_2feconomy_2eproto[10]);
+}
+
+// ===================================================================
+
+class NBS::_Internal {
+ public:
+};
+
+NBS::NBS(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  if (arena != nullptr && !is_message_owned) {
+    arena->OwnCustomDestructor(this, &NBS::ArenaDtor);
+  }
+  // @@protoc_insertion_point(arena_constructor:city.economy.v2.NBS)
+}
+NBS::NBS(const NBS& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  NBS* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.citizens_){from._impl_.citizens_}
+    , /*decltype(_impl_._citizens_cached_byte_size_)*/{0}
+    , /*decltype(_impl_.nominal_gdp_)*/{}
+    , /*decltype(_impl_.real_gdp_)*/{}
+    , /*decltype(_impl_.unemployment_)*/{}
+    , /*decltype(_impl_.wages_)*/{}
+    , /*decltype(_impl_.prices_)*/{}
+    , /*decltype(_impl_.working_hours_)*/{}
+    , /*decltype(_impl_.depression_)*/{}
+    , /*decltype(_impl_.consumption_currency_)*/{}
+    , /*decltype(_impl_.income_currency_)*/{}
+    , /*decltype(_impl_.locus_control_)*/{}
+    , decltype(_impl_.citizens_agent_id_){from._impl_.citizens_agent_id_}
+    , /*decltype(_impl_._citizens_agent_id_cached_byte_size_)*/{0}
+    , decltype(_impl_.id_){}
+    , decltype(_impl_.currency_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.nominal_gdp_.MergeFrom(from._impl_.nominal_gdp_);
+  _this->_impl_.real_gdp_.MergeFrom(from._impl_.real_gdp_);
+  _this->_impl_.unemployment_.MergeFrom(from._impl_.unemployment_);
+  _this->_impl_.wages_.MergeFrom(from._impl_.wages_);
+  _this->_impl_.prices_.MergeFrom(from._impl_.prices_);
+  _this->_impl_.working_hours_.MergeFrom(from._impl_.working_hours_);
+  _this->_impl_.depression_.MergeFrom(from._impl_.depression_);
+  _this->_impl_.consumption_currency_.MergeFrom(from._impl_.consumption_currency_);
+  _this->_impl_.income_currency_.MergeFrom(from._impl_.income_currency_);
+  _this->_impl_.locus_control_.MergeFrom(from._impl_.locus_control_);
+  ::memcpy(&_impl_.id_, &from._impl_.id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.currency_) -
+    reinterpret_cast<char*>(&_impl_.id_)) + sizeof(_impl_.currency_));
+  // @@protoc_insertion_point(copy_constructor:city.economy.v2.NBS)
+}
+
+inline void NBS::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.citizens_){arena}
+    , /*decltype(_impl_._citizens_cached_byte_size_)*/{0}
+    , /*decltype(_impl_.nominal_gdp_)*/{::_pbi::ArenaInitialized(), arena}
+    , /*decltype(_impl_.real_gdp_)*/{::_pbi::ArenaInitialized(), arena}
+    , /*decltype(_impl_.unemployment_)*/{::_pbi::ArenaInitialized(), arena}
+    , /*decltype(_impl_.wages_)*/{::_pbi::ArenaInitialized(), arena}
+    , /*decltype(_impl_.prices_)*/{::_pbi::ArenaInitialized(), arena}
+    , /*decltype(_impl_.working_hours_)*/{::_pbi::ArenaInitialized(), arena}
+    , /*decltype(_impl_.depression_)*/{::_pbi::ArenaInitialized(), arena}
+    , /*decltype(_impl_.consumption_currency_)*/{::_pbi::ArenaInitialized(), arena}
+    , /*decltype(_impl_.income_currency_)*/{::_pbi::ArenaInitialized(), arena}
+    , /*decltype(_impl_.locus_control_)*/{::_pbi::ArenaInitialized(), arena}
+    , decltype(_impl_.citizens_agent_id_){arena}
+    , /*decltype(_impl_._citizens_agent_id_cached_byte_size_)*/{0}
+    , decltype(_impl_.id_){0}
+    , decltype(_impl_.currency_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+}
+
+NBS::~NBS() {
+  // @@protoc_insertion_point(destructor:city.economy.v2.NBS)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    ArenaDtor(this);
+    return;
+  }
+  SharedDtor();
+}
+
+inline void NBS::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.citizens_.~RepeatedField();
+  _impl_.nominal_gdp_.Destruct();
+  _impl_.nominal_gdp_.~MapField();
+  _impl_.real_gdp_.Destruct();
+  _impl_.real_gdp_.~MapField();
+  _impl_.unemployment_.Destruct();
+  _impl_.unemployment_.~MapField();
+  _impl_.wages_.Destruct();
+  _impl_.wages_.~MapField();
+  _impl_.prices_.Destruct();
+  _impl_.prices_.~MapField();
+  _impl_.working_hours_.Destruct();
+  _impl_.working_hours_.~MapField();
+  _impl_.depression_.Destruct();
+  _impl_.depression_.~MapField();
+  _impl_.consumption_currency_.Destruct();
+  _impl_.consumption_currency_.~MapField();
+  _impl_.income_currency_.Destruct();
+  _impl_.income_currency_.~MapField();
+  _impl_.locus_control_.Destruct();
+  _impl_.locus_control_.~MapField();
+  _impl_.citizens_agent_id_.~RepeatedField();
+}
+
+void NBS::ArenaDtor(void* object) {
+  NBS* _this = reinterpret_cast< NBS* >(object);
+  _this->_impl_.nominal_gdp_.Destruct();
+  _this->_impl_.real_gdp_.Destruct();
+  _this->_impl_.unemployment_.Destruct();
+  _this->_impl_.wages_.Destruct();
+  _this->_impl_.prices_.Destruct();
+  _this->_impl_.working_hours_.Destruct();
+  _this->_impl_.depression_.Destruct();
+  _this->_impl_.consumption_currency_.Destruct();
+  _this->_impl_.income_currency_.Destruct();
+  _this->_impl_.locus_control_.Destruct();
+}
+void NBS::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void NBS::Clear() {
+// @@protoc_insertion_point(message_clear_start:city.economy.v2.NBS)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.citizens_.Clear();
+  _impl_.nominal_gdp_.Clear();
+  _impl_.real_gdp_.Clear();
+  _impl_.unemployment_.Clear();
+  _impl_.wages_.Clear();
+  _impl_.prices_.Clear();
+  _impl_.working_hours_.Clear();
+  _impl_.depression_.Clear();
+  _impl_.consumption_currency_.Clear();
+  _impl_.income_currency_.Clear();
+  _impl_.locus_control_.Clear();
+  _impl_.citizens_agent_id_.Clear();
+  ::memset(&_impl_.id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.currency_) -
+      reinterpret_cast<char*>(&_impl_.id_)) + sizeof(_impl_.currency_));
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* NBS::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 id = 1 [json_name = "id"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated int32 citizens = 2 [json_name = "citizens"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_citizens(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<uint8_t>(tag) == 16) {
+          _internal_add_citizens(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // map<string, float> nominal_gdp = 3 [json_name = "nominalGdp"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(&_impl_.nominal_gdp_, ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<26>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      // map<string, float> real_gdp = 4 [json_name = "realGdp"];
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(&_impl_.real_gdp_, ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<34>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      // map<string, float> unemployment = 5 [json_name = "unemployment"];
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(&_impl_.unemployment_, ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<42>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      // map<string, float> wages = 6 [json_name = "wages"];
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 50)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(&_impl_.wages_, ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<50>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      // map<string, float> prices = 7 [json_name = "prices"];
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 58)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(&_impl_.prices_, ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<58>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      // map<string, float> working_hours = 8 [json_name = "workingHours"];
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 66)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(&_impl_.working_hours_, ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<66>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      // map<string, float> depression = 9 [json_name = "depression"];
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 74)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(&_impl_.depression_, ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<74>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      // map<string, float> consumption_currency = 10 [json_name = "consumptionCurrency"];
+      case 10:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 82)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(&_impl_.consumption_currency_, ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<82>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      // map<string, float> income_currency = 11 [json_name = "incomeCurrency"];
+      case 11:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 90)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(&_impl_.income_currency_, ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<90>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      // map<string, float> locus_control = 12 [json_name = "locusControl"];
+      case 12:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 98)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(&_impl_.locus_control_, ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<98>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated int32 citizens_agent_id = 13 [json_name = "citizensAgentId"];
+      case 13:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 106)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_citizens_agent_id(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<uint8_t>(tag) == 104) {
+          _internal_add_citizens_agent_id(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // float currency = 14 [json_name = "currency"];
+      case 14:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 117)) {
+          _impl_.currency_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* NBS::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:city.economy.v2.NBS)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 id = 1 [json_name = "id"];
+  if (this->_internal_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_id(), target);
+  }
+
+  // repeated int32 citizens = 2 [json_name = "citizens"];
   {
-    unsigned int count = static_cast<unsigned int>(this->_internal_real_gdp_size());
-    size_t data_size = 4UL * count;
+    int byte_size = _impl_._citizens_cached_byte_size_.load(std::memory_order_relaxed);
+    if (byte_size > 0) {
+      target = stream->WriteInt32Packed(
+          2, _internal_citizens(), byte_size, target);
+    }
+  }
+
+  // map<string, float> nominal_gdp = 3 [json_name = "nominalGdp"];
+  if (!this->_internal_nominal_gdp().empty()) {
+    using MapType = ::_pb::Map<std::string, float>;
+    using WireHelper = NBS_NominalGdpEntry_DoNotUse::Funcs;
+    const auto& map_field = this->_internal_nominal_gdp();
+    auto check_utf8 = [](const MapType::value_type& entry) {
+      (void)entry;
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+        entry.first.data(), static_cast<int>(entry.first.length()),
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+        "city.economy.v2.NBS.NominalGdpEntry.key");
+    };
+
+    if (stream->IsSerializationDeterministic() && map_field.size() > 1) {
+      for (const auto& entry : ::_pbi::MapSorterPtr<MapType>(map_field)) {
+        target = WireHelper::InternalSerialize(3, entry.first, entry.second, target, stream);
+        check_utf8(entry);
+      }
+    } else {
+      for (const auto& entry : map_field) {
+        target = WireHelper::InternalSerialize(3, entry.first, entry.second, target, stream);
+        check_utf8(entry);
+      }
+    }
+  }
+
+  // map<string, float> real_gdp = 4 [json_name = "realGdp"];
+  if (!this->_internal_real_gdp().empty()) {
+    using MapType = ::_pb::Map<std::string, float>;
+    using WireHelper = NBS_RealGdpEntry_DoNotUse::Funcs;
+    const auto& map_field = this->_internal_real_gdp();
+    auto check_utf8 = [](const MapType::value_type& entry) {
+      (void)entry;
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+        entry.first.data(), static_cast<int>(entry.first.length()),
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+        "city.economy.v2.NBS.RealGdpEntry.key");
+    };
+
+    if (stream->IsSerializationDeterministic() && map_field.size() > 1) {
+      for (const auto& entry : ::_pbi::MapSorterPtr<MapType>(map_field)) {
+        target = WireHelper::InternalSerialize(4, entry.first, entry.second, target, stream);
+        check_utf8(entry);
+      }
+    } else {
+      for (const auto& entry : map_field) {
+        target = WireHelper::InternalSerialize(4, entry.first, entry.second, target, stream);
+        check_utf8(entry);
+      }
+    }
+  }
+
+  // map<string, float> unemployment = 5 [json_name = "unemployment"];
+  if (!this->_internal_unemployment().empty()) {
+    using MapType = ::_pb::Map<std::string, float>;
+    using WireHelper = NBS_UnemploymentEntry_DoNotUse::Funcs;
+    const auto& map_field = this->_internal_unemployment();
+    auto check_utf8 = [](const MapType::value_type& entry) {
+      (void)entry;
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+        entry.first.data(), static_cast<int>(entry.first.length()),
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+        "city.economy.v2.NBS.UnemploymentEntry.key");
+    };
+
+    if (stream->IsSerializationDeterministic() && map_field.size() > 1) {
+      for (const auto& entry : ::_pbi::MapSorterPtr<MapType>(map_field)) {
+        target = WireHelper::InternalSerialize(5, entry.first, entry.second, target, stream);
+        check_utf8(entry);
+      }
+    } else {
+      for (const auto& entry : map_field) {
+        target = WireHelper::InternalSerialize(5, entry.first, entry.second, target, stream);
+        check_utf8(entry);
+      }
+    }
+  }
+
+  // map<string, float> wages = 6 [json_name = "wages"];
+  if (!this->_internal_wages().empty()) {
+    using MapType = ::_pb::Map<std::string, float>;
+    using WireHelper = NBS_WagesEntry_DoNotUse::Funcs;
+    const auto& map_field = this->_internal_wages();
+    auto check_utf8 = [](const MapType::value_type& entry) {
+      (void)entry;
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+        entry.first.data(), static_cast<int>(entry.first.length()),
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+        "city.economy.v2.NBS.WagesEntry.key");
+    };
+
+    if (stream->IsSerializationDeterministic() && map_field.size() > 1) {
+      for (const auto& entry : ::_pbi::MapSorterPtr<MapType>(map_field)) {
+        target = WireHelper::InternalSerialize(6, entry.first, entry.second, target, stream);
+        check_utf8(entry);
+      }
+    } else {
+      for (const auto& entry : map_field) {
+        target = WireHelper::InternalSerialize(6, entry.first, entry.second, target, stream);
+        check_utf8(entry);
+      }
+    }
+  }
+
+  // map<string, float> prices = 7 [json_name = "prices"];
+  if (!this->_internal_prices().empty()) {
+    using MapType = ::_pb::Map<std::string, float>;
+    using WireHelper = NBS_PricesEntry_DoNotUse::Funcs;
+    const auto& map_field = this->_internal_prices();
+    auto check_utf8 = [](const MapType::value_type& entry) {
+      (void)entry;
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+        entry.first.data(), static_cast<int>(entry.first.length()),
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+        "city.economy.v2.NBS.PricesEntry.key");
+    };
+
+    if (stream->IsSerializationDeterministic() && map_field.size() > 1) {
+      for (const auto& entry : ::_pbi::MapSorterPtr<MapType>(map_field)) {
+        target = WireHelper::InternalSerialize(7, entry.first, entry.second, target, stream);
+        check_utf8(entry);
+      }
+    } else {
+      for (const auto& entry : map_field) {
+        target = WireHelper::InternalSerialize(7, entry.first, entry.second, target, stream);
+        check_utf8(entry);
+      }
+    }
+  }
+
+  // map<string, float> working_hours = 8 [json_name = "workingHours"];
+  if (!this->_internal_working_hours().empty()) {
+    using MapType = ::_pb::Map<std::string, float>;
+    using WireHelper = NBS_WorkingHoursEntry_DoNotUse::Funcs;
+    const auto& map_field = this->_internal_working_hours();
+    auto check_utf8 = [](const MapType::value_type& entry) {
+      (void)entry;
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+        entry.first.data(), static_cast<int>(entry.first.length()),
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+        "city.economy.v2.NBS.WorkingHoursEntry.key");
+    };
+
+    if (stream->IsSerializationDeterministic() && map_field.size() > 1) {
+      for (const auto& entry : ::_pbi::MapSorterPtr<MapType>(map_field)) {
+        target = WireHelper::InternalSerialize(8, entry.first, entry.second, target, stream);
+        check_utf8(entry);
+      }
+    } else {
+      for (const auto& entry : map_field) {
+        target = WireHelper::InternalSerialize(8, entry.first, entry.second, target, stream);
+        check_utf8(entry);
+      }
+    }
+  }
+
+  // map<string, float> depression = 9 [json_name = "depression"];
+  if (!this->_internal_depression().empty()) {
+    using MapType = ::_pb::Map<std::string, float>;
+    using WireHelper = NBS_DepressionEntry_DoNotUse::Funcs;
+    const auto& map_field = this->_internal_depression();
+    auto check_utf8 = [](const MapType::value_type& entry) {
+      (void)entry;
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+        entry.first.data(), static_cast<int>(entry.first.length()),
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+        "city.economy.v2.NBS.DepressionEntry.key");
+    };
+
+    if (stream->IsSerializationDeterministic() && map_field.size() > 1) {
+      for (const auto& entry : ::_pbi::MapSorterPtr<MapType>(map_field)) {
+        target = WireHelper::InternalSerialize(9, entry.first, entry.second, target, stream);
+        check_utf8(entry);
+      }
+    } else {
+      for (const auto& entry : map_field) {
+        target = WireHelper::InternalSerialize(9, entry.first, entry.second, target, stream);
+        check_utf8(entry);
+      }
+    }
+  }
+
+  // map<string, float> consumption_currency = 10 [json_name = "consumptionCurrency"];
+  if (!this->_internal_consumption_currency().empty()) {
+    using MapType = ::_pb::Map<std::string, float>;
+    using WireHelper = NBS_ConsumptionCurrencyEntry_DoNotUse::Funcs;
+    const auto& map_field = this->_internal_consumption_currency();
+    auto check_utf8 = [](const MapType::value_type& entry) {
+      (void)entry;
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+        entry.first.data(), static_cast<int>(entry.first.length()),
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+        "city.economy.v2.NBS.ConsumptionCurrencyEntry.key");
+    };
+
+    if (stream->IsSerializationDeterministic() && map_field.size() > 1) {
+      for (const auto& entry : ::_pbi::MapSorterPtr<MapType>(map_field)) {
+        target = WireHelper::InternalSerialize(10, entry.first, entry.second, target, stream);
+        check_utf8(entry);
+      }
+    } else {
+      for (const auto& entry : map_field) {
+        target = WireHelper::InternalSerialize(10, entry.first, entry.second, target, stream);
+        check_utf8(entry);
+      }
+    }
+  }
+
+  // map<string, float> income_currency = 11 [json_name = "incomeCurrency"];
+  if (!this->_internal_income_currency().empty()) {
+    using MapType = ::_pb::Map<std::string, float>;
+    using WireHelper = NBS_IncomeCurrencyEntry_DoNotUse::Funcs;
+    const auto& map_field = this->_internal_income_currency();
+    auto check_utf8 = [](const MapType::value_type& entry) {
+      (void)entry;
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+        entry.first.data(), static_cast<int>(entry.first.length()),
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+        "city.economy.v2.NBS.IncomeCurrencyEntry.key");
+    };
+
+    if (stream->IsSerializationDeterministic() && map_field.size() > 1) {
+      for (const auto& entry : ::_pbi::MapSorterPtr<MapType>(map_field)) {
+        target = WireHelper::InternalSerialize(11, entry.first, entry.second, target, stream);
+        check_utf8(entry);
+      }
+    } else {
+      for (const auto& entry : map_field) {
+        target = WireHelper::InternalSerialize(11, entry.first, entry.second, target, stream);
+        check_utf8(entry);
+      }
+    }
+  }
+
+  // map<string, float> locus_control = 12 [json_name = "locusControl"];
+  if (!this->_internal_locus_control().empty()) {
+    using MapType = ::_pb::Map<std::string, float>;
+    using WireHelper = NBS_LocusControlEntry_DoNotUse::Funcs;
+    const auto& map_field = this->_internal_locus_control();
+    auto check_utf8 = [](const MapType::value_type& entry) {
+      (void)entry;
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+        entry.first.data(), static_cast<int>(entry.first.length()),
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+        "city.economy.v2.NBS.LocusControlEntry.key");
+    };
+
+    if (stream->IsSerializationDeterministic() && map_field.size() > 1) {
+      for (const auto& entry : ::_pbi::MapSorterPtr<MapType>(map_field)) {
+        target = WireHelper::InternalSerialize(12, entry.first, entry.second, target, stream);
+        check_utf8(entry);
+      }
+    } else {
+      for (const auto& entry : map_field) {
+        target = WireHelper::InternalSerialize(12, entry.first, entry.second, target, stream);
+        check_utf8(entry);
+      }
+    }
+  }
+
+  // repeated int32 citizens_agent_id = 13 [json_name = "citizensAgentId"];
+  {
+    int byte_size = _impl_._citizens_agent_id_cached_byte_size_.load(std::memory_order_relaxed);
+    if (byte_size > 0) {
+      target = stream->WriteInt32Packed(
+          13, _internal_citizens_agent_id(), byte_size, target);
+    }
+  }
+
+  // float currency = 14 [json_name = "currency"];
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_currency = this->_internal_currency();
+  uint32_t raw_currency;
+  memcpy(&raw_currency, &tmp_currency, sizeof(tmp_currency));
+  if (raw_currency != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(14, this->_internal_currency(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:city.economy.v2.NBS)
+  return target;
+}
+
+size_t NBS::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:city.economy.v2.NBS)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated int32 citizens = 2 [json_name = "citizens"];
+  {
+    size_t data_size = ::_pbi::WireFormatLite::
+      Int32Size(this->_impl_.citizens_);
     if (data_size > 0) {
       total_size += 1 +
         ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
     }
+    int cached_size = ::_pbi::ToCachedSize(data_size);
+    _impl_._citizens_cached_byte_size_.store(cached_size,
+                                    std::memory_order_relaxed);
     total_size += data_size;
   }
 
-  // repeated float unemployment = 5 [json_name = "unemployment"];
+  // map<string, float> nominal_gdp = 3 [json_name = "nominalGdp"];
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(this->_internal_nominal_gdp_size());
+  for (::PROTOBUF_NAMESPACE_ID::Map< std::string, float >::const_iterator
+      it = this->_internal_nominal_gdp().begin();
+      it != this->_internal_nominal_gdp().end(); ++it) {
+    total_size += NBS_NominalGdpEntry_DoNotUse::Funcs::ByteSizeLong(it->first, it->second);
+  }
+
+  // map<string, float> real_gdp = 4 [json_name = "realGdp"];
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(this->_internal_real_gdp_size());
+  for (::PROTOBUF_NAMESPACE_ID::Map< std::string, float >::const_iterator
+      it = this->_internal_real_gdp().begin();
+      it != this->_internal_real_gdp().end(); ++it) {
+    total_size += NBS_RealGdpEntry_DoNotUse::Funcs::ByteSizeLong(it->first, it->second);
+  }
+
+  // map<string, float> unemployment = 5 [json_name = "unemployment"];
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(this->_internal_unemployment_size());
+  for (::PROTOBUF_NAMESPACE_ID::Map< std::string, float >::const_iterator
+      it = this->_internal_unemployment().begin();
+      it != this->_internal_unemployment().end(); ++it) {
+    total_size += NBS_UnemploymentEntry_DoNotUse::Funcs::ByteSizeLong(it->first, it->second);
+  }
+
+  // map<string, float> wages = 6 [json_name = "wages"];
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(this->_internal_wages_size());
+  for (::PROTOBUF_NAMESPACE_ID::Map< std::string, float >::const_iterator
+      it = this->_internal_wages().begin();
+      it != this->_internal_wages().end(); ++it) {
+    total_size += NBS_WagesEntry_DoNotUse::Funcs::ByteSizeLong(it->first, it->second);
+  }
+
+  // map<string, float> prices = 7 [json_name = "prices"];
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(this->_internal_prices_size());
+  for (::PROTOBUF_NAMESPACE_ID::Map< std::string, float >::const_iterator
+      it = this->_internal_prices().begin();
+      it != this->_internal_prices().end(); ++it) {
+    total_size += NBS_PricesEntry_DoNotUse::Funcs::ByteSizeLong(it->first, it->second);
+  }
+
+  // map<string, float> working_hours = 8 [json_name = "workingHours"];
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(this->_internal_working_hours_size());
+  for (::PROTOBUF_NAMESPACE_ID::Map< std::string, float >::const_iterator
+      it = this->_internal_working_hours().begin();
+      it != this->_internal_working_hours().end(); ++it) {
+    total_size += NBS_WorkingHoursEntry_DoNotUse::Funcs::ByteSizeLong(it->first, it->second);
+  }
+
+  // map<string, float> depression = 9 [json_name = "depression"];
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(this->_internal_depression_size());
+  for (::PROTOBUF_NAMESPACE_ID::Map< std::string, float >::const_iterator
+      it = this->_internal_depression().begin();
+      it != this->_internal_depression().end(); ++it) {
+    total_size += NBS_DepressionEntry_DoNotUse::Funcs::ByteSizeLong(it->first, it->second);
+  }
+
+  // map<string, float> consumption_currency = 10 [json_name = "consumptionCurrency"];
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(this->_internal_consumption_currency_size());
+  for (::PROTOBUF_NAMESPACE_ID::Map< std::string, float >::const_iterator
+      it = this->_internal_consumption_currency().begin();
+      it != this->_internal_consumption_currency().end(); ++it) {
+    total_size += NBS_ConsumptionCurrencyEntry_DoNotUse::Funcs::ByteSizeLong(it->first, it->second);
+  }
+
+  // map<string, float> income_currency = 11 [json_name = "incomeCurrency"];
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(this->_internal_income_currency_size());
+  for (::PROTOBUF_NAMESPACE_ID::Map< std::string, float >::const_iterator
+      it = this->_internal_income_currency().begin();
+      it != this->_internal_income_currency().end(); ++it) {
+    total_size += NBS_IncomeCurrencyEntry_DoNotUse::Funcs::ByteSizeLong(it->first, it->second);
+  }
+
+  // map<string, float> locus_control = 12 [json_name = "locusControl"];
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(this->_internal_locus_control_size());
+  for (::PROTOBUF_NAMESPACE_ID::Map< std::string, float >::const_iterator
+      it = this->_internal_locus_control().begin();
+      it != this->_internal_locus_control().end(); ++it) {
+    total_size += NBS_LocusControlEntry_DoNotUse::Funcs::ByteSizeLong(it->first, it->second);
+  }
+
+  // repeated int32 citizens_agent_id = 13 [json_name = "citizensAgentId"];
   {
-    unsigned int count = static_cast<unsigned int>(this->_internal_unemployment_size());
-    size_t data_size = 4UL * count;
+    size_t data_size = ::_pbi::WireFormatLite::
+      Int32Size(this->_impl_.citizens_agent_id_);
     if (data_size > 0) {
       total_size += 1 +
         ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
     }
+    int cached_size = ::_pbi::ToCachedSize(data_size);
+    _impl_._citizens_agent_id_cached_byte_size_.store(cached_size,
+                                    std::memory_order_relaxed);
     total_size += data_size;
   }
 
-  // repeated float wages = 6 [json_name = "wages"];
+  // int32 id = 1 [json_name = "id"];
+  if (this->_internal_id() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_id());
+  }
+
+  // float currency = 14 [json_name = "currency"];
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_currency = this->_internal_currency();
+  uint32_t raw_currency;
+  memcpy(&raw_currency, &tmp_currency, sizeof(tmp_currency));
+  if (raw_currency != 0) {
+    total_size += 1 + 4;
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData NBS::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    NBS::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*NBS::GetClassData() const { return &_class_data_; }
+
+
+void NBS::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<NBS*>(&to_msg);
+  auto& from = static_cast<const NBS&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:city.economy.v2.NBS)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_impl_.citizens_.MergeFrom(from._impl_.citizens_);
+  _this->_impl_.nominal_gdp_.MergeFrom(from._impl_.nominal_gdp_);
+  _this->_impl_.real_gdp_.MergeFrom(from._impl_.real_gdp_);
+  _this->_impl_.unemployment_.MergeFrom(from._impl_.unemployment_);
+  _this->_impl_.wages_.MergeFrom(from._impl_.wages_);
+  _this->_impl_.prices_.MergeFrom(from._impl_.prices_);
+  _this->_impl_.working_hours_.MergeFrom(from._impl_.working_hours_);
+  _this->_impl_.depression_.MergeFrom(from._impl_.depression_);
+  _this->_impl_.consumption_currency_.MergeFrom(from._impl_.consumption_currency_);
+  _this->_impl_.income_currency_.MergeFrom(from._impl_.income_currency_);
+  _this->_impl_.locus_control_.MergeFrom(from._impl_.locus_control_);
+  _this->_impl_.citizens_agent_id_.MergeFrom(from._impl_.citizens_agent_id_);
+  if (from._internal_id() != 0) {
+    _this->_internal_set_id(from._internal_id());
+  }
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_currency = from._internal_currency();
+  uint32_t raw_currency;
+  memcpy(&raw_currency, &tmp_currency, sizeof(tmp_currency));
+  if (raw_currency != 0) {
+    _this->_internal_set_currency(from._internal_currency());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void NBS::CopyFrom(const NBS& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:city.economy.v2.NBS)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool NBS::IsInitialized() const {
+  return true;
+}
+
+void NBS::InternalSwap(NBS* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _impl_.citizens_.InternalSwap(&other->_impl_.citizens_);
+  _impl_.nominal_gdp_.InternalSwap(&other->_impl_.nominal_gdp_);
+  _impl_.real_gdp_.InternalSwap(&other->_impl_.real_gdp_);
+  _impl_.unemployment_.InternalSwap(&other->_impl_.unemployment_);
+  _impl_.wages_.InternalSwap(&other->_impl_.wages_);
+  _impl_.prices_.InternalSwap(&other->_impl_.prices_);
+  _impl_.working_hours_.InternalSwap(&other->_impl_.working_hours_);
+  _impl_.depression_.InternalSwap(&other->_impl_.depression_);
+  _impl_.consumption_currency_.InternalSwap(&other->_impl_.consumption_currency_);
+  _impl_.income_currency_.InternalSwap(&other->_impl_.income_currency_);
+  _impl_.locus_control_.InternalSwap(&other->_impl_.locus_control_);
+  _impl_.citizens_agent_id_.InternalSwap(&other->_impl_.citizens_agent_id_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(NBS, _impl_.currency_)
+      + sizeof(NBS::_impl_.currency_)
+      - PROTOBUF_FIELD_OFFSET(NBS, _impl_.id_)>(
+          reinterpret_cast<char*>(&_impl_.id_),
+          reinterpret_cast<char*>(&other->_impl_.id_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata NBS::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2feconomy_2fv2_2feconomy_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2feconomy_2eproto_once,
+      file_level_metadata_city_2feconomy_2fv2_2feconomy_2eproto[11]);
+}
+
+// ===================================================================
+
+class Government::_Internal {
+ public:
+};
+
+Government::Government(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:city.economy.v2.Government)
+}
+Government::Government(const Government& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  Government* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.citizens_){from._impl_.citizens_}
+    , /*decltype(_impl_._citizens_cached_byte_size_)*/{0}
+    , decltype(_impl_.bracket_cutoffs_){from._impl_.bracket_cutoffs_}
+    , decltype(_impl_.bracket_rates_){from._impl_.bracket_rates_}
+    , decltype(_impl_.id_){}
+    , decltype(_impl_.currency_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&_impl_.id_, &from._impl_.id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.currency_) -
+    reinterpret_cast<char*>(&_impl_.id_)) + sizeof(_impl_.currency_));
+  // @@protoc_insertion_point(copy_constructor:city.economy.v2.Government)
+}
+
+inline void Government::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.citizens_){arena}
+    , /*decltype(_impl_._citizens_cached_byte_size_)*/{0}
+    , decltype(_impl_.bracket_cutoffs_){arena}
+    , decltype(_impl_.bracket_rates_){arena}
+    , decltype(_impl_.id_){0}
+    , decltype(_impl_.currency_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+}
+
+Government::~Government() {
+  // @@protoc_insertion_point(destructor:city.economy.v2.Government)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void Government::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.citizens_.~RepeatedField();
+  _impl_.bracket_cutoffs_.~RepeatedField();
+  _impl_.bracket_rates_.~RepeatedField();
+}
+
+void Government::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void Government::Clear() {
+// @@protoc_insertion_point(message_clear_start:city.economy.v2.Government)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.citizens_.Clear();
+  _impl_.bracket_cutoffs_.Clear();
+  _impl_.bracket_rates_.Clear();
+  ::memset(&_impl_.id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.currency_) -
+      reinterpret_cast<char*>(&_impl_.id_)) + sizeof(_impl_.currency_));
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* Government::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 id = 1 [json_name = "id"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated int32 citizens = 2 [json_name = "citizens"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_citizens(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<uint8_t>(tag) == 16) {
+          _internal_add_citizens(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated float bracket_cutoffs = 3 [json_name = "bracketCutoffs"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedFloatParser(_internal_mutable_bracket_cutoffs(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<uint8_t>(tag) == 29) {
+          _internal_add_bracket_cutoffs(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated float bracket_rates = 4 [json_name = "bracketRates"];
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedFloatParser(_internal_mutable_bracket_rates(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<uint8_t>(tag) == 37) {
+          _internal_add_bracket_rates(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      // float currency = 5 [json_name = "currency"];
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 45)) {
+          _impl_.currency_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* Government::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:city.economy.v2.Government)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 id = 1 [json_name = "id"];
+  if (this->_internal_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_id(), target);
+  }
+
+  // repeated int32 citizens = 2 [json_name = "citizens"];
   {
-    unsigned int count = static_cast<unsigned int>(this->_internal_wages_size());
-    size_t data_size = 4UL * count;
+    int byte_size = _impl_._citizens_cached_byte_size_.load(std::memory_order_relaxed);
+    if (byte_size > 0) {
+      target = stream->WriteInt32Packed(
+          2, _internal_citizens(), byte_size, target);
+    }
+  }
+
+  // repeated float bracket_cutoffs = 3 [json_name = "bracketCutoffs"];
+  if (this->_internal_bracket_cutoffs_size() > 0) {
+    target = stream->WriteFixedPacked(3, _internal_bracket_cutoffs(), target);
+  }
+
+  // repeated float bracket_rates = 4 [json_name = "bracketRates"];
+  if (this->_internal_bracket_rates_size() > 0) {
+    target = stream->WriteFixedPacked(4, _internal_bracket_rates(), target);
+  }
+
+  // float currency = 5 [json_name = "currency"];
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_currency = this->_internal_currency();
+  uint32_t raw_currency;
+  memcpy(&raw_currency, &tmp_currency, sizeof(tmp_currency));
+  if (raw_currency != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(5, this->_internal_currency(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:city.economy.v2.Government)
+  return target;
+}
+
+size_t Government::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:city.economy.v2.Government)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated int32 citizens = 2 [json_name = "citizens"];
+  {
+    size_t data_size = ::_pbi::WireFormatLite::
+      Int32Size(this->_impl_.citizens_);
     if (data_size > 0) {
       total_size += 1 +
         ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
     }
+    int cached_size = ::_pbi::ToCachedSize(data_size);
+    _impl_._citizens_cached_byte_size_.store(cached_size,
+                                    std::memory_order_relaxed);
     total_size += data_size;
   }
 
-  // repeated float prices = 7 [json_name = "prices"];
-  {
-    unsigned int count = static_cast<unsigned int>(this->_internal_prices_size());
-    size_t data_size = 4UL * count;
-    if (data_size > 0) {
-      total_size += 1 +
-        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
-    }
-    total_size += data_size;
-  }
-
-  // repeated float bracket_cutoffs = 12 [json_name = "bracketCutoffs"];
+  // repeated float bracket_cutoffs = 3 [json_name = "bracketCutoffs"];
   {
     unsigned int count = static_cast<unsigned int>(this->_internal_bracket_cutoffs_size());
     size_t data_size = 4UL * count;
@@ -929,7 +2233,7 @@ size_t Org::ByteSizeLong() const {
     total_size += data_size;
   }
 
-  // repeated float bracket_rates = 13 [json_name = "bracketRates"];
+  // repeated float bracket_rates = 4 [json_name = "bracketRates"];
   {
     unsigned int count = static_cast<unsigned int>(this->_internal_bracket_rates_size());
     size_t data_size = 4UL * count;
@@ -940,26 +2244,287 @@ size_t Org::ByteSizeLong() const {
     total_size += data_size;
   }
 
-  // repeated int32 employees = 16 [json_name = "employees"];
-  {
-    size_t data_size = ::_pbi::WireFormatLite::
-      Int32Size(this->_impl_.employees_);
-    if (data_size > 0) {
-      total_size += 2 +
-        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
-    }
-    int cached_size = ::_pbi::ToCachedSize(data_size);
-    _impl_._employees_cached_byte_size_.store(cached_size,
-                                    std::memory_order_relaxed);
-    total_size += data_size;
+  // int32 id = 1 [json_name = "id"];
+  if (this->_internal_id() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_id());
   }
 
-  // repeated int32 citizens = 17 [json_name = "citizens"];
+  // float currency = 5 [json_name = "currency"];
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_currency = this->_internal_currency();
+  uint32_t raw_currency;
+  memcpy(&raw_currency, &tmp_currency, sizeof(tmp_currency));
+  if (raw_currency != 0) {
+    total_size += 1 + 4;
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Government::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    Government::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Government::GetClassData() const { return &_class_data_; }
+
+
+void Government::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<Government*>(&to_msg);
+  auto& from = static_cast<const Government&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:city.economy.v2.Government)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_impl_.citizens_.MergeFrom(from._impl_.citizens_);
+  _this->_impl_.bracket_cutoffs_.MergeFrom(from._impl_.bracket_cutoffs_);
+  _this->_impl_.bracket_rates_.MergeFrom(from._impl_.bracket_rates_);
+  if (from._internal_id() != 0) {
+    _this->_internal_set_id(from._internal_id());
+  }
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_currency = from._internal_currency();
+  uint32_t raw_currency;
+  memcpy(&raw_currency, &tmp_currency, sizeof(tmp_currency));
+  if (raw_currency != 0) {
+    _this->_internal_set_currency(from._internal_currency());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void Government::CopyFrom(const Government& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:city.economy.v2.Government)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool Government::IsInitialized() const {
+  return true;
+}
+
+void Government::InternalSwap(Government* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _impl_.citizens_.InternalSwap(&other->_impl_.citizens_);
+  _impl_.bracket_cutoffs_.InternalSwap(&other->_impl_.bracket_cutoffs_);
+  _impl_.bracket_rates_.InternalSwap(&other->_impl_.bracket_rates_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(Government, _impl_.currency_)
+      + sizeof(Government::_impl_.currency_)
+      - PROTOBUF_FIELD_OFFSET(Government, _impl_.id_)>(
+          reinterpret_cast<char*>(&_impl_.id_),
+          reinterpret_cast<char*>(&other->_impl_.id_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata Government::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2feconomy_2fv2_2feconomy_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2feconomy_2eproto_once,
+      file_level_metadata_city_2feconomy_2fv2_2feconomy_2eproto[12]);
+}
+
+// ===================================================================
+
+class Bank::_Internal {
+ public:
+};
+
+Bank::Bank(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:city.economy.v2.Bank)
+}
+Bank::Bank(const Bank& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  Bank* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.citizens_){from._impl_.citizens_}
+    , /*decltype(_impl_._citizens_cached_byte_size_)*/{0}
+    , decltype(_impl_.id_){}
+    , decltype(_impl_.interest_rate_){}
+    , decltype(_impl_.currency_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&_impl_.id_, &from._impl_.id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.currency_) -
+    reinterpret_cast<char*>(&_impl_.id_)) + sizeof(_impl_.currency_));
+  // @@protoc_insertion_point(copy_constructor:city.economy.v2.Bank)
+}
+
+inline void Bank::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.citizens_){arena}
+    , /*decltype(_impl_._citizens_cached_byte_size_)*/{0}
+    , decltype(_impl_.id_){0}
+    , decltype(_impl_.interest_rate_){0}
+    , decltype(_impl_.currency_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+}
+
+Bank::~Bank() {
+  // @@protoc_insertion_point(destructor:city.economy.v2.Bank)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void Bank::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.citizens_.~RepeatedField();
+}
+
+void Bank::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void Bank::Clear() {
+// @@protoc_insertion_point(message_clear_start:city.economy.v2.Bank)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.citizens_.Clear();
+  ::memset(&_impl_.id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.currency_) -
+      reinterpret_cast<char*>(&_impl_.id_)) + sizeof(_impl_.currency_));
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* Bank::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 id = 1 [json_name = "id"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated int32 citizens = 2 [json_name = "citizens"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_citizens(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<uint8_t>(tag) == 16) {
+          _internal_add_citizens(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // float interest_rate = 3 [json_name = "interestRate"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 29)) {
+          _impl_.interest_rate_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      // float currency = 4 [json_name = "currency"];
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 37)) {
+          _impl_.currency_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* Bank::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:city.economy.v2.Bank)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 id = 1 [json_name = "id"];
+  if (this->_internal_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_id(), target);
+  }
+
+  // repeated int32 citizens = 2 [json_name = "citizens"];
+  {
+    int byte_size = _impl_._citizens_cached_byte_size_.load(std::memory_order_relaxed);
+    if (byte_size > 0) {
+      target = stream->WriteInt32Packed(
+          2, _internal_citizens(), byte_size, target);
+    }
+  }
+
+  // float interest_rate = 3 [json_name = "interestRate"];
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_interest_rate = this->_internal_interest_rate();
+  uint32_t raw_interest_rate;
+  memcpy(&raw_interest_rate, &tmp_interest_rate, sizeof(tmp_interest_rate));
+  if (raw_interest_rate != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(3, this->_internal_interest_rate(), target);
+  }
+
+  // float currency = 4 [json_name = "currency"];
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_currency = this->_internal_currency();
+  uint32_t raw_currency;
+  memcpy(&raw_currency, &tmp_currency, sizeof(tmp_currency));
+  if (raw_currency != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(4, this->_internal_currency(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:city.economy.v2.Bank)
+  return target;
+}
+
+size_t Bank::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:city.economy.v2.Bank)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated int32 citizens = 2 [json_name = "citizens"];
   {
     size_t data_size = ::_pbi::WireFormatLite::
       Int32Size(this->_impl_.citizens_);
     if (data_size > 0) {
-      total_size += 2 +
+      total_size += 1 +
         ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
     }
     int cached_size = ::_pbi::ToCachedSize(data_size);
@@ -968,222 +2533,95 @@ size_t Org::ByteSizeLong() const {
     total_size += data_size;
   }
 
-  // repeated float consumption_currency = 18 [json_name = "consumptionCurrency"];
-  {
-    unsigned int count = static_cast<unsigned int>(this->_internal_consumption_currency_size());
-    size_t data_size = 4UL * count;
-    if (data_size > 0) {
-      total_size += 2 +
-        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
-    }
-    total_size += data_size;
-  }
-
-  // repeated float consumption_propensity = 19 [json_name = "consumptionPropensity"];
-  {
-    unsigned int count = static_cast<unsigned int>(this->_internal_consumption_propensity_size());
-    size_t data_size = 4UL * count;
-    if (data_size > 0) {
-      total_size += 2 +
-        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
-    }
-    total_size += data_size;
-  }
-
-  // repeated float income_currency = 20 [json_name = "incomeCurrency"];
-  {
-    unsigned int count = static_cast<unsigned int>(this->_internal_income_currency_size());
-    size_t data_size = 4UL * count;
-    if (data_size > 0) {
-      total_size += 2 +
-        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
-    }
-    total_size += data_size;
-  }
-
-  // repeated float depression = 21 [json_name = "depression"];
-  {
-    unsigned int count = static_cast<unsigned int>(this->_internal_depression_size());
-    size_t data_size = 4UL * count;
-    if (data_size > 0) {
-      total_size += 2 +
-        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
-    }
-    total_size += data_size;
-  }
-
-  // repeated float locus_control = 22 [json_name = "locusControl"];
-  {
-    unsigned int count = static_cast<unsigned int>(this->_internal_locus_control_size());
-    size_t data_size = 4UL * count;
-    if (data_size > 0) {
-      total_size += 2 +
-        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
-    }
-    total_size += data_size;
-  }
-
-  // repeated float working_hours = 23 [json_name = "workingHours"];
-  {
-    unsigned int count = static_cast<unsigned int>(this->_internal_working_hours_size());
-    size_t data_size = 4UL * count;
-    if (data_size > 0) {
-      total_size += 2 +
-        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
-    }
-    total_size += data_size;
-  }
-
   // int32 id = 1 [json_name = "id"];
   if (this->_internal_id() != 0) {
     total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_id());
   }
 
-  // .city.economy.v2.OrgType type = 2 [json_name = "type"];
-  if (this->_internal_type() != 0) {
-    total_size += 1 +
-      ::_pbi::WireFormatLite::EnumSize(this->_internal_type());
+  // float interest_rate = 3 [json_name = "interestRate"];
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_interest_rate = this->_internal_interest_rate();
+  uint32_t raw_interest_rate;
+  memcpy(&raw_interest_rate, &tmp_interest_rate, sizeof(tmp_interest_rate));
+  if (raw_interest_rate != 0) {
+    total_size += 1 + 4;
   }
 
-  cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x0000003fu) {
-    // optional int32 inventory = 8 [json_name = "inventory"];
-    if (cached_has_bits & 0x00000001u) {
-      total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_inventory());
-    }
-
-    // optional float price = 9 [json_name = "price"];
-    if (cached_has_bits & 0x00000002u) {
-      total_size += 1 + 4;
-    }
-
-    // optional float currency = 10 [json_name = "currency"];
-    if (cached_has_bits & 0x00000004u) {
-      total_size += 1 + 4;
-    }
-
-    // optional float interest_rate = 11 [json_name = "interestRate"];
-    if (cached_has_bits & 0x00000008u) {
-      total_size += 1 + 4;
-    }
-
-    // optional int32 demand = 14 [json_name = "demand"];
-    if (cached_has_bits & 0x00000010u) {
-      total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_demand());
-    }
-
-    // optional int32 sales = 15 [json_name = "sales"];
-    if (cached_has_bits & 0x00000020u) {
-      total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_sales());
-    }
-
+  // float currency = 4 [json_name = "currency"];
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_currency = this->_internal_currency();
+  uint32_t raw_currency;
+  memcpy(&raw_currency, &tmp_currency, sizeof(tmp_currency));
+  if (raw_currency != 0) {
+    total_size += 1 + 4;
   }
+
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Org::_class_data_ = {
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Bank::_class_data_ = {
     ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    Org::MergeImpl
+    Bank::MergeImpl
 };
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Org::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Bank::GetClassData() const { return &_class_data_; }
 
 
-void Org::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<Org*>(&to_msg);
-  auto& from = static_cast<const Org&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:city.economy.v2.Org)
+void Bank::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<Bank*>(&to_msg);
+  auto& from = static_cast<const Bank&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:city.economy.v2.Bank)
   GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  _this->_impl_.nominal_gdp_.MergeFrom(from._impl_.nominal_gdp_);
-  _this->_impl_.real_gdp_.MergeFrom(from._impl_.real_gdp_);
-  _this->_impl_.unemployment_.MergeFrom(from._impl_.unemployment_);
-  _this->_impl_.wages_.MergeFrom(from._impl_.wages_);
-  _this->_impl_.prices_.MergeFrom(from._impl_.prices_);
-  _this->_impl_.bracket_cutoffs_.MergeFrom(from._impl_.bracket_cutoffs_);
-  _this->_impl_.bracket_rates_.MergeFrom(from._impl_.bracket_rates_);
-  _this->_impl_.employees_.MergeFrom(from._impl_.employees_);
   _this->_impl_.citizens_.MergeFrom(from._impl_.citizens_);
-  _this->_impl_.consumption_currency_.MergeFrom(from._impl_.consumption_currency_);
-  _this->_impl_.consumption_propensity_.MergeFrom(from._impl_.consumption_propensity_);
-  _this->_impl_.income_currency_.MergeFrom(from._impl_.income_currency_);
-  _this->_impl_.depression_.MergeFrom(from._impl_.depression_);
-  _this->_impl_.locus_control_.MergeFrom(from._impl_.locus_control_);
-  _this->_impl_.working_hours_.MergeFrom(from._impl_.working_hours_);
   if (from._internal_id() != 0) {
     _this->_internal_set_id(from._internal_id());
   }
-  if (from._internal_type() != 0) {
-    _this->_internal_set_type(from._internal_type());
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_interest_rate = from._internal_interest_rate();
+  uint32_t raw_interest_rate;
+  memcpy(&raw_interest_rate, &tmp_interest_rate, sizeof(tmp_interest_rate));
+  if (raw_interest_rate != 0) {
+    _this->_internal_set_interest_rate(from._internal_interest_rate());
   }
-  cached_has_bits = from._impl_._has_bits_[0];
-  if (cached_has_bits & 0x0000003fu) {
-    if (cached_has_bits & 0x00000001u) {
-      _this->_impl_.inventory_ = from._impl_.inventory_;
-    }
-    if (cached_has_bits & 0x00000002u) {
-      _this->_impl_.price_ = from._impl_.price_;
-    }
-    if (cached_has_bits & 0x00000004u) {
-      _this->_impl_.currency_ = from._impl_.currency_;
-    }
-    if (cached_has_bits & 0x00000008u) {
-      _this->_impl_.interest_rate_ = from._impl_.interest_rate_;
-    }
-    if (cached_has_bits & 0x00000010u) {
-      _this->_impl_.demand_ = from._impl_.demand_;
-    }
-    if (cached_has_bits & 0x00000020u) {
-      _this->_impl_.sales_ = from._impl_.sales_;
-    }
-    _this->_impl_._has_bits_[0] |= cached_has_bits;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_currency = from._internal_currency();
+  uint32_t raw_currency;
+  memcpy(&raw_currency, &tmp_currency, sizeof(tmp_currency));
+  if (raw_currency != 0) {
+    _this->_internal_set_currency(from._internal_currency());
   }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
-void Org::CopyFrom(const Org& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:city.economy.v2.Org)
+void Bank::CopyFrom(const Bank& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:city.economy.v2.Bank)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool Org::IsInitialized() const {
+bool Bank::IsInitialized() const {
   return true;
 }
 
-void Org::InternalSwap(Org* other) {
+void Bank::InternalSwap(Bank* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
-  _impl_.nominal_gdp_.InternalSwap(&other->_impl_.nominal_gdp_);
-  _impl_.real_gdp_.InternalSwap(&other->_impl_.real_gdp_);
-  _impl_.unemployment_.InternalSwap(&other->_impl_.unemployment_);
-  _impl_.wages_.InternalSwap(&other->_impl_.wages_);
-  _impl_.prices_.InternalSwap(&other->_impl_.prices_);
-  _impl_.bracket_cutoffs_.InternalSwap(&other->_impl_.bracket_cutoffs_);
-  _impl_.bracket_rates_.InternalSwap(&other->_impl_.bracket_rates_);
-  _impl_.employees_.InternalSwap(&other->_impl_.employees_);
   _impl_.citizens_.InternalSwap(&other->_impl_.citizens_);
-  _impl_.consumption_currency_.InternalSwap(&other->_impl_.consumption_currency_);
-  _impl_.consumption_propensity_.InternalSwap(&other->_impl_.consumption_propensity_);
-  _impl_.income_currency_.InternalSwap(&other->_impl_.income_currency_);
-  _impl_.depression_.InternalSwap(&other->_impl_.depression_);
-  _impl_.locus_control_.InternalSwap(&other->_impl_.locus_control_);
-  _impl_.working_hours_.InternalSwap(&other->_impl_.working_hours_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(Org, _impl_.sales_)
-      + sizeof(Org::_impl_.sales_)
-      - PROTOBUF_FIELD_OFFSET(Org, _impl_.id_)>(
+      PROTOBUF_FIELD_OFFSET(Bank, _impl_.currency_)
+      + sizeof(Bank::_impl_.currency_)
+      - PROTOBUF_FIELD_OFFSET(Bank, _impl_.id_)>(
           reinterpret_cast<char*>(&_impl_.id_),
           reinterpret_cast<char*>(&other->_impl_.id_));
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata Org::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata Bank::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2feconomy_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2feconomy_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2feconomy_2eproto[0]);
+      file_level_metadata_city_2feconomy_2fv2_2feconomy_2eproto[13]);
 }
 
 // ===================================================================
@@ -1528,7 +2966,7 @@ void Agent::InternalSwap(Agent* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata Agent::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2feconomy_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2feconomy_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2feconomy_2eproto[1]);
+      file_level_metadata_city_2feconomy_2fv2_2feconomy_2eproto[14]);
 }
 
 // ===================================================================
@@ -1547,7 +2985,10 @@ EconomyEntities::EconomyEntities(const EconomyEntities& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   EconomyEntities* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.orgs_){from._impl_.orgs_}
+      decltype(_impl_.firms_){from._impl_.firms_}
+    , decltype(_impl_.nbs_){from._impl_.nbs_}
+    , decltype(_impl_.governments_){from._impl_.governments_}
+    , decltype(_impl_.banks_){from._impl_.banks_}
     , decltype(_impl_.agents_){from._impl_.agents_}
     , /*decltype(_impl_._cached_size_)*/{}};
 
@@ -1560,7 +3001,10 @@ inline void EconomyEntities::SharedCtor(
   (void)arena;
   (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.orgs_){arena}
+      decltype(_impl_.firms_){arena}
+    , decltype(_impl_.nbs_){arena}
+    , decltype(_impl_.governments_){arena}
+    , decltype(_impl_.banks_){arena}
     , decltype(_impl_.agents_){arena}
     , /*decltype(_impl_._cached_size_)*/{}
   };
@@ -1577,7 +3021,10 @@ EconomyEntities::~EconomyEntities() {
 
 inline void EconomyEntities::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.orgs_.~RepeatedPtrField();
+  _impl_.firms_.~RepeatedPtrField();
+  _impl_.nbs_.~RepeatedPtrField();
+  _impl_.governments_.~RepeatedPtrField();
+  _impl_.banks_.~RepeatedPtrField();
   _impl_.agents_.~RepeatedPtrField();
 }
 
@@ -1591,7 +3038,10 @@ void EconomyEntities::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.orgs_.Clear();
+  _impl_.firms_.Clear();
+  _impl_.nbs_.Clear();
+  _impl_.governments_.Clear();
+  _impl_.banks_.Clear();
   _impl_.agents_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -1602,29 +3052,68 @@ const char* EconomyEntities::_InternalParse(const char* ptr, ::_pbi::ParseContex
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // repeated .city.economy.v2.Org orgs = 1 [json_name = "orgs"];
+      // repeated .city.economy.v2.Firm firms = 1 [json_name = "firms"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr -= 1;
           do {
             ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_orgs(), ptr);
+            ptr = ctx->ParseMessage(_internal_add_firms(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
         } else
           goto handle_unusual;
         continue;
-      // repeated .city.economy.v2.Agent agents = 2 [json_name = "agents"];
+      // repeated .city.economy.v2.NBS nbs = 2 [json_name = "nbs"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_nbs(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated .city.economy.v2.Government governments = 3 [json_name = "governments"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_governments(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<26>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated .city.economy.v2.Bank banks = 4 [json_name = "banks"];
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_banks(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<34>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated .city.economy.v2.Agent agents = 5 [json_name = "agents"];
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
           ptr -= 1;
           do {
             ptr += 1;
             ptr = ctx->ParseMessage(_internal_add_agents(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<42>(ptr));
         } else
           goto handle_unusual;
         continue;
@@ -1657,20 +3146,44 @@ uint8_t* EconomyEntities::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated .city.economy.v2.Org orgs = 1 [json_name = "orgs"];
+  // repeated .city.economy.v2.Firm firms = 1 [json_name = "firms"];
   for (unsigned i = 0,
-      n = static_cast<unsigned>(this->_internal_orgs_size()); i < n; i++) {
-    const auto& repfield = this->_internal_orgs(i);
+      n = static_cast<unsigned>(this->_internal_firms_size()); i < n; i++) {
+    const auto& repfield = this->_internal_firms(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
         InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
   }
 
-  // repeated .city.economy.v2.Agent agents = 2 [json_name = "agents"];
+  // repeated .city.economy.v2.NBS nbs = 2 [json_name = "nbs"];
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_nbs_size()); i < n; i++) {
+    const auto& repfield = this->_internal_nbs(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        InternalWriteMessage(2, repfield, repfield.GetCachedSize(), target, stream);
+  }
+
+  // repeated .city.economy.v2.Government governments = 3 [json_name = "governments"];
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_governments_size()); i < n; i++) {
+    const auto& repfield = this->_internal_governments(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        InternalWriteMessage(3, repfield, repfield.GetCachedSize(), target, stream);
+  }
+
+  // repeated .city.economy.v2.Bank banks = 4 [json_name = "banks"];
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_banks_size()); i < n; i++) {
+    const auto& repfield = this->_internal_banks(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        InternalWriteMessage(4, repfield, repfield.GetCachedSize(), target, stream);
+  }
+
+  // repeated .city.economy.v2.Agent agents = 5 [json_name = "agents"];
   for (unsigned i = 0,
       n = static_cast<unsigned>(this->_internal_agents_size()); i < n; i++) {
     const auto& repfield = this->_internal_agents(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-        InternalWriteMessage(2, repfield, repfield.GetCachedSize(), target, stream);
+        InternalWriteMessage(5, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1689,14 +3202,35 @@ size_t EconomyEntities::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .city.economy.v2.Org orgs = 1 [json_name = "orgs"];
-  total_size += 1UL * this->_internal_orgs_size();
-  for (const auto& msg : this->_impl_.orgs_) {
+  // repeated .city.economy.v2.Firm firms = 1 [json_name = "firms"];
+  total_size += 1UL * this->_internal_firms_size();
+  for (const auto& msg : this->_impl_.firms_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // repeated .city.economy.v2.Agent agents = 2 [json_name = "agents"];
+  // repeated .city.economy.v2.NBS nbs = 2 [json_name = "nbs"];
+  total_size += 1UL * this->_internal_nbs_size();
+  for (const auto& msg : this->_impl_.nbs_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // repeated .city.economy.v2.Government governments = 3 [json_name = "governments"];
+  total_size += 1UL * this->_internal_governments_size();
+  for (const auto& msg : this->_impl_.governments_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // repeated .city.economy.v2.Bank banks = 4 [json_name = "banks"];
+  total_size += 1UL * this->_internal_banks_size();
+  for (const auto& msg : this->_impl_.banks_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // repeated .city.economy.v2.Agent agents = 5 [json_name = "agents"];
   total_size += 1UL * this->_internal_agents_size();
   for (const auto& msg : this->_impl_.agents_) {
     total_size +=
@@ -1721,7 +3255,10 @@ void EconomyEntities::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const 
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  _this->_impl_.orgs_.MergeFrom(from._impl_.orgs_);
+  _this->_impl_.firms_.MergeFrom(from._impl_.firms_);
+  _this->_impl_.nbs_.MergeFrom(from._impl_.nbs_);
+  _this->_impl_.governments_.MergeFrom(from._impl_.governments_);
+  _this->_impl_.banks_.MergeFrom(from._impl_.banks_);
   _this->_impl_.agents_.MergeFrom(from._impl_.agents_);
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -1740,14 +3277,17 @@ bool EconomyEntities::IsInitialized() const {
 void EconomyEntities::InternalSwap(EconomyEntities* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  _impl_.orgs_.InternalSwap(&other->_impl_.orgs_);
+  _impl_.firms_.InternalSwap(&other->_impl_.firms_);
+  _impl_.nbs_.InternalSwap(&other->_impl_.nbs_);
+  _impl_.governments_.InternalSwap(&other->_impl_.governments_);
+  _impl_.banks_.InternalSwap(&other->_impl_.banks_);
   _impl_.agents_.InternalSwap(&other->_impl_.agents_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata EconomyEntities::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2feconomy_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2feconomy_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2feconomy_2eproto[2]);
+      file_level_metadata_city_2feconomy_2fv2_2feconomy_2eproto[15]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
@@ -1755,9 +3295,61 @@ void EconomyEntities::InternalSwap(EconomyEntities* other) {
 }  // namespace economy
 }  // namespace city
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::city::economy::v2::Org*
-Arena::CreateMaybeMessage< ::city::economy::v2::Org >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::city::economy::v2::Org >(arena);
+template<> PROTOBUF_NOINLINE ::city::economy::v2::Firm*
+Arena::CreateMaybeMessage< ::city::economy::v2::Firm >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::economy::v2::Firm >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::economy::v2::NBS_NominalGdpEntry_DoNotUse*
+Arena::CreateMaybeMessage< ::city::economy::v2::NBS_NominalGdpEntry_DoNotUse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::economy::v2::NBS_NominalGdpEntry_DoNotUse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::economy::v2::NBS_RealGdpEntry_DoNotUse*
+Arena::CreateMaybeMessage< ::city::economy::v2::NBS_RealGdpEntry_DoNotUse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::economy::v2::NBS_RealGdpEntry_DoNotUse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::economy::v2::NBS_UnemploymentEntry_DoNotUse*
+Arena::CreateMaybeMessage< ::city::economy::v2::NBS_UnemploymentEntry_DoNotUse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::economy::v2::NBS_UnemploymentEntry_DoNotUse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::economy::v2::NBS_WagesEntry_DoNotUse*
+Arena::CreateMaybeMessage< ::city::economy::v2::NBS_WagesEntry_DoNotUse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::economy::v2::NBS_WagesEntry_DoNotUse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::economy::v2::NBS_PricesEntry_DoNotUse*
+Arena::CreateMaybeMessage< ::city::economy::v2::NBS_PricesEntry_DoNotUse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::economy::v2::NBS_PricesEntry_DoNotUse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::economy::v2::NBS_WorkingHoursEntry_DoNotUse*
+Arena::CreateMaybeMessage< ::city::economy::v2::NBS_WorkingHoursEntry_DoNotUse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::economy::v2::NBS_WorkingHoursEntry_DoNotUse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::economy::v2::NBS_DepressionEntry_DoNotUse*
+Arena::CreateMaybeMessage< ::city::economy::v2::NBS_DepressionEntry_DoNotUse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::economy::v2::NBS_DepressionEntry_DoNotUse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::economy::v2::NBS_ConsumptionCurrencyEntry_DoNotUse*
+Arena::CreateMaybeMessage< ::city::economy::v2::NBS_ConsumptionCurrencyEntry_DoNotUse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::economy::v2::NBS_ConsumptionCurrencyEntry_DoNotUse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::economy::v2::NBS_IncomeCurrencyEntry_DoNotUse*
+Arena::CreateMaybeMessage< ::city::economy::v2::NBS_IncomeCurrencyEntry_DoNotUse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::economy::v2::NBS_IncomeCurrencyEntry_DoNotUse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::economy::v2::NBS_LocusControlEntry_DoNotUse*
+Arena::CreateMaybeMessage< ::city::economy::v2::NBS_LocusControlEntry_DoNotUse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::economy::v2::NBS_LocusControlEntry_DoNotUse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::economy::v2::NBS*
+Arena::CreateMaybeMessage< ::city::economy::v2::NBS >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::economy::v2::NBS >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::economy::v2::Government*
+Arena::CreateMaybeMessage< ::city::economy::v2::Government >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::economy::v2::Government >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::economy::v2::Bank*
+Arena::CreateMaybeMessage< ::city::economy::v2::Bank >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::economy::v2::Bank >(arena);
 }
 template<> PROTOBUF_NOINLINE ::city::economy::v2::Agent*
 Arena::CreateMaybeMessage< ::city::economy::v2::Agent >(Arena* arena) {

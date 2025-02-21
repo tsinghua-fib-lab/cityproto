@@ -6,57 +6,81 @@
 import { proto3 } from "@bufbuild/protobuf";
 
 /**
- * 组织类型
+ * Firm 代表经济系统中的公司实体
  *
- * @generated from enum city.economy.v2.OrgType
+ * @generated from message city.economy.v2.Firm
  */
-export const OrgType = /*@__PURE__*/ proto3.makeEnum(
-  "city.economy.v2.OrgType",
-  [
-    {no: 0, name: "ORG_TYPE_UNSPECIFIED", localName: "UNSPECIFIED"},
-    {no: 1, name: "ORG_TYPE_NBS", localName: "NBS"},
-    {no: 2, name: "ORG_TYPE_FIRM", localName: "FIRM"},
-    {no: 3, name: "ORG_TYPE_BANK", localName: "BANK"},
-    {no: 4, name: "ORG_TYPE_GOVERNMENT", localName: "GOVERNMENT"},
-  ],
-);
-
-/**
- * 组织
- *
- * @generated from message city.economy.v2.Org
- */
-export const Org = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.Org",
+export const Firm = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.Firm",
   () => [
     { no: 1, name: "id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 2, name: "type", kind: "enum", T: proto3.getEnumType(OrgType) },
-    { no: 3, name: "nominal_gdp", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
-    { no: 4, name: "real_gdp", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
-    { no: 5, name: "unemployment", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
-    { no: 6, name: "wages", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
-    { no: 7, name: "prices", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
-    { no: 8, name: "inventory", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
-    { no: 9, name: "price", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
-    { no: 10, name: "currency", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
-    { no: 11, name: "interest_rate", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
-    { no: 12, name: "bracket_cutoffs", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
-    { no: 13, name: "bracket_rates", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
-    { no: 14, name: "demand", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
-    { no: 15, name: "sales", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
-    { no: 16, name: "employees", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
-    { no: 17, name: "citizens", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
-    { no: 18, name: "consumption_currency", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
-    { no: 19, name: "consumption_propensity", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
-    { no: 20, name: "income_currency", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
-    { no: 21, name: "depression", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
-    { no: 22, name: "locus_control", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
-    { no: 23, name: "working_hours", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
+    { no: 2, name: "employees", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 3, name: "price", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
+    { no: 4, name: "inventory", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 5, name: "demand", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
+    { no: 6, name: "sales", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
+    { no: 7, name: "currency", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
   ],
 );
 
 /**
- * 代理
+ * NBS (National Bureau of Statistics) 代表国家统计局
+ *
+ * @generated from message city.economy.v2.NBS
+ */
+export const NBS = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.NBS",
+  () => [
+    { no: 1, name: "id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "citizens", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 3, name: "nominal_gdp", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 2 /* ScalarType.FLOAT */} },
+    { no: 4, name: "real_gdp", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 2 /* ScalarType.FLOAT */} },
+    { no: 5, name: "unemployment", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 2 /* ScalarType.FLOAT */} },
+    { no: 6, name: "wages", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 2 /* ScalarType.FLOAT */} },
+    { no: 7, name: "prices", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 2 /* ScalarType.FLOAT */} },
+    { no: 8, name: "working_hours", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 2 /* ScalarType.FLOAT */} },
+    { no: 9, name: "depression", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 2 /* ScalarType.FLOAT */} },
+    { no: 10, name: "consumption_currency", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 2 /* ScalarType.FLOAT */} },
+    { no: 11, name: "income_currency", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 2 /* ScalarType.FLOAT */} },
+    { no: 12, name: "locus_control", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 2 /* ScalarType.FLOAT */} },
+    { no: 13, name: "citizens_agent_id", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 14, name: "currency", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
+  ],
+);
+
+/**
+ * Government 代表政府机构
+ *
+ * @generated from message city.economy.v2.Government
+ */
+export const Government = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.Government",
+  () => [
+    { no: 1, name: "id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "citizens", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 3, name: "bracket_cutoffs", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
+    { no: 4, name: "bracket_rates", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
+    { no: 5, name: "currency", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
+  ],
+);
+
+/**
+ * Bank 代表银行机构
+ *
+ * @generated from message city.economy.v2.Bank
+ */
+export const Bank = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.Bank",
+  () => [
+    { no: 1, name: "id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "citizens", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 3, name: "interest_rate", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
+    { no: 4, name: "currency", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
+  ],
+);
+
+/**
+ * Agent 代表经济系统中的个体代理（如居民个人）
  *
  * @generated from message city.economy.v2.Agent
  */
@@ -80,8 +104,11 @@ export const Agent = /*@__PURE__*/ proto3.makeMessageType(
 export const EconomyEntities = /*@__PURE__*/ proto3.makeMessageType(
   "city.economy.v2.EconomyEntities",
   () => [
-    { no: 1, name: "orgs", kind: "message", T: Org, repeated: true },
-    { no: 2, name: "agents", kind: "message", T: Agent, repeated: true },
+    { no: 1, name: "firms", kind: "message", T: Firm, repeated: true },
+    { no: 2, name: "nbs", kind: "message", T: NBS, repeated: true },
+    { no: 3, name: "governments", kind: "message", T: Government, repeated: true },
+    { no: 4, name: "banks", kind: "message", T: Bank, repeated: true },
+    { no: 5, name: "agents", kind: "message", T: Agent, repeated: true },
   ],
 );
 

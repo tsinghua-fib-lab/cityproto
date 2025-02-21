@@ -7,272 +7,342 @@ import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialM
 import { Message, proto3 } from "@bufbuild/protobuf";
 
 /**
- * 组织类型
+ * Firm 代表经济系统中的公司实体
  *
- * @generated from enum city.economy.v2.OrgType
+ * @generated from message city.economy.v2.Firm
  */
-export declare enum OrgType {
+export declare class Firm extends Message<Firm> {
   /**
-   * 未指定
-   *
-   * @generated from enum value: ORG_TYPE_UNSPECIFIED = 0;
-   */
-  UNSPECIFIED = 0,
-
-  /**
-   * 国家统计局
-   *
-   * @generated from enum value: ORG_TYPE_NBS = 1;
-   */
-  NBS = 1,
-
-  /**
-   * 公司
-   *
-   * @generated from enum value: ORG_TYPE_FIRM = 2;
-   */
-  FIRM = 2,
-
-  /**
-   * 银行
-   *
-   * @generated from enum value: ORG_TYPE_BANK = 3;
-   */
-  BANK = 3,
-
-  /**
-   * 政府
-   *
-   * @generated from enum value: ORG_TYPE_GOVERNMENT = 4;
-   */
-  GOVERNMENT = 4,
-}
-
-/**
- * 组织
- *
- * @generated from message city.economy.v2.Org
- */
-export declare class Org extends Message<Org> {
-  /**
-   * 组织ID
+   * 公司的唯一标识符
    *
    * @generated from field: int32 id = 1;
    */
   id: number;
 
   /**
-   * 组织类型
+   * 公司的员工ID列表
    *
-   * @generated from field: city.economy.v2.OrgType type = 2;
-   */
-  type: OrgType;
-
-  /**
-   * 名义GDP
-   *
-   * @generated from field: repeated float nominal_gdp = 3;
-   */
-  nominalGdp: number[];
-
-  /**
-   * 实际GDP
-   *
-   * @generated from field: repeated float real_gdp = 4;
-   */
-  realGdp: number[];
-
-  /**
-   * 失业率
-   *
-   * @generated from field: repeated float unemployment = 5;
-   */
-  unemployment: number[];
-
-  /**
-   * 工资
-   *
-   * @generated from field: repeated float wages = 6;
-   */
-  wages: number[];
-
-  /**
-   * 价格序列
-   *
-   * @generated from field: repeated float prices = 7;
-   */
-  prices: number[];
-
-  /**
-   * 库存
-   *
-   * @generated from field: optional int32 inventory = 8;
-   */
-  inventory?: number;
-
-  /**
-   * 价格
-   *
-   * @generated from field: optional float price = 9;
-   */
-  price?: number;
-
-  /**
-   * 货币
-   *
-   * @generated from field: optional float currency = 10;
-   */
-  currency?: number;
-
-  /**
-   * 利率
-   *
-   * @generated from field: optional float interest_rate = 11;
-   */
-  interestRate?: number;
-
-  /**
-   * 税率档位切分点
-   *
-   * @generated from field: repeated float bracket_cutoffs = 12;
-   */
-  bracketCutoffs: number[];
-
-  /**
-   * 税率档位
-   *
-   * @generated from field: repeated float bracket_rates = 13;
-   */
-  bracketRates: number[];
-
-  /**
-   * 总需求量
-   *
-   * @generated from field: optional int32 demand = 14;
-   */
-  demand?: number;
-
-  /**
-   * 总销售量
-   *
-   * @generated from field: optional int32 sales = 15;
-   */
-  sales?: number;
-
-  /**
-   * 员工列表
-   *
-   * @generated from field: repeated int32 employees = 16;
+   * @generated from field: repeated int32 employees = 2;
    */
   employees: number[];
 
   /**
-   * 公民列表
+   * 公司产品/服务的价格
    *
-   * @generated from field: repeated int32 citizens = 17;
+   * @generated from field: float price = 3;
+   */
+  price: number;
+
+  /**
+   * 公司当前的库存量
+   *
+   * @generated from field: int32 inventory = 4;
+   */
+  inventory: number;
+
+  /**
+   * 市场对公司产品/服务的需求量
+   *
+   * @generated from field: float demand = 5;
+   */
+  demand: number;
+
+  /**
+   * 公司的销售量
+   *
+   * @generated from field: float sales = 6;
+   */
+  sales: number;
+
+  /**
+   * 公司持有的货币量
+   *
+   * @generated from field: float currency = 7;
+   */
+  currency: number;
+
+  constructor(data?: PartialMessage<Firm>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.economy.v2.Firm";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Firm;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Firm;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Firm;
+
+  static equals(a: Firm | PlainMessage<Firm> | undefined, b: Firm | PlainMessage<Firm> | undefined): boolean;
+}
+
+/**
+ * NBS (National Bureau of Statistics) 代表国家统计局
+ *
+ * @generated from message city.economy.v2.NBS
+ */
+export declare class NBS extends Message<NBS> {
+  /**
+   * 统计局的唯一标识符
+   *
+   * @generated from field: int32 id = 1;
+   */
+  id: number;
+
+  /**
+   * 统计范围内的公民ID列表
+   *
+   * @generated from field: repeated int32 citizens = 2;
    */
   citizens: number[];
 
   /**
-   * 消费货币
+   * 名义GDP时间序列数据，key为时间点
    *
-   * @generated from field: repeated float consumption_currency = 18;
+   * @generated from field: map<string, float> nominal_gdp = 3;
    */
-  consumptionCurrency: number[];
+  nominalGdp: { [key: string]: number };
 
   /**
-   * 消费倾向
+   * 实际GDP时间序列数据，key为时间点
    *
-   * @generated from field: repeated float consumption_propensity = 19;
+   * @generated from field: map<string, float> real_gdp = 4;
    */
-  consumptionPropensity: number[];
+  realGdp: { [key: string]: number };
 
   /**
-   * 收入货币
+   * 失业率时间序列数据，key为时间点
    *
-   * @generated from field: repeated float income_currency = 20;
+   * @generated from field: map<string, float> unemployment = 5;
    */
-  incomeCurrency: number[];
+  unemployment: { [key: string]: number };
 
   /**
-   * 抑郁指数
+   * 工资水平时间序列数据，key为时间点
    *
-   * @generated from field: repeated float depression = 21;
+   * @generated from field: map<string, float> wages = 6;
    */
-  depression: number[];
+  wages: { [key: string]: number };
 
   /**
-   * 控制点
+   * 价格指数时间序列数据，key为时间点
    *
-   * @generated from field: repeated float locus_control = 22;
+   * @generated from field: map<string, float> prices = 7;
    */
-  locusControl: number[];
+  prices: { [key: string]: number };
 
   /**
-   * 工作时间
+   * 工作时间时间序列数据，key为时间点
    *
-   * @generated from field: repeated float working_hours = 23;
+   * @generated from field: map<string, float> working_hours = 8;
    */
-  workingHours: number[];
+  workingHours: { [key: string]: number };
 
-  constructor(data?: PartialMessage<Org>);
+  /**
+   * 抑郁指数时间序列数据，key为时间点
+   *
+   * @generated from field: map<string, float> depression = 9;
+   */
+  depression: { [key: string]: number };
+
+  /**
+   * 消费货币时间序列数据，key为时间点
+   *
+   * @generated from field: map<string, float> consumption_currency = 10;
+   */
+  consumptionCurrency: { [key: string]: number };
+
+  /**
+   * 收入货币时间序列数据，key为时间点
+   *
+   * @generated from field: map<string, float> income_currency = 11;
+   */
+  incomeCurrency: { [key: string]: number };
+
+  /**
+   * 控制点时间序列数据，key为时间点
+   *
+   * @generated from field: map<string, float> locus_control = 12;
+   */
+  locusControl: { [key: string]: number };
+
+  /**
+   * 公民代理ID列表
+   *
+   * @generated from field: repeated int32 citizens_agent_id = 13;
+   */
+  citizensAgentId: number[];
+
+  /**
+   * 统计局持有的货币量
+   *
+   * @generated from field: float currency = 14;
+   */
+  currency: number;
+
+  constructor(data?: PartialMessage<NBS>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "city.economy.v2.Org";
+  static readonly typeName = "city.economy.v2.NBS";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Org;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): NBS;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Org;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): NBS;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Org;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): NBS;
 
-  static equals(a: Org | PlainMessage<Org> | undefined, b: Org | PlainMessage<Org> | undefined): boolean;
+  static equals(a: NBS | PlainMessage<NBS> | undefined, b: NBS | PlainMessage<NBS> | undefined): boolean;
 }
 
 /**
- * 代理
+ * Government 代表政府机构
+ *
+ * @generated from message city.economy.v2.Government
+ */
+export declare class Government extends Message<Government> {
+  /**
+   * 政府的唯一标识符
+   *
+   * @generated from field: int32 id = 1;
+   */
+  id: number;
+
+  /**
+   * 管辖范围内的公民ID列表
+   *
+   * @generated from field: repeated int32 citizens = 2;
+   */
+  citizens: number[];
+
+  /**
+   * 税收档位的切分点列表
+   *
+   * @generated from field: repeated float bracket_cutoffs = 3;
+   */
+  bracketCutoffs: number[];
+
+  /**
+   * 对应每个档位的税率列表
+   *
+   * @generated from field: repeated float bracket_rates = 4;
+   */
+  bracketRates: number[];
+
+  /**
+   * 政府持有的货币量
+   *
+   * @generated from field: float currency = 5;
+   */
+  currency: number;
+
+  constructor(data?: PartialMessage<Government>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.economy.v2.Government";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Government;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Government;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Government;
+
+  static equals(a: Government | PlainMessage<Government> | undefined, b: Government | PlainMessage<Government> | undefined): boolean;
+}
+
+/**
+ * Bank 代表银行机构
+ *
+ * @generated from message city.economy.v2.Bank
+ */
+export declare class Bank extends Message<Bank> {
+  /**
+   * 银行的唯一标识符
+   *
+   * @generated from field: int32 id = 1;
+   */
+  id: number;
+
+  /**
+   * 银行客户（公民）ID列表
+   *
+   * @generated from field: repeated int32 citizens = 2;
+   */
+  citizens: number[];
+
+  /**
+   * 银行设定的利率
+   *
+   * @generated from field: float interest_rate = 3;
+   */
+  interestRate: number;
+
+  /**
+   * 银行持有的货币量
+   *
+   * @generated from field: float currency = 4;
+   */
+  currency: number;
+
+  constructor(data?: PartialMessage<Bank>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.economy.v2.Bank";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Bank;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Bank;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Bank;
+
+  static equals(a: Bank | PlainMessage<Bank> | undefined, b: Bank | PlainMessage<Bank> | undefined): boolean;
+}
+
+/**
+ * Agent 代表经济系统中的个体代理（如居民个人）
  *
  * @generated from message city.economy.v2.Agent
  */
 export declare class Agent extends Message<Agent> {
   /**
-   * 代理ID
+   * 代理的唯一标识符
    *
    * @generated from field: int32 id = 1;
    */
   id: number;
 
   /**
-   * 货币
+   * 代理持有的货币量
    *
    * @generated from field: optional float currency = 2;
    */
   currency?: number;
 
   /**
-   * 所属公司ID
+   * 代理所属的公司ID
    *
    * @generated from field: optional int32 firm_id = 3;
    */
   firmId?: number;
 
   /**
-   * 技能
+   * 代理的技能水平
    *
    * @generated from field: optional float skill = 4;
    */
   skill?: number;
 
   /**
-   * 消费
+   * 代理的消费量
    *
    * @generated from field: optional float consumption = 5;
    */
   consumption?: number;
 
   /**
-   * 收入
+   * 代理的收入
    *
    * @generated from field: optional float income = 6;
    */
@@ -300,16 +370,37 @@ export declare class Agent extends Message<Agent> {
  */
 export declare class EconomyEntities extends Message<EconomyEntities> {
   /**
-   * 组织列表
+   * 公司列表
    *
-   * @generated from field: repeated city.economy.v2.Org orgs = 1;
+   * @generated from field: repeated city.economy.v2.Firm firms = 1;
    */
-  orgs: Org[];
+  firms: Firm[];
+
+  /**
+   * 国家统计局列表
+   *
+   * @generated from field: repeated city.economy.v2.NBS nbs = 2;
+   */
+  nbs: NBS[];
+
+  /**
+   * 政府列表
+   *
+   * @generated from field: repeated city.economy.v2.Government governments = 3;
+   */
+  governments: Government[];
+
+  /**
+   * 银行列表
+   *
+   * @generated from field: repeated city.economy.v2.Bank banks = 4;
+   */
+  banks: Bank[];
 
   /**
    * 代理列表
    *
-   * @generated from field: repeated city.economy.v2.Agent agents = 2;
+   * @generated from field: repeated city.economy.v2.Agent agents = 5;
    */
   agents: Agent[];
 

@@ -4,100 +4,585 @@
 // @ts-nocheck
 
 import { proto3 } from "@bufbuild/protobuf";
-import { Agent, Org } from "./economy_pb.js";
+import { Agent, Bank, Firm, Government, NBS } from "./economy_pb.js";
 
 /**
- * 添加组织的请求消息
+ * Firm 相关消息
  *
- * @generated from message city.economy.v2.AddOrgRequest
+ * @generated from message city.economy.v2.AddFirmRequest
  */
-export const AddOrgRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.AddOrgRequest",
+export const AddFirmRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.AddFirmRequest",
   () => [
-    { no: 1, name: "org", kind: "message", T: Org },
+    { no: 1, name: "firm", kind: "message", T: Firm },
   ],
 );
 
 /**
- * 添加组织的响应消息
- *
- * @generated from message city.economy.v2.AddOrgResponse
+ * @generated from message city.economy.v2.AddFirmResponse
  */
-export const AddOrgResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.AddOrgResponse",
+export const AddFirmResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.AddFirmResponse",
   [],
 );
 
 /**
- * 移除组织的请求消息
- *
- * @generated from message city.economy.v2.RemoveOrgRequest
+ * @generated from message city.economy.v2.RemoveFirmRequest
  */
-export const RemoveOrgRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.RemoveOrgRequest",
+export const RemoveFirmRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.RemoveFirmRequest",
   () => [
-    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 1, name: "firm_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
   ],
 );
 
 /**
- * 移除组织的响应消息
- *
- * @generated from message city.economy.v2.RemoveOrgResponse
+ * @generated from message city.economy.v2.RemoveFirmResponse
  */
-export const RemoveOrgResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.RemoveOrgResponse",
+export const RemoveFirmResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.RemoveFirmResponse",
   [],
 );
 
 /**
- * 获取组织的请求消息
- *
- * @generated from message city.economy.v2.GetOrgRequest
+ * @generated from message city.economy.v2.GetFirmRequest
  */
-export const GetOrgRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.GetOrgRequest",
+export const GetFirmRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.GetFirmRequest",
   () => [
-    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 1, name: "firm_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
   ],
 );
 
 /**
- * 获取组织的响应消息
- *
- * @generated from message city.economy.v2.GetOrgResponse
+ * @generated from message city.economy.v2.GetFirmResponse
  */
-export const GetOrgResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.GetOrgResponse",
+export const GetFirmResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.GetFirmResponse",
   () => [
-    { no: 1, name: "org", kind: "message", T: Org },
+    { no: 1, name: "firm", kind: "message", T: Firm },
   ],
 );
 
 /**
- * 更新组织的请求消息
- *
- * @generated from message city.economy.v2.UpdateOrgRequest
+ * @generated from message city.economy.v2.UpdateFirmRequest
  */
-export const UpdateOrgRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.UpdateOrgRequest",
+export const UpdateFirmRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.UpdateFirmRequest",
   () => [
-    { no: 1, name: "org", kind: "message", T: Org },
+    { no: 1, name: "firm", kind: "message", T: Firm },
   ],
 );
 
 /**
- * 更新组织的响应消息
- *
- * @generated from message city.economy.v2.UpdateOrgResponse
+ * @generated from message city.economy.v2.UpdateFirmResponse
  */
-export const UpdateOrgResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.UpdateOrgResponse",
+export const UpdateFirmResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.UpdateFirmResponse",
   [],
 );
 
 /**
- * 添加代理的请求消息
+ * @generated from message city.economy.v2.ListFirmsRequest
+ */
+export const ListFirmsRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.ListFirmsRequest",
+  [],
+);
+
+/**
+ * @generated from message city.economy.v2.ListFirmsResponse
+ */
+export const ListFirmsResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.ListFirmsResponse",
+  () => [
+    { no: 1, name: "firms", kind: "message", T: Firm, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.DeltaUpdateFirmRequest
+ */
+export const DeltaUpdateFirmRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.DeltaUpdateFirmRequest",
+  () => [
+    { no: 1, name: "firm_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "delta_price", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
+    { no: 3, name: "delta_inventory", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
+    { no: 4, name: "delta_demand", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
+    { no: 5, name: "delta_sales", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
+    { no: 6, name: "delta_currency", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
+    { no: 7, name: "add_employees", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 8, name: "remove_employees", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.DeltaUpdateFirmResponse
+ */
+export const DeltaUpdateFirmResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.DeltaUpdateFirmResponse",
+  [],
+);
+
+/**
+ * Firm 批处理相关消息
+ *
+ * @generated from message city.economy.v2.BatchAddFirmRequest
+ */
+export const BatchAddFirmRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.BatchAddFirmRequest",
+  () => [
+    { no: 1, name: "firms", kind: "message", T: Firm, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.BatchAddFirmResponse
+ */
+export const BatchAddFirmResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.BatchAddFirmResponse",
+  () => [
+    { no: 1, name: "firm_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.BatchRemoveFirmRequest
+ */
+export const BatchRemoveFirmRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.BatchRemoveFirmRequest",
+  () => [
+    { no: 1, name: "firm_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.BatchRemoveFirmResponse
+ */
+export const BatchRemoveFirmResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.BatchRemoveFirmResponse",
+  [],
+);
+
+/**
+ * @generated from message city.economy.v2.BatchGetFirmRequest
+ */
+export const BatchGetFirmRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.BatchGetFirmRequest",
+  () => [
+    { no: 1, name: "firm_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.BatchGetFirmResponse
+ */
+export const BatchGetFirmResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.BatchGetFirmResponse",
+  () => [
+    { no: 1, name: "firms", kind: "message", T: Firm, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.BatchUpdateFirmRequest
+ */
+export const BatchUpdateFirmRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.BatchUpdateFirmRequest",
+  () => [
+    { no: 1, name: "firms", kind: "message", T: Firm, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.BatchUpdateFirmResponse
+ */
+export const BatchUpdateFirmResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.BatchUpdateFirmResponse",
+  [],
+);
+
+/**
+ * @generated from message city.economy.v2.BatchDeltaUpdateFirmRequest
+ */
+export const BatchDeltaUpdateFirmRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.BatchDeltaUpdateFirmRequest",
+  () => [
+    { no: 1, name: "updates", kind: "message", T: DeltaUpdateFirmRequest, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.BatchDeltaUpdateFirmResponse
+ */
+export const BatchDeltaUpdateFirmResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.BatchDeltaUpdateFirmResponse",
+  [],
+);
+
+/**
+ * NBS 相关消息
+ *
+ * @generated from message city.economy.v2.AddNBSRequest
+ */
+export const AddNBSRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.AddNBSRequest",
+  () => [
+    { no: 1, name: "nbs", kind: "message", T: NBS },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.AddNBSResponse
+ */
+export const AddNBSResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.AddNBSResponse",
+  [],
+);
+
+/**
+ * @generated from message city.economy.v2.RemoveNBSRequest
+ */
+export const RemoveNBSRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.RemoveNBSRequest",
+  () => [
+    { no: 1, name: "nbs_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.RemoveNBSResponse
+ */
+export const RemoveNBSResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.RemoveNBSResponse",
+  [],
+);
+
+/**
+ * @generated from message city.economy.v2.GetNBSRequest
+ */
+export const GetNBSRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.GetNBSRequest",
+  () => [
+    { no: 1, name: "nbs_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.GetNBSResponse
+ */
+export const GetNBSResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.GetNBSResponse",
+  () => [
+    { no: 1, name: "nbs", kind: "message", T: NBS },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.UpdateNBSRequest
+ */
+export const UpdateNBSRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.UpdateNBSRequest",
+  () => [
+    { no: 1, name: "nbs", kind: "message", T: NBS },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.UpdateNBSResponse
+ */
+export const UpdateNBSResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.UpdateNBSResponse",
+  [],
+);
+
+/**
+ * @generated from message city.economy.v2.ListNBSRequest
+ */
+export const ListNBSRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.ListNBSRequest",
+  [],
+);
+
+/**
+ * @generated from message city.economy.v2.ListNBSResponse
+ */
+export const ListNBSResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.ListNBSResponse",
+  () => [
+    { no: 1, name: "nbs_list", kind: "message", T: NBS, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.DeltaUpdateNBSRequest
+ */
+export const DeltaUpdateNBSRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.DeltaUpdateNBSRequest",
+  () => [
+    { no: 1, name: "nbs_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "delta_nominal_gdp", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 2 /* ScalarType.FLOAT */} },
+    { no: 3, name: "delta_real_gdp", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 2 /* ScalarType.FLOAT */} },
+    { no: 4, name: "delta_unemployment", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 2 /* ScalarType.FLOAT */} },
+    { no: 5, name: "delta_wages", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 2 /* ScalarType.FLOAT */} },
+    { no: 6, name: "delta_prices", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 2 /* ScalarType.FLOAT */} },
+    { no: 7, name: "delta_working_hours", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 2 /* ScalarType.FLOAT */} },
+    { no: 8, name: "delta_depression", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 2 /* ScalarType.FLOAT */} },
+    { no: 9, name: "delta_consumption_currency", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 2 /* ScalarType.FLOAT */} },
+    { no: 10, name: "delta_income_currency", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 2 /* ScalarType.FLOAT */} },
+    { no: 11, name: "delta_locus_control", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 2 /* ScalarType.FLOAT */} },
+    { no: 12, name: "delta_currency", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
+    { no: 13, name: "add_citizens", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 14, name: "remove_citizens", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 15, name: "add_citizens_agent_id", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 16, name: "remove_citizens_agent_id", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.DeltaUpdateNBSResponse
+ */
+export const DeltaUpdateNBSResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.DeltaUpdateNBSResponse",
+  [],
+);
+
+/**
+ * Government 相关消息
+ *
+ * @generated from message city.economy.v2.AddGovernmentRequest
+ */
+export const AddGovernmentRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.AddGovernmentRequest",
+  () => [
+    { no: 1, name: "government", kind: "message", T: Government },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.AddGovernmentResponse
+ */
+export const AddGovernmentResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.AddGovernmentResponse",
+  [],
+);
+
+/**
+ * @generated from message city.economy.v2.RemoveGovernmentRequest
+ */
+export const RemoveGovernmentRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.RemoveGovernmentRequest",
+  () => [
+    { no: 1, name: "government_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.RemoveGovernmentResponse
+ */
+export const RemoveGovernmentResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.RemoveGovernmentResponse",
+  [],
+);
+
+/**
+ * @generated from message city.economy.v2.GetGovernmentRequest
+ */
+export const GetGovernmentRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.GetGovernmentRequest",
+  () => [
+    { no: 1, name: "government_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.GetGovernmentResponse
+ */
+export const GetGovernmentResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.GetGovernmentResponse",
+  () => [
+    { no: 1, name: "government", kind: "message", T: Government },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.UpdateGovernmentRequest
+ */
+export const UpdateGovernmentRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.UpdateGovernmentRequest",
+  () => [
+    { no: 1, name: "government", kind: "message", T: Government },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.UpdateGovernmentResponse
+ */
+export const UpdateGovernmentResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.UpdateGovernmentResponse",
+  [],
+);
+
+/**
+ * @generated from message city.economy.v2.ListGovernmentsRequest
+ */
+export const ListGovernmentsRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.ListGovernmentsRequest",
+  [],
+);
+
+/**
+ * @generated from message city.economy.v2.ListGovernmentsResponse
+ */
+export const ListGovernmentsResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.ListGovernmentsResponse",
+  () => [
+    { no: 1, name: "governments", kind: "message", T: Government, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.DeltaUpdateGovernmentRequest
+ */
+export const DeltaUpdateGovernmentRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.DeltaUpdateGovernmentRequest",
+  () => [
+    { no: 1, name: "government_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "delta_bracket_cutoffs", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
+    { no: 3, name: "delta_bracket_rates", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
+    { no: 4, name: "delta_currency", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
+    { no: 5, name: "add_citizens", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 6, name: "remove_citizens", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.DeltaUpdateGovernmentResponse
+ */
+export const DeltaUpdateGovernmentResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.DeltaUpdateGovernmentResponse",
+  [],
+);
+
+/**
+ * Bank 相关消息
+ *
+ * @generated from message city.economy.v2.AddBankRequest
+ */
+export const AddBankRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.AddBankRequest",
+  () => [
+    { no: 1, name: "bank", kind: "message", T: Bank },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.AddBankResponse
+ */
+export const AddBankResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.AddBankResponse",
+  [],
+);
+
+/**
+ * @generated from message city.economy.v2.RemoveBankRequest
+ */
+export const RemoveBankRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.RemoveBankRequest",
+  () => [
+    { no: 1, name: "bank_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.RemoveBankResponse
+ */
+export const RemoveBankResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.RemoveBankResponse",
+  [],
+);
+
+/**
+ * @generated from message city.economy.v2.GetBankRequest
+ */
+export const GetBankRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.GetBankRequest",
+  () => [
+    { no: 1, name: "bank_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.GetBankResponse
+ */
+export const GetBankResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.GetBankResponse",
+  () => [
+    { no: 1, name: "bank", kind: "message", T: Bank },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.UpdateBankRequest
+ */
+export const UpdateBankRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.UpdateBankRequest",
+  () => [
+    { no: 1, name: "bank", kind: "message", T: Bank },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.UpdateBankResponse
+ */
+export const UpdateBankResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.UpdateBankResponse",
+  [],
+);
+
+/**
+ * @generated from message city.economy.v2.ListBanksRequest
+ */
+export const ListBanksRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.ListBanksRequest",
+  [],
+);
+
+/**
+ * @generated from message city.economy.v2.ListBanksResponse
+ */
+export const ListBanksResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.ListBanksResponse",
+  () => [
+    { no: 1, name: "banks", kind: "message", T: Bank, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.DeltaUpdateBankRequest
+ */
+export const DeltaUpdateBankRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.DeltaUpdateBankRequest",
+  () => [
+    { no: 1, name: "bank_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "delta_interest_rate", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
+    { no: 3, name: "delta_currency", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
+    { no: 4, name: "add_citizens", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 5, name: "remove_citizens", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.DeltaUpdateBankResponse
+ */
+export const DeltaUpdateBankResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.DeltaUpdateBankResponse",
+  [],
+);
+
+/**
+ * Agent 相关消息
  *
  * @generated from message city.economy.v2.AddAgentRequest
  */
@@ -109,8 +594,6 @@ export const AddAgentRequest = /*@__PURE__*/ proto3.makeMessageType(
 );
 
 /**
- * 添加代理的响应消息
- *
  * @generated from message city.economy.v2.AddAgentResponse
  */
 export const AddAgentResponse = /*@__PURE__*/ proto3.makeMessageType(
@@ -119,8 +602,6 @@ export const AddAgentResponse = /*@__PURE__*/ proto3.makeMessageType(
 );
 
 /**
- * 移除代理的请求消息
- *
  * @generated from message city.economy.v2.RemoveAgentRequest
  */
 export const RemoveAgentRequest = /*@__PURE__*/ proto3.makeMessageType(
@@ -131,8 +612,6 @@ export const RemoveAgentRequest = /*@__PURE__*/ proto3.makeMessageType(
 );
 
 /**
- * 移除代理的响应消息
- *
  * @generated from message city.economy.v2.RemoveAgentResponse
  */
 export const RemoveAgentResponse = /*@__PURE__*/ proto3.makeMessageType(
@@ -141,8 +620,6 @@ export const RemoveAgentResponse = /*@__PURE__*/ proto3.makeMessageType(
 );
 
 /**
- * 获取代理的请求消息
- *
  * @generated from message city.economy.v2.GetAgentRequest
  */
 export const GetAgentRequest = /*@__PURE__*/ proto3.makeMessageType(
@@ -153,8 +630,6 @@ export const GetAgentRequest = /*@__PURE__*/ proto3.makeMessageType(
 );
 
 /**
- * 获取代理的响应消息
- *
  * @generated from message city.economy.v2.GetAgentResponse
  */
 export const GetAgentResponse = /*@__PURE__*/ proto3.makeMessageType(
@@ -165,8 +640,6 @@ export const GetAgentResponse = /*@__PURE__*/ proto3.makeMessageType(
 );
 
 /**
- * 更新代理的请求消息
- *
  * @generated from message city.economy.v2.UpdateAgentRequest
  */
 export const UpdateAgentRequest = /*@__PURE__*/ proto3.makeMessageType(
@@ -177,8 +650,6 @@ export const UpdateAgentRequest = /*@__PURE__*/ proto3.makeMessageType(
 );
 
 /**
- * 更新代理的响应消息
- *
  * @generated from message city.economy.v2.UpdateAgentResponse
  */
 export const UpdateAgentResponse = /*@__PURE__*/ proto3.makeMessageType(
@@ -187,231 +658,24 @@ export const UpdateAgentResponse = /*@__PURE__*/ proto3.makeMessageType(
 );
 
 /**
- * 计算税收的请求消息
- *
- * @generated from message city.economy.v2.CalculateTaxesDueRequest
+ * @generated from message city.economy.v2.ListAgentsRequest
  */
-export const CalculateTaxesDueRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.CalculateTaxesDueRequest",
-  () => [
-    { no: 1, name: "government_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 2, name: "agent_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
-    { no: 3, name: "incomes", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
-    { no: 4, name: "enable_redistribution", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
-  ],
-);
-
-/**
- * 计算税收的响应消息
- *
- * @generated from message city.economy.v2.CalculateTaxesDueResponse
- */
-export const CalculateTaxesDueResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.CalculateTaxesDueResponse",
-  () => [
-    { no: 1, name: "taxes_due", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
-    { no: 2, name: "updated_incomes", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
-  ],
-);
-
-/**
- * 计算消费的请求消息
- *
- * @generated from message city.economy.v2.CalculateConsumptionRequest
- */
-export const CalculateConsumptionRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.CalculateConsumptionRequest",
-  () => [
-    { no: 1, name: "firm_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
-    { no: 2, name: "agent_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 3, name: "demands", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
-    { no: 4, name: "consumption_accumulation", kind: "scalar", T: 8 /* ScalarType.BOOL */, opt: true },
-  ],
-);
-
-/**
- * 计算消费的响应消息
- *
- * @generated from message city.economy.v2.CalculateConsumptionResponse
- */
-export const CalculateConsumptionResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.CalculateConsumptionResponse",
-  () => [
-    { no: 1, name: "actual_consumption", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
-    { no: 2, name: "success", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
-  ],
-);
-
-/**
- * 计算利息的请求消息
- *
- * @generated from message city.economy.v2.CalculateInterestRequest
- */
-export const CalculateInterestRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.CalculateInterestRequest",
-  () => [
-    { no: 1, name: "bank_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 2, name: "agent_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
-  ],
-);
-
-/**
- * 计算利息的响应消息
- *
- * @generated from message city.economy.v2.CalculateInterestResponse
- */
-export const CalculateInterestResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.CalculateInterestResponse",
-  () => [
-    { no: 1, name: "total_interest", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
-    { no: 2, name: "updated_currencies", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
-  ],
-);
-
-/**
- * 计算实际GDP的请求消息
- *
- * @generated from message city.economy.v2.CalculateRealGDPRequest
- */
-export const CalculateRealGDPRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.CalculateRealGDPRequest",
-  () => [
-    { no: 1, name: "nbs_agent_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-  ],
-);
-
-/**
- * 计算实际GDP的响应消息
- *
- * @generated from message city.economy.v2.CalculateRealGDPResponse
- */
-export const CalculateRealGDPResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.CalculateRealGDPResponse",
-  () => [
-    { no: 1, name: "real_gdp", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
-  ],
-);
-
-/**
- * 批量获取的请求消息
- *
- * @generated from message city.economy.v2.BatchGetRequest
- */
-export const BatchGetRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.BatchGetRequest",
-  () => [
-    { no: 1, name: "ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
-    { no: 2, name: "type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-  ],
-);
-
-/**
- * 批量获取的响应消息
- *
- * @generated from message city.economy.v2.BatchGetResponse
- */
-export const BatchGetResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.BatchGetResponse",
-  () => [
-    { no: 1, name: "orgs", kind: "message", T: Org, repeated: true },
-    { no: 2, name: "agents", kind: "message", T: Agent, repeated: true },
-  ],
-);
-
-/**
- * 批量更新的请求消息
- *
- * @generated from message city.economy.v2.BatchUpdateRequest
- */
-export const BatchUpdateRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.BatchUpdateRequest",
-  () => [
-    { no: 1, name: "orgs", kind: "message", T: Org, repeated: true },
-    { no: 2, name: "agents", kind: "message", T: Agent, repeated: true },
-  ],
-);
-
-/**
- * 批量更新的响应消息
- *
- * @generated from message city.economy.v2.BatchUpdateResponse
- */
-export const BatchUpdateResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.BatchUpdateResponse",
+export const ListAgentsRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.ListAgentsRequest",
   [],
 );
 
 /**
- * 批量设置的请求消息
- *
- * @generated from message city.economy.v2.BatchSetRequest
+ * @generated from message city.economy.v2.ListAgentsResponse
  */
-export const BatchSetRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.BatchSetRequest",
+export const ListAgentsResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.ListAgentsResponse",
   () => [
-    { no: 1, name: "orgs", kind: "message", T: Org, repeated: true },
-    { no: 2, name: "agents", kind: "message", T: Agent, repeated: true },
+    { no: 1, name: "agents", kind: "message", T: Agent, repeated: true },
   ],
 );
 
 /**
- * 批量设置的响应消息
- *
- * @generated from message city.economy.v2.BatchSetResponse
- */
-export const BatchSetResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.BatchSetResponse",
-  [],
-);
-
-/**
- * 组织增量更新的请求消息
- *
- * @generated from message city.economy.v2.DeltaUpdateOrgRequest
- */
-export const DeltaUpdateOrgRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.DeltaUpdateOrgRequest",
-  () => [
-    { no: 1, name: "org_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 2, name: "delta_nominal_gdp", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
-    { no: 3, name: "delta_real_gdp", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
-    { no: 4, name: "delta_unemployment", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
-    { no: 5, name: "delta_wages", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
-    { no: 6, name: "delta_prices", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
-    { no: 7, name: "delta_inventory", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
-    { no: 8, name: "delta_price", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
-    { no: 9, name: "delta_currency", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
-    { no: 10, name: "delta_interest_rate", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
-    { no: 11, name: "delta_bracket_cutoffs", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
-    { no: 12, name: "delta_bracket_rates", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
-    { no: 13, name: "delta_demand", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
-    { no: 14, name: "delta_sales", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
-    { no: 15, name: "add_employees", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
-    { no: 16, name: "remove_employees", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
-    { no: 17, name: "add_citizens", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
-    { no: 18, name: "remove_citizens", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
-    { no: 19, name: "delta_consumption_currency", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
-    { no: 20, name: "delta_consumption_propensity", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
-    { no: 21, name: "delta_income_currency", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
-    { no: 22, name: "delta_depression", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
-    { no: 23, name: "delta_locus_control", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
-    { no: 24, name: "delta_working_hours", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
-  ],
-);
-
-/**
- * 组织增量更新的响应消息
- *
- * @generated from message city.economy.v2.DeltaUpdateOrgResponse
- */
-export const DeltaUpdateOrgResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.DeltaUpdateOrgResponse",
-  [],
-);
-
-/**
- * 代理增量更新的请求消息
- *
  * @generated from message city.economy.v2.DeltaUpdateAgentRequest
  */
 export const DeltaUpdateAgentRequest = /*@__PURE__*/ proto3.makeMessageType(
@@ -427,8 +691,6 @@ export const DeltaUpdateAgentRequest = /*@__PURE__*/ proto3.makeMessageType(
 );
 
 /**
- * 代理增量更新的响应消息
- *
  * @generated from message city.economy.v2.DeltaUpdateAgentResponse
  */
 export const DeltaUpdateAgentResponse = /*@__PURE__*/ proto3.makeMessageType(
@@ -437,30 +699,195 @@ export const DeltaUpdateAgentResponse = /*@__PURE__*/ proto3.makeMessageType(
 );
 
 /**
- * 批量增量更新的请求消息
+ * Agent 批处理相关消息
  *
- * @generated from message city.economy.v2.BatchDeltaUpdateRequest
+ * @generated from message city.economy.v2.BatchAddAgentRequest
  */
-export const BatchDeltaUpdateRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.BatchDeltaUpdateRequest",
+export const BatchAddAgentRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.BatchAddAgentRequest",
   () => [
-    { no: 1, name: "orgs", kind: "message", T: DeltaUpdateOrgRequest, repeated: true },
-    { no: 2, name: "agents", kind: "message", T: DeltaUpdateAgentRequest, repeated: true },
+    { no: 1, name: "agents", kind: "message", T: Agent, repeated: true },
   ],
 );
 
 /**
- * 批量增量更新的响应消息
- *
- * @generated from message city.economy.v2.BatchDeltaUpdateResponse
+ * @generated from message city.economy.v2.BatchAddAgentResponse
  */
-export const BatchDeltaUpdateResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.BatchDeltaUpdateResponse",
+export const BatchAddAgentResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.BatchAddAgentResponse",
+  () => [
+    { no: 1, name: "agent_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.BatchRemoveAgentRequest
+ */
+export const BatchRemoveAgentRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.BatchRemoveAgentRequest",
+  () => [
+    { no: 1, name: "agent_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.BatchRemoveAgentResponse
+ */
+export const BatchRemoveAgentResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.BatchRemoveAgentResponse",
   [],
 );
 
 /**
- * 保存经济实体的请求消息
+ * @generated from message city.economy.v2.BatchGetAgentRequest
+ */
+export const BatchGetAgentRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.BatchGetAgentRequest",
+  () => [
+    { no: 1, name: "agent_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.BatchGetAgentResponse
+ */
+export const BatchGetAgentResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.BatchGetAgentResponse",
+  () => [
+    { no: 1, name: "agents", kind: "message", T: Agent, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.BatchUpdateAgentRequest
+ */
+export const BatchUpdateAgentRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.BatchUpdateAgentRequest",
+  () => [
+    { no: 1, name: "agents", kind: "message", T: Agent, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.BatchUpdateAgentResponse
+ */
+export const BatchUpdateAgentResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.BatchUpdateAgentResponse",
+  [],
+);
+
+/**
+ * @generated from message city.economy.v2.BatchDeltaUpdateAgentRequest
+ */
+export const BatchDeltaUpdateAgentRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.BatchDeltaUpdateAgentRequest",
+  () => [
+    { no: 1, name: "updates", kind: "message", T: DeltaUpdateAgentRequest, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.BatchDeltaUpdateAgentResponse
+ */
+export const BatchDeltaUpdateAgentResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.BatchDeltaUpdateAgentResponse",
+  [],
+);
+
+/**
+ * 计算相关消息
+ *
+ * @generated from message city.economy.v2.CalculateTaxesDueRequest
+ */
+export const CalculateTaxesDueRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.CalculateTaxesDueRequest",
+  () => [
+    { no: 1, name: "government_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "agent_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 3, name: "incomes", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
+    { no: 4, name: "enable_redistribution", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.CalculateTaxesDueResponse
+ */
+export const CalculateTaxesDueResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.CalculateTaxesDueResponse",
+  () => [
+    { no: 1, name: "taxes_due", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
+    { no: 2, name: "updated_incomes", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.CalculateConsumptionRequest
+ */
+export const CalculateConsumptionRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.CalculateConsumptionRequest",
+  () => [
+    { no: 1, name: "firm_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 2, name: "agent_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "demands", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 4, name: "consumption_accumulation", kind: "scalar", T: 8 /* ScalarType.BOOL */, opt: true },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.CalculateConsumptionResponse
+ */
+export const CalculateConsumptionResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.CalculateConsumptionResponse",
+  () => [
+    { no: 1, name: "actual_consumption", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
+    { no: 2, name: "success", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.CalculateInterestRequest
+ */
+export const CalculateInterestRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.CalculateInterestRequest",
+  () => [
+    { no: 1, name: "bank_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "agent_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.CalculateInterestResponse
+ */
+export const CalculateInterestResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.CalculateInterestResponse",
+  () => [
+    { no: 1, name: "total_interest", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
+    { no: 2, name: "updated_currencies", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.CalculateRealGDPRequest
+ */
+export const CalculateRealGDPRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.CalculateRealGDPRequest",
+  () => [
+    { no: 1, name: "nbs_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.CalculateRealGDPResponse
+ */
+export const CalculateRealGDPResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.CalculateRealGDPResponse",
+  () => [
+    { no: 1, name: "real_gdp", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
+  ],
+);
+
+/**
+ * 系统状态相关消息
  *
  * @generated from message city.economy.v2.SaveEconomyEntitiesRequest
  */
@@ -472,21 +899,20 @@ export const SaveEconomyEntitiesRequest = /*@__PURE__*/ proto3.makeMessageType(
 );
 
 /**
- * 保存经济实体的响应消息
- *
  * @generated from message city.economy.v2.SaveEconomyEntitiesResponse
  */
 export const SaveEconomyEntitiesResponse = /*@__PURE__*/ proto3.makeMessageType(
   "city.economy.v2.SaveEconomyEntitiesResponse",
   () => [
-    { no: 1, name: "org_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
-    { no: 2, name: "agent_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 1, name: "firm_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 2, name: "nbs_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 3, name: "government_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 4, name: "bank_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 5, name: "agent_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
   ],
 );
 
 /**
- * 加载经济实体的请求消息
- *
  * @generated from message city.economy.v2.LoadEconomyEntitiesRequest
  */
 export const LoadEconomyEntitiesRequest = /*@__PURE__*/ proto3.makeMessageType(
@@ -497,15 +923,16 @@ export const LoadEconomyEntitiesRequest = /*@__PURE__*/ proto3.makeMessageType(
 );
 
 /**
- * 加载经济实体的响应消息
- *
  * @generated from message city.economy.v2.LoadEconomyEntitiesResponse
  */
 export const LoadEconomyEntitiesResponse = /*@__PURE__*/ proto3.makeMessageType(
   "city.economy.v2.LoadEconomyEntitiesResponse",
   () => [
-    { no: 1, name: "org_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
-    { no: 2, name: "agent_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 1, name: "firm_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 2, name: "nbs_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 3, name: "government_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 4, name: "bank_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 5, name: "agent_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
   ],
 );
 

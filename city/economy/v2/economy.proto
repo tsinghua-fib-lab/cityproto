@@ -2,90 +2,108 @@ syntax = "proto3";
 
 package city.economy.v2;
 
-// 组织类型
-enum OrgType {
-  // 未指定
-  ORG_TYPE_UNSPECIFIED = 0;
-  // 国家统计局
-  ORG_TYPE_NBS = 1;
-  // 公司
-  ORG_TYPE_FIRM = 2;
-  // 银行
-  ORG_TYPE_BANK = 3;
-  // 政府
-  ORG_TYPE_GOVERNMENT = 4;
-}
-
-// 组织
-message Org {
-  // 组织ID
+// Firm 代表经济系统中的公司实体
+message Firm {
+  // 公司的唯一标识符
   int32 id = 1;
-  // 组织类型
-  OrgType type = 2;
-  // 名义GDP
-  repeated float nominal_gdp = 3;
-  // 实际GDP
-  repeated float real_gdp = 4;
-  // 失业率
-  repeated float unemployment = 5;
-  // 工资
-  repeated float wages = 6;
-  // 价格序列
-  repeated float prices = 7;
-  // 库存
-  optional int32 inventory = 8;
-  // 价格
-  optional float price = 9;
-  // 货币
-  optional float currency = 10;
-  // 利率
-  optional float interest_rate = 11;
-  // 税率档位切分点
-  repeated float bracket_cutoffs = 12;
-  // 税率档位
-  repeated float bracket_rates = 13;
-  // 总需求量
-  optional int32 demand = 14;
-  // 总销售量
-  optional int32 sales = 15;
-  // 员工列表
-  repeated int32 employees = 16;
-  // 公民列表
-  repeated int32 citizens = 17;
-  // 消费货币
-  repeated float consumption_currency = 18;
-  // 消费倾向
-  repeated float consumption_propensity = 19;
-  // 收入货币
-  repeated float income_currency = 20;
-  // 抑郁指数
-  repeated float depression = 21;
-  // 控制点
-  repeated float locus_control = 22;
-  // 工作时间
-  repeated float working_hours = 23;
+  // 公司的员工ID列表
+  repeated int32 employees = 2;
+  // 公司产品/服务的价格
+  float price = 3;
+  // 公司当前的库存量
+  int32 inventory = 4;
+  // 市场对公司产品/服务的需求量
+  float demand = 5;
+  // 公司的销售量
+  float sales = 6;
+  // 公司持有的货币量
+  float currency = 7;
 }
 
-// 代理
+// NBS (National Bureau of Statistics) 代表国家统计局
+message NBS {
+  // 统计局的唯一标识符
+  int32 id = 1;
+  // 统计范围内的公民ID列表
+  repeated int32 citizens = 2;
+  // 名义GDP时间序列数据，key为时间点
+  map<string, float> nominal_gdp = 3;
+  // 实际GDP时间序列数据，key为时间点
+  map<string, float> real_gdp = 4;
+  // 失业率时间序列数据，key为时间点
+  map<string, float> unemployment = 5;
+  // 工资水平时间序列数据，key为时间点
+  map<string, float> wages = 6;
+  // 价格指数时间序列数据，key为时间点
+  map<string, float> prices = 7;
+  // 工作时间时间序列数据，key为时间点
+  map<string, float> working_hours = 8;
+  // 抑郁指数时间序列数据，key为时间点
+  map<string, float> depression = 9;
+  // 消费货币时间序列数据，key为时间点
+  map<string, float> consumption_currency = 10;
+  // 收入货币时间序列数据，key为时间点
+  map<string, float> income_currency = 11;
+  // 控制点时间序列数据，key为时间点
+  map<string, float> locus_control = 12;
+  // 公民代理ID列表
+  repeated int32 citizens_agent_id = 13;
+  // 统计局持有的货币量
+  float currency = 14;
+}
+
+// Government 代表政府机构
+message Government {
+  // 政府的唯一标识符
+  int32 id = 1;
+  // 管辖范围内的公民ID列表
+  repeated int32 citizens = 2;
+  // 税收档位的切分点列表
+  repeated float bracket_cutoffs = 3;
+  // 对应每个档位的税率列表
+  repeated float bracket_rates = 4;
+  // 政府持有的货币量
+  float currency = 5;
+}
+
+// Bank 代表银行机构
+message Bank {
+  // 银行的唯一标识符
+  int32 id = 1;
+  // 银行客户（公民）ID列表
+  repeated int32 citizens = 2;
+  // 银行设定的利率
+  float interest_rate = 3;
+  // 银行持有的货币量
+  float currency = 4;
+}
+
+// Agent 代表经济系统中的个体代理（如居民个人）
 message Agent {
-  // 代理ID
+  // 代理的唯一标识符
   int32 id = 1;
-  // 货币
+  // 代理持有的货币量
   optional float currency = 2;
-  // 所属公司ID
+  // 代理所属的公司ID
   optional int32 firm_id = 3;
-  // 技能
+  // 代理的技能水平
   optional float skill = 4;
-  // 消费
+  // 代理的消费量
   optional float consumption = 5;
-  // 收入
+  // 代理的收入
   optional float income = 6;
 }
 
 // 经济实体
 message EconomyEntities {
-  // 组织列表
-  repeated Org orgs = 1;
+  // 公司列表
+  repeated Firm firms = 1;
+  // 国家统计局列表
+  repeated NBS nbs = 2;
+  // 政府列表
+  repeated Government governments = 3;
+  // 银行列表
+  repeated Bank banks = 4;
   // 代理列表
-  repeated Agent agents = 2;
+  repeated Agent agents = 5;
 }

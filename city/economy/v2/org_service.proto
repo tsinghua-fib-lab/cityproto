@@ -7,352 +7,432 @@ import "city/economy/v2/economy.proto";
 // OrgService 提供了经济系统中组织和代理的管理接口
 // 包括基本的CRUD操作、批量操作、增量更新和各种计算功能
 service OrgService {
-  // AddOrg 添加一个新的组织到系统中
-  rpc AddOrg(AddOrgRequest) returns (AddOrgResponse);
-  
-  // RemoveOrg 从系统中移除指定的组织
-  rpc RemoveOrg(RemoveOrgRequest) returns (RemoveOrgResponse);
-  
-  // GetOrg 获取指定组织的完整信息
-  rpc GetOrg(GetOrgRequest) returns (GetOrgResponse);
-  
-  // UpdateOrg 更新指定组织的信息
-  rpc UpdateOrg(UpdateOrgRequest) returns (UpdateOrgResponse);
-  
-  // AddAgent 添加一个新的代理到系统中
+  // Firm 相关操作
+  rpc AddFirm(AddFirmRequest) returns (AddFirmResponse);
+  rpc RemoveFirm(RemoveFirmRequest) returns (RemoveFirmResponse);
+  rpc GetFirm(GetFirmRequest) returns (GetFirmResponse);
+  rpc UpdateFirm(UpdateFirmRequest) returns (UpdateFirmResponse);
+  rpc ListFirms(ListFirmsRequest) returns (ListFirmsResponse);
+  rpc DeltaUpdateFirm(DeltaUpdateFirmRequest) returns (DeltaUpdateFirmResponse);
+  rpc BatchAddFirm(BatchAddFirmRequest) returns (BatchAddFirmResponse);
+  rpc BatchRemoveFirm(BatchRemoveFirmRequest) returns (BatchRemoveFirmResponse);
+  rpc BatchGetFirm(BatchGetFirmRequest) returns (BatchGetFirmResponse);
+  rpc BatchUpdateFirm(BatchUpdateFirmRequest) returns (BatchUpdateFirmResponse);
+  rpc BatchDeltaUpdateFirm(BatchDeltaUpdateFirmRequest) returns (BatchDeltaUpdateFirmResponse);
+
+  // NBS 相关操作
+  rpc AddNBS(AddNBSRequest) returns (AddNBSResponse);
+  rpc RemoveNBS(RemoveNBSRequest) returns (RemoveNBSResponse);
+  rpc GetNBS(GetNBSRequest) returns (GetNBSResponse);
+  rpc UpdateNBS(UpdateNBSRequest) returns (UpdateNBSResponse);
+  rpc ListNBS(ListNBSRequest) returns (ListNBSResponse);
+  rpc DeltaUpdateNBS(DeltaUpdateNBSRequest) returns (DeltaUpdateNBSResponse);
+
+  // Government 相关操作
+  rpc AddGovernment(AddGovernmentRequest) returns (AddGovernmentResponse);
+  rpc RemoveGovernment(RemoveGovernmentRequest) returns (RemoveGovernmentResponse);
+  rpc GetGovernment(GetGovernmentRequest) returns (GetGovernmentResponse);
+  rpc UpdateGovernment(UpdateGovernmentRequest) returns (UpdateGovernmentResponse);
+  rpc ListGovernments(ListGovernmentsRequest) returns (ListGovernmentsResponse);
+  rpc DeltaUpdateGovernment(DeltaUpdateGovernmentRequest) returns (DeltaUpdateGovernmentResponse);
+
+  // Bank 相关操作
+  rpc AddBank(AddBankRequest) returns (AddBankResponse);
+  rpc RemoveBank(RemoveBankRequest) returns (RemoveBankResponse);
+  rpc GetBank(GetBankRequest) returns (GetBankResponse);
+  rpc UpdateBank(UpdateBankRequest) returns (UpdateBankResponse);
+  rpc ListBanks(ListBanksRequest) returns (ListBanksResponse);
+  rpc DeltaUpdateBank(DeltaUpdateBankRequest) returns (DeltaUpdateBankResponse);
+
+  // Agent 相关操作
   rpc AddAgent(AddAgentRequest) returns (AddAgentResponse);
-  
-  // RemoveAgent 从系统中移除指定的代理
   rpc RemoveAgent(RemoveAgentRequest) returns (RemoveAgentResponse);
-  
-  // GetAgent 获取指定代理的完整信息
   rpc GetAgent(GetAgentRequest) returns (GetAgentResponse);
-  
-  // UpdateAgent 更新指定代理的信息
   rpc UpdateAgent(UpdateAgentRequest) returns (UpdateAgentResponse);
+  rpc ListAgents(ListAgentsRequest) returns (ListAgentsResponse);
+  rpc DeltaUpdateAgent(DeltaUpdateAgentRequest) returns (DeltaUpdateAgentResponse);
+  rpc BatchAddAgent(BatchAddAgentRequest) returns (BatchAddAgentResponse);
+  rpc BatchRemoveAgent(BatchRemoveAgentRequest) returns (BatchRemoveAgentResponse);
+  rpc BatchGetAgent(BatchGetAgentRequest) returns (BatchGetAgentResponse);
+  rpc BatchUpdateAgent(BatchUpdateAgentRequest) returns (BatchUpdateAgentResponse);
+  rpc BatchDeltaUpdateAgent(BatchDeltaUpdateAgentRequest) returns (BatchDeltaUpdateAgentResponse);
 
-  // BatchGet 批量获取多个组织或代理的信息
-  rpc BatchGet(BatchGetRequest) returns (BatchGetResponse) {}
+  // 计算相关操作
+  rpc CalculateTaxesDue(CalculateTaxesDueRequest) returns (CalculateTaxesDueResponse);
+  rpc CalculateConsumption(CalculateConsumptionRequest) returns (CalculateConsumptionResponse);
+  rpc CalculateInterest(CalculateInterestRequest) returns (CalculateInterestResponse);
+  rpc CalculateRealGDP(CalculateRealGDPRequest) returns (CalculateRealGDPResponse);
 
-  // BatchUpdate 批量更新多个组织或代理的信息，只更新请求中指定的字段
-  rpc BatchUpdate(BatchUpdateRequest) returns (BatchUpdateResponse) {}
-
-  // BatchSet 批量设置多个组织或代理的信息，完全替换所有字段
-  rpc BatchSet(BatchSetRequest) returns (BatchSetResponse) {}
-
-  // DeltaUpdateOrg 对组织进行增量更新
-  rpc DeltaUpdateOrg(DeltaUpdateOrgRequest) returns (DeltaUpdateOrgResponse) {}
-  
-  // DeltaUpdateAgent 对代理进行增量更新
-  rpc DeltaUpdateAgent(DeltaUpdateAgentRequest) returns (DeltaUpdateAgentResponse) {}
-
-  // BatchDeltaUpdate 批量进行增量更新
-  rpc BatchDeltaUpdate(BatchDeltaUpdateRequest) returns (BatchDeltaUpdateResponse) {}
-
-  // CalculateTaxesDue 计算应缴税额并可选择进行再分配
-  rpc CalculateTaxesDue(CalculateTaxesDueRequest) returns (CalculateTaxesDueResponse) {}
-  
-  // CalculateConsumption 计算代理的消费情况
-  rpc CalculateConsumption(CalculateConsumptionRequest) returns (CalculateConsumptionResponse) {}
-  
-  // CalculateInterest 计算银行利息
-  rpc CalculateInterest(CalculateInterestRequest) returns (CalculateInterestResponse) {}
-  
-  // CalculateRealGDP 计算实际GDP
-  rpc CalculateRealGDP(CalculateRealGDPRequest) returns (CalculateRealGDPResponse) {}
-
-  // SaveEconomyEntities 保存经济系统的当前状态
-  rpc SaveEconomyEntities(SaveEconomyEntitiesRequest) returns (SaveEconomyEntitiesResponse) {}
-  
-  // LoadEconomyEntities 加载经济系统的状态
-  rpc LoadEconomyEntities(LoadEconomyEntitiesRequest) returns (LoadEconomyEntitiesResponse) {}
+  // 系统状态操作
+  rpc SaveEconomyEntities(SaveEconomyEntitiesRequest) returns (SaveEconomyEntitiesResponse);
+  rpc LoadEconomyEntities(LoadEconomyEntitiesRequest) returns (LoadEconomyEntitiesResponse);
 }
 
-// 添加组织的请求消息
-message AddOrgRequest {
-  // 要添加的组织信息
-  Org org = 1;
-}
-// 添加组织的响应消息
-message AddOrgResponse {}
-
-// 移除组织的请求消息
-message RemoveOrgRequest {
-  // 要移除的组织ID
-  int32 org_id = 1;
-}
-// 移除组织的响应消息
-message RemoveOrgResponse {}
-
-// 获取组织的请求消息
-message GetOrgRequest {
-  // 要获取的组织ID
-  int32 org_id = 1;
-}
-// 获取组织的响应消息
-message GetOrgResponse {
-  // 获取到的组织信息
-  Org org = 1;
+// Firm 相关消息
+message AddFirmRequest {
+  Firm firm = 1;
 }
 
-// 更新组织的请求消息
-message UpdateOrgRequest {
-  // 更新后的组织信息
-  Org org = 1;
-}
-// 更新组织的响应消息
-message UpdateOrgResponse {}
+message AddFirmResponse {}
 
-// 添加代理的请求消息
+message RemoveFirmRequest {
+  int32 firm_id = 1;
+}
+
+message RemoveFirmResponse {}
+
+message GetFirmRequest {
+  int32 firm_id = 1;
+}
+
+message GetFirmResponse {
+  Firm firm = 1;
+}
+
+message UpdateFirmRequest {
+  Firm firm = 1;
+}
+
+message UpdateFirmResponse {}
+
+message ListFirmsRequest {}
+
+message ListFirmsResponse {
+  repeated Firm firms = 1;
+}
+
+message DeltaUpdateFirmRequest {
+  int32 firm_id = 1;
+  optional float delta_price = 2;
+  optional int32 delta_inventory = 3;
+  optional float delta_demand = 4;
+  optional float delta_sales = 5;
+  optional float delta_currency = 6;
+  repeated int32 add_employees = 7;
+  repeated int32 remove_employees = 8;
+}
+
+message DeltaUpdateFirmResponse {}
+
+// Firm 批处理相关消息
+message BatchAddFirmRequest {
+  repeated Firm firms = 1;
+}
+
+message BatchAddFirmResponse {
+  repeated int32 firm_ids = 1;
+}
+
+message BatchRemoveFirmRequest {
+  repeated int32 firm_ids = 1;
+}
+
+message BatchRemoveFirmResponse {}
+
+message BatchGetFirmRequest {
+  repeated int32 firm_ids = 1;
+}
+
+message BatchGetFirmResponse {
+  repeated Firm firms = 1;
+}
+
+message BatchUpdateFirmRequest {
+  repeated Firm firms = 1;
+}
+
+message BatchUpdateFirmResponse {}
+
+message BatchDeltaUpdateFirmRequest {
+  repeated DeltaUpdateFirmRequest updates = 1;
+}
+
+message BatchDeltaUpdateFirmResponse {}
+
+// NBS 相关消息
+message AddNBSRequest {
+  NBS nbs = 1;
+}
+
+message AddNBSResponse {}
+
+message RemoveNBSRequest {
+  int32 nbs_id = 1;
+}
+
+message RemoveNBSResponse {}
+
+message GetNBSRequest {
+  int32 nbs_id = 1;
+}
+
+message GetNBSResponse {
+  NBS nbs = 1;
+}
+
+message UpdateNBSRequest {
+  NBS nbs = 1;
+}
+
+message UpdateNBSResponse {}
+
+message ListNBSRequest {}
+
+message ListNBSResponse {
+  repeated NBS nbs_list = 1;
+}
+
+message DeltaUpdateNBSRequest {
+  int32 nbs_id = 1;
+  map<string, float> delta_nominal_gdp = 2;
+  map<string, float> delta_real_gdp = 3;
+  map<string, float> delta_unemployment = 4;
+  map<string, float> delta_wages = 5;
+  map<string, float> delta_prices = 6;
+  map<string, float> delta_working_hours = 7;
+  map<string, float> delta_depression = 8;
+  map<string, float> delta_consumption_currency = 9;
+  map<string, float> delta_income_currency = 10;
+  map<string, float> delta_locus_control = 11;
+  optional float delta_currency = 12;
+  repeated int32 add_citizens = 13;
+  repeated int32 remove_citizens = 14;
+  repeated int32 add_citizens_agent_id = 15;
+  repeated int32 remove_citizens_agent_id = 16;
+}
+
+message DeltaUpdateNBSResponse {}
+
+// Government 相关消息
+message AddGovernmentRequest {
+  Government government = 1;
+}
+
+message AddGovernmentResponse {}
+
+message RemoveGovernmentRequest {
+  int32 government_id = 1;
+}
+
+message RemoveGovernmentResponse {}
+
+message GetGovernmentRequest {
+  int32 government_id = 1;
+}
+
+message GetGovernmentResponse {
+  Government government = 1;
+}
+
+message UpdateGovernmentRequest {
+  Government government = 1;
+}
+
+message UpdateGovernmentResponse {}
+
+message ListGovernmentsRequest {}
+
+message ListGovernmentsResponse {
+  repeated Government governments = 1;
+}
+
+message DeltaUpdateGovernmentRequest {
+  int32 government_id = 1;
+  repeated float delta_bracket_cutoffs = 2;
+  repeated float delta_bracket_rates = 3;
+  optional float delta_currency = 4;
+  repeated int32 add_citizens = 5;
+  repeated int32 remove_citizens = 6;
+}
+
+message DeltaUpdateGovernmentResponse {}
+
+// Bank 相关消息
+message AddBankRequest {
+  Bank bank = 1;
+}
+
+message AddBankResponse {}
+
+message RemoveBankRequest {
+  int32 bank_id = 1;
+}
+
+message RemoveBankResponse {}
+
+message GetBankRequest {
+  int32 bank_id = 1;
+}
+
+message GetBankResponse {
+  Bank bank = 1;
+}
+
+message UpdateBankRequest {
+  Bank bank = 1;
+}
+
+message UpdateBankResponse {}
+
+message ListBanksRequest {}
+
+message ListBanksResponse {
+  repeated Bank banks = 1;
+}
+
+message DeltaUpdateBankRequest {
+  int32 bank_id = 1;
+  optional float delta_interest_rate = 2;
+  optional float delta_currency = 3;
+  repeated int32 add_citizens = 4;
+  repeated int32 remove_citizens = 5;
+}
+
+message DeltaUpdateBankResponse {}
+
+// Agent 相关消息
 message AddAgentRequest {
-  // 要添加的代理信息
   Agent agent = 1;
 }
-// 添加代理的响应消息
+
 message AddAgentResponse {}
 
-// 移除代理的请求消息
 message RemoveAgentRequest {
-  // 要移除的代理ID
   int32 agent_id = 1;
 }
-// 移除代理的响应消息
+
 message RemoveAgentResponse {}
 
-// 获取代理的请求消息
 message GetAgentRequest {
-  // 要获取的代理ID
   int32 agent_id = 1;
 }
-// 获取代理的响应消息
+
 message GetAgentResponse {
-  // 获取到的代理信息
   Agent agent = 1;
 }
 
-// 更新代理的请求消息
 message UpdateAgentRequest {
-  // 更新后的代理信息
   Agent agent = 1;
 }
-// 更新代理的响应消息
+
 message UpdateAgentResponse {}
 
-// 计算税收的请求消息
-message CalculateTaxesDueRequest {
-  // 政府组织的ID
-  int32 government_id = 1;
-  // 需要缴税的代理ID列表
-  repeated int32 agent_ids = 2;
-  // 代理的收入列表，与agent_ids一一对应
-  repeated float incomes = 3;
-  // 是否将税收重新分配给所有代理
-  bool enable_redistribution = 4;
+message ListAgentsRequest {}
+
+message ListAgentsResponse {
+  repeated Agent agents = 1;
 }
 
-// 计算税收的响应消息
-message CalculateTaxesDueResponse {
-  // 总税收金额
-  float taxes_due = 1;
-  // 更新后的收入列表，与请求中的agent_ids一一对应
-  repeated float updated_incomes = 2;
-}
-
-// 计算消费的请求消息
-message CalculateConsumptionRequest {
-  // 可供消费的公司ID列表
-  repeated int32 firm_ids = 1;
-  // 进行消费的代理ID
-  int32 agent_id = 2;
-  // 对每个公司的需求量，与firm_ids一一对应
-  repeated int32 demands = 3;
-  // 是否累加消费值
-  optional bool consumption_accumulation = 4;
-}
-
-// 计算消费的响应消息
-message CalculateConsumptionResponse {
-  // 实际消费金额
-  float actual_consumption = 1;
-  // 消费是否成功
-  bool success = 2;
-}
-
-// 计算利息的请求消息
-message CalculateInterestRequest {
-  // 银行组织的ID
-  int32 bank_id = 1;
-  // 存款代理的ID列表
-  repeated int32 agent_ids = 2;
-}
-
-// 计算利息的响应消息
-message CalculateInterestResponse {
-  // 总利息金额
-  float total_interest = 1;
-  // 更新后的货币数量列表，与请求中的agent_ids一一对应
-  repeated float updated_currencies = 2;
-}
-
-// 计算实际GDP的请求消息
-message CalculateRealGDPRequest {
-  // 国家统计局组织的ID
-  int32 nbs_agent_id = 1;
-}
-
-// 计算实际GDP的响应消息
-message CalculateRealGDPResponse {
-  // 计算得到的实际GDP值
-  float real_gdp = 1;
-}
-
-// 批量获取的请求消息
-message BatchGetRequest {
-  // 要获取的ID列表
-  repeated int32 ids = 1;
-  // 要获取的对象类型，可以是"org"或"agent"
-  string type = 2;
-}
-
-// 批量获取的响应消息
-message BatchGetResponse {
-  // 获取到的组织列表
-  repeated Org orgs = 1;
-  // 获取到的代理列表
-  repeated Agent agents = 2;
-}
-
-// 批量更新的请求消息
-message BatchUpdateRequest {
-  // 要更新的组织列表，只更新请求中指定的字段
-  repeated Org orgs = 1;
-  // 要更新的代理列表，只更新请求中指定的字段
-  repeated Agent agents = 2;
-}
-
-// 批量更新的响应消息
-message BatchUpdateResponse {}
-
-// 批量设置的请求消息
-message BatchSetRequest {
-  // 要设置的组织列表，将完全替换目标组织的所有字段
-  repeated Org orgs = 1;
-  // 要设置的代理列表，将完全替换目标代理的所有字段
-  repeated Agent agents = 2;
-}
-
-// 批量设置的响应消息
-message BatchSetResponse {}
-
-// 组织增量更新的请求消息
-message DeltaUpdateOrgRequest {
-  // 要更新的组织ID
-  int32 org_id = 1;
-  // 名义GDP的增量变化
-  repeated float delta_nominal_gdp = 2;
-  // 实际GDP的增量变化
-  repeated float delta_real_gdp = 3;
-  // 失业率的增量变化
-  repeated float delta_unemployment = 4;
-  // 工资的增量变化
-  repeated float delta_wages = 5;
-  // 价格序列的增量变化
-  repeated float delta_prices = 6;
-  // 库存的增量变化
-  optional int32 delta_inventory = 7;
-  // 价格的增量变化
-  optional float delta_price = 8;
-  // 货币的增量变化
-  optional float delta_currency = 9;
-  // 利率的增量变化
-  optional float delta_interest_rate = 10;
-  // 税率档位切分点的增量变化
-  repeated float delta_bracket_cutoffs = 11;
-  // 税率档位的增量变化
-  repeated float delta_bracket_rates = 12;
-  // 总需求量的增量变化
-  optional int32 delta_demand = 13;
-  // 总销售量的增量变化
-  optional int32 delta_sales = 14;
-  // 要添加的员工ID列表
-  repeated int32 add_employees = 15;
-  // 要移除的员工ID列表
-  repeated int32 remove_employees = 16;
-  // 要添加的公民ID列表
-  repeated int32 add_citizens = 17;
-  // 要移除的公民ID列表
-  repeated int32 remove_citizens = 18;
-  // 消费货币的增量变化
-  repeated float delta_consumption_currency = 19;
-  // 消费倾向的增量变化
-  repeated float delta_consumption_propensity = 20;
-  // 收入货币的增量变化
-  repeated float delta_income_currency = 21;
-  // 抑郁指数的增量变化
-  repeated float delta_depression = 22;
-  // 控制点的增量变化
-  repeated float delta_locus_control = 23;
-  // 工作时间的增量变化
-  repeated float delta_working_hours = 24;
-}
-
-// 组织增量更新的响应消息
-message DeltaUpdateOrgResponse {}
-
-// 代理增量更新的请求消息
 message DeltaUpdateAgentRequest {
-  // 要更新的代理ID
   int32 agent_id = 1;
-  // 货币的增量变化
   optional float delta_currency = 2;
-  // 所属公司ID的变更
   optional int32 new_firm_id = 3;
-  // 技能的增量变化
   optional float delta_skill = 4;
-  // 消费的增量变化
   optional float delta_consumption = 5;
-  // 收入的增量变化
   optional float delta_income = 6;
 }
 
-// 代理增量更新的响应消息
 message DeltaUpdateAgentResponse {}
 
-// 批量增量更新的请求消息
-message BatchDeltaUpdateRequest {
-  // 要增量更新的组织列表
-  repeated DeltaUpdateOrgRequest orgs = 1;
-  // 要增量更新的代理列表
-  repeated DeltaUpdateAgentRequest agents = 2;
+// Agent 批处理相关消息
+message BatchAddAgentRequest {
+  repeated Agent agents = 1;
 }
 
-// 批量增量更新的响应消息
-message BatchDeltaUpdateResponse {}
+message BatchAddAgentResponse {
+  repeated int32 agent_ids = 1;
+}
 
-// 保存经济实体的请求消息
+message BatchRemoveAgentRequest {
+  repeated int32 agent_ids = 1;
+}
+
+message BatchRemoveAgentResponse {}
+
+message BatchGetAgentRequest {
+  repeated int32 agent_ids = 1;
+}
+
+message BatchGetAgentResponse {
+  repeated Agent agents = 1;
+}
+
+message BatchUpdateAgentRequest {
+  repeated Agent agents = 1;
+}
+
+message BatchUpdateAgentResponse {}
+
+message BatchDeltaUpdateAgentRequest {
+  repeated DeltaUpdateAgentRequest updates = 1;
+}
+
+message BatchDeltaUpdateAgentResponse {}
+
+// 计算相关消息
+message CalculateTaxesDueRequest {
+  int32 government_id = 1;
+  repeated int32 agent_ids = 2;
+  repeated float incomes = 3;
+  bool enable_redistribution = 4;
+}
+
+message CalculateTaxesDueResponse {
+  float taxes_due = 1;
+  repeated float updated_incomes = 2;
+}
+
+message CalculateConsumptionRequest {
+  repeated int32 firm_ids = 1;
+  int32 agent_id = 2;
+  repeated int32 demands = 3;
+  optional bool consumption_accumulation = 4;
+}
+
+message CalculateConsumptionResponse {
+  float actual_consumption = 1;
+  bool success = 2;
+}
+
+message CalculateInterestRequest {
+  int32 bank_id = 1;
+  repeated int32 agent_ids = 2;
+}
+
+message CalculateInterestResponse {
+  float total_interest = 1;
+  repeated float updated_currencies = 2;
+}
+
+message CalculateRealGDPRequest {
+  int32 nbs_id = 1;
+}
+
+message CalculateRealGDPResponse {
+  float real_gdp = 1;
+}
+
+// 系统状态相关消息
 message SaveEconomyEntitiesRequest {
-  // 保存文件的路径
   string file_path = 1;
 }
 
-// 保存经济实体的响应消息
 message SaveEconomyEntitiesResponse {
-  // 保存的组织ID列表
-  repeated int32 org_ids = 1;
-  // 保存的代理ID列表
-  repeated int32 agent_ids = 2;
+  repeated int32 firm_ids = 1;
+  repeated int32 nbs_ids = 2;
+  repeated int32 government_ids = 3;
+  repeated int32 bank_ids = 4;
+  repeated int32 agent_ids = 5;
 }
 
-// 加载经济实体的请求消息
 message LoadEconomyEntitiesRequest {
-  // 要加载的文件路径
   string file_path = 1;
 }
 
-// 加载经济实体的响应消息
 message LoadEconomyEntitiesResponse {
-  // 加载的组织ID列表
-  repeated int32 org_ids = 1;
-  // 加载的代理ID列表
-  repeated int32 agent_ids = 2;
+  repeated int32 firm_ids = 1;
+  repeated int32 nbs_ids = 2;
+  repeated int32 government_ids = 3;
+  repeated int32 bank_ids = 4;
+  repeated int32 agent_ids = 5;
 }

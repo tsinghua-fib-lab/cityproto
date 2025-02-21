@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AddAgentRequest, AddAgentResponse, AddOrgRequest, AddOrgResponse, BatchDeltaUpdateRequest, BatchDeltaUpdateResponse, BatchGetRequest, BatchGetResponse, BatchSetRequest, BatchSetResponse, BatchUpdateRequest, BatchUpdateResponse, CalculateConsumptionRequest, CalculateConsumptionResponse, CalculateInterestRequest, CalculateInterestResponse, CalculateRealGDPRequest, CalculateRealGDPResponse, CalculateTaxesDueRequest, CalculateTaxesDueResponse, DeltaUpdateAgentRequest, DeltaUpdateAgentResponse, DeltaUpdateOrgRequest, DeltaUpdateOrgResponse, GetAgentRequest, GetAgentResponse, GetOrgRequest, GetOrgResponse, LoadEconomyEntitiesRequest, LoadEconomyEntitiesResponse, RemoveAgentRequest, RemoveAgentResponse, RemoveOrgRequest, RemoveOrgResponse, SaveEconomyEntitiesRequest, SaveEconomyEntitiesResponse, UpdateAgentRequest, UpdateAgentResponse, UpdateOrgRequest, UpdateOrgResponse } from "./org_service_pb.js";
+import { AddAgentRequest, AddAgentResponse, AddBankRequest, AddBankResponse, AddFirmRequest, AddFirmResponse, AddGovernmentRequest, AddGovernmentResponse, AddNBSRequest, AddNBSResponse, BatchAddAgentRequest, BatchAddAgentResponse, BatchAddFirmRequest, BatchAddFirmResponse, BatchDeltaUpdateAgentRequest, BatchDeltaUpdateAgentResponse, BatchDeltaUpdateFirmRequest, BatchDeltaUpdateFirmResponse, BatchGetAgentRequest, BatchGetAgentResponse, BatchGetFirmRequest, BatchGetFirmResponse, BatchRemoveAgentRequest, BatchRemoveAgentResponse, BatchRemoveFirmRequest, BatchRemoveFirmResponse, BatchUpdateAgentRequest, BatchUpdateAgentResponse, BatchUpdateFirmRequest, BatchUpdateFirmResponse, CalculateConsumptionRequest, CalculateConsumptionResponse, CalculateInterestRequest, CalculateInterestResponse, CalculateRealGDPRequest, CalculateRealGDPResponse, CalculateTaxesDueRequest, CalculateTaxesDueResponse, DeltaUpdateAgentRequest, DeltaUpdateAgentResponse, DeltaUpdateBankRequest, DeltaUpdateBankResponse, DeltaUpdateFirmRequest, DeltaUpdateFirmResponse, DeltaUpdateGovernmentRequest, DeltaUpdateGovernmentResponse, DeltaUpdateNBSRequest, DeltaUpdateNBSResponse, GetAgentRequest, GetAgentResponse, GetBankRequest, GetBankResponse, GetFirmRequest, GetFirmResponse, GetGovernmentRequest, GetGovernmentResponse, GetNBSRequest, GetNBSResponse, ListAgentsRequest, ListAgentsResponse, ListBanksRequest, ListBanksResponse, ListFirmsRequest, ListFirmsResponse, ListGovernmentsRequest, ListGovernmentsResponse, ListNBSRequest, ListNBSResponse, LoadEconomyEntitiesRequest, LoadEconomyEntitiesResponse, RemoveAgentRequest, RemoveAgentResponse, RemoveBankRequest, RemoveBankResponse, RemoveFirmRequest, RemoveFirmResponse, RemoveGovernmentRequest, RemoveGovernmentResponse, RemoveNBSRequest, RemoveNBSResponse, SaveEconomyEntitiesRequest, SaveEconomyEntitiesResponse, UpdateAgentRequest, UpdateAgentResponse, UpdateBankRequest, UpdateBankResponse, UpdateFirmRequest, UpdateFirmResponse, UpdateGovernmentRequest, UpdateGovernmentResponse, UpdateNBSRequest, UpdateNBSResponse } from "./org_service_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -16,51 +16,276 @@ export const OrgService = {
   typeName: "city.economy.v2.OrgService",
   methods: {
     /**
-     * AddOrg 添加一个新的组织到系统中
+     * Firm 相关操作
      *
-     * @generated from rpc city.economy.v2.OrgService.AddOrg
+     * @generated from rpc city.economy.v2.OrgService.AddFirm
      */
-    addOrg: {
-      name: "AddOrg",
-      I: AddOrgRequest,
-      O: AddOrgResponse,
+    addFirm: {
+      name: "AddFirm",
+      I: AddFirmRequest,
+      O: AddFirmResponse,
       kind: MethodKind.Unary,
     },
     /**
-     * RemoveOrg 从系统中移除指定的组织
-     *
-     * @generated from rpc city.economy.v2.OrgService.RemoveOrg
+     * @generated from rpc city.economy.v2.OrgService.RemoveFirm
      */
-    removeOrg: {
-      name: "RemoveOrg",
-      I: RemoveOrgRequest,
-      O: RemoveOrgResponse,
+    removeFirm: {
+      name: "RemoveFirm",
+      I: RemoveFirmRequest,
+      O: RemoveFirmResponse,
       kind: MethodKind.Unary,
     },
     /**
-     * GetOrg 获取指定组织的完整信息
-     *
-     * @generated from rpc city.economy.v2.OrgService.GetOrg
+     * @generated from rpc city.economy.v2.OrgService.GetFirm
      */
-    getOrg: {
-      name: "GetOrg",
-      I: GetOrgRequest,
-      O: GetOrgResponse,
+    getFirm: {
+      name: "GetFirm",
+      I: GetFirmRequest,
+      O: GetFirmResponse,
       kind: MethodKind.Unary,
     },
     /**
-     * UpdateOrg 更新指定组织的信息
-     *
-     * @generated from rpc city.economy.v2.OrgService.UpdateOrg
+     * @generated from rpc city.economy.v2.OrgService.UpdateFirm
      */
-    updateOrg: {
-      name: "UpdateOrg",
-      I: UpdateOrgRequest,
-      O: UpdateOrgResponse,
+    updateFirm: {
+      name: "UpdateFirm",
+      I: UpdateFirmRequest,
+      O: UpdateFirmResponse,
       kind: MethodKind.Unary,
     },
     /**
-     * AddAgent 添加一个新的代理到系统中
+     * @generated from rpc city.economy.v2.OrgService.ListFirms
+     */
+    listFirms: {
+      name: "ListFirms",
+      I: ListFirmsRequest,
+      O: ListFirmsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc city.economy.v2.OrgService.DeltaUpdateFirm
+     */
+    deltaUpdateFirm: {
+      name: "DeltaUpdateFirm",
+      I: DeltaUpdateFirmRequest,
+      O: DeltaUpdateFirmResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc city.economy.v2.OrgService.BatchAddFirm
+     */
+    batchAddFirm: {
+      name: "BatchAddFirm",
+      I: BatchAddFirmRequest,
+      O: BatchAddFirmResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc city.economy.v2.OrgService.BatchRemoveFirm
+     */
+    batchRemoveFirm: {
+      name: "BatchRemoveFirm",
+      I: BatchRemoveFirmRequest,
+      O: BatchRemoveFirmResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc city.economy.v2.OrgService.BatchGetFirm
+     */
+    batchGetFirm: {
+      name: "BatchGetFirm",
+      I: BatchGetFirmRequest,
+      O: BatchGetFirmResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc city.economy.v2.OrgService.BatchUpdateFirm
+     */
+    batchUpdateFirm: {
+      name: "BatchUpdateFirm",
+      I: BatchUpdateFirmRequest,
+      O: BatchUpdateFirmResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc city.economy.v2.OrgService.BatchDeltaUpdateFirm
+     */
+    batchDeltaUpdateFirm: {
+      name: "BatchDeltaUpdateFirm",
+      I: BatchDeltaUpdateFirmRequest,
+      O: BatchDeltaUpdateFirmResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * NBS 相关操作
+     *
+     * @generated from rpc city.economy.v2.OrgService.AddNBS
+     */
+    addNBS: {
+      name: "AddNBS",
+      I: AddNBSRequest,
+      O: AddNBSResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc city.economy.v2.OrgService.RemoveNBS
+     */
+    removeNBS: {
+      name: "RemoveNBS",
+      I: RemoveNBSRequest,
+      O: RemoveNBSResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc city.economy.v2.OrgService.GetNBS
+     */
+    getNBS: {
+      name: "GetNBS",
+      I: GetNBSRequest,
+      O: GetNBSResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc city.economy.v2.OrgService.UpdateNBS
+     */
+    updateNBS: {
+      name: "UpdateNBS",
+      I: UpdateNBSRequest,
+      O: UpdateNBSResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc city.economy.v2.OrgService.ListNBS
+     */
+    listNBS: {
+      name: "ListNBS",
+      I: ListNBSRequest,
+      O: ListNBSResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc city.economy.v2.OrgService.DeltaUpdateNBS
+     */
+    deltaUpdateNBS: {
+      name: "DeltaUpdateNBS",
+      I: DeltaUpdateNBSRequest,
+      O: DeltaUpdateNBSResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Government 相关操作
+     *
+     * @generated from rpc city.economy.v2.OrgService.AddGovernment
+     */
+    addGovernment: {
+      name: "AddGovernment",
+      I: AddGovernmentRequest,
+      O: AddGovernmentResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc city.economy.v2.OrgService.RemoveGovernment
+     */
+    removeGovernment: {
+      name: "RemoveGovernment",
+      I: RemoveGovernmentRequest,
+      O: RemoveGovernmentResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc city.economy.v2.OrgService.GetGovernment
+     */
+    getGovernment: {
+      name: "GetGovernment",
+      I: GetGovernmentRequest,
+      O: GetGovernmentResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc city.economy.v2.OrgService.UpdateGovernment
+     */
+    updateGovernment: {
+      name: "UpdateGovernment",
+      I: UpdateGovernmentRequest,
+      O: UpdateGovernmentResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc city.economy.v2.OrgService.ListGovernments
+     */
+    listGovernments: {
+      name: "ListGovernments",
+      I: ListGovernmentsRequest,
+      O: ListGovernmentsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc city.economy.v2.OrgService.DeltaUpdateGovernment
+     */
+    deltaUpdateGovernment: {
+      name: "DeltaUpdateGovernment",
+      I: DeltaUpdateGovernmentRequest,
+      O: DeltaUpdateGovernmentResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Bank 相关操作
+     *
+     * @generated from rpc city.economy.v2.OrgService.AddBank
+     */
+    addBank: {
+      name: "AddBank",
+      I: AddBankRequest,
+      O: AddBankResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc city.economy.v2.OrgService.RemoveBank
+     */
+    removeBank: {
+      name: "RemoveBank",
+      I: RemoveBankRequest,
+      O: RemoveBankResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc city.economy.v2.OrgService.GetBank
+     */
+    getBank: {
+      name: "GetBank",
+      I: GetBankRequest,
+      O: GetBankResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc city.economy.v2.OrgService.UpdateBank
+     */
+    updateBank: {
+      name: "UpdateBank",
+      I: UpdateBankRequest,
+      O: UpdateBankResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc city.economy.v2.OrgService.ListBanks
+     */
+    listBanks: {
+      name: "ListBanks",
+      I: ListBanksRequest,
+      O: ListBanksResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc city.economy.v2.OrgService.DeltaUpdateBank
+     */
+    deltaUpdateBank: {
+      name: "DeltaUpdateBank",
+      I: DeltaUpdateBankRequest,
+      O: DeltaUpdateBankResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Agent 相关操作
      *
      * @generated from rpc city.economy.v2.OrgService.AddAgent
      */
@@ -71,8 +296,6 @@ export const OrgService = {
       kind: MethodKind.Unary,
     },
     /**
-     * RemoveAgent 从系统中移除指定的代理
-     *
      * @generated from rpc city.economy.v2.OrgService.RemoveAgent
      */
     removeAgent: {
@@ -82,8 +305,6 @@ export const OrgService = {
       kind: MethodKind.Unary,
     },
     /**
-     * GetAgent 获取指定代理的完整信息
-     *
      * @generated from rpc city.economy.v2.OrgService.GetAgent
      */
     getAgent: {
@@ -93,8 +314,6 @@ export const OrgService = {
       kind: MethodKind.Unary,
     },
     /**
-     * UpdateAgent 更新指定代理的信息
-     *
      * @generated from rpc city.economy.v2.OrgService.UpdateAgent
      */
     updateAgent: {
@@ -104,52 +323,15 @@ export const OrgService = {
       kind: MethodKind.Unary,
     },
     /**
-     * BatchGet 批量获取多个组织或代理的信息
-     *
-     * @generated from rpc city.economy.v2.OrgService.BatchGet
+     * @generated from rpc city.economy.v2.OrgService.ListAgents
      */
-    batchGet: {
-      name: "BatchGet",
-      I: BatchGetRequest,
-      O: BatchGetResponse,
+    listAgents: {
+      name: "ListAgents",
+      I: ListAgentsRequest,
+      O: ListAgentsResponse,
       kind: MethodKind.Unary,
     },
     /**
-     * BatchUpdate 批量更新多个组织或代理的信息，只更新请求中指定的字段
-     *
-     * @generated from rpc city.economy.v2.OrgService.BatchUpdate
-     */
-    batchUpdate: {
-      name: "BatchUpdate",
-      I: BatchUpdateRequest,
-      O: BatchUpdateResponse,
-      kind: MethodKind.Unary,
-    },
-    /**
-     * BatchSet 批量设置多个组织或代理的信息，完全替换所有字段
-     *
-     * @generated from rpc city.economy.v2.OrgService.BatchSet
-     */
-    batchSet: {
-      name: "BatchSet",
-      I: BatchSetRequest,
-      O: BatchSetResponse,
-      kind: MethodKind.Unary,
-    },
-    /**
-     * DeltaUpdateOrg 对组织进行增量更新
-     *
-     * @generated from rpc city.economy.v2.OrgService.DeltaUpdateOrg
-     */
-    deltaUpdateOrg: {
-      name: "DeltaUpdateOrg",
-      I: DeltaUpdateOrgRequest,
-      O: DeltaUpdateOrgResponse,
-      kind: MethodKind.Unary,
-    },
-    /**
-     * DeltaUpdateAgent 对代理进行增量更新
-     *
      * @generated from rpc city.economy.v2.OrgService.DeltaUpdateAgent
      */
     deltaUpdateAgent: {
@@ -159,18 +341,52 @@ export const OrgService = {
       kind: MethodKind.Unary,
     },
     /**
-     * BatchDeltaUpdate 批量进行增量更新
-     *
-     * @generated from rpc city.economy.v2.OrgService.BatchDeltaUpdate
+     * @generated from rpc city.economy.v2.OrgService.BatchAddAgent
      */
-    batchDeltaUpdate: {
-      name: "BatchDeltaUpdate",
-      I: BatchDeltaUpdateRequest,
-      O: BatchDeltaUpdateResponse,
+    batchAddAgent: {
+      name: "BatchAddAgent",
+      I: BatchAddAgentRequest,
+      O: BatchAddAgentResponse,
       kind: MethodKind.Unary,
     },
     /**
-     * CalculateTaxesDue 计算应缴税额并可选择进行再分配
+     * @generated from rpc city.economy.v2.OrgService.BatchRemoveAgent
+     */
+    batchRemoveAgent: {
+      name: "BatchRemoveAgent",
+      I: BatchRemoveAgentRequest,
+      O: BatchRemoveAgentResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc city.economy.v2.OrgService.BatchGetAgent
+     */
+    batchGetAgent: {
+      name: "BatchGetAgent",
+      I: BatchGetAgentRequest,
+      O: BatchGetAgentResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc city.economy.v2.OrgService.BatchUpdateAgent
+     */
+    batchUpdateAgent: {
+      name: "BatchUpdateAgent",
+      I: BatchUpdateAgentRequest,
+      O: BatchUpdateAgentResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc city.economy.v2.OrgService.BatchDeltaUpdateAgent
+     */
+    batchDeltaUpdateAgent: {
+      name: "BatchDeltaUpdateAgent",
+      I: BatchDeltaUpdateAgentRequest,
+      O: BatchDeltaUpdateAgentResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * 计算相关操作
      *
      * @generated from rpc city.economy.v2.OrgService.CalculateTaxesDue
      */
@@ -181,8 +397,6 @@ export const OrgService = {
       kind: MethodKind.Unary,
     },
     /**
-     * CalculateConsumption 计算代理的消费情况
-     *
      * @generated from rpc city.economy.v2.OrgService.CalculateConsumption
      */
     calculateConsumption: {
@@ -192,8 +406,6 @@ export const OrgService = {
       kind: MethodKind.Unary,
     },
     /**
-     * CalculateInterest 计算银行利息
-     *
      * @generated from rpc city.economy.v2.OrgService.CalculateInterest
      */
     calculateInterest: {
@@ -203,8 +415,6 @@ export const OrgService = {
       kind: MethodKind.Unary,
     },
     /**
-     * CalculateRealGDP 计算实际GDP
-     *
      * @generated from rpc city.economy.v2.OrgService.CalculateRealGDP
      */
     calculateRealGDP: {
@@ -214,7 +424,7 @@ export const OrgService = {
       kind: MethodKind.Unary,
     },
     /**
-     * SaveEconomyEntities 保存经济系统的当前状态
+     * 系统状态操作
      *
      * @generated from rpc city.economy.v2.OrgService.SaveEconomyEntities
      */
@@ -225,8 +435,6 @@ export const OrgService = {
       kind: MethodKind.Unary,
     },
     /**
-     * LoadEconomyEntities 加载经济系统的状态
-     *
      * @generated from rpc city.economy.v2.OrgService.LoadEconomyEntities
      */
     loadEconomyEntities: {

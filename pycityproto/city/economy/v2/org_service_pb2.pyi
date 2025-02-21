@@ -5,59 +5,581 @@ from google.protobuf import message as _message
 from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
-class AddOrgRequest(_message.Message):
-    __slots__ = ['org']
-    ORG_FIELD_NUMBER: _ClassVar[int]
-    org: _economy_pb2.Org
+class AddFirmRequest(_message.Message):
+    __slots__ = ['firm']
+    FIRM_FIELD_NUMBER: _ClassVar[int]
+    firm: _economy_pb2.Firm
 
-    def __init__(self, org: _Optional[_Union[_economy_pb2.Org, _Mapping]]=...) -> None:
+    def __init__(self, firm: _Optional[_Union[_economy_pb2.Firm, _Mapping]]=...) -> None:
         ...
 
-class AddOrgResponse(_message.Message):
+class AddFirmResponse(_message.Message):
     __slots__ = []
 
     def __init__(self) -> None:
         ...
 
-class RemoveOrgRequest(_message.Message):
-    __slots__ = ['org_id']
-    ORG_ID_FIELD_NUMBER: _ClassVar[int]
-    org_id: int
+class RemoveFirmRequest(_message.Message):
+    __slots__ = ['firm_id']
+    FIRM_ID_FIELD_NUMBER: _ClassVar[int]
+    firm_id: int
 
-    def __init__(self, org_id: _Optional[int]=...) -> None:
+    def __init__(self, firm_id: _Optional[int]=...) -> None:
         ...
 
-class RemoveOrgResponse(_message.Message):
+class RemoveFirmResponse(_message.Message):
     __slots__ = []
 
     def __init__(self) -> None:
         ...
 
-class GetOrgRequest(_message.Message):
-    __slots__ = ['org_id']
-    ORG_ID_FIELD_NUMBER: _ClassVar[int]
-    org_id: int
+class GetFirmRequest(_message.Message):
+    __slots__ = ['firm_id']
+    FIRM_ID_FIELD_NUMBER: _ClassVar[int]
+    firm_id: int
 
-    def __init__(self, org_id: _Optional[int]=...) -> None:
+    def __init__(self, firm_id: _Optional[int]=...) -> None:
         ...
 
-class GetOrgResponse(_message.Message):
-    __slots__ = ['org']
-    ORG_FIELD_NUMBER: _ClassVar[int]
-    org: _economy_pb2.Org
+class GetFirmResponse(_message.Message):
+    __slots__ = ['firm']
+    FIRM_FIELD_NUMBER: _ClassVar[int]
+    firm: _economy_pb2.Firm
 
-    def __init__(self, org: _Optional[_Union[_economy_pb2.Org, _Mapping]]=...) -> None:
+    def __init__(self, firm: _Optional[_Union[_economy_pb2.Firm, _Mapping]]=...) -> None:
         ...
 
-class UpdateOrgRequest(_message.Message):
-    __slots__ = ['org']
-    ORG_FIELD_NUMBER: _ClassVar[int]
-    org: _economy_pb2.Org
+class UpdateFirmRequest(_message.Message):
+    __slots__ = ['firm']
+    FIRM_FIELD_NUMBER: _ClassVar[int]
+    firm: _economy_pb2.Firm
 
-    def __init__(self, org: _Optional[_Union[_economy_pb2.Org, _Mapping]]=...) -> None:
+    def __init__(self, firm: _Optional[_Union[_economy_pb2.Firm, _Mapping]]=...) -> None:
         ...
 
-class UpdateOrgResponse(_message.Message):
+class UpdateFirmResponse(_message.Message):
+    __slots__ = []
+
+    def __init__(self) -> None:
+        ...
+
+class ListFirmsRequest(_message.Message):
+    __slots__ = []
+
+    def __init__(self) -> None:
+        ...
+
+class ListFirmsResponse(_message.Message):
+    __slots__ = ['firms']
+    FIRMS_FIELD_NUMBER: _ClassVar[int]
+    firms: _containers.RepeatedCompositeFieldContainer[_economy_pb2.Firm]
+
+    def __init__(self, firms: _Optional[_Iterable[_Union[_economy_pb2.Firm, _Mapping]]]=...) -> None:
+        ...
+
+class DeltaUpdateFirmRequest(_message.Message):
+    __slots__ = ['firm_id', 'delta_price', 'delta_inventory', 'delta_demand', 'delta_sales', 'delta_currency', 'add_employees', 'remove_employees']
+    FIRM_ID_FIELD_NUMBER: _ClassVar[int]
+    DELTA_PRICE_FIELD_NUMBER: _ClassVar[int]
+    DELTA_INVENTORY_FIELD_NUMBER: _ClassVar[int]
+    DELTA_DEMAND_FIELD_NUMBER: _ClassVar[int]
+    DELTA_SALES_FIELD_NUMBER: _ClassVar[int]
+    DELTA_CURRENCY_FIELD_NUMBER: _ClassVar[int]
+    ADD_EMPLOYEES_FIELD_NUMBER: _ClassVar[int]
+    REMOVE_EMPLOYEES_FIELD_NUMBER: _ClassVar[int]
+    firm_id: int
+    delta_price: float
+    delta_inventory: int
+    delta_demand: float
+    delta_sales: float
+    delta_currency: float
+    add_employees: _containers.RepeatedScalarFieldContainer[int]
+    remove_employees: _containers.RepeatedScalarFieldContainer[int]
+
+    def __init__(self, firm_id: _Optional[int]=..., delta_price: _Optional[float]=..., delta_inventory: _Optional[int]=..., delta_demand: _Optional[float]=..., delta_sales: _Optional[float]=..., delta_currency: _Optional[float]=..., add_employees: _Optional[_Iterable[int]]=..., remove_employees: _Optional[_Iterable[int]]=...) -> None:
+        ...
+
+class DeltaUpdateFirmResponse(_message.Message):
+    __slots__ = []
+
+    def __init__(self) -> None:
+        ...
+
+class BatchAddFirmRequest(_message.Message):
+    __slots__ = ['firms']
+    FIRMS_FIELD_NUMBER: _ClassVar[int]
+    firms: _containers.RepeatedCompositeFieldContainer[_economy_pb2.Firm]
+
+    def __init__(self, firms: _Optional[_Iterable[_Union[_economy_pb2.Firm, _Mapping]]]=...) -> None:
+        ...
+
+class BatchAddFirmResponse(_message.Message):
+    __slots__ = ['firm_ids']
+    FIRM_IDS_FIELD_NUMBER: _ClassVar[int]
+    firm_ids: _containers.RepeatedScalarFieldContainer[int]
+
+    def __init__(self, firm_ids: _Optional[_Iterable[int]]=...) -> None:
+        ...
+
+class BatchRemoveFirmRequest(_message.Message):
+    __slots__ = ['firm_ids']
+    FIRM_IDS_FIELD_NUMBER: _ClassVar[int]
+    firm_ids: _containers.RepeatedScalarFieldContainer[int]
+
+    def __init__(self, firm_ids: _Optional[_Iterable[int]]=...) -> None:
+        ...
+
+class BatchRemoveFirmResponse(_message.Message):
+    __slots__ = []
+
+    def __init__(self) -> None:
+        ...
+
+class BatchGetFirmRequest(_message.Message):
+    __slots__ = ['firm_ids']
+    FIRM_IDS_FIELD_NUMBER: _ClassVar[int]
+    firm_ids: _containers.RepeatedScalarFieldContainer[int]
+
+    def __init__(self, firm_ids: _Optional[_Iterable[int]]=...) -> None:
+        ...
+
+class BatchGetFirmResponse(_message.Message):
+    __slots__ = ['firms']
+    FIRMS_FIELD_NUMBER: _ClassVar[int]
+    firms: _containers.RepeatedCompositeFieldContainer[_economy_pb2.Firm]
+
+    def __init__(self, firms: _Optional[_Iterable[_Union[_economy_pb2.Firm, _Mapping]]]=...) -> None:
+        ...
+
+class BatchUpdateFirmRequest(_message.Message):
+    __slots__ = ['firms']
+    FIRMS_FIELD_NUMBER: _ClassVar[int]
+    firms: _containers.RepeatedCompositeFieldContainer[_economy_pb2.Firm]
+
+    def __init__(self, firms: _Optional[_Iterable[_Union[_economy_pb2.Firm, _Mapping]]]=...) -> None:
+        ...
+
+class BatchUpdateFirmResponse(_message.Message):
+    __slots__ = []
+
+    def __init__(self) -> None:
+        ...
+
+class BatchDeltaUpdateFirmRequest(_message.Message):
+    __slots__ = ['updates']
+    UPDATES_FIELD_NUMBER: _ClassVar[int]
+    updates: _containers.RepeatedCompositeFieldContainer[DeltaUpdateFirmRequest]
+
+    def __init__(self, updates: _Optional[_Iterable[_Union[DeltaUpdateFirmRequest, _Mapping]]]=...) -> None:
+        ...
+
+class BatchDeltaUpdateFirmResponse(_message.Message):
+    __slots__ = []
+
+    def __init__(self) -> None:
+        ...
+
+class AddNBSRequest(_message.Message):
+    __slots__ = ['nbs']
+    NBS_FIELD_NUMBER: _ClassVar[int]
+    nbs: _economy_pb2.NBS
+
+    def __init__(self, nbs: _Optional[_Union[_economy_pb2.NBS, _Mapping]]=...) -> None:
+        ...
+
+class AddNBSResponse(_message.Message):
+    __slots__ = []
+
+    def __init__(self) -> None:
+        ...
+
+class RemoveNBSRequest(_message.Message):
+    __slots__ = ['nbs_id']
+    NBS_ID_FIELD_NUMBER: _ClassVar[int]
+    nbs_id: int
+
+    def __init__(self, nbs_id: _Optional[int]=...) -> None:
+        ...
+
+class RemoveNBSResponse(_message.Message):
+    __slots__ = []
+
+    def __init__(self) -> None:
+        ...
+
+class GetNBSRequest(_message.Message):
+    __slots__ = ['nbs_id']
+    NBS_ID_FIELD_NUMBER: _ClassVar[int]
+    nbs_id: int
+
+    def __init__(self, nbs_id: _Optional[int]=...) -> None:
+        ...
+
+class GetNBSResponse(_message.Message):
+    __slots__ = ['nbs']
+    NBS_FIELD_NUMBER: _ClassVar[int]
+    nbs: _economy_pb2.NBS
+
+    def __init__(self, nbs: _Optional[_Union[_economy_pb2.NBS, _Mapping]]=...) -> None:
+        ...
+
+class UpdateNBSRequest(_message.Message):
+    __slots__ = ['nbs']
+    NBS_FIELD_NUMBER: _ClassVar[int]
+    nbs: _economy_pb2.NBS
+
+    def __init__(self, nbs: _Optional[_Union[_economy_pb2.NBS, _Mapping]]=...) -> None:
+        ...
+
+class UpdateNBSResponse(_message.Message):
+    __slots__ = []
+
+    def __init__(self) -> None:
+        ...
+
+class ListNBSRequest(_message.Message):
+    __slots__ = []
+
+    def __init__(self) -> None:
+        ...
+
+class ListNBSResponse(_message.Message):
+    __slots__ = ['nbs_list']
+    NBS_LIST_FIELD_NUMBER: _ClassVar[int]
+    nbs_list: _containers.RepeatedCompositeFieldContainer[_economy_pb2.NBS]
+
+    def __init__(self, nbs_list: _Optional[_Iterable[_Union[_economy_pb2.NBS, _Mapping]]]=...) -> None:
+        ...
+
+class DeltaUpdateNBSRequest(_message.Message):
+    __slots__ = ['nbs_id', 'delta_nominal_gdp', 'delta_real_gdp', 'delta_unemployment', 'delta_wages', 'delta_prices', 'delta_working_hours', 'delta_depression', 'delta_consumption_currency', 'delta_income_currency', 'delta_locus_control', 'delta_currency', 'add_citizens', 'remove_citizens', 'add_citizens_agent_id', 'remove_citizens_agent_id']
+
+    class DeltaNominalGdpEntry(_message.Message):
+        __slots__ = ['key', 'value']
+        KEY_FIELD_NUMBER: _ClassVar[int]
+        VALUE_FIELD_NUMBER: _ClassVar[int]
+        key: str
+        value: float
+
+        def __init__(self, key: _Optional[str]=..., value: _Optional[float]=...) -> None:
+            ...
+
+    class DeltaRealGdpEntry(_message.Message):
+        __slots__ = ['key', 'value']
+        KEY_FIELD_NUMBER: _ClassVar[int]
+        VALUE_FIELD_NUMBER: _ClassVar[int]
+        key: str
+        value: float
+
+        def __init__(self, key: _Optional[str]=..., value: _Optional[float]=...) -> None:
+            ...
+
+    class DeltaUnemploymentEntry(_message.Message):
+        __slots__ = ['key', 'value']
+        KEY_FIELD_NUMBER: _ClassVar[int]
+        VALUE_FIELD_NUMBER: _ClassVar[int]
+        key: str
+        value: float
+
+        def __init__(self, key: _Optional[str]=..., value: _Optional[float]=...) -> None:
+            ...
+
+    class DeltaWagesEntry(_message.Message):
+        __slots__ = ['key', 'value']
+        KEY_FIELD_NUMBER: _ClassVar[int]
+        VALUE_FIELD_NUMBER: _ClassVar[int]
+        key: str
+        value: float
+
+        def __init__(self, key: _Optional[str]=..., value: _Optional[float]=...) -> None:
+            ...
+
+    class DeltaPricesEntry(_message.Message):
+        __slots__ = ['key', 'value']
+        KEY_FIELD_NUMBER: _ClassVar[int]
+        VALUE_FIELD_NUMBER: _ClassVar[int]
+        key: str
+        value: float
+
+        def __init__(self, key: _Optional[str]=..., value: _Optional[float]=...) -> None:
+            ...
+
+    class DeltaWorkingHoursEntry(_message.Message):
+        __slots__ = ['key', 'value']
+        KEY_FIELD_NUMBER: _ClassVar[int]
+        VALUE_FIELD_NUMBER: _ClassVar[int]
+        key: str
+        value: float
+
+        def __init__(self, key: _Optional[str]=..., value: _Optional[float]=...) -> None:
+            ...
+
+    class DeltaDepressionEntry(_message.Message):
+        __slots__ = ['key', 'value']
+        KEY_FIELD_NUMBER: _ClassVar[int]
+        VALUE_FIELD_NUMBER: _ClassVar[int]
+        key: str
+        value: float
+
+        def __init__(self, key: _Optional[str]=..., value: _Optional[float]=...) -> None:
+            ...
+
+    class DeltaConsumptionCurrencyEntry(_message.Message):
+        __slots__ = ['key', 'value']
+        KEY_FIELD_NUMBER: _ClassVar[int]
+        VALUE_FIELD_NUMBER: _ClassVar[int]
+        key: str
+        value: float
+
+        def __init__(self, key: _Optional[str]=..., value: _Optional[float]=...) -> None:
+            ...
+
+    class DeltaIncomeCurrencyEntry(_message.Message):
+        __slots__ = ['key', 'value']
+        KEY_FIELD_NUMBER: _ClassVar[int]
+        VALUE_FIELD_NUMBER: _ClassVar[int]
+        key: str
+        value: float
+
+        def __init__(self, key: _Optional[str]=..., value: _Optional[float]=...) -> None:
+            ...
+
+    class DeltaLocusControlEntry(_message.Message):
+        __slots__ = ['key', 'value']
+        KEY_FIELD_NUMBER: _ClassVar[int]
+        VALUE_FIELD_NUMBER: _ClassVar[int]
+        key: str
+        value: float
+
+        def __init__(self, key: _Optional[str]=..., value: _Optional[float]=...) -> None:
+            ...
+    NBS_ID_FIELD_NUMBER: _ClassVar[int]
+    DELTA_NOMINAL_GDP_FIELD_NUMBER: _ClassVar[int]
+    DELTA_REAL_GDP_FIELD_NUMBER: _ClassVar[int]
+    DELTA_UNEMPLOYMENT_FIELD_NUMBER: _ClassVar[int]
+    DELTA_WAGES_FIELD_NUMBER: _ClassVar[int]
+    DELTA_PRICES_FIELD_NUMBER: _ClassVar[int]
+    DELTA_WORKING_HOURS_FIELD_NUMBER: _ClassVar[int]
+    DELTA_DEPRESSION_FIELD_NUMBER: _ClassVar[int]
+    DELTA_CONSUMPTION_CURRENCY_FIELD_NUMBER: _ClassVar[int]
+    DELTA_INCOME_CURRENCY_FIELD_NUMBER: _ClassVar[int]
+    DELTA_LOCUS_CONTROL_FIELD_NUMBER: _ClassVar[int]
+    DELTA_CURRENCY_FIELD_NUMBER: _ClassVar[int]
+    ADD_CITIZENS_FIELD_NUMBER: _ClassVar[int]
+    REMOVE_CITIZENS_FIELD_NUMBER: _ClassVar[int]
+    ADD_CITIZENS_AGENT_ID_FIELD_NUMBER: _ClassVar[int]
+    REMOVE_CITIZENS_AGENT_ID_FIELD_NUMBER: _ClassVar[int]
+    nbs_id: int
+    delta_nominal_gdp: _containers.ScalarMap[str, float]
+    delta_real_gdp: _containers.ScalarMap[str, float]
+    delta_unemployment: _containers.ScalarMap[str, float]
+    delta_wages: _containers.ScalarMap[str, float]
+    delta_prices: _containers.ScalarMap[str, float]
+    delta_working_hours: _containers.ScalarMap[str, float]
+    delta_depression: _containers.ScalarMap[str, float]
+    delta_consumption_currency: _containers.ScalarMap[str, float]
+    delta_income_currency: _containers.ScalarMap[str, float]
+    delta_locus_control: _containers.ScalarMap[str, float]
+    delta_currency: float
+    add_citizens: _containers.RepeatedScalarFieldContainer[int]
+    remove_citizens: _containers.RepeatedScalarFieldContainer[int]
+    add_citizens_agent_id: _containers.RepeatedScalarFieldContainer[int]
+    remove_citizens_agent_id: _containers.RepeatedScalarFieldContainer[int]
+
+    def __init__(self, nbs_id: _Optional[int]=..., delta_nominal_gdp: _Optional[_Mapping[str, float]]=..., delta_real_gdp: _Optional[_Mapping[str, float]]=..., delta_unemployment: _Optional[_Mapping[str, float]]=..., delta_wages: _Optional[_Mapping[str, float]]=..., delta_prices: _Optional[_Mapping[str, float]]=..., delta_working_hours: _Optional[_Mapping[str, float]]=..., delta_depression: _Optional[_Mapping[str, float]]=..., delta_consumption_currency: _Optional[_Mapping[str, float]]=..., delta_income_currency: _Optional[_Mapping[str, float]]=..., delta_locus_control: _Optional[_Mapping[str, float]]=..., delta_currency: _Optional[float]=..., add_citizens: _Optional[_Iterable[int]]=..., remove_citizens: _Optional[_Iterable[int]]=..., add_citizens_agent_id: _Optional[_Iterable[int]]=..., remove_citizens_agent_id: _Optional[_Iterable[int]]=...) -> None:
+        ...
+
+class DeltaUpdateNBSResponse(_message.Message):
+    __slots__ = []
+
+    def __init__(self) -> None:
+        ...
+
+class AddGovernmentRequest(_message.Message):
+    __slots__ = ['government']
+    GOVERNMENT_FIELD_NUMBER: _ClassVar[int]
+    government: _economy_pb2.Government
+
+    def __init__(self, government: _Optional[_Union[_economy_pb2.Government, _Mapping]]=...) -> None:
+        ...
+
+class AddGovernmentResponse(_message.Message):
+    __slots__ = []
+
+    def __init__(self) -> None:
+        ...
+
+class RemoveGovernmentRequest(_message.Message):
+    __slots__ = ['government_id']
+    GOVERNMENT_ID_FIELD_NUMBER: _ClassVar[int]
+    government_id: int
+
+    def __init__(self, government_id: _Optional[int]=...) -> None:
+        ...
+
+class RemoveGovernmentResponse(_message.Message):
+    __slots__ = []
+
+    def __init__(self) -> None:
+        ...
+
+class GetGovernmentRequest(_message.Message):
+    __slots__ = ['government_id']
+    GOVERNMENT_ID_FIELD_NUMBER: _ClassVar[int]
+    government_id: int
+
+    def __init__(self, government_id: _Optional[int]=...) -> None:
+        ...
+
+class GetGovernmentResponse(_message.Message):
+    __slots__ = ['government']
+    GOVERNMENT_FIELD_NUMBER: _ClassVar[int]
+    government: _economy_pb2.Government
+
+    def __init__(self, government: _Optional[_Union[_economy_pb2.Government, _Mapping]]=...) -> None:
+        ...
+
+class UpdateGovernmentRequest(_message.Message):
+    __slots__ = ['government']
+    GOVERNMENT_FIELD_NUMBER: _ClassVar[int]
+    government: _economy_pb2.Government
+
+    def __init__(self, government: _Optional[_Union[_economy_pb2.Government, _Mapping]]=...) -> None:
+        ...
+
+class UpdateGovernmentResponse(_message.Message):
+    __slots__ = []
+
+    def __init__(self) -> None:
+        ...
+
+class ListGovernmentsRequest(_message.Message):
+    __slots__ = []
+
+    def __init__(self) -> None:
+        ...
+
+class ListGovernmentsResponse(_message.Message):
+    __slots__ = ['governments']
+    GOVERNMENTS_FIELD_NUMBER: _ClassVar[int]
+    governments: _containers.RepeatedCompositeFieldContainer[_economy_pb2.Government]
+
+    def __init__(self, governments: _Optional[_Iterable[_Union[_economy_pb2.Government, _Mapping]]]=...) -> None:
+        ...
+
+class DeltaUpdateGovernmentRequest(_message.Message):
+    __slots__ = ['government_id', 'delta_bracket_cutoffs', 'delta_bracket_rates', 'delta_currency', 'add_citizens', 'remove_citizens']
+    GOVERNMENT_ID_FIELD_NUMBER: _ClassVar[int]
+    DELTA_BRACKET_CUTOFFS_FIELD_NUMBER: _ClassVar[int]
+    DELTA_BRACKET_RATES_FIELD_NUMBER: _ClassVar[int]
+    DELTA_CURRENCY_FIELD_NUMBER: _ClassVar[int]
+    ADD_CITIZENS_FIELD_NUMBER: _ClassVar[int]
+    REMOVE_CITIZENS_FIELD_NUMBER: _ClassVar[int]
+    government_id: int
+    delta_bracket_cutoffs: _containers.RepeatedScalarFieldContainer[float]
+    delta_bracket_rates: _containers.RepeatedScalarFieldContainer[float]
+    delta_currency: float
+    add_citizens: _containers.RepeatedScalarFieldContainer[int]
+    remove_citizens: _containers.RepeatedScalarFieldContainer[int]
+
+    def __init__(self, government_id: _Optional[int]=..., delta_bracket_cutoffs: _Optional[_Iterable[float]]=..., delta_bracket_rates: _Optional[_Iterable[float]]=..., delta_currency: _Optional[float]=..., add_citizens: _Optional[_Iterable[int]]=..., remove_citizens: _Optional[_Iterable[int]]=...) -> None:
+        ...
+
+class DeltaUpdateGovernmentResponse(_message.Message):
+    __slots__ = []
+
+    def __init__(self) -> None:
+        ...
+
+class AddBankRequest(_message.Message):
+    __slots__ = ['bank']
+    BANK_FIELD_NUMBER: _ClassVar[int]
+    bank: _economy_pb2.Bank
+
+    def __init__(self, bank: _Optional[_Union[_economy_pb2.Bank, _Mapping]]=...) -> None:
+        ...
+
+class AddBankResponse(_message.Message):
+    __slots__ = []
+
+    def __init__(self) -> None:
+        ...
+
+class RemoveBankRequest(_message.Message):
+    __slots__ = ['bank_id']
+    BANK_ID_FIELD_NUMBER: _ClassVar[int]
+    bank_id: int
+
+    def __init__(self, bank_id: _Optional[int]=...) -> None:
+        ...
+
+class RemoveBankResponse(_message.Message):
+    __slots__ = []
+
+    def __init__(self) -> None:
+        ...
+
+class GetBankRequest(_message.Message):
+    __slots__ = ['bank_id']
+    BANK_ID_FIELD_NUMBER: _ClassVar[int]
+    bank_id: int
+
+    def __init__(self, bank_id: _Optional[int]=...) -> None:
+        ...
+
+class GetBankResponse(_message.Message):
+    __slots__ = ['bank']
+    BANK_FIELD_NUMBER: _ClassVar[int]
+    bank: _economy_pb2.Bank
+
+    def __init__(self, bank: _Optional[_Union[_economy_pb2.Bank, _Mapping]]=...) -> None:
+        ...
+
+class UpdateBankRequest(_message.Message):
+    __slots__ = ['bank']
+    BANK_FIELD_NUMBER: _ClassVar[int]
+    bank: _economy_pb2.Bank
+
+    def __init__(self, bank: _Optional[_Union[_economy_pb2.Bank, _Mapping]]=...) -> None:
+        ...
+
+class UpdateBankResponse(_message.Message):
+    __slots__ = []
+
+    def __init__(self) -> None:
+        ...
+
+class ListBanksRequest(_message.Message):
+    __slots__ = []
+
+    def __init__(self) -> None:
+        ...
+
+class ListBanksResponse(_message.Message):
+    __slots__ = ['banks']
+    BANKS_FIELD_NUMBER: _ClassVar[int]
+    banks: _containers.RepeatedCompositeFieldContainer[_economy_pb2.Bank]
+
+    def __init__(self, banks: _Optional[_Iterable[_Union[_economy_pb2.Bank, _Mapping]]]=...) -> None:
+        ...
+
+class DeltaUpdateBankRequest(_message.Message):
+    __slots__ = ['bank_id', 'delta_interest_rate', 'delta_currency', 'add_citizens', 'remove_citizens']
+    BANK_ID_FIELD_NUMBER: _ClassVar[int]
+    DELTA_INTEREST_RATE_FIELD_NUMBER: _ClassVar[int]
+    DELTA_CURRENCY_FIELD_NUMBER: _ClassVar[int]
+    ADD_CITIZENS_FIELD_NUMBER: _ClassVar[int]
+    REMOVE_CITIZENS_FIELD_NUMBER: _ClassVar[int]
+    bank_id: int
+    delta_interest_rate: float
+    delta_currency: float
+    add_citizens: _containers.RepeatedScalarFieldContainer[int]
+    remove_citizens: _containers.RepeatedScalarFieldContainer[int]
+
+    def __init__(self, bank_id: _Optional[int]=..., delta_interest_rate: _Optional[float]=..., delta_currency: _Optional[float]=..., add_citizens: _Optional[_Iterable[int]]=..., remove_citizens: _Optional[_Iterable[int]]=...) -> None:
+        ...
+
+class DeltaUpdateBankResponse(_message.Message):
     __slots__ = []
 
     def __init__(self) -> None:
@@ -116,6 +638,118 @@ class UpdateAgentRequest(_message.Message):
         ...
 
 class UpdateAgentResponse(_message.Message):
+    __slots__ = []
+
+    def __init__(self) -> None:
+        ...
+
+class ListAgentsRequest(_message.Message):
+    __slots__ = []
+
+    def __init__(self) -> None:
+        ...
+
+class ListAgentsResponse(_message.Message):
+    __slots__ = ['agents']
+    AGENTS_FIELD_NUMBER: _ClassVar[int]
+    agents: _containers.RepeatedCompositeFieldContainer[_economy_pb2.Agent]
+
+    def __init__(self, agents: _Optional[_Iterable[_Union[_economy_pb2.Agent, _Mapping]]]=...) -> None:
+        ...
+
+class DeltaUpdateAgentRequest(_message.Message):
+    __slots__ = ['agent_id', 'delta_currency', 'new_firm_id', 'delta_skill', 'delta_consumption', 'delta_income']
+    AGENT_ID_FIELD_NUMBER: _ClassVar[int]
+    DELTA_CURRENCY_FIELD_NUMBER: _ClassVar[int]
+    NEW_FIRM_ID_FIELD_NUMBER: _ClassVar[int]
+    DELTA_SKILL_FIELD_NUMBER: _ClassVar[int]
+    DELTA_CONSUMPTION_FIELD_NUMBER: _ClassVar[int]
+    DELTA_INCOME_FIELD_NUMBER: _ClassVar[int]
+    agent_id: int
+    delta_currency: float
+    new_firm_id: int
+    delta_skill: float
+    delta_consumption: float
+    delta_income: float
+
+    def __init__(self, agent_id: _Optional[int]=..., delta_currency: _Optional[float]=..., new_firm_id: _Optional[int]=..., delta_skill: _Optional[float]=..., delta_consumption: _Optional[float]=..., delta_income: _Optional[float]=...) -> None:
+        ...
+
+class DeltaUpdateAgentResponse(_message.Message):
+    __slots__ = []
+
+    def __init__(self) -> None:
+        ...
+
+class BatchAddAgentRequest(_message.Message):
+    __slots__ = ['agents']
+    AGENTS_FIELD_NUMBER: _ClassVar[int]
+    agents: _containers.RepeatedCompositeFieldContainer[_economy_pb2.Agent]
+
+    def __init__(self, agents: _Optional[_Iterable[_Union[_economy_pb2.Agent, _Mapping]]]=...) -> None:
+        ...
+
+class BatchAddAgentResponse(_message.Message):
+    __slots__ = ['agent_ids']
+    AGENT_IDS_FIELD_NUMBER: _ClassVar[int]
+    agent_ids: _containers.RepeatedScalarFieldContainer[int]
+
+    def __init__(self, agent_ids: _Optional[_Iterable[int]]=...) -> None:
+        ...
+
+class BatchRemoveAgentRequest(_message.Message):
+    __slots__ = ['agent_ids']
+    AGENT_IDS_FIELD_NUMBER: _ClassVar[int]
+    agent_ids: _containers.RepeatedScalarFieldContainer[int]
+
+    def __init__(self, agent_ids: _Optional[_Iterable[int]]=...) -> None:
+        ...
+
+class BatchRemoveAgentResponse(_message.Message):
+    __slots__ = []
+
+    def __init__(self) -> None:
+        ...
+
+class BatchGetAgentRequest(_message.Message):
+    __slots__ = ['agent_ids']
+    AGENT_IDS_FIELD_NUMBER: _ClassVar[int]
+    agent_ids: _containers.RepeatedScalarFieldContainer[int]
+
+    def __init__(self, agent_ids: _Optional[_Iterable[int]]=...) -> None:
+        ...
+
+class BatchGetAgentResponse(_message.Message):
+    __slots__ = ['agents']
+    AGENTS_FIELD_NUMBER: _ClassVar[int]
+    agents: _containers.RepeatedCompositeFieldContainer[_economy_pb2.Agent]
+
+    def __init__(self, agents: _Optional[_Iterable[_Union[_economy_pb2.Agent, _Mapping]]]=...) -> None:
+        ...
+
+class BatchUpdateAgentRequest(_message.Message):
+    __slots__ = ['agents']
+    AGENTS_FIELD_NUMBER: _ClassVar[int]
+    agents: _containers.RepeatedCompositeFieldContainer[_economy_pb2.Agent]
+
+    def __init__(self, agents: _Optional[_Iterable[_Union[_economy_pb2.Agent, _Mapping]]]=...) -> None:
+        ...
+
+class BatchUpdateAgentResponse(_message.Message):
+    __slots__ = []
+
+    def __init__(self) -> None:
+        ...
+
+class BatchDeltaUpdateAgentRequest(_message.Message):
+    __slots__ = ['updates']
+    UPDATES_FIELD_NUMBER: _ClassVar[int]
+    updates: _containers.RepeatedCompositeFieldContainer[DeltaUpdateAgentRequest]
+
+    def __init__(self, updates: _Optional[_Iterable[_Union[DeltaUpdateAgentRequest, _Mapping]]]=...) -> None:
+        ...
+
+class BatchDeltaUpdateAgentResponse(_message.Message):
     __slots__ = []
 
     def __init__(self) -> None:
@@ -190,11 +824,11 @@ class CalculateInterestResponse(_message.Message):
         ...
 
 class CalculateRealGDPRequest(_message.Message):
-    __slots__ = ['nbs_agent_id']
-    NBS_AGENT_ID_FIELD_NUMBER: _ClassVar[int]
-    nbs_agent_id: int
+    __slots__ = ['nbs_id']
+    NBS_ID_FIELD_NUMBER: _ClassVar[int]
+    nbs_id: int
 
-    def __init__(self, nbs_agent_id: _Optional[int]=...) -> None:
+    def __init__(self, nbs_id: _Optional[int]=...) -> None:
         ...
 
 class CalculateRealGDPResponse(_message.Message):
@@ -203,158 +837,6 @@ class CalculateRealGDPResponse(_message.Message):
     real_gdp: float
 
     def __init__(self, real_gdp: _Optional[float]=...) -> None:
-        ...
-
-class BatchGetRequest(_message.Message):
-    __slots__ = ['ids', 'type']
-    IDS_FIELD_NUMBER: _ClassVar[int]
-    TYPE_FIELD_NUMBER: _ClassVar[int]
-    ids: _containers.RepeatedScalarFieldContainer[int]
-    type: str
-
-    def __init__(self, ids: _Optional[_Iterable[int]]=..., type: _Optional[str]=...) -> None:
-        ...
-
-class BatchGetResponse(_message.Message):
-    __slots__ = ['orgs', 'agents']
-    ORGS_FIELD_NUMBER: _ClassVar[int]
-    AGENTS_FIELD_NUMBER: _ClassVar[int]
-    orgs: _containers.RepeatedCompositeFieldContainer[_economy_pb2.Org]
-    agents: _containers.RepeatedCompositeFieldContainer[_economy_pb2.Agent]
-
-    def __init__(self, orgs: _Optional[_Iterable[_Union[_economy_pb2.Org, _Mapping]]]=..., agents: _Optional[_Iterable[_Union[_economy_pb2.Agent, _Mapping]]]=...) -> None:
-        ...
-
-class BatchUpdateRequest(_message.Message):
-    __slots__ = ['orgs', 'agents']
-    ORGS_FIELD_NUMBER: _ClassVar[int]
-    AGENTS_FIELD_NUMBER: _ClassVar[int]
-    orgs: _containers.RepeatedCompositeFieldContainer[_economy_pb2.Org]
-    agents: _containers.RepeatedCompositeFieldContainer[_economy_pb2.Agent]
-
-    def __init__(self, orgs: _Optional[_Iterable[_Union[_economy_pb2.Org, _Mapping]]]=..., agents: _Optional[_Iterable[_Union[_economy_pb2.Agent, _Mapping]]]=...) -> None:
-        ...
-
-class BatchUpdateResponse(_message.Message):
-    __slots__ = []
-
-    def __init__(self) -> None:
-        ...
-
-class BatchSetRequest(_message.Message):
-    __slots__ = ['orgs', 'agents']
-    ORGS_FIELD_NUMBER: _ClassVar[int]
-    AGENTS_FIELD_NUMBER: _ClassVar[int]
-    orgs: _containers.RepeatedCompositeFieldContainer[_economy_pb2.Org]
-    agents: _containers.RepeatedCompositeFieldContainer[_economy_pb2.Agent]
-
-    def __init__(self, orgs: _Optional[_Iterable[_Union[_economy_pb2.Org, _Mapping]]]=..., agents: _Optional[_Iterable[_Union[_economy_pb2.Agent, _Mapping]]]=...) -> None:
-        ...
-
-class BatchSetResponse(_message.Message):
-    __slots__ = []
-
-    def __init__(self) -> None:
-        ...
-
-class DeltaUpdateOrgRequest(_message.Message):
-    __slots__ = ['org_id', 'delta_nominal_gdp', 'delta_real_gdp', 'delta_unemployment', 'delta_wages', 'delta_prices', 'delta_inventory', 'delta_price', 'delta_currency', 'delta_interest_rate', 'delta_bracket_cutoffs', 'delta_bracket_rates', 'delta_demand', 'delta_sales', 'add_employees', 'remove_employees', 'add_citizens', 'remove_citizens', 'delta_consumption_currency', 'delta_consumption_propensity', 'delta_income_currency', 'delta_depression', 'delta_locus_control', 'delta_working_hours']
-    ORG_ID_FIELD_NUMBER: _ClassVar[int]
-    DELTA_NOMINAL_GDP_FIELD_NUMBER: _ClassVar[int]
-    DELTA_REAL_GDP_FIELD_NUMBER: _ClassVar[int]
-    DELTA_UNEMPLOYMENT_FIELD_NUMBER: _ClassVar[int]
-    DELTA_WAGES_FIELD_NUMBER: _ClassVar[int]
-    DELTA_PRICES_FIELD_NUMBER: _ClassVar[int]
-    DELTA_INVENTORY_FIELD_NUMBER: _ClassVar[int]
-    DELTA_PRICE_FIELD_NUMBER: _ClassVar[int]
-    DELTA_CURRENCY_FIELD_NUMBER: _ClassVar[int]
-    DELTA_INTEREST_RATE_FIELD_NUMBER: _ClassVar[int]
-    DELTA_BRACKET_CUTOFFS_FIELD_NUMBER: _ClassVar[int]
-    DELTA_BRACKET_RATES_FIELD_NUMBER: _ClassVar[int]
-    DELTA_DEMAND_FIELD_NUMBER: _ClassVar[int]
-    DELTA_SALES_FIELD_NUMBER: _ClassVar[int]
-    ADD_EMPLOYEES_FIELD_NUMBER: _ClassVar[int]
-    REMOVE_EMPLOYEES_FIELD_NUMBER: _ClassVar[int]
-    ADD_CITIZENS_FIELD_NUMBER: _ClassVar[int]
-    REMOVE_CITIZENS_FIELD_NUMBER: _ClassVar[int]
-    DELTA_CONSUMPTION_CURRENCY_FIELD_NUMBER: _ClassVar[int]
-    DELTA_CONSUMPTION_PROPENSITY_FIELD_NUMBER: _ClassVar[int]
-    DELTA_INCOME_CURRENCY_FIELD_NUMBER: _ClassVar[int]
-    DELTA_DEPRESSION_FIELD_NUMBER: _ClassVar[int]
-    DELTA_LOCUS_CONTROL_FIELD_NUMBER: _ClassVar[int]
-    DELTA_WORKING_HOURS_FIELD_NUMBER: _ClassVar[int]
-    org_id: int
-    delta_nominal_gdp: _containers.RepeatedScalarFieldContainer[float]
-    delta_real_gdp: _containers.RepeatedScalarFieldContainer[float]
-    delta_unemployment: _containers.RepeatedScalarFieldContainer[float]
-    delta_wages: _containers.RepeatedScalarFieldContainer[float]
-    delta_prices: _containers.RepeatedScalarFieldContainer[float]
-    delta_inventory: int
-    delta_price: float
-    delta_currency: float
-    delta_interest_rate: float
-    delta_bracket_cutoffs: _containers.RepeatedScalarFieldContainer[float]
-    delta_bracket_rates: _containers.RepeatedScalarFieldContainer[float]
-    delta_demand: int
-    delta_sales: int
-    add_employees: _containers.RepeatedScalarFieldContainer[int]
-    remove_employees: _containers.RepeatedScalarFieldContainer[int]
-    add_citizens: _containers.RepeatedScalarFieldContainer[int]
-    remove_citizens: _containers.RepeatedScalarFieldContainer[int]
-    delta_consumption_currency: _containers.RepeatedScalarFieldContainer[float]
-    delta_consumption_propensity: _containers.RepeatedScalarFieldContainer[float]
-    delta_income_currency: _containers.RepeatedScalarFieldContainer[float]
-    delta_depression: _containers.RepeatedScalarFieldContainer[float]
-    delta_locus_control: _containers.RepeatedScalarFieldContainer[float]
-    delta_working_hours: _containers.RepeatedScalarFieldContainer[float]
-
-    def __init__(self, org_id: _Optional[int]=..., delta_nominal_gdp: _Optional[_Iterable[float]]=..., delta_real_gdp: _Optional[_Iterable[float]]=..., delta_unemployment: _Optional[_Iterable[float]]=..., delta_wages: _Optional[_Iterable[float]]=..., delta_prices: _Optional[_Iterable[float]]=..., delta_inventory: _Optional[int]=..., delta_price: _Optional[float]=..., delta_currency: _Optional[float]=..., delta_interest_rate: _Optional[float]=..., delta_bracket_cutoffs: _Optional[_Iterable[float]]=..., delta_bracket_rates: _Optional[_Iterable[float]]=..., delta_demand: _Optional[int]=..., delta_sales: _Optional[int]=..., add_employees: _Optional[_Iterable[int]]=..., remove_employees: _Optional[_Iterable[int]]=..., add_citizens: _Optional[_Iterable[int]]=..., remove_citizens: _Optional[_Iterable[int]]=..., delta_consumption_currency: _Optional[_Iterable[float]]=..., delta_consumption_propensity: _Optional[_Iterable[float]]=..., delta_income_currency: _Optional[_Iterable[float]]=..., delta_depression: _Optional[_Iterable[float]]=..., delta_locus_control: _Optional[_Iterable[float]]=..., delta_working_hours: _Optional[_Iterable[float]]=...) -> None:
-        ...
-
-class DeltaUpdateOrgResponse(_message.Message):
-    __slots__ = []
-
-    def __init__(self) -> None:
-        ...
-
-class DeltaUpdateAgentRequest(_message.Message):
-    __slots__ = ['agent_id', 'delta_currency', 'new_firm_id', 'delta_skill', 'delta_consumption', 'delta_income']
-    AGENT_ID_FIELD_NUMBER: _ClassVar[int]
-    DELTA_CURRENCY_FIELD_NUMBER: _ClassVar[int]
-    NEW_FIRM_ID_FIELD_NUMBER: _ClassVar[int]
-    DELTA_SKILL_FIELD_NUMBER: _ClassVar[int]
-    DELTA_CONSUMPTION_FIELD_NUMBER: _ClassVar[int]
-    DELTA_INCOME_FIELD_NUMBER: _ClassVar[int]
-    agent_id: int
-    delta_currency: float
-    new_firm_id: int
-    delta_skill: float
-    delta_consumption: float
-    delta_income: float
-
-    def __init__(self, agent_id: _Optional[int]=..., delta_currency: _Optional[float]=..., new_firm_id: _Optional[int]=..., delta_skill: _Optional[float]=..., delta_consumption: _Optional[float]=..., delta_income: _Optional[float]=...) -> None:
-        ...
-
-class DeltaUpdateAgentResponse(_message.Message):
-    __slots__ = []
-
-    def __init__(self) -> None:
-        ...
-
-class BatchDeltaUpdateRequest(_message.Message):
-    __slots__ = ['orgs', 'agents']
-    ORGS_FIELD_NUMBER: _ClassVar[int]
-    AGENTS_FIELD_NUMBER: _ClassVar[int]
-    orgs: _containers.RepeatedCompositeFieldContainer[DeltaUpdateOrgRequest]
-    agents: _containers.RepeatedCompositeFieldContainer[DeltaUpdateAgentRequest]
-
-    def __init__(self, orgs: _Optional[_Iterable[_Union[DeltaUpdateOrgRequest, _Mapping]]]=..., agents: _Optional[_Iterable[_Union[DeltaUpdateAgentRequest, _Mapping]]]=...) -> None:
-        ...
-
-class BatchDeltaUpdateResponse(_message.Message):
-    __slots__ = []
-
-    def __init__(self) -> None:
         ...
 
 class SaveEconomyEntitiesRequest(_message.Message):
@@ -366,13 +848,19 @@ class SaveEconomyEntitiesRequest(_message.Message):
         ...
 
 class SaveEconomyEntitiesResponse(_message.Message):
-    __slots__ = ['org_ids', 'agent_ids']
-    ORG_IDS_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ['firm_ids', 'nbs_ids', 'government_ids', 'bank_ids', 'agent_ids']
+    FIRM_IDS_FIELD_NUMBER: _ClassVar[int]
+    NBS_IDS_FIELD_NUMBER: _ClassVar[int]
+    GOVERNMENT_IDS_FIELD_NUMBER: _ClassVar[int]
+    BANK_IDS_FIELD_NUMBER: _ClassVar[int]
     AGENT_IDS_FIELD_NUMBER: _ClassVar[int]
-    org_ids: _containers.RepeatedScalarFieldContainer[int]
+    firm_ids: _containers.RepeatedScalarFieldContainer[int]
+    nbs_ids: _containers.RepeatedScalarFieldContainer[int]
+    government_ids: _containers.RepeatedScalarFieldContainer[int]
+    bank_ids: _containers.RepeatedScalarFieldContainer[int]
     agent_ids: _containers.RepeatedScalarFieldContainer[int]
 
-    def __init__(self, org_ids: _Optional[_Iterable[int]]=..., agent_ids: _Optional[_Iterable[int]]=...) -> None:
+    def __init__(self, firm_ids: _Optional[_Iterable[int]]=..., nbs_ids: _Optional[_Iterable[int]]=..., government_ids: _Optional[_Iterable[int]]=..., bank_ids: _Optional[_Iterable[int]]=..., agent_ids: _Optional[_Iterable[int]]=...) -> None:
         ...
 
 class LoadEconomyEntitiesRequest(_message.Message):
@@ -384,11 +872,17 @@ class LoadEconomyEntitiesRequest(_message.Message):
         ...
 
 class LoadEconomyEntitiesResponse(_message.Message):
-    __slots__ = ['org_ids', 'agent_ids']
-    ORG_IDS_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ['firm_ids', 'nbs_ids', 'government_ids', 'bank_ids', 'agent_ids']
+    FIRM_IDS_FIELD_NUMBER: _ClassVar[int]
+    NBS_IDS_FIELD_NUMBER: _ClassVar[int]
+    GOVERNMENT_IDS_FIELD_NUMBER: _ClassVar[int]
+    BANK_IDS_FIELD_NUMBER: _ClassVar[int]
     AGENT_IDS_FIELD_NUMBER: _ClassVar[int]
-    org_ids: _containers.RepeatedScalarFieldContainer[int]
+    firm_ids: _containers.RepeatedScalarFieldContainer[int]
+    nbs_ids: _containers.RepeatedScalarFieldContainer[int]
+    government_ids: _containers.RepeatedScalarFieldContainer[int]
+    bank_ids: _containers.RepeatedScalarFieldContainer[int]
     agent_ids: _containers.RepeatedScalarFieldContainer[int]
 
-    def __init__(self, org_ids: _Optional[_Iterable[int]]=..., agent_ids: _Optional[_Iterable[int]]=...) -> None:
+    def __init__(self, firm_ids: _Optional[_Iterable[int]]=..., nbs_ids: _Optional[_Iterable[int]]=..., government_ids: _Optional[_Iterable[int]]=..., bank_ids: _Optional[_Iterable[int]]=..., agent_ids: _Optional[_Iterable[int]]=...) -> None:
         ...

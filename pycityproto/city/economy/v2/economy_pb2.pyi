@@ -1,73 +1,191 @@
 from google.protobuf.internal import containers as _containers
-from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
-class OrgType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-    __slots__ = []
-    ORG_TYPE_UNSPECIFIED: _ClassVar[OrgType]
-    ORG_TYPE_NBS: _ClassVar[OrgType]
-    ORG_TYPE_FIRM: _ClassVar[OrgType]
-    ORG_TYPE_BANK: _ClassVar[OrgType]
-    ORG_TYPE_GOVERNMENT: _ClassVar[OrgType]
-ORG_TYPE_UNSPECIFIED: OrgType
-ORG_TYPE_NBS: OrgType
-ORG_TYPE_FIRM: OrgType
-ORG_TYPE_BANK: OrgType
-ORG_TYPE_GOVERNMENT: OrgType
-
-class Org(_message.Message):
-    __slots__ = ['id', 'type', 'nominal_gdp', 'real_gdp', 'unemployment', 'wages', 'prices', 'inventory', 'price', 'currency', 'interest_rate', 'bracket_cutoffs', 'bracket_rates', 'demand', 'sales', 'employees', 'citizens', 'consumption_currency', 'consumption_propensity', 'income_currency', 'depression', 'locus_control', 'working_hours']
+class Firm(_message.Message):
+    __slots__ = ['id', 'employees', 'price', 'inventory', 'demand', 'sales', 'currency']
     ID_FIELD_NUMBER: _ClassVar[int]
-    TYPE_FIELD_NUMBER: _ClassVar[int]
+    EMPLOYEES_FIELD_NUMBER: _ClassVar[int]
+    PRICE_FIELD_NUMBER: _ClassVar[int]
+    INVENTORY_FIELD_NUMBER: _ClassVar[int]
+    DEMAND_FIELD_NUMBER: _ClassVar[int]
+    SALES_FIELD_NUMBER: _ClassVar[int]
+    CURRENCY_FIELD_NUMBER: _ClassVar[int]
+    id: int
+    employees: _containers.RepeatedScalarFieldContainer[int]
+    price: float
+    inventory: int
+    demand: float
+    sales: float
+    currency: float
+
+    def __init__(self, id: _Optional[int]=..., employees: _Optional[_Iterable[int]]=..., price: _Optional[float]=..., inventory: _Optional[int]=..., demand: _Optional[float]=..., sales: _Optional[float]=..., currency: _Optional[float]=...) -> None:
+        ...
+
+class NBS(_message.Message):
+    __slots__ = ['id', 'citizens', 'nominal_gdp', 'real_gdp', 'unemployment', 'wages', 'prices', 'working_hours', 'depression', 'consumption_currency', 'income_currency', 'locus_control', 'citizens_agent_id', 'currency']
+
+    class NominalGdpEntry(_message.Message):
+        __slots__ = ['key', 'value']
+        KEY_FIELD_NUMBER: _ClassVar[int]
+        VALUE_FIELD_NUMBER: _ClassVar[int]
+        key: str
+        value: float
+
+        def __init__(self, key: _Optional[str]=..., value: _Optional[float]=...) -> None:
+            ...
+
+    class RealGdpEntry(_message.Message):
+        __slots__ = ['key', 'value']
+        KEY_FIELD_NUMBER: _ClassVar[int]
+        VALUE_FIELD_NUMBER: _ClassVar[int]
+        key: str
+        value: float
+
+        def __init__(self, key: _Optional[str]=..., value: _Optional[float]=...) -> None:
+            ...
+
+    class UnemploymentEntry(_message.Message):
+        __slots__ = ['key', 'value']
+        KEY_FIELD_NUMBER: _ClassVar[int]
+        VALUE_FIELD_NUMBER: _ClassVar[int]
+        key: str
+        value: float
+
+        def __init__(self, key: _Optional[str]=..., value: _Optional[float]=...) -> None:
+            ...
+
+    class WagesEntry(_message.Message):
+        __slots__ = ['key', 'value']
+        KEY_FIELD_NUMBER: _ClassVar[int]
+        VALUE_FIELD_NUMBER: _ClassVar[int]
+        key: str
+        value: float
+
+        def __init__(self, key: _Optional[str]=..., value: _Optional[float]=...) -> None:
+            ...
+
+    class PricesEntry(_message.Message):
+        __slots__ = ['key', 'value']
+        KEY_FIELD_NUMBER: _ClassVar[int]
+        VALUE_FIELD_NUMBER: _ClassVar[int]
+        key: str
+        value: float
+
+        def __init__(self, key: _Optional[str]=..., value: _Optional[float]=...) -> None:
+            ...
+
+    class WorkingHoursEntry(_message.Message):
+        __slots__ = ['key', 'value']
+        KEY_FIELD_NUMBER: _ClassVar[int]
+        VALUE_FIELD_NUMBER: _ClassVar[int]
+        key: str
+        value: float
+
+        def __init__(self, key: _Optional[str]=..., value: _Optional[float]=...) -> None:
+            ...
+
+    class DepressionEntry(_message.Message):
+        __slots__ = ['key', 'value']
+        KEY_FIELD_NUMBER: _ClassVar[int]
+        VALUE_FIELD_NUMBER: _ClassVar[int]
+        key: str
+        value: float
+
+        def __init__(self, key: _Optional[str]=..., value: _Optional[float]=...) -> None:
+            ...
+
+    class ConsumptionCurrencyEntry(_message.Message):
+        __slots__ = ['key', 'value']
+        KEY_FIELD_NUMBER: _ClassVar[int]
+        VALUE_FIELD_NUMBER: _ClassVar[int]
+        key: str
+        value: float
+
+        def __init__(self, key: _Optional[str]=..., value: _Optional[float]=...) -> None:
+            ...
+
+    class IncomeCurrencyEntry(_message.Message):
+        __slots__ = ['key', 'value']
+        KEY_FIELD_NUMBER: _ClassVar[int]
+        VALUE_FIELD_NUMBER: _ClassVar[int]
+        key: str
+        value: float
+
+        def __init__(self, key: _Optional[str]=..., value: _Optional[float]=...) -> None:
+            ...
+
+    class LocusControlEntry(_message.Message):
+        __slots__ = ['key', 'value']
+        KEY_FIELD_NUMBER: _ClassVar[int]
+        VALUE_FIELD_NUMBER: _ClassVar[int]
+        key: str
+        value: float
+
+        def __init__(self, key: _Optional[str]=..., value: _Optional[float]=...) -> None:
+            ...
+    ID_FIELD_NUMBER: _ClassVar[int]
+    CITIZENS_FIELD_NUMBER: _ClassVar[int]
     NOMINAL_GDP_FIELD_NUMBER: _ClassVar[int]
     REAL_GDP_FIELD_NUMBER: _ClassVar[int]
     UNEMPLOYMENT_FIELD_NUMBER: _ClassVar[int]
     WAGES_FIELD_NUMBER: _ClassVar[int]
     PRICES_FIELD_NUMBER: _ClassVar[int]
-    INVENTORY_FIELD_NUMBER: _ClassVar[int]
-    PRICE_FIELD_NUMBER: _ClassVar[int]
+    WORKING_HOURS_FIELD_NUMBER: _ClassVar[int]
+    DEPRESSION_FIELD_NUMBER: _ClassVar[int]
+    CONSUMPTION_CURRENCY_FIELD_NUMBER: _ClassVar[int]
+    INCOME_CURRENCY_FIELD_NUMBER: _ClassVar[int]
+    LOCUS_CONTROL_FIELD_NUMBER: _ClassVar[int]
+    CITIZENS_AGENT_ID_FIELD_NUMBER: _ClassVar[int]
     CURRENCY_FIELD_NUMBER: _ClassVar[int]
-    INTEREST_RATE_FIELD_NUMBER: _ClassVar[int]
+    id: int
+    citizens: _containers.RepeatedScalarFieldContainer[int]
+    nominal_gdp: _containers.ScalarMap[str, float]
+    real_gdp: _containers.ScalarMap[str, float]
+    unemployment: _containers.ScalarMap[str, float]
+    wages: _containers.ScalarMap[str, float]
+    prices: _containers.ScalarMap[str, float]
+    working_hours: _containers.ScalarMap[str, float]
+    depression: _containers.ScalarMap[str, float]
+    consumption_currency: _containers.ScalarMap[str, float]
+    income_currency: _containers.ScalarMap[str, float]
+    locus_control: _containers.ScalarMap[str, float]
+    citizens_agent_id: _containers.RepeatedScalarFieldContainer[int]
+    currency: float
+
+    def __init__(self, id: _Optional[int]=..., citizens: _Optional[_Iterable[int]]=..., nominal_gdp: _Optional[_Mapping[str, float]]=..., real_gdp: _Optional[_Mapping[str, float]]=..., unemployment: _Optional[_Mapping[str, float]]=..., wages: _Optional[_Mapping[str, float]]=..., prices: _Optional[_Mapping[str, float]]=..., working_hours: _Optional[_Mapping[str, float]]=..., depression: _Optional[_Mapping[str, float]]=..., consumption_currency: _Optional[_Mapping[str, float]]=..., income_currency: _Optional[_Mapping[str, float]]=..., locus_control: _Optional[_Mapping[str, float]]=..., citizens_agent_id: _Optional[_Iterable[int]]=..., currency: _Optional[float]=...) -> None:
+        ...
+
+class Government(_message.Message):
+    __slots__ = ['id', 'citizens', 'bracket_cutoffs', 'bracket_rates', 'currency']
+    ID_FIELD_NUMBER: _ClassVar[int]
+    CITIZENS_FIELD_NUMBER: _ClassVar[int]
     BRACKET_CUTOFFS_FIELD_NUMBER: _ClassVar[int]
     BRACKET_RATES_FIELD_NUMBER: _ClassVar[int]
-    DEMAND_FIELD_NUMBER: _ClassVar[int]
-    SALES_FIELD_NUMBER: _ClassVar[int]
-    EMPLOYEES_FIELD_NUMBER: _ClassVar[int]
-    CITIZENS_FIELD_NUMBER: _ClassVar[int]
-    CONSUMPTION_CURRENCY_FIELD_NUMBER: _ClassVar[int]
-    CONSUMPTION_PROPENSITY_FIELD_NUMBER: _ClassVar[int]
-    INCOME_CURRENCY_FIELD_NUMBER: _ClassVar[int]
-    DEPRESSION_FIELD_NUMBER: _ClassVar[int]
-    LOCUS_CONTROL_FIELD_NUMBER: _ClassVar[int]
-    WORKING_HOURS_FIELD_NUMBER: _ClassVar[int]
+    CURRENCY_FIELD_NUMBER: _ClassVar[int]
     id: int
-    type: OrgType
-    nominal_gdp: _containers.RepeatedScalarFieldContainer[float]
-    real_gdp: _containers.RepeatedScalarFieldContainer[float]
-    unemployment: _containers.RepeatedScalarFieldContainer[float]
-    wages: _containers.RepeatedScalarFieldContainer[float]
-    prices: _containers.RepeatedScalarFieldContainer[float]
-    inventory: int
-    price: float
-    currency: float
-    interest_rate: float
+    citizens: _containers.RepeatedScalarFieldContainer[int]
     bracket_cutoffs: _containers.RepeatedScalarFieldContainer[float]
     bracket_rates: _containers.RepeatedScalarFieldContainer[float]
-    demand: int
-    sales: int
-    employees: _containers.RepeatedScalarFieldContainer[int]
-    citizens: _containers.RepeatedScalarFieldContainer[int]
-    consumption_currency: _containers.RepeatedScalarFieldContainer[float]
-    consumption_propensity: _containers.RepeatedScalarFieldContainer[float]
-    income_currency: _containers.RepeatedScalarFieldContainer[float]
-    depression: _containers.RepeatedScalarFieldContainer[float]
-    locus_control: _containers.RepeatedScalarFieldContainer[float]
-    working_hours: _containers.RepeatedScalarFieldContainer[float]
+    currency: float
 
-    def __init__(self, id: _Optional[int]=..., type: _Optional[_Union[OrgType, str]]=..., nominal_gdp: _Optional[_Iterable[float]]=..., real_gdp: _Optional[_Iterable[float]]=..., unemployment: _Optional[_Iterable[float]]=..., wages: _Optional[_Iterable[float]]=..., prices: _Optional[_Iterable[float]]=..., inventory: _Optional[int]=..., price: _Optional[float]=..., currency: _Optional[float]=..., interest_rate: _Optional[float]=..., bracket_cutoffs: _Optional[_Iterable[float]]=..., bracket_rates: _Optional[_Iterable[float]]=..., demand: _Optional[int]=..., sales: _Optional[int]=..., employees: _Optional[_Iterable[int]]=..., citizens: _Optional[_Iterable[int]]=..., consumption_currency: _Optional[_Iterable[float]]=..., consumption_propensity: _Optional[_Iterable[float]]=..., income_currency: _Optional[_Iterable[float]]=..., depression: _Optional[_Iterable[float]]=..., locus_control: _Optional[_Iterable[float]]=..., working_hours: _Optional[_Iterable[float]]=...) -> None:
+    def __init__(self, id: _Optional[int]=..., citizens: _Optional[_Iterable[int]]=..., bracket_cutoffs: _Optional[_Iterable[float]]=..., bracket_rates: _Optional[_Iterable[float]]=..., currency: _Optional[float]=...) -> None:
+        ...
+
+class Bank(_message.Message):
+    __slots__ = ['id', 'citizens', 'interest_rate', 'currency']
+    ID_FIELD_NUMBER: _ClassVar[int]
+    CITIZENS_FIELD_NUMBER: _ClassVar[int]
+    INTEREST_RATE_FIELD_NUMBER: _ClassVar[int]
+    CURRENCY_FIELD_NUMBER: _ClassVar[int]
+    id: int
+    citizens: _containers.RepeatedScalarFieldContainer[int]
+    interest_rate: float
+    currency: float
+
+    def __init__(self, id: _Optional[int]=..., citizens: _Optional[_Iterable[int]]=..., interest_rate: _Optional[float]=..., currency: _Optional[float]=...) -> None:
         ...
 
 class Agent(_message.Message):
@@ -89,11 +207,17 @@ class Agent(_message.Message):
         ...
 
 class EconomyEntities(_message.Message):
-    __slots__ = ['orgs', 'agents']
-    ORGS_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ['firms', 'nbs', 'governments', 'banks', 'agents']
+    FIRMS_FIELD_NUMBER: _ClassVar[int]
+    NBS_FIELD_NUMBER: _ClassVar[int]
+    GOVERNMENTS_FIELD_NUMBER: _ClassVar[int]
+    BANKS_FIELD_NUMBER: _ClassVar[int]
     AGENTS_FIELD_NUMBER: _ClassVar[int]
-    orgs: _containers.RepeatedCompositeFieldContainer[Org]
+    firms: _containers.RepeatedCompositeFieldContainer[Firm]
+    nbs: _containers.RepeatedCompositeFieldContainer[NBS]
+    governments: _containers.RepeatedCompositeFieldContainer[Government]
+    banks: _containers.RepeatedCompositeFieldContainer[Bank]
     agents: _containers.RepeatedCompositeFieldContainer[Agent]
 
-    def __init__(self, orgs: _Optional[_Iterable[_Union[Org, _Mapping]]]=..., agents: _Optional[_Iterable[_Union[Agent, _Mapping]]]=...) -> None:
+    def __init__(self, firms: _Optional[_Iterable[_Union[Firm, _Mapping]]]=..., nbs: _Optional[_Iterable[_Union[NBS, _Mapping]]]=..., governments: _Optional[_Iterable[_Union[Government, _Mapping]]]=..., banks: _Optional[_Iterable[_Union[Bank, _Mapping]]]=..., agents: _Optional[_Iterable[_Union[Agent, _Mapping]]]=...) -> None:
         ...

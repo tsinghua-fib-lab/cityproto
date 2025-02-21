@@ -13,20 +13,46 @@ class OrgServiceStub(object):
         Args:
             channel: A grpc.Channel.
         """
-        self.AddOrg = channel.unary_unary('/city.economy.v2.OrgService/AddOrg', request_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.AddOrgRequest.SerializeToString, response_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.AddOrgResponse.FromString)
-        self.RemoveOrg = channel.unary_unary('/city.economy.v2.OrgService/RemoveOrg', request_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.RemoveOrgRequest.SerializeToString, response_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.RemoveOrgResponse.FromString)
-        self.GetOrg = channel.unary_unary('/city.economy.v2.OrgService/GetOrg', request_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.GetOrgRequest.SerializeToString, response_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.GetOrgResponse.FromString)
-        self.UpdateOrg = channel.unary_unary('/city.economy.v2.OrgService/UpdateOrg', request_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.UpdateOrgRequest.SerializeToString, response_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.UpdateOrgResponse.FromString)
+        self.AddFirm = channel.unary_unary('/city.economy.v2.OrgService/AddFirm', request_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.AddFirmRequest.SerializeToString, response_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.AddFirmResponse.FromString)
+        self.RemoveFirm = channel.unary_unary('/city.economy.v2.OrgService/RemoveFirm', request_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.RemoveFirmRequest.SerializeToString, response_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.RemoveFirmResponse.FromString)
+        self.GetFirm = channel.unary_unary('/city.economy.v2.OrgService/GetFirm', request_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.GetFirmRequest.SerializeToString, response_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.GetFirmResponse.FromString)
+        self.UpdateFirm = channel.unary_unary('/city.economy.v2.OrgService/UpdateFirm', request_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.UpdateFirmRequest.SerializeToString, response_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.UpdateFirmResponse.FromString)
+        self.ListFirms = channel.unary_unary('/city.economy.v2.OrgService/ListFirms', request_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.ListFirmsRequest.SerializeToString, response_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.ListFirmsResponse.FromString)
+        self.DeltaUpdateFirm = channel.unary_unary('/city.economy.v2.OrgService/DeltaUpdateFirm', request_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.DeltaUpdateFirmRequest.SerializeToString, response_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.DeltaUpdateFirmResponse.FromString)
+        self.BatchAddFirm = channel.unary_unary('/city.economy.v2.OrgService/BatchAddFirm', request_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.BatchAddFirmRequest.SerializeToString, response_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.BatchAddFirmResponse.FromString)
+        self.BatchRemoveFirm = channel.unary_unary('/city.economy.v2.OrgService/BatchRemoveFirm', request_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.BatchRemoveFirmRequest.SerializeToString, response_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.BatchRemoveFirmResponse.FromString)
+        self.BatchGetFirm = channel.unary_unary('/city.economy.v2.OrgService/BatchGetFirm', request_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.BatchGetFirmRequest.SerializeToString, response_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.BatchGetFirmResponse.FromString)
+        self.BatchUpdateFirm = channel.unary_unary('/city.economy.v2.OrgService/BatchUpdateFirm', request_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.BatchUpdateFirmRequest.SerializeToString, response_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.BatchUpdateFirmResponse.FromString)
+        self.BatchDeltaUpdateFirm = channel.unary_unary('/city.economy.v2.OrgService/BatchDeltaUpdateFirm', request_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.BatchDeltaUpdateFirmRequest.SerializeToString, response_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.BatchDeltaUpdateFirmResponse.FromString)
+        self.AddNBS = channel.unary_unary('/city.economy.v2.OrgService/AddNBS', request_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.AddNBSRequest.SerializeToString, response_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.AddNBSResponse.FromString)
+        self.RemoveNBS = channel.unary_unary('/city.economy.v2.OrgService/RemoveNBS', request_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.RemoveNBSRequest.SerializeToString, response_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.RemoveNBSResponse.FromString)
+        self.GetNBS = channel.unary_unary('/city.economy.v2.OrgService/GetNBS', request_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.GetNBSRequest.SerializeToString, response_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.GetNBSResponse.FromString)
+        self.UpdateNBS = channel.unary_unary('/city.economy.v2.OrgService/UpdateNBS', request_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.UpdateNBSRequest.SerializeToString, response_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.UpdateNBSResponse.FromString)
+        self.ListNBS = channel.unary_unary('/city.economy.v2.OrgService/ListNBS', request_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.ListNBSRequest.SerializeToString, response_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.ListNBSResponse.FromString)
+        self.DeltaUpdateNBS = channel.unary_unary('/city.economy.v2.OrgService/DeltaUpdateNBS', request_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.DeltaUpdateNBSRequest.SerializeToString, response_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.DeltaUpdateNBSResponse.FromString)
+        self.AddGovernment = channel.unary_unary('/city.economy.v2.OrgService/AddGovernment', request_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.AddGovernmentRequest.SerializeToString, response_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.AddGovernmentResponse.FromString)
+        self.RemoveGovernment = channel.unary_unary('/city.economy.v2.OrgService/RemoveGovernment', request_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.RemoveGovernmentRequest.SerializeToString, response_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.RemoveGovernmentResponse.FromString)
+        self.GetGovernment = channel.unary_unary('/city.economy.v2.OrgService/GetGovernment', request_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.GetGovernmentRequest.SerializeToString, response_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.GetGovernmentResponse.FromString)
+        self.UpdateGovernment = channel.unary_unary('/city.economy.v2.OrgService/UpdateGovernment', request_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.UpdateGovernmentRequest.SerializeToString, response_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.UpdateGovernmentResponse.FromString)
+        self.ListGovernments = channel.unary_unary('/city.economy.v2.OrgService/ListGovernments', request_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.ListGovernmentsRequest.SerializeToString, response_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.ListGovernmentsResponse.FromString)
+        self.DeltaUpdateGovernment = channel.unary_unary('/city.economy.v2.OrgService/DeltaUpdateGovernment', request_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.DeltaUpdateGovernmentRequest.SerializeToString, response_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.DeltaUpdateGovernmentResponse.FromString)
+        self.AddBank = channel.unary_unary('/city.economy.v2.OrgService/AddBank', request_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.AddBankRequest.SerializeToString, response_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.AddBankResponse.FromString)
+        self.RemoveBank = channel.unary_unary('/city.economy.v2.OrgService/RemoveBank', request_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.RemoveBankRequest.SerializeToString, response_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.RemoveBankResponse.FromString)
+        self.GetBank = channel.unary_unary('/city.economy.v2.OrgService/GetBank', request_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.GetBankRequest.SerializeToString, response_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.GetBankResponse.FromString)
+        self.UpdateBank = channel.unary_unary('/city.economy.v2.OrgService/UpdateBank', request_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.UpdateBankRequest.SerializeToString, response_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.UpdateBankResponse.FromString)
+        self.ListBanks = channel.unary_unary('/city.economy.v2.OrgService/ListBanks', request_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.ListBanksRequest.SerializeToString, response_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.ListBanksResponse.FromString)
+        self.DeltaUpdateBank = channel.unary_unary('/city.economy.v2.OrgService/DeltaUpdateBank', request_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.DeltaUpdateBankRequest.SerializeToString, response_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.DeltaUpdateBankResponse.FromString)
         self.AddAgent = channel.unary_unary('/city.economy.v2.OrgService/AddAgent', request_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.AddAgentRequest.SerializeToString, response_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.AddAgentResponse.FromString)
         self.RemoveAgent = channel.unary_unary('/city.economy.v2.OrgService/RemoveAgent', request_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.RemoveAgentRequest.SerializeToString, response_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.RemoveAgentResponse.FromString)
         self.GetAgent = channel.unary_unary('/city.economy.v2.OrgService/GetAgent', request_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.GetAgentRequest.SerializeToString, response_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.GetAgentResponse.FromString)
         self.UpdateAgent = channel.unary_unary('/city.economy.v2.OrgService/UpdateAgent', request_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.UpdateAgentRequest.SerializeToString, response_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.UpdateAgentResponse.FromString)
-        self.BatchGet = channel.unary_unary('/city.economy.v2.OrgService/BatchGet', request_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.BatchGetRequest.SerializeToString, response_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.BatchGetResponse.FromString)
-        self.BatchUpdate = channel.unary_unary('/city.economy.v2.OrgService/BatchUpdate', request_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.BatchUpdateRequest.SerializeToString, response_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.BatchUpdateResponse.FromString)
-        self.BatchSet = channel.unary_unary('/city.economy.v2.OrgService/BatchSet', request_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.BatchSetRequest.SerializeToString, response_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.BatchSetResponse.FromString)
-        self.DeltaUpdateOrg = channel.unary_unary('/city.economy.v2.OrgService/DeltaUpdateOrg', request_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.DeltaUpdateOrgRequest.SerializeToString, response_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.DeltaUpdateOrgResponse.FromString)
+        self.ListAgents = channel.unary_unary('/city.economy.v2.OrgService/ListAgents', request_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.ListAgentsRequest.SerializeToString, response_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.ListAgentsResponse.FromString)
         self.DeltaUpdateAgent = channel.unary_unary('/city.economy.v2.OrgService/DeltaUpdateAgent', request_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.DeltaUpdateAgentRequest.SerializeToString, response_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.DeltaUpdateAgentResponse.FromString)
-        self.BatchDeltaUpdate = channel.unary_unary('/city.economy.v2.OrgService/BatchDeltaUpdate', request_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.BatchDeltaUpdateRequest.SerializeToString, response_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.BatchDeltaUpdateResponse.FromString)
+        self.BatchAddAgent = channel.unary_unary('/city.economy.v2.OrgService/BatchAddAgent', request_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.BatchAddAgentRequest.SerializeToString, response_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.BatchAddAgentResponse.FromString)
+        self.BatchRemoveAgent = channel.unary_unary('/city.economy.v2.OrgService/BatchRemoveAgent', request_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.BatchRemoveAgentRequest.SerializeToString, response_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.BatchRemoveAgentResponse.FromString)
+        self.BatchGetAgent = channel.unary_unary('/city.economy.v2.OrgService/BatchGetAgent', request_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.BatchGetAgentRequest.SerializeToString, response_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.BatchGetAgentResponse.FromString)
+        self.BatchUpdateAgent = channel.unary_unary('/city.economy.v2.OrgService/BatchUpdateAgent', request_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.BatchUpdateAgentRequest.SerializeToString, response_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.BatchUpdateAgentResponse.FromString)
+        self.BatchDeltaUpdateAgent = channel.unary_unary('/city.economy.v2.OrgService/BatchDeltaUpdateAgent', request_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.BatchDeltaUpdateAgentRequest.SerializeToString, response_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.BatchDeltaUpdateAgentResponse.FromString)
         self.CalculateTaxesDue = channel.unary_unary('/city.economy.v2.OrgService/CalculateTaxesDue', request_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.CalculateTaxesDueRequest.SerializeToString, response_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.CalculateTaxesDueResponse.FromString)
         self.CalculateConsumption = channel.unary_unary('/city.economy.v2.OrgService/CalculateConsumption', request_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.CalculateConsumptionRequest.SerializeToString, response_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.CalculateConsumptionResponse.FromString)
         self.CalculateInterest = channel.unary_unary('/city.economy.v2.OrgService/CalculateInterest', request_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.CalculateInterestRequest.SerializeToString, response_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.CalculateInterestResponse.FromString)
@@ -39,148 +65,291 @@ class OrgServiceServicer(object):
     包括基本的CRUD操作、批量操作、增量更新和各种计算功能
     """
 
-    def AddOrg(self, request, context):
-        """AddOrg 添加一个新的组织到系统中
+    def AddFirm(self, request, context):
+        """Firm 相关操作
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def RemoveOrg(self, request, context):
-        """RemoveOrg 从系统中移除指定的组织
+    def RemoveFirm(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetFirm(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateFirm(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListFirms(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeltaUpdateFirm(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def BatchAddFirm(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def BatchRemoveFirm(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def BatchGetFirm(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def BatchUpdateFirm(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def BatchDeltaUpdateFirm(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def AddNBS(self, request, context):
+        """NBS 相关操作
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def GetOrg(self, request, context):
-        """GetOrg 获取指定组织的完整信息
+    def RemoveNBS(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetNBS(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateNBS(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListNBS(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeltaUpdateNBS(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def AddGovernment(self, request, context):
+        """Government 相关操作
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def UpdateOrg(self, request, context):
-        """UpdateOrg 更新指定组织的信息
+    def RemoveGovernment(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetGovernment(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateGovernment(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListGovernments(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeltaUpdateGovernment(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def AddBank(self, request, context):
+        """Bank 相关操作
         """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def RemoveBank(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetBank(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateBank(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListBanks(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeltaUpdateBank(self, request, context):
+        """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def AddAgent(self, request, context):
-        """AddAgent 添加一个新的代理到系统中
+        """Agent 相关操作
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def RemoveAgent(self, request, context):
-        """RemoveAgent 从系统中移除指定的代理
-        """
+        """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetAgent(self, request, context):
-        """GetAgent 获取指定代理的完整信息
-        """
+        """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def UpdateAgent(self, request, context):
-        """UpdateAgent 更新指定代理的信息
-        """
+        """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def BatchGet(self, request, context):
-        """BatchGet 批量获取多个组织或代理的信息
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def BatchUpdate(self, request, context):
-        """BatchUpdate 批量更新多个组织或代理的信息，只更新请求中指定的字段
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def BatchSet(self, request, context):
-        """BatchSet 批量设置多个组织或代理的信息，完全替换所有字段
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def DeltaUpdateOrg(self, request, context):
-        """DeltaUpdateOrg 对组织进行增量更新
-        """
+    def ListAgents(self, request, context):
+        """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def DeltaUpdateAgent(self, request, context):
-        """DeltaUpdateAgent 对代理进行增量更新
-        """
+        """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def BatchDeltaUpdate(self, request, context):
-        """BatchDeltaUpdate 批量进行增量更新
-        """
+    def BatchAddAgent(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def BatchRemoveAgent(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def BatchGetAgent(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def BatchUpdateAgent(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def BatchDeltaUpdateAgent(self, request, context):
+        """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def CalculateTaxesDue(self, request, context):
-        """CalculateTaxesDue 计算应缴税额并可选择进行再分配
+        """计算相关操作
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def CalculateConsumption(self, request, context):
-        """CalculateConsumption 计算代理的消费情况
-        """
+        """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def CalculateInterest(self, request, context):
-        """CalculateInterest 计算银行利息
-        """
+        """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def CalculateRealGDP(self, request, context):
-        """CalculateRealGDP 计算实际GDP
-        """
+        """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def SaveEconomyEntities(self, request, context):
-        """SaveEconomyEntities 保存经济系统的当前状态
+        """系统状态操作
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def LoadEconomyEntities(self, request, context):
-        """LoadEconomyEntities 加载经济系统的状态
-        """
+        """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
 def add_OrgServiceServicer_to_server(servicer, server):
-    rpc_method_handlers = {'AddOrg': grpc.unary_unary_rpc_method_handler(servicer.AddOrg, request_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.AddOrgRequest.FromString, response_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.AddOrgResponse.SerializeToString), 'RemoveOrg': grpc.unary_unary_rpc_method_handler(servicer.RemoveOrg, request_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.RemoveOrgRequest.FromString, response_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.RemoveOrgResponse.SerializeToString), 'GetOrg': grpc.unary_unary_rpc_method_handler(servicer.GetOrg, request_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.GetOrgRequest.FromString, response_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.GetOrgResponse.SerializeToString), 'UpdateOrg': grpc.unary_unary_rpc_method_handler(servicer.UpdateOrg, request_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.UpdateOrgRequest.FromString, response_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.UpdateOrgResponse.SerializeToString), 'AddAgent': grpc.unary_unary_rpc_method_handler(servicer.AddAgent, request_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.AddAgentRequest.FromString, response_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.AddAgentResponse.SerializeToString), 'RemoveAgent': grpc.unary_unary_rpc_method_handler(servicer.RemoveAgent, request_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.RemoveAgentRequest.FromString, response_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.RemoveAgentResponse.SerializeToString), 'GetAgent': grpc.unary_unary_rpc_method_handler(servicer.GetAgent, request_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.GetAgentRequest.FromString, response_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.GetAgentResponse.SerializeToString), 'UpdateAgent': grpc.unary_unary_rpc_method_handler(servicer.UpdateAgent, request_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.UpdateAgentRequest.FromString, response_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.UpdateAgentResponse.SerializeToString), 'BatchGet': grpc.unary_unary_rpc_method_handler(servicer.BatchGet, request_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.BatchGetRequest.FromString, response_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.BatchGetResponse.SerializeToString), 'BatchUpdate': grpc.unary_unary_rpc_method_handler(servicer.BatchUpdate, request_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.BatchUpdateRequest.FromString, response_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.BatchUpdateResponse.SerializeToString), 'BatchSet': grpc.unary_unary_rpc_method_handler(servicer.BatchSet, request_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.BatchSetRequest.FromString, response_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.BatchSetResponse.SerializeToString), 'DeltaUpdateOrg': grpc.unary_unary_rpc_method_handler(servicer.DeltaUpdateOrg, request_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.DeltaUpdateOrgRequest.FromString, response_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.DeltaUpdateOrgResponse.SerializeToString), 'DeltaUpdateAgent': grpc.unary_unary_rpc_method_handler(servicer.DeltaUpdateAgent, request_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.DeltaUpdateAgentRequest.FromString, response_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.DeltaUpdateAgentResponse.SerializeToString), 'BatchDeltaUpdate': grpc.unary_unary_rpc_method_handler(servicer.BatchDeltaUpdate, request_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.BatchDeltaUpdateRequest.FromString, response_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.BatchDeltaUpdateResponse.SerializeToString), 'CalculateTaxesDue': grpc.unary_unary_rpc_method_handler(servicer.CalculateTaxesDue, request_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.CalculateTaxesDueRequest.FromString, response_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.CalculateTaxesDueResponse.SerializeToString), 'CalculateConsumption': grpc.unary_unary_rpc_method_handler(servicer.CalculateConsumption, request_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.CalculateConsumptionRequest.FromString, response_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.CalculateConsumptionResponse.SerializeToString), 'CalculateInterest': grpc.unary_unary_rpc_method_handler(servicer.CalculateInterest, request_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.CalculateInterestRequest.FromString, response_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.CalculateInterestResponse.SerializeToString), 'CalculateRealGDP': grpc.unary_unary_rpc_method_handler(servicer.CalculateRealGDP, request_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.CalculateRealGDPRequest.FromString, response_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.CalculateRealGDPResponse.SerializeToString), 'SaveEconomyEntities': grpc.unary_unary_rpc_method_handler(servicer.SaveEconomyEntities, request_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.SaveEconomyEntitiesRequest.FromString, response_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.SaveEconomyEntitiesResponse.SerializeToString), 'LoadEconomyEntities': grpc.unary_unary_rpc_method_handler(servicer.LoadEconomyEntities, request_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.LoadEconomyEntitiesRequest.FromString, response_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.LoadEconomyEntitiesResponse.SerializeToString)}
+    rpc_method_handlers = {'AddFirm': grpc.unary_unary_rpc_method_handler(servicer.AddFirm, request_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.AddFirmRequest.FromString, response_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.AddFirmResponse.SerializeToString), 'RemoveFirm': grpc.unary_unary_rpc_method_handler(servicer.RemoveFirm, request_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.RemoveFirmRequest.FromString, response_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.RemoveFirmResponse.SerializeToString), 'GetFirm': grpc.unary_unary_rpc_method_handler(servicer.GetFirm, request_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.GetFirmRequest.FromString, response_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.GetFirmResponse.SerializeToString), 'UpdateFirm': grpc.unary_unary_rpc_method_handler(servicer.UpdateFirm, request_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.UpdateFirmRequest.FromString, response_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.UpdateFirmResponse.SerializeToString), 'ListFirms': grpc.unary_unary_rpc_method_handler(servicer.ListFirms, request_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.ListFirmsRequest.FromString, response_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.ListFirmsResponse.SerializeToString), 'DeltaUpdateFirm': grpc.unary_unary_rpc_method_handler(servicer.DeltaUpdateFirm, request_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.DeltaUpdateFirmRequest.FromString, response_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.DeltaUpdateFirmResponse.SerializeToString), 'BatchAddFirm': grpc.unary_unary_rpc_method_handler(servicer.BatchAddFirm, request_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.BatchAddFirmRequest.FromString, response_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.BatchAddFirmResponse.SerializeToString), 'BatchRemoveFirm': grpc.unary_unary_rpc_method_handler(servicer.BatchRemoveFirm, request_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.BatchRemoveFirmRequest.FromString, response_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.BatchRemoveFirmResponse.SerializeToString), 'BatchGetFirm': grpc.unary_unary_rpc_method_handler(servicer.BatchGetFirm, request_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.BatchGetFirmRequest.FromString, response_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.BatchGetFirmResponse.SerializeToString), 'BatchUpdateFirm': grpc.unary_unary_rpc_method_handler(servicer.BatchUpdateFirm, request_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.BatchUpdateFirmRequest.FromString, response_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.BatchUpdateFirmResponse.SerializeToString), 'BatchDeltaUpdateFirm': grpc.unary_unary_rpc_method_handler(servicer.BatchDeltaUpdateFirm, request_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.BatchDeltaUpdateFirmRequest.FromString, response_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.BatchDeltaUpdateFirmResponse.SerializeToString), 'AddNBS': grpc.unary_unary_rpc_method_handler(servicer.AddNBS, request_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.AddNBSRequest.FromString, response_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.AddNBSResponse.SerializeToString), 'RemoveNBS': grpc.unary_unary_rpc_method_handler(servicer.RemoveNBS, request_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.RemoveNBSRequest.FromString, response_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.RemoveNBSResponse.SerializeToString), 'GetNBS': grpc.unary_unary_rpc_method_handler(servicer.GetNBS, request_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.GetNBSRequest.FromString, response_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.GetNBSResponse.SerializeToString), 'UpdateNBS': grpc.unary_unary_rpc_method_handler(servicer.UpdateNBS, request_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.UpdateNBSRequest.FromString, response_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.UpdateNBSResponse.SerializeToString), 'ListNBS': grpc.unary_unary_rpc_method_handler(servicer.ListNBS, request_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.ListNBSRequest.FromString, response_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.ListNBSResponse.SerializeToString), 'DeltaUpdateNBS': grpc.unary_unary_rpc_method_handler(servicer.DeltaUpdateNBS, request_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.DeltaUpdateNBSRequest.FromString, response_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.DeltaUpdateNBSResponse.SerializeToString), 'AddGovernment': grpc.unary_unary_rpc_method_handler(servicer.AddGovernment, request_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.AddGovernmentRequest.FromString, response_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.AddGovernmentResponse.SerializeToString), 'RemoveGovernment': grpc.unary_unary_rpc_method_handler(servicer.RemoveGovernment, request_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.RemoveGovernmentRequest.FromString, response_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.RemoveGovernmentResponse.SerializeToString), 'GetGovernment': grpc.unary_unary_rpc_method_handler(servicer.GetGovernment, request_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.GetGovernmentRequest.FromString, response_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.GetGovernmentResponse.SerializeToString), 'UpdateGovernment': grpc.unary_unary_rpc_method_handler(servicer.UpdateGovernment, request_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.UpdateGovernmentRequest.FromString, response_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.UpdateGovernmentResponse.SerializeToString), 'ListGovernments': grpc.unary_unary_rpc_method_handler(servicer.ListGovernments, request_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.ListGovernmentsRequest.FromString, response_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.ListGovernmentsResponse.SerializeToString), 'DeltaUpdateGovernment': grpc.unary_unary_rpc_method_handler(servicer.DeltaUpdateGovernment, request_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.DeltaUpdateGovernmentRequest.FromString, response_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.DeltaUpdateGovernmentResponse.SerializeToString), 'AddBank': grpc.unary_unary_rpc_method_handler(servicer.AddBank, request_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.AddBankRequest.FromString, response_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.AddBankResponse.SerializeToString), 'RemoveBank': grpc.unary_unary_rpc_method_handler(servicer.RemoveBank, request_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.RemoveBankRequest.FromString, response_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.RemoveBankResponse.SerializeToString), 'GetBank': grpc.unary_unary_rpc_method_handler(servicer.GetBank, request_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.GetBankRequest.FromString, response_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.GetBankResponse.SerializeToString), 'UpdateBank': grpc.unary_unary_rpc_method_handler(servicer.UpdateBank, request_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.UpdateBankRequest.FromString, response_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.UpdateBankResponse.SerializeToString), 'ListBanks': grpc.unary_unary_rpc_method_handler(servicer.ListBanks, request_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.ListBanksRequest.FromString, response_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.ListBanksResponse.SerializeToString), 'DeltaUpdateBank': grpc.unary_unary_rpc_method_handler(servicer.DeltaUpdateBank, request_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.DeltaUpdateBankRequest.FromString, response_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.DeltaUpdateBankResponse.SerializeToString), 'AddAgent': grpc.unary_unary_rpc_method_handler(servicer.AddAgent, request_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.AddAgentRequest.FromString, response_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.AddAgentResponse.SerializeToString), 'RemoveAgent': grpc.unary_unary_rpc_method_handler(servicer.RemoveAgent, request_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.RemoveAgentRequest.FromString, response_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.RemoveAgentResponse.SerializeToString), 'GetAgent': grpc.unary_unary_rpc_method_handler(servicer.GetAgent, request_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.GetAgentRequest.FromString, response_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.GetAgentResponse.SerializeToString), 'UpdateAgent': grpc.unary_unary_rpc_method_handler(servicer.UpdateAgent, request_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.UpdateAgentRequest.FromString, response_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.UpdateAgentResponse.SerializeToString), 'ListAgents': grpc.unary_unary_rpc_method_handler(servicer.ListAgents, request_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.ListAgentsRequest.FromString, response_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.ListAgentsResponse.SerializeToString), 'DeltaUpdateAgent': grpc.unary_unary_rpc_method_handler(servicer.DeltaUpdateAgent, request_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.DeltaUpdateAgentRequest.FromString, response_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.DeltaUpdateAgentResponse.SerializeToString), 'BatchAddAgent': grpc.unary_unary_rpc_method_handler(servicer.BatchAddAgent, request_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.BatchAddAgentRequest.FromString, response_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.BatchAddAgentResponse.SerializeToString), 'BatchRemoveAgent': grpc.unary_unary_rpc_method_handler(servicer.BatchRemoveAgent, request_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.BatchRemoveAgentRequest.FromString, response_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.BatchRemoveAgentResponse.SerializeToString), 'BatchGetAgent': grpc.unary_unary_rpc_method_handler(servicer.BatchGetAgent, request_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.BatchGetAgentRequest.FromString, response_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.BatchGetAgentResponse.SerializeToString), 'BatchUpdateAgent': grpc.unary_unary_rpc_method_handler(servicer.BatchUpdateAgent, request_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.BatchUpdateAgentRequest.FromString, response_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.BatchUpdateAgentResponse.SerializeToString), 'BatchDeltaUpdateAgent': grpc.unary_unary_rpc_method_handler(servicer.BatchDeltaUpdateAgent, request_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.BatchDeltaUpdateAgentRequest.FromString, response_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.BatchDeltaUpdateAgentResponse.SerializeToString), 'CalculateTaxesDue': grpc.unary_unary_rpc_method_handler(servicer.CalculateTaxesDue, request_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.CalculateTaxesDueRequest.FromString, response_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.CalculateTaxesDueResponse.SerializeToString), 'CalculateConsumption': grpc.unary_unary_rpc_method_handler(servicer.CalculateConsumption, request_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.CalculateConsumptionRequest.FromString, response_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.CalculateConsumptionResponse.SerializeToString), 'CalculateInterest': grpc.unary_unary_rpc_method_handler(servicer.CalculateInterest, request_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.CalculateInterestRequest.FromString, response_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.CalculateInterestResponse.SerializeToString), 'CalculateRealGDP': grpc.unary_unary_rpc_method_handler(servicer.CalculateRealGDP, request_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.CalculateRealGDPRequest.FromString, response_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.CalculateRealGDPResponse.SerializeToString), 'SaveEconomyEntities': grpc.unary_unary_rpc_method_handler(servicer.SaveEconomyEntities, request_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.SaveEconomyEntitiesRequest.FromString, response_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.SaveEconomyEntitiesResponse.SerializeToString), 'LoadEconomyEntities': grpc.unary_unary_rpc_method_handler(servicer.LoadEconomyEntities, request_deserializer=city_dot_economy_dot_v2_dot_org__service__pb2.LoadEconomyEntitiesRequest.FromString, response_serializer=city_dot_economy_dot_v2_dot_org__service__pb2.LoadEconomyEntitiesResponse.SerializeToString)}
     generic_handler = grpc.method_handlers_generic_handler('city.economy.v2.OrgService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
@@ -190,20 +359,120 @@ class OrgService(object):
     """
 
     @staticmethod
-    def AddOrg(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/city.economy.v2.OrgService/AddOrg', city_dot_economy_dot_v2_dot_org__service__pb2.AddOrgRequest.SerializeToString, city_dot_economy_dot_v2_dot_org__service__pb2.AddOrgResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+    def AddFirm(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/city.economy.v2.OrgService/AddFirm', city_dot_economy_dot_v2_dot_org__service__pb2.AddFirmRequest.SerializeToString, city_dot_economy_dot_v2_dot_org__service__pb2.AddFirmResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def RemoveOrg(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/city.economy.v2.OrgService/RemoveOrg', city_dot_economy_dot_v2_dot_org__service__pb2.RemoveOrgRequest.SerializeToString, city_dot_economy_dot_v2_dot_org__service__pb2.RemoveOrgResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+    def RemoveFirm(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/city.economy.v2.OrgService/RemoveFirm', city_dot_economy_dot_v2_dot_org__service__pb2.RemoveFirmRequest.SerializeToString, city_dot_economy_dot_v2_dot_org__service__pb2.RemoveFirmResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def GetOrg(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/city.economy.v2.OrgService/GetOrg', city_dot_economy_dot_v2_dot_org__service__pb2.GetOrgRequest.SerializeToString, city_dot_economy_dot_v2_dot_org__service__pb2.GetOrgResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+    def GetFirm(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/city.economy.v2.OrgService/GetFirm', city_dot_economy_dot_v2_dot_org__service__pb2.GetFirmRequest.SerializeToString, city_dot_economy_dot_v2_dot_org__service__pb2.GetFirmResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def UpdateOrg(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/city.economy.v2.OrgService/UpdateOrg', city_dot_economy_dot_v2_dot_org__service__pb2.UpdateOrgRequest.SerializeToString, city_dot_economy_dot_v2_dot_org__service__pb2.UpdateOrgResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+    def UpdateFirm(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/city.economy.v2.OrgService/UpdateFirm', city_dot_economy_dot_v2_dot_org__service__pb2.UpdateFirmRequest.SerializeToString, city_dot_economy_dot_v2_dot_org__service__pb2.UpdateFirmResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListFirms(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/city.economy.v2.OrgService/ListFirms', city_dot_economy_dot_v2_dot_org__service__pb2.ListFirmsRequest.SerializeToString, city_dot_economy_dot_v2_dot_org__service__pb2.ListFirmsResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeltaUpdateFirm(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/city.economy.v2.OrgService/DeltaUpdateFirm', city_dot_economy_dot_v2_dot_org__service__pb2.DeltaUpdateFirmRequest.SerializeToString, city_dot_economy_dot_v2_dot_org__service__pb2.DeltaUpdateFirmResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def BatchAddFirm(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/city.economy.v2.OrgService/BatchAddFirm', city_dot_economy_dot_v2_dot_org__service__pb2.BatchAddFirmRequest.SerializeToString, city_dot_economy_dot_v2_dot_org__service__pb2.BatchAddFirmResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def BatchRemoveFirm(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/city.economy.v2.OrgService/BatchRemoveFirm', city_dot_economy_dot_v2_dot_org__service__pb2.BatchRemoveFirmRequest.SerializeToString, city_dot_economy_dot_v2_dot_org__service__pb2.BatchRemoveFirmResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def BatchGetFirm(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/city.economy.v2.OrgService/BatchGetFirm', city_dot_economy_dot_v2_dot_org__service__pb2.BatchGetFirmRequest.SerializeToString, city_dot_economy_dot_v2_dot_org__service__pb2.BatchGetFirmResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def BatchUpdateFirm(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/city.economy.v2.OrgService/BatchUpdateFirm', city_dot_economy_dot_v2_dot_org__service__pb2.BatchUpdateFirmRequest.SerializeToString, city_dot_economy_dot_v2_dot_org__service__pb2.BatchUpdateFirmResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def BatchDeltaUpdateFirm(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/city.economy.v2.OrgService/BatchDeltaUpdateFirm', city_dot_economy_dot_v2_dot_org__service__pb2.BatchDeltaUpdateFirmRequest.SerializeToString, city_dot_economy_dot_v2_dot_org__service__pb2.BatchDeltaUpdateFirmResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def AddNBS(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/city.economy.v2.OrgService/AddNBS', city_dot_economy_dot_v2_dot_org__service__pb2.AddNBSRequest.SerializeToString, city_dot_economy_dot_v2_dot_org__service__pb2.AddNBSResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def RemoveNBS(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/city.economy.v2.OrgService/RemoveNBS', city_dot_economy_dot_v2_dot_org__service__pb2.RemoveNBSRequest.SerializeToString, city_dot_economy_dot_v2_dot_org__service__pb2.RemoveNBSResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetNBS(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/city.economy.v2.OrgService/GetNBS', city_dot_economy_dot_v2_dot_org__service__pb2.GetNBSRequest.SerializeToString, city_dot_economy_dot_v2_dot_org__service__pb2.GetNBSResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateNBS(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/city.economy.v2.OrgService/UpdateNBS', city_dot_economy_dot_v2_dot_org__service__pb2.UpdateNBSRequest.SerializeToString, city_dot_economy_dot_v2_dot_org__service__pb2.UpdateNBSResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListNBS(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/city.economy.v2.OrgService/ListNBS', city_dot_economy_dot_v2_dot_org__service__pb2.ListNBSRequest.SerializeToString, city_dot_economy_dot_v2_dot_org__service__pb2.ListNBSResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeltaUpdateNBS(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/city.economy.v2.OrgService/DeltaUpdateNBS', city_dot_economy_dot_v2_dot_org__service__pb2.DeltaUpdateNBSRequest.SerializeToString, city_dot_economy_dot_v2_dot_org__service__pb2.DeltaUpdateNBSResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def AddGovernment(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/city.economy.v2.OrgService/AddGovernment', city_dot_economy_dot_v2_dot_org__service__pb2.AddGovernmentRequest.SerializeToString, city_dot_economy_dot_v2_dot_org__service__pb2.AddGovernmentResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def RemoveGovernment(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/city.economy.v2.OrgService/RemoveGovernment', city_dot_economy_dot_v2_dot_org__service__pb2.RemoveGovernmentRequest.SerializeToString, city_dot_economy_dot_v2_dot_org__service__pb2.RemoveGovernmentResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetGovernment(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/city.economy.v2.OrgService/GetGovernment', city_dot_economy_dot_v2_dot_org__service__pb2.GetGovernmentRequest.SerializeToString, city_dot_economy_dot_v2_dot_org__service__pb2.GetGovernmentResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateGovernment(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/city.economy.v2.OrgService/UpdateGovernment', city_dot_economy_dot_v2_dot_org__service__pb2.UpdateGovernmentRequest.SerializeToString, city_dot_economy_dot_v2_dot_org__service__pb2.UpdateGovernmentResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListGovernments(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/city.economy.v2.OrgService/ListGovernments', city_dot_economy_dot_v2_dot_org__service__pb2.ListGovernmentsRequest.SerializeToString, city_dot_economy_dot_v2_dot_org__service__pb2.ListGovernmentsResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeltaUpdateGovernment(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/city.economy.v2.OrgService/DeltaUpdateGovernment', city_dot_economy_dot_v2_dot_org__service__pb2.DeltaUpdateGovernmentRequest.SerializeToString, city_dot_economy_dot_v2_dot_org__service__pb2.DeltaUpdateGovernmentResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def AddBank(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/city.economy.v2.OrgService/AddBank', city_dot_economy_dot_v2_dot_org__service__pb2.AddBankRequest.SerializeToString, city_dot_economy_dot_v2_dot_org__service__pb2.AddBankResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def RemoveBank(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/city.economy.v2.OrgService/RemoveBank', city_dot_economy_dot_v2_dot_org__service__pb2.RemoveBankRequest.SerializeToString, city_dot_economy_dot_v2_dot_org__service__pb2.RemoveBankResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetBank(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/city.economy.v2.OrgService/GetBank', city_dot_economy_dot_v2_dot_org__service__pb2.GetBankRequest.SerializeToString, city_dot_economy_dot_v2_dot_org__service__pb2.GetBankResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateBank(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/city.economy.v2.OrgService/UpdateBank', city_dot_economy_dot_v2_dot_org__service__pb2.UpdateBankRequest.SerializeToString, city_dot_economy_dot_v2_dot_org__service__pb2.UpdateBankResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListBanks(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/city.economy.v2.OrgService/ListBanks', city_dot_economy_dot_v2_dot_org__service__pb2.ListBanksRequest.SerializeToString, city_dot_economy_dot_v2_dot_org__service__pb2.ListBanksResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeltaUpdateBank(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/city.economy.v2.OrgService/DeltaUpdateBank', city_dot_economy_dot_v2_dot_org__service__pb2.DeltaUpdateBankRequest.SerializeToString, city_dot_economy_dot_v2_dot_org__service__pb2.DeltaUpdateBankResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def AddAgent(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
@@ -222,28 +491,32 @@ class OrgService(object):
         return grpc.experimental.unary_unary(request, target, '/city.economy.v2.OrgService/UpdateAgent', city_dot_economy_dot_v2_dot_org__service__pb2.UpdateAgentRequest.SerializeToString, city_dot_economy_dot_v2_dot_org__service__pb2.UpdateAgentResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def BatchGet(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/city.economy.v2.OrgService/BatchGet', city_dot_economy_dot_v2_dot_org__service__pb2.BatchGetRequest.SerializeToString, city_dot_economy_dot_v2_dot_org__service__pb2.BatchGetResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def BatchUpdate(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/city.economy.v2.OrgService/BatchUpdate', city_dot_economy_dot_v2_dot_org__service__pb2.BatchUpdateRequest.SerializeToString, city_dot_economy_dot_v2_dot_org__service__pb2.BatchUpdateResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def BatchSet(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/city.economy.v2.OrgService/BatchSet', city_dot_economy_dot_v2_dot_org__service__pb2.BatchSetRequest.SerializeToString, city_dot_economy_dot_v2_dot_org__service__pb2.BatchSetResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def DeltaUpdateOrg(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/city.economy.v2.OrgService/DeltaUpdateOrg', city_dot_economy_dot_v2_dot_org__service__pb2.DeltaUpdateOrgRequest.SerializeToString, city_dot_economy_dot_v2_dot_org__service__pb2.DeltaUpdateOrgResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+    def ListAgents(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/city.economy.v2.OrgService/ListAgents', city_dot_economy_dot_v2_dot_org__service__pb2.ListAgentsRequest.SerializeToString, city_dot_economy_dot_v2_dot_org__service__pb2.ListAgentsResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def DeltaUpdateAgent(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
         return grpc.experimental.unary_unary(request, target, '/city.economy.v2.OrgService/DeltaUpdateAgent', city_dot_economy_dot_v2_dot_org__service__pb2.DeltaUpdateAgentRequest.SerializeToString, city_dot_economy_dot_v2_dot_org__service__pb2.DeltaUpdateAgentResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def BatchDeltaUpdate(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/city.economy.v2.OrgService/BatchDeltaUpdate', city_dot_economy_dot_v2_dot_org__service__pb2.BatchDeltaUpdateRequest.SerializeToString, city_dot_economy_dot_v2_dot_org__service__pb2.BatchDeltaUpdateResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+    def BatchAddAgent(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/city.economy.v2.OrgService/BatchAddAgent', city_dot_economy_dot_v2_dot_org__service__pb2.BatchAddAgentRequest.SerializeToString, city_dot_economy_dot_v2_dot_org__service__pb2.BatchAddAgentResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def BatchRemoveAgent(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/city.economy.v2.OrgService/BatchRemoveAgent', city_dot_economy_dot_v2_dot_org__service__pb2.BatchRemoveAgentRequest.SerializeToString, city_dot_economy_dot_v2_dot_org__service__pb2.BatchRemoveAgentResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def BatchGetAgent(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/city.economy.v2.OrgService/BatchGetAgent', city_dot_economy_dot_v2_dot_org__service__pb2.BatchGetAgentRequest.SerializeToString, city_dot_economy_dot_v2_dot_org__service__pb2.BatchGetAgentResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def BatchUpdateAgent(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/city.economy.v2.OrgService/BatchUpdateAgent', city_dot_economy_dot_v2_dot_org__service__pb2.BatchUpdateAgentRequest.SerializeToString, city_dot_economy_dot_v2_dot_org__service__pb2.BatchUpdateAgentResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def BatchDeltaUpdateAgent(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/city.economy.v2.OrgService/BatchDeltaUpdateAgent', city_dot_economy_dot_v2_dot_org__service__pb2.BatchDeltaUpdateAgentRequest.SerializeToString, city_dot_economy_dot_v2_dot_org__service__pb2.BatchDeltaUpdateAgentResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def CalculateTaxesDue(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):

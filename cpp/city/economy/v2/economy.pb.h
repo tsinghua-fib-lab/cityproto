@@ -29,7 +29,9 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
-#include <google/protobuf/generated_enum_reflection.h>
+#include <google/protobuf/map.h>  // IWYU pragma: export
+#include <google/protobuf/map_entry.h>
+#include <google/protobuf/map_field_inl.h>
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
@@ -51,72 +53,96 @@ namespace v2 {
 class Agent;
 struct AgentDefaultTypeInternal;
 extern AgentDefaultTypeInternal _Agent_default_instance_;
+class Bank;
+struct BankDefaultTypeInternal;
+extern BankDefaultTypeInternal _Bank_default_instance_;
 class EconomyEntities;
 struct EconomyEntitiesDefaultTypeInternal;
 extern EconomyEntitiesDefaultTypeInternal _EconomyEntities_default_instance_;
-class Org;
-struct OrgDefaultTypeInternal;
-extern OrgDefaultTypeInternal _Org_default_instance_;
+class Firm;
+struct FirmDefaultTypeInternal;
+extern FirmDefaultTypeInternal _Firm_default_instance_;
+class Government;
+struct GovernmentDefaultTypeInternal;
+extern GovernmentDefaultTypeInternal _Government_default_instance_;
+class NBS;
+struct NBSDefaultTypeInternal;
+extern NBSDefaultTypeInternal _NBS_default_instance_;
+class NBS_ConsumptionCurrencyEntry_DoNotUse;
+struct NBS_ConsumptionCurrencyEntry_DoNotUseDefaultTypeInternal;
+extern NBS_ConsumptionCurrencyEntry_DoNotUseDefaultTypeInternal _NBS_ConsumptionCurrencyEntry_DoNotUse_default_instance_;
+class NBS_DepressionEntry_DoNotUse;
+struct NBS_DepressionEntry_DoNotUseDefaultTypeInternal;
+extern NBS_DepressionEntry_DoNotUseDefaultTypeInternal _NBS_DepressionEntry_DoNotUse_default_instance_;
+class NBS_IncomeCurrencyEntry_DoNotUse;
+struct NBS_IncomeCurrencyEntry_DoNotUseDefaultTypeInternal;
+extern NBS_IncomeCurrencyEntry_DoNotUseDefaultTypeInternal _NBS_IncomeCurrencyEntry_DoNotUse_default_instance_;
+class NBS_LocusControlEntry_DoNotUse;
+struct NBS_LocusControlEntry_DoNotUseDefaultTypeInternal;
+extern NBS_LocusControlEntry_DoNotUseDefaultTypeInternal _NBS_LocusControlEntry_DoNotUse_default_instance_;
+class NBS_NominalGdpEntry_DoNotUse;
+struct NBS_NominalGdpEntry_DoNotUseDefaultTypeInternal;
+extern NBS_NominalGdpEntry_DoNotUseDefaultTypeInternal _NBS_NominalGdpEntry_DoNotUse_default_instance_;
+class NBS_PricesEntry_DoNotUse;
+struct NBS_PricesEntry_DoNotUseDefaultTypeInternal;
+extern NBS_PricesEntry_DoNotUseDefaultTypeInternal _NBS_PricesEntry_DoNotUse_default_instance_;
+class NBS_RealGdpEntry_DoNotUse;
+struct NBS_RealGdpEntry_DoNotUseDefaultTypeInternal;
+extern NBS_RealGdpEntry_DoNotUseDefaultTypeInternal _NBS_RealGdpEntry_DoNotUse_default_instance_;
+class NBS_UnemploymentEntry_DoNotUse;
+struct NBS_UnemploymentEntry_DoNotUseDefaultTypeInternal;
+extern NBS_UnemploymentEntry_DoNotUseDefaultTypeInternal _NBS_UnemploymentEntry_DoNotUse_default_instance_;
+class NBS_WagesEntry_DoNotUse;
+struct NBS_WagesEntry_DoNotUseDefaultTypeInternal;
+extern NBS_WagesEntry_DoNotUseDefaultTypeInternal _NBS_WagesEntry_DoNotUse_default_instance_;
+class NBS_WorkingHoursEntry_DoNotUse;
+struct NBS_WorkingHoursEntry_DoNotUseDefaultTypeInternal;
+extern NBS_WorkingHoursEntry_DoNotUseDefaultTypeInternal _NBS_WorkingHoursEntry_DoNotUse_default_instance_;
 }  // namespace v2
 }  // namespace economy
 }  // namespace city
 PROTOBUF_NAMESPACE_OPEN
 template<> ::city::economy::v2::Agent* Arena::CreateMaybeMessage<::city::economy::v2::Agent>(Arena*);
+template<> ::city::economy::v2::Bank* Arena::CreateMaybeMessage<::city::economy::v2::Bank>(Arena*);
 template<> ::city::economy::v2::EconomyEntities* Arena::CreateMaybeMessage<::city::economy::v2::EconomyEntities>(Arena*);
-template<> ::city::economy::v2::Org* Arena::CreateMaybeMessage<::city::economy::v2::Org>(Arena*);
+template<> ::city::economy::v2::Firm* Arena::CreateMaybeMessage<::city::economy::v2::Firm>(Arena*);
+template<> ::city::economy::v2::Government* Arena::CreateMaybeMessage<::city::economy::v2::Government>(Arena*);
+template<> ::city::economy::v2::NBS* Arena::CreateMaybeMessage<::city::economy::v2::NBS>(Arena*);
+template<> ::city::economy::v2::NBS_ConsumptionCurrencyEntry_DoNotUse* Arena::CreateMaybeMessage<::city::economy::v2::NBS_ConsumptionCurrencyEntry_DoNotUse>(Arena*);
+template<> ::city::economy::v2::NBS_DepressionEntry_DoNotUse* Arena::CreateMaybeMessage<::city::economy::v2::NBS_DepressionEntry_DoNotUse>(Arena*);
+template<> ::city::economy::v2::NBS_IncomeCurrencyEntry_DoNotUse* Arena::CreateMaybeMessage<::city::economy::v2::NBS_IncomeCurrencyEntry_DoNotUse>(Arena*);
+template<> ::city::economy::v2::NBS_LocusControlEntry_DoNotUse* Arena::CreateMaybeMessage<::city::economy::v2::NBS_LocusControlEntry_DoNotUse>(Arena*);
+template<> ::city::economy::v2::NBS_NominalGdpEntry_DoNotUse* Arena::CreateMaybeMessage<::city::economy::v2::NBS_NominalGdpEntry_DoNotUse>(Arena*);
+template<> ::city::economy::v2::NBS_PricesEntry_DoNotUse* Arena::CreateMaybeMessage<::city::economy::v2::NBS_PricesEntry_DoNotUse>(Arena*);
+template<> ::city::economy::v2::NBS_RealGdpEntry_DoNotUse* Arena::CreateMaybeMessage<::city::economy::v2::NBS_RealGdpEntry_DoNotUse>(Arena*);
+template<> ::city::economy::v2::NBS_UnemploymentEntry_DoNotUse* Arena::CreateMaybeMessage<::city::economy::v2::NBS_UnemploymentEntry_DoNotUse>(Arena*);
+template<> ::city::economy::v2::NBS_WagesEntry_DoNotUse* Arena::CreateMaybeMessage<::city::economy::v2::NBS_WagesEntry_DoNotUse>(Arena*);
+template<> ::city::economy::v2::NBS_WorkingHoursEntry_DoNotUse* Arena::CreateMaybeMessage<::city::economy::v2::NBS_WorkingHoursEntry_DoNotUse>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace city {
 namespace economy {
 namespace v2 {
 
-enum OrgType : int {
-  ORG_TYPE_UNSPECIFIED = 0,
-  ORG_TYPE_NBS = 1,
-  ORG_TYPE_FIRM = 2,
-  ORG_TYPE_BANK = 3,
-  ORG_TYPE_GOVERNMENT = 4,
-  OrgType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
-  OrgType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
-};
-bool OrgType_IsValid(int value);
-constexpr OrgType OrgType_MIN = ORG_TYPE_UNSPECIFIED;
-constexpr OrgType OrgType_MAX = ORG_TYPE_GOVERNMENT;
-constexpr int OrgType_ARRAYSIZE = OrgType_MAX + 1;
-
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* OrgType_descriptor();
-template<typename T>
-inline const std::string& OrgType_Name(T enum_t_value) {
-  static_assert(::std::is_same<T, OrgType>::value ||
-    ::std::is_integral<T>::value,
-    "Incorrect type passed to function OrgType_Name.");
-  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
-    OrgType_descriptor(), enum_t_value);
-}
-inline bool OrgType_Parse(
-    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, OrgType* value) {
-  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<OrgType>(
-    OrgType_descriptor(), name, value);
-}
 // ===================================================================
 
-class Org final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.economy.v2.Org) */ {
+class Firm final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.economy.v2.Firm) */ {
  public:
-  inline Org() : Org(nullptr) {}
-  ~Org() override;
-  explicit PROTOBUF_CONSTEXPR Org(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline Firm() : Firm(nullptr) {}
+  ~Firm() override;
+  explicit PROTOBUF_CONSTEXPR Firm(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  Org(const Org& from);
-  Org(Org&& from) noexcept
-    : Org() {
+  Firm(const Firm& from);
+  Firm(Firm&& from) noexcept
+    : Firm() {
     *this = ::std::move(from);
   }
 
-  inline Org& operator=(const Org& from) {
+  inline Firm& operator=(const Firm& from) {
     CopyFrom(from);
     return *this;
   }
-  inline Org& operator=(Org&& from) noexcept {
+  inline Firm& operator=(Firm&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()
   #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -139,20 +165,20 @@ class Org final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const Org& default_instance() {
+  static const Firm& default_instance() {
     return *internal_default_instance();
   }
-  static inline const Org* internal_default_instance() {
-    return reinterpret_cast<const Org*>(
-               &_Org_default_instance_);
+  static inline const Firm* internal_default_instance() {
+    return reinterpret_cast<const Firm*>(
+               &_Firm_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     0;
 
-  friend void swap(Org& a, Org& b) {
+  friend void swap(Firm& a, Firm& b) {
     a.Swap(&b);
   }
-  inline void Swap(Org* other) {
+  inline void Swap(Firm* other) {
     if (other == this) return;
   #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetOwningArena() != nullptr &&
@@ -165,7 +191,7 @@ class Org final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(Org* other) {
+  void UnsafeArenaSwap(Firm* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -173,14 +199,14 @@ class Org final :
 
   // implements Message ----------------------------------------------
 
-  Org* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<Org>(arena);
+  Firm* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<Firm>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const Org& from);
+  void CopyFrom(const Firm& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom( const Org& from) {
-    Org::MergeImpl(*this, from);
+  void MergeFrom( const Firm& from) {
+    Firm::MergeImpl(*this, from);
   }
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
@@ -198,15 +224,15 @@ class Org final :
   void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(Org* other);
+  void InternalSwap(Firm* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "city.economy.v2.Org";
+    return "city.economy.v2.Firm";
   }
   protected:
-  explicit Org(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit Firm(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   public:
 
@@ -220,185 +246,15 @@ class Org final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kNominalGdpFieldNumber = 3,
-    kRealGdpFieldNumber = 4,
-    kUnemploymentFieldNumber = 5,
-    kWagesFieldNumber = 6,
-    kPricesFieldNumber = 7,
-    kBracketCutoffsFieldNumber = 12,
-    kBracketRatesFieldNumber = 13,
-    kEmployeesFieldNumber = 16,
-    kCitizensFieldNumber = 17,
-    kConsumptionCurrencyFieldNumber = 18,
-    kConsumptionPropensityFieldNumber = 19,
-    kIncomeCurrencyFieldNumber = 20,
-    kDepressionFieldNumber = 21,
-    kLocusControlFieldNumber = 22,
-    kWorkingHoursFieldNumber = 23,
+    kEmployeesFieldNumber = 2,
     kIdFieldNumber = 1,
-    kTypeFieldNumber = 2,
-    kInventoryFieldNumber = 8,
-    kPriceFieldNumber = 9,
-    kCurrencyFieldNumber = 10,
-    kInterestRateFieldNumber = 11,
-    kDemandFieldNumber = 14,
-    kSalesFieldNumber = 15,
+    kPriceFieldNumber = 3,
+    kInventoryFieldNumber = 4,
+    kDemandFieldNumber = 5,
+    kSalesFieldNumber = 6,
+    kCurrencyFieldNumber = 7,
   };
-  // repeated float nominal_gdp = 3 [json_name = "nominalGdp"];
-  int nominal_gdp_size() const;
-  private:
-  int _internal_nominal_gdp_size() const;
-  public:
-  void clear_nominal_gdp();
-  private:
-  float _internal_nominal_gdp(int index) const;
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
-      _internal_nominal_gdp() const;
-  void _internal_add_nominal_gdp(float value);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
-      _internal_mutable_nominal_gdp();
-  public:
-  float nominal_gdp(int index) const;
-  void set_nominal_gdp(int index, float value);
-  void add_nominal_gdp(float value);
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
-      nominal_gdp() const;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
-      mutable_nominal_gdp();
-
-  // repeated float real_gdp = 4 [json_name = "realGdp"];
-  int real_gdp_size() const;
-  private:
-  int _internal_real_gdp_size() const;
-  public:
-  void clear_real_gdp();
-  private:
-  float _internal_real_gdp(int index) const;
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
-      _internal_real_gdp() const;
-  void _internal_add_real_gdp(float value);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
-      _internal_mutable_real_gdp();
-  public:
-  float real_gdp(int index) const;
-  void set_real_gdp(int index, float value);
-  void add_real_gdp(float value);
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
-      real_gdp() const;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
-      mutable_real_gdp();
-
-  // repeated float unemployment = 5 [json_name = "unemployment"];
-  int unemployment_size() const;
-  private:
-  int _internal_unemployment_size() const;
-  public:
-  void clear_unemployment();
-  private:
-  float _internal_unemployment(int index) const;
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
-      _internal_unemployment() const;
-  void _internal_add_unemployment(float value);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
-      _internal_mutable_unemployment();
-  public:
-  float unemployment(int index) const;
-  void set_unemployment(int index, float value);
-  void add_unemployment(float value);
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
-      unemployment() const;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
-      mutable_unemployment();
-
-  // repeated float wages = 6 [json_name = "wages"];
-  int wages_size() const;
-  private:
-  int _internal_wages_size() const;
-  public:
-  void clear_wages();
-  private:
-  float _internal_wages(int index) const;
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
-      _internal_wages() const;
-  void _internal_add_wages(float value);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
-      _internal_mutable_wages();
-  public:
-  float wages(int index) const;
-  void set_wages(int index, float value);
-  void add_wages(float value);
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
-      wages() const;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
-      mutable_wages();
-
-  // repeated float prices = 7 [json_name = "prices"];
-  int prices_size() const;
-  private:
-  int _internal_prices_size() const;
-  public:
-  void clear_prices();
-  private:
-  float _internal_prices(int index) const;
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
-      _internal_prices() const;
-  void _internal_add_prices(float value);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
-      _internal_mutable_prices();
-  public:
-  float prices(int index) const;
-  void set_prices(int index, float value);
-  void add_prices(float value);
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
-      prices() const;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
-      mutable_prices();
-
-  // repeated float bracket_cutoffs = 12 [json_name = "bracketCutoffs"];
-  int bracket_cutoffs_size() const;
-  private:
-  int _internal_bracket_cutoffs_size() const;
-  public:
-  void clear_bracket_cutoffs();
-  private:
-  float _internal_bracket_cutoffs(int index) const;
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
-      _internal_bracket_cutoffs() const;
-  void _internal_add_bracket_cutoffs(float value);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
-      _internal_mutable_bracket_cutoffs();
-  public:
-  float bracket_cutoffs(int index) const;
-  void set_bracket_cutoffs(int index, float value);
-  void add_bracket_cutoffs(float value);
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
-      bracket_cutoffs() const;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
-      mutable_bracket_cutoffs();
-
-  // repeated float bracket_rates = 13 [json_name = "bracketRates"];
-  int bracket_rates_size() const;
-  private:
-  int _internal_bracket_rates_size() const;
-  public:
-  void clear_bracket_rates();
-  private:
-  float _internal_bracket_rates(int index) const;
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
-      _internal_bracket_rates() const;
-  void _internal_add_bracket_rates(float value);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
-      _internal_mutable_bracket_rates();
-  public:
-  float bracket_rates(int index) const;
-  void set_bracket_rates(int index, float value);
-  void add_bracket_rates(float value);
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
-      bracket_rates() const;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
-      mutable_bracket_rates();
-
-  // repeated int32 employees = 16 [json_name = "employees"];
+  // repeated int32 employees = 2 [json_name = "employees"];
   int employees_size() const;
   private:
   int _internal_employees_size() const;
@@ -420,7 +276,483 @@ class Org final :
   ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
       mutable_employees();
 
-  // repeated int32 citizens = 17 [json_name = "citizens"];
+  // int32 id = 1 [json_name = "id"];
+  void clear_id();
+  int32_t id() const;
+  void set_id(int32_t value);
+  private:
+  int32_t _internal_id() const;
+  void _internal_set_id(int32_t value);
+  public:
+
+  // float price = 3 [json_name = "price"];
+  void clear_price();
+  float price() const;
+  void set_price(float value);
+  private:
+  float _internal_price() const;
+  void _internal_set_price(float value);
+  public:
+
+  // int32 inventory = 4 [json_name = "inventory"];
+  void clear_inventory();
+  int32_t inventory() const;
+  void set_inventory(int32_t value);
+  private:
+  int32_t _internal_inventory() const;
+  void _internal_set_inventory(int32_t value);
+  public:
+
+  // float demand = 5 [json_name = "demand"];
+  void clear_demand();
+  float demand() const;
+  void set_demand(float value);
+  private:
+  float _internal_demand() const;
+  void _internal_set_demand(float value);
+  public:
+
+  // float sales = 6 [json_name = "sales"];
+  void clear_sales();
+  float sales() const;
+  void set_sales(float value);
+  private:
+  float _internal_sales() const;
+  void _internal_set_sales(float value);
+  public:
+
+  // float currency = 7 [json_name = "currency"];
+  void clear_currency();
+  float currency() const;
+  void set_currency(float value);
+  private:
+  float _internal_currency() const;
+  void _internal_set_currency(float value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:city.economy.v2.Firm)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t > employees_;
+    mutable std::atomic<int> _employees_cached_byte_size_;
+    int32_t id_;
+    float price_;
+    int32_t inventory_;
+    float demand_;
+    float sales_;
+    float currency_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_city_2feconomy_2fv2_2feconomy_2eproto;
+};
+// -------------------------------------------------------------------
+
+class NBS_NominalGdpEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<NBS_NominalGdpEntry_DoNotUse, 
+    std::string, float,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_FLOAT> {
+public:
+  typedef ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<NBS_NominalGdpEntry_DoNotUse, 
+    std::string, float,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_FLOAT> SuperType;
+  NBS_NominalGdpEntry_DoNotUse();
+  explicit PROTOBUF_CONSTEXPR NBS_NominalGdpEntry_DoNotUse(
+      ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  explicit NBS_NominalGdpEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void MergeFrom(const NBS_NominalGdpEntry_DoNotUse& other);
+  static const NBS_NominalGdpEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const NBS_NominalGdpEntry_DoNotUse*>(&_NBS_NominalGdpEntry_DoNotUse_default_instance_); }
+  static bool ValidateKey(std::string* s) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "city.economy.v2.NBS.NominalGdpEntry.key");
+ }
+  static bool ValidateValue(void*) { return true; }
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  friend struct ::TableStruct_city_2feconomy_2fv2_2feconomy_2eproto;
+};
+
+// -------------------------------------------------------------------
+
+class NBS_RealGdpEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<NBS_RealGdpEntry_DoNotUse, 
+    std::string, float,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_FLOAT> {
+public:
+  typedef ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<NBS_RealGdpEntry_DoNotUse, 
+    std::string, float,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_FLOAT> SuperType;
+  NBS_RealGdpEntry_DoNotUse();
+  explicit PROTOBUF_CONSTEXPR NBS_RealGdpEntry_DoNotUse(
+      ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  explicit NBS_RealGdpEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void MergeFrom(const NBS_RealGdpEntry_DoNotUse& other);
+  static const NBS_RealGdpEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const NBS_RealGdpEntry_DoNotUse*>(&_NBS_RealGdpEntry_DoNotUse_default_instance_); }
+  static bool ValidateKey(std::string* s) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "city.economy.v2.NBS.RealGdpEntry.key");
+ }
+  static bool ValidateValue(void*) { return true; }
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  friend struct ::TableStruct_city_2feconomy_2fv2_2feconomy_2eproto;
+};
+
+// -------------------------------------------------------------------
+
+class NBS_UnemploymentEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<NBS_UnemploymentEntry_DoNotUse, 
+    std::string, float,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_FLOAT> {
+public:
+  typedef ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<NBS_UnemploymentEntry_DoNotUse, 
+    std::string, float,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_FLOAT> SuperType;
+  NBS_UnemploymentEntry_DoNotUse();
+  explicit PROTOBUF_CONSTEXPR NBS_UnemploymentEntry_DoNotUse(
+      ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  explicit NBS_UnemploymentEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void MergeFrom(const NBS_UnemploymentEntry_DoNotUse& other);
+  static const NBS_UnemploymentEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const NBS_UnemploymentEntry_DoNotUse*>(&_NBS_UnemploymentEntry_DoNotUse_default_instance_); }
+  static bool ValidateKey(std::string* s) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "city.economy.v2.NBS.UnemploymentEntry.key");
+ }
+  static bool ValidateValue(void*) { return true; }
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  friend struct ::TableStruct_city_2feconomy_2fv2_2feconomy_2eproto;
+};
+
+// -------------------------------------------------------------------
+
+class NBS_WagesEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<NBS_WagesEntry_DoNotUse, 
+    std::string, float,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_FLOAT> {
+public:
+  typedef ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<NBS_WagesEntry_DoNotUse, 
+    std::string, float,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_FLOAT> SuperType;
+  NBS_WagesEntry_DoNotUse();
+  explicit PROTOBUF_CONSTEXPR NBS_WagesEntry_DoNotUse(
+      ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  explicit NBS_WagesEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void MergeFrom(const NBS_WagesEntry_DoNotUse& other);
+  static const NBS_WagesEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const NBS_WagesEntry_DoNotUse*>(&_NBS_WagesEntry_DoNotUse_default_instance_); }
+  static bool ValidateKey(std::string* s) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "city.economy.v2.NBS.WagesEntry.key");
+ }
+  static bool ValidateValue(void*) { return true; }
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  friend struct ::TableStruct_city_2feconomy_2fv2_2feconomy_2eproto;
+};
+
+// -------------------------------------------------------------------
+
+class NBS_PricesEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<NBS_PricesEntry_DoNotUse, 
+    std::string, float,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_FLOAT> {
+public:
+  typedef ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<NBS_PricesEntry_DoNotUse, 
+    std::string, float,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_FLOAT> SuperType;
+  NBS_PricesEntry_DoNotUse();
+  explicit PROTOBUF_CONSTEXPR NBS_PricesEntry_DoNotUse(
+      ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  explicit NBS_PricesEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void MergeFrom(const NBS_PricesEntry_DoNotUse& other);
+  static const NBS_PricesEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const NBS_PricesEntry_DoNotUse*>(&_NBS_PricesEntry_DoNotUse_default_instance_); }
+  static bool ValidateKey(std::string* s) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "city.economy.v2.NBS.PricesEntry.key");
+ }
+  static bool ValidateValue(void*) { return true; }
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  friend struct ::TableStruct_city_2feconomy_2fv2_2feconomy_2eproto;
+};
+
+// -------------------------------------------------------------------
+
+class NBS_WorkingHoursEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<NBS_WorkingHoursEntry_DoNotUse, 
+    std::string, float,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_FLOAT> {
+public:
+  typedef ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<NBS_WorkingHoursEntry_DoNotUse, 
+    std::string, float,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_FLOAT> SuperType;
+  NBS_WorkingHoursEntry_DoNotUse();
+  explicit PROTOBUF_CONSTEXPR NBS_WorkingHoursEntry_DoNotUse(
+      ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  explicit NBS_WorkingHoursEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void MergeFrom(const NBS_WorkingHoursEntry_DoNotUse& other);
+  static const NBS_WorkingHoursEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const NBS_WorkingHoursEntry_DoNotUse*>(&_NBS_WorkingHoursEntry_DoNotUse_default_instance_); }
+  static bool ValidateKey(std::string* s) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "city.economy.v2.NBS.WorkingHoursEntry.key");
+ }
+  static bool ValidateValue(void*) { return true; }
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  friend struct ::TableStruct_city_2feconomy_2fv2_2feconomy_2eproto;
+};
+
+// -------------------------------------------------------------------
+
+class NBS_DepressionEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<NBS_DepressionEntry_DoNotUse, 
+    std::string, float,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_FLOAT> {
+public:
+  typedef ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<NBS_DepressionEntry_DoNotUse, 
+    std::string, float,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_FLOAT> SuperType;
+  NBS_DepressionEntry_DoNotUse();
+  explicit PROTOBUF_CONSTEXPR NBS_DepressionEntry_DoNotUse(
+      ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  explicit NBS_DepressionEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void MergeFrom(const NBS_DepressionEntry_DoNotUse& other);
+  static const NBS_DepressionEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const NBS_DepressionEntry_DoNotUse*>(&_NBS_DepressionEntry_DoNotUse_default_instance_); }
+  static bool ValidateKey(std::string* s) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "city.economy.v2.NBS.DepressionEntry.key");
+ }
+  static bool ValidateValue(void*) { return true; }
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  friend struct ::TableStruct_city_2feconomy_2fv2_2feconomy_2eproto;
+};
+
+// -------------------------------------------------------------------
+
+class NBS_ConsumptionCurrencyEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<NBS_ConsumptionCurrencyEntry_DoNotUse, 
+    std::string, float,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_FLOAT> {
+public:
+  typedef ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<NBS_ConsumptionCurrencyEntry_DoNotUse, 
+    std::string, float,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_FLOAT> SuperType;
+  NBS_ConsumptionCurrencyEntry_DoNotUse();
+  explicit PROTOBUF_CONSTEXPR NBS_ConsumptionCurrencyEntry_DoNotUse(
+      ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  explicit NBS_ConsumptionCurrencyEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void MergeFrom(const NBS_ConsumptionCurrencyEntry_DoNotUse& other);
+  static const NBS_ConsumptionCurrencyEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const NBS_ConsumptionCurrencyEntry_DoNotUse*>(&_NBS_ConsumptionCurrencyEntry_DoNotUse_default_instance_); }
+  static bool ValidateKey(std::string* s) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "city.economy.v2.NBS.ConsumptionCurrencyEntry.key");
+ }
+  static bool ValidateValue(void*) { return true; }
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  friend struct ::TableStruct_city_2feconomy_2fv2_2feconomy_2eproto;
+};
+
+// -------------------------------------------------------------------
+
+class NBS_IncomeCurrencyEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<NBS_IncomeCurrencyEntry_DoNotUse, 
+    std::string, float,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_FLOAT> {
+public:
+  typedef ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<NBS_IncomeCurrencyEntry_DoNotUse, 
+    std::string, float,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_FLOAT> SuperType;
+  NBS_IncomeCurrencyEntry_DoNotUse();
+  explicit PROTOBUF_CONSTEXPR NBS_IncomeCurrencyEntry_DoNotUse(
+      ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  explicit NBS_IncomeCurrencyEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void MergeFrom(const NBS_IncomeCurrencyEntry_DoNotUse& other);
+  static const NBS_IncomeCurrencyEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const NBS_IncomeCurrencyEntry_DoNotUse*>(&_NBS_IncomeCurrencyEntry_DoNotUse_default_instance_); }
+  static bool ValidateKey(std::string* s) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "city.economy.v2.NBS.IncomeCurrencyEntry.key");
+ }
+  static bool ValidateValue(void*) { return true; }
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  friend struct ::TableStruct_city_2feconomy_2fv2_2feconomy_2eproto;
+};
+
+// -------------------------------------------------------------------
+
+class NBS_LocusControlEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<NBS_LocusControlEntry_DoNotUse, 
+    std::string, float,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_FLOAT> {
+public:
+  typedef ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<NBS_LocusControlEntry_DoNotUse, 
+    std::string, float,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_FLOAT> SuperType;
+  NBS_LocusControlEntry_DoNotUse();
+  explicit PROTOBUF_CONSTEXPR NBS_LocusControlEntry_DoNotUse(
+      ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  explicit NBS_LocusControlEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void MergeFrom(const NBS_LocusControlEntry_DoNotUse& other);
+  static const NBS_LocusControlEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const NBS_LocusControlEntry_DoNotUse*>(&_NBS_LocusControlEntry_DoNotUse_default_instance_); }
+  static bool ValidateKey(std::string* s) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "city.economy.v2.NBS.LocusControlEntry.key");
+ }
+  static bool ValidateValue(void*) { return true; }
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  friend struct ::TableStruct_city_2feconomy_2fv2_2feconomy_2eproto;
+};
+
+// -------------------------------------------------------------------
+
+class NBS final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.economy.v2.NBS) */ {
+ public:
+  inline NBS() : NBS(nullptr) {}
+  ~NBS() override;
+  explicit PROTOBUF_CONSTEXPR NBS(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  NBS(const NBS& from);
+  NBS(NBS&& from) noexcept
+    : NBS() {
+    *this = ::std::move(from);
+  }
+
+  inline NBS& operator=(const NBS& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline NBS& operator=(NBS&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const NBS& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const NBS* internal_default_instance() {
+    return reinterpret_cast<const NBS*>(
+               &_NBS_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    11;
+
+  friend void swap(NBS& a, NBS& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(NBS* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(NBS* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  NBS* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<NBS>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const NBS& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const NBS& from) {
+    NBS::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(NBS* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.economy.v2.NBS";
+  }
+  protected:
+  explicit NBS(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kCitizensFieldNumber = 2,
+    kNominalGdpFieldNumber = 3,
+    kRealGdpFieldNumber = 4,
+    kUnemploymentFieldNumber = 5,
+    kWagesFieldNumber = 6,
+    kPricesFieldNumber = 7,
+    kWorkingHoursFieldNumber = 8,
+    kDepressionFieldNumber = 9,
+    kConsumptionCurrencyFieldNumber = 10,
+    kIncomeCurrencyFieldNumber = 11,
+    kLocusControlFieldNumber = 12,
+    kCitizensAgentIdFieldNumber = 13,
+    kIdFieldNumber = 1,
+    kCurrencyFieldNumber = 14,
+  };
+  // repeated int32 citizens = 2 [json_name = "citizens"];
   int citizens_size() const;
   private:
   int _internal_citizens_size() const;
@@ -442,137 +774,197 @@ class Org final :
   ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
       mutable_citizens();
 
-  // repeated float consumption_currency = 18 [json_name = "consumptionCurrency"];
-  int consumption_currency_size() const;
+  // map<string, float> nominal_gdp = 3 [json_name = "nominalGdp"];
+  int nominal_gdp_size() const;
   private:
-  int _internal_consumption_currency_size() const;
+  int _internal_nominal_gdp_size() const;
   public:
-  void clear_consumption_currency();
+  void clear_nominal_gdp();
   private:
-  float _internal_consumption_currency(int index) const;
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
-      _internal_consumption_currency() const;
-  void _internal_add_consumption_currency(float value);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
-      _internal_mutable_consumption_currency();
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >&
+      _internal_nominal_gdp() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >*
+      _internal_mutable_nominal_gdp();
   public:
-  float consumption_currency(int index) const;
-  void set_consumption_currency(int index, float value);
-  void add_consumption_currency(float value);
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
-      consumption_currency() const;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
-      mutable_consumption_currency();
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >&
+      nominal_gdp() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >*
+      mutable_nominal_gdp();
 
-  // repeated float consumption_propensity = 19 [json_name = "consumptionPropensity"];
-  int consumption_propensity_size() const;
+  // map<string, float> real_gdp = 4 [json_name = "realGdp"];
+  int real_gdp_size() const;
   private:
-  int _internal_consumption_propensity_size() const;
+  int _internal_real_gdp_size() const;
   public:
-  void clear_consumption_propensity();
+  void clear_real_gdp();
   private:
-  float _internal_consumption_propensity(int index) const;
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
-      _internal_consumption_propensity() const;
-  void _internal_add_consumption_propensity(float value);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
-      _internal_mutable_consumption_propensity();
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >&
+      _internal_real_gdp() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >*
+      _internal_mutable_real_gdp();
   public:
-  float consumption_propensity(int index) const;
-  void set_consumption_propensity(int index, float value);
-  void add_consumption_propensity(float value);
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
-      consumption_propensity() const;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
-      mutable_consumption_propensity();
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >&
+      real_gdp() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >*
+      mutable_real_gdp();
 
-  // repeated float income_currency = 20 [json_name = "incomeCurrency"];
-  int income_currency_size() const;
+  // map<string, float> unemployment = 5 [json_name = "unemployment"];
+  int unemployment_size() const;
   private:
-  int _internal_income_currency_size() const;
+  int _internal_unemployment_size() const;
   public:
-  void clear_income_currency();
+  void clear_unemployment();
   private:
-  float _internal_income_currency(int index) const;
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
-      _internal_income_currency() const;
-  void _internal_add_income_currency(float value);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
-      _internal_mutable_income_currency();
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >&
+      _internal_unemployment() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >*
+      _internal_mutable_unemployment();
   public:
-  float income_currency(int index) const;
-  void set_income_currency(int index, float value);
-  void add_income_currency(float value);
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
-      income_currency() const;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
-      mutable_income_currency();
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >&
+      unemployment() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >*
+      mutable_unemployment();
 
-  // repeated float depression = 21 [json_name = "depression"];
-  int depression_size() const;
+  // map<string, float> wages = 6 [json_name = "wages"];
+  int wages_size() const;
   private:
-  int _internal_depression_size() const;
+  int _internal_wages_size() const;
   public:
-  void clear_depression();
+  void clear_wages();
   private:
-  float _internal_depression(int index) const;
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
-      _internal_depression() const;
-  void _internal_add_depression(float value);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
-      _internal_mutable_depression();
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >&
+      _internal_wages() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >*
+      _internal_mutable_wages();
   public:
-  float depression(int index) const;
-  void set_depression(int index, float value);
-  void add_depression(float value);
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
-      depression() const;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
-      mutable_depression();
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >&
+      wages() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >*
+      mutable_wages();
 
-  // repeated float locus_control = 22 [json_name = "locusControl"];
-  int locus_control_size() const;
+  // map<string, float> prices = 7 [json_name = "prices"];
+  int prices_size() const;
   private:
-  int _internal_locus_control_size() const;
+  int _internal_prices_size() const;
   public:
-  void clear_locus_control();
+  void clear_prices();
   private:
-  float _internal_locus_control(int index) const;
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
-      _internal_locus_control() const;
-  void _internal_add_locus_control(float value);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
-      _internal_mutable_locus_control();
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >&
+      _internal_prices() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >*
+      _internal_mutable_prices();
   public:
-  float locus_control(int index) const;
-  void set_locus_control(int index, float value);
-  void add_locus_control(float value);
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
-      locus_control() const;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
-      mutable_locus_control();
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >&
+      prices() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >*
+      mutable_prices();
 
-  // repeated float working_hours = 23 [json_name = "workingHours"];
+  // map<string, float> working_hours = 8 [json_name = "workingHours"];
   int working_hours_size() const;
   private:
   int _internal_working_hours_size() const;
   public:
   void clear_working_hours();
   private:
-  float _internal_working_hours(int index) const;
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >&
       _internal_working_hours() const;
-  void _internal_add_working_hours(float value);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >*
       _internal_mutable_working_hours();
   public:
-  float working_hours(int index) const;
-  void set_working_hours(int index, float value);
-  void add_working_hours(float value);
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >&
       working_hours() const;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >*
       mutable_working_hours();
+
+  // map<string, float> depression = 9 [json_name = "depression"];
+  int depression_size() const;
+  private:
+  int _internal_depression_size() const;
+  public:
+  void clear_depression();
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >&
+      _internal_depression() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >*
+      _internal_mutable_depression();
+  public:
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >&
+      depression() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >*
+      mutable_depression();
+
+  // map<string, float> consumption_currency = 10 [json_name = "consumptionCurrency"];
+  int consumption_currency_size() const;
+  private:
+  int _internal_consumption_currency_size() const;
+  public:
+  void clear_consumption_currency();
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >&
+      _internal_consumption_currency() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >*
+      _internal_mutable_consumption_currency();
+  public:
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >&
+      consumption_currency() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >*
+      mutable_consumption_currency();
+
+  // map<string, float> income_currency = 11 [json_name = "incomeCurrency"];
+  int income_currency_size() const;
+  private:
+  int _internal_income_currency_size() const;
+  public:
+  void clear_income_currency();
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >&
+      _internal_income_currency() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >*
+      _internal_mutable_income_currency();
+  public:
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >&
+      income_currency() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >*
+      mutable_income_currency();
+
+  // map<string, float> locus_control = 12 [json_name = "locusControl"];
+  int locus_control_size() const;
+  private:
+  int _internal_locus_control_size() const;
+  public:
+  void clear_locus_control();
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >&
+      _internal_locus_control() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >*
+      _internal_mutable_locus_control();
+  public:
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >&
+      locus_control() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >*
+      mutable_locus_control();
+
+  // repeated int32 citizens_agent_id = 13 [json_name = "citizensAgentId"];
+  int citizens_agent_id_size() const;
+  private:
+  int _internal_citizens_agent_id_size() const;
+  public:
+  void clear_citizens_agent_id();
+  private:
+  int32_t _internal_citizens_agent_id(int index) const;
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+      _internal_citizens_agent_id() const;
+  void _internal_add_citizens_agent_id(int32_t value);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+      _internal_mutable_citizens_agent_id();
+  public:
+  int32_t citizens_agent_id(int index) const;
+  void set_citizens_agent_id(int index, int32_t value);
+  void add_citizens_agent_id(int32_t value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+      citizens_agent_id() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+      mutable_citizens_agent_id();
 
   // int32 id = 1 [json_name = "id"];
   void clear_id();
@@ -583,46 +975,7 @@ class Org final :
   void _internal_set_id(int32_t value);
   public:
 
-  // .city.economy.v2.OrgType type = 2 [json_name = "type"];
-  void clear_type();
-  ::city::economy::v2::OrgType type() const;
-  void set_type(::city::economy::v2::OrgType value);
-  private:
-  ::city::economy::v2::OrgType _internal_type() const;
-  void _internal_set_type(::city::economy::v2::OrgType value);
-  public:
-
-  // optional int32 inventory = 8 [json_name = "inventory"];
-  bool has_inventory() const;
-  private:
-  bool _internal_has_inventory() const;
-  public:
-  void clear_inventory();
-  int32_t inventory() const;
-  void set_inventory(int32_t value);
-  private:
-  int32_t _internal_inventory() const;
-  void _internal_set_inventory(int32_t value);
-  public:
-
-  // optional float price = 9 [json_name = "price"];
-  bool has_price() const;
-  private:
-  bool _internal_has_price() const;
-  public:
-  void clear_price();
-  float price() const;
-  void set_price(float value);
-  private:
-  float _internal_price() const;
-  void _internal_set_price(float value);
-  public:
-
-  // optional float currency = 10 [json_name = "currency"];
-  bool has_currency() const;
-  private:
-  bool _internal_has_currency() const;
-  public:
+  // float currency = 14 [json_name = "currency"];
   void clear_currency();
   float currency() const;
   void set_currency(float value);
@@ -631,11 +984,467 @@ class Org final :
   void _internal_set_currency(float value);
   public:
 
-  // optional float interest_rate = 11 [json_name = "interestRate"];
-  bool has_interest_rate() const;
+  // @@protoc_insertion_point(class_scope:city.economy.v2.NBS)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t > citizens_;
+    mutable std::atomic<int> _citizens_cached_byte_size_;
+    ::PROTOBUF_NAMESPACE_ID::internal::MapField<
+        NBS_NominalGdpEntry_DoNotUse,
+        std::string, float,
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_FLOAT> nominal_gdp_;
+    ::PROTOBUF_NAMESPACE_ID::internal::MapField<
+        NBS_RealGdpEntry_DoNotUse,
+        std::string, float,
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_FLOAT> real_gdp_;
+    ::PROTOBUF_NAMESPACE_ID::internal::MapField<
+        NBS_UnemploymentEntry_DoNotUse,
+        std::string, float,
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_FLOAT> unemployment_;
+    ::PROTOBUF_NAMESPACE_ID::internal::MapField<
+        NBS_WagesEntry_DoNotUse,
+        std::string, float,
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_FLOAT> wages_;
+    ::PROTOBUF_NAMESPACE_ID::internal::MapField<
+        NBS_PricesEntry_DoNotUse,
+        std::string, float,
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_FLOAT> prices_;
+    ::PROTOBUF_NAMESPACE_ID::internal::MapField<
+        NBS_WorkingHoursEntry_DoNotUse,
+        std::string, float,
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_FLOAT> working_hours_;
+    ::PROTOBUF_NAMESPACE_ID::internal::MapField<
+        NBS_DepressionEntry_DoNotUse,
+        std::string, float,
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_FLOAT> depression_;
+    ::PROTOBUF_NAMESPACE_ID::internal::MapField<
+        NBS_ConsumptionCurrencyEntry_DoNotUse,
+        std::string, float,
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_FLOAT> consumption_currency_;
+    ::PROTOBUF_NAMESPACE_ID::internal::MapField<
+        NBS_IncomeCurrencyEntry_DoNotUse,
+        std::string, float,
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_FLOAT> income_currency_;
+    ::PROTOBUF_NAMESPACE_ID::internal::MapField<
+        NBS_LocusControlEntry_DoNotUse,
+        std::string, float,
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_FLOAT> locus_control_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t > citizens_agent_id_;
+    mutable std::atomic<int> _citizens_agent_id_cached_byte_size_;
+    int32_t id_;
+    float currency_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_city_2feconomy_2fv2_2feconomy_2eproto;
+};
+// -------------------------------------------------------------------
+
+class Government final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.economy.v2.Government) */ {
+ public:
+  inline Government() : Government(nullptr) {}
+  ~Government() override;
+  explicit PROTOBUF_CONSTEXPR Government(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  Government(const Government& from);
+  Government(Government&& from) noexcept
+    : Government() {
+    *this = ::std::move(from);
+  }
+
+  inline Government& operator=(const Government& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline Government& operator=(Government&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const Government& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const Government* internal_default_instance() {
+    return reinterpret_cast<const Government*>(
+               &_Government_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    12;
+
+  friend void swap(Government& a, Government& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(Government* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(Government* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  Government* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<Government>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const Government& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const Government& from) {
+    Government::MergeImpl(*this, from);
+  }
   private:
-  bool _internal_has_interest_rate() const;
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
   public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Government* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.economy.v2.Government";
+  }
+  protected:
+  explicit Government(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kCitizensFieldNumber = 2,
+    kBracketCutoffsFieldNumber = 3,
+    kBracketRatesFieldNumber = 4,
+    kIdFieldNumber = 1,
+    kCurrencyFieldNumber = 5,
+  };
+  // repeated int32 citizens = 2 [json_name = "citizens"];
+  int citizens_size() const;
+  private:
+  int _internal_citizens_size() const;
+  public:
+  void clear_citizens();
+  private:
+  int32_t _internal_citizens(int index) const;
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+      _internal_citizens() const;
+  void _internal_add_citizens(int32_t value);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+      _internal_mutable_citizens();
+  public:
+  int32_t citizens(int index) const;
+  void set_citizens(int index, int32_t value);
+  void add_citizens(int32_t value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+      citizens() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+      mutable_citizens();
+
+  // repeated float bracket_cutoffs = 3 [json_name = "bracketCutoffs"];
+  int bracket_cutoffs_size() const;
+  private:
+  int _internal_bracket_cutoffs_size() const;
+  public:
+  void clear_bracket_cutoffs();
+  private:
+  float _internal_bracket_cutoffs(int index) const;
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+      _internal_bracket_cutoffs() const;
+  void _internal_add_bracket_cutoffs(float value);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+      _internal_mutable_bracket_cutoffs();
+  public:
+  float bracket_cutoffs(int index) const;
+  void set_bracket_cutoffs(int index, float value);
+  void add_bracket_cutoffs(float value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+      bracket_cutoffs() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+      mutable_bracket_cutoffs();
+
+  // repeated float bracket_rates = 4 [json_name = "bracketRates"];
+  int bracket_rates_size() const;
+  private:
+  int _internal_bracket_rates_size() const;
+  public:
+  void clear_bracket_rates();
+  private:
+  float _internal_bracket_rates(int index) const;
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+      _internal_bracket_rates() const;
+  void _internal_add_bracket_rates(float value);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+      _internal_mutable_bracket_rates();
+  public:
+  float bracket_rates(int index) const;
+  void set_bracket_rates(int index, float value);
+  void add_bracket_rates(float value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+      bracket_rates() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+      mutable_bracket_rates();
+
+  // int32 id = 1 [json_name = "id"];
+  void clear_id();
+  int32_t id() const;
+  void set_id(int32_t value);
+  private:
+  int32_t _internal_id() const;
+  void _internal_set_id(int32_t value);
+  public:
+
+  // float currency = 5 [json_name = "currency"];
+  void clear_currency();
+  float currency() const;
+  void set_currency(float value);
+  private:
+  float _internal_currency() const;
+  void _internal_set_currency(float value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:city.economy.v2.Government)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t > citizens_;
+    mutable std::atomic<int> _citizens_cached_byte_size_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedField< float > bracket_cutoffs_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedField< float > bracket_rates_;
+    int32_t id_;
+    float currency_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_city_2feconomy_2fv2_2feconomy_2eproto;
+};
+// -------------------------------------------------------------------
+
+class Bank final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.economy.v2.Bank) */ {
+ public:
+  inline Bank() : Bank(nullptr) {}
+  ~Bank() override;
+  explicit PROTOBUF_CONSTEXPR Bank(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  Bank(const Bank& from);
+  Bank(Bank&& from) noexcept
+    : Bank() {
+    *this = ::std::move(from);
+  }
+
+  inline Bank& operator=(const Bank& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline Bank& operator=(Bank&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const Bank& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const Bank* internal_default_instance() {
+    return reinterpret_cast<const Bank*>(
+               &_Bank_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    13;
+
+  friend void swap(Bank& a, Bank& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(Bank* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(Bank* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  Bank* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<Bank>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const Bank& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const Bank& from) {
+    Bank::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Bank* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.economy.v2.Bank";
+  }
+  protected:
+  explicit Bank(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kCitizensFieldNumber = 2,
+    kIdFieldNumber = 1,
+    kInterestRateFieldNumber = 3,
+    kCurrencyFieldNumber = 4,
+  };
+  // repeated int32 citizens = 2 [json_name = "citizens"];
+  int citizens_size() const;
+  private:
+  int _internal_citizens_size() const;
+  public:
+  void clear_citizens();
+  private:
+  int32_t _internal_citizens(int index) const;
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+      _internal_citizens() const;
+  void _internal_add_citizens(int32_t value);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+      _internal_mutable_citizens();
+  public:
+  int32_t citizens(int index) const;
+  void set_citizens(int index, int32_t value);
+  void add_citizens(int32_t value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+      citizens() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+      mutable_citizens();
+
+  // int32 id = 1 [json_name = "id"];
+  void clear_id();
+  int32_t id() const;
+  void set_id(int32_t value);
+  private:
+  int32_t _internal_id() const;
+  void _internal_set_id(int32_t value);
+  public:
+
+  // float interest_rate = 3 [json_name = "interestRate"];
   void clear_interest_rate();
   float interest_rate() const;
   void set_interest_rate(float value);
@@ -644,33 +1453,16 @@ class Org final :
   void _internal_set_interest_rate(float value);
   public:
 
-  // optional int32 demand = 14 [json_name = "demand"];
-  bool has_demand() const;
+  // float currency = 4 [json_name = "currency"];
+  void clear_currency();
+  float currency() const;
+  void set_currency(float value);
   private:
-  bool _internal_has_demand() const;
-  public:
-  void clear_demand();
-  int32_t demand() const;
-  void set_demand(int32_t value);
-  private:
-  int32_t _internal_demand() const;
-  void _internal_set_demand(int32_t value);
+  float _internal_currency() const;
+  void _internal_set_currency(float value);
   public:
 
-  // optional int32 sales = 15 [json_name = "sales"];
-  bool has_sales() const;
-  private:
-  bool _internal_has_sales() const;
-  public:
-  void clear_sales();
-  int32_t sales() const;
-  void set_sales(int32_t value);
-  private:
-  int32_t _internal_sales() const;
-  void _internal_set_sales(int32_t value);
-  public:
-
-  // @@protoc_insertion_point(class_scope:city.economy.v2.Org)
+  // @@protoc_insertion_point(class_scope:city.economy.v2.Bank)
  private:
   class _Internal;
 
@@ -678,33 +1470,12 @@ class Org final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
-    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-    ::PROTOBUF_NAMESPACE_ID::RepeatedField< float > nominal_gdp_;
-    ::PROTOBUF_NAMESPACE_ID::RepeatedField< float > real_gdp_;
-    ::PROTOBUF_NAMESPACE_ID::RepeatedField< float > unemployment_;
-    ::PROTOBUF_NAMESPACE_ID::RepeatedField< float > wages_;
-    ::PROTOBUF_NAMESPACE_ID::RepeatedField< float > prices_;
-    ::PROTOBUF_NAMESPACE_ID::RepeatedField< float > bracket_cutoffs_;
-    ::PROTOBUF_NAMESPACE_ID::RepeatedField< float > bracket_rates_;
-    ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t > employees_;
-    mutable std::atomic<int> _employees_cached_byte_size_;
     ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t > citizens_;
     mutable std::atomic<int> _citizens_cached_byte_size_;
-    ::PROTOBUF_NAMESPACE_ID::RepeatedField< float > consumption_currency_;
-    ::PROTOBUF_NAMESPACE_ID::RepeatedField< float > consumption_propensity_;
-    ::PROTOBUF_NAMESPACE_ID::RepeatedField< float > income_currency_;
-    ::PROTOBUF_NAMESPACE_ID::RepeatedField< float > depression_;
-    ::PROTOBUF_NAMESPACE_ID::RepeatedField< float > locus_control_;
-    ::PROTOBUF_NAMESPACE_ID::RepeatedField< float > working_hours_;
     int32_t id_;
-    int type_;
-    int32_t inventory_;
-    float price_;
-    float currency_;
     float interest_rate_;
-    int32_t demand_;
-    int32_t sales_;
+    float currency_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_city_2feconomy_2fv2_2feconomy_2eproto;
@@ -759,7 +1530,7 @@ class Agent final :
                &_Agent_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    14;
 
   friend void swap(Agent& a, Agent& b) {
     a.Swap(&b);
@@ -983,7 +1754,7 @@ class EconomyEntities final :
                &_EconomyEntities_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    15;
 
   friend void swap(EconomyEntities& a, EconomyEntities& b) {
     a.Swap(&b);
@@ -1056,28 +1827,85 @@ class EconomyEntities final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kOrgsFieldNumber = 1,
-    kAgentsFieldNumber = 2,
+    kFirmsFieldNumber = 1,
+    kNbsFieldNumber = 2,
+    kGovernmentsFieldNumber = 3,
+    kBanksFieldNumber = 4,
+    kAgentsFieldNumber = 5,
   };
-  // repeated .city.economy.v2.Org orgs = 1 [json_name = "orgs"];
-  int orgs_size() const;
+  // repeated .city.economy.v2.Firm firms = 1 [json_name = "firms"];
+  int firms_size() const;
   private:
-  int _internal_orgs_size() const;
+  int _internal_firms_size() const;
   public:
-  void clear_orgs();
-  ::city::economy::v2::Org* mutable_orgs(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::economy::v2::Org >*
-      mutable_orgs();
+  void clear_firms();
+  ::city::economy::v2::Firm* mutable_firms(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::economy::v2::Firm >*
+      mutable_firms();
   private:
-  const ::city::economy::v2::Org& _internal_orgs(int index) const;
-  ::city::economy::v2::Org* _internal_add_orgs();
+  const ::city::economy::v2::Firm& _internal_firms(int index) const;
+  ::city::economy::v2::Firm* _internal_add_firms();
   public:
-  const ::city::economy::v2::Org& orgs(int index) const;
-  ::city::economy::v2::Org* add_orgs();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::economy::v2::Org >&
-      orgs() const;
+  const ::city::economy::v2::Firm& firms(int index) const;
+  ::city::economy::v2::Firm* add_firms();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::economy::v2::Firm >&
+      firms() const;
 
-  // repeated .city.economy.v2.Agent agents = 2 [json_name = "agents"];
+  // repeated .city.economy.v2.NBS nbs = 2 [json_name = "nbs"];
+  int nbs_size() const;
+  private:
+  int _internal_nbs_size() const;
+  public:
+  void clear_nbs();
+  ::city::economy::v2::NBS* mutable_nbs(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::economy::v2::NBS >*
+      mutable_nbs();
+  private:
+  const ::city::economy::v2::NBS& _internal_nbs(int index) const;
+  ::city::economy::v2::NBS* _internal_add_nbs();
+  public:
+  const ::city::economy::v2::NBS& nbs(int index) const;
+  ::city::economy::v2::NBS* add_nbs();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::economy::v2::NBS >&
+      nbs() const;
+
+  // repeated .city.economy.v2.Government governments = 3 [json_name = "governments"];
+  int governments_size() const;
+  private:
+  int _internal_governments_size() const;
+  public:
+  void clear_governments();
+  ::city::economy::v2::Government* mutable_governments(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::economy::v2::Government >*
+      mutable_governments();
+  private:
+  const ::city::economy::v2::Government& _internal_governments(int index) const;
+  ::city::economy::v2::Government* _internal_add_governments();
+  public:
+  const ::city::economy::v2::Government& governments(int index) const;
+  ::city::economy::v2::Government* add_governments();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::economy::v2::Government >&
+      governments() const;
+
+  // repeated .city.economy.v2.Bank banks = 4 [json_name = "banks"];
+  int banks_size() const;
+  private:
+  int _internal_banks_size() const;
+  public:
+  void clear_banks();
+  ::city::economy::v2::Bank* mutable_banks(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::economy::v2::Bank >*
+      mutable_banks();
+  private:
+  const ::city::economy::v2::Bank& _internal_banks(int index) const;
+  ::city::economy::v2::Bank* _internal_add_banks();
+  public:
+  const ::city::economy::v2::Bank& banks(int index) const;
+  ::city::economy::v2::Bank* add_banks();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::economy::v2::Bank >&
+      banks() const;
+
+  // repeated .city.economy.v2.Agent agents = 5 [json_name = "agents"];
   int agents_size() const;
   private:
   int _internal_agents_size() const;
@@ -1103,7 +1931,10 @@ class EconomyEntities final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::economy::v2::Org > orgs_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::economy::v2::Firm > firms_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::economy::v2::NBS > nbs_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::economy::v2::Government > governments_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::economy::v2::Bank > banks_;
     ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::economy::v2::Agent > agents_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
@@ -1119,919 +1950,917 @@ class EconomyEntities final :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
-// Org
+// Firm
 
 // int32 id = 1 [json_name = "id"];
-inline void Org::clear_id() {
+inline void Firm::clear_id() {
   _impl_.id_ = 0;
 }
-inline int32_t Org::_internal_id() const {
+inline int32_t Firm::_internal_id() const {
   return _impl_.id_;
 }
-inline int32_t Org::id() const {
-  // @@protoc_insertion_point(field_get:city.economy.v2.Org.id)
+inline int32_t Firm::id() const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.Firm.id)
   return _internal_id();
 }
-inline void Org::_internal_set_id(int32_t value) {
+inline void Firm::_internal_set_id(int32_t value) {
   
   _impl_.id_ = value;
 }
-inline void Org::set_id(int32_t value) {
+inline void Firm::set_id(int32_t value) {
   _internal_set_id(value);
-  // @@protoc_insertion_point(field_set:city.economy.v2.Org.id)
+  // @@protoc_insertion_point(field_set:city.economy.v2.Firm.id)
 }
 
-// .city.economy.v2.OrgType type = 2 [json_name = "type"];
-inline void Org::clear_type() {
-  _impl_.type_ = 0;
-}
-inline ::city::economy::v2::OrgType Org::_internal_type() const {
-  return static_cast< ::city::economy::v2::OrgType >(_impl_.type_);
-}
-inline ::city::economy::v2::OrgType Org::type() const {
-  // @@protoc_insertion_point(field_get:city.economy.v2.Org.type)
-  return _internal_type();
-}
-inline void Org::_internal_set_type(::city::economy::v2::OrgType value) {
-  
-  _impl_.type_ = value;
-}
-inline void Org::set_type(::city::economy::v2::OrgType value) {
-  _internal_set_type(value);
-  // @@protoc_insertion_point(field_set:city.economy.v2.Org.type)
-}
-
-// repeated float nominal_gdp = 3 [json_name = "nominalGdp"];
-inline int Org::_internal_nominal_gdp_size() const {
-  return _impl_.nominal_gdp_.size();
-}
-inline int Org::nominal_gdp_size() const {
-  return _internal_nominal_gdp_size();
-}
-inline void Org::clear_nominal_gdp() {
-  _impl_.nominal_gdp_.Clear();
-}
-inline float Org::_internal_nominal_gdp(int index) const {
-  return _impl_.nominal_gdp_.Get(index);
-}
-inline float Org::nominal_gdp(int index) const {
-  // @@protoc_insertion_point(field_get:city.economy.v2.Org.nominal_gdp)
-  return _internal_nominal_gdp(index);
-}
-inline void Org::set_nominal_gdp(int index, float value) {
-  _impl_.nominal_gdp_.Set(index, value);
-  // @@protoc_insertion_point(field_set:city.economy.v2.Org.nominal_gdp)
-}
-inline void Org::_internal_add_nominal_gdp(float value) {
-  _impl_.nominal_gdp_.Add(value);
-}
-inline void Org::add_nominal_gdp(float value) {
-  _internal_add_nominal_gdp(value);
-  // @@protoc_insertion_point(field_add:city.economy.v2.Org.nominal_gdp)
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
-Org::_internal_nominal_gdp() const {
-  return _impl_.nominal_gdp_;
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
-Org::nominal_gdp() const {
-  // @@protoc_insertion_point(field_list:city.economy.v2.Org.nominal_gdp)
-  return _internal_nominal_gdp();
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
-Org::_internal_mutable_nominal_gdp() {
-  return &_impl_.nominal_gdp_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
-Org::mutable_nominal_gdp() {
-  // @@protoc_insertion_point(field_mutable_list:city.economy.v2.Org.nominal_gdp)
-  return _internal_mutable_nominal_gdp();
-}
-
-// repeated float real_gdp = 4 [json_name = "realGdp"];
-inline int Org::_internal_real_gdp_size() const {
-  return _impl_.real_gdp_.size();
-}
-inline int Org::real_gdp_size() const {
-  return _internal_real_gdp_size();
-}
-inline void Org::clear_real_gdp() {
-  _impl_.real_gdp_.Clear();
-}
-inline float Org::_internal_real_gdp(int index) const {
-  return _impl_.real_gdp_.Get(index);
-}
-inline float Org::real_gdp(int index) const {
-  // @@protoc_insertion_point(field_get:city.economy.v2.Org.real_gdp)
-  return _internal_real_gdp(index);
-}
-inline void Org::set_real_gdp(int index, float value) {
-  _impl_.real_gdp_.Set(index, value);
-  // @@protoc_insertion_point(field_set:city.economy.v2.Org.real_gdp)
-}
-inline void Org::_internal_add_real_gdp(float value) {
-  _impl_.real_gdp_.Add(value);
-}
-inline void Org::add_real_gdp(float value) {
-  _internal_add_real_gdp(value);
-  // @@protoc_insertion_point(field_add:city.economy.v2.Org.real_gdp)
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
-Org::_internal_real_gdp() const {
-  return _impl_.real_gdp_;
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
-Org::real_gdp() const {
-  // @@protoc_insertion_point(field_list:city.economy.v2.Org.real_gdp)
-  return _internal_real_gdp();
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
-Org::_internal_mutable_real_gdp() {
-  return &_impl_.real_gdp_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
-Org::mutable_real_gdp() {
-  // @@protoc_insertion_point(field_mutable_list:city.economy.v2.Org.real_gdp)
-  return _internal_mutable_real_gdp();
-}
-
-// repeated float unemployment = 5 [json_name = "unemployment"];
-inline int Org::_internal_unemployment_size() const {
-  return _impl_.unemployment_.size();
-}
-inline int Org::unemployment_size() const {
-  return _internal_unemployment_size();
-}
-inline void Org::clear_unemployment() {
-  _impl_.unemployment_.Clear();
-}
-inline float Org::_internal_unemployment(int index) const {
-  return _impl_.unemployment_.Get(index);
-}
-inline float Org::unemployment(int index) const {
-  // @@protoc_insertion_point(field_get:city.economy.v2.Org.unemployment)
-  return _internal_unemployment(index);
-}
-inline void Org::set_unemployment(int index, float value) {
-  _impl_.unemployment_.Set(index, value);
-  // @@protoc_insertion_point(field_set:city.economy.v2.Org.unemployment)
-}
-inline void Org::_internal_add_unemployment(float value) {
-  _impl_.unemployment_.Add(value);
-}
-inline void Org::add_unemployment(float value) {
-  _internal_add_unemployment(value);
-  // @@protoc_insertion_point(field_add:city.economy.v2.Org.unemployment)
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
-Org::_internal_unemployment() const {
-  return _impl_.unemployment_;
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
-Org::unemployment() const {
-  // @@protoc_insertion_point(field_list:city.economy.v2.Org.unemployment)
-  return _internal_unemployment();
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
-Org::_internal_mutable_unemployment() {
-  return &_impl_.unemployment_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
-Org::mutable_unemployment() {
-  // @@protoc_insertion_point(field_mutable_list:city.economy.v2.Org.unemployment)
-  return _internal_mutable_unemployment();
-}
-
-// repeated float wages = 6 [json_name = "wages"];
-inline int Org::_internal_wages_size() const {
-  return _impl_.wages_.size();
-}
-inline int Org::wages_size() const {
-  return _internal_wages_size();
-}
-inline void Org::clear_wages() {
-  _impl_.wages_.Clear();
-}
-inline float Org::_internal_wages(int index) const {
-  return _impl_.wages_.Get(index);
-}
-inline float Org::wages(int index) const {
-  // @@protoc_insertion_point(field_get:city.economy.v2.Org.wages)
-  return _internal_wages(index);
-}
-inline void Org::set_wages(int index, float value) {
-  _impl_.wages_.Set(index, value);
-  // @@protoc_insertion_point(field_set:city.economy.v2.Org.wages)
-}
-inline void Org::_internal_add_wages(float value) {
-  _impl_.wages_.Add(value);
-}
-inline void Org::add_wages(float value) {
-  _internal_add_wages(value);
-  // @@protoc_insertion_point(field_add:city.economy.v2.Org.wages)
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
-Org::_internal_wages() const {
-  return _impl_.wages_;
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
-Org::wages() const {
-  // @@protoc_insertion_point(field_list:city.economy.v2.Org.wages)
-  return _internal_wages();
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
-Org::_internal_mutable_wages() {
-  return &_impl_.wages_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
-Org::mutable_wages() {
-  // @@protoc_insertion_point(field_mutable_list:city.economy.v2.Org.wages)
-  return _internal_mutable_wages();
-}
-
-// repeated float prices = 7 [json_name = "prices"];
-inline int Org::_internal_prices_size() const {
-  return _impl_.prices_.size();
-}
-inline int Org::prices_size() const {
-  return _internal_prices_size();
-}
-inline void Org::clear_prices() {
-  _impl_.prices_.Clear();
-}
-inline float Org::_internal_prices(int index) const {
-  return _impl_.prices_.Get(index);
-}
-inline float Org::prices(int index) const {
-  // @@protoc_insertion_point(field_get:city.economy.v2.Org.prices)
-  return _internal_prices(index);
-}
-inline void Org::set_prices(int index, float value) {
-  _impl_.prices_.Set(index, value);
-  // @@protoc_insertion_point(field_set:city.economy.v2.Org.prices)
-}
-inline void Org::_internal_add_prices(float value) {
-  _impl_.prices_.Add(value);
-}
-inline void Org::add_prices(float value) {
-  _internal_add_prices(value);
-  // @@protoc_insertion_point(field_add:city.economy.v2.Org.prices)
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
-Org::_internal_prices() const {
-  return _impl_.prices_;
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
-Org::prices() const {
-  // @@protoc_insertion_point(field_list:city.economy.v2.Org.prices)
-  return _internal_prices();
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
-Org::_internal_mutable_prices() {
-  return &_impl_.prices_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
-Org::mutable_prices() {
-  // @@protoc_insertion_point(field_mutable_list:city.economy.v2.Org.prices)
-  return _internal_mutable_prices();
-}
-
-// optional int32 inventory = 8 [json_name = "inventory"];
-inline bool Org::_internal_has_inventory() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
-  return value;
-}
-inline bool Org::has_inventory() const {
-  return _internal_has_inventory();
-}
-inline void Org::clear_inventory() {
-  _impl_.inventory_ = 0;
-  _impl_._has_bits_[0] &= ~0x00000001u;
-}
-inline int32_t Org::_internal_inventory() const {
-  return _impl_.inventory_;
-}
-inline int32_t Org::inventory() const {
-  // @@protoc_insertion_point(field_get:city.economy.v2.Org.inventory)
-  return _internal_inventory();
-}
-inline void Org::_internal_set_inventory(int32_t value) {
-  _impl_._has_bits_[0] |= 0x00000001u;
-  _impl_.inventory_ = value;
-}
-inline void Org::set_inventory(int32_t value) {
-  _internal_set_inventory(value);
-  // @@protoc_insertion_point(field_set:city.economy.v2.Org.inventory)
-}
-
-// optional float price = 9 [json_name = "price"];
-inline bool Org::_internal_has_price() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
-  return value;
-}
-inline bool Org::has_price() const {
-  return _internal_has_price();
-}
-inline void Org::clear_price() {
-  _impl_.price_ = 0;
-  _impl_._has_bits_[0] &= ~0x00000002u;
-}
-inline float Org::_internal_price() const {
-  return _impl_.price_;
-}
-inline float Org::price() const {
-  // @@protoc_insertion_point(field_get:city.economy.v2.Org.price)
-  return _internal_price();
-}
-inline void Org::_internal_set_price(float value) {
-  _impl_._has_bits_[0] |= 0x00000002u;
-  _impl_.price_ = value;
-}
-inline void Org::set_price(float value) {
-  _internal_set_price(value);
-  // @@protoc_insertion_point(field_set:city.economy.v2.Org.price)
-}
-
-// optional float currency = 10 [json_name = "currency"];
-inline bool Org::_internal_has_currency() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
-  return value;
-}
-inline bool Org::has_currency() const {
-  return _internal_has_currency();
-}
-inline void Org::clear_currency() {
-  _impl_.currency_ = 0;
-  _impl_._has_bits_[0] &= ~0x00000004u;
-}
-inline float Org::_internal_currency() const {
-  return _impl_.currency_;
-}
-inline float Org::currency() const {
-  // @@protoc_insertion_point(field_get:city.economy.v2.Org.currency)
-  return _internal_currency();
-}
-inline void Org::_internal_set_currency(float value) {
-  _impl_._has_bits_[0] |= 0x00000004u;
-  _impl_.currency_ = value;
-}
-inline void Org::set_currency(float value) {
-  _internal_set_currency(value);
-  // @@protoc_insertion_point(field_set:city.economy.v2.Org.currency)
-}
-
-// optional float interest_rate = 11 [json_name = "interestRate"];
-inline bool Org::_internal_has_interest_rate() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000008u) != 0;
-  return value;
-}
-inline bool Org::has_interest_rate() const {
-  return _internal_has_interest_rate();
-}
-inline void Org::clear_interest_rate() {
-  _impl_.interest_rate_ = 0;
-  _impl_._has_bits_[0] &= ~0x00000008u;
-}
-inline float Org::_internal_interest_rate() const {
-  return _impl_.interest_rate_;
-}
-inline float Org::interest_rate() const {
-  // @@protoc_insertion_point(field_get:city.economy.v2.Org.interest_rate)
-  return _internal_interest_rate();
-}
-inline void Org::_internal_set_interest_rate(float value) {
-  _impl_._has_bits_[0] |= 0x00000008u;
-  _impl_.interest_rate_ = value;
-}
-inline void Org::set_interest_rate(float value) {
-  _internal_set_interest_rate(value);
-  // @@protoc_insertion_point(field_set:city.economy.v2.Org.interest_rate)
-}
-
-// repeated float bracket_cutoffs = 12 [json_name = "bracketCutoffs"];
-inline int Org::_internal_bracket_cutoffs_size() const {
-  return _impl_.bracket_cutoffs_.size();
-}
-inline int Org::bracket_cutoffs_size() const {
-  return _internal_bracket_cutoffs_size();
-}
-inline void Org::clear_bracket_cutoffs() {
-  _impl_.bracket_cutoffs_.Clear();
-}
-inline float Org::_internal_bracket_cutoffs(int index) const {
-  return _impl_.bracket_cutoffs_.Get(index);
-}
-inline float Org::bracket_cutoffs(int index) const {
-  // @@protoc_insertion_point(field_get:city.economy.v2.Org.bracket_cutoffs)
-  return _internal_bracket_cutoffs(index);
-}
-inline void Org::set_bracket_cutoffs(int index, float value) {
-  _impl_.bracket_cutoffs_.Set(index, value);
-  // @@protoc_insertion_point(field_set:city.economy.v2.Org.bracket_cutoffs)
-}
-inline void Org::_internal_add_bracket_cutoffs(float value) {
-  _impl_.bracket_cutoffs_.Add(value);
-}
-inline void Org::add_bracket_cutoffs(float value) {
-  _internal_add_bracket_cutoffs(value);
-  // @@protoc_insertion_point(field_add:city.economy.v2.Org.bracket_cutoffs)
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
-Org::_internal_bracket_cutoffs() const {
-  return _impl_.bracket_cutoffs_;
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
-Org::bracket_cutoffs() const {
-  // @@protoc_insertion_point(field_list:city.economy.v2.Org.bracket_cutoffs)
-  return _internal_bracket_cutoffs();
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
-Org::_internal_mutable_bracket_cutoffs() {
-  return &_impl_.bracket_cutoffs_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
-Org::mutable_bracket_cutoffs() {
-  // @@protoc_insertion_point(field_mutable_list:city.economy.v2.Org.bracket_cutoffs)
-  return _internal_mutable_bracket_cutoffs();
-}
-
-// repeated float bracket_rates = 13 [json_name = "bracketRates"];
-inline int Org::_internal_bracket_rates_size() const {
-  return _impl_.bracket_rates_.size();
-}
-inline int Org::bracket_rates_size() const {
-  return _internal_bracket_rates_size();
-}
-inline void Org::clear_bracket_rates() {
-  _impl_.bracket_rates_.Clear();
-}
-inline float Org::_internal_bracket_rates(int index) const {
-  return _impl_.bracket_rates_.Get(index);
-}
-inline float Org::bracket_rates(int index) const {
-  // @@protoc_insertion_point(field_get:city.economy.v2.Org.bracket_rates)
-  return _internal_bracket_rates(index);
-}
-inline void Org::set_bracket_rates(int index, float value) {
-  _impl_.bracket_rates_.Set(index, value);
-  // @@protoc_insertion_point(field_set:city.economy.v2.Org.bracket_rates)
-}
-inline void Org::_internal_add_bracket_rates(float value) {
-  _impl_.bracket_rates_.Add(value);
-}
-inline void Org::add_bracket_rates(float value) {
-  _internal_add_bracket_rates(value);
-  // @@protoc_insertion_point(field_add:city.economy.v2.Org.bracket_rates)
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
-Org::_internal_bracket_rates() const {
-  return _impl_.bracket_rates_;
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
-Org::bracket_rates() const {
-  // @@protoc_insertion_point(field_list:city.economy.v2.Org.bracket_rates)
-  return _internal_bracket_rates();
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
-Org::_internal_mutable_bracket_rates() {
-  return &_impl_.bracket_rates_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
-Org::mutable_bracket_rates() {
-  // @@protoc_insertion_point(field_mutable_list:city.economy.v2.Org.bracket_rates)
-  return _internal_mutable_bracket_rates();
-}
-
-// optional int32 demand = 14 [json_name = "demand"];
-inline bool Org::_internal_has_demand() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000010u) != 0;
-  return value;
-}
-inline bool Org::has_demand() const {
-  return _internal_has_demand();
-}
-inline void Org::clear_demand() {
-  _impl_.demand_ = 0;
-  _impl_._has_bits_[0] &= ~0x00000010u;
-}
-inline int32_t Org::_internal_demand() const {
-  return _impl_.demand_;
-}
-inline int32_t Org::demand() const {
-  // @@protoc_insertion_point(field_get:city.economy.v2.Org.demand)
-  return _internal_demand();
-}
-inline void Org::_internal_set_demand(int32_t value) {
-  _impl_._has_bits_[0] |= 0x00000010u;
-  _impl_.demand_ = value;
-}
-inline void Org::set_demand(int32_t value) {
-  _internal_set_demand(value);
-  // @@protoc_insertion_point(field_set:city.economy.v2.Org.demand)
-}
-
-// optional int32 sales = 15 [json_name = "sales"];
-inline bool Org::_internal_has_sales() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000020u) != 0;
-  return value;
-}
-inline bool Org::has_sales() const {
-  return _internal_has_sales();
-}
-inline void Org::clear_sales() {
-  _impl_.sales_ = 0;
-  _impl_._has_bits_[0] &= ~0x00000020u;
-}
-inline int32_t Org::_internal_sales() const {
-  return _impl_.sales_;
-}
-inline int32_t Org::sales() const {
-  // @@protoc_insertion_point(field_get:city.economy.v2.Org.sales)
-  return _internal_sales();
-}
-inline void Org::_internal_set_sales(int32_t value) {
-  _impl_._has_bits_[0] |= 0x00000020u;
-  _impl_.sales_ = value;
-}
-inline void Org::set_sales(int32_t value) {
-  _internal_set_sales(value);
-  // @@protoc_insertion_point(field_set:city.economy.v2.Org.sales)
-}
-
-// repeated int32 employees = 16 [json_name = "employees"];
-inline int Org::_internal_employees_size() const {
+// repeated int32 employees = 2 [json_name = "employees"];
+inline int Firm::_internal_employees_size() const {
   return _impl_.employees_.size();
 }
-inline int Org::employees_size() const {
+inline int Firm::employees_size() const {
   return _internal_employees_size();
 }
-inline void Org::clear_employees() {
+inline void Firm::clear_employees() {
   _impl_.employees_.Clear();
 }
-inline int32_t Org::_internal_employees(int index) const {
+inline int32_t Firm::_internal_employees(int index) const {
   return _impl_.employees_.Get(index);
 }
-inline int32_t Org::employees(int index) const {
-  // @@protoc_insertion_point(field_get:city.economy.v2.Org.employees)
+inline int32_t Firm::employees(int index) const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.Firm.employees)
   return _internal_employees(index);
 }
-inline void Org::set_employees(int index, int32_t value) {
+inline void Firm::set_employees(int index, int32_t value) {
   _impl_.employees_.Set(index, value);
-  // @@protoc_insertion_point(field_set:city.economy.v2.Org.employees)
+  // @@protoc_insertion_point(field_set:city.economy.v2.Firm.employees)
 }
-inline void Org::_internal_add_employees(int32_t value) {
+inline void Firm::_internal_add_employees(int32_t value) {
   _impl_.employees_.Add(value);
 }
-inline void Org::add_employees(int32_t value) {
+inline void Firm::add_employees(int32_t value) {
   _internal_add_employees(value);
-  // @@protoc_insertion_point(field_add:city.economy.v2.Org.employees)
+  // @@protoc_insertion_point(field_add:city.economy.v2.Firm.employees)
 }
 inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
-Org::_internal_employees() const {
+Firm::_internal_employees() const {
   return _impl_.employees_;
 }
 inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
-Org::employees() const {
-  // @@protoc_insertion_point(field_list:city.economy.v2.Org.employees)
+Firm::employees() const {
+  // @@protoc_insertion_point(field_list:city.economy.v2.Firm.employees)
   return _internal_employees();
 }
 inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
-Org::_internal_mutable_employees() {
+Firm::_internal_mutable_employees() {
   return &_impl_.employees_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
-Org::mutable_employees() {
-  // @@protoc_insertion_point(field_mutable_list:city.economy.v2.Org.employees)
+Firm::mutable_employees() {
+  // @@protoc_insertion_point(field_mutable_list:city.economy.v2.Firm.employees)
   return _internal_mutable_employees();
 }
 
-// repeated int32 citizens = 17 [json_name = "citizens"];
-inline int Org::_internal_citizens_size() const {
+// float price = 3 [json_name = "price"];
+inline void Firm::clear_price() {
+  _impl_.price_ = 0;
+}
+inline float Firm::_internal_price() const {
+  return _impl_.price_;
+}
+inline float Firm::price() const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.Firm.price)
+  return _internal_price();
+}
+inline void Firm::_internal_set_price(float value) {
+  
+  _impl_.price_ = value;
+}
+inline void Firm::set_price(float value) {
+  _internal_set_price(value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.Firm.price)
+}
+
+// int32 inventory = 4 [json_name = "inventory"];
+inline void Firm::clear_inventory() {
+  _impl_.inventory_ = 0;
+}
+inline int32_t Firm::_internal_inventory() const {
+  return _impl_.inventory_;
+}
+inline int32_t Firm::inventory() const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.Firm.inventory)
+  return _internal_inventory();
+}
+inline void Firm::_internal_set_inventory(int32_t value) {
+  
+  _impl_.inventory_ = value;
+}
+inline void Firm::set_inventory(int32_t value) {
+  _internal_set_inventory(value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.Firm.inventory)
+}
+
+// float demand = 5 [json_name = "demand"];
+inline void Firm::clear_demand() {
+  _impl_.demand_ = 0;
+}
+inline float Firm::_internal_demand() const {
+  return _impl_.demand_;
+}
+inline float Firm::demand() const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.Firm.demand)
+  return _internal_demand();
+}
+inline void Firm::_internal_set_demand(float value) {
+  
+  _impl_.demand_ = value;
+}
+inline void Firm::set_demand(float value) {
+  _internal_set_demand(value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.Firm.demand)
+}
+
+// float sales = 6 [json_name = "sales"];
+inline void Firm::clear_sales() {
+  _impl_.sales_ = 0;
+}
+inline float Firm::_internal_sales() const {
+  return _impl_.sales_;
+}
+inline float Firm::sales() const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.Firm.sales)
+  return _internal_sales();
+}
+inline void Firm::_internal_set_sales(float value) {
+  
+  _impl_.sales_ = value;
+}
+inline void Firm::set_sales(float value) {
+  _internal_set_sales(value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.Firm.sales)
+}
+
+// float currency = 7 [json_name = "currency"];
+inline void Firm::clear_currency() {
+  _impl_.currency_ = 0;
+}
+inline float Firm::_internal_currency() const {
+  return _impl_.currency_;
+}
+inline float Firm::currency() const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.Firm.currency)
+  return _internal_currency();
+}
+inline void Firm::_internal_set_currency(float value) {
+  
+  _impl_.currency_ = value;
+}
+inline void Firm::set_currency(float value) {
+  _internal_set_currency(value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.Firm.currency)
+}
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// NBS
+
+// int32 id = 1 [json_name = "id"];
+inline void NBS::clear_id() {
+  _impl_.id_ = 0;
+}
+inline int32_t NBS::_internal_id() const {
+  return _impl_.id_;
+}
+inline int32_t NBS::id() const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.NBS.id)
+  return _internal_id();
+}
+inline void NBS::_internal_set_id(int32_t value) {
+  
+  _impl_.id_ = value;
+}
+inline void NBS::set_id(int32_t value) {
+  _internal_set_id(value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.NBS.id)
+}
+
+// repeated int32 citizens = 2 [json_name = "citizens"];
+inline int NBS::_internal_citizens_size() const {
   return _impl_.citizens_.size();
 }
-inline int Org::citizens_size() const {
+inline int NBS::citizens_size() const {
   return _internal_citizens_size();
 }
-inline void Org::clear_citizens() {
+inline void NBS::clear_citizens() {
   _impl_.citizens_.Clear();
 }
-inline int32_t Org::_internal_citizens(int index) const {
+inline int32_t NBS::_internal_citizens(int index) const {
   return _impl_.citizens_.Get(index);
 }
-inline int32_t Org::citizens(int index) const {
-  // @@protoc_insertion_point(field_get:city.economy.v2.Org.citizens)
+inline int32_t NBS::citizens(int index) const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.NBS.citizens)
   return _internal_citizens(index);
 }
-inline void Org::set_citizens(int index, int32_t value) {
+inline void NBS::set_citizens(int index, int32_t value) {
   _impl_.citizens_.Set(index, value);
-  // @@protoc_insertion_point(field_set:city.economy.v2.Org.citizens)
+  // @@protoc_insertion_point(field_set:city.economy.v2.NBS.citizens)
 }
-inline void Org::_internal_add_citizens(int32_t value) {
+inline void NBS::_internal_add_citizens(int32_t value) {
   _impl_.citizens_.Add(value);
 }
-inline void Org::add_citizens(int32_t value) {
+inline void NBS::add_citizens(int32_t value) {
   _internal_add_citizens(value);
-  // @@protoc_insertion_point(field_add:city.economy.v2.Org.citizens)
+  // @@protoc_insertion_point(field_add:city.economy.v2.NBS.citizens)
 }
 inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
-Org::_internal_citizens() const {
+NBS::_internal_citizens() const {
   return _impl_.citizens_;
 }
 inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
-Org::citizens() const {
-  // @@protoc_insertion_point(field_list:city.economy.v2.Org.citizens)
+NBS::citizens() const {
+  // @@protoc_insertion_point(field_list:city.economy.v2.NBS.citizens)
   return _internal_citizens();
 }
 inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
-Org::_internal_mutable_citizens() {
+NBS::_internal_mutable_citizens() {
   return &_impl_.citizens_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
-Org::mutable_citizens() {
-  // @@protoc_insertion_point(field_mutable_list:city.economy.v2.Org.citizens)
+NBS::mutable_citizens() {
+  // @@protoc_insertion_point(field_mutable_list:city.economy.v2.NBS.citizens)
   return _internal_mutable_citizens();
 }
 
-// repeated float consumption_currency = 18 [json_name = "consumptionCurrency"];
-inline int Org::_internal_consumption_currency_size() const {
-  return _impl_.consumption_currency_.size();
+// map<string, float> nominal_gdp = 3 [json_name = "nominalGdp"];
+inline int NBS::_internal_nominal_gdp_size() const {
+  return _impl_.nominal_gdp_.size();
 }
-inline int Org::consumption_currency_size() const {
-  return _internal_consumption_currency_size();
+inline int NBS::nominal_gdp_size() const {
+  return _internal_nominal_gdp_size();
 }
-inline void Org::clear_consumption_currency() {
-  _impl_.consumption_currency_.Clear();
+inline void NBS::clear_nominal_gdp() {
+  _impl_.nominal_gdp_.Clear();
 }
-inline float Org::_internal_consumption_currency(int index) const {
-  return _impl_.consumption_currency_.Get(index);
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >&
+NBS::_internal_nominal_gdp() const {
+  return _impl_.nominal_gdp_.GetMap();
 }
-inline float Org::consumption_currency(int index) const {
-  // @@protoc_insertion_point(field_get:city.economy.v2.Org.consumption_currency)
-  return _internal_consumption_currency(index);
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >&
+NBS::nominal_gdp() const {
+  // @@protoc_insertion_point(field_map:city.economy.v2.NBS.nominal_gdp)
+  return _internal_nominal_gdp();
 }
-inline void Org::set_consumption_currency(int index, float value) {
-  _impl_.consumption_currency_.Set(index, value);
-  // @@protoc_insertion_point(field_set:city.economy.v2.Org.consumption_currency)
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >*
+NBS::_internal_mutable_nominal_gdp() {
+  return _impl_.nominal_gdp_.MutableMap();
 }
-inline void Org::_internal_add_consumption_currency(float value) {
-  _impl_.consumption_currency_.Add(value);
-}
-inline void Org::add_consumption_currency(float value) {
-  _internal_add_consumption_currency(value);
-  // @@protoc_insertion_point(field_add:city.economy.v2.Org.consumption_currency)
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
-Org::_internal_consumption_currency() const {
-  return _impl_.consumption_currency_;
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
-Org::consumption_currency() const {
-  // @@protoc_insertion_point(field_list:city.economy.v2.Org.consumption_currency)
-  return _internal_consumption_currency();
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
-Org::_internal_mutable_consumption_currency() {
-  return &_impl_.consumption_currency_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
-Org::mutable_consumption_currency() {
-  // @@protoc_insertion_point(field_mutable_list:city.economy.v2.Org.consumption_currency)
-  return _internal_mutable_consumption_currency();
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >*
+NBS::mutable_nominal_gdp() {
+  // @@protoc_insertion_point(field_mutable_map:city.economy.v2.NBS.nominal_gdp)
+  return _internal_mutable_nominal_gdp();
 }
 
-// repeated float consumption_propensity = 19 [json_name = "consumptionPropensity"];
-inline int Org::_internal_consumption_propensity_size() const {
-  return _impl_.consumption_propensity_.size();
+// map<string, float> real_gdp = 4 [json_name = "realGdp"];
+inline int NBS::_internal_real_gdp_size() const {
+  return _impl_.real_gdp_.size();
 }
-inline int Org::consumption_propensity_size() const {
-  return _internal_consumption_propensity_size();
+inline int NBS::real_gdp_size() const {
+  return _internal_real_gdp_size();
 }
-inline void Org::clear_consumption_propensity() {
-  _impl_.consumption_propensity_.Clear();
+inline void NBS::clear_real_gdp() {
+  _impl_.real_gdp_.Clear();
 }
-inline float Org::_internal_consumption_propensity(int index) const {
-  return _impl_.consumption_propensity_.Get(index);
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >&
+NBS::_internal_real_gdp() const {
+  return _impl_.real_gdp_.GetMap();
 }
-inline float Org::consumption_propensity(int index) const {
-  // @@protoc_insertion_point(field_get:city.economy.v2.Org.consumption_propensity)
-  return _internal_consumption_propensity(index);
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >&
+NBS::real_gdp() const {
+  // @@protoc_insertion_point(field_map:city.economy.v2.NBS.real_gdp)
+  return _internal_real_gdp();
 }
-inline void Org::set_consumption_propensity(int index, float value) {
-  _impl_.consumption_propensity_.Set(index, value);
-  // @@protoc_insertion_point(field_set:city.economy.v2.Org.consumption_propensity)
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >*
+NBS::_internal_mutable_real_gdp() {
+  return _impl_.real_gdp_.MutableMap();
 }
-inline void Org::_internal_add_consumption_propensity(float value) {
-  _impl_.consumption_propensity_.Add(value);
-}
-inline void Org::add_consumption_propensity(float value) {
-  _internal_add_consumption_propensity(value);
-  // @@protoc_insertion_point(field_add:city.economy.v2.Org.consumption_propensity)
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
-Org::_internal_consumption_propensity() const {
-  return _impl_.consumption_propensity_;
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
-Org::consumption_propensity() const {
-  // @@protoc_insertion_point(field_list:city.economy.v2.Org.consumption_propensity)
-  return _internal_consumption_propensity();
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
-Org::_internal_mutable_consumption_propensity() {
-  return &_impl_.consumption_propensity_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
-Org::mutable_consumption_propensity() {
-  // @@protoc_insertion_point(field_mutable_list:city.economy.v2.Org.consumption_propensity)
-  return _internal_mutable_consumption_propensity();
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >*
+NBS::mutable_real_gdp() {
+  // @@protoc_insertion_point(field_mutable_map:city.economy.v2.NBS.real_gdp)
+  return _internal_mutable_real_gdp();
 }
 
-// repeated float income_currency = 20 [json_name = "incomeCurrency"];
-inline int Org::_internal_income_currency_size() const {
-  return _impl_.income_currency_.size();
+// map<string, float> unemployment = 5 [json_name = "unemployment"];
+inline int NBS::_internal_unemployment_size() const {
+  return _impl_.unemployment_.size();
 }
-inline int Org::income_currency_size() const {
-  return _internal_income_currency_size();
+inline int NBS::unemployment_size() const {
+  return _internal_unemployment_size();
 }
-inline void Org::clear_income_currency() {
-  _impl_.income_currency_.Clear();
+inline void NBS::clear_unemployment() {
+  _impl_.unemployment_.Clear();
 }
-inline float Org::_internal_income_currency(int index) const {
-  return _impl_.income_currency_.Get(index);
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >&
+NBS::_internal_unemployment() const {
+  return _impl_.unemployment_.GetMap();
 }
-inline float Org::income_currency(int index) const {
-  // @@protoc_insertion_point(field_get:city.economy.v2.Org.income_currency)
-  return _internal_income_currency(index);
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >&
+NBS::unemployment() const {
+  // @@protoc_insertion_point(field_map:city.economy.v2.NBS.unemployment)
+  return _internal_unemployment();
 }
-inline void Org::set_income_currency(int index, float value) {
-  _impl_.income_currency_.Set(index, value);
-  // @@protoc_insertion_point(field_set:city.economy.v2.Org.income_currency)
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >*
+NBS::_internal_mutable_unemployment() {
+  return _impl_.unemployment_.MutableMap();
 }
-inline void Org::_internal_add_income_currency(float value) {
-  _impl_.income_currency_.Add(value);
-}
-inline void Org::add_income_currency(float value) {
-  _internal_add_income_currency(value);
-  // @@protoc_insertion_point(field_add:city.economy.v2.Org.income_currency)
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
-Org::_internal_income_currency() const {
-  return _impl_.income_currency_;
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
-Org::income_currency() const {
-  // @@protoc_insertion_point(field_list:city.economy.v2.Org.income_currency)
-  return _internal_income_currency();
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
-Org::_internal_mutable_income_currency() {
-  return &_impl_.income_currency_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
-Org::mutable_income_currency() {
-  // @@protoc_insertion_point(field_mutable_list:city.economy.v2.Org.income_currency)
-  return _internal_mutable_income_currency();
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >*
+NBS::mutable_unemployment() {
+  // @@protoc_insertion_point(field_mutable_map:city.economy.v2.NBS.unemployment)
+  return _internal_mutable_unemployment();
 }
 
-// repeated float depression = 21 [json_name = "depression"];
-inline int Org::_internal_depression_size() const {
+// map<string, float> wages = 6 [json_name = "wages"];
+inline int NBS::_internal_wages_size() const {
+  return _impl_.wages_.size();
+}
+inline int NBS::wages_size() const {
+  return _internal_wages_size();
+}
+inline void NBS::clear_wages() {
+  _impl_.wages_.Clear();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >&
+NBS::_internal_wages() const {
+  return _impl_.wages_.GetMap();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >&
+NBS::wages() const {
+  // @@protoc_insertion_point(field_map:city.economy.v2.NBS.wages)
+  return _internal_wages();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >*
+NBS::_internal_mutable_wages() {
+  return _impl_.wages_.MutableMap();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >*
+NBS::mutable_wages() {
+  // @@protoc_insertion_point(field_mutable_map:city.economy.v2.NBS.wages)
+  return _internal_mutable_wages();
+}
+
+// map<string, float> prices = 7 [json_name = "prices"];
+inline int NBS::_internal_prices_size() const {
+  return _impl_.prices_.size();
+}
+inline int NBS::prices_size() const {
+  return _internal_prices_size();
+}
+inline void NBS::clear_prices() {
+  _impl_.prices_.Clear();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >&
+NBS::_internal_prices() const {
+  return _impl_.prices_.GetMap();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >&
+NBS::prices() const {
+  // @@protoc_insertion_point(field_map:city.economy.v2.NBS.prices)
+  return _internal_prices();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >*
+NBS::_internal_mutable_prices() {
+  return _impl_.prices_.MutableMap();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >*
+NBS::mutable_prices() {
+  // @@protoc_insertion_point(field_mutable_map:city.economy.v2.NBS.prices)
+  return _internal_mutable_prices();
+}
+
+// map<string, float> working_hours = 8 [json_name = "workingHours"];
+inline int NBS::_internal_working_hours_size() const {
+  return _impl_.working_hours_.size();
+}
+inline int NBS::working_hours_size() const {
+  return _internal_working_hours_size();
+}
+inline void NBS::clear_working_hours() {
+  _impl_.working_hours_.Clear();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >&
+NBS::_internal_working_hours() const {
+  return _impl_.working_hours_.GetMap();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >&
+NBS::working_hours() const {
+  // @@protoc_insertion_point(field_map:city.economy.v2.NBS.working_hours)
+  return _internal_working_hours();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >*
+NBS::_internal_mutable_working_hours() {
+  return _impl_.working_hours_.MutableMap();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >*
+NBS::mutable_working_hours() {
+  // @@protoc_insertion_point(field_mutable_map:city.economy.v2.NBS.working_hours)
+  return _internal_mutable_working_hours();
+}
+
+// map<string, float> depression = 9 [json_name = "depression"];
+inline int NBS::_internal_depression_size() const {
   return _impl_.depression_.size();
 }
-inline int Org::depression_size() const {
+inline int NBS::depression_size() const {
   return _internal_depression_size();
 }
-inline void Org::clear_depression() {
+inline void NBS::clear_depression() {
   _impl_.depression_.Clear();
 }
-inline float Org::_internal_depression(int index) const {
-  return _impl_.depression_.Get(index);
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >&
+NBS::_internal_depression() const {
+  return _impl_.depression_.GetMap();
 }
-inline float Org::depression(int index) const {
-  // @@protoc_insertion_point(field_get:city.economy.v2.Org.depression)
-  return _internal_depression(index);
-}
-inline void Org::set_depression(int index, float value) {
-  _impl_.depression_.Set(index, value);
-  // @@protoc_insertion_point(field_set:city.economy.v2.Org.depression)
-}
-inline void Org::_internal_add_depression(float value) {
-  _impl_.depression_.Add(value);
-}
-inline void Org::add_depression(float value) {
-  _internal_add_depression(value);
-  // @@protoc_insertion_point(field_add:city.economy.v2.Org.depression)
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
-Org::_internal_depression() const {
-  return _impl_.depression_;
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
-Org::depression() const {
-  // @@protoc_insertion_point(field_list:city.economy.v2.Org.depression)
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >&
+NBS::depression() const {
+  // @@protoc_insertion_point(field_map:city.economy.v2.NBS.depression)
   return _internal_depression();
 }
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
-Org::_internal_mutable_depression() {
-  return &_impl_.depression_;
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >*
+NBS::_internal_mutable_depression() {
+  return _impl_.depression_.MutableMap();
 }
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
-Org::mutable_depression() {
-  // @@protoc_insertion_point(field_mutable_list:city.economy.v2.Org.depression)
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >*
+NBS::mutable_depression() {
+  // @@protoc_insertion_point(field_mutable_map:city.economy.v2.NBS.depression)
   return _internal_mutable_depression();
 }
 
-// repeated float locus_control = 22 [json_name = "locusControl"];
-inline int Org::_internal_locus_control_size() const {
+// map<string, float> consumption_currency = 10 [json_name = "consumptionCurrency"];
+inline int NBS::_internal_consumption_currency_size() const {
+  return _impl_.consumption_currency_.size();
+}
+inline int NBS::consumption_currency_size() const {
+  return _internal_consumption_currency_size();
+}
+inline void NBS::clear_consumption_currency() {
+  _impl_.consumption_currency_.Clear();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >&
+NBS::_internal_consumption_currency() const {
+  return _impl_.consumption_currency_.GetMap();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >&
+NBS::consumption_currency() const {
+  // @@protoc_insertion_point(field_map:city.economy.v2.NBS.consumption_currency)
+  return _internal_consumption_currency();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >*
+NBS::_internal_mutable_consumption_currency() {
+  return _impl_.consumption_currency_.MutableMap();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >*
+NBS::mutable_consumption_currency() {
+  // @@protoc_insertion_point(field_mutable_map:city.economy.v2.NBS.consumption_currency)
+  return _internal_mutable_consumption_currency();
+}
+
+// map<string, float> income_currency = 11 [json_name = "incomeCurrency"];
+inline int NBS::_internal_income_currency_size() const {
+  return _impl_.income_currency_.size();
+}
+inline int NBS::income_currency_size() const {
+  return _internal_income_currency_size();
+}
+inline void NBS::clear_income_currency() {
+  _impl_.income_currency_.Clear();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >&
+NBS::_internal_income_currency() const {
+  return _impl_.income_currency_.GetMap();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >&
+NBS::income_currency() const {
+  // @@protoc_insertion_point(field_map:city.economy.v2.NBS.income_currency)
+  return _internal_income_currency();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >*
+NBS::_internal_mutable_income_currency() {
+  return _impl_.income_currency_.MutableMap();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >*
+NBS::mutable_income_currency() {
+  // @@protoc_insertion_point(field_mutable_map:city.economy.v2.NBS.income_currency)
+  return _internal_mutable_income_currency();
+}
+
+// map<string, float> locus_control = 12 [json_name = "locusControl"];
+inline int NBS::_internal_locus_control_size() const {
   return _impl_.locus_control_.size();
 }
-inline int Org::locus_control_size() const {
+inline int NBS::locus_control_size() const {
   return _internal_locus_control_size();
 }
-inline void Org::clear_locus_control() {
+inline void NBS::clear_locus_control() {
   _impl_.locus_control_.Clear();
 }
-inline float Org::_internal_locus_control(int index) const {
-  return _impl_.locus_control_.Get(index);
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >&
+NBS::_internal_locus_control() const {
+  return _impl_.locus_control_.GetMap();
 }
-inline float Org::locus_control(int index) const {
-  // @@protoc_insertion_point(field_get:city.economy.v2.Org.locus_control)
-  return _internal_locus_control(index);
-}
-inline void Org::set_locus_control(int index, float value) {
-  _impl_.locus_control_.Set(index, value);
-  // @@protoc_insertion_point(field_set:city.economy.v2.Org.locus_control)
-}
-inline void Org::_internal_add_locus_control(float value) {
-  _impl_.locus_control_.Add(value);
-}
-inline void Org::add_locus_control(float value) {
-  _internal_add_locus_control(value);
-  // @@protoc_insertion_point(field_add:city.economy.v2.Org.locus_control)
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
-Org::_internal_locus_control() const {
-  return _impl_.locus_control_;
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
-Org::locus_control() const {
-  // @@protoc_insertion_point(field_list:city.economy.v2.Org.locus_control)
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >&
+NBS::locus_control() const {
+  // @@protoc_insertion_point(field_map:city.economy.v2.NBS.locus_control)
   return _internal_locus_control();
 }
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
-Org::_internal_mutable_locus_control() {
-  return &_impl_.locus_control_;
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >*
+NBS::_internal_mutable_locus_control() {
+  return _impl_.locus_control_.MutableMap();
 }
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
-Org::mutable_locus_control() {
-  // @@protoc_insertion_point(field_mutable_list:city.economy.v2.Org.locus_control)
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >*
+NBS::mutable_locus_control() {
+  // @@protoc_insertion_point(field_mutable_map:city.economy.v2.NBS.locus_control)
   return _internal_mutable_locus_control();
 }
 
-// repeated float working_hours = 23 [json_name = "workingHours"];
-inline int Org::_internal_working_hours_size() const {
-  return _impl_.working_hours_.size();
+// repeated int32 citizens_agent_id = 13 [json_name = "citizensAgentId"];
+inline int NBS::_internal_citizens_agent_id_size() const {
+  return _impl_.citizens_agent_id_.size();
 }
-inline int Org::working_hours_size() const {
-  return _internal_working_hours_size();
+inline int NBS::citizens_agent_id_size() const {
+  return _internal_citizens_agent_id_size();
 }
-inline void Org::clear_working_hours() {
-  _impl_.working_hours_.Clear();
+inline void NBS::clear_citizens_agent_id() {
+  _impl_.citizens_agent_id_.Clear();
 }
-inline float Org::_internal_working_hours(int index) const {
-  return _impl_.working_hours_.Get(index);
+inline int32_t NBS::_internal_citizens_agent_id(int index) const {
+  return _impl_.citizens_agent_id_.Get(index);
 }
-inline float Org::working_hours(int index) const {
-  // @@protoc_insertion_point(field_get:city.economy.v2.Org.working_hours)
-  return _internal_working_hours(index);
+inline int32_t NBS::citizens_agent_id(int index) const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.NBS.citizens_agent_id)
+  return _internal_citizens_agent_id(index);
 }
-inline void Org::set_working_hours(int index, float value) {
-  _impl_.working_hours_.Set(index, value);
-  // @@protoc_insertion_point(field_set:city.economy.v2.Org.working_hours)
+inline void NBS::set_citizens_agent_id(int index, int32_t value) {
+  _impl_.citizens_agent_id_.Set(index, value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.NBS.citizens_agent_id)
 }
-inline void Org::_internal_add_working_hours(float value) {
-  _impl_.working_hours_.Add(value);
+inline void NBS::_internal_add_citizens_agent_id(int32_t value) {
+  _impl_.citizens_agent_id_.Add(value);
 }
-inline void Org::add_working_hours(float value) {
-  _internal_add_working_hours(value);
-  // @@protoc_insertion_point(field_add:city.economy.v2.Org.working_hours)
+inline void NBS::add_citizens_agent_id(int32_t value) {
+  _internal_add_citizens_agent_id(value);
+  // @@protoc_insertion_point(field_add:city.economy.v2.NBS.citizens_agent_id)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+NBS::_internal_citizens_agent_id() const {
+  return _impl_.citizens_agent_id_;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+NBS::citizens_agent_id() const {
+  // @@protoc_insertion_point(field_list:city.economy.v2.NBS.citizens_agent_id)
+  return _internal_citizens_agent_id();
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+NBS::_internal_mutable_citizens_agent_id() {
+  return &_impl_.citizens_agent_id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+NBS::mutable_citizens_agent_id() {
+  // @@protoc_insertion_point(field_mutable_list:city.economy.v2.NBS.citizens_agent_id)
+  return _internal_mutable_citizens_agent_id();
+}
+
+// float currency = 14 [json_name = "currency"];
+inline void NBS::clear_currency() {
+  _impl_.currency_ = 0;
+}
+inline float NBS::_internal_currency() const {
+  return _impl_.currency_;
+}
+inline float NBS::currency() const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.NBS.currency)
+  return _internal_currency();
+}
+inline void NBS::_internal_set_currency(float value) {
+  
+  _impl_.currency_ = value;
+}
+inline void NBS::set_currency(float value) {
+  _internal_set_currency(value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.NBS.currency)
+}
+
+// -------------------------------------------------------------------
+
+// Government
+
+// int32 id = 1 [json_name = "id"];
+inline void Government::clear_id() {
+  _impl_.id_ = 0;
+}
+inline int32_t Government::_internal_id() const {
+  return _impl_.id_;
+}
+inline int32_t Government::id() const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.Government.id)
+  return _internal_id();
+}
+inline void Government::_internal_set_id(int32_t value) {
+  
+  _impl_.id_ = value;
+}
+inline void Government::set_id(int32_t value) {
+  _internal_set_id(value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.Government.id)
+}
+
+// repeated int32 citizens = 2 [json_name = "citizens"];
+inline int Government::_internal_citizens_size() const {
+  return _impl_.citizens_.size();
+}
+inline int Government::citizens_size() const {
+  return _internal_citizens_size();
+}
+inline void Government::clear_citizens() {
+  _impl_.citizens_.Clear();
+}
+inline int32_t Government::_internal_citizens(int index) const {
+  return _impl_.citizens_.Get(index);
+}
+inline int32_t Government::citizens(int index) const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.Government.citizens)
+  return _internal_citizens(index);
+}
+inline void Government::set_citizens(int index, int32_t value) {
+  _impl_.citizens_.Set(index, value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.Government.citizens)
+}
+inline void Government::_internal_add_citizens(int32_t value) {
+  _impl_.citizens_.Add(value);
+}
+inline void Government::add_citizens(int32_t value) {
+  _internal_add_citizens(value);
+  // @@protoc_insertion_point(field_add:city.economy.v2.Government.citizens)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+Government::_internal_citizens() const {
+  return _impl_.citizens_;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+Government::citizens() const {
+  // @@protoc_insertion_point(field_list:city.economy.v2.Government.citizens)
+  return _internal_citizens();
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+Government::_internal_mutable_citizens() {
+  return &_impl_.citizens_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+Government::mutable_citizens() {
+  // @@protoc_insertion_point(field_mutable_list:city.economy.v2.Government.citizens)
+  return _internal_mutable_citizens();
+}
+
+// repeated float bracket_cutoffs = 3 [json_name = "bracketCutoffs"];
+inline int Government::_internal_bracket_cutoffs_size() const {
+  return _impl_.bracket_cutoffs_.size();
+}
+inline int Government::bracket_cutoffs_size() const {
+  return _internal_bracket_cutoffs_size();
+}
+inline void Government::clear_bracket_cutoffs() {
+  _impl_.bracket_cutoffs_.Clear();
+}
+inline float Government::_internal_bracket_cutoffs(int index) const {
+  return _impl_.bracket_cutoffs_.Get(index);
+}
+inline float Government::bracket_cutoffs(int index) const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.Government.bracket_cutoffs)
+  return _internal_bracket_cutoffs(index);
+}
+inline void Government::set_bracket_cutoffs(int index, float value) {
+  _impl_.bracket_cutoffs_.Set(index, value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.Government.bracket_cutoffs)
+}
+inline void Government::_internal_add_bracket_cutoffs(float value) {
+  _impl_.bracket_cutoffs_.Add(value);
+}
+inline void Government::add_bracket_cutoffs(float value) {
+  _internal_add_bracket_cutoffs(value);
+  // @@protoc_insertion_point(field_add:city.economy.v2.Government.bracket_cutoffs)
 }
 inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
-Org::_internal_working_hours() const {
-  return _impl_.working_hours_;
+Government::_internal_bracket_cutoffs() const {
+  return _impl_.bracket_cutoffs_;
 }
 inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
-Org::working_hours() const {
-  // @@protoc_insertion_point(field_list:city.economy.v2.Org.working_hours)
-  return _internal_working_hours();
+Government::bracket_cutoffs() const {
+  // @@protoc_insertion_point(field_list:city.economy.v2.Government.bracket_cutoffs)
+  return _internal_bracket_cutoffs();
 }
 inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
-Org::_internal_mutable_working_hours() {
-  return &_impl_.working_hours_;
+Government::_internal_mutable_bracket_cutoffs() {
+  return &_impl_.bracket_cutoffs_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
-Org::mutable_working_hours() {
-  // @@protoc_insertion_point(field_mutable_list:city.economy.v2.Org.working_hours)
-  return _internal_mutable_working_hours();
+Government::mutable_bracket_cutoffs() {
+  // @@protoc_insertion_point(field_mutable_list:city.economy.v2.Government.bracket_cutoffs)
+  return _internal_mutable_bracket_cutoffs();
+}
+
+// repeated float bracket_rates = 4 [json_name = "bracketRates"];
+inline int Government::_internal_bracket_rates_size() const {
+  return _impl_.bracket_rates_.size();
+}
+inline int Government::bracket_rates_size() const {
+  return _internal_bracket_rates_size();
+}
+inline void Government::clear_bracket_rates() {
+  _impl_.bracket_rates_.Clear();
+}
+inline float Government::_internal_bracket_rates(int index) const {
+  return _impl_.bracket_rates_.Get(index);
+}
+inline float Government::bracket_rates(int index) const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.Government.bracket_rates)
+  return _internal_bracket_rates(index);
+}
+inline void Government::set_bracket_rates(int index, float value) {
+  _impl_.bracket_rates_.Set(index, value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.Government.bracket_rates)
+}
+inline void Government::_internal_add_bracket_rates(float value) {
+  _impl_.bracket_rates_.Add(value);
+}
+inline void Government::add_bracket_rates(float value) {
+  _internal_add_bracket_rates(value);
+  // @@protoc_insertion_point(field_add:city.economy.v2.Government.bracket_rates)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+Government::_internal_bracket_rates() const {
+  return _impl_.bracket_rates_;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+Government::bracket_rates() const {
+  // @@protoc_insertion_point(field_list:city.economy.v2.Government.bracket_rates)
+  return _internal_bracket_rates();
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+Government::_internal_mutable_bracket_rates() {
+  return &_impl_.bracket_rates_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+Government::mutable_bracket_rates() {
+  // @@protoc_insertion_point(field_mutable_list:city.economy.v2.Government.bracket_rates)
+  return _internal_mutable_bracket_rates();
+}
+
+// float currency = 5 [json_name = "currency"];
+inline void Government::clear_currency() {
+  _impl_.currency_ = 0;
+}
+inline float Government::_internal_currency() const {
+  return _impl_.currency_;
+}
+inline float Government::currency() const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.Government.currency)
+  return _internal_currency();
+}
+inline void Government::_internal_set_currency(float value) {
+  
+  _impl_.currency_ = value;
+}
+inline void Government::set_currency(float value) {
+  _internal_set_currency(value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.Government.currency)
+}
+
+// -------------------------------------------------------------------
+
+// Bank
+
+// int32 id = 1 [json_name = "id"];
+inline void Bank::clear_id() {
+  _impl_.id_ = 0;
+}
+inline int32_t Bank::_internal_id() const {
+  return _impl_.id_;
+}
+inline int32_t Bank::id() const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.Bank.id)
+  return _internal_id();
+}
+inline void Bank::_internal_set_id(int32_t value) {
+  
+  _impl_.id_ = value;
+}
+inline void Bank::set_id(int32_t value) {
+  _internal_set_id(value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.Bank.id)
+}
+
+// repeated int32 citizens = 2 [json_name = "citizens"];
+inline int Bank::_internal_citizens_size() const {
+  return _impl_.citizens_.size();
+}
+inline int Bank::citizens_size() const {
+  return _internal_citizens_size();
+}
+inline void Bank::clear_citizens() {
+  _impl_.citizens_.Clear();
+}
+inline int32_t Bank::_internal_citizens(int index) const {
+  return _impl_.citizens_.Get(index);
+}
+inline int32_t Bank::citizens(int index) const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.Bank.citizens)
+  return _internal_citizens(index);
+}
+inline void Bank::set_citizens(int index, int32_t value) {
+  _impl_.citizens_.Set(index, value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.Bank.citizens)
+}
+inline void Bank::_internal_add_citizens(int32_t value) {
+  _impl_.citizens_.Add(value);
+}
+inline void Bank::add_citizens(int32_t value) {
+  _internal_add_citizens(value);
+  // @@protoc_insertion_point(field_add:city.economy.v2.Bank.citizens)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+Bank::_internal_citizens() const {
+  return _impl_.citizens_;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+Bank::citizens() const {
+  // @@protoc_insertion_point(field_list:city.economy.v2.Bank.citizens)
+  return _internal_citizens();
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+Bank::_internal_mutable_citizens() {
+  return &_impl_.citizens_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+Bank::mutable_citizens() {
+  // @@protoc_insertion_point(field_mutable_list:city.economy.v2.Bank.citizens)
+  return _internal_mutable_citizens();
+}
+
+// float interest_rate = 3 [json_name = "interestRate"];
+inline void Bank::clear_interest_rate() {
+  _impl_.interest_rate_ = 0;
+}
+inline float Bank::_internal_interest_rate() const {
+  return _impl_.interest_rate_;
+}
+inline float Bank::interest_rate() const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.Bank.interest_rate)
+  return _internal_interest_rate();
+}
+inline void Bank::_internal_set_interest_rate(float value) {
+  
+  _impl_.interest_rate_ = value;
+}
+inline void Bank::set_interest_rate(float value) {
+  _internal_set_interest_rate(value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.Bank.interest_rate)
+}
+
+// float currency = 4 [json_name = "currency"];
+inline void Bank::clear_currency() {
+  _impl_.currency_ = 0;
+}
+inline float Bank::_internal_currency() const {
+  return _impl_.currency_;
+}
+inline float Bank::currency() const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.Bank.currency)
+  return _internal_currency();
+}
+inline void Bank::_internal_set_currency(float value) {
+  
+  _impl_.currency_ = value;
+}
+inline void Bank::set_currency(float value) {
+  _internal_set_currency(value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.Bank.currency)
 }
 
 // -------------------------------------------------------------------
@@ -2202,47 +3031,167 @@ inline void Agent::set_income(float value) {
 
 // EconomyEntities
 
-// repeated .city.economy.v2.Org orgs = 1 [json_name = "orgs"];
-inline int EconomyEntities::_internal_orgs_size() const {
-  return _impl_.orgs_.size();
+// repeated .city.economy.v2.Firm firms = 1 [json_name = "firms"];
+inline int EconomyEntities::_internal_firms_size() const {
+  return _impl_.firms_.size();
 }
-inline int EconomyEntities::orgs_size() const {
-  return _internal_orgs_size();
+inline int EconomyEntities::firms_size() const {
+  return _internal_firms_size();
 }
-inline void EconomyEntities::clear_orgs() {
-  _impl_.orgs_.Clear();
+inline void EconomyEntities::clear_firms() {
+  _impl_.firms_.Clear();
 }
-inline ::city::economy::v2::Org* EconomyEntities::mutable_orgs(int index) {
-  // @@protoc_insertion_point(field_mutable:city.economy.v2.EconomyEntities.orgs)
-  return _impl_.orgs_.Mutable(index);
+inline ::city::economy::v2::Firm* EconomyEntities::mutable_firms(int index) {
+  // @@protoc_insertion_point(field_mutable:city.economy.v2.EconomyEntities.firms)
+  return _impl_.firms_.Mutable(index);
 }
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::economy::v2::Org >*
-EconomyEntities::mutable_orgs() {
-  // @@protoc_insertion_point(field_mutable_list:city.economy.v2.EconomyEntities.orgs)
-  return &_impl_.orgs_;
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::economy::v2::Firm >*
+EconomyEntities::mutable_firms() {
+  // @@protoc_insertion_point(field_mutable_list:city.economy.v2.EconomyEntities.firms)
+  return &_impl_.firms_;
 }
-inline const ::city::economy::v2::Org& EconomyEntities::_internal_orgs(int index) const {
-  return _impl_.orgs_.Get(index);
+inline const ::city::economy::v2::Firm& EconomyEntities::_internal_firms(int index) const {
+  return _impl_.firms_.Get(index);
 }
-inline const ::city::economy::v2::Org& EconomyEntities::orgs(int index) const {
-  // @@protoc_insertion_point(field_get:city.economy.v2.EconomyEntities.orgs)
-  return _internal_orgs(index);
+inline const ::city::economy::v2::Firm& EconomyEntities::firms(int index) const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.EconomyEntities.firms)
+  return _internal_firms(index);
 }
-inline ::city::economy::v2::Org* EconomyEntities::_internal_add_orgs() {
-  return _impl_.orgs_.Add();
+inline ::city::economy::v2::Firm* EconomyEntities::_internal_add_firms() {
+  return _impl_.firms_.Add();
 }
-inline ::city::economy::v2::Org* EconomyEntities::add_orgs() {
-  ::city::economy::v2::Org* _add = _internal_add_orgs();
-  // @@protoc_insertion_point(field_add:city.economy.v2.EconomyEntities.orgs)
+inline ::city::economy::v2::Firm* EconomyEntities::add_firms() {
+  ::city::economy::v2::Firm* _add = _internal_add_firms();
+  // @@protoc_insertion_point(field_add:city.economy.v2.EconomyEntities.firms)
   return _add;
 }
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::economy::v2::Org >&
-EconomyEntities::orgs() const {
-  // @@protoc_insertion_point(field_list:city.economy.v2.EconomyEntities.orgs)
-  return _impl_.orgs_;
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::economy::v2::Firm >&
+EconomyEntities::firms() const {
+  // @@protoc_insertion_point(field_list:city.economy.v2.EconomyEntities.firms)
+  return _impl_.firms_;
 }
 
-// repeated .city.economy.v2.Agent agents = 2 [json_name = "agents"];
+// repeated .city.economy.v2.NBS nbs = 2 [json_name = "nbs"];
+inline int EconomyEntities::_internal_nbs_size() const {
+  return _impl_.nbs_.size();
+}
+inline int EconomyEntities::nbs_size() const {
+  return _internal_nbs_size();
+}
+inline void EconomyEntities::clear_nbs() {
+  _impl_.nbs_.Clear();
+}
+inline ::city::economy::v2::NBS* EconomyEntities::mutable_nbs(int index) {
+  // @@protoc_insertion_point(field_mutable:city.economy.v2.EconomyEntities.nbs)
+  return _impl_.nbs_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::economy::v2::NBS >*
+EconomyEntities::mutable_nbs() {
+  // @@protoc_insertion_point(field_mutable_list:city.economy.v2.EconomyEntities.nbs)
+  return &_impl_.nbs_;
+}
+inline const ::city::economy::v2::NBS& EconomyEntities::_internal_nbs(int index) const {
+  return _impl_.nbs_.Get(index);
+}
+inline const ::city::economy::v2::NBS& EconomyEntities::nbs(int index) const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.EconomyEntities.nbs)
+  return _internal_nbs(index);
+}
+inline ::city::economy::v2::NBS* EconomyEntities::_internal_add_nbs() {
+  return _impl_.nbs_.Add();
+}
+inline ::city::economy::v2::NBS* EconomyEntities::add_nbs() {
+  ::city::economy::v2::NBS* _add = _internal_add_nbs();
+  // @@protoc_insertion_point(field_add:city.economy.v2.EconomyEntities.nbs)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::economy::v2::NBS >&
+EconomyEntities::nbs() const {
+  // @@protoc_insertion_point(field_list:city.economy.v2.EconomyEntities.nbs)
+  return _impl_.nbs_;
+}
+
+// repeated .city.economy.v2.Government governments = 3 [json_name = "governments"];
+inline int EconomyEntities::_internal_governments_size() const {
+  return _impl_.governments_.size();
+}
+inline int EconomyEntities::governments_size() const {
+  return _internal_governments_size();
+}
+inline void EconomyEntities::clear_governments() {
+  _impl_.governments_.Clear();
+}
+inline ::city::economy::v2::Government* EconomyEntities::mutable_governments(int index) {
+  // @@protoc_insertion_point(field_mutable:city.economy.v2.EconomyEntities.governments)
+  return _impl_.governments_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::economy::v2::Government >*
+EconomyEntities::mutable_governments() {
+  // @@protoc_insertion_point(field_mutable_list:city.economy.v2.EconomyEntities.governments)
+  return &_impl_.governments_;
+}
+inline const ::city::economy::v2::Government& EconomyEntities::_internal_governments(int index) const {
+  return _impl_.governments_.Get(index);
+}
+inline const ::city::economy::v2::Government& EconomyEntities::governments(int index) const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.EconomyEntities.governments)
+  return _internal_governments(index);
+}
+inline ::city::economy::v2::Government* EconomyEntities::_internal_add_governments() {
+  return _impl_.governments_.Add();
+}
+inline ::city::economy::v2::Government* EconomyEntities::add_governments() {
+  ::city::economy::v2::Government* _add = _internal_add_governments();
+  // @@protoc_insertion_point(field_add:city.economy.v2.EconomyEntities.governments)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::economy::v2::Government >&
+EconomyEntities::governments() const {
+  // @@protoc_insertion_point(field_list:city.economy.v2.EconomyEntities.governments)
+  return _impl_.governments_;
+}
+
+// repeated .city.economy.v2.Bank banks = 4 [json_name = "banks"];
+inline int EconomyEntities::_internal_banks_size() const {
+  return _impl_.banks_.size();
+}
+inline int EconomyEntities::banks_size() const {
+  return _internal_banks_size();
+}
+inline void EconomyEntities::clear_banks() {
+  _impl_.banks_.Clear();
+}
+inline ::city::economy::v2::Bank* EconomyEntities::mutable_banks(int index) {
+  // @@protoc_insertion_point(field_mutable:city.economy.v2.EconomyEntities.banks)
+  return _impl_.banks_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::economy::v2::Bank >*
+EconomyEntities::mutable_banks() {
+  // @@protoc_insertion_point(field_mutable_list:city.economy.v2.EconomyEntities.banks)
+  return &_impl_.banks_;
+}
+inline const ::city::economy::v2::Bank& EconomyEntities::_internal_banks(int index) const {
+  return _impl_.banks_.Get(index);
+}
+inline const ::city::economy::v2::Bank& EconomyEntities::banks(int index) const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.EconomyEntities.banks)
+  return _internal_banks(index);
+}
+inline ::city::economy::v2::Bank* EconomyEntities::_internal_add_banks() {
+  return _impl_.banks_.Add();
+}
+inline ::city::economy::v2::Bank* EconomyEntities::add_banks() {
+  ::city::economy::v2::Bank* _add = _internal_add_banks();
+  // @@protoc_insertion_point(field_add:city.economy.v2.EconomyEntities.banks)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::economy::v2::Bank >&
+EconomyEntities::banks() const {
+  // @@protoc_insertion_point(field_list:city.economy.v2.EconomyEntities.banks)
+  return _impl_.banks_;
+}
+
+// repeated .city.economy.v2.Agent agents = 5 [json_name = "agents"];
 inline int EconomyEntities::_internal_agents_size() const {
   return _impl_.agents_.size();
 }
@@ -2289,22 +3238,38 @@ EconomyEntities::agents() const {
 
 // -------------------------------------------------------------------
 
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 
 // @@protoc_insertion_point(namespace_scope)
 
 }  // namespace v2
 }  // namespace economy
 }  // namespace city
-
-PROTOBUF_NAMESPACE_OPEN
-
-template <> struct is_proto_enum< ::city::economy::v2::OrgType> : ::std::true_type {};
-template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::city::economy::v2::OrgType>() {
-  return ::city::economy::v2::OrgType_descriptor();
-}
-
-PROTOBUF_NAMESPACE_CLOSE
 
 // @@protoc_insertion_point(global_scope)
 
