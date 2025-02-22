@@ -737,7 +737,7 @@ class NBS final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kCitizensFieldNumber = 2,
+    kCitizenIdsFieldNumber = 2,
     kNominalGdpFieldNumber = 3,
     kRealGdpFieldNumber = 4,
     kUnemploymentFieldNumber = 5,
@@ -748,31 +748,31 @@ class NBS final :
     kConsumptionCurrencyFieldNumber = 10,
     kIncomeCurrencyFieldNumber = 11,
     kLocusControlFieldNumber = 12,
-    kCitizensAgentIdFieldNumber = 13,
+    kCitizenAgentIdsFieldNumber = 13,
     kIdFieldNumber = 1,
     kCurrencyFieldNumber = 14,
   };
-  // repeated int32 citizens = 2 [json_name = "citizens"];
-  int citizens_size() const;
+  // repeated int32 citizen_ids = 2 [json_name = "citizenIds"];
+  int citizen_ids_size() const;
   private:
-  int _internal_citizens_size() const;
+  int _internal_citizen_ids_size() const;
   public:
-  void clear_citizens();
+  void clear_citizen_ids();
   private:
-  int32_t _internal_citizens(int index) const;
+  int32_t _internal_citizen_ids(int index) const;
   const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
-      _internal_citizens() const;
-  void _internal_add_citizens(int32_t value);
+      _internal_citizen_ids() const;
+  void _internal_add_citizen_ids(int32_t value);
   ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
-      _internal_mutable_citizens();
+      _internal_mutable_citizen_ids();
   public:
-  int32_t citizens(int index) const;
-  void set_citizens(int index, int32_t value);
-  void add_citizens(int32_t value);
+  int32_t citizen_ids(int index) const;
+  void set_citizen_ids(int index, int32_t value);
+  void add_citizen_ids(int32_t value);
   const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
-      citizens() const;
+      citizen_ids() const;
   ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
-      mutable_citizens();
+      mutable_citizen_ids();
 
   // map<string, float> nominal_gdp = 3 [json_name = "nominalGdp"];
   int nominal_gdp_size() const;
@@ -944,27 +944,27 @@ class NBS final :
   ::PROTOBUF_NAMESPACE_ID::Map< std::string, float >*
       mutable_locus_control();
 
-  // repeated int32 citizens_agent_id = 13 [json_name = "citizensAgentId"];
-  int citizens_agent_id_size() const;
+  // repeated int32 citizen_agent_ids = 13 [json_name = "citizenAgentIds"];
+  int citizen_agent_ids_size() const;
   private:
-  int _internal_citizens_agent_id_size() const;
+  int _internal_citizen_agent_ids_size() const;
   public:
-  void clear_citizens_agent_id();
+  void clear_citizen_agent_ids();
   private:
-  int32_t _internal_citizens_agent_id(int index) const;
+  int32_t _internal_citizen_agent_ids(int index) const;
   const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
-      _internal_citizens_agent_id() const;
-  void _internal_add_citizens_agent_id(int32_t value);
+      _internal_citizen_agent_ids() const;
+  void _internal_add_citizen_agent_ids(int32_t value);
   ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
-      _internal_mutable_citizens_agent_id();
+      _internal_mutable_citizen_agent_ids();
   public:
-  int32_t citizens_agent_id(int index) const;
-  void set_citizens_agent_id(int index, int32_t value);
-  void add_citizens_agent_id(int32_t value);
+  int32_t citizen_agent_ids(int index) const;
+  void set_citizen_agent_ids(int index, int32_t value);
+  void add_citizen_agent_ids(int32_t value);
   const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
-      citizens_agent_id() const;
+      citizen_agent_ids() const;
   ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
-      mutable_citizens_agent_id();
+      mutable_citizen_agent_ids();
 
   // int32 id = 1 [json_name = "id"];
   void clear_id();
@@ -992,8 +992,8 @@ class NBS final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t > citizens_;
-    mutable std::atomic<int> _citizens_cached_byte_size_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t > citizen_ids_;
+    mutable std::atomic<int> _citizen_ids_cached_byte_size_;
     ::PROTOBUF_NAMESPACE_ID::internal::MapField<
         NBS_NominalGdpEntry_DoNotUse,
         std::string, float,
@@ -1044,8 +1044,8 @@ class NBS final :
         std::string, float,
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_FLOAT> locus_control_;
-    ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t > citizens_agent_id_;
-    mutable std::atomic<int> _citizens_agent_id_cached_byte_size_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t > citizen_agent_ids_;
+    mutable std::atomic<int> _citizen_agent_ids_cached_byte_size_;
     int32_t id_;
     float currency_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -1176,33 +1176,33 @@ class Government final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kCitizensFieldNumber = 2,
+    kCitizenIdsFieldNumber = 2,
     kBracketCutoffsFieldNumber = 3,
     kBracketRatesFieldNumber = 4,
     kIdFieldNumber = 1,
     kCurrencyFieldNumber = 5,
   };
-  // repeated int32 citizens = 2 [json_name = "citizens"];
-  int citizens_size() const;
+  // repeated int32 citizen_ids = 2 [json_name = "citizenIds"];
+  int citizen_ids_size() const;
   private:
-  int _internal_citizens_size() const;
+  int _internal_citizen_ids_size() const;
   public:
-  void clear_citizens();
+  void clear_citizen_ids();
   private:
-  int32_t _internal_citizens(int index) const;
+  int32_t _internal_citizen_ids(int index) const;
   const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
-      _internal_citizens() const;
-  void _internal_add_citizens(int32_t value);
+      _internal_citizen_ids() const;
+  void _internal_add_citizen_ids(int32_t value);
   ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
-      _internal_mutable_citizens();
+      _internal_mutable_citizen_ids();
   public:
-  int32_t citizens(int index) const;
-  void set_citizens(int index, int32_t value);
-  void add_citizens(int32_t value);
+  int32_t citizen_ids(int index) const;
+  void set_citizen_ids(int index, int32_t value);
+  void add_citizen_ids(int32_t value);
   const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
-      citizens() const;
+      citizen_ids() const;
   ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
-      mutable_citizens();
+      mutable_citizen_ids();
 
   // repeated float bracket_cutoffs = 3 [json_name = "bracketCutoffs"];
   int bracket_cutoffs_size() const;
@@ -1274,8 +1274,8 @@ class Government final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t > citizens_;
-    mutable std::atomic<int> _citizens_cached_byte_size_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t > citizen_ids_;
+    mutable std::atomic<int> _citizen_ids_cached_byte_size_;
     ::PROTOBUF_NAMESPACE_ID::RepeatedField< float > bracket_cutoffs_;
     ::PROTOBUF_NAMESPACE_ID::RepeatedField< float > bracket_rates_;
     int32_t id_;
@@ -1408,32 +1408,32 @@ class Bank final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kCitizensFieldNumber = 2,
+    kCitizenIdsFieldNumber = 2,
     kIdFieldNumber = 1,
     kInterestRateFieldNumber = 3,
     kCurrencyFieldNumber = 4,
   };
-  // repeated int32 citizens = 2 [json_name = "citizens"];
-  int citizens_size() const;
+  // repeated int32 citizen_ids = 2 [json_name = "citizenIds"];
+  int citizen_ids_size() const;
   private:
-  int _internal_citizens_size() const;
+  int _internal_citizen_ids_size() const;
   public:
-  void clear_citizens();
+  void clear_citizen_ids();
   private:
-  int32_t _internal_citizens(int index) const;
+  int32_t _internal_citizen_ids(int index) const;
   const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
-      _internal_citizens() const;
-  void _internal_add_citizens(int32_t value);
+      _internal_citizen_ids() const;
+  void _internal_add_citizen_ids(int32_t value);
   ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
-      _internal_mutable_citizens();
+      _internal_mutable_citizen_ids();
   public:
-  int32_t citizens(int index) const;
-  void set_citizens(int index, int32_t value);
-  void add_citizens(int32_t value);
+  int32_t citizen_ids(int index) const;
+  void set_citizen_ids(int index, int32_t value);
+  void add_citizen_ids(int32_t value);
   const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
-      citizens() const;
+      citizen_ids() const;
   ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
-      mutable_citizens();
+      mutable_citizen_ids();
 
   // int32 id = 1 [json_name = "id"];
   void clear_id();
@@ -1470,8 +1470,8 @@ class Bank final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t > citizens_;
-    mutable std::atomic<int> _citizens_cached_byte_size_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t > citizen_ids_;
+    mutable std::atomic<int> _citizen_ids_cached_byte_size_;
     int32_t id_;
     float interest_rate_;
     float currency_;
@@ -2163,51 +2163,51 @@ inline void NBS::set_id(int32_t value) {
   // @@protoc_insertion_point(field_set:city.economy.v2.NBS.id)
 }
 
-// repeated int32 citizens = 2 [json_name = "citizens"];
-inline int NBS::_internal_citizens_size() const {
-  return _impl_.citizens_.size();
+// repeated int32 citizen_ids = 2 [json_name = "citizenIds"];
+inline int NBS::_internal_citizen_ids_size() const {
+  return _impl_.citizen_ids_.size();
 }
-inline int NBS::citizens_size() const {
-  return _internal_citizens_size();
+inline int NBS::citizen_ids_size() const {
+  return _internal_citizen_ids_size();
 }
-inline void NBS::clear_citizens() {
-  _impl_.citizens_.Clear();
+inline void NBS::clear_citizen_ids() {
+  _impl_.citizen_ids_.Clear();
 }
-inline int32_t NBS::_internal_citizens(int index) const {
-  return _impl_.citizens_.Get(index);
+inline int32_t NBS::_internal_citizen_ids(int index) const {
+  return _impl_.citizen_ids_.Get(index);
 }
-inline int32_t NBS::citizens(int index) const {
-  // @@protoc_insertion_point(field_get:city.economy.v2.NBS.citizens)
-  return _internal_citizens(index);
+inline int32_t NBS::citizen_ids(int index) const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.NBS.citizen_ids)
+  return _internal_citizen_ids(index);
 }
-inline void NBS::set_citizens(int index, int32_t value) {
-  _impl_.citizens_.Set(index, value);
-  // @@protoc_insertion_point(field_set:city.economy.v2.NBS.citizens)
+inline void NBS::set_citizen_ids(int index, int32_t value) {
+  _impl_.citizen_ids_.Set(index, value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.NBS.citizen_ids)
 }
-inline void NBS::_internal_add_citizens(int32_t value) {
-  _impl_.citizens_.Add(value);
+inline void NBS::_internal_add_citizen_ids(int32_t value) {
+  _impl_.citizen_ids_.Add(value);
 }
-inline void NBS::add_citizens(int32_t value) {
-  _internal_add_citizens(value);
-  // @@protoc_insertion_point(field_add:city.economy.v2.NBS.citizens)
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
-NBS::_internal_citizens() const {
-  return _impl_.citizens_;
+inline void NBS::add_citizen_ids(int32_t value) {
+  _internal_add_citizen_ids(value);
+  // @@protoc_insertion_point(field_add:city.economy.v2.NBS.citizen_ids)
 }
 inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
-NBS::citizens() const {
-  // @@protoc_insertion_point(field_list:city.economy.v2.NBS.citizens)
-  return _internal_citizens();
+NBS::_internal_citizen_ids() const {
+  return _impl_.citizen_ids_;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+NBS::citizen_ids() const {
+  // @@protoc_insertion_point(field_list:city.economy.v2.NBS.citizen_ids)
+  return _internal_citizen_ids();
 }
 inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
-NBS::_internal_mutable_citizens() {
-  return &_impl_.citizens_;
+NBS::_internal_mutable_citizen_ids() {
+  return &_impl_.citizen_ids_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
-NBS::mutable_citizens() {
-  // @@protoc_insertion_point(field_mutable_list:city.economy.v2.NBS.citizens)
-  return _internal_mutable_citizens();
+NBS::mutable_citizen_ids() {
+  // @@protoc_insertion_point(field_mutable_list:city.economy.v2.NBS.citizen_ids)
+  return _internal_mutable_citizen_ids();
 }
 
 // map<string, float> nominal_gdp = 3 [json_name = "nominalGdp"];
@@ -2500,51 +2500,51 @@ NBS::mutable_locus_control() {
   return _internal_mutable_locus_control();
 }
 
-// repeated int32 citizens_agent_id = 13 [json_name = "citizensAgentId"];
-inline int NBS::_internal_citizens_agent_id_size() const {
-  return _impl_.citizens_agent_id_.size();
+// repeated int32 citizen_agent_ids = 13 [json_name = "citizenAgentIds"];
+inline int NBS::_internal_citizen_agent_ids_size() const {
+  return _impl_.citizen_agent_ids_.size();
 }
-inline int NBS::citizens_agent_id_size() const {
-  return _internal_citizens_agent_id_size();
+inline int NBS::citizen_agent_ids_size() const {
+  return _internal_citizen_agent_ids_size();
 }
-inline void NBS::clear_citizens_agent_id() {
-  _impl_.citizens_agent_id_.Clear();
+inline void NBS::clear_citizen_agent_ids() {
+  _impl_.citizen_agent_ids_.Clear();
 }
-inline int32_t NBS::_internal_citizens_agent_id(int index) const {
-  return _impl_.citizens_agent_id_.Get(index);
+inline int32_t NBS::_internal_citizen_agent_ids(int index) const {
+  return _impl_.citizen_agent_ids_.Get(index);
 }
-inline int32_t NBS::citizens_agent_id(int index) const {
-  // @@protoc_insertion_point(field_get:city.economy.v2.NBS.citizens_agent_id)
-  return _internal_citizens_agent_id(index);
+inline int32_t NBS::citizen_agent_ids(int index) const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.NBS.citizen_agent_ids)
+  return _internal_citizen_agent_ids(index);
 }
-inline void NBS::set_citizens_agent_id(int index, int32_t value) {
-  _impl_.citizens_agent_id_.Set(index, value);
-  // @@protoc_insertion_point(field_set:city.economy.v2.NBS.citizens_agent_id)
+inline void NBS::set_citizen_agent_ids(int index, int32_t value) {
+  _impl_.citizen_agent_ids_.Set(index, value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.NBS.citizen_agent_ids)
 }
-inline void NBS::_internal_add_citizens_agent_id(int32_t value) {
-  _impl_.citizens_agent_id_.Add(value);
+inline void NBS::_internal_add_citizen_agent_ids(int32_t value) {
+  _impl_.citizen_agent_ids_.Add(value);
 }
-inline void NBS::add_citizens_agent_id(int32_t value) {
-  _internal_add_citizens_agent_id(value);
-  // @@protoc_insertion_point(field_add:city.economy.v2.NBS.citizens_agent_id)
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
-NBS::_internal_citizens_agent_id() const {
-  return _impl_.citizens_agent_id_;
+inline void NBS::add_citizen_agent_ids(int32_t value) {
+  _internal_add_citizen_agent_ids(value);
+  // @@protoc_insertion_point(field_add:city.economy.v2.NBS.citizen_agent_ids)
 }
 inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
-NBS::citizens_agent_id() const {
-  // @@protoc_insertion_point(field_list:city.economy.v2.NBS.citizens_agent_id)
-  return _internal_citizens_agent_id();
+NBS::_internal_citizen_agent_ids() const {
+  return _impl_.citizen_agent_ids_;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+NBS::citizen_agent_ids() const {
+  // @@protoc_insertion_point(field_list:city.economy.v2.NBS.citizen_agent_ids)
+  return _internal_citizen_agent_ids();
 }
 inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
-NBS::_internal_mutable_citizens_agent_id() {
-  return &_impl_.citizens_agent_id_;
+NBS::_internal_mutable_citizen_agent_ids() {
+  return &_impl_.citizen_agent_ids_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
-NBS::mutable_citizens_agent_id() {
-  // @@protoc_insertion_point(field_mutable_list:city.economy.v2.NBS.citizens_agent_id)
-  return _internal_mutable_citizens_agent_id();
+NBS::mutable_citizen_agent_ids() {
+  // @@protoc_insertion_point(field_mutable_list:city.economy.v2.NBS.citizen_agent_ids)
+  return _internal_mutable_citizen_agent_ids();
 }
 
 // float currency = 14 [json_name = "currency"];
@@ -2591,51 +2591,51 @@ inline void Government::set_id(int32_t value) {
   // @@protoc_insertion_point(field_set:city.economy.v2.Government.id)
 }
 
-// repeated int32 citizens = 2 [json_name = "citizens"];
-inline int Government::_internal_citizens_size() const {
-  return _impl_.citizens_.size();
+// repeated int32 citizen_ids = 2 [json_name = "citizenIds"];
+inline int Government::_internal_citizen_ids_size() const {
+  return _impl_.citizen_ids_.size();
 }
-inline int Government::citizens_size() const {
-  return _internal_citizens_size();
+inline int Government::citizen_ids_size() const {
+  return _internal_citizen_ids_size();
 }
-inline void Government::clear_citizens() {
-  _impl_.citizens_.Clear();
+inline void Government::clear_citizen_ids() {
+  _impl_.citizen_ids_.Clear();
 }
-inline int32_t Government::_internal_citizens(int index) const {
-  return _impl_.citizens_.Get(index);
+inline int32_t Government::_internal_citizen_ids(int index) const {
+  return _impl_.citizen_ids_.Get(index);
 }
-inline int32_t Government::citizens(int index) const {
-  // @@protoc_insertion_point(field_get:city.economy.v2.Government.citizens)
-  return _internal_citizens(index);
+inline int32_t Government::citizen_ids(int index) const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.Government.citizen_ids)
+  return _internal_citizen_ids(index);
 }
-inline void Government::set_citizens(int index, int32_t value) {
-  _impl_.citizens_.Set(index, value);
-  // @@protoc_insertion_point(field_set:city.economy.v2.Government.citizens)
+inline void Government::set_citizen_ids(int index, int32_t value) {
+  _impl_.citizen_ids_.Set(index, value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.Government.citizen_ids)
 }
-inline void Government::_internal_add_citizens(int32_t value) {
-  _impl_.citizens_.Add(value);
+inline void Government::_internal_add_citizen_ids(int32_t value) {
+  _impl_.citizen_ids_.Add(value);
 }
-inline void Government::add_citizens(int32_t value) {
-  _internal_add_citizens(value);
-  // @@protoc_insertion_point(field_add:city.economy.v2.Government.citizens)
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
-Government::_internal_citizens() const {
-  return _impl_.citizens_;
+inline void Government::add_citizen_ids(int32_t value) {
+  _internal_add_citizen_ids(value);
+  // @@protoc_insertion_point(field_add:city.economy.v2.Government.citizen_ids)
 }
 inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
-Government::citizens() const {
-  // @@protoc_insertion_point(field_list:city.economy.v2.Government.citizens)
-  return _internal_citizens();
+Government::_internal_citizen_ids() const {
+  return _impl_.citizen_ids_;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+Government::citizen_ids() const {
+  // @@protoc_insertion_point(field_list:city.economy.v2.Government.citizen_ids)
+  return _internal_citizen_ids();
 }
 inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
-Government::_internal_mutable_citizens() {
-  return &_impl_.citizens_;
+Government::_internal_mutable_citizen_ids() {
+  return &_impl_.citizen_ids_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
-Government::mutable_citizens() {
-  // @@protoc_insertion_point(field_mutable_list:city.economy.v2.Government.citizens)
-  return _internal_mutable_citizens();
+Government::mutable_citizen_ids() {
+  // @@protoc_insertion_point(field_mutable_list:city.economy.v2.Government.citizen_ids)
+  return _internal_mutable_citizen_ids();
 }
 
 // repeated float bracket_cutoffs = 3 [json_name = "bracketCutoffs"];
@@ -2776,51 +2776,51 @@ inline void Bank::set_id(int32_t value) {
   // @@protoc_insertion_point(field_set:city.economy.v2.Bank.id)
 }
 
-// repeated int32 citizens = 2 [json_name = "citizens"];
-inline int Bank::_internal_citizens_size() const {
-  return _impl_.citizens_.size();
+// repeated int32 citizen_ids = 2 [json_name = "citizenIds"];
+inline int Bank::_internal_citizen_ids_size() const {
+  return _impl_.citizen_ids_.size();
 }
-inline int Bank::citizens_size() const {
-  return _internal_citizens_size();
+inline int Bank::citizen_ids_size() const {
+  return _internal_citizen_ids_size();
 }
-inline void Bank::clear_citizens() {
-  _impl_.citizens_.Clear();
+inline void Bank::clear_citizen_ids() {
+  _impl_.citizen_ids_.Clear();
 }
-inline int32_t Bank::_internal_citizens(int index) const {
-  return _impl_.citizens_.Get(index);
+inline int32_t Bank::_internal_citizen_ids(int index) const {
+  return _impl_.citizen_ids_.Get(index);
 }
-inline int32_t Bank::citizens(int index) const {
-  // @@protoc_insertion_point(field_get:city.economy.v2.Bank.citizens)
-  return _internal_citizens(index);
+inline int32_t Bank::citizen_ids(int index) const {
+  // @@protoc_insertion_point(field_get:city.economy.v2.Bank.citizen_ids)
+  return _internal_citizen_ids(index);
 }
-inline void Bank::set_citizens(int index, int32_t value) {
-  _impl_.citizens_.Set(index, value);
-  // @@protoc_insertion_point(field_set:city.economy.v2.Bank.citizens)
+inline void Bank::set_citizen_ids(int index, int32_t value) {
+  _impl_.citizen_ids_.Set(index, value);
+  // @@protoc_insertion_point(field_set:city.economy.v2.Bank.citizen_ids)
 }
-inline void Bank::_internal_add_citizens(int32_t value) {
-  _impl_.citizens_.Add(value);
+inline void Bank::_internal_add_citizen_ids(int32_t value) {
+  _impl_.citizen_ids_.Add(value);
 }
-inline void Bank::add_citizens(int32_t value) {
-  _internal_add_citizens(value);
-  // @@protoc_insertion_point(field_add:city.economy.v2.Bank.citizens)
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
-Bank::_internal_citizens() const {
-  return _impl_.citizens_;
+inline void Bank::add_citizen_ids(int32_t value) {
+  _internal_add_citizen_ids(value);
+  // @@protoc_insertion_point(field_add:city.economy.v2.Bank.citizen_ids)
 }
 inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
-Bank::citizens() const {
-  // @@protoc_insertion_point(field_list:city.economy.v2.Bank.citizens)
-  return _internal_citizens();
+Bank::_internal_citizen_ids() const {
+  return _impl_.citizen_ids_;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+Bank::citizen_ids() const {
+  // @@protoc_insertion_point(field_list:city.economy.v2.Bank.citizen_ids)
+  return _internal_citizen_ids();
 }
 inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
-Bank::_internal_mutable_citizens() {
-  return &_impl_.citizens_;
+Bank::_internal_mutable_citizen_ids() {
+  return &_impl_.citizen_ids_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
-Bank::mutable_citizens() {
-  // @@protoc_insertion_point(field_mutable_list:city.economy.v2.Bank.citizens)
-  return _internal_mutable_citizens();
+Bank::mutable_citizen_ids() {
+  // @@protoc_insertion_point(field_mutable_list:city.economy.v2.Bank.citizen_ids)
+  return _internal_mutable_citizen_ids();
 }
 
 // float interest_rate = 3 [json_name = "interestRate"];

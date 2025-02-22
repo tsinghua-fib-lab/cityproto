@@ -2,108 +2,190 @@ syntax = "proto3";
 
 package city.economy.v2;
 
+// Firm represents a company entity in the economic system
 // Firm 代表经济系统中的公司实体
 message Firm {
+  // Unique identifier of the firm
   // 公司的唯一标识符
   int32 id = 1;
+
+  // List of employee IDs working at the firm
   // 公司的员工ID列表
   repeated int32 employees = 2;
+
+  // Price of the firm's products/services
   // 公司产品/服务的价格
   float price = 3;
+
+  // Current inventory level of the firm
   // 公司当前的库存量
   int32 inventory = 4;
+
+  // Market demand for the firm's products/services
   // 市场对公司产品/服务的需求量
   float demand = 5;
+
+  // Sales volume of the firm
   // 公司的销售量
   float sales = 6;
+
+  // Amount of currency held by the firm
   // 公司持有的货币量
   float currency = 7;
 }
 
-// NBS (National Bureau of Statistics) 代表国家统计局
+// NBS (National Bureau of Statistics) represents the statistical authority
+// NBS (国家统计局) 代表负责经济数据统计的权威机构
 message NBS {
+  // Unique identifier of the NBS
   // 统计局的唯一标识符
   int32 id = 1;
+
+  // List of citizen IDs under NBS jurisdiction
   // 统计范围内的公民ID列表
-  repeated int32 citizens = 2;
-  // 名义GDP时间序列数据，key为时间点
+  repeated int32 citizen_ids = 2;
+
+  // Time series data of nominal GDP, key is timestamp
+  // 名义GDP时间序列数据，键为时间戳
   map<string, float> nominal_gdp = 3;
-  // 实际GDP时间序列数据，key为时间点
+
+  // Time series data of real GDP, key is timestamp
+  // 实际GDP时间序列数据，键为时间戳
   map<string, float> real_gdp = 4;
-  // 失业率时间序列数据，key为时间点
+
+  // Time series data of unemployment rate, key is timestamp
+  // 失业率时间序列数据，键为时间戳
   map<string, float> unemployment = 5;
-  // 工资水平时间序列数据，key为时间点
+
+  // Time series data of wage levels, key is timestamp
+  // 工资水平时间序列数据，键为时间戳
   map<string, float> wages = 6;
-  // 价格指数时间序列数据，key为时间点
+
+  // Time series data of price indices, key is timestamp
+  // 价格指数时间序列数据，键为时间戳
   map<string, float> prices = 7;
-  // 工作时间时间序列数据，key为时间点
+
+  // Time series data of working hours, key is timestamp
+  // 工作时间时间序列数据，键为时间戳
   map<string, float> working_hours = 8;
-  // 抑郁指数时间序列数据，key为时间点
+
+  // Time series data of depression index, key is timestamp
+  // 抑郁指数时间序列数据，键为时间戳
   map<string, float> depression = 9;
-  // 消费货币时间序列数据，key为时间点
+
+  // Time series data of consumption currency, key is timestamp
+  // 消费货币时间序列数据，键为时间戳
   map<string, float> consumption_currency = 10;
-  // 收入货币时间序列数据，key为时间点
+
+  // Time series data of income currency, key is timestamp
+  // 收入货币时间序列数据，键为时间戳
   map<string, float> income_currency = 11;
-  // 控制点时间序列数据，key为时间点
+
+  // Time series data of locus control, key is timestamp
+  // 控制点时间序列数据，键为时间戳
   map<string, float> locus_control = 12;
+
+  // List of citizen agent IDs
   // 公民代理ID列表
-  repeated int32 citizens_agent_id = 13;
+  repeated int32 citizen_agent_ids = 13;
+
+  // Amount of currency held by the NBS
   // 统计局持有的货币量
   float currency = 14;
 }
 
+// Government represents a government institution
 // Government 代表政府机构
 message Government {
+  // Unique identifier of the government
   // 政府的唯一标识符
   int32 id = 1;
+
+  // List of citizen IDs under government jurisdiction
   // 管辖范围内的公民ID列表
-  repeated int32 citizens = 2;
+  repeated int32 citizen_ids = 2;
+
+  // Tax bracket cutoff points
   // 税收档位的切分点列表
   repeated float bracket_cutoffs = 3;
+
+  // Tax rates for each bracket
   // 对应每个档位的税率列表
   repeated float bracket_rates = 4;
+
+  // Amount of currency held by the government
   // 政府持有的货币量
   float currency = 5;
 }
 
+// Bank represents a banking institution
 // Bank 代表银行机构
 message Bank {
+  // Unique identifier of the bank
   // 银行的唯一标识符
   int32 id = 1;
+
+  // List of citizen IDs who are bank customers
   // 银行客户（公民）ID列表
-  repeated int32 citizens = 2;
+  repeated int32 citizen_ids = 2;
+
+  // Interest rate set by the bank
   // 银行设定的利率
   float interest_rate = 3;
+
+  // Amount of currency held by the bank
   // 银行持有的货币量
   float currency = 4;
 }
 
+// Agent represents an individual economic agent (e.g., a resident)
 // Agent 代表经济系统中的个体代理（如居民个人）
 message Agent {
+  // Unique identifier of the agent
   // 代理的唯一标识符
   int32 id = 1;
+
+  // Amount of currency held by the agent
   // 代理持有的货币量
   optional float currency = 2;
+
+  // ID of the firm where the agent is employed
   // 代理所属的公司ID
   optional int32 firm_id = 3;
+
+  // Skill level of the agent
   // 代理的技能水平
   optional float skill = 4;
+
+  // Consumption level of the agent
   // 代理的消费量
   optional float consumption = 5;
+
+  // Income of the agent
   // 代理的收入
   optional float income = 6;
 }
 
-// 经济实体
+// EconomyEntities represents all entities in the economic system
+// EconomyEntities 代表经济系统中的所有实体
 message EconomyEntities {
+  // List of all firms
   // 公司列表
   repeated Firm firms = 1;
+
+  // List of all NBSs
   // 国家统计局列表
   repeated NBS nbs = 2;
+
+  // List of all governments
   // 政府列表
   repeated Government governments = 3;
+
+  // List of all banks
   // 银行列表
   repeated Bank banks = 4;
+
+  // List of all agents
   // 代理列表
   repeated Agent agents = 5;
 }

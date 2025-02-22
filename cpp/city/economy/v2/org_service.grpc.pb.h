@@ -29,8 +29,11 @@ namespace city {
 namespace economy {
 namespace v2 {
 
+// OrgService provides management interfaces for organizations and agents in the economic system
+// All basic operations support batch processing by default
+//
 // OrgService 提供了经济系统中组织和代理的管理接口
-// 包括基本的CRUD操作、批量操作、增量更新和各种计算功能
+// 所有基础操作默认支持批量处理
 class OrgService final {
  public:
   static constexpr char const* service_full_name() {
@@ -39,7 +42,11 @@ class OrgService final {
   class StubInterface {
    public:
     virtual ~StubInterface() {}
-    // Firm 相关操作
+    // Creates one or more firm entities
+    // Returns the list of created firm IDs
+    //
+    // 创建一个或多个企业实体
+    // 返回创建的企业ID列表
     virtual ::grpc::Status AddFirm(::grpc::ClientContext* context, const ::city::economy::v2::AddFirmRequest& request, ::city::economy::v2::AddFirmResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::AddFirmResponse>> AsyncAddFirm(::grpc::ClientContext* context, const ::city::economy::v2::AddFirmRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::AddFirmResponse>>(AsyncAddFirmRaw(context, request, cq));
@@ -47,6 +54,11 @@ class OrgService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::AddFirmResponse>> PrepareAsyncAddFirm(::grpc::ClientContext* context, const ::city::economy::v2::AddFirmRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::AddFirmResponse>>(PrepareAsyncAddFirmRaw(context, request, cq));
     }
+    // Deletes one or more firms by their IDs
+    // Also cleans up related employee associations
+    //
+    // 根据ID删除一个或多个企业实体
+    // 同时清理相关的员工关联关系
     virtual ::grpc::Status RemoveFirm(::grpc::ClientContext* context, const ::city::economy::v2::RemoveFirmRequest& request, ::city::economy::v2::RemoveFirmResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::RemoveFirmResponse>> AsyncRemoveFirm(::grpc::ClientContext* context, const ::city::economy::v2::RemoveFirmRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::RemoveFirmResponse>>(AsyncRemoveFirmRaw(context, request, cq));
@@ -54,6 +66,11 @@ class OrgService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::RemoveFirmResponse>> PrepareAsyncRemoveFirm(::grpc::ClientContext* context, const ::city::economy::v2::RemoveFirmRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::RemoveFirmResponse>>(PrepareAsyncRemoveFirmRaw(context, request, cq));
     }
+    // Retrieves detailed information for one or more firms
+    // Returns a list of firm entities
+    //
+    // 获取一个或多个企业的详细信息
+    // 返回企业实体信息列表
     virtual ::grpc::Status GetFirm(::grpc::ClientContext* context, const ::city::economy::v2::GetFirmRequest& request, ::city::economy::v2::GetFirmResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::GetFirmResponse>> AsyncGetFirm(::grpc::ClientContext* context, const ::city::economy::v2::GetFirmRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::GetFirmResponse>>(AsyncGetFirmRaw(context, request, cq));
@@ -61,6 +78,9 @@ class OrgService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::GetFirmResponse>> PrepareAsyncGetFirm(::grpc::ClientContext* context, const ::city::economy::v2::GetFirmRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::GetFirmResponse>>(PrepareAsyncGetFirmRaw(context, request, cq));
     }
+    // Updates complete information for one or more firms
+    //
+    // 更新一个或多个企业的完整信息
     virtual ::grpc::Status UpdateFirm(::grpc::ClientContext* context, const ::city::economy::v2::UpdateFirmRequest& request, ::city::economy::v2::UpdateFirmResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::UpdateFirmResponse>> AsyncUpdateFirm(::grpc::ClientContext* context, const ::city::economy::v2::UpdateFirmRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::UpdateFirmResponse>>(AsyncUpdateFirmRaw(context, request, cq));
@@ -68,6 +88,9 @@ class OrgService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::UpdateFirmResponse>> PrepareAsyncUpdateFirm(::grpc::ClientContext* context, const ::city::economy::v2::UpdateFirmRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::UpdateFirmResponse>>(PrepareAsyncUpdateFirmRaw(context, request, cq));
     }
+    // Lists all firms in the system
+    //
+    // 获取系统中所有企业的列表
     virtual ::grpc::Status ListFirms(::grpc::ClientContext* context, const ::city::economy::v2::ListFirmsRequest& request, ::city::economy::v2::ListFirmsResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::ListFirmsResponse>> AsyncListFirms(::grpc::ClientContext* context, const ::city::economy::v2::ListFirmsRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::ListFirmsResponse>>(AsyncListFirmsRaw(context, request, cq));
@@ -75,6 +98,11 @@ class OrgService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::ListFirmsResponse>> PrepareAsyncListFirms(::grpc::ClientContext* context, const ::city::economy::v2::ListFirmsRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::ListFirmsResponse>>(PrepareAsyncListFirmsRaw(context, request, cq));
     }
+    // Performs incremental updates on one or more firms
+    // Allows updating specific fields like price, inventory, demand etc.
+    //
+    // 对一个或多个企业进行增量更新
+    // 可以更新价格、库存、需求等具体字段
     virtual ::grpc::Status DeltaUpdateFirm(::grpc::ClientContext* context, const ::city::economy::v2::DeltaUpdateFirmRequest& request, ::city::economy::v2::DeltaUpdateFirmResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::DeltaUpdateFirmResponse>> AsyncDeltaUpdateFirm(::grpc::ClientContext* context, const ::city::economy::v2::DeltaUpdateFirmRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::DeltaUpdateFirmResponse>>(AsyncDeltaUpdateFirmRaw(context, request, cq));
@@ -82,42 +110,12 @@ class OrgService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::DeltaUpdateFirmResponse>> PrepareAsyncDeltaUpdateFirm(::grpc::ClientContext* context, const ::city::economy::v2::DeltaUpdateFirmRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::DeltaUpdateFirmResponse>>(PrepareAsyncDeltaUpdateFirmRaw(context, request, cq));
     }
-    virtual ::grpc::Status BatchAddFirm(::grpc::ClientContext* context, const ::city::economy::v2::BatchAddFirmRequest& request, ::city::economy::v2::BatchAddFirmResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchAddFirmResponse>> AsyncBatchAddFirm(::grpc::ClientContext* context, const ::city::economy::v2::BatchAddFirmRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchAddFirmResponse>>(AsyncBatchAddFirmRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchAddFirmResponse>> PrepareAsyncBatchAddFirm(::grpc::ClientContext* context, const ::city::economy::v2::BatchAddFirmRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchAddFirmResponse>>(PrepareAsyncBatchAddFirmRaw(context, request, cq));
-    }
-    virtual ::grpc::Status BatchRemoveFirm(::grpc::ClientContext* context, const ::city::economy::v2::BatchRemoveFirmRequest& request, ::city::economy::v2::BatchRemoveFirmResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchRemoveFirmResponse>> AsyncBatchRemoveFirm(::grpc::ClientContext* context, const ::city::economy::v2::BatchRemoveFirmRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchRemoveFirmResponse>>(AsyncBatchRemoveFirmRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchRemoveFirmResponse>> PrepareAsyncBatchRemoveFirm(::grpc::ClientContext* context, const ::city::economy::v2::BatchRemoveFirmRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchRemoveFirmResponse>>(PrepareAsyncBatchRemoveFirmRaw(context, request, cq));
-    }
-    virtual ::grpc::Status BatchGetFirm(::grpc::ClientContext* context, const ::city::economy::v2::BatchGetFirmRequest& request, ::city::economy::v2::BatchGetFirmResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchGetFirmResponse>> AsyncBatchGetFirm(::grpc::ClientContext* context, const ::city::economy::v2::BatchGetFirmRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchGetFirmResponse>>(AsyncBatchGetFirmRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchGetFirmResponse>> PrepareAsyncBatchGetFirm(::grpc::ClientContext* context, const ::city::economy::v2::BatchGetFirmRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchGetFirmResponse>>(PrepareAsyncBatchGetFirmRaw(context, request, cq));
-    }
-    virtual ::grpc::Status BatchUpdateFirm(::grpc::ClientContext* context, const ::city::economy::v2::BatchUpdateFirmRequest& request, ::city::economy::v2::BatchUpdateFirmResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchUpdateFirmResponse>> AsyncBatchUpdateFirm(::grpc::ClientContext* context, const ::city::economy::v2::BatchUpdateFirmRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchUpdateFirmResponse>>(AsyncBatchUpdateFirmRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchUpdateFirmResponse>> PrepareAsyncBatchUpdateFirm(::grpc::ClientContext* context, const ::city::economy::v2::BatchUpdateFirmRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchUpdateFirmResponse>>(PrepareAsyncBatchUpdateFirmRaw(context, request, cq));
-    }
-    virtual ::grpc::Status BatchDeltaUpdateFirm(::grpc::ClientContext* context, const ::city::economy::v2::BatchDeltaUpdateFirmRequest& request, ::city::economy::v2::BatchDeltaUpdateFirmResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchDeltaUpdateFirmResponse>> AsyncBatchDeltaUpdateFirm(::grpc::ClientContext* context, const ::city::economy::v2::BatchDeltaUpdateFirmRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchDeltaUpdateFirmResponse>>(AsyncBatchDeltaUpdateFirmRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchDeltaUpdateFirmResponse>> PrepareAsyncBatchDeltaUpdateFirm(::grpc::ClientContext* context, const ::city::economy::v2::BatchDeltaUpdateFirmRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchDeltaUpdateFirmResponse>>(PrepareAsyncBatchDeltaUpdateFirmRaw(context, request, cq));
-    }
-    // NBS 相关操作
+    // @section NBS Operations
+    // @section 国家统计局相关操作
+    //
+    // Creates a new NBS entity
+    //
+    // 创建新的国家统计局实体
     virtual ::grpc::Status AddNBS(::grpc::ClientContext* context, const ::city::economy::v2::AddNBSRequest& request, ::city::economy::v2::AddNBSResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::AddNBSResponse>> AsyncAddNBS(::grpc::ClientContext* context, const ::city::economy::v2::AddNBSRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::AddNBSResponse>>(AsyncAddNBSRaw(context, request, cq));
@@ -125,6 +123,9 @@ class OrgService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::AddNBSResponse>> PrepareAsyncAddNBS(::grpc::ClientContext* context, const ::city::economy::v2::AddNBSRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::AddNBSResponse>>(PrepareAsyncAddNBSRaw(context, request, cq));
     }
+    // Deletes an NBS entity by ID
+    //
+    // 根据ID删除国家统计局实体
     virtual ::grpc::Status RemoveNBS(::grpc::ClientContext* context, const ::city::economy::v2::RemoveNBSRequest& request, ::city::economy::v2::RemoveNBSResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::RemoveNBSResponse>> AsyncRemoveNBS(::grpc::ClientContext* context, const ::city::economy::v2::RemoveNBSRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::RemoveNBSResponse>>(AsyncRemoveNBSRaw(context, request, cq));
@@ -132,6 +133,9 @@ class OrgService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::RemoveNBSResponse>> PrepareAsyncRemoveNBS(::grpc::ClientContext* context, const ::city::economy::v2::RemoveNBSRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::RemoveNBSResponse>>(PrepareAsyncRemoveNBSRaw(context, request, cq));
     }
+    // Retrieves detailed information for an NBS entity
+    //
+    // 获取国家统计局的详细信息
     virtual ::grpc::Status GetNBS(::grpc::ClientContext* context, const ::city::economy::v2::GetNBSRequest& request, ::city::economy::v2::GetNBSResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::GetNBSResponse>> AsyncGetNBS(::grpc::ClientContext* context, const ::city::economy::v2::GetNBSRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::GetNBSResponse>>(AsyncGetNBSRaw(context, request, cq));
@@ -139,6 +143,9 @@ class OrgService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::GetNBSResponse>> PrepareAsyncGetNBS(::grpc::ClientContext* context, const ::city::economy::v2::GetNBSRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::GetNBSResponse>>(PrepareAsyncGetNBSRaw(context, request, cq));
     }
+    // Updates complete information for an NBS entity
+    //
+    // 更新国家统计局的完整信息
     virtual ::grpc::Status UpdateNBS(::grpc::ClientContext* context, const ::city::economy::v2::UpdateNBSRequest& request, ::city::economy::v2::UpdateNBSResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::UpdateNBSResponse>> AsyncUpdateNBS(::grpc::ClientContext* context, const ::city::economy::v2::UpdateNBSRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::UpdateNBSResponse>>(AsyncUpdateNBSRaw(context, request, cq));
@@ -146,6 +153,9 @@ class OrgService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::UpdateNBSResponse>> PrepareAsyncUpdateNBS(::grpc::ClientContext* context, const ::city::economy::v2::UpdateNBSRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::UpdateNBSResponse>>(PrepareAsyncUpdateNBSRaw(context, request, cq));
     }
+    // Lists all NBS entities in the system
+    //
+    // 获取系统中所有国家统计局的列表
     virtual ::grpc::Status ListNBS(::grpc::ClientContext* context, const ::city::economy::v2::ListNBSRequest& request, ::city::economy::v2::ListNBSResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::ListNBSResponse>> AsyncListNBS(::grpc::ClientContext* context, const ::city::economy::v2::ListNBSRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::ListNBSResponse>>(AsyncListNBSRaw(context, request, cq));
@@ -153,6 +163,11 @@ class OrgService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::ListNBSResponse>> PrepareAsyncListNBS(::grpc::ClientContext* context, const ::city::economy::v2::ListNBSRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::ListNBSResponse>>(PrepareAsyncListNBSRaw(context, request, cq));
     }
+    // Performs incremental updates on an NBS entity
+    // Allows updating specific statistics and citizen relationships
+    //
+    // 对国家统计局进行增量更新
+    // 可以更新具体统计数据和公民关系
     virtual ::grpc::Status DeltaUpdateNBS(::grpc::ClientContext* context, const ::city::economy::v2::DeltaUpdateNBSRequest& request, ::city::economy::v2::DeltaUpdateNBSResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::DeltaUpdateNBSResponse>> AsyncDeltaUpdateNBS(::grpc::ClientContext* context, const ::city::economy::v2::DeltaUpdateNBSRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::DeltaUpdateNBSResponse>>(AsyncDeltaUpdateNBSRaw(context, request, cq));
@@ -160,7 +175,12 @@ class OrgService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::DeltaUpdateNBSResponse>> PrepareAsyncDeltaUpdateNBS(::grpc::ClientContext* context, const ::city::economy::v2::DeltaUpdateNBSRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::DeltaUpdateNBSResponse>>(PrepareAsyncDeltaUpdateNBSRaw(context, request, cq));
     }
-    // Government 相关操作
+    // @section Government Operations
+    // @section 政府相关操作
+    //
+    // Creates a new government entity
+    //
+    // 创建新的政府实体
     virtual ::grpc::Status AddGovernment(::grpc::ClientContext* context, const ::city::economy::v2::AddGovernmentRequest& request, ::city::economy::v2::AddGovernmentResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::AddGovernmentResponse>> AsyncAddGovernment(::grpc::ClientContext* context, const ::city::economy::v2::AddGovernmentRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::AddGovernmentResponse>>(AsyncAddGovernmentRaw(context, request, cq));
@@ -168,6 +188,9 @@ class OrgService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::AddGovernmentResponse>> PrepareAsyncAddGovernment(::grpc::ClientContext* context, const ::city::economy::v2::AddGovernmentRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::AddGovernmentResponse>>(PrepareAsyncAddGovernmentRaw(context, request, cq));
     }
+    // Deletes a government entity by ID
+    //
+    // 根据ID删除政府实体
     virtual ::grpc::Status RemoveGovernment(::grpc::ClientContext* context, const ::city::economy::v2::RemoveGovernmentRequest& request, ::city::economy::v2::RemoveGovernmentResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::RemoveGovernmentResponse>> AsyncRemoveGovernment(::grpc::ClientContext* context, const ::city::economy::v2::RemoveGovernmentRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::RemoveGovernmentResponse>>(AsyncRemoveGovernmentRaw(context, request, cq));
@@ -175,6 +198,9 @@ class OrgService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::RemoveGovernmentResponse>> PrepareAsyncRemoveGovernment(::grpc::ClientContext* context, const ::city::economy::v2::RemoveGovernmentRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::RemoveGovernmentResponse>>(PrepareAsyncRemoveGovernmentRaw(context, request, cq));
     }
+    // Retrieves detailed information for a government entity
+    //
+    // 获取政府实体的详细信息
     virtual ::grpc::Status GetGovernment(::grpc::ClientContext* context, const ::city::economy::v2::GetGovernmentRequest& request, ::city::economy::v2::GetGovernmentResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::GetGovernmentResponse>> AsyncGetGovernment(::grpc::ClientContext* context, const ::city::economy::v2::GetGovernmentRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::GetGovernmentResponse>>(AsyncGetGovernmentRaw(context, request, cq));
@@ -182,6 +208,9 @@ class OrgService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::GetGovernmentResponse>> PrepareAsyncGetGovernment(::grpc::ClientContext* context, const ::city::economy::v2::GetGovernmentRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::GetGovernmentResponse>>(PrepareAsyncGetGovernmentRaw(context, request, cq));
     }
+    // Updates complete information for a government entity
+    //
+    // 更新政府实体的完整信息
     virtual ::grpc::Status UpdateGovernment(::grpc::ClientContext* context, const ::city::economy::v2::UpdateGovernmentRequest& request, ::city::economy::v2::UpdateGovernmentResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::UpdateGovernmentResponse>> AsyncUpdateGovernment(::grpc::ClientContext* context, const ::city::economy::v2::UpdateGovernmentRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::UpdateGovernmentResponse>>(AsyncUpdateGovernmentRaw(context, request, cq));
@@ -189,6 +218,9 @@ class OrgService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::UpdateGovernmentResponse>> PrepareAsyncUpdateGovernment(::grpc::ClientContext* context, const ::city::economy::v2::UpdateGovernmentRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::UpdateGovernmentResponse>>(PrepareAsyncUpdateGovernmentRaw(context, request, cq));
     }
+    // Lists all government entities in the system
+    //
+    // 获取系统中所有政府实体的列表
     virtual ::grpc::Status ListGovernments(::grpc::ClientContext* context, const ::city::economy::v2::ListGovernmentsRequest& request, ::city::economy::v2::ListGovernmentsResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::ListGovernmentsResponse>> AsyncListGovernments(::grpc::ClientContext* context, const ::city::economy::v2::ListGovernmentsRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::ListGovernmentsResponse>>(AsyncListGovernmentsRaw(context, request, cq));
@@ -196,6 +228,11 @@ class OrgService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::ListGovernmentsResponse>> PrepareAsyncListGovernments(::grpc::ClientContext* context, const ::city::economy::v2::ListGovernmentsRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::ListGovernmentsResponse>>(PrepareAsyncListGovernmentsRaw(context, request, cq));
     }
+    // Performs incremental updates on a government entity
+    // Allows updating tax brackets and citizen relationships
+    //
+    // 对政府实体进行增量更新
+    // 可以更新税收档位和公民关系
     virtual ::grpc::Status DeltaUpdateGovernment(::grpc::ClientContext* context, const ::city::economy::v2::DeltaUpdateGovernmentRequest& request, ::city::economy::v2::DeltaUpdateGovernmentResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::DeltaUpdateGovernmentResponse>> AsyncDeltaUpdateGovernment(::grpc::ClientContext* context, const ::city::economy::v2::DeltaUpdateGovernmentRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::DeltaUpdateGovernmentResponse>>(AsyncDeltaUpdateGovernmentRaw(context, request, cq));
@@ -203,7 +240,12 @@ class OrgService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::DeltaUpdateGovernmentResponse>> PrepareAsyncDeltaUpdateGovernment(::grpc::ClientContext* context, const ::city::economy::v2::DeltaUpdateGovernmentRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::DeltaUpdateGovernmentResponse>>(PrepareAsyncDeltaUpdateGovernmentRaw(context, request, cq));
     }
-    // Bank 相关操作
+    // @section Bank Operations
+    // @section 银行相关操作
+    //
+    // Creates a new bank entity
+    //
+    // 创建新的银行实体
     virtual ::grpc::Status AddBank(::grpc::ClientContext* context, const ::city::economy::v2::AddBankRequest& request, ::city::economy::v2::AddBankResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::AddBankResponse>> AsyncAddBank(::grpc::ClientContext* context, const ::city::economy::v2::AddBankRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::AddBankResponse>>(AsyncAddBankRaw(context, request, cq));
@@ -211,6 +253,9 @@ class OrgService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::AddBankResponse>> PrepareAsyncAddBank(::grpc::ClientContext* context, const ::city::economy::v2::AddBankRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::AddBankResponse>>(PrepareAsyncAddBankRaw(context, request, cq));
     }
+    // Deletes a bank entity by ID
+    //
+    // 根据ID删除银行实体
     virtual ::grpc::Status RemoveBank(::grpc::ClientContext* context, const ::city::economy::v2::RemoveBankRequest& request, ::city::economy::v2::RemoveBankResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::RemoveBankResponse>> AsyncRemoveBank(::grpc::ClientContext* context, const ::city::economy::v2::RemoveBankRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::RemoveBankResponse>>(AsyncRemoveBankRaw(context, request, cq));
@@ -218,6 +263,9 @@ class OrgService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::RemoveBankResponse>> PrepareAsyncRemoveBank(::grpc::ClientContext* context, const ::city::economy::v2::RemoveBankRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::RemoveBankResponse>>(PrepareAsyncRemoveBankRaw(context, request, cq));
     }
+    // Retrieves detailed information for a bank entity
+    //
+    // 获取银行实体的详细信息
     virtual ::grpc::Status GetBank(::grpc::ClientContext* context, const ::city::economy::v2::GetBankRequest& request, ::city::economy::v2::GetBankResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::GetBankResponse>> AsyncGetBank(::grpc::ClientContext* context, const ::city::economy::v2::GetBankRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::GetBankResponse>>(AsyncGetBankRaw(context, request, cq));
@@ -225,6 +273,9 @@ class OrgService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::GetBankResponse>> PrepareAsyncGetBank(::grpc::ClientContext* context, const ::city::economy::v2::GetBankRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::GetBankResponse>>(PrepareAsyncGetBankRaw(context, request, cq));
     }
+    // Updates complete information for a bank entity
+    //
+    // 更新银行实体的完整信息
     virtual ::grpc::Status UpdateBank(::grpc::ClientContext* context, const ::city::economy::v2::UpdateBankRequest& request, ::city::economy::v2::UpdateBankResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::UpdateBankResponse>> AsyncUpdateBank(::grpc::ClientContext* context, const ::city::economy::v2::UpdateBankRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::UpdateBankResponse>>(AsyncUpdateBankRaw(context, request, cq));
@@ -232,6 +283,9 @@ class OrgService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::UpdateBankResponse>> PrepareAsyncUpdateBank(::grpc::ClientContext* context, const ::city::economy::v2::UpdateBankRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::UpdateBankResponse>>(PrepareAsyncUpdateBankRaw(context, request, cq));
     }
+    // Lists all bank entities in the system
+    //
+    // 获取系统中所有银行实体的列表
     virtual ::grpc::Status ListBanks(::grpc::ClientContext* context, const ::city::economy::v2::ListBanksRequest& request, ::city::economy::v2::ListBanksResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::ListBanksResponse>> AsyncListBanks(::grpc::ClientContext* context, const ::city::economy::v2::ListBanksRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::ListBanksResponse>>(AsyncListBanksRaw(context, request, cq));
@@ -239,6 +293,11 @@ class OrgService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::ListBanksResponse>> PrepareAsyncListBanks(::grpc::ClientContext* context, const ::city::economy::v2::ListBanksRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::ListBanksResponse>>(PrepareAsyncListBanksRaw(context, request, cq));
     }
+    // Performs incremental updates on a bank entity
+    // Allows updating interest rates and customer relationships
+    //
+    // 对银行实体进行增量更新
+    // 可以更新利率和客户关系
     virtual ::grpc::Status DeltaUpdateBank(::grpc::ClientContext* context, const ::city::economy::v2::DeltaUpdateBankRequest& request, ::city::economy::v2::DeltaUpdateBankResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::DeltaUpdateBankResponse>> AsyncDeltaUpdateBank(::grpc::ClientContext* context, const ::city::economy::v2::DeltaUpdateBankRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::DeltaUpdateBankResponse>>(AsyncDeltaUpdateBankRaw(context, request, cq));
@@ -246,7 +305,14 @@ class OrgService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::DeltaUpdateBankResponse>> PrepareAsyncDeltaUpdateBank(::grpc::ClientContext* context, const ::city::economy::v2::DeltaUpdateBankRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::DeltaUpdateBankResponse>>(PrepareAsyncDeltaUpdateBankRaw(context, request, cq));
     }
-    // Agent 相关操作
+    // @section Agent Operations
+    // @section 经济主体相关操作
+    //
+    // Creates one or more agent entities
+    // Returns the list of created agent IDs
+    //
+    // 创建一个或多个经济主体
+    // 返回创建的经济主体ID列表
     virtual ::grpc::Status AddAgent(::grpc::ClientContext* context, const ::city::economy::v2::AddAgentRequest& request, ::city::economy::v2::AddAgentResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::AddAgentResponse>> AsyncAddAgent(::grpc::ClientContext* context, const ::city::economy::v2::AddAgentRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::AddAgentResponse>>(AsyncAddAgentRaw(context, request, cq));
@@ -254,6 +320,9 @@ class OrgService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::AddAgentResponse>> PrepareAsyncAddAgent(::grpc::ClientContext* context, const ::city::economy::v2::AddAgentRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::AddAgentResponse>>(PrepareAsyncAddAgentRaw(context, request, cq));
     }
+    // Deletes one or more agents by their IDs
+    //
+    // 根据ID删除一个或多个经济主体
     virtual ::grpc::Status RemoveAgent(::grpc::ClientContext* context, const ::city::economy::v2::RemoveAgentRequest& request, ::city::economy::v2::RemoveAgentResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::RemoveAgentResponse>> AsyncRemoveAgent(::grpc::ClientContext* context, const ::city::economy::v2::RemoveAgentRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::RemoveAgentResponse>>(AsyncRemoveAgentRaw(context, request, cq));
@@ -261,6 +330,9 @@ class OrgService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::RemoveAgentResponse>> PrepareAsyncRemoveAgent(::grpc::ClientContext* context, const ::city::economy::v2::RemoveAgentRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::RemoveAgentResponse>>(PrepareAsyncRemoveAgentRaw(context, request, cq));
     }
+    // Retrieves detailed information for one or more agents
+    //
+    // 获取一个或多个经济主体的详细信息
     virtual ::grpc::Status GetAgent(::grpc::ClientContext* context, const ::city::economy::v2::GetAgentRequest& request, ::city::economy::v2::GetAgentResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::GetAgentResponse>> AsyncGetAgent(::grpc::ClientContext* context, const ::city::economy::v2::GetAgentRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::GetAgentResponse>>(AsyncGetAgentRaw(context, request, cq));
@@ -268,6 +340,9 @@ class OrgService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::GetAgentResponse>> PrepareAsyncGetAgent(::grpc::ClientContext* context, const ::city::economy::v2::GetAgentRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::GetAgentResponse>>(PrepareAsyncGetAgentRaw(context, request, cq));
     }
+    // Updates complete information for one or more agents
+    //
+    // 更新一个或多个经济主体的完整信息
     virtual ::grpc::Status UpdateAgent(::grpc::ClientContext* context, const ::city::economy::v2::UpdateAgentRequest& request, ::city::economy::v2::UpdateAgentResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::UpdateAgentResponse>> AsyncUpdateAgent(::grpc::ClientContext* context, const ::city::economy::v2::UpdateAgentRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::UpdateAgentResponse>>(AsyncUpdateAgentRaw(context, request, cq));
@@ -275,6 +350,9 @@ class OrgService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::UpdateAgentResponse>> PrepareAsyncUpdateAgent(::grpc::ClientContext* context, const ::city::economy::v2::UpdateAgentRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::UpdateAgentResponse>>(PrepareAsyncUpdateAgentRaw(context, request, cq));
     }
+    // Lists all agent entities in the system
+    //
+    // 获取系统中所有经济主体的列表
     virtual ::grpc::Status ListAgents(::grpc::ClientContext* context, const ::city::economy::v2::ListAgentsRequest& request, ::city::economy::v2::ListAgentsResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::ListAgentsResponse>> AsyncListAgents(::grpc::ClientContext* context, const ::city::economy::v2::ListAgentsRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::ListAgentsResponse>>(AsyncListAgentsRaw(context, request, cq));
@@ -282,6 +360,11 @@ class OrgService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::ListAgentsResponse>> PrepareAsyncListAgents(::grpc::ClientContext* context, const ::city::economy::v2::ListAgentsRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::ListAgentsResponse>>(PrepareAsyncListAgentsRaw(context, request, cq));
     }
+    // Performs incremental updates on one or more agents
+    // Allows updating specific attributes like currency, skills etc.
+    //
+    // 对一个或多个经济主体进行增量更新
+    // 可以更新货币、技能等具体属性
     virtual ::grpc::Status DeltaUpdateAgent(::grpc::ClientContext* context, const ::city::economy::v2::DeltaUpdateAgentRequest& request, ::city::economy::v2::DeltaUpdateAgentResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::DeltaUpdateAgentResponse>> AsyncDeltaUpdateAgent(::grpc::ClientContext* context, const ::city::economy::v2::DeltaUpdateAgentRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::DeltaUpdateAgentResponse>>(AsyncDeltaUpdateAgentRaw(context, request, cq));
@@ -289,42 +372,14 @@ class OrgService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::DeltaUpdateAgentResponse>> PrepareAsyncDeltaUpdateAgent(::grpc::ClientContext* context, const ::city::economy::v2::DeltaUpdateAgentRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::DeltaUpdateAgentResponse>>(PrepareAsyncDeltaUpdateAgentRaw(context, request, cq));
     }
-    virtual ::grpc::Status BatchAddAgent(::grpc::ClientContext* context, const ::city::economy::v2::BatchAddAgentRequest& request, ::city::economy::v2::BatchAddAgentResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchAddAgentResponse>> AsyncBatchAddAgent(::grpc::ClientContext* context, const ::city::economy::v2::BatchAddAgentRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchAddAgentResponse>>(AsyncBatchAddAgentRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchAddAgentResponse>> PrepareAsyncBatchAddAgent(::grpc::ClientContext* context, const ::city::economy::v2::BatchAddAgentRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchAddAgentResponse>>(PrepareAsyncBatchAddAgentRaw(context, request, cq));
-    }
-    virtual ::grpc::Status BatchRemoveAgent(::grpc::ClientContext* context, const ::city::economy::v2::BatchRemoveAgentRequest& request, ::city::economy::v2::BatchRemoveAgentResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchRemoveAgentResponse>> AsyncBatchRemoveAgent(::grpc::ClientContext* context, const ::city::economy::v2::BatchRemoveAgentRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchRemoveAgentResponse>>(AsyncBatchRemoveAgentRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchRemoveAgentResponse>> PrepareAsyncBatchRemoveAgent(::grpc::ClientContext* context, const ::city::economy::v2::BatchRemoveAgentRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchRemoveAgentResponse>>(PrepareAsyncBatchRemoveAgentRaw(context, request, cq));
-    }
-    virtual ::grpc::Status BatchGetAgent(::grpc::ClientContext* context, const ::city::economy::v2::BatchGetAgentRequest& request, ::city::economy::v2::BatchGetAgentResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchGetAgentResponse>> AsyncBatchGetAgent(::grpc::ClientContext* context, const ::city::economy::v2::BatchGetAgentRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchGetAgentResponse>>(AsyncBatchGetAgentRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchGetAgentResponse>> PrepareAsyncBatchGetAgent(::grpc::ClientContext* context, const ::city::economy::v2::BatchGetAgentRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchGetAgentResponse>>(PrepareAsyncBatchGetAgentRaw(context, request, cq));
-    }
-    virtual ::grpc::Status BatchUpdateAgent(::grpc::ClientContext* context, const ::city::economy::v2::BatchUpdateAgentRequest& request, ::city::economy::v2::BatchUpdateAgentResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchUpdateAgentResponse>> AsyncBatchUpdateAgent(::grpc::ClientContext* context, const ::city::economy::v2::BatchUpdateAgentRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchUpdateAgentResponse>>(AsyncBatchUpdateAgentRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchUpdateAgentResponse>> PrepareAsyncBatchUpdateAgent(::grpc::ClientContext* context, const ::city::economy::v2::BatchUpdateAgentRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchUpdateAgentResponse>>(PrepareAsyncBatchUpdateAgentRaw(context, request, cq));
-    }
-    virtual ::grpc::Status BatchDeltaUpdateAgent(::grpc::ClientContext* context, const ::city::economy::v2::BatchDeltaUpdateAgentRequest& request, ::city::economy::v2::BatchDeltaUpdateAgentResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchDeltaUpdateAgentResponse>> AsyncBatchDeltaUpdateAgent(::grpc::ClientContext* context, const ::city::economy::v2::BatchDeltaUpdateAgentRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchDeltaUpdateAgentResponse>>(AsyncBatchDeltaUpdateAgentRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchDeltaUpdateAgentResponse>> PrepareAsyncBatchDeltaUpdateAgent(::grpc::ClientContext* context, const ::city::economy::v2::BatchDeltaUpdateAgentRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchDeltaUpdateAgentResponse>>(PrepareAsyncBatchDeltaUpdateAgentRaw(context, request, cq));
-    }
-    // 计算相关操作
+    // @section Economic Calculations
+    // @section 经济计算相关操作
+    //
+    // Calculates taxes due for specified agents
+    // Supports income redistribution if enabled
+    //
+    // 计算指定经济主体的应缴税额
+    // 支持开启收入再分配功能
     virtual ::grpc::Status CalculateTaxesDue(::grpc::ClientContext* context, const ::city::economy::v2::CalculateTaxesDueRequest& request, ::city::economy::v2::CalculateTaxesDueResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::CalculateTaxesDueResponse>> AsyncCalculateTaxesDue(::grpc::ClientContext* context, const ::city::economy::v2::CalculateTaxesDueRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::CalculateTaxesDueResponse>>(AsyncCalculateTaxesDueRaw(context, request, cq));
@@ -332,6 +387,9 @@ class OrgService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::CalculateTaxesDueResponse>> PrepareAsyncCalculateTaxesDue(::grpc::ClientContext* context, const ::city::economy::v2::CalculateTaxesDueRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::CalculateTaxesDueResponse>>(PrepareAsyncCalculateTaxesDueRaw(context, request, cq));
     }
+    // Calculates actual consumption based on supply and demand
+    //
+    // 基于供给和需求计算实际消费量
     virtual ::grpc::Status CalculateConsumption(::grpc::ClientContext* context, const ::city::economy::v2::CalculateConsumptionRequest& request, ::city::economy::v2::CalculateConsumptionResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::CalculateConsumptionResponse>> AsyncCalculateConsumption(::grpc::ClientContext* context, const ::city::economy::v2::CalculateConsumptionRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::CalculateConsumptionResponse>>(AsyncCalculateConsumptionRaw(context, request, cq));
@@ -339,6 +397,9 @@ class OrgService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::CalculateConsumptionResponse>> PrepareAsyncCalculateConsumption(::grpc::ClientContext* context, const ::city::economy::v2::CalculateConsumptionRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::CalculateConsumptionResponse>>(PrepareAsyncCalculateConsumptionRaw(context, request, cq));
     }
+    // Calculates interest for specified agents
+    //
+    // 计算指定经济主体的利息
     virtual ::grpc::Status CalculateInterest(::grpc::ClientContext* context, const ::city::economy::v2::CalculateInterestRequest& request, ::city::economy::v2::CalculateInterestResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::CalculateInterestResponse>> AsyncCalculateInterest(::grpc::ClientContext* context, const ::city::economy::v2::CalculateInterestRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::CalculateInterestResponse>>(AsyncCalculateInterestRaw(context, request, cq));
@@ -346,6 +407,9 @@ class OrgService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::CalculateInterestResponse>> PrepareAsyncCalculateInterest(::grpc::ClientContext* context, const ::city::economy::v2::CalculateInterestRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::CalculateInterestResponse>>(PrepareAsyncCalculateInterestRaw(context, request, cq));
     }
+    // Calculates real GDP adjusted for inflation
+    //
+    // 计算经通货膨胀调整后的实际GDP
     virtual ::grpc::Status CalculateRealGDP(::grpc::ClientContext* context, const ::city::economy::v2::CalculateRealGDPRequest& request, ::city::economy::v2::CalculateRealGDPResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::CalculateRealGDPResponse>> AsyncCalculateRealGDP(::grpc::ClientContext* context, const ::city::economy::v2::CalculateRealGDPRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::CalculateRealGDPResponse>>(AsyncCalculateRealGDPRaw(context, request, cq));
@@ -353,7 +417,12 @@ class OrgService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::CalculateRealGDPResponse>> PrepareAsyncCalculateRealGDP(::grpc::ClientContext* context, const ::city::economy::v2::CalculateRealGDPRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::CalculateRealGDPResponse>>(PrepareAsyncCalculateRealGDPRaw(context, request, cq));
     }
-    // 系统状态操作
+    // @section System State Operations
+    // @section 系统状态相关操作
+    //
+    // Saves the current state of all economic entities to a file
+    //
+    // 将当前所有经济实体的状态保存到文件
     virtual ::grpc::Status SaveEconomyEntities(::grpc::ClientContext* context, const ::city::economy::v2::SaveEconomyEntitiesRequest& request, ::city::economy::v2::SaveEconomyEntitiesResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::SaveEconomyEntitiesResponse>> AsyncSaveEconomyEntities(::grpc::ClientContext* context, const ::city::economy::v2::SaveEconomyEntitiesRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::SaveEconomyEntitiesResponse>>(AsyncSaveEconomyEntitiesRaw(context, request, cq));
@@ -361,6 +430,9 @@ class OrgService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::SaveEconomyEntitiesResponse>> PrepareAsyncSaveEconomyEntities(::grpc::ClientContext* context, const ::city::economy::v2::SaveEconomyEntitiesRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::SaveEconomyEntitiesResponse>>(PrepareAsyncSaveEconomyEntitiesRaw(context, request, cq));
     }
+    // Loads economic entities state from a file
+    //
+    // 从文件中加载经济实体的状态
     virtual ::grpc::Status LoadEconomyEntities(::grpc::ClientContext* context, const ::city::economy::v2::LoadEconomyEntitiesRequest& request, ::city::economy::v2::LoadEconomyEntitiesResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::LoadEconomyEntitiesResponse>> AsyncLoadEconomyEntities(::grpc::ClientContext* context, const ::city::economy::v2::LoadEconomyEntitiesRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::LoadEconomyEntitiesResponse>>(AsyncLoadEconomyEntitiesRaw(context, request, cq));
@@ -371,103 +443,222 @@ class OrgService final {
     class async_interface {
      public:
       virtual ~async_interface() {}
-      // Firm 相关操作
+      // Creates one or more firm entities
+      // Returns the list of created firm IDs
+      //
+      // 创建一个或多个企业实体
+      // 返回创建的企业ID列表
       virtual void AddFirm(::grpc::ClientContext* context, const ::city::economy::v2::AddFirmRequest* request, ::city::economy::v2::AddFirmResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void AddFirm(::grpc::ClientContext* context, const ::city::economy::v2::AddFirmRequest* request, ::city::economy::v2::AddFirmResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Deletes one or more firms by their IDs
+      // Also cleans up related employee associations
+      //
+      // 根据ID删除一个或多个企业实体
+      // 同时清理相关的员工关联关系
       virtual void RemoveFirm(::grpc::ClientContext* context, const ::city::economy::v2::RemoveFirmRequest* request, ::city::economy::v2::RemoveFirmResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void RemoveFirm(::grpc::ClientContext* context, const ::city::economy::v2::RemoveFirmRequest* request, ::city::economy::v2::RemoveFirmResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Retrieves detailed information for one or more firms
+      // Returns a list of firm entities
+      //
+      // 获取一个或多个企业的详细信息
+      // 返回企业实体信息列表
       virtual void GetFirm(::grpc::ClientContext* context, const ::city::economy::v2::GetFirmRequest* request, ::city::economy::v2::GetFirmResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetFirm(::grpc::ClientContext* context, const ::city::economy::v2::GetFirmRequest* request, ::city::economy::v2::GetFirmResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Updates complete information for one or more firms
+      //
+      // 更新一个或多个企业的完整信息
       virtual void UpdateFirm(::grpc::ClientContext* context, const ::city::economy::v2::UpdateFirmRequest* request, ::city::economy::v2::UpdateFirmResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void UpdateFirm(::grpc::ClientContext* context, const ::city::economy::v2::UpdateFirmRequest* request, ::city::economy::v2::UpdateFirmResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Lists all firms in the system
+      //
+      // 获取系统中所有企业的列表
       virtual void ListFirms(::grpc::ClientContext* context, const ::city::economy::v2::ListFirmsRequest* request, ::city::economy::v2::ListFirmsResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void ListFirms(::grpc::ClientContext* context, const ::city::economy::v2::ListFirmsRequest* request, ::city::economy::v2::ListFirmsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Performs incremental updates on one or more firms
+      // Allows updating specific fields like price, inventory, demand etc.
+      //
+      // 对一个或多个企业进行增量更新
+      // 可以更新价格、库存、需求等具体字段
       virtual void DeltaUpdateFirm(::grpc::ClientContext* context, const ::city::economy::v2::DeltaUpdateFirmRequest* request, ::city::economy::v2::DeltaUpdateFirmResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void DeltaUpdateFirm(::grpc::ClientContext* context, const ::city::economy::v2::DeltaUpdateFirmRequest* request, ::city::economy::v2::DeltaUpdateFirmResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      virtual void BatchAddFirm(::grpc::ClientContext* context, const ::city::economy::v2::BatchAddFirmRequest* request, ::city::economy::v2::BatchAddFirmResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void BatchAddFirm(::grpc::ClientContext* context, const ::city::economy::v2::BatchAddFirmRequest* request, ::city::economy::v2::BatchAddFirmResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      virtual void BatchRemoveFirm(::grpc::ClientContext* context, const ::city::economy::v2::BatchRemoveFirmRequest* request, ::city::economy::v2::BatchRemoveFirmResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void BatchRemoveFirm(::grpc::ClientContext* context, const ::city::economy::v2::BatchRemoveFirmRequest* request, ::city::economy::v2::BatchRemoveFirmResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      virtual void BatchGetFirm(::grpc::ClientContext* context, const ::city::economy::v2::BatchGetFirmRequest* request, ::city::economy::v2::BatchGetFirmResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void BatchGetFirm(::grpc::ClientContext* context, const ::city::economy::v2::BatchGetFirmRequest* request, ::city::economy::v2::BatchGetFirmResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      virtual void BatchUpdateFirm(::grpc::ClientContext* context, const ::city::economy::v2::BatchUpdateFirmRequest* request, ::city::economy::v2::BatchUpdateFirmResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void BatchUpdateFirm(::grpc::ClientContext* context, const ::city::economy::v2::BatchUpdateFirmRequest* request, ::city::economy::v2::BatchUpdateFirmResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      virtual void BatchDeltaUpdateFirm(::grpc::ClientContext* context, const ::city::economy::v2::BatchDeltaUpdateFirmRequest* request, ::city::economy::v2::BatchDeltaUpdateFirmResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void BatchDeltaUpdateFirm(::grpc::ClientContext* context, const ::city::economy::v2::BatchDeltaUpdateFirmRequest* request, ::city::economy::v2::BatchDeltaUpdateFirmResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      // NBS 相关操作
+      // @section NBS Operations
+      // @section 国家统计局相关操作
+      //
+      // Creates a new NBS entity
+      //
+      // 创建新的国家统计局实体
       virtual void AddNBS(::grpc::ClientContext* context, const ::city::economy::v2::AddNBSRequest* request, ::city::economy::v2::AddNBSResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void AddNBS(::grpc::ClientContext* context, const ::city::economy::v2::AddNBSRequest* request, ::city::economy::v2::AddNBSResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Deletes an NBS entity by ID
+      //
+      // 根据ID删除国家统计局实体
       virtual void RemoveNBS(::grpc::ClientContext* context, const ::city::economy::v2::RemoveNBSRequest* request, ::city::economy::v2::RemoveNBSResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void RemoveNBS(::grpc::ClientContext* context, const ::city::economy::v2::RemoveNBSRequest* request, ::city::economy::v2::RemoveNBSResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Retrieves detailed information for an NBS entity
+      //
+      // 获取国家统计局的详细信息
       virtual void GetNBS(::grpc::ClientContext* context, const ::city::economy::v2::GetNBSRequest* request, ::city::economy::v2::GetNBSResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetNBS(::grpc::ClientContext* context, const ::city::economy::v2::GetNBSRequest* request, ::city::economy::v2::GetNBSResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Updates complete information for an NBS entity
+      //
+      // 更新国家统计局的完整信息
       virtual void UpdateNBS(::grpc::ClientContext* context, const ::city::economy::v2::UpdateNBSRequest* request, ::city::economy::v2::UpdateNBSResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void UpdateNBS(::grpc::ClientContext* context, const ::city::economy::v2::UpdateNBSRequest* request, ::city::economy::v2::UpdateNBSResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Lists all NBS entities in the system
+      //
+      // 获取系统中所有国家统计局的列表
       virtual void ListNBS(::grpc::ClientContext* context, const ::city::economy::v2::ListNBSRequest* request, ::city::economy::v2::ListNBSResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void ListNBS(::grpc::ClientContext* context, const ::city::economy::v2::ListNBSRequest* request, ::city::economy::v2::ListNBSResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Performs incremental updates on an NBS entity
+      // Allows updating specific statistics and citizen relationships
+      //
+      // 对国家统计局进行增量更新
+      // 可以更新具体统计数据和公民关系
       virtual void DeltaUpdateNBS(::grpc::ClientContext* context, const ::city::economy::v2::DeltaUpdateNBSRequest* request, ::city::economy::v2::DeltaUpdateNBSResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void DeltaUpdateNBS(::grpc::ClientContext* context, const ::city::economy::v2::DeltaUpdateNBSRequest* request, ::city::economy::v2::DeltaUpdateNBSResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      // Government 相关操作
+      // @section Government Operations
+      // @section 政府相关操作
+      //
+      // Creates a new government entity
+      //
+      // 创建新的政府实体
       virtual void AddGovernment(::grpc::ClientContext* context, const ::city::economy::v2::AddGovernmentRequest* request, ::city::economy::v2::AddGovernmentResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void AddGovernment(::grpc::ClientContext* context, const ::city::economy::v2::AddGovernmentRequest* request, ::city::economy::v2::AddGovernmentResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Deletes a government entity by ID
+      //
+      // 根据ID删除政府实体
       virtual void RemoveGovernment(::grpc::ClientContext* context, const ::city::economy::v2::RemoveGovernmentRequest* request, ::city::economy::v2::RemoveGovernmentResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void RemoveGovernment(::grpc::ClientContext* context, const ::city::economy::v2::RemoveGovernmentRequest* request, ::city::economy::v2::RemoveGovernmentResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Retrieves detailed information for a government entity
+      //
+      // 获取政府实体的详细信息
       virtual void GetGovernment(::grpc::ClientContext* context, const ::city::economy::v2::GetGovernmentRequest* request, ::city::economy::v2::GetGovernmentResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetGovernment(::grpc::ClientContext* context, const ::city::economy::v2::GetGovernmentRequest* request, ::city::economy::v2::GetGovernmentResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Updates complete information for a government entity
+      //
+      // 更新政府实体的完整信息
       virtual void UpdateGovernment(::grpc::ClientContext* context, const ::city::economy::v2::UpdateGovernmentRequest* request, ::city::economy::v2::UpdateGovernmentResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void UpdateGovernment(::grpc::ClientContext* context, const ::city::economy::v2::UpdateGovernmentRequest* request, ::city::economy::v2::UpdateGovernmentResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Lists all government entities in the system
+      //
+      // 获取系统中所有政府实体的列表
       virtual void ListGovernments(::grpc::ClientContext* context, const ::city::economy::v2::ListGovernmentsRequest* request, ::city::economy::v2::ListGovernmentsResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void ListGovernments(::grpc::ClientContext* context, const ::city::economy::v2::ListGovernmentsRequest* request, ::city::economy::v2::ListGovernmentsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Performs incremental updates on a government entity
+      // Allows updating tax brackets and citizen relationships
+      //
+      // 对政府实体进行增量更新
+      // 可以更新税收档位和公民关系
       virtual void DeltaUpdateGovernment(::grpc::ClientContext* context, const ::city::economy::v2::DeltaUpdateGovernmentRequest* request, ::city::economy::v2::DeltaUpdateGovernmentResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void DeltaUpdateGovernment(::grpc::ClientContext* context, const ::city::economy::v2::DeltaUpdateGovernmentRequest* request, ::city::economy::v2::DeltaUpdateGovernmentResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      // Bank 相关操作
+      // @section Bank Operations
+      // @section 银行相关操作
+      //
+      // Creates a new bank entity
+      //
+      // 创建新的银行实体
       virtual void AddBank(::grpc::ClientContext* context, const ::city::economy::v2::AddBankRequest* request, ::city::economy::v2::AddBankResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void AddBank(::grpc::ClientContext* context, const ::city::economy::v2::AddBankRequest* request, ::city::economy::v2::AddBankResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Deletes a bank entity by ID
+      //
+      // 根据ID删除银行实体
       virtual void RemoveBank(::grpc::ClientContext* context, const ::city::economy::v2::RemoveBankRequest* request, ::city::economy::v2::RemoveBankResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void RemoveBank(::grpc::ClientContext* context, const ::city::economy::v2::RemoveBankRequest* request, ::city::economy::v2::RemoveBankResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Retrieves detailed information for a bank entity
+      //
+      // 获取银行实体的详细信息
       virtual void GetBank(::grpc::ClientContext* context, const ::city::economy::v2::GetBankRequest* request, ::city::economy::v2::GetBankResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetBank(::grpc::ClientContext* context, const ::city::economy::v2::GetBankRequest* request, ::city::economy::v2::GetBankResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Updates complete information for a bank entity
+      //
+      // 更新银行实体的完整信息
       virtual void UpdateBank(::grpc::ClientContext* context, const ::city::economy::v2::UpdateBankRequest* request, ::city::economy::v2::UpdateBankResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void UpdateBank(::grpc::ClientContext* context, const ::city::economy::v2::UpdateBankRequest* request, ::city::economy::v2::UpdateBankResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Lists all bank entities in the system
+      //
+      // 获取系统中所有银行实体的列表
       virtual void ListBanks(::grpc::ClientContext* context, const ::city::economy::v2::ListBanksRequest* request, ::city::economy::v2::ListBanksResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void ListBanks(::grpc::ClientContext* context, const ::city::economy::v2::ListBanksRequest* request, ::city::economy::v2::ListBanksResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Performs incremental updates on a bank entity
+      // Allows updating interest rates and customer relationships
+      //
+      // 对银行实体进行增量更新
+      // 可以更新利率和客户关系
       virtual void DeltaUpdateBank(::grpc::ClientContext* context, const ::city::economy::v2::DeltaUpdateBankRequest* request, ::city::economy::v2::DeltaUpdateBankResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void DeltaUpdateBank(::grpc::ClientContext* context, const ::city::economy::v2::DeltaUpdateBankRequest* request, ::city::economy::v2::DeltaUpdateBankResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      // Agent 相关操作
+      // @section Agent Operations
+      // @section 经济主体相关操作
+      //
+      // Creates one or more agent entities
+      // Returns the list of created agent IDs
+      //
+      // 创建一个或多个经济主体
+      // 返回创建的经济主体ID列表
       virtual void AddAgent(::grpc::ClientContext* context, const ::city::economy::v2::AddAgentRequest* request, ::city::economy::v2::AddAgentResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void AddAgent(::grpc::ClientContext* context, const ::city::economy::v2::AddAgentRequest* request, ::city::economy::v2::AddAgentResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Deletes one or more agents by their IDs
+      //
+      // 根据ID删除一个或多个经济主体
       virtual void RemoveAgent(::grpc::ClientContext* context, const ::city::economy::v2::RemoveAgentRequest* request, ::city::economy::v2::RemoveAgentResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void RemoveAgent(::grpc::ClientContext* context, const ::city::economy::v2::RemoveAgentRequest* request, ::city::economy::v2::RemoveAgentResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Retrieves detailed information for one or more agents
+      //
+      // 获取一个或多个经济主体的详细信息
       virtual void GetAgent(::grpc::ClientContext* context, const ::city::economy::v2::GetAgentRequest* request, ::city::economy::v2::GetAgentResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetAgent(::grpc::ClientContext* context, const ::city::economy::v2::GetAgentRequest* request, ::city::economy::v2::GetAgentResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Updates complete information for one or more agents
+      //
+      // 更新一个或多个经济主体的完整信息
       virtual void UpdateAgent(::grpc::ClientContext* context, const ::city::economy::v2::UpdateAgentRequest* request, ::city::economy::v2::UpdateAgentResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void UpdateAgent(::grpc::ClientContext* context, const ::city::economy::v2::UpdateAgentRequest* request, ::city::economy::v2::UpdateAgentResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Lists all agent entities in the system
+      //
+      // 获取系统中所有经济主体的列表
       virtual void ListAgents(::grpc::ClientContext* context, const ::city::economy::v2::ListAgentsRequest* request, ::city::economy::v2::ListAgentsResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void ListAgents(::grpc::ClientContext* context, const ::city::economy::v2::ListAgentsRequest* request, ::city::economy::v2::ListAgentsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Performs incremental updates on one or more agents
+      // Allows updating specific attributes like currency, skills etc.
+      //
+      // 对一个或多个经济主体进行增量更新
+      // 可以更新货币、技能等具体属性
       virtual void DeltaUpdateAgent(::grpc::ClientContext* context, const ::city::economy::v2::DeltaUpdateAgentRequest* request, ::city::economy::v2::DeltaUpdateAgentResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void DeltaUpdateAgent(::grpc::ClientContext* context, const ::city::economy::v2::DeltaUpdateAgentRequest* request, ::city::economy::v2::DeltaUpdateAgentResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      virtual void BatchAddAgent(::grpc::ClientContext* context, const ::city::economy::v2::BatchAddAgentRequest* request, ::city::economy::v2::BatchAddAgentResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void BatchAddAgent(::grpc::ClientContext* context, const ::city::economy::v2::BatchAddAgentRequest* request, ::city::economy::v2::BatchAddAgentResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      virtual void BatchRemoveAgent(::grpc::ClientContext* context, const ::city::economy::v2::BatchRemoveAgentRequest* request, ::city::economy::v2::BatchRemoveAgentResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void BatchRemoveAgent(::grpc::ClientContext* context, const ::city::economy::v2::BatchRemoveAgentRequest* request, ::city::economy::v2::BatchRemoveAgentResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      virtual void BatchGetAgent(::grpc::ClientContext* context, const ::city::economy::v2::BatchGetAgentRequest* request, ::city::economy::v2::BatchGetAgentResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void BatchGetAgent(::grpc::ClientContext* context, const ::city::economy::v2::BatchGetAgentRequest* request, ::city::economy::v2::BatchGetAgentResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      virtual void BatchUpdateAgent(::grpc::ClientContext* context, const ::city::economy::v2::BatchUpdateAgentRequest* request, ::city::economy::v2::BatchUpdateAgentResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void BatchUpdateAgent(::grpc::ClientContext* context, const ::city::economy::v2::BatchUpdateAgentRequest* request, ::city::economy::v2::BatchUpdateAgentResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      virtual void BatchDeltaUpdateAgent(::grpc::ClientContext* context, const ::city::economy::v2::BatchDeltaUpdateAgentRequest* request, ::city::economy::v2::BatchDeltaUpdateAgentResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void BatchDeltaUpdateAgent(::grpc::ClientContext* context, const ::city::economy::v2::BatchDeltaUpdateAgentRequest* request, ::city::economy::v2::BatchDeltaUpdateAgentResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      // 计算相关操作
+      // @section Economic Calculations
+      // @section 经济计算相关操作
+      //
+      // Calculates taxes due for specified agents
+      // Supports income redistribution if enabled
+      //
+      // 计算指定经济主体的应缴税额
+      // 支持开启收入再分配功能
       virtual void CalculateTaxesDue(::grpc::ClientContext* context, const ::city::economy::v2::CalculateTaxesDueRequest* request, ::city::economy::v2::CalculateTaxesDueResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void CalculateTaxesDue(::grpc::ClientContext* context, const ::city::economy::v2::CalculateTaxesDueRequest* request, ::city::economy::v2::CalculateTaxesDueResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Calculates actual consumption based on supply and demand
+      //
+      // 基于供给和需求计算实际消费量
       virtual void CalculateConsumption(::grpc::ClientContext* context, const ::city::economy::v2::CalculateConsumptionRequest* request, ::city::economy::v2::CalculateConsumptionResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void CalculateConsumption(::grpc::ClientContext* context, const ::city::economy::v2::CalculateConsumptionRequest* request, ::city::economy::v2::CalculateConsumptionResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Calculates interest for specified agents
+      //
+      // 计算指定经济主体的利息
       virtual void CalculateInterest(::grpc::ClientContext* context, const ::city::economy::v2::CalculateInterestRequest* request, ::city::economy::v2::CalculateInterestResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void CalculateInterest(::grpc::ClientContext* context, const ::city::economy::v2::CalculateInterestRequest* request, ::city::economy::v2::CalculateInterestResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Calculates real GDP adjusted for inflation
+      //
+      // 计算经通货膨胀调整后的实际GDP
       virtual void CalculateRealGDP(::grpc::ClientContext* context, const ::city::economy::v2::CalculateRealGDPRequest* request, ::city::economy::v2::CalculateRealGDPResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void CalculateRealGDP(::grpc::ClientContext* context, const ::city::economy::v2::CalculateRealGDPRequest* request, ::city::economy::v2::CalculateRealGDPResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      // 系统状态操作
+      // @section System State Operations
+      // @section 系统状态相关操作
+      //
+      // Saves the current state of all economic entities to a file
+      //
+      // 将当前所有经济实体的状态保存到文件
       virtual void SaveEconomyEntities(::grpc::ClientContext* context, const ::city::economy::v2::SaveEconomyEntitiesRequest* request, ::city::economy::v2::SaveEconomyEntitiesResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void SaveEconomyEntities(::grpc::ClientContext* context, const ::city::economy::v2::SaveEconomyEntitiesRequest* request, ::city::economy::v2::SaveEconomyEntitiesResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // Loads economic entities state from a file
+      //
+      // 从文件中加载经济实体的状态
       virtual void LoadEconomyEntities(::grpc::ClientContext* context, const ::city::economy::v2::LoadEconomyEntitiesRequest* request, ::city::economy::v2::LoadEconomyEntitiesResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void LoadEconomyEntities(::grpc::ClientContext* context, const ::city::economy::v2::LoadEconomyEntitiesRequest* request, ::city::economy::v2::LoadEconomyEntitiesResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
     };
@@ -487,16 +678,6 @@ class OrgService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::ListFirmsResponse>* PrepareAsyncListFirmsRaw(::grpc::ClientContext* context, const ::city::economy::v2::ListFirmsRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::DeltaUpdateFirmResponse>* AsyncDeltaUpdateFirmRaw(::grpc::ClientContext* context, const ::city::economy::v2::DeltaUpdateFirmRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::DeltaUpdateFirmResponse>* PrepareAsyncDeltaUpdateFirmRaw(::grpc::ClientContext* context, const ::city::economy::v2::DeltaUpdateFirmRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchAddFirmResponse>* AsyncBatchAddFirmRaw(::grpc::ClientContext* context, const ::city::economy::v2::BatchAddFirmRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchAddFirmResponse>* PrepareAsyncBatchAddFirmRaw(::grpc::ClientContext* context, const ::city::economy::v2::BatchAddFirmRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchRemoveFirmResponse>* AsyncBatchRemoveFirmRaw(::grpc::ClientContext* context, const ::city::economy::v2::BatchRemoveFirmRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchRemoveFirmResponse>* PrepareAsyncBatchRemoveFirmRaw(::grpc::ClientContext* context, const ::city::economy::v2::BatchRemoveFirmRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchGetFirmResponse>* AsyncBatchGetFirmRaw(::grpc::ClientContext* context, const ::city::economy::v2::BatchGetFirmRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchGetFirmResponse>* PrepareAsyncBatchGetFirmRaw(::grpc::ClientContext* context, const ::city::economy::v2::BatchGetFirmRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchUpdateFirmResponse>* AsyncBatchUpdateFirmRaw(::grpc::ClientContext* context, const ::city::economy::v2::BatchUpdateFirmRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchUpdateFirmResponse>* PrepareAsyncBatchUpdateFirmRaw(::grpc::ClientContext* context, const ::city::economy::v2::BatchUpdateFirmRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchDeltaUpdateFirmResponse>* AsyncBatchDeltaUpdateFirmRaw(::grpc::ClientContext* context, const ::city::economy::v2::BatchDeltaUpdateFirmRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchDeltaUpdateFirmResponse>* PrepareAsyncBatchDeltaUpdateFirmRaw(::grpc::ClientContext* context, const ::city::economy::v2::BatchDeltaUpdateFirmRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::AddNBSResponse>* AsyncAddNBSRaw(::grpc::ClientContext* context, const ::city::economy::v2::AddNBSRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::AddNBSResponse>* PrepareAsyncAddNBSRaw(::grpc::ClientContext* context, const ::city::economy::v2::AddNBSRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::RemoveNBSResponse>* AsyncRemoveNBSRaw(::grpc::ClientContext* context, const ::city::economy::v2::RemoveNBSRequest& request, ::grpc::CompletionQueue* cq) = 0;
@@ -545,16 +726,6 @@ class OrgService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::ListAgentsResponse>* PrepareAsyncListAgentsRaw(::grpc::ClientContext* context, const ::city::economy::v2::ListAgentsRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::DeltaUpdateAgentResponse>* AsyncDeltaUpdateAgentRaw(::grpc::ClientContext* context, const ::city::economy::v2::DeltaUpdateAgentRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::DeltaUpdateAgentResponse>* PrepareAsyncDeltaUpdateAgentRaw(::grpc::ClientContext* context, const ::city::economy::v2::DeltaUpdateAgentRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchAddAgentResponse>* AsyncBatchAddAgentRaw(::grpc::ClientContext* context, const ::city::economy::v2::BatchAddAgentRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchAddAgentResponse>* PrepareAsyncBatchAddAgentRaw(::grpc::ClientContext* context, const ::city::economy::v2::BatchAddAgentRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchRemoveAgentResponse>* AsyncBatchRemoveAgentRaw(::grpc::ClientContext* context, const ::city::economy::v2::BatchRemoveAgentRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchRemoveAgentResponse>* PrepareAsyncBatchRemoveAgentRaw(::grpc::ClientContext* context, const ::city::economy::v2::BatchRemoveAgentRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchGetAgentResponse>* AsyncBatchGetAgentRaw(::grpc::ClientContext* context, const ::city::economy::v2::BatchGetAgentRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchGetAgentResponse>* PrepareAsyncBatchGetAgentRaw(::grpc::ClientContext* context, const ::city::economy::v2::BatchGetAgentRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchUpdateAgentResponse>* AsyncBatchUpdateAgentRaw(::grpc::ClientContext* context, const ::city::economy::v2::BatchUpdateAgentRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchUpdateAgentResponse>* PrepareAsyncBatchUpdateAgentRaw(::grpc::ClientContext* context, const ::city::economy::v2::BatchUpdateAgentRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchDeltaUpdateAgentResponse>* AsyncBatchDeltaUpdateAgentRaw(::grpc::ClientContext* context, const ::city::economy::v2::BatchDeltaUpdateAgentRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::BatchDeltaUpdateAgentResponse>* PrepareAsyncBatchDeltaUpdateAgentRaw(::grpc::ClientContext* context, const ::city::economy::v2::BatchDeltaUpdateAgentRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::CalculateTaxesDueResponse>* AsyncCalculateTaxesDueRaw(::grpc::ClientContext* context, const ::city::economy::v2::CalculateTaxesDueRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::CalculateTaxesDueResponse>* PrepareAsyncCalculateTaxesDueRaw(::grpc::ClientContext* context, const ::city::economy::v2::CalculateTaxesDueRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::economy::v2::CalculateConsumptionResponse>* AsyncCalculateConsumptionRaw(::grpc::ClientContext* context, const ::city::economy::v2::CalculateConsumptionRequest& request, ::grpc::CompletionQueue* cq) = 0;
@@ -612,41 +783,6 @@ class OrgService final {
     }
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::DeltaUpdateFirmResponse>> PrepareAsyncDeltaUpdateFirm(::grpc::ClientContext* context, const ::city::economy::v2::DeltaUpdateFirmRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::DeltaUpdateFirmResponse>>(PrepareAsyncDeltaUpdateFirmRaw(context, request, cq));
-    }
-    ::grpc::Status BatchAddFirm(::grpc::ClientContext* context, const ::city::economy::v2::BatchAddFirmRequest& request, ::city::economy::v2::BatchAddFirmResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchAddFirmResponse>> AsyncBatchAddFirm(::grpc::ClientContext* context, const ::city::economy::v2::BatchAddFirmRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchAddFirmResponse>>(AsyncBatchAddFirmRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchAddFirmResponse>> PrepareAsyncBatchAddFirm(::grpc::ClientContext* context, const ::city::economy::v2::BatchAddFirmRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchAddFirmResponse>>(PrepareAsyncBatchAddFirmRaw(context, request, cq));
-    }
-    ::grpc::Status BatchRemoveFirm(::grpc::ClientContext* context, const ::city::economy::v2::BatchRemoveFirmRequest& request, ::city::economy::v2::BatchRemoveFirmResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchRemoveFirmResponse>> AsyncBatchRemoveFirm(::grpc::ClientContext* context, const ::city::economy::v2::BatchRemoveFirmRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchRemoveFirmResponse>>(AsyncBatchRemoveFirmRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchRemoveFirmResponse>> PrepareAsyncBatchRemoveFirm(::grpc::ClientContext* context, const ::city::economy::v2::BatchRemoveFirmRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchRemoveFirmResponse>>(PrepareAsyncBatchRemoveFirmRaw(context, request, cq));
-    }
-    ::grpc::Status BatchGetFirm(::grpc::ClientContext* context, const ::city::economy::v2::BatchGetFirmRequest& request, ::city::economy::v2::BatchGetFirmResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchGetFirmResponse>> AsyncBatchGetFirm(::grpc::ClientContext* context, const ::city::economy::v2::BatchGetFirmRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchGetFirmResponse>>(AsyncBatchGetFirmRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchGetFirmResponse>> PrepareAsyncBatchGetFirm(::grpc::ClientContext* context, const ::city::economy::v2::BatchGetFirmRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchGetFirmResponse>>(PrepareAsyncBatchGetFirmRaw(context, request, cq));
-    }
-    ::grpc::Status BatchUpdateFirm(::grpc::ClientContext* context, const ::city::economy::v2::BatchUpdateFirmRequest& request, ::city::economy::v2::BatchUpdateFirmResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchUpdateFirmResponse>> AsyncBatchUpdateFirm(::grpc::ClientContext* context, const ::city::economy::v2::BatchUpdateFirmRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchUpdateFirmResponse>>(AsyncBatchUpdateFirmRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchUpdateFirmResponse>> PrepareAsyncBatchUpdateFirm(::grpc::ClientContext* context, const ::city::economy::v2::BatchUpdateFirmRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchUpdateFirmResponse>>(PrepareAsyncBatchUpdateFirmRaw(context, request, cq));
-    }
-    ::grpc::Status BatchDeltaUpdateFirm(::grpc::ClientContext* context, const ::city::economy::v2::BatchDeltaUpdateFirmRequest& request, ::city::economy::v2::BatchDeltaUpdateFirmResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchDeltaUpdateFirmResponse>> AsyncBatchDeltaUpdateFirm(::grpc::ClientContext* context, const ::city::economy::v2::BatchDeltaUpdateFirmRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchDeltaUpdateFirmResponse>>(AsyncBatchDeltaUpdateFirmRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchDeltaUpdateFirmResponse>> PrepareAsyncBatchDeltaUpdateFirm(::grpc::ClientContext* context, const ::city::economy::v2::BatchDeltaUpdateFirmRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchDeltaUpdateFirmResponse>>(PrepareAsyncBatchDeltaUpdateFirmRaw(context, request, cq));
     }
     ::grpc::Status AddNBS(::grpc::ClientContext* context, const ::city::economy::v2::AddNBSRequest& request, ::city::economy::v2::AddNBSResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::AddNBSResponse>> AsyncAddNBS(::grpc::ClientContext* context, const ::city::economy::v2::AddNBSRequest& request, ::grpc::CompletionQueue* cq) {
@@ -816,41 +952,6 @@ class OrgService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::DeltaUpdateAgentResponse>> PrepareAsyncDeltaUpdateAgent(::grpc::ClientContext* context, const ::city::economy::v2::DeltaUpdateAgentRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::DeltaUpdateAgentResponse>>(PrepareAsyncDeltaUpdateAgentRaw(context, request, cq));
     }
-    ::grpc::Status BatchAddAgent(::grpc::ClientContext* context, const ::city::economy::v2::BatchAddAgentRequest& request, ::city::economy::v2::BatchAddAgentResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchAddAgentResponse>> AsyncBatchAddAgent(::grpc::ClientContext* context, const ::city::economy::v2::BatchAddAgentRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchAddAgentResponse>>(AsyncBatchAddAgentRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchAddAgentResponse>> PrepareAsyncBatchAddAgent(::grpc::ClientContext* context, const ::city::economy::v2::BatchAddAgentRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchAddAgentResponse>>(PrepareAsyncBatchAddAgentRaw(context, request, cq));
-    }
-    ::grpc::Status BatchRemoveAgent(::grpc::ClientContext* context, const ::city::economy::v2::BatchRemoveAgentRequest& request, ::city::economy::v2::BatchRemoveAgentResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchRemoveAgentResponse>> AsyncBatchRemoveAgent(::grpc::ClientContext* context, const ::city::economy::v2::BatchRemoveAgentRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchRemoveAgentResponse>>(AsyncBatchRemoveAgentRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchRemoveAgentResponse>> PrepareAsyncBatchRemoveAgent(::grpc::ClientContext* context, const ::city::economy::v2::BatchRemoveAgentRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchRemoveAgentResponse>>(PrepareAsyncBatchRemoveAgentRaw(context, request, cq));
-    }
-    ::grpc::Status BatchGetAgent(::grpc::ClientContext* context, const ::city::economy::v2::BatchGetAgentRequest& request, ::city::economy::v2::BatchGetAgentResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchGetAgentResponse>> AsyncBatchGetAgent(::grpc::ClientContext* context, const ::city::economy::v2::BatchGetAgentRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchGetAgentResponse>>(AsyncBatchGetAgentRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchGetAgentResponse>> PrepareAsyncBatchGetAgent(::grpc::ClientContext* context, const ::city::economy::v2::BatchGetAgentRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchGetAgentResponse>>(PrepareAsyncBatchGetAgentRaw(context, request, cq));
-    }
-    ::grpc::Status BatchUpdateAgent(::grpc::ClientContext* context, const ::city::economy::v2::BatchUpdateAgentRequest& request, ::city::economy::v2::BatchUpdateAgentResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchUpdateAgentResponse>> AsyncBatchUpdateAgent(::grpc::ClientContext* context, const ::city::economy::v2::BatchUpdateAgentRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchUpdateAgentResponse>>(AsyncBatchUpdateAgentRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchUpdateAgentResponse>> PrepareAsyncBatchUpdateAgent(::grpc::ClientContext* context, const ::city::economy::v2::BatchUpdateAgentRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchUpdateAgentResponse>>(PrepareAsyncBatchUpdateAgentRaw(context, request, cq));
-    }
-    ::grpc::Status BatchDeltaUpdateAgent(::grpc::ClientContext* context, const ::city::economy::v2::BatchDeltaUpdateAgentRequest& request, ::city::economy::v2::BatchDeltaUpdateAgentResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchDeltaUpdateAgentResponse>> AsyncBatchDeltaUpdateAgent(::grpc::ClientContext* context, const ::city::economy::v2::BatchDeltaUpdateAgentRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchDeltaUpdateAgentResponse>>(AsyncBatchDeltaUpdateAgentRaw(context, request, cq));
-    }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchDeltaUpdateAgentResponse>> PrepareAsyncBatchDeltaUpdateAgent(::grpc::ClientContext* context, const ::city::economy::v2::BatchDeltaUpdateAgentRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchDeltaUpdateAgentResponse>>(PrepareAsyncBatchDeltaUpdateAgentRaw(context, request, cq));
-    }
     ::grpc::Status CalculateTaxesDue(::grpc::ClientContext* context, const ::city::economy::v2::CalculateTaxesDueRequest& request, ::city::economy::v2::CalculateTaxesDueResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::CalculateTaxesDueResponse>> AsyncCalculateTaxesDue(::grpc::ClientContext* context, const ::city::economy::v2::CalculateTaxesDueRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::economy::v2::CalculateTaxesDueResponse>>(AsyncCalculateTaxesDueRaw(context, request, cq));
@@ -908,16 +1009,6 @@ class OrgService final {
       void ListFirms(::grpc::ClientContext* context, const ::city::economy::v2::ListFirmsRequest* request, ::city::economy::v2::ListFirmsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       void DeltaUpdateFirm(::grpc::ClientContext* context, const ::city::economy::v2::DeltaUpdateFirmRequest* request, ::city::economy::v2::DeltaUpdateFirmResponse* response, std::function<void(::grpc::Status)>) override;
       void DeltaUpdateFirm(::grpc::ClientContext* context, const ::city::economy::v2::DeltaUpdateFirmRequest* request, ::city::economy::v2::DeltaUpdateFirmResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      void BatchAddFirm(::grpc::ClientContext* context, const ::city::economy::v2::BatchAddFirmRequest* request, ::city::economy::v2::BatchAddFirmResponse* response, std::function<void(::grpc::Status)>) override;
-      void BatchAddFirm(::grpc::ClientContext* context, const ::city::economy::v2::BatchAddFirmRequest* request, ::city::economy::v2::BatchAddFirmResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      void BatchRemoveFirm(::grpc::ClientContext* context, const ::city::economy::v2::BatchRemoveFirmRequest* request, ::city::economy::v2::BatchRemoveFirmResponse* response, std::function<void(::grpc::Status)>) override;
-      void BatchRemoveFirm(::grpc::ClientContext* context, const ::city::economy::v2::BatchRemoveFirmRequest* request, ::city::economy::v2::BatchRemoveFirmResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      void BatchGetFirm(::grpc::ClientContext* context, const ::city::economy::v2::BatchGetFirmRequest* request, ::city::economy::v2::BatchGetFirmResponse* response, std::function<void(::grpc::Status)>) override;
-      void BatchGetFirm(::grpc::ClientContext* context, const ::city::economy::v2::BatchGetFirmRequest* request, ::city::economy::v2::BatchGetFirmResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      void BatchUpdateFirm(::grpc::ClientContext* context, const ::city::economy::v2::BatchUpdateFirmRequest* request, ::city::economy::v2::BatchUpdateFirmResponse* response, std::function<void(::grpc::Status)>) override;
-      void BatchUpdateFirm(::grpc::ClientContext* context, const ::city::economy::v2::BatchUpdateFirmRequest* request, ::city::economy::v2::BatchUpdateFirmResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      void BatchDeltaUpdateFirm(::grpc::ClientContext* context, const ::city::economy::v2::BatchDeltaUpdateFirmRequest* request, ::city::economy::v2::BatchDeltaUpdateFirmResponse* response, std::function<void(::grpc::Status)>) override;
-      void BatchDeltaUpdateFirm(::grpc::ClientContext* context, const ::city::economy::v2::BatchDeltaUpdateFirmRequest* request, ::city::economy::v2::BatchDeltaUpdateFirmResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       void AddNBS(::grpc::ClientContext* context, const ::city::economy::v2::AddNBSRequest* request, ::city::economy::v2::AddNBSResponse* response, std::function<void(::grpc::Status)>) override;
       void AddNBS(::grpc::ClientContext* context, const ::city::economy::v2::AddNBSRequest* request, ::city::economy::v2::AddNBSResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       void RemoveNBS(::grpc::ClientContext* context, const ::city::economy::v2::RemoveNBSRequest* request, ::city::economy::v2::RemoveNBSResponse* response, std::function<void(::grpc::Status)>) override;
@@ -966,16 +1057,6 @@ class OrgService final {
       void ListAgents(::grpc::ClientContext* context, const ::city::economy::v2::ListAgentsRequest* request, ::city::economy::v2::ListAgentsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       void DeltaUpdateAgent(::grpc::ClientContext* context, const ::city::economy::v2::DeltaUpdateAgentRequest* request, ::city::economy::v2::DeltaUpdateAgentResponse* response, std::function<void(::grpc::Status)>) override;
       void DeltaUpdateAgent(::grpc::ClientContext* context, const ::city::economy::v2::DeltaUpdateAgentRequest* request, ::city::economy::v2::DeltaUpdateAgentResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      void BatchAddAgent(::grpc::ClientContext* context, const ::city::economy::v2::BatchAddAgentRequest* request, ::city::economy::v2::BatchAddAgentResponse* response, std::function<void(::grpc::Status)>) override;
-      void BatchAddAgent(::grpc::ClientContext* context, const ::city::economy::v2::BatchAddAgentRequest* request, ::city::economy::v2::BatchAddAgentResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      void BatchRemoveAgent(::grpc::ClientContext* context, const ::city::economy::v2::BatchRemoveAgentRequest* request, ::city::economy::v2::BatchRemoveAgentResponse* response, std::function<void(::grpc::Status)>) override;
-      void BatchRemoveAgent(::grpc::ClientContext* context, const ::city::economy::v2::BatchRemoveAgentRequest* request, ::city::economy::v2::BatchRemoveAgentResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      void BatchGetAgent(::grpc::ClientContext* context, const ::city::economy::v2::BatchGetAgentRequest* request, ::city::economy::v2::BatchGetAgentResponse* response, std::function<void(::grpc::Status)>) override;
-      void BatchGetAgent(::grpc::ClientContext* context, const ::city::economy::v2::BatchGetAgentRequest* request, ::city::economy::v2::BatchGetAgentResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      void BatchUpdateAgent(::grpc::ClientContext* context, const ::city::economy::v2::BatchUpdateAgentRequest* request, ::city::economy::v2::BatchUpdateAgentResponse* response, std::function<void(::grpc::Status)>) override;
-      void BatchUpdateAgent(::grpc::ClientContext* context, const ::city::economy::v2::BatchUpdateAgentRequest* request, ::city::economy::v2::BatchUpdateAgentResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      void BatchDeltaUpdateAgent(::grpc::ClientContext* context, const ::city::economy::v2::BatchDeltaUpdateAgentRequest* request, ::city::economy::v2::BatchDeltaUpdateAgentResponse* response, std::function<void(::grpc::Status)>) override;
-      void BatchDeltaUpdateAgent(::grpc::ClientContext* context, const ::city::economy::v2::BatchDeltaUpdateAgentRequest* request, ::city::economy::v2::BatchDeltaUpdateAgentResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       void CalculateTaxesDue(::grpc::ClientContext* context, const ::city::economy::v2::CalculateTaxesDueRequest* request, ::city::economy::v2::CalculateTaxesDueResponse* response, std::function<void(::grpc::Status)>) override;
       void CalculateTaxesDue(::grpc::ClientContext* context, const ::city::economy::v2::CalculateTaxesDueRequest* request, ::city::economy::v2::CalculateTaxesDueResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       void CalculateConsumption(::grpc::ClientContext* context, const ::city::economy::v2::CalculateConsumptionRequest* request, ::city::economy::v2::CalculateConsumptionResponse* response, std::function<void(::grpc::Status)>) override;
@@ -1011,16 +1092,6 @@ class OrgService final {
     ::grpc::ClientAsyncResponseReader< ::city::economy::v2::ListFirmsResponse>* PrepareAsyncListFirmsRaw(::grpc::ClientContext* context, const ::city::economy::v2::ListFirmsRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::city::economy::v2::DeltaUpdateFirmResponse>* AsyncDeltaUpdateFirmRaw(::grpc::ClientContext* context, const ::city::economy::v2::DeltaUpdateFirmRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::city::economy::v2::DeltaUpdateFirmResponse>* PrepareAsyncDeltaUpdateFirmRaw(::grpc::ClientContext* context, const ::city::economy::v2::DeltaUpdateFirmRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchAddFirmResponse>* AsyncBatchAddFirmRaw(::grpc::ClientContext* context, const ::city::economy::v2::BatchAddFirmRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchAddFirmResponse>* PrepareAsyncBatchAddFirmRaw(::grpc::ClientContext* context, const ::city::economy::v2::BatchAddFirmRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchRemoveFirmResponse>* AsyncBatchRemoveFirmRaw(::grpc::ClientContext* context, const ::city::economy::v2::BatchRemoveFirmRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchRemoveFirmResponse>* PrepareAsyncBatchRemoveFirmRaw(::grpc::ClientContext* context, const ::city::economy::v2::BatchRemoveFirmRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchGetFirmResponse>* AsyncBatchGetFirmRaw(::grpc::ClientContext* context, const ::city::economy::v2::BatchGetFirmRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchGetFirmResponse>* PrepareAsyncBatchGetFirmRaw(::grpc::ClientContext* context, const ::city::economy::v2::BatchGetFirmRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchUpdateFirmResponse>* AsyncBatchUpdateFirmRaw(::grpc::ClientContext* context, const ::city::economy::v2::BatchUpdateFirmRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchUpdateFirmResponse>* PrepareAsyncBatchUpdateFirmRaw(::grpc::ClientContext* context, const ::city::economy::v2::BatchUpdateFirmRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchDeltaUpdateFirmResponse>* AsyncBatchDeltaUpdateFirmRaw(::grpc::ClientContext* context, const ::city::economy::v2::BatchDeltaUpdateFirmRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchDeltaUpdateFirmResponse>* PrepareAsyncBatchDeltaUpdateFirmRaw(::grpc::ClientContext* context, const ::city::economy::v2::BatchDeltaUpdateFirmRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::city::economy::v2::AddNBSResponse>* AsyncAddNBSRaw(::grpc::ClientContext* context, const ::city::economy::v2::AddNBSRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::city::economy::v2::AddNBSResponse>* PrepareAsyncAddNBSRaw(::grpc::ClientContext* context, const ::city::economy::v2::AddNBSRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::city::economy::v2::RemoveNBSResponse>* AsyncRemoveNBSRaw(::grpc::ClientContext* context, const ::city::economy::v2::RemoveNBSRequest& request, ::grpc::CompletionQueue* cq) override;
@@ -1069,16 +1140,6 @@ class OrgService final {
     ::grpc::ClientAsyncResponseReader< ::city::economy::v2::ListAgentsResponse>* PrepareAsyncListAgentsRaw(::grpc::ClientContext* context, const ::city::economy::v2::ListAgentsRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::city::economy::v2::DeltaUpdateAgentResponse>* AsyncDeltaUpdateAgentRaw(::grpc::ClientContext* context, const ::city::economy::v2::DeltaUpdateAgentRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::city::economy::v2::DeltaUpdateAgentResponse>* PrepareAsyncDeltaUpdateAgentRaw(::grpc::ClientContext* context, const ::city::economy::v2::DeltaUpdateAgentRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchAddAgentResponse>* AsyncBatchAddAgentRaw(::grpc::ClientContext* context, const ::city::economy::v2::BatchAddAgentRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchAddAgentResponse>* PrepareAsyncBatchAddAgentRaw(::grpc::ClientContext* context, const ::city::economy::v2::BatchAddAgentRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchRemoveAgentResponse>* AsyncBatchRemoveAgentRaw(::grpc::ClientContext* context, const ::city::economy::v2::BatchRemoveAgentRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchRemoveAgentResponse>* PrepareAsyncBatchRemoveAgentRaw(::grpc::ClientContext* context, const ::city::economy::v2::BatchRemoveAgentRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchGetAgentResponse>* AsyncBatchGetAgentRaw(::grpc::ClientContext* context, const ::city::economy::v2::BatchGetAgentRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchGetAgentResponse>* PrepareAsyncBatchGetAgentRaw(::grpc::ClientContext* context, const ::city::economy::v2::BatchGetAgentRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchUpdateAgentResponse>* AsyncBatchUpdateAgentRaw(::grpc::ClientContext* context, const ::city::economy::v2::BatchUpdateAgentRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchUpdateAgentResponse>* PrepareAsyncBatchUpdateAgentRaw(::grpc::ClientContext* context, const ::city::economy::v2::BatchUpdateAgentRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchDeltaUpdateAgentResponse>* AsyncBatchDeltaUpdateAgentRaw(::grpc::ClientContext* context, const ::city::economy::v2::BatchDeltaUpdateAgentRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::city::economy::v2::BatchDeltaUpdateAgentResponse>* PrepareAsyncBatchDeltaUpdateAgentRaw(::grpc::ClientContext* context, const ::city::economy::v2::BatchDeltaUpdateAgentRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::city::economy::v2::CalculateTaxesDueResponse>* AsyncCalculateTaxesDueRaw(::grpc::ClientContext* context, const ::city::economy::v2::CalculateTaxesDueRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::city::economy::v2::CalculateTaxesDueResponse>* PrepareAsyncCalculateTaxesDueRaw(::grpc::ClientContext* context, const ::city::economy::v2::CalculateTaxesDueRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::city::economy::v2::CalculateConsumptionResponse>* AsyncCalculateConsumptionRaw(::grpc::ClientContext* context, const ::city::economy::v2::CalculateConsumptionRequest& request, ::grpc::CompletionQueue* cq) override;
@@ -1097,11 +1158,6 @@ class OrgService final {
     const ::grpc::internal::RpcMethod rpcmethod_UpdateFirm_;
     const ::grpc::internal::RpcMethod rpcmethod_ListFirms_;
     const ::grpc::internal::RpcMethod rpcmethod_DeltaUpdateFirm_;
-    const ::grpc::internal::RpcMethod rpcmethod_BatchAddFirm_;
-    const ::grpc::internal::RpcMethod rpcmethod_BatchRemoveFirm_;
-    const ::grpc::internal::RpcMethod rpcmethod_BatchGetFirm_;
-    const ::grpc::internal::RpcMethod rpcmethod_BatchUpdateFirm_;
-    const ::grpc::internal::RpcMethod rpcmethod_BatchDeltaUpdateFirm_;
     const ::grpc::internal::RpcMethod rpcmethod_AddNBS_;
     const ::grpc::internal::RpcMethod rpcmethod_RemoveNBS_;
     const ::grpc::internal::RpcMethod rpcmethod_GetNBS_;
@@ -1126,11 +1182,6 @@ class OrgService final {
     const ::grpc::internal::RpcMethod rpcmethod_UpdateAgent_;
     const ::grpc::internal::RpcMethod rpcmethod_ListAgents_;
     const ::grpc::internal::RpcMethod rpcmethod_DeltaUpdateAgent_;
-    const ::grpc::internal::RpcMethod rpcmethod_BatchAddAgent_;
-    const ::grpc::internal::RpcMethod rpcmethod_BatchRemoveAgent_;
-    const ::grpc::internal::RpcMethod rpcmethod_BatchGetAgent_;
-    const ::grpc::internal::RpcMethod rpcmethod_BatchUpdateAgent_;
-    const ::grpc::internal::RpcMethod rpcmethod_BatchDeltaUpdateAgent_;
     const ::grpc::internal::RpcMethod rpcmethod_CalculateTaxesDue_;
     const ::grpc::internal::RpcMethod rpcmethod_CalculateConsumption_;
     const ::grpc::internal::RpcMethod rpcmethod_CalculateInterest_;
@@ -1144,58 +1195,187 @@ class OrgService final {
    public:
     Service();
     virtual ~Service();
-    // Firm 相关操作
+    // Creates one or more firm entities
+    // Returns the list of created firm IDs
+    //
+    // 创建一个或多个企业实体
+    // 返回创建的企业ID列表
     virtual ::grpc::Status AddFirm(::grpc::ServerContext* context, const ::city::economy::v2::AddFirmRequest* request, ::city::economy::v2::AddFirmResponse* response);
+    // Deletes one or more firms by their IDs
+    // Also cleans up related employee associations
+    //
+    // 根据ID删除一个或多个企业实体
+    // 同时清理相关的员工关联关系
     virtual ::grpc::Status RemoveFirm(::grpc::ServerContext* context, const ::city::economy::v2::RemoveFirmRequest* request, ::city::economy::v2::RemoveFirmResponse* response);
+    // Retrieves detailed information for one or more firms
+    // Returns a list of firm entities
+    //
+    // 获取一个或多个企业的详细信息
+    // 返回企业实体信息列表
     virtual ::grpc::Status GetFirm(::grpc::ServerContext* context, const ::city::economy::v2::GetFirmRequest* request, ::city::economy::v2::GetFirmResponse* response);
+    // Updates complete information for one or more firms
+    //
+    // 更新一个或多个企业的完整信息
     virtual ::grpc::Status UpdateFirm(::grpc::ServerContext* context, const ::city::economy::v2::UpdateFirmRequest* request, ::city::economy::v2::UpdateFirmResponse* response);
+    // Lists all firms in the system
+    //
+    // 获取系统中所有企业的列表
     virtual ::grpc::Status ListFirms(::grpc::ServerContext* context, const ::city::economy::v2::ListFirmsRequest* request, ::city::economy::v2::ListFirmsResponse* response);
+    // Performs incremental updates on one or more firms
+    // Allows updating specific fields like price, inventory, demand etc.
+    //
+    // 对一个或多个企业进行增量更新
+    // 可以更新价格、库存、需求等具体字段
     virtual ::grpc::Status DeltaUpdateFirm(::grpc::ServerContext* context, const ::city::economy::v2::DeltaUpdateFirmRequest* request, ::city::economy::v2::DeltaUpdateFirmResponse* response);
-    virtual ::grpc::Status BatchAddFirm(::grpc::ServerContext* context, const ::city::economy::v2::BatchAddFirmRequest* request, ::city::economy::v2::BatchAddFirmResponse* response);
-    virtual ::grpc::Status BatchRemoveFirm(::grpc::ServerContext* context, const ::city::economy::v2::BatchRemoveFirmRequest* request, ::city::economy::v2::BatchRemoveFirmResponse* response);
-    virtual ::grpc::Status BatchGetFirm(::grpc::ServerContext* context, const ::city::economy::v2::BatchGetFirmRequest* request, ::city::economy::v2::BatchGetFirmResponse* response);
-    virtual ::grpc::Status BatchUpdateFirm(::grpc::ServerContext* context, const ::city::economy::v2::BatchUpdateFirmRequest* request, ::city::economy::v2::BatchUpdateFirmResponse* response);
-    virtual ::grpc::Status BatchDeltaUpdateFirm(::grpc::ServerContext* context, const ::city::economy::v2::BatchDeltaUpdateFirmRequest* request, ::city::economy::v2::BatchDeltaUpdateFirmResponse* response);
-    // NBS 相关操作
+    // @section NBS Operations
+    // @section 国家统计局相关操作
+    //
+    // Creates a new NBS entity
+    //
+    // 创建新的国家统计局实体
     virtual ::grpc::Status AddNBS(::grpc::ServerContext* context, const ::city::economy::v2::AddNBSRequest* request, ::city::economy::v2::AddNBSResponse* response);
+    // Deletes an NBS entity by ID
+    //
+    // 根据ID删除国家统计局实体
     virtual ::grpc::Status RemoveNBS(::grpc::ServerContext* context, const ::city::economy::v2::RemoveNBSRequest* request, ::city::economy::v2::RemoveNBSResponse* response);
+    // Retrieves detailed information for an NBS entity
+    //
+    // 获取国家统计局的详细信息
     virtual ::grpc::Status GetNBS(::grpc::ServerContext* context, const ::city::economy::v2::GetNBSRequest* request, ::city::economy::v2::GetNBSResponse* response);
+    // Updates complete information for an NBS entity
+    //
+    // 更新国家统计局的完整信息
     virtual ::grpc::Status UpdateNBS(::grpc::ServerContext* context, const ::city::economy::v2::UpdateNBSRequest* request, ::city::economy::v2::UpdateNBSResponse* response);
+    // Lists all NBS entities in the system
+    //
+    // 获取系统中所有国家统计局的列表
     virtual ::grpc::Status ListNBS(::grpc::ServerContext* context, const ::city::economy::v2::ListNBSRequest* request, ::city::economy::v2::ListNBSResponse* response);
+    // Performs incremental updates on an NBS entity
+    // Allows updating specific statistics and citizen relationships
+    //
+    // 对国家统计局进行增量更新
+    // 可以更新具体统计数据和公民关系
     virtual ::grpc::Status DeltaUpdateNBS(::grpc::ServerContext* context, const ::city::economy::v2::DeltaUpdateNBSRequest* request, ::city::economy::v2::DeltaUpdateNBSResponse* response);
-    // Government 相关操作
+    // @section Government Operations
+    // @section 政府相关操作
+    //
+    // Creates a new government entity
+    //
+    // 创建新的政府实体
     virtual ::grpc::Status AddGovernment(::grpc::ServerContext* context, const ::city::economy::v2::AddGovernmentRequest* request, ::city::economy::v2::AddGovernmentResponse* response);
+    // Deletes a government entity by ID
+    //
+    // 根据ID删除政府实体
     virtual ::grpc::Status RemoveGovernment(::grpc::ServerContext* context, const ::city::economy::v2::RemoveGovernmentRequest* request, ::city::economy::v2::RemoveGovernmentResponse* response);
+    // Retrieves detailed information for a government entity
+    //
+    // 获取政府实体的详细信息
     virtual ::grpc::Status GetGovernment(::grpc::ServerContext* context, const ::city::economy::v2::GetGovernmentRequest* request, ::city::economy::v2::GetGovernmentResponse* response);
+    // Updates complete information for a government entity
+    //
+    // 更新政府实体的完整信息
     virtual ::grpc::Status UpdateGovernment(::grpc::ServerContext* context, const ::city::economy::v2::UpdateGovernmentRequest* request, ::city::economy::v2::UpdateGovernmentResponse* response);
+    // Lists all government entities in the system
+    //
+    // 获取系统中所有政府实体的列表
     virtual ::grpc::Status ListGovernments(::grpc::ServerContext* context, const ::city::economy::v2::ListGovernmentsRequest* request, ::city::economy::v2::ListGovernmentsResponse* response);
+    // Performs incremental updates on a government entity
+    // Allows updating tax brackets and citizen relationships
+    //
+    // 对政府实体进行增量更新
+    // 可以更新税收档位和公民关系
     virtual ::grpc::Status DeltaUpdateGovernment(::grpc::ServerContext* context, const ::city::economy::v2::DeltaUpdateGovernmentRequest* request, ::city::economy::v2::DeltaUpdateGovernmentResponse* response);
-    // Bank 相关操作
+    // @section Bank Operations
+    // @section 银行相关操作
+    //
+    // Creates a new bank entity
+    //
+    // 创建新的银行实体
     virtual ::grpc::Status AddBank(::grpc::ServerContext* context, const ::city::economy::v2::AddBankRequest* request, ::city::economy::v2::AddBankResponse* response);
+    // Deletes a bank entity by ID
+    //
+    // 根据ID删除银行实体
     virtual ::grpc::Status RemoveBank(::grpc::ServerContext* context, const ::city::economy::v2::RemoveBankRequest* request, ::city::economy::v2::RemoveBankResponse* response);
+    // Retrieves detailed information for a bank entity
+    //
+    // 获取银行实体的详细信息
     virtual ::grpc::Status GetBank(::grpc::ServerContext* context, const ::city::economy::v2::GetBankRequest* request, ::city::economy::v2::GetBankResponse* response);
+    // Updates complete information for a bank entity
+    //
+    // 更新银行实体的完整信息
     virtual ::grpc::Status UpdateBank(::grpc::ServerContext* context, const ::city::economy::v2::UpdateBankRequest* request, ::city::economy::v2::UpdateBankResponse* response);
+    // Lists all bank entities in the system
+    //
+    // 获取系统中所有银行实体的列表
     virtual ::grpc::Status ListBanks(::grpc::ServerContext* context, const ::city::economy::v2::ListBanksRequest* request, ::city::economy::v2::ListBanksResponse* response);
+    // Performs incremental updates on a bank entity
+    // Allows updating interest rates and customer relationships
+    //
+    // 对银行实体进行增量更新
+    // 可以更新利率和客户关系
     virtual ::grpc::Status DeltaUpdateBank(::grpc::ServerContext* context, const ::city::economy::v2::DeltaUpdateBankRequest* request, ::city::economy::v2::DeltaUpdateBankResponse* response);
-    // Agent 相关操作
+    // @section Agent Operations
+    // @section 经济主体相关操作
+    //
+    // Creates one or more agent entities
+    // Returns the list of created agent IDs
+    //
+    // 创建一个或多个经济主体
+    // 返回创建的经济主体ID列表
     virtual ::grpc::Status AddAgent(::grpc::ServerContext* context, const ::city::economy::v2::AddAgentRequest* request, ::city::economy::v2::AddAgentResponse* response);
+    // Deletes one or more agents by their IDs
+    //
+    // 根据ID删除一个或多个经济主体
     virtual ::grpc::Status RemoveAgent(::grpc::ServerContext* context, const ::city::economy::v2::RemoveAgentRequest* request, ::city::economy::v2::RemoveAgentResponse* response);
+    // Retrieves detailed information for one or more agents
+    //
+    // 获取一个或多个经济主体的详细信息
     virtual ::grpc::Status GetAgent(::grpc::ServerContext* context, const ::city::economy::v2::GetAgentRequest* request, ::city::economy::v2::GetAgentResponse* response);
+    // Updates complete information for one or more agents
+    //
+    // 更新一个或多个经济主体的完整信息
     virtual ::grpc::Status UpdateAgent(::grpc::ServerContext* context, const ::city::economy::v2::UpdateAgentRequest* request, ::city::economy::v2::UpdateAgentResponse* response);
+    // Lists all agent entities in the system
+    //
+    // 获取系统中所有经济主体的列表
     virtual ::grpc::Status ListAgents(::grpc::ServerContext* context, const ::city::economy::v2::ListAgentsRequest* request, ::city::economy::v2::ListAgentsResponse* response);
+    // Performs incremental updates on one or more agents
+    // Allows updating specific attributes like currency, skills etc.
+    //
+    // 对一个或多个经济主体进行增量更新
+    // 可以更新货币、技能等具体属性
     virtual ::grpc::Status DeltaUpdateAgent(::grpc::ServerContext* context, const ::city::economy::v2::DeltaUpdateAgentRequest* request, ::city::economy::v2::DeltaUpdateAgentResponse* response);
-    virtual ::grpc::Status BatchAddAgent(::grpc::ServerContext* context, const ::city::economy::v2::BatchAddAgentRequest* request, ::city::economy::v2::BatchAddAgentResponse* response);
-    virtual ::grpc::Status BatchRemoveAgent(::grpc::ServerContext* context, const ::city::economy::v2::BatchRemoveAgentRequest* request, ::city::economy::v2::BatchRemoveAgentResponse* response);
-    virtual ::grpc::Status BatchGetAgent(::grpc::ServerContext* context, const ::city::economy::v2::BatchGetAgentRequest* request, ::city::economy::v2::BatchGetAgentResponse* response);
-    virtual ::grpc::Status BatchUpdateAgent(::grpc::ServerContext* context, const ::city::economy::v2::BatchUpdateAgentRequest* request, ::city::economy::v2::BatchUpdateAgentResponse* response);
-    virtual ::grpc::Status BatchDeltaUpdateAgent(::grpc::ServerContext* context, const ::city::economy::v2::BatchDeltaUpdateAgentRequest* request, ::city::economy::v2::BatchDeltaUpdateAgentResponse* response);
-    // 计算相关操作
+    // @section Economic Calculations
+    // @section 经济计算相关操作
+    //
+    // Calculates taxes due for specified agents
+    // Supports income redistribution if enabled
+    //
+    // 计算指定经济主体的应缴税额
+    // 支持开启收入再分配功能
     virtual ::grpc::Status CalculateTaxesDue(::grpc::ServerContext* context, const ::city::economy::v2::CalculateTaxesDueRequest* request, ::city::economy::v2::CalculateTaxesDueResponse* response);
+    // Calculates actual consumption based on supply and demand
+    //
+    // 基于供给和需求计算实际消费量
     virtual ::grpc::Status CalculateConsumption(::grpc::ServerContext* context, const ::city::economy::v2::CalculateConsumptionRequest* request, ::city::economy::v2::CalculateConsumptionResponse* response);
+    // Calculates interest for specified agents
+    //
+    // 计算指定经济主体的利息
     virtual ::grpc::Status CalculateInterest(::grpc::ServerContext* context, const ::city::economy::v2::CalculateInterestRequest* request, ::city::economy::v2::CalculateInterestResponse* response);
+    // Calculates real GDP adjusted for inflation
+    //
+    // 计算经通货膨胀调整后的实际GDP
     virtual ::grpc::Status CalculateRealGDP(::grpc::ServerContext* context, const ::city::economy::v2::CalculateRealGDPRequest* request, ::city::economy::v2::CalculateRealGDPResponse* response);
-    // 系统状态操作
+    // @section System State Operations
+    // @section 系统状态相关操作
+    //
+    // Saves the current state of all economic entities to a file
+    //
+    // 将当前所有经济实体的状态保存到文件
     virtual ::grpc::Status SaveEconomyEntities(::grpc::ServerContext* context, const ::city::economy::v2::SaveEconomyEntitiesRequest* request, ::city::economy::v2::SaveEconomyEntitiesResponse* response);
+    // Loads economic entities state from a file
+    //
+    // 从文件中加载经济实体的状态
     virtual ::grpc::Status LoadEconomyEntities(::grpc::ServerContext* context, const ::city::economy::v2::LoadEconomyEntitiesRequest* request, ::city::economy::v2::LoadEconomyEntitiesResponse* response);
   };
   template <class BaseClass>
@@ -1319,112 +1499,12 @@ class OrgService final {
     }
   };
   template <class BaseClass>
-  class WithAsyncMethod_BatchAddFirm : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithAsyncMethod_BatchAddFirm() {
-      ::grpc::Service::MarkMethodAsync(6);
-    }
-    ~WithAsyncMethod_BatchAddFirm() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status BatchAddFirm(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchAddFirmRequest* /*request*/, ::city::economy::v2::BatchAddFirmResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestBatchAddFirm(::grpc::ServerContext* context, ::city::economy::v2::BatchAddFirmRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::BatchAddFirmResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithAsyncMethod_BatchRemoveFirm : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithAsyncMethod_BatchRemoveFirm() {
-      ::grpc::Service::MarkMethodAsync(7);
-    }
-    ~WithAsyncMethod_BatchRemoveFirm() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status BatchRemoveFirm(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchRemoveFirmRequest* /*request*/, ::city::economy::v2::BatchRemoveFirmResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestBatchRemoveFirm(::grpc::ServerContext* context, ::city::economy::v2::BatchRemoveFirmRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::BatchRemoveFirmResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithAsyncMethod_BatchGetFirm : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithAsyncMethod_BatchGetFirm() {
-      ::grpc::Service::MarkMethodAsync(8);
-    }
-    ~WithAsyncMethod_BatchGetFirm() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status BatchGetFirm(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchGetFirmRequest* /*request*/, ::city::economy::v2::BatchGetFirmResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestBatchGetFirm(::grpc::ServerContext* context, ::city::economy::v2::BatchGetFirmRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::BatchGetFirmResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithAsyncMethod_BatchUpdateFirm : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithAsyncMethod_BatchUpdateFirm() {
-      ::grpc::Service::MarkMethodAsync(9);
-    }
-    ~WithAsyncMethod_BatchUpdateFirm() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status BatchUpdateFirm(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchUpdateFirmRequest* /*request*/, ::city::economy::v2::BatchUpdateFirmResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestBatchUpdateFirm(::grpc::ServerContext* context, ::city::economy::v2::BatchUpdateFirmRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::BatchUpdateFirmResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(9, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithAsyncMethod_BatchDeltaUpdateFirm : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithAsyncMethod_BatchDeltaUpdateFirm() {
-      ::grpc::Service::MarkMethodAsync(10);
-    }
-    ~WithAsyncMethod_BatchDeltaUpdateFirm() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status BatchDeltaUpdateFirm(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchDeltaUpdateFirmRequest* /*request*/, ::city::economy::v2::BatchDeltaUpdateFirmResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestBatchDeltaUpdateFirm(::grpc::ServerContext* context, ::city::economy::v2::BatchDeltaUpdateFirmRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::BatchDeltaUpdateFirmResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(10, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
   class WithAsyncMethod_AddNBS : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_AddNBS() {
-      ::grpc::Service::MarkMethodAsync(11);
+      ::grpc::Service::MarkMethodAsync(6);
     }
     ~WithAsyncMethod_AddNBS() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1435,7 +1515,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestAddNBS(::grpc::ServerContext* context, ::city::economy::v2::AddNBSRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::AddNBSResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(11, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1444,7 +1524,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_RemoveNBS() {
-      ::grpc::Service::MarkMethodAsync(12);
+      ::grpc::Service::MarkMethodAsync(7);
     }
     ~WithAsyncMethod_RemoveNBS() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1455,7 +1535,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestRemoveNBS(::grpc::ServerContext* context, ::city::economy::v2::RemoveNBSRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::RemoveNBSResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(12, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1464,7 +1544,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_GetNBS() {
-      ::grpc::Service::MarkMethodAsync(13);
+      ::grpc::Service::MarkMethodAsync(8);
     }
     ~WithAsyncMethod_GetNBS() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1475,7 +1555,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetNBS(::grpc::ServerContext* context, ::city::economy::v2::GetNBSRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::GetNBSResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(13, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1484,7 +1564,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_UpdateNBS() {
-      ::grpc::Service::MarkMethodAsync(14);
+      ::grpc::Service::MarkMethodAsync(9);
     }
     ~WithAsyncMethod_UpdateNBS() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1495,7 +1575,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestUpdateNBS(::grpc::ServerContext* context, ::city::economy::v2::UpdateNBSRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::UpdateNBSResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(14, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(9, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1504,7 +1584,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_ListNBS() {
-      ::grpc::Service::MarkMethodAsync(15);
+      ::grpc::Service::MarkMethodAsync(10);
     }
     ~WithAsyncMethod_ListNBS() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1515,7 +1595,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestListNBS(::grpc::ServerContext* context, ::city::economy::v2::ListNBSRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::ListNBSResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(15, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(10, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1524,7 +1604,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_DeltaUpdateNBS() {
-      ::grpc::Service::MarkMethodAsync(16);
+      ::grpc::Service::MarkMethodAsync(11);
     }
     ~WithAsyncMethod_DeltaUpdateNBS() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1535,7 +1615,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestDeltaUpdateNBS(::grpc::ServerContext* context, ::city::economy::v2::DeltaUpdateNBSRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::DeltaUpdateNBSResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(16, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(11, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1544,7 +1624,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_AddGovernment() {
-      ::grpc::Service::MarkMethodAsync(17);
+      ::grpc::Service::MarkMethodAsync(12);
     }
     ~WithAsyncMethod_AddGovernment() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1555,7 +1635,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestAddGovernment(::grpc::ServerContext* context, ::city::economy::v2::AddGovernmentRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::AddGovernmentResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(17, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(12, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1564,7 +1644,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_RemoveGovernment() {
-      ::grpc::Service::MarkMethodAsync(18);
+      ::grpc::Service::MarkMethodAsync(13);
     }
     ~WithAsyncMethod_RemoveGovernment() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1575,7 +1655,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestRemoveGovernment(::grpc::ServerContext* context, ::city::economy::v2::RemoveGovernmentRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::RemoveGovernmentResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(18, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(13, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1584,7 +1664,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_GetGovernment() {
-      ::grpc::Service::MarkMethodAsync(19);
+      ::grpc::Service::MarkMethodAsync(14);
     }
     ~WithAsyncMethod_GetGovernment() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1595,7 +1675,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetGovernment(::grpc::ServerContext* context, ::city::economy::v2::GetGovernmentRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::GetGovernmentResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(19, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(14, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1604,7 +1684,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_UpdateGovernment() {
-      ::grpc::Service::MarkMethodAsync(20);
+      ::grpc::Service::MarkMethodAsync(15);
     }
     ~WithAsyncMethod_UpdateGovernment() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1615,7 +1695,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestUpdateGovernment(::grpc::ServerContext* context, ::city::economy::v2::UpdateGovernmentRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::UpdateGovernmentResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(20, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(15, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1624,7 +1704,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_ListGovernments() {
-      ::grpc::Service::MarkMethodAsync(21);
+      ::grpc::Service::MarkMethodAsync(16);
     }
     ~WithAsyncMethod_ListGovernments() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1635,7 +1715,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestListGovernments(::grpc::ServerContext* context, ::city::economy::v2::ListGovernmentsRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::ListGovernmentsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(21, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(16, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1644,7 +1724,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_DeltaUpdateGovernment() {
-      ::grpc::Service::MarkMethodAsync(22);
+      ::grpc::Service::MarkMethodAsync(17);
     }
     ~WithAsyncMethod_DeltaUpdateGovernment() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1655,7 +1735,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestDeltaUpdateGovernment(::grpc::ServerContext* context, ::city::economy::v2::DeltaUpdateGovernmentRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::DeltaUpdateGovernmentResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(22, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(17, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1664,7 +1744,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_AddBank() {
-      ::grpc::Service::MarkMethodAsync(23);
+      ::grpc::Service::MarkMethodAsync(18);
     }
     ~WithAsyncMethod_AddBank() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1675,7 +1755,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestAddBank(::grpc::ServerContext* context, ::city::economy::v2::AddBankRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::AddBankResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(23, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(18, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1684,7 +1764,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_RemoveBank() {
-      ::grpc::Service::MarkMethodAsync(24);
+      ::grpc::Service::MarkMethodAsync(19);
     }
     ~WithAsyncMethod_RemoveBank() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1695,7 +1775,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestRemoveBank(::grpc::ServerContext* context, ::city::economy::v2::RemoveBankRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::RemoveBankResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(24, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(19, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1704,7 +1784,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_GetBank() {
-      ::grpc::Service::MarkMethodAsync(25);
+      ::grpc::Service::MarkMethodAsync(20);
     }
     ~WithAsyncMethod_GetBank() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1715,7 +1795,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetBank(::grpc::ServerContext* context, ::city::economy::v2::GetBankRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::GetBankResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(25, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(20, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1724,7 +1804,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_UpdateBank() {
-      ::grpc::Service::MarkMethodAsync(26);
+      ::grpc::Service::MarkMethodAsync(21);
     }
     ~WithAsyncMethod_UpdateBank() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1735,7 +1815,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestUpdateBank(::grpc::ServerContext* context, ::city::economy::v2::UpdateBankRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::UpdateBankResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(26, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(21, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1744,7 +1824,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_ListBanks() {
-      ::grpc::Service::MarkMethodAsync(27);
+      ::grpc::Service::MarkMethodAsync(22);
     }
     ~WithAsyncMethod_ListBanks() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1755,7 +1835,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestListBanks(::grpc::ServerContext* context, ::city::economy::v2::ListBanksRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::ListBanksResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(27, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(22, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1764,7 +1844,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_DeltaUpdateBank() {
-      ::grpc::Service::MarkMethodAsync(28);
+      ::grpc::Service::MarkMethodAsync(23);
     }
     ~WithAsyncMethod_DeltaUpdateBank() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1775,7 +1855,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestDeltaUpdateBank(::grpc::ServerContext* context, ::city::economy::v2::DeltaUpdateBankRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::DeltaUpdateBankResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(28, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(23, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1784,7 +1864,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_AddAgent() {
-      ::grpc::Service::MarkMethodAsync(29);
+      ::grpc::Service::MarkMethodAsync(24);
     }
     ~WithAsyncMethod_AddAgent() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1795,7 +1875,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestAddAgent(::grpc::ServerContext* context, ::city::economy::v2::AddAgentRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::AddAgentResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(29, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(24, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1804,7 +1884,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_RemoveAgent() {
-      ::grpc::Service::MarkMethodAsync(30);
+      ::grpc::Service::MarkMethodAsync(25);
     }
     ~WithAsyncMethod_RemoveAgent() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1815,7 +1895,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestRemoveAgent(::grpc::ServerContext* context, ::city::economy::v2::RemoveAgentRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::RemoveAgentResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(30, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(25, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1824,7 +1904,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_GetAgent() {
-      ::grpc::Service::MarkMethodAsync(31);
+      ::grpc::Service::MarkMethodAsync(26);
     }
     ~WithAsyncMethod_GetAgent() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1835,7 +1915,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetAgent(::grpc::ServerContext* context, ::city::economy::v2::GetAgentRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::GetAgentResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(31, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(26, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1844,7 +1924,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_UpdateAgent() {
-      ::grpc::Service::MarkMethodAsync(32);
+      ::grpc::Service::MarkMethodAsync(27);
     }
     ~WithAsyncMethod_UpdateAgent() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1855,7 +1935,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestUpdateAgent(::grpc::ServerContext* context, ::city::economy::v2::UpdateAgentRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::UpdateAgentResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(32, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(27, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1864,7 +1944,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_ListAgents() {
-      ::grpc::Service::MarkMethodAsync(33);
+      ::grpc::Service::MarkMethodAsync(28);
     }
     ~WithAsyncMethod_ListAgents() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1875,7 +1955,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestListAgents(::grpc::ServerContext* context, ::city::economy::v2::ListAgentsRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::ListAgentsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(33, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(28, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1884,7 +1964,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_DeltaUpdateAgent() {
-      ::grpc::Service::MarkMethodAsync(34);
+      ::grpc::Service::MarkMethodAsync(29);
     }
     ~WithAsyncMethod_DeltaUpdateAgent() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1895,107 +1975,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestDeltaUpdateAgent(::grpc::ServerContext* context, ::city::economy::v2::DeltaUpdateAgentRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::DeltaUpdateAgentResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(34, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithAsyncMethod_BatchAddAgent : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithAsyncMethod_BatchAddAgent() {
-      ::grpc::Service::MarkMethodAsync(35);
-    }
-    ~WithAsyncMethod_BatchAddAgent() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status BatchAddAgent(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchAddAgentRequest* /*request*/, ::city::economy::v2::BatchAddAgentResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestBatchAddAgent(::grpc::ServerContext* context, ::city::economy::v2::BatchAddAgentRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::BatchAddAgentResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(35, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithAsyncMethod_BatchRemoveAgent : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithAsyncMethod_BatchRemoveAgent() {
-      ::grpc::Service::MarkMethodAsync(36);
-    }
-    ~WithAsyncMethod_BatchRemoveAgent() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status BatchRemoveAgent(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchRemoveAgentRequest* /*request*/, ::city::economy::v2::BatchRemoveAgentResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestBatchRemoveAgent(::grpc::ServerContext* context, ::city::economy::v2::BatchRemoveAgentRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::BatchRemoveAgentResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(36, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithAsyncMethod_BatchGetAgent : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithAsyncMethod_BatchGetAgent() {
-      ::grpc::Service::MarkMethodAsync(37);
-    }
-    ~WithAsyncMethod_BatchGetAgent() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status BatchGetAgent(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchGetAgentRequest* /*request*/, ::city::economy::v2::BatchGetAgentResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestBatchGetAgent(::grpc::ServerContext* context, ::city::economy::v2::BatchGetAgentRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::BatchGetAgentResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(37, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithAsyncMethod_BatchUpdateAgent : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithAsyncMethod_BatchUpdateAgent() {
-      ::grpc::Service::MarkMethodAsync(38);
-    }
-    ~WithAsyncMethod_BatchUpdateAgent() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status BatchUpdateAgent(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchUpdateAgentRequest* /*request*/, ::city::economy::v2::BatchUpdateAgentResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestBatchUpdateAgent(::grpc::ServerContext* context, ::city::economy::v2::BatchUpdateAgentRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::BatchUpdateAgentResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(38, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithAsyncMethod_BatchDeltaUpdateAgent : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithAsyncMethod_BatchDeltaUpdateAgent() {
-      ::grpc::Service::MarkMethodAsync(39);
-    }
-    ~WithAsyncMethod_BatchDeltaUpdateAgent() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status BatchDeltaUpdateAgent(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchDeltaUpdateAgentRequest* /*request*/, ::city::economy::v2::BatchDeltaUpdateAgentResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestBatchDeltaUpdateAgent(::grpc::ServerContext* context, ::city::economy::v2::BatchDeltaUpdateAgentRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::BatchDeltaUpdateAgentResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(39, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(29, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2004,7 +1984,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_CalculateTaxesDue() {
-      ::grpc::Service::MarkMethodAsync(40);
+      ::grpc::Service::MarkMethodAsync(30);
     }
     ~WithAsyncMethod_CalculateTaxesDue() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2015,7 +1995,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestCalculateTaxesDue(::grpc::ServerContext* context, ::city::economy::v2::CalculateTaxesDueRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::CalculateTaxesDueResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(40, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(30, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2024,7 +2004,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_CalculateConsumption() {
-      ::grpc::Service::MarkMethodAsync(41);
+      ::grpc::Service::MarkMethodAsync(31);
     }
     ~WithAsyncMethod_CalculateConsumption() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2035,7 +2015,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestCalculateConsumption(::grpc::ServerContext* context, ::city::economy::v2::CalculateConsumptionRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::CalculateConsumptionResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(41, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(31, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2044,7 +2024,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_CalculateInterest() {
-      ::grpc::Service::MarkMethodAsync(42);
+      ::grpc::Service::MarkMethodAsync(32);
     }
     ~WithAsyncMethod_CalculateInterest() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2055,7 +2035,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestCalculateInterest(::grpc::ServerContext* context, ::city::economy::v2::CalculateInterestRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::CalculateInterestResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(42, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(32, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2064,7 +2044,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_CalculateRealGDP() {
-      ::grpc::Service::MarkMethodAsync(43);
+      ::grpc::Service::MarkMethodAsync(33);
     }
     ~WithAsyncMethod_CalculateRealGDP() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2075,7 +2055,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestCalculateRealGDP(::grpc::ServerContext* context, ::city::economy::v2::CalculateRealGDPRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::CalculateRealGDPResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(43, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(33, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2084,7 +2064,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_SaveEconomyEntities() {
-      ::grpc::Service::MarkMethodAsync(44);
+      ::grpc::Service::MarkMethodAsync(34);
     }
     ~WithAsyncMethod_SaveEconomyEntities() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2095,7 +2075,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestSaveEconomyEntities(::grpc::ServerContext* context, ::city::economy::v2::SaveEconomyEntitiesRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::SaveEconomyEntitiesResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(44, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(34, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2104,7 +2084,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_LoadEconomyEntities() {
-      ::grpc::Service::MarkMethodAsync(45);
+      ::grpc::Service::MarkMethodAsync(35);
     }
     ~WithAsyncMethod_LoadEconomyEntities() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2115,10 +2095,10 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestLoadEconomyEntities(::grpc::ServerContext* context, ::city::economy::v2::LoadEconomyEntitiesRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::economy::v2::LoadEconomyEntitiesResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(45, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(35, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_AddFirm<WithAsyncMethod_RemoveFirm<WithAsyncMethod_GetFirm<WithAsyncMethod_UpdateFirm<WithAsyncMethod_ListFirms<WithAsyncMethod_DeltaUpdateFirm<WithAsyncMethod_BatchAddFirm<WithAsyncMethod_BatchRemoveFirm<WithAsyncMethod_BatchGetFirm<WithAsyncMethod_BatchUpdateFirm<WithAsyncMethod_BatchDeltaUpdateFirm<WithAsyncMethod_AddNBS<WithAsyncMethod_RemoveNBS<WithAsyncMethod_GetNBS<WithAsyncMethod_UpdateNBS<WithAsyncMethod_ListNBS<WithAsyncMethod_DeltaUpdateNBS<WithAsyncMethod_AddGovernment<WithAsyncMethod_RemoveGovernment<WithAsyncMethod_GetGovernment<WithAsyncMethod_UpdateGovernment<WithAsyncMethod_ListGovernments<WithAsyncMethod_DeltaUpdateGovernment<WithAsyncMethod_AddBank<WithAsyncMethod_RemoveBank<WithAsyncMethod_GetBank<WithAsyncMethod_UpdateBank<WithAsyncMethod_ListBanks<WithAsyncMethod_DeltaUpdateBank<WithAsyncMethod_AddAgent<WithAsyncMethod_RemoveAgent<WithAsyncMethod_GetAgent<WithAsyncMethod_UpdateAgent<WithAsyncMethod_ListAgents<WithAsyncMethod_DeltaUpdateAgent<WithAsyncMethod_BatchAddAgent<WithAsyncMethod_BatchRemoveAgent<WithAsyncMethod_BatchGetAgent<WithAsyncMethod_BatchUpdateAgent<WithAsyncMethod_BatchDeltaUpdateAgent<WithAsyncMethod_CalculateTaxesDue<WithAsyncMethod_CalculateConsumption<WithAsyncMethod_CalculateInterest<WithAsyncMethod_CalculateRealGDP<WithAsyncMethod_SaveEconomyEntities<WithAsyncMethod_LoadEconomyEntities<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > AsyncService;
+  typedef WithAsyncMethod_AddFirm<WithAsyncMethod_RemoveFirm<WithAsyncMethod_GetFirm<WithAsyncMethod_UpdateFirm<WithAsyncMethod_ListFirms<WithAsyncMethod_DeltaUpdateFirm<WithAsyncMethod_AddNBS<WithAsyncMethod_RemoveNBS<WithAsyncMethod_GetNBS<WithAsyncMethod_UpdateNBS<WithAsyncMethod_ListNBS<WithAsyncMethod_DeltaUpdateNBS<WithAsyncMethod_AddGovernment<WithAsyncMethod_RemoveGovernment<WithAsyncMethod_GetGovernment<WithAsyncMethod_UpdateGovernment<WithAsyncMethod_ListGovernments<WithAsyncMethod_DeltaUpdateGovernment<WithAsyncMethod_AddBank<WithAsyncMethod_RemoveBank<WithAsyncMethod_GetBank<WithAsyncMethod_UpdateBank<WithAsyncMethod_ListBanks<WithAsyncMethod_DeltaUpdateBank<WithAsyncMethod_AddAgent<WithAsyncMethod_RemoveAgent<WithAsyncMethod_GetAgent<WithAsyncMethod_UpdateAgent<WithAsyncMethod_ListAgents<WithAsyncMethod_DeltaUpdateAgent<WithAsyncMethod_CalculateTaxesDue<WithAsyncMethod_CalculateConsumption<WithAsyncMethod_CalculateInterest<WithAsyncMethod_CalculateRealGDP<WithAsyncMethod_SaveEconomyEntities<WithAsyncMethod_LoadEconomyEntities<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > AsyncService;
   template <class BaseClass>
   class WithCallbackMethod_AddFirm : public BaseClass {
    private:
@@ -2282,153 +2262,18 @@ class OrgService final {
       ::grpc::CallbackServerContext* /*context*/, const ::city::economy::v2::DeltaUpdateFirmRequest* /*request*/, ::city::economy::v2::DeltaUpdateFirmResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_BatchAddFirm : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithCallbackMethod_BatchAddFirm() {
-      ::grpc::Service::MarkMethodCallback(6,
-          new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::BatchAddFirmRequest, ::city::economy::v2::BatchAddFirmResponse>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::city::economy::v2::BatchAddFirmRequest* request, ::city::economy::v2::BatchAddFirmResponse* response) { return this->BatchAddFirm(context, request, response); }));}
-    void SetMessageAllocatorFor_BatchAddFirm(
-        ::grpc::MessageAllocator< ::city::economy::v2::BatchAddFirmRequest, ::city::economy::v2::BatchAddFirmResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(6);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::BatchAddFirmRequest, ::city::economy::v2::BatchAddFirmResponse>*>(handler)
-              ->SetMessageAllocator(allocator);
-    }
-    ~WithCallbackMethod_BatchAddFirm() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status BatchAddFirm(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchAddFirmRequest* /*request*/, ::city::economy::v2::BatchAddFirmResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* BatchAddFirm(
-      ::grpc::CallbackServerContext* /*context*/, const ::city::economy::v2::BatchAddFirmRequest* /*request*/, ::city::economy::v2::BatchAddFirmResponse* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
-  class WithCallbackMethod_BatchRemoveFirm : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithCallbackMethod_BatchRemoveFirm() {
-      ::grpc::Service::MarkMethodCallback(7,
-          new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::BatchRemoveFirmRequest, ::city::economy::v2::BatchRemoveFirmResponse>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::city::economy::v2::BatchRemoveFirmRequest* request, ::city::economy::v2::BatchRemoveFirmResponse* response) { return this->BatchRemoveFirm(context, request, response); }));}
-    void SetMessageAllocatorFor_BatchRemoveFirm(
-        ::grpc::MessageAllocator< ::city::economy::v2::BatchRemoveFirmRequest, ::city::economy::v2::BatchRemoveFirmResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(7);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::BatchRemoveFirmRequest, ::city::economy::v2::BatchRemoveFirmResponse>*>(handler)
-              ->SetMessageAllocator(allocator);
-    }
-    ~WithCallbackMethod_BatchRemoveFirm() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status BatchRemoveFirm(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchRemoveFirmRequest* /*request*/, ::city::economy::v2::BatchRemoveFirmResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* BatchRemoveFirm(
-      ::grpc::CallbackServerContext* /*context*/, const ::city::economy::v2::BatchRemoveFirmRequest* /*request*/, ::city::economy::v2::BatchRemoveFirmResponse* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
-  class WithCallbackMethod_BatchGetFirm : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithCallbackMethod_BatchGetFirm() {
-      ::grpc::Service::MarkMethodCallback(8,
-          new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::BatchGetFirmRequest, ::city::economy::v2::BatchGetFirmResponse>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::city::economy::v2::BatchGetFirmRequest* request, ::city::economy::v2::BatchGetFirmResponse* response) { return this->BatchGetFirm(context, request, response); }));}
-    void SetMessageAllocatorFor_BatchGetFirm(
-        ::grpc::MessageAllocator< ::city::economy::v2::BatchGetFirmRequest, ::city::economy::v2::BatchGetFirmResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(8);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::BatchGetFirmRequest, ::city::economy::v2::BatchGetFirmResponse>*>(handler)
-              ->SetMessageAllocator(allocator);
-    }
-    ~WithCallbackMethod_BatchGetFirm() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status BatchGetFirm(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchGetFirmRequest* /*request*/, ::city::economy::v2::BatchGetFirmResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* BatchGetFirm(
-      ::grpc::CallbackServerContext* /*context*/, const ::city::economy::v2::BatchGetFirmRequest* /*request*/, ::city::economy::v2::BatchGetFirmResponse* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
-  class WithCallbackMethod_BatchUpdateFirm : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithCallbackMethod_BatchUpdateFirm() {
-      ::grpc::Service::MarkMethodCallback(9,
-          new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::BatchUpdateFirmRequest, ::city::economy::v2::BatchUpdateFirmResponse>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::city::economy::v2::BatchUpdateFirmRequest* request, ::city::economy::v2::BatchUpdateFirmResponse* response) { return this->BatchUpdateFirm(context, request, response); }));}
-    void SetMessageAllocatorFor_BatchUpdateFirm(
-        ::grpc::MessageAllocator< ::city::economy::v2::BatchUpdateFirmRequest, ::city::economy::v2::BatchUpdateFirmResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(9);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::BatchUpdateFirmRequest, ::city::economy::v2::BatchUpdateFirmResponse>*>(handler)
-              ->SetMessageAllocator(allocator);
-    }
-    ~WithCallbackMethod_BatchUpdateFirm() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status BatchUpdateFirm(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchUpdateFirmRequest* /*request*/, ::city::economy::v2::BatchUpdateFirmResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* BatchUpdateFirm(
-      ::grpc::CallbackServerContext* /*context*/, const ::city::economy::v2::BatchUpdateFirmRequest* /*request*/, ::city::economy::v2::BatchUpdateFirmResponse* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
-  class WithCallbackMethod_BatchDeltaUpdateFirm : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithCallbackMethod_BatchDeltaUpdateFirm() {
-      ::grpc::Service::MarkMethodCallback(10,
-          new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::BatchDeltaUpdateFirmRequest, ::city::economy::v2::BatchDeltaUpdateFirmResponse>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::city::economy::v2::BatchDeltaUpdateFirmRequest* request, ::city::economy::v2::BatchDeltaUpdateFirmResponse* response) { return this->BatchDeltaUpdateFirm(context, request, response); }));}
-    void SetMessageAllocatorFor_BatchDeltaUpdateFirm(
-        ::grpc::MessageAllocator< ::city::economy::v2::BatchDeltaUpdateFirmRequest, ::city::economy::v2::BatchDeltaUpdateFirmResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(10);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::BatchDeltaUpdateFirmRequest, ::city::economy::v2::BatchDeltaUpdateFirmResponse>*>(handler)
-              ->SetMessageAllocator(allocator);
-    }
-    ~WithCallbackMethod_BatchDeltaUpdateFirm() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status BatchDeltaUpdateFirm(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchDeltaUpdateFirmRequest* /*request*/, ::city::economy::v2::BatchDeltaUpdateFirmResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* BatchDeltaUpdateFirm(
-      ::grpc::CallbackServerContext* /*context*/, const ::city::economy::v2::BatchDeltaUpdateFirmRequest* /*request*/, ::city::economy::v2::BatchDeltaUpdateFirmResponse* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
   class WithCallbackMethod_AddNBS : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_AddNBS() {
-      ::grpc::Service::MarkMethodCallback(11,
+      ::grpc::Service::MarkMethodCallback(6,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::AddNBSRequest, ::city::economy::v2::AddNBSResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::AddNBSRequest* request, ::city::economy::v2::AddNBSResponse* response) { return this->AddNBS(context, request, response); }));}
     void SetMessageAllocatorFor_AddNBS(
         ::grpc::MessageAllocator< ::city::economy::v2::AddNBSRequest, ::city::economy::v2::AddNBSResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(11);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(6);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::AddNBSRequest, ::city::economy::v2::AddNBSResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -2449,13 +2294,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_RemoveNBS() {
-      ::grpc::Service::MarkMethodCallback(12,
+      ::grpc::Service::MarkMethodCallback(7,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::RemoveNBSRequest, ::city::economy::v2::RemoveNBSResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::RemoveNBSRequest* request, ::city::economy::v2::RemoveNBSResponse* response) { return this->RemoveNBS(context, request, response); }));}
     void SetMessageAllocatorFor_RemoveNBS(
         ::grpc::MessageAllocator< ::city::economy::v2::RemoveNBSRequest, ::city::economy::v2::RemoveNBSResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(12);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(7);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::RemoveNBSRequest, ::city::economy::v2::RemoveNBSResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -2476,13 +2321,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_GetNBS() {
-      ::grpc::Service::MarkMethodCallback(13,
+      ::grpc::Service::MarkMethodCallback(8,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::GetNBSRequest, ::city::economy::v2::GetNBSResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::GetNBSRequest* request, ::city::economy::v2::GetNBSResponse* response) { return this->GetNBS(context, request, response); }));}
     void SetMessageAllocatorFor_GetNBS(
         ::grpc::MessageAllocator< ::city::economy::v2::GetNBSRequest, ::city::economy::v2::GetNBSResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(13);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(8);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::GetNBSRequest, ::city::economy::v2::GetNBSResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -2503,13 +2348,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_UpdateNBS() {
-      ::grpc::Service::MarkMethodCallback(14,
+      ::grpc::Service::MarkMethodCallback(9,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::UpdateNBSRequest, ::city::economy::v2::UpdateNBSResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::UpdateNBSRequest* request, ::city::economy::v2::UpdateNBSResponse* response) { return this->UpdateNBS(context, request, response); }));}
     void SetMessageAllocatorFor_UpdateNBS(
         ::grpc::MessageAllocator< ::city::economy::v2::UpdateNBSRequest, ::city::economy::v2::UpdateNBSResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(14);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(9);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::UpdateNBSRequest, ::city::economy::v2::UpdateNBSResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -2530,13 +2375,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_ListNBS() {
-      ::grpc::Service::MarkMethodCallback(15,
+      ::grpc::Service::MarkMethodCallback(10,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::ListNBSRequest, ::city::economy::v2::ListNBSResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::ListNBSRequest* request, ::city::economy::v2::ListNBSResponse* response) { return this->ListNBS(context, request, response); }));}
     void SetMessageAllocatorFor_ListNBS(
         ::grpc::MessageAllocator< ::city::economy::v2::ListNBSRequest, ::city::economy::v2::ListNBSResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(15);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(10);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::ListNBSRequest, ::city::economy::v2::ListNBSResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -2557,13 +2402,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_DeltaUpdateNBS() {
-      ::grpc::Service::MarkMethodCallback(16,
+      ::grpc::Service::MarkMethodCallback(11,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::DeltaUpdateNBSRequest, ::city::economy::v2::DeltaUpdateNBSResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::DeltaUpdateNBSRequest* request, ::city::economy::v2::DeltaUpdateNBSResponse* response) { return this->DeltaUpdateNBS(context, request, response); }));}
     void SetMessageAllocatorFor_DeltaUpdateNBS(
         ::grpc::MessageAllocator< ::city::economy::v2::DeltaUpdateNBSRequest, ::city::economy::v2::DeltaUpdateNBSResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(16);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(11);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::DeltaUpdateNBSRequest, ::city::economy::v2::DeltaUpdateNBSResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -2584,13 +2429,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_AddGovernment() {
-      ::grpc::Service::MarkMethodCallback(17,
+      ::grpc::Service::MarkMethodCallback(12,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::AddGovernmentRequest, ::city::economy::v2::AddGovernmentResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::AddGovernmentRequest* request, ::city::economy::v2::AddGovernmentResponse* response) { return this->AddGovernment(context, request, response); }));}
     void SetMessageAllocatorFor_AddGovernment(
         ::grpc::MessageAllocator< ::city::economy::v2::AddGovernmentRequest, ::city::economy::v2::AddGovernmentResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(17);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(12);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::AddGovernmentRequest, ::city::economy::v2::AddGovernmentResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -2611,13 +2456,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_RemoveGovernment() {
-      ::grpc::Service::MarkMethodCallback(18,
+      ::grpc::Service::MarkMethodCallback(13,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::RemoveGovernmentRequest, ::city::economy::v2::RemoveGovernmentResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::RemoveGovernmentRequest* request, ::city::economy::v2::RemoveGovernmentResponse* response) { return this->RemoveGovernment(context, request, response); }));}
     void SetMessageAllocatorFor_RemoveGovernment(
         ::grpc::MessageAllocator< ::city::economy::v2::RemoveGovernmentRequest, ::city::economy::v2::RemoveGovernmentResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(18);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(13);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::RemoveGovernmentRequest, ::city::economy::v2::RemoveGovernmentResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -2638,13 +2483,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_GetGovernment() {
-      ::grpc::Service::MarkMethodCallback(19,
+      ::grpc::Service::MarkMethodCallback(14,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::GetGovernmentRequest, ::city::economy::v2::GetGovernmentResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::GetGovernmentRequest* request, ::city::economy::v2::GetGovernmentResponse* response) { return this->GetGovernment(context, request, response); }));}
     void SetMessageAllocatorFor_GetGovernment(
         ::grpc::MessageAllocator< ::city::economy::v2::GetGovernmentRequest, ::city::economy::v2::GetGovernmentResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(19);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(14);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::GetGovernmentRequest, ::city::economy::v2::GetGovernmentResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -2665,13 +2510,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_UpdateGovernment() {
-      ::grpc::Service::MarkMethodCallback(20,
+      ::grpc::Service::MarkMethodCallback(15,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::UpdateGovernmentRequest, ::city::economy::v2::UpdateGovernmentResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::UpdateGovernmentRequest* request, ::city::economy::v2::UpdateGovernmentResponse* response) { return this->UpdateGovernment(context, request, response); }));}
     void SetMessageAllocatorFor_UpdateGovernment(
         ::grpc::MessageAllocator< ::city::economy::v2::UpdateGovernmentRequest, ::city::economy::v2::UpdateGovernmentResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(20);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(15);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::UpdateGovernmentRequest, ::city::economy::v2::UpdateGovernmentResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -2692,13 +2537,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_ListGovernments() {
-      ::grpc::Service::MarkMethodCallback(21,
+      ::grpc::Service::MarkMethodCallback(16,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::ListGovernmentsRequest, ::city::economy::v2::ListGovernmentsResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::ListGovernmentsRequest* request, ::city::economy::v2::ListGovernmentsResponse* response) { return this->ListGovernments(context, request, response); }));}
     void SetMessageAllocatorFor_ListGovernments(
         ::grpc::MessageAllocator< ::city::economy::v2::ListGovernmentsRequest, ::city::economy::v2::ListGovernmentsResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(21);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(16);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::ListGovernmentsRequest, ::city::economy::v2::ListGovernmentsResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -2719,13 +2564,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_DeltaUpdateGovernment() {
-      ::grpc::Service::MarkMethodCallback(22,
+      ::grpc::Service::MarkMethodCallback(17,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::DeltaUpdateGovernmentRequest, ::city::economy::v2::DeltaUpdateGovernmentResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::DeltaUpdateGovernmentRequest* request, ::city::economy::v2::DeltaUpdateGovernmentResponse* response) { return this->DeltaUpdateGovernment(context, request, response); }));}
     void SetMessageAllocatorFor_DeltaUpdateGovernment(
         ::grpc::MessageAllocator< ::city::economy::v2::DeltaUpdateGovernmentRequest, ::city::economy::v2::DeltaUpdateGovernmentResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(22);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(17);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::DeltaUpdateGovernmentRequest, ::city::economy::v2::DeltaUpdateGovernmentResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -2746,13 +2591,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_AddBank() {
-      ::grpc::Service::MarkMethodCallback(23,
+      ::grpc::Service::MarkMethodCallback(18,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::AddBankRequest, ::city::economy::v2::AddBankResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::AddBankRequest* request, ::city::economy::v2::AddBankResponse* response) { return this->AddBank(context, request, response); }));}
     void SetMessageAllocatorFor_AddBank(
         ::grpc::MessageAllocator< ::city::economy::v2::AddBankRequest, ::city::economy::v2::AddBankResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(23);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(18);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::AddBankRequest, ::city::economy::v2::AddBankResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -2773,13 +2618,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_RemoveBank() {
-      ::grpc::Service::MarkMethodCallback(24,
+      ::grpc::Service::MarkMethodCallback(19,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::RemoveBankRequest, ::city::economy::v2::RemoveBankResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::RemoveBankRequest* request, ::city::economy::v2::RemoveBankResponse* response) { return this->RemoveBank(context, request, response); }));}
     void SetMessageAllocatorFor_RemoveBank(
         ::grpc::MessageAllocator< ::city::economy::v2::RemoveBankRequest, ::city::economy::v2::RemoveBankResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(24);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(19);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::RemoveBankRequest, ::city::economy::v2::RemoveBankResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -2800,13 +2645,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_GetBank() {
-      ::grpc::Service::MarkMethodCallback(25,
+      ::grpc::Service::MarkMethodCallback(20,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::GetBankRequest, ::city::economy::v2::GetBankResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::GetBankRequest* request, ::city::economy::v2::GetBankResponse* response) { return this->GetBank(context, request, response); }));}
     void SetMessageAllocatorFor_GetBank(
         ::grpc::MessageAllocator< ::city::economy::v2::GetBankRequest, ::city::economy::v2::GetBankResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(25);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(20);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::GetBankRequest, ::city::economy::v2::GetBankResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -2827,13 +2672,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_UpdateBank() {
-      ::grpc::Service::MarkMethodCallback(26,
+      ::grpc::Service::MarkMethodCallback(21,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::UpdateBankRequest, ::city::economy::v2::UpdateBankResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::UpdateBankRequest* request, ::city::economy::v2::UpdateBankResponse* response) { return this->UpdateBank(context, request, response); }));}
     void SetMessageAllocatorFor_UpdateBank(
         ::grpc::MessageAllocator< ::city::economy::v2::UpdateBankRequest, ::city::economy::v2::UpdateBankResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(26);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(21);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::UpdateBankRequest, ::city::economy::v2::UpdateBankResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -2854,13 +2699,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_ListBanks() {
-      ::grpc::Service::MarkMethodCallback(27,
+      ::grpc::Service::MarkMethodCallback(22,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::ListBanksRequest, ::city::economy::v2::ListBanksResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::ListBanksRequest* request, ::city::economy::v2::ListBanksResponse* response) { return this->ListBanks(context, request, response); }));}
     void SetMessageAllocatorFor_ListBanks(
         ::grpc::MessageAllocator< ::city::economy::v2::ListBanksRequest, ::city::economy::v2::ListBanksResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(27);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(22);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::ListBanksRequest, ::city::economy::v2::ListBanksResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -2881,13 +2726,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_DeltaUpdateBank() {
-      ::grpc::Service::MarkMethodCallback(28,
+      ::grpc::Service::MarkMethodCallback(23,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::DeltaUpdateBankRequest, ::city::economy::v2::DeltaUpdateBankResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::DeltaUpdateBankRequest* request, ::city::economy::v2::DeltaUpdateBankResponse* response) { return this->DeltaUpdateBank(context, request, response); }));}
     void SetMessageAllocatorFor_DeltaUpdateBank(
         ::grpc::MessageAllocator< ::city::economy::v2::DeltaUpdateBankRequest, ::city::economy::v2::DeltaUpdateBankResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(28);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(23);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::DeltaUpdateBankRequest, ::city::economy::v2::DeltaUpdateBankResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -2908,13 +2753,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_AddAgent() {
-      ::grpc::Service::MarkMethodCallback(29,
+      ::grpc::Service::MarkMethodCallback(24,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::AddAgentRequest, ::city::economy::v2::AddAgentResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::AddAgentRequest* request, ::city::economy::v2::AddAgentResponse* response) { return this->AddAgent(context, request, response); }));}
     void SetMessageAllocatorFor_AddAgent(
         ::grpc::MessageAllocator< ::city::economy::v2::AddAgentRequest, ::city::economy::v2::AddAgentResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(29);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(24);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::AddAgentRequest, ::city::economy::v2::AddAgentResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -2935,13 +2780,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_RemoveAgent() {
-      ::grpc::Service::MarkMethodCallback(30,
+      ::grpc::Service::MarkMethodCallback(25,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::RemoveAgentRequest, ::city::economy::v2::RemoveAgentResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::RemoveAgentRequest* request, ::city::economy::v2::RemoveAgentResponse* response) { return this->RemoveAgent(context, request, response); }));}
     void SetMessageAllocatorFor_RemoveAgent(
         ::grpc::MessageAllocator< ::city::economy::v2::RemoveAgentRequest, ::city::economy::v2::RemoveAgentResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(30);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(25);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::RemoveAgentRequest, ::city::economy::v2::RemoveAgentResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -2962,13 +2807,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_GetAgent() {
-      ::grpc::Service::MarkMethodCallback(31,
+      ::grpc::Service::MarkMethodCallback(26,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::GetAgentRequest, ::city::economy::v2::GetAgentResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::GetAgentRequest* request, ::city::economy::v2::GetAgentResponse* response) { return this->GetAgent(context, request, response); }));}
     void SetMessageAllocatorFor_GetAgent(
         ::grpc::MessageAllocator< ::city::economy::v2::GetAgentRequest, ::city::economy::v2::GetAgentResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(31);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(26);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::GetAgentRequest, ::city::economy::v2::GetAgentResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -2989,13 +2834,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_UpdateAgent() {
-      ::grpc::Service::MarkMethodCallback(32,
+      ::grpc::Service::MarkMethodCallback(27,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::UpdateAgentRequest, ::city::economy::v2::UpdateAgentResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::UpdateAgentRequest* request, ::city::economy::v2::UpdateAgentResponse* response) { return this->UpdateAgent(context, request, response); }));}
     void SetMessageAllocatorFor_UpdateAgent(
         ::grpc::MessageAllocator< ::city::economy::v2::UpdateAgentRequest, ::city::economy::v2::UpdateAgentResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(32);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(27);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::UpdateAgentRequest, ::city::economy::v2::UpdateAgentResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -3016,13 +2861,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_ListAgents() {
-      ::grpc::Service::MarkMethodCallback(33,
+      ::grpc::Service::MarkMethodCallback(28,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::ListAgentsRequest, ::city::economy::v2::ListAgentsResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::ListAgentsRequest* request, ::city::economy::v2::ListAgentsResponse* response) { return this->ListAgents(context, request, response); }));}
     void SetMessageAllocatorFor_ListAgents(
         ::grpc::MessageAllocator< ::city::economy::v2::ListAgentsRequest, ::city::economy::v2::ListAgentsResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(33);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(28);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::ListAgentsRequest, ::city::economy::v2::ListAgentsResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -3043,13 +2888,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_DeltaUpdateAgent() {
-      ::grpc::Service::MarkMethodCallback(34,
+      ::grpc::Service::MarkMethodCallback(29,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::DeltaUpdateAgentRequest, ::city::economy::v2::DeltaUpdateAgentResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::DeltaUpdateAgentRequest* request, ::city::economy::v2::DeltaUpdateAgentResponse* response) { return this->DeltaUpdateAgent(context, request, response); }));}
     void SetMessageAllocatorFor_DeltaUpdateAgent(
         ::grpc::MessageAllocator< ::city::economy::v2::DeltaUpdateAgentRequest, ::city::economy::v2::DeltaUpdateAgentResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(34);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(29);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::DeltaUpdateAgentRequest, ::city::economy::v2::DeltaUpdateAgentResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -3065,153 +2910,18 @@ class OrgService final {
       ::grpc::CallbackServerContext* /*context*/, const ::city::economy::v2::DeltaUpdateAgentRequest* /*request*/, ::city::economy::v2::DeltaUpdateAgentResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_BatchAddAgent : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithCallbackMethod_BatchAddAgent() {
-      ::grpc::Service::MarkMethodCallback(35,
-          new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::BatchAddAgentRequest, ::city::economy::v2::BatchAddAgentResponse>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::city::economy::v2::BatchAddAgentRequest* request, ::city::economy::v2::BatchAddAgentResponse* response) { return this->BatchAddAgent(context, request, response); }));}
-    void SetMessageAllocatorFor_BatchAddAgent(
-        ::grpc::MessageAllocator< ::city::economy::v2::BatchAddAgentRequest, ::city::economy::v2::BatchAddAgentResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(35);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::BatchAddAgentRequest, ::city::economy::v2::BatchAddAgentResponse>*>(handler)
-              ->SetMessageAllocator(allocator);
-    }
-    ~WithCallbackMethod_BatchAddAgent() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status BatchAddAgent(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchAddAgentRequest* /*request*/, ::city::economy::v2::BatchAddAgentResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* BatchAddAgent(
-      ::grpc::CallbackServerContext* /*context*/, const ::city::economy::v2::BatchAddAgentRequest* /*request*/, ::city::economy::v2::BatchAddAgentResponse* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
-  class WithCallbackMethod_BatchRemoveAgent : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithCallbackMethod_BatchRemoveAgent() {
-      ::grpc::Service::MarkMethodCallback(36,
-          new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::BatchRemoveAgentRequest, ::city::economy::v2::BatchRemoveAgentResponse>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::city::economy::v2::BatchRemoveAgentRequest* request, ::city::economy::v2::BatchRemoveAgentResponse* response) { return this->BatchRemoveAgent(context, request, response); }));}
-    void SetMessageAllocatorFor_BatchRemoveAgent(
-        ::grpc::MessageAllocator< ::city::economy::v2::BatchRemoveAgentRequest, ::city::economy::v2::BatchRemoveAgentResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(36);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::BatchRemoveAgentRequest, ::city::economy::v2::BatchRemoveAgentResponse>*>(handler)
-              ->SetMessageAllocator(allocator);
-    }
-    ~WithCallbackMethod_BatchRemoveAgent() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status BatchRemoveAgent(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchRemoveAgentRequest* /*request*/, ::city::economy::v2::BatchRemoveAgentResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* BatchRemoveAgent(
-      ::grpc::CallbackServerContext* /*context*/, const ::city::economy::v2::BatchRemoveAgentRequest* /*request*/, ::city::economy::v2::BatchRemoveAgentResponse* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
-  class WithCallbackMethod_BatchGetAgent : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithCallbackMethod_BatchGetAgent() {
-      ::grpc::Service::MarkMethodCallback(37,
-          new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::BatchGetAgentRequest, ::city::economy::v2::BatchGetAgentResponse>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::city::economy::v2::BatchGetAgentRequest* request, ::city::economy::v2::BatchGetAgentResponse* response) { return this->BatchGetAgent(context, request, response); }));}
-    void SetMessageAllocatorFor_BatchGetAgent(
-        ::grpc::MessageAllocator< ::city::economy::v2::BatchGetAgentRequest, ::city::economy::v2::BatchGetAgentResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(37);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::BatchGetAgentRequest, ::city::economy::v2::BatchGetAgentResponse>*>(handler)
-              ->SetMessageAllocator(allocator);
-    }
-    ~WithCallbackMethod_BatchGetAgent() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status BatchGetAgent(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchGetAgentRequest* /*request*/, ::city::economy::v2::BatchGetAgentResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* BatchGetAgent(
-      ::grpc::CallbackServerContext* /*context*/, const ::city::economy::v2::BatchGetAgentRequest* /*request*/, ::city::economy::v2::BatchGetAgentResponse* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
-  class WithCallbackMethod_BatchUpdateAgent : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithCallbackMethod_BatchUpdateAgent() {
-      ::grpc::Service::MarkMethodCallback(38,
-          new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::BatchUpdateAgentRequest, ::city::economy::v2::BatchUpdateAgentResponse>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::city::economy::v2::BatchUpdateAgentRequest* request, ::city::economy::v2::BatchUpdateAgentResponse* response) { return this->BatchUpdateAgent(context, request, response); }));}
-    void SetMessageAllocatorFor_BatchUpdateAgent(
-        ::grpc::MessageAllocator< ::city::economy::v2::BatchUpdateAgentRequest, ::city::economy::v2::BatchUpdateAgentResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(38);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::BatchUpdateAgentRequest, ::city::economy::v2::BatchUpdateAgentResponse>*>(handler)
-              ->SetMessageAllocator(allocator);
-    }
-    ~WithCallbackMethod_BatchUpdateAgent() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status BatchUpdateAgent(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchUpdateAgentRequest* /*request*/, ::city::economy::v2::BatchUpdateAgentResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* BatchUpdateAgent(
-      ::grpc::CallbackServerContext* /*context*/, const ::city::economy::v2::BatchUpdateAgentRequest* /*request*/, ::city::economy::v2::BatchUpdateAgentResponse* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
-  class WithCallbackMethod_BatchDeltaUpdateAgent : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithCallbackMethod_BatchDeltaUpdateAgent() {
-      ::grpc::Service::MarkMethodCallback(39,
-          new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::BatchDeltaUpdateAgentRequest, ::city::economy::v2::BatchDeltaUpdateAgentResponse>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::city::economy::v2::BatchDeltaUpdateAgentRequest* request, ::city::economy::v2::BatchDeltaUpdateAgentResponse* response) { return this->BatchDeltaUpdateAgent(context, request, response); }));}
-    void SetMessageAllocatorFor_BatchDeltaUpdateAgent(
-        ::grpc::MessageAllocator< ::city::economy::v2::BatchDeltaUpdateAgentRequest, ::city::economy::v2::BatchDeltaUpdateAgentResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(39);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::BatchDeltaUpdateAgentRequest, ::city::economy::v2::BatchDeltaUpdateAgentResponse>*>(handler)
-              ->SetMessageAllocator(allocator);
-    }
-    ~WithCallbackMethod_BatchDeltaUpdateAgent() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status BatchDeltaUpdateAgent(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchDeltaUpdateAgentRequest* /*request*/, ::city::economy::v2::BatchDeltaUpdateAgentResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* BatchDeltaUpdateAgent(
-      ::grpc::CallbackServerContext* /*context*/, const ::city::economy::v2::BatchDeltaUpdateAgentRequest* /*request*/, ::city::economy::v2::BatchDeltaUpdateAgentResponse* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
   class WithCallbackMethod_CalculateTaxesDue : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_CalculateTaxesDue() {
-      ::grpc::Service::MarkMethodCallback(40,
+      ::grpc::Service::MarkMethodCallback(30,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::CalculateTaxesDueRequest, ::city::economy::v2::CalculateTaxesDueResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::CalculateTaxesDueRequest* request, ::city::economy::v2::CalculateTaxesDueResponse* response) { return this->CalculateTaxesDue(context, request, response); }));}
     void SetMessageAllocatorFor_CalculateTaxesDue(
         ::grpc::MessageAllocator< ::city::economy::v2::CalculateTaxesDueRequest, ::city::economy::v2::CalculateTaxesDueResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(40);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(30);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::CalculateTaxesDueRequest, ::city::economy::v2::CalculateTaxesDueResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -3232,13 +2942,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_CalculateConsumption() {
-      ::grpc::Service::MarkMethodCallback(41,
+      ::grpc::Service::MarkMethodCallback(31,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::CalculateConsumptionRequest, ::city::economy::v2::CalculateConsumptionResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::CalculateConsumptionRequest* request, ::city::economy::v2::CalculateConsumptionResponse* response) { return this->CalculateConsumption(context, request, response); }));}
     void SetMessageAllocatorFor_CalculateConsumption(
         ::grpc::MessageAllocator< ::city::economy::v2::CalculateConsumptionRequest, ::city::economy::v2::CalculateConsumptionResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(41);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(31);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::CalculateConsumptionRequest, ::city::economy::v2::CalculateConsumptionResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -3259,13 +2969,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_CalculateInterest() {
-      ::grpc::Service::MarkMethodCallback(42,
+      ::grpc::Service::MarkMethodCallback(32,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::CalculateInterestRequest, ::city::economy::v2::CalculateInterestResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::CalculateInterestRequest* request, ::city::economy::v2::CalculateInterestResponse* response) { return this->CalculateInterest(context, request, response); }));}
     void SetMessageAllocatorFor_CalculateInterest(
         ::grpc::MessageAllocator< ::city::economy::v2::CalculateInterestRequest, ::city::economy::v2::CalculateInterestResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(42);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(32);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::CalculateInterestRequest, ::city::economy::v2::CalculateInterestResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -3286,13 +2996,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_CalculateRealGDP() {
-      ::grpc::Service::MarkMethodCallback(43,
+      ::grpc::Service::MarkMethodCallback(33,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::CalculateRealGDPRequest, ::city::economy::v2::CalculateRealGDPResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::CalculateRealGDPRequest* request, ::city::economy::v2::CalculateRealGDPResponse* response) { return this->CalculateRealGDP(context, request, response); }));}
     void SetMessageAllocatorFor_CalculateRealGDP(
         ::grpc::MessageAllocator< ::city::economy::v2::CalculateRealGDPRequest, ::city::economy::v2::CalculateRealGDPResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(43);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(33);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::CalculateRealGDPRequest, ::city::economy::v2::CalculateRealGDPResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -3313,13 +3023,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_SaveEconomyEntities() {
-      ::grpc::Service::MarkMethodCallback(44,
+      ::grpc::Service::MarkMethodCallback(34,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::SaveEconomyEntitiesRequest, ::city::economy::v2::SaveEconomyEntitiesResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::SaveEconomyEntitiesRequest* request, ::city::economy::v2::SaveEconomyEntitiesResponse* response) { return this->SaveEconomyEntities(context, request, response); }));}
     void SetMessageAllocatorFor_SaveEconomyEntities(
         ::grpc::MessageAllocator< ::city::economy::v2::SaveEconomyEntitiesRequest, ::city::economy::v2::SaveEconomyEntitiesResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(44);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(34);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::SaveEconomyEntitiesRequest, ::city::economy::v2::SaveEconomyEntitiesResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -3340,13 +3050,13 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_LoadEconomyEntities() {
-      ::grpc::Service::MarkMethodCallback(45,
+      ::grpc::Service::MarkMethodCallback(35,
           new ::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::LoadEconomyEntitiesRequest, ::city::economy::v2::LoadEconomyEntitiesResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::economy::v2::LoadEconomyEntitiesRequest* request, ::city::economy::v2::LoadEconomyEntitiesResponse* response) { return this->LoadEconomyEntities(context, request, response); }));}
     void SetMessageAllocatorFor_LoadEconomyEntities(
         ::grpc::MessageAllocator< ::city::economy::v2::LoadEconomyEntitiesRequest, ::city::economy::v2::LoadEconomyEntitiesResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(45);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(35);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::economy::v2::LoadEconomyEntitiesRequest, ::city::economy::v2::LoadEconomyEntitiesResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -3361,7 +3071,7 @@ class OrgService final {
     virtual ::grpc::ServerUnaryReactor* LoadEconomyEntities(
       ::grpc::CallbackServerContext* /*context*/, const ::city::economy::v2::LoadEconomyEntitiesRequest* /*request*/, ::city::economy::v2::LoadEconomyEntitiesResponse* /*response*/)  { return nullptr; }
   };
-  typedef WithCallbackMethod_AddFirm<WithCallbackMethod_RemoveFirm<WithCallbackMethod_GetFirm<WithCallbackMethod_UpdateFirm<WithCallbackMethod_ListFirms<WithCallbackMethod_DeltaUpdateFirm<WithCallbackMethod_BatchAddFirm<WithCallbackMethod_BatchRemoveFirm<WithCallbackMethod_BatchGetFirm<WithCallbackMethod_BatchUpdateFirm<WithCallbackMethod_BatchDeltaUpdateFirm<WithCallbackMethod_AddNBS<WithCallbackMethod_RemoveNBS<WithCallbackMethod_GetNBS<WithCallbackMethod_UpdateNBS<WithCallbackMethod_ListNBS<WithCallbackMethod_DeltaUpdateNBS<WithCallbackMethod_AddGovernment<WithCallbackMethod_RemoveGovernment<WithCallbackMethod_GetGovernment<WithCallbackMethod_UpdateGovernment<WithCallbackMethod_ListGovernments<WithCallbackMethod_DeltaUpdateGovernment<WithCallbackMethod_AddBank<WithCallbackMethod_RemoveBank<WithCallbackMethod_GetBank<WithCallbackMethod_UpdateBank<WithCallbackMethod_ListBanks<WithCallbackMethod_DeltaUpdateBank<WithCallbackMethod_AddAgent<WithCallbackMethod_RemoveAgent<WithCallbackMethod_GetAgent<WithCallbackMethod_UpdateAgent<WithCallbackMethod_ListAgents<WithCallbackMethod_DeltaUpdateAgent<WithCallbackMethod_BatchAddAgent<WithCallbackMethod_BatchRemoveAgent<WithCallbackMethod_BatchGetAgent<WithCallbackMethod_BatchUpdateAgent<WithCallbackMethod_BatchDeltaUpdateAgent<WithCallbackMethod_CalculateTaxesDue<WithCallbackMethod_CalculateConsumption<WithCallbackMethod_CalculateInterest<WithCallbackMethod_CalculateRealGDP<WithCallbackMethod_SaveEconomyEntities<WithCallbackMethod_LoadEconomyEntities<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > CallbackService;
+  typedef WithCallbackMethod_AddFirm<WithCallbackMethod_RemoveFirm<WithCallbackMethod_GetFirm<WithCallbackMethod_UpdateFirm<WithCallbackMethod_ListFirms<WithCallbackMethod_DeltaUpdateFirm<WithCallbackMethod_AddNBS<WithCallbackMethod_RemoveNBS<WithCallbackMethod_GetNBS<WithCallbackMethod_UpdateNBS<WithCallbackMethod_ListNBS<WithCallbackMethod_DeltaUpdateNBS<WithCallbackMethod_AddGovernment<WithCallbackMethod_RemoveGovernment<WithCallbackMethod_GetGovernment<WithCallbackMethod_UpdateGovernment<WithCallbackMethod_ListGovernments<WithCallbackMethod_DeltaUpdateGovernment<WithCallbackMethod_AddBank<WithCallbackMethod_RemoveBank<WithCallbackMethod_GetBank<WithCallbackMethod_UpdateBank<WithCallbackMethod_ListBanks<WithCallbackMethod_DeltaUpdateBank<WithCallbackMethod_AddAgent<WithCallbackMethod_RemoveAgent<WithCallbackMethod_GetAgent<WithCallbackMethod_UpdateAgent<WithCallbackMethod_ListAgents<WithCallbackMethod_DeltaUpdateAgent<WithCallbackMethod_CalculateTaxesDue<WithCallbackMethod_CalculateConsumption<WithCallbackMethod_CalculateInterest<WithCallbackMethod_CalculateRealGDP<WithCallbackMethod_SaveEconomyEntities<WithCallbackMethod_LoadEconomyEntities<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > CallbackService;
   typedef CallbackService ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_AddFirm : public BaseClass {
@@ -3466,97 +3176,12 @@ class OrgService final {
     }
   };
   template <class BaseClass>
-  class WithGenericMethod_BatchAddFirm : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithGenericMethod_BatchAddFirm() {
-      ::grpc::Service::MarkMethodGeneric(6);
-    }
-    ~WithGenericMethod_BatchAddFirm() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status BatchAddFirm(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchAddFirmRequest* /*request*/, ::city::economy::v2::BatchAddFirmResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-  };
-  template <class BaseClass>
-  class WithGenericMethod_BatchRemoveFirm : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithGenericMethod_BatchRemoveFirm() {
-      ::grpc::Service::MarkMethodGeneric(7);
-    }
-    ~WithGenericMethod_BatchRemoveFirm() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status BatchRemoveFirm(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchRemoveFirmRequest* /*request*/, ::city::economy::v2::BatchRemoveFirmResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-  };
-  template <class BaseClass>
-  class WithGenericMethod_BatchGetFirm : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithGenericMethod_BatchGetFirm() {
-      ::grpc::Service::MarkMethodGeneric(8);
-    }
-    ~WithGenericMethod_BatchGetFirm() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status BatchGetFirm(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchGetFirmRequest* /*request*/, ::city::economy::v2::BatchGetFirmResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-  };
-  template <class BaseClass>
-  class WithGenericMethod_BatchUpdateFirm : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithGenericMethod_BatchUpdateFirm() {
-      ::grpc::Service::MarkMethodGeneric(9);
-    }
-    ~WithGenericMethod_BatchUpdateFirm() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status BatchUpdateFirm(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchUpdateFirmRequest* /*request*/, ::city::economy::v2::BatchUpdateFirmResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-  };
-  template <class BaseClass>
-  class WithGenericMethod_BatchDeltaUpdateFirm : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithGenericMethod_BatchDeltaUpdateFirm() {
-      ::grpc::Service::MarkMethodGeneric(10);
-    }
-    ~WithGenericMethod_BatchDeltaUpdateFirm() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status BatchDeltaUpdateFirm(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchDeltaUpdateFirmRequest* /*request*/, ::city::economy::v2::BatchDeltaUpdateFirmResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-  };
-  template <class BaseClass>
   class WithGenericMethod_AddNBS : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_AddNBS() {
-      ::grpc::Service::MarkMethodGeneric(11);
+      ::grpc::Service::MarkMethodGeneric(6);
     }
     ~WithGenericMethod_AddNBS() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3573,7 +3198,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_RemoveNBS() {
-      ::grpc::Service::MarkMethodGeneric(12);
+      ::grpc::Service::MarkMethodGeneric(7);
     }
     ~WithGenericMethod_RemoveNBS() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3590,7 +3215,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_GetNBS() {
-      ::grpc::Service::MarkMethodGeneric(13);
+      ::grpc::Service::MarkMethodGeneric(8);
     }
     ~WithGenericMethod_GetNBS() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3607,7 +3232,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_UpdateNBS() {
-      ::grpc::Service::MarkMethodGeneric(14);
+      ::grpc::Service::MarkMethodGeneric(9);
     }
     ~WithGenericMethod_UpdateNBS() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3624,7 +3249,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_ListNBS() {
-      ::grpc::Service::MarkMethodGeneric(15);
+      ::grpc::Service::MarkMethodGeneric(10);
     }
     ~WithGenericMethod_ListNBS() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3641,7 +3266,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_DeltaUpdateNBS() {
-      ::grpc::Service::MarkMethodGeneric(16);
+      ::grpc::Service::MarkMethodGeneric(11);
     }
     ~WithGenericMethod_DeltaUpdateNBS() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3658,7 +3283,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_AddGovernment() {
-      ::grpc::Service::MarkMethodGeneric(17);
+      ::grpc::Service::MarkMethodGeneric(12);
     }
     ~WithGenericMethod_AddGovernment() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3675,7 +3300,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_RemoveGovernment() {
-      ::grpc::Service::MarkMethodGeneric(18);
+      ::grpc::Service::MarkMethodGeneric(13);
     }
     ~WithGenericMethod_RemoveGovernment() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3692,7 +3317,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_GetGovernment() {
-      ::grpc::Service::MarkMethodGeneric(19);
+      ::grpc::Service::MarkMethodGeneric(14);
     }
     ~WithGenericMethod_GetGovernment() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3709,7 +3334,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_UpdateGovernment() {
-      ::grpc::Service::MarkMethodGeneric(20);
+      ::grpc::Service::MarkMethodGeneric(15);
     }
     ~WithGenericMethod_UpdateGovernment() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3726,7 +3351,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_ListGovernments() {
-      ::grpc::Service::MarkMethodGeneric(21);
+      ::grpc::Service::MarkMethodGeneric(16);
     }
     ~WithGenericMethod_ListGovernments() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3743,7 +3368,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_DeltaUpdateGovernment() {
-      ::grpc::Service::MarkMethodGeneric(22);
+      ::grpc::Service::MarkMethodGeneric(17);
     }
     ~WithGenericMethod_DeltaUpdateGovernment() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3760,7 +3385,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_AddBank() {
-      ::grpc::Service::MarkMethodGeneric(23);
+      ::grpc::Service::MarkMethodGeneric(18);
     }
     ~WithGenericMethod_AddBank() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3777,7 +3402,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_RemoveBank() {
-      ::grpc::Service::MarkMethodGeneric(24);
+      ::grpc::Service::MarkMethodGeneric(19);
     }
     ~WithGenericMethod_RemoveBank() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3794,7 +3419,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_GetBank() {
-      ::grpc::Service::MarkMethodGeneric(25);
+      ::grpc::Service::MarkMethodGeneric(20);
     }
     ~WithGenericMethod_GetBank() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3811,7 +3436,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_UpdateBank() {
-      ::grpc::Service::MarkMethodGeneric(26);
+      ::grpc::Service::MarkMethodGeneric(21);
     }
     ~WithGenericMethod_UpdateBank() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3828,7 +3453,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_ListBanks() {
-      ::grpc::Service::MarkMethodGeneric(27);
+      ::grpc::Service::MarkMethodGeneric(22);
     }
     ~WithGenericMethod_ListBanks() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3845,7 +3470,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_DeltaUpdateBank() {
-      ::grpc::Service::MarkMethodGeneric(28);
+      ::grpc::Service::MarkMethodGeneric(23);
     }
     ~WithGenericMethod_DeltaUpdateBank() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3862,7 +3487,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_AddAgent() {
-      ::grpc::Service::MarkMethodGeneric(29);
+      ::grpc::Service::MarkMethodGeneric(24);
     }
     ~WithGenericMethod_AddAgent() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3879,7 +3504,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_RemoveAgent() {
-      ::grpc::Service::MarkMethodGeneric(30);
+      ::grpc::Service::MarkMethodGeneric(25);
     }
     ~WithGenericMethod_RemoveAgent() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3896,7 +3521,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_GetAgent() {
-      ::grpc::Service::MarkMethodGeneric(31);
+      ::grpc::Service::MarkMethodGeneric(26);
     }
     ~WithGenericMethod_GetAgent() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3913,7 +3538,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_UpdateAgent() {
-      ::grpc::Service::MarkMethodGeneric(32);
+      ::grpc::Service::MarkMethodGeneric(27);
     }
     ~WithGenericMethod_UpdateAgent() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3930,7 +3555,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_ListAgents() {
-      ::grpc::Service::MarkMethodGeneric(33);
+      ::grpc::Service::MarkMethodGeneric(28);
     }
     ~WithGenericMethod_ListAgents() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3947,7 +3572,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_DeltaUpdateAgent() {
-      ::grpc::Service::MarkMethodGeneric(34);
+      ::grpc::Service::MarkMethodGeneric(29);
     }
     ~WithGenericMethod_DeltaUpdateAgent() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3959,97 +3584,12 @@ class OrgService final {
     }
   };
   template <class BaseClass>
-  class WithGenericMethod_BatchAddAgent : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithGenericMethod_BatchAddAgent() {
-      ::grpc::Service::MarkMethodGeneric(35);
-    }
-    ~WithGenericMethod_BatchAddAgent() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status BatchAddAgent(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchAddAgentRequest* /*request*/, ::city::economy::v2::BatchAddAgentResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-  };
-  template <class BaseClass>
-  class WithGenericMethod_BatchRemoveAgent : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithGenericMethod_BatchRemoveAgent() {
-      ::grpc::Service::MarkMethodGeneric(36);
-    }
-    ~WithGenericMethod_BatchRemoveAgent() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status BatchRemoveAgent(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchRemoveAgentRequest* /*request*/, ::city::economy::v2::BatchRemoveAgentResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-  };
-  template <class BaseClass>
-  class WithGenericMethod_BatchGetAgent : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithGenericMethod_BatchGetAgent() {
-      ::grpc::Service::MarkMethodGeneric(37);
-    }
-    ~WithGenericMethod_BatchGetAgent() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status BatchGetAgent(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchGetAgentRequest* /*request*/, ::city::economy::v2::BatchGetAgentResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-  };
-  template <class BaseClass>
-  class WithGenericMethod_BatchUpdateAgent : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithGenericMethod_BatchUpdateAgent() {
-      ::grpc::Service::MarkMethodGeneric(38);
-    }
-    ~WithGenericMethod_BatchUpdateAgent() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status BatchUpdateAgent(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchUpdateAgentRequest* /*request*/, ::city::economy::v2::BatchUpdateAgentResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-  };
-  template <class BaseClass>
-  class WithGenericMethod_BatchDeltaUpdateAgent : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithGenericMethod_BatchDeltaUpdateAgent() {
-      ::grpc::Service::MarkMethodGeneric(39);
-    }
-    ~WithGenericMethod_BatchDeltaUpdateAgent() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status BatchDeltaUpdateAgent(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchDeltaUpdateAgentRequest* /*request*/, ::city::economy::v2::BatchDeltaUpdateAgentResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-  };
-  template <class BaseClass>
   class WithGenericMethod_CalculateTaxesDue : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_CalculateTaxesDue() {
-      ::grpc::Service::MarkMethodGeneric(40);
+      ::grpc::Service::MarkMethodGeneric(30);
     }
     ~WithGenericMethod_CalculateTaxesDue() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4066,7 +3606,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_CalculateConsumption() {
-      ::grpc::Service::MarkMethodGeneric(41);
+      ::grpc::Service::MarkMethodGeneric(31);
     }
     ~WithGenericMethod_CalculateConsumption() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4083,7 +3623,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_CalculateInterest() {
-      ::grpc::Service::MarkMethodGeneric(42);
+      ::grpc::Service::MarkMethodGeneric(32);
     }
     ~WithGenericMethod_CalculateInterest() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4100,7 +3640,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_CalculateRealGDP() {
-      ::grpc::Service::MarkMethodGeneric(43);
+      ::grpc::Service::MarkMethodGeneric(33);
     }
     ~WithGenericMethod_CalculateRealGDP() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4117,7 +3657,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_SaveEconomyEntities() {
-      ::grpc::Service::MarkMethodGeneric(44);
+      ::grpc::Service::MarkMethodGeneric(34);
     }
     ~WithGenericMethod_SaveEconomyEntities() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4134,7 +3674,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_LoadEconomyEntities() {
-      ::grpc::Service::MarkMethodGeneric(45);
+      ::grpc::Service::MarkMethodGeneric(35);
     }
     ~WithGenericMethod_LoadEconomyEntities() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4266,112 +3806,12 @@ class OrgService final {
     }
   };
   template <class BaseClass>
-  class WithRawMethod_BatchAddFirm : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawMethod_BatchAddFirm() {
-      ::grpc::Service::MarkMethodRaw(6);
-    }
-    ~WithRawMethod_BatchAddFirm() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status BatchAddFirm(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchAddFirmRequest* /*request*/, ::city::economy::v2::BatchAddFirmResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestBatchAddFirm(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithRawMethod_BatchRemoveFirm : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawMethod_BatchRemoveFirm() {
-      ::grpc::Service::MarkMethodRaw(7);
-    }
-    ~WithRawMethod_BatchRemoveFirm() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status BatchRemoveFirm(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchRemoveFirmRequest* /*request*/, ::city::economy::v2::BatchRemoveFirmResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestBatchRemoveFirm(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithRawMethod_BatchGetFirm : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawMethod_BatchGetFirm() {
-      ::grpc::Service::MarkMethodRaw(8);
-    }
-    ~WithRawMethod_BatchGetFirm() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status BatchGetFirm(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchGetFirmRequest* /*request*/, ::city::economy::v2::BatchGetFirmResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestBatchGetFirm(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithRawMethod_BatchUpdateFirm : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawMethod_BatchUpdateFirm() {
-      ::grpc::Service::MarkMethodRaw(9);
-    }
-    ~WithRawMethod_BatchUpdateFirm() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status BatchUpdateFirm(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchUpdateFirmRequest* /*request*/, ::city::economy::v2::BatchUpdateFirmResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestBatchUpdateFirm(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(9, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithRawMethod_BatchDeltaUpdateFirm : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawMethod_BatchDeltaUpdateFirm() {
-      ::grpc::Service::MarkMethodRaw(10);
-    }
-    ~WithRawMethod_BatchDeltaUpdateFirm() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status BatchDeltaUpdateFirm(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchDeltaUpdateFirmRequest* /*request*/, ::city::economy::v2::BatchDeltaUpdateFirmResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestBatchDeltaUpdateFirm(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(10, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
   class WithRawMethod_AddNBS : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_AddNBS() {
-      ::grpc::Service::MarkMethodRaw(11);
+      ::grpc::Service::MarkMethodRaw(6);
     }
     ~WithRawMethod_AddNBS() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4382,7 +3822,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestAddNBS(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(11, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4391,7 +3831,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_RemoveNBS() {
-      ::grpc::Service::MarkMethodRaw(12);
+      ::grpc::Service::MarkMethodRaw(7);
     }
     ~WithRawMethod_RemoveNBS() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4402,7 +3842,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestRemoveNBS(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(12, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4411,7 +3851,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_GetNBS() {
-      ::grpc::Service::MarkMethodRaw(13);
+      ::grpc::Service::MarkMethodRaw(8);
     }
     ~WithRawMethod_GetNBS() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4422,7 +3862,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetNBS(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(13, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4431,7 +3871,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_UpdateNBS() {
-      ::grpc::Service::MarkMethodRaw(14);
+      ::grpc::Service::MarkMethodRaw(9);
     }
     ~WithRawMethod_UpdateNBS() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4442,7 +3882,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestUpdateNBS(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(14, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(9, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4451,7 +3891,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_ListNBS() {
-      ::grpc::Service::MarkMethodRaw(15);
+      ::grpc::Service::MarkMethodRaw(10);
     }
     ~WithRawMethod_ListNBS() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4462,7 +3902,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestListNBS(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(15, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(10, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4471,7 +3911,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_DeltaUpdateNBS() {
-      ::grpc::Service::MarkMethodRaw(16);
+      ::grpc::Service::MarkMethodRaw(11);
     }
     ~WithRawMethod_DeltaUpdateNBS() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4482,7 +3922,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestDeltaUpdateNBS(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(16, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(11, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4491,7 +3931,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_AddGovernment() {
-      ::grpc::Service::MarkMethodRaw(17);
+      ::grpc::Service::MarkMethodRaw(12);
     }
     ~WithRawMethod_AddGovernment() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4502,7 +3942,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestAddGovernment(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(17, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(12, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4511,7 +3951,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_RemoveGovernment() {
-      ::grpc::Service::MarkMethodRaw(18);
+      ::grpc::Service::MarkMethodRaw(13);
     }
     ~WithRawMethod_RemoveGovernment() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4522,7 +3962,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestRemoveGovernment(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(18, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(13, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4531,7 +3971,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_GetGovernment() {
-      ::grpc::Service::MarkMethodRaw(19);
+      ::grpc::Service::MarkMethodRaw(14);
     }
     ~WithRawMethod_GetGovernment() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4542,7 +3982,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetGovernment(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(19, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(14, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4551,7 +3991,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_UpdateGovernment() {
-      ::grpc::Service::MarkMethodRaw(20);
+      ::grpc::Service::MarkMethodRaw(15);
     }
     ~WithRawMethod_UpdateGovernment() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4562,7 +4002,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestUpdateGovernment(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(20, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(15, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4571,7 +4011,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_ListGovernments() {
-      ::grpc::Service::MarkMethodRaw(21);
+      ::grpc::Service::MarkMethodRaw(16);
     }
     ~WithRawMethod_ListGovernments() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4582,7 +4022,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestListGovernments(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(21, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(16, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4591,7 +4031,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_DeltaUpdateGovernment() {
-      ::grpc::Service::MarkMethodRaw(22);
+      ::grpc::Service::MarkMethodRaw(17);
     }
     ~WithRawMethod_DeltaUpdateGovernment() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4602,7 +4042,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestDeltaUpdateGovernment(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(22, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(17, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4611,7 +4051,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_AddBank() {
-      ::grpc::Service::MarkMethodRaw(23);
+      ::grpc::Service::MarkMethodRaw(18);
     }
     ~WithRawMethod_AddBank() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4622,7 +4062,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestAddBank(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(23, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(18, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4631,7 +4071,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_RemoveBank() {
-      ::grpc::Service::MarkMethodRaw(24);
+      ::grpc::Service::MarkMethodRaw(19);
     }
     ~WithRawMethod_RemoveBank() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4642,7 +4082,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestRemoveBank(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(24, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(19, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4651,7 +4091,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_GetBank() {
-      ::grpc::Service::MarkMethodRaw(25);
+      ::grpc::Service::MarkMethodRaw(20);
     }
     ~WithRawMethod_GetBank() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4662,7 +4102,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetBank(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(25, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(20, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4671,7 +4111,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_UpdateBank() {
-      ::grpc::Service::MarkMethodRaw(26);
+      ::grpc::Service::MarkMethodRaw(21);
     }
     ~WithRawMethod_UpdateBank() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4682,7 +4122,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestUpdateBank(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(26, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(21, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4691,7 +4131,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_ListBanks() {
-      ::grpc::Service::MarkMethodRaw(27);
+      ::grpc::Service::MarkMethodRaw(22);
     }
     ~WithRawMethod_ListBanks() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4702,7 +4142,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestListBanks(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(27, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(22, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4711,7 +4151,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_DeltaUpdateBank() {
-      ::grpc::Service::MarkMethodRaw(28);
+      ::grpc::Service::MarkMethodRaw(23);
     }
     ~WithRawMethod_DeltaUpdateBank() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4722,7 +4162,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestDeltaUpdateBank(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(28, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(23, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4731,7 +4171,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_AddAgent() {
-      ::grpc::Service::MarkMethodRaw(29);
+      ::grpc::Service::MarkMethodRaw(24);
     }
     ~WithRawMethod_AddAgent() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4742,7 +4182,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestAddAgent(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(29, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(24, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4751,7 +4191,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_RemoveAgent() {
-      ::grpc::Service::MarkMethodRaw(30);
+      ::grpc::Service::MarkMethodRaw(25);
     }
     ~WithRawMethod_RemoveAgent() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4762,7 +4202,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestRemoveAgent(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(30, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(25, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4771,7 +4211,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_GetAgent() {
-      ::grpc::Service::MarkMethodRaw(31);
+      ::grpc::Service::MarkMethodRaw(26);
     }
     ~WithRawMethod_GetAgent() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4782,7 +4222,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetAgent(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(31, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(26, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4791,7 +4231,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_UpdateAgent() {
-      ::grpc::Service::MarkMethodRaw(32);
+      ::grpc::Service::MarkMethodRaw(27);
     }
     ~WithRawMethod_UpdateAgent() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4802,7 +4242,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestUpdateAgent(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(32, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(27, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4811,7 +4251,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_ListAgents() {
-      ::grpc::Service::MarkMethodRaw(33);
+      ::grpc::Service::MarkMethodRaw(28);
     }
     ~WithRawMethod_ListAgents() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4822,7 +4262,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestListAgents(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(33, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(28, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4831,7 +4271,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_DeltaUpdateAgent() {
-      ::grpc::Service::MarkMethodRaw(34);
+      ::grpc::Service::MarkMethodRaw(29);
     }
     ~WithRawMethod_DeltaUpdateAgent() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4842,107 +4282,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestDeltaUpdateAgent(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(34, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithRawMethod_BatchAddAgent : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawMethod_BatchAddAgent() {
-      ::grpc::Service::MarkMethodRaw(35);
-    }
-    ~WithRawMethod_BatchAddAgent() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status BatchAddAgent(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchAddAgentRequest* /*request*/, ::city::economy::v2::BatchAddAgentResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestBatchAddAgent(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(35, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithRawMethod_BatchRemoveAgent : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawMethod_BatchRemoveAgent() {
-      ::grpc::Service::MarkMethodRaw(36);
-    }
-    ~WithRawMethod_BatchRemoveAgent() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status BatchRemoveAgent(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchRemoveAgentRequest* /*request*/, ::city::economy::v2::BatchRemoveAgentResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestBatchRemoveAgent(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(36, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithRawMethod_BatchGetAgent : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawMethod_BatchGetAgent() {
-      ::grpc::Service::MarkMethodRaw(37);
-    }
-    ~WithRawMethod_BatchGetAgent() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status BatchGetAgent(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchGetAgentRequest* /*request*/, ::city::economy::v2::BatchGetAgentResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestBatchGetAgent(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(37, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithRawMethod_BatchUpdateAgent : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawMethod_BatchUpdateAgent() {
-      ::grpc::Service::MarkMethodRaw(38);
-    }
-    ~WithRawMethod_BatchUpdateAgent() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status BatchUpdateAgent(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchUpdateAgentRequest* /*request*/, ::city::economy::v2::BatchUpdateAgentResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestBatchUpdateAgent(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(38, context, request, response, new_call_cq, notification_cq, tag);
-    }
-  };
-  template <class BaseClass>
-  class WithRawMethod_BatchDeltaUpdateAgent : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawMethod_BatchDeltaUpdateAgent() {
-      ::grpc::Service::MarkMethodRaw(39);
-    }
-    ~WithRawMethod_BatchDeltaUpdateAgent() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status BatchDeltaUpdateAgent(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchDeltaUpdateAgentRequest* /*request*/, ::city::economy::v2::BatchDeltaUpdateAgentResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    void RequestBatchDeltaUpdateAgent(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(39, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(29, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4951,7 +4291,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_CalculateTaxesDue() {
-      ::grpc::Service::MarkMethodRaw(40);
+      ::grpc::Service::MarkMethodRaw(30);
     }
     ~WithRawMethod_CalculateTaxesDue() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4962,7 +4302,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestCalculateTaxesDue(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(40, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(30, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4971,7 +4311,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_CalculateConsumption() {
-      ::grpc::Service::MarkMethodRaw(41);
+      ::grpc::Service::MarkMethodRaw(31);
     }
     ~WithRawMethod_CalculateConsumption() override {
       BaseClassMustBeDerivedFromService(this);
@@ -4982,7 +4322,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestCalculateConsumption(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(41, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(31, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -4991,7 +4331,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_CalculateInterest() {
-      ::grpc::Service::MarkMethodRaw(42);
+      ::grpc::Service::MarkMethodRaw(32);
     }
     ~WithRawMethod_CalculateInterest() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5002,7 +4342,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestCalculateInterest(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(42, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(32, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -5011,7 +4351,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_CalculateRealGDP() {
-      ::grpc::Service::MarkMethodRaw(43);
+      ::grpc::Service::MarkMethodRaw(33);
     }
     ~WithRawMethod_CalculateRealGDP() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5022,7 +4362,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestCalculateRealGDP(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(43, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(33, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -5031,7 +4371,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_SaveEconomyEntities() {
-      ::grpc::Service::MarkMethodRaw(44);
+      ::grpc::Service::MarkMethodRaw(34);
     }
     ~WithRawMethod_SaveEconomyEntities() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5042,7 +4382,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestSaveEconomyEntities(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(44, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(34, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -5051,7 +4391,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_LoadEconomyEntities() {
-      ::grpc::Service::MarkMethodRaw(45);
+      ::grpc::Service::MarkMethodRaw(35);
     }
     ~WithRawMethod_LoadEconomyEntities() override {
       BaseClassMustBeDerivedFromService(this);
@@ -5062,7 +4402,7 @@ class OrgService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestLoadEconomyEntities(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(45, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(35, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -5198,122 +4538,12 @@ class OrgService final {
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_BatchAddFirm : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawCallbackMethod_BatchAddFirm() {
-      ::grpc::Service::MarkMethodRawCallback(6,
-          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->BatchAddFirm(context, request, response); }));
-    }
-    ~WithRawCallbackMethod_BatchAddFirm() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status BatchAddFirm(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchAddFirmRequest* /*request*/, ::city::economy::v2::BatchAddFirmResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* BatchAddFirm(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
-  class WithRawCallbackMethod_BatchRemoveFirm : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawCallbackMethod_BatchRemoveFirm() {
-      ::grpc::Service::MarkMethodRawCallback(7,
-          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->BatchRemoveFirm(context, request, response); }));
-    }
-    ~WithRawCallbackMethod_BatchRemoveFirm() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status BatchRemoveFirm(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchRemoveFirmRequest* /*request*/, ::city::economy::v2::BatchRemoveFirmResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* BatchRemoveFirm(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
-  class WithRawCallbackMethod_BatchGetFirm : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawCallbackMethod_BatchGetFirm() {
-      ::grpc::Service::MarkMethodRawCallback(8,
-          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->BatchGetFirm(context, request, response); }));
-    }
-    ~WithRawCallbackMethod_BatchGetFirm() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status BatchGetFirm(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchGetFirmRequest* /*request*/, ::city::economy::v2::BatchGetFirmResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* BatchGetFirm(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
-  class WithRawCallbackMethod_BatchUpdateFirm : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawCallbackMethod_BatchUpdateFirm() {
-      ::grpc::Service::MarkMethodRawCallback(9,
-          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->BatchUpdateFirm(context, request, response); }));
-    }
-    ~WithRawCallbackMethod_BatchUpdateFirm() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status BatchUpdateFirm(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchUpdateFirmRequest* /*request*/, ::city::economy::v2::BatchUpdateFirmResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* BatchUpdateFirm(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
-  class WithRawCallbackMethod_BatchDeltaUpdateFirm : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawCallbackMethod_BatchDeltaUpdateFirm() {
-      ::grpc::Service::MarkMethodRawCallback(10,
-          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->BatchDeltaUpdateFirm(context, request, response); }));
-    }
-    ~WithRawCallbackMethod_BatchDeltaUpdateFirm() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status BatchDeltaUpdateFirm(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchDeltaUpdateFirmRequest* /*request*/, ::city::economy::v2::BatchDeltaUpdateFirmResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* BatchDeltaUpdateFirm(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
   class WithRawCallbackMethod_AddNBS : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_AddNBS() {
-      ::grpc::Service::MarkMethodRawCallback(11,
+      ::grpc::Service::MarkMethodRawCallback(6,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->AddNBS(context, request, response); }));
@@ -5335,7 +4565,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_RemoveNBS() {
-      ::grpc::Service::MarkMethodRawCallback(12,
+      ::grpc::Service::MarkMethodRawCallback(7,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->RemoveNBS(context, request, response); }));
@@ -5357,7 +4587,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_GetNBS() {
-      ::grpc::Service::MarkMethodRawCallback(13,
+      ::grpc::Service::MarkMethodRawCallback(8,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetNBS(context, request, response); }));
@@ -5379,7 +4609,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_UpdateNBS() {
-      ::grpc::Service::MarkMethodRawCallback(14,
+      ::grpc::Service::MarkMethodRawCallback(9,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->UpdateNBS(context, request, response); }));
@@ -5401,7 +4631,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_ListNBS() {
-      ::grpc::Service::MarkMethodRawCallback(15,
+      ::grpc::Service::MarkMethodRawCallback(10,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->ListNBS(context, request, response); }));
@@ -5423,7 +4653,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_DeltaUpdateNBS() {
-      ::grpc::Service::MarkMethodRawCallback(16,
+      ::grpc::Service::MarkMethodRawCallback(11,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->DeltaUpdateNBS(context, request, response); }));
@@ -5445,7 +4675,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_AddGovernment() {
-      ::grpc::Service::MarkMethodRawCallback(17,
+      ::grpc::Service::MarkMethodRawCallback(12,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->AddGovernment(context, request, response); }));
@@ -5467,7 +4697,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_RemoveGovernment() {
-      ::grpc::Service::MarkMethodRawCallback(18,
+      ::grpc::Service::MarkMethodRawCallback(13,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->RemoveGovernment(context, request, response); }));
@@ -5489,7 +4719,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_GetGovernment() {
-      ::grpc::Service::MarkMethodRawCallback(19,
+      ::grpc::Service::MarkMethodRawCallback(14,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetGovernment(context, request, response); }));
@@ -5511,7 +4741,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_UpdateGovernment() {
-      ::grpc::Service::MarkMethodRawCallback(20,
+      ::grpc::Service::MarkMethodRawCallback(15,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->UpdateGovernment(context, request, response); }));
@@ -5533,7 +4763,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_ListGovernments() {
-      ::grpc::Service::MarkMethodRawCallback(21,
+      ::grpc::Service::MarkMethodRawCallback(16,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->ListGovernments(context, request, response); }));
@@ -5555,7 +4785,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_DeltaUpdateGovernment() {
-      ::grpc::Service::MarkMethodRawCallback(22,
+      ::grpc::Service::MarkMethodRawCallback(17,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->DeltaUpdateGovernment(context, request, response); }));
@@ -5577,7 +4807,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_AddBank() {
-      ::grpc::Service::MarkMethodRawCallback(23,
+      ::grpc::Service::MarkMethodRawCallback(18,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->AddBank(context, request, response); }));
@@ -5599,7 +4829,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_RemoveBank() {
-      ::grpc::Service::MarkMethodRawCallback(24,
+      ::grpc::Service::MarkMethodRawCallback(19,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->RemoveBank(context, request, response); }));
@@ -5621,7 +4851,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_GetBank() {
-      ::grpc::Service::MarkMethodRawCallback(25,
+      ::grpc::Service::MarkMethodRawCallback(20,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetBank(context, request, response); }));
@@ -5643,7 +4873,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_UpdateBank() {
-      ::grpc::Service::MarkMethodRawCallback(26,
+      ::grpc::Service::MarkMethodRawCallback(21,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->UpdateBank(context, request, response); }));
@@ -5665,7 +4895,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_ListBanks() {
-      ::grpc::Service::MarkMethodRawCallback(27,
+      ::grpc::Service::MarkMethodRawCallback(22,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->ListBanks(context, request, response); }));
@@ -5687,7 +4917,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_DeltaUpdateBank() {
-      ::grpc::Service::MarkMethodRawCallback(28,
+      ::grpc::Service::MarkMethodRawCallback(23,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->DeltaUpdateBank(context, request, response); }));
@@ -5709,7 +4939,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_AddAgent() {
-      ::grpc::Service::MarkMethodRawCallback(29,
+      ::grpc::Service::MarkMethodRawCallback(24,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->AddAgent(context, request, response); }));
@@ -5731,7 +4961,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_RemoveAgent() {
-      ::grpc::Service::MarkMethodRawCallback(30,
+      ::grpc::Service::MarkMethodRawCallback(25,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->RemoveAgent(context, request, response); }));
@@ -5753,7 +4983,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_GetAgent() {
-      ::grpc::Service::MarkMethodRawCallback(31,
+      ::grpc::Service::MarkMethodRawCallback(26,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetAgent(context, request, response); }));
@@ -5775,7 +5005,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_UpdateAgent() {
-      ::grpc::Service::MarkMethodRawCallback(32,
+      ::grpc::Service::MarkMethodRawCallback(27,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->UpdateAgent(context, request, response); }));
@@ -5797,7 +5027,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_ListAgents() {
-      ::grpc::Service::MarkMethodRawCallback(33,
+      ::grpc::Service::MarkMethodRawCallback(28,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->ListAgents(context, request, response); }));
@@ -5819,7 +5049,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_DeltaUpdateAgent() {
-      ::grpc::Service::MarkMethodRawCallback(34,
+      ::grpc::Service::MarkMethodRawCallback(29,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->DeltaUpdateAgent(context, request, response); }));
@@ -5836,122 +5066,12 @@ class OrgService final {
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_BatchAddAgent : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawCallbackMethod_BatchAddAgent() {
-      ::grpc::Service::MarkMethodRawCallback(35,
-          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->BatchAddAgent(context, request, response); }));
-    }
-    ~WithRawCallbackMethod_BatchAddAgent() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status BatchAddAgent(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchAddAgentRequest* /*request*/, ::city::economy::v2::BatchAddAgentResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* BatchAddAgent(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
-  class WithRawCallbackMethod_BatchRemoveAgent : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawCallbackMethod_BatchRemoveAgent() {
-      ::grpc::Service::MarkMethodRawCallback(36,
-          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->BatchRemoveAgent(context, request, response); }));
-    }
-    ~WithRawCallbackMethod_BatchRemoveAgent() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status BatchRemoveAgent(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchRemoveAgentRequest* /*request*/, ::city::economy::v2::BatchRemoveAgentResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* BatchRemoveAgent(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
-  class WithRawCallbackMethod_BatchGetAgent : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawCallbackMethod_BatchGetAgent() {
-      ::grpc::Service::MarkMethodRawCallback(37,
-          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->BatchGetAgent(context, request, response); }));
-    }
-    ~WithRawCallbackMethod_BatchGetAgent() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status BatchGetAgent(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchGetAgentRequest* /*request*/, ::city::economy::v2::BatchGetAgentResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* BatchGetAgent(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
-  class WithRawCallbackMethod_BatchUpdateAgent : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawCallbackMethod_BatchUpdateAgent() {
-      ::grpc::Service::MarkMethodRawCallback(38,
-          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->BatchUpdateAgent(context, request, response); }));
-    }
-    ~WithRawCallbackMethod_BatchUpdateAgent() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status BatchUpdateAgent(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchUpdateAgentRequest* /*request*/, ::city::economy::v2::BatchUpdateAgentResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* BatchUpdateAgent(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
-  class WithRawCallbackMethod_BatchDeltaUpdateAgent : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithRawCallbackMethod_BatchDeltaUpdateAgent() {
-      ::grpc::Service::MarkMethodRawCallback(39,
-          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
-            [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->BatchDeltaUpdateAgent(context, request, response); }));
-    }
-    ~WithRawCallbackMethod_BatchDeltaUpdateAgent() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable synchronous version of this method
-    ::grpc::Status BatchDeltaUpdateAgent(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchDeltaUpdateAgentRequest* /*request*/, ::city::economy::v2::BatchDeltaUpdateAgentResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    virtual ::grpc::ServerUnaryReactor* BatchDeltaUpdateAgent(
-      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
-  };
-  template <class BaseClass>
   class WithRawCallbackMethod_CalculateTaxesDue : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_CalculateTaxesDue() {
-      ::grpc::Service::MarkMethodRawCallback(40,
+      ::grpc::Service::MarkMethodRawCallback(30,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->CalculateTaxesDue(context, request, response); }));
@@ -5973,7 +5093,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_CalculateConsumption() {
-      ::grpc::Service::MarkMethodRawCallback(41,
+      ::grpc::Service::MarkMethodRawCallback(31,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->CalculateConsumption(context, request, response); }));
@@ -5995,7 +5115,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_CalculateInterest() {
-      ::grpc::Service::MarkMethodRawCallback(42,
+      ::grpc::Service::MarkMethodRawCallback(32,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->CalculateInterest(context, request, response); }));
@@ -6017,7 +5137,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_CalculateRealGDP() {
-      ::grpc::Service::MarkMethodRawCallback(43,
+      ::grpc::Service::MarkMethodRawCallback(33,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->CalculateRealGDP(context, request, response); }));
@@ -6039,7 +5159,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_SaveEconomyEntities() {
-      ::grpc::Service::MarkMethodRawCallback(44,
+      ::grpc::Service::MarkMethodRawCallback(34,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->SaveEconomyEntities(context, request, response); }));
@@ -6061,7 +5181,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_LoadEconomyEntities() {
-      ::grpc::Service::MarkMethodRawCallback(45,
+      ::grpc::Service::MarkMethodRawCallback(35,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->LoadEconomyEntities(context, request, response); }));
@@ -6240,147 +5360,12 @@ class OrgService final {
     virtual ::grpc::Status StreamedDeltaUpdateFirm(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::city::economy::v2::DeltaUpdateFirmRequest,::city::economy::v2::DeltaUpdateFirmResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
-  class WithStreamedUnaryMethod_BatchAddFirm : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithStreamedUnaryMethod_BatchAddFirm() {
-      ::grpc::Service::MarkMethodStreamed(6,
-        new ::grpc::internal::StreamedUnaryHandler<
-          ::city::economy::v2::BatchAddFirmRequest, ::city::economy::v2::BatchAddFirmResponse>(
-            [this](::grpc::ServerContext* context,
-                   ::grpc::ServerUnaryStreamer<
-                     ::city::economy::v2::BatchAddFirmRequest, ::city::economy::v2::BatchAddFirmResponse>* streamer) {
-                       return this->StreamedBatchAddFirm(context,
-                         streamer);
-                  }));
-    }
-    ~WithStreamedUnaryMethod_BatchAddFirm() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable regular version of this method
-    ::grpc::Status BatchAddFirm(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchAddFirmRequest* /*request*/, ::city::economy::v2::BatchAddFirmResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedBatchAddFirm(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::city::economy::v2::BatchAddFirmRequest,::city::economy::v2::BatchAddFirmResponse>* server_unary_streamer) = 0;
-  };
-  template <class BaseClass>
-  class WithStreamedUnaryMethod_BatchRemoveFirm : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithStreamedUnaryMethod_BatchRemoveFirm() {
-      ::grpc::Service::MarkMethodStreamed(7,
-        new ::grpc::internal::StreamedUnaryHandler<
-          ::city::economy::v2::BatchRemoveFirmRequest, ::city::economy::v2::BatchRemoveFirmResponse>(
-            [this](::grpc::ServerContext* context,
-                   ::grpc::ServerUnaryStreamer<
-                     ::city::economy::v2::BatchRemoveFirmRequest, ::city::economy::v2::BatchRemoveFirmResponse>* streamer) {
-                       return this->StreamedBatchRemoveFirm(context,
-                         streamer);
-                  }));
-    }
-    ~WithStreamedUnaryMethod_BatchRemoveFirm() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable regular version of this method
-    ::grpc::Status BatchRemoveFirm(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchRemoveFirmRequest* /*request*/, ::city::economy::v2::BatchRemoveFirmResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedBatchRemoveFirm(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::city::economy::v2::BatchRemoveFirmRequest,::city::economy::v2::BatchRemoveFirmResponse>* server_unary_streamer) = 0;
-  };
-  template <class BaseClass>
-  class WithStreamedUnaryMethod_BatchGetFirm : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithStreamedUnaryMethod_BatchGetFirm() {
-      ::grpc::Service::MarkMethodStreamed(8,
-        new ::grpc::internal::StreamedUnaryHandler<
-          ::city::economy::v2::BatchGetFirmRequest, ::city::economy::v2::BatchGetFirmResponse>(
-            [this](::grpc::ServerContext* context,
-                   ::grpc::ServerUnaryStreamer<
-                     ::city::economy::v2::BatchGetFirmRequest, ::city::economy::v2::BatchGetFirmResponse>* streamer) {
-                       return this->StreamedBatchGetFirm(context,
-                         streamer);
-                  }));
-    }
-    ~WithStreamedUnaryMethod_BatchGetFirm() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable regular version of this method
-    ::grpc::Status BatchGetFirm(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchGetFirmRequest* /*request*/, ::city::economy::v2::BatchGetFirmResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedBatchGetFirm(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::city::economy::v2::BatchGetFirmRequest,::city::economy::v2::BatchGetFirmResponse>* server_unary_streamer) = 0;
-  };
-  template <class BaseClass>
-  class WithStreamedUnaryMethod_BatchUpdateFirm : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithStreamedUnaryMethod_BatchUpdateFirm() {
-      ::grpc::Service::MarkMethodStreamed(9,
-        new ::grpc::internal::StreamedUnaryHandler<
-          ::city::economy::v2::BatchUpdateFirmRequest, ::city::economy::v2::BatchUpdateFirmResponse>(
-            [this](::grpc::ServerContext* context,
-                   ::grpc::ServerUnaryStreamer<
-                     ::city::economy::v2::BatchUpdateFirmRequest, ::city::economy::v2::BatchUpdateFirmResponse>* streamer) {
-                       return this->StreamedBatchUpdateFirm(context,
-                         streamer);
-                  }));
-    }
-    ~WithStreamedUnaryMethod_BatchUpdateFirm() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable regular version of this method
-    ::grpc::Status BatchUpdateFirm(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchUpdateFirmRequest* /*request*/, ::city::economy::v2::BatchUpdateFirmResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedBatchUpdateFirm(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::city::economy::v2::BatchUpdateFirmRequest,::city::economy::v2::BatchUpdateFirmResponse>* server_unary_streamer) = 0;
-  };
-  template <class BaseClass>
-  class WithStreamedUnaryMethod_BatchDeltaUpdateFirm : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithStreamedUnaryMethod_BatchDeltaUpdateFirm() {
-      ::grpc::Service::MarkMethodStreamed(10,
-        new ::grpc::internal::StreamedUnaryHandler<
-          ::city::economy::v2::BatchDeltaUpdateFirmRequest, ::city::economy::v2::BatchDeltaUpdateFirmResponse>(
-            [this](::grpc::ServerContext* context,
-                   ::grpc::ServerUnaryStreamer<
-                     ::city::economy::v2::BatchDeltaUpdateFirmRequest, ::city::economy::v2::BatchDeltaUpdateFirmResponse>* streamer) {
-                       return this->StreamedBatchDeltaUpdateFirm(context,
-                         streamer);
-                  }));
-    }
-    ~WithStreamedUnaryMethod_BatchDeltaUpdateFirm() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable regular version of this method
-    ::grpc::Status BatchDeltaUpdateFirm(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchDeltaUpdateFirmRequest* /*request*/, ::city::economy::v2::BatchDeltaUpdateFirmResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedBatchDeltaUpdateFirm(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::city::economy::v2::BatchDeltaUpdateFirmRequest,::city::economy::v2::BatchDeltaUpdateFirmResponse>* server_unary_streamer) = 0;
-  };
-  template <class BaseClass>
   class WithStreamedUnaryMethod_AddNBS : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_AddNBS() {
-      ::grpc::Service::MarkMethodStreamed(11,
+      ::grpc::Service::MarkMethodStreamed(6,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::AddNBSRequest, ::city::economy::v2::AddNBSResponse>(
             [this](::grpc::ServerContext* context,
@@ -6407,7 +5392,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_RemoveNBS() {
-      ::grpc::Service::MarkMethodStreamed(12,
+      ::grpc::Service::MarkMethodStreamed(7,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::RemoveNBSRequest, ::city::economy::v2::RemoveNBSResponse>(
             [this](::grpc::ServerContext* context,
@@ -6434,7 +5419,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_GetNBS() {
-      ::grpc::Service::MarkMethodStreamed(13,
+      ::grpc::Service::MarkMethodStreamed(8,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::GetNBSRequest, ::city::economy::v2::GetNBSResponse>(
             [this](::grpc::ServerContext* context,
@@ -6461,7 +5446,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_UpdateNBS() {
-      ::grpc::Service::MarkMethodStreamed(14,
+      ::grpc::Service::MarkMethodStreamed(9,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::UpdateNBSRequest, ::city::economy::v2::UpdateNBSResponse>(
             [this](::grpc::ServerContext* context,
@@ -6488,7 +5473,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_ListNBS() {
-      ::grpc::Service::MarkMethodStreamed(15,
+      ::grpc::Service::MarkMethodStreamed(10,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::ListNBSRequest, ::city::economy::v2::ListNBSResponse>(
             [this](::grpc::ServerContext* context,
@@ -6515,7 +5500,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_DeltaUpdateNBS() {
-      ::grpc::Service::MarkMethodStreamed(16,
+      ::grpc::Service::MarkMethodStreamed(11,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::DeltaUpdateNBSRequest, ::city::economy::v2::DeltaUpdateNBSResponse>(
             [this](::grpc::ServerContext* context,
@@ -6542,7 +5527,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_AddGovernment() {
-      ::grpc::Service::MarkMethodStreamed(17,
+      ::grpc::Service::MarkMethodStreamed(12,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::AddGovernmentRequest, ::city::economy::v2::AddGovernmentResponse>(
             [this](::grpc::ServerContext* context,
@@ -6569,7 +5554,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_RemoveGovernment() {
-      ::grpc::Service::MarkMethodStreamed(18,
+      ::grpc::Service::MarkMethodStreamed(13,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::RemoveGovernmentRequest, ::city::economy::v2::RemoveGovernmentResponse>(
             [this](::grpc::ServerContext* context,
@@ -6596,7 +5581,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_GetGovernment() {
-      ::grpc::Service::MarkMethodStreamed(19,
+      ::grpc::Service::MarkMethodStreamed(14,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::GetGovernmentRequest, ::city::economy::v2::GetGovernmentResponse>(
             [this](::grpc::ServerContext* context,
@@ -6623,7 +5608,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_UpdateGovernment() {
-      ::grpc::Service::MarkMethodStreamed(20,
+      ::grpc::Service::MarkMethodStreamed(15,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::UpdateGovernmentRequest, ::city::economy::v2::UpdateGovernmentResponse>(
             [this](::grpc::ServerContext* context,
@@ -6650,7 +5635,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_ListGovernments() {
-      ::grpc::Service::MarkMethodStreamed(21,
+      ::grpc::Service::MarkMethodStreamed(16,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::ListGovernmentsRequest, ::city::economy::v2::ListGovernmentsResponse>(
             [this](::grpc::ServerContext* context,
@@ -6677,7 +5662,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_DeltaUpdateGovernment() {
-      ::grpc::Service::MarkMethodStreamed(22,
+      ::grpc::Service::MarkMethodStreamed(17,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::DeltaUpdateGovernmentRequest, ::city::economy::v2::DeltaUpdateGovernmentResponse>(
             [this](::grpc::ServerContext* context,
@@ -6704,7 +5689,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_AddBank() {
-      ::grpc::Service::MarkMethodStreamed(23,
+      ::grpc::Service::MarkMethodStreamed(18,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::AddBankRequest, ::city::economy::v2::AddBankResponse>(
             [this](::grpc::ServerContext* context,
@@ -6731,7 +5716,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_RemoveBank() {
-      ::grpc::Service::MarkMethodStreamed(24,
+      ::grpc::Service::MarkMethodStreamed(19,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::RemoveBankRequest, ::city::economy::v2::RemoveBankResponse>(
             [this](::grpc::ServerContext* context,
@@ -6758,7 +5743,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_GetBank() {
-      ::grpc::Service::MarkMethodStreamed(25,
+      ::grpc::Service::MarkMethodStreamed(20,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::GetBankRequest, ::city::economy::v2::GetBankResponse>(
             [this](::grpc::ServerContext* context,
@@ -6785,7 +5770,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_UpdateBank() {
-      ::grpc::Service::MarkMethodStreamed(26,
+      ::grpc::Service::MarkMethodStreamed(21,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::UpdateBankRequest, ::city::economy::v2::UpdateBankResponse>(
             [this](::grpc::ServerContext* context,
@@ -6812,7 +5797,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_ListBanks() {
-      ::grpc::Service::MarkMethodStreamed(27,
+      ::grpc::Service::MarkMethodStreamed(22,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::ListBanksRequest, ::city::economy::v2::ListBanksResponse>(
             [this](::grpc::ServerContext* context,
@@ -6839,7 +5824,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_DeltaUpdateBank() {
-      ::grpc::Service::MarkMethodStreamed(28,
+      ::grpc::Service::MarkMethodStreamed(23,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::DeltaUpdateBankRequest, ::city::economy::v2::DeltaUpdateBankResponse>(
             [this](::grpc::ServerContext* context,
@@ -6866,7 +5851,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_AddAgent() {
-      ::grpc::Service::MarkMethodStreamed(29,
+      ::grpc::Service::MarkMethodStreamed(24,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::AddAgentRequest, ::city::economy::v2::AddAgentResponse>(
             [this](::grpc::ServerContext* context,
@@ -6893,7 +5878,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_RemoveAgent() {
-      ::grpc::Service::MarkMethodStreamed(30,
+      ::grpc::Service::MarkMethodStreamed(25,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::RemoveAgentRequest, ::city::economy::v2::RemoveAgentResponse>(
             [this](::grpc::ServerContext* context,
@@ -6920,7 +5905,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_GetAgent() {
-      ::grpc::Service::MarkMethodStreamed(31,
+      ::grpc::Service::MarkMethodStreamed(26,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::GetAgentRequest, ::city::economy::v2::GetAgentResponse>(
             [this](::grpc::ServerContext* context,
@@ -6947,7 +5932,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_UpdateAgent() {
-      ::grpc::Service::MarkMethodStreamed(32,
+      ::grpc::Service::MarkMethodStreamed(27,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::UpdateAgentRequest, ::city::economy::v2::UpdateAgentResponse>(
             [this](::grpc::ServerContext* context,
@@ -6974,7 +5959,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_ListAgents() {
-      ::grpc::Service::MarkMethodStreamed(33,
+      ::grpc::Service::MarkMethodStreamed(28,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::ListAgentsRequest, ::city::economy::v2::ListAgentsResponse>(
             [this](::grpc::ServerContext* context,
@@ -7001,7 +5986,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_DeltaUpdateAgent() {
-      ::grpc::Service::MarkMethodStreamed(34,
+      ::grpc::Service::MarkMethodStreamed(29,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::DeltaUpdateAgentRequest, ::city::economy::v2::DeltaUpdateAgentResponse>(
             [this](::grpc::ServerContext* context,
@@ -7023,147 +6008,12 @@ class OrgService final {
     virtual ::grpc::Status StreamedDeltaUpdateAgent(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::city::economy::v2::DeltaUpdateAgentRequest,::city::economy::v2::DeltaUpdateAgentResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
-  class WithStreamedUnaryMethod_BatchAddAgent : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithStreamedUnaryMethod_BatchAddAgent() {
-      ::grpc::Service::MarkMethodStreamed(35,
-        new ::grpc::internal::StreamedUnaryHandler<
-          ::city::economy::v2::BatchAddAgentRequest, ::city::economy::v2::BatchAddAgentResponse>(
-            [this](::grpc::ServerContext* context,
-                   ::grpc::ServerUnaryStreamer<
-                     ::city::economy::v2::BatchAddAgentRequest, ::city::economy::v2::BatchAddAgentResponse>* streamer) {
-                       return this->StreamedBatchAddAgent(context,
-                         streamer);
-                  }));
-    }
-    ~WithStreamedUnaryMethod_BatchAddAgent() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable regular version of this method
-    ::grpc::Status BatchAddAgent(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchAddAgentRequest* /*request*/, ::city::economy::v2::BatchAddAgentResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedBatchAddAgent(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::city::economy::v2::BatchAddAgentRequest,::city::economy::v2::BatchAddAgentResponse>* server_unary_streamer) = 0;
-  };
-  template <class BaseClass>
-  class WithStreamedUnaryMethod_BatchRemoveAgent : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithStreamedUnaryMethod_BatchRemoveAgent() {
-      ::grpc::Service::MarkMethodStreamed(36,
-        new ::grpc::internal::StreamedUnaryHandler<
-          ::city::economy::v2::BatchRemoveAgentRequest, ::city::economy::v2::BatchRemoveAgentResponse>(
-            [this](::grpc::ServerContext* context,
-                   ::grpc::ServerUnaryStreamer<
-                     ::city::economy::v2::BatchRemoveAgentRequest, ::city::economy::v2::BatchRemoveAgentResponse>* streamer) {
-                       return this->StreamedBatchRemoveAgent(context,
-                         streamer);
-                  }));
-    }
-    ~WithStreamedUnaryMethod_BatchRemoveAgent() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable regular version of this method
-    ::grpc::Status BatchRemoveAgent(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchRemoveAgentRequest* /*request*/, ::city::economy::v2::BatchRemoveAgentResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedBatchRemoveAgent(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::city::economy::v2::BatchRemoveAgentRequest,::city::economy::v2::BatchRemoveAgentResponse>* server_unary_streamer) = 0;
-  };
-  template <class BaseClass>
-  class WithStreamedUnaryMethod_BatchGetAgent : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithStreamedUnaryMethod_BatchGetAgent() {
-      ::grpc::Service::MarkMethodStreamed(37,
-        new ::grpc::internal::StreamedUnaryHandler<
-          ::city::economy::v2::BatchGetAgentRequest, ::city::economy::v2::BatchGetAgentResponse>(
-            [this](::grpc::ServerContext* context,
-                   ::grpc::ServerUnaryStreamer<
-                     ::city::economy::v2::BatchGetAgentRequest, ::city::economy::v2::BatchGetAgentResponse>* streamer) {
-                       return this->StreamedBatchGetAgent(context,
-                         streamer);
-                  }));
-    }
-    ~WithStreamedUnaryMethod_BatchGetAgent() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable regular version of this method
-    ::grpc::Status BatchGetAgent(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchGetAgentRequest* /*request*/, ::city::economy::v2::BatchGetAgentResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedBatchGetAgent(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::city::economy::v2::BatchGetAgentRequest,::city::economy::v2::BatchGetAgentResponse>* server_unary_streamer) = 0;
-  };
-  template <class BaseClass>
-  class WithStreamedUnaryMethod_BatchUpdateAgent : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithStreamedUnaryMethod_BatchUpdateAgent() {
-      ::grpc::Service::MarkMethodStreamed(38,
-        new ::grpc::internal::StreamedUnaryHandler<
-          ::city::economy::v2::BatchUpdateAgentRequest, ::city::economy::v2::BatchUpdateAgentResponse>(
-            [this](::grpc::ServerContext* context,
-                   ::grpc::ServerUnaryStreamer<
-                     ::city::economy::v2::BatchUpdateAgentRequest, ::city::economy::v2::BatchUpdateAgentResponse>* streamer) {
-                       return this->StreamedBatchUpdateAgent(context,
-                         streamer);
-                  }));
-    }
-    ~WithStreamedUnaryMethod_BatchUpdateAgent() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable regular version of this method
-    ::grpc::Status BatchUpdateAgent(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchUpdateAgentRequest* /*request*/, ::city::economy::v2::BatchUpdateAgentResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedBatchUpdateAgent(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::city::economy::v2::BatchUpdateAgentRequest,::city::economy::v2::BatchUpdateAgentResponse>* server_unary_streamer) = 0;
-  };
-  template <class BaseClass>
-  class WithStreamedUnaryMethod_BatchDeltaUpdateAgent : public BaseClass {
-   private:
-    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
-   public:
-    WithStreamedUnaryMethod_BatchDeltaUpdateAgent() {
-      ::grpc::Service::MarkMethodStreamed(39,
-        new ::grpc::internal::StreamedUnaryHandler<
-          ::city::economy::v2::BatchDeltaUpdateAgentRequest, ::city::economy::v2::BatchDeltaUpdateAgentResponse>(
-            [this](::grpc::ServerContext* context,
-                   ::grpc::ServerUnaryStreamer<
-                     ::city::economy::v2::BatchDeltaUpdateAgentRequest, ::city::economy::v2::BatchDeltaUpdateAgentResponse>* streamer) {
-                       return this->StreamedBatchDeltaUpdateAgent(context,
-                         streamer);
-                  }));
-    }
-    ~WithStreamedUnaryMethod_BatchDeltaUpdateAgent() override {
-      BaseClassMustBeDerivedFromService(this);
-    }
-    // disable regular version of this method
-    ::grpc::Status BatchDeltaUpdateAgent(::grpc::ServerContext* /*context*/, const ::city::economy::v2::BatchDeltaUpdateAgentRequest* /*request*/, ::city::economy::v2::BatchDeltaUpdateAgentResponse* /*response*/) override {
-      abort();
-      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-    }
-    // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedBatchDeltaUpdateAgent(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::city::economy::v2::BatchDeltaUpdateAgentRequest,::city::economy::v2::BatchDeltaUpdateAgentResponse>* server_unary_streamer) = 0;
-  };
-  template <class BaseClass>
   class WithStreamedUnaryMethod_CalculateTaxesDue : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_CalculateTaxesDue() {
-      ::grpc::Service::MarkMethodStreamed(40,
+      ::grpc::Service::MarkMethodStreamed(30,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::CalculateTaxesDueRequest, ::city::economy::v2::CalculateTaxesDueResponse>(
             [this](::grpc::ServerContext* context,
@@ -7190,7 +6040,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_CalculateConsumption() {
-      ::grpc::Service::MarkMethodStreamed(41,
+      ::grpc::Service::MarkMethodStreamed(31,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::CalculateConsumptionRequest, ::city::economy::v2::CalculateConsumptionResponse>(
             [this](::grpc::ServerContext* context,
@@ -7217,7 +6067,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_CalculateInterest() {
-      ::grpc::Service::MarkMethodStreamed(42,
+      ::grpc::Service::MarkMethodStreamed(32,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::CalculateInterestRequest, ::city::economy::v2::CalculateInterestResponse>(
             [this](::grpc::ServerContext* context,
@@ -7244,7 +6094,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_CalculateRealGDP() {
-      ::grpc::Service::MarkMethodStreamed(43,
+      ::grpc::Service::MarkMethodStreamed(33,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::CalculateRealGDPRequest, ::city::economy::v2::CalculateRealGDPResponse>(
             [this](::grpc::ServerContext* context,
@@ -7271,7 +6121,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_SaveEconomyEntities() {
-      ::grpc::Service::MarkMethodStreamed(44,
+      ::grpc::Service::MarkMethodStreamed(34,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::SaveEconomyEntitiesRequest, ::city::economy::v2::SaveEconomyEntitiesResponse>(
             [this](::grpc::ServerContext* context,
@@ -7298,7 +6148,7 @@ class OrgService final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_LoadEconomyEntities() {
-      ::grpc::Service::MarkMethodStreamed(45,
+      ::grpc::Service::MarkMethodStreamed(35,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::economy::v2::LoadEconomyEntitiesRequest, ::city::economy::v2::LoadEconomyEntitiesResponse>(
             [this](::grpc::ServerContext* context,
@@ -7319,10 +6169,12 @@ class OrgService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedLoadEconomyEntities(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::city::economy::v2::LoadEconomyEntitiesRequest,::city::economy::v2::LoadEconomyEntitiesResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_AddFirm<WithStreamedUnaryMethod_RemoveFirm<WithStreamedUnaryMethod_GetFirm<WithStreamedUnaryMethod_UpdateFirm<WithStreamedUnaryMethod_ListFirms<WithStreamedUnaryMethod_DeltaUpdateFirm<WithStreamedUnaryMethod_BatchAddFirm<WithStreamedUnaryMethod_BatchRemoveFirm<WithStreamedUnaryMethod_BatchGetFirm<WithStreamedUnaryMethod_BatchUpdateFirm<WithStreamedUnaryMethod_BatchDeltaUpdateFirm<WithStreamedUnaryMethod_AddNBS<WithStreamedUnaryMethod_RemoveNBS<WithStreamedUnaryMethod_GetNBS<WithStreamedUnaryMethod_UpdateNBS<WithStreamedUnaryMethod_ListNBS<WithStreamedUnaryMethod_DeltaUpdateNBS<WithStreamedUnaryMethod_AddGovernment<WithStreamedUnaryMethod_RemoveGovernment<WithStreamedUnaryMethod_GetGovernment<WithStreamedUnaryMethod_UpdateGovernment<WithStreamedUnaryMethod_ListGovernments<WithStreamedUnaryMethod_DeltaUpdateGovernment<WithStreamedUnaryMethod_AddBank<WithStreamedUnaryMethod_RemoveBank<WithStreamedUnaryMethod_GetBank<WithStreamedUnaryMethod_UpdateBank<WithStreamedUnaryMethod_ListBanks<WithStreamedUnaryMethod_DeltaUpdateBank<WithStreamedUnaryMethod_AddAgent<WithStreamedUnaryMethod_RemoveAgent<WithStreamedUnaryMethod_GetAgent<WithStreamedUnaryMethod_UpdateAgent<WithStreamedUnaryMethod_ListAgents<WithStreamedUnaryMethod_DeltaUpdateAgent<WithStreamedUnaryMethod_BatchAddAgent<WithStreamedUnaryMethod_BatchRemoveAgent<WithStreamedUnaryMethod_BatchGetAgent<WithStreamedUnaryMethod_BatchUpdateAgent<WithStreamedUnaryMethod_BatchDeltaUpdateAgent<WithStreamedUnaryMethod_CalculateTaxesDue<WithStreamedUnaryMethod_CalculateConsumption<WithStreamedUnaryMethod_CalculateInterest<WithStreamedUnaryMethod_CalculateRealGDP<WithStreamedUnaryMethod_SaveEconomyEntities<WithStreamedUnaryMethod_LoadEconomyEntities<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedUnaryService;
+  typedef WithStreamedUnaryMethod_AddFirm<WithStreamedUnaryMethod_RemoveFirm<WithStreamedUnaryMethod_GetFirm<WithStreamedUnaryMethod_UpdateFirm<WithStreamedUnaryMethod_ListFirms<WithStreamedUnaryMethod_DeltaUpdateFirm<WithStreamedUnaryMethod_AddNBS<WithStreamedUnaryMethod_RemoveNBS<WithStreamedUnaryMethod_GetNBS<WithStreamedUnaryMethod_UpdateNBS<WithStreamedUnaryMethod_ListNBS<WithStreamedUnaryMethod_DeltaUpdateNBS<WithStreamedUnaryMethod_AddGovernment<WithStreamedUnaryMethod_RemoveGovernment<WithStreamedUnaryMethod_GetGovernment<WithStreamedUnaryMethod_UpdateGovernment<WithStreamedUnaryMethod_ListGovernments<WithStreamedUnaryMethod_DeltaUpdateGovernment<WithStreamedUnaryMethod_AddBank<WithStreamedUnaryMethod_RemoveBank<WithStreamedUnaryMethod_GetBank<WithStreamedUnaryMethod_UpdateBank<WithStreamedUnaryMethod_ListBanks<WithStreamedUnaryMethod_DeltaUpdateBank<WithStreamedUnaryMethod_AddAgent<WithStreamedUnaryMethod_RemoveAgent<WithStreamedUnaryMethod_GetAgent<WithStreamedUnaryMethod_UpdateAgent<WithStreamedUnaryMethod_ListAgents<WithStreamedUnaryMethod_DeltaUpdateAgent<WithStreamedUnaryMethod_CalculateTaxesDue<WithStreamedUnaryMethod_CalculateConsumption<WithStreamedUnaryMethod_CalculateInterest<WithStreamedUnaryMethod_CalculateRealGDP<WithStreamedUnaryMethod_SaveEconomyEntities<WithStreamedUnaryMethod_LoadEconomyEntities<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_AddFirm<WithStreamedUnaryMethod_RemoveFirm<WithStreamedUnaryMethod_GetFirm<WithStreamedUnaryMethod_UpdateFirm<WithStreamedUnaryMethod_ListFirms<WithStreamedUnaryMethod_DeltaUpdateFirm<WithStreamedUnaryMethod_BatchAddFirm<WithStreamedUnaryMethod_BatchRemoveFirm<WithStreamedUnaryMethod_BatchGetFirm<WithStreamedUnaryMethod_BatchUpdateFirm<WithStreamedUnaryMethod_BatchDeltaUpdateFirm<WithStreamedUnaryMethod_AddNBS<WithStreamedUnaryMethod_RemoveNBS<WithStreamedUnaryMethod_GetNBS<WithStreamedUnaryMethod_UpdateNBS<WithStreamedUnaryMethod_ListNBS<WithStreamedUnaryMethod_DeltaUpdateNBS<WithStreamedUnaryMethod_AddGovernment<WithStreamedUnaryMethod_RemoveGovernment<WithStreamedUnaryMethod_GetGovernment<WithStreamedUnaryMethod_UpdateGovernment<WithStreamedUnaryMethod_ListGovernments<WithStreamedUnaryMethod_DeltaUpdateGovernment<WithStreamedUnaryMethod_AddBank<WithStreamedUnaryMethod_RemoveBank<WithStreamedUnaryMethod_GetBank<WithStreamedUnaryMethod_UpdateBank<WithStreamedUnaryMethod_ListBanks<WithStreamedUnaryMethod_DeltaUpdateBank<WithStreamedUnaryMethod_AddAgent<WithStreamedUnaryMethod_RemoveAgent<WithStreamedUnaryMethod_GetAgent<WithStreamedUnaryMethod_UpdateAgent<WithStreamedUnaryMethod_ListAgents<WithStreamedUnaryMethod_DeltaUpdateAgent<WithStreamedUnaryMethod_BatchAddAgent<WithStreamedUnaryMethod_BatchRemoveAgent<WithStreamedUnaryMethod_BatchGetAgent<WithStreamedUnaryMethod_BatchUpdateAgent<WithStreamedUnaryMethod_BatchDeltaUpdateAgent<WithStreamedUnaryMethod_CalculateTaxesDue<WithStreamedUnaryMethod_CalculateConsumption<WithStreamedUnaryMethod_CalculateInterest<WithStreamedUnaryMethod_CalculateRealGDP<WithStreamedUnaryMethod_SaveEconomyEntities<WithStreamedUnaryMethod_LoadEconomyEntities<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_AddFirm<WithStreamedUnaryMethod_RemoveFirm<WithStreamedUnaryMethod_GetFirm<WithStreamedUnaryMethod_UpdateFirm<WithStreamedUnaryMethod_ListFirms<WithStreamedUnaryMethod_DeltaUpdateFirm<WithStreamedUnaryMethod_AddNBS<WithStreamedUnaryMethod_RemoveNBS<WithStreamedUnaryMethod_GetNBS<WithStreamedUnaryMethod_UpdateNBS<WithStreamedUnaryMethod_ListNBS<WithStreamedUnaryMethod_DeltaUpdateNBS<WithStreamedUnaryMethod_AddGovernment<WithStreamedUnaryMethod_RemoveGovernment<WithStreamedUnaryMethod_GetGovernment<WithStreamedUnaryMethod_UpdateGovernment<WithStreamedUnaryMethod_ListGovernments<WithStreamedUnaryMethod_DeltaUpdateGovernment<WithStreamedUnaryMethod_AddBank<WithStreamedUnaryMethod_RemoveBank<WithStreamedUnaryMethod_GetBank<WithStreamedUnaryMethod_UpdateBank<WithStreamedUnaryMethod_ListBanks<WithStreamedUnaryMethod_DeltaUpdateBank<WithStreamedUnaryMethod_AddAgent<WithStreamedUnaryMethod_RemoveAgent<WithStreamedUnaryMethod_GetAgent<WithStreamedUnaryMethod_UpdateAgent<WithStreamedUnaryMethod_ListAgents<WithStreamedUnaryMethod_DeltaUpdateAgent<WithStreamedUnaryMethod_CalculateTaxesDue<WithStreamedUnaryMethod_CalculateConsumption<WithStreamedUnaryMethod_CalculateInterest<WithStreamedUnaryMethod_CalculateRealGDP<WithStreamedUnaryMethod_SaveEconomyEntities<WithStreamedUnaryMethod_LoadEconomyEntities<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedService;
 };
+// @section Firm Operations
+// @section 企业相关操作
 
 }  // namespace v2
 }  // namespace economy

@@ -46,19 +46,6 @@ const (
 	// OrgServiceDeltaUpdateFirmProcedure is the fully-qualified name of the OrgService's
 	// DeltaUpdateFirm RPC.
 	OrgServiceDeltaUpdateFirmProcedure = "/city.economy.v2.OrgService/DeltaUpdateFirm"
-	// OrgServiceBatchAddFirmProcedure is the fully-qualified name of the OrgService's BatchAddFirm RPC.
-	OrgServiceBatchAddFirmProcedure = "/city.economy.v2.OrgService/BatchAddFirm"
-	// OrgServiceBatchRemoveFirmProcedure is the fully-qualified name of the OrgService's
-	// BatchRemoveFirm RPC.
-	OrgServiceBatchRemoveFirmProcedure = "/city.economy.v2.OrgService/BatchRemoveFirm"
-	// OrgServiceBatchGetFirmProcedure is the fully-qualified name of the OrgService's BatchGetFirm RPC.
-	OrgServiceBatchGetFirmProcedure = "/city.economy.v2.OrgService/BatchGetFirm"
-	// OrgServiceBatchUpdateFirmProcedure is the fully-qualified name of the OrgService's
-	// BatchUpdateFirm RPC.
-	OrgServiceBatchUpdateFirmProcedure = "/city.economy.v2.OrgService/BatchUpdateFirm"
-	// OrgServiceBatchDeltaUpdateFirmProcedure is the fully-qualified name of the OrgService's
-	// BatchDeltaUpdateFirm RPC.
-	OrgServiceBatchDeltaUpdateFirmProcedure = "/city.economy.v2.OrgService/BatchDeltaUpdateFirm"
 	// OrgServiceAddNBSProcedure is the fully-qualified name of the OrgService's AddNBS RPC.
 	OrgServiceAddNBSProcedure = "/city.economy.v2.OrgService/AddNBS"
 	// OrgServiceRemoveNBSProcedure is the fully-qualified name of the OrgService's RemoveNBS RPC.
@@ -116,21 +103,6 @@ const (
 	// OrgServiceDeltaUpdateAgentProcedure is the fully-qualified name of the OrgService's
 	// DeltaUpdateAgent RPC.
 	OrgServiceDeltaUpdateAgentProcedure = "/city.economy.v2.OrgService/DeltaUpdateAgent"
-	// OrgServiceBatchAddAgentProcedure is the fully-qualified name of the OrgService's BatchAddAgent
-	// RPC.
-	OrgServiceBatchAddAgentProcedure = "/city.economy.v2.OrgService/BatchAddAgent"
-	// OrgServiceBatchRemoveAgentProcedure is the fully-qualified name of the OrgService's
-	// BatchRemoveAgent RPC.
-	OrgServiceBatchRemoveAgentProcedure = "/city.economy.v2.OrgService/BatchRemoveAgent"
-	// OrgServiceBatchGetAgentProcedure is the fully-qualified name of the OrgService's BatchGetAgent
-	// RPC.
-	OrgServiceBatchGetAgentProcedure = "/city.economy.v2.OrgService/BatchGetAgent"
-	// OrgServiceBatchUpdateAgentProcedure is the fully-qualified name of the OrgService's
-	// BatchUpdateAgent RPC.
-	OrgServiceBatchUpdateAgentProcedure = "/city.economy.v2.OrgService/BatchUpdateAgent"
-	// OrgServiceBatchDeltaUpdateAgentProcedure is the fully-qualified name of the OrgService's
-	// BatchDeltaUpdateAgent RPC.
-	OrgServiceBatchDeltaUpdateAgentProcedure = "/city.economy.v2.OrgService/BatchDeltaUpdateAgent"
 	// OrgServiceCalculateTaxesDueProcedure is the fully-qualified name of the OrgService's
 	// CalculateTaxesDue RPC.
 	OrgServiceCalculateTaxesDueProcedure = "/city.economy.v2.OrgService/CalculateTaxesDue"
@@ -153,58 +125,169 @@ const (
 
 // OrgServiceClient is a client for the city.economy.v2.OrgService service.
 type OrgServiceClient interface {
-	// Firm 相关操作
+	// Creates one or more firm entities
+	// Returns the list of created firm IDs
+	//
+	// 创建一个或多个企业实体
+	// 返回创建的企业ID列表
 	AddFirm(context.Context, *connect.Request[v2.AddFirmRequest]) (*connect.Response[v2.AddFirmResponse], error)
+	// Deletes one or more firms by their IDs
+	// Also cleans up related employee associations
+	//
+	// 根据ID删除一个或多个企业实体
+	// 同时清理相关的员工关联关系
 	RemoveFirm(context.Context, *connect.Request[v2.RemoveFirmRequest]) (*connect.Response[v2.RemoveFirmResponse], error)
+	// Retrieves detailed information for one or more firms
+	// Returns a list of firm entities
+	//
+	// 获取一个或多个企业的详细信息
+	// 返回企业实体信息列表
 	GetFirm(context.Context, *connect.Request[v2.GetFirmRequest]) (*connect.Response[v2.GetFirmResponse], error)
+	// Updates complete information for one or more firms
+	//
+	// 更新一个或多个企业的完整信息
 	UpdateFirm(context.Context, *connect.Request[v2.UpdateFirmRequest]) (*connect.Response[v2.UpdateFirmResponse], error)
+	// Lists all firms in the system
+	//
+	// 获取系统中所有企业的列表
 	ListFirms(context.Context, *connect.Request[v2.ListFirmsRequest]) (*connect.Response[v2.ListFirmsResponse], error)
+	// Performs incremental updates on one or more firms
+	// Allows updating specific fields like price, inventory, demand etc.
+	//
+	// 对一个或多个企业进行增量更新
+	// 可以更新价格、库存、需求等具体字段
 	DeltaUpdateFirm(context.Context, *connect.Request[v2.DeltaUpdateFirmRequest]) (*connect.Response[v2.DeltaUpdateFirmResponse], error)
-	BatchAddFirm(context.Context, *connect.Request[v2.BatchAddFirmRequest]) (*connect.Response[v2.BatchAddFirmResponse], error)
-	BatchRemoveFirm(context.Context, *connect.Request[v2.BatchRemoveFirmRequest]) (*connect.Response[v2.BatchRemoveFirmResponse], error)
-	BatchGetFirm(context.Context, *connect.Request[v2.BatchGetFirmRequest]) (*connect.Response[v2.BatchGetFirmResponse], error)
-	BatchUpdateFirm(context.Context, *connect.Request[v2.BatchUpdateFirmRequest]) (*connect.Response[v2.BatchUpdateFirmResponse], error)
-	BatchDeltaUpdateFirm(context.Context, *connect.Request[v2.BatchDeltaUpdateFirmRequest]) (*connect.Response[v2.BatchDeltaUpdateFirmResponse], error)
-	// NBS 相关操作
+	// Creates a new NBS entity
+	//
+	// 创建新的国家统计局实体
 	AddNBS(context.Context, *connect.Request[v2.AddNBSRequest]) (*connect.Response[v2.AddNBSResponse], error)
+	// Deletes an NBS entity by ID
+	//
+	// 根据ID删除国家统计局实体
 	RemoveNBS(context.Context, *connect.Request[v2.RemoveNBSRequest]) (*connect.Response[v2.RemoveNBSResponse], error)
+	// Retrieves detailed information for an NBS entity
+	//
+	// 获取国家统计局的详细信息
 	GetNBS(context.Context, *connect.Request[v2.GetNBSRequest]) (*connect.Response[v2.GetNBSResponse], error)
+	// Updates complete information for an NBS entity
+	//
+	// 更新国家统计局的完整信息
 	UpdateNBS(context.Context, *connect.Request[v2.UpdateNBSRequest]) (*connect.Response[v2.UpdateNBSResponse], error)
+	// Lists all NBS entities in the system
+	//
+	// 获取系统中所有国家统计局的列表
 	ListNBS(context.Context, *connect.Request[v2.ListNBSRequest]) (*connect.Response[v2.ListNBSResponse], error)
+	// Performs incremental updates on an NBS entity
+	// Allows updating specific statistics and citizen relationships
+	//
+	// 对国家统计局进行增量更新
+	// 可以更新具体统计数据和公民关系
 	DeltaUpdateNBS(context.Context, *connect.Request[v2.DeltaUpdateNBSRequest]) (*connect.Response[v2.DeltaUpdateNBSResponse], error)
-	// Government 相关操作
+	// Creates a new government entity
+	//
+	// 创建新的政府实体
 	AddGovernment(context.Context, *connect.Request[v2.AddGovernmentRequest]) (*connect.Response[v2.AddGovernmentResponse], error)
+	// Deletes a government entity by ID
+	//
+	// 根据ID删除政府实体
 	RemoveGovernment(context.Context, *connect.Request[v2.RemoveGovernmentRequest]) (*connect.Response[v2.RemoveGovernmentResponse], error)
+	// Retrieves detailed information for a government entity
+	//
+	// 获取政府实体的详细信息
 	GetGovernment(context.Context, *connect.Request[v2.GetGovernmentRequest]) (*connect.Response[v2.GetGovernmentResponse], error)
+	// Updates complete information for a government entity
+	//
+	// 更新政府实体的完整信息
 	UpdateGovernment(context.Context, *connect.Request[v2.UpdateGovernmentRequest]) (*connect.Response[v2.UpdateGovernmentResponse], error)
+	// Lists all government entities in the system
+	//
+	// 获取系统中所有政府实体的列表
 	ListGovernments(context.Context, *connect.Request[v2.ListGovernmentsRequest]) (*connect.Response[v2.ListGovernmentsResponse], error)
+	// Performs incremental updates on a government entity
+	// Allows updating tax brackets and citizen relationships
+	//
+	// 对政府实体进行增量更新
+	// 可以更新税收档位和公民关系
 	DeltaUpdateGovernment(context.Context, *connect.Request[v2.DeltaUpdateGovernmentRequest]) (*connect.Response[v2.DeltaUpdateGovernmentResponse], error)
-	// Bank 相关操作
+	// Creates a new bank entity
+	//
+	// 创建新的银行实体
 	AddBank(context.Context, *connect.Request[v2.AddBankRequest]) (*connect.Response[v2.AddBankResponse], error)
+	// Deletes a bank entity by ID
+	//
+	// 根据ID删除银行实体
 	RemoveBank(context.Context, *connect.Request[v2.RemoveBankRequest]) (*connect.Response[v2.RemoveBankResponse], error)
+	// Retrieves detailed information for a bank entity
+	//
+	// 获取银行实体的详细信息
 	GetBank(context.Context, *connect.Request[v2.GetBankRequest]) (*connect.Response[v2.GetBankResponse], error)
+	// Updates complete information for a bank entity
+	//
+	// 更新银行实体的完整信息
 	UpdateBank(context.Context, *connect.Request[v2.UpdateBankRequest]) (*connect.Response[v2.UpdateBankResponse], error)
+	// Lists all bank entities in the system
+	//
+	// 获取系统中所有银行实体的列表
 	ListBanks(context.Context, *connect.Request[v2.ListBanksRequest]) (*connect.Response[v2.ListBanksResponse], error)
+	// Performs incremental updates on a bank entity
+	// Allows updating interest rates and customer relationships
+	//
+	// 对银行实体进行增量更新
+	// 可以更新利率和客户关系
 	DeltaUpdateBank(context.Context, *connect.Request[v2.DeltaUpdateBankRequest]) (*connect.Response[v2.DeltaUpdateBankResponse], error)
-	// Agent 相关操作
+	// Creates one or more agent entities
+	// Returns the list of created agent IDs
+	//
+	// 创建一个或多个经济主体
+	// 返回创建的经济主体ID列表
 	AddAgent(context.Context, *connect.Request[v2.AddAgentRequest]) (*connect.Response[v2.AddAgentResponse], error)
+	// Deletes one or more agents by their IDs
+	//
+	// 根据ID删除一个或多个经济主体
 	RemoveAgent(context.Context, *connect.Request[v2.RemoveAgentRequest]) (*connect.Response[v2.RemoveAgentResponse], error)
+	// Retrieves detailed information for one or more agents
+	//
+	// 获取一个或多个经济主体的详细信息
 	GetAgent(context.Context, *connect.Request[v2.GetAgentRequest]) (*connect.Response[v2.GetAgentResponse], error)
+	// Updates complete information for one or more agents
+	//
+	// 更新一个或多个经济主体的完整信息
 	UpdateAgent(context.Context, *connect.Request[v2.UpdateAgentRequest]) (*connect.Response[v2.UpdateAgentResponse], error)
+	// Lists all agent entities in the system
+	//
+	// 获取系统中所有经济主体的列表
 	ListAgents(context.Context, *connect.Request[v2.ListAgentsRequest]) (*connect.Response[v2.ListAgentsResponse], error)
+	// Performs incremental updates on one or more agents
+	// Allows updating specific attributes like currency, skills etc.
+	//
+	// 对一个或多个经济主体进行增量更新
+	// 可以更新货币、技能等具体属性
 	DeltaUpdateAgent(context.Context, *connect.Request[v2.DeltaUpdateAgentRequest]) (*connect.Response[v2.DeltaUpdateAgentResponse], error)
-	BatchAddAgent(context.Context, *connect.Request[v2.BatchAddAgentRequest]) (*connect.Response[v2.BatchAddAgentResponse], error)
-	BatchRemoveAgent(context.Context, *connect.Request[v2.BatchRemoveAgentRequest]) (*connect.Response[v2.BatchRemoveAgentResponse], error)
-	BatchGetAgent(context.Context, *connect.Request[v2.BatchGetAgentRequest]) (*connect.Response[v2.BatchGetAgentResponse], error)
-	BatchUpdateAgent(context.Context, *connect.Request[v2.BatchUpdateAgentRequest]) (*connect.Response[v2.BatchUpdateAgentResponse], error)
-	BatchDeltaUpdateAgent(context.Context, *connect.Request[v2.BatchDeltaUpdateAgentRequest]) (*connect.Response[v2.BatchDeltaUpdateAgentResponse], error)
-	// 计算相关操作
+	// Calculates taxes due for specified agents
+	// Supports income redistribution if enabled
+	//
+	// 计算指定经济主体的应缴税额
+	// 支持开启收入再分配功能
 	CalculateTaxesDue(context.Context, *connect.Request[v2.CalculateTaxesDueRequest]) (*connect.Response[v2.CalculateTaxesDueResponse], error)
+	// Calculates actual consumption based on supply and demand
+	//
+	// 基于供给和需求计算实际消费量
 	CalculateConsumption(context.Context, *connect.Request[v2.CalculateConsumptionRequest]) (*connect.Response[v2.CalculateConsumptionResponse], error)
+	// Calculates interest for specified agents
+	//
+	// 计算指定经济主体的利息
 	CalculateInterest(context.Context, *connect.Request[v2.CalculateInterestRequest]) (*connect.Response[v2.CalculateInterestResponse], error)
+	// Calculates real GDP adjusted for inflation
+	//
+	// 计算经通货膨胀调整后的实际GDP
 	CalculateRealGDP(context.Context, *connect.Request[v2.CalculateRealGDPRequest]) (*connect.Response[v2.CalculateRealGDPResponse], error)
-	// 系统状态操作
+	// Saves the current state of all economic entities to a file
+	//
+	// 将当前所有经济实体的状态保存到文件
 	SaveEconomyEntities(context.Context, *connect.Request[v2.SaveEconomyEntitiesRequest]) (*connect.Response[v2.SaveEconomyEntitiesResponse], error)
+	// Loads economic entities state from a file
+	//
+	// 从文件中加载经济实体的状态
 	LoadEconomyEntities(context.Context, *connect.Request[v2.LoadEconomyEntitiesRequest]) (*connect.Response[v2.LoadEconomyEntitiesResponse], error)
 }
 
@@ -253,36 +336,6 @@ func NewOrgServiceClient(httpClient connect.HTTPClient, baseURL string, opts ...
 			httpClient,
 			baseURL+OrgServiceDeltaUpdateFirmProcedure,
 			connect.WithSchema(orgServiceMethods.ByName("DeltaUpdateFirm")),
-			connect.WithClientOptions(opts...),
-		),
-		batchAddFirm: connect.NewClient[v2.BatchAddFirmRequest, v2.BatchAddFirmResponse](
-			httpClient,
-			baseURL+OrgServiceBatchAddFirmProcedure,
-			connect.WithSchema(orgServiceMethods.ByName("BatchAddFirm")),
-			connect.WithClientOptions(opts...),
-		),
-		batchRemoveFirm: connect.NewClient[v2.BatchRemoveFirmRequest, v2.BatchRemoveFirmResponse](
-			httpClient,
-			baseURL+OrgServiceBatchRemoveFirmProcedure,
-			connect.WithSchema(orgServiceMethods.ByName("BatchRemoveFirm")),
-			connect.WithClientOptions(opts...),
-		),
-		batchGetFirm: connect.NewClient[v2.BatchGetFirmRequest, v2.BatchGetFirmResponse](
-			httpClient,
-			baseURL+OrgServiceBatchGetFirmProcedure,
-			connect.WithSchema(orgServiceMethods.ByName("BatchGetFirm")),
-			connect.WithClientOptions(opts...),
-		),
-		batchUpdateFirm: connect.NewClient[v2.BatchUpdateFirmRequest, v2.BatchUpdateFirmResponse](
-			httpClient,
-			baseURL+OrgServiceBatchUpdateFirmProcedure,
-			connect.WithSchema(orgServiceMethods.ByName("BatchUpdateFirm")),
-			connect.WithClientOptions(opts...),
-		),
-		batchDeltaUpdateFirm: connect.NewClient[v2.BatchDeltaUpdateFirmRequest, v2.BatchDeltaUpdateFirmResponse](
-			httpClient,
-			baseURL+OrgServiceBatchDeltaUpdateFirmProcedure,
-			connect.WithSchema(orgServiceMethods.ByName("BatchDeltaUpdateFirm")),
 			connect.WithClientOptions(opts...),
 		),
 		addNBS: connect.NewClient[v2.AddNBSRequest, v2.AddNBSResponse](
@@ -429,36 +482,6 @@ func NewOrgServiceClient(httpClient connect.HTTPClient, baseURL string, opts ...
 			connect.WithSchema(orgServiceMethods.ByName("DeltaUpdateAgent")),
 			connect.WithClientOptions(opts...),
 		),
-		batchAddAgent: connect.NewClient[v2.BatchAddAgentRequest, v2.BatchAddAgentResponse](
-			httpClient,
-			baseURL+OrgServiceBatchAddAgentProcedure,
-			connect.WithSchema(orgServiceMethods.ByName("BatchAddAgent")),
-			connect.WithClientOptions(opts...),
-		),
-		batchRemoveAgent: connect.NewClient[v2.BatchRemoveAgentRequest, v2.BatchRemoveAgentResponse](
-			httpClient,
-			baseURL+OrgServiceBatchRemoveAgentProcedure,
-			connect.WithSchema(orgServiceMethods.ByName("BatchRemoveAgent")),
-			connect.WithClientOptions(opts...),
-		),
-		batchGetAgent: connect.NewClient[v2.BatchGetAgentRequest, v2.BatchGetAgentResponse](
-			httpClient,
-			baseURL+OrgServiceBatchGetAgentProcedure,
-			connect.WithSchema(orgServiceMethods.ByName("BatchGetAgent")),
-			connect.WithClientOptions(opts...),
-		),
-		batchUpdateAgent: connect.NewClient[v2.BatchUpdateAgentRequest, v2.BatchUpdateAgentResponse](
-			httpClient,
-			baseURL+OrgServiceBatchUpdateAgentProcedure,
-			connect.WithSchema(orgServiceMethods.ByName("BatchUpdateAgent")),
-			connect.WithClientOptions(opts...),
-		),
-		batchDeltaUpdateAgent: connect.NewClient[v2.BatchDeltaUpdateAgentRequest, v2.BatchDeltaUpdateAgentResponse](
-			httpClient,
-			baseURL+OrgServiceBatchDeltaUpdateAgentProcedure,
-			connect.WithSchema(orgServiceMethods.ByName("BatchDeltaUpdateAgent")),
-			connect.WithClientOptions(opts...),
-		),
 		calculateTaxesDue: connect.NewClient[v2.CalculateTaxesDueRequest, v2.CalculateTaxesDueResponse](
 			httpClient,
 			baseURL+OrgServiceCalculateTaxesDueProcedure,
@@ -506,11 +529,6 @@ type orgServiceClient struct {
 	updateFirm            *connect.Client[v2.UpdateFirmRequest, v2.UpdateFirmResponse]
 	listFirms             *connect.Client[v2.ListFirmsRequest, v2.ListFirmsResponse]
 	deltaUpdateFirm       *connect.Client[v2.DeltaUpdateFirmRequest, v2.DeltaUpdateFirmResponse]
-	batchAddFirm          *connect.Client[v2.BatchAddFirmRequest, v2.BatchAddFirmResponse]
-	batchRemoveFirm       *connect.Client[v2.BatchRemoveFirmRequest, v2.BatchRemoveFirmResponse]
-	batchGetFirm          *connect.Client[v2.BatchGetFirmRequest, v2.BatchGetFirmResponse]
-	batchUpdateFirm       *connect.Client[v2.BatchUpdateFirmRequest, v2.BatchUpdateFirmResponse]
-	batchDeltaUpdateFirm  *connect.Client[v2.BatchDeltaUpdateFirmRequest, v2.BatchDeltaUpdateFirmResponse]
 	addNBS                *connect.Client[v2.AddNBSRequest, v2.AddNBSResponse]
 	removeNBS             *connect.Client[v2.RemoveNBSRequest, v2.RemoveNBSResponse]
 	getNBS                *connect.Client[v2.GetNBSRequest, v2.GetNBSResponse]
@@ -535,11 +553,6 @@ type orgServiceClient struct {
 	updateAgent           *connect.Client[v2.UpdateAgentRequest, v2.UpdateAgentResponse]
 	listAgents            *connect.Client[v2.ListAgentsRequest, v2.ListAgentsResponse]
 	deltaUpdateAgent      *connect.Client[v2.DeltaUpdateAgentRequest, v2.DeltaUpdateAgentResponse]
-	batchAddAgent         *connect.Client[v2.BatchAddAgentRequest, v2.BatchAddAgentResponse]
-	batchRemoveAgent      *connect.Client[v2.BatchRemoveAgentRequest, v2.BatchRemoveAgentResponse]
-	batchGetAgent         *connect.Client[v2.BatchGetAgentRequest, v2.BatchGetAgentResponse]
-	batchUpdateAgent      *connect.Client[v2.BatchUpdateAgentRequest, v2.BatchUpdateAgentResponse]
-	batchDeltaUpdateAgent *connect.Client[v2.BatchDeltaUpdateAgentRequest, v2.BatchDeltaUpdateAgentResponse]
 	calculateTaxesDue     *connect.Client[v2.CalculateTaxesDueRequest, v2.CalculateTaxesDueResponse]
 	calculateConsumption  *connect.Client[v2.CalculateConsumptionRequest, v2.CalculateConsumptionResponse]
 	calculateInterest     *connect.Client[v2.CalculateInterestRequest, v2.CalculateInterestResponse]
@@ -576,31 +589,6 @@ func (c *orgServiceClient) ListFirms(ctx context.Context, req *connect.Request[v
 // DeltaUpdateFirm calls city.economy.v2.OrgService.DeltaUpdateFirm.
 func (c *orgServiceClient) DeltaUpdateFirm(ctx context.Context, req *connect.Request[v2.DeltaUpdateFirmRequest]) (*connect.Response[v2.DeltaUpdateFirmResponse], error) {
 	return c.deltaUpdateFirm.CallUnary(ctx, req)
-}
-
-// BatchAddFirm calls city.economy.v2.OrgService.BatchAddFirm.
-func (c *orgServiceClient) BatchAddFirm(ctx context.Context, req *connect.Request[v2.BatchAddFirmRequest]) (*connect.Response[v2.BatchAddFirmResponse], error) {
-	return c.batchAddFirm.CallUnary(ctx, req)
-}
-
-// BatchRemoveFirm calls city.economy.v2.OrgService.BatchRemoveFirm.
-func (c *orgServiceClient) BatchRemoveFirm(ctx context.Context, req *connect.Request[v2.BatchRemoveFirmRequest]) (*connect.Response[v2.BatchRemoveFirmResponse], error) {
-	return c.batchRemoveFirm.CallUnary(ctx, req)
-}
-
-// BatchGetFirm calls city.economy.v2.OrgService.BatchGetFirm.
-func (c *orgServiceClient) BatchGetFirm(ctx context.Context, req *connect.Request[v2.BatchGetFirmRequest]) (*connect.Response[v2.BatchGetFirmResponse], error) {
-	return c.batchGetFirm.CallUnary(ctx, req)
-}
-
-// BatchUpdateFirm calls city.economy.v2.OrgService.BatchUpdateFirm.
-func (c *orgServiceClient) BatchUpdateFirm(ctx context.Context, req *connect.Request[v2.BatchUpdateFirmRequest]) (*connect.Response[v2.BatchUpdateFirmResponse], error) {
-	return c.batchUpdateFirm.CallUnary(ctx, req)
-}
-
-// BatchDeltaUpdateFirm calls city.economy.v2.OrgService.BatchDeltaUpdateFirm.
-func (c *orgServiceClient) BatchDeltaUpdateFirm(ctx context.Context, req *connect.Request[v2.BatchDeltaUpdateFirmRequest]) (*connect.Response[v2.BatchDeltaUpdateFirmResponse], error) {
-	return c.batchDeltaUpdateFirm.CallUnary(ctx, req)
 }
 
 // AddNBS calls city.economy.v2.OrgService.AddNBS.
@@ -723,31 +711,6 @@ func (c *orgServiceClient) DeltaUpdateAgent(ctx context.Context, req *connect.Re
 	return c.deltaUpdateAgent.CallUnary(ctx, req)
 }
 
-// BatchAddAgent calls city.economy.v2.OrgService.BatchAddAgent.
-func (c *orgServiceClient) BatchAddAgent(ctx context.Context, req *connect.Request[v2.BatchAddAgentRequest]) (*connect.Response[v2.BatchAddAgentResponse], error) {
-	return c.batchAddAgent.CallUnary(ctx, req)
-}
-
-// BatchRemoveAgent calls city.economy.v2.OrgService.BatchRemoveAgent.
-func (c *orgServiceClient) BatchRemoveAgent(ctx context.Context, req *connect.Request[v2.BatchRemoveAgentRequest]) (*connect.Response[v2.BatchRemoveAgentResponse], error) {
-	return c.batchRemoveAgent.CallUnary(ctx, req)
-}
-
-// BatchGetAgent calls city.economy.v2.OrgService.BatchGetAgent.
-func (c *orgServiceClient) BatchGetAgent(ctx context.Context, req *connect.Request[v2.BatchGetAgentRequest]) (*connect.Response[v2.BatchGetAgentResponse], error) {
-	return c.batchGetAgent.CallUnary(ctx, req)
-}
-
-// BatchUpdateAgent calls city.economy.v2.OrgService.BatchUpdateAgent.
-func (c *orgServiceClient) BatchUpdateAgent(ctx context.Context, req *connect.Request[v2.BatchUpdateAgentRequest]) (*connect.Response[v2.BatchUpdateAgentResponse], error) {
-	return c.batchUpdateAgent.CallUnary(ctx, req)
-}
-
-// BatchDeltaUpdateAgent calls city.economy.v2.OrgService.BatchDeltaUpdateAgent.
-func (c *orgServiceClient) BatchDeltaUpdateAgent(ctx context.Context, req *connect.Request[v2.BatchDeltaUpdateAgentRequest]) (*connect.Response[v2.BatchDeltaUpdateAgentResponse], error) {
-	return c.batchDeltaUpdateAgent.CallUnary(ctx, req)
-}
-
 // CalculateTaxesDue calls city.economy.v2.OrgService.CalculateTaxesDue.
 func (c *orgServiceClient) CalculateTaxesDue(ctx context.Context, req *connect.Request[v2.CalculateTaxesDueRequest]) (*connect.Response[v2.CalculateTaxesDueResponse], error) {
 	return c.calculateTaxesDue.CallUnary(ctx, req)
@@ -780,58 +743,169 @@ func (c *orgServiceClient) LoadEconomyEntities(ctx context.Context, req *connect
 
 // OrgServiceHandler is an implementation of the city.economy.v2.OrgService service.
 type OrgServiceHandler interface {
-	// Firm 相关操作
+	// Creates one or more firm entities
+	// Returns the list of created firm IDs
+	//
+	// 创建一个或多个企业实体
+	// 返回创建的企业ID列表
 	AddFirm(context.Context, *connect.Request[v2.AddFirmRequest]) (*connect.Response[v2.AddFirmResponse], error)
+	// Deletes one or more firms by their IDs
+	// Also cleans up related employee associations
+	//
+	// 根据ID删除一个或多个企业实体
+	// 同时清理相关的员工关联关系
 	RemoveFirm(context.Context, *connect.Request[v2.RemoveFirmRequest]) (*connect.Response[v2.RemoveFirmResponse], error)
+	// Retrieves detailed information for one or more firms
+	// Returns a list of firm entities
+	//
+	// 获取一个或多个企业的详细信息
+	// 返回企业实体信息列表
 	GetFirm(context.Context, *connect.Request[v2.GetFirmRequest]) (*connect.Response[v2.GetFirmResponse], error)
+	// Updates complete information for one or more firms
+	//
+	// 更新一个或多个企业的完整信息
 	UpdateFirm(context.Context, *connect.Request[v2.UpdateFirmRequest]) (*connect.Response[v2.UpdateFirmResponse], error)
+	// Lists all firms in the system
+	//
+	// 获取系统中所有企业的列表
 	ListFirms(context.Context, *connect.Request[v2.ListFirmsRequest]) (*connect.Response[v2.ListFirmsResponse], error)
+	// Performs incremental updates on one or more firms
+	// Allows updating specific fields like price, inventory, demand etc.
+	//
+	// 对一个或多个企业进行增量更新
+	// 可以更新价格、库存、需求等具体字段
 	DeltaUpdateFirm(context.Context, *connect.Request[v2.DeltaUpdateFirmRequest]) (*connect.Response[v2.DeltaUpdateFirmResponse], error)
-	BatchAddFirm(context.Context, *connect.Request[v2.BatchAddFirmRequest]) (*connect.Response[v2.BatchAddFirmResponse], error)
-	BatchRemoveFirm(context.Context, *connect.Request[v2.BatchRemoveFirmRequest]) (*connect.Response[v2.BatchRemoveFirmResponse], error)
-	BatchGetFirm(context.Context, *connect.Request[v2.BatchGetFirmRequest]) (*connect.Response[v2.BatchGetFirmResponse], error)
-	BatchUpdateFirm(context.Context, *connect.Request[v2.BatchUpdateFirmRequest]) (*connect.Response[v2.BatchUpdateFirmResponse], error)
-	BatchDeltaUpdateFirm(context.Context, *connect.Request[v2.BatchDeltaUpdateFirmRequest]) (*connect.Response[v2.BatchDeltaUpdateFirmResponse], error)
-	// NBS 相关操作
+	// Creates a new NBS entity
+	//
+	// 创建新的国家统计局实体
 	AddNBS(context.Context, *connect.Request[v2.AddNBSRequest]) (*connect.Response[v2.AddNBSResponse], error)
+	// Deletes an NBS entity by ID
+	//
+	// 根据ID删除国家统计局实体
 	RemoveNBS(context.Context, *connect.Request[v2.RemoveNBSRequest]) (*connect.Response[v2.RemoveNBSResponse], error)
+	// Retrieves detailed information for an NBS entity
+	//
+	// 获取国家统计局的详细信息
 	GetNBS(context.Context, *connect.Request[v2.GetNBSRequest]) (*connect.Response[v2.GetNBSResponse], error)
+	// Updates complete information for an NBS entity
+	//
+	// 更新国家统计局的完整信息
 	UpdateNBS(context.Context, *connect.Request[v2.UpdateNBSRequest]) (*connect.Response[v2.UpdateNBSResponse], error)
+	// Lists all NBS entities in the system
+	//
+	// 获取系统中所有国家统计局的列表
 	ListNBS(context.Context, *connect.Request[v2.ListNBSRequest]) (*connect.Response[v2.ListNBSResponse], error)
+	// Performs incremental updates on an NBS entity
+	// Allows updating specific statistics and citizen relationships
+	//
+	// 对国家统计局进行增量更新
+	// 可以更新具体统计数据和公民关系
 	DeltaUpdateNBS(context.Context, *connect.Request[v2.DeltaUpdateNBSRequest]) (*connect.Response[v2.DeltaUpdateNBSResponse], error)
-	// Government 相关操作
+	// Creates a new government entity
+	//
+	// 创建新的政府实体
 	AddGovernment(context.Context, *connect.Request[v2.AddGovernmentRequest]) (*connect.Response[v2.AddGovernmentResponse], error)
+	// Deletes a government entity by ID
+	//
+	// 根据ID删除政府实体
 	RemoveGovernment(context.Context, *connect.Request[v2.RemoveGovernmentRequest]) (*connect.Response[v2.RemoveGovernmentResponse], error)
+	// Retrieves detailed information for a government entity
+	//
+	// 获取政府实体的详细信息
 	GetGovernment(context.Context, *connect.Request[v2.GetGovernmentRequest]) (*connect.Response[v2.GetGovernmentResponse], error)
+	// Updates complete information for a government entity
+	//
+	// 更新政府实体的完整信息
 	UpdateGovernment(context.Context, *connect.Request[v2.UpdateGovernmentRequest]) (*connect.Response[v2.UpdateGovernmentResponse], error)
+	// Lists all government entities in the system
+	//
+	// 获取系统中所有政府实体的列表
 	ListGovernments(context.Context, *connect.Request[v2.ListGovernmentsRequest]) (*connect.Response[v2.ListGovernmentsResponse], error)
+	// Performs incremental updates on a government entity
+	// Allows updating tax brackets and citizen relationships
+	//
+	// 对政府实体进行增量更新
+	// 可以更新税收档位和公民关系
 	DeltaUpdateGovernment(context.Context, *connect.Request[v2.DeltaUpdateGovernmentRequest]) (*connect.Response[v2.DeltaUpdateGovernmentResponse], error)
-	// Bank 相关操作
+	// Creates a new bank entity
+	//
+	// 创建新的银行实体
 	AddBank(context.Context, *connect.Request[v2.AddBankRequest]) (*connect.Response[v2.AddBankResponse], error)
+	// Deletes a bank entity by ID
+	//
+	// 根据ID删除银行实体
 	RemoveBank(context.Context, *connect.Request[v2.RemoveBankRequest]) (*connect.Response[v2.RemoveBankResponse], error)
+	// Retrieves detailed information for a bank entity
+	//
+	// 获取银行实体的详细信息
 	GetBank(context.Context, *connect.Request[v2.GetBankRequest]) (*connect.Response[v2.GetBankResponse], error)
+	// Updates complete information for a bank entity
+	//
+	// 更新银行实体的完整信息
 	UpdateBank(context.Context, *connect.Request[v2.UpdateBankRequest]) (*connect.Response[v2.UpdateBankResponse], error)
+	// Lists all bank entities in the system
+	//
+	// 获取系统中所有银行实体的列表
 	ListBanks(context.Context, *connect.Request[v2.ListBanksRequest]) (*connect.Response[v2.ListBanksResponse], error)
+	// Performs incremental updates on a bank entity
+	// Allows updating interest rates and customer relationships
+	//
+	// 对银行实体进行增量更新
+	// 可以更新利率和客户关系
 	DeltaUpdateBank(context.Context, *connect.Request[v2.DeltaUpdateBankRequest]) (*connect.Response[v2.DeltaUpdateBankResponse], error)
-	// Agent 相关操作
+	// Creates one or more agent entities
+	// Returns the list of created agent IDs
+	//
+	// 创建一个或多个经济主体
+	// 返回创建的经济主体ID列表
 	AddAgent(context.Context, *connect.Request[v2.AddAgentRequest]) (*connect.Response[v2.AddAgentResponse], error)
+	// Deletes one or more agents by their IDs
+	//
+	// 根据ID删除一个或多个经济主体
 	RemoveAgent(context.Context, *connect.Request[v2.RemoveAgentRequest]) (*connect.Response[v2.RemoveAgentResponse], error)
+	// Retrieves detailed information for one or more agents
+	//
+	// 获取一个或多个经济主体的详细信息
 	GetAgent(context.Context, *connect.Request[v2.GetAgentRequest]) (*connect.Response[v2.GetAgentResponse], error)
+	// Updates complete information for one or more agents
+	//
+	// 更新一个或多个经济主体的完整信息
 	UpdateAgent(context.Context, *connect.Request[v2.UpdateAgentRequest]) (*connect.Response[v2.UpdateAgentResponse], error)
+	// Lists all agent entities in the system
+	//
+	// 获取系统中所有经济主体的列表
 	ListAgents(context.Context, *connect.Request[v2.ListAgentsRequest]) (*connect.Response[v2.ListAgentsResponse], error)
+	// Performs incremental updates on one or more agents
+	// Allows updating specific attributes like currency, skills etc.
+	//
+	// 对一个或多个经济主体进行增量更新
+	// 可以更新货币、技能等具体属性
 	DeltaUpdateAgent(context.Context, *connect.Request[v2.DeltaUpdateAgentRequest]) (*connect.Response[v2.DeltaUpdateAgentResponse], error)
-	BatchAddAgent(context.Context, *connect.Request[v2.BatchAddAgentRequest]) (*connect.Response[v2.BatchAddAgentResponse], error)
-	BatchRemoveAgent(context.Context, *connect.Request[v2.BatchRemoveAgentRequest]) (*connect.Response[v2.BatchRemoveAgentResponse], error)
-	BatchGetAgent(context.Context, *connect.Request[v2.BatchGetAgentRequest]) (*connect.Response[v2.BatchGetAgentResponse], error)
-	BatchUpdateAgent(context.Context, *connect.Request[v2.BatchUpdateAgentRequest]) (*connect.Response[v2.BatchUpdateAgentResponse], error)
-	BatchDeltaUpdateAgent(context.Context, *connect.Request[v2.BatchDeltaUpdateAgentRequest]) (*connect.Response[v2.BatchDeltaUpdateAgentResponse], error)
-	// 计算相关操作
+	// Calculates taxes due for specified agents
+	// Supports income redistribution if enabled
+	//
+	// 计算指定经济主体的应缴税额
+	// 支持开启收入再分配功能
 	CalculateTaxesDue(context.Context, *connect.Request[v2.CalculateTaxesDueRequest]) (*connect.Response[v2.CalculateTaxesDueResponse], error)
+	// Calculates actual consumption based on supply and demand
+	//
+	// 基于供给和需求计算实际消费量
 	CalculateConsumption(context.Context, *connect.Request[v2.CalculateConsumptionRequest]) (*connect.Response[v2.CalculateConsumptionResponse], error)
+	// Calculates interest for specified agents
+	//
+	// 计算指定经济主体的利息
 	CalculateInterest(context.Context, *connect.Request[v2.CalculateInterestRequest]) (*connect.Response[v2.CalculateInterestResponse], error)
+	// Calculates real GDP adjusted for inflation
+	//
+	// 计算经通货膨胀调整后的实际GDP
 	CalculateRealGDP(context.Context, *connect.Request[v2.CalculateRealGDPRequest]) (*connect.Response[v2.CalculateRealGDPResponse], error)
-	// 系统状态操作
+	// Saves the current state of all economic entities to a file
+	//
+	// 将当前所有经济实体的状态保存到文件
 	SaveEconomyEntities(context.Context, *connect.Request[v2.SaveEconomyEntitiesRequest]) (*connect.Response[v2.SaveEconomyEntitiesResponse], error)
+	// Loads economic entities state from a file
+	//
+	// 从文件中加载经济实体的状态
 	LoadEconomyEntities(context.Context, *connect.Request[v2.LoadEconomyEntitiesRequest]) (*connect.Response[v2.LoadEconomyEntitiesResponse], error)
 }
 
@@ -876,36 +950,6 @@ func NewOrgServiceHandler(svc OrgServiceHandler, opts ...connect.HandlerOption) 
 		OrgServiceDeltaUpdateFirmProcedure,
 		svc.DeltaUpdateFirm,
 		connect.WithSchema(orgServiceMethods.ByName("DeltaUpdateFirm")),
-		connect.WithHandlerOptions(opts...),
-	)
-	orgServiceBatchAddFirmHandler := connect.NewUnaryHandler(
-		OrgServiceBatchAddFirmProcedure,
-		svc.BatchAddFirm,
-		connect.WithSchema(orgServiceMethods.ByName("BatchAddFirm")),
-		connect.WithHandlerOptions(opts...),
-	)
-	orgServiceBatchRemoveFirmHandler := connect.NewUnaryHandler(
-		OrgServiceBatchRemoveFirmProcedure,
-		svc.BatchRemoveFirm,
-		connect.WithSchema(orgServiceMethods.ByName("BatchRemoveFirm")),
-		connect.WithHandlerOptions(opts...),
-	)
-	orgServiceBatchGetFirmHandler := connect.NewUnaryHandler(
-		OrgServiceBatchGetFirmProcedure,
-		svc.BatchGetFirm,
-		connect.WithSchema(orgServiceMethods.ByName("BatchGetFirm")),
-		connect.WithHandlerOptions(opts...),
-	)
-	orgServiceBatchUpdateFirmHandler := connect.NewUnaryHandler(
-		OrgServiceBatchUpdateFirmProcedure,
-		svc.BatchUpdateFirm,
-		connect.WithSchema(orgServiceMethods.ByName("BatchUpdateFirm")),
-		connect.WithHandlerOptions(opts...),
-	)
-	orgServiceBatchDeltaUpdateFirmHandler := connect.NewUnaryHandler(
-		OrgServiceBatchDeltaUpdateFirmProcedure,
-		svc.BatchDeltaUpdateFirm,
-		connect.WithSchema(orgServiceMethods.ByName("BatchDeltaUpdateFirm")),
 		connect.WithHandlerOptions(opts...),
 	)
 	orgServiceAddNBSHandler := connect.NewUnaryHandler(
@@ -1052,36 +1096,6 @@ func NewOrgServiceHandler(svc OrgServiceHandler, opts ...connect.HandlerOption) 
 		connect.WithSchema(orgServiceMethods.ByName("DeltaUpdateAgent")),
 		connect.WithHandlerOptions(opts...),
 	)
-	orgServiceBatchAddAgentHandler := connect.NewUnaryHandler(
-		OrgServiceBatchAddAgentProcedure,
-		svc.BatchAddAgent,
-		connect.WithSchema(orgServiceMethods.ByName("BatchAddAgent")),
-		connect.WithHandlerOptions(opts...),
-	)
-	orgServiceBatchRemoveAgentHandler := connect.NewUnaryHandler(
-		OrgServiceBatchRemoveAgentProcedure,
-		svc.BatchRemoveAgent,
-		connect.WithSchema(orgServiceMethods.ByName("BatchRemoveAgent")),
-		connect.WithHandlerOptions(opts...),
-	)
-	orgServiceBatchGetAgentHandler := connect.NewUnaryHandler(
-		OrgServiceBatchGetAgentProcedure,
-		svc.BatchGetAgent,
-		connect.WithSchema(orgServiceMethods.ByName("BatchGetAgent")),
-		connect.WithHandlerOptions(opts...),
-	)
-	orgServiceBatchUpdateAgentHandler := connect.NewUnaryHandler(
-		OrgServiceBatchUpdateAgentProcedure,
-		svc.BatchUpdateAgent,
-		connect.WithSchema(orgServiceMethods.ByName("BatchUpdateAgent")),
-		connect.WithHandlerOptions(opts...),
-	)
-	orgServiceBatchDeltaUpdateAgentHandler := connect.NewUnaryHandler(
-		OrgServiceBatchDeltaUpdateAgentProcedure,
-		svc.BatchDeltaUpdateAgent,
-		connect.WithSchema(orgServiceMethods.ByName("BatchDeltaUpdateAgent")),
-		connect.WithHandlerOptions(opts...),
-	)
 	orgServiceCalculateTaxesDueHandler := connect.NewUnaryHandler(
 		OrgServiceCalculateTaxesDueProcedure,
 		svc.CalculateTaxesDue,
@@ -1132,16 +1146,6 @@ func NewOrgServiceHandler(svc OrgServiceHandler, opts ...connect.HandlerOption) 
 			orgServiceListFirmsHandler.ServeHTTP(w, r)
 		case OrgServiceDeltaUpdateFirmProcedure:
 			orgServiceDeltaUpdateFirmHandler.ServeHTTP(w, r)
-		case OrgServiceBatchAddFirmProcedure:
-			orgServiceBatchAddFirmHandler.ServeHTTP(w, r)
-		case OrgServiceBatchRemoveFirmProcedure:
-			orgServiceBatchRemoveFirmHandler.ServeHTTP(w, r)
-		case OrgServiceBatchGetFirmProcedure:
-			orgServiceBatchGetFirmHandler.ServeHTTP(w, r)
-		case OrgServiceBatchUpdateFirmProcedure:
-			orgServiceBatchUpdateFirmHandler.ServeHTTP(w, r)
-		case OrgServiceBatchDeltaUpdateFirmProcedure:
-			orgServiceBatchDeltaUpdateFirmHandler.ServeHTTP(w, r)
 		case OrgServiceAddNBSProcedure:
 			orgServiceAddNBSHandler.ServeHTTP(w, r)
 		case OrgServiceRemoveNBSProcedure:
@@ -1190,16 +1194,6 @@ func NewOrgServiceHandler(svc OrgServiceHandler, opts ...connect.HandlerOption) 
 			orgServiceListAgentsHandler.ServeHTTP(w, r)
 		case OrgServiceDeltaUpdateAgentProcedure:
 			orgServiceDeltaUpdateAgentHandler.ServeHTTP(w, r)
-		case OrgServiceBatchAddAgentProcedure:
-			orgServiceBatchAddAgentHandler.ServeHTTP(w, r)
-		case OrgServiceBatchRemoveAgentProcedure:
-			orgServiceBatchRemoveAgentHandler.ServeHTTP(w, r)
-		case OrgServiceBatchGetAgentProcedure:
-			orgServiceBatchGetAgentHandler.ServeHTTP(w, r)
-		case OrgServiceBatchUpdateAgentProcedure:
-			orgServiceBatchUpdateAgentHandler.ServeHTTP(w, r)
-		case OrgServiceBatchDeltaUpdateAgentProcedure:
-			orgServiceBatchDeltaUpdateAgentHandler.ServeHTTP(w, r)
 		case OrgServiceCalculateTaxesDueProcedure:
 			orgServiceCalculateTaxesDueHandler.ServeHTTP(w, r)
 		case OrgServiceCalculateConsumptionProcedure:
@@ -1243,26 +1237,6 @@ func (UnimplementedOrgServiceHandler) ListFirms(context.Context, *connect.Reques
 
 func (UnimplementedOrgServiceHandler) DeltaUpdateFirm(context.Context, *connect.Request[v2.DeltaUpdateFirmRequest]) (*connect.Response[v2.DeltaUpdateFirmResponse], error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.DeltaUpdateFirm is not implemented"))
-}
-
-func (UnimplementedOrgServiceHandler) BatchAddFirm(context.Context, *connect.Request[v2.BatchAddFirmRequest]) (*connect.Response[v2.BatchAddFirmResponse], error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.BatchAddFirm is not implemented"))
-}
-
-func (UnimplementedOrgServiceHandler) BatchRemoveFirm(context.Context, *connect.Request[v2.BatchRemoveFirmRequest]) (*connect.Response[v2.BatchRemoveFirmResponse], error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.BatchRemoveFirm is not implemented"))
-}
-
-func (UnimplementedOrgServiceHandler) BatchGetFirm(context.Context, *connect.Request[v2.BatchGetFirmRequest]) (*connect.Response[v2.BatchGetFirmResponse], error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.BatchGetFirm is not implemented"))
-}
-
-func (UnimplementedOrgServiceHandler) BatchUpdateFirm(context.Context, *connect.Request[v2.BatchUpdateFirmRequest]) (*connect.Response[v2.BatchUpdateFirmResponse], error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.BatchUpdateFirm is not implemented"))
-}
-
-func (UnimplementedOrgServiceHandler) BatchDeltaUpdateFirm(context.Context, *connect.Request[v2.BatchDeltaUpdateFirmRequest]) (*connect.Response[v2.BatchDeltaUpdateFirmResponse], error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.BatchDeltaUpdateFirm is not implemented"))
 }
 
 func (UnimplementedOrgServiceHandler) AddNBS(context.Context, *connect.Request[v2.AddNBSRequest]) (*connect.Response[v2.AddNBSResponse], error) {
@@ -1359,26 +1333,6 @@ func (UnimplementedOrgServiceHandler) ListAgents(context.Context, *connect.Reque
 
 func (UnimplementedOrgServiceHandler) DeltaUpdateAgent(context.Context, *connect.Request[v2.DeltaUpdateAgentRequest]) (*connect.Response[v2.DeltaUpdateAgentResponse], error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.DeltaUpdateAgent is not implemented"))
-}
-
-func (UnimplementedOrgServiceHandler) BatchAddAgent(context.Context, *connect.Request[v2.BatchAddAgentRequest]) (*connect.Response[v2.BatchAddAgentResponse], error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.BatchAddAgent is not implemented"))
-}
-
-func (UnimplementedOrgServiceHandler) BatchRemoveAgent(context.Context, *connect.Request[v2.BatchRemoveAgentRequest]) (*connect.Response[v2.BatchRemoveAgentResponse], error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.BatchRemoveAgent is not implemented"))
-}
-
-func (UnimplementedOrgServiceHandler) BatchGetAgent(context.Context, *connect.Request[v2.BatchGetAgentRequest]) (*connect.Response[v2.BatchGetAgentResponse], error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.BatchGetAgent is not implemented"))
-}
-
-func (UnimplementedOrgServiceHandler) BatchUpdateAgent(context.Context, *connect.Request[v2.BatchUpdateAgentRequest]) (*connect.Response[v2.BatchUpdateAgentResponse], error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.BatchUpdateAgent is not implemented"))
-}
-
-func (UnimplementedOrgServiceHandler) BatchDeltaUpdateAgent(context.Context, *connect.Request[v2.BatchDeltaUpdateAgentRequest]) (*connect.Response[v2.BatchDeltaUpdateAgentResponse], error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.economy.v2.OrgService.BatchDeltaUpdateAgent is not implemented"))
 }
 
 func (UnimplementedOrgServiceHandler) CalculateTaxesDue(context.Context, *connect.Request[v2.CalculateTaxesDueRequest]) (*connect.Response[v2.CalculateTaxesDueResponse], error) {

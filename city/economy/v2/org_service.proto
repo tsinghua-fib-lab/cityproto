@@ -4,93 +4,261 @@ package city.economy.v2;
 
 import "city/economy/v2/economy.proto";
 
+// OrgService provides management interfaces for organizations and agents in the economic system
+// All basic operations support batch processing by default
+//
 // OrgService 提供了经济系统中组织和代理的管理接口
-// 包括基本的CRUD操作、批量操作、增量更新和各种计算功能
+// 所有基础操作默认支持批量处理
 service OrgService {
-  // Firm 相关操作
-  rpc AddFirm(AddFirmRequest) returns (AddFirmResponse);
-  rpc RemoveFirm(RemoveFirmRequest) returns (RemoveFirmResponse);
-  rpc GetFirm(GetFirmRequest) returns (GetFirmResponse);
-  rpc UpdateFirm(UpdateFirmRequest) returns (UpdateFirmResponse);
-  rpc ListFirms(ListFirmsRequest) returns (ListFirmsResponse);
-  rpc DeltaUpdateFirm(DeltaUpdateFirmRequest) returns (DeltaUpdateFirmResponse);
-  rpc BatchAddFirm(BatchAddFirmRequest) returns (BatchAddFirmResponse);
-  rpc BatchRemoveFirm(BatchRemoveFirmRequest) returns (BatchRemoveFirmResponse);
-  rpc BatchGetFirm(BatchGetFirmRequest) returns (BatchGetFirmResponse);
-  rpc BatchUpdateFirm(BatchUpdateFirmRequest) returns (BatchUpdateFirmResponse);
-  rpc BatchDeltaUpdateFirm(BatchDeltaUpdateFirmRequest) returns (BatchDeltaUpdateFirmResponse);
+  // @section Firm Operations
+  // @section 企业相关操作
 
-  // NBS 相关操作
+  // Creates one or more firm entities
+  // Returns the list of created firm IDs
+  //
+  // 创建一个或多个企业实体
+  // 返回创建的企业ID列表
+  rpc AddFirm(AddFirmRequest) returns (AddFirmResponse);
+
+  // Deletes one or more firms by their IDs
+  // Also cleans up related employee associations
+  //
+  // 根据ID删除一个或多个企业实体
+  // 同时清理相关的员工关联关系
+  rpc RemoveFirm(RemoveFirmRequest) returns (RemoveFirmResponse);
+
+  // Retrieves detailed information for one or more firms
+  // Returns a list of firm entities
+  //
+  // 获取一个或多个企业的详细信息
+  // 返回企业实体信息列表
+  rpc GetFirm(GetFirmRequest) returns (GetFirmResponse);
+
+  // Updates complete information for one or more firms
+  //
+  // 更新一个或多个企业的完整信息
+  rpc UpdateFirm(UpdateFirmRequest) returns (UpdateFirmResponse);
+
+  // Lists all firms in the system
+  //
+  // 获取系统中所有企业的列表
+  rpc ListFirms(ListFirmsRequest) returns (ListFirmsResponse);
+
+  // Performs incremental updates on one or more firms
+  // Allows updating specific fields like price, inventory, demand etc.
+  //
+  // 对一个或多个企业进行增量更新
+  // 可以更新价格、库存、需求等具体字段
+  rpc DeltaUpdateFirm(DeltaUpdateFirmRequest) returns (DeltaUpdateFirmResponse);
+
+  // @section NBS Operations
+  // @section 国家统计局相关操作
+
+  // Creates a new NBS entity
+  //
+  // 创建新的国家统计局实体
   rpc AddNBS(AddNBSRequest) returns (AddNBSResponse);
+
+  // Deletes an NBS entity by ID
+  //
+  // 根据ID删除国家统计局实体
   rpc RemoveNBS(RemoveNBSRequest) returns (RemoveNBSResponse);
+
+  // Retrieves detailed information for an NBS entity
+  //
+  // 获取国家统计局的详细信息
   rpc GetNBS(GetNBSRequest) returns (GetNBSResponse);
+
+  // Updates complete information for an NBS entity
+  //
+  // 更新国家统计局的完整信息
   rpc UpdateNBS(UpdateNBSRequest) returns (UpdateNBSResponse);
+
+  // Lists all NBS entities in the system
+  //
+  // 获取系统中所有国家统计局的列表
   rpc ListNBS(ListNBSRequest) returns (ListNBSResponse);
+
+  // Performs incremental updates on an NBS entity
+  // Allows updating specific statistics and citizen relationships
+  //
+  // 对国家统计局进行增量更新
+  // 可以更新具体统计数据和公民关系
   rpc DeltaUpdateNBS(DeltaUpdateNBSRequest) returns (DeltaUpdateNBSResponse);
 
-  // Government 相关操作
+  // @section Government Operations
+  // @section 政府相关操作
+
+  // Creates a new government entity
+  //
+  // 创建新的政府实体
   rpc AddGovernment(AddGovernmentRequest) returns (AddGovernmentResponse);
+
+  // Deletes a government entity by ID
+  //
+  // 根据ID删除政府实体
   rpc RemoveGovernment(RemoveGovernmentRequest) returns (RemoveGovernmentResponse);
+
+  // Retrieves detailed information for a government entity
+  //
+  // 获取政府实体的详细信息
   rpc GetGovernment(GetGovernmentRequest) returns (GetGovernmentResponse);
+
+  // Updates complete information for a government entity
+  //
+  // 更新政府实体的完整信息
   rpc UpdateGovernment(UpdateGovernmentRequest) returns (UpdateGovernmentResponse);
+
+  // Lists all government entities in the system
+  //
+  // 获取系统中所有政府实体的列表
   rpc ListGovernments(ListGovernmentsRequest) returns (ListGovernmentsResponse);
+
+  // Performs incremental updates on a government entity
+  // Allows updating tax brackets and citizen relationships
+  //
+  // 对政府实体进行增量更新
+  // 可以更新税收档位和公民关系
   rpc DeltaUpdateGovernment(DeltaUpdateGovernmentRequest) returns (DeltaUpdateGovernmentResponse);
 
-  // Bank 相关操作
+  // @section Bank Operations
+  // @section 银行相关操作
+
+  // Creates a new bank entity
+  //
+  // 创建新的银行实体
   rpc AddBank(AddBankRequest) returns (AddBankResponse);
+
+  // Deletes a bank entity by ID
+  //
+  // 根据ID删除银行实体
   rpc RemoveBank(RemoveBankRequest) returns (RemoveBankResponse);
+
+  // Retrieves detailed information for a bank entity
+  //
+  // 获取银行实体的详细信息
   rpc GetBank(GetBankRequest) returns (GetBankResponse);
+
+  // Updates complete information for a bank entity
+  //
+  // 更新银行实体的完整信息
   rpc UpdateBank(UpdateBankRequest) returns (UpdateBankResponse);
+
+  // Lists all bank entities in the system
+  //
+  // 获取系统中所有银行实体的列表
   rpc ListBanks(ListBanksRequest) returns (ListBanksResponse);
+
+  // Performs incremental updates on a bank entity
+  // Allows updating interest rates and customer relationships
+  //
+  // 对银行实体进行增量更新
+  // 可以更新利率和客户关系
   rpc DeltaUpdateBank(DeltaUpdateBankRequest) returns (DeltaUpdateBankResponse);
 
-  // Agent 相关操作
-  rpc AddAgent(AddAgentRequest) returns (AddAgentResponse);
-  rpc RemoveAgent(RemoveAgentRequest) returns (RemoveAgentResponse);
-  rpc GetAgent(GetAgentRequest) returns (GetAgentResponse);
-  rpc UpdateAgent(UpdateAgentRequest) returns (UpdateAgentResponse);
-  rpc ListAgents(ListAgentsRequest) returns (ListAgentsResponse);
-  rpc DeltaUpdateAgent(DeltaUpdateAgentRequest) returns (DeltaUpdateAgentResponse);
-  rpc BatchAddAgent(BatchAddAgentRequest) returns (BatchAddAgentResponse);
-  rpc BatchRemoveAgent(BatchRemoveAgentRequest) returns (BatchRemoveAgentResponse);
-  rpc BatchGetAgent(BatchGetAgentRequest) returns (BatchGetAgentResponse);
-  rpc BatchUpdateAgent(BatchUpdateAgentRequest) returns (BatchUpdateAgentResponse);
-  rpc BatchDeltaUpdateAgent(BatchDeltaUpdateAgentRequest) returns (BatchDeltaUpdateAgentResponse);
+  // @section Agent Operations
+  // @section 经济主体相关操作
 
-  // 计算相关操作
+  // Creates one or more agent entities
+  // Returns the list of created agent IDs
+  //
+  // 创建一个或多个经济主体
+  // 返回创建的经济主体ID列表
+  rpc AddAgent(AddAgentRequest) returns (AddAgentResponse);
+
+  // Deletes one or more agents by their IDs
+  //
+  // 根据ID删除一个或多个经济主体
+  rpc RemoveAgent(RemoveAgentRequest) returns (RemoveAgentResponse);
+
+  // Retrieves detailed information for one or more agents
+  //
+  // 获取一个或多个经济主体的详细信息
+  rpc GetAgent(GetAgentRequest) returns (GetAgentResponse);
+
+  // Updates complete information for one or more agents
+  //
+  // 更新一个或多个经济主体的完整信息
+  rpc UpdateAgent(UpdateAgentRequest) returns (UpdateAgentResponse);
+
+  // Lists all agent entities in the system
+  //
+  // 获取系统中所有经济主体的列表
+  rpc ListAgents(ListAgentsRequest) returns (ListAgentsResponse);
+
+  // Performs incremental updates on one or more agents
+  // Allows updating specific attributes like currency, skills etc.
+  //
+  // 对一个或多个经济主体进行增量更新
+  // 可以更新货币、技能等具体属性
+  rpc DeltaUpdateAgent(DeltaUpdateAgentRequest) returns (DeltaUpdateAgentResponse);
+
+  // @section Economic Calculations
+  // @section 经济计算相关操作
+
+  // Calculates taxes due for specified agents
+  // Supports income redistribution if enabled
+  //
+  // 计算指定经济主体的应缴税额
+  // 支持开启收入再分配功能
   rpc CalculateTaxesDue(CalculateTaxesDueRequest) returns (CalculateTaxesDueResponse);
+
+  // Calculates actual consumption based on supply and demand
+  //
+  // 基于供给和需求计算实际消费量
   rpc CalculateConsumption(CalculateConsumptionRequest) returns (CalculateConsumptionResponse);
+
+  // Calculates interest for specified agents
+  //
+  // 计算指定经济主体的利息
   rpc CalculateInterest(CalculateInterestRequest) returns (CalculateInterestResponse);
+
+  // Calculates real GDP adjusted for inflation
+  //
+  // 计算经通货膨胀调整后的实际GDP
   rpc CalculateRealGDP(CalculateRealGDPRequest) returns (CalculateRealGDPResponse);
 
-  // 系统状态操作
+  // @section System State Operations
+  // @section 系统状态相关操作
+
+  // Saves the current state of all economic entities to a file
+  //
+  // 将当前所有经济实体的状态保存到文件
   rpc SaveEconomyEntities(SaveEconomyEntitiesRequest) returns (SaveEconomyEntitiesResponse);
+
+  // Loads economic entities state from a file
+  //
+  // 从文件中加载经济实体的状态
   rpc LoadEconomyEntities(LoadEconomyEntitiesRequest) returns (LoadEconomyEntitiesResponse);
 }
 
-// Firm 相关消息
+// Request and Response messages for Firm operations
+// 企业操作相关的请求和响应消息
+
 message AddFirmRequest {
-  Firm firm = 1;
+  repeated Firm firms = 1;  // List of firms to add / 要添加的企业列表
 }
 
-message AddFirmResponse {}
+message AddFirmResponse {
+  repeated int32 firm_ids = 1;  // List of created firm IDs / 创建的企业ID列表
+}
 
 message RemoveFirmRequest {
-  int32 firm_id = 1;
+  repeated int32 firm_ids = 1;  // List of firm IDs to remove / 要删除的企业ID列表
 }
 
 message RemoveFirmResponse {}
 
 message GetFirmRequest {
-  int32 firm_id = 1;
+  repeated int32 firm_ids = 1;  // List of firm IDs to retrieve / 要获取的企业ID列表
 }
 
 message GetFirmResponse {
-  Firm firm = 1;
+  repeated Firm firms = 1;  // List of retrieved firms / 获取的企业列表
 }
 
 message UpdateFirmRequest {
-  Firm firm = 1;
+  repeated Firm firms = 1;  // List of firms to update / 要更新的企业列表
 }
 
 message UpdateFirmResponse {}
@@ -98,56 +266,29 @@ message UpdateFirmResponse {}
 message ListFirmsRequest {}
 
 message ListFirmsResponse {
-  repeated Firm firms = 1;
+  repeated Firm firms = 1;  // List of all firms / 所有企业的列表
 }
 
+// Request for incremental updates to firms
+// 企业增量更新请求
 message DeltaUpdateFirmRequest {
-  int32 firm_id = 1;
-  optional float delta_price = 2;
-  optional int32 delta_inventory = 3;
-  optional float delta_demand = 4;
-  optional float delta_sales = 5;
-  optional float delta_currency = 6;
-  repeated int32 add_employees = 7;
-  repeated int32 remove_employees = 8;
+  repeated FirmDeltaUpdate updates = 1;  // List of updates to apply / 要应用的更新列表
+}
+
+// Represents an incremental update to a firm
+// 表示对企业的增量更新
+message FirmDeltaUpdate {
+  int32 firm_id = 1;                     // ID of the firm to update / 要更新的企业ID
+  optional float delta_price = 2;        // Change in price / 价格变化
+  optional int32 delta_inventory = 3;    // Change in inventory / 库存变化
+  optional float delta_demand = 4;       // Change in demand / 需求变化
+  optional float delta_sales = 5;        // Change in sales / 销售量变化
+  optional float delta_currency = 6;     // Change in currency / 货币量变化
+  repeated int32 add_employees = 7;      // Employees to add / 要添加的员工
+  repeated int32 remove_employees = 8;   // Employees to remove / 要移除的员工
 }
 
 message DeltaUpdateFirmResponse {}
-
-// Firm 批处理相关消息
-message BatchAddFirmRequest {
-  repeated Firm firms = 1;
-}
-
-message BatchAddFirmResponse {
-  repeated int32 firm_ids = 1;
-}
-
-message BatchRemoveFirmRequest {
-  repeated int32 firm_ids = 1;
-}
-
-message BatchRemoveFirmResponse {}
-
-message BatchGetFirmRequest {
-  repeated int32 firm_ids = 1;
-}
-
-message BatchGetFirmResponse {
-  repeated Firm firms = 1;
-}
-
-message BatchUpdateFirmRequest {
-  repeated Firm firms = 1;
-}
-
-message BatchUpdateFirmResponse {}
-
-message BatchDeltaUpdateFirmRequest {
-  repeated DeltaUpdateFirmRequest updates = 1;
-}
-
-message BatchDeltaUpdateFirmResponse {}
 
 // NBS 相关消息
 message AddNBSRequest {
@@ -195,10 +336,10 @@ message DeltaUpdateNBSRequest {
   map<string, float> delta_income_currency = 10;
   map<string, float> delta_locus_control = 11;
   optional float delta_currency = 12;
-  repeated int32 add_citizens = 13;
-  repeated int32 remove_citizens = 14;
-  repeated int32 add_citizens_agent_id = 15;
-  repeated int32 remove_citizens_agent_id = 16;
+  repeated int32 add_citizen_ids = 13;
+  repeated int32 remove_citizen_ids = 14;
+  repeated int32 add_citizen_agent_ids = 15;
+  repeated int32 remove_citizen_agent_ids = 16;
 }
 
 message DeltaUpdateNBSResponse {}
@@ -241,8 +382,8 @@ message DeltaUpdateGovernmentRequest {
   repeated float delta_bracket_cutoffs = 2;
   repeated float delta_bracket_rates = 3;
   optional float delta_currency = 4;
-  repeated int32 add_citizens = 5;
-  repeated int32 remove_citizens = 6;
+  repeated int32 add_citizen_ids = 5;
+  repeated int32 remove_citizen_ids = 6;
 }
 
 message DeltaUpdateGovernmentResponse {}
@@ -284,35 +425,37 @@ message DeltaUpdateBankRequest {
   int32 bank_id = 1;
   optional float delta_interest_rate = 2;
   optional float delta_currency = 3;
-  repeated int32 add_citizens = 4;
-  repeated int32 remove_citizens = 5;
+  repeated int32 add_citizen_ids = 4;
+  repeated int32 remove_citizen_ids = 5;
 }
 
 message DeltaUpdateBankResponse {}
 
 // Agent 相关消息
 message AddAgentRequest {
-  Agent agent = 1;
+  repeated Agent agents = 1;  // 支持批量添加
 }
 
-message AddAgentResponse {}
+message AddAgentResponse {
+  repeated int32 agent_ids = 1;  // 返回创建的代理ID列表
+}
 
 message RemoveAgentRequest {
-  int32 agent_id = 1;
+  repeated int32 agent_ids = 1;  // 支持批量删除
 }
 
 message RemoveAgentResponse {}
 
 message GetAgentRequest {
-  int32 agent_id = 1;
+  repeated int32 agent_ids = 1;  // 支持批量获取
 }
 
 message GetAgentResponse {
-  Agent agent = 1;
+  repeated Agent agents = 1;  // 返回代理信息列表
 }
 
 message UpdateAgentRequest {
-  Agent agent = 1;
+  repeated Agent agents = 1;  // 支持批量更新
 }
 
 message UpdateAgentResponse {}
@@ -324,6 +467,10 @@ message ListAgentsResponse {
 }
 
 message DeltaUpdateAgentRequest {
+  repeated AgentDeltaUpdate updates = 1;  // 支持批量增量更新
+}
+
+message AgentDeltaUpdate {
   int32 agent_id = 1;
   optional float delta_currency = 2;
   optional int32 new_firm_id = 3;
@@ -333,41 +480,6 @@ message DeltaUpdateAgentRequest {
 }
 
 message DeltaUpdateAgentResponse {}
-
-// Agent 批处理相关消息
-message BatchAddAgentRequest {
-  repeated Agent agents = 1;
-}
-
-message BatchAddAgentResponse {
-  repeated int32 agent_ids = 1;
-}
-
-message BatchRemoveAgentRequest {
-  repeated int32 agent_ids = 1;
-}
-
-message BatchRemoveAgentResponse {}
-
-message BatchGetAgentRequest {
-  repeated int32 agent_ids = 1;
-}
-
-message BatchGetAgentResponse {
-  repeated Agent agents = 1;
-}
-
-message BatchUpdateAgentRequest {
-  repeated Agent agents = 1;
-}
-
-message BatchUpdateAgentResponse {}
-
-message BatchDeltaUpdateAgentRequest {
-  repeated DeltaUpdateAgentRequest updates = 1;
-}
-
-message BatchDeltaUpdateAgentResponse {}
 
 // 计算相关消息
 message CalculateTaxesDueRequest {

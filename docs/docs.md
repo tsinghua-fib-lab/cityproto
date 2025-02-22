@@ -152,26 +152,7 @@
     - [AddGovernmentResponse](#city-economy-v2-AddGovernmentResponse)
     - [AddNBSRequest](#city-economy-v2-AddNBSRequest)
     - [AddNBSResponse](#city-economy-v2-AddNBSResponse)
-    - [BatchAddAgentRequest](#city-economy-v2-BatchAddAgentRequest)
-    - [BatchAddAgentResponse](#city-economy-v2-BatchAddAgentResponse)
-    - [BatchAddFirmRequest](#city-economy-v2-BatchAddFirmRequest)
-    - [BatchAddFirmResponse](#city-economy-v2-BatchAddFirmResponse)
-    - [BatchDeltaUpdateAgentRequest](#city-economy-v2-BatchDeltaUpdateAgentRequest)
-    - [BatchDeltaUpdateAgentResponse](#city-economy-v2-BatchDeltaUpdateAgentResponse)
-    - [BatchDeltaUpdateFirmRequest](#city-economy-v2-BatchDeltaUpdateFirmRequest)
-    - [BatchDeltaUpdateFirmResponse](#city-economy-v2-BatchDeltaUpdateFirmResponse)
-    - [BatchGetAgentRequest](#city-economy-v2-BatchGetAgentRequest)
-    - [BatchGetAgentResponse](#city-economy-v2-BatchGetAgentResponse)
-    - [BatchGetFirmRequest](#city-economy-v2-BatchGetFirmRequest)
-    - [BatchGetFirmResponse](#city-economy-v2-BatchGetFirmResponse)
-    - [BatchRemoveAgentRequest](#city-economy-v2-BatchRemoveAgentRequest)
-    - [BatchRemoveAgentResponse](#city-economy-v2-BatchRemoveAgentResponse)
-    - [BatchRemoveFirmRequest](#city-economy-v2-BatchRemoveFirmRequest)
-    - [BatchRemoveFirmResponse](#city-economy-v2-BatchRemoveFirmResponse)
-    - [BatchUpdateAgentRequest](#city-economy-v2-BatchUpdateAgentRequest)
-    - [BatchUpdateAgentResponse](#city-economy-v2-BatchUpdateAgentResponse)
-    - [BatchUpdateFirmRequest](#city-economy-v2-BatchUpdateFirmRequest)
-    - [BatchUpdateFirmResponse](#city-economy-v2-BatchUpdateFirmResponse)
+    - [AgentDeltaUpdate](#city-economy-v2-AgentDeltaUpdate)
     - [CalculateConsumptionRequest](#city-economy-v2-CalculateConsumptionRequest)
     - [CalculateConsumptionResponse](#city-economy-v2-CalculateConsumptionResponse)
     - [CalculateInterestRequest](#city-economy-v2-CalculateInterestRequest)
@@ -200,6 +181,7 @@
     - [DeltaUpdateNBSRequest.DeltaWagesEntry](#city-economy-v2-DeltaUpdateNBSRequest-DeltaWagesEntry)
     - [DeltaUpdateNBSRequest.DeltaWorkingHoursEntry](#city-economy-v2-DeltaUpdateNBSRequest-DeltaWorkingHoursEntry)
     - [DeltaUpdateNBSResponse](#city-economy-v2-DeltaUpdateNBSResponse)
+    - [FirmDeltaUpdate](#city-economy-v2-FirmDeltaUpdate)
     - [GetAgentRequest](#city-economy-v2-GetAgentRequest)
     - [GetAgentResponse](#city-economy-v2-GetAgentResponse)
     - [GetBankRequest](#city-economy-v2-GetBankRequest)
@@ -2170,17 +2152,18 @@ MongoDB配置
 <a name="city-economy-v2-Agent"></a>
 
 ### Agent
+Agent represents an individual economic agent (e.g., a resident)
 Agent 代表经济系统中的个体代理（如居民个人）
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [int32](#int32) |  | 代理的唯一标识符 |
-| currency | [float](#float) | optional | 代理持有的货币量 |
-| firm_id | [int32](#int32) | optional | 代理所属的公司ID |
-| skill | [float](#float) | optional | 代理的技能水平 |
-| consumption | [float](#float) | optional | 代理的消费量 |
-| income | [float](#float) | optional | 代理的收入 |
+| id | [int32](#int32) |  | Unique identifier of the agent 代理的唯一标识符 |
+| currency | [float](#float) | optional | Amount of currency held by the agent 代理持有的货币量 |
+| firm_id | [int32](#int32) | optional | ID of the firm where the agent is employed 代理所属的公司ID |
+| skill | [float](#float) | optional | Skill level of the agent 代理的技能水平 |
+| consumption | [float](#float) | optional | Consumption level of the agent 代理的消费量 |
+| income | [float](#float) | optional | Income of the agent 代理的收入 |
 
 
 
@@ -2190,15 +2173,16 @@ Agent 代表经济系统中的个体代理（如居民个人）
 <a name="city-economy-v2-Bank"></a>
 
 ### Bank
+Bank represents a banking institution
 Bank 代表银行机构
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [int32](#int32) |  | 银行的唯一标识符 |
-| citizens | [int32](#int32) | repeated | 银行客户（公民）ID列表 |
-| interest_rate | [float](#float) |  | 银行设定的利率 |
-| currency | [float](#float) |  | 银行持有的货币量 |
+| id | [int32](#int32) |  | Unique identifier of the bank 银行的唯一标识符 |
+| citizen_ids | [int32](#int32) | repeated | List of citizen IDs who are bank customers 银行客户（公民）ID列表 |
+| interest_rate | [float](#float) |  | Interest rate set by the bank 银行设定的利率 |
+| currency | [float](#float) |  | Amount of currency held by the bank 银行持有的货币量 |
 
 
 
@@ -2208,16 +2192,17 @@ Bank 代表银行机构
 <a name="city-economy-v2-EconomyEntities"></a>
 
 ### EconomyEntities
-经济实体
+EconomyEntities represents all entities in the economic system
+EconomyEntities 代表经济系统中的所有实体
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| firms | [Firm](#city-economy-v2-Firm) | repeated | 公司列表 |
-| nbs | [NBS](#city-economy-v2-NBS) | repeated | 国家统计局列表 |
-| governments | [Government](#city-economy-v2-Government) | repeated | 政府列表 |
-| banks | [Bank](#city-economy-v2-Bank) | repeated | 银行列表 |
-| agents | [Agent](#city-economy-v2-Agent) | repeated | 代理列表 |
+| firms | [Firm](#city-economy-v2-Firm) | repeated | List of all firms 公司列表 |
+| nbs | [NBS](#city-economy-v2-NBS) | repeated | List of all NBSs 国家统计局列表 |
+| governments | [Government](#city-economy-v2-Government) | repeated | List of all governments 政府列表 |
+| banks | [Bank](#city-economy-v2-Bank) | repeated | List of all banks 银行列表 |
+| agents | [Agent](#city-economy-v2-Agent) | repeated | List of all agents 代理列表 |
 
 
 
@@ -2227,18 +2212,19 @@ Bank 代表银行机构
 <a name="city-economy-v2-Firm"></a>
 
 ### Firm
+Firm represents a company entity in the economic system
 Firm 代表经济系统中的公司实体
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [int32](#int32) |  | 公司的唯一标识符 |
-| employees | [int32](#int32) | repeated | 公司的员工ID列表 |
-| price | [float](#float) |  | 公司产品/服务的价格 |
-| inventory | [int32](#int32) |  | 公司当前的库存量 |
-| demand | [float](#float) |  | 市场对公司产品/服务的需求量 |
-| sales | [float](#float) |  | 公司的销售量 |
-| currency | [float](#float) |  | 公司持有的货币量 |
+| id | [int32](#int32) |  | Unique identifier of the firm 公司的唯一标识符 |
+| employees | [int32](#int32) | repeated | List of employee IDs working at the firm 公司的员工ID列表 |
+| price | [float](#float) |  | Price of the firm&#39;s products/services 公司产品/服务的价格 |
+| inventory | [int32](#int32) |  | Current inventory level of the firm 公司当前的库存量 |
+| demand | [float](#float) |  | Market demand for the firm&#39;s products/services 市场对公司产品/服务的需求量 |
+| sales | [float](#float) |  | Sales volume of the firm 公司的销售量 |
+| currency | [float](#float) |  | Amount of currency held by the firm 公司持有的货币量 |
 
 
 
@@ -2248,16 +2234,17 @@ Firm 代表经济系统中的公司实体
 <a name="city-economy-v2-Government"></a>
 
 ### Government
+Government represents a government institution
 Government 代表政府机构
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [int32](#int32) |  | 政府的唯一标识符 |
-| citizens | [int32](#int32) | repeated | 管辖范围内的公民ID列表 |
-| bracket_cutoffs | [float](#float) | repeated | 税收档位的切分点列表 |
-| bracket_rates | [float](#float) | repeated | 对应每个档位的税率列表 |
-| currency | [float](#float) |  | 政府持有的货币量 |
+| id | [int32](#int32) |  | Unique identifier of the government 政府的唯一标识符 |
+| citizen_ids | [int32](#int32) | repeated | List of citizen IDs under government jurisdiction 管辖范围内的公民ID列表 |
+| bracket_cutoffs | [float](#float) | repeated | Tax bracket cutoff points 税收档位的切分点列表 |
+| bracket_rates | [float](#float) | repeated | Tax rates for each bracket 对应每个档位的税率列表 |
+| currency | [float](#float) |  | Amount of currency held by the government 政府持有的货币量 |
 
 
 
@@ -2267,25 +2254,26 @@ Government 代表政府机构
 <a name="city-economy-v2-NBS"></a>
 
 ### NBS
-NBS (National Bureau of Statistics) 代表国家统计局
+NBS (National Bureau of Statistics) represents the statistical authority
+NBS (国家统计局) 代表负责经济数据统计的权威机构
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [int32](#int32) |  | 统计局的唯一标识符 |
-| citizens | [int32](#int32) | repeated | 统计范围内的公民ID列表 |
-| nominal_gdp | [NBS.NominalGdpEntry](#city-economy-v2-NBS-NominalGdpEntry) | repeated | 名义GDP时间序列数据，key为时间点 |
-| real_gdp | [NBS.RealGdpEntry](#city-economy-v2-NBS-RealGdpEntry) | repeated | 实际GDP时间序列数据，key为时间点 |
-| unemployment | [NBS.UnemploymentEntry](#city-economy-v2-NBS-UnemploymentEntry) | repeated | 失业率时间序列数据，key为时间点 |
-| wages | [NBS.WagesEntry](#city-economy-v2-NBS-WagesEntry) | repeated | 工资水平时间序列数据，key为时间点 |
-| prices | [NBS.PricesEntry](#city-economy-v2-NBS-PricesEntry) | repeated | 价格指数时间序列数据，key为时间点 |
-| working_hours | [NBS.WorkingHoursEntry](#city-economy-v2-NBS-WorkingHoursEntry) | repeated | 工作时间时间序列数据，key为时间点 |
-| depression | [NBS.DepressionEntry](#city-economy-v2-NBS-DepressionEntry) | repeated | 抑郁指数时间序列数据，key为时间点 |
-| consumption_currency | [NBS.ConsumptionCurrencyEntry](#city-economy-v2-NBS-ConsumptionCurrencyEntry) | repeated | 消费货币时间序列数据，key为时间点 |
-| income_currency | [NBS.IncomeCurrencyEntry](#city-economy-v2-NBS-IncomeCurrencyEntry) | repeated | 收入货币时间序列数据，key为时间点 |
-| locus_control | [NBS.LocusControlEntry](#city-economy-v2-NBS-LocusControlEntry) | repeated | 控制点时间序列数据，key为时间点 |
-| citizens_agent_id | [int32](#int32) | repeated | 公民代理ID列表 |
-| currency | [float](#float) |  | 统计局持有的货币量 |
+| id | [int32](#int32) |  | Unique identifier of the NBS 统计局的唯一标识符 |
+| citizen_ids | [int32](#int32) | repeated | List of citizen IDs under NBS jurisdiction 统计范围内的公民ID列表 |
+| nominal_gdp | [NBS.NominalGdpEntry](#city-economy-v2-NBS-NominalGdpEntry) | repeated | Time series data of nominal GDP, key is timestamp 名义GDP时间序列数据，键为时间戳 |
+| real_gdp | [NBS.RealGdpEntry](#city-economy-v2-NBS-RealGdpEntry) | repeated | Time series data of real GDP, key is timestamp 实际GDP时间序列数据，键为时间戳 |
+| unemployment | [NBS.UnemploymentEntry](#city-economy-v2-NBS-UnemploymentEntry) | repeated | Time series data of unemployment rate, key is timestamp 失业率时间序列数据，键为时间戳 |
+| wages | [NBS.WagesEntry](#city-economy-v2-NBS-WagesEntry) | repeated | Time series data of wage levels, key is timestamp 工资水平时间序列数据，键为时间戳 |
+| prices | [NBS.PricesEntry](#city-economy-v2-NBS-PricesEntry) | repeated | Time series data of price indices, key is timestamp 价格指数时间序列数据，键为时间戳 |
+| working_hours | [NBS.WorkingHoursEntry](#city-economy-v2-NBS-WorkingHoursEntry) | repeated | Time series data of working hours, key is timestamp 工作时间时间序列数据，键为时间戳 |
+| depression | [NBS.DepressionEntry](#city-economy-v2-NBS-DepressionEntry) | repeated | Time series data of depression index, key is timestamp 抑郁指数时间序列数据，键为时间戳 |
+| consumption_currency | [NBS.ConsumptionCurrencyEntry](#city-economy-v2-NBS-ConsumptionCurrencyEntry) | repeated | Time series data of consumption currency, key is timestamp 消费货币时间序列数据，键为时间戳 |
+| income_currency | [NBS.IncomeCurrencyEntry](#city-economy-v2-NBS-IncomeCurrencyEntry) | repeated | Time series data of income currency, key is timestamp 收入货币时间序列数据，键为时间戳 |
+| locus_control | [NBS.LocusControlEntry](#city-economy-v2-NBS-LocusControlEntry) | repeated | Time series data of locus control, key is timestamp 控制点时间序列数据，键为时间戳 |
+| citizen_agent_ids | [int32](#int32) | repeated | List of citizen agent IDs 公民代理ID列表 |
+| currency | [float](#float) |  | Amount of currency held by the NBS 统计局持有的货币量 |
 
 
 
@@ -2476,7 +2464,7 @@ Agent 相关消息
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| agent | [Agent](#city-economy-v2-Agent) |  |  |
+| agents | [Agent](#city-economy-v2-Agent) | repeated | 支持批量添加 |
 
 
 
@@ -2487,6 +2475,11 @@ Agent 相关消息
 
 ### AddAgentResponse
 
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| agent_ids | [int32](#int32) | repeated | 返回创建的代理ID列表 |
 
 
 
@@ -2521,12 +2514,12 @@ Bank 相关消息
 <a name="city-economy-v2-AddFirmRequest"></a>
 
 ### AddFirmRequest
-Firm 相关消息
+
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| firm | [Firm](#city-economy-v2-Firm) |  |  |
+| firms | [Firm](#city-economy-v2-Firm) | repeated | List of firms to add / 要添加的企业列表 |
 
 
 
@@ -2537,6 +2530,11 @@ Firm 相关消息
 
 ### AddFirmResponse
 
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| firm_ids | [int32](#int32) | repeated | List of created firm IDs / 创建的企业ID列表 |
 
 
 
@@ -2593,270 +2591,20 @@ NBS 相关消息
 
 
 
-<a name="city-economy-v2-BatchAddAgentRequest"></a>
+<a name="city-economy-v2-AgentDeltaUpdate"></a>
 
-### BatchAddAgentRequest
-Agent 批处理相关消息
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| agents | [Agent](#city-economy-v2-Agent) | repeated |  |
-
-
-
-
-
-
-<a name="city-economy-v2-BatchAddAgentResponse"></a>
-
-### BatchAddAgentResponse
+### AgentDeltaUpdate
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| agent_ids | [int32](#int32) | repeated |  |
-
-
-
-
-
-
-<a name="city-economy-v2-BatchAddFirmRequest"></a>
-
-### BatchAddFirmRequest
-Firm 批处理相关消息
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| firms | [Firm](#city-economy-v2-Firm) | repeated |  |
-
-
-
-
-
-
-<a name="city-economy-v2-BatchAddFirmResponse"></a>
-
-### BatchAddFirmResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| firm_ids | [int32](#int32) | repeated |  |
-
-
-
-
-
-
-<a name="city-economy-v2-BatchDeltaUpdateAgentRequest"></a>
-
-### BatchDeltaUpdateAgentRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| updates | [DeltaUpdateAgentRequest](#city-economy-v2-DeltaUpdateAgentRequest) | repeated |  |
-
-
-
-
-
-
-<a name="city-economy-v2-BatchDeltaUpdateAgentResponse"></a>
-
-### BatchDeltaUpdateAgentResponse
-
-
-
-
-
-
-
-<a name="city-economy-v2-BatchDeltaUpdateFirmRequest"></a>
-
-### BatchDeltaUpdateFirmRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| updates | [DeltaUpdateFirmRequest](#city-economy-v2-DeltaUpdateFirmRequest) | repeated |  |
-
-
-
-
-
-
-<a name="city-economy-v2-BatchDeltaUpdateFirmResponse"></a>
-
-### BatchDeltaUpdateFirmResponse
-
-
-
-
-
-
-
-<a name="city-economy-v2-BatchGetAgentRequest"></a>
-
-### BatchGetAgentRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| agent_ids | [int32](#int32) | repeated |  |
-
-
-
-
-
-
-<a name="city-economy-v2-BatchGetAgentResponse"></a>
-
-### BatchGetAgentResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| agents | [Agent](#city-economy-v2-Agent) | repeated |  |
-
-
-
-
-
-
-<a name="city-economy-v2-BatchGetFirmRequest"></a>
-
-### BatchGetFirmRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| firm_ids | [int32](#int32) | repeated |  |
-
-
-
-
-
-
-<a name="city-economy-v2-BatchGetFirmResponse"></a>
-
-### BatchGetFirmResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| firms | [Firm](#city-economy-v2-Firm) | repeated |  |
-
-
-
-
-
-
-<a name="city-economy-v2-BatchRemoveAgentRequest"></a>
-
-### BatchRemoveAgentRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| agent_ids | [int32](#int32) | repeated |  |
-
-
-
-
-
-
-<a name="city-economy-v2-BatchRemoveAgentResponse"></a>
-
-### BatchRemoveAgentResponse
-
-
-
-
-
-
-
-<a name="city-economy-v2-BatchRemoveFirmRequest"></a>
-
-### BatchRemoveFirmRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| firm_ids | [int32](#int32) | repeated |  |
-
-
-
-
-
-
-<a name="city-economy-v2-BatchRemoveFirmResponse"></a>
-
-### BatchRemoveFirmResponse
-
-
-
-
-
-
-
-<a name="city-economy-v2-BatchUpdateAgentRequest"></a>
-
-### BatchUpdateAgentRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| agents | [Agent](#city-economy-v2-Agent) | repeated |  |
-
-
-
-
-
-
-<a name="city-economy-v2-BatchUpdateAgentResponse"></a>
-
-### BatchUpdateAgentResponse
-
-
-
-
-
-
-
-<a name="city-economy-v2-BatchUpdateFirmRequest"></a>
-
-### BatchUpdateFirmRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| firms | [Firm](#city-economy-v2-Firm) | repeated |  |
-
-
-
-
-
-
-<a name="city-economy-v2-BatchUpdateFirmResponse"></a>
-
-### BatchUpdateFirmResponse
-
+| agent_id | [int32](#int32) |  |  |
+| delta_currency | [float](#float) | optional |  |
+| new_firm_id | [int32](#int32) | optional |  |
+| delta_skill | [float](#float) | optional |  |
+| delta_consumption | [float](#float) | optional |  |
+| delta_income | [float](#float) | optional |  |
 
 
 
@@ -3001,12 +2749,7 @@ Firm 批处理相关消息
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| agent_id | [int32](#int32) |  |  |
-| delta_currency | [float](#float) | optional |  |
-| new_firm_id | [int32](#int32) | optional |  |
-| delta_skill | [float](#float) | optional |  |
-| delta_consumption | [float](#float) | optional |  |
-| delta_income | [float](#float) | optional |  |
+| updates | [AgentDeltaUpdate](#city-economy-v2-AgentDeltaUpdate) | repeated | 支持批量增量更新 |
 
 
 
@@ -3034,8 +2777,8 @@ Firm 批处理相关消息
 | bank_id | [int32](#int32) |  |  |
 | delta_interest_rate | [float](#float) | optional |  |
 | delta_currency | [float](#float) | optional |  |
-| add_citizens | [int32](#int32) | repeated |  |
-| remove_citizens | [int32](#int32) | repeated |  |
+| add_citizen_ids | [int32](#int32) | repeated |  |
+| remove_citizen_ids | [int32](#int32) | repeated |  |
 
 
 
@@ -3055,19 +2798,13 @@ Firm 批处理相关消息
 <a name="city-economy-v2-DeltaUpdateFirmRequest"></a>
 
 ### DeltaUpdateFirmRequest
-
+Request for incremental updates to firms
+企业增量更新请求
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| firm_id | [int32](#int32) |  |  |
-| delta_price | [float](#float) | optional |  |
-| delta_inventory | [int32](#int32) | optional |  |
-| delta_demand | [float](#float) | optional |  |
-| delta_sales | [float](#float) | optional |  |
-| delta_currency | [float](#float) | optional |  |
-| add_employees | [int32](#int32) | repeated |  |
-| remove_employees | [int32](#int32) | repeated |  |
+| updates | [FirmDeltaUpdate](#city-economy-v2-FirmDeltaUpdate) | repeated | List of updates to apply / 要应用的更新列表 |
 
 
 
@@ -3096,8 +2833,8 @@ Firm 批处理相关消息
 | delta_bracket_cutoffs | [float](#float) | repeated |  |
 | delta_bracket_rates | [float](#float) | repeated |  |
 | delta_currency | [float](#float) | optional |  |
-| add_citizens | [int32](#int32) | repeated |  |
-| remove_citizens | [int32](#int32) | repeated |  |
+| add_citizen_ids | [int32](#int32) | repeated |  |
+| remove_citizen_ids | [int32](#int32) | repeated |  |
 
 
 
@@ -3134,10 +2871,10 @@ Firm 批处理相关消息
 | delta_income_currency | [DeltaUpdateNBSRequest.DeltaIncomeCurrencyEntry](#city-economy-v2-DeltaUpdateNBSRequest-DeltaIncomeCurrencyEntry) | repeated |  |
 | delta_locus_control | [DeltaUpdateNBSRequest.DeltaLocusControlEntry](#city-economy-v2-DeltaUpdateNBSRequest-DeltaLocusControlEntry) | repeated |  |
 | delta_currency | [float](#float) | optional |  |
-| add_citizens | [int32](#int32) | repeated |  |
-| remove_citizens | [int32](#int32) | repeated |  |
-| add_citizens_agent_id | [int32](#int32) | repeated |  |
-| remove_citizens_agent_id | [int32](#int32) | repeated |  |
+| add_citizen_ids | [int32](#int32) | repeated |  |
+| remove_citizen_ids | [int32](#int32) | repeated |  |
+| add_citizen_agent_ids | [int32](#int32) | repeated |  |
+| remove_citizen_agent_ids | [int32](#int32) | repeated |  |
 
 
 
@@ -3314,6 +3051,29 @@ Firm 批处理相关消息
 
 
 
+<a name="city-economy-v2-FirmDeltaUpdate"></a>
+
+### FirmDeltaUpdate
+Represents an incremental update to a firm
+表示对企业的增量更新
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| firm_id | [int32](#int32) |  | ID of the firm to update / 要更新的企业ID |
+| delta_price | [float](#float) | optional | Change in price / 价格变化 |
+| delta_inventory | [int32](#int32) | optional | Change in inventory / 库存变化 |
+| delta_demand | [float](#float) | optional | Change in demand / 需求变化 |
+| delta_sales | [float](#float) | optional | Change in sales / 销售量变化 |
+| delta_currency | [float](#float) | optional | Change in currency / 货币量变化 |
+| add_employees | [int32](#int32) | repeated | Employees to add / 要添加的员工 |
+| remove_employees | [int32](#int32) | repeated | Employees to remove / 要移除的员工 |
+
+
+
+
+
+
 <a name="city-economy-v2-GetAgentRequest"></a>
 
 ### GetAgentRequest
@@ -3322,7 +3082,7 @@ Firm 批处理相关消息
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| agent_id | [int32](#int32) |  |  |
+| agent_ids | [int32](#int32) | repeated | 支持批量获取 |
 
 
 
@@ -3337,7 +3097,7 @@ Firm 批处理相关消息
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| agent | [Agent](#city-economy-v2-Agent) |  |  |
+| agents | [Agent](#city-economy-v2-Agent) | repeated | 返回代理信息列表 |
 
 
 
@@ -3382,7 +3142,7 @@ Firm 批处理相关消息
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| firm_id | [int32](#int32) |  |  |
+| firm_ids | [int32](#int32) | repeated | List of firm IDs to retrieve / 要获取的企业ID列表 |
 
 
 
@@ -3397,7 +3157,7 @@ Firm 批处理相关消息
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| firm | [Firm](#city-economy-v2-Firm) |  |  |
+| firms | [Firm](#city-economy-v2-Firm) | repeated | List of retrieved firms / 获取的企业列表 |
 
 
 
@@ -3532,7 +3292,7 @@ Firm 批处理相关消息
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| firms | [Firm](#city-economy-v2-Firm) | repeated |  |
+| firms | [Firm](#city-economy-v2-Firm) | repeated | List of all firms / 所有企业的列表 |
 
 
 
@@ -3631,7 +3391,7 @@ Firm 批处理相关消息
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| agent_id | [int32](#int32) |  |  |
+| agent_ids | [int32](#int32) | repeated | 支持批量删除 |
 
 
 
@@ -3681,7 +3441,7 @@ Firm 批处理相关消息
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| firm_id | [int32](#int32) |  |  |
+| firm_ids | [int32](#int32) | repeated | List of firm IDs to remove / 要删除的企业ID列表 |
 
 
 
@@ -3790,7 +3550,7 @@ Firm 批处理相关消息
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| agent | [Agent](#city-economy-v2-Agent) |  |  |
+| agents | [Agent](#city-economy-v2-Agent) | repeated | 支持批量更新 |
 
 
 
@@ -3840,7 +3600,7 @@ Firm 批处理相关消息
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| firm | [Firm](#city-economy-v2-Firm) |  |  |
+| firms | [Firm](#city-economy-v2-Firm) | repeated | List of firms to update / 要更新的企业列表 |
 
 
 
@@ -3916,57 +3676,125 @@ Firm 批处理相关消息
 <a name="city-economy-v2-OrgService"></a>
 
 ### OrgService
+OrgService provides management interfaces for organizations and agents in the economic system
+All basic operations support batch processing by default
+
 OrgService 提供了经济系统中组织和代理的管理接口
-包括基本的CRUD操作、批量操作、增量更新和各种计算功能
+所有基础操作默认支持批量处理
+
+@section Firm Operations
+@section 企业相关操作
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| AddFirm | [AddFirmRequest](#city-economy-v2-AddFirmRequest) | [AddFirmResponse](#city-economy-v2-AddFirmResponse) | Firm 相关操作 |
-| RemoveFirm | [RemoveFirmRequest](#city-economy-v2-RemoveFirmRequest) | [RemoveFirmResponse](#city-economy-v2-RemoveFirmResponse) |  |
-| GetFirm | [GetFirmRequest](#city-economy-v2-GetFirmRequest) | [GetFirmResponse](#city-economy-v2-GetFirmResponse) |  |
-| UpdateFirm | [UpdateFirmRequest](#city-economy-v2-UpdateFirmRequest) | [UpdateFirmResponse](#city-economy-v2-UpdateFirmResponse) |  |
-| ListFirms | [ListFirmsRequest](#city-economy-v2-ListFirmsRequest) | [ListFirmsResponse](#city-economy-v2-ListFirmsResponse) |  |
-| DeltaUpdateFirm | [DeltaUpdateFirmRequest](#city-economy-v2-DeltaUpdateFirmRequest) | [DeltaUpdateFirmResponse](#city-economy-v2-DeltaUpdateFirmResponse) |  |
-| BatchAddFirm | [BatchAddFirmRequest](#city-economy-v2-BatchAddFirmRequest) | [BatchAddFirmResponse](#city-economy-v2-BatchAddFirmResponse) |  |
-| BatchRemoveFirm | [BatchRemoveFirmRequest](#city-economy-v2-BatchRemoveFirmRequest) | [BatchRemoveFirmResponse](#city-economy-v2-BatchRemoveFirmResponse) |  |
-| BatchGetFirm | [BatchGetFirmRequest](#city-economy-v2-BatchGetFirmRequest) | [BatchGetFirmResponse](#city-economy-v2-BatchGetFirmResponse) |  |
-| BatchUpdateFirm | [BatchUpdateFirmRequest](#city-economy-v2-BatchUpdateFirmRequest) | [BatchUpdateFirmResponse](#city-economy-v2-BatchUpdateFirmResponse) |  |
-| BatchDeltaUpdateFirm | [BatchDeltaUpdateFirmRequest](#city-economy-v2-BatchDeltaUpdateFirmRequest) | [BatchDeltaUpdateFirmResponse](#city-economy-v2-BatchDeltaUpdateFirmResponse) |  |
-| AddNBS | [AddNBSRequest](#city-economy-v2-AddNBSRequest) | [AddNBSResponse](#city-economy-v2-AddNBSResponse) | NBS 相关操作 |
-| RemoveNBS | [RemoveNBSRequest](#city-economy-v2-RemoveNBSRequest) | [RemoveNBSResponse](#city-economy-v2-RemoveNBSResponse) |  |
-| GetNBS | [GetNBSRequest](#city-economy-v2-GetNBSRequest) | [GetNBSResponse](#city-economy-v2-GetNBSResponse) |  |
-| UpdateNBS | [UpdateNBSRequest](#city-economy-v2-UpdateNBSRequest) | [UpdateNBSResponse](#city-economy-v2-UpdateNBSResponse) |  |
-| ListNBS | [ListNBSRequest](#city-economy-v2-ListNBSRequest) | [ListNBSResponse](#city-economy-v2-ListNBSResponse) |  |
-| DeltaUpdateNBS | [DeltaUpdateNBSRequest](#city-economy-v2-DeltaUpdateNBSRequest) | [DeltaUpdateNBSResponse](#city-economy-v2-DeltaUpdateNBSResponse) |  |
-| AddGovernment | [AddGovernmentRequest](#city-economy-v2-AddGovernmentRequest) | [AddGovernmentResponse](#city-economy-v2-AddGovernmentResponse) | Government 相关操作 |
-| RemoveGovernment | [RemoveGovernmentRequest](#city-economy-v2-RemoveGovernmentRequest) | [RemoveGovernmentResponse](#city-economy-v2-RemoveGovernmentResponse) |  |
-| GetGovernment | [GetGovernmentRequest](#city-economy-v2-GetGovernmentRequest) | [GetGovernmentResponse](#city-economy-v2-GetGovernmentResponse) |  |
-| UpdateGovernment | [UpdateGovernmentRequest](#city-economy-v2-UpdateGovernmentRequest) | [UpdateGovernmentResponse](#city-economy-v2-UpdateGovernmentResponse) |  |
-| ListGovernments | [ListGovernmentsRequest](#city-economy-v2-ListGovernmentsRequest) | [ListGovernmentsResponse](#city-economy-v2-ListGovernmentsResponse) |  |
-| DeltaUpdateGovernment | [DeltaUpdateGovernmentRequest](#city-economy-v2-DeltaUpdateGovernmentRequest) | [DeltaUpdateGovernmentResponse](#city-economy-v2-DeltaUpdateGovernmentResponse) |  |
-| AddBank | [AddBankRequest](#city-economy-v2-AddBankRequest) | [AddBankResponse](#city-economy-v2-AddBankResponse) | Bank 相关操作 |
-| RemoveBank | [RemoveBankRequest](#city-economy-v2-RemoveBankRequest) | [RemoveBankResponse](#city-economy-v2-RemoveBankResponse) |  |
-| GetBank | [GetBankRequest](#city-economy-v2-GetBankRequest) | [GetBankResponse](#city-economy-v2-GetBankResponse) |  |
-| UpdateBank | [UpdateBankRequest](#city-economy-v2-UpdateBankRequest) | [UpdateBankResponse](#city-economy-v2-UpdateBankResponse) |  |
-| ListBanks | [ListBanksRequest](#city-economy-v2-ListBanksRequest) | [ListBanksResponse](#city-economy-v2-ListBanksResponse) |  |
-| DeltaUpdateBank | [DeltaUpdateBankRequest](#city-economy-v2-DeltaUpdateBankRequest) | [DeltaUpdateBankResponse](#city-economy-v2-DeltaUpdateBankResponse) |  |
-| AddAgent | [AddAgentRequest](#city-economy-v2-AddAgentRequest) | [AddAgentResponse](#city-economy-v2-AddAgentResponse) | Agent 相关操作 |
-| RemoveAgent | [RemoveAgentRequest](#city-economy-v2-RemoveAgentRequest) | [RemoveAgentResponse](#city-economy-v2-RemoveAgentResponse) |  |
-| GetAgent | [GetAgentRequest](#city-economy-v2-GetAgentRequest) | [GetAgentResponse](#city-economy-v2-GetAgentResponse) |  |
-| UpdateAgent | [UpdateAgentRequest](#city-economy-v2-UpdateAgentRequest) | [UpdateAgentResponse](#city-economy-v2-UpdateAgentResponse) |  |
-| ListAgents | [ListAgentsRequest](#city-economy-v2-ListAgentsRequest) | [ListAgentsResponse](#city-economy-v2-ListAgentsResponse) |  |
-| DeltaUpdateAgent | [DeltaUpdateAgentRequest](#city-economy-v2-DeltaUpdateAgentRequest) | [DeltaUpdateAgentResponse](#city-economy-v2-DeltaUpdateAgentResponse) |  |
-| BatchAddAgent | [BatchAddAgentRequest](#city-economy-v2-BatchAddAgentRequest) | [BatchAddAgentResponse](#city-economy-v2-BatchAddAgentResponse) |  |
-| BatchRemoveAgent | [BatchRemoveAgentRequest](#city-economy-v2-BatchRemoveAgentRequest) | [BatchRemoveAgentResponse](#city-economy-v2-BatchRemoveAgentResponse) |  |
-| BatchGetAgent | [BatchGetAgentRequest](#city-economy-v2-BatchGetAgentRequest) | [BatchGetAgentResponse](#city-economy-v2-BatchGetAgentResponse) |  |
-| BatchUpdateAgent | [BatchUpdateAgentRequest](#city-economy-v2-BatchUpdateAgentRequest) | [BatchUpdateAgentResponse](#city-economy-v2-BatchUpdateAgentResponse) |  |
-| BatchDeltaUpdateAgent | [BatchDeltaUpdateAgentRequest](#city-economy-v2-BatchDeltaUpdateAgentRequest) | [BatchDeltaUpdateAgentResponse](#city-economy-v2-BatchDeltaUpdateAgentResponse) |  |
-| CalculateTaxesDue | [CalculateTaxesDueRequest](#city-economy-v2-CalculateTaxesDueRequest) | [CalculateTaxesDueResponse](#city-economy-v2-CalculateTaxesDueResponse) | 计算相关操作 |
-| CalculateConsumption | [CalculateConsumptionRequest](#city-economy-v2-CalculateConsumptionRequest) | [CalculateConsumptionResponse](#city-economy-v2-CalculateConsumptionResponse) |  |
-| CalculateInterest | [CalculateInterestRequest](#city-economy-v2-CalculateInterestRequest) | [CalculateInterestResponse](#city-economy-v2-CalculateInterestResponse) |  |
-| CalculateRealGDP | [CalculateRealGDPRequest](#city-economy-v2-CalculateRealGDPRequest) | [CalculateRealGDPResponse](#city-economy-v2-CalculateRealGDPResponse) |  |
-| SaveEconomyEntities | [SaveEconomyEntitiesRequest](#city-economy-v2-SaveEconomyEntitiesRequest) | [SaveEconomyEntitiesResponse](#city-economy-v2-SaveEconomyEntitiesResponse) | 系统状态操作 |
-| LoadEconomyEntities | [LoadEconomyEntitiesRequest](#city-economy-v2-LoadEconomyEntitiesRequest) | [LoadEconomyEntitiesResponse](#city-economy-v2-LoadEconomyEntitiesResponse) |  |
+| AddFirm | [AddFirmRequest](#city-economy-v2-AddFirmRequest) | [AddFirmResponse](#city-economy-v2-AddFirmResponse) | Creates one or more firm entities Returns the list of created firm IDs
+
+创建一个或多个企业实体 返回创建的企业ID列表 |
+| RemoveFirm | [RemoveFirmRequest](#city-economy-v2-RemoveFirmRequest) | [RemoveFirmResponse](#city-economy-v2-RemoveFirmResponse) | Deletes one or more firms by their IDs Also cleans up related employee associations
+
+根据ID删除一个或多个企业实体 同时清理相关的员工关联关系 |
+| GetFirm | [GetFirmRequest](#city-economy-v2-GetFirmRequest) | [GetFirmResponse](#city-economy-v2-GetFirmResponse) | Retrieves detailed information for one or more firms Returns a list of firm entities
+
+获取一个或多个企业的详细信息 返回企业实体信息列表 |
+| UpdateFirm | [UpdateFirmRequest](#city-economy-v2-UpdateFirmRequest) | [UpdateFirmResponse](#city-economy-v2-UpdateFirmResponse) | Updates complete information for one or more firms
+
+更新一个或多个企业的完整信息 |
+| ListFirms | [ListFirmsRequest](#city-economy-v2-ListFirmsRequest) | [ListFirmsResponse](#city-economy-v2-ListFirmsResponse) | Lists all firms in the system
+
+获取系统中所有企业的列表 |
+| DeltaUpdateFirm | [DeltaUpdateFirmRequest](#city-economy-v2-DeltaUpdateFirmRequest) | [DeltaUpdateFirmResponse](#city-economy-v2-DeltaUpdateFirmResponse) | Performs incremental updates on one or more firms Allows updating specific fields like price, inventory, demand etc.
+
+对一个或多个企业进行增量更新 可以更新价格、库存、需求等具体字段 |
+| AddNBS | [AddNBSRequest](#city-economy-v2-AddNBSRequest) | [AddNBSResponse](#city-economy-v2-AddNBSResponse) | Creates a new NBS entity
+
+创建新的国家统计局实体 |
+| RemoveNBS | [RemoveNBSRequest](#city-economy-v2-RemoveNBSRequest) | [RemoveNBSResponse](#city-economy-v2-RemoveNBSResponse) | Deletes an NBS entity by ID
+
+根据ID删除国家统计局实体 |
+| GetNBS | [GetNBSRequest](#city-economy-v2-GetNBSRequest) | [GetNBSResponse](#city-economy-v2-GetNBSResponse) | Retrieves detailed information for an NBS entity
+
+获取国家统计局的详细信息 |
+| UpdateNBS | [UpdateNBSRequest](#city-economy-v2-UpdateNBSRequest) | [UpdateNBSResponse](#city-economy-v2-UpdateNBSResponse) | Updates complete information for an NBS entity
+
+更新国家统计局的完整信息 |
+| ListNBS | [ListNBSRequest](#city-economy-v2-ListNBSRequest) | [ListNBSResponse](#city-economy-v2-ListNBSResponse) | Lists all NBS entities in the system
+
+获取系统中所有国家统计局的列表 |
+| DeltaUpdateNBS | [DeltaUpdateNBSRequest](#city-economy-v2-DeltaUpdateNBSRequest) | [DeltaUpdateNBSResponse](#city-economy-v2-DeltaUpdateNBSResponse) | Performs incremental updates on an NBS entity Allows updating specific statistics and citizen relationships
+
+对国家统计局进行增量更新 可以更新具体统计数据和公民关系 |
+| AddGovernment | [AddGovernmentRequest](#city-economy-v2-AddGovernmentRequest) | [AddGovernmentResponse](#city-economy-v2-AddGovernmentResponse) | Creates a new government entity
+
+创建新的政府实体 |
+| RemoveGovernment | [RemoveGovernmentRequest](#city-economy-v2-RemoveGovernmentRequest) | [RemoveGovernmentResponse](#city-economy-v2-RemoveGovernmentResponse) | Deletes a government entity by ID
+
+根据ID删除政府实体 |
+| GetGovernment | [GetGovernmentRequest](#city-economy-v2-GetGovernmentRequest) | [GetGovernmentResponse](#city-economy-v2-GetGovernmentResponse) | Retrieves detailed information for a government entity
+
+获取政府实体的详细信息 |
+| UpdateGovernment | [UpdateGovernmentRequest](#city-economy-v2-UpdateGovernmentRequest) | [UpdateGovernmentResponse](#city-economy-v2-UpdateGovernmentResponse) | Updates complete information for a government entity
+
+更新政府实体的完整信息 |
+| ListGovernments | [ListGovernmentsRequest](#city-economy-v2-ListGovernmentsRequest) | [ListGovernmentsResponse](#city-economy-v2-ListGovernmentsResponse) | Lists all government entities in the system
+
+获取系统中所有政府实体的列表 |
+| DeltaUpdateGovernment | [DeltaUpdateGovernmentRequest](#city-economy-v2-DeltaUpdateGovernmentRequest) | [DeltaUpdateGovernmentResponse](#city-economy-v2-DeltaUpdateGovernmentResponse) | Performs incremental updates on a government entity Allows updating tax brackets and citizen relationships
+
+对政府实体进行增量更新 可以更新税收档位和公民关系 |
+| AddBank | [AddBankRequest](#city-economy-v2-AddBankRequest) | [AddBankResponse](#city-economy-v2-AddBankResponse) | Creates a new bank entity
+
+创建新的银行实体 |
+| RemoveBank | [RemoveBankRequest](#city-economy-v2-RemoveBankRequest) | [RemoveBankResponse](#city-economy-v2-RemoveBankResponse) | Deletes a bank entity by ID
+
+根据ID删除银行实体 |
+| GetBank | [GetBankRequest](#city-economy-v2-GetBankRequest) | [GetBankResponse](#city-economy-v2-GetBankResponse) | Retrieves detailed information for a bank entity
+
+获取银行实体的详细信息 |
+| UpdateBank | [UpdateBankRequest](#city-economy-v2-UpdateBankRequest) | [UpdateBankResponse](#city-economy-v2-UpdateBankResponse) | Updates complete information for a bank entity
+
+更新银行实体的完整信息 |
+| ListBanks | [ListBanksRequest](#city-economy-v2-ListBanksRequest) | [ListBanksResponse](#city-economy-v2-ListBanksResponse) | Lists all bank entities in the system
+
+获取系统中所有银行实体的列表 |
+| DeltaUpdateBank | [DeltaUpdateBankRequest](#city-economy-v2-DeltaUpdateBankRequest) | [DeltaUpdateBankResponse](#city-economy-v2-DeltaUpdateBankResponse) | Performs incremental updates on a bank entity Allows updating interest rates and customer relationships
+
+对银行实体进行增量更新 可以更新利率和客户关系 |
+| AddAgent | [AddAgentRequest](#city-economy-v2-AddAgentRequest) | [AddAgentResponse](#city-economy-v2-AddAgentResponse) | Creates one or more agent entities Returns the list of created agent IDs
+
+创建一个或多个经济主体 返回创建的经济主体ID列表 |
+| RemoveAgent | [RemoveAgentRequest](#city-economy-v2-RemoveAgentRequest) | [RemoveAgentResponse](#city-economy-v2-RemoveAgentResponse) | Deletes one or more agents by their IDs
+
+根据ID删除一个或多个经济主体 |
+| GetAgent | [GetAgentRequest](#city-economy-v2-GetAgentRequest) | [GetAgentResponse](#city-economy-v2-GetAgentResponse) | Retrieves detailed information for one or more agents
+
+获取一个或多个经济主体的详细信息 |
+| UpdateAgent | [UpdateAgentRequest](#city-economy-v2-UpdateAgentRequest) | [UpdateAgentResponse](#city-economy-v2-UpdateAgentResponse) | Updates complete information for one or more agents
+
+更新一个或多个经济主体的完整信息 |
+| ListAgents | [ListAgentsRequest](#city-economy-v2-ListAgentsRequest) | [ListAgentsResponse](#city-economy-v2-ListAgentsResponse) | Lists all agent entities in the system
+
+获取系统中所有经济主体的列表 |
+| DeltaUpdateAgent | [DeltaUpdateAgentRequest](#city-economy-v2-DeltaUpdateAgentRequest) | [DeltaUpdateAgentResponse](#city-economy-v2-DeltaUpdateAgentResponse) | Performs incremental updates on one or more agents Allows updating specific attributes like currency, skills etc.
+
+对一个或多个经济主体进行增量更新 可以更新货币、技能等具体属性 |
+| CalculateTaxesDue | [CalculateTaxesDueRequest](#city-economy-v2-CalculateTaxesDueRequest) | [CalculateTaxesDueResponse](#city-economy-v2-CalculateTaxesDueResponse) | Calculates taxes due for specified agents Supports income redistribution if enabled
+
+计算指定经济主体的应缴税额 支持开启收入再分配功能 |
+| CalculateConsumption | [CalculateConsumptionRequest](#city-economy-v2-CalculateConsumptionRequest) | [CalculateConsumptionResponse](#city-economy-v2-CalculateConsumptionResponse) | Calculates actual consumption based on supply and demand
+
+基于供给和需求计算实际消费量 |
+| CalculateInterest | [CalculateInterestRequest](#city-economy-v2-CalculateInterestRequest) | [CalculateInterestResponse](#city-economy-v2-CalculateInterestResponse) | Calculates interest for specified agents
+
+计算指定经济主体的利息 |
+| CalculateRealGDP | [CalculateRealGDPRequest](#city-economy-v2-CalculateRealGDPRequest) | [CalculateRealGDPResponse](#city-economy-v2-CalculateRealGDPResponse) | Calculates real GDP adjusted for inflation
+
+计算经通货膨胀调整后的实际GDP |
+| SaveEconomyEntities | [SaveEconomyEntitiesRequest](#city-economy-v2-SaveEconomyEntitiesRequest) | [SaveEconomyEntitiesResponse](#city-economy-v2-SaveEconomyEntitiesResponse) | Saves the current state of all economic entities to a file
+
+将当前所有经济实体的状态保存到文件 |
+| LoadEconomyEntities | [LoadEconomyEntitiesRequest](#city-economy-v2-LoadEconomyEntitiesRequest) | [LoadEconomyEntitiesResponse](#city-economy-v2-LoadEconomyEntitiesResponse) | Loads economic entities state from a file
+
+从文件中加载经济实体的状态 |
 
  
 

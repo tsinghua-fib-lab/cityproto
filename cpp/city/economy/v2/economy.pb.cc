@@ -155,8 +155,8 @@ struct NBS_LocusControlEntry_DoNotUseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 NBS_LocusControlEntry_DoNotUseDefaultTypeInternal _NBS_LocusControlEntry_DoNotUse_default_instance_;
 PROTOBUF_CONSTEXPR NBS::NBS(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.citizens_)*/{}
-  , /*decltype(_impl_._citizens_cached_byte_size_)*/{0}
+    /*decltype(_impl_.citizen_ids_)*/{}
+  , /*decltype(_impl_._citizen_ids_cached_byte_size_)*/{0}
   , /*decltype(_impl_.nominal_gdp_)*/{::_pbi::ConstantInitialized()}
   , /*decltype(_impl_.real_gdp_)*/{::_pbi::ConstantInitialized()}
   , /*decltype(_impl_.unemployment_)*/{::_pbi::ConstantInitialized()}
@@ -167,8 +167,8 @@ PROTOBUF_CONSTEXPR NBS::NBS(
   , /*decltype(_impl_.consumption_currency_)*/{::_pbi::ConstantInitialized()}
   , /*decltype(_impl_.income_currency_)*/{::_pbi::ConstantInitialized()}
   , /*decltype(_impl_.locus_control_)*/{::_pbi::ConstantInitialized()}
-  , /*decltype(_impl_.citizens_agent_id_)*/{}
-  , /*decltype(_impl_._citizens_agent_id_cached_byte_size_)*/{0}
+  , /*decltype(_impl_.citizen_agent_ids_)*/{}
+  , /*decltype(_impl_._citizen_agent_ids_cached_byte_size_)*/{0}
   , /*decltype(_impl_.id_)*/0
   , /*decltype(_impl_.currency_)*/0
   , /*decltype(_impl_._cached_size_)*/{}} {}
@@ -183,8 +183,8 @@ struct NBSDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 NBSDefaultTypeInternal _NBS_default_instance_;
 PROTOBUF_CONSTEXPR Government::Government(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.citizens_)*/{}
-  , /*decltype(_impl_._citizens_cached_byte_size_)*/{0}
+    /*decltype(_impl_.citizen_ids_)*/{}
+  , /*decltype(_impl_._citizen_ids_cached_byte_size_)*/{0}
   , /*decltype(_impl_.bracket_cutoffs_)*/{}
   , /*decltype(_impl_.bracket_rates_)*/{}
   , /*decltype(_impl_.id_)*/0
@@ -201,8 +201,8 @@ struct GovernmentDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GovernmentDefaultTypeInternal _Government_default_instance_;
 PROTOBUF_CONSTEXPR Bank::Bank(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.citizens_)*/{}
-  , /*decltype(_impl_._citizens_cached_byte_size_)*/{0}
+    /*decltype(_impl_.citizen_ids_)*/{}
+  , /*decltype(_impl_._citizen_ids_cached_byte_size_)*/{0}
   , /*decltype(_impl_.id_)*/0
   , /*decltype(_impl_.interest_rate_)*/0
   , /*decltype(_impl_.currency_)*/0
@@ -380,7 +380,7 @@ const uint32_t TableStruct_city_2feconomy_2fv2_2feconomy_2eproto::offsets[] PROT
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::NBS, _impl_.id_),
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::NBS, _impl_.citizens_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::NBS, _impl_.citizen_ids_),
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::NBS, _impl_.nominal_gdp_),
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::NBS, _impl_.real_gdp_),
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::NBS, _impl_.unemployment_),
@@ -391,7 +391,7 @@ const uint32_t TableStruct_city_2feconomy_2fv2_2feconomy_2eproto::offsets[] PROT
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::NBS, _impl_.consumption_currency_),
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::NBS, _impl_.income_currency_),
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::NBS, _impl_.locus_control_),
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::NBS, _impl_.citizens_agent_id_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::NBS, _impl_.citizen_agent_ids_),
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::NBS, _impl_.currency_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::Government, _internal_metadata_),
@@ -400,7 +400,7 @@ const uint32_t TableStruct_city_2feconomy_2fv2_2feconomy_2eproto::offsets[] PROT
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::Government, _impl_.id_),
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::Government, _impl_.citizens_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::Government, _impl_.citizen_ids_),
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::Government, _impl_.bracket_cutoffs_),
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::Government, _impl_.bracket_rates_),
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::Government, _impl_.currency_),
@@ -411,7 +411,7 @@ const uint32_t TableStruct_city_2feconomy_2fv2_2feconomy_2eproto::offsets[] PROT
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::Bank, _impl_.id_),
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::Bank, _impl_.citizens_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::Bank, _impl_.citizen_ids_),
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::Bank, _impl_.interest_rate_),
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::Bank, _impl_.currency_),
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::Agent, _impl_._has_bits_),
@@ -488,73 +488,73 @@ const char descriptor_table_protodef_city_2feconomy_2fv2_2feconomy_2eproto[] PRO
   "loyees\030\002 \003(\005R\temployees\022\024\n\005price\030\003 \001(\002R\005"
   "price\022\034\n\tinventory\030\004 \001(\005R\tinventory\022\026\n\006d"
   "emand\030\005 \001(\002R\006demand\022\024\n\005sales\030\006 \001(\002R\005sale"
-  "s\022\032\n\010currency\030\007 \001(\002R\010currency\"\315\013\n\003NBS\022\016\n"
-  "\002id\030\001 \001(\005R\002id\022\032\n\010citizens\030\002 \003(\005R\010citizen"
-  "s\022E\n\013nominal_gdp\030\003 \003(\0132$.city.economy.v2"
-  ".NBS.NominalGdpEntryR\nnominalGdp\022<\n\010real"
-  "_gdp\030\004 \003(\0132!.city.economy.v2.NBS.RealGdp"
-  "EntryR\007realGdp\022J\n\014unemployment\030\005 \003(\0132&.c"
-  "ity.economy.v2.NBS.UnemploymentEntryR\014un"
-  "employment\0225\n\005wages\030\006 \003(\0132\037.city.economy"
-  ".v2.NBS.WagesEntryR\005wages\0228\n\006prices\030\007 \003("
-  "\0132 .city.economy.v2.NBS.PricesEntryR\006pri"
-  "ces\022K\n\rworking_hours\030\010 \003(\0132&.city.econom"
-  "y.v2.NBS.WorkingHoursEntryR\014workingHours"
-  "\022D\n\ndepression\030\t \003(\0132$.city.economy.v2.N"
-  "BS.DepressionEntryR\ndepression\022`\n\024consum"
-  "ption_currency\030\n \003(\0132-.city.economy.v2.N"
-  "BS.ConsumptionCurrencyEntryR\023consumption"
-  "Currency\022Q\n\017income_currency\030\013 \003(\0132(.city"
-  ".economy.v2.NBS.IncomeCurrencyEntryR\016inc"
-  "omeCurrency\022K\n\rlocus_control\030\014 \003(\0132&.cit"
-  "y.economy.v2.NBS.LocusControlEntryR\014locu"
-  "sControl\022*\n\021citizens_agent_id\030\r \003(\005R\017cit"
-  "izensAgentId\022\032\n\010currency\030\016 \001(\002R\010currency"
-  "\032=\n\017NominalGdpEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n"
-  "\005value\030\002 \001(\002R\005value:\0028\001\032:\n\014RealGdpEntry\022"
-  "\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\002R\005value:"
-  "\0028\001\032\?\n\021UnemploymentEntry\022\020\n\003key\030\001 \001(\tR\003k"
-  "ey\022\024\n\005value\030\002 \001(\002R\005value:\0028\001\0328\n\nWagesEnt"
-  "ry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\002R\005val"
-  "ue:\0028\001\0329\n\013PricesEntry\022\020\n\003key\030\001 \001(\tR\003key\022"
-  "\024\n\005value\030\002 \001(\002R\005value:\0028\001\032\?\n\021WorkingHour"
-  "sEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\002R"
-  "\005value:\0028\001\032=\n\017DepressionEntry\022\020\n\003key\030\001 \001"
-  "(\tR\003key\022\024\n\005value\030\002 \001(\002R\005value:\0028\001\032F\n\030Con"
-  "sumptionCurrencyEntry\022\020\n\003key\030\001 \001(\tR\003key\022"
-  "\024\n\005value\030\002 \001(\002R\005value:\0028\001\032A\n\023IncomeCurre"
-  "ncyEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001("
-  "\002R\005value:\0028\001\032\?\n\021LocusControlEntry\022\020\n\003key"
-  "\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\002R\005value:\0028\001\"\242\001"
-  "\n\nGovernment\022\016\n\002id\030\001 \001(\005R\002id\022\032\n\010citizens"
-  "\030\002 \003(\005R\010citizens\022\'\n\017bracket_cutoffs\030\003 \003("
-  "\002R\016bracketCutoffs\022#\n\rbracket_rates\030\004 \003(\002"
-  "R\014bracketRates\022\032\n\010currency\030\005 \001(\002R\010curren"
-  "cy\"s\n\004Bank\022\016\n\002id\030\001 \001(\005R\002id\022\032\n\010citizens\030\002"
-  " \003(\005R\010citizens\022#\n\rinterest_rate\030\003 \001(\002R\014i"
-  "nterestRate\022\032\n\010currency\030\004 \001(\002R\010currency\""
-  "\363\001\n\005Agent\022\016\n\002id\030\001 \001(\005R\002id\022\037\n\010currency\030\002 "
-  "\001(\002H\000R\010currency\210\001\001\022\034\n\007firm_id\030\003 \001(\005H\001R\006f"
-  "irmId\210\001\001\022\031\n\005skill\030\004 \001(\002H\002R\005skill\210\001\001\022%\n\013c"
-  "onsumption\030\005 \001(\002H\003R\013consumption\210\001\001\022\033\n\006in"
-  "come\030\006 \001(\002H\004R\006income\210\001\001B\013\n\t_currencyB\n\n\010"
-  "_firm_idB\010\n\006_skillB\016\n\014_consumptionB\t\n\007_i"
-  "ncome\"\202\002\n\017EconomyEntities\022+\n\005firms\030\001 \003(\013"
-  "2\025.city.economy.v2.FirmR\005firms\022&\n\003nbs\030\002 "
-  "\003(\0132\024.city.economy.v2.NBSR\003nbs\022=\n\013govern"
-  "ments\030\003 \003(\0132\033.city.economy.v2.Government"
-  "R\013governments\022+\n\005banks\030\004 \003(\0132\025.city.econ"
-  "omy.v2.BankR\005banks\022.\n\006agents\030\005 \003(\0132\026.cit"
-  "y.economy.v2.AgentR\006agentsB\274\001\n\023com.city."
-  "economy.v2B\014EconomyProtoP\001Z9git.fiblab.n"
-  "et/sim/protos/v2/go/city/economy/v2;econ"
-  "omyv2\242\002\003CEX\252\002\017City.Economy.V2\312\002\017City\\Eco"
-  "nomy\\V2\342\002\033City\\Economy\\V2\\GPBMetadata\352\002\021"
-  "City::Economy::V2b\006proto3"
+  "s\022\032\n\010currency\030\007 \001(\002R\010currency\"\322\013\n\003NBS\022\016\n"
+  "\002id\030\001 \001(\005R\002id\022\037\n\013citizen_ids\030\002 \003(\005R\nciti"
+  "zenIds\022E\n\013nominal_gdp\030\003 \003(\0132$.city.econo"
+  "my.v2.NBS.NominalGdpEntryR\nnominalGdp\022<\n"
+  "\010real_gdp\030\004 \003(\0132!.city.economy.v2.NBS.Re"
+  "alGdpEntryR\007realGdp\022J\n\014unemployment\030\005 \003("
+  "\0132&.city.economy.v2.NBS.UnemploymentEntr"
+  "yR\014unemployment\0225\n\005wages\030\006 \003(\0132\037.city.ec"
+  "onomy.v2.NBS.WagesEntryR\005wages\0228\n\006prices"
+  "\030\007 \003(\0132 .city.economy.v2.NBS.PricesEntry"
+  "R\006prices\022K\n\rworking_hours\030\010 \003(\0132&.city.e"
+  "conomy.v2.NBS.WorkingHoursEntryR\014working"
+  "Hours\022D\n\ndepression\030\t \003(\0132$.city.economy"
+  ".v2.NBS.DepressionEntryR\ndepression\022`\n\024c"
+  "onsumption_currency\030\n \003(\0132-.city.economy"
+  ".v2.NBS.ConsumptionCurrencyEntryR\023consum"
+  "ptionCurrency\022Q\n\017income_currency\030\013 \003(\0132("
+  ".city.economy.v2.NBS.IncomeCurrencyEntry"
+  "R\016incomeCurrency\022K\n\rlocus_control\030\014 \003(\0132"
+  "&.city.economy.v2.NBS.LocusControlEntryR"
+  "\014locusControl\022*\n\021citizen_agent_ids\030\r \003(\005"
+  "R\017citizenAgentIds\022\032\n\010currency\030\016 \001(\002R\010cur"
+  "rency\032=\n\017NominalGdpEntry\022\020\n\003key\030\001 \001(\tR\003k"
+  "ey\022\024\n\005value\030\002 \001(\002R\005value:\0028\001\032:\n\014RealGdpE"
+  "ntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\002R\005v"
+  "alue:\0028\001\032\?\n\021UnemploymentEntry\022\020\n\003key\030\001 \001"
+  "(\tR\003key\022\024\n\005value\030\002 \001(\002R\005value:\0028\001\0328\n\nWag"
+  "esEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\002"
+  "R\005value:\0028\001\0329\n\013PricesEntry\022\020\n\003key\030\001 \001(\tR"
+  "\003key\022\024\n\005value\030\002 \001(\002R\005value:\0028\001\032\?\n\021Workin"
+  "gHoursEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002"
+  " \001(\002R\005value:\0028\001\032=\n\017DepressionEntry\022\020\n\003ke"
+  "y\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\002R\005value:\0028\001\032F"
+  "\n\030ConsumptionCurrencyEntry\022\020\n\003key\030\001 \001(\tR"
+  "\003key\022\024\n\005value\030\002 \001(\002R\005value:\0028\001\032A\n\023Income"
+  "CurrencyEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value"
+  "\030\002 \001(\002R\005value:\0028\001\032\?\n\021LocusControlEntry\022\020"
+  "\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\002R\005value:\002"
+  "8\001\"\247\001\n\nGovernment\022\016\n\002id\030\001 \001(\005R\002id\022\037\n\013cit"
+  "izen_ids\030\002 \003(\005R\ncitizenIds\022\'\n\017bracket_cu"
+  "toffs\030\003 \003(\002R\016bracketCutoffs\022#\n\rbracket_r"
+  "ates\030\004 \003(\002R\014bracketRates\022\032\n\010currency\030\005 \001"
+  "(\002R\010currency\"x\n\004Bank\022\016\n\002id\030\001 \001(\005R\002id\022\037\n\013"
+  "citizen_ids\030\002 \003(\005R\ncitizenIds\022#\n\rinteres"
+  "t_rate\030\003 \001(\002R\014interestRate\022\032\n\010currency\030\004"
+  " \001(\002R\010currency\"\363\001\n\005Agent\022\016\n\002id\030\001 \001(\005R\002id"
+  "\022\037\n\010currency\030\002 \001(\002H\000R\010currency\210\001\001\022\034\n\007fir"
+  "m_id\030\003 \001(\005H\001R\006firmId\210\001\001\022\031\n\005skill\030\004 \001(\002H\002"
+  "R\005skill\210\001\001\022%\n\013consumption\030\005 \001(\002H\003R\013consu"
+  "mption\210\001\001\022\033\n\006income\030\006 \001(\002H\004R\006income\210\001\001B\013"
+  "\n\t_currencyB\n\n\010_firm_idB\010\n\006_skillB\016\n\014_co"
+  "nsumptionB\t\n\007_income\"\202\002\n\017EconomyEntities"
+  "\022+\n\005firms\030\001 \003(\0132\025.city.economy.v2.FirmR\005"
+  "firms\022&\n\003nbs\030\002 \003(\0132\024.city.economy.v2.NBS"
+  "R\003nbs\022=\n\013governments\030\003 \003(\0132\033.city.econom"
+  "y.v2.GovernmentR\013governments\022+\n\005banks\030\004 "
+  "\003(\0132\025.city.economy.v2.BankR\005banks\022.\n\006age"
+  "nts\030\005 \003(\0132\026.city.economy.v2.AgentR\006agent"
+  "sB\274\001\n\023com.city.economy.v2B\014EconomyProtoP"
+  "\001Z9git.fiblab.net/sim/protos/v2/go/city/"
+  "economy/v2;economyv2\242\002\003CEX\252\002\017City.Econom"
+  "y.V2\312\002\017City\\Economy\\V2\342\002\033City\\Economy\\V2"
+  "\\GPBMetadata\352\002\021City::Economy::V2b\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_city_2feconomy_2fv2_2feconomy_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2feconomy_2fv2_2feconomy_2eproto = {
-    false, false, 2705, descriptor_table_protodef_city_2feconomy_2fv2_2feconomy_2eproto,
+    false, false, 2720, descriptor_table_protodef_city_2feconomy_2fv2_2feconomy_2eproto,
     "city/economy/v2/economy.proto",
     &descriptor_table_city_2feconomy_2fv2_2feconomy_2eproto_once, nullptr, 0, 16,
     schemas, file_default_instances, TableStruct_city_2feconomy_2fv2_2feconomy_2eproto::offsets,
@@ -1127,8 +1127,8 @@ NBS::NBS(const NBS& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   NBS* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.citizens_){from._impl_.citizens_}
-    , /*decltype(_impl_._citizens_cached_byte_size_)*/{0}
+      decltype(_impl_.citizen_ids_){from._impl_.citizen_ids_}
+    , /*decltype(_impl_._citizen_ids_cached_byte_size_)*/{0}
     , /*decltype(_impl_.nominal_gdp_)*/{}
     , /*decltype(_impl_.real_gdp_)*/{}
     , /*decltype(_impl_.unemployment_)*/{}
@@ -1139,8 +1139,8 @@ NBS::NBS(const NBS& from)
     , /*decltype(_impl_.consumption_currency_)*/{}
     , /*decltype(_impl_.income_currency_)*/{}
     , /*decltype(_impl_.locus_control_)*/{}
-    , decltype(_impl_.citizens_agent_id_){from._impl_.citizens_agent_id_}
-    , /*decltype(_impl_._citizens_agent_id_cached_byte_size_)*/{0}
+    , decltype(_impl_.citizen_agent_ids_){from._impl_.citizen_agent_ids_}
+    , /*decltype(_impl_._citizen_agent_ids_cached_byte_size_)*/{0}
     , decltype(_impl_.id_){}
     , decltype(_impl_.currency_){}
     , /*decltype(_impl_._cached_size_)*/{}};
@@ -1167,8 +1167,8 @@ inline void NBS::SharedCtor(
   (void)arena;
   (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.citizens_){arena}
-    , /*decltype(_impl_._citizens_cached_byte_size_)*/{0}
+      decltype(_impl_.citizen_ids_){arena}
+    , /*decltype(_impl_._citizen_ids_cached_byte_size_)*/{0}
     , /*decltype(_impl_.nominal_gdp_)*/{::_pbi::ArenaInitialized(), arena}
     , /*decltype(_impl_.real_gdp_)*/{::_pbi::ArenaInitialized(), arena}
     , /*decltype(_impl_.unemployment_)*/{::_pbi::ArenaInitialized(), arena}
@@ -1179,8 +1179,8 @@ inline void NBS::SharedCtor(
     , /*decltype(_impl_.consumption_currency_)*/{::_pbi::ArenaInitialized(), arena}
     , /*decltype(_impl_.income_currency_)*/{::_pbi::ArenaInitialized(), arena}
     , /*decltype(_impl_.locus_control_)*/{::_pbi::ArenaInitialized(), arena}
-    , decltype(_impl_.citizens_agent_id_){arena}
-    , /*decltype(_impl_._citizens_agent_id_cached_byte_size_)*/{0}
+    , decltype(_impl_.citizen_agent_ids_){arena}
+    , /*decltype(_impl_._citizen_agent_ids_cached_byte_size_)*/{0}
     , decltype(_impl_.id_){0}
     , decltype(_impl_.currency_){0}
     , /*decltype(_impl_._cached_size_)*/{}
@@ -1199,7 +1199,7 @@ NBS::~NBS() {
 
 inline void NBS::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.citizens_.~RepeatedField();
+  _impl_.citizen_ids_.~RepeatedField();
   _impl_.nominal_gdp_.Destruct();
   _impl_.nominal_gdp_.~MapField();
   _impl_.real_gdp_.Destruct();
@@ -1220,7 +1220,7 @@ inline void NBS::SharedDtor() {
   _impl_.income_currency_.~MapField();
   _impl_.locus_control_.Destruct();
   _impl_.locus_control_.~MapField();
-  _impl_.citizens_agent_id_.~RepeatedField();
+  _impl_.citizen_agent_ids_.~RepeatedField();
 }
 
 void NBS::ArenaDtor(void* object) {
@@ -1246,7 +1246,7 @@ void NBS::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.citizens_.Clear();
+  _impl_.citizen_ids_.Clear();
   _impl_.nominal_gdp_.Clear();
   _impl_.real_gdp_.Clear();
   _impl_.unemployment_.Clear();
@@ -1257,7 +1257,7 @@ void NBS::Clear() {
   _impl_.consumption_currency_.Clear();
   _impl_.income_currency_.Clear();
   _impl_.locus_control_.Clear();
-  _impl_.citizens_agent_id_.Clear();
+  _impl_.citizen_agent_ids_.Clear();
   ::memset(&_impl_.id_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_impl_.currency_) -
       reinterpret_cast<char*>(&_impl_.id_)) + sizeof(_impl_.currency_));
@@ -1278,13 +1278,13 @@ const char* NBS::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
         } else
           goto handle_unusual;
         continue;
-      // repeated int32 citizens = 2 [json_name = "citizens"];
+      // repeated int32 citizen_ids = 2 [json_name = "citizenIds"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_citizens(), ptr, ctx);
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_citizen_ids(), ptr, ctx);
           CHK_(ptr);
         } else if (static_cast<uint8_t>(tag) == 16) {
-          _internal_add_citizens(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
+          _internal_add_citizen_ids(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1419,13 +1419,13 @@ const char* NBS::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
         } else
           goto handle_unusual;
         continue;
-      // repeated int32 citizens_agent_id = 13 [json_name = "citizensAgentId"];
+      // repeated int32 citizen_agent_ids = 13 [json_name = "citizenAgentIds"];
       case 13:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 106)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_citizens_agent_id(), ptr, ctx);
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_citizen_agent_ids(), ptr, ctx);
           CHK_(ptr);
         } else if (static_cast<uint8_t>(tag) == 104) {
-          _internal_add_citizens_agent_id(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
+          _internal_add_citizen_agent_ids(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1473,12 +1473,12 @@ uint8_t* NBS::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_id(), target);
   }
 
-  // repeated int32 citizens = 2 [json_name = "citizens"];
+  // repeated int32 citizen_ids = 2 [json_name = "citizenIds"];
   {
-    int byte_size = _impl_._citizens_cached_byte_size_.load(std::memory_order_relaxed);
+    int byte_size = _impl_._citizen_ids_cached_byte_size_.load(std::memory_order_relaxed);
     if (byte_size > 0) {
       target = stream->WriteInt32Packed(
-          2, _internal_citizens(), byte_size, target);
+          2, _internal_citizen_ids(), byte_size, target);
     }
   }
 
@@ -1742,12 +1742,12 @@ uint8_t* NBS::_InternalSerialize(
     }
   }
 
-  // repeated int32 citizens_agent_id = 13 [json_name = "citizensAgentId"];
+  // repeated int32 citizen_agent_ids = 13 [json_name = "citizenAgentIds"];
   {
-    int byte_size = _impl_._citizens_agent_id_cached_byte_size_.load(std::memory_order_relaxed);
+    int byte_size = _impl_._citizen_agent_ids_cached_byte_size_.load(std::memory_order_relaxed);
     if (byte_size > 0) {
       target = stream->WriteInt32Packed(
-          13, _internal_citizens_agent_id(), byte_size, target);
+          13, _internal_citizen_agent_ids(), byte_size, target);
     }
   }
 
@@ -1777,16 +1777,16 @@ size_t NBS::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated int32 citizens = 2 [json_name = "citizens"];
+  // repeated int32 citizen_ids = 2 [json_name = "citizenIds"];
   {
     size_t data_size = ::_pbi::WireFormatLite::
-      Int32Size(this->_impl_.citizens_);
+      Int32Size(this->_impl_.citizen_ids_);
     if (data_size > 0) {
       total_size += 1 +
         ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
     }
     int cached_size = ::_pbi::ToCachedSize(data_size);
-    _impl_._citizens_cached_byte_size_.store(cached_size,
+    _impl_._citizen_ids_cached_byte_size_.store(cached_size,
                                     std::memory_order_relaxed);
     total_size += data_size;
   }
@@ -1881,16 +1881,16 @@ size_t NBS::ByteSizeLong() const {
     total_size += NBS_LocusControlEntry_DoNotUse::Funcs::ByteSizeLong(it->first, it->second);
   }
 
-  // repeated int32 citizens_agent_id = 13 [json_name = "citizensAgentId"];
+  // repeated int32 citizen_agent_ids = 13 [json_name = "citizenAgentIds"];
   {
     size_t data_size = ::_pbi::WireFormatLite::
-      Int32Size(this->_impl_.citizens_agent_id_);
+      Int32Size(this->_impl_.citizen_agent_ids_);
     if (data_size > 0) {
       total_size += 1 +
         ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
     }
     int cached_size = ::_pbi::ToCachedSize(data_size);
-    _impl_._citizens_agent_id_cached_byte_size_.store(cached_size,
+    _impl_._citizen_agent_ids_cached_byte_size_.store(cached_size,
                                     std::memory_order_relaxed);
     total_size += data_size;
   }
@@ -1927,7 +1927,7 @@ void NBS::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_N
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  _this->_impl_.citizens_.MergeFrom(from._impl_.citizens_);
+  _this->_impl_.citizen_ids_.MergeFrom(from._impl_.citizen_ids_);
   _this->_impl_.nominal_gdp_.MergeFrom(from._impl_.nominal_gdp_);
   _this->_impl_.real_gdp_.MergeFrom(from._impl_.real_gdp_);
   _this->_impl_.unemployment_.MergeFrom(from._impl_.unemployment_);
@@ -1938,7 +1938,7 @@ void NBS::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_N
   _this->_impl_.consumption_currency_.MergeFrom(from._impl_.consumption_currency_);
   _this->_impl_.income_currency_.MergeFrom(from._impl_.income_currency_);
   _this->_impl_.locus_control_.MergeFrom(from._impl_.locus_control_);
-  _this->_impl_.citizens_agent_id_.MergeFrom(from._impl_.citizens_agent_id_);
+  _this->_impl_.citizen_agent_ids_.MergeFrom(from._impl_.citizen_agent_ids_);
   if (from._internal_id() != 0) {
     _this->_internal_set_id(from._internal_id());
   }
@@ -1966,7 +1966,7 @@ bool NBS::IsInitialized() const {
 void NBS::InternalSwap(NBS* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  _impl_.citizens_.InternalSwap(&other->_impl_.citizens_);
+  _impl_.citizen_ids_.InternalSwap(&other->_impl_.citizen_ids_);
   _impl_.nominal_gdp_.InternalSwap(&other->_impl_.nominal_gdp_);
   _impl_.real_gdp_.InternalSwap(&other->_impl_.real_gdp_);
   _impl_.unemployment_.InternalSwap(&other->_impl_.unemployment_);
@@ -1977,7 +1977,7 @@ void NBS::InternalSwap(NBS* other) {
   _impl_.consumption_currency_.InternalSwap(&other->_impl_.consumption_currency_);
   _impl_.income_currency_.InternalSwap(&other->_impl_.income_currency_);
   _impl_.locus_control_.InternalSwap(&other->_impl_.locus_control_);
-  _impl_.citizens_agent_id_.InternalSwap(&other->_impl_.citizens_agent_id_);
+  _impl_.citizen_agent_ids_.InternalSwap(&other->_impl_.citizen_agent_ids_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(NBS, _impl_.currency_)
       + sizeof(NBS::_impl_.currency_)
@@ -2008,8 +2008,8 @@ Government::Government(const Government& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   Government* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.citizens_){from._impl_.citizens_}
-    , /*decltype(_impl_._citizens_cached_byte_size_)*/{0}
+      decltype(_impl_.citizen_ids_){from._impl_.citizen_ids_}
+    , /*decltype(_impl_._citizen_ids_cached_byte_size_)*/{0}
     , decltype(_impl_.bracket_cutoffs_){from._impl_.bracket_cutoffs_}
     , decltype(_impl_.bracket_rates_){from._impl_.bracket_rates_}
     , decltype(_impl_.id_){}
@@ -2028,8 +2028,8 @@ inline void Government::SharedCtor(
   (void)arena;
   (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.citizens_){arena}
-    , /*decltype(_impl_._citizens_cached_byte_size_)*/{0}
+      decltype(_impl_.citizen_ids_){arena}
+    , /*decltype(_impl_._citizen_ids_cached_byte_size_)*/{0}
     , decltype(_impl_.bracket_cutoffs_){arena}
     , decltype(_impl_.bracket_rates_){arena}
     , decltype(_impl_.id_){0}
@@ -2049,7 +2049,7 @@ Government::~Government() {
 
 inline void Government::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.citizens_.~RepeatedField();
+  _impl_.citizen_ids_.~RepeatedField();
   _impl_.bracket_cutoffs_.~RepeatedField();
   _impl_.bracket_rates_.~RepeatedField();
 }
@@ -2064,7 +2064,7 @@ void Government::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.citizens_.Clear();
+  _impl_.citizen_ids_.Clear();
   _impl_.bracket_cutoffs_.Clear();
   _impl_.bracket_rates_.Clear();
   ::memset(&_impl_.id_, 0, static_cast<size_t>(
@@ -2087,13 +2087,13 @@ const char* Government::_InternalParse(const char* ptr, ::_pbi::ParseContext* ct
         } else
           goto handle_unusual;
         continue;
-      // repeated int32 citizens = 2 [json_name = "citizens"];
+      // repeated int32 citizen_ids = 2 [json_name = "citizenIds"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_citizens(), ptr, ctx);
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_citizen_ids(), ptr, ctx);
           CHK_(ptr);
         } else if (static_cast<uint8_t>(tag) == 16) {
-          _internal_add_citizens(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
+          _internal_add_citizen_ids(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -2163,12 +2163,12 @@ uint8_t* Government::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_id(), target);
   }
 
-  // repeated int32 citizens = 2 [json_name = "citizens"];
+  // repeated int32 citizen_ids = 2 [json_name = "citizenIds"];
   {
-    int byte_size = _impl_._citizens_cached_byte_size_.load(std::memory_order_relaxed);
+    int byte_size = _impl_._citizen_ids_cached_byte_size_.load(std::memory_order_relaxed);
     if (byte_size > 0) {
       target = stream->WriteInt32Packed(
-          2, _internal_citizens(), byte_size, target);
+          2, _internal_citizen_ids(), byte_size, target);
     }
   }
 
@@ -2208,16 +2208,16 @@ size_t Government::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated int32 citizens = 2 [json_name = "citizens"];
+  // repeated int32 citizen_ids = 2 [json_name = "citizenIds"];
   {
     size_t data_size = ::_pbi::WireFormatLite::
-      Int32Size(this->_impl_.citizens_);
+      Int32Size(this->_impl_.citizen_ids_);
     if (data_size > 0) {
       total_size += 1 +
         ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
     }
     int cached_size = ::_pbi::ToCachedSize(data_size);
-    _impl_._citizens_cached_byte_size_.store(cached_size,
+    _impl_._citizen_ids_cached_byte_size_.store(cached_size,
                                     std::memory_order_relaxed);
     total_size += data_size;
   }
@@ -2276,7 +2276,7 @@ void Government::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PRO
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  _this->_impl_.citizens_.MergeFrom(from._impl_.citizens_);
+  _this->_impl_.citizen_ids_.MergeFrom(from._impl_.citizen_ids_);
   _this->_impl_.bracket_cutoffs_.MergeFrom(from._impl_.bracket_cutoffs_);
   _this->_impl_.bracket_rates_.MergeFrom(from._impl_.bracket_rates_);
   if (from._internal_id() != 0) {
@@ -2306,7 +2306,7 @@ bool Government::IsInitialized() const {
 void Government::InternalSwap(Government* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  _impl_.citizens_.InternalSwap(&other->_impl_.citizens_);
+  _impl_.citizen_ids_.InternalSwap(&other->_impl_.citizen_ids_);
   _impl_.bracket_cutoffs_.InternalSwap(&other->_impl_.bracket_cutoffs_);
   _impl_.bracket_rates_.InternalSwap(&other->_impl_.bracket_rates_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
@@ -2339,8 +2339,8 @@ Bank::Bank(const Bank& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   Bank* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.citizens_){from._impl_.citizens_}
-    , /*decltype(_impl_._citizens_cached_byte_size_)*/{0}
+      decltype(_impl_.citizen_ids_){from._impl_.citizen_ids_}
+    , /*decltype(_impl_._citizen_ids_cached_byte_size_)*/{0}
     , decltype(_impl_.id_){}
     , decltype(_impl_.interest_rate_){}
     , decltype(_impl_.currency_){}
@@ -2358,8 +2358,8 @@ inline void Bank::SharedCtor(
   (void)arena;
   (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.citizens_){arena}
-    , /*decltype(_impl_._citizens_cached_byte_size_)*/{0}
+      decltype(_impl_.citizen_ids_){arena}
+    , /*decltype(_impl_._citizen_ids_cached_byte_size_)*/{0}
     , decltype(_impl_.id_){0}
     , decltype(_impl_.interest_rate_){0}
     , decltype(_impl_.currency_){0}
@@ -2378,7 +2378,7 @@ Bank::~Bank() {
 
 inline void Bank::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.citizens_.~RepeatedField();
+  _impl_.citizen_ids_.~RepeatedField();
 }
 
 void Bank::SetCachedSize(int size) const {
@@ -2391,7 +2391,7 @@ void Bank::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.citizens_.Clear();
+  _impl_.citizen_ids_.Clear();
   ::memset(&_impl_.id_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_impl_.currency_) -
       reinterpret_cast<char*>(&_impl_.id_)) + sizeof(_impl_.currency_));
@@ -2412,13 +2412,13 @@ const char* Bank::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
         } else
           goto handle_unusual;
         continue;
-      // repeated int32 citizens = 2 [json_name = "citizens"];
+      // repeated int32 citizen_ids = 2 [json_name = "citizenIds"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_citizens(), ptr, ctx);
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_citizen_ids(), ptr, ctx);
           CHK_(ptr);
         } else if (static_cast<uint8_t>(tag) == 16) {
-          _internal_add_citizens(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
+          _internal_add_citizen_ids(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -2474,12 +2474,12 @@ uint8_t* Bank::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_id(), target);
   }
 
-  // repeated int32 citizens = 2 [json_name = "citizens"];
+  // repeated int32 citizen_ids = 2 [json_name = "citizenIds"];
   {
-    int byte_size = _impl_._citizens_cached_byte_size_.load(std::memory_order_relaxed);
+    int byte_size = _impl_._citizen_ids_cached_byte_size_.load(std::memory_order_relaxed);
     if (byte_size > 0) {
       target = stream->WriteInt32Packed(
-          2, _internal_citizens(), byte_size, target);
+          2, _internal_citizen_ids(), byte_size, target);
     }
   }
 
@@ -2519,16 +2519,16 @@ size_t Bank::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated int32 citizens = 2 [json_name = "citizens"];
+  // repeated int32 citizen_ids = 2 [json_name = "citizenIds"];
   {
     size_t data_size = ::_pbi::WireFormatLite::
-      Int32Size(this->_impl_.citizens_);
+      Int32Size(this->_impl_.citizen_ids_);
     if (data_size > 0) {
       total_size += 1 +
         ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
     }
     int cached_size = ::_pbi::ToCachedSize(data_size);
-    _impl_._citizens_cached_byte_size_.store(cached_size,
+    _impl_._citizen_ids_cached_byte_size_.store(cached_size,
                                     std::memory_order_relaxed);
     total_size += data_size;
   }
@@ -2574,7 +2574,7 @@ void Bank::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  _this->_impl_.citizens_.MergeFrom(from._impl_.citizens_);
+  _this->_impl_.citizen_ids_.MergeFrom(from._impl_.citizen_ids_);
   if (from._internal_id() != 0) {
     _this->_internal_set_id(from._internal_id());
   }
@@ -2609,7 +2609,7 @@ bool Bank::IsInitialized() const {
 void Bank::InternalSwap(Bank* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  _impl_.citizens_.InternalSwap(&other->_impl_.citizens_);
+  _impl_.citizen_ids_.InternalSwap(&other->_impl_.citizen_ids_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(Bank, _impl_.currency_)
       + sizeof(Bank::_impl_.currency_)

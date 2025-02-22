@@ -7,14 +7,12 @@ import { proto3 } from "@bufbuild/protobuf";
 import { Agent, Bank, Firm, Government, NBS } from "./economy_pb.js";
 
 /**
- * Firm 相关消息
- *
  * @generated from message city.economy.v2.AddFirmRequest
  */
 export const AddFirmRequest = /*@__PURE__*/ proto3.makeMessageType(
   "city.economy.v2.AddFirmRequest",
   () => [
-    { no: 1, name: "firm", kind: "message", T: Firm },
+    { no: 1, name: "firms", kind: "message", T: Firm, repeated: true },
   ],
 );
 
@@ -23,7 +21,9 @@ export const AddFirmRequest = /*@__PURE__*/ proto3.makeMessageType(
  */
 export const AddFirmResponse = /*@__PURE__*/ proto3.makeMessageType(
   "city.economy.v2.AddFirmResponse",
-  [],
+  () => [
+    { no: 1, name: "firm_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+  ],
 );
 
 /**
@@ -32,7 +32,7 @@ export const AddFirmResponse = /*@__PURE__*/ proto3.makeMessageType(
 export const RemoveFirmRequest = /*@__PURE__*/ proto3.makeMessageType(
   "city.economy.v2.RemoveFirmRequest",
   () => [
-    { no: 1, name: "firm_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 1, name: "firm_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
   ],
 );
 
@@ -50,7 +50,7 @@ export const RemoveFirmResponse = /*@__PURE__*/ proto3.makeMessageType(
 export const GetFirmRequest = /*@__PURE__*/ proto3.makeMessageType(
   "city.economy.v2.GetFirmRequest",
   () => [
-    { no: 1, name: "firm_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 1, name: "firm_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
   ],
 );
 
@@ -60,7 +60,7 @@ export const GetFirmRequest = /*@__PURE__*/ proto3.makeMessageType(
 export const GetFirmResponse = /*@__PURE__*/ proto3.makeMessageType(
   "city.economy.v2.GetFirmResponse",
   () => [
-    { no: 1, name: "firm", kind: "message", T: Firm },
+    { no: 1, name: "firms", kind: "message", T: Firm, repeated: true },
   ],
 );
 
@@ -70,7 +70,7 @@ export const GetFirmResponse = /*@__PURE__*/ proto3.makeMessageType(
 export const UpdateFirmRequest = /*@__PURE__*/ proto3.makeMessageType(
   "city.economy.v2.UpdateFirmRequest",
   () => [
-    { no: 1, name: "firm", kind: "message", T: Firm },
+    { no: 1, name: "firms", kind: "message", T: Firm, repeated: true },
   ],
 );
 
@@ -101,10 +101,26 @@ export const ListFirmsResponse = /*@__PURE__*/ proto3.makeMessageType(
 );
 
 /**
+ * Request for incremental updates to firms
+ * 企业增量更新请求
+ *
  * @generated from message city.economy.v2.DeltaUpdateFirmRequest
  */
 export const DeltaUpdateFirmRequest = /*@__PURE__*/ proto3.makeMessageType(
   "city.economy.v2.DeltaUpdateFirmRequest",
+  () => [
+    { no: 1, name: "updates", kind: "message", T: FirmDeltaUpdate, repeated: true },
+  ],
+);
+
+/**
+ * Represents an incremental update to a firm
+ * 表示对企业的增量更新
+ *
+ * @generated from message city.economy.v2.FirmDeltaUpdate
+ */
+export const FirmDeltaUpdate = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.FirmDeltaUpdate",
   () => [
     { no: 1, name: "firm_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 2, name: "delta_price", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
@@ -122,102 +138,6 @@ export const DeltaUpdateFirmRequest = /*@__PURE__*/ proto3.makeMessageType(
  */
 export const DeltaUpdateFirmResponse = /*@__PURE__*/ proto3.makeMessageType(
   "city.economy.v2.DeltaUpdateFirmResponse",
-  [],
-);
-
-/**
- * Firm 批处理相关消息
- *
- * @generated from message city.economy.v2.BatchAddFirmRequest
- */
-export const BatchAddFirmRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.BatchAddFirmRequest",
-  () => [
-    { no: 1, name: "firms", kind: "message", T: Firm, repeated: true },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.BatchAddFirmResponse
- */
-export const BatchAddFirmResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.BatchAddFirmResponse",
-  () => [
-    { no: 1, name: "firm_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.BatchRemoveFirmRequest
- */
-export const BatchRemoveFirmRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.BatchRemoveFirmRequest",
-  () => [
-    { no: 1, name: "firm_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.BatchRemoveFirmResponse
- */
-export const BatchRemoveFirmResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.BatchRemoveFirmResponse",
-  [],
-);
-
-/**
- * @generated from message city.economy.v2.BatchGetFirmRequest
- */
-export const BatchGetFirmRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.BatchGetFirmRequest",
-  () => [
-    { no: 1, name: "firm_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.BatchGetFirmResponse
- */
-export const BatchGetFirmResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.BatchGetFirmResponse",
-  () => [
-    { no: 1, name: "firms", kind: "message", T: Firm, repeated: true },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.BatchUpdateFirmRequest
- */
-export const BatchUpdateFirmRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.BatchUpdateFirmRequest",
-  () => [
-    { no: 1, name: "firms", kind: "message", T: Firm, repeated: true },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.BatchUpdateFirmResponse
- */
-export const BatchUpdateFirmResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.BatchUpdateFirmResponse",
-  [],
-);
-
-/**
- * @generated from message city.economy.v2.BatchDeltaUpdateFirmRequest
- */
-export const BatchDeltaUpdateFirmRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.BatchDeltaUpdateFirmRequest",
-  () => [
-    { no: 1, name: "updates", kind: "message", T: DeltaUpdateFirmRequest, repeated: true },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.BatchDeltaUpdateFirmResponse
- */
-export const BatchDeltaUpdateFirmResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.BatchDeltaUpdateFirmResponse",
   [],
 );
 
@@ -333,10 +253,10 @@ export const DeltaUpdateNBSRequest = /*@__PURE__*/ proto3.makeMessageType(
     { no: 10, name: "delta_income_currency", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 2 /* ScalarType.FLOAT */} },
     { no: 11, name: "delta_locus_control", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 2 /* ScalarType.FLOAT */} },
     { no: 12, name: "delta_currency", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
-    { no: 13, name: "add_citizens", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
-    { no: 14, name: "remove_citizens", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
-    { no: 15, name: "add_citizens_agent_id", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
-    { no: 16, name: "remove_citizens_agent_id", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 13, name: "add_citizen_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 14, name: "remove_citizen_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 15, name: "add_citizen_agent_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 16, name: "remove_citizen_agent_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
   ],
 );
 
@@ -452,8 +372,8 @@ export const DeltaUpdateGovernmentRequest = /*@__PURE__*/ proto3.makeMessageType
     { no: 2, name: "delta_bracket_cutoffs", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
     { no: 3, name: "delta_bracket_rates", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
     { no: 4, name: "delta_currency", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
-    { no: 5, name: "add_citizens", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
-    { no: 6, name: "remove_citizens", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 5, name: "add_citizen_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 6, name: "remove_citizen_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
   ],
 );
 
@@ -568,8 +488,8 @@ export const DeltaUpdateBankRequest = /*@__PURE__*/ proto3.makeMessageType(
     { no: 1, name: "bank_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 2, name: "delta_interest_rate", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
     { no: 3, name: "delta_currency", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
-    { no: 4, name: "add_citizens", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
-    { no: 5, name: "remove_citizens", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 4, name: "add_citizen_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 5, name: "remove_citizen_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
   ],
 );
 
@@ -589,7 +509,7 @@ export const DeltaUpdateBankResponse = /*@__PURE__*/ proto3.makeMessageType(
 export const AddAgentRequest = /*@__PURE__*/ proto3.makeMessageType(
   "city.economy.v2.AddAgentRequest",
   () => [
-    { no: 1, name: "agent", kind: "message", T: Agent },
+    { no: 1, name: "agents", kind: "message", T: Agent, repeated: true },
   ],
 );
 
@@ -598,7 +518,9 @@ export const AddAgentRequest = /*@__PURE__*/ proto3.makeMessageType(
  */
 export const AddAgentResponse = /*@__PURE__*/ proto3.makeMessageType(
   "city.economy.v2.AddAgentResponse",
-  [],
+  () => [
+    { no: 1, name: "agent_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+  ],
 );
 
 /**
@@ -607,7 +529,7 @@ export const AddAgentResponse = /*@__PURE__*/ proto3.makeMessageType(
 export const RemoveAgentRequest = /*@__PURE__*/ proto3.makeMessageType(
   "city.economy.v2.RemoveAgentRequest",
   () => [
-    { no: 1, name: "agent_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 1, name: "agent_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
   ],
 );
 
@@ -625,7 +547,7 @@ export const RemoveAgentResponse = /*@__PURE__*/ proto3.makeMessageType(
 export const GetAgentRequest = /*@__PURE__*/ proto3.makeMessageType(
   "city.economy.v2.GetAgentRequest",
   () => [
-    { no: 1, name: "agent_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 1, name: "agent_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
   ],
 );
 
@@ -635,7 +557,7 @@ export const GetAgentRequest = /*@__PURE__*/ proto3.makeMessageType(
 export const GetAgentResponse = /*@__PURE__*/ proto3.makeMessageType(
   "city.economy.v2.GetAgentResponse",
   () => [
-    { no: 1, name: "agent", kind: "message", T: Agent },
+    { no: 1, name: "agents", kind: "message", T: Agent, repeated: true },
   ],
 );
 
@@ -645,7 +567,7 @@ export const GetAgentResponse = /*@__PURE__*/ proto3.makeMessageType(
 export const UpdateAgentRequest = /*@__PURE__*/ proto3.makeMessageType(
   "city.economy.v2.UpdateAgentRequest",
   () => [
-    { no: 1, name: "agent", kind: "message", T: Agent },
+    { no: 1, name: "agents", kind: "message", T: Agent, repeated: true },
   ],
 );
 
@@ -681,6 +603,16 @@ export const ListAgentsResponse = /*@__PURE__*/ proto3.makeMessageType(
 export const DeltaUpdateAgentRequest = /*@__PURE__*/ proto3.makeMessageType(
   "city.economy.v2.DeltaUpdateAgentRequest",
   () => [
+    { no: 1, name: "updates", kind: "message", T: AgentDeltaUpdate, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message city.economy.v2.AgentDeltaUpdate
+ */
+export const AgentDeltaUpdate = /*@__PURE__*/ proto3.makeMessageType(
+  "city.economy.v2.AgentDeltaUpdate",
+  () => [
     { no: 1, name: "agent_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 2, name: "delta_currency", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
     { no: 3, name: "new_firm_id", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
@@ -695,102 +627,6 @@ export const DeltaUpdateAgentRequest = /*@__PURE__*/ proto3.makeMessageType(
  */
 export const DeltaUpdateAgentResponse = /*@__PURE__*/ proto3.makeMessageType(
   "city.economy.v2.DeltaUpdateAgentResponse",
-  [],
-);
-
-/**
- * Agent 批处理相关消息
- *
- * @generated from message city.economy.v2.BatchAddAgentRequest
- */
-export const BatchAddAgentRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.BatchAddAgentRequest",
-  () => [
-    { no: 1, name: "agents", kind: "message", T: Agent, repeated: true },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.BatchAddAgentResponse
- */
-export const BatchAddAgentResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.BatchAddAgentResponse",
-  () => [
-    { no: 1, name: "agent_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.BatchRemoveAgentRequest
- */
-export const BatchRemoveAgentRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.BatchRemoveAgentRequest",
-  () => [
-    { no: 1, name: "agent_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.BatchRemoveAgentResponse
- */
-export const BatchRemoveAgentResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.BatchRemoveAgentResponse",
-  [],
-);
-
-/**
- * @generated from message city.economy.v2.BatchGetAgentRequest
- */
-export const BatchGetAgentRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.BatchGetAgentRequest",
-  () => [
-    { no: 1, name: "agent_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.BatchGetAgentResponse
- */
-export const BatchGetAgentResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.BatchGetAgentResponse",
-  () => [
-    { no: 1, name: "agents", kind: "message", T: Agent, repeated: true },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.BatchUpdateAgentRequest
- */
-export const BatchUpdateAgentRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.BatchUpdateAgentRequest",
-  () => [
-    { no: 1, name: "agents", kind: "message", T: Agent, repeated: true },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.BatchUpdateAgentResponse
- */
-export const BatchUpdateAgentResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.BatchUpdateAgentResponse",
-  [],
-);
-
-/**
- * @generated from message city.economy.v2.BatchDeltaUpdateAgentRequest
- */
-export const BatchDeltaUpdateAgentRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.BatchDeltaUpdateAgentRequest",
-  () => [
-    { no: 1, name: "updates", kind: "message", T: DeltaUpdateAgentRequest, repeated: true },
-  ],
-);
-
-/**
- * @generated from message city.economy.v2.BatchDeltaUpdateAgentResponse
- */
-export const BatchDeltaUpdateAgentResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.economy.v2.BatchDeltaUpdateAgentResponse",
   [],
 );
 

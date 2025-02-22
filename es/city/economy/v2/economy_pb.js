@@ -6,6 +6,7 @@
 import { proto3 } from "@bufbuild/protobuf";
 
 /**
+ * Firm represents a company entity in the economic system
  * Firm 代表经济系统中的公司实体
  *
  * @generated from message city.economy.v2.Firm
@@ -24,7 +25,8 @@ export const Firm = /*@__PURE__*/ proto3.makeMessageType(
 );
 
 /**
- * NBS (National Bureau of Statistics) 代表国家统计局
+ * NBS (National Bureau of Statistics) represents the statistical authority
+ * NBS (国家统计局) 代表负责经济数据统计的权威机构
  *
  * @generated from message city.economy.v2.NBS
  */
@@ -32,7 +34,7 @@ export const NBS = /*@__PURE__*/ proto3.makeMessageType(
   "city.economy.v2.NBS",
   () => [
     { no: 1, name: "id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 2, name: "citizens", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 2, name: "citizen_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
     { no: 3, name: "nominal_gdp", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 2 /* ScalarType.FLOAT */} },
     { no: 4, name: "real_gdp", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 2 /* ScalarType.FLOAT */} },
     { no: 5, name: "unemployment", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 2 /* ScalarType.FLOAT */} },
@@ -43,12 +45,13 @@ export const NBS = /*@__PURE__*/ proto3.makeMessageType(
     { no: 10, name: "consumption_currency", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 2 /* ScalarType.FLOAT */} },
     { no: 11, name: "income_currency", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 2 /* ScalarType.FLOAT */} },
     { no: 12, name: "locus_control", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 2 /* ScalarType.FLOAT */} },
-    { no: 13, name: "citizens_agent_id", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 13, name: "citizen_agent_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
     { no: 14, name: "currency", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
   ],
 );
 
 /**
+ * Government represents a government institution
  * Government 代表政府机构
  *
  * @generated from message city.economy.v2.Government
@@ -57,7 +60,7 @@ export const Government = /*@__PURE__*/ proto3.makeMessageType(
   "city.economy.v2.Government",
   () => [
     { no: 1, name: "id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 2, name: "citizens", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 2, name: "citizen_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
     { no: 3, name: "bracket_cutoffs", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
     { no: 4, name: "bracket_rates", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
     { no: 5, name: "currency", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
@@ -65,6 +68,7 @@ export const Government = /*@__PURE__*/ proto3.makeMessageType(
 );
 
 /**
+ * Bank represents a banking institution
  * Bank 代表银行机构
  *
  * @generated from message city.economy.v2.Bank
@@ -73,13 +77,14 @@ export const Bank = /*@__PURE__*/ proto3.makeMessageType(
   "city.economy.v2.Bank",
   () => [
     { no: 1, name: "id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 2, name: "citizens", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 2, name: "citizen_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
     { no: 3, name: "interest_rate", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
     { no: 4, name: "currency", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
   ],
 );
 
 /**
+ * Agent represents an individual economic agent (e.g., a resident)
  * Agent 代表经济系统中的个体代理（如居民个人）
  *
  * @generated from message city.economy.v2.Agent
@@ -97,7 +102,8 @@ export const Agent = /*@__PURE__*/ proto3.makeMessageType(
 );
 
 /**
- * 经济实体
+ * EconomyEntities represents all entities in the economic system
+ * EconomyEntities 代表经济系统中的所有实体
  *
  * @generated from message city.economy.v2.EconomyEntities
  */

@@ -3,12 +3,18 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AddAgentRequest, AddAgentResponse, AddBankRequest, AddBankResponse, AddFirmRequest, AddFirmResponse, AddGovernmentRequest, AddGovernmentResponse, AddNBSRequest, AddNBSResponse, BatchAddAgentRequest, BatchAddAgentResponse, BatchAddFirmRequest, BatchAddFirmResponse, BatchDeltaUpdateAgentRequest, BatchDeltaUpdateAgentResponse, BatchDeltaUpdateFirmRequest, BatchDeltaUpdateFirmResponse, BatchGetAgentRequest, BatchGetAgentResponse, BatchGetFirmRequest, BatchGetFirmResponse, BatchRemoveAgentRequest, BatchRemoveAgentResponse, BatchRemoveFirmRequest, BatchRemoveFirmResponse, BatchUpdateAgentRequest, BatchUpdateAgentResponse, BatchUpdateFirmRequest, BatchUpdateFirmResponse, CalculateConsumptionRequest, CalculateConsumptionResponse, CalculateInterestRequest, CalculateInterestResponse, CalculateRealGDPRequest, CalculateRealGDPResponse, CalculateTaxesDueRequest, CalculateTaxesDueResponse, DeltaUpdateAgentRequest, DeltaUpdateAgentResponse, DeltaUpdateBankRequest, DeltaUpdateBankResponse, DeltaUpdateFirmRequest, DeltaUpdateFirmResponse, DeltaUpdateGovernmentRequest, DeltaUpdateGovernmentResponse, DeltaUpdateNBSRequest, DeltaUpdateNBSResponse, GetAgentRequest, GetAgentResponse, GetBankRequest, GetBankResponse, GetFirmRequest, GetFirmResponse, GetGovernmentRequest, GetGovernmentResponse, GetNBSRequest, GetNBSResponse, ListAgentsRequest, ListAgentsResponse, ListBanksRequest, ListBanksResponse, ListFirmsRequest, ListFirmsResponse, ListGovernmentsRequest, ListGovernmentsResponse, ListNBSRequest, ListNBSResponse, LoadEconomyEntitiesRequest, LoadEconomyEntitiesResponse, RemoveAgentRequest, RemoveAgentResponse, RemoveBankRequest, RemoveBankResponse, RemoveFirmRequest, RemoveFirmResponse, RemoveGovernmentRequest, RemoveGovernmentResponse, RemoveNBSRequest, RemoveNBSResponse, SaveEconomyEntitiesRequest, SaveEconomyEntitiesResponse, UpdateAgentRequest, UpdateAgentResponse, UpdateBankRequest, UpdateBankResponse, UpdateFirmRequest, UpdateFirmResponse, UpdateGovernmentRequest, UpdateGovernmentResponse, UpdateNBSRequest, UpdateNBSResponse } from "./org_service_pb.js";
+import { AddAgentRequest, AddAgentResponse, AddBankRequest, AddBankResponse, AddFirmRequest, AddFirmResponse, AddGovernmentRequest, AddGovernmentResponse, AddNBSRequest, AddNBSResponse, CalculateConsumptionRequest, CalculateConsumptionResponse, CalculateInterestRequest, CalculateInterestResponse, CalculateRealGDPRequest, CalculateRealGDPResponse, CalculateTaxesDueRequest, CalculateTaxesDueResponse, DeltaUpdateAgentRequest, DeltaUpdateAgentResponse, DeltaUpdateBankRequest, DeltaUpdateBankResponse, DeltaUpdateFirmRequest, DeltaUpdateFirmResponse, DeltaUpdateGovernmentRequest, DeltaUpdateGovernmentResponse, DeltaUpdateNBSRequest, DeltaUpdateNBSResponse, GetAgentRequest, GetAgentResponse, GetBankRequest, GetBankResponse, GetFirmRequest, GetFirmResponse, GetGovernmentRequest, GetGovernmentResponse, GetNBSRequest, GetNBSResponse, ListAgentsRequest, ListAgentsResponse, ListBanksRequest, ListBanksResponse, ListFirmsRequest, ListFirmsResponse, ListGovernmentsRequest, ListGovernmentsResponse, ListNBSRequest, ListNBSResponse, LoadEconomyEntitiesRequest, LoadEconomyEntitiesResponse, RemoveAgentRequest, RemoveAgentResponse, RemoveBankRequest, RemoveBankResponse, RemoveFirmRequest, RemoveFirmResponse, RemoveGovernmentRequest, RemoveGovernmentResponse, RemoveNBSRequest, RemoveNBSResponse, SaveEconomyEntitiesRequest, SaveEconomyEntitiesResponse, UpdateAgentRequest, UpdateAgentResponse, UpdateBankRequest, UpdateBankResponse, UpdateFirmRequest, UpdateFirmResponse, UpdateGovernmentRequest, UpdateGovernmentResponse, UpdateNBSRequest, UpdateNBSResponse } from "./org_service_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
+ * OrgService provides management interfaces for organizations and agents in the economic system
+ * All basic operations support batch processing by default
+ *
  * OrgService 提供了经济系统中组织和代理的管理接口
- * 包括基本的CRUD操作、批量操作、增量更新和各种计算功能
+ * 所有基础操作默认支持批量处理
+ *
+ * @section Firm Operations
+ * @section 企业相关操作
  *
  * @generated from service city.economy.v2.OrgService
  */
@@ -16,7 +22,11 @@ export const OrgService = {
   typeName: "city.economy.v2.OrgService",
   methods: {
     /**
-     * Firm 相关操作
+     * Creates one or more firm entities
+     * Returns the list of created firm IDs
+     *
+     * 创建一个或多个企业实体
+     * 返回创建的企业ID列表
      *
      * @generated from rpc city.economy.v2.OrgService.AddFirm
      */
@@ -27,6 +37,12 @@ export const OrgService = {
       kind: MethodKind.Unary,
     },
     /**
+     * Deletes one or more firms by their IDs
+     * Also cleans up related employee associations
+     *
+     * 根据ID删除一个或多个企业实体
+     * 同时清理相关的员工关联关系
+     *
      * @generated from rpc city.economy.v2.OrgService.RemoveFirm
      */
     removeFirm: {
@@ -36,6 +52,12 @@ export const OrgService = {
       kind: MethodKind.Unary,
     },
     /**
+     * Retrieves detailed information for one or more firms
+     * Returns a list of firm entities
+     *
+     * 获取一个或多个企业的详细信息
+     * 返回企业实体信息列表
+     *
      * @generated from rpc city.economy.v2.OrgService.GetFirm
      */
     getFirm: {
@@ -45,6 +67,10 @@ export const OrgService = {
       kind: MethodKind.Unary,
     },
     /**
+     * Updates complete information for one or more firms
+     *
+     * 更新一个或多个企业的完整信息
+     *
      * @generated from rpc city.economy.v2.OrgService.UpdateFirm
      */
     updateFirm: {
@@ -54,6 +80,10 @@ export const OrgService = {
       kind: MethodKind.Unary,
     },
     /**
+     * Lists all firms in the system
+     *
+     * 获取系统中所有企业的列表
+     *
      * @generated from rpc city.economy.v2.OrgService.ListFirms
      */
     listFirms: {
@@ -63,6 +93,12 @@ export const OrgService = {
       kind: MethodKind.Unary,
     },
     /**
+     * Performs incremental updates on one or more firms
+     * Allows updating specific fields like price, inventory, demand etc.
+     *
+     * 对一个或多个企业进行增量更新
+     * 可以更新价格、库存、需求等具体字段
+     *
      * @generated from rpc city.economy.v2.OrgService.DeltaUpdateFirm
      */
     deltaUpdateFirm: {
@@ -72,52 +108,9 @@ export const OrgService = {
       kind: MethodKind.Unary,
     },
     /**
-     * @generated from rpc city.economy.v2.OrgService.BatchAddFirm
-     */
-    batchAddFirm: {
-      name: "BatchAddFirm",
-      I: BatchAddFirmRequest,
-      O: BatchAddFirmResponse,
-      kind: MethodKind.Unary,
-    },
-    /**
-     * @generated from rpc city.economy.v2.OrgService.BatchRemoveFirm
-     */
-    batchRemoveFirm: {
-      name: "BatchRemoveFirm",
-      I: BatchRemoveFirmRequest,
-      O: BatchRemoveFirmResponse,
-      kind: MethodKind.Unary,
-    },
-    /**
-     * @generated from rpc city.economy.v2.OrgService.BatchGetFirm
-     */
-    batchGetFirm: {
-      name: "BatchGetFirm",
-      I: BatchGetFirmRequest,
-      O: BatchGetFirmResponse,
-      kind: MethodKind.Unary,
-    },
-    /**
-     * @generated from rpc city.economy.v2.OrgService.BatchUpdateFirm
-     */
-    batchUpdateFirm: {
-      name: "BatchUpdateFirm",
-      I: BatchUpdateFirmRequest,
-      O: BatchUpdateFirmResponse,
-      kind: MethodKind.Unary,
-    },
-    /**
-     * @generated from rpc city.economy.v2.OrgService.BatchDeltaUpdateFirm
-     */
-    batchDeltaUpdateFirm: {
-      name: "BatchDeltaUpdateFirm",
-      I: BatchDeltaUpdateFirmRequest,
-      O: BatchDeltaUpdateFirmResponse,
-      kind: MethodKind.Unary,
-    },
-    /**
-     * NBS 相关操作
+     * Creates a new NBS entity
+     *
+     * 创建新的国家统计局实体
      *
      * @generated from rpc city.economy.v2.OrgService.AddNBS
      */
@@ -128,6 +121,10 @@ export const OrgService = {
       kind: MethodKind.Unary,
     },
     /**
+     * Deletes an NBS entity by ID
+     *
+     * 根据ID删除国家统计局实体
+     *
      * @generated from rpc city.economy.v2.OrgService.RemoveNBS
      */
     removeNBS: {
@@ -137,6 +134,10 @@ export const OrgService = {
       kind: MethodKind.Unary,
     },
     /**
+     * Retrieves detailed information for an NBS entity
+     *
+     * 获取国家统计局的详细信息
+     *
      * @generated from rpc city.economy.v2.OrgService.GetNBS
      */
     getNBS: {
@@ -146,6 +147,10 @@ export const OrgService = {
       kind: MethodKind.Unary,
     },
     /**
+     * Updates complete information for an NBS entity
+     *
+     * 更新国家统计局的完整信息
+     *
      * @generated from rpc city.economy.v2.OrgService.UpdateNBS
      */
     updateNBS: {
@@ -155,6 +160,10 @@ export const OrgService = {
       kind: MethodKind.Unary,
     },
     /**
+     * Lists all NBS entities in the system
+     *
+     * 获取系统中所有国家统计局的列表
+     *
      * @generated from rpc city.economy.v2.OrgService.ListNBS
      */
     listNBS: {
@@ -164,6 +173,12 @@ export const OrgService = {
       kind: MethodKind.Unary,
     },
     /**
+     * Performs incremental updates on an NBS entity
+     * Allows updating specific statistics and citizen relationships
+     *
+     * 对国家统计局进行增量更新
+     * 可以更新具体统计数据和公民关系
+     *
      * @generated from rpc city.economy.v2.OrgService.DeltaUpdateNBS
      */
     deltaUpdateNBS: {
@@ -173,7 +188,9 @@ export const OrgService = {
       kind: MethodKind.Unary,
     },
     /**
-     * Government 相关操作
+     * Creates a new government entity
+     *
+     * 创建新的政府实体
      *
      * @generated from rpc city.economy.v2.OrgService.AddGovernment
      */
@@ -184,6 +201,10 @@ export const OrgService = {
       kind: MethodKind.Unary,
     },
     /**
+     * Deletes a government entity by ID
+     *
+     * 根据ID删除政府实体
+     *
      * @generated from rpc city.economy.v2.OrgService.RemoveGovernment
      */
     removeGovernment: {
@@ -193,6 +214,10 @@ export const OrgService = {
       kind: MethodKind.Unary,
     },
     /**
+     * Retrieves detailed information for a government entity
+     *
+     * 获取政府实体的详细信息
+     *
      * @generated from rpc city.economy.v2.OrgService.GetGovernment
      */
     getGovernment: {
@@ -202,6 +227,10 @@ export const OrgService = {
       kind: MethodKind.Unary,
     },
     /**
+     * Updates complete information for a government entity
+     *
+     * 更新政府实体的完整信息
+     *
      * @generated from rpc city.economy.v2.OrgService.UpdateGovernment
      */
     updateGovernment: {
@@ -211,6 +240,10 @@ export const OrgService = {
       kind: MethodKind.Unary,
     },
     /**
+     * Lists all government entities in the system
+     *
+     * 获取系统中所有政府实体的列表
+     *
      * @generated from rpc city.economy.v2.OrgService.ListGovernments
      */
     listGovernments: {
@@ -220,6 +253,12 @@ export const OrgService = {
       kind: MethodKind.Unary,
     },
     /**
+     * Performs incremental updates on a government entity
+     * Allows updating tax brackets and citizen relationships
+     *
+     * 对政府实体进行增量更新
+     * 可以更新税收档位和公民关系
+     *
      * @generated from rpc city.economy.v2.OrgService.DeltaUpdateGovernment
      */
     deltaUpdateGovernment: {
@@ -229,7 +268,9 @@ export const OrgService = {
       kind: MethodKind.Unary,
     },
     /**
-     * Bank 相关操作
+     * Creates a new bank entity
+     *
+     * 创建新的银行实体
      *
      * @generated from rpc city.economy.v2.OrgService.AddBank
      */
@@ -240,6 +281,10 @@ export const OrgService = {
       kind: MethodKind.Unary,
     },
     /**
+     * Deletes a bank entity by ID
+     *
+     * 根据ID删除银行实体
+     *
      * @generated from rpc city.economy.v2.OrgService.RemoveBank
      */
     removeBank: {
@@ -249,6 +294,10 @@ export const OrgService = {
       kind: MethodKind.Unary,
     },
     /**
+     * Retrieves detailed information for a bank entity
+     *
+     * 获取银行实体的详细信息
+     *
      * @generated from rpc city.economy.v2.OrgService.GetBank
      */
     getBank: {
@@ -258,6 +307,10 @@ export const OrgService = {
       kind: MethodKind.Unary,
     },
     /**
+     * Updates complete information for a bank entity
+     *
+     * 更新银行实体的完整信息
+     *
      * @generated from rpc city.economy.v2.OrgService.UpdateBank
      */
     updateBank: {
@@ -267,6 +320,10 @@ export const OrgService = {
       kind: MethodKind.Unary,
     },
     /**
+     * Lists all bank entities in the system
+     *
+     * 获取系统中所有银行实体的列表
+     *
      * @generated from rpc city.economy.v2.OrgService.ListBanks
      */
     listBanks: {
@@ -276,6 +333,12 @@ export const OrgService = {
       kind: MethodKind.Unary,
     },
     /**
+     * Performs incremental updates on a bank entity
+     * Allows updating interest rates and customer relationships
+     *
+     * 对银行实体进行增量更新
+     * 可以更新利率和客户关系
+     *
      * @generated from rpc city.economy.v2.OrgService.DeltaUpdateBank
      */
     deltaUpdateBank: {
@@ -285,7 +348,11 @@ export const OrgService = {
       kind: MethodKind.Unary,
     },
     /**
-     * Agent 相关操作
+     * Creates one or more agent entities
+     * Returns the list of created agent IDs
+     *
+     * 创建一个或多个经济主体
+     * 返回创建的经济主体ID列表
      *
      * @generated from rpc city.economy.v2.OrgService.AddAgent
      */
@@ -296,6 +363,10 @@ export const OrgService = {
       kind: MethodKind.Unary,
     },
     /**
+     * Deletes one or more agents by their IDs
+     *
+     * 根据ID删除一个或多个经济主体
+     *
      * @generated from rpc city.economy.v2.OrgService.RemoveAgent
      */
     removeAgent: {
@@ -305,6 +376,10 @@ export const OrgService = {
       kind: MethodKind.Unary,
     },
     /**
+     * Retrieves detailed information for one or more agents
+     *
+     * 获取一个或多个经济主体的详细信息
+     *
      * @generated from rpc city.economy.v2.OrgService.GetAgent
      */
     getAgent: {
@@ -314,6 +389,10 @@ export const OrgService = {
       kind: MethodKind.Unary,
     },
     /**
+     * Updates complete information for one or more agents
+     *
+     * 更新一个或多个经济主体的完整信息
+     *
      * @generated from rpc city.economy.v2.OrgService.UpdateAgent
      */
     updateAgent: {
@@ -323,6 +402,10 @@ export const OrgService = {
       kind: MethodKind.Unary,
     },
     /**
+     * Lists all agent entities in the system
+     *
+     * 获取系统中所有经济主体的列表
+     *
      * @generated from rpc city.economy.v2.OrgService.ListAgents
      */
     listAgents: {
@@ -332,6 +415,12 @@ export const OrgService = {
       kind: MethodKind.Unary,
     },
     /**
+     * Performs incremental updates on one or more agents
+     * Allows updating specific attributes like currency, skills etc.
+     *
+     * 对一个或多个经济主体进行增量更新
+     * 可以更新货币、技能等具体属性
+     *
      * @generated from rpc city.economy.v2.OrgService.DeltaUpdateAgent
      */
     deltaUpdateAgent: {
@@ -341,52 +430,11 @@ export const OrgService = {
       kind: MethodKind.Unary,
     },
     /**
-     * @generated from rpc city.economy.v2.OrgService.BatchAddAgent
-     */
-    batchAddAgent: {
-      name: "BatchAddAgent",
-      I: BatchAddAgentRequest,
-      O: BatchAddAgentResponse,
-      kind: MethodKind.Unary,
-    },
-    /**
-     * @generated from rpc city.economy.v2.OrgService.BatchRemoveAgent
-     */
-    batchRemoveAgent: {
-      name: "BatchRemoveAgent",
-      I: BatchRemoveAgentRequest,
-      O: BatchRemoveAgentResponse,
-      kind: MethodKind.Unary,
-    },
-    /**
-     * @generated from rpc city.economy.v2.OrgService.BatchGetAgent
-     */
-    batchGetAgent: {
-      name: "BatchGetAgent",
-      I: BatchGetAgentRequest,
-      O: BatchGetAgentResponse,
-      kind: MethodKind.Unary,
-    },
-    /**
-     * @generated from rpc city.economy.v2.OrgService.BatchUpdateAgent
-     */
-    batchUpdateAgent: {
-      name: "BatchUpdateAgent",
-      I: BatchUpdateAgentRequest,
-      O: BatchUpdateAgentResponse,
-      kind: MethodKind.Unary,
-    },
-    /**
-     * @generated from rpc city.economy.v2.OrgService.BatchDeltaUpdateAgent
-     */
-    batchDeltaUpdateAgent: {
-      name: "BatchDeltaUpdateAgent",
-      I: BatchDeltaUpdateAgentRequest,
-      O: BatchDeltaUpdateAgentResponse,
-      kind: MethodKind.Unary,
-    },
-    /**
-     * 计算相关操作
+     * Calculates taxes due for specified agents
+     * Supports income redistribution if enabled
+     *
+     * 计算指定经济主体的应缴税额
+     * 支持开启收入再分配功能
      *
      * @generated from rpc city.economy.v2.OrgService.CalculateTaxesDue
      */
@@ -397,6 +445,10 @@ export const OrgService = {
       kind: MethodKind.Unary,
     },
     /**
+     * Calculates actual consumption based on supply and demand
+     *
+     * 基于供给和需求计算实际消费量
+     *
      * @generated from rpc city.economy.v2.OrgService.CalculateConsumption
      */
     calculateConsumption: {
@@ -406,6 +458,10 @@ export const OrgService = {
       kind: MethodKind.Unary,
     },
     /**
+     * Calculates interest for specified agents
+     *
+     * 计算指定经济主体的利息
+     *
      * @generated from rpc city.economy.v2.OrgService.CalculateInterest
      */
     calculateInterest: {
@@ -415,6 +471,10 @@ export const OrgService = {
       kind: MethodKind.Unary,
     },
     /**
+     * Calculates real GDP adjusted for inflation
+     *
+     * 计算经通货膨胀调整后的实际GDP
+     *
      * @generated from rpc city.economy.v2.OrgService.CalculateRealGDP
      */
     calculateRealGDP: {
@@ -424,7 +484,9 @@ export const OrgService = {
       kind: MethodKind.Unary,
     },
     /**
-     * 系统状态操作
+     * Saves the current state of all economic entities to a file
+     *
+     * 将当前所有经济实体的状态保存到文件
      *
      * @generated from rpc city.economy.v2.OrgService.SaveEconomyEntities
      */
@@ -435,6 +497,10 @@ export const OrgService = {
       kind: MethodKind.Unary,
     },
     /**
+     * Loads economic entities state from a file
+     *
+     * 从文件中加载经济实体的状态
+     *
      * @generated from rpc city.economy.v2.OrgService.LoadEconomyEntities
      */
     loadEconomyEntities: {

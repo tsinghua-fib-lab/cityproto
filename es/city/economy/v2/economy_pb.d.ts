@@ -7,12 +7,14 @@ import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialM
 import { Message, proto3 } from "@bufbuild/protobuf";
 
 /**
+ * Firm represents a company entity in the economic system
  * Firm 代表经济系统中的公司实体
  *
  * @generated from message city.economy.v2.Firm
  */
 export declare class Firm extends Message<Firm> {
   /**
+   * Unique identifier of the firm
    * 公司的唯一标识符
    *
    * @generated from field: int32 id = 1;
@@ -20,6 +22,7 @@ export declare class Firm extends Message<Firm> {
   id: number;
 
   /**
+   * List of employee IDs working at the firm
    * 公司的员工ID列表
    *
    * @generated from field: repeated int32 employees = 2;
@@ -27,6 +30,7 @@ export declare class Firm extends Message<Firm> {
   employees: number[];
 
   /**
+   * Price of the firm's products/services
    * 公司产品/服务的价格
    *
    * @generated from field: float price = 3;
@@ -34,6 +38,7 @@ export declare class Firm extends Message<Firm> {
   price: number;
 
   /**
+   * Current inventory level of the firm
    * 公司当前的库存量
    *
    * @generated from field: int32 inventory = 4;
@@ -41,6 +46,7 @@ export declare class Firm extends Message<Firm> {
   inventory: number;
 
   /**
+   * Market demand for the firm's products/services
    * 市场对公司产品/服务的需求量
    *
    * @generated from field: float demand = 5;
@@ -48,6 +54,7 @@ export declare class Firm extends Message<Firm> {
   demand: number;
 
   /**
+   * Sales volume of the firm
    * 公司的销售量
    *
    * @generated from field: float sales = 6;
@@ -55,6 +62,7 @@ export declare class Firm extends Message<Firm> {
   sales: number;
 
   /**
+   * Amount of currency held by the firm
    * 公司持有的货币量
    *
    * @generated from field: float currency = 7;
@@ -77,12 +85,14 @@ export declare class Firm extends Message<Firm> {
 }
 
 /**
- * NBS (National Bureau of Statistics) 代表国家统计局
+ * NBS (National Bureau of Statistics) represents the statistical authority
+ * NBS (国家统计局) 代表负责经济数据统计的权威机构
  *
  * @generated from message city.economy.v2.NBS
  */
 export declare class NBS extends Message<NBS> {
   /**
+   * Unique identifier of the NBS
    * 统计局的唯一标识符
    *
    * @generated from field: int32 id = 1;
@@ -90,90 +100,103 @@ export declare class NBS extends Message<NBS> {
   id: number;
 
   /**
+   * List of citizen IDs under NBS jurisdiction
    * 统计范围内的公民ID列表
    *
-   * @generated from field: repeated int32 citizens = 2;
+   * @generated from field: repeated int32 citizen_ids = 2;
    */
-  citizens: number[];
+  citizenIds: number[];
 
   /**
-   * 名义GDP时间序列数据，key为时间点
+   * Time series data of nominal GDP, key is timestamp
+   * 名义GDP时间序列数据，键为时间戳
    *
    * @generated from field: map<string, float> nominal_gdp = 3;
    */
   nominalGdp: { [key: string]: number };
 
   /**
-   * 实际GDP时间序列数据，key为时间点
+   * Time series data of real GDP, key is timestamp
+   * 实际GDP时间序列数据，键为时间戳
    *
    * @generated from field: map<string, float> real_gdp = 4;
    */
   realGdp: { [key: string]: number };
 
   /**
-   * 失业率时间序列数据，key为时间点
+   * Time series data of unemployment rate, key is timestamp
+   * 失业率时间序列数据，键为时间戳
    *
    * @generated from field: map<string, float> unemployment = 5;
    */
   unemployment: { [key: string]: number };
 
   /**
-   * 工资水平时间序列数据，key为时间点
+   * Time series data of wage levels, key is timestamp
+   * 工资水平时间序列数据，键为时间戳
    *
    * @generated from field: map<string, float> wages = 6;
    */
   wages: { [key: string]: number };
 
   /**
-   * 价格指数时间序列数据，key为时间点
+   * Time series data of price indices, key is timestamp
+   * 价格指数时间序列数据，键为时间戳
    *
    * @generated from field: map<string, float> prices = 7;
    */
   prices: { [key: string]: number };
 
   /**
-   * 工作时间时间序列数据，key为时间点
+   * Time series data of working hours, key is timestamp
+   * 工作时间时间序列数据，键为时间戳
    *
    * @generated from field: map<string, float> working_hours = 8;
    */
   workingHours: { [key: string]: number };
 
   /**
-   * 抑郁指数时间序列数据，key为时间点
+   * Time series data of depression index, key is timestamp
+   * 抑郁指数时间序列数据，键为时间戳
    *
    * @generated from field: map<string, float> depression = 9;
    */
   depression: { [key: string]: number };
 
   /**
-   * 消费货币时间序列数据，key为时间点
+   * Time series data of consumption currency, key is timestamp
+   * 消费货币时间序列数据，键为时间戳
    *
    * @generated from field: map<string, float> consumption_currency = 10;
    */
   consumptionCurrency: { [key: string]: number };
 
   /**
-   * 收入货币时间序列数据，key为时间点
+   * Time series data of income currency, key is timestamp
+   * 收入货币时间序列数据，键为时间戳
    *
    * @generated from field: map<string, float> income_currency = 11;
    */
   incomeCurrency: { [key: string]: number };
 
   /**
-   * 控制点时间序列数据，key为时间点
+   * Time series data of locus control, key is timestamp
+   * 控制点时间序列数据，键为时间戳
    *
    * @generated from field: map<string, float> locus_control = 12;
    */
   locusControl: { [key: string]: number };
 
   /**
+   * List of citizen agent IDs
    * 公民代理ID列表
    *
-   * @generated from field: repeated int32 citizens_agent_id = 13;
+   * @generated from field: repeated int32 citizen_agent_ids = 13;
    */
-  citizensAgentId: number[];
+  citizenAgentIds: number[];
 
   /**
+   * Amount of currency held by the NBS
    * 统计局持有的货币量
    *
    * @generated from field: float currency = 14;
@@ -196,12 +219,14 @@ export declare class NBS extends Message<NBS> {
 }
 
 /**
+ * Government represents a government institution
  * Government 代表政府机构
  *
  * @generated from message city.economy.v2.Government
  */
 export declare class Government extends Message<Government> {
   /**
+   * Unique identifier of the government
    * 政府的唯一标识符
    *
    * @generated from field: int32 id = 1;
@@ -209,13 +234,15 @@ export declare class Government extends Message<Government> {
   id: number;
 
   /**
+   * List of citizen IDs under government jurisdiction
    * 管辖范围内的公民ID列表
    *
-   * @generated from field: repeated int32 citizens = 2;
+   * @generated from field: repeated int32 citizen_ids = 2;
    */
-  citizens: number[];
+  citizenIds: number[];
 
   /**
+   * Tax bracket cutoff points
    * 税收档位的切分点列表
    *
    * @generated from field: repeated float bracket_cutoffs = 3;
@@ -223,6 +250,7 @@ export declare class Government extends Message<Government> {
   bracketCutoffs: number[];
 
   /**
+   * Tax rates for each bracket
    * 对应每个档位的税率列表
    *
    * @generated from field: repeated float bracket_rates = 4;
@@ -230,6 +258,7 @@ export declare class Government extends Message<Government> {
   bracketRates: number[];
 
   /**
+   * Amount of currency held by the government
    * 政府持有的货币量
    *
    * @generated from field: float currency = 5;
@@ -252,12 +281,14 @@ export declare class Government extends Message<Government> {
 }
 
 /**
+ * Bank represents a banking institution
  * Bank 代表银行机构
  *
  * @generated from message city.economy.v2.Bank
  */
 export declare class Bank extends Message<Bank> {
   /**
+   * Unique identifier of the bank
    * 银行的唯一标识符
    *
    * @generated from field: int32 id = 1;
@@ -265,13 +296,15 @@ export declare class Bank extends Message<Bank> {
   id: number;
 
   /**
+   * List of citizen IDs who are bank customers
    * 银行客户（公民）ID列表
    *
-   * @generated from field: repeated int32 citizens = 2;
+   * @generated from field: repeated int32 citizen_ids = 2;
    */
-  citizens: number[];
+  citizenIds: number[];
 
   /**
+   * Interest rate set by the bank
    * 银行设定的利率
    *
    * @generated from field: float interest_rate = 3;
@@ -279,6 +312,7 @@ export declare class Bank extends Message<Bank> {
   interestRate: number;
 
   /**
+   * Amount of currency held by the bank
    * 银行持有的货币量
    *
    * @generated from field: float currency = 4;
@@ -301,12 +335,14 @@ export declare class Bank extends Message<Bank> {
 }
 
 /**
+ * Agent represents an individual economic agent (e.g., a resident)
  * Agent 代表经济系统中的个体代理（如居民个人）
  *
  * @generated from message city.economy.v2.Agent
  */
 export declare class Agent extends Message<Agent> {
   /**
+   * Unique identifier of the agent
    * 代理的唯一标识符
    *
    * @generated from field: int32 id = 1;
@@ -314,6 +350,7 @@ export declare class Agent extends Message<Agent> {
   id: number;
 
   /**
+   * Amount of currency held by the agent
    * 代理持有的货币量
    *
    * @generated from field: optional float currency = 2;
@@ -321,6 +358,7 @@ export declare class Agent extends Message<Agent> {
   currency?: number;
 
   /**
+   * ID of the firm where the agent is employed
    * 代理所属的公司ID
    *
    * @generated from field: optional int32 firm_id = 3;
@@ -328,6 +366,7 @@ export declare class Agent extends Message<Agent> {
   firmId?: number;
 
   /**
+   * Skill level of the agent
    * 代理的技能水平
    *
    * @generated from field: optional float skill = 4;
@@ -335,6 +374,7 @@ export declare class Agent extends Message<Agent> {
   skill?: number;
 
   /**
+   * Consumption level of the agent
    * 代理的消费量
    *
    * @generated from field: optional float consumption = 5;
@@ -342,6 +382,7 @@ export declare class Agent extends Message<Agent> {
   consumption?: number;
 
   /**
+   * Income of the agent
    * 代理的收入
    *
    * @generated from field: optional float income = 6;
@@ -364,12 +405,14 @@ export declare class Agent extends Message<Agent> {
 }
 
 /**
- * 经济实体
+ * EconomyEntities represents all entities in the economic system
+ * EconomyEntities 代表经济系统中的所有实体
  *
  * @generated from message city.economy.v2.EconomyEntities
  */
 export declare class EconomyEntities extends Message<EconomyEntities> {
   /**
+   * List of all firms
    * 公司列表
    *
    * @generated from field: repeated city.economy.v2.Firm firms = 1;
@@ -377,6 +420,7 @@ export declare class EconomyEntities extends Message<EconomyEntities> {
   firms: Firm[];
 
   /**
+   * List of all NBSs
    * 国家统计局列表
    *
    * @generated from field: repeated city.economy.v2.NBS nbs = 2;
@@ -384,6 +428,7 @@ export declare class EconomyEntities extends Message<EconomyEntities> {
   nbs: NBS[];
 
   /**
+   * List of all governments
    * 政府列表
    *
    * @generated from field: repeated city.economy.v2.Government governments = 3;
@@ -391,6 +436,7 @@ export declare class EconomyEntities extends Message<EconomyEntities> {
   governments: Government[];
 
   /**
+   * List of all banks
    * 银行列表
    *
    * @generated from field: repeated city.economy.v2.Bank banks = 4;
@@ -398,6 +444,7 @@ export declare class EconomyEntities extends Message<EconomyEntities> {
   banks: Bank[];
 
   /**
+   * List of all agents
    * 代理列表
    *
    * @generated from field: repeated city.economy.v2.Agent agents = 5;

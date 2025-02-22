@@ -25,7 +25,7 @@ namespace economy {
 namespace v2 {
 PROTOBUF_CONSTEXPR AddFirmRequest::AddFirmRequest(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.firm_)*/nullptr
+    /*decltype(_impl_.firms_)*/{}
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct AddFirmRequestDefaultTypeInternal {
   PROTOBUF_CONSTEXPR AddFirmRequestDefaultTypeInternal()
@@ -37,7 +37,10 @@ struct AddFirmRequestDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 AddFirmRequestDefaultTypeInternal _AddFirmRequest_default_instance_;
 PROTOBUF_CONSTEXPR AddFirmResponse::AddFirmResponse(
-    ::_pbi::ConstantInitialized) {}
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.firm_ids_)*/{}
+  , /*decltype(_impl_._firm_ids_cached_byte_size_)*/{0}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct AddFirmResponseDefaultTypeInternal {
   PROTOBUF_CONSTEXPR AddFirmResponseDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -49,7 +52,8 @@ struct AddFirmResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 AddFirmResponseDefaultTypeInternal _AddFirmResponse_default_instance_;
 PROTOBUF_CONSTEXPR RemoveFirmRequest::RemoveFirmRequest(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.firm_id_)*/0
+    /*decltype(_impl_.firm_ids_)*/{}
+  , /*decltype(_impl_._firm_ids_cached_byte_size_)*/{0}
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct RemoveFirmRequestDefaultTypeInternal {
   PROTOBUF_CONSTEXPR RemoveFirmRequestDefaultTypeInternal()
@@ -73,7 +77,8 @@ struct RemoveFirmResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 RemoveFirmResponseDefaultTypeInternal _RemoveFirmResponse_default_instance_;
 PROTOBUF_CONSTEXPR GetFirmRequest::GetFirmRequest(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.firm_id_)*/0
+    /*decltype(_impl_.firm_ids_)*/{}
+  , /*decltype(_impl_._firm_ids_cached_byte_size_)*/{0}
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct GetFirmRequestDefaultTypeInternal {
   PROTOBUF_CONSTEXPR GetFirmRequestDefaultTypeInternal()
@@ -86,7 +91,7 @@ struct GetFirmRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetFirmRequestDefaultTypeInternal _GetFirmRequest_default_instance_;
 PROTOBUF_CONSTEXPR GetFirmResponse::GetFirmResponse(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.firm_)*/nullptr
+    /*decltype(_impl_.firms_)*/{}
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct GetFirmResponseDefaultTypeInternal {
   PROTOBUF_CONSTEXPR GetFirmResponseDefaultTypeInternal()
@@ -99,7 +104,7 @@ struct GetFirmResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetFirmResponseDefaultTypeInternal _GetFirmResponse_default_instance_;
 PROTOBUF_CONSTEXPR UpdateFirmRequest::UpdateFirmRequest(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.firm_)*/nullptr
+    /*decltype(_impl_.firms_)*/{}
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct UpdateFirmRequestDefaultTypeInternal {
   PROTOBUF_CONSTEXPR UpdateFirmRequestDefaultTypeInternal()
@@ -147,6 +152,19 @@ struct ListFirmsResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ListFirmsResponseDefaultTypeInternal _ListFirmsResponse_default_instance_;
 PROTOBUF_CONSTEXPR DeltaUpdateFirmRequest::DeltaUpdateFirmRequest(
     ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.updates_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct DeltaUpdateFirmRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR DeltaUpdateFirmRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~DeltaUpdateFirmRequestDefaultTypeInternal() {}
+  union {
+    DeltaUpdateFirmRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 DeltaUpdateFirmRequestDefaultTypeInternal _DeltaUpdateFirmRequest_default_instance_;
+PROTOBUF_CONSTEXPR FirmDeltaUpdate::FirmDeltaUpdate(
+    ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_._has_bits_)*/{}
   , /*decltype(_impl_._cached_size_)*/{}
   , /*decltype(_impl_.add_employees_)*/{}
@@ -159,15 +177,15 @@ PROTOBUF_CONSTEXPR DeltaUpdateFirmRequest::DeltaUpdateFirmRequest(
   , /*decltype(_impl_.delta_demand_)*/0
   , /*decltype(_impl_.delta_sales_)*/0
   , /*decltype(_impl_.delta_currency_)*/0} {}
-struct DeltaUpdateFirmRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR DeltaUpdateFirmRequestDefaultTypeInternal()
+struct FirmDeltaUpdateDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR FirmDeltaUpdateDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
-  ~DeltaUpdateFirmRequestDefaultTypeInternal() {}
+  ~FirmDeltaUpdateDefaultTypeInternal() {}
   union {
-    DeltaUpdateFirmRequest _instance;
+    FirmDeltaUpdate _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 DeltaUpdateFirmRequestDefaultTypeInternal _DeltaUpdateFirmRequest_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 FirmDeltaUpdateDefaultTypeInternal _FirmDeltaUpdate_default_instance_;
 PROTOBUF_CONSTEXPR DeltaUpdateFirmResponse::DeltaUpdateFirmResponse(
     ::_pbi::ConstantInitialized) {}
 struct DeltaUpdateFirmResponseDefaultTypeInternal {
@@ -179,133 +197,6 @@ struct DeltaUpdateFirmResponseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 DeltaUpdateFirmResponseDefaultTypeInternal _DeltaUpdateFirmResponse_default_instance_;
-PROTOBUF_CONSTEXPR BatchAddFirmRequest::BatchAddFirmRequest(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.firms_)*/{}
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct BatchAddFirmRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR BatchAddFirmRequestDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~BatchAddFirmRequestDefaultTypeInternal() {}
-  union {
-    BatchAddFirmRequest _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BatchAddFirmRequestDefaultTypeInternal _BatchAddFirmRequest_default_instance_;
-PROTOBUF_CONSTEXPR BatchAddFirmResponse::BatchAddFirmResponse(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.firm_ids_)*/{}
-  , /*decltype(_impl_._firm_ids_cached_byte_size_)*/{0}
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct BatchAddFirmResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR BatchAddFirmResponseDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~BatchAddFirmResponseDefaultTypeInternal() {}
-  union {
-    BatchAddFirmResponse _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BatchAddFirmResponseDefaultTypeInternal _BatchAddFirmResponse_default_instance_;
-PROTOBUF_CONSTEXPR BatchRemoveFirmRequest::BatchRemoveFirmRequest(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.firm_ids_)*/{}
-  , /*decltype(_impl_._firm_ids_cached_byte_size_)*/{0}
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct BatchRemoveFirmRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR BatchRemoveFirmRequestDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~BatchRemoveFirmRequestDefaultTypeInternal() {}
-  union {
-    BatchRemoveFirmRequest _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BatchRemoveFirmRequestDefaultTypeInternal _BatchRemoveFirmRequest_default_instance_;
-PROTOBUF_CONSTEXPR BatchRemoveFirmResponse::BatchRemoveFirmResponse(
-    ::_pbi::ConstantInitialized) {}
-struct BatchRemoveFirmResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR BatchRemoveFirmResponseDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~BatchRemoveFirmResponseDefaultTypeInternal() {}
-  union {
-    BatchRemoveFirmResponse _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BatchRemoveFirmResponseDefaultTypeInternal _BatchRemoveFirmResponse_default_instance_;
-PROTOBUF_CONSTEXPR BatchGetFirmRequest::BatchGetFirmRequest(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.firm_ids_)*/{}
-  , /*decltype(_impl_._firm_ids_cached_byte_size_)*/{0}
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct BatchGetFirmRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR BatchGetFirmRequestDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~BatchGetFirmRequestDefaultTypeInternal() {}
-  union {
-    BatchGetFirmRequest _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BatchGetFirmRequestDefaultTypeInternal _BatchGetFirmRequest_default_instance_;
-PROTOBUF_CONSTEXPR BatchGetFirmResponse::BatchGetFirmResponse(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.firms_)*/{}
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct BatchGetFirmResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR BatchGetFirmResponseDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~BatchGetFirmResponseDefaultTypeInternal() {}
-  union {
-    BatchGetFirmResponse _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BatchGetFirmResponseDefaultTypeInternal _BatchGetFirmResponse_default_instance_;
-PROTOBUF_CONSTEXPR BatchUpdateFirmRequest::BatchUpdateFirmRequest(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.firms_)*/{}
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct BatchUpdateFirmRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR BatchUpdateFirmRequestDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~BatchUpdateFirmRequestDefaultTypeInternal() {}
-  union {
-    BatchUpdateFirmRequest _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BatchUpdateFirmRequestDefaultTypeInternal _BatchUpdateFirmRequest_default_instance_;
-PROTOBUF_CONSTEXPR BatchUpdateFirmResponse::BatchUpdateFirmResponse(
-    ::_pbi::ConstantInitialized) {}
-struct BatchUpdateFirmResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR BatchUpdateFirmResponseDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~BatchUpdateFirmResponseDefaultTypeInternal() {}
-  union {
-    BatchUpdateFirmResponse _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BatchUpdateFirmResponseDefaultTypeInternal _BatchUpdateFirmResponse_default_instance_;
-PROTOBUF_CONSTEXPR BatchDeltaUpdateFirmRequest::BatchDeltaUpdateFirmRequest(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.updates_)*/{}
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct BatchDeltaUpdateFirmRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR BatchDeltaUpdateFirmRequestDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~BatchDeltaUpdateFirmRequestDefaultTypeInternal() {}
-  union {
-    BatchDeltaUpdateFirmRequest _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BatchDeltaUpdateFirmRequestDefaultTypeInternal _BatchDeltaUpdateFirmRequest_default_instance_;
-PROTOBUF_CONSTEXPR BatchDeltaUpdateFirmResponse::BatchDeltaUpdateFirmResponse(
-    ::_pbi::ConstantInitialized) {}
-struct BatchDeltaUpdateFirmResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR BatchDeltaUpdateFirmResponseDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~BatchDeltaUpdateFirmResponseDefaultTypeInternal() {}
-  union {
-    BatchDeltaUpdateFirmResponse _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BatchDeltaUpdateFirmResponseDefaultTypeInternal _BatchDeltaUpdateFirmResponse_default_instance_;
 PROTOBUF_CONSTEXPR AddNBSRequest::AddNBSRequest(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.nbs_)*/nullptr
@@ -552,14 +443,14 @@ PROTOBUF_CONSTEXPR DeltaUpdateNBSRequest::DeltaUpdateNBSRequest(
   , /*decltype(_impl_.delta_consumption_currency_)*/{::_pbi::ConstantInitialized()}
   , /*decltype(_impl_.delta_income_currency_)*/{::_pbi::ConstantInitialized()}
   , /*decltype(_impl_.delta_locus_control_)*/{::_pbi::ConstantInitialized()}
-  , /*decltype(_impl_.add_citizens_)*/{}
-  , /*decltype(_impl_._add_citizens_cached_byte_size_)*/{0}
-  , /*decltype(_impl_.remove_citizens_)*/{}
-  , /*decltype(_impl_._remove_citizens_cached_byte_size_)*/{0}
-  , /*decltype(_impl_.add_citizens_agent_id_)*/{}
-  , /*decltype(_impl_._add_citizens_agent_id_cached_byte_size_)*/{0}
-  , /*decltype(_impl_.remove_citizens_agent_id_)*/{}
-  , /*decltype(_impl_._remove_citizens_agent_id_cached_byte_size_)*/{0}
+  , /*decltype(_impl_.add_citizen_ids_)*/{}
+  , /*decltype(_impl_._add_citizen_ids_cached_byte_size_)*/{0}
+  , /*decltype(_impl_.remove_citizen_ids_)*/{}
+  , /*decltype(_impl_._remove_citizen_ids_cached_byte_size_)*/{0}
+  , /*decltype(_impl_.add_citizen_agent_ids_)*/{}
+  , /*decltype(_impl_._add_citizen_agent_ids_cached_byte_size_)*/{0}
+  , /*decltype(_impl_.remove_citizen_agent_ids_)*/{}
+  , /*decltype(_impl_._remove_citizen_agent_ids_cached_byte_size_)*/{0}
   , /*decltype(_impl_.nbs_id_)*/0
   , /*decltype(_impl_.delta_currency_)*/0} {}
 struct DeltaUpdateNBSRequestDefaultTypeInternal {
@@ -710,10 +601,10 @@ PROTOBUF_CONSTEXPR DeltaUpdateGovernmentRequest::DeltaUpdateGovernmentRequest(
   , /*decltype(_impl_._cached_size_)*/{}
   , /*decltype(_impl_.delta_bracket_cutoffs_)*/{}
   , /*decltype(_impl_.delta_bracket_rates_)*/{}
-  , /*decltype(_impl_.add_citizens_)*/{}
-  , /*decltype(_impl_._add_citizens_cached_byte_size_)*/{0}
-  , /*decltype(_impl_.remove_citizens_)*/{}
-  , /*decltype(_impl_._remove_citizens_cached_byte_size_)*/{0}
+  , /*decltype(_impl_.add_citizen_ids_)*/{}
+  , /*decltype(_impl_._add_citizen_ids_cached_byte_size_)*/{0}
+  , /*decltype(_impl_.remove_citizen_ids_)*/{}
+  , /*decltype(_impl_._remove_citizen_ids_cached_byte_size_)*/{0}
   , /*decltype(_impl_.government_id_)*/0
   , /*decltype(_impl_.delta_currency_)*/0} {}
 struct DeltaUpdateGovernmentRequestDefaultTypeInternal {
@@ -862,10 +753,10 @@ PROTOBUF_CONSTEXPR DeltaUpdateBankRequest::DeltaUpdateBankRequest(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_._has_bits_)*/{}
   , /*decltype(_impl_._cached_size_)*/{}
-  , /*decltype(_impl_.add_citizens_)*/{}
-  , /*decltype(_impl_._add_citizens_cached_byte_size_)*/{0}
-  , /*decltype(_impl_.remove_citizens_)*/{}
-  , /*decltype(_impl_._remove_citizens_cached_byte_size_)*/{0}
+  , /*decltype(_impl_.add_citizen_ids_)*/{}
+  , /*decltype(_impl_._add_citizen_ids_cached_byte_size_)*/{0}
+  , /*decltype(_impl_.remove_citizen_ids_)*/{}
+  , /*decltype(_impl_._remove_citizen_ids_cached_byte_size_)*/{0}
   , /*decltype(_impl_.bank_id_)*/0
   , /*decltype(_impl_.delta_interest_rate_)*/0
   , /*decltype(_impl_.delta_currency_)*/0} {}
@@ -891,7 +782,7 @@ struct DeltaUpdateBankResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 DeltaUpdateBankResponseDefaultTypeInternal _DeltaUpdateBankResponse_default_instance_;
 PROTOBUF_CONSTEXPR AddAgentRequest::AddAgentRequest(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.agent_)*/nullptr
+    /*decltype(_impl_.agents_)*/{}
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct AddAgentRequestDefaultTypeInternal {
   PROTOBUF_CONSTEXPR AddAgentRequestDefaultTypeInternal()
@@ -903,7 +794,10 @@ struct AddAgentRequestDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 AddAgentRequestDefaultTypeInternal _AddAgentRequest_default_instance_;
 PROTOBUF_CONSTEXPR AddAgentResponse::AddAgentResponse(
-    ::_pbi::ConstantInitialized) {}
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.agent_ids_)*/{}
+  , /*decltype(_impl_._agent_ids_cached_byte_size_)*/{0}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct AddAgentResponseDefaultTypeInternal {
   PROTOBUF_CONSTEXPR AddAgentResponseDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -915,7 +809,8 @@ struct AddAgentResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 AddAgentResponseDefaultTypeInternal _AddAgentResponse_default_instance_;
 PROTOBUF_CONSTEXPR RemoveAgentRequest::RemoveAgentRequest(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.agent_id_)*/0
+    /*decltype(_impl_.agent_ids_)*/{}
+  , /*decltype(_impl_._agent_ids_cached_byte_size_)*/{0}
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct RemoveAgentRequestDefaultTypeInternal {
   PROTOBUF_CONSTEXPR RemoveAgentRequestDefaultTypeInternal()
@@ -939,7 +834,8 @@ struct RemoveAgentResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 RemoveAgentResponseDefaultTypeInternal _RemoveAgentResponse_default_instance_;
 PROTOBUF_CONSTEXPR GetAgentRequest::GetAgentRequest(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.agent_id_)*/0
+    /*decltype(_impl_.agent_ids_)*/{}
+  , /*decltype(_impl_._agent_ids_cached_byte_size_)*/{0}
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct GetAgentRequestDefaultTypeInternal {
   PROTOBUF_CONSTEXPR GetAgentRequestDefaultTypeInternal()
@@ -952,7 +848,7 @@ struct GetAgentRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetAgentRequestDefaultTypeInternal _GetAgentRequest_default_instance_;
 PROTOBUF_CONSTEXPR GetAgentResponse::GetAgentResponse(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.agent_)*/nullptr
+    /*decltype(_impl_.agents_)*/{}
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct GetAgentResponseDefaultTypeInternal {
   PROTOBUF_CONSTEXPR GetAgentResponseDefaultTypeInternal()
@@ -965,7 +861,7 @@ struct GetAgentResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetAgentResponseDefaultTypeInternal _GetAgentResponse_default_instance_;
 PROTOBUF_CONSTEXPR UpdateAgentRequest::UpdateAgentRequest(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.agent_)*/nullptr
+    /*decltype(_impl_.agents_)*/{}
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct UpdateAgentRequestDefaultTypeInternal {
   PROTOBUF_CONSTEXPR UpdateAgentRequestDefaultTypeInternal()
@@ -1013,14 +909,8 @@ struct ListAgentsResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ListAgentsResponseDefaultTypeInternal _ListAgentsResponse_default_instance_;
 PROTOBUF_CONSTEXPR DeltaUpdateAgentRequest::DeltaUpdateAgentRequest(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_._has_bits_)*/{}
-  , /*decltype(_impl_._cached_size_)*/{}
-  , /*decltype(_impl_.agent_id_)*/0
-  , /*decltype(_impl_.delta_currency_)*/0
-  , /*decltype(_impl_.new_firm_id_)*/0
-  , /*decltype(_impl_.delta_skill_)*/0
-  , /*decltype(_impl_.delta_consumption_)*/0
-  , /*decltype(_impl_.delta_income_)*/0} {}
+    /*decltype(_impl_.updates_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
 struct DeltaUpdateAgentRequestDefaultTypeInternal {
   PROTOBUF_CONSTEXPR DeltaUpdateAgentRequestDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -1030,6 +920,25 @@ struct DeltaUpdateAgentRequestDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 DeltaUpdateAgentRequestDefaultTypeInternal _DeltaUpdateAgentRequest_default_instance_;
+PROTOBUF_CONSTEXPR AgentDeltaUpdate::AgentDeltaUpdate(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_._has_bits_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}
+  , /*decltype(_impl_.agent_id_)*/0
+  , /*decltype(_impl_.delta_currency_)*/0
+  , /*decltype(_impl_.new_firm_id_)*/0
+  , /*decltype(_impl_.delta_skill_)*/0
+  , /*decltype(_impl_.delta_consumption_)*/0
+  , /*decltype(_impl_.delta_income_)*/0} {}
+struct AgentDeltaUpdateDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR AgentDeltaUpdateDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~AgentDeltaUpdateDefaultTypeInternal() {}
+  union {
+    AgentDeltaUpdate _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 AgentDeltaUpdateDefaultTypeInternal _AgentDeltaUpdate_default_instance_;
 PROTOBUF_CONSTEXPR DeltaUpdateAgentResponse::DeltaUpdateAgentResponse(
     ::_pbi::ConstantInitialized) {}
 struct DeltaUpdateAgentResponseDefaultTypeInternal {
@@ -1041,133 +950,6 @@ struct DeltaUpdateAgentResponseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 DeltaUpdateAgentResponseDefaultTypeInternal _DeltaUpdateAgentResponse_default_instance_;
-PROTOBUF_CONSTEXPR BatchAddAgentRequest::BatchAddAgentRequest(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.agents_)*/{}
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct BatchAddAgentRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR BatchAddAgentRequestDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~BatchAddAgentRequestDefaultTypeInternal() {}
-  union {
-    BatchAddAgentRequest _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BatchAddAgentRequestDefaultTypeInternal _BatchAddAgentRequest_default_instance_;
-PROTOBUF_CONSTEXPR BatchAddAgentResponse::BatchAddAgentResponse(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.agent_ids_)*/{}
-  , /*decltype(_impl_._agent_ids_cached_byte_size_)*/{0}
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct BatchAddAgentResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR BatchAddAgentResponseDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~BatchAddAgentResponseDefaultTypeInternal() {}
-  union {
-    BatchAddAgentResponse _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BatchAddAgentResponseDefaultTypeInternal _BatchAddAgentResponse_default_instance_;
-PROTOBUF_CONSTEXPR BatchRemoveAgentRequest::BatchRemoveAgentRequest(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.agent_ids_)*/{}
-  , /*decltype(_impl_._agent_ids_cached_byte_size_)*/{0}
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct BatchRemoveAgentRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR BatchRemoveAgentRequestDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~BatchRemoveAgentRequestDefaultTypeInternal() {}
-  union {
-    BatchRemoveAgentRequest _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BatchRemoveAgentRequestDefaultTypeInternal _BatchRemoveAgentRequest_default_instance_;
-PROTOBUF_CONSTEXPR BatchRemoveAgentResponse::BatchRemoveAgentResponse(
-    ::_pbi::ConstantInitialized) {}
-struct BatchRemoveAgentResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR BatchRemoveAgentResponseDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~BatchRemoveAgentResponseDefaultTypeInternal() {}
-  union {
-    BatchRemoveAgentResponse _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BatchRemoveAgentResponseDefaultTypeInternal _BatchRemoveAgentResponse_default_instance_;
-PROTOBUF_CONSTEXPR BatchGetAgentRequest::BatchGetAgentRequest(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.agent_ids_)*/{}
-  , /*decltype(_impl_._agent_ids_cached_byte_size_)*/{0}
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct BatchGetAgentRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR BatchGetAgentRequestDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~BatchGetAgentRequestDefaultTypeInternal() {}
-  union {
-    BatchGetAgentRequest _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BatchGetAgentRequestDefaultTypeInternal _BatchGetAgentRequest_default_instance_;
-PROTOBUF_CONSTEXPR BatchGetAgentResponse::BatchGetAgentResponse(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.agents_)*/{}
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct BatchGetAgentResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR BatchGetAgentResponseDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~BatchGetAgentResponseDefaultTypeInternal() {}
-  union {
-    BatchGetAgentResponse _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BatchGetAgentResponseDefaultTypeInternal _BatchGetAgentResponse_default_instance_;
-PROTOBUF_CONSTEXPR BatchUpdateAgentRequest::BatchUpdateAgentRequest(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.agents_)*/{}
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct BatchUpdateAgentRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR BatchUpdateAgentRequestDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~BatchUpdateAgentRequestDefaultTypeInternal() {}
-  union {
-    BatchUpdateAgentRequest _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BatchUpdateAgentRequestDefaultTypeInternal _BatchUpdateAgentRequest_default_instance_;
-PROTOBUF_CONSTEXPR BatchUpdateAgentResponse::BatchUpdateAgentResponse(
-    ::_pbi::ConstantInitialized) {}
-struct BatchUpdateAgentResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR BatchUpdateAgentResponseDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~BatchUpdateAgentResponseDefaultTypeInternal() {}
-  union {
-    BatchUpdateAgentResponse _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BatchUpdateAgentResponseDefaultTypeInternal _BatchUpdateAgentResponse_default_instance_;
-PROTOBUF_CONSTEXPR BatchDeltaUpdateAgentRequest::BatchDeltaUpdateAgentRequest(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.updates_)*/{}
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct BatchDeltaUpdateAgentRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR BatchDeltaUpdateAgentRequestDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~BatchDeltaUpdateAgentRequestDefaultTypeInternal() {}
-  union {
-    BatchDeltaUpdateAgentRequest _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BatchDeltaUpdateAgentRequestDefaultTypeInternal _BatchDeltaUpdateAgentRequest_default_instance_;
-PROTOBUF_CONSTEXPR BatchDeltaUpdateAgentResponse::BatchDeltaUpdateAgentResponse(
-    ::_pbi::ConstantInitialized) {}
-struct BatchDeltaUpdateAgentResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR BatchDeltaUpdateAgentResponseDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~BatchDeltaUpdateAgentResponseDefaultTypeInternal() {}
-  union {
-    BatchDeltaUpdateAgentResponse _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BatchDeltaUpdateAgentResponseDefaultTypeInternal _BatchDeltaUpdateAgentResponse_default_instance_;
 PROTOBUF_CONSTEXPR CalculateTaxesDueRequest::CalculateTaxesDueRequest(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.agent_ids_)*/{}
@@ -1360,7 +1142,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORIT
 }  // namespace v2
 }  // namespace economy
 }  // namespace city
-static ::_pb::Metadata file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[102];
+static ::_pb::Metadata file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[84];
 static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_city_2feconomy_2fv2_2forg_5fservice_2eproto = nullptr;
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_city_2feconomy_2fv2_2forg_5fservice_2eproto = nullptr;
 
@@ -1371,20 +1153,21 @@ const uint32_t TableStruct_city_2feconomy_2fv2_2forg_5fservice_2eproto::offsets[
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::AddFirmRequest, _impl_.firm_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::AddFirmRequest, _impl_.firms_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::AddFirmResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::AddFirmResponse, _impl_.firm_ids_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::RemoveFirmRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::RemoveFirmRequest, _impl_.firm_id_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::RemoveFirmRequest, _impl_.firm_ids_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::RemoveFirmResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -1397,21 +1180,21 @@ const uint32_t TableStruct_city_2feconomy_2fv2_2forg_5fservice_2eproto::offsets[
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::GetFirmRequest, _impl_.firm_id_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::GetFirmRequest, _impl_.firm_ids_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::GetFirmResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::GetFirmResponse, _impl_.firm_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::GetFirmResponse, _impl_.firms_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::UpdateFirmRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::UpdateFirmRequest, _impl_.firm_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::UpdateFirmRequest, _impl_.firms_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::UpdateFirmResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -1431,20 +1214,27 @@ const uint32_t TableStruct_city_2feconomy_2fv2_2forg_5fservice_2eproto::offsets[
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::ListFirmsResponse, _impl_.firms_),
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::DeltaUpdateFirmRequest, _impl_._has_bits_),
+  ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::DeltaUpdateFirmRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::DeltaUpdateFirmRequest, _impl_.firm_id_),
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::DeltaUpdateFirmRequest, _impl_.delta_price_),
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::DeltaUpdateFirmRequest, _impl_.delta_inventory_),
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::DeltaUpdateFirmRequest, _impl_.delta_demand_),
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::DeltaUpdateFirmRequest, _impl_.delta_sales_),
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::DeltaUpdateFirmRequest, _impl_.delta_currency_),
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::DeltaUpdateFirmRequest, _impl_.add_employees_),
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::DeltaUpdateFirmRequest, _impl_.remove_employees_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::DeltaUpdateFirmRequest, _impl_.updates_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::FirmDeltaUpdate, _impl_._has_bits_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::FirmDeltaUpdate, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::FirmDeltaUpdate, _impl_.firm_id_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::FirmDeltaUpdate, _impl_.delta_price_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::FirmDeltaUpdate, _impl_.delta_inventory_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::FirmDeltaUpdate, _impl_.delta_demand_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::FirmDeltaUpdate, _impl_.delta_sales_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::FirmDeltaUpdate, _impl_.delta_currency_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::FirmDeltaUpdate, _impl_.add_employees_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::FirmDeltaUpdate, _impl_.remove_employees_),
   ~0u,
   0,
   1,
@@ -1455,73 +1245,6 @@ const uint32_t TableStruct_city_2feconomy_2fv2_2forg_5fservice_2eproto::offsets[
   ~0u,
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::DeltaUpdateFirmResponse, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::BatchAddFirmRequest, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::BatchAddFirmRequest, _impl_.firms_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::BatchAddFirmResponse, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::BatchAddFirmResponse, _impl_.firm_ids_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::BatchRemoveFirmRequest, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::BatchRemoveFirmRequest, _impl_.firm_ids_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::BatchRemoveFirmResponse, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::BatchGetFirmRequest, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::BatchGetFirmRequest, _impl_.firm_ids_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::BatchGetFirmResponse, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::BatchGetFirmResponse, _impl_.firms_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::BatchUpdateFirmRequest, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::BatchUpdateFirmRequest, _impl_.firms_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::BatchUpdateFirmResponse, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::BatchDeltaUpdateFirmRequest, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::BatchDeltaUpdateFirmRequest, _impl_.updates_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::BatchDeltaUpdateFirmResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
@@ -1710,10 +1433,10 @@ const uint32_t TableStruct_city_2feconomy_2fv2_2forg_5fservice_2eproto::offsets[
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::DeltaUpdateNBSRequest, _impl_.delta_income_currency_),
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::DeltaUpdateNBSRequest, _impl_.delta_locus_control_),
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::DeltaUpdateNBSRequest, _impl_.delta_currency_),
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::DeltaUpdateNBSRequest, _impl_.add_citizens_),
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::DeltaUpdateNBSRequest, _impl_.remove_citizens_),
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::DeltaUpdateNBSRequest, _impl_.add_citizens_agent_id_),
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::DeltaUpdateNBSRequest, _impl_.remove_citizens_agent_id_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::DeltaUpdateNBSRequest, _impl_.add_citizen_ids_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::DeltaUpdateNBSRequest, _impl_.remove_citizen_ids_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::DeltaUpdateNBSRequest, _impl_.add_citizen_agent_ids_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::DeltaUpdateNBSRequest, _impl_.remove_citizen_agent_ids_),
   ~0u,
   ~0u,
   ~0u,
@@ -1812,8 +1535,8 @@ const uint32_t TableStruct_city_2feconomy_2fv2_2forg_5fservice_2eproto::offsets[
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::DeltaUpdateGovernmentRequest, _impl_.delta_bracket_cutoffs_),
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::DeltaUpdateGovernmentRequest, _impl_.delta_bracket_rates_),
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::DeltaUpdateGovernmentRequest, _impl_.delta_currency_),
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::DeltaUpdateGovernmentRequest, _impl_.add_citizens_),
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::DeltaUpdateGovernmentRequest, _impl_.remove_citizens_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::DeltaUpdateGovernmentRequest, _impl_.add_citizen_ids_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::DeltaUpdateGovernmentRequest, _impl_.remove_citizen_ids_),
   ~0u,
   ~0u,
   ~0u,
@@ -1901,8 +1624,8 @@ const uint32_t TableStruct_city_2feconomy_2fv2_2forg_5fservice_2eproto::offsets[
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::DeltaUpdateBankRequest, _impl_.bank_id_),
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::DeltaUpdateBankRequest, _impl_.delta_interest_rate_),
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::DeltaUpdateBankRequest, _impl_.delta_currency_),
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::DeltaUpdateBankRequest, _impl_.add_citizens_),
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::DeltaUpdateBankRequest, _impl_.remove_citizens_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::DeltaUpdateBankRequest, _impl_.add_citizen_ids_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::DeltaUpdateBankRequest, _impl_.remove_citizen_ids_),
   ~0u,
   0,
   1,
@@ -1920,20 +1643,21 @@ const uint32_t TableStruct_city_2feconomy_2fv2_2forg_5fservice_2eproto::offsets[
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::AddAgentRequest, _impl_.agent_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::AddAgentRequest, _impl_.agents_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::AddAgentResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::AddAgentResponse, _impl_.agent_ids_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::RemoveAgentRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::RemoveAgentRequest, _impl_.agent_id_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::RemoveAgentRequest, _impl_.agent_ids_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::RemoveAgentResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -1946,21 +1670,21 @@ const uint32_t TableStruct_city_2feconomy_2fv2_2forg_5fservice_2eproto::offsets[
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::GetAgentRequest, _impl_.agent_id_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::GetAgentRequest, _impl_.agent_ids_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::GetAgentResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::GetAgentResponse, _impl_.agent_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::GetAgentResponse, _impl_.agents_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::UpdateAgentRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::UpdateAgentRequest, _impl_.agent_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::UpdateAgentRequest, _impl_.agents_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::UpdateAgentResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -1980,18 +1704,25 @@ const uint32_t TableStruct_city_2feconomy_2fv2_2forg_5fservice_2eproto::offsets[
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::ListAgentsResponse, _impl_.agents_),
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::DeltaUpdateAgentRequest, _impl_._has_bits_),
+  ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::DeltaUpdateAgentRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::DeltaUpdateAgentRequest, _impl_.agent_id_),
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::DeltaUpdateAgentRequest, _impl_.delta_currency_),
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::DeltaUpdateAgentRequest, _impl_.new_firm_id_),
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::DeltaUpdateAgentRequest, _impl_.delta_skill_),
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::DeltaUpdateAgentRequest, _impl_.delta_consumption_),
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::DeltaUpdateAgentRequest, _impl_.delta_income_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::DeltaUpdateAgentRequest, _impl_.updates_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::AgentDeltaUpdate, _impl_._has_bits_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::AgentDeltaUpdate, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::AgentDeltaUpdate, _impl_.agent_id_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::AgentDeltaUpdate, _impl_.delta_currency_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::AgentDeltaUpdate, _impl_.new_firm_id_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::AgentDeltaUpdate, _impl_.delta_skill_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::AgentDeltaUpdate, _impl_.delta_consumption_),
+  PROTOBUF_FIELD_OFFSET(::city::economy::v2::AgentDeltaUpdate, _impl_.delta_income_),
   ~0u,
   0,
   1,
@@ -2000,73 +1731,6 @@ const uint32_t TableStruct_city_2feconomy_2fv2_2forg_5fservice_2eproto::offsets[
   4,
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::city::economy::v2::DeltaUpdateAgentResponse, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::BatchAddAgentRequest, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::BatchAddAgentRequest, _impl_.agents_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::BatchAddAgentResponse, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::BatchAddAgentResponse, _impl_.agent_ids_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::BatchRemoveAgentRequest, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::BatchRemoveAgentRequest, _impl_.agent_ids_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::BatchRemoveAgentResponse, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::BatchGetAgentRequest, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::BatchGetAgentRequest, _impl_.agent_ids_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::BatchGetAgentResponse, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::BatchGetAgentResponse, _impl_.agents_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::BatchUpdateAgentRequest, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::BatchUpdateAgentRequest, _impl_.agents_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::BatchUpdateAgentResponse, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::BatchDeltaUpdateAgentRequest, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::BatchDeltaUpdateAgentRequest, _impl_.updates_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::city::economy::v2::BatchDeltaUpdateAgentResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
@@ -2181,106 +1845,88 @@ const uint32_t TableStruct_city_2feconomy_2fv2_2forg_5fservice_2eproto::offsets[
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::city::economy::v2::AddFirmRequest)},
   { 7, -1, -1, sizeof(::city::economy::v2::AddFirmResponse)},
-  { 13, -1, -1, sizeof(::city::economy::v2::RemoveFirmRequest)},
-  { 20, -1, -1, sizeof(::city::economy::v2::RemoveFirmResponse)},
-  { 26, -1, -1, sizeof(::city::economy::v2::GetFirmRequest)},
-  { 33, -1, -1, sizeof(::city::economy::v2::GetFirmResponse)},
-  { 40, -1, -1, sizeof(::city::economy::v2::UpdateFirmRequest)},
-  { 47, -1, -1, sizeof(::city::economy::v2::UpdateFirmResponse)},
-  { 53, -1, -1, sizeof(::city::economy::v2::ListFirmsRequest)},
-  { 59, -1, -1, sizeof(::city::economy::v2::ListFirmsResponse)},
-  { 66, 80, -1, sizeof(::city::economy::v2::DeltaUpdateFirmRequest)},
-  { 88, -1, -1, sizeof(::city::economy::v2::DeltaUpdateFirmResponse)},
-  { 94, -1, -1, sizeof(::city::economy::v2::BatchAddFirmRequest)},
-  { 101, -1, -1, sizeof(::city::economy::v2::BatchAddFirmResponse)},
-  { 108, -1, -1, sizeof(::city::economy::v2::BatchRemoveFirmRequest)},
-  { 115, -1, -1, sizeof(::city::economy::v2::BatchRemoveFirmResponse)},
-  { 121, -1, -1, sizeof(::city::economy::v2::BatchGetFirmRequest)},
-  { 128, -1, -1, sizeof(::city::economy::v2::BatchGetFirmResponse)},
-  { 135, -1, -1, sizeof(::city::economy::v2::BatchUpdateFirmRequest)},
-  { 142, -1, -1, sizeof(::city::economy::v2::BatchUpdateFirmResponse)},
-  { 148, -1, -1, sizeof(::city::economy::v2::BatchDeltaUpdateFirmRequest)},
-  { 155, -1, -1, sizeof(::city::economy::v2::BatchDeltaUpdateFirmResponse)},
-  { 161, -1, -1, sizeof(::city::economy::v2::AddNBSRequest)},
-  { 168, -1, -1, sizeof(::city::economy::v2::AddNBSResponse)},
-  { 174, -1, -1, sizeof(::city::economy::v2::RemoveNBSRequest)},
-  { 181, -1, -1, sizeof(::city::economy::v2::RemoveNBSResponse)},
-  { 187, -1, -1, sizeof(::city::economy::v2::GetNBSRequest)},
-  { 194, -1, -1, sizeof(::city::economy::v2::GetNBSResponse)},
-  { 201, -1, -1, sizeof(::city::economy::v2::UpdateNBSRequest)},
-  { 208, -1, -1, sizeof(::city::economy::v2::UpdateNBSResponse)},
-  { 214, -1, -1, sizeof(::city::economy::v2::ListNBSRequest)},
-  { 220, -1, -1, sizeof(::city::economy::v2::ListNBSResponse)},
-  { 227, 235, -1, sizeof(::city::economy::v2::DeltaUpdateNBSRequest_DeltaNominalGdpEntry_DoNotUse)},
-  { 237, 245, -1, sizeof(::city::economy::v2::DeltaUpdateNBSRequest_DeltaRealGdpEntry_DoNotUse)},
-  { 247, 255, -1, sizeof(::city::economy::v2::DeltaUpdateNBSRequest_DeltaUnemploymentEntry_DoNotUse)},
-  { 257, 265, -1, sizeof(::city::economy::v2::DeltaUpdateNBSRequest_DeltaWagesEntry_DoNotUse)},
-  { 267, 275, -1, sizeof(::city::economy::v2::DeltaUpdateNBSRequest_DeltaPricesEntry_DoNotUse)},
-  { 277, 285, -1, sizeof(::city::economy::v2::DeltaUpdateNBSRequest_DeltaWorkingHoursEntry_DoNotUse)},
-  { 287, 295, -1, sizeof(::city::economy::v2::DeltaUpdateNBSRequest_DeltaDepressionEntry_DoNotUse)},
-  { 297, 305, -1, sizeof(::city::economy::v2::DeltaUpdateNBSRequest_DeltaConsumptionCurrencyEntry_DoNotUse)},
-  { 307, 315, -1, sizeof(::city::economy::v2::DeltaUpdateNBSRequest_DeltaIncomeCurrencyEntry_DoNotUse)},
-  { 317, 325, -1, sizeof(::city::economy::v2::DeltaUpdateNBSRequest_DeltaLocusControlEntry_DoNotUse)},
-  { 327, 349, -1, sizeof(::city::economy::v2::DeltaUpdateNBSRequest)},
-  { 365, -1, -1, sizeof(::city::economy::v2::DeltaUpdateNBSResponse)},
-  { 371, -1, -1, sizeof(::city::economy::v2::AddGovernmentRequest)},
-  { 378, -1, -1, sizeof(::city::economy::v2::AddGovernmentResponse)},
-  { 384, -1, -1, sizeof(::city::economy::v2::RemoveGovernmentRequest)},
-  { 391, -1, -1, sizeof(::city::economy::v2::RemoveGovernmentResponse)},
-  { 397, -1, -1, sizeof(::city::economy::v2::GetGovernmentRequest)},
-  { 404, -1, -1, sizeof(::city::economy::v2::GetGovernmentResponse)},
-  { 411, -1, -1, sizeof(::city::economy::v2::UpdateGovernmentRequest)},
-  { 418, -1, -1, sizeof(::city::economy::v2::UpdateGovernmentResponse)},
-  { 424, -1, -1, sizeof(::city::economy::v2::ListGovernmentsRequest)},
-  { 430, -1, -1, sizeof(::city::economy::v2::ListGovernmentsResponse)},
-  { 437, 449, -1, sizeof(::city::economy::v2::DeltaUpdateGovernmentRequest)},
-  { 455, -1, -1, sizeof(::city::economy::v2::DeltaUpdateGovernmentResponse)},
-  { 461, -1, -1, sizeof(::city::economy::v2::AddBankRequest)},
-  { 468, -1, -1, sizeof(::city::economy::v2::AddBankResponse)},
-  { 474, -1, -1, sizeof(::city::economy::v2::RemoveBankRequest)},
-  { 481, -1, -1, sizeof(::city::economy::v2::RemoveBankResponse)},
-  { 487, -1, -1, sizeof(::city::economy::v2::GetBankRequest)},
-  { 494, -1, -1, sizeof(::city::economy::v2::GetBankResponse)},
-  { 501, -1, -1, sizeof(::city::economy::v2::UpdateBankRequest)},
-  { 508, -1, -1, sizeof(::city::economy::v2::UpdateBankResponse)},
-  { 514, -1, -1, sizeof(::city::economy::v2::ListBanksRequest)},
-  { 520, -1, -1, sizeof(::city::economy::v2::ListBanksResponse)},
-  { 527, 538, -1, sizeof(::city::economy::v2::DeltaUpdateBankRequest)},
-  { 543, -1, -1, sizeof(::city::economy::v2::DeltaUpdateBankResponse)},
-  { 549, -1, -1, sizeof(::city::economy::v2::AddAgentRequest)},
-  { 556, -1, -1, sizeof(::city::economy::v2::AddAgentResponse)},
-  { 562, -1, -1, sizeof(::city::economy::v2::RemoveAgentRequest)},
-  { 569, -1, -1, sizeof(::city::economy::v2::RemoveAgentResponse)},
-  { 575, -1, -1, sizeof(::city::economy::v2::GetAgentRequest)},
-  { 582, -1, -1, sizeof(::city::economy::v2::GetAgentResponse)},
-  { 589, -1, -1, sizeof(::city::economy::v2::UpdateAgentRequest)},
-  { 596, -1, -1, sizeof(::city::economy::v2::UpdateAgentResponse)},
-  { 602, -1, -1, sizeof(::city::economy::v2::ListAgentsRequest)},
-  { 608, -1, -1, sizeof(::city::economy::v2::ListAgentsResponse)},
-  { 615, 627, -1, sizeof(::city::economy::v2::DeltaUpdateAgentRequest)},
-  { 633, -1, -1, sizeof(::city::economy::v2::DeltaUpdateAgentResponse)},
-  { 639, -1, -1, sizeof(::city::economy::v2::BatchAddAgentRequest)},
-  { 646, -1, -1, sizeof(::city::economy::v2::BatchAddAgentResponse)},
-  { 653, -1, -1, sizeof(::city::economy::v2::BatchRemoveAgentRequest)},
-  { 660, -1, -1, sizeof(::city::economy::v2::BatchRemoveAgentResponse)},
-  { 666, -1, -1, sizeof(::city::economy::v2::BatchGetAgentRequest)},
-  { 673, -1, -1, sizeof(::city::economy::v2::BatchGetAgentResponse)},
-  { 680, -1, -1, sizeof(::city::economy::v2::BatchUpdateAgentRequest)},
-  { 687, -1, -1, sizeof(::city::economy::v2::BatchUpdateAgentResponse)},
-  { 693, -1, -1, sizeof(::city::economy::v2::BatchDeltaUpdateAgentRequest)},
-  { 700, -1, -1, sizeof(::city::economy::v2::BatchDeltaUpdateAgentResponse)},
-  { 706, -1, -1, sizeof(::city::economy::v2::CalculateTaxesDueRequest)},
-  { 716, -1, -1, sizeof(::city::economy::v2::CalculateTaxesDueResponse)},
-  { 724, 734, -1, sizeof(::city::economy::v2::CalculateConsumptionRequest)},
-  { 738, -1, -1, sizeof(::city::economy::v2::CalculateConsumptionResponse)},
-  { 746, -1, -1, sizeof(::city::economy::v2::CalculateInterestRequest)},
-  { 754, -1, -1, sizeof(::city::economy::v2::CalculateInterestResponse)},
-  { 762, -1, -1, sizeof(::city::economy::v2::CalculateRealGDPRequest)},
-  { 769, -1, -1, sizeof(::city::economy::v2::CalculateRealGDPResponse)},
-  { 776, -1, -1, sizeof(::city::economy::v2::SaveEconomyEntitiesRequest)},
-  { 783, -1, -1, sizeof(::city::economy::v2::SaveEconomyEntitiesResponse)},
-  { 794, -1, -1, sizeof(::city::economy::v2::LoadEconomyEntitiesRequest)},
-  { 801, -1, -1, sizeof(::city::economy::v2::LoadEconomyEntitiesResponse)},
+  { 14, -1, -1, sizeof(::city::economy::v2::RemoveFirmRequest)},
+  { 21, -1, -1, sizeof(::city::economy::v2::RemoveFirmResponse)},
+  { 27, -1, -1, sizeof(::city::economy::v2::GetFirmRequest)},
+  { 34, -1, -1, sizeof(::city::economy::v2::GetFirmResponse)},
+  { 41, -1, -1, sizeof(::city::economy::v2::UpdateFirmRequest)},
+  { 48, -1, -1, sizeof(::city::economy::v2::UpdateFirmResponse)},
+  { 54, -1, -1, sizeof(::city::economy::v2::ListFirmsRequest)},
+  { 60, -1, -1, sizeof(::city::economy::v2::ListFirmsResponse)},
+  { 67, -1, -1, sizeof(::city::economy::v2::DeltaUpdateFirmRequest)},
+  { 74, 88, -1, sizeof(::city::economy::v2::FirmDeltaUpdate)},
+  { 96, -1, -1, sizeof(::city::economy::v2::DeltaUpdateFirmResponse)},
+  { 102, -1, -1, sizeof(::city::economy::v2::AddNBSRequest)},
+  { 109, -1, -1, sizeof(::city::economy::v2::AddNBSResponse)},
+  { 115, -1, -1, sizeof(::city::economy::v2::RemoveNBSRequest)},
+  { 122, -1, -1, sizeof(::city::economy::v2::RemoveNBSResponse)},
+  { 128, -1, -1, sizeof(::city::economy::v2::GetNBSRequest)},
+  { 135, -1, -1, sizeof(::city::economy::v2::GetNBSResponse)},
+  { 142, -1, -1, sizeof(::city::economy::v2::UpdateNBSRequest)},
+  { 149, -1, -1, sizeof(::city::economy::v2::UpdateNBSResponse)},
+  { 155, -1, -1, sizeof(::city::economy::v2::ListNBSRequest)},
+  { 161, -1, -1, sizeof(::city::economy::v2::ListNBSResponse)},
+  { 168, 176, -1, sizeof(::city::economy::v2::DeltaUpdateNBSRequest_DeltaNominalGdpEntry_DoNotUse)},
+  { 178, 186, -1, sizeof(::city::economy::v2::DeltaUpdateNBSRequest_DeltaRealGdpEntry_DoNotUse)},
+  { 188, 196, -1, sizeof(::city::economy::v2::DeltaUpdateNBSRequest_DeltaUnemploymentEntry_DoNotUse)},
+  { 198, 206, -1, sizeof(::city::economy::v2::DeltaUpdateNBSRequest_DeltaWagesEntry_DoNotUse)},
+  { 208, 216, -1, sizeof(::city::economy::v2::DeltaUpdateNBSRequest_DeltaPricesEntry_DoNotUse)},
+  { 218, 226, -1, sizeof(::city::economy::v2::DeltaUpdateNBSRequest_DeltaWorkingHoursEntry_DoNotUse)},
+  { 228, 236, -1, sizeof(::city::economy::v2::DeltaUpdateNBSRequest_DeltaDepressionEntry_DoNotUse)},
+  { 238, 246, -1, sizeof(::city::economy::v2::DeltaUpdateNBSRequest_DeltaConsumptionCurrencyEntry_DoNotUse)},
+  { 248, 256, -1, sizeof(::city::economy::v2::DeltaUpdateNBSRequest_DeltaIncomeCurrencyEntry_DoNotUse)},
+  { 258, 266, -1, sizeof(::city::economy::v2::DeltaUpdateNBSRequest_DeltaLocusControlEntry_DoNotUse)},
+  { 268, 290, -1, sizeof(::city::economy::v2::DeltaUpdateNBSRequest)},
+  { 306, -1, -1, sizeof(::city::economy::v2::DeltaUpdateNBSResponse)},
+  { 312, -1, -1, sizeof(::city::economy::v2::AddGovernmentRequest)},
+  { 319, -1, -1, sizeof(::city::economy::v2::AddGovernmentResponse)},
+  { 325, -1, -1, sizeof(::city::economy::v2::RemoveGovernmentRequest)},
+  { 332, -1, -1, sizeof(::city::economy::v2::RemoveGovernmentResponse)},
+  { 338, -1, -1, sizeof(::city::economy::v2::GetGovernmentRequest)},
+  { 345, -1, -1, sizeof(::city::economy::v2::GetGovernmentResponse)},
+  { 352, -1, -1, sizeof(::city::economy::v2::UpdateGovernmentRequest)},
+  { 359, -1, -1, sizeof(::city::economy::v2::UpdateGovernmentResponse)},
+  { 365, -1, -1, sizeof(::city::economy::v2::ListGovernmentsRequest)},
+  { 371, -1, -1, sizeof(::city::economy::v2::ListGovernmentsResponse)},
+  { 378, 390, -1, sizeof(::city::economy::v2::DeltaUpdateGovernmentRequest)},
+  { 396, -1, -1, sizeof(::city::economy::v2::DeltaUpdateGovernmentResponse)},
+  { 402, -1, -1, sizeof(::city::economy::v2::AddBankRequest)},
+  { 409, -1, -1, sizeof(::city::economy::v2::AddBankResponse)},
+  { 415, -1, -1, sizeof(::city::economy::v2::RemoveBankRequest)},
+  { 422, -1, -1, sizeof(::city::economy::v2::RemoveBankResponse)},
+  { 428, -1, -1, sizeof(::city::economy::v2::GetBankRequest)},
+  { 435, -1, -1, sizeof(::city::economy::v2::GetBankResponse)},
+  { 442, -1, -1, sizeof(::city::economy::v2::UpdateBankRequest)},
+  { 449, -1, -1, sizeof(::city::economy::v2::UpdateBankResponse)},
+  { 455, -1, -1, sizeof(::city::economy::v2::ListBanksRequest)},
+  { 461, -1, -1, sizeof(::city::economy::v2::ListBanksResponse)},
+  { 468, 479, -1, sizeof(::city::economy::v2::DeltaUpdateBankRequest)},
+  { 484, -1, -1, sizeof(::city::economy::v2::DeltaUpdateBankResponse)},
+  { 490, -1, -1, sizeof(::city::economy::v2::AddAgentRequest)},
+  { 497, -1, -1, sizeof(::city::economy::v2::AddAgentResponse)},
+  { 504, -1, -1, sizeof(::city::economy::v2::RemoveAgentRequest)},
+  { 511, -1, -1, sizeof(::city::economy::v2::RemoveAgentResponse)},
+  { 517, -1, -1, sizeof(::city::economy::v2::GetAgentRequest)},
+  { 524, -1, -1, sizeof(::city::economy::v2::GetAgentResponse)},
+  { 531, -1, -1, sizeof(::city::economy::v2::UpdateAgentRequest)},
+  { 538, -1, -1, sizeof(::city::economy::v2::UpdateAgentResponse)},
+  { 544, -1, -1, sizeof(::city::economy::v2::ListAgentsRequest)},
+  { 550, -1, -1, sizeof(::city::economy::v2::ListAgentsResponse)},
+  { 557, -1, -1, sizeof(::city::economy::v2::DeltaUpdateAgentRequest)},
+  { 564, 576, -1, sizeof(::city::economy::v2::AgentDeltaUpdate)},
+  { 582, -1, -1, sizeof(::city::economy::v2::DeltaUpdateAgentResponse)},
+  { 588, -1, -1, sizeof(::city::economy::v2::CalculateTaxesDueRequest)},
+  { 598, -1, -1, sizeof(::city::economy::v2::CalculateTaxesDueResponse)},
+  { 606, 616, -1, sizeof(::city::economy::v2::CalculateConsumptionRequest)},
+  { 620, -1, -1, sizeof(::city::economy::v2::CalculateConsumptionResponse)},
+  { 628, -1, -1, sizeof(::city::economy::v2::CalculateInterestRequest)},
+  { 636, -1, -1, sizeof(::city::economy::v2::CalculateInterestResponse)},
+  { 644, -1, -1, sizeof(::city::economy::v2::CalculateRealGDPRequest)},
+  { 651, -1, -1, sizeof(::city::economy::v2::CalculateRealGDPResponse)},
+  { 658, -1, -1, sizeof(::city::economy::v2::SaveEconomyEntitiesRequest)},
+  { 665, -1, -1, sizeof(::city::economy::v2::SaveEconomyEntitiesResponse)},
+  { 676, -1, -1, sizeof(::city::economy::v2::LoadEconomyEntitiesRequest)},
+  { 683, -1, -1, sizeof(::city::economy::v2::LoadEconomyEntitiesResponse)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -2295,17 +1941,8 @@ static const ::_pb::Message* const file_default_instances[] = {
   &::city::economy::v2::_ListFirmsRequest_default_instance_._instance,
   &::city::economy::v2::_ListFirmsResponse_default_instance_._instance,
   &::city::economy::v2::_DeltaUpdateFirmRequest_default_instance_._instance,
+  &::city::economy::v2::_FirmDeltaUpdate_default_instance_._instance,
   &::city::economy::v2::_DeltaUpdateFirmResponse_default_instance_._instance,
-  &::city::economy::v2::_BatchAddFirmRequest_default_instance_._instance,
-  &::city::economy::v2::_BatchAddFirmResponse_default_instance_._instance,
-  &::city::economy::v2::_BatchRemoveFirmRequest_default_instance_._instance,
-  &::city::economy::v2::_BatchRemoveFirmResponse_default_instance_._instance,
-  &::city::economy::v2::_BatchGetFirmRequest_default_instance_._instance,
-  &::city::economy::v2::_BatchGetFirmResponse_default_instance_._instance,
-  &::city::economy::v2::_BatchUpdateFirmRequest_default_instance_._instance,
-  &::city::economy::v2::_BatchUpdateFirmResponse_default_instance_._instance,
-  &::city::economy::v2::_BatchDeltaUpdateFirmRequest_default_instance_._instance,
-  &::city::economy::v2::_BatchDeltaUpdateFirmResponse_default_instance_._instance,
   &::city::economy::v2::_AddNBSRequest_default_instance_._instance,
   &::city::economy::v2::_AddNBSResponse_default_instance_._instance,
   &::city::economy::v2::_RemoveNBSRequest_default_instance_._instance,
@@ -2363,17 +2000,8 @@ static const ::_pb::Message* const file_default_instances[] = {
   &::city::economy::v2::_ListAgentsRequest_default_instance_._instance,
   &::city::economy::v2::_ListAgentsResponse_default_instance_._instance,
   &::city::economy::v2::_DeltaUpdateAgentRequest_default_instance_._instance,
+  &::city::economy::v2::_AgentDeltaUpdate_default_instance_._instance,
   &::city::economy::v2::_DeltaUpdateAgentResponse_default_instance_._instance,
-  &::city::economy::v2::_BatchAddAgentRequest_default_instance_._instance,
-  &::city::economy::v2::_BatchAddAgentResponse_default_instance_._instance,
-  &::city::economy::v2::_BatchRemoveAgentRequest_default_instance_._instance,
-  &::city::economy::v2::_BatchRemoveAgentResponse_default_instance_._instance,
-  &::city::economy::v2::_BatchGetAgentRequest_default_instance_._instance,
-  &::city::economy::v2::_BatchGetAgentResponse_default_instance_._instance,
-  &::city::economy::v2::_BatchUpdateAgentRequest_default_instance_._instance,
-  &::city::economy::v2::_BatchUpdateAgentResponse_default_instance_._instance,
-  &::city::economy::v2::_BatchDeltaUpdateAgentRequest_default_instance_._instance,
-  &::city::economy::v2::_BatchDeltaUpdateAgentResponse_default_instance_._instance,
   &::city::economy::v2::_CalculateTaxesDueRequest_default_instance_._instance,
   &::city::economy::v2::_CalculateTaxesDueResponse_default_instance_._instance,
   &::city::economy::v2::_CalculateConsumptionRequest_default_instance_._instance,
@@ -2391,157 +2019,150 @@ static const ::_pb::Message* const file_default_instances[] = {
 const char descriptor_table_protodef_city_2feconomy_2fv2_2forg_5fservice_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n!city/economy/v2/org_service.proto\022\017cit"
   "y.economy.v2\032\035city/economy/v2/economy.pr"
-  "oto\";\n\016AddFirmRequest\022)\n\004firm\030\001 \001(\0132\025.ci"
-  "ty.economy.v2.FirmR\004firm\"\021\n\017AddFirmRespo"
-  "nse\",\n\021RemoveFirmRequest\022\027\n\007firm_id\030\001 \001("
-  "\005R\006firmId\"\024\n\022RemoveFirmResponse\")\n\016GetFi"
-  "rmRequest\022\027\n\007firm_id\030\001 \001(\005R\006firmId\"<\n\017Ge"
-  "tFirmResponse\022)\n\004firm\030\001 \001(\0132\025.city.econo"
-  "my.v2.FirmR\004firm\">\n\021UpdateFirmRequest\022)\n"
-  "\004firm\030\001 \001(\0132\025.city.economy.v2.FirmR\004firm"
-  "\"\024\n\022UpdateFirmResponse\"\022\n\020ListFirmsReque"
-  "st\"@\n\021ListFirmsResponse\022+\n\005firms\030\001 \003(\0132\025"
-  ".city.economy.v2.FirmR\005firms\"\247\003\n\026DeltaUp"
-  "dateFirmRequest\022\027\n\007firm_id\030\001 \001(\005R\006firmId"
-  "\022$\n\013delta_price\030\002 \001(\002H\000R\ndeltaPrice\210\001\001\022,"
-  "\n\017delta_inventory\030\003 \001(\005H\001R\016deltaInventor"
-  "y\210\001\001\022&\n\014delta_demand\030\004 \001(\002H\002R\013deltaDeman"
-  "d\210\001\001\022$\n\013delta_sales\030\005 \001(\002H\003R\ndeltaSales\210"
-  "\001\001\022*\n\016delta_currency\030\006 \001(\002H\004R\rdeltaCurre"
-  "ncy\210\001\001\022#\n\radd_employees\030\007 \003(\005R\014addEmploy"
-  "ees\022)\n\020remove_employees\030\010 \003(\005R\017removeEmp"
-  "loyeesB\016\n\014_delta_priceB\022\n\020_delta_invento"
-  "ryB\017\n\r_delta_demandB\016\n\014_delta_salesB\021\n\017_"
-  "delta_currency\"\031\n\027DeltaUpdateFirmRespons"
-  "e\"B\n\023BatchAddFirmRequest\022+\n\005firms\030\001 \003(\0132"
-  "\025.city.economy.v2.FirmR\005firms\"1\n\024BatchAd"
-  "dFirmResponse\022\031\n\010firm_ids\030\001 \003(\005R\007firmIds"
-  "\"3\n\026BatchRemoveFirmRequest\022\031\n\010firm_ids\030\001"
-  " \003(\005R\007firmIds\"\031\n\027BatchRemoveFirmResponse"
-  "\"0\n\023BatchGetFirmRequest\022\031\n\010firm_ids\030\001 \003("
-  "\005R\007firmIds\"C\n\024BatchGetFirmResponse\022+\n\005fi"
-  "rms\030\001 \003(\0132\025.city.economy.v2.FirmR\005firms\""
-  "E\n\026BatchUpdateFirmRequest\022+\n\005firms\030\001 \003(\013"
-  "2\025.city.economy.v2.FirmR\005firms\"\031\n\027BatchU"
-  "pdateFirmResponse\"`\n\033BatchDeltaUpdateFir"
-  "mRequest\022A\n\007updates\030\001 \003(\0132\'.city.economy"
-  ".v2.DeltaUpdateFirmRequestR\007updates\"\036\n\034B"
-  "atchDeltaUpdateFirmResponse\"7\n\rAddNBSReq"
-  "uest\022&\n\003nbs\030\001 \001(\0132\024.city.economy.v2.NBSR"
-  "\003nbs\"\020\n\016AddNBSResponse\")\n\020RemoveNBSReque"
-  "st\022\025\n\006nbs_id\030\001 \001(\005R\005nbsId\"\023\n\021RemoveNBSRe"
-  "sponse\"&\n\rGetNBSRequest\022\025\n\006nbs_id\030\001 \001(\005R"
-  "\005nbsId\"8\n\016GetNBSResponse\022&\n\003nbs\030\001 \001(\0132\024."
-  "city.economy.v2.NBSR\003nbs\":\n\020UpdateNBSReq"
-  "uest\022&\n\003nbs\030\001 \001(\0132\024.city.economy.v2.NBSR"
-  "\003nbs\"\023\n\021UpdateNBSResponse\"\020\n\016ListNBSRequ"
-  "est\"B\n\017ListNBSResponse\022/\n\010nbs_list\030\001 \003(\013"
-  "2\024.city.economy.v2.NBSR\007nbsList\"\200\020\n\025Delt"
-  "aUpdateNBSRequest\022\025\n\006nbs_id\030\001 \001(\005R\005nbsId"
-  "\022g\n\021delta_nominal_gdp\030\002 \003(\0132;.city.econo"
-  "my.v2.DeltaUpdateNBSRequest.DeltaNominal"
-  "GdpEntryR\017deltaNominalGdp\022^\n\016delta_real_"
-  "gdp\030\003 \003(\01328.city.economy.v2.DeltaUpdateN"
-  "BSRequest.DeltaRealGdpEntryR\014deltaRealGd"
-  "p\022l\n\022delta_unemployment\030\004 \003(\0132=.city.eco"
-  "nomy.v2.DeltaUpdateNBSRequest.DeltaUnemp"
-  "loymentEntryR\021deltaUnemployment\022W\n\013delta"
-  "_wages\030\005 \003(\01326.city.economy.v2.DeltaUpda"
-  "teNBSRequest.DeltaWagesEntryR\ndeltaWages"
-  "\022Z\n\014delta_prices\030\006 \003(\01327.city.economy.v2"
-  ".DeltaUpdateNBSRequest.DeltaPricesEntryR"
-  "\013deltaPrices\022m\n\023delta_working_hours\030\007 \003("
-  "\0132=.city.economy.v2.DeltaUpdateNBSReques"
-  "t.DeltaWorkingHoursEntryR\021deltaWorkingHo"
-  "urs\022f\n\020delta_depression\030\010 \003(\0132;.city.eco"
-  "nomy.v2.DeltaUpdateNBSRequest.DeltaDepre"
-  "ssionEntryR\017deltaDepression\022\202\001\n\032delta_co"
-  "nsumption_currency\030\t \003(\0132D.city.economy."
-  "v2.DeltaUpdateNBSRequest.DeltaConsumptio"
-  "nCurrencyEntryR\030deltaConsumptionCurrency"
-  "\022s\n\025delta_income_currency\030\n \003(\0132\?.city.e"
-  "conomy.v2.DeltaUpdateNBSRequest.DeltaInc"
-  "omeCurrencyEntryR\023deltaIncomeCurrency\022m\n"
-  "\023delta_locus_control\030\013 \003(\0132=.city.econom"
-  "y.v2.DeltaUpdateNBSRequest.DeltaLocusCon"
-  "trolEntryR\021deltaLocusControl\022*\n\016delta_cu"
-  "rrency\030\014 \001(\002H\000R\rdeltaCurrency\210\001\001\022!\n\014add_"
-  "citizens\030\r \003(\005R\013addCitizens\022\'\n\017remove_ci"
-  "tizens\030\016 \003(\005R\016removeCitizens\0221\n\025add_citi"
-  "zens_agent_id\030\017 \003(\005R\022addCitizensAgentId\022"
-  "7\n\030remove_citizens_agent_id\030\020 \003(\005R\025remov"
-  "eCitizensAgentId\032B\n\024DeltaNominalGdpEntry"
-  "\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\002R\005value"
-  ":\0028\001\032\?\n\021DeltaRealGdpEntry\022\020\n\003key\030\001 \001(\tR\003"
-  "key\022\024\n\005value\030\002 \001(\002R\005value:\0028\001\032D\n\026DeltaUn"
-  "employmentEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005val"
-  "ue\030\002 \001(\002R\005value:\0028\001\032=\n\017DeltaWagesEntry\022\020"
-  "\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\002R\005value:\002"
-  "8\001\032>\n\020DeltaPricesEntry\022\020\n\003key\030\001 \001(\tR\003key"
-  "\022\024\n\005value\030\002 \001(\002R\005value:\0028\001\032D\n\026DeltaWorki"
-  "ngHoursEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030"
-  "\002 \001(\002R\005value:\0028\001\032B\n\024DeltaDepressionEntry"
-  "\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\002R\005value"
-  ":\0028\001\032K\n\035DeltaConsumptionCurrencyEntry\022\020\n"
-  "\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\002R\005value:\0028"
-  "\001\032F\n\030DeltaIncomeCurrencyEntry\022\020\n\003key\030\001 \001"
-  "(\tR\003key\022\024\n\005value\030\002 \001(\002R\005value:\0028\001\032D\n\026Del"
-  "taLocusControlEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n"
-  "\005value\030\002 \001(\002R\005value:\0028\001B\021\n\017_delta_curren"
-  "cy\"\030\n\026DeltaUpdateNBSResponse\"S\n\024AddGover"
-  "nmentRequest\022;\n\ngovernment\030\001 \001(\0132\033.city."
-  "economy.v2.GovernmentR\ngovernment\"\027\n\025Add"
-  "GovernmentResponse\">\n\027RemoveGovernmentRe"
-  "quest\022#\n\rgovernment_id\030\001 \001(\005R\014government"
-  "Id\"\032\n\030RemoveGovernmentResponse\";\n\024GetGov"
-  "ernmentRequest\022#\n\rgovernment_id\030\001 \001(\005R\014g"
-  "overnmentId\"T\n\025GetGovernmentResponse\022;\n\n"
-  "government\030\001 \001(\0132\033.city.economy.v2.Gover"
-  "nmentR\ngovernment\"V\n\027UpdateGovernmentReq"
-  "uest\022;\n\ngovernment\030\001 \001(\0132\033.city.economy."
-  "v2.GovernmentR\ngovernment\"\032\n\030UpdateGover"
-  "nmentResponse\"\030\n\026ListGovernmentsRequest\""
-  "X\n\027ListGovernmentsResponse\022=\n\013government"
-  "s\030\001 \003(\0132\033.city.economy.v2.GovernmentR\013go"
-  "vernments\"\262\002\n\034DeltaUpdateGovernmentReque"
-  "st\022#\n\rgovernment_id\030\001 \001(\005R\014governmentId\022"
-  "2\n\025delta_bracket_cutoffs\030\002 \003(\002R\023deltaBra"
-  "cketCutoffs\022.\n\023delta_bracket_rates\030\003 \003(\002"
-  "R\021deltaBracketRates\022*\n\016delta_currency\030\004 "
-  "\001(\002H\000R\rdeltaCurrency\210\001\001\022!\n\014add_citizens\030"
-  "\005 \003(\005R\013addCitizens\022\'\n\017remove_citizens\030\006 "
-  "\003(\005R\016removeCitizensB\021\n\017_delta_currency\"\037"
-  "\n\035DeltaUpdateGovernmentResponse\";\n\016AddBa"
-  "nkRequest\022)\n\004bank\030\001 \001(\0132\025.city.economy.v"
-  "2.BankR\004bank\"\021\n\017AddBankResponse\",\n\021Remov"
-  "eBankRequest\022\027\n\007bank_id\030\001 \001(\005R\006bankId\"\024\n"
-  "\022RemoveBankResponse\")\n\016GetBankRequest\022\027\n"
-  "\007bank_id\030\001 \001(\005R\006bankId\"<\n\017GetBankRespons"
-  "e\022)\n\004bank\030\001 \001(\0132\025.city.economy.v2.BankR\004"
-  "bank\">\n\021UpdateBankRequest\022)\n\004bank\030\001 \001(\0132"
-  "\025.city.economy.v2.BankR\004bank\"\024\n\022UpdateBa"
-  "nkResponse\"\022\n\020ListBanksRequest\"@\n\021ListBa"
-  "nksResponse\022+\n\005banks\030\001 \003(\0132\025.city.econom"
-  "y.v2.BankR\005banks\"\211\002\n\026DeltaUpdateBankRequ"
-  "est\022\027\n\007bank_id\030\001 \001(\005R\006bankId\0223\n\023delta_in"
-  "terest_rate\030\002 \001(\002H\000R\021deltaInterestRate\210\001"
-  "\001\022*\n\016delta_currency\030\003 \001(\002H\001R\rdeltaCurren"
-  "cy\210\001\001\022!\n\014add_citizens\030\004 \003(\005R\013addCitizens"
-  "\022\'\n\017remove_citizens\030\005 \003(\005R\016removeCitizen"
+  "oto\"=\n\016AddFirmRequest\022+\n\005firms\030\001 \003(\0132\025.c"
+  "ity.economy.v2.FirmR\005firms\",\n\017AddFirmRes"
+  "ponse\022\031\n\010firm_ids\030\001 \003(\005R\007firmIds\".\n\021Remo"
+  "veFirmRequest\022\031\n\010firm_ids\030\001 \003(\005R\007firmIds"
+  "\"\024\n\022RemoveFirmResponse\"+\n\016GetFirmRequest"
+  "\022\031\n\010firm_ids\030\001 \003(\005R\007firmIds\">\n\017GetFirmRe"
+  "sponse\022+\n\005firms\030\001 \003(\0132\025.city.economy.v2."
+  "FirmR\005firms\"@\n\021UpdateFirmRequest\022+\n\005firm"
+  "s\030\001 \003(\0132\025.city.economy.v2.FirmR\005firms\"\024\n"
+  "\022UpdateFirmResponse\"\022\n\020ListFirmsRequest\""
+  "@\n\021ListFirmsResponse\022+\n\005firms\030\001 \003(\0132\025.ci"
+  "ty.economy.v2.FirmR\005firms\"T\n\026DeltaUpdate"
+  "FirmRequest\022:\n\007updates\030\001 \003(\0132 .city.econ"
+  "omy.v2.FirmDeltaUpdateR\007updates\"\240\003\n\017Firm"
+  "DeltaUpdate\022\027\n\007firm_id\030\001 \001(\005R\006firmId\022$\n\013"
+  "delta_price\030\002 \001(\002H\000R\ndeltaPrice\210\001\001\022,\n\017de"
+  "lta_inventory\030\003 \001(\005H\001R\016deltaInventory\210\001\001"
+  "\022&\n\014delta_demand\030\004 \001(\002H\002R\013deltaDemand\210\001\001"
+  "\022$\n\013delta_sales\030\005 \001(\002H\003R\ndeltaSales\210\001\001\022*"
+  "\n\016delta_currency\030\006 \001(\002H\004R\rdeltaCurrency\210"
+  "\001\001\022#\n\radd_employees\030\007 \003(\005R\014addEmployees\022"
+  ")\n\020remove_employees\030\010 \003(\005R\017removeEmploye"
+  "esB\016\n\014_delta_priceB\022\n\020_delta_inventoryB\017"
+  "\n\r_delta_demandB\016\n\014_delta_salesB\021\n\017_delt"
+  "a_currency\"\031\n\027DeltaUpdateFirmResponse\"7\n"
+  "\rAddNBSRequest\022&\n\003nbs\030\001 \001(\0132\024.city.econo"
+  "my.v2.NBSR\003nbs\"\020\n\016AddNBSResponse\")\n\020Remo"
+  "veNBSRequest\022\025\n\006nbs_id\030\001 \001(\005R\005nbsId\"\023\n\021R"
+  "emoveNBSResponse\"&\n\rGetNBSRequest\022\025\n\006nbs"
+  "_id\030\001 \001(\005R\005nbsId\"8\n\016GetNBSResponse\022&\n\003nb"
+  "s\030\001 \001(\0132\024.city.economy.v2.NBSR\003nbs\":\n\020Up"
+  "dateNBSRequest\022&\n\003nbs\030\001 \001(\0132\024.city.econo"
+  "my.v2.NBSR\003nbs\"\023\n\021UpdateNBSResponse\"\020\n\016L"
+  "istNBSRequest\"B\n\017ListNBSResponse\022/\n\010nbs_"
+  "list\030\001 \003(\0132\024.city.economy.v2.NBSR\007nbsLis"
+  "t\"\212\020\n\025DeltaUpdateNBSRequest\022\025\n\006nbs_id\030\001 "
+  "\001(\005R\005nbsId\022g\n\021delta_nominal_gdp\030\002 \003(\0132;."
+  "city.economy.v2.DeltaUpdateNBSRequest.De"
+  "ltaNominalGdpEntryR\017deltaNominalGdp\022^\n\016d"
+  "elta_real_gdp\030\003 \003(\01328.city.economy.v2.De"
+  "ltaUpdateNBSRequest.DeltaRealGdpEntryR\014d"
+  "eltaRealGdp\022l\n\022delta_unemployment\030\004 \003(\0132"
+  "=.city.economy.v2.DeltaUpdateNBSRequest."
+  "DeltaUnemploymentEntryR\021deltaUnemploymen"
+  "t\022W\n\013delta_wages\030\005 \003(\01326.city.economy.v2"
+  ".DeltaUpdateNBSRequest.DeltaWagesEntryR\n"
+  "deltaWages\022Z\n\014delta_prices\030\006 \003(\01327.city."
+  "economy.v2.DeltaUpdateNBSRequest.DeltaPr"
+  "icesEntryR\013deltaPrices\022m\n\023delta_working_"
+  "hours\030\007 \003(\0132=.city.economy.v2.DeltaUpdat"
+  "eNBSRequest.DeltaWorkingHoursEntryR\021delt"
+  "aWorkingHours\022f\n\020delta_depression\030\010 \003(\0132"
+  ";.city.economy.v2.DeltaUpdateNBSRequest."
+  "DeltaDepressionEntryR\017deltaDepression\022\202\001"
+  "\n\032delta_consumption_currency\030\t \003(\0132D.cit"
+  "y.economy.v2.DeltaUpdateNBSRequest.Delta"
+  "ConsumptionCurrencyEntryR\030deltaConsumpti"
+  "onCurrency\022s\n\025delta_income_currency\030\n \003("
+  "\0132\?.city.economy.v2.DeltaUpdateNBSReques"
+  "t.DeltaIncomeCurrencyEntryR\023deltaIncomeC"
+  "urrency\022m\n\023delta_locus_control\030\013 \003(\0132=.c"
+  "ity.economy.v2.DeltaUpdateNBSRequest.Del"
+  "taLocusControlEntryR\021deltaLocusControl\022*"
+  "\n\016delta_currency\030\014 \001(\002H\000R\rdeltaCurrency\210"
+  "\001\001\022&\n\017add_citizen_ids\030\r \003(\005R\raddCitizenI"
+  "ds\022,\n\022remove_citizen_ids\030\016 \003(\005R\020removeCi"
+  "tizenIds\0221\n\025add_citizen_agent_ids\030\017 \003(\005R"
+  "\022addCitizenAgentIds\0227\n\030remove_citizen_ag"
+  "ent_ids\030\020 \003(\005R\025removeCitizenAgentIds\032B\n\024"
+  "DeltaNominalGdpEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024"
+  "\n\005value\030\002 \001(\002R\005value:\0028\001\032\?\n\021DeltaRealGdp"
+  "Entry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\002R\005"
+  "value:\0028\001\032D\n\026DeltaUnemploymentEntry\022\020\n\003k"
+  "ey\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\002R\005value:\0028\001\032"
+  "=\n\017DeltaWagesEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005"
+  "value\030\002 \001(\002R\005value:\0028\001\032>\n\020DeltaPricesEnt"
+  "ry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\002R\005val"
+  "ue:\0028\001\032D\n\026DeltaWorkingHoursEntry\022\020\n\003key\030"
+  "\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\002R\005value:\0028\001\032B\n\024"
+  "DeltaDepressionEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024"
+  "\n\005value\030\002 \001(\002R\005value:\0028\001\032K\n\035DeltaConsump"
+  "tionCurrencyEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005v"
+  "alue\030\002 \001(\002R\005value:\0028\001\032F\n\030DeltaIncomeCurr"
+  "encyEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001"
+  "(\002R\005value:\0028\001\032D\n\026DeltaLocusControlEntry\022"
+  "\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\002R\005value:"
+  "\0028\001B\021\n\017_delta_currency\"\030\n\026DeltaUpdateNBS"
+  "Response\"S\n\024AddGovernmentRequest\022;\n\ngove"
+  "rnment\030\001 \001(\0132\033.city.economy.v2.Governmen"
+  "tR\ngovernment\"\027\n\025AddGovernmentResponse\">"
+  "\n\027RemoveGovernmentRequest\022#\n\rgovernment_"
+  "id\030\001 \001(\005R\014governmentId\"\032\n\030RemoveGovernme"
+  "ntResponse\";\n\024GetGovernmentRequest\022#\n\rgo"
+  "vernment_id\030\001 \001(\005R\014governmentId\"T\n\025GetGo"
+  "vernmentResponse\022;\n\ngovernment\030\001 \001(\0132\033.c"
+  "ity.economy.v2.GovernmentR\ngovernment\"V\n"
+  "\027UpdateGovernmentRequest\022;\n\ngovernment\030\001"
+  " \001(\0132\033.city.economy.v2.GovernmentR\ngover"
+  "nment\"\032\n\030UpdateGovernmentResponse\"\030\n\026Lis"
+  "tGovernmentsRequest\"X\n\027ListGovernmentsRe"
+  "sponse\022=\n\013governments\030\001 \003(\0132\033.city.econo"
+  "my.v2.GovernmentR\013governments\"\274\002\n\034DeltaU"
+  "pdateGovernmentRequest\022#\n\rgovernment_id\030"
+  "\001 \001(\005R\014governmentId\0222\n\025delta_bracket_cut"
+  "offs\030\002 \003(\002R\023deltaBracketCutoffs\022.\n\023delta"
+  "_bracket_rates\030\003 \003(\002R\021deltaBracketRates\022"
+  "*\n\016delta_currency\030\004 \001(\002H\000R\rdeltaCurrency"
+  "\210\001\001\022&\n\017add_citizen_ids\030\005 \003(\005R\raddCitizen"
+  "Ids\022,\n\022remove_citizen_ids\030\006 \003(\005R\020removeC"
+  "itizenIdsB\021\n\017_delta_currency\"\037\n\035DeltaUpd"
+  "ateGovernmentResponse\";\n\016AddBankRequest\022"
+  ")\n\004bank\030\001 \001(\0132\025.city.economy.v2.BankR\004ba"
+  "nk\"\021\n\017AddBankResponse\",\n\021RemoveBankReque"
+  "st\022\027\n\007bank_id\030\001 \001(\005R\006bankId\"\024\n\022RemoveBan"
+  "kResponse\")\n\016GetBankRequest\022\027\n\007bank_id\030\001"
+  " \001(\005R\006bankId\"<\n\017GetBankResponse\022)\n\004bank\030"
+  "\001 \001(\0132\025.city.economy.v2.BankR\004bank\">\n\021Up"
+  "dateBankRequest\022)\n\004bank\030\001 \001(\0132\025.city.eco"
+  "nomy.v2.BankR\004bank\"\024\n\022UpdateBankResponse"
+  "\"\022\n\020ListBanksRequest\"@\n\021ListBanksRespons"
+  "e\022+\n\005banks\030\001 \003(\0132\025.city.economy.v2.BankR"
+  "\005banks\"\223\002\n\026DeltaUpdateBankRequest\022\027\n\007ban"
+  "k_id\030\001 \001(\005R\006bankId\0223\n\023delta_interest_rat"
+  "e\030\002 \001(\002H\000R\021deltaInterestRate\210\001\001\022*\n\016delta"
+  "_currency\030\003 \001(\002H\001R\rdeltaCurrency\210\001\001\022&\n\017a"
+  "dd_citizen_ids\030\004 \003(\005R\raddCitizenIds\022,\n\022r"
+  "emove_citizen_ids\030\005 \003(\005R\020removeCitizenId"
   "sB\026\n\024_delta_interest_rateB\021\n\017_delta_curr"
-  "ency\"\031\n\027DeltaUpdateBankResponse\"\?\n\017AddAg"
-  "entRequest\022,\n\005agent\030\001 \001(\0132\026.city.economy"
-  ".v2.AgentR\005agent\"\022\n\020AddAgentResponse\"/\n\022"
-  "RemoveAgentRequest\022\031\n\010agent_id\030\001 \001(\005R\007ag"
-  "entId\"\025\n\023RemoveAgentResponse\",\n\017GetAgent"
-  "Request\022\031\n\010agent_id\030\001 \001(\005R\007agentId\"@\n\020Ge"
-  "tAgentResponse\022,\n\005agent\030\001 \001(\0132\026.city.eco"
-  "nomy.v2.AgentR\005agent\"B\n\022UpdateAgentReque"
-  "st\022,\n\005agent\030\001 \001(\0132\026.city.economy.v2.Agen"
-  "tR\005agent\"\025\n\023UpdateAgentResponse\"\023\n\021ListA"
-  "gentsRequest\"D\n\022ListAgentsResponse\022.\n\006ag"
-  "ents\030\001 \003(\0132\026.city.economy.v2.AgentR\006agen"
-  "ts\"\337\002\n\027DeltaUpdateAgentRequest\022\031\n\010agent_"
+  "ency\"\031\n\027DeltaUpdateBankResponse\"A\n\017AddAg"
+  "entRequest\022.\n\006agents\030\001 \003(\0132\026.city.econom"
+  "y.v2.AgentR\006agents\"/\n\020AddAgentResponse\022\033"
+  "\n\tagent_ids\030\001 \003(\005R\010agentIds\"1\n\022RemoveAge"
+  "ntRequest\022\033\n\tagent_ids\030\001 \003(\005R\010agentIds\"\025"
+  "\n\023RemoveAgentResponse\".\n\017GetAgentRequest"
+  "\022\033\n\tagent_ids\030\001 \003(\005R\010agentIds\"B\n\020GetAgen"
+  "tResponse\022.\n\006agents\030\001 \003(\0132\026.city.economy"
+  ".v2.AgentR\006agents\"D\n\022UpdateAgentRequest\022"
+  ".\n\006agents\030\001 \003(\0132\026.city.economy.v2.AgentR"
+  "\006agents\"\025\n\023UpdateAgentResponse\"\023\n\021ListAg"
+  "entsRequest\"D\n\022ListAgentsResponse\022.\n\006age"
+  "nts\030\001 \003(\0132\026.city.economy.v2.AgentR\006agent"
+  "s\"V\n\027DeltaUpdateAgentRequest\022;\n\007updates\030"
+  "\001 \003(\0132!.city.economy.v2.AgentDeltaUpdate"
+  "R\007updates\"\330\002\n\020AgentDeltaUpdate\022\031\n\010agent_"
   "id\030\001 \001(\005R\007agentId\022*\n\016delta_currency\030\002 \001("
   "\002H\000R\rdeltaCurrency\210\001\001\022#\n\013new_firm_id\030\003 \001"
   "(\005H\001R\tnewFirmId\210\001\001\022$\n\013delta_skill\030\004 \001(\002H"
@@ -2550,179 +2171,139 @@ const char descriptor_table_protodef_city_2feconomy_2fv2_2forg_5fservice_2eproto
   "me\030\006 \001(\002H\004R\013deltaIncome\210\001\001B\021\n\017_delta_cur"
   "rencyB\016\n\014_new_firm_idB\016\n\014_delta_skillB\024\n"
   "\022_delta_consumptionB\017\n\r_delta_income\"\032\n\030"
-  "DeltaUpdateAgentResponse\"F\n\024BatchAddAgen"
-  "tRequest\022.\n\006agents\030\001 \003(\0132\026.city.economy."
-  "v2.AgentR\006agents\"4\n\025BatchAddAgentRespons"
-  "e\022\033\n\tagent_ids\030\001 \003(\005R\010agentIds\"6\n\027BatchR"
-  "emoveAgentRequest\022\033\n\tagent_ids\030\001 \003(\005R\010ag"
-  "entIds\"\032\n\030BatchRemoveAgentResponse\"3\n\024Ba"
-  "tchGetAgentRequest\022\033\n\tagent_ids\030\001 \003(\005R\010a"
-  "gentIds\"G\n\025BatchGetAgentResponse\022.\n\006agen"
-  "ts\030\001 \003(\0132\026.city.economy.v2.AgentR\006agents"
-  "\"I\n\027BatchUpdateAgentRequest\022.\n\006agents\030\001 "
-  "\003(\0132\026.city.economy.v2.AgentR\006agents\"\032\n\030B"
-  "atchUpdateAgentResponse\"b\n\034BatchDeltaUpd"
-  "ateAgentRequest\022B\n\007updates\030\001 \003(\0132(.city."
-  "economy.v2.DeltaUpdateAgentRequestR\007upda"
-  "tes\"\037\n\035BatchDeltaUpdateAgentResponse\"\253\001\n"
-  "\030CalculateTaxesDueRequest\022#\n\rgovernment_"
-  "id\030\001 \001(\005R\014governmentId\022\033\n\tagent_ids\030\002 \003("
-  "\005R\010agentIds\022\030\n\007incomes\030\003 \003(\002R\007incomes\0223\n"
-  "\025enable_redistribution\030\004 \001(\010R\024enableRedi"
-  "stribution\"a\n\031CalculateTaxesDueResponse\022"
-  "\033\n\ttaxes_due\030\001 \001(\002R\010taxesDue\022\'\n\017updated_"
-  "incomes\030\002 \003(\002R\016updatedIncomes\"\312\001\n\033Calcul"
-  "ateConsumptionRequest\022\031\n\010firm_ids\030\001 \003(\005R"
-  "\007firmIds\022\031\n\010agent_id\030\002 \001(\005R\007agentId\022\030\n\007d"
-  "emands\030\003 \003(\005R\007demands\022>\n\030consumption_acc"
-  "umulation\030\004 \001(\010H\000R\027consumptionAccumulati"
-  "on\210\001\001B\033\n\031_consumption_accumulation\"g\n\034Ca"
-  "lculateConsumptionResponse\022-\n\022actual_con"
-  "sumption\030\001 \001(\002R\021actualConsumption\022\030\n\007suc"
-  "cess\030\002 \001(\010R\007success\"P\n\030CalculateInterest"
-  "Request\022\027\n\007bank_id\030\001 \001(\005R\006bankId\022\033\n\tagen"
-  "t_ids\030\002 \003(\005R\010agentIds\"q\n\031CalculateIntere"
-  "stResponse\022%\n\016total_interest\030\001 \001(\002R\rtota"
-  "lInterest\022-\n\022updated_currencies\030\002 \003(\002R\021u"
-  "pdatedCurrencies\"0\n\027CalculateRealGDPRequ"
-  "est\022\025\n\006nbs_id\030\001 \001(\005R\005nbsId\"5\n\030CalculateR"
-  "ealGDPResponse\022\031\n\010real_gdp\030\001 \001(\002R\007realGd"
-  "p\"9\n\032SaveEconomyEntitiesRequest\022\033\n\tfile_"
-  "path\030\001 \001(\tR\010filePath\"\260\001\n\033SaveEconomyEnti"
-  "tiesResponse\022\031\n\010firm_ids\030\001 \003(\005R\007firmIds\022"
-  "\027\n\007nbs_ids\030\002 \003(\005R\006nbsIds\022%\n\016government_i"
-  "ds\030\003 \003(\005R\rgovernmentIds\022\031\n\010bank_ids\030\004 \003("
-  "\005R\007bankIds\022\033\n\tagent_ids\030\005 \003(\005R\010agentIds\""
-  "9\n\032LoadEconomyEntitiesRequest\022\033\n\tfile_pa"
-  "th\030\001 \001(\tR\010filePath\"\260\001\n\033LoadEconomyEntiti"
-  "esResponse\022\031\n\010firm_ids\030\001 \003(\005R\007firmIds\022\027\n"
-  "\007nbs_ids\030\002 \003(\005R\006nbsIds\022%\n\016government_ids"
-  "\030\003 \003(\005R\rgovernmentIds\022\031\n\010bank_ids\030\004 \003(\005R"
-  "\007bankIds\022\033\n\tagent_ids\030\005 \003(\005R\010agentIds2\250\""
-  "\n\nOrgService\022L\n\007AddFirm\022\037.city.economy.v"
-  "2.AddFirmRequest\032 .city.economy.v2.AddFi"
-  "rmResponse\022U\n\nRemoveFirm\022\".city.economy."
-  "v2.RemoveFirmRequest\032#.city.economy.v2.R"
-  "emoveFirmResponse\022L\n\007GetFirm\022\037.city.econ"
-  "omy.v2.GetFirmRequest\032 .city.economy.v2."
-  "GetFirmResponse\022U\n\nUpdateFirm\022\".city.eco"
-  "nomy.v2.UpdateFirmRequest\032#.city.economy"
-  ".v2.UpdateFirmResponse\022R\n\tListFirms\022!.ci"
-  "ty.economy.v2.ListFirmsRequest\032\".city.ec"
-  "onomy.v2.ListFirmsResponse\022d\n\017DeltaUpdat"
-  "eFirm\022\'.city.economy.v2.DeltaUpdateFirmR"
-  "equest\032(.city.economy.v2.DeltaUpdateFirm"
-  "Response\022[\n\014BatchAddFirm\022$.city.economy."
-  "v2.BatchAddFirmRequest\032%.city.economy.v2"
-  ".BatchAddFirmResponse\022d\n\017BatchRemoveFirm"
-  "\022\'.city.economy.v2.BatchRemoveFirmReques"
-  "t\032(.city.economy.v2.BatchRemoveFirmRespo"
-  "nse\022[\n\014BatchGetFirm\022$.city.economy.v2.Ba"
-  "tchGetFirmRequest\032%.city.economy.v2.Batc"
-  "hGetFirmResponse\022d\n\017BatchUpdateFirm\022\'.ci"
-  "ty.economy.v2.BatchUpdateFirmRequest\032(.c"
-  "ity.economy.v2.BatchUpdateFirmResponse\022s"
-  "\n\024BatchDeltaUpdateFirm\022,.city.economy.v2"
-  ".BatchDeltaUpdateFirmRequest\032-.city.econ"
-  "omy.v2.BatchDeltaUpdateFirmResponse\022I\n\006A"
-  "ddNBS\022\036.city.economy.v2.AddNBSRequest\032\037."
-  "city.economy.v2.AddNBSResponse\022R\n\tRemove"
-  "NBS\022!.city.economy.v2.RemoveNBSRequest\032\""
-  ".city.economy.v2.RemoveNBSResponse\022I\n\006Ge"
-  "tNBS\022\036.city.economy.v2.GetNBSRequest\032\037.c"
-  "ity.economy.v2.GetNBSResponse\022R\n\tUpdateN"
-  "BS\022!.city.economy.v2.UpdateNBSRequest\032\"."
-  "city.economy.v2.UpdateNBSResponse\022L\n\007Lis"
-  "tNBS\022\037.city.economy.v2.ListNBSRequest\032 ."
-  "city.economy.v2.ListNBSResponse\022a\n\016Delta"
-  "UpdateNBS\022&.city.economy.v2.DeltaUpdateN"
-  "BSRequest\032\'.city.economy.v2.DeltaUpdateN"
-  "BSResponse\022^\n\rAddGovernment\022%.city.econo"
-  "my.v2.AddGovernmentRequest\032&.city.econom"
-  "y.v2.AddGovernmentResponse\022g\n\020RemoveGove"
-  "rnment\022(.city.economy.v2.RemoveGovernmen"
-  "tRequest\032).city.economy.v2.RemoveGovernm"
-  "entResponse\022^\n\rGetGovernment\022%.city.econ"
-  "omy.v2.GetGovernmentRequest\032&.city.econo"
-  "my.v2.GetGovernmentResponse\022g\n\020UpdateGov"
-  "ernment\022(.city.economy.v2.UpdateGovernme"
-  "ntRequest\032).city.economy.v2.UpdateGovern"
-  "mentResponse\022d\n\017ListGovernments\022\'.city.e"
-  "conomy.v2.ListGovernmentsRequest\032(.city."
-  "economy.v2.ListGovernmentsResponse\022v\n\025De"
-  "ltaUpdateGovernment\022-.city.economy.v2.De"
-  "ltaUpdateGovernmentRequest\032..city.econom"
-  "y.v2.DeltaUpdateGovernmentResponse\022L\n\007Ad"
-  "dBank\022\037.city.economy.v2.AddBankRequest\032 "
-  ".city.economy.v2.AddBankResponse\022U\n\nRemo"
-  "veBank\022\".city.economy.v2.RemoveBankReque"
-  "st\032#.city.economy.v2.RemoveBankResponse\022"
-  "L\n\007GetBank\022\037.city.economy.v2.GetBankRequ"
-  "est\032 .city.economy.v2.GetBankResponse\022U\n"
-  "\nUpdateBank\022\".city.economy.v2.UpdateBank"
-  "Request\032#.city.economy.v2.UpdateBankResp"
-  "onse\022R\n\tListBanks\022!.city.economy.v2.List"
-  "BanksRequest\032\".city.economy.v2.ListBanks"
-  "Response\022d\n\017DeltaUpdateBank\022\'.city.econo"
-  "my.v2.DeltaUpdateBankRequest\032(.city.econ"
-  "omy.v2.DeltaUpdateBankResponse\022O\n\010AddAge"
-  "nt\022 .city.economy.v2.AddAgentRequest\032!.c"
-  "ity.economy.v2.AddAgentResponse\022X\n\013Remov"
-  "eAgent\022#.city.economy.v2.RemoveAgentRequ"
-  "est\032$.city.economy.v2.RemoveAgentRespons"
-  "e\022O\n\010GetAgent\022 .city.economy.v2.GetAgent"
-  "Request\032!.city.economy.v2.GetAgentRespon"
-  "se\022X\n\013UpdateAgent\022#.city.economy.v2.Upda"
-  "teAgentRequest\032$.city.economy.v2.UpdateA"
-  "gentResponse\022U\n\nListAgents\022\".city.econom"
-  "y.v2.ListAgentsRequest\032#.city.economy.v2"
-  ".ListAgentsResponse\022g\n\020DeltaUpdateAgent\022"
-  "(.city.economy.v2.DeltaUpdateAgentReques"
-  "t\032).city.economy.v2.DeltaUpdateAgentResp"
-  "onse\022^\n\rBatchAddAgent\022%.city.economy.v2."
-  "BatchAddAgentRequest\032&.city.economy.v2.B"
-  "atchAddAgentResponse\022g\n\020BatchRemoveAgent"
-  "\022(.city.economy.v2.BatchRemoveAgentReque"
-  "st\032).city.economy.v2.BatchRemoveAgentRes"
-  "ponse\022^\n\rBatchGetAgent\022%.city.economy.v2"
-  ".BatchGetAgentRequest\032&.city.economy.v2."
-  "BatchGetAgentResponse\022g\n\020BatchUpdateAgen"
-  "t\022(.city.economy.v2.BatchUpdateAgentRequ"
-  "est\032).city.economy.v2.BatchUpdateAgentRe"
-  "sponse\022v\n\025BatchDeltaUpdateAgent\022-.city.e"
-  "conomy.v2.BatchDeltaUpdateAgentRequest\032."
-  ".city.economy.v2.BatchDeltaUpdateAgentRe"
-  "sponse\022j\n\021CalculateTaxesDue\022).city.econo"
-  "my.v2.CalculateTaxesDueRequest\032*.city.ec"
-  "onomy.v2.CalculateTaxesDueResponse\022s\n\024Ca"
-  "lculateConsumption\022,.city.economy.v2.Cal"
-  "culateConsumptionRequest\032-.city.economy."
-  "v2.CalculateConsumptionResponse\022j\n\021Calcu"
-  "lateInterest\022).city.economy.v2.Calculate"
-  "InterestRequest\032*.city.economy.v2.Calcul"
-  "ateInterestResponse\022g\n\020CalculateRealGDP\022"
-  "(.city.economy.v2.CalculateRealGDPReques"
-  "t\032).city.economy.v2.CalculateRealGDPResp"
-  "onse\022p\n\023SaveEconomyEntities\022+.city.econo"
-  "my.v2.SaveEconomyEntitiesRequest\032,.city."
-  "economy.v2.SaveEconomyEntitiesResponse\022p"
-  "\n\023LoadEconomyEntities\022+.city.economy.v2."
-  "LoadEconomyEntitiesRequest\032,.city.econom"
-  "y.v2.LoadEconomyEntitiesResponseB\277\001\n\023com"
-  ".city.economy.v2B\017OrgServiceProtoP\001Z9git"
-  ".fiblab.net/sim/protos/v2/go/city/econom"
-  "y/v2;economyv2\242\002\003CEX\252\002\017City.Economy.V2\312\002"
-  "\017City\\Economy\\V2\342\002\033City\\Economy\\V2\\GPBMe"
-  "tadata\352\002\021City::Economy::V2b\006proto3"
+  "DeltaUpdateAgentResponse\"\253\001\n\030CalculateTa"
+  "xesDueRequest\022#\n\rgovernment_id\030\001 \001(\005R\014go"
+  "vernmentId\022\033\n\tagent_ids\030\002 \003(\005R\010agentIds\022"
+  "\030\n\007incomes\030\003 \003(\002R\007incomes\0223\n\025enable_redi"
+  "stribution\030\004 \001(\010R\024enableRedistribution\"a"
+  "\n\031CalculateTaxesDueResponse\022\033\n\ttaxes_due"
+  "\030\001 \001(\002R\010taxesDue\022\'\n\017updated_incomes\030\002 \003("
+  "\002R\016updatedIncomes\"\312\001\n\033CalculateConsumpti"
+  "onRequest\022\031\n\010firm_ids\030\001 \003(\005R\007firmIds\022\031\n\010"
+  "agent_id\030\002 \001(\005R\007agentId\022\030\n\007demands\030\003 \003(\005"
+  "R\007demands\022>\n\030consumption_accumulation\030\004 "
+  "\001(\010H\000R\027consumptionAccumulation\210\001\001B\033\n\031_co"
+  "nsumption_accumulation\"g\n\034CalculateConsu"
+  "mptionResponse\022-\n\022actual_consumption\030\001 \001"
+  "(\002R\021actualConsumption\022\030\n\007success\030\002 \001(\010R\007"
+  "success\"P\n\030CalculateInterestRequest\022\027\n\007b"
+  "ank_id\030\001 \001(\005R\006bankId\022\033\n\tagent_ids\030\002 \003(\005R"
+  "\010agentIds\"q\n\031CalculateInterestResponse\022%"
+  "\n\016total_interest\030\001 \001(\002R\rtotalInterest\022-\n"
+  "\022updated_currencies\030\002 \003(\002R\021updatedCurren"
+  "cies\"0\n\027CalculateRealGDPRequest\022\025\n\006nbs_i"
+  "d\030\001 \001(\005R\005nbsId\"5\n\030CalculateRealGDPRespon"
+  "se\022\031\n\010real_gdp\030\001 \001(\002R\007realGdp\"9\n\032SaveEco"
+  "nomyEntitiesRequest\022\033\n\tfile_path\030\001 \001(\tR\010"
+  "filePath\"\260\001\n\033SaveEconomyEntitiesResponse"
+  "\022\031\n\010firm_ids\030\001 \003(\005R\007firmIds\022\027\n\007nbs_ids\030\002"
+  " \003(\005R\006nbsIds\022%\n\016government_ids\030\003 \003(\005R\rgo"
+  "vernmentIds\022\031\n\010bank_ids\030\004 \003(\005R\007bankIds\022\033"
+  "\n\tagent_ids\030\005 \003(\005R\010agentIds\"9\n\032LoadEcono"
+  "myEntitiesRequest\022\033\n\tfile_path\030\001 \001(\tR\010fi"
+  "lePath\"\260\001\n\033LoadEconomyEntitiesResponse\022\031"
+  "\n\010firm_ids\030\001 \003(\005R\007firmIds\022\027\n\007nbs_ids\030\002 \003"
+  "(\005R\006nbsIds\022%\n\016government_ids\030\003 \003(\005R\rgove"
+  "rnmentIds\022\031\n\010bank_ids\030\004 \003(\005R\007bankIds\022\033\n\t"
+  "agent_ids\030\005 \003(\005R\010agentIds2\243\032\n\nOrgService"
+  "\022L\n\007AddFirm\022\037.city.economy.v2.AddFirmReq"
+  "uest\032 .city.economy.v2.AddFirmResponse\022U"
+  "\n\nRemoveFirm\022\".city.economy.v2.RemoveFir"
+  "mRequest\032#.city.economy.v2.RemoveFirmRes"
+  "ponse\022L\n\007GetFirm\022\037.city.economy.v2.GetFi"
+  "rmRequest\032 .city.economy.v2.GetFirmRespo"
+  "nse\022U\n\nUpdateFirm\022\".city.economy.v2.Upda"
+  "teFirmRequest\032#.city.economy.v2.UpdateFi"
+  "rmResponse\022R\n\tListFirms\022!.city.economy.v"
+  "2.ListFirmsRequest\032\".city.economy.v2.Lis"
+  "tFirmsResponse\022d\n\017DeltaUpdateFirm\022\'.city"
+  ".economy.v2.DeltaUpdateFirmRequest\032(.cit"
+  "y.economy.v2.DeltaUpdateFirmResponse\022I\n\006"
+  "AddNBS\022\036.city.economy.v2.AddNBSRequest\032\037"
+  ".city.economy.v2.AddNBSResponse\022R\n\tRemov"
+  "eNBS\022!.city.economy.v2.RemoveNBSRequest\032"
+  "\".city.economy.v2.RemoveNBSResponse\022I\n\006G"
+  "etNBS\022\036.city.economy.v2.GetNBSRequest\032\037."
+  "city.economy.v2.GetNBSResponse\022R\n\tUpdate"
+  "NBS\022!.city.economy.v2.UpdateNBSRequest\032\""
+  ".city.economy.v2.UpdateNBSResponse\022L\n\007Li"
+  "stNBS\022\037.city.economy.v2.ListNBSRequest\032 "
+  ".city.economy.v2.ListNBSResponse\022a\n\016Delt"
+  "aUpdateNBS\022&.city.economy.v2.DeltaUpdate"
+  "NBSRequest\032\'.city.economy.v2.DeltaUpdate"
+  "NBSResponse\022^\n\rAddGovernment\022%.city.econ"
+  "omy.v2.AddGovernmentRequest\032&.city.econo"
+  "my.v2.AddGovernmentResponse\022g\n\020RemoveGov"
+  "ernment\022(.city.economy.v2.RemoveGovernme"
+  "ntRequest\032).city.economy.v2.RemoveGovern"
+  "mentResponse\022^\n\rGetGovernment\022%.city.eco"
+  "nomy.v2.GetGovernmentRequest\032&.city.econ"
+  "omy.v2.GetGovernmentResponse\022g\n\020UpdateGo"
+  "vernment\022(.city.economy.v2.UpdateGovernm"
+  "entRequest\032).city.economy.v2.UpdateGover"
+  "nmentResponse\022d\n\017ListGovernments\022\'.city."
+  "economy.v2.ListGovernmentsRequest\032(.city"
+  ".economy.v2.ListGovernmentsResponse\022v\n\025D"
+  "eltaUpdateGovernment\022-.city.economy.v2.D"
+  "eltaUpdateGovernmentRequest\032..city.econo"
+  "my.v2.DeltaUpdateGovernmentResponse\022L\n\007A"
+  "ddBank\022\037.city.economy.v2.AddBankRequest\032"
+  " .city.economy.v2.AddBankResponse\022U\n\nRem"
+  "oveBank\022\".city.economy.v2.RemoveBankRequ"
+  "est\032#.city.economy.v2.RemoveBankResponse"
+  "\022L\n\007GetBank\022\037.city.economy.v2.GetBankReq"
+  "uest\032 .city.economy.v2.GetBankResponse\022U"
+  "\n\nUpdateBank\022\".city.economy.v2.UpdateBan"
+  "kRequest\032#.city.economy.v2.UpdateBankRes"
+  "ponse\022R\n\tListBanks\022!.city.economy.v2.Lis"
+  "tBanksRequest\032\".city.economy.v2.ListBank"
+  "sResponse\022d\n\017DeltaUpdateBank\022\'.city.econ"
+  "omy.v2.DeltaUpdateBankRequest\032(.city.eco"
+  "nomy.v2.DeltaUpdateBankResponse\022O\n\010AddAg"
+  "ent\022 .city.economy.v2.AddAgentRequest\032!."
+  "city.economy.v2.AddAgentResponse\022X\n\013Remo"
+  "veAgent\022#.city.economy.v2.RemoveAgentReq"
+  "uest\032$.city.economy.v2.RemoveAgentRespon"
+  "se\022O\n\010GetAgent\022 .city.economy.v2.GetAgen"
+  "tRequest\032!.city.economy.v2.GetAgentRespo"
+  "nse\022X\n\013UpdateAgent\022#.city.economy.v2.Upd"
+  "ateAgentRequest\032$.city.economy.v2.Update"
+  "AgentResponse\022U\n\nListAgents\022\".city.econo"
+  "my.v2.ListAgentsRequest\032#.city.economy.v"
+  "2.ListAgentsResponse\022g\n\020DeltaUpdateAgent"
+  "\022(.city.economy.v2.DeltaUpdateAgentReque"
+  "st\032).city.economy.v2.DeltaUpdateAgentRes"
+  "ponse\022j\n\021CalculateTaxesDue\022).city.econom"
+  "y.v2.CalculateTaxesDueRequest\032*.city.eco"
+  "nomy.v2.CalculateTaxesDueResponse\022s\n\024Cal"
+  "culateConsumption\022,.city.economy.v2.Calc"
+  "ulateConsumptionRequest\032-.city.economy.v"
+  "2.CalculateConsumptionResponse\022j\n\021Calcul"
+  "ateInterest\022).city.economy.v2.CalculateI"
+  "nterestRequest\032*.city.economy.v2.Calcula"
+  "teInterestResponse\022g\n\020CalculateRealGDP\022("
+  ".city.economy.v2.CalculateRealGDPRequest"
+  "\032).city.economy.v2.CalculateRealGDPRespo"
+  "nse\022p\n\023SaveEconomyEntities\022+.city.econom"
+  "y.v2.SaveEconomyEntitiesRequest\032,.city.e"
+  "conomy.v2.SaveEconomyEntitiesResponse\022p\n"
+  "\023LoadEconomyEntities\022+.city.economy.v2.L"
+  "oadEconomyEntitiesRequest\032,.city.economy"
+  ".v2.LoadEconomyEntitiesResponseB\277\001\n\023com."
+  "city.economy.v2B\017OrgServiceProtoP\001Z9git."
+  "fiblab.net/sim/protos/v2/go/city/economy"
+  "/v2;economyv2\242\002\003CEX\252\002\017City.Economy.V2\312\002\017"
+  "City\\Economy\\V2\342\002\033City\\Economy\\V2\\GPBMet"
+  "adata\352\002\021City::Economy::V2b\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_deps[1] = {
   &::descriptor_table_city_2feconomy_2fv2_2feconomy_2eproto,
 };
 static ::_pbi::once_flag descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto = {
-    false, false, 12994, descriptor_table_protodef_city_2feconomy_2fv2_2forg_5fservice_2eproto,
+    false, false, 11113, descriptor_table_protodef_city_2feconomy_2fv2_2forg_5fservice_2eproto,
     "city/economy/v2/org_service.proto",
-    &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once, descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_deps, 1, 102,
+    &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once, descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_deps, 1, 84,
     schemas, file_default_instances, TableStruct_city_2feconomy_2fv2_2forg_5fservice_2eproto::offsets,
     file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto, file_level_enum_descriptors_city_2feconomy_2fv2_2forg_5fservice_2eproto,
     file_level_service_descriptors_city_2feconomy_2fv2_2forg_5fservice_2eproto,
@@ -2741,18 +2322,10 @@ namespace v2 {
 
 class AddFirmRequest::_Internal {
  public:
-  static const ::city::economy::v2::Firm& firm(const AddFirmRequest* msg);
 };
 
-const ::city::economy::v2::Firm&
-AddFirmRequest::_Internal::firm(const AddFirmRequest* msg) {
-  return *msg->_impl_.firm_;
-}
-void AddFirmRequest::clear_firm() {
-  if (GetArenaForAllocation() == nullptr && _impl_.firm_ != nullptr) {
-    delete _impl_.firm_;
-  }
-  _impl_.firm_ = nullptr;
+void AddFirmRequest::clear_firms() {
+  _impl_.firms_.Clear();
 }
 AddFirmRequest::AddFirmRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
@@ -2764,13 +2337,10 @@ AddFirmRequest::AddFirmRequest(const AddFirmRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   AddFirmRequest* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.firm_){nullptr}
+      decltype(_impl_.firms_){from._impl_.firms_}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  if (from._internal_has_firm()) {
-    _this->_impl_.firm_ = new ::city::economy::v2::Firm(*from._impl_.firm_);
-  }
   // @@protoc_insertion_point(copy_constructor:city.economy.v2.AddFirmRequest)
 }
 
@@ -2779,7 +2349,7 @@ inline void AddFirmRequest::SharedCtor(
   (void)arena;
   (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.firm_){nullptr}
+      decltype(_impl_.firms_){arena}
     , /*decltype(_impl_._cached_size_)*/{}
   };
 }
@@ -2795,7 +2365,7 @@ AddFirmRequest::~AddFirmRequest() {
 
 inline void AddFirmRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete _impl_.firm_;
+  _impl_.firms_.~RepeatedPtrField();
 }
 
 void AddFirmRequest::SetCachedSize(int size) const {
@@ -2808,10 +2378,7 @@ void AddFirmRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaForAllocation() == nullptr && _impl_.firm_ != nullptr) {
-    delete _impl_.firm_;
-  }
-  _impl_.firm_ = nullptr;
+  _impl_.firms_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2821,11 +2388,16 @@ const char* AddFirmRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .city.economy.v2.Firm firm = 1 [json_name = "firm"];
+      // repeated .city.economy.v2.Firm firms = 1 [json_name = "firms"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_firm(), ptr);
-          CHK_(ptr);
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_firms(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
         } else
           goto handle_unusual;
         continue;
@@ -2858,11 +2430,12 @@ uint8_t* AddFirmRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .city.economy.v2.Firm firm = 1 [json_name = "firm"];
-  if (this->_internal_has_firm()) {
+  // repeated .city.economy.v2.Firm firms = 1 [json_name = "firms"];
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_firms_size()); i < n; i++) {
+    const auto& repfield = this->_internal_firms(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(1, _Internal::firm(this),
-        _Internal::firm(this).GetCachedSize(), target, stream);
+        InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2881,11 +2454,11 @@ size_t AddFirmRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .city.economy.v2.Firm firm = 1 [json_name = "firm"];
-  if (this->_internal_has_firm()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *_impl_.firm_);
+  // repeated .city.economy.v2.Firm firms = 1 [json_name = "firms"];
+  total_size += 1UL * this->_internal_firms_size();
+  for (const auto& msg : this->_impl_.firms_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -2906,10 +2479,7 @@ void AddFirmRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const :
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_has_firm()) {
-    _this->_internal_mutable_firm()->::city::economy::v2::Firm::MergeFrom(
-        from._internal_firm());
-  }
+  _this->_impl_.firms_.MergeFrom(from._impl_.firms_);
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -2927,7 +2497,7 @@ bool AddFirmRequest::IsInitialized() const {
 void AddFirmRequest::InternalSwap(AddFirmRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_.firm_, other->_impl_.firm_);
+  _impl_.firms_.InternalSwap(&other->_impl_.firms_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata AddFirmRequest::GetMetadata() const {
@@ -2944,31 +2514,184 @@ class AddFirmResponse::_Internal {
 
 AddFirmResponse::AddFirmResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.economy.v2.AddFirmResponse)
 }
 AddFirmResponse::AddFirmResponse(const AddFirmResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
   AddFirmResponse* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.firm_ids_){from._impl_.firm_ids_}
+    , /*decltype(_impl_._firm_ids_cached_byte_size_)*/{0}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:city.economy.v2.AddFirmResponse)
 }
 
+inline void AddFirmResponse::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.firm_ids_){arena}
+    , /*decltype(_impl_._firm_ids_cached_byte_size_)*/{0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+}
 
+AddFirmResponse::~AddFirmResponse() {
+  // @@protoc_insertion_point(destructor:city.economy.v2.AddFirmResponse)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
 
+inline void AddFirmResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.firm_ids_.~RepeatedField();
+}
 
+void AddFirmResponse::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void AddFirmResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:city.economy.v2.AddFirmResponse)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.firm_ids_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* AddFirmResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // repeated int32 firm_ids = 1 [json_name = "firmIds"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_firm_ids(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<uint8_t>(tag) == 8) {
+          _internal_add_firm_ids(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* AddFirmResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:city.economy.v2.AddFirmResponse)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated int32 firm_ids = 1 [json_name = "firmIds"];
+  {
+    int byte_size = _impl_._firm_ids_cached_byte_size_.load(std::memory_order_relaxed);
+    if (byte_size > 0) {
+      target = stream->WriteInt32Packed(
+          1, _internal_firm_ids(), byte_size, target);
+    }
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:city.economy.v2.AddFirmResponse)
+  return target;
+}
+
+size_t AddFirmResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:city.economy.v2.AddFirmResponse)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated int32 firm_ids = 1 [json_name = "firmIds"];
+  {
+    size_t data_size = ::_pbi::WireFormatLite::
+      Int32Size(this->_impl_.firm_ids_);
+    if (data_size > 0) {
+      total_size += 1 +
+        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
+    }
+    int cached_size = ::_pbi::ToCachedSize(data_size);
+    _impl_._firm_ids_cached_byte_size_.store(cached_size,
+                                    std::memory_order_relaxed);
+    total_size += data_size;
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData AddFirmResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    AddFirmResponse::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*AddFirmResponse::GetClassData() const { return &_class_data_; }
 
 
+void AddFirmResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<AddFirmResponse*>(&to_msg);
+  auto& from = static_cast<const AddFirmResponse&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:city.economy.v2.AddFirmResponse)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
+  _this->_impl_.firm_ids_.MergeFrom(from._impl_.firm_ids_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
 
+void AddFirmResponse::CopyFrom(const AddFirmResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:city.economy.v2.AddFirmResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
 
+bool AddFirmResponse::IsInitialized() const {
+  return true;
+}
 
+void AddFirmResponse::InternalSwap(AddFirmResponse* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _impl_.firm_ids_.InternalSwap(&other->_impl_.firm_ids_);
+}
 
 ::PROTOBUF_NAMESPACE_ID::Metadata AddFirmResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
@@ -2992,11 +2715,11 @@ RemoveFirmRequest::RemoveFirmRequest(const RemoveFirmRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   RemoveFirmRequest* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.firm_id_){}
+      decltype(_impl_.firm_ids_){from._impl_.firm_ids_}
+    , /*decltype(_impl_._firm_ids_cached_byte_size_)*/{0}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _this->_impl_.firm_id_ = from._impl_.firm_id_;
   // @@protoc_insertion_point(copy_constructor:city.economy.v2.RemoveFirmRequest)
 }
 
@@ -3005,7 +2728,8 @@ inline void RemoveFirmRequest::SharedCtor(
   (void)arena;
   (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.firm_id_){0}
+      decltype(_impl_.firm_ids_){arena}
+    , /*decltype(_impl_._firm_ids_cached_byte_size_)*/{0}
     , /*decltype(_impl_._cached_size_)*/{}
   };
 }
@@ -3021,6 +2745,7 @@ RemoveFirmRequest::~RemoveFirmRequest() {
 
 inline void RemoveFirmRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.firm_ids_.~RepeatedField();
 }
 
 void RemoveFirmRequest::SetCachedSize(int size) const {
@@ -3033,7 +2758,7 @@ void RemoveFirmRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.firm_id_ = 0;
+  _impl_.firm_ids_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -3043,10 +2768,13 @@ const char* RemoveFirmRequest::_InternalParse(const char* ptr, ::_pbi::ParseCont
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // int32 firm_id = 1 [json_name = "firmId"];
+      // repeated int32 firm_ids = 1 [json_name = "firmIds"];
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.firm_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_firm_ids(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<uint8_t>(tag) == 8) {
+          _internal_add_firm_ids(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -3080,10 +2808,13 @@ uint8_t* RemoveFirmRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // int32 firm_id = 1 [json_name = "firmId"];
-  if (this->_internal_firm_id() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_firm_id(), target);
+  // repeated int32 firm_ids = 1 [json_name = "firmIds"];
+  {
+    int byte_size = _impl_._firm_ids_cached_byte_size_.load(std::memory_order_relaxed);
+    if (byte_size > 0) {
+      target = stream->WriteInt32Packed(
+          1, _internal_firm_ids(), byte_size, target);
+    }
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -3102,9 +2833,18 @@ size_t RemoveFirmRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // int32 firm_id = 1 [json_name = "firmId"];
-  if (this->_internal_firm_id() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_firm_id());
+  // repeated int32 firm_ids = 1 [json_name = "firmIds"];
+  {
+    size_t data_size = ::_pbi::WireFormatLite::
+      Int32Size(this->_impl_.firm_ids_);
+    if (data_size > 0) {
+      total_size += 1 +
+        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
+    }
+    int cached_size = ::_pbi::ToCachedSize(data_size);
+    _impl_._firm_ids_cached_byte_size_.store(cached_size,
+                                    std::memory_order_relaxed);
+    total_size += data_size;
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -3125,9 +2865,7 @@ void RemoveFirmRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, cons
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_firm_id() != 0) {
-    _this->_internal_set_firm_id(from._internal_firm_id());
-  }
+  _this->_impl_.firm_ids_.MergeFrom(from._impl_.firm_ids_);
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -3145,7 +2883,7 @@ bool RemoveFirmRequest::IsInitialized() const {
 void RemoveFirmRequest::InternalSwap(RemoveFirmRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_.firm_id_, other->_impl_.firm_id_);
+  _impl_.firm_ids_.InternalSwap(&other->_impl_.firm_ids_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata RemoveFirmRequest::GetMetadata() const {
@@ -3210,11 +2948,11 @@ GetFirmRequest::GetFirmRequest(const GetFirmRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   GetFirmRequest* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.firm_id_){}
+      decltype(_impl_.firm_ids_){from._impl_.firm_ids_}
+    , /*decltype(_impl_._firm_ids_cached_byte_size_)*/{0}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _this->_impl_.firm_id_ = from._impl_.firm_id_;
   // @@protoc_insertion_point(copy_constructor:city.economy.v2.GetFirmRequest)
 }
 
@@ -3223,7 +2961,8 @@ inline void GetFirmRequest::SharedCtor(
   (void)arena;
   (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.firm_id_){0}
+      decltype(_impl_.firm_ids_){arena}
+    , /*decltype(_impl_._firm_ids_cached_byte_size_)*/{0}
     , /*decltype(_impl_._cached_size_)*/{}
   };
 }
@@ -3239,6 +2978,7 @@ GetFirmRequest::~GetFirmRequest() {
 
 inline void GetFirmRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.firm_ids_.~RepeatedField();
 }
 
 void GetFirmRequest::SetCachedSize(int size) const {
@@ -3251,7 +2991,7 @@ void GetFirmRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.firm_id_ = 0;
+  _impl_.firm_ids_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -3261,10 +3001,13 @@ const char* GetFirmRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // int32 firm_id = 1 [json_name = "firmId"];
+      // repeated int32 firm_ids = 1 [json_name = "firmIds"];
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.firm_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_firm_ids(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<uint8_t>(tag) == 8) {
+          _internal_add_firm_ids(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -3298,10 +3041,13 @@ uint8_t* GetFirmRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // int32 firm_id = 1 [json_name = "firmId"];
-  if (this->_internal_firm_id() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_firm_id(), target);
+  // repeated int32 firm_ids = 1 [json_name = "firmIds"];
+  {
+    int byte_size = _impl_._firm_ids_cached_byte_size_.load(std::memory_order_relaxed);
+    if (byte_size > 0) {
+      target = stream->WriteInt32Packed(
+          1, _internal_firm_ids(), byte_size, target);
+    }
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -3320,9 +3066,18 @@ size_t GetFirmRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // int32 firm_id = 1 [json_name = "firmId"];
-  if (this->_internal_firm_id() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_firm_id());
+  // repeated int32 firm_ids = 1 [json_name = "firmIds"];
+  {
+    size_t data_size = ::_pbi::WireFormatLite::
+      Int32Size(this->_impl_.firm_ids_);
+    if (data_size > 0) {
+      total_size += 1 +
+        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
+    }
+    int cached_size = ::_pbi::ToCachedSize(data_size);
+    _impl_._firm_ids_cached_byte_size_.store(cached_size,
+                                    std::memory_order_relaxed);
+    total_size += data_size;
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -3343,9 +3098,7 @@ void GetFirmRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const :
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_firm_id() != 0) {
-    _this->_internal_set_firm_id(from._internal_firm_id());
-  }
+  _this->_impl_.firm_ids_.MergeFrom(from._impl_.firm_ids_);
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -3363,7 +3116,7 @@ bool GetFirmRequest::IsInitialized() const {
 void GetFirmRequest::InternalSwap(GetFirmRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_.firm_id_, other->_impl_.firm_id_);
+  _impl_.firm_ids_.InternalSwap(&other->_impl_.firm_ids_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GetFirmRequest::GetMetadata() const {
@@ -3376,18 +3129,10 @@ void GetFirmRequest::InternalSwap(GetFirmRequest* other) {
 
 class GetFirmResponse::_Internal {
  public:
-  static const ::city::economy::v2::Firm& firm(const GetFirmResponse* msg);
 };
 
-const ::city::economy::v2::Firm&
-GetFirmResponse::_Internal::firm(const GetFirmResponse* msg) {
-  return *msg->_impl_.firm_;
-}
-void GetFirmResponse::clear_firm() {
-  if (GetArenaForAllocation() == nullptr && _impl_.firm_ != nullptr) {
-    delete _impl_.firm_;
-  }
-  _impl_.firm_ = nullptr;
+void GetFirmResponse::clear_firms() {
+  _impl_.firms_.Clear();
 }
 GetFirmResponse::GetFirmResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
@@ -3399,13 +3144,10 @@ GetFirmResponse::GetFirmResponse(const GetFirmResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   GetFirmResponse* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.firm_){nullptr}
+      decltype(_impl_.firms_){from._impl_.firms_}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  if (from._internal_has_firm()) {
-    _this->_impl_.firm_ = new ::city::economy::v2::Firm(*from._impl_.firm_);
-  }
   // @@protoc_insertion_point(copy_constructor:city.economy.v2.GetFirmResponse)
 }
 
@@ -3414,7 +3156,7 @@ inline void GetFirmResponse::SharedCtor(
   (void)arena;
   (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.firm_){nullptr}
+      decltype(_impl_.firms_){arena}
     , /*decltype(_impl_._cached_size_)*/{}
   };
 }
@@ -3430,7 +3172,7 @@ GetFirmResponse::~GetFirmResponse() {
 
 inline void GetFirmResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete _impl_.firm_;
+  _impl_.firms_.~RepeatedPtrField();
 }
 
 void GetFirmResponse::SetCachedSize(int size) const {
@@ -3443,10 +3185,7 @@ void GetFirmResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaForAllocation() == nullptr && _impl_.firm_ != nullptr) {
-    delete _impl_.firm_;
-  }
-  _impl_.firm_ = nullptr;
+  _impl_.firms_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -3456,11 +3195,16 @@ const char* GetFirmResponse::_InternalParse(const char* ptr, ::_pbi::ParseContex
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .city.economy.v2.Firm firm = 1 [json_name = "firm"];
+      // repeated .city.economy.v2.Firm firms = 1 [json_name = "firms"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_firm(), ptr);
-          CHK_(ptr);
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_firms(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
         } else
           goto handle_unusual;
         continue;
@@ -3493,11 +3237,12 @@ uint8_t* GetFirmResponse::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .city.economy.v2.Firm firm = 1 [json_name = "firm"];
-  if (this->_internal_has_firm()) {
+  // repeated .city.economy.v2.Firm firms = 1 [json_name = "firms"];
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_firms_size()); i < n; i++) {
+    const auto& repfield = this->_internal_firms(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(1, _Internal::firm(this),
-        _Internal::firm(this).GetCachedSize(), target, stream);
+        InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -3516,11 +3261,11 @@ size_t GetFirmResponse::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .city.economy.v2.Firm firm = 1 [json_name = "firm"];
-  if (this->_internal_has_firm()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *_impl_.firm_);
+  // repeated .city.economy.v2.Firm firms = 1 [json_name = "firms"];
+  total_size += 1UL * this->_internal_firms_size();
+  for (const auto& msg : this->_impl_.firms_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -3541,10 +3286,7 @@ void GetFirmResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const 
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_has_firm()) {
-    _this->_internal_mutable_firm()->::city::economy::v2::Firm::MergeFrom(
-        from._internal_firm());
-  }
+  _this->_impl_.firms_.MergeFrom(from._impl_.firms_);
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -3562,7 +3304,7 @@ bool GetFirmResponse::IsInitialized() const {
 void GetFirmResponse::InternalSwap(GetFirmResponse* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_.firm_, other->_impl_.firm_);
+  _impl_.firms_.InternalSwap(&other->_impl_.firms_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GetFirmResponse::GetMetadata() const {
@@ -3575,18 +3317,10 @@ void GetFirmResponse::InternalSwap(GetFirmResponse* other) {
 
 class UpdateFirmRequest::_Internal {
  public:
-  static const ::city::economy::v2::Firm& firm(const UpdateFirmRequest* msg);
 };
 
-const ::city::economy::v2::Firm&
-UpdateFirmRequest::_Internal::firm(const UpdateFirmRequest* msg) {
-  return *msg->_impl_.firm_;
-}
-void UpdateFirmRequest::clear_firm() {
-  if (GetArenaForAllocation() == nullptr && _impl_.firm_ != nullptr) {
-    delete _impl_.firm_;
-  }
-  _impl_.firm_ = nullptr;
+void UpdateFirmRequest::clear_firms() {
+  _impl_.firms_.Clear();
 }
 UpdateFirmRequest::UpdateFirmRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
@@ -3598,13 +3332,10 @@ UpdateFirmRequest::UpdateFirmRequest(const UpdateFirmRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   UpdateFirmRequest* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.firm_){nullptr}
+      decltype(_impl_.firms_){from._impl_.firms_}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  if (from._internal_has_firm()) {
-    _this->_impl_.firm_ = new ::city::economy::v2::Firm(*from._impl_.firm_);
-  }
   // @@protoc_insertion_point(copy_constructor:city.economy.v2.UpdateFirmRequest)
 }
 
@@ -3613,7 +3344,7 @@ inline void UpdateFirmRequest::SharedCtor(
   (void)arena;
   (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.firm_){nullptr}
+      decltype(_impl_.firms_){arena}
     , /*decltype(_impl_._cached_size_)*/{}
   };
 }
@@ -3629,7 +3360,7 @@ UpdateFirmRequest::~UpdateFirmRequest() {
 
 inline void UpdateFirmRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete _impl_.firm_;
+  _impl_.firms_.~RepeatedPtrField();
 }
 
 void UpdateFirmRequest::SetCachedSize(int size) const {
@@ -3642,10 +3373,7 @@ void UpdateFirmRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaForAllocation() == nullptr && _impl_.firm_ != nullptr) {
-    delete _impl_.firm_;
-  }
-  _impl_.firm_ = nullptr;
+  _impl_.firms_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -3655,11 +3383,16 @@ const char* UpdateFirmRequest::_InternalParse(const char* ptr, ::_pbi::ParseCont
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .city.economy.v2.Firm firm = 1 [json_name = "firm"];
+      // repeated .city.economy.v2.Firm firms = 1 [json_name = "firms"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_firm(), ptr);
-          CHK_(ptr);
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_firms(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
         } else
           goto handle_unusual;
         continue;
@@ -3692,11 +3425,12 @@ uint8_t* UpdateFirmRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .city.economy.v2.Firm firm = 1 [json_name = "firm"];
-  if (this->_internal_has_firm()) {
+  // repeated .city.economy.v2.Firm firms = 1 [json_name = "firms"];
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_firms_size()); i < n; i++) {
+    const auto& repfield = this->_internal_firms(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(1, _Internal::firm(this),
-        _Internal::firm(this).GetCachedSize(), target, stream);
+        InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -3715,11 +3449,11 @@ size_t UpdateFirmRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .city.economy.v2.Firm firm = 1 [json_name = "firm"];
-  if (this->_internal_has_firm()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *_impl_.firm_);
+  // repeated .city.economy.v2.Firm firms = 1 [json_name = "firms"];
+  total_size += 1UL * this->_internal_firms_size();
+  for (const auto& msg : this->_impl_.firms_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -3740,10 +3474,7 @@ void UpdateFirmRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, cons
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_has_firm()) {
-    _this->_internal_mutable_firm()->::city::economy::v2::Firm::MergeFrom(
-        from._internal_firm());
-  }
+  _this->_impl_.firms_.MergeFrom(from._impl_.firms_);
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -3761,7 +3492,7 @@ bool UpdateFirmRequest::IsInitialized() const {
 void UpdateFirmRequest::InternalSwap(UpdateFirmRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_.firm_, other->_impl_.firm_);
+  _impl_.firms_.InternalSwap(&other->_impl_.firms_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata UpdateFirmRequest::GetMetadata() const {
@@ -4042,7 +3773,192 @@ void ListFirmsResponse::InternalSwap(ListFirmsResponse* other) {
 
 class DeltaUpdateFirmRequest::_Internal {
  public:
-  using HasBits = decltype(std::declval<DeltaUpdateFirmRequest>()._impl_._has_bits_);
+};
+
+DeltaUpdateFirmRequest::DeltaUpdateFirmRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:city.economy.v2.DeltaUpdateFirmRequest)
+}
+DeltaUpdateFirmRequest::DeltaUpdateFirmRequest(const DeltaUpdateFirmRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  DeltaUpdateFirmRequest* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.updates_){from._impl_.updates_}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:city.economy.v2.DeltaUpdateFirmRequest)
+}
+
+inline void DeltaUpdateFirmRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.updates_){arena}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+}
+
+DeltaUpdateFirmRequest::~DeltaUpdateFirmRequest() {
+  // @@protoc_insertion_point(destructor:city.economy.v2.DeltaUpdateFirmRequest)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void DeltaUpdateFirmRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.updates_.~RepeatedPtrField();
+}
+
+void DeltaUpdateFirmRequest::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void DeltaUpdateFirmRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:city.economy.v2.DeltaUpdateFirmRequest)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.updates_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* DeltaUpdateFirmRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // repeated .city.economy.v2.FirmDeltaUpdate updates = 1 [json_name = "updates"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_updates(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* DeltaUpdateFirmRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:city.economy.v2.DeltaUpdateFirmRequest)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated .city.economy.v2.FirmDeltaUpdate updates = 1 [json_name = "updates"];
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_updates_size()); i < n; i++) {
+    const auto& repfield = this->_internal_updates(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:city.economy.v2.DeltaUpdateFirmRequest)
+  return target;
+}
+
+size_t DeltaUpdateFirmRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:city.economy.v2.DeltaUpdateFirmRequest)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated .city.economy.v2.FirmDeltaUpdate updates = 1 [json_name = "updates"];
+  total_size += 1UL * this->_internal_updates_size();
+  for (const auto& msg : this->_impl_.updates_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData DeltaUpdateFirmRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    DeltaUpdateFirmRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*DeltaUpdateFirmRequest::GetClassData() const { return &_class_data_; }
+
+
+void DeltaUpdateFirmRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<DeltaUpdateFirmRequest*>(&to_msg);
+  auto& from = static_cast<const DeltaUpdateFirmRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:city.economy.v2.DeltaUpdateFirmRequest)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_impl_.updates_.MergeFrom(from._impl_.updates_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void DeltaUpdateFirmRequest::CopyFrom(const DeltaUpdateFirmRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:city.economy.v2.DeltaUpdateFirmRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool DeltaUpdateFirmRequest::IsInitialized() const {
+  return true;
+}
+
+void DeltaUpdateFirmRequest::InternalSwap(DeltaUpdateFirmRequest* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _impl_.updates_.InternalSwap(&other->_impl_.updates_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata DeltaUpdateFirmRequest::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[10]);
+}
+
+// ===================================================================
+
+class FirmDeltaUpdate::_Internal {
+ public:
+  using HasBits = decltype(std::declval<FirmDeltaUpdate>()._impl_._has_bits_);
   static void set_has_delta_price(HasBits* has_bits) {
     (*has_bits)[0] |= 1u;
   }
@@ -4060,15 +3976,15 @@ class DeltaUpdateFirmRequest::_Internal {
   }
 };
 
-DeltaUpdateFirmRequest::DeltaUpdateFirmRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+FirmDeltaUpdate::FirmDeltaUpdate(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:city.economy.v2.DeltaUpdateFirmRequest)
+  // @@protoc_insertion_point(arena_constructor:city.economy.v2.FirmDeltaUpdate)
 }
-DeltaUpdateFirmRequest::DeltaUpdateFirmRequest(const DeltaUpdateFirmRequest& from)
+FirmDeltaUpdate::FirmDeltaUpdate(const FirmDeltaUpdate& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  DeltaUpdateFirmRequest* const _this = this; (void)_this;
+  FirmDeltaUpdate* const _this = this; (void)_this;
   new (&_impl_) Impl_{
       decltype(_impl_._has_bits_){from._impl_._has_bits_}
     , /*decltype(_impl_._cached_size_)*/{}
@@ -4087,10 +4003,10 @@ DeltaUpdateFirmRequest::DeltaUpdateFirmRequest(const DeltaUpdateFirmRequest& fro
   ::memcpy(&_impl_.firm_id_, &from._impl_.firm_id_,
     static_cast<size_t>(reinterpret_cast<char*>(&_impl_.delta_currency_) -
     reinterpret_cast<char*>(&_impl_.firm_id_)) + sizeof(_impl_.delta_currency_));
-  // @@protoc_insertion_point(copy_constructor:city.economy.v2.DeltaUpdateFirmRequest)
+  // @@protoc_insertion_point(copy_constructor:city.economy.v2.FirmDeltaUpdate)
 }
 
-inline void DeltaUpdateFirmRequest::SharedCtor(
+inline void FirmDeltaUpdate::SharedCtor(
     ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
   (void)is_message_owned;
@@ -4110,8 +4026,8 @@ inline void DeltaUpdateFirmRequest::SharedCtor(
   };
 }
 
-DeltaUpdateFirmRequest::~DeltaUpdateFirmRequest() {
-  // @@protoc_insertion_point(destructor:city.economy.v2.DeltaUpdateFirmRequest)
+FirmDeltaUpdate::~FirmDeltaUpdate() {
+  // @@protoc_insertion_point(destructor:city.economy.v2.FirmDeltaUpdate)
   if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
   (void)arena;
     return;
@@ -4119,18 +4035,18 @@ DeltaUpdateFirmRequest::~DeltaUpdateFirmRequest() {
   SharedDtor();
 }
 
-inline void DeltaUpdateFirmRequest::SharedDtor() {
+inline void FirmDeltaUpdate::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.add_employees_.~RepeatedField();
   _impl_.remove_employees_.~RepeatedField();
 }
 
-void DeltaUpdateFirmRequest::SetCachedSize(int size) const {
+void FirmDeltaUpdate::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-void DeltaUpdateFirmRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:city.economy.v2.DeltaUpdateFirmRequest)
+void FirmDeltaUpdate::Clear() {
+// @@protoc_insertion_point(message_clear_start:city.economy.v2.FirmDeltaUpdate)
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -4148,7 +4064,7 @@ void DeltaUpdateFirmRequest::Clear() {
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* DeltaUpdateFirmRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* FirmDeltaUpdate::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
@@ -4254,9 +4170,9 @@ failure:
 #undef CHK_
 }
 
-uint8_t* DeltaUpdateFirmRequest::_InternalSerialize(
+uint8_t* FirmDeltaUpdate::_InternalSerialize(
     uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:city.economy.v2.DeltaUpdateFirmRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:city.economy.v2.FirmDeltaUpdate)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -4318,12 +4234,12 @@ uint8_t* DeltaUpdateFirmRequest::_InternalSerialize(
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:city.economy.v2.DeltaUpdateFirmRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:city.economy.v2.FirmDeltaUpdate)
   return target;
 }
 
-size_t DeltaUpdateFirmRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:city.economy.v2.DeltaUpdateFirmRequest)
+size_t FirmDeltaUpdate::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:city.economy.v2.FirmDeltaUpdate)
   size_t total_size = 0;
 
   uint32_t cached_has_bits = 0;
@@ -4394,17 +4310,17 @@ size_t DeltaUpdateFirmRequest::ByteSizeLong() const {
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData DeltaUpdateFirmRequest::_class_data_ = {
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData FirmDeltaUpdate::_class_data_ = {
     ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    DeltaUpdateFirmRequest::MergeImpl
+    FirmDeltaUpdate::MergeImpl
 };
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*DeltaUpdateFirmRequest::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*FirmDeltaUpdate::GetClassData() const { return &_class_data_; }
 
 
-void DeltaUpdateFirmRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<DeltaUpdateFirmRequest*>(&to_msg);
-  auto& from = static_cast<const DeltaUpdateFirmRequest&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:city.economy.v2.DeltaUpdateFirmRequest)
+void FirmDeltaUpdate::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<FirmDeltaUpdate*>(&to_msg);
+  auto& from = static_cast<const FirmDeltaUpdate&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:city.economy.v2.FirmDeltaUpdate)
   GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
@@ -4436,35 +4352,35 @@ void DeltaUpdateFirmRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg,
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
-void DeltaUpdateFirmRequest::CopyFrom(const DeltaUpdateFirmRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:city.economy.v2.DeltaUpdateFirmRequest)
+void FirmDeltaUpdate::CopyFrom(const FirmDeltaUpdate& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:city.economy.v2.FirmDeltaUpdate)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool DeltaUpdateFirmRequest::IsInitialized() const {
+bool FirmDeltaUpdate::IsInitialized() const {
   return true;
 }
 
-void DeltaUpdateFirmRequest::InternalSwap(DeltaUpdateFirmRequest* other) {
+void FirmDeltaUpdate::InternalSwap(FirmDeltaUpdate* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
   _impl_.add_employees_.InternalSwap(&other->_impl_.add_employees_);
   _impl_.remove_employees_.InternalSwap(&other->_impl_.remove_employees_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(DeltaUpdateFirmRequest, _impl_.delta_currency_)
-      + sizeof(DeltaUpdateFirmRequest::_impl_.delta_currency_)
-      - PROTOBUF_FIELD_OFFSET(DeltaUpdateFirmRequest, _impl_.firm_id_)>(
+      PROTOBUF_FIELD_OFFSET(FirmDeltaUpdate, _impl_.delta_currency_)
+      + sizeof(FirmDeltaUpdate::_impl_.delta_currency_)
+      - PROTOBUF_FIELD_OFFSET(FirmDeltaUpdate, _impl_.firm_id_)>(
           reinterpret_cast<char*>(&_impl_.firm_id_),
           reinterpret_cast<char*>(&other->_impl_.firm_id_));
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata DeltaUpdateFirmRequest::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata FirmDeltaUpdate::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[10]);
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[11]);
 }
 
 // ===================================================================
@@ -4504,1455 +4420,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*DeltaUpdateFirmResponse::GetCl
 ::PROTOBUF_NAMESPACE_ID::Metadata DeltaUpdateFirmResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[11]);
-}
-
-// ===================================================================
-
-class BatchAddFirmRequest::_Internal {
- public:
-};
-
-void BatchAddFirmRequest::clear_firms() {
-  _impl_.firms_.Clear();
-}
-BatchAddFirmRequest::BatchAddFirmRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:city.economy.v2.BatchAddFirmRequest)
-}
-BatchAddFirmRequest::BatchAddFirmRequest(const BatchAddFirmRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  BatchAddFirmRequest* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.firms_){from._impl_.firms_}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:city.economy.v2.BatchAddFirmRequest)
-}
-
-inline void BatchAddFirmRequest::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.firms_){arena}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-}
-
-BatchAddFirmRequest::~BatchAddFirmRequest() {
-  // @@protoc_insertion_point(destructor:city.economy.v2.BatchAddFirmRequest)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
-  SharedDtor();
-}
-
-inline void BatchAddFirmRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.firms_.~RepeatedPtrField();
-}
-
-void BatchAddFirmRequest::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
-}
-
-void BatchAddFirmRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:city.economy.v2.BatchAddFirmRequest)
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  _impl_.firms_.Clear();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* BatchAddFirmRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // repeated .city.economy.v2.Firm firms = 1 [json_name = "firms"];
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_firms(), ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
-}
-
-uint8_t* BatchAddFirmRequest::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:city.economy.v2.BatchAddFirmRequest)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // repeated .city.economy.v2.Firm firms = 1 [json_name = "firms"];
-  for (unsigned i = 0,
-      n = static_cast<unsigned>(this->_internal_firms_size()); i < n; i++) {
-    const auto& repfield = this->_internal_firms(i);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-        InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:city.economy.v2.BatchAddFirmRequest)
-  return target;
-}
-
-size_t BatchAddFirmRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:city.economy.v2.BatchAddFirmRequest)
-  size_t total_size = 0;
-
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // repeated .city.economy.v2.Firm firms = 1 [json_name = "firms"];
-  total_size += 1UL * this->_internal_firms_size();
-  for (const auto& msg : this->_impl_.firms_) {
-    total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
-  }
-
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
-}
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BatchAddFirmRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    BatchAddFirmRequest::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BatchAddFirmRequest::GetClassData() const { return &_class_data_; }
-
-
-void BatchAddFirmRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<BatchAddFirmRequest*>(&to_msg);
-  auto& from = static_cast<const BatchAddFirmRequest&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:city.economy.v2.BatchAddFirmRequest)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  _this->_impl_.firms_.MergeFrom(from._impl_.firms_);
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-}
-
-void BatchAddFirmRequest::CopyFrom(const BatchAddFirmRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:city.economy.v2.BatchAddFirmRequest)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool BatchAddFirmRequest::IsInitialized() const {
-  return true;
-}
-
-void BatchAddFirmRequest::InternalSwap(BatchAddFirmRequest* other) {
-  using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  _impl_.firms_.InternalSwap(&other->_impl_.firms_);
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata BatchAddFirmRequest::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
       file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[12]);
-}
-
-// ===================================================================
-
-class BatchAddFirmResponse::_Internal {
- public:
-};
-
-BatchAddFirmResponse::BatchAddFirmResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:city.economy.v2.BatchAddFirmResponse)
-}
-BatchAddFirmResponse::BatchAddFirmResponse(const BatchAddFirmResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  BatchAddFirmResponse* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.firm_ids_){from._impl_.firm_ids_}
-    , /*decltype(_impl_._firm_ids_cached_byte_size_)*/{0}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:city.economy.v2.BatchAddFirmResponse)
-}
-
-inline void BatchAddFirmResponse::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.firm_ids_){arena}
-    , /*decltype(_impl_._firm_ids_cached_byte_size_)*/{0}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-}
-
-BatchAddFirmResponse::~BatchAddFirmResponse() {
-  // @@protoc_insertion_point(destructor:city.economy.v2.BatchAddFirmResponse)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
-  SharedDtor();
-}
-
-inline void BatchAddFirmResponse::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.firm_ids_.~RepeatedField();
-}
-
-void BatchAddFirmResponse::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
-}
-
-void BatchAddFirmResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:city.economy.v2.BatchAddFirmResponse)
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  _impl_.firm_ids_.Clear();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* BatchAddFirmResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // repeated int32 firm_ids = 1 [json_name = "firmIds"];
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_firm_ids(), ptr, ctx);
-          CHK_(ptr);
-        } else if (static_cast<uint8_t>(tag) == 8) {
-          _internal_add_firm_ids(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
-}
-
-uint8_t* BatchAddFirmResponse::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:city.economy.v2.BatchAddFirmResponse)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // repeated int32 firm_ids = 1 [json_name = "firmIds"];
-  {
-    int byte_size = _impl_._firm_ids_cached_byte_size_.load(std::memory_order_relaxed);
-    if (byte_size > 0) {
-      target = stream->WriteInt32Packed(
-          1, _internal_firm_ids(), byte_size, target);
-    }
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:city.economy.v2.BatchAddFirmResponse)
-  return target;
-}
-
-size_t BatchAddFirmResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:city.economy.v2.BatchAddFirmResponse)
-  size_t total_size = 0;
-
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // repeated int32 firm_ids = 1 [json_name = "firmIds"];
-  {
-    size_t data_size = ::_pbi::WireFormatLite::
-      Int32Size(this->_impl_.firm_ids_);
-    if (data_size > 0) {
-      total_size += 1 +
-        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
-    }
-    int cached_size = ::_pbi::ToCachedSize(data_size);
-    _impl_._firm_ids_cached_byte_size_.store(cached_size,
-                                    std::memory_order_relaxed);
-    total_size += data_size;
-  }
-
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
-}
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BatchAddFirmResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    BatchAddFirmResponse::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BatchAddFirmResponse::GetClassData() const { return &_class_data_; }
-
-
-void BatchAddFirmResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<BatchAddFirmResponse*>(&to_msg);
-  auto& from = static_cast<const BatchAddFirmResponse&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:city.economy.v2.BatchAddFirmResponse)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  _this->_impl_.firm_ids_.MergeFrom(from._impl_.firm_ids_);
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-}
-
-void BatchAddFirmResponse::CopyFrom(const BatchAddFirmResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:city.economy.v2.BatchAddFirmResponse)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool BatchAddFirmResponse::IsInitialized() const {
-  return true;
-}
-
-void BatchAddFirmResponse::InternalSwap(BatchAddFirmResponse* other) {
-  using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  _impl_.firm_ids_.InternalSwap(&other->_impl_.firm_ids_);
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata BatchAddFirmResponse::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[13]);
-}
-
-// ===================================================================
-
-class BatchRemoveFirmRequest::_Internal {
- public:
-};
-
-BatchRemoveFirmRequest::BatchRemoveFirmRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:city.economy.v2.BatchRemoveFirmRequest)
-}
-BatchRemoveFirmRequest::BatchRemoveFirmRequest(const BatchRemoveFirmRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  BatchRemoveFirmRequest* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.firm_ids_){from._impl_.firm_ids_}
-    , /*decltype(_impl_._firm_ids_cached_byte_size_)*/{0}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:city.economy.v2.BatchRemoveFirmRequest)
-}
-
-inline void BatchRemoveFirmRequest::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.firm_ids_){arena}
-    , /*decltype(_impl_._firm_ids_cached_byte_size_)*/{0}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-}
-
-BatchRemoveFirmRequest::~BatchRemoveFirmRequest() {
-  // @@protoc_insertion_point(destructor:city.economy.v2.BatchRemoveFirmRequest)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
-  SharedDtor();
-}
-
-inline void BatchRemoveFirmRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.firm_ids_.~RepeatedField();
-}
-
-void BatchRemoveFirmRequest::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
-}
-
-void BatchRemoveFirmRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:city.economy.v2.BatchRemoveFirmRequest)
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  _impl_.firm_ids_.Clear();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* BatchRemoveFirmRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // repeated int32 firm_ids = 1 [json_name = "firmIds"];
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_firm_ids(), ptr, ctx);
-          CHK_(ptr);
-        } else if (static_cast<uint8_t>(tag) == 8) {
-          _internal_add_firm_ids(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
-}
-
-uint8_t* BatchRemoveFirmRequest::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:city.economy.v2.BatchRemoveFirmRequest)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // repeated int32 firm_ids = 1 [json_name = "firmIds"];
-  {
-    int byte_size = _impl_._firm_ids_cached_byte_size_.load(std::memory_order_relaxed);
-    if (byte_size > 0) {
-      target = stream->WriteInt32Packed(
-          1, _internal_firm_ids(), byte_size, target);
-    }
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:city.economy.v2.BatchRemoveFirmRequest)
-  return target;
-}
-
-size_t BatchRemoveFirmRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:city.economy.v2.BatchRemoveFirmRequest)
-  size_t total_size = 0;
-
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // repeated int32 firm_ids = 1 [json_name = "firmIds"];
-  {
-    size_t data_size = ::_pbi::WireFormatLite::
-      Int32Size(this->_impl_.firm_ids_);
-    if (data_size > 0) {
-      total_size += 1 +
-        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
-    }
-    int cached_size = ::_pbi::ToCachedSize(data_size);
-    _impl_._firm_ids_cached_byte_size_.store(cached_size,
-                                    std::memory_order_relaxed);
-    total_size += data_size;
-  }
-
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
-}
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BatchRemoveFirmRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    BatchRemoveFirmRequest::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BatchRemoveFirmRequest::GetClassData() const { return &_class_data_; }
-
-
-void BatchRemoveFirmRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<BatchRemoveFirmRequest*>(&to_msg);
-  auto& from = static_cast<const BatchRemoveFirmRequest&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:city.economy.v2.BatchRemoveFirmRequest)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  _this->_impl_.firm_ids_.MergeFrom(from._impl_.firm_ids_);
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-}
-
-void BatchRemoveFirmRequest::CopyFrom(const BatchRemoveFirmRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:city.economy.v2.BatchRemoveFirmRequest)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool BatchRemoveFirmRequest::IsInitialized() const {
-  return true;
-}
-
-void BatchRemoveFirmRequest::InternalSwap(BatchRemoveFirmRequest* other) {
-  using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  _impl_.firm_ids_.InternalSwap(&other->_impl_.firm_ids_);
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata BatchRemoveFirmRequest::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[14]);
-}
-
-// ===================================================================
-
-class BatchRemoveFirmResponse::_Internal {
- public:
-};
-
-BatchRemoveFirmResponse::BatchRemoveFirmResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
-  // @@protoc_insertion_point(arena_constructor:city.economy.v2.BatchRemoveFirmResponse)
-}
-BatchRemoveFirmResponse::BatchRemoveFirmResponse(const BatchRemoveFirmResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
-  BatchRemoveFirmResponse* const _this = this; (void)_this;
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:city.economy.v2.BatchRemoveFirmResponse)
-}
-
-
-
-
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BatchRemoveFirmResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BatchRemoveFirmResponse::GetClassData() const { return &_class_data_; }
-
-
-
-
-
-
-
-::PROTOBUF_NAMESPACE_ID::Metadata BatchRemoveFirmResponse::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[15]);
-}
-
-// ===================================================================
-
-class BatchGetFirmRequest::_Internal {
- public:
-};
-
-BatchGetFirmRequest::BatchGetFirmRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:city.economy.v2.BatchGetFirmRequest)
-}
-BatchGetFirmRequest::BatchGetFirmRequest(const BatchGetFirmRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  BatchGetFirmRequest* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.firm_ids_){from._impl_.firm_ids_}
-    , /*decltype(_impl_._firm_ids_cached_byte_size_)*/{0}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:city.economy.v2.BatchGetFirmRequest)
-}
-
-inline void BatchGetFirmRequest::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.firm_ids_){arena}
-    , /*decltype(_impl_._firm_ids_cached_byte_size_)*/{0}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-}
-
-BatchGetFirmRequest::~BatchGetFirmRequest() {
-  // @@protoc_insertion_point(destructor:city.economy.v2.BatchGetFirmRequest)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
-  SharedDtor();
-}
-
-inline void BatchGetFirmRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.firm_ids_.~RepeatedField();
-}
-
-void BatchGetFirmRequest::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
-}
-
-void BatchGetFirmRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:city.economy.v2.BatchGetFirmRequest)
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  _impl_.firm_ids_.Clear();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* BatchGetFirmRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // repeated int32 firm_ids = 1 [json_name = "firmIds"];
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_firm_ids(), ptr, ctx);
-          CHK_(ptr);
-        } else if (static_cast<uint8_t>(tag) == 8) {
-          _internal_add_firm_ids(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
-}
-
-uint8_t* BatchGetFirmRequest::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:city.economy.v2.BatchGetFirmRequest)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // repeated int32 firm_ids = 1 [json_name = "firmIds"];
-  {
-    int byte_size = _impl_._firm_ids_cached_byte_size_.load(std::memory_order_relaxed);
-    if (byte_size > 0) {
-      target = stream->WriteInt32Packed(
-          1, _internal_firm_ids(), byte_size, target);
-    }
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:city.economy.v2.BatchGetFirmRequest)
-  return target;
-}
-
-size_t BatchGetFirmRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:city.economy.v2.BatchGetFirmRequest)
-  size_t total_size = 0;
-
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // repeated int32 firm_ids = 1 [json_name = "firmIds"];
-  {
-    size_t data_size = ::_pbi::WireFormatLite::
-      Int32Size(this->_impl_.firm_ids_);
-    if (data_size > 0) {
-      total_size += 1 +
-        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
-    }
-    int cached_size = ::_pbi::ToCachedSize(data_size);
-    _impl_._firm_ids_cached_byte_size_.store(cached_size,
-                                    std::memory_order_relaxed);
-    total_size += data_size;
-  }
-
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
-}
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BatchGetFirmRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    BatchGetFirmRequest::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BatchGetFirmRequest::GetClassData() const { return &_class_data_; }
-
-
-void BatchGetFirmRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<BatchGetFirmRequest*>(&to_msg);
-  auto& from = static_cast<const BatchGetFirmRequest&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:city.economy.v2.BatchGetFirmRequest)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  _this->_impl_.firm_ids_.MergeFrom(from._impl_.firm_ids_);
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-}
-
-void BatchGetFirmRequest::CopyFrom(const BatchGetFirmRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:city.economy.v2.BatchGetFirmRequest)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool BatchGetFirmRequest::IsInitialized() const {
-  return true;
-}
-
-void BatchGetFirmRequest::InternalSwap(BatchGetFirmRequest* other) {
-  using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  _impl_.firm_ids_.InternalSwap(&other->_impl_.firm_ids_);
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata BatchGetFirmRequest::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[16]);
-}
-
-// ===================================================================
-
-class BatchGetFirmResponse::_Internal {
- public:
-};
-
-void BatchGetFirmResponse::clear_firms() {
-  _impl_.firms_.Clear();
-}
-BatchGetFirmResponse::BatchGetFirmResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:city.economy.v2.BatchGetFirmResponse)
-}
-BatchGetFirmResponse::BatchGetFirmResponse(const BatchGetFirmResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  BatchGetFirmResponse* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.firms_){from._impl_.firms_}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:city.economy.v2.BatchGetFirmResponse)
-}
-
-inline void BatchGetFirmResponse::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.firms_){arena}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-}
-
-BatchGetFirmResponse::~BatchGetFirmResponse() {
-  // @@protoc_insertion_point(destructor:city.economy.v2.BatchGetFirmResponse)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
-  SharedDtor();
-}
-
-inline void BatchGetFirmResponse::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.firms_.~RepeatedPtrField();
-}
-
-void BatchGetFirmResponse::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
-}
-
-void BatchGetFirmResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:city.economy.v2.BatchGetFirmResponse)
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  _impl_.firms_.Clear();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* BatchGetFirmResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // repeated .city.economy.v2.Firm firms = 1 [json_name = "firms"];
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_firms(), ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
-}
-
-uint8_t* BatchGetFirmResponse::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:city.economy.v2.BatchGetFirmResponse)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // repeated .city.economy.v2.Firm firms = 1 [json_name = "firms"];
-  for (unsigned i = 0,
-      n = static_cast<unsigned>(this->_internal_firms_size()); i < n; i++) {
-    const auto& repfield = this->_internal_firms(i);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-        InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:city.economy.v2.BatchGetFirmResponse)
-  return target;
-}
-
-size_t BatchGetFirmResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:city.economy.v2.BatchGetFirmResponse)
-  size_t total_size = 0;
-
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // repeated .city.economy.v2.Firm firms = 1 [json_name = "firms"];
-  total_size += 1UL * this->_internal_firms_size();
-  for (const auto& msg : this->_impl_.firms_) {
-    total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
-  }
-
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
-}
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BatchGetFirmResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    BatchGetFirmResponse::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BatchGetFirmResponse::GetClassData() const { return &_class_data_; }
-
-
-void BatchGetFirmResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<BatchGetFirmResponse*>(&to_msg);
-  auto& from = static_cast<const BatchGetFirmResponse&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:city.economy.v2.BatchGetFirmResponse)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  _this->_impl_.firms_.MergeFrom(from._impl_.firms_);
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-}
-
-void BatchGetFirmResponse::CopyFrom(const BatchGetFirmResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:city.economy.v2.BatchGetFirmResponse)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool BatchGetFirmResponse::IsInitialized() const {
-  return true;
-}
-
-void BatchGetFirmResponse::InternalSwap(BatchGetFirmResponse* other) {
-  using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  _impl_.firms_.InternalSwap(&other->_impl_.firms_);
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata BatchGetFirmResponse::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[17]);
-}
-
-// ===================================================================
-
-class BatchUpdateFirmRequest::_Internal {
- public:
-};
-
-void BatchUpdateFirmRequest::clear_firms() {
-  _impl_.firms_.Clear();
-}
-BatchUpdateFirmRequest::BatchUpdateFirmRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:city.economy.v2.BatchUpdateFirmRequest)
-}
-BatchUpdateFirmRequest::BatchUpdateFirmRequest(const BatchUpdateFirmRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  BatchUpdateFirmRequest* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.firms_){from._impl_.firms_}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:city.economy.v2.BatchUpdateFirmRequest)
-}
-
-inline void BatchUpdateFirmRequest::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.firms_){arena}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-}
-
-BatchUpdateFirmRequest::~BatchUpdateFirmRequest() {
-  // @@protoc_insertion_point(destructor:city.economy.v2.BatchUpdateFirmRequest)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
-  SharedDtor();
-}
-
-inline void BatchUpdateFirmRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.firms_.~RepeatedPtrField();
-}
-
-void BatchUpdateFirmRequest::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
-}
-
-void BatchUpdateFirmRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:city.economy.v2.BatchUpdateFirmRequest)
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  _impl_.firms_.Clear();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* BatchUpdateFirmRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // repeated .city.economy.v2.Firm firms = 1 [json_name = "firms"];
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_firms(), ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
-}
-
-uint8_t* BatchUpdateFirmRequest::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:city.economy.v2.BatchUpdateFirmRequest)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // repeated .city.economy.v2.Firm firms = 1 [json_name = "firms"];
-  for (unsigned i = 0,
-      n = static_cast<unsigned>(this->_internal_firms_size()); i < n; i++) {
-    const auto& repfield = this->_internal_firms(i);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-        InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:city.economy.v2.BatchUpdateFirmRequest)
-  return target;
-}
-
-size_t BatchUpdateFirmRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:city.economy.v2.BatchUpdateFirmRequest)
-  size_t total_size = 0;
-
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // repeated .city.economy.v2.Firm firms = 1 [json_name = "firms"];
-  total_size += 1UL * this->_internal_firms_size();
-  for (const auto& msg : this->_impl_.firms_) {
-    total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
-  }
-
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
-}
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BatchUpdateFirmRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    BatchUpdateFirmRequest::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BatchUpdateFirmRequest::GetClassData() const { return &_class_data_; }
-
-
-void BatchUpdateFirmRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<BatchUpdateFirmRequest*>(&to_msg);
-  auto& from = static_cast<const BatchUpdateFirmRequest&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:city.economy.v2.BatchUpdateFirmRequest)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  _this->_impl_.firms_.MergeFrom(from._impl_.firms_);
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-}
-
-void BatchUpdateFirmRequest::CopyFrom(const BatchUpdateFirmRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:city.economy.v2.BatchUpdateFirmRequest)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool BatchUpdateFirmRequest::IsInitialized() const {
-  return true;
-}
-
-void BatchUpdateFirmRequest::InternalSwap(BatchUpdateFirmRequest* other) {
-  using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  _impl_.firms_.InternalSwap(&other->_impl_.firms_);
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata BatchUpdateFirmRequest::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[18]);
-}
-
-// ===================================================================
-
-class BatchUpdateFirmResponse::_Internal {
- public:
-};
-
-BatchUpdateFirmResponse::BatchUpdateFirmResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
-  // @@protoc_insertion_point(arena_constructor:city.economy.v2.BatchUpdateFirmResponse)
-}
-BatchUpdateFirmResponse::BatchUpdateFirmResponse(const BatchUpdateFirmResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
-  BatchUpdateFirmResponse* const _this = this; (void)_this;
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:city.economy.v2.BatchUpdateFirmResponse)
-}
-
-
-
-
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BatchUpdateFirmResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BatchUpdateFirmResponse::GetClassData() const { return &_class_data_; }
-
-
-
-
-
-
-
-::PROTOBUF_NAMESPACE_ID::Metadata BatchUpdateFirmResponse::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[19]);
-}
-
-// ===================================================================
-
-class BatchDeltaUpdateFirmRequest::_Internal {
- public:
-};
-
-BatchDeltaUpdateFirmRequest::BatchDeltaUpdateFirmRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:city.economy.v2.BatchDeltaUpdateFirmRequest)
-}
-BatchDeltaUpdateFirmRequest::BatchDeltaUpdateFirmRequest(const BatchDeltaUpdateFirmRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  BatchDeltaUpdateFirmRequest* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.updates_){from._impl_.updates_}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:city.economy.v2.BatchDeltaUpdateFirmRequest)
-}
-
-inline void BatchDeltaUpdateFirmRequest::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.updates_){arena}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-}
-
-BatchDeltaUpdateFirmRequest::~BatchDeltaUpdateFirmRequest() {
-  // @@protoc_insertion_point(destructor:city.economy.v2.BatchDeltaUpdateFirmRequest)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
-  SharedDtor();
-}
-
-inline void BatchDeltaUpdateFirmRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.updates_.~RepeatedPtrField();
-}
-
-void BatchDeltaUpdateFirmRequest::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
-}
-
-void BatchDeltaUpdateFirmRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:city.economy.v2.BatchDeltaUpdateFirmRequest)
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  _impl_.updates_.Clear();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* BatchDeltaUpdateFirmRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // repeated .city.economy.v2.DeltaUpdateFirmRequest updates = 1 [json_name = "updates"];
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_updates(), ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
-}
-
-uint8_t* BatchDeltaUpdateFirmRequest::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:city.economy.v2.BatchDeltaUpdateFirmRequest)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // repeated .city.economy.v2.DeltaUpdateFirmRequest updates = 1 [json_name = "updates"];
-  for (unsigned i = 0,
-      n = static_cast<unsigned>(this->_internal_updates_size()); i < n; i++) {
-    const auto& repfield = this->_internal_updates(i);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-        InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:city.economy.v2.BatchDeltaUpdateFirmRequest)
-  return target;
-}
-
-size_t BatchDeltaUpdateFirmRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:city.economy.v2.BatchDeltaUpdateFirmRequest)
-  size_t total_size = 0;
-
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // repeated .city.economy.v2.DeltaUpdateFirmRequest updates = 1 [json_name = "updates"];
-  total_size += 1UL * this->_internal_updates_size();
-  for (const auto& msg : this->_impl_.updates_) {
-    total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
-  }
-
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
-}
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BatchDeltaUpdateFirmRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    BatchDeltaUpdateFirmRequest::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BatchDeltaUpdateFirmRequest::GetClassData() const { return &_class_data_; }
-
-
-void BatchDeltaUpdateFirmRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<BatchDeltaUpdateFirmRequest*>(&to_msg);
-  auto& from = static_cast<const BatchDeltaUpdateFirmRequest&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:city.economy.v2.BatchDeltaUpdateFirmRequest)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  _this->_impl_.updates_.MergeFrom(from._impl_.updates_);
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-}
-
-void BatchDeltaUpdateFirmRequest::CopyFrom(const BatchDeltaUpdateFirmRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:city.economy.v2.BatchDeltaUpdateFirmRequest)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool BatchDeltaUpdateFirmRequest::IsInitialized() const {
-  return true;
-}
-
-void BatchDeltaUpdateFirmRequest::InternalSwap(BatchDeltaUpdateFirmRequest* other) {
-  using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  _impl_.updates_.InternalSwap(&other->_impl_.updates_);
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata BatchDeltaUpdateFirmRequest::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[20]);
-}
-
-// ===================================================================
-
-class BatchDeltaUpdateFirmResponse::_Internal {
- public:
-};
-
-BatchDeltaUpdateFirmResponse::BatchDeltaUpdateFirmResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
-  // @@protoc_insertion_point(arena_constructor:city.economy.v2.BatchDeltaUpdateFirmResponse)
-}
-BatchDeltaUpdateFirmResponse::BatchDeltaUpdateFirmResponse(const BatchDeltaUpdateFirmResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
-  BatchDeltaUpdateFirmResponse* const _this = this; (void)_this;
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:city.economy.v2.BatchDeltaUpdateFirmResponse)
-}
-
-
-
-
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BatchDeltaUpdateFirmResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BatchDeltaUpdateFirmResponse::GetClassData() const { return &_class_data_; }
-
-
-
-
-
-
-
-::PROTOBUF_NAMESPACE_ID::Metadata BatchDeltaUpdateFirmResponse::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[21]);
 }
 
 // ===================================================================
@@ -6151,7 +4619,7 @@ void AddNBSRequest::InternalSwap(AddNBSRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata AddNBSRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[22]);
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[13]);
 }
 
 // ===================================================================
@@ -6191,7 +4659,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*AddNBSResponse::GetClassData()
 ::PROTOBUF_NAMESPACE_ID::Metadata AddNBSResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[23]);
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[14]);
 }
 
 // ===================================================================
@@ -6369,7 +4837,7 @@ void RemoveNBSRequest::InternalSwap(RemoveNBSRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata RemoveNBSRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[24]);
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[15]);
 }
 
 // ===================================================================
@@ -6409,7 +4877,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*RemoveNBSResponse::GetClassDat
 ::PROTOBUF_NAMESPACE_ID::Metadata RemoveNBSResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[25]);
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[16]);
 }
 
 // ===================================================================
@@ -6587,7 +5055,7 @@ void GetNBSRequest::InternalSwap(GetNBSRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata GetNBSRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[26]);
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[17]);
 }
 
 // ===================================================================
@@ -6786,7 +5254,7 @@ void GetNBSResponse::InternalSwap(GetNBSResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata GetNBSResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[27]);
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[18]);
 }
 
 // ===================================================================
@@ -6985,7 +5453,7 @@ void UpdateNBSRequest::InternalSwap(UpdateNBSRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata UpdateNBSRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[28]);
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[19]);
 }
 
 // ===================================================================
@@ -7025,7 +5493,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*UpdateNBSResponse::GetClassDat
 ::PROTOBUF_NAMESPACE_ID::Metadata UpdateNBSResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[29]);
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[20]);
 }
 
 // ===================================================================
@@ -7065,7 +5533,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ListNBSRequest::GetClassData()
 ::PROTOBUF_NAMESPACE_ID::Metadata ListNBSRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[30]);
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[21]);
 }
 
 // ===================================================================
@@ -7253,7 +5721,7 @@ void ListNBSResponse::InternalSwap(ListNBSResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata ListNBSResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[31]);
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[22]);
 }
 
 // ===================================================================
@@ -7267,7 +5735,7 @@ void DeltaUpdateNBSRequest_DeltaNominalGdpEntry_DoNotUse::MergeFrom(const DeltaU
 ::PROTOBUF_NAMESPACE_ID::Metadata DeltaUpdateNBSRequest_DeltaNominalGdpEntry_DoNotUse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[32]);
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[23]);
 }
 
 // ===================================================================
@@ -7281,7 +5749,7 @@ void DeltaUpdateNBSRequest_DeltaRealGdpEntry_DoNotUse::MergeFrom(const DeltaUpda
 ::PROTOBUF_NAMESPACE_ID::Metadata DeltaUpdateNBSRequest_DeltaRealGdpEntry_DoNotUse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[33]);
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[24]);
 }
 
 // ===================================================================
@@ -7295,7 +5763,7 @@ void DeltaUpdateNBSRequest_DeltaUnemploymentEntry_DoNotUse::MergeFrom(const Delt
 ::PROTOBUF_NAMESPACE_ID::Metadata DeltaUpdateNBSRequest_DeltaUnemploymentEntry_DoNotUse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[34]);
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[25]);
 }
 
 // ===================================================================
@@ -7309,7 +5777,7 @@ void DeltaUpdateNBSRequest_DeltaWagesEntry_DoNotUse::MergeFrom(const DeltaUpdate
 ::PROTOBUF_NAMESPACE_ID::Metadata DeltaUpdateNBSRequest_DeltaWagesEntry_DoNotUse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[35]);
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[26]);
 }
 
 // ===================================================================
@@ -7323,7 +5791,7 @@ void DeltaUpdateNBSRequest_DeltaPricesEntry_DoNotUse::MergeFrom(const DeltaUpdat
 ::PROTOBUF_NAMESPACE_ID::Metadata DeltaUpdateNBSRequest_DeltaPricesEntry_DoNotUse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[36]);
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[27]);
 }
 
 // ===================================================================
@@ -7337,7 +5805,7 @@ void DeltaUpdateNBSRequest_DeltaWorkingHoursEntry_DoNotUse::MergeFrom(const Delt
 ::PROTOBUF_NAMESPACE_ID::Metadata DeltaUpdateNBSRequest_DeltaWorkingHoursEntry_DoNotUse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[37]);
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[28]);
 }
 
 // ===================================================================
@@ -7351,7 +5819,7 @@ void DeltaUpdateNBSRequest_DeltaDepressionEntry_DoNotUse::MergeFrom(const DeltaU
 ::PROTOBUF_NAMESPACE_ID::Metadata DeltaUpdateNBSRequest_DeltaDepressionEntry_DoNotUse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[38]);
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[29]);
 }
 
 // ===================================================================
@@ -7365,7 +5833,7 @@ void DeltaUpdateNBSRequest_DeltaConsumptionCurrencyEntry_DoNotUse::MergeFrom(con
 ::PROTOBUF_NAMESPACE_ID::Metadata DeltaUpdateNBSRequest_DeltaConsumptionCurrencyEntry_DoNotUse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[39]);
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[30]);
 }
 
 // ===================================================================
@@ -7379,7 +5847,7 @@ void DeltaUpdateNBSRequest_DeltaIncomeCurrencyEntry_DoNotUse::MergeFrom(const De
 ::PROTOBUF_NAMESPACE_ID::Metadata DeltaUpdateNBSRequest_DeltaIncomeCurrencyEntry_DoNotUse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[40]);
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[31]);
 }
 
 // ===================================================================
@@ -7393,7 +5861,7 @@ void DeltaUpdateNBSRequest_DeltaLocusControlEntry_DoNotUse::MergeFrom(const Delt
 ::PROTOBUF_NAMESPACE_ID::Metadata DeltaUpdateNBSRequest_DeltaLocusControlEntry_DoNotUse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[41]);
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[32]);
 }
 
 // ===================================================================
@@ -7431,14 +5899,14 @@ DeltaUpdateNBSRequest::DeltaUpdateNBSRequest(const DeltaUpdateNBSRequest& from)
     , /*decltype(_impl_.delta_consumption_currency_)*/{}
     , /*decltype(_impl_.delta_income_currency_)*/{}
     , /*decltype(_impl_.delta_locus_control_)*/{}
-    , decltype(_impl_.add_citizens_){from._impl_.add_citizens_}
-    , /*decltype(_impl_._add_citizens_cached_byte_size_)*/{0}
-    , decltype(_impl_.remove_citizens_){from._impl_.remove_citizens_}
-    , /*decltype(_impl_._remove_citizens_cached_byte_size_)*/{0}
-    , decltype(_impl_.add_citizens_agent_id_){from._impl_.add_citizens_agent_id_}
-    , /*decltype(_impl_._add_citizens_agent_id_cached_byte_size_)*/{0}
-    , decltype(_impl_.remove_citizens_agent_id_){from._impl_.remove_citizens_agent_id_}
-    , /*decltype(_impl_._remove_citizens_agent_id_cached_byte_size_)*/{0}
+    , decltype(_impl_.add_citizen_ids_){from._impl_.add_citizen_ids_}
+    , /*decltype(_impl_._add_citizen_ids_cached_byte_size_)*/{0}
+    , decltype(_impl_.remove_citizen_ids_){from._impl_.remove_citizen_ids_}
+    , /*decltype(_impl_._remove_citizen_ids_cached_byte_size_)*/{0}
+    , decltype(_impl_.add_citizen_agent_ids_){from._impl_.add_citizen_agent_ids_}
+    , /*decltype(_impl_._add_citizen_agent_ids_cached_byte_size_)*/{0}
+    , decltype(_impl_.remove_citizen_agent_ids_){from._impl_.remove_citizen_agent_ids_}
+    , /*decltype(_impl_._remove_citizen_agent_ids_cached_byte_size_)*/{0}
     , decltype(_impl_.nbs_id_){}
     , decltype(_impl_.delta_currency_){}};
 
@@ -7476,14 +5944,14 @@ inline void DeltaUpdateNBSRequest::SharedCtor(
     , /*decltype(_impl_.delta_consumption_currency_)*/{::_pbi::ArenaInitialized(), arena}
     , /*decltype(_impl_.delta_income_currency_)*/{::_pbi::ArenaInitialized(), arena}
     , /*decltype(_impl_.delta_locus_control_)*/{::_pbi::ArenaInitialized(), arena}
-    , decltype(_impl_.add_citizens_){arena}
-    , /*decltype(_impl_._add_citizens_cached_byte_size_)*/{0}
-    , decltype(_impl_.remove_citizens_){arena}
-    , /*decltype(_impl_._remove_citizens_cached_byte_size_)*/{0}
-    , decltype(_impl_.add_citizens_agent_id_){arena}
-    , /*decltype(_impl_._add_citizens_agent_id_cached_byte_size_)*/{0}
-    , decltype(_impl_.remove_citizens_agent_id_){arena}
-    , /*decltype(_impl_._remove_citizens_agent_id_cached_byte_size_)*/{0}
+    , decltype(_impl_.add_citizen_ids_){arena}
+    , /*decltype(_impl_._add_citizen_ids_cached_byte_size_)*/{0}
+    , decltype(_impl_.remove_citizen_ids_){arena}
+    , /*decltype(_impl_._remove_citizen_ids_cached_byte_size_)*/{0}
+    , decltype(_impl_.add_citizen_agent_ids_){arena}
+    , /*decltype(_impl_._add_citizen_agent_ids_cached_byte_size_)*/{0}
+    , decltype(_impl_.remove_citizen_agent_ids_){arena}
+    , /*decltype(_impl_._remove_citizen_agent_ids_cached_byte_size_)*/{0}
     , decltype(_impl_.nbs_id_){0}
     , decltype(_impl_.delta_currency_){0}
   };
@@ -7521,10 +5989,10 @@ inline void DeltaUpdateNBSRequest::SharedDtor() {
   _impl_.delta_income_currency_.~MapField();
   _impl_.delta_locus_control_.Destruct();
   _impl_.delta_locus_control_.~MapField();
-  _impl_.add_citizens_.~RepeatedField();
-  _impl_.remove_citizens_.~RepeatedField();
-  _impl_.add_citizens_agent_id_.~RepeatedField();
-  _impl_.remove_citizens_agent_id_.~RepeatedField();
+  _impl_.add_citizen_ids_.~RepeatedField();
+  _impl_.remove_citizen_ids_.~RepeatedField();
+  _impl_.add_citizen_agent_ids_.~RepeatedField();
+  _impl_.remove_citizen_agent_ids_.~RepeatedField();
 }
 
 void DeltaUpdateNBSRequest::ArenaDtor(void* object) {
@@ -7560,10 +6028,10 @@ void DeltaUpdateNBSRequest::Clear() {
   _impl_.delta_consumption_currency_.Clear();
   _impl_.delta_income_currency_.Clear();
   _impl_.delta_locus_control_.Clear();
-  _impl_.add_citizens_.Clear();
-  _impl_.remove_citizens_.Clear();
-  _impl_.add_citizens_agent_id_.Clear();
-  _impl_.remove_citizens_agent_id_.Clear();
+  _impl_.add_citizen_ids_.Clear();
+  _impl_.remove_citizen_ids_.Clear();
+  _impl_.add_citizen_agent_ids_.Clear();
+  _impl_.remove_citizen_agent_ids_.Clear();
   _impl_.nbs_id_ = 0;
   _impl_.delta_currency_ = 0;
   _impl_._has_bits_.Clear();
@@ -7724,46 +6192,46 @@ const char* DeltaUpdateNBSRequest::_InternalParse(const char* ptr, ::_pbi::Parse
         } else
           goto handle_unusual;
         continue;
-      // repeated int32 add_citizens = 13 [json_name = "addCitizens"];
+      // repeated int32 add_citizen_ids = 13 [json_name = "addCitizenIds"];
       case 13:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 106)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_add_citizens(), ptr, ctx);
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_add_citizen_ids(), ptr, ctx);
           CHK_(ptr);
         } else if (static_cast<uint8_t>(tag) == 104) {
-          _internal_add_add_citizens(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
+          _internal_add_add_citizen_ids(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // repeated int32 remove_citizens = 14 [json_name = "removeCitizens"];
+      // repeated int32 remove_citizen_ids = 14 [json_name = "removeCitizenIds"];
       case 14:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 114)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_remove_citizens(), ptr, ctx);
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_remove_citizen_ids(), ptr, ctx);
           CHK_(ptr);
         } else if (static_cast<uint8_t>(tag) == 112) {
-          _internal_add_remove_citizens(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
+          _internal_add_remove_citizen_ids(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // repeated int32 add_citizens_agent_id = 15 [json_name = "addCitizensAgentId"];
+      // repeated int32 add_citizen_agent_ids = 15 [json_name = "addCitizenAgentIds"];
       case 15:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 122)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_add_citizens_agent_id(), ptr, ctx);
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_add_citizen_agent_ids(), ptr, ctx);
           CHK_(ptr);
         } else if (static_cast<uint8_t>(tag) == 120) {
-          _internal_add_add_citizens_agent_id(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
+          _internal_add_add_citizen_agent_ids(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // repeated int32 remove_citizens_agent_id = 16 [json_name = "removeCitizensAgentId"];
+      // repeated int32 remove_citizen_agent_ids = 16 [json_name = "removeCitizenAgentIds"];
       case 16:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 130)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_remove_citizens_agent_id(), ptr, ctx);
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_remove_citizen_agent_ids(), ptr, ctx);
           CHK_(ptr);
         } else if (static_cast<uint8_t>(tag) == 128) {
-          _internal_add_remove_citizens_agent_id(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
+          _internal_add_remove_citizen_agent_ids(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -8070,39 +6538,39 @@ uint8_t* DeltaUpdateNBSRequest::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteFloatToArray(12, this->_internal_delta_currency(), target);
   }
 
-  // repeated int32 add_citizens = 13 [json_name = "addCitizens"];
+  // repeated int32 add_citizen_ids = 13 [json_name = "addCitizenIds"];
   {
-    int byte_size = _impl_._add_citizens_cached_byte_size_.load(std::memory_order_relaxed);
+    int byte_size = _impl_._add_citizen_ids_cached_byte_size_.load(std::memory_order_relaxed);
     if (byte_size > 0) {
       target = stream->WriteInt32Packed(
-          13, _internal_add_citizens(), byte_size, target);
+          13, _internal_add_citizen_ids(), byte_size, target);
     }
   }
 
-  // repeated int32 remove_citizens = 14 [json_name = "removeCitizens"];
+  // repeated int32 remove_citizen_ids = 14 [json_name = "removeCitizenIds"];
   {
-    int byte_size = _impl_._remove_citizens_cached_byte_size_.load(std::memory_order_relaxed);
+    int byte_size = _impl_._remove_citizen_ids_cached_byte_size_.load(std::memory_order_relaxed);
     if (byte_size > 0) {
       target = stream->WriteInt32Packed(
-          14, _internal_remove_citizens(), byte_size, target);
+          14, _internal_remove_citizen_ids(), byte_size, target);
     }
   }
 
-  // repeated int32 add_citizens_agent_id = 15 [json_name = "addCitizensAgentId"];
+  // repeated int32 add_citizen_agent_ids = 15 [json_name = "addCitizenAgentIds"];
   {
-    int byte_size = _impl_._add_citizens_agent_id_cached_byte_size_.load(std::memory_order_relaxed);
+    int byte_size = _impl_._add_citizen_agent_ids_cached_byte_size_.load(std::memory_order_relaxed);
     if (byte_size > 0) {
       target = stream->WriteInt32Packed(
-          15, _internal_add_citizens_agent_id(), byte_size, target);
+          15, _internal_add_citizen_agent_ids(), byte_size, target);
     }
   }
 
-  // repeated int32 remove_citizens_agent_id = 16 [json_name = "removeCitizensAgentId"];
+  // repeated int32 remove_citizen_agent_ids = 16 [json_name = "removeCitizenAgentIds"];
   {
-    int byte_size = _impl_._remove_citizens_agent_id_cached_byte_size_.load(std::memory_order_relaxed);
+    int byte_size = _impl_._remove_citizen_agent_ids_cached_byte_size_.load(std::memory_order_relaxed);
     if (byte_size > 0) {
       target = stream->WriteInt32Packed(
-          16, _internal_remove_citizens_agent_id(), byte_size, target);
+          16, _internal_remove_citizen_agent_ids(), byte_size, target);
     }
   }
 
@@ -8212,58 +6680,58 @@ size_t DeltaUpdateNBSRequest::ByteSizeLong() const {
     total_size += DeltaUpdateNBSRequest_DeltaLocusControlEntry_DoNotUse::Funcs::ByteSizeLong(it->first, it->second);
   }
 
-  // repeated int32 add_citizens = 13 [json_name = "addCitizens"];
+  // repeated int32 add_citizen_ids = 13 [json_name = "addCitizenIds"];
   {
     size_t data_size = ::_pbi::WireFormatLite::
-      Int32Size(this->_impl_.add_citizens_);
+      Int32Size(this->_impl_.add_citizen_ids_);
     if (data_size > 0) {
       total_size += 1 +
         ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
     }
     int cached_size = ::_pbi::ToCachedSize(data_size);
-    _impl_._add_citizens_cached_byte_size_.store(cached_size,
+    _impl_._add_citizen_ids_cached_byte_size_.store(cached_size,
                                     std::memory_order_relaxed);
     total_size += data_size;
   }
 
-  // repeated int32 remove_citizens = 14 [json_name = "removeCitizens"];
+  // repeated int32 remove_citizen_ids = 14 [json_name = "removeCitizenIds"];
   {
     size_t data_size = ::_pbi::WireFormatLite::
-      Int32Size(this->_impl_.remove_citizens_);
+      Int32Size(this->_impl_.remove_citizen_ids_);
     if (data_size > 0) {
       total_size += 1 +
         ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
     }
     int cached_size = ::_pbi::ToCachedSize(data_size);
-    _impl_._remove_citizens_cached_byte_size_.store(cached_size,
+    _impl_._remove_citizen_ids_cached_byte_size_.store(cached_size,
                                     std::memory_order_relaxed);
     total_size += data_size;
   }
 
-  // repeated int32 add_citizens_agent_id = 15 [json_name = "addCitizensAgentId"];
+  // repeated int32 add_citizen_agent_ids = 15 [json_name = "addCitizenAgentIds"];
   {
     size_t data_size = ::_pbi::WireFormatLite::
-      Int32Size(this->_impl_.add_citizens_agent_id_);
+      Int32Size(this->_impl_.add_citizen_agent_ids_);
     if (data_size > 0) {
       total_size += 1 +
         ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
     }
     int cached_size = ::_pbi::ToCachedSize(data_size);
-    _impl_._add_citizens_agent_id_cached_byte_size_.store(cached_size,
+    _impl_._add_citizen_agent_ids_cached_byte_size_.store(cached_size,
                                     std::memory_order_relaxed);
     total_size += data_size;
   }
 
-  // repeated int32 remove_citizens_agent_id = 16 [json_name = "removeCitizensAgentId"];
+  // repeated int32 remove_citizen_agent_ids = 16 [json_name = "removeCitizenAgentIds"];
   {
     size_t data_size = ::_pbi::WireFormatLite::
-      Int32Size(this->_impl_.remove_citizens_agent_id_);
+      Int32Size(this->_impl_.remove_citizen_agent_ids_);
     if (data_size > 0) {
       total_size += 2 +
         ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
     }
     int cached_size = ::_pbi::ToCachedSize(data_size);
-    _impl_._remove_citizens_agent_id_cached_byte_size_.store(cached_size,
+    _impl_._remove_citizen_agent_ids_cached_byte_size_.store(cached_size,
                                     std::memory_order_relaxed);
     total_size += data_size;
   }
@@ -8307,10 +6775,10 @@ void DeltaUpdateNBSRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, 
   _this->_impl_.delta_consumption_currency_.MergeFrom(from._impl_.delta_consumption_currency_);
   _this->_impl_.delta_income_currency_.MergeFrom(from._impl_.delta_income_currency_);
   _this->_impl_.delta_locus_control_.MergeFrom(from._impl_.delta_locus_control_);
-  _this->_impl_.add_citizens_.MergeFrom(from._impl_.add_citizens_);
-  _this->_impl_.remove_citizens_.MergeFrom(from._impl_.remove_citizens_);
-  _this->_impl_.add_citizens_agent_id_.MergeFrom(from._impl_.add_citizens_agent_id_);
-  _this->_impl_.remove_citizens_agent_id_.MergeFrom(from._impl_.remove_citizens_agent_id_);
+  _this->_impl_.add_citizen_ids_.MergeFrom(from._impl_.add_citizen_ids_);
+  _this->_impl_.remove_citizen_ids_.MergeFrom(from._impl_.remove_citizen_ids_);
+  _this->_impl_.add_citizen_agent_ids_.MergeFrom(from._impl_.add_citizen_agent_ids_);
+  _this->_impl_.remove_citizen_agent_ids_.MergeFrom(from._impl_.remove_citizen_agent_ids_);
   if (from._internal_nbs_id() != 0) {
     _this->_internal_set_nbs_id(from._internal_nbs_id());
   }
@@ -8345,10 +6813,10 @@ void DeltaUpdateNBSRequest::InternalSwap(DeltaUpdateNBSRequest* other) {
   _impl_.delta_consumption_currency_.InternalSwap(&other->_impl_.delta_consumption_currency_);
   _impl_.delta_income_currency_.InternalSwap(&other->_impl_.delta_income_currency_);
   _impl_.delta_locus_control_.InternalSwap(&other->_impl_.delta_locus_control_);
-  _impl_.add_citizens_.InternalSwap(&other->_impl_.add_citizens_);
-  _impl_.remove_citizens_.InternalSwap(&other->_impl_.remove_citizens_);
-  _impl_.add_citizens_agent_id_.InternalSwap(&other->_impl_.add_citizens_agent_id_);
-  _impl_.remove_citizens_agent_id_.InternalSwap(&other->_impl_.remove_citizens_agent_id_);
+  _impl_.add_citizen_ids_.InternalSwap(&other->_impl_.add_citizen_ids_);
+  _impl_.remove_citizen_ids_.InternalSwap(&other->_impl_.remove_citizen_ids_);
+  _impl_.add_citizen_agent_ids_.InternalSwap(&other->_impl_.add_citizen_agent_ids_);
+  _impl_.remove_citizen_agent_ids_.InternalSwap(&other->_impl_.remove_citizen_agent_ids_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(DeltaUpdateNBSRequest, _impl_.delta_currency_)
       + sizeof(DeltaUpdateNBSRequest::_impl_.delta_currency_)
@@ -8360,7 +6828,7 @@ void DeltaUpdateNBSRequest::InternalSwap(DeltaUpdateNBSRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata DeltaUpdateNBSRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[42]);
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[33]);
 }
 
 // ===================================================================
@@ -8400,7 +6868,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*DeltaUpdateNBSResponse::GetCla
 ::PROTOBUF_NAMESPACE_ID::Metadata DeltaUpdateNBSResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[43]);
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[34]);
 }
 
 // ===================================================================
@@ -8599,7 +7067,7 @@ void AddGovernmentRequest::InternalSwap(AddGovernmentRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata AddGovernmentRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[44]);
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[35]);
 }
 
 // ===================================================================
@@ -8639,7 +7107,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*AddGovernmentResponse::GetClas
 ::PROTOBUF_NAMESPACE_ID::Metadata AddGovernmentResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[45]);
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[36]);
 }
 
 // ===================================================================
@@ -8817,7 +7285,7 @@ void RemoveGovernmentRequest::InternalSwap(RemoveGovernmentRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata RemoveGovernmentRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[46]);
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[37]);
 }
 
 // ===================================================================
@@ -8857,7 +7325,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*RemoveGovernmentResponse::GetC
 ::PROTOBUF_NAMESPACE_ID::Metadata RemoveGovernmentResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[47]);
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[38]);
 }
 
 // ===================================================================
@@ -9035,7 +7503,7 @@ void GetGovernmentRequest::InternalSwap(GetGovernmentRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata GetGovernmentRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[48]);
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[39]);
 }
 
 // ===================================================================
@@ -9234,7 +7702,7 @@ void GetGovernmentResponse::InternalSwap(GetGovernmentResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata GetGovernmentResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[49]);
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[40]);
 }
 
 // ===================================================================
@@ -9433,7 +7901,7 @@ void UpdateGovernmentRequest::InternalSwap(UpdateGovernmentRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata UpdateGovernmentRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[50]);
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[41]);
 }
 
 // ===================================================================
@@ -9473,7 +7941,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*UpdateGovernmentResponse::GetC
 ::PROTOBUF_NAMESPACE_ID::Metadata UpdateGovernmentResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[51]);
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[42]);
 }
 
 // ===================================================================
@@ -9513,7 +7981,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ListGovernmentsRequest::GetCla
 ::PROTOBUF_NAMESPACE_ID::Metadata ListGovernmentsRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[52]);
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[43]);
 }
 
 // ===================================================================
@@ -9701,7 +8169,7 @@ void ListGovernmentsResponse::InternalSwap(ListGovernmentsResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata ListGovernmentsResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[53]);
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[44]);
 }
 
 // ===================================================================
@@ -9728,10 +8196,10 @@ DeltaUpdateGovernmentRequest::DeltaUpdateGovernmentRequest(const DeltaUpdateGove
     , /*decltype(_impl_._cached_size_)*/{}
     , decltype(_impl_.delta_bracket_cutoffs_){from._impl_.delta_bracket_cutoffs_}
     , decltype(_impl_.delta_bracket_rates_){from._impl_.delta_bracket_rates_}
-    , decltype(_impl_.add_citizens_){from._impl_.add_citizens_}
-    , /*decltype(_impl_._add_citizens_cached_byte_size_)*/{0}
-    , decltype(_impl_.remove_citizens_){from._impl_.remove_citizens_}
-    , /*decltype(_impl_._remove_citizens_cached_byte_size_)*/{0}
+    , decltype(_impl_.add_citizen_ids_){from._impl_.add_citizen_ids_}
+    , /*decltype(_impl_._add_citizen_ids_cached_byte_size_)*/{0}
+    , decltype(_impl_.remove_citizen_ids_){from._impl_.remove_citizen_ids_}
+    , /*decltype(_impl_._remove_citizen_ids_cached_byte_size_)*/{0}
     , decltype(_impl_.government_id_){}
     , decltype(_impl_.delta_currency_){}};
 
@@ -9751,10 +8219,10 @@ inline void DeltaUpdateGovernmentRequest::SharedCtor(
     , /*decltype(_impl_._cached_size_)*/{}
     , decltype(_impl_.delta_bracket_cutoffs_){arena}
     , decltype(_impl_.delta_bracket_rates_){arena}
-    , decltype(_impl_.add_citizens_){arena}
-    , /*decltype(_impl_._add_citizens_cached_byte_size_)*/{0}
-    , decltype(_impl_.remove_citizens_){arena}
-    , /*decltype(_impl_._remove_citizens_cached_byte_size_)*/{0}
+    , decltype(_impl_.add_citizen_ids_){arena}
+    , /*decltype(_impl_._add_citizen_ids_cached_byte_size_)*/{0}
+    , decltype(_impl_.remove_citizen_ids_){arena}
+    , /*decltype(_impl_._remove_citizen_ids_cached_byte_size_)*/{0}
     , decltype(_impl_.government_id_){0}
     , decltype(_impl_.delta_currency_){0}
   };
@@ -9773,8 +8241,8 @@ inline void DeltaUpdateGovernmentRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.delta_bracket_cutoffs_.~RepeatedField();
   _impl_.delta_bracket_rates_.~RepeatedField();
-  _impl_.add_citizens_.~RepeatedField();
-  _impl_.remove_citizens_.~RepeatedField();
+  _impl_.add_citizen_ids_.~RepeatedField();
+  _impl_.remove_citizen_ids_.~RepeatedField();
 }
 
 void DeltaUpdateGovernmentRequest::SetCachedSize(int size) const {
@@ -9789,8 +8257,8 @@ void DeltaUpdateGovernmentRequest::Clear() {
 
   _impl_.delta_bracket_cutoffs_.Clear();
   _impl_.delta_bracket_rates_.Clear();
-  _impl_.add_citizens_.Clear();
-  _impl_.remove_citizens_.Clear();
+  _impl_.add_citizen_ids_.Clear();
+  _impl_.remove_citizen_ids_.Clear();
   _impl_.government_id_ = 0;
   _impl_.delta_currency_ = 0;
   _impl_._has_bits_.Clear();
@@ -9843,24 +8311,24 @@ const char* DeltaUpdateGovernmentRequest::_InternalParse(const char* ptr, ::_pbi
         } else
           goto handle_unusual;
         continue;
-      // repeated int32 add_citizens = 5 [json_name = "addCitizens"];
+      // repeated int32 add_citizen_ids = 5 [json_name = "addCitizenIds"];
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_add_citizens(), ptr, ctx);
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_add_citizen_ids(), ptr, ctx);
           CHK_(ptr);
         } else if (static_cast<uint8_t>(tag) == 40) {
-          _internal_add_add_citizens(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
+          _internal_add_add_citizen_ids(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // repeated int32 remove_citizens = 6 [json_name = "removeCitizens"];
+      // repeated int32 remove_citizen_ids = 6 [json_name = "removeCitizenIds"];
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 50)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_remove_citizens(), ptr, ctx);
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_remove_citizen_ids(), ptr, ctx);
           CHK_(ptr);
         } else if (static_cast<uint8_t>(tag) == 48) {
-          _internal_add_remove_citizens(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
+          _internal_add_remove_citizen_ids(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -9917,21 +8385,21 @@ uint8_t* DeltaUpdateGovernmentRequest::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteFloatToArray(4, this->_internal_delta_currency(), target);
   }
 
-  // repeated int32 add_citizens = 5 [json_name = "addCitizens"];
+  // repeated int32 add_citizen_ids = 5 [json_name = "addCitizenIds"];
   {
-    int byte_size = _impl_._add_citizens_cached_byte_size_.load(std::memory_order_relaxed);
+    int byte_size = _impl_._add_citizen_ids_cached_byte_size_.load(std::memory_order_relaxed);
     if (byte_size > 0) {
       target = stream->WriteInt32Packed(
-          5, _internal_add_citizens(), byte_size, target);
+          5, _internal_add_citizen_ids(), byte_size, target);
     }
   }
 
-  // repeated int32 remove_citizens = 6 [json_name = "removeCitizens"];
+  // repeated int32 remove_citizen_ids = 6 [json_name = "removeCitizenIds"];
   {
-    int byte_size = _impl_._remove_citizens_cached_byte_size_.load(std::memory_order_relaxed);
+    int byte_size = _impl_._remove_citizen_ids_cached_byte_size_.load(std::memory_order_relaxed);
     if (byte_size > 0) {
       target = stream->WriteInt32Packed(
-          6, _internal_remove_citizens(), byte_size, target);
+          6, _internal_remove_citizen_ids(), byte_size, target);
     }
   }
 
@@ -9973,30 +8441,30 @@ size_t DeltaUpdateGovernmentRequest::ByteSizeLong() const {
     total_size += data_size;
   }
 
-  // repeated int32 add_citizens = 5 [json_name = "addCitizens"];
+  // repeated int32 add_citizen_ids = 5 [json_name = "addCitizenIds"];
   {
     size_t data_size = ::_pbi::WireFormatLite::
-      Int32Size(this->_impl_.add_citizens_);
+      Int32Size(this->_impl_.add_citizen_ids_);
     if (data_size > 0) {
       total_size += 1 +
         ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
     }
     int cached_size = ::_pbi::ToCachedSize(data_size);
-    _impl_._add_citizens_cached_byte_size_.store(cached_size,
+    _impl_._add_citizen_ids_cached_byte_size_.store(cached_size,
                                     std::memory_order_relaxed);
     total_size += data_size;
   }
 
-  // repeated int32 remove_citizens = 6 [json_name = "removeCitizens"];
+  // repeated int32 remove_citizen_ids = 6 [json_name = "removeCitizenIds"];
   {
     size_t data_size = ::_pbi::WireFormatLite::
-      Int32Size(this->_impl_.remove_citizens_);
+      Int32Size(this->_impl_.remove_citizen_ids_);
     if (data_size > 0) {
       total_size += 1 +
         ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
     }
     int cached_size = ::_pbi::ToCachedSize(data_size);
-    _impl_._remove_citizens_cached_byte_size_.store(cached_size,
+    _impl_._remove_citizen_ids_cached_byte_size_.store(cached_size,
                                     std::memory_order_relaxed);
     total_size += data_size;
   }
@@ -10032,8 +8500,8 @@ void DeltaUpdateGovernmentRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& t
 
   _this->_impl_.delta_bracket_cutoffs_.MergeFrom(from._impl_.delta_bracket_cutoffs_);
   _this->_impl_.delta_bracket_rates_.MergeFrom(from._impl_.delta_bracket_rates_);
-  _this->_impl_.add_citizens_.MergeFrom(from._impl_.add_citizens_);
-  _this->_impl_.remove_citizens_.MergeFrom(from._impl_.remove_citizens_);
+  _this->_impl_.add_citizen_ids_.MergeFrom(from._impl_.add_citizen_ids_);
+  _this->_impl_.remove_citizen_ids_.MergeFrom(from._impl_.remove_citizen_ids_);
   if (from._internal_government_id() != 0) {
     _this->_internal_set_government_id(from._internal_government_id());
   }
@@ -10060,8 +8528,8 @@ void DeltaUpdateGovernmentRequest::InternalSwap(DeltaUpdateGovernmentRequest* ot
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
   _impl_.delta_bracket_cutoffs_.InternalSwap(&other->_impl_.delta_bracket_cutoffs_);
   _impl_.delta_bracket_rates_.InternalSwap(&other->_impl_.delta_bracket_rates_);
-  _impl_.add_citizens_.InternalSwap(&other->_impl_.add_citizens_);
-  _impl_.remove_citizens_.InternalSwap(&other->_impl_.remove_citizens_);
+  _impl_.add_citizen_ids_.InternalSwap(&other->_impl_.add_citizen_ids_);
+  _impl_.remove_citizen_ids_.InternalSwap(&other->_impl_.remove_citizen_ids_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(DeltaUpdateGovernmentRequest, _impl_.delta_currency_)
       + sizeof(DeltaUpdateGovernmentRequest::_impl_.delta_currency_)
@@ -10073,7 +8541,7 @@ void DeltaUpdateGovernmentRequest::InternalSwap(DeltaUpdateGovernmentRequest* ot
 ::PROTOBUF_NAMESPACE_ID::Metadata DeltaUpdateGovernmentRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[54]);
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[45]);
 }
 
 // ===================================================================
@@ -10113,7 +8581,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*DeltaUpdateGovernmentResponse:
 ::PROTOBUF_NAMESPACE_ID::Metadata DeltaUpdateGovernmentResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[55]);
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[46]);
 }
 
 // ===================================================================
@@ -10312,7 +8780,7 @@ void AddBankRequest::InternalSwap(AddBankRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata AddBankRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[56]);
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[47]);
 }
 
 // ===================================================================
@@ -10352,7 +8820,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*AddBankResponse::GetClassData(
 ::PROTOBUF_NAMESPACE_ID::Metadata AddBankResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[57]);
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[48]);
 }
 
 // ===================================================================
@@ -10530,7 +8998,7 @@ void RemoveBankRequest::InternalSwap(RemoveBankRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata RemoveBankRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[58]);
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[49]);
 }
 
 // ===================================================================
@@ -10570,7 +9038,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*RemoveBankResponse::GetClassDa
 ::PROTOBUF_NAMESPACE_ID::Metadata RemoveBankResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[59]);
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[50]);
 }
 
 // ===================================================================
@@ -10748,7 +9216,7 @@ void GetBankRequest::InternalSwap(GetBankRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata GetBankRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[60]);
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[51]);
 }
 
 // ===================================================================
@@ -10947,7 +9415,7 @@ void GetBankResponse::InternalSwap(GetBankResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata GetBankResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[61]);
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[52]);
 }
 
 // ===================================================================
@@ -11146,7 +9614,7 @@ void UpdateBankRequest::InternalSwap(UpdateBankRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata UpdateBankRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[62]);
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[53]);
 }
 
 // ===================================================================
@@ -11186,7 +9654,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*UpdateBankResponse::GetClassDa
 ::PROTOBUF_NAMESPACE_ID::Metadata UpdateBankResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[63]);
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[54]);
 }
 
 // ===================================================================
@@ -11226,7 +9694,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ListBanksRequest::GetClassData
 ::PROTOBUF_NAMESPACE_ID::Metadata ListBanksRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[64]);
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[55]);
 }
 
 // ===================================================================
@@ -11414,7 +9882,7 @@ void ListBanksResponse::InternalSwap(ListBanksResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata ListBanksResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[65]);
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[56]);
 }
 
 // ===================================================================
@@ -11442,10 +9910,10 @@ DeltaUpdateBankRequest::DeltaUpdateBankRequest(const DeltaUpdateBankRequest& fro
   new (&_impl_) Impl_{
       decltype(_impl_._has_bits_){from._impl_._has_bits_}
     , /*decltype(_impl_._cached_size_)*/{}
-    , decltype(_impl_.add_citizens_){from._impl_.add_citizens_}
-    , /*decltype(_impl_._add_citizens_cached_byte_size_)*/{0}
-    , decltype(_impl_.remove_citizens_){from._impl_.remove_citizens_}
-    , /*decltype(_impl_._remove_citizens_cached_byte_size_)*/{0}
+    , decltype(_impl_.add_citizen_ids_){from._impl_.add_citizen_ids_}
+    , /*decltype(_impl_._add_citizen_ids_cached_byte_size_)*/{0}
+    , decltype(_impl_.remove_citizen_ids_){from._impl_.remove_citizen_ids_}
+    , /*decltype(_impl_._remove_citizen_ids_cached_byte_size_)*/{0}
     , decltype(_impl_.bank_id_){}
     , decltype(_impl_.delta_interest_rate_){}
     , decltype(_impl_.delta_currency_){}};
@@ -11464,10 +9932,10 @@ inline void DeltaUpdateBankRequest::SharedCtor(
   new (&_impl_) Impl_{
       decltype(_impl_._has_bits_){}
     , /*decltype(_impl_._cached_size_)*/{}
-    , decltype(_impl_.add_citizens_){arena}
-    , /*decltype(_impl_._add_citizens_cached_byte_size_)*/{0}
-    , decltype(_impl_.remove_citizens_){arena}
-    , /*decltype(_impl_._remove_citizens_cached_byte_size_)*/{0}
+    , decltype(_impl_.add_citizen_ids_){arena}
+    , /*decltype(_impl_._add_citizen_ids_cached_byte_size_)*/{0}
+    , decltype(_impl_.remove_citizen_ids_){arena}
+    , /*decltype(_impl_._remove_citizen_ids_cached_byte_size_)*/{0}
     , decltype(_impl_.bank_id_){0}
     , decltype(_impl_.delta_interest_rate_){0}
     , decltype(_impl_.delta_currency_){0}
@@ -11485,8 +9953,8 @@ DeltaUpdateBankRequest::~DeltaUpdateBankRequest() {
 
 inline void DeltaUpdateBankRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.add_citizens_.~RepeatedField();
-  _impl_.remove_citizens_.~RepeatedField();
+  _impl_.add_citizen_ids_.~RepeatedField();
+  _impl_.remove_citizen_ids_.~RepeatedField();
 }
 
 void DeltaUpdateBankRequest::SetCachedSize(int size) const {
@@ -11499,8 +9967,8 @@ void DeltaUpdateBankRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.add_citizens_.Clear();
-  _impl_.remove_citizens_.Clear();
+  _impl_.add_citizen_ids_.Clear();
+  _impl_.remove_citizen_ids_.Clear();
   _impl_.bank_id_ = 0;
   cached_has_bits = _impl_._has_bits_[0];
   if (cached_has_bits & 0x00000003u) {
@@ -11545,24 +10013,24 @@ const char* DeltaUpdateBankRequest::_InternalParse(const char* ptr, ::_pbi::Pars
         } else
           goto handle_unusual;
         continue;
-      // repeated int32 add_citizens = 4 [json_name = "addCitizens"];
+      // repeated int32 add_citizen_ids = 4 [json_name = "addCitizenIds"];
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_add_citizens(), ptr, ctx);
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_add_citizen_ids(), ptr, ctx);
           CHK_(ptr);
         } else if (static_cast<uint8_t>(tag) == 32) {
-          _internal_add_add_citizens(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
+          _internal_add_add_citizen_ids(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // repeated int32 remove_citizens = 5 [json_name = "removeCitizens"];
+      // repeated int32 remove_citizen_ids = 5 [json_name = "removeCitizenIds"];
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_remove_citizens(), ptr, ctx);
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_remove_citizen_ids(), ptr, ctx);
           CHK_(ptr);
         } else if (static_cast<uint8_t>(tag) == 40) {
-          _internal_add_remove_citizens(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
+          _internal_add_remove_citizen_ids(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -11615,21 +10083,21 @@ uint8_t* DeltaUpdateBankRequest::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteFloatToArray(3, this->_internal_delta_currency(), target);
   }
 
-  // repeated int32 add_citizens = 4 [json_name = "addCitizens"];
+  // repeated int32 add_citizen_ids = 4 [json_name = "addCitizenIds"];
   {
-    int byte_size = _impl_._add_citizens_cached_byte_size_.load(std::memory_order_relaxed);
+    int byte_size = _impl_._add_citizen_ids_cached_byte_size_.load(std::memory_order_relaxed);
     if (byte_size > 0) {
       target = stream->WriteInt32Packed(
-          4, _internal_add_citizens(), byte_size, target);
+          4, _internal_add_citizen_ids(), byte_size, target);
     }
   }
 
-  // repeated int32 remove_citizens = 5 [json_name = "removeCitizens"];
+  // repeated int32 remove_citizen_ids = 5 [json_name = "removeCitizenIds"];
   {
-    int byte_size = _impl_._remove_citizens_cached_byte_size_.load(std::memory_order_relaxed);
+    int byte_size = _impl_._remove_citizen_ids_cached_byte_size_.load(std::memory_order_relaxed);
     if (byte_size > 0) {
       target = stream->WriteInt32Packed(
-          5, _internal_remove_citizens(), byte_size, target);
+          5, _internal_remove_citizen_ids(), byte_size, target);
     }
   }
 
@@ -11649,30 +10117,30 @@ size_t DeltaUpdateBankRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated int32 add_citizens = 4 [json_name = "addCitizens"];
+  // repeated int32 add_citizen_ids = 4 [json_name = "addCitizenIds"];
   {
     size_t data_size = ::_pbi::WireFormatLite::
-      Int32Size(this->_impl_.add_citizens_);
+      Int32Size(this->_impl_.add_citizen_ids_);
     if (data_size > 0) {
       total_size += 1 +
         ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
     }
     int cached_size = ::_pbi::ToCachedSize(data_size);
-    _impl_._add_citizens_cached_byte_size_.store(cached_size,
+    _impl_._add_citizen_ids_cached_byte_size_.store(cached_size,
                                     std::memory_order_relaxed);
     total_size += data_size;
   }
 
-  // repeated int32 remove_citizens = 5 [json_name = "removeCitizens"];
+  // repeated int32 remove_citizen_ids = 5 [json_name = "removeCitizenIds"];
   {
     size_t data_size = ::_pbi::WireFormatLite::
-      Int32Size(this->_impl_.remove_citizens_);
+      Int32Size(this->_impl_.remove_citizen_ids_);
     if (data_size > 0) {
       total_size += 1 +
         ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
     }
     int cached_size = ::_pbi::ToCachedSize(data_size);
-    _impl_._remove_citizens_cached_byte_size_.store(cached_size,
+    _impl_._remove_citizen_ids_cached_byte_size_.store(cached_size,
                                     std::memory_order_relaxed);
     total_size += data_size;
   }
@@ -11713,8 +10181,8 @@ void DeltaUpdateBankRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg,
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  _this->_impl_.add_citizens_.MergeFrom(from._impl_.add_citizens_);
-  _this->_impl_.remove_citizens_.MergeFrom(from._impl_.remove_citizens_);
+  _this->_impl_.add_citizen_ids_.MergeFrom(from._impl_.add_citizen_ids_);
+  _this->_impl_.remove_citizen_ids_.MergeFrom(from._impl_.remove_citizen_ids_);
   if (from._internal_bank_id() != 0) {
     _this->_internal_set_bank_id(from._internal_bank_id());
   }
@@ -11746,8 +10214,8 @@ void DeltaUpdateBankRequest::InternalSwap(DeltaUpdateBankRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
-  _impl_.add_citizens_.InternalSwap(&other->_impl_.add_citizens_);
-  _impl_.remove_citizens_.InternalSwap(&other->_impl_.remove_citizens_);
+  _impl_.add_citizen_ids_.InternalSwap(&other->_impl_.add_citizen_ids_);
+  _impl_.remove_citizen_ids_.InternalSwap(&other->_impl_.remove_citizen_ids_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(DeltaUpdateBankRequest, _impl_.delta_currency_)
       + sizeof(DeltaUpdateBankRequest::_impl_.delta_currency_)
@@ -11759,7 +10227,7 @@ void DeltaUpdateBankRequest::InternalSwap(DeltaUpdateBankRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata DeltaUpdateBankRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[66]);
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[57]);
 }
 
 // ===================================================================
@@ -11799,25 +10267,17 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*DeltaUpdateBankResponse::GetCl
 ::PROTOBUF_NAMESPACE_ID::Metadata DeltaUpdateBankResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[67]);
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[58]);
 }
 
 // ===================================================================
 
 class AddAgentRequest::_Internal {
  public:
-  static const ::city::economy::v2::Agent& agent(const AddAgentRequest* msg);
 };
 
-const ::city::economy::v2::Agent&
-AddAgentRequest::_Internal::agent(const AddAgentRequest* msg) {
-  return *msg->_impl_.agent_;
-}
-void AddAgentRequest::clear_agent() {
-  if (GetArenaForAllocation() == nullptr && _impl_.agent_ != nullptr) {
-    delete _impl_.agent_;
-  }
-  _impl_.agent_ = nullptr;
+void AddAgentRequest::clear_agents() {
+  _impl_.agents_.Clear();
 }
 AddAgentRequest::AddAgentRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
@@ -11829,13 +10289,10 @@ AddAgentRequest::AddAgentRequest(const AddAgentRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   AddAgentRequest* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.agent_){nullptr}
+      decltype(_impl_.agents_){from._impl_.agents_}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  if (from._internal_has_agent()) {
-    _this->_impl_.agent_ = new ::city::economy::v2::Agent(*from._impl_.agent_);
-  }
   // @@protoc_insertion_point(copy_constructor:city.economy.v2.AddAgentRequest)
 }
 
@@ -11844,7 +10301,7 @@ inline void AddAgentRequest::SharedCtor(
   (void)arena;
   (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.agent_){nullptr}
+      decltype(_impl_.agents_){arena}
     , /*decltype(_impl_._cached_size_)*/{}
   };
 }
@@ -11860,7 +10317,7 @@ AddAgentRequest::~AddAgentRequest() {
 
 inline void AddAgentRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete _impl_.agent_;
+  _impl_.agents_.~RepeatedPtrField();
 }
 
 void AddAgentRequest::SetCachedSize(int size) const {
@@ -11873,10 +10330,7 @@ void AddAgentRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaForAllocation() == nullptr && _impl_.agent_ != nullptr) {
-    delete _impl_.agent_;
-  }
-  _impl_.agent_ = nullptr;
+  _impl_.agents_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -11886,11 +10340,16 @@ const char* AddAgentRequest::_InternalParse(const char* ptr, ::_pbi::ParseContex
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .city.economy.v2.Agent agent = 1 [json_name = "agent"];
+      // repeated .city.economy.v2.Agent agents = 1 [json_name = "agents"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_agent(), ptr);
-          CHK_(ptr);
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_agents(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
         } else
           goto handle_unusual;
         continue;
@@ -11923,11 +10382,12 @@ uint8_t* AddAgentRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .city.economy.v2.Agent agent = 1 [json_name = "agent"];
-  if (this->_internal_has_agent()) {
+  // repeated .city.economy.v2.Agent agents = 1 [json_name = "agents"];
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_agents_size()); i < n; i++) {
+    const auto& repfield = this->_internal_agents(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(1, _Internal::agent(this),
-        _Internal::agent(this).GetCachedSize(), target, stream);
+        InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -11946,11 +10406,11 @@ size_t AddAgentRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .city.economy.v2.Agent agent = 1 [json_name = "agent"];
-  if (this->_internal_has_agent()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *_impl_.agent_);
+  // repeated .city.economy.v2.Agent agents = 1 [json_name = "agents"];
+  total_size += 1UL * this->_internal_agents_size();
+  for (const auto& msg : this->_impl_.agents_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -11971,10 +10431,7 @@ void AddAgentRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const 
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_has_agent()) {
-    _this->_internal_mutable_agent()->::city::economy::v2::Agent::MergeFrom(
-        from._internal_agent());
-  }
+  _this->_impl_.agents_.MergeFrom(from._impl_.agents_);
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -11992,13 +10449,13 @@ bool AddAgentRequest::IsInitialized() const {
 void AddAgentRequest::InternalSwap(AddAgentRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_.agent_, other->_impl_.agent_);
+  _impl_.agents_.InternalSwap(&other->_impl_.agents_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata AddAgentRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[68]);
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[59]);
 }
 
 // ===================================================================
@@ -12009,36 +10466,189 @@ class AddAgentResponse::_Internal {
 
 AddAgentResponse::AddAgentResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
   // @@protoc_insertion_point(arena_constructor:city.economy.v2.AddAgentResponse)
 }
 AddAgentResponse::AddAgentResponse(const AddAgentResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
   AddAgentResponse* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.agent_ids_){from._impl_.agent_ids_}
+    , /*decltype(_impl_._agent_ids_cached_byte_size_)*/{0}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:city.economy.v2.AddAgentResponse)
 }
 
+inline void AddAgentResponse::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.agent_ids_){arena}
+    , /*decltype(_impl_._agent_ids_cached_byte_size_)*/{0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+}
 
+AddAgentResponse::~AddAgentResponse() {
+  // @@protoc_insertion_point(destructor:city.economy.v2.AddAgentResponse)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
 
+inline void AddAgentResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.agent_ids_.~RepeatedField();
+}
 
+void AddAgentResponse::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void AddAgentResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:city.economy.v2.AddAgentResponse)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.agent_ids_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* AddAgentResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // repeated int32 agent_ids = 1 [json_name = "agentIds"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_agent_ids(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<uint8_t>(tag) == 8) {
+          _internal_add_agent_ids(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* AddAgentResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:city.economy.v2.AddAgentResponse)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated int32 agent_ids = 1 [json_name = "agentIds"];
+  {
+    int byte_size = _impl_._agent_ids_cached_byte_size_.load(std::memory_order_relaxed);
+    if (byte_size > 0) {
+      target = stream->WriteInt32Packed(
+          1, _internal_agent_ids(), byte_size, target);
+    }
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:city.economy.v2.AddAgentResponse)
+  return target;
+}
+
+size_t AddAgentResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:city.economy.v2.AddAgentResponse)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated int32 agent_ids = 1 [json_name = "agentIds"];
+  {
+    size_t data_size = ::_pbi::WireFormatLite::
+      Int32Size(this->_impl_.agent_ids_);
+    if (data_size > 0) {
+      total_size += 1 +
+        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
+    }
+    int cached_size = ::_pbi::ToCachedSize(data_size);
+    _impl_._agent_ids_cached_byte_size_.store(cached_size,
+                                    std::memory_order_relaxed);
+    total_size += data_size;
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData AddAgentResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    AddAgentResponse::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*AddAgentResponse::GetClassData() const { return &_class_data_; }
 
 
+void AddAgentResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<AddAgentResponse*>(&to_msg);
+  auto& from = static_cast<const AddAgentResponse&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:city.economy.v2.AddAgentResponse)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
+  _this->_impl_.agent_ids_.MergeFrom(from._impl_.agent_ids_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
 
+void AddAgentResponse::CopyFrom(const AddAgentResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:city.economy.v2.AddAgentResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
 
+bool AddAgentResponse::IsInitialized() const {
+  return true;
+}
 
+void AddAgentResponse::InternalSwap(AddAgentResponse* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _impl_.agent_ids_.InternalSwap(&other->_impl_.agent_ids_);
+}
 
 ::PROTOBUF_NAMESPACE_ID::Metadata AddAgentResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[69]);
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[60]);
 }
 
 // ===================================================================
@@ -12057,11 +10667,11 @@ RemoveAgentRequest::RemoveAgentRequest(const RemoveAgentRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   RemoveAgentRequest* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.agent_id_){}
+      decltype(_impl_.agent_ids_){from._impl_.agent_ids_}
+    , /*decltype(_impl_._agent_ids_cached_byte_size_)*/{0}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _this->_impl_.agent_id_ = from._impl_.agent_id_;
   // @@protoc_insertion_point(copy_constructor:city.economy.v2.RemoveAgentRequest)
 }
 
@@ -12070,7 +10680,8 @@ inline void RemoveAgentRequest::SharedCtor(
   (void)arena;
   (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.agent_id_){0}
+      decltype(_impl_.agent_ids_){arena}
+    , /*decltype(_impl_._agent_ids_cached_byte_size_)*/{0}
     , /*decltype(_impl_._cached_size_)*/{}
   };
 }
@@ -12086,6 +10697,7 @@ RemoveAgentRequest::~RemoveAgentRequest() {
 
 inline void RemoveAgentRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.agent_ids_.~RepeatedField();
 }
 
 void RemoveAgentRequest::SetCachedSize(int size) const {
@@ -12098,7 +10710,7 @@ void RemoveAgentRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.agent_id_ = 0;
+  _impl_.agent_ids_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -12108,10 +10720,13 @@ const char* RemoveAgentRequest::_InternalParse(const char* ptr, ::_pbi::ParseCon
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // int32 agent_id = 1 [json_name = "agentId"];
+      // repeated int32 agent_ids = 1 [json_name = "agentIds"];
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.agent_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_agent_ids(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<uint8_t>(tag) == 8) {
+          _internal_add_agent_ids(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -12145,10 +10760,13 @@ uint8_t* RemoveAgentRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // int32 agent_id = 1 [json_name = "agentId"];
-  if (this->_internal_agent_id() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_agent_id(), target);
+  // repeated int32 agent_ids = 1 [json_name = "agentIds"];
+  {
+    int byte_size = _impl_._agent_ids_cached_byte_size_.load(std::memory_order_relaxed);
+    if (byte_size > 0) {
+      target = stream->WriteInt32Packed(
+          1, _internal_agent_ids(), byte_size, target);
+    }
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -12167,9 +10785,18 @@ size_t RemoveAgentRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // int32 agent_id = 1 [json_name = "agentId"];
-  if (this->_internal_agent_id() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_agent_id());
+  // repeated int32 agent_ids = 1 [json_name = "agentIds"];
+  {
+    size_t data_size = ::_pbi::WireFormatLite::
+      Int32Size(this->_impl_.agent_ids_);
+    if (data_size > 0) {
+      total_size += 1 +
+        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
+    }
+    int cached_size = ::_pbi::ToCachedSize(data_size);
+    _impl_._agent_ids_cached_byte_size_.store(cached_size,
+                                    std::memory_order_relaxed);
+    total_size += data_size;
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -12190,9 +10817,7 @@ void RemoveAgentRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, con
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_agent_id() != 0) {
-    _this->_internal_set_agent_id(from._internal_agent_id());
-  }
+  _this->_impl_.agent_ids_.MergeFrom(from._impl_.agent_ids_);
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -12210,13 +10835,13 @@ bool RemoveAgentRequest::IsInitialized() const {
 void RemoveAgentRequest::InternalSwap(RemoveAgentRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_.agent_id_, other->_impl_.agent_id_);
+  _impl_.agent_ids_.InternalSwap(&other->_impl_.agent_ids_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata RemoveAgentRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[70]);
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[61]);
 }
 
 // ===================================================================
@@ -12256,7 +10881,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*RemoveAgentResponse::GetClassD
 ::PROTOBUF_NAMESPACE_ID::Metadata RemoveAgentResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[71]);
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[62]);
 }
 
 // ===================================================================
@@ -12275,11 +10900,11 @@ GetAgentRequest::GetAgentRequest(const GetAgentRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   GetAgentRequest* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.agent_id_){}
+      decltype(_impl_.agent_ids_){from._impl_.agent_ids_}
+    , /*decltype(_impl_._agent_ids_cached_byte_size_)*/{0}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _this->_impl_.agent_id_ = from._impl_.agent_id_;
   // @@protoc_insertion_point(copy_constructor:city.economy.v2.GetAgentRequest)
 }
 
@@ -12288,7 +10913,8 @@ inline void GetAgentRequest::SharedCtor(
   (void)arena;
   (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.agent_id_){0}
+      decltype(_impl_.agent_ids_){arena}
+    , /*decltype(_impl_._agent_ids_cached_byte_size_)*/{0}
     , /*decltype(_impl_._cached_size_)*/{}
   };
 }
@@ -12304,6 +10930,7 @@ GetAgentRequest::~GetAgentRequest() {
 
 inline void GetAgentRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.agent_ids_.~RepeatedField();
 }
 
 void GetAgentRequest::SetCachedSize(int size) const {
@@ -12316,7 +10943,7 @@ void GetAgentRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.agent_id_ = 0;
+  _impl_.agent_ids_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -12326,10 +10953,13 @@ const char* GetAgentRequest::_InternalParse(const char* ptr, ::_pbi::ParseContex
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // int32 agent_id = 1 [json_name = "agentId"];
+      // repeated int32 agent_ids = 1 [json_name = "agentIds"];
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.agent_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_agent_ids(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<uint8_t>(tag) == 8) {
+          _internal_add_agent_ids(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -12363,10 +10993,13 @@ uint8_t* GetAgentRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // int32 agent_id = 1 [json_name = "agentId"];
-  if (this->_internal_agent_id() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_agent_id(), target);
+  // repeated int32 agent_ids = 1 [json_name = "agentIds"];
+  {
+    int byte_size = _impl_._agent_ids_cached_byte_size_.load(std::memory_order_relaxed);
+    if (byte_size > 0) {
+      target = stream->WriteInt32Packed(
+          1, _internal_agent_ids(), byte_size, target);
+    }
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -12385,9 +11018,18 @@ size_t GetAgentRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // int32 agent_id = 1 [json_name = "agentId"];
-  if (this->_internal_agent_id() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_agent_id());
+  // repeated int32 agent_ids = 1 [json_name = "agentIds"];
+  {
+    size_t data_size = ::_pbi::WireFormatLite::
+      Int32Size(this->_impl_.agent_ids_);
+    if (data_size > 0) {
+      total_size += 1 +
+        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
+    }
+    int cached_size = ::_pbi::ToCachedSize(data_size);
+    _impl_._agent_ids_cached_byte_size_.store(cached_size,
+                                    std::memory_order_relaxed);
+    total_size += data_size;
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -12408,9 +11050,7 @@ void GetAgentRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const 
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_agent_id() != 0) {
-    _this->_internal_set_agent_id(from._internal_agent_id());
-  }
+  _this->_impl_.agent_ids_.MergeFrom(from._impl_.agent_ids_);
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -12428,31 +11068,23 @@ bool GetAgentRequest::IsInitialized() const {
 void GetAgentRequest::InternalSwap(GetAgentRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_.agent_id_, other->_impl_.agent_id_);
+  _impl_.agent_ids_.InternalSwap(&other->_impl_.agent_ids_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GetAgentRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[72]);
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[63]);
 }
 
 // ===================================================================
 
 class GetAgentResponse::_Internal {
  public:
-  static const ::city::economy::v2::Agent& agent(const GetAgentResponse* msg);
 };
 
-const ::city::economy::v2::Agent&
-GetAgentResponse::_Internal::agent(const GetAgentResponse* msg) {
-  return *msg->_impl_.agent_;
-}
-void GetAgentResponse::clear_agent() {
-  if (GetArenaForAllocation() == nullptr && _impl_.agent_ != nullptr) {
-    delete _impl_.agent_;
-  }
-  _impl_.agent_ = nullptr;
+void GetAgentResponse::clear_agents() {
+  _impl_.agents_.Clear();
 }
 GetAgentResponse::GetAgentResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
@@ -12464,13 +11096,10 @@ GetAgentResponse::GetAgentResponse(const GetAgentResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   GetAgentResponse* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.agent_){nullptr}
+      decltype(_impl_.agents_){from._impl_.agents_}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  if (from._internal_has_agent()) {
-    _this->_impl_.agent_ = new ::city::economy::v2::Agent(*from._impl_.agent_);
-  }
   // @@protoc_insertion_point(copy_constructor:city.economy.v2.GetAgentResponse)
 }
 
@@ -12479,7 +11108,7 @@ inline void GetAgentResponse::SharedCtor(
   (void)arena;
   (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.agent_){nullptr}
+      decltype(_impl_.agents_){arena}
     , /*decltype(_impl_._cached_size_)*/{}
   };
 }
@@ -12495,7 +11124,7 @@ GetAgentResponse::~GetAgentResponse() {
 
 inline void GetAgentResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete _impl_.agent_;
+  _impl_.agents_.~RepeatedPtrField();
 }
 
 void GetAgentResponse::SetCachedSize(int size) const {
@@ -12508,10 +11137,7 @@ void GetAgentResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaForAllocation() == nullptr && _impl_.agent_ != nullptr) {
-    delete _impl_.agent_;
-  }
-  _impl_.agent_ = nullptr;
+  _impl_.agents_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -12521,11 +11147,16 @@ const char* GetAgentResponse::_InternalParse(const char* ptr, ::_pbi::ParseConte
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .city.economy.v2.Agent agent = 1 [json_name = "agent"];
+      // repeated .city.economy.v2.Agent agents = 1 [json_name = "agents"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_agent(), ptr);
-          CHK_(ptr);
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_agents(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
         } else
           goto handle_unusual;
         continue;
@@ -12558,11 +11189,12 @@ uint8_t* GetAgentResponse::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .city.economy.v2.Agent agent = 1 [json_name = "agent"];
-  if (this->_internal_has_agent()) {
+  // repeated .city.economy.v2.Agent agents = 1 [json_name = "agents"];
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_agents_size()); i < n; i++) {
+    const auto& repfield = this->_internal_agents(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(1, _Internal::agent(this),
-        _Internal::agent(this).GetCachedSize(), target, stream);
+        InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -12581,11 +11213,11 @@ size_t GetAgentResponse::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .city.economy.v2.Agent agent = 1 [json_name = "agent"];
-  if (this->_internal_has_agent()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *_impl_.agent_);
+  // repeated .city.economy.v2.Agent agents = 1 [json_name = "agents"];
+  total_size += 1UL * this->_internal_agents_size();
+  for (const auto& msg : this->_impl_.agents_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -12606,10 +11238,7 @@ void GetAgentResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_has_agent()) {
-    _this->_internal_mutable_agent()->::city::economy::v2::Agent::MergeFrom(
-        from._internal_agent());
-  }
+  _this->_impl_.agents_.MergeFrom(from._impl_.agents_);
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -12627,31 +11256,23 @@ bool GetAgentResponse::IsInitialized() const {
 void GetAgentResponse::InternalSwap(GetAgentResponse* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_.agent_, other->_impl_.agent_);
+  _impl_.agents_.InternalSwap(&other->_impl_.agents_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GetAgentResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[73]);
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[64]);
 }
 
 // ===================================================================
 
 class UpdateAgentRequest::_Internal {
  public:
-  static const ::city::economy::v2::Agent& agent(const UpdateAgentRequest* msg);
 };
 
-const ::city::economy::v2::Agent&
-UpdateAgentRequest::_Internal::agent(const UpdateAgentRequest* msg) {
-  return *msg->_impl_.agent_;
-}
-void UpdateAgentRequest::clear_agent() {
-  if (GetArenaForAllocation() == nullptr && _impl_.agent_ != nullptr) {
-    delete _impl_.agent_;
-  }
-  _impl_.agent_ = nullptr;
+void UpdateAgentRequest::clear_agents() {
+  _impl_.agents_.Clear();
 }
 UpdateAgentRequest::UpdateAgentRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
@@ -12663,13 +11284,10 @@ UpdateAgentRequest::UpdateAgentRequest(const UpdateAgentRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   UpdateAgentRequest* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.agent_){nullptr}
+      decltype(_impl_.agents_){from._impl_.agents_}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  if (from._internal_has_agent()) {
-    _this->_impl_.agent_ = new ::city::economy::v2::Agent(*from._impl_.agent_);
-  }
   // @@protoc_insertion_point(copy_constructor:city.economy.v2.UpdateAgentRequest)
 }
 
@@ -12678,7 +11296,7 @@ inline void UpdateAgentRequest::SharedCtor(
   (void)arena;
   (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.agent_){nullptr}
+      decltype(_impl_.agents_){arena}
     , /*decltype(_impl_._cached_size_)*/{}
   };
 }
@@ -12694,7 +11312,7 @@ UpdateAgentRequest::~UpdateAgentRequest() {
 
 inline void UpdateAgentRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete _impl_.agent_;
+  _impl_.agents_.~RepeatedPtrField();
 }
 
 void UpdateAgentRequest::SetCachedSize(int size) const {
@@ -12707,10 +11325,7 @@ void UpdateAgentRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaForAllocation() == nullptr && _impl_.agent_ != nullptr) {
-    delete _impl_.agent_;
-  }
-  _impl_.agent_ = nullptr;
+  _impl_.agents_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -12720,11 +11335,16 @@ const char* UpdateAgentRequest::_InternalParse(const char* ptr, ::_pbi::ParseCon
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .city.economy.v2.Agent agent = 1 [json_name = "agent"];
+      // repeated .city.economy.v2.Agent agents = 1 [json_name = "agents"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_agent(), ptr);
-          CHK_(ptr);
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_agents(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
         } else
           goto handle_unusual;
         continue;
@@ -12757,11 +11377,12 @@ uint8_t* UpdateAgentRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .city.economy.v2.Agent agent = 1 [json_name = "agent"];
-  if (this->_internal_has_agent()) {
+  // repeated .city.economy.v2.Agent agents = 1 [json_name = "agents"];
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_agents_size()); i < n; i++) {
+    const auto& repfield = this->_internal_agents(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(1, _Internal::agent(this),
-        _Internal::agent(this).GetCachedSize(), target, stream);
+        InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -12780,11 +11401,11 @@ size_t UpdateAgentRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .city.economy.v2.Agent agent = 1 [json_name = "agent"];
-  if (this->_internal_has_agent()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *_impl_.agent_);
+  // repeated .city.economy.v2.Agent agents = 1 [json_name = "agents"];
+  total_size += 1UL * this->_internal_agents_size();
+  for (const auto& msg : this->_impl_.agents_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -12805,10 +11426,7 @@ void UpdateAgentRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, con
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_has_agent()) {
-    _this->_internal_mutable_agent()->::city::economy::v2::Agent::MergeFrom(
-        from._internal_agent());
-  }
+  _this->_impl_.agents_.MergeFrom(from._impl_.agents_);
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -12826,13 +11444,13 @@ bool UpdateAgentRequest::IsInitialized() const {
 void UpdateAgentRequest::InternalSwap(UpdateAgentRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_.agent_, other->_impl_.agent_);
+  _impl_.agents_.InternalSwap(&other->_impl_.agents_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata UpdateAgentRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[74]);
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[65]);
 }
 
 // ===================================================================
@@ -12872,7 +11490,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*UpdateAgentResponse::GetClassD
 ::PROTOBUF_NAMESPACE_ID::Metadata UpdateAgentResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[75]);
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[66]);
 }
 
 // ===================================================================
@@ -12912,7 +11530,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ListAgentsRequest::GetClassDat
 ::PROTOBUF_NAMESPACE_ID::Metadata ListAgentsRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[76]);
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[67]);
 }
 
 // ===================================================================
@@ -13100,14 +11718,199 @@ void ListAgentsResponse::InternalSwap(ListAgentsResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata ListAgentsResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[77]);
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[68]);
 }
 
 // ===================================================================
 
 class DeltaUpdateAgentRequest::_Internal {
  public:
-  using HasBits = decltype(std::declval<DeltaUpdateAgentRequest>()._impl_._has_bits_);
+};
+
+DeltaUpdateAgentRequest::DeltaUpdateAgentRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:city.economy.v2.DeltaUpdateAgentRequest)
+}
+DeltaUpdateAgentRequest::DeltaUpdateAgentRequest(const DeltaUpdateAgentRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  DeltaUpdateAgentRequest* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.updates_){from._impl_.updates_}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:city.economy.v2.DeltaUpdateAgentRequest)
+}
+
+inline void DeltaUpdateAgentRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.updates_){arena}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+}
+
+DeltaUpdateAgentRequest::~DeltaUpdateAgentRequest() {
+  // @@protoc_insertion_point(destructor:city.economy.v2.DeltaUpdateAgentRequest)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void DeltaUpdateAgentRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.updates_.~RepeatedPtrField();
+}
+
+void DeltaUpdateAgentRequest::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void DeltaUpdateAgentRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:city.economy.v2.DeltaUpdateAgentRequest)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.updates_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* DeltaUpdateAgentRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // repeated .city.economy.v2.AgentDeltaUpdate updates = 1 [json_name = "updates"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_updates(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* DeltaUpdateAgentRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:city.economy.v2.DeltaUpdateAgentRequest)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated .city.economy.v2.AgentDeltaUpdate updates = 1 [json_name = "updates"];
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_updates_size()); i < n; i++) {
+    const auto& repfield = this->_internal_updates(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:city.economy.v2.DeltaUpdateAgentRequest)
+  return target;
+}
+
+size_t DeltaUpdateAgentRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:city.economy.v2.DeltaUpdateAgentRequest)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated .city.economy.v2.AgentDeltaUpdate updates = 1 [json_name = "updates"];
+  total_size += 1UL * this->_internal_updates_size();
+  for (const auto& msg : this->_impl_.updates_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData DeltaUpdateAgentRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    DeltaUpdateAgentRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*DeltaUpdateAgentRequest::GetClassData() const { return &_class_data_; }
+
+
+void DeltaUpdateAgentRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<DeltaUpdateAgentRequest*>(&to_msg);
+  auto& from = static_cast<const DeltaUpdateAgentRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:city.economy.v2.DeltaUpdateAgentRequest)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_impl_.updates_.MergeFrom(from._impl_.updates_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void DeltaUpdateAgentRequest::CopyFrom(const DeltaUpdateAgentRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:city.economy.v2.DeltaUpdateAgentRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool DeltaUpdateAgentRequest::IsInitialized() const {
+  return true;
+}
+
+void DeltaUpdateAgentRequest::InternalSwap(DeltaUpdateAgentRequest* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _impl_.updates_.InternalSwap(&other->_impl_.updates_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata DeltaUpdateAgentRequest::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[69]);
+}
+
+// ===================================================================
+
+class AgentDeltaUpdate::_Internal {
+ public:
+  using HasBits = decltype(std::declval<AgentDeltaUpdate>()._impl_._has_bits_);
   static void set_has_delta_currency(HasBits* has_bits) {
     (*has_bits)[0] |= 1u;
   }
@@ -13125,15 +11928,15 @@ class DeltaUpdateAgentRequest::_Internal {
   }
 };
 
-DeltaUpdateAgentRequest::DeltaUpdateAgentRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+AgentDeltaUpdate::AgentDeltaUpdate(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:city.economy.v2.DeltaUpdateAgentRequest)
+  // @@protoc_insertion_point(arena_constructor:city.economy.v2.AgentDeltaUpdate)
 }
-DeltaUpdateAgentRequest::DeltaUpdateAgentRequest(const DeltaUpdateAgentRequest& from)
+AgentDeltaUpdate::AgentDeltaUpdate(const AgentDeltaUpdate& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  DeltaUpdateAgentRequest* const _this = this; (void)_this;
+  AgentDeltaUpdate* const _this = this; (void)_this;
   new (&_impl_) Impl_{
       decltype(_impl_._has_bits_){from._impl_._has_bits_}
     , /*decltype(_impl_._cached_size_)*/{}
@@ -13148,10 +11951,10 @@ DeltaUpdateAgentRequest::DeltaUpdateAgentRequest(const DeltaUpdateAgentRequest& 
   ::memcpy(&_impl_.agent_id_, &from._impl_.agent_id_,
     static_cast<size_t>(reinterpret_cast<char*>(&_impl_.delta_income_) -
     reinterpret_cast<char*>(&_impl_.agent_id_)) + sizeof(_impl_.delta_income_));
-  // @@protoc_insertion_point(copy_constructor:city.economy.v2.DeltaUpdateAgentRequest)
+  // @@protoc_insertion_point(copy_constructor:city.economy.v2.AgentDeltaUpdate)
 }
 
-inline void DeltaUpdateAgentRequest::SharedCtor(
+inline void AgentDeltaUpdate::SharedCtor(
     ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
   (void)is_message_owned;
@@ -13167,8 +11970,8 @@ inline void DeltaUpdateAgentRequest::SharedCtor(
   };
 }
 
-DeltaUpdateAgentRequest::~DeltaUpdateAgentRequest() {
-  // @@protoc_insertion_point(destructor:city.economy.v2.DeltaUpdateAgentRequest)
+AgentDeltaUpdate::~AgentDeltaUpdate() {
+  // @@protoc_insertion_point(destructor:city.economy.v2.AgentDeltaUpdate)
   if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
   (void)arena;
     return;
@@ -13176,16 +11979,16 @@ DeltaUpdateAgentRequest::~DeltaUpdateAgentRequest() {
   SharedDtor();
 }
 
-inline void DeltaUpdateAgentRequest::SharedDtor() {
+inline void AgentDeltaUpdate::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
-void DeltaUpdateAgentRequest::SetCachedSize(int size) const {
+void AgentDeltaUpdate::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-void DeltaUpdateAgentRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:city.economy.v2.DeltaUpdateAgentRequest)
+void AgentDeltaUpdate::Clear() {
+// @@protoc_insertion_point(message_clear_start:city.economy.v2.AgentDeltaUpdate)
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -13201,7 +12004,7 @@ void DeltaUpdateAgentRequest::Clear() {
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* DeltaUpdateAgentRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* AgentDeltaUpdate::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
@@ -13285,9 +12088,9 @@ failure:
 #undef CHK_
 }
 
-uint8_t* DeltaUpdateAgentRequest::_InternalSerialize(
+uint8_t* AgentDeltaUpdate::_InternalSerialize(
     uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:city.economy.v2.DeltaUpdateAgentRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:city.economy.v2.AgentDeltaUpdate)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -13331,12 +12134,12 @@ uint8_t* DeltaUpdateAgentRequest::_InternalSerialize(
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:city.economy.v2.DeltaUpdateAgentRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:city.economy.v2.AgentDeltaUpdate)
   return target;
 }
 
-size_t DeltaUpdateAgentRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:city.economy.v2.DeltaUpdateAgentRequest)
+size_t AgentDeltaUpdate::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:city.economy.v2.AgentDeltaUpdate)
   size_t total_size = 0;
 
   uint32_t cached_has_bits = 0;
@@ -13379,17 +12182,17 @@ size_t DeltaUpdateAgentRequest::ByteSizeLong() const {
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData DeltaUpdateAgentRequest::_class_data_ = {
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData AgentDeltaUpdate::_class_data_ = {
     ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    DeltaUpdateAgentRequest::MergeImpl
+    AgentDeltaUpdate::MergeImpl
 };
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*DeltaUpdateAgentRequest::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*AgentDeltaUpdate::GetClassData() const { return &_class_data_; }
 
 
-void DeltaUpdateAgentRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<DeltaUpdateAgentRequest*>(&to_msg);
-  auto& from = static_cast<const DeltaUpdateAgentRequest&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:city.economy.v2.DeltaUpdateAgentRequest)
+void AgentDeltaUpdate::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<AgentDeltaUpdate*>(&to_msg);
+  auto& from = static_cast<const AgentDeltaUpdate&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:city.economy.v2.AgentDeltaUpdate)
   GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
@@ -13419,33 +12222,33 @@ void DeltaUpdateAgentRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
-void DeltaUpdateAgentRequest::CopyFrom(const DeltaUpdateAgentRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:city.economy.v2.DeltaUpdateAgentRequest)
+void AgentDeltaUpdate::CopyFrom(const AgentDeltaUpdate& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:city.economy.v2.AgentDeltaUpdate)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool DeltaUpdateAgentRequest::IsInitialized() const {
+bool AgentDeltaUpdate::IsInitialized() const {
   return true;
 }
 
-void DeltaUpdateAgentRequest::InternalSwap(DeltaUpdateAgentRequest* other) {
+void AgentDeltaUpdate::InternalSwap(AgentDeltaUpdate* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(DeltaUpdateAgentRequest, _impl_.delta_income_)
-      + sizeof(DeltaUpdateAgentRequest::_impl_.delta_income_)
-      - PROTOBUF_FIELD_OFFSET(DeltaUpdateAgentRequest, _impl_.agent_id_)>(
+      PROTOBUF_FIELD_OFFSET(AgentDeltaUpdate, _impl_.delta_income_)
+      + sizeof(AgentDeltaUpdate::_impl_.delta_income_)
+      - PROTOBUF_FIELD_OFFSET(AgentDeltaUpdate, _impl_.agent_id_)>(
           reinterpret_cast<char*>(&_impl_.agent_id_),
           reinterpret_cast<char*>(&other->_impl_.agent_id_));
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata DeltaUpdateAgentRequest::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata AgentDeltaUpdate::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[78]);
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[70]);
 }
 
 // ===================================================================
@@ -13485,1455 +12288,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*DeltaUpdateAgentResponse::GetC
 ::PROTOBUF_NAMESPACE_ID::Metadata DeltaUpdateAgentResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[79]);
-}
-
-// ===================================================================
-
-class BatchAddAgentRequest::_Internal {
- public:
-};
-
-void BatchAddAgentRequest::clear_agents() {
-  _impl_.agents_.Clear();
-}
-BatchAddAgentRequest::BatchAddAgentRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:city.economy.v2.BatchAddAgentRequest)
-}
-BatchAddAgentRequest::BatchAddAgentRequest(const BatchAddAgentRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  BatchAddAgentRequest* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.agents_){from._impl_.agents_}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:city.economy.v2.BatchAddAgentRequest)
-}
-
-inline void BatchAddAgentRequest::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.agents_){arena}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-}
-
-BatchAddAgentRequest::~BatchAddAgentRequest() {
-  // @@protoc_insertion_point(destructor:city.economy.v2.BatchAddAgentRequest)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
-  SharedDtor();
-}
-
-inline void BatchAddAgentRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.agents_.~RepeatedPtrField();
-}
-
-void BatchAddAgentRequest::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
-}
-
-void BatchAddAgentRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:city.economy.v2.BatchAddAgentRequest)
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  _impl_.agents_.Clear();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* BatchAddAgentRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // repeated .city.economy.v2.Agent agents = 1 [json_name = "agents"];
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_agents(), ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
-}
-
-uint8_t* BatchAddAgentRequest::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:city.economy.v2.BatchAddAgentRequest)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // repeated .city.economy.v2.Agent agents = 1 [json_name = "agents"];
-  for (unsigned i = 0,
-      n = static_cast<unsigned>(this->_internal_agents_size()); i < n; i++) {
-    const auto& repfield = this->_internal_agents(i);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-        InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:city.economy.v2.BatchAddAgentRequest)
-  return target;
-}
-
-size_t BatchAddAgentRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:city.economy.v2.BatchAddAgentRequest)
-  size_t total_size = 0;
-
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // repeated .city.economy.v2.Agent agents = 1 [json_name = "agents"];
-  total_size += 1UL * this->_internal_agents_size();
-  for (const auto& msg : this->_impl_.agents_) {
-    total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
-  }
-
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
-}
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BatchAddAgentRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    BatchAddAgentRequest::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BatchAddAgentRequest::GetClassData() const { return &_class_data_; }
-
-
-void BatchAddAgentRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<BatchAddAgentRequest*>(&to_msg);
-  auto& from = static_cast<const BatchAddAgentRequest&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:city.economy.v2.BatchAddAgentRequest)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  _this->_impl_.agents_.MergeFrom(from._impl_.agents_);
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-}
-
-void BatchAddAgentRequest::CopyFrom(const BatchAddAgentRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:city.economy.v2.BatchAddAgentRequest)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool BatchAddAgentRequest::IsInitialized() const {
-  return true;
-}
-
-void BatchAddAgentRequest::InternalSwap(BatchAddAgentRequest* other) {
-  using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  _impl_.agents_.InternalSwap(&other->_impl_.agents_);
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata BatchAddAgentRequest::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[80]);
-}
-
-// ===================================================================
-
-class BatchAddAgentResponse::_Internal {
- public:
-};
-
-BatchAddAgentResponse::BatchAddAgentResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:city.economy.v2.BatchAddAgentResponse)
-}
-BatchAddAgentResponse::BatchAddAgentResponse(const BatchAddAgentResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  BatchAddAgentResponse* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.agent_ids_){from._impl_.agent_ids_}
-    , /*decltype(_impl_._agent_ids_cached_byte_size_)*/{0}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:city.economy.v2.BatchAddAgentResponse)
-}
-
-inline void BatchAddAgentResponse::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.agent_ids_){arena}
-    , /*decltype(_impl_._agent_ids_cached_byte_size_)*/{0}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-}
-
-BatchAddAgentResponse::~BatchAddAgentResponse() {
-  // @@protoc_insertion_point(destructor:city.economy.v2.BatchAddAgentResponse)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
-  SharedDtor();
-}
-
-inline void BatchAddAgentResponse::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.agent_ids_.~RepeatedField();
-}
-
-void BatchAddAgentResponse::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
-}
-
-void BatchAddAgentResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:city.economy.v2.BatchAddAgentResponse)
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  _impl_.agent_ids_.Clear();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* BatchAddAgentResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // repeated int32 agent_ids = 1 [json_name = "agentIds"];
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_agent_ids(), ptr, ctx);
-          CHK_(ptr);
-        } else if (static_cast<uint8_t>(tag) == 8) {
-          _internal_add_agent_ids(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
-}
-
-uint8_t* BatchAddAgentResponse::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:city.economy.v2.BatchAddAgentResponse)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // repeated int32 agent_ids = 1 [json_name = "agentIds"];
-  {
-    int byte_size = _impl_._agent_ids_cached_byte_size_.load(std::memory_order_relaxed);
-    if (byte_size > 0) {
-      target = stream->WriteInt32Packed(
-          1, _internal_agent_ids(), byte_size, target);
-    }
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:city.economy.v2.BatchAddAgentResponse)
-  return target;
-}
-
-size_t BatchAddAgentResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:city.economy.v2.BatchAddAgentResponse)
-  size_t total_size = 0;
-
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // repeated int32 agent_ids = 1 [json_name = "agentIds"];
-  {
-    size_t data_size = ::_pbi::WireFormatLite::
-      Int32Size(this->_impl_.agent_ids_);
-    if (data_size > 0) {
-      total_size += 1 +
-        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
-    }
-    int cached_size = ::_pbi::ToCachedSize(data_size);
-    _impl_._agent_ids_cached_byte_size_.store(cached_size,
-                                    std::memory_order_relaxed);
-    total_size += data_size;
-  }
-
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
-}
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BatchAddAgentResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    BatchAddAgentResponse::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BatchAddAgentResponse::GetClassData() const { return &_class_data_; }
-
-
-void BatchAddAgentResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<BatchAddAgentResponse*>(&to_msg);
-  auto& from = static_cast<const BatchAddAgentResponse&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:city.economy.v2.BatchAddAgentResponse)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  _this->_impl_.agent_ids_.MergeFrom(from._impl_.agent_ids_);
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-}
-
-void BatchAddAgentResponse::CopyFrom(const BatchAddAgentResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:city.economy.v2.BatchAddAgentResponse)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool BatchAddAgentResponse::IsInitialized() const {
-  return true;
-}
-
-void BatchAddAgentResponse::InternalSwap(BatchAddAgentResponse* other) {
-  using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  _impl_.agent_ids_.InternalSwap(&other->_impl_.agent_ids_);
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata BatchAddAgentResponse::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[81]);
-}
-
-// ===================================================================
-
-class BatchRemoveAgentRequest::_Internal {
- public:
-};
-
-BatchRemoveAgentRequest::BatchRemoveAgentRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:city.economy.v2.BatchRemoveAgentRequest)
-}
-BatchRemoveAgentRequest::BatchRemoveAgentRequest(const BatchRemoveAgentRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  BatchRemoveAgentRequest* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.agent_ids_){from._impl_.agent_ids_}
-    , /*decltype(_impl_._agent_ids_cached_byte_size_)*/{0}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:city.economy.v2.BatchRemoveAgentRequest)
-}
-
-inline void BatchRemoveAgentRequest::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.agent_ids_){arena}
-    , /*decltype(_impl_._agent_ids_cached_byte_size_)*/{0}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-}
-
-BatchRemoveAgentRequest::~BatchRemoveAgentRequest() {
-  // @@protoc_insertion_point(destructor:city.economy.v2.BatchRemoveAgentRequest)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
-  SharedDtor();
-}
-
-inline void BatchRemoveAgentRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.agent_ids_.~RepeatedField();
-}
-
-void BatchRemoveAgentRequest::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
-}
-
-void BatchRemoveAgentRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:city.economy.v2.BatchRemoveAgentRequest)
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  _impl_.agent_ids_.Clear();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* BatchRemoveAgentRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // repeated int32 agent_ids = 1 [json_name = "agentIds"];
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_agent_ids(), ptr, ctx);
-          CHK_(ptr);
-        } else if (static_cast<uint8_t>(tag) == 8) {
-          _internal_add_agent_ids(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
-}
-
-uint8_t* BatchRemoveAgentRequest::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:city.economy.v2.BatchRemoveAgentRequest)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // repeated int32 agent_ids = 1 [json_name = "agentIds"];
-  {
-    int byte_size = _impl_._agent_ids_cached_byte_size_.load(std::memory_order_relaxed);
-    if (byte_size > 0) {
-      target = stream->WriteInt32Packed(
-          1, _internal_agent_ids(), byte_size, target);
-    }
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:city.economy.v2.BatchRemoveAgentRequest)
-  return target;
-}
-
-size_t BatchRemoveAgentRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:city.economy.v2.BatchRemoveAgentRequest)
-  size_t total_size = 0;
-
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // repeated int32 agent_ids = 1 [json_name = "agentIds"];
-  {
-    size_t data_size = ::_pbi::WireFormatLite::
-      Int32Size(this->_impl_.agent_ids_);
-    if (data_size > 0) {
-      total_size += 1 +
-        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
-    }
-    int cached_size = ::_pbi::ToCachedSize(data_size);
-    _impl_._agent_ids_cached_byte_size_.store(cached_size,
-                                    std::memory_order_relaxed);
-    total_size += data_size;
-  }
-
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
-}
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BatchRemoveAgentRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    BatchRemoveAgentRequest::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BatchRemoveAgentRequest::GetClassData() const { return &_class_data_; }
-
-
-void BatchRemoveAgentRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<BatchRemoveAgentRequest*>(&to_msg);
-  auto& from = static_cast<const BatchRemoveAgentRequest&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:city.economy.v2.BatchRemoveAgentRequest)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  _this->_impl_.agent_ids_.MergeFrom(from._impl_.agent_ids_);
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-}
-
-void BatchRemoveAgentRequest::CopyFrom(const BatchRemoveAgentRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:city.economy.v2.BatchRemoveAgentRequest)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool BatchRemoveAgentRequest::IsInitialized() const {
-  return true;
-}
-
-void BatchRemoveAgentRequest::InternalSwap(BatchRemoveAgentRequest* other) {
-  using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  _impl_.agent_ids_.InternalSwap(&other->_impl_.agent_ids_);
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata BatchRemoveAgentRequest::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[82]);
-}
-
-// ===================================================================
-
-class BatchRemoveAgentResponse::_Internal {
- public:
-};
-
-BatchRemoveAgentResponse::BatchRemoveAgentResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
-  // @@protoc_insertion_point(arena_constructor:city.economy.v2.BatchRemoveAgentResponse)
-}
-BatchRemoveAgentResponse::BatchRemoveAgentResponse(const BatchRemoveAgentResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
-  BatchRemoveAgentResponse* const _this = this; (void)_this;
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:city.economy.v2.BatchRemoveAgentResponse)
-}
-
-
-
-
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BatchRemoveAgentResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BatchRemoveAgentResponse::GetClassData() const { return &_class_data_; }
-
-
-
-
-
-
-
-::PROTOBUF_NAMESPACE_ID::Metadata BatchRemoveAgentResponse::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[83]);
-}
-
-// ===================================================================
-
-class BatchGetAgentRequest::_Internal {
- public:
-};
-
-BatchGetAgentRequest::BatchGetAgentRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:city.economy.v2.BatchGetAgentRequest)
-}
-BatchGetAgentRequest::BatchGetAgentRequest(const BatchGetAgentRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  BatchGetAgentRequest* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.agent_ids_){from._impl_.agent_ids_}
-    , /*decltype(_impl_._agent_ids_cached_byte_size_)*/{0}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:city.economy.v2.BatchGetAgentRequest)
-}
-
-inline void BatchGetAgentRequest::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.agent_ids_){arena}
-    , /*decltype(_impl_._agent_ids_cached_byte_size_)*/{0}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-}
-
-BatchGetAgentRequest::~BatchGetAgentRequest() {
-  // @@protoc_insertion_point(destructor:city.economy.v2.BatchGetAgentRequest)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
-  SharedDtor();
-}
-
-inline void BatchGetAgentRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.agent_ids_.~RepeatedField();
-}
-
-void BatchGetAgentRequest::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
-}
-
-void BatchGetAgentRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:city.economy.v2.BatchGetAgentRequest)
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  _impl_.agent_ids_.Clear();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* BatchGetAgentRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // repeated int32 agent_ids = 1 [json_name = "agentIds"];
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_agent_ids(), ptr, ctx);
-          CHK_(ptr);
-        } else if (static_cast<uint8_t>(tag) == 8) {
-          _internal_add_agent_ids(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
-}
-
-uint8_t* BatchGetAgentRequest::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:city.economy.v2.BatchGetAgentRequest)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // repeated int32 agent_ids = 1 [json_name = "agentIds"];
-  {
-    int byte_size = _impl_._agent_ids_cached_byte_size_.load(std::memory_order_relaxed);
-    if (byte_size > 0) {
-      target = stream->WriteInt32Packed(
-          1, _internal_agent_ids(), byte_size, target);
-    }
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:city.economy.v2.BatchGetAgentRequest)
-  return target;
-}
-
-size_t BatchGetAgentRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:city.economy.v2.BatchGetAgentRequest)
-  size_t total_size = 0;
-
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // repeated int32 agent_ids = 1 [json_name = "agentIds"];
-  {
-    size_t data_size = ::_pbi::WireFormatLite::
-      Int32Size(this->_impl_.agent_ids_);
-    if (data_size > 0) {
-      total_size += 1 +
-        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
-    }
-    int cached_size = ::_pbi::ToCachedSize(data_size);
-    _impl_._agent_ids_cached_byte_size_.store(cached_size,
-                                    std::memory_order_relaxed);
-    total_size += data_size;
-  }
-
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
-}
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BatchGetAgentRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    BatchGetAgentRequest::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BatchGetAgentRequest::GetClassData() const { return &_class_data_; }
-
-
-void BatchGetAgentRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<BatchGetAgentRequest*>(&to_msg);
-  auto& from = static_cast<const BatchGetAgentRequest&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:city.economy.v2.BatchGetAgentRequest)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  _this->_impl_.agent_ids_.MergeFrom(from._impl_.agent_ids_);
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-}
-
-void BatchGetAgentRequest::CopyFrom(const BatchGetAgentRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:city.economy.v2.BatchGetAgentRequest)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool BatchGetAgentRequest::IsInitialized() const {
-  return true;
-}
-
-void BatchGetAgentRequest::InternalSwap(BatchGetAgentRequest* other) {
-  using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  _impl_.agent_ids_.InternalSwap(&other->_impl_.agent_ids_);
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata BatchGetAgentRequest::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[84]);
-}
-
-// ===================================================================
-
-class BatchGetAgentResponse::_Internal {
- public:
-};
-
-void BatchGetAgentResponse::clear_agents() {
-  _impl_.agents_.Clear();
-}
-BatchGetAgentResponse::BatchGetAgentResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:city.economy.v2.BatchGetAgentResponse)
-}
-BatchGetAgentResponse::BatchGetAgentResponse(const BatchGetAgentResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  BatchGetAgentResponse* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.agents_){from._impl_.agents_}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:city.economy.v2.BatchGetAgentResponse)
-}
-
-inline void BatchGetAgentResponse::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.agents_){arena}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-}
-
-BatchGetAgentResponse::~BatchGetAgentResponse() {
-  // @@protoc_insertion_point(destructor:city.economy.v2.BatchGetAgentResponse)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
-  SharedDtor();
-}
-
-inline void BatchGetAgentResponse::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.agents_.~RepeatedPtrField();
-}
-
-void BatchGetAgentResponse::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
-}
-
-void BatchGetAgentResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:city.economy.v2.BatchGetAgentResponse)
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  _impl_.agents_.Clear();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* BatchGetAgentResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // repeated .city.economy.v2.Agent agents = 1 [json_name = "agents"];
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_agents(), ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
-}
-
-uint8_t* BatchGetAgentResponse::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:city.economy.v2.BatchGetAgentResponse)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // repeated .city.economy.v2.Agent agents = 1 [json_name = "agents"];
-  for (unsigned i = 0,
-      n = static_cast<unsigned>(this->_internal_agents_size()); i < n; i++) {
-    const auto& repfield = this->_internal_agents(i);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-        InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:city.economy.v2.BatchGetAgentResponse)
-  return target;
-}
-
-size_t BatchGetAgentResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:city.economy.v2.BatchGetAgentResponse)
-  size_t total_size = 0;
-
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // repeated .city.economy.v2.Agent agents = 1 [json_name = "agents"];
-  total_size += 1UL * this->_internal_agents_size();
-  for (const auto& msg : this->_impl_.agents_) {
-    total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
-  }
-
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
-}
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BatchGetAgentResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    BatchGetAgentResponse::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BatchGetAgentResponse::GetClassData() const { return &_class_data_; }
-
-
-void BatchGetAgentResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<BatchGetAgentResponse*>(&to_msg);
-  auto& from = static_cast<const BatchGetAgentResponse&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:city.economy.v2.BatchGetAgentResponse)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  _this->_impl_.agents_.MergeFrom(from._impl_.agents_);
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-}
-
-void BatchGetAgentResponse::CopyFrom(const BatchGetAgentResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:city.economy.v2.BatchGetAgentResponse)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool BatchGetAgentResponse::IsInitialized() const {
-  return true;
-}
-
-void BatchGetAgentResponse::InternalSwap(BatchGetAgentResponse* other) {
-  using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  _impl_.agents_.InternalSwap(&other->_impl_.agents_);
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata BatchGetAgentResponse::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[85]);
-}
-
-// ===================================================================
-
-class BatchUpdateAgentRequest::_Internal {
- public:
-};
-
-void BatchUpdateAgentRequest::clear_agents() {
-  _impl_.agents_.Clear();
-}
-BatchUpdateAgentRequest::BatchUpdateAgentRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:city.economy.v2.BatchUpdateAgentRequest)
-}
-BatchUpdateAgentRequest::BatchUpdateAgentRequest(const BatchUpdateAgentRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  BatchUpdateAgentRequest* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.agents_){from._impl_.agents_}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:city.economy.v2.BatchUpdateAgentRequest)
-}
-
-inline void BatchUpdateAgentRequest::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.agents_){arena}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-}
-
-BatchUpdateAgentRequest::~BatchUpdateAgentRequest() {
-  // @@protoc_insertion_point(destructor:city.economy.v2.BatchUpdateAgentRequest)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
-  SharedDtor();
-}
-
-inline void BatchUpdateAgentRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.agents_.~RepeatedPtrField();
-}
-
-void BatchUpdateAgentRequest::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
-}
-
-void BatchUpdateAgentRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:city.economy.v2.BatchUpdateAgentRequest)
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  _impl_.agents_.Clear();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* BatchUpdateAgentRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // repeated .city.economy.v2.Agent agents = 1 [json_name = "agents"];
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_agents(), ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
-}
-
-uint8_t* BatchUpdateAgentRequest::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:city.economy.v2.BatchUpdateAgentRequest)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // repeated .city.economy.v2.Agent agents = 1 [json_name = "agents"];
-  for (unsigned i = 0,
-      n = static_cast<unsigned>(this->_internal_agents_size()); i < n; i++) {
-    const auto& repfield = this->_internal_agents(i);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-        InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:city.economy.v2.BatchUpdateAgentRequest)
-  return target;
-}
-
-size_t BatchUpdateAgentRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:city.economy.v2.BatchUpdateAgentRequest)
-  size_t total_size = 0;
-
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // repeated .city.economy.v2.Agent agents = 1 [json_name = "agents"];
-  total_size += 1UL * this->_internal_agents_size();
-  for (const auto& msg : this->_impl_.agents_) {
-    total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
-  }
-
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
-}
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BatchUpdateAgentRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    BatchUpdateAgentRequest::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BatchUpdateAgentRequest::GetClassData() const { return &_class_data_; }
-
-
-void BatchUpdateAgentRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<BatchUpdateAgentRequest*>(&to_msg);
-  auto& from = static_cast<const BatchUpdateAgentRequest&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:city.economy.v2.BatchUpdateAgentRequest)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  _this->_impl_.agents_.MergeFrom(from._impl_.agents_);
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-}
-
-void BatchUpdateAgentRequest::CopyFrom(const BatchUpdateAgentRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:city.economy.v2.BatchUpdateAgentRequest)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool BatchUpdateAgentRequest::IsInitialized() const {
-  return true;
-}
-
-void BatchUpdateAgentRequest::InternalSwap(BatchUpdateAgentRequest* other) {
-  using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  _impl_.agents_.InternalSwap(&other->_impl_.agents_);
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata BatchUpdateAgentRequest::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[86]);
-}
-
-// ===================================================================
-
-class BatchUpdateAgentResponse::_Internal {
- public:
-};
-
-BatchUpdateAgentResponse::BatchUpdateAgentResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
-  // @@protoc_insertion_point(arena_constructor:city.economy.v2.BatchUpdateAgentResponse)
-}
-BatchUpdateAgentResponse::BatchUpdateAgentResponse(const BatchUpdateAgentResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
-  BatchUpdateAgentResponse* const _this = this; (void)_this;
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:city.economy.v2.BatchUpdateAgentResponse)
-}
-
-
-
-
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BatchUpdateAgentResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BatchUpdateAgentResponse::GetClassData() const { return &_class_data_; }
-
-
-
-
-
-
-
-::PROTOBUF_NAMESPACE_ID::Metadata BatchUpdateAgentResponse::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[87]);
-}
-
-// ===================================================================
-
-class BatchDeltaUpdateAgentRequest::_Internal {
- public:
-};
-
-BatchDeltaUpdateAgentRequest::BatchDeltaUpdateAgentRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:city.economy.v2.BatchDeltaUpdateAgentRequest)
-}
-BatchDeltaUpdateAgentRequest::BatchDeltaUpdateAgentRequest(const BatchDeltaUpdateAgentRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  BatchDeltaUpdateAgentRequest* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.updates_){from._impl_.updates_}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:city.economy.v2.BatchDeltaUpdateAgentRequest)
-}
-
-inline void BatchDeltaUpdateAgentRequest::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.updates_){arena}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-}
-
-BatchDeltaUpdateAgentRequest::~BatchDeltaUpdateAgentRequest() {
-  // @@protoc_insertion_point(destructor:city.economy.v2.BatchDeltaUpdateAgentRequest)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
-  SharedDtor();
-}
-
-inline void BatchDeltaUpdateAgentRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.updates_.~RepeatedPtrField();
-}
-
-void BatchDeltaUpdateAgentRequest::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
-}
-
-void BatchDeltaUpdateAgentRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:city.economy.v2.BatchDeltaUpdateAgentRequest)
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  _impl_.updates_.Clear();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* BatchDeltaUpdateAgentRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // repeated .city.economy.v2.DeltaUpdateAgentRequest updates = 1 [json_name = "updates"];
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_updates(), ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
-}
-
-uint8_t* BatchDeltaUpdateAgentRequest::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:city.economy.v2.BatchDeltaUpdateAgentRequest)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // repeated .city.economy.v2.DeltaUpdateAgentRequest updates = 1 [json_name = "updates"];
-  for (unsigned i = 0,
-      n = static_cast<unsigned>(this->_internal_updates_size()); i < n; i++) {
-    const auto& repfield = this->_internal_updates(i);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-        InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:city.economy.v2.BatchDeltaUpdateAgentRequest)
-  return target;
-}
-
-size_t BatchDeltaUpdateAgentRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:city.economy.v2.BatchDeltaUpdateAgentRequest)
-  size_t total_size = 0;
-
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // repeated .city.economy.v2.DeltaUpdateAgentRequest updates = 1 [json_name = "updates"];
-  total_size += 1UL * this->_internal_updates_size();
-  for (const auto& msg : this->_impl_.updates_) {
-    total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
-  }
-
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
-}
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BatchDeltaUpdateAgentRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    BatchDeltaUpdateAgentRequest::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BatchDeltaUpdateAgentRequest::GetClassData() const { return &_class_data_; }
-
-
-void BatchDeltaUpdateAgentRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<BatchDeltaUpdateAgentRequest*>(&to_msg);
-  auto& from = static_cast<const BatchDeltaUpdateAgentRequest&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:city.economy.v2.BatchDeltaUpdateAgentRequest)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  _this->_impl_.updates_.MergeFrom(from._impl_.updates_);
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-}
-
-void BatchDeltaUpdateAgentRequest::CopyFrom(const BatchDeltaUpdateAgentRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:city.economy.v2.BatchDeltaUpdateAgentRequest)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool BatchDeltaUpdateAgentRequest::IsInitialized() const {
-  return true;
-}
-
-void BatchDeltaUpdateAgentRequest::InternalSwap(BatchDeltaUpdateAgentRequest* other) {
-  using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  _impl_.updates_.InternalSwap(&other->_impl_.updates_);
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata BatchDeltaUpdateAgentRequest::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[88]);
-}
-
-// ===================================================================
-
-class BatchDeltaUpdateAgentResponse::_Internal {
- public:
-};
-
-BatchDeltaUpdateAgentResponse::BatchDeltaUpdateAgentResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
-  // @@protoc_insertion_point(arena_constructor:city.economy.v2.BatchDeltaUpdateAgentResponse)
-}
-BatchDeltaUpdateAgentResponse::BatchDeltaUpdateAgentResponse(const BatchDeltaUpdateAgentResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
-  BatchDeltaUpdateAgentResponse* const _this = this; (void)_this;
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:city.economy.v2.BatchDeltaUpdateAgentResponse)
-}
-
-
-
-
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BatchDeltaUpdateAgentResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BatchDeltaUpdateAgentResponse::GetClassData() const { return &_class_data_; }
-
-
-
-
-
-
-
-::PROTOBUF_NAMESPACE_ID::Metadata BatchDeltaUpdateAgentResponse::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[89]);
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[71]);
 }
 
 // ===================================================================
@@ -15219,7 +12574,7 @@ void CalculateTaxesDueRequest::InternalSwap(CalculateTaxesDueRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata CalculateTaxesDueRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[90]);
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[72]);
 }
 
 // ===================================================================
@@ -15442,7 +12797,7 @@ void CalculateTaxesDueResponse::InternalSwap(CalculateTaxesDueResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata CalculateTaxesDueResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[91]);
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[73]);
 }
 
 // ===================================================================
@@ -15748,7 +13103,7 @@ void CalculateConsumptionRequest::InternalSwap(CalculateConsumptionRequest* othe
 ::PROTOBUF_NAMESPACE_ID::Metadata CalculateConsumptionRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[92]);
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[74]);
 }
 
 // ===================================================================
@@ -15971,7 +13326,7 @@ void CalculateConsumptionResponse::InternalSwap(CalculateConsumptionResponse* ot
 ::PROTOBUF_NAMESPACE_ID::Metadata CalculateConsumptionResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[93]);
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[75]);
 }
 
 // ===================================================================
@@ -16191,7 +13546,7 @@ void CalculateInterestRequest::InternalSwap(CalculateInterestRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata CalculateInterestRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[94]);
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[76]);
 }
 
 // ===================================================================
@@ -16414,7 +13769,7 @@ void CalculateInterestResponse::InternalSwap(CalculateInterestResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata CalculateInterestResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[95]);
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[77]);
 }
 
 // ===================================================================
@@ -16592,7 +13947,7 @@ void CalculateRealGDPRequest::InternalSwap(CalculateRealGDPRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata CalculateRealGDPRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[96]);
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[78]);
 }
 
 // ===================================================================
@@ -16782,7 +14137,7 @@ void CalculateRealGDPResponse::InternalSwap(CalculateRealGDPResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata CalculateRealGDPResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[97]);
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[79]);
 }
 
 // ===================================================================
@@ -16985,7 +14340,7 @@ void SaveEconomyEntitiesRequest::InternalSwap(SaveEconomyEntitiesRequest* other)
 ::PROTOBUF_NAMESPACE_ID::Metadata SaveEconomyEntitiesRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[98]);
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[80]);
 }
 
 // ===================================================================
@@ -17346,7 +14701,7 @@ void SaveEconomyEntitiesResponse::InternalSwap(SaveEconomyEntitiesResponse* othe
 ::PROTOBUF_NAMESPACE_ID::Metadata SaveEconomyEntitiesResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[99]);
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[81]);
 }
 
 // ===================================================================
@@ -17549,7 +14904,7 @@ void LoadEconomyEntitiesRequest::InternalSwap(LoadEconomyEntitiesRequest* other)
 ::PROTOBUF_NAMESPACE_ID::Metadata LoadEconomyEntitiesRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[100]);
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[82]);
 }
 
 // ===================================================================
@@ -17910,7 +15265,7 @@ void LoadEconomyEntitiesResponse::InternalSwap(LoadEconomyEntitiesResponse* othe
 ::PROTOBUF_NAMESPACE_ID::Metadata LoadEconomyEntitiesResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_getter, &descriptor_table_city_2feconomy_2fv2_2forg_5fservice_2eproto_once,
-      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[101]);
+      file_level_metadata_city_2feconomy_2fv2_2forg_5fservice_2eproto[83]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
@@ -17962,49 +15317,13 @@ template<> PROTOBUF_NOINLINE ::city::economy::v2::DeltaUpdateFirmRequest*
 Arena::CreateMaybeMessage< ::city::economy::v2::DeltaUpdateFirmRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::city::economy::v2::DeltaUpdateFirmRequest >(arena);
 }
+template<> PROTOBUF_NOINLINE ::city::economy::v2::FirmDeltaUpdate*
+Arena::CreateMaybeMessage< ::city::economy::v2::FirmDeltaUpdate >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::economy::v2::FirmDeltaUpdate >(arena);
+}
 template<> PROTOBUF_NOINLINE ::city::economy::v2::DeltaUpdateFirmResponse*
 Arena::CreateMaybeMessage< ::city::economy::v2::DeltaUpdateFirmResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::city::economy::v2::DeltaUpdateFirmResponse >(arena);
-}
-template<> PROTOBUF_NOINLINE ::city::economy::v2::BatchAddFirmRequest*
-Arena::CreateMaybeMessage< ::city::economy::v2::BatchAddFirmRequest >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::city::economy::v2::BatchAddFirmRequest >(arena);
-}
-template<> PROTOBUF_NOINLINE ::city::economy::v2::BatchAddFirmResponse*
-Arena::CreateMaybeMessage< ::city::economy::v2::BatchAddFirmResponse >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::city::economy::v2::BatchAddFirmResponse >(arena);
-}
-template<> PROTOBUF_NOINLINE ::city::economy::v2::BatchRemoveFirmRequest*
-Arena::CreateMaybeMessage< ::city::economy::v2::BatchRemoveFirmRequest >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::city::economy::v2::BatchRemoveFirmRequest >(arena);
-}
-template<> PROTOBUF_NOINLINE ::city::economy::v2::BatchRemoveFirmResponse*
-Arena::CreateMaybeMessage< ::city::economy::v2::BatchRemoveFirmResponse >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::city::economy::v2::BatchRemoveFirmResponse >(arena);
-}
-template<> PROTOBUF_NOINLINE ::city::economy::v2::BatchGetFirmRequest*
-Arena::CreateMaybeMessage< ::city::economy::v2::BatchGetFirmRequest >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::city::economy::v2::BatchGetFirmRequest >(arena);
-}
-template<> PROTOBUF_NOINLINE ::city::economy::v2::BatchGetFirmResponse*
-Arena::CreateMaybeMessage< ::city::economy::v2::BatchGetFirmResponse >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::city::economy::v2::BatchGetFirmResponse >(arena);
-}
-template<> PROTOBUF_NOINLINE ::city::economy::v2::BatchUpdateFirmRequest*
-Arena::CreateMaybeMessage< ::city::economy::v2::BatchUpdateFirmRequest >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::city::economy::v2::BatchUpdateFirmRequest >(arena);
-}
-template<> PROTOBUF_NOINLINE ::city::economy::v2::BatchUpdateFirmResponse*
-Arena::CreateMaybeMessage< ::city::economy::v2::BatchUpdateFirmResponse >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::city::economy::v2::BatchUpdateFirmResponse >(arena);
-}
-template<> PROTOBUF_NOINLINE ::city::economy::v2::BatchDeltaUpdateFirmRequest*
-Arena::CreateMaybeMessage< ::city::economy::v2::BatchDeltaUpdateFirmRequest >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::city::economy::v2::BatchDeltaUpdateFirmRequest >(arena);
-}
-template<> PROTOBUF_NOINLINE ::city::economy::v2::BatchDeltaUpdateFirmResponse*
-Arena::CreateMaybeMessage< ::city::economy::v2::BatchDeltaUpdateFirmResponse >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::city::economy::v2::BatchDeltaUpdateFirmResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::city::economy::v2::AddNBSRequest*
 Arena::CreateMaybeMessage< ::city::economy::v2::AddNBSRequest >(Arena* arena) {
@@ -18234,49 +15553,13 @@ template<> PROTOBUF_NOINLINE ::city::economy::v2::DeltaUpdateAgentRequest*
 Arena::CreateMaybeMessage< ::city::economy::v2::DeltaUpdateAgentRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::city::economy::v2::DeltaUpdateAgentRequest >(arena);
 }
+template<> PROTOBUF_NOINLINE ::city::economy::v2::AgentDeltaUpdate*
+Arena::CreateMaybeMessage< ::city::economy::v2::AgentDeltaUpdate >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::economy::v2::AgentDeltaUpdate >(arena);
+}
 template<> PROTOBUF_NOINLINE ::city::economy::v2::DeltaUpdateAgentResponse*
 Arena::CreateMaybeMessage< ::city::economy::v2::DeltaUpdateAgentResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::city::economy::v2::DeltaUpdateAgentResponse >(arena);
-}
-template<> PROTOBUF_NOINLINE ::city::economy::v2::BatchAddAgentRequest*
-Arena::CreateMaybeMessage< ::city::economy::v2::BatchAddAgentRequest >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::city::economy::v2::BatchAddAgentRequest >(arena);
-}
-template<> PROTOBUF_NOINLINE ::city::economy::v2::BatchAddAgentResponse*
-Arena::CreateMaybeMessage< ::city::economy::v2::BatchAddAgentResponse >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::city::economy::v2::BatchAddAgentResponse >(arena);
-}
-template<> PROTOBUF_NOINLINE ::city::economy::v2::BatchRemoveAgentRequest*
-Arena::CreateMaybeMessage< ::city::economy::v2::BatchRemoveAgentRequest >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::city::economy::v2::BatchRemoveAgentRequest >(arena);
-}
-template<> PROTOBUF_NOINLINE ::city::economy::v2::BatchRemoveAgentResponse*
-Arena::CreateMaybeMessage< ::city::economy::v2::BatchRemoveAgentResponse >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::city::economy::v2::BatchRemoveAgentResponse >(arena);
-}
-template<> PROTOBUF_NOINLINE ::city::economy::v2::BatchGetAgentRequest*
-Arena::CreateMaybeMessage< ::city::economy::v2::BatchGetAgentRequest >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::city::economy::v2::BatchGetAgentRequest >(arena);
-}
-template<> PROTOBUF_NOINLINE ::city::economy::v2::BatchGetAgentResponse*
-Arena::CreateMaybeMessage< ::city::economy::v2::BatchGetAgentResponse >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::city::economy::v2::BatchGetAgentResponse >(arena);
-}
-template<> PROTOBUF_NOINLINE ::city::economy::v2::BatchUpdateAgentRequest*
-Arena::CreateMaybeMessage< ::city::economy::v2::BatchUpdateAgentRequest >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::city::economy::v2::BatchUpdateAgentRequest >(arena);
-}
-template<> PROTOBUF_NOINLINE ::city::economy::v2::BatchUpdateAgentResponse*
-Arena::CreateMaybeMessage< ::city::economy::v2::BatchUpdateAgentResponse >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::city::economy::v2::BatchUpdateAgentResponse >(arena);
-}
-template<> PROTOBUF_NOINLINE ::city::economy::v2::BatchDeltaUpdateAgentRequest*
-Arena::CreateMaybeMessage< ::city::economy::v2::BatchDeltaUpdateAgentRequest >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::city::economy::v2::BatchDeltaUpdateAgentRequest >(arena);
-}
-template<> PROTOBUF_NOINLINE ::city::economy::v2::BatchDeltaUpdateAgentResponse*
-Arena::CreateMaybeMessage< ::city::economy::v2::BatchDeltaUpdateAgentResponse >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::city::economy::v2::BatchDeltaUpdateAgentResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::city::economy::v2::CalculateTaxesDueRequest*
 Arena::CreateMaybeMessage< ::city::economy::v2::CalculateTaxesDueRequest >(Arena* arena) {
