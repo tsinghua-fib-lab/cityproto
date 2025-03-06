@@ -116,7 +116,7 @@ class EmissionAttribute(_message.Message):
         ...
 
 class VehicleAttribute(_message.Message):
-    __slots__ = ['length', 'width', 'max_speed', 'max_acceleration', 'max_braking_acceleration', 'usual_acceleration', 'usual_braking_acceleration', 'lane_change_length', 'min_gap', 'headway', 'model', 'lane_max_speed_recognition_deviation', 'emission_attribute']
+    __slots__ = ['length', 'width', 'max_speed', 'max_acceleration', 'max_braking_acceleration', 'usual_acceleration', 'usual_braking_acceleration', 'lane_change_length', 'min_gap', 'headway', 'model', 'lane_max_speed_recognition_deviation', 'emission_attribute', 'capacity']
     LENGTH_FIELD_NUMBER: _ClassVar[int]
     WIDTH_FIELD_NUMBER: _ClassVar[int]
     MAX_SPEED_FIELD_NUMBER: _ClassVar[int]
@@ -130,6 +130,7 @@ class VehicleAttribute(_message.Message):
     MODEL_FIELD_NUMBER: _ClassVar[int]
     LANE_MAX_SPEED_RECOGNITION_DEVIATION_FIELD_NUMBER: _ClassVar[int]
     EMISSION_ATTRIBUTE_FIELD_NUMBER: _ClassVar[int]
+    CAPACITY_FIELD_NUMBER: _ClassVar[int]
     length: float
     width: float
     max_speed: float
@@ -143,8 +144,9 @@ class VehicleAttribute(_message.Message):
     model: str
     lane_max_speed_recognition_deviation: float
     emission_attribute: EmissionAttribute
+    capacity: int
 
-    def __init__(self, length: _Optional[float]=..., width: _Optional[float]=..., max_speed: _Optional[float]=..., max_acceleration: _Optional[float]=..., max_braking_acceleration: _Optional[float]=..., usual_acceleration: _Optional[float]=..., usual_braking_acceleration: _Optional[float]=..., lane_change_length: _Optional[float]=..., min_gap: _Optional[float]=..., headway: _Optional[float]=..., model: _Optional[str]=..., lane_max_speed_recognition_deviation: _Optional[float]=..., emission_attribute: _Optional[_Union[EmissionAttribute, _Mapping]]=...) -> None:
+    def __init__(self, length: _Optional[float]=..., width: _Optional[float]=..., max_speed: _Optional[float]=..., max_acceleration: _Optional[float]=..., max_braking_acceleration: _Optional[float]=..., usual_acceleration: _Optional[float]=..., usual_braking_acceleration: _Optional[float]=..., lane_change_length: _Optional[float]=..., min_gap: _Optional[float]=..., headway: _Optional[float]=..., model: _Optional[str]=..., lane_max_speed_recognition_deviation: _Optional[float]=..., emission_attribute: _Optional[_Union[EmissionAttribute, _Mapping]]=..., capacity: _Optional[int]=...) -> None:
         ...
 
 class BusAttribute(_message.Message):

@@ -108,6 +108,9 @@ message VehicleAttribute {
   // 碳排属性
   // Carbon emission attribute
   EmissionAttribute emission_attribute = 13;
+  // 车辆容量（除去司机）
+  // vehicle capacity (excluding the driver)
+  int32 capacity = 14;
 }
 
 // 公交车

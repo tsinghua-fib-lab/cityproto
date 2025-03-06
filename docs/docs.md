@@ -7333,6 +7333,7 @@ Vehicle additional attributes
 | model | [string](#string) | optional | 车辆模型标签 Vehicle model tag |
 | lane_max_speed_recognition_deviation | [double](#double) |  | 本车对车道限速认知的偏差百分比 The deviation of the vehicle&#39;s recognition of lane max speed |
 | emission_attribute | [EmissionAttribute](#city-person-v2-EmissionAttribute) |  | 碳排属性 Carbon emission attribute |
+| capacity | [int32](#int32) |  | 车辆容量（除去司机） vehicle capacity (excluding the driver) |
 
 
 

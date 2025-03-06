@@ -515,6 +515,14 @@ export declare class VehicleAttribute extends Message<VehicleAttribute> {
    */
   emissionAttribute?: EmissionAttribute;
 
+  /**
+   * 车辆容量（除去司机）
+   * vehicle capacity (excluding the driver)
+   *
+   * @generated from field: int32 capacity = 14;
+   */
+  capacity: number;
+
   constructor(data?: PartialMessage<VehicleAttribute>);
 
   static readonly runtime: typeof proto3;

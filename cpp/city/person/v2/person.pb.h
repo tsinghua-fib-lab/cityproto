@@ -918,6 +918,7 @@ class VehicleAttribute final :
     kMinGapFieldNumber = 9,
     kHeadwayFieldNumber = 10,
     kLaneMaxSpeedRecognitionDeviationFieldNumber = 12,
+    kCapacityFieldNumber = 14,
   };
   // optional string model = 11 [json_name = "model"];
   bool has_model() const;
@@ -1054,6 +1055,15 @@ class VehicleAttribute final :
   void _internal_set_lane_max_speed_recognition_deviation(double value);
   public:
 
+  // int32 capacity = 14 [json_name = "capacity"];
+  void clear_capacity();
+  int32_t capacity() const;
+  void set_capacity(int32_t value);
+  private:
+  int32_t _internal_capacity() const;
+  void _internal_set_capacity(int32_t value);
+  public:
+
   // @@protoc_insertion_point(class_scope:city.person.v2.VehicleAttribute)
  private:
   class _Internal;
@@ -1077,6 +1087,7 @@ class VehicleAttribute final :
     double min_gap_;
     double headway_;
     double lane_max_speed_recognition_deviation_;
+    int32_t capacity_;
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_city_2fperson_2fv2_2fperson_2eproto;
@@ -3066,6 +3077,26 @@ inline void VehicleAttribute::set_allocated_emission_attribute(::city::person::v
   }
   _impl_.emission_attribute_ = emission_attribute;
   // @@protoc_insertion_point(field_set_allocated:city.person.v2.VehicleAttribute.emission_attribute)
+}
+
+// int32 capacity = 14 [json_name = "capacity"];
+inline void VehicleAttribute::clear_capacity() {
+  _impl_.capacity_ = 0;
+}
+inline int32_t VehicleAttribute::_internal_capacity() const {
+  return _impl_.capacity_;
+}
+inline int32_t VehicleAttribute::capacity() const {
+  // @@protoc_insertion_point(field_get:city.person.v2.VehicleAttribute.capacity)
+  return _internal_capacity();
+}
+inline void VehicleAttribute::_internal_set_capacity(int32_t value) {
+  
+  _impl_.capacity_ = value;
+}
+inline void VehicleAttribute::set_capacity(int32_t value) {
+  _internal_set_capacity(value);
+  // @@protoc_insertion_point(field_set:city.person.v2.VehicleAttribute.capacity)
 }
 
 // -------------------------------------------------------------------

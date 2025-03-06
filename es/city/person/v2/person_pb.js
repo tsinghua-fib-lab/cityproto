@@ -166,6 +166,7 @@ export const VehicleAttribute = /*@__PURE__*/ proto3.makeMessageType(
     { no: 11, name: "model", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
     { no: 12, name: "lane_max_speed_recognition_deviation", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
     { no: 13, name: "emission_attribute", kind: "message", T: EmissionAttribute },
+    { no: 14, name: "capacity", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
   ],
 );
 
