@@ -39,6 +39,7 @@ export const TripStop = /*@__PURE__*/ proto3.makeMessageType(
     { no: 1, name: "aoi_position", kind: "message", T: AoiPosition, opt: true },
     { no: 2, name: "lane_position", kind: "message", T: LanePosition },
     { no: 3, name: "duration", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 4, name: "optional_lane_positions", kind: "message", T: LanePosition, repeated: true },
   ],
 );
 

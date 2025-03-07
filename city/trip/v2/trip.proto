@@ -63,6 +63,9 @@ message TripStop {
   // 停车持续时间
   // Parking duration time (s)
   double duration = 3;
+  // 可供选择的Lane+S坐标
+  // Parking position coordinates Lane+S (optional)
+  repeated city.geo.v2.LanePosition optional_lane_positions = 4;
 }
 
 // 出行

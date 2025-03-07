@@ -111,6 +111,14 @@ export declare class TripStop extends Message<TripStop> {
    */
   duration: number;
 
+  /**
+   * 可供选择的Lane+S坐标
+   * Parking position coordinates Lane+S (optional)
+   *
+   * @generated from field: repeated city.geo.v2.LanePosition optional_lane_positions = 4;
+   */
+  optionalLanePositions: LanePosition[];
+
   constructor(data?: PartialMessage<TripStop>);
 
   static readonly runtime: typeof proto3;

@@ -6283,6 +6283,7 @@ stop points of person
 | aoi_position | [city.geo.v2.AoiPosition](#city-geo-v2-AoiPosition) | optional | 停车点AOI坐标（可选） Parking position coordinates AOI (optional) |
 | lane_position | [city.geo.v2.LanePosition](#city-geo-v2-LanePosition) |  | 停车点Lane&#43;S坐标（必须提供） Parking position coordinates Lane&#43;S (must be provided) |
 | duration | [double](#double) |  | 停车持续时间 Parking duration time (s) |
+| optional_lane_positions | [city.geo.v2.LanePosition](#city-geo-v2-LanePosition) | repeated | 可供选择的Lane&#43;S坐标 Parking position coordinates Lane&#43;S (optional) |
 
 
 

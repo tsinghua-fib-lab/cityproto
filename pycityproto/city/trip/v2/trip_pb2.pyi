@@ -27,15 +27,17 @@ TRIP_MODE_SUBWAY_WALK: TripMode
 TRIP_MODE_BUS_SUBWAY_WALK: TripMode
 
 class TripStop(_message.Message):
-    __slots__ = ['aoi_position', 'lane_position', 'duration']
+    __slots__ = ['aoi_position', 'lane_position', 'duration', 'optional_lane_positions']
     AOI_POSITION_FIELD_NUMBER: _ClassVar[int]
     LANE_POSITION_FIELD_NUMBER: _ClassVar[int]
     DURATION_FIELD_NUMBER: _ClassVar[int]
+    OPTIONAL_LANE_POSITIONS_FIELD_NUMBER: _ClassVar[int]
     aoi_position: _geo_pb2.AoiPosition
     lane_position: _geo_pb2.LanePosition
     duration: float
+    optional_lane_positions: _containers.RepeatedCompositeFieldContainer[_geo_pb2.LanePosition]
 
-    def __init__(self, aoi_position: _Optional[_Union[_geo_pb2.AoiPosition, _Mapping]]=..., lane_position: _Optional[_Union[_geo_pb2.LanePosition, _Mapping]]=..., duration: _Optional[float]=...) -> None:
+    def __init__(self, aoi_position: _Optional[_Union[_geo_pb2.AoiPosition, _Mapping]]=..., lane_position: _Optional[_Union[_geo_pb2.LanePosition, _Mapping]]=..., duration: _Optional[float]=..., optional_lane_positions: _Optional[_Iterable[_Union[_geo_pb2.LanePosition, _Mapping]]]=...) -> None:
         ...
 
 class Trip(_message.Message):

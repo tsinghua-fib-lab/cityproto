@@ -225,10 +225,29 @@ class TripStop final :
   // accessors -------------------------------------------------------
 
   enum : int {
+    kOptionalLanePositionsFieldNumber = 4,
     kAoiPositionFieldNumber = 1,
     kLanePositionFieldNumber = 2,
     kDurationFieldNumber = 3,
   };
+  // repeated .city.geo.v2.LanePosition optional_lane_positions = 4 [json_name = "optionalLanePositions"];
+  int optional_lane_positions_size() const;
+  private:
+  int _internal_optional_lane_positions_size() const;
+  public:
+  void clear_optional_lane_positions();
+  ::city::geo::v2::LanePosition* mutable_optional_lane_positions(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::geo::v2::LanePosition >*
+      mutable_optional_lane_positions();
+  private:
+  const ::city::geo::v2::LanePosition& _internal_optional_lane_positions(int index) const;
+  ::city::geo::v2::LanePosition* _internal_add_optional_lane_positions();
+  public:
+  const ::city::geo::v2::LanePosition& optional_lane_positions(int index) const;
+  ::city::geo::v2::LanePosition* add_optional_lane_positions();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::geo::v2::LanePosition >&
+      optional_lane_positions() const;
+
   // optional .city.geo.v2.AoiPosition aoi_position = 1 [json_name = "aoiPosition"];
   bool has_aoi_position() const;
   private:
@@ -284,6 +303,7 @@ class TripStop final :
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::geo::v2::LanePosition > optional_lane_positions_;
     ::city::geo::v2::AoiPosition* aoi_position_;
     ::city::geo::v2::LanePosition* lane_position_;
     double duration_;
@@ -985,6 +1005,43 @@ inline void TripStop::_internal_set_duration(double value) {
 inline void TripStop::set_duration(double value) {
   _internal_set_duration(value);
   // @@protoc_insertion_point(field_set:city.trip.v2.TripStop.duration)
+}
+
+// repeated .city.geo.v2.LanePosition optional_lane_positions = 4 [json_name = "optionalLanePositions"];
+inline int TripStop::_internal_optional_lane_positions_size() const {
+  return _impl_.optional_lane_positions_.size();
+}
+inline int TripStop::optional_lane_positions_size() const {
+  return _internal_optional_lane_positions_size();
+}
+inline ::city::geo::v2::LanePosition* TripStop::mutable_optional_lane_positions(int index) {
+  // @@protoc_insertion_point(field_mutable:city.trip.v2.TripStop.optional_lane_positions)
+  return _impl_.optional_lane_positions_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::geo::v2::LanePosition >*
+TripStop::mutable_optional_lane_positions() {
+  // @@protoc_insertion_point(field_mutable_list:city.trip.v2.TripStop.optional_lane_positions)
+  return &_impl_.optional_lane_positions_;
+}
+inline const ::city::geo::v2::LanePosition& TripStop::_internal_optional_lane_positions(int index) const {
+  return _impl_.optional_lane_positions_.Get(index);
+}
+inline const ::city::geo::v2::LanePosition& TripStop::optional_lane_positions(int index) const {
+  // @@protoc_insertion_point(field_get:city.trip.v2.TripStop.optional_lane_positions)
+  return _internal_optional_lane_positions(index);
+}
+inline ::city::geo::v2::LanePosition* TripStop::_internal_add_optional_lane_positions() {
+  return _impl_.optional_lane_positions_.Add();
+}
+inline ::city::geo::v2::LanePosition* TripStop::add_optional_lane_positions() {
+  ::city::geo::v2::LanePosition* _add = _internal_add_optional_lane_positions();
+  // @@protoc_insertion_point(field_add:city.trip.v2.TripStop.optional_lane_positions)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::geo::v2::LanePosition >&
+TripStop::optional_lane_positions() const {
+  // @@protoc_insertion_point(field_list:city.trip.v2.TripStop.optional_lane_positions)
+  return _impl_.optional_lane_positions_;
 }
 
 // -------------------------------------------------------------------

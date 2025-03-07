@@ -27,6 +27,7 @@ PROTOBUF_CONSTEXPR TripStop::TripStop(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_._has_bits_)*/{}
   , /*decltype(_impl_._cached_size_)*/{}
+  , /*decltype(_impl_.optional_lane_positions_)*/{}
   , /*decltype(_impl_.aoi_position_)*/nullptr
   , /*decltype(_impl_.lane_position_)*/nullptr
   , /*decltype(_impl_.duration_)*/0} {}
@@ -95,7 +96,9 @@ const uint32_t TableStruct_city_2ftrip_2fv2_2ftrip_2eproto::offsets[] PROTOBUF_S
   PROTOBUF_FIELD_OFFSET(::city::trip::v2::TripStop, _impl_.aoi_position_),
   PROTOBUF_FIELD_OFFSET(::city::trip::v2::TripStop, _impl_.lane_position_),
   PROTOBUF_FIELD_OFFSET(::city::trip::v2::TripStop, _impl_.duration_),
+  PROTOBUF_FIELD_OFFSET(::city::trip::v2::TripStop, _impl_.optional_lane_positions_),
   0,
+  ~0u,
   ~0u,
   ~0u,
   PROTOBUF_FIELD_OFFSET(::city::trip::v2::Trip, _impl_._has_bits_),
@@ -138,9 +141,9 @@ const uint32_t TableStruct_city_2ftrip_2fv2_2ftrip_2eproto::offsets[] PROTOBUF_S
   1,
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, 9, -1, sizeof(::city::trip::v2::TripStop)},
-  { 12, 27, -1, sizeof(::city::trip::v2::Trip)},
-  { 36, 46, -1, sizeof(::city::trip::v2::Schedule)},
+  { 0, 10, -1, sizeof(::city::trip::v2::TripStop)},
+  { 14, 29, -1, sizeof(::city::trip::v2::Trip)},
+  { 38, 48, -1, sizeof(::city::trip::v2::Schedule)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -152,38 +155,40 @@ static const ::_pb::Message* const file_default_instances[] = {
 const char descriptor_table_protodef_city_2ftrip_2fv2_2ftrip_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\027city/trip/v2/trip.proto\022\014city.trip.v2\032"
   "\025city/geo/v2/geo.proto\032\035city/routing/v2/"
-  "routing.proto\"\271\001\n\010TripStop\022@\n\014aoi_positi"
+  "routing.proto\"\214\002\n\010TripStop\022@\n\014aoi_positi"
   "on\030\001 \001(\0132\030.city.geo.v2.AoiPositionH\000R\013ao"
   "iPosition\210\001\001\022>\n\rlane_position\030\002 \001(\0132\031.ci"
   "ty.geo.v2.LanePositionR\014lanePosition\022\032\n\010"
-  "duration\030\003 \001(\001R\010durationB\017\n\r_aoi_positio"
-  "n\"\277\003\n\004Trip\022*\n\004mode\030\001 \001(\0162\026.city.trip.v2."
-  "TripModeR\004mode\022\'\n\003end\030\002 \001(\0132\025.city.geo.v"
-  "2.PositionR\003end\022*\n\016departure_time\030\003 \001(\001H"
-  "\000R\rdepartureTime\210\001\001\022 \n\twait_time\030\004 \001(\001H\001"
-  "R\010waitTime\210\001\001\022&\n\014arrival_time\030\005 \001(\001H\002R\013a"
-  "rrivalTime\210\001\001\022\037\n\010activity\030\006 \001(\tH\003R\010activ"
-  "ity\210\001\001\022\031\n\005model\030\010 \001(\tH\004R\005model\210\001\001\0220\n\006rou"
-  "tes\030\007 \003(\0132\030.city.routing.v2.JourneyR\006rou"
-  "tes\0225\n\ntrip_stops\030\t \003(\0132\026.city.trip.v2.T"
-  "ripStopR\ttripStopsB\021\n\017_departure_timeB\014\n"
-  "\n_wait_timeB\017\n\r_arrival_timeB\013\n\t_activit"
-  "yB\010\n\006_model\"\302\001\n\010Schedule\022(\n\005trips\030\001 \003(\0132"
-  "\022.city.trip.v2.TripR\005trips\022\035\n\nloop_count"
-  "\030\002 \001(\005R\tloopCount\022*\n\016departure_time\030\003 \001("
-  "\001H\000R\rdepartureTime\210\001\001\022 \n\twait_time\030\004 \001(\001"
-  "H\001R\010waitTime\210\001\001B\021\n\017_departure_timeB\014\n\n_w"
-  "ait_time*\327\001\n\010TripMode\022\031\n\025TRIP_MODE_UNSPE"
-  "CIFIED\020\000\022\027\n\023TRIP_MODE_WALK_ONLY\020\001\022\030\n\024TRI"
-  "P_MODE_DRIVE_ONLY\020\002\022\026\n\022TRIP_MODE_BUS_WAL"
-  "K\020\004\022\027\n\023TRIP_MODE_BIKE_WALK\020\005\022\022\n\016TRIP_MOD"
-  "E_TAXI\020\006\022\031\n\025TRIP_MODE_SUBWAY_WALK\020\007\022\035\n\031T"
-  "RIP_MODE_BUS_SUBWAY_WALK\020\010B\244\001\n\020com.city."
-  "trip.v2B\tTripProtoP\001Z3git.fiblab.net/sim"
-  "/protos/v2/go/city/trip/v2;tripv2\242\002\003CTX\252"
-  "\002\014City.Trip.V2\312\002\014City\\Trip\\V2\342\002\030City\\Tri"
-  "p\\V2\\GPBMetadata\352\002\016City::Trip::V2b\006proto"
-  "3"
+  "duration\030\003 \001(\001R\010duration\022Q\n\027optional_lan"
+  "e_positions\030\004 \003(\0132\031.city.geo.v2.LanePosi"
+  "tionR\025optionalLanePositionsB\017\n\r_aoi_posi"
+  "tion\"\277\003\n\004Trip\022*\n\004mode\030\001 \001(\0162\026.city.trip."
+  "v2.TripModeR\004mode\022\'\n\003end\030\002 \001(\0132\025.city.ge"
+  "o.v2.PositionR\003end\022*\n\016departure_time\030\003 \001"
+  "(\001H\000R\rdepartureTime\210\001\001\022 \n\twait_time\030\004 \001("
+  "\001H\001R\010waitTime\210\001\001\022&\n\014arrival_time\030\005 \001(\001H\002"
+  "R\013arrivalTime\210\001\001\022\037\n\010activity\030\006 \001(\tH\003R\010ac"
+  "tivity\210\001\001\022\031\n\005model\030\010 \001(\tH\004R\005model\210\001\001\0220\n\006"
+  "routes\030\007 \003(\0132\030.city.routing.v2.JourneyR\006"
+  "routes\0225\n\ntrip_stops\030\t \003(\0132\026.city.trip.v"
+  "2.TripStopR\ttripStopsB\021\n\017_departure_time"
+  "B\014\n\n_wait_timeB\017\n\r_arrival_timeB\013\n\t_acti"
+  "vityB\010\n\006_model\"\302\001\n\010Schedule\022(\n\005trips\030\001 \003"
+  "(\0132\022.city.trip.v2.TripR\005trips\022\035\n\nloop_co"
+  "unt\030\002 \001(\005R\tloopCount\022*\n\016departure_time\030\003"
+  " \001(\001H\000R\rdepartureTime\210\001\001\022 \n\twait_time\030\004 "
+  "\001(\001H\001R\010waitTime\210\001\001B\021\n\017_departure_timeB\014\n"
+  "\n_wait_time*\327\001\n\010TripMode\022\031\n\025TRIP_MODE_UN"
+  "SPECIFIED\020\000\022\027\n\023TRIP_MODE_WALK_ONLY\020\001\022\030\n\024"
+  "TRIP_MODE_DRIVE_ONLY\020\002\022\026\n\022TRIP_MODE_BUS_"
+  "WALK\020\004\022\027\n\023TRIP_MODE_BIKE_WALK\020\005\022\022\n\016TRIP_"
+  "MODE_TAXI\020\006\022\031\n\025TRIP_MODE_SUBWAY_WALK\020\007\022\035"
+  "\n\031TRIP_MODE_BUS_SUBWAY_WALK\020\010B\244\001\n\020com.ci"
+  "ty.trip.v2B\tTripProtoP\001Z3git.fiblab.net/"
+  "sim/protos/v2/go/city/trip/v2;tripv2\242\002\003C"
+  "TX\252\002\014City.Trip.V2\312\002\014City\\Trip\\V2\342\002\030City\\"
+  "Trip\\V2\\GPBMetadata\352\002\016City::Trip::V2b\006pr"
+  "oto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_city_2ftrip_2fv2_2ftrip_2eproto_deps[2] = {
   &::descriptor_table_city_2fgeo_2fv2_2fgeo_2eproto,
@@ -191,7 +196,7 @@ static const ::_pbi::DescriptorTable* const descriptor_table_city_2ftrip_2fv2_2f
 };
 static ::_pbi::once_flag descriptor_table_city_2ftrip_2fv2_2ftrip_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2ftrip_2fv2_2ftrip_2eproto = {
-    false, false, 1321, descriptor_table_protodef_city_2ftrip_2fv2_2ftrip_2eproto,
+    false, false, 1404, descriptor_table_protodef_city_2ftrip_2fv2_2ftrip_2eproto,
     "city/trip/v2/trip.proto",
     &descriptor_table_city_2ftrip_2fv2_2ftrip_2eproto_once, descriptor_table_city_2ftrip_2fv2_2ftrip_2eproto_deps, 2, 3,
     schemas, file_default_instances, TableStruct_city_2ftrip_2fv2_2ftrip_2eproto::offsets,
@@ -258,6 +263,9 @@ void TripStop::clear_lane_position() {
   }
   _impl_.lane_position_ = nullptr;
 }
+void TripStop::clear_optional_lane_positions() {
+  _impl_.optional_lane_positions_.Clear();
+}
 TripStop::TripStop(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
@@ -270,6 +278,7 @@ TripStop::TripStop(const TripStop& from)
   new (&_impl_) Impl_{
       decltype(_impl_._has_bits_){from._impl_._has_bits_}
     , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.optional_lane_positions_){from._impl_.optional_lane_positions_}
     , decltype(_impl_.aoi_position_){nullptr}
     , decltype(_impl_.lane_position_){nullptr}
     , decltype(_impl_.duration_){}};
@@ -292,6 +301,7 @@ inline void TripStop::SharedCtor(
   new (&_impl_) Impl_{
       decltype(_impl_._has_bits_){}
     , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.optional_lane_positions_){arena}
     , decltype(_impl_.aoi_position_){nullptr}
     , decltype(_impl_.lane_position_){nullptr}
     , decltype(_impl_.duration_){0}
@@ -309,6 +319,7 @@ TripStop::~TripStop() {
 
 inline void TripStop::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.optional_lane_positions_.~RepeatedPtrField();
   if (this != internal_default_instance()) delete _impl_.aoi_position_;
   if (this != internal_default_instance()) delete _impl_.lane_position_;
 }
@@ -323,6 +334,7 @@ void TripStop::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  _impl_.optional_lane_positions_.Clear();
   cached_has_bits = _impl_._has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
     GOOGLE_DCHECK(_impl_.aoi_position_ != nullptr);
@@ -365,6 +377,19 @@ const char* TripStop::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx)
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 25)) {
           _impl_.duration_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
           ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated .city.geo.v2.LanePosition optional_lane_positions = 4 [json_name = "optionalLanePositions"];
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_optional_lane_positions(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<34>(ptr));
         } else
           goto handle_unusual;
         continue;
@@ -422,6 +447,14 @@ uint8_t* TripStop::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteDoubleToArray(3, this->_internal_duration(), target);
   }
 
+  // repeated .city.geo.v2.LanePosition optional_lane_positions = 4 [json_name = "optionalLanePositions"];
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_optional_lane_positions_size()); i < n; i++) {
+    const auto& repfield = this->_internal_optional_lane_positions(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        InternalWriteMessage(4, repfield, repfield.GetCachedSize(), target, stream);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -437,6 +470,13 @@ size_t TripStop::ByteSizeLong() const {
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // repeated .city.geo.v2.LanePosition optional_lane_positions = 4 [json_name = "optionalLanePositions"];
+  total_size += 1UL * this->_internal_optional_lane_positions_size();
+  for (const auto& msg : this->_impl_.optional_lane_positions_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
 
   // optional .city.geo.v2.AoiPosition aoi_position = 1 [json_name = "aoiPosition"];
   cached_has_bits = _impl_._has_bits_[0];
@@ -480,6 +520,7 @@ void TripStop::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTO
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
+  _this->_impl_.optional_lane_positions_.MergeFrom(from._impl_.optional_lane_positions_);
   if (from._internal_has_aoi_position()) {
     _this->_internal_mutable_aoi_position()->::city::geo::v2::AoiPosition::MergeFrom(
         from._internal_aoi_position());
@@ -513,6 +554,7 @@ void TripStop::InternalSwap(TripStop* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  _impl_.optional_lane_positions_.InternalSwap(&other->_impl_.optional_lane_positions_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(TripStop, _impl_.duration_)
       + sizeof(TripStop::_impl_.duration_)
