@@ -61,4 +61,7 @@ message PersonMotion {
   // 长度
   // length
   double l = 7;
+  // 加速度
+  // acceleration
+  double a = 8;
 }

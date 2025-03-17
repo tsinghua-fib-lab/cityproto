@@ -29,7 +29,7 @@ STATUS_RAIL_TRANSIT: Status
 STATUS_WAIT_TAXI: Status
 
 class PersonMotion(_message.Message):
-    __slots__ = ['id', 'status', 'position', 'v', 'direction', 'activity', 'l']
+    __slots__ = ['id', 'status', 'position', 'v', 'direction', 'activity', 'l', 'a']
     ID_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
     POSITION_FIELD_NUMBER: _ClassVar[int]
@@ -37,6 +37,7 @@ class PersonMotion(_message.Message):
     DIRECTION_FIELD_NUMBER: _ClassVar[int]
     ACTIVITY_FIELD_NUMBER: _ClassVar[int]
     L_FIELD_NUMBER: _ClassVar[int]
+    A_FIELD_NUMBER: _ClassVar[int]
     id: int
     status: Status
     position: _geo_pb2.Position
@@ -44,6 +45,7 @@ class PersonMotion(_message.Message):
     direction: float
     activity: str
     l: float
+    a: float
 
-    def __init__(self, id: _Optional[int]=..., status: _Optional[_Union[Status, str]]=..., position: _Optional[_Union[_geo_pb2.Position, _Mapping]]=..., v: _Optional[float]=..., direction: _Optional[float]=..., activity: _Optional[str]=..., l: _Optional[float]=...) -> None:
+    def __init__(self, id: _Optional[int]=..., status: _Optional[_Union[Status, str]]=..., position: _Optional[_Union[_geo_pb2.Position, _Mapping]]=..., v: _Optional[float]=..., direction: _Optional[float]=..., activity: _Optional[str]=..., l: _Optional[float]=..., a: _Optional[float]=...) -> None:
         ...

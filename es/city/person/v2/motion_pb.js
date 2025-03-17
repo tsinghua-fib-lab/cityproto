@@ -44,6 +44,7 @@ export const PersonMotion = /*@__PURE__*/ proto3.makeMessageType(
     { no: 5, name: "direction", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
     { no: 6, name: "activity", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 7, name: "l", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 8, name: "a", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
   ],
 );
 

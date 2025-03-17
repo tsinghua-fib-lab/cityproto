@@ -5209,6 +5209,7 @@ Person&#39;s motion state
 | direction | [double](#double) |  | 方向角（atan2计算得到的弧度） Direction angle (radians calculated by atan2) |
 | activity | [string](#string) |  | 活动描述 activity descriptions |
 | l | [double](#double) |  | 长度 length |
+| a | [double](#double) |  | 加速度 acceleration |
 
 
 

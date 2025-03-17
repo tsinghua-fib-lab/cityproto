@@ -156,6 +156,14 @@ export declare class PersonMotion extends Message<PersonMotion> {
    */
   l: number;
 
+  /**
+   * 加速度
+   * acceleration
+   *
+   * @generated from field: double a = 8;
+   */
+  a: number;
+
   constructor(data?: PartialMessage<PersonMotion>);
 
   static readonly runtime: typeof proto3;
