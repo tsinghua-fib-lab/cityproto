@@ -2,6 +2,7 @@ from city.geo.v2 import geo_pb2 as _geo_pb2
 from city.person.v2 import motion_pb2 as _motion_pb2
 from city.person.v2 import person_pb2 as _person_pb2
 from city.person.v2 import person_runtime_pb2 as _person_runtime_pb2
+from city.person.v2 import taxi_pb2 as _taxi_pb2
 from city.person.v2 import vehicle_pb2 as _vehicle_pb2
 from city.trip.v2 import trip_pb2 as _trip_pb2
 from google.protobuf.internal import containers as _containers
@@ -171,6 +172,48 @@ class SetControlledVehicleActionsRequest(_message.Message):
         ...
 
 class SetControlledVehicleActionsResponse(_message.Message):
+    __slots__ = []
+
+    def __init__(self) -> None:
+        ...
+
+class SetControlledTaxiIDsRequest(_message.Message):
+    __slots__ = ['taxi_ids']
+    TAXI_IDS_FIELD_NUMBER: _ClassVar[int]
+    taxi_ids: _containers.RepeatedScalarFieldContainer[int]
+
+    def __init__(self, taxi_ids: _Optional[_Iterable[int]]=...) -> None:
+        ...
+
+class SetControlledTaxiIDsResponse(_message.Message):
+    __slots__ = []
+
+    def __init__(self) -> None:
+        ...
+
+class GetAllUnassignedOrdersRequest(_message.Message):
+    __slots__ = []
+
+    def __init__(self) -> None:
+        ...
+
+class GetAllUnassignedOrdersResponse(_message.Message):
+    __slots__ = ['order_infos']
+    ORDER_INFOS_FIELD_NUMBER: _ClassVar[int]
+    order_infos: _containers.RepeatedCompositeFieldContainer[_taxi_pb2.RequestOrderInfo]
+
+    def __init__(self, order_infos: _Optional[_Iterable[_Union[_taxi_pb2.RequestOrderInfo, _Mapping]]]=...) -> None:
+        ...
+
+class SetControlledTaxiToOrdersRequest(_message.Message):
+    __slots__ = ['order_plans']
+    ORDER_PLANS_FIELD_NUMBER: _ClassVar[int]
+    order_plans: _containers.RepeatedCompositeFieldContainer[_taxi_pb2.OrderAllocationPlan]
+
+    def __init__(self, order_plans: _Optional[_Iterable[_Union[_taxi_pb2.OrderAllocationPlan, _Mapping]]]=...) -> None:
+        ...
+
+class SetControlledTaxiToOrdersResponse(_message.Message):
     __slots__ = []
 
     def __init__(self) -> None:

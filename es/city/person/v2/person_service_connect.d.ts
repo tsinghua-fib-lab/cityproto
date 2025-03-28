@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AddPersonRequest, AddPersonResponse, FetchControlledVehicleEnvsRequest, FetchControlledVehicleEnvsResponse, GetAllVehiclesRequest, GetAllVehiclesResponse, GetPersonByLongLatBBoxRequest, GetPersonByLongLatBBoxResponse, GetPersonRequest, GetPersonResponse, GetPersonsRequest, GetPersonsResponse, ResetPersonPositionRequest, ResetPersonPositionResponse, SetControlledVehicleActionsRequest, SetControlledVehicleActionsResponse, SetControlledVehicleIDsRequest, SetControlledVehicleIDsResponse, SetScheduleRequest, SetScheduleResponse } from "./person_service_pb.js";
+import { AddPersonRequest, AddPersonResponse, FetchControlledVehicleEnvsRequest, FetchControlledVehicleEnvsResponse, GetAllUnassignedOrdersRequest, GetAllUnassignedOrdersResponse, GetAllVehiclesRequest, GetAllVehiclesResponse, GetPersonByLongLatBBoxRequest, GetPersonByLongLatBBoxResponse, GetPersonRequest, GetPersonResponse, GetPersonsRequest, GetPersonsResponse, ResetPersonPositionRequest, ResetPersonPositionResponse, SetControlledTaxiIDsRequest, SetControlledTaxiIDsResponse, SetControlledTaxiToOrdersRequest, SetControlledTaxiToOrdersResponse, SetControlledVehicleActionsRequest, SetControlledVehicleActionsResponse, SetControlledVehicleIDsRequest, SetControlledVehicleIDsResponse, SetScheduleRequest, SetScheduleResponse } from "./person_service_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -130,6 +130,42 @@ export declare const PersonService: {
       readonly name: "SetControlledVehicleActions",
       readonly I: typeof SetControlledVehicleActionsRequest,
       readonly O: typeof SetControlledVehicleActionsResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * 设置由外部控制的taxi
+     * Set taxi controlled by external behavior
+     *
+     * @generated from rpc city.person.v2.PersonService.SetControlledTaxiIDs
+     */
+    readonly setControlledTaxiIDs: {
+      readonly name: "SetControlledTaxiIDs",
+      readonly I: typeof SetControlledTaxiIDsRequest,
+      readonly O: typeof SetControlledTaxiIDsResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * 获取所有待分配的订单信息
+     * Get information of all unassigned orders
+     *
+     * @generated from rpc city.person.v2.PersonService.GetAllUnassignedOrders
+     */
+    readonly getAllUnassignedOrders: {
+      readonly name: "GetAllUnassignedOrders",
+      readonly I: typeof GetAllUnassignedOrdersRequest,
+      readonly O: typeof GetAllUnassignedOrdersResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * 设置所有外部控制的出租车接指定的单
+     * Set all externally controlled taxis to specified orders
+     *
+     * @generated from rpc city.person.v2.PersonService.SetControlledTaxiToOrders
+     */
+    readonly setControlledTaxiToOrders: {
+      readonly name: "SetControlledTaxiToOrders",
+      readonly I: typeof SetControlledTaxiToOrdersRequest,
+      readonly O: typeof SetControlledTaxiToOrdersResponse,
       readonly kind: MethodKind.Unary,
     },
   }

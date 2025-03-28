@@ -61,6 +61,15 @@ const (
 	// PersonServiceSetControlledVehicleActionsProcedure is the fully-qualified name of the
 	// PersonService's SetControlledVehicleActions RPC.
 	PersonServiceSetControlledVehicleActionsProcedure = "/city.person.v2.PersonService/SetControlledVehicleActions"
+	// PersonServiceSetControlledTaxiIDsProcedure is the fully-qualified name of the PersonService's
+	// SetControlledTaxiIDs RPC.
+	PersonServiceSetControlledTaxiIDsProcedure = "/city.person.v2.PersonService/SetControlledTaxiIDs"
+	// PersonServiceGetAllUnassignedOrdersProcedure is the fully-qualified name of the PersonService's
+	// GetAllUnassignedOrders RPC.
+	PersonServiceGetAllUnassignedOrdersProcedure = "/city.person.v2.PersonService/GetAllUnassignedOrders"
+	// PersonServiceSetControlledTaxiToOrdersProcedure is the fully-qualified name of the
+	// PersonService's SetControlledTaxiToOrders RPC.
+	PersonServiceSetControlledTaxiToOrdersProcedure = "/city.person.v2.PersonService/SetControlledTaxiToOrders"
 )
 
 // PersonServiceClient is a client for the city.person.v2.PersonService service.
@@ -95,6 +104,15 @@ type PersonServiceClient interface {
 	// 设置由外部控制行为的vehicle的行为
 	// Set behavior of vehicle controlled by external behavior
 	SetControlledVehicleActions(context.Context, *connect.Request[v2.SetControlledVehicleActionsRequest]) (*connect.Response[v2.SetControlledVehicleActionsResponse], error)
+	// 设置由外部控制的taxi
+	// Set taxi controlled by external behavior
+	SetControlledTaxiIDs(context.Context, *connect.Request[v2.SetControlledTaxiIDsRequest]) (*connect.Response[v2.SetControlledTaxiIDsResponse], error)
+	// 获取所有待分配的订单信息
+	// Get information of all unassigned orders
+	GetAllUnassignedOrders(context.Context, *connect.Request[v2.GetAllUnassignedOrdersRequest]) (*connect.Response[v2.GetAllUnassignedOrdersResponse], error)
+	// 设置所有外部控制的出租车接指定的单
+	// Set all externally controlled taxis to specified orders
+	SetControlledTaxiToOrders(context.Context, *connect.Request[v2.SetControlledTaxiToOrdersRequest]) (*connect.Response[v2.SetControlledTaxiToOrdersResponse], error)
 }
 
 // NewPersonServiceClient constructs a client for the city.person.v2.PersonService service. By
@@ -168,6 +186,24 @@ func NewPersonServiceClient(httpClient connect.HTTPClient, baseURL string, opts 
 			connect.WithSchema(personServiceMethods.ByName("SetControlledVehicleActions")),
 			connect.WithClientOptions(opts...),
 		),
+		setControlledTaxiIDs: connect.NewClient[v2.SetControlledTaxiIDsRequest, v2.SetControlledTaxiIDsResponse](
+			httpClient,
+			baseURL+PersonServiceSetControlledTaxiIDsProcedure,
+			connect.WithSchema(personServiceMethods.ByName("SetControlledTaxiIDs")),
+			connect.WithClientOptions(opts...),
+		),
+		getAllUnassignedOrders: connect.NewClient[v2.GetAllUnassignedOrdersRequest, v2.GetAllUnassignedOrdersResponse](
+			httpClient,
+			baseURL+PersonServiceGetAllUnassignedOrdersProcedure,
+			connect.WithSchema(personServiceMethods.ByName("GetAllUnassignedOrders")),
+			connect.WithClientOptions(opts...),
+		),
+		setControlledTaxiToOrders: connect.NewClient[v2.SetControlledTaxiToOrdersRequest, v2.SetControlledTaxiToOrdersResponse](
+			httpClient,
+			baseURL+PersonServiceSetControlledTaxiToOrdersProcedure,
+			connect.WithSchema(personServiceMethods.ByName("SetControlledTaxiToOrders")),
+			connect.WithClientOptions(opts...),
+		),
 	}
 }
 
@@ -183,6 +219,9 @@ type personServiceClient struct {
 	setControlledVehicleIDs     *connect.Client[v2.SetControlledVehicleIDsRequest, v2.SetControlledVehicleIDsResponse]
 	fetchControlledVehicleEnvs  *connect.Client[v2.FetchControlledVehicleEnvsRequest, v2.FetchControlledVehicleEnvsResponse]
 	setControlledVehicleActions *connect.Client[v2.SetControlledVehicleActionsRequest, v2.SetControlledVehicleActionsResponse]
+	setControlledTaxiIDs        *connect.Client[v2.SetControlledTaxiIDsRequest, v2.SetControlledTaxiIDsResponse]
+	getAllUnassignedOrders      *connect.Client[v2.GetAllUnassignedOrdersRequest, v2.GetAllUnassignedOrdersResponse]
+	setControlledTaxiToOrders   *connect.Client[v2.SetControlledTaxiToOrdersRequest, v2.SetControlledTaxiToOrdersResponse]
 }
 
 // GetPerson calls city.person.v2.PersonService.GetPerson.
@@ -235,6 +274,21 @@ func (c *personServiceClient) SetControlledVehicleActions(ctx context.Context, r
 	return c.setControlledVehicleActions.CallUnary(ctx, req)
 }
 
+// SetControlledTaxiIDs calls city.person.v2.PersonService.SetControlledTaxiIDs.
+func (c *personServiceClient) SetControlledTaxiIDs(ctx context.Context, req *connect.Request[v2.SetControlledTaxiIDsRequest]) (*connect.Response[v2.SetControlledTaxiIDsResponse], error) {
+	return c.setControlledTaxiIDs.CallUnary(ctx, req)
+}
+
+// GetAllUnassignedOrders calls city.person.v2.PersonService.GetAllUnassignedOrders.
+func (c *personServiceClient) GetAllUnassignedOrders(ctx context.Context, req *connect.Request[v2.GetAllUnassignedOrdersRequest]) (*connect.Response[v2.GetAllUnassignedOrdersResponse], error) {
+	return c.getAllUnassignedOrders.CallUnary(ctx, req)
+}
+
+// SetControlledTaxiToOrders calls city.person.v2.PersonService.SetControlledTaxiToOrders.
+func (c *personServiceClient) SetControlledTaxiToOrders(ctx context.Context, req *connect.Request[v2.SetControlledTaxiToOrdersRequest]) (*connect.Response[v2.SetControlledTaxiToOrdersResponse], error) {
+	return c.setControlledTaxiToOrders.CallUnary(ctx, req)
+}
+
 // PersonServiceHandler is an implementation of the city.person.v2.PersonService service.
 type PersonServiceHandler interface {
 	// 获取person信息
@@ -267,6 +321,15 @@ type PersonServiceHandler interface {
 	// 设置由外部控制行为的vehicle的行为
 	// Set behavior of vehicle controlled by external behavior
 	SetControlledVehicleActions(context.Context, *connect.Request[v2.SetControlledVehicleActionsRequest]) (*connect.Response[v2.SetControlledVehicleActionsResponse], error)
+	// 设置由外部控制的taxi
+	// Set taxi controlled by external behavior
+	SetControlledTaxiIDs(context.Context, *connect.Request[v2.SetControlledTaxiIDsRequest]) (*connect.Response[v2.SetControlledTaxiIDsResponse], error)
+	// 获取所有待分配的订单信息
+	// Get information of all unassigned orders
+	GetAllUnassignedOrders(context.Context, *connect.Request[v2.GetAllUnassignedOrdersRequest]) (*connect.Response[v2.GetAllUnassignedOrdersResponse], error)
+	// 设置所有外部控制的出租车接指定的单
+	// Set all externally controlled taxis to specified orders
+	SetControlledTaxiToOrders(context.Context, *connect.Request[v2.SetControlledTaxiToOrdersRequest]) (*connect.Response[v2.SetControlledTaxiToOrdersResponse], error)
 }
 
 // NewPersonServiceHandler builds an HTTP handler from the service implementation. It returns the
@@ -336,6 +399,24 @@ func NewPersonServiceHandler(svc PersonServiceHandler, opts ...connect.HandlerOp
 		connect.WithSchema(personServiceMethods.ByName("SetControlledVehicleActions")),
 		connect.WithHandlerOptions(opts...),
 	)
+	personServiceSetControlledTaxiIDsHandler := connect.NewUnaryHandler(
+		PersonServiceSetControlledTaxiIDsProcedure,
+		svc.SetControlledTaxiIDs,
+		connect.WithSchema(personServiceMethods.ByName("SetControlledTaxiIDs")),
+		connect.WithHandlerOptions(opts...),
+	)
+	personServiceGetAllUnassignedOrdersHandler := connect.NewUnaryHandler(
+		PersonServiceGetAllUnassignedOrdersProcedure,
+		svc.GetAllUnassignedOrders,
+		connect.WithSchema(personServiceMethods.ByName("GetAllUnassignedOrders")),
+		connect.WithHandlerOptions(opts...),
+	)
+	personServiceSetControlledTaxiToOrdersHandler := connect.NewUnaryHandler(
+		PersonServiceSetControlledTaxiToOrdersProcedure,
+		svc.SetControlledTaxiToOrders,
+		connect.WithSchema(personServiceMethods.ByName("SetControlledTaxiToOrders")),
+		connect.WithHandlerOptions(opts...),
+	)
 	return "/city.person.v2.PersonService/", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		switch r.URL.Path {
 		case PersonServiceGetPersonProcedure:
@@ -358,6 +439,12 @@ func NewPersonServiceHandler(svc PersonServiceHandler, opts ...connect.HandlerOp
 			personServiceFetchControlledVehicleEnvsHandler.ServeHTTP(w, r)
 		case PersonServiceSetControlledVehicleActionsProcedure:
 			personServiceSetControlledVehicleActionsHandler.ServeHTTP(w, r)
+		case PersonServiceSetControlledTaxiIDsProcedure:
+			personServiceSetControlledTaxiIDsHandler.ServeHTTP(w, r)
+		case PersonServiceGetAllUnassignedOrdersProcedure:
+			personServiceGetAllUnassignedOrdersHandler.ServeHTTP(w, r)
+		case PersonServiceSetControlledTaxiToOrdersProcedure:
+			personServiceSetControlledTaxiToOrdersHandler.ServeHTTP(w, r)
 		default:
 			http.NotFound(w, r)
 		}
@@ -405,4 +492,16 @@ func (UnimplementedPersonServiceHandler) FetchControlledVehicleEnvs(context.Cont
 
 func (UnimplementedPersonServiceHandler) SetControlledVehicleActions(context.Context, *connect.Request[v2.SetControlledVehicleActionsRequest]) (*connect.Response[v2.SetControlledVehicleActionsResponse], error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.person.v2.PersonService.SetControlledVehicleActions is not implemented"))
+}
+
+func (UnimplementedPersonServiceHandler) SetControlledTaxiIDs(context.Context, *connect.Request[v2.SetControlledTaxiIDsRequest]) (*connect.Response[v2.SetControlledTaxiIDsResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.person.v2.PersonService.SetControlledTaxiIDs is not implemented"))
+}
+
+func (UnimplementedPersonServiceHandler) GetAllUnassignedOrders(context.Context, *connect.Request[v2.GetAllUnassignedOrdersRequest]) (*connect.Response[v2.GetAllUnassignedOrdersResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.person.v2.PersonService.GetAllUnassignedOrders is not implemented"))
+}
+
+func (UnimplementedPersonServiceHandler) SetControlledTaxiToOrders(context.Context, *connect.Request[v2.SetControlledTaxiToOrdersRequest]) (*connect.Response[v2.SetControlledTaxiToOrdersResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.person.v2.PersonService.SetControlledTaxiToOrders is not implemented"))
 }

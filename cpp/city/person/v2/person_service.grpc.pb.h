@@ -130,6 +130,33 @@ class PersonService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::person::v2::SetControlledVehicleActionsResponse>> PrepareAsyncSetControlledVehicleActions(::grpc::ClientContext* context, const ::city::person::v2::SetControlledVehicleActionsRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::person::v2::SetControlledVehicleActionsResponse>>(PrepareAsyncSetControlledVehicleActionsRaw(context, request, cq));
     }
+    // 设置由外部控制的taxi
+    // Set taxi controlled by external behavior
+    virtual ::grpc::Status SetControlledTaxiIDs(::grpc::ClientContext* context, const ::city::person::v2::SetControlledTaxiIDsRequest& request, ::city::person::v2::SetControlledTaxiIDsResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::person::v2::SetControlledTaxiIDsResponse>> AsyncSetControlledTaxiIDs(::grpc::ClientContext* context, const ::city::person::v2::SetControlledTaxiIDsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::person::v2::SetControlledTaxiIDsResponse>>(AsyncSetControlledTaxiIDsRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::person::v2::SetControlledTaxiIDsResponse>> PrepareAsyncSetControlledTaxiIDs(::grpc::ClientContext* context, const ::city::person::v2::SetControlledTaxiIDsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::person::v2::SetControlledTaxiIDsResponse>>(PrepareAsyncSetControlledTaxiIDsRaw(context, request, cq));
+    }
+    // 获取所有待分配的订单信息
+    // Get information of all unassigned orders
+    virtual ::grpc::Status GetAllUnassignedOrders(::grpc::ClientContext* context, const ::city::person::v2::GetAllUnassignedOrdersRequest& request, ::city::person::v2::GetAllUnassignedOrdersResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::person::v2::GetAllUnassignedOrdersResponse>> AsyncGetAllUnassignedOrders(::grpc::ClientContext* context, const ::city::person::v2::GetAllUnassignedOrdersRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::person::v2::GetAllUnassignedOrdersResponse>>(AsyncGetAllUnassignedOrdersRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::person::v2::GetAllUnassignedOrdersResponse>> PrepareAsyncGetAllUnassignedOrders(::grpc::ClientContext* context, const ::city::person::v2::GetAllUnassignedOrdersRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::person::v2::GetAllUnassignedOrdersResponse>>(PrepareAsyncGetAllUnassignedOrdersRaw(context, request, cq));
+    }
+    // 设置所有外部控制的出租车接指定的单
+    // Set all externally controlled taxis to specified orders
+    virtual ::grpc::Status SetControlledTaxiToOrders(::grpc::ClientContext* context, const ::city::person::v2::SetControlledTaxiToOrdersRequest& request, ::city::person::v2::SetControlledTaxiToOrdersResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::person::v2::SetControlledTaxiToOrdersResponse>> AsyncSetControlledTaxiToOrders(::grpc::ClientContext* context, const ::city::person::v2::SetControlledTaxiToOrdersRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::person::v2::SetControlledTaxiToOrdersResponse>>(AsyncSetControlledTaxiToOrdersRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::person::v2::SetControlledTaxiToOrdersResponse>> PrepareAsyncSetControlledTaxiToOrders(::grpc::ClientContext* context, const ::city::person::v2::SetControlledTaxiToOrdersRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::person::v2::SetControlledTaxiToOrdersResponse>>(PrepareAsyncSetControlledTaxiToOrdersRaw(context, request, cq));
+    }
     class async_interface {
      public:
       virtual ~async_interface() {}
@@ -176,6 +203,18 @@ class PersonService final {
       // Set behavior of vehicle controlled by external behavior
       virtual void SetControlledVehicleActions(::grpc::ClientContext* context, const ::city::person::v2::SetControlledVehicleActionsRequest* request, ::city::person::v2::SetControlledVehicleActionsResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void SetControlledVehicleActions(::grpc::ClientContext* context, const ::city::person::v2::SetControlledVehicleActionsRequest* request, ::city::person::v2::SetControlledVehicleActionsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // 设置由外部控制的taxi
+      // Set taxi controlled by external behavior
+      virtual void SetControlledTaxiIDs(::grpc::ClientContext* context, const ::city::person::v2::SetControlledTaxiIDsRequest* request, ::city::person::v2::SetControlledTaxiIDsResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void SetControlledTaxiIDs(::grpc::ClientContext* context, const ::city::person::v2::SetControlledTaxiIDsRequest* request, ::city::person::v2::SetControlledTaxiIDsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // 获取所有待分配的订单信息
+      // Get information of all unassigned orders
+      virtual void GetAllUnassignedOrders(::grpc::ClientContext* context, const ::city::person::v2::GetAllUnassignedOrdersRequest* request, ::city::person::v2::GetAllUnassignedOrdersResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetAllUnassignedOrders(::grpc::ClientContext* context, const ::city::person::v2::GetAllUnassignedOrdersRequest* request, ::city::person::v2::GetAllUnassignedOrdersResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // 设置所有外部控制的出租车接指定的单
+      // Set all externally controlled taxis to specified orders
+      virtual void SetControlledTaxiToOrders(::grpc::ClientContext* context, const ::city::person::v2::SetControlledTaxiToOrdersRequest* request, ::city::person::v2::SetControlledTaxiToOrdersResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void SetControlledTaxiToOrders(::grpc::ClientContext* context, const ::city::person::v2::SetControlledTaxiToOrdersRequest* request, ::city::person::v2::SetControlledTaxiToOrdersResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
     };
     typedef class async_interface experimental_async_interface;
     virtual class async_interface* async() { return nullptr; }
@@ -201,6 +240,12 @@ class PersonService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::person::v2::FetchControlledVehicleEnvsResponse>* PrepareAsyncFetchControlledVehicleEnvsRaw(::grpc::ClientContext* context, const ::city::person::v2::FetchControlledVehicleEnvsRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::person::v2::SetControlledVehicleActionsResponse>* AsyncSetControlledVehicleActionsRaw(::grpc::ClientContext* context, const ::city::person::v2::SetControlledVehicleActionsRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::person::v2::SetControlledVehicleActionsResponse>* PrepareAsyncSetControlledVehicleActionsRaw(::grpc::ClientContext* context, const ::city::person::v2::SetControlledVehicleActionsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::person::v2::SetControlledTaxiIDsResponse>* AsyncSetControlledTaxiIDsRaw(::grpc::ClientContext* context, const ::city::person::v2::SetControlledTaxiIDsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::person::v2::SetControlledTaxiIDsResponse>* PrepareAsyncSetControlledTaxiIDsRaw(::grpc::ClientContext* context, const ::city::person::v2::SetControlledTaxiIDsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::person::v2::GetAllUnassignedOrdersResponse>* AsyncGetAllUnassignedOrdersRaw(::grpc::ClientContext* context, const ::city::person::v2::GetAllUnassignedOrdersRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::person::v2::GetAllUnassignedOrdersResponse>* PrepareAsyncGetAllUnassignedOrdersRaw(::grpc::ClientContext* context, const ::city::person::v2::GetAllUnassignedOrdersRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::person::v2::SetControlledTaxiToOrdersResponse>* AsyncSetControlledTaxiToOrdersRaw(::grpc::ClientContext* context, const ::city::person::v2::SetControlledTaxiToOrdersRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::person::v2::SetControlledTaxiToOrdersResponse>* PrepareAsyncSetControlledTaxiToOrdersRaw(::grpc::ClientContext* context, const ::city::person::v2::SetControlledTaxiToOrdersRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -275,6 +320,27 @@ class PersonService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::person::v2::SetControlledVehicleActionsResponse>> PrepareAsyncSetControlledVehicleActions(::grpc::ClientContext* context, const ::city::person::v2::SetControlledVehicleActionsRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::person::v2::SetControlledVehicleActionsResponse>>(PrepareAsyncSetControlledVehicleActionsRaw(context, request, cq));
     }
+    ::grpc::Status SetControlledTaxiIDs(::grpc::ClientContext* context, const ::city::person::v2::SetControlledTaxiIDsRequest& request, ::city::person::v2::SetControlledTaxiIDsResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::person::v2::SetControlledTaxiIDsResponse>> AsyncSetControlledTaxiIDs(::grpc::ClientContext* context, const ::city::person::v2::SetControlledTaxiIDsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::person::v2::SetControlledTaxiIDsResponse>>(AsyncSetControlledTaxiIDsRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::person::v2::SetControlledTaxiIDsResponse>> PrepareAsyncSetControlledTaxiIDs(::grpc::ClientContext* context, const ::city::person::v2::SetControlledTaxiIDsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::person::v2::SetControlledTaxiIDsResponse>>(PrepareAsyncSetControlledTaxiIDsRaw(context, request, cq));
+    }
+    ::grpc::Status GetAllUnassignedOrders(::grpc::ClientContext* context, const ::city::person::v2::GetAllUnassignedOrdersRequest& request, ::city::person::v2::GetAllUnassignedOrdersResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::person::v2::GetAllUnassignedOrdersResponse>> AsyncGetAllUnassignedOrders(::grpc::ClientContext* context, const ::city::person::v2::GetAllUnassignedOrdersRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::person::v2::GetAllUnassignedOrdersResponse>>(AsyncGetAllUnassignedOrdersRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::person::v2::GetAllUnassignedOrdersResponse>> PrepareAsyncGetAllUnassignedOrders(::grpc::ClientContext* context, const ::city::person::v2::GetAllUnassignedOrdersRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::person::v2::GetAllUnassignedOrdersResponse>>(PrepareAsyncGetAllUnassignedOrdersRaw(context, request, cq));
+    }
+    ::grpc::Status SetControlledTaxiToOrders(::grpc::ClientContext* context, const ::city::person::v2::SetControlledTaxiToOrdersRequest& request, ::city::person::v2::SetControlledTaxiToOrdersResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::person::v2::SetControlledTaxiToOrdersResponse>> AsyncSetControlledTaxiToOrders(::grpc::ClientContext* context, const ::city::person::v2::SetControlledTaxiToOrdersRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::person::v2::SetControlledTaxiToOrdersResponse>>(AsyncSetControlledTaxiToOrdersRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::person::v2::SetControlledTaxiToOrdersResponse>> PrepareAsyncSetControlledTaxiToOrders(::grpc::ClientContext* context, const ::city::person::v2::SetControlledTaxiToOrdersRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::person::v2::SetControlledTaxiToOrdersResponse>>(PrepareAsyncSetControlledTaxiToOrdersRaw(context, request, cq));
+    }
     class async final :
       public StubInterface::async_interface {
      public:
@@ -298,6 +364,12 @@ class PersonService final {
       void FetchControlledVehicleEnvs(::grpc::ClientContext* context, const ::city::person::v2::FetchControlledVehicleEnvsRequest* request, ::city::person::v2::FetchControlledVehicleEnvsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       void SetControlledVehicleActions(::grpc::ClientContext* context, const ::city::person::v2::SetControlledVehicleActionsRequest* request, ::city::person::v2::SetControlledVehicleActionsResponse* response, std::function<void(::grpc::Status)>) override;
       void SetControlledVehicleActions(::grpc::ClientContext* context, const ::city::person::v2::SetControlledVehicleActionsRequest* request, ::city::person::v2::SetControlledVehicleActionsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void SetControlledTaxiIDs(::grpc::ClientContext* context, const ::city::person::v2::SetControlledTaxiIDsRequest* request, ::city::person::v2::SetControlledTaxiIDsResponse* response, std::function<void(::grpc::Status)>) override;
+      void SetControlledTaxiIDs(::grpc::ClientContext* context, const ::city::person::v2::SetControlledTaxiIDsRequest* request, ::city::person::v2::SetControlledTaxiIDsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void GetAllUnassignedOrders(::grpc::ClientContext* context, const ::city::person::v2::GetAllUnassignedOrdersRequest* request, ::city::person::v2::GetAllUnassignedOrdersResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetAllUnassignedOrders(::grpc::ClientContext* context, const ::city::person::v2::GetAllUnassignedOrdersRequest* request, ::city::person::v2::GetAllUnassignedOrdersResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void SetControlledTaxiToOrders(::grpc::ClientContext* context, const ::city::person::v2::SetControlledTaxiToOrdersRequest* request, ::city::person::v2::SetControlledTaxiToOrdersResponse* response, std::function<void(::grpc::Status)>) override;
+      void SetControlledTaxiToOrders(::grpc::ClientContext* context, const ::city::person::v2::SetControlledTaxiToOrdersRequest* request, ::city::person::v2::SetControlledTaxiToOrdersResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
      private:
       friend class Stub;
       explicit async(Stub* stub): stub_(stub) { }
@@ -329,6 +401,12 @@ class PersonService final {
     ::grpc::ClientAsyncResponseReader< ::city::person::v2::FetchControlledVehicleEnvsResponse>* PrepareAsyncFetchControlledVehicleEnvsRaw(::grpc::ClientContext* context, const ::city::person::v2::FetchControlledVehicleEnvsRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::city::person::v2::SetControlledVehicleActionsResponse>* AsyncSetControlledVehicleActionsRaw(::grpc::ClientContext* context, const ::city::person::v2::SetControlledVehicleActionsRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::city::person::v2::SetControlledVehicleActionsResponse>* PrepareAsyncSetControlledVehicleActionsRaw(::grpc::ClientContext* context, const ::city::person::v2::SetControlledVehicleActionsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::city::person::v2::SetControlledTaxiIDsResponse>* AsyncSetControlledTaxiIDsRaw(::grpc::ClientContext* context, const ::city::person::v2::SetControlledTaxiIDsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::city::person::v2::SetControlledTaxiIDsResponse>* PrepareAsyncSetControlledTaxiIDsRaw(::grpc::ClientContext* context, const ::city::person::v2::SetControlledTaxiIDsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::city::person::v2::GetAllUnassignedOrdersResponse>* AsyncGetAllUnassignedOrdersRaw(::grpc::ClientContext* context, const ::city::person::v2::GetAllUnassignedOrdersRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::city::person::v2::GetAllUnassignedOrdersResponse>* PrepareAsyncGetAllUnassignedOrdersRaw(::grpc::ClientContext* context, const ::city::person::v2::GetAllUnassignedOrdersRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::city::person::v2::SetControlledTaxiToOrdersResponse>* AsyncSetControlledTaxiToOrdersRaw(::grpc::ClientContext* context, const ::city::person::v2::SetControlledTaxiToOrdersRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::city::person::v2::SetControlledTaxiToOrdersResponse>* PrepareAsyncSetControlledTaxiToOrdersRaw(::grpc::ClientContext* context, const ::city::person::v2::SetControlledTaxiToOrdersRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_GetPerson_;
     const ::grpc::internal::RpcMethod rpcmethod_AddPerson_;
     const ::grpc::internal::RpcMethod rpcmethod_SetSchedule_;
@@ -339,6 +417,9 @@ class PersonService final {
     const ::grpc::internal::RpcMethod rpcmethod_SetControlledVehicleIDs_;
     const ::grpc::internal::RpcMethod rpcmethod_FetchControlledVehicleEnvs_;
     const ::grpc::internal::RpcMethod rpcmethod_SetControlledVehicleActions_;
+    const ::grpc::internal::RpcMethod rpcmethod_SetControlledTaxiIDs_;
+    const ::grpc::internal::RpcMethod rpcmethod_GetAllUnassignedOrders_;
+    const ::grpc::internal::RpcMethod rpcmethod_SetControlledTaxiToOrders_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -379,6 +460,15 @@ class PersonService final {
     // 设置由外部控制行为的vehicle的行为
     // Set behavior of vehicle controlled by external behavior
     virtual ::grpc::Status SetControlledVehicleActions(::grpc::ServerContext* context, const ::city::person::v2::SetControlledVehicleActionsRequest* request, ::city::person::v2::SetControlledVehicleActionsResponse* response);
+    // 设置由外部控制的taxi
+    // Set taxi controlled by external behavior
+    virtual ::grpc::Status SetControlledTaxiIDs(::grpc::ServerContext* context, const ::city::person::v2::SetControlledTaxiIDsRequest* request, ::city::person::v2::SetControlledTaxiIDsResponse* response);
+    // 获取所有待分配的订单信息
+    // Get information of all unassigned orders
+    virtual ::grpc::Status GetAllUnassignedOrders(::grpc::ServerContext* context, const ::city::person::v2::GetAllUnassignedOrdersRequest* request, ::city::person::v2::GetAllUnassignedOrdersResponse* response);
+    // 设置所有外部控制的出租车接指定的单
+    // Set all externally controlled taxis to specified orders
+    virtual ::grpc::Status SetControlledTaxiToOrders(::grpc::ServerContext* context, const ::city::person::v2::SetControlledTaxiToOrdersRequest* request, ::city::person::v2::SetControlledTaxiToOrdersResponse* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_GetPerson : public BaseClass {
@@ -580,7 +670,67 @@ class PersonService final {
       ::grpc::Service::RequestAsyncUnary(9, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_GetPerson<WithAsyncMethod_AddPerson<WithAsyncMethod_SetSchedule<WithAsyncMethod_GetPersons<WithAsyncMethod_GetPersonByLongLatBBox<WithAsyncMethod_GetAllVehicles<WithAsyncMethod_ResetPersonPosition<WithAsyncMethod_SetControlledVehicleIDs<WithAsyncMethod_FetchControlledVehicleEnvs<WithAsyncMethod_SetControlledVehicleActions<Service > > > > > > > > > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_SetControlledTaxiIDs : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_SetControlledTaxiIDs() {
+      ::grpc::Service::MarkMethodAsync(10);
+    }
+    ~WithAsyncMethod_SetControlledTaxiIDs() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SetControlledTaxiIDs(::grpc::ServerContext* /*context*/, const ::city::person::v2::SetControlledTaxiIDsRequest* /*request*/, ::city::person::v2::SetControlledTaxiIDsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestSetControlledTaxiIDs(::grpc::ServerContext* context, ::city::person::v2::SetControlledTaxiIDsRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::person::v2::SetControlledTaxiIDsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(10, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_GetAllUnassignedOrders : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_GetAllUnassignedOrders() {
+      ::grpc::Service::MarkMethodAsync(11);
+    }
+    ~WithAsyncMethod_GetAllUnassignedOrders() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetAllUnassignedOrders(::grpc::ServerContext* /*context*/, const ::city::person::v2::GetAllUnassignedOrdersRequest* /*request*/, ::city::person::v2::GetAllUnassignedOrdersResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetAllUnassignedOrders(::grpc::ServerContext* context, ::city::person::v2::GetAllUnassignedOrdersRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::person::v2::GetAllUnassignedOrdersResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(11, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_SetControlledTaxiToOrders : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_SetControlledTaxiToOrders() {
+      ::grpc::Service::MarkMethodAsync(12);
+    }
+    ~WithAsyncMethod_SetControlledTaxiToOrders() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SetControlledTaxiToOrders(::grpc::ServerContext* /*context*/, const ::city::person::v2::SetControlledTaxiToOrdersRequest* /*request*/, ::city::person::v2::SetControlledTaxiToOrdersResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestSetControlledTaxiToOrders(::grpc::ServerContext* context, ::city::person::v2::SetControlledTaxiToOrdersRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::person::v2::SetControlledTaxiToOrdersResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(12, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_GetPerson<WithAsyncMethod_AddPerson<WithAsyncMethod_SetSchedule<WithAsyncMethod_GetPersons<WithAsyncMethod_GetPersonByLongLatBBox<WithAsyncMethod_GetAllVehicles<WithAsyncMethod_ResetPersonPosition<WithAsyncMethod_SetControlledVehicleIDs<WithAsyncMethod_FetchControlledVehicleEnvs<WithAsyncMethod_SetControlledVehicleActions<WithAsyncMethod_SetControlledTaxiIDs<WithAsyncMethod_GetAllUnassignedOrders<WithAsyncMethod_SetControlledTaxiToOrders<Service > > > > > > > > > > > > > AsyncService;
   template <class BaseClass>
   class WithCallbackMethod_GetPerson : public BaseClass {
    private:
@@ -851,7 +1001,88 @@ class PersonService final {
     virtual ::grpc::ServerUnaryReactor* SetControlledVehicleActions(
       ::grpc::CallbackServerContext* /*context*/, const ::city::person::v2::SetControlledVehicleActionsRequest* /*request*/, ::city::person::v2::SetControlledVehicleActionsResponse* /*response*/)  { return nullptr; }
   };
-  typedef WithCallbackMethod_GetPerson<WithCallbackMethod_AddPerson<WithCallbackMethod_SetSchedule<WithCallbackMethod_GetPersons<WithCallbackMethod_GetPersonByLongLatBBox<WithCallbackMethod_GetAllVehicles<WithCallbackMethod_ResetPersonPosition<WithCallbackMethod_SetControlledVehicleIDs<WithCallbackMethod_FetchControlledVehicleEnvs<WithCallbackMethod_SetControlledVehicleActions<Service > > > > > > > > > > CallbackService;
+  template <class BaseClass>
+  class WithCallbackMethod_SetControlledTaxiIDs : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_SetControlledTaxiIDs() {
+      ::grpc::Service::MarkMethodCallback(10,
+          new ::grpc::internal::CallbackUnaryHandler< ::city::person::v2::SetControlledTaxiIDsRequest, ::city::person::v2::SetControlledTaxiIDsResponse>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::city::person::v2::SetControlledTaxiIDsRequest* request, ::city::person::v2::SetControlledTaxiIDsResponse* response) { return this->SetControlledTaxiIDs(context, request, response); }));}
+    void SetMessageAllocatorFor_SetControlledTaxiIDs(
+        ::grpc::MessageAllocator< ::city::person::v2::SetControlledTaxiIDsRequest, ::city::person::v2::SetControlledTaxiIDsResponse>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(10);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::city::person::v2::SetControlledTaxiIDsRequest, ::city::person::v2::SetControlledTaxiIDsResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_SetControlledTaxiIDs() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SetControlledTaxiIDs(::grpc::ServerContext* /*context*/, const ::city::person::v2::SetControlledTaxiIDsRequest* /*request*/, ::city::person::v2::SetControlledTaxiIDsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* SetControlledTaxiIDs(
+      ::grpc::CallbackServerContext* /*context*/, const ::city::person::v2::SetControlledTaxiIDsRequest* /*request*/, ::city::person::v2::SetControlledTaxiIDsResponse* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithCallbackMethod_GetAllUnassignedOrders : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_GetAllUnassignedOrders() {
+      ::grpc::Service::MarkMethodCallback(11,
+          new ::grpc::internal::CallbackUnaryHandler< ::city::person::v2::GetAllUnassignedOrdersRequest, ::city::person::v2::GetAllUnassignedOrdersResponse>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::city::person::v2::GetAllUnassignedOrdersRequest* request, ::city::person::v2::GetAllUnassignedOrdersResponse* response) { return this->GetAllUnassignedOrders(context, request, response); }));}
+    void SetMessageAllocatorFor_GetAllUnassignedOrders(
+        ::grpc::MessageAllocator< ::city::person::v2::GetAllUnassignedOrdersRequest, ::city::person::v2::GetAllUnassignedOrdersResponse>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(11);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::city::person::v2::GetAllUnassignedOrdersRequest, ::city::person::v2::GetAllUnassignedOrdersResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_GetAllUnassignedOrders() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetAllUnassignedOrders(::grpc::ServerContext* /*context*/, const ::city::person::v2::GetAllUnassignedOrdersRequest* /*request*/, ::city::person::v2::GetAllUnassignedOrdersResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* GetAllUnassignedOrders(
+      ::grpc::CallbackServerContext* /*context*/, const ::city::person::v2::GetAllUnassignedOrdersRequest* /*request*/, ::city::person::v2::GetAllUnassignedOrdersResponse* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithCallbackMethod_SetControlledTaxiToOrders : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_SetControlledTaxiToOrders() {
+      ::grpc::Service::MarkMethodCallback(12,
+          new ::grpc::internal::CallbackUnaryHandler< ::city::person::v2::SetControlledTaxiToOrdersRequest, ::city::person::v2::SetControlledTaxiToOrdersResponse>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::city::person::v2::SetControlledTaxiToOrdersRequest* request, ::city::person::v2::SetControlledTaxiToOrdersResponse* response) { return this->SetControlledTaxiToOrders(context, request, response); }));}
+    void SetMessageAllocatorFor_SetControlledTaxiToOrders(
+        ::grpc::MessageAllocator< ::city::person::v2::SetControlledTaxiToOrdersRequest, ::city::person::v2::SetControlledTaxiToOrdersResponse>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(12);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::city::person::v2::SetControlledTaxiToOrdersRequest, ::city::person::v2::SetControlledTaxiToOrdersResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_SetControlledTaxiToOrders() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SetControlledTaxiToOrders(::grpc::ServerContext* /*context*/, const ::city::person::v2::SetControlledTaxiToOrdersRequest* /*request*/, ::city::person::v2::SetControlledTaxiToOrdersResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* SetControlledTaxiToOrders(
+      ::grpc::CallbackServerContext* /*context*/, const ::city::person::v2::SetControlledTaxiToOrdersRequest* /*request*/, ::city::person::v2::SetControlledTaxiToOrdersResponse* /*response*/)  { return nullptr; }
+  };
+  typedef WithCallbackMethod_GetPerson<WithCallbackMethod_AddPerson<WithCallbackMethod_SetSchedule<WithCallbackMethod_GetPersons<WithCallbackMethod_GetPersonByLongLatBBox<WithCallbackMethod_GetAllVehicles<WithCallbackMethod_ResetPersonPosition<WithCallbackMethod_SetControlledVehicleIDs<WithCallbackMethod_FetchControlledVehicleEnvs<WithCallbackMethod_SetControlledVehicleActions<WithCallbackMethod_SetControlledTaxiIDs<WithCallbackMethod_GetAllUnassignedOrders<WithCallbackMethod_SetControlledTaxiToOrders<Service > > > > > > > > > > > > > CallbackService;
   typedef CallbackService ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_GetPerson : public BaseClass {
@@ -1019,6 +1250,57 @@ class PersonService final {
     }
     // disable synchronous version of this method
     ::grpc::Status SetControlledVehicleActions(::grpc::ServerContext* /*context*/, const ::city::person::v2::SetControlledVehicleActionsRequest* /*request*/, ::city::person::v2::SetControlledVehicleActionsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_SetControlledTaxiIDs : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_SetControlledTaxiIDs() {
+      ::grpc::Service::MarkMethodGeneric(10);
+    }
+    ~WithGenericMethod_SetControlledTaxiIDs() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SetControlledTaxiIDs(::grpc::ServerContext* /*context*/, const ::city::person::v2::SetControlledTaxiIDsRequest* /*request*/, ::city::person::v2::SetControlledTaxiIDsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_GetAllUnassignedOrders : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_GetAllUnassignedOrders() {
+      ::grpc::Service::MarkMethodGeneric(11);
+    }
+    ~WithGenericMethod_GetAllUnassignedOrders() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetAllUnassignedOrders(::grpc::ServerContext* /*context*/, const ::city::person::v2::GetAllUnassignedOrdersRequest* /*request*/, ::city::person::v2::GetAllUnassignedOrdersResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_SetControlledTaxiToOrders : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_SetControlledTaxiToOrders() {
+      ::grpc::Service::MarkMethodGeneric(12);
+    }
+    ~WithGenericMethod_SetControlledTaxiToOrders() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SetControlledTaxiToOrders(::grpc::ServerContext* /*context*/, const ::city::person::v2::SetControlledTaxiToOrdersRequest* /*request*/, ::city::person::v2::SetControlledTaxiToOrdersResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -1221,6 +1503,66 @@ class PersonService final {
     }
     void RequestSetControlledVehicleActions(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(9, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_SetControlledTaxiIDs : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_SetControlledTaxiIDs() {
+      ::grpc::Service::MarkMethodRaw(10);
+    }
+    ~WithRawMethod_SetControlledTaxiIDs() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SetControlledTaxiIDs(::grpc::ServerContext* /*context*/, const ::city::person::v2::SetControlledTaxiIDsRequest* /*request*/, ::city::person::v2::SetControlledTaxiIDsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestSetControlledTaxiIDs(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(10, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_GetAllUnassignedOrders : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_GetAllUnassignedOrders() {
+      ::grpc::Service::MarkMethodRaw(11);
+    }
+    ~WithRawMethod_GetAllUnassignedOrders() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetAllUnassignedOrders(::grpc::ServerContext* /*context*/, const ::city::person::v2::GetAllUnassignedOrdersRequest* /*request*/, ::city::person::v2::GetAllUnassignedOrdersResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetAllUnassignedOrders(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(11, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_SetControlledTaxiToOrders : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_SetControlledTaxiToOrders() {
+      ::grpc::Service::MarkMethodRaw(12);
+    }
+    ~WithRawMethod_SetControlledTaxiToOrders() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SetControlledTaxiToOrders(::grpc::ServerContext* /*context*/, const ::city::person::v2::SetControlledTaxiToOrdersRequest* /*request*/, ::city::person::v2::SetControlledTaxiToOrdersResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestSetControlledTaxiToOrders(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(12, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1441,6 +1783,72 @@ class PersonService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     virtual ::grpc::ServerUnaryReactor* SetControlledVehicleActions(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_SetControlledTaxiIDs : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_SetControlledTaxiIDs() {
+      ::grpc::Service::MarkMethodRawCallback(10,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->SetControlledTaxiIDs(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_SetControlledTaxiIDs() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SetControlledTaxiIDs(::grpc::ServerContext* /*context*/, const ::city::person::v2::SetControlledTaxiIDsRequest* /*request*/, ::city::person::v2::SetControlledTaxiIDsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* SetControlledTaxiIDs(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_GetAllUnassignedOrders : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_GetAllUnassignedOrders() {
+      ::grpc::Service::MarkMethodRawCallback(11,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetAllUnassignedOrders(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_GetAllUnassignedOrders() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetAllUnassignedOrders(::grpc::ServerContext* /*context*/, const ::city::person::v2::GetAllUnassignedOrdersRequest* /*request*/, ::city::person::v2::GetAllUnassignedOrdersResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* GetAllUnassignedOrders(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
+  class WithRawCallbackMethod_SetControlledTaxiToOrders : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_SetControlledTaxiToOrders() {
+      ::grpc::Service::MarkMethodRawCallback(12,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->SetControlledTaxiToOrders(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_SetControlledTaxiToOrders() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SetControlledTaxiToOrders(::grpc::ServerContext* /*context*/, const ::city::person::v2::SetControlledTaxiToOrdersRequest* /*request*/, ::city::person::v2::SetControlledTaxiToOrdersResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* SetControlledTaxiToOrders(
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
@@ -1713,9 +2121,90 @@ class PersonService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedSetControlledVehicleActions(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::city::person::v2::SetControlledVehicleActionsRequest,::city::person::v2::SetControlledVehicleActionsResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_GetPerson<WithStreamedUnaryMethod_AddPerson<WithStreamedUnaryMethod_SetSchedule<WithStreamedUnaryMethod_GetPersons<WithStreamedUnaryMethod_GetPersonByLongLatBBox<WithStreamedUnaryMethod_GetAllVehicles<WithStreamedUnaryMethod_ResetPersonPosition<WithStreamedUnaryMethod_SetControlledVehicleIDs<WithStreamedUnaryMethod_FetchControlledVehicleEnvs<WithStreamedUnaryMethod_SetControlledVehicleActions<Service > > > > > > > > > > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_SetControlledTaxiIDs : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_SetControlledTaxiIDs() {
+      ::grpc::Service::MarkMethodStreamed(10,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::city::person::v2::SetControlledTaxiIDsRequest, ::city::person::v2::SetControlledTaxiIDsResponse>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::city::person::v2::SetControlledTaxiIDsRequest, ::city::person::v2::SetControlledTaxiIDsResponse>* streamer) {
+                       return this->StreamedSetControlledTaxiIDs(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_SetControlledTaxiIDs() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status SetControlledTaxiIDs(::grpc::ServerContext* /*context*/, const ::city::person::v2::SetControlledTaxiIDsRequest* /*request*/, ::city::person::v2::SetControlledTaxiIDsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedSetControlledTaxiIDs(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::city::person::v2::SetControlledTaxiIDsRequest,::city::person::v2::SetControlledTaxiIDsResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_GetAllUnassignedOrders : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_GetAllUnassignedOrders() {
+      ::grpc::Service::MarkMethodStreamed(11,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::city::person::v2::GetAllUnassignedOrdersRequest, ::city::person::v2::GetAllUnassignedOrdersResponse>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::city::person::v2::GetAllUnassignedOrdersRequest, ::city::person::v2::GetAllUnassignedOrdersResponse>* streamer) {
+                       return this->StreamedGetAllUnassignedOrders(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_GetAllUnassignedOrders() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status GetAllUnassignedOrders(::grpc::ServerContext* /*context*/, const ::city::person::v2::GetAllUnassignedOrdersRequest* /*request*/, ::city::person::v2::GetAllUnassignedOrdersResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedGetAllUnassignedOrders(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::city::person::v2::GetAllUnassignedOrdersRequest,::city::person::v2::GetAllUnassignedOrdersResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_SetControlledTaxiToOrders : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_SetControlledTaxiToOrders() {
+      ::grpc::Service::MarkMethodStreamed(12,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::city::person::v2::SetControlledTaxiToOrdersRequest, ::city::person::v2::SetControlledTaxiToOrdersResponse>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::city::person::v2::SetControlledTaxiToOrdersRequest, ::city::person::v2::SetControlledTaxiToOrdersResponse>* streamer) {
+                       return this->StreamedSetControlledTaxiToOrders(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_SetControlledTaxiToOrders() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status SetControlledTaxiToOrders(::grpc::ServerContext* /*context*/, const ::city::person::v2::SetControlledTaxiToOrdersRequest* /*request*/, ::city::person::v2::SetControlledTaxiToOrdersResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedSetControlledTaxiToOrders(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::city::person::v2::SetControlledTaxiToOrdersRequest,::city::person::v2::SetControlledTaxiToOrdersResponse>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_GetPerson<WithStreamedUnaryMethod_AddPerson<WithStreamedUnaryMethod_SetSchedule<WithStreamedUnaryMethod_GetPersons<WithStreamedUnaryMethod_GetPersonByLongLatBBox<WithStreamedUnaryMethod_GetAllVehicles<WithStreamedUnaryMethod_ResetPersonPosition<WithStreamedUnaryMethod_SetControlledVehicleIDs<WithStreamedUnaryMethod_FetchControlledVehicleEnvs<WithStreamedUnaryMethod_SetControlledVehicleActions<WithStreamedUnaryMethod_SetControlledTaxiIDs<WithStreamedUnaryMethod_GetAllUnassignedOrders<WithStreamedUnaryMethod_SetControlledTaxiToOrders<Service > > > > > > > > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_GetPerson<WithStreamedUnaryMethod_AddPerson<WithStreamedUnaryMethod_SetSchedule<WithStreamedUnaryMethod_GetPersons<WithStreamedUnaryMethod_GetPersonByLongLatBBox<WithStreamedUnaryMethod_GetAllVehicles<WithStreamedUnaryMethod_ResetPersonPosition<WithStreamedUnaryMethod_SetControlledVehicleIDs<WithStreamedUnaryMethod_FetchControlledVehicleEnvs<WithStreamedUnaryMethod_SetControlledVehicleActions<Service > > > > > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_GetPerson<WithStreamedUnaryMethod_AddPerson<WithStreamedUnaryMethod_SetSchedule<WithStreamedUnaryMethod_GetPersons<WithStreamedUnaryMethod_GetPersonByLongLatBBox<WithStreamedUnaryMethod_GetAllVehicles<WithStreamedUnaryMethod_ResetPersonPosition<WithStreamedUnaryMethod_SetControlledVehicleIDs<WithStreamedUnaryMethod_FetchControlledVehicleEnvs<WithStreamedUnaryMethod_SetControlledVehicleActions<WithStreamedUnaryMethod_SetControlledTaxiIDs<WithStreamedUnaryMethod_GetAllUnassignedOrders<WithStreamedUnaryMethod_SetControlledTaxiToOrders<Service > > > > > > > > > > > > > StreamedService;
 };
 
 }  // namespace v2

@@ -10,6 +10,7 @@ import { Schedule } from "../../trip/v2/trip_pb.js";
 import { Status } from "./motion_pb.js";
 import { LongLatBBox, Position } from "../../geo/v2/geo_pb.js";
 import { VehicleAction, VehicleEnv, VehicleRouteAction, VehicleRuntime } from "./vehicle_pb.js";
+import { OrderAllocationPlan, RequestOrderInfo } from "./taxi_pb.js";
 
 /**
  * 获取person信息请求
@@ -265,6 +266,78 @@ export const SetControlledVehicleActionsRequest = /*@__PURE__*/ proto3.makeMessa
  */
 export const SetControlledVehicleActionsResponse = /*@__PURE__*/ proto3.makeMessageType(
   "city.person.v2.SetControlledVehicleActionsResponse",
+  [],
+);
+
+/**
+ * 设置由外部控制的taxi请求
+ * Request for setting taxi controlled by external behavior
+ *
+ * @generated from message city.person.v2.SetControlledTaxiIDsRequest
+ */
+export const SetControlledTaxiIDsRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.person.v2.SetControlledTaxiIDsRequest",
+  () => [
+    { no: 1, name: "taxi_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+  ],
+);
+
+/**
+ * 设置由外部控制的taxi响应
+ * Response of setting taxi controlled by external behavior
+ *
+ * @generated from message city.person.v2.SetControlledTaxiIDsResponse
+ */
+export const SetControlledTaxiIDsResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.person.v2.SetControlledTaxiIDsResponse",
+  [],
+);
+
+/**
+ * 获取所有待分配的订单信息请求
+ * Request for getting information of all unassigned orders
+ *
+ * @generated from message city.person.v2.GetAllUnassignedOrdersRequest
+ */
+export const GetAllUnassignedOrdersRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.person.v2.GetAllUnassignedOrdersRequest",
+  [],
+);
+
+/**
+ * 获取所有待分配的订单信息响应
+ * Response of getting information of all unassigned orders
+ *
+ * @generated from message city.person.v2.GetAllUnassignedOrdersResponse
+ */
+export const GetAllUnassignedOrdersResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.person.v2.GetAllUnassignedOrdersResponse",
+  () => [
+    { no: 1, name: "order_infos", kind: "message", T: RequestOrderInfo, repeated: true },
+  ],
+);
+
+/**
+ * 设置所有外部控制的出租车接指定的单请求
+ * Request for setting all externally controlled taxis to specified orders
+ *
+ * @generated from message city.person.v2.SetControlledTaxiToOrdersRequest
+ */
+export const SetControlledTaxiToOrdersRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.person.v2.SetControlledTaxiToOrdersRequest",
+  () => [
+    { no: 1, name: "order_plans", kind: "message", T: OrderAllocationPlan, repeated: true },
+  ],
+);
+
+/**
+ * 设置所有外部控制的出租车接指定的单响应
+ * Response of setting all externally controlled taxis to specified orders
+ *
+ * @generated from message city.person.v2.SetControlledTaxiToOrdersResponse
+ */
+export const SetControlledTaxiToOrdersResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.person.v2.SetControlledTaxiToOrdersResponse",
   [],
 );
 

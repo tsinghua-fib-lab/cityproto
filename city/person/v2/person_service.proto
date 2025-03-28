@@ -6,6 +6,7 @@ import "city/geo/v2/geo.proto";
 import "city/person/v2/motion.proto";
 import "city/person/v2/person.proto";
 import "city/person/v2/person_runtime.proto";
+import "city/person/v2/taxi.proto";
 import "city/person/v2/vehicle.proto";
 import "city/trip/v2/trip.proto";
 
@@ -45,6 +46,15 @@ service PersonService {
   // 设置由外部控制行为的vehicle的行为
   // Set behavior of vehicle controlled by external behavior
   rpc SetControlledVehicleActions(SetControlledVehicleActionsRequest) returns (SetControlledVehicleActionsResponse);
+  // 设置由外部控制的taxi
+  // Set taxi controlled by external behavior
+  rpc SetControlledTaxiIDs(SetControlledTaxiIDsRequest) returns (SetControlledTaxiIDsResponse);
+  // 获取所有待分配的订单信息
+  // Get information of all unassigned orders
+  rpc GetAllUnassignedOrders(GetAllUnassignedOrdersRequest) returns (GetAllUnassignedOrdersResponse);
+  // 设置所有外部控制的出租车接指定的单
+  // Set all externally controlled taxis to specified orders
+  rpc SetControlledTaxiToOrders(SetControlledTaxiToOrdersRequest) returns (SetControlledTaxiToOrdersResponse);
 }
 
 // 获取person信息请求
@@ -204,3 +214,39 @@ message SetControlledVehicleActionsRequest {
 // 设置由外部控制行为的vehicle的行为响应
 // Response of setting behavior of vehicle controlled by external behavior
 message SetControlledVehicleActionsResponse {}
+
+// 设置由外部控制的taxi请求
+// Request for setting taxi controlled by external behavior
+message SetControlledTaxiIDsRequest {
+  // 由外部控制的taxi id列表
+  // List of taxi ids controlled by external behavior
+  repeated int32 taxi_ids = 1;
+}
+
+// 设置由外部控制的taxi响应
+// Response of setting taxi controlled by external behavior
+message SetControlledTaxiIDsResponse {}
+
+// 获取所有待分配的订单信息请求
+// Request for getting information of all unassigned orders
+message GetAllUnassignedOrdersRequest {}
+
+// 获取所有待分配的订单信息响应
+// Response of getting information of all unassigned orders
+message GetAllUnassignedOrdersResponse {
+  // 所有待分配的订单信息
+  // Information of all unassigned orders
+  repeated RequestOrderInfo order_infos = 1;
+}
+
+// 设置所有外部控制的出租车接指定的单请求
+// Request for setting all externally controlled taxis to specified orders
+message SetControlledTaxiToOrdersRequest {
+  // 所有外部控制的出租车接指定的单
+  // All externally controlled taxis are set to specified orders
+  repeated OrderAllocationPlan order_plans = 1;
+}
+
+// 设置所有外部控制的出租车接指定的单响应
+// Response of setting all externally controlled taxis to specified orders
+message SetControlledTaxiToOrdersResponse {}

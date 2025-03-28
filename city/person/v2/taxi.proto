@@ -1,0 +1,58 @@
+syntax = "proto3";
+package city.person.v2;
+
+import "city/geo/v2/geo.proto";
+
+// 乘客发出的请求订单信息
+// Request order information from passengers
+message RequestOrderInfo {
+  // 发出请求的person id
+  // person id who sends the request
+  int32 person_id = 1;
+  // 请求时间（s）
+  // request time（s）
+  double request_time = 2;
+  // 订单id
+  // order id
+  int32 order_id = 3;
+  // 出发地
+  // departure position
+  city.geo.v2.Position departure = 4;
+  // 目的地
+  // destination
+  city.geo.v2.Position destination = 5;
+}
+
+// 分配方案类型
+// Allocation plan type
+enum AllocationPlanType {
+  // 未指定
+  // unspecified
+  ALLOCATION_PLAN_TYPE_UNSPECIFIED = 0;
+  // 接人
+  // pick up
+  ALLOCATION_PLAN_TYPE_PICK_UP = 1;
+  // 送人
+  // deliver
+  ALLOCATION_PLAN_TYPE_DELIVER = 2;
+}
+
+// 受外部控制的出租车接受的订单分配方案
+// Order allocation plan accepted by taxis controlled by external
+message OrderAllocationPlan {
+  // 订单id
+  // order id
+  int32 order_id = 1;
+  // 出租车id
+  // taxi id
+  int32 taxi_id = 2;
+  // 分配方案类型
+  // allocation plan type
+  AllocationPlanType type = 3;
+  // 待接的乘客ids，当type为ALLOCATION_PLAN_TYPE_PICK_UP时有效，和deliver_person_ids不同时有效
+  // passenger ids to be picked up，valid when type is ALLOCATION_PLAN_TYPE_PICK_UP, not valid when deliver_person_ids is valid
+  repeated int32 pick_up_person_ids = 4;
+  // 待送的乘客ids，当type为ALLOCATION_PLAN_TYPE_DELIVER时有效，和pick_up_person_ids不同时有效
+  // passenger ids to be delivered，valid when type is ALLOCATION_PLAN_TYPE_DELIVER, not valid when pick_up_person_ids is valid
+  repeated int32 deliver_person_ids = 5;
+}

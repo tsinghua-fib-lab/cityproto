@@ -35,6 +35,7 @@
 #include "city/person/v2/motion.pb.h"
 #include "city/person/v2/person.pb.h"
 #include "city/person/v2/person_runtime.pb.h"
+#include "city/person/v2/taxi.pb.h"
 #include "city/person/v2/vehicle.pb.h"
 #include "city/trip/v2/trip.pb.h"
 // @@protoc_insertion_point(includes)
@@ -66,6 +67,12 @@ extern FetchControlledVehicleEnvsRequestDefaultTypeInternal _FetchControlledVehi
 class FetchControlledVehicleEnvsResponse;
 struct FetchControlledVehicleEnvsResponseDefaultTypeInternal;
 extern FetchControlledVehicleEnvsResponseDefaultTypeInternal _FetchControlledVehicleEnvsResponse_default_instance_;
+class GetAllUnassignedOrdersRequest;
+struct GetAllUnassignedOrdersRequestDefaultTypeInternal;
+extern GetAllUnassignedOrdersRequestDefaultTypeInternal _GetAllUnassignedOrdersRequest_default_instance_;
+class GetAllUnassignedOrdersResponse;
+struct GetAllUnassignedOrdersResponseDefaultTypeInternal;
+extern GetAllUnassignedOrdersResponseDefaultTypeInternal _GetAllUnassignedOrdersResponse_default_instance_;
 class GetAllVehiclesRequest;
 struct GetAllVehiclesRequestDefaultTypeInternal;
 extern GetAllVehiclesRequestDefaultTypeInternal _GetAllVehiclesRequest_default_instance_;
@@ -96,6 +103,18 @@ extern ResetPersonPositionRequestDefaultTypeInternal _ResetPersonPositionRequest
 class ResetPersonPositionResponse;
 struct ResetPersonPositionResponseDefaultTypeInternal;
 extern ResetPersonPositionResponseDefaultTypeInternal _ResetPersonPositionResponse_default_instance_;
+class SetControlledTaxiIDsRequest;
+struct SetControlledTaxiIDsRequestDefaultTypeInternal;
+extern SetControlledTaxiIDsRequestDefaultTypeInternal _SetControlledTaxiIDsRequest_default_instance_;
+class SetControlledTaxiIDsResponse;
+struct SetControlledTaxiIDsResponseDefaultTypeInternal;
+extern SetControlledTaxiIDsResponseDefaultTypeInternal _SetControlledTaxiIDsResponse_default_instance_;
+class SetControlledTaxiToOrdersRequest;
+struct SetControlledTaxiToOrdersRequestDefaultTypeInternal;
+extern SetControlledTaxiToOrdersRequestDefaultTypeInternal _SetControlledTaxiToOrdersRequest_default_instance_;
+class SetControlledTaxiToOrdersResponse;
+struct SetControlledTaxiToOrdersResponseDefaultTypeInternal;
+extern SetControlledTaxiToOrdersResponseDefaultTypeInternal _SetControlledTaxiToOrdersResponse_default_instance_;
 class SetControlledVehicleActionsRequest;
 struct SetControlledVehicleActionsRequestDefaultTypeInternal;
 extern SetControlledVehicleActionsRequestDefaultTypeInternal _SetControlledVehicleActionsRequest_default_instance_;
@@ -122,6 +141,8 @@ template<> ::city::person::v2::AddPersonRequest* Arena::CreateMaybeMessage<::cit
 template<> ::city::person::v2::AddPersonResponse* Arena::CreateMaybeMessage<::city::person::v2::AddPersonResponse>(Arena*);
 template<> ::city::person::v2::FetchControlledVehicleEnvsRequest* Arena::CreateMaybeMessage<::city::person::v2::FetchControlledVehicleEnvsRequest>(Arena*);
 template<> ::city::person::v2::FetchControlledVehicleEnvsResponse* Arena::CreateMaybeMessage<::city::person::v2::FetchControlledVehicleEnvsResponse>(Arena*);
+template<> ::city::person::v2::GetAllUnassignedOrdersRequest* Arena::CreateMaybeMessage<::city::person::v2::GetAllUnassignedOrdersRequest>(Arena*);
+template<> ::city::person::v2::GetAllUnassignedOrdersResponse* Arena::CreateMaybeMessage<::city::person::v2::GetAllUnassignedOrdersResponse>(Arena*);
 template<> ::city::person::v2::GetAllVehiclesRequest* Arena::CreateMaybeMessage<::city::person::v2::GetAllVehiclesRequest>(Arena*);
 template<> ::city::person::v2::GetAllVehiclesResponse* Arena::CreateMaybeMessage<::city::person::v2::GetAllVehiclesResponse>(Arena*);
 template<> ::city::person::v2::GetPersonByLongLatBBoxRequest* Arena::CreateMaybeMessage<::city::person::v2::GetPersonByLongLatBBoxRequest>(Arena*);
@@ -132,6 +153,10 @@ template<> ::city::person::v2::GetPersonsRequest* Arena::CreateMaybeMessage<::ci
 template<> ::city::person::v2::GetPersonsResponse* Arena::CreateMaybeMessage<::city::person::v2::GetPersonsResponse>(Arena*);
 template<> ::city::person::v2::ResetPersonPositionRequest* Arena::CreateMaybeMessage<::city::person::v2::ResetPersonPositionRequest>(Arena*);
 template<> ::city::person::v2::ResetPersonPositionResponse* Arena::CreateMaybeMessage<::city::person::v2::ResetPersonPositionResponse>(Arena*);
+template<> ::city::person::v2::SetControlledTaxiIDsRequest* Arena::CreateMaybeMessage<::city::person::v2::SetControlledTaxiIDsRequest>(Arena*);
+template<> ::city::person::v2::SetControlledTaxiIDsResponse* Arena::CreateMaybeMessage<::city::person::v2::SetControlledTaxiIDsResponse>(Arena*);
+template<> ::city::person::v2::SetControlledTaxiToOrdersRequest* Arena::CreateMaybeMessage<::city::person::v2::SetControlledTaxiToOrdersRequest>(Arena*);
+template<> ::city::person::v2::SetControlledTaxiToOrdersResponse* Arena::CreateMaybeMessage<::city::person::v2::SetControlledTaxiToOrdersResponse>(Arena*);
 template<> ::city::person::v2::SetControlledVehicleActionsRequest* Arena::CreateMaybeMessage<::city::person::v2::SetControlledVehicleActionsRequest>(Arena*);
 template<> ::city::person::v2::SetControlledVehicleActionsResponse* Arena::CreateMaybeMessage<::city::person::v2::SetControlledVehicleActionsResponse>(Arena*);
 template<> ::city::person::v2::SetControlledVehicleIDsRequest* Arena::CreateMaybeMessage<::city::person::v2::SetControlledVehicleIDsRequest>(Arena*);
@@ -3190,6 +3215,836 @@ class SetControlledVehicleActionsResponse final :
   };
   friend struct ::TableStruct_city_2fperson_2fv2_2fperson_5fservice_2eproto;
 };
+// -------------------------------------------------------------------
+
+class SetControlledTaxiIDsRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.person.v2.SetControlledTaxiIDsRequest) */ {
+ public:
+  inline SetControlledTaxiIDsRequest() : SetControlledTaxiIDsRequest(nullptr) {}
+  ~SetControlledTaxiIDsRequest() override;
+  explicit PROTOBUF_CONSTEXPR SetControlledTaxiIDsRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  SetControlledTaxiIDsRequest(const SetControlledTaxiIDsRequest& from);
+  SetControlledTaxiIDsRequest(SetControlledTaxiIDsRequest&& from) noexcept
+    : SetControlledTaxiIDsRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline SetControlledTaxiIDsRequest& operator=(const SetControlledTaxiIDsRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline SetControlledTaxiIDsRequest& operator=(SetControlledTaxiIDsRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const SetControlledTaxiIDsRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const SetControlledTaxiIDsRequest* internal_default_instance() {
+    return reinterpret_cast<const SetControlledTaxiIDsRequest*>(
+               &_SetControlledTaxiIDsRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    20;
+
+  friend void swap(SetControlledTaxiIDsRequest& a, SetControlledTaxiIDsRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(SetControlledTaxiIDsRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(SetControlledTaxiIDsRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  SetControlledTaxiIDsRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<SetControlledTaxiIDsRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const SetControlledTaxiIDsRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const SetControlledTaxiIDsRequest& from) {
+    SetControlledTaxiIDsRequest::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(SetControlledTaxiIDsRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.person.v2.SetControlledTaxiIDsRequest";
+  }
+  protected:
+  explicit SetControlledTaxiIDsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kTaxiIdsFieldNumber = 1,
+  };
+  // repeated int32 taxi_ids = 1 [json_name = "taxiIds"];
+  int taxi_ids_size() const;
+  private:
+  int _internal_taxi_ids_size() const;
+  public:
+  void clear_taxi_ids();
+  private:
+  int32_t _internal_taxi_ids(int index) const;
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+      _internal_taxi_ids() const;
+  void _internal_add_taxi_ids(int32_t value);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+      _internal_mutable_taxi_ids();
+  public:
+  int32_t taxi_ids(int index) const;
+  void set_taxi_ids(int index, int32_t value);
+  void add_taxi_ids(int32_t value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+      taxi_ids() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+      mutable_taxi_ids();
+
+  // @@protoc_insertion_point(class_scope:city.person.v2.SetControlledTaxiIDsRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t > taxi_ids_;
+    mutable std::atomic<int> _taxi_ids_cached_byte_size_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_city_2fperson_2fv2_2fperson_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class SetControlledTaxiIDsResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:city.person.v2.SetControlledTaxiIDsResponse) */ {
+ public:
+  inline SetControlledTaxiIDsResponse() : SetControlledTaxiIDsResponse(nullptr) {}
+  explicit PROTOBUF_CONSTEXPR SetControlledTaxiIDsResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  SetControlledTaxiIDsResponse(const SetControlledTaxiIDsResponse& from);
+  SetControlledTaxiIDsResponse(SetControlledTaxiIDsResponse&& from) noexcept
+    : SetControlledTaxiIDsResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline SetControlledTaxiIDsResponse& operator=(const SetControlledTaxiIDsResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline SetControlledTaxiIDsResponse& operator=(SetControlledTaxiIDsResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const SetControlledTaxiIDsResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const SetControlledTaxiIDsResponse* internal_default_instance() {
+    return reinterpret_cast<const SetControlledTaxiIDsResponse*>(
+               &_SetControlledTaxiIDsResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    21;
+
+  friend void swap(SetControlledTaxiIDsResponse& a, SetControlledTaxiIDsResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(SetControlledTaxiIDsResponse* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(SetControlledTaxiIDsResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  SetControlledTaxiIDsResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<SetControlledTaxiIDsResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
+  inline void CopyFrom(const SetControlledTaxiIDsResponse& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(*this, from);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
+  void MergeFrom(const SetControlledTaxiIDsResponse& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(*this, from);
+  }
+  public:
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.person.v2.SetControlledTaxiIDsResponse";
+  }
+  protected:
+  explicit SetControlledTaxiIDsResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:city.person.v2.SetControlledTaxiIDsResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+  };
+  friend struct ::TableStruct_city_2fperson_2fv2_2fperson_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetAllUnassignedOrdersRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:city.person.v2.GetAllUnassignedOrdersRequest) */ {
+ public:
+  inline GetAllUnassignedOrdersRequest() : GetAllUnassignedOrdersRequest(nullptr) {}
+  explicit PROTOBUF_CONSTEXPR GetAllUnassignedOrdersRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  GetAllUnassignedOrdersRequest(const GetAllUnassignedOrdersRequest& from);
+  GetAllUnassignedOrdersRequest(GetAllUnassignedOrdersRequest&& from) noexcept
+    : GetAllUnassignedOrdersRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline GetAllUnassignedOrdersRequest& operator=(const GetAllUnassignedOrdersRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetAllUnassignedOrdersRequest& operator=(GetAllUnassignedOrdersRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const GetAllUnassignedOrdersRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GetAllUnassignedOrdersRequest* internal_default_instance() {
+    return reinterpret_cast<const GetAllUnassignedOrdersRequest*>(
+               &_GetAllUnassignedOrdersRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    22;
+
+  friend void swap(GetAllUnassignedOrdersRequest& a, GetAllUnassignedOrdersRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetAllUnassignedOrdersRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetAllUnassignedOrdersRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  GetAllUnassignedOrdersRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<GetAllUnassignedOrdersRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
+  inline void CopyFrom(const GetAllUnassignedOrdersRequest& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(*this, from);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
+  void MergeFrom(const GetAllUnassignedOrdersRequest& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(*this, from);
+  }
+  public:
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.person.v2.GetAllUnassignedOrdersRequest";
+  }
+  protected:
+  explicit GetAllUnassignedOrdersRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:city.person.v2.GetAllUnassignedOrdersRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+  };
+  friend struct ::TableStruct_city_2fperson_2fv2_2fperson_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetAllUnassignedOrdersResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.person.v2.GetAllUnassignedOrdersResponse) */ {
+ public:
+  inline GetAllUnassignedOrdersResponse() : GetAllUnassignedOrdersResponse(nullptr) {}
+  ~GetAllUnassignedOrdersResponse() override;
+  explicit PROTOBUF_CONSTEXPR GetAllUnassignedOrdersResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  GetAllUnassignedOrdersResponse(const GetAllUnassignedOrdersResponse& from);
+  GetAllUnassignedOrdersResponse(GetAllUnassignedOrdersResponse&& from) noexcept
+    : GetAllUnassignedOrdersResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline GetAllUnassignedOrdersResponse& operator=(const GetAllUnassignedOrdersResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetAllUnassignedOrdersResponse& operator=(GetAllUnassignedOrdersResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const GetAllUnassignedOrdersResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GetAllUnassignedOrdersResponse* internal_default_instance() {
+    return reinterpret_cast<const GetAllUnassignedOrdersResponse*>(
+               &_GetAllUnassignedOrdersResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    23;
+
+  friend void swap(GetAllUnassignedOrdersResponse& a, GetAllUnassignedOrdersResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetAllUnassignedOrdersResponse* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetAllUnassignedOrdersResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  GetAllUnassignedOrdersResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<GetAllUnassignedOrdersResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const GetAllUnassignedOrdersResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const GetAllUnassignedOrdersResponse& from) {
+    GetAllUnassignedOrdersResponse::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetAllUnassignedOrdersResponse* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.person.v2.GetAllUnassignedOrdersResponse";
+  }
+  protected:
+  explicit GetAllUnassignedOrdersResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kOrderInfosFieldNumber = 1,
+  };
+  // repeated .city.person.v2.RequestOrderInfo order_infos = 1 [json_name = "orderInfos"];
+  int order_infos_size() const;
+  private:
+  int _internal_order_infos_size() const;
+  public:
+  void clear_order_infos();
+  ::city::person::v2::RequestOrderInfo* mutable_order_infos(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::RequestOrderInfo >*
+      mutable_order_infos();
+  private:
+  const ::city::person::v2::RequestOrderInfo& _internal_order_infos(int index) const;
+  ::city::person::v2::RequestOrderInfo* _internal_add_order_infos();
+  public:
+  const ::city::person::v2::RequestOrderInfo& order_infos(int index) const;
+  ::city::person::v2::RequestOrderInfo* add_order_infos();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::RequestOrderInfo >&
+      order_infos() const;
+
+  // @@protoc_insertion_point(class_scope:city.person.v2.GetAllUnassignedOrdersResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::RequestOrderInfo > order_infos_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_city_2fperson_2fv2_2fperson_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class SetControlledTaxiToOrdersRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.person.v2.SetControlledTaxiToOrdersRequest) */ {
+ public:
+  inline SetControlledTaxiToOrdersRequest() : SetControlledTaxiToOrdersRequest(nullptr) {}
+  ~SetControlledTaxiToOrdersRequest() override;
+  explicit PROTOBUF_CONSTEXPR SetControlledTaxiToOrdersRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  SetControlledTaxiToOrdersRequest(const SetControlledTaxiToOrdersRequest& from);
+  SetControlledTaxiToOrdersRequest(SetControlledTaxiToOrdersRequest&& from) noexcept
+    : SetControlledTaxiToOrdersRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline SetControlledTaxiToOrdersRequest& operator=(const SetControlledTaxiToOrdersRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline SetControlledTaxiToOrdersRequest& operator=(SetControlledTaxiToOrdersRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const SetControlledTaxiToOrdersRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const SetControlledTaxiToOrdersRequest* internal_default_instance() {
+    return reinterpret_cast<const SetControlledTaxiToOrdersRequest*>(
+               &_SetControlledTaxiToOrdersRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    24;
+
+  friend void swap(SetControlledTaxiToOrdersRequest& a, SetControlledTaxiToOrdersRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(SetControlledTaxiToOrdersRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(SetControlledTaxiToOrdersRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  SetControlledTaxiToOrdersRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<SetControlledTaxiToOrdersRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const SetControlledTaxiToOrdersRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const SetControlledTaxiToOrdersRequest& from) {
+    SetControlledTaxiToOrdersRequest::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(SetControlledTaxiToOrdersRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.person.v2.SetControlledTaxiToOrdersRequest";
+  }
+  protected:
+  explicit SetControlledTaxiToOrdersRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kOrderPlansFieldNumber = 1,
+  };
+  // repeated .city.person.v2.OrderAllocationPlan order_plans = 1 [json_name = "orderPlans"];
+  int order_plans_size() const;
+  private:
+  int _internal_order_plans_size() const;
+  public:
+  void clear_order_plans();
+  ::city::person::v2::OrderAllocationPlan* mutable_order_plans(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::OrderAllocationPlan >*
+      mutable_order_plans();
+  private:
+  const ::city::person::v2::OrderAllocationPlan& _internal_order_plans(int index) const;
+  ::city::person::v2::OrderAllocationPlan* _internal_add_order_plans();
+  public:
+  const ::city::person::v2::OrderAllocationPlan& order_plans(int index) const;
+  ::city::person::v2::OrderAllocationPlan* add_order_plans();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::OrderAllocationPlan >&
+      order_plans() const;
+
+  // @@protoc_insertion_point(class_scope:city.person.v2.SetControlledTaxiToOrdersRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::OrderAllocationPlan > order_plans_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_city_2fperson_2fv2_2fperson_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class SetControlledTaxiToOrdersResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:city.person.v2.SetControlledTaxiToOrdersResponse) */ {
+ public:
+  inline SetControlledTaxiToOrdersResponse() : SetControlledTaxiToOrdersResponse(nullptr) {}
+  explicit PROTOBUF_CONSTEXPR SetControlledTaxiToOrdersResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  SetControlledTaxiToOrdersResponse(const SetControlledTaxiToOrdersResponse& from);
+  SetControlledTaxiToOrdersResponse(SetControlledTaxiToOrdersResponse&& from) noexcept
+    : SetControlledTaxiToOrdersResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline SetControlledTaxiToOrdersResponse& operator=(const SetControlledTaxiToOrdersResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline SetControlledTaxiToOrdersResponse& operator=(SetControlledTaxiToOrdersResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const SetControlledTaxiToOrdersResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const SetControlledTaxiToOrdersResponse* internal_default_instance() {
+    return reinterpret_cast<const SetControlledTaxiToOrdersResponse*>(
+               &_SetControlledTaxiToOrdersResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    25;
+
+  friend void swap(SetControlledTaxiToOrdersResponse& a, SetControlledTaxiToOrdersResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(SetControlledTaxiToOrdersResponse* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(SetControlledTaxiToOrdersResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  SetControlledTaxiToOrdersResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<SetControlledTaxiToOrdersResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
+  inline void CopyFrom(const SetControlledTaxiToOrdersResponse& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(*this, from);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
+  void MergeFrom(const SetControlledTaxiToOrdersResponse& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(*this, from);
+  }
+  public:
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.person.v2.SetControlledTaxiToOrdersResponse";
+  }
+  protected:
+  explicit SetControlledTaxiToOrdersResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:city.person.v2.SetControlledTaxiToOrdersResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+  };
+  friend struct ::TableStruct_city_2fperson_2fv2_2fperson_5fservice_2eproto;
+};
 // ===================================================================
 
 
@@ -4260,9 +5115,166 @@ SetControlledVehicleActionsRequest::vehicle_journeys() const {
 
 // SetControlledVehicleActionsResponse
 
+// -------------------------------------------------------------------
+
+// SetControlledTaxiIDsRequest
+
+// repeated int32 taxi_ids = 1 [json_name = "taxiIds"];
+inline int SetControlledTaxiIDsRequest::_internal_taxi_ids_size() const {
+  return _impl_.taxi_ids_.size();
+}
+inline int SetControlledTaxiIDsRequest::taxi_ids_size() const {
+  return _internal_taxi_ids_size();
+}
+inline void SetControlledTaxiIDsRequest::clear_taxi_ids() {
+  _impl_.taxi_ids_.Clear();
+}
+inline int32_t SetControlledTaxiIDsRequest::_internal_taxi_ids(int index) const {
+  return _impl_.taxi_ids_.Get(index);
+}
+inline int32_t SetControlledTaxiIDsRequest::taxi_ids(int index) const {
+  // @@protoc_insertion_point(field_get:city.person.v2.SetControlledTaxiIDsRequest.taxi_ids)
+  return _internal_taxi_ids(index);
+}
+inline void SetControlledTaxiIDsRequest::set_taxi_ids(int index, int32_t value) {
+  _impl_.taxi_ids_.Set(index, value);
+  // @@protoc_insertion_point(field_set:city.person.v2.SetControlledTaxiIDsRequest.taxi_ids)
+}
+inline void SetControlledTaxiIDsRequest::_internal_add_taxi_ids(int32_t value) {
+  _impl_.taxi_ids_.Add(value);
+}
+inline void SetControlledTaxiIDsRequest::add_taxi_ids(int32_t value) {
+  _internal_add_taxi_ids(value);
+  // @@protoc_insertion_point(field_add:city.person.v2.SetControlledTaxiIDsRequest.taxi_ids)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+SetControlledTaxiIDsRequest::_internal_taxi_ids() const {
+  return _impl_.taxi_ids_;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+SetControlledTaxiIDsRequest::taxi_ids() const {
+  // @@protoc_insertion_point(field_list:city.person.v2.SetControlledTaxiIDsRequest.taxi_ids)
+  return _internal_taxi_ids();
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+SetControlledTaxiIDsRequest::_internal_mutable_taxi_ids() {
+  return &_impl_.taxi_ids_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+SetControlledTaxiIDsRequest::mutable_taxi_ids() {
+  // @@protoc_insertion_point(field_mutable_list:city.person.v2.SetControlledTaxiIDsRequest.taxi_ids)
+  return _internal_mutable_taxi_ids();
+}
+
+// -------------------------------------------------------------------
+
+// SetControlledTaxiIDsResponse
+
+// -------------------------------------------------------------------
+
+// GetAllUnassignedOrdersRequest
+
+// -------------------------------------------------------------------
+
+// GetAllUnassignedOrdersResponse
+
+// repeated .city.person.v2.RequestOrderInfo order_infos = 1 [json_name = "orderInfos"];
+inline int GetAllUnassignedOrdersResponse::_internal_order_infos_size() const {
+  return _impl_.order_infos_.size();
+}
+inline int GetAllUnassignedOrdersResponse::order_infos_size() const {
+  return _internal_order_infos_size();
+}
+inline ::city::person::v2::RequestOrderInfo* GetAllUnassignedOrdersResponse::mutable_order_infos(int index) {
+  // @@protoc_insertion_point(field_mutable:city.person.v2.GetAllUnassignedOrdersResponse.order_infos)
+  return _impl_.order_infos_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::RequestOrderInfo >*
+GetAllUnassignedOrdersResponse::mutable_order_infos() {
+  // @@protoc_insertion_point(field_mutable_list:city.person.v2.GetAllUnassignedOrdersResponse.order_infos)
+  return &_impl_.order_infos_;
+}
+inline const ::city::person::v2::RequestOrderInfo& GetAllUnassignedOrdersResponse::_internal_order_infos(int index) const {
+  return _impl_.order_infos_.Get(index);
+}
+inline const ::city::person::v2::RequestOrderInfo& GetAllUnassignedOrdersResponse::order_infos(int index) const {
+  // @@protoc_insertion_point(field_get:city.person.v2.GetAllUnassignedOrdersResponse.order_infos)
+  return _internal_order_infos(index);
+}
+inline ::city::person::v2::RequestOrderInfo* GetAllUnassignedOrdersResponse::_internal_add_order_infos() {
+  return _impl_.order_infos_.Add();
+}
+inline ::city::person::v2::RequestOrderInfo* GetAllUnassignedOrdersResponse::add_order_infos() {
+  ::city::person::v2::RequestOrderInfo* _add = _internal_add_order_infos();
+  // @@protoc_insertion_point(field_add:city.person.v2.GetAllUnassignedOrdersResponse.order_infos)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::RequestOrderInfo >&
+GetAllUnassignedOrdersResponse::order_infos() const {
+  // @@protoc_insertion_point(field_list:city.person.v2.GetAllUnassignedOrdersResponse.order_infos)
+  return _impl_.order_infos_;
+}
+
+// -------------------------------------------------------------------
+
+// SetControlledTaxiToOrdersRequest
+
+// repeated .city.person.v2.OrderAllocationPlan order_plans = 1 [json_name = "orderPlans"];
+inline int SetControlledTaxiToOrdersRequest::_internal_order_plans_size() const {
+  return _impl_.order_plans_.size();
+}
+inline int SetControlledTaxiToOrdersRequest::order_plans_size() const {
+  return _internal_order_plans_size();
+}
+inline ::city::person::v2::OrderAllocationPlan* SetControlledTaxiToOrdersRequest::mutable_order_plans(int index) {
+  // @@protoc_insertion_point(field_mutable:city.person.v2.SetControlledTaxiToOrdersRequest.order_plans)
+  return _impl_.order_plans_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::OrderAllocationPlan >*
+SetControlledTaxiToOrdersRequest::mutable_order_plans() {
+  // @@protoc_insertion_point(field_mutable_list:city.person.v2.SetControlledTaxiToOrdersRequest.order_plans)
+  return &_impl_.order_plans_;
+}
+inline const ::city::person::v2::OrderAllocationPlan& SetControlledTaxiToOrdersRequest::_internal_order_plans(int index) const {
+  return _impl_.order_plans_.Get(index);
+}
+inline const ::city::person::v2::OrderAllocationPlan& SetControlledTaxiToOrdersRequest::order_plans(int index) const {
+  // @@protoc_insertion_point(field_get:city.person.v2.SetControlledTaxiToOrdersRequest.order_plans)
+  return _internal_order_plans(index);
+}
+inline ::city::person::v2::OrderAllocationPlan* SetControlledTaxiToOrdersRequest::_internal_add_order_plans() {
+  return _impl_.order_plans_.Add();
+}
+inline ::city::person::v2::OrderAllocationPlan* SetControlledTaxiToOrdersRequest::add_order_plans() {
+  ::city::person::v2::OrderAllocationPlan* _add = _internal_add_order_plans();
+  // @@protoc_insertion_point(field_add:city.person.v2.SetControlledTaxiToOrdersRequest.order_plans)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::OrderAllocationPlan >&
+SetControlledTaxiToOrdersRequest::order_plans() const {
+  // @@protoc_insertion_point(field_list:city.person.v2.SetControlledTaxiToOrdersRequest.order_plans)
+  return _impl_.order_plans_;
+}
+
+// -------------------------------------------------------------------
+
+// SetControlledTaxiToOrdersResponse
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

@@ -501,6 +501,12 @@
 - [city/person/v2/person_runtime.proto](#city_person_v2_person_runtime-proto)
     - [PersonRuntime](#city-person-v2-PersonRuntime)
   
+- [city/person/v2/taxi.proto](#city_person_v2_taxi-proto)
+    - [OrderAllocationPlan](#city-person-v2-OrderAllocationPlan)
+    - [RequestOrderInfo](#city-person-v2-RequestOrderInfo)
+  
+    - [AllocationPlanType](#city-person-v2-AllocationPlanType)
+  
 - [city/person/v2/vehicle.proto](#city_person_v2_vehicle-proto)
     - [LC](#city-person-v2-LC)
     - [ObservedLane](#city-person-v2-ObservedLane)
@@ -518,6 +524,8 @@
     - [AddPersonResponse](#city-person-v2-AddPersonResponse)
     - [FetchControlledVehicleEnvsRequest](#city-person-v2-FetchControlledVehicleEnvsRequest)
     - [FetchControlledVehicleEnvsResponse](#city-person-v2-FetchControlledVehicleEnvsResponse)
+    - [GetAllUnassignedOrdersRequest](#city-person-v2-GetAllUnassignedOrdersRequest)
+    - [GetAllUnassignedOrdersResponse](#city-person-v2-GetAllUnassignedOrdersResponse)
     - [GetAllVehiclesRequest](#city-person-v2-GetAllVehiclesRequest)
     - [GetAllVehiclesResponse](#city-person-v2-GetAllVehiclesResponse)
     - [GetPersonByLongLatBBoxRequest](#city-person-v2-GetPersonByLongLatBBoxRequest)
@@ -528,6 +536,10 @@
     - [GetPersonsResponse](#city-person-v2-GetPersonsResponse)
     - [ResetPersonPositionRequest](#city-person-v2-ResetPersonPositionRequest)
     - [ResetPersonPositionResponse](#city-person-v2-ResetPersonPositionResponse)
+    - [SetControlledTaxiIDsRequest](#city-person-v2-SetControlledTaxiIDsRequest)
+    - [SetControlledTaxiIDsResponse](#city-person-v2-SetControlledTaxiIDsResponse)
+    - [SetControlledTaxiToOrdersRequest](#city-person-v2-SetControlledTaxiToOrdersRequest)
+    - [SetControlledTaxiToOrdersResponse](#city-person-v2-SetControlledTaxiToOrdersResponse)
     - [SetControlledVehicleActionsRequest](#city-person-v2-SetControlledVehicleActionsRequest)
     - [SetControlledVehicleActionsResponse](#city-person-v2-SetControlledVehicleActionsResponse)
     - [SetControlledVehicleIDsRequest](#city-person-v2-SetControlledVehicleIDsRequest)
@@ -7492,6 +7504,76 @@ vehicle type
 
 
 
+<a name="city_person_v2_taxi-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## city/person/v2/taxi.proto
+
+
+
+<a name="city-person-v2-OrderAllocationPlan"></a>
+
+### OrderAllocationPlan
+受外部控制的出租车接受的订单分配方案
+Order allocation plan accepted by taxis controlled by external
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| order_id | [int32](#int32) |  | 订单id order id |
+| taxi_id | [int32](#int32) |  | 出租车id taxi id |
+| type | [AllocationPlanType](#city-person-v2-AllocationPlanType) |  | 分配方案类型 allocation plan type |
+| pick_up_person_ids | [int32](#int32) | repeated | 待接的乘客ids，当type为ALLOCATION_PLAN_TYPE_PICK_UP时有效，和deliver_person_ids不同时有效 passenger ids to be picked up，valid when type is ALLOCATION_PLAN_TYPE_PICK_UP, not valid when deliver_person_ids is valid |
+| deliver_person_ids | [int32](#int32) | repeated | 待送的乘客ids，当type为ALLOCATION_PLAN_TYPE_DELIVER时有效，和pick_up_person_ids不同时有效 passenger ids to be delivered，valid when type is ALLOCATION_PLAN_TYPE_DELIVER, not valid when pick_up_person_ids is valid |
+
+
+
+
+
+
+<a name="city-person-v2-RequestOrderInfo"></a>
+
+### RequestOrderInfo
+乘客发出的请求订单信息
+Request order information from passengers
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| person_id | [int32](#int32) |  | 发出请求的person id person id who sends the request |
+| request_time | [double](#double) |  | 请求时间（s） request time（s） |
+| order_id | [int32](#int32) |  | 订单id order id |
+| departure | [city.geo.v2.Position](#city-geo-v2-Position) |  | 出发地 departure position |
+| destination | [city.geo.v2.Position](#city-geo-v2-Position) |  | 目的地 destination |
+
+
+
+
+
+ 
+
+
+<a name="city-person-v2-AllocationPlanType"></a>
+
+### AllocationPlanType
+分配方案类型
+Allocation plan type
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| ALLOCATION_PLAN_TYPE_UNSPECIFIED | 0 | 未指定 unspecified |
+| ALLOCATION_PLAN_TYPE_PICK_UP | 1 | 接人 pick up |
+| ALLOCATION_PLAN_TYPE_DELIVER | 2 | 送人 deliver |
+
+
+ 
+
+ 
+
+ 
+
+
+
 <a name="city_person_v2_vehicle-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -7744,6 +7826,33 @@ Response of getting information of vehicle controlled by external behavior
 
 
 
+<a name="city-person-v2-GetAllUnassignedOrdersRequest"></a>
+
+### GetAllUnassignedOrdersRequest
+获取所有待分配的订单信息请求
+Request for getting information of all unassigned orders
+
+
+
+
+
+
+<a name="city-person-v2-GetAllUnassignedOrdersResponse"></a>
+
+### GetAllUnassignedOrdersResponse
+获取所有待分配的订单信息响应
+Response of getting information of all unassigned orders
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| order_infos | [RequestOrderInfo](#city-person-v2-RequestOrderInfo) | repeated | 所有待分配的订单信息 Information of all unassigned orders |
+
+
+
+
+
+
 <a name="city-person-v2-GetAllVehiclesRequest"></a>
 
 ### GetAllVehiclesRequest
@@ -7899,6 +8008,60 @@ Response of resetting person&#39;s position
 
 
 
+<a name="city-person-v2-SetControlledTaxiIDsRequest"></a>
+
+### SetControlledTaxiIDsRequest
+设置由外部控制的taxi请求
+Request for setting taxi controlled by external behavior
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| taxi_ids | [int32](#int32) | repeated | 由外部控制的taxi id列表 List of taxi ids controlled by external behavior |
+
+
+
+
+
+
+<a name="city-person-v2-SetControlledTaxiIDsResponse"></a>
+
+### SetControlledTaxiIDsResponse
+设置由外部控制的taxi响应
+Response of setting taxi controlled by external behavior
+
+
+
+
+
+
+<a name="city-person-v2-SetControlledTaxiToOrdersRequest"></a>
+
+### SetControlledTaxiToOrdersRequest
+设置所有外部控制的出租车接指定的单请求
+Request for setting all externally controlled taxis to specified orders
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| order_plans | [OrderAllocationPlan](#city-person-v2-OrderAllocationPlan) | repeated | 所有外部控制的出租车接指定的单 All externally controlled taxis are set to specified orders |
+
+
+
+
+
+
+<a name="city-person-v2-SetControlledTaxiToOrdersResponse"></a>
+
+### SetControlledTaxiToOrdersResponse
+设置所有外部控制的出租车接指定的单响应
+Response of setting all externally controlled taxis to specified orders
+
+
+
+
+
+
 <a name="city-person-v2-SetControlledVehicleActionsRequest"></a>
 
 ### SetControlledVehicleActionsRequest
@@ -8006,6 +8169,9 @@ Response of setting person schedule
 | SetControlledVehicleIDs | [SetControlledVehicleIDsRequest](#city-person-v2-SetControlledVehicleIDsRequest) | [SetControlledVehicleIDsResponse](#city-person-v2-SetControlledVehicleIDsResponse) | 设置由外部控制行为的vehicle Set vehicle controlled by external behavior |
 | FetchControlledVehicleEnvs | [FetchControlledVehicleEnvsRequest](#city-person-v2-FetchControlledVehicleEnvsRequest) | [FetchControlledVehicleEnvsResponse](#city-person-v2-FetchControlledVehicleEnvsResponse) | 获取由外部控制行为的vehicle信息 Get information of vehicle controlled by external behavior |
 | SetControlledVehicleActions | [SetControlledVehicleActionsRequest](#city-person-v2-SetControlledVehicleActionsRequest) | [SetControlledVehicleActionsResponse](#city-person-v2-SetControlledVehicleActionsResponse) | 设置由外部控制行为的vehicle的行为 Set behavior of vehicle controlled by external behavior |
+| SetControlledTaxiIDs | [SetControlledTaxiIDsRequest](#city-person-v2-SetControlledTaxiIDsRequest) | [SetControlledTaxiIDsResponse](#city-person-v2-SetControlledTaxiIDsResponse) | 设置由外部控制的taxi Set taxi controlled by external behavior |
+| GetAllUnassignedOrders | [GetAllUnassignedOrdersRequest](#city-person-v2-GetAllUnassignedOrdersRequest) | [GetAllUnassignedOrdersResponse](#city-person-v2-GetAllUnassignedOrdersResponse) | 获取所有待分配的订单信息 Get information of all unassigned orders |
+| SetControlledTaxiToOrders | [SetControlledTaxiToOrdersRequest](#city-person-v2-SetControlledTaxiToOrdersRequest) | [SetControlledTaxiToOrdersResponse](#city-person-v2-SetControlledTaxiToOrdersResponse) | 设置所有外部控制的出租车接指定的单 Set all externally controlled taxis to specified orders |
 
  
 

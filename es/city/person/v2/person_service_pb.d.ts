@@ -11,6 +11,7 @@ import type { Schedule } from "../../trip/v2/trip_pb.js";
 import type { Status } from "./motion_pb.js";
 import type { LongLatBBox, Position } from "../../geo/v2/geo_pb.js";
 import type { VehicleAction, VehicleEnv, VehicleRouteAction, VehicleRuntime } from "./vehicle_pb.js";
+import type { OrderAllocationPlan, RequestOrderInfo } from "./taxi_pb.js";
 
 /**
  * 获取person信息请求
@@ -628,5 +629,161 @@ export declare class SetControlledVehicleActionsResponse extends Message<SetCont
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetControlledVehicleActionsResponse;
 
   static equals(a: SetControlledVehicleActionsResponse | PlainMessage<SetControlledVehicleActionsResponse> | undefined, b: SetControlledVehicleActionsResponse | PlainMessage<SetControlledVehicleActionsResponse> | undefined): boolean;
+}
+
+/**
+ * 设置由外部控制的taxi请求
+ * Request for setting taxi controlled by external behavior
+ *
+ * @generated from message city.person.v2.SetControlledTaxiIDsRequest
+ */
+export declare class SetControlledTaxiIDsRequest extends Message<SetControlledTaxiIDsRequest> {
+  /**
+   * 由外部控制的taxi id列表
+   * List of taxi ids controlled by external behavior
+   *
+   * @generated from field: repeated int32 taxi_ids = 1;
+   */
+  taxiIds: number[];
+
+  constructor(data?: PartialMessage<SetControlledTaxiIDsRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.person.v2.SetControlledTaxiIDsRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetControlledTaxiIDsRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetControlledTaxiIDsRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetControlledTaxiIDsRequest;
+
+  static equals(a: SetControlledTaxiIDsRequest | PlainMessage<SetControlledTaxiIDsRequest> | undefined, b: SetControlledTaxiIDsRequest | PlainMessage<SetControlledTaxiIDsRequest> | undefined): boolean;
+}
+
+/**
+ * 设置由外部控制的taxi响应
+ * Response of setting taxi controlled by external behavior
+ *
+ * @generated from message city.person.v2.SetControlledTaxiIDsResponse
+ */
+export declare class SetControlledTaxiIDsResponse extends Message<SetControlledTaxiIDsResponse> {
+  constructor(data?: PartialMessage<SetControlledTaxiIDsResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.person.v2.SetControlledTaxiIDsResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetControlledTaxiIDsResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetControlledTaxiIDsResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetControlledTaxiIDsResponse;
+
+  static equals(a: SetControlledTaxiIDsResponse | PlainMessage<SetControlledTaxiIDsResponse> | undefined, b: SetControlledTaxiIDsResponse | PlainMessage<SetControlledTaxiIDsResponse> | undefined): boolean;
+}
+
+/**
+ * 获取所有待分配的订单信息请求
+ * Request for getting information of all unassigned orders
+ *
+ * @generated from message city.person.v2.GetAllUnassignedOrdersRequest
+ */
+export declare class GetAllUnassignedOrdersRequest extends Message<GetAllUnassignedOrdersRequest> {
+  constructor(data?: PartialMessage<GetAllUnassignedOrdersRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.person.v2.GetAllUnassignedOrdersRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetAllUnassignedOrdersRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetAllUnassignedOrdersRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetAllUnassignedOrdersRequest;
+
+  static equals(a: GetAllUnassignedOrdersRequest | PlainMessage<GetAllUnassignedOrdersRequest> | undefined, b: GetAllUnassignedOrdersRequest | PlainMessage<GetAllUnassignedOrdersRequest> | undefined): boolean;
+}
+
+/**
+ * 获取所有待分配的订单信息响应
+ * Response of getting information of all unassigned orders
+ *
+ * @generated from message city.person.v2.GetAllUnassignedOrdersResponse
+ */
+export declare class GetAllUnassignedOrdersResponse extends Message<GetAllUnassignedOrdersResponse> {
+  /**
+   * 所有待分配的订单信息
+   * Information of all unassigned orders
+   *
+   * @generated from field: repeated city.person.v2.RequestOrderInfo order_infos = 1;
+   */
+  orderInfos: RequestOrderInfo[];
+
+  constructor(data?: PartialMessage<GetAllUnassignedOrdersResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.person.v2.GetAllUnassignedOrdersResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetAllUnassignedOrdersResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetAllUnassignedOrdersResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetAllUnassignedOrdersResponse;
+
+  static equals(a: GetAllUnassignedOrdersResponse | PlainMessage<GetAllUnassignedOrdersResponse> | undefined, b: GetAllUnassignedOrdersResponse | PlainMessage<GetAllUnassignedOrdersResponse> | undefined): boolean;
+}
+
+/**
+ * 设置所有外部控制的出租车接指定的单请求
+ * Request for setting all externally controlled taxis to specified orders
+ *
+ * @generated from message city.person.v2.SetControlledTaxiToOrdersRequest
+ */
+export declare class SetControlledTaxiToOrdersRequest extends Message<SetControlledTaxiToOrdersRequest> {
+  /**
+   * 所有外部控制的出租车接指定的单
+   * All externally controlled taxis are set to specified orders
+   *
+   * @generated from field: repeated city.person.v2.OrderAllocationPlan order_plans = 1;
+   */
+  orderPlans: OrderAllocationPlan[];
+
+  constructor(data?: PartialMessage<SetControlledTaxiToOrdersRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.person.v2.SetControlledTaxiToOrdersRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetControlledTaxiToOrdersRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetControlledTaxiToOrdersRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetControlledTaxiToOrdersRequest;
+
+  static equals(a: SetControlledTaxiToOrdersRequest | PlainMessage<SetControlledTaxiToOrdersRequest> | undefined, b: SetControlledTaxiToOrdersRequest | PlainMessage<SetControlledTaxiToOrdersRequest> | undefined): boolean;
+}
+
+/**
+ * 设置所有外部控制的出租车接指定的单响应
+ * Response of setting all externally controlled taxis to specified orders
+ *
+ * @generated from message city.person.v2.SetControlledTaxiToOrdersResponse
+ */
+export declare class SetControlledTaxiToOrdersResponse extends Message<SetControlledTaxiToOrdersResponse> {
+  constructor(data?: PartialMessage<SetControlledTaxiToOrdersResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.person.v2.SetControlledTaxiToOrdersResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetControlledTaxiToOrdersResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetControlledTaxiToOrdersResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetControlledTaxiToOrdersResponse;
+
+  static equals(a: SetControlledTaxiToOrdersResponse | PlainMessage<SetControlledTaxiToOrdersResponse> | undefined, b: SetControlledTaxiToOrdersResponse | PlainMessage<SetControlledTaxiToOrdersResponse> | undefined): boolean;
 }
 

@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AddPersonRequest, AddPersonResponse, FetchControlledVehicleEnvsRequest, FetchControlledVehicleEnvsResponse, GetAllVehiclesRequest, GetAllVehiclesResponse, GetPersonByLongLatBBoxRequest, GetPersonByLongLatBBoxResponse, GetPersonRequest, GetPersonResponse, GetPersonsRequest, GetPersonsResponse, ResetPersonPositionRequest, ResetPersonPositionResponse, SetControlledVehicleActionsRequest, SetControlledVehicleActionsResponse, SetControlledVehicleIDsRequest, SetControlledVehicleIDsResponse, SetScheduleRequest, SetScheduleResponse } from "./person_service_pb.js";
+import { AddPersonRequest, AddPersonResponse, FetchControlledVehicleEnvsRequest, FetchControlledVehicleEnvsResponse, GetAllUnassignedOrdersRequest, GetAllUnassignedOrdersResponse, GetAllVehiclesRequest, GetAllVehiclesResponse, GetPersonByLongLatBBoxRequest, GetPersonByLongLatBBoxResponse, GetPersonRequest, GetPersonResponse, GetPersonsRequest, GetPersonsResponse, ResetPersonPositionRequest, ResetPersonPositionResponse, SetControlledTaxiIDsRequest, SetControlledTaxiIDsResponse, SetControlledTaxiToOrdersRequest, SetControlledTaxiToOrdersResponse, SetControlledVehicleActionsRequest, SetControlledVehicleActionsResponse, SetControlledVehicleIDsRequest, SetControlledVehicleIDsResponse, SetScheduleRequest, SetScheduleResponse } from "./person_service_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -130,6 +130,42 @@ export const PersonService = {
       name: "SetControlledVehicleActions",
       I: SetControlledVehicleActionsRequest,
       O: SetControlledVehicleActionsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * 设置由外部控制的taxi
+     * Set taxi controlled by external behavior
+     *
+     * @generated from rpc city.person.v2.PersonService.SetControlledTaxiIDs
+     */
+    setControlledTaxiIDs: {
+      name: "SetControlledTaxiIDs",
+      I: SetControlledTaxiIDsRequest,
+      O: SetControlledTaxiIDsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * 获取所有待分配的订单信息
+     * Get information of all unassigned orders
+     *
+     * @generated from rpc city.person.v2.PersonService.GetAllUnassignedOrders
+     */
+    getAllUnassignedOrders: {
+      name: "GetAllUnassignedOrders",
+      I: GetAllUnassignedOrdersRequest,
+      O: GetAllUnassignedOrdersResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * 设置所有外部控制的出租车接指定的单
+     * Set all externally controlled taxis to specified orders
+     *
+     * @generated from rpc city.person.v2.PersonService.SetControlledTaxiToOrders
+     */
+    setControlledTaxiToOrders: {
+      name: "SetControlledTaxiToOrders",
+      I: SetControlledTaxiToOrdersRequest,
+      O: SetControlledTaxiToOrdersResponse,
       kind: MethodKind.Unary,
     },
   }
