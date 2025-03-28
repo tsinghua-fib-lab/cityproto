@@ -425,12 +425,34 @@ class OrderAllocationPlan final :
   // accessors -------------------------------------------------------
 
   enum : int {
+    kOrderIdsFieldNumber = 1,
     kPickUpPersonIdsFieldNumber = 4,
     kDeliverPersonIdsFieldNumber = 5,
-    kOrderIdFieldNumber = 1,
     kTaxiIdFieldNumber = 2,
     kTypeFieldNumber = 3,
   };
+  // repeated int32 order_ids = 1 [json_name = "orderIds"];
+  int order_ids_size() const;
+  private:
+  int _internal_order_ids_size() const;
+  public:
+  void clear_order_ids();
+  private:
+  int32_t _internal_order_ids(int index) const;
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+      _internal_order_ids() const;
+  void _internal_add_order_ids(int32_t value);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+      _internal_mutable_order_ids();
+  public:
+  int32_t order_ids(int index) const;
+  void set_order_ids(int index, int32_t value);
+  void add_order_ids(int32_t value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+      order_ids() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+      mutable_order_ids();
+
   // repeated int32 pick_up_person_ids = 4 [json_name = "pickUpPersonIds"];
   int pick_up_person_ids_size() const;
   private:
@@ -475,15 +497,6 @@ class OrderAllocationPlan final :
   ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
       mutable_deliver_person_ids();
 
-  // int32 order_id = 1 [json_name = "orderId"];
-  void clear_order_id();
-  int32_t order_id() const;
-  void set_order_id(int32_t value);
-  private:
-  int32_t _internal_order_id() const;
-  void _internal_set_order_id(int32_t value);
-  public:
-
   // int32 taxi_id = 2 [json_name = "taxiId"];
   void clear_taxi_id();
   int32_t taxi_id() const;
@@ -510,11 +523,12 @@ class OrderAllocationPlan final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t > order_ids_;
+    mutable std::atomic<int> _order_ids_cached_byte_size_;
     ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t > pick_up_person_ids_;
     mutable std::atomic<int> _pick_up_person_ids_cached_byte_size_;
     ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t > deliver_person_ids_;
     mutable std::atomic<int> _deliver_person_ids_cached_byte_size_;
-    int32_t order_id_;
     int32_t taxi_id_;
     int type_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -767,24 +781,51 @@ inline void RequestOrderInfo::set_allocated_destination(::city::geo::v2::Positio
 
 // OrderAllocationPlan
 
-// int32 order_id = 1 [json_name = "orderId"];
-inline void OrderAllocationPlan::clear_order_id() {
-  _impl_.order_id_ = 0;
+// repeated int32 order_ids = 1 [json_name = "orderIds"];
+inline int OrderAllocationPlan::_internal_order_ids_size() const {
+  return _impl_.order_ids_.size();
 }
-inline int32_t OrderAllocationPlan::_internal_order_id() const {
-  return _impl_.order_id_;
+inline int OrderAllocationPlan::order_ids_size() const {
+  return _internal_order_ids_size();
 }
-inline int32_t OrderAllocationPlan::order_id() const {
-  // @@protoc_insertion_point(field_get:city.person.v2.OrderAllocationPlan.order_id)
-  return _internal_order_id();
+inline void OrderAllocationPlan::clear_order_ids() {
+  _impl_.order_ids_.Clear();
 }
-inline void OrderAllocationPlan::_internal_set_order_id(int32_t value) {
-  
-  _impl_.order_id_ = value;
+inline int32_t OrderAllocationPlan::_internal_order_ids(int index) const {
+  return _impl_.order_ids_.Get(index);
 }
-inline void OrderAllocationPlan::set_order_id(int32_t value) {
-  _internal_set_order_id(value);
-  // @@protoc_insertion_point(field_set:city.person.v2.OrderAllocationPlan.order_id)
+inline int32_t OrderAllocationPlan::order_ids(int index) const {
+  // @@protoc_insertion_point(field_get:city.person.v2.OrderAllocationPlan.order_ids)
+  return _internal_order_ids(index);
+}
+inline void OrderAllocationPlan::set_order_ids(int index, int32_t value) {
+  _impl_.order_ids_.Set(index, value);
+  // @@protoc_insertion_point(field_set:city.person.v2.OrderAllocationPlan.order_ids)
+}
+inline void OrderAllocationPlan::_internal_add_order_ids(int32_t value) {
+  _impl_.order_ids_.Add(value);
+}
+inline void OrderAllocationPlan::add_order_ids(int32_t value) {
+  _internal_add_order_ids(value);
+  // @@protoc_insertion_point(field_add:city.person.v2.OrderAllocationPlan.order_ids)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+OrderAllocationPlan::_internal_order_ids() const {
+  return _impl_.order_ids_;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+OrderAllocationPlan::order_ids() const {
+  // @@protoc_insertion_point(field_list:city.person.v2.OrderAllocationPlan.order_ids)
+  return _internal_order_ids();
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+OrderAllocationPlan::_internal_mutable_order_ids() {
+  return &_impl_.order_ids_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+OrderAllocationPlan::mutable_order_ids() {
+  // @@protoc_insertion_point(field_mutable_list:city.person.v2.OrderAllocationPlan.order_ids)
+  return _internal_mutable_order_ids();
 }
 
 // int32 taxi_id = 2 [json_name = "taxiId"];

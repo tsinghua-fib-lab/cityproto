@@ -109,12 +109,12 @@ export declare class RequestOrderInfo extends Message<RequestOrderInfo> {
  */
 export declare class OrderAllocationPlan extends Message<OrderAllocationPlan> {
   /**
-   * 订单id
-   * order id
+   * 相关的订单id，一个订单对应一个乘客
+   * order ids related, one order corresponds to one passenger
    *
-   * @generated from field: int32 order_id = 1;
+   * @generated from field: repeated int32 order_ids = 1;
    */
-  orderId: number;
+  orderIds: number[];
 
   /**
    * 出租车id

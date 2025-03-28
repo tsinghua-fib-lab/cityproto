@@ -40,9 +40,9 @@ enum AllocationPlanType {
 // 受外部控制的出租车接受的订单分配方案
 // Order allocation plan accepted by taxis controlled by external
 message OrderAllocationPlan {
-  // 订单id
-  // order id
-  int32 order_id = 1;
+  // 相关的订单id，一个订单对应一个乘客
+  // order ids related, one order corresponds to one passenger
+  repeated int32 order_ids = 1;
   // 出租车id
   // taxi id
   int32 taxi_id = 2;

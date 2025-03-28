@@ -47,7 +47,7 @@ export const RequestOrderInfo = /*@__PURE__*/ proto3.makeMessageType(
 export const OrderAllocationPlan = /*@__PURE__*/ proto3.makeMessageType(
   "city.person.v2.OrderAllocationPlan",
   () => [
-    { no: 1, name: "order_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 1, name: "order_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
     { no: 2, name: "taxi_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 3, name: "type", kind: "enum", T: proto3.getEnumType(AllocationPlanType) },
     { no: 4, name: "pick_up_person_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },

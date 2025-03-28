@@ -171,9 +171,9 @@ func (x *RequestOrderInfo) GetDestination() *v2.Position {
 // Order allocation plan accepted by taxis controlled by external
 type OrderAllocationPlan struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
-	// 订单id
-	// order id
-	OrderId int32 `protobuf:"varint,1,opt,name=order_id,json=orderId,proto3" json:"order_id,omitempty" bson:"order_id" db:"order_id" yaml:"order_id"`
+	// 相关的订单id，一个订单对应一个乘客
+	// order ids related, one order corresponds to one passenger
+	OrderIds []int32 `protobuf:"varint,1,rep,packed,name=order_ids,json=orderIds,proto3" json:"order_ids,omitempty" bson:"order_ids" db:"order_ids" yaml:"order_ids"`
 	// 出租车id
 	// taxi id
 	TaxiId int32 `protobuf:"varint,2,opt,name=taxi_id,json=taxiId,proto3" json:"taxi_id,omitempty" bson:"taxi_id" db:"taxi_id" yaml:"taxi_id"`
@@ -220,11 +220,11 @@ func (*OrderAllocationPlan) Descriptor() ([]byte, []int) {
 	return file_city_person_v2_taxi_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *OrderAllocationPlan) GetOrderId() int32 {
+func (x *OrderAllocationPlan) GetOrderIds() []int32 {
 	if x != nil {
-		return x.OrderId
+		return x.OrderIds
 	}
-	return 0
+	return nil
 }
 
 func (x *OrderAllocationPlan) GetTaxiId() int32 {
@@ -265,9 +265,9 @@ const file_city_person_v2_taxi_proto_rawDesc = "" +
 	"\frequest_time\x18\x02 \x01(\x01R\vrequestTime\x12\x19\n" +
 	"\border_id\x18\x03 \x01(\x05R\aorderId\x123\n" +
 	"\tdeparture\x18\x04 \x01(\v2\x15.city.geo.v2.PositionR\tdeparture\x127\n" +
-	"\vdestination\x18\x05 \x01(\v2\x15.city.geo.v2.PositionR\vdestination\"\xdc\x01\n" +
-	"\x13OrderAllocationPlan\x12\x19\n" +
-	"\border_id\x18\x01 \x01(\x05R\aorderId\x12\x17\n" +
+	"\vdestination\x18\x05 \x01(\v2\x15.city.geo.v2.PositionR\vdestination\"\xde\x01\n" +
+	"\x13OrderAllocationPlan\x12\x1b\n" +
+	"\torder_ids\x18\x01 \x03(\x05R\borderIds\x12\x17\n" +
 	"\ataxi_id\x18\x02 \x01(\x05R\x06taxiId\x126\n" +
 	"\x04type\x18\x03 \x01(\x0e2\".city.person.v2.AllocationPlanTypeR\x04type\x12+\n" +
 	"\x12pick_up_person_ids\x18\x04 \x03(\x05R\x0fpickUpPersonIds\x12,\n" +

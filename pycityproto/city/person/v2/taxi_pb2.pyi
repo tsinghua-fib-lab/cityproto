@@ -32,17 +32,17 @@ class RequestOrderInfo(_message.Message):
         ...
 
 class OrderAllocationPlan(_message.Message):
-    __slots__ = ['order_id', 'taxi_id', 'type', 'pick_up_person_ids', 'deliver_person_ids']
-    ORDER_ID_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ['order_ids', 'taxi_id', 'type', 'pick_up_person_ids', 'deliver_person_ids']
+    ORDER_IDS_FIELD_NUMBER: _ClassVar[int]
     TAXI_ID_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
     PICK_UP_PERSON_IDS_FIELD_NUMBER: _ClassVar[int]
     DELIVER_PERSON_IDS_FIELD_NUMBER: _ClassVar[int]
-    order_id: int
+    order_ids: _containers.RepeatedScalarFieldContainer[int]
     taxi_id: int
     type: AllocationPlanType
     pick_up_person_ids: _containers.RepeatedScalarFieldContainer[int]
     deliver_person_ids: _containers.RepeatedScalarFieldContainer[int]
 
-    def __init__(self, order_id: _Optional[int]=..., taxi_id: _Optional[int]=..., type: _Optional[_Union[AllocationPlanType, str]]=..., pick_up_person_ids: _Optional[_Iterable[int]]=..., deliver_person_ids: _Optional[_Iterable[int]]=...) -> None:
+    def __init__(self, order_ids: _Optional[_Iterable[int]]=..., taxi_id: _Optional[int]=..., type: _Optional[_Union[AllocationPlanType, str]]=..., pick_up_person_ids: _Optional[_Iterable[int]]=..., deliver_person_ids: _Optional[_Iterable[int]]=...) -> None:
         ...

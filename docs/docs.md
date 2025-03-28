@@ -7520,7 +7520,7 @@ Order allocation plan accepted by taxis controlled by external
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| order_id | [int32](#int32) |  | 订单id order id |
+| order_ids | [int32](#int32) | repeated | 相关的订单id，一个订单对应一个乘客 order ids related, one order corresponds to one passenger |
 | taxi_id | [int32](#int32) |  | 出租车id taxi id |
 | type | [AllocationPlanType](#city-person-v2-AllocationPlanType) |  | 分配方案类型 allocation plan type |
 | pick_up_person_ids | [int32](#int32) | repeated | 待接的乘客ids，当type为ALLOCATION_PLAN_TYPE_PICK_UP时有效，和deliver_person_ids不同时有效 passenger ids to be picked up，valid when type is ALLOCATION_PLAN_TYPE_PICK_UP, not valid when deliver_person_ids is valid |

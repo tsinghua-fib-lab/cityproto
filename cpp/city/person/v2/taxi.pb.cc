@@ -42,11 +42,12 @@ struct RequestOrderInfoDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 RequestOrderInfoDefaultTypeInternal _RequestOrderInfo_default_instance_;
 PROTOBUF_CONSTEXPR OrderAllocationPlan::OrderAllocationPlan(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.pick_up_person_ids_)*/{}
+    /*decltype(_impl_.order_ids_)*/{}
+  , /*decltype(_impl_._order_ids_cached_byte_size_)*/{0}
+  , /*decltype(_impl_.pick_up_person_ids_)*/{}
   , /*decltype(_impl_._pick_up_person_ids_cached_byte_size_)*/{0}
   , /*decltype(_impl_.deliver_person_ids_)*/{}
   , /*decltype(_impl_._deliver_person_ids_cached_byte_size_)*/{0}
-  , /*decltype(_impl_.order_id_)*/0
   , /*decltype(_impl_.taxi_id_)*/0
   , /*decltype(_impl_.type_)*/0
   , /*decltype(_impl_._cached_size_)*/{}} {}
@@ -84,7 +85,7 @@ const uint32_t TableStruct_city_2fperson_2fv2_2ftaxi_2eproto::offsets[] PROTOBUF
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::city::person::v2::OrderAllocationPlan, _impl_.order_id_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v2::OrderAllocationPlan, _impl_.order_ids_),
   PROTOBUF_FIELD_OFFSET(::city::person::v2::OrderAllocationPlan, _impl_.taxi_id_),
   PROTOBUF_FIELD_OFFSET(::city::person::v2::OrderAllocationPlan, _impl_.type_),
   PROTOBUF_FIELD_OFFSET(::city::person::v2::OrderAllocationPlan, _impl_.pick_up_person_ids_),
@@ -108,27 +109,27 @@ const char descriptor_table_protodef_city_2fperson_2fv2_2ftaxi_2eproto[] PROTOBU
   "_id\030\003 \001(\005R\007orderId\0223\n\tdeparture\030\004 \001(\0132\025."
   "city.geo.v2.PositionR\tdeparture\0227\n\013desti"
   "nation\030\005 \001(\0132\025.city.geo.v2.PositionR\013des"
-  "tination\"\334\001\n\023OrderAllocationPlan\022\031\n\010orde"
-  "r_id\030\001 \001(\005R\007orderId\022\027\n\007taxi_id\030\002 \001(\005R\006ta"
-  "xiId\0226\n\004type\030\003 \001(\0162\".city.person.v2.Allo"
-  "cationPlanTypeR\004type\022+\n\022pick_up_person_i"
-  "ds\030\004 \003(\005R\017pickUpPersonIds\022,\n\022deliver_per"
-  "son_ids\030\005 \003(\005R\020deliverPersonIds*~\n\022Alloc"
-  "ationPlanType\022$\n ALLOCATION_PLAN_TYPE_UN"
-  "SPECIFIED\020\000\022 \n\034ALLOCATION_PLAN_TYPE_PICK"
-  "_UP\020\001\022 \n\034ALLOCATION_PLAN_TYPE_DELIVER\020\002B"
-  "\262\001\n\022com.city.person.v2B\tTaxiProtoP\001Z7git"
-  ".fiblab.net/sim/protos/v2/go/city/person"
-  "/v2;personv2\242\002\003CPX\252\002\016City.Person.V2\312\002\016Ci"
-  "ty\\Person\\V2\342\002\032City\\Person\\V2\\GPBMetadat"
-  "a\352\002\020City::Person::V2b\006proto3"
+  "tination\"\336\001\n\023OrderAllocationPlan\022\033\n\torde"
+  "r_ids\030\001 \003(\005R\010orderIds\022\027\n\007taxi_id\030\002 \001(\005R\006"
+  "taxiId\0226\n\004type\030\003 \001(\0162\".city.person.v2.Al"
+  "locationPlanTypeR\004type\022+\n\022pick_up_person"
+  "_ids\030\004 \003(\005R\017pickUpPersonIds\022,\n\022deliver_p"
+  "erson_ids\030\005 \003(\005R\020deliverPersonIds*~\n\022All"
+  "ocationPlanType\022$\n ALLOCATION_PLAN_TYPE_"
+  "UNSPECIFIED\020\000\022 \n\034ALLOCATION_PLAN_TYPE_PI"
+  "CK_UP\020\001\022 \n\034ALLOCATION_PLAN_TYPE_DELIVER\020"
+  "\002B\262\001\n\022com.city.person.v2B\tTaxiProtoP\001Z7g"
+  "it.fiblab.net/sim/protos/v2/go/city/pers"
+  "on/v2;personv2\242\002\003CPX\252\002\016City.Person.V2\312\002\016"
+  "City\\Person\\V2\342\002\032City\\Person\\V2\\GPBMetad"
+  "ata\352\002\020City::Person::V2b\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_city_2fperson_2fv2_2ftaxi_2eproto_deps[1] = {
   &::descriptor_table_city_2fgeo_2fv2_2fgeo_2eproto,
 };
 static ::_pbi::once_flag descriptor_table_city_2fperson_2fv2_2ftaxi_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2fperson_2fv2_2ftaxi_2eproto = {
-    false, false, 828, descriptor_table_protodef_city_2fperson_2fv2_2ftaxi_2eproto,
+    false, false, 830, descriptor_table_protodef_city_2fperson_2fv2_2ftaxi_2eproto,
     "city/person/v2/taxi.proto",
     &descriptor_table_city_2fperson_2fv2_2ftaxi_2eproto_once, descriptor_table_city_2fperson_2fv2_2ftaxi_2eproto_deps, 1, 2,
     schemas, file_default_instances, TableStruct_city_2fperson_2fv2_2ftaxi_2eproto::offsets,
@@ -517,19 +518,20 @@ OrderAllocationPlan::OrderAllocationPlan(const OrderAllocationPlan& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   OrderAllocationPlan* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.pick_up_person_ids_){from._impl_.pick_up_person_ids_}
+      decltype(_impl_.order_ids_){from._impl_.order_ids_}
+    , /*decltype(_impl_._order_ids_cached_byte_size_)*/{0}
+    , decltype(_impl_.pick_up_person_ids_){from._impl_.pick_up_person_ids_}
     , /*decltype(_impl_._pick_up_person_ids_cached_byte_size_)*/{0}
     , decltype(_impl_.deliver_person_ids_){from._impl_.deliver_person_ids_}
     , /*decltype(_impl_._deliver_person_ids_cached_byte_size_)*/{0}
-    , decltype(_impl_.order_id_){}
     , decltype(_impl_.taxi_id_){}
     , decltype(_impl_.type_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&_impl_.order_id_, &from._impl_.order_id_,
+  ::memcpy(&_impl_.taxi_id_, &from._impl_.taxi_id_,
     static_cast<size_t>(reinterpret_cast<char*>(&_impl_.type_) -
-    reinterpret_cast<char*>(&_impl_.order_id_)) + sizeof(_impl_.type_));
+    reinterpret_cast<char*>(&_impl_.taxi_id_)) + sizeof(_impl_.type_));
   // @@protoc_insertion_point(copy_constructor:city.person.v2.OrderAllocationPlan)
 }
 
@@ -538,11 +540,12 @@ inline void OrderAllocationPlan::SharedCtor(
   (void)arena;
   (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.pick_up_person_ids_){arena}
+      decltype(_impl_.order_ids_){arena}
+    , /*decltype(_impl_._order_ids_cached_byte_size_)*/{0}
+    , decltype(_impl_.pick_up_person_ids_){arena}
     , /*decltype(_impl_._pick_up_person_ids_cached_byte_size_)*/{0}
     , decltype(_impl_.deliver_person_ids_){arena}
     , /*decltype(_impl_._deliver_person_ids_cached_byte_size_)*/{0}
-    , decltype(_impl_.order_id_){0}
     , decltype(_impl_.taxi_id_){0}
     , decltype(_impl_.type_){0}
     , /*decltype(_impl_._cached_size_)*/{}
@@ -560,6 +563,7 @@ OrderAllocationPlan::~OrderAllocationPlan() {
 
 inline void OrderAllocationPlan::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.order_ids_.~RepeatedField();
   _impl_.pick_up_person_ids_.~RepeatedField();
   _impl_.deliver_person_ids_.~RepeatedField();
 }
@@ -574,11 +578,12 @@ void OrderAllocationPlan::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  _impl_.order_ids_.Clear();
   _impl_.pick_up_person_ids_.Clear();
   _impl_.deliver_person_ids_.Clear();
-  ::memset(&_impl_.order_id_, 0, static_cast<size_t>(
+  ::memset(&_impl_.taxi_id_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_impl_.type_) -
-      reinterpret_cast<char*>(&_impl_.order_id_)) + sizeof(_impl_.type_));
+      reinterpret_cast<char*>(&_impl_.taxi_id_)) + sizeof(_impl_.type_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -588,10 +593,13 @@ const char* OrderAllocationPlan::_InternalParse(const char* ptr, ::_pbi::ParseCo
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // int32 order_id = 1 [json_name = "orderId"];
+      // repeated int32 order_ids = 1 [json_name = "orderIds"];
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.order_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_order_ids(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<uint8_t>(tag) == 8) {
+          _internal_add_order_ids(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -664,10 +672,13 @@ uint8_t* OrderAllocationPlan::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // int32 order_id = 1 [json_name = "orderId"];
-  if (this->_internal_order_id() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_order_id(), target);
+  // repeated int32 order_ids = 1 [json_name = "orderIds"];
+  {
+    int byte_size = _impl_._order_ids_cached_byte_size_.load(std::memory_order_relaxed);
+    if (byte_size > 0) {
+      target = stream->WriteInt32Packed(
+          1, _internal_order_ids(), byte_size, target);
+    }
   }
 
   // int32 taxi_id = 2 [json_name = "taxiId"];
@@ -717,6 +728,20 @@ size_t OrderAllocationPlan::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  // repeated int32 order_ids = 1 [json_name = "orderIds"];
+  {
+    size_t data_size = ::_pbi::WireFormatLite::
+      Int32Size(this->_impl_.order_ids_);
+    if (data_size > 0) {
+      total_size += 1 +
+        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
+    }
+    int cached_size = ::_pbi::ToCachedSize(data_size);
+    _impl_._order_ids_cached_byte_size_.store(cached_size,
+                                    std::memory_order_relaxed);
+    total_size += data_size;
+  }
+
   // repeated int32 pick_up_person_ids = 4 [json_name = "pickUpPersonIds"];
   {
     size_t data_size = ::_pbi::WireFormatLite::
@@ -743,11 +768,6 @@ size_t OrderAllocationPlan::ByteSizeLong() const {
     _impl_._deliver_person_ids_cached_byte_size_.store(cached_size,
                                     std::memory_order_relaxed);
     total_size += data_size;
-  }
-
-  // int32 order_id = 1 [json_name = "orderId"];
-  if (this->_internal_order_id() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_order_id());
   }
 
   // int32 taxi_id = 2 [json_name = "taxiId"];
@@ -779,11 +799,9 @@ void OrderAllocationPlan::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, co
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
+  _this->_impl_.order_ids_.MergeFrom(from._impl_.order_ids_);
   _this->_impl_.pick_up_person_ids_.MergeFrom(from._impl_.pick_up_person_ids_);
   _this->_impl_.deliver_person_ids_.MergeFrom(from._impl_.deliver_person_ids_);
-  if (from._internal_order_id() != 0) {
-    _this->_internal_set_order_id(from._internal_order_id());
-  }
   if (from._internal_taxi_id() != 0) {
     _this->_internal_set_taxi_id(from._internal_taxi_id());
   }
@@ -807,14 +825,15 @@ bool OrderAllocationPlan::IsInitialized() const {
 void OrderAllocationPlan::InternalSwap(OrderAllocationPlan* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _impl_.order_ids_.InternalSwap(&other->_impl_.order_ids_);
   _impl_.pick_up_person_ids_.InternalSwap(&other->_impl_.pick_up_person_ids_);
   _impl_.deliver_person_ids_.InternalSwap(&other->_impl_.deliver_person_ids_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(OrderAllocationPlan, _impl_.type_)
       + sizeof(OrderAllocationPlan::_impl_.type_)
-      - PROTOBUF_FIELD_OFFSET(OrderAllocationPlan, _impl_.order_id_)>(
-          reinterpret_cast<char*>(&_impl_.order_id_),
-          reinterpret_cast<char*>(&other->_impl_.order_id_));
+      - PROTOBUF_FIELD_OFFSET(OrderAllocationPlan, _impl_.taxi_id_)>(
+          reinterpret_cast<char*>(&_impl_.taxi_id_),
+          reinterpret_cast<char*>(&other->_impl_.taxi_id_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata OrderAllocationPlan::GetMetadata() const {

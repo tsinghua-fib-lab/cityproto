@@ -236,29 +236,29 @@ service OrgService {
 // 企业操作相关的请求和响应消息
 
 message AddFirmRequest {
-  repeated Firm firms = 1;  // List of firms to add / 要添加的企业列表
+  repeated Firm firms = 1; // List of firms to add / 要添加的企业列表
 }
 
 message AddFirmResponse {
-  repeated int32 firm_ids = 1;  // List of created firm IDs / 创建的企业ID列表
+  repeated int32 firm_ids = 1; // List of created firm IDs / 创建的企业ID列表
 }
 
 message RemoveFirmRequest {
-  repeated int32 firm_ids = 1;  // List of firm IDs to remove / 要删除的企业ID列表
+  repeated int32 firm_ids = 1; // List of firm IDs to remove / 要删除的企业ID列表
 }
 
 message RemoveFirmResponse {}
 
 message GetFirmRequest {
-  repeated int32 firm_ids = 1;  // List of firm IDs to retrieve / 要获取的企业ID列表
+  repeated int32 firm_ids = 1; // List of firm IDs to retrieve / 要获取的企业ID列表
 }
 
 message GetFirmResponse {
-  repeated Firm firms = 1;  // List of retrieved firms / 获取的企业列表
+  repeated Firm firms = 1; // List of retrieved firms / 获取的企业列表
 }
 
 message UpdateFirmRequest {
-  repeated Firm firms = 1;  // List of firms to update / 要更新的企业列表
+  repeated Firm firms = 1; // List of firms to update / 要更新的企业列表
 }
 
 message UpdateFirmResponse {}
@@ -266,26 +266,26 @@ message UpdateFirmResponse {}
 message ListFirmsRequest {}
 
 message ListFirmsResponse {
-  repeated Firm firms = 1;  // List of all firms / 所有企业的列表
+  repeated Firm firms = 1; // List of all firms / 所有企业的列表
 }
 
 // Request for incremental updates to firms
 // 企业增量更新请求
 message DeltaUpdateFirmRequest {
-  repeated FirmDeltaUpdate updates = 1;  // List of updates to apply / 要应用的更新列表
+  repeated FirmDeltaUpdate updates = 1; // List of updates to apply / 要应用的更新列表
 }
 
 // Represents an incremental update to a firm
 // 表示对企业的增量更新
 message FirmDeltaUpdate {
-  int32 firm_id = 1;                     // ID of the firm to update / 要更新的企业ID
-  optional float delta_price = 2;        // Change in price / 价格变化
-  optional int32 delta_inventory = 3;    // Change in inventory / 库存变化
-  optional float delta_demand = 4;       // Change in demand / 需求变化
-  optional float delta_sales = 5;        // Change in sales / 销售量变化
-  optional float delta_currency = 6;     // Change in currency / 货币量变化
-  repeated int32 add_employees = 7;      // Employees to add / 要添加的员工
-  repeated int32 remove_employees = 8;   // Employees to remove / 要移除的员工
+  int32 firm_id = 1; // ID of the firm to update / 要更新的企业ID
+  optional float delta_price = 2; // Change in price / 价格变化
+  optional int32 delta_inventory = 3; // Change in inventory / 库存变化
+  optional float delta_demand = 4; // Change in demand / 需求变化
+  optional float delta_sales = 5; // Change in sales / 销售量变化
+  optional float delta_currency = 6; // Change in currency / 货币量变化
+  repeated int32 add_employees = 7; // Employees to add / 要添加的员工
+  repeated int32 remove_employees = 8; // Employees to remove / 要移除的员工
 }
 
 message DeltaUpdateFirmResponse {}
@@ -433,29 +433,29 @@ message DeltaUpdateBankResponse {}
 
 // Agent 相关消息
 message AddAgentRequest {
-  repeated Agent agents = 1;  // 支持批量添加
+  repeated Agent agents = 1; // 支持批量添加
 }
 
 message AddAgentResponse {
-  repeated int32 agent_ids = 1;  // 返回创建的代理ID列表
+  repeated int32 agent_ids = 1; // 返回创建的代理ID列表
 }
 
 message RemoveAgentRequest {
-  repeated int32 agent_ids = 1;  // 支持批量删除
+  repeated int32 agent_ids = 1; // 支持批量删除
 }
 
 message RemoveAgentResponse {}
 
 message GetAgentRequest {
-  repeated int32 agent_ids = 1;  // 支持批量获取
+  repeated int32 agent_ids = 1; // 支持批量获取
 }
 
 message GetAgentResponse {
-  repeated Agent agents = 1;  // 返回代理信息列表
+  repeated Agent agents = 1; // 返回代理信息列表
 }
 
 message UpdateAgentRequest {
-  repeated Agent agents = 1;  // 支持批量更新
+  repeated Agent agents = 1; // 支持批量更新
 }
 
 message UpdateAgentResponse {}
@@ -467,7 +467,7 @@ message ListAgentsResponse {
 }
 
 message DeltaUpdateAgentRequest {
-  repeated AgentDeltaUpdate updates = 1;  // 支持批量增量更新
+  repeated AgentDeltaUpdate updates = 1; // 支持批量增量更新
 }
 
 message AgentDeltaUpdate {
