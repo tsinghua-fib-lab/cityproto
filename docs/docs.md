@@ -506,6 +506,7 @@
     - [RequestOrderInfo](#city-person-v2-RequestOrderInfo)
   
     - [AllocationPlanType](#city-person-v2-AllocationPlanType)
+    - [OrderStatus](#city-person-v2-OrderStatus)
   
 - [city/person/v2/vehicle.proto](#city_person_v2_vehicle-proto)
     - [LC](#city-person-v2-LC)
@@ -7545,6 +7546,7 @@ Request order information from passengers
 | order_id | [int32](#int32) |  | 订单id order id |
 | departure | [city.geo.v2.Position](#city-geo-v2-Position) |  | 出发地 departure position |
 | destination | [city.geo.v2.Position](#city-geo-v2-Position) |  | 目的地 destination |
+| status | [OrderStatus](#city-person-v2-OrderStatus) |  | 状态 status |
 
 
 
@@ -7564,6 +7566,21 @@ Allocation plan type
 | ALLOCATION_PLAN_TYPE_UNSPECIFIED | 0 | 未指定 unspecified |
 | ALLOCATION_PLAN_TYPE_PICK_UP | 1 | 接人 pick up |
 | ALLOCATION_PLAN_TYPE_DELIVER | 2 | 送人 deliver |
+
+
+
+<a name="city-person-v2-OrderStatus"></a>
+
+### OrderStatus
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| ORDER_STATUS_UNSPECIFIED | 0 | 未指定 unspecified |
+| ORDER_STATUS_WAITING | 1 | 等待接单 waiting for order |
+| ORDER_STATUS_PICKING_UP | 2 | 正在接人 picking up |
+| ORDER_STATUS_DELIVERING | 3 | 正在送人 delivering |
+| ORDER_STATUS_COMPLETED | 4 | 已完成 order completed |
 
 
  

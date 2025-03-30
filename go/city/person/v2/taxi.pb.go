@@ -22,6 +22,71 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+type OrderStatus int32
+
+const (
+	// 未指定
+	// unspecified
+	OrderStatus_ORDER_STATUS_UNSPECIFIED OrderStatus = 0
+	// 等待接单
+	// waiting for order
+	OrderStatus_ORDER_STATUS_WAITING OrderStatus = 1
+	// 正在接人
+	// picking up
+	OrderStatus_ORDER_STATUS_PICKING_UP OrderStatus = 2
+	// 正在送人
+	// delivering
+	OrderStatus_ORDER_STATUS_DELIVERING OrderStatus = 3
+	// 已完成
+	// order completed
+	OrderStatus_ORDER_STATUS_COMPLETED OrderStatus = 4
+)
+
+// Enum value maps for OrderStatus.
+var (
+	OrderStatus_name = map[int32]string{
+		0: "ORDER_STATUS_UNSPECIFIED",
+		1: "ORDER_STATUS_WAITING",
+		2: "ORDER_STATUS_PICKING_UP",
+		3: "ORDER_STATUS_DELIVERING",
+		4: "ORDER_STATUS_COMPLETED",
+	}
+	OrderStatus_value = map[string]int32{
+		"ORDER_STATUS_UNSPECIFIED": 0,
+		"ORDER_STATUS_WAITING":     1,
+		"ORDER_STATUS_PICKING_UP":  2,
+		"ORDER_STATUS_DELIVERING":  3,
+		"ORDER_STATUS_COMPLETED":   4,
+	}
+)
+
+func (x OrderStatus) Enum() *OrderStatus {
+	p := new(OrderStatus)
+	*p = x
+	return p
+}
+
+func (x OrderStatus) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (OrderStatus) Descriptor() protoreflect.EnumDescriptor {
+	return file_city_person_v2_taxi_proto_enumTypes[0].Descriptor()
+}
+
+func (OrderStatus) Type() protoreflect.EnumType {
+	return &file_city_person_v2_taxi_proto_enumTypes[0]
+}
+
+func (x OrderStatus) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use OrderStatus.Descriptor instead.
+func (OrderStatus) EnumDescriptor() ([]byte, []int) {
+	return file_city_person_v2_taxi_proto_rawDescGZIP(), []int{0}
+}
+
 // 分配方案类型
 // Allocation plan type
 type AllocationPlanType int32
@@ -63,11 +128,11 @@ func (x AllocationPlanType) String() string {
 }
 
 func (AllocationPlanType) Descriptor() protoreflect.EnumDescriptor {
-	return file_city_person_v2_taxi_proto_enumTypes[0].Descriptor()
+	return file_city_person_v2_taxi_proto_enumTypes[1].Descriptor()
 }
 
 func (AllocationPlanType) Type() protoreflect.EnumType {
-	return &file_city_person_v2_taxi_proto_enumTypes[0]
+	return &file_city_person_v2_taxi_proto_enumTypes[1]
 }
 
 func (x AllocationPlanType) Number() protoreflect.EnumNumber {
@@ -76,7 +141,7 @@ func (x AllocationPlanType) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use AllocationPlanType.Descriptor instead.
 func (AllocationPlanType) EnumDescriptor() ([]byte, []int) {
-	return file_city_person_v2_taxi_proto_rawDescGZIP(), []int{0}
+	return file_city_person_v2_taxi_proto_rawDescGZIP(), []int{1}
 }
 
 // 乘客发出的请求订单信息
@@ -97,7 +162,10 @@ type RequestOrderInfo struct {
 	Departure *v2.Position `protobuf:"bytes,4,opt,name=departure,proto3" json:"departure,omitempty" bson:"departure" db:"departure" yaml:"departure"`
 	// 目的地
 	// destination
-	Destination   *v2.Position `protobuf:"bytes,5,opt,name=destination,proto3" json:"destination,omitempty" bson:"destination" db:"destination" yaml:"destination"`
+	Destination *v2.Position `protobuf:"bytes,5,opt,name=destination,proto3" json:"destination,omitempty" bson:"destination" db:"destination" yaml:"destination"`
+	// 状态
+	// status
+	Status        OrderStatus `protobuf:"varint,6,opt,name=status,proto3,enum=city.person.v2.OrderStatus" json:"status,omitempty" bson:"status" db:"status" yaml:"status"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -165,6 +233,13 @@ func (x *RequestOrderInfo) GetDestination() *v2.Position {
 		return x.Destination
 	}
 	return nil
+}
+
+func (x *RequestOrderInfo) GetStatus() OrderStatus {
+	if x != nil {
+		return x.Status
+	}
+	return OrderStatus_ORDER_STATUS_UNSPECIFIED
 }
 
 // 受外部控制的出租车接受的订单分配方案
@@ -259,19 +334,26 @@ var File_city_person_v2_taxi_proto protoreflect.FileDescriptor
 
 const file_city_person_v2_taxi_proto_rawDesc = "" +
 	"\n" +
-	"\x19city/person/v2/taxi.proto\x12\x0ecity.person.v2\x1a\x15city/geo/v2/geo.proto\"\xdb\x01\n" +
+	"\x19city/person/v2/taxi.proto\x12\x0ecity.person.v2\x1a\x15city/geo/v2/geo.proto\"\x90\x02\n" +
 	"\x10RequestOrderInfo\x12\x1b\n" +
 	"\tperson_id\x18\x01 \x01(\x05R\bpersonId\x12!\n" +
 	"\frequest_time\x18\x02 \x01(\x01R\vrequestTime\x12\x19\n" +
 	"\border_id\x18\x03 \x01(\x05R\aorderId\x123\n" +
 	"\tdeparture\x18\x04 \x01(\v2\x15.city.geo.v2.PositionR\tdeparture\x127\n" +
-	"\vdestination\x18\x05 \x01(\v2\x15.city.geo.v2.PositionR\vdestination\"\xde\x01\n" +
+	"\vdestination\x18\x05 \x01(\v2\x15.city.geo.v2.PositionR\vdestination\x123\n" +
+	"\x06status\x18\x06 \x01(\x0e2\x1b.city.person.v2.OrderStatusR\x06status\"\xde\x01\n" +
 	"\x13OrderAllocationPlan\x12\x1b\n" +
 	"\torder_ids\x18\x01 \x03(\x05R\borderIds\x12\x17\n" +
 	"\ataxi_id\x18\x02 \x01(\x05R\x06taxiId\x126\n" +
 	"\x04type\x18\x03 \x01(\x0e2\".city.person.v2.AllocationPlanTypeR\x04type\x12+\n" +
 	"\x12pick_up_person_ids\x18\x04 \x03(\x05R\x0fpickUpPersonIds\x12,\n" +
-	"\x12deliver_person_ids\x18\x05 \x03(\x05R\x10deliverPersonIds*~\n" +
+	"\x12deliver_person_ids\x18\x05 \x03(\x05R\x10deliverPersonIds*\x9b\x01\n" +
+	"\vOrderStatus\x12\x1c\n" +
+	"\x18ORDER_STATUS_UNSPECIFIED\x10\x00\x12\x18\n" +
+	"\x14ORDER_STATUS_WAITING\x10\x01\x12\x1b\n" +
+	"\x17ORDER_STATUS_PICKING_UP\x10\x02\x12\x1b\n" +
+	"\x17ORDER_STATUS_DELIVERING\x10\x03\x12\x1a\n" +
+	"\x16ORDER_STATUS_COMPLETED\x10\x04*~\n" +
 	"\x12AllocationPlanType\x12$\n" +
 	" ALLOCATION_PLAN_TYPE_UNSPECIFIED\x10\x00\x12 \n" +
 	"\x1cALLOCATION_PLAN_TYPE_PICK_UP\x10\x01\x12 \n" +
@@ -290,23 +372,25 @@ func file_city_person_v2_taxi_proto_rawDescGZIP() []byte {
 	return file_city_person_v2_taxi_proto_rawDescData
 }
 
-var file_city_person_v2_taxi_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
+var file_city_person_v2_taxi_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
 var file_city_person_v2_taxi_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_city_person_v2_taxi_proto_goTypes = []any{
-	(AllocationPlanType)(0),     // 0: city.person.v2.AllocationPlanType
-	(*RequestOrderInfo)(nil),    // 1: city.person.v2.RequestOrderInfo
-	(*OrderAllocationPlan)(nil), // 2: city.person.v2.OrderAllocationPlan
-	(*v2.Position)(nil),         // 3: city.geo.v2.Position
+	(OrderStatus)(0),            // 0: city.person.v2.OrderStatus
+	(AllocationPlanType)(0),     // 1: city.person.v2.AllocationPlanType
+	(*RequestOrderInfo)(nil),    // 2: city.person.v2.RequestOrderInfo
+	(*OrderAllocationPlan)(nil), // 3: city.person.v2.OrderAllocationPlan
+	(*v2.Position)(nil),         // 4: city.geo.v2.Position
 }
 var file_city_person_v2_taxi_proto_depIdxs = []int32{
-	3, // 0: city.person.v2.RequestOrderInfo.departure:type_name -> city.geo.v2.Position
-	3, // 1: city.person.v2.RequestOrderInfo.destination:type_name -> city.geo.v2.Position
-	0, // 2: city.person.v2.OrderAllocationPlan.type:type_name -> city.person.v2.AllocationPlanType
-	3, // [3:3] is the sub-list for method output_type
-	3, // [3:3] is the sub-list for method input_type
-	3, // [3:3] is the sub-list for extension type_name
-	3, // [3:3] is the sub-list for extension extendee
-	0, // [0:3] is the sub-list for field type_name
+	4, // 0: city.person.v2.RequestOrderInfo.departure:type_name -> city.geo.v2.Position
+	4, // 1: city.person.v2.RequestOrderInfo.destination:type_name -> city.geo.v2.Position
+	0, // 2: city.person.v2.RequestOrderInfo.status:type_name -> city.person.v2.OrderStatus
+	1, // 3: city.person.v2.OrderAllocationPlan.type:type_name -> city.person.v2.AllocationPlanType
+	4, // [4:4] is the sub-list for method output_type
+	4, // [4:4] is the sub-list for method input_type
+	4, // [4:4] is the sub-list for extension type_name
+	4, // [4:4] is the sub-list for extension extendee
+	0, // [0:4] is the sub-list for field type_name
 }
 
 func init() { file_city_person_v2_taxi_proto_init() }
@@ -319,7 +403,7 @@ func file_city_person_v2_taxi_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_city_person_v2_taxi_proto_rawDesc), len(file_city_person_v2_taxi_proto_rawDesc)),
-			NumEnums:      1,
+			NumEnums:      2,
 			NumMessages:   2,
 			NumExtensions: 0,
 			NumServices:   0,

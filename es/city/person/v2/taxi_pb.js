@@ -7,6 +7,20 @@ import { proto3 } from "@bufbuild/protobuf";
 import { Position } from "../../geo/v2/geo_pb.js";
 
 /**
+ * @generated from enum city.person.v2.OrderStatus
+ */
+export const OrderStatus = /*@__PURE__*/ proto3.makeEnum(
+  "city.person.v2.OrderStatus",
+  [
+    {no: 0, name: "ORDER_STATUS_UNSPECIFIED", localName: "UNSPECIFIED"},
+    {no: 1, name: "ORDER_STATUS_WAITING", localName: "WAITING"},
+    {no: 2, name: "ORDER_STATUS_PICKING_UP", localName: "PICKING_UP"},
+    {no: 3, name: "ORDER_STATUS_DELIVERING", localName: "DELIVERING"},
+    {no: 4, name: "ORDER_STATUS_COMPLETED", localName: "COMPLETED"},
+  ],
+);
+
+/**
  * 分配方案类型
  * Allocation plan type
  *
@@ -35,6 +49,7 @@ export const RequestOrderInfo = /*@__PURE__*/ proto3.makeMessageType(
     { no: 3, name: "order_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 4, name: "departure", kind: "message", T: Position },
     { no: 5, name: "destination", kind: "message", T: Position },
+    { no: 6, name: "status", kind: "enum", T: proto3.getEnumType(OrderStatus) },
   ],
 );
 

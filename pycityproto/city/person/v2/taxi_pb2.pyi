@@ -6,29 +6,44 @@ from google.protobuf import message as _message
 from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
+class OrderStatus(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+    __slots__ = []
+    ORDER_STATUS_UNSPECIFIED: _ClassVar[OrderStatus]
+    ORDER_STATUS_WAITING: _ClassVar[OrderStatus]
+    ORDER_STATUS_PICKING_UP: _ClassVar[OrderStatus]
+    ORDER_STATUS_DELIVERING: _ClassVar[OrderStatus]
+    ORDER_STATUS_COMPLETED: _ClassVar[OrderStatus]
+
 class AllocationPlanType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     __slots__ = []
     ALLOCATION_PLAN_TYPE_UNSPECIFIED: _ClassVar[AllocationPlanType]
     ALLOCATION_PLAN_TYPE_PICK_UP: _ClassVar[AllocationPlanType]
     ALLOCATION_PLAN_TYPE_DELIVER: _ClassVar[AllocationPlanType]
+ORDER_STATUS_UNSPECIFIED: OrderStatus
+ORDER_STATUS_WAITING: OrderStatus
+ORDER_STATUS_PICKING_UP: OrderStatus
+ORDER_STATUS_DELIVERING: OrderStatus
+ORDER_STATUS_COMPLETED: OrderStatus
 ALLOCATION_PLAN_TYPE_UNSPECIFIED: AllocationPlanType
 ALLOCATION_PLAN_TYPE_PICK_UP: AllocationPlanType
 ALLOCATION_PLAN_TYPE_DELIVER: AllocationPlanType
 
 class RequestOrderInfo(_message.Message):
-    __slots__ = ['person_id', 'request_time', 'order_id', 'departure', 'destination']
+    __slots__ = ['person_id', 'request_time', 'order_id', 'departure', 'destination', 'status']
     PERSON_ID_FIELD_NUMBER: _ClassVar[int]
     REQUEST_TIME_FIELD_NUMBER: _ClassVar[int]
     ORDER_ID_FIELD_NUMBER: _ClassVar[int]
     DEPARTURE_FIELD_NUMBER: _ClassVar[int]
     DESTINATION_FIELD_NUMBER: _ClassVar[int]
+    STATUS_FIELD_NUMBER: _ClassVar[int]
     person_id: int
     request_time: float
     order_id: int
     departure: _geo_pb2.Position
     destination: _geo_pb2.Position
+    status: OrderStatus
 
-    def __init__(self, person_id: _Optional[int]=..., request_time: _Optional[float]=..., order_id: _Optional[int]=..., departure: _Optional[_Union[_geo_pb2.Position, _Mapping]]=..., destination: _Optional[_Union[_geo_pb2.Position, _Mapping]]=...) -> None:
+    def __init__(self, person_id: _Optional[int]=..., request_time: _Optional[float]=..., order_id: _Optional[int]=..., departure: _Optional[_Union[_geo_pb2.Position, _Mapping]]=..., destination: _Optional[_Union[_geo_pb2.Position, _Mapping]]=..., status: _Optional[_Union[OrderStatus, str]]=...) -> None:
         ...
 
 class OrderAllocationPlan(_message.Message):

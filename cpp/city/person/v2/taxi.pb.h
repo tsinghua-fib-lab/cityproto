@@ -66,6 +66,34 @@ namespace city {
 namespace person {
 namespace v2 {
 
+enum OrderStatus : int {
+  ORDER_STATUS_UNSPECIFIED = 0,
+  ORDER_STATUS_WAITING = 1,
+  ORDER_STATUS_PICKING_UP = 2,
+  ORDER_STATUS_DELIVERING = 3,
+  ORDER_STATUS_COMPLETED = 4,
+  OrderStatus_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
+  OrderStatus_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
+};
+bool OrderStatus_IsValid(int value);
+constexpr OrderStatus OrderStatus_MIN = ORDER_STATUS_UNSPECIFIED;
+constexpr OrderStatus OrderStatus_MAX = ORDER_STATUS_COMPLETED;
+constexpr int OrderStatus_ARRAYSIZE = OrderStatus_MAX + 1;
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* OrderStatus_descriptor();
+template<typename T>
+inline const std::string& OrderStatus_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, OrderStatus>::value ||
+    ::std::is_integral<T>::value,
+    "Incorrect type passed to function OrderStatus_Name.");
+  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
+    OrderStatus_descriptor(), enum_t_value);
+}
+inline bool OrderStatus_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, OrderStatus* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<OrderStatus>(
+    OrderStatus_descriptor(), name, value);
+}
 enum AllocationPlanType : int {
   ALLOCATION_PLAN_TYPE_UNSPECIFIED = 0,
   ALLOCATION_PLAN_TYPE_PICK_UP = 1,
@@ -220,6 +248,7 @@ class RequestOrderInfo final :
     kRequestTimeFieldNumber = 2,
     kPersonIdFieldNumber = 1,
     kOrderIdFieldNumber = 3,
+    kStatusFieldNumber = 6,
   };
   // .city.geo.v2.Position departure = 4 [json_name = "departure"];
   bool has_departure() const;
@@ -284,6 +313,15 @@ class RequestOrderInfo final :
   void _internal_set_order_id(int32_t value);
   public:
 
+  // .city.person.v2.OrderStatus status = 6 [json_name = "status"];
+  void clear_status();
+  ::city::person::v2::OrderStatus status() const;
+  void set_status(::city::person::v2::OrderStatus value);
+  private:
+  ::city::person::v2::OrderStatus _internal_status() const;
+  void _internal_set_status(::city::person::v2::OrderStatus value);
+  public:
+
   // @@protoc_insertion_point(class_scope:city.person.v2.RequestOrderInfo)
  private:
   class _Internal;
@@ -297,6 +335,7 @@ class RequestOrderInfo final :
     double request_time_;
     int32_t person_id_;
     int32_t order_id_;
+    int status_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -777,6 +816,26 @@ inline void RequestOrderInfo::set_allocated_destination(::city::geo::v2::Positio
   // @@protoc_insertion_point(field_set_allocated:city.person.v2.RequestOrderInfo.destination)
 }
 
+// .city.person.v2.OrderStatus status = 6 [json_name = "status"];
+inline void RequestOrderInfo::clear_status() {
+  _impl_.status_ = 0;
+}
+inline ::city::person::v2::OrderStatus RequestOrderInfo::_internal_status() const {
+  return static_cast< ::city::person::v2::OrderStatus >(_impl_.status_);
+}
+inline ::city::person::v2::OrderStatus RequestOrderInfo::status() const {
+  // @@protoc_insertion_point(field_get:city.person.v2.RequestOrderInfo.status)
+  return _internal_status();
+}
+inline void RequestOrderInfo::_internal_set_status(::city::person::v2::OrderStatus value) {
+  
+  _impl_.status_ = value;
+}
+inline void RequestOrderInfo::set_status(::city::person::v2::OrderStatus value) {
+  _internal_set_status(value);
+  // @@protoc_insertion_point(field_set:city.person.v2.RequestOrderInfo.status)
+}
+
 // -------------------------------------------------------------------
 
 // OrderAllocationPlan
@@ -976,6 +1035,11 @@ OrderAllocationPlan::mutable_deliver_person_ids() {
 
 PROTOBUF_NAMESPACE_OPEN
 
+template <> struct is_proto_enum< ::city::person::v2::OrderStatus> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::city::person::v2::OrderStatus>() {
+  return ::city::person::v2::OrderStatus_descriptor();
+}
 template <> struct is_proto_enum< ::city::person::v2::AllocationPlanType> : ::std::true_type {};
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::city::person::v2::AllocationPlanType>() {

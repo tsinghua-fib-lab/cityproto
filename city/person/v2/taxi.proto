@@ -3,6 +3,24 @@ package city.person.v2;
 
 import "city/geo/v2/geo.proto";
 
+enum OrderStatus {
+  // 未指定
+  // unspecified
+  ORDER_STATUS_UNSPECIFIED = 0;
+  // 等待接单
+  // waiting for order
+  ORDER_STATUS_WAITING = 1;
+  // 正在接人
+  // picking up
+  ORDER_STATUS_PICKING_UP = 2;
+  // 正在送人
+  // delivering
+  ORDER_STATUS_DELIVERING = 3;
+  // 已完成
+  // order completed
+  ORDER_STATUS_COMPLETED = 4;
+}
+
 // 乘客发出的请求订单信息
 // Request order information from passengers
 message RequestOrderInfo {
@@ -21,6 +39,9 @@ message RequestOrderInfo {
   // 目的地
   // destination
   city.geo.v2.Position destination = 5;
+  // 状态
+  // status
+  OrderStatus status = 6;
 }
 
 // 分配方案类型

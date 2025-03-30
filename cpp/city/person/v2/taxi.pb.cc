@@ -30,6 +30,7 @@ PROTOBUF_CONSTEXPR RequestOrderInfo::RequestOrderInfo(
   , /*decltype(_impl_.request_time_)*/0
   , /*decltype(_impl_.person_id_)*/0
   , /*decltype(_impl_.order_id_)*/0
+  , /*decltype(_impl_.status_)*/0
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct RequestOrderInfoDefaultTypeInternal {
   PROTOBUF_CONSTEXPR RequestOrderInfoDefaultTypeInternal()
@@ -64,7 +65,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORIT
 }  // namespace person
 }  // namespace city
 static ::_pb::Metadata file_level_metadata_city_2fperson_2fv2_2ftaxi_2eproto[2];
-static const ::_pb::EnumDescriptor* file_level_enum_descriptors_city_2fperson_2fv2_2ftaxi_2eproto[1];
+static const ::_pb::EnumDescriptor* file_level_enum_descriptors_city_2fperson_2fv2_2ftaxi_2eproto[2];
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_city_2fperson_2fv2_2ftaxi_2eproto = nullptr;
 
 const uint32_t TableStruct_city_2fperson_2fv2_2ftaxi_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -79,6 +80,7 @@ const uint32_t TableStruct_city_2fperson_2fv2_2ftaxi_2eproto::offsets[] PROTOBUF
   PROTOBUF_FIELD_OFFSET(::city::person::v2::RequestOrderInfo, _impl_.order_id_),
   PROTOBUF_FIELD_OFFSET(::city::person::v2::RequestOrderInfo, _impl_.departure_),
   PROTOBUF_FIELD_OFFSET(::city::person::v2::RequestOrderInfo, _impl_.destination_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v2::RequestOrderInfo, _impl_.status_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::city::person::v2::OrderAllocationPlan, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -93,7 +95,7 @@ const uint32_t TableStruct_city_2fperson_2fv2_2ftaxi_2eproto::offsets[] PROTOBUF
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::city::person::v2::RequestOrderInfo)},
-  { 11, -1, -1, sizeof(::city::person::v2::OrderAllocationPlan)},
+  { 12, -1, -1, sizeof(::city::person::v2::OrderAllocationPlan)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -103,33 +105,39 @@ static const ::_pb::Message* const file_default_instances[] = {
 
 const char descriptor_table_protodef_city_2fperson_2fv2_2ftaxi_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\031city/person/v2/taxi.proto\022\016city.person"
-  ".v2\032\025city/geo/v2/geo.proto\"\333\001\n\020RequestOr"
+  ".v2\032\025city/geo/v2/geo.proto\"\220\002\n\020RequestOr"
   "derInfo\022\033\n\tperson_id\030\001 \001(\005R\010personId\022!\n\014"
   "request_time\030\002 \001(\001R\013requestTime\022\031\n\010order"
   "_id\030\003 \001(\005R\007orderId\0223\n\tdeparture\030\004 \001(\0132\025."
   "city.geo.v2.PositionR\tdeparture\0227\n\013desti"
   "nation\030\005 \001(\0132\025.city.geo.v2.PositionR\013des"
-  "tination\"\336\001\n\023OrderAllocationPlan\022\033\n\torde"
-  "r_ids\030\001 \003(\005R\010orderIds\022\027\n\007taxi_id\030\002 \001(\005R\006"
-  "taxiId\0226\n\004type\030\003 \001(\0162\".city.person.v2.Al"
-  "locationPlanTypeR\004type\022+\n\022pick_up_person"
-  "_ids\030\004 \003(\005R\017pickUpPersonIds\022,\n\022deliver_p"
-  "erson_ids\030\005 \003(\005R\020deliverPersonIds*~\n\022All"
-  "ocationPlanType\022$\n ALLOCATION_PLAN_TYPE_"
-  "UNSPECIFIED\020\000\022 \n\034ALLOCATION_PLAN_TYPE_PI"
-  "CK_UP\020\001\022 \n\034ALLOCATION_PLAN_TYPE_DELIVER\020"
-  "\002B\262\001\n\022com.city.person.v2B\tTaxiProtoP\001Z7g"
-  "it.fiblab.net/sim/protos/v2/go/city/pers"
-  "on/v2;personv2\242\002\003CPX\252\002\016City.Person.V2\312\002\016"
-  "City\\Person\\V2\342\002\032City\\Person\\V2\\GPBMetad"
-  "ata\352\002\020City::Person::V2b\006proto3"
+  "tination\0223\n\006status\030\006 \001(\0162\033.city.person.v"
+  "2.OrderStatusR\006status\"\336\001\n\023OrderAllocatio"
+  "nPlan\022\033\n\torder_ids\030\001 \003(\005R\010orderIds\022\027\n\007ta"
+  "xi_id\030\002 \001(\005R\006taxiId\0226\n\004type\030\003 \001(\0162\".city"
+  ".person.v2.AllocationPlanTypeR\004type\022+\n\022p"
+  "ick_up_person_ids\030\004 \003(\005R\017pickUpPersonIds"
+  "\022,\n\022deliver_person_ids\030\005 \003(\005R\020deliverPer"
+  "sonIds*\233\001\n\013OrderStatus\022\034\n\030ORDER_STATUS_U"
+  "NSPECIFIED\020\000\022\030\n\024ORDER_STATUS_WAITING\020\001\022\033"
+  "\n\027ORDER_STATUS_PICKING_UP\020\002\022\033\n\027ORDER_STA"
+  "TUS_DELIVERING\020\003\022\032\n\026ORDER_STATUS_COMPLET"
+  "ED\020\004*~\n\022AllocationPlanType\022$\n ALLOCATION"
+  "_PLAN_TYPE_UNSPECIFIED\020\000\022 \n\034ALLOCATION_P"
+  "LAN_TYPE_PICK_UP\020\001\022 \n\034ALLOCATION_PLAN_TY"
+  "PE_DELIVER\020\002B\262\001\n\022com.city.person.v2B\tTax"
+  "iProtoP\001Z7git.fiblab.net/sim/protos/v2/g"
+  "o/city/person/v2;personv2\242\002\003CPX\252\002\016City.P"
+  "erson.V2\312\002\016City\\Person\\V2\342\002\032City\\Person\\"
+  "V2\\GPBMetadata\352\002\020City::Person::V2b\006proto"
+  "3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_city_2fperson_2fv2_2ftaxi_2eproto_deps[1] = {
   &::descriptor_table_city_2fgeo_2fv2_2fgeo_2eproto,
 };
 static ::_pbi::once_flag descriptor_table_city_2fperson_2fv2_2ftaxi_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2fperson_2fv2_2ftaxi_2eproto = {
-    false, false, 830, descriptor_table_protodef_city_2fperson_2fv2_2ftaxi_2eproto,
+    false, false, 1041, descriptor_table_protodef_city_2fperson_2fv2_2ftaxi_2eproto,
     "city/person/v2/taxi.proto",
     &descriptor_table_city_2fperson_2fv2_2ftaxi_2eproto_once, descriptor_table_city_2fperson_2fv2_2ftaxi_2eproto_deps, 1, 2,
     schemas, file_default_instances, TableStruct_city_2fperson_2fv2_2ftaxi_2eproto::offsets,
@@ -145,9 +153,26 @@ PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_in
 namespace city {
 namespace person {
 namespace v2 {
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* AllocationPlanType_descriptor() {
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* OrderStatus_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_city_2fperson_2fv2_2ftaxi_2eproto);
   return file_level_enum_descriptors_city_2fperson_2fv2_2ftaxi_2eproto[0];
+}
+bool OrderStatus_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+    case 2:
+    case 3:
+    case 4:
+      return true;
+    default:
+      return false;
+  }
+}
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* AllocationPlanType_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_city_2fperson_2fv2_2ftaxi_2eproto);
+  return file_level_enum_descriptors_city_2fperson_2fv2_2ftaxi_2eproto[1];
 }
 bool AllocationPlanType_IsValid(int value) {
   switch (value) {
@@ -204,6 +229,7 @@ RequestOrderInfo::RequestOrderInfo(const RequestOrderInfo& from)
     , decltype(_impl_.request_time_){}
     , decltype(_impl_.person_id_){}
     , decltype(_impl_.order_id_){}
+    , decltype(_impl_.status_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
@@ -214,8 +240,8 @@ RequestOrderInfo::RequestOrderInfo(const RequestOrderInfo& from)
     _this->_impl_.destination_ = new ::city::geo::v2::Position(*from._impl_.destination_);
   }
   ::memcpy(&_impl_.request_time_, &from._impl_.request_time_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.order_id_) -
-    reinterpret_cast<char*>(&_impl_.request_time_)) + sizeof(_impl_.order_id_));
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.status_) -
+    reinterpret_cast<char*>(&_impl_.request_time_)) + sizeof(_impl_.status_));
   // @@protoc_insertion_point(copy_constructor:city.person.v2.RequestOrderInfo)
 }
 
@@ -229,6 +255,7 @@ inline void RequestOrderInfo::SharedCtor(
     , decltype(_impl_.request_time_){0}
     , decltype(_impl_.person_id_){0}
     , decltype(_impl_.order_id_){0}
+    , decltype(_impl_.status_){0}
     , /*decltype(_impl_._cached_size_)*/{}
   };
 }
@@ -267,8 +294,8 @@ void RequestOrderInfo::Clear() {
   }
   _impl_.destination_ = nullptr;
   ::memset(&_impl_.request_time_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_impl_.order_id_) -
-      reinterpret_cast<char*>(&_impl_.request_time_)) + sizeof(_impl_.order_id_));
+      reinterpret_cast<char*>(&_impl_.status_) -
+      reinterpret_cast<char*>(&_impl_.request_time_)) + sizeof(_impl_.status_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -315,6 +342,15 @@ const char* RequestOrderInfo::_InternalParse(const char* ptr, ::_pbi::ParseConte
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
           ptr = ctx->ParseMessage(_internal_mutable_destination(), ptr);
           CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .city.person.v2.OrderStatus status = 6 [json_name = "status"];
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_set_status(static_cast<::city::person::v2::OrderStatus>(val));
         } else
           goto handle_unusual;
         continue;
@@ -383,6 +419,13 @@ uint8_t* RequestOrderInfo::_InternalSerialize(
         _Internal::destination(this).GetCachedSize(), target, stream);
   }
 
+  // .city.person.v2.OrderStatus status = 6 [json_name = "status"];
+  if (this->_internal_status() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
+      6, this->_internal_status(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -432,6 +475,12 @@ size_t RequestOrderInfo::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_order_id());
   }
 
+  // .city.person.v2.OrderStatus status = 6 [json_name = "status"];
+  if (this->_internal_status() != 0) {
+    total_size += 1 +
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_status());
+  }
+
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
@@ -471,6 +520,9 @@ void RequestOrderInfo::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const
   if (from._internal_order_id() != 0) {
     _this->_internal_set_order_id(from._internal_order_id());
   }
+  if (from._internal_status() != 0) {
+    _this->_internal_set_status(from._internal_status());
+  }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -489,8 +541,8 @@ void RequestOrderInfo::InternalSwap(RequestOrderInfo* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(RequestOrderInfo, _impl_.order_id_)
-      + sizeof(RequestOrderInfo::_impl_.order_id_)
+      PROTOBUF_FIELD_OFFSET(RequestOrderInfo, _impl_.status_)
+      + sizeof(RequestOrderInfo::_impl_.status_)
       - PROTOBUF_FIELD_OFFSET(RequestOrderInfo, _impl_.departure_)>(
           reinterpret_cast<char*>(&_impl_.departure_),
           reinterpret_cast<char*>(&other->_impl_.departure_));

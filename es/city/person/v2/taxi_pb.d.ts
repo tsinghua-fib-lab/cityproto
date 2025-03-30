@@ -8,6 +8,51 @@ import { Message, proto3 } from "@bufbuild/protobuf";
 import type { Position } from "../../geo/v2/geo_pb.js";
 
 /**
+ * @generated from enum city.person.v2.OrderStatus
+ */
+export declare enum OrderStatus {
+  /**
+   * 未指定
+   * unspecified
+   *
+   * @generated from enum value: ORDER_STATUS_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * 等待接单
+   * waiting for order
+   *
+   * @generated from enum value: ORDER_STATUS_WAITING = 1;
+   */
+  WAITING = 1,
+
+  /**
+   * 正在接人
+   * picking up
+   *
+   * @generated from enum value: ORDER_STATUS_PICKING_UP = 2;
+   */
+  PICKING_UP = 2,
+
+  /**
+   * 正在送人
+   * delivering
+   *
+   * @generated from enum value: ORDER_STATUS_DELIVERING = 3;
+   */
+  DELIVERING = 3,
+
+  /**
+   * 已完成
+   * order completed
+   *
+   * @generated from enum value: ORDER_STATUS_COMPLETED = 4;
+   */
+  COMPLETED = 4,
+}
+
+/**
  * 分配方案类型
  * Allocation plan type
  *
@@ -85,6 +130,14 @@ export declare class RequestOrderInfo extends Message<RequestOrderInfo> {
    * @generated from field: city.geo.v2.Position destination = 5;
    */
   destination?: Position;
+
+  /**
+   * 状态
+   * status
+   *
+   * @generated from field: city.person.v2.OrderStatus status = 6;
+   */
+  status: OrderStatus;
 
   constructor(data?: PartialMessage<RequestOrderInfo>);
 
