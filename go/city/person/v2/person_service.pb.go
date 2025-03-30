@@ -1094,28 +1094,28 @@ func (*SetControlledTaxiIDsResponse) Descriptor() ([]byte, []int) {
 	return file_city_person_v2_person_service_proto_rawDescGZIP(), []int{21}
 }
 
-// 获取所有待分配的订单信息请求
-// Request for getting information of all unassigned orders
-type GetAllUnassignedOrdersRequest struct {
+// 获取所有订单信息请求
+// Request for getting information of all orders
+type GetAllOrdersRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *GetAllUnassignedOrdersRequest) Reset() {
-	*x = GetAllUnassignedOrdersRequest{}
+func (x *GetAllOrdersRequest) Reset() {
+	*x = GetAllOrdersRequest{}
 	mi := &file_city_person_v2_person_service_proto_msgTypes[22]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *GetAllUnassignedOrdersRequest) String() string {
+func (x *GetAllOrdersRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetAllUnassignedOrdersRequest) ProtoMessage() {}
+func (*GetAllOrdersRequest) ProtoMessage() {}
 
-func (x *GetAllUnassignedOrdersRequest) ProtoReflect() protoreflect.Message {
+func (x *GetAllOrdersRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_city_person_v2_person_service_proto_msgTypes[22]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1127,36 +1127,36 @@ func (x *GetAllUnassignedOrdersRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetAllUnassignedOrdersRequest.ProtoReflect.Descriptor instead.
-func (*GetAllUnassignedOrdersRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetAllOrdersRequest.ProtoReflect.Descriptor instead.
+func (*GetAllOrdersRequest) Descriptor() ([]byte, []int) {
 	return file_city_person_v2_person_service_proto_rawDescGZIP(), []int{22}
 }
 
-// 获取所有待分配的订单信息响应
-// Response of getting information of all unassigned orders
-type GetAllUnassignedOrdersResponse struct {
+// 获取所有订单信息响应
+// Response of getting information of all orders
+type GetAllOrdersResponse struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
-	// 所有待分配的订单信息
-	// Information of all unassigned orders
+	// 所有订单信息
+	// Information of all orders
 	OrderInfos    []*RequestOrderInfo `protobuf:"bytes,1,rep,name=order_infos,json=orderInfos,proto3" json:"order_infos,omitempty" bson:"order_infos" db:"order_infos" yaml:"order_infos"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *GetAllUnassignedOrdersResponse) Reset() {
-	*x = GetAllUnassignedOrdersResponse{}
+func (x *GetAllOrdersResponse) Reset() {
+	*x = GetAllOrdersResponse{}
 	mi := &file_city_person_v2_person_service_proto_msgTypes[23]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *GetAllUnassignedOrdersResponse) String() string {
+func (x *GetAllOrdersResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetAllUnassignedOrdersResponse) ProtoMessage() {}
+func (*GetAllOrdersResponse) ProtoMessage() {}
 
-func (x *GetAllUnassignedOrdersResponse) ProtoReflect() protoreflect.Message {
+func (x *GetAllOrdersResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_city_person_v2_person_service_proto_msgTypes[23]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1168,12 +1168,12 @@ func (x *GetAllUnassignedOrdersResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetAllUnassignedOrdersResponse.ProtoReflect.Descriptor instead.
-func (*GetAllUnassignedOrdersResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetAllOrdersResponse.ProtoReflect.Descriptor instead.
+func (*GetAllOrdersResponse) Descriptor() ([]byte, []int) {
 	return file_city_person_v2_person_service_proto_rawDescGZIP(), []int{23}
 }
 
-func (x *GetAllUnassignedOrdersResponse) GetOrderInfos() []*RequestOrderInfo {
+func (x *GetAllOrdersResponse) GetOrderInfos() []*RequestOrderInfo {
 	if x != nil {
 		return x.OrderInfos
 	}
@@ -1320,15 +1320,15 @@ const file_city_person_v2_person_service_proto_rawDesc = "" +
 	"#SetControlledVehicleActionsResponse\"8\n" +
 	"\x1bSetControlledTaxiIDsRequest\x12\x19\n" +
 	"\btaxi_ids\x18\x01 \x03(\x05R\ataxiIds\"\x1e\n" +
-	"\x1cSetControlledTaxiIDsResponse\"\x1f\n" +
-	"\x1dGetAllUnassignedOrdersRequest\"c\n" +
-	"\x1eGetAllUnassignedOrdersResponse\x12A\n" +
+	"\x1cSetControlledTaxiIDsResponse\"\x15\n" +
+	"\x13GetAllOrdersRequest\"Y\n" +
+	"\x14GetAllOrdersResponse\x12A\n" +
 	"\vorder_infos\x18\x01 \x03(\v2 .city.person.v2.RequestOrderInfoR\n" +
 	"orderInfos\"h\n" +
 	" SetControlledTaxiToOrdersRequest\x12D\n" +
 	"\vorder_plans\x18\x01 \x03(\v2#.city.person.v2.OrderAllocationPlanR\n" +
 	"orderPlans\"#\n" +
-	"!SetControlledTaxiToOrdersResponse2\xa4\v\n" +
+	"!SetControlledTaxiToOrdersResponse2\x86\v\n" +
 	"\rPersonService\x12P\n" +
 	"\tGetPerson\x12 .city.person.v2.GetPersonRequest\x1a!.city.person.v2.GetPersonResponse\x12P\n" +
 	"\tAddPerson\x12 .city.person.v2.AddPersonRequest\x1a!.city.person.v2.AddPersonResponse\x12V\n" +
@@ -1341,8 +1341,8 @@ const file_city_person_v2_person_service_proto_rawDesc = "" +
 	"\x17SetControlledVehicleIDs\x12..city.person.v2.SetControlledVehicleIDsRequest\x1a/.city.person.v2.SetControlledVehicleIDsResponse\x12\x83\x01\n" +
 	"\x1aFetchControlledVehicleEnvs\x121.city.person.v2.FetchControlledVehicleEnvsRequest\x1a2.city.person.v2.FetchControlledVehicleEnvsResponse\x12\x86\x01\n" +
 	"\x1bSetControlledVehicleActions\x122.city.person.v2.SetControlledVehicleActionsRequest\x1a3.city.person.v2.SetControlledVehicleActionsResponse\x12q\n" +
-	"\x14SetControlledTaxiIDs\x12+.city.person.v2.SetControlledTaxiIDsRequest\x1a,.city.person.v2.SetControlledTaxiIDsResponse\x12w\n" +
-	"\x16GetAllUnassignedOrders\x12-.city.person.v2.GetAllUnassignedOrdersRequest\x1a..city.person.v2.GetAllUnassignedOrdersResponse\x12\x80\x01\n" +
+	"\x14SetControlledTaxiIDs\x12+.city.person.v2.SetControlledTaxiIDsRequest\x1a,.city.person.v2.SetControlledTaxiIDsResponse\x12Y\n" +
+	"\fGetAllOrders\x12#.city.person.v2.GetAllOrdersRequest\x1a$.city.person.v2.GetAllOrdersResponse\x12\x80\x01\n" +
 	"\x19SetControlledTaxiToOrders\x120.city.person.v2.SetControlledTaxiToOrdersRequest\x1a1.city.person.v2.SetControlledTaxiToOrdersResponseB\xbb\x01\n" +
 	"\x12com.city.person.v2B\x12PersonServiceProtoP\x01Z7git.fiblab.net/sim/protos/v2/go/city/person/v2;personv2\xa2\x02\x03CPX\xaa\x02\x0eCity.Person.V2\xca\x02\x0eCity\\Person\\V2\xe2\x02\x1aCity\\Person\\V2\\GPBMetadata\xea\x02\x10City::Person::V2b\x06proto3"
 
@@ -1382,8 +1382,8 @@ var file_city_person_v2_person_service_proto_goTypes = []any{
 	(*SetControlledVehicleActionsResponse)(nil), // 19: city.person.v2.SetControlledVehicleActionsResponse
 	(*SetControlledTaxiIDsRequest)(nil),         // 20: city.person.v2.SetControlledTaxiIDsRequest
 	(*SetControlledTaxiIDsResponse)(nil),        // 21: city.person.v2.SetControlledTaxiIDsResponse
-	(*GetAllUnassignedOrdersRequest)(nil),       // 22: city.person.v2.GetAllUnassignedOrdersRequest
-	(*GetAllUnassignedOrdersResponse)(nil),      // 23: city.person.v2.GetAllUnassignedOrdersResponse
+	(*GetAllOrdersRequest)(nil),                 // 22: city.person.v2.GetAllOrdersRequest
+	(*GetAllOrdersResponse)(nil),                // 23: city.person.v2.GetAllOrdersResponse
 	(*SetControlledTaxiToOrdersRequest)(nil),    // 24: city.person.v2.SetControlledTaxiToOrdersRequest
 	(*SetControlledTaxiToOrdersResponse)(nil),   // 25: city.person.v2.SetControlledTaxiToOrdersResponse
 	(*PersonRuntime)(nil),                       // 26: city.person.v2.PersonRuntime
@@ -1414,7 +1414,7 @@ var file_city_person_v2_person_service_proto_depIdxs = []int32{
 	33, // 11: city.person.v2.FetchControlledVehicleEnvsResponse.route_vehicle_envs:type_name -> city.person.v2.VehicleEnv
 	34, // 12: city.person.v2.SetControlledVehicleActionsRequest.vehicle_actions:type_name -> city.person.v2.VehicleAction
 	35, // 13: city.person.v2.SetControlledVehicleActionsRequest.vehicle_journeys:type_name -> city.person.v2.VehicleRouteAction
-	36, // 14: city.person.v2.GetAllUnassignedOrdersResponse.order_infos:type_name -> city.person.v2.RequestOrderInfo
+	36, // 14: city.person.v2.GetAllOrdersResponse.order_infos:type_name -> city.person.v2.RequestOrderInfo
 	37, // 15: city.person.v2.SetControlledTaxiToOrdersRequest.order_plans:type_name -> city.person.v2.OrderAllocationPlan
 	0,  // 16: city.person.v2.PersonService.GetPerson:input_type -> city.person.v2.GetPersonRequest
 	2,  // 17: city.person.v2.PersonService.AddPerson:input_type -> city.person.v2.AddPersonRequest
@@ -1427,7 +1427,7 @@ var file_city_person_v2_person_service_proto_depIdxs = []int32{
 	16, // 24: city.person.v2.PersonService.FetchControlledVehicleEnvs:input_type -> city.person.v2.FetchControlledVehicleEnvsRequest
 	18, // 25: city.person.v2.PersonService.SetControlledVehicleActions:input_type -> city.person.v2.SetControlledVehicleActionsRequest
 	20, // 26: city.person.v2.PersonService.SetControlledTaxiIDs:input_type -> city.person.v2.SetControlledTaxiIDsRequest
-	22, // 27: city.person.v2.PersonService.GetAllUnassignedOrders:input_type -> city.person.v2.GetAllUnassignedOrdersRequest
+	22, // 27: city.person.v2.PersonService.GetAllOrders:input_type -> city.person.v2.GetAllOrdersRequest
 	24, // 28: city.person.v2.PersonService.SetControlledTaxiToOrders:input_type -> city.person.v2.SetControlledTaxiToOrdersRequest
 	1,  // 29: city.person.v2.PersonService.GetPerson:output_type -> city.person.v2.GetPersonResponse
 	3,  // 30: city.person.v2.PersonService.AddPerson:output_type -> city.person.v2.AddPersonResponse
@@ -1440,7 +1440,7 @@ var file_city_person_v2_person_service_proto_depIdxs = []int32{
 	17, // 37: city.person.v2.PersonService.FetchControlledVehicleEnvs:output_type -> city.person.v2.FetchControlledVehicleEnvsResponse
 	19, // 38: city.person.v2.PersonService.SetControlledVehicleActions:output_type -> city.person.v2.SetControlledVehicleActionsResponse
 	21, // 39: city.person.v2.PersonService.SetControlledTaxiIDs:output_type -> city.person.v2.SetControlledTaxiIDsResponse
-	23, // 40: city.person.v2.PersonService.GetAllUnassignedOrders:output_type -> city.person.v2.GetAllUnassignedOrdersResponse
+	23, // 40: city.person.v2.PersonService.GetAllOrders:output_type -> city.person.v2.GetAllOrdersResponse
 	25, // 41: city.person.v2.PersonService.SetControlledTaxiToOrders:output_type -> city.person.v2.SetControlledTaxiToOrdersResponse
 	29, // [29:42] is the sub-list for method output_type
 	16, // [16:29] is the sub-list for method input_type

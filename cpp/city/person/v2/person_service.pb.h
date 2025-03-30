@@ -67,12 +67,12 @@ extern FetchControlledVehicleEnvsRequestDefaultTypeInternal _FetchControlledVehi
 class FetchControlledVehicleEnvsResponse;
 struct FetchControlledVehicleEnvsResponseDefaultTypeInternal;
 extern FetchControlledVehicleEnvsResponseDefaultTypeInternal _FetchControlledVehicleEnvsResponse_default_instance_;
-class GetAllUnassignedOrdersRequest;
-struct GetAllUnassignedOrdersRequestDefaultTypeInternal;
-extern GetAllUnassignedOrdersRequestDefaultTypeInternal _GetAllUnassignedOrdersRequest_default_instance_;
-class GetAllUnassignedOrdersResponse;
-struct GetAllUnassignedOrdersResponseDefaultTypeInternal;
-extern GetAllUnassignedOrdersResponseDefaultTypeInternal _GetAllUnassignedOrdersResponse_default_instance_;
+class GetAllOrdersRequest;
+struct GetAllOrdersRequestDefaultTypeInternal;
+extern GetAllOrdersRequestDefaultTypeInternal _GetAllOrdersRequest_default_instance_;
+class GetAllOrdersResponse;
+struct GetAllOrdersResponseDefaultTypeInternal;
+extern GetAllOrdersResponseDefaultTypeInternal _GetAllOrdersResponse_default_instance_;
 class GetAllVehiclesRequest;
 struct GetAllVehiclesRequestDefaultTypeInternal;
 extern GetAllVehiclesRequestDefaultTypeInternal _GetAllVehiclesRequest_default_instance_;
@@ -141,8 +141,8 @@ template<> ::city::person::v2::AddPersonRequest* Arena::CreateMaybeMessage<::cit
 template<> ::city::person::v2::AddPersonResponse* Arena::CreateMaybeMessage<::city::person::v2::AddPersonResponse>(Arena*);
 template<> ::city::person::v2::FetchControlledVehicleEnvsRequest* Arena::CreateMaybeMessage<::city::person::v2::FetchControlledVehicleEnvsRequest>(Arena*);
 template<> ::city::person::v2::FetchControlledVehicleEnvsResponse* Arena::CreateMaybeMessage<::city::person::v2::FetchControlledVehicleEnvsResponse>(Arena*);
-template<> ::city::person::v2::GetAllUnassignedOrdersRequest* Arena::CreateMaybeMessage<::city::person::v2::GetAllUnassignedOrdersRequest>(Arena*);
-template<> ::city::person::v2::GetAllUnassignedOrdersResponse* Arena::CreateMaybeMessage<::city::person::v2::GetAllUnassignedOrdersResponse>(Arena*);
+template<> ::city::person::v2::GetAllOrdersRequest* Arena::CreateMaybeMessage<::city::person::v2::GetAllOrdersRequest>(Arena*);
+template<> ::city::person::v2::GetAllOrdersResponse* Arena::CreateMaybeMessage<::city::person::v2::GetAllOrdersResponse>(Arena*);
 template<> ::city::person::v2::GetAllVehiclesRequest* Arena::CreateMaybeMessage<::city::person::v2::GetAllVehiclesRequest>(Arena*);
 template<> ::city::person::v2::GetAllVehiclesResponse* Arena::CreateMaybeMessage<::city::person::v2::GetAllVehiclesResponse>(Arena*);
 template<> ::city::person::v2::GetPersonByLongLatBBoxRequest* Arena::CreateMaybeMessage<::city::person::v2::GetPersonByLongLatBBoxRequest>(Arena*);
@@ -3497,23 +3497,23 @@ class SetControlledTaxiIDsResponse final :
 };
 // -------------------------------------------------------------------
 
-class GetAllUnassignedOrdersRequest final :
-    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:city.person.v2.GetAllUnassignedOrdersRequest) */ {
+class GetAllOrdersRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:city.person.v2.GetAllOrdersRequest) */ {
  public:
-  inline GetAllUnassignedOrdersRequest() : GetAllUnassignedOrdersRequest(nullptr) {}
-  explicit PROTOBUF_CONSTEXPR GetAllUnassignedOrdersRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline GetAllOrdersRequest() : GetAllOrdersRequest(nullptr) {}
+  explicit PROTOBUF_CONSTEXPR GetAllOrdersRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  GetAllUnassignedOrdersRequest(const GetAllUnassignedOrdersRequest& from);
-  GetAllUnassignedOrdersRequest(GetAllUnassignedOrdersRequest&& from) noexcept
-    : GetAllUnassignedOrdersRequest() {
+  GetAllOrdersRequest(const GetAllOrdersRequest& from);
+  GetAllOrdersRequest(GetAllOrdersRequest&& from) noexcept
+    : GetAllOrdersRequest() {
     *this = ::std::move(from);
   }
 
-  inline GetAllUnassignedOrdersRequest& operator=(const GetAllUnassignedOrdersRequest& from) {
+  inline GetAllOrdersRequest& operator=(const GetAllOrdersRequest& from) {
     CopyFrom(from);
     return *this;
   }
-  inline GetAllUnassignedOrdersRequest& operator=(GetAllUnassignedOrdersRequest&& from) noexcept {
+  inline GetAllOrdersRequest& operator=(GetAllOrdersRequest&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()
   #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -3536,20 +3536,20 @@ class GetAllUnassignedOrdersRequest final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const GetAllUnassignedOrdersRequest& default_instance() {
+  static const GetAllOrdersRequest& default_instance() {
     return *internal_default_instance();
   }
-  static inline const GetAllUnassignedOrdersRequest* internal_default_instance() {
-    return reinterpret_cast<const GetAllUnassignedOrdersRequest*>(
-               &_GetAllUnassignedOrdersRequest_default_instance_);
+  static inline const GetAllOrdersRequest* internal_default_instance() {
+    return reinterpret_cast<const GetAllOrdersRequest*>(
+               &_GetAllOrdersRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     22;
 
-  friend void swap(GetAllUnassignedOrdersRequest& a, GetAllUnassignedOrdersRequest& b) {
+  friend void swap(GetAllOrdersRequest& a, GetAllOrdersRequest& b) {
     a.Swap(&b);
   }
-  inline void Swap(GetAllUnassignedOrdersRequest* other) {
+  inline void Swap(GetAllOrdersRequest* other) {
     if (other == this) return;
   #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetOwningArena() != nullptr &&
@@ -3562,7 +3562,7 @@ class GetAllUnassignedOrdersRequest final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(GetAllUnassignedOrdersRequest* other) {
+  void UnsafeArenaSwap(GetAllOrdersRequest* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -3570,15 +3570,15 @@ class GetAllUnassignedOrdersRequest final :
 
   // implements Message ----------------------------------------------
 
-  GetAllUnassignedOrdersRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<GetAllUnassignedOrdersRequest>(arena);
+  GetAllOrdersRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<GetAllOrdersRequest>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
-  inline void CopyFrom(const GetAllUnassignedOrdersRequest& from) {
+  inline void CopyFrom(const GetAllOrdersRequest& from) {
     ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(*this, from);
   }
   using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
-  void MergeFrom(const GetAllUnassignedOrdersRequest& from) {
+  void MergeFrom(const GetAllOrdersRequest& from) {
     ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(*this, from);
   }
   public:
@@ -3586,10 +3586,10 @@ class GetAllUnassignedOrdersRequest final :
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "city.person.v2.GetAllUnassignedOrdersRequest";
+    return "city.person.v2.GetAllOrdersRequest";
   }
   protected:
-  explicit GetAllUnassignedOrdersRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit GetAllOrdersRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   public:
 
@@ -3602,7 +3602,7 @@ class GetAllUnassignedOrdersRequest final :
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:city.person.v2.GetAllUnassignedOrdersRequest)
+  // @@protoc_insertion_point(class_scope:city.person.v2.GetAllOrdersRequest)
  private:
   class _Internal;
 
@@ -3615,24 +3615,24 @@ class GetAllUnassignedOrdersRequest final :
 };
 // -------------------------------------------------------------------
 
-class GetAllUnassignedOrdersResponse final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.person.v2.GetAllUnassignedOrdersResponse) */ {
+class GetAllOrdersResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.person.v2.GetAllOrdersResponse) */ {
  public:
-  inline GetAllUnassignedOrdersResponse() : GetAllUnassignedOrdersResponse(nullptr) {}
-  ~GetAllUnassignedOrdersResponse() override;
-  explicit PROTOBUF_CONSTEXPR GetAllUnassignedOrdersResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline GetAllOrdersResponse() : GetAllOrdersResponse(nullptr) {}
+  ~GetAllOrdersResponse() override;
+  explicit PROTOBUF_CONSTEXPR GetAllOrdersResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  GetAllUnassignedOrdersResponse(const GetAllUnassignedOrdersResponse& from);
-  GetAllUnassignedOrdersResponse(GetAllUnassignedOrdersResponse&& from) noexcept
-    : GetAllUnassignedOrdersResponse() {
+  GetAllOrdersResponse(const GetAllOrdersResponse& from);
+  GetAllOrdersResponse(GetAllOrdersResponse&& from) noexcept
+    : GetAllOrdersResponse() {
     *this = ::std::move(from);
   }
 
-  inline GetAllUnassignedOrdersResponse& operator=(const GetAllUnassignedOrdersResponse& from) {
+  inline GetAllOrdersResponse& operator=(const GetAllOrdersResponse& from) {
     CopyFrom(from);
     return *this;
   }
-  inline GetAllUnassignedOrdersResponse& operator=(GetAllUnassignedOrdersResponse&& from) noexcept {
+  inline GetAllOrdersResponse& operator=(GetAllOrdersResponse&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()
   #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -3655,20 +3655,20 @@ class GetAllUnassignedOrdersResponse final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const GetAllUnassignedOrdersResponse& default_instance() {
+  static const GetAllOrdersResponse& default_instance() {
     return *internal_default_instance();
   }
-  static inline const GetAllUnassignedOrdersResponse* internal_default_instance() {
-    return reinterpret_cast<const GetAllUnassignedOrdersResponse*>(
-               &_GetAllUnassignedOrdersResponse_default_instance_);
+  static inline const GetAllOrdersResponse* internal_default_instance() {
+    return reinterpret_cast<const GetAllOrdersResponse*>(
+               &_GetAllOrdersResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     23;
 
-  friend void swap(GetAllUnassignedOrdersResponse& a, GetAllUnassignedOrdersResponse& b) {
+  friend void swap(GetAllOrdersResponse& a, GetAllOrdersResponse& b) {
     a.Swap(&b);
   }
-  inline void Swap(GetAllUnassignedOrdersResponse* other) {
+  inline void Swap(GetAllOrdersResponse* other) {
     if (other == this) return;
   #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetOwningArena() != nullptr &&
@@ -3681,7 +3681,7 @@ class GetAllUnassignedOrdersResponse final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(GetAllUnassignedOrdersResponse* other) {
+  void UnsafeArenaSwap(GetAllOrdersResponse* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -3689,14 +3689,14 @@ class GetAllUnassignedOrdersResponse final :
 
   // implements Message ----------------------------------------------
 
-  GetAllUnassignedOrdersResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<GetAllUnassignedOrdersResponse>(arena);
+  GetAllOrdersResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<GetAllOrdersResponse>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const GetAllUnassignedOrdersResponse& from);
+  void CopyFrom(const GetAllOrdersResponse& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom( const GetAllUnassignedOrdersResponse& from) {
-    GetAllUnassignedOrdersResponse::MergeImpl(*this, from);
+  void MergeFrom( const GetAllOrdersResponse& from) {
+    GetAllOrdersResponse::MergeImpl(*this, from);
   }
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
@@ -3714,15 +3714,15 @@ class GetAllUnassignedOrdersResponse final :
   void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(GetAllUnassignedOrdersResponse* other);
+  void InternalSwap(GetAllOrdersResponse* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "city.person.v2.GetAllUnassignedOrdersResponse";
+    return "city.person.v2.GetAllOrdersResponse";
   }
   protected:
-  explicit GetAllUnassignedOrdersResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit GetAllOrdersResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   public:
 
@@ -3756,7 +3756,7 @@ class GetAllUnassignedOrdersResponse final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::RequestOrderInfo >&
       order_infos() const;
 
-  // @@protoc_insertion_point(class_scope:city.person.v2.GetAllUnassignedOrdersResponse)
+  // @@protoc_insertion_point(class_scope:city.person.v2.GetAllOrdersResponse)
  private:
   class _Internal;
 
@@ -5172,46 +5172,46 @@ SetControlledTaxiIDsRequest::mutable_taxi_ids() {
 
 // -------------------------------------------------------------------
 
-// GetAllUnassignedOrdersRequest
+// GetAllOrdersRequest
 
 // -------------------------------------------------------------------
 
-// GetAllUnassignedOrdersResponse
+// GetAllOrdersResponse
 
 // repeated .city.person.v2.RequestOrderInfo order_infos = 1 [json_name = "orderInfos"];
-inline int GetAllUnassignedOrdersResponse::_internal_order_infos_size() const {
+inline int GetAllOrdersResponse::_internal_order_infos_size() const {
   return _impl_.order_infos_.size();
 }
-inline int GetAllUnassignedOrdersResponse::order_infos_size() const {
+inline int GetAllOrdersResponse::order_infos_size() const {
   return _internal_order_infos_size();
 }
-inline ::city::person::v2::RequestOrderInfo* GetAllUnassignedOrdersResponse::mutable_order_infos(int index) {
-  // @@protoc_insertion_point(field_mutable:city.person.v2.GetAllUnassignedOrdersResponse.order_infos)
+inline ::city::person::v2::RequestOrderInfo* GetAllOrdersResponse::mutable_order_infos(int index) {
+  // @@protoc_insertion_point(field_mutable:city.person.v2.GetAllOrdersResponse.order_infos)
   return _impl_.order_infos_.Mutable(index);
 }
 inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::RequestOrderInfo >*
-GetAllUnassignedOrdersResponse::mutable_order_infos() {
-  // @@protoc_insertion_point(field_mutable_list:city.person.v2.GetAllUnassignedOrdersResponse.order_infos)
+GetAllOrdersResponse::mutable_order_infos() {
+  // @@protoc_insertion_point(field_mutable_list:city.person.v2.GetAllOrdersResponse.order_infos)
   return &_impl_.order_infos_;
 }
-inline const ::city::person::v2::RequestOrderInfo& GetAllUnassignedOrdersResponse::_internal_order_infos(int index) const {
+inline const ::city::person::v2::RequestOrderInfo& GetAllOrdersResponse::_internal_order_infos(int index) const {
   return _impl_.order_infos_.Get(index);
 }
-inline const ::city::person::v2::RequestOrderInfo& GetAllUnassignedOrdersResponse::order_infos(int index) const {
-  // @@protoc_insertion_point(field_get:city.person.v2.GetAllUnassignedOrdersResponse.order_infos)
+inline const ::city::person::v2::RequestOrderInfo& GetAllOrdersResponse::order_infos(int index) const {
+  // @@protoc_insertion_point(field_get:city.person.v2.GetAllOrdersResponse.order_infos)
   return _internal_order_infos(index);
 }
-inline ::city::person::v2::RequestOrderInfo* GetAllUnassignedOrdersResponse::_internal_add_order_infos() {
+inline ::city::person::v2::RequestOrderInfo* GetAllOrdersResponse::_internal_add_order_infos() {
   return _impl_.order_infos_.Add();
 }
-inline ::city::person::v2::RequestOrderInfo* GetAllUnassignedOrdersResponse::add_order_infos() {
+inline ::city::person::v2::RequestOrderInfo* GetAllOrdersResponse::add_order_infos() {
   ::city::person::v2::RequestOrderInfo* _add = _internal_add_order_infos();
-  // @@protoc_insertion_point(field_add:city.person.v2.GetAllUnassignedOrdersResponse.order_infos)
+  // @@protoc_insertion_point(field_add:city.person.v2.GetAllOrdersResponse.order_infos)
   return _add;
 }
 inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::RequestOrderInfo >&
-GetAllUnassignedOrdersResponse::order_infos() const {
-  // @@protoc_insertion_point(field_list:city.person.v2.GetAllUnassignedOrdersResponse.order_infos)
+GetAllOrdersResponse::order_infos() const {
+  // @@protoc_insertion_point(field_list:city.person.v2.GetAllOrdersResponse.order_infos)
   return _impl_.order_infos_;
 }
 

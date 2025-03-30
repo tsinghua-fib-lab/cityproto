@@ -525,8 +525,8 @@
     - [AddPersonResponse](#city-person-v2-AddPersonResponse)
     - [FetchControlledVehicleEnvsRequest](#city-person-v2-FetchControlledVehicleEnvsRequest)
     - [FetchControlledVehicleEnvsResponse](#city-person-v2-FetchControlledVehicleEnvsResponse)
-    - [GetAllUnassignedOrdersRequest](#city-person-v2-GetAllUnassignedOrdersRequest)
-    - [GetAllUnassignedOrdersResponse](#city-person-v2-GetAllUnassignedOrdersResponse)
+    - [GetAllOrdersRequest](#city-person-v2-GetAllOrdersRequest)
+    - [GetAllOrdersResponse](#city-person-v2-GetAllOrdersResponse)
     - [GetAllVehiclesRequest](#city-person-v2-GetAllVehiclesRequest)
     - [GetAllVehiclesResponse](#city-person-v2-GetAllVehiclesResponse)
     - [GetPersonByLongLatBBoxRequest](#city-person-v2-GetPersonByLongLatBBoxRequest)
@@ -7843,27 +7843,27 @@ Response of getting information of vehicle controlled by external behavior
 
 
 
-<a name="city-person-v2-GetAllUnassignedOrdersRequest"></a>
+<a name="city-person-v2-GetAllOrdersRequest"></a>
 
-### GetAllUnassignedOrdersRequest
-获取所有待分配的订单信息请求
-Request for getting information of all unassigned orders
-
-
+### GetAllOrdersRequest
+获取所有订单信息请求
+Request for getting information of all orders
 
 
 
 
-<a name="city-person-v2-GetAllUnassignedOrdersResponse"></a>
 
-### GetAllUnassignedOrdersResponse
-获取所有待分配的订单信息响应
-Response of getting information of all unassigned orders
+
+<a name="city-person-v2-GetAllOrdersResponse"></a>
+
+### GetAllOrdersResponse
+获取所有订单信息响应
+Response of getting information of all orders
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| order_infos | [RequestOrderInfo](#city-person-v2-RequestOrderInfo) | repeated | 所有待分配的订单信息 Information of all unassigned orders |
+| order_infos | [RequestOrderInfo](#city-person-v2-RequestOrderInfo) | repeated | 所有订单信息 Information of all orders |
 
 
 
@@ -8187,7 +8187,7 @@ Response of setting person schedule
 | FetchControlledVehicleEnvs | [FetchControlledVehicleEnvsRequest](#city-person-v2-FetchControlledVehicleEnvsRequest) | [FetchControlledVehicleEnvsResponse](#city-person-v2-FetchControlledVehicleEnvsResponse) | 获取由外部控制行为的vehicle信息 Get information of vehicle controlled by external behavior |
 | SetControlledVehicleActions | [SetControlledVehicleActionsRequest](#city-person-v2-SetControlledVehicleActionsRequest) | [SetControlledVehicleActionsResponse](#city-person-v2-SetControlledVehicleActionsResponse) | 设置由外部控制行为的vehicle的行为 Set behavior of vehicle controlled by external behavior |
 | SetControlledTaxiIDs | [SetControlledTaxiIDsRequest](#city-person-v2-SetControlledTaxiIDsRequest) | [SetControlledTaxiIDsResponse](#city-person-v2-SetControlledTaxiIDsResponse) | 设置由外部控制的taxi Set taxi controlled by external behavior |
-| GetAllUnassignedOrders | [GetAllUnassignedOrdersRequest](#city-person-v2-GetAllUnassignedOrdersRequest) | [GetAllUnassignedOrdersResponse](#city-person-v2-GetAllUnassignedOrdersResponse) | 获取所有待分配的订单信息 Get information of all unassigned orders |
+| GetAllOrders | [GetAllOrdersRequest](#city-person-v2-GetAllOrdersRequest) | [GetAllOrdersResponse](#city-person-v2-GetAllOrdersResponse) | 获取所有订单信息 Get information of all orders |
 | SetControlledTaxiToOrders | [SetControlledTaxiToOrdersRequest](#city-person-v2-SetControlledTaxiToOrdersRequest) | [SetControlledTaxiToOrdersResponse](#city-person-v2-SetControlledTaxiToOrdersResponse) | 设置所有外部控制的出租车接指定的单 Set all externally controlled taxis to specified orders |
 
  

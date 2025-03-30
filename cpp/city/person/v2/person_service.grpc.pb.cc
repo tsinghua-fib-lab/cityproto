@@ -35,7 +35,7 @@ static const char* PersonService_method_names[] = {
   "/city.person.v2.PersonService/FetchControlledVehicleEnvs",
   "/city.person.v2.PersonService/SetControlledVehicleActions",
   "/city.person.v2.PersonService/SetControlledTaxiIDs",
-  "/city.person.v2.PersonService/GetAllUnassignedOrders",
+  "/city.person.v2.PersonService/GetAllOrders",
   "/city.person.v2.PersonService/SetControlledTaxiToOrders",
 };
 
@@ -57,7 +57,7 @@ PersonService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& chan
   , rpcmethod_FetchControlledVehicleEnvs_(PersonService_method_names[8], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_SetControlledVehicleActions_(PersonService_method_names[9], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_SetControlledTaxiIDs_(PersonService_method_names[10], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetAllUnassignedOrders_(PersonService_method_names[11], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetAllOrders_(PersonService_method_names[11], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_SetControlledTaxiToOrders_(PersonService_method_names[12], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
@@ -314,25 +314,25 @@ void PersonService::Stub::async::SetControlledTaxiIDs(::grpc::ClientContext* con
   return result;
 }
 
-::grpc::Status PersonService::Stub::GetAllUnassignedOrders(::grpc::ClientContext* context, const ::city::person::v2::GetAllUnassignedOrdersRequest& request, ::city::person::v2::GetAllUnassignedOrdersResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::city::person::v2::GetAllUnassignedOrdersRequest, ::city::person::v2::GetAllUnassignedOrdersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetAllUnassignedOrders_, context, request, response);
+::grpc::Status PersonService::Stub::GetAllOrders(::grpc::ClientContext* context, const ::city::person::v2::GetAllOrdersRequest& request, ::city::person::v2::GetAllOrdersResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::city::person::v2::GetAllOrdersRequest, ::city::person::v2::GetAllOrdersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetAllOrders_, context, request, response);
 }
 
-void PersonService::Stub::async::GetAllUnassignedOrders(::grpc::ClientContext* context, const ::city::person::v2::GetAllUnassignedOrdersRequest* request, ::city::person::v2::GetAllUnassignedOrdersResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::city::person::v2::GetAllUnassignedOrdersRequest, ::city::person::v2::GetAllUnassignedOrdersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetAllUnassignedOrders_, context, request, response, std::move(f));
+void PersonService::Stub::async::GetAllOrders(::grpc::ClientContext* context, const ::city::person::v2::GetAllOrdersRequest* request, ::city::person::v2::GetAllOrdersResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::city::person::v2::GetAllOrdersRequest, ::city::person::v2::GetAllOrdersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetAllOrders_, context, request, response, std::move(f));
 }
 
-void PersonService::Stub::async::GetAllUnassignedOrders(::grpc::ClientContext* context, const ::city::person::v2::GetAllUnassignedOrdersRequest* request, ::city::person::v2::GetAllUnassignedOrdersResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetAllUnassignedOrders_, context, request, response, reactor);
+void PersonService::Stub::async::GetAllOrders(::grpc::ClientContext* context, const ::city::person::v2::GetAllOrdersRequest* request, ::city::person::v2::GetAllOrdersResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetAllOrders_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::city::person::v2::GetAllUnassignedOrdersResponse>* PersonService::Stub::PrepareAsyncGetAllUnassignedOrdersRaw(::grpc::ClientContext* context, const ::city::person::v2::GetAllUnassignedOrdersRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::person::v2::GetAllUnassignedOrdersResponse, ::city::person::v2::GetAllUnassignedOrdersRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetAllUnassignedOrders_, context, request);
+::grpc::ClientAsyncResponseReader< ::city::person::v2::GetAllOrdersResponse>* PersonService::Stub::PrepareAsyncGetAllOrdersRaw(::grpc::ClientContext* context, const ::city::person::v2::GetAllOrdersRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::person::v2::GetAllOrdersResponse, ::city::person::v2::GetAllOrdersRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetAllOrders_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::city::person::v2::GetAllUnassignedOrdersResponse>* PersonService::Stub::AsyncGetAllUnassignedOrdersRaw(::grpc::ClientContext* context, const ::city::person::v2::GetAllUnassignedOrdersRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::city::person::v2::GetAllOrdersResponse>* PersonService::Stub::AsyncGetAllOrdersRaw(::grpc::ClientContext* context, const ::city::person::v2::GetAllOrdersRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
-    this->PrepareAsyncGetAllUnassignedOrdersRaw(context, request, cq);
+    this->PrepareAsyncGetAllOrdersRaw(context, request, cq);
   result->StartCall();
   return result;
 }
@@ -474,12 +474,12 @@ PersonService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       PersonService_method_names[11],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< PersonService::Service, ::city::person::v2::GetAllUnassignedOrdersRequest, ::city::person::v2::GetAllUnassignedOrdersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler< PersonService::Service, ::city::person::v2::GetAllOrdersRequest, ::city::person::v2::GetAllOrdersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](PersonService::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::city::person::v2::GetAllUnassignedOrdersRequest* req,
-             ::city::person::v2::GetAllUnassignedOrdersResponse* resp) {
-               return service->GetAllUnassignedOrders(ctx, req, resp);
+             const ::city::person::v2::GetAllOrdersRequest* req,
+             ::city::person::v2::GetAllOrdersResponse* resp) {
+               return service->GetAllOrders(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       PersonService_method_names[12],
@@ -573,7 +573,7 @@ PersonService::Service::~Service() {
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status PersonService::Service::GetAllUnassignedOrders(::grpc::ServerContext* context, const ::city::person::v2::GetAllUnassignedOrdersRequest* request, ::city::person::v2::GetAllUnassignedOrdersResponse* response) {
+::grpc::Status PersonService::Service::GetAllOrders(::grpc::ServerContext* context, const ::city::person::v2::GetAllOrdersRequest* request, ::city::person::v2::GetAllOrdersResponse* response) {
   (void) context;
   (void) request;
   (void) response;

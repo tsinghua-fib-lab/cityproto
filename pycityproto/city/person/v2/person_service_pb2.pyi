@@ -191,13 +191,13 @@ class SetControlledTaxiIDsResponse(_message.Message):
     def __init__(self) -> None:
         ...
 
-class GetAllUnassignedOrdersRequest(_message.Message):
+class GetAllOrdersRequest(_message.Message):
     __slots__ = []
 
     def __init__(self) -> None:
         ...
 
-class GetAllUnassignedOrdersResponse(_message.Message):
+class GetAllOrdersResponse(_message.Message):
     __slots__ = ['order_infos']
     ORDER_INFOS_FIELD_NUMBER: _ClassVar[int]
     order_infos: _containers.RepeatedCompositeFieldContainer[_taxi_pb2.RequestOrderInfo]

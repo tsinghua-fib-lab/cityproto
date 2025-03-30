@@ -310,30 +310,30 @@ struct SetControlledTaxiIDsResponseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SetControlledTaxiIDsResponseDefaultTypeInternal _SetControlledTaxiIDsResponse_default_instance_;
-PROTOBUF_CONSTEXPR GetAllUnassignedOrdersRequest::GetAllUnassignedOrdersRequest(
+PROTOBUF_CONSTEXPR GetAllOrdersRequest::GetAllOrdersRequest(
     ::_pbi::ConstantInitialized) {}
-struct GetAllUnassignedOrdersRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR GetAllUnassignedOrdersRequestDefaultTypeInternal()
+struct GetAllOrdersRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR GetAllOrdersRequestDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
-  ~GetAllUnassignedOrdersRequestDefaultTypeInternal() {}
+  ~GetAllOrdersRequestDefaultTypeInternal() {}
   union {
-    GetAllUnassignedOrdersRequest _instance;
+    GetAllOrdersRequest _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetAllUnassignedOrdersRequestDefaultTypeInternal _GetAllUnassignedOrdersRequest_default_instance_;
-PROTOBUF_CONSTEXPR GetAllUnassignedOrdersResponse::GetAllUnassignedOrdersResponse(
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetAllOrdersRequestDefaultTypeInternal _GetAllOrdersRequest_default_instance_;
+PROTOBUF_CONSTEXPR GetAllOrdersResponse::GetAllOrdersResponse(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.order_infos_)*/{}
   , /*decltype(_impl_._cached_size_)*/{}} {}
-struct GetAllUnassignedOrdersResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR GetAllUnassignedOrdersResponseDefaultTypeInternal()
+struct GetAllOrdersResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR GetAllOrdersResponseDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
-  ~GetAllUnassignedOrdersResponseDefaultTypeInternal() {}
+  ~GetAllOrdersResponseDefaultTypeInternal() {}
   union {
-    GetAllUnassignedOrdersResponse _instance;
+    GetAllOrdersResponse _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetAllUnassignedOrdersResponseDefaultTypeInternal _GetAllUnassignedOrdersResponse_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetAllOrdersResponseDefaultTypeInternal _GetAllOrdersResponse_default_instance_;
 PROTOBUF_CONSTEXPR SetControlledTaxiToOrdersRequest::SetControlledTaxiToOrdersRequest(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.order_plans_)*/{}
@@ -523,18 +523,18 @@ const uint32_t TableStruct_city_2fperson_2fv2_2fperson_5fservice_2eproto::offset
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::city::person::v2::GetAllUnassignedOrdersRequest, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v2::GetAllOrdersRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::city::person::v2::GetAllUnassignedOrdersResponse, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v2::GetAllOrdersResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::city::person::v2::GetAllUnassignedOrdersResponse, _impl_.order_infos_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v2::GetAllOrdersResponse, _impl_.order_infos_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::city::person::v2::SetControlledTaxiToOrdersRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -572,8 +572,8 @@ static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protode
   { 137, -1, -1, sizeof(::city::person::v2::SetControlledVehicleActionsResponse)},
   { 143, -1, -1, sizeof(::city::person::v2::SetControlledTaxiIDsRequest)},
   { 150, -1, -1, sizeof(::city::person::v2::SetControlledTaxiIDsResponse)},
-  { 156, -1, -1, sizeof(::city::person::v2::GetAllUnassignedOrdersRequest)},
-  { 162, -1, -1, sizeof(::city::person::v2::GetAllUnassignedOrdersResponse)},
+  { 156, -1, -1, sizeof(::city::person::v2::GetAllOrdersRequest)},
+  { 162, -1, -1, sizeof(::city::person::v2::GetAllOrdersResponse)},
   { 169, -1, -1, sizeof(::city::person::v2::SetControlledTaxiToOrdersRequest)},
   { 176, -1, -1, sizeof(::city::person::v2::SetControlledTaxiToOrdersResponse)},
 };
@@ -601,8 +601,8 @@ static const ::_pb::Message* const file_default_instances[] = {
   &::city::person::v2::_SetControlledVehicleActionsResponse_default_instance_._instance,
   &::city::person::v2::_SetControlledTaxiIDsRequest_default_instance_._instance,
   &::city::person::v2::_SetControlledTaxiIDsResponse_default_instance_._instance,
-  &::city::person::v2::_GetAllUnassignedOrdersRequest_default_instance_._instance,
-  &::city::person::v2::_GetAllUnassignedOrdersResponse_default_instance_._instance,
+  &::city::person::v2::_GetAllOrdersRequest_default_instance_._instance,
+  &::city::person::v2::_GetAllOrdersResponse_default_instance_._instance,
   &::city::person::v2::_SetControlledTaxiToOrdersRequest_default_instance_._instance,
   &::city::person::v2::_SetControlledTaxiToOrdersResponse_default_instance_._instance,
 };
@@ -659,55 +659,54 @@ const char descriptor_table_protodef_city_2fperson_2fv2_2fperson_5fservice_2epro
   "Journeys\"%\n#SetControlledVehicleActionsR"
   "esponse\"8\n\033SetControlledTaxiIDsRequest\022\031"
   "\n\010taxi_ids\030\001 \003(\005R\007taxiIds\"\036\n\034SetControll"
-  "edTaxiIDsResponse\"\037\n\035GetAllUnassignedOrd"
-  "ersRequest\"c\n\036GetAllUnassignedOrdersResp"
-  "onse\022A\n\013order_infos\030\001 \003(\0132 .city.person."
-  "v2.RequestOrderInfoR\norderInfos\"h\n SetCo"
-  "ntrolledTaxiToOrdersRequest\022D\n\013order_pla"
-  "ns\030\001 \003(\0132#.city.person.v2.OrderAllocatio"
-  "nPlanR\norderPlans\"#\n!SetControlledTaxiTo"
-  "OrdersResponse2\244\013\n\rPersonService\022P\n\tGetP"
-  "erson\022 .city.person.v2.GetPersonRequest\032"
-  "!.city.person.v2.GetPersonResponse\022P\n\tAd"
-  "dPerson\022 .city.person.v2.AddPersonReques"
-  "t\032!.city.person.v2.AddPersonResponse\022V\n\013"
-  "SetSchedule\022\".city.person.v2.SetSchedule"
-  "Request\032#.city.person.v2.SetScheduleResp"
-  "onse\022S\n\nGetPersons\022!.city.person.v2.GetP"
-  "ersonsRequest\032\".city.person.v2.GetPerson"
-  "sResponse\022w\n\026GetPersonByLongLatBBox\022-.ci"
-  "ty.person.v2.GetPersonByLongLatBBoxReque"
-  "st\032..city.person.v2.GetPersonByLongLatBB"
-  "oxResponse\022_\n\016GetAllVehicles\022%.city.pers"
-  "on.v2.GetAllVehiclesRequest\032&.city.perso"
-  "n.v2.GetAllVehiclesResponse\022n\n\023ResetPers"
-  "onPosition\022*.city.person.v2.ResetPersonP"
-  "ositionRequest\032+.city.person.v2.ResetPer"
-  "sonPositionResponse\022z\n\027SetControlledVehi"
-  "cleIDs\022..city.person.v2.SetControlledVeh"
-  "icleIDsRequest\032/.city.person.v2.SetContr"
-  "olledVehicleIDsResponse\022\203\001\n\032FetchControl"
-  "ledVehicleEnvs\0221.city.person.v2.FetchCon"
-  "trolledVehicleEnvsRequest\0322.city.person."
-  "v2.FetchControlledVehicleEnvsResponse\022\206\001"
-  "\n\033SetControlledVehicleActions\0222.city.per"
-  "son.v2.SetControlledVehicleActionsReques"
-  "t\0323.city.person.v2.SetControlledVehicleA"
-  "ctionsResponse\022q\n\024SetControlledTaxiIDs\022+"
-  ".city.person.v2.SetControlledTaxiIDsRequ"
-  "est\032,.city.person.v2.SetControlledTaxiID"
-  "sResponse\022w\n\026GetAllUnassignedOrders\022-.ci"
-  "ty.person.v2.GetAllUnassignedOrdersReque"
-  "st\032..city.person.v2.GetAllUnassignedOrde"
-  "rsResponse\022\200\001\n\031SetControlledTaxiToOrders"
-  "\0220.city.person.v2.SetControlledTaxiToOrd"
-  "ersRequest\0321.city.person.v2.SetControlle"
-  "dTaxiToOrdersResponseB\273\001\n\022com.city.perso"
-  "n.v2B\022PersonServiceProtoP\001Z7git.fiblab.n"
-  "et/sim/protos/v2/go/city/person/v2;perso"
-  "nv2\242\002\003CPX\252\002\016City.Person.V2\312\002\016City\\Person"
-  "\\V2\342\002\032City\\Person\\V2\\GPBMetadata\352\002\020City:"
-  ":Person::V2b\006proto3"
+  "edTaxiIDsResponse\"\025\n\023GetAllOrdersRequest"
+  "\"Y\n\024GetAllOrdersResponse\022A\n\013order_infos\030"
+  "\001 \003(\0132 .city.person.v2.RequestOrderInfoR"
+  "\norderInfos\"h\n SetControlledTaxiToOrders"
+  "Request\022D\n\013order_plans\030\001 \003(\0132#.city.pers"
+  "on.v2.OrderAllocationPlanR\norderPlans\"#\n"
+  "!SetControlledTaxiToOrdersResponse2\206\013\n\rP"
+  "ersonService\022P\n\tGetPerson\022 .city.person."
+  "v2.GetPersonRequest\032!.city.person.v2.Get"
+  "PersonResponse\022P\n\tAddPerson\022 .city.perso"
+  "n.v2.AddPersonRequest\032!.city.person.v2.A"
+  "ddPersonResponse\022V\n\013SetSchedule\022\".city.p"
+  "erson.v2.SetScheduleRequest\032#.city.perso"
+  "n.v2.SetScheduleResponse\022S\n\nGetPersons\022!"
+  ".city.person.v2.GetPersonsRequest\032\".city"
+  ".person.v2.GetPersonsResponse\022w\n\026GetPers"
+  "onByLongLatBBox\022-.city.person.v2.GetPers"
+  "onByLongLatBBoxRequest\032..city.person.v2."
+  "GetPersonByLongLatBBoxResponse\022_\n\016GetAll"
+  "Vehicles\022%.city.person.v2.GetAllVehicles"
+  "Request\032&.city.person.v2.GetAllVehiclesR"
+  "esponse\022n\n\023ResetPersonPosition\022*.city.pe"
+  "rson.v2.ResetPersonPositionRequest\032+.cit"
+  "y.person.v2.ResetPersonPositionResponse\022"
+  "z\n\027SetControlledVehicleIDs\022..city.person"
+  ".v2.SetControlledVehicleIDsRequest\032/.cit"
+  "y.person.v2.SetControlledVehicleIDsRespo"
+  "nse\022\203\001\n\032FetchControlledVehicleEnvs\0221.cit"
+  "y.person.v2.FetchControlledVehicleEnvsRe"
+  "quest\0322.city.person.v2.FetchControlledVe"
+  "hicleEnvsResponse\022\206\001\n\033SetControlledVehic"
+  "leActions\0222.city.person.v2.SetControlled"
+  "VehicleActionsRequest\0323.city.person.v2.S"
+  "etControlledVehicleActionsResponse\022q\n\024Se"
+  "tControlledTaxiIDs\022+.city.person.v2.SetC"
+  "ontrolledTaxiIDsRequest\032,.city.person.v2"
+  ".SetControlledTaxiIDsResponse\022Y\n\014GetAllO"
+  "rders\022#.city.person.v2.GetAllOrdersReque"
+  "st\032$.city.person.v2.GetAllOrdersResponse"
+  "\022\200\001\n\031SetControlledTaxiToOrders\0220.city.pe"
+  "rson.v2.SetControlledTaxiToOrdersRequest"
+  "\0321.city.person.v2.SetControlledTaxiToOrd"
+  "ersResponseB\273\001\n\022com.city.person.v2B\022Pers"
+  "onServiceProtoP\001Z7git.fiblab.net/sim/pro"
+  "tos/v2/go/city/person/v2;personv2\242\002\003CPX\252"
+  "\002\016City.Person.V2\312\002\016City\\Person\\V2\342\002\032City"
+  "\\Person\\V2\\GPBMetadata\352\002\020City::Person::V"
+  "2b\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_deps[7] = {
   &::descriptor_table_city_2fgeo_2fv2_2fgeo_2eproto,
@@ -720,7 +719,7 @@ static const ::_pbi::DescriptorTable* const descriptor_table_city_2fperson_2fv2_
 };
 static ::_pbi::once_flag descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto = {
-    false, false, 3979, descriptor_table_protodef_city_2fperson_2fv2_2fperson_5fservice_2eproto,
+    false, false, 3929, descriptor_table_protodef_city_2fperson_2fv2_2fperson_5fservice_2eproto,
     "city/person/v2/person_service.proto",
     &descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_once, descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_deps, 7, 26,
     schemas, file_default_instances, TableStruct_city_2fperson_2fv2_2fperson_5fservice_2eproto::offsets,
@@ -4202,31 +4201,31 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SetControlledTaxiIDsResponse::
 
 // ===================================================================
 
-class GetAllUnassignedOrdersRequest::_Internal {
+class GetAllOrdersRequest::_Internal {
  public:
 };
 
-GetAllUnassignedOrdersRequest::GetAllUnassignedOrdersRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+GetAllOrdersRequest::GetAllOrdersRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
-  // @@protoc_insertion_point(arena_constructor:city.person.v2.GetAllUnassignedOrdersRequest)
+  // @@protoc_insertion_point(arena_constructor:city.person.v2.GetAllOrdersRequest)
 }
-GetAllUnassignedOrdersRequest::GetAllUnassignedOrdersRequest(const GetAllUnassignedOrdersRequest& from)
+GetAllOrdersRequest::GetAllOrdersRequest(const GetAllOrdersRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
-  GetAllUnassignedOrdersRequest* const _this = this; (void)_this;
+  GetAllOrdersRequest* const _this = this; (void)_this;
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:city.person.v2.GetAllUnassignedOrdersRequest)
+  // @@protoc_insertion_point(copy_constructor:city.person.v2.GetAllOrdersRequest)
 }
 
 
 
 
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetAllUnassignedOrdersRequest::_class_data_ = {
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetAllOrdersRequest::_class_data_ = {
     ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
     ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
 };
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetAllUnassignedOrdersRequest::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetAllOrdersRequest::GetClassData() const { return &_class_data_; }
 
 
 
@@ -4234,7 +4233,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetAllUnassignedOrdersRequest:
 
 
 
-::PROTOBUF_NAMESPACE_ID::Metadata GetAllUnassignedOrdersRequest::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata GetAllOrdersRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_getter, &descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_once,
       file_level_metadata_city_2fperson_2fv2_2fperson_5fservice_2eproto[22]);
@@ -4242,31 +4241,31 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetAllUnassignedOrdersRequest:
 
 // ===================================================================
 
-class GetAllUnassignedOrdersResponse::_Internal {
+class GetAllOrdersResponse::_Internal {
  public:
 };
 
-void GetAllUnassignedOrdersResponse::clear_order_infos() {
+void GetAllOrdersResponse::clear_order_infos() {
   _impl_.order_infos_.Clear();
 }
-GetAllUnassignedOrdersResponse::GetAllUnassignedOrdersResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+GetAllOrdersResponse::GetAllOrdersResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:city.person.v2.GetAllUnassignedOrdersResponse)
+  // @@protoc_insertion_point(arena_constructor:city.person.v2.GetAllOrdersResponse)
 }
-GetAllUnassignedOrdersResponse::GetAllUnassignedOrdersResponse(const GetAllUnassignedOrdersResponse& from)
+GetAllOrdersResponse::GetAllOrdersResponse(const GetAllOrdersResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  GetAllUnassignedOrdersResponse* const _this = this; (void)_this;
+  GetAllOrdersResponse* const _this = this; (void)_this;
   new (&_impl_) Impl_{
       decltype(_impl_.order_infos_){from._impl_.order_infos_}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:city.person.v2.GetAllUnassignedOrdersResponse)
+  // @@protoc_insertion_point(copy_constructor:city.person.v2.GetAllOrdersResponse)
 }
 
-inline void GetAllUnassignedOrdersResponse::SharedCtor(
+inline void GetAllOrdersResponse::SharedCtor(
     ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
   (void)is_message_owned;
@@ -4276,8 +4275,8 @@ inline void GetAllUnassignedOrdersResponse::SharedCtor(
   };
 }
 
-GetAllUnassignedOrdersResponse::~GetAllUnassignedOrdersResponse() {
-  // @@protoc_insertion_point(destructor:city.person.v2.GetAllUnassignedOrdersResponse)
+GetAllOrdersResponse::~GetAllOrdersResponse() {
+  // @@protoc_insertion_point(destructor:city.person.v2.GetAllOrdersResponse)
   if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
   (void)arena;
     return;
@@ -4285,17 +4284,17 @@ GetAllUnassignedOrdersResponse::~GetAllUnassignedOrdersResponse() {
   SharedDtor();
 }
 
-inline void GetAllUnassignedOrdersResponse::SharedDtor() {
+inline void GetAllOrdersResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.order_infos_.~RepeatedPtrField();
 }
 
-void GetAllUnassignedOrdersResponse::SetCachedSize(int size) const {
+void GetAllOrdersResponse::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-void GetAllUnassignedOrdersResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:city.person.v2.GetAllUnassignedOrdersResponse)
+void GetAllOrdersResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:city.person.v2.GetAllOrdersResponse)
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -4304,7 +4303,7 @@ void GetAllUnassignedOrdersResponse::Clear() {
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* GetAllUnassignedOrdersResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* GetAllOrdersResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
@@ -4346,9 +4345,9 @@ failure:
 #undef CHK_
 }
 
-uint8_t* GetAllUnassignedOrdersResponse::_InternalSerialize(
+uint8_t* GetAllOrdersResponse::_InternalSerialize(
     uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:city.person.v2.GetAllUnassignedOrdersResponse)
+  // @@protoc_insertion_point(serialize_to_array_start:city.person.v2.GetAllOrdersResponse)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -4364,12 +4363,12 @@ uint8_t* GetAllUnassignedOrdersResponse::_InternalSerialize(
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:city.person.v2.GetAllUnassignedOrdersResponse)
+  // @@protoc_insertion_point(serialize_to_array_end:city.person.v2.GetAllOrdersResponse)
   return target;
 }
 
-size_t GetAllUnassignedOrdersResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:city.person.v2.GetAllUnassignedOrdersResponse)
+size_t GetAllOrdersResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:city.person.v2.GetAllOrdersResponse)
   size_t total_size = 0;
 
   uint32_t cached_has_bits = 0;
@@ -4386,17 +4385,17 @@ size_t GetAllUnassignedOrdersResponse::ByteSizeLong() const {
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetAllUnassignedOrdersResponse::_class_data_ = {
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetAllOrdersResponse::_class_data_ = {
     ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    GetAllUnassignedOrdersResponse::MergeImpl
+    GetAllOrdersResponse::MergeImpl
 };
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetAllUnassignedOrdersResponse::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetAllOrdersResponse::GetClassData() const { return &_class_data_; }
 
 
-void GetAllUnassignedOrdersResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<GetAllUnassignedOrdersResponse*>(&to_msg);
-  auto& from = static_cast<const GetAllUnassignedOrdersResponse&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:city.person.v2.GetAllUnassignedOrdersResponse)
+void GetAllOrdersResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<GetAllOrdersResponse*>(&to_msg);
+  auto& from = static_cast<const GetAllOrdersResponse&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:city.person.v2.GetAllOrdersResponse)
   GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
@@ -4405,24 +4404,24 @@ void GetAllUnassignedOrdersResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message&
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
-void GetAllUnassignedOrdersResponse::CopyFrom(const GetAllUnassignedOrdersResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:city.person.v2.GetAllUnassignedOrdersResponse)
+void GetAllOrdersResponse::CopyFrom(const GetAllOrdersResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:city.person.v2.GetAllOrdersResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool GetAllUnassignedOrdersResponse::IsInitialized() const {
+bool GetAllOrdersResponse::IsInitialized() const {
   return true;
 }
 
-void GetAllUnassignedOrdersResponse::InternalSwap(GetAllUnassignedOrdersResponse* other) {
+void GetAllOrdersResponse::InternalSwap(GetAllOrdersResponse* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   _impl_.order_infos_.InternalSwap(&other->_impl_.order_infos_);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata GetAllUnassignedOrdersResponse::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata GetAllOrdersResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_getter, &descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_once,
       file_level_metadata_city_2fperson_2fv2_2fperson_5fservice_2eproto[23]);
@@ -4749,13 +4748,13 @@ template<> PROTOBUF_NOINLINE ::city::person::v2::SetControlledTaxiIDsResponse*
 Arena::CreateMaybeMessage< ::city::person::v2::SetControlledTaxiIDsResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::city::person::v2::SetControlledTaxiIDsResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::city::person::v2::GetAllUnassignedOrdersRequest*
-Arena::CreateMaybeMessage< ::city::person::v2::GetAllUnassignedOrdersRequest >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::city::person::v2::GetAllUnassignedOrdersRequest >(arena);
+template<> PROTOBUF_NOINLINE ::city::person::v2::GetAllOrdersRequest*
+Arena::CreateMaybeMessage< ::city::person::v2::GetAllOrdersRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::person::v2::GetAllOrdersRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::city::person::v2::GetAllUnassignedOrdersResponse*
-Arena::CreateMaybeMessage< ::city::person::v2::GetAllUnassignedOrdersResponse >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::city::person::v2::GetAllUnassignedOrdersResponse >(arena);
+template<> PROTOBUF_NOINLINE ::city::person::v2::GetAllOrdersResponse*
+Arena::CreateMaybeMessage< ::city::person::v2::GetAllOrdersResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::person::v2::GetAllOrdersResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::city::person::v2::SetControlledTaxiToOrdersRequest*
 Arena::CreateMaybeMessage< ::city::person::v2::SetControlledTaxiToOrdersRequest >(Arena* arena) {

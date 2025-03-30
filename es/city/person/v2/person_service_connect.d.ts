@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AddPersonRequest, AddPersonResponse, FetchControlledVehicleEnvsRequest, FetchControlledVehicleEnvsResponse, GetAllUnassignedOrdersRequest, GetAllUnassignedOrdersResponse, GetAllVehiclesRequest, GetAllVehiclesResponse, GetPersonByLongLatBBoxRequest, GetPersonByLongLatBBoxResponse, GetPersonRequest, GetPersonResponse, GetPersonsRequest, GetPersonsResponse, ResetPersonPositionRequest, ResetPersonPositionResponse, SetControlledTaxiIDsRequest, SetControlledTaxiIDsResponse, SetControlledTaxiToOrdersRequest, SetControlledTaxiToOrdersResponse, SetControlledVehicleActionsRequest, SetControlledVehicleActionsResponse, SetControlledVehicleIDsRequest, SetControlledVehicleIDsResponse, SetScheduleRequest, SetScheduleResponse } from "./person_service_pb.js";
+import { AddPersonRequest, AddPersonResponse, FetchControlledVehicleEnvsRequest, FetchControlledVehicleEnvsResponse, GetAllOrdersRequest, GetAllOrdersResponse, GetAllVehiclesRequest, GetAllVehiclesResponse, GetPersonByLongLatBBoxRequest, GetPersonByLongLatBBoxResponse, GetPersonRequest, GetPersonResponse, GetPersonsRequest, GetPersonsResponse, ResetPersonPositionRequest, ResetPersonPositionResponse, SetControlledTaxiIDsRequest, SetControlledTaxiIDsResponse, SetControlledTaxiToOrdersRequest, SetControlledTaxiToOrdersResponse, SetControlledVehicleActionsRequest, SetControlledVehicleActionsResponse, SetControlledVehicleIDsRequest, SetControlledVehicleIDsResponse, SetScheduleRequest, SetScheduleResponse } from "./person_service_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -145,15 +145,15 @@ export declare const PersonService: {
       readonly kind: MethodKind.Unary,
     },
     /**
-     * 获取所有待分配的订单信息
-     * Get information of all unassigned orders
+     * 获取所有订单信息
+     * Get information of all orders
      *
-     * @generated from rpc city.person.v2.PersonService.GetAllUnassignedOrders
+     * @generated from rpc city.person.v2.PersonService.GetAllOrders
      */
-    readonly getAllUnassignedOrders: {
-      readonly name: "GetAllUnassignedOrders",
-      readonly I: typeof GetAllUnassignedOrdersRequest,
-      readonly O: typeof GetAllUnassignedOrdersResponse,
+    readonly getAllOrders: {
+      readonly name: "GetAllOrders",
+      readonly I: typeof GetAllOrdersRequest,
+      readonly O: typeof GetAllOrdersResponse,
       readonly kind: MethodKind.Unary,
     },
     /**

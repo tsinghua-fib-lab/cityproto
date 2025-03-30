@@ -49,9 +49,9 @@ service PersonService {
   // 设置由外部控制的taxi
   // Set taxi controlled by external behavior
   rpc SetControlledTaxiIDs(SetControlledTaxiIDsRequest) returns (SetControlledTaxiIDsResponse);
-  // 获取所有待分配的订单信息
-  // Get information of all unassigned orders
-  rpc GetAllUnassignedOrders(GetAllUnassignedOrdersRequest) returns (GetAllUnassignedOrdersResponse);
+  // 获取所有订单信息
+  // Get information of all orders
+  rpc GetAllOrders(GetAllOrdersRequest) returns (GetAllOrdersResponse);
   // 设置所有外部控制的出租车接指定的单
   // Set all externally controlled taxis to specified orders
   rpc SetControlledTaxiToOrders(SetControlledTaxiToOrdersRequest) returns (SetControlledTaxiToOrdersResponse);
@@ -227,15 +227,15 @@ message SetControlledTaxiIDsRequest {
 // Response of setting taxi controlled by external behavior
 message SetControlledTaxiIDsResponse {}
 
-// 获取所有待分配的订单信息请求
-// Request for getting information of all unassigned orders
-message GetAllUnassignedOrdersRequest {}
+// 获取所有订单信息请求
+// Request for getting information of all orders
+message GetAllOrdersRequest {}
 
-// 获取所有待分配的订单信息响应
-// Response of getting information of all unassigned orders
-message GetAllUnassignedOrdersResponse {
-  // 所有待分配的订单信息
-  // Information of all unassigned orders
+// 获取所有订单信息响应
+// Response of getting information of all orders
+message GetAllOrdersResponse {
+  // 所有订单信息
+  // Information of all orders
   repeated RequestOrderInfo order_infos = 1;
 }
 

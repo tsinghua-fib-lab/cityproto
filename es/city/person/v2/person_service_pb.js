@@ -294,24 +294,24 @@ export const SetControlledTaxiIDsResponse = /*@__PURE__*/ proto3.makeMessageType
 );
 
 /**
- * 获取所有待分配的订单信息请求
- * Request for getting information of all unassigned orders
+ * 获取所有订单信息请求
+ * Request for getting information of all orders
  *
- * @generated from message city.person.v2.GetAllUnassignedOrdersRequest
+ * @generated from message city.person.v2.GetAllOrdersRequest
  */
-export const GetAllUnassignedOrdersRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "city.person.v2.GetAllUnassignedOrdersRequest",
+export const GetAllOrdersRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.person.v2.GetAllOrdersRequest",
   [],
 );
 
 /**
- * 获取所有待分配的订单信息响应
- * Response of getting information of all unassigned orders
+ * 获取所有订单信息响应
+ * Response of getting information of all orders
  *
- * @generated from message city.person.v2.GetAllUnassignedOrdersResponse
+ * @generated from message city.person.v2.GetAllOrdersResponse
  */
-export const GetAllUnassignedOrdersResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "city.person.v2.GetAllUnassignedOrdersResponse",
+export const GetAllOrdersResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.person.v2.GetAllOrdersResponse",
   () => [
     { no: 1, name: "order_infos", kind: "message", T: RequestOrderInfo, repeated: true },
   ],

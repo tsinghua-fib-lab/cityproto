@@ -684,55 +684,55 @@ export declare class SetControlledTaxiIDsResponse extends Message<SetControlledT
 }
 
 /**
- * 获取所有待分配的订单信息请求
- * Request for getting information of all unassigned orders
+ * 获取所有订单信息请求
+ * Request for getting information of all orders
  *
- * @generated from message city.person.v2.GetAllUnassignedOrdersRequest
+ * @generated from message city.person.v2.GetAllOrdersRequest
  */
-export declare class GetAllUnassignedOrdersRequest extends Message<GetAllUnassignedOrdersRequest> {
-  constructor(data?: PartialMessage<GetAllUnassignedOrdersRequest>);
+export declare class GetAllOrdersRequest extends Message<GetAllOrdersRequest> {
+  constructor(data?: PartialMessage<GetAllOrdersRequest>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "city.person.v2.GetAllUnassignedOrdersRequest";
+  static readonly typeName = "city.person.v2.GetAllOrdersRequest";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetAllUnassignedOrdersRequest;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetAllOrdersRequest;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetAllUnassignedOrdersRequest;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetAllOrdersRequest;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetAllUnassignedOrdersRequest;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetAllOrdersRequest;
 
-  static equals(a: GetAllUnassignedOrdersRequest | PlainMessage<GetAllUnassignedOrdersRequest> | undefined, b: GetAllUnassignedOrdersRequest | PlainMessage<GetAllUnassignedOrdersRequest> | undefined): boolean;
+  static equals(a: GetAllOrdersRequest | PlainMessage<GetAllOrdersRequest> | undefined, b: GetAllOrdersRequest | PlainMessage<GetAllOrdersRequest> | undefined): boolean;
 }
 
 /**
- * 获取所有待分配的订单信息响应
- * Response of getting information of all unassigned orders
+ * 获取所有订单信息响应
+ * Response of getting information of all orders
  *
- * @generated from message city.person.v2.GetAllUnassignedOrdersResponse
+ * @generated from message city.person.v2.GetAllOrdersResponse
  */
-export declare class GetAllUnassignedOrdersResponse extends Message<GetAllUnassignedOrdersResponse> {
+export declare class GetAllOrdersResponse extends Message<GetAllOrdersResponse> {
   /**
-   * 所有待分配的订单信息
-   * Information of all unassigned orders
+   * 所有订单信息
+   * Information of all orders
    *
    * @generated from field: repeated city.person.v2.RequestOrderInfo order_infos = 1;
    */
   orderInfos: RequestOrderInfo[];
 
-  constructor(data?: PartialMessage<GetAllUnassignedOrdersResponse>);
+  constructor(data?: PartialMessage<GetAllOrdersResponse>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "city.person.v2.GetAllUnassignedOrdersResponse";
+  static readonly typeName = "city.person.v2.GetAllOrdersResponse";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetAllUnassignedOrdersResponse;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetAllOrdersResponse;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetAllUnassignedOrdersResponse;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetAllOrdersResponse;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetAllUnassignedOrdersResponse;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetAllOrdersResponse;
 
-  static equals(a: GetAllUnassignedOrdersResponse | PlainMessage<GetAllUnassignedOrdersResponse> | undefined, b: GetAllUnassignedOrdersResponse | PlainMessage<GetAllUnassignedOrdersResponse> | undefined): boolean;
+  static equals(a: GetAllOrdersResponse | PlainMessage<GetAllOrdersResponse> | undefined, b: GetAllOrdersResponse | PlainMessage<GetAllOrdersResponse> | undefined): boolean;
 }
 
 /**
