@@ -26,5 +26,5 @@ message VehicleCarbon {
 message EmissionStatistics {
   // 累计能量消耗（单位:MJ）
   // Cumulative energy consumption（unit:MJ）
-  float u = 1;
+  double u = 1;
 }

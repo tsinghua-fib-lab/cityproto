@@ -92,7 +92,7 @@ export declare class EmissionStatistics extends Message<EmissionStatistics> {
    * 累计能量消耗（单位:MJ）
    * Cumulative energy consumption（unit:MJ）
    *
-   * @generated from field: float u = 1;
+   * @generated from field: double u = 1;
    */
   u: number;
 

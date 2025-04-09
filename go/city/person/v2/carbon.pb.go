@@ -135,7 +135,7 @@ type EmissionStatistics struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// 累计能量消耗（单位:MJ）
 	// Cumulative energy consumption（unit:MJ）
-	U             float32 `protobuf:"fixed32,1,opt,name=u,proto3" json:"u,omitempty" bson:"u" db:"u" yaml:"u"`
+	U             float64 `protobuf:"fixed64,1,opt,name=u,proto3" json:"u,omitempty" bson:"u" db:"u" yaml:"u"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -170,7 +170,7 @@ func (*EmissionStatistics) Descriptor() ([]byte, []int) {
 	return file_city_person_v2_carbon_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *EmissionStatistics) GetU() float32 {
+func (x *EmissionStatistics) GetU() float64 {
 	if x != nil {
 		return x.U
 	}
@@ -192,7 +192,7 @@ const file_city_person_v2_carbon_proto_rawDesc = "" +
 	"\x06u_aero\x18\a \x01(\x01R\x05uAero\x12\x0f\n" +
 	"\x03c_d\x18\b \x01(\x01R\x02cD\"\"\n" +
 	"\x12EmissionStatistics\x12\f\n" +
-	"\x01u\x18\x01 \x01(\x02R\x01uB\xb4\x01\n" +
+	"\x01u\x18\x01 \x01(\x01R\x01uB\xb4\x01\n" +
 	"\x12com.city.person.v2B\vCarbonProtoP\x01Z7git.fiblab.net/sim/protos/v2/go/city/person/v2;personv2\xa2\x02\x03CPX\xaa\x02\x0eCity.Person.V2\xca\x02\x0eCity\\Person\\V2\xe2\x02\x1aCity\\Person\\V2\\GPBMetadata\xea\x02\x10City::Person::V2b\x06proto3"
 
 var (

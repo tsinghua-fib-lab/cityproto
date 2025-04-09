@@ -7134,7 +7134,7 @@ Response of setting person schedule
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| u | [float](#float) |  | 累计能量消耗（单位:MJ） Cumulative energy consumption（unit:MJ） |
+| u | [double](#double) |  | 累计能量消耗（单位:MJ） Cumulative energy consumption（unit:MJ） |
 
 
 

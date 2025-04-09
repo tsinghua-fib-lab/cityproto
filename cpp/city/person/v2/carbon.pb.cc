@@ -102,7 +102,7 @@ const char descriptor_table_protodef_city_2fperson_2fv2_2fcarbon_2eproto[] PROTO
   "\016\n\002ds\030\002 \001(\001R\002ds\022\014\n\001v\030\003 \001(\001R\001v\022\014\n\001a\030\004 \001(\001"
   "R\001a\022\023\n\005u_acc\030\005 \001(\001R\004uAcc\022\025\n\006u_roll\030\006 \001(\001"
   "R\005uRoll\022\025\n\006u_aero\030\007 \001(\001R\005uAero\022\017\n\003c_d\030\010 "
-  "\001(\001R\002cD\"\"\n\022EmissionStatistics\022\014\n\001u\030\001 \001(\002"
+  "\001(\001R\002cD\"\"\n\022EmissionStatistics\022\014\n\001u\030\001 \001(\001"
   "R\001uB\264\001\n\022com.city.person.v2B\013CarbonProtoP"
   "\001Z7git.fiblab.net/sim/protos/v2/go/city/"
   "person/v2;personv2\242\002\003CPX\252\002\016City.Person.V"
@@ -634,11 +634,11 @@ const char* EmissionStatistics::_InternalParse(const char* ptr, ::_pbi::ParseCon
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // float u = 1 [json_name = "u"];
+      // double u = 1 [json_name = "u"];
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 13)) {
-          _impl_.u_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 9)) {
+          _impl_.u_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
         } else
           goto handle_unusual;
         continue;
@@ -671,14 +671,14 @@ uint8_t* EmissionStatistics::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // float u = 1 [json_name = "u"];
-  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
-  float tmp_u = this->_internal_u();
-  uint32_t raw_u;
+  // double u = 1 [json_name = "u"];
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_u = this->_internal_u();
+  uint64_t raw_u;
   memcpy(&raw_u, &tmp_u, sizeof(tmp_u));
   if (raw_u != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(1, this->_internal_u(), target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(1, this->_internal_u(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -697,13 +697,13 @@ size_t EmissionStatistics::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // float u = 1 [json_name = "u"];
-  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
-  float tmp_u = this->_internal_u();
-  uint32_t raw_u;
+  // double u = 1 [json_name = "u"];
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_u = this->_internal_u();
+  uint64_t raw_u;
   memcpy(&raw_u, &tmp_u, sizeof(tmp_u));
   if (raw_u != 0) {
-    total_size += 1 + 4;
+    total_size += 1 + 8;
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -724,9 +724,9 @@ void EmissionStatistics::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, con
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
-  float tmp_u = from._internal_u();
-  uint32_t raw_u;
+  static_assert(sizeof(uint64_t) == sizeof(double), "Code assumes uint64_t and double are the same size.");
+  double tmp_u = from._internal_u();
+  uint64_t raw_u;
   memcpy(&raw_u, &tmp_u, sizeof(tmp_u));
   if (raw_u != 0) {
     _this->_internal_set_u(from._internal_u());

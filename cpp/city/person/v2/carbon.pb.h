@@ -414,13 +414,13 @@ class EmissionStatistics final :
   enum : int {
     kUFieldNumber = 1,
   };
-  // float u = 1 [json_name = "u"];
+  // double u = 1 [json_name = "u"];
   void clear_u();
-  float u() const;
-  void set_u(float value);
+  double u() const;
+  void set_u(double value);
   private:
-  float _internal_u() const;
-  void _internal_set_u(float value);
+  double _internal_u() const;
+  void _internal_set_u(double value);
   public:
 
   // @@protoc_insertion_point(class_scope:city.person.v2.EmissionStatistics)
@@ -431,7 +431,7 @@ class EmissionStatistics final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    float u_;
+    double u_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -612,22 +612,22 @@ inline void VehicleCarbon::set_c_d(double value) {
 
 // EmissionStatistics
 
-// float u = 1 [json_name = "u"];
+// double u = 1 [json_name = "u"];
 inline void EmissionStatistics::clear_u() {
   _impl_.u_ = 0;
 }
-inline float EmissionStatistics::_internal_u() const {
+inline double EmissionStatistics::_internal_u() const {
   return _impl_.u_;
 }
-inline float EmissionStatistics::u() const {
+inline double EmissionStatistics::u() const {
   // @@protoc_insertion_point(field_get:city.person.v2.EmissionStatistics.u)
   return _internal_u();
 }
-inline void EmissionStatistics::_internal_set_u(float value) {
+inline void EmissionStatistics::_internal_set_u(double value) {
   
   _impl_.u_ = value;
 }
-inline void EmissionStatistics::set_u(float value) {
+inline void EmissionStatistics::set_u(double value) {
   _internal_set_u(value);
   // @@protoc_insertion_point(field_set:city.person.v2.EmissionStatistics.u)
 }
