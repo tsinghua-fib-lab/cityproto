@@ -131,6 +131,52 @@ func (x *VehicleCarbon) GetCD() float64 {
 	return 0
 }
 
+type EmissionStatistics struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// 累计能量消耗（单位:MJ）
+	// Cumulative energy consumption（unit:MJ）
+	U             float32 `protobuf:"fixed32,1,opt,name=u,proto3" json:"u,omitempty" bson:"u" db:"u" yaml:"u"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *EmissionStatistics) Reset() {
+	*x = EmissionStatistics{}
+	mi := &file_city_person_v2_carbon_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *EmissionStatistics) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*EmissionStatistics) ProtoMessage() {}
+
+func (x *EmissionStatistics) ProtoReflect() protoreflect.Message {
+	mi := &file_city_person_v2_carbon_proto_msgTypes[1]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use EmissionStatistics.ProtoReflect.Descriptor instead.
+func (*EmissionStatistics) Descriptor() ([]byte, []int) {
+	return file_city_person_v2_carbon_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *EmissionStatistics) GetU() float32 {
+	if x != nil {
+		return x.U
+	}
+	return 0
+}
+
 var File_city_person_v2_carbon_proto protoreflect.FileDescriptor
 
 const file_city_person_v2_carbon_proto_rawDesc = "" +
@@ -144,7 +190,9 @@ const file_city_person_v2_carbon_proto_rawDesc = "" +
 	"\x05u_acc\x18\x05 \x01(\x01R\x04uAcc\x12\x15\n" +
 	"\x06u_roll\x18\x06 \x01(\x01R\x05uRoll\x12\x15\n" +
 	"\x06u_aero\x18\a \x01(\x01R\x05uAero\x12\x0f\n" +
-	"\x03c_d\x18\b \x01(\x01R\x02cDB\xb4\x01\n" +
+	"\x03c_d\x18\b \x01(\x01R\x02cD\"\"\n" +
+	"\x12EmissionStatistics\x12\f\n" +
+	"\x01u\x18\x01 \x01(\x02R\x01uB\xb4\x01\n" +
 	"\x12com.city.person.v2B\vCarbonProtoP\x01Z7git.fiblab.net/sim/protos/v2/go/city/person/v2;personv2\xa2\x02\x03CPX\xaa\x02\x0eCity.Person.V2\xca\x02\x0eCity\\Person\\V2\xe2\x02\x1aCity\\Person\\V2\\GPBMetadata\xea\x02\x10City::Person::V2b\x06proto3"
 
 var (
@@ -159,9 +207,10 @@ func file_city_person_v2_carbon_proto_rawDescGZIP() []byte {
 	return file_city_person_v2_carbon_proto_rawDescData
 }
 
-var file_city_person_v2_carbon_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
+var file_city_person_v2_carbon_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_city_person_v2_carbon_proto_goTypes = []any{
-	(*VehicleCarbon)(nil), // 0: city.person.v2.VehicleCarbon
+	(*VehicleCarbon)(nil),      // 0: city.person.v2.VehicleCarbon
+	(*EmissionStatistics)(nil), // 1: city.person.v2.EmissionStatistics
 }
 var file_city_person_v2_carbon_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for method output_type
@@ -182,7 +231,7 @@ func file_city_person_v2_carbon_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_city_person_v2_carbon_proto_rawDesc), len(file_city_person_v2_carbon_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   1,
+			NumMessages:   2,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

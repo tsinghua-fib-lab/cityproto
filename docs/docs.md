@@ -476,6 +476,7 @@
     - [PersonService](#city-person-v1-PersonService)
   
 - [city/person/v2/carbon.proto](#city_person_v2_carbon-proto)
+    - [EmissionStatistics](#city-person-v2-EmissionStatistics)
     - [VehicleCarbon](#city-person-v2-VehicleCarbon)
   
 - [city/person/v2/person.proto](#city_person_v2_person-proto)
@@ -507,6 +508,9 @@
   
     - [AllocationPlanType](#city-person-v2-AllocationPlanType)
     - [OrderStatus](#city-person-v2-OrderStatus)
+  
+- [city/person/v2/pollution.proto](#city_person_v2_pollution-proto)
+    - [PollutionStatistics](#city-person-v2-PollutionStatistics)
   
 - [city/person/v2/vehicle.proto](#city_person_v2_vehicle-proto)
     - [LC](#city-person-v2-LC)
@@ -7122,6 +7126,21 @@ Response of setting person schedule
 
 
 
+<a name="city-person-v2-EmissionStatistics"></a>
+
+### EmissionStatistics
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| u | [float](#float) |  | 累计能量消耗（单位:MJ） Cumulative energy consumption（unit:MJ） |
+
+
+
+
+
+
 <a name="city-person-v2-VehicleCarbon"></a>
 
 ### VehicleCarbon
@@ -7591,6 +7610,40 @@ Allocation plan type
 
 
 
+<a name="city_person_v2_pollution-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## city/person/v2/pollution.proto
+
+
+
+<a name="city-person-v2-PollutionStatistics"></a>
+
+### PollutionStatistics
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| co2 | [double](#double) |  | 累计二氧化碳排放（单位：g） Cumulative carbon dioxide emissions (unit: g) |
+| pm | [double](#double) |  | 累计PM排放（单位：g） Cumulative PM emissions (unit: g) |
+| voc | [double](#double) |  | 累计VOC排放（单位：g） Cumulative VOC emissions (unit: g) |
+| nox | [double](#double) |  | 累计NOX排放（单位：g） Cumulative NOX emissions (unit: g) |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
 <a name="city_person_v2_vehicle-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -7727,6 +7780,8 @@ vehicle routing information modification
 | eta | [double](#double) |  | 预计到达时刻（导航返回的eta&#43;出发时刻） estimated arrival time (eta returned by routing &#43; departure time) |
 | eta_free_flow | [double](#double) |  | 自由流下的预计到达时刻 estimated arrival time under free flow |
 | carbon | [VehicleCarbon](#city-person-v2-VehicleCarbon) | optional | 碳排放信息 carbon emission information |
+| emission_statistics | [EmissionStatistics](#city-person-v2-EmissionStatistics) | optional | 排放统计 emission statistics |
+| pollution_statistics | [PollutionStatistics](#city-person-v2-PollutionStatistics) | optional | 污染统计 pollution statistics |
 
 
 

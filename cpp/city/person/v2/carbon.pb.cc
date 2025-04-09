@@ -43,10 +43,23 @@ struct VehicleCarbonDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 VehicleCarbonDefaultTypeInternal _VehicleCarbon_default_instance_;
+PROTOBUF_CONSTEXPR EmissionStatistics::EmissionStatistics(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.u_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct EmissionStatisticsDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR EmissionStatisticsDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~EmissionStatisticsDefaultTypeInternal() {}
+  union {
+    EmissionStatistics _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 EmissionStatisticsDefaultTypeInternal _EmissionStatistics_default_instance_;
 }  // namespace v2
 }  // namespace person
 }  // namespace city
-static ::_pb::Metadata file_level_metadata_city_2fperson_2fv2_2fcarbon_2eproto[1];
+static ::_pb::Metadata file_level_metadata_city_2fperson_2fv2_2fcarbon_2eproto[2];
 static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_city_2fperson_2fv2_2fcarbon_2eproto = nullptr;
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_city_2fperson_2fv2_2fcarbon_2eproto = nullptr;
 
@@ -65,13 +78,22 @@ const uint32_t TableStruct_city_2fperson_2fv2_2fcarbon_2eproto::offsets[] PROTOB
   PROTOBUF_FIELD_OFFSET(::city::person::v2::VehicleCarbon, _impl_.u_roll_),
   PROTOBUF_FIELD_OFFSET(::city::person::v2::VehicleCarbon, _impl_.u_aero_),
   PROTOBUF_FIELD_OFFSET(::city::person::v2::VehicleCarbon, _impl_.c_d_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::person::v2::EmissionStatistics, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::person::v2::EmissionStatistics, _impl_.u_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::city::person::v2::VehicleCarbon)},
+  { 14, -1, -1, sizeof(::city::person::v2::EmissionStatistics)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
   &::city::person::v2::_VehicleCarbon_default_instance_._instance,
+  &::city::person::v2::_EmissionStatistics_default_instance_._instance,
 };
 
 const char descriptor_table_protodef_city_2fperson_2fv2_2fcarbon_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -80,17 +102,18 @@ const char descriptor_table_protodef_city_2fperson_2fv2_2fcarbon_2eproto[] PROTO
   "\016\n\002ds\030\002 \001(\001R\002ds\022\014\n\001v\030\003 \001(\001R\001v\022\014\n\001a\030\004 \001(\001"
   "R\001a\022\023\n\005u_acc\030\005 \001(\001R\004uAcc\022\025\n\006u_roll\030\006 \001(\001"
   "R\005uRoll\022\025\n\006u_aero\030\007 \001(\001R\005uAero\022\017\n\003c_d\030\010 "
-  "\001(\001R\002cDB\264\001\n\022com.city.person.v2B\013CarbonPr"
-  "otoP\001Z7git.fiblab.net/sim/protos/v2/go/c"
-  "ity/person/v2;personv2\242\002\003CPX\252\002\016City.Pers"
-  "on.V2\312\002\016City\\Person\\V2\342\002\032City\\Person\\V2\\"
-  "GPBMetadata\352\002\020City::Person::V2b\006proto3"
+  "\001(\001R\002cD\"\"\n\022EmissionStatistics\022\014\n\001u\030\001 \001(\002"
+  "R\001uB\264\001\n\022com.city.person.v2B\013CarbonProtoP"
+  "\001Z7git.fiblab.net/sim/protos/v2/go/city/"
+  "person/v2;personv2\242\002\003CPX\252\002\016City.Person.V"
+  "2\312\002\016City\\Person\\V2\342\002\032City\\Person\\V2\\GPBM"
+  "etadata\352\002\020City::Person::V2b\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_city_2fperson_2fv2_2fcarbon_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2fperson_2fv2_2fcarbon_2eproto = {
-    false, false, 398, descriptor_table_protodef_city_2fperson_2fv2_2fcarbon_2eproto,
+    false, false, 434, descriptor_table_protodef_city_2fperson_2fv2_2fcarbon_2eproto,
     "city/person/v2/carbon.proto",
-    &descriptor_table_city_2fperson_2fv2_2fcarbon_2eproto_once, nullptr, 0, 1,
+    &descriptor_table_city_2fperson_2fv2_2fcarbon_2eproto_once, nullptr, 0, 2,
     schemas, file_default_instances, TableStruct_city_2fperson_2fv2_2fcarbon_2eproto::offsets,
     file_level_metadata_city_2fperson_2fv2_2fcarbon_2eproto, file_level_enum_descriptors_city_2fperson_2fv2_2fcarbon_2eproto,
     file_level_service_descriptors_city_2fperson_2fv2_2fcarbon_2eproto,
@@ -544,6 +567,196 @@ void VehicleCarbon::InternalSwap(VehicleCarbon* other) {
       file_level_metadata_city_2fperson_2fv2_2fcarbon_2eproto[0]);
 }
 
+// ===================================================================
+
+class EmissionStatistics::_Internal {
+ public:
+};
+
+EmissionStatistics::EmissionStatistics(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:city.person.v2.EmissionStatistics)
+}
+EmissionStatistics::EmissionStatistics(const EmissionStatistics& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  EmissionStatistics* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.u_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.u_ = from._impl_.u_;
+  // @@protoc_insertion_point(copy_constructor:city.person.v2.EmissionStatistics)
+}
+
+inline void EmissionStatistics::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.u_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+}
+
+EmissionStatistics::~EmissionStatistics() {
+  // @@protoc_insertion_point(destructor:city.person.v2.EmissionStatistics)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void EmissionStatistics::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void EmissionStatistics::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void EmissionStatistics::Clear() {
+// @@protoc_insertion_point(message_clear_start:city.person.v2.EmissionStatistics)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.u_ = 0;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* EmissionStatistics::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // float u = 1 [json_name = "u"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 13)) {
+          _impl_.u_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* EmissionStatistics::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:city.person.v2.EmissionStatistics)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // float u = 1 [json_name = "u"];
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_u = this->_internal_u();
+  uint32_t raw_u;
+  memcpy(&raw_u, &tmp_u, sizeof(tmp_u));
+  if (raw_u != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(1, this->_internal_u(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:city.person.v2.EmissionStatistics)
+  return target;
+}
+
+size_t EmissionStatistics::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:city.person.v2.EmissionStatistics)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // float u = 1 [json_name = "u"];
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_u = this->_internal_u();
+  uint32_t raw_u;
+  memcpy(&raw_u, &tmp_u, sizeof(tmp_u));
+  if (raw_u != 0) {
+    total_size += 1 + 4;
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData EmissionStatistics::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    EmissionStatistics::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*EmissionStatistics::GetClassData() const { return &_class_data_; }
+
+
+void EmissionStatistics::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<EmissionStatistics*>(&to_msg);
+  auto& from = static_cast<const EmissionStatistics&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:city.person.v2.EmissionStatistics)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_u = from._internal_u();
+  uint32_t raw_u;
+  memcpy(&raw_u, &tmp_u, sizeof(tmp_u));
+  if (raw_u != 0) {
+    _this->_internal_set_u(from._internal_u());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void EmissionStatistics::CopyFrom(const EmissionStatistics& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:city.person.v2.EmissionStatistics)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool EmissionStatistics::IsInitialized() const {
+  return true;
+}
+
+void EmissionStatistics::InternalSwap(EmissionStatistics* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_.u_, other->_impl_.u_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata EmissionStatistics::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2fperson_2fv2_2fcarbon_2eproto_getter, &descriptor_table_city_2fperson_2fv2_2fcarbon_2eproto_once,
+      file_level_metadata_city_2fperson_2fv2_2fcarbon_2eproto[1]);
+}
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace v2
 }  // namespace person
@@ -552,6 +765,10 @@ PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::city::person::v2::VehicleCarbon*
 Arena::CreateMaybeMessage< ::city::person::v2::VehicleCarbon >(Arena* arena) {
   return Arena::CreateMessageInternal< ::city::person::v2::VehicleCarbon >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::person::v2::EmissionStatistics*
+Arena::CreateMaybeMessage< ::city::person::v2::EmissionStatistics >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::person::v2::EmissionStatistics >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

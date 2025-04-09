@@ -84,3 +84,30 @@ export declare class VehicleCarbon extends Message<VehicleCarbon> {
   static equals(a: VehicleCarbon | PlainMessage<VehicleCarbon> | undefined, b: VehicleCarbon | PlainMessage<VehicleCarbon> | undefined): boolean;
 }
 
+/**
+ * @generated from message city.person.v2.EmissionStatistics
+ */
+export declare class EmissionStatistics extends Message<EmissionStatistics> {
+  /**
+   * 累计能量消耗（单位:MJ）
+   * Cumulative energy consumption（unit:MJ）
+   *
+   * @generated from field: float u = 1;
+   */
+  u: number;
+
+  constructor(data?: PartialMessage<EmissionStatistics>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.person.v2.EmissionStatistics";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EmissionStatistics;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EmissionStatistics;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EmissionStatistics;
+
+  static equals(a: EmissionStatistics | PlainMessage<EmissionStatistics> | undefined, b: EmissionStatistics | PlainMessage<EmissionStatistics> | undefined): boolean;
+}
+

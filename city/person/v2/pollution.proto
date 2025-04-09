@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package city.person.v2;
+
+message PollutionStatistics {
+  // 累计二氧化碳排放（单位：g）
+  // Cumulative carbon dioxide emissions (unit: g)
+  double co2 = 1;
+  // 累计PM排放（单位：g）
+  // Cumulative PM emissions (unit: g)
+  double pm = 2;
+  // 累计VOC排放（单位：g）
+  // Cumulative VOC emissions (unit: g)
+  double voc = 3;
+  // 累计NOX排放（单位：g）
+  // Cumulative NOX emissions (unit: g)
+  double nox = 4;
+}

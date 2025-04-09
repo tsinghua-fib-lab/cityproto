@@ -24,3 +24,11 @@ class VehicleCarbon(_message.Message):
 
     def __init__(self, id: _Optional[int]=..., ds: _Optional[float]=..., v: _Optional[float]=..., a: _Optional[float]=..., u_acc: _Optional[float]=..., u_roll: _Optional[float]=..., u_aero: _Optional[float]=..., c_d: _Optional[float]=...) -> None:
         ...
+
+class EmissionStatistics(_message.Message):
+    __slots__ = ['u']
+    U_FIELD_NUMBER: _ClassVar[int]
+    u: float
+
+    def __init__(self, u: _Optional[float]=...) -> None:
+        ...

@@ -4,6 +4,7 @@ package city.person.v2;
 
 import "city/person/v2/carbon.proto";
 import "city/person/v2/motion.proto";
+import "city/person/v2/pollution.proto";
 import "city/routing/v2/routing.proto";
 
 // 变道相关的信息
@@ -79,6 +80,12 @@ message VehicleRuntime {
   // 碳排放信息
   // carbon emission information
   optional VehicleCarbon carbon = 11;
+  // 排放统计
+  // emission statistics
+  optional EmissionStatistics emission_statistics = 12;
+  // 污染统计
+  // pollution statistics
+  optional PollutionStatistics pollution_statistics = 13;
 }
 
 enum VehicleRelation {

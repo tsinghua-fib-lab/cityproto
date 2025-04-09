@@ -47,6 +47,9 @@ extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table
 namespace city {
 namespace person {
 namespace v2 {
+class EmissionStatistics;
+struct EmissionStatisticsDefaultTypeInternal;
+extern EmissionStatisticsDefaultTypeInternal _EmissionStatistics_default_instance_;
 class VehicleCarbon;
 struct VehicleCarbonDefaultTypeInternal;
 extern VehicleCarbonDefaultTypeInternal _VehicleCarbon_default_instance_;
@@ -54,6 +57,7 @@ extern VehicleCarbonDefaultTypeInternal _VehicleCarbon_default_instance_;
 }  // namespace person
 }  // namespace city
 PROTOBUF_NAMESPACE_OPEN
+template<> ::city::person::v2::EmissionStatistics* Arena::CreateMaybeMessage<::city::person::v2::EmissionStatistics>(Arena*);
 template<> ::city::person::v2::VehicleCarbon* Arena::CreateMaybeMessage<::city::person::v2::VehicleCarbon>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace city {
@@ -285,6 +289,154 @@ class VehicleCarbon final :
   union { Impl_ _impl_; };
   friend struct ::TableStruct_city_2fperson_2fv2_2fcarbon_2eproto;
 };
+// -------------------------------------------------------------------
+
+class EmissionStatistics final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.person.v2.EmissionStatistics) */ {
+ public:
+  inline EmissionStatistics() : EmissionStatistics(nullptr) {}
+  ~EmissionStatistics() override;
+  explicit PROTOBUF_CONSTEXPR EmissionStatistics(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  EmissionStatistics(const EmissionStatistics& from);
+  EmissionStatistics(EmissionStatistics&& from) noexcept
+    : EmissionStatistics() {
+    *this = ::std::move(from);
+  }
+
+  inline EmissionStatistics& operator=(const EmissionStatistics& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline EmissionStatistics& operator=(EmissionStatistics&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const EmissionStatistics& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const EmissionStatistics* internal_default_instance() {
+    return reinterpret_cast<const EmissionStatistics*>(
+               &_EmissionStatistics_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    1;
+
+  friend void swap(EmissionStatistics& a, EmissionStatistics& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(EmissionStatistics* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(EmissionStatistics* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  EmissionStatistics* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<EmissionStatistics>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const EmissionStatistics& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const EmissionStatistics& from) {
+    EmissionStatistics::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(EmissionStatistics* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.person.v2.EmissionStatistics";
+  }
+  protected:
+  explicit EmissionStatistics(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kUFieldNumber = 1,
+  };
+  // float u = 1 [json_name = "u"];
+  void clear_u();
+  float u() const;
+  void set_u(float value);
+  private:
+  float _internal_u() const;
+  void _internal_set_u(float value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:city.person.v2.EmissionStatistics)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    float u_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_city_2fperson_2fv2_2fcarbon_2eproto;
+};
 // ===================================================================
 
 
@@ -456,9 +608,35 @@ inline void VehicleCarbon::set_c_d(double value) {
   // @@protoc_insertion_point(field_set:city.person.v2.VehicleCarbon.c_d)
 }
 
+// -------------------------------------------------------------------
+
+// EmissionStatistics
+
+// float u = 1 [json_name = "u"];
+inline void EmissionStatistics::clear_u() {
+  _impl_.u_ = 0;
+}
+inline float EmissionStatistics::_internal_u() const {
+  return _impl_.u_;
+}
+inline float EmissionStatistics::u() const {
+  // @@protoc_insertion_point(field_get:city.person.v2.EmissionStatistics.u)
+  return _internal_u();
+}
+inline void EmissionStatistics::_internal_set_u(float value) {
+  
+  _impl_.u_ = value;
+}
+inline void EmissionStatistics::set_u(float value) {
+  _internal_set_u(value);
+  // @@protoc_insertion_point(field_set:city.person.v2.EmissionStatistics.u)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 
 // @@protoc_insertion_point(namespace_scope)
 

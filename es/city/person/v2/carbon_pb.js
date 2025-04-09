@@ -25,3 +25,13 @@ export const VehicleCarbon = /*@__PURE__*/ proto3.makeMessageType(
   ],
 );
 
+/**
+ * @generated from message city.person.v2.EmissionStatistics
+ */
+export const EmissionStatistics = /*@__PURE__*/ proto3.makeMessageType(
+  "city.person.v2.EmissionStatistics",
+  () => [
+    { no: 1, name: "u", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
+  ],
+);
+

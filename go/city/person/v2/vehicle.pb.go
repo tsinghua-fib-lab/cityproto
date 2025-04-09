@@ -411,9 +411,15 @@ type VehicleRuntime struct {
 	EtaFreeFlow float64 `protobuf:"fixed64,10,opt,name=eta_free_flow,json=etaFreeFlow,proto3" json:"eta_free_flow,omitempty" bson:"eta_free_flow" db:"eta_free_flow" yaml:"eta_free_flow"`
 	// 碳排放信息
 	// carbon emission information
-	Carbon        *VehicleCarbon `protobuf:"bytes,11,opt,name=carbon,proto3,oneof" json:"carbon,omitempty" bson:"carbon" db:"carbon" yaml:"carbon"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	Carbon *VehicleCarbon `protobuf:"bytes,11,opt,name=carbon,proto3,oneof" json:"carbon,omitempty" bson:"carbon" db:"carbon" yaml:"carbon"`
+	// 排放统计
+	// emission statistics
+	EmissionStatistics *EmissionStatistics `protobuf:"bytes,12,opt,name=emission_statistics,json=emissionStatistics,proto3,oneof" json:"emission_statistics,omitempty" bson:"emission_statistics" db:"emission_statistics" yaml:"emission_statistics"`
+	// 污染统计
+	// pollution statistics
+	PollutionStatistics *PollutionStatistics `protobuf:"bytes,13,opt,name=pollution_statistics,json=pollutionStatistics,proto3,oneof" json:"pollution_statistics,omitempty" bson:"pollution_statistics" db:"pollution_statistics" yaml:"pollution_statistics"`
+	unknownFields       protoimpl.UnknownFields
+	sizeCache           protoimpl.SizeCache
 }
 
 func (x *VehicleRuntime) Reset() {
@@ -505,6 +511,20 @@ func (x *VehicleRuntime) GetEtaFreeFlow() float64 {
 func (x *VehicleRuntime) GetCarbon() *VehicleCarbon {
 	if x != nil {
 		return x.Carbon
+	}
+	return nil
+}
+
+func (x *VehicleRuntime) GetEmissionStatistics() *EmissionStatistics {
+	if x != nil {
+		return x.EmissionStatistics
+	}
+	return nil
+}
+
+func (x *VehicleRuntime) GetPollutionStatistics() *PollutionStatistics {
+	if x != nil {
+		return x.PollutionStatistics
 	}
 	return nil
 }
@@ -754,7 +774,7 @@ var File_city_person_v2_vehicle_proto protoreflect.FileDescriptor
 
 const file_city_person_v2_vehicle_proto_rawDesc = "" +
 	"\n" +
-	"\x1ccity/person/v2/vehicle.proto\x12\x0ecity.person.v2\x1a\x1bcity/person/v2/carbon.proto\x1a\x1bcity/person/v2/motion.proto\x1a\x1dcity/routing/v2/routing.proto\"\x84\x01\n" +
+	"\x1ccity/person/v2/vehicle.proto\x12\x0ecity.person.v2\x1a\x1bcity/person/v2/carbon.proto\x1a\x1bcity/person/v2/motion.proto\x1a\x1ecity/person/v2/pollution.proto\x1a\x1dcity/routing/v2/routing.proto\"\x84\x01\n" +
 	"\x02LC\x12$\n" +
 	"\x0eshadow_lane_id\x18\x01 \x01(\x05R\fshadowLaneId\x12\x19\n" +
 	"\bshadow_s\x18\x02 \x01(\x01R\ashadowS\x12\x14\n" +
@@ -769,7 +789,7 @@ const file_city_person_v2_vehicle_proto_rawDesc = "" +
 	"\r_lc_target_id\"X\n" +
 	"\x12VehicleRouteAction\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\x05R\x02id\x122\n" +
-	"\ajourney\x18\x02 \x01(\v2\x18.city.routing.v2.JourneyR\ajourney\"\xb2\x03\n" +
+	"\ajourney\x18\x02 \x01(\v2\x18.city.routing.v2.JourneyR\ajourney\"\x9a\x05\n" +
 	"\x0eVehicleRuntime\x120\n" +
 	"\x04base\x18\x01 \x01(\v2\x1c.city.person.v2.PersonMotionR\x04base\x12'\n" +
 	"\x02lc\x18\x04 \x01(\v2\x12.city.person.v2.LCH\x00R\x02lc\x88\x01\x01\x12:\n" +
@@ -780,10 +800,14 @@ const file_city_person_v2_vehicle_proto_rawDesc = "" +
 	"\x03eta\x18\t \x01(\x01R\x03eta\x12\"\n" +
 	"\reta_free_flow\x18\n" +
 	" \x01(\x01R\vetaFreeFlow\x12:\n" +
-	"\x06carbon\x18\v \x01(\v2\x1d.city.person.v2.VehicleCarbonH\x02R\x06carbon\x88\x01\x01B\x05\n" +
+	"\x06carbon\x18\v \x01(\v2\x1d.city.person.v2.VehicleCarbonH\x02R\x06carbon\x88\x01\x01\x12X\n" +
+	"\x13emission_statistics\x18\f \x01(\v2\".city.person.v2.EmissionStatisticsH\x03R\x12emissionStatistics\x88\x01\x01\x12[\n" +
+	"\x14pollution_statistics\x18\r \x01(\v2#.city.person.v2.PollutionStatisticsH\x04R\x13pollutionStatistics\x88\x01\x01B\x05\n" +
 	"\x03_lcB\t\n" +
 	"\a_actionB\t\n" +
-	"\a_carbon\"\xc1\x01\n" +
+	"\a_carbonB\x16\n" +
+	"\x14_emission_statisticsB\x17\n" +
+	"\x15_pollution_statistics\"\xc1\x01\n" +
 	"\x0fObservedVehicle\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\x05R\x02id\x124\n" +
 	"\x06motion\x18\x02 \x01(\v2\x1c.city.person.v2.PersonMotionR\x06motion\x12+\n" +
@@ -835,18 +859,20 @@ func file_city_person_v2_vehicle_proto_rawDescGZIP() []byte {
 var file_city_person_v2_vehicle_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
 var file_city_person_v2_vehicle_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
 var file_city_person_v2_vehicle_proto_goTypes = []any{
-	(VehicleRelation)(0),       // 0: city.person.v2.VehicleRelation
-	(LightState)(0),            // 1: city.person.v2.LightState
-	(*LC)(nil),                 // 2: city.person.v2.LC
-	(*VehicleAction)(nil),      // 3: city.person.v2.VehicleAction
-	(*VehicleRouteAction)(nil), // 4: city.person.v2.VehicleRouteAction
-	(*VehicleRuntime)(nil),     // 5: city.person.v2.VehicleRuntime
-	(*ObservedVehicle)(nil),    // 6: city.person.v2.ObservedVehicle
-	(*ObservedLane)(nil),       // 7: city.person.v2.ObservedLane
-	(*VehicleEnv)(nil),         // 8: city.person.v2.VehicleEnv
-	(*v2.Journey)(nil),         // 9: city.routing.v2.Journey
-	(*PersonMotion)(nil),       // 10: city.person.v2.PersonMotion
-	(*VehicleCarbon)(nil),      // 11: city.person.v2.VehicleCarbon
+	(VehicleRelation)(0),        // 0: city.person.v2.VehicleRelation
+	(LightState)(0),             // 1: city.person.v2.LightState
+	(*LC)(nil),                  // 2: city.person.v2.LC
+	(*VehicleAction)(nil),       // 3: city.person.v2.VehicleAction
+	(*VehicleRouteAction)(nil),  // 4: city.person.v2.VehicleRouteAction
+	(*VehicleRuntime)(nil),      // 5: city.person.v2.VehicleRuntime
+	(*ObservedVehicle)(nil),     // 6: city.person.v2.ObservedVehicle
+	(*ObservedLane)(nil),        // 7: city.person.v2.ObservedLane
+	(*VehicleEnv)(nil),          // 8: city.person.v2.VehicleEnv
+	(*v2.Journey)(nil),          // 9: city.routing.v2.Journey
+	(*PersonMotion)(nil),        // 10: city.person.v2.PersonMotion
+	(*VehicleCarbon)(nil),       // 11: city.person.v2.VehicleCarbon
+	(*EmissionStatistics)(nil),  // 12: city.person.v2.EmissionStatistics
+	(*PollutionStatistics)(nil), // 13: city.person.v2.PollutionStatistics
 }
 var file_city_person_v2_vehicle_proto_depIdxs = []int32{
 	9,  // 0: city.person.v2.VehicleRouteAction.journey:type_name -> city.routing.v2.Journey
@@ -854,18 +880,20 @@ var file_city_person_v2_vehicle_proto_depIdxs = []int32{
 	2,  // 2: city.person.v2.VehicleRuntime.lc:type_name -> city.person.v2.LC
 	3,  // 3: city.person.v2.VehicleRuntime.action:type_name -> city.person.v2.VehicleAction
 	11, // 4: city.person.v2.VehicleRuntime.carbon:type_name -> city.person.v2.VehicleCarbon
-	10, // 5: city.person.v2.ObservedVehicle.motion:type_name -> city.person.v2.PersonMotion
-	0,  // 6: city.person.v2.ObservedVehicle.relation:type_name -> city.person.v2.VehicleRelation
-	1,  // 7: city.person.v2.ObservedLane.light_state:type_name -> city.person.v2.LightState
-	5,  // 8: city.person.v2.VehicleEnv.runtime:type_name -> city.person.v2.VehicleRuntime
-	9,  // 9: city.person.v2.VehicleEnv.journey:type_name -> city.routing.v2.Journey
-	6,  // 10: city.person.v2.VehicleEnv.observed_vehicles:type_name -> city.person.v2.ObservedVehicle
-	7,  // 11: city.person.v2.VehicleEnv.observed_lanes:type_name -> city.person.v2.ObservedLane
-	12, // [12:12] is the sub-list for method output_type
-	12, // [12:12] is the sub-list for method input_type
-	12, // [12:12] is the sub-list for extension type_name
-	12, // [12:12] is the sub-list for extension extendee
-	0,  // [0:12] is the sub-list for field type_name
+	12, // 5: city.person.v2.VehicleRuntime.emission_statistics:type_name -> city.person.v2.EmissionStatistics
+	13, // 6: city.person.v2.VehicleRuntime.pollution_statistics:type_name -> city.person.v2.PollutionStatistics
+	10, // 7: city.person.v2.ObservedVehicle.motion:type_name -> city.person.v2.PersonMotion
+	0,  // 8: city.person.v2.ObservedVehicle.relation:type_name -> city.person.v2.VehicleRelation
+	1,  // 9: city.person.v2.ObservedLane.light_state:type_name -> city.person.v2.LightState
+	5,  // 10: city.person.v2.VehicleEnv.runtime:type_name -> city.person.v2.VehicleRuntime
+	9,  // 11: city.person.v2.VehicleEnv.journey:type_name -> city.routing.v2.Journey
+	6,  // 12: city.person.v2.VehicleEnv.observed_vehicles:type_name -> city.person.v2.ObservedVehicle
+	7,  // 13: city.person.v2.VehicleEnv.observed_lanes:type_name -> city.person.v2.ObservedLane
+	14, // [14:14] is the sub-list for method output_type
+	14, // [14:14] is the sub-list for method input_type
+	14, // [14:14] is the sub-list for extension type_name
+	14, // [14:14] is the sub-list for extension extendee
+	0,  // [0:14] is the sub-list for field type_name
 }
 
 func init() { file_city_person_v2_vehicle_proto_init() }
@@ -875,6 +903,7 @@ func file_city_person_v2_vehicle_proto_init() {
 	}
 	file_city_person_v2_carbon_proto_init()
 	file_city_person_v2_motion_proto_init()
+	file_city_person_v2_pollution_proto_init()
 	file_city_person_v2_vehicle_proto_msgTypes[1].OneofWrappers = []any{}
 	file_city_person_v2_vehicle_proto_msgTypes[3].OneofWrappers = []any{}
 	type x struct{}

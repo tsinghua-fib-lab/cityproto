@@ -33,6 +33,7 @@
 #include <google/protobuf/unknown_field_set.h>
 #include "city/person/v2/carbon.pb.h"
 #include "city/person/v2/motion.pb.h"
+#include "city/person/v2/pollution.pb.h"
 #include "city/routing/v2/routing.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
@@ -809,6 +810,8 @@ class VehicleRuntime final :
     kLcFieldNumber = 4,
     kActionFieldNumber = 5,
     kCarbonFieldNumber = 11,
+    kEmissionStatisticsFieldNumber = 12,
+    kPollutionStatisticsFieldNumber = 13,
     kRunningDistanceFieldNumber = 6,
     kDepartureTimeFieldNumber = 8,
     kEtaFieldNumber = 9,
@@ -887,6 +890,42 @@ class VehicleRuntime final :
       ::city::person::v2::VehicleCarbon* carbon);
   ::city::person::v2::VehicleCarbon* unsafe_arena_release_carbon();
 
+  // optional .city.person.v2.EmissionStatistics emission_statistics = 12 [json_name = "emissionStatistics"];
+  bool has_emission_statistics() const;
+  private:
+  bool _internal_has_emission_statistics() const;
+  public:
+  void clear_emission_statistics();
+  const ::city::person::v2::EmissionStatistics& emission_statistics() const;
+  PROTOBUF_NODISCARD ::city::person::v2::EmissionStatistics* release_emission_statistics();
+  ::city::person::v2::EmissionStatistics* mutable_emission_statistics();
+  void set_allocated_emission_statistics(::city::person::v2::EmissionStatistics* emission_statistics);
+  private:
+  const ::city::person::v2::EmissionStatistics& _internal_emission_statistics() const;
+  ::city::person::v2::EmissionStatistics* _internal_mutable_emission_statistics();
+  public:
+  void unsafe_arena_set_allocated_emission_statistics(
+      ::city::person::v2::EmissionStatistics* emission_statistics);
+  ::city::person::v2::EmissionStatistics* unsafe_arena_release_emission_statistics();
+
+  // optional .city.person.v2.PollutionStatistics pollution_statistics = 13 [json_name = "pollutionStatistics"];
+  bool has_pollution_statistics() const;
+  private:
+  bool _internal_has_pollution_statistics() const;
+  public:
+  void clear_pollution_statistics();
+  const ::city::person::v2::PollutionStatistics& pollution_statistics() const;
+  PROTOBUF_NODISCARD ::city::person::v2::PollutionStatistics* release_pollution_statistics();
+  ::city::person::v2::PollutionStatistics* mutable_pollution_statistics();
+  void set_allocated_pollution_statistics(::city::person::v2::PollutionStatistics* pollution_statistics);
+  private:
+  const ::city::person::v2::PollutionStatistics& _internal_pollution_statistics() const;
+  ::city::person::v2::PollutionStatistics* _internal_mutable_pollution_statistics();
+  public:
+  void unsafe_arena_set_allocated_pollution_statistics(
+      ::city::person::v2::PollutionStatistics* pollution_statistics);
+  ::city::person::v2::PollutionStatistics* unsafe_arena_release_pollution_statistics();
+
   // double running_distance = 6 [json_name = "runningDistance"];
   void clear_running_distance();
   double running_distance() const;
@@ -946,6 +985,8 @@ class VehicleRuntime final :
     ::city::person::v2::LC* lc_;
     ::city::person::v2::VehicleAction* action_;
     ::city::person::v2::VehicleCarbon* carbon_;
+    ::city::person::v2::EmissionStatistics* emission_statistics_;
+    ::city::person::v2::PollutionStatistics* pollution_statistics_;
     double running_distance_;
     double departure_time_;
     double eta_;
@@ -2300,6 +2341,180 @@ inline void VehicleRuntime::set_allocated_carbon(::city::person::v2::VehicleCarb
   }
   _impl_.carbon_ = carbon;
   // @@protoc_insertion_point(field_set_allocated:city.person.v2.VehicleRuntime.carbon)
+}
+
+// optional .city.person.v2.EmissionStatistics emission_statistics = 12 [json_name = "emissionStatistics"];
+inline bool VehicleRuntime::_internal_has_emission_statistics() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000008u) != 0;
+  PROTOBUF_ASSUME(!value || _impl_.emission_statistics_ != nullptr);
+  return value;
+}
+inline bool VehicleRuntime::has_emission_statistics() const {
+  return _internal_has_emission_statistics();
+}
+inline const ::city::person::v2::EmissionStatistics& VehicleRuntime::_internal_emission_statistics() const {
+  const ::city::person::v2::EmissionStatistics* p = _impl_.emission_statistics_;
+  return p != nullptr ? *p : reinterpret_cast<const ::city::person::v2::EmissionStatistics&>(
+      ::city::person::v2::_EmissionStatistics_default_instance_);
+}
+inline const ::city::person::v2::EmissionStatistics& VehicleRuntime::emission_statistics() const {
+  // @@protoc_insertion_point(field_get:city.person.v2.VehicleRuntime.emission_statistics)
+  return _internal_emission_statistics();
+}
+inline void VehicleRuntime::unsafe_arena_set_allocated_emission_statistics(
+    ::city::person::v2::EmissionStatistics* emission_statistics) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.emission_statistics_);
+  }
+  _impl_.emission_statistics_ = emission_statistics;
+  if (emission_statistics) {
+    _impl_._has_bits_[0] |= 0x00000008u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000008u;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:city.person.v2.VehicleRuntime.emission_statistics)
+}
+inline ::city::person::v2::EmissionStatistics* VehicleRuntime::release_emission_statistics() {
+  _impl_._has_bits_[0] &= ~0x00000008u;
+  ::city::person::v2::EmissionStatistics* temp = _impl_.emission_statistics_;
+  _impl_.emission_statistics_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::city::person::v2::EmissionStatistics* VehicleRuntime::unsafe_arena_release_emission_statistics() {
+  // @@protoc_insertion_point(field_release:city.person.v2.VehicleRuntime.emission_statistics)
+  _impl_._has_bits_[0] &= ~0x00000008u;
+  ::city::person::v2::EmissionStatistics* temp = _impl_.emission_statistics_;
+  _impl_.emission_statistics_ = nullptr;
+  return temp;
+}
+inline ::city::person::v2::EmissionStatistics* VehicleRuntime::_internal_mutable_emission_statistics() {
+  _impl_._has_bits_[0] |= 0x00000008u;
+  if (_impl_.emission_statistics_ == nullptr) {
+    auto* p = CreateMaybeMessage<::city::person::v2::EmissionStatistics>(GetArenaForAllocation());
+    _impl_.emission_statistics_ = p;
+  }
+  return _impl_.emission_statistics_;
+}
+inline ::city::person::v2::EmissionStatistics* VehicleRuntime::mutable_emission_statistics() {
+  ::city::person::v2::EmissionStatistics* _msg = _internal_mutable_emission_statistics();
+  // @@protoc_insertion_point(field_mutable:city.person.v2.VehicleRuntime.emission_statistics)
+  return _msg;
+}
+inline void VehicleRuntime::set_allocated_emission_statistics(::city::person::v2::EmissionStatistics* emission_statistics) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.emission_statistics_);
+  }
+  if (emission_statistics) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(emission_statistics));
+    if (message_arena != submessage_arena) {
+      emission_statistics = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, emission_statistics, submessage_arena);
+    }
+    _impl_._has_bits_[0] |= 0x00000008u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000008u;
+  }
+  _impl_.emission_statistics_ = emission_statistics;
+  // @@protoc_insertion_point(field_set_allocated:city.person.v2.VehicleRuntime.emission_statistics)
+}
+
+// optional .city.person.v2.PollutionStatistics pollution_statistics = 13 [json_name = "pollutionStatistics"];
+inline bool VehicleRuntime::_internal_has_pollution_statistics() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000010u) != 0;
+  PROTOBUF_ASSUME(!value || _impl_.pollution_statistics_ != nullptr);
+  return value;
+}
+inline bool VehicleRuntime::has_pollution_statistics() const {
+  return _internal_has_pollution_statistics();
+}
+inline const ::city::person::v2::PollutionStatistics& VehicleRuntime::_internal_pollution_statistics() const {
+  const ::city::person::v2::PollutionStatistics* p = _impl_.pollution_statistics_;
+  return p != nullptr ? *p : reinterpret_cast<const ::city::person::v2::PollutionStatistics&>(
+      ::city::person::v2::_PollutionStatistics_default_instance_);
+}
+inline const ::city::person::v2::PollutionStatistics& VehicleRuntime::pollution_statistics() const {
+  // @@protoc_insertion_point(field_get:city.person.v2.VehicleRuntime.pollution_statistics)
+  return _internal_pollution_statistics();
+}
+inline void VehicleRuntime::unsafe_arena_set_allocated_pollution_statistics(
+    ::city::person::v2::PollutionStatistics* pollution_statistics) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.pollution_statistics_);
+  }
+  _impl_.pollution_statistics_ = pollution_statistics;
+  if (pollution_statistics) {
+    _impl_._has_bits_[0] |= 0x00000010u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000010u;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:city.person.v2.VehicleRuntime.pollution_statistics)
+}
+inline ::city::person::v2::PollutionStatistics* VehicleRuntime::release_pollution_statistics() {
+  _impl_._has_bits_[0] &= ~0x00000010u;
+  ::city::person::v2::PollutionStatistics* temp = _impl_.pollution_statistics_;
+  _impl_.pollution_statistics_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::city::person::v2::PollutionStatistics* VehicleRuntime::unsafe_arena_release_pollution_statistics() {
+  // @@protoc_insertion_point(field_release:city.person.v2.VehicleRuntime.pollution_statistics)
+  _impl_._has_bits_[0] &= ~0x00000010u;
+  ::city::person::v2::PollutionStatistics* temp = _impl_.pollution_statistics_;
+  _impl_.pollution_statistics_ = nullptr;
+  return temp;
+}
+inline ::city::person::v2::PollutionStatistics* VehicleRuntime::_internal_mutable_pollution_statistics() {
+  _impl_._has_bits_[0] |= 0x00000010u;
+  if (_impl_.pollution_statistics_ == nullptr) {
+    auto* p = CreateMaybeMessage<::city::person::v2::PollutionStatistics>(GetArenaForAllocation());
+    _impl_.pollution_statistics_ = p;
+  }
+  return _impl_.pollution_statistics_;
+}
+inline ::city::person::v2::PollutionStatistics* VehicleRuntime::mutable_pollution_statistics() {
+  ::city::person::v2::PollutionStatistics* _msg = _internal_mutable_pollution_statistics();
+  // @@protoc_insertion_point(field_mutable:city.person.v2.VehicleRuntime.pollution_statistics)
+  return _msg;
+}
+inline void VehicleRuntime::set_allocated_pollution_statistics(::city::person::v2::PollutionStatistics* pollution_statistics) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.pollution_statistics_);
+  }
+  if (pollution_statistics) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(pollution_statistics));
+    if (message_arena != submessage_arena) {
+      pollution_statistics = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, pollution_statistics, submessage_arena);
+    }
+    _impl_._has_bits_[0] |= 0x00000010u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000010u;
+  }
+  _impl_.pollution_statistics_ = pollution_statistics;
+  // @@protoc_insertion_point(field_set_allocated:city.person.v2.VehicleRuntime.pollution_statistics)
 }
 
 // -------------------------------------------------------------------

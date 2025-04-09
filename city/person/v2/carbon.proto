@@ -22,3 +22,9 @@ message VehicleCarbon {
   // C_D: drag coefficient
   double c_d = 8;
 }
+
+message EmissionStatistics {
+  // 累计能量消耗（单位:MJ）
+  // Cumulative energy consumption（unit:MJ）
+  float u = 1;
+}

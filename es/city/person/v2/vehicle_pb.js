@@ -6,7 +6,8 @@
 import { proto3 } from "@bufbuild/protobuf";
 import { Journey } from "../../routing/v2/routing_pb.js";
 import { PersonMotion } from "./motion_pb.js";
-import { VehicleCarbon } from "./carbon_pb.js";
+import { EmissionStatistics, VehicleCarbon } from "./carbon_pb.js";
+import { PollutionStatistics } from "./pollution_pb.js";
 
 /**
  * @generated from enum city.person.v2.VehicleRelation
@@ -103,6 +104,8 @@ export const VehicleRuntime = /*@__PURE__*/ proto3.makeMessageType(
     { no: 9, name: "eta", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
     { no: 10, name: "eta_free_flow", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
     { no: 11, name: "carbon", kind: "message", T: VehicleCarbon, opt: true },
+    { no: 12, name: "emission_statistics", kind: "message", T: EmissionStatistics, opt: true },
+    { no: 13, name: "pollution_statistics", kind: "message", T: PollutionStatistics, opt: true },
   ],
 );
 
