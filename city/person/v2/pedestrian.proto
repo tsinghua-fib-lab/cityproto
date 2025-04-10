@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package city.person.v2;
+
+// 行人行为
+// Pedestrian behavior
+message PedestrianAction {
+  // 行人id
+  // Pedestrian id
+  int32 id = 1;
+  // x方向速度（单位：米/秒）
+  // x direction speed (unit: m/s)
+  double vx = 2;
+  // y方向速度（单位：米/秒）
+  // y direction speed (unit: m/s)
+  double vy = 3;
+}

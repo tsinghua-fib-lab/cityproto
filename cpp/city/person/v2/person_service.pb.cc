@@ -183,6 +183,30 @@ struct GetAllVehiclesResponseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetAllVehiclesResponseDefaultTypeInternal _GetAllVehiclesResponse_default_instance_;
+PROTOBUF_CONSTEXPR GetAllPedestriansRequest::GetAllPedestriansRequest(
+    ::_pbi::ConstantInitialized) {}
+struct GetAllPedestriansRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR GetAllPedestriansRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~GetAllPedestriansRequestDefaultTypeInternal() {}
+  union {
+    GetAllPedestriansRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetAllPedestriansRequestDefaultTypeInternal _GetAllPedestriansRequest_default_instance_;
+PROTOBUF_CONSTEXPR GetAllPedestriansResponse::GetAllPedestriansResponse(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.pedestrians_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct GetAllPedestriansResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR GetAllPedestriansResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~GetAllPedestriansResponseDefaultTypeInternal() {}
+  union {
+    GetAllPedestriansResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetAllPedestriansResponseDefaultTypeInternal _GetAllPedestriansResponse_default_instance_;
 PROTOBUF_CONSTEXPR ResetPersonPositionRequest::ResetPersonPositionRequest(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.position_)*/nullptr
@@ -358,10 +382,59 @@ struct SetControlledTaxiToOrdersResponseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SetControlledTaxiToOrdersResponseDefaultTypeInternal _SetControlledTaxiToOrdersResponse_default_instance_;
+PROTOBUF_CONSTEXPR SetControlledPedestriansRequest::SetControlledPedestriansRequest(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.pedestrian_ids_)*/{}
+  , /*decltype(_impl_._pedestrian_ids_cached_byte_size_)*/{0}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct SetControlledPedestriansRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR SetControlledPedestriansRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~SetControlledPedestriansRequestDefaultTypeInternal() {}
+  union {
+    SetControlledPedestriansRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SetControlledPedestriansRequestDefaultTypeInternal _SetControlledPedestriansRequest_default_instance_;
+PROTOBUF_CONSTEXPR SetControlledPedestriansResponse::SetControlledPedestriansResponse(
+    ::_pbi::ConstantInitialized) {}
+struct SetControlledPedestriansResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR SetControlledPedestriansResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~SetControlledPedestriansResponseDefaultTypeInternal() {}
+  union {
+    SetControlledPedestriansResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SetControlledPedestriansResponseDefaultTypeInternal _SetControlledPedestriansResponse_default_instance_;
+PROTOBUF_CONSTEXPR SetControlledPedestriansActionsRequest::SetControlledPedestriansActionsRequest(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.person_actions_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct SetControlledPedestriansActionsRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR SetControlledPedestriansActionsRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~SetControlledPedestriansActionsRequestDefaultTypeInternal() {}
+  union {
+    SetControlledPedestriansActionsRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SetControlledPedestriansActionsRequestDefaultTypeInternal _SetControlledPedestriansActionsRequest_default_instance_;
+PROTOBUF_CONSTEXPR SetControlledPedestriansActionsResponse::SetControlledPedestriansActionsResponse(
+    ::_pbi::ConstantInitialized) {}
+struct SetControlledPedestriansActionsResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR SetControlledPedestriansActionsResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~SetControlledPedestriansActionsResponseDefaultTypeInternal() {}
+  union {
+    SetControlledPedestriansActionsResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SetControlledPedestriansActionsResponseDefaultTypeInternal _SetControlledPedestriansActionsResponse_default_instance_;
 }  // namespace v2
 }  // namespace person
 }  // namespace city
-static ::_pb::Metadata file_level_metadata_city_2fperson_2fv2_2fperson_5fservice_2eproto[26];
+static ::_pb::Metadata file_level_metadata_city_2fperson_2fv2_2fperson_5fservice_2eproto[32];
 static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_city_2fperson_2fv2_2fperson_5fservice_2eproto = nullptr;
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_city_2fperson_2fv2_2fperson_5fservice_2eproto = nullptr;
 
@@ -453,6 +526,19 @@ const uint32_t TableStruct_city_2fperson_2fv2_2fperson_5fservice_2eproto::offset
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::city::person::v2::GetAllVehiclesResponse, _impl_.vehicles_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::person::v2::GetAllPedestriansRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::person::v2::GetAllPedestriansResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::person::v2::GetAllPedestriansResponse, _impl_.pedestrians_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::city::person::v2::ResetPersonPositionRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -548,6 +634,32 @@ const uint32_t TableStruct_city_2fperson_2fv2_2fperson_5fservice_2eproto::offset
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::person::v2::SetControlledPedestriansRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::person::v2::SetControlledPedestriansRequest, _impl_.pedestrian_ids_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::person::v2::SetControlledPedestriansResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::person::v2::SetControlledPedestriansActionsRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::person::v2::SetControlledPedestriansActionsRequest, _impl_.person_actions_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::person::v2::SetControlledPedestriansActionsResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::city::person::v2::GetPersonRequest)},
@@ -562,20 +674,26 @@ static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protode
   { 67, -1, -1, sizeof(::city::person::v2::GetPersonByLongLatBBoxResponse)},
   { 74, -1, -1, sizeof(::city::person::v2::GetAllVehiclesRequest)},
   { 80, -1, -1, sizeof(::city::person::v2::GetAllVehiclesResponse)},
-  { 87, -1, -1, sizeof(::city::person::v2::ResetPersonPositionRequest)},
-  { 95, -1, -1, sizeof(::city::person::v2::ResetPersonPositionResponse)},
-  { 101, -1, -1, sizeof(::city::person::v2::SetControlledVehicleIDsRequest)},
-  { 109, -1, -1, sizeof(::city::person::v2::SetControlledVehicleIDsResponse)},
-  { 115, -1, -1, sizeof(::city::person::v2::FetchControlledVehicleEnvsRequest)},
-  { 121, -1, -1, sizeof(::city::person::v2::FetchControlledVehicleEnvsResponse)},
-  { 129, -1, -1, sizeof(::city::person::v2::SetControlledVehicleActionsRequest)},
-  { 137, -1, -1, sizeof(::city::person::v2::SetControlledVehicleActionsResponse)},
-  { 143, -1, -1, sizeof(::city::person::v2::SetControlledTaxiIDsRequest)},
-  { 150, -1, -1, sizeof(::city::person::v2::SetControlledTaxiIDsResponse)},
-  { 156, -1, -1, sizeof(::city::person::v2::GetAllOrdersRequest)},
-  { 162, -1, -1, sizeof(::city::person::v2::GetAllOrdersResponse)},
-  { 169, -1, -1, sizeof(::city::person::v2::SetControlledTaxiToOrdersRequest)},
-  { 176, -1, -1, sizeof(::city::person::v2::SetControlledTaxiToOrdersResponse)},
+  { 87, -1, -1, sizeof(::city::person::v2::GetAllPedestriansRequest)},
+  { 93, -1, -1, sizeof(::city::person::v2::GetAllPedestriansResponse)},
+  { 100, -1, -1, sizeof(::city::person::v2::ResetPersonPositionRequest)},
+  { 108, -1, -1, sizeof(::city::person::v2::ResetPersonPositionResponse)},
+  { 114, -1, -1, sizeof(::city::person::v2::SetControlledVehicleIDsRequest)},
+  { 122, -1, -1, sizeof(::city::person::v2::SetControlledVehicleIDsResponse)},
+  { 128, -1, -1, sizeof(::city::person::v2::FetchControlledVehicleEnvsRequest)},
+  { 134, -1, -1, sizeof(::city::person::v2::FetchControlledVehicleEnvsResponse)},
+  { 142, -1, -1, sizeof(::city::person::v2::SetControlledVehicleActionsRequest)},
+  { 150, -1, -1, sizeof(::city::person::v2::SetControlledVehicleActionsResponse)},
+  { 156, -1, -1, sizeof(::city::person::v2::SetControlledTaxiIDsRequest)},
+  { 163, -1, -1, sizeof(::city::person::v2::SetControlledTaxiIDsResponse)},
+  { 169, -1, -1, sizeof(::city::person::v2::GetAllOrdersRequest)},
+  { 175, -1, -1, sizeof(::city::person::v2::GetAllOrdersResponse)},
+  { 182, -1, -1, sizeof(::city::person::v2::SetControlledTaxiToOrdersRequest)},
+  { 189, -1, -1, sizeof(::city::person::v2::SetControlledTaxiToOrdersResponse)},
+  { 195, -1, -1, sizeof(::city::person::v2::SetControlledPedestriansRequest)},
+  { 202, -1, -1, sizeof(::city::person::v2::SetControlledPedestriansResponse)},
+  { 208, -1, -1, sizeof(::city::person::v2::SetControlledPedestriansActionsRequest)},
+  { 215, -1, -1, sizeof(::city::person::v2::SetControlledPedestriansActionsResponse)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -591,6 +709,8 @@ static const ::_pb::Message* const file_default_instances[] = {
   &::city::person::v2::_GetPersonByLongLatBBoxResponse_default_instance_._instance,
   &::city::person::v2::_GetAllVehiclesRequest_default_instance_._instance,
   &::city::person::v2::_GetAllVehiclesResponse_default_instance_._instance,
+  &::city::person::v2::_GetAllPedestriansRequest_default_instance_._instance,
+  &::city::person::v2::_GetAllPedestriansResponse_default_instance_._instance,
   &::city::person::v2::_ResetPersonPositionRequest_default_instance_._instance,
   &::city::person::v2::_ResetPersonPositionResponse_default_instance_._instance,
   &::city::person::v2::_SetControlledVehicleIDsRequest_default_instance_._instance,
@@ -605,112 +725,137 @@ static const ::_pb::Message* const file_default_instances[] = {
   &::city::person::v2::_GetAllOrdersResponse_default_instance_._instance,
   &::city::person::v2::_SetControlledTaxiToOrdersRequest_default_instance_._instance,
   &::city::person::v2::_SetControlledTaxiToOrdersResponse_default_instance_._instance,
+  &::city::person::v2::_SetControlledPedestriansRequest_default_instance_._instance,
+  &::city::person::v2::_SetControlledPedestriansResponse_default_instance_._instance,
+  &::city::person::v2::_SetControlledPedestriansActionsRequest_default_instance_._instance,
+  &::city::person::v2::_SetControlledPedestriansActionsResponse_default_instance_._instance,
 };
 
 const char descriptor_table_protodef_city_2fperson_2fv2_2fperson_5fservice_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n#city/person/v2/person_service.proto\022\016c"
   "ity.person.v2\032\025city/geo/v2/geo.proto\032\033ci"
-  "ty/person/v2/motion.proto\032\033city/person/v"
-  "2/person.proto\032#city/person/v2/person_ru"
-  "ntime.proto\032\031city/person/v2/taxi.proto\032\034"
-  "city/person/v2/vehicle.proto\032\027city/trip/"
-  "v2/trip.proto\"/\n\020GetPersonRequest\022\033\n\tper"
-  "son_id\030\001 \001(\005R\010personId\"J\n\021GetPersonRespo"
-  "nse\0225\n\006person\030\001 \001(\0132\035.city.person.v2.Per"
-  "sonRuntimeR\006person\"B\n\020AddPersonRequest\022."
-  "\n\006person\030\001 \001(\0132\026.city.person.v2.PersonR\006"
-  "person\"0\n\021AddPersonResponse\022\033\n\tperson_id"
-  "\030\001 \001(\005R\010personId\"g\n\022SetScheduleRequest\022\033"
-  "\n\tperson_id\030\001 \001(\005R\010personId\0224\n\tschedules"
-  "\030\002 \003(\0132\026.city.trip.v2.ScheduleR\tschedule"
-  "s\"\025\n\023SetScheduleResponse\"\226\001\n\021GetPersonsR"
-  "equest\022\035\n\nperson_ids\030\001 \003(\005R\tpersonIds\022A\n"
-  "\020exclude_statuses\030\002 \003(\0162\026.city.person.v2"
-  ".StatusR\017excludeStatuses\022\037\n\013return_base\030"
-  "\003 \001(\010R\nreturnBase\"M\n\022GetPersonsResponse\022"
-  "7\n\007persons\030\001 \003(\0132\035.city.person.v2.Person"
-  "RuntimeR\007persons\"\261\001\n\035GetPersonByLongLatB"
-  "BoxRequest\022,\n\004bbox\030\001 \001(\0132\030.city.geo.v2.L"
-  "ongLatBBoxR\004bbox\022A\n\020exclude_statuses\030\002 \003"
-  "(\0162\026.city.person.v2.StatusR\017excludeStatu"
-  "ses\022\037\n\013return_base\030\003 \001(\010R\nreturnBase\"Y\n\036"
-  "GetPersonByLongLatBBoxResponse\0227\n\007person"
-  "s\030\001 \003(\0132\035.city.person.v2.PersonRuntimeR\007"
-  "persons\"\027\n\025GetAllVehiclesRequest\"T\n\026GetA"
-  "llVehiclesResponse\022:\n\010vehicles\030\001 \003(\0132\036.c"
-  "ity.person.v2.VehicleRuntimeR\010vehicles\"l"
-  "\n\032ResetPersonPositionRequest\022\033\n\tperson_i"
-  "d\030\001 \001(\005R\010personId\0221\n\010position\030\002 \001(\0132\025.ci"
-  "ty.geo.v2.PositionR\010position\"\035\n\033ResetPer"
-  "sonPositionResponse\"m\n\036SetControlledVehi"
-  "cleIDsRequest\022\037\n\013vehicle_ids\030\001 \003(\005R\nvehi"
-  "cleIds\022*\n\021route_vehicle_ids\030\002 \003(\005R\017route"
-  "VehicleIds\"!\n\037SetControlledVehicleIDsRes"
-  "ponse\"#\n!FetchControlledVehicleEnvsReque"
-  "st\"\255\001\n\"FetchControlledVehicleEnvsRespons"
-  "e\022=\n\014vehicle_envs\030\001 \003(\0132\032.city.person.v2"
-  ".VehicleEnvR\013vehicleEnvs\022H\n\022route_vehicl"
-  "e_envs\030\002 \003(\0132\032.city.person.v2.VehicleEnv"
-  "R\020routeVehicleEnvs\"\273\001\n\"SetControlledVehi"
-  "cleActionsRequest\022F\n\017vehicle_actions\030\001 \003"
-  "(\0132\035.city.person.v2.VehicleActionR\016vehic"
-  "leActions\022M\n\020vehicle_journeys\030\002 \003(\0132\".ci"
-  "ty.person.v2.VehicleRouteActionR\017vehicle"
-  "Journeys\"%\n#SetControlledVehicleActionsR"
-  "esponse\"8\n\033SetControlledTaxiIDsRequest\022\031"
-  "\n\010taxi_ids\030\001 \003(\005R\007taxiIds\"\036\n\034SetControll"
-  "edTaxiIDsResponse\"\025\n\023GetAllOrdersRequest"
-  "\"Y\n\024GetAllOrdersResponse\022A\n\013order_infos\030"
-  "\001 \003(\0132 .city.person.v2.RequestOrderInfoR"
-  "\norderInfos\"h\n SetControlledTaxiToOrders"
-  "Request\022D\n\013order_plans\030\001 \003(\0132#.city.pers"
-  "on.v2.OrderAllocationPlanR\norderPlans\"#\n"
-  "!SetControlledTaxiToOrdersResponse2\206\013\n\rP"
-  "ersonService\022P\n\tGetPerson\022 .city.person."
-  "v2.GetPersonRequest\032!.city.person.v2.Get"
-  "PersonResponse\022P\n\tAddPerson\022 .city.perso"
-  "n.v2.AddPersonRequest\032!.city.person.v2.A"
-  "ddPersonResponse\022V\n\013SetSchedule\022\".city.p"
-  "erson.v2.SetScheduleRequest\032#.city.perso"
-  "n.v2.SetScheduleResponse\022S\n\nGetPersons\022!"
-  ".city.person.v2.GetPersonsRequest\032\".city"
-  ".person.v2.GetPersonsResponse\022w\n\026GetPers"
-  "onByLongLatBBox\022-.city.person.v2.GetPers"
-  "onByLongLatBBoxRequest\032..city.person.v2."
-  "GetPersonByLongLatBBoxResponse\022_\n\016GetAll"
-  "Vehicles\022%.city.person.v2.GetAllVehicles"
-  "Request\032&.city.person.v2.GetAllVehiclesR"
-  "esponse\022n\n\023ResetPersonPosition\022*.city.pe"
-  "rson.v2.ResetPersonPositionRequest\032+.cit"
-  "y.person.v2.ResetPersonPositionResponse\022"
-  "z\n\027SetControlledVehicleIDs\022..city.person"
-  ".v2.SetControlledVehicleIDsRequest\032/.cit"
-  "y.person.v2.SetControlledVehicleIDsRespo"
-  "nse\022\203\001\n\032FetchControlledVehicleEnvs\0221.cit"
-  "y.person.v2.FetchControlledVehicleEnvsRe"
-  "quest\0322.city.person.v2.FetchControlledVe"
-  "hicleEnvsResponse\022\206\001\n\033SetControlledVehic"
-  "leActions\0222.city.person.v2.SetControlled"
-  "VehicleActionsRequest\0323.city.person.v2.S"
-  "etControlledVehicleActionsResponse\022q\n\024Se"
-  "tControlledTaxiIDs\022+.city.person.v2.SetC"
-  "ontrolledTaxiIDsRequest\032,.city.person.v2"
-  ".SetControlledTaxiIDsResponse\022Y\n\014GetAllO"
-  "rders\022#.city.person.v2.GetAllOrdersReque"
-  "st\032$.city.person.v2.GetAllOrdersResponse"
-  "\022\200\001\n\031SetControlledTaxiToOrders\0220.city.pe"
-  "rson.v2.SetControlledTaxiToOrdersRequest"
-  "\0321.city.person.v2.SetControlledTaxiToOrd"
-  "ersResponseB\273\001\n\022com.city.person.v2B\022Pers"
-  "onServiceProtoP\001Z7git.fiblab.net/sim/pro"
-  "tos/v2/go/city/person/v2;personv2\242\002\003CPX\252"
-  "\002\016City.Person.V2\312\002\016City\\Person\\V2\342\002\032City"
-  "\\Person\\V2\\GPBMetadata\352\002\020City::Person::V"
-  "2b\006proto3"
+  "ty/person/v2/motion.proto\032\037city/person/v"
+  "2/pedestrian.proto\032\033city/person/v2/perso"
+  "n.proto\032#city/person/v2/person_runtime.p"
+  "roto\032\031city/person/v2/taxi.proto\032\034city/pe"
+  "rson/v2/vehicle.proto\032\027city/trip/v2/trip"
+  ".proto\"/\n\020GetPersonRequest\022\033\n\tperson_id\030"
+  "\001 \001(\005R\010personId\"J\n\021GetPersonResponse\0225\n\006"
+  "person\030\001 \001(\0132\035.city.person.v2.PersonRunt"
+  "imeR\006person\"B\n\020AddPersonRequest\022.\n\006perso"
+  "n\030\001 \001(\0132\026.city.person.v2.PersonR\006person\""
+  "0\n\021AddPersonResponse\022\033\n\tperson_id\030\001 \001(\005R"
+  "\010personId\"g\n\022SetScheduleRequest\022\033\n\tperso"
+  "n_id\030\001 \001(\005R\010personId\0224\n\tschedules\030\002 \003(\0132"
+  "\026.city.trip.v2.ScheduleR\tschedules\"\025\n\023Se"
+  "tScheduleResponse\"\226\001\n\021GetPersonsRequest\022"
+  "\035\n\nperson_ids\030\001 \003(\005R\tpersonIds\022A\n\020exclud"
+  "e_statuses\030\002 \003(\0162\026.city.person.v2.Status"
+  "R\017excludeStatuses\022\037\n\013return_base\030\003 \001(\010R\n"
+  "returnBase\"M\n\022GetPersonsResponse\0227\n\007pers"
+  "ons\030\001 \003(\0132\035.city.person.v2.PersonRuntime"
+  "R\007persons\"\261\001\n\035GetPersonByLongLatBBoxRequ"
+  "est\022,\n\004bbox\030\001 \001(\0132\030.city.geo.v2.LongLatB"
+  "BoxR\004bbox\022A\n\020exclude_statuses\030\002 \003(\0162\026.ci"
+  "ty.person.v2.StatusR\017excludeStatuses\022\037\n\013"
+  "return_base\030\003 \001(\010R\nreturnBase\"Y\n\036GetPers"
+  "onByLongLatBBoxResponse\0227\n\007persons\030\001 \003(\013"
+  "2\035.city.person.v2.PersonRuntimeR\007persons"
+  "\"\027\n\025GetAllVehiclesRequest\"T\n\026GetAllVehic"
+  "lesResponse\022:\n\010vehicles\030\001 \003(\0132\036.city.per"
+  "son.v2.VehicleRuntimeR\010vehicles\"\032\n\030GetAl"
+  "lPedestriansRequest\"\\\n\031GetAllPedestrians"
+  "Response\022\?\n\013pedestrians\030\001 \003(\0132\035.city.per"
+  "son.v2.PersonRuntimeR\013pedestrians\"l\n\032Res"
+  "etPersonPositionRequest\022\033\n\tperson_id\030\001 \001"
+  "(\005R\010personId\0221\n\010position\030\002 \001(\0132\025.city.ge"
+  "o.v2.PositionR\010position\"\035\n\033ResetPersonPo"
+  "sitionResponse\"m\n\036SetControlledVehicleID"
+  "sRequest\022\037\n\013vehicle_ids\030\001 \003(\005R\nvehicleId"
+  "s\022*\n\021route_vehicle_ids\030\002 \003(\005R\017routeVehic"
+  "leIds\"!\n\037SetControlledVehicleIDsResponse"
+  "\"#\n!FetchControlledVehicleEnvsRequest\"\255\001"
+  "\n\"FetchControlledVehicleEnvsResponse\022=\n\014"
+  "vehicle_envs\030\001 \003(\0132\032.city.person.v2.Vehi"
+  "cleEnvR\013vehicleEnvs\022H\n\022route_vehicle_env"
+  "s\030\002 \003(\0132\032.city.person.v2.VehicleEnvR\020rou"
+  "teVehicleEnvs\"\273\001\n\"SetControlledVehicleAc"
+  "tionsRequest\022F\n\017vehicle_actions\030\001 \003(\0132\035."
+  "city.person.v2.VehicleActionR\016vehicleAct"
+  "ions\022M\n\020vehicle_journeys\030\002 \003(\0132\".city.pe"
+  "rson.v2.VehicleRouteActionR\017vehicleJourn"
+  "eys\"%\n#SetControlledVehicleActionsRespon"
+  "se\"8\n\033SetControlledTaxiIDsRequest\022\031\n\010tax"
+  "i_ids\030\001 \003(\005R\007taxiIds\"\036\n\034SetControlledTax"
+  "iIDsResponse\"\025\n\023GetAllOrdersRequest\"Y\n\024G"
+  "etAllOrdersResponse\022A\n\013order_infos\030\001 \003(\013"
+  "2 .city.person.v2.RequestOrderInfoR\norde"
+  "rInfos\"h\n SetControlledTaxiToOrdersReque"
+  "st\022D\n\013order_plans\030\001 \003(\0132#.city.person.v2"
+  ".OrderAllocationPlanR\norderPlans\"#\n!SetC"
+  "ontrolledTaxiToOrdersResponse\"H\n\037SetCont"
+  "rolledPedestriansRequest\022%\n\016pedestrian_i"
+  "ds\030\001 \003(\005R\rpedestrianIds\"\"\n SetControlled"
+  "PedestriansResponse\"q\n&SetControlledPede"
+  "striansActionsRequest\022G\n\016person_actions\030"
+  "\001 \003(\0132 .city.person.v2.PedestrianActionR"
+  "\rpersonActions\")\n\'SetControlledPedestria"
+  "nsActionsResponse2\204\016\n\rPersonService\022P\n\tG"
+  "etPerson\022 .city.person.v2.GetPersonReque"
+  "st\032!.city.person.v2.GetPersonResponse\022P\n"
+  "\tAddPerson\022 .city.person.v2.AddPersonReq"
+  "uest\032!.city.person.v2.AddPersonResponse\022"
+  "V\n\013SetSchedule\022\".city.person.v2.SetSched"
+  "uleRequest\032#.city.person.v2.SetScheduleR"
+  "esponse\022S\n\nGetPersons\022!.city.person.v2.G"
+  "etPersonsRequest\032\".city.person.v2.GetPer"
+  "sonsResponse\022w\n\026GetPersonByLongLatBBox\022-"
+  ".city.person.v2.GetPersonByLongLatBBoxRe"
+  "quest\032..city.person.v2.GetPersonByLongLa"
+  "tBBoxResponse\022_\n\016GetAllVehicles\022%.city.p"
+  "erson.v2.GetAllVehiclesRequest\032&.city.pe"
+  "rson.v2.GetAllVehiclesResponse\022h\n\021GetAll"
+  "Pedestrians\022(.city.person.v2.GetAllPedes"
+  "triansRequest\032).city.person.v2.GetAllPed"
+  "estriansResponse\022n\n\023ResetPersonPosition\022"
+  "*.city.person.v2.ResetPersonPositionRequ"
+  "est\032+.city.person.v2.ResetPersonPosition"
+  "Response\022z\n\027SetControlledVehicleIDs\022..ci"
+  "ty.person.v2.SetControlledVehicleIDsRequ"
+  "est\032/.city.person.v2.SetControlledVehicl"
+  "eIDsResponse\022\203\001\n\032FetchControlledVehicleE"
+  "nvs\0221.city.person.v2.FetchControlledVehi"
+  "cleEnvsRequest\0322.city.person.v2.FetchCon"
+  "trolledVehicleEnvsResponse\022\206\001\n\033SetContro"
+  "lledVehicleActions\0222.city.person.v2.SetC"
+  "ontrolledVehicleActionsRequest\0323.city.pe"
+  "rson.v2.SetControlledVehicleActionsRespo"
+  "nse\022q\n\024SetControlledTaxiIDs\022+.city.perso"
+  "n.v2.SetControlledTaxiIDsRequest\032,.city."
+  "person.v2.SetControlledTaxiIDsResponse\022Y"
+  "\n\014GetAllOrders\022#.city.person.v2.GetAllOr"
+  "dersRequest\032$.city.person.v2.GetAllOrder"
+  "sResponse\022\200\001\n\031SetControlledTaxiToOrders\022"
+  "0.city.person.v2.SetControlledTaxiToOrde"
+  "rsRequest\0321.city.person.v2.SetControlled"
+  "TaxiToOrdersResponse\022}\n\030SetControlledPed"
+  "estrians\022/.city.person.v2.SetControlledP"
+  "edestriansRequest\0320.city.person.v2.SetCo"
+  "ntrolledPedestriansResponse\022\222\001\n\037SetContr"
+  "olledPedestriansActions\0226.city.person.v2"
+  ".SetControlledPedestriansActionsRequest\032"
+  "7.city.person.v2.SetControlledPedestrian"
+  "sActionsResponseB\273\001\n\022com.city.person.v2B"
+  "\022PersonServiceProtoP\001Z7git.fiblab.net/si"
+  "m/protos/v2/go/city/person/v2;personv2\242\002"
+  "\003CPX\252\002\016City.Person.V2\312\002\016City\\Person\\V2\342\002"
+  "\032City\\Person\\V2\\GPBMetadata\352\002\020City::Pers"
+  "on::V2b\006proto3"
   ;
-static const ::_pbi::DescriptorTable* const descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_deps[7] = {
+static const ::_pbi::DescriptorTable* const descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_deps[8] = {
   &::descriptor_table_city_2fgeo_2fv2_2fgeo_2eproto,
   &::descriptor_table_city_2fperson_2fv2_2fmotion_2eproto,
+  &::descriptor_table_city_2fperson_2fv2_2fpedestrian_2eproto,
   &::descriptor_table_city_2fperson_2fv2_2fperson_2eproto,
   &::descriptor_table_city_2fperson_2fv2_2fperson_5fruntime_2eproto,
   &::descriptor_table_city_2fperson_2fv2_2ftaxi_2eproto,
@@ -719,9 +864,9 @@ static const ::_pbi::DescriptorTable* const descriptor_table_city_2fperson_2fv2_
 };
 static ::_pbi::once_flag descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto = {
-    false, false, 3929, descriptor_table_protodef_city_2fperson_2fv2_2fperson_5fservice_2eproto,
+    false, false, 4734, descriptor_table_protodef_city_2fperson_2fv2_2fperson_5fservice_2eproto,
     "city/person/v2/person_service.proto",
-    &descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_once, descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_deps, 7, 26,
+    &descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_once, descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_deps, 8, 32,
     schemas, file_default_instances, TableStruct_city_2fperson_2fv2_2fperson_5fservice_2eproto::offsets,
     file_level_metadata_city_2fperson_2fv2_2fperson_5fservice_2eproto, file_level_enum_descriptors_city_2fperson_2fv2_2fperson_5fservice_2eproto,
     file_level_service_descriptors_city_2fperson_2fv2_2fperson_5fservice_2eproto,
@@ -2893,6 +3038,234 @@ void GetAllVehiclesResponse::InternalSwap(GetAllVehiclesResponse* other) {
 
 // ===================================================================
 
+class GetAllPedestriansRequest::_Internal {
+ public:
+};
+
+GetAllPedestriansRequest::GetAllPedestriansRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
+  // @@protoc_insertion_point(arena_constructor:city.person.v2.GetAllPedestriansRequest)
+}
+GetAllPedestriansRequest::GetAllPedestriansRequest(const GetAllPedestriansRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
+  GetAllPedestriansRequest* const _this = this; (void)_this;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:city.person.v2.GetAllPedestriansRequest)
+}
+
+
+
+
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetAllPedestriansRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetAllPedestriansRequest::GetClassData() const { return &_class_data_; }
+
+
+
+
+
+
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetAllPedestriansRequest::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_getter, &descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_once,
+      file_level_metadata_city_2fperson_2fv2_2fperson_5fservice_2eproto[12]);
+}
+
+// ===================================================================
+
+class GetAllPedestriansResponse::_Internal {
+ public:
+};
+
+void GetAllPedestriansResponse::clear_pedestrians() {
+  _impl_.pedestrians_.Clear();
+}
+GetAllPedestriansResponse::GetAllPedestriansResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:city.person.v2.GetAllPedestriansResponse)
+}
+GetAllPedestriansResponse::GetAllPedestriansResponse(const GetAllPedestriansResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  GetAllPedestriansResponse* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.pedestrians_){from._impl_.pedestrians_}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:city.person.v2.GetAllPedestriansResponse)
+}
+
+inline void GetAllPedestriansResponse::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.pedestrians_){arena}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+}
+
+GetAllPedestriansResponse::~GetAllPedestriansResponse() {
+  // @@protoc_insertion_point(destructor:city.person.v2.GetAllPedestriansResponse)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void GetAllPedestriansResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.pedestrians_.~RepeatedPtrField();
+}
+
+void GetAllPedestriansResponse::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void GetAllPedestriansResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:city.person.v2.GetAllPedestriansResponse)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.pedestrians_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* GetAllPedestriansResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // repeated .city.person.v2.PersonRuntime pedestrians = 1 [json_name = "pedestrians"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_pedestrians(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* GetAllPedestriansResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:city.person.v2.GetAllPedestriansResponse)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated .city.person.v2.PersonRuntime pedestrians = 1 [json_name = "pedestrians"];
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_pedestrians_size()); i < n; i++) {
+    const auto& repfield = this->_internal_pedestrians(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:city.person.v2.GetAllPedestriansResponse)
+  return target;
+}
+
+size_t GetAllPedestriansResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:city.person.v2.GetAllPedestriansResponse)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated .city.person.v2.PersonRuntime pedestrians = 1 [json_name = "pedestrians"];
+  total_size += 1UL * this->_internal_pedestrians_size();
+  for (const auto& msg : this->_impl_.pedestrians_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData GetAllPedestriansResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    GetAllPedestriansResponse::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetAllPedestriansResponse::GetClassData() const { return &_class_data_; }
+
+
+void GetAllPedestriansResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<GetAllPedestriansResponse*>(&to_msg);
+  auto& from = static_cast<const GetAllPedestriansResponse&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:city.person.v2.GetAllPedestriansResponse)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_impl_.pedestrians_.MergeFrom(from._impl_.pedestrians_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void GetAllPedestriansResponse::CopyFrom(const GetAllPedestriansResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:city.person.v2.GetAllPedestriansResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetAllPedestriansResponse::IsInitialized() const {
+  return true;
+}
+
+void GetAllPedestriansResponse::InternalSwap(GetAllPedestriansResponse* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _impl_.pedestrians_.InternalSwap(&other->_impl_.pedestrians_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetAllPedestriansResponse::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_getter, &descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_once,
+      file_level_metadata_city_2fperson_2fv2_2fperson_5fservice_2eproto[13]);
+}
+
+// ===================================================================
+
 class ResetPersonPositionRequest::_Internal {
  public:
   static const ::city::geo::v2::Position& position(const ResetPersonPositionRequest* msg);
@@ -3118,7 +3491,7 @@ void ResetPersonPositionRequest::InternalSwap(ResetPersonPositionRequest* other)
 ::PROTOBUF_NAMESPACE_ID::Metadata ResetPersonPositionRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_getter, &descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_once,
-      file_level_metadata_city_2fperson_2fv2_2fperson_5fservice_2eproto[12]);
+      file_level_metadata_city_2fperson_2fv2_2fperson_5fservice_2eproto[14]);
 }
 
 // ===================================================================
@@ -3158,7 +3531,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ResetPersonPositionResponse::G
 ::PROTOBUF_NAMESPACE_ID::Metadata ResetPersonPositionResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_getter, &descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_once,
-      file_level_metadata_city_2fperson_2fv2_2fperson_5fservice_2eproto[13]);
+      file_level_metadata_city_2fperson_2fv2_2fperson_5fservice_2eproto[15]);
 }
 
 // ===================================================================
@@ -3393,7 +3766,7 @@ void SetControlledVehicleIDsRequest::InternalSwap(SetControlledVehicleIDsRequest
 ::PROTOBUF_NAMESPACE_ID::Metadata SetControlledVehicleIDsRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_getter, &descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_once,
-      file_level_metadata_city_2fperson_2fv2_2fperson_5fservice_2eproto[14]);
+      file_level_metadata_city_2fperson_2fv2_2fperson_5fservice_2eproto[16]);
 }
 
 // ===================================================================
@@ -3433,7 +3806,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SetControlledVehicleIDsRespons
 ::PROTOBUF_NAMESPACE_ID::Metadata SetControlledVehicleIDsResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_getter, &descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_once,
-      file_level_metadata_city_2fperson_2fv2_2fperson_5fservice_2eproto[15]);
+      file_level_metadata_city_2fperson_2fv2_2fperson_5fservice_2eproto[17]);
 }
 
 // ===================================================================
@@ -3473,7 +3846,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*FetchControlledVehicleEnvsRequ
 ::PROTOBUF_NAMESPACE_ID::Metadata FetchControlledVehicleEnvsRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_getter, &descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_once,
-      file_level_metadata_city_2fperson_2fv2_2fperson_5fservice_2eproto[16]);
+      file_level_metadata_city_2fperson_2fv2_2fperson_5fservice_2eproto[18]);
 }
 
 // ===================================================================
@@ -3698,7 +4071,7 @@ void FetchControlledVehicleEnvsResponse::InternalSwap(FetchControlledVehicleEnvs
 ::PROTOBUF_NAMESPACE_ID::Metadata FetchControlledVehicleEnvsResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_getter, &descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_once,
-      file_level_metadata_city_2fperson_2fv2_2fperson_5fservice_2eproto[17]);
+      file_level_metadata_city_2fperson_2fv2_2fperson_5fservice_2eproto[19]);
 }
 
 // ===================================================================
@@ -3923,7 +4296,7 @@ void SetControlledVehicleActionsRequest::InternalSwap(SetControlledVehicleAction
 ::PROTOBUF_NAMESPACE_ID::Metadata SetControlledVehicleActionsRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_getter, &descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_once,
-      file_level_metadata_city_2fperson_2fv2_2fperson_5fservice_2eproto[18]);
+      file_level_metadata_city_2fperson_2fv2_2fperson_5fservice_2eproto[20]);
 }
 
 // ===================================================================
@@ -3963,7 +4336,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SetControlledVehicleActionsRes
 ::PROTOBUF_NAMESPACE_ID::Metadata SetControlledVehicleActionsResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_getter, &descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_once,
-      file_level_metadata_city_2fperson_2fv2_2fperson_5fservice_2eproto[19]);
+      file_level_metadata_city_2fperson_2fv2_2fperson_5fservice_2eproto[21]);
 }
 
 // ===================================================================
@@ -4156,7 +4529,7 @@ void SetControlledTaxiIDsRequest::InternalSwap(SetControlledTaxiIDsRequest* othe
 ::PROTOBUF_NAMESPACE_ID::Metadata SetControlledTaxiIDsRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_getter, &descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_once,
-      file_level_metadata_city_2fperson_2fv2_2fperson_5fservice_2eproto[20]);
+      file_level_metadata_city_2fperson_2fv2_2fperson_5fservice_2eproto[22]);
 }
 
 // ===================================================================
@@ -4196,7 +4569,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SetControlledTaxiIDsResponse::
 ::PROTOBUF_NAMESPACE_ID::Metadata SetControlledTaxiIDsResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_getter, &descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_once,
-      file_level_metadata_city_2fperson_2fv2_2fperson_5fservice_2eproto[21]);
+      file_level_metadata_city_2fperson_2fv2_2fperson_5fservice_2eproto[23]);
 }
 
 // ===================================================================
@@ -4236,7 +4609,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetAllOrdersRequest::GetClassD
 ::PROTOBUF_NAMESPACE_ID::Metadata GetAllOrdersRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_getter, &descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_once,
-      file_level_metadata_city_2fperson_2fv2_2fperson_5fservice_2eproto[22]);
+      file_level_metadata_city_2fperson_2fv2_2fperson_5fservice_2eproto[24]);
 }
 
 // ===================================================================
@@ -4424,7 +4797,7 @@ void GetAllOrdersResponse::InternalSwap(GetAllOrdersResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata GetAllOrdersResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_getter, &descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_once,
-      file_level_metadata_city_2fperson_2fv2_2fperson_5fservice_2eproto[23]);
+      file_level_metadata_city_2fperson_2fv2_2fperson_5fservice_2eproto[25]);
 }
 
 // ===================================================================
@@ -4612,7 +4985,7 @@ void SetControlledTaxiToOrdersRequest::InternalSwap(SetControlledTaxiToOrdersReq
 ::PROTOBUF_NAMESPACE_ID::Metadata SetControlledTaxiToOrdersRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_getter, &descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_once,
-      file_level_metadata_city_2fperson_2fv2_2fperson_5fservice_2eproto[24]);
+      file_level_metadata_city_2fperson_2fv2_2fperson_5fservice_2eproto[26]);
 }
 
 // ===================================================================
@@ -4652,7 +5025,468 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SetControlledTaxiToOrdersRespo
 ::PROTOBUF_NAMESPACE_ID::Metadata SetControlledTaxiToOrdersResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_getter, &descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_once,
-      file_level_metadata_city_2fperson_2fv2_2fperson_5fservice_2eproto[25]);
+      file_level_metadata_city_2fperson_2fv2_2fperson_5fservice_2eproto[27]);
+}
+
+// ===================================================================
+
+class SetControlledPedestriansRequest::_Internal {
+ public:
+};
+
+SetControlledPedestriansRequest::SetControlledPedestriansRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:city.person.v2.SetControlledPedestriansRequest)
+}
+SetControlledPedestriansRequest::SetControlledPedestriansRequest(const SetControlledPedestriansRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  SetControlledPedestriansRequest* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.pedestrian_ids_){from._impl_.pedestrian_ids_}
+    , /*decltype(_impl_._pedestrian_ids_cached_byte_size_)*/{0}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:city.person.v2.SetControlledPedestriansRequest)
+}
+
+inline void SetControlledPedestriansRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.pedestrian_ids_){arena}
+    , /*decltype(_impl_._pedestrian_ids_cached_byte_size_)*/{0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+}
+
+SetControlledPedestriansRequest::~SetControlledPedestriansRequest() {
+  // @@protoc_insertion_point(destructor:city.person.v2.SetControlledPedestriansRequest)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void SetControlledPedestriansRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.pedestrian_ids_.~RepeatedField();
+}
+
+void SetControlledPedestriansRequest::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void SetControlledPedestriansRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:city.person.v2.SetControlledPedestriansRequest)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.pedestrian_ids_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* SetControlledPedestriansRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // repeated int32 pedestrian_ids = 1 [json_name = "pedestrianIds"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_pedestrian_ids(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<uint8_t>(tag) == 8) {
+          _internal_add_pedestrian_ids(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* SetControlledPedestriansRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:city.person.v2.SetControlledPedestriansRequest)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated int32 pedestrian_ids = 1 [json_name = "pedestrianIds"];
+  {
+    int byte_size = _impl_._pedestrian_ids_cached_byte_size_.load(std::memory_order_relaxed);
+    if (byte_size > 0) {
+      target = stream->WriteInt32Packed(
+          1, _internal_pedestrian_ids(), byte_size, target);
+    }
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:city.person.v2.SetControlledPedestriansRequest)
+  return target;
+}
+
+size_t SetControlledPedestriansRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:city.person.v2.SetControlledPedestriansRequest)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated int32 pedestrian_ids = 1 [json_name = "pedestrianIds"];
+  {
+    size_t data_size = ::_pbi::WireFormatLite::
+      Int32Size(this->_impl_.pedestrian_ids_);
+    if (data_size > 0) {
+      total_size += 1 +
+        ::_pbi::WireFormatLite::Int32Size(static_cast<int32_t>(data_size));
+    }
+    int cached_size = ::_pbi::ToCachedSize(data_size);
+    _impl_._pedestrian_ids_cached_byte_size_.store(cached_size,
+                                    std::memory_order_relaxed);
+    total_size += data_size;
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData SetControlledPedestriansRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    SetControlledPedestriansRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SetControlledPedestriansRequest::GetClassData() const { return &_class_data_; }
+
+
+void SetControlledPedestriansRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<SetControlledPedestriansRequest*>(&to_msg);
+  auto& from = static_cast<const SetControlledPedestriansRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:city.person.v2.SetControlledPedestriansRequest)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_impl_.pedestrian_ids_.MergeFrom(from._impl_.pedestrian_ids_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void SetControlledPedestriansRequest::CopyFrom(const SetControlledPedestriansRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:city.person.v2.SetControlledPedestriansRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool SetControlledPedestriansRequest::IsInitialized() const {
+  return true;
+}
+
+void SetControlledPedestriansRequest::InternalSwap(SetControlledPedestriansRequest* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _impl_.pedestrian_ids_.InternalSwap(&other->_impl_.pedestrian_ids_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata SetControlledPedestriansRequest::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_getter, &descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_once,
+      file_level_metadata_city_2fperson_2fv2_2fperson_5fservice_2eproto[28]);
+}
+
+// ===================================================================
+
+class SetControlledPedestriansResponse::_Internal {
+ public:
+};
+
+SetControlledPedestriansResponse::SetControlledPedestriansResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
+  // @@protoc_insertion_point(arena_constructor:city.person.v2.SetControlledPedestriansResponse)
+}
+SetControlledPedestriansResponse::SetControlledPedestriansResponse(const SetControlledPedestriansResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
+  SetControlledPedestriansResponse* const _this = this; (void)_this;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:city.person.v2.SetControlledPedestriansResponse)
+}
+
+
+
+
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData SetControlledPedestriansResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SetControlledPedestriansResponse::GetClassData() const { return &_class_data_; }
+
+
+
+
+
+
+
+::PROTOBUF_NAMESPACE_ID::Metadata SetControlledPedestriansResponse::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_getter, &descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_once,
+      file_level_metadata_city_2fperson_2fv2_2fperson_5fservice_2eproto[29]);
+}
+
+// ===================================================================
+
+class SetControlledPedestriansActionsRequest::_Internal {
+ public:
+};
+
+void SetControlledPedestriansActionsRequest::clear_person_actions() {
+  _impl_.person_actions_.Clear();
+}
+SetControlledPedestriansActionsRequest::SetControlledPedestriansActionsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:city.person.v2.SetControlledPedestriansActionsRequest)
+}
+SetControlledPedestriansActionsRequest::SetControlledPedestriansActionsRequest(const SetControlledPedestriansActionsRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  SetControlledPedestriansActionsRequest* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.person_actions_){from._impl_.person_actions_}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:city.person.v2.SetControlledPedestriansActionsRequest)
+}
+
+inline void SetControlledPedestriansActionsRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.person_actions_){arena}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+}
+
+SetControlledPedestriansActionsRequest::~SetControlledPedestriansActionsRequest() {
+  // @@protoc_insertion_point(destructor:city.person.v2.SetControlledPedestriansActionsRequest)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void SetControlledPedestriansActionsRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.person_actions_.~RepeatedPtrField();
+}
+
+void SetControlledPedestriansActionsRequest::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void SetControlledPedestriansActionsRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:city.person.v2.SetControlledPedestriansActionsRequest)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.person_actions_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* SetControlledPedestriansActionsRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // repeated .city.person.v2.PedestrianAction person_actions = 1 [json_name = "personActions"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_person_actions(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* SetControlledPedestriansActionsRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:city.person.v2.SetControlledPedestriansActionsRequest)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated .city.person.v2.PedestrianAction person_actions = 1 [json_name = "personActions"];
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_person_actions_size()); i < n; i++) {
+    const auto& repfield = this->_internal_person_actions(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:city.person.v2.SetControlledPedestriansActionsRequest)
+  return target;
+}
+
+size_t SetControlledPedestriansActionsRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:city.person.v2.SetControlledPedestriansActionsRequest)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated .city.person.v2.PedestrianAction person_actions = 1 [json_name = "personActions"];
+  total_size += 1UL * this->_internal_person_actions_size();
+  for (const auto& msg : this->_impl_.person_actions_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData SetControlledPedestriansActionsRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    SetControlledPedestriansActionsRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SetControlledPedestriansActionsRequest::GetClassData() const { return &_class_data_; }
+
+
+void SetControlledPedestriansActionsRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<SetControlledPedestriansActionsRequest*>(&to_msg);
+  auto& from = static_cast<const SetControlledPedestriansActionsRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:city.person.v2.SetControlledPedestriansActionsRequest)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_impl_.person_actions_.MergeFrom(from._impl_.person_actions_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void SetControlledPedestriansActionsRequest::CopyFrom(const SetControlledPedestriansActionsRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:city.person.v2.SetControlledPedestriansActionsRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool SetControlledPedestriansActionsRequest::IsInitialized() const {
+  return true;
+}
+
+void SetControlledPedestriansActionsRequest::InternalSwap(SetControlledPedestriansActionsRequest* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _impl_.person_actions_.InternalSwap(&other->_impl_.person_actions_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata SetControlledPedestriansActionsRequest::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_getter, &descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_once,
+      file_level_metadata_city_2fperson_2fv2_2fperson_5fservice_2eproto[30]);
+}
+
+// ===================================================================
+
+class SetControlledPedestriansActionsResponse::_Internal {
+ public:
+};
+
+SetControlledPedestriansActionsResponse::SetControlledPedestriansActionsResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
+  // @@protoc_insertion_point(arena_constructor:city.person.v2.SetControlledPedestriansActionsResponse)
+}
+SetControlledPedestriansActionsResponse::SetControlledPedestriansActionsResponse(const SetControlledPedestriansActionsResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
+  SetControlledPedestriansActionsResponse* const _this = this; (void)_this;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:city.person.v2.SetControlledPedestriansActionsResponse)
+}
+
+
+
+
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData SetControlledPedestriansActionsResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SetControlledPedestriansActionsResponse::GetClassData() const { return &_class_data_; }
+
+
+
+
+
+
+
+::PROTOBUF_NAMESPACE_ID::Metadata SetControlledPedestriansActionsResponse::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_getter, &descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_once,
+      file_level_metadata_city_2fperson_2fv2_2fperson_5fservice_2eproto[31]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
@@ -4707,6 +5541,14 @@ Arena::CreateMaybeMessage< ::city::person::v2::GetAllVehiclesRequest >(Arena* ar
 template<> PROTOBUF_NOINLINE ::city::person::v2::GetAllVehiclesResponse*
 Arena::CreateMaybeMessage< ::city::person::v2::GetAllVehiclesResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::city::person::v2::GetAllVehiclesResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::person::v2::GetAllPedestriansRequest*
+Arena::CreateMaybeMessage< ::city::person::v2::GetAllPedestriansRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::person::v2::GetAllPedestriansRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::person::v2::GetAllPedestriansResponse*
+Arena::CreateMaybeMessage< ::city::person::v2::GetAllPedestriansResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::person::v2::GetAllPedestriansResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::city::person::v2::ResetPersonPositionRequest*
 Arena::CreateMaybeMessage< ::city::person::v2::ResetPersonPositionRequest >(Arena* arena) {
@@ -4763,6 +5605,22 @@ Arena::CreateMaybeMessage< ::city::person::v2::SetControlledTaxiToOrdersRequest 
 template<> PROTOBUF_NOINLINE ::city::person::v2::SetControlledTaxiToOrdersResponse*
 Arena::CreateMaybeMessage< ::city::person::v2::SetControlledTaxiToOrdersResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::city::person::v2::SetControlledTaxiToOrdersResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::person::v2::SetControlledPedestriansRequest*
+Arena::CreateMaybeMessage< ::city::person::v2::SetControlledPedestriansRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::person::v2::SetControlledPedestriansRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::person::v2::SetControlledPedestriansResponse*
+Arena::CreateMaybeMessage< ::city::person::v2::SetControlledPedestriansResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::person::v2::SetControlledPedestriansResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::person::v2::SetControlledPedestriansActionsRequest*
+Arena::CreateMaybeMessage< ::city::person::v2::SetControlledPedestriansActionsRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::person::v2::SetControlledPedestriansActionsRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::city::person::v2::SetControlledPedestriansActionsResponse*
+Arena::CreateMaybeMessage< ::city::person::v2::SetControlledPedestriansActionsResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::person::v2::SetControlledPedestriansActionsResponse >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

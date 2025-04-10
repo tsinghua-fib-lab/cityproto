@@ -11,6 +11,7 @@ import { Status } from "./motion_pb.js";
 import { LongLatBBox, Position } from "../../geo/v2/geo_pb.js";
 import { VehicleAction, VehicleEnv, VehicleRouteAction, VehicleRuntime } from "./vehicle_pb.js";
 import { OrderAllocationPlan, RequestOrderInfo } from "./taxi_pb.js";
+import { PedestrianAction } from "./pedestrian_pb.js";
 
 /**
  * 获取person信息请求
@@ -166,6 +167,30 @@ export const GetAllVehiclesResponse = /*@__PURE__*/ proto3.makeMessageType(
   "city.person.v2.GetAllVehiclesResponse",
   () => [
     { no: 1, name: "vehicles", kind: "message", T: VehicleRuntime, repeated: true },
+  ],
+);
+
+/**
+ * 获取所有行人请求
+ * Request for getting all pedestrians
+ *
+ * @generated from message city.person.v2.GetAllPedestriansRequest
+ */
+export const GetAllPedestriansRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.person.v2.GetAllPedestriansRequest",
+  [],
+);
+
+/**
+ * 获取所有行人响应
+ * Response of getting all pedestrians
+ *
+ * @generated from message city.person.v2.GetAllPedestriansResponse
+ */
+export const GetAllPedestriansResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.person.v2.GetAllPedestriansResponse",
+  () => [
+    { no: 1, name: "pedestrians", kind: "message", T: PersonRuntime, repeated: true },
   ],
 );
 
@@ -338,6 +363,54 @@ export const SetControlledTaxiToOrdersRequest = /*@__PURE__*/ proto3.makeMessage
  */
 export const SetControlledTaxiToOrdersResponse = /*@__PURE__*/ proto3.makeMessageType(
   "city.person.v2.SetControlledTaxiToOrdersResponse",
+  [],
+);
+
+/**
+ * 设置由外部控制的行人请求
+ * Request for setting pedestrian controlled by external behavior
+ *
+ * @generated from message city.person.v2.SetControlledPedestriansRequest
+ */
+export const SetControlledPedestriansRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.person.v2.SetControlledPedestriansRequest",
+  () => [
+    { no: 1, name: "pedestrian_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+  ],
+);
+
+/**
+ * 设置由外部控制的行人响应
+ * Response of setting pedestrian controlled by external behavior
+ *
+ * @generated from message city.person.v2.SetControlledPedestriansResponse
+ */
+export const SetControlledPedestriansResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.person.v2.SetControlledPedestriansResponse",
+  [],
+);
+
+/**
+ * 设置由外部控制的行人行为请求
+ * Request for setting behavior of pedestrian controlled by external behavior
+ *
+ * @generated from message city.person.v2.SetControlledPedestriansActionsRequest
+ */
+export const SetControlledPedestriansActionsRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.person.v2.SetControlledPedestriansActionsRequest",
+  () => [
+    { no: 1, name: "person_actions", kind: "message", T: PedestrianAction, repeated: true },
+  ],
+);
+
+/**
+ * 设置由外部控制的行人行为响应
+ * Response of setting behavior of pedestrian controlled by external behavior
+ *
+ * @generated from message city.person.v2.SetControlledPedestriansActionsResponse
+ */
+export const SetControlledPedestriansActionsResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.person.v2.SetControlledPedestriansActionsResponse",
   [],
 );
 

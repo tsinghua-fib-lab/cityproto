@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AddPersonRequest, AddPersonResponse, FetchControlledVehicleEnvsRequest, FetchControlledVehicleEnvsResponse, GetAllOrdersRequest, GetAllOrdersResponse, GetAllVehiclesRequest, GetAllVehiclesResponse, GetPersonByLongLatBBoxRequest, GetPersonByLongLatBBoxResponse, GetPersonRequest, GetPersonResponse, GetPersonsRequest, GetPersonsResponse, ResetPersonPositionRequest, ResetPersonPositionResponse, SetControlledTaxiIDsRequest, SetControlledTaxiIDsResponse, SetControlledTaxiToOrdersRequest, SetControlledTaxiToOrdersResponse, SetControlledVehicleActionsRequest, SetControlledVehicleActionsResponse, SetControlledVehicleIDsRequest, SetControlledVehicleIDsResponse, SetScheduleRequest, SetScheduleResponse } from "./person_service_pb.js";
+import { AddPersonRequest, AddPersonResponse, FetchControlledVehicleEnvsRequest, FetchControlledVehicleEnvsResponse, GetAllOrdersRequest, GetAllOrdersResponse, GetAllPedestriansRequest, GetAllPedestriansResponse, GetAllVehiclesRequest, GetAllVehiclesResponse, GetPersonByLongLatBBoxRequest, GetPersonByLongLatBBoxResponse, GetPersonRequest, GetPersonResponse, GetPersonsRequest, GetPersonsResponse, ResetPersonPositionRequest, ResetPersonPositionResponse, SetControlledPedestriansActionsRequest, SetControlledPedestriansActionsResponse, SetControlledPedestriansRequest, SetControlledPedestriansResponse, SetControlledTaxiIDsRequest, SetControlledTaxiIDsResponse, SetControlledTaxiToOrdersRequest, SetControlledTaxiToOrdersResponse, SetControlledVehicleActionsRequest, SetControlledVehicleActionsResponse, SetControlledVehicleIDsRequest, SetControlledVehicleIDsResponse, SetScheduleRequest, SetScheduleResponse } from "./person_service_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -26,7 +26,8 @@ export const PersonService = {
     },
     /**
      * 新增person 传入person初始位置、目的地表、属性 返回personid
-     * Add a new person. Input person's initial location, destination table, and attributes, return personid
+     * Add a new person. Input person's initial location, destination table, and
+     * attributes, return personid
      *
      * @generated from rpc city.person.v2.PersonService.AddPerson
      */
@@ -82,6 +83,18 @@ export const PersonService = {
       name: "GetAllVehicles",
       I: GetAllVehiclesRequest,
       O: GetAllVehiclesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * 获取所有行人
+     * Get all pedestrians
+     *
+     * @generated from rpc city.person.v2.PersonService.GetAllPedestrians
+     */
+    getAllPedestrians: {
+      name: "GetAllPedestrians",
+      I: GetAllPedestriansRequest,
+      O: GetAllPedestriansResponse,
       kind: MethodKind.Unary,
     },
     /**
@@ -166,6 +179,30 @@ export const PersonService = {
       name: "SetControlledTaxiToOrders",
       I: SetControlledTaxiToOrdersRequest,
       O: SetControlledTaxiToOrdersResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * 设置由外部控制的行人
+     * Set pedestrian controlled by external behavior
+     *
+     * @generated from rpc city.person.v2.PersonService.SetControlledPedestrians
+     */
+    setControlledPedestrians: {
+      name: "SetControlledPedestrians",
+      I: SetControlledPedestriansRequest,
+      O: SetControlledPedestriansResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * 设置由外部控制的行人行为
+     * Set behavior of pedestrian controlled by external behavior
+     *
+     * @generated from rpc city.person.v2.PersonService.SetControlledPedestriansActions
+     */
+    setControlledPedestriansActions: {
+      name: "SetControlledPedestriansActions",
+      I: SetControlledPedestriansActionsRequest,
+      O: SetControlledPedestriansActionsResponse,
       kind: MethodKind.Unary,
     },
   }

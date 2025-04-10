@@ -1,5 +1,6 @@
 from city.geo.v2 import geo_pb2 as _geo_pb2
 from city.person.v2 import motion_pb2 as _motion_pb2
+from city.person.v2 import pedestrian_pb2 as _pedestrian_pb2
 from city.person.v2 import person_pb2 as _person_pb2
 from city.person.v2 import person_runtime_pb2 as _person_runtime_pb2
 from city.person.v2 import taxi_pb2 as _taxi_pb2
@@ -113,6 +114,20 @@ class GetAllVehiclesResponse(_message.Message):
     def __init__(self, vehicles: _Optional[_Iterable[_Union[_vehicle_pb2.VehicleRuntime, _Mapping]]]=...) -> None:
         ...
 
+class GetAllPedestriansRequest(_message.Message):
+    __slots__ = []
+
+    def __init__(self) -> None:
+        ...
+
+class GetAllPedestriansResponse(_message.Message):
+    __slots__ = ['pedestrians']
+    PEDESTRIANS_FIELD_NUMBER: _ClassVar[int]
+    pedestrians: _containers.RepeatedCompositeFieldContainer[_person_runtime_pb2.PersonRuntime]
+
+    def __init__(self, pedestrians: _Optional[_Iterable[_Union[_person_runtime_pb2.PersonRuntime, _Mapping]]]=...) -> None:
+        ...
+
 class ResetPersonPositionRequest(_message.Message):
     __slots__ = ['person_id', 'position']
     PERSON_ID_FIELD_NUMBER: _ClassVar[int]
@@ -214,6 +229,34 @@ class SetControlledTaxiToOrdersRequest(_message.Message):
         ...
 
 class SetControlledTaxiToOrdersResponse(_message.Message):
+    __slots__ = []
+
+    def __init__(self) -> None:
+        ...
+
+class SetControlledPedestriansRequest(_message.Message):
+    __slots__ = ['pedestrian_ids']
+    PEDESTRIAN_IDS_FIELD_NUMBER: _ClassVar[int]
+    pedestrian_ids: _containers.RepeatedScalarFieldContainer[int]
+
+    def __init__(self, pedestrian_ids: _Optional[_Iterable[int]]=...) -> None:
+        ...
+
+class SetControlledPedestriansResponse(_message.Message):
+    __slots__ = []
+
+    def __init__(self) -> None:
+        ...
+
+class SetControlledPedestriansActionsRequest(_message.Message):
+    __slots__ = ['person_actions']
+    PERSON_ACTIONS_FIELD_NUMBER: _ClassVar[int]
+    person_actions: _containers.RepeatedCompositeFieldContainer[_pedestrian_pb2.PedestrianAction]
+
+    def __init__(self, person_actions: _Optional[_Iterable[_Union[_pedestrian_pb2.PedestrianAction, _Mapping]]]=...) -> None:
+        ...
+
+class SetControlledPedestriansActionsResponse(_message.Message):
     __slots__ = []
 
     def __init__(self) -> None:

@@ -1,5 +1,6 @@
 from . import carbon_pb2
 from . import motion_pb2
+from . import pedestrian_pb2
 from . import person_pb2
 from . import person_runtime_pb2
 from . import person_service_pb2

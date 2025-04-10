@@ -49,6 +49,9 @@ const (
 	// PersonServiceGetAllVehiclesProcedure is the fully-qualified name of the PersonService's
 	// GetAllVehicles RPC.
 	PersonServiceGetAllVehiclesProcedure = "/city.person.v2.PersonService/GetAllVehicles"
+	// PersonServiceGetAllPedestriansProcedure is the fully-qualified name of the PersonService's
+	// GetAllPedestrians RPC.
+	PersonServiceGetAllPedestriansProcedure = "/city.person.v2.PersonService/GetAllPedestrians"
 	// PersonServiceResetPersonPositionProcedure is the fully-qualified name of the PersonService's
 	// ResetPersonPosition RPC.
 	PersonServiceResetPersonPositionProcedure = "/city.person.v2.PersonService/ResetPersonPosition"
@@ -70,6 +73,12 @@ const (
 	// PersonServiceSetControlledTaxiToOrdersProcedure is the fully-qualified name of the
 	// PersonService's SetControlledTaxiToOrders RPC.
 	PersonServiceSetControlledTaxiToOrdersProcedure = "/city.person.v2.PersonService/SetControlledTaxiToOrders"
+	// PersonServiceSetControlledPedestriansProcedure is the fully-qualified name of the PersonService's
+	// SetControlledPedestrians RPC.
+	PersonServiceSetControlledPedestriansProcedure = "/city.person.v2.PersonService/SetControlledPedestrians"
+	// PersonServiceSetControlledPedestriansActionsProcedure is the fully-qualified name of the
+	// PersonService's SetControlledPedestriansActions RPC.
+	PersonServiceSetControlledPedestriansActionsProcedure = "/city.person.v2.PersonService/SetControlledPedestriansActions"
 )
 
 // PersonServiceClient is a client for the city.person.v2.PersonService service.
@@ -78,7 +87,8 @@ type PersonServiceClient interface {
 	// Get person information
 	GetPerson(context.Context, *connect.Request[v2.GetPersonRequest]) (*connect.Response[v2.GetPersonResponse], error)
 	// 新增person 传入person初始位置、目的地表、属性 返回personid
-	// Add a new person. Input person's initial location, destination table, and attributes, return personid
+	// Add a new person. Input person's initial location, destination table, and
+	// attributes, return personid
 	AddPerson(context.Context, *connect.Request[v2.AddPersonRequest]) (*connect.Response[v2.AddPersonResponse], error)
 	// 修改person的schedule 传入personid、目的地表
 	// Set person's schedule. Input personid and destination table
@@ -92,6 +102,9 @@ type PersonServiceClient interface {
 	// 获取所有车辆
 	// Get all vehicles
 	GetAllVehicles(context.Context, *connect.Request[v2.GetAllVehiclesRequest]) (*connect.Response[v2.GetAllVehiclesResponse], error)
+	// 获取所有行人
+	// Get all pedestrians
+	GetAllPedestrians(context.Context, *connect.Request[v2.GetAllPedestriansRequest]) (*connect.Response[v2.GetAllPedestriansResponse], error)
 	// 重置人的位置（将停止当前正在进行的出行，转为sleep状态）
 	// Reset person's position (stop the current trip and switch to sleep status)
 	ResetPersonPosition(context.Context, *connect.Request[v2.ResetPersonPositionRequest]) (*connect.Response[v2.ResetPersonPositionResponse], error)
@@ -113,6 +126,12 @@ type PersonServiceClient interface {
 	// 设置所有外部控制的出租车接指定的单
 	// Set all externally controlled taxis to specified orders
 	SetControlledTaxiToOrders(context.Context, *connect.Request[v2.SetControlledTaxiToOrdersRequest]) (*connect.Response[v2.SetControlledTaxiToOrdersResponse], error)
+	// 设置由外部控制的行人
+	// Set pedestrian controlled by external behavior
+	SetControlledPedestrians(context.Context, *connect.Request[v2.SetControlledPedestriansRequest]) (*connect.Response[v2.SetControlledPedestriansResponse], error)
+	// 设置由外部控制的行人行为
+	// Set behavior of pedestrian controlled by external behavior
+	SetControlledPedestriansActions(context.Context, *connect.Request[v2.SetControlledPedestriansActionsRequest]) (*connect.Response[v2.SetControlledPedestriansActionsResponse], error)
 }
 
 // NewPersonServiceClient constructs a client for the city.person.v2.PersonService service. By
@@ -162,6 +181,12 @@ func NewPersonServiceClient(httpClient connect.HTTPClient, baseURL string, opts 
 			connect.WithSchema(personServiceMethods.ByName("GetAllVehicles")),
 			connect.WithClientOptions(opts...),
 		),
+		getAllPedestrians: connect.NewClient[v2.GetAllPedestriansRequest, v2.GetAllPedestriansResponse](
+			httpClient,
+			baseURL+PersonServiceGetAllPedestriansProcedure,
+			connect.WithSchema(personServiceMethods.ByName("GetAllPedestrians")),
+			connect.WithClientOptions(opts...),
+		),
 		resetPersonPosition: connect.NewClient[v2.ResetPersonPositionRequest, v2.ResetPersonPositionResponse](
 			httpClient,
 			baseURL+PersonServiceResetPersonPositionProcedure,
@@ -204,24 +229,39 @@ func NewPersonServiceClient(httpClient connect.HTTPClient, baseURL string, opts 
 			connect.WithSchema(personServiceMethods.ByName("SetControlledTaxiToOrders")),
 			connect.WithClientOptions(opts...),
 		),
+		setControlledPedestrians: connect.NewClient[v2.SetControlledPedestriansRequest, v2.SetControlledPedestriansResponse](
+			httpClient,
+			baseURL+PersonServiceSetControlledPedestriansProcedure,
+			connect.WithSchema(personServiceMethods.ByName("SetControlledPedestrians")),
+			connect.WithClientOptions(opts...),
+		),
+		setControlledPedestriansActions: connect.NewClient[v2.SetControlledPedestriansActionsRequest, v2.SetControlledPedestriansActionsResponse](
+			httpClient,
+			baseURL+PersonServiceSetControlledPedestriansActionsProcedure,
+			connect.WithSchema(personServiceMethods.ByName("SetControlledPedestriansActions")),
+			connect.WithClientOptions(opts...),
+		),
 	}
 }
 
 // personServiceClient implements PersonServiceClient.
 type personServiceClient struct {
-	getPerson                   *connect.Client[v2.GetPersonRequest, v2.GetPersonResponse]
-	addPerson                   *connect.Client[v2.AddPersonRequest, v2.AddPersonResponse]
-	setSchedule                 *connect.Client[v2.SetScheduleRequest, v2.SetScheduleResponse]
-	getPersons                  *connect.Client[v2.GetPersonsRequest, v2.GetPersonsResponse]
-	getPersonByLongLatBBox      *connect.Client[v2.GetPersonByLongLatBBoxRequest, v2.GetPersonByLongLatBBoxResponse]
-	getAllVehicles              *connect.Client[v2.GetAllVehiclesRequest, v2.GetAllVehiclesResponse]
-	resetPersonPosition         *connect.Client[v2.ResetPersonPositionRequest, v2.ResetPersonPositionResponse]
-	setControlledVehicleIDs     *connect.Client[v2.SetControlledVehicleIDsRequest, v2.SetControlledVehicleIDsResponse]
-	fetchControlledVehicleEnvs  *connect.Client[v2.FetchControlledVehicleEnvsRequest, v2.FetchControlledVehicleEnvsResponse]
-	setControlledVehicleActions *connect.Client[v2.SetControlledVehicleActionsRequest, v2.SetControlledVehicleActionsResponse]
-	setControlledTaxiIDs        *connect.Client[v2.SetControlledTaxiIDsRequest, v2.SetControlledTaxiIDsResponse]
-	getAllOrders                *connect.Client[v2.GetAllOrdersRequest, v2.GetAllOrdersResponse]
-	setControlledTaxiToOrders   *connect.Client[v2.SetControlledTaxiToOrdersRequest, v2.SetControlledTaxiToOrdersResponse]
+	getPerson                       *connect.Client[v2.GetPersonRequest, v2.GetPersonResponse]
+	addPerson                       *connect.Client[v2.AddPersonRequest, v2.AddPersonResponse]
+	setSchedule                     *connect.Client[v2.SetScheduleRequest, v2.SetScheduleResponse]
+	getPersons                      *connect.Client[v2.GetPersonsRequest, v2.GetPersonsResponse]
+	getPersonByLongLatBBox          *connect.Client[v2.GetPersonByLongLatBBoxRequest, v2.GetPersonByLongLatBBoxResponse]
+	getAllVehicles                  *connect.Client[v2.GetAllVehiclesRequest, v2.GetAllVehiclesResponse]
+	getAllPedestrians               *connect.Client[v2.GetAllPedestriansRequest, v2.GetAllPedestriansResponse]
+	resetPersonPosition             *connect.Client[v2.ResetPersonPositionRequest, v2.ResetPersonPositionResponse]
+	setControlledVehicleIDs         *connect.Client[v2.SetControlledVehicleIDsRequest, v2.SetControlledVehicleIDsResponse]
+	fetchControlledVehicleEnvs      *connect.Client[v2.FetchControlledVehicleEnvsRequest, v2.FetchControlledVehicleEnvsResponse]
+	setControlledVehicleActions     *connect.Client[v2.SetControlledVehicleActionsRequest, v2.SetControlledVehicleActionsResponse]
+	setControlledTaxiIDs            *connect.Client[v2.SetControlledTaxiIDsRequest, v2.SetControlledTaxiIDsResponse]
+	getAllOrders                    *connect.Client[v2.GetAllOrdersRequest, v2.GetAllOrdersResponse]
+	setControlledTaxiToOrders       *connect.Client[v2.SetControlledTaxiToOrdersRequest, v2.SetControlledTaxiToOrdersResponse]
+	setControlledPedestrians        *connect.Client[v2.SetControlledPedestriansRequest, v2.SetControlledPedestriansResponse]
+	setControlledPedestriansActions *connect.Client[v2.SetControlledPedestriansActionsRequest, v2.SetControlledPedestriansActionsResponse]
 }
 
 // GetPerson calls city.person.v2.PersonService.GetPerson.
@@ -252,6 +292,11 @@ func (c *personServiceClient) GetPersonByLongLatBBox(ctx context.Context, req *c
 // GetAllVehicles calls city.person.v2.PersonService.GetAllVehicles.
 func (c *personServiceClient) GetAllVehicles(ctx context.Context, req *connect.Request[v2.GetAllVehiclesRequest]) (*connect.Response[v2.GetAllVehiclesResponse], error) {
 	return c.getAllVehicles.CallUnary(ctx, req)
+}
+
+// GetAllPedestrians calls city.person.v2.PersonService.GetAllPedestrians.
+func (c *personServiceClient) GetAllPedestrians(ctx context.Context, req *connect.Request[v2.GetAllPedestriansRequest]) (*connect.Response[v2.GetAllPedestriansResponse], error) {
+	return c.getAllPedestrians.CallUnary(ctx, req)
 }
 
 // ResetPersonPosition calls city.person.v2.PersonService.ResetPersonPosition.
@@ -289,13 +334,25 @@ func (c *personServiceClient) SetControlledTaxiToOrders(ctx context.Context, req
 	return c.setControlledTaxiToOrders.CallUnary(ctx, req)
 }
 
+// SetControlledPedestrians calls city.person.v2.PersonService.SetControlledPedestrians.
+func (c *personServiceClient) SetControlledPedestrians(ctx context.Context, req *connect.Request[v2.SetControlledPedestriansRequest]) (*connect.Response[v2.SetControlledPedestriansResponse], error) {
+	return c.setControlledPedestrians.CallUnary(ctx, req)
+}
+
+// SetControlledPedestriansActions calls
+// city.person.v2.PersonService.SetControlledPedestriansActions.
+func (c *personServiceClient) SetControlledPedestriansActions(ctx context.Context, req *connect.Request[v2.SetControlledPedestriansActionsRequest]) (*connect.Response[v2.SetControlledPedestriansActionsResponse], error) {
+	return c.setControlledPedestriansActions.CallUnary(ctx, req)
+}
+
 // PersonServiceHandler is an implementation of the city.person.v2.PersonService service.
 type PersonServiceHandler interface {
 	// 获取person信息
 	// Get person information
 	GetPerson(context.Context, *connect.Request[v2.GetPersonRequest]) (*connect.Response[v2.GetPersonResponse], error)
 	// 新增person 传入person初始位置、目的地表、属性 返回personid
-	// Add a new person. Input person's initial location, destination table, and attributes, return personid
+	// Add a new person. Input person's initial location, destination table, and
+	// attributes, return personid
 	AddPerson(context.Context, *connect.Request[v2.AddPersonRequest]) (*connect.Response[v2.AddPersonResponse], error)
 	// 修改person的schedule 传入personid、目的地表
 	// Set person's schedule. Input personid and destination table
@@ -309,6 +366,9 @@ type PersonServiceHandler interface {
 	// 获取所有车辆
 	// Get all vehicles
 	GetAllVehicles(context.Context, *connect.Request[v2.GetAllVehiclesRequest]) (*connect.Response[v2.GetAllVehiclesResponse], error)
+	// 获取所有行人
+	// Get all pedestrians
+	GetAllPedestrians(context.Context, *connect.Request[v2.GetAllPedestriansRequest]) (*connect.Response[v2.GetAllPedestriansResponse], error)
 	// 重置人的位置（将停止当前正在进行的出行，转为sleep状态）
 	// Reset person's position (stop the current trip and switch to sleep status)
 	ResetPersonPosition(context.Context, *connect.Request[v2.ResetPersonPositionRequest]) (*connect.Response[v2.ResetPersonPositionResponse], error)
@@ -330,6 +390,12 @@ type PersonServiceHandler interface {
 	// 设置所有外部控制的出租车接指定的单
 	// Set all externally controlled taxis to specified orders
 	SetControlledTaxiToOrders(context.Context, *connect.Request[v2.SetControlledTaxiToOrdersRequest]) (*connect.Response[v2.SetControlledTaxiToOrdersResponse], error)
+	// 设置由外部控制的行人
+	// Set pedestrian controlled by external behavior
+	SetControlledPedestrians(context.Context, *connect.Request[v2.SetControlledPedestriansRequest]) (*connect.Response[v2.SetControlledPedestriansResponse], error)
+	// 设置由外部控制的行人行为
+	// Set behavior of pedestrian controlled by external behavior
+	SetControlledPedestriansActions(context.Context, *connect.Request[v2.SetControlledPedestriansActionsRequest]) (*connect.Response[v2.SetControlledPedestriansActionsResponse], error)
 }
 
 // NewPersonServiceHandler builds an HTTP handler from the service implementation. It returns the
@@ -375,6 +441,12 @@ func NewPersonServiceHandler(svc PersonServiceHandler, opts ...connect.HandlerOp
 		connect.WithSchema(personServiceMethods.ByName("GetAllVehicles")),
 		connect.WithHandlerOptions(opts...),
 	)
+	personServiceGetAllPedestriansHandler := connect.NewUnaryHandler(
+		PersonServiceGetAllPedestriansProcedure,
+		svc.GetAllPedestrians,
+		connect.WithSchema(personServiceMethods.ByName("GetAllPedestrians")),
+		connect.WithHandlerOptions(opts...),
+	)
 	personServiceResetPersonPositionHandler := connect.NewUnaryHandler(
 		PersonServiceResetPersonPositionProcedure,
 		svc.ResetPersonPosition,
@@ -417,6 +489,18 @@ func NewPersonServiceHandler(svc PersonServiceHandler, opts ...connect.HandlerOp
 		connect.WithSchema(personServiceMethods.ByName("SetControlledTaxiToOrders")),
 		connect.WithHandlerOptions(opts...),
 	)
+	personServiceSetControlledPedestriansHandler := connect.NewUnaryHandler(
+		PersonServiceSetControlledPedestriansProcedure,
+		svc.SetControlledPedestrians,
+		connect.WithSchema(personServiceMethods.ByName("SetControlledPedestrians")),
+		connect.WithHandlerOptions(opts...),
+	)
+	personServiceSetControlledPedestriansActionsHandler := connect.NewUnaryHandler(
+		PersonServiceSetControlledPedestriansActionsProcedure,
+		svc.SetControlledPedestriansActions,
+		connect.WithSchema(personServiceMethods.ByName("SetControlledPedestriansActions")),
+		connect.WithHandlerOptions(opts...),
+	)
 	return "/city.person.v2.PersonService/", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		switch r.URL.Path {
 		case PersonServiceGetPersonProcedure:
@@ -431,6 +515,8 @@ func NewPersonServiceHandler(svc PersonServiceHandler, opts ...connect.HandlerOp
 			personServiceGetPersonByLongLatBBoxHandler.ServeHTTP(w, r)
 		case PersonServiceGetAllVehiclesProcedure:
 			personServiceGetAllVehiclesHandler.ServeHTTP(w, r)
+		case PersonServiceGetAllPedestriansProcedure:
+			personServiceGetAllPedestriansHandler.ServeHTTP(w, r)
 		case PersonServiceResetPersonPositionProcedure:
 			personServiceResetPersonPositionHandler.ServeHTTP(w, r)
 		case PersonServiceSetControlledVehicleIDsProcedure:
@@ -445,6 +531,10 @@ func NewPersonServiceHandler(svc PersonServiceHandler, opts ...connect.HandlerOp
 			personServiceGetAllOrdersHandler.ServeHTTP(w, r)
 		case PersonServiceSetControlledTaxiToOrdersProcedure:
 			personServiceSetControlledTaxiToOrdersHandler.ServeHTTP(w, r)
+		case PersonServiceSetControlledPedestriansProcedure:
+			personServiceSetControlledPedestriansHandler.ServeHTTP(w, r)
+		case PersonServiceSetControlledPedestriansActionsProcedure:
+			personServiceSetControlledPedestriansActionsHandler.ServeHTTP(w, r)
 		default:
 			http.NotFound(w, r)
 		}
@@ -478,6 +568,10 @@ func (UnimplementedPersonServiceHandler) GetAllVehicles(context.Context, *connec
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.person.v2.PersonService.GetAllVehicles is not implemented"))
 }
 
+func (UnimplementedPersonServiceHandler) GetAllPedestrians(context.Context, *connect.Request[v2.GetAllPedestriansRequest]) (*connect.Response[v2.GetAllPedestriansResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.person.v2.PersonService.GetAllPedestrians is not implemented"))
+}
+
 func (UnimplementedPersonServiceHandler) ResetPersonPosition(context.Context, *connect.Request[v2.ResetPersonPositionRequest]) (*connect.Response[v2.ResetPersonPositionResponse], error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.person.v2.PersonService.ResetPersonPosition is not implemented"))
 }
@@ -504,4 +598,12 @@ func (UnimplementedPersonServiceHandler) GetAllOrders(context.Context, *connect.
 
 func (UnimplementedPersonServiceHandler) SetControlledTaxiToOrders(context.Context, *connect.Request[v2.SetControlledTaxiToOrdersRequest]) (*connect.Response[v2.SetControlledTaxiToOrdersResponse], error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.person.v2.PersonService.SetControlledTaxiToOrders is not implemented"))
+}
+
+func (UnimplementedPersonServiceHandler) SetControlledPedestrians(context.Context, *connect.Request[v2.SetControlledPedestriansRequest]) (*connect.Response[v2.SetControlledPedestriansResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.person.v2.PersonService.SetControlledPedestrians is not implemented"))
+}
+
+func (UnimplementedPersonServiceHandler) SetControlledPedestriansActions(context.Context, *connect.Request[v2.SetControlledPedestriansActionsRequest]) (*connect.Response[v2.SetControlledPedestriansActionsResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.person.v2.PersonService.SetControlledPedestriansActions is not implemented"))
 }

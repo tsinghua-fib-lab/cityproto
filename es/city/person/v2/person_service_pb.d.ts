@@ -12,6 +12,7 @@ import type { Status } from "./motion_pb.js";
 import type { LongLatBBox, Position } from "../../geo/v2/geo_pb.js";
 import type { VehicleAction, VehicleEnv, VehicleRouteAction, VehicleRuntime } from "./vehicle_pb.js";
 import type { OrderAllocationPlan, RequestOrderInfo } from "./taxi_pb.js";
+import type { PedestrianAction } from "./pedestrian_pb.js";
 
 /**
  * 获取person信息请求
@@ -205,7 +206,8 @@ export declare class GetPersonsRequest extends Message<GetPersonsRequest> {
 
   /**
    * 过滤人的状态（状态为列表内的值的人不返回），即使包含在person_ids中
-   * Filter person's status (person whose status is in the list will not be returned), even if included in person_ids
+   * Filter person's status (person whose status is in the list will not be
+   * returned), even if included in person_ids
    *
    * @generated from field: repeated city.person.v2.Status exclude_statuses = 2;
    */
@@ -281,7 +283,8 @@ export declare class GetPersonByLongLatBBoxRequest extends Message<GetPersonByLo
 
   /**
    * 过滤人的状态（状态为列表内的值的人不返回）
-   * Filter person's status (person whose status is in the list will not be returned)
+   * Filter person's status (person whose status is in the list will not be
+   * returned)
    *
    * @generated from field: repeated city.person.v2.Status exclude_statuses = 2;
    */
@@ -393,6 +396,58 @@ export declare class GetAllVehiclesResponse extends Message<GetAllVehiclesRespon
 }
 
 /**
+ * 获取所有行人请求
+ * Request for getting all pedestrians
+ *
+ * @generated from message city.person.v2.GetAllPedestriansRequest
+ */
+export declare class GetAllPedestriansRequest extends Message<GetAllPedestriansRequest> {
+  constructor(data?: PartialMessage<GetAllPedestriansRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.person.v2.GetAllPedestriansRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetAllPedestriansRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetAllPedestriansRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetAllPedestriansRequest;
+
+  static equals(a: GetAllPedestriansRequest | PlainMessage<GetAllPedestriansRequest> | undefined, b: GetAllPedestriansRequest | PlainMessage<GetAllPedestriansRequest> | undefined): boolean;
+}
+
+/**
+ * 获取所有行人响应
+ * Response of getting all pedestrians
+ *
+ * @generated from message city.person.v2.GetAllPedestriansResponse
+ */
+export declare class GetAllPedestriansResponse extends Message<GetAllPedestriansResponse> {
+  /**
+   * 所有行人信息
+   * Information of all pedestrians
+   *
+   * @generated from field: repeated city.person.v2.PersonRuntime pedestrians = 1;
+   */
+  pedestrians: PersonRuntime[];
+
+  constructor(data?: PartialMessage<GetAllPedestriansResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.person.v2.GetAllPedestriansResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetAllPedestriansResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetAllPedestriansResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetAllPedestriansResponse;
+
+  static equals(a: GetAllPedestriansResponse | PlainMessage<GetAllPedestriansResponse> | undefined, b: GetAllPedestriansResponse | PlainMessage<GetAllPedestriansResponse> | undefined): boolean;
+}
+
+/**
  * 重置人的位置请求
  * Request for resetting person's position
  *
@@ -468,7 +523,8 @@ export declare class SetControlledVehicleIDsRequest extends Message<SetControlle
 
   /**
    * 由外部控制车辆路由的vehicle id列表（在进入新的road后触发控制）
-   * List of vehicle ids controlled by external behavior (control is triggered after entering a new road)
+   * List of vehicle ids controlled by external behavior (control is triggered
+   * after entering a new road)
    *
    * @generated from field: repeated int32 route_vehicle_ids = 2;
    */
@@ -550,7 +606,8 @@ export declare class FetchControlledVehicleEnvsResponse extends Message<FetchCon
 
   /**
    * 由外部控制车辆路由的vehicle信息
-   * Information of vehicle controlled by external behavior (control is triggered after entering a new road)
+   * Information of vehicle controlled by external behavior (control is
+   * triggered after entering a new road)
    *
    * @generated from field: repeated city.person.v2.VehicleEnv route_vehicle_envs = 2;
    */
@@ -588,7 +645,8 @@ export declare class SetControlledVehicleActionsRequest extends Message<SetContr
 
   /**
    * 由外部控制车辆路由的vehicle的新路由
-   * New route of vehicle controlled by external behavior (control is triggered after entering a new road)
+   * New route of vehicle controlled by external behavior (control is triggered
+   * after entering a new road)
    *
    * @generated from field: repeated city.person.v2.VehicleRouteAction vehicle_journeys = 2;
    */
@@ -785,5 +843,109 @@ export declare class SetControlledTaxiToOrdersResponse extends Message<SetContro
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetControlledTaxiToOrdersResponse;
 
   static equals(a: SetControlledTaxiToOrdersResponse | PlainMessage<SetControlledTaxiToOrdersResponse> | undefined, b: SetControlledTaxiToOrdersResponse | PlainMessage<SetControlledTaxiToOrdersResponse> | undefined): boolean;
+}
+
+/**
+ * 设置由外部控制的行人请求
+ * Request for setting pedestrian controlled by external behavior
+ *
+ * @generated from message city.person.v2.SetControlledPedestriansRequest
+ */
+export declare class SetControlledPedestriansRequest extends Message<SetControlledPedestriansRequest> {
+  /**
+   * 由外部控制的行人 id列表
+   * List of pedestrian ids controlled by external behavior
+   *
+   * @generated from field: repeated int32 pedestrian_ids = 1;
+   */
+  pedestrianIds: number[];
+
+  constructor(data?: PartialMessage<SetControlledPedestriansRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.person.v2.SetControlledPedestriansRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetControlledPedestriansRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetControlledPedestriansRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetControlledPedestriansRequest;
+
+  static equals(a: SetControlledPedestriansRequest | PlainMessage<SetControlledPedestriansRequest> | undefined, b: SetControlledPedestriansRequest | PlainMessage<SetControlledPedestriansRequest> | undefined): boolean;
+}
+
+/**
+ * 设置由外部控制的行人响应
+ * Response of setting pedestrian controlled by external behavior
+ *
+ * @generated from message city.person.v2.SetControlledPedestriansResponse
+ */
+export declare class SetControlledPedestriansResponse extends Message<SetControlledPedestriansResponse> {
+  constructor(data?: PartialMessage<SetControlledPedestriansResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.person.v2.SetControlledPedestriansResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetControlledPedestriansResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetControlledPedestriansResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetControlledPedestriansResponse;
+
+  static equals(a: SetControlledPedestriansResponse | PlainMessage<SetControlledPedestriansResponse> | undefined, b: SetControlledPedestriansResponse | PlainMessage<SetControlledPedestriansResponse> | undefined): boolean;
+}
+
+/**
+ * 设置由外部控制的行人行为请求
+ * Request for setting behavior of pedestrian controlled by external behavior
+ *
+ * @generated from message city.person.v2.SetControlledPedestriansActionsRequest
+ */
+export declare class SetControlledPedestriansActionsRequest extends Message<SetControlledPedestriansActionsRequest> {
+  /**
+   * 由外部控制的行人行为
+   * Behavior of pedestrian controlled by external behavior
+   *
+   * @generated from field: repeated city.person.v2.PedestrianAction person_actions = 1;
+   */
+  personActions: PedestrianAction[];
+
+  constructor(data?: PartialMessage<SetControlledPedestriansActionsRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.person.v2.SetControlledPedestriansActionsRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetControlledPedestriansActionsRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetControlledPedestriansActionsRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetControlledPedestriansActionsRequest;
+
+  static equals(a: SetControlledPedestriansActionsRequest | PlainMessage<SetControlledPedestriansActionsRequest> | undefined, b: SetControlledPedestriansActionsRequest | PlainMessage<SetControlledPedestriansActionsRequest> | undefined): boolean;
+}
+
+/**
+ * 设置由外部控制的行人行为响应
+ * Response of setting behavior of pedestrian controlled by external behavior
+ *
+ * @generated from message city.person.v2.SetControlledPedestriansActionsResponse
+ */
+export declare class SetControlledPedestriansActionsResponse extends Message<SetControlledPedestriansActionsResponse> {
+  constructor(data?: PartialMessage<SetControlledPedestriansActionsResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.person.v2.SetControlledPedestriansActionsResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetControlledPedestriansActionsResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetControlledPedestriansActionsResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetControlledPedestriansActionsResponse;
+
+  static equals(a: SetControlledPedestriansActionsResponse | PlainMessage<SetControlledPedestriansActionsResponse> | undefined, b: SetControlledPedestriansActionsResponse | PlainMessage<SetControlledPedestriansActionsResponse> | undefined): boolean;
 }
 

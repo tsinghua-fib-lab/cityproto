@@ -479,6 +479,9 @@
     - [EmissionStatistics](#city-person-v2-EmissionStatistics)
     - [VehicleCarbon](#city-person-v2-VehicleCarbon)
   
+- [city/person/v2/pedestrian.proto](#city_person_v2_pedestrian-proto)
+    - [PedestrianAction](#city-person-v2-PedestrianAction)
+  
 - [city/person/v2/person.proto](#city_person_v2_person-proto)
     - [BikeAttribute](#city-person-v2-BikeAttribute)
     - [BusAttribute](#city-person-v2-BusAttribute)
@@ -531,6 +534,8 @@
     - [FetchControlledVehicleEnvsResponse](#city-person-v2-FetchControlledVehicleEnvsResponse)
     - [GetAllOrdersRequest](#city-person-v2-GetAllOrdersRequest)
     - [GetAllOrdersResponse](#city-person-v2-GetAllOrdersResponse)
+    - [GetAllPedestriansRequest](#city-person-v2-GetAllPedestriansRequest)
+    - [GetAllPedestriansResponse](#city-person-v2-GetAllPedestriansResponse)
     - [GetAllVehiclesRequest](#city-person-v2-GetAllVehiclesRequest)
     - [GetAllVehiclesResponse](#city-person-v2-GetAllVehiclesResponse)
     - [GetPersonByLongLatBBoxRequest](#city-person-v2-GetPersonByLongLatBBoxRequest)
@@ -541,6 +546,10 @@
     - [GetPersonsResponse](#city-person-v2-GetPersonsResponse)
     - [ResetPersonPositionRequest](#city-person-v2-ResetPersonPositionRequest)
     - [ResetPersonPositionResponse](#city-person-v2-ResetPersonPositionResponse)
+    - [SetControlledPedestriansActionsRequest](#city-person-v2-SetControlledPedestriansActionsRequest)
+    - [SetControlledPedestriansActionsResponse](#city-person-v2-SetControlledPedestriansActionsResponse)
+    - [SetControlledPedestriansRequest](#city-person-v2-SetControlledPedestriansRequest)
+    - [SetControlledPedestriansResponse](#city-person-v2-SetControlledPedestriansResponse)
     - [SetControlledTaxiIDsRequest](#city-person-v2-SetControlledTaxiIDsRequest)
     - [SetControlledTaxiIDsResponse](#city-person-v2-SetControlledTaxiIDsResponse)
     - [SetControlledTaxiToOrdersRequest](#city-person-v2-SetControlledTaxiToOrdersRequest)
@@ -7173,6 +7182,40 @@ Vehicle instantaneous carbon emission information
 
 
 
+<a name="city_person_v2_pedestrian-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## city/person/v2/pedestrian.proto
+
+
+
+<a name="city-person-v2-PedestrianAction"></a>
+
+### PedestrianAction
+行人行为
+Pedestrian behavior
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [int32](#int32) |  | 行人id Pedestrian id |
+| vx | [double](#double) |  | x方向速度（单位：米/秒） x direction speed (unit: m/s) |
+| vy | [double](#double) |  | y方向速度（单位：米/秒） y direction speed (unit: m/s) |
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
 <a name="city_person_v2_person-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
@@ -7925,6 +7968,33 @@ Response of getting information of all orders
 
 
 
+<a name="city-person-v2-GetAllPedestriansRequest"></a>
+
+### GetAllPedestriansRequest
+获取所有行人请求
+Request for getting all pedestrians
+
+
+
+
+
+
+<a name="city-person-v2-GetAllPedestriansResponse"></a>
+
+### GetAllPedestriansResponse
+获取所有行人响应
+Response of getting all pedestrians
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| pedestrians | [PersonRuntime](#city-person-v2-PersonRuntime) | repeated | 所有行人信息 Information of all pedestrians |
+
+
+
+
+
+
 <a name="city-person-v2-GetAllVehiclesRequest"></a>
 
 ### GetAllVehiclesRequest
@@ -8074,6 +8144,60 @@ Request for resetting person&#39;s position
 ### ResetPersonPositionResponse
 重置人的位置响应
 Response of resetting person&#39;s position
+
+
+
+
+
+
+<a name="city-person-v2-SetControlledPedestriansActionsRequest"></a>
+
+### SetControlledPedestriansActionsRequest
+设置由外部控制的行人行为请求
+Request for setting behavior of pedestrian controlled by external behavior
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| person_actions | [PedestrianAction](#city-person-v2-PedestrianAction) | repeated | 由外部控制的行人行为 Behavior of pedestrian controlled by external behavior |
+
+
+
+
+
+
+<a name="city-person-v2-SetControlledPedestriansActionsResponse"></a>
+
+### SetControlledPedestriansActionsResponse
+设置由外部控制的行人行为响应
+Response of setting behavior of pedestrian controlled by external behavior
+
+
+
+
+
+
+<a name="city-person-v2-SetControlledPedestriansRequest"></a>
+
+### SetControlledPedestriansRequest
+设置由外部控制的行人请求
+Request for setting pedestrian controlled by external behavior
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| pedestrian_ids | [int32](#int32) | repeated | 由外部控制的行人 id列表 List of pedestrian ids controlled by external behavior |
+
+
+
+
+
+
+<a name="city-person-v2-SetControlledPedestriansResponse"></a>
+
+### SetControlledPedestriansResponse
+设置由外部控制的行人响应
+Response of setting pedestrian controlled by external behavior
 
 
 
@@ -8237,6 +8361,7 @@ Response of setting person schedule
 | GetPersons | [GetPersonsRequest](#city-person-v2-GetPersonsRequest) | [GetPersonsResponse](#city-person-v2-GetPersonsResponse) | 获取多个person信息 Get information of multiple persons |
 | GetPersonByLongLatBBox | [GetPersonByLongLatBBoxRequest](#city-person-v2-GetPersonByLongLatBBoxRequest) | [GetPersonByLongLatBBoxResponse](#city-person-v2-GetPersonByLongLatBBoxResponse) | 获取特定区域内的person Get persons in a specific region |
 | GetAllVehicles | [GetAllVehiclesRequest](#city-person-v2-GetAllVehiclesRequest) | [GetAllVehiclesResponse](#city-person-v2-GetAllVehiclesResponse) | 获取所有车辆 Get all vehicles |
+| GetAllPedestrians | [GetAllPedestriansRequest](#city-person-v2-GetAllPedestriansRequest) | [GetAllPedestriansResponse](#city-person-v2-GetAllPedestriansResponse) | 获取所有行人 Get all pedestrians |
 | ResetPersonPosition | [ResetPersonPositionRequest](#city-person-v2-ResetPersonPositionRequest) | [ResetPersonPositionResponse](#city-person-v2-ResetPersonPositionResponse) | 重置人的位置（将停止当前正在进行的出行，转为sleep状态） Reset person&#39;s position (stop the current trip and switch to sleep status) |
 | SetControlledVehicleIDs | [SetControlledVehicleIDsRequest](#city-person-v2-SetControlledVehicleIDsRequest) | [SetControlledVehicleIDsResponse](#city-person-v2-SetControlledVehicleIDsResponse) | 设置由外部控制行为的vehicle Set vehicle controlled by external behavior |
 | FetchControlledVehicleEnvs | [FetchControlledVehicleEnvsRequest](#city-person-v2-FetchControlledVehicleEnvsRequest) | [FetchControlledVehicleEnvsResponse](#city-person-v2-FetchControlledVehicleEnvsResponse) | 获取由外部控制行为的vehicle信息 Get information of vehicle controlled by external behavior |
@@ -8244,6 +8369,8 @@ Response of setting person schedule
 | SetControlledTaxiIDs | [SetControlledTaxiIDsRequest](#city-person-v2-SetControlledTaxiIDsRequest) | [SetControlledTaxiIDsResponse](#city-person-v2-SetControlledTaxiIDsResponse) | 设置由外部控制的taxi Set taxi controlled by external behavior |
 | GetAllOrders | [GetAllOrdersRequest](#city-person-v2-GetAllOrdersRequest) | [GetAllOrdersResponse](#city-person-v2-GetAllOrdersResponse) | 获取所有订单信息 Get information of all orders |
 | SetControlledTaxiToOrders | [SetControlledTaxiToOrdersRequest](#city-person-v2-SetControlledTaxiToOrdersRequest) | [SetControlledTaxiToOrdersResponse](#city-person-v2-SetControlledTaxiToOrdersResponse) | 设置所有外部控制的出租车接指定的单 Set all externally controlled taxis to specified orders |
+| SetControlledPedestrians | [SetControlledPedestriansRequest](#city-person-v2-SetControlledPedestriansRequest) | [SetControlledPedestriansResponse](#city-person-v2-SetControlledPedestriansResponse) | 设置由外部控制的行人 Set pedestrian controlled by external behavior |
+| SetControlledPedestriansActions | [SetControlledPedestriansActionsRequest](#city-person-v2-SetControlledPedestriansActionsRequest) | [SetControlledPedestriansActionsResponse](#city-person-v2-SetControlledPedestriansActionsResponse) | 设置由外部控制的行人行为 Set behavior of pedestrian controlled by external behavior |
 
  
 

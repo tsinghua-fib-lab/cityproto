@@ -33,6 +33,7 @@
 #include <google/protobuf/unknown_field_set.h>
 #include "city/geo/v2/geo.pb.h"
 #include "city/person/v2/motion.pb.h"
+#include "city/person/v2/pedestrian.pb.h"
 #include "city/person/v2/person.pb.h"
 #include "city/person/v2/person_runtime.pb.h"
 #include "city/person/v2/taxi.pb.h"
@@ -73,6 +74,12 @@ extern GetAllOrdersRequestDefaultTypeInternal _GetAllOrdersRequest_default_insta
 class GetAllOrdersResponse;
 struct GetAllOrdersResponseDefaultTypeInternal;
 extern GetAllOrdersResponseDefaultTypeInternal _GetAllOrdersResponse_default_instance_;
+class GetAllPedestriansRequest;
+struct GetAllPedestriansRequestDefaultTypeInternal;
+extern GetAllPedestriansRequestDefaultTypeInternal _GetAllPedestriansRequest_default_instance_;
+class GetAllPedestriansResponse;
+struct GetAllPedestriansResponseDefaultTypeInternal;
+extern GetAllPedestriansResponseDefaultTypeInternal _GetAllPedestriansResponse_default_instance_;
 class GetAllVehiclesRequest;
 struct GetAllVehiclesRequestDefaultTypeInternal;
 extern GetAllVehiclesRequestDefaultTypeInternal _GetAllVehiclesRequest_default_instance_;
@@ -103,6 +110,18 @@ extern ResetPersonPositionRequestDefaultTypeInternal _ResetPersonPositionRequest
 class ResetPersonPositionResponse;
 struct ResetPersonPositionResponseDefaultTypeInternal;
 extern ResetPersonPositionResponseDefaultTypeInternal _ResetPersonPositionResponse_default_instance_;
+class SetControlledPedestriansActionsRequest;
+struct SetControlledPedestriansActionsRequestDefaultTypeInternal;
+extern SetControlledPedestriansActionsRequestDefaultTypeInternal _SetControlledPedestriansActionsRequest_default_instance_;
+class SetControlledPedestriansActionsResponse;
+struct SetControlledPedestriansActionsResponseDefaultTypeInternal;
+extern SetControlledPedestriansActionsResponseDefaultTypeInternal _SetControlledPedestriansActionsResponse_default_instance_;
+class SetControlledPedestriansRequest;
+struct SetControlledPedestriansRequestDefaultTypeInternal;
+extern SetControlledPedestriansRequestDefaultTypeInternal _SetControlledPedestriansRequest_default_instance_;
+class SetControlledPedestriansResponse;
+struct SetControlledPedestriansResponseDefaultTypeInternal;
+extern SetControlledPedestriansResponseDefaultTypeInternal _SetControlledPedestriansResponse_default_instance_;
 class SetControlledTaxiIDsRequest;
 struct SetControlledTaxiIDsRequestDefaultTypeInternal;
 extern SetControlledTaxiIDsRequestDefaultTypeInternal _SetControlledTaxiIDsRequest_default_instance_;
@@ -143,6 +162,8 @@ template<> ::city::person::v2::FetchControlledVehicleEnvsRequest* Arena::CreateM
 template<> ::city::person::v2::FetchControlledVehicleEnvsResponse* Arena::CreateMaybeMessage<::city::person::v2::FetchControlledVehicleEnvsResponse>(Arena*);
 template<> ::city::person::v2::GetAllOrdersRequest* Arena::CreateMaybeMessage<::city::person::v2::GetAllOrdersRequest>(Arena*);
 template<> ::city::person::v2::GetAllOrdersResponse* Arena::CreateMaybeMessage<::city::person::v2::GetAllOrdersResponse>(Arena*);
+template<> ::city::person::v2::GetAllPedestriansRequest* Arena::CreateMaybeMessage<::city::person::v2::GetAllPedestriansRequest>(Arena*);
+template<> ::city::person::v2::GetAllPedestriansResponse* Arena::CreateMaybeMessage<::city::person::v2::GetAllPedestriansResponse>(Arena*);
 template<> ::city::person::v2::GetAllVehiclesRequest* Arena::CreateMaybeMessage<::city::person::v2::GetAllVehiclesRequest>(Arena*);
 template<> ::city::person::v2::GetAllVehiclesResponse* Arena::CreateMaybeMessage<::city::person::v2::GetAllVehiclesResponse>(Arena*);
 template<> ::city::person::v2::GetPersonByLongLatBBoxRequest* Arena::CreateMaybeMessage<::city::person::v2::GetPersonByLongLatBBoxRequest>(Arena*);
@@ -153,6 +174,10 @@ template<> ::city::person::v2::GetPersonsRequest* Arena::CreateMaybeMessage<::ci
 template<> ::city::person::v2::GetPersonsResponse* Arena::CreateMaybeMessage<::city::person::v2::GetPersonsResponse>(Arena*);
 template<> ::city::person::v2::ResetPersonPositionRequest* Arena::CreateMaybeMessage<::city::person::v2::ResetPersonPositionRequest>(Arena*);
 template<> ::city::person::v2::ResetPersonPositionResponse* Arena::CreateMaybeMessage<::city::person::v2::ResetPersonPositionResponse>(Arena*);
+template<> ::city::person::v2::SetControlledPedestriansActionsRequest* Arena::CreateMaybeMessage<::city::person::v2::SetControlledPedestriansActionsRequest>(Arena*);
+template<> ::city::person::v2::SetControlledPedestriansActionsResponse* Arena::CreateMaybeMessage<::city::person::v2::SetControlledPedestriansActionsResponse>(Arena*);
+template<> ::city::person::v2::SetControlledPedestriansRequest* Arena::CreateMaybeMessage<::city::person::v2::SetControlledPedestriansRequest>(Arena*);
+template<> ::city::person::v2::SetControlledPedestriansResponse* Arena::CreateMaybeMessage<::city::person::v2::SetControlledPedestriansResponse>(Arena*);
 template<> ::city::person::v2::SetControlledTaxiIDsRequest* Arena::CreateMaybeMessage<::city::person::v2::SetControlledTaxiIDsRequest>(Arena*);
 template<> ::city::person::v2::SetControlledTaxiIDsResponse* Arena::CreateMaybeMessage<::city::person::v2::SetControlledTaxiIDsResponse>(Arena*);
 template<> ::city::person::v2::SetControlledTaxiToOrdersRequest* Arena::CreateMaybeMessage<::city::person::v2::SetControlledTaxiToOrdersRequest>(Arena*);
@@ -2036,6 +2061,281 @@ class GetAllVehiclesResponse final :
 };
 // -------------------------------------------------------------------
 
+class GetAllPedestriansRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:city.person.v2.GetAllPedestriansRequest) */ {
+ public:
+  inline GetAllPedestriansRequest() : GetAllPedestriansRequest(nullptr) {}
+  explicit PROTOBUF_CONSTEXPR GetAllPedestriansRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  GetAllPedestriansRequest(const GetAllPedestriansRequest& from);
+  GetAllPedestriansRequest(GetAllPedestriansRequest&& from) noexcept
+    : GetAllPedestriansRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline GetAllPedestriansRequest& operator=(const GetAllPedestriansRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetAllPedestriansRequest& operator=(GetAllPedestriansRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const GetAllPedestriansRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GetAllPedestriansRequest* internal_default_instance() {
+    return reinterpret_cast<const GetAllPedestriansRequest*>(
+               &_GetAllPedestriansRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    12;
+
+  friend void swap(GetAllPedestriansRequest& a, GetAllPedestriansRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetAllPedestriansRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetAllPedestriansRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  GetAllPedestriansRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<GetAllPedestriansRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
+  inline void CopyFrom(const GetAllPedestriansRequest& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(*this, from);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
+  void MergeFrom(const GetAllPedestriansRequest& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(*this, from);
+  }
+  public:
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.person.v2.GetAllPedestriansRequest";
+  }
+  protected:
+  explicit GetAllPedestriansRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:city.person.v2.GetAllPedestriansRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+  };
+  friend struct ::TableStruct_city_2fperson_2fv2_2fperson_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetAllPedestriansResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.person.v2.GetAllPedestriansResponse) */ {
+ public:
+  inline GetAllPedestriansResponse() : GetAllPedestriansResponse(nullptr) {}
+  ~GetAllPedestriansResponse() override;
+  explicit PROTOBUF_CONSTEXPR GetAllPedestriansResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  GetAllPedestriansResponse(const GetAllPedestriansResponse& from);
+  GetAllPedestriansResponse(GetAllPedestriansResponse&& from) noexcept
+    : GetAllPedestriansResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline GetAllPedestriansResponse& operator=(const GetAllPedestriansResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetAllPedestriansResponse& operator=(GetAllPedestriansResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const GetAllPedestriansResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GetAllPedestriansResponse* internal_default_instance() {
+    return reinterpret_cast<const GetAllPedestriansResponse*>(
+               &_GetAllPedestriansResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    13;
+
+  friend void swap(GetAllPedestriansResponse& a, GetAllPedestriansResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetAllPedestriansResponse* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetAllPedestriansResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  GetAllPedestriansResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<GetAllPedestriansResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const GetAllPedestriansResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const GetAllPedestriansResponse& from) {
+    GetAllPedestriansResponse::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetAllPedestriansResponse* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.person.v2.GetAllPedestriansResponse";
+  }
+  protected:
+  explicit GetAllPedestriansResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kPedestriansFieldNumber = 1,
+  };
+  // repeated .city.person.v2.PersonRuntime pedestrians = 1 [json_name = "pedestrians"];
+  int pedestrians_size() const;
+  private:
+  int _internal_pedestrians_size() const;
+  public:
+  void clear_pedestrians();
+  ::city::person::v2::PersonRuntime* mutable_pedestrians(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::PersonRuntime >*
+      mutable_pedestrians();
+  private:
+  const ::city::person::v2::PersonRuntime& _internal_pedestrians(int index) const;
+  ::city::person::v2::PersonRuntime* _internal_add_pedestrians();
+  public:
+  const ::city::person::v2::PersonRuntime& pedestrians(int index) const;
+  ::city::person::v2::PersonRuntime* add_pedestrians();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::PersonRuntime >&
+      pedestrians() const;
+
+  // @@protoc_insertion_point(class_scope:city.person.v2.GetAllPedestriansResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::PersonRuntime > pedestrians_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_city_2fperson_2fv2_2fperson_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
 class ResetPersonPositionRequest final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.person.v2.ResetPersonPositionRequest) */ {
  public:
@@ -2084,7 +2384,7 @@ class ResetPersonPositionRequest final :
                &_ResetPersonPositionRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    14;
 
   friend void swap(ResetPersonPositionRequest& a, ResetPersonPositionRequest& b) {
     a.Swap(&b);
@@ -2251,7 +2551,7 @@ class ResetPersonPositionResponse final :
                &_ResetPersonPositionResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    15;
 
   friend void swap(ResetPersonPositionResponse& a, ResetPersonPositionResponse& b) {
     a.Swap(&b);
@@ -2370,7 +2670,7 @@ class SetControlledVehicleIDsRequest final :
                &_SetControlledVehicleIDsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    16;
 
   friend void swap(SetControlledVehicleIDsRequest& a, SetControlledVehicleIDsRequest& b) {
     a.Swap(&b);
@@ -2556,7 +2856,7 @@ class SetControlledVehicleIDsResponse final :
                &_SetControlledVehicleIDsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    17;
 
   friend void swap(SetControlledVehicleIDsResponse& a, SetControlledVehicleIDsResponse& b) {
     a.Swap(&b);
@@ -2674,7 +2974,7 @@ class FetchControlledVehicleEnvsRequest final :
                &_FetchControlledVehicleEnvsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    18;
 
   friend void swap(FetchControlledVehicleEnvsRequest& a, FetchControlledVehicleEnvsRequest& b) {
     a.Swap(&b);
@@ -2793,7 +3093,7 @@ class FetchControlledVehicleEnvsResponse final :
                &_FetchControlledVehicleEnvsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    19;
 
   friend void swap(FetchControlledVehicleEnvsResponse& a, FetchControlledVehicleEnvsResponse& b) {
     a.Swap(&b);
@@ -2970,7 +3270,7 @@ class SetControlledVehicleActionsRequest final :
                &_SetControlledVehicleActionsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    20;
 
   friend void swap(SetControlledVehicleActionsRequest& a, SetControlledVehicleActionsRequest& b) {
     a.Swap(&b);
@@ -3146,7 +3446,7 @@ class SetControlledVehicleActionsResponse final :
                &_SetControlledVehicleActionsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    21;
 
   friend void swap(SetControlledVehicleActionsResponse& a, SetControlledVehicleActionsResponse& b) {
     a.Swap(&b);
@@ -3265,7 +3565,7 @@ class SetControlledTaxiIDsRequest final :
                &_SetControlledTaxiIDsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    22;
 
   friend void swap(SetControlledTaxiIDsRequest& a, SetControlledTaxiIDsRequest& b) {
     a.Swap(&b);
@@ -3426,7 +3726,7 @@ class SetControlledTaxiIDsResponse final :
                &_SetControlledTaxiIDsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    23;
 
   friend void swap(SetControlledTaxiIDsResponse& a, SetControlledTaxiIDsResponse& b) {
     a.Swap(&b);
@@ -3544,7 +3844,7 @@ class GetAllOrdersRequest final :
                &_GetAllOrdersRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    22;
+    24;
 
   friend void swap(GetAllOrdersRequest& a, GetAllOrdersRequest& b) {
     a.Swap(&b);
@@ -3663,7 +3963,7 @@ class GetAllOrdersResponse final :
                &_GetAllOrdersResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    25;
 
   friend void swap(GetAllOrdersResponse& a, GetAllOrdersResponse& b) {
     a.Swap(&b);
@@ -3820,7 +4120,7 @@ class SetControlledTaxiToOrdersRequest final :
                &_SetControlledTaxiToOrdersRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    24;
+    26;
 
   friend void swap(SetControlledTaxiToOrdersRequest& a, SetControlledTaxiToOrdersRequest& b) {
     a.Swap(&b);
@@ -3976,7 +4276,7 @@ class SetControlledTaxiToOrdersResponse final :
                &_SetControlledTaxiToOrdersResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    25;
+    27;
 
   friend void swap(SetControlledTaxiToOrdersResponse& a, SetControlledTaxiToOrdersResponse& b) {
     a.Swap(&b);
@@ -4035,6 +4335,561 @@ class SetControlledTaxiToOrdersResponse final :
   // accessors -------------------------------------------------------
 
   // @@protoc_insertion_point(class_scope:city.person.v2.SetControlledTaxiToOrdersResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+  };
+  friend struct ::TableStruct_city_2fperson_2fv2_2fperson_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class SetControlledPedestriansRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.person.v2.SetControlledPedestriansRequest) */ {
+ public:
+  inline SetControlledPedestriansRequest() : SetControlledPedestriansRequest(nullptr) {}
+  ~SetControlledPedestriansRequest() override;
+  explicit PROTOBUF_CONSTEXPR SetControlledPedestriansRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  SetControlledPedestriansRequest(const SetControlledPedestriansRequest& from);
+  SetControlledPedestriansRequest(SetControlledPedestriansRequest&& from) noexcept
+    : SetControlledPedestriansRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline SetControlledPedestriansRequest& operator=(const SetControlledPedestriansRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline SetControlledPedestriansRequest& operator=(SetControlledPedestriansRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const SetControlledPedestriansRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const SetControlledPedestriansRequest* internal_default_instance() {
+    return reinterpret_cast<const SetControlledPedestriansRequest*>(
+               &_SetControlledPedestriansRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    28;
+
+  friend void swap(SetControlledPedestriansRequest& a, SetControlledPedestriansRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(SetControlledPedestriansRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(SetControlledPedestriansRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  SetControlledPedestriansRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<SetControlledPedestriansRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const SetControlledPedestriansRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const SetControlledPedestriansRequest& from) {
+    SetControlledPedestriansRequest::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(SetControlledPedestriansRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.person.v2.SetControlledPedestriansRequest";
+  }
+  protected:
+  explicit SetControlledPedestriansRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kPedestrianIdsFieldNumber = 1,
+  };
+  // repeated int32 pedestrian_ids = 1 [json_name = "pedestrianIds"];
+  int pedestrian_ids_size() const;
+  private:
+  int _internal_pedestrian_ids_size() const;
+  public:
+  void clear_pedestrian_ids();
+  private:
+  int32_t _internal_pedestrian_ids(int index) const;
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+      _internal_pedestrian_ids() const;
+  void _internal_add_pedestrian_ids(int32_t value);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+      _internal_mutable_pedestrian_ids();
+  public:
+  int32_t pedestrian_ids(int index) const;
+  void set_pedestrian_ids(int index, int32_t value);
+  void add_pedestrian_ids(int32_t value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+      pedestrian_ids() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+      mutable_pedestrian_ids();
+
+  // @@protoc_insertion_point(class_scope:city.person.v2.SetControlledPedestriansRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t > pedestrian_ids_;
+    mutable std::atomic<int> _pedestrian_ids_cached_byte_size_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_city_2fperson_2fv2_2fperson_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class SetControlledPedestriansResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:city.person.v2.SetControlledPedestriansResponse) */ {
+ public:
+  inline SetControlledPedestriansResponse() : SetControlledPedestriansResponse(nullptr) {}
+  explicit PROTOBUF_CONSTEXPR SetControlledPedestriansResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  SetControlledPedestriansResponse(const SetControlledPedestriansResponse& from);
+  SetControlledPedestriansResponse(SetControlledPedestriansResponse&& from) noexcept
+    : SetControlledPedestriansResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline SetControlledPedestriansResponse& operator=(const SetControlledPedestriansResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline SetControlledPedestriansResponse& operator=(SetControlledPedestriansResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const SetControlledPedestriansResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const SetControlledPedestriansResponse* internal_default_instance() {
+    return reinterpret_cast<const SetControlledPedestriansResponse*>(
+               &_SetControlledPedestriansResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    29;
+
+  friend void swap(SetControlledPedestriansResponse& a, SetControlledPedestriansResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(SetControlledPedestriansResponse* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(SetControlledPedestriansResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  SetControlledPedestriansResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<SetControlledPedestriansResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
+  inline void CopyFrom(const SetControlledPedestriansResponse& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(*this, from);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
+  void MergeFrom(const SetControlledPedestriansResponse& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(*this, from);
+  }
+  public:
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.person.v2.SetControlledPedestriansResponse";
+  }
+  protected:
+  explicit SetControlledPedestriansResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:city.person.v2.SetControlledPedestriansResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+  };
+  friend struct ::TableStruct_city_2fperson_2fv2_2fperson_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class SetControlledPedestriansActionsRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.person.v2.SetControlledPedestriansActionsRequest) */ {
+ public:
+  inline SetControlledPedestriansActionsRequest() : SetControlledPedestriansActionsRequest(nullptr) {}
+  ~SetControlledPedestriansActionsRequest() override;
+  explicit PROTOBUF_CONSTEXPR SetControlledPedestriansActionsRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  SetControlledPedestriansActionsRequest(const SetControlledPedestriansActionsRequest& from);
+  SetControlledPedestriansActionsRequest(SetControlledPedestriansActionsRequest&& from) noexcept
+    : SetControlledPedestriansActionsRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline SetControlledPedestriansActionsRequest& operator=(const SetControlledPedestriansActionsRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline SetControlledPedestriansActionsRequest& operator=(SetControlledPedestriansActionsRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const SetControlledPedestriansActionsRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const SetControlledPedestriansActionsRequest* internal_default_instance() {
+    return reinterpret_cast<const SetControlledPedestriansActionsRequest*>(
+               &_SetControlledPedestriansActionsRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    30;
+
+  friend void swap(SetControlledPedestriansActionsRequest& a, SetControlledPedestriansActionsRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(SetControlledPedestriansActionsRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(SetControlledPedestriansActionsRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  SetControlledPedestriansActionsRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<SetControlledPedestriansActionsRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const SetControlledPedestriansActionsRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const SetControlledPedestriansActionsRequest& from) {
+    SetControlledPedestriansActionsRequest::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(SetControlledPedestriansActionsRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.person.v2.SetControlledPedestriansActionsRequest";
+  }
+  protected:
+  explicit SetControlledPedestriansActionsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kPersonActionsFieldNumber = 1,
+  };
+  // repeated .city.person.v2.PedestrianAction person_actions = 1 [json_name = "personActions"];
+  int person_actions_size() const;
+  private:
+  int _internal_person_actions_size() const;
+  public:
+  void clear_person_actions();
+  ::city::person::v2::PedestrianAction* mutable_person_actions(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::PedestrianAction >*
+      mutable_person_actions();
+  private:
+  const ::city::person::v2::PedestrianAction& _internal_person_actions(int index) const;
+  ::city::person::v2::PedestrianAction* _internal_add_person_actions();
+  public:
+  const ::city::person::v2::PedestrianAction& person_actions(int index) const;
+  ::city::person::v2::PedestrianAction* add_person_actions();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::PedestrianAction >&
+      person_actions() const;
+
+  // @@protoc_insertion_point(class_scope:city.person.v2.SetControlledPedestriansActionsRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::PedestrianAction > person_actions_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_city_2fperson_2fv2_2fperson_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class SetControlledPedestriansActionsResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:city.person.v2.SetControlledPedestriansActionsResponse) */ {
+ public:
+  inline SetControlledPedestriansActionsResponse() : SetControlledPedestriansActionsResponse(nullptr) {}
+  explicit PROTOBUF_CONSTEXPR SetControlledPedestriansActionsResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  SetControlledPedestriansActionsResponse(const SetControlledPedestriansActionsResponse& from);
+  SetControlledPedestriansActionsResponse(SetControlledPedestriansActionsResponse&& from) noexcept
+    : SetControlledPedestriansActionsResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline SetControlledPedestriansActionsResponse& operator=(const SetControlledPedestriansActionsResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline SetControlledPedestriansActionsResponse& operator=(SetControlledPedestriansActionsResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const SetControlledPedestriansActionsResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const SetControlledPedestriansActionsResponse* internal_default_instance() {
+    return reinterpret_cast<const SetControlledPedestriansActionsResponse*>(
+               &_SetControlledPedestriansActionsResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    31;
+
+  friend void swap(SetControlledPedestriansActionsResponse& a, SetControlledPedestriansActionsResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(SetControlledPedestriansActionsResponse* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(SetControlledPedestriansActionsResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  SetControlledPedestriansActionsResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<SetControlledPedestriansActionsResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
+  inline void CopyFrom(const SetControlledPedestriansActionsResponse& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(*this, from);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
+  void MergeFrom(const SetControlledPedestriansActionsResponse& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(*this, from);
+  }
+  public:
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.person.v2.SetControlledPedestriansActionsResponse";
+  }
+  protected:
+  explicit SetControlledPedestriansActionsResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:city.person.v2.SetControlledPedestriansActionsResponse)
  private:
   class _Internal;
 
@@ -4738,6 +5593,51 @@ GetAllVehiclesResponse::vehicles() const {
 
 // -------------------------------------------------------------------
 
+// GetAllPedestriansRequest
+
+// -------------------------------------------------------------------
+
+// GetAllPedestriansResponse
+
+// repeated .city.person.v2.PersonRuntime pedestrians = 1 [json_name = "pedestrians"];
+inline int GetAllPedestriansResponse::_internal_pedestrians_size() const {
+  return _impl_.pedestrians_.size();
+}
+inline int GetAllPedestriansResponse::pedestrians_size() const {
+  return _internal_pedestrians_size();
+}
+inline ::city::person::v2::PersonRuntime* GetAllPedestriansResponse::mutable_pedestrians(int index) {
+  // @@protoc_insertion_point(field_mutable:city.person.v2.GetAllPedestriansResponse.pedestrians)
+  return _impl_.pedestrians_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::PersonRuntime >*
+GetAllPedestriansResponse::mutable_pedestrians() {
+  // @@protoc_insertion_point(field_mutable_list:city.person.v2.GetAllPedestriansResponse.pedestrians)
+  return &_impl_.pedestrians_;
+}
+inline const ::city::person::v2::PersonRuntime& GetAllPedestriansResponse::_internal_pedestrians(int index) const {
+  return _impl_.pedestrians_.Get(index);
+}
+inline const ::city::person::v2::PersonRuntime& GetAllPedestriansResponse::pedestrians(int index) const {
+  // @@protoc_insertion_point(field_get:city.person.v2.GetAllPedestriansResponse.pedestrians)
+  return _internal_pedestrians(index);
+}
+inline ::city::person::v2::PersonRuntime* GetAllPedestriansResponse::_internal_add_pedestrians() {
+  return _impl_.pedestrians_.Add();
+}
+inline ::city::person::v2::PersonRuntime* GetAllPedestriansResponse::add_pedestrians() {
+  ::city::person::v2::PersonRuntime* _add = _internal_add_pedestrians();
+  // @@protoc_insertion_point(field_add:city.person.v2.GetAllPedestriansResponse.pedestrians)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::PersonRuntime >&
+GetAllPedestriansResponse::pedestrians() const {
+  // @@protoc_insertion_point(field_list:city.person.v2.GetAllPedestriansResponse.pedestrians)
+  return _impl_.pedestrians_;
+}
+
+// -------------------------------------------------------------------
+
 // ResetPersonPositionRequest
 
 // int32 person_id = 1 [json_name = "personId"];
@@ -5260,9 +6160,121 @@ SetControlledTaxiToOrdersRequest::order_plans() const {
 
 // SetControlledTaxiToOrdersResponse
 
+// -------------------------------------------------------------------
+
+// SetControlledPedestriansRequest
+
+// repeated int32 pedestrian_ids = 1 [json_name = "pedestrianIds"];
+inline int SetControlledPedestriansRequest::_internal_pedestrian_ids_size() const {
+  return _impl_.pedestrian_ids_.size();
+}
+inline int SetControlledPedestriansRequest::pedestrian_ids_size() const {
+  return _internal_pedestrian_ids_size();
+}
+inline void SetControlledPedestriansRequest::clear_pedestrian_ids() {
+  _impl_.pedestrian_ids_.Clear();
+}
+inline int32_t SetControlledPedestriansRequest::_internal_pedestrian_ids(int index) const {
+  return _impl_.pedestrian_ids_.Get(index);
+}
+inline int32_t SetControlledPedestriansRequest::pedestrian_ids(int index) const {
+  // @@protoc_insertion_point(field_get:city.person.v2.SetControlledPedestriansRequest.pedestrian_ids)
+  return _internal_pedestrian_ids(index);
+}
+inline void SetControlledPedestriansRequest::set_pedestrian_ids(int index, int32_t value) {
+  _impl_.pedestrian_ids_.Set(index, value);
+  // @@protoc_insertion_point(field_set:city.person.v2.SetControlledPedestriansRequest.pedestrian_ids)
+}
+inline void SetControlledPedestriansRequest::_internal_add_pedestrian_ids(int32_t value) {
+  _impl_.pedestrian_ids_.Add(value);
+}
+inline void SetControlledPedestriansRequest::add_pedestrian_ids(int32_t value) {
+  _internal_add_pedestrian_ids(value);
+  // @@protoc_insertion_point(field_add:city.person.v2.SetControlledPedestriansRequest.pedestrian_ids)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+SetControlledPedestriansRequest::_internal_pedestrian_ids() const {
+  return _impl_.pedestrian_ids_;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+SetControlledPedestriansRequest::pedestrian_ids() const {
+  // @@protoc_insertion_point(field_list:city.person.v2.SetControlledPedestriansRequest.pedestrian_ids)
+  return _internal_pedestrian_ids();
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+SetControlledPedestriansRequest::_internal_mutable_pedestrian_ids() {
+  return &_impl_.pedestrian_ids_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+SetControlledPedestriansRequest::mutable_pedestrian_ids() {
+  // @@protoc_insertion_point(field_mutable_list:city.person.v2.SetControlledPedestriansRequest.pedestrian_ids)
+  return _internal_mutable_pedestrian_ids();
+}
+
+// -------------------------------------------------------------------
+
+// SetControlledPedestriansResponse
+
+// -------------------------------------------------------------------
+
+// SetControlledPedestriansActionsRequest
+
+// repeated .city.person.v2.PedestrianAction person_actions = 1 [json_name = "personActions"];
+inline int SetControlledPedestriansActionsRequest::_internal_person_actions_size() const {
+  return _impl_.person_actions_.size();
+}
+inline int SetControlledPedestriansActionsRequest::person_actions_size() const {
+  return _internal_person_actions_size();
+}
+inline ::city::person::v2::PedestrianAction* SetControlledPedestriansActionsRequest::mutable_person_actions(int index) {
+  // @@protoc_insertion_point(field_mutable:city.person.v2.SetControlledPedestriansActionsRequest.person_actions)
+  return _impl_.person_actions_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::PedestrianAction >*
+SetControlledPedestriansActionsRequest::mutable_person_actions() {
+  // @@protoc_insertion_point(field_mutable_list:city.person.v2.SetControlledPedestriansActionsRequest.person_actions)
+  return &_impl_.person_actions_;
+}
+inline const ::city::person::v2::PedestrianAction& SetControlledPedestriansActionsRequest::_internal_person_actions(int index) const {
+  return _impl_.person_actions_.Get(index);
+}
+inline const ::city::person::v2::PedestrianAction& SetControlledPedestriansActionsRequest::person_actions(int index) const {
+  // @@protoc_insertion_point(field_get:city.person.v2.SetControlledPedestriansActionsRequest.person_actions)
+  return _internal_person_actions(index);
+}
+inline ::city::person::v2::PedestrianAction* SetControlledPedestriansActionsRequest::_internal_add_person_actions() {
+  return _impl_.person_actions_.Add();
+}
+inline ::city::person::v2::PedestrianAction* SetControlledPedestriansActionsRequest::add_person_actions() {
+  ::city::person::v2::PedestrianAction* _add = _internal_add_person_actions();
+  // @@protoc_insertion_point(field_add:city.person.v2.SetControlledPedestriansActionsRequest.person_actions)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::PedestrianAction >&
+SetControlledPedestriansActionsRequest::person_actions() const {
+  // @@protoc_insertion_point(field_list:city.person.v2.SetControlledPedestriansActionsRequest.person_actions)
+  return _impl_.person_actions_;
+}
+
+// -------------------------------------------------------------------
+
+// SetControlledPedestriansActionsResponse
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
