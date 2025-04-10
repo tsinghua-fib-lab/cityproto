@@ -433,7 +433,7 @@ struct FetchControlledPedestriansEnvsResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 FetchControlledPedestriansEnvsResponseDefaultTypeInternal _FetchControlledPedestriansEnvsResponse_default_instance_;
 PROTOBUF_CONSTEXPR SetControlledPedestriansActionsRequest::SetControlledPedestriansActionsRequest(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.person_actions_)*/{}
+    /*decltype(_impl_.pedestrian_actions_)*/{}
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct SetControlledPedestriansActionsRequestDefaultTypeInternal {
   PROTOBUF_CONSTEXPR SetControlledPedestriansActionsRequestDefaultTypeInternal()
@@ -690,7 +690,7 @@ const uint32_t TableStruct_city_2fperson_2fv2_2fperson_5fservice_2eproto::offset
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::city::person::v2::SetControlledPedestriansActionsRequest, _impl_.person_actions_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v2::SetControlledPedestriansActionsRequest, _impl_.pedestrian_actions_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::city::person::v2::SetControlledPedestriansActionsResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -841,64 +841,65 @@ const char descriptor_table_protodef_city_2fperson_2fv2_2fperson_5fservice_2epro
   "destriansEnvsRequest\"p\n&FetchControlledP"
   "edestriansEnvsResponse\022F\n\017pedestrian_env"
   "s\030\001 \003(\0132\035.city.person.v2.PedestrianEnvR\016"
-  "pedestrianEnvs\"q\n&SetControlledPedestria"
-  "nsActionsRequest\022G\n\016person_actions\030\001 \003(\013"
-  "2 .city.person.v2.PedestrianActionR\rpers"
-  "onActions\")\n\'SetControlledPedestriansAct"
-  "ionsResponse2\226\017\n\rPersonService\022P\n\tGetPer"
-  "son\022 .city.person.v2.GetPersonRequest\032!."
-  "city.person.v2.GetPersonResponse\022P\n\tAddP"
-  "erson\022 .city.person.v2.AddPersonRequest\032"
-  "!.city.person.v2.AddPersonResponse\022V\n\013Se"
-  "tSchedule\022\".city.person.v2.SetScheduleRe"
-  "quest\032#.city.person.v2.SetScheduleRespon"
-  "se\022S\n\nGetPersons\022!.city.person.v2.GetPer"
-  "sonsRequest\032\".city.person.v2.GetPersonsR"
-  "esponse\022w\n\026GetPersonByLongLatBBox\022-.city"
-  ".person.v2.GetPersonByLongLatBBoxRequest"
-  "\032..city.person.v2.GetPersonByLongLatBBox"
-  "Response\022_\n\016GetAllVehicles\022%.city.person"
-  ".v2.GetAllVehiclesRequest\032&.city.person."
-  "v2.GetAllVehiclesResponse\022h\n\021GetAllPedes"
-  "trians\022(.city.person.v2.GetAllPedestrian"
-  "sRequest\032).city.person.v2.GetAllPedestri"
-  "ansResponse\022n\n\023ResetPersonPosition\022*.cit"
-  "y.person.v2.ResetPersonPositionRequest\032+"
-  ".city.person.v2.ResetPersonPositionRespo"
-  "nse\022z\n\027SetControlledVehicleIDs\022..city.pe"
-  "rson.v2.SetControlledVehicleIDsRequest\032/"
+  "pedestrianEnvs\"y\n&SetControlledPedestria"
+  "nsActionsRequest\022O\n\022pedestrian_actions\030\001"
+  " \003(\0132 .city.person.v2.PedestrianActionR\021"
+  "pedestrianActions\")\n\'SetControlledPedest"
+  "riansActionsResponse2\226\017\n\rPersonService\022P"
+  "\n\tGetPerson\022 .city.person.v2.GetPersonRe"
+  "quest\032!.city.person.v2.GetPersonResponse"
+  "\022P\n\tAddPerson\022 .city.person.v2.AddPerson"
+  "Request\032!.city.person.v2.AddPersonRespon"
+  "se\022V\n\013SetSchedule\022\".city.person.v2.SetSc"
+  "heduleRequest\032#.city.person.v2.SetSchedu"
+  "leResponse\022S\n\nGetPersons\022!.city.person.v"
+  "2.GetPersonsRequest\032\".city.person.v2.Get"
+  "PersonsResponse\022w\n\026GetPersonByLongLatBBo"
+  "x\022-.city.person.v2.GetPersonByLongLatBBo"
+  "xRequest\032..city.person.v2.GetPersonByLon"
+  "gLatBBoxResponse\022_\n\016GetAllVehicles\022%.cit"
+  "y.person.v2.GetAllVehiclesRequest\032&.city"
+  ".person.v2.GetAllVehiclesResponse\022h\n\021Get"
+  "AllPedestrians\022(.city.person.v2.GetAllPe"
+  "destriansRequest\032).city.person.v2.GetAll"
+  "PedestriansResponse\022n\n\023ResetPersonPositi"
+  "on\022*.city.person.v2.ResetPersonPositionR"
+  "equest\032+.city.person.v2.ResetPersonPosit"
+  "ionResponse\022z\n\027SetControlledVehicleIDs\022."
   ".city.person.v2.SetControlledVehicleIDsR"
-  "esponse\022\203\001\n\032FetchControlledVehicleEnvs\0221"
-  ".city.person.v2.FetchControlledVehicleEn"
-  "vsRequest\0322.city.person.v2.FetchControll"
-  "edVehicleEnvsResponse\022\206\001\n\033SetControlledV"
-  "ehicleActions\0222.city.person.v2.SetContro"
-  "lledVehicleActionsRequest\0323.city.person."
-  "v2.SetControlledVehicleActionsResponse\022q"
-  "\n\024SetControlledTaxiIDs\022+.city.person.v2."
-  "SetControlledTaxiIDsRequest\032,.city.perso"
-  "n.v2.SetControlledTaxiIDsResponse\022Y\n\014Get"
-  "AllOrders\022#.city.person.v2.GetAllOrdersR"
-  "equest\032$.city.person.v2.GetAllOrdersResp"
-  "onse\022\200\001\n\031SetControlledTaxiToOrders\0220.cit"
-  "y.person.v2.SetControlledTaxiToOrdersReq"
-  "uest\0321.city.person.v2.SetControlledTaxiT"
-  "oOrdersResponse\022}\n\030SetControlledPedestri"
-  "ans\022/.city.person.v2.SetControlledPedest"
-  "riansRequest\0320.city.person.v2.SetControl"
-  "ledPedestriansResponse\022\217\001\n\036FetchControll"
-  "edPedestriansEnvs\0225.city.person.v2.Fetch"
-  "ControlledPedestriansEnvsRequest\0326.city."
-  "person.v2.FetchControlledPedestriansEnvs"
-  "Response\022\222\001\n\037SetControlledPedestriansAct"
-  "ions\0226.city.person.v2.SetControlledPedes"
-  "triansActionsRequest\0327.city.person.v2.Se"
-  "tControlledPedestriansActionsResponseB\273\001"
-  "\n\022com.city.person.v2B\022PersonServiceProto"
-  "P\001Z7git.fiblab.net/sim/protos/v2/go/city"
-  "/person/v2;personv2\242\002\003CPX\252\002\016City.Person."
-  "V2\312\002\016City\\Person\\V2\342\002\032City\\Person\\V2\\GPB"
-  "Metadata\352\002\020City::Person::V2b\006proto3"
+  "equest\032/.city.person.v2.SetControlledVeh"
+  "icleIDsResponse\022\203\001\n\032FetchControlledVehic"
+  "leEnvs\0221.city.person.v2.FetchControlledV"
+  "ehicleEnvsRequest\0322.city.person.v2.Fetch"
+  "ControlledVehicleEnvsResponse\022\206\001\n\033SetCon"
+  "trolledVehicleActions\0222.city.person.v2.S"
+  "etControlledVehicleActionsRequest\0323.city"
+  ".person.v2.SetControlledVehicleActionsRe"
+  "sponse\022q\n\024SetControlledTaxiIDs\022+.city.pe"
+  "rson.v2.SetControlledTaxiIDsRequest\032,.ci"
+  "ty.person.v2.SetControlledTaxiIDsRespons"
+  "e\022Y\n\014GetAllOrders\022#.city.person.v2.GetAl"
+  "lOrdersRequest\032$.city.person.v2.GetAllOr"
+  "dersResponse\022\200\001\n\031SetControlledTaxiToOrde"
+  "rs\0220.city.person.v2.SetControlledTaxiToO"
+  "rdersRequest\0321.city.person.v2.SetControl"
+  "ledTaxiToOrdersResponse\022}\n\030SetControlled"
+  "Pedestrians\022/.city.person.v2.SetControll"
+  "edPedestriansRequest\0320.city.person.v2.Se"
+  "tControlledPedestriansResponse\022\217\001\n\036Fetch"
+  "ControlledPedestriansEnvs\0225.city.person."
+  "v2.FetchControlledPedestriansEnvsRequest"
+  "\0326.city.person.v2.FetchControlledPedestr"
+  "iansEnvsResponse\022\222\001\n\037SetControlledPedest"
+  "riansActions\0226.city.person.v2.SetControl"
+  "ledPedestriansActionsRequest\0327.city.pers"
+  "on.v2.SetControlledPedestriansActionsRes"
+  "ponseB\273\001\n\022com.city.person.v2B\022PersonServ"
+  "iceProtoP\001Z7git.fiblab.net/sim/protos/v2"
+  "/go/city/person/v2;personv2\242\002\003CPX\252\002\016City"
+  ".Person.V2\312\002\016City\\Person\\V2\342\002\032City\\Perso"
+  "n\\V2\\GPBMetadata\352\002\020City::Person::V2b\006pro"
+  "to3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_deps[8] = {
   &::descriptor_table_city_2fgeo_2fv2_2fgeo_2eproto,
@@ -912,7 +913,7 @@ static const ::_pbi::DescriptorTable* const descriptor_table_city_2fperson_2fv2_
 };
 static ::_pbi::once_flag descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto = {
-    false, false, 5035, descriptor_table_protodef_city_2fperson_2fv2_2fperson_5fservice_2eproto,
+    false, false, 5043, descriptor_table_protodef_city_2fperson_2fv2_2fperson_5fservice_2eproto,
     "city/person/v2/person_service.proto",
     &descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_once, descriptor_table_city_2fperson_2fv2_2fperson_5fservice_2eproto_deps, 8, 34,
     schemas, file_default_instances, TableStruct_city_2fperson_2fv2_2fperson_5fservice_2eproto::offsets,
@@ -5543,8 +5544,8 @@ class SetControlledPedestriansActionsRequest::_Internal {
  public:
 };
 
-void SetControlledPedestriansActionsRequest::clear_person_actions() {
-  _impl_.person_actions_.Clear();
+void SetControlledPedestriansActionsRequest::clear_pedestrian_actions() {
+  _impl_.pedestrian_actions_.Clear();
 }
 SetControlledPedestriansActionsRequest::SetControlledPedestriansActionsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
@@ -5556,7 +5557,7 @@ SetControlledPedestriansActionsRequest::SetControlledPedestriansActionsRequest(c
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   SetControlledPedestriansActionsRequest* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.person_actions_){from._impl_.person_actions_}
+      decltype(_impl_.pedestrian_actions_){from._impl_.pedestrian_actions_}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
@@ -5568,7 +5569,7 @@ inline void SetControlledPedestriansActionsRequest::SharedCtor(
   (void)arena;
   (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.person_actions_){arena}
+      decltype(_impl_.pedestrian_actions_){arena}
     , /*decltype(_impl_._cached_size_)*/{}
   };
 }
@@ -5584,7 +5585,7 @@ SetControlledPedestriansActionsRequest::~SetControlledPedestriansActionsRequest(
 
 inline void SetControlledPedestriansActionsRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.person_actions_.~RepeatedPtrField();
+  _impl_.pedestrian_actions_.~RepeatedPtrField();
 }
 
 void SetControlledPedestriansActionsRequest::SetCachedSize(int size) const {
@@ -5597,7 +5598,7 @@ void SetControlledPedestriansActionsRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.person_actions_.Clear();
+  _impl_.pedestrian_actions_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -5607,13 +5608,13 @@ const char* SetControlledPedestriansActionsRequest::_InternalParse(const char* p
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // repeated .city.person.v2.PedestrianAction person_actions = 1 [json_name = "personActions"];
+      // repeated .city.person.v2.PedestrianAction pedestrian_actions = 1 [json_name = "pedestrianActions"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr -= 1;
           do {
             ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_person_actions(), ptr);
+            ptr = ctx->ParseMessage(_internal_add_pedestrian_actions(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
@@ -5649,10 +5650,10 @@ uint8_t* SetControlledPedestriansActionsRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated .city.person.v2.PedestrianAction person_actions = 1 [json_name = "personActions"];
+  // repeated .city.person.v2.PedestrianAction pedestrian_actions = 1 [json_name = "pedestrianActions"];
   for (unsigned i = 0,
-      n = static_cast<unsigned>(this->_internal_person_actions_size()); i < n; i++) {
-    const auto& repfield = this->_internal_person_actions(i);
+      n = static_cast<unsigned>(this->_internal_pedestrian_actions_size()); i < n; i++) {
+    const auto& repfield = this->_internal_pedestrian_actions(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
         InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
   }
@@ -5673,9 +5674,9 @@ size_t SetControlledPedestriansActionsRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .city.person.v2.PedestrianAction person_actions = 1 [json_name = "personActions"];
-  total_size += 1UL * this->_internal_person_actions_size();
-  for (const auto& msg : this->_impl_.person_actions_) {
+  // repeated .city.person.v2.PedestrianAction pedestrian_actions = 1 [json_name = "pedestrianActions"];
+  total_size += 1UL * this->_internal_pedestrian_actions_size();
+  for (const auto& msg : this->_impl_.pedestrian_actions_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
@@ -5698,7 +5699,7 @@ void SetControlledPedestriansActionsRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  _this->_impl_.person_actions_.MergeFrom(from._impl_.person_actions_);
+  _this->_impl_.pedestrian_actions_.MergeFrom(from._impl_.pedestrian_actions_);
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -5716,7 +5717,7 @@ bool SetControlledPedestriansActionsRequest::IsInitialized() const {
 void SetControlledPedestriansActionsRequest::InternalSwap(SetControlledPedestriansActionsRequest* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  _impl_.person_actions_.InternalSwap(&other->_impl_.person_actions_);
+  _impl_.pedestrian_actions_.InternalSwap(&other->_impl_.pedestrian_actions_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SetControlledPedestriansActionsRequest::GetMetadata() const {

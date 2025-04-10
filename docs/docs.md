@@ -8209,7 +8209,7 @@ Request for setting behavior of pedestrian controlled by external behavior
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| person_actions | [PedestrianAction](#city-person-v2-PedestrianAction) | repeated | 由外部控制的行人行为 Behavior of pedestrian controlled by external behavior |
+| pedestrian_actions | [PedestrianAction](#city-person-v2-PedestrianAction) | repeated | 由外部控制的行人行为 Behavior of pedestrian controlled by external behavior |
 
 
 

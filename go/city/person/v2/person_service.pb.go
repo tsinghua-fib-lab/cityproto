@@ -1535,9 +1535,9 @@ type SetControlledPedestriansActionsRequest struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// 由外部控制的行人行为
 	// Behavior of pedestrian controlled by external behavior
-	PersonActions []*PedestrianAction `protobuf:"bytes,1,rep,name=person_actions,json=personActions,proto3" json:"person_actions,omitempty" bson:"person_actions" db:"person_actions" yaml:"person_actions"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	PedestrianActions []*PedestrianAction `protobuf:"bytes,1,rep,name=pedestrian_actions,json=pedestrianActions,proto3" json:"pedestrian_actions,omitempty" bson:"pedestrian_actions" db:"pedestrian_actions" yaml:"pedestrian_actions"`
+	unknownFields     protoimpl.UnknownFields
+	sizeCache         protoimpl.SizeCache
 }
 
 func (x *SetControlledPedestriansActionsRequest) Reset() {
@@ -1570,9 +1570,9 @@ func (*SetControlledPedestriansActionsRequest) Descriptor() ([]byte, []int) {
 	return file_city_person_v2_person_service_proto_rawDescGZIP(), []int{32}
 }
 
-func (x *SetControlledPedestriansActionsRequest) GetPersonActions() []*PedestrianAction {
+func (x *SetControlledPedestriansActionsRequest) GetPedestrianActions() []*PedestrianAction {
 	if x != nil {
-		return x.PersonActions
+		return x.PedestrianActions
 	}
 	return nil
 }
@@ -1686,9 +1686,9 @@ const file_city_person_v2_person_service_proto_rawDesc = "" +
 	" SetControlledPedestriansResponse\"'\n" +
 	"%FetchControlledPedestriansEnvsRequest\"p\n" +
 	"&FetchControlledPedestriansEnvsResponse\x12F\n" +
-	"\x0fpedestrian_envs\x18\x01 \x03(\v2\x1d.city.person.v2.PedestrianEnvR\x0epedestrianEnvs\"q\n" +
-	"&SetControlledPedestriansActionsRequest\x12G\n" +
-	"\x0eperson_actions\x18\x01 \x03(\v2 .city.person.v2.PedestrianActionR\rpersonActions\")\n" +
+	"\x0fpedestrian_envs\x18\x01 \x03(\v2\x1d.city.person.v2.PedestrianEnvR\x0epedestrianEnvs\"y\n" +
+	"&SetControlledPedestriansActionsRequest\x12O\n" +
+	"\x12pedestrian_actions\x18\x01 \x03(\v2 .city.person.v2.PedestrianActionR\x11pedestrianActions\")\n" +
 	"'SetControlledPedestriansActionsResponse2\x96\x0f\n" +
 	"\rPersonService\x12P\n" +
 	"\tGetPerson\x12 .city.person.v2.GetPersonRequest\x1a!.city.person.v2.GetPersonResponse\x12P\n" +
@@ -1793,7 +1793,7 @@ var file_city_person_v2_person_service_proto_depIdxs = []int32{
 	44, // 15: city.person.v2.GetAllOrdersResponse.order_infos:type_name -> city.person.v2.RequestOrderInfo
 	45, // 16: city.person.v2.SetControlledTaxiToOrdersRequest.order_plans:type_name -> city.person.v2.OrderAllocationPlan
 	46, // 17: city.person.v2.FetchControlledPedestriansEnvsResponse.pedestrian_envs:type_name -> city.person.v2.PedestrianEnv
-	47, // 18: city.person.v2.SetControlledPedestriansActionsRequest.person_actions:type_name -> city.person.v2.PedestrianAction
+	47, // 18: city.person.v2.SetControlledPedestriansActionsRequest.pedestrian_actions:type_name -> city.person.v2.PedestrianAction
 	0,  // 19: city.person.v2.PersonService.GetPerson:input_type -> city.person.v2.GetPersonRequest
 	2,  // 20: city.person.v2.PersonService.AddPerson:input_type -> city.person.v2.AddPersonRequest
 	4,  // 21: city.person.v2.PersonService.SetSchedule:input_type -> city.person.v2.SetScheduleRequest

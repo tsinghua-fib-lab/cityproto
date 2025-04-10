@@ -263,11 +263,11 @@ class FetchControlledPedestriansEnvsResponse(_message.Message):
         ...
 
 class SetControlledPedestriansActionsRequest(_message.Message):
-    __slots__ = ['person_actions']
-    PERSON_ACTIONS_FIELD_NUMBER: _ClassVar[int]
-    person_actions: _containers.RepeatedCompositeFieldContainer[_pedestrian_pb2.PedestrianAction]
+    __slots__ = ['pedestrian_actions']
+    PEDESTRIAN_ACTIONS_FIELD_NUMBER: _ClassVar[int]
+    pedestrian_actions: _containers.RepeatedCompositeFieldContainer[_pedestrian_pb2.PedestrianAction]
 
-    def __init__(self, person_actions: _Optional[_Iterable[_Union[_pedestrian_pb2.PedestrianAction, _Mapping]]]=...) -> None:
+    def __init__(self, pedestrian_actions: _Optional[_Iterable[_Union[_pedestrian_pb2.PedestrianAction, _Mapping]]]=...) -> None:
         ...
 
 class SetControlledPedestriansActionsResponse(_message.Message):

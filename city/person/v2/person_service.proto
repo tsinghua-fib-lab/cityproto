@@ -27,50 +27,61 @@ service PersonService {
   rpc GetPersons(GetPersonsRequest) returns (GetPersonsResponse);
   // 获取特定区域内的person
   // Get persons in a specific region
-  rpc GetPersonByLongLatBBox(GetPersonByLongLatBBoxRequest) returns (GetPersonByLongLatBBoxResponse);
+  rpc GetPersonByLongLatBBox(GetPersonByLongLatBBoxRequest)
+      returns (GetPersonByLongLatBBoxResponse);
   // 获取所有车辆
   // Get all vehicles
   rpc GetAllVehicles(GetAllVehiclesRequest) returns (GetAllVehiclesResponse);
   // 获取所有行人
   // Get all pedestrians
-  rpc GetAllPedestrians(GetAllPedestriansRequest) returns (GetAllPedestriansResponse);
+  rpc GetAllPedestrians(GetAllPedestriansRequest)
+      returns (GetAllPedestriansResponse);
 
   // 重置人的位置（将停止当前正在进行的出行，转为sleep状态）
   // Reset person's position (stop the current trip and switch to sleep status)
-  rpc ResetPersonPosition(ResetPersonPositionRequest) returns (ResetPersonPositionResponse);
+  rpc ResetPersonPosition(ResetPersonPositionRequest)
+      returns (ResetPersonPositionResponse);
 
   // RL接口
   // RL interface
 
   // 设置由外部控制行为的vehicle
   // Set vehicle controlled by external behavior
-  rpc SetControlledVehicleIDs(SetControlledVehicleIDsRequest) returns (SetControlledVehicleIDsResponse);
+  rpc SetControlledVehicleIDs(SetControlledVehicleIDsRequest)
+      returns (SetControlledVehicleIDsResponse);
   // 获取由外部控制行为的vehicle信息
   // Get information of vehicle controlled by external behavior
-  rpc FetchControlledVehicleEnvs(FetchControlledVehicleEnvsRequest) returns (FetchControlledVehicleEnvsResponse);
+  rpc FetchControlledVehicleEnvs(FetchControlledVehicleEnvsRequest)
+      returns (FetchControlledVehicleEnvsResponse);
   // 设置由外部控制行为的vehicle的行为
   // Set behavior of vehicle controlled by external behavior
-  rpc SetControlledVehicleActions(SetControlledVehicleActionsRequest) returns (SetControlledVehicleActionsResponse);
+  rpc SetControlledVehicleActions(SetControlledVehicleActionsRequest)
+      returns (SetControlledVehicleActionsResponse);
 
   // 设置由外部控制的taxi
   // Set taxi controlled by external behavior
-  rpc SetControlledTaxiIDs(SetControlledTaxiIDsRequest) returns (SetControlledTaxiIDsResponse);
+  rpc SetControlledTaxiIDs(SetControlledTaxiIDsRequest)
+      returns (SetControlledTaxiIDsResponse);
   // 获取所有订单信息
   // Get information of all orders
   rpc GetAllOrders(GetAllOrdersRequest) returns (GetAllOrdersResponse);
   // 设置所有外部控制的出租车接指定的单
   // Set all externally controlled taxis to specified orders
-  rpc SetControlledTaxiToOrders(SetControlledTaxiToOrdersRequest) returns (SetControlledTaxiToOrdersResponse);
+  rpc SetControlledTaxiToOrders(SetControlledTaxiToOrdersRequest)
+      returns (SetControlledTaxiToOrdersResponse);
 
   // 设置由外部控制的行人
   // Set pedestrian controlled by external behavior
-  rpc SetControlledPedestrians(SetControlledPedestriansRequest) returns (SetControlledPedestriansResponse);
+  rpc SetControlledPedestrians(SetControlledPedestriansRequest)
+      returns (SetControlledPedestriansResponse);
   // 获取由外部控制的行人信息
   // Get information of pedestrian controlled by external behavior
-  rpc FetchControlledPedestriansEnvs(FetchControlledPedestriansEnvsRequest) returns (FetchControlledPedestriansEnvsResponse);
+  rpc FetchControlledPedestriansEnvs(FetchControlledPedestriansEnvsRequest)
+      returns (FetchControlledPedestriansEnvsResponse);
   // 设置由外部控制的行人行为
   // Set behavior of pedestrian controlled by external behavior
-  rpc SetControlledPedestriansActions(SetControlledPedestriansActionsRequest) returns (SetControlledPedestriansActionsResponse);
+  rpc SetControlledPedestriansActions(SetControlledPedestriansActionsRequest)
+      returns (SetControlledPedestriansActionsResponse);
 }
 
 // 获取person信息请求
@@ -82,9 +93,7 @@ message GetPersonRequest {
 
 // 获取person信息响应
 // Response of getting person information
-message GetPersonResponse {
-  PersonRuntime person = 1;
-}
+message GetPersonResponse { PersonRuntime person = 1; }
 
 // 新增person请求
 // Request for adding a new person
@@ -313,7 +322,7 @@ message FetchControlledPedestriansEnvsResponse {
 message SetControlledPedestriansActionsRequest {
   // 由外部控制的行人行为
   // Behavior of pedestrian controlled by external behavior
-  repeated PedestrianAction person_actions = 1;
+  repeated PedestrianAction pedestrian_actions = 1;
 }
 
 // 设置由外部控制的行人行为响应

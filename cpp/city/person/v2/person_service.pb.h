@@ -5031,25 +5031,25 @@ class SetControlledPedestriansActionsRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kPersonActionsFieldNumber = 1,
+    kPedestrianActionsFieldNumber = 1,
   };
-  // repeated .city.person.v2.PedestrianAction person_actions = 1 [json_name = "personActions"];
-  int person_actions_size() const;
+  // repeated .city.person.v2.PedestrianAction pedestrian_actions = 1 [json_name = "pedestrianActions"];
+  int pedestrian_actions_size() const;
   private:
-  int _internal_person_actions_size() const;
+  int _internal_pedestrian_actions_size() const;
   public:
-  void clear_person_actions();
-  ::city::person::v2::PedestrianAction* mutable_person_actions(int index);
+  void clear_pedestrian_actions();
+  ::city::person::v2::PedestrianAction* mutable_pedestrian_actions(int index);
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::PedestrianAction >*
-      mutable_person_actions();
+      mutable_pedestrian_actions();
   private:
-  const ::city::person::v2::PedestrianAction& _internal_person_actions(int index) const;
-  ::city::person::v2::PedestrianAction* _internal_add_person_actions();
+  const ::city::person::v2::PedestrianAction& _internal_pedestrian_actions(int index) const;
+  ::city::person::v2::PedestrianAction* _internal_add_pedestrian_actions();
   public:
-  const ::city::person::v2::PedestrianAction& person_actions(int index) const;
-  ::city::person::v2::PedestrianAction* add_person_actions();
+  const ::city::person::v2::PedestrianAction& pedestrian_actions(int index) const;
+  ::city::person::v2::PedestrianAction* add_pedestrian_actions();
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::PedestrianAction >&
-      person_actions() const;
+      pedestrian_actions() const;
 
   // @@protoc_insertion_point(class_scope:city.person.v2.SetControlledPedestriansActionsRequest)
  private:
@@ -5059,7 +5059,7 @@ class SetControlledPedestriansActionsRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::PedestrianAction > person_actions_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::PedestrianAction > pedestrian_actions_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -6547,41 +6547,41 @@ FetchControlledPedestriansEnvsResponse::pedestrian_envs() const {
 
 // SetControlledPedestriansActionsRequest
 
-// repeated .city.person.v2.PedestrianAction person_actions = 1 [json_name = "personActions"];
-inline int SetControlledPedestriansActionsRequest::_internal_person_actions_size() const {
-  return _impl_.person_actions_.size();
+// repeated .city.person.v2.PedestrianAction pedestrian_actions = 1 [json_name = "pedestrianActions"];
+inline int SetControlledPedestriansActionsRequest::_internal_pedestrian_actions_size() const {
+  return _impl_.pedestrian_actions_.size();
 }
-inline int SetControlledPedestriansActionsRequest::person_actions_size() const {
-  return _internal_person_actions_size();
+inline int SetControlledPedestriansActionsRequest::pedestrian_actions_size() const {
+  return _internal_pedestrian_actions_size();
 }
-inline ::city::person::v2::PedestrianAction* SetControlledPedestriansActionsRequest::mutable_person_actions(int index) {
-  // @@protoc_insertion_point(field_mutable:city.person.v2.SetControlledPedestriansActionsRequest.person_actions)
-  return _impl_.person_actions_.Mutable(index);
+inline ::city::person::v2::PedestrianAction* SetControlledPedestriansActionsRequest::mutable_pedestrian_actions(int index) {
+  // @@protoc_insertion_point(field_mutable:city.person.v2.SetControlledPedestriansActionsRequest.pedestrian_actions)
+  return _impl_.pedestrian_actions_.Mutable(index);
 }
 inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::PedestrianAction >*
-SetControlledPedestriansActionsRequest::mutable_person_actions() {
-  // @@protoc_insertion_point(field_mutable_list:city.person.v2.SetControlledPedestriansActionsRequest.person_actions)
-  return &_impl_.person_actions_;
+SetControlledPedestriansActionsRequest::mutable_pedestrian_actions() {
+  // @@protoc_insertion_point(field_mutable_list:city.person.v2.SetControlledPedestriansActionsRequest.pedestrian_actions)
+  return &_impl_.pedestrian_actions_;
 }
-inline const ::city::person::v2::PedestrianAction& SetControlledPedestriansActionsRequest::_internal_person_actions(int index) const {
-  return _impl_.person_actions_.Get(index);
+inline const ::city::person::v2::PedestrianAction& SetControlledPedestriansActionsRequest::_internal_pedestrian_actions(int index) const {
+  return _impl_.pedestrian_actions_.Get(index);
 }
-inline const ::city::person::v2::PedestrianAction& SetControlledPedestriansActionsRequest::person_actions(int index) const {
-  // @@protoc_insertion_point(field_get:city.person.v2.SetControlledPedestriansActionsRequest.person_actions)
-  return _internal_person_actions(index);
+inline const ::city::person::v2::PedestrianAction& SetControlledPedestriansActionsRequest::pedestrian_actions(int index) const {
+  // @@protoc_insertion_point(field_get:city.person.v2.SetControlledPedestriansActionsRequest.pedestrian_actions)
+  return _internal_pedestrian_actions(index);
 }
-inline ::city::person::v2::PedestrianAction* SetControlledPedestriansActionsRequest::_internal_add_person_actions() {
-  return _impl_.person_actions_.Add();
+inline ::city::person::v2::PedestrianAction* SetControlledPedestriansActionsRequest::_internal_add_pedestrian_actions() {
+  return _impl_.pedestrian_actions_.Add();
 }
-inline ::city::person::v2::PedestrianAction* SetControlledPedestriansActionsRequest::add_person_actions() {
-  ::city::person::v2::PedestrianAction* _add = _internal_add_person_actions();
-  // @@protoc_insertion_point(field_add:city.person.v2.SetControlledPedestriansActionsRequest.person_actions)
+inline ::city::person::v2::PedestrianAction* SetControlledPedestriansActionsRequest::add_pedestrian_actions() {
+  ::city::person::v2::PedestrianAction* _add = _internal_add_pedestrian_actions();
+  // @@protoc_insertion_point(field_add:city.person.v2.SetControlledPedestriansActionsRequest.pedestrian_actions)
   return _add;
 }
 inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::PedestrianAction >&
-SetControlledPedestriansActionsRequest::person_actions() const {
-  // @@protoc_insertion_point(field_list:city.person.v2.SetControlledPedestriansActionsRequest.person_actions)
-  return _impl_.person_actions_;
+SetControlledPedestriansActionsRequest::pedestrian_actions() const {
+  // @@protoc_insertion_point(field_list:city.person.v2.SetControlledPedestriansActionsRequest.pedestrian_actions)
+  return _impl_.pedestrian_actions_;
 }
 
 // -------------------------------------------------------------------

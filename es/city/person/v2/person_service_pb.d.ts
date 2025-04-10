@@ -960,9 +960,9 @@ export declare class SetControlledPedestriansActionsRequest extends Message<SetC
    * 由外部控制的行人行为
    * Behavior of pedestrian controlled by external behavior
    *
-   * @generated from field: repeated city.person.v2.PedestrianAction person_actions = 1;
+   * @generated from field: repeated city.person.v2.PedestrianAction pedestrian_actions = 1;
    */
-  personActions: PedestrianAction[];
+  pedestrianActions: PedestrianAction[];
 
   constructor(data?: PartialMessage<SetControlledPedestriansActionsRequest>);
 

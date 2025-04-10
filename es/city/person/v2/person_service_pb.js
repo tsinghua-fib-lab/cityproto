@@ -423,7 +423,7 @@ export const FetchControlledPedestriansEnvsResponse = /*@__PURE__*/ proto3.makeM
 export const SetControlledPedestriansActionsRequest = /*@__PURE__*/ proto3.makeMessageType(
   "city.person.v2.SetControlledPedestriansActionsRequest",
   () => [
-    { no: 1, name: "person_actions", kind: "message", T: PedestrianAction, repeated: true },
+    { no: 1, name: "pedestrian_actions", kind: "message", T: PedestrianAction, repeated: true },
   ],
 );
 
