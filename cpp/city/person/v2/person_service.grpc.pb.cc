@@ -39,6 +39,7 @@ static const char* PersonService_method_names[] = {
   "/city.person.v2.PersonService/GetAllOrders",
   "/city.person.v2.PersonService/SetControlledTaxiToOrders",
   "/city.person.v2.PersonService/SetControlledPedestrians",
+  "/city.person.v2.PersonService/FetchControlledPedestriansEnvs",
   "/city.person.v2.PersonService/SetControlledPedestriansActions",
 };
 
@@ -64,7 +65,8 @@ PersonService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& chan
   , rpcmethod_GetAllOrders_(PersonService_method_names[12], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_SetControlledTaxiToOrders_(PersonService_method_names[13], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_SetControlledPedestrians_(PersonService_method_names[14], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_SetControlledPedestriansActions_(PersonService_method_names[15], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_FetchControlledPedestriansEnvs_(PersonService_method_names[15], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_SetControlledPedestriansActions_(PersonService_method_names[16], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status PersonService::Stub::GetPerson(::grpc::ClientContext* context, const ::city::person::v2::GetPersonRequest& request, ::city::person::v2::GetPersonResponse* response) {
@@ -412,6 +414,29 @@ void PersonService::Stub::async::SetControlledPedestrians(::grpc::ClientContext*
   return result;
 }
 
+::grpc::Status PersonService::Stub::FetchControlledPedestriansEnvs(::grpc::ClientContext* context, const ::city::person::v2::FetchControlledPedestriansEnvsRequest& request, ::city::person::v2::FetchControlledPedestriansEnvsResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::city::person::v2::FetchControlledPedestriansEnvsRequest, ::city::person::v2::FetchControlledPedestriansEnvsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_FetchControlledPedestriansEnvs_, context, request, response);
+}
+
+void PersonService::Stub::async::FetchControlledPedestriansEnvs(::grpc::ClientContext* context, const ::city::person::v2::FetchControlledPedestriansEnvsRequest* request, ::city::person::v2::FetchControlledPedestriansEnvsResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::city::person::v2::FetchControlledPedestriansEnvsRequest, ::city::person::v2::FetchControlledPedestriansEnvsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_FetchControlledPedestriansEnvs_, context, request, response, std::move(f));
+}
+
+void PersonService::Stub::async::FetchControlledPedestriansEnvs(::grpc::ClientContext* context, const ::city::person::v2::FetchControlledPedestriansEnvsRequest* request, ::city::person::v2::FetchControlledPedestriansEnvsResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_FetchControlledPedestriansEnvs_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::city::person::v2::FetchControlledPedestriansEnvsResponse>* PersonService::Stub::PrepareAsyncFetchControlledPedestriansEnvsRaw(::grpc::ClientContext* context, const ::city::person::v2::FetchControlledPedestriansEnvsRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::person::v2::FetchControlledPedestriansEnvsResponse, ::city::person::v2::FetchControlledPedestriansEnvsRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_FetchControlledPedestriansEnvs_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::city::person::v2::FetchControlledPedestriansEnvsResponse>* PersonService::Stub::AsyncFetchControlledPedestriansEnvsRaw(::grpc::ClientContext* context, const ::city::person::v2::FetchControlledPedestriansEnvsRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncFetchControlledPedestriansEnvsRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
 ::grpc::Status PersonService::Stub::SetControlledPedestriansActions(::grpc::ClientContext* context, const ::city::person::v2::SetControlledPedestriansActionsRequest& request, ::city::person::v2::SetControlledPedestriansActionsResponse* response) {
   return ::grpc::internal::BlockingUnaryCall< ::city::person::v2::SetControlledPedestriansActionsRequest, ::city::person::v2::SetControlledPedestriansActionsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_SetControlledPedestriansActions_, context, request, response);
 }
@@ -589,6 +614,16 @@ PersonService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       PersonService_method_names[15],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< PersonService::Service, ::city::person::v2::FetchControlledPedestriansEnvsRequest, ::city::person::v2::FetchControlledPedestriansEnvsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](PersonService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::city::person::v2::FetchControlledPedestriansEnvsRequest* req,
+             ::city::person::v2::FetchControlledPedestriansEnvsResponse* resp) {
+               return service->FetchControlledPedestriansEnvs(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      PersonService_method_names[16],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< PersonService::Service, ::city::person::v2::SetControlledPedestriansActionsRequest, ::city::person::v2::SetControlledPedestriansActionsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](PersonService::Service* service,
              ::grpc::ServerContext* ctx,
@@ -700,6 +735,13 @@ PersonService::Service::~Service() {
 }
 
 ::grpc::Status PersonService::Service::SetControlledPedestrians(::grpc::ServerContext* context, const ::city::person::v2::SetControlledPedestriansRequest* request, ::city::person::v2::SetControlledPedestriansResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status PersonService::Service::FetchControlledPedestriansEnvs(::grpc::ServerContext* context, const ::city::person::v2::FetchControlledPedestriansEnvsRequest* request, ::city::person::v2::FetchControlledPedestriansEnvsResponse* response) {
   (void) context;
   (void) request;
   (void) response;

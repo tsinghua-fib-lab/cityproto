@@ -62,6 +62,12 @@ extern AddPersonRequestDefaultTypeInternal _AddPersonRequest_default_instance_;
 class AddPersonResponse;
 struct AddPersonResponseDefaultTypeInternal;
 extern AddPersonResponseDefaultTypeInternal _AddPersonResponse_default_instance_;
+class FetchControlledPedestriansEnvsRequest;
+struct FetchControlledPedestriansEnvsRequestDefaultTypeInternal;
+extern FetchControlledPedestriansEnvsRequestDefaultTypeInternal _FetchControlledPedestriansEnvsRequest_default_instance_;
+class FetchControlledPedestriansEnvsResponse;
+struct FetchControlledPedestriansEnvsResponseDefaultTypeInternal;
+extern FetchControlledPedestriansEnvsResponseDefaultTypeInternal _FetchControlledPedestriansEnvsResponse_default_instance_;
 class FetchControlledVehicleEnvsRequest;
 struct FetchControlledVehicleEnvsRequestDefaultTypeInternal;
 extern FetchControlledVehicleEnvsRequestDefaultTypeInternal _FetchControlledVehicleEnvsRequest_default_instance_;
@@ -158,6 +164,8 @@ extern SetScheduleResponseDefaultTypeInternal _SetScheduleResponse_default_insta
 PROTOBUF_NAMESPACE_OPEN
 template<> ::city::person::v2::AddPersonRequest* Arena::CreateMaybeMessage<::city::person::v2::AddPersonRequest>(Arena*);
 template<> ::city::person::v2::AddPersonResponse* Arena::CreateMaybeMessage<::city::person::v2::AddPersonResponse>(Arena*);
+template<> ::city::person::v2::FetchControlledPedestriansEnvsRequest* Arena::CreateMaybeMessage<::city::person::v2::FetchControlledPedestriansEnvsRequest>(Arena*);
+template<> ::city::person::v2::FetchControlledPedestriansEnvsResponse* Arena::CreateMaybeMessage<::city::person::v2::FetchControlledPedestriansEnvsResponse>(Arena*);
 template<> ::city::person::v2::FetchControlledVehicleEnvsRequest* Arena::CreateMaybeMessage<::city::person::v2::FetchControlledVehicleEnvsRequest>(Arena*);
 template<> ::city::person::v2::FetchControlledVehicleEnvsResponse* Arena::CreateMaybeMessage<::city::person::v2::FetchControlledVehicleEnvsResponse>(Arena*);
 template<> ::city::person::v2::GetAllOrdersRequest* Arena::CreateMaybeMessage<::city::person::v2::GetAllOrdersRequest>(Arena*);
@@ -4627,6 +4635,281 @@ class SetControlledPedestriansResponse final :
 };
 // -------------------------------------------------------------------
 
+class FetchControlledPedestriansEnvsRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:city.person.v2.FetchControlledPedestriansEnvsRequest) */ {
+ public:
+  inline FetchControlledPedestriansEnvsRequest() : FetchControlledPedestriansEnvsRequest(nullptr) {}
+  explicit PROTOBUF_CONSTEXPR FetchControlledPedestriansEnvsRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  FetchControlledPedestriansEnvsRequest(const FetchControlledPedestriansEnvsRequest& from);
+  FetchControlledPedestriansEnvsRequest(FetchControlledPedestriansEnvsRequest&& from) noexcept
+    : FetchControlledPedestriansEnvsRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline FetchControlledPedestriansEnvsRequest& operator=(const FetchControlledPedestriansEnvsRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline FetchControlledPedestriansEnvsRequest& operator=(FetchControlledPedestriansEnvsRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const FetchControlledPedestriansEnvsRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const FetchControlledPedestriansEnvsRequest* internal_default_instance() {
+    return reinterpret_cast<const FetchControlledPedestriansEnvsRequest*>(
+               &_FetchControlledPedestriansEnvsRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    30;
+
+  friend void swap(FetchControlledPedestriansEnvsRequest& a, FetchControlledPedestriansEnvsRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(FetchControlledPedestriansEnvsRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(FetchControlledPedestriansEnvsRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  FetchControlledPedestriansEnvsRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<FetchControlledPedestriansEnvsRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
+  inline void CopyFrom(const FetchControlledPedestriansEnvsRequest& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(*this, from);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
+  void MergeFrom(const FetchControlledPedestriansEnvsRequest& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(*this, from);
+  }
+  public:
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.person.v2.FetchControlledPedestriansEnvsRequest";
+  }
+  protected:
+  explicit FetchControlledPedestriansEnvsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:city.person.v2.FetchControlledPedestriansEnvsRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+  };
+  friend struct ::TableStruct_city_2fperson_2fv2_2fperson_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
+class FetchControlledPedestriansEnvsResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.person.v2.FetchControlledPedestriansEnvsResponse) */ {
+ public:
+  inline FetchControlledPedestriansEnvsResponse() : FetchControlledPedestriansEnvsResponse(nullptr) {}
+  ~FetchControlledPedestriansEnvsResponse() override;
+  explicit PROTOBUF_CONSTEXPR FetchControlledPedestriansEnvsResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  FetchControlledPedestriansEnvsResponse(const FetchControlledPedestriansEnvsResponse& from);
+  FetchControlledPedestriansEnvsResponse(FetchControlledPedestriansEnvsResponse&& from) noexcept
+    : FetchControlledPedestriansEnvsResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline FetchControlledPedestriansEnvsResponse& operator=(const FetchControlledPedestriansEnvsResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline FetchControlledPedestriansEnvsResponse& operator=(FetchControlledPedestriansEnvsResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const FetchControlledPedestriansEnvsResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const FetchControlledPedestriansEnvsResponse* internal_default_instance() {
+    return reinterpret_cast<const FetchControlledPedestriansEnvsResponse*>(
+               &_FetchControlledPedestriansEnvsResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    31;
+
+  friend void swap(FetchControlledPedestriansEnvsResponse& a, FetchControlledPedestriansEnvsResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(FetchControlledPedestriansEnvsResponse* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(FetchControlledPedestriansEnvsResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  FetchControlledPedestriansEnvsResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<FetchControlledPedestriansEnvsResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const FetchControlledPedestriansEnvsResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const FetchControlledPedestriansEnvsResponse& from) {
+    FetchControlledPedestriansEnvsResponse::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(FetchControlledPedestriansEnvsResponse* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.person.v2.FetchControlledPedestriansEnvsResponse";
+  }
+  protected:
+  explicit FetchControlledPedestriansEnvsResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kPedestrianEnvsFieldNumber = 1,
+  };
+  // repeated .city.person.v2.PedestrianEnv pedestrian_envs = 1 [json_name = "pedestrianEnvs"];
+  int pedestrian_envs_size() const;
+  private:
+  int _internal_pedestrian_envs_size() const;
+  public:
+  void clear_pedestrian_envs();
+  ::city::person::v2::PedestrianEnv* mutable_pedestrian_envs(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::PedestrianEnv >*
+      mutable_pedestrian_envs();
+  private:
+  const ::city::person::v2::PedestrianEnv& _internal_pedestrian_envs(int index) const;
+  ::city::person::v2::PedestrianEnv* _internal_add_pedestrian_envs();
+  public:
+  const ::city::person::v2::PedestrianEnv& pedestrian_envs(int index) const;
+  ::city::person::v2::PedestrianEnv* add_pedestrian_envs();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::PedestrianEnv >&
+      pedestrian_envs() const;
+
+  // @@protoc_insertion_point(class_scope:city.person.v2.FetchControlledPedestriansEnvsResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::PedestrianEnv > pedestrian_envs_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_city_2fperson_2fv2_2fperson_5fservice_2eproto;
+};
+// -------------------------------------------------------------------
+
 class SetControlledPedestriansActionsRequest final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.person.v2.SetControlledPedestriansActionsRequest) */ {
  public:
@@ -4675,7 +4958,7 @@ class SetControlledPedestriansActionsRequest final :
                &_SetControlledPedestriansActionsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    30;
+    32;
 
   friend void swap(SetControlledPedestriansActionsRequest& a, SetControlledPedestriansActionsRequest& b) {
     a.Swap(&b);
@@ -4831,7 +5114,7 @@ class SetControlledPedestriansActionsResponse final :
                &_SetControlledPedestriansActionsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    31;
+    33;
 
   friend void swap(SetControlledPedestriansActionsResponse& a, SetControlledPedestriansActionsResponse& b) {
     a.Swap(&b);
@@ -6217,6 +6500,51 @@ SetControlledPedestriansRequest::mutable_pedestrian_ids() {
 
 // -------------------------------------------------------------------
 
+// FetchControlledPedestriansEnvsRequest
+
+// -------------------------------------------------------------------
+
+// FetchControlledPedestriansEnvsResponse
+
+// repeated .city.person.v2.PedestrianEnv pedestrian_envs = 1 [json_name = "pedestrianEnvs"];
+inline int FetchControlledPedestriansEnvsResponse::_internal_pedestrian_envs_size() const {
+  return _impl_.pedestrian_envs_.size();
+}
+inline int FetchControlledPedestriansEnvsResponse::pedestrian_envs_size() const {
+  return _internal_pedestrian_envs_size();
+}
+inline ::city::person::v2::PedestrianEnv* FetchControlledPedestriansEnvsResponse::mutable_pedestrian_envs(int index) {
+  // @@protoc_insertion_point(field_mutable:city.person.v2.FetchControlledPedestriansEnvsResponse.pedestrian_envs)
+  return _impl_.pedestrian_envs_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::PedestrianEnv >*
+FetchControlledPedestriansEnvsResponse::mutable_pedestrian_envs() {
+  // @@protoc_insertion_point(field_mutable_list:city.person.v2.FetchControlledPedestriansEnvsResponse.pedestrian_envs)
+  return &_impl_.pedestrian_envs_;
+}
+inline const ::city::person::v2::PedestrianEnv& FetchControlledPedestriansEnvsResponse::_internal_pedestrian_envs(int index) const {
+  return _impl_.pedestrian_envs_.Get(index);
+}
+inline const ::city::person::v2::PedestrianEnv& FetchControlledPedestriansEnvsResponse::pedestrian_envs(int index) const {
+  // @@protoc_insertion_point(field_get:city.person.v2.FetchControlledPedestriansEnvsResponse.pedestrian_envs)
+  return _internal_pedestrian_envs(index);
+}
+inline ::city::person::v2::PedestrianEnv* FetchControlledPedestriansEnvsResponse::_internal_add_pedestrian_envs() {
+  return _impl_.pedestrian_envs_.Add();
+}
+inline ::city::person::v2::PedestrianEnv* FetchControlledPedestriansEnvsResponse::add_pedestrian_envs() {
+  ::city::person::v2::PedestrianEnv* _add = _internal_add_pedestrian_envs();
+  // @@protoc_insertion_point(field_add:city.person.v2.FetchControlledPedestriansEnvsResponse.pedestrian_envs)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::PedestrianEnv >&
+FetchControlledPedestriansEnvsResponse::pedestrian_envs() const {
+  // @@protoc_insertion_point(field_list:city.person.v2.FetchControlledPedestriansEnvsResponse.pedestrian_envs)
+  return _impl_.pedestrian_envs_;
+}
+
+// -------------------------------------------------------------------
+
 // SetControlledPedestriansActionsRequest
 
 // repeated .city.person.v2.PedestrianAction person_actions = 1 [json_name = "personActions"];
@@ -6263,6 +6591,10 @@ SetControlledPedestriansActionsRequest::person_actions() const {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

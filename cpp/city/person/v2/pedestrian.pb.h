@@ -30,6 +30,8 @@
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
 #include <google/protobuf/unknown_field_set.h>
+#include "city/person/v2/motion.pb.h"
+#include "city/routing/v2/routing.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_city_2fperson_2fv2_2fpedestrian_2eproto
@@ -50,17 +52,231 @@ namespace v2 {
 class PedestrianAction;
 struct PedestrianActionDefaultTypeInternal;
 extern PedestrianActionDefaultTypeInternal _PedestrianAction_default_instance_;
+class PedestrianEnv;
+struct PedestrianEnvDefaultTypeInternal;
+extern PedestrianEnvDefaultTypeInternal _PedestrianEnv_default_instance_;
 }  // namespace v2
 }  // namespace person
 }  // namespace city
 PROTOBUF_NAMESPACE_OPEN
 template<> ::city::person::v2::PedestrianAction* Arena::CreateMaybeMessage<::city::person::v2::PedestrianAction>(Arena*);
+template<> ::city::person::v2::PedestrianEnv* Arena::CreateMaybeMessage<::city::person::v2::PedestrianEnv>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace city {
 namespace person {
 namespace v2 {
 
 // ===================================================================
+
+class PedestrianEnv final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.person.v2.PedestrianEnv) */ {
+ public:
+  inline PedestrianEnv() : PedestrianEnv(nullptr) {}
+  ~PedestrianEnv() override;
+  explicit PROTOBUF_CONSTEXPR PedestrianEnv(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  PedestrianEnv(const PedestrianEnv& from);
+  PedestrianEnv(PedestrianEnv&& from) noexcept
+    : PedestrianEnv() {
+    *this = ::std::move(from);
+  }
+
+  inline PedestrianEnv& operator=(const PedestrianEnv& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline PedestrianEnv& operator=(PedestrianEnv&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const PedestrianEnv& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const PedestrianEnv* internal_default_instance() {
+    return reinterpret_cast<const PedestrianEnv*>(
+               &_PedestrianEnv_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    0;
+
+  friend void swap(PedestrianEnv& a, PedestrianEnv& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(PedestrianEnv* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(PedestrianEnv* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  PedestrianEnv* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<PedestrianEnv>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const PedestrianEnv& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const PedestrianEnv& from) {
+    PedestrianEnv::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(PedestrianEnv* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.person.v2.PedestrianEnv";
+  }
+  protected:
+  explicit PedestrianEnv(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kMotionFieldNumber = 2,
+    kJourneyFieldNumber = 3,
+    kIdFieldNumber = 1,
+    kIsCurrentLaneNoEntryFieldNumber = 4,
+    kIsNextLaneNoEntryFieldNumber = 5,
+  };
+  // .city.person.v2.PersonMotion motion = 2 [json_name = "motion"];
+  bool has_motion() const;
+  private:
+  bool _internal_has_motion() const;
+  public:
+  void clear_motion();
+  const ::city::person::v2::PersonMotion& motion() const;
+  PROTOBUF_NODISCARD ::city::person::v2::PersonMotion* release_motion();
+  ::city::person::v2::PersonMotion* mutable_motion();
+  void set_allocated_motion(::city::person::v2::PersonMotion* motion);
+  private:
+  const ::city::person::v2::PersonMotion& _internal_motion() const;
+  ::city::person::v2::PersonMotion* _internal_mutable_motion();
+  public:
+  void unsafe_arena_set_allocated_motion(
+      ::city::person::v2::PersonMotion* motion);
+  ::city::person::v2::PersonMotion* unsafe_arena_release_motion();
+
+  // .city.routing.v2.Journey journey = 3 [json_name = "journey"];
+  bool has_journey() const;
+  private:
+  bool _internal_has_journey() const;
+  public:
+  void clear_journey();
+  const ::city::routing::v2::Journey& journey() const;
+  PROTOBUF_NODISCARD ::city::routing::v2::Journey* release_journey();
+  ::city::routing::v2::Journey* mutable_journey();
+  void set_allocated_journey(::city::routing::v2::Journey* journey);
+  private:
+  const ::city::routing::v2::Journey& _internal_journey() const;
+  ::city::routing::v2::Journey* _internal_mutable_journey();
+  public:
+  void unsafe_arena_set_allocated_journey(
+      ::city::routing::v2::Journey* journey);
+  ::city::routing::v2::Journey* unsafe_arena_release_journey();
+
+  // int32 id = 1 [json_name = "id"];
+  void clear_id();
+  int32_t id() const;
+  void set_id(int32_t value);
+  private:
+  int32_t _internal_id() const;
+  void _internal_set_id(int32_t value);
+  public:
+
+  // bool is_current_lane_no_entry = 4 [json_name = "isCurrentLaneNoEntry"];
+  void clear_is_current_lane_no_entry();
+  bool is_current_lane_no_entry() const;
+  void set_is_current_lane_no_entry(bool value);
+  private:
+  bool _internal_is_current_lane_no_entry() const;
+  void _internal_set_is_current_lane_no_entry(bool value);
+  public:
+
+  // bool is_next_lane_no_entry = 5 [json_name = "isNextLaneNoEntry"];
+  void clear_is_next_lane_no_entry();
+  bool is_next_lane_no_entry() const;
+  void set_is_next_lane_no_entry(bool value);
+  private:
+  bool _internal_is_next_lane_no_entry() const;
+  void _internal_set_is_next_lane_no_entry(bool value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:city.person.v2.PedestrianEnv)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::city::person::v2::PersonMotion* motion_;
+    ::city::routing::v2::Journey* journey_;
+    int32_t id_;
+    bool is_current_lane_no_entry_;
+    bool is_next_lane_no_entry_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_city_2fperson_2fv2_2fpedestrian_2eproto;
+};
+// -------------------------------------------------------------------
 
 class PedestrianAction final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.person.v2.PedestrianAction) */ {
@@ -110,7 +326,7 @@ class PedestrianAction final :
                &_PedestrianAction_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    0;
+    1;
 
   friend void swap(PedestrianAction& a, PedestrianAction& b) {
     a.Swap(&b);
@@ -239,6 +455,240 @@ class PedestrianAction final :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
+// PedestrianEnv
+
+// int32 id = 1 [json_name = "id"];
+inline void PedestrianEnv::clear_id() {
+  _impl_.id_ = 0;
+}
+inline int32_t PedestrianEnv::_internal_id() const {
+  return _impl_.id_;
+}
+inline int32_t PedestrianEnv::id() const {
+  // @@protoc_insertion_point(field_get:city.person.v2.PedestrianEnv.id)
+  return _internal_id();
+}
+inline void PedestrianEnv::_internal_set_id(int32_t value) {
+  
+  _impl_.id_ = value;
+}
+inline void PedestrianEnv::set_id(int32_t value) {
+  _internal_set_id(value);
+  // @@protoc_insertion_point(field_set:city.person.v2.PedestrianEnv.id)
+}
+
+// .city.person.v2.PersonMotion motion = 2 [json_name = "motion"];
+inline bool PedestrianEnv::_internal_has_motion() const {
+  return this != internal_default_instance() && _impl_.motion_ != nullptr;
+}
+inline bool PedestrianEnv::has_motion() const {
+  return _internal_has_motion();
+}
+inline const ::city::person::v2::PersonMotion& PedestrianEnv::_internal_motion() const {
+  const ::city::person::v2::PersonMotion* p = _impl_.motion_;
+  return p != nullptr ? *p : reinterpret_cast<const ::city::person::v2::PersonMotion&>(
+      ::city::person::v2::_PersonMotion_default_instance_);
+}
+inline const ::city::person::v2::PersonMotion& PedestrianEnv::motion() const {
+  // @@protoc_insertion_point(field_get:city.person.v2.PedestrianEnv.motion)
+  return _internal_motion();
+}
+inline void PedestrianEnv::unsafe_arena_set_allocated_motion(
+    ::city::person::v2::PersonMotion* motion) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.motion_);
+  }
+  _impl_.motion_ = motion;
+  if (motion) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:city.person.v2.PedestrianEnv.motion)
+}
+inline ::city::person::v2::PersonMotion* PedestrianEnv::release_motion() {
+  
+  ::city::person::v2::PersonMotion* temp = _impl_.motion_;
+  _impl_.motion_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::city::person::v2::PersonMotion* PedestrianEnv::unsafe_arena_release_motion() {
+  // @@protoc_insertion_point(field_release:city.person.v2.PedestrianEnv.motion)
+  
+  ::city::person::v2::PersonMotion* temp = _impl_.motion_;
+  _impl_.motion_ = nullptr;
+  return temp;
+}
+inline ::city::person::v2::PersonMotion* PedestrianEnv::_internal_mutable_motion() {
+  
+  if (_impl_.motion_ == nullptr) {
+    auto* p = CreateMaybeMessage<::city::person::v2::PersonMotion>(GetArenaForAllocation());
+    _impl_.motion_ = p;
+  }
+  return _impl_.motion_;
+}
+inline ::city::person::v2::PersonMotion* PedestrianEnv::mutable_motion() {
+  ::city::person::v2::PersonMotion* _msg = _internal_mutable_motion();
+  // @@protoc_insertion_point(field_mutable:city.person.v2.PedestrianEnv.motion)
+  return _msg;
+}
+inline void PedestrianEnv::set_allocated_motion(::city::person::v2::PersonMotion* motion) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.motion_);
+  }
+  if (motion) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(motion));
+    if (message_arena != submessage_arena) {
+      motion = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, motion, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  _impl_.motion_ = motion;
+  // @@protoc_insertion_point(field_set_allocated:city.person.v2.PedestrianEnv.motion)
+}
+
+// .city.routing.v2.Journey journey = 3 [json_name = "journey"];
+inline bool PedestrianEnv::_internal_has_journey() const {
+  return this != internal_default_instance() && _impl_.journey_ != nullptr;
+}
+inline bool PedestrianEnv::has_journey() const {
+  return _internal_has_journey();
+}
+inline const ::city::routing::v2::Journey& PedestrianEnv::_internal_journey() const {
+  const ::city::routing::v2::Journey* p = _impl_.journey_;
+  return p != nullptr ? *p : reinterpret_cast<const ::city::routing::v2::Journey&>(
+      ::city::routing::v2::_Journey_default_instance_);
+}
+inline const ::city::routing::v2::Journey& PedestrianEnv::journey() const {
+  // @@protoc_insertion_point(field_get:city.person.v2.PedestrianEnv.journey)
+  return _internal_journey();
+}
+inline void PedestrianEnv::unsafe_arena_set_allocated_journey(
+    ::city::routing::v2::Journey* journey) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.journey_);
+  }
+  _impl_.journey_ = journey;
+  if (journey) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:city.person.v2.PedestrianEnv.journey)
+}
+inline ::city::routing::v2::Journey* PedestrianEnv::release_journey() {
+  
+  ::city::routing::v2::Journey* temp = _impl_.journey_;
+  _impl_.journey_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::city::routing::v2::Journey* PedestrianEnv::unsafe_arena_release_journey() {
+  // @@protoc_insertion_point(field_release:city.person.v2.PedestrianEnv.journey)
+  
+  ::city::routing::v2::Journey* temp = _impl_.journey_;
+  _impl_.journey_ = nullptr;
+  return temp;
+}
+inline ::city::routing::v2::Journey* PedestrianEnv::_internal_mutable_journey() {
+  
+  if (_impl_.journey_ == nullptr) {
+    auto* p = CreateMaybeMessage<::city::routing::v2::Journey>(GetArenaForAllocation());
+    _impl_.journey_ = p;
+  }
+  return _impl_.journey_;
+}
+inline ::city::routing::v2::Journey* PedestrianEnv::mutable_journey() {
+  ::city::routing::v2::Journey* _msg = _internal_mutable_journey();
+  // @@protoc_insertion_point(field_mutable:city.person.v2.PedestrianEnv.journey)
+  return _msg;
+}
+inline void PedestrianEnv::set_allocated_journey(::city::routing::v2::Journey* journey) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.journey_);
+  }
+  if (journey) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(journey));
+    if (message_arena != submessage_arena) {
+      journey = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, journey, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  _impl_.journey_ = journey;
+  // @@protoc_insertion_point(field_set_allocated:city.person.v2.PedestrianEnv.journey)
+}
+
+// bool is_current_lane_no_entry = 4 [json_name = "isCurrentLaneNoEntry"];
+inline void PedestrianEnv::clear_is_current_lane_no_entry() {
+  _impl_.is_current_lane_no_entry_ = false;
+}
+inline bool PedestrianEnv::_internal_is_current_lane_no_entry() const {
+  return _impl_.is_current_lane_no_entry_;
+}
+inline bool PedestrianEnv::is_current_lane_no_entry() const {
+  // @@protoc_insertion_point(field_get:city.person.v2.PedestrianEnv.is_current_lane_no_entry)
+  return _internal_is_current_lane_no_entry();
+}
+inline void PedestrianEnv::_internal_set_is_current_lane_no_entry(bool value) {
+  
+  _impl_.is_current_lane_no_entry_ = value;
+}
+inline void PedestrianEnv::set_is_current_lane_no_entry(bool value) {
+  _internal_set_is_current_lane_no_entry(value);
+  // @@protoc_insertion_point(field_set:city.person.v2.PedestrianEnv.is_current_lane_no_entry)
+}
+
+// bool is_next_lane_no_entry = 5 [json_name = "isNextLaneNoEntry"];
+inline void PedestrianEnv::clear_is_next_lane_no_entry() {
+  _impl_.is_next_lane_no_entry_ = false;
+}
+inline bool PedestrianEnv::_internal_is_next_lane_no_entry() const {
+  return _impl_.is_next_lane_no_entry_;
+}
+inline bool PedestrianEnv::is_next_lane_no_entry() const {
+  // @@protoc_insertion_point(field_get:city.person.v2.PedestrianEnv.is_next_lane_no_entry)
+  return _internal_is_next_lane_no_entry();
+}
+inline void PedestrianEnv::_internal_set_is_next_lane_no_entry(bool value) {
+  
+  _impl_.is_next_lane_no_entry_ = value;
+}
+inline void PedestrianEnv::set_is_next_lane_no_entry(bool value) {
+  _internal_set_is_next_lane_no_entry(value);
+  // @@protoc_insertion_point(field_set:city.person.v2.PedestrianEnv.is_next_lane_no_entry)
+}
+
+// -------------------------------------------------------------------
+
 // PedestrianAction
 
 // int32 id = 1 [json_name = "id"];
@@ -304,6 +754,8 @@ inline void PedestrianAction::set_vy(double value) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 
 // @@protoc_insertion_point(namespace_scope)
 

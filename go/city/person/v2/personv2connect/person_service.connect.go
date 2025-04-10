@@ -76,6 +76,9 @@ const (
 	// PersonServiceSetControlledPedestriansProcedure is the fully-qualified name of the PersonService's
 	// SetControlledPedestrians RPC.
 	PersonServiceSetControlledPedestriansProcedure = "/city.person.v2.PersonService/SetControlledPedestrians"
+	// PersonServiceFetchControlledPedestriansEnvsProcedure is the fully-qualified name of the
+	// PersonService's FetchControlledPedestriansEnvs RPC.
+	PersonServiceFetchControlledPedestriansEnvsProcedure = "/city.person.v2.PersonService/FetchControlledPedestriansEnvs"
 	// PersonServiceSetControlledPedestriansActionsProcedure is the fully-qualified name of the
 	// PersonService's SetControlledPedestriansActions RPC.
 	PersonServiceSetControlledPedestriansActionsProcedure = "/city.person.v2.PersonService/SetControlledPedestriansActions"
@@ -129,6 +132,9 @@ type PersonServiceClient interface {
 	// 设置由外部控制的行人
 	// Set pedestrian controlled by external behavior
 	SetControlledPedestrians(context.Context, *connect.Request[v2.SetControlledPedestriansRequest]) (*connect.Response[v2.SetControlledPedestriansResponse], error)
+	// 获取由外部控制的行人信息
+	// Get information of pedestrian controlled by external behavior
+	FetchControlledPedestriansEnvs(context.Context, *connect.Request[v2.FetchControlledPedestriansEnvsRequest]) (*connect.Response[v2.FetchControlledPedestriansEnvsResponse], error)
 	// 设置由外部控制的行人行为
 	// Set behavior of pedestrian controlled by external behavior
 	SetControlledPedestriansActions(context.Context, *connect.Request[v2.SetControlledPedestriansActionsRequest]) (*connect.Response[v2.SetControlledPedestriansActionsResponse], error)
@@ -235,6 +241,12 @@ func NewPersonServiceClient(httpClient connect.HTTPClient, baseURL string, opts 
 			connect.WithSchema(personServiceMethods.ByName("SetControlledPedestrians")),
 			connect.WithClientOptions(opts...),
 		),
+		fetchControlledPedestriansEnvs: connect.NewClient[v2.FetchControlledPedestriansEnvsRequest, v2.FetchControlledPedestriansEnvsResponse](
+			httpClient,
+			baseURL+PersonServiceFetchControlledPedestriansEnvsProcedure,
+			connect.WithSchema(personServiceMethods.ByName("FetchControlledPedestriansEnvs")),
+			connect.WithClientOptions(opts...),
+		),
 		setControlledPedestriansActions: connect.NewClient[v2.SetControlledPedestriansActionsRequest, v2.SetControlledPedestriansActionsResponse](
 			httpClient,
 			baseURL+PersonServiceSetControlledPedestriansActionsProcedure,
@@ -261,6 +273,7 @@ type personServiceClient struct {
 	getAllOrders                    *connect.Client[v2.GetAllOrdersRequest, v2.GetAllOrdersResponse]
 	setControlledTaxiToOrders       *connect.Client[v2.SetControlledTaxiToOrdersRequest, v2.SetControlledTaxiToOrdersResponse]
 	setControlledPedestrians        *connect.Client[v2.SetControlledPedestriansRequest, v2.SetControlledPedestriansResponse]
+	fetchControlledPedestriansEnvs  *connect.Client[v2.FetchControlledPedestriansEnvsRequest, v2.FetchControlledPedestriansEnvsResponse]
 	setControlledPedestriansActions *connect.Client[v2.SetControlledPedestriansActionsRequest, v2.SetControlledPedestriansActionsResponse]
 }
 
@@ -339,6 +352,11 @@ func (c *personServiceClient) SetControlledPedestrians(ctx context.Context, req 
 	return c.setControlledPedestrians.CallUnary(ctx, req)
 }
 
+// FetchControlledPedestriansEnvs calls city.person.v2.PersonService.FetchControlledPedestriansEnvs.
+func (c *personServiceClient) FetchControlledPedestriansEnvs(ctx context.Context, req *connect.Request[v2.FetchControlledPedestriansEnvsRequest]) (*connect.Response[v2.FetchControlledPedestriansEnvsResponse], error) {
+	return c.fetchControlledPedestriansEnvs.CallUnary(ctx, req)
+}
+
 // SetControlledPedestriansActions calls
 // city.person.v2.PersonService.SetControlledPedestriansActions.
 func (c *personServiceClient) SetControlledPedestriansActions(ctx context.Context, req *connect.Request[v2.SetControlledPedestriansActionsRequest]) (*connect.Response[v2.SetControlledPedestriansActionsResponse], error) {
@@ -393,6 +411,9 @@ type PersonServiceHandler interface {
 	// 设置由外部控制的行人
 	// Set pedestrian controlled by external behavior
 	SetControlledPedestrians(context.Context, *connect.Request[v2.SetControlledPedestriansRequest]) (*connect.Response[v2.SetControlledPedestriansResponse], error)
+	// 获取由外部控制的行人信息
+	// Get information of pedestrian controlled by external behavior
+	FetchControlledPedestriansEnvs(context.Context, *connect.Request[v2.FetchControlledPedestriansEnvsRequest]) (*connect.Response[v2.FetchControlledPedestriansEnvsResponse], error)
 	// 设置由外部控制的行人行为
 	// Set behavior of pedestrian controlled by external behavior
 	SetControlledPedestriansActions(context.Context, *connect.Request[v2.SetControlledPedestriansActionsRequest]) (*connect.Response[v2.SetControlledPedestriansActionsResponse], error)
@@ -495,6 +516,12 @@ func NewPersonServiceHandler(svc PersonServiceHandler, opts ...connect.HandlerOp
 		connect.WithSchema(personServiceMethods.ByName("SetControlledPedestrians")),
 		connect.WithHandlerOptions(opts...),
 	)
+	personServiceFetchControlledPedestriansEnvsHandler := connect.NewUnaryHandler(
+		PersonServiceFetchControlledPedestriansEnvsProcedure,
+		svc.FetchControlledPedestriansEnvs,
+		connect.WithSchema(personServiceMethods.ByName("FetchControlledPedestriansEnvs")),
+		connect.WithHandlerOptions(opts...),
+	)
 	personServiceSetControlledPedestriansActionsHandler := connect.NewUnaryHandler(
 		PersonServiceSetControlledPedestriansActionsProcedure,
 		svc.SetControlledPedestriansActions,
@@ -533,6 +560,8 @@ func NewPersonServiceHandler(svc PersonServiceHandler, opts ...connect.HandlerOp
 			personServiceSetControlledTaxiToOrdersHandler.ServeHTTP(w, r)
 		case PersonServiceSetControlledPedestriansProcedure:
 			personServiceSetControlledPedestriansHandler.ServeHTTP(w, r)
+		case PersonServiceFetchControlledPedestriansEnvsProcedure:
+			personServiceFetchControlledPedestriansEnvsHandler.ServeHTTP(w, r)
 		case PersonServiceSetControlledPedestriansActionsProcedure:
 			personServiceSetControlledPedestriansActionsHandler.ServeHTTP(w, r)
 		default:
@@ -602,6 +631,10 @@ func (UnimplementedPersonServiceHandler) SetControlledTaxiToOrders(context.Conte
 
 func (UnimplementedPersonServiceHandler) SetControlledPedestrians(context.Context, *connect.Request[v2.SetControlledPedestriansRequest]) (*connect.Response[v2.SetControlledPedestriansResponse], error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.person.v2.PersonService.SetControlledPedestrians is not implemented"))
+}
+
+func (UnimplementedPersonServiceHandler) FetchControlledPedestriansEnvs(context.Context, *connect.Request[v2.FetchControlledPedestriansEnvsRequest]) (*connect.Response[v2.FetchControlledPedestriansEnvsResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("city.person.v2.PersonService.FetchControlledPedestriansEnvs is not implemented"))
 }
 
 func (UnimplementedPersonServiceHandler) SetControlledPedestriansActions(context.Context, *connect.Request[v2.SetControlledPedestriansActionsRequest]) (*connect.Response[v2.SetControlledPedestriansActionsResponse], error) {

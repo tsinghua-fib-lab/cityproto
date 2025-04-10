@@ -2,6 +2,29 @@ syntax = "proto3";
 
 package city.person.v2;
 
+import "city/person/v2/motion.proto";
+import "city/routing/v2/routing.proto";
+
+// 行人环境
+// Pedestrian environment
+message PedestrianEnv {
+  // 行人id
+  // Pedestrian id
+  int32 id = 1;
+  // 当前运行信息
+  // Current runtime information
+  PersonMotion motion = 2;
+  // 当前路径规划结果
+  // Current routing result
+  city.routing.v2.Journey journey = 3;
+  // 当前人行道可通行情况
+  // current pedestrian lane status
+  bool is_current_lane_no_entry = 4;
+  // 下一人行道可通行情况
+  // next pedestrian lane status
+  bool is_next_lane_no_entry = 5;
+}
+
 // 行人行为
 // Pedestrian behavior
 message PedestrianAction {

@@ -65,6 +65,9 @@ service PersonService {
   // 设置由外部控制的行人
   // Set pedestrian controlled by external behavior
   rpc SetControlledPedestrians(SetControlledPedestriansRequest) returns (SetControlledPedestriansResponse);
+  // 获取由外部控制的行人信息
+  // Get information of pedestrian controlled by external behavior
+  rpc FetchControlledPedestriansEnvs(FetchControlledPedestriansEnvsRequest) returns (FetchControlledPedestriansEnvsResponse);
   // 设置由外部控制的行人行为
   // Set behavior of pedestrian controlled by external behavior
   rpc SetControlledPedestriansActions(SetControlledPedestriansActionsRequest) returns (SetControlledPedestriansActionsResponse);
@@ -292,6 +295,18 @@ message SetControlledPedestriansRequest {
 // 设置由外部控制的行人响应
 // Response of setting pedestrian controlled by external behavior
 message SetControlledPedestriansResponse {}
+
+// 获取由外部控制的行人信息请求
+// Request for getting information of pedestrian controlled by external behavior
+message FetchControlledPedestriansEnvsRequest {}
+
+// 获取由外部控制的行人信息响应
+// Response of getting information of pedestrian controlled by external behavior
+message FetchControlledPedestriansEnvsResponse {
+  // 由外部控制的行人信息
+  // Information of pedestrian controlled by external behavior
+  repeated PedestrianEnv pedestrian_envs = 1;
+}
 
 // 设置由外部控制的行人行为请求
 // Request for setting behavior of pedestrian controlled by external behavior

@@ -481,6 +481,7 @@
   
 - [city/person/v2/pedestrian.proto](#city_person_v2_pedestrian-proto)
     - [PedestrianAction](#city-person-v2-PedestrianAction)
+    - [PedestrianEnv](#city-person-v2-PedestrianEnv)
   
 - [city/person/v2/person.proto](#city_person_v2_person-proto)
     - [BikeAttribute](#city-person-v2-BikeAttribute)
@@ -530,6 +531,8 @@
 - [city/person/v2/person_service.proto](#city_person_v2_person_service-proto)
     - [AddPersonRequest](#city-person-v2-AddPersonRequest)
     - [AddPersonResponse](#city-person-v2-AddPersonResponse)
+    - [FetchControlledPedestriansEnvsRequest](#city-person-v2-FetchControlledPedestriansEnvsRequest)
+    - [FetchControlledPedestriansEnvsResponse](#city-person-v2-FetchControlledPedestriansEnvsResponse)
     - [FetchControlledVehicleEnvsRequest](#city-person-v2-FetchControlledVehicleEnvsRequest)
     - [FetchControlledVehicleEnvsResponse](#city-person-v2-FetchControlledVehicleEnvsResponse)
     - [GetAllOrdersRequest](#city-person-v2-GetAllOrdersRequest)
@@ -7206,6 +7209,26 @@ Pedestrian behavior
 
 
 
+
+<a name="city-person-v2-PedestrianEnv"></a>
+
+### PedestrianEnv
+行人环境
+Pedestrian environment
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [int32](#int32) |  | 行人id Pedestrian id |
+| motion | [PersonMotion](#city-person-v2-PersonMotion) |  | 当前运行信息 Current runtime information |
+| journey | [city.routing.v2.Journey](#city-routing-v2-Journey) |  | 当前路径规划结果 Current routing result |
+| is_current_lane_no_entry | [bool](#bool) |  | 当前人行道可通行情况 current pedestrian lane status |
+| is_next_lane_no_entry | [bool](#bool) |  | 下一人行道可通行情况 next pedestrian lane status |
+
+
+
+
+
  
 
  
@@ -7913,6 +7936,33 @@ Response of adding a new person
 
 
 
+<a name="city-person-v2-FetchControlledPedestriansEnvsRequest"></a>
+
+### FetchControlledPedestriansEnvsRequest
+获取由外部控制的行人信息请求
+Request for getting information of pedestrian controlled by external behavior
+
+
+
+
+
+
+<a name="city-person-v2-FetchControlledPedestriansEnvsResponse"></a>
+
+### FetchControlledPedestriansEnvsResponse
+获取由外部控制的行人信息响应
+Response of getting information of pedestrian controlled by external behavior
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| pedestrian_envs | [PedestrianEnv](#city-person-v2-PedestrianEnv) | repeated | 由外部控制的行人信息 Information of pedestrian controlled by external behavior |
+
+
+
+
+
+
 <a name="city-person-v2-FetchControlledVehicleEnvsRequest"></a>
 
 ### FetchControlledVehicleEnvsRequest
@@ -8370,6 +8420,7 @@ Response of setting person schedule
 | GetAllOrders | [GetAllOrdersRequest](#city-person-v2-GetAllOrdersRequest) | [GetAllOrdersResponse](#city-person-v2-GetAllOrdersResponse) | 获取所有订单信息 Get information of all orders |
 | SetControlledTaxiToOrders | [SetControlledTaxiToOrdersRequest](#city-person-v2-SetControlledTaxiToOrdersRequest) | [SetControlledTaxiToOrdersResponse](#city-person-v2-SetControlledTaxiToOrdersResponse) | 设置所有外部控制的出租车接指定的单 Set all externally controlled taxis to specified orders |
 | SetControlledPedestrians | [SetControlledPedestriansRequest](#city-person-v2-SetControlledPedestriansRequest) | [SetControlledPedestriansResponse](#city-person-v2-SetControlledPedestriansResponse) | 设置由外部控制的行人 Set pedestrian controlled by external behavior |
+| FetchControlledPedestriansEnvs | [FetchControlledPedestriansEnvsRequest](#city-person-v2-FetchControlledPedestriansEnvsRequest) | [FetchControlledPedestriansEnvsResponse](#city-person-v2-FetchControlledPedestriansEnvsResponse) | 获取由外部控制的行人信息 Get information of pedestrian controlled by external behavior |
 | SetControlledPedestriansActions | [SetControlledPedestriansActionsRequest](#city-person-v2-SetControlledPedestriansActionsRequest) | [SetControlledPedestriansActionsResponse](#city-person-v2-SetControlledPedestriansActionsResponse) | 设置由外部控制的行人行为 Set behavior of pedestrian controlled by external behavior |
 
  

@@ -23,6 +23,23 @@ namespace _pbi = _pb::internal;
 namespace city {
 namespace person {
 namespace v2 {
+PROTOBUF_CONSTEXPR PedestrianEnv::PedestrianEnv(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.motion_)*/nullptr
+  , /*decltype(_impl_.journey_)*/nullptr
+  , /*decltype(_impl_.id_)*/0
+  , /*decltype(_impl_.is_current_lane_no_entry_)*/false
+  , /*decltype(_impl_.is_next_lane_no_entry_)*/false
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct PedestrianEnvDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR PedestrianEnvDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~PedestrianEnvDefaultTypeInternal() {}
+  union {
+    PedestrianEnv _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PedestrianEnvDefaultTypeInternal _PedestrianEnv_default_instance_;
 PROTOBUF_CONSTEXPR PedestrianAction::PedestrianAction(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.vx_)*/0
@@ -41,11 +58,22 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORIT
 }  // namespace v2
 }  // namespace person
 }  // namespace city
-static ::_pb::Metadata file_level_metadata_city_2fperson_2fv2_2fpedestrian_2eproto[1];
+static ::_pb::Metadata file_level_metadata_city_2fperson_2fv2_2fpedestrian_2eproto[2];
 static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_city_2fperson_2fv2_2fpedestrian_2eproto = nullptr;
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_city_2fperson_2fv2_2fpedestrian_2eproto = nullptr;
 
 const uint32_t TableStruct_city_2fperson_2fv2_2fpedestrian_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::city::person::v2::PedestrianEnv, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::city::person::v2::PedestrianEnv, _impl_.id_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v2::PedestrianEnv, _impl_.motion_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v2::PedestrianEnv, _impl_.journey_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v2::PedestrianEnv, _impl_.is_current_lane_no_entry_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v2::PedestrianEnv, _impl_.is_next_lane_no_entry_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::city::person::v2::PedestrianAction, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -57,28 +85,42 @@ const uint32_t TableStruct_city_2fperson_2fv2_2fpedestrian_2eproto::offsets[] PR
   PROTOBUF_FIELD_OFFSET(::city::person::v2::PedestrianAction, _impl_.vy_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, -1, sizeof(::city::person::v2::PedestrianAction)},
+  { 0, -1, -1, sizeof(::city::person::v2::PedestrianEnv)},
+  { 11, -1, -1, sizeof(::city::person::v2::PedestrianAction)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
+  &::city::person::v2::_PedestrianEnv_default_instance_._instance,
   &::city::person::v2::_PedestrianAction_default_instance_._instance,
 };
 
 const char descriptor_table_protodef_city_2fperson_2fv2_2fpedestrian_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\037city/person/v2/pedestrian.proto\022\016city."
-  "person.v2\"B\n\020PedestrianAction\022\016\n\002id\030\001 \001("
-  "\005R\002id\022\016\n\002vx\030\002 \001(\001R\002vx\022\016\n\002vy\030\003 \001(\001R\002vyB\270\001"
-  "\n\022com.city.person.v2B\017PedestrianProtoP\001Z"
-  "7git.fiblab.net/sim/protos/v2/go/city/pe"
-  "rson/v2;personv2\242\002\003CPX\252\002\016City.Person.V2\312"
-  "\002\016City\\Person\\V2\342\002\032City\\Person\\V2\\GPBMet"
-  "adata\352\002\020City::Person::V2b\006proto3"
+  "person.v2\032\033city/person/v2/motion.proto\032\035"
+  "city/routing/v2/routing.proto\"\363\001\n\rPedest"
+  "rianEnv\022\016\n\002id\030\001 \001(\005R\002id\0224\n\006motion\030\002 \001(\0132"
+  "\034.city.person.v2.PersonMotionR\006motion\0222\n"
+  "\007journey\030\003 \001(\0132\030.city.routing.v2.Journey"
+  "R\007journey\0226\n\030is_current_lane_no_entry\030\004 "
+  "\001(\010R\024isCurrentLaneNoEntry\0220\n\025is_next_lan"
+  "e_no_entry\030\005 \001(\010R\021isNextLaneNoEntry\"B\n\020P"
+  "edestrianAction\022\016\n\002id\030\001 \001(\005R\002id\022\016\n\002vx\030\002 "
+  "\001(\001R\002vx\022\016\n\002vy\030\003 \001(\001R\002vyB\270\001\n\022com.city.per"
+  "son.v2B\017PedestrianProtoP\001Z7git.fiblab.ne"
+  "t/sim/protos/v2/go/city/person/v2;person"
+  "v2\242\002\003CPX\252\002\016City.Person.V2\312\002\016City\\Person\\"
+  "V2\342\002\032City\\Person\\V2\\GPBMetadata\352\002\020City::"
+  "Person::V2b\006proto3"
   ;
+static const ::_pbi::DescriptorTable* const descriptor_table_city_2fperson_2fv2_2fpedestrian_2eproto_deps[2] = {
+  &::descriptor_table_city_2fperson_2fv2_2fmotion_2eproto,
+  &::descriptor_table_city_2frouting_2fv2_2frouting_2eproto,
+};
 static ::_pbi::once_flag descriptor_table_city_2fperson_2fv2_2fpedestrian_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2fperson_2fv2_2fpedestrian_2eproto = {
-    false, false, 312, descriptor_table_protodef_city_2fperson_2fv2_2fpedestrian_2eproto,
+    false, false, 618, descriptor_table_protodef_city_2fperson_2fv2_2fpedestrian_2eproto,
     "city/person/v2/pedestrian.proto",
-    &descriptor_table_city_2fperson_2fv2_2fpedestrian_2eproto_once, nullptr, 0, 1,
+    &descriptor_table_city_2fperson_2fv2_2fpedestrian_2eproto_once, descriptor_table_city_2fperson_2fv2_2fpedestrian_2eproto_deps, 2, 2,
     schemas, file_default_instances, TableStruct_city_2fperson_2fv2_2fpedestrian_2eproto::offsets,
     file_level_metadata_city_2fperson_2fv2_2fpedestrian_2eproto, file_level_enum_descriptors_city_2fperson_2fv2_2fpedestrian_2eproto,
     file_level_service_descriptors_city_2fperson_2fv2_2fpedestrian_2eproto,
@@ -92,6 +134,335 @@ PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_in
 namespace city {
 namespace person {
 namespace v2 {
+
+// ===================================================================
+
+class PedestrianEnv::_Internal {
+ public:
+  static const ::city::person::v2::PersonMotion& motion(const PedestrianEnv* msg);
+  static const ::city::routing::v2::Journey& journey(const PedestrianEnv* msg);
+};
+
+const ::city::person::v2::PersonMotion&
+PedestrianEnv::_Internal::motion(const PedestrianEnv* msg) {
+  return *msg->_impl_.motion_;
+}
+const ::city::routing::v2::Journey&
+PedestrianEnv::_Internal::journey(const PedestrianEnv* msg) {
+  return *msg->_impl_.journey_;
+}
+void PedestrianEnv::clear_motion() {
+  if (GetArenaForAllocation() == nullptr && _impl_.motion_ != nullptr) {
+    delete _impl_.motion_;
+  }
+  _impl_.motion_ = nullptr;
+}
+void PedestrianEnv::clear_journey() {
+  if (GetArenaForAllocation() == nullptr && _impl_.journey_ != nullptr) {
+    delete _impl_.journey_;
+  }
+  _impl_.journey_ = nullptr;
+}
+PedestrianEnv::PedestrianEnv(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:city.person.v2.PedestrianEnv)
+}
+PedestrianEnv::PedestrianEnv(const PedestrianEnv& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  PedestrianEnv* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.motion_){nullptr}
+    , decltype(_impl_.journey_){nullptr}
+    , decltype(_impl_.id_){}
+    , decltype(_impl_.is_current_lane_no_entry_){}
+    , decltype(_impl_.is_next_lane_no_entry_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  if (from._internal_has_motion()) {
+    _this->_impl_.motion_ = new ::city::person::v2::PersonMotion(*from._impl_.motion_);
+  }
+  if (from._internal_has_journey()) {
+    _this->_impl_.journey_ = new ::city::routing::v2::Journey(*from._impl_.journey_);
+  }
+  ::memcpy(&_impl_.id_, &from._impl_.id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.is_next_lane_no_entry_) -
+    reinterpret_cast<char*>(&_impl_.id_)) + sizeof(_impl_.is_next_lane_no_entry_));
+  // @@protoc_insertion_point(copy_constructor:city.person.v2.PedestrianEnv)
+}
+
+inline void PedestrianEnv::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.motion_){nullptr}
+    , decltype(_impl_.journey_){nullptr}
+    , decltype(_impl_.id_){0}
+    , decltype(_impl_.is_current_lane_no_entry_){false}
+    , decltype(_impl_.is_next_lane_no_entry_){false}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+}
+
+PedestrianEnv::~PedestrianEnv() {
+  // @@protoc_insertion_point(destructor:city.person.v2.PedestrianEnv)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void PedestrianEnv::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  if (this != internal_default_instance()) delete _impl_.motion_;
+  if (this != internal_default_instance()) delete _impl_.journey_;
+}
+
+void PedestrianEnv::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void PedestrianEnv::Clear() {
+// @@protoc_insertion_point(message_clear_start:city.person.v2.PedestrianEnv)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  if (GetArenaForAllocation() == nullptr && _impl_.motion_ != nullptr) {
+    delete _impl_.motion_;
+  }
+  _impl_.motion_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && _impl_.journey_ != nullptr) {
+    delete _impl_.journey_;
+  }
+  _impl_.journey_ = nullptr;
+  ::memset(&_impl_.id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.is_next_lane_no_entry_) -
+      reinterpret_cast<char*>(&_impl_.id_)) + sizeof(_impl_.is_next_lane_no_entry_));
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* PedestrianEnv::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 id = 1 [json_name = "id"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .city.person.v2.PersonMotion motion = 2 [json_name = "motion"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr = ctx->ParseMessage(_internal_mutable_motion(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .city.routing.v2.Journey journey = 3 [json_name = "journey"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+          ptr = ctx->ParseMessage(_internal_mutable_journey(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // bool is_current_lane_no_entry = 4 [json_name = "isCurrentLaneNoEntry"];
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
+          _impl_.is_current_lane_no_entry_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // bool is_next_lane_no_entry = 5 [json_name = "isNextLaneNoEntry"];
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
+          _impl_.is_next_lane_no_entry_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* PedestrianEnv::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:city.person.v2.PedestrianEnv)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 id = 1 [json_name = "id"];
+  if (this->_internal_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_id(), target);
+  }
+
+  // .city.person.v2.PersonMotion motion = 2 [json_name = "motion"];
+  if (this->_internal_has_motion()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(2, _Internal::motion(this),
+        _Internal::motion(this).GetCachedSize(), target, stream);
+  }
+
+  // .city.routing.v2.Journey journey = 3 [json_name = "journey"];
+  if (this->_internal_has_journey()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(3, _Internal::journey(this),
+        _Internal::journey(this).GetCachedSize(), target, stream);
+  }
+
+  // bool is_current_lane_no_entry = 4 [json_name = "isCurrentLaneNoEntry"];
+  if (this->_internal_is_current_lane_no_entry() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(4, this->_internal_is_current_lane_no_entry(), target);
+  }
+
+  // bool is_next_lane_no_entry = 5 [json_name = "isNextLaneNoEntry"];
+  if (this->_internal_is_next_lane_no_entry() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(5, this->_internal_is_next_lane_no_entry(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:city.person.v2.PedestrianEnv)
+  return target;
+}
+
+size_t PedestrianEnv::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:city.person.v2.PedestrianEnv)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // .city.person.v2.PersonMotion motion = 2 [json_name = "motion"];
+  if (this->_internal_has_motion()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.motion_);
+  }
+
+  // .city.routing.v2.Journey journey = 3 [json_name = "journey"];
+  if (this->_internal_has_journey()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.journey_);
+  }
+
+  // int32 id = 1 [json_name = "id"];
+  if (this->_internal_id() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_id());
+  }
+
+  // bool is_current_lane_no_entry = 4 [json_name = "isCurrentLaneNoEntry"];
+  if (this->_internal_is_current_lane_no_entry() != 0) {
+    total_size += 1 + 1;
+  }
+
+  // bool is_next_lane_no_entry = 5 [json_name = "isNextLaneNoEntry"];
+  if (this->_internal_is_next_lane_no_entry() != 0) {
+    total_size += 1 + 1;
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData PedestrianEnv::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    PedestrianEnv::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*PedestrianEnv::GetClassData() const { return &_class_data_; }
+
+
+void PedestrianEnv::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<PedestrianEnv*>(&to_msg);
+  auto& from = static_cast<const PedestrianEnv&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:city.person.v2.PedestrianEnv)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_has_motion()) {
+    _this->_internal_mutable_motion()->::city::person::v2::PersonMotion::MergeFrom(
+        from._internal_motion());
+  }
+  if (from._internal_has_journey()) {
+    _this->_internal_mutable_journey()->::city::routing::v2::Journey::MergeFrom(
+        from._internal_journey());
+  }
+  if (from._internal_id() != 0) {
+    _this->_internal_set_id(from._internal_id());
+  }
+  if (from._internal_is_current_lane_no_entry() != 0) {
+    _this->_internal_set_is_current_lane_no_entry(from._internal_is_current_lane_no_entry());
+  }
+  if (from._internal_is_next_lane_no_entry() != 0) {
+    _this->_internal_set_is_next_lane_no_entry(from._internal_is_next_lane_no_entry());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void PedestrianEnv::CopyFrom(const PedestrianEnv& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:city.person.v2.PedestrianEnv)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool PedestrianEnv::IsInitialized() const {
+  return true;
+}
+
+void PedestrianEnv::InternalSwap(PedestrianEnv* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(PedestrianEnv, _impl_.is_next_lane_no_entry_)
+      + sizeof(PedestrianEnv::_impl_.is_next_lane_no_entry_)
+      - PROTOBUF_FIELD_OFFSET(PedestrianEnv, _impl_.motion_)>(
+          reinterpret_cast<char*>(&_impl_.motion_),
+          reinterpret_cast<char*>(&other->_impl_.motion_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata PedestrianEnv::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_city_2fperson_2fv2_2fpedestrian_2eproto_getter, &descriptor_table_city_2fperson_2fv2_2fpedestrian_2eproto_once,
+      file_level_metadata_city_2fperson_2fv2_2fpedestrian_2eproto[0]);
+}
 
 // ===================================================================
 
@@ -349,7 +720,7 @@ void PedestrianAction::InternalSwap(PedestrianAction* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata PedestrianAction::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_city_2fperson_2fv2_2fpedestrian_2eproto_getter, &descriptor_table_city_2fperson_2fv2_2fpedestrian_2eproto_once,
-      file_level_metadata_city_2fperson_2fv2_2fpedestrian_2eproto[0]);
+      file_level_metadata_city_2fperson_2fv2_2fpedestrian_2eproto[1]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
@@ -357,6 +728,10 @@ void PedestrianAction::InternalSwap(PedestrianAction* other) {
 }  // namespace person
 }  // namespace city
 PROTOBUF_NAMESPACE_OPEN
+template<> PROTOBUF_NOINLINE ::city::person::v2::PedestrianEnv*
+Arena::CreateMaybeMessage< ::city::person::v2::PedestrianEnv >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::city::person::v2::PedestrianEnv >(arena);
+}
 template<> PROTOBUF_NOINLINE ::city::person::v2::PedestrianAction*
 Arena::CreateMaybeMessage< ::city::person::v2::PedestrianAction >(Arena* arena) {
   return Arena::CreateMessageInternal< ::city::person::v2::PedestrianAction >(arena);

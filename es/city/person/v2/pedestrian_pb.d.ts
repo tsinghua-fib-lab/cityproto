@@ -5,6 +5,70 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
+import type { PersonMotion } from "./motion_pb.js";
+import type { Journey } from "../../routing/v2/routing_pb.js";
+
+/**
+ * 行人环境
+ * Pedestrian environment
+ *
+ * @generated from message city.person.v2.PedestrianEnv
+ */
+export declare class PedestrianEnv extends Message<PedestrianEnv> {
+  /**
+   * 行人id
+   * Pedestrian id
+   *
+   * @generated from field: int32 id = 1;
+   */
+  id: number;
+
+  /**
+   * 当前运行信息
+   * Current runtime information
+   *
+   * @generated from field: city.person.v2.PersonMotion motion = 2;
+   */
+  motion?: PersonMotion;
+
+  /**
+   * 当前路径规划结果
+   * Current routing result
+   *
+   * @generated from field: city.routing.v2.Journey journey = 3;
+   */
+  journey?: Journey;
+
+  /**
+   * 当前人行道可通行情况
+   * current pedestrian lane status
+   *
+   * @generated from field: bool is_current_lane_no_entry = 4;
+   */
+  isCurrentLaneNoEntry: boolean;
+
+  /**
+   * 下一人行道可通行情况
+   * next pedestrian lane status
+   *
+   * @generated from field: bool is_next_lane_no_entry = 5;
+   */
+  isNextLaneNoEntry: boolean;
+
+  constructor(data?: PartialMessage<PedestrianEnv>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.person.v2.PedestrianEnv";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PedestrianEnv;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PedestrianEnv;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PedestrianEnv;
+
+  static equals(a: PedestrianEnv | PlainMessage<PedestrianEnv> | undefined, b: PedestrianEnv | PlainMessage<PedestrianEnv> | undefined): boolean;
+}
 
 /**
  * 行人行为

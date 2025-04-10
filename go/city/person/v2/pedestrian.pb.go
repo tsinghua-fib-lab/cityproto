@@ -7,6 +7,7 @@
 package personv2
 
 import (
+	v2 "git.fiblab.net/sim/protos/v2/go/city/routing/v2"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -20,6 +21,94 @@ const (
 	// Verify that runtime/protoimpl is sufficiently up-to-date.
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
+
+// 行人环境
+// Pedestrian environment
+type PedestrianEnv struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// 行人id
+	// Pedestrian id
+	Id int32 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" bson:"id" db:"id" yaml:"id"`
+	// 当前运行信息
+	// Current runtime information
+	Motion *PersonMotion `protobuf:"bytes,2,opt,name=motion,proto3" json:"motion,omitempty" bson:"motion" db:"motion" yaml:"motion"`
+	// 当前路径规划结果
+	// Current routing result
+	Journey *v2.Journey `protobuf:"bytes,3,opt,name=journey,proto3" json:"journey,omitempty" bson:"journey" db:"journey" yaml:"journey"`
+	// 当前人行道可通行情况
+	// current pedestrian lane status
+	IsCurrentLaneNoEntry bool `protobuf:"varint,4,opt,name=is_current_lane_no_entry,json=isCurrentLaneNoEntry,proto3" json:"is_current_lane_no_entry,omitempty" bson:"is_current_lane_no_entry" db:"is_current_lane_no_entry" yaml:"is_current_lane_no_entry"`
+	// 下一人行道可通行情况
+	// next pedestrian lane status
+	IsNextLaneNoEntry bool `protobuf:"varint,5,opt,name=is_next_lane_no_entry,json=isNextLaneNoEntry,proto3" json:"is_next_lane_no_entry,omitempty" bson:"is_next_lane_no_entry" db:"is_next_lane_no_entry" yaml:"is_next_lane_no_entry"`
+	unknownFields     protoimpl.UnknownFields
+	sizeCache         protoimpl.SizeCache
+}
+
+func (x *PedestrianEnv) Reset() {
+	*x = PedestrianEnv{}
+	mi := &file_city_person_v2_pedestrian_proto_msgTypes[0]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *PedestrianEnv) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PedestrianEnv) ProtoMessage() {}
+
+func (x *PedestrianEnv) ProtoReflect() protoreflect.Message {
+	mi := &file_city_person_v2_pedestrian_proto_msgTypes[0]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PedestrianEnv.ProtoReflect.Descriptor instead.
+func (*PedestrianEnv) Descriptor() ([]byte, []int) {
+	return file_city_person_v2_pedestrian_proto_rawDescGZIP(), []int{0}
+}
+
+func (x *PedestrianEnv) GetId() int32 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+func (x *PedestrianEnv) GetMotion() *PersonMotion {
+	if x != nil {
+		return x.Motion
+	}
+	return nil
+}
+
+func (x *PedestrianEnv) GetJourney() *v2.Journey {
+	if x != nil {
+		return x.Journey
+	}
+	return nil
+}
+
+func (x *PedestrianEnv) GetIsCurrentLaneNoEntry() bool {
+	if x != nil {
+		return x.IsCurrentLaneNoEntry
+	}
+	return false
+}
+
+func (x *PedestrianEnv) GetIsNextLaneNoEntry() bool {
+	if x != nil {
+		return x.IsNextLaneNoEntry
+	}
+	return false
+}
 
 // 行人行为
 // Pedestrian behavior
@@ -40,7 +129,7 @@ type PedestrianAction struct {
 
 func (x *PedestrianAction) Reset() {
 	*x = PedestrianAction{}
-	mi := &file_city_person_v2_pedestrian_proto_msgTypes[0]
+	mi := &file_city_person_v2_pedestrian_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -52,7 +141,7 @@ func (x *PedestrianAction) String() string {
 func (*PedestrianAction) ProtoMessage() {}
 
 func (x *PedestrianAction) ProtoReflect() protoreflect.Message {
-	mi := &file_city_person_v2_pedestrian_proto_msgTypes[0]
+	mi := &file_city_person_v2_pedestrian_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -65,7 +154,7 @@ func (x *PedestrianAction) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PedestrianAction.ProtoReflect.Descriptor instead.
 func (*PedestrianAction) Descriptor() ([]byte, []int) {
-	return file_city_person_v2_pedestrian_proto_rawDescGZIP(), []int{0}
+	return file_city_person_v2_pedestrian_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *PedestrianAction) GetId() int32 {
@@ -93,7 +182,13 @@ var File_city_person_v2_pedestrian_proto protoreflect.FileDescriptor
 
 const file_city_person_v2_pedestrian_proto_rawDesc = "" +
 	"\n" +
-	"\x1fcity/person/v2/pedestrian.proto\x12\x0ecity.person.v2\"B\n" +
+	"\x1fcity/person/v2/pedestrian.proto\x12\x0ecity.person.v2\x1a\x1bcity/person/v2/motion.proto\x1a\x1dcity/routing/v2/routing.proto\"\xf3\x01\n" +
+	"\rPedestrianEnv\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\x05R\x02id\x124\n" +
+	"\x06motion\x18\x02 \x01(\v2\x1c.city.person.v2.PersonMotionR\x06motion\x122\n" +
+	"\ajourney\x18\x03 \x01(\v2\x18.city.routing.v2.JourneyR\ajourney\x126\n" +
+	"\x18is_current_lane_no_entry\x18\x04 \x01(\bR\x14isCurrentLaneNoEntry\x120\n" +
+	"\x15is_next_lane_no_entry\x18\x05 \x01(\bR\x11isNextLaneNoEntry\"B\n" +
 	"\x10PedestrianAction\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\x05R\x02id\x12\x0e\n" +
 	"\x02vx\x18\x02 \x01(\x01R\x02vx\x12\x0e\n" +
@@ -112,16 +207,21 @@ func file_city_person_v2_pedestrian_proto_rawDescGZIP() []byte {
 	return file_city_person_v2_pedestrian_proto_rawDescData
 }
 
-var file_city_person_v2_pedestrian_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
+var file_city_person_v2_pedestrian_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_city_person_v2_pedestrian_proto_goTypes = []any{
-	(*PedestrianAction)(nil), // 0: city.person.v2.PedestrianAction
+	(*PedestrianEnv)(nil),    // 0: city.person.v2.PedestrianEnv
+	(*PedestrianAction)(nil), // 1: city.person.v2.PedestrianAction
+	(*PersonMotion)(nil),     // 2: city.person.v2.PersonMotion
+	(*v2.Journey)(nil),       // 3: city.routing.v2.Journey
 }
 var file_city_person_v2_pedestrian_proto_depIdxs = []int32{
-	0, // [0:0] is the sub-list for method output_type
-	0, // [0:0] is the sub-list for method input_type
-	0, // [0:0] is the sub-list for extension type_name
-	0, // [0:0] is the sub-list for extension extendee
-	0, // [0:0] is the sub-list for field type_name
+	2, // 0: city.person.v2.PedestrianEnv.motion:type_name -> city.person.v2.PersonMotion
+	3, // 1: city.person.v2.PedestrianEnv.journey:type_name -> city.routing.v2.Journey
+	2, // [2:2] is the sub-list for method output_type
+	2, // [2:2] is the sub-list for method input_type
+	2, // [2:2] is the sub-list for extension type_name
+	2, // [2:2] is the sub-list for extension extendee
+	0, // [0:2] is the sub-list for field type_name
 }
 
 func init() { file_city_person_v2_pedestrian_proto_init() }
@@ -129,13 +229,14 @@ func file_city_person_v2_pedestrian_proto_init() {
 	if File_city_person_v2_pedestrian_proto != nil {
 		return
 	}
+	file_city_person_v2_motion_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_city_person_v2_pedestrian_proto_rawDesc), len(file_city_person_v2_pedestrian_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   1,
+			NumMessages:   2,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

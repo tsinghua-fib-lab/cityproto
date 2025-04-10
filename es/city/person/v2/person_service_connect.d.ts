@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AddPersonRequest, AddPersonResponse, FetchControlledVehicleEnvsRequest, FetchControlledVehicleEnvsResponse, GetAllOrdersRequest, GetAllOrdersResponse, GetAllPedestriansRequest, GetAllPedestriansResponse, GetAllVehiclesRequest, GetAllVehiclesResponse, GetPersonByLongLatBBoxRequest, GetPersonByLongLatBBoxResponse, GetPersonRequest, GetPersonResponse, GetPersonsRequest, GetPersonsResponse, ResetPersonPositionRequest, ResetPersonPositionResponse, SetControlledPedestriansActionsRequest, SetControlledPedestriansActionsResponse, SetControlledPedestriansRequest, SetControlledPedestriansResponse, SetControlledTaxiIDsRequest, SetControlledTaxiIDsResponse, SetControlledTaxiToOrdersRequest, SetControlledTaxiToOrdersResponse, SetControlledVehicleActionsRequest, SetControlledVehicleActionsResponse, SetControlledVehicleIDsRequest, SetControlledVehicleIDsResponse, SetScheduleRequest, SetScheduleResponse } from "./person_service_pb.js";
+import { AddPersonRequest, AddPersonResponse, FetchControlledPedestriansEnvsRequest, FetchControlledPedestriansEnvsResponse, FetchControlledVehicleEnvsRequest, FetchControlledVehicleEnvsResponse, GetAllOrdersRequest, GetAllOrdersResponse, GetAllPedestriansRequest, GetAllPedestriansResponse, GetAllVehiclesRequest, GetAllVehiclesResponse, GetPersonByLongLatBBoxRequest, GetPersonByLongLatBBoxResponse, GetPersonRequest, GetPersonResponse, GetPersonsRequest, GetPersonsResponse, ResetPersonPositionRequest, ResetPersonPositionResponse, SetControlledPedestriansActionsRequest, SetControlledPedestriansActionsResponse, SetControlledPedestriansRequest, SetControlledPedestriansResponse, SetControlledTaxiIDsRequest, SetControlledTaxiIDsResponse, SetControlledTaxiToOrdersRequest, SetControlledTaxiToOrdersResponse, SetControlledVehicleActionsRequest, SetControlledVehicleActionsResponse, SetControlledVehicleIDsRequest, SetControlledVehicleIDsResponse, SetScheduleRequest, SetScheduleResponse } from "./person_service_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -191,6 +191,18 @@ export declare const PersonService: {
       readonly name: "SetControlledPedestrians",
       readonly I: typeof SetControlledPedestriansRequest,
       readonly O: typeof SetControlledPedestriansResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * 获取由外部控制的行人信息
+     * Get information of pedestrian controlled by external behavior
+     *
+     * @generated from rpc city.person.v2.PersonService.FetchControlledPedestriansEnvs
+     */
+    readonly fetchControlledPedestriansEnvs: {
+      readonly name: "FetchControlledPedestriansEnvs",
+      readonly I: typeof FetchControlledPedestriansEnvsRequest,
+      readonly O: typeof FetchControlledPedestriansEnvsResponse,
       readonly kind: MethodKind.Unary,
     },
     /**

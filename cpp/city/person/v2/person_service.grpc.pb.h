@@ -176,6 +176,15 @@ class PersonService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::person::v2::SetControlledPedestriansResponse>> PrepareAsyncSetControlledPedestrians(::grpc::ClientContext* context, const ::city::person::v2::SetControlledPedestriansRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::person::v2::SetControlledPedestriansResponse>>(PrepareAsyncSetControlledPedestriansRaw(context, request, cq));
     }
+    // 获取由外部控制的行人信息
+    // Get information of pedestrian controlled by external behavior
+    virtual ::grpc::Status FetchControlledPedestriansEnvs(::grpc::ClientContext* context, const ::city::person::v2::FetchControlledPedestriansEnvsRequest& request, ::city::person::v2::FetchControlledPedestriansEnvsResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::person::v2::FetchControlledPedestriansEnvsResponse>> AsyncFetchControlledPedestriansEnvs(::grpc::ClientContext* context, const ::city::person::v2::FetchControlledPedestriansEnvsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::person::v2::FetchControlledPedestriansEnvsResponse>>(AsyncFetchControlledPedestriansEnvsRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::person::v2::FetchControlledPedestriansEnvsResponse>> PrepareAsyncFetchControlledPedestriansEnvs(::grpc::ClientContext* context, const ::city::person::v2::FetchControlledPedestriansEnvsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::city::person::v2::FetchControlledPedestriansEnvsResponse>>(PrepareAsyncFetchControlledPedestriansEnvsRaw(context, request, cq));
+    }
     // 设置由外部控制的行人行为
     // Set behavior of pedestrian controlled by external behavior
     virtual ::grpc::Status SetControlledPedestriansActions(::grpc::ClientContext* context, const ::city::person::v2::SetControlledPedestriansActionsRequest& request, ::city::person::v2::SetControlledPedestriansActionsResponse* response) = 0;
@@ -252,6 +261,10 @@ class PersonService final {
       // Set pedestrian controlled by external behavior
       virtual void SetControlledPedestrians(::grpc::ClientContext* context, const ::city::person::v2::SetControlledPedestriansRequest* request, ::city::person::v2::SetControlledPedestriansResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void SetControlledPedestrians(::grpc::ClientContext* context, const ::city::person::v2::SetControlledPedestriansRequest* request, ::city::person::v2::SetControlledPedestriansResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      // 获取由外部控制的行人信息
+      // Get information of pedestrian controlled by external behavior
+      virtual void FetchControlledPedestriansEnvs(::grpc::ClientContext* context, const ::city::person::v2::FetchControlledPedestriansEnvsRequest* request, ::city::person::v2::FetchControlledPedestriansEnvsResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void FetchControlledPedestriansEnvs(::grpc::ClientContext* context, const ::city::person::v2::FetchControlledPedestriansEnvsRequest* request, ::city::person::v2::FetchControlledPedestriansEnvsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       // 设置由外部控制的行人行为
       // Set behavior of pedestrian controlled by external behavior
       virtual void SetControlledPedestriansActions(::grpc::ClientContext* context, const ::city::person::v2::SetControlledPedestriansActionsRequest* request, ::city::person::v2::SetControlledPedestriansActionsResponse* response, std::function<void(::grpc::Status)>) = 0;
@@ -291,6 +304,8 @@ class PersonService final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::person::v2::SetControlledTaxiToOrdersResponse>* PrepareAsyncSetControlledTaxiToOrdersRaw(::grpc::ClientContext* context, const ::city::person::v2::SetControlledTaxiToOrdersRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::person::v2::SetControlledPedestriansResponse>* AsyncSetControlledPedestriansRaw(::grpc::ClientContext* context, const ::city::person::v2::SetControlledPedestriansRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::person::v2::SetControlledPedestriansResponse>* PrepareAsyncSetControlledPedestriansRaw(::grpc::ClientContext* context, const ::city::person::v2::SetControlledPedestriansRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::person::v2::FetchControlledPedestriansEnvsResponse>* AsyncFetchControlledPedestriansEnvsRaw(::grpc::ClientContext* context, const ::city::person::v2::FetchControlledPedestriansEnvsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::person::v2::FetchControlledPedestriansEnvsResponse>* PrepareAsyncFetchControlledPedestriansEnvsRaw(::grpc::ClientContext* context, const ::city::person::v2::FetchControlledPedestriansEnvsRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::person::v2::SetControlledPedestriansActionsResponse>* AsyncSetControlledPedestriansActionsRaw(::grpc::ClientContext* context, const ::city::person::v2::SetControlledPedestriansActionsRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::city::person::v2::SetControlledPedestriansActionsResponse>* PrepareAsyncSetControlledPedestriansActionsRaw(::grpc::ClientContext* context, const ::city::person::v2::SetControlledPedestriansActionsRequest& request, ::grpc::CompletionQueue* cq) = 0;
   };
@@ -402,6 +417,13 @@ class PersonService final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::person::v2::SetControlledPedestriansResponse>> PrepareAsyncSetControlledPedestrians(::grpc::ClientContext* context, const ::city::person::v2::SetControlledPedestriansRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::person::v2::SetControlledPedestriansResponse>>(PrepareAsyncSetControlledPedestriansRaw(context, request, cq));
     }
+    ::grpc::Status FetchControlledPedestriansEnvs(::grpc::ClientContext* context, const ::city::person::v2::FetchControlledPedestriansEnvsRequest& request, ::city::person::v2::FetchControlledPedestriansEnvsResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::person::v2::FetchControlledPedestriansEnvsResponse>> AsyncFetchControlledPedestriansEnvs(::grpc::ClientContext* context, const ::city::person::v2::FetchControlledPedestriansEnvsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::person::v2::FetchControlledPedestriansEnvsResponse>>(AsyncFetchControlledPedestriansEnvsRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::person::v2::FetchControlledPedestriansEnvsResponse>> PrepareAsyncFetchControlledPedestriansEnvs(::grpc::ClientContext* context, const ::city::person::v2::FetchControlledPedestriansEnvsRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::person::v2::FetchControlledPedestriansEnvsResponse>>(PrepareAsyncFetchControlledPedestriansEnvsRaw(context, request, cq));
+    }
     ::grpc::Status SetControlledPedestriansActions(::grpc::ClientContext* context, const ::city::person::v2::SetControlledPedestriansActionsRequest& request, ::city::person::v2::SetControlledPedestriansActionsResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::person::v2::SetControlledPedestriansActionsResponse>> AsyncSetControlledPedestriansActions(::grpc::ClientContext* context, const ::city::person::v2::SetControlledPedestriansActionsRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::city::person::v2::SetControlledPedestriansActionsResponse>>(AsyncSetControlledPedestriansActionsRaw(context, request, cq));
@@ -442,6 +464,8 @@ class PersonService final {
       void SetControlledTaxiToOrders(::grpc::ClientContext* context, const ::city::person::v2::SetControlledTaxiToOrdersRequest* request, ::city::person::v2::SetControlledTaxiToOrdersResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       void SetControlledPedestrians(::grpc::ClientContext* context, const ::city::person::v2::SetControlledPedestriansRequest* request, ::city::person::v2::SetControlledPedestriansResponse* response, std::function<void(::grpc::Status)>) override;
       void SetControlledPedestrians(::grpc::ClientContext* context, const ::city::person::v2::SetControlledPedestriansRequest* request, ::city::person::v2::SetControlledPedestriansResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void FetchControlledPedestriansEnvs(::grpc::ClientContext* context, const ::city::person::v2::FetchControlledPedestriansEnvsRequest* request, ::city::person::v2::FetchControlledPedestriansEnvsResponse* response, std::function<void(::grpc::Status)>) override;
+      void FetchControlledPedestriansEnvs(::grpc::ClientContext* context, const ::city::person::v2::FetchControlledPedestriansEnvsRequest* request, ::city::person::v2::FetchControlledPedestriansEnvsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       void SetControlledPedestriansActions(::grpc::ClientContext* context, const ::city::person::v2::SetControlledPedestriansActionsRequest* request, ::city::person::v2::SetControlledPedestriansActionsResponse* response, std::function<void(::grpc::Status)>) override;
       void SetControlledPedestriansActions(::grpc::ClientContext* context, const ::city::person::v2::SetControlledPedestriansActionsRequest* request, ::city::person::v2::SetControlledPedestriansActionsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
      private:
@@ -485,6 +509,8 @@ class PersonService final {
     ::grpc::ClientAsyncResponseReader< ::city::person::v2::SetControlledTaxiToOrdersResponse>* PrepareAsyncSetControlledTaxiToOrdersRaw(::grpc::ClientContext* context, const ::city::person::v2::SetControlledTaxiToOrdersRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::city::person::v2::SetControlledPedestriansResponse>* AsyncSetControlledPedestriansRaw(::grpc::ClientContext* context, const ::city::person::v2::SetControlledPedestriansRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::city::person::v2::SetControlledPedestriansResponse>* PrepareAsyncSetControlledPedestriansRaw(::grpc::ClientContext* context, const ::city::person::v2::SetControlledPedestriansRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::city::person::v2::FetchControlledPedestriansEnvsResponse>* AsyncFetchControlledPedestriansEnvsRaw(::grpc::ClientContext* context, const ::city::person::v2::FetchControlledPedestriansEnvsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::city::person::v2::FetchControlledPedestriansEnvsResponse>* PrepareAsyncFetchControlledPedestriansEnvsRaw(::grpc::ClientContext* context, const ::city::person::v2::FetchControlledPedestriansEnvsRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::city::person::v2::SetControlledPedestriansActionsResponse>* AsyncSetControlledPedestriansActionsRaw(::grpc::ClientContext* context, const ::city::person::v2::SetControlledPedestriansActionsRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::city::person::v2::SetControlledPedestriansActionsResponse>* PrepareAsyncSetControlledPedestriansActionsRaw(::grpc::ClientContext* context, const ::city::person::v2::SetControlledPedestriansActionsRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_GetPerson_;
@@ -502,6 +528,7 @@ class PersonService final {
     const ::grpc::internal::RpcMethod rpcmethod_GetAllOrders_;
     const ::grpc::internal::RpcMethod rpcmethod_SetControlledTaxiToOrders_;
     const ::grpc::internal::RpcMethod rpcmethod_SetControlledPedestrians_;
+    const ::grpc::internal::RpcMethod rpcmethod_FetchControlledPedestriansEnvs_;
     const ::grpc::internal::RpcMethod rpcmethod_SetControlledPedestriansActions_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
@@ -559,6 +586,9 @@ class PersonService final {
     // 设置由外部控制的行人
     // Set pedestrian controlled by external behavior
     virtual ::grpc::Status SetControlledPedestrians(::grpc::ServerContext* context, const ::city::person::v2::SetControlledPedestriansRequest* request, ::city::person::v2::SetControlledPedestriansResponse* response);
+    // 获取由外部控制的行人信息
+    // Get information of pedestrian controlled by external behavior
+    virtual ::grpc::Status FetchControlledPedestriansEnvs(::grpc::ServerContext* context, const ::city::person::v2::FetchControlledPedestriansEnvsRequest* request, ::city::person::v2::FetchControlledPedestriansEnvsResponse* response);
     // 设置由外部控制的行人行为
     // Set behavior of pedestrian controlled by external behavior
     virtual ::grpc::Status SetControlledPedestriansActions(::grpc::ServerContext* context, const ::city::person::v2::SetControlledPedestriansActionsRequest* request, ::city::person::v2::SetControlledPedestriansActionsResponse* response);
@@ -864,12 +894,32 @@ class PersonService final {
     }
   };
   template <class BaseClass>
+  class WithAsyncMethod_FetchControlledPedestriansEnvs : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_FetchControlledPedestriansEnvs() {
+      ::grpc::Service::MarkMethodAsync(15);
+    }
+    ~WithAsyncMethod_FetchControlledPedestriansEnvs() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status FetchControlledPedestriansEnvs(::grpc::ServerContext* /*context*/, const ::city::person::v2::FetchControlledPedestriansEnvsRequest* /*request*/, ::city::person::v2::FetchControlledPedestriansEnvsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestFetchControlledPedestriansEnvs(::grpc::ServerContext* context, ::city::person::v2::FetchControlledPedestriansEnvsRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::person::v2::FetchControlledPedestriansEnvsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(15, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithAsyncMethod_SetControlledPedestriansActions : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_SetControlledPedestriansActions() {
-      ::grpc::Service::MarkMethodAsync(15);
+      ::grpc::Service::MarkMethodAsync(16);
     }
     ~WithAsyncMethod_SetControlledPedestriansActions() override {
       BaseClassMustBeDerivedFromService(this);
@@ -880,10 +930,10 @@ class PersonService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestSetControlledPedestriansActions(::grpc::ServerContext* context, ::city::person::v2::SetControlledPedestriansActionsRequest* request, ::grpc::ServerAsyncResponseWriter< ::city::person::v2::SetControlledPedestriansActionsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(15, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(16, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_GetPerson<WithAsyncMethod_AddPerson<WithAsyncMethod_SetSchedule<WithAsyncMethod_GetPersons<WithAsyncMethod_GetPersonByLongLatBBox<WithAsyncMethod_GetAllVehicles<WithAsyncMethod_GetAllPedestrians<WithAsyncMethod_ResetPersonPosition<WithAsyncMethod_SetControlledVehicleIDs<WithAsyncMethod_FetchControlledVehicleEnvs<WithAsyncMethod_SetControlledVehicleActions<WithAsyncMethod_SetControlledTaxiIDs<WithAsyncMethod_GetAllOrders<WithAsyncMethod_SetControlledTaxiToOrders<WithAsyncMethod_SetControlledPedestrians<WithAsyncMethod_SetControlledPedestriansActions<Service > > > > > > > > > > > > > > > > AsyncService;
+  typedef WithAsyncMethod_GetPerson<WithAsyncMethod_AddPerson<WithAsyncMethod_SetSchedule<WithAsyncMethod_GetPersons<WithAsyncMethod_GetPersonByLongLatBBox<WithAsyncMethod_GetAllVehicles<WithAsyncMethod_GetAllPedestrians<WithAsyncMethod_ResetPersonPosition<WithAsyncMethod_SetControlledVehicleIDs<WithAsyncMethod_FetchControlledVehicleEnvs<WithAsyncMethod_SetControlledVehicleActions<WithAsyncMethod_SetControlledTaxiIDs<WithAsyncMethod_GetAllOrders<WithAsyncMethod_SetControlledTaxiToOrders<WithAsyncMethod_SetControlledPedestrians<WithAsyncMethod_FetchControlledPedestriansEnvs<WithAsyncMethod_SetControlledPedestriansActions<Service > > > > > > > > > > > > > > > > > AsyncService;
   template <class BaseClass>
   class WithCallbackMethod_GetPerson : public BaseClass {
    private:
@@ -1290,18 +1340,45 @@ class PersonService final {
       ::grpc::CallbackServerContext* /*context*/, const ::city::person::v2::SetControlledPedestriansRequest* /*request*/, ::city::person::v2::SetControlledPedestriansResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
+  class WithCallbackMethod_FetchControlledPedestriansEnvs : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_FetchControlledPedestriansEnvs() {
+      ::grpc::Service::MarkMethodCallback(15,
+          new ::grpc::internal::CallbackUnaryHandler< ::city::person::v2::FetchControlledPedestriansEnvsRequest, ::city::person::v2::FetchControlledPedestriansEnvsResponse>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::city::person::v2::FetchControlledPedestriansEnvsRequest* request, ::city::person::v2::FetchControlledPedestriansEnvsResponse* response) { return this->FetchControlledPedestriansEnvs(context, request, response); }));}
+    void SetMessageAllocatorFor_FetchControlledPedestriansEnvs(
+        ::grpc::MessageAllocator< ::city::person::v2::FetchControlledPedestriansEnvsRequest, ::city::person::v2::FetchControlledPedestriansEnvsResponse>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(15);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::city::person::v2::FetchControlledPedestriansEnvsRequest, ::city::person::v2::FetchControlledPedestriansEnvsResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_FetchControlledPedestriansEnvs() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status FetchControlledPedestriansEnvs(::grpc::ServerContext* /*context*/, const ::city::person::v2::FetchControlledPedestriansEnvsRequest* /*request*/, ::city::person::v2::FetchControlledPedestriansEnvsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* FetchControlledPedestriansEnvs(
+      ::grpc::CallbackServerContext* /*context*/, const ::city::person::v2::FetchControlledPedestriansEnvsRequest* /*request*/, ::city::person::v2::FetchControlledPedestriansEnvsResponse* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
   class WithCallbackMethod_SetControlledPedestriansActions : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_SetControlledPedestriansActions() {
-      ::grpc::Service::MarkMethodCallback(15,
+      ::grpc::Service::MarkMethodCallback(16,
           new ::grpc::internal::CallbackUnaryHandler< ::city::person::v2::SetControlledPedestriansActionsRequest, ::city::person::v2::SetControlledPedestriansActionsResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::city::person::v2::SetControlledPedestriansActionsRequest* request, ::city::person::v2::SetControlledPedestriansActionsResponse* response) { return this->SetControlledPedestriansActions(context, request, response); }));}
     void SetMessageAllocatorFor_SetControlledPedestriansActions(
         ::grpc::MessageAllocator< ::city::person::v2::SetControlledPedestriansActionsRequest, ::city::person::v2::SetControlledPedestriansActionsResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(15);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(16);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::city::person::v2::SetControlledPedestriansActionsRequest, ::city::person::v2::SetControlledPedestriansActionsResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -1316,7 +1393,7 @@ class PersonService final {
     virtual ::grpc::ServerUnaryReactor* SetControlledPedestriansActions(
       ::grpc::CallbackServerContext* /*context*/, const ::city::person::v2::SetControlledPedestriansActionsRequest* /*request*/, ::city::person::v2::SetControlledPedestriansActionsResponse* /*response*/)  { return nullptr; }
   };
-  typedef WithCallbackMethod_GetPerson<WithCallbackMethod_AddPerson<WithCallbackMethod_SetSchedule<WithCallbackMethod_GetPersons<WithCallbackMethod_GetPersonByLongLatBBox<WithCallbackMethod_GetAllVehicles<WithCallbackMethod_GetAllPedestrians<WithCallbackMethod_ResetPersonPosition<WithCallbackMethod_SetControlledVehicleIDs<WithCallbackMethod_FetchControlledVehicleEnvs<WithCallbackMethod_SetControlledVehicleActions<WithCallbackMethod_SetControlledTaxiIDs<WithCallbackMethod_GetAllOrders<WithCallbackMethod_SetControlledTaxiToOrders<WithCallbackMethod_SetControlledPedestrians<WithCallbackMethod_SetControlledPedestriansActions<Service > > > > > > > > > > > > > > > > CallbackService;
+  typedef WithCallbackMethod_GetPerson<WithCallbackMethod_AddPerson<WithCallbackMethod_SetSchedule<WithCallbackMethod_GetPersons<WithCallbackMethod_GetPersonByLongLatBBox<WithCallbackMethod_GetAllVehicles<WithCallbackMethod_GetAllPedestrians<WithCallbackMethod_ResetPersonPosition<WithCallbackMethod_SetControlledVehicleIDs<WithCallbackMethod_FetchControlledVehicleEnvs<WithCallbackMethod_SetControlledVehicleActions<WithCallbackMethod_SetControlledTaxiIDs<WithCallbackMethod_GetAllOrders<WithCallbackMethod_SetControlledTaxiToOrders<WithCallbackMethod_SetControlledPedestrians<WithCallbackMethod_FetchControlledPedestriansEnvs<WithCallbackMethod_SetControlledPedestriansActions<Service > > > > > > > > > > > > > > > > > CallbackService;
   typedef CallbackService ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_GetPerson : public BaseClass {
@@ -1574,12 +1651,29 @@ class PersonService final {
     }
   };
   template <class BaseClass>
+  class WithGenericMethod_FetchControlledPedestriansEnvs : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_FetchControlledPedestriansEnvs() {
+      ::grpc::Service::MarkMethodGeneric(15);
+    }
+    ~WithGenericMethod_FetchControlledPedestriansEnvs() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status FetchControlledPedestriansEnvs(::grpc::ServerContext* /*context*/, const ::city::person::v2::FetchControlledPedestriansEnvsRequest* /*request*/, ::city::person::v2::FetchControlledPedestriansEnvsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
   class WithGenericMethod_SetControlledPedestriansActions : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_SetControlledPedestriansActions() {
-      ::grpc::Service::MarkMethodGeneric(15);
+      ::grpc::Service::MarkMethodGeneric(16);
     }
     ~WithGenericMethod_SetControlledPedestriansActions() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1891,12 +1985,32 @@ class PersonService final {
     }
   };
   template <class BaseClass>
+  class WithRawMethod_FetchControlledPedestriansEnvs : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_FetchControlledPedestriansEnvs() {
+      ::grpc::Service::MarkMethodRaw(15);
+    }
+    ~WithRawMethod_FetchControlledPedestriansEnvs() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status FetchControlledPedestriansEnvs(::grpc::ServerContext* /*context*/, const ::city::person::v2::FetchControlledPedestriansEnvsRequest* /*request*/, ::city::person::v2::FetchControlledPedestriansEnvsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestFetchControlledPedestriansEnvs(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(15, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithRawMethod_SetControlledPedestriansActions : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_SetControlledPedestriansActions() {
-      ::grpc::Service::MarkMethodRaw(15);
+      ::grpc::Service::MarkMethodRaw(16);
     }
     ~WithRawMethod_SetControlledPedestriansActions() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1907,7 +2021,7 @@ class PersonService final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestSetControlledPedestriansActions(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(15, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(16, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2241,12 +2355,34 @@ class PersonService final {
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
+  class WithRawCallbackMethod_FetchControlledPedestriansEnvs : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_FetchControlledPedestriansEnvs() {
+      ::grpc::Service::MarkMethodRawCallback(15,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->FetchControlledPedestriansEnvs(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_FetchControlledPedestriansEnvs() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status FetchControlledPedestriansEnvs(::grpc::ServerContext* /*context*/, const ::city::person::v2::FetchControlledPedestriansEnvsRequest* /*request*/, ::city::person::v2::FetchControlledPedestriansEnvsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* FetchControlledPedestriansEnvs(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
   class WithRawCallbackMethod_SetControlledPedestriansActions : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_SetControlledPedestriansActions() {
-      ::grpc::Service::MarkMethodRawCallback(15,
+      ::grpc::Service::MarkMethodRawCallback(16,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->SetControlledPedestriansActions(context, request, response); }));
@@ -2668,12 +2804,39 @@ class PersonService final {
     virtual ::grpc::Status StreamedSetControlledPedestrians(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::city::person::v2::SetControlledPedestriansRequest,::city::person::v2::SetControlledPedestriansResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
+  class WithStreamedUnaryMethod_FetchControlledPedestriansEnvs : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_FetchControlledPedestriansEnvs() {
+      ::grpc::Service::MarkMethodStreamed(15,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::city::person::v2::FetchControlledPedestriansEnvsRequest, ::city::person::v2::FetchControlledPedestriansEnvsResponse>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::city::person::v2::FetchControlledPedestriansEnvsRequest, ::city::person::v2::FetchControlledPedestriansEnvsResponse>* streamer) {
+                       return this->StreamedFetchControlledPedestriansEnvs(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_FetchControlledPedestriansEnvs() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status FetchControlledPedestriansEnvs(::grpc::ServerContext* /*context*/, const ::city::person::v2::FetchControlledPedestriansEnvsRequest* /*request*/, ::city::person::v2::FetchControlledPedestriansEnvsResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedFetchControlledPedestriansEnvs(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::city::person::v2::FetchControlledPedestriansEnvsRequest,::city::person::v2::FetchControlledPedestriansEnvsResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_SetControlledPedestriansActions : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_SetControlledPedestriansActions() {
-      ::grpc::Service::MarkMethodStreamed(15,
+      ::grpc::Service::MarkMethodStreamed(16,
         new ::grpc::internal::StreamedUnaryHandler<
           ::city::person::v2::SetControlledPedestriansActionsRequest, ::city::person::v2::SetControlledPedestriansActionsResponse>(
             [this](::grpc::ServerContext* context,
@@ -2694,9 +2857,9 @@ class PersonService final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedSetControlledPedestriansActions(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::city::person::v2::SetControlledPedestriansActionsRequest,::city::person::v2::SetControlledPedestriansActionsResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_GetPerson<WithStreamedUnaryMethod_AddPerson<WithStreamedUnaryMethod_SetSchedule<WithStreamedUnaryMethod_GetPersons<WithStreamedUnaryMethod_GetPersonByLongLatBBox<WithStreamedUnaryMethod_GetAllVehicles<WithStreamedUnaryMethod_GetAllPedestrians<WithStreamedUnaryMethod_ResetPersonPosition<WithStreamedUnaryMethod_SetControlledVehicleIDs<WithStreamedUnaryMethod_FetchControlledVehicleEnvs<WithStreamedUnaryMethod_SetControlledVehicleActions<WithStreamedUnaryMethod_SetControlledTaxiIDs<WithStreamedUnaryMethod_GetAllOrders<WithStreamedUnaryMethod_SetControlledTaxiToOrders<WithStreamedUnaryMethod_SetControlledPedestrians<WithStreamedUnaryMethod_SetControlledPedestriansActions<Service > > > > > > > > > > > > > > > > StreamedUnaryService;
+  typedef WithStreamedUnaryMethod_GetPerson<WithStreamedUnaryMethod_AddPerson<WithStreamedUnaryMethod_SetSchedule<WithStreamedUnaryMethod_GetPersons<WithStreamedUnaryMethod_GetPersonByLongLatBBox<WithStreamedUnaryMethod_GetAllVehicles<WithStreamedUnaryMethod_GetAllPedestrians<WithStreamedUnaryMethod_ResetPersonPosition<WithStreamedUnaryMethod_SetControlledVehicleIDs<WithStreamedUnaryMethod_FetchControlledVehicleEnvs<WithStreamedUnaryMethod_SetControlledVehicleActions<WithStreamedUnaryMethod_SetControlledTaxiIDs<WithStreamedUnaryMethod_GetAllOrders<WithStreamedUnaryMethod_SetControlledTaxiToOrders<WithStreamedUnaryMethod_SetControlledPedestrians<WithStreamedUnaryMethod_FetchControlledPedestriansEnvs<WithStreamedUnaryMethod_SetControlledPedestriansActions<Service > > > > > > > > > > > > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_GetPerson<WithStreamedUnaryMethod_AddPerson<WithStreamedUnaryMethod_SetSchedule<WithStreamedUnaryMethod_GetPersons<WithStreamedUnaryMethod_GetPersonByLongLatBBox<WithStreamedUnaryMethod_GetAllVehicles<WithStreamedUnaryMethod_GetAllPedestrians<WithStreamedUnaryMethod_ResetPersonPosition<WithStreamedUnaryMethod_SetControlledVehicleIDs<WithStreamedUnaryMethod_FetchControlledVehicleEnvs<WithStreamedUnaryMethod_SetControlledVehicleActions<WithStreamedUnaryMethod_SetControlledTaxiIDs<WithStreamedUnaryMethod_GetAllOrders<WithStreamedUnaryMethod_SetControlledTaxiToOrders<WithStreamedUnaryMethod_SetControlledPedestrians<WithStreamedUnaryMethod_SetControlledPedestriansActions<Service > > > > > > > > > > > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_GetPerson<WithStreamedUnaryMethod_AddPerson<WithStreamedUnaryMethod_SetSchedule<WithStreamedUnaryMethod_GetPersons<WithStreamedUnaryMethod_GetPersonByLongLatBBox<WithStreamedUnaryMethod_GetAllVehicles<WithStreamedUnaryMethod_GetAllPedestrians<WithStreamedUnaryMethod_ResetPersonPosition<WithStreamedUnaryMethod_SetControlledVehicleIDs<WithStreamedUnaryMethod_FetchControlledVehicleEnvs<WithStreamedUnaryMethod_SetControlledVehicleActions<WithStreamedUnaryMethod_SetControlledTaxiIDs<WithStreamedUnaryMethod_GetAllOrders<WithStreamedUnaryMethod_SetControlledTaxiToOrders<WithStreamedUnaryMethod_SetControlledPedestrians<WithStreamedUnaryMethod_FetchControlledPedestriansEnvs<WithStreamedUnaryMethod_SetControlledPedestriansActions<Service > > > > > > > > > > > > > > > > > StreamedService;
 };
 
 }  // namespace v2

@@ -4,6 +4,25 @@
 // @ts-nocheck
 
 import { proto3 } from "@bufbuild/protobuf";
+import { PersonMotion } from "./motion_pb.js";
+import { Journey } from "../../routing/v2/routing_pb.js";
+
+/**
+ * 行人环境
+ * Pedestrian environment
+ *
+ * @generated from message city.person.v2.PedestrianEnv
+ */
+export const PedestrianEnv = /*@__PURE__*/ proto3.makeMessageType(
+  "city.person.v2.PedestrianEnv",
+  () => [
+    { no: 1, name: "id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "motion", kind: "message", T: PersonMotion },
+    { no: 3, name: "journey", kind: "message", T: Journey },
+    { no: 4, name: "is_current_lane_no_entry", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 5, name: "is_next_lane_no_entry", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ],
+);
 
 /**
  * 行人行为

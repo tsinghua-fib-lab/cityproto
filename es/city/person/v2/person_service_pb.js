@@ -11,7 +11,7 @@ import { Status } from "./motion_pb.js";
 import { LongLatBBox, Position } from "../../geo/v2/geo_pb.js";
 import { VehicleAction, VehicleEnv, VehicleRouteAction, VehicleRuntime } from "./vehicle_pb.js";
 import { OrderAllocationPlan, RequestOrderInfo } from "./taxi_pb.js";
-import { PedestrianAction } from "./pedestrian_pb.js";
+import { PedestrianAction, PedestrianEnv } from "./pedestrian_pb.js";
 
 /**
  * 获取person信息请求
@@ -388,6 +388,30 @@ export const SetControlledPedestriansRequest = /*@__PURE__*/ proto3.makeMessageT
 export const SetControlledPedestriansResponse = /*@__PURE__*/ proto3.makeMessageType(
   "city.person.v2.SetControlledPedestriansResponse",
   [],
+);
+
+/**
+ * 获取由外部控制的行人信息请求
+ * Request for getting information of pedestrian controlled by external behavior
+ *
+ * @generated from message city.person.v2.FetchControlledPedestriansEnvsRequest
+ */
+export const FetchControlledPedestriansEnvsRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.person.v2.FetchControlledPedestriansEnvsRequest",
+  [],
+);
+
+/**
+ * 获取由外部控制的行人信息响应
+ * Response of getting information of pedestrian controlled by external behavior
+ *
+ * @generated from message city.person.v2.FetchControlledPedestriansEnvsResponse
+ */
+export const FetchControlledPedestriansEnvsResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.person.v2.FetchControlledPedestriansEnvsResponse",
+  () => [
+    { no: 1, name: "pedestrian_envs", kind: "message", T: PedestrianEnv, repeated: true },
+  ],
 );
 
 /**
