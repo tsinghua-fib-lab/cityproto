@@ -29,21 +29,23 @@ ALLOCATION_PLAN_TYPE_PICK_UP: AllocationPlanType
 ALLOCATION_PLAN_TYPE_DELIVER: AllocationPlanType
 
 class RequestOrderInfo(_message.Message):
-    __slots__ = ['person_id', 'request_time', 'order_id', 'departure', 'destination', 'status']
+    __slots__ = ['person_id', 'request_time', 'order_id', 'departure', 'destination', 'status', 'departure_time']
     PERSON_ID_FIELD_NUMBER: _ClassVar[int]
     REQUEST_TIME_FIELD_NUMBER: _ClassVar[int]
     ORDER_ID_FIELD_NUMBER: _ClassVar[int]
     DEPARTURE_FIELD_NUMBER: _ClassVar[int]
     DESTINATION_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
+    DEPARTURE_TIME_FIELD_NUMBER: _ClassVar[int]
     person_id: int
     request_time: float
     order_id: int
     departure: _geo_pb2.Position
     destination: _geo_pb2.Position
     status: OrderStatus
+    departure_time: float
 
-    def __init__(self, person_id: _Optional[int]=..., request_time: _Optional[float]=..., order_id: _Optional[int]=..., departure: _Optional[_Union[_geo_pb2.Position, _Mapping]]=..., destination: _Optional[_Union[_geo_pb2.Position, _Mapping]]=..., status: _Optional[_Union[OrderStatus, str]]=...) -> None:
+    def __init__(self, person_id: _Optional[int]=..., request_time: _Optional[float]=..., order_id: _Optional[int]=..., departure: _Optional[_Union[_geo_pb2.Position, _Mapping]]=..., destination: _Optional[_Union[_geo_pb2.Position, _Mapping]]=..., status: _Optional[_Union[OrderStatus, str]]=..., departure_time: _Optional[float]=...) -> None:
         ...
 
 class OrderAllocationPlan(_message.Message):
@@ -60,4 +62,12 @@ class OrderAllocationPlan(_message.Message):
     deliver_person_ids: _containers.RepeatedScalarFieldContainer[int]
 
     def __init__(self, order_ids: _Optional[_Iterable[int]]=..., taxi_id: _Optional[int]=..., type: _Optional[_Union[AllocationPlanType, str]]=..., pick_up_person_ids: _Optional[_Iterable[int]]=..., deliver_person_ids: _Optional[_Iterable[int]]=...) -> None:
+        ...
+
+class OrderAllocations(_message.Message):
+    __slots__ = ['order_allocations']
+    ORDER_ALLOCATIONS_FIELD_NUMBER: _ClassVar[int]
+    order_allocations: _containers.RepeatedCompositeFieldContainer[OrderAllocationPlan]
+
+    def __init__(self, order_allocations: _Optional[_Iterable[_Union[OrderAllocationPlan, _Mapping]]]=...) -> None:
         ...

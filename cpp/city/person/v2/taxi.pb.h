@@ -52,6 +52,9 @@ namespace v2 {
 class OrderAllocationPlan;
 struct OrderAllocationPlanDefaultTypeInternal;
 extern OrderAllocationPlanDefaultTypeInternal _OrderAllocationPlan_default_instance_;
+class OrderAllocations;
+struct OrderAllocationsDefaultTypeInternal;
+extern OrderAllocationsDefaultTypeInternal _OrderAllocations_default_instance_;
 class RequestOrderInfo;
 struct RequestOrderInfoDefaultTypeInternal;
 extern RequestOrderInfoDefaultTypeInternal _RequestOrderInfo_default_instance_;
@@ -60,6 +63,7 @@ extern RequestOrderInfoDefaultTypeInternal _RequestOrderInfo_default_instance_;
 }  // namespace city
 PROTOBUF_NAMESPACE_OPEN
 template<> ::city::person::v2::OrderAllocationPlan* Arena::CreateMaybeMessage<::city::person::v2::OrderAllocationPlan>(Arena*);
+template<> ::city::person::v2::OrderAllocations* Arena::CreateMaybeMessage<::city::person::v2::OrderAllocations>(Arena*);
 template<> ::city::person::v2::RequestOrderInfo* Arena::CreateMaybeMessage<::city::person::v2::RequestOrderInfo>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace city {
@@ -248,6 +252,7 @@ class RequestOrderInfo final :
     kRequestTimeFieldNumber = 2,
     kPersonIdFieldNumber = 1,
     kOrderIdFieldNumber = 3,
+    kDepartureTimeFieldNumber = 7,
     kStatusFieldNumber = 6,
   };
   // .city.geo.v2.Position departure = 4 [json_name = "departure"];
@@ -313,6 +318,15 @@ class RequestOrderInfo final :
   void _internal_set_order_id(int32_t value);
   public:
 
+  // double departure_time = 7 [json_name = "departureTime"];
+  void clear_departure_time();
+  double departure_time() const;
+  void set_departure_time(double value);
+  private:
+  double _internal_departure_time() const;
+  void _internal_set_departure_time(double value);
+  public:
+
   // .city.person.v2.OrderStatus status = 6 [json_name = "status"];
   void clear_status();
   ::city::person::v2::OrderStatus status() const;
@@ -335,6 +349,7 @@ class RequestOrderInfo final :
     double request_time_;
     int32_t person_id_;
     int32_t order_id_;
+    double departure_time_;
     int status_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
@@ -570,6 +585,163 @@ class OrderAllocationPlan final :
     mutable std::atomic<int> _deliver_person_ids_cached_byte_size_;
     int32_t taxi_id_;
     int type_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_city_2fperson_2fv2_2ftaxi_2eproto;
+};
+// -------------------------------------------------------------------
+
+class OrderAllocations final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.person.v2.OrderAllocations) */ {
+ public:
+  inline OrderAllocations() : OrderAllocations(nullptr) {}
+  ~OrderAllocations() override;
+  explicit PROTOBUF_CONSTEXPR OrderAllocations(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  OrderAllocations(const OrderAllocations& from);
+  OrderAllocations(OrderAllocations&& from) noexcept
+    : OrderAllocations() {
+    *this = ::std::move(from);
+  }
+
+  inline OrderAllocations& operator=(const OrderAllocations& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline OrderAllocations& operator=(OrderAllocations&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const OrderAllocations& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const OrderAllocations* internal_default_instance() {
+    return reinterpret_cast<const OrderAllocations*>(
+               &_OrderAllocations_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    2;
+
+  friend void swap(OrderAllocations& a, OrderAllocations& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(OrderAllocations* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(OrderAllocations* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  OrderAllocations* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<OrderAllocations>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const OrderAllocations& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const OrderAllocations& from) {
+    OrderAllocations::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(OrderAllocations* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "city.person.v2.OrderAllocations";
+  }
+  protected:
+  explicit OrderAllocations(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kOrderAllocationsFieldNumber = 1,
+  };
+  // repeated .city.person.v2.OrderAllocationPlan order_allocations = 1 [json_name = "orderAllocations"];
+  int order_allocations_size() const;
+  private:
+  int _internal_order_allocations_size() const;
+  public:
+  void clear_order_allocations();
+  ::city::person::v2::OrderAllocationPlan* mutable_order_allocations(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::OrderAllocationPlan >*
+      mutable_order_allocations();
+  private:
+  const ::city::person::v2::OrderAllocationPlan& _internal_order_allocations(int index) const;
+  ::city::person::v2::OrderAllocationPlan* _internal_add_order_allocations();
+  public:
+  const ::city::person::v2::OrderAllocationPlan& order_allocations(int index) const;
+  ::city::person::v2::OrderAllocationPlan* add_order_allocations();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::OrderAllocationPlan >&
+      order_allocations() const;
+
+  // @@protoc_insertion_point(class_scope:city.person.v2.OrderAllocations)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::OrderAllocationPlan > order_allocations_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -836,6 +1008,26 @@ inline void RequestOrderInfo::set_status(::city::person::v2::OrderStatus value) 
   // @@protoc_insertion_point(field_set:city.person.v2.RequestOrderInfo.status)
 }
 
+// double departure_time = 7 [json_name = "departureTime"];
+inline void RequestOrderInfo::clear_departure_time() {
+  _impl_.departure_time_ = 0;
+}
+inline double RequestOrderInfo::_internal_departure_time() const {
+  return _impl_.departure_time_;
+}
+inline double RequestOrderInfo::departure_time() const {
+  // @@protoc_insertion_point(field_get:city.person.v2.RequestOrderInfo.departure_time)
+  return _internal_departure_time();
+}
+inline void RequestOrderInfo::_internal_set_departure_time(double value) {
+  
+  _impl_.departure_time_ = value;
+}
+inline void RequestOrderInfo::set_departure_time(double value) {
+  _internal_set_departure_time(value);
+  // @@protoc_insertion_point(field_set:city.person.v2.RequestOrderInfo.departure_time)
+}
+
 // -------------------------------------------------------------------
 
 // OrderAllocationPlan
@@ -1021,9 +1213,55 @@ OrderAllocationPlan::mutable_deliver_person_ids() {
   return _internal_mutable_deliver_person_ids();
 }
 
+// -------------------------------------------------------------------
+
+// OrderAllocations
+
+// repeated .city.person.v2.OrderAllocationPlan order_allocations = 1 [json_name = "orderAllocations"];
+inline int OrderAllocations::_internal_order_allocations_size() const {
+  return _impl_.order_allocations_.size();
+}
+inline int OrderAllocations::order_allocations_size() const {
+  return _internal_order_allocations_size();
+}
+inline void OrderAllocations::clear_order_allocations() {
+  _impl_.order_allocations_.Clear();
+}
+inline ::city::person::v2::OrderAllocationPlan* OrderAllocations::mutable_order_allocations(int index) {
+  // @@protoc_insertion_point(field_mutable:city.person.v2.OrderAllocations.order_allocations)
+  return _impl_.order_allocations_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::OrderAllocationPlan >*
+OrderAllocations::mutable_order_allocations() {
+  // @@protoc_insertion_point(field_mutable_list:city.person.v2.OrderAllocations.order_allocations)
+  return &_impl_.order_allocations_;
+}
+inline const ::city::person::v2::OrderAllocationPlan& OrderAllocations::_internal_order_allocations(int index) const {
+  return _impl_.order_allocations_.Get(index);
+}
+inline const ::city::person::v2::OrderAllocationPlan& OrderAllocations::order_allocations(int index) const {
+  // @@protoc_insertion_point(field_get:city.person.v2.OrderAllocations.order_allocations)
+  return _internal_order_allocations(index);
+}
+inline ::city::person::v2::OrderAllocationPlan* OrderAllocations::_internal_add_order_allocations() {
+  return _impl_.order_allocations_.Add();
+}
+inline ::city::person::v2::OrderAllocationPlan* OrderAllocations::add_order_allocations() {
+  ::city::person::v2::OrderAllocationPlan* _add = _internal_add_order_allocations();
+  // @@protoc_insertion_point(field_add:city.person.v2.OrderAllocations.order_allocations)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::OrderAllocationPlan >&
+OrderAllocations::order_allocations() const {
+  // @@protoc_insertion_point(field_list:city.person.v2.OrderAllocations.order_allocations)
+  return _impl_.order_allocations_;
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 

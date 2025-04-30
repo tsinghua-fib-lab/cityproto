@@ -275,3 +275,51 @@ class SetControlledPedestriansActionsResponse(_message.Message):
 
     def __init__(self) -> None:
         ...
+
+class GetControlledTaxiOrderAllocationPlanRequest(_message.Message):
+    __slots__ = []
+
+    def __init__(self) -> None:
+        ...
+
+class GetControlledTaxiOrderAllocationPlanResponse(_message.Message):
+    __slots__ = ['order_allocations_map']
+
+    class OrderAllocationsMapEntry(_message.Message):
+        __slots__ = ['key', 'value']
+        KEY_FIELD_NUMBER: _ClassVar[int]
+        VALUE_FIELD_NUMBER: _ClassVar[int]
+        key: int
+        value: _taxi_pb2.OrderAllocations
+
+        def __init__(self, key: _Optional[int]=..., value: _Optional[_Union[_taxi_pb2.OrderAllocations, _Mapping]]=...) -> None:
+            ...
+    ORDER_ALLOCATIONS_MAP_FIELD_NUMBER: _ClassVar[int]
+    order_allocations_map: _containers.MessageMap[int, _taxi_pb2.OrderAllocations]
+
+    def __init__(self, order_allocations_map: _Optional[_Mapping[int, _taxi_pb2.OrderAllocations]]=...) -> None:
+        ...
+
+class SetControlledTaxiOrderAllocationPlanRequest(_message.Message):
+    __slots__ = ['order_allocations_map']
+
+    class OrderAllocationsMapEntry(_message.Message):
+        __slots__ = ['key', 'value']
+        KEY_FIELD_NUMBER: _ClassVar[int]
+        VALUE_FIELD_NUMBER: _ClassVar[int]
+        key: int
+        value: _taxi_pb2.OrderAllocations
+
+        def __init__(self, key: _Optional[int]=..., value: _Optional[_Union[_taxi_pb2.OrderAllocations, _Mapping]]=...) -> None:
+            ...
+    ORDER_ALLOCATIONS_MAP_FIELD_NUMBER: _ClassVar[int]
+    order_allocations_map: _containers.MessageMap[int, _taxi_pb2.OrderAllocations]
+
+    def __init__(self, order_allocations_map: _Optional[_Mapping[int, _taxi_pb2.OrderAllocations]]=...) -> None:
+        ...
+
+class SetControlledTaxiOrderAllocationPlanResponse(_message.Message):
+    __slots__ = []
+
+    def __init__(self) -> None:
+        ...

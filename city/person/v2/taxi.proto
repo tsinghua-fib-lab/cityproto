@@ -42,6 +42,9 @@ message RequestOrderInfo {
   // 状态
   // status
   OrderStatus status = 6;
+  // 出发时间
+  // departure time
+  double departure_time = 7;
 }
 
 // 分配方案类型
@@ -76,4 +79,10 @@ message OrderAllocationPlan {
   // 待送的乘客ids，当type为ALLOCATION_PLAN_TYPE_DELIVER时有效，和pick_up_person_ids不同时有效
   // passenger ids to be delivered，valid when type is ALLOCATION_PLAN_TYPE_DELIVER, not valid when pick_up_person_ids is valid
   repeated int32 deliver_person_ids = 5;
+}
+
+message OrderAllocations {
+  // 订单分配方案
+  // order allocation plan
+  repeated OrderAllocationPlan order_allocations = 1;
 }

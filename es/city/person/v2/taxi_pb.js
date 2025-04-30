@@ -50,6 +50,7 @@ export const RequestOrderInfo = /*@__PURE__*/ proto3.makeMessageType(
     { no: 4, name: "departure", kind: "message", T: Position },
     { no: 5, name: "destination", kind: "message", T: Position },
     { no: 6, name: "status", kind: "enum", T: proto3.getEnumType(OrderStatus) },
+    { no: 7, name: "departure_time", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
   ],
 );
 
@@ -67,6 +68,16 @@ export const OrderAllocationPlan = /*@__PURE__*/ proto3.makeMessageType(
     { no: 3, name: "type", kind: "enum", T: proto3.getEnumType(AllocationPlanType) },
     { no: 4, name: "pick_up_person_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
     { no: 5, name: "deliver_person_ids", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message city.person.v2.OrderAllocations
+ */
+export const OrderAllocations = /*@__PURE__*/ proto3.makeMessageType(
+  "city.person.v2.OrderAllocations",
+  () => [
+    { no: 1, name: "order_allocations", kind: "message", T: OrderAllocationPlan, repeated: true },
   ],
 );
 

@@ -11,7 +11,7 @@ import type { Schedule } from "../../trip/v2/trip_pb.js";
 import type { Status } from "./motion_pb.js";
 import type { LongLatBBox, Position } from "../../geo/v2/geo_pb.js";
 import type { VehicleAction, VehicleEnv, VehicleRouteAction, VehicleRuntime } from "./vehicle_pb.js";
-import type { OrderAllocationPlan, RequestOrderInfo } from "./taxi_pb.js";
+import type { OrderAllocationPlan, OrderAllocations, RequestOrderInfo } from "./taxi_pb.js";
 import type { PedestrianAction, PedestrianEnv } from "./pedestrian_pb.js";
 
 /**
@@ -999,5 +999,109 @@ export declare class SetControlledPedestriansActionsResponse extends Message<Set
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetControlledPedestriansActionsResponse;
 
   static equals(a: SetControlledPedestriansActionsResponse | PlainMessage<SetControlledPedestriansActionsResponse> | undefined, b: SetControlledPedestriansActionsResponse | PlainMessage<SetControlledPedestriansActionsResponse> | undefined): boolean;
+}
+
+/**
+ * 获取当前所有受控出租车的订单分配方案请求
+ * Request for getting current order allocation plan for all controlled taxis
+ *
+ * @generated from message city.person.v2.GetControlledTaxiOrderAllocationPlanRequest
+ */
+export declare class GetControlledTaxiOrderAllocationPlanRequest extends Message<GetControlledTaxiOrderAllocationPlanRequest> {
+  constructor(data?: PartialMessage<GetControlledTaxiOrderAllocationPlanRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.person.v2.GetControlledTaxiOrderAllocationPlanRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetControlledTaxiOrderAllocationPlanRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetControlledTaxiOrderAllocationPlanRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetControlledTaxiOrderAllocationPlanRequest;
+
+  static equals(a: GetControlledTaxiOrderAllocationPlanRequest | PlainMessage<GetControlledTaxiOrderAllocationPlanRequest> | undefined, b: GetControlledTaxiOrderAllocationPlanRequest | PlainMessage<GetControlledTaxiOrderAllocationPlanRequest> | undefined): boolean;
+}
+
+/**
+ * 获取当前所有受控出租车的订单分配方案响应
+ * Response of getting current order allocation plan for all controlled taxis
+ *
+ * @generated from message city.person.v2.GetControlledTaxiOrderAllocationPlanResponse
+ */
+export declare class GetControlledTaxiOrderAllocationPlanResponse extends Message<GetControlledTaxiOrderAllocationPlanResponse> {
+  /**
+   * 当前所有受控出租车的订单分配方案
+   * Current order allocation plan for all controlled taxis
+   *
+   * @generated from field: map<int32, city.person.v2.OrderAllocations> order_allocations_map = 1;
+   */
+  orderAllocationsMap: { [key: number]: OrderAllocations };
+
+  constructor(data?: PartialMessage<GetControlledTaxiOrderAllocationPlanResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.person.v2.GetControlledTaxiOrderAllocationPlanResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetControlledTaxiOrderAllocationPlanResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetControlledTaxiOrderAllocationPlanResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetControlledTaxiOrderAllocationPlanResponse;
+
+  static equals(a: GetControlledTaxiOrderAllocationPlanResponse | PlainMessage<GetControlledTaxiOrderAllocationPlanResponse> | undefined, b: GetControlledTaxiOrderAllocationPlanResponse | PlainMessage<GetControlledTaxiOrderAllocationPlanResponse> | undefined): boolean;
+}
+
+/**
+ * 设置当前所有受控出租车的订单分配方案请求
+ * Request for setting current order allocation plan for all controlled taxis
+ *
+ * @generated from message city.person.v2.SetControlledTaxiOrderAllocationPlanRequest
+ */
+export declare class SetControlledTaxiOrderAllocationPlanRequest extends Message<SetControlledTaxiOrderAllocationPlanRequest> {
+  /**
+   * 当前所有受控出租车的订单分配方案
+   * Current order allocation plan for all controlled taxis
+   *
+   * @generated from field: map<int32, city.person.v2.OrderAllocations> order_allocations_map = 1;
+   */
+  orderAllocationsMap: { [key: number]: OrderAllocations };
+
+  constructor(data?: PartialMessage<SetControlledTaxiOrderAllocationPlanRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.person.v2.SetControlledTaxiOrderAllocationPlanRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetControlledTaxiOrderAllocationPlanRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetControlledTaxiOrderAllocationPlanRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetControlledTaxiOrderAllocationPlanRequest;
+
+  static equals(a: SetControlledTaxiOrderAllocationPlanRequest | PlainMessage<SetControlledTaxiOrderAllocationPlanRequest> | undefined, b: SetControlledTaxiOrderAllocationPlanRequest | PlainMessage<SetControlledTaxiOrderAllocationPlanRequest> | undefined): boolean;
+}
+
+/**
+ * 设置当前所有受控出租车的订单分配方案响应
+ * Response of setting current order allocation plan for all controlled taxis
+ *
+ * @generated from message city.person.v2.SetControlledTaxiOrderAllocationPlanResponse
+ */
+export declare class SetControlledTaxiOrderAllocationPlanResponse extends Message<SetControlledTaxiOrderAllocationPlanResponse> {
+  constructor(data?: PartialMessage<SetControlledTaxiOrderAllocationPlanResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.person.v2.SetControlledTaxiOrderAllocationPlanResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetControlledTaxiOrderAllocationPlanResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetControlledTaxiOrderAllocationPlanResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetControlledTaxiOrderAllocationPlanResponse;
+
+  static equals(a: SetControlledTaxiOrderAllocationPlanResponse | PlainMessage<SetControlledTaxiOrderAllocationPlanResponse> | undefined, b: SetControlledTaxiOrderAllocationPlanResponse | PlainMessage<SetControlledTaxiOrderAllocationPlanResponse> | undefined): boolean;
 }
 

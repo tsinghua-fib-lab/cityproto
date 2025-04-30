@@ -10,7 +10,7 @@ import { Schedule } from "../../trip/v2/trip_pb.js";
 import { Status } from "./motion_pb.js";
 import { LongLatBBox, Position } from "../../geo/v2/geo_pb.js";
 import { VehicleAction, VehicleEnv, VehicleRouteAction, VehicleRuntime } from "./vehicle_pb.js";
-import { OrderAllocationPlan, RequestOrderInfo } from "./taxi_pb.js";
+import { OrderAllocationPlan, OrderAllocations, RequestOrderInfo } from "./taxi_pb.js";
 import { PedestrianAction, PedestrianEnv } from "./pedestrian_pb.js";
 
 /**
@@ -435,6 +435,54 @@ export const SetControlledPedestriansActionsRequest = /*@__PURE__*/ proto3.makeM
  */
 export const SetControlledPedestriansActionsResponse = /*@__PURE__*/ proto3.makeMessageType(
   "city.person.v2.SetControlledPedestriansActionsResponse",
+  [],
+);
+
+/**
+ * 获取当前所有受控出租车的订单分配方案请求
+ * Request for getting current order allocation plan for all controlled taxis
+ *
+ * @generated from message city.person.v2.GetControlledTaxiOrderAllocationPlanRequest
+ */
+export const GetControlledTaxiOrderAllocationPlanRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.person.v2.GetControlledTaxiOrderAllocationPlanRequest",
+  [],
+);
+
+/**
+ * 获取当前所有受控出租车的订单分配方案响应
+ * Response of getting current order allocation plan for all controlled taxis
+ *
+ * @generated from message city.person.v2.GetControlledTaxiOrderAllocationPlanResponse
+ */
+export const GetControlledTaxiOrderAllocationPlanResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.person.v2.GetControlledTaxiOrderAllocationPlanResponse",
+  () => [
+    { no: 1, name: "order_allocations_map", kind: "map", K: 5 /* ScalarType.INT32 */, V: {kind: "message", T: OrderAllocations} },
+  ],
+);
+
+/**
+ * 设置当前所有受控出租车的订单分配方案请求
+ * Request for setting current order allocation plan for all controlled taxis
+ *
+ * @generated from message city.person.v2.SetControlledTaxiOrderAllocationPlanRequest
+ */
+export const SetControlledTaxiOrderAllocationPlanRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "city.person.v2.SetControlledTaxiOrderAllocationPlanRequest",
+  () => [
+    { no: 1, name: "order_allocations_map", kind: "map", K: 5 /* ScalarType.INT32 */, V: {kind: "message", T: OrderAllocations} },
+  ],
+);
+
+/**
+ * 设置当前所有受控出租车的订单分配方案响应
+ * Response of setting current order allocation plan for all controlled taxis
+ *
+ * @generated from message city.person.v2.SetControlledTaxiOrderAllocationPlanResponse
+ */
+export const SetControlledTaxiOrderAllocationPlanResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "city.person.v2.SetControlledTaxiOrderAllocationPlanResponse",
   [],
 );
 

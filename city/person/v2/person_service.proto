@@ -71,6 +71,12 @@ service PersonService {
   // 设置由外部控制的行人行为
   // Set behavior of pedestrian controlled by external behavior
   rpc SetControlledPedestriansActions(SetControlledPedestriansActionsRequest) returns (SetControlledPedestriansActionsResponse);
+  // 获取当前所有受控出租车的订单分配方案
+  // Get current order allocation plan for all controlled taxis
+  rpc GetControlledTaxiOrderAllocationPlan(GetControlledTaxiOrderAllocationPlanRequest) returns (GetControlledTaxiOrderAllocationPlanResponse);
+  // 设置当前所有受控出租车的订单分配方案
+  // Set current order allocation plan for all controlled taxis
+  rpc SetControlledTaxiOrderAllocationPlan(SetControlledTaxiOrderAllocationPlanRequest) returns (SetControlledTaxiOrderAllocationPlanResponse);
 }
 
 // 获取person信息请求
@@ -319,3 +325,27 @@ message SetControlledPedestriansActionsRequest {
 // 设置由外部控制的行人行为响应
 // Response of setting behavior of pedestrian controlled by external behavior
 message SetControlledPedestriansActionsResponse {}
+
+// 获取当前所有受控出租车的订单分配方案请求
+// Request for getting current order allocation plan for all controlled taxis
+message GetControlledTaxiOrderAllocationPlanRequest {}
+
+// 获取当前所有受控出租车的订单分配方案响应
+// Response of getting current order allocation plan for all controlled taxis
+message GetControlledTaxiOrderAllocationPlanResponse {
+  // 当前所有受控出租车的订单分配方案
+  // Current order allocation plan for all controlled taxis
+  map<int32, OrderAllocations> order_allocations_map = 1;
+}
+
+// 设置当前所有受控出租车的订单分配方案请求
+// Request for setting current order allocation plan for all controlled taxis
+message SetControlledTaxiOrderAllocationPlanRequest {
+  // 当前所有受控出租车的订单分配方案
+  // Current order allocation plan for all controlled taxis
+  map<int32, OrderAllocations> order_allocations_map = 1;
+}
+
+// 设置当前所有受控出租车的订单分配方案响应
+// Response of setting current order allocation plan for all controlled taxis
+message SetControlledTaxiOrderAllocationPlanResponse {}

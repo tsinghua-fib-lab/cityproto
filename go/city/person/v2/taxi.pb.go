@@ -165,7 +165,10 @@ type RequestOrderInfo struct {
 	Destination *v2.Position `protobuf:"bytes,5,opt,name=destination,proto3" json:"destination,omitempty" bson:"destination" db:"destination" yaml:"destination"`
 	// 状态
 	// status
-	Status        OrderStatus `protobuf:"varint,6,opt,name=status,proto3,enum=city.person.v2.OrderStatus" json:"status,omitempty" bson:"status" db:"status" yaml:"status"`
+	Status OrderStatus `protobuf:"varint,6,opt,name=status,proto3,enum=city.person.v2.OrderStatus" json:"status,omitempty" bson:"status" db:"status" yaml:"status"`
+	// 出发时间
+	// departure time
+	DepartureTime float64 `protobuf:"fixed64,7,opt,name=departure_time,json=departureTime,proto3" json:"departure_time,omitempty" bson:"departure_time" db:"departure_time" yaml:"departure_time"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -240,6 +243,13 @@ func (x *RequestOrderInfo) GetStatus() OrderStatus {
 		return x.Status
 	}
 	return OrderStatus_ORDER_STATUS_UNSPECIFIED
+}
+
+func (x *RequestOrderInfo) GetDepartureTime() float64 {
+	if x != nil {
+		return x.DepartureTime
+	}
+	return 0
 }
 
 // 受外部控制的出租车接受的订单分配方案
@@ -330,24 +340,73 @@ func (x *OrderAllocationPlan) GetDeliverPersonIds() []int32 {
 	return nil
 }
 
+type OrderAllocations struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// 订单分配方案
+	// order allocation plan
+	OrderAllocations []*OrderAllocationPlan `protobuf:"bytes,1,rep,name=order_allocations,json=orderAllocations,proto3" json:"order_allocations,omitempty" bson:"order_allocations" db:"order_allocations" yaml:"order_allocations"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
+}
+
+func (x *OrderAllocations) Reset() {
+	*x = OrderAllocations{}
+	mi := &file_city_person_v2_taxi_proto_msgTypes[2]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *OrderAllocations) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*OrderAllocations) ProtoMessage() {}
+
+func (x *OrderAllocations) ProtoReflect() protoreflect.Message {
+	mi := &file_city_person_v2_taxi_proto_msgTypes[2]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use OrderAllocations.ProtoReflect.Descriptor instead.
+func (*OrderAllocations) Descriptor() ([]byte, []int) {
+	return file_city_person_v2_taxi_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *OrderAllocations) GetOrderAllocations() []*OrderAllocationPlan {
+	if x != nil {
+		return x.OrderAllocations
+	}
+	return nil
+}
+
 var File_city_person_v2_taxi_proto protoreflect.FileDescriptor
 
 const file_city_person_v2_taxi_proto_rawDesc = "" +
 	"\n" +
-	"\x19city/person/v2/taxi.proto\x12\x0ecity.person.v2\x1a\x15city/geo/v2/geo.proto\"\x90\x02\n" +
+	"\x19city/person/v2/taxi.proto\x12\x0ecity.person.v2\x1a\x15city/geo/v2/geo.proto\"\xb7\x02\n" +
 	"\x10RequestOrderInfo\x12\x1b\n" +
 	"\tperson_id\x18\x01 \x01(\x05R\bpersonId\x12!\n" +
 	"\frequest_time\x18\x02 \x01(\x01R\vrequestTime\x12\x19\n" +
 	"\border_id\x18\x03 \x01(\x05R\aorderId\x123\n" +
 	"\tdeparture\x18\x04 \x01(\v2\x15.city.geo.v2.PositionR\tdeparture\x127\n" +
 	"\vdestination\x18\x05 \x01(\v2\x15.city.geo.v2.PositionR\vdestination\x123\n" +
-	"\x06status\x18\x06 \x01(\x0e2\x1b.city.person.v2.OrderStatusR\x06status\"\xde\x01\n" +
+	"\x06status\x18\x06 \x01(\x0e2\x1b.city.person.v2.OrderStatusR\x06status\x12%\n" +
+	"\x0edeparture_time\x18\a \x01(\x01R\rdepartureTime\"\xde\x01\n" +
 	"\x13OrderAllocationPlan\x12\x1b\n" +
 	"\torder_ids\x18\x01 \x03(\x05R\borderIds\x12\x17\n" +
 	"\ataxi_id\x18\x02 \x01(\x05R\x06taxiId\x126\n" +
 	"\x04type\x18\x03 \x01(\x0e2\".city.person.v2.AllocationPlanTypeR\x04type\x12+\n" +
 	"\x12pick_up_person_ids\x18\x04 \x03(\x05R\x0fpickUpPersonIds\x12,\n" +
-	"\x12deliver_person_ids\x18\x05 \x03(\x05R\x10deliverPersonIds*\x9b\x01\n" +
+	"\x12deliver_person_ids\x18\x05 \x03(\x05R\x10deliverPersonIds\"d\n" +
+	"\x10OrderAllocations\x12P\n" +
+	"\x11order_allocations\x18\x01 \x03(\v2#.city.person.v2.OrderAllocationPlanR\x10orderAllocations*\x9b\x01\n" +
 	"\vOrderStatus\x12\x1c\n" +
 	"\x18ORDER_STATUS_UNSPECIFIED\x10\x00\x12\x18\n" +
 	"\x14ORDER_STATUS_WAITING\x10\x01\x12\x1b\n" +
@@ -373,24 +432,26 @@ func file_city_person_v2_taxi_proto_rawDescGZIP() []byte {
 }
 
 var file_city_person_v2_taxi_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
-var file_city_person_v2_taxi_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_city_person_v2_taxi_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
 var file_city_person_v2_taxi_proto_goTypes = []any{
 	(OrderStatus)(0),            // 0: city.person.v2.OrderStatus
 	(AllocationPlanType)(0),     // 1: city.person.v2.AllocationPlanType
 	(*RequestOrderInfo)(nil),    // 2: city.person.v2.RequestOrderInfo
 	(*OrderAllocationPlan)(nil), // 3: city.person.v2.OrderAllocationPlan
-	(*v2.Position)(nil),         // 4: city.geo.v2.Position
+	(*OrderAllocations)(nil),    // 4: city.person.v2.OrderAllocations
+	(*v2.Position)(nil),         // 5: city.geo.v2.Position
 }
 var file_city_person_v2_taxi_proto_depIdxs = []int32{
-	4, // 0: city.person.v2.RequestOrderInfo.departure:type_name -> city.geo.v2.Position
-	4, // 1: city.person.v2.RequestOrderInfo.destination:type_name -> city.geo.v2.Position
+	5, // 0: city.person.v2.RequestOrderInfo.departure:type_name -> city.geo.v2.Position
+	5, // 1: city.person.v2.RequestOrderInfo.destination:type_name -> city.geo.v2.Position
 	0, // 2: city.person.v2.RequestOrderInfo.status:type_name -> city.person.v2.OrderStatus
 	1, // 3: city.person.v2.OrderAllocationPlan.type:type_name -> city.person.v2.AllocationPlanType
-	4, // [4:4] is the sub-list for method output_type
-	4, // [4:4] is the sub-list for method input_type
-	4, // [4:4] is the sub-list for extension type_name
-	4, // [4:4] is the sub-list for extension extendee
-	0, // [0:4] is the sub-list for field type_name
+	3, // 4: city.person.v2.OrderAllocations.order_allocations:type_name -> city.person.v2.OrderAllocationPlan
+	5, // [5:5] is the sub-list for method output_type
+	5, // [5:5] is the sub-list for method input_type
+	5, // [5:5] is the sub-list for extension type_name
+	5, // [5:5] is the sub-list for extension extendee
+	0, // [0:5] is the sub-list for field type_name
 }
 
 func init() { file_city_person_v2_taxi_proto_init() }
@@ -404,7 +465,7 @@ func file_city_person_v2_taxi_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_city_person_v2_taxi_proto_rawDesc), len(file_city_person_v2_taxi_proto_rawDesc)),
 			NumEnums:      2,
-			NumMessages:   2,
+			NumMessages:   3,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

@@ -41,6 +41,8 @@ static const char* PersonService_method_names[] = {
   "/city.person.v2.PersonService/SetControlledPedestrians",
   "/city.person.v2.PersonService/FetchControlledPedestriansEnvs",
   "/city.person.v2.PersonService/SetControlledPedestriansActions",
+  "/city.person.v2.PersonService/GetControlledTaxiOrderAllocationPlan",
+  "/city.person.v2.PersonService/SetControlledTaxiOrderAllocationPlan",
 };
 
 std::unique_ptr< PersonService::Stub> PersonService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -67,6 +69,8 @@ PersonService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& chan
   , rpcmethod_SetControlledPedestrians_(PersonService_method_names[14], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_FetchControlledPedestriansEnvs_(PersonService_method_names[15], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_SetControlledPedestriansActions_(PersonService_method_names[16], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetControlledTaxiOrderAllocationPlan_(PersonService_method_names[17], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_SetControlledTaxiOrderAllocationPlan_(PersonService_method_names[18], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status PersonService::Stub::GetPerson(::grpc::ClientContext* context, const ::city::person::v2::GetPersonRequest& request, ::city::person::v2::GetPersonResponse* response) {
@@ -460,6 +464,52 @@ void PersonService::Stub::async::SetControlledPedestriansActions(::grpc::ClientC
   return result;
 }
 
+::grpc::Status PersonService::Stub::GetControlledTaxiOrderAllocationPlan(::grpc::ClientContext* context, const ::city::person::v2::GetControlledTaxiOrderAllocationPlanRequest& request, ::city::person::v2::GetControlledTaxiOrderAllocationPlanResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::city::person::v2::GetControlledTaxiOrderAllocationPlanRequest, ::city::person::v2::GetControlledTaxiOrderAllocationPlanResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetControlledTaxiOrderAllocationPlan_, context, request, response);
+}
+
+void PersonService::Stub::async::GetControlledTaxiOrderAllocationPlan(::grpc::ClientContext* context, const ::city::person::v2::GetControlledTaxiOrderAllocationPlanRequest* request, ::city::person::v2::GetControlledTaxiOrderAllocationPlanResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::city::person::v2::GetControlledTaxiOrderAllocationPlanRequest, ::city::person::v2::GetControlledTaxiOrderAllocationPlanResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetControlledTaxiOrderAllocationPlan_, context, request, response, std::move(f));
+}
+
+void PersonService::Stub::async::GetControlledTaxiOrderAllocationPlan(::grpc::ClientContext* context, const ::city::person::v2::GetControlledTaxiOrderAllocationPlanRequest* request, ::city::person::v2::GetControlledTaxiOrderAllocationPlanResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetControlledTaxiOrderAllocationPlan_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::city::person::v2::GetControlledTaxiOrderAllocationPlanResponse>* PersonService::Stub::PrepareAsyncGetControlledTaxiOrderAllocationPlanRaw(::grpc::ClientContext* context, const ::city::person::v2::GetControlledTaxiOrderAllocationPlanRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::person::v2::GetControlledTaxiOrderAllocationPlanResponse, ::city::person::v2::GetControlledTaxiOrderAllocationPlanRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetControlledTaxiOrderAllocationPlan_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::city::person::v2::GetControlledTaxiOrderAllocationPlanResponse>* PersonService::Stub::AsyncGetControlledTaxiOrderAllocationPlanRaw(::grpc::ClientContext* context, const ::city::person::v2::GetControlledTaxiOrderAllocationPlanRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncGetControlledTaxiOrderAllocationPlanRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status PersonService::Stub::SetControlledTaxiOrderAllocationPlan(::grpc::ClientContext* context, const ::city::person::v2::SetControlledTaxiOrderAllocationPlanRequest& request, ::city::person::v2::SetControlledTaxiOrderAllocationPlanResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::city::person::v2::SetControlledTaxiOrderAllocationPlanRequest, ::city::person::v2::SetControlledTaxiOrderAllocationPlanResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_SetControlledTaxiOrderAllocationPlan_, context, request, response);
+}
+
+void PersonService::Stub::async::SetControlledTaxiOrderAllocationPlan(::grpc::ClientContext* context, const ::city::person::v2::SetControlledTaxiOrderAllocationPlanRequest* request, ::city::person::v2::SetControlledTaxiOrderAllocationPlanResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::city::person::v2::SetControlledTaxiOrderAllocationPlanRequest, ::city::person::v2::SetControlledTaxiOrderAllocationPlanResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SetControlledTaxiOrderAllocationPlan_, context, request, response, std::move(f));
+}
+
+void PersonService::Stub::async::SetControlledTaxiOrderAllocationPlan(::grpc::ClientContext* context, const ::city::person::v2::SetControlledTaxiOrderAllocationPlanRequest* request, ::city::person::v2::SetControlledTaxiOrderAllocationPlanResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_SetControlledTaxiOrderAllocationPlan_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::city::person::v2::SetControlledTaxiOrderAllocationPlanResponse>* PersonService::Stub::PrepareAsyncSetControlledTaxiOrderAllocationPlanRaw(::grpc::ClientContext* context, const ::city::person::v2::SetControlledTaxiOrderAllocationPlanRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::city::person::v2::SetControlledTaxiOrderAllocationPlanResponse, ::city::person::v2::SetControlledTaxiOrderAllocationPlanRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_SetControlledTaxiOrderAllocationPlan_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::city::person::v2::SetControlledTaxiOrderAllocationPlanResponse>* PersonService::Stub::AsyncSetControlledTaxiOrderAllocationPlanRaw(::grpc::ClientContext* context, const ::city::person::v2::SetControlledTaxiOrderAllocationPlanRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncSetControlledTaxiOrderAllocationPlanRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
 PersonService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       PersonService_method_names[0],
@@ -631,6 +681,26 @@ PersonService::Service::Service() {
              ::city::person::v2::SetControlledPedestriansActionsResponse* resp) {
                return service->SetControlledPedestriansActions(ctx, req, resp);
              }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      PersonService_method_names[17],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< PersonService::Service, ::city::person::v2::GetControlledTaxiOrderAllocationPlanRequest, ::city::person::v2::GetControlledTaxiOrderAllocationPlanResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](PersonService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::city::person::v2::GetControlledTaxiOrderAllocationPlanRequest* req,
+             ::city::person::v2::GetControlledTaxiOrderAllocationPlanResponse* resp) {
+               return service->GetControlledTaxiOrderAllocationPlan(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      PersonService_method_names[18],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< PersonService::Service, ::city::person::v2::SetControlledTaxiOrderAllocationPlanRequest, ::city::person::v2::SetControlledTaxiOrderAllocationPlanResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](PersonService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::city::person::v2::SetControlledTaxiOrderAllocationPlanRequest* req,
+             ::city::person::v2::SetControlledTaxiOrderAllocationPlanResponse* resp) {
+               return service->SetControlledTaxiOrderAllocationPlan(ctx, req, resp);
+             }, this)));
 }
 
 PersonService::Service::~Service() {
@@ -749,6 +819,20 @@ PersonService::Service::~Service() {
 }
 
 ::grpc::Status PersonService::Service::SetControlledPedestriansActions(::grpc::ServerContext* context, const ::city::person::v2::SetControlledPedestriansActionsRequest* request, ::city::person::v2::SetControlledPedestriansActionsResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status PersonService::Service::GetControlledTaxiOrderAllocationPlan(::grpc::ServerContext* context, const ::city::person::v2::GetControlledTaxiOrderAllocationPlanRequest* request, ::city::person::v2::GetControlledTaxiOrderAllocationPlanResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status PersonService::Service::SetControlledTaxiOrderAllocationPlan(::grpc::ServerContext* context, const ::city::person::v2::SetControlledTaxiOrderAllocationPlanRequest* request, ::city::person::v2::SetControlledTaxiOrderAllocationPlanResponse* response) {
   (void) context;
   (void) request;
   (void) response;

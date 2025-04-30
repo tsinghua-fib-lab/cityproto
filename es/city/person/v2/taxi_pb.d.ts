@@ -139,6 +139,14 @@ export declare class RequestOrderInfo extends Message<RequestOrderInfo> {
    */
   status: OrderStatus;
 
+  /**
+   * 出发时间
+   * departure time
+   *
+   * @generated from field: double departure_time = 7;
+   */
+  departureTime: number;
+
   constructor(data?: PartialMessage<RequestOrderInfo>);
 
   static readonly runtime: typeof proto3;
@@ -214,5 +222,32 @@ export declare class OrderAllocationPlan extends Message<OrderAllocationPlan> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OrderAllocationPlan;
 
   static equals(a: OrderAllocationPlan | PlainMessage<OrderAllocationPlan> | undefined, b: OrderAllocationPlan | PlainMessage<OrderAllocationPlan> | undefined): boolean;
+}
+
+/**
+ * @generated from message city.person.v2.OrderAllocations
+ */
+export declare class OrderAllocations extends Message<OrderAllocations> {
+  /**
+   * 订单分配方案
+   * order allocation plan
+   *
+   * @generated from field: repeated city.person.v2.OrderAllocationPlan order_allocations = 1;
+   */
+  orderAllocations: OrderAllocationPlan[];
+
+  constructor(data?: PartialMessage<OrderAllocations>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "city.person.v2.OrderAllocations";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OrderAllocations;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OrderAllocations;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OrderAllocations;
+
+  static equals(a: OrderAllocations | PlainMessage<OrderAllocations> | undefined, b: OrderAllocations | PlainMessage<OrderAllocations> | undefined): boolean;
 }
 

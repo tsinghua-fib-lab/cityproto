@@ -508,6 +508,7 @@
   
 - [city/person/v2/taxi.proto](#city_person_v2_taxi-proto)
     - [OrderAllocationPlan](#city-person-v2-OrderAllocationPlan)
+    - [OrderAllocations](#city-person-v2-OrderAllocations)
     - [RequestOrderInfo](#city-person-v2-RequestOrderInfo)
   
     - [AllocationPlanType](#city-person-v2-AllocationPlanType)
@@ -541,6 +542,9 @@
     - [GetAllPedestriansResponse](#city-person-v2-GetAllPedestriansResponse)
     - [GetAllVehiclesRequest](#city-person-v2-GetAllVehiclesRequest)
     - [GetAllVehiclesResponse](#city-person-v2-GetAllVehiclesResponse)
+    - [GetControlledTaxiOrderAllocationPlanRequest](#city-person-v2-GetControlledTaxiOrderAllocationPlanRequest)
+    - [GetControlledTaxiOrderAllocationPlanResponse](#city-person-v2-GetControlledTaxiOrderAllocationPlanResponse)
+    - [GetControlledTaxiOrderAllocationPlanResponse.OrderAllocationsMapEntry](#city-person-v2-GetControlledTaxiOrderAllocationPlanResponse-OrderAllocationsMapEntry)
     - [GetPersonByLongLatBBoxRequest](#city-person-v2-GetPersonByLongLatBBoxRequest)
     - [GetPersonByLongLatBBoxResponse](#city-person-v2-GetPersonByLongLatBBoxResponse)
     - [GetPersonRequest](#city-person-v2-GetPersonRequest)
@@ -555,6 +559,9 @@
     - [SetControlledPedestriansResponse](#city-person-v2-SetControlledPedestriansResponse)
     - [SetControlledTaxiIDsRequest](#city-person-v2-SetControlledTaxiIDsRequest)
     - [SetControlledTaxiIDsResponse](#city-person-v2-SetControlledTaxiIDsResponse)
+    - [SetControlledTaxiOrderAllocationPlanRequest](#city-person-v2-SetControlledTaxiOrderAllocationPlanRequest)
+    - [SetControlledTaxiOrderAllocationPlanRequest.OrderAllocationsMapEntry](#city-person-v2-SetControlledTaxiOrderAllocationPlanRequest-OrderAllocationsMapEntry)
+    - [SetControlledTaxiOrderAllocationPlanResponse](#city-person-v2-SetControlledTaxiOrderAllocationPlanResponse)
     - [SetControlledTaxiToOrdersRequest](#city-person-v2-SetControlledTaxiToOrdersRequest)
     - [SetControlledTaxiToOrdersResponse](#city-person-v2-SetControlledTaxiToOrdersResponse)
     - [SetControlledVehicleActionsRequest](#city-person-v2-SetControlledVehicleActionsRequest)
@@ -7617,6 +7624,21 @@ Order allocation plan accepted by taxis controlled by external
 
 
 
+<a name="city-person-v2-OrderAllocations"></a>
+
+### OrderAllocations
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| order_allocations | [OrderAllocationPlan](#city-person-v2-OrderAllocationPlan) | repeated | 订单分配方案 order allocation plan |
+
+
+
+
+
+
 <a name="city-person-v2-RequestOrderInfo"></a>
 
 ### RequestOrderInfo
@@ -7632,6 +7654,7 @@ Request order information from passengers
 | departure | [city.geo.v2.Position](#city-geo-v2-Position) |  | 出发地 departure position |
 | destination | [city.geo.v2.Position](#city-geo-v2-Position) |  | 目的地 destination |
 | status | [OrderStatus](#city-person-v2-OrderStatus) |  | 状态 status |
+| departure_time | [double](#double) |  | 出发时间 departure time |
 
 
 
@@ -8072,6 +8095,49 @@ Response of getting all vehicles
 
 
 
+<a name="city-person-v2-GetControlledTaxiOrderAllocationPlanRequest"></a>
+
+### GetControlledTaxiOrderAllocationPlanRequest
+获取当前所有受控出租车的订单分配方案请求
+Request for getting current order allocation plan for all controlled taxis
+
+
+
+
+
+
+<a name="city-person-v2-GetControlledTaxiOrderAllocationPlanResponse"></a>
+
+### GetControlledTaxiOrderAllocationPlanResponse
+获取当前所有受控出租车的订单分配方案响应
+Response of getting current order allocation plan for all controlled taxis
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| order_allocations_map | [GetControlledTaxiOrderAllocationPlanResponse.OrderAllocationsMapEntry](#city-person-v2-GetControlledTaxiOrderAllocationPlanResponse-OrderAllocationsMapEntry) | repeated | 当前所有受控出租车的订单分配方案 Current order allocation plan for all controlled taxis |
+
+
+
+
+
+
+<a name="city-person-v2-GetControlledTaxiOrderAllocationPlanResponse-OrderAllocationsMapEntry"></a>
+
+### GetControlledTaxiOrderAllocationPlanResponse.OrderAllocationsMapEntry
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [int32](#int32) |  |  |
+| value | [OrderAllocations](#city-person-v2-OrderAllocations) |  |  |
+
+
+
+
+
+
 <a name="city-person-v2-GetPersonByLongLatBBoxRequest"></a>
 
 ### GetPersonByLongLatBBoxRequest
@@ -8281,6 +8347,49 @@ Response of setting taxi controlled by external behavior
 
 
 
+<a name="city-person-v2-SetControlledTaxiOrderAllocationPlanRequest"></a>
+
+### SetControlledTaxiOrderAllocationPlanRequest
+设置当前所有受控出租车的订单分配方案请求
+Request for setting current order allocation plan for all controlled taxis
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| order_allocations_map | [SetControlledTaxiOrderAllocationPlanRequest.OrderAllocationsMapEntry](#city-person-v2-SetControlledTaxiOrderAllocationPlanRequest-OrderAllocationsMapEntry) | repeated | 当前所有受控出租车的订单分配方案 Current order allocation plan for all controlled taxis |
+
+
+
+
+
+
+<a name="city-person-v2-SetControlledTaxiOrderAllocationPlanRequest-OrderAllocationsMapEntry"></a>
+
+### SetControlledTaxiOrderAllocationPlanRequest.OrderAllocationsMapEntry
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [int32](#int32) |  |  |
+| value | [OrderAllocations](#city-person-v2-OrderAllocations) |  |  |
+
+
+
+
+
+
+<a name="city-person-v2-SetControlledTaxiOrderAllocationPlanResponse"></a>
+
+### SetControlledTaxiOrderAllocationPlanResponse
+设置当前所有受控出租车的订单分配方案响应
+Response of setting current order allocation plan for all controlled taxis
+
+
+
+
+
+
 <a name="city-person-v2-SetControlledTaxiToOrdersRequest"></a>
 
 ### SetControlledTaxiToOrdersRequest
@@ -8422,6 +8531,8 @@ Response of setting person schedule
 | SetControlledPedestrians | [SetControlledPedestriansRequest](#city-person-v2-SetControlledPedestriansRequest) | [SetControlledPedestriansResponse](#city-person-v2-SetControlledPedestriansResponse) | 设置由外部控制的行人 Set pedestrian controlled by external behavior |
 | FetchControlledPedestriansEnvs | [FetchControlledPedestriansEnvsRequest](#city-person-v2-FetchControlledPedestriansEnvsRequest) | [FetchControlledPedestriansEnvsResponse](#city-person-v2-FetchControlledPedestriansEnvsResponse) | 获取由外部控制的行人信息 Get information of pedestrian controlled by external behavior |
 | SetControlledPedestriansActions | [SetControlledPedestriansActionsRequest](#city-person-v2-SetControlledPedestriansActionsRequest) | [SetControlledPedestriansActionsResponse](#city-person-v2-SetControlledPedestriansActionsResponse) | 设置由外部控制的行人行为 Set behavior of pedestrian controlled by external behavior |
+| GetControlledTaxiOrderAllocationPlan | [GetControlledTaxiOrderAllocationPlanRequest](#city-person-v2-GetControlledTaxiOrderAllocationPlanRequest) | [GetControlledTaxiOrderAllocationPlanResponse](#city-person-v2-GetControlledTaxiOrderAllocationPlanResponse) | 获取当前所有受控出租车的订单分配方案 Get current order allocation plan for all controlled taxis |
+| SetControlledTaxiOrderAllocationPlan | [SetControlledTaxiOrderAllocationPlanRequest](#city-person-v2-SetControlledTaxiOrderAllocationPlanRequest) | [SetControlledTaxiOrderAllocationPlanResponse](#city-person-v2-SetControlledTaxiOrderAllocationPlanResponse) | 设置当前所有受控出租车的订单分配方案 Set current order allocation plan for all controlled taxis |
 
  
 
