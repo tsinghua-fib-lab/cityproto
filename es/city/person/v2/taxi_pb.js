@@ -78,6 +78,7 @@ export const OrderAllocations = /*@__PURE__*/ proto3.makeMessageType(
   "city.person.v2.OrderAllocations",
   () => [
     { no: 1, name: "order_allocations", kind: "message", T: OrderAllocationPlan, repeated: true },
+    { no: 2, name: "taxi_id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
   ],
 );
 

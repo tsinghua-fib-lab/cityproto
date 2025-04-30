@@ -65,6 +65,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORIT
 PROTOBUF_CONSTEXPR OrderAllocations::OrderAllocations(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.order_allocations_)*/{}
+  , /*decltype(_impl_.taxi_id_)*/0
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct OrderAllocationsDefaultTypeInternal {
   PROTOBUF_CONSTEXPR OrderAllocationsDefaultTypeInternal()
@@ -114,6 +115,7 @@ const uint32_t TableStruct_city_2fperson_2fv2_2ftaxi_2eproto::offsets[] PROTOBUF
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::city::person::v2::OrderAllocations, _impl_.order_allocations_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v2::OrderAllocations, _impl_.taxi_id_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::city::person::v2::RequestOrderInfo)},
@@ -143,28 +145,29 @@ const char descriptor_table_protodef_city_2fperson_2fv2_2ftaxi_2eproto[] PROTOBU
   "person.v2.AllocationPlanTypeR\004type\022+\n\022pi"
   "ck_up_person_ids\030\004 \003(\005R\017pickUpPersonIds\022"
   ",\n\022deliver_person_ids\030\005 \003(\005R\020deliverPers"
-  "onIds\"d\n\020OrderAllocations\022P\n\021order_alloc"
+  "onIds\"}\n\020OrderAllocations\022P\n\021order_alloc"
   "ations\030\001 \003(\0132#.city.person.v2.OrderAlloc"
-  "ationPlanR\020orderAllocations*\233\001\n\013OrderSta"
-  "tus\022\034\n\030ORDER_STATUS_UNSPECIFIED\020\000\022\030\n\024ORD"
-  "ER_STATUS_WAITING\020\001\022\033\n\027ORDER_STATUS_PICK"
-  "ING_UP\020\002\022\033\n\027ORDER_STATUS_DELIVERING\020\003\022\032\n"
-  "\026ORDER_STATUS_COMPLETED\020\004*~\n\022AllocationP"
-  "lanType\022$\n ALLOCATION_PLAN_TYPE_UNSPECIF"
-  "IED\020\000\022 \n\034ALLOCATION_PLAN_TYPE_PICK_UP\020\001\022"
-  " \n\034ALLOCATION_PLAN_TYPE_DELIVER\020\002B\262\001\n\022co"
-  "m.city.person.v2B\tTaxiProtoP\001Z7git.fibla"
-  "b.net/sim/protos/v2/go/city/person/v2;pe"
-  "rsonv2\242\002\003CPX\252\002\016City.Person.V2\312\002\016City\\Per"
-  "son\\V2\342\002\032City\\Person\\V2\\GPBMetadata\352\002\020Ci"
-  "ty::Person::V2b\006proto3"
+  "ationPlanR\020orderAllocations\022\027\n\007taxi_id\030\002"
+  " \001(\005R\006taxiId*\233\001\n\013OrderStatus\022\034\n\030ORDER_ST"
+  "ATUS_UNSPECIFIED\020\000\022\030\n\024ORDER_STATUS_WAITI"
+  "NG\020\001\022\033\n\027ORDER_STATUS_PICKING_UP\020\002\022\033\n\027ORD"
+  "ER_STATUS_DELIVERING\020\003\022\032\n\026ORDER_STATUS_C"
+  "OMPLETED\020\004*~\n\022AllocationPlanType\022$\n ALLO"
+  "CATION_PLAN_TYPE_UNSPECIFIED\020\000\022 \n\034ALLOCA"
+  "TION_PLAN_TYPE_PICK_UP\020\001\022 \n\034ALLOCATION_P"
+  "LAN_TYPE_DELIVER\020\002B\262\001\n\022com.city.person.v"
+  "2B\tTaxiProtoP\001Z7git.fiblab.net/sim/proto"
+  "s/v2/go/city/person/v2;personv2\242\002\003CPX\252\002\016"
+  "City.Person.V2\312\002\016City\\Person\\V2\342\002\032City\\P"
+  "erson\\V2\\GPBMetadata\352\002\020City::Person::V2b"
+  "\006proto3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_city_2fperson_2fv2_2ftaxi_2eproto_deps[1] = {
   &::descriptor_table_city_2fgeo_2fv2_2fgeo_2eproto,
 };
 static ::_pbi::once_flag descriptor_table_city_2fperson_2fv2_2ftaxi_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2fperson_2fv2_2ftaxi_2eproto = {
-    false, false, 1182, descriptor_table_protodef_city_2fperson_2fv2_2ftaxi_2eproto,
+    false, false, 1207, descriptor_table_protodef_city_2fperson_2fv2_2ftaxi_2eproto,
     "city/person/v2/taxi.proto",
     &descriptor_table_city_2fperson_2fv2_2ftaxi_2eproto_once, descriptor_table_city_2fperson_2fv2_2ftaxi_2eproto_deps, 1, 3,
     schemas, file_default_instances, TableStruct_city_2fperson_2fv2_2ftaxi_2eproto::offsets,
@@ -974,9 +977,11 @@ OrderAllocations::OrderAllocations(const OrderAllocations& from)
   OrderAllocations* const _this = this; (void)_this;
   new (&_impl_) Impl_{
       decltype(_impl_.order_allocations_){from._impl_.order_allocations_}
+    , decltype(_impl_.taxi_id_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.taxi_id_ = from._impl_.taxi_id_;
   // @@protoc_insertion_point(copy_constructor:city.person.v2.OrderAllocations)
 }
 
@@ -986,6 +991,7 @@ inline void OrderAllocations::SharedCtor(
   (void)is_message_owned;
   new (&_impl_) Impl_{
       decltype(_impl_.order_allocations_){arena}
+    , decltype(_impl_.taxi_id_){0}
     , /*decltype(_impl_._cached_size_)*/{}
   };
 }
@@ -1015,6 +1021,7 @@ void OrderAllocations::Clear() {
   (void) cached_has_bits;
 
   _impl_.order_allocations_.Clear();
+  _impl_.taxi_id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1034,6 +1041,14 @@ const char* OrderAllocations::_InternalParse(const char* ptr, ::_pbi::ParseConte
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 taxi_id = 2 [json_name = "taxiId"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _impl_.taxi_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
@@ -1074,6 +1089,12 @@ uint8_t* OrderAllocations::_InternalSerialize(
         InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
   }
 
+  // int32 taxi_id = 2 [json_name = "taxiId"];
+  if (this->_internal_taxi_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(2, this->_internal_taxi_id(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -1097,6 +1118,11 @@ size_t OrderAllocations::ByteSizeLong() const {
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
+  // int32 taxi_id = 2 [json_name = "taxiId"];
+  if (this->_internal_taxi_id() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_taxi_id());
+  }
+
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
@@ -1116,6 +1142,9 @@ void OrderAllocations::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const
   (void) cached_has_bits;
 
   _this->_impl_.order_allocations_.MergeFrom(from._impl_.order_allocations_);
+  if (from._internal_taxi_id() != 0) {
+    _this->_internal_set_taxi_id(from._internal_taxi_id());
+  }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -1134,6 +1163,7 @@ void OrderAllocations::InternalSwap(OrderAllocations* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   _impl_.order_allocations_.InternalSwap(&other->_impl_.order_allocations_);
+  swap(_impl_.taxi_id_, other->_impl_.taxi_id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata OrderAllocations::GetMetadata() const {

@@ -544,7 +544,6 @@
     - [GetAllVehiclesResponse](#city-person-v2-GetAllVehiclesResponse)
     - [GetControlledTaxiOrderAllocationPlanRequest](#city-person-v2-GetControlledTaxiOrderAllocationPlanRequest)
     - [GetControlledTaxiOrderAllocationPlanResponse](#city-person-v2-GetControlledTaxiOrderAllocationPlanResponse)
-    - [GetControlledTaxiOrderAllocationPlanResponse.OrderAllocationsMapEntry](#city-person-v2-GetControlledTaxiOrderAllocationPlanResponse-OrderAllocationsMapEntry)
     - [GetPersonByLongLatBBoxRequest](#city-person-v2-GetPersonByLongLatBBoxRequest)
     - [GetPersonByLongLatBBoxResponse](#city-person-v2-GetPersonByLongLatBBoxResponse)
     - [GetPersonRequest](#city-person-v2-GetPersonRequest)
@@ -560,7 +559,6 @@
     - [SetControlledTaxiIDsRequest](#city-person-v2-SetControlledTaxiIDsRequest)
     - [SetControlledTaxiIDsResponse](#city-person-v2-SetControlledTaxiIDsResponse)
     - [SetControlledTaxiOrderAllocationPlanRequest](#city-person-v2-SetControlledTaxiOrderAllocationPlanRequest)
-    - [SetControlledTaxiOrderAllocationPlanRequest.OrderAllocationsMapEntry](#city-person-v2-SetControlledTaxiOrderAllocationPlanRequest-OrderAllocationsMapEntry)
     - [SetControlledTaxiOrderAllocationPlanResponse](#city-person-v2-SetControlledTaxiOrderAllocationPlanResponse)
     - [SetControlledTaxiToOrdersRequest](#city-person-v2-SetControlledTaxiToOrdersRequest)
     - [SetControlledTaxiToOrdersResponse](#city-person-v2-SetControlledTaxiToOrdersResponse)
@@ -7633,6 +7631,7 @@ Order allocation plan accepted by taxis controlled by external
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | order_allocations | [OrderAllocationPlan](#city-person-v2-OrderAllocationPlan) | repeated | 订单分配方案 order allocation plan |
+| taxi_id | [int32](#int32) |  | 接单的出租车id taxi id who accepts the order |
 
 
 
@@ -8115,23 +8114,7 @@ Response of getting current order allocation plan for all controlled taxis
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| order_allocations_map | [GetControlledTaxiOrderAllocationPlanResponse.OrderAllocationsMapEntry](#city-person-v2-GetControlledTaxiOrderAllocationPlanResponse-OrderAllocationsMapEntry) | repeated | 当前所有受控出租车的订单分配方案 Current order allocation plan for all controlled taxis |
-
-
-
-
-
-
-<a name="city-person-v2-GetControlledTaxiOrderAllocationPlanResponse-OrderAllocationsMapEntry"></a>
-
-### GetControlledTaxiOrderAllocationPlanResponse.OrderAllocationsMapEntry
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| key | [int32](#int32) |  |  |
-| value | [OrderAllocations](#city-person-v2-OrderAllocations) |  |  |
+| order_allocations | [OrderAllocations](#city-person-v2-OrderAllocations) | repeated | 当前所有受控出租车的订单分配方案 Current order allocation plan for all controlled taxis |
 
 
 
@@ -8356,23 +8339,7 @@ Request for setting current order allocation plan for all controlled taxis
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| order_allocations_map | [SetControlledTaxiOrderAllocationPlanRequest.OrderAllocationsMapEntry](#city-person-v2-SetControlledTaxiOrderAllocationPlanRequest-OrderAllocationsMapEntry) | repeated | 当前所有受控出租车的订单分配方案 Current order allocation plan for all controlled taxis |
-
-
-
-
-
-
-<a name="city-person-v2-SetControlledTaxiOrderAllocationPlanRequest-OrderAllocationsMapEntry"></a>
-
-### SetControlledTaxiOrderAllocationPlanRequest.OrderAllocationsMapEntry
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| key | [int32](#int32) |  |  |
-| value | [OrderAllocations](#city-person-v2-OrderAllocations) |  |  |
+| order_allocations | [OrderAllocations](#city-person-v2-OrderAllocations) | repeated | 当前所有受控出租车的订单分配方案 Current order allocation plan for all controlled taxis |
 
 
 

@@ -85,4 +85,7 @@ message OrderAllocations {
   // 订单分配方案
   // order allocation plan
   repeated OrderAllocationPlan order_allocations = 1;
+  // 接单的出租车id
+  // taxi id who accepts the order
+  int32 taxi_id = 2;
 }

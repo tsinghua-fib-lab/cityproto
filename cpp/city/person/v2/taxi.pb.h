@@ -714,6 +714,7 @@ class OrderAllocations final :
 
   enum : int {
     kOrderAllocationsFieldNumber = 1,
+    kTaxiIdFieldNumber = 2,
   };
   // repeated .city.person.v2.OrderAllocationPlan order_allocations = 1 [json_name = "orderAllocations"];
   int order_allocations_size() const;
@@ -733,6 +734,15 @@ class OrderAllocations final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::OrderAllocationPlan >&
       order_allocations() const;
 
+  // int32 taxi_id = 2 [json_name = "taxiId"];
+  void clear_taxi_id();
+  int32_t taxi_id() const;
+  void set_taxi_id(int32_t value);
+  private:
+  int32_t _internal_taxi_id() const;
+  void _internal_set_taxi_id(int32_t value);
+  public:
+
   // @@protoc_insertion_point(class_scope:city.person.v2.OrderAllocations)
  private:
   class _Internal;
@@ -742,6 +752,7 @@ class OrderAllocations final :
   typedef void DestructorSkippable_;
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::OrderAllocationPlan > order_allocations_;
+    int32_t taxi_id_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -1255,6 +1266,26 @@ inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::Orde
 OrderAllocations::order_allocations() const {
   // @@protoc_insertion_point(field_list:city.person.v2.OrderAllocations.order_allocations)
   return _impl_.order_allocations_;
+}
+
+// int32 taxi_id = 2 [json_name = "taxiId"];
+inline void OrderAllocations::clear_taxi_id() {
+  _impl_.taxi_id_ = 0;
+}
+inline int32_t OrderAllocations::_internal_taxi_id() const {
+  return _impl_.taxi_id_;
+}
+inline int32_t OrderAllocations::taxi_id() const {
+  // @@protoc_insertion_point(field_get:city.person.v2.OrderAllocations.taxi_id)
+  return _internal_taxi_id();
+}
+inline void OrderAllocations::_internal_set_taxi_id(int32_t value) {
+  
+  _impl_.taxi_id_ = value;
+}
+inline void OrderAllocations::set_taxi_id(int32_t value) {
+  _internal_set_taxi_id(value);
+  // @@protoc_insertion_point(field_set:city.person.v2.OrderAllocations.taxi_id)
 }
 
 #ifdef __GNUC__

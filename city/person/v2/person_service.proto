@@ -335,7 +335,7 @@ message GetControlledTaxiOrderAllocationPlanRequest {}
 message GetControlledTaxiOrderAllocationPlanResponse {
   // 当前所有受控出租车的订单分配方案
   // Current order allocation plan for all controlled taxis
-  map<int32, OrderAllocations> order_allocations_map = 1;
+  repeated OrderAllocations order_allocations = 1;
 }
 
 // 设置当前所有受控出租车的订单分配方案请求
@@ -343,7 +343,7 @@ message GetControlledTaxiOrderAllocationPlanResponse {
 message SetControlledTaxiOrderAllocationPlanRequest {
   // 当前所有受控出租车的订单分配方案
   // Current order allocation plan for all controlled taxis
-  map<int32, OrderAllocations> order_allocations_map = 1;
+  repeated OrderAllocations order_allocations = 1;
 }
 
 // 设置当前所有受控出租车的订单分配方案响应

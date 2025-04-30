@@ -345,8 +345,11 @@ type OrderAllocations struct {
 	// 订单分配方案
 	// order allocation plan
 	OrderAllocations []*OrderAllocationPlan `protobuf:"bytes,1,rep,name=order_allocations,json=orderAllocations,proto3" json:"order_allocations,omitempty" bson:"order_allocations" db:"order_allocations" yaml:"order_allocations"`
-	unknownFields    protoimpl.UnknownFields
-	sizeCache        protoimpl.SizeCache
+	// 接单的出租车id
+	// taxi id who accepts the order
+	TaxiId        int32 `protobuf:"varint,2,opt,name=taxi_id,json=taxiId,proto3" json:"taxi_id,omitempty" bson:"taxi_id" db:"taxi_id" yaml:"taxi_id"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *OrderAllocations) Reset() {
@@ -386,6 +389,13 @@ func (x *OrderAllocations) GetOrderAllocations() []*OrderAllocationPlan {
 	return nil
 }
 
+func (x *OrderAllocations) GetTaxiId() int32 {
+	if x != nil {
+		return x.TaxiId
+	}
+	return 0
+}
+
 var File_city_person_v2_taxi_proto protoreflect.FileDescriptor
 
 const file_city_person_v2_taxi_proto_rawDesc = "" +
@@ -404,9 +414,10 @@ const file_city_person_v2_taxi_proto_rawDesc = "" +
 	"\ataxi_id\x18\x02 \x01(\x05R\x06taxiId\x126\n" +
 	"\x04type\x18\x03 \x01(\x0e2\".city.person.v2.AllocationPlanTypeR\x04type\x12+\n" +
 	"\x12pick_up_person_ids\x18\x04 \x03(\x05R\x0fpickUpPersonIds\x12,\n" +
-	"\x12deliver_person_ids\x18\x05 \x03(\x05R\x10deliverPersonIds\"d\n" +
+	"\x12deliver_person_ids\x18\x05 \x03(\x05R\x10deliverPersonIds\"}\n" +
 	"\x10OrderAllocations\x12P\n" +
-	"\x11order_allocations\x18\x01 \x03(\v2#.city.person.v2.OrderAllocationPlanR\x10orderAllocations*\x9b\x01\n" +
+	"\x11order_allocations\x18\x01 \x03(\v2#.city.person.v2.OrderAllocationPlanR\x10orderAllocations\x12\x17\n" +
+	"\ataxi_id\x18\x02 \x01(\x05R\x06taxiId*\x9b\x01\n" +
 	"\vOrderStatus\x12\x1c\n" +
 	"\x18ORDER_STATUS_UNSPECIFIED\x10\x00\x12\x18\n" +
 	"\x14ORDER_STATUS_WAITING\x10\x01\x12\x1b\n" +

@@ -30,9 +30,6 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
-#include <google/protobuf/map.h>  // IWYU pragma: export
-#include <google/protobuf/map_entry.h>
-#include <google/protobuf/map_field_inl.h>
 #include <google/protobuf/unknown_field_set.h>
 #include "city/geo/v2/geo.pb.h"
 #include "city/person/v2/motion.pb.h"
@@ -101,9 +98,6 @@ extern GetControlledTaxiOrderAllocationPlanRequestDefaultTypeInternal _GetContro
 class GetControlledTaxiOrderAllocationPlanResponse;
 struct GetControlledTaxiOrderAllocationPlanResponseDefaultTypeInternal;
 extern GetControlledTaxiOrderAllocationPlanResponseDefaultTypeInternal _GetControlledTaxiOrderAllocationPlanResponse_default_instance_;
-class GetControlledTaxiOrderAllocationPlanResponse_OrderAllocationsMapEntry_DoNotUse;
-struct GetControlledTaxiOrderAllocationPlanResponse_OrderAllocationsMapEntry_DoNotUseDefaultTypeInternal;
-extern GetControlledTaxiOrderAllocationPlanResponse_OrderAllocationsMapEntry_DoNotUseDefaultTypeInternal _GetControlledTaxiOrderAllocationPlanResponse_OrderAllocationsMapEntry_DoNotUse_default_instance_;
 class GetPersonByLongLatBBoxRequest;
 struct GetPersonByLongLatBBoxRequestDefaultTypeInternal;
 extern GetPersonByLongLatBBoxRequestDefaultTypeInternal _GetPersonByLongLatBBoxRequest_default_instance_;
@@ -149,9 +143,6 @@ extern SetControlledTaxiIDsResponseDefaultTypeInternal _SetControlledTaxiIDsResp
 class SetControlledTaxiOrderAllocationPlanRequest;
 struct SetControlledTaxiOrderAllocationPlanRequestDefaultTypeInternal;
 extern SetControlledTaxiOrderAllocationPlanRequestDefaultTypeInternal _SetControlledTaxiOrderAllocationPlanRequest_default_instance_;
-class SetControlledTaxiOrderAllocationPlanRequest_OrderAllocationsMapEntry_DoNotUse;
-struct SetControlledTaxiOrderAllocationPlanRequest_OrderAllocationsMapEntry_DoNotUseDefaultTypeInternal;
-extern SetControlledTaxiOrderAllocationPlanRequest_OrderAllocationsMapEntry_DoNotUseDefaultTypeInternal _SetControlledTaxiOrderAllocationPlanRequest_OrderAllocationsMapEntry_DoNotUse_default_instance_;
 class SetControlledTaxiOrderAllocationPlanResponse;
 struct SetControlledTaxiOrderAllocationPlanResponseDefaultTypeInternal;
 extern SetControlledTaxiOrderAllocationPlanResponseDefaultTypeInternal _SetControlledTaxiOrderAllocationPlanResponse_default_instance_;
@@ -197,7 +188,6 @@ template<> ::city::person::v2::GetAllVehiclesRequest* Arena::CreateMaybeMessage<
 template<> ::city::person::v2::GetAllVehiclesResponse* Arena::CreateMaybeMessage<::city::person::v2::GetAllVehiclesResponse>(Arena*);
 template<> ::city::person::v2::GetControlledTaxiOrderAllocationPlanRequest* Arena::CreateMaybeMessage<::city::person::v2::GetControlledTaxiOrderAllocationPlanRequest>(Arena*);
 template<> ::city::person::v2::GetControlledTaxiOrderAllocationPlanResponse* Arena::CreateMaybeMessage<::city::person::v2::GetControlledTaxiOrderAllocationPlanResponse>(Arena*);
-template<> ::city::person::v2::GetControlledTaxiOrderAllocationPlanResponse_OrderAllocationsMapEntry_DoNotUse* Arena::CreateMaybeMessage<::city::person::v2::GetControlledTaxiOrderAllocationPlanResponse_OrderAllocationsMapEntry_DoNotUse>(Arena*);
 template<> ::city::person::v2::GetPersonByLongLatBBoxRequest* Arena::CreateMaybeMessage<::city::person::v2::GetPersonByLongLatBBoxRequest>(Arena*);
 template<> ::city::person::v2::GetPersonByLongLatBBoxResponse* Arena::CreateMaybeMessage<::city::person::v2::GetPersonByLongLatBBoxResponse>(Arena*);
 template<> ::city::person::v2::GetPersonRequest* Arena::CreateMaybeMessage<::city::person::v2::GetPersonRequest>(Arena*);
@@ -213,7 +203,6 @@ template<> ::city::person::v2::SetControlledPedestriansResponse* Arena::CreateMa
 template<> ::city::person::v2::SetControlledTaxiIDsRequest* Arena::CreateMaybeMessage<::city::person::v2::SetControlledTaxiIDsRequest>(Arena*);
 template<> ::city::person::v2::SetControlledTaxiIDsResponse* Arena::CreateMaybeMessage<::city::person::v2::SetControlledTaxiIDsResponse>(Arena*);
 template<> ::city::person::v2::SetControlledTaxiOrderAllocationPlanRequest* Arena::CreateMaybeMessage<::city::person::v2::SetControlledTaxiOrderAllocationPlanRequest>(Arena*);
-template<> ::city::person::v2::SetControlledTaxiOrderAllocationPlanRequest_OrderAllocationsMapEntry_DoNotUse* Arena::CreateMaybeMessage<::city::person::v2::SetControlledTaxiOrderAllocationPlanRequest_OrderAllocationsMapEntry_DoNotUse>(Arena*);
 template<> ::city::person::v2::SetControlledTaxiOrderAllocationPlanResponse* Arena::CreateMaybeMessage<::city::person::v2::SetControlledTaxiOrderAllocationPlanResponse>(Arena*);
 template<> ::city::person::v2::SetControlledTaxiToOrdersRequest* Arena::CreateMaybeMessage<::city::person::v2::SetControlledTaxiToOrdersRequest>(Arena*);
 template<> ::city::person::v2::SetControlledTaxiToOrdersResponse* Arena::CreateMaybeMessage<::city::person::v2::SetControlledTaxiToOrdersResponse>(Arena*);
@@ -5330,30 +5319,6 @@ class GetControlledTaxiOrderAllocationPlanRequest final :
 };
 // -------------------------------------------------------------------
 
-class GetControlledTaxiOrderAllocationPlanResponse_OrderAllocationsMapEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<GetControlledTaxiOrderAllocationPlanResponse_OrderAllocationsMapEntry_DoNotUse, 
-    int32_t, ::city::person::v2::OrderAllocations,
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_INT32,
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE> {
-public:
-  typedef ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<GetControlledTaxiOrderAllocationPlanResponse_OrderAllocationsMapEntry_DoNotUse, 
-    int32_t, ::city::person::v2::OrderAllocations,
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_INT32,
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE> SuperType;
-  GetControlledTaxiOrderAllocationPlanResponse_OrderAllocationsMapEntry_DoNotUse();
-  explicit PROTOBUF_CONSTEXPR GetControlledTaxiOrderAllocationPlanResponse_OrderAllocationsMapEntry_DoNotUse(
-      ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-  explicit GetControlledTaxiOrderAllocationPlanResponse_OrderAllocationsMapEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  void MergeFrom(const GetControlledTaxiOrderAllocationPlanResponse_OrderAllocationsMapEntry_DoNotUse& other);
-  static const GetControlledTaxiOrderAllocationPlanResponse_OrderAllocationsMapEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const GetControlledTaxiOrderAllocationPlanResponse_OrderAllocationsMapEntry_DoNotUse*>(&_GetControlledTaxiOrderAllocationPlanResponse_OrderAllocationsMapEntry_DoNotUse_default_instance_); }
-  static bool ValidateKey(void*) { return true; }
-  static bool ValidateValue(void*) { return true; }
-  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-  friend struct ::TableStruct_city_2fperson_2fv2_2fperson_5fservice_2eproto;
-};
-
-// -------------------------------------------------------------------
-
 class GetControlledTaxiOrderAllocationPlanResponse final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:city.person.v2.GetControlledTaxiOrderAllocationPlanResponse) */ {
  public:
@@ -5402,7 +5367,7 @@ class GetControlledTaxiOrderAllocationPlanResponse final :
                &_GetControlledTaxiOrderAllocationPlanResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    36;
+    35;
 
   friend void swap(GetControlledTaxiOrderAllocationPlanResponse& a, GetControlledTaxiOrderAllocationPlanResponse& b) {
     a.Swap(&b);
@@ -5463,8 +5428,6 @@ class GetControlledTaxiOrderAllocationPlanResponse final :
   protected:
   explicit GetControlledTaxiOrderAllocationPlanResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
-  private:
-  static void ArenaDtor(void* object);
   public:
 
   static const ClassData _class_data_;
@@ -5474,28 +5437,28 @@ class GetControlledTaxiOrderAllocationPlanResponse final :
 
   // nested types ----------------------------------------------------
 
-
   // accessors -------------------------------------------------------
 
   enum : int {
-    kOrderAllocationsMapFieldNumber = 1,
+    kOrderAllocationsFieldNumber = 1,
   };
-  // map<int32, .city.person.v2.OrderAllocations> order_allocations_map = 1 [json_name = "orderAllocationsMap"];
-  int order_allocations_map_size() const;
+  // repeated .city.person.v2.OrderAllocations order_allocations = 1 [json_name = "orderAllocations"];
+  int order_allocations_size() const;
   private:
-  int _internal_order_allocations_map_size() const;
+  int _internal_order_allocations_size() const;
   public:
-  void clear_order_allocations_map();
+  void clear_order_allocations();
+  ::city::person::v2::OrderAllocations* mutable_order_allocations(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::OrderAllocations >*
+      mutable_order_allocations();
   private:
-  const ::PROTOBUF_NAMESPACE_ID::Map< int32_t, ::city::person::v2::OrderAllocations >&
-      _internal_order_allocations_map() const;
-  ::PROTOBUF_NAMESPACE_ID::Map< int32_t, ::city::person::v2::OrderAllocations >*
-      _internal_mutable_order_allocations_map();
+  const ::city::person::v2::OrderAllocations& _internal_order_allocations(int index) const;
+  ::city::person::v2::OrderAllocations* _internal_add_order_allocations();
   public:
-  const ::PROTOBUF_NAMESPACE_ID::Map< int32_t, ::city::person::v2::OrderAllocations >&
-      order_allocations_map() const;
-  ::PROTOBUF_NAMESPACE_ID::Map< int32_t, ::city::person::v2::OrderAllocations >*
-      mutable_order_allocations_map();
+  const ::city::person::v2::OrderAllocations& order_allocations(int index) const;
+  ::city::person::v2::OrderAllocations* add_order_allocations();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::OrderAllocations >&
+      order_allocations() const;
 
   // @@protoc_insertion_point(class_scope:city.person.v2.GetControlledTaxiOrderAllocationPlanResponse)
  private:
@@ -5505,40 +5468,12 @@ class GetControlledTaxiOrderAllocationPlanResponse final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::MapField<
-        GetControlledTaxiOrderAllocationPlanResponse_OrderAllocationsMapEntry_DoNotUse,
-        int32_t, ::city::person::v2::OrderAllocations,
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_INT32,
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE> order_allocations_map_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::OrderAllocations > order_allocations_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_city_2fperson_2fv2_2fperson_5fservice_2eproto;
 };
-// -------------------------------------------------------------------
-
-class SetControlledTaxiOrderAllocationPlanRequest_OrderAllocationsMapEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<SetControlledTaxiOrderAllocationPlanRequest_OrderAllocationsMapEntry_DoNotUse, 
-    int32_t, ::city::person::v2::OrderAllocations,
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_INT32,
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE> {
-public:
-  typedef ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<SetControlledTaxiOrderAllocationPlanRequest_OrderAllocationsMapEntry_DoNotUse, 
-    int32_t, ::city::person::v2::OrderAllocations,
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_INT32,
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE> SuperType;
-  SetControlledTaxiOrderAllocationPlanRequest_OrderAllocationsMapEntry_DoNotUse();
-  explicit PROTOBUF_CONSTEXPR SetControlledTaxiOrderAllocationPlanRequest_OrderAllocationsMapEntry_DoNotUse(
-      ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-  explicit SetControlledTaxiOrderAllocationPlanRequest_OrderAllocationsMapEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  void MergeFrom(const SetControlledTaxiOrderAllocationPlanRequest_OrderAllocationsMapEntry_DoNotUse& other);
-  static const SetControlledTaxiOrderAllocationPlanRequest_OrderAllocationsMapEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const SetControlledTaxiOrderAllocationPlanRequest_OrderAllocationsMapEntry_DoNotUse*>(&_SetControlledTaxiOrderAllocationPlanRequest_OrderAllocationsMapEntry_DoNotUse_default_instance_); }
-  static bool ValidateKey(void*) { return true; }
-  static bool ValidateValue(void*) { return true; }
-  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-  friend struct ::TableStruct_city_2fperson_2fv2_2fperson_5fservice_2eproto;
-};
-
 // -------------------------------------------------------------------
 
 class SetControlledTaxiOrderAllocationPlanRequest final :
@@ -5589,7 +5524,7 @@ class SetControlledTaxiOrderAllocationPlanRequest final :
                &_SetControlledTaxiOrderAllocationPlanRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    38;
+    36;
 
   friend void swap(SetControlledTaxiOrderAllocationPlanRequest& a, SetControlledTaxiOrderAllocationPlanRequest& b) {
     a.Swap(&b);
@@ -5650,8 +5585,6 @@ class SetControlledTaxiOrderAllocationPlanRequest final :
   protected:
   explicit SetControlledTaxiOrderAllocationPlanRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
-  private:
-  static void ArenaDtor(void* object);
   public:
 
   static const ClassData _class_data_;
@@ -5661,28 +5594,28 @@ class SetControlledTaxiOrderAllocationPlanRequest final :
 
   // nested types ----------------------------------------------------
 
-
   // accessors -------------------------------------------------------
 
   enum : int {
-    kOrderAllocationsMapFieldNumber = 1,
+    kOrderAllocationsFieldNumber = 1,
   };
-  // map<int32, .city.person.v2.OrderAllocations> order_allocations_map = 1 [json_name = "orderAllocationsMap"];
-  int order_allocations_map_size() const;
+  // repeated .city.person.v2.OrderAllocations order_allocations = 1 [json_name = "orderAllocations"];
+  int order_allocations_size() const;
   private:
-  int _internal_order_allocations_map_size() const;
+  int _internal_order_allocations_size() const;
   public:
-  void clear_order_allocations_map();
+  void clear_order_allocations();
+  ::city::person::v2::OrderAllocations* mutable_order_allocations(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::OrderAllocations >*
+      mutable_order_allocations();
   private:
-  const ::PROTOBUF_NAMESPACE_ID::Map< int32_t, ::city::person::v2::OrderAllocations >&
-      _internal_order_allocations_map() const;
-  ::PROTOBUF_NAMESPACE_ID::Map< int32_t, ::city::person::v2::OrderAllocations >*
-      _internal_mutable_order_allocations_map();
+  const ::city::person::v2::OrderAllocations& _internal_order_allocations(int index) const;
+  ::city::person::v2::OrderAllocations* _internal_add_order_allocations();
   public:
-  const ::PROTOBUF_NAMESPACE_ID::Map< int32_t, ::city::person::v2::OrderAllocations >&
-      order_allocations_map() const;
-  ::PROTOBUF_NAMESPACE_ID::Map< int32_t, ::city::person::v2::OrderAllocations >*
-      mutable_order_allocations_map();
+  const ::city::person::v2::OrderAllocations& order_allocations(int index) const;
+  ::city::person::v2::OrderAllocations* add_order_allocations();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::OrderAllocations >&
+      order_allocations() const;
 
   // @@protoc_insertion_point(class_scope:city.person.v2.SetControlledTaxiOrderAllocationPlanRequest)
  private:
@@ -5692,11 +5625,7 @@ class SetControlledTaxiOrderAllocationPlanRequest final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::MapField<
-        SetControlledTaxiOrderAllocationPlanRequest_OrderAllocationsMapEntry_DoNotUse,
-        int32_t, ::city::person::v2::OrderAllocations,
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_INT32,
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE> order_allocations_map_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::OrderAllocations > order_allocations_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -5751,7 +5680,7 @@ class SetControlledTaxiOrderAllocationPlanResponse final :
                &_SetControlledTaxiOrderAllocationPlanResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    39;
+    37;
 
   friend void swap(SetControlledTaxiOrderAllocationPlanResponse& a, SetControlledTaxiOrderAllocationPlanResponse& b) {
     a.Swap(&b);
@@ -7231,66 +7160,84 @@ SetControlledPedestriansActionsRequest::pedestrian_actions() const {
 
 // -------------------------------------------------------------------
 
-// -------------------------------------------------------------------
-
 // GetControlledTaxiOrderAllocationPlanResponse
 
-// map<int32, .city.person.v2.OrderAllocations> order_allocations_map = 1 [json_name = "orderAllocationsMap"];
-inline int GetControlledTaxiOrderAllocationPlanResponse::_internal_order_allocations_map_size() const {
-  return _impl_.order_allocations_map_.size();
+// repeated .city.person.v2.OrderAllocations order_allocations = 1 [json_name = "orderAllocations"];
+inline int GetControlledTaxiOrderAllocationPlanResponse::_internal_order_allocations_size() const {
+  return _impl_.order_allocations_.size();
 }
-inline int GetControlledTaxiOrderAllocationPlanResponse::order_allocations_map_size() const {
-  return _internal_order_allocations_map_size();
+inline int GetControlledTaxiOrderAllocationPlanResponse::order_allocations_size() const {
+  return _internal_order_allocations_size();
 }
-inline const ::PROTOBUF_NAMESPACE_ID::Map< int32_t, ::city::person::v2::OrderAllocations >&
-GetControlledTaxiOrderAllocationPlanResponse::_internal_order_allocations_map() const {
-  return _impl_.order_allocations_map_.GetMap();
+inline ::city::person::v2::OrderAllocations* GetControlledTaxiOrderAllocationPlanResponse::mutable_order_allocations(int index) {
+  // @@protoc_insertion_point(field_mutable:city.person.v2.GetControlledTaxiOrderAllocationPlanResponse.order_allocations)
+  return _impl_.order_allocations_.Mutable(index);
 }
-inline const ::PROTOBUF_NAMESPACE_ID::Map< int32_t, ::city::person::v2::OrderAllocations >&
-GetControlledTaxiOrderAllocationPlanResponse::order_allocations_map() const {
-  // @@protoc_insertion_point(field_map:city.person.v2.GetControlledTaxiOrderAllocationPlanResponse.order_allocations_map)
-  return _internal_order_allocations_map();
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::OrderAllocations >*
+GetControlledTaxiOrderAllocationPlanResponse::mutable_order_allocations() {
+  // @@protoc_insertion_point(field_mutable_list:city.person.v2.GetControlledTaxiOrderAllocationPlanResponse.order_allocations)
+  return &_impl_.order_allocations_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::Map< int32_t, ::city::person::v2::OrderAllocations >*
-GetControlledTaxiOrderAllocationPlanResponse::_internal_mutable_order_allocations_map() {
-  return _impl_.order_allocations_map_.MutableMap();
+inline const ::city::person::v2::OrderAllocations& GetControlledTaxiOrderAllocationPlanResponse::_internal_order_allocations(int index) const {
+  return _impl_.order_allocations_.Get(index);
 }
-inline ::PROTOBUF_NAMESPACE_ID::Map< int32_t, ::city::person::v2::OrderAllocations >*
-GetControlledTaxiOrderAllocationPlanResponse::mutable_order_allocations_map() {
-  // @@protoc_insertion_point(field_mutable_map:city.person.v2.GetControlledTaxiOrderAllocationPlanResponse.order_allocations_map)
-  return _internal_mutable_order_allocations_map();
+inline const ::city::person::v2::OrderAllocations& GetControlledTaxiOrderAllocationPlanResponse::order_allocations(int index) const {
+  // @@protoc_insertion_point(field_get:city.person.v2.GetControlledTaxiOrderAllocationPlanResponse.order_allocations)
+  return _internal_order_allocations(index);
 }
-
-// -------------------------------------------------------------------
+inline ::city::person::v2::OrderAllocations* GetControlledTaxiOrderAllocationPlanResponse::_internal_add_order_allocations() {
+  return _impl_.order_allocations_.Add();
+}
+inline ::city::person::v2::OrderAllocations* GetControlledTaxiOrderAllocationPlanResponse::add_order_allocations() {
+  ::city::person::v2::OrderAllocations* _add = _internal_add_order_allocations();
+  // @@protoc_insertion_point(field_add:city.person.v2.GetControlledTaxiOrderAllocationPlanResponse.order_allocations)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::OrderAllocations >&
+GetControlledTaxiOrderAllocationPlanResponse::order_allocations() const {
+  // @@protoc_insertion_point(field_list:city.person.v2.GetControlledTaxiOrderAllocationPlanResponse.order_allocations)
+  return _impl_.order_allocations_;
+}
 
 // -------------------------------------------------------------------
 
 // SetControlledTaxiOrderAllocationPlanRequest
 
-// map<int32, .city.person.v2.OrderAllocations> order_allocations_map = 1 [json_name = "orderAllocationsMap"];
-inline int SetControlledTaxiOrderAllocationPlanRequest::_internal_order_allocations_map_size() const {
-  return _impl_.order_allocations_map_.size();
+// repeated .city.person.v2.OrderAllocations order_allocations = 1 [json_name = "orderAllocations"];
+inline int SetControlledTaxiOrderAllocationPlanRequest::_internal_order_allocations_size() const {
+  return _impl_.order_allocations_.size();
 }
-inline int SetControlledTaxiOrderAllocationPlanRequest::order_allocations_map_size() const {
-  return _internal_order_allocations_map_size();
+inline int SetControlledTaxiOrderAllocationPlanRequest::order_allocations_size() const {
+  return _internal_order_allocations_size();
 }
-inline const ::PROTOBUF_NAMESPACE_ID::Map< int32_t, ::city::person::v2::OrderAllocations >&
-SetControlledTaxiOrderAllocationPlanRequest::_internal_order_allocations_map() const {
-  return _impl_.order_allocations_map_.GetMap();
+inline ::city::person::v2::OrderAllocations* SetControlledTaxiOrderAllocationPlanRequest::mutable_order_allocations(int index) {
+  // @@protoc_insertion_point(field_mutable:city.person.v2.SetControlledTaxiOrderAllocationPlanRequest.order_allocations)
+  return _impl_.order_allocations_.Mutable(index);
 }
-inline const ::PROTOBUF_NAMESPACE_ID::Map< int32_t, ::city::person::v2::OrderAllocations >&
-SetControlledTaxiOrderAllocationPlanRequest::order_allocations_map() const {
-  // @@protoc_insertion_point(field_map:city.person.v2.SetControlledTaxiOrderAllocationPlanRequest.order_allocations_map)
-  return _internal_order_allocations_map();
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::OrderAllocations >*
+SetControlledTaxiOrderAllocationPlanRequest::mutable_order_allocations() {
+  // @@protoc_insertion_point(field_mutable_list:city.person.v2.SetControlledTaxiOrderAllocationPlanRequest.order_allocations)
+  return &_impl_.order_allocations_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::Map< int32_t, ::city::person::v2::OrderAllocations >*
-SetControlledTaxiOrderAllocationPlanRequest::_internal_mutable_order_allocations_map() {
-  return _impl_.order_allocations_map_.MutableMap();
+inline const ::city::person::v2::OrderAllocations& SetControlledTaxiOrderAllocationPlanRequest::_internal_order_allocations(int index) const {
+  return _impl_.order_allocations_.Get(index);
 }
-inline ::PROTOBUF_NAMESPACE_ID::Map< int32_t, ::city::person::v2::OrderAllocations >*
-SetControlledTaxiOrderAllocationPlanRequest::mutable_order_allocations_map() {
-  // @@protoc_insertion_point(field_mutable_map:city.person.v2.SetControlledTaxiOrderAllocationPlanRequest.order_allocations_map)
-  return _internal_mutable_order_allocations_map();
+inline const ::city::person::v2::OrderAllocations& SetControlledTaxiOrderAllocationPlanRequest::order_allocations(int index) const {
+  // @@protoc_insertion_point(field_get:city.person.v2.SetControlledTaxiOrderAllocationPlanRequest.order_allocations)
+  return _internal_order_allocations(index);
+}
+inline ::city::person::v2::OrderAllocations* SetControlledTaxiOrderAllocationPlanRequest::_internal_add_order_allocations() {
+  return _impl_.order_allocations_.Add();
+}
+inline ::city::person::v2::OrderAllocations* SetControlledTaxiOrderAllocationPlanRequest::add_order_allocations() {
+  ::city::person::v2::OrderAllocations* _add = _internal_add_order_allocations();
+  // @@protoc_insertion_point(field_add:city.person.v2.SetControlledTaxiOrderAllocationPlanRequest.order_allocations)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::city::person::v2::OrderAllocations >&
+SetControlledTaxiOrderAllocationPlanRequest::order_allocations() const {
+  // @@protoc_insertion_point(field_list:city.person.v2.SetControlledTaxiOrderAllocationPlanRequest.order_allocations)
+  return _impl_.order_allocations_;
 }
 
 // -------------------------------------------------------------------
@@ -7300,10 +7247,6 @@ SetControlledTaxiOrderAllocationPlanRequest::mutable_order_allocations_map() {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
-// -------------------------------------------------------------------
-
-// -------------------------------------------------------------------
-
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

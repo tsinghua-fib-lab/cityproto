@@ -458,7 +458,7 @@ export const GetControlledTaxiOrderAllocationPlanRequest = /*@__PURE__*/ proto3.
 export const GetControlledTaxiOrderAllocationPlanResponse = /*@__PURE__*/ proto3.makeMessageType(
   "city.person.v2.GetControlledTaxiOrderAllocationPlanResponse",
   () => [
-    { no: 1, name: "order_allocations_map", kind: "map", K: 5 /* ScalarType.INT32 */, V: {kind: "message", T: OrderAllocations} },
+    { no: 1, name: "order_allocations", kind: "message", T: OrderAllocations, repeated: true },
   ],
 );
 
@@ -471,7 +471,7 @@ export const GetControlledTaxiOrderAllocationPlanResponse = /*@__PURE__*/ proto3
 export const SetControlledTaxiOrderAllocationPlanRequest = /*@__PURE__*/ proto3.makeMessageType(
   "city.person.v2.SetControlledTaxiOrderAllocationPlanRequest",
   () => [
-    { no: 1, name: "order_allocations_map", kind: "map", K: 5 /* ScalarType.INT32 */, V: {kind: "message", T: OrderAllocations} },
+    { no: 1, name: "order_allocations", kind: "message", T: OrderAllocations, repeated: true },
   ],
 );
 

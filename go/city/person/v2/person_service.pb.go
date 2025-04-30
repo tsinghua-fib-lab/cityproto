@@ -1659,9 +1659,9 @@ type GetControlledTaxiOrderAllocationPlanResponse struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// 当前所有受控出租车的订单分配方案
 	// Current order allocation plan for all controlled taxis
-	OrderAllocationsMap map[int32]*OrderAllocations `protobuf:"bytes,1,rep,name=order_allocations_map,json=orderAllocationsMap,proto3" json:"order_allocations_map,omitempty" protobuf_key:"varint,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value" bson:"order_allocations_map" db:"order_allocations_map" yaml:"order_allocations_map"`
-	unknownFields       protoimpl.UnknownFields
-	sizeCache           protoimpl.SizeCache
+	OrderAllocations []*OrderAllocations `protobuf:"bytes,1,rep,name=order_allocations,json=orderAllocations,proto3" json:"order_allocations,omitempty" bson:"order_allocations" db:"order_allocations" yaml:"order_allocations"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
 }
 
 func (x *GetControlledTaxiOrderAllocationPlanResponse) Reset() {
@@ -1694,9 +1694,9 @@ func (*GetControlledTaxiOrderAllocationPlanResponse) Descriptor() ([]byte, []int
 	return file_city_person_v2_person_service_proto_rawDescGZIP(), []int{35}
 }
 
-func (x *GetControlledTaxiOrderAllocationPlanResponse) GetOrderAllocationsMap() map[int32]*OrderAllocations {
+func (x *GetControlledTaxiOrderAllocationPlanResponse) GetOrderAllocations() []*OrderAllocations {
 	if x != nil {
-		return x.OrderAllocationsMap
+		return x.OrderAllocations
 	}
 	return nil
 }
@@ -1707,9 +1707,9 @@ type SetControlledTaxiOrderAllocationPlanRequest struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// 当前所有受控出租车的订单分配方案
 	// Current order allocation plan for all controlled taxis
-	OrderAllocationsMap map[int32]*OrderAllocations `protobuf:"bytes,1,rep,name=order_allocations_map,json=orderAllocationsMap,proto3" json:"order_allocations_map,omitempty" protobuf_key:"varint,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value" bson:"order_allocations_map" db:"order_allocations_map" yaml:"order_allocations_map"`
-	unknownFields       protoimpl.UnknownFields
-	sizeCache           protoimpl.SizeCache
+	OrderAllocations []*OrderAllocations `protobuf:"bytes,1,rep,name=order_allocations,json=orderAllocations,proto3" json:"order_allocations,omitempty" bson:"order_allocations" db:"order_allocations" yaml:"order_allocations"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
 }
 
 func (x *SetControlledTaxiOrderAllocationPlanRequest) Reset() {
@@ -1742,9 +1742,9 @@ func (*SetControlledTaxiOrderAllocationPlanRequest) Descriptor() ([]byte, []int)
 	return file_city_person_v2_person_service_proto_rawDescGZIP(), []int{36}
 }
 
-func (x *SetControlledTaxiOrderAllocationPlanRequest) GetOrderAllocationsMap() map[int32]*OrderAllocations {
+func (x *SetControlledTaxiOrderAllocationPlanRequest) GetOrderAllocations() []*OrderAllocations {
 	if x != nil {
-		return x.OrderAllocationsMap
+		return x.OrderAllocations
 	}
 	return nil
 }
@@ -1862,17 +1862,11 @@ const file_city_person_v2_person_service_proto_rawDesc = "" +
 	"&SetControlledPedestriansActionsRequest\x12O\n" +
 	"\x12pedestrian_actions\x18\x01 \x03(\v2 .city.person.v2.PedestrianActionR\x11pedestrianActions\")\n" +
 	"'SetControlledPedestriansActionsResponse\"-\n" +
-	"+GetControlledTaxiOrderAllocationPlanRequest\"\xa4\x02\n" +
-	",GetControlledTaxiOrderAllocationPlanResponse\x12\x89\x01\n" +
-	"\x15order_allocations_map\x18\x01 \x03(\v2U.city.person.v2.GetControlledTaxiOrderAllocationPlanResponse.OrderAllocationsMapEntryR\x13orderAllocationsMap\x1ah\n" +
-	"\x18OrderAllocationsMapEntry\x12\x10\n" +
-	"\x03key\x18\x01 \x01(\x05R\x03key\x126\n" +
-	"\x05value\x18\x02 \x01(\v2 .city.person.v2.OrderAllocationsR\x05value:\x028\x01\"\xa2\x02\n" +
-	"+SetControlledTaxiOrderAllocationPlanRequest\x12\x88\x01\n" +
-	"\x15order_allocations_map\x18\x01 \x03(\v2T.city.person.v2.SetControlledTaxiOrderAllocationPlanRequest.OrderAllocationsMapEntryR\x13orderAllocationsMap\x1ah\n" +
-	"\x18OrderAllocationsMapEntry\x12\x10\n" +
-	"\x03key\x18\x01 \x01(\x05R\x03key\x126\n" +
-	"\x05value\x18\x02 \x01(\v2 .city.person.v2.OrderAllocationsR\x05value:\x028\x01\".\n" +
+	"+GetControlledTaxiOrderAllocationPlanRequest\"}\n" +
+	",GetControlledTaxiOrderAllocationPlanResponse\x12M\n" +
+	"\x11order_allocations\x18\x01 \x03(\v2 .city.person.v2.OrderAllocationsR\x10orderAllocations\"|\n" +
+	"+SetControlledTaxiOrderAllocationPlanRequest\x12M\n" +
+	"\x11order_allocations\x18\x01 \x03(\v2 .city.person.v2.OrderAllocationsR\x10orderAllocations\".\n" +
 	",SetControlledTaxiOrderAllocationPlanResponse2\xde\x11\n" +
 	"\rPersonService\x12P\n" +
 	"\tGetPerson\x12 .city.person.v2.GetPersonRequest\x1a!.city.person.v2.GetPersonResponse\x12P\n" +
@@ -1909,7 +1903,7 @@ func file_city_person_v2_person_service_proto_rawDescGZIP() []byte {
 	return file_city_person_v2_person_service_proto_rawDescData
 }
 
-var file_city_person_v2_person_service_proto_msgTypes = make([]protoimpl.MessageInfo, 40)
+var file_city_person_v2_person_service_proto_msgTypes = make([]protoimpl.MessageInfo, 38)
 var file_city_person_v2_person_service_proto_goTypes = []any{
 	(*GetPersonRequest)(nil),                             // 0: city.person.v2.GetPersonRequest
 	(*GetPersonResponse)(nil),                            // 1: city.person.v2.GetPersonResponse
@@ -1949,91 +1943,87 @@ var file_city_person_v2_person_service_proto_goTypes = []any{
 	(*GetControlledTaxiOrderAllocationPlanResponse)(nil), // 35: city.person.v2.GetControlledTaxiOrderAllocationPlanResponse
 	(*SetControlledTaxiOrderAllocationPlanRequest)(nil),  // 36: city.person.v2.SetControlledTaxiOrderAllocationPlanRequest
 	(*SetControlledTaxiOrderAllocationPlanResponse)(nil), // 37: city.person.v2.SetControlledTaxiOrderAllocationPlanResponse
-	nil,                         // 38: city.person.v2.GetControlledTaxiOrderAllocationPlanResponse.OrderAllocationsMapEntry
-	nil,                         // 39: city.person.v2.SetControlledTaxiOrderAllocationPlanRequest.OrderAllocationsMapEntry
-	(*PersonRuntime)(nil),       // 40: city.person.v2.PersonRuntime
-	(*Person)(nil),              // 41: city.person.v2.Person
-	(*v2.Schedule)(nil),         // 42: city.trip.v2.Schedule
-	(Status)(0),                 // 43: city.person.v2.Status
-	(*v21.LongLatBBox)(nil),     // 44: city.geo.v2.LongLatBBox
-	(*VehicleRuntime)(nil),      // 45: city.person.v2.VehicleRuntime
-	(*v21.Position)(nil),        // 46: city.geo.v2.Position
-	(*VehicleEnv)(nil),          // 47: city.person.v2.VehicleEnv
-	(*VehicleAction)(nil),       // 48: city.person.v2.VehicleAction
-	(*VehicleRouteAction)(nil),  // 49: city.person.v2.VehicleRouteAction
-	(*RequestOrderInfo)(nil),    // 50: city.person.v2.RequestOrderInfo
-	(*OrderAllocationPlan)(nil), // 51: city.person.v2.OrderAllocationPlan
-	(*PedestrianEnv)(nil),       // 52: city.person.v2.PedestrianEnv
-	(*PedestrianAction)(nil),    // 53: city.person.v2.PedestrianAction
-	(*OrderAllocations)(nil),    // 54: city.person.v2.OrderAllocations
+	(*PersonRuntime)(nil),                                // 38: city.person.v2.PersonRuntime
+	(*Person)(nil),                                       // 39: city.person.v2.Person
+	(*v2.Schedule)(nil),                                  // 40: city.trip.v2.Schedule
+	(Status)(0),                                          // 41: city.person.v2.Status
+	(*v21.LongLatBBox)(nil),                              // 42: city.geo.v2.LongLatBBox
+	(*VehicleRuntime)(nil),                               // 43: city.person.v2.VehicleRuntime
+	(*v21.Position)(nil),                                 // 44: city.geo.v2.Position
+	(*VehicleEnv)(nil),                                   // 45: city.person.v2.VehicleEnv
+	(*VehicleAction)(nil),                                // 46: city.person.v2.VehicleAction
+	(*VehicleRouteAction)(nil),                           // 47: city.person.v2.VehicleRouteAction
+	(*RequestOrderInfo)(nil),                             // 48: city.person.v2.RequestOrderInfo
+	(*OrderAllocationPlan)(nil),                          // 49: city.person.v2.OrderAllocationPlan
+	(*PedestrianEnv)(nil),                                // 50: city.person.v2.PedestrianEnv
+	(*PedestrianAction)(nil),                             // 51: city.person.v2.PedestrianAction
+	(*OrderAllocations)(nil),                             // 52: city.person.v2.OrderAllocations
 }
 var file_city_person_v2_person_service_proto_depIdxs = []int32{
-	40, // 0: city.person.v2.GetPersonResponse.person:type_name -> city.person.v2.PersonRuntime
-	41, // 1: city.person.v2.AddPersonRequest.person:type_name -> city.person.v2.Person
-	42, // 2: city.person.v2.SetScheduleRequest.schedules:type_name -> city.trip.v2.Schedule
-	43, // 3: city.person.v2.GetPersonsRequest.exclude_statuses:type_name -> city.person.v2.Status
-	40, // 4: city.person.v2.GetPersonsResponse.persons:type_name -> city.person.v2.PersonRuntime
-	44, // 5: city.person.v2.GetPersonByLongLatBBoxRequest.bbox:type_name -> city.geo.v2.LongLatBBox
-	43, // 6: city.person.v2.GetPersonByLongLatBBoxRequest.exclude_statuses:type_name -> city.person.v2.Status
-	40, // 7: city.person.v2.GetPersonByLongLatBBoxResponse.persons:type_name -> city.person.v2.PersonRuntime
-	45, // 8: city.person.v2.GetAllVehiclesResponse.vehicles:type_name -> city.person.v2.VehicleRuntime
-	40, // 9: city.person.v2.GetAllPedestriansResponse.pedestrians:type_name -> city.person.v2.PersonRuntime
-	46, // 10: city.person.v2.ResetPersonPositionRequest.position:type_name -> city.geo.v2.Position
-	47, // 11: city.person.v2.FetchControlledVehicleEnvsResponse.vehicle_envs:type_name -> city.person.v2.VehicleEnv
-	47, // 12: city.person.v2.FetchControlledVehicleEnvsResponse.route_vehicle_envs:type_name -> city.person.v2.VehicleEnv
-	48, // 13: city.person.v2.SetControlledVehicleActionsRequest.vehicle_actions:type_name -> city.person.v2.VehicleAction
-	49, // 14: city.person.v2.SetControlledVehicleActionsRequest.vehicle_journeys:type_name -> city.person.v2.VehicleRouteAction
-	50, // 15: city.person.v2.GetAllOrdersResponse.order_infos:type_name -> city.person.v2.RequestOrderInfo
-	51, // 16: city.person.v2.SetControlledTaxiToOrdersRequest.order_plans:type_name -> city.person.v2.OrderAllocationPlan
-	52, // 17: city.person.v2.FetchControlledPedestriansEnvsResponse.pedestrian_envs:type_name -> city.person.v2.PedestrianEnv
-	53, // 18: city.person.v2.SetControlledPedestriansActionsRequest.pedestrian_actions:type_name -> city.person.v2.PedestrianAction
-	38, // 19: city.person.v2.GetControlledTaxiOrderAllocationPlanResponse.order_allocations_map:type_name -> city.person.v2.GetControlledTaxiOrderAllocationPlanResponse.OrderAllocationsMapEntry
-	39, // 20: city.person.v2.SetControlledTaxiOrderAllocationPlanRequest.order_allocations_map:type_name -> city.person.v2.SetControlledTaxiOrderAllocationPlanRequest.OrderAllocationsMapEntry
-	54, // 21: city.person.v2.GetControlledTaxiOrderAllocationPlanResponse.OrderAllocationsMapEntry.value:type_name -> city.person.v2.OrderAllocations
-	54, // 22: city.person.v2.SetControlledTaxiOrderAllocationPlanRequest.OrderAllocationsMapEntry.value:type_name -> city.person.v2.OrderAllocations
-	0,  // 23: city.person.v2.PersonService.GetPerson:input_type -> city.person.v2.GetPersonRequest
-	2,  // 24: city.person.v2.PersonService.AddPerson:input_type -> city.person.v2.AddPersonRequest
-	4,  // 25: city.person.v2.PersonService.SetSchedule:input_type -> city.person.v2.SetScheduleRequest
-	6,  // 26: city.person.v2.PersonService.GetPersons:input_type -> city.person.v2.GetPersonsRequest
-	8,  // 27: city.person.v2.PersonService.GetPersonByLongLatBBox:input_type -> city.person.v2.GetPersonByLongLatBBoxRequest
-	10, // 28: city.person.v2.PersonService.GetAllVehicles:input_type -> city.person.v2.GetAllVehiclesRequest
-	12, // 29: city.person.v2.PersonService.GetAllPedestrians:input_type -> city.person.v2.GetAllPedestriansRequest
-	14, // 30: city.person.v2.PersonService.ResetPersonPosition:input_type -> city.person.v2.ResetPersonPositionRequest
-	16, // 31: city.person.v2.PersonService.SetControlledVehicleIDs:input_type -> city.person.v2.SetControlledVehicleIDsRequest
-	18, // 32: city.person.v2.PersonService.FetchControlledVehicleEnvs:input_type -> city.person.v2.FetchControlledVehicleEnvsRequest
-	20, // 33: city.person.v2.PersonService.SetControlledVehicleActions:input_type -> city.person.v2.SetControlledVehicleActionsRequest
-	22, // 34: city.person.v2.PersonService.SetControlledTaxiIDs:input_type -> city.person.v2.SetControlledTaxiIDsRequest
-	24, // 35: city.person.v2.PersonService.GetAllOrders:input_type -> city.person.v2.GetAllOrdersRequest
-	26, // 36: city.person.v2.PersonService.SetControlledTaxiToOrders:input_type -> city.person.v2.SetControlledTaxiToOrdersRequest
-	28, // 37: city.person.v2.PersonService.SetControlledPedestrians:input_type -> city.person.v2.SetControlledPedestriansRequest
-	30, // 38: city.person.v2.PersonService.FetchControlledPedestriansEnvs:input_type -> city.person.v2.FetchControlledPedestriansEnvsRequest
-	32, // 39: city.person.v2.PersonService.SetControlledPedestriansActions:input_type -> city.person.v2.SetControlledPedestriansActionsRequest
-	34, // 40: city.person.v2.PersonService.GetControlledTaxiOrderAllocationPlan:input_type -> city.person.v2.GetControlledTaxiOrderAllocationPlanRequest
-	36, // 41: city.person.v2.PersonService.SetControlledTaxiOrderAllocationPlan:input_type -> city.person.v2.SetControlledTaxiOrderAllocationPlanRequest
-	1,  // 42: city.person.v2.PersonService.GetPerson:output_type -> city.person.v2.GetPersonResponse
-	3,  // 43: city.person.v2.PersonService.AddPerson:output_type -> city.person.v2.AddPersonResponse
-	5,  // 44: city.person.v2.PersonService.SetSchedule:output_type -> city.person.v2.SetScheduleResponse
-	7,  // 45: city.person.v2.PersonService.GetPersons:output_type -> city.person.v2.GetPersonsResponse
-	9,  // 46: city.person.v2.PersonService.GetPersonByLongLatBBox:output_type -> city.person.v2.GetPersonByLongLatBBoxResponse
-	11, // 47: city.person.v2.PersonService.GetAllVehicles:output_type -> city.person.v2.GetAllVehiclesResponse
-	13, // 48: city.person.v2.PersonService.GetAllPedestrians:output_type -> city.person.v2.GetAllPedestriansResponse
-	15, // 49: city.person.v2.PersonService.ResetPersonPosition:output_type -> city.person.v2.ResetPersonPositionResponse
-	17, // 50: city.person.v2.PersonService.SetControlledVehicleIDs:output_type -> city.person.v2.SetControlledVehicleIDsResponse
-	19, // 51: city.person.v2.PersonService.FetchControlledVehicleEnvs:output_type -> city.person.v2.FetchControlledVehicleEnvsResponse
-	21, // 52: city.person.v2.PersonService.SetControlledVehicleActions:output_type -> city.person.v2.SetControlledVehicleActionsResponse
-	23, // 53: city.person.v2.PersonService.SetControlledTaxiIDs:output_type -> city.person.v2.SetControlledTaxiIDsResponse
-	25, // 54: city.person.v2.PersonService.GetAllOrders:output_type -> city.person.v2.GetAllOrdersResponse
-	27, // 55: city.person.v2.PersonService.SetControlledTaxiToOrders:output_type -> city.person.v2.SetControlledTaxiToOrdersResponse
-	29, // 56: city.person.v2.PersonService.SetControlledPedestrians:output_type -> city.person.v2.SetControlledPedestriansResponse
-	31, // 57: city.person.v2.PersonService.FetchControlledPedestriansEnvs:output_type -> city.person.v2.FetchControlledPedestriansEnvsResponse
-	33, // 58: city.person.v2.PersonService.SetControlledPedestriansActions:output_type -> city.person.v2.SetControlledPedestriansActionsResponse
-	35, // 59: city.person.v2.PersonService.GetControlledTaxiOrderAllocationPlan:output_type -> city.person.v2.GetControlledTaxiOrderAllocationPlanResponse
-	37, // 60: city.person.v2.PersonService.SetControlledTaxiOrderAllocationPlan:output_type -> city.person.v2.SetControlledTaxiOrderAllocationPlanResponse
-	42, // [42:61] is the sub-list for method output_type
-	23, // [23:42] is the sub-list for method input_type
-	23, // [23:23] is the sub-list for extension type_name
-	23, // [23:23] is the sub-list for extension extendee
-	0,  // [0:23] is the sub-list for field type_name
+	38, // 0: city.person.v2.GetPersonResponse.person:type_name -> city.person.v2.PersonRuntime
+	39, // 1: city.person.v2.AddPersonRequest.person:type_name -> city.person.v2.Person
+	40, // 2: city.person.v2.SetScheduleRequest.schedules:type_name -> city.trip.v2.Schedule
+	41, // 3: city.person.v2.GetPersonsRequest.exclude_statuses:type_name -> city.person.v2.Status
+	38, // 4: city.person.v2.GetPersonsResponse.persons:type_name -> city.person.v2.PersonRuntime
+	42, // 5: city.person.v2.GetPersonByLongLatBBoxRequest.bbox:type_name -> city.geo.v2.LongLatBBox
+	41, // 6: city.person.v2.GetPersonByLongLatBBoxRequest.exclude_statuses:type_name -> city.person.v2.Status
+	38, // 7: city.person.v2.GetPersonByLongLatBBoxResponse.persons:type_name -> city.person.v2.PersonRuntime
+	43, // 8: city.person.v2.GetAllVehiclesResponse.vehicles:type_name -> city.person.v2.VehicleRuntime
+	38, // 9: city.person.v2.GetAllPedestriansResponse.pedestrians:type_name -> city.person.v2.PersonRuntime
+	44, // 10: city.person.v2.ResetPersonPositionRequest.position:type_name -> city.geo.v2.Position
+	45, // 11: city.person.v2.FetchControlledVehicleEnvsResponse.vehicle_envs:type_name -> city.person.v2.VehicleEnv
+	45, // 12: city.person.v2.FetchControlledVehicleEnvsResponse.route_vehicle_envs:type_name -> city.person.v2.VehicleEnv
+	46, // 13: city.person.v2.SetControlledVehicleActionsRequest.vehicle_actions:type_name -> city.person.v2.VehicleAction
+	47, // 14: city.person.v2.SetControlledVehicleActionsRequest.vehicle_journeys:type_name -> city.person.v2.VehicleRouteAction
+	48, // 15: city.person.v2.GetAllOrdersResponse.order_infos:type_name -> city.person.v2.RequestOrderInfo
+	49, // 16: city.person.v2.SetControlledTaxiToOrdersRequest.order_plans:type_name -> city.person.v2.OrderAllocationPlan
+	50, // 17: city.person.v2.FetchControlledPedestriansEnvsResponse.pedestrian_envs:type_name -> city.person.v2.PedestrianEnv
+	51, // 18: city.person.v2.SetControlledPedestriansActionsRequest.pedestrian_actions:type_name -> city.person.v2.PedestrianAction
+	52, // 19: city.person.v2.GetControlledTaxiOrderAllocationPlanResponse.order_allocations:type_name -> city.person.v2.OrderAllocations
+	52, // 20: city.person.v2.SetControlledTaxiOrderAllocationPlanRequest.order_allocations:type_name -> city.person.v2.OrderAllocations
+	0,  // 21: city.person.v2.PersonService.GetPerson:input_type -> city.person.v2.GetPersonRequest
+	2,  // 22: city.person.v2.PersonService.AddPerson:input_type -> city.person.v2.AddPersonRequest
+	4,  // 23: city.person.v2.PersonService.SetSchedule:input_type -> city.person.v2.SetScheduleRequest
+	6,  // 24: city.person.v2.PersonService.GetPersons:input_type -> city.person.v2.GetPersonsRequest
+	8,  // 25: city.person.v2.PersonService.GetPersonByLongLatBBox:input_type -> city.person.v2.GetPersonByLongLatBBoxRequest
+	10, // 26: city.person.v2.PersonService.GetAllVehicles:input_type -> city.person.v2.GetAllVehiclesRequest
+	12, // 27: city.person.v2.PersonService.GetAllPedestrians:input_type -> city.person.v2.GetAllPedestriansRequest
+	14, // 28: city.person.v2.PersonService.ResetPersonPosition:input_type -> city.person.v2.ResetPersonPositionRequest
+	16, // 29: city.person.v2.PersonService.SetControlledVehicleIDs:input_type -> city.person.v2.SetControlledVehicleIDsRequest
+	18, // 30: city.person.v2.PersonService.FetchControlledVehicleEnvs:input_type -> city.person.v2.FetchControlledVehicleEnvsRequest
+	20, // 31: city.person.v2.PersonService.SetControlledVehicleActions:input_type -> city.person.v2.SetControlledVehicleActionsRequest
+	22, // 32: city.person.v2.PersonService.SetControlledTaxiIDs:input_type -> city.person.v2.SetControlledTaxiIDsRequest
+	24, // 33: city.person.v2.PersonService.GetAllOrders:input_type -> city.person.v2.GetAllOrdersRequest
+	26, // 34: city.person.v2.PersonService.SetControlledTaxiToOrders:input_type -> city.person.v2.SetControlledTaxiToOrdersRequest
+	28, // 35: city.person.v2.PersonService.SetControlledPedestrians:input_type -> city.person.v2.SetControlledPedestriansRequest
+	30, // 36: city.person.v2.PersonService.FetchControlledPedestriansEnvs:input_type -> city.person.v2.FetchControlledPedestriansEnvsRequest
+	32, // 37: city.person.v2.PersonService.SetControlledPedestriansActions:input_type -> city.person.v2.SetControlledPedestriansActionsRequest
+	34, // 38: city.person.v2.PersonService.GetControlledTaxiOrderAllocationPlan:input_type -> city.person.v2.GetControlledTaxiOrderAllocationPlanRequest
+	36, // 39: city.person.v2.PersonService.SetControlledTaxiOrderAllocationPlan:input_type -> city.person.v2.SetControlledTaxiOrderAllocationPlanRequest
+	1,  // 40: city.person.v2.PersonService.GetPerson:output_type -> city.person.v2.GetPersonResponse
+	3,  // 41: city.person.v2.PersonService.AddPerson:output_type -> city.person.v2.AddPersonResponse
+	5,  // 42: city.person.v2.PersonService.SetSchedule:output_type -> city.person.v2.SetScheduleResponse
+	7,  // 43: city.person.v2.PersonService.GetPersons:output_type -> city.person.v2.GetPersonsResponse
+	9,  // 44: city.person.v2.PersonService.GetPersonByLongLatBBox:output_type -> city.person.v2.GetPersonByLongLatBBoxResponse
+	11, // 45: city.person.v2.PersonService.GetAllVehicles:output_type -> city.person.v2.GetAllVehiclesResponse
+	13, // 46: city.person.v2.PersonService.GetAllPedestrians:output_type -> city.person.v2.GetAllPedestriansResponse
+	15, // 47: city.person.v2.PersonService.ResetPersonPosition:output_type -> city.person.v2.ResetPersonPositionResponse
+	17, // 48: city.person.v2.PersonService.SetControlledVehicleIDs:output_type -> city.person.v2.SetControlledVehicleIDsResponse
+	19, // 49: city.person.v2.PersonService.FetchControlledVehicleEnvs:output_type -> city.person.v2.FetchControlledVehicleEnvsResponse
+	21, // 50: city.person.v2.PersonService.SetControlledVehicleActions:output_type -> city.person.v2.SetControlledVehicleActionsResponse
+	23, // 51: city.person.v2.PersonService.SetControlledTaxiIDs:output_type -> city.person.v2.SetControlledTaxiIDsResponse
+	25, // 52: city.person.v2.PersonService.GetAllOrders:output_type -> city.person.v2.GetAllOrdersResponse
+	27, // 53: city.person.v2.PersonService.SetControlledTaxiToOrders:output_type -> city.person.v2.SetControlledTaxiToOrdersResponse
+	29, // 54: city.person.v2.PersonService.SetControlledPedestrians:output_type -> city.person.v2.SetControlledPedestriansResponse
+	31, // 55: city.person.v2.PersonService.FetchControlledPedestriansEnvs:output_type -> city.person.v2.FetchControlledPedestriansEnvsResponse
+	33, // 56: city.person.v2.PersonService.SetControlledPedestriansActions:output_type -> city.person.v2.SetControlledPedestriansActionsResponse
+	35, // 57: city.person.v2.PersonService.GetControlledTaxiOrderAllocationPlan:output_type -> city.person.v2.GetControlledTaxiOrderAllocationPlanResponse
+	37, // 58: city.person.v2.PersonService.SetControlledTaxiOrderAllocationPlan:output_type -> city.person.v2.SetControlledTaxiOrderAllocationPlanResponse
+	40, // [40:59] is the sub-list for method output_type
+	21, // [21:40] is the sub-list for method input_type
+	21, // [21:21] is the sub-list for extension type_name
+	21, // [21:21] is the sub-list for extension extendee
+	0,  // [0:21] is the sub-list for field type_name
 }
 
 func init() { file_city_person_v2_person_service_proto_init() }
@@ -2053,7 +2043,7 @@ func file_city_person_v2_person_service_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_city_person_v2_person_service_proto_rawDesc), len(file_city_person_v2_person_service_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   40,
+			NumMessages:   38,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

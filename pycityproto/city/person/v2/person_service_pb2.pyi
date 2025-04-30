@@ -283,39 +283,19 @@ class GetControlledTaxiOrderAllocationPlanRequest(_message.Message):
         ...
 
 class GetControlledTaxiOrderAllocationPlanResponse(_message.Message):
-    __slots__ = ['order_allocations_map']
+    __slots__ = ['order_allocations']
+    ORDER_ALLOCATIONS_FIELD_NUMBER: _ClassVar[int]
+    order_allocations: _containers.RepeatedCompositeFieldContainer[_taxi_pb2.OrderAllocations]
 
-    class OrderAllocationsMapEntry(_message.Message):
-        __slots__ = ['key', 'value']
-        KEY_FIELD_NUMBER: _ClassVar[int]
-        VALUE_FIELD_NUMBER: _ClassVar[int]
-        key: int
-        value: _taxi_pb2.OrderAllocations
-
-        def __init__(self, key: _Optional[int]=..., value: _Optional[_Union[_taxi_pb2.OrderAllocations, _Mapping]]=...) -> None:
-            ...
-    ORDER_ALLOCATIONS_MAP_FIELD_NUMBER: _ClassVar[int]
-    order_allocations_map: _containers.MessageMap[int, _taxi_pb2.OrderAllocations]
-
-    def __init__(self, order_allocations_map: _Optional[_Mapping[int, _taxi_pb2.OrderAllocations]]=...) -> None:
+    def __init__(self, order_allocations: _Optional[_Iterable[_Union[_taxi_pb2.OrderAllocations, _Mapping]]]=...) -> None:
         ...
 
 class SetControlledTaxiOrderAllocationPlanRequest(_message.Message):
-    __slots__ = ['order_allocations_map']
+    __slots__ = ['order_allocations']
+    ORDER_ALLOCATIONS_FIELD_NUMBER: _ClassVar[int]
+    order_allocations: _containers.RepeatedCompositeFieldContainer[_taxi_pb2.OrderAllocations]
 
-    class OrderAllocationsMapEntry(_message.Message):
-        __slots__ = ['key', 'value']
-        KEY_FIELD_NUMBER: _ClassVar[int]
-        VALUE_FIELD_NUMBER: _ClassVar[int]
-        key: int
-        value: _taxi_pb2.OrderAllocations
-
-        def __init__(self, key: _Optional[int]=..., value: _Optional[_Union[_taxi_pb2.OrderAllocations, _Mapping]]=...) -> None:
-            ...
-    ORDER_ALLOCATIONS_MAP_FIELD_NUMBER: _ClassVar[int]
-    order_allocations_map: _containers.MessageMap[int, _taxi_pb2.OrderAllocations]
-
-    def __init__(self, order_allocations_map: _Optional[_Mapping[int, _taxi_pb2.OrderAllocations]]=...) -> None:
+    def __init__(self, order_allocations: _Optional[_Iterable[_Union[_taxi_pb2.OrderAllocations, _Mapping]]]=...) -> None:
         ...
 
 class SetControlledTaxiOrderAllocationPlanResponse(_message.Message):

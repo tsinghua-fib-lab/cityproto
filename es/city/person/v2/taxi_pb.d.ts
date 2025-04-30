@@ -236,6 +236,14 @@ export declare class OrderAllocations extends Message<OrderAllocations> {
    */
   orderAllocations: OrderAllocationPlan[];
 
+  /**
+   * 接单的出租车id
+   * taxi id who accepts the order
+   *
+   * @generated from field: int32 taxi_id = 2;
+   */
+  taxiId: number;
+
   constructor(data?: PartialMessage<OrderAllocations>);
 
   static readonly runtime: typeof proto3;

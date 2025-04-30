@@ -65,9 +65,11 @@ class OrderAllocationPlan(_message.Message):
         ...
 
 class OrderAllocations(_message.Message):
-    __slots__ = ['order_allocations']
+    __slots__ = ['order_allocations', 'taxi_id']
     ORDER_ALLOCATIONS_FIELD_NUMBER: _ClassVar[int]
+    TAXI_ID_FIELD_NUMBER: _ClassVar[int]
     order_allocations: _containers.RepeatedCompositeFieldContainer[OrderAllocationPlan]
+    taxi_id: int
 
-    def __init__(self, order_allocations: _Optional[_Iterable[_Union[OrderAllocationPlan, _Mapping]]]=...) -> None:
+    def __init__(self, order_allocations: _Optional[_Iterable[_Union[OrderAllocationPlan, _Mapping]]]=..., taxi_id: _Optional[int]=...) -> None:
         ...

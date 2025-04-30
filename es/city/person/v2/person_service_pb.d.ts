@@ -1034,9 +1034,9 @@ export declare class GetControlledTaxiOrderAllocationPlanResponse extends Messag
    * 当前所有受控出租车的订单分配方案
    * Current order allocation plan for all controlled taxis
    *
-   * @generated from field: map<int32, city.person.v2.OrderAllocations> order_allocations_map = 1;
+   * @generated from field: repeated city.person.v2.OrderAllocations order_allocations = 1;
    */
-  orderAllocationsMap: { [key: number]: OrderAllocations };
+  orderAllocations: OrderAllocations[];
 
   constructor(data?: PartialMessage<GetControlledTaxiOrderAllocationPlanResponse>);
 
@@ -1064,9 +1064,9 @@ export declare class SetControlledTaxiOrderAllocationPlanRequest extends Message
    * 当前所有受控出租车的订单分配方案
    * Current order allocation plan for all controlled taxis
    *
-   * @generated from field: map<int32, city.person.v2.OrderAllocations> order_allocations_map = 1;
+   * @generated from field: repeated city.person.v2.OrderAllocations order_allocations = 1;
    */
-  orderAllocationsMap: { [key: number]: OrderAllocations };
+  orderAllocations: OrderAllocations[];
 
   constructor(data?: PartialMessage<SetControlledTaxiOrderAllocationPlanRequest>);
 
