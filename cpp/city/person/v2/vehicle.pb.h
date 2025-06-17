@@ -89,6 +89,33 @@ namespace city {
 namespace person {
 namespace v2 {
 
+enum VehicleParkingStatus : int {
+  VEHICLE_PARKING_STATUS_UNSPECIFIED = 0,
+  VEHICLE_PARKING_STATUS_PARKING = 1,
+  VEHICLE_PARKING_STATUS_LEAVING = 2,
+  VEHICLE_PARKING_STATUS_DRIVING = 3,
+  VehicleParkingStatus_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
+  VehicleParkingStatus_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
+};
+bool VehicleParkingStatus_IsValid(int value);
+constexpr VehicleParkingStatus VehicleParkingStatus_MIN = VEHICLE_PARKING_STATUS_UNSPECIFIED;
+constexpr VehicleParkingStatus VehicleParkingStatus_MAX = VEHICLE_PARKING_STATUS_DRIVING;
+constexpr int VehicleParkingStatus_ARRAYSIZE = VehicleParkingStatus_MAX + 1;
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* VehicleParkingStatus_descriptor();
+template<typename T>
+inline const std::string& VehicleParkingStatus_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, VehicleParkingStatus>::value ||
+    ::std::is_integral<T>::value,
+    "Incorrect type passed to function VehicleParkingStatus_Name.");
+  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
+    VehicleParkingStatus_descriptor(), enum_t_value);
+}
+inline bool VehicleParkingStatus_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, VehicleParkingStatus* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<VehicleParkingStatus>(
+    VehicleParkingStatus_descriptor(), name, value);
+}
 enum VehicleRelation : int {
   VEHICLE_RELATION_UNSPECIFIED = 0,
   VEHICLE_RELATION_AHEAD = 1,
@@ -817,6 +844,7 @@ class VehicleRuntime final :
     kEtaFieldNumber = 9,
     kEtaFreeFlowFieldNumber = 10,
     kNumGoingAstrayFieldNumber = 7,
+    kParkingStatusFieldNumber = 14,
   };
   // .city.person.v2.PersonMotion base = 1 [json_name = "base"];
   bool has_base() const;
@@ -971,6 +999,15 @@ class VehicleRuntime final :
   void _internal_set_num_going_astray(int32_t value);
   public:
 
+  // .city.person.v2.VehicleParkingStatus parking_status = 14 [json_name = "parkingStatus"];
+  void clear_parking_status();
+  ::city::person::v2::VehicleParkingStatus parking_status() const;
+  void set_parking_status(::city::person::v2::VehicleParkingStatus value);
+  private:
+  ::city::person::v2::VehicleParkingStatus _internal_parking_status() const;
+  void _internal_set_parking_status(::city::person::v2::VehicleParkingStatus value);
+  public:
+
   // @@protoc_insertion_point(class_scope:city.person.v2.VehicleRuntime)
  private:
   class _Internal;
@@ -992,6 +1029,7 @@ class VehicleRuntime final :
     double eta_;
     double eta_free_flow_;
     int32_t num_going_astray_;
+    int parking_status_;
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_city_2fperson_2fv2_2fvehicle_2eproto;
@@ -2517,6 +2555,26 @@ inline void VehicleRuntime::set_allocated_pollution_statistics(::city::person::v
   // @@protoc_insertion_point(field_set_allocated:city.person.v2.VehicleRuntime.pollution_statistics)
 }
 
+// .city.person.v2.VehicleParkingStatus parking_status = 14 [json_name = "parkingStatus"];
+inline void VehicleRuntime::clear_parking_status() {
+  _impl_.parking_status_ = 0;
+}
+inline ::city::person::v2::VehicleParkingStatus VehicleRuntime::_internal_parking_status() const {
+  return static_cast< ::city::person::v2::VehicleParkingStatus >(_impl_.parking_status_);
+}
+inline ::city::person::v2::VehicleParkingStatus VehicleRuntime::parking_status() const {
+  // @@protoc_insertion_point(field_get:city.person.v2.VehicleRuntime.parking_status)
+  return _internal_parking_status();
+}
+inline void VehicleRuntime::_internal_set_parking_status(::city::person::v2::VehicleParkingStatus value) {
+  
+  _impl_.parking_status_ = value;
+}
+inline void VehicleRuntime::set_parking_status(::city::person::v2::VehicleParkingStatus value) {
+  _internal_set_parking_status(value);
+  // @@protoc_insertion_point(field_set:city.person.v2.VehicleRuntime.parking_status)
+}
+
 // -------------------------------------------------------------------
 
 // ObservedVehicle
@@ -3053,6 +3111,11 @@ VehicleEnv::observed_lanes() const {
 
 PROTOBUF_NAMESPACE_OPEN
 
+template <> struct is_proto_enum< ::city::person::v2::VehicleParkingStatus> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::city::person::v2::VehicleParkingStatus>() {
+  return ::city::person::v2::VehicleParkingStatus_descriptor();
+}
 template <> struct is_proto_enum< ::city::person::v2::VehicleRelation> : ::std::true_type {};
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::city::person::v2::VehicleRelation>() {

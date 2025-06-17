@@ -84,7 +84,8 @@ PROTOBUF_CONSTEXPR VehicleRuntime::VehicleRuntime(
   , /*decltype(_impl_.departure_time_)*/0
   , /*decltype(_impl_.eta_)*/0
   , /*decltype(_impl_.eta_free_flow_)*/0
-  , /*decltype(_impl_.num_going_astray_)*/0} {}
+  , /*decltype(_impl_.num_going_astray_)*/0
+  , /*decltype(_impl_.parking_status_)*/0} {}
 struct VehicleRuntimeDefaultTypeInternal {
   PROTOBUF_CONSTEXPR VehicleRuntimeDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -147,7 +148,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORIT
 }  // namespace person
 }  // namespace city
 static ::_pb::Metadata file_level_metadata_city_2fperson_2fv2_2fvehicle_2eproto[7];
-static const ::_pb::EnumDescriptor* file_level_enum_descriptors_city_2fperson_2fv2_2fvehicle_2eproto[2];
+static const ::_pb::EnumDescriptor* file_level_enum_descriptors_city_2fperson_2fv2_2fvehicle_2eproto[3];
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_city_2fperson_2fv2_2fvehicle_2eproto = nullptr;
 
 const uint32_t TableStruct_city_2fperson_2fv2_2fvehicle_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -200,6 +201,7 @@ const uint32_t TableStruct_city_2fperson_2fv2_2fvehicle_2eproto::offsets[] PROTO
   PROTOBUF_FIELD_OFFSET(::city::person::v2::VehicleRuntime, _impl_.carbon_),
   PROTOBUF_FIELD_OFFSET(::city::person::v2::VehicleRuntime, _impl_.emission_statistics_),
   PROTOBUF_FIELD_OFFSET(::city::person::v2::VehicleRuntime, _impl_.pollution_statistics_),
+  PROTOBUF_FIELD_OFFSET(::city::person::v2::VehicleRuntime, _impl_.parking_status_),
   ~0u,
   0,
   1,
@@ -211,6 +213,7 @@ const uint32_t TableStruct_city_2fperson_2fv2_2fvehicle_2eproto::offsets[] PROTO
   2,
   3,
   4,
+  ~0u,
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::city::person::v2::ObservedVehicle, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -247,10 +250,10 @@ static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protode
   { 0, -1, -1, sizeof(::city::person::v2::LC)},
   { 10, 20, -1, sizeof(::city::person::v2::VehicleAction)},
   { 24, -1, -1, sizeof(::city::person::v2::VehicleRouteAction)},
-  { 32, 49, -1, sizeof(::city::person::v2::VehicleRuntime)},
-  { 60, -1, -1, sizeof(::city::person::v2::ObservedVehicle)},
-  { 70, -1, -1, sizeof(::city::person::v2::ObservedLane)},
-  { 80, -1, -1, sizeof(::city::person::v2::VehicleEnv)},
+  { 32, 50, -1, sizeof(::city::person::v2::VehicleRuntime)},
+  { 62, -1, -1, sizeof(::city::person::v2::ObservedVehicle)},
+  { 72, -1, -1, sizeof(::city::person::v2::ObservedLane)},
+  { 82, -1, -1, sizeof(::city::person::v2::VehicleEnv)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -277,7 +280,7 @@ const char descriptor_table_protodef_city_2fperson_2fv2_2fvehicle_2eproto[] PROT
   "e\030\003 \001(\001R\005angleB\017\n\r_lc_target_id\"X\n\022Vehic"
   "leRouteAction\022\016\n\002id\030\001 \001(\005R\002id\0222\n\007journey"
   "\030\002 \001(\0132\030.city.routing.v2.JourneyR\007journe"
-  "y\"\232\005\n\016VehicleRuntime\0220\n\004base\030\001 \001(\0132\034.cit"
+  "y\"\347\005\n\016VehicleRuntime\0220\n\004base\030\001 \001(\0132\034.cit"
   "y.person.v2.PersonMotionR\004base\022\'\n\002lc\030\004 \001"
   "(\0132\022.city.person.v2.LCH\000R\002lc\210\001\001\022:\n\006actio"
   "n\030\005 \001(\0132\035.city.person.v2.VehicleActionH\001"
@@ -291,41 +294,48 @@ const char descriptor_table_protodef_city_2fperson_2fv2_2fvehicle_2eproto[] PROT
   ".city.person.v2.EmissionStatisticsH\003R\022em"
   "issionStatistics\210\001\001\022[\n\024pollution_statist"
   "ics\030\r \001(\0132#.city.person.v2.PollutionStat"
-  "isticsH\004R\023pollutionStatistics\210\001\001B\005\n\003_lcB"
-  "\t\n\007_actionB\t\n\007_carbonB\026\n\024_emission_stati"
-  "sticsB\027\n\025_pollution_statistics\"\301\001\n\017Obser"
-  "vedVehicle\022\016\n\002id\030\001 \001(\005R\002id\0224\n\006motion\030\002 \001"
-  "(\0132\034.city.person.v2.PersonMotionR\006motion"
-  "\022+\n\021relative_distance\030\003 \001(\001R\020relativeDis"
-  "tance\022;\n\010relation\030\004 \001(\0162\037.city.person.v2"
-  ".VehicleRelationR\010relation\"\257\001\n\014ObservedL"
-  "ane\022\016\n\002id\030\001 \001(\005R\002id\022 \n\013restriction\030\002 \001(\010"
-  "R\013restriction\022;\n\013light_state\030\003 \001(\0162\032.cit"
-  "y.person.v2.LightStateR\nlightState\0220\n\024li"
-  "ght_remaining_time\030\004 \001(\001R\022lightRemaining"
-  "Time\"\235\002\n\nVehicleEnv\022\016\n\002id\030\001 \001(\005R\002id\0228\n\007r"
-  "untime\030\002 \001(\0132\036.city.person.v2.VehicleRun"
-  "timeR\007runtime\0222\n\007journey\030\003 \001(\0132\030.city.ro"
-  "uting.v2.JourneyR\007journey\022L\n\021observed_ve"
-  "hicles\030\004 \003(\0132\037.city.person.v2.ObservedVe"
-  "hicleR\020observedVehicles\022C\n\016observed_lane"
-  "s\030\005 \003(\0132\034.city.person.v2.ObservedLaneR\ro"
-  "bservedLanes*\273\002\n\017VehicleRelation\022 \n\034VEHI"
-  "CLE_RELATION_UNSPECIFIED\020\000\022\032\n\026VEHICLE_RE"
-  "LATION_AHEAD\020\001\022\033\n\027VEHICLE_RELATION_BEHIN"
-  "D\020\002\022!\n\035VEHICLE_RELATION_SHADOW_AHEAD\020\003\022\""
-  "\n\036VEHICLE_RELATION_SHADOW_BEHIND\020\004\022\037\n\033VE"
-  "HICLE_RELATION_LEFT_AHEAD\020\005\022 \n\034VEHICLE_R"
-  "ELATION_RIGHT_AHEAD\020\006\022 \n\034VEHICLE_RELATIO"
-  "N_LEFT_BEHIND\020\007\022!\n\035VEHICLE_RELATION_RIGH"
-  "T_BEHIND\020\010*m\n\nLightState\022\033\n\027LIGHT_STATE_"
-  "UNSPECIFIED\020\000\022\023\n\017LIGHT_STATE_RED\020\001\022\025\n\021LI"
-  "GHT_STATE_GREEN\020\002\022\026\n\022LIGHT_STATE_YELLOW\020"
-  "\003B\265\001\n\022com.city.person.v2B\014VehicleProtoP\001"
-  "Z7git.fiblab.net/sim/protos/v2/go/city/p"
-  "erson/v2;personv2\242\002\003CPX\252\002\016City.Person.V2"
-  "\312\002\016City\\Person\\V2\342\002\032City\\Person\\V2\\GPBMe"
-  "tadata\352\002\020City::Person::V2b\006proto3"
+  "isticsH\004R\023pollutionStatistics\210\001\001\022K\n\016park"
+  "ing_status\030\016 \001(\0162$.city.person.v2.Vehicl"
+  "eParkingStatusR\rparkingStatusB\005\n\003_lcB\t\n\007"
+  "_actionB\t\n\007_carbonB\026\n\024_emission_statisti"
+  "csB\027\n\025_pollution_statistics\"\301\001\n\017Observed"
+  "Vehicle\022\016\n\002id\030\001 \001(\005R\002id\0224\n\006motion\030\002 \001(\0132"
+  "\034.city.person.v2.PersonMotionR\006motion\022+\n"
+  "\021relative_distance\030\003 \001(\001R\020relativeDistan"
+  "ce\022;\n\010relation\030\004 \001(\0162\037.city.person.v2.Ve"
+  "hicleRelationR\010relation\"\257\001\n\014ObservedLane"
+  "\022\016\n\002id\030\001 \001(\005R\002id\022 \n\013restriction\030\002 \001(\010R\013r"
+  "estriction\022;\n\013light_state\030\003 \001(\0162\032.city.p"
+  "erson.v2.LightStateR\nlightState\0220\n\024light"
+  "_remaining_time\030\004 \001(\001R\022lightRemainingTim"
+  "e\"\235\002\n\nVehicleEnv\022\016\n\002id\030\001 \001(\005R\002id\0228\n\007runt"
+  "ime\030\002 \001(\0132\036.city.person.v2.VehicleRuntim"
+  "eR\007runtime\0222\n\007journey\030\003 \001(\0132\030.city.routi"
+  "ng.v2.JourneyR\007journey\022L\n\021observed_vehic"
+  "les\030\004 \003(\0132\037.city.person.v2.ObservedVehic"
+  "leR\020observedVehicles\022C\n\016observed_lanes\030\005"
+  " \003(\0132\034.city.person.v2.ObservedLaneR\robse"
+  "rvedLanes*\252\001\n\024VehicleParkingStatus\022&\n\"VE"
+  "HICLE_PARKING_STATUS_UNSPECIFIED\020\000\022\"\n\036VE"
+  "HICLE_PARKING_STATUS_PARKING\020\001\022\"\n\036VEHICL"
+  "E_PARKING_STATUS_LEAVING\020\002\022\"\n\036VEHICLE_PA"
+  "RKING_STATUS_DRIVING\020\003*\273\002\n\017VehicleRelati"
+  "on\022 \n\034VEHICLE_RELATION_UNSPECIFIED\020\000\022\032\n\026"
+  "VEHICLE_RELATION_AHEAD\020\001\022\033\n\027VEHICLE_RELA"
+  "TION_BEHIND\020\002\022!\n\035VEHICLE_RELATION_SHADOW"
+  "_AHEAD\020\003\022\"\n\036VEHICLE_RELATION_SHADOW_BEHI"
+  "ND\020\004\022\037\n\033VEHICLE_RELATION_LEFT_AHEAD\020\005\022 \n"
+  "\034VEHICLE_RELATION_RIGHT_AHEAD\020\006\022 \n\034VEHIC"
+  "LE_RELATION_LEFT_BEHIND\020\007\022!\n\035VEHICLE_REL"
+  "ATION_RIGHT_BEHIND\020\010*m\n\nLightState\022\033\n\027LI"
+  "GHT_STATE_UNSPECIFIED\020\000\022\023\n\017LIGHT_STATE_R"
+  "ED\020\001\022\025\n\021LIGHT_STATE_GREEN\020\002\022\026\n\022LIGHT_STA"
+  "TE_YELLOW\020\003B\265\001\n\022com.city.person.v2B\014Vehi"
+  "cleProtoP\001Z7git.fiblab.net/sim/protos/v2"
+  "/go/city/person/v2;personv2\242\002\003CPX\252\002\016City"
+  ".Person.V2\312\002\016City\\Person\\V2\342\002\032City\\Perso"
+  "n\\V2\\GPBMetadata\352\002\020City::Person::V2b\006pro"
+  "to3"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_city_2fperson_2fv2_2fvehicle_2eproto_deps[4] = {
   &::descriptor_table_city_2fperson_2fv2_2fcarbon_2eproto,
@@ -335,7 +345,7 @@ static const ::_pbi::DescriptorTable* const descriptor_table_city_2fperson_2fv2_
 };
 static ::_pbi::once_flag descriptor_table_city_2fperson_2fv2_2fvehicle_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_city_2fperson_2fv2_2fvehicle_2eproto = {
-    false, false, 2473, descriptor_table_protodef_city_2fperson_2fv2_2fvehicle_2eproto,
+    false, false, 2723, descriptor_table_protodef_city_2fperson_2fv2_2fvehicle_2eproto,
     "city/person/v2/vehicle.proto",
     &descriptor_table_city_2fperson_2fv2_2fvehicle_2eproto_once, descriptor_table_city_2fperson_2fv2_2fvehicle_2eproto_deps, 4, 7,
     schemas, file_default_instances, TableStruct_city_2fperson_2fv2_2fvehicle_2eproto::offsets,
@@ -351,9 +361,25 @@ PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_in
 namespace city {
 namespace person {
 namespace v2 {
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* VehicleRelation_descriptor() {
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* VehicleParkingStatus_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_city_2fperson_2fv2_2fvehicle_2eproto);
   return file_level_enum_descriptors_city_2fperson_2fv2_2fvehicle_2eproto[0];
+}
+bool VehicleParkingStatus_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+    case 2:
+    case 3:
+      return true;
+    default:
+      return false;
+  }
+}
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* VehicleRelation_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_city_2fperson_2fv2_2fvehicle_2eproto);
+  return file_level_enum_descriptors_city_2fperson_2fv2_2fvehicle_2eproto[1];
 }
 bool VehicleRelation_IsValid(int value) {
   switch (value) {
@@ -374,7 +400,7 @@ bool VehicleRelation_IsValid(int value) {
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* LightState_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_city_2fperson_2fv2_2fvehicle_2eproto);
-  return file_level_enum_descriptors_city_2fperson_2fv2_2fvehicle_2eproto[1];
+  return file_level_enum_descriptors_city_2fperson_2fv2_2fvehicle_2eproto[2];
 }
 bool LightState_IsValid(int value) {
   switch (value) {
@@ -1303,7 +1329,8 @@ VehicleRuntime::VehicleRuntime(const VehicleRuntime& from)
     , decltype(_impl_.departure_time_){}
     , decltype(_impl_.eta_){}
     , decltype(_impl_.eta_free_flow_){}
-    , decltype(_impl_.num_going_astray_){}};
+    , decltype(_impl_.num_going_astray_){}
+    , decltype(_impl_.parking_status_){}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_base()) {
@@ -1325,8 +1352,8 @@ VehicleRuntime::VehicleRuntime(const VehicleRuntime& from)
     _this->_impl_.pollution_statistics_ = new ::city::person::v2::PollutionStatistics(*from._impl_.pollution_statistics_);
   }
   ::memcpy(&_impl_.running_distance_, &from._impl_.running_distance_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.num_going_astray_) -
-    reinterpret_cast<char*>(&_impl_.running_distance_)) + sizeof(_impl_.num_going_astray_));
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.parking_status_) -
+    reinterpret_cast<char*>(&_impl_.running_distance_)) + sizeof(_impl_.parking_status_));
   // @@protoc_insertion_point(copy_constructor:city.person.v2.VehicleRuntime)
 }
 
@@ -1348,6 +1375,7 @@ inline void VehicleRuntime::SharedCtor(
     , decltype(_impl_.eta_){0}
     , decltype(_impl_.eta_free_flow_){0}
     , decltype(_impl_.num_going_astray_){0}
+    , decltype(_impl_.parking_status_){0}
   };
 }
 
@@ -1408,8 +1436,8 @@ void VehicleRuntime::Clear() {
     }
   }
   ::memset(&_impl_.running_distance_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_impl_.num_going_astray_) -
-      reinterpret_cast<char*>(&_impl_.running_distance_)) + sizeof(_impl_.num_going_astray_));
+      reinterpret_cast<char*>(&_impl_.parking_status_) -
+      reinterpret_cast<char*>(&_impl_.running_distance_)) + sizeof(_impl_.parking_status_));
   _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -1506,6 +1534,15 @@ const char* VehicleRuntime::_InternalParse(const char* ptr, ::_pbi::ParseContext
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 106)) {
           ptr = ctx->ParseMessage(_internal_mutable_pollution_statistics(), ptr);
           CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .city.person.v2.VehicleParkingStatus parking_status = 14 [json_name = "parkingStatus"];
+      case 14:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 112)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_set_parking_status(static_cast<::city::person::v2::VehicleParkingStatus>(val));
         } else
           goto handle_unusual;
         continue;
@@ -1627,6 +1664,13 @@ uint8_t* VehicleRuntime::_InternalSerialize(
         _Internal::pollution_statistics(this).GetCachedSize(), target, stream);
   }
 
+  // .city.person.v2.VehicleParkingStatus parking_status = 14 [json_name = "parkingStatus"];
+  if (this->_internal_parking_status() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
+      14, this->_internal_parking_status(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -1729,6 +1773,12 @@ size_t VehicleRuntime::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_num_going_astray());
   }
 
+  // .city.person.v2.VehicleParkingStatus parking_status = 14 [json_name = "parkingStatus"];
+  if (this->_internal_parking_status() != 0) {
+    total_size += 1 +
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_parking_status());
+  }
+
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
@@ -1805,6 +1855,9 @@ void VehicleRuntime::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const :
   if (from._internal_num_going_astray() != 0) {
     _this->_internal_set_num_going_astray(from._internal_num_going_astray());
   }
+  if (from._internal_parking_status() != 0) {
+    _this->_internal_set_parking_status(from._internal_parking_status());
+  }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -1824,8 +1877,8 @@ void VehicleRuntime::InternalSwap(VehicleRuntime* other) {
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(VehicleRuntime, _impl_.num_going_astray_)
-      + sizeof(VehicleRuntime::_impl_.num_going_astray_)
+      PROTOBUF_FIELD_OFFSET(VehicleRuntime, _impl_.parking_status_)
+      + sizeof(VehicleRuntime::_impl_.parking_status_)
       - PROTOBUF_FIELD_OFFSET(VehicleRuntime, _impl_.base_)>(
           reinterpret_cast<char*>(&_impl_.base_),
           reinterpret_cast<char*>(&other->_impl_.base_));

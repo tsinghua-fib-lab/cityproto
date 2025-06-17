@@ -10,6 +10,19 @@ import { EmissionStatistics, VehicleCarbon } from "./carbon_pb.js";
 import { PollutionStatistics } from "./pollution_pb.js";
 
 /**
+ * @generated from enum city.person.v2.VehicleParkingStatus
+ */
+export const VehicleParkingStatus = /*@__PURE__*/ proto3.makeEnum(
+  "city.person.v2.VehicleParkingStatus",
+  [
+    {no: 0, name: "VEHICLE_PARKING_STATUS_UNSPECIFIED", localName: "UNSPECIFIED"},
+    {no: 1, name: "VEHICLE_PARKING_STATUS_PARKING", localName: "PARKING"},
+    {no: 2, name: "VEHICLE_PARKING_STATUS_LEAVING", localName: "LEAVING"},
+    {no: 3, name: "VEHICLE_PARKING_STATUS_DRIVING", localName: "DRIVING"},
+  ],
+);
+
+/**
  * @generated from enum city.person.v2.VehicleRelation
  */
 export const VehicleRelation = /*@__PURE__*/ proto3.makeEnum(
@@ -106,6 +119,7 @@ export const VehicleRuntime = /*@__PURE__*/ proto3.makeMessageType(
     { no: 11, name: "carbon", kind: "message", T: VehicleCarbon, opt: true },
     { no: 12, name: "emission_statistics", kind: "message", T: EmissionStatistics, opt: true },
     { no: 13, name: "pollution_statistics", kind: "message", T: PollutionStatistics, opt: true },
+    { no: 14, name: "parking_status", kind: "enum", T: proto3.getEnumType(VehicleParkingStatus) },
   ],
 );
 

@@ -52,6 +52,21 @@ message VehicleRouteAction {
   city.routing.v2.Journey journey = 2;
 }
 
+enum VehicleParkingStatus {
+  // 未指定
+  // unspecified
+  VEHICLE_PARKING_STATUS_UNSPECIFIED = 0;
+  // 停车
+  // parking
+  VEHICLE_PARKING_STATUS_PARKING = 1;
+  // 正在离开
+  // leaving
+  VEHICLE_PARKING_STATUS_LEAVING = 2;
+  // 正常行驶
+  // normal driving
+  VEHICLE_PARKING_STATUS_DRIVING = 3;
+}
+
 message VehicleRuntime {
   // 基本运行时信息
   // basic runtime information
@@ -86,6 +101,9 @@ message VehicleRuntime {
   // 污染统计
   // pollution statistics
   optional PollutionStatistics pollution_statistics = 13;
+  // 停车状态
+  // parking status
+  VehicleParkingStatus parking_status = 14;
 }
 
 enum VehicleRelation {

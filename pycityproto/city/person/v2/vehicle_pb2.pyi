@@ -9,6 +9,13 @@ from google.protobuf import message as _message
 from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Mapping, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
+class VehicleParkingStatus(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+    __slots__ = []
+    VEHICLE_PARKING_STATUS_UNSPECIFIED: _ClassVar[VehicleParkingStatus]
+    VEHICLE_PARKING_STATUS_PARKING: _ClassVar[VehicleParkingStatus]
+    VEHICLE_PARKING_STATUS_LEAVING: _ClassVar[VehicleParkingStatus]
+    VEHICLE_PARKING_STATUS_DRIVING: _ClassVar[VehicleParkingStatus]
+
 class VehicleRelation(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     __slots__ = []
     VEHICLE_RELATION_UNSPECIFIED: _ClassVar[VehicleRelation]
@@ -27,6 +34,10 @@ class LightState(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     LIGHT_STATE_RED: _ClassVar[LightState]
     LIGHT_STATE_GREEN: _ClassVar[LightState]
     LIGHT_STATE_YELLOW: _ClassVar[LightState]
+VEHICLE_PARKING_STATUS_UNSPECIFIED: VehicleParkingStatus
+VEHICLE_PARKING_STATUS_PARKING: VehicleParkingStatus
+VEHICLE_PARKING_STATUS_LEAVING: VehicleParkingStatus
+VEHICLE_PARKING_STATUS_DRIVING: VehicleParkingStatus
 VEHICLE_RELATION_UNSPECIFIED: VehicleRelation
 VEHICLE_RELATION_AHEAD: VehicleRelation
 VEHICLE_RELATION_BEHIND: VehicleRelation
@@ -80,7 +91,7 @@ class VehicleRouteAction(_message.Message):
         ...
 
 class VehicleRuntime(_message.Message):
-    __slots__ = ['base', 'lc', 'action', 'running_distance', 'num_going_astray', 'departure_time', 'eta', 'eta_free_flow', 'carbon', 'emission_statistics', 'pollution_statistics']
+    __slots__ = ['base', 'lc', 'action', 'running_distance', 'num_going_astray', 'departure_time', 'eta', 'eta_free_flow', 'carbon', 'emission_statistics', 'pollution_statistics', 'parking_status']
     BASE_FIELD_NUMBER: _ClassVar[int]
     LC_FIELD_NUMBER: _ClassVar[int]
     ACTION_FIELD_NUMBER: _ClassVar[int]
@@ -92,6 +103,7 @@ class VehicleRuntime(_message.Message):
     CARBON_FIELD_NUMBER: _ClassVar[int]
     EMISSION_STATISTICS_FIELD_NUMBER: _ClassVar[int]
     POLLUTION_STATISTICS_FIELD_NUMBER: _ClassVar[int]
+    PARKING_STATUS_FIELD_NUMBER: _ClassVar[int]
     base: _motion_pb2.PersonMotion
     lc: LC
     action: VehicleAction
@@ -103,8 +115,9 @@ class VehicleRuntime(_message.Message):
     carbon: _carbon_pb2.VehicleCarbon
     emission_statistics: _carbon_pb2.EmissionStatistics
     pollution_statistics: _pollution_pb2.PollutionStatistics
+    parking_status: VehicleParkingStatus
 
-    def __init__(self, base: _Optional[_Union[_motion_pb2.PersonMotion, _Mapping]]=..., lc: _Optional[_Union[LC, _Mapping]]=..., action: _Optional[_Union[VehicleAction, _Mapping]]=..., running_distance: _Optional[float]=..., num_going_astray: _Optional[int]=..., departure_time: _Optional[float]=..., eta: _Optional[float]=..., eta_free_flow: _Optional[float]=..., carbon: _Optional[_Union[_carbon_pb2.VehicleCarbon, _Mapping]]=..., emission_statistics: _Optional[_Union[_carbon_pb2.EmissionStatistics, _Mapping]]=..., pollution_statistics: _Optional[_Union[_pollution_pb2.PollutionStatistics, _Mapping]]=...) -> None:
+    def __init__(self, base: _Optional[_Union[_motion_pb2.PersonMotion, _Mapping]]=..., lc: _Optional[_Union[LC, _Mapping]]=..., action: _Optional[_Union[VehicleAction, _Mapping]]=..., running_distance: _Optional[float]=..., num_going_astray: _Optional[int]=..., departure_time: _Optional[float]=..., eta: _Optional[float]=..., eta_free_flow: _Optional[float]=..., carbon: _Optional[_Union[_carbon_pb2.VehicleCarbon, _Mapping]]=..., emission_statistics: _Optional[_Union[_carbon_pb2.EmissionStatistics, _Mapping]]=..., pollution_statistics: _Optional[_Union[_pollution_pb2.PollutionStatistics, _Mapping]]=..., parking_status: _Optional[_Union[VehicleParkingStatus, str]]=...) -> None:
         ...
 
 class ObservedVehicle(_message.Message):

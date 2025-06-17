@@ -527,6 +527,7 @@
     - [VehicleRuntime](#city-person-v2-VehicleRuntime)
   
     - [LightState](#city-person-v2-LightState)
+    - [VehicleParkingStatus](#city-person-v2-VehicleParkingStatus)
     - [VehicleRelation](#city-person-v2-VehicleRelation)
   
 - [city/person/v2/person_service.proto](#city_person_v2_person_service-proto)
@@ -7870,6 +7871,7 @@ vehicle routing information modification
 | carbon | [VehicleCarbon](#city-person-v2-VehicleCarbon) | optional | 碳排放信息 carbon emission information |
 | emission_statistics | [EmissionStatistics](#city-person-v2-EmissionStatistics) | optional | 排放统计 emission statistics |
 | pollution_statistics | [PollutionStatistics](#city-person-v2-PollutionStatistics) | optional | 污染统计 pollution statistics |
+| parking_status | [VehicleParkingStatus](#city-person-v2-VehicleParkingStatus) |  | 停车状态 parking status |
 
 
 
@@ -7890,6 +7892,20 @@ traffic light state
 | LIGHT_STATE_RED | 1 | 红灯 red light |
 | LIGHT_STATE_GREEN | 2 | 绿灯 green light |
 | LIGHT_STATE_YELLOW | 3 | 黄灯 yellow light |
+
+
+
+<a name="city-person-v2-VehicleParkingStatus"></a>
+
+### VehicleParkingStatus
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| VEHICLE_PARKING_STATUS_UNSPECIFIED | 0 | 未指定 unspecified |
+| VEHICLE_PARKING_STATUS_PARKING | 1 | 停车 parking |
+| VEHICLE_PARKING_STATUS_LEAVING | 2 | 正在离开 leaving |
+| VEHICLE_PARKING_STATUS_DRIVING | 3 | 正常行驶 normal driving |
 
 
 

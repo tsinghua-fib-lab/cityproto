@@ -11,6 +11,43 @@ import type { EmissionStatistics, VehicleCarbon } from "./carbon_pb.js";
 import type { PollutionStatistics } from "./pollution_pb.js";
 
 /**
+ * @generated from enum city.person.v2.VehicleParkingStatus
+ */
+export declare enum VehicleParkingStatus {
+  /**
+   * 未指定
+   * unspecified
+   *
+   * @generated from enum value: VEHICLE_PARKING_STATUS_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * 停车
+   * parking
+   *
+   * @generated from enum value: VEHICLE_PARKING_STATUS_PARKING = 1;
+   */
+  PARKING = 1,
+
+  /**
+   * 正在离开
+   * leaving
+   *
+   * @generated from enum value: VEHICLE_PARKING_STATUS_LEAVING = 2;
+   */
+  LEAVING = 2,
+
+  /**
+   * 正常行驶
+   * normal driving
+   *
+   * @generated from enum value: VEHICLE_PARKING_STATUS_DRIVING = 3;
+   */
+  DRIVING = 3,
+}
+
+/**
  * @generated from enum city.person.v2.VehicleRelation
  */
 export declare enum VehicleRelation {
@@ -364,6 +401,14 @@ export declare class VehicleRuntime extends Message<VehicleRuntime> {
    * @generated from field: optional city.person.v2.PollutionStatistics pollution_statistics = 13;
    */
   pollutionStatistics?: PollutionStatistics;
+
+  /**
+   * 停车状态
+   * parking status
+   *
+   * @generated from field: city.person.v2.VehicleParkingStatus parking_status = 14;
+   */
+  parkingStatus: VehicleParkingStatus;
 
   constructor(data?: PartialMessage<VehicleRuntime>);
 

@@ -22,6 +22,66 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+type VehicleParkingStatus int32
+
+const (
+	// 未指定
+	// unspecified
+	VehicleParkingStatus_VEHICLE_PARKING_STATUS_UNSPECIFIED VehicleParkingStatus = 0
+	// 停车
+	// parking
+	VehicleParkingStatus_VEHICLE_PARKING_STATUS_PARKING VehicleParkingStatus = 1
+	// 正在离开
+	// leaving
+	VehicleParkingStatus_VEHICLE_PARKING_STATUS_LEAVING VehicleParkingStatus = 2
+	// 正常行驶
+	// normal driving
+	VehicleParkingStatus_VEHICLE_PARKING_STATUS_DRIVING VehicleParkingStatus = 3
+)
+
+// Enum value maps for VehicleParkingStatus.
+var (
+	VehicleParkingStatus_name = map[int32]string{
+		0: "VEHICLE_PARKING_STATUS_UNSPECIFIED",
+		1: "VEHICLE_PARKING_STATUS_PARKING",
+		2: "VEHICLE_PARKING_STATUS_LEAVING",
+		3: "VEHICLE_PARKING_STATUS_DRIVING",
+	}
+	VehicleParkingStatus_value = map[string]int32{
+		"VEHICLE_PARKING_STATUS_UNSPECIFIED": 0,
+		"VEHICLE_PARKING_STATUS_PARKING":     1,
+		"VEHICLE_PARKING_STATUS_LEAVING":     2,
+		"VEHICLE_PARKING_STATUS_DRIVING":     3,
+	}
+)
+
+func (x VehicleParkingStatus) Enum() *VehicleParkingStatus {
+	p := new(VehicleParkingStatus)
+	*p = x
+	return p
+}
+
+func (x VehicleParkingStatus) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (VehicleParkingStatus) Descriptor() protoreflect.EnumDescriptor {
+	return file_city_person_v2_vehicle_proto_enumTypes[0].Descriptor()
+}
+
+func (VehicleParkingStatus) Type() protoreflect.EnumType {
+	return &file_city_person_v2_vehicle_proto_enumTypes[0]
+}
+
+func (x VehicleParkingStatus) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use VehicleParkingStatus.Descriptor instead.
+func (VehicleParkingStatus) EnumDescriptor() ([]byte, []int) {
+	return file_city_person_v2_vehicle_proto_rawDescGZIP(), []int{0}
+}
+
 type VehicleRelation int32
 
 const (
@@ -91,11 +151,11 @@ func (x VehicleRelation) String() string {
 }
 
 func (VehicleRelation) Descriptor() protoreflect.EnumDescriptor {
-	return file_city_person_v2_vehicle_proto_enumTypes[0].Descriptor()
+	return file_city_person_v2_vehicle_proto_enumTypes[1].Descriptor()
 }
 
 func (VehicleRelation) Type() protoreflect.EnumType {
-	return &file_city_person_v2_vehicle_proto_enumTypes[0]
+	return &file_city_person_v2_vehicle_proto_enumTypes[1]
 }
 
 func (x VehicleRelation) Number() protoreflect.EnumNumber {
@@ -104,7 +164,7 @@ func (x VehicleRelation) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use VehicleRelation.Descriptor instead.
 func (VehicleRelation) EnumDescriptor() ([]byte, []int) {
-	return file_city_person_v2_vehicle_proto_rawDescGZIP(), []int{0}
+	return file_city_person_v2_vehicle_proto_rawDescGZIP(), []int{1}
 }
 
 // 交通灯的状态
@@ -153,11 +213,11 @@ func (x LightState) String() string {
 }
 
 func (LightState) Descriptor() protoreflect.EnumDescriptor {
-	return file_city_person_v2_vehicle_proto_enumTypes[1].Descriptor()
+	return file_city_person_v2_vehicle_proto_enumTypes[2].Descriptor()
 }
 
 func (LightState) Type() protoreflect.EnumType {
-	return &file_city_person_v2_vehicle_proto_enumTypes[1]
+	return &file_city_person_v2_vehicle_proto_enumTypes[2]
 }
 
 func (x LightState) Number() protoreflect.EnumNumber {
@@ -166,7 +226,7 @@ func (x LightState) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use LightState.Descriptor instead.
 func (LightState) EnumDescriptor() ([]byte, []int) {
-	return file_city_person_v2_vehicle_proto_rawDescGZIP(), []int{1}
+	return file_city_person_v2_vehicle_proto_rawDescGZIP(), []int{2}
 }
 
 // 变道相关的信息
@@ -418,8 +478,11 @@ type VehicleRuntime struct {
 	// 污染统计
 	// pollution statistics
 	PollutionStatistics *PollutionStatistics `protobuf:"bytes,13,opt,name=pollution_statistics,json=pollutionStatistics,proto3,oneof" json:"pollution_statistics,omitempty" bson:"pollution_statistics" db:"pollution_statistics" yaml:"pollution_statistics"`
-	unknownFields       protoimpl.UnknownFields
-	sizeCache           protoimpl.SizeCache
+	// 停车状态
+	// parking status
+	ParkingStatus VehicleParkingStatus `protobuf:"varint,14,opt,name=parking_status,json=parkingStatus,proto3,enum=city.person.v2.VehicleParkingStatus" json:"parking_status,omitempty" bson:"parking_status" db:"parking_status" yaml:"parking_status"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *VehicleRuntime) Reset() {
@@ -527,6 +590,13 @@ func (x *VehicleRuntime) GetPollutionStatistics() *PollutionStatistics {
 		return x.PollutionStatistics
 	}
 	return nil
+}
+
+func (x *VehicleRuntime) GetParkingStatus() VehicleParkingStatus {
+	if x != nil {
+		return x.ParkingStatus
+	}
+	return VehicleParkingStatus_VEHICLE_PARKING_STATUS_UNSPECIFIED
 }
 
 // 观测到的车辆
@@ -789,7 +859,7 @@ const file_city_person_v2_vehicle_proto_rawDesc = "" +
 	"\r_lc_target_id\"X\n" +
 	"\x12VehicleRouteAction\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\x05R\x02id\x122\n" +
-	"\ajourney\x18\x02 \x01(\v2\x18.city.routing.v2.JourneyR\ajourney\"\x9a\x05\n" +
+	"\ajourney\x18\x02 \x01(\v2\x18.city.routing.v2.JourneyR\ajourney\"\xe7\x05\n" +
 	"\x0eVehicleRuntime\x120\n" +
 	"\x04base\x18\x01 \x01(\v2\x1c.city.person.v2.PersonMotionR\x04base\x12'\n" +
 	"\x02lc\x18\x04 \x01(\v2\x12.city.person.v2.LCH\x00R\x02lc\x88\x01\x01\x12:\n" +
@@ -802,7 +872,8 @@ const file_city_person_v2_vehicle_proto_rawDesc = "" +
 	" \x01(\x01R\vetaFreeFlow\x12:\n" +
 	"\x06carbon\x18\v \x01(\v2\x1d.city.person.v2.VehicleCarbonH\x02R\x06carbon\x88\x01\x01\x12X\n" +
 	"\x13emission_statistics\x18\f \x01(\v2\".city.person.v2.EmissionStatisticsH\x03R\x12emissionStatistics\x88\x01\x01\x12[\n" +
-	"\x14pollution_statistics\x18\r \x01(\v2#.city.person.v2.PollutionStatisticsH\x04R\x13pollutionStatistics\x88\x01\x01B\x05\n" +
+	"\x14pollution_statistics\x18\r \x01(\v2#.city.person.v2.PollutionStatisticsH\x04R\x13pollutionStatistics\x88\x01\x01\x12K\n" +
+	"\x0eparking_status\x18\x0e \x01(\x0e2$.city.person.v2.VehicleParkingStatusR\rparkingStatusB\x05\n" +
 	"\x03_lcB\t\n" +
 	"\a_actionB\t\n" +
 	"\a_carbonB\x16\n" +
@@ -825,7 +896,12 @@ const file_city_person_v2_vehicle_proto_rawDesc = "" +
 	"\aruntime\x18\x02 \x01(\v2\x1e.city.person.v2.VehicleRuntimeR\aruntime\x122\n" +
 	"\ajourney\x18\x03 \x01(\v2\x18.city.routing.v2.JourneyR\ajourney\x12L\n" +
 	"\x11observed_vehicles\x18\x04 \x03(\v2\x1f.city.person.v2.ObservedVehicleR\x10observedVehicles\x12C\n" +
-	"\x0eobserved_lanes\x18\x05 \x03(\v2\x1c.city.person.v2.ObservedLaneR\robservedLanes*\xbb\x02\n" +
+	"\x0eobserved_lanes\x18\x05 \x03(\v2\x1c.city.person.v2.ObservedLaneR\robservedLanes*\xaa\x01\n" +
+	"\x14VehicleParkingStatus\x12&\n" +
+	"\"VEHICLE_PARKING_STATUS_UNSPECIFIED\x10\x00\x12\"\n" +
+	"\x1eVEHICLE_PARKING_STATUS_PARKING\x10\x01\x12\"\n" +
+	"\x1eVEHICLE_PARKING_STATUS_LEAVING\x10\x02\x12\"\n" +
+	"\x1eVEHICLE_PARKING_STATUS_DRIVING\x10\x03*\xbb\x02\n" +
 	"\x0fVehicleRelation\x12 \n" +
 	"\x1cVEHICLE_RELATION_UNSPECIFIED\x10\x00\x12\x1a\n" +
 	"\x16VEHICLE_RELATION_AHEAD\x10\x01\x12\x1b\n" +
@@ -856,44 +932,46 @@ func file_city_person_v2_vehicle_proto_rawDescGZIP() []byte {
 	return file_city_person_v2_vehicle_proto_rawDescData
 }
 
-var file_city_person_v2_vehicle_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
+var file_city_person_v2_vehicle_proto_enumTypes = make([]protoimpl.EnumInfo, 3)
 var file_city_person_v2_vehicle_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
 var file_city_person_v2_vehicle_proto_goTypes = []any{
-	(VehicleRelation)(0),        // 0: city.person.v2.VehicleRelation
-	(LightState)(0),             // 1: city.person.v2.LightState
-	(*LC)(nil),                  // 2: city.person.v2.LC
-	(*VehicleAction)(nil),       // 3: city.person.v2.VehicleAction
-	(*VehicleRouteAction)(nil),  // 4: city.person.v2.VehicleRouteAction
-	(*VehicleRuntime)(nil),      // 5: city.person.v2.VehicleRuntime
-	(*ObservedVehicle)(nil),     // 6: city.person.v2.ObservedVehicle
-	(*ObservedLane)(nil),        // 7: city.person.v2.ObservedLane
-	(*VehicleEnv)(nil),          // 8: city.person.v2.VehicleEnv
-	(*v2.Journey)(nil),          // 9: city.routing.v2.Journey
-	(*PersonMotion)(nil),        // 10: city.person.v2.PersonMotion
-	(*VehicleCarbon)(nil),       // 11: city.person.v2.VehicleCarbon
-	(*EmissionStatistics)(nil),  // 12: city.person.v2.EmissionStatistics
-	(*PollutionStatistics)(nil), // 13: city.person.v2.PollutionStatistics
+	(VehicleParkingStatus)(0),   // 0: city.person.v2.VehicleParkingStatus
+	(VehicleRelation)(0),        // 1: city.person.v2.VehicleRelation
+	(LightState)(0),             // 2: city.person.v2.LightState
+	(*LC)(nil),                  // 3: city.person.v2.LC
+	(*VehicleAction)(nil),       // 4: city.person.v2.VehicleAction
+	(*VehicleRouteAction)(nil),  // 5: city.person.v2.VehicleRouteAction
+	(*VehicleRuntime)(nil),      // 6: city.person.v2.VehicleRuntime
+	(*ObservedVehicle)(nil),     // 7: city.person.v2.ObservedVehicle
+	(*ObservedLane)(nil),        // 8: city.person.v2.ObservedLane
+	(*VehicleEnv)(nil),          // 9: city.person.v2.VehicleEnv
+	(*v2.Journey)(nil),          // 10: city.routing.v2.Journey
+	(*PersonMotion)(nil),        // 11: city.person.v2.PersonMotion
+	(*VehicleCarbon)(nil),       // 12: city.person.v2.VehicleCarbon
+	(*EmissionStatistics)(nil),  // 13: city.person.v2.EmissionStatistics
+	(*PollutionStatistics)(nil), // 14: city.person.v2.PollutionStatistics
 }
 var file_city_person_v2_vehicle_proto_depIdxs = []int32{
-	9,  // 0: city.person.v2.VehicleRouteAction.journey:type_name -> city.routing.v2.Journey
-	10, // 1: city.person.v2.VehicleRuntime.base:type_name -> city.person.v2.PersonMotion
-	2,  // 2: city.person.v2.VehicleRuntime.lc:type_name -> city.person.v2.LC
-	3,  // 3: city.person.v2.VehicleRuntime.action:type_name -> city.person.v2.VehicleAction
-	11, // 4: city.person.v2.VehicleRuntime.carbon:type_name -> city.person.v2.VehicleCarbon
-	12, // 5: city.person.v2.VehicleRuntime.emission_statistics:type_name -> city.person.v2.EmissionStatistics
-	13, // 6: city.person.v2.VehicleRuntime.pollution_statistics:type_name -> city.person.v2.PollutionStatistics
-	10, // 7: city.person.v2.ObservedVehicle.motion:type_name -> city.person.v2.PersonMotion
-	0,  // 8: city.person.v2.ObservedVehicle.relation:type_name -> city.person.v2.VehicleRelation
-	1,  // 9: city.person.v2.ObservedLane.light_state:type_name -> city.person.v2.LightState
-	5,  // 10: city.person.v2.VehicleEnv.runtime:type_name -> city.person.v2.VehicleRuntime
-	9,  // 11: city.person.v2.VehicleEnv.journey:type_name -> city.routing.v2.Journey
-	6,  // 12: city.person.v2.VehicleEnv.observed_vehicles:type_name -> city.person.v2.ObservedVehicle
-	7,  // 13: city.person.v2.VehicleEnv.observed_lanes:type_name -> city.person.v2.ObservedLane
-	14, // [14:14] is the sub-list for method output_type
-	14, // [14:14] is the sub-list for method input_type
-	14, // [14:14] is the sub-list for extension type_name
-	14, // [14:14] is the sub-list for extension extendee
-	0,  // [0:14] is the sub-list for field type_name
+	10, // 0: city.person.v2.VehicleRouteAction.journey:type_name -> city.routing.v2.Journey
+	11, // 1: city.person.v2.VehicleRuntime.base:type_name -> city.person.v2.PersonMotion
+	3,  // 2: city.person.v2.VehicleRuntime.lc:type_name -> city.person.v2.LC
+	4,  // 3: city.person.v2.VehicleRuntime.action:type_name -> city.person.v2.VehicleAction
+	12, // 4: city.person.v2.VehicleRuntime.carbon:type_name -> city.person.v2.VehicleCarbon
+	13, // 5: city.person.v2.VehicleRuntime.emission_statistics:type_name -> city.person.v2.EmissionStatistics
+	14, // 6: city.person.v2.VehicleRuntime.pollution_statistics:type_name -> city.person.v2.PollutionStatistics
+	0,  // 7: city.person.v2.VehicleRuntime.parking_status:type_name -> city.person.v2.VehicleParkingStatus
+	11, // 8: city.person.v2.ObservedVehicle.motion:type_name -> city.person.v2.PersonMotion
+	1,  // 9: city.person.v2.ObservedVehicle.relation:type_name -> city.person.v2.VehicleRelation
+	2,  // 10: city.person.v2.ObservedLane.light_state:type_name -> city.person.v2.LightState
+	6,  // 11: city.person.v2.VehicleEnv.runtime:type_name -> city.person.v2.VehicleRuntime
+	10, // 12: city.person.v2.VehicleEnv.journey:type_name -> city.routing.v2.Journey
+	7,  // 13: city.person.v2.VehicleEnv.observed_vehicles:type_name -> city.person.v2.ObservedVehicle
+	8,  // 14: city.person.v2.VehicleEnv.observed_lanes:type_name -> city.person.v2.ObservedLane
+	15, // [15:15] is the sub-list for method output_type
+	15, // [15:15] is the sub-list for method input_type
+	15, // [15:15] is the sub-list for extension type_name
+	15, // [15:15] is the sub-list for extension extendee
+	0,  // [0:15] is the sub-list for field type_name
 }
 
 func init() { file_city_person_v2_vehicle_proto_init() }
@@ -911,7 +989,7 @@ func file_city_person_v2_vehicle_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_city_person_v2_vehicle_proto_rawDesc), len(file_city_person_v2_vehicle_proto_rawDesc)),
-			NumEnums:      2,
+			NumEnums:      3,
 			NumMessages:   7,
 			NumExtensions: 0,
 			NumServices:   0,
